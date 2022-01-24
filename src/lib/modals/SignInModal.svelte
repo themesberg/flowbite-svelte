@@ -1,4 +1,7 @@
 <script>
+  import { createEventDispatcher } from "svelte";
+
+  const dispatch = createEventDispatcher();
   export let btnSignInColor = "blue";
   export let textSignInColor = "gray";
   export let titleSignIn = "Sign in to our platform";
@@ -6,8 +9,20 @@
   export let signUpLink = "/signup";
   export let formLink = "/signin";
 
-  export const closeSingInModal = () => {
+  const closeSingInModal = () => {
     toggleModal("signin-modal", false);
+  };
+
+  const handlelostPassword = () => {
+    dispatch("handleLostPassword");
+  };
+
+  const handleLogin = () => {
+    dispatch("handleLogin");
+  };
+
+  const handleRegister = () => {
+    dispatch("handleRegister");
   };
 </script>
 
@@ -25,7 +40,7 @@
           type="button"
           class="text-{textSignInColor}-400 bg-transparent hover:bg-{textSignInColor}-200 hover:text-{textSignInColor}-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-{textSignInColor}-800 dark:hover:text-white"
           data-modal-toggle="signin-modal"
-          on:click={() => closeSingInModal()}
+          on:click={closeSingInModal}
         >
           <svg
             class="w-5 h-5"
@@ -101,13 +116,13 @@
           <a
             href={lostPasswordLink}
             class="text-sm text-{btnSignInColor}-700 hover:underline dark:text-{btnSignInColor}-500"
-            on:click={() => closeSingInModal()}>Lost Password?</a
+            on:click={handlelostPassword}>Lost Password?</a
           >
         </div>
         <button
           type="submit"
           class="w-full text-white bg-{btnSignInColor}-700 hover:bg-{btnSignInColor}-800 focus:ring-4 focus:ring-{btnSignInColor}-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-{btnSignInColor}-600 dark:hover:bg-{btnSignInColor}-700 dark:focus:ring-{btnSignInColor}-800"
-          on:click={() => closeSingInModal()}>Login to your account</button
+          on:click={handleLogin}>Login to your account</button
         >
         <div
           class="text-sm font-medium text-{textSignInColor}-500 dark:text-{textSignInColor}-300"
@@ -115,7 +130,7 @@
           Not registered? <a
             href={signUpLink}
             class="text-{btnSignInColor}-700 hover:underline dark:text-{btnSignInColor}-500"
-            on:click={() => closeSingInModal()}>Create account</a
+            on:click={handleRegister}>Create account</a
           >
         </div>
       </form>

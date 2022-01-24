@@ -1,12 +1,24 @@
 <script>
-  export let btnLColor = "blue";
-  export let textLColor = "gray";
-  export let titleL = "Terms of Service";
-  export let btnL1 = "I accept";
-  export let btnL2 = "Decline";
+  import { createEventDispatcher } from "svelte";
+
+  const dispatch = createEventDispatcher();
+
+  export let btnColor = "blue";
+  export let textColor = "gray";
+  export let title = "Terms of Service";
+  export let btn1 = "Yes";
+  export let btn2 = "No";
 
   export const closeLargeModal = () => {
     toggleModal("large-modal", false);
+  };
+
+  const handlebtn1 = () => {
+    dispatch("handlebtnL1");
+  };
+
+  const handlebtn2 = () => {
+    dispatch("handlebtnL2");
   };
 </script>
 
@@ -18,19 +30,19 @@
 >
   <div class="relative px-4 w-full max-w-4xl h-full md:h-auto">
     <!-- Modal content -->
-    <div class="relative bg-white rounded-lg shadow dark:bg-{textLColor}-700">
+    <div class="relative bg-white rounded-lg shadow dark:bg-{textColor}-700">
       <!-- Modal header -->
       <div
-        class="flex justify-between items-center p-5 rounded-t border-b dark:border-{textLColor}-600"
+        class="flex justify-between items-center p-5 rounded-t border-b dark:border-{textColor}-600"
       >
-        <h3 class="text-xl font-medium text-{textLColor}-900 dark:text-white">
-          {titleL}
+        <h3 class="text-xl font-medium text-{textColor}-900 dark:text-white">
+          {title}
         </h3>
         <button
           type="button"
-          class="text-{textLColor}-400 bg-transparent hover:bg-{textLColor}-200 hover:text-{textLColor}-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-{textLColor}-600 dark:hover:text-white"
+          class="text-{textColor}-400 bg-transparent hover:bg-{textColor}-200 hover:text-{textColor}-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-{textColor}-600 dark:hover:text-white"
           data-modal-toggle="large-modal"
-          on:click={() => closeLargeModal()}
+          on:click={closeLargeModal}
         >
           <svg
             class="w-5 h-5"
@@ -51,22 +63,22 @@
       </div>
       <!-- Modal footer -->
       <div
-        class="flex items-center p-6 space-x-2 rounded-b border-t border-{textLColor}-200 dark:border-{textLColor}-600"
+        class="flex items-center p-6 space-x-2 rounded-b border-t border-{textColor}-200 dark:border-{textColor}-600"
       >
-        {#if btnL1}
+        {#if btn1}
           <button
             data-modal-toggle="large-modal"
             type="button"
-            class="text-white bg-{btnLColor}-700 hover:bg-{btnLColor}-800 focus:ring-4 focus:ring-{btnLColor}-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-{btnLColor}-600 dark:hover:bg-{btnLColor}-700 dark:focus:ring-{btnLColor}-800"
-            on:click={() => closeLargeModal()}>{btnL1}</button
+            class="text-white bg-{btnColor}-700 hover:bg-{btnColor}-800 focus:ring-4 focus:ring-{btnColor}-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-{btnColor}-600 dark:hover:bg-{btnColor}-700 dark:focus:ring-{btnColor}-800"
+            on:click={handlebtn1}>{btn1}</button
           >
         {/if}
-        {#if btnL2}
+        {#if btn2}
           <button
             data-modal-toggle="large-modal"
             type="button"
-            class="text-{textLColor}-500 bg-white hover:bg-{textLColor}-100 focus:ring-4 focus:ring-{textLColor}-300 rounded-lg border border-{textLColor}-200 text-sm font-medium px-5 py-2.5 hover:text-{textLColor}-900 focus:z-10 dark:bg-{textLColor}-700 dark:text-{textLColor}-300 dark:border-{textLColor}-500 dark:hover:text-white dark:hover:bg-{textLColor}-600"
-            on:click={() => closeLargeModal()}>{btnL2}</button
+            class="text-{textColor}-500 bg-white hover:bg-{textColor}-100 focus:ring-4 focus:ring-{textColor}-300 rounded-lg border border-{textColor}-200 text-sm font-medium px-5 py-2.5 hover:text-{textColor}-900 focus:z-10 dark:bg-{textColor}-700 dark:text-{textColor}-300 dark:border-{textColor}-500 dark:hover:text-white dark:hover:bg-{textColor}-600"
+            on:click={handlebtn2}>{btn2}</button
           >
         {/if}
       </div>
