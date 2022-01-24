@@ -12,7 +12,7 @@ export {
   ExtraLargeModal,
   LargeModal,
   SmallModal,
-  // SignInModal,
+  SignInModal,
   // TestModal
   // Login
 }

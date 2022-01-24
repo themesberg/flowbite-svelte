@@ -4,7 +4,7 @@
   export let titleL = "Terms of Service";
   export let btnL1 = "I accept";
   export let btnL2 = "Decline";
-  // export let content = "Lorem ipsum dolor sit amet.";
+
   export const closeLargeModal = () => {
     toggleModal("large-modal", false);
   };
@@ -12,8 +12,9 @@
 
 <!-- Large Modal -->
 <div
-  class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full"
   id="large-modal"
+  aria-hidden="true"
+  class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full"
 >
   <div class="relative px-4 w-full max-w-4xl h-full md:h-auto">
     <!-- Modal content -->
