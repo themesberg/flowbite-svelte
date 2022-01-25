@@ -1,0 +1,12 @@
+# Alert
+
+## Variables
+
+```js
+alertId
+color
+```
+
+You can use TailwindCSS colors, red, blue, purple, pink, indigo, green, yellow, and gray.
+
+[Example](/alert)
