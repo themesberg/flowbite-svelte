@@ -5,7 +5,9 @@ const config = {
     extend: {},
   },
 
-  plugins: [],
+  plugins: [
+    require('@themesberg/flowbite/plugin')
+  ],
 };
 
 module.exports = config;

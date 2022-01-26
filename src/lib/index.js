@@ -5,7 +5,7 @@ import ModalButton from './modals/ModalButton.svelte'
 import SignInModal from './modals/SignInModal.svelte'
 import SmallModal from './modals/SmallModal.svelte'
 
-import HeroIcons from './heroIcons/HeroIcons.svelte'
+// import HeroIcons from './heroIcons/HeroIcons.svelte'
 
 // Alerts
 import Alert from './alerts/Alert.svelte'
@@ -19,7 +19,7 @@ export {
   ModalButton,
   SignInModal,
   SmallModal,
-  HeroIcons,
+  // HeroIcons,
   Alert,
   BorderAlert,
   InfoAlert

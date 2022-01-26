@@ -1,15 +1,15 @@
 {
   "name": "@codewithshin/svelte-flow",
-  "version": "0.0.3",
-	"description": "Svelte + TailwindCSS + Flowbite components",
-	"author": {
-		"name":"Shinichi Okada",
-		"email": "connect@codewithshin.com",
-		"url": "https://blog.codewithshin.com"
-	},
-	"bugs": "https://github.com/shinokada/svelte-flow/issues",
-	"homepage": "https://github.com/shinokada/svelte-flow",
-	"license": "MIT",
+  "version": "0.0.5",
+  "description": "Svelte + TailwindCSS + Flowbite components",
+  "author": {
+    "name": "Shinichi Okada",
+    "email": "connect@codewithshin.com",
+    "url": "https://blog.codewithshin.com"
+  },
+  "bugs": "https://github.com/shinokada/svelte-flow/issues",
+  "homepage": "https://github.com/shinokada/svelte-flow",
+  "license": "MIT",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
@@ -24,16 +24,24 @@
     "postcss-load-config": "^3.1.1",
     "svelte": "^3.44.0",
     "svelte-preprocess": "^4.10.1",
+    "svelte2tsx": "^0.4.14",
     "tailwindcss": "^3.0.12"
   },
   "type": "module",
-	"keywords": [
-		"svelte",
-		"sveltekit",
-		"sidebar"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/shinokada/svelte-flow"
-	}
+  "keywords": [
+    "svelte",
+    "sveltekit",
+    "modal",
+    "alert",
+    "tailwindcss",
+    "flowbite",
+    "ui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shinokada/svelte-flow"
+  },
+  "dependencies": {
+    "@themesberg/flowbite": "^1.3.0"
+  }
 }

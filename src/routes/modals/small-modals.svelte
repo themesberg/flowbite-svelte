@@ -3,7 +3,7 @@
 
   const btnName1 = "Small Modal";
   const btnName2 = "Small Modal 2";
-  const btnSimpleName = "Basic Modal";
+  const btnBasicName = "Basic Modal";
   const btnColor1 = "purple";
   const btnColor2 = "red";
   const textSColor = "gray";
@@ -44,7 +44,7 @@
   <!-- Simple  -->
   <ModalButton
     id={idBasic}
-    btnName={btnSimpleName}
+    btnName={btnBasicName}
     openFnName={openBasicModal}
   />
 
