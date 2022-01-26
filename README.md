@@ -1,6 +1,17 @@
 # Svelte-flowbite
 
-## Svelte-modal
+## Modal
 
-Removed 
+- ExtraLargeModal
+- LargeModal
+- MediumModal
+- ModalButton
+- SignInModal
+- SmallModal
+
+## Alerts
+
+- Alert
+- BorderAlert
+- InfoAlert
 
