@@ -1,7 +1,7 @@
 <script>
-  import { CardCta } from "$lib/index";
+  import { CtaCard } from "$lib/index";
 </script>
 
 <div class="container mx-auto p-8">
-  <CardCta />
+  <CtaCard />
 </div>

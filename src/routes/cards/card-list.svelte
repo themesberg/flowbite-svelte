@@ -1,7 +1,7 @@
 <script>
-  import { CardList } from "$lib/index";
+  import { ListCard } from "$lib/index";
 </script>
 
 <div class="container mx-auto p-8">
-  <CardList />
+  <ListCard />
 </div>

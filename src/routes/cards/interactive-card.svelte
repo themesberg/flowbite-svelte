@@ -1,5 +1,5 @@
 <script>
-  import { CardInteractive } from "$lib/index";
+  import { InteractiveCard } from "$lib/index";
   let dropdownLinks = [
     {
       href: "#",
@@ -25,13 +25,13 @@
 </script>
 
 <div class="container mx-auto p-8">
-  <CardInteractive {dropdownLinks} {img} {header} {content} {link1} {link2} />
+  <InteractiveCard {dropdownLinks} {img} {header} {content} {link1} {link2} />
 </div>
 
 <div class="container mx-auto p-8">
-  <CardInteractive {dropdownLinks} {img} {header} {content} link1="" {link2} />
+  <InteractiveCard {dropdownLinks} {img} {header} {content} link1="" {link2} />
 </div>
 
 <div class="container mx-auto p-8">
-  <CardInteractive {dropdownLinks} {img} {header} {content} link1="" link2="" />
+  <InteractiveCard {dropdownLinks} {img} {header} {content} link1="" link2="" />
 </div>

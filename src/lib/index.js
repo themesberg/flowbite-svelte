@@ -14,11 +14,14 @@ import InfoAlert from './alerts/InfoAlert.svelte'
 
 // Cards
 import Card from './cards/Card.svelte'
-import CardHorizontal from './cards/CardHorizontal.svelte'
-import CardInteractive from './cards/CardInteractive.svelte'
-import CardList from './cards/CardList.svelte'
-import CardCta from './cards/CardCta.svelte'
-import CardEcommerce from './cards/CardEcommerce.svelte'
+import HorizontalCard from './cards/HorizontalCard.svelte'
+import InteractiveCard from './cards/InteractiveCard.svelte'
+import ListCard from './cards/ListCard.svelte'
+import CtaCard from './cards/CtaCard.svelte'
+import EcommerceCard from './cards/EcommerceCard.svelte'
+
+// Tabs
+import Tabs from './tabs/Tabs.svelte'
 
 export {
   ExtraLargeModal,
@@ -34,9 +37,11 @@ export {
   InfoAlert,
   // cards
   Card,
-  CardHorizontal,
-  CardInteractive,
-  CardList,
-  CardCta,
-  CardEcommerce
+  HorizontalCard,
+  InteractiveCard,
+  ListCard,
+  CtaCard,
+  EcommerceCard,
+  // Tabs
+  Tabs
 }

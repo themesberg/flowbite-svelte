@@ -1,7 +1,7 @@
 <script>
-  import { CardEcommerce } from "$lib/index";
+  import { EcommerceCard } from "$lib/index";
 </script>
 
 <div class="container mx-auto p-8">
-  <CardEcommerce />
+  <EcommerceCard />
 </div>

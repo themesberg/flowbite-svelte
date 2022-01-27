@@ -1,9 +1,9 @@
 <script>
-  import { CardHorizontal } from "$lib/index";
+  import { HorizontalCard } from "$lib/index";
 </script>
 
 <div class="container mx-auto p-8">
-  <CardHorizontal
+  <HorizontalCard
     img="/images/image-4.jpeg"
     header="Horizontal card"
     content="Your content"
