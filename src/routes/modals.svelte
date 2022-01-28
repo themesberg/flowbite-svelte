@@ -126,13 +126,6 @@
     btnName={btnExLName}
     btnColor={btnExLColor}
   />
-
-  <!-- SignInModal Button -->
-  <ModalButton
-    id={signinId}
-    btnName={btnSignInName}
-    btnColor={btnSignInColor}
-  />
 </div>
 
 <SmallModal
@@ -205,14 +198,3 @@
     quis nostrud exercitation ullamco.
   </p>
 </ExtraLargeModal>
-
-<SignInModal
-  {btnSignInColor}
-  {titleSignIn}
-  {lostPasswordLink}
-  {signUpLink}
-  {formLink}
-  on:handleLostPassword={handleLostPassword}
-  on:handleLogin={handleLogin}
-  on:handleRegister={handleRegister}
-/>
