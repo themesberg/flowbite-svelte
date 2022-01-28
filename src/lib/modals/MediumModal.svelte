@@ -3,14 +3,15 @@
 
   const dispatch = createEventDispatcher();
 
+  export let id = "medium-modal";
   export let btnColor = "blue";
   export let textColor = "gray";
   export let title = "Terms of Service";
-  export let btn1 = "Yes";
-  export let btn2 = "No";
+  export let btn1;
+  export let btn2;
 
   const closeMediumModal = () => {
-    toggleModal("medium-modal", false);
+    toggleModal(id, false);
   };
 
   const handlebtn1 = () => {
@@ -24,7 +25,7 @@
 
 <!-- Main modal -->
 <div
-  id="medium-modal"
+  {id}
   aria-hidden="true"
   class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal md:h-full md:inset-0"
 >
@@ -43,7 +44,7 @@
         <button
           type="button"
           class="text-{textColor}-400 bg-transparent hover:bg-{textColor}-200 hover:text-{textColor}-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-{textColor}-600 dark:hover:text-white"
-          data-modal-toggle="medium-modal"
+          data-modal-toggle={id}
           on:click={closeMediumModal}
         >
           <svg
@@ -69,7 +70,7 @@
       >
         {#if btn1}
           <button
-            data-modal-toggle="medium-modal"
+            data-modal-toggle={id}
             type="button"
             class="text-white bg-{btnColor}-700 hover:bg-{btnColor}-800 focus:ring-4 focus:ring-{btnColor}-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-{btnColor}-600 dark:hover:bg-{btnColor}-700 dark:focus:ring-{btnColor}-800"
             on:click={handlebtn1}
@@ -79,7 +80,7 @@
         {/if}
         {#if btn2}
           <button
-            data-modal-toggle="medium-modal"
+            data-modal-toggle={id}
             type="button"
             class="text-{textColor}-500 bg-white hover:bg-{textColor}-100 focus:ring-4 focus:ring-{textColor}-300 rounded-lg border border-{textColor}-200 text-sm font-medium px-5 py-2.5 hover:text-{textColor}-900 focus:z-10 dark:bg-{textColor}-700 dark:text-{textColor}-300 dark:border-{textColor}-500 dark:hover:text-white dark:hover:bg-{textColor}-600"
             on:click={handlebtn2}>{btn2}</button

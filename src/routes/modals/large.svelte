@@ -1,32 +1,18 @@
 <script>
-  import { LargeModal } from "$lib/index";
+  import { LargeModal, ModalButton } from "$lib/index";
 
-  let btnLName = "Large Modal";
-  let btnLColor = "blue";
+  let id = "my-large-modal";
+  let btnName = "Large Modal";
+  let btnColor = "red";
   let textLColor = "gray";
-  function openLargeModal() {
-    toggleModal("large-modal");
-  }
 </script>
 
-<div class="block space-y-4 md:flex md:space-y-0 md:space-x-4">
-  <button
-    on:click={openLargeModal}
-    class="block w-full md:w-auto text-white bg-{btnLColor}-700 hover:bg-{btnLColor}-800 focus:ring-4 focus:ring-{btnLColor}-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-{btnLColor}-600 dark:hover:bg-{btnLColor}-700 dark:focus:ring-{btnLColor}-800"
-    type="button"
-    data-modal-toggle="large-modal"
-  >
-    {btnLName}
-  </button>
+<div class="block p-8 space-y-4 md:flex md:space-y-0 md:space-x-4">
+  <ModalButton {id} {btnName} {btnColor} />
 </div>
 
 <div class="p-6">
-  <LargeModal
-    btnLColor={"red"}
-    title={"Large Modal Title"}
-    btnL1="Yes"
-    btnL2="No"
-  >
+  <LargeModal {id} btnLColor={"red"} title={"Large Modal Title"}>
     <p
       class="text-base leading-relaxed text-{textLColor}-500 dark:text-{textLColor}-400"
     >

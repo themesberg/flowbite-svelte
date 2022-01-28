@@ -21,7 +21,9 @@ import CtaCard from './cards/CtaCard.svelte'
 import EcommerceCard from './cards/EcommerceCard.svelte'
 
 // Tabs
-import Tabs from './tabs/Tabs.svelte'
+import InteractiveTabs from './tabs/InteractiveTabs.svelte'
+import DefaultTabs from './tabs/DefaultTabs.svelte'
+import PillTabs from './tabs/PillTabs.svelte'
 
 export {
   ExtraLargeModal,
@@ -43,5 +45,7 @@ export {
   CtaCard,
   EcommerceCard,
   // Tabs
-  Tabs
+  InteractiveTabs,
+  DefaultTabs,
+  PillTabs
 }

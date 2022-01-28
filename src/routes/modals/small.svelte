@@ -1,27 +1,17 @@
 <script>
   import { SmallModal, ModalButton } from "$lib/index";
 
-  const btnName1 = "Small Modal";
-  const btnName2 = "Small Modal 2";
-  const btnBasicName = "Basic Modal";
-  const btnColor1 = "purple";
-  const btnColor2 = "red";
+  // common
   const textSColor = "gray";
-  const id1 = "small-modal";
-  const id2 = "small-modal-2";
+
+  // for basic
   const idBasic = "basic-modal";
+  const btnBasicName = "Basic Modal";
 
-  const openSmallModal1 = () => {
-    toggleModal(id1);
-  };
-
-  const openSmallModal2 = () => {
-    toggleModal(id2);
-  };
-
-  const openBasicModal = () => {
-    toggleModal(idBasic);
-  };
+  // for small modal 1
+  const btnName1 = "Small Modal";
+  const id1 = "small-modal";
+  const btnColor1 = "purple";
 
   const handlebtnS1 = () => {
     toggleModal(id1, false);
@@ -30,6 +20,11 @@
   const handlebtnS2 = () => {
     toggleModal(id1, false);
   };
+
+  // for small modal 2
+  const btnName2 = "Small Modal 2";
+  const id2 = "small-modal-2";
+  const btnColor2 = "red";
 
   const handlebtnS3 = () => {
     toggleModal(id2, false);
@@ -42,25 +37,11 @@
 
 <div class="block p-8 space-y-4 md:flex md:space-y-0 md:space-x-4">
   <!-- Simple  -->
-  <ModalButton
-    id={idBasic}
-    btnName={btnBasicName}
-    openFnName={openBasicModal}
-  />
+  <ModalButton id={idBasic} btnName={btnBasicName} />
 
-  <ModalButton
-    id={id1}
-    btnName={btnName1}
-    btnColor={btnColor1}
-    openFnName={openSmallModal1}
-  />
+  <ModalButton id={id1} btnName={btnName1} btnColor={btnColor1} />
 
-  <ModalButton
-    id={id2}
-    btnName={btnName2}
-    btnColor={btnColor2}
-    openFnName={openSmallModal2}
-  />
+  <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
 </div>
 
 <SmallModal id={idBasic} title={"Basic Modal Title"}>
@@ -83,7 +64,8 @@
   <p
     class="text-base leading-relaxed text-{textSColor}-500 dark:text-{textSColor}-400"
   >
-    Modal 1
+    Modal 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua.
   </p>
 </SmallModal>
 
@@ -99,6 +81,7 @@
   <p
     class="text-base leading-relaxed text-{textSColor}-500 dark:text-{textSColor}-400"
   >
-    Modal 2
+    Modal 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua.
   </p>
 </SmallModal>

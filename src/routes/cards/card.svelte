@@ -1,5 +1,5 @@
 <script>
-  import { Card, CardHorizontal, CardInteractive } from "$lib/index";
+  import { Card } from "$lib/index";
 </script>
 
 <div class="container mx-auto p-8">

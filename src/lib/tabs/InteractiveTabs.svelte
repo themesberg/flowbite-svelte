@@ -1,25 +1,27 @@
 <script>
-  import { content } from "tailwindcss/stubs/defaultConfig.stub";
-
   export let tabId = "myTab";
   export let tabs = [
     {
       name: "Profile",
+      selected: true,
       content:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     },
     {
       name: "Dashboard",
+      selected: false,
       content:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     },
     {
       name: "Settings",
+      selected: false,
       content:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     },
     {
       name: "Contacts",
+      selected: false,
       content:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     },
@@ -33,25 +35,29 @@
     data-tabs-toggle="#{tabId}Content"
     role="tablist"
   >
-    {#each tabs as { name }}
+    {#each tabs as { name, selected }}
       <li class="mr-2" role="presentation">
         <button
-          class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300"
+          class="{selected
+            ? 'active'
+            : ''} inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300"
           id="{name}-tab"
           data-tabs-target="#{name}"
           type="button"
           role="tab"
           aria-controls={name}
-          aria-selected="true">{name}</button
+          aria-selected={selected}>{name}</button
         >
       </li>
     {/each}
   </ul>
 </div>
 <div id="{tabId}Content">
-  {#each tabs as { name, content }}
+  {#each tabs as { name, content, selected }}
     <div
-      class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800"
+      class="{selected
+        ? ''
+        : 'hidden'} p-4 bg-gray-50 rounded-lg dark:bg-gray-800"
       id={name}
       role="tabpanel"
       aria-labelledby="{name}-tab"

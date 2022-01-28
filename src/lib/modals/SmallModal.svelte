@@ -2,17 +2,17 @@
   import { createEventDispatcher } from "svelte";
 
   const dispatch = createEventDispatcher();
-  // export let btnName = "Small modal";
+
+  export let id = "small-modal";
   export let btnColor = "blue";
   export let textColor = "gray";
   export let title = "Terms of Service";
   export let btn1;
   export let btn2;
-  export let id = "small-modal";
+
   // export let content = "Lorem ipsum dolor sit amet.";
   const closeSmallModal = () => {
     toggleModal(id, false);
-    dispatch("closeSmallModal");
   };
 
   const handlebtn1 = () => {

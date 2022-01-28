@@ -2,15 +2,17 @@
   import { createEventDispatcher } from "svelte";
 
   const dispatch = createEventDispatcher();
+  export let id = "signin-modal";
   export let btnSignInColor = "blue";
   export let textSignInColor = "gray";
   export let titleSignIn = "Sign in to our platform";
-  export let lostPasswordLink = "/lost-password";
-  export let signUpLink = "/signup";
-  export let formLink = "/signin";
+  export let lostPasswordLink;
+  export let rememberMe = false;
+  export let signUpLink;
+  export let formLink = "/#";
 
   const closeSingInModal = () => {
-    toggleModal("signin-modal", false);
+    toggleModal(id, false);
   };
 
   const handlelostPassword = () => {
@@ -27,7 +29,7 @@
 </script>
 
 <div
-  id="signin-modal"
+  {id}
   aria-hidden="true"
   class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal md:h-full md:inset-0"
 >
@@ -39,7 +41,7 @@
         <button
           type="button"
           class="text-{textSignInColor}-400 bg-transparent hover:bg-{textSignInColor}-200 hover:text-{textSignInColor}-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-{textSignInColor}-800 dark:hover:text-white"
-          data-modal-toggle="signin-modal"
+          data-modal-toggle={id}
           on:click={closeSingInModal}
         >
           <svg
@@ -66,73 +68,79 @@
         </h3>
         <div>
           <label
-            for="email"
+            for="email-{id}"
             class="block mb-2 text-sm font-medium text-{textSignInColor}-900 dark:text-{textSignInColor}-300"
             >Your email</label
           >
           <input
             type="email"
             name="email"
-            id="email"
+            id="email-{id}"
             class="bg-{textSignInColor}-50 border border-{textSignInColor}-300 text-{textSignInColor}-900 text-sm rounded-lg focus:ring-{btnSignInColor}-500 focus:border-{btnSignInColor}-500 block w-full p-2.5 dark:bg-{textSignInColor}-600 dark:border-{textSignInColor}-500 dark:placeholder-{textSignInColor}-400 dark:text-white"
             placeholder="name@company.com"
-            required=""
+            required
           />
         </div>
         <div>
           <label
-            for="password"
+            for="password-{id}"
             class="block mb-2 text-sm font-medium text-{textSignInColor}-900 dark:text-{textSignInColor}-300"
             >Your password</label
           >
           <input
             type="password"
             name="password"
-            id="password"
+            id="password-{id}"
             placeholder="••••••••"
             class="bg-{textSignInColor}-50 border border-{textSignInColor}-300 text-{textSignInColor}-900 text-sm rounded-lg focus:ring-{btnSignInColor}-500 focus:border-{btnSignInColor}-500 block w-full p-2.5 dark:bg-{textSignInColor}-600 dark:border-{textSignInColor}-500 dark:placeholder-{textSignInColor}-400 dark:text-white"
-            required=""
+            required
           />
         </div>
         <div class="flex justify-between">
-          <div class="flex items-start">
-            <div class="flex items-center h-5">
-              <input
-                id="remember"
-                aria-describedby="remember"
-                type="checkbox"
-                class="w-4 h-4 bg-{textSignInColor}-50 rounded border border-{textSignInColor}-300 focus:ring-3 focus:ring-{btnSignInColor}-300 dark:bg-{textSignInColor}-600 dark:border-{textSignInColor}-500 dark:focus:ring-{btnSignInColor}-600 dark:ring-offset-{textSignInColor}-800"
-                required=""
-              />
+          {#if rememberMe}
+            <div class="flex items-start">
+              <div class="flex items-center h-5">
+                <input
+                  id="remember-{id}"
+                  aria-describedby="remember"
+                  type="checkbox"
+                  class="w-4 h-4 bg-{textSignInColor}-50 rounded border border-{textSignInColor}-300 focus:ring-3 focus:ring-{btnSignInColor}-300 dark:bg-{textSignInColor}-600 dark:border-{textSignInColor}-500 dark:focus:ring-{btnSignInColor}-600 dark:ring-offset-{textSignInColor}-800"
+                  required=""
+                />
+              </div>
+              <div class="ml-3 text-sm">
+                <label
+                  for="remember"
+                  class="font-medium text-{textSignInColor}-900 dark:text-{textSignInColor}-300"
+                  >Remember me</label
+                >
+              </div>
             </div>
-            <div class="ml-3 text-sm">
-              <label
-                for="remember"
-                class="font-medium text-{textSignInColor}-900 dark:text-{textSignInColor}-300"
-                >Remember me</label
-              >
-            </div>
-          </div>
-          <a
-            href={lostPasswordLink}
-            class="text-sm text-{btnSignInColor}-700 hover:underline dark:text-{btnSignInColor}-500"
-            on:click={handlelostPassword}>Lost Password?</a
-          >
+          {/if}
+          {#if lostPasswordLink}
+            <a
+              href={lostPasswordLink}
+              class="text-sm text-{btnSignInColor}-700 hover:underline dark:text-{btnSignInColor}-500"
+              on:click={handlelostPassword}>Lost Password?</a
+            >
+          {/if}
         </div>
         <button
           type="submit"
           class="w-full text-white bg-{btnSignInColor}-700 hover:bg-{btnSignInColor}-800 focus:ring-4 focus:ring-{btnSignInColor}-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-{btnSignInColor}-600 dark:hover:bg-{btnSignInColor}-700 dark:focus:ring-{btnSignInColor}-800"
           on:click={handleLogin}>Login to your account</button
         >
-        <div
-          class="text-sm font-medium text-{textSignInColor}-500 dark:text-{textSignInColor}-300"
-        >
-          Not registered? <a
-            href={signUpLink}
-            class="text-{btnSignInColor}-700 hover:underline dark:text-{btnSignInColor}-500"
-            on:click={handleRegister}>Create account</a
+        {#if signUpLink}
+          <div
+            class="text-sm font-medium text-{textSignInColor}-500 dark:text-{textSignInColor}-300"
           >
-        </div>
+            Not registered? <a
+              href={signUpLink}
+              class="text-{btnSignInColor}-700 hover:underline dark:text-{btnSignInColor}-500"
+              on:click={handleRegister}>Create account</a
+            >
+          </div>
+        {/if}
       </form>
     </div>
   </div>

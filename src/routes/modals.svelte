@@ -9,17 +9,14 @@
   } from "$lib/index";
 
   // small
+  let smallModalId = "small-modal";
   let btnSName = "Small Modal";
-  let titleS = "Small Modal Title";
   let btnSColor = "gray";
+
+  let titleS = "Small Modal Title";
   let textSColor = "red";
   let btnS1 = "I accept";
   let btnS2 = "Decline";
-  let smallModalId = "small-modal";
-
-  const openSmallModal = () => {
-    toggleModal(smallModalId);
-  };
 
   const handlebtnS1 = () => {
     alert("handlebtnS1 is clicked from a parent page.");
@@ -32,146 +29,113 @@
   };
 
   // medium
+  let mediumModalId = "medium-modal";
   let btnMName = "Medium Modal";
   let btnMColor = "red";
   let textMColor = "yellow";
   let titleM = "Medium Modal Title";
   let btnM1 = "I accept";
   let btnM2 = "Decline";
-  let mediumModalId = "medium-modal";
-
-  const openMediumModal = () => {
-    toggleModal("medium-modal");
-  };
 
   const handlebtnM1 = () => {
     alert("handlebtnM1 is clicked from a parent page.");
-    toggleModal("medium-modal", false);
+    toggleModal(mediumModalId, false);
   };
 
   const handlebtnM2 = () => {
     alert("handlebtnM2 is clicked from a parent page.");
-    toggleModal("medium-modal", false);
+    toggleModal(mediumModalId, false);
   };
 
   // Large
+  let largeModalId = "large-modal";
   let btnLName = "Large Modal";
   let btnLColor = "yellow";
   let textLColor = "green";
   let titleL = "Large Modal Title";
   let btnL1 = "I accept";
   let btnL2 = "Decline";
-  let largeModalId = "large-modal";
-
-  const openLargeModal = () => {
-    toggleModal("large-modal");
-  };
 
   const handlebtnL1 = () => {
     alert("handlebtnL1 is clicked from a parent page.");
-    toggleModal("large-modal", false);
+    toggleModal(largeModalId, false);
   };
 
   const handlebtnL2 = () => {
     alert("handlebtnL2 is clicked from a parent page.");
-    toggleModal("large-modal", false);
+    toggleModal(largeModalId, false);
   };
 
   // Extra Large
+  let extraLargeModalId = "extralarge-modal";
   let btnExLName = "Extra Large Modal";
   let btnExLColor = "green";
   let textExLColor = "blue";
   let titleExL = "Terms of Service";
   let btnExL1 = "I accept";
   let btnExL2 = "Decline";
-  let extraLargeModalId = "extralarge-modal";
-
-  const openExtraLargeModal = () => {
-    toggleModal("extralarge-modal");
-  };
 
   const handlebtnExL1 = () => {
     alert("handlebtnExL1 is clicked from a parent page.");
-    toggleModal("medium-modal", false);
+    toggleModal(extraLargeModalId, false);
   };
 
   const handlebtnExL2 = () => {
     alert("handlebtnExL2 is clicked from a parent page.");
-    toggleModal("medium-modal", false);
+    toggleModal(extraLargeModalId, false);
   };
 
   // SignIn Modal
+  let signinId = "signin-modal";
   let btnSignInName = "Sign In Modal";
   let btnSignInColor = "purple";
   let titleSignIn = "Sign in to our platform";
-  let lostPasswordLink = "/#";
-  let signUpLink = "/#";
-  let formLink = "/#";
-
-  const openSignInModal = () => {
-    toggleModal("signin-modal");
-  };
+  let lostPasswordLink = "/auth/lost-password";
+  let signUpLink = "/auth/signup";
+  let formLink = "/auth/login";
 
   const handleLostPassword = () => {
-    alert("handleLostPassword is clicked from a parent page.");
-    toggleModal("signin-modal", false);
+    alert("LostPassword is clicked from a parent page.");
+    toggleModal(signinId, false);
   };
 
   const handleLogin = () => {
-    alert("handleLogin is clicked from a parent page.");
-    toggleModal("signin-modal", false);
+    alert("Login is clicked from a parent page.");
+    toggleModal(signinId, false);
   };
 
   const handleRegister = () => {
-    alert("handleRegister is clicked from a parent page.");
-    toggleModal("signin-modal", false);
+    alert("Register is clicked from a parent page.");
+    toggleModal(signinId, false);
   };
 </script>
 
 <div class="block p-8 space-y-4 md:flex md:space-y-0 md:space-x-4">
   <!-- Small Modal Button -->
-  <ModalButton
-    id={smallModalId}
-    btnName={btnSName}
-    btnColor={btnSColor}
-    openFnName={openSmallModal}
-  />
+  <ModalButton id={smallModalId} btnName={btnSName} btnColor={btnSColor} />
 
   <!-- Medium Modal Button -->
-  <ModalButton
-    id={mediumModalId}
-    btnName={btnMName}
-    btnColor={btnMColor}
-    openFnName={openMediumModal}
-  />
+  <ModalButton id={mediumModalId} btnName={btnMName} btnColor={btnMColor} />
 
   <!-- Large Modal Button -->
-  <ModalButton
-    id={largeModalId}
-    btnName={btnLName}
-    btnColor={btnLColor}
-    openFnName={openLargeModal}
-  />
+  <ModalButton id={largeModalId} btnName={btnLName} btnColor={btnLColor} />
 
   <!-- ExtraLarge Modal Button -->
   <ModalButton
     id={extraLargeModalId}
     btnName={btnExLName}
     btnColor={btnExLColor}
-    openFnName={openExtraLargeModal}
   />
 
   <!-- SignInModal Button -->
   <ModalButton
-    id={extraLargeModalId}
+    id={signinId}
     btnName={btnSignInName}
     btnColor={btnSignInColor}
-    openFnName={openSignInModal}
   />
 </div>
 
 <SmallModal
-  id={smallModalId}
   btnColor={btnSColor}
   title={titleS}
   btn1={btnS1}

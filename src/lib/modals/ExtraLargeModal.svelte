@@ -3,14 +3,15 @@
 
   const dispatch = createEventDispatcher();
 
+  export let id = "extralarge-modal";
   export let btnColor = "blue";
   export let textColor = "gray";
   export let title = "Terms of Service";
-  export let btn1 = "Yes";
-  export let btn2 = "No";
+  export let btn1;
+  export let btn2;
 
   const closeExtraLargeModal = () => {
-    toggleModal("extralarge-modal", false);
+    toggleModal(id, false);
   };
 
   const handlebtn1 = () => {

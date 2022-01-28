@@ -1,32 +1,67 @@
 <script>
-  import { MediumModal } from "$lib/index";
+  import { MediumModal, ModalButton } from "$lib/index";
+
+  const idBasic = "basic-modal";
+  const btnBasicName = "Basic Modal";
 
   let btnMName = "Medium Modal";
-  let btnMColor = "blue";
+  let btnColor = "pink";
   let textMColor = "gray";
-  function openMediumModal() {
-    toggleModal("medium-modal");
-  }
+  let idMedium = "medium-modal";
+
+  let idMedium2 = "medium-modal2";
+  let btnName2 = "Medium Modal 2";
+  let btnColor2 = "purple";
+
+  const handlebtnM1 = () => {
+    toggleModal(idMedium, false);
+  };
+  const handlebtnM2 = () => {
+    toggleModal(idMedium, false);
+  };
+  const handlebtnM3 = () => {
+    toggleModal(idMedium2, false);
+  };
 </script>
 
-<div class="block space-y-4 md:flex md:space-y-0 md:space-x-4">
-  <!-- Modal toggle -->
-  <button
-    on:click={openMediumModal}
-    class="block text-white bg-{btnMColor}-700 hover:bg-{btnMColor}-800 focus:ring-4 focus:ring-{btnMColor}-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-{btnMColor}-600 dark:hover:bg-{btnMColor}-700 dark:focus:ring-{btnMColor}-800"
-    type="button"
-    data-modal-toggle="medium-modal"
-  >
-    {btnMName}
-  </button>
+<div class="block p-8 space-y-4 md:flex md:space-y-0 md:space-x-4">
+  <ModalButton id={idBasic} btnName={btnBasicName} />
+  <ModalButton id={idMedium} btnName={btnMName} {btnColor} />
+  <ModalButton id={idMedium2} btnName={btnName2} btnColor={btnColor2} />
 </div>
 
 <div class="p-6">
+  <MediumModal id={idBasic} title={"Basic Modal Title"}>
+    <p
+      class="text-base leading-relaxed text-{textMColor}-500 dark:text-{textMColor}-400"
+    >
+      Basic Modal Content
+    </p>
+  </MediumModal>
+
   <MediumModal
-    btnMColor={"indigo"}
+    id={idMedium}
+    btnColor={"yellow"}
+    title={"Medium Modal Title"}
+    btn1="Yes"
+    btn2="No"
+    on:handlebtnM1={handlebtnM1}
+    on:handlebtnM2={handlebtnM2}
+  >
+    <p
+      class="text-base leading-relaxed text-{textMColor}-500 dark:text-{textMColor}-400"
+    >
+      Modal 2
+    </p>
+  </MediumModal>
+
+  <MediumModal
+    id={idMedium2}
+    btnColor={"indigo"}
     title={"Default Modal Title"}
     btn1="Yes"
     btn2=""
+    on:handlebtnM1={handlebtnM3}
   >
     <p
       class="text-base leading-relaxed text-{textMColor}-500 dark:text-{textMColor}-400"
