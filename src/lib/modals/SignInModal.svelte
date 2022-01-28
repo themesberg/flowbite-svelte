@@ -1,7 +1,7 @@
 <script>
-  import { createEventDispatcher } from "svelte";
+  // import { createEventDispatcher } from "svelte";
 
-  const dispatch = createEventDispatcher();
+  // const dispatch = createEventDispatcher();
   export let id = "signin-modal";
   export let btnSignInColor = "blue";
   export let textSignInColor = "gray";
@@ -13,18 +13,6 @@
 
   const closeSingInModal = () => {
     toggleModal(id, false);
-  };
-
-  const handlelostPassword = () => {
-    dispatch("handleLostPassword");
-  };
-
-  const handleLogin = () => {
-    dispatch("handleLogin");
-  };
-
-  const handleRegister = () => {
-    dispatch("handleRegister");
   };
 </script>
 
@@ -121,14 +109,18 @@
             <a
               href={lostPasswordLink}
               class="text-sm text-{btnSignInColor}-700 hover:underline dark:text-{btnSignInColor}-500"
-              on:click={handlelostPassword}>Lost Password?</a
+              ><button
+                type="button"
+                data-modal-toggle={id}
+                on:click={closeSingInModal}>Lost Password?</button
+              ></a
             >
           {/if}
         </div>
         <button
           type="submit"
           class="w-full text-white bg-{btnSignInColor}-700 hover:bg-{btnSignInColor}-800 focus:ring-4 focus:ring-{btnSignInColor}-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-{btnSignInColor}-600 dark:hover:bg-{btnSignInColor}-700 dark:focus:ring-{btnSignInColor}-800"
-          on:click={handleLogin}>Login to your account</button
+          on:click={closeSingInModal}>Login to your account</button
         >
         {#if signUpLink}
           <div
@@ -137,7 +129,11 @@
             Not registered? <a
               href={signUpLink}
               class="text-{btnSignInColor}-700 hover:underline dark:text-{btnSignInColor}-500"
-              on:click={handleRegister}>Create account</a
+              ><button
+                type="button"
+                data-modal-toggle={id}
+                on:click={closeSingInModal}>Create account</button
+              ></a
             >
           </div>
         {/if}

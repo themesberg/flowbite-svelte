@@ -84,30 +84,6 @@
     alert("handlebtnExL2 is clicked from a parent page.");
     toggleModal(extraLargeModalId, false);
   };
-
-  // SignIn Modal
-  let signinId = "signin-modal";
-  let btnSignInName = "Sign In Modal";
-  let btnSignInColor = "purple";
-  let titleSignIn = "Sign in to our platform";
-  let lostPasswordLink = "/auth/lost-password";
-  let signUpLink = "/auth/signup";
-  let formLink = "/auth/login";
-
-  const handleLostPassword = () => {
-    alert("LostPassword is clicked from a parent page.");
-    toggleModal(signinId, false);
-  };
-
-  const handleLogin = () => {
-    alert("Login is clicked from a parent page.");
-    toggleModal(signinId, false);
-  };
-
-  const handleRegister = () => {
-    alert("Register is clicked from a parent page.");
-    toggleModal(signinId, false);
-  };
 </script>
 
 <div class="block p-8 space-y-4 md:flex md:space-y-0 md:space-x-4">
