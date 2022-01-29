@@ -24,7 +24,12 @@
     <span slot="content">InfoAlert without View more and Dismiss button.</span>
   </InfoAlert>
 
-  <InfoAlert alertId="info-alert-2" color="gray" closeBtn="true" infoLink="/">
+  <InfoAlert
+    alertId="info-alert-2"
+    color="gray"
+    closeBtn="true"
+    infoLink="/dummy-pages/about"
+  >
     <span slot="header">Info header 2</span>
     <span slot="content">InfoAlert with View more and Dismiss button.</span>
   </InfoAlert>

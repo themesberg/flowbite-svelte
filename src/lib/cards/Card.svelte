@@ -1,10 +1,9 @@
 <script>
   export let link;
   export let img;
+  export let btnName = "Read more";
   export let header =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-  export let content =
-    "Proin efficitur purus felis, nec ornare felis ultricies sed. Etiam quis ante sem. Duis non felis quis velit finibus tempor in ac magna.";
 </script>
 
 <div
@@ -33,14 +32,14 @@
     {/if}
 
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-      {content}
+      <slot />
     </p>
     {#if link}
       <a
         href={link}
         class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
       >
-        Read more
+        {btnName}
         <svg
           class="ml-2 -mr-1 w-4 h-4"
           fill="currentColor"

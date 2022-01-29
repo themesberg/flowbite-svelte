@@ -9,7 +9,7 @@
   }
 </script>
 
-<div class="block space-y-4 md:flex md:space-y-0 md:space-x-4">
+<div class="block p-8 space-y-4 md:flex md:space-y-0 md:space-x-4">
   <!-- Modal toggle -->
   <button
     on:click={openExtraLargeModal}

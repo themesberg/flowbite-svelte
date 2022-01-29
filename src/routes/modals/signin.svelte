@@ -16,7 +16,7 @@
   />
 </div>
 
-<div class="p-6">
+<div class="p-8">
   <SignInModal
     id={signinId}
     btnSignInColor={"pink"}

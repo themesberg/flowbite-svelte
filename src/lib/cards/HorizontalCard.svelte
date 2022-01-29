@@ -3,8 +3,6 @@
   export let img;
   export let header =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-  export let content =
-    "Proin efficitur purus felis, nec ornare felis ultricies sed. Etiam quis ante sem. Duis non felis quis velit finibus tempor in ac magna.";
 </script>
 
 <a
@@ -16,12 +14,14 @@
     src={img}
     alt=""
   />
-  <div class="flex flex-col justify-between p-4 leading-normal">
+  <div class="p-4 leading-normal">
     <h5
       class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
     >
       {header}
     </h5>
-    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{content}</p>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+      <slot />
+    </p>
   </div>
 </a>

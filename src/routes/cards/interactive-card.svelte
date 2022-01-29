@@ -2,15 +2,15 @@
   import { InteractiveCard } from "$lib/index";
   let dropdownLinks = [
     {
-      href: "#",
+      href: "/#",
       name: "Edit",
     },
     {
-      href: "#",
+      href: "/#",
       name: "About",
     },
     {
-      href: "#",
+      href: "/#",
       name: "Profile",
     },
   ];
@@ -20,8 +20,8 @@
   };
   let header = "Lorem ipsum";
   let content = "Proin efficitur purus felis.";
-  let link1 = { href: "link1", title: "Action 1" };
-  let link2 = { href: "link2", title: "Action 2" };
+  let link1 = { href: "/dummy-pages/profile", title: "Profile" };
+  let link2 = { href: "/dummy-pages/about", title: "About" };
 </script>
 
 <div class="container mx-auto p-8">
@@ -29,9 +29,9 @@
 </div>
 
 <div class="container mx-auto p-8">
-  <InteractiveCard {dropdownLinks} {img} {header} {content} link1="" {link2} />
+  <InteractiveCard {dropdownLinks} {img} {header} {content} {link2} />
 </div>
 
 <div class="container mx-auto p-8">
-  <InteractiveCard {dropdownLinks} {img} {header} {content} link1="" link2="" />
+  <InteractiveCard {dropdownLinks} {img} {header} {content} />
 </div>

@@ -30,7 +30,7 @@
 ## Installation
 
 ```sh
-npm install @codewithshin/svelte-flow
+npm install @codewithshin/svelte-flow@latest
 ```
 
 ## Alert components example

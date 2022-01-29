@@ -1,5 +1,6 @@
 <script>
   import { SmallModal, ModalButton } from "$lib/index";
+  import { goto } from "$app/navigation";
 
   // common
   const textSColor = "gray";
@@ -15,6 +16,7 @@
 
   const handlebtnS1 = () => {
     toggleModal(id1, false);
+    goto("/dummy-pages/about");
   };
 
   const handlebtnS2 = () => {
@@ -56,7 +58,7 @@
   id={id1}
   btnColor={"pink"}
   title={"Small Modal Title"}
-  btn1="Yes"
+  btn1="View"
   btn2="No"
   on:handlebtnS1={handlebtnS1}
   on:handlebtnS2={handlebtnS2}

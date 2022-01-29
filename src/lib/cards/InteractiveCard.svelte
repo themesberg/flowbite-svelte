@@ -19,8 +19,8 @@
   };
   export let header = "Lorem ipsum";
   export let content = "Proin efficitur purus felis.";
-  export let link1 = { href: "link1", title: "Action 1" };
-  export let link2 = { href: "link2", title: "Action 2" };
+  export let link1 = { href: "", title: "" };
+  export let link2 = { href: "", title: "" };
 </script>
 
 <div
@@ -73,14 +73,14 @@
     </h3>
     <span class="text-sm text-gray-500 dark:text-gray-400">{content}</span>
     <div class="flex mt-4 space-x-3 lg:mt-6">
-      {#if link1}
+      {#if link1.href}
         <a
           href={link1.href}
           class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >{link1.title}</a
         >
       {/if}
-      {#if link2}
+      {#if link2.href}
         <a
           href={link2.href}
           class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-gray-900 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-blue-300 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-800"

@@ -1,9 +1,13 @@
 <script>
+  import { goto } from "$app/navigation";
   // use blue (default), red, green, yellow, and gray
   export let color = "blue";
   export let alertId = "alert-additional-content-1";
   export let infoLink = false;
   export let closeBtn = false;
+  let handleViewMore = () => {
+    goto(infoLink);
+  };
 </script>
 
 <div
@@ -24,21 +28,18 @@
       /></svg
     >
     <h3 class="text-lg font-medium text-{color}-700 dark:text-{color}-800">
-      <slot name="header">This is a info alert</slot>
+      <slot name="header">No header was provided</slot>
     </h3>
   </div>
   <div class="mt-2 mb-4 text-sm text-{color}-700 dark:text-{color}-800">
-    <slot name="content">
-      More info about this info alert goes here. This example text is going to
-      run a bit longer so that you can see how spacing within an alert works
-      with this kind of content.
-    </slot>
+    <slot name="content">No content was provided.</slot>
   </div>
   <div class="flex">
     {#if infoLink}
       <button
         type="button"
         class="text-white bg-{color}-700 hover:bg-{color}-800 focus:ring-4 focus:ring-{color}-300 font-medium rounded-lg text-xs px-3 py-1.5 mr-2 text-center inline-flex items-center dark:bg-{color}-800 dark:hover:bg-{color}-900"
+        on:click={handleViewMore}
       >
         <svg
           class="-ml-0.5 mr-2 h-4 w-4"
@@ -51,7 +52,7 @@
             clip-rule="evenodd"
           /></svg
         >
-        <slot name="viewMore"><a href={infoLink}>View more</a></slot>
+        View more
       </button>
     {/if}
     {#if closeBtn}

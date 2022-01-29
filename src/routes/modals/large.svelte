@@ -11,7 +11,7 @@
   <ModalButton {id} {btnName} {btnColor} />
 </div>
 
-<div class="p-6">
+<div class="p-8">
   <LargeModal {id} btnLColor={"red"} title={"Large Modal Title"}>
     <p
       class="text-base leading-relaxed text-{textLColor}-500 dark:text-{textLColor}-400"
