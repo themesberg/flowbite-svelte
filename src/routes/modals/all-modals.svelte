@@ -11,10 +11,9 @@
   // small
   let smallModalId = "small-modal";
   let btnSName = "Small Modal";
-  let btnSColor = "gray";
 
   let titleS = "Small Modal Title";
-  let textSColor = "red";
+  let textSColor = "gray";
   let btnS1 = "I accept";
   let btnS2 = "Decline";
 
@@ -71,7 +70,7 @@
   let btnExLName = "Extra Large Modal";
   let btnExLColor = "green";
   let textExLColor = "blue";
-  let titleExL = "Terms of Service";
+  let titleExL = "Exttra Large Modal";
   let btnExL1 = "I accept";
   let btnExL2 = "Decline";
 
@@ -84,11 +83,20 @@
     alert("handlebtnExL2 is clicked from a parent page.");
     toggleModal(extraLargeModalId, false);
   };
+
+  // SignIn Modal
+  let signinId = "signin-modal";
+  let btnSignInName = "Sign In Modal";
+  let btnSignInColor = "purple";
+  let titleSignIn = "Sign in to our platform";
+  let lostPasswordLink = "/auth/lost-password";
+  let signUpLink = "/auth/signup";
+  let formLink = "/auth/login";
 </script>
 
-<div class="block p-8 space-y-4 md:flex md:space-y-0 md:space-x-4">
+<div class="container mx-auto p-8 space-y-4 md:flex md:space-y-0 md:space-x-4">
   <!-- Small Modal Button -->
-  <ModalButton id={smallModalId} btnName={btnSName} btnColor={btnSColor} />
+  <ModalButton id={smallModalId} btnName={btnSName} />
 
   <!-- Medium Modal Button -->
   <ModalButton id={mediumModalId} btnName={btnMName} btnColor={btnMColor} />
@@ -102,10 +110,16 @@
     btnName={btnExLName}
     btnColor={btnExLColor}
   />
+
+  <!-- SignInModal Button -->
+  <ModalButton
+    id={signinId}
+    btnName={btnSignInName}
+    btnColor={btnSignInColor}
+  />
 </div>
 
 <SmallModal
-  btnColor={btnSColor}
   title={titleS}
   btn1={btnS1}
   btn2={btnS2}
@@ -174,3 +188,11 @@
     quis nostrud exercitation ullamco.
   </p>
 </ExtraLargeModal>
+
+<SignInModal
+  {btnSignInColor}
+  {titleSignIn}
+  {lostPasswordLink}
+  {signUpLink}
+  {formLink}
+/>

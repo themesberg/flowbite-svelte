@@ -8,7 +8,7 @@
 
 <div class="container mx-auto p-8">
   <Card
-    img="images/image-1.jpeg"
+    img="/images/image-1.jpeg"
     header="Card with link and image"
     content="Your content."
     link="/"
