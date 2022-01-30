@@ -108,6 +108,7 @@
           {#if lostPasswordLink}
             <a
               href={lostPasswordLink}
+              rel="external"
               class="text-sm text-{btnSignInColor}-700 hover:underline dark:text-{btnSignInColor}-500"
               ><button
                 type="button"
@@ -128,6 +129,7 @@
           >
             Not registered? <a
               href={signUpLink}
+              rel="external"
               class="text-{btnSignInColor}-700 hover:underline dark:text-{btnSignInColor}-500"
               ><button
                 type="button"

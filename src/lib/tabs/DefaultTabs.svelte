@@ -28,6 +28,7 @@
     <li class="mr-2">
       <a
         href={link}
+        rel="external"
         aria-current="page"
         class={active
           ? "inline-block py-4 px-4 text-sm font-medium text-center text-blue-600 bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-blue-500"

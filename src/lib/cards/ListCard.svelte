@@ -44,6 +44,7 @@
     </h3>
     <a
       href={action.link}
+      rel="external"
       class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500"
     >
       {action.title}

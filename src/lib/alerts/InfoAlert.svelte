@@ -1,13 +1,9 @@
 <script>
-  import { goto } from "$app/navigation";
   // use blue (default), red, green, yellow, and gray
   export let color = "blue";
   export let alertId = "alert-additional-content-1";
   export let infoLink = false;
   export let closeBtn = false;
-  let handleViewMore = () => {
-    goto(infoLink);
-  };
 </script>
 
 <div
@@ -39,7 +35,6 @@
       <button
         type="button"
         class="text-white bg-{color}-700 hover:bg-{color}-800 focus:ring-4 focus:ring-{color}-300 font-medium rounded-lg text-xs px-3 py-1.5 mr-2 text-center inline-flex items-center dark:bg-{color}-800 dark:hover:bg-{color}-900"
-        on:click={handleViewMore}
       >
         <svg
           class="-ml-0.5 mr-2 h-4 w-4"
@@ -52,7 +47,7 @@
             clip-rule="evenodd"
           /></svg
         >
-        View more
+        <a href={infoLink} rel="external">View more</a>
       </button>
     {/if}
     {#if closeBtn}

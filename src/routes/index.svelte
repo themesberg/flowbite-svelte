@@ -8,7 +8,8 @@
     },
     {
       title: "Alerts",
-      link: "/alert",
+      link: "/alerts",
+      external: true,
     },
     {
       title: "Cards",
