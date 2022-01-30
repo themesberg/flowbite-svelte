@@ -121,18 +121,15 @@
 
 <SmallModal
   title={titleS}
+  textColor={textSColor}
   btn1={btnS1}
   btn2={btnS2}
   on:handlebtnS1={handlebtnS1}
   on:handlebtnS2={handlebtnS2}
 >
-  <p
-    class="text-base leading-relaxed text-{textSColor}-500 dark:text-{textSColor}-400"
-  >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco.
-  </p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+  nostrud exercitation ullamco.
 </SmallModal>
 
 <MediumModal
@@ -144,13 +141,9 @@
   on:handlebtnM1={handlebtnM1}
   on:handlebtnM2={handlebtnM2}
 >
-  <p
-    class="text-base leading-relaxed text-{textMColor}-500 dark:text-{textMColor}-400"
-  >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco.
-  </p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+  nostrud exercitation ullamco.
 </MediumModal>
 
 <LargeModal
@@ -162,13 +155,9 @@
   on:handlebtnL1={handlebtnL1}
   on:handlebtnL2={handlebtnL2}
 >
-  <p
-    class="text-base leading-relaxed text-{textLColor}-500 dark:text-{textLColor}-400"
-  >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco.
-  </p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+  nostrud exercitation ullamco.
 </LargeModal>
 
 <ExtraLargeModal
@@ -180,13 +169,9 @@
   on:handlebtnExL1={handlebtnExL1}
   on:handlebtnExL2={handlebtnExL2}
 >
-  <p
-    class="text-base leading-relaxed text-{textExLColor}-500 dark:text-{textExLColor}-400"
-  >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco.
-  </p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+  nostrud exercitation ullamco.
 </ExtraLargeModal>
 
 <SignInModal

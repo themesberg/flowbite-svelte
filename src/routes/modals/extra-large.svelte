@@ -28,13 +28,8 @@
     btnExL1="Yes"
     btnExL2="No"
   >
-    <h1>Hello</h1>
-    <p
-      class="text-base leading-relaxed text-{textExLColor}-500 dark:text-{textExLColor}-400"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco.
-    </p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco.
   </ExtraLargeModal>
 </div>

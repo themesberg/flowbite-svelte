@@ -21,7 +21,7 @@
 
   <InfoAlert>
     <span slot="header">Info header 1</span>
-    <span slot="content">InfoAlert without View more and Dismiss button.</span>
+    InfoAlert without View more and Dismiss button.
   </InfoAlert>
 
   <InfoAlert
@@ -31,6 +31,6 @@
     infoLink="/dummy-pages/about"
   >
     <span slot="header">Info header 2</span>
-    <span slot="content">InfoAlert with View more and Dismiss button.</span>
+    InfoAlert with View more and Dismiss button.
   </InfoAlert>
 </div>

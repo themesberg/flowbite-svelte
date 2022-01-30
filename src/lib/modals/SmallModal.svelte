@@ -61,7 +61,11 @@
       </div>
       <!-- Modal body -->
       <div class="p-6 space-y-6">
-        <slot />
+        <p
+          class="text-base leading-relaxed text-{textColor}-500 dark:text-{textColor}-400"
+        >
+          <slot />
+        </p>
       </div>
       <!-- Modal footer -->
       <div

@@ -32,7 +32,7 @@
     </h3>
   </div>
   <div class="mt-2 mb-4 text-sm text-{color}-700 dark:text-{color}-800">
-    <slot name="content">No content was provided.</slot>
+    <slot>No content was provided.</slot>
   </div>
   <div class="flex">
     {#if infoLink}

@@ -3,7 +3,7 @@
   import { goto } from "$app/navigation";
 
   // common
-  const textSColor = "gray";
+  const textSColor = "blue";
 
   // for basic
   const idBasic = "basic-modal";
@@ -47,11 +47,7 @@
 </div>
 
 <SmallModal id={idBasic} title={"Basic Modal Title"}>
-  <p
-    class="text-base leading-relaxed text-{textSColor}-500 dark:text-{textSColor}-400"
-  >
-    Basic Modal Content
-  </p>
+  Basic Modal Content
 </SmallModal>
 
 <SmallModal
@@ -63,17 +59,14 @@
   on:handlebtnS1={handlebtnS1}
   on:handlebtnS2={handlebtnS2}
 >
-  <p
-    class="text-base leading-relaxed text-{textSColor}-500 dark:text-{textSColor}-400"
-  >
-    Modal 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  </p>
+  Modal 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+  eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </SmallModal>
 
 <SmallModal
   id={id2}
   btnColor={"yellow"}
+  textColor={textSColor}
   title={"Small Modal Title"}
   btn1="Yes"
   btn2="No"
