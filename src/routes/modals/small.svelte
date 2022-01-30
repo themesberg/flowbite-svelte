@@ -56,8 +56,8 @@
   title={"Small Modal Title"}
   btn1="View"
   btn2="No"
-  on:handlebtnS1={handlebtnS1}
-  on:handlebtnS2={handlebtnS2}
+  on:handlebtn1={handlebtnS1}
+  on:handlebtn2={handlebtnS2}
 >
   Modal 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
   eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -70,13 +70,9 @@
   title={"Small Modal Title"}
   btn1="Yes"
   btn2="No"
-  on:handlebtnS1={handlebtnS3}
-  on:handlebtnS2={handlebtnS4}
+  on:handlebtn1={handlebtnS3}
+  on:handlebtn2={handlebtnS4}
 >
-  <p
-    class="text-base leading-relaxed text-{textSColor}-500 dark:text-{textSColor}-400"
-  >
-    Modal 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  </p>
+  Modal 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+  eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </SmallModal>

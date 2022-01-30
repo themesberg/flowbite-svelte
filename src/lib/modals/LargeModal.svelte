@@ -15,11 +15,11 @@
   };
 
   const handlebtn1 = () => {
-    dispatch("handlebtnL1");
+    dispatch("handlebtn1");
   };
 
   const handlebtn2 = () => {
-    dispatch("handlebtnL2");
+    dispatch("handlebtn2");
   };
 </script>
 

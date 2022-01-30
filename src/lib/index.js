@@ -20,6 +20,8 @@ import ListCard from './cards/ListCard.svelte'
 import CtaCard from './cards/CtaCard.svelte'
 import EcommerceCard from './cards/EcommerceCard.svelte'
 
+import List from './list-group/List.svelte'
+
 // Tabs
 import InteractiveTabs from './tabs/InteractiveTabs.svelte'
 import DefaultTabs from './tabs/DefaultTabs.svelte'
@@ -44,6 +46,8 @@ export {
   ListCard,
   CtaCard,
   EcommerceCard,
+  // list
+  List,
   // Tabs
   InteractiveTabs,
   DefaultTabs,

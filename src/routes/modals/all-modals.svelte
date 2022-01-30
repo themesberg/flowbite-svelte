@@ -124,8 +124,8 @@
   textColor={textSColor}
   btn1={btnS1}
   btn2={btnS2}
-  on:handlebtnS1={handlebtnS1}
-  on:handlebtnS2={handlebtnS2}
+  on:handlebtn1={handlebtnS1}
+  on:handlebtn2={handlebtnS2}
 >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -138,8 +138,8 @@
   title={titleM}
   btn1={btnM1}
   btn2={btnM2}
-  on:handlebtnM1={handlebtnM1}
-  on:handlebtnM2={handlebtnM2}
+  on:handlebtn1={handlebtnM1}
+  on:handlebtn2={handlebtnM2}
 >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -152,8 +152,8 @@
   title={titleL}
   btn1={btnL1}
   btn2={btnL2}
-  on:handlebtnL1={handlebtnL1}
-  on:handlebtnL2={handlebtnL2}
+  on:handlebtn1={handlebtnL1}
+  on:handlebtn2={handlebtnL2}
 >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -166,8 +166,8 @@
   title={titleExL}
   btn1={btnExL1}
   btn2={btnExL2}
-  on:handlebtnExL1={handlebtnExL1}
-  on:handlebtnExL2={handlebtnExL2}
+  on:handlebtn1={handlebtnExL1}
+  on:handlebtn2={handlebtnExL2}
 >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
