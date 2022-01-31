@@ -3,7 +3,7 @@
 </script>
 
 <div class="mx-auto p-8">
-  <Navbar />
+  <Navbar textsize="lg" />
   <div class="mt-4">
     <slot />
   </div>
