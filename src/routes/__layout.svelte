@@ -1,2 +1,6 @@
-<h1 class="text-4xl">Svelte-flow</h1>
+<script>
+  import { Navbar } from "$lib/index";
+</script>
+
+<Navbar />
 <slot />
