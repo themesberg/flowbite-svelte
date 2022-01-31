@@ -1,37 +1,40 @@
 <script>
-  import { List } from "$lib/index";
-
-  let lists = [
-    {
-      title: "All Modals",
-      link: "/modals/all-modals",
-    },
-    {
-      title: "Small Modal",
-      link: "/modals/small",
-    },
-
-    {
-      title: "Medium Modal",
-      link: "/modals/medium",
-    },
-    {
-      title: "Large Modal",
-      link: "/modals/large",
-    },
-    {
-      title: "Extra-large Modal",
-      link: "/modals/extra-large",
-    },
-    {
-      title: "Signin Modal",
-      link: "/modals/signin",
-    },
-  ];
+  import { Card } from "$lib/index";
 </script>
 
-<div class="container mx-auto p-8">
-  <h1 class="text-4xl">MODALS</h1>
-
-  <List {lists} />
+<div class="flex flex-row mt-8">
+  <div class="p-4">
+    <Card
+      img="/images/modals.png"
+      header="All Modals"
+      link="/modals/all-modals"
+    />
+  </div>
+  <div class="p-4">
+    <Card img="/images/modals.png" header="Small Modals" link="/modals/small" />
+  </div>
+  <div class="p-4">
+    <Card
+      img="/images/modals.png"
+      header="Medium Modals"
+      link="/modals/medium"
+    />
+  </div>
+  <div class="p-4">
+    <Card img="/images/modals.png" header="Large Modals" link="/modals/large" />
+  </div>
+  <div class="p-4">
+    <Card
+      img="/images/modals.png"
+      header="Extra-large Modals"
+      link="/modals/extra-large"
+    />
+  </div>
+  <div class="p-4">
+    <Card
+      img="/images/modals.png"
+      header="Signin Modals"
+      link="/modals/signin"
+    />
+  </div>
 </div>

@@ -1,8 +1,10 @@
 <script>
   import { Navbar } from "$lib/index";
-  let logoSrc = "/images/mkdir-logo.png";
-  let sitename = "Svelte Flow";
 </script>
 
-<Navbar {logoSrc} {sitename} />
-<slot />
+<div class="mx-auto p-8">
+  <Navbar />
+  <div class="mt-4">
+    <slot />
+  </div>
+</div>

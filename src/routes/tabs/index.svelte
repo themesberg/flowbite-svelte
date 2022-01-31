@@ -1,40 +1,30 @@
 <script>
-  import { List } from "$lib/index";
-
-  let lists = [
-    {
-      title: "Default Tabs",
-      link: "/tabs/default-tabs",
-      external: true,
-    },
-    {
-      title: "Interactive Tabs",
-      link: "/tabs/interactive-tabs",
-      external: true,
-    },
-    {
-      title: "Multiple interactive",
-      link: "/tabs/multiple-interactive-tabs",
-      external: true,
-    },
-    {
-      title: "Pill Tabs",
-      link: "/tabs/pilltabs",
-      external: true,
-    },
-  ];
+  import { Card } from "$lib/index";
 </script>
 
-<div class="container mx-auto p-8">
-  <List {lists} />
-  <ul>
-    <li>
-      <a href="/tabs/interactive-tabs" rel="external">Interactive tabs</a>
-    </li>
-    <li>
-      <a href="/tabs/multiple-interactive-tabs" rel="external"
-        >Multiple Interactive Tabs</a
-      >
-    </li>
-  </ul>
+<div class="flex flex-row mt-8">
+  <div class="p-4">
+    <Card
+      img="/images/modals.png"
+      header="Default Tabs"
+      link="/tabs/default-tabs"
+    />
+  </div>
+  <div class="p-4">
+    <Card
+      img="/images/modals.png"
+      header="Interactive Tabs"
+      link="/tabs/interactive-tabs"
+    />
+  </div>
+  <div class="p-4">
+    <Card
+      img="/images/modals.png"
+      header="Multiple Interactive Tabs"
+      link="/tabs/multiple-interactive-tabs"
+    />
+  </div>
+  <div class="p-4">
+    <Card img="/images/modals.png" header="Pill Tabs" link="/tabs/pilltabs" />
+  </div>
 </div>
