@@ -1,6 +1,6 @@
 {
   "name": "@codewithshin/svelte-flow",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Svelte +  Flowbite/TailwindCSS  components",
   "author": {
     "name": "Shinichi Okada",
@@ -26,13 +26,15 @@
   "keywords": [
     "svelte",
     "sveltekit",
-    "modal",
-    "alert",
     "tailwindcss",
     "flowbite",
     "ui",
-    "tab",
-    "card"
+		"alert",
+		"buttons",
+    "modals",
+    "cards",
+		"navbar",
+		"tabs"
   ],
   "repository": {
     "type": "git",
