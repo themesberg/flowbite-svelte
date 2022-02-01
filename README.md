@@ -1,33 +1,51 @@
-# Svelte-flowbite
+# SVELTE-FLOW
 
+## ALERTS
 
+## BUTTONS
 
-## Cards
+## CARDS
 
-- Card
-- CtaCard
-- EcommerceCard
-- HorizontalCard
-- InteractiveCard
-- ListCard
-- SignInCard
+Card, CtaCard, EcommerceCard, HorizontalCard, InteractiveCard, ListCard,  SignInCard
+
+## LIST-GROUP
 
 ## Modal
 
-- ExtraLargeModal
-- LargeModal
-- MediumModal
-- ModalButton
-- SignInModal
-- SmallModal
+ExtraLargeModal, LargeModal, MediumModal, ModalButton, SignInModal, SmallModal
 
-## Tabs
+## NAVBAR
 
-- DefaultTabs
-- InteractiveTabs
-- PillTabs
+## TABS
+
+DefaultTabs, InteractiveTabs, PillTabs
 
 ## Installation
+
+Install Flowbite to SvelteKit:
+
+In `src/app.html`:
+
+```sh
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <link rel="icon" href="%svelte.assets%/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://unpkg.com/@themesberg/flowbite@1.3.0/dist/flowbite.min.css" />
+  %svelte.head%
+  </head>
+  <body>
+    <div id="svelte">%svelte.body%</div>
+    
+    <script src="https://unpkg.com/@themesberg/flowbite@1.3.0/dist/flowbite.bundle.js"></script>
+  </body>
+</html>
+```
+
+### Installing Svelte-flow
 
 ```sh
 npm install @codewithshin/svelte-flow@latest
