@@ -2,7 +2,8 @@
   export let rounded = false;
   // xs, sm, base
   export let size = "sm";
-  export let name = "Default";
+  export let name = "Read more";
+  //
   export let type = "blue";
   let paddings;
   if (size === "xs") {

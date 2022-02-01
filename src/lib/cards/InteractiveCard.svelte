@@ -19,6 +19,7 @@
   };
   export let header = "Lorem ipsum";
   export let content = "Proin efficitur purus felis.";
+  export let btnColor1 = "blue";
   export let link1 = { href: "", title: "" };
   export let link2 = { href: "", title: "" };
 </script>
@@ -78,7 +79,7 @@
         <a
           href={link1.href}
           rel="external"
-          class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-{btnColor1}-700 rounded-lg hover:bg-{btnColor1}-800 focus:ring-4 focus:ring-{btnColor1}-300 dark:bg-{btnColor1}-600 dark:hover:bg-{btnColor1}-700 dark:focus:ring-{btnColor1}-800"
           >{link1.title}</a
         >
       {/if}

@@ -4,6 +4,7 @@
     alt: "product image",
   };
   export let link = "/#";
+  export let btnColor = "blue";
   export let title =
     "Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport";
   export let stars = "5.0";
@@ -37,7 +38,7 @@
         >
       {/each}
       <span
-        class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3"
+        class="bg-{btnColor}-100 text-{btnColor}-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-{btnColor}-200 dark:text-{btnColor}-800 ml-3"
         >{stars}</span
       >
     </div>
@@ -48,7 +49,7 @@
       <a
         href={link}
         rel="external"
-        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        class="text-white bg-{btnColor}-700 hover:bg-{btnColor}-800 focus:ring-4 focus:ring-{btnColor}-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-{btnColor}-600 dark:hover:bg-{btnColor}-700 dark:focus:ring-{btnColor}-800"
         >Add to cart</a
       >
     </div>

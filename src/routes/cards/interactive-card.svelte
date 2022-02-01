@@ -24,14 +24,48 @@
   let link2 = { href: "/dummy-pages/about", title: "About" };
 </script>
 
-<div class="container mx-auto p-8">
-  <InteractiveCard {dropdownLinks} {img} {header} {content} {link1} {link2} />
+<div class="flex flex-wrap mx-auto p-8">
+  <div class="flex-auto p-4">
+    <InteractiveCard {dropdownLinks} {img} {header} {content} {link1} {link2} />
+  </div>
+  <div class="flex-auto p-4">
+    <InteractiveCard
+      {dropdownLinks}
+      {img}
+      {header}
+      {content}
+      {link1}
+      {link2}
+      btnColor1="purple"
+    />
+  </div>
+  <div class="flex-auto p-4">
+    <InteractiveCard
+      {dropdownLinks}
+      {img}
+      {header}
+      {content}
+      {link1}
+      {link2}
+      btnColor1="green"
+    />
+  </div>
+  <div class="flex-auto p-4">
+    <InteractiveCard
+      {dropdownLinks}
+      {img}
+      {header}
+      {content}
+      {link1}
+      btnColor1="red"
+    />
+  </div>
 </div>
-
-<div class="container mx-auto p-8">
-  <InteractiveCard {dropdownLinks} {img} {header} {content} {link2} />
-</div>
-
-<div class="container mx-auto p-8">
-  <InteractiveCard {dropdownLinks} {img} {header} {content} />
+<div class="flex flex-wrap mx-auto p-8">
+  <div class="flex-auto p-4">
+    <InteractiveCard {dropdownLinks} {img} {header} {content} {link2} />
+  </div>
+  <div class="flex-auto p-4">
+    <InteractiveCard {dropdownLinks} {img} {header} {content} />
+  </div>
 </div>

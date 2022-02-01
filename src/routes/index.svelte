@@ -2,7 +2,7 @@
   import { Card } from "$lib/index";
 </script>
 
-<div class="container flex flex-row flex-auto mt-8">
+<div class="container flex flex-wrap mt-8">
   <div class="p-4">
     <Card img="/images/alerts.png" header="ALERTS" link="/alerts" />
   </div>
