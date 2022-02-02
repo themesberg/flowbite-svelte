@@ -1,5 +1,9 @@
 <script>
   import { page } from "$app/stores";
+  // let link = "card";
+  // let name = $page.url.pathname.includes(link) ? "yes" : "no";
+  // console.log("name", name);
+
   export let sitename = "Svelte Flow";
   export let logo = "/images/mkdir-logo.png";
   export let textsize = "sm";
@@ -88,7 +92,7 @@
         {#each menus as { name, link }}
           <li>
             <a
-              class:active={$page.url.pathname === link}
+              class:active={$page.url.pathname.includes(link)}
               href={link}
               rel="external"
               class="block py-2 pr-4 pl-3  text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent text-{textsize}"

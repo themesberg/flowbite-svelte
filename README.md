@@ -215,7 +215,14 @@ To be finished
 
 ## Navbar component
 
-Overwrite the class `active` for active menu item. The default value is `#ff0066`.
+The default value for the active menu item is `#ff0066`.
+To overwrite the class `active` for active menu item, add the following to `src/app.css`:
+
+```css
+#mobile-menu .active{
+    color: #36ec7c;
+}
+```
 
 ### Props and their default values
 

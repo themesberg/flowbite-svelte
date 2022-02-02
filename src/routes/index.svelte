@@ -47,7 +47,7 @@
   </div>
 </div>
 
-<div class="container flex flex-wrap mx-auto mt-2">
+<div class="container flex flex-wrap mx-auto mt-2 justify-center">
   <div class="p-4">
     <Card
       img="/images/alerts.png"
