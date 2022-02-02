@@ -14,7 +14,7 @@ npx svelte-add@latest tailwindcss
 Install Flowbite:
 
 ```sh
-npm i @themesberg/flowbite
+npm i flowbite
 ```
 
 Add the following to the __layout.svelte:
@@ -22,7 +22,7 @@ Add the following to the __layout.svelte:
 ```html
 <script>
   import "../app.css";
-  import "@themesberg/flowbite/dist/flowbite.css";
+  import "flowbite/dist/flowbite.css";
 </script>
 <div class="mx-auto p-2">
   <slot />
@@ -45,7 +45,7 @@ In `src/app.html`:
   <body>
     <div id="svelte">%svelte.body%</div>
     
-    <script src="https://unpkg.com/@themesberg/flowbite@1.3.0/dist/flowbite.bundle.js"></script>
+    <script src="/node_modules/flowbite/dist/flowbite.js"></script>
   </body>
 </html>
 ```
