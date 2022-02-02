@@ -50,6 +50,12 @@ In `src/app.html`:
 </html>
 ```
 
+Install `svelte-flow`:
+
+```sh
+npm i -D svelte-flow
+```
+
 ## Alert components
 
 There are three components you can use: `Alert`, `BorderAlert`, and `InfoAlert`. 
@@ -220,7 +226,7 @@ To overwrite the class `active` for active menu item, add the following to `src/
 
 ```css
 #mobile-menu .active{
-    color: #36ec7c;
+  color: #3490fa !important;
 }
 ```
 

@@ -3,6 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-#mobile-menu .active{
-    color: #36ec7c;
+
+#mobile-menu .active {
+  color: #3490fa !important;
 }
