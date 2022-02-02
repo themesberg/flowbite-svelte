@@ -1,6 +1,6 @@
 <script>
   import "../app.css";
-  import "@themesberg/flowbite/dist/flowbite.css";
+  import "flowbite/dist/flowbite.css";
   import { Navbar } from "$lib/index";
 </script>
 
