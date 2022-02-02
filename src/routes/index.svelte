@@ -2,7 +2,7 @@
   import { Card } from "$lib/index";
 </script>
 
-<div class="relative bg-white overflow-hidden mt-8">
+<div class="relative bg-white overflow-hidden mt-8 mx-auto">
   <div class="max-w-7xl mx-auto ">
     <div
       class="relative z-10 pb-8 bg-transparent sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32"
@@ -47,7 +47,7 @@
   </div>
 </div>
 
-<div class="container flex flex-wrap mt-2">
+<div class="container flex flex-wrap mx-auto mt-2">
   <div class="p-4">
     <Card
       img="/images/alerts.png"
