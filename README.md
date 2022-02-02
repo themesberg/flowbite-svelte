@@ -1,28 +1,8 @@
 # SVELTE-FLOW
 
-## ALERTS
-
-## BUTTONS
-
-## CARDS
-
-Card, CtaCard, EcommerceCard, HorizontalCard, InteractiveCard, ListCard,  SignInCard
-
-## LIST-GROUP
-
-## Modal
-
-ExtraLargeModal, LargeModal, MediumModal, ModalButton, SignInModal, SmallModal
-
-## NAVBAR
-
-## TABS
-
-DefaultTabs, InteractiveTabs, PillTabs
-
 ## Installation
 
-Install Flowbite to SvelteKit:
+### Install Flowbite to SvelteKit:
 
 In `src/app.html`:
 
@@ -93,6 +73,24 @@ There are three components you can use.
 </div>
 ```
 
-## Cards component example
+## BUTTONS
+
+
+
+## CARDS
+
+Card, CtaCard, EcommerceCard, HorizontalCard, InteractiveCard, ListCard,  SignInCard
+
+## LIST-GROUP
+
+## Modal
+
+ExtraLargeModal, LargeModal, MediumModal, ModalButton, SignInModal, SmallModal
+
+## NAVBAR
+
+## TABS
+
+DefaultTabs, InteractiveTabs, PillTabs
 
 

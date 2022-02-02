@@ -19,8 +19,13 @@
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.5",
+    "postcss-load-config": "^3.1.1",
     "svelte": "^3.44.0",
-    "svelte2tsx": "^0.4.14"
+    "svelte-preprocess": "^4.10.2",
+    "svelte2tsx": "^0.4.14",
+    "tailwindcss": "^3.0.12"
   },
   "type": "module",
   "keywords": [
@@ -29,15 +34,18 @@
     "tailwindcss",
     "flowbite",
     "ui",
-		"alert",
-		"buttons",
+    "alert",
+    "buttons",
     "modals",
     "cards",
-		"navbar",
-		"tabs"
+    "navbar",
+    "tabs"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/shinokada/svelte-flow"
+  },
+  "dependencies": {
+    "@themesberg/flowbite": "^1.3.0"
   }
 }
