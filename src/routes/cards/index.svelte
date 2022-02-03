@@ -24,6 +24,13 @@
     />
   </div>
   <div class="p-4">
+    <Card
+      img="/images/cards.png"
+      header="HORIAONTAL CARD"
+      link="/cards/horizontal-card"
+    />
+  </div>
+  <div class="p-4">
     <Card img="/images/cards.png" header="LIST CARD" link="/cards/list-card" />
   </div>
 </div>

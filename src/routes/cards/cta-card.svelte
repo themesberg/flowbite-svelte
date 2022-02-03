@@ -21,10 +21,12 @@
   ];
 </script>
 
-<div class="container mx-auto p-8">
-  <CtaCard {btns} {title} {headColor}>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt libero dicta
-    ex, suscipit, qui beatae in odio corrupti est quis quibusdam explicabo non
-    atque!
-  </CtaCard>
+<div class="flex flex-wrap mx-auto p-8">
+  <div class="flex-auto m-2">
+    <CtaCard {btns} {title} {headColor}>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt libero
+      dicta ex, suscipit, qui beatae in odio corrupti est quis quibusdam
+      explicabo non atque!
+    </CtaCard>
+  </div>
 </div>

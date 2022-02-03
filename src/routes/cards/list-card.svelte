@@ -2,6 +2,8 @@
   import { ListCard } from "$lib/index";
 </script>
 
-<div class="container mx-auto p-8">
-  <ListCard />
+<div class="flex flex-wrap mx-auto p-8">
+  <div class="flex-auto m-2">
+    <ListCard />
+  </div>
 </div>
