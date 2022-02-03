@@ -9,6 +9,7 @@
       type: "blue",
       link: "/about",
       rel: "external",
+      rounded: null,
     },
     {
       size: "base",
@@ -16,6 +17,7 @@
       type: "red-outline",
       link: "/#",
       rel: "external",
+      rounded: null,
     },
   ];
 </script>
@@ -32,9 +34,9 @@
   <div
     class="justify-center items-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4"
   >
-    {#each btns as { name, size, type, link, rel }}
+    {#each btns as { name, size, type, link, rel, rounded }}
       <a href={link} {rel}>
-        <Button {name} {size} {type} />
+        <Button {name} {size} {type} {rounded} />
       </a>
     {/each}
   </div>

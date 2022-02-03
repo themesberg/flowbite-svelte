@@ -3,7 +3,7 @@
   // xs, sm, base
   export let size = "sm";
   export let name = "Read more";
-  //
+  //s
   export let type = "blue";
   let paddings;
   if (size === "xs") {
@@ -15,7 +15,7 @@
   } else {
     paddings = "py-2.5 px-5";
   }
-  export let buttonClass;
+  let buttonClass;
   let round = rounded ? "rounded-full" : "rounded-lg";
   // blue, blue-outline, dark, dark-outline, light, green, green-outline, red, red-outline, yellow, yellow-outline, purple, purple-outline
   if (type === "blue") {

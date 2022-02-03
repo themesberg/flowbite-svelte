@@ -9,6 +9,7 @@
       type: "purple",
       link: "/about",
       rel: "external",
+      rounded: true,
     },
     {
       size: "base",
