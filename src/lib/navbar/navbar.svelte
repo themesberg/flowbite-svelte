@@ -8,7 +8,7 @@
     {
       name: "Home",
       link: "/",
-      rel: null,
+      rel: "external",
     },
     {
       name: "Alerts",
