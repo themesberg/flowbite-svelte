@@ -17,7 +17,7 @@
     "preview": "svelte-kit preview"
   },
   "devDependencies": {
-    "@codewithshin/svelte-sidebar": "^0.0.13",
+    "@codewithshin/svelte-sidebar": "^0.0.14",
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
     "autoprefixer": "^10.4.2",
@@ -26,6 +26,7 @@
     "prism-themes": "^1.9.0",
     "prismjs": "^1.26.0",
     "svelte": "^3.44.0",
+    "svelte-flow": "^0.2.3",
     "svelte-preprocess": "^4.10.2",
     "svelte2tsx": "^0.4.14",
     "tailwindcss": "^3.0.12"

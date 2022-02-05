@@ -40,16 +40,17 @@
   };
 </script>
 
-<div class="container mt-4 flex flex-wrap mx-auto">
-  <h1 class="text-3xl w-full">Small Modals: Setup</h1>
-  <p>
-    Import SmallModal and ModalButton components and set variables in the script
-    tag.
-  </p>
+<div class="max-w-3xl mx-auto">
+  <div class="container mt-4 flex flex-wrap mx-auto">
+    <h1 class="text-3xl w-full">Small Modals: Setup</h1>
+    <p>
+      Import SmallModal and ModalButton components and set variables in the
+      script tag.
+    </p>
 
-  <div class="code">
-    {@html Prism.highlight(
-      `
+    <div class="code">
+      {@html Prism.highlight(
+        `
   import { SmallModal, ModalButton } from "svelte-flow";
 
   // common
@@ -86,42 +87,42 @@
     toggleModal(id2, false);
   };
       `,
-      Prism.languages["javascript"]
-    )}
-  </div>
-</div>
-
-<div class="container mt-4 flex flex-wrap mx-auto">
-  <h1 class="text-3xl w-full">Small Modals</h1>
-
-  <div class="container flex flex-wrap mt-4 mx-auto justify-center  pb-8">
-    <ModalButton id={idBasic} btnName={btnBasicName} />
+        Prism.languages["javascript"]
+      )}
+    </div>
   </div>
 
-  <p>Create a button and modal.</p>
-  <div class="code">
-    {@html Prism.highlight(
-      `
+  <div class="container mt-4 flex flex-wrap mx-auto">
+    <h1 class="text-3xl w-full">Small Modals</h1>
+
+    <div class="container flex flex-wrap mt-4 mx-auto justify-center  pb-8">
+      <ModalButton id={idBasic} btnName={btnBasicName} />
+    </div>
+
+    <p>Create a button and modal.</p>
+    <div class="code">
+      {@html Prism.highlight(
+        `
 <ModalButton id={idBasic} btnName={btnBasicName} />
 <SmallModal id={idBasic} title={"Basic Modal Title"}>
   Basic Modal Content
 </SmallModal>
       `,
-      Prism.languages["html"]
-    )}
-  </div>
-</div>
-
-<div class="container mt-4 flex flex-wrap mx-auto">
-  <h1 class="text-3xl w-full">Small Modals with Action Buttons</h1>
-
-  <div class="container flex flex-wrap mt-8 mx-auto justify-center">
-    <ModalButton id={id1} btnName={btnName1} btnColor={btnColor1} />
+        Prism.languages["html"]
+      )}
+    </div>
   </div>
 
-  <div class="code">
-    {@html Prism.highlight(
-      `
+  <div class="container mt-4 flex flex-wrap mx-auto">
+    <h1 class="text-3xl w-full">Small Modals with Action Buttons</h1>
+
+    <div class="container flex flex-wrap mt-8 mx-auto justify-center">
+      <ModalButton id={id1} btnName={btnName1} btnColor={btnColor1} />
+    </div>
+
+    <div class="code">
+      {@html Prism.highlight(
+        `
 <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
 <SmallModal
   id={id1}
@@ -136,21 +137,21 @@
   eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </SmallModal>
       `,
-      Prism.languages["html"]
-    )}
-  </div>
-</div>
-
-<div class="container mt-4 flex flex-wrap mx-auto">
-  <h1 class="text-3xl w-full">Small Modals with different colors</h1>
-
-  <div class="container flex flex-wrap mt-8 mx-auto justify-center">
-    <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
+        Prism.languages["html"]
+      )}
+    </div>
   </div>
 
-  <div class="code">
-    {@html Prism.highlight(
-      `
+  <div class="container mt-4 flex flex-wrap mx-auto">
+    <h1 class="text-3xl w-full">Small Modals with different colors</h1>
+
+    <div class="container flex flex-wrap mt-8 mx-auto justify-center">
+      <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
+    </div>
+
+    <div class="code">
+      {@html Prism.highlight(
+        `
 <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
 <SmallModal
   id={id2}
@@ -166,42 +167,45 @@
   eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </SmallModal>
       `,
-      Prism.languages["html"]
-    )}
+        Prism.languages["html"]
+      )}
+    </div>
   </div>
-</div>
 
-<SmallModal id={idBasic} title={"Basic Modal Title"}>
-  Basic Modal Content
-</SmallModal>
+  <SmallModal id={idBasic} title={"Basic Modal Title"}>
+    Basic Modal Content
+  </SmallModal>
 
-<SmallModal
-  id={id1}
-  btnColor={"pink"}
-  title={"Small Modal Title"}
-  btn1="View"
-  btn2="No"
-  on:handlebtn1={handlebtnS1}
-  on:handlebtn2={handlebtnS2}
->
-  Modal 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-  eiusmod tempor incididunt ut labore et dolore magna aliqua.
-</SmallModal>
+  <SmallModal
+    id={id1}
+    btnColor={"pink"}
+    title={"Small Modal Title"}
+    btn1="View"
+    btn2="No"
+    on:handlebtn1={handlebtnS1}
+    on:handlebtn2={handlebtnS2}
+  >
+    Modal 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  </SmallModal>
 
-<SmallModal
-  id={id2}
-  btnColor={"yellow"}
-  textColor={textSColor}
-  title={"Small Modal Title"}
-  btn1="Yes"
-  btn2="No"
-  on:handlebtn1={handlebtnS3}
-  on:handlebtn2={handlebtnS4}
->
-  Modal 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-  eiusmod tempor incididunt ut labore et dolore magna aliqua.
-</SmallModal>
+  <SmallModal
+    id={id2}
+    btnColor={"yellow"}
+    textColor={textSColor}
+    title={"Small Modal Title"}
+    btn1="Yes"
+    btn2="No"
+    on:handlebtn1={handlebtnS3}
+    on:handlebtn2={handlebtnS4}
+  >
+    Modal 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  </SmallModal>
 
-<div class="container mt-4 flex flex-wrap mx-auto pb-48">
-  <a href="/modals" class="text-blue-700 text-lg"> See more different sizes.</a>
+  <div class="container mt-4 flex flex-wrap mx-auto pb-48">
+    <a href="/modals" class="text-blue-700 text-lg">
+      See more different sizes.</a
+    >
+  </div>
 </div>

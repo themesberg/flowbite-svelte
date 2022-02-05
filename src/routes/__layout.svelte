@@ -26,7 +26,7 @@
   let navClass = "py-0 px-8 bg-white text-sm";
   let navDivClass = "pb-4";
   let navDivClasslast = "pb-24";
-  let siteClass = "w-8/12 pt-1 pl-8";
+  let siteClass = "w-10/12 pt-1 pl-8";
   let siteText = "text-lg";
   let topli = "text-base";
 </script>
@@ -35,7 +35,7 @@
   <Navbar {siteName} {headerClass} {topMenus} {siteClass} {siteText} {topli} />
   <Aside {asideClass}>
     <Nav {navClass} {navDivClass}>
-      <h3 class="text-base pb-4">Svelte-Flow</h3>
+      <h3 class="text-base pb-4"><a href="/" rel="external">Svelte-Flow</a></h3>
       {#each svelteflows as { url, name, rel }}
         <SidebarList {url} {name} {rel} />
       {/each}
@@ -84,7 +84,7 @@
     </Nav>
   </Aside>
 </div>
-<div class="mx-auto px-4 pt-4 ">
+<div class="mx-auto px-4 pt-4">
   <button
     id="theme-toggle"
     type="button"

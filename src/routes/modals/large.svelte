@@ -36,16 +36,17 @@
   };
 </script>
 
-<div class="container mt-4 flex flex-wrap mx-auto">
-  <h1 class="text-3xl w-full">Large Modals: Setup</h1>
-  <p>
-    Import SmallModal and ModalButton components and set variables in the script
-    tag.
-  </p>
+<div class="max-w-3xl mx-auto">
+  <div class="container mt-4 flex flex-wrap mx-auto">
+    <h1 class="text-3xl w-full">Large Modals: Setup</h1>
+    <p>
+      Import SmallModal and ModalButton components and set variables in the
+      script tag.
+    </p>
 
-  <div class="code">
-    {@html Prism.highlight(
-      `
+    <div class="code">
+      {@html Prism.highlight(
+        `
   import { LargeModal, ModalButton } from 'svelte-flow'
   // modal 1
   let id = "large-modal-1";
@@ -79,43 +80,43 @@
     toggleModal(id2, false);
   };
       `,
-      Prism.languages["javascript"]
-    )}
-  </div>
-</div>
-
-<div class="container mt-4 flex flex-wrap mx-auto">
-  <h1 class="text-3xl w-full">Large Modals</h1>
-
-  <div class="container flex flex-wrap my-8 mx-auto justify-center">
-    <ModalButton {id} {btnName} />
+        Prism.languages["javascript"]
+      )}
+    </div>
   </div>
 
-  <p>Create a button and modal.</p>
-  <div class="code">
-    {@html Prism.highlight(
-      `
+  <div class="container mt-4 flex flex-wrap mx-auto">
+    <h1 class="text-3xl w-full">Large Modals</h1>
+
+    <div class="container flex flex-wrap my-8 mx-auto justify-center">
+      <ModalButton {id} {btnName} />
+    </div>
+
+    <p>Create a button and modal.</p>
+    <div class="code">
+      {@html Prism.highlight(
+        `
 <ModalButton {id} {btnName} />
 
 <LargeModal {id} title={"Large Modal Title"}>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
 </LargeModal>
       `,
-      Prism.languages["html"]
-    )}
-  </div>
-</div>
-
-<div class="container mt-4 flex flex-wrap mx-auto">
-  <h1 class="text-3xl w-full">Large Modal with an action button</h1>
-
-  <div class="container flex flex-wrap my-8 mx-auto justify-center">
-    <ModalButton id={id1} btnName={btnName1} btnColor={btnColor1} />
+        Prism.languages["html"]
+      )}
+    </div>
   </div>
 
-  <div class="code">
-    {@html Prism.highlight(
-      `
+  <div class="container mt-4 flex flex-wrap mx-auto">
+    <h1 class="text-3xl w-full">Large Modal with an action button</h1>
+
+    <div class="container flex flex-wrap my-8 mx-auto justify-center">
+      <ModalButton id={id1} btnName={btnName1} btnColor={btnColor1} />
+    </div>
+
+    <div class="code">
+      {@html Prism.highlight(
+        `
 <ModalButton id={id1} btnName={btnName1} btnColor={btnColor1} />
 
 <LargeModal
@@ -127,21 +128,21 @@
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
 </LargeModal>
       `,
-      Prism.languages["html"]
-    )}
-  </div>
-</div>
-
-<div class="container mt-4 flex flex-wrap mx-auto">
-  <h1 class="text-3xl w-full">Large Modal with two action buttons</h1>
-
-  <div class="container flex flex-wrap my-8 mx-auto justify-center">
-    <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
+        Prism.languages["html"]
+      )}
+    </div>
   </div>
 
-  <div class="code">
-    {@html Prism.highlight(
-      `
+  <div class="container mt-4 flex flex-wrap mx-auto">
+    <h1 class="text-3xl w-full">Large Modal with two action buttons</h1>
+
+    <div class="container flex flex-wrap my-8 mx-auto justify-center">
+      <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
+    </div>
+
+    <div class="code">
+      {@html Prism.highlight(
+        `
 <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
 
 <LargeModal
@@ -157,43 +158,46 @@
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
 </LargeModal>
       `,
-      Prism.languages["html"]
-    )}
+        Prism.languages["html"]
+      )}
+    </div>
   </div>
-</div>
 
-<LargeModal {id} title={"Large Modal Title"}>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-  nostrud exercitation ullamco.
-</LargeModal>
+  <LargeModal {id} title={"Large Modal Title"}>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco.
+  </LargeModal>
 
-<LargeModal
-  id={id1}
-  title="Default Modal Title"
-  {btn1}
-  on:handlebtn1={handlebtn1}
->
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-  nostrud exercitation ullamco.
-</LargeModal>
+  <LargeModal
+    id={id1}
+    title="Default Modal Title"
+    {btn1}
+    on:handlebtn1={handlebtn1}
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco.
+  </LargeModal>
 
-<LargeModal
-  id={id2}
-  btnColor="indigo"
-  textColor="red"
-  title="Default Modal Title"
-  btn1={btn2}
-  btn2={btn3}
-  on:handlebtn1={handlebtn2}
-  on:handlebtn2={handlebtn3}
->
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-  nostrud exercitation ullamco.
-</LargeModal>
+  <LargeModal
+    id={id2}
+    btnColor="indigo"
+    textColor="red"
+    title="Default Modal Title"
+    btn1={btn2}
+    btn2={btn3}
+    on:handlebtn1={handlebtn2}
+    on:handlebtn2={handlebtn3}
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco.
+  </LargeModal>
 
-<div class="container mt-4 flex flex-wrap mx-auto pb-48">
-  <a href="/modals" class="text-blue-700 text-lg"> See more different sizes.</a>
+  <div class="container mt-4 flex flex-wrap mx-auto pb-48">
+    <a href="/modals" class="text-blue-700 text-lg">
+      See more different sizes.</a
+    >
+  </div>
 </div>

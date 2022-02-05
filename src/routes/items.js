@@ -43,7 +43,7 @@ export let navbar = [
 ];
 
 export let tabs = [
-  { url: "tabs", name: "Modals", rel: "external" },
+  { url: "tabs", name: "Tabs", rel: "external" },
   { url: "tabs/default-tabs", name: "Default", rel: "external" },
   { url: "tabs/interactive-tabs", name: "Interactive", rel: "external" },
   { url: "tabs/multiple-interactive-tabs", name: "Multiple Interactive", rel: "external" },

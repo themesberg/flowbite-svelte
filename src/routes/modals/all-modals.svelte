@@ -7,6 +7,8 @@
     SignInModal,
     ModalButton,
   } from "$lib/index";
+  import Prism from "prismjs";
+  import "prismjs/themes/prism.css";
 
   // small
   let smallModalId = "small-modal";
@@ -94,31 +96,14 @@
   let formLink = "/auth/login";
 </script>
 
-<div class="container mx-auto p-8 space-y-4 md:flex md:space-y-0 md:space-x-4">
-  <!-- Small Modal Button -->
-  <ModalButton id={smallModalId} btnName={btnSName} />
-
-  <!-- Medium Modal Button -->
-  <ModalButton id={mediumModalId} btnName={btnMName} btnColor={btnMColor} />
-
-  <!-- Large Modal Button -->
-  <ModalButton id={largeModalId} btnName={btnLName} btnColor={btnLColor} />
-
-  <!-- ExtraLarge Modal Button -->
-  <ModalButton
-    id={extraLargeModalId}
-    btnName={btnExLName}
-    btnColor={btnExLColor}
-  />
-
-  <!-- SignInModal Button -->
-  <ModalButton
-    id={signinId}
-    btnName={btnSignInName}
-    btnColor={btnSignInColor}
-  />
-</div>
-
+<div class="max-w-3xl mx-auto">
+  <div class="container my-8 flex flex-wrap mx-auto">
+    <h1 class="text-3xl w-full">All Modals</h1>
+    <h2 class="text-3xl w-full">Small Modals</h2>
+    <div class="code">
+      {@html Prism.highlight(
+        `
+<ModalButton id={smallModalId} btnName={btnSName} />
 <SmallModal
   title={titleS}
   textColor={textSColor}
@@ -127,11 +112,23 @@
   on:handlebtn1={handlebtnS1}
   on:handlebtn2={handlebtnS2}
 >
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-  nostrud exercitation ullamco.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
 </SmallModal>
+      `,
+        Prism.languages["html"]
+      )}
+    </div>
 
+    <div class="container flex flex-wrap my-8 mx-auto justify-center">
+      <!-- Small Modal Button -->
+      <ModalButton id={smallModalId} btnName={btnSName} />
+    </div>
+
+    <h2 class="text-3xl w-full">Medium Modals</h2>
+    <div class="code">
+      {@html Prism.highlight(
+        `
+<ModalButton id={mediumModalId} btnName={btnMName} btnColor={btnMColor} />
 <MediumModal
   btnColor={btnMColor}
   textColor={textMColor}
@@ -141,11 +138,23 @@
   on:handlebtn1={handlebtnM1}
   on:handlebtn2={handlebtnM2}
 >
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-  nostrud exercitation ullamco.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
 </MediumModal>
+      `,
+        Prism.languages["html"]
+      )}
+    </div>
 
+    <div class="container flex flex-wrap my-8 mx-auto justify-center">
+      <!-- Medium Modal Button -->
+      <ModalButton id={mediumModalId} btnName={btnMName} btnColor={btnMColor} />
+    </div>
+
+    <h2 class="text-3xl w-full">Large Modals</h2>
+    <div class="code">
+      {@html Prism.highlight(
+        `
+<ModalButton id={largeModalId} btnName={btnLName} btnColor={btnLColor} />
 <LargeModal
   btnColor={btnLColor}
   textColor={textLColor}
@@ -155,11 +164,26 @@
   on:handlebtn1={handlebtnL1}
   on:handlebtn2={handlebtnL2}
 >
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-  nostrud exercitation ullamco.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
 </LargeModal>
+      `,
+        Prism.languages["html"]
+      )}
+    </div>
+    <div class="container flex flex-wrap my-8 mx-auto justify-center">
+      <!-- Large Modal Button -->
+      <ModalButton id={largeModalId} btnName={btnLName} btnColor={btnLColor} />
+    </div>
 
+    <h2 class="text-3xl w-full">Extra-Large Modals</h2>
+    <div class="code">
+      {@html Prism.highlight(
+        `
+<ModalButton
+  id={extraLargeModalId}
+  btnName={btnExLName}
+  btnColor={btnExLColor}
+/>
 <ExtraLargeModal
   btnColor={btnExLColor}
   textColor={textExLColor}
@@ -169,15 +193,112 @@
   on:handlebtn1={handlebtnExL1}
   on:handlebtn2={handlebtnExL2}
 >
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-  nostrud exercitation ullamco.
-</ExtraLargeModal>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+</ExtraLargeModal>   
+      `,
+        Prism.languages["html"]
+      )}
+    </div>
+    <div class="container flex flex-wrap my-8 mx-auto justify-center">
+      <!-- ExtraLarge Modal Button -->
+      <ModalButton
+        id={extraLargeModalId}
+        btnName={btnExLName}
+        btnColor={btnExLColor}
+      />
+    </div>
 
-<SignInModal
-  {btnSignInColor}
-  {titleSignIn}
-  {lostPasswordLink}
-  {signUpLink}
-  {formLink}
+    <h2 class="text-3xl w-full">SingIn Modals</h2>
+    <div class="code">
+      {@html Prism.highlight(
+        `
+<ModalButton
+  id={signinId}
+  btnName={btnSignInName}
+  btnColor={btnSignInColor}
 />
+<SignInModal
+    {btnSignInColor}
+    {titleSignIn}
+    {lostPasswordLink}
+    {signUpLink}
+    {formLink}
+  />
+      `,
+        Prism.languages["html"]
+      )}
+    </div>
+
+    <div class="container flex flex-wrap my-8 mx-auto justify-center">
+      <!-- SignInModal Button -->
+      <ModalButton
+        id={signinId}
+        btnName={btnSignInName}
+        btnColor={btnSignInColor}
+      />
+    </div>
+  </div>
+
+  <SmallModal
+    title={titleS}
+    textColor={textSColor}
+    btn1={btnS1}
+    btn2={btnS2}
+    on:handlebtn1={handlebtnS1}
+    on:handlebtn2={handlebtnS2}
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco.
+  </SmallModal>
+
+  <MediumModal
+    btnColor={btnMColor}
+    textColor={textMColor}
+    title={titleM}
+    btn1={btnM1}
+    btn2={btnM2}
+    on:handlebtn1={handlebtnM1}
+    on:handlebtn2={handlebtnM2}
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco.
+  </MediumModal>
+
+  <LargeModal
+    btnColor={btnLColor}
+    textColor={textLColor}
+    title={titleL}
+    btn1={btnL1}
+    btn2={btnL2}
+    on:handlebtn1={handlebtnL1}
+    on:handlebtn2={handlebtnL2}
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco.
+  </LargeModal>
+
+  <ExtraLargeModal
+    btnColor={btnExLColor}
+    textColor={textExLColor}
+    title={titleExL}
+    btn1={btnExL1}
+    btn2={btnExL2}
+    on:handlebtn1={handlebtnExL1}
+    on:handlebtn2={handlebtnExL2}
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco.
+  </ExtraLargeModal>
+
+  <SignInModal
+    {btnSignInColor}
+    {titleSignIn}
+    {lostPasswordLink}
+    {signUpLink}
+    {formLink}
+  />
+</div>
