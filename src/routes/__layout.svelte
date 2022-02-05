@@ -4,7 +4,7 @@
   import { Navbar } from "$lib/index";
 </script>
 
-<div class="mx-auto px-4">
+<div class="mx-auto px-4 mt-4">
   <Navbar textsize="lg" />
   <div class="mt-8">
     <slot />
