@@ -21,7 +21,7 @@
   } from "./items.js";
 
   let asideClass = "absolute w-auto bg-white pt-8 shadow-lg z-50 px-4 h-full";
-  let headerClass = "px-8 bg-white h-14 pt-2 text-gray-600 border-b-2";
+  let headerClass = "px-8 bg-white h-14 pt-3 text-gray-600 border-b-2";
   let siteName = "Svelte Flow";
   let navClass = "py-0 px-8 bg-white text-sm";
   let navDivClass = "pb-4";

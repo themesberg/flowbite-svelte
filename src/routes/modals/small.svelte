@@ -3,7 +3,7 @@
   import { goto } from "$app/navigation";
   import Prism from "prismjs";
   import "prismjs/themes/prism.css";
-  import "prism-themes/themes/prism-duotone-light.css";
+  // import "prism-themes/themes/prism-duotone-light.css";
 
   // common
   const textSColor = "blue";
@@ -41,11 +41,12 @@
 </script>
 
 <div class="container mt-4 flex flex-wrap mx-auto">
-  <h1 class="text-3xl w-full">Small Modals</h1>
+  <h1 class="text-3xl w-full">Small Modals: Setup</h1>
   <p>
     Import SmallModal and ModalButton components and set variables in the script
     tag.
   </p>
+
   <div class="code">
     {@html Prism.highlight(
       `
@@ -88,6 +89,15 @@
       Prism.languages["javascript"]
     )}
   </div>
+</div>
+
+<div class="container mt-4 flex flex-wrap mx-auto">
+  <h1 class="text-3xl w-full">Small Modals</h1>
+
+  <div class="container flex flex-wrap mt-4 mx-auto justify-center  pb-8">
+    <ModalButton id={idBasic} btnName={btnBasicName} />
+  </div>
+
   <p>Create a button and modal.</p>
   <div class="code">
     {@html Prism.highlight(
@@ -101,11 +111,14 @@
     )}
   </div>
 </div>
-<div class="container flex flex-wrap mt-4 mx-auto justify-center  pb-8">
-  <ModalButton id={idBasic} btnName={btnBasicName} />
-</div>
+
 <div class="container mt-4 flex flex-wrap mx-auto">
   <h1 class="text-3xl w-full">Small Modals with Action Buttons</h1>
+
+  <div class="container flex flex-wrap mt-8 mx-auto justify-center">
+    <ModalButton id={id1} btnName={btnName1} btnColor={btnColor1} />
+  </div>
+
   <div class="code">
     {@html Prism.highlight(
       `
@@ -127,12 +140,14 @@
     )}
   </div>
 </div>
-<div class="container flex flex-wrap mt-8 mx-auto justify-center">
-  <ModalButton id={id1} btnName={btnName1} btnColor={btnColor1} />
-</div>
 
 <div class="container mt-4 flex flex-wrap mx-auto">
   <h1 class="text-3xl w-full">Small Modals with different colors</h1>
+
+  <div class="container flex flex-wrap mt-8 mx-auto justify-center">
+    <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
+  </div>
+
   <div class="code">
     {@html Prism.highlight(
       `
@@ -154,9 +169,6 @@
       Prism.languages["html"]
     )}
   </div>
-</div>
-<div class="container flex flex-wrap mt-8 mx-auto justify-center">
-  <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
 </div>
 
 <SmallModal id={idBasic} title={"Basic Modal Title"}>

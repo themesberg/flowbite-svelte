@@ -2,7 +2,7 @@
   import { MediumModal, ModalButton } from "$lib/index";
   import Prism from "prismjs";
   import "prismjs/themes/prism.css";
-  import "prism-themes/themes/prism-duotone-light.css";
+  // import "prism-themes/themes/prism-duotone-light.css";
 
   // modal 1
   const id = "basic-modal";
@@ -33,11 +33,12 @@
 </script>
 
 <div class="container my-8 flex flex-wrap mx-auto">
-  <h1 class="text-3xl w-full">Medium Modals for Information</h1>
+  <h1 class="text-3xl w-full">Medium Modals: Setup</h1>
   <p>
-    Import MediumModal and ModalButton components and set variables in the
-    script tag.
+    Import SmallModal and ModalButton components and set variables in the script
+    tag.
   </p>
+
   <div class="code">
     {@html Prism.highlight(
       `
@@ -72,6 +73,15 @@
       Prism.languages["javascript"]
     )}
   </div>
+</div>
+
+<div class="container mt-4 flex flex-wrap mx-auto">
+  <h1 class="text-3xl w-full">Medium Modals for Information</h1>
+
+  <div class="container flex flex-wrap my-8 mx-auto justify-center">
+    <ModalButton {id} btnName={btnBasicName} />
+  </div>
+
   <p>Create a button and modal.</p>
   <div class="code">
     {@html Prism.highlight(
@@ -86,11 +96,14 @@
     )}
   </div>
 </div>
-<div class="container flex flex-wrap my-8 mx-auto justify-center  pb-8">
-  <ModalButton {id} btnName={btnBasicName} />
-</div>
+
 <div class="container my-8 flex flex-wrap mx-auto">
   <h1 class="text-3xl w-full">Medium Modals with an Action Button</h1>
+
+  <div class="container flex flex-wrap my-8 mx-auto justify-center">
+    <ModalButton id={id1} btnName={btnMName} {btnColor} />
+  </div>
+
   <div class="code">
     {@html Prism.highlight(
       `
@@ -104,21 +117,21 @@
   on:handlebtn1={handlebtnM1}
 >
   Modal 2 Content: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad
-  odit aspernatur minus deserunt illo error eum temporibus officiis. Ab facere
-  dolorem quisquam omnis? Aspernatur, asperiores voluptas quis culpa consectetur
-  saepe!
+  odit aspernatur minus deserunt illo error eum temporibus officiis. 
 </MediumModal>
       `,
       Prism.languages["html"]
     )}
   </div>
 </div>
-<div class="container flex flex-wrap my-8 mx-auto justify-center">
-  <ModalButton id={id1} btnName={btnMName} {btnColor} />
-</div>
 
 <div class="container my-8 flex flex-wrap mx-auto">
   <h1 class="text-3xl w-full">Medium Modals with action buttons</h1>
+
+  <div class="container flex flex-wrap my-8 mx-auto justify-center">
+    <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
+  </div>
+
   <div class="code">
     {@html Prism.highlight(
       `
@@ -133,18 +146,12 @@
   on:handlebtn1={handlebtnM2}
   on:handlebtn2={handlebtnM3}
 >
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-  nostrud exercitation ullamco.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
 </MediumModal>
       `,
       Prism.languages["html"]
     )}
   </div>
-</div>
-
-<div class="container flex flex-wrap my-8 mx-auto justify-center">
-  <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
 </div>
 
 <MediumModal {id} title={"Basic Modal Title"}>
