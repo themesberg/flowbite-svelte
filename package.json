@@ -17,6 +17,7 @@
     "preview": "svelte-kit preview"
   },
   "devDependencies": {
+    "@codewithshin/svelte-sidebar": "^0.0.13",
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
     "autoprefixer": "^10.4.2",
