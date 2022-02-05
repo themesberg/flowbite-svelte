@@ -23,6 +23,8 @@
     "autoprefixer": "^10.4.2",
     "postcss": "^8.4.5",
     "postcss-load-config": "^3.1.1",
+    "prism-themes": "^1.9.0",
+    "prismjs": "^1.26.0",
     "svelte": "^3.44.0",
     "svelte-preprocess": "^4.10.2",
     "svelte2tsx": "^0.4.14",
