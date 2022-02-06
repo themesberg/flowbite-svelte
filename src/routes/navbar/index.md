@@ -54,7 +54,3 @@ layout: doc
 ```
 
 <Navbar textsize="xl" />
-
-<div class="container mt-4 flex flex-wrap mx-auto pb-48">
-  <a href="/" class="text-blue-700 text-lg">See more items.</a>
-</div>

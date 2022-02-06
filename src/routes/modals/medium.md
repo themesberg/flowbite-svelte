@@ -166,10 +166,3 @@ Create a button and modal.
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud exercitation ullamco.
   </MediumModal>
-
-  <div class="container mt-4 flex flex-wrap mx-auto pb-48">
-    <a href="/modals" class="text-blue-700 text-lg">
-      See more different sizes.</a
-    >
-  </div>
-

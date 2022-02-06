@@ -200,7 +200,3 @@ Import Button in the script tag.
 <Button name="Button" size="base" type="red-outline" />
 <Button name="Button" size="base" type="purple-outline" />
 ```
-
-<div class="container mt-4 flex flex-wrap mx-auto pb-48">
-  <a href="/" class="text-blue-700 text-lg">See more items.</a>
-</div>

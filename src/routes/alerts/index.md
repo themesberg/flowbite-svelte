@@ -88,8 +88,3 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
     InfoAlert with View more and Dismiss button.
   </InfoAlert>
 </div>
-
-<div class="container mt-4 flex flex-wrap mx-auto pb-48">
-  <a href="/" class="text-blue-700 text-lg">See more items.</a>
-</div>
-

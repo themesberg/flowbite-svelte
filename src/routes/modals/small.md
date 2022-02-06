@@ -179,10 +179,3 @@ eiusmod tempor incididunt ut labore et dolore magna aliqua.
     Modal 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
     eiusmod tempor incididunt ut labore et dolore magna aliqua.
   </SmallModal>
-
-  <div class="container mt-4 flex flex-wrap mx-auto pb-48">
-    <a href="/modals" class="text-blue-700 text-lg">
-      See more different sizes.</a
-    >
-  </div>
-

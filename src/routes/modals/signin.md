@@ -62,8 +62,3 @@ Create a button and modal.
     formLink={"/auth/signin"}
   />
 
-<div class="container mt-4 flex flex-wrap mx-auto pb-48">
-  <a href="/modals" class="text-blue-700 text-lg">
-    See more different sizes.</a
-  >
-</div>
