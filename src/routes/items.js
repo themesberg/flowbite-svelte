@@ -24,6 +24,10 @@ export let cards = [
   { url: "cards/list", name: "List", rel: "external" },
 ];
 
+export let darkmode = [
+  { url: "darkmode", name: "Dark mode", rel: "external" },
+]
+
 export let list_group = [
   { url: "list-group", name: "List group", rel: "external" },
 ];

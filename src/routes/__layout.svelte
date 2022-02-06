@@ -15,6 +15,7 @@
     alerts,
     buttons,
     cards,
+    darkmode,
     list_group,
     modals,
     navbar,
@@ -59,6 +60,12 @@
     <Nav {navClass} {navDivClass}>
       <h3 class="text-base pb-4">Cards</h3>
       {#each cards as { url, name, rel }}
+        <SidebarList {url} {name} {rel} />
+      {/each}
+    </Nav>
+    <Nav {navClass} {navDivClass}>
+      <h3 class="text-base pb-4">Cards</h3>
+      {#each darkmode as { url, name, rel }}
         <SidebarList {url} {name} {rel} />
       {/each}
     </Nav>
