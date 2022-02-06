@@ -1,7 +1,9 @@
+---
+layout: doc
+---
+
 <script>
   import { LargeModal, ModalButton } from "$lib/index";
-  import Prism from "prismjs";
-  import "prismjs/themes/prism.css";
 
   // modal 1
   let id = "large-modal-1";
@@ -36,87 +38,68 @@
   };
 </script>
 
-<div class="max-w-3xl mx-auto">
-  <div class="container mt-4 flex flex-wrap mx-auto">
-    <h1 class="text-3xl w-full">Large Modals: Setup</h1>
-    <p>
-      Import SmallModal and ModalButton components and set variables in the
-      script tag.
-    </p>
+<h1 class="text-3xl w-full">Large Modals: Setup</h1>
 
-    <div class="code">
-      {@html Prism.highlight(
-        `
-  import { LargeModal, ModalButton } from 'svelte-flow'
-  // modal 1
-  let id = "large-modal-1";
-  let btnName = "Large Modal Simple";
+Import SmallModal and ModalButton components and set variables in the script tag.
 
-  // Modal 1
-  let id1 = "large-modal-2";
-  let btnName1 = "Large modal with one button";
-  let btnColor1 = "yellow";
-  let btn1 = "Close";
+```svelte
+import { LargeModal, ModalButton } from 'svelte-flow'
+// modal 1
+let id = "large-modal-1";
+let btnName = "Large Modal Simple";
 
-  // Modal 2
-  let id2 = "large-modal-3";
-  let btnName2 = "Large modal with two buttons";
-  let btnColor2 = "red";
-  let btn2 = "Read more";
-  let btn3 = "Close";
+// Modal 1
+let id1 = "large-modal-2";
+let btnName1 = "Large modal with one button";
+let btnColor1 = "yellow";
+let btn1 = "Close";
 
-  const handlebtn1 = () => {
-    alert("handlebtn1 is clicked from a parent page.");
-    toggleModal(id1, false);
-  };
+// Modal 2
+let id2 = "large-modal-3";
+let btnName2 = "Large modal with two buttons";
+let btnColor2 = "red";
+let btn2 = "Read more";
+let btn3 = "Close";
 
-  const handlebtn2 = () => {
-    alert("handlebtn2 is clicked from a parent page.");
-    toggleModal(id2, false);
-  };
+const handlebtn1 = () => {
+  alert("handlebtn1 is clicked from a parent page.");
+  toggleModal(id1, false);
+};
 
-  const handlebtn3 = () => {
-    alert("handlebtn3 is clicked from a parent page.");
-    toggleModal(id2, false);
-  };
-      `,
-        Prism.languages["javascript"]
-      )}
-    </div>
-  </div>
+const handlebtn2 = () => {
+  alert("handlebtn2 is clicked from a parent page.");
+  toggleModal(id2, false);
+};
 
-  <div class="container mt-4 flex flex-wrap mx-auto">
-    <h1 class="text-3xl w-full">Large Modals</h1>
+const handlebtn3 = () => {
+  alert("handlebtn3 is clicked from a parent page.");
+  toggleModal(id2, false);
+};
+```
 
-    <div class="container flex flex-wrap my-8 mx-auto justify-center">
-      <ModalButton {id} {btnName} />
-    </div>
+<h1 class="text-3xl w-full">Large Modals</h1>
 
-    <p>Create a button and modal.</p>
-    <div class="code">
-      {@html Prism.highlight(
-        `
+<div class="container flex flex-wrap my-8 mx-auto justify-center">
+  <ModalButton {id} {btnName} />
+</div>
+
+Create a button and modal.
+
+```svelte
 <ModalButton {id} {btnName} />
 
 <LargeModal {id} title={"Large Modal Title"}>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
 </LargeModal>
-      `,
-        Prism.languages["html"]
-      )}
-    </div>
-  </div>
+```
 
-  <div class="container mt-4 flex flex-wrap mx-auto">
-    <h1 class="text-3xl w-full">Large Modal with an action button</h1>
+<h1 class="text-3xl w-full">Large Modal with an action button</h1>
 
-    <div class="container flex flex-wrap my-8 mx-auto justify-center">
-      <ModalButton id={id1} btnName={btnName1} btnColor={btnColor1} />
-    </div>
+<div class="container flex flex-wrap my-8 mx-auto justify-center">
+  <ModalButton id={id1} btnName={btnName1} btnColor={btnColor1} />
+</div>
 
-    <div class="code">
-      {@html Prism.highlight(
-        `
+```svelte
 <ModalButton id={id1} btnName={btnName1} btnColor={btnColor1} />
 
 <LargeModal
@@ -127,22 +110,15 @@
 >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
 </LargeModal>
-      `,
-        Prism.languages["html"]
-      )}
-    </div>
-  </div>
+```
 
-  <div class="container mt-4 flex flex-wrap mx-auto">
-    <h1 class="text-3xl w-full">Large Modal with two action buttons</h1>
+<h1 class="text-3xl w-full">Large Modal with two action buttons</h1>
 
-    <div class="container flex flex-wrap my-8 mx-auto justify-center">
-      <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
-    </div>
+<div class="container flex flex-wrap my-8 mx-auto justify-center">
+  <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
+</div>
 
-    <div class="code">
-      {@html Prism.highlight(
-        `
+```svelte
 <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
 
 <LargeModal
@@ -157,11 +133,7 @@
 >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
 </LargeModal>
-      `,
-        Prism.languages["html"]
-      )}
-    </div>
-  </div>
+```
 
   <LargeModal {id} title={"Large Modal Title"}>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -200,4 +172,4 @@
       See more different sizes.</a
     >
   </div>
-</div>
+

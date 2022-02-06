@@ -1,3 +1,7 @@
+---
+layout: doc
+---
+
 <script>
   import { SignInModal, ModalButton } from "$lib/index";
   import Prism from "prismjs";
@@ -8,43 +12,30 @@
   let btnSignInColor = "blue";
 </script>
 
-<div class="max-w-3xl mx-auto">
-  <div class="container my-8 flex flex-wrap mx-auto">
-    <h1 class="text-3xl w-full">Sign-in Modals: Setup</h1>
-    <p>
-      Import SignInModal, ModalButton components and set variables in the script
-      tag.
-    </p>
+<h1 class="text-3xl w-full">Sign-in Modals: Setup</h1>
+Import SignInModal, ModalButton components and set variables in the script tag.
 
-    <div class="code">
-      {@html Prism.highlight(
-        `
+```svelte
 import { SignInModal, ModalButton } from "svelte-flow";
 
 let signinId = "signin-modal2";
 let btnSignInName = "Sign In Modal";
 let btnSignInColor = "blue";
-  `,
-        Prism.languages["javascript"]
-      )}
-    </div>
-  </div>
+```
 
-  <div class="container mt-4 flex flex-wrap mx-auto">
-    <h1 class="text-3xl w-full">SignIn Modals</h1>
+<h1 class="text-3xl w-full">SignIn Modals</h1>
 
-    <div class="container flex flex-wrap my-8 mx-auto justify-center">
-      <ModalButton
-        id={signinId}
-        btnName={btnSignInName}
-        btnColor={btnSignInColor}
-      />
-    </div>
+<div class="container flex flex-wrap my-8 mx-auto justify-center">
+  <ModalButton
+    id={signinId}
+    btnName={btnSignInName}
+    btnColor={btnSignInColor}
+  />
+</div>
 
-    <p>Create a button and modal.</p>
-    <div class="code">
-      {@html Prism.highlight(
-        `
+Create a button and modal.
+
+```svelte
 <ModalButton
   id={signinId}
   btnName={btnSignInName}
@@ -59,11 +50,7 @@ let btnSignInColor = "blue";
   signUpLink={"/auth/signup"}
   formLink={"/auth/signin"}
 />
-      `,
-        Prism.languages["html"]
-      )}
-    </div>
-  </div>
+```
 
   <SignInModal
     id={signinId}
@@ -74,4 +61,9 @@ let btnSignInColor = "blue";
     signUpLink={"/auth/signup"}
     formLink={"/auth/signin"}
   />
+
+<div class="container mt-4 flex flex-wrap mx-auto pb-48">
+  <a href="/modals" class="text-blue-700 text-lg">
+    See more different sizes.</a
+  >
 </div>

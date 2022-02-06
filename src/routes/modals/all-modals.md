@@ -1,3 +1,7 @@
+---
+layout: doc
+---
+
 <script>
   import {
     SmallModal,
@@ -96,13 +100,11 @@
   let formLink = "/auth/login";
 </script>
 
-<div class="max-w-3xl mx-auto">
-  <div class="container my-8 flex flex-wrap mx-auto">
-    <h1 class="text-3xl w-full">All Modals</h1>
-    <h2 class="text-3xl w-full">Small Modals</h2>
-    <div class="code">
-      {@html Prism.highlight(
-        `
+<h1 class="text-3xl w-full">All Modals</h1>
+
+<h2 class="text-xl w-full">Small Modals</h2>
+
+```
 <ModalButton id={smallModalId} btnName={btnSName} />
 <SmallModal
   title={titleS}
@@ -114,20 +116,16 @@
 >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
 </SmallModal>
-      `,
-        Prism.languages["html"]
-      )}
-    </div>
+```
 
-    <div class="container flex flex-wrap my-8 mx-auto justify-center">
-      <!-- Small Modal Button -->
-      <ModalButton id={smallModalId} btnName={btnSName} />
-    </div>
+<div class="container flex flex-wrap my-8 mx-auto justify-center">
+  <!-- Small Modal Button -->
+  <ModalButton id={smallModalId} btnName={btnSName} />
+</div>
 
-    <h2 class="text-3xl w-full">Medium Modals</h2>
-    <div class="code">
-      {@html Prism.highlight(
-        `
+<h2 class="text-xl w-full">Medium Modals</h2>
+
+```
 <ModalButton id={mediumModalId} btnName={btnMName} btnColor={btnMColor} />
 <MediumModal
   btnColor={btnMColor}
@@ -140,20 +138,16 @@
 >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
 </MediumModal>
-      `,
-        Prism.languages["html"]
-      )}
-    </div>
+```
 
-    <div class="container flex flex-wrap my-8 mx-auto justify-center">
-      <!-- Medium Modal Button -->
-      <ModalButton id={mediumModalId} btnName={btnMName} btnColor={btnMColor} />
-    </div>
+<div class="container flex flex-wrap my-8 mx-auto justify-center">
+  <!-- Medium Modal Button -->
+  <ModalButton id={mediumModalId} btnName={btnMName} btnColor={btnMColor} />
+</div>
 
-    <h2 class="text-3xl w-full">Large Modals</h2>
-    <div class="code">
-      {@html Prism.highlight(
-        `
+<h2 class="text-xl w-full">Large Modals</h2>
+
+```
 <ModalButton id={largeModalId} btnName={btnLName} btnColor={btnLColor} />
 <LargeModal
   btnColor={btnLColor}
@@ -166,19 +160,16 @@
 >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
 </LargeModal>
-      `,
-        Prism.languages["html"]
-      )}
-    </div>
-    <div class="container flex flex-wrap my-8 mx-auto justify-center">
-      <!-- Large Modal Button -->
-      <ModalButton id={largeModalId} btnName={btnLName} btnColor={btnLColor} />
-    </div>
+```
 
-    <h2 class="text-3xl w-full">Extra-Large Modals</h2>
-    <div class="code">
-      {@html Prism.highlight(
-        `
+<div class="container flex flex-wrap my-8 mx-auto justify-center">
+  <!-- Large Modal Button -->
+  <ModalButton id={largeModalId} btnName={btnLName} btnColor={btnLColor} />
+</div>
+
+<h2 class="text-xl w-full">Extra-Large Modals</h2>
+
+```
 <ModalButton
   id={extraLargeModalId}
   btnName={btnExLName}
@@ -195,23 +186,20 @@
 >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
 </ExtraLargeModal>   
-      `,
-        Prism.languages["html"]
-      )}
-    </div>
-    <div class="container flex flex-wrap my-8 mx-auto justify-center">
-      <!-- ExtraLarge Modal Button -->
-      <ModalButton
-        id={extraLargeModalId}
-        btnName={btnExLName}
-        btnColor={btnExLColor}
-      />
-    </div>
+```
 
-    <h2 class="text-3xl w-full">SingIn Modals</h2>
-    <div class="code">
-      {@html Prism.highlight(
-        `
+<div class="container flex flex-wrap my-8 mx-auto justify-center">
+  <!-- ExtraLarge Modal Button -->
+  <ModalButton
+    id={extraLargeModalId}
+    btnName={btnExLName}
+    btnColor={btnExLColor}
+  />
+</div>
+
+<h2 class="text-xl w-full">SingIn Modals</h2>
+
+```
 <ModalButton
   id={signinId}
   btnName={btnSignInName}
@@ -224,20 +212,17 @@
     {signUpLink}
     {formLink}
   />
-      `,
-        Prism.languages["html"]
-      )}
-    </div>
+```
 
-    <div class="container flex flex-wrap my-8 mx-auto justify-center">
-      <!-- SignInModal Button -->
-      <ModalButton
-        id={signinId}
-        btnName={btnSignInName}
-        btnColor={btnSignInColor}
-      />
-    </div>
-  </div>
+<div class="container flex flex-wrap my-8 mx-auto justify-center">
+  <!-- SignInModal Button -->
+  <ModalButton
+    id={signinId}
+    btnName={btnSignInName}
+    btnColor={btnSignInColor}
+  />
+</div>
+
 
   <SmallModal
     title={titleS}
@@ -301,4 +286,4 @@
     {signUpLink}
     {formLink}
   />
-</div>
+

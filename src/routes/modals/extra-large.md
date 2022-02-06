@@ -1,7 +1,10 @@
+---
+layout: doc
+---
+
 <script>
   import { ModalButton, ExtraLargeModal } from "$lib/index";
-  import Prism from "prismjs";
-  import "prismjs/themes/prism.css";
+
   // simple modal
   let id = "simple";
 
@@ -33,17 +36,11 @@
   };
 </script>
 
-<div class="max-w-3xl mx-auto">
-  <div class="container my-8 flex flex-wrap mx-auto">
-    <h1 class="text-3xl w-full">Extra-large Modals: Setup</h1>
-    <p>
-      Import ModalButton, ExtraLargeModal components and set variables in the
-      script tag.
-    </p>
+<h1 class="text-3xl w-full">Extra-large Modals: Setup</h1>
 
-    <div class="code">
-      {@html Prism.highlight(
-        `
+Import ModalButton, ExtraLargeModal components and set variables in the script tag.
+
+```svelte
 import { ModalButton, ExtraLargeModal } from "svelte-flow";
 
 // simple modal
@@ -75,44 +72,33 @@ const handlebtn3 = () => {
   alert("handlebtn3 is clicked from a parent page.");
   toggleModal(id2, false);
 };
-      `,
-        Prism.languages["javascript"]
-      )}
-    </div>
-  </div>
+```
 
-  <div class="container mt-4 flex flex-wrap mx-auto">
-    <h1 class="text-3xl w-full">Extra-large Modals for Information</h1>
+<h1 class="text-3xl w-full">Extra-large Modals for Information</h1>
 
-    <div class="container flex flex-wrap my-8 mx-auto justify-center">
-      <ModalButton {id} btnName="Info Modal" />
-    </div>
+<div class="container flex flex-wrap my-8 mx-auto justify-center">
+  <ModalButton {id} btnName="Info Modal" />
+</div>
 
-    <p>Create a button and modal.</p>
-    <div class="code">
-      {@html Prism.highlight(
-        `
+Create a button and modal.
+
+```svelte
 <ModalButton {id} btnName="Info Modal" />
+
 <ExtraLargeModal {id} title="Info Modal">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
 </ExtraLargeModal>
-      `,
-        Prism.languages["html"]
-      )}
-    </div>
-  </div>
+```
 
-  <div class="container mt-4 flex flex-wrap mx-auto">
-    <h1 class="text-3xl w-full">Extra-large Modals with One Button</h1>
+<h1 class="text-3xl w-full">Extra-large Modals with One Button</h1>
 
-    <div class="container flex flex-wrap my-8 mx-auto justify-center">
-      <ModalButton id={id1} btnName={btnExLName} btnColor={btnExLColor} />
-    </div>
+<div class="container flex flex-wrap my-8 mx-auto justify-center">
+  <ModalButton id={id1} btnName={btnExLName} btnColor={btnExLColor} />
+</div>
 
-    <p>Create a button and modal.</p>
-    <div class="code">
-      {@html Prism.highlight(
-        `
+Create a button and modal.
+
+```svelte
 <ModalButton id={id1} btnName={btnExLName} btnColor={btnExLColor} />
 
 <ExtraLargeModal
@@ -123,24 +109,17 @@ const handlebtn3 = () => {
 >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
 </ExtraLargeModal>
+```
 
-      `,
-        Prism.languages["html"]
-      )}
-    </div>
-  </div>
+<h1 class="text-3xl w-full">Extra-large Modals with Two Buttons</h1>
 
-  <div class="container mt-4 flex flex-wrap mx-auto">
-    <h1 class="text-3xl w-full">Extra-large Modals with Two Buttons</h1>
+<div class="container flex flex-wrap my-8 mx-auto justify-center">
+  <ModalButton id={id2} btnName={btnExLName2} btnColor={btnExLColor2} />
+</div>
 
-    <div class="container flex flex-wrap my-8 mx-auto justify-center">
-      <ModalButton id={id2} btnName={btnExLName2} btnColor={btnExLColor2} />
-    </div>
+Create a button and modal.
 
-    <p>Create a button and modal.</p>
-    <div class="code">
-      {@html Prism.highlight(
-        `
+```svelte
 <ModalButton id={id2} btnName={btnExLName2} btnColor={btnExLColor2} />
 
 <ExtraLargeModal
@@ -155,11 +134,7 @@ const handlebtn3 = () => {
 >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
 </ExtraLargeModal>
-      `,
-        Prism.languages["html"]
-      )}
-    </div>
-  </div>
+```
 
   <ExtraLargeModal {id} title="Info Modal">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -193,9 +168,9 @@ const handlebtn3 = () => {
     quis nostrud exercitation ullamco.
   </ExtraLargeModal>
 
-  <div class="container mt-4 flex flex-wrap mx-auto pb-48">
-    <a href="/modals" class="text-blue-700 text-lg">
-      See more different sizes.</a
-    >
-  </div>
+<div class="container mt-4 flex flex-wrap mx-auto pb-48">
+  <a href="/modals" class="text-blue-700 text-lg">
+    See more different sizes.</a
+  >
 </div>
+
