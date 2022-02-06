@@ -181,3 +181,5 @@ eiusmod tempor incididunt ut labore et dolore magna aliqua.
     Modal 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
     eiusmod tempor incididunt ut labore et dolore magna aliqua.
   </SmallModal>
+
+<div class="giscus"></div>
