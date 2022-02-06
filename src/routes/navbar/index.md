@@ -11,7 +11,7 @@ layout: doc
 
 ```svelte
 <script>
-  import { Navbar } from "$lib/index";
+  import { Navbar } from "svelte-flow";
 </script>
 ```
 

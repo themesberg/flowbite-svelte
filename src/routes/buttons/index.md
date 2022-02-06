@@ -12,7 +12,7 @@ Import Button in the script tag.
 
 ```svelte
 <script>
-  import { Button } from "$lib/index";
+  import { Button } from "svelte-flow";
 </script>
 ```
 
