@@ -3,7 +3,7 @@ layout: doc
 ---
 
 <h1 class="text-2xl w-full">Getting Started</h1>
-<h2 class="text-xl w-full">Installation</h2>
+<h2 class="text-xl w-full mt-8">Installation</h2>
 Install SvelteKit.
 
 ```sh
