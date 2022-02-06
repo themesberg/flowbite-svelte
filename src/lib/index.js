@@ -18,6 +18,9 @@ import ListCard from './cards/ListCard.svelte'
 import CtaCard from './cards/CtaCard.svelte'
 import EcommerceCard from './cards/EcommerceCard.svelte'
 
+// Dark mode
+import Darkmode from './darkmode/darkmode.svelte'
+
 // List
 import List from './list-group/List.svelte'
 
@@ -52,6 +55,8 @@ export {
   ListCard,
   CtaCard,
   EcommerceCard,
+  // darkmode
+  Darkmode,
   // list
   List,
   // Modals
