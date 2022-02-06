@@ -61,7 +61,14 @@ layout: doc
 <h1 class="text-3xl w-full dark:text-white">Interactive cards</h1>
 
 ```html
-<InteractiveCard {dropdownLinks} {img} {header} {content} {link1} {link2} />
+<InteractiveCard 
+  {dropdownLinks} 
+  {img} 
+  {header} 
+  {content} 
+  {link1} 
+  {link2} 
+/>
 
 <InteractiveCard
   {dropdownLinks}
