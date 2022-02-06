@@ -64,7 +64,7 @@
       {/each}
     </Nav>
     <Nav {navClass} {navDivClass}>
-      <h3 class="text-base pb-4">Cards</h3>
+      <h3 class="text-base pb-4">Dark mode</h3>
       {#each darkmode as { url, name, rel }}
         <SidebarList {url} {name} {rel} />
       {/each}
