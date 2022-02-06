@@ -11,7 +11,9 @@ layout: doc
 Import Button in the script tag.
 
 ```svelte
-import { Button } from from "svlte-flow";
+<script>
+  import { Button } from "$lib/index";
+</script>
 ```
 
 <h1 class="text-3xl w-full">Size xs Default Buttons</h1>
