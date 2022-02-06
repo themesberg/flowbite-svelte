@@ -1,9 +1,7 @@
-<script context="module">
-</script>
-
 <script>
   import "../app.css";
   import "flowbite/dist/flowbite.css";
+  import { onMount } from "svelte";
   import { browser } from "$app/env";
   import {
     Aside,
@@ -37,48 +35,41 @@
   let siteText = "text-lg";
   let topli = "text-base";
 
+  const toggleTheme = () => {
+    console.log("clicked theme icon");
+    // window.document.html.classList.toggle("dark");
+    if (localStorage.getItem("color-theme") === "dark") {
+      console.log("it's dark");
+      // themeToggleDarkIcon.classList.toggle("hidden");
+      window.document.documentElement.classList.remove("dark");
+      window.document.documentElement.classList.add("light");
+      localStorage.setItem("color-theme", "light");
+    } else {
+      console.log("it's light");
+      // themeToggleLightIcon.classList.toggle("hidden");
+      window.document.documentElement.classList.remove("light");
+      window.document.documentElement.classList.add("dark");
+      localStorage.setItem("color-theme", "dark");
+    }
+  };
+
   if (browser) {
-    let themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
-    let themeToggleLightIcon = document.getElementById(
-      "theme-toggle-light-icon"
-    );
+    onMount(() => {
+      let themeToggleDarkIcon = document.getElementById(
+        "theme-toggle-dark-icon"
+      );
+      let themeToggleLightIcon = document.getElementById(
+        "theme-toggle-light-icon"
+      );
 
-    // Change the icons inside the button based on previous settings
-    // if (
-    //   localStorage.getItem("color-theme") === "dark" ||
-    //   (!("color-theme" in localStorage) &&
-    //     window.matchMedia("(prefers-color-scheme: dark)").matches)
-    // ) {
-    //   themeToggleLightIcon.classList.remove("hidden");
-    // } else {
-    //   themeToggleDarkIcon.classList.remove("hidden");
-    // }
-
-    let themeToggleBtn = document.getElementById("theme-toggle");
-
-    themeToggleBtn.addEventListener("click", function () {
-      // toggle icons inside button
-      themeToggleDarkIcon.classList.toggle("hidden");
-      themeToggleLightIcon.classList.toggle("hidden");
-
-      // if set via local storage previously
-      if (localStorage.getItem("color-theme")) {
-        if (localStorage.getItem("color-theme") === "light") {
-          document.documentElement.classList.add("dark");
-          localStorage.setItem("color-theme", "dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-          localStorage.setItem("color-theme", "light");
-        }
-        // if NOT set via local storage previously
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        themeToggleLightIcon.classList.remove("hidden");
       } else {
-        if (document.documentElement.classList.contains("dark")) {
-          document.documentElement.classList.remove("dark");
-          localStorage.setItem("color-theme", "light");
-        } else {
-          document.documentElement.classList.add("dark");
-          localStorage.setItem("color-theme", "dark");
-        }
+        themeToggleDarkIcon.classList.remove("hidden");
       }
     });
   }
@@ -154,6 +145,7 @@
 </div>
 <div class="mx-auto px-4 pt-4">
   <button
+    on:click={toggleTheme}
     id="theme-toggle"
     type="button"
     class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
