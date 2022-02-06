@@ -8,12 +8,13 @@
   color: #3490fa !important;
 }
 
-.code {
+pre{
   background-color: rgb(242, 242, 242);
   white-space: pre-wrap;
   width: 100%;
-  margin: 20px 0;
-  padding: 0 20px;
+  margin: 20px !important;
+  padding: 20px;
 }
+
 
 

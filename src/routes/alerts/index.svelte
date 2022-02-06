@@ -1,11 +1,7 @@
 <script>
   import { Alert, BorderAlert, InfoAlert } from "$lib/index";
-  import Prism from "prismjs";
-  import "prismjs/themes/prism.css";
 </script>
 
-<div class="max-w-3xl mx-auto">
-  <div class="container mt-4 flex flex-wrap mx-auto">
     <h1 class="text-3xl w-full">Alert: Setup</h1>
 
     <p>
@@ -13,31 +9,25 @@
       tag.
     </p>
 
-    <div class="code">
-      {@html Prism.highlight(
-        `
-import { Alert, BorderAlert, InfoAlert } from "svlte-flow";
-        `,
-        Prism.languages["javascript"]
-      )}
+```
+<script>
+  import { Alert, BorderAlert, InfoAlert } from "svelte-flow";
+</script>
+```
     </div>
   </div>
 
   <div class="container mt-4 flex flex-wrap mx-auto">
     <h1 class="text-3xl w-full">Simple Alert Examples</h1>
 
-    <div class="code">
-      {@html Prism.highlight(
-        `
+```
 <Alert alertId="alert-blue">
   A simple info alert without a close button.
 </Alert>
 <Alert alertId="alert-red" color="red" closeBtn="true">
   A simple info alert with a close button.
 </Alert>
-          `,
-        Prism.languages["javascript"]
-      )}
+```
     </div>
   </div>
 
@@ -54,9 +44,7 @@ import { Alert, BorderAlert, InfoAlert } from "svlte-flow";
   <div class="container mt-4 flex flex-wrap mx-auto">
     <h1 class="text-3xl w-full">Border Alert Examples</h1>
 
-    <div class="code">
-      {@html Prism.highlight(
-        `
+```
 <BorderAlert color="green">
   A border alert without the close button.
 </BorderAlert>
@@ -64,9 +52,7 @@ import { Alert, BorderAlert, InfoAlert } from "svlte-flow";
 <BorderAlert alertId="border-alert-2" color="yellow" closeBtn="true">
   A border alert with the close button.
 </BorderAlert>
-          `,
-        Prism.languages["javascript"]
-      )}
+```
     </div>
   </div>
 
@@ -83,9 +69,7 @@ import { Alert, BorderAlert, InfoAlert } from "svlte-flow";
   <div class="container mt-4 flex flex-wrap mx-auto">
     <h1 class="text-3xl w-full">Information Alert Examples</h1>
 
-    <div class="code">
-      {@html Prism.highlight(
-        `
+```
 <BorderAlert color="green">
   A border alert without the close button.
 </BorderAlert>
@@ -93,9 +77,7 @@ import { Alert, BorderAlert, InfoAlert } from "svlte-flow";
 <BorderAlert alertId="border-alert-2" color="yellow" closeBtn="true">
   A border alert with the close button.
 </BorderAlert>
-          `,
-        Prism.languages["javascript"]
-      )}
+```
     </div>
   </div>
 
