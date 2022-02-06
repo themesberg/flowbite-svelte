@@ -2,7 +2,7 @@
   import "../app.css";
   import "flowbite/dist/flowbite.css";
   import { onMount } from "svelte";
-  import { browser } from "$app/env";
+  // import { browser } from "$app/env";
   import {
     Aside,
     Nav,
@@ -35,60 +35,43 @@
   let siteText = "text-lg";
   let topli = "text-base";
 
+  let mode;
+
   const toggleTheme = () => {
-    console.log("clicked theme icon");
-    // window.document.html.classList.toggle("dark");
+    // console.log("clicked theme icon");
     if (localStorage.getItem("color-theme") === "dark") {
       console.log("it's dark");
-      // themeToggleDarkIcon.classList.toggle("hidden");
+      mode = "dark";
       window.document.documentElement.classList.remove("dark");
       window.document.documentElement.classList.add("light");
       localStorage.setItem("color-theme", "light");
     } else {
       console.log("it's light");
-      // themeToggleLightIcon.classList.toggle("hidden");
+      mode = "light";
       window.document.documentElement.classList.remove("light");
       window.document.documentElement.classList.add("dark");
       localStorage.setItem("color-theme", "dark");
     }
   };
 
-  if (browser) {
-    onMount(() => {
-      let themeToggleDarkIcon = document.getElementById(
-        "theme-toggle-dark-icon"
-      );
-      let themeToggleLightIcon = document.getElementById(
-        "theme-toggle-light-icon"
-      );
-
-      if (
-        localStorage.getItem("color-theme") === "dark" ||
-        (!("color-theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        themeToggleLightIcon.classList.remove("hidden");
-      } else {
-        themeToggleDarkIcon.classList.remove("hidden");
-      }
-    });
-  }
-</script>
-
-<svelte:head>
-  <script>
-    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+  onMount(() => {
+    let themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
+    let themeToggleLightIcon = document.getElementById(
+      "theme-toggle-light-icon"
+    );
     if (
       localStorage.getItem("color-theme") === "dark" ||
       (!("color-theme" in localStorage) &&
         window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
       document.documentElement.classList.add("dark");
+      themeToggleDarkIcon.classList.add("hidden");
     } else {
       document.documentElement.classList.remove("dark");
+      themeToggleLightIcon.classList.add("hidden");
     }
-  </script>
-</svelte:head>
+  });
+</script>
 
 <div class="z-50 w-full h-9">
   <Navbar {siteName} {headerClass} {topMenus} {siteClass} {siteText} {topli} />
@@ -151,6 +134,8 @@
     class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 fixed  top-20 z-50 "
   >
     <svg
+      class:hidden={mode === "light"}
+      on:click={() => (mode = "dark")}
       id="theme-toggle-dark-icon"
       class="hidden w-5 h-5"
       fill="currentColor"
@@ -160,7 +145,10 @@
         d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
       /></svg
     >
+
     <svg
+      class:hidden={mode === "dark"}
+      on:click={() => (mode = "light")}
       id="theme-toggle-light-icon"
       class="hidden w-5 h-5"
       fill="currentColor"

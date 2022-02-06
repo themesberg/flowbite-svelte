@@ -8,7 +8,7 @@ layout: doc
 
 <h1 class="text-3xl w-full dark:text-white">Card: Setup</h1>
 
-Import Card in the script tag.
+<p class="dark:text-white">Import Card in the script tag.</p>
 
 ```svelte
 <script>
