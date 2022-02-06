@@ -6,9 +6,9 @@ layout: doc
   import { Button } from "$lib/index";
 </script>
 
-<h1 class="text-3xl w-full">Buttons: Setup</h1>
+<h1 class="text-3xl w-full dark:text-white">Buttons: Setup</h1>
 
-Import Button in the script tag.
+<p class="dark:text-white">Import Button in the script tag.</p>
 
 ```svelte
 <script>
@@ -16,7 +16,7 @@ Import Button in the script tag.
 </script>
 ```
 
-<h1 class="text-3xl w-full">Size xs Default Buttons</h1>
+<h1 class="text-3xl w-full dark:text-white">Size xs Default Buttons</h1>
 
 ```svelte
 <Button name="Button xs" size="xs" />
@@ -39,7 +39,7 @@ Import Button in the script tag.
 </div>
 
 
-<h1 class="text-3xl w-full">Size xs Rounded Buttons</h1>
+<h1 class="text-3xl w-full dark:text-white">Size xs Rounded Buttons</h1>
 
 ```svelte
 <Button name="Button xs" size="xs" rounded="true" />
@@ -61,7 +61,7 @@ Import Button in the script tag.
   <Button name="Button xs" size="xs" type="purple" rounded="true" />
 </div>
 
-<h1 class="text-3xl w-full">Size xs Outlined Buttons</h1>
+<h1 class="text-3xl w-full dark:text-white">Size xs Outlined Buttons</h1>
 
 ```svelte
 <Button name="Button xs" size="xs" type="blue-outline" />
@@ -81,7 +81,7 @@ Import Button in the script tag.
   <Button name="Button xs" size="xs" type="purple-outline" />
 </div>
 
-<h1 class="text-3xl w-full">Size sm Default Buttons</h1>
+<h1 class="text-3xl w-full dark:text-white">Size sm Default Buttons</h1>
 
 ```svelte
 <Button name="Button" size="sm" />
@@ -103,7 +103,7 @@ Import Button in the script tag.
   <Button name="Button" size="sm" type="purple" />
 </div>
 
-<h1 class="text-3xl w-full">Size sm Rounded Buttons</h1>
+<h1 class="text-3xl w-full dark:text-white">Size sm Rounded Buttons</h1>
 
 ```svelte
 <Button name="Button" size="sm" rounded="true" />
@@ -125,7 +125,7 @@ Import Button in the script tag.
   <Button name="Button" size="sm" type="purple" rounded="true" />
 </div>
 
-<h1 class="text-3xl w-full">Size sm Outlined Buttons</h1>
+<h1 class="text-3xl w-full dark:text-white">Size sm Outlined Buttons</h1>
 
 ```svelte
 <Button name="Button" size="sm" type="blue-outline" />
@@ -145,7 +145,7 @@ Import Button in the script tag.
   <Button name="Button" size="sm" type="purple-outline" />
 </div>
 
-<h1 class="text-3xl w-full">Size base Default Buttons</h1>
+<h1 class="text-3xl w-full dark:text-white">Size base Default Buttons</h1>
 
 ```svelte
 <Button name="Button" size="base" />
@@ -167,7 +167,7 @@ Import Button in the script tag.
   <Button name="Button" size="base" type="purple" />
 </div>
 
-<h1 class="text-3xl w-full">Size base Rounded Buttons</h1>
+<h1 class="text-3xl w-full dark:text-white">Size base Rounded Buttons</h1>
 
 ```svelte
 <Button name="Button" size="base" rounded="true" />
@@ -190,7 +190,7 @@ Import Button in the script tag.
 </div>
 
 
-<h1 class="text-3xl w-full">Size sm Outlined Buttons</h1>
+<h1 class="text-3xl w-full dark:text-white">Size sm Outlined Buttons</h1>
 
 ```svelte
 <Button name="Button" size="base" type="blue-outline" />

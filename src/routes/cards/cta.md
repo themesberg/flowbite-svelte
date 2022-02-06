@@ -25,7 +25,7 @@ layout: doc
   ];
 </script>
 
-<h1 class="text-3xl w-full">CTA Card: Setup</h1>
+<h1 class="text-3xl w-full dark:text-white">CTA Card: Setup</h1>
 
 ```svelte
 <script>
@@ -52,7 +52,7 @@ layout: doc
 </script>
 ```
 
-<h1 class="text-3xl w-full">CTA Card</h1>
+<h1 class="text-3xl w-full dark:text-white">CTA Card</h1>
 
 ```svelte
 <CtaCard {btns} {title} {headColor}>

@@ -41,10 +41,12 @@ layout: doc
   };
 </script>
 
-<h1 class="text-3xl w-full">Small Modals: Setup</h1>
+<h1 class="text-3xl w-full dark:text-white">Small Modals: Setup</h1>
 
+<p class="dark:text-white">
 Import SmallModal and ModalButton components and set variables in the
 script tag.
+</p>
 
 ```svelte
 <script>
@@ -86,13 +88,13 @@ const handlebtnS4 = () => {
 </script>
 ```
 
-<h1 class="text-3xl w-full">Small Modals</h1>
+<h1 class="text-3xl w-full dark:text-white">Small Modals</h1>
 
 <div class="container flex flex-wrap mt-4 mx-auto justify-center  pb-8">
   <ModalButton id={idBasic} btnName={btnBasicName} />
 </div>
 
-Create a button and modal.
+<p class="dark:text-white">Create a button and modal.</p>
 
 ```svelte
 <ModalButton id={idBasic} btnName={btnBasicName} />
@@ -101,7 +103,7 @@ Create a button and modal.
 </SmallModal>
 ```
 
-<h1 class="text-3xl w-full">Small Modals with Action Buttons</h1>
+<h1 class="text-3xl w-full dark:text-white">Small Modals with Action Buttons</h1>
 
 <div class="container flex flex-wrap mt-8 mx-auto justify-center">
   <ModalButton id={id1} btnName={btnName1} btnColor={btnColor1} />
@@ -124,7 +126,7 @@ Create a button and modal.
 ```
 
   <div class="container mt-4 flex flex-wrap mx-auto">
-    <h1 class="text-3xl w-full">Small Modals with different colors</h1>
+    <h1 class="text-3xl w-full dark:text-white">Small Modals with different colors</h1>
 
 <div class="container flex flex-wrap mt-8 mx-auto justify-center">
   <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />

@@ -6,9 +6,11 @@ layout: doc
   import { Alert, BorderAlert, InfoAlert } from "$lib/index";
 </script>
 
-<h1 class="text-3xl w-full">Alert: Setup</h1>
+<h1 class="text-3xl w-full text-gray-900 dark:text-white">Alert: Setup</h1>
 
+<p class="text-gray-900 dark:text-white">
 Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
+</p>
 
 ```svelte
 <script>
@@ -16,7 +18,7 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
 </script>
 ```
 
-<h1 class="text-3xl w-full">Simple Alert Examples</h1>
+<h1 class="text-3xl w-full text-gray-900 dark:text-white">Simple Alert Examples</h1>
 
 ```svelte
 <Alert alertId="alert-blue">
@@ -37,7 +39,7 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
   </Alert>
 </div>
 
-<h1 class="text-3xl w-full">Border Alert Examples</h1>
+<h1 class="text-3xl w-full text-gray-900 dark:text-white">Border Alert Examples</h1>
 
 ```svelte
 <BorderAlert color="green">
@@ -60,7 +62,7 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
 </div>
 
 
-<h1 class="text-3xl w-full">Information Alert Examples</h1>
+<h1 class="text-3xl w-full text-gray-900 dark:text-white">Information Alert Examples</h1>
 
 ```svelte
 <BorderAlert color="green">

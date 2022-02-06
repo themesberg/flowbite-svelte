@@ -36,9 +36,9 @@ layout: doc
   };
 </script>
 
-<h1 class="text-3xl w-full">Extra-large Modals: Setup</h1>
+<h1 class="text-3xl w-full dark:text-white">Extra-large Modals: Setup</h1>
 
-Import ModalButton, ExtraLargeModal components and set variables in the script tag.
+<p class=" dark:text-white"> Import ModalButton, ExtraLargeModal components and set variables in the script tag.</p>
 
 ```svelte
 import { ModalButton, ExtraLargeModal } from "svelte-flow";
@@ -74,13 +74,13 @@ const handlebtn3 = () => {
 };
 ```
 
-<h1 class="text-3xl w-full">Extra-large Modals for Information</h1>
+<h1 class="text-3xl w-full dark:text-white">Extra-large Modals for Information</h1>
 
 <div class="container flex flex-wrap my-8 mx-auto justify-center">
   <ModalButton {id} btnName="Info Modal" />
 </div>
 
-Create a button and modal.
+<p class="dark:text-white"> Create a button and modal.</p>
 
 ```svelte
 <ModalButton {id} btnName="Info Modal" />
@@ -90,13 +90,13 @@ Create a button and modal.
 </ExtraLargeModal>
 ```
 
-<h1 class="text-3xl w-full">Extra-large Modals with One Button</h1>
+<h1 class="text-3xl w-full dark:text-white">Extra-large Modals with One Button</h1>
 
 <div class="container flex flex-wrap my-8 mx-auto justify-center">
   <ModalButton id={id1} btnName={btnExLName} btnColor={btnExLColor} />
 </div>
 
-Create a button and modal.
+<p class=" dark:text-white"> Create a button and modal.</p>
 
 ```svelte
 <ModalButton id={id1} btnName={btnExLName} btnColor={btnExLColor} />
@@ -111,13 +111,13 @@ Create a button and modal.
 </ExtraLargeModal>
 ```
 
-<h1 class="text-3xl w-full">Extra-large Modals with Two Buttons</h1>
+<h1 class="text-3xl w-full dark:text-white">Extra-large Modals with Two Buttons</h1>
 
 <div class="container flex flex-wrap my-8 mx-auto justify-center">
   <ModalButton id={id2} btnName={btnExLName2} btnColor={btnExLColor2} />
 </div>
 
-Create a button and modal.
+<p class=" dark:text-white">Create a button and modal.</p>
 
 ```svelte
 <ModalButton id={id2} btnName={btnExLName2} btnColor={btnExLColor2} />

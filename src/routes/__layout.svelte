@@ -1,6 +1,10 @@
+<script context="module">
+</script>
+
 <script>
   import "../app.css";
   import "flowbite/dist/flowbite.css";
+  import { browser } from "$app/env";
   import {
     Aside,
     Nav,
@@ -20,18 +24,82 @@
     tabs,
   } from "./items.js";
 
-  let asideClass = "absolute w-auto bg-white pt-8 shadow-lg z-50 px-4 h-full";
-  let headerClass = "px-8 bg-white h-14 pt-3 text-gray-600 border-b-2";
+  let asideClass =
+    "absolute w-auto bg-white pt-8 shadow-lg z-50 px-4 h-full bg-white dark:bg-gray-800";
+  let headerClass =
+    "px-8 bg-white h-14 pt-3 text-gray-600 border-b-2 bg-white dark:bg-gray-800 dark:text-white";
   let siteName = "Svelte Flow";
-  let navClass = "py-0 px-8 bg-white text-sm";
+  let navClass =
+    "py-0 px-8 bg-white text-sm bg-white dark:bg-gray-800 dark:text-white";
   let navDivClass = "pb-4";
   let navDivClasslast = "pb-24";
   let siteClass = "w-10/12 pt-1 pl-8";
   let siteText = "text-lg";
   let topli = "text-base";
+
+  if (browser) {
+    let themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
+    let themeToggleLightIcon = document.getElementById(
+      "theme-toggle-light-icon"
+    );
+
+    // Change the icons inside the button based on previous settings
+    // if (
+    //   localStorage.getItem("color-theme") === "dark" ||
+    //   (!("color-theme" in localStorage) &&
+    //     window.matchMedia("(prefers-color-scheme: dark)").matches)
+    // ) {
+    //   themeToggleLightIcon.classList.remove("hidden");
+    // } else {
+    //   themeToggleDarkIcon.classList.remove("hidden");
+    // }
+
+    let themeToggleBtn = document.getElementById("theme-toggle");
+
+    themeToggleBtn.addEventListener("click", function () {
+      // toggle icons inside button
+      themeToggleDarkIcon.classList.toggle("hidden");
+      themeToggleLightIcon.classList.toggle("hidden");
+
+      // if set via local storage previously
+      if (localStorage.getItem("color-theme")) {
+        if (localStorage.getItem("color-theme") === "light") {
+          document.documentElement.classList.add("dark");
+          localStorage.setItem("color-theme", "dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+          localStorage.setItem("color-theme", "light");
+        }
+        // if NOT set via local storage previously
+      } else {
+        if (document.documentElement.classList.contains("dark")) {
+          document.documentElement.classList.remove("dark");
+          localStorage.setItem("color-theme", "light");
+        } else {
+          document.documentElement.classList.add("dark");
+          localStorage.setItem("color-theme", "dark");
+        }
+      }
+    });
+  }
 </script>
 
-<div class="z-50  w-full h-9">
+<svelte:head>
+  <script>
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (
+      localStorage.getItem("color-theme") === "dark" ||
+      (!("color-theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  </script>
+</svelte:head>
+
+<div class="z-50 w-full h-9">
   <Navbar {siteName} {headerClass} {topMenus} {siteClass} {siteText} {topli} />
   <Aside {asideClass}>
     <Nav {navClass} {navDivClass}>

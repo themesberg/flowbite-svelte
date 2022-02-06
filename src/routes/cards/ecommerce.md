@@ -18,7 +18,7 @@ layout: doc
   };
 </script>
 
-<h1 class="text-3xl w-full">Ecommerce Card: Setup</h1>
+<h1 class="text-3xl w-full dark:text-white">Ecommerce Card: Setup</h1>
 
 ```svelte
 <script>
@@ -38,7 +38,7 @@ layout: doc
 </script>
 ```
 
-<h1 class="text-3xl w-full">Ecommerce Cards</h1>
+<h1 class="text-3xl w-full dark:text-white">Ecommerce Cards</h1>
 
 ```svelte
 <EcommerceCard

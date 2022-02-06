@@ -38,9 +38,9 @@ layout: doc
   };
 </script>
 
-<h1 class="text-3xl w-full">Large Modals: Setup</h1>
+<h1 class="text-3xl w-full dark:text-white">Large Modals: Setup</h1>
 
-Import SmallModal and ModalButton components and set variables in the script tag.
+<p class="dark:text-white"> Import SmallModal and ModalButton components and set variables in the script tag.</p>
 
 ```svelte
 import { LargeModal, ModalButton } from 'svelte-flow'
@@ -77,13 +77,13 @@ const handlebtn3 = () => {
 };
 ```
 
-<h1 class="text-3xl w-full">Large Modals</h1>
+<h1 class="text-3xl w-full dark:text-white">Large Modals</h1>
 
 <div class="container flex flex-wrap my-8 mx-auto justify-center">
   <ModalButton {id} {btnName} />
 </div>
 
-Create a button and modal.
+<p class=" dark:text-white"> Create a button and modal.
 
 ```svelte
 <ModalButton {id} {btnName} />
@@ -93,7 +93,7 @@ Create a button and modal.
 </LargeModal>
 ```
 
-<h1 class="text-3xl w-full">Large Modal with an action button</h1>
+<h1 class="text-3xl w-full dark:text-white">Large Modal with an action button</h1>
 
 <div class="container flex flex-wrap my-8 mx-auto justify-center">
   <ModalButton id={id1} btnName={btnName1} btnColor={btnColor1} />
@@ -112,7 +112,7 @@ Create a button and modal.
 </LargeModal>
 ```
 
-<h1 class="text-3xl w-full">Large Modal with two action buttons</h1>
+<h1 class="text-3xl w-full dark:text-white">Large Modal with two action buttons</h1>
 
 <div class="container flex flex-wrap my-8 mx-auto justify-center">
   <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />

@@ -2,29 +2,29 @@
 layout: doc
 ---
 
-<h1 class="text-2xl w-full">Getting Started</h1>
-<h2 class="text-xl w-full mt-8">Installation</h2>
-Install SvelteKit.
+<h1 class="text-2xl w-full dark:text-white">Getting Started</h1>
+<h2 class="text-xl w-full mt-8 dark:text-white">Installation</h2>
+<p class="dark:text-white">Install SvelteKit.</p>
 
 ```sh
 npm init svelte@next sveltekit-demo $ cd sveltekit-demo
 npm install 
 ```
 
-Install Tailwind CSS and Flowbite.
+<p class="dark:text-white">Install Tailwind CSS and Flowbite.</p>
 
 ```sh
 npx svelte-add@latest tailwindcss
 npm i flowbite 
 ```
 
-Install svelte-flow.
+<p class="dark:text-white">Install svelte-flow.</p>
 
 ```sh
 npm i -D svelte-flow 
 ```
 
-Add the following in the script tag in the __layout.svelte :
+<p class="dark:text-white">Add the following in the script tag in the __layout.svelte :</p>
 
 ```html
 <script>
@@ -33,7 +33,7 @@ Add the following in the script tag in the __layout.svelte :
 </script>
 ```
 
-Add the following in the script tag in the __layout.svelte :
+<p class="dark:text-white">Add the following in the script tag in the __layout.svelte :</p>
 
 ```html
 <div class="mx-auto p-2">
@@ -41,7 +41,7 @@ Add the following in the script tag in the __layout.svelte :
 </div>
 ```
 
-And modify the src/app.html adding flowbite.js as the following:
+<p class="dark:text-white">And modify the src/app.html adding flowbite.js as the following:</p>
 
 ```html
 <!DOCTYPE html />
@@ -60,4 +60,4 @@ And modify the src/app.html adding flowbite.js as the following:
 </html>
 ```
 
-<div class="container mt-4 flex flex-wrap mx-auto pb-48" />
+
