@@ -1,7 +1,7 @@
 <script>
   import "../app.css";
   import "flowbite/dist/flowbite.css";
-  import { Darkmode } from "$lib/index";
+  import { DarkMode } from "$lib/index";
   import {
     Aside,
     Nav,
@@ -109,7 +109,7 @@
 </Aside>
 
 <main class="container mx-auto px-4 pt-4">
-  <Darkmode />
+  <DarkMode />
   <div class="mt-8 w-full">
     <slot />
   </div>
