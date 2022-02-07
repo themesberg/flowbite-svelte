@@ -41,7 +41,7 @@ layout: doc
   };
 </script>
 
-<h1 class="text-3xl w-full dark:text-white">Small Modals: Setup</h1>
+<h1 class="text-3xl w-full dark:text-white pt-16">Small Modals: Setup</h1>
 
 <p class="dark:text-white">
 Import SmallModal and ModalButton components and set variables in the

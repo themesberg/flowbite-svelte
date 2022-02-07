@@ -19,7 +19,7 @@ import CtaCard from './cards/CtaCard.svelte'
 import EcommerceCard from './cards/EcommerceCard.svelte'
 
 // Dark mode
-import Darkmode from './darkmode/darkmode.svelte'
+import Darkmode from './darkmode/Darkmode.svelte'
 
 // List
 import List from './list-group/List.svelte'
@@ -33,7 +33,7 @@ import SignInModal from './modals/SignInModal.svelte'
 import SmallModal from './modals/SmallModal.svelte'
 
 // Navbar
-import Navbar from './navbar/navbar.svelte'
+import Navbar from './navbar/Navbar.svelte'
 
 // Tabs
 import InteractiveTabs from './tabs/InteractiveTabs.svelte'

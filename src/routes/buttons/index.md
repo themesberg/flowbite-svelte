@@ -6,7 +6,7 @@ layout: doc
   import { Button } from "$lib/index";
 </script>
 
-<h1 class="text-3xl w-full dark:text-white">Buttons: Setup</h1>
+<h1 class="text-3xl w-full dark:text-white  pt-16">Buttons: Setup</h1>
 
 <p class="dark:text-white">Import Button in the script tag.</p>
 

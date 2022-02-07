@@ -35,7 +35,7 @@ layout: doc
 </script>
 
 
-<h1 class="text-3xl w-full dark:text-white">Medium Modals: Setup</h1>
+<h1 class="text-3xl w-full dark:text-white pt-16">Medium Modals: Setup</h1>
 <p class="dark:text-white">Import SmallModal and ModalButton components and set variables in the script tag.</p>
 
 ```svelte

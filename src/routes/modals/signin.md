@@ -12,7 +12,7 @@ layout: doc
   let btnSignInColor = "blue";
 </script>
 
-<h1 class="text-3xl w-full">Sign-in Modals: Setup</h1>
+<h1 class="text-3xl w-full pt-16">Sign-in Modals: Setup</h1>
 Import SignInModal, ModalButton components and set variables in the script tag.
 
 ```svelte

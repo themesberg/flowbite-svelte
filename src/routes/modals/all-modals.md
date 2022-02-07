@@ -100,7 +100,7 @@ layout: doc
   let formLink = "/auth/login";
 </script>
 
-<h1 class="text-3xl w-full dark:text-white">All Modals</h1>
+<h1 class="text-3xl w-full dark:text-white pt-16">All Modals</h1>
 
 <h2 class="text-xl w-full mt-8 dark:text-white">Small Modals</h2>
 

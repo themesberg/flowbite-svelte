@@ -6,7 +6,7 @@ layout: doc
   import { Alert, BorderAlert, InfoAlert } from "$lib/index";
 </script>
 
-<h1 class="text-3xl w-full text-gray-900 dark:text-white">Alert: Setup</h1>
+<h1 class="text-3xl w-full text-gray-900 dark:text-white  pt-16">Alert: Setup</h1>
 
 <p class="text-gray-900 dark:text-white">
 Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
