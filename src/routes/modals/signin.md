@@ -66,4 +66,4 @@ Create a button and modal.
 
 <p class="dark:text-white text-base"><a href="https://flowbite.com/docs/components/modal/" target="_blank">- Flowbite Modal</a></p>
 
-<div class="giscus dark:bg-gray-800 dark:text-white"></div>
+<div class="giscus"></div>
