@@ -166,5 +166,3 @@ layout: doc
 <h1 class="text-3xl w-full dark:text-white pb-8">References</h1>
 
 <p class="dark:text-white text-base"><a href="https://flowbite.com/docs/components/modal/" target="_blank">- Flowbite Modal</a></p>
-
-<div class="giscus"></div>
