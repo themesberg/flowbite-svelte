@@ -182,4 +182,3 @@ eiusmod tempor incididunt ut labore et dolore magna aliqua.
     eiusmod tempor incididunt ut labore et dolore magna aliqua.
   </SmallModal>
 
-<div class="giscus dark:bg-gray-800 dark:text-white"></div>
