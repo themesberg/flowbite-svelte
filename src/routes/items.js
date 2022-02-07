@@ -24,10 +24,6 @@ export let cards = [
   { url: "cards/list", name: "List", rel: "external" },
 ];
 
-export let darkmode = [
-  { url: "darkmode", name: "Dark mode", rel: "external" },
-]
-
 export let list_group = [
   { url: "list-group", name: "List group", rel: "external" },
 ];
@@ -47,7 +43,7 @@ export let navbar = [
 ];
 
 export let tabs = [
-  { url: "tabs", name: "Tabs", rel: "external" },
+  { url: "tabs", name: "Modals", rel: "external" },
   { url: "tabs/default-tabs", name: "Default", rel: "external" },
   { url: "tabs/interactive-tabs", name: "Interactive", rel: "external" },
   { url: "tabs/multiple-interactive-tabs", name: "Multiple Interactive", rel: "external" },
