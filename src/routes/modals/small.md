@@ -183,4 +183,3 @@ eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
 <p class="dark:text-white text-base"><a href="https://flowbite.com/docs/components/modal/" target="_blank">- Flowbite Modal</a></p>
 
-<div class="giscus"></div>

@@ -59,7 +59,7 @@ layout: doc
   ];
 </script>
 
-<h1 class="text-3xl w-full">Multiple Interactive Tabs</h1>
+<h1 class="text-3xl w-full dark:text-white">Multiple Interactive Tabs</h1>
 
 ```svelte
 <script>

@@ -6,7 +6,7 @@ layout: doc
   import { Navbar } from "$lib/index";
 </script>
 
-<h1 class="text-3xl w-full">Navbar Setup</h1>
+<h1 class="text-3xl w-full dark:text-white">Navbar Setup</h1>
 
 
 ```svelte
@@ -15,7 +15,7 @@ layout: doc
 </script>
 ```
 
-<h2 class="text-lg mt-8">Text Size xs</h2>
+<h2 class="text-lg mt-8 dark:text-white">Text Size xs</h2>
 
 ```svelte
 <Navbar textsize="xs" />
@@ -23,7 +23,7 @@ layout: doc
 
 <Navbar textsize="xs" />
 
-<h2 class="text-lg mt-8">Text Size sm</h2>
+<h2 class="text-lg mt-8 dark:text-white">Text Size sm</h2>
 
 ```svelte
 <Navbar textsize="sm" />
@@ -31,7 +31,7 @@ layout: doc
 
 <Navbar textsize="sm" />
 
-<h2 class="text-lg mt-8">Text Size base</h2>
+<h2 class="text-lg mt-8 dark:text-white">Text Size base</h2>
 
 ```svelte
 <Navbar textsize="base" />
@@ -39,7 +39,7 @@ layout: doc
 
 <Navbar textsize="base" />
 
-<h2 class="text-lg mt-8">Text Size lg</h2>
+<h2 class="text-lg mt-8 dark:text-white">Text Size lg</h2>
 
 ```svelte
 <Navbar textsize="lg" />
@@ -47,7 +47,7 @@ layout: doc
 
 <Navbar textsize="lg" />
 
-<h2 class="text-lg mt-8">Text Size xl</h2>
+<h2 class="text-lg mt-8 dark:text-white">Text Size xl</h2>
 
 ```svelte
 <Navbar textsize="xl" />

@@ -6,7 +6,7 @@ layout: doc
   import { DefaultTabs } from "$lib/index";
 </script>
 
-<h1 class="text-3xl w-full">Default Tabs</h1>
+<h1 class="text-3xl w-full dark:text-white">Default Tabs</h1>
 
 
 ```svelte

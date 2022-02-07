@@ -6,7 +6,7 @@ layout: doc
   import { PillTabs } from "$lib/index";
 </script>
 
-<h1 class="text-3xl w-full">Pill Tabs</h1>
+<h1 class="text-3xl w-full dark:text-white">Pill Tabs</h1>
 
 ```svelte
 <script>

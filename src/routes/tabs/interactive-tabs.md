@@ -32,7 +32,7 @@ layout: doc
   ];
 </script>
 
-<h1 class="text-3xl w-full">Interactive Tabs</h1>
+<h1 class="text-3xl w-full dark:text-white">Interactive Tabs</h1>
 
 ```svelte
 <script>

@@ -100,9 +100,9 @@ layout: doc
   let formLink = "/auth/login";
 </script>
 
-<h1 class="text-3xl w-full">All Modals</h1>
+<h1 class="text-3xl w-full dark:text-white">All Modals</h1>
 
-<h2 class="text-xl w-full mt-8">Small Modals</h2>
+<h2 class="text-xl w-full mt-8 dark:text-white">Small Modals</h2>
 
 ```
 <ModalButton id={smallModalId} btnName={btnSName} />
@@ -123,7 +123,7 @@ layout: doc
   <ModalButton id={smallModalId} btnName={btnSName} />
 </div>
 
-<h2 class="text-xl w-full mt-8">Medium Modals</h2>
+<h2 class="text-xl w-full mt-8 dark:text-white">Medium Modals</h2>
 
 ```
 <ModalButton id={mediumModalId} btnName={btnMName} btnColor={btnMColor} />
@@ -145,7 +145,7 @@ layout: doc
   <ModalButton id={mediumModalId} btnName={btnMName} btnColor={btnMColor} />
 </div>
 
-<h2 class="text-xl w-full mt-8">Large Modals</h2>
+<h2 class="text-xl w-full mt-8 dark:text-white">Large Modals</h2>
 
 ```
 <ModalButton id={largeModalId} btnName={btnLName} btnColor={btnLColor} />
@@ -167,7 +167,7 @@ layout: doc
   <ModalButton id={largeModalId} btnName={btnLName} btnColor={btnLColor} />
 </div>
 
-<h2 class="text-xl w-full mt-8">Extra-Large Modals</h2>
+<h2 class="text-xl w-full mt-8 dark:text-white">Extra-Large Modals</h2>
 
 ```
 <ModalButton
@@ -197,7 +197,7 @@ layout: doc
   />
 </div>
 
-<h2 class="text-xl w-full mt-8">SingIn Modals</h2>
+<h2 class="text-xl w-full mt-8 dark:text-white">SingIn Modals</h2>
 
 ```
 <ModalButton
