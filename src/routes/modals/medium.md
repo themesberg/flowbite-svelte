@@ -105,7 +105,6 @@ layout: doc
 </MediumModal>
 ```
 
- 
 <h1 class="text-3xl w-full dark:text-white">Medium Modals with action buttons</h1>
 
 <div class="container flex flex-wrap my-8 mx-auto justify-center">
@@ -163,3 +162,9 @@ layout: doc
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud exercitation ullamco.
   </MediumModal>
+
+<h1 class="text-3xl w-full dark:text-white pb-8">References</h1>
+
+<p class="dark:text-white text-base"><a href="https://flowbite.com/docs/components/modal/" target="_blank">- Flowbite Modal</a></p>
+
+<div class="giscus dark:bg-gray-800 dark:text-white"></div>

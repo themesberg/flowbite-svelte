@@ -125,8 +125,7 @@ const handlebtnS4 = () => {
 </SmallModal>
 ```
 
-  <div class="container mt-4 flex flex-wrap mx-auto">
-    <h1 class="text-3xl w-full dark:text-white">Small Modals with different colors</h1>
+<h1 class="text-3xl w-full dark:text-white">Small Modals with different colors</h1>
 
 <div class="container flex flex-wrap mt-8 mx-auto justify-center">
   <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
@@ -148,8 +147,6 @@ const handlebtnS4 = () => {
   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </SmallModal>
 ```
- 
-  </div>
 
 <SmallModal id={idBasic} title={"Basic Modal Title"}>
   Basic Modal Content
@@ -181,5 +178,9 @@ eiusmod tempor incididunt ut labore et dolore magna aliqua.
     Modal 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
     eiusmod tempor incididunt ut labore et dolore magna aliqua.
   </SmallModal>
+
+<h1 class="text-3xl w-full dark:text-white pb-8">References</h1>
+
+<p class="dark:text-white text-base"><a href="https://flowbite.com/docs/components/modal/" target="_blank">- Flowbite Modal</a></p>
 
 <div class="giscus dark:bg-gray-800 dark:text-white"></div>
