@@ -99,6 +99,5 @@
   <Darkmode />
   <div class="mt-8 w-full">
     <slot />
-    <div class="giscus dark:bg-gray-800 dark:text-white" />
   </div>
 </div>
