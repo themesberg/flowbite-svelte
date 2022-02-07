@@ -74,6 +74,14 @@
   </div>
   <div class="p-4">
     <Card
+      img="/images/darkmode.png"
+      header="DARK MODE"
+      link="/darkmode"
+      btnColor="gray"
+    />
+  </div>
+  <div class="p-4">
+    <Card
       img="/images/list-group.png"
       header="LIST-GROUP"
       link="/list-group"
