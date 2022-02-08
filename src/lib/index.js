@@ -34,6 +34,7 @@ import SmallModal from './modals/SmallModal.svelte'
 
 // Navbar
 import Navbar from './navbar/Navbar.svelte'
+import DropdownNavbar from './navbar/DropdownNavbar.svelte'
 
 // Tabs
 import InteractiveTabs from './tabs/InteractiveTabs.svelte'
@@ -68,6 +69,7 @@ export {
   SmallModal,
   // Navbar
   Navbar,
+  DropdownNavbar,
   // Tabs
   InteractiveTabs,
   DefaultTabs,
