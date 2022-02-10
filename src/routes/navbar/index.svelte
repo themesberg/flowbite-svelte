@@ -2,6 +2,7 @@
   import { Navbar } from "$lib/index";
 </script>
 
+<a href="/navbar/dropdown">Dropdown</a>
 <div class="container mt-8 mx-auto justify-center">
   <h2 class="text-lg mt-8">Text Size xs</h2>
   <Navbar textsize="xs" />

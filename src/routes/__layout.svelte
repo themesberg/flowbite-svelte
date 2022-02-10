@@ -1,7 +1,7 @@
 <script>
   import "../app.css";
   import "flowbite/dist/flowbite.css";
-  import { Navbar } from "$lib/index";
+  import { Navbar, DarkMode } from "$lib/index";
   let menus = [
     {
       name: "Home",
@@ -47,6 +47,7 @@
 </script>
 
 <div class="mx-auto p-4">
+  <DarkMode />
   <Navbar textsize="lg" />
   <div class="mt-8">
     <slot />

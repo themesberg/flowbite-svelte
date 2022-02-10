@@ -1,5 +1,7 @@
 <script>
+  import { handleTabs } from "./handleTabs";
   export let tabId = "myTab";
+
   export let tabs = [
     {
       name: "Profile",
@@ -33,6 +35,7 @@
     class="flex flex-wrap -mb-px"
     id={tabId}
     data-tabs-toggle="#{tabId}Content"
+    on:click={handleTabs}
     role="tablist"
   >
     {#each tabs as { name, selected }}

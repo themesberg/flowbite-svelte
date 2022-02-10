@@ -65,6 +65,10 @@
       rel: "external",
     },
   ];
+  let hidden = true;
+  const handleDropdown = () => {
+    hidden = !hidden;
+  };
 </script>
 
 <nav
@@ -118,6 +122,7 @@
             <li>
               <button
                 id="dropdownNavbarLink"
+                on:click={handleDropdown}
                 data-dropdown-toggle="dropdownNavbar{name}"
                 class="flex justify-between items-center py-2 pr-4 pl-3 w-full text-{textsize} font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
                 >{name}
@@ -137,6 +142,7 @@
               <!-- Dropdown menu -->
               <div
                 id="dropdownNavbar{name}"
+                class:hidden
                 class="hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600"
               >
                 <ul class="py-1" aria-labelledby="dropdownLargeButton">
