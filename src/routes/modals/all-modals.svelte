@@ -6,6 +6,7 @@
     ExtraLargeModal,
     SignInModal,
     ModalButton,
+    toggleModal,
   } from "$lib/index";
 
   // small

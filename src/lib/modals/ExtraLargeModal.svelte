@@ -1,4 +1,5 @@
 <script>
+  import { toggleModal } from "./modalHelper";
   import { createEventDispatcher } from "svelte";
 
   const dispatch = createEventDispatcher();

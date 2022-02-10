@@ -1,6 +1,6 @@
 <script>
   // import { createEventDispatcher } from "svelte";
-
+  import { toggleModal } from "./modalHelper";
   // const dispatch = createEventDispatcher();
   export let id = "signin-modal";
   export let btnSignInColor = "blue";

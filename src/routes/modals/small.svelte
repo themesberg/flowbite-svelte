@@ -1,5 +1,5 @@
 <script>
-  import { SmallModal, ModalButton } from "$lib/index";
+  import { SmallModal, ModalButton, toggleModal } from "$lib/index";
   import { goto } from "$app/navigation";
 
   // common

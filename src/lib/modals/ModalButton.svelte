@@ -1,4 +1,5 @@
 <script>
+  import { toggleModal } from "./modalHelper";
   // required
   export let id = "modal-id";
   // optional

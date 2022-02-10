@@ -1,5 +1,5 @@
 <script>
-  import { MediumModal, ModalButton } from "$lib/index";
+  import { MediumModal, ModalButton, toggleModal } from "$lib/index";
 
   // modal 1
   const id = "basic-modal";

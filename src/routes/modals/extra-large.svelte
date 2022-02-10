@@ -1,5 +1,5 @@
 <script>
-  import { ModalButton, ExtraLargeModal } from "$lib/index";
+  import { ModalButton, ExtraLargeModal, toggleModal } from "$lib/index";
 
   // simple modal
   let id = "simple";
