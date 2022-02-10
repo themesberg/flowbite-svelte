@@ -1,5 +1,5 @@
 export let alerts = [
-  { url: "alerts", name: "Alerts", rel: "external" },
+  { url: "alerts", name: "Alerts" },
 ];
 
 export let buttons = [

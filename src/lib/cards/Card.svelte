@@ -1,5 +1,6 @@
 <script>
   export let link;
+  export let rel;
   export let img;
   export let btnName = "Read more";
   export let btnColor = "blue";
@@ -11,13 +12,13 @@
   class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
 >
   {#if img}
-    <a href={link} rel="external">
+    <a href={link} {rel}>
       <img class="rounded-t-lg" src={img} alt="" />
     </a>
   {/if}
   <div class="p-5">
     {#if link}
-      <a href={link} rel="external">
+      <a href={link} {rel}>
         <h5
           class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
         >
@@ -38,7 +39,7 @@
     {#if link}
       <a
         href={link}
-        rel="external"
+        {rel}
         class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-{btnColor}-700 rounded-lg hover:bg-{btnColor}-800 focus:ring-4 focus:ring-{btnColor}-300 dark:bg-{btnColor}-600 dark:hover:bg-{btnColor}-700 dark:focus:ring-{btnColor}-800"
       >
         {btnName}

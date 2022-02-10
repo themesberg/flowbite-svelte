@@ -20,8 +20,8 @@
   export let header = "Lorem ipsum";
   export let content = "Proin efficitur purus felis.";
   export let btnColor1 = "blue";
-  export let link1 = { href: "", title: "" };
-  export let link2 = { href: "", title: "" };
+  export let link1 = { href: "", title: "", rel: "" };
+  export let link2 = { href: "", title: "", rel: "" };
 </script>
 
 <div
@@ -50,13 +50,13 @@
       class="hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
     >
       <ul class="py-1" aria-labelledby="dropdownButton">
-        {#each dropdownLinks as link}
+        {#each dropdownLinks as { href, name, rel }}
           <li>
             <a
-              href={link.href}
-              rel="external"
+              {href}
+              {rel}
               class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-              >{link.name}</a
+              >{name}</a
             >
           </li>
         {/each}
@@ -78,7 +78,7 @@
       {#if link1.href}
         <a
           href={link1.href}
-          rel="external"
+          rel={link1.rel}
           class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-{btnColor1}-700 rounded-lg hover:bg-{btnColor1}-800 focus:ring-4 focus:ring-{btnColor1}-300 dark:bg-{btnColor1}-600 dark:hover:bg-{btnColor1}-700 dark:focus:ring-{btnColor1}-800"
           >{link1.title}</a
         >
@@ -86,7 +86,7 @@
       {#if link2.href}
         <a
           href={link2.href}
-          rel="external"
+          rel={link2.rel}
           class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-gray-900 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-blue-300 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-800"
           >{link2.title}</a
         >

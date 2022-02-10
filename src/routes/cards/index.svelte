@@ -21,6 +21,7 @@
       img="/images/cards.png"
       header="INTERACTIVE CARD"
       link="/cards/interactive-card"
+      rel="external"
     />
   </div>
   <div class="p-4">

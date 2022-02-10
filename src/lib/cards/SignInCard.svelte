@@ -1,5 +1,6 @@
 <script>
   export let title = "Sign in";
+  export let rel;
   export let actionLink = "sign-in";
   export let field1 = {
     name: "email",
@@ -7,8 +8,14 @@
     placeholder: "name@company.com",
     required: "true",
   };
-  export let signupLink;
-  export let lostPasswordLink;
+  export let signupLink = {
+    href: "",
+    rel: "",
+  };
+  export let lostPasswordLink = {
+    href: "",
+    rel: "",
+  };
 </script>
 
 <div
@@ -67,8 +74,8 @@
       </div>
       {#if lostPasswordLink}
         <a
-          href={lostPasswordLink}
-          rel="external"
+          href={lostPasswordLink.href}
+          rel={lostPasswordLink.rel}
           class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500"
           >Lost Password?</a
         >
@@ -83,8 +90,8 @@
     {#if signupLink}
       <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
         Not registered? <a
-          href={signupLink}
-          rel="external"
+          href={signupLink.href}
+          rel={signupLink.rel}
           class="text-blue-700 hover:underline dark:text-blue-500"
           >Create account</a
         >

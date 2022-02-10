@@ -32,6 +32,7 @@
   export let action = {
     link: "/#",
     title: "View all",
+    rel: "",
   };
 </script>
 
@@ -44,7 +45,7 @@
     </h3>
     <a
       href={action.link}
-      rel="external"
+      rel={action.rel}
       class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500"
     >
       {action.title}
