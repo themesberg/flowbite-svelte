@@ -4,10 +4,15 @@
   export let alertId = "alert-additional-content-1";
   export let infoLink = false;
   export let closeBtn = false;
+  let hidden = false;
+  const handleHide = () => {
+    hidden = !hidden;
+  };
 </script>
 
 <div
   id={alertId}
+  class:hidden
   class="p-4 mb-4 bg-{color}-100 rounded-lg dark:bg-{color}-200"
   role="alert"
 >
@@ -52,6 +57,7 @@
     {/if}
     {#if closeBtn}
       <button
+        on:click={handleHide}
         type="button"
         class="text-{color}-700 bg-transparent border border-{color}-700 hover:bg-{color}-800 hover:text-white focus:ring-4 focus:ring-{color}-300 font-medium rounded-lg text-xs px-3 py-1.5 text-center dark:border-{color}-800 dark:text-{color}-800 dark:hover:text-white"
         data-collapse-toggle={alertId}
