@@ -26,12 +26,12 @@
     {
       name: "List Group",
       link: "/list-group",
-      rel: "external",
+      rel: undefined,
     },
     {
       name: "Modals",
       link: "/modals",
-      rel: "external",
+      rel: undefined,
     },
     {
       name: "Navbar",
@@ -41,7 +41,7 @@
     {
       name: "Tabs",
       link: "/tabs",
-      rel: "external",
+      rel: undefined,
     },
   ];
 </script>

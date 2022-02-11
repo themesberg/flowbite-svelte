@@ -4,31 +4,35 @@
       name: "Profile",
       active: true,
       link: "/#",
+      rel: undefined,
     },
     {
       name: "Dashboard",
       active: false,
       link: "/#",
+      rel: undefined,
     },
     {
       name: "Settings",
       active: false,
       link: "/#",
+      rel: undefined,
     },
     {
       name: "Contacts",
       active: false,
       link: "/#",
+      rel: undefined,
     },
   ];
 </script>
 
 <ul class="flex flex-wrap border-b border-gray-200 dark:border-gray-700">
-  {#each tabs as { name, active, link }}
+  {#each tabs as { name, active, link, rel }}
     <li class="mr-2">
       <a
         href={link}
-        rel="external"
+        {rel}
         aria-current="page"
         class={active
           ? "inline-block py-4 px-4 text-sm font-medium text-center text-blue-600 bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-blue-500"

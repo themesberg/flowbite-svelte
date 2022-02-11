@@ -1,6 +1,5 @@
 <script>
-  import { LargeModal, ModalButton } from "$lib/index";
-  import { modalIdStore } from "$lib/modals/modalStores";
+  import { LargeModal, ModalButton, modalIdStore } from "$lib/index";
 
   const closeModal = () => {
     modalIdStore.update((value) => {

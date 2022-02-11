@@ -6,8 +6,14 @@
     ExtraLargeModal,
     SignInModal,
     ModalButton,
-    toggleModal,
+    modalIdStore,
   } from "$lib/index";
+
+  const closeModal = () => {
+    modalIdStore.update((value) => {
+      value = null;
+    });
+  };
 
   // small
   let smallModalId = "small-modal";
@@ -20,12 +26,12 @@
 
   const handlebtnS1 = () => {
     alert("handlebtnS1 is clicked from a parent page.");
-    toggleModal(smallModalId, false);
+    closeModal();
   };
 
   const handlebtnS2 = () => {
     alert("handlebtnS2 is clicked from a parent page.");
-    toggleModal(smallModalId, false);
+    closeModal();
   };
 
   // medium
@@ -39,12 +45,12 @@
 
   const handlebtnM1 = () => {
     alert("handlebtnM1 is clicked from a parent page.");
-    toggleModal(mediumModalId, false);
+    closeModal();
   };
 
   const handlebtnM2 = () => {
     alert("handlebtnM2 is clicked from a parent page.");
-    toggleModal(mediumModalId, false);
+    closeModal();
   };
 
   // Large
@@ -58,12 +64,12 @@
 
   const handlebtnL1 = () => {
     alert("handlebtnL1 is clicked from a parent page.");
-    toggleModal(largeModalId, false);
+    closeModal();
   };
 
   const handlebtnL2 = () => {
     alert("handlebtnL2 is clicked from a parent page.");
-    toggleModal(largeModalId, false);
+    closeModal();
   };
 
   // Extra Large
@@ -77,12 +83,12 @@
 
   const handlebtnExL1 = () => {
     alert("handlebtnExL1 is clicked from a parent page.");
-    toggleModal(extraLargeModalId, false);
+    closeModal();
   };
 
   const handlebtnExL2 = () => {
     alert("handlebtnExL2 is clicked from a parent page.");
-    toggleModal(extraLargeModalId, false);
+    closeModal();
   };
 
   // SignIn Modal

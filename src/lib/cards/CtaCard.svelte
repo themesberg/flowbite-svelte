@@ -8,7 +8,7 @@
       name: "Download it",
       type: "blue",
       link: "/about",
-      rel: "external",
+      rel: undefined,
       rounded: null,
     },
     {
@@ -16,7 +16,7 @@
       name: "Get in on",
       type: "red-outline",
       link: "/#",
-      rel: "external",
+      rel: undefined,
       rounded: null,
     },
   ];

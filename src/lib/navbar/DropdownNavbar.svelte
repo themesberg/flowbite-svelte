@@ -8,61 +8,61 @@
     {
       name: "Home",
       link: "/",
-      rel: "external",
+      rel: undefined,
     },
     {
       name: "Alerts",
       link: "/alerts",
-      rel: "external",
+      rel: undefined,
     },
     {
       name: "Component 1",
       link: "/",
-      rel: "external",
+      rel: undefined,
       child: [
         {
           name: "Modals",
           link: "/modals",
-          rel: "external",
+          rel: undefined,
         },
         {
           name: "Navbar",
           link: "/navbar",
-          rel: "external",
+          rel: undefined,
         },
         {
           name: "Tabs",
           link: "/tabs",
-          rel: "external",
+          rel: undefined,
         },
       ],
     },
     {
       name: "Component 2",
       link: "/",
-      rel: "external",
+      rel: undefined,
       child: [
         {
           name: "Modals",
           link: "/modals",
-          rel: "external",
+          rel: undefined,
         },
         {
           name: "Navbar",
           link: "/navbar",
-          rel: "external",
+          rel: undefined,
         },
         {
           name: "Tabs",
           link: "/tabs",
-          rel: "external",
+          rel: undefined,
         },
       ],
     },
     {
       name: "List Group",
       link: "/list-group",
-      rel: "external",
+      rel: undefined,
     },
   ];
   let hidden = true;

@@ -8,7 +8,7 @@
       name: "Download it",
       type: "purple",
       link: "/about",
-      rel: "external",
+      rel: undefined,
       rounded: true,
     },
     {
@@ -16,7 +16,7 @@
       name: "Get in on",
       type: "green-outline",
       link: "/#",
-      rel: "external",
+      rel: undefined,
     },
   ];
 </script>
