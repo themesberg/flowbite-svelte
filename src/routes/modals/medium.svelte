@@ -1,5 +1,12 @@
 <script>
-  import { MediumModal, ModalButton, toggleModal } from "$lib/index";
+  import { MediumModal, ModalButton } from "$lib/index";
+  import { modalIdStore } from "$lib/modals/modalStores";
+
+  const closeModal = () => {
+    modalIdStore.update((value) => {
+      value = null;
+    });
+  };
 
   // modal 1
   const id = "basic-modal";
@@ -12,7 +19,7 @@
   let textMColor = "red";
 
   const handlebtnM1 = () => {
-    toggleModal(id1, false);
+    closeModal();
   };
 
   // modal 3
@@ -22,10 +29,10 @@
   let btnColor2 = "purple";
 
   const handlebtnM2 = () => {
-    toggleModal(id2, false);
+    closeModal();
   };
   const handlebtnM3 = () => {
-    toggleModal(id2, false);
+    closeModal();
   };
 </script>
 

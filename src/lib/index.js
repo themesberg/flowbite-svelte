@@ -28,7 +28,7 @@ import SimpleFooter from './footer/SimpleFooter.svelte'
 import List from './list-group/List.svelte'
 
 // Modals
-import { toggleModal } from './modals/modalHelper'
+// import { toggleModal } from './modals/modalHelper'
 import ExtraLargeModal from './modals/ExtraLargeModal.svelte'
 import LargeModal from './modals/LargeModal.svelte'
 import MediumModal from './modals/MediumModal.svelte'
@@ -67,7 +67,7 @@ export {
   // list
   List,
   // Modals
-  toggleModal,
+  // toggleModal,
   ExtraLargeModal,
   LargeModal,
   MediumModal,
