@@ -9,10 +9,10 @@
   let showModalId;
 
   export let openFn = (modal) => {
-    console.log("modal id", modal.id);
+    // console.log("modal id", modal.id);
     modalIdStore.update((n) => (n = modal.id));
     showModalId = get(modalIdStore);
-    console.log("button showModalId:", showModalId);
+    // console.log("button showModalId:", showModalId);
   };
 </script>
 

@@ -58,7 +58,7 @@
 </div>
 <div id="{tabId}Content">
   {#each tabs as { label, content, id }}
-    {#if activeTabValue == id}
+    {#if activeTabValue === id}
       <div
         class="p-4 bg-gray-50 rounded-lg dark:bg-gray-800"
         id={label}

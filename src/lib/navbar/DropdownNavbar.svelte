@@ -1,36 +1,55 @@
 <script>
   import { page } from "$app/stores";
 
+  let hidden = true;
+  let block = false;
+  let activeDropdown = undefined;
+  const handleDropdown = (dropdown) => {
+    console.log("dropdown.id", dropdown.id);
+    hidden = !hidden;
+    block = !block;
+    activeDropdown = dropdown.id;
+    console.log("activeDropdown: ", activeDropdown);
+  };
+
+  // const handleClick =
+
   export let sitename = "Svelte Flow";
   export let logo = "/images/mkdir-logo.png";
   export let textsize = "sm";
   export let menus = [
     {
+      id: 1,
       name: "Home",
       link: "/",
       rel: undefined,
     },
     {
-      name: "Alerts",
+      id: 2,
+      name: "Alerts compoenents",
       link: "/alerts",
       rel: undefined,
     },
     {
+      id: 3,
       name: "Component 1",
       link: "/",
       rel: undefined,
       child: [
         {
-          name: "Modals",
+          id: 4,
+          name: "Modals compoenents",
           link: "/modals",
           rel: undefined,
         },
         {
-          name: "Navbar",
+          id: 5,
+          name: "Navbar compoenents",
           link: "/navbar",
           rel: undefined,
         },
         {
+          id: 6,
           name: "Tabs",
           link: "/tabs",
           rel: undefined,
@@ -38,21 +57,25 @@
       ],
     },
     {
+      id: 7,
       name: "Component 2",
       link: "/",
       rel: undefined,
       child: [
         {
+          id: 8,
           name: "Modals",
           link: "/modals",
           rel: undefined,
         },
         {
+          id: 9,
           name: "Navbar",
           link: "/navbar",
           rel: undefined,
         },
         {
+          id: 10,
           name: "Tabs",
           link: "/tabs",
           rel: undefined,
@@ -60,15 +83,12 @@
       ],
     },
     {
+      id: 11,
       name: "List Group",
       link: "/list-group",
       rel: undefined,
     },
   ];
-  let hidden = true;
-  const handleDropdown = () => {
-    hidden = !hidden;
-  };
 </script>
 
 <nav
@@ -83,7 +103,6 @@
       >
     </a>
     <button
-      data-collapse-toggle="mobile-menu"
       type="button"
       class="inline-flex justify-center items-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-500"
       aria-controls="mobile-menu-2"
@@ -117,13 +136,11 @@
       <ul
         class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium"
       >
-        {#each menus as { name, link, rel, child }}
+        {#each menus as { id, name, link, rel, child }}
           {#if child}
             <li>
               <button
-                id="dropdownNavbarLink"
-                on:click={handleDropdown}
-                data-dropdown-toggle="dropdownNavbar{name}"
+                on:click={handleDropdown({ id })}
                 class="flex justify-between items-center py-2 pr-4 pl-3 w-full text-{textsize} font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
                 >{name}
                 <svg
@@ -138,26 +155,28 @@
                   /></svg
                 ></button
               >
-
-              <!-- Dropdown menu -->
-              <div
-                id="dropdownNavbar{name}"
-                class:hidden
-                class="hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600"
-              >
-                <ul class="py-1" aria-labelledby="dropdownLargeButton">
-                  {#each child as item}
-                    <li>
-                      <a
-                        href={item.link}
-                        {rel}
-                        class="block py-2 px-4 text-{textsize} text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
-                        >{item.name}</a
-                      >
-                    </li>
-                  {/each}
-                </ul>
-              </div>
+              {#if activeDropdown === id}
+                <!-- Dropdown menu -->
+                <div
+                  class:hidden
+                  class:block
+                  class="z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600"
+                  style="position: absolute; margin: 0px;"
+                >
+                  <ul class="py-1" aria-labelledby="dropdownLargeButton">
+                    {#each child as item}
+                      <li>
+                        <a
+                          href={item.link}
+                          {rel}
+                          class="block py-2 px-4 text-{textsize} text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
+                          >{item.name}</a
+                        >
+                      </li>
+                    {/each}
+                  </ul>
+                </div>
+              {/if}
             </li>
           {:else}
             <li>
