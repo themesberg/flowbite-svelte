@@ -5,9 +5,11 @@
   export let btnName = "Modal Name";
   export let btnColor = "blue";
 
+  let showModalId;
   export let openFn = (modal) => {
     modalIdStore.update((n) => (n = modal.id));
     showModalId = get(modalIdStore);
+    console.log("showModalId", showModalId);
   };
 </script>
 

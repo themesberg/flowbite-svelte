@@ -29,6 +29,11 @@
       rel: undefined,
     },
     {
+      name: "Dropdown",
+      link: "/dropdowns",
+      rel: undefined,
+    },
+    {
       name: "List Group",
       link: "/list-group",
       rel: undefined,

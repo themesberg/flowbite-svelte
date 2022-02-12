@@ -14,14 +14,14 @@
 <ul class="list-disc pl-5 dark:text-gray-400 text-gray-500">
   <li>
     <a
-      href="#"
+      href="/"
       target="_blank"
       class="text-blue-600 dark:text-blue-500 hover:underline">About</a
     >
   </li>
   <li>
     <a
-      href="#"
+      href="/"
       rel="nofollow"
       target="_blank"
       class="text-blue-600 dark:text-blue-500 hover:underline">Profile</a

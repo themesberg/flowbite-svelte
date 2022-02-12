@@ -21,6 +21,10 @@ import EcommerceCard from './cards/EcommerceCard.svelte'
 // Dark mode
 import DarkMode from './darkmode/DarkMode.svelte'
 
+// Dropdown
+import DropdownButton from './dropdowns/DropdownButton.svelte'
+import Dropdown from './dropdowns/DropDown.svelte' 
+
 // Footers
 import SimpleFooter from './footer/SimpleFooter.svelte'
 
@@ -64,6 +68,9 @@ export {
   EcommerceCard,
   // darkmode
   DarkMode,
+  // dropdowns
+  DropdownButton,
+  Dropdown,
   // footers
   SimpleFooter,
   // list
