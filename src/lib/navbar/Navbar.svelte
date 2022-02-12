@@ -40,7 +40,6 @@
       >
     </a>
     <button
-      data-collapse-toggle="mobile-menu"
       type="button"
       class="inline-flex justify-center items-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-500"
       aria-controls="mobile-menu-2"

@@ -34,19 +34,13 @@
 </script>
 
 <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
-  <ul
-    class="flex flex-wrap -mb-px"
-    id={tabId}
-    data-tabs-toggle="#{tabId}Content"
-    role="tablist"
-  >
+  <ul class="flex flex-wrap -mb-px" id={tabId} role="tablist">
     {#each tabs as { label, selected, id }}
       <li class="mr-2" role="presentation" class:active={activeTabValue === id}>
         <button
           on:click={handleClick(id)}
           class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300"
           id="{label}-tab"
-          data-tabs-target="#{label}"
           type="button"
           role="tab"
           aria-controls={label}

@@ -34,7 +34,6 @@
       on:click={handleHide}
       type="button"
       class="ml-auto -mx-1.5 -my-1.5 bg-{color}-100 text-{color}-500 rounded-lg focus:ring-2 focus:ring-{color}-400 p-1.5 hover:bg-{color}-200 inline-flex h-8 w-8 dark:bg-{color}-200 dark:text-{color}-600 dark:hover:bg-{color}-300"
-      data-collapse-toggle={alertId}
       aria-label="Close"
     >
       <span class="sr-only">Close</span>

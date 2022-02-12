@@ -1,5 +1,6 @@
 <script>
   import { InteractiveCard } from "$lib/index";
+
   let dropdownLinks = [
     {
       href: "/#",

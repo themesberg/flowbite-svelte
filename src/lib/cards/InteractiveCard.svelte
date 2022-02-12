@@ -1,4 +1,9 @@
 <script>
+  let isOpen = true;
+  const toggleDropdown = () => {
+    isOpen = !isOpen;
+  };
+
   export let dropdownLinks = [
     {
       href: "/",
@@ -30,8 +35,8 @@
   <div class="flex justify-end px-4 pt-4">
     <button
       id="dropdownButton"
-      data-dropdown-toggle="dropdown"
-      class="hidden sm:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5"
+      on:click={toggleDropdown}
+      class="sm:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5"
       type="button"
     >
       <svg
@@ -47,7 +52,9 @@
 
     <div
       id="dropdown"
-      class="hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
+      class:hidden={isOpen}
+      class:block={!isOpen}
+      class="hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 absolute"
     >
       <ul class="py-1" aria-labelledby="dropdownButton">
         {#each dropdownLinks as { href, label, rel }}

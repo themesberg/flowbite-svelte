@@ -39,7 +39,6 @@
           <button
             type="button"
             class="text-{textSignInColor}-400 bg-transparent hover:bg-{textSignInColor}-200 hover:text-{textSignInColor}-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-{textSignInColor}-800 dark:hover:text-white"
-            data-modal-toggle={id}
             on:click={closeModal}
           >
             <svg
@@ -120,10 +119,8 @@
                 href={lostPasswordLink}
                 rel="external"
                 class="text-sm text-{btnSignInColor}-700 hover:underline dark:text-{btnSignInColor}-500"
-                ><button
-                  type="button"
-                  data-modal-toggle={id}
-                  on:click={closeModal}>Lost Password?</button
+                ><button type="button" on:click={closeModal}
+                  >Lost Password?</button
                 ></a
               >
             {/if}
@@ -141,10 +138,8 @@
                 href={signUpLink}
                 rel="external"
                 class="text-{btnSignInColor}-700 hover:underline dark:text-{btnSignInColor}-500"
-                ><button
-                  type="button"
-                  data-modal-toggle={id}
-                  on:click={closeModal}>Create account</button
+                ><button type="button" on:click={closeModal}
+                  >Create account</button
                 ></a
               >
             </div>
