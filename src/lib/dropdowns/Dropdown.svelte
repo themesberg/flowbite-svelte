@@ -2,7 +2,7 @@
   import { dropdownIdStore } from "./dropdownStores";
   export let id = "my-dropdown";
 
-  $: dropdownIdStore.subscribe((value) => {
+  dropdownIdStore.subscribe((value) => {
     console.log("dropdownIdStore: ", value);
   });
 
