@@ -11,38 +11,18 @@
       rel: undefined,
     },
     {
-      name: "Alerts",
-      link: "/alerts",
+      name: "About",
+      link: "/about",
       rel: undefined,
     },
     {
-      name: "Buttons",
-      link: "/buttons",
+      name: "Profile",
+      link: "/profile",
       rel: undefined,
     },
     {
-      name: "Cards",
-      link: "/cards",
-      rel: undefined,
-    },
-    {
-      name: "List Group",
-      link: "/list-group",
-      rel: undefined,
-    },
-    {
-      name: "Modals",
-      link: "/modals",
-      rel: undefined,
-    },
-    {
-      name: "Navbar",
-      link: "/navbar",
-      rel: undefined,
-    },
-    {
-      name: "Tabs",
-      link: "/tabs",
+      name: "GitHub",
+      link: "/#",
       rel: undefined,
     },
   ];

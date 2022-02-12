@@ -2,22 +2,31 @@
   import "../app.css";
   import "flowbite/dist/flowbite.css";
   import { Navbar, DarkMode } from "$lib/index";
-  let menus = [
+  export let menus = [
     {
       name: "Home",
       link: "/",
+      rel: undefined,
+    },
+    {
+      name: "Accordion",
+      link: "/accordions",
+      rel: undefined,
     },
     {
       name: "Alerts",
       link: "/alerts",
+      rel: undefined,
     },
     {
       name: "Buttons",
       link: "/buttons",
+      rel: undefined,
     },
     {
       name: "Cards",
       link: "/cards",
+      rel: undefined,
     },
     {
       name: "List Group",
@@ -32,6 +41,7 @@
     {
       name: "Navbar",
       link: "/navbar",
+      rel: undefined,
     },
     {
       name: "Tabs",
@@ -43,7 +53,7 @@
 
 <div class="mx-auto p-4">
   <DarkMode />
-  <Navbar textsize="lg" />
+  <Navbar textsize="lg" {menus} />
   <div class="mt-8">
     <slot />
   </div>

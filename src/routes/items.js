@@ -1,10 +1,16 @@
 export let components = [
+  { url: "accordions", name: "Accordions", },
   { url: "alerts", name: "Alerts", },
   { url: "buttons", name: "Buttons", },
   { url: "cards", name: "Cards",  },
   { url: "list-group", name: "List Group",  },
   { url: "modals", name: "Modals",  },
   { url: "tabs", name: "Tabs",},
+];
+
+export let accordions = [
+  { url: "accordions", name: "Accordion", },
+  // { url: "accordions", name: "Accordion",  },
 ];
 
 export let alerts = [
@@ -43,7 +49,9 @@ export let modals = [
 ];
 
 export let navbar = [
-  { url: "navbar", name: "Navbar",  },
+  { url: "navbar", name: "Navbar", },
+  { url: "navbar/default", name: "Navbar", },
+  { url: "navbar/dropdown", name: "Dropdown",  },
 ];
 
 export let tabs = [
