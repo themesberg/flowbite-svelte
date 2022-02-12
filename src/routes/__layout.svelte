@@ -2,7 +2,6 @@
   import "../app.css";
   import "flowbite/dist/flowbite.css";
   import { Navbar, DarkMode } from "$lib/index";
-  import Darkmode from "$lib/darkmode/DarkMode.svelte";
   let menus = [
     {
       name: "Home",
@@ -23,10 +22,12 @@
     {
       name: "List Group",
       link: "/list-group",
+      rel: undefined,
     },
     {
       name: "Modals",
       link: "/modals",
+      rel: undefined,
     },
     {
       name: "Navbar",
@@ -35,12 +36,13 @@
     {
       name: "Tabs",
       link: "/tabs",
+      rel: undefined,
     },
   ];
 </script>
 
 <div class="mx-auto p-4">
-  <Darkmode />
+  <DarkMode />
   <Navbar textsize="lg" />
   <div class="mt-8">
     <slot />

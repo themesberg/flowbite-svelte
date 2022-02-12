@@ -8,42 +8,42 @@
     {
       name: "Home",
       link: "/",
-      rel: "external",
+      rel: undefined,
     },
     {
       name: "Alerts",
       link: "/alerts",
-      rel: "external",
+      rel: undefined,
     },
     {
       name: "Buttons",
       link: "/buttons",
-      rel: "external",
+      rel: undefined,
     },
     {
       name: "Cards",
       link: "/cards",
-      rel: "external",
+      rel: undefined,
     },
     {
       name: "List Group",
       link: "/list-group",
-      rel: "external",
+      rel: undefined,
     },
     {
       name: "Modals",
       link: "/modals",
-      rel: "external",
+      rel: undefined,
     },
     {
       name: "Navbar",
       link: "/navbar",
-      rel: "external",
+      rel: undefined,
     },
     {
       name: "Tabs",
       link: "/tabs",
-      rel: "external",
+      rel: undefined,
     },
   ];
 </script>

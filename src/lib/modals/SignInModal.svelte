@@ -1,7 +1,8 @@
 <script>
   // import { createEventDispatcher } from "svelte";
-
+  import { modalIdStore } from "./modalStores.js";
   // const dispatch = createEventDispatcher();
+
   export let id = "signin-modal";
   export let btnSignInColor = "blue";
   export let textSignInColor = "gray";
@@ -11,135 +12,149 @@
   export let signUpLink;
   export let formLink = "/#";
 
-  const closeSingInModal = () => {
-    toggleModal(id, false);
+  const closeModal = () => {
+    modalIdStore.update((value) => {
+      value = null;
+    });
   };
+
+  export let showModalId;
+  modalIdStore.subscribe((value) => {
+    showModalId = value;
+  });
 </script>
 
-<div
-  {id}
-  aria-hidden="true"
-  class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal md:h-full md:inset-0"
->
-  <div class="relative px-4 w-full max-w-md h-full md:h-auto">
-    <div
-      class="relative bg-white rounded-lg shadow dark:bg-{textSignInColor}-700"
-    >
-      <div class="flex justify-end p-2">
-        <button
-          type="button"
-          class="text-{textSignInColor}-400 bg-transparent hover:bg-{textSignInColor}-200 hover:text-{textSignInColor}-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-{textSignInColor}-800 dark:hover:text-white"
-          data-modal-toggle={id}
-          on:click={closeSingInModal}
-        >
-          <svg
-            class="w-5 h-5"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-            ><path
-              fill-rule="evenodd"
-              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-              clip-rule="evenodd"
-            /></svg
-          >
-        </button>
-      </div>
-      <form
-        class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8"
-        action={formLink}
+{#if showModalId === id}
+  <div
+    {id}
+    role="dialog"
+    aria-modal="true"
+    class="flex overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-20 z-50 justify-center items-center"
+  >
+    <div class="relative px-4 w-full max-w-md h-full md:h-auto">
+      <div
+        class="relative bg-white rounded-lg shadow dark:bg-{textSignInColor}-700"
       >
-        <h3
-          class="text-xl font-medium text-{textSignInColor}-900 dark:text-white"
+        <div class="flex justify-end p-2">
+          <button
+            type="button"
+            class="text-{textSignInColor}-400 bg-transparent hover:bg-{textSignInColor}-200 hover:text-{textSignInColor}-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-{textSignInColor}-800 dark:hover:text-white"
+            data-modal-toggle={id}
+            on:click={closeModal}
+          >
+            <svg
+              class="w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+              ><path
+                fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              /></svg
+            >
+          </button>
+        </div>
+        <form
+          class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8"
+          action={formLink}
         >
-          {titleSignIn}
-        </h3>
-        <div>
-          <label
-            for="email-{id}"
-            class="block mb-2 text-sm font-medium text-{textSignInColor}-900 dark:text-{textSignInColor}-300"
-            >Your email</label
+          <h3
+            class="text-xl font-medium text-{textSignInColor}-900 dark:text-white"
           >
-          <input
-            type="email"
-            name="email"
-            id="email-{id}"
-            class="bg-{textSignInColor}-50 border border-{textSignInColor}-300 text-{textSignInColor}-900 text-sm rounded-lg focus:ring-{btnSignInColor}-500 focus:border-{btnSignInColor}-500 block w-full p-2.5 dark:bg-{textSignInColor}-600 dark:border-{textSignInColor}-500 dark:placeholder-{textSignInColor}-400 dark:text-white"
-            placeholder="name@company.com"
-            required
-          />
-        </div>
-        <div>
-          <label
-            for="password-{id}"
-            class="block mb-2 text-sm font-medium text-{textSignInColor}-900 dark:text-{textSignInColor}-300"
-            >Your password</label
+            {titleSignIn}
+          </h3>
+          <div>
+            <label
+              for="email-{id}"
+              class="block mb-2 text-sm font-medium text-{textSignInColor}-900 dark:text-{textSignInColor}-300"
+              >Your email</label
+            >
+            <input
+              type="email"
+              name="email"
+              id="email-{id}"
+              class="bg-{textSignInColor}-50 border border-{textSignInColor}-300 text-{textSignInColor}-900 text-sm rounded-lg focus:ring-{btnSignInColor}-500 focus:border-{btnSignInColor}-500 block w-full p-2.5 dark:bg-{textSignInColor}-600 dark:border-{textSignInColor}-500 dark:placeholder-{textSignInColor}-400 dark:text-white"
+              placeholder="name@company.com"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="password-{id}"
+              class="block mb-2 text-sm font-medium text-{textSignInColor}-900 dark:text-{textSignInColor}-300"
+              >Your password</label
+            >
+            <input
+              type="password"
+              name="password"
+              id="password-{id}"
+              placeholder="••••••••"
+              class="bg-{textSignInColor}-50 border border-{textSignInColor}-300 text-{textSignInColor}-900 text-sm rounded-lg focus:ring-{btnSignInColor}-500 focus:border-{btnSignInColor}-500 block w-full p-2.5 dark:bg-{textSignInColor}-600 dark:border-{textSignInColor}-500 dark:placeholder-{textSignInColor}-400 dark:text-white"
+              required
+            />
+          </div>
+          <div class="flex justify-between">
+            {#if rememberMe}
+              <div class="flex items-start">
+                <div class="flex items-center h-5">
+                  <input
+                    id="remember-{id}"
+                    aria-describedby="remember"
+                    type="checkbox"
+                    class="w-4 h-4 bg-{textSignInColor}-50 rounded border border-{textSignInColor}-300 focus:ring-3 focus:ring-{btnSignInColor}-300 dark:bg-{textSignInColor}-600 dark:border-{textSignInColor}-500 dark:focus:ring-{btnSignInColor}-600 dark:ring-offset-{textSignInColor}-800"
+                    required=""
+                  />
+                </div>
+                <div class="ml-3 text-sm">
+                  <label
+                    for="remember"
+                    class="font-medium text-{textSignInColor}-900 dark:text-{textSignInColor}-300"
+                    >Remember me</label
+                  >
+                </div>
+              </div>
+            {/if}
+            {#if lostPasswordLink}
+              <a
+                href={lostPasswordLink}
+                rel="external"
+                class="text-sm text-{btnSignInColor}-700 hover:underline dark:text-{btnSignInColor}-500"
+                ><button
+                  type="button"
+                  data-modal-toggle={id}
+                  on:click={closeModal}>Lost Password?</button
+                ></a
+              >
+            {/if}
+          </div>
+          <button
+            type="submit"
+            class="w-full text-white bg-{btnSignInColor}-700 hover:bg-{btnSignInColor}-800 focus:ring-4 focus:ring-{btnSignInColor}-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-{btnSignInColor}-600 dark:hover:bg-{btnSignInColor}-700 dark:focus:ring-{btnSignInColor}-800"
+            on:click={closeModal}>Login to your account</button
           >
-          <input
-            type="password"
-            name="password"
-            id="password-{id}"
-            placeholder="••••••••"
-            class="bg-{textSignInColor}-50 border border-{textSignInColor}-300 text-{textSignInColor}-900 text-sm rounded-lg focus:ring-{btnSignInColor}-500 focus:border-{btnSignInColor}-500 block w-full p-2.5 dark:bg-{textSignInColor}-600 dark:border-{textSignInColor}-500 dark:placeholder-{textSignInColor}-400 dark:text-white"
-            required
-          />
-        </div>
-        <div class="flex justify-between">
-          {#if rememberMe}
-            <div class="flex items-start">
-              <div class="flex items-center h-5">
-                <input
-                  id="remember-{id}"
-                  aria-describedby="remember"
-                  type="checkbox"
-                  class="w-4 h-4 bg-{textSignInColor}-50 rounded border border-{textSignInColor}-300 focus:ring-3 focus:ring-{btnSignInColor}-300 dark:bg-{textSignInColor}-600 dark:border-{textSignInColor}-500 dark:focus:ring-{btnSignInColor}-600 dark:ring-offset-{textSignInColor}-800"
-                  required=""
-                />
-              </div>
-              <div class="ml-3 text-sm">
-                <label
-                  for="remember"
-                  class="font-medium text-{textSignInColor}-900 dark:text-{textSignInColor}-300"
-                  >Remember me</label
-                >
-              </div>
+          {#if signUpLink}
+            <div
+              class="text-sm font-medium text-{textSignInColor}-500 dark:text-{textSignInColor}-300"
+            >
+              Not registered? <a
+                href={signUpLink}
+                rel="external"
+                class="text-{btnSignInColor}-700 hover:underline dark:text-{btnSignInColor}-500"
+                ><button
+                  type="button"
+                  data-modal-toggle={id}
+                  on:click={closeModal}>Create account</button
+                ></a
+              >
             </div>
           {/if}
-          {#if lostPasswordLink}
-            <a
-              href={lostPasswordLink}
-              rel="external"
-              class="text-sm text-{btnSignInColor}-700 hover:underline dark:text-{btnSignInColor}-500"
-              ><button
-                type="button"
-                data-modal-toggle={id}
-                on:click={closeSingInModal}>Lost Password?</button
-              ></a
-            >
-          {/if}
-        </div>
-        <button
-          type="submit"
-          class="w-full text-white bg-{btnSignInColor}-700 hover:bg-{btnSignInColor}-800 focus:ring-4 focus:ring-{btnSignInColor}-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-{btnSignInColor}-600 dark:hover:bg-{btnSignInColor}-700 dark:focus:ring-{btnSignInColor}-800"
-          on:click={closeSingInModal}>Login to your account</button
-        >
-        {#if signUpLink}
-          <div
-            class="text-sm font-medium text-{textSignInColor}-500 dark:text-{textSignInColor}-300"
-          >
-            Not registered? <a
-              href={signUpLink}
-              rel="external"
-              class="text-{btnSignInColor}-700 hover:underline dark:text-{btnSignInColor}-500"
-              ><button
-                type="button"
-                data-modal-toggle={id}
-                on:click={closeSingInModal}>Create account</button
-              ></a
-            >
-          </div>
-        {/if}
-      </form>
+        </form>
+      </div>
     </div>
   </div>
-</div>
+  <div
+    on:click={closeModal}
+    class="bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40 w-full h-full"
+  />
+{/if}

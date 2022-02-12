@@ -1,5 +1,11 @@
 <script>
-  import { ModalButton, ExtraLargeModal } from "$lib/index";
+  import { ModalButton, ExtraLargeModal, modalIdStore } from "$lib/index";
+
+  const closeModal = () => {
+    modalIdStore.update((value) => {
+      value = null;
+    });
+  };
 
   // simple modal
   let id = "simple";
@@ -18,17 +24,17 @@
 
   const handlebtn1 = () => {
     alert("handlebtn1 is clicked from a parent page.");
-    toggleModal(id1, false);
+    closeModal();
   };
 
   const handlebtn2 = () => {
     alert("handlebtn2 is clicked from a parent page.");
-    toggleModal(id2, false);
+    closeModal();
   };
 
   const handlebtn3 = () => {
     alert("handlebtn3 is clicked from a parent page.");
-    toggleModal(id2, false);
+    closeModal();
   };
 </script>
 
