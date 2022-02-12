@@ -2,15 +2,15 @@
   export let dropdownLinks = [
     {
       href: "/",
-      name: "Name 1",
+      label: "label 1",
     },
     {
       href: "about",
-      name: "About",
+      label: "About",
     },
     {
       href: "profile",
-      name: "Profile",
+      label: "Profile",
     },
   ];
   export let img = {
@@ -50,13 +50,13 @@
       class="hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
     >
       <ul class="py-1" aria-labelledby="dropdownButton">
-        {#each dropdownLinks as { href, name, rel }}
+        {#each dropdownLinks as { href, label, rel }}
           <li>
             <a
               {href}
               {rel}
               class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-              >{name}</a
+              >{label}</a
             >
           </li>
         {/each}

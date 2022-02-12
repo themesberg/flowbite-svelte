@@ -3,15 +3,15 @@
   let dropdownLinks = [
     {
       href: "/#",
-      name: "Edit",
+      label: "Edit",
     },
     {
       href: "/#",
-      name: "About",
+      label: "About",
     },
     {
       href: "/#",
-      name: "Profile",
+      label: "Profile",
     },
   ];
   let img = {

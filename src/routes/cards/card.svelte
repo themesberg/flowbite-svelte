@@ -11,14 +11,19 @@
     </Card>
   </div>
   <div class="flex-auto m-2">
-    <Card header="Card with link" link="/">
+    <Card header="Card with link" link="/" btnLabel="About Me">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
       consequatur modi ab nisi perferendis placeat natus repellendus officiis
       ipsa.</Card
     >
   </div>
   <div class="flex-auto m-2">
-    <Card img="/images/image-1.jpeg" header="Card with link and image" link="/">
+    <Card
+      img="/images/image-1.jpeg"
+      header="Card with link and image"
+      link="/"
+      btnLabel="Bla bla"
+    >
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
       consequatur modi ab nisi perferendis placeat natus repellendus officiis
       ipsa.</Card

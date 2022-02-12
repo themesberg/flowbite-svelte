@@ -2,7 +2,7 @@
   export let link;
   export let rel;
   export let img;
-  export let btnName = "Read more";
+  export let btnLabel = "Read more";
   export let btnColor = "blue";
   export let header =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
@@ -42,7 +42,7 @@
         {rel}
         class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-{btnColor}-700 rounded-lg hover:bg-{btnColor}-800 focus:ring-4 focus:ring-{btnColor}-300 dark:bg-{btnColor}-600 dark:hover:bg-{btnColor}-700 dark:focus:ring-{btnColor}-800"
       >
-        {btnName}
+        {btnLabel}
         <svg
           class="ml-2 -mr-1 w-4 h-4"
           fill="currentColor"
