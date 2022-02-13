@@ -1,8 +1,6 @@
 import Accordion from './accordions/AccordionDefault.svelte'
 import AccordionItem from './accordions/AccordionItem.svelte'
 
-// import HeroIcons from './heroIcons/HeroIcons.svelte'
-
 // Alerts
 import Alert from './alerts/Alert.svelte'
 import BorderAlert from './alerts/BorderAlert.svelte'
@@ -54,7 +52,6 @@ export {
   // Accordions
   Accordion,
   AccordionItem,
-  // HeroIcons,
   // alerts
   Alert,
   BorderAlert,
