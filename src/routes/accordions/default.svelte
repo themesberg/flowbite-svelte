@@ -1,10 +1,10 @@
 <script>
-  import Accordion from "$lib/accordions/Accordion.svelte";
-  import AccordionItem from "$lib/accordions/AccordionItem.svelte";
+  import Accordion from "$lib/index";
+  import AccordionItem from "$lib/index";
 </script>
 
 <div
-  class="code-preview rounded-xl bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
+  class="rounded-xl bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
 >
   <Accordion>
     <AccordionItem id="1">

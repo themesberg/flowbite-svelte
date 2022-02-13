@@ -1,4 +1,5 @@
-import DefaultAccordion from './accordions/DefaultAccordion.svelte'
+import Accordion from './accordions/Accordion.svelte'
+import AccordionItem from './accordions/AccordionItem.svelte'
 
 // import HeroIcons from './heroIcons/HeroIcons.svelte'
 
@@ -51,7 +52,8 @@ import PillTabs from './tabs/PillTabs.svelte'
 
 export {
   // Accordions
-  DefaultAccordion,
+  Accordion,
+  AccordionItem,
   // HeroIcons,
   // alerts
   Alert,
