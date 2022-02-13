@@ -5,29 +5,22 @@
   import { writable } from "svelte/store";
   export let duration = 0.2;
   export let easing = "ease";
-  export let key = null;
+  export let id = null;
   const dispatch = createEventDispatcher();
   // create a store for the children to access
-  const store = writable({ key, duration, easing });
-  // when the store changes, update the key prop
+  const store = writable({ id, duration, easing });
+  // when the store changes, update the id prop
   const unsubscribe = store.subscribe((s) => {
-    key = s.key;
-    dispatch("change", { key });
+    id = s.id;
+    dispatch("change", { id });
   });
-  // when the key prop changes, update the store
-  $: store.update((s) => Object.assign(s, { key }));
+  // when the id prop changes, update the store
+  $: store.update((s) => Object.assign(s, { id }));
   // make the store available to children
   setContext("svelte-collapsible-accordion", store);
   onDestroy(unsubscribe);
 </script>
 
-<ul class="accordion">
+<div>
   <slot />
-</ul>
-
-<style>
-  ul {
-    list-style: none;
-    padding-left: 0;
-  }
-</style>
+</div>
