@@ -1,4 +1,4 @@
-import Accordion from './accordions/Accordion.svelte'
+import Accordion from './accordions/AccordionDefault.svelte'
 import AccordionItem from './accordions/AccordionItem.svelte'
 
 // import HeroIcons from './heroIcons/HeroIcons.svelte'
