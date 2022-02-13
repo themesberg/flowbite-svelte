@@ -17,6 +17,7 @@
     "preview": "svelte-kit preview"
   },
   "devDependencies": {
+    "@codewithshin/svelte-heroicons": "^1.1.3",
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
     "autoprefixer": "^10.4.2",

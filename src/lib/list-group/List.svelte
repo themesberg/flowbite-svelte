@@ -4,25 +4,25 @@
       title: "Profile",
       icon: "",
       link: "/profile",
-      external: false,
+      rel: "",
     },
     {
       title: "Settings",
       icon: "",
       link: "/settings",
-      external: false,
+      rel: "",
     },
     {
       title: "Messages",
       icon: "",
       link: "/message",
-      external: false,
+      rel: "",
     },
     {
       title: "Download",
       icon: "",
       link: "/download",
-      external: false,
+      rel: "",
     },
   ];
   // let len = count($lists);
@@ -40,45 +40,25 @@
 <div
   class="w-48 text-gray-900 bg-white rounded-lg border border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
 >
-  {#each lists as { title, icon, link, external }, i}
+  {#each lists as { title, icon, link, rel }, i}
     {#if i === 0}
       <button type="button" class={topClass}>
         {#if icon}
-          <svg
-            class="mr-2 w-4 h-4 fill-current"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-            ><path fill-rule="evenodd" d={icon} clip-rule="evenodd" /></svg
-          >
+          <svelte:component this={icon} className="h-4 w-4 mr-2" />
         {/if}
         {#if link}
-          {#if external}
-            <a href={link} rel="external">{title}</a>
-          {:else}
-            <a href={link} rel="external">{title}</a>
-          {/if}
+          <a href={link} {rel}>{title}</a>
         {:else}
-          {title}
+          {title} here
         {/if}
       </button>
     {:else if i === lists.length - 1}
       <button type="button" class={bottomClass}>
         {#if icon}
-          <svg
-            class="mr-2 w-4 h-4 fill-current"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-            ><path fill-rule="evenodd" d={icon} clip-rule="evenodd" /></svg
-          >
+          <svelte:component this={icon} className="h-4 w-4 mr-2" />
         {/if}
         {#if link}
-          {#if external}
-            <a href={link} rel="external">{title}</a>
-          {:else}
-            <a href={link} rel="external">{title}</a>
-          {/if}
+          <a href={link} {rel}>{title}</a>
         {:else}
           {title}
         {/if}
@@ -86,20 +66,10 @@
     {:else}
       <button type="button" class={middleClass}>
         {#if icon}
-          <svg
-            class="mr-2 w-4 h-4 fill-current"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-            ><path fill-rule="evenodd" d={icon} clip-rule="evenodd" /></svg
-          >
+          <svelte:component this={icon} className="h-4 w-4 mr-2" />
         {/if}
         {#if link}
-          {#if external}
-            <a href={link} rel="external">{title}</a>
-          {:else}
-            <a href={link} rel="external">{title}</a>
-          {/if}
+          <a href={link} {rel}>{title}</a>
         {:else}
           {title}
         {/if}

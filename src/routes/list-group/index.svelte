@@ -1,5 +1,11 @@
 <script>
   import { List } from "$lib/index";
+  import {
+    AdjustmentsIconSolid,
+    UserCircleIconSolid,
+    InboxInIconSolid,
+    CloudDownloadIconSolid,
+  } from "@codewithshin/svelte-heroicons";
 
   let lists = [
     {
@@ -27,12 +33,35 @@
       link: "/tabs",
     },
   ];
+
+  let lists2 = [
+    {
+      title: "Profile",
+      icon: UserCircleIconSolid,
+      link: "/",
+    },
+    {
+      title: "Settings",
+      icon: AdjustmentsIconSolid,
+      link: "/",
+    },
+    {
+      title: "Messages",
+      icon: InboxInIconSolid,
+      link: "/",
+    },
+    {
+      title: "Download",
+      icon: CloudDownloadIconSolid,
+      link: "/",
+    },
+  ];
 </script>
 
 <div class="container mx-auto p-8">
-  <List />
+  <List {lists} />
 </div>
 
 <div class="container mx-auto p-8">
-  <List {lists} />
+  <List lists={lists2} />
 </div>
