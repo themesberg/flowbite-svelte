@@ -10,7 +10,8 @@ export let components = [
 
 export let accordions = [
   { url: "accordions", name: "Accordion", },
-  // { url: "accordions", name: "Accordion",  },
+  { url: "accordions/default", name: "Accordion", },
+  { url: "accordions/icon-accordion", name: "Icon Accordion",  },
 ];
 
 export let alerts = [

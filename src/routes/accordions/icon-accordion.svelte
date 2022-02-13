@@ -1,6 +1,7 @@
 <script>
   import { Accordion } from "$lib/index";
   import { AccordionItem } from "$lib/index";
+  import { AdjustmentsIconOutline } from "@codewithshin/svelte-heroicons";
 </script>
 
 <div
@@ -8,7 +9,11 @@
 >
   <Accordion>
     <AccordionItem id="1">
-      <h2 slot="header">My Header 1</h2>
+      <h2 slot="header">
+        <span class="flex items-center"
+          ><AdjustmentsIconOutline /> My Header 1</span
+        >
+      </h2>
       <div slot="body">
         <p class="mb-2 text-gray-500 dark:text-gray-400">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
@@ -27,7 +32,7 @@
         </p>
       </div>
     </AccordionItem>
-    <AccordionItem id="2">
+    <AccordionItem id="last">
       <h2 slot="header">My Header 2</h2>
       <div slot="body">
         <p class="mb-2 text-gray-500 dark:text-gray-400">
@@ -65,40 +70,6 @@
           </li>
         </ul>
       </div>
-    </AccordionItem>
-  </Accordion>
-</div>
-
-<div
-  class="code-preview rounded-xl bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
->
-  <Accordion>
-    <AccordionItem id="1">
-      <h2 slot="header">Header 2-1</h2>
-      <p slot="body">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-        necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-        voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-        nisi quis perspiciatis.
-      </p>
-    </AccordionItem>
-    <AccordionItem id="2">
-      <h2 slot="header">Header 2-2</h2>
-      <p slot="body">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-        necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-        voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-        nisi quis perspiciatis.
-      </p>
-    </AccordionItem>
-    <AccordionItem id="3">
-      <h2 slot="header">Header 2-3</h2>
-      <p slot="body">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-        necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-        voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-        nisi quis perspiciatis.
-      </p>
     </AccordionItem>
   </Accordion>
 </div>
