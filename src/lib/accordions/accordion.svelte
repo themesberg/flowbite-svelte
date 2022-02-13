@@ -21,4 +21,13 @@
   onDestroy(unsubscribe);
 </script>
 
-<slot />
+<ul class="accordion">
+  <slot />
+</ul>
+
+<style>
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+</style>
