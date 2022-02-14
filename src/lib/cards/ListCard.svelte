@@ -53,30 +53,26 @@
   </div>
   <div class="flow-root">
     <ul class="divide-y divide-gray-200 dark:divide-gray-700">
-      {#each lists as list}
+      {#each lists as { img, field1, field2, field3 }}
         <li class="py-3 sm:py-4">
           <div class="flex items-center space-x-4">
             <div class="flex-shrink-0">
-              <img
-                class="w-8 h-8 rounded-full"
-                src={list.img.src}
-                alt={list.img.alt}
-              />
+              <img class="w-8 h-8 rounded-full" src={img.src} alt={img.alt} />
             </div>
             <div class="flex-1 min-w-0">
               <p
                 class="text-sm font-medium text-gray-900 truncate dark:text-white"
               >
-                {list.field1}
+                {field1}
               </p>
               <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                {list.field2}
+                {field2}
               </p>
             </div>
             <div
               class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white"
             >
-              {list.field3}
+              {field3}
             </div>
           </div>
         </li>

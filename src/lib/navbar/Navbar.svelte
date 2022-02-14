@@ -3,6 +3,7 @@
 
   export let sitename = "Svelte Flow";
   export let logo = "/images/mkdir-logo.png";
+  export let alt = "Svelte Flow";
   export let textsize = "sm";
   export let menus = [
     {
@@ -32,8 +33,8 @@
   class="px-2 bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700"
 >
   <div class="container flex flex-wrap justify-between items-center mx-auto">
-    <a href="/" class="flex" rel="external">
-      <img src={logo} alt="" />
+    <a href="/" class="flex">
+      <img src={logo} {alt} />
       <span
         class="self-center text-lg font-semibold text-gray-900 whitespace-nowrap dark:text-white"
         >{sitename}</span
