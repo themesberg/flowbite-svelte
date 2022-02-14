@@ -41,7 +41,13 @@
   });
 </script>
 
-<button on:click={toggleTheme} id="theme-toggle" type="button" class={btnClass}>
+<button
+  on:click={toggleTheme}
+  aria-label="Dark mode"
+  id="theme-toggle"
+  type="button"
+  class={btnClass}
+>
   <svg
     class:hidden={mode === "light"}
     on:click={() => (mode = "dark")}
