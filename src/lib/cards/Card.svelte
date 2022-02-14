@@ -1,6 +1,7 @@
 <script>
   export let link;
   export let rel;
+  export let alt;
   export let img;
   export let btnLabel = "Read more";
   export let btnColor = "blue";
@@ -13,7 +14,7 @@
 >
   {#if img}
     <a href={link} {rel}>
-      <img class="rounded-t-lg" src={img} alt="" />
+      <img class="rounded-t-lg" src={img} {alt} />
     </a>
   {/if}
   <div class="p-5">
