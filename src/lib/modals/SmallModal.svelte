@@ -3,7 +3,7 @@
   import { modalIdStore } from "./modalStores.js";
   const dispatch = createEventDispatcher();
   export let id = "small-modal";
-  export let buttonColor = "blue";
+  export let btnColor = "blue";
   export let textColor = "gray";
   export let title = "Terms of Service";
   export let btn1;
@@ -146,28 +146,28 @@
   }
   let button1Class;
 
-  if (buttonColor === "blue") {
+  if (btnColor === "blue") {
     button1Class =
       "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800";
-  } else if (buttonColor === "gray") {
+  } else if (btnColor === "gray") {
     button1Class =
       "text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800";
-  } else if (buttonColor === "red") {
+  } else if (btnColor === "red") {
     button1Class =
       "text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800";
-  } else if (buttonColor === "yellow") {
+  } else if (btnColor === "yellow") {
     button1Class =
       "text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800";
-  } else if (buttonColor === "green") {
+  } else if (btnColor === "green") {
     button1Class =
       "text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800";
-  } else if (buttonColor === "indigo") {
+  } else if (btnColor === "indigo") {
     button1Class =
       "text-white bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800";
-  } else if (buttonColor === "purple") {
+  } else if (btnColor === "purple") {
     button1Class =
       "text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800";
-  } else if (buttonColor === "pink") {
+  } else if (btnColor === "pink") {
     button1Class =
       "text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800";
   } else {
