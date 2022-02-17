@@ -19,9 +19,9 @@
 <div class="p-8">
   <SignInModal
     id={signinId}
-    btnSignInColor={"pink"}
+    btnSignInColor={"blue"}
     titleSignIn={"SignIn Modal Title"}
-    textSignInColor="pink"
+    textSignInColor="gray"
     lostPasswordLink={"/auth/lost-password"}
     signUpLink={"/auth/signup"}
     formLink={"/auth/signin"}
