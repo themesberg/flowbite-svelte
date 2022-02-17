@@ -8,17 +8,73 @@
   const handleHide = () => {
     hidden = !hidden;
   };
+
+  let divClass;
+  let svgClass;
+  let slotClass;
+  let buttonClass;
+
+  if (color === "blue") {
+    divClass = "p-4 mb-4 bg-blue-100 rounded-lg dark:bg-blue-200";
+    svgClass = "mr-2 w-5 h-5 text-blue-700 dark:text-blue-800";
+    slotClass = "mt-2 mb-4 text-sm text-blue-700 dark:text-blue-800";
+    buttonClass =
+      "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs px-3 py-1.5 mr-2 text-center inline-flex items-center dark:bg-blue-800 dark:hover:bg-blue-900";
+  } else if (color === "gray") {
+    divClass = "p-4 mb-4 bg-gray-100 rounded-lg dark:bg-gray-200";
+    svgClass = "mr-2 w-5 h-5 text-gray-700 dark:text-gray-800";
+    slotClass = "mt-2 mb-4 text-sm text-gray-700 dark:text-gray-800";
+    buttonClass =
+      "text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-xs px-3 py-1.5 mr-2 text-center inline-flex items-center dark:bg-gray-800 dark:hover:bg-gray-900";
+  } else if (color === "red") {
+    divClass = "p-4 mb-4 bg-red-100 rounded-lg dark:bg-red-200";
+    svgClass = "mr-2 w-5 h-5 text-red-700 dark:text-red-800";
+    slotClass = "mt-2 mb-4 text-sm text-red-700 dark:text-red-800";
+    buttonClass =
+      "text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-1.5 mr-2 text-center inline-flex items-center dark:bg-red-800 dark:hover:bg-red-900";
+  } else if (color === "yellow") {
+    divClass = "p-4 mb-4 bg-yellow-100 rounded-lg dark:bg-yellow-200";
+    svgClass = "mr-2 w-5 h-5 text-yellow-700 dark:text-yellow-800";
+    slotClass = "mt-2 mb-4 text-sm text-yellow-700 dark:text-yellow-800";
+    buttonClass =
+      "text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-xs px-3 py-1.5 mr-2 text-center inline-flex items-center dark:bg-yellow-800 dark:hover:bg-yellow-900";
+  } else if (color === "green") {
+    divClass = "p-4 mb-4 bg-green-100 rounded-lg dark:bg-green-200";
+    svgClass = "mr-2 w-5 h-5 text-green-700 dark:text-green-800";
+    slotClass = "mt-2 mb-4 text-sm text-green-700 dark:text-green-800";
+    buttonClass =
+      "text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-xs px-3 py-1.5 mr-2 text-center inline-flex items-center dark:bg-green-800 dark:hover:bg-green-900";
+  } else if (color === "indigo") {
+    divClass = "p-4 mb-4 bg-indigo-100 rounded-lg dark:bg-indigo-200";
+    svgClass = "mr-2 w-5 h-5 text-indigo-700 dark:text-indigo-800";
+    slotClass = "mt-2 mb-4 text-sm text-indigo-700 dark:text-indigo-800";
+    buttonClass =
+      "text-white bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-xs px-3 py-1.5 mr-2 text-center inline-flex items-center dark:bg-indigo-800 dark:hover:bg-indigo-900";
+  } else if (color === "purple") {
+    divClass = "p-4 mb-4 bg-purple-100 rounded-lg dark:bg-purple-200";
+    svgClass = "mr-2 w-5 h-5 text-purple-700 dark:text-purple-800";
+    slotClass = "mt-2 mb-4 text-sm text-purple-700 dark:text-purple-800";
+    buttonClass =
+      "text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-xs px-3 py-1.5 mr-2 text-center inline-flex items-center dark:bg-purple-800 dark:hover:bg-purple-900";
+  } else if (color === "pink") {
+    divClass = "p-4 mb-4 bg-pink-100 rounded-lg dark:bg-pink-200";
+    svgClass = "mr-2 w-5 h-5 text-pink-700 dark:text-pink-800";
+    slotClass = "mt-2 mb-4 text-sm text-pink-700 dark:text-pink-800";
+    buttonClass =
+      "text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg text-xs px-3 py-1.5 mr-2 text-center inline-flex items-center dark:bg-pink-800 dark:hover:bg-pink-900";
+  } else {
+    divClass = "p-4 mb-4 bg-blue-100 rounded-lg dark:bg-blue-200";
+    svgClass = "mr-2 w-5 h-5 text-blue-700 dark:text-blue-800";
+    slotClass = "mt-2 mb-4 text-sm text-blue-700 dark:text-blue-800";
+    buttonClass =
+      "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs px-3 py-1.5 mr-2 text-center inline-flex items-center dark:bg-blue-800 dark:hover:bg-blue-900";
+  }
 </script>
 
-<div
-  id={alertId}
-  class:hidden
-  class="p-4 mb-4 bg-{color}-100 rounded-lg dark:bg-{color}-200"
-  role="alert"
->
+<div id={alertId} class:hidden class={divClass} role="alert">
   <div class="flex items-center">
     <svg
-      class="mr-2 w-5 h-5 text-{color}-700 dark:text-{color}-800"
+      class={svgClass}
       fill="currentColor"
       viewBox="0 0 20 20"
       xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +88,7 @@
       <slot name="header">No header was provided</slot>
     </h3>
   </div>
-  <div class="mt-2 mb-4 text-sm text-{color}-700 dark:text-{color}-800">
+  <div class={slotClass}>
     <slot>No content was provided.</slot>
   </div>
   <div class="flex">
