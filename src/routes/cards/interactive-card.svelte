@@ -37,7 +37,7 @@
       {content}
       {link1}
       {link2}
-      btnColor1="purple"
+      buttonColor="purple"
     />
   </div>
   <div class="flex-auto p-4">
@@ -48,7 +48,7 @@
       {content}
       {link1}
       {link2}
-      btnColor1="green"
+      buttonColor="green"
     />
   </div>
   <div class="flex-auto p-4">
@@ -58,7 +58,7 @@
       {header}
       {content}
       {link1}
-      btnColor1="red"
+      buttonColor="red"
     />
   </div>
 </div>
