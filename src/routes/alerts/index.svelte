@@ -7,6 +7,14 @@
     A simple info alert without a close button.
   </Alert>
 
+  <Alert alertId="alert-purple2" color="gray" closeBtn="true">
+    A simple info alert with a close button.
+  </Alert>
+
+  <Alert alertId="alert-purple2" color="green" closeBtn="true">
+    A simple info alert with a close button.
+  </Alert>
+
   <Alert alertId="alert-red" color="red" closeBtn="true">
     A simple info alert with a close button.
   </Alert>
@@ -14,6 +22,26 @@
   <Alert alertId="alert-purple2" color="purple" closeBtn="true">
     A simple info alert with a close button.
   </Alert>
+
+  <Alert alertId="alert-purple2" color="yellow" closeBtn="true">
+    A simple info alert with a close button.
+  </Alert>
+
+  <Alert alertId="alert-purple2" color="indigo" closeBtn="true">
+    A simple info alert with a close button.
+  </Alert>
+
+  <Alert alertId="alert-purple2" color="pink" closeBtn="true">
+    A simple info alert with a close button.
+  </Alert>
+
+  <BorderAlert color="blue">
+    A border alert without the close button.
+  </BorderAlert>
+
+  <BorderAlert color="gray">
+    A border alert without the close button.
+  </BorderAlert>
 
   <BorderAlert color="green">
     A border alert without the close button.
@@ -24,6 +52,18 @@
   </BorderAlert>
 
   <BorderAlert alertId="border-alert-3" color="red" closeBtn="true">
+    A border alert with the close button.
+  </BorderAlert>
+
+  <BorderAlert alertId="border-alert-3" color="purple" closeBtn="true">
+    A border alert with the close button.
+  </BorderAlert>
+
+  <BorderAlert alertId="border-alert-3" color="indigo" closeBtn="true">
+    A border alert with the close button.
+  </BorderAlert>
+
+  <BorderAlert alertId="border-alert-3" color="pink" closeBtn="true">
     A border alert with the close button.
   </BorderAlert>
 
