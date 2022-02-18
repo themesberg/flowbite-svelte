@@ -2,4 +2,4 @@
   import { DropdownNavbar } from "$lib/index";
 </script>
 
-<DropdownNavbar textsize="lg" />
+<DropdownNavbar textsize="text-lg" />

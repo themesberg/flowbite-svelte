@@ -4,7 +4,7 @@
   export let sitename = "Svelte Flow";
   export let logo = "/images/mkdir-logo.png";
   export let alt = "Svelte Flow";
-  export let textsize = "sm";
+  export let textsize = "text-sm";
   export let menus = [
     {
       name: "Home",
@@ -80,7 +80,7 @@
               class:active={$page.url.pathname === link}
               href={link}
               {rel}
-              class="block py-2 pr-4 pl-3  text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent text-{textsize}"
+              class="block py-2 pr-4 pl-3  text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent {textsize}"
               >{name}</a
             >
           </li>
