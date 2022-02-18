@@ -19,7 +19,7 @@
     btnSignInColor={"indigo"}
     titleSignIn={"SignIn Modal Title"}
     lostPasswordLink={"/auth/lost-password"}
-    signUpLink={"/auth/signup"}
+    signUp={"/auth/signup"}
     formLink={"/auth/signin"}
   />
 </div>
@@ -30,7 +30,7 @@
     btnSignInColor="purple"
     titleSignIn="SignIn Modal Title 2"
     lostPasswordLink="/auth/lost-password"
-    signUpLink="/auth/signup"
+    signUp="/auth/signup"
     formLink="/auth/signin"
   />
 </div>
