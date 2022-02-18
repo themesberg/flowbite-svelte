@@ -3,17 +3,13 @@
 
   let signinId = "signin-modal2";
   let btnSignInName = "Sign In Modal";
-  let btnSignInColor = "blue";
+  let btnColor = "red";
 </script>
 
 <div class="block p-8 space-y-4 md:flex md:space-y-0 md:space-x-4">
   <!-- Modal toggle -->
 
-  <ModalButton
-    id={signinId}
-    btnName={btnSignInName}
-    btnColor={btnSignInColor}
-  />
+  <ModalButton id={signinId} btnName={btnSignInName} {btnColor} />
 </div>
 
 <div class="p-8">

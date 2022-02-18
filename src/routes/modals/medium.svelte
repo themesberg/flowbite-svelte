@@ -14,8 +14,8 @@
   // modal 2
   let id1 = "medium-modal";
   let btnMName = "Medium Modal with one button";
-  let btnColor = "pink";
-  let textMColor = "red";
+  let btnColor = "purple";
+  let textMColor = "gray";
 
   const handlebtnM1 = () => {
     closeModal();
@@ -25,7 +25,7 @@
   let id2 = "medium-modal2";
   let btnName2 = "Medium Modal with two buttons";
   let textMColor2 = "yellow";
-  let btnColor2 = "purple";
+  let btnColor2 = "yellow";
 
   const handlebtnM2 = () => {
     closeModal();
