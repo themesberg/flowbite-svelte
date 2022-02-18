@@ -14,7 +14,7 @@
   // Modal 1
   let id1 = "large-modal-2";
   let btnName1 = "Large modal with one button";
-  let btnColor1 = "yellow";
+  let btnColor1 = "purple";
   let btn1 = "Close";
 
   // Modal 2
@@ -56,6 +56,7 @@
   id={id1}
   title="Default Modal Title"
   {btn1}
+  btnColor="yellow"
   on:handlebtn1={handlebtn1}
 >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
