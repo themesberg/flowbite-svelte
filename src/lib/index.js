@@ -16,6 +16,7 @@ import InteractiveCard from './cards/InteractiveCard.svelte'
 import ListCard from './cards/ListCard.svelte'
 import CtaCard from './cards/CtaCard.svelte'
 import EcommerceCard from './cards/EcommerceCard.svelte'
+import SignInCard from './cards/SignInCard.svelte'
 
 // Dark mode
 import DarkMode from './darkmode/DarkMode.svelte'
@@ -65,6 +66,7 @@ export {
   ListCard,
   CtaCard,
   EcommerceCard,
+  SignInCard,
   // darkmode
   DarkMode,
   // dropdowns

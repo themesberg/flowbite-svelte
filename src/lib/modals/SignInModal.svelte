@@ -8,8 +8,8 @@
   export let titleSignIn = "Sign in to our platform";
   export let lostPasswordLink;
   export let rememberMe = false;
-  export let signUpLink;
-  export let formLink = "/#";
+  export let signUp;
+  export let action;
 
   const closeModal = () => {
     modalIdStore.update((value) => {
@@ -82,10 +82,7 @@
             >
           </button>
         </div>
-        <form
-          class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8"
-          action={formLink}
-        >
+        <form class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8" {action}>
           <h3 class="text-xl font-medium text-gray-900 dark:text-white">
             {titleSignIn}
           </h3>
@@ -154,10 +151,10 @@
           <button type="submit" class={submitClass} on:click={closeModal}
             >Login to your account</button
           >
-          {#if signUpLink}
+          {#if signUp}
             <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
               Not registered? <a
-                href={signUpLink}
+                href={signUp}
                 rel="external"
                 class="text-blue-700 hover:underline dark:text-blue-500"
                 ><button type="button" on:click={closeModal}
