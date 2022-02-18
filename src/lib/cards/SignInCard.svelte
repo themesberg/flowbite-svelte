@@ -51,9 +51,9 @@
     <h3 class="text-xl font-medium text-gray-900 dark:text-white">{title}</h3>
     <div>
       <label
-        for={field1.name}
+        for="email"
         class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >{field1.title}</label
+        >Email</label
       >
       <input
         type="email"
