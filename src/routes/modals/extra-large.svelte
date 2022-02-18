@@ -13,12 +13,12 @@
   // Modal 1
   let id1 = "extra-large-modal";
   let btnExLName = "Extra Large Modal with one button";
-  let btnExLColor = "blue";
+  let btnExLColor = "purple";
 
   // Modal 2
   let id2 = "extra-large-modal-2";
   let btnExLName2 = "Extra Large Modal with two buttons";
-  let btnExLColor2 = "purple";
+  let btnExLColor2 = "red";
   let btn1 = "Read more";
   let btn2 = "Close";
 
@@ -54,6 +54,7 @@
   id={id1}
   title="Default Modal Title"
   {btn1}
+  btnColor="yellow"
   on:handlebtn1={handlebtn1}
 >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -64,7 +65,7 @@
 <ExtraLargeModal
   id={id2}
   btnColor="indigo"
-  textColor="red"
+  textColor="gray"
   title="Default Modal Title"
   {btn1}
   {btn2}
