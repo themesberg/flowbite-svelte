@@ -2,12 +2,7 @@
   export let title = "Sign in";
   export let action;
   export let btnSignInColor = "blue";
-  export let field1 = {
-    name: "email",
-    title: "Your email",
-    placeholder: "name@company.com",
-    required: "true",
-  };
+  export let rememberMe = false;
   export let signupLink = {
     href: "",
     rel: "",
@@ -61,12 +56,12 @@
         >{field1.title}</label
       >
       <input
-        type={field1.name}
-        name={field1.name}
-        id={field1.name}
+        type="email"
+        name="email"
+        id="email"
         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-        placeholder={field1.placeholder}
-        required={field1.required}
+        placeholder="name@company.com"
+        required
       />
     </div>
     <div>
@@ -81,28 +76,30 @@
         id="password"
         placeholder="••••••••"
         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-        required=""
+        required
       />
     </div>
     <div class="flex items-start">
-      <div class="flex items-start">
-        <div class="flex items-center h-5">
-          <input
-            id="remember"
-            aria-describedby="remember"
-            type="checkbox"
-            class="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
-            required=""
-          />
+      {#if rememberMe}
+        <div class="flex items-start">
+          <div class="flex items-center h-5">
+            <input
+              id="remember"
+              aria-describedby="remember"
+              type="checkbox"
+              class="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
+              required=""
+            />
+          </div>
+          <div class="ml-3 text-sm">
+            <label
+              for="remember"
+              class="font-medium text-gray-900 dark:text-gray-300"
+              >Remember me</label
+            >
+          </div>
         </div>
-        <div class="ml-3 text-sm">
-          <label
-            for="remember"
-            class="font-medium text-gray-900 dark:text-gray-300"
-            >Remember me</label
-          >
-        </div>
-      </div>
+      {/if}
       {#if lostPasswordLink}
         <a
           href={lostPasswordLink.href}
