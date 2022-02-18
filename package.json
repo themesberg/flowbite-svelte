@@ -1,6 +1,6 @@
 {
   "name": "svelte-flow",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "description": "Svelte +  Flowbite/TailwindCSS  components",
   "author": {
     "name": "Shinichi Okada",
@@ -18,15 +18,11 @@
   },
   "devDependencies": {
     "@codewithshin/svelte-heroicons": "^1.1.0",
-    "@codewithshin/svelte-sidebar": "^0.1.4",
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
     "autoprefixer": "^10.4.2",
-    "mdsvex": "^0.10.5",
     "postcss": "^8.4.5",
     "postcss-load-config": "^3.1.1",
-    "prism-themes": "^1.9.0",
-    "prismjs": "^1.26.0",
     "svelte": "^3.44.0",
     "svelte-collapse": "^0.0.4",
     "svelte-preprocess": "^4.10.2",
