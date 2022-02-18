@@ -2,41 +2,7 @@
 
 ## Installation
 
-### Install SvelteKit and TailwindCSS:
-
-```sh
-npm init svelte@next sveltekit-demo
-cd sveltekit-demo
-npm install
-npx svelte-add@latest tailwindcss
-```
-
-### Install Flowbite:
-
-```sh
-npm i flowbite
-```
-
-### Install `svelte-flow`:
-
-```sh
-npm i -D svelte-flow
-```
-
-
-### __layout
-
-Add the following to the __layout.svelte:
-
-```html
-<script>
-  import "../app.css";
-  import "flowbite/dist/flowbite.css";
-</script>
-<div class="mx-auto p-2">
-  <slot />
-</div>
-```
+[Getting started](https://svelte-flow.vercel.app/getting-started)
 
 ## Alert components
 
@@ -59,6 +25,7 @@ Add the following to the __layout.svelte:
 [Modals](https://svelte-flow.vercel.app/modals)
 
 ## Navbar component
+
 [Navbars](https://svelte-flow.vercel.app/navbar)
 
 ## Tab components
