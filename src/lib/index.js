@@ -8,6 +8,7 @@ import InfoAlert from './alerts/InfoAlert.svelte'
 
 // Buttons
 import Button from './buttons/Button.svelte'
+import ButtonDispatch from './buttons/ButtonDispatch.svelte'
 
 // Cards
 import Card from './cards/Card.svelte'
@@ -59,6 +60,7 @@ export {
   InfoAlert,
   // Buttons
   Button,
+  ButtonDispatch,
   // cards
   Card,
   HorizontalCard,
