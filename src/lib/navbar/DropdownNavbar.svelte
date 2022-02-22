@@ -12,7 +12,10 @@
     console.log("activeDropdown: ", activeDropdown);
   };
 
-  // const handleClick =
+  let barHidden = true;
+  const handleClickbtn = () => {
+    barHidden = !barHidden;
+  };
 
   export let sitename = "Svelte Flow";
   export let logo = "/images/mkdir-logo.png";
@@ -104,6 +107,7 @@
       >
     </a>
     <button
+      on:click={handleClickbtn}
       type="button"
       class="inline-flex justify-center items-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-500"
       aria-controls="mobile-menu-2"
@@ -133,7 +137,11 @@
         /></svg
       >
     </button>
-    <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+    <div
+      class="w-full md:block md:w-auto"
+      class:hidden={barHidden}
+      id="mobile-menu"
+    >
       <ul
         class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium"
       >
