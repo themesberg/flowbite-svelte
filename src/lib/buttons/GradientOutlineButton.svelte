@@ -7,7 +7,7 @@
   };
 
   export let textSize = "text-sm";
-  export let color = "blue";
+  export let color = "purple2blue";
   export let name = "Read more";
   let btnClass;
   let spanClass;
