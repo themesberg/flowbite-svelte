@@ -1,6 +1,7 @@
 <script>
   export let textSize = "text-sm";
   export let color = "blue";
+  export let name = "Read more";
   let btnClass;
 
   if (color === "blue") {
@@ -24,4 +25,4 @@
   }
 </script>
 
-<button type="button" class={btnClass}><slot /></button>
+<button type="button" class={btnClass}>{name}</button>

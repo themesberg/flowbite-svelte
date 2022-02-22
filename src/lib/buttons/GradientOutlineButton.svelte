@@ -1,6 +1,7 @@
 <script>
   export let textSize = "text-sm";
   export let color = "blue";
+  export let name = "Read more";
   let btnClass;
   let spanClass;
 
@@ -40,5 +41,5 @@
 </script>
 
 <button class={btnClass}>
-  <span class={spanClass}><slot /></span>
+  <span class={spanClass}>{name}</span>
 </button>
