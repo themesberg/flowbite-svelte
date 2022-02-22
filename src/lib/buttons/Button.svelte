@@ -1,16 +1,18 @@
 <script>
-  export let rounded = false;
-  // xs, sm, base
-  export let textSize = "text-sm";
-  export let name = "Read more";
-  //s
-  export let type = "blue";
   import { createEventDispatcher } from "svelte";
 
   const dispatch = createEventDispatcher();
   const handleClick = () => {
     dispatch("handleClick");
   };
+
+  export let rounded = false;
+  // xs, sm, base
+  export let textSize = "text-sm";
+  export let name = "Read more";
+  //s
+  export let type = "blue";
+
   let paddings;
   if (textSize === "text-xs") {
     paddings = "py-2 px-3";
