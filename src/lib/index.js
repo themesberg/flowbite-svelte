@@ -8,6 +8,10 @@ import InfoAlert from './alerts/InfoAlert.svelte'
 
 // Buttons
 import Button from './buttons/Button.svelte'
+import ColorShadowButton from './buttons/ColorShadowButton.svelte'
+import GradientDuotoneButton from './buttons/GradientDuotoneButton.svelte'
+import GradientMonochromeButton from './buttons/GradientMonochromeButton.svelte'
+import GradientOutlineButton from './buttons/GradientOutlineButton.svelte'
 
 // Cards
 import Card from './cards/Card.svelte'
@@ -59,6 +63,10 @@ export {
   InfoAlert,
   // Buttons
   Button,
+  ColorShadowButton,
+  GradientDuotoneButton,
+  GradientMonochromeButton,
+  GradientOutlineButton,
   // cards
   Card,
   HorizontalCard,
