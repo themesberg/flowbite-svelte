@@ -6,6 +6,11 @@ import Alert from './alerts/Alert.svelte'
 import BorderAlert from './alerts/BorderAlert.svelte'
 import InfoAlert from './alerts/InfoAlert.svelte'
 
+// Badges
+import Badge from './badges/Badge.svelte'
+import BadgeIcon from './badges/BadgeIcon.svelte'
+import BadgeLink from './badges/BadgeLink.svelte'
+
 // Buttons
 import Button from './buttons/Button.svelte'
 import ColorShadowButton from './buttons/ColorShadowButton.svelte'
@@ -61,6 +66,10 @@ export {
   Alert,
   BorderAlert,
   InfoAlert,
+  // Badges
+  Badge,
+  BadgeIcon,
+  BadgeLink,
   // Buttons
   Button,
   ColorShadowButton,
