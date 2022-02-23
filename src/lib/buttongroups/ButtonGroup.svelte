@@ -2,12 +2,21 @@
   export let buttons = [
     {
       name: "Profile",
+      link: "/",
+      rel: "",
+      icon: "",
     },
     {
       name: "Settings",
+      link: "/",
+      rel: "",
+      icon: "",
     },
     {
       name: "Messages",
+      link: "/",
+      rel: "",
+      icon: "",
     },
   ];
   let btnLength = buttons.length;
@@ -20,21 +29,39 @@
 </script>
 
 <div class="inline-flex rounded-md shadow-sm" role="group">
-  {#each buttons as { name }, i}
+  {#each buttons as { name, icon, link, rel }, i}
     {#if i === 0}
       <button type="button" class={classFirst}>
-        <slot />
-        {name}
+        {#if icon}
+          <svelte:component this={icon} className="h-4 w-4 mr-2" />
+        {/if}
+        {#if link}
+          <a href={link} {rel}>{name}</a>
+        {:else}
+          {name}
+        {/if}
       </button>
     {:else if i === btnLength - 1}
       <button type="button" class={classLast}>
-        <slot />
-        {name}
+        {#if icon}
+          <svelte:component this={icon} className="h-4 w-4 mr-2" />
+        {/if}
+        {#if link}
+          <a href={link} {rel}>{name}</a>
+        {:else}
+          {name}
+        {/if}
       </button>
     {:else}
       <button type="button" class={classMiddle}>
-        <slot />
-        {name}
+        {#if icon}
+          <svelte:component this={icon} className="h-4 w-4 mr-2" />
+        {/if}
+        {#if link}
+          <a href={link} {rel}>{name}</a>
+        {:else}
+          {name}
+        {/if}
       </button>
     {/if}
   {/each}
