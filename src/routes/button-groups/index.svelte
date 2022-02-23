@@ -1,5 +1,5 @@
 <script>
-  import { ButtonGroup, ButtonGroupLink, ButtonGroupOutline } from "$lib/index";
+  import { ButtonGroup, ButtonGroupOutline } from "$lib/index";
   import {
     UserCircleIconSolid,
     AdjustmentsIconSolid,
@@ -18,12 +18,11 @@
     },
     {
       name: "Download",
-
+      link: "/",
       icon: CloudDownloadIconSolid,
     },
   ];
 </script>
 
 <ButtonGroup {buttons} />
-<ButtonGroupLink />
-<ButtonGroupOutline />
+<ButtonGroupOutline {buttons} />
