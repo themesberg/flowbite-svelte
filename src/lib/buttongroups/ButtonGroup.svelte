@@ -20,7 +20,7 @@
 </script>
 
 <div class="inline-flex rounded-md shadow-sm" role="group">
-  {#each buttons as name, i}
+  {#each buttons as { name }, i}
     {#if i === 0}
       <button type="button" class={classFirst}>
         <slot />
