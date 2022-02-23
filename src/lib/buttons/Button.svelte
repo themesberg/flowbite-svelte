@@ -7,10 +7,8 @@
   };
 
   export let rounded = false;
-  // xs, sm, base
   export let textSize = "text-sm";
   export let name = "Read more";
-  //s
   export let type = "blue";
 
   let paddings;
