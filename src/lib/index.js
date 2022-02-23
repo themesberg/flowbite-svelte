@@ -18,6 +18,10 @@ import GradientDuotoneButton from './buttons/GradientDuotoneButton.svelte'
 import GradientMonochromeButton from './buttons/GradientMonochromeButton.svelte'
 import GradientOutlineButton from './buttons/GradientOutlineButton.svelte'
 
+// Buttongroups
+import ButtonGroup from './buttongroups/ButtonGroup.svelte'
+import ButtonGroupOutline from './buttongroups/ButtonGroupOutline.svelte'
+
 // Cards
 import Card from './cards/Card.svelte'
 import HorizontalCard from './cards/HorizontalCard.svelte'
@@ -76,6 +80,9 @@ export {
   GradientDuotoneButton,
   GradientMonochromeButton,
   GradientOutlineButton,
+  // Buttongroup
+  ButtonGroup,
+  ButtonGroupOutline,
   // cards
   Card,
   HorizontalCard,
