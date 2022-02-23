@@ -20,7 +20,6 @@ import GradientOutlineButton from './buttons/GradientOutlineButton.svelte'
 
 // Buttongroups
 import ButtonGroup from './buttongroups/ButtonGroup.svelte'
-import ButtonGroupLink from './buttongroups/ButtonGroupLink.svelte'
 import ButtonGroupOutline from './buttongroups/ButtonGroupOutline.svelte'
 
 // Cards
@@ -83,7 +82,6 @@ export {
   GradientOutlineButton,
   // Buttongroup
   ButtonGroup,
-  ButtonGroupLink,
   ButtonGroupOutline,
   // cards
   Card,
