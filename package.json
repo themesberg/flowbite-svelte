@@ -1,6 +1,6 @@
 {
   "name": "svelte-flow",
-  "version": "0.4.24",
+  "version": "0.4.25",
   "description": "Svelte + Flowbite/TailwindCSS components",
   "author": {
     "name": "Shinichi Okada",
