@@ -2,8 +2,11 @@
   import { dropdownIdStore } from "./dropdownStores";
   export let id = "my-dropdown";
 
+  let isOpen;
   dropdownIdStore.subscribe((value) => {
     console.log("dropdownIdStore: ", value);
+    $: isOpen = !isOpen;
+    console.log("isOpen: ", isOpen);
   });
 
   export let items = [
@@ -24,7 +27,8 @@
 
 <div
   {id}
-  class="hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
+  class:hidden={isOpen}
+  class="z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
 >
   <ul class="py-1" aria-labelledby="dropdownButton">
     {#each items as { link, label }}

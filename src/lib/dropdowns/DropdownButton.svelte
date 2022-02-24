@@ -4,15 +4,12 @@
   export let id = "my-dropdown";
   export let label = "Dropdown button";
 
-  let isOpen;
   let toggleDropdown = (dropdown) => {
     dropdownIdStore.update((id) => {
       console.log("id 1: ", id);
       id = dropdown.id;
       console.log("id 2: ", id);
     });
-    isOpen = !isOpen;
-    console.log("isOpen: ", isOpen);
   };
 </script>
 
