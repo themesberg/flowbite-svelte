@@ -35,7 +35,6 @@ import SignInCard from './cards/SignInCard.svelte'
 import DarkMode from './darkmode/DarkMode.svelte'
 
 // Dropdown
-import DropdownButton from './dropdowns/DropdownButton.svelte'
 import Dropdown from './dropdowns/DropDown.svelte' 
 
 // Footers
@@ -94,7 +93,6 @@ export {
   // darkmode
   DarkMode,
   // dropdowns
-  DropdownButton,
   Dropdown,
   // footers
   SimpleFooter,
