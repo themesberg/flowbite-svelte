@@ -1,21 +1,24 @@
 <script>
-  import { dropdownIdStore } from "./dropdownStores";
+  import { dropdownIdStore, isHidden } from "./dropdownStores";
+  import { get } from "svelte/store";
 
   export let id = "my-dropdown";
   export let label = "Dropdown button";
 
-  let toggleDropdown = (dropdown) => {
-    dropdownIdStore.update((id) => {
-      console.log("id 1: ", id);
-      id = dropdown.id;
-      console.log("id 2: ", id);
-    });
+  let showDropdownId;
+  // let isHidden = true;
+  export let openFn = (dropdown) => {
+    dropdownIdStore.update((n) => (n = dropdown.id));
+    isHidden.update((n) => (n = !n));
+    // isHidden = !isHidden;
+    showDropdownId = get(dropdownIdStore);
+    console.log("showDropdownId", showDropdownId);
   };
 </script>
 
 <button
   {id}
-  on:click={toggleDropdown({ id })}
+  on:click={openFn({ id })}
   class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
   type="button"
   >{label}
