@@ -1,33 +1,33 @@
-# SVELTE-FLOW
+# FLOWBITE-SVELTE
 
 ## Installation
 
-[Getting started](https://svelte-flow.vercel.app/getting-started)
+[Getting started](https://flowbite-svelte.vercel.app/getting-started)
 
 ## Alert components
 
-[Alerts](https://svelte-flow.vercel.app/alerts)
+[Alerts](https://flowbite-svelte.vercel.app/alerts)
 
 ## Button component
 
-[Buttons](https://svelte-flow.vercel.app/buttons)
+[Buttons](https://flowbite-svelte.vercel.app/buttons)
 
 ## Card components
 
-[Cards](https://svelte-flow.vercel.app/cards)
+[Cards](https://flowbite-svelte.vercel.app/cards)
 
 ## List group component
 
-[List group](https://svelte-flow.vercel.app/list-group)
+[List group](https://flowbite-svelte.vercel.app/list-group)
 
 ## Modal components
 
-[Modals](https://svelte-flow.vercel.app/modals)
+[Modals](https://flowbite-svelte.vercel.app/modals)
 
 ## Navbar component
 
-[Navbars](https://svelte-flow.vercel.app/navbar)
+[Navbars](https://flowbite-svelte.vercel.app/navbar)
 
 ## Tab components
 
-[Tabs](https://svelte-flow.vercel.app/tabs)
+[Tabs](https://flowbite-svelte.vercel.app/tabs)

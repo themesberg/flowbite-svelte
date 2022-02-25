@@ -1,14 +1,14 @@
 {
-  "name": "svelte-flow",
+  "name": "flowbite-svelte",
   "version": "0.5.4",
-  "description": "Svelte + Flowbite/TailwindCSS components",
+  "description": "Flowbite components for Svelte",
   "author": {
     "name": "Shinichi Okada",
     "email": "connect@codewithshin.com",
     "url": "https://blog.codewithshin.com"
   },
-  "bugs": "https://github.com/shinokada/svelte-flow/issues",
-  "homepage": "https://github.com/shinokada/svelte-flow",
+  "bugs": "https://github.com/shinokada/flowbite-svelte/issues",
+  "homepage": "https://github.com/shinokada/flowbite-svelte",
   "license": "MIT",
   "scripts": {
     "dev": "svelte-kit dev",
@@ -43,7 +43,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/shinokada/svelte-flow"
+    "url": "https://github.com/shinokada/flowbite-svelte"
   },
   "dependencies": {
     "@codewithshin/svelte-heroicons": "^1.1.0",

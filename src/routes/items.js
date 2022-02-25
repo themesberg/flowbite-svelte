@@ -72,7 +72,7 @@ export let topMenus = [
   { route: "/", name: "Home",  },
   { route: "/about", name: "About",  },
   {
-    route: "https://github.com/shinokada/svelte-flow",
+    route: "https://github.com/shinokada/flowbite-svelte",
     name: "GitHub"
   },
 ];

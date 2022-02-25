@@ -14,15 +14,16 @@
           <h1
             class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl"
           >
-            <span class="block xl:inline">Svelte Flow </span>
+            <span class="block xl:inline">Flowbite Svelte </span>
             <span class="block text-indigo-600 xl:inline">UI Component</span>
           </h1>
           <p
             class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg 
             md:max-w-xl sm:max-w-lg sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
           >
-            Speed up your web development with Svelte Flow. Svelte Flow is
-            powered by Tailwind CSS / Flowbite.
+            Speed up your web development with Flowbite Svelte. Flowbite Svelte
+            is an unofficxial Flowbite compoents for Svelte. All interactiveity
+            is done by Svelte.
           </p>
           <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
             <div class="mt-3 sm:mt-0 sm:ml-3">
