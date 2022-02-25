@@ -35,7 +35,7 @@ import SignInCard from './cards/SignInCard.svelte'
 import DarkMode from './darkmode/DarkMode.svelte'
 
 // Dropdown
-import Dropdown from './dropdowns/DropDown.svelte' 
+import Dropdown from './dropdowns/DropdownDefault.svelte' 
 
 // Footers
 import SimpleFooter from './footer/SimpleFooter.svelte'
