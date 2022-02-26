@@ -1,6 +1,5 @@
 <script>
   import "../app.css";
-  import "flowbite/dist/flowbite.css";
   import { Navbar, DarkMode } from "$lib/index";
   export let menus = [
     {
