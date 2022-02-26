@@ -56,6 +56,10 @@ import SmallModal from './modals/SmallModal.svelte'
 import Navbar from './navbar/Navbar.svelte'
 import DropdownNavbar from './navbar/DropdownNavbar.svelte'
 
+// Spin
+import Spin from './spins/Spin.svelte'
+import SpinButton from './spins/SpinButton.svelte'
+
 // Tabs
 import InteractiveTabs from './tabs/InteractiveTabs.svelte'
 import DefaultTabs from './tabs/DefaultTabs.svelte'
@@ -109,6 +113,9 @@ export {
   // Navbar
   Navbar,
   DropdownNavbar,
+  // Spin
+  Spin,
+  SpinButton,
   // Tabs
   InteractiveTabs,
   DefaultTabs,
