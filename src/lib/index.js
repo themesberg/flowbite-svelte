@@ -57,8 +57,8 @@ import Navbar from './navbar/Navbar.svelte'
 import DropdownNavbar from './navbar/DropdownNavbar.svelte'
 
 // Spin
-import Spin from './spins/Spin.svelte'
-import SpinButton from './spins/SpinButton.svelte'
+import Spinner from './spinners/Spinner.svelte'
+import SpinnerButton from './spinners/SpinnerButton.svelte'
 
 // Tabs
 import InteractiveTabs from './tabs/InteractiveTabs.svelte'
@@ -114,8 +114,8 @@ export {
   Navbar,
   DropdownNavbar,
   // Spin
-  Spin,
-  SpinButton,
+  Spinner,
+  SpinnerButton,
   // Tabs
   InteractiveTabs,
   DefaultTabs,
