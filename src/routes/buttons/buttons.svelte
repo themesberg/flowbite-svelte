@@ -5,9 +5,13 @@
     GradientMonochromeButton,
     GradientOutlineButton,
   } from "$lib/index";
+
+  function handleClick() {
+    alert("Button Clicked");
+  }
 </script>
 
-<ColorShadowButton color="blue">Blue</ColorShadowButton>
+<ColorShadowButton color="blue" on:click={handleClick}>Blue</ColorShadowButton>
 <ColorShadowButton color="green">Green</ColorShadowButton>
 <ColorShadowButton color="cyan">Cyan</ColorShadowButton>
 <ColorShadowButton color="teal">Teal</ColorShadowButton>

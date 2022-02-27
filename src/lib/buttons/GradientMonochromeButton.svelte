@@ -1,11 +1,4 @@
 <script>
-  import { createEventDispatcher } from "svelte";
-
-  const dispatch = createEventDispatcher();
-  const handleClick = () => {
-    dispatch("handleClick");
-  };
-
   export let textSize = "text-sm";
   export let color = "blue";
   export let name = "Read more";
@@ -32,4 +25,4 @@
   }
 </script>
 
-<button type="button" class={btnClass} on:click={handleClick}>{name}</button>
+<button type="button" class={btnClass} on:click>{name}</button>

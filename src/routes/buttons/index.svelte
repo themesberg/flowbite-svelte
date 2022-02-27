@@ -1,12 +1,15 @@
 <script>
   import { Button } from "$lib/index";
+  function handleClick() {
+    alert("Button Clicked");
+  }
 </script>
 
 <div class="max-w-4xl mx-auto">
   <div class="container mx-auto p-8 m-4">
     <h1 class="px-8  text-2xl">Text size xs</h1>
     <h2 class="px-8 m-4 text-xl">Default</h2>
-    <Button name="Button text-xs" textSize="text-xs" />
+    <Button name="Button text-xs" textSize="text-xs" on:click={handleClick} />
     <Button name="Button text-xs" textSize="text-xs" type="dark" />
     <Button name="Button text-xs" textSize="text-xs" type="light" />
     <Button name="Button text-xs" textSize="text-xs" type="green" />
