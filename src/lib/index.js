@@ -67,6 +67,7 @@ import PillTabs from './tabs/PillTabs.svelte'
 
 // Tooltips
 import Tooltip from './tooltips/Tooltip.svelte'
+import LightTooltip from './tooltips/LightTooltip.svelte'
 
 export {
   // Accordions
@@ -125,4 +126,5 @@ export {
   PillTabs,
   // Tooltips
   Tooltip,
+  LightTooltip,
 }

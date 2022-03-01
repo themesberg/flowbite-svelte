@@ -13,7 +13,7 @@
     <slot />
   </span>
   <div
-    class="inline-block absolute invisible z-10 py-2 px-3 bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700"
+    class="inline-block absolute invisible z-10 py-2 px-3 bg-white rounded-lg border border-gray-200 shadow-sm opacity-0 tooltip"
     class:active
     class:left
     class:right
@@ -21,7 +21,7 @@
     class:top
   >
     {#if tip}
-      <div class="text-sm font-medium text-white ">{tip}</div>
+      <div class="text-sm font-medium text-gray-900">{tip}</div>
     {:else}
       <slot name="custom-tip" />
     {/if}
@@ -52,7 +52,7 @@
     margin-left: -10px;
     border-width: 5px;
     border-style: solid;
-    border-color: rgb(55 65 81) transparent transparent transparent;
+    border-color: #ddd transparent transparent transparent;
   }
   .tooltip.bottom::after {
     content: "";
@@ -62,7 +62,7 @@
     margin-left: -10px;
     border-width: 5px;
     border-style: solid;
-    border-color: transparent transparent rgb(55 65 81) transparent;
+    border-color: transparent transparent #ddd transparent;
   }
   .tooltip.right::after {
     content: "";
@@ -76,7 +76,7 @@
 
     border-width: 5px;
     border-style: solid;
-    border-color: transparent rgb(55 65 81) transparent transparent;
+    border-color: transparent #ddd transparent transparent;
   }
   .tooltip.left::after {
     content: "";
@@ -89,7 +89,7 @@
     /* margin-left: -5px; */
     border-width: 5px;
     border-style: solid;
-    border-color: transparent transparent transparent rgb(55 65 81);
+    border-color: transparent transparent transparent #ddd;
   }
   .tooltip.top {
     left: 50%;
