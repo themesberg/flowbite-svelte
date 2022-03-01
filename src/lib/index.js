@@ -65,6 +65,9 @@ import InteractiveTabs from './tabs/InteractiveTabs.svelte'
 import DefaultTabs from './tabs/DefaultTabs.svelte'
 import PillTabs from './tabs/PillTabs.svelte'
 
+// Tooltips
+import Tooltip from './tooltips/Tooltip.svelte'
+
 export {
   // Accordions
   Accordion,
@@ -119,5 +122,7 @@ export {
   // Tabs
   InteractiveTabs,
   DefaultTabs,
-  PillTabs
+  PillTabs,
+  // Tooltips
+  Tooltip,
 }
