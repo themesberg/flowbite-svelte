@@ -39,6 +39,9 @@ import Dropdown from './dropdowns/DropdownDefault.svelte'
 
 // Footers
 import SimpleFooter from './footer/SimpleFooter.svelte'
+import LogoFooter from './footer/LogoFooter.svelte'
+import SocialMediaFooter from './footer/SocialMediaFooter.svelte'
+import SitemapFooter from './footer/SitemapFooter.svelte'
 
 // List
 import List from './list-group/List.svelte'
@@ -104,6 +107,9 @@ export {
   Dropdown,
   // footers
   SimpleFooter,
+  LogoFooter,
+  SocialMediaFooter,
+  SitemapFooter,
   // list
   List,
   // Modals
