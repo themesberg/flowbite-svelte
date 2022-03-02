@@ -48,7 +48,6 @@
   },
   "dependencies": {
     "@codewithshin/svelte-heroicons": "^1.1.0",
-    "@codewithshin/svelte-sidebar": "^0.1.5",
     "flowbite": "^1.3.2",
     "svelte-collapse": "^0.0.4"
   }
