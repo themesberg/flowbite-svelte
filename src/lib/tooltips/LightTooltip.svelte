@@ -57,7 +57,7 @@
   .tooltip.bottom::after {
     content: "";
     position: absolute;
-    top: -20%;
+    top: -30%;
     left: 50%;
     margin-left: -10px;
     border-width: 5px;

@@ -8,6 +8,11 @@
   </Tooltip>
 </div>
 <div class="w-full p-8">
+  <Tooltip tip="My tooltip here" bottom>
+    <Button />
+  </Tooltip>
+</div>
+<div class="w-full p-8">
   <LightTooltip tip="My tooltip here" bottom>
     <Button />
   </LightTooltip>
