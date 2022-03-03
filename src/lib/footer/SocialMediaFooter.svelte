@@ -64,6 +64,8 @@
   export let socialMediaLinkClass =
     "text-gray-500 hover:text-gray-900 dark:hover:text-white";
   export let iconClass = "h-5 w-5 mr-2";
+  export let copyrightYear = "© 2022";
+  export let allRightsReserved = "All Rights Reserved.";
 </script>
 
 <footer class={footerClass}>
@@ -94,8 +96,8 @@
   <hr class={hrClass} />
   <div class={copyrightDivClass}>
     <span class={copyrightClass}
-      >© 2022 <a href={site.link} class="hover:underline">{site.name}</a>. All
-      Rights Reserved.
+      >{copyrightYear}
+      <a href={site.link} class="hover:underline">{site.name}</a>. {allRightsReserved}
     </span>
     <div class={socialMediaDivClass}>
       {#each socialMedia as { link, icon }}

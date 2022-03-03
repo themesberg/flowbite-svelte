@@ -17,13 +17,15 @@
   export let aClass =
     "mr-4 text-sm text-gray-500 hover:underline md:mr-6 dark:text-gray-400";
   export let siteNameLinkClass = "hover:underline";
+  export let copyrightYear = "© 2022";
+  export let allRightsReserved = "All Rights Reserved.";
 </script>
 
 <footer class={footerClass}>
   <span class={siteNameClass}
-    >© 2022 <a href={site.link} class={siteNameLinkClass} target="_blank"
-      >{site.name}</a
-    >. All Rights Reserved.
+    >{copyrightYear}
+    <a href={site.link} class={siteNameLinkClass} target="_blank">{site.name}</a
+    >. {allRightsReserved}
   </span>
   <ul class={ulClass}>
     {#each links as { name, link, rel }}

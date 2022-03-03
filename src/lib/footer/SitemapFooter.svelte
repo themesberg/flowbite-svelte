@@ -80,6 +80,8 @@
     "flex mt-4 space-x-6 sm:justify-center md:mt-0";
   export let socialMediaLinkClass = "text-gray-400 hover:text-white";
   export let iconClass = "h-5 w-5 mr-2";
+  export let copyrightYear = "© 2022";
+  export let allRightsReserved = "All Rights Reserved.";
 </script>
 
 <footer class={footerClass}>
@@ -101,7 +103,7 @@
   </div>
   <div class={copyrightDivClass}>
     <span class={copyrightClass}
-      >© 2022 <a href={site.link}>{site.name}</a>. All Rights Reserved.
+      >{copyrightYear} <a href={site.link}>{site.name}</a>. {allRightsReserved}
     </span>
     <div class={socialMediaDivClass}>
       {#each socialMedia as { link, icon }}

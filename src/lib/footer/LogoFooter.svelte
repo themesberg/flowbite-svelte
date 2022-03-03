@@ -26,6 +26,8 @@
   export let copyRightSpanClass =
     "block text-sm text-gray-500 sm:text-center dark:text-gray-400";
   export let copyRightLinkClass = "hover:underline";
+  export let copyrightYear = "© 2022";
+  export let allRightsReserved = "All Rights Reserved.";
 </script>
 
 <footer class={footerClass}>
@@ -44,7 +46,7 @@
   </div>
   <hr class={hrClass} />
   <span class={copyRightSpanClass}
-    >© 2022 <a href={site.link} class={copyRightLinkClass}>{site.name}</a>. All
-    Rights Reserved.
+    >{copyrightYear}
+    <a href={site.link} class={copyRightLinkClass}>{site.name}</a>. {allRightsReserved}
   </span>
 </footer>
