@@ -17,6 +17,7 @@
     "preview": "svelte-kit preview"
   },
   "devDependencies": {
+    "@codewithshin/svelte-simpleicons": "^0.2.2",
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
     "autoprefixer": "^10.4.2",
