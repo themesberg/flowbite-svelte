@@ -18,7 +18,11 @@
 
 [Badges](https://flowbite-svelte.vercel.app/badges)
 
-## Button component
+## Button group compnents
+
+[Button group](https://flowbite-svelte.vercel.app/button-groups)
+
+## Button components
 
 [Buttons](https://flowbite-svelte.vercel.app/buttons)
 
@@ -33,6 +37,10 @@
 ## Dropdown components
 
 [Dropdowns](https://flowbite-svelte.vercel.app/dropdowns)
+
+## Footer
+
+[Footer](https://flowbite-svelte.vercel.app/footer)
 
 ## Icons
 
