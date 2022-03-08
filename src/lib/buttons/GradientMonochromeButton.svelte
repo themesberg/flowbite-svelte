@@ -1,6 +1,7 @@
 <script lang="ts">
+	import type { BUTTONSHADOWS } from '../types';
 	export let textSize: string = 'text-sm';
-	export let color: string = 'blue';
+	export let color: BUTTONSHADOWS = 'blue';
 	export let name: string = 'Read more';
 	let btnClass: string;
 

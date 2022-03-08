@@ -1,6 +1,7 @@
 <script lang="ts">
+	import type { GRADIENTDUOTONES } from '../types';
 	export let textSize: string = 'text-sm';
-	export let color: string = 'purple2blue';
+	export let color: GRADIENTDUOTONES = 'purple2blue';
 	export let name: string = 'Read more';
 	let btnClass: string;
 	let spanClass: string;

@@ -1,7 +1,8 @@
 <script lang="ts">
+	import type { COLORS } from '../types';
 	export let textSize: string = 'text-xs'; // text-sm
 	export let name: string = 'Read more';
-	export let color: string = 'blue';
+	export let color: COLORS = 'blue';
 	export let link: string = '/';
 
 	let badgeClass: string;
