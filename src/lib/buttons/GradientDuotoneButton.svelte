@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { GRADIENTDUOTONES } from '../types';
-	export let textSize: string = 'text-sm';
-	export let color: GRADIENTDUOTONES = 'purple2blue';
-	export let name: string = 'Read more';
+	import type { Gradientduotones, Textsize } from '../types';
+	export let textSize: Textsize = 'text-sm';
+	export let color: Gradientduotones = 'purple2blue';
+	export let name = 'Read more';
 	let btnClass: string;
 
 	if (color === 'purple2blue') {

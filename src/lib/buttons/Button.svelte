@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { BUTTONTYPES } from '../types';
+	import type { Buttontypes, Textsize } from '../types';
 	export let rounded: boolean = false;
-	export let textSize: string = 'text-sm';
-	export let name: string = 'Read more';
-	export let type: BUTTONTYPES = 'blue';
+	export let textSize: Textsize = 'text-sm';
+	export let name = 'Read more';
+	export let type: Buttontypes = 'blue';
 
 	let paddings: string;
 	if (textSize === 'text-xs') {

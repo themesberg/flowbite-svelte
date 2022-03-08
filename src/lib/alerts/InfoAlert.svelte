@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { COLORS } from '../types';
-	export let color: COLORS = 'blue';
+	import type { Colors } from '../types';
+	export let color: Colors = 'blue';
 	export let alertId: string = 'alert-additional-content-1';
 	export let infoLink: string = undefined;
 	export let closeBtn: boolean = false;
