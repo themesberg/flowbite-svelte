@@ -2,19 +2,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
-#mobile-menu .active {
-  color: #3490fa !important;
-}
-
-pre{
-  background-color: rgb(242, 242, 242);
-  white-space: pre-wrap;
-  width: 100%;
-  margin: 20px !important;
-  padding: 20px;
-}
-
-
-

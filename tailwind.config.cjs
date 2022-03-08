@@ -1,9 +1,9 @@
 const config = {
-  content: ["./src/**/*.{html,js,svelte,ts}"],
+	content: ['./src/**/*.{html,js,svelte,ts}'],
 
-  theme: {
-    extend: {},
-  },
+	theme: {
+		extend: {}
+	},
 
   plugins: [
     require('flowbite/plugin')
