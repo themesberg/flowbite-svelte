@@ -1,6 +1,15 @@
 {
-	"name": "flowbite-svelte-typescript",
-	"version": "0.0.1",
+	"name": "flowbite-svelte",
+	"version": "0.9.0",
+	"description": "Flowbite components for Svelte",
+  "author": {
+    "name": "Shinichi Okada",
+    "email": "connect@codewithshin.com",
+    "url": "https://blog.codewithshin.com"
+  },
+  "bugs": "https://github.com/shinokada/flowbite-svelte/issues",
+  "homepage": "https://github.com/shinokada/flowbite-svelte",
+  "license": "MIT",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
@@ -37,6 +46,29 @@
 		"typescript": "~4.6.2"
 	},
 	"type": "module",
+	"keywords": [
+    "svelte",
+    "sveltekit",
+    "tailwindcss",
+    "flowbite",
+    "ui",
+		"accordion",
+    "alert",
+		"badges",
+    "buttons",
+		"cards",
+		"darkmode",
+		"footer",
+    "modals",
+    "navbar",
+		"spinners",
+    "tabs",
+		"tooltip"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shinokada/flowbite-svelte"
+  },
 	"dependencies": {
 		"@codewithshin/svelte-heroicons": "^1.1.3",
 		"flowbite": "^1.3.4",
