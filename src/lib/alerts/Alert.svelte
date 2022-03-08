@@ -1,6 +1,6 @@
 <script lang="ts">
-	// use blue (default), red, yellow, purple, green, indigo, gray, (no pink)
-	export let color: string = 'blue';
+	import type { COLORS } from '../types';
+	export let color: COLORS = 'blue';
 	export let alertId: string = 'alert-1';
 	export let closeBtn: boolean = false;
 

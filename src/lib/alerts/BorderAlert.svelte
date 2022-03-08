@@ -1,6 +1,6 @@
 <script lang="ts">
-	// use blue (default), red, green, yellow, and gray
-	export let color: string = 'blue';
+	import type { COLORS } from '../types';
+	export let color: COLORS = 'blue';
 	export let alertId: string = 'alert-border-1';
 	export let closeBtn = false;
 	let hidden = false;

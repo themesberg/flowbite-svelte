@@ -3,9 +3,9 @@
 	import { setContext } from 'svelte';
 	import { createEventDispatcher } from 'svelte';
 	import { writable } from 'svelte/store';
-	export let duration = 0.2;
+	export let duration: number = 0.2;
 	export let easing: string = 'ease';
-	export let id = null;
+	export let id: number = undefined;
 	const dispatch = createEventDispatcher();
 	// create a store for the children to access
 	const store = writable({ id, duration, easing });
