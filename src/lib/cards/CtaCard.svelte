@@ -1,31 +1,20 @@
 <script lang="ts">
-	type Btn = {
-		size: string;
-		name: string;
-		type: string;
-		link: string;
-		rel: string;
-		rounded: boolean;
-	};
+	import type { CardButton, Colors } from '../types';
 	import Button from '../buttons/Button.svelte';
 	export let title: string = 'Work fast from anywhere';
-	export let headColor: string = 'gray';
-	export let btns: Btn[] = [
+	export let headColor: Colors = 'gray';
+	export let btns: CardButton[] = [
 		{
-			size: 'base',
+			textSize: 'text-base',
 			name: 'Download it',
 			type: 'blue',
-			link: '/about',
-			rel: undefined,
-			rounded: false
+			link: '/about'
 		},
 		{
-			size: 'base',
+			textSize: 'text-base',
 			name: 'Get in on',
 			type: 'red-outline',
-			link: '/#',
-			rel: undefined,
-			rounded: false
+			link: '/'
 		}
 	];
 	let headClass: string;
@@ -60,9 +49,9 @@
 		<slot />
 	</p>
 	<div class="justify-center items-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
-		{#each btns as { name, size, type, link, rel, rounded }}
+		{#each btns as { name, textSize, type, link, rel, rounded }}
 			<a href={link} {rel}>
-				<Button {name} {size} {type} {rounded} />
+				<Button {name} {rounded} {type} {textSize} />
 			</a>
 		{/each}
 	</div>

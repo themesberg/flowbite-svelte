@@ -1,4 +1,4 @@
-export type Colors = 'blue'| 'gray'| 'red'| 'yellow'| 'purple'| 'green'| 'indigo'| 'purple'| 'pink';
+export type Colors = 'blue'| 'gray'| 'red'| 'yellow'| 'purple'| 'green'| 'indigo'| 'pink';
 
 export type Buttontypes = 'blue' | 'blue-outline' | 'dark' | 'dark-outline' | 'light' | 'green' | 'green-outline' | 'red' | 'red-outline' | 'yellow' | 'yellow-outline' | 'purple' | 'purple-outline';
 
@@ -8,9 +8,23 @@ export type Gradientduotones = 'purple2blue' | 'cyan2blue' | 'green2blue' | 'pur
 
 export type Textsize = 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl'
 
-export interface ButtonType {
-    name: string;
+export interface ButtonGroupType {
+    name?: string;
     link?: string;
     rel?: string;
     icon?: any;
-  }
+}
+  
+export type CardButton = {
+    textSize?: Textsize;
+    name?: string;
+    type?: Buttontypes;
+    link?: string;
+    rel?: string;
+    rounded?: boolean;
+};
+
+export type CardImg = {
+    src: string;
+    alt?: string;
+}

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { ButtonType } from '../types';
-	export let buttons: ButtonType[] = [
+	import type { ButtonGroupType } from '../types';
+	export let buttons: ButtonGroupType[] = [
 		{
 			name: 'Profile',
 			link: '/'

@@ -1,10 +1,11 @@
 <script lang="ts">
+	import type { Colors } from '../types';
 	export let link: string;
 	export let rel: string;
 	export let alt: string;
 	export let img: string;
 	export let btnLabel: string = 'Read more';
-	export let btnColor: string = 'blue';
+	export let btnColor: Colors = 'blue';
 	export let header: string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
 	let buttonClass: string;
 	if (btnColor === 'blue') {
