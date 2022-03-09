@@ -2,14 +2,14 @@
 	"name": "flowbite-svelte",
 	"version": "0.9.0",
 	"description": "Flowbite components for Svelte",
-  "author": {
-    "name": "Shinichi Okada",
-    "email": "connect@codewithshin.com",
-    "url": "https://blog.codewithshin.com"
-  },
-  "bugs": "https://github.com/shinokada/flowbite-svelte/issues",
-  "homepage": "https://github.com/shinokada/flowbite-svelte",
-  "license": "MIT",
+	"author": {
+		"name": "Shinichi Okada",
+		"email": "connect@codewithshin.com",
+		"url": "https://blog.codewithshin.com"
+	},
+	"bugs": "https://github.com/shinokada/flowbite-svelte/issues",
+	"homepage": "https://github.com/shinokada/flowbite-svelte",
+	"license": "MIT",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
@@ -23,7 +23,9 @@
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
+		"@codewithshin/svelte-sidebar": "^0.2.3",
 		"@codewithshin/svelte-simpleicons": "^0.2.2",
+		"@codewithshin/svelte-utterances": "^0.1.2",
 		"@playwright/test": "^1.19.1",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
@@ -37,38 +39,41 @@
 		"postcss-load-config": "^3.1.1",
 		"prettier": "^2.5.1",
 		"prettier-plugin-svelte": "^2.5.0",
+		"prism-themes": "^1.9.0",
+		"prismjs": "^1.27.0",
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.2.6",
 		"svelte-preprocess": "^4.10.1",
 		"svelte2tsx": "^0.5.5",
 		"tailwindcss": "^3.0.12",
 		"tslib": "^2.3.1",
-		"typescript": "~4.6.2"
+		"typescript": "~4.6.2",
+		"mdsvex": "^0.10.5"
 	},
 	"type": "module",
 	"keywords": [
-    "svelte",
-    "sveltekit",
-    "tailwindcss",
-    "flowbite",
-    "ui",
+		"svelte",
+		"sveltekit",
+		"tailwindcss",
+		"flowbite",
+		"ui",
 		"accordion",
-    "alert",
+		"alert",
 		"badges",
-    "buttons",
+		"buttons",
 		"cards",
 		"darkmode",
 		"footer",
-    "modals",
-    "navbar",
+		"modals",
+		"navbar",
 		"spinners",
-    "tabs",
+		"tabs",
 		"tooltip"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/shinokada/flowbite-svelte"
-  },
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/shinokada/flowbite-svelte"
+	},
 	"dependencies": {
 		"@codewithshin/svelte-heroicons": "^1.1.3",
 		"flowbite": "^1.3.4",
