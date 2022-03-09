@@ -6,4 +6,11 @@ export type Buttonshadows = 'blue' | 'green' | 'cyan' | 'teal' | 'lime' | 'red' 
 
 export type Gradientduotones = 'purple2blue' | 'cyan2blue' | 'green2blue' | 'purple2pink' | 'pink2orange' | 'teal2lime' | 'red2yellow'
 
-export type Textsize = 'text-xs'|'text-sm'|'text-base' |'text-lg' |'text-xl'|'text-2xl'|'text-3xl'|'text-4xl'
+export type Textsize = 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl'
+
+export interface ButtonType {
+    name: string;
+    link?: string;
+    rel?: string;
+    icon?: any;
+  }
