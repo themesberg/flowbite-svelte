@@ -5,10 +5,10 @@
 	let hidden = true;
 	let block = false;
 	let activeDropdown = undefined;
-	const handleDropdown = (dropdown: { id: number }) => {
+	const handleDropdown = (id: number) => {
 		hidden = !hidden;
 		block = !block;
-		activeDropdown = dropdown.id;
+		activeDropdown = id;
 	};
 
 	let barHidden = true;
@@ -69,7 +69,7 @@
 					{#if child}
 						<li>
 							<button
-								on:click={() => handleDropdown({ id })}
+								on:click={() => handleDropdown(id)}
 								class="flex justify-between items-center py-2 pr-4 pl-3 w-full {textsize} font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
 								>{name}
 								<svg
