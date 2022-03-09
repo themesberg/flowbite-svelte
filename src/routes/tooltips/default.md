@@ -3,7 +3,7 @@ layout: doc
 ---
 
 <script>
-import {Tooltip, Button} from 'flowbite-svelte'
+import {Tooltip, Button} from '$lib/index'
 </script>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Default Tooltip</h1>

@@ -3,7 +3,7 @@ layout: doc
 ---
 
 <script>
-  import {Badge} from 'flowbite-svelte'
+  import {Badge} from '$lib/index'
 </script>
 
 

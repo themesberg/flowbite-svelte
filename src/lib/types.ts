@@ -16,7 +16,7 @@ export interface ButtonGroupType {
     rel?: string;
     icon?: typeof SvelteComponent;
 }
-  
+
 export type CardButtonType = {
     textSize?: Textsize;
     name: string;
@@ -29,4 +29,20 @@ export type CardButtonType = {
 export type CardImg = {
     src: string;
     alt?: string;
+}
+
+export interface LinksType {
+    name: string;
+    link: string;
+    rel?: string;
+}
+
+export interface SiteType {
+    name: string;
+    link: string;
+}
+
+export interface SocialMediaType {
+    link: string;
+    icon: typeof SvelteComponent;
 }

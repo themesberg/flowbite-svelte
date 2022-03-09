@@ -3,7 +3,7 @@ layout: doc
 ---
 
 <script>
-  import {BadgeLink} from 'flowbite-svelte'
+  import {BadgeLink} from '$lib/index'
   let link="/"
 </script>
 

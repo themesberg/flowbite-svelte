@@ -2,9 +2,8 @@
 layout: doc
 ---
 
-
 <script>
-  import {SitemapFooter} from 'flowbite-svelte'
+  import {SitemapFooter} from '$lib/index'
   import {
     FacebookIcon,
     GithubIcon,

@@ -3,7 +3,7 @@ layout: doc
 ---
 
 <script>
-  import {SimpleFooter} from 'flowbite-svelte'
+  import {SimpleFooter} from '$lib/index'
   let site = {
     link: "/",
     name: "Flowbite Svelte",

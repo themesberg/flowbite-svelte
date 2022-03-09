@@ -3,7 +3,7 @@ layout: doc
 ---
 
 <script>
-  import {BadgeIcon} from 'flowbite-svelte'
+  import {BadgeIcon} from '$lib/index'
   import {InformationCircleIconOutline} from '@codewithshin/svelte-heroicons'
   let link="/"
 </script>

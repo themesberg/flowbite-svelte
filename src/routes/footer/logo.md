@@ -2,9 +2,8 @@
 layout: doc
 ---
 
-
 <script>
-  import {LogoFooter} from 'flowbite-svelte'
+  import {LogoFooter} from '$lib/index'
   let site = {
     link: "/",
     name: "Flowbite Svelte",

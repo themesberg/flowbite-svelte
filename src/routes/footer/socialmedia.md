@@ -3,7 +3,7 @@ layout: doc
 ---
 
 <script>
-import {SocialMediaFooter} from 'flowbite-svelte'
+import {SocialMediaFooter} from '$lib/index'
 import {
     FacebookIcon,
     GithubIcon,
