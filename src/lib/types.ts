@@ -67,3 +67,11 @@ export interface PillTabType {
     selected: boolean;
     link: string;
 }
+
+export interface NavbarType {
+    id: number;
+    name: string;
+    link: string;
+    rel?: string;
+    child?: NavbarType[];
+}
