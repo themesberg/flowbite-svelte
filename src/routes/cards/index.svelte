@@ -1,44 +1,36 @@
 <script>
-  import { Card } from "$lib/index";
+  import { Card } from "flowbite-svelte";
 </script>
 
 <div class="container flex flex-wrap mx-auto mt-8 justify-center">
   <div class="p-4">
-    <Card img="/images/cards.png" header="CARD" link="/cards/card" />
+    <Card img="/images/cards.webp" header="CARD" link="/cards/card" />
   </div>
   <div class="p-4">
-    <Card img="/images/cards.png" header="CTA CARD" link="/cards/cta-card" />
+    <Card img="/images/cards.webp" header="CTA CARD" link="/cards/cta" />
   </div>
   <div class="p-4">
     <Card
-      img="/images/cards.png"
+      img="/images/cards.webp"
       header="ECOMMERCE CARD"
-      link="/cards/ecommerce-card"
+      link="/cards/ecommerce"
     />
   </div>
   <div class="p-4">
     <Card
-      img="/images/cards.png"
+      img="/images/cards.webp"
       header="INTERACTIVE CARD"
-      link="/cards/interactive-card"
-      rel="external"
+      link="/cards/interactive"
     />
   </div>
   <div class="p-4">
     <Card
-      img="/images/cards.png"
+      img="/images/cards.webp"
       header="HORIAONTAL CARD"
-      link="/cards/horizontal-card"
+      link="/cards/horizontal"
     />
   </div>
   <div class="p-4">
-    <Card
-      img="/images/cards.png"
-      header="SignIn CARD"
-      link="/cards/signin-card"
-    />
-  </div>
-  <div class="p-4">
-    <Card img="/images/cards.png" header="LIST CARD" link="/cards/list-card" />
+    <Card img="/images/cards.webp" header="LIST CARD" link="/cards/list" />
   </div>
 </div>

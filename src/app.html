@@ -2,12 +2,22 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="description" content="" />
+		<meta name="description" content="Flowbite-svelte is a Tailwind and Flowbite powered UI components for Svelte and SvelteKit." />
 		<link rel="icon" href="%svelte.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Flowbite Svelte</title>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-4Y9Y3WGG11"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-4Y9Y3WGG11');
+			</script>
 		%svelte.head%
 	</head>
 	<body class="bg-white dark:bg-gray-800">
-		<div>%svelte.body%</div>
+		<div id="svelte">%svelte.body%</div>
 	</body>
 </html>

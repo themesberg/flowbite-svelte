@@ -1,3 +1,20 @@
-<h1>Accordions</h1>
+<script>
+  import { Card } from "flowbite-svelte";
+</script>
 
-<a href="accordions/default">Default Accordion</a>
+<div class="container flex flex-wrap mx-auto mt-8 justify-center">
+  <div class="p-4">
+    <Card
+      img="/images/accordions.webp"
+      header="DEFAULT ACCORDION"
+      link="/accordions/default"
+    />
+  </div>
+  <div class="p-4">
+    <Card
+      img="/images/accordions.webp"
+      header="ICON ACCORDION"
+      link="/accordions/icon-accordion"
+    />
+  </div>
+</div>
