@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { LinksType, SiteType } from '../types';
+	import type { LinkType, SiteType } from '../types';
 	export let site: SiteType;
-	export let links: LinksType[];
+	export let links: LinkType[];
 	export let footerClass =
 		'p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800';
 	export let siteNameClass = 'text-sm text-gray-500 sm:text-center dark:text-gray-400';

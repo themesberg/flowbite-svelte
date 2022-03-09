@@ -26,12 +26,12 @@ export type CardButtonType = {
     rounded?: boolean;
 };
 
-export type CardImg = {
+export type ImgType = {
     src: string;
     alt?: string;
 }
 
-export interface LinksType {
+export interface LinkType {
     name: string;
     link: string;
     rel?: string;
@@ -74,4 +74,10 @@ export interface NavbarType {
     link: string;
     rel?: string;
     child?: NavbarType[];
+}
+
+export interface DropdownLinkType {
+    label: string;
+    href: string;
+    rel?: string;
 }

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { CardImg, Colors } from '../types';
-	export let img: CardImg = {
+	import type { ImgType, Colors } from '../types';
+	export let img: ImgType = {
 		src: '/images/product-1.png',
 		alt: 'product image'
 	};

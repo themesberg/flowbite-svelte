@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { LinksType, SiteType, SocialMediaType } from '../types';
+	import type { LinkType, SiteType, SocialMediaType } from '../types';
 	export let site: SiteType;
-	export let links: LinksType[];
+	export let links: LinkType[];
 	export let socialMedia: SocialMediaType[];
 	export let footerClass = 'bg-gray-800';
 	export let linksClass = 'grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4';

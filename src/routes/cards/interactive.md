@@ -6,16 +6,16 @@ layout: doc
   import { InteractiveCard }from '$lib/index';
   let dropdownLinks = [
     {
-      href: "/#",
-      name: "Edit",
+      href: "/",
+      label: "Edit",
     },
     {
-      href: "/#",
-      name: "About",
+      href: "/",
+      label: "About",
     },
     {
-      href: "/#",
-      name: "Profile",
+      href: "/",
+      label: "Profile",
     },
   ];
   let img = {
@@ -24,8 +24,8 @@ layout: doc
   };
   let header = "Lorem ipsum";
   let content = "Proin efficitur purus felis.";
-  let link1 = { href: "/", title: "Profile" };
-  let link2 = { href: "/", title: "About" };
+  let link1 = { link: "/", name: "Profile" };
+  let link2 = { link: "/", name: "About" };
 </script>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Interactive Card</h1>
@@ -34,19 +34,19 @@ layout: doc
 
 ```html
 <script>
-  import { InteractiveCard } from "flowbite-svelte";
+  import { InteractiveCard }from '$lib/index';
   let dropdownLinks = [
     {
-      href: "/#",
-      name: "Edit",
+      href: "/",
+      label: "Edit",
     },
     {
-      href: "/#",
-      name: "About",
+      href: "/",
+      label: "About",
     },
     {
-      href: "/#",
-      name: "Profile",
+      href: "/",
+      label: "Profile",
     },
   ];
   let img = {
@@ -55,14 +55,14 @@ layout: doc
   };
   let header = "Lorem ipsum";
   let content = "Proin efficitur purus felis.";
-  let link1 = { href: "/", title: "Profile" };
-  let link2 = { href: "/", title: "About" };
+  let link1 = { link: "/", name: "Profile" };
+  let link2 = { link: "/", name: "About" };
 </script>
 ```
 
 <h1 class="text-3xl w-full dark:text-white py-8">Interactive cards</h1>
 
-```html
+```svelte
 <InteractiveCard 
   {dropdownLinks} 
   {img} 
@@ -95,48 +95,24 @@ layout: doc
 
 <div class="container flex flex-col space-y-4 justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   
-    <InteractiveCard {dropdownLinks} {img} {header} {content} {link1} {link2} />
+<InteractiveCard {dropdownLinks} {img} {header} {content} {link1} {link2} />
 
-    <InteractiveCard
-      {dropdownLinks}
-      {img}
-      {header}
-      {content}
-      {link1}
-      {link2}
-      buttonColor="purple"
-    />
- 
-    <InteractiveCard
-      {dropdownLinks}
-      {img}
-      {header}
-      {content}
-      {link1}
-      {link2}
-      buttonColor="green"
-    />
-
-    <InteractiveCard
-      {dropdownLinks}
-      {img}
-      {header}
-      {content}
-      {link1}
-      buttonColor="red"
-    />
-  
+<InteractiveCard
+  {dropdownLinks}
+  {img}
+  {header}
+  {content}
+  {link1}
+  {link2}
+  buttonColor="purple"
+/>
 </div>
 
 <div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <div class="flex-auto p-4">
-    <InteractiveCard {dropdownLinks} {img} {header} {content} {link2} />
-  </div>
-  <div class="flex-auto p-4">
-    <InteractiveCard {dropdownLinks} {img} {header} {content} />
-  </div>
+
 </div>
 
 <h1 class="text-3xl w-full dark:text-white py-8">References</h1>
 
-<p class="dark:text-white text-base"><a href="https://flowbite.com/docs/components/card/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">- Flowbite Card</a></p>
+<p class="dark:text-white text-base"><a href="https://flowbite.com/docs/components/card/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Card</a></p>

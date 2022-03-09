@@ -1,19 +1,6 @@
 <script lang="ts">
 	import type { ButtonGroupType } from '../types';
-	export let buttons: ButtonGroupType[] = [
-		{
-			name: 'Profile',
-			link: '/'
-		},
-		{
-			name: 'Settings',
-			link: '/'
-		},
-		{
-			name: 'Messages',
-			link: '/'
-		}
-	];
+	export let buttons: ButtonGroupType[];
 
 	let btnLength = buttons.length;
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { LinksType } from '../types';
+	import type { LinkType } from '../types';
 	import { page } from '$app/stores';
 
 	export let sitename = 'Svelte Flow';
@@ -10,7 +10,7 @@
 	const handleClickbtn = () => {
 		barHidden = !barHidden;
 	};
-	export let menus: LinksType[];
+	export let menus: LinkType[];
 </script>
 
 <nav class="px-2 bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700">
