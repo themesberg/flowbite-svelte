@@ -3,12 +3,12 @@ layout: doc
 ---
 
 <script>
-  import { Alert, BorderAlert, InfoAlert } from "flowbite-svelte";
+  import { Alert, BorderAlert, InfoAlert }from '$lib/index';
 </script>
 
 <h1 class="text-3xl w-full text-gray-900 dark:text-white my-8">Alert</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Set up</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
 
 <p class="text-gray-900 dark:text-white py-4">
 Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
@@ -20,7 +20,7 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
 </script>
 ```
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-4">BorderAlert Default Props</h2>
+<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">BorderAlert Default Props</h2>
 
 ```js
 let color: string = "blue"; // {gray|red|yellow|green|indigo|purple|pink} 
@@ -28,7 +28,7 @@ let alertId: string = "alert-border-1";
 let closeBtn: boolean = false;
 ```
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-4">Border Alert Examples</h2>
+<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Border Alert Examples</h2>
 
 ```svelte
 <BorderAlert color="blue">

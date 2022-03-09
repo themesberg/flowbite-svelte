@@ -3,7 +3,7 @@ layout: doc
 ---
 
 <script>
-  import { SmallModal, ModalButton, modalIdStore } from "flowbite-svelte";
+  import { SmallModal, ModalButton, modalIdStore }from '$lib/index';
   import { goto } from "$app/navigation";
 
   const closeModal = () => {
@@ -47,9 +47,9 @@ layout: doc
   };
 </script>
 
-<h1 class="text-3xl w-full dark:text-white py-4">Small Modals</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Small Modals</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Set up</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
 
 <p class="dark:text-white py-4">Import SmallModal, ModalButton, modalIdStor components and set variables in the script tag. Add `closeModal` method if you want to close the modal in a button.</p>
 
@@ -100,7 +100,7 @@ layout: doc
 </script>
 ```
 
-<h1 class="text-3xl w-full dark:text-white py-4">Small Modals</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Small Modals</h1>
 
 <div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton id={idBasic} btnName={btnBasicName} />
@@ -115,7 +115,7 @@ layout: doc
 </SmallModal>
 ```
 
-<h1 class="text-3xl w-full dark:text-white py-4">Small Modals with Action Buttons</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Small Modals with Action Buttons</h1>
 
 <div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton id={id1} btnName={btnName1} btnColor={btnColor1} />
@@ -137,7 +137,7 @@ layout: doc
 </SmallModal>
 ```
 
-<h1 class="text-3xl w-full dark:text-white py-4">Small Modals with different colors</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Small Modals with different colors</h1>
 
 <div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
@@ -191,7 +191,7 @@ eiusmod tempor incididunt ut labore et dolore magna aliqua.
     eiusmod tempor incididunt ut labore et dolore magna aliqua.
   </SmallModal>
 
-<h1 class="text-3xl w-full dark:text-white py-4">References</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">References</h1>
 
 <p class="dark:text-white text-base"><a href="https://flowbite.com/docs/components/modal/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Modal</a></p>
 

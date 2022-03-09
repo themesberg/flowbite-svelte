@@ -2,9 +2,9 @@
 layout: doc
 ---
 
-<h1 class="text-3xl w-full dark:text-white py-4">Dark mode</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Dark mode</h1>
 
-<p class=" dark:text-white py-4">The best place to import is in the __layout.svelte.</p>
+<p class=" dark:text-white py-8">The best place to import is in the __layout.svelte.</p>
 
 ```html
 <script>

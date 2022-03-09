@@ -3,7 +3,7 @@ layout: doc
 ---
 
 <script>
-  import { Button } from "flowbite-svelte";
+  import { Button }from '$lib/index';
   import { goto }from '$app/navigation';
   const btn1 = ()=>{
     alert('This redirects to the home page.')
@@ -14,9 +14,9 @@ layout: doc
   }
 </script>
 
-<h1 class="text-3xl w-full dark:text-white py-4">Buttons</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Buttons</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Set up</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
 
 <p class="dark:text-white py-4">Import Button in the script tag.</p>
 
@@ -26,7 +26,7 @@ layout: doc
 </script>
 ```
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-4">Button handler</h2>
+<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Button handler</h2>
 
 <p class="dark:text-white py-4">You can use on:click to listen to the event. Add your event handler.</p>
 
@@ -34,11 +34,11 @@ layout: doc
 <script>
   import { Button } from "flowbite-svelte";
   import { goto }from '$app/navigation';
-  const btn1 = ()=>{
+  const btn1 = ()　=>　{
     alert('This redirects to the home page.')
     goto('/')
   }
-  const btn2 = ()=>{
+  const btn2 = ()　=>　{
     alert ('You clicked btn2.')
   }
 </script>

@@ -3,12 +3,12 @@ layout: doc
 ---
 
 <script>
-  import { ColorShadowButton } from "flowbite-svelte";
+  import { ColorShadowButton }from '$lib/index';
 </script>
 
-<h1 class="text-3xl w-full text-gray-900 dark:text-white py-4">Colored Shadow</h1>
+<h1 class="text-3xl w-full text-gray-900 dark:text-white py-8">Colored Shadow</h1>
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-4">Button Props</h2>
+<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Button Props</h2>
 
 ```js
 let textSize = "text-sm"; // 'text-xs'|'text-sm'|'text-base' |'text-lg' |'text-xl'|'text-2xl'|'text-3xl'|'text-4xl'
@@ -16,7 +16,7 @@ let name = "Read more";
 let color = "blue"; // 'blue' | 'green' | 'cyan' | 'teal' | 'lime' | 'red' | 'pink' | 'purple'
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">text-sm</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">text-sm</h2>
 
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -41,7 +41,7 @@ let color = "blue"; // 'blue' | 'green' | 'cyan' | 'teal' | 'lime' | 'red' | 'pi
 <ColorShadowButton color="purple" name="Purple" />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">text-xs</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">text-xs</h2>
 
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -66,7 +66,7 @@ let color = "blue"; // 'blue' | 'green' | 'cyan' | 'teal' | 'lime' | 'red' | 'pi
 <ColorShadowButton color="purple" name="Purple" textSize="text-xs" />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">text-base</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">text-base</h2>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <ColorShadowButton color="blue" name="Blue" textSize="text-base"/>

@@ -9,7 +9,7 @@ layout: doc
 </script>
 
 
-<h1 class="text-3xl w-full text-gray-900 dark:text-white py-4">Badges with icon</h1>
+<h1 class="text-3xl w-full text-gray-900 dark:text-white py-8">Badges with icon</h1>
 
 <p class="text-lg w-full text-gray-900 dark:text-white py-4">You can use <a href="https://github.com/shinokada/svelte-heroicons" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Svelte-heroicon.</a></p>
 
@@ -21,7 +21,7 @@ layout: doc
 </script>
 ```
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-4">Props</h2>
+<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Props</h2>
 
 ```js
 let textSize = "text-xs"; // 'text-xs'|'text-sm'|'text-base' |'text-lg' |'text-xl'|'text-2xl'|'text-3xl'|'text-4xl'
@@ -29,7 +29,7 @@ let name = "Read more";
 let color = "blue"; // 'blue'| 'gray'| 'red'| 'yellow'| 'purple'| 'green'| 'indigo'| 'purple'| 'pink'
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Size xs</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Size xs</h2>
 
 <div
   class="container flex flex-wrap justify-evenly rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -54,7 +54,7 @@ let color = "blue"; // 'blue'| 'gray'| 'red'| 'yellow'| 'purple'| 'green'| 'indi
 <BadgeIcon name="Pink" color="pink" ><InformationCircleIconOutline className="h-4 w-4 mr-1"/></BadgeIcon>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Size sm</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Size sm</h2>
 
 <div
   class="container flex flex-wrap justify-evenly rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -79,7 +79,7 @@ let color = "blue"; // 'blue'| 'gray'| 'red'| 'yellow'| 'purple'| 'green'| 'indi
 <BadgeIcon name="Pink" color="pink" textSize="text-sm" ><InformationCircleIconOutline className="h-4 w-4 mr-1"/></BadgeIcon>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Size base</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Size base</h2>
 
 <div
   class="container flex flex-wrap justify-evenly rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">

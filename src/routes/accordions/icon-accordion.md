@@ -3,8 +3,8 @@ layout: doc
 ---
 
 <script>
-  import { Accordion } from "flowbite-svelte";
-  import { AccordionItem } from "flowbite-svelte";
+  import { Accordion }from '$lib/index';
+  import { AccordionItem }from '$lib/index';
   import { ArchiveIconOutline, BeakerIconOutline } from "@codewithshin/svelte-heroicons";
 </script>
 

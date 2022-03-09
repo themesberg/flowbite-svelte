@@ -3,7 +3,7 @@ layout: doc
 ---
 
 <script>
-  import { PillTabs } from "flowbite-svelte";
+  import { PillTabs }from '$lib/index';
   let tabs = [
     {
       name: "Profile",
@@ -28,7 +28,7 @@ layout: doc
   ];
 </script>
 
-<h1 class="text-3xl w-full dark:text-white py-4">Pill Tabs</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Pill Tabs</h1>
 
 <div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
    <PillTabs {tabs} />

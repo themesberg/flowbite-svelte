@@ -3,7 +3,7 @@ layout: doc
 ---
 
 <script>
-  import { InteractiveCard } from "flowbite-svelte";
+  import { InteractiveCard }from '$lib/index';
   let dropdownLinks = [
     {
       href: "/#",
@@ -28,9 +28,9 @@ layout: doc
   let link2 = { href: "/", title: "About" };
 </script>
 
-<h1 class="text-3xl w-full dark:text-white py-4">Interactive Card</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Interactive Card</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Set up</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
 
 ```html
 <script>
@@ -60,7 +60,7 @@ layout: doc
 </script>
 ```
 
-<h1 class="text-3xl w-full dark:text-white py-4">Interactive cards</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Interactive cards</h1>
 
 ```html
 <InteractiveCard 
@@ -137,6 +137,6 @@ layout: doc
   </div>
 </div>
 
-<h1 class="text-3xl w-full dark:text-white py-4">References</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">References</h1>
 
 <p class="dark:text-white text-base"><a href="https://flowbite.com/docs/components/card/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">- Flowbite Card</a></p>

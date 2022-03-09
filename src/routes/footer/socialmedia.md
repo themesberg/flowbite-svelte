@@ -67,7 +67,7 @@ let links = [
   ];
 </script>
 
-<h1 class="text-3xl w-full dark:text-white py-4">Socialmedia footer</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Socialmedia footer</h1>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <SocialMediaFooter {socialMedia} {links} {site}/>
@@ -142,7 +142,7 @@ let links = [
 <SocialMediaFooter {socialMedia} {links} {site}/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Default props</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Default props</h2>
 
 
 ```js

@@ -3,8 +3,8 @@ layout: doc
 ---
 
 <script>
-  import { Accordion } from "flowbite-svelte";
-  import { AccordionItem } from "flowbite-svelte";
+  import { Accordion } from "$lib/index";
+  import { AccordionItem } from "$lib/index";
 </script>
 
 <h1 class="text-3xl w-full dark:text-white">Accordion</h1>

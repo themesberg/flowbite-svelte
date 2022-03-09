@@ -3,7 +3,7 @@ layout: doc
 ---
 
 <script>
-  import { ModalButton, ExtraLargeModal, modalIdStore } from "flowbite-svelte";
+  import { ModalButton, ExtraLargeModal, modalIdStore }from '$lib/index';
 
   const closeModal = () => {
     modalIdStore.update((value) => {
@@ -42,9 +42,9 @@ layout: doc
   };
 </script>
 
-<h1 class="text-3xl w-full dark:text-white py-4">Extra-large Modals</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Extra-large Modals</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Setup</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Setup</h2>
 
 <p class="dark:text-white py-4">Import ExtraLargeModal, ModalButton, modalIdStor components and set variables in the script tag. Add `closeModal` method if you want to close the modal in a button.</p>
 
@@ -91,7 +91,7 @@ layout: doc
 </script>
 ```
 
-<h1 class="text-3xl w-full dark:text-white py-4">Extra-large Modals for Information</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Extra-large Modals for Information</h1>
 
 <div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton {id} btnName="Info Modal" />
@@ -107,7 +107,7 @@ layout: doc
 </ExtraLargeModal>
 ```
 
-<h1 class="text-3xl w-full dark:text-white py-4">Extra-large Modals with One Button</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Extra-large Modals with One Button</h1>
 
 <div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton id={id1} btnName={btnExLName} btnColor={btnExLColor} />
@@ -128,7 +128,7 @@ layout: doc
 </ExtraLargeModal>
 ```
 
-<h1 class="text-3xl w-full dark:text-white py-4">Extra-large Modals with Two Buttons</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Extra-large Modals with Two Buttons</h1>
 
 <div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton id={id2} btnName={btnExLName2} btnColor={btnExLColor2} />
@@ -185,6 +185,6 @@ layout: doc
     quis nostrud exercitation ullamco.
   </ExtraLargeModal>
 
-<h1 class="text-3xl w-full dark:text-white py-4">References</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">References</h1>
 
 <p class="dark:text-white text-base"><a href="https://flowbite.com/docs/components/modal/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">- Flowbite Modal</a></p>

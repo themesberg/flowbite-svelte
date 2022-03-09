@@ -11,7 +11,7 @@ layout: doc
     SignInModal,
     ModalButton,
     modalIdStore
-  } from "flowbite-svelte";
+  }from '$lib/index';
 
   const closeModal = () => {
     modalIdStore.update((value) => {

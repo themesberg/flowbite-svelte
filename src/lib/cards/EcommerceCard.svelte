@@ -4,7 +4,7 @@
 		src: '/images/product-1.png',
 		alt: 'product image'
 	};
-	export let link = '/#';
+	export let link: string = '/';
 	export let btnColor: Colors = 'blue';
 	export let rel: string;
 	export let title: string = 'Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport';

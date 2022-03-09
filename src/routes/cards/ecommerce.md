@@ -3,7 +3,7 @@ layout: doc
 ---
 
 <script>
-  import { EcommerceCard } from "flowbite-svelte";
+  import { EcommerceCard }from '$lib/index';
   let img2 = {
     src: "/images/product-2.jpeg",
     alt: "product image",
@@ -18,9 +18,9 @@ layout: doc
   };
 </script>
 
-<h1 class="text-3xl w-full dark:text-white py-4">Ecommerce Card</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Ecommerce Card</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Set up</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
 
 ```svelte
 <script>
@@ -40,7 +40,7 @@ layout: doc
 </script>
 ```
 
-<h1 class="text-3xl w-full dark:text-white py-4">Ecommerce Cards</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Ecommerce Cards</h1>
 
 ```svelte
 <EcommerceCard
@@ -125,6 +125,6 @@ layout: doc
   />
 </div>
 
-<h1 class="text-3xl w-full dark:text-white py-4">References</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">References</h1>
 
 <p class="dark:text-white text-base"><a href="https://flowbite.com/docs/components/card/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">- Flowbite Card</a></p>

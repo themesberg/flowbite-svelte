@@ -3,10 +3,16 @@ layout: doc
 ---
 
 <script>
-  import { Button } from "flowbite-svelte";
+  import { Button }from '$lib/index';
 </script>
 
-<h1 class="text-3xl w-full text-gray-900 dark:text-white">Button Props</h1>
+<h1 class="text-3xl w-full text-gray-900 dark:text-white">Button outlined</h1>
+
+```js
+import { Button } from "flowbite-svelte";
+```
+
+<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Props</h2>
 
 ```js
 let rounded = false;
@@ -15,7 +21,7 @@ let name = "Read more";
 let type = "blue-outline"; // blue-outline | dark-outline | light-outline| green-outline | red-outline | yellow -outline| puple-outline
 ```
 
-<h1 class="text-3xl w-full dark:text-white py-4">Size xs Outlined Buttons</h1>
+<h2 class="text-2xl w-full dark:text-white py-8">Size xs</h2>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Button name="Button text-xs" textSize="text-xs" type="blue-outline" />
@@ -36,28 +42,28 @@ let type = "blue-outline"; // blue-outline | dark-outline | light-outline| green
 ```
 
 
-<h1 class="text-3xl w-full dark:text-white my-8">Size sm Outlined Buttons</h1>
+<h2 class="text-2xl w-full dark:text-white py-8">Size sm</h2>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-  <Button name="Button" textSize="text-sm" type="blue-outline" />
-  <Button name="Button" textSize="text-sm" type="dark-outline" />
-  <Button name="Button" textSize="text-sm" type="green-outline" />
-  <Button name="Button" textSize="text-sm" type="red-outline" />
-  <Button name="Button" textSize="text-sm" type="red-outline" />
-  <Button name="Button" textSize="text-sm" type="purple-outline" />
+  <Button name="Button" type="blue-outline" />
+  <Button name="Button" type="dark-outline" />
+  <Button name="Button" type="green-outline" />
+  <Button name="Button" type="red-outline" />
+  <Button name="Button" type="red-outline" />
+  <Button name="Button" type="purple-outline" />
 </div>
 
 ```svelte
-<Button name="Button" textSize="text-sm" type="blue-outline" />
-<Button name="Button" textSize="text-sm" type="dark-outline" />
-<Button name="Button" textSize="text-sm" type="green-outline" />
-<Button name="Button" textSize="text-sm" type="red-outline" />
-<Button name="Button" textSize="text-sm" type="red-outline" />
-<Button name="Button" textSize="text-sm" type="purple-outline" />
+<Button name="Button" type="blue-outline" />
+<Button name="Button" type="dark-outline" />
+<Button name="Button" type="green-outline" />
+<Button name="Button" type="red-outline" />
+<Button name="Button" type="red-outline" />
+<Button name="Button" type="purple-outline" />
 ```
 
 
-<h1 class="text-3xl w-full dark:text-white my-8">Size sm Outlined Buttons</h1>
+<h2 class="text-2xl w-full dark:text-white py-8">Size base</h2>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Button name="Button" textSize="text-base" type="blue-outline" />

@@ -1,5 +1,5 @@
 <script>
-  import { Card } from "flowbite-svelte";
+  import { Card }from '$lib/index';
 </script>
 
 <div class="container flex flex-wrap mt-8 mx-auto justify-center">

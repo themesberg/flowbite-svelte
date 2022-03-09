@@ -36,9 +36,9 @@ layout: doc
 </script>
 
 
-<h1 class="text-3xl w-full text-gray-900 dark:text-white py-4">Outline Button Group</h1>
+<h1 class="text-3xl w-full text-gray-900 dark:text-white py-8">Outline Button Group</h1>
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-4">Setup</h2>
+<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Setup</h2>
 
 ```svelte
 <script>
@@ -75,7 +75,7 @@ layout: doc
 </script>
 ```
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-4">Props</h2>
+<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Props</h2>
 
 ```svelte
 let buttons = [
@@ -97,7 +97,7 @@ let buttons = [
 ];
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Outline default</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Outline default</h2>
 
 <div
   class="container flex flex-wrap justify-evenly rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -109,7 +109,7 @@ let buttons = [
 ```
 
 
-<h2 class="text-2xl w-full dark:text-white py-4">Outline with icon</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Outline with icon</h2>
 
 <div
   class="container flex flex-wrap justify-evenly rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">

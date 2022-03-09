@@ -3,11 +3,11 @@ layout: doc
 ---
 
 <script>
-  import { SpinnerButton } from "flowbite-svelte";
+  import { SpinnerButton }from '$lib/index';
 </script>
 
 
-<h1 class="text-3xl w-full dark:text-white py-4">Button spinner</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Button spinner</h1>
 
 
 ```svelte
@@ -16,13 +16,13 @@ layout: doc
 </script>
 ```
 
-<h2 class="text-2xl mt-8 dark:text-white py-4">Default Prop</h2>
+<h2 class="text-2xl mt-8 dark:text-white py-8">Default Prop</h2>
 
 ```js
 let color; // {null|blue}
 ```
 
-<h2 class="text-2xl mt-8 dark:text-white py-4">Colors</h2>
+<h2 class="text-2xl mt-8 dark:text-white py-8">Colors</h2>
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <SpinnerButton />
@@ -34,7 +34,7 @@ let color; // {null|blue}
 <SpinnerButton color="blue" />
 ```
 
-<h2 class="text-2xl mt-8 dark:text-white py-4">Slot</h2>
+<h2 class="text-2xl mt-8 dark:text-white py-8">Slot</h2>
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <SpinnerButton>Here you go ...</SpinnerButton>

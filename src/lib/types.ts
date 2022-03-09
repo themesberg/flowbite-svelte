@@ -1,4 +1,6 @@
-export type Colors = 'blue'| 'gray'| 'red'| 'yellow'| 'purple'| 'green'| 'indigo'| 'pink';
+import type { SvelteComponent } from 'svelte';
+
+export type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
 
 export type Buttontypes = 'blue' | 'blue-outline' | 'dark' | 'dark-outline' | 'light' | 'green' | 'green-outline' | 'red' | 'red-outline' | 'yellow' | 'yellow-outline' | 'purple' | 'purple-outline';
 
@@ -9,15 +11,15 @@ export type Gradientduotones = 'purple2blue' | 'cyan2blue' | 'green2blue' | 'pur
 export type Textsize = 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl'
 
 export interface ButtonGroupType {
-    name?: string;
+    name: string;
     link?: string;
     rel?: string;
-    icon?: any;
+    icon?: typeof SvelteComponent;
 }
   
-export type CardButton = {
+export type CardButtonType = {
     textSize?: Textsize;
-    name?: string;
+    name: string;
     type?: Buttontypes;
     link?: string;
     rel?: string;
