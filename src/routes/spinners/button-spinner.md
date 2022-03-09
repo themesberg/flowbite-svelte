@@ -19,7 +19,7 @@ layout: doc
 <h2 class="text-2xl mt-8 dark:text-white py-8">Default Prop</h2>
 
 ```js
-let color; // {null|blue}
+let color; // 'blue' | undefined
 ```
 
 <h2 class="text-2xl mt-8 dark:text-white py-8">Colors</h2>

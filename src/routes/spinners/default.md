@@ -18,10 +18,10 @@ layout: doc
 <h2 class="text-2xl mt-8 dark:text-white py-8">Default Props</h2>
 
 ```js
-let color = "blue"; // {blue|gray|green|red|yellow|pink|purple}
+let color = "blue"; // blue|gray|green|red|yellow|pink|purple
 let bg = "text-gray-200";
 let size = "w-8 h-8";
-let align; // text-{left|center|right}
+let align; // text-left| text-center| text-right
 ```
 
 <h2 class="text-2xl mt-8 dark:text-white py-8">Colors</h2>
@@ -52,12 +52,14 @@ let align; // text-{left|center|right}
 <Spinner size="w-4 h-4"/>
 <Spinner size="w-6 h-6" />
 <Spinner size="w-8 h-8"/>
+<Spinner size="w-16 h-16"/>
 </div>
 
 ```svelte
 <Spinner size="w-4 h-4"/>
 <Spinner size="w-6 h-6" />
 <Spinner size="w-8 h-8"/>
+<Spinner size="w-16 h-16"/>
 ```
 
 

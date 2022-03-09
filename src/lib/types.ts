@@ -46,3 +46,5 @@ export interface SocialMediaType {
     link: string;
     icon: typeof SvelteComponent;
 }
+
+export type AlignType = 'text-center' | 'text-left' | 'text-right'
