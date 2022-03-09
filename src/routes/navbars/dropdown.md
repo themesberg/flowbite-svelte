@@ -9,31 +9,31 @@ layout: doc
     {
       id: 1,
       name: "Home",
-      link: "/",
+      href: "/",
       rel: "",
     },
     {
       id: 2,
       name: "Cards",
-      link: "/cards",
+      href: "/cards",
       rel: "",
       child: [
         {
           id: 3,
           name: "Card",
-          link: "/cards/card",
+          href: "/cards/card",
           rel: "",
         },
         {
           id: 4,
           name: "CTA Card",
-          link: "/cards/cta",
+          href: "/cards/cta",
           rel: "",
         },
         {
           id: 5,
           name: "Ecommerce Card",
-          link: "/cards/ecommerce",
+          href: "/cards/ecommerce",
           rel: "",
         },
       ],
@@ -41,19 +41,19 @@ layout: doc
     {
       id: 6,
       name: "Modals",
-      link: "/",
+      href: "/",
       rel: "",
       child: [
         {
           id: 7,
           name: "Small",
-          link: "/modals/small",
+          href: "/modals/small",
           rel: "",
         },
         {
           id: 8,
           name: "Medium",
-          link: "/modals/medium",
+          href: "/modals/medium",
           rel: "",
         },
       ],
@@ -83,31 +83,31 @@ layout: doc
     {
       id: 1,
       name: "Home",
-      link: "/",
+      href: "/",
       rel: "",
     },
     {
       id: 2,
       name: "Cards",
-      link: "/cards",
+      href: "/cards",
       rel: "",
       child: [
         {
           id: 3,
           name: "Card",
-          link: "/cards/card",
+          href: "/cards/card",
           rel: "",
         },
         {
           id: 4,
           name: "CTA Card",
-          link: "/cards/cta",
+          href: "/cards/cta",
           rel: "",
         },
         {
           id: 5,
           name: "Ecommerce Card",
-          link: "/cards/ecommerce",
+          href: "/cards/ecommerce",
           rel: "",
         },
       ],
@@ -115,19 +115,19 @@ layout: doc
     {
       id: 6,
       name: "Modals",
-      link: "/",
+      href: "/",
       rel: "",
       child: [
         {
           id: 7,
           name: "Small",
-          link: "/modals/small",
+          href: "/modals/small",
           rel: "",
         },
         {
           id: 8,
           name: "Medium",
-          link: "/modals/medium",
+          href: "/modals/medium",
           rel: "",
         },
       ],

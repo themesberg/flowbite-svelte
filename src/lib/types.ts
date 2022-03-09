@@ -52,12 +52,12 @@ export type AlignType = 'text-center' | 'text-left' | 'text-right'
 export interface TabType {
     name: string;
     active: boolean;
-    link: string,
+    href: string,
     rel?: string,
 }
 
 export interface InteractiveTabType {
-    label: string;
+    name: string;
     id: number;
     content: string;
 }
@@ -65,19 +65,19 @@ export interface InteractiveTabType {
 export interface PillTabType {
     name: string;
     selected: boolean;
-    link: string;
+    href: string;
 }
 
 export interface NavbarType {
     id: number;
     name: string;
-    link: string;
+    href: string;
     rel?: string;
     child?: NavbarType[];
 }
 
 export interface DropdownLinkType {
-    label: string;
+    name: string;
     href: string;
     rel?: string;
 }

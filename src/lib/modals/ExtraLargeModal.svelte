@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
-	import { modalIdStore } from './modalStores.js';
+	import { modalIdStore } from './modalStores';
 	const dispatch = createEventDispatcher();
 
 	export let id = 'extralarge-modal';

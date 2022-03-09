@@ -1,8 +1,5 @@
 <script lang="ts">
-	// import { createEventDispatcher } from "svelte";
-	import { modalIdStore } from './modalStores.js';
-	// const dispatch = createEventDispatcher();
-
+	import { modalIdStore } from './modalStores';
 	export let id = 'signin-modal';
 	export let btnSignInColor = 'blue';
 	export let titleSignIn = 'Sign in to our platform';

@@ -2,10 +2,9 @@
 	import { SmallModal, ModalButton, modalIdStore } from '$lib/index';
 
 	const closeModal = () => {
-		modalIdStore.update((value) => {
-			value = null;
-		});
+		modalIdStore.update((value) => (value = null));
 	};
+
 	// small
 	let smallModalId = 'small-modal';
 	let btnSName = 'Small Modal';
@@ -26,9 +25,10 @@
 
 <ModalButton id={smallModalId} btnName={btnSName} />
 <SmallModal
+	showModalId="testmodal"
 	title={titleS}
 	btn1={btnS1}
-	btn2={btnS2}
+	btn2=""
 	on:handlebtn1={handlebtnS1}
 	on:handlebtn2={handlebtnS2}
 >

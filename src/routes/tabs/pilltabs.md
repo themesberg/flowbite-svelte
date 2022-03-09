@@ -8,22 +8,22 @@ layout: doc
     {
       name: "Profile",
       selected: true,
-      link: "/",
+      href: "/",
     },
     {
       name: "Dashboard",
       selected: false,
-      link: "/",
+      href: "/",
     },
     {
       name: "Settings",
       selected: false,
-      link: "/",
+      href: "/",
     },
     {
       name: "Contacts",
       selected: false,
-      link: "/",
+      href: "/",
     },
   ];
 </script>
@@ -41,22 +41,22 @@ layout: doc
     {
       name: "Profile",
       selected: true,
-      link: "/profile",
+      href: "/profile",
     },
     {
       name: "Dashboard",
       selected: false,
-      link: "/dashboard",
+      href: "/dashboard",
     },
     {
       name: "Settings",
       selected: false,
-      link: "/settings",
+      href: "/settings",
     },
     {
       name: "Contact",
       selected: false,
-      link: "/contact",
+      href: "/contact",
     },
   ];
 </script>

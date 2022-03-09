@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
-	import { modalIdStore } from './modalStores.js';
+	import { modalIdStore } from './modalStores';
 	const dispatch = createEventDispatcher();
 	export let id = 'small-modal';
 	export let btnColor = 'blue';
@@ -24,7 +24,6 @@
 
 	const handlebtn2 = () => {
 		dispatch('handlebtn2');
-		// showModalId = null;
 	};
 	let divClass: string;
 	let headDivClass: string;

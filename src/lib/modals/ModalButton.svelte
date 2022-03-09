@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { modalIdStore } from './modalStores.js';
+	import { modalIdStore } from './modalStores';
 	import { get } from 'svelte/store';
 	export let id = 'modal-id';
 	export let btnName = 'Modal Name';

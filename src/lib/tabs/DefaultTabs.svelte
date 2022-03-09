@@ -4,10 +4,10 @@
 </script>
 
 <ul class="flex flex-wrap border-b border-gray-200 dark:border-gray-700">
-	{#each tabs as { name, active, link, rel }}
+	{#each tabs as { name, active, href, rel }}
 		<li class="mr-2">
 			<a
-				href={link}
+				{href}
 				{rel}
 				aria-current="page"
 				class={active

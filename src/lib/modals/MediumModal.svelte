@@ -1,6 +1,6 @@
 <script lang="ts">
 	// import { toggleModal } from "./modalHelper";
-	import { modalIdStore } from './modalStores.js';
+	import { modalIdStore } from './modalStores';
 	import { createEventDispatcher } from 'svelte';
 
 	const dispatch = createEventDispatcher();

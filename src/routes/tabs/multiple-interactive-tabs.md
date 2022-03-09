@@ -7,25 +7,25 @@ layout: doc
 
   let tabs1 = [
     {
-      label: "Profile-1",
+      name: "Profile-1",
       id: 1,
       content:
         "1-1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     },
     {
-      label: "Dashboard-1",
+      name: "Dashboard-1",
       id: 2,
       content:
         "1-2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     },
     {
-      label: "Settings-1",
+      name: "Settings-1",
       id: 3,
       content:
         "1-3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     },
     {
-      label: "Contacts-1",
+      name: "Contacts-1",
       id: 4,
       content:
         "1-4 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
@@ -33,25 +33,25 @@ layout: doc
   ];
   let tabs2 = [
     {
-      label: "Profile-2",
+      name: "Profile-2",
       id: 1,
       content:
         "2-1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     },
     {
-      label: "Dashboard-2",
+      name: "Dashboard-2",
       id: 2,
       content:
         "2-2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     },
     {
-      label: "Settings-2",
+      name: "Settings-2",
       id: 3,
       content:
         "2-3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     },
     {
-      label: "Contacts-2",
+      name: "Contacts-2",
       id: 4,
       content:
         "2-4 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
@@ -76,25 +76,25 @@ layout: doc
 
   let tabs1 = [
     {
-      label: "Profile-1",
+      name: "Profile-1",
       id: 1,
       content:
         "1-1 Lorem ipsum dolor sit amet, consectetur adipiscing ... ",
     },
     {
-      label: "Dashboard-1",
+      name: "Dashboard-1",
       id: 2,
       content:
         "1-2 Lorem ipsum dolor sit amet, consectetur adipiscing ... ",
     },
     {
-      label: "Settings-1",
+      name: "Settings-1",
       id: 3,
       content:
         "1-3 Lorem ipsum dolor sit amet, consectetur adipiscing ... ",
     },
     {
-      label: "Contacts-1",
+      name: "Contacts-1",
       id: 4,
       content:
         "1-4 Lorem ipsum dolor sit amet, consectetur adipiscing ... ",
@@ -102,25 +102,25 @@ layout: doc
   ];
   let tabs2 = [
     {
-      label: "Profile-2",
+      name: "Profile-2",
       id: 1,
       content:
         "2-1 Lorem ipsum dolor sit amet, consectetur adipiscing ... ",
     },
     {
-      label: "Dashboard-2",
+      name: "Dashboard-2",
       id: 2,
       content:
         "2-2 Lorem ipsum dolor sit amet, consectetur adipiscing ... ",
     },
     {
-      label: "Settings-2",
+      name: "Settings-2",
       id: 3,
       content:
         "2-3 Lorem ipsum dolor sit amet, consectetur adipiscing ... ",
     },
     {
-      label: "Contacts-2",
+      name: "Contacts-2",
       id: 4,
       content:
         "2-4 Lorem ipsum dolor sit amet, consectetur adipiscing ... ",

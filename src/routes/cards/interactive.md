@@ -7,15 +7,15 @@ layout: doc
   let dropdownLinks = [
     {
       href: "/",
-      label: "Edit",
+      name: "Edit",
     },
     {
       href: "/",
-      label: "About",
+      name: "About",
     },
     {
       href: "/",
-      label: "Profile",
+      name: "Profile",
     },
   ];
   let img = {
@@ -38,15 +38,15 @@ layout: doc
   let dropdownLinks = [
     {
       href: "/",
-      label: "Edit",
+      name: "Edit",
     },
     {
       href: "/",
-      label: "About",
+      name: "About",
     },
     {
       href: "/",
-      label: "Profile",
+      name: "Profile",
     },
   ];
   let img = {

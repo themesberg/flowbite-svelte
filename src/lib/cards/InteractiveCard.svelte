@@ -71,13 +71,13 @@
 			class="hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 absolute"
 		>
 			<ul class="py-1" aria-labelledby="dropdownButton">
-				{#each dropdownLinks as { href, label, rel }}
+				{#each dropdownLinks as { href, name, rel }}
 					<li>
 						<a
 							{href}
 							{rel}
 							class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-							>{label}</a
+							>{name}</a
 						>
 					</li>
 				{/each}
