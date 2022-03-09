@@ -48,3 +48,22 @@ export interface SocialMediaType {
 }
 
 export type AlignType = 'text-center' | 'text-left' | 'text-right'
+
+export interface TabType {
+    name: string;
+    active: boolean;
+    link: string,
+    rel?: string,
+}
+
+export interface InteractiveTabType {
+    label: string;
+    id: number;
+    content: string;
+}
+
+export interface PillTabType {
+    name: string;
+    selected: boolean;
+    link: string;
+}

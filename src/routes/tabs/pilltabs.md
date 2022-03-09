@@ -8,22 +8,22 @@ layout: doc
     {
       name: "Profile",
       selected: true,
-      link: "/#",
+      link: "/",
     },
     {
       name: "Dashboard",
       selected: false,
-      link: "/#",
+      link: "/",
     },
     {
       name: "Settings",
       selected: false,
-      link: "/#",
+      link: "/",
     },
     {
       name: "Contacts",
       selected: false,
-      link: "/#",
+      link: "/",
     },
   ];
 </script>
@@ -41,27 +41,26 @@ layout: doc
     {
       name: "Profile",
       selected: true,
-      link: "/#",
+      link: "/profile",
     },
     {
       name: "Dashboard",
       selected: false,
-      link: "/#",
+      link: "/dashboard",
     },
     {
       name: "Settings",
       selected: false,
-      link: "/#",
+      link: "/settings",
     },
     {
-      name: "Contacts",
+      name: "Contact",
       selected: false,
-      link: "/#",
+      link: "/contact",
     },
   ];
 </script>
 
 <PillTabs {tabs} />
-
 ```
 
