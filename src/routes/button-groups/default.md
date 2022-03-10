@@ -19,17 +19,17 @@ layout: doc
   let buttons2 = [
   {
     name: "Profile",
-    link:"/",
+    href:"/",
     icon: UserCircleIconSolid
   },
   {
     name: "Settings",
-    link:"/",
+    href:"/",
     icon: AdjustmentsIconSolid
   },
   {
     name: "Messages",
-    link:"/",
+    href:"/",
     icon: CloudDownloadIconSolid
   },
 ];
@@ -58,17 +58,17 @@ layout: doc
   let buttons2 = [
   {
     name: "Profile",
-    link:"/",
+    href:"/",
     icon: UserCircleIconSolid
   },
   {
     name: "Settings",
-    link:"/",
+    href:"/",
     icon: AdjustmentsIconSolid
   },
   {
     name: "Messages",
-    link:"/",
+    href:"/",
     icon: CloudDownloadIconSolid
   },
 ];
@@ -81,17 +81,17 @@ layout: doc
 let buttons = [
   {
     name: "Profile",
-    link:"/", // optional
+    href:"/", // optional
     icon: UserCircleIconSolid // optional
   },
   {
     name: "Settings",
-    link:"/", // optional
+    href:"/", // optional
     icon: AdjustmentsIconSolid // optional
   },
   {
     name: "Messages",
-    link:"/", // optional
+    href:"/", // optional
     icon: CloudDownloadIconSolid // optional
   },
 ];

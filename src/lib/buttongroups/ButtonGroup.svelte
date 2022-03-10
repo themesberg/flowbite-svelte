@@ -11,14 +11,14 @@
 </script>
 
 <div class="inline-flex rounded-md shadow-sm" role="group">
-	{#each buttons as { name, icon, link, rel }, i}
+	{#each buttons as { name, icon, href, rel }, i}
 		{#if i === 0}
 			<button type="button" class={classFirst}>
 				{#if icon}
 					<svelte:component this={icon} className="h-4 w-4 mr-2" />
 				{/if}
-				{#if link}
-					<a href={link} {rel}>{name}</a>
+				{#if href}
+					<a {href} {rel}>{name}</a>
 				{:else}
 					{name}
 				{/if}
@@ -28,8 +28,8 @@
 				{#if icon}
 					<svelte:component this={icon} className="h-4 w-4 mr-2" />
 				{/if}
-				{#if link}
-					<a href={link} {rel}>{name}</a>
+				{#if href}
+					<a {href} {rel}>{name}</a>
 				{:else}
 					{name}
 				{/if}
@@ -39,8 +39,8 @@
 				{#if icon}
 					<svelte:component this={icon} className="h-4 w-4 mr-2" />
 				{/if}
-				{#if link}
-					<a href={link} {rel}>{name}</a>
+				{#if href}
+					<a {href} {rel}>{name}</a>
 				{:else}
 					{name}
 				{/if}

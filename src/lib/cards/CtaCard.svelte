@@ -37,8 +37,8 @@
 	</p>
 	<div class="justify-center items-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
 		{#if btns}
-			{#each btns as { name, textSize, type, link, rel, rounded }}
-				<a href={link} {rel}>
+			{#each btns as { name, textSize, type, href, rel, rounded }}
+				<a {href} {rel}>
 					<Button {name} {rounded} {type} {textSize} />
 				</a>
 			{/each}

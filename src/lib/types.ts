@@ -12,7 +12,7 @@ export type Textsize = 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-x
 
 export interface ButtonGroupType {
     name: string;
-    link?: string;
+    href?: string;
     rel?: string;
     icon?: typeof SvelteComponent;
 }
@@ -21,7 +21,7 @@ export type CardButtonType = {
     textSize?: Textsize;
     name: string;
     type?: Buttontypes;
-    link?: string;
+    href?: string;
     rel?: string;
     rounded?: boolean;
 };
