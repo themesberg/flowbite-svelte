@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let color: 'blue' | undefined; // {null|blue}
+	export let color: 'blue' | undefined;
 	let colorClass: string;
 	let fillColor1: string;
 	let fillColor2: string;

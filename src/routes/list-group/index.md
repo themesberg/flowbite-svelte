@@ -12,50 +12,50 @@ layout: doc
   } from "@codewithshin/svelte-heroicons";
   let lists = [
     {
-      title: "Home",
-      link: "/",
+      name: "Home",
+      href: "/",
     },
     {
-      title: "Alerts",
-      link: "/alert",
+      name: "Alerts",
+      href: "/alert",
     },
     {
-      title: "Cards",
-      link: "/cards",
+      name: "Cards",
+      href: "/cards",
     },
     {
-      title: "List Group",
-      link: "/list-group/list",
+      name: "List Group",
+      href: "/list-group/list",
     },
     {
-      title: "Modals",
-      link: "/modals",
+      name: "Modals",
+      href: "/modals",
     },
     {
-      title: "Tabs",
-      link: "/tabs",
+      name: "Tabs",
+      href: "/tabs",
     },
   ];
   let lists2 = [
     {
-      title: "Profile",
+      name: "Profile",
       icon: UserCircleIconSolid,
-      link: "/",
+      href: "/",
     },
     {
-      title: "Settings",
+      name: "Settings",
       icon: AdjustmentsIconSolid,
-      link: "/",
+      href: "/",
     },
     {
-      title: "Messages",
+      name: "Messages",
       icon: InboxInIconSolid,
-      link: "/",
+      href: "/",
     },
     {
-      title: "Download",
+      name: "Download",
       icon: CloudDownloadIconSolid,
-      link: "/",
+      href: "/",
     },
   ];
 </script>
@@ -75,28 +75,28 @@ layout: doc
 
   let lists = [
     {
-      title: "Home",
-      link: "/",
+      name: "Home",
+      href: "/",
     },
     {
-      title: "Alerts",
-      link: "/alert",
+      name: "Alerts",
+      href: "/alert",
     },
     {
-      title: "Cards",
-      link: "/cards",
+      name: "Cards",
+      href: "/cards",
     },
     {
-      title: "List Group",
-      link: "/list-group/list",
+      name: "List Group",
+      href: "/list-group/list",
     },
     {
-      title: "Modals",
-      link: "/modals",
+      name: "Modals",
+      href: "/modals",
     },
     {
-      title: "Tabs",
-      link: "/tabs",
+      name: "Tabs",
+      href: "/tabs",
     },
   ];
 </script>
@@ -120,24 +120,24 @@ layout: doc
 
   let lists2 = [
     {
-      title: "Profile",
+      name: "Profile",
       icon: UserCircleIconSolid,
-      link: "/",
+      href: "/",
     },
     {
-      title: "Settings",
+      name: "Settings",
       icon: AdjustmentsIconSolid,
-      link: "/",
+      href: "/",
     },
     {
-      title: "Messages",
+      name: "Messages",
       icon: InboxInIconSolid,
-      link: "/",
+      href: "/",
     },
     {
-      title: "Download",
+      name: "Download",
       icon: CloudDownloadIconSolid,
-      link: "/",
+      href: "/",
     },
   ];
 </script>
