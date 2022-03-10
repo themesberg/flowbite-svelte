@@ -92,12 +92,12 @@
 		</h3>
 		<span class="text-sm text-gray-500 dark:text-gray-400">{content}</span>
 		<div class="flex mt-4 space-x-3 lg:mt-6">
-			{#if link1.link}
-				<a href={link1.link} rel={link1.rel} class={linkClass}>{link1.name}</a>
+			{#if link1.href}
+				<a href={link1.href} rel={link1.rel} class={linkClass}>{link1.name}</a>
 			{/if}
-			{#if link2.link}
+			{#if link2.href}
 				<a
-					href={link2.link}
+					href={link2.href}
 					rel={link2.rel}
 					class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-gray-900 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-blue-300 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-800"
 					>{link2.name}</a

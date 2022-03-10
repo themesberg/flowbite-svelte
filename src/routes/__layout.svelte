@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import '../app.css';
 	import { DarkMode, Badge, SocialMediaFooter } from '$lib/index';
 	import { Aside, Nav, SidebarList, Navbar } from '@codewithshin/svelte-sidebar';
@@ -21,7 +21,7 @@
 		tabs,
 		tooltips,
 		topMenus
-	} from './items.js';
+	} from './items';
 
 	// Navbar
 	let activeChildLi = 'block py-2 px-4 text-lg text-gray-700 hover:bg-gray-100 dark:text-white';
@@ -50,11 +50,11 @@
 
 	let socialMedia = [
 		{
-			link: 'https://github.com/shinokada',
+			href: 'https://github.com/shinokada',
 			icon: GithubIcon
 		},
 		{
-			link: 'https://twitter.com/shinokada',
+			href: 'https://twitter.com/shinokada',
 			icon: TwitterIcon
 		}
 	];

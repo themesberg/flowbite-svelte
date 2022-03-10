@@ -15,12 +15,12 @@
 <footer class={footerClass}>
 	<span class={siteNameClass}
 		>{copyrightYear}
-		<a href={site.link} class={siteNameLinkClass} target="_blank">{site.name}</a>. {allRightsReserved}
+		<a href={site.href} class={siteNameLinkClass} target="_blank">{site.name}</a>. {allRightsReserved}
 	</span>
 	<ul class={ulClass}>
-		{#each links as { name, link, rel }}
+		{#each links as { name, href, rel }}
 			<li>
-				<a href={link} {rel} class={aClass}>{name}</a>
+				<a {href} {rel} class={aClass}>{name}</a>
 			</li>
 		{/each}
 	</ul>

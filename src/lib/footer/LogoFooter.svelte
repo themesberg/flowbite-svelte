@@ -20,14 +20,14 @@
 
 <footer class={footerClass}>
 	<div class={divClass}>
-		<a href={site.link} class={siteNameLinkClass}>
+		<a href={site.href} class={siteNameLinkClass}>
 			<img src={site.img} class={imgClass} alt={site.name} />
 			<span class={siteNameClass}>{site.name}</span>
 		</a>
 		<ul class={ulClass}>
-			{#each links as { name, link, rel }}
+			{#each links as { name, href, rel }}
 				<li>
-					<a href={link} {rel} class={aClass}>{name}</a>
+					<a {href} {rel} class={aClass}>{name}</a>
 				</li>
 			{/each}
 		</ul>
@@ -35,6 +35,6 @@
 	<hr class={hrClass} />
 	<span class={copyRightSpanClass}
 		>{copyrightYear}
-		<a href={site.link} class={copyRightLinkClass}>{site.name}</a>. {allRightsReserved}
+		<a href={site.href} class={copyRightLinkClass}>{site.name}</a>. {allRightsReserved}
 	</span>
 </footer>

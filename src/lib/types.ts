@@ -33,17 +33,18 @@ export type ImgType = {
 
 export interface LinkType {
     name: string;
-    link: string;
+    href: string;
     rel?: string;
 }
 
 export interface SiteType {
     name: string;
-    link: string;
+    href: string;
+    img?: string;
 }
 
 export interface SocialMediaType {
-    link: string;
+    href: string;
     icon: typeof SvelteComponent;
 }
 
@@ -80,4 +81,9 @@ export interface DropdownLinkType {
     name: string;
     href: string;
     rel?: string;
+}
+
+export interface SocialMediaLinkType {
+    parent: string;
+	children: LinkType[]
 }

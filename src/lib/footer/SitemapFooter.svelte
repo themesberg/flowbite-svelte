@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { LinkType, SiteType, SocialMediaType } from '../types';
+	import type { SiteType, SocialMediaType, SocialMediaLinkType } from '../types';
 	export let site: SiteType;
-	export let links: LinkType[];
+	export let links: SocialMediaLinkType[];
 	export let socialMedia: SocialMediaType[];
 	export let footerClass = 'bg-gray-800';
 	export let linksClass = 'grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4';
@@ -25,9 +25,9 @@
 					{parent}
 				</h2>
 				<ul class={ulClass}>
-					{#each children as { name, link }}
+					{#each children as { name, href }}
 						<li class="mb-4">
-							<a href={link} class={linkClass}>{name}</a>
+							<a {href} class={linkClass}>{name}</a>
 						</li>
 					{/each}
 				</ul>
@@ -36,11 +36,11 @@
 	</div>
 	<div class={copyrightDivClass}>
 		<span class={copyrightClass}
-			>{copyrightYear} <a href={site.link}>{site.name}</a>. {allRightsReserved}
+			>{copyrightYear} <a href={site.href}>{site.name}</a>. {allRightsReserved}
 		</span>
 		<div class={socialMediaDivClass}>
-			{#each socialMedia as { link, icon }}
-				<a href={link} class={socialMediaLinkClass}>
+			{#each socialMedia as { href, icon }}
+				<a {href} class={socialMediaLinkClass}>
 					<svelte:component this={icon} className={iconClass} />
 				</a>
 			{/each}

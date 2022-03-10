@@ -8,25 +8,25 @@ layout: doc
     {
       name: "Profile",
       active: true,
-      link: "/#",
+      href: "/#",
       rel: undefined,
     },
     {
       name: "Dashboard",
       active: false,
-      link: "/#",
+      href: "/#",
       rel: undefined,
     },
     {
       name: "Settings",
       active: false,
-      link: "/#",
+      href: "/#",
       rel: undefined,
     },
     {
       name: "Contacts",
       active: false,
-      link: "/#",
+      href: "/#",
       rel: undefined,
     },
   ];
@@ -46,25 +46,25 @@ layout: doc
     {
       name: "Profile",
       active: true,
-      link: "/#",
+      href: "/#",
       rel: undefined,
     },
     {
       name: "Dashboard",
       active: false,
-      link: "/#",
+      href: "/#",
       rel: undefined,
     },
     {
       name: "Settings",
       active: false,
-      link: "/#",
+      href: "/#",
       rel: undefined,
     },
     {
       name: "Contacts",
       active: false,
-      link: "/#",
+      href: "/#",
       rel: undefined,
     },
   ];

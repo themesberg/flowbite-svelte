@@ -1,9 +1,9 @@
-export let svelteflows = [
+export const svelteflows = [
   { url: "getting-started", name: "Getting Started" },
   { url: "about", name: "About" },
 ];
 
-export let accordions = [
+export const accordions = [
   { url: "accordions/default", name: "Accordion" },
   { url: "accordions/icon-accordion", name: "Icon accordion" },
 ];
@@ -14,13 +14,13 @@ export let alerts = [
   { url: "alerts/information-alert", name: "Information alert" },
 ];
 
-export let badges = [
+export const badges = [
   { url: "badges/default", name: "Badges" },
   { url: "badges/badge-icon", name: "Badges with icon" },
   { url: "badges/badge-link", name: "Badges with link" },
 ];
 
-export let buttons = [
+export const buttons = [
   { url: "buttons/setup", name: "Setup" },
   { url: "buttons/default", name: "Default" },
   { url: "buttons/colored-shadow", name: "Colored shadow" },
@@ -31,12 +31,12 @@ export let buttons = [
   { url: "buttons/rounded", name: "Rounded" },
 ];
 
-export let buttonGroups = [
+export const buttonGroups = [
   { url: "button-groups/default", name: "Button group" },
   { url: "button-groups/outline", name: "Outline button group" },
 ];
 
-export let cards = [
+export const cards = [
   { url: "cards/card", name: "Card" },
   { url: "cards/ecommerce", name: "E-commerce" },
   { url: "cards/cta", name: "CTA" },
@@ -46,26 +46,26 @@ export let cards = [
   { url: "cards/signin", name: "SignIn" },
 ];
 
-// export let darkmode = [
+// export const darkmode = [
 //   { url: "darkmode", name: "Dark mode" },
 // ]
-export let footers = [
+export const footers = [
   { url: "footer/default", name: "Default" },
   { url: "footer/logo", name: "Logo" },
   { url: "footer/socialmedia", name: "Socialmedia" },
   { url: "footer/sitemap", name: "Sitemap" },
 ]
 
-export let icons = [
+export const icons = [
   { url: "icons/heroicons", name: "Heroicons" },
   { url: "icons/simple-icons", name: "Simple-icons" },
 ]
 
-// export let list_group = [
+// export const list_group = [
 //   { url: "list-group", name: "List group" },
 // ];
 
-export let modals = [
+export const modals = [
   { url: "modals/small", name: "Small" },
   { url: "modals/medium", name: "Medium" },
   { url: "modals/large", name: "Large" },
@@ -74,29 +74,29 @@ export let modals = [
   { url: "modals/all-modals", name: "All modals" },
 ];
 
-export let navbar = [
+export const navbar = [
   { url: "navbars/default", name: "Navbar" },
   { url: "navbars/dropdown", name: "Dropdown" },
 ];
 
-export let spinners = [
+export const spinners = [
   { url: "spinners/default", name: "Spinner" },
   { url: "spinners/button-spinner", name: "Button spinner" },
 ];
 
-export let tabs = [
+export const tabs = [
   { url: "tabs/default-tabs", name: "Default" },
   { url: "tabs/interactive-tabs", name: "Interactive" },
   { url: "tabs/multiple-interactive-tabs", name: "Multiple Interactive" },
   { url: "tabs/pilltabs", name: "Pilltabs" },
 ];
 
-export let tooltips = [
+export const tooltips = [
   { url: "tooltips/default", name: "Default" },
   { url: "tooltips/light", name: "Light tooltip" },
 ];
 
-export let topMenus = [
+export const topMenus = [
   { link: "/", name: "Home" },
   { link: "/about", name: "About" },
   {
