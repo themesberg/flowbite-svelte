@@ -78,7 +78,10 @@ layout: doc
 ```svelte
 <script>
   import { DropdownNavbar } from "flowbite-svelte";
-
+  let sitename = "Flowbite Svelte";
+  let logo = "/images/mkdir-logo.webp";
+  let alt = "flowbite-svelte";
+  let textsize = "text-lg";
   let menus = [
     {
       id: 1,
@@ -135,9 +138,5 @@ layout: doc
   ];
 </script>
 
-<DropdownNavbar textsize="text-lg" {menus} />
+<DropdownNavbar {menus} {sitename} {alt} {logo} {textsize} />
 ```
-
-
-
-

@@ -77,14 +77,20 @@ export interface NavbarType {
     child?: NavbarType[];
 }
 
-export interface DropdownLinkType {
-    name: string;
-    href: string;
-    rel?: string;
-}
-
 export interface SocialMediaLinkType {
     parent: string;
 	children?: LinkType[]
 }
 
+export interface DropdownType {
+    name: string;
+    href: string;
+    divider: boolean;
+}
+
+export interface ListCardType {
+    img: ImgType;
+    field1: string;
+    field2?: string;
+    field3?: string;
+}

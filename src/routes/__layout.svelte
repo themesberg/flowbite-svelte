@@ -23,7 +23,7 @@
 	let site = {
 		name: 'Flowbite Svelte',
 		href: 'https://flowbite-svelte.vercel.app/',
-		img: 'images/mkdir-logo.webp'
+		img: '/images/mkdir-logo.webp'
 	};
 	// Navbar
 	let activeChildLi = 'block py-2 px-4 text-lg text-gray-700 hover:bg-gray-100 dark:text-white';

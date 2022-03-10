@@ -1,11 +1,11 @@
 <script lang="ts">
-	import type { DropdownLinkType, ImgType, LinkType } from '../types';
+	import type { LinkType, ImgType } from '../types';
 	let isOpen: boolean = true;
 	const toggleDropdown = () => {
 		isOpen = !isOpen;
 	};
 
-	export let dropdownLinks: DropdownLinkType[];
+	export let dropdownLinks: LinkType[];
 	export let img: ImgType;
 	export let header = 'Lorem ipsum';
 	export let content = 'Proin efficitur purus felis.';

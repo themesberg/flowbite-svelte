@@ -6,53 +6,53 @@ layout: doc
   import { Dropdown }from '$lib/index';
   let items = [
     {
-      link: "/",
-      label: "Dashboard",
+      href: "/",
+      name: "Dashboard",
     },
     {
-      link: "/",
-      label: "Settings",
+      href: "/",
+      name: "Settings",
     },
     {
-      link: "/",
-      label: "Sign out",
+      href: "/",
+      name: "Sign out",
     },
   ];
   let items2 = [
     {
-      link: "/",
-      label: "Dashboard",
+      href: "/",
+      name: "Dashboard",
     },
     {
-      link: "/",
-      label: "Settings",
+      href: "/",
+      name: "Settings",
       divider: true
     },
     {
-      link: "/",
-      label: "Sign out",
+      href: "/",
+      name: "Sign out",
     },
   ];
 </script>
 
 <h1 class="text-3xl w-full dark:text-white">Dropdowns</h1>
 
-<h2 class="text-xl w-full mt-8 dark:text-white">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
 ```js
-let label = "Dropdown button";
+let name = "Dropdown button";
 let rounded = false;
 let textSize = "text-sm";
 let color = "blue"; // blue|dark|light|green|green-outline|red|red-outline|yellow|purple|purple-outline
 ```
 
-<h2 class="text-xl w-full mt-8 dark:text-white">Default Dropdown</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Default Dropdown</h2>
 
 <div class="container rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Dropdown {items}/>
 </div>
 
-<h2 class="text-xl w-full mt-8 dark:text-white">Dropdown divider</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Dropdown divider</h2>
 
 <div class="container rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Dropdown items={items2} color="red"/>
@@ -62,17 +62,17 @@ let color = "blue"; // blue|dark|light|green|green-outline|red|red-outline|yello
 <script>
  let items2 = [
     {
-      link: "/",
-      label: "Dashboard",
+      href: "/",
+      name: "Dashboard",
     },
     {
-      link: "/",
-      label: "Settings",
+      href: "/",
+      name: "Settings",
       divider: true
     },
     {
-      link: "/",
-      label: "Sign out",
+      href: "/",
+      name: "Sign out",
     },
   ];
 </script>
@@ -81,7 +81,7 @@ let color = "blue"; // blue|dark|light|green|green-outline|red|red-outline|yello
 
 ```
 
-<h2 class="text-xl w-full mt-8 dark:text-white">Dropdown header</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Dropdown header</h2>
 
 <div class="container rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Dropdown {items} color="purple-outline">

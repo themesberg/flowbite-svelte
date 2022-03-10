@@ -5,6 +5,23 @@ layout: doc
 <script>
   import { Navbar }from '$lib/index';
   let sitename = "Flowbite Svelte";
+  let menus = [
+    {
+      name: "Home",
+      href: "/",
+      rel: undefined,
+    },
+    {
+      name: "GitHub",
+      href: "https://github.com/shinokada/svelte-utterances",
+      rel: undefined,
+    },
+    {
+      name: "Design",
+      href: "https://flowbite-svelte.vercel.app",
+      rel: undefined,
+    },
+  ];
 </script>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Navbar Setup</h1>
@@ -20,18 +37,16 @@ layout: doc
   let menus = [
     {
       name: "Home",
-      link: "/",
-      rel: undefined,
+      href: "/",
     },
     {
       name: "GitHub",
-      link: "https://github.com/shinokada/svelte-utterances",
-      rel: undefined,
+      href: "https://github.com/shinokada/svelte-utterances",
+      rel: "external",
     },
     {
       name: "Design",
-      link: "https://flowbite-svelte.vercel.app",
-      rel: undefined,
+      href: "https://flowbite-svelte.vercel.app",
     },
   ];
 </script>
@@ -42,49 +57,49 @@ layout: doc
 <h2 class="text-lg dark:text-white py-8">Text Size text-xs</h2>
 
 ```svelte
-<Navbar textsize="text-xs" />
+<Navbar textsize="text-xs" {sitename} {menus}/>
 ```
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Navbar textsize="text-xs" {sitename} />
+<Navbar textsize="text-xs" {sitename} {menus}/>
 </div>
 
 <h2 class="text-lg dark:text-white py-8">Text Size text-sm</h2>
 
 ```svelte
-<Navbar textsize="text-sm" />
+<Navbar textsize="text-sm" {sitename} {menus} />
 ```
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Navbar textsize="text-sm" {sitename} />
+<Navbar textsize="text-sm" {sitename} {menus}/>
 </div>
 
 <h2 class="text-lg dark:text-white py-8">Text Size text-base</h2>
 
 ```svelte
-<Navbar textsize="text-base" />
+<Navbar textsize="text-base" {sitename} {menus} />
 ```
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Navbar textsize="text-base" {sitename} />
+<Navbar textsize="text-base" {sitename} {menus}/>
 </div>
 
 <h2 class="text-lg dark:text-white py-8">Text Size text-lg</h2>
 
 ```svelte
-<Navbar textsize="text-lg" />
+<Navbar textsize="text-lg" {sitename} {menus}/>
 ```
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Navbar textsize="text-lg" {sitename} />
+<Navbar textsize="text-lg" {sitename} {menus}/>
 </div>
 
 <h2 class="text-lg dark:text-white py-8">Text Size text-xl</h2>
 
 ```svelte
-<Navbar textsize="text-xl" />
+<Navbar textsize="text-xl" {menus}/>
 ```
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Navbar textsize="text-xl" {sitename}  />
+<Navbar textsize="text-xl" {sitename} {menus} />
 </div>
