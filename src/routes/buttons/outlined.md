@@ -82,3 +82,7 @@ let type = "blue-outline"; // blue-outline | dark-outline | light-outline| green
 <Button name="Button" textSize="text-base" type="red-outline" />
 <Button name="Button" textSize="text-base" type="purple-outline" />
 ```
+
+<h2 class="text-2xl w-full dark:text-white py-8">References</h2>
+
+<p class="dark:text-white text-base"><a href="https://flowbite.com/docs/components/buttons/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Buttons</a></p>

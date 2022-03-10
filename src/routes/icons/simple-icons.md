@@ -52,7 +52,7 @@ import { FacebookIcon, GithubIcon, GitIcon } from '@codewithshin/svelte-simpleic
 
 ```
 
-<h1 class="text-3xl w-full dark:text-white py-8">References</h1>
+<h2 class="text-2xl w-full dark:text-white py-8">References</h2>
 
 <p class="w-full dark:text-white text-base"><a href="https://github.com/shinokada/svelte-simpleicons" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Svelte-simpleicons</a></p>
 

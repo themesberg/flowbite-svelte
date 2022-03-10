@@ -21,7 +21,7 @@ layout: doc
 let color = "blue"; // blue|gray|green|red|yellow|pink|purple
 let bg = "text-gray-200";
 let size = "w-8 h-8";
-let align; // text-left| text-center| text-right
+let align = 'align-left'; // text-left| text-center| text-right
 ```
 
 <h2 class="text-2xl mt-8 dark:text-white py-8">Colors</h2>
@@ -49,10 +49,10 @@ let align; // text-left| text-center| text-right
 <h2 class="text-2xl mt-8 dark:text-white py-8">Sizing</h2>
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Spinner size="w-4 h-4"/>
+<Spinner size="w-4 h-4" />
 <Spinner size="w-6 h-6" />
-<Spinner size="w-8 h-8"/>
-<Spinner size="w-16 h-16"/>
+<Spinner size="w-8 h-8" />
+<Spinner size="w-16 h-16" />
 </div>
 
 ```svelte
@@ -76,3 +76,7 @@ let align; // text-left| text-center| text-right
 <Spinner align="text-center" />
 <Spinner align="text-right"/>
 ```
+
+<h2 class="text-2xl w-full dark:text-white py-8">References</h2>
+
+<p class="dark:text-white text-base"><a href="https://flowbite.com/docs/components/spinner/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Spinner</a></p>

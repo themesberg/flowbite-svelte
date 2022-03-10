@@ -103,3 +103,7 @@ layout: doc
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Navbar textsize="text-xl" {sitename} {menus} />
 </div>
+
+<h2 class="text-2xl w-full dark:text-white py-8">References</h2>
+
+<p class="dark:text-white text-base"><a href="https://flowbite.com/docs/components/navbar/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Navbar</a></p>

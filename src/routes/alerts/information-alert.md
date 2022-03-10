@@ -30,13 +30,25 @@ let infoLink: string = undefined;
 let closeBtn: boolean = false;
 ```
 
-<h1 class="text-2xl w-full text-gray-900 dark:text-white py-8">Information Alert Examples</h1>
+<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Information Alert Examples</h2>
 
-```svelte
-<InfoAlert>
+
+<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+
+  <InfoAlert>
     <span slot="header">Info header 1</span>
     InfoAlert without View more and Dismiss button.
   </InfoAlert>
+</div>
+
+```svelte
+<InfoAlert>
+  <span slot="header">Info header 1</span>
+  InfoAlert without View more and Dismiss button.
+</InfoAlert>
+```
+
+<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 
   <InfoAlert
     alertId="info-alert-2"
@@ -47,6 +59,21 @@ let closeBtn: boolean = false;
     <span slot="header">Info header 2</span>
     InfoAlert with View more and Dismiss button.
   </InfoAlert>
+</div>
+
+```svelte
+ <InfoAlert
+    alertId="info-alert-2"
+    color="green"
+    closeBtn
+    infoLink="/"
+  >
+    <span slot="header">Info header 2</span>
+    InfoAlert with View more and Dismiss button.
+  </InfoAlert>
+```
+
+<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 
   <InfoAlert
     alertId="info-alert-3"
@@ -57,6 +84,21 @@ let closeBtn: boolean = false;
     <span slot="header">Info header 3</span>
     InfoAlert with View more and Dismiss button.
   </InfoAlert>
+</div>
+
+```svelte
+<InfoAlert
+    alertId="info-alert-3"
+    color="red"
+    closeBtn
+    infoLink="/"
+  >
+    <span slot="header">Info header 3</span>
+    InfoAlert with View more and Dismiss button.
+  </InfoAlert>
+```
+
+<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 
   <InfoAlert
     alertId="info-alert-4"
@@ -67,40 +109,12 @@ let closeBtn: boolean = false;
     <span slot="header">Info header 4</span>
     InfoAlert with View more and Dismiss button.
   </InfoAlert>
+</div>
 
-  <InfoAlert
-    alertId="info-alert-5"
-    color="gray"
-    closeBtn
-    infoLink="/"
-  >
-    <span slot="header">Info header 5</span>
-    InfoAlert with View more and Dismiss button.
-  </InfoAlert>
-
-  <InfoAlert
-    alertId="info-alert-6"
-    color="indigo"
-    closeBtn
-    infoLink="/"
-  >
-    <span slot="header">Info header 4</span>
-    InfoAlert with View more and Dismiss button.
-  </InfoAlert>
-
-  <InfoAlert
-    alertId="info-alert-7"
-    color="purple"
-    closeBtn
-    infoLink="/"
-  >
-    <span slot="header">Info header 4</span>
-    InfoAlert with View more and Dismiss button.
-  </InfoAlert>
-
-  <InfoAlert
-    alertId="info-alert-8"
-    color="pink"
+```svelte
+<InfoAlert
+    alertId="info-alert-4"
+    color="yellow"
     closeBtn
     infoLink="/"
   >
@@ -111,41 +125,6 @@ let closeBtn: boolean = false;
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 
-  <InfoAlert>
-    <span slot="header">Info header 1</span>
-    InfoAlert without View more and Dismiss button.
-  </InfoAlert>
-
-  <InfoAlert
-    alertId="info-alert-2"
-    color="green"
-    closeBtn
-    infoLink="/"
-  >
-    <span slot="header">Info header 2</span>
-    InfoAlert with View more and Dismiss button.
-  </InfoAlert>
-
-  <InfoAlert
-    alertId="info-alert-3"
-    color="red"
-    closeBtn
-    infoLink="/"
-  >
-    <span slot="header">Info header 3</span>
-    InfoAlert with View more and Dismiss button.
-  </InfoAlert>
-
-  <InfoAlert
-    alertId="info-alert-4"
-    color="yellow"
-    closeBtn
-    infoLink="/"
-  >
-    <span slot="header">Info header 4</span>
-    InfoAlert with View more and Dismiss button.
-  </InfoAlert>
-
   <InfoAlert
     alertId="info-alert-5"
     color="gray"
@@ -155,6 +134,21 @@ let closeBtn: boolean = false;
     <span slot="header">Info header 5</span>
     InfoAlert with View more and Dismiss button.
   </InfoAlert>
+</div>
+
+```svelte
+<InfoAlert
+    alertId="info-alert-5"
+    color="gray"
+    closeBtn
+    infoLink="/"
+  >
+    <span slot="header">Info header 5</span>
+    InfoAlert with View more and Dismiss button.
+  </InfoAlert>
+```
+
+<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 
   <InfoAlert
     alertId="info-alert-6"
@@ -165,6 +159,21 @@ let closeBtn: boolean = false;
     <span slot="header">Info header 4</span>
     InfoAlert with View more and Dismiss button.
   </InfoAlert>
+</div>
+
+```svelte
+<InfoAlert
+    alertId="info-alert-6"
+    color="indigo"
+    closeBtn
+    infoLink="/"
+  >
+    <span slot="header">Info header 4</span>
+    InfoAlert with View more and Dismiss button.
+  </InfoAlert>
+```
+
+<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 
   <InfoAlert
     alertId="info-alert-7"
@@ -175,6 +184,21 @@ let closeBtn: boolean = false;
     <span slot="header">Info header 4</span>
     InfoAlert with View more and Dismiss button.
   </InfoAlert>
+</div>
+
+```svelte
+<InfoAlert
+    alertId="info-alert-7"
+    color="purple"
+    closeBtn
+    infoLink="/"
+  >
+    <span slot="header">Info header 4</span>
+    InfoAlert with View more and Dismiss button.
+  </InfoAlert>
+```
+
+<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 
   <InfoAlert
     alertId="info-alert-8"
@@ -186,4 +210,20 @@ let closeBtn: boolean = false;
     InfoAlert with View more and Dismiss button.
   </InfoAlert>
 </div>
+
+```svelte
+<InfoAlert
+    alertId="info-alert-8"
+    color="pink"
+    closeBtn
+    infoLink="/"
+  >
+    <span slot="header">Info header 4</span>
+    InfoAlert with View more and Dismiss button.
+  </InfoAlert>
+```
+
+<h2 class="text-2xl w-full dark:text-white py-8">References</h2>
+
+<p class="dark:text-white text-base"><a href="https://flowbite.com/docs/components/alerts/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Alerts</a></p>
 
