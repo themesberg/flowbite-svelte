@@ -10,7 +10,7 @@ layout: doc
 
 <h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
 
-<p class="text-gray-900 dark:text-white py-4">
+<p class="text-gray-900 dark:text-white py-4 text-lg">
 Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
 </p>
 
@@ -225,5 +225,5 @@ let closeBtn: boolean = false;
 
 <h2 class="text-2xl w-full dark:text-white py-8">References</h2>
 
-<p class="dark:text-white text-base"><a href="https://flowbite.com/docs/components/alerts/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Alerts</a></p>
+<p class="dark:text-white text-lg"><a href="https://flowbite.com/docs/components/alerts/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Alerts</a></p>
 

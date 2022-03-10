@@ -87,4 +87,4 @@ let color = "purple2blue"; // cyan2blue| green2blue | purple2pink | pink2orange 
 
 <h2 class="text-2xl w-full dark:text-white py-8">References</h2>
 
-<p class="dark:text-white text-base"><a href="https://flowbite.com/docs/components/buttons/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Buttons</a></p>
+<p class="dark:text-white text-lg"><a href="https://flowbite.com/docs/components/buttons/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Buttons</a></p>

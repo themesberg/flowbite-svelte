@@ -104,4 +104,4 @@ let color = "blue"; // blue|dark|light|green|green-outline|red|red-outline|yello
 
 <h2 class="text-2xl w-full dark:text-white py-8">References</h2>
 
-<p class="dark:text-white text-base"><a href="https://flowbite.com/docs/components/dropdowns/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Dropdown</a></p>
+<p class="dark:text-white text-lg"><a href="https://flowbite.com/docs/components/dropdowns/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Dropdown</a></p>
