@@ -27,7 +27,7 @@ let fill = "#000000"
 
 <h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
 
-<div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6 h-72">
+<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6 h-72">
 
 <FacebookIcon className="h-4 w-4 w-full" fill="#4287f5" />
 <GithubIcon fill="#66f5fa" />  

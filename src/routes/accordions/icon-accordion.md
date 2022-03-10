@@ -10,8 +10,8 @@ layout: doc
 
 <h1 class="text-3xl w-full dark:text-white">Icon Accordion</h1>
 
-<p class="dark:text-white mt-4 w-full">Add id 1,2,3,... to AccordionItem component.</p> 
-<p class="dark:text-white my-4 w-full">Install @codewithshin/svelte-heroicons.</p>
+<p class="dark:text-white w-full py-4">Add id 1,2,3,... to AccordionItem component.</p> 
+<p class="dark:text-white w-full py-4">Install @codewithshin/svelte-heroicons.</p>
 
 ```sh
 npm i @codewithshin/svelte-heroicons

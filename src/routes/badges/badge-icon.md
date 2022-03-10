@@ -32,7 +32,7 @@ let color = "blue"; // 'blue'| 'gray'| 'red'| 'yellow'| 'purple'| 'green'| 'indi
 <h2 class="text-2xl w-full dark:text-white py-8">Size xs</h2>
 
 <div
-  class="container flex flex-wrap justify-evenly rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+  class="container flex flex-wrap justify-evenly rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <BadgeIcon name="Default" ><InformationCircleIconOutline className="h-4 w-4 mr-1"/></BadgeIcon>
 <BadgeIcon name="Gray" color="gray" ><InformationCircleIconOutline className="h-4 w-4 mr-1"/></BadgeIcon>
 <BadgeIcon name="Red" color="red" ><InformationCircleIconOutline className="h-4 w-4 mr-1"/></BadgeIcon>
@@ -57,7 +57,7 @@ let color = "blue"; // 'blue'| 'gray'| 'red'| 'yellow'| 'purple'| 'green'| 'indi
 <h2 class="text-2xl w-full dark:text-white py-8">Size sm</h2>
 
 <div
-  class="container flex flex-wrap justify-evenly rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+  class="container flex flex-wrap justify-evenly rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <BadgeIcon name="Default" textSize="text-sm" ><InformationCircleIconOutline className="h-4 w-4 mr-1"/></BadgeIcon>
 <BadgeIcon name="Gray" color="gray" textSize="text-sm" ><InformationCircleIconOutline className="h-4 w-4 mr-1"/></BadgeIcon>
 <BadgeIcon name="Red" color="red" textSize="text-sm" ><InformationCircleIconOutline className="h-4 w-4 mr-1"/></BadgeIcon>
@@ -82,7 +82,7 @@ let color = "blue"; // 'blue'| 'gray'| 'red'| 'yellow'| 'purple'| 'green'| 'indi
 <h2 class="text-2xl w-full dark:text-white py-8">Size base</h2>
 
 <div
-  class="container flex flex-wrap justify-evenly rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+  class="container flex flex-wrap justify-evenly rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <BadgeIcon name="Default" textSize="text-base" ><InformationCircleIconOutline className="h-4 w-4 mr-1"/></BadgeIcon>
 <BadgeIcon name="Gray" color="gray" textSize="text-base" ><InformationCircleIconOutline className="h-4 w-4 mr-1"/></BadgeIcon>
 <BadgeIcon name="Red" color="red" textSize="text-base" ><InformationCircleIconOutline className="h-4 w-4 mr-1"/></BadgeIcon>

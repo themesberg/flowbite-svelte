@@ -46,7 +46,7 @@ layout: doc
 
 <h2 class="text-2xl w-full dark:text-white py-8">Setup</h2>
 
-<p class="dark:text-white py-4">Import ExtraLargeModal, ModalButton, modalIdStor components and set variables in the script tag. Add `closeModal` method if you want to close the modal in a button.</p>
+<p class="dark:text-white py-4 text-lg">Import ExtraLargeModal, ModalButton, modalIdStor components and set variables in the script tag. Add `closeModal` method if you want to close the modal in a button.</p>
 
 
 ```svelte
@@ -93,11 +93,11 @@ layout: doc
 
 <h1 class="text-3xl w-full dark:text-white py-8">Extra-large Modals for Information</h1>
 
-<div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton {id} btnName="Info Modal" />
 </div>
 
-<p class="dark:text-white py-4"> Create a button and modal.</p>
+<p class="dark:text-white py-4 text-lg"> Create a button and modal.</p>
 
 ```svelte
 <ModalButton {id} btnName="Info Modal" />
@@ -109,7 +109,7 @@ layout: doc
 
 <h1 class="text-3xl w-full dark:text-white py-8">Extra-large Modals with One Button</h1>
 
-<div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton id={id1} btnName={btnExLName} btnColor={btnExLColor} />
 </div>
 
@@ -130,7 +130,7 @@ layout: doc
 
 <h1 class="text-3xl w-full dark:text-white py-8">Extra-large Modals with Two Buttons</h1>
 
-<div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton id={id2} btnName={btnExLName2} btnColor={btnExLColor2} />
 </div>
 

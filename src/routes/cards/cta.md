@@ -64,7 +64,7 @@ layout: doc
 </CtaCard>
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <CtaCard {btns} {title} {headColor}>
   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt libero
   dicta ex, suscipit, qui beatae in odio corrupti est quis quibusdam

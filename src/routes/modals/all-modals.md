@@ -117,7 +117,7 @@ layout: doc
 </SmallModal>
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <!-- Small Modal Button -->
   <ModalButton id={smallModalId} btnName={btnSName} />
 </div>
@@ -138,7 +138,7 @@ layout: doc
 </MediumModal>
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <!-- Medium Modal Button -->
   <ModalButton id={mediumModalId} btnName={btnMName} btnColor={btnMColor} />
 </div>
@@ -159,7 +159,7 @@ layout: doc
 </LargeModal>
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <!-- Large Modal Button -->
   <ModalButton id={largeModalId} btnName={btnLName} btnColor={btnLColor} />
 </div>
@@ -184,7 +184,7 @@ layout: doc
 </ExtraLargeModal>   
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <!-- ExtraLarge Modal Button -->
   <ModalButton
     id={extraLargeModalId}
@@ -210,7 +210,7 @@ layout: doc
 />
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <!-- SignInModal Button -->
 <ModalButton
   id={signinId}

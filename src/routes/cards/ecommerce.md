@@ -50,7 +50,7 @@ layout: doc
 />
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <EcommerceCard
   title="Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport"
   link="/alerts"
@@ -69,7 +69,7 @@ layout: doc
 />
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <EcommerceCard
     title="Women's Cashmere Sweaters Lorem ipsum dolor sit amet."
     link="/tabs"
@@ -92,7 +92,7 @@ layout: doc
 />
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <EcommerceCard
     title="Pink cup Lorem ipsum dolor sit amet et mete."
     link="/cards"
@@ -114,7 +114,7 @@ layout: doc
 />
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <EcommerceCard
     title="Nintendo Game Lorem ipsum dolor sit amet."
     link="modals"

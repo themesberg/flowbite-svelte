@@ -18,7 +18,7 @@ layout: doc
 
 <h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
 
-<p class="dark:text-white py-4">Import Button in the script tag.</p>
+<p class="dark:text-white py-4 text-lg">Import Button in the script tag.</p>
 
 ```svelte
 <script>
@@ -28,7 +28,7 @@ layout: doc
 
 <h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Button handler</h2>
 
-<p class="dark:text-white py-4">You can use on:click to listen to the event. Add your event handler.</p>
+<p class="dark:text-white py-4 text-lg">You can use on:click to listen to the event. Add your event handler.</p>
 
 ```svelte
 <script>

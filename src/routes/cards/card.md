@@ -10,7 +10,7 @@ layout: doc
 
 <h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
 
-<p class="dark:text-white py-4">Import Card in the script tag.</p>
+<p class="dark:text-white py-4 text-lg">Import Card in the script tag.</p>
 
 ```svelte
 <script>
@@ -26,7 +26,7 @@ layout: doc
 </Card>
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Card header="Simple card with header and content">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
     consequatur modi ab nisi perferendis placeat natus repellendus officiis
@@ -42,7 +42,7 @@ layout: doc
 </Card>
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Card header="Card with link" link="/">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
     consequatur modi ab nisi perferendis placeat natus repellendus officiis
@@ -58,7 +58,7 @@ layout: doc
 </Card>
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Card img="/images/image-1.jpeg" header="Card with link and image" link="/">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
     consequatur modi ab nisi perferendis placeat natus repellendus officiis
@@ -74,7 +74,7 @@ layout: doc
 </Card>
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Card img="/images/image-2.jpeg" header="Card with image"
     >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
     consequatur modi ab nisi perferendis placeat natus repellendus officiis
@@ -95,7 +95,7 @@ layout: doc
 </Card>
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Card
     img="/images/image-1.jpeg"
     header="Red button"
@@ -121,7 +121,7 @@ layout: doc
 </Card>
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Card
     img="/images/image-1.jpeg"
     header="Yellow button"
@@ -147,7 +147,7 @@ layout: doc
 </Card>
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Card
     img="/images/image-1.jpeg"
     header="Purple button"

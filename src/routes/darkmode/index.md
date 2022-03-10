@@ -14,13 +14,13 @@ import { DarkMode } from "flowbite-svelte";
 <Darkmode />
 ```
 
-<p class="dark:text-white py-4">The default value of btnClass is:</p>
+<p class="dark:text-white py-4 text-lg">The default value of btnClass is:</p>
 
 ```html
 let btnClass = "text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 fixed left-2 top-16 z-50"
 ```
 
-<p class="dark:text-white py-4">Set your CSS and add it to the prop.:</p>
+<p class="dark:text-white py-4 text-lg">Set your CSS and add it to the prop.:</p>
 
 ```html
 <script>
@@ -32,7 +32,7 @@ let btnClass="Add your class here"
 <Darkmode {btnClass} />
 ```
 
-<p class="dark:text-white py-4">Add the following to the body tag:</p>
+<p class="dark:text-white py-4 text-lg">Add the following to the body tag:</p>
 
 ```html
 <!-- src/app.html -->
