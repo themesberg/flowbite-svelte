@@ -22,7 +22,10 @@
 		tooltips,
 		topMenus
 	} from './items';
-
+	let site = {
+		name: 'Flowbite Svelte',
+		href: 'https://flowbite-svelte.vercel.app/'
+	};
 	// Navbar
 	let activeChildLi = 'block py-2 px-4 text-lg text-gray-700 hover:bg-gray-100 dark:text-white';
 	let childLi =
@@ -231,5 +234,5 @@
 	</div>
 </main>
 <div class="pt-16 ">
-	<SocialMediaFooter {socialMedia} {links} {allRightsReserved} {copyrightYear} />
+	<SocialMediaFooter {site} {socialMedia} {links} {allRightsReserved} {copyrightYear} />
 </div>
