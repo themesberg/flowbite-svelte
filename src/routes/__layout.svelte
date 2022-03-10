@@ -10,10 +10,8 @@
 		buttons,
 		buttonGroups,
 		cards,
-		// darkmode,
 		footers,
 		icons,
-		// list_group,
 		modals,
 		navbar,
 		spinners,
@@ -66,30 +64,30 @@
 		{
 			parent: 'RESOURCES',
 			children: [
-				{ name: 'Flowbite-Svelte', link: '/' },
+				{ name: 'Flowbite-Svelte', href: '/' },
 				{
 					name: 'Flowbite',
-					link: 'https://flowbite.com/docs/getting-started/introduction/'
+					href: 'https://flowbite.com/docs/getting-started/introduction/'
 				},
 				{
 					name: 'Tailwind CSS',
-					link: 'https://tailwindcss.com/docs/installation'
+					href: 'https://tailwindcss.com/docs/installation'
 				}
 			]
 		},
 		{
 			parent: 'FOLLOW US',
 			children: [
-				{ name: 'Github', link: 'https://github.com/shinokada' },
+				{ name: 'Github', href: 'https://github.com/shinokada' },
 				{
 					name: 'Twitter',
-					link: 'https://twitter.com/shinokada'
+					href: 'https://twitter.com/shinokada'
 				}
 			]
 		},
 		{
 			parent: 'LEGAL',
-			children: [{ name: 'License', link: 'license' }]
+			children: [{ name: 'License', href: 'license' }]
 		}
 	];
 	let allRightsReserved = '';

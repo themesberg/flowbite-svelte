@@ -85,5 +85,5 @@ export interface DropdownLinkType {
 
 export interface SocialMediaLinkType {
     parent: string;
-	children: LinkType[]
+	children?: LinkType[]
 }
