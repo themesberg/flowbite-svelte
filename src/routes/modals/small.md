@@ -94,7 +94,7 @@ layout: doc
 </script>
 ```
 
-<h1 class="text-3xl w-full dark:text-white py-8">Small Modals</h1>
+<h2 class="text-2xl w-full dark:text-white py-8">Small Modals</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton id={idBasic} btnName={btnBasicName} />
@@ -109,7 +109,7 @@ layout: doc
 </SmallModal>
 ```
 
-<h1 class="text-3xl w-full dark:text-white py-8">Small Modals with Action Buttons</h1>
+<h2 class="text-2xl w-full dark:text-white py-8">Small Modals with Action Buttons</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton id={id1} btnName={btnName1} btnColor={btnColor1} />
@@ -131,7 +131,7 @@ layout: doc
 </SmallModal>
 ```
 
-<h1 class="text-3xl w-full dark:text-white py-8">Small Modals with different colors</h1>
+<h2 class="text-2xl w-full dark:text-white py-8">Small Modals with different colors</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />

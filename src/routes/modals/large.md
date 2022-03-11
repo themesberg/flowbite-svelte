@@ -95,7 +95,7 @@ layout: doc
 </script>
 ```
 
-<h1 class="text-3xl w-full dark:text-white py-8">Large Modals</h1>
+<h2 class="text-2xl w-full dark:text-white py-8">Large Modals</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton {id} {btnName} />
@@ -111,7 +111,7 @@ layout: doc
 </LargeModal>
 ```
 
-<h1 class="text-3xl w-full dark:text-white py-8">Large Modal with an action button</h1>
+<h2 class="text-2xl w-full dark:text-white py-8">Large Modal with an action button</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton id={id1} btnName={btnName1} btnColor={btnColor1} />
@@ -130,7 +130,7 @@ layout: doc
 </LargeModal>
 ```
 
-<h1 class="text-3xl w-full dark:text-white py-8">Large Modal with two action buttons</h1>
+<h2 class="text-2xl w-full dark:text-white py-8">Large Modal with two action buttons</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
