@@ -128,6 +128,12 @@ npm i @codewithshin/svelte-heroicons
 </Accordion>
 ```
 
+<h2 class="text-2xl w-full dark:text-white py-8">Related components</h2>
+
+<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/accordions/default" class="text-blue-600 hover:underline dark:text-blue-500">Default Accordion</a></p>
+
+<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/accordions/icon-accordion" class="text-blue-600 hover:underline dark:text-blue-500">Icon Accordion</a></p>
+
 <h2 class="text-2xl w-full dark:text-white py-8">References</h2>
 
 <p class="dark:text-white text-lg"><a href="https://flowbite.com/docs/components/accordion/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Accordion</a></p>

@@ -6,7 +6,7 @@ layout: doc
   import { Alert, BorderAlert, InfoAlert }from '$lib/index';
 </script>
 
-<h1 class="text-3xl w-full text-gray-900 dark:text-white py-8">Alert</h1>
+<h1 class="text-3xl w-full text-gray-900 dark:text-white py-8">Information Alert</h1>
 
 <h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
 
@@ -21,10 +21,10 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
 ```
 
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">InfoAlert Default Props</h2>
+<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Default Props</h2>
 
 ```ts
-let color: string = "blue"; // {gray|red|yellow|green|indigo|purple|pink}  
+let color: string = "blue"; // gray|red|yellow|green|indigo|purple|pink
 let alertId: string = "alert-additional-content-1";
 let infoLink: string = undefined;
 let closeBtn: boolean = false;
@@ -222,6 +222,15 @@ let closeBtn: boolean = false;
     InfoAlert with View more and Dismiss button.
   </InfoAlert>
 ```
+
+
+<h2 class="text-2xl w-full dark:text-white py-8">Related components</h2>
+
+<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/alerts/default-alert" class="text-blue-600 hover:underline dark:text-blue-500">Default Alert</a></p>
+
+<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/alerts/border-alert" class="text-blue-600 hover:underline dark:text-blue-500">Border Alert</a></p>
+
+<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/alerts/information-alert" class="text-blue-600 hover:underline dark:text-blue-500">Information Alert</a></p>
 
 <h2 class="text-2xl w-full dark:text-white py-8">References</h2>
 

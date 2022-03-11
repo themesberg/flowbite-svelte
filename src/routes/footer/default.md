@@ -5,33 +5,33 @@ layout: doc
 <script>
   import {SimpleFooter} from '$lib/index'
   let site = {
-    link: "/",
+    href: "/",
     name: "Flowbite Svelte",
   };
   let links = [
-    { name: "About", link: "/" },
-    { name: "Profile", link: "/" },
-    { name: "Contact", link: "/" },
+    { name: "About", href: "/" },
+    { name: "Profile", href: "/" },
+    { name: "Contact", href: "/" },
   ];
 </script>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Simple footer</h1>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<SimpleFooter {links}/>
+<SimpleFooter {links} {site} />
 </div>
 
 ```svelte
 <script>
   import {SimpleFooter} from 'flowbite-svelte'
   let site = {
-    link: "/",
+    href: "/",
     name: "Flowbite Svelte",
   };
   let links = [
-    { name: "About", link: "/" },
-    { name: "Profile", link: "/" },
-    { name: "Contact", link: "/" },
+    { name: "About", href: "/" },
+    { name: "Profile", href: "/" },
+    { name: "Contact", href: "/" },
   ];
 </script>
 
@@ -42,14 +42,14 @@ layout: doc
 
 ```js
 let site = {
-  link: "/",
+  href: "/",
   name: "Flowbite Svelte",
 };
 let links = [
-  { name: "About", link: "/about", rel: undefined },
-  { name: "Privacy Policy", link: "/", rel: undefined },
-  { name: "Licensing", link: "/", rel: undefined },
-  { name: "Contact", link: "/", rel: undefined },
+  { name: "About", href: "/about", rel: undefined },
+  { name: "Privacy Policy", href: "/", rel: undefined },
+  { name: "Licensing", href: "/", rel: undefined },
+  { name: "Contact", href: "/", rel: undefined },
 ];
 let footerClass =
   "p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800";
@@ -62,6 +62,16 @@ let siteNameLinkClass = "hover:underline";
 let copyrightYear = "© 2022";
 let allRightsReserved = "All Rights Reserved.";
 ```
+
+<h2 class="text-2xl w-full dark:text-white py-8">Related components</h2>
+
+<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/footer/default" class="text-blue-600 hover:underline dark:text-blue-500">Default Footer</a></p>
+
+<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/footer/logo" class="text-blue-600 hover:underline dark:text-blue-500">Footer with Logo</a></p>
+
+<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/footer/sitemap" class="text-blue-600 hover:underline dark:text-blue-500">Footer with Sitemap</a></p>
+
+<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/footer/socialmedia" class="text-blue-600 hover:underline dark:text-blue-500">Footer with Socialmedia</a></p>
 
 <h2 class="text-2xl w-full dark:text-white py-8">References</h2>
 

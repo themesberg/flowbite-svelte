@@ -99,6 +99,14 @@ let color = "blue"; // 'blue'| 'gray'| 'red'| 'yellow'| 'purple'| 'green'| 'indi
 <Badge name="Pink" color="pink" textSize="text-base"/>
 ```
 
+<h2 class="text-2xl w-full dark:text-white py-8">Related components</h2>
+
+<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/badges/default" class="text-blue-600 hover:underline dark:text-blue-500">Default Badge</a></p>
+
+<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/badges/badge-icon" class="text-blue-600 hover:underline dark:text-blue-500">Badge with icon</a></p>
+
+<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/badges/badge-link" class="text-blue-600 hover:underline dark:text-blue-500">Badge with link</a></p>
+
 <h2 class="text-2xl w-full dark:text-white py-8">References</h2>
 
 <p class="dark:text-white text-lg"><a href="https://flowbite.com/docs/components/badge/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Badge</a></p>
