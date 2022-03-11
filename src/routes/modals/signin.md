@@ -50,19 +50,19 @@ let btnSignInColor = "blue";
 />
 <SignInModal
   id={signinId}
-  titleSignIn={"SignIn Modal Title"}
-  lostPasswordLink={"/auth/lost-password"}
-  signUpLink={"/auth/signup"}
-  formLink={"/auth/signin"}
+  titleSignIn=SignIn Modal Title"
+  lostPasswordLink="/auth/lost-password"
+  signUpLink="/auth/signup"
+  formLink="/auth/signin"
 />
 ```
 
 <SignInModal
   id={signinId}
-  titleSignIn={"SignIn Modal Title"}
-  lostPasswordLink={"/"}
-  signUpLink={"/about"}
-  formLink={"/modals"}
+  titleSignIn="SignIn Modal Title"
+  lostPasswordLink="/"
+  signUpLink="/about"
+  formLink="/modals"
 />
 
 <h2 class="text-2xl w-full dark:text-white py-8">Related components</h2>

@@ -19,7 +19,6 @@ layout: doc
   let id1 = "medium-modal";
   let btnMName = "Medium Modal with one button";
   let btnColor = "pink";
-  let textMColor = "red";
 
   const handlebtnM1 = () => {
     closeModal()
@@ -28,7 +27,6 @@ layout: doc
   // modal 3
   let id2 = "medium-modal2";
   let btnName2 = "Medium Modal with two buttons";
-  let textMColor2 = "yellow";
   let btnColor2 = "purple";
 
   const handlebtnM2 = () => {
@@ -64,7 +62,6 @@ layout: doc
   let id1 = "medium-modal";
   let btnMName = "Medium Modal with one button";
   let btnColor = "pink";
-  let textMColor = "red";
 
   const handlebtnM1 = () => {
     closeModal()
@@ -73,7 +70,6 @@ layout: doc
   // modal 3
   let id2 = "medium-modal2";
   let btnName2 = "Medium Modal with two buttons";
-  let textMColor2 = "yellow";
   let btnColor2 = "purple";
 
   const handlebtnM2 = () => {
@@ -95,7 +91,7 @@ layout: doc
 
 ```svelte
 <ModalButton {id} btnName={btnBasicName} />
-<MediumModal {id} title={"Basic Modal Title"}>
+<MediumModal {id} title="Basic Modal Title">
   Basic Modal Content: Lorem ipsum dolor sit, amet consectetur adipisicing elit.
   Ad odit aspernatur minus deserunt illo error eum temporibus officiis. 
 </MediumModal>
@@ -111,9 +107,8 @@ layout: doc
 <ModalButton id={id1} btnName={btnMName} {btnColor} />
 <MediumModal
   id={id1}
-  btnColor={"yellow"}
-  title={"Medium Modal Title"}
-  textColor={textMColor}
+  btnColor="yellow"
+  title="Medium Modal Title"
   btn1="Yes"
   on:handlebtn1={handlebtnM1}
 >
@@ -132,9 +127,8 @@ layout: doc
 <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
 <MediumModal
   id={id2}
-  btnColor={"indigo"}
-  title={"Default Modal Title"}
-  textColor={textMColor2}
+  btnColor="indigo"
+  title="Default Modal Title"
   btn1="Yes"
   btn2="No"
   on:handlebtn1={handlebtnM2}
@@ -144,7 +138,7 @@ layout: doc
 </MediumModal>
 ```
 
-<MediumModal {id} title={"Basic Modal Title"}>
+<MediumModal {id} title="Basic Modal Title">
   Basic Modal Content: Lorem ipsum dolor sit, amet consectetur adipisicing
   elit. Ad odit aspernatur minus deserunt illo error eum temporibus officiis.
   Ab facere dolorem quisquam omnis? Aspernatur, asperiores voluptas quis culpa
@@ -153,9 +147,8 @@ layout: doc
 
 <MediumModal
   id={id1}
-  btnColor={"yellow"}
-  title={"Medium Modal Title"}
-  textColor={textMColor}
+  btnColor="yellow"
+  title="Medium Modal Title"
   btn1="Yes"
   on:handlebtn1={handlebtnM1}
 >
@@ -167,9 +160,8 @@ layout: doc
 
 <MediumModal
   id={id2}
-  btnColor={"indigo"}
-  title={"Default Modal Title"}
-  textColor={textMColor2}
+  btnColor="indigo"
+  title="Default Modal Title"
   btn1="Yes"
   btn2="No"
   on:handlebtn1={handlebtnM2}

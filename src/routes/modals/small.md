@@ -12,9 +12,6 @@ layout: doc
     });
   };
 
-  // common
-  const textSColor = "blue";
-
   // for basic
   const idBasic = "basic-modal";
   const btnBasicName = "Basic Modal";
@@ -64,9 +61,6 @@ layout: doc
     });
   };
 
-  // common
-  const textSColor = "blue";
-
   // for basic
   const idBasic = "basic-modal";
   const btnBasicName = "Basic Modal";
@@ -110,7 +104,7 @@ layout: doc
 
 ```svelte
 <ModalButton id={idBasic} btnName={btnBasicName} />
-<SmallModal id={idBasic} title={"Basic Modal Title"}>
+<SmallModal id={idBasic} title="Basic Modal Title">
   Basic Modal Content
 </SmallModal>
 ```
@@ -125,8 +119,8 @@ layout: doc
 <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
 <SmallModal
   id={id1}
-  btnColor={"pink"}
-  title={"Small Modal Title"}
+  btnColor="pink"
+  title="Small Modal Title"
   btn1="View"
   btn2="No"
   on:handlebtn1={handlebtnS1}
@@ -147,9 +141,8 @@ layout: doc
 <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
 <SmallModal
   id={id2}
-  btnColor={"yellow"}
-  textColor={textSColor}
-  title={"Small Modal Title"}
+  btnColor="yellow"
+  title="Small Modal Title"
   btn1="Yes"
   btn2="No"
   on:handlebtn1={handlebtnS3}
@@ -160,14 +153,14 @@ layout: doc
 </SmallModal>
 ```
 
-<SmallModal id={idBasic} title={"Basic Modal Title"}>
+<SmallModal id={idBasic} title="Basic Modal Title">
   Basic Modal Content
 </SmallModal>
 
 <SmallModal
   id={id1}
-  btnColor={"pink"}
-  title={"Small Modal Title"}
+  btnColor="pink"
+  title="Small Modal Title"
   btn1="View"
   btn2="No"
   on:handlebtn1={handlebtnS1}
@@ -179,9 +172,8 @@ eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
 <SmallModal
   id={id2}
-  btnColor={"yellow"}
-  textColor={textSColor}
-  title={"Small Modal Title"}
+  btnColor="yellow"
+  title="Small Modal Title"
   btn1="Yes"
   btn2="No"
   on:handlebtn1={handlebtnS3}

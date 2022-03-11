@@ -106,7 +106,7 @@ layout: doc
 ```svelte
 <ModalButton {id} {btnName} />
 
-<LargeModal {id} title={"Large Modal Title"}>
+<LargeModal {id} title="Large Modal Title">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
 </LargeModal>
 ```
@@ -153,7 +153,7 @@ layout: doc
 </LargeModal>
 ```
 
-<LargeModal {id} title={"Large Modal Title"}>
+<LargeModal {id} title="Large Modal Title">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
   quis nostrud exercitation ullamco.
