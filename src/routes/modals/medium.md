@@ -144,41 +144,55 @@ layout: doc
 </MediumModal>
 ```
 
-  <MediumModal {id} title={"Basic Modal Title"}>
-    Basic Modal Content: Lorem ipsum dolor sit, amet consectetur adipisicing
-    elit. Ad odit aspernatur minus deserunt illo error eum temporibus officiis.
-    Ab facere dolorem quisquam omnis? Aspernatur, asperiores voluptas quis culpa
-    consectetur saepe!
-  </MediumModal>
+<MediumModal {id} title={"Basic Modal Title"}>
+  Basic Modal Content: Lorem ipsum dolor sit, amet consectetur adipisicing
+  elit. Ad odit aspernatur minus deserunt illo error eum temporibus officiis.
+  Ab facere dolorem quisquam omnis? Aspernatur, asperiores voluptas quis culpa
+  consectetur saepe!
+</MediumModal>
 
-  <MediumModal
-    id={id1}
-    btnColor={"yellow"}
-    title={"Medium Modal Title"}
-    textColor={textMColor}
-    btn1="Yes"
-    on:handlebtn1={handlebtnM1}
-  >
-    Modal 2 Content: Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-    Ad odit aspernatur minus deserunt illo error eum temporibus officiis. Ab
-    facere dolorem quisquam omnis? Aspernatur, asperiores voluptas quis culpa
-    consectetur saepe!
-  </MediumModal>
+<MediumModal
+  id={id1}
+  btnColor={"yellow"}
+  title={"Medium Modal Title"}
+  textColor={textMColor}
+  btn1="Yes"
+  on:handlebtn1={handlebtnM1}
+>
+  Modal 2 Content: Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+  Ad odit aspernatur minus deserunt illo error eum temporibus officiis. Ab
+  facere dolorem quisquam omnis? Aspernatur, asperiores voluptas quis culpa
+  consectetur saepe!
+</MediumModal>
 
-  <MediumModal
-    id={id2}
-    btnColor={"indigo"}
-    title={"Default Modal Title"}
-    textColor={textMColor2}
-    btn1="Yes"
-    btn2="No"
-    on:handlebtn1={handlebtnM2}
-    on:handlebtn2={handlebtnM3}
-  >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco.
-  </MediumModal>
+<MediumModal
+  id={id2}
+  btnColor={"indigo"}
+  title={"Default Modal Title"}
+  textColor={textMColor2}
+  btn1="Yes"
+  btn2="No"
+  on:handlebtn1={handlebtnM2}
+  on:handlebtn2={handlebtnM3}
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco.
+</MediumModal>
+
+<h2 class="text-2xl w-full dark:text-white py-8">Related components</h2>
+
+<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/modals/small" class="text-blue-600 hover:underline dark:text-blue-500">Small Modal</a></p>
+
+<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/modals/medium" class="text-blue-600 hover:underline dark:text-blue-500">Medium Modal</a></p>
+
+<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/modals/large" class="text-blue-600 hover:underline dark:text-blue-500">Large Modal</a></p>
+
+<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/modals/extra-large" class="text-blue-600 hover:underline dark:text-blue-500">Extra Large Modal</a></p>
+
+<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/modals/signin" class="text-blue-600 hover:underline dark:text-blue-500">Signin Modal</a></p>
+
+<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/modals/all-modals" class="text-blue-600 hover:underline dark:text-blue-500">All Modals</a></p>
 
 <h2 class="text-2xl w-full dark:text-white py-8">References</h2>
 
