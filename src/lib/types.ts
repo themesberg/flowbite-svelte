@@ -94,3 +94,7 @@ export interface ListCardType {
     field2?: string;
     field3?: string;
 }
+
+export type AuthFunctionType = () => Promise<string>;
+
+export type ButtonType = 'button' | 'submit' | 'reset'

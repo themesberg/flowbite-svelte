@@ -14,6 +14,7 @@ layout: doc
 ```js
 let textSize = "text-sm"; // 'text-xs'|'text-sm'|'text-base' |'text-lg' |'text-xl'|'text-2xl'|'text-3xl'|'text-4xl'
 let name = "Read more";
+let type = "button"; // 'button' | 'submit' | 'reset'
 let color = "purple2blue"; // cyan2blue| green2blue | purple2pink | pink2orange | teal2lime | red2yellow
 ```
 

@@ -1,8 +1,9 @@
 <script lang="ts">
-	import type { Gradientduotones, Textsize } from '../types';
+	import type { Gradientduotones, Textsize, ButtonType } from '../types';
 	export let textSize: Textsize = 'text-sm';
 	export let color: Gradientduotones = 'purple2blue';
 	export let name = 'Read more';
+	export let type: ButtonType = 'button';
 	let btnClass: string;
 	let spanClass: string;
 
@@ -41,6 +42,6 @@
 	}
 </script>
 
-<button class={btnClass}>
+<button class={btnClass} {type}>
 	<span class={spanClass} on:click>{name}</span>
 </button>

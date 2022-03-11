@@ -13,6 +13,7 @@ layout: doc
 ```js
 let textSize = "text-sm"; // 'text-xs'|'text-sm'|'text-base' |'text-lg' |'text-xl'|'text-2xl'|'text-3xl'|'text-4xl'
 let name = "Read more";
+let type = "button"; // 'button' | 'submit' | 'reset'
 let color = "blue"; // 'blue' | 'green' | 'cyan' | 'teal' | 'lime' | 'red' | 'pink' | 'purple'
 ```
 

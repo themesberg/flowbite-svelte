@@ -1,16 +1,15 @@
 <script lang="ts">
+	import type { AuthFunctionType, LinkType } from '../types';
+	import Alert from '../alerts/Alert.svelte';
+	export let login: AuthFunctionType;
 	export let title = 'Sign in';
-	export let action: string;
 	export let btnSignInColor = 'blue';
 	export let rememberMe = false;
-	export let signupLink = {
-		href: '',
-		rel: ''
-	};
-	export let lostPasswordLink = {
-		href: '',
-		rel: ''
-	};
+	export let signup: LinkType;
+	export let lostPassword: LinkType;
+	let email: string;
+	let password: string;
+	let error: string;
 
 	let submitClass: string;
 
@@ -47,7 +46,7 @@
 <div
 	class="p-4 max-w-sm w-full bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700"
 >
-	<form class="space-y-6" {action}>
+	<form class="space-y-6" on:submit|preventDefault={login}>
 		<h3 class="text-xl font-medium text-gray-900 dark:text-white">{title}</h3>
 		<div>
 			<label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
@@ -57,6 +56,7 @@
 				type="email"
 				name="email"
 				id="email"
+				bind:value={email}
 				class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
 				placeholder="name@company.com"
 				required
@@ -71,6 +71,7 @@
 				name="password"
 				id="password"
 				placeholder="••••••••"
+				bind:value={password}
 				class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
 				required
 			/>
@@ -93,22 +94,29 @@
 					</div>
 				</div>
 			{/if}
-			{#if lostPasswordLink}
+			{#if lostPassword}
 				<a
-					href={lostPasswordLink.href}
-					rel={lostPasswordLink.rel}
-					class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a
+					href={lostPassword.href}
+					rel={lostPassword.rel}
+					class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500"
+					>{lostPassword.name}</a
 				>
 			{/if}
 		</div>
+		{#if error}
+			<div class="mt-6">
+				<Alert alertId="alert-red" color="red" closeBtn>
+					{error}
+				</Alert>
+			</div>
+		{/if}
 		<button type="submit" class={submitClass}>Login to your account</button>
-
-		{#if signupLink}
+		{#if signup}
 			<div class="text-sm font-medium text-gray-500 dark:text-gray-300">
 				Not registered? <a
-					href={signupLink.href}
-					rel={signupLink.rel}
-					class="text-blue-700 hover:underline dark:text-blue-500">Create account</a
+					href={signup.href}
+					rel={signup.rel}
+					class="text-blue-700 hover:underline dark:text-blue-500">{signup.name}</a
 				>
 			</div>
 		{/if}

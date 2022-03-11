@@ -4,7 +4,11 @@ const config = {
     "./node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}",
   ],
 
-	theme: {
+  theme: {
+    colors: {
+      'ebony': '#0E172A',
+      'bigstone': '#173242',
+    },
 		extend: {}
 	},
 

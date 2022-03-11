@@ -14,7 +14,8 @@ layout: doc
 let rounded = false;
 let textSize = "text-sm"; // 'text-xs'|'text-sm'|'text-base' |'text-lg' |'text-xl'|'text-2xl'|'text-3xl'|'text-4xl'
 let name = "Read more";
-let type = "blue"; // 'blue' | 'blue-outline' | 'dark' | 'dark-outline' | 'light' | 'green' | 'green-outline' | 'red' | 'red-outline' | 'yellow' | 'yellow-outline' | 'purple' | 'purple-outline'
+let type = "button" // 'button' | 'submit' | 'reset'
+let ButtonType = "blue"; // 'blue' | 'blue-outline' | 'dark' | 'dark-outline' | 'light' | 'green' | 'green-outline' | 'red' | 'red-outline' | 'yellow' | 'yellow-outline' | 'purple' | 'purple-outline'
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">Sizes</h2>
@@ -45,22 +46,22 @@ let type = "blue"; // 'blue' | 'blue-outline' | 'dark' | 'dark-outline' | 'light
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Button name="Button" textSize="text-sm" />
-  <Button name="Button" textSize="text-sm" type="dark" />
-  <Button name="Button" textSize="text-sm" type="light" />
-  <Button name="Button" textSize="text-sm" type="red" />
-  <Button name="Button" textSize="text-sm" type="green" />
-  <Button name="Button" textSize="text-sm" type="yellow" />
-  <Button name="Button" textSize="text-sm" type="purple" />
+  <Button name="Button" textSize="text-sm" buttonType="dark" />
+  <Button name="Button" textSize="text-sm" buttonType="light" />
+  <Button name="Button" textSize="text-sm" buttonType="red" />
+  <Button name="Button" textSize="text-sm" buttonType="green" />
+  <Button name="Button" textSize="text-sm" buttonType="yellow" />
+  <Button name="Button" textSize="text-sm" buttonType="purple" />
 </div>
 
 ```svelte
 <Button name="Button" textSize="text-sm" />
-<Button name="Button" textSize="text-sm" type="dark" />
-<Button name="Button" textSize="text-sm" type="light" />
-<Button name="Button" textSize="text-sm" type="red" />
-<Button name="Button" textSize="text-sm" type="green" />
-<Button name="Button" textSize="text-sm" type="yellow" />
-<Button name="Button" textSize="text-sm" type="purple" />
+<Button name="Button" textSize="text-sm" buttonType="dark" />
+<Button name="Button" textSize="text-sm" buttonType="light" />
+<Button name="Button" textSize="text-sm" buttonType="red" />
+<Button name="Button" textSize="text-sm" buttonType="green" />
+<Button name="Button" textSize="text-sm" buttonType="yellow" />
+<Button name="Button" textSize="text-sm" buttonType="purple" />
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">References</h2>
