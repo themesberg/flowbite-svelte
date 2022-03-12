@@ -1,16 +1,16 @@
 <script lang="ts">
 	import type { AuthFunctionType, LinkType } from '../types';
-	import Alert from '../alerts/Alert.svelte';
+	import { Alert } from '../index';
 	export let register: AuthFunctionType;
 	export let error: string;
 	export let login: LinkType;
 	export let rememberMe: boolean;
 	export let lostPassword: LinkType;
-	let message: string;
+	export let message: string;
 	// Variables bound to respective inputs via bind:value
-	let email: string;
-	let password: string;
-	let name: string;
+	export let email: string;
+	export let password: string;
+	export let name: string;
 </script>
 
 <div

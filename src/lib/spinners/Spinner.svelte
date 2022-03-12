@@ -3,7 +3,7 @@
 	export let color: Colors = 'blue';
 	export let bg = 'text-gray-200';
 	export let size = 'w-8 h-8';
-	export let align: AlignType;
+	export let align: AlignType = 'text-center';
 	let colorClass: string;
 	if (color === 'blue') {
 		colorClass = 'fill-blue-600';

@@ -1,3 +1,4 @@
+// Accordion
 import Accordion from './accordions/AccordionDefault.svelte'
 import AccordionItem from './accordions/AccordionItem.svelte'
 
@@ -5,6 +6,13 @@ import AccordionItem from './accordions/AccordionItem.svelte'
 import Alert from './alerts/Alert.svelte'
 import BorderAlert from './alerts/BorderAlert.svelte'
 import InfoAlert from './alerts/InfoAlert.svelte'
+
+// Auth
+import Confirm from './auth/Confirm.svelte'
+import ForgotPassword from './auth/ForgotPassword.svelte'
+import Login from './auth/Login.svelte'
+import Register from './auth/Register.svelte'
+import Reset from './auth/Reset.svelte'
 
 // Badges
 import Badge from './badges/Badge.svelte'
@@ -80,6 +88,12 @@ export {
   Alert,
   BorderAlert,
   InfoAlert,
+  // auth
+  Confirm,
+  ForgotPassword,
+  Login,
+  Register,
+  Reset,
   // Badges
   Badge,
   BadgeIcon,

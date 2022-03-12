@@ -1,11 +1,11 @@
 <script lang="ts">
 	import type { AuthFunctionType } from '../types';
-	import Alert from '../alerts/Alert.svelte';
+	import { Alert } from '../index';
 	export let forgot: AuthFunctionType;
-	let email: string;
-	let error: string;
-	let message: string;
-	let data: string;
+	export let email: string;
+	export let error: string;
+	export let message: string;
+	export let data: string;
 </script>
 
 <div
