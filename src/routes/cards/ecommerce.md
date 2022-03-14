@@ -40,7 +40,7 @@ layout: doc
 </script>
 ```
 
-<h1 class="text-3xl w-full dark:text-white py-8">Ecommerce Cards</h1>
+<h2 class="text-2xl w-full dark:text-white py-8">Ecommerce Cards</h2>
 
 ```svelte
 <EcommerceCard

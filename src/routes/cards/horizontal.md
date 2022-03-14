@@ -16,7 +16,7 @@ layout: doc
 </script>
 ```
 
-<h1 class="text-3xl w-full dark:text-white py-8">Horizontal Card</h1>
+<h2 class="text-2xl w-full dark:text-white py-8">Horizontal Card</h2>
 
 ```svelte
 <HorizontalCard
