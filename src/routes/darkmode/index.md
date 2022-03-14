@@ -16,7 +16,7 @@ import { DarkMode } from "flowbite-svelte";
 
 <p class="dark:text-white py-4 text-lg">The default value of btnClass is:</p>
 
-```html
+```js
 let btnClass = "text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 fixed left-2 top-16 z-50"
 ```
 
@@ -37,6 +37,32 @@ let btnClass="Add your class here"
 ```html
 <!-- src/app.html -->
 <body class="bg-white dark:bg-gray-800">
+	<div>%svelte.body%</div>
+</body>
+```
+
+<h2 class="text-2xl w-full dark:text-white py-8">How to change Dark mode color</h2>
+
+<p class="dark:text-white text-lg w-full"><a href="https://flowbite.com/docs/customize/dark-mode/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Find the name of the color from hex color code.</a></p>
+
+<p class="dark:text-white text-lg w-full">Update tailwind.config.cjs:</p>
+
+```js
+// ...
+  theme: {
+    colors: {
+      'bigstone': '#173242',
+    },
+		extend: {}
+	},
+// ...
+```
+
+<p class="dark:text-white text-lg">Update the body class</p>
+
+```html
+<!-- src/app.html -->
+<body class="bg-white dark:bg-bigstone">
 	<div>%svelte.body%</div>
 </body>
 ```

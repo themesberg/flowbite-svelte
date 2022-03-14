@@ -75,6 +75,7 @@ export const modals = [
 ];
 
 export const navbar = [
+  { url: "navbars/props", name: "Navbar Props" },
   { url: "navbars/default", name: "Navbar" },
   { url: "navbars/dropdown", name: "Dropdown" },
 ];

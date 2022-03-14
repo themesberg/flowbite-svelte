@@ -6,26 +6,30 @@
 	export let logo = '/images/mkdir-logo.png';
 	export let alt = 'Svelte Flow';
 	export let textsize = 'text-sm';
-	let barHidden = true;
+	let barHidden: boolean = true;
 	const handleClickbtn = () => {
 		barHidden = !barHidden;
 	};
 	export let menus: LinkType[];
+	export let navClass = 'px-2 bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700';
+	export let navDivClass = 'container flex flex-wrap justify-between items-center mx-auto';
+	export let spanClass =
+		'self-center text-lg font-semibold text-gray-900 whitespace-nowrap dark:text-white';
+	export let buttonClass =
+		'inline-flex justify-center items-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-500';
+	export let liLinkClass = `block py-2 pr-4 pl-3  text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent ${textsize}`;
 </script>
 
-<nav class="px-2 bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-	<div class="container flex flex-wrap justify-between items-center mx-auto">
+<nav class={navClass}>
+	<div class={navDivClass}>
 		<a href="/" class="flex">
 			<img src={logo} {alt} />
-			<span
-				class="self-center text-lg font-semibold text-gray-900 whitespace-nowrap dark:text-white"
-				>{sitename}</span
-			>
+			<span class={spanClass}>{sitename}</span>
 		</a>
 		<button
 			on:click={handleClickbtn}
 			type="button"
-			class="inline-flex justify-center items-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-500"
+			class={buttonClass}
 			aria-controls="mobile-menu-2"
 			aria-expanded="false"
 		>
@@ -57,12 +61,7 @@
 			<ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
 				{#each menus as { name, href, rel }}
 					<li>
-						<a
-							class:active={$page.url.pathname === href}
-							{href}
-							{rel}
-							class="block py-2 pr-4 pl-3  text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent {textsize}"
-							>{name}</a
+						<a class:active={$page.url.pathname === href} {href} {rel} class={liLinkClass}>{name}</a
 						>
 					</li>
 				{/each}
