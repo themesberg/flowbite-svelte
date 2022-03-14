@@ -75,7 +75,7 @@ layout: doc
 
 <h1 class="text-3xl w-full dark:text-white py-8">Dropdown Navbar Setup</h1>
 
-```svelte
+```html
 <script>
   import { DropdownNavbar } from "flowbite-svelte";
   let sitename = "Flowbite Svelte";

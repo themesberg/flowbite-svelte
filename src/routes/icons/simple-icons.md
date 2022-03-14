@@ -38,7 +38,7 @@ let fill = "#000000"
 
 </div>
 
-```svelte
+```html
 <script>
 import { FacebookIcon, GithubIcon, GitIcon } from '@codewithshin/svelte-simpleicons';
 </script>

@@ -16,7 +16,7 @@ import {LightTooltip, Button} from '$lib/index'
   </LightTooltip>
 </div>
 
-```svelte
+```html
 <script>
 import {LightTooltip, Button} from 'flowbite-svelte'
 </script>
@@ -35,7 +35,7 @@ import {LightTooltip, Button} from 'flowbite-svelte'
   </LightTooltip>
 </div>
 
-```svelte
+```html
 <script>
 import {LightTooltip, Button} from 'flowbite-svelte'
 </script>
@@ -53,7 +53,7 @@ import {LightTooltip, Button} from 'flowbite-svelte'
   </LightTooltip>
 </div>
 
-```svelte
+```html
 <script>
 import {LightTooltip, Button} from 'flowbite-svelte'
 </script>
@@ -72,7 +72,7 @@ import {LightTooltip, Button} from 'flowbite-svelte'
   </LightTooltip>
 </div>
 
-```svelte
+```html
 <script>
 import {LightTooltip, Button} from 'flowbite-svelte'
 </script>

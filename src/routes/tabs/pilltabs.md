@@ -34,7 +34,7 @@ layout: doc
    <PillTabs {tabs} />
 </div>
 
-```svelte
+```html
 <script>
   import { PillTabs } from "flowbite-svelte";
   let tabs = [

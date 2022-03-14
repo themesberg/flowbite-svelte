@@ -23,7 +23,7 @@ layout: doc
 
 <p class="dark:text-white py-4 text-lg">Import SignInCard in the script tag.</p>
 
-```svelte
+```html
 <script>
   import { SignInCard } from "flowbite-svelte";
 </script>
@@ -35,7 +35,7 @@ layout: doc
    <SignInCard id="id1" {btnSignInColor} {title} {action} {rememberMe} {signupLink} {lostPasswordLink} />
 </div>
 
-```svelte
+```html
  <SignInCard id="id1" {btnSignInColor} {title} {action} {rememberMe} {signupLink} {lostPasswordLink} />
 ```
 
@@ -43,7 +43,7 @@ layout: doc
   <SignInCard id="id2" btnSignInColor="purple" {title} {action} {rememberMe} {signupLink} {lostPasswordLink} />
 </div>
 
-```svelte
+```html
 <SignInCard id="id2" btnSignInColor="purple" {title} {action} {rememberMe} {signupLink} {lostPasswordLink} />
 ```
 

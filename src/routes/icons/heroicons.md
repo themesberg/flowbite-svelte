@@ -49,7 +49,7 @@ let viewBox = "0 0 24 24"
 />
 </div>
 
-```svelte
+```html
 <script>
 import {
   AdjustmentsIconSolid,

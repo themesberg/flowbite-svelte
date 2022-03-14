@@ -31,7 +31,7 @@ let color = "purple2blue"; // cyan2blue| green2blue | purple2pink | pink2orange 
 <GradientOutlineButton color="red2yellow" name="red2yellow"/>
 </div>
 
-```svelte
+```html
 <GradientOutlineButton color="purple2blue" name="purple2blue"/>
 <GradientOutlineButton color="cyan2blue" name="cyan2blue"/>
 <GradientOutlineButton color="green2blue" name="green2blue"/>
@@ -54,7 +54,7 @@ let color = "purple2blue"; // cyan2blue| green2blue | purple2pink | pink2orange 
 <GradientOutlineButton color="red2yellow" name="red2yellow" textSize="text-xs"/>
 </div>
 
-```svelte
+```html
 <GradientOutlineButton color="purple2blue" name="purple2blue" textSize="text-xs"/>
 <GradientOutlineButton color="cyan2blue" name="cyan2blue" textSize="text-xs"/>
 <GradientOutlineButton color="green2blue" name="green2blue" textSize="text-xs"/>
@@ -76,7 +76,7 @@ let color = "purple2blue"; // cyan2blue| green2blue | purple2pink | pink2orange 
 <GradientOutlineButton color="red2yellow" name="red2yellow" textSize="text-base"/>
 </div>
 
-```svelte
+```html
 <GradientOutlineButton color="purple2blue" name="purple2blue" textSize="text-base"/>
 <GradientOutlineButton color="cyan2blue" name="cyan2blue" textSize="text-base"/>
 <GradientOutlineButton color="green2blue" name="green2blue" textSize="text-base"/>

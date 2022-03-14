@@ -29,7 +29,7 @@ layout: doc
 
 <h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
 
-```svelte
+```html
 <script>
   import { CtaCard } from "flowbite-svelte";
   let title = "Be The First";
@@ -56,7 +56,7 @@ layout: doc
 
 <h2 class="text-2xl w-full dark:text-white py-8">CTA Card</h2>
 
-```svelte
+```html
 <CtaCard {btns} {title} {headColor}>
   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt libero
   dicta ex, suscipit, qui beatae in odio corrupti est quis quibusdam

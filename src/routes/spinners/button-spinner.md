@@ -10,7 +10,7 @@ layout: doc
 <h1 class="text-3xl w-full dark:text-white py-8">Button spinner</h1>
 
 
-```svelte
+```html
 <script>
   import { SpinnerButton } from "flowbite-svelte";
 </script>
@@ -29,7 +29,7 @@ let color; // 'blue' | undefined
 <SpinnerButton color="blue" />
 </div>
 
-```svelte
+```html
 <SpinnerButton />
 <SpinnerButton color="blue" />
 ```
@@ -41,7 +41,7 @@ let color; // 'blue' | undefined
 <SpinnerButton color="blue" >Here you go ...</SpinnerButton>
 </div>
 
-```svelte
+```html
 <SpinnerButton>Here you go ...</SpinnerButton>
 <SpinnerButton color="blue" >Here you go ...</SpinnerButton>
 ```

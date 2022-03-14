@@ -14,7 +14,7 @@ layout: doc
 Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
 </p>
 
-```svelte
+```html
 <script>
   import { InfoAlert } from "flowbite-svelte";
 </script>
@@ -41,7 +41,7 @@ let closeBtn: boolean = false;
   </InfoAlert>
 </div>
 
-```svelte
+```html
 <InfoAlert>
   <span slot="header">Info header 1</span>
   InfoAlert without View more and Dismiss button.
@@ -61,7 +61,7 @@ let closeBtn: boolean = false;
   </InfoAlert>
 </div>
 
-```svelte
+```html
  <InfoAlert
     alertId="info-alert-2"
     color="green"
@@ -86,7 +86,7 @@ let closeBtn: boolean = false;
   </InfoAlert>
 </div>
 
-```svelte
+```html
 <InfoAlert
     alertId="info-alert-3"
     color="red"
@@ -111,7 +111,7 @@ let closeBtn: boolean = false;
   </InfoAlert>
 </div>
 
-```svelte
+```html
 <InfoAlert
     alertId="info-alert-4"
     color="yellow"
@@ -136,7 +136,7 @@ let closeBtn: boolean = false;
   </InfoAlert>
 </div>
 
-```svelte
+```html
 <InfoAlert
     alertId="info-alert-5"
     color="gray"
@@ -161,7 +161,7 @@ let closeBtn: boolean = false;
   </InfoAlert>
 </div>
 
-```svelte
+```html
 <InfoAlert
     alertId="info-alert-6"
     color="indigo"
@@ -186,7 +186,7 @@ let closeBtn: boolean = false;
   </InfoAlert>
 </div>
 
-```svelte
+```html
 <InfoAlert
     alertId="info-alert-7"
     color="purple"
@@ -211,7 +211,7 @@ let closeBtn: boolean = false;
   </InfoAlert>
 </div>
 
-```svelte
+```html
 <InfoAlert
     alertId="info-alert-8"
     color="pink"

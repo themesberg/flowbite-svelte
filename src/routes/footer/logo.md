@@ -22,7 +22,7 @@ layout: doc
 <LogoFooter {site} {links}/>
 </div>
 
-```svelte
+```html
 <script>
   import {LogoFooter} from 'flowbite-svelte'
   let site = {

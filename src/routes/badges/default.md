@@ -9,7 +9,7 @@ layout: doc
 
 <h1 class="text-3xl w-full text-gray-900 dark:text-white py-8">Badges</h1>
 
-```svelte
+```html
 <script>
   import {Badge} from 'flowbite-svelte'
 </script>
@@ -38,7 +38,7 @@ let color = "blue"; // 'blue'| 'gray'| 'red'| 'yellow'| 'purple'| 'green'| 'indi
 </div>
 
 
-```svelte
+```html
 <Badge name="Default"/>
 <Badge name="Gray" color="gray"/>
 <Badge name="Red" color="red"/>
@@ -63,7 +63,7 @@ let color = "blue"; // 'blue'| 'gray'| 'red'| 'yellow'| 'purple'| 'green'| 'indi
 <Badge name="Pink" color="pink" textSize="text-sm"/>
 </div>
 
-```svelte
+```html
 <Badge name="Default" textSize="text-sm"/>
 <Badge name="Gray" color="gray" textSize="text-sm"/>
 <Badge name="Red" color="red" textSize="text-sm"/>
@@ -88,7 +88,7 @@ let color = "blue"; // 'blue'| 'gray'| 'red'| 'yellow'| 'purple'| 'green'| 'indi
 <Badge name="Pink" color="pink" textSize="text-base"/>
 </div>
 
-```svelte
+```html
 <Badge name="Default" textSize="text-base"/>
 <Badge name="Gray" color="gray" textSize="text-base"/>
 <Badge name="Red" color="red" textSize="text-base"/>

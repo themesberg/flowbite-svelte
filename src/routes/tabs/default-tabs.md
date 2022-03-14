@@ -39,7 +39,7 @@ layout: doc
   <DefaultTabs {tabs} />
 </div>
 
-```svelte
+```html
 <script>
   import { DefaultTabs } from "flowbite-svelte";
   export let tabs = [

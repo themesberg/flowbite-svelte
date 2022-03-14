@@ -38,7 +38,7 @@ layout: doc
   <InteractiveTabs tabId="myTab1" tabs={tabs1} />
 </div>
 
-```svelte
+```html
 <script>
   import { InteractiveTabs } from "flowbite-svelte";
   let tabs1 = [

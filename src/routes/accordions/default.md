@@ -129,7 +129,7 @@ body
 </div>
 
 
-```svelte
+```html
 <script>
   import { Accordion } from "flowbite-svelte";
   import { AccordionItem } from "flowbite-svelte";

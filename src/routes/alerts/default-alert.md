@@ -14,7 +14,7 @@ layout: doc
 Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
 </p>
 
-```svelte
+```html
 <script>
   import { Alert } from "flowbite-svelte";
 </script>
@@ -23,14 +23,14 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
 <h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Alert Default Props</h2>
 
 ```ts
-let color: string = "blue"; // {gray|red|yellow|green|indigo|purple|pink} 
+let color: string = "blue"; // gray|red|yellow|green|indigo|purple|pink 
 let alertId: string= "alert-1";
 let closeBtn: boolean = false;
 ```
 
 <h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Simple Alert Examples</h2>
 
-```svelte
+```html
 <Alert alertId="alert-blue">
     A simple info alert without a close button.
 </Alert>

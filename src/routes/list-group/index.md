@@ -69,7 +69,7 @@ layout: doc
 </div>
 
 
-```svelte
+```html
 <script>
   import { List } from "flowbite-svelte";
 
@@ -108,7 +108,7 @@ layout: doc
   <List lists={lists2} />
 </div>
 
-```svelte
+```html
 <script>
   import { List } from "flowbite-svelte";
   import {

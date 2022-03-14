@@ -24,7 +24,7 @@ layout: doc
 <h1 class="text-3xl w-full dark:text-white py-8">Navbar Default</h1>
 
 
-```svelte
+```html
 <script>
   import { Navbar } from "flowbite-svelte";
   let sitename = "Flowbite Svelte";
@@ -52,7 +52,7 @@ layout: doc
 
 <h2 class="text-lg dark:text-white py-8">Text Size text-xs</h2>
 
-```svelte
+```html
 <Navbar textsize="text-xs" {sitename} {menus}/>
 ```
 
@@ -62,7 +62,7 @@ layout: doc
 
 <h2 class="text-lg dark:text-white py-8">Text Size text-sm</h2>
 
-```svelte
+```html
 <Navbar textsize="text-sm" {sitename} {menus} />
 ```
 
@@ -72,7 +72,7 @@ layout: doc
 
 <h2 class="text-lg dark:text-white py-8">Text Size text-base</h2>
 
-```svelte
+```html
 <Navbar textsize="text-base" {sitename} {menus} />
 ```
 
@@ -82,7 +82,7 @@ layout: doc
 
 <h2 class="text-lg dark:text-white py-8">Text Size text-lg</h2>
 
-```svelte
+```html
 <Navbar textsize="text-lg" {sitename} {menus}/>
 ```
 
@@ -92,7 +92,7 @@ layout: doc
 
 <h2 class="text-lg dark:text-white py-8">Text Size text-xl</h2>
 
-```svelte
+```html
 <Navbar textsize="text-xl" {menus}/>
 ```
 

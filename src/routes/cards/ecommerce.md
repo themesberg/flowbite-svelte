@@ -22,7 +22,7 @@ layout: doc
 
 <h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
 
-```svelte
+```html
 <script>
   import { EcommerceCard } from "flowbite-svelte";
   let img2 = {
@@ -42,7 +42,7 @@ layout: doc
 
 <h2 class="text-2xl w-full dark:text-white py-8">Ecommerce Cards</h2>
 
-```svelte
+```html
 <EcommerceCard
   title="Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport"
   link="/alerts"
@@ -58,7 +58,7 @@ layout: doc
 />
 </div>
 
-```svelte
+```html
 <EcommerceCard
   title="Women's Cashmere Sweaters Lorem ipsum dolor sit amet."
   link="/tabs"
@@ -81,7 +81,7 @@ layout: doc
 </div>
 
 
-```svelte
+```html
 <EcommerceCard
   title="Pink cup Lorem ipsum dolor sit amet et mete."
   link="/cards"
@@ -103,7 +103,7 @@ layout: doc
   />
 </div>
 
-```svelte
+```html
 <EcommerceCard
   title="Nintendo Game Lorem ipsum dolor sit amet."
   link="modals"

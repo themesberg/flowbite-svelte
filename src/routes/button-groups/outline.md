@@ -40,7 +40,7 @@ layout: doc
 
 <h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Setup</h2>
 
-```svelte
+```html
 <script>
   import {ButtonGroup, ButtonGroupOutline} from 'flowbite-svelte'
   import {UserCircleIconSolid, AdjustmentsIconSolid, CloudDownloadIconSolid} from "@codewithshin/svelte-heroicons"
@@ -77,7 +77,7 @@ layout: doc
 
 <h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Props</h2>
 
-```svelte
+```html
 let buttons = [
   {
     name: "Profile",
@@ -104,7 +104,7 @@ let buttons = [
   <ButtonGroupOutline buttons={buttons2}/>
 </div>
 
-```svelte
+```html
 <ButtonGroupOutline buttons={buttons2}/>
 ```
 
@@ -117,7 +117,7 @@ let buttons = [
 <ButtonGroupOutline buttons={buttons1}/>
 </div>
 
-```svelte
+```html
 <ButtonGroupOutline buttons={buttons1}/>
 ```
 

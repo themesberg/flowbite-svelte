@@ -58,7 +58,7 @@ let color = "blue"; // blue|dark|light|green|green-outline|red|red-outline|yello
 <Dropdown items={items2} color="red"/>
 </div>
 
-```svelte
+```html
 <script>
  let items2 = [
     {
@@ -93,7 +93,7 @@ let color = "blue"; // blue|dark|light|green|green-outline|red|red-outline|yello
 </div>
 
 
-```svelte
+```html
 <Dropdown {items} color="purple-outline">
 <div slot="header">
  <span class="block text-sm">Bonnie Green</span>

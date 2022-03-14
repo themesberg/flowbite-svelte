@@ -28,7 +28,7 @@ let buttonType = "blue"; // | light | green | red | yellow | puple
   <Button name="Button text-xs" textSize="text-xs" buttonType="purple" rounded="true" />
 </div>
 
-```svelte
+```html
 <Button name="Button text-xs" textSize="text-xs" rounded="true" />
 <Button name="Button text-xs" textSize="text-xs" buttonType="dark" rounded="true" />
 <Button name="Button text-xs" textSize="text-xs" buttonType="light" rounded="true" />
@@ -50,7 +50,7 @@ let buttonType = "blue"; // | light | green | red | yellow | puple
   <Button name="Button" textSize="text-sm" buttonType="purple" rounded="true" />
 </div>
 
-```svelte
+```html
 <Button name="Button" textSize="text-sm" rounded="true" />
 <Button name="Button" textSize="text-sm" buttonType="dark" rounded="true" />
 <Button name="Button" textSize="text-sm" buttonType="light" rounded="true" />
@@ -72,7 +72,7 @@ let buttonType = "blue"; // | light | green | red | yellow | puple
   <Button name="Button" textSize="text-base" buttonType="purple" rounded="true" />
 </div>
 
-```svelte
+```html
 <Button name="Button" textSize="text-base" rounded="true" />
 <Button name="Button" textSize="text-base" buttonType="dark" rounded="true" />
 <Button name="Button" textSize="text-base" buttonType="light" rounded="true" />

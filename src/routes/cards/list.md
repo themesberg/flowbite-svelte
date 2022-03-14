@@ -46,7 +46,7 @@ layout: doc
   <ListCard {action} {title} {lists}/>
 </div>
 
-```svelte
+```html
 <script>
   import { ListCard }from '$lib/index';
   let lists = [

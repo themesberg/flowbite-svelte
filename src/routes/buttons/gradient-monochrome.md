@@ -32,7 +32,7 @@ let color = "blue"; // green| cyan | teal | lime | red | pink | purple
 <GradientMonochromeButton color="pink" name="purple"/>
 </div>
 
-```svelte
+```html
 <GradientMonochromeButton color="blue" name="blue"/>
 <GradientMonochromeButton color="green" name="green"/>
 <GradientMonochromeButton color="cyan" name="cyan"/>
@@ -57,7 +57,7 @@ let color = "blue"; // green| cyan | teal | lime | red | pink | purple
 <GradientMonochromeButton color="pink" name="purple" textSize="text-xs"/>
 </div>
 
-```svelte
+```html
 <GradientMonochromeButton color="blue" name="blue" textSize="text-xs"/>
 <GradientMonochromeButton color="green" name="green" textSize="text-xs"/>
 <GradientMonochromeButton color="cyan" name="cyan" textSize="text-xs"/>
@@ -81,7 +81,7 @@ let color = "blue"; // green| cyan | teal | lime | red | pink | purple
 <GradientMonochromeButton color="pink" name="purple" textSize="text-base"/>
 </div>
 
-```svelte
+```html
 <GradientMonochromeButton color="blue" name="blue" textSize="text-base"/>
 <GradientMonochromeButton color="green" name="green" textSize="text-base"/>
 <GradientMonochromeButton color="cyan" name="cyan" textSize="text-base"/>

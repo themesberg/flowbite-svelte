@@ -62,7 +62,7 @@ layout: doc
 
 <h2 class="text-2xl w-full dark:text-white py-8">Interactive cards</h2>
 
-```svelte
+```html
 <InteractiveCard 
   {dropdownLinks} 
   {img} 

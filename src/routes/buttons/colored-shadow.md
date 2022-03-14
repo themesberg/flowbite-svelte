@@ -31,7 +31,7 @@ let color = "blue"; // 'blue' | 'green' | 'cyan' | 'teal' | 'lime' | 'red' | 'pi
 <ColorShadowButton color="purple" name="Purple" />
 </div>
 
-```svelte
+```html
 <ColorShadowButton color="blue" name="Blue" />
 <ColorShadowButton color="green" name="Green" />
 <ColorShadowButton color="cyan" name="Cyan" />
@@ -56,7 +56,7 @@ let color = "blue"; // 'blue' | 'green' | 'cyan' | 'teal' | 'lime' | 'red' | 'pi
 <ColorShadowButton color="purple" name="Purple" textSize="text-xs" />
 </div>
 
-```svelte
+```html
 <ColorShadowButton color="blue" name="Blue" textSize="text-xs"/>
 <ColorShadowButton color="green" name="Green" textSize="text-xs" />
 <ColorShadowButton color="cyan" name="Cyan" textSize="text-xs" />
@@ -80,7 +80,7 @@ let color = "blue"; // 'blue' | 'green' | 'cyan' | 'teal' | 'lime' | 'red' | 'pi
 <ColorShadowButton color="purple" name="Purple" textSize="text-base" />
 </div>
 
-```svelte
+```html
 <ColorShadowButton color="blue" name="Blue" textSize="text-base"/>
 <ColorShadowButton color="green" name="Green" textSize="text-base" />
 <ColorShadowButton color="cyan" name="Cyan" textSize="text-base" />

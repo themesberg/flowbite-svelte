@@ -20,7 +20,7 @@ layout: doc
 
 <p class="dark:text-white py-4 text-lg">Import Button in the script tag.</p>
 
-```svelte
+```html
 <script>
   import { Button } from "flowbite-svelte";
 </script>
@@ -30,7 +30,7 @@ layout: doc
 
 <p class="dark:text-white py-4 text-lg">You can use on:click to listen to the event. Add your event handler.</p>
 
-```svelte
+```html
 <script>
   import { Button } from "flowbite-svelte";
   import { goto }from '$app/navigation';

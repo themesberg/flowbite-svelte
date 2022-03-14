@@ -33,7 +33,7 @@ let buttonType = "blue-outline"; // blue-outline | dark-outline | light-outline|
   <Button name="Button text-xs" textSize="text-xs" buttonType="purple-outline" />
 </div>
 
-```svelte
+```html
 <Button name="Button text-xs" textSize="text-xs" buttonType="blue-outline" />
 <Button name="Button text-xs" textSize="text-xs" buttonType="dark-outline" />
 <Button name="Button text-xs" textSize="text-xs" buttonType="green-outline" />
@@ -54,7 +54,7 @@ let buttonType = "blue-outline"; // blue-outline | dark-outline | light-outline|
   <Button name="Button" buttonType="purple-outline" />
 </div>
 
-```svelte
+```html
 <Button name="Button" buttonType="blue-outline" />
 <Button name="Button" buttonType="dark-outline" />
 <Button name="Button" buttonType="green-outline" />
@@ -75,7 +75,7 @@ let buttonType = "blue-outline"; // blue-outline | dark-outline | light-outline|
 <Button name="Button" textSize="text-base" buttonType="purple-outline" />
 </div>
 
-```svelte
+```html
 <Button name="Button" textSize="text-base" buttonType="blue-outline" />
 <Button name="Button" textSize="text-base" buttonType="dark-outline" />
 <Button name="Button" textSize="text-base" buttonType="green-outline" />

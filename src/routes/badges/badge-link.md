@@ -10,7 +10,7 @@ layout: doc
 
 <h1 class="text-3xl w-full text-gray-900 dark:text-white py-8">Badges with link</h1>
 
-```svelte
+```html
 <script>
   import {BadgeLink} from 'flowbite-svelte'
   let link="/"
@@ -40,7 +40,7 @@ let link = "/";
 <BadgeLink name="Pink" color="pink" {link}/>
 </div>
 
-```svelte
+```html
 <BadgeLink name="Default" {link}/>
 <BadgeLink name="Gray" color="gray" {link}/>
 <BadgeLink name="Red" color="red" {link}/>
@@ -65,7 +65,7 @@ let link = "/";
 <BadgeLink name="Pink" color="pink" textSize="text-sm" {link}/>
 </div>
 
-```svelte
+```html
 <BadgeLink name="Default" textSize="text-sm" {link}/>
 <BadgeLink name="Gray" color="gray" textSize="text-sm" {link}/>
 <BadgeLink name="Red" color="red" textSize="text-sm" {link}/>
@@ -90,7 +90,7 @@ let link = "/";
 <BadgeLink name="Pink" color="pink" textSize="text-base" {link}/>
 </div>
 
-```svelte
+```html
 <BadgeLink name="Default" textSize="text-base" {link}/>
 <BadgeLink name="Gray" color="gray" textSize="text-base" {link}/>
 <BadgeLink name="Red" color="red" textSize="text-base" {link}/>

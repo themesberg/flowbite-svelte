@@ -21,7 +21,7 @@ layout: doc
 <SimpleFooter {links} {site} />
 </div>
 
-```svelte
+```html
 <script>
   import {SimpleFooter} from 'flowbite-svelte'
   let site = {

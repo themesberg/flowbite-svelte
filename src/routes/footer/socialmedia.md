@@ -73,7 +73,7 @@ let links = [
 <SocialMediaFooter {socialMedia} {links} {site}/>
 </div>
 
-```svelte
+```html
 <script>
   import {SocialMediaFooter} from 'flowbite-svelte'
   import {

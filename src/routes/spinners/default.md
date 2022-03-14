@@ -9,7 +9,7 @@ layout: doc
 <h1 class="text-3xl w-full dark:text-white py-8">Spinner</h1>
 
 
-```svelte
+```html
 <script>
   import { Spinner } from "flowbite-svelte";
 </script>
@@ -36,7 +36,7 @@ let align = 'align-left'; // text-left| text-center| text-right
 <Spinner color="purple" />
 </div>
 
-```svelte
+```html
 <Spinner />
 <Spinner color="gray" />
 <Spinner color="green" />
@@ -55,7 +55,7 @@ let align = 'align-left'; // text-left| text-center| text-right
 <Spinner size="w-16 h-16" />
 </div>
 
-```svelte
+```html
 <Spinner size="w-4 h-4"/>
 <Spinner size="w-6 h-6" />
 <Spinner size="w-8 h-8"/>
@@ -71,7 +71,7 @@ let align = 'align-left'; // text-left| text-center| text-right
 <Spinner align="text-right"/>
 </div>
 
-```svelte
+```html
 <Spinner align="text-left"/>
 <Spinner align="text-center" />
 <Spinner align="text-right"/>

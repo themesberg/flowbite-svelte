@@ -22,7 +22,7 @@ layout: doc
 
 <p class="dark:text-white text-base py-4">Import SignInModal, ModalButton components and set variables in the script tag.</p>
 
-```svelte
+```html
 import { SignInModal, ModalButton, modalIdStore } from "flowbite-svelte";
 
 let signinId = "signin-modal2";
@@ -42,7 +42,7 @@ let btnSignInColor = "blue";
 
 <p class="dark:text-white text-base py-4">Create a button and modal.</p>
 
-```svelte
+```html
 <ModalButton
   id={signinId}
   btnName={btnSignInName}

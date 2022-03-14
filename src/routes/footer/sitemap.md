@@ -99,7 +99,7 @@ layout: doc
 <SitemapFooter {socialMedia} {links} {site}/>
 </div>
 
-```svelte
+```html
 <script>
   import {SitemapFooter} from 'flowbite-svelte'
   import {

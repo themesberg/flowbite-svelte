@@ -70,7 +70,7 @@ layout: doc
   <InteractiveTabs tabId="myTab2" tabs={tabs2} />
 </div>
 
-```svelte
+```html
 <script>
   import { InteractiveTabs } from "flowbite-svelte";
 

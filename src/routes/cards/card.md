@@ -12,7 +12,7 @@ layout: doc
 
 <p class="dark:text-white py-4 text-lg">Import Card in the script tag.</p>
 
-```svelte
+```html
 <script>
   import { Card } from "flowbite-svelte";
 </script>
@@ -20,7 +20,7 @@ layout: doc
 
 <h2 class="text-2xl w-full dark:text-white py-8">Simple Card</h2>
 
-```svelte
+```html
 <Card header="Simple card with header and content">
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
 </Card>
@@ -36,7 +36,7 @@ layout: doc
 
 <h2 class="text-2xl w-full dark:text-white py-8">Card with Link</h2>
 
-```svelte
+```html
 <Card header="Card with link" link="/">
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
 </Card>
@@ -52,7 +52,7 @@ layout: doc
 
 <h2 class="text-2xl w-full dark:text-white py-8">Card with link and image</h2>
 
-```svelte
+```html
 <Card img="/images/image-1.jpeg" header="Card with link and image" link="/">
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
 </Card>
@@ -68,7 +68,7 @@ layout: doc
 
 <h2 class="text-2xl w-full dark:text-white py-8">Card with image</h2>
 
-```svelte
+```html
 <Card img="/images/image-2.jpeg" header="Card with image"
   >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
 </Card>
@@ -84,7 +84,7 @@ layout: doc
 
 <h2 class="text-2xl w-full dark:text-white py-8">Card with red button</h2>
 
-```svelte
+```html
 <Card
   img="/images/image-1.jpeg"
   header="Red button"
@@ -110,7 +110,7 @@ layout: doc
 
 <h2 class="text-2xl w-full dark:text-white py-8">Card with yellow button</h2>
 
-```svelte
+```html
 <Card
   img="/images/image-1.jpeg"
   header="Yellow button"
@@ -134,7 +134,7 @@ layout: doc
 
 <h2 class="text-2xl w-full dark:text-white py-8">Card with purple button</h2>
 
-```svelte
+```html
 <Card
   img="/images/image-1.jpeg"
   header="Purple button"

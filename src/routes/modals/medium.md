@@ -44,7 +44,7 @@ layout: doc
 
 <p class="dark:text-white py-4 text-lg">Import MediumModal, ModalButton, modalIdStor components and set variables in the script tag. Add `closeModal` method if you want to close the modal in a button.</p>
 
-```svelte
+```html
 <script>
   import { MediumModal, ModalButton, modalIdStore } from "flowbite-svelte";
 
@@ -89,7 +89,7 @@ layout: doc
 
 <p class="dark:text-white py-4 text-lg"> Create a button and modal.</p>
 
-```svelte
+```html
 <ModalButton {id} btnName={btnBasicName} />
 <MediumModal {id} title="Basic Modal Title">
   Basic Modal Content: Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -103,7 +103,7 @@ layout: doc
   <ModalButton id={id1} btnName={btnMName} {btnColor} />
 </div>
 
-```svelte
+```html
 <ModalButton id={id1} btnName={btnMName} {btnColor} />
 <MediumModal
   id={id1}
@@ -123,7 +123,7 @@ layout: doc
   <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
 </div>
 
-```svelte
+```html
 <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
 <MediumModal
   id={id2}

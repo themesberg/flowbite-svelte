@@ -10,7 +10,7 @@ layout: doc
 
 <h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
 
-```svelte
+```html
 <script>
   import { HorizontalCard } from "flowbite-svelte";
 </script>
@@ -18,7 +18,7 @@ layout: doc
 
 <h2 class="text-2xl w-full dark:text-white py-8">Horizontal Card</h2>
 
-```svelte
+```html
 <HorizontalCard
   img="/images/image-4.jpeg"
   header="Horizontal card"
@@ -40,7 +40,7 @@ layout: doc
   </HorizontalCard>
 </div>
 
-```svelte
+```html
 <HorizontalCard>
   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam sint.
 </HorizontalCard>
