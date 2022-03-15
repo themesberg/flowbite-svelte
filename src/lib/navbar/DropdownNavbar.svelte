@@ -21,21 +21,30 @@
 	export let alt: string;
 	export let textsize = 'text-sm';
 	export let menus: NavbarType[];
+	export let navClass = 'px-2 bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700';
+	const navDivClass = 'container flex flex-wrap justify-between items-center mx-auto';
+	export let spanClass =
+		'self-center text-lg font-semibold text-gray-900 whitespace-nowrap dark:text-white';
+	export let buttonClass =
+		'inline-flex justify-center items-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-500';
+	export let dropdownDiv =
+		'z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600';
+	export let dropdownLinkClassWithChild =
+		'block py-2 px-4 text-{textsize} text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white';
+	export let dropdownLinkClassWithoutChild =
+		'block py-2 pr-4 pl-3  text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent {textsize}';
 </script>
 
-<nav class="px-2 bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-	<div class="container flex flex-wrap justify-between items-center mx-auto">
+<nav class={navClass}>
+	<div class={navDivClass}>
 		<a href="/" class="flex">
 			<img src={logo} {alt} />
-			<span
-				class="self-center text-lg font-semibold text-gray-900 whitespace-nowrap dark:text-white"
-				>{sitename}</span
-			>
+			<span class={spanClass}>{sitename}</span>
 		</a>
 		<button
 			on:click={handleClickbtn}
 			type="button"
-			class="inline-flex justify-center items-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-500"
+			class={buttonClass}
 			aria-controls="mobile-menu-2"
 			aria-expanded="false"
 		>
@@ -89,18 +98,13 @@
 								<div
 									class:hidden
 									class:block
-									class="z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600"
+									class={dropdownDiv}
 									style="position: absolute; margin: 0px;"
 								>
 									<ul class="py-1" aria-labelledby="dropdownLargeButton">
 										{#each child as item}
 											<li>
-												<a
-													href={item.href}
-													{rel}
-													class="block py-2 px-4 text-{textsize} text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
-													>{item.name}</a
-												>
+												<a href={item.href} {rel} class={dropdownLinkClassWithChild}>{item.name}</a>
 											</li>
 										{/each}
 									</ul>
@@ -113,8 +117,7 @@
 								class:active={$page.url.pathname === href}
 								{href}
 								{rel}
-								class="block py-2 pr-4 pl-3  text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent {textsize}"
-								>{name}</a
+								class={dropdownLinkClassWithoutChild}>{name}</a
 							>
 						</li>
 					{/if}

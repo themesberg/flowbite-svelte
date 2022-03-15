@@ -24,7 +24,9 @@ layout: doc
   ];
 </script>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Navbar Default Props</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Default Props</h1>
+
+<h2 class="text-2xl w-full dark:text-white py-8">Navbar</h2>
 
 ```js
 let sitename = 'Svelte Flow';
@@ -33,12 +35,31 @@ let alt = 'Svelte Flow';
 let textsize = 'text-sm';
 let menus;
 let navClass = 'px-2 bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700';
-let navDivClass = 'container flex flex-wrap justify-between items-center mx-auto';
 let spanClass = 'self-center text-lg font-semibold text-gray-900 whitespace-nowrap dark:text-white';
 let buttonClass = 'inline-flex justify-center items-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-500';
 let liLinkClass = `block py-2 pr-4 pl-3  text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent ${textsize}`;
 ```
 
+<h2 class="text-2xl w-full dark:text-white py-8">Dropdown Navbar</h2>
+
+```js
+let sitename = 'Svelte Flow';
+let logo = '/images/mkdir-logo.png';
+let alt;
+let textsize = 'text-sm';
+let menus;
+let navClass = 'px-2 bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700';
+let spanClass =
+	'self-center text-lg font-semibold text-gray-900 whitespace-nowrap dark:text-white';
+let buttonClass =
+	'inline-flex justify-center items-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-500';
+let dropdownDiv =
+	'z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600';
+let dropdownLinkClassWithChild =
+	'block py-2 px-4 text-{textsize} text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white';
+let dropdownLinkClassWithoutChild =
+	'block py-2 pr-4 pl-3  text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent {textsize}';
+```
 
 <h2 class="text-2xl w-full dark:text-white py-8">Related components</h2>
 

@@ -12,7 +12,7 @@
 	};
 	export let menus: LinkType[];
 	export let navClass = 'px-2 bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700';
-	export let navDivClass = 'container flex flex-wrap justify-between items-center mx-auto';
+	const navDivClass = 'container flex flex-wrap justify-between items-center mx-auto';
 	export let spanClass =
 		'self-center text-lg font-semibold text-gray-900 whitespace-nowrap dark:text-white';
 	export let buttonClass =
