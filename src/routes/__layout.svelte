@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import { DarkMode, Badge, SocialMediaFooter } from '$lib/index';
-	import { Aside, Nav, SidebarList, Navbar } from '@codewithshin/svelte-sidebar';
+	import { Aside, Nav, SidebarList, Navbar, TopMenu } from '@codewithshin/svelte-sidebar';
 	import { GithubIcon, TwitterIcon } from '@codewithshin/svelte-simpleicons';
 	import {
 		accordions,
@@ -38,7 +38,7 @@
 	let siteClass = ' pt-1.5 pl-12 w-full';
 	let siteText = 'text-lg';
 	let topli =
-		'block py-2 pr-4 pl-3 text-gray-700 md:border-0  md:p-0 dark:text-gray-300  dark:hover:bg-gray-700  text-lg z-50 dark:bg-gray-800 dark:border-0 hover:bg-gray-100 bg-white';
+		'block py-2 pr-4 pl-3 text-gray-700 md:border-0 md:p-0 dark:text-gray-300  dark:hover:bg-gray-700 text-lg z-50  dark:bg-gray-800 dark:border-0 hover:bg-gray-100 bg-white';
 	let topMenuDiv = 'container flex flex-wrap justify-end items-center mx-auto dark:bg-gray-800';
 	let topul =
 		'flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium pt-1 dark:bg-gray-800 bg-white';
@@ -94,69 +94,61 @@
 	let copyrightYear = '';
 </script>
 
-<Navbar
-	{activeChildLi}
-	{childLi}
-	{headerClass}
-	{siteClass}
-	{siteName}
-	{siteText}
-	{topMenus}
-	{topMenuDiv}
-	{topul}
-	{topli}
-/>
+<Navbar {activeChildLi} {childLi} {headerClass} {siteClass} {siteName} {siteText}>
+	<TopMenu {topMenus} {topMenuDiv} {topul} {topli} {activeChildLi} {childLi} />
+</Navbar>
+
 <Aside {asideClass}>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4">
 			<a href="/" rel="external">Flowbite Svelte</a>
 		</h3>
-		{#each svelteflows as { url, name, rel }}
-			<SidebarList {url} {name} {rel} {sideBarListClass} />
+		{#each svelteflows as { href, name, rel }}
+			<SidebarList {href} {name} {rel} {sideBarListClass} />
 		{/each}
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4">
 			<a href="/accordions" rel="external">Accordions</a>
 		</h3>
-		{#each accordions as { url, name, rel }}
-			<SidebarList {url} {name} {rel} {sideBarListClass} />
+		{#each accordions as { href, name, rel }}
+			<SidebarList {href} {name} {rel} {sideBarListClass} />
 		{/each}
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4"><a href="/alerts" rel="external">Alerts</a></h3>
-		{#each alerts as { url, name, rel }}
-			<SidebarList {url} {name} {rel} {sideBarListClass} />
+		{#each alerts as { href, name, rel }}
+			<SidebarList {href} {name} {rel} {sideBarListClass} />
 		{/each}
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4">
 			<a href="/badges" rel="external">Badges <Badge name="NEW" /></a>
 		</h3>
-		{#each badges as { url, name, rel }}
-			<SidebarList {url} {name} {rel} {sideBarListClass} />
+		{#each badges as { href, name, rel }}
+			<SidebarList {href} {name} {rel} {sideBarListClass} />
 		{/each}
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4">
 			<a href="/button-groups" rel="external">Button groups <Badge name="NEW" /></a>
 		</h3>
-		{#each buttonGroups as { url, name, rel }}
-			<SidebarList {url} {name} {rel} {sideBarListClass} />
+		{#each buttonGroups as { href, name, rel }}
+			<SidebarList {href} {name} {rel} {sideBarListClass} />
 		{/each}
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4">
 			<a href="/buttons" rel="external">Buttons</a>
 		</h3>
-		{#each buttons as { url, name, rel }}
-			<SidebarList {url} {name} {rel} {sideBarListClass} />
+		{#each buttons as { href, name, rel }}
+			<SidebarList {href} {name} {rel} {sideBarListClass} />
 		{/each}
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4"><a href="/cards" rel="external">Cards</a></h3>
-		{#each cards as { url, name, rel }}
-			<SidebarList {url} {name} {rel} {sideBarListClass} />
+		{#each cards as { href, name, rel }}
+			<SidebarList {href} {name} {rel} {sideBarListClass} />
 		{/each}
 	</Nav>
 	<Nav {navClass} {navDivClass}>
@@ -173,16 +165,16 @@
 		<h3 class="text-base pb-4">
 			<a href="/footer" rel="external">Footer <Badge name="NEW" /></a>
 		</h3>
-		{#each footers as { url, name, rel }}
-			<SidebarList {url} {name} {rel} {sideBarListClass} />
+		{#each footers as { href, name, rel }}
+			<SidebarList {href} {name} {rel} {sideBarListClass} />
 		{/each}
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4">
 			<a href="/icons" rel="external">Icons <Badge name="NEW" /></a>
 		</h3>
-		{#each icons as { url, name, rel }}
-			<SidebarList {url} {name} {rel} {sideBarListClass} />
+		{#each icons as { href, name, rel }}
+			<SidebarList {href} {name} {rel} {sideBarListClass} />
 		{/each}
 	</Nav>
 	<Nav {navClass} {navDivClass}>
@@ -192,36 +184,36 @@
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4"><a href="/modals" rel="external">Modals</a></h3>
-		{#each modals as { url, name, rel }}
-			<SidebarList {url} {name} {rel} {sideBarListClass} />
+		{#each modals as { href, name, rel }}
+			<SidebarList {href} {name} {rel} {sideBarListClass} />
 		{/each}
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4"><a href="/navbars" rel="external">Navbar</a></h3>
-		{#each navbar as { url, name, rel }}
-			<SidebarList {url} {name} {rel} {sideBarListClass} />
+		{#each navbar as { href, name, rel }}
+			<SidebarList {href} {name} {rel} {sideBarListClass} />
 		{/each}
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4">
 			<a href="/spinners" rel="external">Spinners <Badge name="NEW" /></a>
 		</h3>
-		{#each spinners as { url, name, rel }}
-			<SidebarList {url} {name} {rel} {sideBarListClass} />
+		{#each spinners as { href, name, rel }}
+			<SidebarList {href} {name} {rel} {sideBarListClass} />
 		{/each}
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4"><a href="/tabs" rel="external">Tabs</a></h3>
-		{#each tabs as { url, name, rel }}
-			<SidebarList {url} {name} {rel} {sideBarListClass} />
+		{#each tabs as { href, name, rel }}
+			<SidebarList {href} {name} {rel} {sideBarListClass} />
 		{/each}
 	</Nav>
 	<Nav {navClass} navDivClass={navDivClasslast}>
 		<h3 class="text-base pb-4">
 			<a href="/tooltips" rel="external">Tooltips <Badge name="NEW" /></a>
 		</h3>
-		{#each tooltips as { url, name, rel }}
-			<SidebarList {url} {name} {rel} {sideBarListClass} />
+		{#each tooltips as { href, name, rel }}
+			<SidebarList {href} {name} {rel} {sideBarListClass} />
 		{/each}
 	</Nav>
 </Aside>
