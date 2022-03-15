@@ -29,10 +29,9 @@
 		'inline-flex justify-center items-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-500';
 	export let dropdownDiv =
 		'z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600';
-	export let dropdownLinkClassWithChild =
-		'block py-2 px-4 text-{textsize} text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white';
-	export let dropdownLinkClassWithoutChild =
-		'block py-2 pr-4 pl-3  text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent {textsize}';
+	export let dropdownLinkClassWithChild = `block py-2 px-4 ${textsize} text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white`;
+	export let dropdownLinkClassWithoutChild = `block py-2 pr-4 pl-3  text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent ${textsize}`;
+	export let liButtonClass = `flex justify-between items-center py-2 pr-4 pl-3 w-full ${textsize} font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent`;
 </script>
 
 <nav class={navClass}>
@@ -77,9 +76,7 @@
 				{#each menus as { id, name, href, rel, child }}
 					{#if child}
 						<li>
-							<button
-								on:click={() => handleDropdown(id)}
-								class="flex justify-between items-center py-2 pr-4 pl-3 w-full {textsize} font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+							<button on:click={() => handleDropdown(id)} class={liButtonClass}
 								>{name}
 								<svg
 									class="ml-1 w-4 h-4"

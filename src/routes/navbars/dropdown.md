@@ -9,32 +9,27 @@ layout: doc
     {
       id: 1,
       name: "Home",
-      href: "/",
-      rel: "",
+      href: "/"
     },
     {
       id: 2,
       name: "Cards",
       href: "/cards",
-      rel: "",
       child: [
         {
           id: 3,
           name: "Card",
           href: "/cards/card",
-          rel: "",
         },
         {
           id: 4,
           name: "CTA Card",
           href: "/cards/cta",
-          rel: "",
         },
         {
           id: 5,
           name: "Ecommerce Card",
           href: "/cards/ecommerce",
-          rel: "",
         },
       ],
     },
@@ -42,19 +37,16 @@ layout: doc
       id: 6,
       name: "Modals",
       href: "/",
-      rel: "",
       child: [
         {
           id: 7,
           name: "Small",
           href: "/modals/small",
-          rel: "",
         },
         {
           id: 8,
           name: "Medium",
           href: "/modals/medium",
-          rel: "",
         },
       ],
     },
