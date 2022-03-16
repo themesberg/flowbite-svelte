@@ -52,6 +52,10 @@ let color = "blue"; // blue|dark|light|green|green-outline|red|red-outline|yello
 <Dropdown {items}/>
 </div>
 
+```html
+<Dropdown items={items} />
+```
+
 <h2 class="text-2xl w-full dark:text-white py-8">Dropdown divider</h2>
 
 <div class="container rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -60,7 +64,7 @@ let color = "blue"; // blue|dark|light|green|green-outline|red|red-outline|yello
 
 ```html
 <script>
- let items2 = [
+ let items = [
     {
       href: "/",
       name: "Dashboard",
@@ -77,7 +81,7 @@ let color = "blue"; // blue|dark|light|green|green-outline|red|red-outline|yello
   ];
 </script>
 
-<Dropdown items={items2} color="red"/>
+<Dropdown {items} color="red"/>
 
 ```
 
