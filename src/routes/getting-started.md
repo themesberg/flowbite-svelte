@@ -6,7 +6,7 @@ layout: doc
 <h2 class="text-xl w-full mt-8 dark:text-white">Installation</h2>
 <p class="dark:text-white py-4 text-lg">Install SvelteKit:</p>
 
-```sh
+```bash
 npm init svelte@next sveltekit-demo 
 cd sveltekit-demo
 npm install 
@@ -14,13 +14,13 @@ npm install
 
 <p class="dark:text-white py-4 text-lg">Install Tailwind CSS:</p>
 
-```sh
+```bash
 npx svelte-add@latest tailwindcss
 ```
 
 <p class="dark:text-white py-4 text-lg">Run it:</p>
 
-```sh
+```bash
 npm run dev
 ```
 
@@ -30,10 +30,10 @@ npm run dev
 npm i -D svelte-preprocess   
 ```
 
-<p class="dark:text-white py-4 text-lg">Install flowbite-svelte:</p>
+<p class="dark:text-white py-4 text-lg">Install flowbite and flowbite-svelte:</p>
 
 ```sh
-npm i -D flowbite-svelte
+npm i -D flowbite flowbite-svelte
 ```
 
 <p class="dark:text-white py-4 text-lg">Update tailwind.config.cjs:</p>
