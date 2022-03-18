@@ -11,7 +11,7 @@ layout: doc
 import { DarkMode } from "flowbite-svelte";
 </script>
 
-<Darkmode />
+<DarkMode />
 ```
 
 <p class="dark:text-white py-4 text-lg">The default value of btnClass is:</p>
@@ -24,12 +24,12 @@ let btnClass = "text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg
 
 ```html
 <script>
-import { Darkmode } from "flowbite-svelte";
+import { DarkMode } from "flowbite-svelte";
 
 let btnClass="Add your class here"
 </script>
 
-<Darkmode {btnClass} />
+<DarkMode {btnClass} />
 ```
 
 <p class="dark:text-white py-4 text-lg">Add the following to the body tag:</p>
