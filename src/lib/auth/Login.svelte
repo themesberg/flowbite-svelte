@@ -8,22 +8,10 @@
 	export let signup: LinkType = undefined;
 	export let lostPassword: LinkType = undefined;
 	export let error: string = '';
+	export let submitText = 'Login to your account';
 
 	let submitClass: string;
-	export let fields: AuthFieldType[] = [
-		{
-			label: 'email',
-			fieldtype: 'email',
-			required: true,
-			placeholder: 'Your email'
-		},
-		{
-			label: 'password',
-			fieldtype: 'password',
-			required: true,
-			placeholder: 'Your password'
-		}
-	];
+	export let fields: AuthFieldType[];
 
 	if (btnSignInColor === 'blue') {
 		submitClass =
@@ -110,7 +98,7 @@
 				</Alert>
 			</div>
 		{/if}
-		<button type="submit" class={submitClass}>Login to your account</button>
+		<button type="submit" class={submitClass}>{submitText}</button>
 		{#if signup}
 			<div class="text-sm font-medium text-gray-500 dark:text-gray-300">
 				Not registered? <a

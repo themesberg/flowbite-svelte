@@ -26,10 +26,10 @@ layout: doc
 	];
 	let loginfield = [
 		{
-			label: 'email',
-			fieldtype: 'email',
+			label: 'username',
+			fieldtype: 'text',
 			required: true,
-			placeholder: 'Your email'
+			placeholder: 'Username'
 		},
 		{
 			label: 'password',
