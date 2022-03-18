@@ -41,6 +41,12 @@ let btnClass="Add your class here"
 </body>
 ```
 
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
+
+```js
+let btnClass = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 fixed left-0 top-8 z-50';
+```
+
 <h2 class="text-2xl w-full dark:text-white py-8">How to change Dark mode color</h2>
 
 <p class="dark:text-white text-lg w-full"><a href="https://flowbite.com/docs/customize/dark-mode/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Find the name of the color from hex color code.</a></p>
