@@ -14,7 +14,7 @@ import { DarkMode } from "flowbite-svelte";
 <DarkMode />
 ```
 
-<p class="dark:text-white py-4 text-lg">The default value of btnClass is:</p>
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
 ```js
 let btnClass = "text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 fixed left-2 top-16 z-50"
@@ -39,12 +39,6 @@ let btnClass="Add your class here"
 <body class="bg-white dark:bg-gray-800">
 	<div>%svelte.body%</div>
 </body>
-```
-
-<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
-
-```js
-let btnClass = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 fixed left-0 top-8 z-50';
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">How to change Dark mode color</h2>
