@@ -2,7 +2,7 @@
 	import { getContext } from 'svelte';
 	import collapse from 'svelte-collapse';
 	import { ChevronDownIconSolid, ChevronUpIconSolid } from '@codewithshin/svelte-heroicons';
-	export let id: string;
+	export let id: string = '';
 	const store = getContext('svelte-collapsible-accordion');
 	$: params = {
 		open: $store.id === id,

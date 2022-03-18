@@ -1,8 +1,8 @@
 <script lang="ts">
-	export let link: string;
-	export let rel: string;
+	export let link: string = '';
+	export let rel: string = '';
 	export let img = '/images/image-4.jpeg';
-	export let alt: string;
+	export let alt: string = '';
 	export let header = 'Lorem ipsum dolor sit ametit.';
 </script>
 

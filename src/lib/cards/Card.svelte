@@ -1,12 +1,14 @@
 <script lang="ts">
 	import type { Colors } from '../types';
-	export let link: string;
-	export let rel: string;
-	export let alt: string;
-	export let img: string;
+	export let link: string = '';
+	export let rel: string = '';
+	export let alt: string = '';
+	export let img: string = '';
 	export let btnLabel: string = 'Read more';
 	export let btnColor: Colors = 'blue';
 	export let header: string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+	export let divClass =
+		'max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700';
 	let buttonClass: string;
 	if (btnColor === 'blue') {
 		buttonClass =
@@ -38,9 +40,7 @@
 	}
 </script>
 
-<div
-	class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
->
+<div class={divClass}>
 	{#if img}
 		<a href={link} {rel}>
 			<img class="rounded-t-lg" src={img} {alt} />

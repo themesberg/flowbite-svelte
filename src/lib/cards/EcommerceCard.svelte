@@ -6,7 +6,7 @@
 	};
 	export let link: string = '/';
 	export let btnColor: Colors = 'blue';
-	export let rel: string;
+	export let rel: string = '';
 	export let title: string = 'Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport';
 	export let stars: number = 5;
 	export let price = '$555';
