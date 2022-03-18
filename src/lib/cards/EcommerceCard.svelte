@@ -10,6 +10,8 @@
 	export let title: string = 'Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport';
 	export let stars: number = 5;
 	export let price = '$555';
+	export let divClass =
+		'max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700';
 	let spanClass: string;
 	let linkClass: string;
 	if (btnColor === 'blue') {
@@ -60,7 +62,7 @@
 	}
 </script>
 
-<div class="max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+<div class={divClass}>
 	<a href={link} {rel}>
 		<img class="p-8 rounded-t-lg" src={img.src} alt={img.alt} />
 	</a>

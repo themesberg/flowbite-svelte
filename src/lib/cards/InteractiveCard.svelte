@@ -12,6 +12,8 @@
 	export let buttonColor = 'blue';
 	export let link1: LinkType;
 	export let link2: LinkType;
+	export let divClass =
+		'max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700';
 	let linkClass: string;
 	if (buttonColor === 'blue') {
 		linkClass =
@@ -43,9 +45,7 @@
 	}
 </script>
 
-<div
-	class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
->
+<div class={divClass}>
 	<div class="flex justify-end px-4 pt-4">
 		<button
 			id="dropdownButton"

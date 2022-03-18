@@ -4,6 +4,8 @@
 	export let title: string = 'Work fast from anywhere';
 	export let headColor: Colors = 'gray';
 	export let btns: CardButtonType[];
+	export let divClass =
+		'p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700';
 	let headClass: string;
 	if (headColor === 'blue') {
 		headClass = 'mb-2 text-3xl font-bold text-blue-900 dark:text-white';
@@ -26,9 +28,7 @@
 	}
 </script>
 
-<div
-	class="p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700"
->
+<div class={divClass}>
 	<h3 class={headClass}>
 		{title}
 	</h3>
