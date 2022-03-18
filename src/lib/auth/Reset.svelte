@@ -1,12 +1,12 @@
 <script lang="ts">
 	import type { AuthFunctionType, LinkType } from '../types';
 	import { Alert } from '../index';
-	export let resetpw: AuthFunctionType;
-	export let password: string;
-	export let email: string;
-	export let confirmpw: string;
-	export let error: string;
-	export let message: string;
+	export let resetpw: AuthFunctionType = undefined;
+	export let password: string = '';
+	export let email: string = '';
+	export let confirmpw: string = '';
+	export let error: string = '';
+	export let message: string = '';
 </script>
 
 <div

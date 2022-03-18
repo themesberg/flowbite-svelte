@@ -1,17 +1,29 @@
 <script lang="ts">
-	import type { AuthFunctionType, LinkType } from '../types';
+	import type { AuthFunctionType, LinkType, AuthFieldType } from '../types';
 	import { Alert } from '../index';
-	export let login: AuthFunctionType;
+	export let login: AuthFunctionType = undefined;
 	export let title = 'Sign in';
 	export let btnSignInColor = 'blue';
 	export let rememberMe = false;
-	export let signup: LinkType;
-	export let lostPassword: LinkType;
-	export let email: string;
-	export let password: string;
-	export let error: string;
+	export let signup: LinkType = undefined;
+	export let lostPassword: LinkType = undefined;
+	export let error: string = '';
 
 	let submitClass: string;
+	export let fields: AuthFieldType[] = [
+		{
+			label: 'email',
+			fieldtype: 'email',
+			required: true,
+			placeholder: 'Your email'
+		},
+		{
+			label: 'password',
+			fieldtype: 'password',
+			required: true,
+			placeholder: 'Your password'
+		}
+	];
 
 	if (btnSignInColor === 'blue') {
 		submitClass =
@@ -48,41 +60,29 @@
 >
 	<form class="space-y-6" on:submit|preventDefault={login}>
 		<h3 class="text-xl font-medium text-gray-900 dark:text-white">{title}</h3>
-		<div>
-			<label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-				>Email</label
-			>
-			<input
-				type="email"
-				name="email"
-				id="email"
-				bind:value={email}
-				class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-				placeholder="name@company.com"
-				required
-			/>
-		</div>
-		<div>
-			<label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-				>Your password</label
-			>
-			<input
-				type="password"
-				name="password"
-				id="password"
-				placeholder="••••••••"
-				bind:value={password}
-				class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-				required
-			/>
-		</div>
+		{#each fields as field}
+			<div>
+				<label
+					for={field.label}
+					class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+					>{field.label}</label
+				>
+				<input
+					type={field.fieldtype}
+					name={field.label}
+					id={field.label}
+					class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+					placeholder={field.placeholder}
+					required={field.required}
+				/>
+			</div>
+		{/each}
 		<div class="flex items-start">
 			{#if rememberMe}
 				<div class="flex items-start">
 					<div class="flex items-center h-5">
 						<input
 							id="remember"
-							aria-describedby="remember"
 							type="checkbox"
 							class="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
 						/>

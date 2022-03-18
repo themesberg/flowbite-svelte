@@ -1,11 +1,11 @@
 <script lang="ts">
 	import type { AuthFunctionType } from '../types';
 	import { Alert } from '../index';
-	export let forgot: AuthFunctionType;
-	export let email: string;
-	export let error: string;
-	export let message: string;
-	export let data: string;
+	export let forgot: AuthFunctionType = undefined;
+	export let email: string = '';
+	export let error: string = '';
+	export let message: string = '';
+	export let data: string = '';
 </script>
 
 <div

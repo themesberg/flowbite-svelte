@@ -98,3 +98,10 @@ export interface ListCardType {
 export type AuthFunctionType = () => Promise<string>;
 
 export type ButtonType = 'button' | 'submit' | 'reset'
+
+export interface AuthFieldType {
+    label: string;
+    fieldtype: string;
+    required?: boolean;
+    placeholder?: string;
+}

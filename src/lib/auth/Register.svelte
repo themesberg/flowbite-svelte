@@ -1,16 +1,40 @@
 <script lang="ts">
-	import type { AuthFunctionType, LinkType } from '../types';
+	import type { AuthFunctionType, LinkType, AuthFieldType } from '../types';
 	import { Alert } from '../index';
-	export let register: AuthFunctionType;
-	export let error: string;
-	export let login: LinkType;
-	export let rememberMe: boolean;
-	export let lostPassword: LinkType;
-	export let message: string;
+	export let register: AuthFunctionType = undefined;
+	export let error: string = '';
+	export let login: LinkType = undefined;
+	export let rememberMe: boolean = false;
+	export let lostPassword: LinkType = undefined;
+	export let message: string = '';
 	// Variables bound to respective inputs via bind:value
-	export let email: string;
-	export let password: string;
-	export let name: string;
+	// export let email: string = 'email';
+	// export let password: string = '';
+	// export let name: string = '';
+	//
+	// export let nameField: string = 'username';
+
+	// field names password, name, email
+	export let fields: AuthFieldType[] = [
+		{
+			label: 'name',
+			fieldtype: 'text',
+			required: true,
+			placeholder: 'Your name'
+		},
+		{
+			label: 'email',
+			fieldtype: 'email',
+			required: true,
+			placeholder: 'Your email'
+		},
+		{
+			label: 'password',
+			fieldtype: 'password',
+			required: true,
+			placeholder: 'Your password'
+		}
+	];
 </script>
 
 <div
@@ -28,45 +52,22 @@
 			<a class="back" href="/"><i class="bi bi-arrow-left dark:text-white" /></a>
 			<h3 class="text-xl font-medium text-gray-900 dark:text-white">Register</h3>
 		</div>
-		<div>
-			<label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-				>Name</label
-			>
-			<input
-				type="text"
-				required
-				name="name"
-				placeholder="Enter your name"
-				class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-				bind:value={name}
-			/>
-		</div>
-		<div>
-			<label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-				>Email</label
-			>
-			<input
-				type="email"
-				required
-				name="email"
-				placeholder="Enter your email"
-				class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-				bind:value={email}
-			/>
-		</div>
-		<div>
-			<label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-				>Your password</label
-			>
-			<input
-				type="password"
-				required
-				name="password"
-				placeholder="Enter your password"
-				class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-				bind:value={password}
-			/>
-		</div>
+		{#each fields as field}
+			<div>
+				<label
+					for={field.label}
+					class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+					>{field.label}</label
+				>
+				<input
+					type={field.fieldtype}
+					required={field.required}
+					name={field.label}
+					placeholder={field.placeholder}
+					class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+				/>
+			</div>
+		{/each}
 		{#if error}
 			<div class="mt-6">
 				<Alert alertId="alert-green" color="red" closeBtn>
