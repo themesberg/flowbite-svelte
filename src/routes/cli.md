@@ -2,7 +2,7 @@
 layout: doc
 ---
 
-<h1 class="text-3xl w-full dark:text-white">Flowbite-Svelte-CLI (sfc)</h1>
+<h1 class="text-3xl w-full dark:text-white">Flowbite-Svelte-CLI (fsc)</h1>
 
 <p class="dark:text-white py-4 text-lg">This a Shell script CLI allows you to find compoent default props from your command line.</p>
 
