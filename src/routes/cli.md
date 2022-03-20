@@ -50,7 +50,7 @@ awesome install shinokada/fsc
 fsc
 ```
 
-<img src="/static/images/fsc.png" alt="fsc list" />
+<img src="/images/fsc.png" alt="fsc list" />
 
 <h3 class="text-xl w-full dark:text-white py-8">List component props</h3>
 
@@ -60,7 +60,7 @@ fsc
 fsc navbar
 ```
 
-<img src="/static/images/fsc-component.png" alt="fsc component" />
+<img src="/images/fsc-component.png" alt="fsc component" />
 
 <h2 class="text-2xl w-full dark:text-white py-8">Related topics</h2>
 
