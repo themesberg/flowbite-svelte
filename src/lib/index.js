@@ -1,150 +1,86 @@
 // Accordion
-import Accordion from './accordions/AccordionDefault.svelte'
-import AccordionItem from './accordions/AccordionItem.svelte'
+export { default as Accordion }  from'./accordions/AccordionDefault.svelte'
+export { default as AccordionItem }  from'./accordions/AccordionItem.svelte'
 
 // Alerts
-import Alert from './alerts/Alert.svelte'
-import BorderAlert from './alerts/BorderAlert.svelte'
-import InfoAlert from './alerts/InfoAlert.svelte'
+export { default as Alert }  from'./alerts/Alert.svelte'
+export { default as BorderAlert }  from'./alerts/BorderAlert.svelte'
+export { default as InfoAlert }   from'./alerts/InfoAlert.svelte'
 
 // Auth
-import Confirm from './auth/Confirm.svelte'
-import ForgotPassword from './auth/ForgotPassword.svelte'
-import Login from './auth/Login.svelte'
-import Register from './auth/Register.svelte'
-import Reset from './auth/Reset.svelte'
+export { default as Confirm } from'./auth/Confirm.svelte'
+export { default as ForgotPassword } from'./auth/ForgotPassword.svelte'
+export { default as Login } from'./auth/Login.svelte'
+export { default as Register } from'./auth/Register.svelte'
+export { default as Reset } from'./auth/Reset.svelte'
 
 // Badges
-import Badge from './badges/Badge.svelte'
-import BadgeIcon from './badges/BadgeIcon.svelte'
-import BadgeLink from './badges/BadgeLink.svelte'
+export { default as Badge } from'./badges/Badge.svelte'
+export { default as BadgeIcon } from'./badges/BadgeIcon.svelte'
+export { default as BadgeLink } from'./badges/BadgeLink.svelte'
 
 // Buttons
-import Button from './buttons/Button.svelte'
-import ColorShadowButton from './buttons/ColorShadowButton.svelte'
-import GradientDuotoneButton from './buttons/GradientDuotoneButton.svelte'
-import GradientMonochromeButton from './buttons/GradientMonochromeButton.svelte'
-import GradientOutlineButton from './buttons/GradientOutlineButton.svelte'
+export { default as Button } from'./buttons/Button.svelte'
+export { default as ColorShadowButton } from'./buttons/ColorShadowButton.svelte'
+export { default as GradientDuotoneButton } from'./buttons/GradientDuotoneButton.svelte'
+export { default as GradientMonochromeButton } from'./buttons/GradientMonochromeButton.svelte'
+export { default as GradientOutlineButton } from'./buttons/GradientOutlineButton.svelte'
 
 // Buttongroups
-import ButtonGroup from './buttongroups/ButtonGroup.svelte'
-import ButtonGroupOutline from './buttongroups/ButtonGroupOutline.svelte'
+export { default as ButtonGroup } from'./buttongroups/ButtonGroup.svelte'
+export { default as ButtonGroupOutline } from'./buttongroups/ButtonGroupOutline.svelte'
 
 // Cards
-import Card from './cards/Card.svelte'
-import HorizontalCard from './cards/HorizontalCard.svelte'
-import InteractiveCard from './cards/InteractiveCard.svelte'
-import ListCard from './cards/ListCard.svelte'
-import CtaCard from './cards/CtaCard.svelte'
-import EcommerceCard from './cards/EcommerceCard.svelte'
-import SignInCard from './cards/SignInCard.svelte'
+export { default as Card } from'./cards/Card.svelte'
+export { default as HorizontalCard } from'./cards/HorizontalCard.svelte'
+export { default as InteractiveCard } from'./cards/InteractiveCard.svelte'
+export { default as ListCard } from'./cards/ListCard.svelte'
+export { default as CtaCard } from'./cards/CtaCard.svelte'
+export { default as EcommerceCard } from'./cards/EcommerceCard.svelte'
+export { default as SignInCard } from'./cards/SignInCard.svelte'
 
 // Dark mode
-import DarkMode from './darkmode/DarkMode.svelte'
+export { default as DarkMode } from'./darkmode/DarkMode.svelte'
 
 // Dropdown
-import Dropdown from './dropdowns/DropdownDefault.svelte' 
+export { default as Dropdown } from'./dropdowns/DropdownDefault.svelte' 
 
 // Footers
-import SimpleFooter from './footer/SimpleFooter.svelte'
-import LogoFooter from './footer/LogoFooter.svelte'
-import SocialMediaFooter from './footer/SocialMediaFooter.svelte'
-import SitemapFooter from './footer/SitemapFooter.svelte'
+export { default as SimpleFooter } from'./footer/SimpleFooter.svelte'
+export { default as LogoFooter } from'./footer/LogoFooter.svelte'
+export { default as SocialMediaFooter } from'./footer/SocialMediaFooter.svelte'
+export { default as SitemapFooter } from './footer/SitemapFooter.svelte'
+
+// Forms
+export { default as Toggle } from './forms/Toggle.svelte'
+export { default as Select } from './forms/Select.svelte'
+export {default as Textarea} from './forms/Textarea.svelte'
 
 // List
-import List from './list-group/List.svelte'
+export { default as List } from'./list-group/List.svelte'
 
 // Modals
-import { modalIdStore } from './modals/modalStores'
-import ExtraLargeModal from './modals/ExtraLargeModal.svelte'
-import LargeModal from './modals/LargeModal.svelte'
-import MediumModal from './modals/MediumModal.svelte'
-import ModalButton from './modals/ModalButton.svelte'
-import SignInModal from './modals/SignInModal.svelte'
-import SmallModal from './modals/SmallModal.svelte'
+export { default as  modalIdStore } from'./modals/modalStores'
+export { default as ExtraLargeModal } from'./modals/ExtraLargeModal.svelte'
+export { default as LargeModal } from'./modals/LargeModal.svelte'
+export { default as MediumModal } from'./modals/MediumModal.svelte'
+export { default as ModalButton } from'./modals/ModalButton.svelte'
+export { default as SignInModal } from'./modals/SignInModal.svelte'
+export { default as SmallModal } from'./modals/SmallModal.svelte'
 
 // Navbar
-import Navbar from './navbar/Navbar.svelte'
-import DropdownNavbar from './navbar/DropdownNavbar.svelte'
+export { default as Navbar } from'./navbar/Navbar.svelte'
+export { default as DropdownNavbar } from'./navbar/DropdownNavbar.svelte'
 
 // Spin
-import Spinner from './spinners/Spinner.svelte'
-import SpinnerButton from './spinners/SpinnerButton.svelte'
+export { default as Spinner } from'./spinners/Spinner.svelte'
+export { default as SpinnerButton } from'./spinners/SpinnerButton.svelte'
 
 // Tabs
-import InteractiveTabs from './tabs/InteractiveTabs.svelte'
-import DefaultTabs from './tabs/DefaultTabs.svelte'
-import PillTabs from './tabs/PillTabs.svelte'
+export { default as InteractiveTabs } from'./tabs/InteractiveTabs.svelte'
+export { default as DefaultTabs } from'./tabs/DefaultTabs.svelte'
+export { default as PillTabs } from'./tabs/PillTabs.svelte'
 
 // Tooltips
-import Tooltip from './tooltips/Tooltip.svelte'
-import LightTooltip from './tooltips/LightTooltip.svelte'
-
-export {
-  // Accordions
-  Accordion,
-  AccordionItem,
-  // alerts
-  Alert,
-  BorderAlert,
-  InfoAlert,
-  // auth
-  Confirm,
-  ForgotPassword,
-  Login,
-  Register,
-  Reset,
-  // Badges
-  Badge,
-  BadgeIcon,
-  BadgeLink,
-  // Buttons
-  Button,
-  ColorShadowButton,
-  GradientDuotoneButton,
-  GradientMonochromeButton,
-  GradientOutlineButton,
-  // Buttongroup
-  ButtonGroup,
-  ButtonGroupOutline,
-  // cards
-  Card,
-  HorizontalCard,
-  InteractiveCard,
-  ListCard,
-  CtaCard,
-  EcommerceCard,
-  SignInCard,
-  // darkmode
-  DarkMode,
-  // dropdowns
-  Dropdown,
-  // footers
-  SimpleFooter,
-  LogoFooter,
-  SocialMediaFooter,
-  SitemapFooter,
-  // list
-  List,
-  // Modals
-  modalIdStore,
-  ExtraLargeModal,
-  LargeModal,
-  MediumModal,
-  ModalButton,
-  SignInModal,
-  SmallModal,
-  // Navbar
-  Navbar,
-  DropdownNavbar,
-  // Spin
-  Spinner,
-  SpinnerButton,
-  // Tabs
-  InteractiveTabs,
-  DefaultTabs,
-  PillTabs,
-  // Tooltips
-  Tooltip,
-  LightTooltip,
-}
+export { default as Tooltip } from'./tooltips/Tooltip.svelte'
+export { default as LightTooltip } from'./tooltips/LightTooltip.svelte'
