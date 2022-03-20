@@ -4,7 +4,7 @@ layout: doc
 
 <h1 class="text-3xl w-full dark:text-white">Flowbite-Svelte-CLI (fsc)</h1>
 
-<p class="dark:text-white py-4 text-lg">This a Shell script CLI allows you to find compoent default props from your command line.</p>
+<p class="dark:text-white py-4 text-lg">This a Shell script CLI that allows you to find compoent default props from your command line.</p>
 
 <h2 class="text-2xl w-full mt-8 dark:text-white">Installation</h2>
 
@@ -16,7 +16,7 @@ brew install fsc
 ```
 
 <h3 class="text-xl w-full mt-8 dark:text-white">Awesome Package Manager</h3>
-<p class="dark:text-white py-4 text-lg"><a href="https://github.com/shinokada/awesome">The Awesome package manager</a> is a simple shell script package manager. Awesome installs a shell script package from a GitHub repo on your macOS/Linux.</p>
+<p class="dark:text-white py-4 text-lg"><a href="https://github.com/shinokada/awesome" class="text-blue-600 hover:underline dark:text-blue-500">The Awesome package manager</a> is a simple shell script package manager. Awesome installs a shell script package from a GitHub repo on your macOS/Linux.</p>
 
 <p class="dark:text-white py-4 text-lg">Let's install the Awesome package manager:</p>
 
