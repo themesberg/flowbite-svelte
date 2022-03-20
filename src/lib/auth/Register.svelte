@@ -1,6 +1,9 @@
 <script lang="ts">
 	import type { AuthFunctionType, LinkType, AuthFieldType } from '../types';
 	import { Alert } from '../index';
+	import { createEventDispatcher } from 'svelte';
+	const dispatch = createEventDispatcher();
+
 	export let register: AuthFunctionType = undefined;
 	export let error: string = '';
 	export let login: LinkType = undefined;
