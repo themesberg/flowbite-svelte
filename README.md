@@ -38,6 +38,10 @@
 
 [Dropdowns](https://flowbite-svelte.vercel.app/dropdowns)
 
+## Form components
+
+[Forms](https://flowbite-svelte.vercel.app/forms)
+
 ## Footer
 
 [Footer](https://flowbite-svelte.vercel.app/footer)

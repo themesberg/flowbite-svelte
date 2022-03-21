@@ -123,6 +123,26 @@
 	</div>
 	<div class="p-4">
 		<Card
+			img="/images/forms.webp"
+			alt="Forms"
+			header="FORMS"
+			link="/forms"
+			btnColor="indigo"
+			btnLabel="Go to Forms"
+		/>
+	</div>
+	<div class="p-4">
+		<Card
+			img="/images/footer.webp"
+			alt="Footer"
+			header="FOOTERS"
+			link="/footer"
+			btnColor="blue"
+			btnLabel="Go to Footers"
+		/>
+	</div>
+	<div class="p-4">
+		<Card
 			img="/images/icons.webp"
 			alt="Icons"
 			header="ICONS"
@@ -177,6 +197,16 @@
 			link="/tabs"
 			btnColor="red"
 			btnLabel="Go to Tabs"
+		/>
+	</div>
+	<div class="p-4">
+		<Card
+			img="/images/tooltips.webp"
+			alt="Tooltips"
+			header="TOOLTIPS"
+			link="/tooltips"
+			btnColor="blue"
+			btnLabel="Go to Tooltips"
 		/>
 	</div>
 </div>
