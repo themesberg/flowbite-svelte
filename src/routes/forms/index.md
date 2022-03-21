@@ -264,7 +264,7 @@ let iconClass = 'h-4 w-4 mr-2';
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Iconinput id="email" type="email" name="email" placeholder="Your email" label="Border" icon={AtSymbolIconSolid} iconClass="h-4 w-4 mr-2 text-blue-500"/>
 <div class="py-4">
-<Iconinput noBorder label="No border" icon={MailIconOutline} iconClass="h-4 w-4 mr-2 text-blue-500"/>
+<Iconinput noBorder id="email" type="email" name="email" label="No border" icon={MailIconOutline} iconClass="h-4 w-4 mr-2 text-blue-500"/>
 </div>
 </div>
 
@@ -273,9 +273,9 @@ let iconClass = 'h-4 w-4 mr-2';
   import { Iconinput } from 'flowbite-svelte'
 </script>
 
-<Iconinput label="Border" icon={AtSymbolIconSolid} iconClass="h-4 w-4 mr-2 text-blue-500" />
+<Iconinput id="email" type="email" name="email" placeholder="Your email" label="Border" icon={AtSymbolIconSolid} iconClass="h-4 w-4 mr-2 text-blue-500"/>
 
-<Iconinput noBorder label="No border" icon={MailIconOutline} iconClass="h-4 w-4 mr-4 text-blue-500" />
+<Iconinput noBorder id="email" type="email" name="email" label="No border" icon={MailIconOutline} iconClass="h-4 w-4 mr-2 text-blue-500"/>
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">Textarea</h2>
@@ -335,9 +335,9 @@ let selectClass = 'bg-gray-50 border border-gray-300 text-gray-900 text-sm round
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Select {...selectprops}>
-  <option>United States</option>
-  <option>Canada</option>
-  <option>France</option>
+  <option value="us">United States</option>
+  <option value="ca">Canada</option>
+  <option value="fr">France</option>
 </Select>
 </div>
 
