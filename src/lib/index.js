@@ -52,15 +52,22 @@ export { default as SocialMediaFooter } from'./footer/SocialMediaFooter.svelte'
 export { default as SitemapFooter } from './footer/SitemapFooter.svelte'
 
 // Forms
-export { default as Toggle } from './forms/Toggle.svelte'
+export { default as Checkbox } from './forms/Checkbox.svelte'
+export { default as Fileupload } from './forms/Fileupload.svelte'
+export { default as FloatingLabelInput } from './forms/FloatingLabelInput.svelte'
+export { default as Iconinput } from './forms/Iconinput.svelte'
+export { default as Input } from './forms/Input.svelte'
+export { default as Radio } from './forms/Radio.svelte'
+export { default as SingleCheckbox } from './forms/SingleCheckbox.svelte'
 export { default as Select } from './forms/Select.svelte'
-export {default as Textarea} from './forms/Textarea.svelte'
+export { default as Textarea } from './forms/Textarea.svelte'
+export { default as Toggle } from './forms/Toggle.svelte'
 
 // List
 export { default as List } from'./list-group/List.svelte'
 
 // Modals
-export { default as  modalIdStore } from'./modals/modalStores'
+export { modalIdStore } from'./modals/modalStores'
 export { default as ExtraLargeModal } from'./modals/ExtraLargeModal.svelte'
 export { default as LargeModal } from'./modals/LargeModal.svelte'
 export { default as MediumModal } from'./modals/MediumModal.svelte'

@@ -50,6 +50,7 @@ export const cards = [
 // export const darkmode = [
 //   { href: "darkmode", name: "Dark mode" },
 // ]
+
 export const footers = [
   { href: "/footer/default", name: "Default" },
   { href: "/footer/logo", name: "Logo" },

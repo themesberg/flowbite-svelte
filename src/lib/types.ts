@@ -106,37 +106,31 @@ export interface AuthFieldType {
     placeholder?: string;
 }
 
-export type TextareaType = {
-    id: string;
-    name: string;
-    label: string;
-    labelClass: string;
-    cols?: number;
-    rows?: number;
-    textareaClass: string;
-    placeholder?: string;
-}
+// export type TextareaType = {
+//     id: string;
+//     name: string;
+//     label: string;
+//     cols?: number;
+//     rows?: number;
+//     textareaClass?: string;
+//     placeholder?: string;
+// // }
 
-export type SelectType = {
-    id: string;
-    name: string;
-    label: string;
-    labelClass: string;
-    selectClass: string;
-}
+// export type SelectType = {
+//     id: string;
+//     name: string;
+//     label: string;
+// }
 
 export type SelectOptionType = {
     name: string;
     value: string;
 }
 
-export type ToggleType = {
-    name: string;
-    id: string;
-    label: string;
-    labelClass: string;
-    divClass: string;
-    spanClass: string;
-    checked?: boolean;
-    disabled?: boolean;
-}
+// export type ToggleType = {
+//     name: string;
+//     id: string;
+//     label: string;
+//     checked?: boolean;
+//     disabled?: boolean;
+// }

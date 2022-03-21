@@ -163,6 +163,11 @@
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4">
+			<a href="/forms" rel="external">Forms <Badge name="NEW" /></a>
+		</h3>
+	</Nav>
+	<Nav {navClass} {navDivClass}>
+		<h3 class="text-base pb-4">
 			<a href="/footer" rel="external">Footer <Badge name="NEW" /></a>
 		</h3>
 		{#each footers as { href, name, rel }}
