@@ -56,7 +56,7 @@
 			alt="Alerts"
 			header="ALERTS"
 			link="/alerts"
-			btnColor="red"
+			btnColor="gray"
 			btnLabel="Go to Alerts"
 		/>
 	</div>
@@ -66,7 +66,7 @@
 			alt="Badges"
 			header="BADGES"
 			link="/badges"
-			btnColor="yellow"
+			btnColor="red"
 			btnLabel="Go to Badges"
 		/>
 	</div>
@@ -76,7 +76,7 @@
 			alt="Button Groups"
 			header="BUTTON GROUPS"
 			link="/button-groups"
-			btnColor="indigo"
+			btnColor="yellow"
 			btnLabel="Go to Button groups"
 		/>
 	</div>
@@ -86,7 +86,7 @@
 			alt="Buttons"
 			header="BUTTONS"
 			link="/buttons"
-			btnColor="red"
+			btnColor="green"
 			btnLabel="Go to Buttons"
 		/>
 	</div>
@@ -97,7 +97,7 @@
 			alt="Cards"
 			header="CARDS"
 			link="/cards"
-			btnColor="purple"
+			btnColor="indigo"
 			btnLabel="Go to Cards"
 		/>
 	</div>
@@ -107,7 +107,7 @@
 			alt="Darkmode"
 			header="DARK MODE"
 			link="/darkmode"
-			btnColor="gray"
+			btnColor="purple"
 			btnLabel="Go to Darkmode"
 		/>
 	</div>
@@ -127,7 +127,7 @@
 			alt="Forms"
 			header="FORMS"
 			link="/forms"
-			btnColor="indigo"
+			btnColor="blue"
 			btnLabel="Go to Forms"
 		/>
 	</div>
@@ -137,7 +137,7 @@
 			alt="Footer"
 			header="FOOTERS"
 			link="/footer"
-			btnColor="blue"
+			btnColor="gray"
 			btnLabel="Go to Footers"
 		/>
 	</div>
@@ -147,7 +147,7 @@
 			alt="Icons"
 			header="ICONS"
 			link="/icons"
-			btnColor="green"
+			btnColor="red"
 			btnLabel="Go to Icons"
 		/>
 	</div>
@@ -157,7 +157,7 @@
 			alt="List group"
 			header="LIST-GROUP"
 			link="/list-group"
-			btnColor="green"
+			btnColor="yellow"
 			btnLabel="Go to List group"
 		/>
 	</div>
@@ -167,7 +167,7 @@
 			alt="Modals"
 			header="MODALS"
 			link="/modals"
-			btnColor="indigo"
+			btnColor="green"
 			btnLabel="Go to Modals"
 		/>
 	</div>
@@ -177,6 +177,7 @@
 			alt="Navbars"
 			header="NAVBAR"
 			link="/navbars"
+			btnColor="indigo"
 			btnLabel="Go to Navbars"
 		/>
 	</div>
@@ -186,6 +187,7 @@
 			alt="Spinners"
 			header="SPINNERS"
 			link="/spinners"
+			btnColor="purple"
 			btnLabel="Go to Spinners"
 		/>
 	</div>
@@ -195,13 +197,13 @@
 			alt="Tabs"
 			header="TABS"
 			link="/tabs"
-			btnColor="red"
+			btnColor="pink"
 			btnLabel="Go to Tabs"
 		/>
 	</div>
 	<div class="p-4">
 		<Card
-			img="/images/tooltips.webp"
+			img="/images/tooltip.webp"
 			alt="Tooltips"
 			header="TOOLTIPS"
 			link="/tooltips"
