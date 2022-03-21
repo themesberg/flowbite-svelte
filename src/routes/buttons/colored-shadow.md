@@ -10,11 +10,16 @@ layout: doc
 
 <h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Button Props</h2>
 
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
 ```js
-let textSize = "text-sm"; // 'text-xs'|'text-sm'|'text-base' |'text-lg' |'text-xl'|'text-2xl'|'text-3xl'|'text-4xl'
-let name = "Read more";
-let type = "button"; // 'button' | 'submit' | 'reset'
-let color = "blue"; // 'blue' | 'green' | 'cyan' | 'teal' | 'lime' | 'red' | 'pink' | 'purple'
+type Textsize = 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl'
+type Buttonshadows = 'blue' | 'green' | 'cyan' | 'teal' | 'lime' | 'red' | 'pink' | 'purple';
+type ButtonType = 'button' | 'submit' | 'reset'
+let textSize: Textsize = 'text-sm';
+let color: Buttonshadows = 'blue';
+let name = 'Read more';
+let type: ButtonType = 'button';
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">text-sm</h2>

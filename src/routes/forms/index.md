@@ -107,7 +107,7 @@ let checkboxOptions= [
 
 <p class="dark:text-white py-4 text-lg">The Input component has following props, type, and default values:</p>
 
-```ts
+```js
 let type: 'button'| 'checkbox'| 'color'| 'date'| 'datetime-local'| 'email'| 'file'| 'hidden'| 'image'| 'month'| 'number'| 'password'| 'radio'| 'range'| 'reset'| 'search'| 'submit'| 'tel'| 'text'| 'time'| 'url'| 'week';
 let name: string;
 let id: string;
@@ -199,7 +199,7 @@ import { Input } from 'flowbite-svelte'
 
 <p class="dark:text-white py-4 text-lg">The FloatingLabelInput component animates labels. It has the following props, type, and default values:</p>
 
-```ts
+```js
 let id: string;
 let type: 'button'| 'checkbox'| 'color'| 'date'| 'datetime-local'| 'email'| 'file'| 'hidden'| 'image'| 'month'| 'number'| 'password'| 'radio'| 'range'| 'reset'| 'search'| 'submit'| 'tel'| 'text'| 'time'| 'url'| 'week';
 let name: string;
@@ -242,7 +242,7 @@ let labelClass = 'absolute text-sm text-gray-500 dark:text-gray-400 duration-300
 
 <p class="dark:text-white py-4 text-lg">The Iconinput component has the following props, type, and default values:</p>
 
-```ts
+```js
 let label: string;
 let id: string;
 let type: 'button'| 'checkbox'| 'color'| 'date'| 'datetime-local'| 'email'| 'file'| 'hidden'| 'image'| 'month'| 'number'| 'password'| 'radio'| 'range'| 'reset'| 'search'| 'submit'| 'tel'| 'text'| 'time'| 'url'| 'week';
@@ -284,7 +284,7 @@ let iconClass = 'h-4 w-4 mr-2';
 
 <p class="dark:text-white py-4 text-lg">The Textarea component has the following props, type, and default values:</p>
 
-```ts
+```js
 let id = 'message';
 let name = 'message';
 let label = 'Your message';
@@ -323,7 +323,7 @@ let textareaprops = {
 
 <p class="dark:text-white py-4 text-lg">The Select component has the following props, type, and default values:</p>
 
-```ts
+```js
 let id = 'countries';
 let name = 'country';
 let label = 'Select your country';
@@ -365,7 +365,7 @@ let selectprops = {
 
 <p class="dark:text-white py-4 text-lg">The Checkbox component has the following props, type, and default values:</p>
 
-```ts
+```js
 let legend = 'Checkbox variants';
 let divClass = 'flex items-center mb-4';
 let inputClass = 'w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600';
@@ -425,7 +425,7 @@ let checkboxOptions= [
 
 <p class="dark:text-white py-4 text-lg">The Singlecheckbox component has the following props, type, and default values:</p>
 
-```ts
+```js
 let id: string;
 let required: boolean = true;
 let label: string;
@@ -450,7 +450,7 @@ let labelClass = 'font-medium text-gray-900 dark:text-gray-300';
 
 <p class="dark:text-white py-4 text-lg">The Radio component has the following props, type, and default values:</p>
 
-```ts
+```js
 let divClass = 'flex items-center mb-4';
 let inputClass = 'w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600';
 let labelClass = 'block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300';
@@ -503,7 +503,7 @@ let radioname='countries'
 
 <p class="dark:text-white py-4 text-lg">The Fileupload component has the following props, type, and default values:</p>
 
-```ts
+```js
 let id = 'user_avatar';
 let label = 'Upload file';
 let labelClass = 'block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300" for="user_avatar';
@@ -545,7 +545,7 @@ let fileuploadprops2 = {
 
 <p class="dark:text-white py-4 text-lg">The Toggle component has the following props, type, and default values:</p>
 
-```ts
+```js
 let name = 'toggle-example';
 let id = 'toggle-example';
 let label = 'Toggle me';

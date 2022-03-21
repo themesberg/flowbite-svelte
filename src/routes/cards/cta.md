@@ -54,7 +54,27 @@ layout: doc
 </script>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">CTA Card</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
+```js
+type CardButtonType = {
+    textSize?: Textsize;
+    name: string;
+    type?: Buttontypes;
+    href?: string;
+    rel?: string;
+    rounded?: boolean;
+};
+type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
+let title: string = 'Work fast from anywhere';
+let headColor: Colors = 'gray';
+let btns: CardButtonType[];
+let divClass =
+```
+
+<h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
 
 ```html
 <CtaCard {btns} {title} {headColor}>

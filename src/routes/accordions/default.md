@@ -9,19 +9,22 @@ layout: doc
 
 <h1 class="text-3xl w-full dark:text-white">Accordion</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-8">Default Props: AccordionItem</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Props: AccordionItem</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
 
 ```js
-let id
+let id: string;
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Default Props: Accordion</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Props: Accordion</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
 
 ```js
-let id
-let duration=0.2
-let easing="ease"
-let id = null;
+let duration: number = 0.2;
+let easing: string = 'ease';
+let id: number = undefined;
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">Slot names: AccordionItem</h2>

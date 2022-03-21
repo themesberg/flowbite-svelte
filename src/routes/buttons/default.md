@@ -10,12 +10,17 @@ layout: doc
 
 <h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Button Props</h2>
 
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
 ```js
-let rounded = false;
-let textSize = "text-sm"; // 'text-xs'|'text-sm'|'text-base' |'text-lg' |'text-xl'|'text-2xl'|'text-3xl'|'text-4xl'
-let name = "Read more";
-let type = "button" // 'button' | 'submit' | 'reset'
-let ButtonType = "blue"; // 'blue' | 'blue-outline' | 'dark' | 'dark-outline' | 'light' | 'green' | 'green-outline' | 'red' | 'red-outline' | 'yellow' | 'yellow-outline' | 'purple' | 'purple-outline'
+type Textsize = 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl'
+type Buttontypes = 'blue' | 'blue-outline' | 'dark' | 'dark-outline' | 'light' | 'green' | 'green-outline' | 'red' | 'red-outline' | 'yellow' | 'yellow-outline' | 'purple' | 'purple-outline';
+type ButtonType = 'button' | 'submit' | 'reset'
+let rounded: boolean = false;
+let textSize: Textsize = 'text-sm';
+let name = 'Read more';
+let buttonType: Buttontypes = 'blue';
+let type: ButtonType = 'button';
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">Sizes</h2>

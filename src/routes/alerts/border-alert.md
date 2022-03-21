@@ -20,12 +20,15 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
 </script>
 ```
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">BorderAlert Default Props</h2>
+<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Props</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
 
 ```js
-let color: string = "blue"; // gray|red|yellow|green|indigo|purple|pink
-let alertId: string = "alert-border-1";
-let closeBtn: boolean = false;
+type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
+let color: Colors = 'blue';
+let alertId: string = 'alert-border-1';
+let closeBtn = false;
 ```
 
 <h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Border Alert Examples</h2>
