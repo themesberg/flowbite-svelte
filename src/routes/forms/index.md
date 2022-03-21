@@ -353,9 +353,9 @@ let selectprops = {
 </script>
 
 <Select {...selectprops}>
-  <option>United States</option>
-  <option>Canada</option>
-  <option>France</option>
+  <option value="us">United States</option>
+  <option value="ca">Canada</option>
+  <option value="fr">France</option>
 </Select>
 ```
 
