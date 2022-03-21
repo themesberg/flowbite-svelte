@@ -97,11 +97,38 @@ let checkboxOptions= [
 
 </script>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Form</h1>
+<h1 class="text-3xl w-full dark:text-white py-4">Form</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-8">Input</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Input</h2>
+
+<p class="dark:text-white py-4 text-lg">The Input component allows you to change the input size, add disabled, helper text, and floating label.</p>
+
+<h3 class="text-xl w-full dark:text-white py-4">Props</h3>
+
+<p class="dark:text-white py-4 text-lg">The Input component has following props, type, and default values:</p>
+
+```ts
+let type: string;
+let name: string;
+let id: string;
+let label: string;
+let required: boolean;
+let placeholder: string;
+let size: 'sm:text-md' | 'text-sm' | 'sm:text-xs' = 'text-sm';
+let inputClass = `bg-gray-50 border border-gray-300 text-gray-900 ${size} rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500`;
+let labelClass = 'block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300';
+let divClass = 'mb-6';
+let disabled: boolean = false;
+let readonly: boolean = false;
+let helper: string;
+let helperClass = 'mt-2 text-sm text-gray-500 dark:text-gray-400';
+```
 
 <h3 class="text-xl w-full dark:text-white py-8">Size</h3>
+
+<p class="dark:text-white py-4 text-lg">User the size prop to change the input size. Choose one from 'sm:text-md' | 'text-sm' | 'sm:text-xs'. The default size is text-sm.</p>
+
+<h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Input
@@ -138,6 +165,10 @@ import { Input } from 'flowbite-svelte'
 
 <h3 class="text-xl w-full dark:text-white py-8">Disabled</h3>
 
+<p class="dark:text-white py-4 text-lg">Add the disabled prop to change the input to disabled.</p>
+
+<h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
+
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Input disabled placeholder="disabled input" label="Disabled input"/>
 <Input disabled readonly placeholder="disabled readonly" label="Disabled readonly input"/>
@@ -150,6 +181,10 @@ import { Input } from 'flowbite-svelte'
 
 <h3 class="text-xl w-full dark:text-white py-8">Helper text</h3>
 
+<p class="dark:text-white py-4 text-lg">Use the helper prop to add your helper text. You can use HTML in the helper text.</p>
+
+<h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
+
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Input label="Email" helper="You can add helper text in <b>HTML</b>."/>
 </div>
@@ -160,6 +195,23 @@ import { Input } from 'flowbite-svelte'
 
 <h2 class="text-2xl w-full dark:text-white py-8">Floating label input</h2>
 
+<h3 class="text-xl w-full dark:text-white py-4">Props</h3>
+
+<p class="dark:text-white py-4 text-lg">The FloatingLabelInput component animates labels. It has the following props, type, and default values:</p>
+
+```ts
+let id: string;
+let type: string;
+let name: string;
+let label: string;
+let required: boolean = false;
+let divClass = 'relative z-0 mb-6 w-full group';
+let inputClass = 'block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer';
+let labelClass = 'absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6';
+```
+
+<h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
+
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <form>
 <FloatingLabelInput id="email" name="email" type="email" required label="Email"/>
@@ -170,7 +222,11 @@ import { Input } from 'flowbite-svelte'
 </div>
 
 ```html
-<form>
+<script>
+  import { FloatingLabelInput } from 'flowbite-svelte'
+</script>
+
+<form> 
 <FloatingLabelInput id="email" name="email" type="email" required label="Email"/>
 <FloatingLabelInput id="password" name="password" type="password" required label="Password" />
 <FloatingLabelInput id="confirmpassword" name="confirm_password" type="password" required label="Confirm password" />
@@ -180,6 +236,31 @@ import { Input } from 'flowbite-svelte'
 
 <h2 class="text-2xl w-full dark:text-white py-8">Iconinput</h2>
 
+<p class="dark:text-white py-4 text-lg">With the Iconinput component, you can add <a href="https://flowbite-svelte.vercel.app/icons/heroicons">Heroicons</a> or <a href="https://flowbite-svelte.vercel.app/icons/simple-icons">Simple-icons</a>. Use iconClass to modify the icon color.</p> 
+
+<h3 class="text-xl w-full dark:text-white py-4">Props</h3>
+
+<p class="dark:text-white py-4 text-lg">The Iconinput component has the following props, type, and default values:</p>
+
+```ts
+let label: string;
+let id: string;
+let type: string;
+let icon: typeof SvelteComponent;
+let helper: string;
+let placeholder: string;
+let noBorder: boolean = false;
+let labelClass = 'block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300';
+let inputClass = 'rounded-none rounded-r-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
+let spanClass = 'inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600';
+let helperClass = 'mt-2 text-sm text-gray-500 dark:text-gray-400';
+let noBorderInputClass = 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
+let noBorderDivClass = 'flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none';
+let iconClass = 'h-4 w-4 mr-2';
+```
+
+<h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
+
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Iconinput label="Border" icon={AtSymbolIconSolid} iconClass="h-4 w-4 mr-2 text-blue-500"/>
 <div class="py-4">
@@ -188,12 +269,34 @@ import { Input } from 'flowbite-svelte'
 </div>
 
 ```html
+<script>
+  import { Iconinput } from 'flowbite-svelte'
+</script>
+
 <Iconinput label="Border" icon={AtSymbolIconSolid} iconClass="h-4 w-4 mr-2 text-blue-500" />
 
 <Iconinput noBorder label="No border" icon={MailIconOutline} iconClass="h-4 w-4 mr-4" />
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">Textarea</h2>
+
+<h3 class="text-xl w-full dark:text-white py-4">Props</h3>
+
+<p class="dark:text-white py-4 text-lg">The Textarea component has the following props, type, and default values:</p>
+
+```ts
+let id = 'message';
+let name = 'message';
+let label = 'Your message';
+let rows = 4;
+let placeholder = 'Leave a comment...';
+let labelClass = 'block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400';
+let textareaClass = 'block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
+let helper: string;
+let helperClass = 'mt-2 text-sm text-gray-500 dark:text-gray-400';
+```
+
+<h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Textarea {...textareaprops} />
@@ -215,6 +318,20 @@ let textareaprops = {
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">Select input</h2>
+
+<h3 class="text-xl w-full dark:text-white py-4">Props</h3>
+
+<p class="dark:text-white py-4 text-lg">The Select component has the following props, type, and default values:</p>
+
+```ts
+let id = 'countries';
+let name = 'country';
+let label = 'Select your country';
+let labelClass = 'block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400';
+let selectClass = 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
+```
+
+<h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Select {...selectprops}>
@@ -243,6 +360,27 @@ let selectprops = {
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">Checkbox</h2>
+
+<h3 class="text-xl w-full dark:text-white py-4">Props</h3>
+
+<p class="dark:text-white py-4 text-lg">The Checkbox component has the following props, type, and default values:</p>
+
+```ts
+let legend = 'Checkbox variants';
+let divClass = 'flex items-center mb-4';
+let inputClass = 'w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600';
+let labelClass = 'ml-3 text-sm font-medium text-gray-900 dark:text-gray-300';
+let helperLabelClass = 'font-medium text-gray-900 dark:text-gray-300';
+let options: {
+  id: string;
+  label: string;
+  checked?: boolean;
+  disabled?: boolean;
+  helper?: string;
+}[];
+```
+
+<h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Checkbox options={checkboxOptions} {legend} />
@@ -283,6 +421,21 @@ let checkboxOptions= [
 
 <h2 class="text-2xl w-full dark:text-white py-8">Single checkobx</h2>
 
+<h3 class="text-xl w-full dark:text-white py-4">Props</h3>
+
+<p class="dark:text-white py-4 text-lg">The Singlecheckbox component has the following props, type, and default values:</p>
+
+```ts
+let id: string;
+let required: boolean = true;
+let label: string;
+let name: string;
+let inputClass = 'w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800';
+let labelClass = 'font-medium text-gray-900 dark:text-gray-300';
+```
+
+<h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
+
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <SingleCheckbox name="rememberme" id="rememberme" required label="Remember me" />
 </div>
@@ -292,6 +445,26 @@ let checkboxOptions= [
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">Radio</h2>
+
+<h3 class="text-xl w-full dark:text-white py-4">Props</h3>
+
+<p class="dark:text-white py-4 text-lg">The Radio component has the following props, type, and default values:</p>
+
+```ts
+let divClass = 'flex items-center mb-4';
+let inputClass = 'w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600';
+let labelClass = 'block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300';
+let name = 'countries';
+let options: {
+  id: string;
+  label: string;
+  value: string;
+  checked?: boolean;
+  disabled?: boolean;
+}[]
+```
+
+<h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Radio options={radiooptions} name={radioname}/>
@@ -326,6 +499,21 @@ let radioname='countries'
 
 <h2 class="text-2xl w-full dark:text-white py-8">File upload</h2>
 
+<h3 class="text-xl w-full dark:text-white py-4">Props</h3>
+
+<p class="dark:text-white py-4 text-lg">The Fileupload component has the following props, type, and default values:</p>
+
+```ts
+let id = 'user_avatar';
+let label = 'Upload file';
+let labelClass = 'block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300" for="user_avatar';
+let inputClass = 'block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400';
+let divClass = 'mt-1 text-sm text-gray-500 dark:text-gray-300';
+let helper: string;
+```
+
+<h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
+
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Fileupload {...fileuploadprops} />
 <Fileupload {...fileuploadprops2} />
@@ -352,6 +540,23 @@ let fileuploadprops2 = {
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">Toggle</h2>
+
+<h3 class="text-xl w-full dark:text-white py-4">Props</h3>
+
+<p class="dark:text-white py-4 text-lg">The Toggle component has the following props, type, and default values:</p>
+
+```ts
+let name = 'toggle-example';
+let id = 'toggle-example';
+let label = 'Toggle me';
+let checked = false;
+let disabled = false;
+let labelClass = 'flex relative items-center mb-4 cursor-pointer';
+let divClass = 'w-11 h-6 bg-gray-200 rounded-full border border-gray-200 toggle-bg dark:bg-gray-700 dark:border-gray-600';
+let spanClass = 'ml-3 text-sm font-medium text-gray-900 dark:text-gray-300';
+```
+
+<h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Toggle {...props}/>

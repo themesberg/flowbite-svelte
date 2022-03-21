@@ -1,5 +1,4 @@
 <script lang="ts">
-	// import type { TextareaType } from '../types';
 	export let id = 'message';
 	export let name = 'message';
 	export let label = 'Your message';

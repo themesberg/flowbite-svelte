@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { SelectOptionType } from '../types';
 	export let id = 'countries';
 	export let name = 'country';
 	export let label = 'Select your country';

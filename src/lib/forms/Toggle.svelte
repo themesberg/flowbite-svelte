@@ -1,6 +1,4 @@
 <script lang="ts">
-	// import type { ToggleType } from '../types';
-	// export let props: ToggleType = {
 	export let name = 'toggle-example';
 	export let id = 'toggle-example';
 	export let label = 'Toggle me';
