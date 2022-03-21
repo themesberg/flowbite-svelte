@@ -48,15 +48,15 @@ layout: doc
 
 ```js
 interface ListCardType {
-    img: ImgType;
-    field1: string;
-    field2?: string;
-    field3?: string;
+  img: ImgType;
+  field1: string;
+  field2?: string;
+  field3?: string;
 }
 interface LinkType {
-    name: string;
-    href: string;
-    rel?: string;
+  name: string;
+  href: string;
+  rel?: string;
 }
 let lists: ListCardType[];
 let title = 'Latest Customers';

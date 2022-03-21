@@ -2,9 +2,10 @@
 	import { createEventDispatcher } from 'svelte';
 	import { modalIdStore } from './modalStores';
 	const dispatch = createEventDispatcher();
+	import type { Colors } from '../types';
 	export let id = 'large-modal';
-	export let btnColor = 'blue';
-	export let textColor = 'gray';
+	export let btnColor: Colors = 'blue';
+	export let textColor: Colors = 'gray';
 	export let title = 'Terms of Service';
 	export let btn1: string;
 	export let btn2: string;

@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { modalIdStore } from './modalStores';
 	import { get } from 'svelte/store';
+	import type { Colors } from '../types';
 	export let id = 'modal-id';
 	export let btnName = 'Modal Name';
-	export let btnColor = 'blue';
+	export let btnColor: Colors = 'blue';
 
 	let showModalId: string;
 	export let openFn = (id: string) => {

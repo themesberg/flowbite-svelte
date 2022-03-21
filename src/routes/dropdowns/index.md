@@ -39,11 +39,19 @@ layout: doc
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
 ```js
-let name = "Dropdown button";
+interface DropdownType {
+  name: string;
+  href: string;
+  divider: boolean;
+}
+let label = 'Dropdown button';
 let rounded = false;
-let textSize = "text-sm";
-let color = "blue"; // blue|dark|light|green|green-outline|red|red-outline|yellow|purple|purple-outline
+let textSize = 'text-sm';
+let color = 'blue';
+let items: DropdownType[];
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">Default Dropdown</h2>

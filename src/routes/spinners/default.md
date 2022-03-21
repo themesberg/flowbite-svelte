@@ -15,13 +15,17 @@ layout: doc
 </script>
 ```
 
-<h2 class="text-2xl mt-8 dark:text-white py-8">Default Props</h2>
+<h2 class="text-2xl mt-8 dark:text-white py-8">Props</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
 
 ```js
-let color = "blue"; // blue|gray|green|red|yellow|pink|purple
-let bg = "text-gray-200";
-let size = "w-8 h-8";
-let align = 'align-left'; // text-left| text-center| text-right
+type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
+type AlignType = 'text-center' | 'text-left' | 'text-right'
+let color: Colors = 'blue';
+let bg = 'text-gray-200';
+let size = 'w-8 h-8';
+let align: AlignType = 'text-center';
 ```
 
 <h2 class="text-2xl mt-8 dark:text-white py-8">Colors</h2>

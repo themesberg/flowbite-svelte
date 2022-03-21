@@ -50,6 +50,27 @@ layout: doc
 <Navbar {menus} {sitename} {alt} {logo} {textsize} />
 ```
 
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
+```js
+interface LinkType {
+  name: string;
+  href: string;
+  rel?: string;
+}
+let sitename = 'Svelte Flow';
+let logo = '/images/mkdir-logo.png';
+let alt = 'Svelte Flow';
+let textsize = 'text-sm';
+let menus: LinkType[];
+let navClass = 'px-2 bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700';
+let spanClass = 'self-center text-lg font-semibold text-gray-900 whitespace-nowrap dark:text-white';
+let buttonClass = 'inline-flex justify-center items-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-500';
+let liLinkClass = `block py-2 pr-4 pl-3  text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 dark:hover:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent ${textsize}`;
+```
+
 <h2 class="text-lg dark:text-white py-8">Text Size text-xs</h2>
 
 ```html

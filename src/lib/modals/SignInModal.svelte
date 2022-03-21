@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { modalIdStore } from './modalStores';
 	export let id = 'signin-modal';
-	export let btnSignInColor = 'blue';
+	import type { Colors } from '../types';
+	export let btnSignInColor: Colors = 'blue';
 	export let titleSignIn = 'Sign in to our platform';
 	export let lostPasswordLink: string;
 	export let rememberMe = false;

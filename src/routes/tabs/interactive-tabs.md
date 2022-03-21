@@ -34,6 +34,23 @@ layout: doc
 
 <h1 class="text-3xl w-full dark:text-white py-8">Interactive Tabs</h1>
 
+<h2 class="text-2xl mt-8 dark:text-white py-8">Props</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
+```js
+interface InteractiveTabType {
+  name: string;
+  id: number;
+  content: string;
+}
+let tabId = 'myTab';
+let activeTabValue = 1;
+let tabs: InteractiveTabType[];
+```
+
+<h2 class="text-2xl mt-8 dark:text-white py-8">Examples</h2>
+
 <div class="container rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <InteractiveTabs tabId="myTab1" tabs={tabs1} />
 </div>

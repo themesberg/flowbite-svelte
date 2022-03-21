@@ -9,17 +9,18 @@ layout: doc
 
 <h1 class="text-3xl w-full dark:text-white py-8">Button spinner</h1>
 
-
 ```html
 <script>
   import { SpinnerButton } from "flowbite-svelte";
 </script>
 ```
 
-<h2 class="text-2xl mt-8 dark:text-white py-8">Default Prop</h2>
+<h2 class="text-2xl mt-8 dark:text-white py-8">Prop</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
 
 ```js
-let color; // 'blue' | undefined
+let color: 'blue' | undefined;
 ```
 
 <h2 class="text-2xl mt-8 dark:text-white py-8">Colors</h2>

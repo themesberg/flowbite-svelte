@@ -91,7 +91,22 @@ layout: doc
 </script>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Extra-large Modals for Information</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
+```js
+type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
+let id = 'extralarge-modal';
+let btnColor: Colors = 'blue';
+let textColor: Colors = 'gray';
+let title = 'Terms of Service';
+let btn1: string;
+let btn2: string;
+let showModalId: string;
+```
+
+<h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton {id} btnName="Info Modal" />

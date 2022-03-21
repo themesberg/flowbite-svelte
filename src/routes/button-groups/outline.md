@@ -75,26 +75,15 @@ layout: doc
 </script>
 ```
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Props</h2>
 
-```html
-let buttons = [
-  {
-    name: "Profile",
-    href:"/", // optional
-    icon: UserCircleIconSolid // optional
-  },
-  {
-    name: "Settings",
-    href:"/", // optional
-    icon: AdjustmentsIconSolid // optional
-  },
-  {
-    name: "Messages",
-    href:"/", // optional
-    icon: CloudDownloadIconSolid // optional
-  },
-];
+```js
+interface ButtonGroupType {
+  name: string;
+  href?: string;
+  rel?: string;
+  icon?: typeof SvelteComponent;
+}
+let buttons: ButtonGroupType[];
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">Outline default</h2>

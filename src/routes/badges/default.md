@@ -17,10 +17,14 @@ layout: doc
 
 <h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Props</h2>
 
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
 ```js
-let textSize = "text-xs"; // 'text-xs'|'text-sm'|'text-base' |'text-lg' |'text-xl'|'text-2xl'|'text-3xl'|'text-4xl'
-let name = "Read more";
-let color = "blue"; // 'blue'| 'gray'| 'red'| 'yellow'| 'purple'| 'green'| 'indigo'| 'purple'| 'pink'
+type Textsize = 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl'
+type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
+let textSize: Textsize = 'text-xs';
+let name = 'Read more';
+let color: Colors = 'blue';
 ```
 
 <h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Size xs</h2>

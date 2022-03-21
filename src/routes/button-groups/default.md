@@ -77,24 +77,16 @@ layout: doc
 
 <h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Props</h2>
 
-```html
-let buttons = [
-  {
-    name: "Profile",
-    href:"/", // optional
-    icon: UserCircleIconSolid // optional
-  },
-  {
-    name: "Settings",
-    href:"/", // optional
-    icon: AdjustmentsIconSolid // optional
-  },
-  {
-    name: "Messages",
-    href:"/", // optional
-    icon: CloudDownloadIconSolid // optional
-  },
-];
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
+```js
+interface ButtonGroupType {
+  name: string;
+  href?: string;
+  rel?: string;
+  icon?: typeof SvelteComponent;
+}
+let buttons: ButtonGroupType[];
 ```
 
 <h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Default</h2>
