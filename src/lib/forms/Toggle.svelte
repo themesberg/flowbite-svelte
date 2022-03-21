@@ -4,7 +4,6 @@
 	export let label = 'Toggle me';
 	export let checked = false;
 	export let disabled = false;
-
 	export let labelClass = 'flex relative items-center mb-4 cursor-pointer';
 	export let divClass =
 		'w-11 h-6 bg-gray-200 rounded-full border border-gray-200 toggle-bg dark:bg-gray-700 dark:border-gray-600';

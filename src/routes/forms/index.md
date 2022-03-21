@@ -108,7 +108,7 @@ let checkboxOptions= [
 <p class="dark:text-white py-4 text-lg">The Input component has following props, type, and default values:</p>
 
 ```ts
-let type: string;
+let type: 'button'| 'checkbox'| 'color'| 'date'| 'datetime-local'| 'email'| 'file'| 'hidden'| 'image'| 'month'| 'number'| 'password'| 'radio'| 'range'| 'reset'| 'search'| 'submit'| 'tel'| 'text'| 'time'| 'url'| 'week';
 let name: string;
 let id: string;
 let label: string;
@@ -186,11 +186,11 @@ import { Input } from 'flowbite-svelte'
 <h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Input label="Email" helper="You can add helper text in <b>HTML</b>."/>
+<Input label="Email" id="email" name="email" required placeholder="Your email" helper="You can add helper text in <b>HTML</b>."/>
 </div>
 
 ```html
-<Input label="Email" helper="You can add helper text in <b>HTML</b>."/>
+<Input label="Email" id="email" name="email" required placeholder="Your email" helper="You can add helper text in <b>HTML</b>."/>
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">Floating label input</h2>
@@ -201,7 +201,7 @@ import { Input } from 'flowbite-svelte'
 
 ```ts
 let id: string;
-let type: string;
+let type: 'button'| 'checkbox'| 'color'| 'date'| 'datetime-local'| 'email'| 'file'| 'hidden'| 'image'| 'month'| 'number'| 'password'| 'radio'| 'range'| 'reset'| 'search'| 'submit'| 'tel'| 'text'| 'time'| 'url'| 'week';
 let name: string;
 let label: string;
 let required: boolean = false;
@@ -245,7 +245,7 @@ let labelClass = 'absolute text-sm text-gray-500 dark:text-gray-400 duration-300
 ```ts
 let label: string;
 let id: string;
-let type: string;
+let type: 'button'| 'checkbox'| 'color'| 'date'| 'datetime-local'| 'email'| 'file'| 'hidden'| 'image'| 'month'| 'number'| 'password'| 'radio'| 'range'| 'reset'| 'search'| 'submit'| 'tel'| 'text'| 'time'| 'url'| 'week';
 let icon: typeof SvelteComponent;
 let helper: string;
 let placeholder: string;
@@ -262,7 +262,7 @@ let iconClass = 'h-4 w-4 mr-2';
 <h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Iconinput label="Border" icon={AtSymbolIconSolid} iconClass="h-4 w-4 mr-2 text-blue-500"/>
+<Iconinput id="email" type="email" name="email" placeholder="Your email" label="Border" icon={AtSymbolIconSolid} iconClass="h-4 w-4 mr-2 text-blue-500"/>
 <div class="py-4">
 <Iconinput noBorder label="No border" icon={MailIconOutline} iconClass="h-4 w-4 mr-2 text-blue-500"/>
 </div>
@@ -275,7 +275,7 @@ let iconClass = 'h-4 w-4 mr-2';
 
 <Iconinput label="Border" icon={AtSymbolIconSolid} iconClass="h-4 w-4 mr-2 text-blue-500" />
 
-<Iconinput noBorder label="No border" icon={MailIconOutline} iconClass="h-4 w-4 mr-4" />
+<Iconinput noBorder label="No border" icon={MailIconOutline} iconClass="h-4 w-4 mr-4 text-blue-500" />
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">Textarea</h2>

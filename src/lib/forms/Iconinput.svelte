@@ -2,7 +2,29 @@
 	import type { SvelteComponent } from 'svelte';
 	export let label: string;
 	export let id: string;
-	export let type: string;
+	export let type:
+		| 'button'
+		| 'checkbox'
+		| 'color'
+		| 'date'
+		| 'datetime-local'
+		| 'email'
+		| 'file'
+		| 'hidden'
+		| 'image'
+		| 'month'
+		| 'number'
+		| 'password'
+		| 'radio'
+		| 'range'
+		| 'reset'
+		| 'search'
+		| 'submit'
+		| 'tel'
+		| 'text'
+		| 'time'
+		| 'url'
+		| 'week';
 	export let icon: typeof SvelteComponent;
 	export let helper: string;
 	export let placeholder: string;
