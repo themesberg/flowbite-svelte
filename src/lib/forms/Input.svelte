@@ -33,7 +33,7 @@
 	export let labelClass = 'block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300';
 	export let disabled: boolean = false;
 	export let readonly: boolean = false;
-	export let helper: string;
+	export let helper: string = '';
 	export let helperClass = 'mt-2 text-sm text-gray-500 dark:text-gray-400';
 	// you need to this to avoid 2-way binding
 	function setType(node) {

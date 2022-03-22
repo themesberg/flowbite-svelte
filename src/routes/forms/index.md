@@ -119,7 +119,7 @@ let inputClass = `bg-gray-50 border border-gray-300 text-gray-900 ${size} rounde
 let labelClass = 'block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300';
 let disabled: boolean = false;
 let readonly: boolean = false;
-let helper: string;
+let helper: string = '';
 let helperClass = 'mt-2 text-sm text-gray-500 dark:text-gray-400';
 ```
 
@@ -247,7 +247,7 @@ let label: string;
 let id: string;
 let type: 'button'| 'checkbox'| 'color'| 'date'| 'datetime-local'| 'email'| 'file'| 'hidden'| 'image'| 'month'| 'number'| 'password'| 'radio'| 'range'| 'reset'| 'search'| 'submit'| 'tel'| 'text'| 'time'| 'url'| 'week';
 let icon: typeof SvelteComponent;
-let helper: string;
+let helper: string = '';
 let placeholder: string;
 let noBorder: boolean = false;
 let labelClass = 'block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300';
@@ -292,7 +292,7 @@ let rows = 4;
 let placeholder = 'Leave a comment...';
 let labelClass = 'block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400';
 let textareaClass = 'block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
-let helper: string;
+let helper: string = '';
 let helperClass = 'mt-2 text-sm text-gray-500 dark:text-gray-400';
 ```
 
@@ -509,7 +509,7 @@ let label = 'Upload file';
 let labelClass = 'block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300" for="user_avatar';
 let inputClass = 'block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400';
 let divClass = 'mt-1 text-sm text-gray-500 dark:text-gray-300';
-let helper: string;
+let helper: string = '';
 ```
 
 <h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
