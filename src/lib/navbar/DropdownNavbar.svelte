@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { NavbarType } from '../types';
-	import { page } from '$app/stores';
+	import { page, session } from '$app/stores';
 
 	let hidden = true;
 	let block = false;
@@ -120,6 +120,9 @@
 					{/if}
 				{/each}
 			</ul>
+			{#if $session['user']}
+				<slot name="user" />
+			{/if}
 		</div>
 	</div>
 </nav>

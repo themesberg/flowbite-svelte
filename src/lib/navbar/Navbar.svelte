@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { LinkType } from '../types';
-	import { page } from '$app/stores';
+	import { page, session } from '$app/stores';
 
 	export let sitename = 'Svelte Flow';
 	export let logo = '/images/mkdir-logo.png';
@@ -66,6 +66,9 @@
 					</li>
 				{/each}
 			</ul>
+			{#if $session['user']}
+				<slot name="user" />
+			{/if}
 		</div>
 	</div>
 </nav>
