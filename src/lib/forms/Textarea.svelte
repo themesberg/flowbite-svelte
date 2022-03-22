@@ -1,4 +1,5 @@
 <script lang="ts">
+	export let value: string = '';
 	export let id = 'message';
 	export let name = 'message';
 	export let label = 'Your message';
@@ -12,7 +13,7 @@
 </script>
 
 <label for={id} class={labelClass}>{label}</label>
-<textarea {id} {name} {rows} class={textareaClass} {placeholder} />
+<textarea bind:value {id} {name} {rows} class={textareaClass} {placeholder} />
 {#if helper}
 	<p class={helperClass}>{@html helper}</p>
 {/if}

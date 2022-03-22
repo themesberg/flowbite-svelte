@@ -117,7 +117,6 @@ let placeholder: string;
 let size: 'sm:text-md' | 'text-sm' | 'sm:text-xs' = 'text-sm';
 let inputClass = `bg-gray-50 border border-gray-300 text-gray-900 ${size} rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500`;
 let labelClass = 'block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300';
-let divClass = 'mb-6';
 let disabled: boolean = false;
 let readonly: boolean = false;
 let helper: string;
@@ -131,7 +130,7 @@ let helperClass = 'mt-2 text-sm text-gray-500 dark:text-gray-400';
 <h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Input
+<Input class="mb-6"
   id="large-input"
   name="size"
   type="text"
@@ -141,8 +140,8 @@ let helperClass = 'mt-2 text-sm text-gray-500 dark:text-gray-400';
   label="Large input"
   required
   />
-<Input placeholder="Base input" label="Base input"/>
-<Input size="sm:text-xs" placeholder="Small input" label="Small input"/>
+<Input class="mb-6" placeholder="Base input" label="Base input"/>
+<Input class="mb-6" size="sm:text-xs" placeholder="Small input" label="Small input"/>
 </div>
 
 ```html
@@ -150,6 +149,7 @@ let helperClass = 'mt-2 text-sm text-gray-500 dark:text-gray-400';
 import { Input } from 'flowbite-svelte'
 </script>
 <Input
+  class="mb-6"
   id="large-input"
   name="size"
   type="text"
@@ -159,8 +159,8 @@ import { Input } from 'flowbite-svelte'
   label="Large input"
   required
   />
-<Input placeholder="Base input" label="Base input"/>
-<Input size="sm:text-xs" placeholder="Small input" label="Small input"/>
+<Input class="mb-6" placeholder="Base input" label="Base input"/>
+<Input class="mb-6" size="sm:text-xs" placeholder="Small input" label="Small input"/>
 ```
 
 <h3 class="text-xl w-full dark:text-white py-8">Disabled</h3>
@@ -170,13 +170,13 @@ import { Input } from 'flowbite-svelte'
 <h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Input disabled placeholder="disabled input" label="Disabled input"/>
-<Input disabled readonly placeholder="disabled readonly" label="Disabled readonly input"/>
+<Input class="mb-6" disabled placeholder="disabled input" label="Disabled input"/>
+<Input class="mb-6" disabled readonly placeholder="disabled readonly" label="Disabled readonly input"/>
 </div>
 
 ```html
-<Input disabled placeholder="disabled input" label="Disabled input"/>
-<Input disabled readonly placeholder="disabled readonly" label="Disabled readonly input"/>
+<Input class="mb-6" disabled placeholder="disabled input" label="Disabled input"/>
+<Input class="mb-6" disabled readonly placeholder="disabled readonly" label="Disabled readonly input"/>
 ```
 
 <h3 class="text-xl w-full dark:text-white py-8">Helper text</h3>

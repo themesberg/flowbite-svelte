@@ -1,4 +1,5 @@
 <script lang="ts">
+	export let legend: string = '';
 	export let divClass = 'flex items-center mb-4';
 	export let inputClass =
 		'w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600';
@@ -32,7 +33,7 @@
 </script>
 
 <fieldset>
-	<legend class="sr-only">Countries</legend>
+	<legend class="sr-only">{legend}</legend>
 	{#each options as option}
 		<div class={divClass}>
 			<input

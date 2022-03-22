@@ -1,4 +1,5 @@
 <script lang="ts">
+	export let value: string | number;
 	export let id = 'countries';
 	export let name = 'country';
 	export let label = 'Select your country';
@@ -8,6 +9,6 @@
 </script>
 
 <label for="countries" class={labelClass}>{label}</label>
-<select {id} {name} class={selectClass}>
+<select bind:value {id} {name} class={selectClass}>
 	<slot />
 </select>

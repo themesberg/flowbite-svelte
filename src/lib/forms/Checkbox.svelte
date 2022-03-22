@@ -25,7 +25,7 @@
 						aria-describedby={option.id}
 						type="checkbox"
 						class={inputClass}
-						checked={option.checked}
+						bind:checked={option.checked}
 						disabled={option.disabled}
 					/>
 				</div>

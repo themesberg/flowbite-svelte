@@ -25,9 +25,10 @@
 		| 'time'
 		| 'url'
 		| 'week';
+	export let value: string = '';
 	export let icon: typeof SvelteComponent;
-	export let helper: string;
-	export let placeholder: string;
+	export let helper: string = '';
+	export let placeholder: string = '';
 	export let noBorder: boolean = false;
 	export let labelClass = 'block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300';
 	export let inputClass =
@@ -40,24 +41,29 @@
 	export let noBorderDivClass =
 		'flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none';
 	export let iconClass = 'h-4 w-4 mr-2';
+	function setType(node) {
+		node.type = type;
+	}
 </script>
 
-<label for={id} class={labelClass}>{label}</label>
-{#if noBorder}
-	<div class="relative">
-		<div class={noBorderDivClass}>
-			<svelte:component this={icon} className={iconClass} />
+<div class={$$props.class}>
+	<label for={id} class={labelClass}>{label}</label>
+	{#if noBorder}
+		<div class="relative">
+			<div class={noBorderDivClass}>
+				<svelte:component this={icon} className={iconClass} />
+			</div>
+			<input bind:value use:setType {id} class={noBorderInputClass} {placeholder} />
 		</div>
-		<input {type} {id} class={noBorderInputClass} {placeholder} />
-	</div>
-{:else}
-	<div class="flex">
-		<span class={spanClass}>
-			<svelte:component this={icon} className={iconClass} />
-		</span>
-		<input {type} {id} class={inputClass} {placeholder} />
-	</div>
-{/if}
-{#if helper}
-	<p class={helperClass}>{@html helper}</p>
-{/if}
+	{:else}
+		<div class="flex">
+			<span class={spanClass}>
+				<svelte:component this={icon} className={iconClass} />
+			</span>
+			<input {type} {id} class={inputClass} {placeholder} />
+		</div>
+	{/if}
+	{#if helper}
+		<p class={helperClass}>{@html helper}</p>
+	{/if}
+</div>

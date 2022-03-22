@@ -1,4 +1,5 @@
 <script lang="ts">
+	export let value: string = '';
 	export let id = 'user_avatar';
 	export let label = 'Upload file';
 	export let labelClass =
@@ -10,7 +11,7 @@
 </script>
 
 <label class={labelClass} for={id}>{label}</label>
-<input class={inputClass} aria-describedby="{id}_help" {id} type="file" />
+<input bind:value class={inputClass} aria-describedby="{id}_help" {id} type="file" />
 {#if helper}
 	<div class={divClass} id="{id}_help">{helper}</div>
 {/if}
