@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let type:
+	type InputType =
 		| 'button'
 		| 'checkbox'
 		| 'color'
@@ -22,6 +22,7 @@
 		| 'time'
 		| 'url'
 		| 'week';
+	export let type: InputType;
 	export let value: string = '';
 	export let name: string = '';
 	export let id: string = '';

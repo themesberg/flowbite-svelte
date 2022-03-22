@@ -2,7 +2,7 @@
 	import type { SvelteComponent } from 'svelte';
 	export let label: string;
 	export let id: string;
-	export let type:
+	type InputType =
 		| 'button'
 		| 'checkbox'
 		| 'color'
@@ -25,6 +25,7 @@
 		| 'time'
 		| 'url'
 		| 'week';
+	export let type: InputType;
 	export let value: string = '';
 	export let icon: typeof SvelteComponent;
 	export let helper: string = '';
