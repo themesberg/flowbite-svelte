@@ -45,7 +45,7 @@ let btnClass="Add your class here"
 
 <h2 class="text-2xl w-full dark:text-white py-8">How to change Dark mode color</h2>
 
-<p class="dark:text-white text-lg w-full"><a href="https://flowbite.com/docs/customize/dark-mode/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Find the name of the color from hex color code.</a></p>
+<p class="dark:text-white text-lg w-full"><a href="https://chir.ag/projects/name-that-color/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Find the name of the color from hex color code.</a></p>
 
 <p class="dark:text-white text-lg w-full">Update tailwind.config.cjs:</p>
 
