@@ -6,6 +6,8 @@
 	export let img: string = '';
 	export let btnLabel: string = 'Read more';
 	export let btnColor: Colors = 'blue';
+	export let textdivClass = 'p-5';
+	export let paragraphClass = 'mb-3 font-normal text-gray-700 dark:text-gray-400';
 	export let headerClass = 'mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white';
 	export let header: string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
 	export let divClass =
@@ -47,7 +49,7 @@
 			<img class="rounded-t-lg" src={img} {alt} />
 		</a>
 	{/if}
-	<div class="p-5">
+	<div class={textdivClass}>
 		{#if link}
 			<a href={link} {rel}>
 				<h3 class={headerClass}>
@@ -60,7 +62,7 @@
 			</h3>
 		{/if}
 		{#if $$slots.paragraph}
-			<p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+			<p class={paragraphClass}>
 				<slot name="paragraph" />
 			</p>
 		{/if}
