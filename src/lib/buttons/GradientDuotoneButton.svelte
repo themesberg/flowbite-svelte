@@ -4,7 +4,7 @@
 	export let color: Gradientduotones = 'purple2blue';
 	export let name = 'Read more';
 	let btnClass: string;
-	export let type: ButtonType = 'button';
+	export let btnType: ButtonType = 'button';
 
 	if (color === 'purple2blue') {
 		btnClass = `text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg ${textSize} px-5 py-2.5 text-center mr-2 mb-2`;
@@ -25,4 +25,4 @@
 	}
 </script>
 
-<button {type} class={btnClass} on:click>{name}</button>
+<button type={btnType} class={btnClass} on:click>{name}</button>
