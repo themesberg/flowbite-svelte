@@ -22,7 +22,7 @@
 		| 'time'
 		| 'url'
 		| 'week';
-	export let type: InputType;
+	export let type: InputType = 'text';
 	export let value: string = '';
 	export let name: string = '';
 	export let id: string = '';

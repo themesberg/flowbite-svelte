@@ -39,6 +39,7 @@ let selectprops = {
 	name : 'country',
 	label : 'Select your country',
 }
+let selected;
 let fileuploadprops = {
   id : 'user_avatar',
 	label : 'Upload file'
@@ -324,6 +325,7 @@ let textareaprops = {
 <p class="dark:text-white py-4 text-lg">The Select component has the following props, type, and default values:</p>
 
 ```js
+let selected;
 let id = 'countries';
 let name = 'country';
 let label = 'Select your country';
@@ -334,7 +336,7 @@ let selectClass = 'bg-gray-50 border border-gray-300 text-gray-900 text-sm round
 <h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Select {...selectprops}>
+<Select {...selectprops} bind:value={selected}>
   <option value="us">United States</option>
   <option value="ca">Canada</option>
   <option value="fr">France</option>
@@ -352,7 +354,7 @@ let selectprops = {
 }
 </script>
 
-<Select {...selectprops}>
+<Select {...selectprops} bind:value={selected}>
   <option value="us">United States</option>
   <option value="ca">Canada</option>
   <option value="fr">France</option>

@@ -6,6 +6,7 @@
 	export let img: string = '';
 	export let btnLabel: string = 'Read more';
 	export let btnColor: Colors = 'blue';
+	export let headerClass = 'mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white';
 	export let header: string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
 	export let divClass =
 		'max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700';
@@ -49,9 +50,9 @@
 	<div class="p-5">
 		{#if link}
 			<a href={link} {rel}>
-				<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+				<h3 class={headerClass}>
 					{header}
-				</h5>
+				</h3>
 			</a>
 		{:else}
 			<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">

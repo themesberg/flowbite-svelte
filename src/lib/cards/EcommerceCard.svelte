@@ -10,6 +10,7 @@
 	export let title: string = 'Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport';
 	export let stars: number = 5;
 	export let price = '$555';
+	export let headerClass = 'text-xl font-semibold tracking-tight text-gray-900 dark:text-white';
 	export let divClass =
 		'max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700';
 	let spanClass: string;
@@ -68,7 +69,7 @@
 	</a>
 	<div class="px-5 pb-5">
 		<a href={link} {rel}>
-			<h3 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+			<h3 class={headerClass}>
 				{title}
 			</h3>
 		</a>

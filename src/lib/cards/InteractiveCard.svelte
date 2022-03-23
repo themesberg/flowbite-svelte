@@ -12,6 +12,7 @@
 	export let buttonColor = 'blue';
 	export let link1: LinkType;
 	export let link2: LinkType;
+	export let headerClass = 'mb-1 text-xl font-medium text-gray-900 dark:text-white';
 	export let divClass =
 		'max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700';
 	let linkClass: string;
@@ -87,7 +88,7 @@
 
 	<div class="flex flex-col items-center pb-10">
 		<img class="mb-3 w-24 h-24 rounded-full shadow-lg" src={img.src} alt={img.alt} />
-		<h3 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">
+		<h3 class={headerClass}>
 			{header}
 		</h3>
 		<span class="text-sm text-gray-500 dark:text-gray-400">{content}</span>

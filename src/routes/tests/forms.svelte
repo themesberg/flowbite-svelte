@@ -1,126 +1,186 @@
 <script>
-	import { Toggle, Textarea, Select } from '$lib/index';
+	import {
+		Input,
+		Checkbox,
+		Fileupload,
+		FloatingLabelInput,
+		Iconinput,
+		Radio,
+		Select,
+		SingleCheckbox,
+		Toggle,
+		Textarea
+	} from '$lib/index';
+	let username;
+	let size;
+	import { AtSymbolIconSolid, MailIconOutline } from '@codewithshin/svelte-heroicons';
+
+	let props = {
+		name: 'toggle-example',
+		id: 'toggle-example',
+		label: 'Toggle me',
+		checked: false,
+		disabled: false
+	};
+	let props2 = {
+		name: 'toggle-example-checked',
+		id: 'toggle-example-checked',
+		label: 'Toggle me (checked)',
+		checked: true,
+		disabled: false
+	};
+	let props3 = {
+		name: 'toggle-example-disabled',
+		id: 'toggle-example-disabled',
+		label: 'Toggle me (disabled)',
+		checked: false,
+		disabled: true
+	};
+	let textareaprops = {
+		id: 'message',
+		name: 'message',
+		label: 'Your message',
+		rows: 4,
+		placeholder: 'Leave a comment...'
+	};
+
+	let selectprops = {
+		id: 'countries',
+		name: 'country',
+		label: 'Select your country'
+	};
+
+	let selected;
+	let fileuploadprops = {
+		id: 'user_avatar',
+		label: 'Upload file'
+	};
+	let fileuploadprops2 = {
+		id: 'user_avatar',
+		label: 'Upload file',
+		helper: 'A profile picture is useful to confirm your are logged into your account'
+	};
+	let radiooptions = [
+		{
+			id: 'country-option-1',
+			value: 'USA',
+			checked: true,
+			label: 'United States'
+		},
+		{
+			id: 'country-option-2',
+			label: 'Germany',
+			value: 'Germany'
+		},
+		{
+			id: 'country-option-3',
+			label: 'Spain (disabled)',
+			value: 'Spain',
+			disabled: true
+		}
+	];
+
+	let radioname = 'countries';
+
+	let legend = 'Checkbox variants';
+	let checkboxOptions = [
+		{
+			id: 'checkbox-1',
+			checked: true,
+			label:
+				'I agree to the <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>'
+		},
+		{
+			id: 'checkbox-2',
+			label: 'I want to get promotional offers'
+		},
+		{
+			id: 'checkbox-3',
+			label: 'Eligible for international shipping (disabled)',
+			disabled: true
+		},
+		{
+			id: 'checkbox-4',
+			label: 'Free shipping via Flowbite',
+			helper:
+				"For orders shipped from Flowbite from <span class='font-medium'>€ 25</span> in books or <span>€ 29</span> on other categories</span>"
+		}
+	];
 </script>
 
-<Toggle />
+<Input label="Username" id="username" name="username" type="text" bind:value={username} required />
 
-<Textarea />
+<Input
+	bind:value={size}
+	class="mb-6"
+	id="large-input"
+	name="size"
+	type="text"
+	size="sm:text-md"
+	placeholder="Write your text here."
+	label="Large input"
+	required
+/>
 
-<Select />
+<Input
+	bind:value={size}
+	class="mb-6"
+	id="large-input2"
+	name="size"
+	type="text"
+	disabled
+	placeholder="disabled input"
+	label="Disabled input"
+/>
+
+<Input
+	bind:value={size}
+	label="Email"
+	id="email"
+	name="email"
+	type="email"
+	required
+	placeholder="Your email"
+	helper="You can add helper text in <b>HTML</b>."
+/>
 
 <form>
-	<div class="relative z-0 mb-6 w-full group">
-		<input
-			type="email"
-			name="floating_email"
-			class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-			placeholder=" "
-			required
-		/>
-		<label
-			for="floating_email"
-			class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-			>Email address</label
-		>
-	</div>
-	<div class="relative z-0 mb-6 w-full group">
-		<input
-			type="password"
-			name="floating_password"
-			id="floating_password"
-			class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-			placeholder=" "
-			required
-		/>
-		<label
-			for="floating_password"
-			class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-			>Password</label
-		>
-	</div>
-	<div class="relative z-0 mb-6 w-full group">
-		<input
-			type="password"
-			name="repeat_password"
-			id="floating_repeat_password"
-			class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-			placeholder=" "
-			required
-		/>
-		<label
-			for="floating_repeat_password"
-			class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-			>Confirm password</label
-		>
-	</div>
-	<div class="grid xl:grid-cols-2 xl:gap-6">
-		<div class="relative z-0 mb-6 w-full group">
-			<input
-				type="text"
-				name="floating_first_name"
-				id="floating_first_name"
-				class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-				placeholder=" "
-				required
-			/>
-			<label
-				for="floating_first_name"
-				class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-				>First name</label
-			>
-		</div>
-		<div class="relative z-0 mb-6 w-full group">
-			<input
-				type="text"
-				name="floating_last_name"
-				id="floating_last_name"
-				class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-				placeholder=" "
-				required
-			/>
-			<label
-				for="floating_last_name"
-				class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-				>Last name</label
-			>
-		</div>
-	</div>
-	<div class="grid xl:grid-cols-2 xl:gap-6">
-		<div class="relative z-0 mb-6 w-full group">
-			<input
-				type="tel"
-				pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-				name="floating_phone"
-				id="floating_phone"
-				class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-				placeholder=" "
-				required
-			/>
-			<label
-				for="floating_phone"
-				class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-				>Phone number (123-456-7890)</label
-			>
-		</div>
-		<div class="relative z-0 mb-6 w-full group">
-			<input
-				type="text"
-				name="floating_company"
-				id="floating_company"
-				class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-				placeholder=" "
-				required
-			/>
-			<label
-				for="floating_company"
-				class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-				>Company (Ex. Google)</label
-			>
-		</div>
-	</div>
-	<button
-		type="submit"
-		class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-		>Submit</button
-	>
+	<FloatingLabelInput id="email" name="email" type="email" required label="Email" />
+	<FloatingLabelInput id="password" name="password" type="password" required label="Password" />
+	<FloatingLabelInput
+		id="confirmpassword"
+		name="confirm_password"
+		type="password"
+		required
+		label="Confirm password"
+	/>
+	<FloatingLabelInput id="first_name" name="first_name" type="text" required label="First name" />
 </form>
+
+<Iconinput
+	id="email"
+	type="email"
+	name="email"
+	placeholder="Your email"
+	label="Border"
+	icon={AtSymbolIconSolid}
+	iconClass="h-4 w-4 mr-2 text-blue-500"
+/>
+
+<Textarea {...textareaprops} />
+
+<Select {...selectprops} bind:value={selected}>
+	<option value="us">United States</option>
+	<option value="ca">Canada</option>
+	<option value="fr">France</option>
+</Select>
+
+<Checkbox options={checkboxOptions} {legend} />
+
+<SingleCheckbox name="rememberme" id="rememberme" required label="Remember me" />
+
+<Radio options={radiooptions} name={radioname} />
+
+<Fileupload {...fileuploadprops} />
+
+<Toggle {...props} />
