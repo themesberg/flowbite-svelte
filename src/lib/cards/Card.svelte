@@ -41,7 +41,7 @@
 	}
 </script>
 
-<div class={divClass}>
+<div class={divClass} class:has-paragraph={$$slots.paragraph}>
 	{#if img}
 		<a href={link} {rel}>
 			<img class="rounded-t-lg" src={img} {alt} />
@@ -55,14 +55,15 @@
 				</h3>
 			</a>
 		{:else}
-			<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+			<h3 class={headerClass}>
 				{header}
-			</h5>
+			</h3>
 		{/if}
-
-		<p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-			<slot />
-		</p>
+		{#if $$slots.paragraph}
+			<p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+				<slot name="paragraph" />
+			</p>
+		{/if}
 		{#if link}
 			<a href={link} {rel} class={buttonClass}>
 				{btnLabel}
