@@ -4,6 +4,7 @@ layout: doc
 
 <script>
   import { Button }from '$lib/index';
+  import {ArrowCircleRightIconOutline} from '@codewithshin/svelte-heroicons'
 </script>
 
 <h1 class="text-3xl w-full text-gray-900 dark:text-white py-8">Buttons</h1>
@@ -51,23 +52,26 @@ let type: ButtonType = 'button';
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Button name="Button" textSize="text-sm" />
-  <Button name="Button" textSize="text-sm" buttonType="dark" />
-  <Button name="Button" textSize="text-sm" buttonType="light" />
-  <Button name="Button" textSize="text-sm" buttonType="red" />
-  <Button name="Button" textSize="text-sm" buttonType="green" />
-  <Button name="Button" textSize="text-sm" buttonType="yellow" />
-  <Button name="Button" textSize="text-sm" buttonType="purple" />
+  <Button name="Button" textSize="text-sm" btnColor="dark" />
+  <Button name="Button" textSize="text-sm" btnColor="light" />
+  <Button name="Button" textSize="text-sm" btnColor="red" />
+  <Button name="Button" textSize="text-sm" btnColor="green" />
+  <Button name="Button" textSize="text-sm" btnColor="yellow" />
+  <Button name="Button" textSize="text-sm" btnColor="purple" />
 </div>
 
 ```html
 <Button name="Button" textSize="text-sm" />
-<Button name="Button" textSize="text-sm" buttonType="dark" />
-<Button name="Button" textSize="text-sm" buttonType="light" />
-<Button name="Button" textSize="text-sm" buttonType="red" />
-<Button name="Button" textSize="text-sm" buttonType="green" />
-<Button name="Button" textSize="text-sm" buttonType="yellow" />
-<Button name="Button" textSize="text-sm" buttonType="purple" />
+<Button name="Button" textSize="text-sm" btnColor="dark" />
+<Button name="Button" textSize="text-sm" btnColor="light" />
+<Button name="Button" textSize="text-sm" btnColor="red" />
+<Button name="Button" textSize="text-sm" btnColor="green" />
+<Button name="Button" textSize="text-sm" btnColor="yellow" />
+<Button name="Button" textSize="text-sm" btnColor="purple" />
 ```
+
+
+
 
 <h2 class="text-2xl w-full dark:text-white py-8">Related components</h2>
 

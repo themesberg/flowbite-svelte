@@ -52,4 +52,7 @@
 	}
 </script>
 
-<button type={btnType} class={buttonClass} on:click>{name}></button>
+<button type={btnType} class={buttonClass} on:click>
+	{name}
+	<slot />
+</button>

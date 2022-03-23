@@ -3,7 +3,10 @@ layout: doc
 ---
 
 <script>
-  import { Card }from '$lib/index';
+  import { Card, Button }from '$lib/index';
+  const btn1 = ()　=>　{
+    alert('You clicked.')
+  }
 </script>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Card</h1>
@@ -114,17 +117,26 @@ let divClass = 'max-w-sm bg-white rounded-lg border border-gray-200 shadow-md da
   </Card>
 </div>
 
-<h2 class="text-2xl w-full dark:text-white py-8">Card with red button</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Card a button component</h2>
+
+<p class="dark:text-white py-4 text-lg">If you need a click handler rather than a link, use a Button component.</p>
 
 ```html
+<script>
+  const btn1 = ()　=>　{
+    alert('You clicked.')
+  }
+</scipt>
 <Card
   img="/images/image-1.jpeg"
-  header="Red button"
-  link="/"
+  header="Button component"
   btnColor="red"
 >
 <span slot="paragraph">
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
+  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    <div class="w-full pt-4">
+      <Button name="Click me" on:click={btn1} />
+    </div>
 </span>
 </Card>
 ```
@@ -132,14 +144,14 @@ let divClass = 'max-w-sm bg-white rounded-lg border border-gray-200 shadow-md da
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Card
     img="/images/image-1.jpeg"
-    header="Red button"
-    link="/"
+    header="Button component"
     btnColor="red"
   >
     <span slot="paragraph">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
-    consequatur modi ab nisi perferendis placeat natus repellendus officiis
-    ipsa.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    <div class="w-full pt-4">
+      <Button name="Click me" on:click={btn1} />
+    </div>
     </span>
   </Card>
 </div>
