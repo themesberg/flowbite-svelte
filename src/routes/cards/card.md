@@ -38,15 +38,19 @@ let divClass = 'max-w-sm bg-white rounded-lg border border-gray-200 shadow-md da
 
 ```html
 <Card header="Simple card with header and content">
+  <span slot="paragraph">
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
+  </span>
 </Card>
 ```
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Card header="Simple card with header and content">
+    <span slot="paragraph">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
     consequatur modi ab nisi perferendis placeat natus repellendus officiis
     ipsa.
+    </span>
   </Card>
 </div>
 
@@ -54,15 +58,19 @@ let divClass = 'max-w-sm bg-white rounded-lg border border-gray-200 shadow-md da
 
 ```html
 <Card header="Card with link" link="/">
+  <span slot="paragraph">
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
+  </span>
 </Card>
 ```
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Card header="Card with link" link="/">
+  <span slot="paragraph">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
     consequatur modi ab nisi perferendis placeat natus repellendus officiis
     ipsa.
+    </span>
   </Card>
 </div>
 
@@ -70,31 +78,39 @@ let divClass = 'max-w-sm bg-white rounded-lg border border-gray-200 shadow-md da
 
 ```html
 <Card img="/images/image-1.jpeg" header="Card with link and image" link="/">
+  <span slot="paragraph">
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
+  </span>
 </Card>
 ```
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Card img="/images/image-1.jpeg" header="Card with link and image" link="/">
+  <span slot="paragraph">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
     consequatur modi ab nisi perferendis placeat natus repellendus officiis
     ipsa.
+    </span>
   </Card>
 </div>
 
 <h2 class="text-2xl w-full dark:text-white py-8">Card with image</h2>
 
 ```html
-<Card img="/images/image-2.jpeg" header="Card with image"
-  >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
+<Card img="/images/image-2.jpeg" header="Card with image">
+  <span slot="paragraph">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
+  </span>
 </Card>
 ```
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-  <Card img="/images/image-2.jpeg" header="Card with image"
-    >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
+  <Card img="/images/image-2.jpeg" header="Card with image">
+  <span slot="paragraph">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
     consequatur modi ab nisi perferendis placeat natus repellendus officiis
     ipsa.
+    </span>
   </Card>
 </div>
 
@@ -107,7 +123,9 @@ let divClass = 'max-w-sm bg-white rounded-lg border border-gray-200 shadow-md da
   link="/"
   btnColor="red"
 >
+<span slot="paragraph">
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
+</span>
 </Card>
 ```
 
@@ -118,9 +136,11 @@ let divClass = 'max-w-sm bg-white rounded-lg border border-gray-200 shadow-md da
     link="/"
     btnColor="red"
   >
+    <span slot="paragraph">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
     consequatur modi ab nisi perferendis placeat natus repellendus officiis
     ipsa.
+    </span>
   </Card>
 </div>
 
@@ -133,7 +153,9 @@ let divClass = 'max-w-sm bg-white rounded-lg border border-gray-200 shadow-md da
   link="/"
   btnColor="yellow"
 >
+<span slot="paragraph">
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
+</span>
 </Card>
 ```
 
@@ -144,7 +166,9 @@ let divClass = 'max-w-sm bg-white rounded-lg border border-gray-200 shadow-md da
     link="/"
     btnColor="yellow"
   >
+    <span slot="paragraph">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
+    </span>
   </Card>
 </div>
 
@@ -157,9 +181,11 @@ let divClass = 'max-w-sm bg-white rounded-lg border border-gray-200 shadow-md da
   link="/"
   btnColor="purple"
 >
+  <span slot="paragraph">
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
   consequatur modi ab nisi perferendis placeat natus repellendus officiis
   ipsa.
+  </span>
 </Card>
 ```
 
@@ -170,9 +196,11 @@ let divClass = 'max-w-sm bg-white rounded-lg border border-gray-200 shadow-md da
     link="/"
     btnColor="purple"
   >
+  <span slot="paragraph">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
     consequatur modi ab nisi perferendis placeat natus repellendus officiis
     ipsa.
+  </span>
   </Card>
 </div>
 
