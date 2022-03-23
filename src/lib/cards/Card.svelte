@@ -45,9 +45,13 @@
 
 <div class={divClass} class:has-paragraph={$$slots.paragraph}>
 	{#if img}
-		<a href={link} {rel}>
+		{#if link}
+			<a href={link} {rel}>
+				<img class="rounded-t-lg" src={img} {alt} />
+			</a>
+		{:else}
 			<img class="rounded-t-lg" src={img} {alt} />
-		</a>
+		{/if}
 	{/if}
 	<div class={textdivClass}>
 		{#if link}
