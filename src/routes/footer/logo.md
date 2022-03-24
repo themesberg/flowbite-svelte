@@ -5,14 +5,14 @@ layout: doc
 <script>
   import {LogoFooter} from '$lib/index'
   let site = {
-    link: "/",
+    href: "/",
     name: "Flowbite Svelte",
     img: "/images/mkdir-logo.png",
   };
   let links = [
-    { name: "About", link: "/" },
-    { name: "Profile", link: "/" },
-    { name: "Contact", link: "/" },
+    { name: "About", href: "/" },
+    { name: "Profile", href: "/" },
+    { name: "Contact", href: "/" },
   ];
 </script>
 
@@ -61,14 +61,14 @@ let allRightsReserved = 'All Rights Reserved.';
 <script>
   import {LogoFooter} from 'flowbite-svelte'
   let site = {
-    link: "/",
+    href: "/",
     name: "Flowbite Svelte",
     img: "/images/mkdir-logo.png",
   };
   let links = [
-    { name: "About", link: "/" },
-    { name: "Profile", link: "/" },
-    { name: "Contact", link: "/" },
+    { name: "About", href: "/" },
+    { name: "Profile", href: "/" },
+    { name: "Contact", href: "/" },
   ];
 </script>
 

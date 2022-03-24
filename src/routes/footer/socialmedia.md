@@ -11,7 +11,7 @@ import {
     InstagramIcon,
   } from "@codewithshin/svelte-simpleicons";
 let site = {
-    link: "/",
+    href: "/",
     name: "Company",
     img: "/images/mkdir-logo.png",
   };
@@ -19,49 +19,49 @@ let links = [
     {
       parent: "RESOURCES",
       children: [
-        { name: "Flowbite-Svelte", link: "/" },
+        { name: "Flowbite-Svelte", href: "/" },
         {
           name: "Flowbite",
-          link: "/",
+          href: "/",
         },
       ],
     },
     {
       parent: "FOLLOW US",
       children: [
-        { name: "Github", link: "/" },
+        { name: "Github", href: "/" },
         {
           name: "Flowbite",
-          link: "/",
+          href: "/",
         },
       ],
     },
     {
       parent: "LEGAL",
       children: [
-        { name: "Privacy Policy", link: "/" },
+        { name: "Privacy Policy", href: "/" },
         {
           name: "Terms & Conditions",
-          link: "/",
+          href: "/",
         },
       ],
     },
   ];
   let socialMedia = [
     {
-      link: "/",
+      href: "/",
       icon: FacebookIcon,
     },
     {
-      link: "/",
+      href: "/",
       icon: GithubIcon,
     },
     {
-      link: "/",
+      href: "/",
       icon: TwitterIcon,
     },
     {
-      link: "/",
+      href: "/",
       icon: InstagramIcon,
     },
   ];
@@ -132,7 +132,7 @@ let allRightsReserved = "All Rights Reserved.";
     InstagramIcon,
   } from "@codewithshin/svelte-simpleicons";
   let site = {
-    link: "/",
+    href: "/",
     name: "Company",
     img: "/images/mkdir-logo.png",
   };
@@ -140,49 +140,49 @@ let allRightsReserved = "All Rights Reserved.";
     {
       parent: "RESOURCES",
       children: [
-        { name: "Flowbite-Svelte", link: "/" },
+        { name: "Flowbite-Svelte", href: "/" },
         {
           name: "Flowbite",
-          link: "/",
+          href: "/",
         },
       ],
     },
     {
       parent: "FOLLOW US",
       children: [
-        { name: "Github", link: "/" },
+        { name: "Github", href: "/" },
         {
           name: "Flowbite",
-          link: "/",
+          href: "/",
         },
       ],
     },
     {
       parent: "LEGAL",
       children: [
-        { name: "Privacy Policy", link: "/" },
+        { name: "Privacy Policy", href: "/" },
         {
           name: "Terms & Conditions",
-          link: "/",
+          href: "/",
         },
       ],
     },
   ];
   let socialMedia = [
   {
-    link: "/",
+    href: "/",
     icon: FacebookIcon,
   },
   {
-    link: "/",
+    href: "/",
     icon: GithubIcon,
   },
   {
-    link: "/",
+    href: "/",
     icon: TwitterIcon,
   },
   {
-    link: "/",
+    href: "/",
     icon: InstagramIcon,
   },
 ];

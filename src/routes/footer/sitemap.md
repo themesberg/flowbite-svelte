@@ -11,7 +11,7 @@ layout: doc
     InstagramIcon,
   } from "@codewithshin/svelte-simpleicons";
   let site = {
-    link: "/",
+    href: "/",
     name: "Flowbite Svelte",
     img: "/images/mkdir-logo.png",
   };
@@ -19,75 +19,75 @@ layout: doc
   {
     parent: "Company",
     children: [
-      { name: "About", link: "/" },
+      { name: "About", href: "/" },
       {
         name: "Careers",
-        link: "/",
+        href: "/",
       },
-      { name: "Brand Center", link: "/" },
+      { name: "Brand Center", href: "/" },
       {
         name: "Blog",
-        link: "/",
+        href: "/",
       },
     ],
   },
   {
     parent: "Help center",
     children: [
-      { name: "Discord Server", link: "/" },
+      { name: "Discord Server", href: "/" },
       {
         name: "Twitter",
-        link: "/",
+        href: "/",
       },
-      { name: "Facebook", link: "/" },
+      { name: "Facebook", href: "/" },
       {
         name: "Contact Us",
-        link: "/",
+        href: "/",
       },
     ],
   },
   {
     parent: "LEGAL",
     children: [
-      { name: "Privacy Policy", link: "/" },
-      { name: "Licensing", link: "/" },
+      { name: "Privacy Policy", href: "/" },
+      { name: "Licensing", href: "/" },
       {
         name: "Terms & Conditions",
-        link: "/",
+        href: "/",
       },
     ],
   },
   {
     parent: "Download",
     children: [
-      { name: "iOS", link: "/" },
-      { name: "Android", link: "/" },
+      { name: "iOS", href: "/" },
+      { name: "Android", href: "/" },
       {
         name: "Windows",
-        link: "/",
+        href: "/",
       },
       {
         name: "MacOS",
-        link: "/",
+        href: "/",
       },
     ],
   },
 ];
   let socialMedia = [
     {
-      link: "/",
+      href: "/",
       icon: FacebookIcon,
     },
     {
-      link: "/",
+      href: "/",
       icon: GithubIcon,
     },
     {
-      link: "/",
+      href: "/",
       icon: TwitterIcon,
     },
     {
-      link: "/",
+      href: "/",
       icon: InstagramIcon,
     },
   ];
@@ -148,29 +148,29 @@ let allRightsReserved = "All Rights Reserved.";
     InstagramIcon,
   } from "@codewithshin/svelte-simpleicons";
   let site = {
-    link: "/",
+    href: "/",
     name: "Flowbite Svelte",
   };
   let links = [
-    { name: "About", link: "/" },
-    { name: "Profile", link: "/" },
-    { name: "Contact", link: "/" },
+    { name: "About", href: "/" },
+    { name: "Profile", href: "/" },
+    { name: "Contact", href: "/" },
   ];
   let socialMedia = [
     {
-      link: "/",
+      href: "/",
       icon: FacebookIcon,
     },
     {
-      link: "/",
+      href: "/",
       icon: GithubIcon,
     },
     {
-      link: "/",
+      href: "/",
       icon: TwitterIcon,
     },
     {
-      link: "/",
+      href: "/",
       icon: InstagramIcon,
     },
   ];
