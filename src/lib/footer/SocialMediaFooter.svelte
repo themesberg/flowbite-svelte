@@ -24,7 +24,7 @@
 	export let allRightsReserved = 'All Rights Reserved.';
 </script>
 
-<footer class={footerClass}>
+<footer class="{footerClass} {$$props.class}">
 	<div class={divClass}>
 		<div class={divClass2}>
 			<a href={site.href} class={siteLinkClass}>
