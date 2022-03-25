@@ -1,5 +1,5 @@
 ---
-layout: doc
+layout: docLayout
 ---
 
 <h1 class="text-3xl w-full dark:text-white">Flowbite-Svelte-CLI (fsc)</h1>
@@ -62,14 +62,3 @@ fsc navbar
 
 <img src="/images/fsc-component.png" alt="fsc component" />
 
-<h2 class="text-2xl w-full dark:text-white py-8">Related topics</h2>
-
-<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/detting-started" class="text-blue-600 hover:underline dark:text-blue-500">Getting started</a></p>
-
-<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/cli" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite-Svelte-CLI</a></p>
-
-<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/about" class="text-blue-600 hover:underline dark:text-blue-500">About</a></p>
-
-<h2 class="text-2xl w-full dark:text-white py-8">References</h2>
-
-<p class="dark:text-white pt-4 w-full">Read more about <a href="https://github.com/shinokada/fsc" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite-Svelte-CLI GitHub</a></p>

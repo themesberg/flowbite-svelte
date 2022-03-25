@@ -1,5 +1,5 @@
 ---
-layout: doc
+layout: docLayout
 ---
 
 <h1 class="text-3xl dark:text-white w-full pb-4">About</h1>
@@ -13,21 +13,3 @@ layout: doc
 
 <p class="dark:text-white w-full text-lg py-2">This website uses Flowbite-Svelte components except the <a href="https://github.com/shinokada/svelte-sidebar" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">sidebar menu</a>.</p>
 
-
-<h2 class="text-2xl w-full dark:text-white py-8">Related topics</h2>
-
-<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/detting-started" class="text-blue-600 hover:underline dark:text-blue-500">Getting started</a></p>
-
-<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/cli" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite-Svelte-CLI</a></p>
-
-<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/about" class="text-blue-600 hover:underline dark:text-blue-500">About</a></p>
-
-<h2 class="text-2xl dark:text-white w-full pt-8 py-8">References</h2>
-
-<p class="dark:text-white w-full text-lg py-2"><a href="https://kit.svelte.dev/docs" class="text-blue-600 hover:underline dark:text-blue-500">SvelteKit</a></p>
-
-<p class="dark:text-white w-full text-lg py-2"><a href="https://tailwindcss.com/docs/installation" class="text-blue-600 hover:underline dark:text-blue-500">TailwindCSS</a></p>
-
-<p class="dark:text-white w-full text-lg py-2"><a href="https://flowbite.com/docs/getting-started/introduction/" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite</a></p>
-
-<p class="dark:text-white w-full text-lg py-2"><a href="https://github.com/shinokada/svelte-sidebar" class="text-blue-600 hover:underline dark:text-blue-500">Svelte-sidebar</a></p>

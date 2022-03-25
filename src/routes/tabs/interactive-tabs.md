@@ -1,5 +1,5 @@
 ---
-layout: doc
+layout: tabLayout
 ---
 
 <script>
@@ -88,17 +88,3 @@ let tabs: InteractiveTabType[];
 
 <InteractiveTabs tabId="myTab1" tabs={tabs1} />
 ```
-
-<h2 class="text-2xl w-full dark:text-white py-8">Related components</h2>
-
-<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/tabs/default-tabs" class="text-blue-600 hover:underline dark:text-blue-500">Default Tab</a></p>
-
-<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/tabs/interactive-tabs" class="text-blue-600 hover:underline dark:text-blue-500">Interactive Tab</a></p>
-
-<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/tabs/multiple-interactive-tabs" class="text-blue-600 hover:underline dark:text-blue-500">Multiple Interactive Tab</a></p>
-
-<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/tabs/pilltabs" class="text-blue-600 hover:underline dark:text-blue-500">Pill Tab</a></p>
-
-<h2 class="text-2xl w-full dark:text-white py-8">References</h2>
-
-<p class="dark:text-white text-lg"><a href="https://flowbite.com/docs/components/tabs/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Tabs</a></p>
