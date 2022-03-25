@@ -35,27 +35,27 @@
 
 		<h2 class="text-2xl dark:text-white w-full pt-8 py-8">References</h2>
 
-		<p class="dark:text-white w-full text-lg py-2">
+		<p class="dark:text-white w-full text-lg">
 			<a href="https://kit.svelte.dev/docs" class="text-blue-600 hover:underline dark:text-blue-500"
 				>SvelteKit</a
 			>
 		</p>
 
-		<p class="dark:text-white w-full text-lg py-2">
+		<p class="dark:text-white w-full text-lg">
 			<a
 				href="https://tailwindcss.com/docs/installation"
 				class="text-blue-600 hover:underline dark:text-blue-500">TailwindCSS</a
 			>
 		</p>
 
-		<p class="dark:text-white w-full text-lg py-2">
+		<p class="dark:text-white w-full text-lg">
 			<a
 				href="https://flowbite.com/docs/getting-started/introduction/"
 				class="text-blue-600 hover:underline dark:text-blue-500">Flowbite</a
 			>
 		</p>
 
-		<p class="dark:text-white w-full text-lg py-2">
+		<p class="dark:text-white w-full text-lg">
 			<a
 				href="https://github.com/shinokada/svelte-sidebar"
 				class="text-blue-600 hover:underline dark:text-blue-500">Svelte-sidebar</a

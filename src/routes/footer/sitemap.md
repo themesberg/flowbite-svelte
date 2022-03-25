@@ -152,10 +152,63 @@ let allRightsReserved = "All Rights Reserved.";
     name: "Flowbite Svelte",
   };
   let links = [
-    { name: "About", href: "/" },
-    { name: "Profile", href: "/" },
-    { name: "Contact", href: "/" },
-  ];
+  {
+    parent: "Company",
+    children: [
+      { name: "About", href: "/" },
+      {
+        name: "Careers",
+        href: "/",
+      },
+      { name: "Brand Center", href: "/" },
+      {
+        name: "Blog",
+        href: "/",
+      },
+    ],
+  },
+  {
+    parent: "Help center",
+    children: [
+      { name: "Discord Server", href: "/" },
+      {
+        name: "Twitter",
+        href: "/",
+      },
+      { name: "Facebook", href: "/" },
+      {
+        name: "Contact Us",
+        href: "/",
+      },
+    ],
+  },
+  {
+    parent: "LEGAL",
+    children: [
+      { name: "Privacy Policy", href: "/" },
+      { name: "Licensing", href: "/" },
+      {
+        name: "Terms & Conditions",
+        href: "/",
+      },
+    ],
+  },
+  {
+    parent: "Download",
+    children: [
+      { name: "iOS", href: "/" },
+      { name: "Android", href: "/" },
+      {
+        name: "Windows",
+        href: "/",
+      },
+      {
+        name: "MacOS",
+        href: "/",
+      },
+    ],
+  },
+];
   let socialMedia = [
     {
       href: "/",
