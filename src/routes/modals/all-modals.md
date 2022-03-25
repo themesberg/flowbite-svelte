@@ -1,5 +1,5 @@
 ---
-layout: doc
+layout: modalLayout
 ---
 
 <script>
@@ -277,17 +277,3 @@ layout: doc
   {signUpLink}
   {formLink}
 />
-
-<h2 class="text-2xl w-full dark:text-white py-8">Related components</h2>
-
-<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/modals/small" class="text-blue-600 hover:underline dark:text-blue-500">Small Modal</a></p>
-
-<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/modals/medium" class="text-blue-600 hover:underline dark:text-blue-500">Medium Modal</a></p>
-
-<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/modals/large" class="text-blue-600 hover:underline dark:text-blue-500">Large Modal</a></p>
-
-<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/modals/extra-large" class="text-blue-600 hover:underline dark:text-blue-500">Extra Large Modal</a></p>
-
-<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/modals/signin" class="text-blue-600 hover:underline dark:text-blue-500">Signin Modal</a></p>
-
-<p class="dark:text-white text-lg w-full"><a href="https://flowbite-svelte.vercel.app/modals/all-modals" class="text-blue-600 hover:underline dark:text-blue-500">All Modals</a></p>
