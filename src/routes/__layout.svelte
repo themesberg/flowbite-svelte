@@ -228,7 +228,7 @@
 	<div class="mt-4 w-full">
 		<slot />
 	</div>
-	<div class="pt-16 ">
+	<div class="pt-4 ">
 		<SocialMediaFooter {site} {socialMedia} {links} {allRightsReserved} {copyrightYear} />
 	</div>
 </main>

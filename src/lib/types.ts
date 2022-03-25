@@ -114,7 +114,7 @@ export interface AuthFieldType {
 //     rows?: number;
 //     textareaClass?: string;
 //     placeholder?: string;
-// // }
+// }
 
 // export type SelectType = {
 //     id: string;
@@ -134,3 +134,13 @@ export type SelectOptionType = {
 //     checked?: boolean;
 //     disabled?: boolean;
 // }
+
+export interface AvatarType {
+    src?: string;
+    alt?: string;
+    size?:  6 | 8 | 12 | 16 | 24 | 48;
+    border?: boolean;
+    round?: boolean;
+    header?: string;
+    text?: string;
+}

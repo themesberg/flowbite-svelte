@@ -5,6 +5,7 @@ const config = defineConfig({
 		doc: './src/routes/layouts/doc.svelte',
 		accordionLayout: './src/routes/layouts/accordionLayout.svelte',
 		alertLayout: './src/routes/layouts/alertLayout.svelte',
+		avatarLayout: './src/routes/layouts/avatarLayout.svelte',
 		badgeLayout: './src/routes/layouts/badgeLayout.svelte',
 		buttongroupLayout: './src/routes/layouts/buttongroupLayout.svelte',
 		buttonLayout: './src/routes/layouts/buttonLayout.svelte',

@@ -12,7 +12,10 @@ export { default as Confirm } from'./auth/Confirm.svelte'
 export { default as ForgotPassword } from'./auth/ForgotPassword.svelte'
 export { default as Login } from'./auth/Login.svelte'
 export { default as Register } from'./auth/Register.svelte'
-export { default as Reset } from'./auth/Reset.svelte'
+export { default as Reset } from './auth/Reset.svelte'
+
+// Avatar
+export { default as Avatar } from './avatar/Avatar.svelte'
 
 // Badges
 export { default as Badge } from'./badges/Badge.svelte'

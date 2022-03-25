@@ -6,7 +6,7 @@
 	import { Utterances } from '@codewithshin/svelte-utterances';
 </script>
 
-<div class="max-w-3xl mx-auto pb-16">
+<div class="max-w-3xl mx-auto pb-8">
 	<div class="container flex flex-wrap mx-auto pt-8">
 		<slot />
 		<h2 class="text-2xl w-full dark:text-white py-8">Related components</h2>
