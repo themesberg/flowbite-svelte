@@ -1,5 +1,5 @@
 ---
-layout: doc
+layout: formLayout
 ---
 
 <script>
