@@ -104,7 +104,7 @@ layout: doc
 
 <h2 class="text-2xl w-full dark:text-white py-8">Small Modals</h2>
 
-```
+```html
 <ModalButton id={smallModalId} btnName={btnSName} />
 <SmallModal
   title={titleS}
@@ -124,7 +124,7 @@ layout: doc
 
 <h2 class="text-2xl w-full dark:text-white py-8">Medium Modals</h2>
 
-```
+```html
 <ModalButton id={mediumModalId} btnName={btnMName} btnColor={btnMColor} />
 <MediumModal
   btnColor={btnMColor}
@@ -145,7 +145,7 @@ layout: doc
 
 <h2 class="text-2xl w-full dark:text-white py-8">Large Modals</h2>
 
-```
+```html
 <ModalButton id={largeModalId} btnName={btnLName} btnColor={btnLColor} />
 <LargeModal
   btnColor={btnLColor}
@@ -166,7 +166,7 @@ layout: doc
 
 <h2 class="text-2xl w-full dark:text-white py-8">Extra-Large Modals</h2>
 
-```
+```html
 <ModalButton
   id={extraLargeModalId}
   btnName={btnExLName}
@@ -195,7 +195,7 @@ layout: doc
 
 <h2 class="text-2xl w-full dark:text-white py-8">SingIn Modals</h2>
 
-```
+```html
 <ModalButton
   id={signinId}
   btnName={btnSignInName}
