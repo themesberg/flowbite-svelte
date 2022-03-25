@@ -123,7 +123,7 @@
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4">
-			<a href="/badges" rel="external">Badges <Badge name="NEW" /></a>
+			<a href="/badges" rel="external">Badges</a>
 		</h3>
 		{#each badges as { href, name, rel }}
 			<SidebarList {href} {name} {rel} {sideBarListClass} />
@@ -131,7 +131,7 @@
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4">
-			<a href="/button-groups" rel="external">Button groups <Badge name="NEW" /></a>
+			<a href="/button-groups" rel="external">Button groups</a>
 		</h3>
 		{#each buttonGroups as { href, name, rel }}
 			<SidebarList {href} {name} {rel} {sideBarListClass} />
@@ -176,7 +176,7 @@
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4">
-			<a href="/icons" rel="external">Icons <Badge name="NEW" /></a>
+			<a href="/icons" rel="external">Icons</a>
 		</h3>
 		{#each icons as { href, name, rel }}
 			<SidebarList {href} {name} {rel} {sideBarListClass} />
@@ -184,7 +184,7 @@
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4">
-			<a href="/list-group" rel="external">List group <Badge name="NEW" /></a>
+			<a href="/list-group" rel="external">List group</a>
 		</h3>
 	</Nav>
 	<Nav {navClass} {navDivClass}>
