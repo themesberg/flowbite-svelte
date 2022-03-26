@@ -171,7 +171,7 @@ layout: avatarLayout
 
 <p class="text-lg w-full text-gray-900 dark:text-white py-4">By setting placehoder, you display a placeholder avatar.</p>
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6  flex flex-wrap justify-center">
+<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6 flex flex-wrap justify-center">
 
   <Avatar placehoder />
 
@@ -185,7 +185,7 @@ layout: avatarLayout
 
 <p class="text-lg w-full text-gray-900 dark:text-white py-4">You can set header and text to show additional information.</p>
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6  flex flex-wrap justify-center">
+<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6 flex flex-wrap justify-center">
   <Avatar avatar={avatarText} />
 </div>
 
@@ -210,5 +210,16 @@ layout: avatarLayout
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
 ```js
-test
+export let avatar: AvatarType = {
+  src: '/',
+  alt: '',
+  size: 8,
+  border: false,
+  round: false,
+  header: '',
+  text: ''
+};
+
+export let avatarClass = `w-${avatar.size} h-${avatar.size} ${isCircle} ${isBorder}`;
+export let placehoder: boolean = false;
 ```

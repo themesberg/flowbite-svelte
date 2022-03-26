@@ -62,6 +62,16 @@
 	</div>
 	<div class="p-4">
 		<Card
+			img="/images/avatar.webp"
+			alt="Avatar"
+			header="AVATAR"
+			link="/avatar"
+			btnColor="green"
+			btnLabel="Go to Avatar"
+		/>
+	</div>
+	<div class="p-4">
+		<Card
 			img="/images/badges.webp"
 			alt="Badges"
 			header="BADGES"

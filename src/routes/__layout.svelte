@@ -116,6 +116,11 @@
 		{/each}
 	</Nav>
 	<Nav {navClass} {navDivClass}>
+		<h3 class="text-base pb-4">
+			<a href="/avatar" rel="external">Avatar <Badge name="NEW" /></a>
+		</h3>
+	</Nav>
+	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4"><a href="/alerts" rel="external">Alerts</a></h3>
 		{#each alerts as { href, name, rel }}
 			<SidebarList {href} {name} {rel} {sideBarListClass} />
