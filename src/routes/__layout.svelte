@@ -218,6 +218,9 @@
 			<SidebarList {href} {name} {rel} {sideBarListClass} />
 		{/each}
 	</Nav>
+	<Nav {navClass} {navDivClass}>
+		<h3 class="text-base pb-4"><a href="/toasts" rel="external">Toast <Badge name="NEW" /></a></h3>
+	</Nav>
 	<Nav {navClass} navDivClass={navDivClasslast}>
 		<h3 class="text-base pb-4">
 			<a href="/tooltips" rel="external">Tooltips <Badge name="NEW" /></a>

@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { fade, blur, fly, slide } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
 	import type { Colors, TransitionTypes } from '../types';
 	let visible = true;
 	const handleHide = () => {
@@ -46,7 +45,7 @@
 	}
 
 	// have a custom transition function that returns the desired transition
-	function multiple(node, params) {
+	function multiple(node: HTMLElement, params: any) {
 		switch (transitionType) {
 			case 'slide':
 				return slide(node, params);
