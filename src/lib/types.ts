@@ -144,3 +144,5 @@ export interface AvatarType {
     header?: string;
     text?: string;
 }
+
+export type TransitionTypes = 'fade' | 'fly' | 'slide' | 'blur'

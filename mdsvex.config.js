@@ -21,6 +21,7 @@ const config = defineConfig({
 		navbarLayout: './src/routes/layouts/navbarLayout.svelte',
 		spinnerLayout: './src/routes/layouts/spinnerLayout.svelte',
 		tabLayout: './src/routes/layouts/tabLayout.svelte',
+		toastLayout: './src/routes/layouts/toastLayout.svelte',
 		tooltipLayout: './src/routes/layouts/tooltipLayout.svelte',
   },
 	extensions: ['.svelte.md', '.md', '.svx'],
