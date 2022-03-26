@@ -33,7 +33,7 @@ let link: string = '/'
 <h2 class="text-2xl w-full dark:text-white py-8">Size xs</h2>
 
 <div
-  class="container flex flex-wrap justify-evenly rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+  class="container  flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <BadgeLink name="Default" {link}/>
 <BadgeLink name="Gray" color="gray" {link}/>
 <BadgeLink name="Red" color="red" {link}/>
@@ -58,7 +58,7 @@ let link: string = '/'
 <h2 class="text-2xl w-full dark:text-white py-8">Size sm</h2>
 
 <div
-  class="container flex flex-wrap justify-evenly rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+  class="container  flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <BadgeLink name="Default" textSize="text-sm" {link}/>
 <BadgeLink name="Gray" color="gray" textSize="text-sm" {link}/>
 <BadgeLink name="Red" color="red" textSize="text-sm" {link}/>
@@ -83,7 +83,7 @@ let link: string = '/'
 <h2 class="text-2xl w-full dark:text-white py-8">Size base</h2>
 
 <div
-  class="container flex flex-wrap justify-evenly rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+  class="container  flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <BadgeLink name="Default" textSize="text-base" {link}/>
 <BadgeLink name="Gray" color="gray" textSize="text-base" {link}/>
 <BadgeLink name="Red" color="red" textSize="text-base" {link}/>

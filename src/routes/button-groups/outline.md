@@ -89,7 +89,7 @@ let buttons: ButtonGroupType[];
 <h2 class="text-2xl w-full dark:text-white py-8">Outline default</h2>
 
 <div
-  class="container flex flex-wrap justify-evenly rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+  class="container   flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ButtonGroupOutline buttons={buttons2}/>
 </div>
 
@@ -101,7 +101,7 @@ let buttons: ButtonGroupType[];
 <h2 class="text-2xl w-full dark:text-white py-8">Outline with icon</h2>
 
 <div
-  class="container flex flex-wrap justify-evenly rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+  class="container   flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   
 <ButtonGroupOutline buttons={buttons1}/>
 </div>

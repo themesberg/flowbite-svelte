@@ -72,7 +72,7 @@ layout: avatarLayout
 <p class="text-lg w-full text-gray-900 dark:text-white py-4">Select size from  6 | 8 | 12 | 16 | 24 | 48.</p>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<div class="flex justify-center space-x-4">
+<div class=" flex flex-wrap justify-center space-x-4">
 <Avatar avatar={avatar6} />
 <Avatar avatar={avatar8}/>
 <Avatar avatar={avatar12}/>
@@ -132,7 +132,7 @@ layout: avatarLayout
 <p class="text-lg w-full text-gray-900 dark:text-white py-4">Set true to border and/or round.</p>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-  <div class="flex justify-center space-x-4">
+  <div class=" flex flex-wrap justify-center space-x-4">
     <Avatar avatar={avatar2} />
     <Avatar avatar={avatar3} />
     <Avatar avatar={avatar4} />
@@ -167,19 +167,44 @@ layout: avatarLayout
 <Avatar avatar={avatar4} />
 ```
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<h2 class="text-2xl w-full dark:text-white py-8">Placehoder</h2>
+
+<p class="text-lg w-full text-gray-900 dark:text-white py-4">By setting placehoder, you display a placeholder avatar.</p>
+
+<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6  flex flex-wrap justify-center">
 
   <Avatar placehoder />
 
 </div>
 
+```html
+<Avatar placehoder />
+```
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<h2 class="text-2xl w-full dark:text-white py-8">Avatar text</h2>
+
+<p class="text-lg w-full text-gray-900 dark:text-white py-4">You can set header and text to show additional information.</p>
+
+<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6  flex flex-wrap justify-center">
   <Avatar avatar={avatarText} />
 </div>
 
 
+```html
+<script>
+  let avatarText ={
+    src: '/images/profile-picture-2.webp',
+    alt: 'My avatar 4',
+    size: 12,
+    border: true,
+    round: true,
+    header:'Jese Leos',
+    text:'Joined in August 2014'
+  }
+</script>
 
+<Avatar avatar={avatarText} />
+```
 
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>

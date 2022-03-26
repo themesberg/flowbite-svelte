@@ -25,7 +25,7 @@ let type: ButtonType = 'button';
 <h2 class="text-2xl w-full dark:text-white py-8">text-sm</h2>
 
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class=" flex flex-wrap justify-center rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <ColorShadowButton color="blue" name="Blue" />
 <ColorShadowButton color="green" name="Green" />
 <ColorShadowButton color="cyan" name="Cyan" />
@@ -50,7 +50,7 @@ let type: ButtonType = 'button';
 <h2 class="text-2xl w-full dark:text-white py-8">text-xs</h2>
 
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class=" flex flex-wrap justify-center rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <ColorShadowButton color="blue" name="Blue" textSize="text-xs"/>
 <ColorShadowButton color="green" name="Green" textSize="text-xs" />
 <ColorShadowButton color="cyan" name="Cyan" textSize="text-xs" />
@@ -74,7 +74,7 @@ let type: ButtonType = 'button';
 
 <h2 class="text-2xl w-full dark:text-white py-8">text-base</h2>
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class=" flex flex-wrap justify-center rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <ColorShadowButton color="blue" name="Blue" textSize="text-base"/>
 <ColorShadowButton color="green" name="Green" textSize="text-base" />
 <ColorShadowButton color="cyan" name="Cyan" textSize="text-base" />

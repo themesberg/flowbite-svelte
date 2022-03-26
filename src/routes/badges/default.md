@@ -30,7 +30,7 @@ let color: Colors = 'blue';
 <h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Size xs</h2>
 
 <div
-  class="container flex flex-wrap justify-evenly rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+  class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Badge name="Default"/>
 <Badge name="Gray" color="gray"/>
 <Badge name="Red" color="red"/>
@@ -56,7 +56,7 @@ let color: Colors = 'blue';
 <h2 class="text-2xl w-full dark:text-white py-8">Size sm</h2>
 
 <div
-  class="container flex flex-wrap justify-evenly rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+  class="container  flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6 ">
 <Badge name="Default" textSize="text-sm"/>
 <Badge name="Gray" color="gray" textSize="text-sm"/>
 <Badge name="Red" color="red" textSize="text-sm"/>
@@ -81,7 +81,7 @@ let color: Colors = 'blue';
 <h2 class="text-2xl w-full dark:text-white py-8">Size base</h2>
 
 <div
-  class="container flex flex-wrap justify-evenly rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+  class="container  flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Badge name="Default" textSize="text-base"/>
 <Badge name="Gray" color="gray" textSize="text-base"/>
 <Badge name="Red" color="red" textSize="text-base"/>

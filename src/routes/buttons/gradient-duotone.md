@@ -25,7 +25,7 @@ let type: ButtonType = 'button';
 
 <h2 class="text-2xl w-full dark:text-white py-8">text-sm</h2>
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class="flex flex-wrap justify-center rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <GradientDuotoneButton color="purple2blue" name="purple2blue" textSize="text-sm"/>
 <GradientDuotoneButton color="cyan2blue" name="cyan2blue" textSize="text-sm"/>
 <GradientDuotoneButton color="green2blue" name="green2blue" textSize="text-sm"/>
@@ -48,7 +48,7 @@ let type: ButtonType = 'button';
 <h2 class="text-2xl w-full dark:text-white py-8">text-xs</h2>
 
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class="flex flex-wrap justify-center rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <GradientDuotoneButton color="purple2blue" name="purple2blue" textSize="text-xs"/>
 <GradientDuotoneButton color="cyan2blue" name="cyan2blue" textSize="text-xs"/>
 <GradientDuotoneButton color="green2blue" name="green2blue" textSize="text-xs"/>
@@ -70,7 +70,7 @@ let type: ButtonType = 'button';
 
 <h2 class="text-2xl w-full dark:text-white py-8">text-base</h2>
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class="flex flex-wrap justify-center rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <GradientDuotoneButton color="purple2blue" name="purple2blue" textSize="text-base"/>
 <GradientDuotoneButton color="cyan2blue" name="cyan2blue" textSize="text-base"/>
 <GradientDuotoneButton color="green2blue" name="green2blue" textSize="text-base"/>
