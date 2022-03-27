@@ -13,6 +13,7 @@ export let alerts = [
   { href: "/alerts/default-alert", name: "Alert" },
   { href: "/alerts/border-alert", name: "Border alert" },
   { href: "/alerts/information-alert", name: "Information alert" },
+  { href: "/alerts/animation", name: "Animation" },
 ];
 
 export const badges = [

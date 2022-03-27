@@ -4,6 +4,7 @@ layout: badgeLayout
 
 <script>
   import {BadgeLink} from '$lib/index'
+  import {InformationCircleIconOutline} from '@codewithshin/svelte-heroicons'
   let link="/"
 </script>
 

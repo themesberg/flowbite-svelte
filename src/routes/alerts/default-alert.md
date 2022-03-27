@@ -38,7 +38,7 @@ let closeBtn: boolean = false;
     A simple info alert without a close button.
 </Alert>
 
-<Alert alertId="alert-gray" color="gray" closeBtn">
+<Alert alertId="alert-gray" color="gray" closeBtn>
   A simple info alert with a close button.
 </Alert>
 
@@ -100,4 +100,3 @@ let closeBtn: boolean = false;
     A simple info alert with a close button.
   </Alert>
 </div>
-

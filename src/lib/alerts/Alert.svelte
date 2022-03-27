@@ -1,10 +1,18 @@
 <script lang="ts">
+	import { createEventDispatcher } from 'svelte';
+	const dispatch = createEventDispatcher();
 	import type { Colors } from '../types';
 	export let color: Colors = 'blue';
 	export let alertId: string = 'alert-1';
 	export let closeBtn: boolean = false;
+	export let btn1: boolean = false;
 
 	let hidden = false;
+
+	const handlebtn1 = () => {
+		dispatch('handlebtn1');
+	};
+
 	const handleHide = () => {
 		hidden = !hidden;
 	};
@@ -68,6 +76,8 @@
 		buttonClass =
 			'ml-auto -mx-1.5 -my-1.5 bg-gray-100 text-gray-500 rounded-lg focus:ring-2 focus:ring-gray-400 p-1.5 hover:bg-gray-200 inline-flex h-8 w-8 dark:bg-gray-200 dark:text-gray-600 dark:hover:bg-gray-300';
 	}
+	let button1Class =
+		'text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800';
 </script>
 
 <div id={alertId} class:hidden class={divClass} role="alert">
@@ -83,6 +93,22 @@
 	</div>
 	{#if closeBtn}
 		<button on:click={handleHide} type="button" class={buttonClass} aria-label="Close">
+			<span class="sr-only">Close</span>
+			<svg
+				class="w-5 h-5"
+				fill="currentColor"
+				viewBox="0 0 20 20"
+				xmlns="http://www.w3.org/2000/svg"
+				><path
+					fill-rule="evenodd"
+					d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+					clip-rule="evenodd"
+				/></svg
+			>
+		</button>
+	{/if}
+	{#if btn1}
+		<button on:click={handlebtn1} type="button" class={buttonClass} aria-label="Close">
 			<span class="sr-only">Close</span>
 			<svg
 				class="w-5 h-5"
