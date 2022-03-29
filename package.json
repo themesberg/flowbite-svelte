@@ -2,6 +2,7 @@
 	"name": "flowbite-svelte",
 	"version": "0.11.0",
 	"description": "Flowbite components for Svelte",
+	"main": "./package/index.js",
 	"author": {
 		"name": "Shinichi Okada",
 		"email": "connect@codewithshin.com",
