@@ -30,13 +30,15 @@ layout: sidebarLayout
 			id: uid++,
 			name: 'E-commerce',
 			icon: ShoppingBagIconSolid,
-			href: '/'
+			href: '/',
+			subtext: '<span class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200">3</span>'
 		},
 		{
 			id: uid++,
 			name: 'Kanban',
 			icon: TableIconSolid,
-			href: '/'
+			href: '/',
+			subtext: '<span class="inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span>'
 		},
 		{
 			id: uid++,
@@ -139,13 +141,17 @@ layout: sidebarLayout
 			href: '/'
 		}
 	];
+	let cta ={
+		label:'Beta',
+		text: 'Preview the new Flowbite dashboard navigation! You can turn the new navigation off for a limited time in your profile.'
+	}
 </script>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Sidebar</h1>
 
-<h2 class="text-2xl w-full mt-8 dark:text-white py-8">Examples</h2>
+<h2 class="text-2xl w-full mt-8 dark:text-white py-8">Default sidebar</h2>
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<div class="container flex flex-wrap rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 	<Sidebar {links} />
 </div>
 
@@ -174,13 +180,15 @@ layout: sidebarLayout
 			id: uid++,
 			name: 'E-commerce',
 			icon: ShoppingBagIconSolid,
-			href: '/'
+			href: '/',
+			subtext: '3'
 		},
 		{
 			id: uid++,
 			name: 'Kanban',
 			icon: TableIconSolid,
-			href: '/'
+			href: '/',
+			subtext: 'Pro'
 		},
 		{
 			id: uid++,
@@ -213,7 +221,9 @@ layout: sidebarLayout
 
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<h2 class="text-2xl w-full mt-8 dark:text-white py-8">Multi-level dropdown</h2>
+
+<div class="container flex flex-wrap rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 	<Sidebar links={links2} {site} />
 </div>
 
@@ -306,10 +316,35 @@ layout: sidebarLayout
 <Sidebar links={links2} {site} />
 ```
 
+<h2 class="text-2xl w-full mt-8 dark:text-white py-8">CTA button</h2>
+
+<div class="container flex flex-wrap rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+	<Sidebar {links} {cta} />
+</div>
+
+
+
 <h2 class="text-2xl w-full mt-8 dark:text-white py-8">Prop</h2>
 
 <p class="dark:text-white py-4 text-lg w-full">The component has the following props, type, and default values:</p>
 
 ```js
-let color: 'blue' | undefined;
+type SidebarType = {
+	id: number;
+	name: string;
+	href?: string;
+	icon?: typeof SvelteComponent;
+	rel?: string;
+	children?: SidebarType[];
+	subtext?: HTMLElement;
+}
+
+type SidebarCtaType = {
+	label: string;
+	text: HTMLElement;
+}
+
+let site: SiteType;
+let links: SidebarType[];
+let cta: SidebarCtaType;
 ```

@@ -113,7 +113,12 @@ export type SidebarType = {
     icon?: typeof SvelteComponent;
     rel?: string;
     children?: SidebarType[];
-    addition?: HTMLElement;
+    subtext?: HTMLElement;
+}
+
+export type SidebarCtaType = {
+    label: string;
+    text: HTMLElement;
 }
 
 // export type SelectType = {

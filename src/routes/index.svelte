@@ -193,6 +193,16 @@
 	</div>
 	<div class="p-4">
 		<Card
+			img="/images/sidebar.webp"
+			alt="Sidebar"
+			header="SIDEBAR"
+			link="/sidebars"
+			btnColor="red"
+			btnLabel="Go to Sidebar"
+		/>
+	</div>
+	<div class="p-4">
+		<Card
 			img="/images/spinners.webp"
 			alt="Spinners"
 			header="SPINNERS"

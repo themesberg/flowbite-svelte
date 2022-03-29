@@ -1,15 +1,15 @@
 <script lang="ts">
-	import type { SiteType, SidebarType } from '../types';
+	import type { SiteType, SidebarType, SidebarCtaType } from '../types';
 	import { slide } from 'svelte/transition';
 	export let site: SiteType;
 	export let links: SidebarType[];
+	export let cta: SidebarCtaType;
 
 	let isOpen = false;
 
 	let activeDropdown: number = undefined;
 	const handleDropdown = (id: number) => {
-		if (!isOpen) isOpen = true;
-		if (activeDropdown === id) isOpen = false;
+		isOpen = !isOpen;
 		activeDropdown = id;
 	};
 </script>
@@ -80,10 +80,26 @@
 								<svelte:component this={link.icon} className="h-4 w-4 mr-2" />
 							{/if}
 							<span class="ml-3">{link.name}</span>
+							{#if link.subtext}
+								{@html link.subtext}
+							{/if}
 						</a>
 					</li>
 				{/if}
 			{/each}
 		</ul>
+		{#if cta}
+			<div id="dropdown-cta" class="p-4 mt-6 bg-blue-50 rounded-lg dark:bg-blue-900" role="alert">
+				<div class="flex items-center mb-3">
+					<span
+						class="bg-orange-100 text-orange-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-orange-200 dark:text-orange-900"
+						>{cta.label}</span
+					>
+				</div>
+				<p class="mb-3 text-sm text-blue-900 dark:text-blue-400">
+					{cta.text}
+				</p>
+			</div>
+		{/if}
 	</div>
 </aside>
