@@ -106,15 +106,15 @@ export interface AuthFieldType {
     placeholder?: string;
 }
 
-// export type TextareaType = {
-//     id: string;
-//     name: string;
-//     label: string;
-//     cols?: number;
-//     rows?: number;
-//     textareaClass?: string;
-//     placeholder?: string;
-// }
+export type SidebarType = {
+    id: number;
+    name: string;
+    href?: string;
+    icon?: typeof SvelteComponent;
+    rel?: string;
+    children?: SidebarType[];
+    addition?: HTMLElement;
+}
 
 // export type SelectType = {
 //     id: string;

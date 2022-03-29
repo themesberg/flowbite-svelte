@@ -31,7 +31,7 @@ layout: alertLayout
 
 <h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Alert animation example</h2>
 
-<p class="text-gray-900 dark:text-white py-4 text-lg">You can use Svelte animation by adding a custom event handler by adding btn1 prop.</p>
+<p class="text-gray-900 dark:text-white py-4 text-lg">You can use Svelte animation by adding a custom event handler using the handlebtn1 prop.</p>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6 h-64">
  

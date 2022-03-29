@@ -82,6 +82,9 @@ export { default as SmallModal } from'./modals/SmallModal.svelte'
 export { default as Navbar } from'./navbar/Navbar.svelte'
 export { default as DropdownNavbar } from'./navbar/DropdownNavbar.svelte'
 
+// Sidebar
+export { default as Sidebar } from './sidebars/Sidebar.svelte'
+
 // Spin
 export { default as Spinner } from'./spinners/Spinner.svelte'
 export { default as SpinnerButton } from'./spinners/SpinnerButton.svelte'

@@ -19,6 +19,7 @@ const config = defineConfig({
 		listgroupLayout: './src/routes/layouts/listgroupLayout.svelte',
 		modalLayout: './src/routes/layouts/modalLayout.svelte',
 		navbarLayout: './src/routes/layouts/navbarLayout.svelte',
+		sidebarLayout: './src/routes/layouts/sidebarLayout.svelte',
 		spinnerLayout: './src/routes/layouts/spinnerLayout.svelte',
 		tabLayout: './src/routes/layouts/tabLayout.svelte',
 		toastLayout: './src/routes/layouts/toastLayout.svelte',

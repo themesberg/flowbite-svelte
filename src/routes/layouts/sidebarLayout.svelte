@@ -1,0 +1,21 @@
+<script>
+	import Prism from 'prismjs';
+	import 'prismjs/themes/prism.css';
+	import 'prism-themes/themes/prism-holi-theme.css';
+	import 'prismjs/components/prism-markdown.js';
+	import { Utterances } from '@codewithshin/svelte-utterances';
+</script>
+
+<div class="max-w-3xl mx-auto pb-8">
+	<div class="container flex flex-wrap mx-auto pt-8">
+		<slot />
+
+		<h2 class="text-2xl w-full dark:text-white py-8">Related components</h2>
+
+		<h2 class="text-2xl w-full dark:text-white py-8">References</h2>
+	</div>
+
+	<div class="container my-16 mx-auto">
+		<Utterances reponame="shinokada/flowbite-svelte" theme="dark-blue" />
+	</div>
+</div>
