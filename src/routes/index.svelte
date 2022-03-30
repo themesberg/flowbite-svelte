@@ -66,7 +66,7 @@
 			alt="Avatar"
 			header="AVATAR"
 			link="/avatar"
-			btnColor="green"
+			btnColor="red"
 			btnLabel="Go to Avatar"
 		/>
 	</div>
@@ -76,7 +76,7 @@
 			alt="Badges"
 			header="BADGES"
 			link="/badges"
-			btnColor="red"
+			btnColor="yellow"
 			btnLabel="Go to Badges"
 		/>
 	</div>
@@ -86,7 +86,7 @@
 			alt="Button Groups"
 			header="BUTTON GROUPS"
 			link="/button-groups"
-			btnColor="yellow"
+			btnColor="purple"
 			btnLabel="Go to Button groups"
 		/>
 	</div>
@@ -107,7 +107,7 @@
 			alt="Cards"
 			header="CARDS"
 			link="/cards"
-			btnColor="indigo"
+			btnColor="pink"
 			btnLabel="Go to Cards"
 		/>
 	</div>
@@ -117,7 +117,7 @@
 			alt="Darkmode"
 			header="DARK MODE"
 			link="/darkmode"
-			btnColor="purple"
+			btnColor="indigo"
 			btnLabel="Go to Darkmode"
 		/>
 	</div>
@@ -127,7 +127,7 @@
 			alt="Dropdowns"
 			header="DROPDOWNS"
 			link="/dropdowns"
-			btnColor="pink"
+			btnColor="blue"
 			btnLabel="Go to Dropdowns"
 		/>
 	</div>
@@ -137,7 +137,7 @@
 			alt="Forms"
 			header="FORMS"
 			link="/forms"
-			btnColor="blue"
+			btnColor="gray"
 			btnLabel="Go to Forms"
 		/>
 	</div>
@@ -147,7 +147,7 @@
 			alt="Footer"
 			header="FOOTERS"
 			link="/footer"
-			btnColor="gray"
+			btnColor="red"
 			btnLabel="Go to Footers"
 		/>
 	</div>
@@ -157,7 +157,7 @@
 			alt="Icons"
 			header="ICONS"
 			link="/icons"
-			btnColor="red"
+			btnColor="yellow"
 			btnLabel="Go to Icons"
 		/>
 	</div>
@@ -167,7 +167,7 @@
 			alt="List group"
 			header="LIST-GROUP"
 			link="/list-group"
-			btnColor="yellow"
+			btnColor="purple"
 			btnLabel="Go to List group"
 		/>
 	</div>
@@ -187,7 +187,7 @@
 			alt="Navbars"
 			header="NAVBAR"
 			link="/navbars"
-			btnColor="indigo"
+			btnColor="pink"
 			btnLabel="Go to Navbars"
 		/>
 	</div>
@@ -197,7 +197,7 @@
 			alt="Sidebar"
 			header="SIDEBAR"
 			link="/sidebars"
-			btnColor="red"
+			btnColor="indigo"
 			btnLabel="Go to Sidebar"
 		/>
 	</div>
@@ -207,7 +207,7 @@
 			alt="Spinners"
 			header="SPINNERS"
 			link="/spinners"
-			btnColor="purple"
+			btnColor="blue"
 			btnLabel="Go to Spinners"
 		/>
 	</div>
@@ -217,8 +217,28 @@
 			alt="Tabs"
 			header="TABS"
 			link="/tabs"
-			btnColor="pink"
+			btnColor="gray"
 			btnLabel="Go to Tabs"
+		/>
+	</div>
+	<div class="p-4">
+		<Card
+			img="/images/timeline.webp"
+			alt="Timeline"
+			header="TIMELINE"
+			link="/timelines"
+			btnColor="red"
+			btnLabel="Go to Timeline"
+		/>
+	</div>
+	<div class="p-4">
+		<Card
+			img="/images/toast.webp"
+			alt="Toast"
+			header="TOAST"
+			link="/toasts"
+			btnColor="yellow"
+			btnLabel="Go to Toast"
 		/>
 	</div>
 	<div class="p-4">
@@ -227,7 +247,7 @@
 			alt="Tooltips"
 			header="TOOLTIPS"
 			link="/tooltips"
-			btnColor="blue"
+			btnColor="purple"
 			btnLabel="Go to Tooltips"
 		/>
 	</div>
