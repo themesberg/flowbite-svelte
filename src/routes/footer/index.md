@@ -9,6 +9,7 @@
   <div class="p-4">
     <Card
       img="/images/footer.webp"
+      btnColor="green"
       header="LOGO FOOTER"
       link="/footer/logo"
     />
@@ -16,6 +17,7 @@
   <div class="p-4">
     <Card
       img="/images/footer.webp"
+      btnColor="red"
       header="SOCIALMEDIA"
       link="/footer/socialmedia"
     />
@@ -23,6 +25,7 @@
   <div class="p-4">
     <Card
       img="/images/footer.webp"
+      btnColor="blue"
       header="SITEMAP"
       link="/footer/sitemap"
     />

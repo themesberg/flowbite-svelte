@@ -4,18 +4,33 @@
 
 <div class="container flex flex-wrap mt-8 mx-auto justify-center">
 	<div class="p-4">
-		<Card img="/images/timeline.webp" header="Default" link="/timelines/default" />
+		<Card img="/images/timeline.webp" btnColor="red" header="Default" link="/timelines/default" />
 	</div>
 	<div class="p-4">
-		<Card img="/images/timeline.webp" header="Vertical" link="/timelines/vertical" />
+		<Card
+			img="/images/timeline.webp"
+			btnColor="green"
+			header="Vertical"
+			link="/timelines/vertical"
+		/>
 	</div>
 	<div class="p-4">
-		<Card img="/images/timeline.webp" header="Horizontal" link="/timelines/horizontal" />
+		<Card
+			img="/images/timeline.webp"
+			btnColor="purple"
+			header="Horizontal"
+			link="/timelines/horizontal"
+		/>
 	</div>
 	<div class="p-4">
-		<Card img="/images/timeline.webp" header="Activity" link="/timelines/activity" />
+		<Card
+			img="/images/timeline.webp"
+			btnColor="pink"
+			header="Activity"
+			link="/timelines/activity"
+		/>
 	</div>
 	<div class="p-4">
-		<Card img="/images/timeline.webp" header="Group" link="/timelines/group" />
+		<Card img="/images/timeline.webp" btnColor="indigo" header="Group" link="/timelines/group" />
 	</div>
 </div>

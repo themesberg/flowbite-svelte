@@ -4,21 +4,31 @@
 
 <div class="container flex flex-wrap mx-auto mt-8 justify-center">
 	<div class="p-4">
-		<Card img="/images/cards.webp" header="CARD" link="/cards/card" />
+		<Card img="/images/cards.webp" btnColor="blue" header="CARD" link="/cards/card" />
 	</div>
 	<div class="p-4">
-		<Card img="/images/cards.webp" header="CTA CARD" link="/cards/cta" />
+		<Card img="/images/cards.webp" btnColor="green" header="CTA CARD" link="/cards/cta" />
 	</div>
 	<div class="p-4">
-		<Card img="/images/cards.webp" header="ECOMMERCE CARD" link="/cards/ecommerce" />
+		<Card img="/images/cards.webp" btnColor="red" header="ECOMMERCE CARD" link="/cards/ecommerce" />
 	</div>
 	<div class="p-4">
-		<Card img="/images/cards.webp" header="INTERACTIVE CARD" link="/cards/interactive" />
+		<Card
+			img="/images/cards.webp"
+			btnColor="gray"
+			header="INTERACTIVE CARD"
+			link="/cards/interactive"
+		/>
 	</div>
 	<div class="p-4">
-		<Card img="/images/cards.webp" header="HORIAONTAL CARD" link="/cards/horizontal" />
+		<Card
+			img="/images/cards.webp"
+			btnColor="purple"
+			header="HORIAONTAL CARD"
+			link="/cards/horizontal"
+		/>
 	</div>
 	<div class="p-4">
-		<Card img="/images/cards.webp" header="LIST CARD" link="/cards/list" />
+		<Card img="/images/cards.webp" btnColor="pink" header="LIST CARD" link="/cards/list" />
 	</div>
 </div>

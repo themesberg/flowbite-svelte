@@ -6,6 +6,7 @@
   <div class="p-4">
     <Card
       img="/images/spinners.webp"
+      btnColor="blue"
       header="SPINNER"
       link="/spinners/default"
     />
@@ -13,6 +14,7 @@
   <div class="p-4">
     <Card
       img="/images/spinners.webp"
+      btnColor="purple"
       header="BUTTON SPINNER"
       link="/spinners/button-spinner"
     />

@@ -4,28 +4,44 @@
 
 <div class="container flex flex-wrap mx-auto mt-8 justify-center">
 	<div class="p-4">
-		<Card img="/images/buttons.webp" header="DEFAULT" link="/buttons/default" />
-	</div>
-	<div class="p-4">
-		<Card img="/images/buttons.webp" header="COLORED SHADOW" link="/buttons/colored-shadow" />
-	</div>
-	<div class="p-4">
-		<Card img="/images/buttons.webp" header="GRADIENT DUOTONE" link="/buttons/gradient-duotone" />
+		<Card img="/images/buttons.webp" btnColor="blue" header="DEFAULT" link="/buttons/default" />
 	</div>
 	<div class="p-4">
 		<Card
 			img="/images/buttons.webp"
+			btnColor="green"
+			header="COLORED SHADOW"
+			link="/buttons/colored-shadow"
+		/>
+	</div>
+	<div class="p-4">
+		<Card
+			img="/images/buttons.webp"
+			btnColor="pink"
+			header="GRADIENT DUOTONE"
+			link="/buttons/gradient-duotone"
+		/>
+	</div>
+	<div class="p-4">
+		<Card
+			img="/images/buttons.webp"
+			btnColor="purple"
 			header="GRADIENT MONOCHROME"
 			link="/buttons/gradient-monochrome"
 		/>
 	</div>
 	<div class="p-4">
-		<Card img="/images/buttons.webp" header="GRADIENT OUTLINE" link="/buttons/gradient-outline" />
+		<Card
+			img="/images/buttons.webp"
+			btnColor="gray"
+			header="GRADIENT OUTLINE"
+			link="/buttons/gradient-outline"
+		/>
 	</div>
 	<div class="p-4">
-		<Card img="/images/buttons.webp" header="OUTLINED" link="/buttons/outlined" />
+		<Card img="/images/buttons.webp" btnColor="indigo" header="OUTLINED" link="/buttons/outlined" />
 	</div>
 	<div class="p-4">
-		<Card img="/images/buttons.webp" header="ROUNDED" link="/buttons/rounded" />
+		<Card img="/images/buttons.webp" btnColor="red" header="ROUNDED" link="/buttons/rounded" />
 	</div>
 </div>

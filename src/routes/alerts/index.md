@@ -6,6 +6,7 @@
   <div class="p-4">
     <Card
       img="/images/alerts.webp"
+      btnColor="purple"
       header="DEFAULT ALERTS"
       link="/alerts/default-alert"
     />
@@ -13,6 +14,7 @@
   <div class="p-4">
     <Card
       img="/images/alerts.webp"
+      btnColor="red"
       header="BORDER ALERTS"
       link="/alerts/border-alert"
     />
@@ -20,6 +22,7 @@
     <div class="p-4">
     <Card
       img="/images/alerts.webp"
+      btnColor="blue"
       header="INFORMAATION ALERTS"
       link="/alerts/information-alert"
     />

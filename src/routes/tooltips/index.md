@@ -6,6 +6,7 @@
   <div class="p-4">
     <Card
       img="/images/tooltip.webp"
+      btnColor="green"
       header="Default Tooltip"
       link="/tooltips/default"
     />
@@ -13,6 +14,7 @@
   <div class="p-4">
     <Card
       img="/images/tooltip.webp"
+      btnColor="pink"
       header="Light Tooltip"
       link="/tooltips/light"
     />
