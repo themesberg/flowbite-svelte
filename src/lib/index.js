@@ -92,7 +92,13 @@ export { default as SpinnerButton } from'./spinners/SpinnerButton.svelte'
 // Tabs
 export { default as InteractiveTabs } from'./tabs/InteractiveTabs.svelte'
 export { default as DefaultTabs } from'./tabs/DefaultTabs.svelte'
-export { default as PillTabs } from'./tabs/PillTabs.svelte'
+export { default as PillTabs } from './tabs/PillTabs.svelte'
+
+// Timeline
+export { default as Timeline } from './timelines/Timeline.svelte'
+export { default as TimelineItem } from './timelines/TimelineItem.svelte'
+export { default as TimelineItemVertical } from './timelines/TimelineItemVertical.svelte'
+export { default as TimelineItemHorizontal } from './timelines/TimelineItemHorizontal.svelte'
 
 // Toast
 export { default as Toast } from './toasts/Toast.svelte'

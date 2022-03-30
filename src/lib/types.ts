@@ -60,7 +60,7 @@ export interface TabType {
 export interface InteractiveTabType {
     name: string;
     id: number;
-    content: string;
+    content: string | typeof SvelteComponent;
 }
 
 export interface PillTabType {
@@ -151,3 +151,21 @@ export interface AvatarType {
 }
 
 export type TransitionTypes = 'fade' | 'fly' | 'slide' | 'blur'
+
+export interface TimelineItemType {
+    date: Date | string;
+    title: string;
+    icon?: typeof SvelteComponent;
+    href?: string;
+    linkname?: string;
+    text?: HTMLElement | string;
+}
+
+export interface TimelineItemVerticalType {
+    date: Date | string;
+    title: string;
+    icon: typeof SvelteComponent;
+    href?: string;
+    linkname?: string;
+    text?: HTMLElement | string;
+}

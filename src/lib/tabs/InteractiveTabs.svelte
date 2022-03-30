@@ -34,9 +34,13 @@
 				role="tabpanel"
 				aria-labelledby="{name}-tab"
 			>
-				<p class="text-sm text-gray-500 dark:text-gray-400">
-					{content}
-				</p>
+				{#if typeof content === 'string'}
+					<p class="text-sm text-gray-500 dark:text-gray-400">
+						{content}
+					</p>
+				{:else}
+					<svelte:component this={content} />
+				{/if}
 			</div>
 		{/if}
 	{/each}

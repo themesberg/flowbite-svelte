@@ -322,9 +322,16 @@ layout: sidebarLayout
 	<Sidebar {links} {cta} />
 </div>
 
+```html
+<script>
+	let cta ={
+		label:'Beta',
+		text: 'Preview the new Flowbite dashboard navigation! You can turn the new navigation off for a limited time in your profile.'
+	}
+</script>
+```
 
-
-<h2 class="text-2xl w-full mt-8 dark:text-white py-8">Prop</h2>
+<h2 class="text-2xl w-full mt-8 dark:text-white py-8">Props and types</h2>
 
 <p class="dark:text-white py-4 text-lg w-full">The component has the following props, type, and default values:</p>
 
