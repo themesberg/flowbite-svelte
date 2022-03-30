@@ -13,16 +13,14 @@
 		<h2 class="text-2xl w-full dark:text-white py-8">Related components</h2>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/accordions/default"
-				class="text-blue-600 hover:underline dark:text-blue-500">Default Accordion</a
+			<a href="/accordions/default" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Default Accordion</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/accordions/icon-accordion"
-				class="text-blue-600 hover:underline dark:text-blue-500">Icon Accordion</a
+			<a href="/accordions/icon-accordion" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Icon Accordion</a
 			>
 		</p>
 

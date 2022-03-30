@@ -13,58 +13,51 @@
 		<h2 class="text-2xl w-full dark:text-white py-8">Related components</h2>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/buttons/setup"
-				class="text-blue-600 hover:underline dark:text-blue-500">Button Setup</a
+			<a href="/buttons/setup" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Button Setup</a
+			>
+		</p>
+
+		<p class="dark:text-white text-lg w-full">
+			<a href="/buttons/default" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Default Button</a
+			>
+		</p>
+
+		<p class="dark:text-white text-lg w-full">
+			<a href="/buttons/colored-shadow" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Colored Shadow Button</a
+			>
+		</p>
+
+		<p class="dark:text-white text-lg w-full">
+			<a href="/buttons/gradient-duotone" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Gradient Duotone Button</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
 			<a
-				href="https://flowbite-svelte.vercel.app/buttons/default"
-				class="text-blue-600 hover:underline dark:text-blue-500">Default Button</a
-			>
-		</p>
-
-		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/buttons/colored-shadow"
-				class="text-blue-600 hover:underline dark:text-blue-500">Colored Shadow Button</a
-			>
-		</p>
-
-		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/buttons/gradient-duotone"
-				class="text-blue-600 hover:underline dark:text-blue-500">Gradient Duotone Button</a
-			>
-		</p>
-
-		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/buttons/gradient-monochrome"
+				href="/buttons/gradient-monochrome"
 				class="text-blue-600 hover:underline dark:text-blue-500">Gradient Monochrome Button</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/buttons/gradient-outline"
-				class="text-blue-600 hover:underline dark:text-blue-500">Gradietn Outline Button</a
+			<a href="/buttons/gradient-outline" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Gradietn Outline Button</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/buttons/outlined"
-				class="text-blue-600 hover:underline dark:text-blue-500">Outlined Button</a
+			<a href="/buttons/outlined" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Outlined Button</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/buttons/rounded"
-				class="text-blue-600 hover:underline dark:text-blue-500">Rounded Button</a
+			<a href="/buttons/rounded" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Rounded Button</a
 			>
 		</p>
 

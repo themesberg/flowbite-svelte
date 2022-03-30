@@ -13,24 +13,18 @@
 		<h2 class="text-2xl w-full dark:text-white py-8">Related topics</h2>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/detting-started"
-				class="text-blue-600 hover:underline dark:text-blue-500">Getting started</a
+			<a href="/detting-started" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Getting started</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/cli"
-				class="text-blue-600 hover:underline dark:text-blue-500">Flowbite-Svelte-CLI</a
+			<a href="/cli" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite-Svelte-CLI</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/about"
-				class="text-blue-600 hover:underline dark:text-blue-500">About</a
-			>
+			<a href="/about" class="text-blue-600 hover:underline dark:text-blue-500">About</a>
 		</p>
 
 		<h2 class="text-2xl dark:text-white w-full pt-8 py-8">References</h2>

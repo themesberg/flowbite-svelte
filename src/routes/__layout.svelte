@@ -17,12 +17,13 @@
 		spinners,
 		svelteflows,
 		tabs,
+		timelines,
 		tooltips,
 		topMenus
 	} from './items';
 	let site = {
 		name: 'Flowbite Svelte',
-		href: 'https://flowbite-svelte.vercel.app/',
+		href: '/',
 		img: '/images/mkdir-logo.webp'
 	};
 	// Navbar
@@ -220,6 +221,14 @@
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4"><a href="/tabs" rel="external">Tabs</a></h3>
 		{#each tabs as { href, name, rel }}
+			<SidebarList {href} {name} {rel} {sideBarListClass} />
+		{/each}
+	</Nav>
+	<Nav {navClass} {navDivClass}>
+		<h3 class="text-base pb-4">
+			<a href="/timelines" rel="external">Timelines <Badge name="NEW" /></a>
+		</h3>
+		{#each timelines as { href, name, rel }}
 			<SidebarList {href} {name} {rel} {sideBarListClass} />
 		{/each}
 	</Nav>

@@ -13,20 +13,32 @@
 		<h2 class="text-2xl w-full dark:text-white py-8">Related components</h2>
 
 		<p class="dark:text-white text-lg w-full">
-			<a href="/badges/default" class="text-blue-600 hover:underline dark:text-blue-500"
-				>Default Badge</a
+			<a href="/timelines/" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Default timeline</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
-			<a href="/badges/badge-icon" class="text-blue-600 hover:underline dark:text-blue-500"
-				>Badge with icon</a
+			<a href="/timelines/vertical/" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Vetical timeline</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
-			<a href="/badges/badge-link" class="text-blue-600 hover:underline dark:text-blue-500"
-				>Badge with link</a
+			<a href="/timelines/horizontal" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Horizontal timeline</a
+			>
+		</p>
+
+		<p class="dark:text-white text-lg w-full">
+			<a href="/timelines/activity" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Activity log</a
+			>
+		</p>
+
+		<p class="dark:text-white text-lg w-full">
+			<a href="/timelines/group" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Grouped timeline</a
 			>
 		</p>
 
@@ -34,9 +46,9 @@
 
 		<p class="dark:text-white text-lg">
 			<a
-				href="https://flowbite.com/docs/components/badge/"
+				href="https://flowbite.com/docs/components/timeline/"
 				target="_blank"
-				class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Badge</a
+				class="text-blue-600 hover:underline dark:text-blue-500">Flowbite timeline</a
 			>
 		</p>
 	</div>

@@ -7,7 +7,7 @@ layout: docLayout
 <p class="dark:text-white w-full text-lg py-2">
   Svelte is a modern and growing front-end compiler. Developers build boilerplate-free components using languages HTML, CSS and JavaScript. Svelte compiles your code to tiny, framework-less vanilla JS.
 
-<a href="https://flowbite-svelte.vercel.app/" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite-Svelte</a> is an unofficial Flowbite component library for Svelte. All interactivities are handled by Svelte.
+<a href="/" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite-Svelte</a> is an unofficial Flowbite component library for Svelte. All interactivities are handled by Svelte.
 </p>
 
 

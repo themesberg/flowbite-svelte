@@ -94,6 +94,13 @@ export const tabs = [
   { href: "/tabs/pilltabs", name: "Pilltabs" },
 ];
 
+export const timelines = [
+  { href: "/timelines", name: "Default" },
+  { href: "/timelines/vertical", name: "Vertical" },
+  { href: "/timelines/horizontal", name: "Horizontal" },
+  { href: "/timelines/activity", name: "Activity log" },
+  { href: "/timelines/group", name: "Grouped"}
+]
 export const tooltips = [
   { href: "/tooltips/default", name: "Default" },
   { href: "/tooltips/light", name: "Light tooltip" },

@@ -12,51 +12,39 @@
 		<h2 class="text-2xl w-full dark:text-white py-8">Related components</h2>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/cards/card"
-				class="text-blue-600 hover:underline dark:text-blue-500">Default Card</a
+			<a href="/cards/card" class="text-blue-600 hover:underline dark:text-blue-500">Default Card</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/cards/cta"
-				class="text-blue-600 hover:underline dark:text-blue-500">CTA Card</a
+			<a href="/cards/cta" class="text-blue-600 hover:underline dark:text-blue-500">CTA Card</a>
+		</p>
+
+		<p class="dark:text-white text-lg w-full">
+			<a href="/cards/ecommerce" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Ecommerce Card</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/cards/ecommerce"
-				class="text-blue-600 hover:underline dark:text-blue-500">Ecommerce Card</a
+			<a href="/cards/horizontal" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Horizontal Card</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/cards/horizontal"
-				class="text-blue-600 hover:underline dark:text-blue-500">Horizontal Card</a
+			<a href="/cards/interactive" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Interactive Card</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/cards/interactive"
-				class="text-blue-600 hover:underline dark:text-blue-500">Interactive Card</a
-			>
+			<a href="/cards/list" class="text-blue-600 hover:underline dark:text-blue-500">List Card</a>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/cards/list"
-				class="text-blue-600 hover:underline dark:text-blue-500">List Card</a
-			>
-		</p>
-
-		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/cards/signin"
-				class="text-blue-600 hover:underline dark:text-blue-500">Signin Card</a
+			<a href="/cards/signin" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Signin Card</a
 			>
 		</p>
 

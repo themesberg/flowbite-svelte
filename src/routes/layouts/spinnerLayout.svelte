@@ -13,16 +13,14 @@
 		<h2 class="text-2xl w-full dark:text-white py-8">Related components</h2>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/spinners/default"
-				class="text-blue-600 hover:underline dark:text-blue-500">Default Spinner</a
+			<a href="/spinners/default" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Default Spinner</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/spinners/button-spinner"
-				class="text-blue-600 hover:underline dark:text-blue-500">Button Spinner</a
+			<a href="/spinners/button-spinner" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Button Spinner</a
 			>
 		</p>
 

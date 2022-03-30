@@ -1,3 +1,8 @@
+---
+layout: timelineLayout
+---
+
+
 <script lang="ts">
 	import {
 		Activity,
@@ -104,30 +109,17 @@
 	];
 </script>
 
-<div class="max-w-3xl mx-auto pb-8">
-	<div class="container flex flex-wrap mx-auto pt-8">
-		<div
-			class="container rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
-		>
-			<Timeline>
-				<TimelineItem {timelineItems} />
-			</Timeline>
+<h1 class="text-3xl w-full dark:text-white py-8">Timeline</h1>
 
-			<Timeline>
-				<TimelineItemVertical timelineItems={timelineItems2} />
-			</Timeline>
+<h2 class="text-2xl mt-8 dark:text-white py-8">Horizontal timeline</h2>
 
-			<TimelineHorizontal>
-				<TimelineItemHorizontal timelineItems={timelineItems2} />
-			</TimelineHorizontal>
-
-			<Activity>
-				<ActivityItem {activities} />
-			</Activity>
-
-			<Group date="January 13th, 2022">
-				<GroupItem {timelines} />
-			</Group>
-		</div>
-	</div>
+<div
+  class="container rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
+>
+  <TimelineHorizontal>
+    <TimelineItemHorizontal timelineItems={timelineItems2} />
+  </TimelineHorizontal>
 </div>
+
+
+<h2 class="text-2xl mt-8 dark:text-white py-8">Props</h2>

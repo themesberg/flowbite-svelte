@@ -10,6 +10,10 @@
 
 [Accordions](https://flowbite-svelte.vercel.app/accordions)
 
+## Avatar components
+
+[Avatar](https://flowbite-svelte.vercel.app/avatar)
+
 ## Alert components
 
 [Alerts](https://flowbite-svelte.vercel.app/alerts)
@@ -62,6 +66,10 @@
 
 [Navbars](https://flowbite-svelte.vercel.app/navbar)
 
+## Sidebar components
+
+[Sidebar](https://flowbite-svelte.vercel.app/sidebars)
+
 ## Spinner components
 
 [Spinners](https://flowbite-svelte.vercel.app/spinners)
@@ -69,6 +77,10 @@
 ## Tab components
 
 [Tabs](https://flowbite-svelte.vercel.app/tabs)
+
+## Toast components
+
+[Toast](https://flowbite-svelte.vercel.app/toasts)
 
 ## Tooltip components
 

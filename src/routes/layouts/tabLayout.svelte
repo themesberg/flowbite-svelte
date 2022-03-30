@@ -13,31 +13,26 @@
 		<h2 class="text-2xl w-full dark:text-white py-8">Related components</h2>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/tabs/default-tabs"
-				class="text-blue-600 hover:underline dark:text-blue-500">Default Tab</a
+			<a href="/tabs/default-tabs" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Default Tab</a
+			>
+		</p>
+
+		<p class="dark:text-white text-lg w-full">
+			<a href="/tabs/interactive-tabs" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Interactive Tab</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
 			<a
-				href="https://flowbite-svelte.vercel.app/tabs/interactive-tabs"
-				class="text-blue-600 hover:underline dark:text-blue-500">Interactive Tab</a
-			>
-		</p>
-
-		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/tabs/multiple-interactive-tabs"
+				href="/tabs/multiple-interactive-tabs"
 				class="text-blue-600 hover:underline dark:text-blue-500">Multiple Interactive Tab</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/tabs/pilltabs"
-				class="text-blue-600 hover:underline dark:text-blue-500">Pill Tab</a
-			>
+			<a href="/tabs/pilltabs" class="text-blue-600 hover:underline dark:text-blue-500">Pill Tab</a>
 		</p>
 
 		<h2 class="text-2xl w-full dark:text-white py-8">References</h2>

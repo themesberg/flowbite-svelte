@@ -164,8 +164,32 @@ export interface TimelineItemType {
 export interface TimelineItemVerticalType {
     date: Date | string;
     title: string;
-    icon: typeof SvelteComponent;
+    icon?: typeof SvelteComponent;
     href?: string;
     linkname?: string;
     text?: HTMLElement | string;
+}
+
+export interface TimelineItemHorizontalType {
+    date: Date | string;
+    title: string;
+    icon?: typeof SvelteComponent;
+    text?: HTMLElement | string;
+}
+
+export interface ActivityType {
+    title: HTMLElement | string ;
+    date: Date | string;
+    src: string;
+    alt: string;
+    text?: HTMLElement | string;
+}
+
+export interface GroupTimelineType {
+    title: string | HTMLElement;
+    src: string;
+    alt: string;
+    href?: string;
+    isPrivate?: boolean;
+    comment?: string | HTMLElement;
 }

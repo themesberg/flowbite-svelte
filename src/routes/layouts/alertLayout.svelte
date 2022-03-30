@@ -13,30 +13,26 @@
 		<h2 class="text-2xl w-full dark:text-white py-8">Related components</h2>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/alerts/default-alert"
-				class="text-blue-600 hover:underline dark:text-blue-500">Default Alert</a
+			<a href="/alerts/default-alert" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Default Alert</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/alerts/border-alert"
-				class="text-blue-600 hover:underline dark:text-blue-500">Border Alert</a
+			<a href="/alerts/border-alert" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Border Alert</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/alerts/information-alert"
-				class="text-blue-600 hover:underline dark:text-blue-500">Information Alert</a
+			<a href="/alerts/information-alert" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Information Alert</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/alerts/animation"
-				class="text-blue-600 hover:underline dark:text-blue-500">Animation</a
+			<a href="/alerts/animation" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Animation</a
 			>
 		</p>
 

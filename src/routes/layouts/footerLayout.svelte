@@ -13,30 +13,26 @@
 		<h2 class="text-2xl w-full dark:text-white py-8">Related components</h2>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/footer/default"
-				class="text-blue-600 hover:underline dark:text-blue-500">Default Footer</a
+			<a href="/footer/default" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Default Footer</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/footer/logo"
-				class="text-blue-600 hover:underline dark:text-blue-500">Footer with Logo</a
+			<a href="/footer/logo" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Footer with Logo</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/footer/sitemap"
-				class="text-blue-600 hover:underline dark:text-blue-500">Footer with Sitemap</a
+			<a href="/footer/sitemap" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Footer with Sitemap</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
-			<a
-				href="https://flowbite-svelte.vercel.app/footer/socialmedia"
-				class="text-blue-600 hover:underline dark:text-blue-500">Footer with Socialmedia</a
+			<a href="/footer/socialmedia" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Footer with Socialmedia</a
 			>
 		</p>
 

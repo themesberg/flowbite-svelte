@@ -203,7 +203,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 
 <h2 class="text-2xl w-full dark:text-white py-8">Icons</h2>
 
-<p class="dark:text-white py-4 text-lg">Use any <a href="https://flowbite-svelte.vercel.app/icons" class="text-blue-600 hover:underline dark:text-blue-500">icon components.</a></p>
+<p class="dark:text-white py-4 text-lg">Use any <a href="/icons" class="text-blue-600 hover:underline dark:text-blue-500">icon components.</a></p>
 
 ```html
 <script>

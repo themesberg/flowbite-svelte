@@ -95,10 +95,17 @@ export { default as DefaultTabs } from'./tabs/DefaultTabs.svelte'
 export { default as PillTabs } from './tabs/PillTabs.svelte'
 
 // Timeline
+export { default as Group } from './timelines/Group.svelte'
+export { default as GroupItem } from './timelines/GroupItem.svelte'
+export { default as Activity } from './timelines/Activity.svelte'
+export { default as ActivityItem } from './timelines/ActivityItem.svelte'
 export { default as Timeline } from './timelines/Timeline.svelte'
 export { default as TimelineItem } from './timelines/TimelineItem.svelte'
-export { default as TimelineItemVertical } from './timelines/TimelineItemVertical.svelte'
+export { default as TimelineHorizontal } from './timelines/TimelineHorizontal.svelte'
 export { default as TimelineItemHorizontal } from './timelines/TimelineItemHorizontal.svelte'
+export { default as TimelineItemVertical } from './timelines/TimelineItemVertical.svelte'
+
+
 
 // Toast
 export { default as Toast } from './toasts/Toast.svelte'
