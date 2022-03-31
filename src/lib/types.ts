@@ -193,3 +193,8 @@ export interface GroupTimelineType {
     isPrivate?: boolean;
     comment?: string | HTMLElement;
 }
+
+export interface PageType {
+    pageNum: number;
+    href: string;
+}

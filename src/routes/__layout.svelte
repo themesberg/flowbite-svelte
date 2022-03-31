@@ -164,7 +164,7 @@
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4">
-			<a href="/dropdowns" rel="external">Dropdowns <Badge name="NEW" /></a>
+			<a href="/dropdowns" rel="external">Dropdowns</a>
 		</h3>
 	</Nav>
 	<Nav {navClass} {navDivClass}>
@@ -174,7 +174,7 @@
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4">
-			<a href="/footer" rel="external">Footer <Badge name="NEW" /></a>
+			<a href="/footer" rel="external">Footer</a>
 		</h3>
 		{#each footers as { href, name, rel }}
 			<SidebarList {href} {name} {rel} {sideBarListClass} />
@@ -237,7 +237,7 @@
 	</Nav>
 	<Nav {navClass} navDivClass={navDivClasslast}>
 		<h3 class="text-base pb-4">
-			<a href="/tooltips" rel="external">Tooltips <Badge name="NEW" /></a>
+			<a href="/tooltips" rel="external">Tooltips</a>
 		</h3>
 		{#each tooltips as { href, name, rel }}
 			<SidebarList {href} {name} {rel} {sideBarListClass} />

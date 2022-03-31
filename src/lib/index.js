@@ -82,6 +82,12 @@ export { default as SmallModal } from'./modals/SmallModal.svelte'
 export { default as Navbar } from'./navbar/Navbar.svelte'
 export { default as DropdownNavbar } from'./navbar/DropdownNavbar.svelte'
 
+// Pagination
+export { default as Pagination } from './paginations/Pagination.svelte'
+export { default as Previous } from './paginations/Previous.svelte'
+export { default as Next } from './paginations/Next.svelte'
+export { default as TableData } from './paginations/TableData.svelte'
+
 // Sidebar
 export { default as Sidebar } from './sidebars/Sidebar.svelte'
 
