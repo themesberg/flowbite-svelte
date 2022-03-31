@@ -207,6 +207,11 @@
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4">
+			<a href="/paginations" rel="external">Pagination <Badge name="NEW" /></a>
+		</h3>
+	</Nav>
+	<Nav {navClass} {navDivClass}>
+		<h3 class="text-base pb-4">
 			<a href="/sidebars" rel="external">Sidebar <Badge name="NEW" /></a>
 		</h3>
 	</Nav>

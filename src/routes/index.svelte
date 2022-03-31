@@ -193,6 +193,16 @@
 	</div>
 	<div class="p-4">
 		<Card
+			img="/images/pagination.webp"
+			alt="Pagination"
+			header="PAGINATION"
+			link="/paginations"
+			btnColor="blue"
+			btnLabel="Go to Pagination"
+		/>
+	</div>
+	<div class="p-4">
+		<Card
 			img="/images/sidebar.webp"
 			alt="Sidebar"
 			header="SIDEBAR"
