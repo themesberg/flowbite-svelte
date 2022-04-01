@@ -16,18 +16,13 @@ npm install
 
 ```bash
 npx svelte-add@latest tailwindcss
+npm i
 ```
 
 <p class="dark:text-white py-4 text-lg">Run it:</p>
 
 ```bash
 npm run dev
-```
-
-<p class="dark:text-white py-4 text-lg">You may need to install svelte-preprocess:</p>
-
-```sh
-npm i -D svelte-preprocess   
 ```
 
 <p class="dark:text-white py-4 text-lg">Install flowbite and flowbite-svelte:</p>

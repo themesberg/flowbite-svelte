@@ -37,7 +37,7 @@ layout: dropdownLayout
 
 <h1 class="text-3xl w-full dark:text-white">Dropdowns</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-8"><a id="Props">Props</a></h2>
 
 <p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
 
@@ -54,7 +54,7 @@ let color = 'blue';
 let items: DropdownType[];
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Default Dropdown</h2>
+<h2 class="text-2xl w-full dark:text-white py-8"><a id="Default_Dropdown">Default Dropdown</a></h2>
 
 <div class="container rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Dropdown {items}/>
@@ -64,7 +64,7 @@ let items: DropdownType[];
 <Dropdown items={items} />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Dropdown divider</h2>
+<h2 class="text-2xl w-full dark:text-white py-8"><a id="Dropdown_divider">Dropdown divider</a></h2>
 
 <div class="container rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Dropdown items={items2} color="red"/>

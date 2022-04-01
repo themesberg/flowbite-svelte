@@ -14,7 +14,7 @@ import { DarkMode } from "flowbite-svelte";
 <DarkMode />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-8"><a id="Props">Props</a></h2>
 
 <p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
 
@@ -43,7 +43,7 @@ let btnClass="Add your class here"
 </body>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">How to change Dark mode color</h2>
+<h2 class="text-2xl w-full dark:text-white py-8"><a id="How_to_change_Dark_mode_color">How to change Dark mode color</a></h2>
 
 <p class="dark:text-white text-lg w-full"><a href="https://chir.ag/projects/name-that-color/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Find the name of the color from hex color code.</a></p>
 
