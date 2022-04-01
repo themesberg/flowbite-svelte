@@ -1,8 +1,7 @@
 <script lang="ts">
 	import type { LinkType } from '../types';
 	import { page, session } from '$app/stores';
-
-	export let sitename = 'Svelte Flow';
+	export let name = 'Svelte Flow';
 	export let logo = '/images/mkdir-logo.png';
 	export let alt = 'Svelte Flow';
 	export let textsize = 'text-sm';
@@ -24,7 +23,7 @@
 	<div class={navDivClass}>
 		<a href="/" class="flex">
 			<img src={logo} {alt} />
-			<span class={spanClass}>{sitename}</span>
+			<span class={spanClass}>{name}</span>
 		</a>
 		<button
 			on:click={handleClickbtn}
