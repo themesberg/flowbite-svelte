@@ -63,6 +63,11 @@ export interface InteractiveTabType {
     content: string | typeof SvelteComponent;
 }
 
+export interface TabHeadType {
+    name: string;
+    id: number;
+}
+
 export interface PillTabType {
     name: string;
     selected: boolean;
@@ -70,7 +75,6 @@ export interface PillTabType {
 }
 
 export interface NavbarType {
-    id: number;
     name: string;
     href: string;
     rel?: string;

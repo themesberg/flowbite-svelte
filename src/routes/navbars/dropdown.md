@@ -7,44 +7,36 @@ layout: navbarLayout
 
   let menus = [
     {
-      id: 1,
       name: "Home",
       href: "/"
     },
     {
-      id: 2,
       name: "Cards",
       href: "/cards",
       child: [
         {
-          id: 3,
           name: "Card",
           href: "/cards/card",
         },
         {
-          id: 4,
           name: "CTA Card",
           href: "/cards/cta",
         },
         {
-          id: 5,
           name: "Ecommerce Card",
           href: "/cards/ecommerce",
         },
       ],
     },
     {
-      id: 6,
       name: "Modals",
       href: "/",
       child: [
         {
-          id: 7,
           name: "Small",
           href: "/modals/small",
         },
         {
-          id: 8,
           name: "Medium",
           href: "/modals/medium",
         },
@@ -107,31 +99,26 @@ let liButtonClass = `flex justify-between items-center py-2 pr-4 pl-3 w-full ${t
   let textsize = "text-lg";
   let menus = [
     {
-      id: 1,
       name: "Home",
       href: "/",
       rel: "",
     },
     {
-      id: 2,
       name: "Cards",
       href: "/cards",
       rel: "",
       child: [
         {
-          id: 3,
           name: "Card",
           href: "/cards/card",
           rel: "",
         },
         {
-          id: 4,
           name: "CTA Card",
           href: "/cards/cta",
           rel: "",
         },
         {
-          id: 5,
           name: "Ecommerce Card",
           href: "/cards/ecommerce",
           rel: "",
@@ -139,19 +126,16 @@ let liButtonClass = `flex justify-between items-center py-2 pr-4 pl-3 w-full ${t
       ],
     },
     {
-      id: 6,
       name: "Modals",
       href: "/",
       rel: "",
       child: [
         {
-          id: 7,
           name: "Small",
           href: "/modals/small",
           rel: "",
         },
         {
-          id: 8,
           name: "Medium",
           href: "/modals/medium",
           rel: "",
