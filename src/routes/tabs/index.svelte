@@ -36,6 +36,25 @@
 		/>
 	</div>
 	<div class="p-4">
-		<Card img="/images/tabs.webp" btnColor="pink" header="Pill Tabs" link="/tabs/pilltabs" />
+		<Card img="/images/tabs.webp" btnColor="purple" header="Pill Tabs" link="/tabs/pilltabs" />
+	</div>
+	<div class="p-4">
+		<Card
+			img="/images/tabs.webp"
+			btnColor="pink"
+			header="Full width Tabs"
+			link="/tabs/full-width-tabs"
+		/>
+	</div>
+	<div class="p-4">
+		<Card img="/images/tabs.webp" btnColor="yellow" header="Icon Tabs" link="/tabs/icon-tabs" />
+	</div>
+	<div class="p-4">
+		<Card
+			img="/images/tabs.webp"
+			btnColor="green"
+			header="Underline Tabs"
+			link="/tabs/underline-tabs"
+		/>
 	</div>
 </div>
