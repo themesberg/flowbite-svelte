@@ -22,12 +22,20 @@
 	<div class="p-4">
 		<Card
 			img="/images/tabs.webp"
+			btnColor="blue"
+			header="Interactive Tabs 2"
+			link="/tabs/interactive-tabs-2"
+		/>
+	</div>
+	<div class="p-4">
+		<Card
+			img="/images/tabs.webp"
 			btnColor="red"
 			header="Multiple Interactive Tabs"
 			link="/tabs/multiple-interactive-tabs"
 		/>
 	</div>
 	<div class="p-4">
-		<Card img="/images/tabs.webp" btnColor="gray" header="Pill Tabs" link="/tabs/pilltabs" />
+		<Card img="/images/tabs.webp" btnColor="pink" header="Pill Tabs" link="/tabs/pilltabs" />
 	</div>
 </div>

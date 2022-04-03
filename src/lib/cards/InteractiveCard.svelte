@@ -47,11 +47,11 @@
 </script>
 
 <div class={divClass}>
-	<div class="flex justify-end px-4 pt-4">
+	<div class="flex justify-end px-4 pt-4 relative">
 		<button
 			id="dropdownButton"
 			on:click={toggleDropdown}
-			class="sm:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5"
+			class="hidden sm:inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5"
 			type="button"
 		>
 			<svg
@@ -69,7 +69,7 @@
 			id="dropdown"
 			class:hidden={isOpen}
 			class:block={!isOpen}
-			class="hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 absolute"
+			class="hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 absolute top-16 -right-16"
 		>
 			<ul class="py-1" aria-labelledby="dropdownButton">
 				{#each dropdownLinks as { href, name, rel }}

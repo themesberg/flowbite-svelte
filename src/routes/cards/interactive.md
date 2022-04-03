@@ -86,36 +86,7 @@ let divClass = 'max-w-sm bg-white rounded-lg border border-gray-200 shadow-md da
 
 <h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
 
-```html
-<InteractiveCard 
-  {dropdownLinks} 
-  {img} 
-  {header} 
-  {content} 
-  {link1} 
-  {link2} 
-/>
 
-<InteractiveCard
-  {dropdownLinks}
-  {img}
-  {header}
-  {content}
-  {link1}
-  {link2}
-  buttonColor="purple"
-/>
-
-<InteractiveCard
-  {dropdownLinks}
-  {img}
-  {header}
-  {content}
-  {link1}
-  {link2}
-  buttonColor="green"
-/>
-```
 
 <div class="container flex flex-col space-y-4 justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   
@@ -132,7 +103,24 @@ let divClass = 'max-w-sm bg-white rounded-lg border border-gray-200 shadow-md da
 />
 </div>
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-  <div class="flex-auto p-4">
+```html
+<InteractiveCard 
+  {dropdownLinks}
+  {img} 
+  {header} 
+  {content} 
+  {link1} 
+  {link2} 
+/>
 
-</div>
+<InteractiveCard
+  {dropdownLinks}
+  {img}
+  {header}
+  {content}
+  {link1}
+  {link2}
+  buttonColor="purple"
+/>
+```
+
