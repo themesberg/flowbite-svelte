@@ -1,10 +1,12 @@
 <script lang="ts">
 	import type { TabHeadType } from '../types';
 	import { tabStore } from './tabStore';
-	export let divClass = 'hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800';
-	// export let tabId = 'myTab';
+	export let divClass = 'p-4 rounded-lg dark:bg-gray-800';
 	export let tab: TabHeadType;
 	let activeTabValue: number;
+	tabStore.subscribe((value) => {
+		activeTabValue = value;
+	});
 </script>
 
 <!--

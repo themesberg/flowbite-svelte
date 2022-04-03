@@ -3,7 +3,7 @@ layout: modalLayout
 ---
 
 <script>
-  import { SignInModal, ModalButton, modalIdStore }from '$lib/index';
+  import { SignInModal, ModalButton }from '$lib/index';
   
   let signmodal;
 </script>
@@ -15,11 +15,7 @@ layout: modalLayout
 <p class="dark:text-white text-base py-4">Import SignInModal, ModalButton components and set variables in the script tag.</p>
 
 ```html
-import { SignInModal, ModalButton, modalIdStore } from "flowbite-svelte";
-
-let signinId = "signin-modal2";
-let btnSignInName = "Sign In Modal";
-let btnSignInColor = "blue";
+import { SignInModal, ModalButton } from "flowbite-svelte";
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">SignIn Modals</h2>
@@ -37,7 +33,6 @@ let lostPasswordLink: string;
 let rememberMe = false;
 let signUp: string;
 let action: string;
-let showModalId: string;
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
@@ -62,16 +57,16 @@ let showModalId: string;
 <p class="dark:text-white text-base py-4">Create a button and modal.</p>
 
 ```html
-<ModalButton
-  id={signinId}
-  btnName={btnSignInName}
-  btnColor={btnSignInColor}
+ <ModalButton
+    id="signin1"
+    btnName="Sign In Modal"
+    btnColor="green"
 />
 <SignInModal
-  id={signinId}
+  id="signin1"
   titleSignIn="SignIn Modal Title"
-  lostPasswordLink="/auth/lost-password"
-  signUpLink="/auth/signup"
-  formLink="/auth/signin"
+  lostPasswordLink="/"
+  signUpLink="/about"
+  formLink="/modals"
 />
 ```

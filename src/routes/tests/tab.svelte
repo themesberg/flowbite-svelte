@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { InteractiveTabs, InteractiveTabHead, TabContent } from '$lib/index';
+	import { InteractiveTabs, InteractiveTabHead, TabContent, Card } from '$lib/index';
 	import Cardtest from './Cardtest.svelte';
 	let tab1 = { name: 'Tab1', id: 1 };
 	let tab2 = { name: 'Tab2', id: 2 };
@@ -36,9 +36,7 @@
 <InteractiveTabs tabId="myTab1" {tabs} />
 
 <InteractiveTabHead tabs={tabhead}>
-	<div id="myTabContent">
-		<TabContent tab={tab1}>Test 1 content here</TabContent>
-		<TabContent tab={tab2}>Test 2 content here</TabContent>
-		<TabContent tab={tab3}>Test 3 content here</TabContent>
-	</div>
+	<TabContent tab={tab1}>Test 1 content here</TabContent>
+	<TabContent tab={tab2}>Test 2 content here</TabContent>
+	<TabContent tab={tab3}><Card /></TabContent>
 </InteractiveTabHead>

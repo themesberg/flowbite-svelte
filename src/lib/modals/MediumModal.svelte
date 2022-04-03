@@ -16,7 +16,7 @@
 		modalIdStore.update((value) => (value = null));
 	};
 
-	export let showModalId: string;
+	let showModalId: string;
 	modalIdStore.subscribe((value) => {
 		showModalId = value;
 	});
