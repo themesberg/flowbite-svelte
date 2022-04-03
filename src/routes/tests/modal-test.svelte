@@ -1,9 +1,6 @@
 <script>
 	import { SmallModal, ModalButton, modalIdStore } from '$lib/index';
 
-	const closeModal = () => {
-		modalIdStore.update((value) => (value = null));
-	};
 	let mymodal;
 	// small
 	let smallModalId = 'small-modal';
