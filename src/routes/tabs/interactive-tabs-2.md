@@ -30,7 +30,7 @@ layout: tabLayout
 	];
 </script>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Adding other components</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Interactive Tabs 2: Adding other components</h1>
 
 <h2 class="text-2xl mt-8 dark:text-white py-8">Examples</h2>
 

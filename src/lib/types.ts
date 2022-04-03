@@ -57,6 +57,14 @@ export interface TabType {
     rel?: string,
 }
 
+export interface IconTabType {
+    name: string;
+    active: boolean;
+    href: string,
+    rel?: string,
+    icon?: typeof SvelteComponent;
+}
+
 export interface InteractiveTabType {
     name: string;
     id: number;

@@ -4,6 +4,7 @@ layout: tabLayout
 
 <script>
   import { DefaultTabs }from '$lib/index';
+  import {UserCircleIconSolid, ViewGridIconSolid, AdjustmentsIconSolid, ClipboardListIconSolid } from '@codewithshin/svelte-heroicons'
   export let tabs = [
     {
       name: "Profile",
@@ -28,6 +29,32 @@ layout: tabLayout
       active: false,
       href: "/#",
       rel: undefined,
+    },
+  ];
+  export let tabs2= [
+    {
+      name: "Profile",
+      active: true,
+      href: "/#",
+      icon: UserCircleIconSolid,
+    },
+    {
+      name: "Dashboard",
+      active: false,
+      href: "/#",
+      icon: ViewGridIconSolid,
+    },
+    {
+      name: "Settings",
+      active: false,
+      href: "/#",
+      icon: AdjustmentsIconSolid, 
+    },
+    {
+      name: "Contacts",
+      active: false,
+      href: "/#",
+      icon: ClipboardListIconSolid,
     },
   ];
 </script>
@@ -87,3 +114,7 @@ let tabs: TabType[];
 
 <DefaultTabs {tabs} />
 ```
+
+<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+  <DefaultTabs tabs={tabs2} />
+</div>

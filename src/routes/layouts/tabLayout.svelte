@@ -7,32 +7,57 @@
 </script>
 
 <div class="max-w-3xl mx-auto pb-8">
-	<div class="container flex flex-wrap mx-auto pt-8">
+	<div class="container mx-auto pt-8">
 		<slot />
 
 		<h2 class="text-2xl w-full dark:text-white py-8">Related components</h2>
 
 		<p class="dark:text-white text-lg w-full">
 			<a href="/tabs/default-tabs" class="text-blue-600 hover:underline dark:text-blue-500"
-				>Default Tab</a
+				>Default Tabs</a
+			>
+		</p>
+
+		<p class="dark:text-white text-lg w-full">
+			<a href="/tabs/underline-tabs" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Underline Tabs</a
+			>
+		</p>
+
+		<p class="dark:text-white text-lg w-full">
+			<a href="/tabs/icon-tabs" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Icon Tabs</a
+			>
+		</p>
+
+		<p class="dark:text-white text-lg w-full">
+			<a href="/tabs/full-width-tabs" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Full width Tabs</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
 			<a href="/tabs/interactive-tabs" class="text-blue-600 hover:underline dark:text-blue-500"
-				>Interactive Tab</a
+				>Interactive Tabs</a
+			>
+		</p>
+
+		<p class="dark:text-white text-lg w-full">
+			<a href="/tabs/interactive-tabs-2" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Interactive Tabs 2</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
 			<a
 				href="/tabs/multiple-interactive-tabs"
-				class="text-blue-600 hover:underline dark:text-blue-500">Multiple Interactive Tab</a
+				class="text-blue-600 hover:underline dark:text-blue-500">Multiple Interactive Tabs</a
 			>
 		</p>
 
 		<p class="dark:text-white text-lg w-full">
-			<a href="/tabs/pilltabs" class="text-blue-600 hover:underline dark:text-blue-500">Pill Tab</a>
+			<a href="/tabs/pilltabs" class="text-blue-600 hover:underline dark:text-blue-500">Pill Tabs</a
+			>
 		</p>
 
 		<h2 class="text-2xl w-full dark:text-white py-8">References</h2>

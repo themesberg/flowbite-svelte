@@ -98,9 +98,12 @@ export { default as SpinnerButton } from'./spinners/SpinnerButton.svelte'
 // Tabs
 export { default as InteractiveTabHead } from './tabs/InteractiveTabHead.svelte'
 export { default as InteractiveTabs } from'./tabs/InteractiveTabs.svelte'
-export { default as DefaultTabs } from'./tabs/DefaultTabs.svelte'
+export { default as DefaultTabs } from './tabs/DefaultTabs.svelte'
+export { default as FullWidthTabs } from './tabs/FullWidthTabs.svelte'
+export { default as IconTabs } from './tabs/IconTabs.svelte'
 export { default as PillTabs } from './tabs/PillTabs.svelte'
 export { default as TabContent } from './tabs/TabContent.svelte'
+export { default as UnderlineTabs } from './tabs/UnderlineTabs.svelte'
 
 // Timeline
 export { default as Group } from './timelines/Group.svelte'
@@ -112,8 +115,6 @@ export { default as TimelineItem } from './timelines/TimelineItem.svelte'
 export { default as TimelineHorizontal } from './timelines/TimelineHorizontal.svelte'
 export { default as TimelineItemHorizontal } from './timelines/TimelineItemHorizontal.svelte'
 export { default as TimelineItemVertical } from './timelines/TimelineItemVertical.svelte'
-
-
 
 // Toast
 export { default as Toast } from './toasts/Toast.svelte'
