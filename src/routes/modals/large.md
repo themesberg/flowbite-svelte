@@ -3,44 +3,24 @@ layout: modalLayout
 ---
 
 <script>
-  import { LargeModal, ModalButton, modalIdStore }from '$lib/index';
+  import { LargeModal, ModalButton }from '$lib/index';
 
-  const closeModal = () => {
-    modalIdStore.update((value) => {
-      value = null;
-    });
-  };
-
-  // modal 1
-  let id = "large-modal-1";
-  let btnName = "Large Modal Simple";
-
-  // Modal 1
-  let id1 = "large-modal-2";
-  let btnName1 = "Large modal with one button";
-  let btnColor1 = "yellow";
-  let btn1 = "Close";
-
-  // Modal 2
-  let id2 = "large-modal-3";
-  let btnName2 = "Large modal with two buttons";
-  let btnColor2 = "red";
-  let btn2 = "Read more";
-  let btn3 = "Close";
+  let modal1;
+  let modal2;
 
   const handlebtn1 = () => {
     alert("handlebtn1 is clicked from a parent page.");
-    closeModal()
+    modal1.closeModal()
   };
 
   const handlebtn2 = () => {
     alert("handlebtn2 is clicked from a parent page.");
-    closeModal()
+    modal2.closeModal()
   };
 
   const handlebtn3 = () => {
     alert("handlebtn3 is clicked from a parent page.");
-    closeModal()
+    modal2.closeModal()
   };
 </script>
 
@@ -48,49 +28,29 @@ layout: modalLayout
 
 <h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
 
-<p class="dark:text-white py-4 text-lg">Import LargeModal, ModalButton, modalIdStor components and set variables in the script tag. Add `closeModal` method if you want to close the modal in a button.</p>
+<p class="dark:text-white py-4 text-lg">Import LargeModal, ModalButton, modalIdStor components and set variables in the script tag. To close a modal, use `closeModal` function in your event handler.</p>
 
 
 ```html
 <script>
-  import { LargeModal, ModalButton, modalIdStore } from "flowbite-svelte";
+  import { LargeModal, ModalButton } from "flowbite-svelte";
 
-  const closeModal = () => {
-    modalIdStore.update((value) => {
-      value = null;
-    });
-  };
-
-  // modal 1
-  let id = "large-modal-1";
-  let btnName = "Large Modal Simple";
-
-  // Modal 1
-  let id1 = "large-modal-2";
-  let btnName1 = "Large modal with one button";
-  let btnColor1 = "yellow";
-  let btn1 = "Close";
-
-  // Modal 2
-  let id2 = "large-modal-3";
-  let btnName2 = "Large modal with two buttons";
-  let btnColor2 = "red";
-  let btn2 = "Read more";
-  let btn3 = "Close";
+  modal1;
+  modal2;
 
   const handlebtn1 = () => {
     alert("handlebtn1 is clicked from a parent page.");
-    closeModal()
+    modal1.closeModal()
   };
 
   const handlebtn2 = () => {
     alert("handlebtn2 is clicked from a parent page.");
-    closeModal()
+    modal2.closeModal()
   };
 
   const handlebtn3 = () => {
     alert("handlebtn3 is clicked from a parent page.");
-    closeModal()
+    modal2.closeModal()
   };
 </script>
 ```
@@ -107,21 +67,29 @@ let textColor: Colors = 'gray';
 let title = 'Terms of Service';
 let btn1: string;
 let btn2: string;
-let showModalId: string;
+const closeModal = () => {
+  modalIdStore.update((value) => (value = null));
+};
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-  <ModalButton {id} {btnName} />
+  <ModalButton id="modal1" btnName="Large Modal" />
 </div>
+
+<LargeModal id="modal1" title="Large Modal Title">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco.
+</LargeModal>
 
 <p class=" dark:text-white py-4"> Create a button and modal.
 
 ```html
-<ModalButton {id} {btnName} />
+<ModalButton id="modal1" btnName="Large Modal" />
 
-<LargeModal {id} title="Large Modal Title">
+<LargeModal id="modal1" title="Large Modal Title">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
 </LargeModal>
 ```
@@ -129,16 +97,29 @@ let showModalId: string;
 <h2 class="text-2xl w-full dark:text-white py-8">Large Modal with an action button</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-  <ModalButton id={id1} btnName={btnName1} btnColor={btnColor1} />
+  <ModalButton id="id1" btnName="Large Modal with one button" btnColor="pink" />
 </div>
 
+<LargeModal
+  bind:this={modal1}
+  id="id1"
+  title="Default Modal Title"
+  btn1="Go home"
+  on:handlebtn1={handlebtn1}
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco.
+</LargeModal>
+
 ```html
-<ModalButton id={id1} btnName={btnName1} btnColor={btnColor1} />
+<ModalButton id="id1" btnName="Large Modal with one button" btnColor="pink" />
 
 <LargeModal
-  id={id1}
+  bind:this={modal1}
+  id="id1"
   title="Default Modal Title"
-  {btn1}
+  btn1="Go home"
   on:handlebtn1={handlebtn1}
 >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
@@ -148,55 +129,38 @@ let showModalId: string;
 <h2 class="text-2xl w-full dark:text-white py-8">Large Modal with two action buttons</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-  <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
+  <ModalButton id="id2" btnName="Large Modal with two buttons" btnColor="indigo" />
 </div>
 
+<LargeModal
+  bind:this={modal2}
+  id="id2"
+  btnColor="indigo"
+  title="Default Modal Title"
+  btn1="Go home"
+  btn2="Close"
+  on:handlebtn1={handlebtn2}
+  on:handlebtn2={handlebtn3}
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco.
+</LargeModal>
+
+
 ```html
-<ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
+<ModalButton id="id2" btnName="Large Modal with two buttons" btnColor="indigo" />
 
 <LargeModal
-  id={id2}
+  bind:this={modal2}
+  id="id2"
   btnColor="indigo"
-  textColor="red"
   title="Default Modal Title"
-  btn1={btn2}
-  btn2={btn3}
+  btn1="Go home"
+  btn2="Close"
   on:handlebtn1={handlebtn2}
   on:handlebtn2={handlebtn3}
 >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
 </LargeModal>
 ```
-
-<LargeModal {id} title="Large Modal Title">
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco.
-</LargeModal>
-
-<LargeModal
-  id={id1}
-  title="Default Modal Title"
-  {btn1}
-  on:handlebtn1={handlebtn1}
->
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco.
-</LargeModal>
-
-<LargeModal
-  id={id2}
-  btnColor="indigo"
-  textColor="red"
-  title="Default Modal Title"
-  btn1={btn2}
-  btn2={btn3}
-  on:handlebtn1={handlebtn2}
-  on:handlebtn2={handlebtn3}
->
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco.
-</LargeModal>
-

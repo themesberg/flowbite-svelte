@@ -98,8 +98,7 @@ let textColor: Colors = 'gray';
 let title = 'Terms of Service';
 let btn1: string;
 let btn2: string;
-let showModalId: string;
-let const closeModal = () => {
+const closeModal = () => {
   modalIdStore.update((value) => (value = null));
 };
 ```

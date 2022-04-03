@@ -3,37 +3,20 @@ layout: modalLayout
 ---
 
 <script>
-  import { MediumModal, ModalButton, modalIdStore }from '$lib/index';
+  import { MediumModal, ModalButton }from '$lib/index';
 
-  const closeModal = () => {
-    modalIdStore.update((value) => {
-      value = null;
-    });
-  };
-
-  // modal 1
-  const id = "basic-modal";
-  const btnBasicName = "Medium Modal for information";
-
-  // modal 2
-  let id1 = "medium-modal";
-  let btnMName = "Medium Modal with one button";
-  let btnColor = "pink";
+  let modal1;
+  let modal2;
 
   const handlebtnM1 = () => {
-    closeModal()
+    modal1.closeModal()
   };
-
-  // modal 3
-  let id2 = "medium-modal2";
-  let btnName2 = "Medium Modal with two buttons";
-  let btnColor2 = "purple";
 
   const handlebtnM2 = () => {
-    closeModal()
+    modal2.closeModal()
   };
   const handlebtnM3 = () => {
-    closeModal()
+    modal2.closeModal()
   };
 </script>
 
@@ -42,41 +25,24 @@ layout: modalLayout
 
 <h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
 
-<p class="dark:text-white py-4 text-lg">Import MediumModal, ModalButton, modalIdStor components and set variables in the script tag. Add `closeModal` method if you want to close the modal in a button.</p>
+<p class="dark:text-white py-4 text-lg">Import MediumModal, ModalButton, modalIdStor components and set variables in the script tag. To close a modal, use `closeModal` function in your event handler.</p>
 
 ```html
 <script>
   import { MediumModal, ModalButton, modalIdStore } from "flowbite-svelte";
 
-  const closeModal = () => {
-    modalIdStore.update((value) => {
-      value = null;
-    });
-  };
-
-  // modal 1
-  const id = "basic-modal";
-  const btnBasicName = "Medium Modal for information";
-
-  // modal 2
-  let id1 = "medium-modal";
-  let btnMName = "Medium Modal with one button";
-  let btnColor = "pink";
+  let modal1;
+  let modal2;
 
   const handlebtnM1 = () => {
-    closeModal()
+    modal1.closeModal()
   };
-
-  // modal 3
-  let id2 = "medium-modal2";
-  let btnName2 = "Medium Modal with two buttons";
-  let btnColor2 = "purple";
 
   const handlebtnM2 = () => {
-    closeModal()
+    modal2.closeModal()
   };
   const handlebtnM3 = () => {
-    closeModal()
+    modal2.closeModal()
   };
 </script>
 ```
@@ -93,20 +59,29 @@ let textColor: Colors = 'gray';
 let title = 'Terms of Service';
 let btn1: string;
 let btn2: string;
-let showModalId: string;
+const closeModal = () => {
+  modalIdStore.update((value) => (value = null));
+};
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-  <ModalButton {id} btnName={btnBasicName} />
+  <ModalButton id="modal1" btnName="Medium Modal" />
 </div>
+
+<MediumModal id="modal1" title="Basic Modal Title">
+  Basic Modal Content: Lorem ipsum dolor sit, amet consectetur adipisicing
+  elit. Ad odit aspernatur minus deserunt illo error eum temporibus officiis.
+  Ab facere dolorem quisquam omnis? Aspernatur, asperiores voluptas quis culpa
+  consectetur saepe!
+</MediumModal>
 
 <p class="dark:text-white py-4 text-lg"> Create a button and modal.</p>
 
 ```html
-<ModalButton {id} btnName={btnBasicName} />
-<MediumModal {id} title="Basic Modal Title">
+<ModalButton id="modal1" btnName="Medium Modal" />
+<MediumModal id="modal1" title="Basic Modal Title">
   Basic Modal Content: Lorem ipsum dolor sit, amet consectetur adipisicing elit.
   Ad odit aspernatur minus deserunt illo error eum temporibus officiis. 
 </MediumModal>
@@ -115,16 +90,31 @@ let showModalId: string;
 <h2 class="text-2xl w-full dark:text-white py-8">Medium Modals with an Action Button</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-  <ModalButton id={id1} btnName={btnMName} {btnColor} />
+  <ModalButton id="id1" btnName="Medium Modal with one action button" btnColor="gray" />
 </div>
 
-```html
-<ModalButton id={id1} btnName={btnMName} {btnColor} />
 <MediumModal
-  id={id1}
+  bind:this={modal1}
+  id="id1"
   btnColor="yellow"
   title="Medium Modal Title"
-  btn1="Yes"
+  btn1="Close"
+  on:handlebtn1={handlebtnM1}
+>
+  Modal 2 Content: Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+  Ad odit aspernatur minus deserunt illo error eum temporibus officiis. Ab
+  facere dolorem quisquam omnis? Aspernatur, asperiores voluptas quis culpa
+  consectetur saepe!
+</MediumModal>
+
+```html
+<ModalButton id="id1" btnName="Medium Modal with one action button" btnColor="gray" />
+<MediumModal
+  bind:this={modal1}
+  id="id1"
+  btnColor="yellow"
+  title="Medium Modal Title"
+  btn1="Close"
   on:handlebtn1={handlebtnM1}
 >
   Modal 2 Content: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad
@@ -135,50 +125,16 @@ let showModalId: string;
 <h2 class="text-2xl w-full dark:text-white py-8">Medium Modals with action buttons</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-  <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
+  <ModalButton id="id2" btnName="Medium Modal with two action buttons" btnColor="blue" />
 </div>
 
-```html
-<ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
 <MediumModal
-  id={id2}
+  bind:this={modal2}
+  id="id2"
   btnColor="indigo"
   title="Default Modal Title"
-  btn1="Yes"
-  btn2="No"
-  on:handlebtn1={handlebtnM2}
-  on:handlebtn2={handlebtnM3}
->
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-</MediumModal>
-```
-
-<MediumModal {id} title="Basic Modal Title">
-  Basic Modal Content: Lorem ipsum dolor sit, amet consectetur adipisicing
-  elit. Ad odit aspernatur minus deserunt illo error eum temporibus officiis.
-  Ab facere dolorem quisquam omnis? Aspernatur, asperiores voluptas quis culpa
-  consectetur saepe!
-</MediumModal>
-
-<MediumModal
-  id={id1}
-  btnColor="yellow"
-  title="Medium Modal Title"
-  btn1="Yes"
-  on:handlebtn1={handlebtnM1}
->
-  Modal 2 Content: Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-  Ad odit aspernatur minus deserunt illo error eum temporibus officiis. Ab
-  facere dolorem quisquam omnis? Aspernatur, asperiores voluptas quis culpa
-  consectetur saepe!
-</MediumModal>
-
-<MediumModal
-  id={id2}
-  btnColor="indigo"
-  title="Default Modal Title"
-  btn1="Yes"
-  btn2="No"
+  btn1="Go home"
+  btn2="Close"
   on:handlebtn1={handlebtnM2}
   on:handlebtn2={handlebtnM3}
 >
@@ -187,3 +143,19 @@ let showModalId: string;
   quis nostrud exercitation ullamco.
 </MediumModal>
 
+
+```html
+<ModalButton id="id2" btnName="Medium Modal with two action buttons" btnColor="blue" />
+<MediumModal
+  bind:this={modal2}
+  id="id2"
+  btnColor="indigo"
+  title="Default Modal Title"
+  btn1="Go home"
+  btn2="Close"
+  on:handlebtn1={handlebtnM2}
+  on:handlebtn2={handlebtnM3}
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+</MediumModal>
+```
