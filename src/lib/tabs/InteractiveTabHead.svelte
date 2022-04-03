@@ -5,7 +5,7 @@
 	export let tabId = 'myTab';
 
 	export let activeTabValue = 1;
-	const handleClick = (tabValue: number) => {
+	const handleClick = (tabValue: number) => () => {
 		tabStore.update((n) => (n = tabValue));
 		activeTabValue = tabValue;
 	};
@@ -38,12 +38,13 @@ Header part of Interactive tab component. Use with TabContent.
 		{#each tabs as { name, id }}
 			<li class="mr-2" role="presentation">
 				<button
-					on:click={() => handleClick(id)}
-					class="inline-block p-4 rounded-t-lg border-b-2"
+					on:click={handleClick(id)}
+					class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300"
 					id="{name}-tab"
 					data-tabs-target="#{name}"
 					type="button"
 					role="tab"
+					class:active={activeTabValue === id}
 					aria-controls={name}
 					aria-selected="false">{name}</button
 				>

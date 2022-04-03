@@ -90,6 +90,7 @@ export const spinners = [
 export const tabs = [
   { href: "/tabs/default-tabs", name: "Default" },
   { href: "/tabs/interactive-tabs", name: "Interactive" },
+  { href: "/tabs/interactive-tabs-2", name: "Interactive Tabs 2" },
   { href: "/tabs/multiple-interactive-tabs", name: "Multiple Interactive" },
   { href: "/tabs/pilltabs", name: "Pilltabs" },
 ];

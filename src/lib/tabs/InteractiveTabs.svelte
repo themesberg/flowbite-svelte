@@ -36,7 +36,7 @@
 			>
 				{#if typeof content === 'string'}
 					<p class="text-sm text-gray-500 dark:text-gray-400">
-						{content}
+						{@html content}
 					</p>
 				{:else}
 					<svelte:component this={content} />
