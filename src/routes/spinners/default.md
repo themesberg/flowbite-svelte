@@ -15,19 +15,6 @@ layout: spinnerLayout
 </script>
 ```
 
-<h2 class="text-2xl mt-8 dark:text-white py-8">Props</h2>
-
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
-
-```js
-type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
-type AlignType = 'text-center' | 'text-left' | 'text-right'
-let color: Colors = 'blue';
-let bg = 'text-gray-200';
-let size = 'w-8 h-8';
-let align: AlignType = 'text-center';
-```
-
 <h2 class="text-2xl mt-8 dark:text-white py-8">Colors</h2>
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -79,4 +66,17 @@ let align: AlignType = 'text-center';
 <Spinner align="text-left"/>
 <Spinner align="text-center" />
 <Spinner align="text-right"/>
+```
+
+<h2 class="text-2xl mt-8 dark:text-white py-8">Props</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
+```js
+type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
+type AlignType = 'text-center' | 'text-left' | 'text-right'
+let color: Colors = 'blue';
+let bg = 'text-gray-200';
+let size = 'w-8 h-8';
+let align: AlignType = 'text-center';
 ```

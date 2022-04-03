@@ -17,10 +17,6 @@ layout: accordionLayout
 npm i @codewithshin/svelte-heroicons
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
-
-<p class="dark:text-white py-4 text-lg">The component has the same props, type, and default values as <a href="/accordions/default" class="text-blue-600 hover:underline dark:text-blue-500">default</a>.</p>
-
 <h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
 
 <div
@@ -133,3 +129,7 @@ npm i @codewithshin/svelte-heroicons
   </AccordionItem>
 </Accordion>
 ```
+
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the same props, type, and default values as <a href="/accordions/default" class="text-blue-600 hover:underline dark:text-blue-500">default</a>.</p>

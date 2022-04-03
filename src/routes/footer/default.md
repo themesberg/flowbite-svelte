@@ -17,6 +17,30 @@ layout: footerLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Simple footer</h1>
 
+<h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
+
+<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<SimpleFooter {links} {site} />
+</div>
+
+```html
+<script>
+  import {SimpleFooter} from 'flowbite-svelte'
+  let site = {
+    href: "/",
+    name: "Flowbite Svelte",
+  };
+  let links = [
+    { name: "About", href: "/" },
+    { name: "Profile", href: "/" },
+    { name: "Contact", href: "/" },
+  ];
+</script>
+
+<SimpleFooter {links} {site}/>
+```
+
+
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
 <p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
@@ -42,25 +66,3 @@ let siteNameLinkClass = 'hover:underline';
 let copyrightYear = '© 2022';
 let allRightsReserved = 'All Rights Reserved.';
 ```
-
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<SimpleFooter {links} {site} />
-</div>
-
-```html
-<script>
-  import {SimpleFooter} from 'flowbite-svelte'
-  let site = {
-    href: "/",
-    name: "Flowbite Svelte",
-  };
-  let links = [
-    { name: "About", href: "/" },
-    { name: "Profile", href: "/" },
-    { name: "Contact", href: "/" },
-  ];
-</script>
-
-<SimpleFooter {links} {site}/>
-```
-

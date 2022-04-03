@@ -206,7 +206,6 @@ layout: avatarLayout
 <Avatar avatar={avatarText} />
 ```
 
-
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
 ```js

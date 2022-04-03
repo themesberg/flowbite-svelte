@@ -15,14 +15,6 @@ layout: spinnerLayout
 </script>
 ```
 
-<h2 class="text-2xl mt-8 dark:text-white py-8">Prop</h2>
-
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
-
-```js
-let color: 'blue' | undefined;
-```
-
 <h2 class="text-2xl mt-8 dark:text-white py-8">Colors</h2>
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -45,4 +37,12 @@ let color: 'blue' | undefined;
 ```html
 <SpinnerButton>Here you go ...</SpinnerButton>
 <SpinnerButton color="blue" >Here you go ...</SpinnerButton>
+```
+
+<h2 class="text-2xl mt-8 dark:text-white py-8">Prop</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
+```js
+let color: 'blue' | undefined;
 ```

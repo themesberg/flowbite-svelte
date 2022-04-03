@@ -6,25 +6,12 @@ layout: badgeLayout
   import {Badge} from '$lib/index'
 </script>
 
-
 <h1 class="text-3xl w-full text-gray-900 dark:text-white py-8">Badges</h1>
 
 ```html
 <script>
   import {Badge} from 'flowbite-svelte'
 </script>
-```
-
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Props</h2>
-
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
-
-```js
-type Textsize = 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl'
-type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
-let textSize: Textsize = 'text-xs';
-let name = 'Read more';
-let color: Colors = 'blue';
 ```
 
 <h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Size xs</h2>
@@ -101,4 +88,16 @@ let color: Colors = 'blue';
 <Badge name="Indigo" color="indigo" textSize="text-base"/>
 <Badge name="Purple" color="purple" textSize="text-base"/>
 <Badge name="Pink" color="pink" textSize="text-base"/>
+```
+
+<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Props</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
+```js
+type Textsize = 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl'
+type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
+let textSize: Textsize = 'text-xs';
+let name = 'Read more';
+let color: Colors = 'blue';
 ```

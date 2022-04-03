@@ -12,21 +12,6 @@ layout: buttonLayout
 import { Button } from "flowbite-svelte";
 ```
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Props</h2>
-
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
-
-```js
-type Textsize = 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl'
-type Buttontypes = 'blue' | 'blue-outline' | 'dark' | 'dark-outline' | 'light' | 'green' | 'green-outline' | 'red' | 'red-outline' | 'yellow' | 'yellow-outline' | 'purple' | 'purple-outline';
-type ButtonType = 'button' | 'submit' | 'reset'
-let rounded: boolean = false;
-let textSize: Textsize = 'text-sm';
-let name = 'Read more';
-let btnColor: Buttontypes = 'blue';
-let btnType: ButtonType = 'button';
-```
-
 <h2 class="text-2xl w-full dark:text-white py-8">Size xs</h2>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -87,4 +72,19 @@ let btnType: ButtonType = 'button';
 <Button name="Button" textSize="text-base" btnColor="red-outline" />
 <Button name="Button" textSize="text-base" btnColor="red-outline" />
 <Button name="Button" textSize="text-base" btnColor="purple-outline" />
+```
+
+<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Props</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
+```js
+type Textsize = 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl'
+type Buttontypes = 'blue' | 'blue-outline' | 'dark' | 'dark-outline' | 'light' | 'green' | 'green-outline' | 'red' | 'red-outline' | 'yellow' | 'yellow-outline' | 'purple' | 'purple-outline';
+type ButtonType = 'button' | 'submit' | 'reset'
+let rounded: boolean = false;
+let textSize: Textsize = 'text-sm';
+let name = 'Read more';
+let btnColor: Buttontypes = 'blue';
+let btnType: ButtonType = 'button';
 ```

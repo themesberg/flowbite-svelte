@@ -7,7 +7,6 @@ layout: badgeLayout
   import {InformationCircleIconOutline} from '@codewithshin/svelte-heroicons'
 </script>
 
-
 <h1 class="text-3xl w-full text-gray-900 dark:text-white py-8">Badges with icon</h1>
 
 <p class="text-lg w-full text-gray-900 dark:text-white py-4">You can use <a href="https://github.com/shinokada/svelte-heroicons" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Svelte-heroicon.</a></p>
@@ -18,18 +17,6 @@ layout: badgeLayout
   import {InformationCircleIconOutline} from '@codewithshin/svelte-heroicons'
   let link="/"
 </script>
-```
-
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Props</h2>
-
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
-
-```js
-type Textsize = 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl'
-type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
-let textSize: Textsize = 'text-xs';
-let name = 'Read more';
-let color: Colors = 'blue';
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">Size xs</h2>
@@ -132,4 +119,15 @@ let color: Colors = 'blue';
 <BadgeIcon color="pink" textSize="text-base"><InformationCircleIconOutline className="h-4 w-4 mr-1" /></BadgeIcon>
 ```
 
+<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Props</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
+```js
+type Textsize = 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl'
+type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
+let textSize: Textsize = 'text-xs';
+let name = 'Read more';
+let color: Colors = 'blue';
+```
 

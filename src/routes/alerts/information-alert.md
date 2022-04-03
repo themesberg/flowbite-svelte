@@ -20,19 +20,6 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
 </script>
 ```
 
-
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Default Props</h2>
-
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
-
-```js
-type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
-let color: Colors = 'blue';
-let alertId: string = 'alert-additional-content-1';
-let infoLink: string = undefined;
-let closeBtn: boolean = false;
-```
-
 <h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Information Alert Examples</h2>
 
 
@@ -226,3 +213,14 @@ let closeBtn: boolean = false;
   </InfoAlert>
 ```
 
+<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Default Props</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
+```js
+type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
+let color: Colors = 'blue';
+let alertId: string = 'alert-additional-content-1';
+let infoLink: string = undefined;
+let closeBtn: boolean = false;
+```

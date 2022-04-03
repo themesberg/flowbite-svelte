@@ -75,20 +75,6 @@ layout: buttongroupLayout
 </script>
 ```
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Props</h2>
-
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
-
-```js
-interface ButtonGroupType {
-  name: string;
-  href?: string;
-  rel?: string;
-  icon?: typeof SvelteComponent;
-}
-let buttons: ButtonGroupType[];
-```
-
 <h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Default</h2>
 
 <div
@@ -111,4 +97,18 @@ let buttons: ButtonGroupType[];
 
 ```html
 <ButtonGroup buttons={buttons2}/>
+```
+
+<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Props</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
+```js
+interface ButtonGroupType {
+  name: string;
+  href?: string;
+  rel?: string;
+  icon?: typeof SvelteComponent;
+}
+let buttons: ButtonGroupType[];
 ```

@@ -55,23 +55,6 @@ layout: modalLayout
 </script>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
-
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
-
-```js
-type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
-let id = 'large-modal';
-let btnColor: Colors = 'blue';
-let textColor: Colors = 'gray';
-let title = 'Terms of Service';
-let btn1: string;
-let btn2: string;
-const closeModal = () => {
-  modalIdStore.update((value) => (value = null));
-};
-```
-
 <h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -163,4 +146,21 @@ const closeModal = () => {
 >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
 </LargeModal>
+```
+
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
+```js
+type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
+let id = 'large-modal';
+let btnColor: Colors = 'blue';
+let textColor: Colors = 'gray';
+let title = 'Terms of Service';
+let btn1: string;
+let btn2: string;
+const closeModal = () => {
+  modalIdStore.update((value) => (value = null));
+};
 ```

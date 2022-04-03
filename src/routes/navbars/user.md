@@ -29,5 +29,3 @@ layout: navbarLayout
 <h2 class="text-2xl w-full dark:text-white py-8">User Slot</h2>
 
 <p class="dark:text-white py-4 text-lg">You may want to display menu items for loggin users. Use user slot name. Add a unordered list or dropdown in the slot</p>
-
-

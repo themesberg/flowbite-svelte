@@ -9,14 +9,6 @@ layout: accordionLayout
 
 <h1 class="text-3xl w-full dark:text-white">Accordion</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-8">Props: AccordionItem</h2>
-
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
-
-```js
-let id: string;
-```
-
 <h2 class="text-2xl w-full dark:text-white py-8">Props: Accordion</h2>
 
 <p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
@@ -177,4 +169,12 @@ body
     </div>
   </AccordionItem>
 </Accordion>
+```
+
+<h2 class="text-2xl w-full dark:text-white py-8">Props: AccordionItem</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
+```js
+let id: string;
 ```

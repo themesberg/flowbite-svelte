@@ -6,22 +6,7 @@ layout: buttonLayout
   import { GradientDuotoneButton }from '$lib/index';
 </script>
 
-
 <h1 class="text-3xl w-full text-gray-900 dark:text-white py-8">Gradient Duotone Buttons</h1>
-
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Button Props</h2>
-
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
-
-```js
-type Textsize = 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl'
-type Gradientduotones = 'purple2blue' | 'cyan2blue' | 'green2blue' | 'purple2pink' | 'pink2orange' | 'teal2lime' | 'red2yellow'
-type ButtonType = 'button' | 'submit' | 'reset'
-let textSize: Textsize = 'text-sm';
-let color: Gradientduotones = 'purple2blue';
-let name = 'Read more';
-let type: ButtonType = 'button';
-```
 
 <h2 class="text-2xl w-full dark:text-white py-8">text-sm</h2>
 
@@ -88,4 +73,18 @@ let type: ButtonType = 'button';
 <GradientDuotoneButton color="pink2orange" name="pink2orange" textSize="text-base"/>
 <GradientDuotoneButton color="teal2lime" name="teal2lime" textSize="text-base"/>
 <GradientDuotoneButton color="red2yellow" name="red2yellow" textSize="text-base"/>
+```
+
+<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Button Props</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
+```js
+type Textsize = 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl'
+type Gradientduotones = 'purple2blue' | 'cyan2blue' | 'green2blue' | 'purple2pink' | 'pink2orange' | 'teal2lime' | 'red2yellow'
+type ButtonType = 'button' | 'submit' | 'reset'
+let textSize: Textsize = 'text-sm';
+let color: Gradientduotones = 'purple2blue';
+let name = 'Read more';
+let type: ButtonType = 'button';
 ```

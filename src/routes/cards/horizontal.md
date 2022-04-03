@@ -16,23 +16,6 @@ layout: cardLayout
 </script>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
-
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
-
-```js
-let link: string = '';
-let rel: string = '';
-let img = '/images/image-4.jpeg';
-let alt: string = '';
-let header = 'Lorem ipsum dolor sit ametit.';
-let linkClass = 'flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700';
-let imgClass = 'object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg';
-let textClass = 'flex flex-col justify-between p-4 leading-normal';
-let h3Class = 'mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white';
-let pClass = 'mb-3 font-normal text-gray-700 dark:text-gray-400';
-```
-
 <h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
 
 ```html
@@ -69,3 +52,20 @@ let pClass = 'mb-3 font-normal text-gray-700 dark:text-gray-400';
     quos sed rem provident, a
   </HorizontalCard>
 </div>
+
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
+```js
+let link: string = '';
+let rel: string = '';
+let img = '/images/image-4.jpeg';
+let alt: string = '';
+let header = 'Lorem ipsum dolor sit ametit.';
+let linkClass = 'flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700';
+let imgClass = 'object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg';
+let textClass = 'flex flex-col justify-between p-4 leading-normal';
+let h3Class = 'mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white';
+let pClass = 'mb-3 font-normal text-gray-700 dark:text-gray-400';
+```

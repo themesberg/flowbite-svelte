@@ -54,6 +54,24 @@ layout: cardLayout
 </script>
 ```
 
+<h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
+
+```html
+<CtaCard {btns} {title} {headColor}>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt libero
+  dicta ex, suscipit, qui beatae in odio corrupti est quis quibusdam
+  explicabo non atque!
+</CtaCard>
+```
+
+<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<CtaCard {btns} {title} {headColor}>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt libero
+  dicta ex, suscipit, qui beatae in odio corrupti est quis quibusdam
+  explicabo non atque!
+</CtaCard>
+</div>
+
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
 <p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
@@ -73,21 +91,3 @@ let headColor: Colors = 'gray';
 let btns: CardButtonType[];
 let divClass =
 ```
-
-<h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
-
-```html
-<CtaCard {btns} {title} {headColor}>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt libero
-  dicta ex, suscipit, qui beatae in odio corrupti est quis quibusdam
-  explicabo non atque!
-</CtaCard>
-```
-
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<CtaCard {btns} {title} {headColor}>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt libero
-  dicta ex, suscipit, qui beatae in odio corrupti est quis quibusdam
-  explicabo non atque!
-</CtaCard>
-</div>

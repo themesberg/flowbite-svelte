@@ -37,23 +37,6 @@ layout: dropdownLayout
 
 <h1 class="text-3xl w-full dark:text-white">Dropdowns</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-8"><a id="Props">Props</a></h2>
-
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
-
-```js
-interface DropdownType {
-  name: string;
-  href: string;
-  divider: boolean;
-}
-let label = 'Dropdown button';
-let rounded = false;
-let textSize = 'text-sm';
-let color = 'blue';
-let items: DropdownType[];
-```
-
 <h2 class="text-2xl w-full dark:text-white py-8"><a id="Default_Dropdown">Default Dropdown</a></h2>
 
 <div class="container rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -112,4 +95,21 @@ let items: DropdownType[];
       <span class="block text-sm font-medium truncat">name@flowbite.com</span>
 </div>
 </Dropdown>
+```
+
+<h2 class="text-2xl w-full dark:text-white py-8"><a id="Props">Props</a></h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
+```js
+interface DropdownType {
+  name: string;
+  href: string;
+  divider: boolean;
+}
+let label = 'Dropdown button';
+let rounded = false;
+let textSize = 'text-sm';
+let color = 'blue';
+let items: DropdownType[];
 ```

@@ -29,7 +29,7 @@ layout: modalLayout
 
 ```html
 <script>
-  import { MediumModal, ModalButton, modalIdStore } from "flowbite-svelte";
+  import { MediumModal, ModalButton } from "flowbite-svelte";
 
   let modal1;
   let modal2;
@@ -45,23 +45,6 @@ layout: modalLayout
     modal2.closeModal()
   };
 </script>
-```
-
-<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
-
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
-
-```js
-type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
-let id = 'medium-modal';
-let btnColor: Colors = 'blue';
-let textColor: Colors = 'gray';
-let title = 'Terms of Service';
-let btn1: string;
-let btn2: string;
-const closeModal = () => {
-  modalIdStore.update((value) => (value = null));
-};
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
@@ -158,4 +141,21 @@ const closeModal = () => {
 >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
 </MediumModal>
+```
+
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
+```js
+type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
+let id = 'medium-modal';
+let btnColor: Colors = 'blue';
+let textColor: Colors = 'gray';
+let title = 'Terms of Service';
+let btn1: string;
+let btn2: string;
+const closeModal = () => {
+  modalIdStore.update((value) => (value = null));
+};
 ```

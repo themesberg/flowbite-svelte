@@ -49,7 +49,7 @@ layout: modalLayout
 
 ```html
 <script>
-  import { SmallModal, ModalButton, modalIdStore } from "flowbite-svelte";
+  import { SmallModal, ModalButton } from "flowbite-svelte";
   import { goto } from "$app/navigation";
 
   // for basic
@@ -84,46 +84,6 @@ layout: modalLayout
     smallModal2.closeModal()
   };
 </script>
-```
-
-<h2 class="text-2xl w-full dark:text-white py-8" id="Props">Props</h2>
-
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
-
-```js
-type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
-let id = 'small-modal';
-let btnColor: Colors = 'blue';
-let textColor: Colors = 'gray';
-let title = 'Terms of Service';
-let btn1: string;
-let btn2: string;
-const closeModal = () => {
-  modalIdStore.update((value) => (value = null));
-};
-```
-
-<p class="dark:text-white py-4 text-lg">To close a modal, use `closeModal` function in your event handler.</p>
-
-```html
-<script>
-//...
-let smallModal; // create a variable
-const handlebtnS2 = () => {
-  smallModal1.closeModal() // calling closeModal function
-};
-</script>
-
-<SmallModal
-  bind:this={smallModal1} // bind using the variable
-  id={id1}
-  btnColor="pink"
-  title="Small Modal Title"
-  btn1="Go home"
-  btn2="Close"
-  on:handlebtn1={handlebtnS1}
-  on:handlebtn2={handlebtnS2}
->
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8" id="Examples">Examples</h2>
@@ -221,3 +181,43 @@ eiusmod tempor incididunt ut labore et dolore magna aliqua.
   eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </SmallModal>
 
+
+<h2 class="text-2xl w-full dark:text-white py-8" id="Props">Props</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
+```js
+type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
+let id = 'small-modal';
+let btnColor: Colors = 'blue';
+let textColor: Colors = 'gray';
+let title = 'Terms of Service';
+let btn1: string;
+let btn2: string;
+const closeModal = () => {
+  modalIdStore.update((value) => (value = null));
+};
+```
+
+<p class="dark:text-white py-4 text-lg">To close a modal, use `closeModal` function in your event handler.</p>
+
+```html
+<script>
+//...
+let smallModal; // create a variable
+const handlebtnS2 = () => {
+  smallModal1.closeModal() // calling closeModal function
+};
+</script>
+
+<SmallModal
+  bind:this={smallModal1} // bind using the variable
+  id={id1}
+  btnColor="pink"
+  title="Small Modal Title"
+  btn1="Go home"
+  btn2="Close"
+  on:handlebtn1={handlebtnS1}
+  on:handlebtn2={handlebtnS2}
+>
+```
