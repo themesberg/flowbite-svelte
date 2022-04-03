@@ -4,7 +4,7 @@
 	const closeModal = () => {
 		modalIdStore.update((value) => (value = null));
 	};
-
+	let mymodal;
 	// small
 	let smallModalId = 'small-modal';
 	let btnSName = 'Small Modal';
@@ -14,21 +14,22 @@
 
 	const handlebtnS1 = () => {
 		alert('handlebtnS1 is clicked from a parent page.');
-		closeModal();
+		mymodal.closeModal();
 	};
 
 	const handlebtnS2 = () => {
 		alert('handlebtnS2 is clicked from a parent page.');
-		closeModal();
+		mymodal.closeModal();
 	};
 </script>
 
 <ModalButton id={smallModalId} btnName={btnSName} />
 <SmallModal
+	bind:this={mymodal}
 	showModalId="testmodal"
 	title={titleS}
 	btn1={btnS1}
-	btn2=""
+	btn2={btnS2}
 	on:handlebtn1={handlebtnS1}
 	on:handlebtn2={handlebtnS2}
 >

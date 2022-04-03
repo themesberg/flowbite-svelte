@@ -12,7 +12,7 @@
 	export let btn1: string;
 	export let btn2: string;
 
-	const closeModal = () => {
+	export const closeModal = () => {
 		modalIdStore.update((value) => (value = null));
 	};
 

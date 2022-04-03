@@ -96,7 +96,7 @@ export { default as Spinner } from'./spinners/Spinner.svelte'
 export { default as SpinnerButton } from'./spinners/SpinnerButton.svelte'
 
 // Tabs
-export { default as InteractiveHead } from './tabs/InteractiveHead.svelte'
+export { default as InteractiveTabHead } from './tabs/InteractiveTabHead.svelte'
 export { default as InteractiveTabs } from'./tabs/InteractiveTabs.svelte'
 export { default as DefaultTabs } from'./tabs/DefaultTabs.svelte'
 export { default as PillTabs } from './tabs/PillTabs.svelte'

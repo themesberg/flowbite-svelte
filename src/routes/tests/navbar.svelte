@@ -1,5 +1,4 @@
 <script>
-	import AccordionDefault from '$lib/accordions/AccordionDefault.svelte';
 	import { Navbar } from '$lib/index';
 	let website = {
 		name: 'Bon Appetit',

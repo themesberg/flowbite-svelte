@@ -1,16 +1,19 @@
 <script lang="ts">
 	import type { TabHeadType } from '../types';
+	import { tabStore } from './tabStore';
 	export let divClass = 'hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800';
-	export let tabId = 'myTab';
-	export let tabs: TabHeadType;
+	// export let tabId = 'myTab';
+	export let tab: TabHeadType;
+	let activeTabValue: number;
 </script>
 
 <!--
 @component
 Content part of Interactive tab component. Use with InteractiveHead.
 
-- 
-- You can also use code blocks here.
+- let tabId = 'myTab';
+- let tabs: TabHeadType;
+- let divClass: string;
 - Usage:
 
   ```tsx
@@ -20,8 +23,10 @@ Content part of Interactive tab component. Use with InteractiveHead.
     </TabContent>
   </InteractiveHead>
   ```
-  -->
+-->
 
-<div class={divClass} id="{tabId}Content" role="tabpanel" aria-labelledby="{tabs.name}-tab">
-	<slot />
-</div>
+{#if activeTabValue === tab.id}
+	<div class={divClass} id="{tab.id}Content" role="tabpanel" aria-labelledby="{tab.name}-tab">
+		<slot />
+	</div>
+{/if}

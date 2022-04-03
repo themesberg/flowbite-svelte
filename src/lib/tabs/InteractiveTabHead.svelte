@@ -47,3 +47,5 @@ Header part of Interactive tab component. Use with TabContent.
 		{/each}
 	</ul>
 </div>
+
+<slot />

@@ -10,7 +10,7 @@
 	export let action: string;
 	export let emailPlaceholder: string = 'name@company.com';
 
-	const closeModal = () => {
+	export const closeModal = () => {
 		modalIdStore.update((value) => (value = null));
 	};
 
