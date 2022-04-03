@@ -59,7 +59,7 @@ layout: tabLayout
 ```html
 <script>
 import { InteractiveTabHead, TabContent, Card, Timeline,
-		TimelineItem, }from '$lib/index';
+		TimelineItem, }from 'flowbite-svelte';
 	let tab1 = { name: 'Tab1', id: 1 };
 	let tab2 = { name: 'Tab2', id: 2 };
 	let tab3 = { name: 'Tab3', id: 3 };
@@ -102,4 +102,24 @@ import { InteractiveTabHead, TabContent, Card, Timeline,
     </Card>
   </TabContent>
 </InteractiveTabHead>
+```
+
+
+<h2 class="text-2xl mt-8 dark:text-white py-8">Props</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
+```js
+// InteractiveTabHead
+interface TabHeadType {
+    name: string;
+    id: number;
+}
+let tabs: TabHeadType[];
+let tabId = 'myTab';
+let activeTabValue = 1;
+
+// TabContent
+let divClass = 'p-4 rounded-lg dark:bg-gray-800';
+let tab: TabHeadType;
 ```

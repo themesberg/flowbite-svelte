@@ -28,20 +28,7 @@ layout: tabLayout
   ];
 </script>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Pill Tabs</h1>
-
-<h2 class="text-2xl mt-8 dark:text-white py-8">Props</h2>
-
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
-
-```js
-interface PillTabType {
-  name: string;
-  selected: boolean;
-  href: string;
-}
-let tabs: PillTabType[];
-```
+<h1 class="text-3xl w-full dark:text-white py-4">Pill Tabs</h1>
 
 <h2 class="text-2xl mt-8 dark:text-white py-8">Examples</h2>
 
@@ -77,4 +64,17 @@ let tabs: PillTabType[];
 </script>
 
 <PillTabs {tabs} />
+```
+
+<h2 class="text-2xl mt-8 dark:text-white py-8">Props</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
+```js
+interface PillTabType {
+  name: string;
+  selected: boolean;
+  href: string;
+}
+let tabs: PillTabType[];
 ```
