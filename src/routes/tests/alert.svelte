@@ -26,7 +26,7 @@
 
 {#each alerts as item (item.id)}
 	<div animate:flip={{ delay: 500 }}>
-		<Alert alertId={item.id} color={item.btnColor} btn1="close" on:handlebtn1={() => remove(item)}>
+		<Alert alertId={item.id} color={item.btnColor} closeBtn on:handlebtn1={() => remove(item)}>
 			{item.text}
 		</Alert>
 	</div>
