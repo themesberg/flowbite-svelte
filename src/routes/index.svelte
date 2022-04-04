@@ -1,7 +1,22 @@
 <script>
 	import { Card, Button } from '$lib/index';
 	import { goto } from '$app/navigation';
-
+	import {
+		accordions,
+		alerts,
+		badges,
+		buttons,
+		buttonGroups,
+		cards,
+		footers,
+		icons,
+		modals,
+		navbar,
+		spinners,
+		tabs,
+		timelines,
+		tooltips
+	} from './items';
 	const handleClick = () => {
 		goto('/getting-started');
 	};
@@ -41,224 +56,234 @@
 
 <div class="container flex flex-wrap mx-auto mt-2 justify-center">
 	<div class="p-4">
-		<Card
-			img="/images/accordions.webp"
-			alt="Accordions"
-			header="ACCORDIONS"
-			link="/accordions"
-			btnColor="blue"
-			btnLabel="Go to Accordions"
-		/>
+		<Card img="/images/accordions.webp" alt="Accordions" header="ACCORDIONS">
+			<span slot="paragraph">
+				{#each accordions as { href, name }}
+					<p class="dark:text-white text-lg w-full">
+						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+					</p>
+				{/each}
+			</span>
+		</Card>
 	</div>
 	<div class="p-4">
-		<Card
-			img="/images/alerts.webp"
-			alt="Alerts"
-			header="ALERTS"
-			link="/alerts"
-			btnColor="gray"
-			btnLabel="Go to Alerts"
-		/>
+		<Card img="/images/alerts.webp" alt="Alerts" header="ALERTS">
+			<span slot="paragraph">
+				{#each alerts as { href, name }}
+					<p class="dark:text-white text-lg w-full">
+						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+					</p>
+				{/each}
+			</span>
+		</Card>
 	</div>
 	<div class="p-4">
-		<Card
-			img="/images/avatar.webp"
-			alt="Avatar"
-			header="AVATAR"
-			link="/avatar"
-			btnColor="red"
-			btnLabel="Go to Avatar"
-		/>
+		<Card img="/images/avatar.webp" alt="Avatar" header="AVATAR">
+			<span slot="paragraph">
+				<p class="dark:text-white text-lg w-full">
+					<a href="/avatar" class="text-blue-600 hover:underline dark:text-blue-500">Avatar</a>
+				</p>
+			</span>
+		</Card>
 	</div>
 	<div class="p-4">
-		<Card
-			img="/images/badges.webp"
-			alt="Badges"
-			header="BADGES"
-			link="/badges"
-			btnColor="yellow"
-			btnLabel="Go to Badges"
-		/>
+		<Card img="/images/badges.webp" alt="Badges" header="BADGES">
+			<span slot="paragraph">
+				{#each badges as { href, name }}
+					<p class="dark:text-white text-lg w-full">
+						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+					</p>
+				{/each}
+			</span>
+		</Card>
 	</div>
 	<div class="p-4">
-		<Card
-			img="/images/buttongroups.webp"
-			alt="Button Groups"
-			header="BUTTON GROUPS"
-			link="/button-groups"
-			btnColor="purple"
-			btnLabel="Go to Button groups"
-		/>
+		<Card img="/images/buttongroups.webp" alt="Button Groups" header="BUTTON GROUPS">
+			<span slot="paragraph">
+				{#each buttonGroups as { href, name }}
+					<p class="dark:text-white text-lg w-full">
+						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+					</p>
+				{/each}
+			</span>
+		</Card>
 	</div>
 	<div class="p-4">
-		<Card
-			img="/images/buttons.webp"
-			alt="Buttons"
-			header="BUTTONS"
-			link="/buttons"
-			btnColor="green"
-			btnLabel="Go to Buttons"
-		/>
-	</div>
-
-	<div class="p-4">
-		<Card
-			img="/images/cards.webp"
-			alt="Cards"
-			header="CARDS"
-			link="/cards"
-			btnColor="pink"
-			btnLabel="Go to Cards"
-		/>
+		<Card img="/images/buttons.webp" alt="Buttons" header="BUTTONS">
+			<span slot="paragraph">
+				{#each buttons as { href, name }}
+					<p class="dark:text-white text-lg w-full">
+						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+					</p>
+				{/each}
+			</span>
+		</Card>
 	</div>
 	<div class="p-4">
-		<Card
-			img="/images/darkmode.webp"
-			alt="Darkmode"
-			header="DARK MODE"
-			link="/darkmode"
-			btnColor="indigo"
-			btnLabel="Go to Darkmode"
-		/>
+		<Card img="/images/cards.webp" alt="Cards" header="CARDS">
+			<span slot="paragraph">
+				{#each cards as { href, name }}
+					<p class="dark:text-white text-lg w-full">
+						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+					</p>
+				{/each}
+			</span>
+		</Card>
 	</div>
 	<div class="p-4">
-		<Card
-			img="/images/dropdowns.webp"
-			alt="Dropdowns"
-			header="DROPDOWNS"
-			link="/dropdowns"
-			btnColor="blue"
-			btnLabel="Go to Dropdowns"
-		/>
+		<Card img="/images/darkmode.webp" alt="Darkmode" header="DARK MODE">
+			<span slot="paragraph">
+				<p class="dark:text-white text-lg w-full">
+					<a href="/darkmode" class="text-blue-600 hover:underline dark:text-blue-500">Dark mode</a>
+				</p>
+			</span>
+		</Card>
 	</div>
 	<div class="p-4">
-		<Card
-			img="/images/forms.webp"
-			alt="Forms"
-			header="FORMS"
-			link="/forms"
-			btnColor="gray"
-			btnLabel="Go to Forms"
-		/>
+		<Card img="/images/dropdowns.webp" alt="Dropdowns" header="DROPDOWNS">
+			<span slot="paragraph">
+				<p class="dark:text-white text-lg w-full">
+					<a href="/dropdowns" class="text-blue-600 hover:underline dark:text-blue-500">Dropdowns</a
+					>
+				</p>
+			</span>
+		</Card>
 	</div>
 	<div class="p-4">
-		<Card
-			img="/images/footer.webp"
-			alt="Footer"
-			header="FOOTERS"
-			link="/footer"
-			btnColor="red"
-			btnLabel="Go to Footers"
-		/>
+		<Card img="/images/forms.webp" alt="Forms" header="FORMS">
+			<span slot="paragraph">
+				<p class="dark:text-white text-lg w-full">
+					<a href="/forms" class="text-blue-600 hover:underline dark:text-blue-500">Forms</a>
+				</p>
+			</span>
+		</Card>
 	</div>
 	<div class="p-4">
-		<Card
-			img="/images/icons.webp"
-			alt="Icons"
-			header="ICONS"
-			link="/icons"
-			btnColor="yellow"
-			btnLabel="Go to Icons"
-		/>
+		<Card img="/images/footer.webp" alt="Footer" header="FOOTERS">
+			<span slot="paragraph">
+				{#each footers as { href, name }}
+					<p class="dark:text-white text-lg w-full">
+						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+					</p>
+				{/each}
+			</span>
+		</Card>
 	</div>
 	<div class="p-4">
-		<Card
-			img="/images/list-group.webp"
-			alt="List group"
-			header="LIST-GROUP"
-			link="/list-group"
-			btnColor="purple"
-			btnLabel="Go to List group"
-		/>
+		<Card img="/images/icons.webp" alt="Icons" header="ICONS">
+			<span slot="paragraph">
+				{#each icons as { href, name }}
+					<p class="dark:text-white text-lg w-full">
+						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+					</p>
+				{/each}
+			</span>
+		</Card>
 	</div>
 	<div class="p-4">
-		<Card
-			img="/images/modals.webp"
-			alt="Modals"
-			header="MODALS"
-			link="/modals"
-			btnColor="green"
-			btnLabel="Go to Modals"
-		/>
+		<Card img="/images/list-group.webp" alt="List group" header="LIST-GROUP">
+			<span slot="paragraph">
+				<p class="dark:text-white text-lg w-full">
+					<a href="/list-group" class="text-blue-600 hover:underline dark:text-blue-500"
+						>List group</a
+					>
+				</p>
+			</span>
+		</Card>
 	</div>
 	<div class="p-4">
-		<Card
-			img="/images/navbar.webp"
-			alt="Navbars"
-			header="NAVBAR"
-			link="/navbars"
-			btnColor="pink"
-			btnLabel="Go to Navbars"
-		/>
+		<Card img="/images/modals.webp" alt="Modals" header="MODALS">
+			<span slot="paragraph">
+				{#each modals as { href, name }}
+					<p class="dark:text-white text-lg w-full">
+						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+					</p>
+				{/each}
+			</span>
+		</Card>
 	</div>
 	<div class="p-4">
-		<Card
-			img="/images/pagination.webp"
-			alt="Pagination"
-			header="PAGINATION"
-			link="/paginations"
-			btnColor="blue"
-			btnLabel="Go to Pagination"
-		/>
+		<Card img="/images/navbar.webp" alt="Navbars" header="NAVBAR">
+			<span slot="paragraph">
+				{#each navbar as { href, name }}
+					<p class="dark:text-white text-lg w-full">
+						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+					</p>
+				{/each}
+			</span>
+		</Card>
 	</div>
 	<div class="p-4">
-		<Card
-			img="/images/sidebar.webp"
-			alt="Sidebar"
-			header="SIDEBAR"
-			link="/sidebars"
-			btnColor="indigo"
-			btnLabel="Go to Sidebar"
-		/>
+		<Card img="/images/pagination.webp" alt="Pagination" header="PAGINATION">
+			<span slot="paragraph">
+				<p class="dark:text-white text-lg w-full">
+					<a href="/paginations" class="text-blue-600 hover:underline dark:text-blue-500"
+						>Pagination</a
+					>
+				</p>
+			</span>
+		</Card>
 	</div>
 	<div class="p-4">
-		<Card
-			img="/images/spinners.webp"
-			alt="Spinners"
-			header="SPINNERS"
-			link="/spinners"
-			btnColor="blue"
-			btnLabel="Go to Spinners"
-		/>
+		<Card img="/images/sidebar.webp" alt="Sidebar" header="SIDEBAR">
+			<span slot="paragraph">
+				<p class="dark:text-white text-lg w-full">
+					<a href="/sidebars" class="text-blue-600 hover:underline dark:text-blue-500">Sidebar</a>
+				</p>
+			</span>
+		</Card>
 	</div>
 	<div class="p-4">
-		<Card
-			img="/images/tabs.webp"
-			alt="Tabs"
-			header="TABS"
-			link="/tabs"
-			btnColor="gray"
-			btnLabel="Go to Tabs"
-		/>
+		<Card img="/images/spinners.webp" alt="Spinners" header="SPINNERS">
+			<span slot="paragraph">
+				{#each spinners as { href, name }}
+					<p class="dark:text-white text-lg w-full">
+						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+					</p>
+				{/each}
+			</span>
+		</Card>
 	</div>
 	<div class="p-4">
-		<Card
-			img="/images/timeline.webp"
-			alt="Timeline"
-			header="TIMELINE"
-			link="/timelines"
-			btnColor="red"
-			btnLabel="Go to Timeline"
-		/>
+		<Card img="/images/tabs.webp" alt="Tabs" header="TABS">
+			<span slot="paragraph">
+				{#each tabs as { href, name }}
+					<p class="dark:text-white text-lg w-full">
+						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+					</p>
+				{/each}
+			</span>
+		</Card>
 	</div>
 	<div class="p-4">
-		<Card
-			img="/images/toast.webp"
-			alt="Toast"
-			header="TOAST"
-			link="/toasts"
-			btnColor="yellow"
-			btnLabel="Go to Toast"
-		/>
+		<Card img="/images/timeline.webp" alt="Timeline" header="TIMELINE">
+			<span slot="paragraph">
+				{#each timelines as { href, name }}
+					<p class="dark:text-white text-lg w-full">
+						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+					</p>
+				{/each}
+			</span>
+		</Card>
 	</div>
 	<div class="p-4">
-		<Card
-			img="/images/tooltip.webp"
-			alt="Tooltips"
-			header="TOOLTIPS"
-			link="/tooltips"
-			btnColor="purple"
-			btnLabel="Go to Tooltips"
-		/>
+		<Card img="/images/toast.webp" alt="Toast" header="TOAST">
+			<span slot="paragraph">
+				<p class="dark:text-white text-lg w-full">
+					<a href="/toasts" class="text-blue-600 hover:underline dark:text-blue-500">Toast</a>
+				</p>
+			</span>
+		</Card>
+	</div>
+	<div class="p-4">
+		<Card img="/images/tooltip.webp" alt="Tooltips" header="TOOLTIPS">
+			<span slot="paragraph">
+				{#each tooltips as { href, name }}
+					<p class="dark:text-white text-lg w-full">
+						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+					</p>
+				{/each}
+			</span>
+		</Card>
 	</div>
 </div>

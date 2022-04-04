@@ -6,7 +6,7 @@ layout: alertLayout
   import { Alert, BorderAlert, InfoAlert }from '$lib/index';
 </script>
 
-<h1 class="text-3xl w-full text-gray-900 dark:text-white my-8">Alert</h1>
+<h1 class="text-3xl w-full text-gray-900 dark:text-white my-8">Boarder alert</h1>
 
 <h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
 
