@@ -13,10 +13,6 @@
 		<h2 class="text-2xl w-full dark:text-white py-8">Related components</h2>
 
 		<p class="dark:text-white text-lg w-full">
-			<a href="/navbars/props" class="text-blue-600 hover:underline dark:text-blue-500">Props</a>
-		</p>
-
-		<p class="dark:text-white text-lg w-full">
 			<a href="/navbars/default" class="text-blue-600 hover:underline dark:text-blue-500"
 				>Default Navbar</a
 			>
