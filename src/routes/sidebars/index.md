@@ -149,7 +149,7 @@ layout: sidebarLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Sidebar</h1>
 
-<h2 class="text-2xl w-full mt-8 dark:text-white py-8">Default sidebar</h2>
+<h2 class="text-2xl w-full mt-8 dark:text-white py-8" id="Default_sidebar">Default sidebar</h2>
 
 <div class="container flex flex-wrap rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 	<Sidebar {links} />
@@ -221,7 +221,7 @@ layout: sidebarLayout
 
 ```
 
-<h2 class="text-2xl w-full mt-8 dark:text-white py-8">Multi-level dropdown</h2>
+<h2 class="text-2xl w-full mt-8 dark:text-white py-8" id="Multi_level_dropdown">Multi-level dropdown</h2>
 
 <div class="container flex flex-wrap rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 	<Sidebar links={links2} {site} />

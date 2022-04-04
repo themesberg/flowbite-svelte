@@ -47,9 +47,9 @@ layout: navbarLayout
 
 
 
-<h1 class="text-3xl w-full dark:text-white py-8">Dropdown Navbar</h1>
+<h1 class="text-3xl w-full dark:text-white py-8" id="Dropdown_Navbar">Dropdown Navbar</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
+<h2 class="text-2xl w-full dark:text-white py-8" id="Examples">Examples</h2>
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <DropdownNavbar textsize="text-lg" {menus} />
@@ -59,7 +59,7 @@ layout: navbarLayout
   You can change textsize prop to text-xs, text-sm, text-base, text-lg or text-xl.
 </p>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Dropdown Navbar Setup</h1>
+<h1 class="text-3xl w-full dark:text-white py-8" id="Dropdown_Navbar_Setup">Dropdown Navbar Setup</h1>
 
 ```html
 <script>
@@ -119,7 +119,7 @@ layout: navbarLayout
 <DropdownNavbar {menus} {sitename} {alt} {logo} {textsize} />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-8" id="Props">Props</h2>
 
 <p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
 
