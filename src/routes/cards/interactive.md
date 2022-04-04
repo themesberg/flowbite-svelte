@@ -24,8 +24,8 @@ layout: cardLayout
   };
   let header = "Lorem ipsum";
   let content = "Proin efficitur purus felis.";
-  let link1 = { link: "/", name: "Profile" };
-  let link2 = { link: "/", name: "About" };
+  let link1 = { href: "/", name: "Add friend" };
+  let link2 = { href: "/", name: "Message" };
 </script>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Interactive Card</h1>
@@ -34,7 +34,7 @@ layout: cardLayout
 
 ```html
 <script>
-  import { InteractiveCard }from '$lib/index';
+  import { InteractiveCard }from 'flowbite-svelte';
   let dropdownLinks = [
     {
       href: "/",
@@ -55,8 +55,8 @@ layout: cardLayout
   };
   let header = "Lorem ipsum";
   let content = "Proin efficitur purus felis.";
-  let link1 = { link: "/", name: "Profile" };
-  let link2 = { link: "/", name: "About" };
+  let link1 = { href: "/", name: "Add friend" };
+  let link2 = { href: "/", name: "Message" };
 </script>
 ```
 

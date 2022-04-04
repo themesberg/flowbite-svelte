@@ -1,6 +1,7 @@
 export const svelteflows = [
   { href: "/getting-started", name: "Getting Started" },
   { href: "/about", name: "About" },
+  { href: "/type-list", name: "Type list" },
   { href: "/cli", name: "Flowbite-Svelte CLI" },
 ];
 
