@@ -98,6 +98,9 @@ export { default as Sidebar } from './sidebars/Sidebar.svelte'
 export { default as Spinner } from'./spinners/Spinner.svelte'
 export { default as SpinnerButton } from'./spinners/SpinnerButton.svelte'
 
+// Tables
+export { default as Table } from'./tables/Table.svelte'
+
 // Tabs
 export { default as InteractiveTabHead } from './tabs/InteractiveTabHead.svelte'
 export { default as InteractiveTabs } from'./tabs/InteractiveTabs.svelte'
