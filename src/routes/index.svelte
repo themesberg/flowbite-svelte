@@ -225,6 +225,17 @@
 		</Card>
 	</div>
 	<div class="p-4">
+		<Card img="/images/progressbar.webp" alt="Progress bar" header="PROGRESS BAR">
+			<span slot="paragraph">
+				<p class="dark:text-white text-lg w-full">
+					<a href="/progressbars" class="text-blue-600 hover:underline dark:text-blue-500"
+						>Progress bar</a
+					>
+				</p>
+			</span>
+		</Card>
+	</div>
+	<div class="p-4">
 		<Card img="/images/sidebar.webp" alt="Sidebar" header="SIDEBAR">
 			<span slot="paragraph">
 				<p class="dark:text-white text-lg w-full">
