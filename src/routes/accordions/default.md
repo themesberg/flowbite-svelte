@@ -9,23 +9,6 @@ layout: accordionLayout
 
 <h1 class="text-3xl w-full dark:text-white">Accordion</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-8">Props: Accordion</h2>
-
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
-
-```js
-let duration: number = 0.2;
-let easing: string = 'ease';
-let id: number = undefined;
-```
-
-<h2 class="text-2xl w-full dark:text-white py-8">Slot names: AccordionItem</h2>
-
-```js
-header
-body
-```
-
 <p class="dark:text-white py-4 text-lg">Add id 1,2,3,... to AccordionItem component.</p>
 
 <div
@@ -171,12 +154,28 @@ body
 </Accordion>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Props: AccordionItem</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Props: AccordionDefault</h2>
 
 <p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
 
 ```js
-// AccordionItem component
+let duration: number = 0.2;
+let easing: string = 'ease';
+let id: number = undefined;
+```
+
+<h2 class="text-2xl w-full dark:text-white py-8">AccordionItem: Slot names</h2>
+
+```js
+header
+body
+```
+
+<h2 class="text-2xl w-full dark:text-white py-8">AccordionItem: Props</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+
+```js
 let id: string;
 let btnClass = 'flex items-center focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 justify-between p-5 w-full font-medium border border-gray-200 dark:border-gray-700 text-left text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800';
 let slotClass = 'p-5 border border-t-0 border-gray-200 dark:border-gray-700';
