@@ -8,19 +8,19 @@
 	if (color === 'blue') {
 		barColor = 'bg-blue-600';
 	} else if (color === 'gray') {
-		barColor = 'bg-gray-600';
+		barColor = 'bg-gray-600 dark:bg-gray-300';
 	} else if (color === 'red') {
-		barColor = 'bg-red-600';
+		barColor = 'bg-red-600 dark:bg-red-500';
 	} else if (color === 'green') {
-		barColor = 'bg-green-600';
+		barColor = 'bg-green-600 dark:bg-green-500';
 	} else if (color === 'yellow') {
-		barColor = 'bg-yellow-600';
+		barColor = 'bg-yellow-400 ';
 	} else if (color === 'purple') {
-		barColor = 'bg-purple-600';
+		barColor = 'bg-purple-600 dark:bg-purple-500';
 	} else if (color === 'indigo') {
-		barColor = 'bg-indigo-600';
+		barColor = 'bg-indigo-600 dark:bg-indigo-500';
 	} else {
-		barColor = 'bg-blue-600';
+		barColor = 'bg-blue-600 dark:bg-blue-500';
 	}
 </script>
 
