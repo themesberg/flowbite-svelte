@@ -176,5 +176,8 @@ body
 <p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
 
 ```js
+// AccordionItem component
 let id: string;
+let btnClass = 'flex items-center focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 justify-between p-5 w-full font-medium border border-gray-200 dark:border-gray-700 text-left text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800';
+let slotClass = 'p-5 border border-t-0 border-gray-200 dark:border-gray-700';
 ```

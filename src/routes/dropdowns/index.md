@@ -44,6 +44,23 @@ layout: dropdownLayout
 </div>
 
 ```html
+<script>
+ let items = [
+    {
+      href: "/",
+      name: "Dashboard",
+    },
+    {
+      href: "/",
+      name: "Settings",
+    },
+    {
+      href: "/",
+      name: "Sign out",
+    },
+  ];
+</script>
+
 <Dropdown items={items} />
 ```
 
@@ -73,7 +90,6 @@ layout: dropdownLayout
 </script>
 
 <Dropdown {items} color="red"/>
-
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">Dropdown header</h2>

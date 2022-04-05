@@ -3,6 +3,9 @@
 	import collapse from 'svelte-collapse';
 	import { ChevronDownIconSolid, ChevronUpIconSolid } from '@codewithshin/svelte-heroicons';
 	export let id: string = '';
+	export let btnClass =
+		'flex items-center focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 justify-between p-5 w-full font-medium border border-gray-200 dark:border-gray-700 text-left text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800';
+	export let slotClass = 'p-5 border border-t-0 border-gray-200 dark:border-gray-700';
 	const store = getContext('svelte-collapsible-accordion');
 	$: params = {
 		open: $store.id === id,
@@ -24,7 +27,7 @@
 		type="button"
 		class:rounded-t-xl={id === '1'}
 		class:border-t-0={id !== '1'}
-		class="flex items-center focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 justify-between p-5 w-full font-medium border border-gray-200 dark:border-gray-700 text-left text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+		class={btnClass}
 	>
 		<span><slot name="header" /></span>
 		{#if params.open}
@@ -35,7 +38,7 @@
 	</button>
 </h2>
 <div use:collapse={params}>
-	<div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+	<div class={slotClass}>
 		<slot name="body" />
 	</div>
 </div>
