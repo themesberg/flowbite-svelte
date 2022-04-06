@@ -1,6 +1,7 @@
 <script lang="ts">
+	import generateId from '../utils/generateId.js';
 	export let value: string = '';
-	export let id = 'message';
+	export let id: string = generateId();
 	export let name = 'message';
 	export let label = 'Your message';
 	export let rows = 4;

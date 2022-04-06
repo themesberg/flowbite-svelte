@@ -1,6 +1,7 @@
 <script lang="ts">
+	import generateId from '../utils/generateId.js';
 	export let name = 'toggle-example';
-	export let id = 'toggle-example';
+	export let id = generateId();
 	export let label = 'Toggle me';
 	export let checked = false;
 	export let disabled = false;
@@ -10,7 +11,7 @@
 	export let spanClass = 'ml-3 text-sm font-medium text-gray-900 dark:text-gray-300';
 </script>
 
-<label for={name} class={labelClass}>
+<label for={id} class={labelClass}>
 	<input type="checkbox" {id} class="sr-only" {checked} {disabled} />
 	<div class={divClass} />
 	<span class={spanClass}>{label}</span>

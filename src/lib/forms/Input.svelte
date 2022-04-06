@@ -1,4 +1,5 @@
 <script lang="ts">
+	import generateId from '../utils/generateId.js';
 	type InputType =
 		| 'button'
 		| 'checkbox'
@@ -25,7 +26,7 @@
 	export let type: InputType = 'text';
 	export let value: string = '';
 	export let name: string = '';
-	export let id: string = '';
+	export let id: string = generateId();
 	export let label: string = '';
 	export let required: boolean = false;
 	export let placeholder: string = '';

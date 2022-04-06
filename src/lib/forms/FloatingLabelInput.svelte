@@ -1,5 +1,6 @@
 <script lang="ts">
-	export let id: string;
+	import generateId from '../utils/generateId.js';
+	export let id: string = generateId();
 	type InputType =
 		| 'button'
 		| 'checkbox'
