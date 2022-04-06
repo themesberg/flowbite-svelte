@@ -4,7 +4,7 @@
 	let items = [
 		['Apple MacBook Pro 17', 'Silver', 'Laptop', '$2222', 'Edit'],
 		['Microsoft Surface Pro', 'White', 'Laptop PC', '$1999', 'Edit'],
-		['	Magic Mouse 2', 'Black', 'Accessories', '$99', 'Edit']
+		['Magic Mouse 2', 'Black', 'Accessories', '$99', 'Edit']
 	];
 </script>
 

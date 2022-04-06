@@ -134,7 +134,7 @@ layout: tabLayout
 <InteractiveTabs tabId="myTab2" tabs={tabs2} />
 ```
 
-<h2 class="text-2xl mt-8 dark:text-white py-8">Props</h2>
+<h2 class="text-2xl mt-8 dark:text-white pt-16 pb-8">Props</h2>
 
 <p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
 

@@ -10,7 +10,7 @@
 	<div class="container flex flex-wrap mx-auto pt-8">
 		<slot />
 
-		<h2 class="text-2xl w-full dark:text-white py-8">References</h2>
+		<h2 class="text-2xl w-full dark:text-white pt-8 pb-4">References</h2>
 
 		<p class="dark:text-white text-lg">
 			<a

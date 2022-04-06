@@ -3,7 +3,17 @@ layout: tooltipLayout
 ---
 
 <script>
-import {LightTooltip, Button} from '$lib/index'
+import {LightTooltip, Button, Table} from '$lib/index'
+let header = ['Name', 'Type','Default']
+let items =[
+  ['tip', 'string',''],
+  ['top','boolean','false'],
+  ['bottom','boolean','false'],
+  ['left','boolean','false'],
+  ['active','boolean','false']
+]
+let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+let tableClass='w-full text-lg text-left text-gray-500 dark:text-gray-400'
 </script>
 
 <h1 class="text-3xl w-full dark:text-white py-8">LightTooltip</h1>
@@ -82,15 +92,8 @@ import {LightTooltip, Button} from 'flowbite-svelte'
 </LightTooltip>
 ```
 
-<h2 class="text-2xl mt-8 dark:text-white py-8">Props</h2>
+<h2 class="text-2xl mt-8 dark:text-white pt-16 pb-8">Props</h2>
 
 <p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
 
-```js
-let tip: string;
-let top: boolean = false;
-let right: boolean = false;
-let bottom: boolean = false;
-let left: boolean = false;
-let active: boolean = false;
-```
+<Table {header} {items} {divClass} {tableClass} />

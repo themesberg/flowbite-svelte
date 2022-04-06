@@ -79,7 +79,7 @@ layout: timelineLayout
 </Activity>
 ```
 
-<h2 class="text-2xl mt-8 dark:text-white py-8">Props</h2>
+<h2 class="text-2xl mt-8 dark:text-white pt-16 pb-8">Props</h2>
 
 ```js
 // Activity
