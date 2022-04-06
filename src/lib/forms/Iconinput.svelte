@@ -1,7 +1,8 @@
 <script lang="ts">
 	import type { SvelteComponent } from 'svelte';
+	import generateId from '../utils/generateId.js';
 	export let label: string;
-	export let id: string;
+	export let id: string = generateId();
 	type InputType =
 		| 'button'
 		| 'checkbox'

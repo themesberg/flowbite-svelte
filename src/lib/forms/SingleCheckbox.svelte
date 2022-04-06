@@ -1,6 +1,7 @@
 <script lang="ts">
+	import generateId from '../utils/generateId.js';
 	export let checked: boolean = false;
-	export let id: string;
+	export let id: string = generateId();
 	export let required: boolean = false;
 	export let label: string;
 	export let name: string;
