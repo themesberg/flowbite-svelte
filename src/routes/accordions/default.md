@@ -3,8 +3,15 @@ layout: accordionLayout
 ---
 
 <script>
-  import { Accordion } from "$lib/index";
-  import { AccordionItem } from "$lib/index";
+  import { Accordion, AccordionItem, Table, TableDefaultRow } from "$lib/index";
+  import accordionProps from '../props/AccordionDefault.json'
+  import accordionItemProps from '../props/AccordionItem.json'
+  // Props table
+  export let items = accordionProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
 </script>
 
 <h1 class="text-3xl w-full dark:text-white">Accordion</h1>
@@ -171,12 +178,14 @@ header
 body
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">AccordionItem: Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-```js
-let id: string;
-let btnClass = 'flex items-center focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 justify-between p-5 w-full font-medium border border-gray-200 dark:border-gray-700 text-left text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800';
-let slotClass = 'p-5 border border-t-0 border-gray-200 dark:border-gray-700';
-```
+<h3 class="text-xl mt-8 dark:text-white py-4">AccordionDefault</h3>
+
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>
+
+<h3 class="text-xl mt-8 dark:text-white py-4">AccordionItem</h3>
