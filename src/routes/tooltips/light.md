@@ -3,7 +3,7 @@ layout: tooltipLayout
 ---
 
 <script>
-import {LightTooltip, Button, Table} from '$lib/index'
+import {LightTooltip, Button, Table, TableDefaultRow} from '$lib/index'
 let header = ['Name', 'Type','Default']
 let items =[
   ['tip', 'string',''],
@@ -96,4 +96,6 @@ import {LightTooltip, Button} from 'flowbite-svelte'
 
 <p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
 
-<Table {header} {items} {divClass} {tableClass} />
+<Table {header}  {divClass}  >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>
