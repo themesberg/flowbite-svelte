@@ -8,6 +8,7 @@ layout: accordionLayout
   import accordionItemProps from '../props/AccordionItem.json'
   // Props table
   export let items = accordionProps.props
+  export let items2 = accordionItemProps.props
 	let propHeader = ['Name', 'Type', 'Default']
 	console.log(items)
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
@@ -189,3 +190,7 @@ body
 </Table>
 
 <h3 class="text-xl mt-8 dark:text-white py-4">AccordionItem</h3>
+
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow items={items2} rowState='hover' />
+</Table>
