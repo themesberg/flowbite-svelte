@@ -5,13 +5,15 @@ layout: tooltipLayout
 <script>
 import {Tooltip, Button, Table, TableDefaultRow} from '$lib/index'
 let header = ['Name', 'Type','Default']
-let items =[
-  ['tip', 'string','-'],
-  ['top','boolean','false'],
-  ['bottom','boolean','false'],
-  ['left','boolean','false'],
-  ['active','boolean','false']
-]
+import item from './default.json'
+let items = item.props
+// let items =[
+//   ['tip', 'string','-'],
+//   ['top','boolean','false'],
+//   ['bottom','boolean','false'],
+//   ['left','boolean','false'],
+//   ['active','boolean','false']
+// ]
 let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 </script>
 
