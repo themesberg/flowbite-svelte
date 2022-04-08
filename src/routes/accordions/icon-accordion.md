@@ -3,9 +3,17 @@ layout: accordionLayout
 ---
 
 <script>
-  import { Accordion }from '$lib/index';
-  import { AccordionItem }from '$lib/index';
+  import { Accordion, AccordionItem, Table, TableDefaultRow }from '$lib/index';
   import { ArchiveIconOutline, BeakerIconOutline } from "@codewithshin/svelte-heroicons";
+  import accordionProps from '../props/AccordionDefault.json'
+  import accordionItemProps from '../props/AccordionItem.json'
+  // Props table
+  export let items = accordionProps.props
+  export let items2 = accordionItemProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
 </script>
 
 <h1 class="text-3xl w-full dark:text-white">Icon Accordion</h1>
@@ -133,3 +141,15 @@ npm i @codewithshin/svelte-heroicons
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
 <p class="dark:text-white py-4 text-lg">The component has the same props, type, and default values as <a href="/accordions/default" class="text-blue-600 hover:underline dark:text-blue-500">default</a>.</p>
+
+<h3 class="text-xl mt-8 dark:text-white py-4">AccordionDefault</h3>
+
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>
+
+<h3 class="text-xl mt-8 dark:text-white py-4">AccordionItem</h3>
+
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow items={items2} rowState='hover' />
+</Table>
