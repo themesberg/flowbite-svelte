@@ -5,21 +5,13 @@
 	export let bottom: boolean = false;
 	export let left: boolean = false;
 	export let active: boolean = false;
-	// export let bgColor = "";
 </script>
 
 <div class="tooltip-wrapper">
 	<span class="tooltip-slot">
 		<slot />
 	</span>
-	<div
-		class="inline-block absolute invisible z-10 py-2 px-3 bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700"
-		class:active
-		class:left
-		class:right
-		class:bottom
-		class:top
-	>
+	<div class="inline-block absolute invisible z-10 py-2 px-3 bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700" class:active class:left class:right class:bottom class:top>
 		{#if tip}
 			<div class="text-sm font-medium text-white ">{tip}</div>
 		{:else}

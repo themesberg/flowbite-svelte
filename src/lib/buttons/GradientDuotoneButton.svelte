@@ -2,7 +2,7 @@
 	import type { Gradientduotones, Textsize, ButtonType } from '../types';
 	export let textSize: Textsize = 'text-sm';
 	export let color: Gradientduotones = 'purple2blue';
-	export let name = 'Read more';
+	export let name: string = 'Read more';
 	let btnClass: string;
 	export let btnType: ButtonType = 'button';
 

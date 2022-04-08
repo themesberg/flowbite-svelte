@@ -1,4 +1,6 @@
 import * as fs from 'fs';
+import {lstat, readdir} from 'node:fs/promises'
+import {join} from 'node:path'
 
 export const getLines=(fileName, keyword)=> { 
   let outputs =[];
@@ -10,6 +12,17 @@ export const getLines=(fileName, keyword)=> {
     }
   });
   return outputs
+}
+export async function createFilenames () {
+  const deepReadDir = async (dirPath) => await Promise.all(
+    (await readdir(dirPath)).map(async (entity) => {
+      const path = join(dirPath, entity)
+      return (await lstat(path)).isDirectory() ? await deepReadDir(path) : path
+    }),
+  )
+  const files = await deepReadDir('../src/lib')
+  const all = files.flat(Number.POSITIVE_INFINITY)
+  return all
 }
 
 export function extractProps (arr) {
@@ -34,24 +47,13 @@ export function extractProps (arr) {
     }
     
   )
-
   obj.props=result
-  // [["duration"," number "," 0.2"],["easing"," string "," 'ease'"],["id"," number "," undefined"]]
-  // {"props": [
-  //   [ "tip", " string", "-" ],
-  //   [ "top", " boolean ", " false" ],
-  //   [ "right", " boolean ", " false" ],
-  //   [ "bottom", " boolean ", " false" ],
-  //   [ "left", " boolean ", " false" ],
-  //   [ "active", " boolean ", " false" ]
-  // ]
-  // }
   return obj
 }
 
 export const writeToFile = (fileName, data) => {
   fs.writeFile(fileName, data, (err) => {
     if (err) throw err;
-    console.log('The file has been saved!');
+    console.log('The file has been saved!', fileName);
   });
 }

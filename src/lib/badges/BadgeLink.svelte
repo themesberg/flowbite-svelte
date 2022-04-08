@@ -3,7 +3,7 @@
 	export let textSize: Textsize = 'text-xs';
 	export let name: string = 'Read more';
 	export let color: Colors = 'blue';
-	export let link: string = '/';
+	export let href: string = '/';
 
 	let badgeClass: string;
 	if (color === 'blue') {
@@ -27,4 +27,4 @@
 	}
 </script>
 
-<a href={link} class={badgeClass}>{name}</a>
+<a {href} class={badgeClass}>{name}</a>

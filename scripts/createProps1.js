@@ -1,3 +1,15 @@
+/**
+ * This create a json file with all the props of the components.
+ * Run this script in the root of the project.
+ * 
+ * The script will read the files.json file and get the files to be processed. Then it will get the lines of the file that contains the keyword 'export let'.
+ * Then it will extract the props from the lines.
+ * Finally it will write the json file to the destination folder of the file.
+ * example:
+ * node createProps.js
+ * 
+ */
+
 import * as fs from 'fs';
 import { getLines, extractProps, writeToFile } from './getProps.js';
 // import myfile from './files.json'
@@ -12,13 +24,3 @@ items.forEach(item => {
   let resultItem = extractProps(result);
   writeToFile(item[1], JSON.stringify(resultItem))
 })
-
-// let item;
-// let file = '../src/lib/accordions/AccordionDefault.svelte';
-// let result = getLines(file, 'export let');
-// item = extractProps(result);
-
-// console.log(item)
-
-// let writeTo = 'AccordionDefault.json'
-// writeToFile(writeTo, JSON.stringify(item))

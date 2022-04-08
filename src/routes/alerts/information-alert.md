@@ -3,7 +3,14 @@ layout: alertLayout
 ---
 
 <script>
-  import { Alert, BorderAlert, InfoAlert }from '$lib/index';
+  import { InfoAlert, Table, TableDefaultRow }from '$lib/index';
+  import componentProps from '../props/InfoAlert.json'
+  // Props table
+  export let items = componentProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
 </script>
 
 <h1 class="text-3xl w-full text-gray-900 dark:text-white py-8">Information Alert</h1>
@@ -217,10 +224,6 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
 
 <p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
 
-```js
-type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
-let color: Colors = 'blue';
-let alertId: string = 'alert-additional-content-1';
-let infoLink: string = undefined;
-let closeBtn: boolean = false;
-```
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>

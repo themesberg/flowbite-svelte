@@ -1,0 +1,1 @@
+{"props":[["label"," string "," 'Dropdown button'"],["rounded = fals","rounded "," false"],["textSize"," string "," 'text-sm'"],["color"," Colors "," 'blue'"],["items"," DropdownType[]","-"]]}

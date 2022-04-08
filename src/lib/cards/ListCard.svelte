@@ -1,10 +1,9 @@
 <script lang="ts">
 	import type { LinkType, ListCardType } from '../types';
 	export let lists: ListCardType[];
-	export let title = 'Latest Customers';
+	export let title: string = 'Latest Customers';
 	export let action: LinkType;
-	export let divClass =
-		'p-4 max-w-md bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700';
+	export let divClass: string = 'p-4 max-w-md bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700';
 </script>
 
 <div class={divClass}>
@@ -12,11 +11,7 @@
 		<h3 class="text-xl font-bold leading-none text-gray-900 dark:text-white">
 			{title}
 		</h3>
-		<a
-			href={action.href}
-			rel={action.rel}
-			class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500"
-		>
+		<a href={action.href} rel={action.rel} class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
 			{action.name}
 		</a>
 	</div>
@@ -36,9 +31,7 @@
 								{field2}
 							</p>
 						</div>
-						<div
-							class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white"
-						>
+						<div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
 							{field3}
 						</div>
 					</div>

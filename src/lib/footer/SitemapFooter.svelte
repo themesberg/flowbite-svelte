@@ -3,18 +3,18 @@
 	export let site: SiteType;
 	export let links: SocialMediaLinkType[];
 	export let socialMedia: SocialMediaType[];
-	export let footerClass = 'bg-gray-800';
-	export let linksClass = 'grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4';
-	export let parentClass = 'mb-6 text-sm font-semibold text-gray-400 uppercase';
-	export let ulClass = 'text-gray-300';
-	export let linkClass = 'hover:underline';
-	export let copyrightDivClass = 'py-6 px-4 bg-gray-700 md:flex md:items-center md:justify-between';
-	export let copyrightClass = 'text-sm text-gray-300 sm:text-center';
-	export let socialMediaDivClass = 'flex mt-4 space-x-6 sm:justify-center md:mt-0';
-	export let socialMediaLinkClass = 'text-gray-400 hover:text-white';
-	export let iconClass = 'h-5 w-5 mr-2';
-	export let copyrightYear = '© 2022';
-	export let allRightsReserved = 'All Rights Reserved.';
+	export let footerClass: string = 'bg-gray-800';
+	export let linksClass: string = 'grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4';
+	export let parentClass: string = 'mb-6 text-sm font-semibold text-gray-400 uppercase';
+	export let ulClass: string = 'text-gray-300';
+	export let linkClass: string = 'hover:underline';
+	export let copyrightDivClass: string = 'py-6 px-4 bg-gray-700 md:flex md:items-center md:justify-between';
+	export let copyrightClass: string = 'text-sm text-gray-300 sm:text-center';
+	export let socialMediaDivClass: string = 'flex mt-4 space-x-6 sm:justify-center md:mt-0';
+	export let socialMediaLinkClass: string = 'text-gray-400 hover:text-white';
+	export let iconClass: string = 'h-5 w-5 mr-2';
+	export let copyrightYear: string = '© 2022';
+	export let allRightsReserved: string = 'All Rights Reserved.';
 </script>
 
 <footer class="{footerClass} {$$props.class}">
@@ -35,9 +35,7 @@
 		{/each}
 	</div>
 	<div class={copyrightDivClass}>
-		<span class={copyrightClass}
-			>{copyrightYear} <a href={site.href}>{site.name}</a>. {allRightsReserved}
-		</span>
+		<span class={copyrightClass}>{copyrightYear} <a href={site.href}>{site.name}</a>. {allRightsReserved} </span>
 		<div class={socialMediaDivClass}>
 			{#each socialMedia as { href, icon }}
 				<a {href} class={socialMediaLinkClass}>

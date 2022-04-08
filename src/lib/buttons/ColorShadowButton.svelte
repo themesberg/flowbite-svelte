@@ -2,7 +2,7 @@
 	import type { Buttonshadows, Textsize, ButtonType } from '../types';
 	export let textSize: Textsize = 'text-sm';
 	export let color: Buttonshadows = 'blue';
-	export let name = 'Read more';
+	export let name: string = 'Read more';
 	let btnClass: string;
 	export let btnType: ButtonType = 'button';
 

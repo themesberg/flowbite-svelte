@@ -10,6 +10,9 @@ export type Gradientduotones = 'purple2blue' | 'cyan2blue' | 'green2blue' | 'pur
 
 export type Textsize = 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl'
 
+
+export type InputType = 'button'| 'checkbox'| 'color'| 'date'| 'datetime-local'| 'email'| 'file'| 'hidden'| 'image'| 'month'| 'number'| 'password'| 'radio'| 'range'| 'reset'| 'search'| 'submit'| 'tel'| 'text'| 'time'| 'url' | 'week';
+
 export interface ButtonGroupType {
     name: string;
     href?: string;
@@ -144,14 +147,6 @@ export type SelectOptionType = {
     value: string;
 }
 
-// export type ToggleType = {
-//     name: string;
-//     id: string;
-//     label: string;
-//     checked?: boolean;
-//     disabled?: boolean;
-// }
-
 export interface AvatarType {
     src?: string;
     alt?: string;
@@ -209,4 +204,28 @@ export interface GroupTimelineType {
 export interface PageType {
     pageNum: number;
     href: string;
+}
+
+export interface TransitionParamTypes{
+        delay?: number,
+        duration?: number,
+        easing?: (t: number) => number,
+        css?: (t: number, u: number) => string,
+        tick?: (t: number, u: number) => void
+}
+
+export interface CheckboxType {
+    id: string;
+    label: string;
+    checked?: boolean;
+    disabled?: boolean;
+    helper?: string
+}
+
+export interface RadioType {
+    id: string;
+    label: string;
+    value: string;
+    checked?: boolean;
+    disabled?: boolean;
 }
