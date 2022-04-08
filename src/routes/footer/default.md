@@ -3,7 +3,14 @@ layout: footerLayout
 ---
 
 <script>
-  import {SimpleFooter} from '$lib/index'
+  import { SimpleFooter, Table, TableDefaultRow } from '$lib/index'
+  import componentProps from '../props/SimpleFooter.json'
+  // Props table
+  export let items = componentProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
   let site = {
     href: "/",
     name: "Flowbite Svelte",
@@ -43,26 +50,8 @@ layout: footerLayout
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-```js
-interface SiteType {
-  name: string;
-  href: string;
-  img?: string;
-}
-interface LinkType {
-  name: string;
-  href: string;
-  rel?: string;
-}
-let site: SiteType;
-let links: LinkType[];
-let footerClass = 'p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800';
-let siteNameClass = 'text-sm text-gray-500 sm:text-center dark:text-gray-400';
-let ulClass = 'flex flex-wrap items-center mt-3 sm:mt-0';
-let aClass = 'mr-4 text-sm text-gray-500 hover:underline md:mr-6 dark:text-gray-400';
-let siteNameLinkClass = 'hover:underline';
-let copyrightYear = '© 2022';
-let allRightsReserved = 'All Rights Reserved.';
-```
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>

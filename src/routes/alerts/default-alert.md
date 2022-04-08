@@ -99,7 +99,8 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
 
 <h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
+
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow {items} rowState='hover' />

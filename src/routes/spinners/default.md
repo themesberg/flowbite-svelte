@@ -3,7 +3,14 @@ layout: spinnerLayout
 ---
 
 <script>
-  import { Spinner }from '$lib/index';
+  import { Spinner, Table, TableDefaultRow }from '$lib/index';
+  import componentProps from '../props/Spinner.json'
+  // Props table
+  export let items = componentProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
 </script>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Spinner</h1>
@@ -68,15 +75,10 @@ layout: spinnerLayout
 <Spinner align="text-right"/>
 ```
 
-<h2 class="text-2xl mt-8 dark:text-white pt-16 pb-8">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-```js
-type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
-type AlignType = 'text-center' | 'text-left' | 'text-right'
-let color: Colors = 'blue';
-let bg = 'text-gray-200';
-let size = 'w-8 h-8';
-let align: AlignType = 'text-center';
-```
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>

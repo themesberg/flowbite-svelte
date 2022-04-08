@@ -3,11 +3,15 @@ layout: timelineLayout
 ---
 
 <script lang="ts">
-	import {
-		TimelineItemHorizontal,
-		TimelineHorizontal,
-	} from '$lib/index';
+	import { TimelineItemHorizontal, TimelineHorizontal, Table, TableDefaultRow } from '$lib/index';
 	import { CalendarIconOutline, AdjustmentsIconSolid } from '@codewithshin/svelte-heroicons';
+	import componentProps1 from '../props/TimelineItemHorizontal.json'
+  import componentProps2 from '../props/TimelineHorizontal.json'
+  export let items1 = componentProps1.props
+  export let items2 = componentProps2.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
 	let timelineItems2 = [
 		{
@@ -81,19 +85,18 @@ layout: timelineLayout
 </script>
 ```
 
-<h2 class="text-2xl mt-8 dark:text-white pt-16 pb-8">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-```js
-// TimelineHorizontal
-let olClass = 'items-center sm:flex';
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-// TimelineItemHorizontal
-interface TimelineItemHorizontalType {
-  date: Date | string;
-  title: string;
-  icon?: typeof SvelteComponent;
-  text?: HTMLElement | string;
-}
+<h3 class="text-xl w-full dark:text-white py-8">TimelineItemHorizontal</h3>
 
-let timelineItems: TimelineItemHorizontalType[];
-```
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow items={items1} rowState='hover' />
+</Table>
+
+<h3 class="text-xl w-full dark:text-white py-8">TimelineHorizontal</h3>
+
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow items={items2} rowState='hover' />
+</Table>

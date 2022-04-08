@@ -3,8 +3,15 @@ layout: badgeLayout
 ---
 
 <script>
-  import {BadgeIcon} from '$lib/index'
+  import { BadgeIcon, Table, TableDefaultRow } from '$lib/index'
   import {InformationCircleIconOutline} from '@codewithshin/svelte-heroicons'
+  import componentProps from '../props/BadgeLink.json'
+  // Props table
+  export let items = componentProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
 </script>
 
 <h1 class="text-3xl w-full text-gray-900 dark:text-white py-8">Badges with icon</h1>
@@ -121,13 +128,8 @@ layout: badgeLayout
 
 <h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-```js
-type Textsize = 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl'
-type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
-let textSize: Textsize = 'text-xs';
-let name = 'Read more';
-let color: Colors = 'blue';
-```
-
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>

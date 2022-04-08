@@ -13,7 +13,7 @@
 	export let alt: string;
 	export let textsize: string = 'text-sm';
 	export let menus: NavbarType[];
-	export let navClass = 'px-2 bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700';
+	export let navClass: string = 'px-2 bg-white border-gray-200 dark:bg-gray-800 dark:border-gray-700';
 	const navDivClass = 'container flex flex-wrap justify-between items-center mx-auto';
 	export let spanClass: string = 'self-center text-lg font-semibold text-gray-900 whitespace-nowrap dark:text-white';
 	export let buttonClass: string = 'inline-flex justify-center items-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-500';

@@ -3,7 +3,15 @@ layout: modalLayout
 ---
 
 <script>
-  import { MediumModal, ModalButton }from '$lib/index';
+  import { MediumModal, ModalButton, Table, TableDefaultRow }from '$lib/index';
+  import componentProps1 from '../props/ModalButton.json'
+  import componentProps2 from '../props/MediumModal.json'
+  export let items1 = componentProps1.props
+  export let items2 = componentProps2.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
 
   let modal1;
   let modal2;
@@ -145,17 +153,16 @@ layout: modalLayout
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-```js
-type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
-let id = 'medium-modal';
-let btnColor: Colors = 'blue';
-let textColor: Colors = 'gray';
-let title = 'Terms of Service';
-let btn1: string;
-let btn2: string;
-const closeModal = () => {
-  modalIdStore.update((value) => (value = null));
-};
-```
+<h3 class="text-xl w-full dark:text-white py-8">ModalButton</h3>
+
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow items={items1} rowState='hover' />
+</Table>
+
+<h3 class="text-xl w-full dark:text-white py-8">MediumModal</h3>
+
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow items={items2} rowState='hover' />
+</Table>

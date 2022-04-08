@@ -3,7 +3,14 @@ layout: dropdownLayout
 ---
 
 <script>
-  import { Dropdown }from '$lib/index';
+  import { Dropdown, Table, TableDefaultRow } from '$lib/index';
+  import componentProps from '../props/DropdownDefault.json'
+  // Props table
+  export let dropdownItems = componentProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
   let items = [
     {
       href: "/",
@@ -35,17 +42,18 @@ layout: dropdownLayout
   ];
 </script>
 
-<h1 class="text-3xl w-full dark:text-white">Dropdowns</h1>
+<h1 class="text-3xl w-full dark:text-white">Dropdown</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-8"><a id="Default_Dropdown">Default Dropdown</a></h2>
+<h2 class="text-2xl w-full dark:text-white py-8"><a id="Default_Dropdown">Examples</a></h2>
 
 <div class="container rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Dropdown {items}/>
+<Dropdown {items} />
 </div>
 
 ```html
 <script>
- let items = [
+  import { Dropdown } from 'flowbite-svelte';
+  let items = [
     {
       href: "/",
       name: "Dashboard",
@@ -61,7 +69,7 @@ layout: dropdownLayout
   ];
 </script>
 
-<Dropdown items={items} />
+<Dropdown {items} />
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8"><a id="Dropdown_divider">Dropdown divider</a></h2>
@@ -72,7 +80,8 @@ layout: dropdownLayout
 
 ```html
 <script>
- let items = [
+  import { Dropdown }from 'flowbite-svelte';
+  let items = [
     {
       href: "/",
       name: "Dashboard",
@@ -115,17 +124,8 @@ layout: dropdownLayout
 
 <h2 class="text-2xl w-full dark:text-white py-8"><a id="Props">Props</a></h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-```js
-interface DropdownType {
-  name: string;
-  href: string;
-  divider: boolean;
-}
-let label = 'Dropdown button';
-let rounded = false;
-let textSize = 'text-sm';
-let color = 'blue';
-let items: DropdownType[];
-```
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow items={dropdownItems} rowState='hover' />
+</Table>

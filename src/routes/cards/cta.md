@@ -3,7 +3,14 @@ layout: cardLayout
 ---
 
 <script>
-  import { CtaCard }from '$lib/index';
+  import { CtaCard, Table, TableDefaultRow }from '$lib/index';
+  import componentProps from '../props/CtaCard.json'
+  // Props table
+  export let items = componentProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
   let title = "Be The First";
   let headColor = "gray";
   let btns = [
@@ -74,20 +81,9 @@ layout: cardLayout
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-```js
-type CardButtonType = {
-    textSize?: Textsize;
-    name: string;
-    type?: Buttontypes;
-    href?: string;
-    rel?: string;
-    rounded?: boolean;
-};
-type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
-let title: string = 'Work fast from anywhere';
-let headColor: Colors = 'gray';
-let btns: CardButtonType[];
-let divClass =
-```
+
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>

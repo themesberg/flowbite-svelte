@@ -1,7 +1,7 @@
 <script lang="ts">
 	import generateId from '../utils/generateId.js';
 	export let name: string = 'toggle-example';
-	export let id = generateId();
+	export let id: string = generateId();
 	export let label: string = 'Toggle me';
 	export let checked: boolean = false;
 	export let disabled: boolean = false;

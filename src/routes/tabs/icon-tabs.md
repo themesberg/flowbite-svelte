@@ -3,13 +3,20 @@ layout: tabLayout
 ---
 
 <script>
-	import { IconTabs } from '$lib/index';
+	import { IconTabs, Table, TableDefaultRow } from '$lib/index';
 	import {
 		UserCircleIconSolid,
 		ViewGridIconSolid,
 		AdjustmentsIconSolid,
 		ClipboardListIconSolid
 	} from '@codewithshin/svelte-heroicons';
+	import componentProps from '../props/IconTabs.json'
+  // Props table
+  export let items = componentProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
 
 	let tabs = [
 		{
@@ -90,18 +97,10 @@ layout: tabLayout
 <IconTabs {tabs} />
 ```
 
-<h2 class="text-2xl mt-8 dark:text-white pt-16 pb-8">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-```js
-interface IconTabType {
-    name: string;
-    active: boolean;
-    href: string,
-    rel?: string,
-    icon?: typeof SvelteComponent;
-}
-let tabs: IconTabType[];
-let iconClass = 'mr-2 w-5 h-5 text-gray-400 group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-300';
-```
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>

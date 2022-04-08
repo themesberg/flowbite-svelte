@@ -3,7 +3,14 @@ layout: sidebarLayout
 ---
 
 <script>
-  import { Sidebar } from '$lib/index';
+  import { Sidebar, Table, TableDefaultRow } from '$lib/index';
+  import componentProps from '../props/Sidebar.json'
+  // Props table
+  export let items = componentProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
   import {
     ChartPieIconSolid,
     ShoppingBagIconSolid,
@@ -232,6 +239,7 @@ layout: sidebarLayout
 
 ```html
 <script>
+  import { Sidebar } from 'flowbite-svelte';
   let site = {
     name: 'Flowbite-Svelte',
     href: '/',
@@ -334,27 +342,10 @@ layout: sidebarLayout
 </script>
 ```
 
-<h2 class="text-2xl w-full mt-8 dark:text-white py-8">Props and types</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg w-full">The component has the following props, type, and default values:</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-```js
-type SidebarType = {
-  id: number;
-  name: string;
-  href?: string;
-  icon?: typeof SvelteComponent;
-  rel?: string;
-  children?: SidebarType[];
-  subtext?: HTMLElement;
-}
-
-type SidebarCtaType = {
-  label: string;
-  text: HTMLElement;
-}
-
-let site: SiteType;
-let links: SidebarType[];
-let cta: SidebarCtaType;
-```
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>

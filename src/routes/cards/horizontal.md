@@ -3,7 +3,14 @@ layout: cardLayout
 ---
 
 <script>
-  import { HorizontalCard }from '$lib/index';
+  import { HorizontalCard, Table, TableDefaultRow }from '$lib/index';
+  import componentProps from '../props/HorizontalCard.json'
+  // Props table
+  export let items = componentProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
 </script>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Horizontal Card</h1>
@@ -55,17 +62,9 @@ layout: cardLayout
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-```js
-let link: string = '';
-let rel: string = '';
-let img = '/images/image-4.jpeg';
-let alt: string = '';
-let header = 'Lorem ipsum dolor sit ametit.';
-let linkClass = 'flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700';
-let imgClass = 'object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg';
-let textClass = 'flex flex-col justify-between p-4 leading-normal';
-let h3Class = 'mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white';
-let pClass = 'mb-3 font-normal text-gray-700 dark:text-gray-400';
-```
+
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>

@@ -3,7 +3,14 @@ layout: tabLayout
 ---
 
 <script>
-import { UnderlineTabs }from '$lib/index';
+import { UnderlineTabs, Table, TableDefaultRow }from '$lib/index';
+import componentProps from '../props/UnderlineTabs.json'
+  // Props table
+  export let items = componentProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
 let tabs = [
   {
     name: "Profile",
@@ -74,18 +81,10 @@ let tabs = [
 <UnderlineTabs {tabs} />
 ```
 
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<h2 class="text-2xl mt-8 dark:text-white pt-16 pb-8">Props</h2>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
-
-```js
-interface TabType {
-    name: string;
-    active: boolean;
-    href: string,
-    rel?: string,
-}
-let divClass = 'text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700';
-let tabs: TabType[];
-```
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>

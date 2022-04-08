@@ -3,7 +3,14 @@ layout: cardLayout
 ---
 
 <script>
-  import { InteractiveCard }from '$lib/index';
+  import { InteractiveCard, Table, TableDefaultRow }from '$lib/index';
+  import componentProps from '../props/InteractiveCard.json'
+  // Props table
+  export let items = componentProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
   let dropdownLinks = [
     {
       href: "/",
@@ -100,24 +107,9 @@ layout: cardLayout
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-```js
-interface LinkType {
-    name: string;
-    href: string;
-    rel?: string;
-}
-type ImgType = {
-    src: string;
-    alt?: string;
-}
-let dropdownLinks: LinkType[];
-let img: ImgType;
-let header = 'Lorem ipsum';
-let content = 'Proin efficitur purus felis.';
-let buttonColor: 'blue'|'gray'|'red'|'yellow'|'green'|'indigo'|'purple'|'pink' = 'blue'
-let link1: LinkType;
-let link2: LinkType;
-let divClass = 'max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700';
-```
+
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>

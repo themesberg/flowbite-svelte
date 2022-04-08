@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { AvatarType } from '../types';
-	export let avatar: AvatarType;
+	export let avatar: AvatarType = {};
+
 	let isCircle = avatar.round ? 'rounded-full' : 'rounded';
 	let isBorder = avatar.border ? 'p-1 ring-2 ring-gray-300 dark:ring-gray-500' : '';
 	export let avatarClass: string = `w-${avatar.size} h-${avatar.size} ${isCircle} ${isBorder}`;

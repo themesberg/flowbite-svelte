@@ -5,9 +5,9 @@ layout: alertLayout
 <script>
   import { Alert, Table, TableDefaultRow }from '$lib/index';
   import { flip } from 'svelte/animate';
-  import alertProp from '../props/Alert.json'
+  import componentProps from '../props/Alert.json'
   // Props table
-  export let items = alertProp.props
+  export let items = componentProps.props
 	let propHeader = ['Name', 'Type', 'Default']
 	// console.log(items)
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'

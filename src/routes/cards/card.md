@@ -3,7 +3,14 @@ layout: cardLayout
 ---
 
 <script>
-  import { Card, Button }from '$lib/index';
+  import { Card, Button, Table, TableDefaultRow }from '$lib/index';
+  import componentProps from '../props/Card.json'
+  // Props table
+  export let items = componentProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
   const btn1 = ()　=>　{
     alert('You clicked.')
   }
@@ -202,16 +209,8 @@ layout: cardLayout
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-```js
-type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
-let link: string = '';
-let rel: string = '';
-let alt: string = '';
-let img: string = '';
-let btnLabel: string = 'Read more';
-let btnColor: Colors = 'blue';
-let header: string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
-let divClass = 'max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700';
-```
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>

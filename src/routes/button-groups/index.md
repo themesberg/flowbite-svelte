@@ -1,5 +1,6 @@
 <script>
   import { Card }from '$lib/index';
+  
 </script>
 
 <div class="container flex flex-wrap mx-auto mt-8 justify-center">

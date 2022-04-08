@@ -3,17 +3,27 @@ layout: cardLayout
 ---
 
 <script>
-  import { EcommerceCard }from '$lib/index';
+  import { EcommerceCard, Table, TableDefaultRow }from '$lib/index';
+  import componentProps from '../props/EcommerceCard.json'
+  // Props table
+  export let items = componentProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+  let img1 = {
+    src: "/images/product-1.webp",
+    alt: "product image",
+  };
   let img2 = {
-    src: "/images/product-2.jpeg",
+    src: "/images/product-2.webp",
     alt: "product image",
   };
   let img3 = {
-    src: "/images/product-3.jpeg",
+    src: "/images/product-3.webp",
     alt: "product image",
   };
   let img4 = {
-    src: "/images/product-4.jpeg",
+    src: "/images/product-4.webp",
     alt: "product image",
   };
 </script>
@@ -25,16 +35,20 @@ layout: cardLayout
 ```html
 <script>
   import { EcommerceCard } from "flowbite-svelte";
+  let img1 = {
+    src: "/images/product-1.webp",
+    alt: "product image",
+  };
   let img2 = {
-    src: "/images/product-2.jpeg",
+    src: "/images/product-2.webp",
     alt: "product image",
   };
   let img3 = {
-    src: "/images/product-3.jpeg",
+    src: "/images/product-3.webp",
     alt: "product image",
   };
   let img4 = {
-    src: "/images/product-4.jpeg",
+    src: "/images/product-4.webp",
     alt: "product image",
   };
 </script>
@@ -42,20 +56,33 @@ layout: cardLayout
 
 <h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
 
-```html
-<EcommerceCard
-  title="Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport"
-  link="/alerts"
-  price="$543"
-/>
-```
-
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <EcommerceCard
   title="Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport"
   link="/alerts"
   price="$543"
+  img={img1}
 />
+</div>
+
+```html
+<EcommerceCard
+  title="Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport"
+  link="/alerts"
+  price="$543"
+  img={img1}
+/>
+```
+
+<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+  <EcommerceCard
+    title="Women's Cashmere Sweaters Lorem ipsum dolor sit amet."
+    link="/tabs"
+    btnColor="red"
+    stars="4.0"
+    price="$461"
+    img={img2}
+  />
 </div>
 
 ```html
@@ -71,12 +98,12 @@ layout: cardLayout
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <EcommerceCard
-    title="Women's Cashmere Sweaters Lorem ipsum dolor sit amet."
-    link="/tabs"
-    btnColor="red"
-    stars="4.0"
-    price="$461"
-    img={img2}
+    title="Pink cup Lorem ipsum dolor sit amet et mete."
+    link="/cards"
+    btnColor="purple"
+    stars="3"
+    price="$321"
+    img={img3}
   />
 </div>
 
@@ -94,12 +121,12 @@ layout: cardLayout
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <EcommerceCard
-    title="Pink cup Lorem ipsum dolor sit amet et mete."
-    link="/cards"
-    btnColor="purple"
-    stars="3"
-    price="$321"
-    img={img3}
+    title="Nintendo Game Lorem ipsum dolor sit amet."
+    link="modals"
+    btnColor="green"
+    stars="5"
+    price="$211"
+    img={img4}
   />
 </div>
 
@@ -114,28 +141,10 @@ layout: cardLayout
 />
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-  <EcommerceCard
-    title="Nintendo Game Lorem ipsum dolor sit amet."
-    link="modals"
-    btnColor="green"
-    stars="5"
-    price="$211"
-    img={img4}
-  />
-</div>
-
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-```js
-type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
-let link: string = '/';
-let btnColor: Colors = 'blue';
-let rel: string = '';
-let title: string = 'Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport';
-let stars: number = 5;
-let price = '$555';
-let divClass = 'max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700';
-```
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>

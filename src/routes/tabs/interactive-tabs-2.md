@@ -4,7 +4,15 @@ layout: tabLayout
 
 <script>
   import { InteractiveTabHead, TabContent, Card, Timeline,
-		TimelineItem, }from '$lib/index';
+		TimelineItem, Table, TableDefaultRow }from '$lib/index';
+	import componentProps1 from '../props/InteractiveTabHead.json'
+  import componentProps2 from '../props/TabContent.json'
+  export let items1 = componentProps1.props
+  export let items2 = componentProps2.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
 	let tab1 = { name: 'Tab1', id: 1 };
 	let tab2 = { name: 'Tab2', id: 2 };
 	let tab3 = { name: 'Tab3', id: 3 };
@@ -104,22 +112,18 @@ import { InteractiveTabHead, TabContent, Card, Timeline,
 </InteractiveTabHead>
 ```
 
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<h2 class="text-2xl mt-8 dark:text-white pt-16 pb-8">Props</h2>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<h3 class="text-xl w-full dark:text-white py-8">InteractiveTabHead</h3>
 
-```js
-// InteractiveTabHead
-interface TabHeadType {
-    name: string;
-    id: number;
-}
-let tabs: TabHeadType[];
-let tabId = 'myTab';
-let activeTabValue = 1;
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow items={items1} rowState='hover' />
+</Table>
 
-// TabContent
-let divClass = 'p-4 rounded-lg dark:bg-gray-800';
-let tab: TabHeadType;
-```
+<h3 class="text-xl w-full dark:text-white py-8">TabContent</h3>
+
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow items={items2} rowState='hover' />
+</Table>

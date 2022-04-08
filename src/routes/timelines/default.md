@@ -3,10 +3,14 @@ layout: timelineLayout
 ---
 
 <script lang="ts">
-	import {
-		Timeline,
-		TimelineItem,
-	} from '$lib/index';
+	import { Timeline, TimelineItem, Table, TableDefaultRow } from '$lib/index';
+  import componentProps1 from '../props/Timeline.json'
+  import componentProps2 from '../props/TimelineItem.json'
+  export let items1 = componentProps1.props
+  export let items2 = componentProps2.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
 	let timelineItems = [
 		{
@@ -73,20 +77,18 @@ layout: timelineLayout
 </Timeline>
 ```
 
-<h2 class="text-2xl mt-8 dark:text-white pt-16 pb-8">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-```js
-// Timeline
-let olClass = 'relative border-l border-gray-200 dark:border-gray-700';
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-// TimelineItem
-interface TimelineItemType {
-    date: Date | string;
-    title: string;
-    icon?: typeof SvelteComponent;
-    href?: string;
-    linkname?: string;
-    text?: HTMLElement | string;
-}
-let timelineItems: TimelineItemType[];
-```
+<h3 class="text-xl w-full dark:text-white py-8">Timeline</h3>
+
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow items={items1} rowState='hover' />
+</Table>
+
+<h3 class="text-xl w-full dark:text-white py-8">TimelineItem</h3>
+
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow items={items2} rowState='hover' />
+</Table>

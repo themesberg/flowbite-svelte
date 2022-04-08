@@ -3,8 +3,15 @@ layout: buttonLayout
 ---
 
 <script>
-  import { Button }from '$lib/index';
   import {ArrowCircleRightIconOutline} from '@codewithshin/svelte-heroicons'
+  import { Button, Table, TableDefaultRow }from '$lib/index';
+  import componentProps from '../props/Button.json'
+  // Props table
+  export let items = componentProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+  
 </script>
 
 <h1 class="text-3xl w-full text-gray-900 dark:text-white py-8">Buttons</h1>
@@ -57,15 +64,9 @@ layout: buttonLayout
 
 <h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Button Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-```js
-type Textsize = 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl'
-type Buttontypes = 'blue' | 'blue-outline' | 'dark' | 'dark-outline' | 'light' | 'green' | 'green-outline' | 'red' | 'red-outline' | 'yellow' | 'yellow-outline' | 'purple' | 'purple-outline';
-type ButtonType = 'button' | 'submit' | 'reset'
-let rounded: boolean = false;
-let textSize: Textsize = 'text-sm';
-let name = 'Read more';
-let btnColor: Buttontypes = 'blue';
-let btnType: ButtonType = 'button';
-```
+
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>

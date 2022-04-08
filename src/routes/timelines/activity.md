@@ -3,10 +3,15 @@ layout: timelineLayout
 ---
 
 <script lang="ts">
-	import {
-		Activity,
-		ActivityItem,
-	} from '$lib/index';
+	import { Activity, ActivityItem, Table, TableDefaultRow } from '$lib/index';
+	import componentProps1 from '../props/Activity.json'
+  import componentProps2 from '../props/ActivityItem.json'
+  export let items1 = componentProps1.props
+  export let items2 = componentProps2.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
 
 	let activities = [
 		{
@@ -79,19 +84,18 @@ layout: timelineLayout
 </Activity>
 ```
 
-<h2 class="text-2xl mt-8 dark:text-white pt-16 pb-8">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-```js
-// Activity
-let olClass = 'relative border-l border-gray-200 dark:border-gray-700';
-// ActivityItem
-interface ActivityType {
-    title: HTMLElement | string ;
-    date: Date | string;
-    src: string;
-    alt: string;
-    text?: HTMLElement | string;
-}
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-let activities: ActivityType[];
-```
+<h3 class="text-xl w-full dark:text-white py-8">Activity</h3>
+
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow items={items1} rowState='hover' />
+</Table>
+
+<h3 class="text-xl w-full dark:text-white py-8">ActivityItem</h3>
+
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow items={items2} rowState='hover' />
+</Table>

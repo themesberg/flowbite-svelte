@@ -3,7 +3,14 @@ layout: tabLayout
 ---
 
 <script>
-  import { InteractiveTabs }from '$lib/index';
+  import { InteractiveTabs, Table, TableDefaultRow }from '$lib/index';
+  import componentProps from '../props/InteractiveTabs.json'
+  // Props table
+  export let items = componentProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
   let tabs1 = [
     {
       name: "Profile-1",
@@ -74,18 +81,10 @@ layout: tabLayout
 <InteractiveTabs tabId="myTab1" tabs={tabs1} />
 ```
 
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<h2 class="text-2xl mt-8 dark:text-white pt-16 pb-8">Props</h2>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
-
-```js
-interface InteractiveTabType {
-  name: string;
-  id: number;
-  content: string;
-}
-let tabId = 'myTab';
-let activeTabValue = 1;
-let tabs: InteractiveTabType[];
-```
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>

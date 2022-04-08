@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { DropdownType, Colors } from '../types';
+	import type { DropdownType, DropdownColorType } from '../types';
 	export let label: string = 'Dropdown button';
 	export let rounded = false;
 	export let textSize: string = 'text-sm';
-	export let color: Colors = 'blue';
+	export let color: DropdownColorType = 'blue';
 
 	let paddings: string;
 	if (textSize === 'text-xs') {

@@ -3,7 +3,14 @@ layout: footerLayout
 ---
 
 <script>
-  import {SitemapFooter} from '$lib/index'
+  import { SitemapFooter, Table, TableDefaultRow } from '$lib/index'
+  import componentProps from '../props/SitemapFooter.json'
+  // Props table
+  export let items = componentProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
   import {
     FacebookIcon,
     GithubIcon,
@@ -197,37 +204,8 @@ layout: footerLayout
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-```js
-interface SiteType {
-  name: string;
-  href: string;
-  img?: string;
-}
-interface SocialMediaType {
-  href: string;
-  icon: typeof SvelteComponent;
-}
-interface SocialMediaLinkType {
-  parent: string;
-  children?: LinkType[]
-}
-let site: SiteType;
-let links: SocialMediaLinkType[];
-let socialMedia: SocialMediaType[];
-let footerClass = "bg-gray-800";
-let linksClass = "grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4";
-let parentClass = "mb-6 text-sm font-semibold text-gray-400 uppercase";
-let ulClass = "text-gray-300";
-let linkClass = "hover:underline";
-let copyrightDivClass =
-  "py-6 px-4 bg-gray-700 md:flex md:items-center md:justify-between";
-let copyrightClass = "text-sm text-gray-300 sm:text-center";
-let socialMediaDivClass =
-  "flex mt-4 space-x-6 sm:justify-center md:mt-0";
-let socialMediaLinkClass = "text-gray-400 hover:text-white";
-let iconClass = "h-5 w-5 mr-2";
-let copyrightYear = "© 2022";
-let allRightsReserved = "All Rights Reserved.";
-```
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>

@@ -3,13 +3,20 @@ layout: listgroupLayout
 ---
 
 <script>
-  import { List }from '$lib/index';
+  import { List, Table, TableDefaultRow }from '$lib/index';
   import {
     AdjustmentsIconSolid,
     UserCircleIconSolid,
     InboxInIconSolid,
     CloudDownloadIconSolid,
   } from "@codewithshin/svelte-heroicons";
+  import componentProps from '../props/List.json'
+  // Props table
+  export let items = componentProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
   let lists = [
     {
       name: "Home",
@@ -147,14 +154,8 @@ layout: listgroupLayout
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-```js
-interface ButtonGroupType {
-  name: string;
-  href?: string;
-  rel?: string;
-  icon?: typeof SvelteComponent;
-}
-let lists: ButtonGroupType[];
-```
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>

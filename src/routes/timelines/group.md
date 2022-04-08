@@ -3,10 +3,15 @@ layout: timelineLayout
 ---
 
 <script lang="ts">
-	import {
-		Group,
-		GroupItem
-	} from '$lib/index';
+	import { Group, GroupItem, Table, TableDefaultRow } from '$lib/index';
+	import componentProps1 from '../props/Group.json'
+  import componentProps2 from '../props/GroupItem.json'
+  export let items1 = componentProps1.props
+  export let items2 = componentProps2.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
 
 	let timelines = [
 		{
@@ -75,24 +80,18 @@ layout: timelineLayout
 </Group>
 ```
 
-<h2 class="text-2xl mt-8 dark:text-white pt-16 pb-8">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-```js
-// Group
-let divClass =
-		'p-5 mb-4 bg-gray-50 rounded-lg border border-gray-100 dark:bg-gray-800 dark:border-gray-700';
-let timeClass = 'text-lg font-semibold text-gray-900 dark:text-white';
-let date: Date | string;
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-// GroupItem
-interface GroupTimelineType {
-    title: string | HTMLElement;
-    src: string;
-    alt: string;
-    href?: string;
-    isPrivate?: boolean;
-    comment?: string | HTMLElement;
-}
+<h3 class="text-xl w-full dark:text-white py-8">Group</h3>
 
-let timelines: GroupTimelineType[];
-```
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow items={items1} rowState='hover' />
+</Table>
+
+<h3 class="text-xl w-full dark:text-white py-8">GroupItem</h3>
+
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow items={items2} rowState='hover' />
+</Table>

@@ -4,16 +4,12 @@ layout: tooltipLayout
 
 <script>
 import {LightTooltip, Button, Table, TableDefaultRow} from '$lib/index'
-let header = ['Name', 'Type','Default']
-let items =[
-  ['tip', 'string',''],
-  ['top','boolean','false'],
-  ['bottom','boolean','false'],
-  ['left','boolean','false'],
-  ['active','boolean','false']
-]
+import componentProps from '../props/LightTooltip.json'
+// Props table
+export let items = componentProps.props
+let propHeader = ['Name', 'Type', 'Default']
+// console.log(items)
 let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
-let tableClass='w-full text-lg text-left text-gray-500 dark:text-gray-400'
 </script>
 
 <h1 class="text-3xl w-full dark:text-white py-8">LightTooltip</h1>
@@ -35,7 +31,6 @@ import {LightTooltip, Button} from 'flowbite-svelte'
   <Button />
 </LightTooltip>
 ```
-
 
 <h2 class="text-2xl w-full dark:text-white py-8">LightTooltip bottom</h2>
 
@@ -92,10 +87,10 @@ import {LightTooltip, Button} from 'flowbite-svelte'
 </LightTooltip>
 ```
 
-<h2 class="text-2xl mt-8 dark:text-white pt-16 pb-8">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-<Table {header}  {divClass}  >
+<Table header={propHeader} {divClass} >
   <TableDefaultRow {items} rowState='hover' />
 </Table>

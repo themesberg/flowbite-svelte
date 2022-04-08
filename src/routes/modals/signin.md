@@ -3,8 +3,15 @@ layout: modalLayout
 ---
 
 <script>
-  import { SignInModal, ModalButton }from '$lib/index';
-  
+  import { SignInModal, ModalButton, Table, TableDefaultRow }from '$lib/index';
+  import componentProps1 from '../props/ModalButton.json'
+  import componentProps2 from '../props/SignInModal.json'
+  export let items1 = componentProps1.props
+  export let items2 = componentProps2.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
   let signmodal;
 </script>
 
@@ -58,15 +65,16 @@ import { SignInModal, ModalButton } from "flowbite-svelte";
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-```js
-type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
-let id = 'signin-modal';
-let btnSignInColor: Colors = 'blue';
-let titleSignIn = 'Sign in to our platform';
-let lostPasswordLink: string;
-let rememberMe = false;
-let signUp: string;
-let action: string;
-```
+<h3 class="text-xl w-full dark:text-white py-8">ModalButton</h3>
+
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow items={items1} rowState='hover' />
+</Table>
+
+<h3 class="text-xl w-full dark:text-white py-8">SignInModal</h3>
+
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow items={items2} rowState='hover' />
+</Table>

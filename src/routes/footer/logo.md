@@ -3,7 +3,14 @@ layout: footerLayout
 ---
 
 <script>
-  import {LogoFooter} from '$lib/index'
+  import { LogoFooter, Table, TableDefaultRow } from '$lib/index'
+  import componentProps from '../props/LogoFooter.json'
+  // Props table
+  export let items = componentProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
   let site = {
     href: "/",
     name: "Flowbite Svelte",
@@ -44,32 +51,8 @@ layout: footerLayout
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-```js
-interface SiteType {
-  name: string;
-  href: string;
-  img?: string;
-}
-interface LinkType {
-  name: string;
-  href: string;
-  rel?: string;
-}
-let site: SiteType;
-let links: LinkType[];
-let footerClass = 'p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-800';
-let divClass = 'sm:flex sm:items-center sm:justify-between';
-let siteNameClass = 'self-center text-2xl font-semibold whitespace-nowrap dark:text-white';
-let ulClass =
-		'flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400';
-let aClass = 'mr-4 hover:underline md:mr-6';
-let siteNameLinkClass = 'flex items-center mb-4 sm:mb-0';
-let imgClass = 'mr-3 h-8';
-let hrClass = 'my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8';
-let copyRightSpanClass = 'block text-sm text-gray-500 sm:text-center dark:text-gray-400';
-let copyRightLinkClass = 'hover:underline';
-let copyrightYear = '© 2022';
-let allRightsReserved = 'All Rights Reserved.';
-```
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>

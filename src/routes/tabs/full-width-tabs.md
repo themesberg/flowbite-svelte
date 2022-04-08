@@ -3,7 +3,14 @@ layout: tabLayout
 ---
 
 <script>
-  import { FullWidthTabs } from '$lib/index'
+  import { FullWidthTabs, Table, TableDefaultRow } from '$lib/index'
+  import componentProps from '../props/FullWidthTabs.json'
+  // Props table
+  export let items = componentProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
   let tabLabel = 'Select a target'
   let tabs = [
   {
@@ -70,17 +77,10 @@ layout: tabLayout
 <FullWidthTabs {tabs} {tabLabel}/>
 ```
 
-<h2 class="text-2xl mt-8 dark:text-white pt-16 pb-8">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-```js
-interface TabType {
-  name: string;
-  active: boolean;
-  href: string,
-  rel?: string,
-}
-let tabs: TabType[];
-let tabLabel: string;
-```
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>

@@ -3,7 +3,14 @@ layout: avatarLayout
 ---
 
 <script>
-  import { Avatar } from "$lib/index"
+  import { Avatar, Table, TableDefaultRow  } from "$lib/index"
+  import alertProp from '../props/Avatar.json'
+  // Props table
+  export let items = alertProp.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
   let avatar6 = {
     src: '/images/profile-picture-1.webp',
     alt: 'My avatar',
@@ -208,17 +215,8 @@ layout: avatarLayout
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-```js
-export let avatar: AvatarType = {
-  src: '/',
-  alt: '',
-  size: 8,
-  border: false,
-  round: false,
-  header: '',
-  text: ''
-};
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-export let avatarClass = `w-${avatar.size} h-${avatar.size} ${isCircle} ${isBorder}`;
-export let placehoder: boolean = false;
-```
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>

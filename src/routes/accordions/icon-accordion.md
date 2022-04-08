@@ -140,7 +140,7 @@ npm i @codewithshin/svelte-heroicons
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the same props, type, and default values as <a href="/accordions/default" class="text-blue-600 hover:underline dark:text-blue-500">default</a>.</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
 <h3 class="text-xl mt-8 dark:text-white py-4">AccordionDefault</h3>
 

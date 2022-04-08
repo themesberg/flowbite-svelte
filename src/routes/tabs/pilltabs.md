@@ -3,7 +3,14 @@ layout: tabLayout
 ---
 
 <script>
-  import { PillTabs }from '$lib/index';
+  import { PillTabs, Table, TableDefaultRow }from '$lib/index';
+  import componentProps from '../props/PillTabs.json'
+  // Props table
+  export let items = componentProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
   let tabs = [
     {
       name: "Profile",
@@ -66,15 +73,10 @@ layout: tabLayout
 <PillTabs {tabs} />
 ```
 
-<h2 class="text-2xl mt-8 dark:text-white pt-16 pb-8">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-```js
-interface PillTabType {
-  name: string;
-  selected: boolean;
-  href: string;
-}
-let tabs: PillTabType[];
-```
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>

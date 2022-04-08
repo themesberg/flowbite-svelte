@@ -3,7 +3,14 @@ layout: buttonLayout
 ---
 
 <script>
-  import { GradientMonochromeButton }from '$lib/index';
+  import { GradientMonochromeButton , Table, TableDefaultRow }from '$lib/index';
+  import componentProps from '../props/GradientMonochromeButton.json'
+  // Props table
+  export let items = componentProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
 </script>
 
 
@@ -84,14 +91,9 @@ layout: buttonLayout
 
 <h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Button Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-```js
-type ButtonType = 'button' | 'submit' | 'reset'
-type Textsize = 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl'
-type Buttonshadows = 'blue' | 'green' | 'cyan' | 'teal' | 'lime' | 'red' | 'pink' | 'purple';
-let textSize: Textsize = 'text-sm';
-let color: Buttonshadows = 'blue';
-let name = 'Read more';
-let type: ButtonType = 'button';
-```
+
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>

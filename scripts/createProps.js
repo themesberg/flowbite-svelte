@@ -1,11 +1,8 @@
 /**
- * This create a json file with all the props of the components.
- * Run this script in the root of the project.
+ * This script will create a json file for each route in the routes folder. First it will remove all files in the folder.
+ * Then it will read each file in the routes folder and extract the props from the file.
  * 
- * The script will read the files.json file and get the files to be processed. Then it will get the lines of the file that contains the keyword 'export let'.
- * Then it will extract the props from the lines.
- * Finally it will write the json file to the destination folder of the file.
- * example:
+ * Run this script from the root of the project.
  * node createProps.js
  * 
  */

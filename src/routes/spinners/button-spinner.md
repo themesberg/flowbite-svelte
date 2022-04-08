@@ -3,7 +3,14 @@ layout: spinnerLayout
 ---
 
 <script>
-  import { SpinnerButton }from '$lib/index';
+  import { SpinnerButton, Table, TableDefaultRow }from '$lib/index';
+  import componentProps from '../props/SpinnerButton.json'
+  // Props table
+  export let items = componentProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
 </script>
 
 
@@ -39,10 +46,10 @@ layout: spinnerLayout
 <SpinnerButton color="blue" >Here you go ...</SpinnerButton>
 ```
 
-<h2 class="text-2xl mt-8 dark:text-white py-8">Prop</h2>
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-```js
-let color: 'blue' | undefined;
-```
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>
