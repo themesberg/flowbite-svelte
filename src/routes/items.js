@@ -100,7 +100,7 @@ export const tabs = [
 ];
 
 export const timelines = [
-  { href: "/timelines", name: "Default" },
+  { href: "/timelines/default", name: "Default" },
   { href: "/timelines/vertical", name: "Vertical" },
   { href: "/timelines/horizontal", name: "Horizontal" },
   { href: "/timelines/activity", name: "Activity log" },

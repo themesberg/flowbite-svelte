@@ -194,16 +194,21 @@
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4">
-			<a href="/sidebars" rel="external">Sidebar <Badge name="NEW" /></a>
+			<a href="/sidebars" rel="external">Sidebar</a>
 		</h3>
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4">
-			<a href="/spinners" rel="external">Spinners <Badge name="NEW" /></a>
+			<a href="/spinners" rel="external">Spinners</a>
 		</h3>
 		{#each spinners as { href, name, rel }}
 			<SidebarList {href} {name} {rel} {sideBarListClass} />
 		{/each}
+	</Nav>
+	<Nav {navClass} {navDivClass}>
+		<h3 class="text-base pb-4">
+			<a href="/tables" rel="external">Tables <Badge name="NEW" /></a>
+		</h3>
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4"><a href="/tabs" rel="external">Tabs</a></h3>

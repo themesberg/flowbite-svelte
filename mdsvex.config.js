@@ -24,6 +24,7 @@ const config = defineConfig({
 		sidebarLayout: './src/routes/layouts/sidebarLayout.svelte',
 		spinnerLayout: './src/routes/layouts/spinnerLayout.svelte',
 		tabLayout: './src/routes/layouts/tabLayout.svelte',
+		tableLayout: './src/routes/layouts/tableLayout.svelte',
 		timelineLayout: '/src/routes/layouts/timelineLayout.svelte',
 		toastLayout: './src/routes/layouts/toastLayout.svelte',
 		tooltipLayout: './src/routes/layouts/tooltipLayout.svelte',

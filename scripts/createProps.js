@@ -26,10 +26,10 @@ fs.readdir(directory, (err, files) => {
   }
 });
 
-// create file names
 let allFiles = await createFilenames()
 // console.log( allFiles)
 allFiles.forEach(myfile => {
+  // create a file name
   let name = path.parse(myfile).name
   let outputfile = '../src/routes/props/' + name + '.json'
   // console.log('name: ', name)
