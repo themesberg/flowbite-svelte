@@ -2,7 +2,7 @@
 layout: docLayout
 ---
 
-<h1 class="text-3xl dark:text-white w-full py-4">About</h1>
+<h1 class="text-3xl dark:text-white w-full py-4">About Flowbite-Svelte</h1>
 
 <h2 class="text-2xl dark:text-white w-full py-4">Svelte</h2>
 

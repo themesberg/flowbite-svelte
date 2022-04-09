@@ -51,7 +51,7 @@ layout: paginationLayout
   }
 </script>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Pagination</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Pagination Components</h1>
 
 <h2 class="text-2xl w-full dark:text-white py-8">Default pagination</h2>
 

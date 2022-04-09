@@ -13,7 +13,7 @@ layout: buttonLayout
 
 </script>
 
-<h1 class="text-3xl w-full text-gray-900 dark:text-white">Button outlined</h1>
+<h1 class="text-3xl w-full text-gray-900 dark:text-white">Outlined Buttons</h1>
 
 ```js
 import { Button } from "flowbite-svelte";

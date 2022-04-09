@@ -15,7 +15,7 @@ import componentProps from '../props/Toast.json'
 
 </script>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Toast</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Toast Components</h1>
 
 <p class="dark:text-white py-4 text-lg">Import the Toast component and Icons.</p>
 
@@ -56,7 +56,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 
 <h3 class="text-xl w-full dark:text-white py-8">Slide examples</h3>
 
-<p class="dark:text-white py-4 text-lg">You can use one of <a href="https://svelte.dev/docs#run-time-svelte-easing" target="_blank"  class="text-blue-600 hover:underline dark:text-blue-500"></a>Svelte/easing.</p>
+<p class="dark:text-white py-4 text-lg">You can use one of <a href="https://svelte.dev/docs#run-time-svelte-easing" target="_blank"  class="text-blue-600 hover:underline dark:text-blue-500">Svelte/easing</a>.</p>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
    <Toast transitionType="slide" iconColor='red'>

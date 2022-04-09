@@ -11,10 +11,10 @@ import * as fs from 'fs';
 import path from 'path';
 import { getLines, extractProps, writeToFile, createFilenames } from './getProps.js';
 
+const exportLet = 'export let'
 
 // remove all files in the folder
-const directory = '../src/routes/props';
-
+const directory = '../src/routes/props/';
 fs.readdir(directory, (err, files) => {
   if (err) throw err;
 
@@ -31,9 +31,9 @@ let allFiles = await createFilenames()
 allFiles.forEach(myfile => {
   // create a file name
   let name = path.parse(myfile).name
-  let outputfile = '../src/routes/props/' + name + '.json'
+  let outputfile = directory + name + '.json'
   // console.log('name: ', name)
-  let result = getLines(myfile, 'export let');
+  let result = getLines(myfile, exportLet);
   // console.log('result: ', result)
   if (result.length > 0) {
     // console.log('result: ', result)

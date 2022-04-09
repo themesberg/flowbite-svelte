@@ -1,22 +1,13 @@
 <script>
-	import { Card } from '$lib/index';
+  import { Card } from '$lib/index';
 </script>
 
 <div class="container flex flex-wrap mx-auto mt-8 justify-center">
-	<div class="p-4">
-		<Card
-			img="/images/accordions.webp"
-			btnColor="green"
-			header="DEFAULT ACCORDION"
-			link="/accordions/default"
-		/>
-	</div>
-	<div class="p-4">
-		<Card
-			img="/images/accordions.webp"
-			btnColor="blue"
-			header="ICON ACCORDION"
-			link="/accordions/icon-accordion"
-		/>
-	</div>
+  <h1 class="text-3xl dark:text-white w-full py-4 text-center">Accordion Components</h1>
+  <div class="p-4">
+    <Card img="/images/accordions.webp" btnColor="green" header="DEFAULT ACCORDION" link="/accordions/default" />
+  </div>
+  <div class="p-4">
+    <Card img="/images/accordions.webp" btnColor="blue" header="ICON ACCORDION" link="/accordions/icon-accordion" />
+  </div>
 </div>

@@ -2,6 +2,8 @@ import * as fs from 'fs';
 import {lstat, readdir} from 'node:fs/promises'
 import {join} from 'node:path'
 
+const srcLib = '../src/lib'
+
 export const getLines=(fileName, keyword)=> { 
   let outputs =[];
   const file = fs.readFileSync(fileName, { encoding: 'utf-8' });
@@ -13,6 +15,7 @@ export const getLines=(fileName, keyword)=> {
   });
   return outputs
 }
+
 export async function createFilenames () {
   const deepReadDir = async (dirPath) => await Promise.all(
     (await readdir(dirPath)).map(async (entity) => {
@@ -20,7 +23,7 @@ export async function createFilenames () {
       return (await lstat(path)).isDirectory() ? await deepReadDir(path) : path
     }),
   )
-  const files = await deepReadDir('../src/lib')
+  const files = await deepReadDir(srcLib)
   const all = files.flat(Number.POSITIVE_INFINITY)
   return all
 }

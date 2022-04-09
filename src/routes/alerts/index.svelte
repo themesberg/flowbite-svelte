@@ -3,6 +3,7 @@
 </script>
 
 <div class="container flex flex-wrap mx-auto mt-8 justify-center">
+<h1 class="text-3xl dark:text-white w-full py-4 text-center">Alert Components</h1>
   <div class="p-4">
     <Card
       img="/images/alerts.webp"

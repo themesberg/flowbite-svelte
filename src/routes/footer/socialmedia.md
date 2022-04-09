@@ -74,7 +74,7 @@ let links = [
   ];
 </script>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Socialmedia footer</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Socialmedia Footer</h1>
 
 <h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
 

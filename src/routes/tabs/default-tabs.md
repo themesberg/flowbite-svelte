@@ -4,7 +4,7 @@ layout: tabLayout
 
 <script>
   import { DefaultTabs, Table, TableDefaultRow }from '$lib/index';
-  import {UserCircleIconSolid, ViewGridIconSolid, AdjustmentsIconSolid, ClipboardListIconSolid } from '@codewithshin/svelte-heroicons'
+  import { UserCircleIconSolid, ViewGridIconSolid, AdjustmentsIconSolid, ClipboardListIconSolid } from '@codewithshin/svelte-heroicons'
   import componentProps from '../props/DefaultTabs.json'
   // Props table
   export let items = componentProps.props
@@ -38,32 +38,7 @@ layout: tabLayout
       rel: undefined,
     },
   ];
-  export let tabs2= [
-    {
-      name: "Profile",
-      active: true,
-      href: "/#",
-      icon: UserCircleIconSolid,
-    },
-    {
-      name: "Dashboard",
-      active: false,
-      href: "/#",
-      icon: ViewGridIconSolid,
-    },
-    {
-      name: "Settings",
-      active: false,
-      href: "/#",
-      icon: AdjustmentsIconSolid, 
-    },
-    {
-      name: "Contacts",
-      active: false,
-      href: "/#",
-      icon: ClipboardListIconSolid,
-    },
-  ];
+
 </script>
 
 <h1 class="text-3xl w-full dark:text-white py-4">Default Tabs</h1>

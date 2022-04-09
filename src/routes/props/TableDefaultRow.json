@@ -1,1 +1,1 @@
-{"props":[["items"," Array<Array<string>>","-"],["html"," boolean "," false"],["rowState"," 'striped' | 'hover' | undefined "," undefined"]]}
+{"props":[["  export let items"," Array<Array<string>>","-"],["  export let html"," boolean "," false"],["  export let rowState"," 'striped' | 'hover' | undefined "," undefined"]]}

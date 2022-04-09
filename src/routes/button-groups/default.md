@@ -112,7 +112,14 @@ layout: buttongroupLayout
 
 <p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
+<h3 class="text-xl w-full dark:text-white py-8">ButtonGroup</h3>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow {items} rowState='hover' />
+</Table>
+
+<h3 class="text-xl w-full dark:text-white py-8">ButtonGroupOutline</h3>
+
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow items={items2} rowState='hover' />
 </Table>

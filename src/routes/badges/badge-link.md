@@ -16,7 +16,7 @@ layout: badgeLayout
 </script>
 
 
-<h1 class="text-3xl w-full text-gray-900 dark:text-white py-8">Badges with link</h1>
+<h1 class="text-3xl w-full text-gray-900 dark:text-white py-8">Badges with Link</h1>
 
 ```html
 <script>

@@ -14,9 +14,7 @@ layout: buttonLayout
   }
 </script>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Buttons</h1>
-
-<h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
+<h1 class="text-3xl w-full dark:text-white py-8">Button Component Set Up</h1>
 
 <p class="dark:text-white py-4 text-lg">Import Button in the script tag.</p>
 
