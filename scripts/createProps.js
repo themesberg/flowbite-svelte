@@ -26,7 +26,7 @@ fs.readdir(directory, (err, files) => {
   }
 });
 
-let allFiles = await createFilenames()
+const allFiles = await createFilenames()
 // console.log( allFiles)
 allFiles.forEach(myfile => {
   // create a file name

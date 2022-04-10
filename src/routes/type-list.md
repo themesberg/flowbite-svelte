@@ -9,6 +9,8 @@ import type { SvelteComponent } from 'svelte';
 
 export type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
 
+export type DropdownColorType = 'blue' | 'blue-outline' | 'dark' | 'dark-outline' | 'light' | 'green' | 'green-outline' | 'red' | 'red-outline' | 'yellow' | 'yellow-outline' | 'purple' | 'purple-outline';
+
 export type Buttontypes = 'blue' | 'blue-outline' | 'dark' | 'dark-outline' | 'light' | 'green' | 'green-outline' | 'red' | 'red-outline' | 'yellow' | 'yellow-outline' | 'purple' | 'purple-outline';
 
 export type Buttonshadows = 'blue' | 'green' | 'cyan' | 'teal' | 'lime' | 'red' | 'pink' | 'purple';
@@ -16,6 +18,9 @@ export type Buttonshadows = 'blue' | 'green' | 'cyan' | 'teal' | 'lime' | 'red' 
 export type Gradientduotones = 'purple2blue' | 'cyan2blue' | 'green2blue' | 'purple2pink' | 'pink2orange' | 'teal2lime' | 'red2yellow'
 
 export type Textsize = 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl'
+
+
+export type InputType = 'button'| 'checkbox'| 'color'| 'date'| 'datetime-local'| 'email'| 'file'| 'hidden'| 'image'| 'month'| 'number'| 'password'| 'radio'| 'range'| 'reset'| 'search'| 'submit'| 'tel'| 'text'| 'time'| 'url' | 'week';
 
 export interface ButtonGroupType {
     name: string;
@@ -140,6 +145,12 @@ export type SidebarCtaType = {
     text: HTMLElement;
 }
 
+// export type SelectType = {
+//     id: string;
+//     name: string;
+//     label: string;
+// }
+
 export type SelectOptionType = {
     name: string;
     value: string;
@@ -204,4 +215,27 @@ export interface PageType {
     href: string;
 }
 
+export interface TransitionParamTypes{
+        delay?: number,
+        duration?: number,
+        easing?: (t: number) => number,
+        css?: (t: number, u: number) => string,
+        tick?: (t: number, u: number) => void
+}
+
+export interface CheckboxType {
+    id: string;
+    label: string;
+    checked?: boolean;
+    disabled?: boolean;
+    helper?: string
+}
+
+export interface RadioType {
+    id: string;
+    label: string;
+    value: string;
+    checked?: boolean;
+    disabled?: boolean;
+}
 ```
