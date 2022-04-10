@@ -21,7 +21,6 @@ specifiers:
   prettier: ^2.5.1
   prettier-plugin-svelte: ^2.5.0
   prism-themes: ^1.9.0
-  prismjs: ^1.27.0
   svelte: ^3.44.0
   svelte-check: ^2.2.6
   svelte-collapse: ^0.0.4
@@ -42,7 +41,7 @@ devDependencies:
   '@codewithshin/svelte-utterances': 0.1.2
   '@playwright/test': 1.20.2
   '@sveltejs/adapter-auto': 1.0.0-next.34
-  '@sveltejs/kit': 1.0.0-next.307_svelte@3.46.6
+  '@sveltejs/kit': 1.0.0-next.310_svelte@3.46.6
   '@typescript-eslint/eslint-plugin': 5.18.0_93fd1b55dafbdf76506419beaedce909
   '@typescript-eslint/parser': 5.18.0_eslint@7.32.0+typescript@4.6.3
   autoprefixer: 10.4.4_postcss@8.4.12
@@ -55,7 +54,6 @@ devDependencies:
   prettier: 2.6.2
   prettier-plugin-svelte: 2.6.0_prettier@2.6.2+svelte@3.46.6
   prism-themes: 1.9.0
-  prismjs: 1.27.0
   svelte: 3.46.6
   svelte-check: 2.4.6_0a0033d5867bac6f6a8828d3bfcd02f8
   svelte-preprocess: 4.10.5_3ce0e22b85336b1a63f5104127fe70c5
@@ -762,8 +760,8 @@ packages:
       esbuild: 0.14.32
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.307_svelte@3.46.6:
-    resolution: {integrity: sha512-dVxSuP0YyGL6/4VVhjLxxj4hHlVscrXJttvsffGnFOUJ1JtrJ496xoxhxB7iSVpYdTMXocjA9w54ZIC59m0J7A==}
+  /@sveltejs/kit/1.0.0-next.310_svelte@3.46.6:
+    resolution: {integrity: sha512-pTyMyaoyHS+V5cQZIQMfQXmLkhw1VaRwT9avOSgwDc0QBpnNw2LdzwoPYsUr96ca5B6cfT3SMUNolxErTNHmPQ==}
     engines: {node: '>=14.13'}
     hasBin: true
     peerDependencies:

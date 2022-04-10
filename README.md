@@ -140,3 +140,10 @@
 - [Default Tooltip](https://flowbite-svelte.vercel.app/tooltips/default)
 - [Light Tooltip](https://flowbite-svelte.vercel.app/tooltips/light)
 
+## Tests
+
+Run:
+
+```sh
+npm run test
+```
