@@ -24,7 +24,7 @@
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
-		"@codewithshin/svelte-sidebar": "^0.4.4",
+		"@codewithshin/svelte-sidebar": "^0.4.5",
 		"@codewithshin/svelte-simpleicons": "^0.2.2",
 		"@codewithshin/svelte-utterances": "^0.1.2",
 		"@playwright/test": "^1.19.1",
