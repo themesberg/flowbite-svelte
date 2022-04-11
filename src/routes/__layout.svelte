@@ -1,6 +1,6 @@
 <script lang="ts">
   import '../app.css';
-  import { DarkMode, Badge, SocialMediaFooter } from '$lib/index';
+  import { DarkMode, Badge, SitemapFooter } from '$lib/index';
   import { Aside, Nav, SidebarList, Navbar, TopMenu } from '@codewithshin/svelte-sidebar';
   import { GithubIcon, TwitterIcon } from '@codewithshin/svelte-simpleicons';
   import { accordions, alerts, badges, buttons, buttonGroups, cards, footers, icons, modals, navbar, spinners, svelteflows, tabs, timelines, tooltips, topMenus } from './items';
@@ -40,9 +40,75 @@
   ];
   let links = [
     {
+      parent: '',
+      children: [
+        { name: 'Accordion', href: '/accordions/' },
+        { name: 'Alert', href: '/alerts' },
+        { name: 'Avatar', href: '/avatar' },
+        { name: 'Badge', href: '/badges' },
+        { name: 'Button', href: '/buttons' }
+      ]
+    },
+    {
+      parent: '',
+      children: [
+        { name: 'Button Group', href: '/button-groups' },
+        { name: 'Card', href: '/cards' },
+        { name: 'Dark', href: '/darkmode' },
+        { name: 'Dropdown', href: '/dropdowns' },
+        { name: 'Footer', href: '/footer' }
+      ]
+    },
+    {
+      parent: '',
+      children: [
+        { name: 'Form', href: '/forms' },
+        { name: 'Icon', href: '/icons' },
+        { name: 'List group', href: '/list-group' },
+        { name: 'Modal', href: '/modals' },
+        { name: 'Navbar', href: '/navbars' }
+      ]
+    },
+    {
+      parent: '',
+      children: [
+        { name: 'Pagination', href: '/paginations' },
+        { name: 'Progress bar', href: '/progressbars' },
+        { name: 'Sidebar', href: '/sidebars' },
+        { name: 'Spinner', href: '/spinners' },
+        { name: 'Tables', href: '/tables' }
+      ]
+    },
+    {
+      parent: '',
+      children: [
+        { name: 'Tab', href: '/tabs' },
+        { name: 'Timeline', href: '/timelines' },
+        { name: 'Toast', href: '/toasts' },
+        { name: 'Tooltip', href: '/tooltips' }
+      ]
+    },
+    {
+      parent: '',
+      children: [
+        { name: 'Getting Started', href: '/getting-started' },
+        {
+          name: 'About',
+          href: '/about'
+        },
+        {
+          name: 'Type list',
+          href: '/type-list'
+        },
+        {
+          name: 'CLI',
+          href: '/cli'
+        }
+      ]
+    },
+    {
       parent: 'RESOURCES',
       children: [
-        { name: 'Flowbite-Svelte', href: '/' },
         {
           name: 'Flowbite',
           href: 'https://flowbite.com/docs/getting-started/introduction/'
@@ -243,6 +309,6 @@
     <slot />
   </div>
   <div class="pt-4 ">
-    <SocialMediaFooter {site} {socialMedia} {links} {allRightsReserved} {copyrightYear} />
+    <SitemapFooter {site} {socialMedia} {links} {allRightsReserved} {copyrightYear} />
   </div>
 </main>
