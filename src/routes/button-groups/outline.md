@@ -44,7 +44,7 @@ layout: buttongroupLayout
 ];
 </script>
 
-<h1 class="text-3xl w-full text-gray-900 dark:text-white py-8">Outline Button Group</h1>
+<h1 class="text-3xl w-full dark:text-white pt-16">Outline Button Group</h1>
 
 <h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Setup</h2>
 

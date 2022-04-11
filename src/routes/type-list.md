@@ -2,7 +2,7 @@
 layout: docLayout
 ---
 
-<h1 class="text-3xl w-full dark:text-white">Type list</h1>
+<h1 class="text-3xl w-full dark:text-white pt-16">Type list</h1>
 
 ```js
 import type { SvelteComponent } from 'svelte';

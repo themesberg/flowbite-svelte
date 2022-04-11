@@ -15,7 +15,7 @@ import componentProps from '../props/Toast.json'
 
 </script>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Toast Components</h1>
+<h1 class="text-3xl w-full dark:text-white pt-16">Toast Components</h1>
 
 <p class="dark:text-white py-4 text-lg">Import the Toast component and Icons.</p>
 

@@ -13,7 +13,7 @@ layout: alertLayout
 
 </script>
 
-<h1 class="text-3xl w-full text-gray-900 dark:text-white py-8">Information Alert</h1>
+<h1 class="text-3xl w-full dark:text-white pt-16">Information Alert</h1>
 
 <h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
 

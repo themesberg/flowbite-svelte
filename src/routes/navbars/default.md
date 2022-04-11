@@ -29,7 +29,7 @@ layout: navbarLayout
  
 </script>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Navbar Default</h1>
+<h1 class="text-3xl w-full dark:text-white pt-16">Navbar Default</h1>
 
 
 ```html

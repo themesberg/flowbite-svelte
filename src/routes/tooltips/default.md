@@ -12,7 +12,7 @@ let propHeader = ['Name', 'Type', 'Default']
 let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 </script>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Default Tooltip</h1>
+<h1 class="text-3xl w-full dark:text-white pt-16">Default Tooltip</h1>
 
 <h2 class="text-2xl w-full dark:text-white py-8">Tooltip top</h2>
 

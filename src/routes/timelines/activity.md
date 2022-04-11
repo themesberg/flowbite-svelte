@@ -37,7 +37,7 @@ layout: timelineLayout
 	];
 </script>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Activity Log</h1>
+<h1 class="text-3xl w-full dark:text-white pt-16">Activity Log</h1>
 
 <div
   class="container rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"

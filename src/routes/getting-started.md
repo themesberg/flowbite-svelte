@@ -2,8 +2,8 @@
 layout: docLayout
 ---
 
-<h1 class="text-2xl w-full dark:text-white">Getting Started</h1>
-<h2 class="text-xl w-full mt-8 dark:text-white">Installation</h2>
+<h1 class="text-3xl w-full dark:text-white pt-16">Getting Started</h1>
+<h2 class="text-2xl w-full mt-8 dark:text-white py-4">Installation</h2>
 <p class="dark:text-white py-4 text-lg">Install SvelteKit:</p>
 
 ```bash

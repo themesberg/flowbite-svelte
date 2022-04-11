@@ -15,7 +15,7 @@ layout: accordionLayout
 
 </script>
 
-<h1 class="text-3xl w-full dark:text-white">Accordion</h1>
+<h1 class="text-3xl w-full dark:text-white pt-16">Accordion</h1>
 
 <p class="dark:text-white py-4 text-lg">Add id 1,2,3,... to AccordionItem component.</p>
 

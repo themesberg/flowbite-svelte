@@ -35,7 +35,7 @@ layout: cardLayout
   let link2 = { href: "/", name: "Message" };
 </script>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Interactive Card</h1>
+<h1 class="text-3xl w-full dark:text-white pt-16">Interactive Card</h1>
 
 <h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
 

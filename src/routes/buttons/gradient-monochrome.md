@@ -14,7 +14,7 @@ layout: buttonLayout
 </script>
 
 
-<h1 class="text-3xl w-full text-gray-900 dark:text-white py-8">Gradient Monochrome Buttons</h1>
+<h1 class="text-3xl w-full dark:text-white pt-16">Gradient Monochrome Buttons</h1>
 
 <h2 class="text-2xl w-full dark:text-white  py-8">text-sm</h2>
 
