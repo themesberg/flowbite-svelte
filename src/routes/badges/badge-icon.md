@@ -14,7 +14,7 @@ layout: badgeLayout
 
 </script>
 
-<h1 class="text-3xl w-full text-gray-900 dark:text-white py-8">Badges with Icon</h1>
+<h1 class="text-3xl w-full dark:text-white pt-16">Badges with Icon</h1>
 
 <p class="text-lg w-full text-gray-900 dark:text-white py-4">You can use <a href="https://github.com/shinokada/svelte-heroicons" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Svelte-heroicon.</a></p>
 

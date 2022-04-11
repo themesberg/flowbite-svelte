@@ -124,7 +124,7 @@ let checkboxOptions= [
 
 </script>
 
-<h1 class="text-3xl w-full dark:text-white py-4">Form Components</h1>
+<h1 class="text-3xl w-full dark:text-white pt-16">Form Components</h1>
 
 <h2 class="text-2xl w-full dark:text-white py-4">Input</h2>
 

@@ -44,7 +44,7 @@ export const cards = [
   { href: "/cards/ecommerce", name: "E-commerce" },
   { href: "/cards/cta", name: "CTA" },
   { href: "/cards/horizontal", name: "Horizontal" },
-  { href: "cards/interactive", name: "Interactive" },
+  { href: "/cards/interactive", name: "Interactive" },
   { href: "/cards/list", name: "List" },
   { href: "/cards/signin", name: "SignIn" },
 ];

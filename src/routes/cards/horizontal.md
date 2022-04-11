@@ -13,7 +13,7 @@ layout: cardLayout
 
 </script>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Horizontal Card</h1>
+<h1 class="text-3xl w-full dark:text-white pt-16">Horizontal Card</h1>
 
 <h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
 

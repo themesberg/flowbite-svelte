@@ -16,7 +16,7 @@ layout: accordionLayout
 
 </script>
 
-<h1 class="text-3xl w-full dark:text-white">Icon Accordion</h1>
+<h1 class="text-3xl w-full dark:text-white pt-16">Icon Accordion</h1>
 
 <p class="dark:text-white w-full py-4">Add id 1,2,3,... to AccordionItem component.</p> 
 <p class="dark:text-white w-full py-4">Install @codewithshin/svelte-heroicons.</p>
