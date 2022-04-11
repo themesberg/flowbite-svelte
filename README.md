@@ -123,6 +123,10 @@
 - [Multiple Interactive Tabs](https://flowbite-svelte.vercel.app/tabs/multiple-interactive-tabs)
 - [Pill Tabs](https://flowbite-svelte.vercel.app/tabs/pilltabs)
 
+## Table components
+
+- [Tables](https://flowbite-svelte.vercel.app/tables)
+
 ## Timeline components
 
 - [Default timeline](https://flowbite-svelte.vercel.app/timelines/default)
