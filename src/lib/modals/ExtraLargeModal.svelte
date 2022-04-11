@@ -131,8 +131,17 @@
 </script>
 
 {#if showModalId === id}
-	<div {id} role="dialog" aria-modal="true" class="flex overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-20 z-50 justify-center items-center">
-		<div class="relative px-4 w-full max-w-7xl h-full md:h-auto">
+	<div
+		on:click={closeModal}
+		class="bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40 w-full h-full overflow-auto"
+	>
+		<!-- Main modal -->
+		<div
+			on:click|stopPropagation={() => {}}
+			role="dialog"
+			aria-modal="true"
+			class="mx-auto my-20 px-4 w-full max-w-7xl h-full md:h-auto"
+		>
 			<!-- Modal content -->
 			<div class={divClass}>
 				<!-- Modal header -->
@@ -162,6 +171,4 @@
 			</div>
 		</div>
 	</div>
-
-	<div on:click={closeModal} class="bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40 w-full h-full" />
 {/if}
