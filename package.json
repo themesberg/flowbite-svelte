@@ -1,6 +1,6 @@
 {
 	"name": "flowbite-svelte",
-	"version": "0.13.2",
+	"version": "0.13.3",
 	"description": "Flowbite components for Svelte",
 	"main": "./package/index.js",
 	"author": {
@@ -24,7 +24,7 @@
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
-		"@codewithshin/svelte-sidebar": "^0.4.5",
+		"@codewithshin/svelte-sidebar": "^0.4.7",
 		"@codewithshin/svelte-simpleicons": "^0.2.2",
 		"@codewithshin/svelte-utterances": "^0.1.2",
 		"@playwright/test": "^1.19.1",
@@ -59,15 +59,25 @@
 		"ui",
 		"accordion",
 		"alert",
+		"avatar",
 		"badges",
+		"button-groups",
 		"buttons",
 		"cards",
 		"darkmode",
 		"footer",
+		"forms",
+		"list group",
 		"modals",
 		"navbar",
+		"paginations",
+		"progress bars",
+		"sidebars",
 		"spinners",
+		"tables",
 		"tabs",
+		"timelines",
+		"toasts",
 		"tooltip"
 	],
 	"repository": {
