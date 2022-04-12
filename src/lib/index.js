@@ -101,6 +101,7 @@ export { default as SpinnerButton } from'./spinners/SpinnerButton.svelte'
 // Tables
 export { default as Table } from './tables/Table.svelte'
 export { default as TableDefaultRow } from './tables/TableDefaultRow.svelte'
+export { default as TableSearch } from './tables/TableSearch.svelte'
 
 // Tabs
 export { default as InteractiveTabHead } from './tabs/InteractiveTabHead.svelte'
