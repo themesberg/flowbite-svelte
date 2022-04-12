@@ -10,6 +10,4 @@
 
 <h1 class="text-3xl w-full dark:text-white pt-24">Table test</h1>
 
-<TableSearch {header}>
-  <TableDefaultRow {items} html />
-</TableSearch>
+<TableSearch menuItems={items} {header} />

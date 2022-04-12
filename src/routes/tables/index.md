@@ -3,7 +3,7 @@ layout: tableLayout
 ---
 
 <script>
-import { Table, TableDefaultRow } from '$lib/index'
+import { Table, TableDefaultRow, TableSearch } from '$lib/index'
 import componentProps1 from '../props/Table.json'
 import componentProps2 from '../props/TableDefaultRow.json'
 export let items1 = componentProps1.props
@@ -78,6 +78,14 @@ let headerEx = [' Product name','Color','Category','Price','Edit']
 <Table header={headerEx} {divClass} >
   <TableDefaultRow items={itemEx} rowState="hover" html />
 </Table>
+```
+
+<h2 class="text-2xl w-full dark:text-white py-8">Table search</h2>
+
+<TableSearch menuItems={itemEx} header={headerEx} />
+
+```html
+<TableSearch menuItems={itemEx} header={headerEx} />
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
