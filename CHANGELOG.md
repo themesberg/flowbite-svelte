@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.13.5](https://github.com/shinokada/flowbite-svelte/compare/v0.13.4...v0.13.5) (2022-04-12)
+
+
+### Features
+
+* add table search ([72664ee](https://github.com/shinokada/flowbite-svelte/commit/72664eed118587b445f931c57f1def7bf87056f6))
+* table search on progress ([9cff21d](https://github.com/shinokada/flowbite-svelte/commit/9cff21d7ffbeb351b95601a85abe826323c68f9d))
+
 ### [0.13.4](https://github.com/shinokada/flowbite-svelte/compare/v0.13.2...v0.13.4) (2022-04-12)
 
 
