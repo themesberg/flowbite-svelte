@@ -80,12 +80,12 @@ let headerEx = [' Product name','Color','Category','Price','Edit']
 </Table>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Table search</h2>
+<h2 id="Table_search" class="text-2xl w-full dark:text-white py-8">Table search</h2>
 
-<TableSearch menuItems={itemEx} header={headerEx} />
+<TableSearch menuItems={itemEx} header={headerEx} placeholder="Search by product name"/>
 
 ```html
-<TableSearch menuItems={itemEx} header={headerEx} />
+<TableSearch menuItems={itemEx} header={headerEx} placeholder="Search by product name"/>
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
