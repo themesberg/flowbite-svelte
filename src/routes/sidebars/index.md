@@ -23,7 +23,7 @@ layout: sidebarLayout
   let site = {
     name: 'Flowbite-Svelte',
     href: '/',
-    img: '/images/mkdir-logo.webp'
+    img: '/images/flowbite-svelte-logo-30.png'
   };
   let uid = 1;
   let links = [
@@ -243,7 +243,7 @@ layout: sidebarLayout
   let site = {
     name: 'Flowbite-Svelte',
     href: '/',
-    img: '/images/mkdir-logo.webp'
+    img: '/images/flowbite-svelte-logo-30.png'
   };
   let uid = 1;
   let links2 = [

@@ -71,7 +71,7 @@ layout: navbarLayout
 <script>
   import { DropdownNavbar } from "flowbite-svelte";
   let sitename = "Flowbite Svelte";
-  let logo = "/images/mkdir-logo.webp";
+  let logo = "/images/flowbite-svelte-logo-30.png";
   let alt = "flowbite-svelte";
   let textsize = "text-lg";
   let menus = [

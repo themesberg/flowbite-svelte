@@ -20,7 +20,7 @@ import {
 let site = {
     href: "/",
     name: "Company",
-    img: "/images/mkdir-logo.png",
+    img: "/images/flowbite-svelte-logo-30.png",
   };
 let links = [
     {
@@ -94,7 +94,7 @@ let links = [
   let site = {
     href: "/",
     name: "Company",
-    img: "/images/mkdir-logo.png",
+    img: "/images/flowbite-svelte-logo-30.png",
   };
   let links = [
     {

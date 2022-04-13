@@ -14,7 +14,7 @@ layout: footerLayout
   let site = {
     href: "/",
     name: "Flowbite Svelte",
-    img: "/images/mkdir-logo.png",
+    img: "/images/flowbite-svelte-logo-30.png",
   };
   let links = [
     { name: "About", href: "/" },
@@ -37,7 +37,7 @@ layout: footerLayout
   let site = {
     href: "/",
     name: "Flowbite Svelte",
-    img: "/images/mkdir-logo.png",
+    img: "/images/flowbite-svelte-logo-30.png",
   };
   let links = [
     { name: "About", href: "/" },

@@ -11,7 +11,7 @@ layout: navbarLayout
 	// console.log(items)
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
-  let sitename = "Flowbite Svelte";
+  let siteName = "Flowbite Svelte";
   let menus = [
     {
       name: "Home",
@@ -35,8 +35,8 @@ layout: navbarLayout
 ```html
 <script>
   import { Navbar } from "flowbite-svelte";
-  let sitename = "Flowbite Svelte";
-  let logo = "/images/mkdir-logo.webp";
+  let siteName = "Flowbite Svelte";
+  let logo = "/images/flowbite-svelte-logo-30.png";
   let alt = "flowbite-svelte";
   let textsize = "text-lg";
   let menus = [
@@ -55,47 +55,47 @@ layout: navbarLayout
   ];
 </script>
 
-<Navbar {menus} {sitename} {alt} {logo} {textsize} />
+<Navbar {menus} {siteName} {alt} {logo} {textsize} />
 ```
 
 <h2 class="text-lg dark:text-white py-8">Text Size text-xs</h2>
 
 ```html
-<Navbar textsize="text-xs" {sitename} {menus}/>
+<Navbar textsize="text-xs" {siteName} {menus}/>
 ```
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Navbar textsize="text-xs" {sitename} {menus}/>
+<Navbar textsize="text-xs" {siteName} {menus}/>
 </div>
 
 <h2 class="text-lg dark:text-white py-8">Text Size text-sm</h2>
 
 ```html
-<Navbar textsize="text-sm" {sitename} {menus} />
+<Navbar textsize="text-sm" {siteName} {menus} />
 ```
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Navbar textsize="text-sm" {sitename} {menus}/>
+<Navbar textsize="text-sm" {siteName} {menus}/>
 </div>
 
 <h2 class="text-lg dark:text-white py-8">Text Size text-base</h2>
 
 ```html
-<Navbar textsize="text-base" {sitename} {menus} />
+<Navbar textsize="text-base" {siteName} {menus} />
 ```
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Navbar textsize="text-base" {sitename} {menus}/>
+<Navbar textsize="text-base" {siteName} {menus}/>
 </div>
 
 <h2 class="text-lg dark:text-white py-8">Text Size text-lg</h2>
 
 ```html
-<Navbar textsize="text-lg" {sitename} {menus}/>
+<Navbar textsize="text-lg" {siteName} {menus}/>
 ```
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Navbar textsize="text-lg" {sitename} {menus}/>
+<Navbar textsize="text-lg" {siteName} {menus}/>
 </div>
 
 <h2 class="text-lg dark:text-white py-8">Text Size text-xl</h2>
@@ -105,7 +105,7 @@ layout: navbarLayout
 ```
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Navbar textsize="text-xl" {sitename} {menus} />
+<Navbar textsize="text-xl" {siteName} {menus} />
 </div>
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
