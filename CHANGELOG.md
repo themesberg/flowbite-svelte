@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.13.6](https://github.com/shinokada/flowbite-svelte/compare/v0.13.5...v0.13.6) (2022-04-13)
+
+
+### Bug Fixes
+
+* create new props files ([0a6fd33](https://github.com/shinokada/flowbite-svelte/commit/0a6fd334321bbedd2eecebb5e4f2456ddb19fd3b))
+* remove SvelteKit app session and page ([7eaa3db](https://github.com/shinokada/flowbite-svelte/commit/7eaa3dbfc7f0e2fcf5ef6be4045843fc92b354a5))
+
 ### [0.13.5](https://github.com/shinokada/flowbite-svelte/compare/v0.13.4...v0.13.5) (2022-04-12)
 
 
