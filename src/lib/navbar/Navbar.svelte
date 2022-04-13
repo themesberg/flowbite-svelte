@@ -1,6 +1,13 @@
 <script lang="ts">
   import type { LinkType } from '../types';
-  import { page, session } from '$app/stores';
+  import { onMount } from 'svelte';
+
+  export let user = '';
+  let pathname = '';
+  onMount(() => {
+    pathname = window.location.pathname;
+    // console.log('pathname', pathname);
+  });
   export let siteName: string = 'Svelte Flow';
   export let logo: string = '/images/flowbite-svelte-logo-30.png';
   export let alt: string = 'Svelte Flow';
@@ -32,11 +39,11 @@
       <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
         {#each menus as { name, href, rel }}
           <li>
-            <a class:active={$page.url.pathname === href} {href} {rel} class={liLinkClass}>{name}</a>
+            <a class:active={pathname === href} {href} {rel} class={liLinkClass}>{name}</a>
           </li>
         {/each}
       </ul>
-      {#if $session['user']}
+      {#if user}
         <slot name="user" />
       {/if}
     </div>
