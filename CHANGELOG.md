@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.13.7](https://github.com/shinokada/flowbite-svelte/compare/v0.13.6...v0.13.7) (2022-04-13)
+
+
+### Bug Fixes
+
+* remove SvelteKit app/stores page and session from Navbar ([09428df](https://github.com/shinokada/flowbite-svelte/commit/09428df9f46b16b07595ed16c08697c61c0099a5))
+
 ### [0.13.6](https://github.com/shinokada/flowbite-svelte/compare/v0.13.5...v0.13.6) (2022-04-13)
 
 
