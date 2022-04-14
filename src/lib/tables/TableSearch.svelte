@@ -1,8 +1,8 @@
 <script lang="ts">
   import TableDefaultRow from './TableDefaultRow.svelte';
-  export let inputValue = '';
+  export let inputValue: string = '';
   export let menuItems: Array<Array<string>>;
-  export let filteredItems = [];
+  export let filteredItems: Array<Array<string>> = [];
   export let placeholder: string = 'Search';
   const handleInput = () => {
     // console.log('inputValue', inputValue);

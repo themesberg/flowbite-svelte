@@ -6,8 +6,10 @@ layout: tableLayout
 import { Table, TableDefaultRow, TableSearch } from '$lib/index'
 import componentProps1 from '../props/Table.json'
 import componentProps2 from '../props/TableDefaultRow.json'
+import componentProps3 from '../props/TableSearch.json'
 export let items1 = componentProps1.props
 export let items2 = componentProps2.props
+export let items3 = componentProps3.props
 let propHeader = ['Name', 'Type', 'Default']
 // console.log(items)
 let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
@@ -102,4 +104,10 @@ let headerEx = [' Product name','Color','Category','Price','Edit']
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow items={items2} rowState='hover' />
+</Table>
+
+<h3 class="text-xl w-full dark:text-white py-8">TableSearch</h3>
+
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow items={items3} rowState='hover' />
 </Table>
