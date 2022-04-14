@@ -48,7 +48,7 @@ let headerEx = [' Product name','Color','Category','Price','Edit']
 </Table>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Striped rows</h2>
+<h2 id="Striped_rows" class="text-2xl w-full dark:text-white py-8">Striped rows</h2>
 
 <p class="dark:text-white py-4 text-lg">Set `rowState` to striped to alternate background colors of every second tabel row.</p>
 
@@ -64,7 +64,7 @@ let headerEx = [' Product name','Color','Category','Price','Edit']
 </Table>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Hover</h2>
+<h2 id="Hover" class="text-2xl w-full dark:text-white py-8">Hover</h2>
 
 <p class="dark:text-white py-4 text-lg">Set `rowState` to hover to change the background color of a data row when hovering over the element with the cursor.</p>
 

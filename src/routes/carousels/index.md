@@ -3,8 +3,15 @@ layout: carouselLayout
 ---
 
 <script>
-  import { Carousel } from '$lib/index';
+  import { Carousel, Table, TableDefaultRow } from '$lib/index';
   import { images } from './imageData';
+  import componentProps from '../props/Carousel.json'
+  // Props table
+  export let items = componentProps.props
+	let propHeader = ['Name', 'Type', 'Default']
+	// console.log(items)
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
   let showThumbs=false
   let showIndicators=false
   let showCaptions=false
@@ -153,3 +160,11 @@ layout: carouselLayout
 
 <Carousel {images} {showThumbs} {showCaptions} {slideControls}/>
 ```
+
+<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
+
+<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
+
+<Table header={propHeader} {divClass} >
+  <TableDefaultRow {items} rowState='hover' />
+</Table>

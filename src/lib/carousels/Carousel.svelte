@@ -1,5 +1,4 @@
 <script lang="ts">
-  // import { images } from './imageData.js';
   import Slide from './Slide.svelte';
   import Thumbnail from './Thumbnail.svelte';
   import Caption from './Caption.svelte';
@@ -10,6 +9,19 @@
   export let showThumbs: boolean = true;
   export let images: any[];
   export let slideControls: boolean = true;
+
+  // Carousel
+  export let divClass: string = 'overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96';
+  export let indicatorDivClass: string = 'flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2';
+
+  // Caption
+  export let captionClass: string = 'h-10 bg-gray-300 dark:bg-gray-700 dark:text-white p-2 my-2 text-center';
+
+  // Indicator
+  export let indicatorClass: string = 'w-3 h-3 rounded-full bg-gray-100 hover:bg-gray-300 opacity-60';
+
+  // Slide
+  export let slideClass: string = '';
 
   let imageShowingIndex: number = 0;
   // $: console.log(imageShowingIndex);
@@ -36,14 +48,14 @@
 </script>
 
 <div id="default-carousel" class="relative">
-  <div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
-    <Slide image={image.imgurl} altTag={image.name} attr={image.attribution} />
+  <div class={divClass}>
+    <Slide image={image.imgurl} altTag={image.name} attr={image.attribution} {slideClass} />
   </div>
   {#if showIndicators}
     <!-- Slider indicators -->
-    <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
+    <div class={indicatorDivClass}>
       {#each images as { id, imgurl, name, attribution }}
-        <Indicator {name} selected={imageShowingIndex === id} on:click={() => goToSlide(id)} />
+        <Indicator {name} selected={imageShowingIndex === id} on:click={() => goToSlide(id)} {indicatorClass} />
       {/each}
     </div>
   {/if}
@@ -65,7 +77,7 @@
 </div>
 
 {#if showCaptions}
-  <Caption caption={images[imageShowingIndex].name} />
+  <Caption caption={images[imageShowingIndex].name} {captionClass} />
 {/if}
 
 {#if showThumbs}

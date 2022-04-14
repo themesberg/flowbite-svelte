@@ -34,7 +34,10 @@ export function extractProps (arr) {
   let result =[]
   arr.forEach(
     (line) => {
-      let newline = line.replace('\texport let ', '').replace(';', '')
+      // could be tab indentation
+      let newl = line.replace('\texport let ', '').replace(';', '');
+      // or space indentation
+      let newline = newl.replace('export let ', '').replace(';', '');
         first = newline.slice(0, newline.indexOf(':'));
         second = newline.slice(newline.indexOf(':') + 1, newline.length);
       // console.log('second', second)

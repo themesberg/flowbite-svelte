@@ -57,6 +57,10 @@
 - [List Card](https://flowbite-svelte.vercel.app/cards/list)
 - [Signin Card](https://flowbite-svelte.vercel.app/cards/signin)
 
+## Carousel components
+
+- [Carousel](https://flowbite-svelte.vercel.app/carousels)
+
 ## Dark mode components
 
 - [Dark mode](https://flowbite-svelte.vercel.app/darkmode)
