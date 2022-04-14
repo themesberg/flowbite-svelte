@@ -204,6 +204,11 @@
   </Nav>
   <Nav {navClass} {navDivClass}>
     <h3 class="text-base pb-4">
+      <a href="/carousels">Carousel <Badge name="NEW" color="green" /></a>
+    </h3>
+  </Nav>
+  <Nav {navClass} {navDivClass}>
+    <h3 class="text-base pb-4">
       <a href="/darkmode">Dark mode</a>
     </h3>
   </Nav>
@@ -222,7 +227,7 @@
   </Nav>
   <Nav {navClass} {navDivClass}>
     <h3 class="text-base pb-4">
-      <a href="/forms">Forms <Badge name="NEW" /></a>
+      <a href="/forms">Forms <Badge name="NEW" color="red" /></a>
     </h3>
   </Nav>
   <Nav {navClass} {navDivClass}>
@@ -252,12 +257,12 @@
   </Nav>
   <Nav {navClass} {navDivClass}>
     <h3 class="text-base pb-4">
-      <a href="/paginations">Pagination <Badge name="NEW" /></a>
+      <a href="/paginations">Pagination <Badge name="NEW" color="yellow" /></a>
     </h3>
   </Nav>
   <Nav {navClass} {navDivClass}>
     <h3 class="text-base pb-4">
-      <a href="/progressbars">Progress bar <Badge name="NEW" /></a>
+      <a href="/progressbars">Progress bar <Badge name="NEW" color="purple" /></a>
     </h3>
   </Nav>
   <Nav {navClass} {navDivClass}>
@@ -275,7 +280,7 @@
   </Nav>
   <Nav {navClass} {navDivClass}>
     <h3 class="text-base pb-4">
-      <a href="/tables">Tables <Badge name="NEW" /></a>
+      <a href="/tables">Tables <Badge name="NEW" color="pink" /></a>
     </h3>
   </Nav>
   <Nav {navClass} {navDivClass}>
@@ -286,14 +291,14 @@
   </Nav>
   <Nav {navClass} {navDivClass}>
     <h3 class="text-base pb-4">
-      <a href="/timelines">Timelines <Badge name="NEW" /></a>
+      <a href="/timelines">Timelines <Badge name="NEW" color="green" /></a>
     </h3>
     {#each timelines as { href, name, rel }}
       <SidebarList {href} {name} {rel} {sideBarListClass} />
     {/each}
   </Nav>
   <Nav {navClass} {navDivClass}>
-    <h3 class="text-base pb-4"><a href="/toasts">Toast <Badge name="NEW" /></a></h3>
+    <h3 class="text-base pb-4"><a href="/toasts">Toast <Badge name="NEW" color="indigo" /></a></h3>
   </Nav>
   <Nav {navClass} navDivClass={navDivClasslast}>
     <h3 class="text-base pb-4">

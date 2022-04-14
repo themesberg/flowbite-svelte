@@ -12,7 +12,7 @@
   export let slideControls: boolean = true;
 
   let imageShowingIndex: number = 0;
-  $: console.log(imageShowingIndex);
+  // $: console.log(imageShowingIndex);
   $: image = images[imageShowingIndex];
 
   const nextSlide = () => {

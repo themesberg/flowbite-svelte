@@ -113,6 +113,15 @@
     </Card>
   </div>
   <div class="p-4">
+    <Card img="/images/carousel.webp" alt="Carousel" header="CAROUSEL">
+      <span slot="paragraph">
+        <p class="dark:text-white text-lg w-full">
+          <a href="/carousels" class="text-blue-600 hover:underline dark:text-blue-500">Carousel</a>
+        </p>
+      </span>
+    </Card>
+  </div>
+  <div class="p-4">
     <Card img="/images/darkmode.webp" alt="Darkmode" header="DARK MODE">
       <span slot="paragraph">
         <p class="dark:text-white text-lg w-full">
