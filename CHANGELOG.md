@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.13.8](https://github.com/shinokada/flowbite-svelte/compare/v0.13.7...v0.13.8) (2022-04-14)
+
+
+### Features
+
+* add carousel components ([846a99d](https://github.com/shinokada/flowbite-svelte/commit/846a99dde2f45246493fac99790c220da257eefd))
+
 ### [0.13.7](https://github.com/shinokada/flowbite-svelte/compare/v0.13.6...v0.13.7) (2022-04-13)
 
 
