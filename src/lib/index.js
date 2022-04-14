@@ -42,6 +42,9 @@ export { default as CtaCard } from'./cards/CtaCard.svelte'
 export { default as EcommerceCard } from'./cards/EcommerceCard.svelte'
 export { default as SignInCard } from'./cards/SignInCard.svelte'
 
+// Carousels
+export { default as Carousel } from './carousels/Carousel.svelte'
+
 // Dark mode
 export { default as DarkMode } from'./darkmode/DarkMode.svelte'
 

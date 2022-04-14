@@ -10,6 +10,7 @@ const config = defineConfig({
 		buttongroupLayout: './src/routes/layouts/buttongroupLayout.svelte',
 		buttonLayout: './src/routes/layouts/buttonLayout.svelte',
 		cardLayout: './src/routes/layouts/cardLayout.svelte',
+		carouselLayout: './src/routes/layouts/carouselLayout.svelte',
 		darkmodeLayout: './src/routes/layouts/darkmodeLayout.svelte',
 		docLayout: './src/routes/layouts/docLayout.svelte',
 		dropdownLayout: './src/routes/layouts/dropdownLayout.svelte',
