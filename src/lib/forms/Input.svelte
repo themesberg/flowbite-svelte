@@ -15,6 +15,7 @@
 	export let readonly: boolean = false;
 	export let helper: string = '';
 	export let helperClass: string = 'mt-2 text-sm text-gray-500 dark:text-gray-400';
+	export let ref: null = null;
 	// you need to this to avoid 2-way binding
 	function setType(node) {
 		node.type = type;
@@ -23,7 +24,18 @@
 
 <div class={$$props.class}>
 	<label for={id} class={labelClass}>{label}</label>
-	<input bind:value {name} use:setType {id} class={inputClass} {placeholder} {required} {disabled} {readonly} />
+	<input
+		bind:value
+		bind:this={ref}
+		{name}
+		use:setType
+		{id}
+		class={inputClass}
+		{placeholder}
+		{required}
+		{disabled}
+		{readonly}
+	/>
 	{#if helper}
 		<p class={helperClass}>{@html helper}</p>
 	{/if}

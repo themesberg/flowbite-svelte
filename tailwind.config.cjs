@@ -4,7 +4,10 @@ const config = {
     "./node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}"
   ],
 
-	theme: {
+  theme: {
+    screens: {
+      // 'xs': '430px',
+    },
 		extend: {}
 	},
 

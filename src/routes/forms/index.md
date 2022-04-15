@@ -3,6 +3,7 @@ layout: formLayout
 ---
 
 <script>
+import { onMount } from 'svelte';
 import { Input, Iconinput, FloatingLabelInput, Toggle, Textarea, Select, Fileupload, Radio, SingleCheckbox, Checkbox, Table, TableDefaultRow } from '$lib/index'
 import { AtSymbolIconSolid , MailIconOutline } from '@codewithshin/svelte-heroicons'
 import componentProps1 from '../props/Input.json'
@@ -122,6 +123,11 @@ let checkboxOptions= [
   }
 ]
 
+let ref
+
+onMount(() => {
+  ref.focus();
+});
 </script>
 
 <h1 class="text-3xl w-full dark:text-white pt-16">Form Components</h1>
@@ -168,6 +174,31 @@ import { Input } from 'flowbite-svelte'
   />
 <Input class="mb-6" placeholder="Base input" label="Base input"/>
 <Input class="mb-6" size="sm:text-xs" placeholder="Small input" label="Small input"/>
+```
+
+<h3 class="text-xl w-full dark:text-white py-8">Focus on load</h3>
+
+<p class="dark:text-white py-4 text-lg">To focus on an input field on load create a `ref` variable and bind it in an Input component. Add a `onMount` function as followings.</p>
+
+<p class="dark:text-white py-4 text-lg">In the next example, the First name field is focused on load.</p>
+
+<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<Input class="mb-6" placeholder="First name" label="First name" bind:ref/>
+<Input class="mb-6" placeholder="Last name" label="Last name"/>
+</div>
+
+```html
+<script>
+import { onMount } from 'svelte';
+let ref
+
+onMount(() => {
+  ref.focus();
+});
+</script>
+
+<Input class="mb-6" placeholder="First name" label="First name" bind:ref/>
+<Input class="mb-6" placeholder="Last name" label="Last name"/>
 ```
 
 <h3 class="text-xl w-full dark:text-white py-8">Disabled</h3>
