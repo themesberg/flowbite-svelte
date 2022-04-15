@@ -2,3 +2,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+pre{
+    background-color: rgb(242, 242, 242);
+    white-space: pre-wrap;
+    width: 100%;
+}
