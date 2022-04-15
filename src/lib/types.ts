@@ -159,7 +159,7 @@ export interface AvatarType {
     text?: string;
 }
 
-export type TransitionTypes = 'fade' | 'fly' | 'slide' | 'blur'
+export type TransitionTypes = 'fade' | 'fly' | 'slide' | 'blur' | 'in:fly' | 'out:fly' | 'in:slide' | 'out:slide' | 'in:fade' | 'out:fade' | 'in:blur' | 'out:blur'
 
 export interface TimelineItemType {
     date: Date | string;

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { fade, blur, fly, slide } from 'svelte/transition';
+	import type { TransitionTypes, TransitionParamTypes } from '../types';
 	import Slide from './Slide.svelte';
 	import Thumbnail from './Thumbnail.svelte';
 	import Caption from './Caption.svelte';
@@ -9,7 +11,21 @@
 	export let showThumbs: boolean = true;
 	export let images: any[];
 	export let slideControls: boolean = true;
+	export let transitionType: TransitionTypes;
 
+	// have a custom transition function that returns the desired transition
+	function multiple(node: HTMLElement, params: any) {
+		switch (transitionType) {
+			case 'slide':
+				return slide(node, params);
+			case 'blur':
+				return blur(node, params);
+			case 'fly':
+				return fly(node, params);
+			case 'fade':
+				return fade(node, params);
+		}
+	}
 	// Carousel
 	export let divClass: string = 'overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96';
 	export let indicatorDivClass: string =
@@ -24,11 +40,12 @@
 		'w-3 h-3 rounded-full bg-gray-100 hover:bg-gray-300 opacity-60';
 
 	// Slide
-	export let slideClass: string = '';
+	export let slideClass: string =
+		'transition-all ease-in-out duration-1000 transform translate-x-0 slide';
 
-	let imageShowingIndex: number = 0;
+	let imageShowingIndex: number = 1;
 	// $: console.log(imageShowingIndex);
-	$: image = images[imageShowingIndex];
+	// $: image = images[imageShowingIndex];
 
 	const nextSlide = () => {
 		if (imageShowingIndex === images.length - 1) {
@@ -52,8 +69,13 @@
 
 <div id="default-carousel" class="relative">
 	<div class={divClass}>
-		<Slide image={image.imgurl} altTag={image.name} attr={image.attribution} {slideClass} />
+		{#each images as { id, imgurl, name, attribution }}
+			{#if imageShowingIndex === id}
+				<Slide image={imgurl} altTag={name} attr={attribution} {slideClass} />
+			{/if}
+		{/each}
 	</div>
+
 	{#if showIndicators}
 		<!-- Slider indicators -->
 		<div class={indicatorDivClass}>
