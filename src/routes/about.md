@@ -2,7 +2,23 @@
 layout: docLayout
 ---
 
-<h1 class="text-3xl dark:text-white w-full pt-8">About Flowbite-Svelte</h1>
+<script>
+  import { Breadcrumb } from '$lib/index'
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'About',
+      href:'/about'
+    }
+  ]
+</script>
+
+<Breadcrumb {crumbs}/>
+
+<h1 class="text-3xl w-full dark:text-white py-8">About Flowbite-Svelte</h1>
 
 <h2 class="text-2xl dark:text-white w-full py-4">Svelte</h2>
 

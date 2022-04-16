@@ -96,6 +96,17 @@
 		</Card>
 	</div>
 	<div class="p-4">
+		<Card img="/images/breadcrumb.webp" alt="Breadcrumb">
+			<span slot="paragraph">
+				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
+					<a href="/breadcrumbs" class="text-blue-600 hover:underline dark:text-blue-500"
+						>Breadcrumb</a
+					>
+				</p>
+			</span>
+		</Card>
+	</div>
+	<div class="p-4">
 		<Card img="/images/buttongroups.webp" alt="Button Groups">
 			<span slot="paragraph">
 				{#each buttonGroups as { href, name }}

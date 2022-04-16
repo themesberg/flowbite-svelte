@@ -3,7 +3,7 @@ layout: accordionLayout
 ---
 
 <script>
-  import { Accordion, AccordionItem, Table, TableDefaultRow } from "$lib/index";
+  import { Accordion, AccordionItem, Table, TableDefaultRow, Breadcrumb } from "$lib/index";
   import accordionProps from '../props/AccordionDefault.json'
   import accordionItemProps from '../props/AccordionItem.json'
   // Props table
@@ -12,10 +12,21 @@ layout: accordionLayout
 	let propHeader = ['Name', 'Type', 'Default']
 	// console.log(items)
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
-
+ let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Accordion',
+      href:'/accordions/default'
+    }
+  ]
 </script>
 
-<h1 class="text-3xl w-full dark:text-white pt-16">Accordion</h1>
+<Breadcrumb {crumbs}/>
+
+<h1 class="text-3xl w-full dark:text-white py-8">Accordion</h1>
 
 <p>Add id 1,2,3,... to AccordionItem component.</p>
 

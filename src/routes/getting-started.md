@@ -1,8 +1,23 @@
 ---
 layout: docLayout
 ---
+<script>
+  import { Breadcrumb } from '$lib/index'
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Getting started',
+      href:'/getting-started'
+    }
+  ]
+</script>
 
-<h1 class="text-3xl w-full dark:text-white pt-16">Getting Started</h1>
+<Breadcrumb {crumbs}/>
+
+<h1 class="text-3xl w-full dark:text-white py-8">Getting Started</h1>
 <h2 class="text-2xl w-full mt-8 dark:text-white py-4">Installation</h2>
 <p>Install SvelteKit:</p>
 

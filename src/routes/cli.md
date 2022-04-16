@@ -2,7 +2,23 @@
 layout: docLayout
 ---
 
-<h1 class="text-3xl w-full dark:text-white pt-16">Flowbite-Svelte-CLI (fsc)</h1>
+<script>
+  import { Breadcrumb } from '$lib/index'
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Flowbite-Svelte-CLI',
+      href:'/cli'
+    }
+  ]
+</script>
+
+<Breadcrumb {crumbs}/>
+
+<h1 class="text-3xl w-full dark:text-white py-8">Flowbite-Svelte-CLI (fsc)</h1>
 
 <p>This a Shell script CLI that allows you to find compoent default props from your command line.</p>
 

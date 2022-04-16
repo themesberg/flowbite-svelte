@@ -3,7 +3,7 @@ layout: accordionLayout
 ---
 
 <script>
-  import { Accordion, AccordionItem, Table, TableDefaultRow }from '$lib/index';
+  import { Accordion, AccordionItem, Table, TableDefaultRow, Breadcrumb }from '$lib/index';
   import { ArchiveIconOutline, BeakerIconOutline } from "@codewithshin/svelte-heroicons";
   import accordionProps from '../props/AccordionDefault.json'
   import accordionItemProps from '../props/AccordionItem.json'
@@ -13,10 +13,21 @@ layout: accordionLayout
 	let propHeader = ['Name', 'Type', 'Default']
 	// console.log(items)
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
-
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Icon accordion',
+      href:'/accordions/icon-accordion'
+    }
+  ]
 </script>
 
-<h1 class="text-3xl w-full dark:text-white pt-16">Icon Accordion</h1>
+<Breadcrumb {crumbs}/>
+
+<h1 class="text-3xl w-full dark:text-white py-8">Icon Accordion</h1>
 
 <p class="dark:text-white w-full py-4">Add id 1,2,3,... to AccordionItem component.</p> 
 <p class="dark:text-white w-full py-4">Install @codewithshin/svelte-heroicons.</p>
@@ -32,7 +43,7 @@ npm i @codewithshin/svelte-heroicons
 >
   <Accordion>
     <AccordionItem id="1">
-      <h2 slot="header">
+      <h2 slot="header" class="text-base p-0 m-0">
         <span class="flex"
           ><span class="mr-2"><ArchiveIconOutline /></span> My Header 1</span
         >
@@ -56,7 +67,7 @@ npm i @codewithshin/svelte-heroicons
       </div>
     </AccordionItem>
     <AccordionItem id="2">
-      <h2 slot="header"><span class="flex "
+      <h2 slot="header" class="text-base m-0 p-0"><span class="flex "
           ><span class="mr-2"><BeakerIconOutline /></span> My Header 2</span
         ></h2>
       <div slot="body">

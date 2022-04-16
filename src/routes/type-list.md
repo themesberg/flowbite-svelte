@@ -2,7 +2,23 @@
 layout: docLayout
 ---
 
-<h1 class="text-3xl w-full dark:text-white pt-16">Type list</h1>
+<script>
+  import { Breadcrumb } from '$lib/index'
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Type list',
+      href:'/type-list'
+    }
+  ]
+</script>
+
+<Breadcrumb {crumbs}/>
+
+<h1 class="text-3xl w-full dark:text-white py-8">Type list</h1>
 
 ```js
 import type { SvelteComponent } from 'svelte';
