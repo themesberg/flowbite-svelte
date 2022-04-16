@@ -15,7 +15,7 @@ layout: iconLayout
   } from "@codewithshin/svelte-heroicons";
 </script>
 
-<h1 class="text-3xl w-full dark:text-white pt-16">HeroIcons</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">HeroIcons</h1>
 
 <p>Flowbite-svelte uses <a class="text-blue-600 hover:underline dark:text-blue-500" href="https://github.com/shinokada/svelte-heroicons" target="_blank">svelte-heroicons</a>.
 You can find all the icon names from the <a class="text-blue-600 hover:underline dark:text-blue-500" href="https://github.com/shinokada/svelte-heroicons/blob/main/icon-names.md">repo</a>.</p>

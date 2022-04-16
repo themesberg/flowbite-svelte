@@ -40,7 +40,7 @@ layout: doc
 	];
 </script>
 
-<h1 class="text-3xl w-full dark:text-white pt-16">Auth</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Auth</h1>
 
 <h2 class="text-2xl w-full dark:text-white py-8">Register</h2>
 

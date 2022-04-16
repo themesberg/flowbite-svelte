@@ -14,7 +14,7 @@ layout: spinnerLayout
 </script>
 
 
-<h1 class="text-3xl w-full dark:text-white pt-16">Button Spinner</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Button Spinner</h1>
 
 ```html
 <script>

@@ -6,7 +6,7 @@ layout: iconLayout
    import { FacebookIcon, GithubIcon, GitIcon } from '@codewithshin/svelte-simpleicons';
 </script>
 
-<h1 class="text-3xl w-full dark:text-white pt-16">Simple-icons</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Simple-icons</h1>
 
 <p class=" dark:text-white py-4">Svelte-simpleicons has more than 2100 icons and they are monochrome icons.</p>
 

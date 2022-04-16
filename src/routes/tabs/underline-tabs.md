@@ -39,7 +39,7 @@ let tabs = [
 ];
 </script>
 
-<h1 class="text-3xl w-full dark:text-white pt-16">Underline Tabs</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Underline Tabs</h1>
 
 <h2 class="text-2xl mt-8 dark:text-white py-8">Examples</h2>
 

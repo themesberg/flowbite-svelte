@@ -98,7 +98,7 @@ layout: modalLayout
   let formLink = "/modals";
 </script>
 
-<h1 class="text-3xl w-full dark:text-white pt-16">All Modals</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">All Modals</h1>
 
 <h2 class="text-2xl w-full dark:text-white py-8">Small Modals</h2>
 
