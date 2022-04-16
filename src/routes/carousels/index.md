@@ -84,7 +84,7 @@ layout: carouselLayout
 <Carousel {images} />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Without thumbnails</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Without thumbnails</h2>
 
 <p class="dark:text-white text-lg">The `showThumbs` is set to `true`. Set it to `false` to hide it.</p>
 
@@ -102,7 +102,7 @@ layout: carouselLayout
 <Carousel {images} {showThumbs}/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Without caption</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Without caption</h2>
 
 <p class="dark:text-white text-lg">To hide the caption, set `showCaptions` to `false`.</p>
 
@@ -121,7 +121,7 @@ layout: carouselLayout
 <Carousel {images} {showThumbs} {showCaptions}/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Without indicators</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Without indicators</h2>
 
 <p class="dark:text-white text-lg">To hide the indicators, set `showIndicators` to `false`.</p>
 
@@ -141,7 +141,7 @@ layout: carouselLayout
 <Carousel {images} {showThumbs} {showCaptions} {showIndicators}/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Without Slide controlers</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Without Slide controlers</h2>
 
 <p class="dark:text-white text-lg">To hide the slide controlers, set `slideControls` to `false`.</p>
 
@@ -161,7 +161,7 @@ layout: carouselLayout
 <Carousel {images} {showThumbs} {showCaptions} {slideControls}/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

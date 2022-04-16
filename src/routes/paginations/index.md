@@ -53,7 +53,7 @@ layout: paginationLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Pagination Components</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-8">Default pagination</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Default pagination</h2>
 
 <div
 	class="container w-full flex justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
@@ -97,7 +97,7 @@ layout: paginationLayout
 <Pagination {pages} on:previous={previous} on:next={next} />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Pagination with icons</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Pagination with icons</h2>
 
 <div
 	class="container w-full flex justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
@@ -109,7 +109,7 @@ layout: paginationLayout
 <Pagination {pages} on:previous={previous} on:next={next} icon />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Previous and next</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Previous and next</h2>
 
 <div
 	class="container w-full flex justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
@@ -127,7 +127,7 @@ layout: paginationLayout
 <Next on:next={next} />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Previous and next with icons</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Previous and next with icons</h2>
 
 <div
 	class="container w-full flex justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
@@ -141,7 +141,7 @@ layout: paginationLayout
 <Next on:next={next} icon />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Table data pagination</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Table data pagination</h2>
 
 <div
 	class="container w-full flex justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
@@ -170,7 +170,7 @@ layout: paginationLayout
 <TableData on:next={next} on:previous={previous} {helper}/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

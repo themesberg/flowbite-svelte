@@ -33,7 +33,7 @@ layout: modalLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Extra-large Modals</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-8">Setup</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Setup</h2>
 
 <p>Import ExtraLargeModal and ModalButton components and set variables in the script tag. To close a modal, use `closeModal` function in your event handler.</p>
 
@@ -62,7 +62,7 @@ layout: modalLayout
 </script>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Examples</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton id="exm1" btnName="Info Modal" />
@@ -88,7 +88,7 @@ layout: modalLayout
 </ExtraLargeModal>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Extra-large Modals with One Button</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Extra-large Modals with One Button</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton id="id1" btnName="Extra Large Modal with one button" btnColor="green" />
@@ -130,7 +130,7 @@ const handlebtn1 = () => {
 </ExtraLargeModal>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Extra-large Modals with Two Buttons</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Extra-large Modals with Two Buttons</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton id="id2" btnName="Extra Large Modal with two buttons" btnColor="purple" />
@@ -171,7 +171,7 @@ const handlebtn1 = () => {
   </ExtraLargeModal>
 
 
-<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

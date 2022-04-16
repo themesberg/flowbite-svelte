@@ -100,7 +100,7 @@ layout: modalLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">All Modals</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-8">Small Modals</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Small Modals</h2>
 
 ```html
 <script>
@@ -132,7 +132,7 @@ layout: modalLayout
   <ModalButton id={smallModalId} btnName={btnSName} />
 </div>
 
-<h2 class="text-2xl w-full dark:text-white py-8">Medium Modals</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Medium Modals</h2>
 
 ```html
 <script>
@@ -165,7 +165,7 @@ layout: modalLayout
   <ModalButton id={mediumModalId} btnName={btnMName} btnColor={btnMColor} />
 </div>
 
-<h2 class="text-2xl w-full dark:text-white py-8">Large Modals</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Large Modals</h2>
 
 ```html
 <script>
@@ -197,7 +197,7 @@ layout: modalLayout
   <ModalButton id={largeModalId} btnName={btnLName} btnColor={btnLColor} />
 </div>
 
-<h2 class="text-2xl w-full dark:text-white py-8">Extra-Large Modals</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Extra-Large Modals</h2>
 
 ```html
 <script>
@@ -238,7 +238,7 @@ layout: modalLayout
   />
 </div>
 
-<h2 class="text-2xl w-full dark:text-white py-8">SingIn Modals</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">SingIn Modals</h2>
 
 ```html
 <ModalButton

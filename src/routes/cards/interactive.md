@@ -37,7 +37,7 @@ layout: cardLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Interactive Card</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Set up</h2>
 
 ```html
 <script>
@@ -67,7 +67,7 @@ layout: cardLayout
 </script>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Examples</h2>
 
 <div class="container flex flex-col space-y-4 justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   
@@ -105,7 +105,7 @@ layout: cardLayout
 />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

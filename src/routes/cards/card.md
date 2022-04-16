@@ -14,11 +14,28 @@ layout: cardLayout
   const btn1 = ()　=>　{
     alert('You clicked.')
   }
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Cards',
+      href:'/cards/'
+    },
+    {
+      label:'Card default',
+      href:'/cards/card'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Card</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Set up</h2>
 
 <p>Import Card in the script tag.</p>
 
@@ -28,89 +45,89 @@ layout: cardLayout
 </script>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Examples</h2>
 
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Card header="Simple card with header and content">
-    <span slot="paragraph">
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
     consequatur modi ab nisi perferendis placeat natus repellendus officiis
     ipsa.
-    </span>
+    </p>
   </Card>
 </div>
 
 ```html
 <Card header="Simple card with header and content">
-  <span slot="paragraph">
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
-  </span>
+  </p>
 </Card>
 ```
 
 
-<h2 class="text-2xl w-full dark:text-white py-8">Card with a link</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Card with a link</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-  <Card header="Card with link" link="/">
-  <span slot="paragraph">
+  <Card header="Card with link" link="/" btnLabel="Read more">
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
     consequatur modi ab nisi perferendis placeat natus repellendus officiis
     ipsa.
-    </span>
+    </p>
   </Card>
 </div>
 
 ```html
-<Card header="Card with link" link="/">
-  <span slot="paragraph">
+<Card header="Card with link" link="/" btnLabel="Read more">
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
-  </span>
+  </p>
 </Card>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Card with a link and image</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Card with a link and image</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-  <Card img="/images/image-1.jpeg" header="Card with link and image" link="/">
-  <span slot="paragraph">
+  <Card img="/images/image-1.jpeg" header="Card with link and image" link="/" btnLabel="Read more">
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
     consequatur modi ab nisi perferendis placeat natus repellendus officiis
     ipsa.
-    </span>
+    </p>
   </Card>
 </div>
 
 ```html
-<Card img="/images/image-1.jpeg" header="Card with link and image" link="/">
-  <span slot="paragraph">
+<Card img="/images/image-1.jpeg" header="Card with link and image" link="/" btnLabel="Read more">
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
-  </span>
+  </p>
 </Card>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Card with an image</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Card with an image</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-  <Card img="/images/image-2.jpeg" header="Card with image">
-  <span slot="paragraph">
+  <Card img="/images/image-2.jpeg" header="Card with image" btnLabel="Read more">
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
     consequatur modi ab nisi perferendis placeat natus repellendus officiis
     ipsa.
-    </span>
+    </p>
   </Card>
 </div>
 
 ```html
 <Card img="/images/image-2.jpeg" header="Card with image">
-  <span slot="paragraph">
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
-  </span>
+  </p>
 </Card>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Card with a Button component</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Card with a Button component</h2>
 
 <p>If you need a click handler rather than a link, use a Button component.</p>
 
@@ -118,9 +135,11 @@ layout: cardLayout
   <Card
     img="/images/image-1.jpeg"
     header="Button component"
-  >
-    <span slot="paragraph">
+    btnLabel="Read more"
+  ><span slot="paragraph">
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" >
     Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </p>
     <div class="w-full pt-4">
       <Button name="Click me" on:click={btn1} />
     </div>
@@ -137,17 +156,19 @@ layout: cardLayout
 <Card
   img="/images/image-1.jpeg"
   header="Button component"
->
-<span slot="paragraph">
+  btnLabel="Read more"
+><span slot="paragraph">
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" >
   Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    <div class="w-full pt-4">
-      <Button name="Click me" on:click={btn1} />
-    </div>
-</span>
+  </p>
+  <div class="w-full pt-4">
+    <Button name="Click me" on:click={btn1} />
+  </div>
+  </span>
 </Card>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Card with yellow button</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Card with yellow button</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Card
@@ -155,10 +176,11 @@ layout: cardLayout
     header="Yellow button"
     link="/"
     btnColor="yellow"
+    btnLabel="Read more"
   >
-    <span slot="paragraph">
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
-    </span>
+    </p>
   </Card>
 </div>
 
@@ -168,14 +190,15 @@ layout: cardLayout
   header="Yellow button"
   link="/"
   btnColor="yellow"
+  btnLabel="Read more"
 >
-  <span slot="paragraph">
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
-  </span>
+  </p>
 </Card>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Card with purple button</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Card with purple button</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Card
@@ -183,12 +206,13 @@ layout: cardLayout
     header="Purple button"
     link="/"
     btnColor="purple"
+    btnLabel="Read more"
   >
-  <span slot="paragraph">
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
     consequatur modi ab nisi perferendis placeat natus repellendus officiis
     ipsa.
-  </span>
+  </p>
   </Card>
 </div>
 
@@ -198,16 +222,17 @@ layout: cardLayout
   header="Purple button"
   link="/"
   btnColor="purple"
+  btnLabel="Read more"
 >
-  <span slot="paragraph">
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
   consequatur modi ab nisi perferendis placeat natus repellendus officiis
   ipsa.
-  </span>
+  </p>
 </Card>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

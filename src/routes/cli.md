@@ -58,7 +58,7 @@ export PATH=$HOME/.local/share/bin:$PATH
 awesome install shinokada/fsc
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">How to use it</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">How to use it</h2>
 
 <h3>List components</h3>
 

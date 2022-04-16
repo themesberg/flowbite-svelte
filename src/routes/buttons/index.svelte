@@ -28,6 +28,7 @@
 			btnColor="pink"
 			header="GRADIENT DUOTONE"
 			link="/buttons/gradient-duotone"
+			btnLabel="Read more"
 		/>
 	</div>
 	<div class="p-4">
@@ -36,6 +37,7 @@
 			btnColor="purple"
 			header="GRADIENT MONOCHROME"
 			link="/buttons/gradient-monochrome"
+			btnLabel="Read more"
 		/>
 	</div>
 	<div class="p-4">
@@ -44,12 +46,25 @@
 			btnColor="gray"
 			header="GRADIENT OUTLINE"
 			link="/buttons/gradient-outline"
+			btnLabel="Read more"
 		/>
 	</div>
 	<div class="p-4">
-		<Card img="/images/buttons.webp" btnColor="indigo" header="OUTLINED" link="/buttons/outlined" />
+		<Card
+			img="/images/buttons.webp"
+			btnColor="indigo"
+			header="OUTLINED"
+			link="/buttons/outlined"
+			btnLabel="Read more"
+		/>
 	</div>
 	<div class="p-4">
-		<Card img="/images/buttons.webp" btnColor="red" header="ROUNDED" link="/buttons/rounded" />
+		<Card
+			img="/images/buttons.webp"
+			btnColor="red"
+			header="ROUNDED"
+			link="/buttons/rounded"
+			btnLabel="Read more"
+		/>
 	</div>
 </div>

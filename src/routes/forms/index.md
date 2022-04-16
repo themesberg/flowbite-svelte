@@ -232,7 +232,7 @@ onMount(() => {
 <Input label="Email" id="email" name="email" required placeholder="Your email" helper="You can add helper text in <b>HTML</b>."/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Floating label input</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Floating label input</h2>
 
 <h3>Examples</h3>
 
@@ -258,7 +258,7 @@ onMount(() => {
 </form>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Iconinput</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Iconinput</h2>
 
 <p>With the Iconinput component, you can add <a href="https://flowbite-svelte.vercel.app/icons/heroicons">Heroicons</a> or <a href="https://flowbite-svelte.vercel.app/icons/simple-icons">Simple-icons</a>. Use iconClass to modify the icon color.</p>
 
@@ -281,7 +281,7 @@ onMount(() => {
 <Iconinput noBorder id="email" type="email" name="email" label="No border" icon={MailIconOutline} iconClass="h-4 w-4 mr-2 text-blue-500"/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Textarea</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Textarea</h2>
 
 <h3>Examples</h3>
 
@@ -308,7 +308,7 @@ let textareaprops = {
 
 <p><a href="#Focus_on_load" class="text-blue-600 hover:underline dark:text-blue-500">As mentioned in the Input field,</a> you can focus on the Textarea component on load.</p>
 
-<h2 class="text-2xl w-full dark:text-white py-8">Select input</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Select input</h2>
 
 <h3>Examples</h3>
 
@@ -338,7 +338,7 @@ let selectprops = {
 </Select>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Checkbox</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Checkbox</h2>
 
 <h3>Examples</h3>
 
@@ -379,7 +379,7 @@ let checkboxOptions= [
 <Checkbox options={checkboxOptions} {legend} />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Single checkobx</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Single checkobx</h2>
 
 <h3>Examples</h3>
 
@@ -391,7 +391,7 @@ let checkboxOptions= [
 <SingleCheckbox name="rememberme" id="rememberme" required label="Remember me" />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Radio</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Radio</h2>
 
 <h3>Examples</h3>
 
@@ -426,7 +426,7 @@ let radioname='countries'
 <Radio options={radiooptions} name={radioname}/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">File upload</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">File upload</h2>
 
 <h3>Examples</h3>
 
@@ -455,7 +455,7 @@ let fileuploadprops2 = {
 <Fileupload {...fileuploadprops2} />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Toggle</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Toggle</h2>
 
 <h3>Examples</h3>
 
@@ -511,7 +511,7 @@ let props3 = {
 <Toggle {...props3}/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

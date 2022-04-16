@@ -177,7 +177,7 @@ layout: accordionLayout
 </Accordion>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Props: AccordionDefault</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Props: AccordionDefault</h2>
 
 <p>The component has the following props, type, and default values:</p>
 
@@ -187,14 +187,14 @@ let easing: string = 'ease';
 let id: number = undefined;
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">AccordionItem: Slot names</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">AccordionItem: Slot names</h2>
 
 ```js
 header
 body
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

@@ -45,7 +45,7 @@ layout: breadcrumbLayout
 <Breadcrumb {crumbs} />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Solid Breadcrumb</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Solid Breadcrumb</h2>
 
 <div
   class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">

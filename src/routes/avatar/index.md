@@ -3,7 +3,7 @@ layout: avatarLayout
 ---
 
 <script>
-  import { Avatar, Table, TableDefaultRow  } from "$lib/index"
+  import { Avatar, Table, TableDefaultRow, Breadcrumb } from "$lib/index"
   import alertProp from '../props/Avatar.json'
   // Props table
   export let items = alertProp.props
@@ -70,20 +70,31 @@ layout: avatarLayout
     header:'Jese Leos',
     text:'Joined in August 2014'
   }
-</script>  
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Avatar',
+      href:'/avatar/'
+    }
+  ]
+</script>
+
+<Breadcrumb {crumbs}/>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Avatar</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-8">Size</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Size</h2>
 
-<p class="text-lg w-full text-gray-900 dark:text-white py-4">Select size from  6 | 8 | 12 | 16 | 24 | 48.</p>
+<p>Select size from  6 | 8 | 12 | 24 | 48.</p>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <div class=" flex flex-wrap justify-center space-x-4">
 <Avatar avatar={avatar6} />
 <Avatar avatar={avatar8}/>
 <Avatar avatar={avatar12}/>
-<Avatar avatar={avatar16}/>
 <Avatar avatar={avatar24}/>
 <Avatar avatar={avatar48}/>
 </div>
@@ -107,11 +118,7 @@ layout: avatarLayout
     alt: 'My avatar',
     size: 12
   }
-  let avatar16 = {
-    src: '/images/profile-picture-1.webp',
-    alt: 'My avatar',
-    size: 16
-  }
+ 
   let avatar24 = {
     src: '/images/profile-picture-1.webp',
     alt: 'My avatar',
@@ -128,15 +135,14 @@ layout: avatarLayout
 <Avatar avatar={avatar6} />
 <Avatar avatar={avatar8}/>
 <Avatar avatar={avatar12}/>
-<Avatar avatar={avatar16}/>
 <Avatar avatar={avatar24}/>
 <Avatar avatar={avatar48}/>
 
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Border and round</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Border and round</h2>
 
-<p class="text-lg w-full text-gray-900 dark:text-white py-4">Set true to border and/or round.</p>
+<p>Set true to border and/or round.</p>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <div class=" flex flex-wrap justify-center space-x-4">
@@ -174,9 +180,9 @@ layout: avatarLayout
 <Avatar avatar={avatar4} />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Placehoder</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Placehoder</h2>
 
-<p class="text-lg w-full text-gray-900 dark:text-white py-4">By setting placehoder, you display a placeholder avatar.</p>
+<p>By setting placehoder, you display a placeholder avatar.</p>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6 flex flex-wrap justify-center">
 
@@ -188,9 +194,9 @@ layout: avatarLayout
 <Avatar placehoder />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Avatar text</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Avatar text</h2>
 
-<p class="text-lg w-full text-gray-900 dark:text-white py-4">You can set header and text to show additional information.</p>
+<p>You can set header and text to show additional information.</p>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6 flex flex-wrap justify-center">
   <Avatar avatar={avatarText} />
@@ -213,7 +219,7 @@ layout: avatarLayout
 <Avatar avatar={avatarText} />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

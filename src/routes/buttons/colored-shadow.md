@@ -11,11 +11,27 @@ layout: buttonLayout
 	// console.log(items)
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Buttons',
+      href:'/buttons/'
+    },
+    {
+      label:'Colored shadow button',
+      href:'/buttons/colored-shadow'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Colored Shadow Buttons</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-8">text-sm</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">text-sm</h2>
 
 
 <div class=" flex flex-wrap justify-center rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -40,7 +56,7 @@ layout: buttonLayout
 <ColorShadowButton color="purple" name="Purple" />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">text-xs</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">text-xs</h2>
 
 
 <div class=" flex flex-wrap justify-center rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -65,7 +81,7 @@ layout: buttonLayout
 <ColorShadowButton color="purple" name="Purple" textSize="text-xs" />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">text-base</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">text-base</h2>
 
 <div class=" flex flex-wrap justify-center rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <ColorShadowButton color="blue" name="Blue" textSize="text-base"/>

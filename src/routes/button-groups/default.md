@@ -42,8 +42,24 @@ layout: buttongroupLayout
     icon: CloudDownloadIconSolid
   },
 ];
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Button groups',
+      href:'/button-groups/'
+    },
+    {
+      label:'Button group default',
+      href:'/button-groups/default'
+    },
+  ]
 </script>
 
+<Breadcrumb {crumbs}/>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Button Group</h1>
 

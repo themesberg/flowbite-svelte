@@ -42,7 +42,24 @@ layout: buttongroupLayout
     name: "Messages",
   },
 ];
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Button groups',
+      href:'/button-groups/'
+    },
+    {
+      label:'Button group outline',
+      href:'/button-groups/outline'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Outline Button Group</h1>
 
@@ -83,7 +100,7 @@ layout: buttongroupLayout
 </script>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Outline default</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Outline default</h2>
 
 <div
   class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -95,7 +112,7 @@ layout: buttongroupLayout
 ```
 
 
-<h2 class="text-2xl w-full dark:text-white py-8">Outline with icon</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Outline with icon</h2>
 
 <div
   class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">

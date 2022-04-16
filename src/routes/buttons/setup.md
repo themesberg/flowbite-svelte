@@ -3,7 +3,7 @@ layout: buttonLayout
 ---
 
 <script>
-  import { Button }from '$lib/index';
+  import { Button, Breadcrumb }from '$lib/index';
   import { goto }from '$app/navigation';
   const btn1 = ()=>{
     alert('This redirects to the home page.')
@@ -12,7 +12,24 @@ layout: buttonLayout
   const btn2 = ()=>{
     alert ('You clicked btn2.')
   }
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Buttons',
+      href:'/buttons/'
+    },
+    {
+      label:'Button setup',
+      href:'/buttons/setup'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Button Component Set Up</h1>
 

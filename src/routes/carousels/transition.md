@@ -28,7 +28,7 @@ layout: carouselLayout
   </div>
 </div>
 
-<h2 class="text-2xl w-full dark:text-white py-8">Without thumbnails</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Without thumbnails</h2>
 
 <p class="dark:text-white text-lg">The `showThumbs` is set to `true`. Set it to `false` to hide it.</p>
 

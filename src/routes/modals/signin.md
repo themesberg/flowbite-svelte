@@ -17,7 +17,7 @@ layout: modalLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Sign-in Modals</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Set up</h2>
 
 <p class="dark:text-white text-base py-4">Import SignInModal, ModalButton components and set variables in the script tag.</p>
 
@@ -25,9 +25,9 @@ layout: modalLayout
 import { SignInModal, ModalButton } from "flowbite-svelte";
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">SignIn Modals</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">SignIn Modals</h2>
 
-<h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Examples</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton
@@ -63,7 +63,7 @@ import { SignInModal, ModalButton } from "flowbite-svelte";
 />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

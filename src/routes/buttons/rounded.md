@@ -11,11 +11,27 @@ layout: buttonLayout
 	// console.log(items)
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Buttons',
+      href:'/buttons/'
+    },
+    {
+      label:'Round button',
+      href:'/buttons/rounded'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Rounded Buttons</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-8">Size xs</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Size xs</h2>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Button name="Button text-xs" textSize="text-xs" rounded="true" />
@@ -37,7 +53,7 @@ layout: buttonLayout
 <Button name="Button text-xs" textSize="text-xs" buttonType="purple" rounded="true" />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Size sm</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Size sm</h2>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Button name="Button" textSize="text-sm" rounded="true" />
@@ -59,7 +75,7 @@ layout: buttonLayout
 <Button name="Button" textSize="text-sm" buttonType="purple" rounded="true" />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Size base</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Size base</h2>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Button name="Button" textSize="text-base" rounded="true" />

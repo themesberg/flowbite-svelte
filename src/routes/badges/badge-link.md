@@ -13,7 +13,24 @@ layout: badgeLayout
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
   let link="/"
+    let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Badges',
+      href:'/badges/'
+    },
+    {
+      label:'Link badge',
+      href:'/badges/badge-link'
+    }
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
+
 
 
 <h1 class="text-3xl w-full dark:text-white py-8">Badges with Link</h1>
@@ -25,7 +42,7 @@ layout: badgeLayout
 </script>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Size xs</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Size xs</h2>
 
 <div
   class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -50,7 +67,7 @@ layout: badgeLayout
 <BadgeLink name="Pink" color="pink" {link}/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Size sm</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Size sm</h2>
 
 <div
   class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -75,7 +92,7 @@ layout: badgeLayout
 <BadgeLink name="Pink" color="pink" textSize="text-sm" {link}/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Size base</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Size base</h2>
 
 <div
   class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">

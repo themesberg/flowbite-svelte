@@ -31,7 +31,7 @@ layout: modalLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Medium Modals</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Set up</h2>
 
 <p>Import MediumModal, ModalButton, modalIdStor components and set variables in the script tag. To close a modal, use `closeModal` function in your event handler.</p>
 
@@ -55,7 +55,7 @@ layout: modalLayout
 </script>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Examples</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton id="modal1" btnName="Medium Modal" />
@@ -78,7 +78,7 @@ layout: modalLayout
 </MediumModal>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Medium Modals with an Action Button</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Medium Modals with an Action Button</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton id="id1" btnName="Medium Modal with one action button" btnColor="gray" />
@@ -113,7 +113,7 @@ layout: modalLayout
 </MediumModal>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Medium Modals with action buttons</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Medium Modals with action buttons</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton id="id2" btnName="Medium Modal with two action buttons" btnColor="blue" />
@@ -151,7 +151,7 @@ layout: modalLayout
 </MediumModal>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

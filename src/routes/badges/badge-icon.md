@@ -11,12 +11,27 @@ layout: badgeLayout
 	let propHeader = ['Name', 'Type', 'Default']
 	// console.log(items)
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
-
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Badges',
+      href:'/badges/'
+    },
+    {
+      label:'Icon badge',
+      href:'/badges/badge-icon'
+    }
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Badges with Icon</h1>
 
-<p class="text-lg w-full text-gray-900 dark:text-white py-4">You can use <a href="https://github.com/shinokada/svelte-heroicons" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Svelte-heroicon.</a></p>
+<p>You can use <a href="https://github.com/shinokada/svelte-heroicons" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Svelte-heroicon.</a></p>
 
 ```html
 <script>
@@ -26,7 +41,7 @@ layout: badgeLayout
 </script>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Size xs</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Size xs</h2>
 
 <div
   class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -51,7 +66,7 @@ layout: badgeLayout
 <BadgeIcon name="Pink" color="pink" ><InformationCircleIconOutline className="h-4 w-4 mr-1"/></BadgeIcon>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Size sm</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Size sm</h2>
 
 <div
   class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -76,7 +91,7 @@ layout: badgeLayout
 <BadgeIcon name="Pink" color="pink" textSize="text-sm" ><InformationCircleIconOutline className="h-4 w-4 mr-1"/></BadgeIcon>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Size base</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Size base</h2>
 
 <div
   class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -101,7 +116,7 @@ layout: badgeLayout
 <BadgeIcon name="Pink" color="pink" textSize="text-base" ><InformationCircleIconOutline className="h-4 w-4 mr-1"/></BadgeIcon>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Badges with icon only</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Badges with icon only</h2>
 
 <div
   class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">

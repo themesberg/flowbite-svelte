@@ -30,7 +30,7 @@ layout: alertLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Alert</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Set up</h2>
 
 <p class="text-gray-900 dark:text-white py-4 text-lg">
 Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.

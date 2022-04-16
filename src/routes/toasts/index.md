@@ -26,7 +26,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 </script>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Examples</h2>
 
 <p>Use fade, fly, slide, or blur for transitionType.</p>
 
@@ -208,7 +208,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 </Toast>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Icons</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Icons</h2>
 
 <p>Use any <a href="/icons" class="text-blue-600 hover:underline dark:text-blue-500">icon components.</a></p>
 
@@ -219,7 +219,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 </scrip>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

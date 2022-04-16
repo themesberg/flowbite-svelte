@@ -12,11 +12,27 @@ layout: buttonLayout
 	// console.log(items)
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
   
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Buttons',
+      href:'/buttons/'
+    },
+    {
+      label:'Button default',
+      href:'/buttons/default'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Buttons</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-8">Sizes</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Sizes</h2>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Button name="Button text-xs" textSize="text-xs" />
@@ -40,7 +56,7 @@ layout: buttonLayout
 <Button name="Button text-4xl" textSize="text-4xl" />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Colors</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Colors</h2>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Button name="Button" textSize="text-sm" />

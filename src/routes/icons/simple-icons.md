@@ -11,13 +11,13 @@ layout: iconLayout
 <p class=" dark:text-white py-4">Svelte-simpleicons has more than 2100 icons and they are monochrome icons.</p>
 
 
-<h2 class="text-2xl w-full dark:text-white py-8">Installing Simple-icons</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Installing Simple-icons</h2>
 
 ```sh
 npm i -D @codewithshin/svelte-simpleicons
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Examples</h2>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6 h-72">
 
@@ -44,7 +44,7 @@ import { FacebookIcon, GithubIcon, GitIcon } from '@codewithshin/svelte-simpleic
 
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
 
 ```js
 let className = "h-6 w-6"
