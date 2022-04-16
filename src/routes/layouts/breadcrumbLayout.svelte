@@ -11,9 +11,9 @@
 
 		<p class="dark:text-white text-lg">
 			<a
-				href="https://flowbite.com/docs/components/alerts/"
+				href="https://flowbite.com/docs/components/breadcrumb/"
 				target="_blank"
-				class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Alerts</a
+				class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Breadcrumb</a
 			>
 		</p>
 	</div>
