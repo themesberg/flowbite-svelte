@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.13.10](https://github.com/shinokada/flowbite-svelte/compare/v0.13.9...v0.13.10) (2022-04-16)
+
+
+### Bug Fixes
+
+* add a space in front of from /index ([32beb0e](https://github.com/shinokada/flowbite-svelte/commit/32beb0e9d3fd7c9c92e34ccc8d690a9f8361c780))
+* add Breadcrumb to md files ([6ea1d24](https://github.com/shinokada/flowbite-svelte/commit/6ea1d246ef2ed47f87ec764634fad6729700d286))
+* add btnLabel=Read more ([0730167](https://github.com/shinokada/flowbite-svelte/commit/073016733d50fddc70e78e38520eabf0a912236c))
+* update h1 for breadcrumb ([8bfef6a](https://github.com/shinokada/flowbite-svelte/commit/8bfef6a93f69dbbf4fb667ba0d177059181b6cdb))
+* update h1 in index pages ([e4d1a52](https://github.com/shinokada/flowbite-svelte/commit/e4d1a5284c5ce5f1d981e377263f97c2a2d00485))
+* update layouts for breadcrumb ([1c07955](https://github.com/shinokada/flowbite-svelte/commit/1c07955215fe7a48e3e5573c5c657d59978b5fe4))
+
 ### [0.13.9](https://github.com/shinokada/flowbite-svelte/compare/v0.13.8...v0.13.9) (2022-04-16)
 
 
