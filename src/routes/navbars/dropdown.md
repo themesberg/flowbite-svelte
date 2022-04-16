@@ -50,7 +50,25 @@ layout: navbarLayout
       ],
     },
   ];
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Navbar',
+      href:'/navbars/'
+    },
+    {
+      label:'Dropdown navbar',
+      href:'/navbars/dropdown'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
+
 
 
 <h1 class="text-3xl w-full dark:text-white pt-16" id="Dropdown_Navbar">Dropdown Navbar</h1>

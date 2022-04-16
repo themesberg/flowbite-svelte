@@ -35,7 +35,25 @@ layout: timelineLayout
 			text: 'Consectetur adipiscing elit. Aenean condimentum erat vitae elit convallis molestie. Maecenas felis nisl, semper vitae venenatis non'
 		}
 	];
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Timelines',
+      href:'/timelines/'
+    },
+    {
+      label:'Timeline horizontal',
+      href:'/timelines/horizontal'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
+
 
 <h1 class="text-3xl w-full dark:text-white py-8">Horizontal Timeline</h1>
 

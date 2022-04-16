@@ -27,7 +27,23 @@ layout: navbarLayout
     },
   ];
  
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Navbar',
+      href:'/navbars/'
+    },
+    {
+      label:'Navbar default',
+      href:'/navbars/default'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Navbar Default</h1>
 

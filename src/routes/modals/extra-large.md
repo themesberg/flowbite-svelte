@@ -29,7 +29,24 @@ layout: modalLayout
     alert("handlebtn3 is clicked from a parent page.");
     modal3.closeModal()
   };
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Modals',
+      href:'/modals/'
+    },
+    {
+      label:'Extra-large modals',
+      href:'/modals/extra-large'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Extra-large Modals</h1>
 

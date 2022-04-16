@@ -11,7 +11,25 @@ layout: cardLayout
 	// console.log(items)
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Cards',
+      href:'/cards/'
+    },
+    {
+      label:'Horizontal card',
+      href:'/cards/horizontal'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
+
 
 <h1 class="text-3xl w-full dark:text-white py-8">Horizontal Card</h1>
 

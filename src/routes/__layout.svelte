@@ -75,6 +75,7 @@
 				{ name: 'Alert', href: '/alerts' },
 				{ name: 'Avatar', href: '/avatar' },
 				{ name: 'Badge', href: '/badges' },
+				{ name: 'Breadcrumb', href: '/breadcrumbs' },
 				{ name: 'Button', href: '/buttons' }
 			]
 		},
@@ -83,6 +84,7 @@
 			children: [
 				{ name: 'Button Group', href: '/button-groups' },
 				{ name: 'Card', href: '/cards' },
+				{ name: 'Carousel', href: '/carousels' },
 				{ name: 'Dark', href: '/darkmode' },
 				{ name: 'Dropdown', href: '/dropdowns' },
 				{ name: 'Footer', href: '/footer' }

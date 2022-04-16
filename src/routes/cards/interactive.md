@@ -33,7 +33,25 @@ layout: cardLayout
   let content = "Proin efficitur purus felis.";
   let link1 = { href: "/", name: "Add friend" };
   let link2 = { href: "/", name: "Message" };
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Cards',
+      href:'/cards/'
+    },
+    {
+      label:'Interactive card',
+      href:'/cards/interactive'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
+
 
 <h1 class="text-3xl w-full dark:text-white py-8">Interactive Card</h1>
 

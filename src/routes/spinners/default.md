@@ -11,7 +11,23 @@ layout: spinnerLayout
 	// console.log(items)
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Spinners',
+      href:'/spinners/'
+    },
+    {
+      label:'Spinner default',
+      href:'/spinners/default'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Spinner</h1>
 
@@ -50,14 +66,12 @@ layout: spinnerLayout
 <Spinner size="w-4 h-4" />
 <Spinner size="w-6 h-6" />
 <Spinner size="w-8 h-8" />
-<Spinner size="w-16 h-16" />
 </div>
 
 ```html
 <Spinner size="w-4 h-4"/>
 <Spinner size="w-6 h-6" />
 <Spinner size="w-8 h-8"/>
-<Spinner size="w-16 h-16"/>
 ```
 
 

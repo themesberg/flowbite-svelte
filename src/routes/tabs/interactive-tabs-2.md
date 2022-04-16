@@ -36,11 +36,29 @@ layout: tabLayout
 			text: 'Consectetur adipiscing elit...'
 		}
 	];
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Tabs',
+      href:'/tabs/'
+    },
+    {
+      label:'Interactive tabs 2',
+      href:'/tabs/interactive-tabs-2'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
+
 
 <h1 class="text-3xl w-full dark:text-white py-8">Interactive Tabs 2: Adding other components</h1>
 
-<h2 class="text-2xl mt-8 dark:text-white py-8">Examples</h2>
+<h2 class="text-2xl mt-8 dark:text-white py-4">Examples</h2>
 
 <p>It is possible to add other components to the `InteractiveTabs` component but using `InteractiveTabHead` and `TabContent` make it easy to add other components to tabs. Here we are adding a timeline component in the tab 1 and a card component in the tab 3:</p>
 

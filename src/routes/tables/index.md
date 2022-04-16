@@ -3,7 +3,7 @@ layout: tableLayout
 ---
 
 <script>
-import { Table, TableDefaultRow, TableSearch } from '$lib/index'
+import { Table, TableDefaultRow, TableSearch, Breadcrumb } from '$lib/index'
 import componentProps1 from '../props/Table.json'
 import componentProps2 from '../props/TableDefaultRow.json'
 import componentProps3 from '../props/TableSearch.json'
@@ -19,12 +19,26 @@ let itemEx = [
   ['Magic Mouse 2','Black','Accessories','$99','<a href="/" class="text-blue-600 hover:underline dark:text-blue-500">Edit</a>']
 ]
 let headerEx = [' Product name','Color','Category','Price','Edit']
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Tables',
+      href:'/tables/'
+    }
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
+
 
 
 <h1 class="text-3xl w-full dark:text-white py-8">Table Components</h1>
 
-<h2 class="text-2xl mt-8 dark:text-white py-8">Examples</h2>
+<h2 class="text-2xl mt-8 dark:text-white py-4">Examples</h2>
 
 <p>Add `html` to render HTML elements in a table.</p>
 

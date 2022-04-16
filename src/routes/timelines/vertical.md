@@ -36,7 +36,24 @@ layout: timelineLayout
 		}
 	];
 
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Timelines',
+      href:'/timelines/'
+    },
+    {
+      label:'Timeline vertical',
+      href:'/timelines/vertical'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
+
 
 <h1 class="text-3xl w-full dark:text-white py-8">Vertical Timeline</h1>
 

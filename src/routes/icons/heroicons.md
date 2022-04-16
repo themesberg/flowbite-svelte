@@ -3,6 +3,7 @@ layout: iconLayout
 ---
 
 <script>
+  import { Breadcrumb } from '$lib/index'
   import {
     AdjustmentsIconSolid,
     BellIconOutline,
@@ -13,7 +14,25 @@ layout: iconLayout
     BellIconSolid,
     ChevronLeftIconSolid,
   } from "@codewithshin/svelte-heroicons";
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Icons',
+      href:'/icons/'
+    },
+    {
+      label:'Heroicons',
+      href:'/icons/heroicons'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
+
 
 <h1 class="text-3xl w-full dark:text-white py-8">HeroIcons</h1>
 

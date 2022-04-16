@@ -33,7 +33,25 @@ layout: timelineLayout
 			comment: '"I wanted to share a webinar zeroheight."'
 		}
 	];
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Timelines',
+      href:'/timelines/'
+    },
+    {
+      label:'Timeline group',
+      href:'/timelines/group'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
+
 
 <h1 class="text-3xl w-full dark:text-white py-8">Grouped Timeline</h1>
 

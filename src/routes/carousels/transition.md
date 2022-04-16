@@ -5,7 +5,6 @@ layout: carouselLayout
 <script>
   import { CarouselTransition, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import { quartInOut, sineInOut, bounceInOut, quintOut } from 'svelte/easing';
-  import CarouselAnimation from '$lib/carousels/CarouselAnimation.svelte'
   import { images } from './imageData';
   // import componentProps from '../props/Carousel.json'
   // // Props table
@@ -18,9 +17,28 @@ layout: carouselLayout
   let showIndicators=false
   let showCaptions=false
   let slideControls=false
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Carousels',
+      href:'/carousels/'
+    },
+    {
+      label:'Carousel default',
+      href:'/carousels/default'
+    },
+  ]
 </script>
 
-<h1 class="text-3xl w-full dark:text-white pb-8">Carousel</h1>
+<Breadcrumb {crumbs}/>
+
+<h1 class="text-3xl w-full dark:text-white py-8">Carousel transition</h1>
+
+<h2 class="text-2xl w-full dark:text-white py-4">Slide example</h2>
 
 <div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <div class="max-w-4xl">
@@ -28,9 +46,15 @@ layout: carouselLayout
   </div>
 </div>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Without thumbnails</h2>
+```html
+<script>
+  import { CarouselTransition } from 'flowbite-svelte';
+</script>
 
-<p class="dark:text-white text-lg">The `showThumbs` is set to `true`. Set it to `false` to hide it.</p>
+<CarouselTransition {images} transitionType="slide" transitionParams={{delay: 300, duration: 500}}/>
+```
+
+<h2 class="text-2xl w-full dark:text-white py-4">Fly example</h2>
 
 <div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <div class="max-w-4xl">
@@ -38,8 +62,23 @@ layout: carouselLayout
   </div>
 </div>
 
+```html
+<CarouselTransition {images} transitionType="fly" transitionParams={{delay: 250, duration: 300, x: 100}} />
+```
+
+<h2 class="text-2xl w-full dark:text-white py-4">Slide example</h2>
+
 <div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <div class="max-w-4xl">
     <CarouselTransition {images} transitionType="slide" transitionParams={{duration: 1500, easing: bounceInOut}}/>
   </div>
 </div>
+
+```html
+<script>
+  import { CarouselTransition } from 'flowbite-svelte';
+  import { bounceInOut } from 'svelte/easing';
+</script>
+
+<CarouselTransition {images} transitionType="slide" transitionParams={{duration: 1500, easing: bounceInOut}}/>
+```

@@ -21,7 +21,25 @@ layout: footerLayout
     { name: "Profile", href: "/" },
     { name: "Contact", href: "/" },
   ];
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Footer',
+      href:'/footer/'
+    },
+    {
+      label:'Footer with logo',
+      href:'/footer/logo'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
+
 
 <h1 class="text-3xl w-full dark:text-white py-8">Footer with Logo</h1>
 

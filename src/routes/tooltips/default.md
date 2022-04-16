@@ -3,14 +3,31 @@ layout: tooltipLayout
 ---
 
 <script>
-import {Tooltip, Button, Table, TableDefaultRow} from '$lib/index'
+import {Tooltip, Button, Table, TableDefaultRow, Breadcrumb} from '$lib/index'
 import componentProps from '../props/Tooltip.json'
 // Props table
 export let items = componentProps.props
 let propHeader = ['Name', 'Type', 'Default']
 // console.log(items)
 let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Tooltips',
+      href:'/tooltips/'
+    },
+    {
+      label:'Tooltip default',
+      href:'/tooltips/default'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Default Tooltip</h1>
 

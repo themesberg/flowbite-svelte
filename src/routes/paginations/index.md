@@ -49,7 +49,20 @@ layout: paginationLayout
     end: 10,
     total: 100
   }
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Pagination',
+      href:'/paginations/'
+    }
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Pagination Components</h1>
 

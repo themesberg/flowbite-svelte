@@ -3,8 +3,26 @@ layout: iconLayout
 ---
 
 <script>
-   import { FacebookIcon, GithubIcon, GitIcon } from '@codewithshin/svelte-simpleicons';
+  import { Breadcrumb } from '$lib/index'
+  import { FacebookIcon, GithubIcon, GitIcon } from '@codewithshin/svelte-simpleicons';
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Icons',
+      href:'/icons/'
+    },
+    {
+      label:'Simple-icons',
+      href:'/icons/simple-icons'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Simple-icons</h1>
 

@@ -127,7 +127,21 @@ let ref
 onMount(() => {
   ref.focus();
 });
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Forms',
+      href:'/forms/'
+    }
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
+
 
 <h1 class="text-3xl w-full dark:text-white py-8">Form Components</h1>
 

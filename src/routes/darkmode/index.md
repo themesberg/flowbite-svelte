@@ -11,7 +11,20 @@ import { Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 	// console.log(items)
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Dark mode',
+      href:'/darkmode/'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Dark mode</h1>
 

@@ -10,7 +10,8 @@ layout: modalLayout
     ExtraLargeModal,
     SignInModal,
     ModalButton,
-    modalIdStore
+    modalIdStore,
+    Breadcrumb
   }from '$lib/index';
   
   // small
@@ -96,7 +97,24 @@ layout: modalLayout
   let lostPasswordLink = "/";
   let signUpLink = "/about";
   let formLink = "/modals";
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Modals',
+      href:'/modals/'
+    },
+    {
+      label:'All modals',
+      href:'/modals/all-modals'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
 
 <h1 class="text-3xl w-full dark:text-white py-8">All Modals</h1>
 

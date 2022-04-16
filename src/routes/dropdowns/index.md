@@ -40,7 +40,20 @@ layout: dropdownLayout
       name: "Sign out",
     },
   ];
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Dropdown',
+      href:'/dropdowns/'
+    }
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Dropdown</h1>
 

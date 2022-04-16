@@ -98,7 +98,25 @@ layout: footerLayout
       icon: InstagramIcon,
     },
   ];
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Footer',
+      href:'/footer/'
+    },
+    {
+      label:'Footer with sitemap',
+      href:'/footer/sitemap'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
+
 
 <h1 class="text-3xl w-full dark:text-white py-8">Sitemap Footer</h1>
 

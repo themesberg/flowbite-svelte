@@ -64,11 +64,29 @@ layout: tabLayout
         "2-4 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     },
   ];
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Tabs',
+      href:'/tabs/'
+    },
+    {
+      label:'Multiple interactive tabs',
+      href:'/tabs/multiple-interactive-tabs'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
+
 
 <h1 class="text-3xl w-full dark:text-white py-8">Multiple Interactive Tabs</h1>
 
-<h2 class="text-2xl mt-8 dark:text-white py-8">Examples</h2>
+<h2 class="text-2xl mt-8 dark:text-white py-4">Examples</h2>
 
 <div class="container rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <InteractiveTabs tabId="myTab1" tabs={tabs1} />

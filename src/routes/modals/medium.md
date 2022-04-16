@@ -26,7 +26,25 @@ layout: modalLayout
   const handlebtnM3 = () => {
     modal2.closeModal()
   };
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Modals',
+      href:'/modals/'
+    },
+    {
+      label:'Medium modals',
+      href:'/modals/medium'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
+
 
 
 <h1 class="text-3xl w-full dark:text-white py-8">Medium Modals</h1>

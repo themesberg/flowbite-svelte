@@ -26,7 +26,25 @@ layout: cardLayout
     src: "/images/product-4.webp",
     alt: "product image",
   };
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Cards',
+      href:'/cards/'
+    },
+    {
+      label:'Ecommerce card',
+      href:'/cards/ecommerce'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
+
 
 <h1 class="text-3xl w-full dark:text-white py-8">Ecommerce Card</h1>
 

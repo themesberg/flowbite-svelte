@@ -13,7 +13,25 @@ layout: modalLayout
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
   let signmodal;
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Modals',
+      href:'/modals/'
+    },
+    {
+      label:'Signin modals',
+      href:'/modals/signin'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
+
 
 <h1 class="text-3xl w-full dark:text-white py-8">Sign-in Modals</h1>
 

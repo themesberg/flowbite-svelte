@@ -152,7 +152,21 @@ layout: sidebarLayout
     label:'Beta',
     text: 'Preview the new Flowbite dashboard navigation! You can turn the new navigation off for a limited time in your profile.'
   }
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Sidebar',
+      href:'/sidebars/'
+    }
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
+
 
 <h1 class="text-3xl w-full dark:text-white py-8">Sidebar Components</h1>
 

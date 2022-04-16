@@ -35,11 +35,28 @@ layout: tabLayout
     href: "/",
   },
 ];
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Tabs',
+      href:'/tabs/'
+    },
+    {
+      label:'Full-width tabs',
+      href:'/tabs/full-width-tabs'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Full Width Tabs</h1>
 
-<h2 class="text-2xl mt-8 dark:text-white py-8">Examples</h2>
+<h2 class="text-2xl mt-8 dark:text-white py-4">Examples</h2>
 
 <div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <FullWidthTabs {tabs} {tabLabel} />

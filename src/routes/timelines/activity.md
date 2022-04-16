@@ -35,7 +35,24 @@ layout: timelineLayout
 			src: '/images/profile-picture-3.webp'
 		}
 	];
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Timelines',
+      href:'/timelines/'
+    },
+    {
+      label:'Timeline activity',
+      href:'/timelines/activity'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Activity Log</h1>
 

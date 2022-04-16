@@ -22,7 +22,25 @@ layout: cardLayout
 	let lostPasswordLink = {
 		href: '/'
 	};
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Cards',
+      href:'/cards/'
+    },
+    {
+      label:'Signin card',
+      href:'/cards/signin'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
+
 
 <h1 class="text-3xl w-full dark:text-white py-8">Sign In Card</h1>
 

@@ -45,7 +45,25 @@ layout: cardLayout
     name: "View all",
     href: "/"
   }
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Cards',
+      href:'/cards/'
+    },
+    {
+      label:'List card',
+      href:'/cards/list'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
+
 
 <h1 class="text-3xl w-full dark:text-white py-8">Card with List</h1>
 

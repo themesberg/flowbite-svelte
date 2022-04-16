@@ -65,7 +65,21 @@ layout: listgroupLayout
       href: "/",
     },
   ];
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'List group',
+      href:'/list-group/'
+    }
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
+
 
 <h1 class="text-3xl w-full dark:text-white py-8">List group</h1>
 

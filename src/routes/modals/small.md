@@ -46,7 +46,25 @@ layout: modalLayout
   const handlebtnS4 = () => {
     smallModal2.closeModal();
   };
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Modals',
+      href:'/modals/'
+    },
+    {
+      label:'Small modals',
+      href:'/modals/small'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
+
 
 <h1 class="text-3xl w-full dark:text-white py-8">Small Modals</h1>
 

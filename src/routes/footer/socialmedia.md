@@ -72,7 +72,25 @@ let links = [
       icon: InstagramIcon,
     },
   ];
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Footer',
+      href:'/footer/'
+    },
+    {
+      label:'Social media footer',
+      href:'/footer/socialmedia'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
+
 
 <h1 class="text-3xl w-full dark:text-white py-8">Socialmedia Footer</h1>
 

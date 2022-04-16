@@ -7,6 +7,20 @@
 	<div class="container flex flex-wrap mx-auto">
 		<slot />
 
+		<h2 class="text-2xl w-full dark:text-white pt-16 pb-8">Related components</h2>
+
+		<p>
+			<a href="/carousels/default" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Default Carousel</a
+			>
+		</p>
+
+		<p>
+			<a href="/carousels/transition" class="text-blue-600 hover:underline dark:text-blue-500"
+				>Carousel transition</a
+			>
+		</p>
+
 		<h2 class="text-2xl w-full dark:text-white pt-8 pb-4">References</h2>
 
 		<p class="dark:text-white text-lg">

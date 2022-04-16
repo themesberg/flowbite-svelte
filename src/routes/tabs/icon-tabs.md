@@ -17,7 +17,6 @@ layout: tabLayout
 	// console.log(items)
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
-
 	let tabs = [
 		{
 			name: 'Profile',
@@ -44,11 +43,29 @@ layout: tabLayout
 			icon: ClipboardListIconSolid
 		}
 	];
+
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Tabs',
+      href:'/tabs/'
+    },
+    {
+      label:'Icon tabs',
+      href:'/tabs/icon-tabs'
+    },
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
+
 
 <h1 class="text-3xl w-full dark:text-white py-8">Icon Tabs</h1>
 
-<h2 class="text-2xl mt-8 dark:text-white py-8">Examples</h2>
+<h2 class="text-2xl mt-8 dark:text-white py-4">Examples</h2>
 
 <div
 	class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
