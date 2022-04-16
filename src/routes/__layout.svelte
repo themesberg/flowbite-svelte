@@ -58,6 +58,7 @@
 	let sideBarListClass = 'border-b border-gray-400 dark:border-gray-500 mb-2 px-4 text-base';
 	// activeDropdownDiv, activeChildLi, buttonClass, dropdownLi
 
+	// Footer
 	let socialMedia = [
 		{
 			href: 'https://github.com/shinokada',
@@ -70,7 +71,7 @@
 	];
 	let links = [
 		{
-			parent: '',
+			parent: 'COMPONENTS',
 			children: [
 				{ name: 'Accordion', href: '/accordions/' },
 				{ name: 'Alert', href: '/alerts' },
@@ -81,7 +82,7 @@
 			]
 		},
 		{
-			parent: '',
+			parent: 'COMPONENTS',
 			children: [
 				{ name: 'Button Group', href: '/button-groups' },
 				{ name: 'Card', href: '/cards' },
@@ -92,36 +93,36 @@
 			]
 		},
 		{
-			parent: '',
+			parent: 'COMPONENTS',
 			children: [
 				{ name: 'Form', href: '/forms' },
 				{ name: 'Icon', href: '/icons' },
 				{ name: 'List group', href: '/list-group' },
 				{ name: 'Modal', href: '/modals' },
-				{ name: 'Navbar', href: '/navbars' }
+				{ name: 'Navbar', href: '/navbars' },
+				{ name: 'Pagination', href: '/paginations' }
 			]
 		},
 		{
-			parent: '',
+			parent: 'COMPONENTS',
 			children: [
-				{ name: 'Pagination', href: '/paginations' },
 				{ name: 'Progress bar', href: '/progressbars' },
 				{ name: 'Sidebar', href: '/sidebars' },
 				{ name: 'Spinner', href: '/spinners' },
-				{ name: 'Tables', href: '/tables' }
+				{ name: 'Tables', href: '/tables' },
+				{ name: 'Tab', href: '/tabs' },
+				{ name: 'Timeline', href: '/timelines' }
 			]
 		},
 		{
-			parent: '',
+			parent: 'COMPONENTS',
 			children: [
-				{ name: 'Tab', href: '/tabs' },
-				{ name: 'Timeline', href: '/timelines' },
 				{ name: 'Toast', href: '/toasts' },
 				{ name: 'Tooltip', href: '/tooltips' }
 			]
 		},
 		{
-			parent: '',
+			parent: 'DOCS',
 			children: [
 				{ name: 'Getting Started', href: '/getting-started' },
 				{
@@ -168,6 +169,11 @@
 	];
 	let allRightsReserved = '';
 	let copyrightYear = '';
+	let liClass = 'mb-1';
+	let linksClass =
+		'grid gap-8 py-8 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-36  grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7';
+	let copyrightDivClass =
+		'py-6 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-36 text-gray-900 dark:bg-gray-700 md:flex md:items-center md:justify-between';
 </script>
 
 <Navbar {headerClass} {siteClass} {siteName} {logo} {alt} {spanClass} {logoClass}>
@@ -353,7 +359,16 @@
 	<div class="mt-4 w-full">
 		<slot />
 	</div>
-	<div class="pt-4 ">
-		<SitemapFooter {site} {socialMedia} {links} {allRightsReserved} {copyrightYear} />
-	</div>
 </main>
+<div class="pt-4 ">
+	<SitemapFooter
+		{site}
+		{socialMedia}
+		{links}
+		{allRightsReserved}
+		{copyrightYear}
+		{liClass}
+		{linksClass}
+		{copyrightDivClass}
+	/>
+</div>
