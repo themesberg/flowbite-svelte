@@ -34,8 +34,6 @@ let headerEx = [' Product name','Color','Category','Price','Edit']
 
 <Breadcrumb {crumbs}/>
 
-
-
 <h1 class="text-3xl w-full dark:text-white py-8">Table Components</h1>
 
 <h2 class="text-2xl mt-8 dark:text-white py-4">Examples</h2>
