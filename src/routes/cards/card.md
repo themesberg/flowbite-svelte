@@ -3,7 +3,7 @@ layout: cardLayout
 ---
 
 <script>
-  import { Card, Button, Table, TableDefaultRow, Breadcrumb }from '$lib/index';
+  import { Card, Button, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/Card.json'
   // Props table
   export let items = componentProps.props

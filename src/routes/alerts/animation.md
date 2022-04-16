@@ -3,7 +3,7 @@ layout: alertLayout
 ---
 
 <script>
-  import { Alert, Table, TableDefaultRow, Breadcrumb }from '$lib/index';
+  import { Alert, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import { flip } from 'svelte/animate';
   import componentProps from '../props/Alert.json'
   // Props table

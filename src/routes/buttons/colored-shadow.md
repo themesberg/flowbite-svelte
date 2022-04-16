@@ -3,7 +3,7 @@ layout: buttonLayout
 ---
 
 <script>
-  import { ColorShadowButton, Table, TableDefaultRow, Breadcrumb }from '$lib/index';
+  import { ColorShadowButton, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/ColorShadowButton.json'
   // Props table
   export let items = componentProps.props

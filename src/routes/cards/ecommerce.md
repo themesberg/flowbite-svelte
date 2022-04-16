@@ -3,7 +3,7 @@ layout: cardLayout
 ---
 
 <script>
-  import { EcommerceCard, Table, TableDefaultRow, Breadcrumb }from '$lib/index';
+  import { EcommerceCard, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/EcommerceCard.json'
   // Props table
   export let items = componentProps.props

@@ -3,7 +3,7 @@ layout: alertLayout
 ---
 
 <script>
-  import { Alert, Table, TableDefaultRow, Breadcrumb }from '$lib/index';
+  import { Alert, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/Alert.json'
   // Props table
   export let items = componentProps.props

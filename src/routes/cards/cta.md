@@ -3,7 +3,7 @@ layout: cardLayout
 ---
 
 <script>
-  import { CtaCard, Table, TableDefaultRow, Breadcrumb }from '$lib/index';
+  import { CtaCard, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/CtaCard.json'
   // Props table
   export let items = componentProps.props

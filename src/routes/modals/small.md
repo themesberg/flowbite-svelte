@@ -3,7 +3,7 @@ layout: modalLayout
 ---
 
 <script>
-  import { SmallModal, ModalButton, modalIdStore, Table, TableDefaultRow, Breadcrumb }from '$lib/index';
+  import { SmallModal, ModalButton, modalIdStore, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import { goto } from "$app/navigation";
   import componentProps1 from '../props/ModalButton.json'
   import componentProps2 from '../props/SmallModal.json'

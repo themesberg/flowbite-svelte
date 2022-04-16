@@ -3,7 +3,7 @@ layout: alertLayout
 ---
 
 <script>
-  import { BorderAlert, Table, TableDefaultRow, Breadcrumb }from '$lib/index';
+  import { BorderAlert, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/BorderAlert.json'
   // Props table
   export let items = componentProps.props

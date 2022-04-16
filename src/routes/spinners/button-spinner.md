@@ -3,7 +3,7 @@ layout: spinnerLayout
 ---
 
 <script>
-  import { SpinnerButton, Table, TableDefaultRow, Breadcrumb }from '$lib/index';
+  import { SpinnerButton, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/SpinnerButton.json'
   // Props table
   export let items = componentProps.props

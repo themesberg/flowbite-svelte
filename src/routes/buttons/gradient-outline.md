@@ -3,7 +3,7 @@ layout: buttonLayout
 ---
 
 <script>
-  import { GradientOutlineButton , Table, TableDefaultRow, Breadcrumb }from '$lib/index';
+  import { GradientOutlineButton , Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/GradientOutlineButton.json'
   // Props table
   export let items = componentProps.props

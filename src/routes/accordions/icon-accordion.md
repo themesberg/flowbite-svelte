@@ -3,7 +3,7 @@ layout: accordionLayout
 ---
 
 <script>
-  import { Accordion, AccordionItem, Table, TableDefaultRow, Breadcrumb }from '$lib/index';
+  import { Accordion, AccordionItem, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import { ArchiveIconOutline, BeakerIconOutline } from "@codewithshin/svelte-heroicons";
   import accordionProps from '../props/AccordionDefault.json'
   import accordionItemProps from '../props/AccordionItem.json'

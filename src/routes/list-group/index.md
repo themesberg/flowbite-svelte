@@ -3,7 +3,7 @@ layout: listgroupLayout
 ---
 
 <script>
-  import { List, Table, TableDefaultRow, Breadcrumb }from '$lib/index';
+  import { List, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import {
     AdjustmentsIconSolid,
     UserCircleIconSolid,

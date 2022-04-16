@@ -4,7 +4,7 @@ layout: buttonLayout
 
 <script>
   import {ArrowCircleRightIconOutline} from '@codewithshin/svelte-heroicons'
-  import { Button, Table, TableDefaultRow, Breadcrumb }from '$lib/index';
+  import { Button, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/Button.json'
   // Props table
   export let items = componentProps.props
