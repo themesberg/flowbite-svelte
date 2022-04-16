@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.13.9](https://github.com/shinokada/flowbite-svelte/compare/v0.13.8...v0.13.9) (2022-04-16)
+
+
+### Features
+
+* add focus on load to Input component ([5d0c7fb](https://github.com/shinokada/flowbite-svelte/commit/5d0c7fb7750aac2dc0df2ddd24a7c11cd66404c6))
+
+
+### Bug Fixes
+
+* add 100% to pre tag ([3c8eaf2](https://github.com/shinokada/flowbite-svelte/commit/3c8eaf257697c48121cc79496885e05309b302bc))
+* Input padding uses p-4, p-2.5 and p-2 depends on the size ([632bd5d](https://github.com/shinokada/flowbite-svelte/commit/632bd5d550b0268a93eec91598b35a854a45c081))
+* logo ([c28e9f3](https://github.com/shinokada/flowbite-svelte/commit/c28e9f3683140e1bb12f4667e26e5d7805d4ddb9))
+* moved p-tag and h3 tag css to app.css ([cb3d08e](https://github.com/shinokada/flowbite-svelte/commit/cb3d08edb98d96cadad9975e20488af55f4fa344))
+* refresh dev environment ([3a1b452](https://github.com/shinokada/flowbite-svelte/commit/3a1b452f925e14b2d159456c8f1f50b2972ae52b))
+* update carousel page ([27c621b](https://github.com/shinokada/flowbite-svelte/commit/27c621b5f7a97896635ddbc2aa9cccf624275e80))
+* update main nav. add transition to carousel ([3a9f572](https://github.com/shinokada/flowbite-svelte/commit/3a9f5723af8f54ef58c6902af5599114cc81fb86))
+
 ### [0.13.8](https://github.com/shinokada/flowbite-svelte/compare/v0.13.7...v0.13.8) (2022-04-14)
 
 
