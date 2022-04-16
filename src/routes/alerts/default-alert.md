@@ -16,7 +16,11 @@ layout: alertLayout
       href:'/'
     },
     {
-      label:'Alert',
+      label:'Alerts',
+      href:'/alerts/'
+    },
+    {
+      label:'Alert default',
       href:'/alerts/default-alert'
     }
   ]

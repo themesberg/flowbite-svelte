@@ -5,7 +5,13 @@
 <div class="container flex flex-wrap mx-auto mt-8 justify-center">
 	<h1 class="text-3xl dark:text-white w-full py-8 text-center">Button Components</h1>
 	<div class="p-4">
-		<Card img="/images/buttons.webp" btnColor="blue" header="DEFAULT" link="/buttons/default" />
+		<Card
+			img="/images/buttons.webp"
+			btnColor="blue"
+			header="DEFAULT"
+			link="/buttons/default"
+			btnLabel="Read more"
+		/>
 	</div>
 	<div class="p-4">
 		<Card
@@ -13,6 +19,7 @@
 			btnColor="green"
 			header="COLORED SHADOW"
 			link="/buttons/colored-shadow"
+			btnLabel="Read more"
 		/>
 	</div>
 	<div class="p-4">

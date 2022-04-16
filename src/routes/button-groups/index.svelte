@@ -10,6 +10,7 @@
 			btnColor="pink"
 			header="DEFAULT BUTTON GROUP"
 			link="/button-groups/default"
+			btnLabel="Read more"
 		/>
 	</div>
 	<div class="p-4">
@@ -18,6 +19,7 @@
 			btnColor="green"
 			header="OUTLINE BUTTON GROUP"
 			link="/button-groups/outline"
+			btnLabel="Read more"
 		/>
 	</div>
 </div>

@@ -10,6 +10,7 @@
 			btnColor="pink"
 			header="DEFAULT NAVBAR"
 			link="/navbars/default"
+			btnLabel="Read more"
 		/>
 	</div>
 	<div class="p-4">
@@ -18,6 +19,7 @@
 			btnColor="gray"
 			header="DROPDOWN NAVBAR"
 			link="/navbars/dropdown"
+			btnLabel="Read more"
 		/>
 	</div>
 </div>

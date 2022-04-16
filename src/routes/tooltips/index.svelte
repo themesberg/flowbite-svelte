@@ -10,6 +10,7 @@
 			btnColor="green"
 			header="Default Tooltip"
 			link="/tooltips/default"
+			btnLabel="Read more"
 		/>
 	</div>
 	<div class="p-4">
@@ -18,6 +19,7 @@
 			btnColor="pink"
 			header="Light Tooltip"
 			link="/tooltips/light"
+			btnLabel="Read more"
 		/>
 	</div>
 </div>

@@ -16,6 +16,10 @@ let crumbs = [
       href:'/'
     },
     {
+      label:'Alerts',
+      href:'/alerts/'
+    },
+    {
       label:'Border alert',
       href:'/alerts/border-alert'
     }

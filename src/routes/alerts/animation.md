@@ -38,8 +38,12 @@ let crumbs = [
       href:'/'
     },
     {
-      label:'Accordion',
-      href:'/accordions/default'
+      label:'Alerts',
+      href:'/alerts'
+    },
+    {
+      label:'Alerts animation',
+      href:'/alerts/animation'
     }
   ]
 </script>

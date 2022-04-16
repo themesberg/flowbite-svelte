@@ -10,6 +10,7 @@
 			btnColor="green"
 			header="DEFAULT ACCORDION"
 			link="/accordions/default"
+			btnLabel="Read more"
 		/>
 	</div>
 	<div class="p-4">
@@ -18,6 +19,7 @@
 			btnColor="blue"
 			header="ICON ACCORDION"
 			link="/accordions/icon-accordion"
+			btnLabel="Read more"
 		/>
 	</div>
 </div>

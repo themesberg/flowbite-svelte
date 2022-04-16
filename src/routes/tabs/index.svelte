@@ -10,6 +10,7 @@
 			btnColor="green"
 			header="Default Tabs"
 			link="/tabs/default-tabs"
+			btnLabel="Read more"
 		/>
 	</div>
 	<div class="p-4">
@@ -18,6 +19,7 @@
 			btnColor="indigo"
 			header="Interactive Tabs"
 			link="/tabs/interactive-tabs"
+			btnLabel="Read more"
 		/>
 	</div>
 	<div class="p-4">
@@ -26,6 +28,7 @@
 			btnColor="blue"
 			header="Interactive Tabs 2"
 			link="/tabs/interactive-tabs-2"
+			btnLabel="Read more"
 		/>
 	</div>
 	<div class="p-4">
@@ -34,10 +37,17 @@
 			btnColor="red"
 			header="Multiple Interactive Tabs"
 			link="/tabs/multiple-interactive-tabs"
+			btnLabel="Read more"
 		/>
 	</div>
 	<div class="p-4">
-		<Card img="/images/tabs.webp" btnColor="purple" header="Pill Tabs" link="/tabs/pilltabs" />
+		<Card
+			img="/images/tabs.webp"
+			btnColor="purple"
+			header="Pill Tabs"
+			link="/tabs/pilltabs"
+			btnLabel="Read more"
+		/>
 	</div>
 	<div class="p-4">
 		<Card
@@ -45,10 +55,17 @@
 			btnColor="pink"
 			header="Full width Tabs"
 			link="/tabs/full-width-tabs"
+			btnLabel="Read more"
 		/>
 	</div>
 	<div class="p-4">
-		<Card img="/images/tabs.webp" btnColor="yellow" header="Icon Tabs" link="/tabs/icon-tabs" />
+		<Card
+			img="/images/tabs.webp"
+			btnColor="yellow"
+			header="Icon Tabs"
+			link="/tabs/icon-tabs"
+			btnLabel="Read more"
+		/>
 	</div>
 	<div class="p-4">
 		<Card
@@ -56,6 +73,7 @@
 			btnColor="green"
 			header="Underline Tabs"
 			link="/tabs/underline-tabs"
+			btnLabel="Read more"
 		/>
 	</div>
 </div>

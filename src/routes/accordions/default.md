@@ -18,7 +18,11 @@ layout: accordionLayout
       href:'/'
     },
     {
-      label:'Accordion',
+      label:'Accordions',
+      href:'/accordions/'
+    },
+    {
+      label:'Accordion default',
       href:'/accordions/default'
     }
   ]

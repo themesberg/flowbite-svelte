@@ -10,6 +10,7 @@
 			btnColor="purple"
 			header="DEFAULT ALERTS"
 			link="/alerts/default-alert"
+			btnLabel="Read more"
 		/>
 	</div>
 	<div class="p-4">
@@ -18,6 +19,7 @@
 			btnColor="red"
 			header="BORDER ALERTS"
 			link="/alerts/border-alert"
+			btnLabel="Read more"
 		/>
 	</div>
 	<div class="p-4">
@@ -26,6 +28,7 @@
 			btnColor="blue"
 			header="INFORMAATION ALERTS"
 			link="/alerts/information-alert"
+			btnLabel="Read more"
 		/>
 	</div>
 </div>
