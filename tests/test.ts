@@ -94,6 +94,12 @@ test('Badge with Link page should have h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Badges with Link');
 });
 
+// Breadcrumbs
+test('Breadcrumb page should have h1', async ({ page }) => {
+	await page.goto('/breadcrumbs/');
+	expect(await page.textContent('h1')).toBe('Breadcrumb');
+});
+
 // Button groups
 test('Button Group main page should have h1', async ({ page }) => {
 	await page.goto('/button-groups');
@@ -198,10 +204,21 @@ test('Sign In Card page should have h1', async ({ page }) => {
 });
 
 // Carousel
-test('Carousel page should have h1', async ({ page }) => {
+test('Carousel main page should have h1', async ({ page }) => {
 	await page.goto('/carousels/');
+	expect(await page.textContent('h1')).toBe('Carousel Components');
+});
+
+test('Carousel default page should have h1', async ({ page }) => {
+	await page.goto('/carousels/default');
 	expect(await page.textContent('h1')).toBe('Carousel');
 });
+
+test('Carousel transition page should have h1', async ({ page }) => {
+	await page.goto('/carousels/transition');
+	expect(await page.textContent('h1')).toBe('Carousel transition');
+});
+
 
 // Darkmode
 test('Dark mode page should have h1', async ({ page }) => {

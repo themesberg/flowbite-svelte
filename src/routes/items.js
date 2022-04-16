@@ -49,9 +49,10 @@ export const cards = [
   { href: "/cards/signin", name: "SignIn" },
 ];
 
-// export const darkmode = [
-//   { href: "darkmode", name: "Dark mode" },
-// ]
+export const carousels = [
+  { href: "/carousels/default", name: "Default" },
+  { href: "/carousels/transition", name: "Transition" },
+]
 
 export const footers = [
   { href: "/footer/default", name: "Default" },

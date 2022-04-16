@@ -8,6 +8,7 @@
 		buttons,
 		buttonGroups,
 		cards,
+		carousels,
 		footers,
 		icons,
 		modals,
@@ -142,9 +143,11 @@
 	<div class="p-4">
 		<Card img="/images/carousel.webp" alt="Carousel">
 			<span slot="paragraph">
-				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-					<a href="/carousels" class="text-blue-600 hover:underline dark:text-blue-500">Carousel</a>
-				</p>
+				{#each carousels as { href, name }}
+					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
+						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+					</p>
+				{/each}
 			</span>
 		</Card>
 	</div>

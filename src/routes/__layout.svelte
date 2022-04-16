@@ -10,6 +10,7 @@
 		buttons,
 		buttonGroups,
 		cards,
+		carousels,
 		footers,
 		icons,
 		modals,
@@ -240,6 +241,9 @@
 		<h3 class="text-base pb-4">
 			<a href="/carousels">Carousel <Badge name="NEW" color="green" /></a>
 		</h3>
+		{#each carousels as { href, name, rel }}
+			<SidebarList {href} {name} {rel} {sideBarListClass} />
+		{/each}
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4">
