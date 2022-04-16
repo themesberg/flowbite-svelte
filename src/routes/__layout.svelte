@@ -27,7 +27,8 @@
 		img: '/images/flowbite-svelte-logo-40.png'
 	};
 	// Navbar
-	let logo = '/images/flowbite-svelte-logo-30.png';
+	let logo = '/images/flowbite-svelte-logo-95x66.svg';
+	let logoClass = 'w-8';
 	let alt = 'Flowbite Svelte';
 	let activeChildLi = 'block py-2 px-4 text-lg text-gray-700 hover:bg-gray-100 dark:text-white';
 	let childLi =
@@ -38,9 +39,9 @@
 	let navClass = 'py-0 px-8 bg-white text-lg bg-white dark:bg-gray-800 dark:text-white';
 	let navDivClass = 'pb-4';
 	let navDivClasslast = 'pb-24';
-	let siteClass = ' w-full';
+	let siteClass = ' w-full pt-0.5';
 	let spanClass =
-		'pl-2 self-center text-lg font-semibold text-gray-900 whitespace-nowrap dark:text-white';
+		'pl-2 self-center text-lg font-semibold text-gray-900 whitespace-nowrap xs:dark:text-white';
 
 	let topli =
 		'block py-2 pr-4 pl-3 text-gray-700 md:border-0 md:p-0 dark:text-gray-300  dark:hover:bg-gray-700 text-lg z-50  dark:bg-gray-800 dark:border-0 hover:bg-gray-100 bg-white';
@@ -166,7 +167,7 @@
 	let copyrightYear = '';
 </script>
 
-<Navbar {headerClass} {siteClass} {siteName} {logo} {alt} {spanClass}>
+<Navbar {headerClass} {siteClass} {siteName} {logo} {alt} {spanClass} {logoClass}>
 	<TopMenu {topMenus} {topMenuDiv} {topul} {topli} {activeChildLi} {childLi} />
 </Navbar>
 

@@ -20,7 +20,10 @@ export { default as Avatar } from './avatar/Avatar.svelte'
 // Badges
 export { default as Badge } from'./badges/Badge.svelte'
 export { default as BadgeIcon } from'./badges/BadgeIcon.svelte'
-export { default as BadgeLink } from'./badges/BadgeLink.svelte'
+export { default as BadgeLink } from './badges/BadgeLink.svelte'
+
+// Breadcrumbs
+export { default as Breadcrumb } from'./breadcrumbs/Breadcrumb.svelte'
 
 // Buttons
 export { default as Button } from'./buttons/Button.svelte'

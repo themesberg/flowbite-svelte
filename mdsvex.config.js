@@ -7,6 +7,7 @@ const config = defineConfig({
 		alertLayout: './src/routes/layouts/alertLayout.svelte',
 		avatarLayout: './src/routes/layouts/avatarLayout.svelte',
 		badgeLayout: './src/routes/layouts/badgeLayout.svelte',
+		breadcrumbLayout: './src/routes/layouts/breadcrumbLayout.svelte',
 		buttongroupLayout: './src/routes/layouts/buttongroupLayout.svelte',
 		buttonLayout: './src/routes/layouts/buttonLayout.svelte',
 		cardLayout: './src/routes/layouts/cardLayout.svelte',

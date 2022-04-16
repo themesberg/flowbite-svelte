@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 const config = {
 	content: [
     './src/**/*.{html,js,svelte,ts}',
@@ -6,7 +8,8 @@ const config = {
 
   theme: {
     screens: {
-      // 'xs': '430px',
+      'xs': '475px',
+      ...defaultTheme.screens,
     },
 		extend: {}
 	},

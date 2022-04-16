@@ -176,9 +176,9 @@ import { Input } from 'flowbite-svelte'
 <Input class="mb-6" size="sm:text-xs" placeholder="Small input" label="Small input"/>
 ```
 
-<h3 class="text-xl w-full dark:text-white py-8">Focus on load</h3>
+<h3 class="text-xl w-full dark:text-white py-8" id="Focus_on_load">Focus on load</h3>
 
-<p class="dark:text-white py-4 text-lg">To focus on an input field on load create a `ref` variable and bind it in an Input component. Add a `onMount` function as followings.</p>
+<p class="dark:text-white py-4 text-lg">To focus on an input field and a textarea field on load create a `ref` variable and bind it in an Input component. Add a `onMount` function as followings.</p>
 
 <p class="dark:text-white py-4 text-lg">In the next example, the First name field is focused on load.</p>
 
@@ -302,6 +302,10 @@ let textareaprops = {
 
 <Textarea {...textareaprops} />
 ```
+
+<h3 class="text-xl w-full dark:text-white py-8" id="Focus_on_load_textarea">Focus on load</h3>
+
+<p class="dark:text-white py-4 text-lg"><a href="#Focus_on_load" class="text-blue-600 hover:underline dark:text-blue-500">As mentioned in the Input field,</a> you can focus on the Textarea component on load.</p>
 
 <h2 class="text-2xl w-full dark:text-white py-8">Select input</h2>
 

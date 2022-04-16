@@ -8,3 +8,9 @@ pre{
     white-space: pre-wrap;
     width: 100%;
 }
+
+@layer base {
+    p {
+        /* @apply text-lg w-full text-gray-900 dark:text-white py-4; */
+    }
+}
