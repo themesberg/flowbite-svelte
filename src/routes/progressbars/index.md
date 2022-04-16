@@ -18,7 +18,7 @@ layout: progressbarLayout
 
 <h2 class="text-2xl w-full mt-8 dark:text-white py-4" id="Default_sidebar">Size</h2>
 
-<p class="dark:text-white py-4 text-lg">Use the `size` prop to change the size of a progress bar.</p>
+<p>Use the `size` prop to change the size of a progress bar.</p>
 
 <div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 
@@ -57,7 +57,7 @@ layout: progressbarLayout
 
 <h2 class="text-2xl w-full mt-8 dark:text-white py-8" id="Default_sidebar">Colors</h2>
 
-<p class="dark:text-white py-4 text-lg">Use the `color` prop to change the color of a progress bar.</p>
+<p>Use the `color` prop to change the color of a progress bar.</p>
 
 <div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 
@@ -116,7 +116,7 @@ layout: progressbarLayout
 
 <h2 class="text-2xl w-full mt-8 dark:text-white py-8" id="Default_sidebar">Label inside</h2>
 
-<p class="dark:text-white py-4 text-lg">Use the `labelInside` prop to add the progress in a progress bar.</p>
+<p>Use the `labelInside` prop to add the progress in a progress bar.</p>
 
 <div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 
@@ -131,7 +131,7 @@ layout: progressbarLayout
 
 <h2 class="text-2xl w-full mt-8 dark:text-white py-8" id="Default_sidebar">Label outside</h2>
 
-<p class="dark:text-white py-4 text-lg">Use the `labelOutside` prop to add the progress outside of a progress bar.</p>
+<p>Use the `labelOutside` prop to add the progress outside of a progress bar.</p>
 
 <div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 
@@ -145,7 +145,7 @@ layout: progressbarLayout
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
+<p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow {items} rowState='hover' />

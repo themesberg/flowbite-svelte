@@ -172,27 +172,27 @@ layout: paginationLayout
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
+<p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-<h3 class="text-xl w-full dark:text-white py-8">Pagination</h3>
+<h3>Pagination</h3>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow items={items1} rowState='hover' />
 </Table>
 
-<h3 class="text-xl w-full dark:text-white py-8">Previous</h3>
+<h3>Previous</h3>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow items={items2} rowState='hover' />
 </Table>
 
-<h3 class="text-xl w-full dark:text-white py-8">Next</h3>
+<h3>Next</h3>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow items={items3} rowState='hover' />
 </Table>
 
-<h3 class="text-xl w-full dark:text-white py-8">TableData</h3>
+<h3>TableData</h3>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow items={items4} rowState='hover' />

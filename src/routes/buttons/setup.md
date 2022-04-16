@@ -16,7 +16,7 @@ layout: buttonLayout
 
 <h1 class="text-3xl w-full dark:text-white pt-16">Button Component Set Up</h1>
 
-<p class="dark:text-white py-4 text-lg">Import Button in the script tag.</p>
+<p>Import Button in the script tag.</p>
 
 ```html
 <script>
@@ -26,7 +26,7 @@ layout: buttonLayout
 
 <h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Button handler</h2>
 
-<p class="dark:text-white py-4 text-lg">You can use on:click to listen to the event. Add your event handler.</p>
+<p>You can use on:click to listen to the event. Add your event handler.</p>
 
 ```html
 <script>

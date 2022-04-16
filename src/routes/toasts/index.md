@@ -17,7 +17,7 @@ import componentProps from '../props/Toast.json'
 
 <h1 class="text-3xl w-full dark:text-white pt-16">Toast Components</h1>
 
-<p class="dark:text-white py-4 text-lg">Import the Toast component and Icons.</p>
+<p>Import the Toast component and Icons.</p>
 
 ```html
 <script>
@@ -28,9 +28,9 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 
 <h2 class="text-2xl w-full dark:text-white py-8">Examples</h2>
 
-<p class="dark:text-white py-4 text-lg">Use fade, fly, slide, or blur for transitionType.</p>
+<p>Use fade, fly, slide, or blur for transitionType.</p>
 
-<h3 class="text-xl w-full dark:text-white py-8">Fade examples</h3>
+<h3>Fade examples</h3>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Toast>
@@ -54,9 +54,9 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 </Toast>
 ```
 
-<h3 class="text-xl w-full dark:text-white py-8">Slide examples</h3>
+<h3>Slide examples</h3>
 
-<p class="dark:text-white py-4 text-lg">You can use one of <a href="https://svelte.dev/docs#run-time-svelte-easing" target="_blank"  class="text-blue-600 hover:underline dark:text-blue-500">Svelte/easing</a>.</p>
+<p>You can use one of <a href="https://svelte.dev/docs#run-time-svelte-easing" target="_blank"  class="text-blue-600 hover:underline dark:text-blue-500">Svelte/easing</a>.</p>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
    <Toast transitionType="slide" iconColor='red'>
@@ -120,7 +120,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 </Toast>
 ```
 
-<h3 class="text-xl w-full dark:text-white py-8">Blur examples</h3>
+<h3>Blur examples</h3>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Toast transitionType="blur" iconColor='purple' transitionParams={{amount: 10}}>
@@ -164,7 +164,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 </Toast>
 ```
 
-<h3 class="text-xl w-full dark:text-white py-8">Fly examples</h3>
+<h3>Fly examples</h3>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Toast transitionType="fly" transitionParams={{x: 200}} iconColor="green">
@@ -210,7 +210,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 
 <h2 class="text-2xl w-full dark:text-white py-8">Icons</h2>
 
-<p class="dark:text-white py-4 text-lg">Use any <a href="/icons" class="text-blue-600 hover:underline dark:text-blue-500">icon components.</a></p>
+<p>Use any <a href="/icons" class="text-blue-600 hover:underline dark:text-blue-500">icon components.</a></p>
 
 ```html
 <script>
@@ -221,7 +221,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
+<p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow {items} rowState='hover' />

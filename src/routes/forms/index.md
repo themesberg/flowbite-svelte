@@ -134,13 +134,13 @@ onMount(() => {
 
 <h2 class="text-2xl w-full dark:text-white py-4">Input</h2>
 
-<p class="dark:text-white py-4 text-lg">The Input component allows you to change the input size, add disabled, helper text, and floating label.</p>
+<p>The Input component allows you to change the input size, add disabled, helper text, and floating label.</p>
 
-<h3 class="text-xl w-full dark:text-white py-8">Size</h3>
+<h3>Size</h3>
 
-<p class="dark:text-white py-4 text-lg">User the size prop to change the input size. Choose one from 'sm:text-md' | 'text-sm' | 'sm:text-xs'. The default size is text-sm.</p>
+<p>User the size prop to change the input size. Choose one from 'sm:text-md' | 'text-sm' | 'sm:text-xs'. The default size is text-sm.</p>
 
-<h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
+<h3>Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Input class="mb-6"
@@ -178,9 +178,9 @@ import { Input } from 'flowbite-svelte'
 
 <h3 class="text-xl w-full dark:text-white py-8" id="Focus_on_load">Focus on load</h3>
 
-<p class="dark:text-white py-4 text-lg">To focus on an input field and a textarea field on load create a `ref` variable and bind it in an Input component. Add a `onMount` function as followings.</p>
+<p>To focus on an input field and a textarea field on load create a `ref` variable and bind it in an Input component. Add a `onMount` function as followings.</p>
 
-<p class="dark:text-white py-4 text-lg">In the next example, the First name field is focused on load.</p>
+<p>In the next example, the First name field is focused on load.</p>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Input class="mb-6" placeholder="First name" label="First name" bind:ref/>
@@ -201,11 +201,11 @@ onMount(() => {
 <Input class="mb-6" placeholder="Last name" label="Last name"/>
 ```
 
-<h3 class="text-xl w-full dark:text-white py-8">Disabled</h3>
+<h3>Disabled</h3>
 
-<p class="dark:text-white py-4 text-lg">Add the disabled prop to change the input to disabled.</p>
+<p>Add the disabled prop to change the input to disabled.</p>
 
-<h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
+<h3>Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Input class="mb-6" disabled placeholder="disabled input" label="Disabled input"/>
@@ -217,11 +217,11 @@ onMount(() => {
 <Input class="mb-6" disabled readonly placeholder="disabled readonly" label="Disabled readonly input"/>
 ```
 
-<h3 class="text-xl w-full dark:text-white py-8">Helper text</h3>
+<h3>Helper text</h3>
 
-<p class="dark:text-white py-4 text-lg">Use the helper prop to add your helper text. You can use HTML in the helper text.</p>
+<p>Use the helper prop to add your helper text. You can use HTML in the helper text.</p>
 
-<h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
+<h3>Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Input label="Email" id="email" name="email" required placeholder="Your email" helper="You can add helper text in <b>HTML</b>."/>
@@ -233,7 +233,7 @@ onMount(() => {
 
 <h2 class="text-2xl w-full dark:text-white py-8">Floating label input</h2>
 
-<h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
+<h3>Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <form>
@@ -259,9 +259,9 @@ onMount(() => {
 
 <h2 class="text-2xl w-full dark:text-white py-8">Iconinput</h2>
 
-<p class="dark:text-white py-4 text-lg">With the Iconinput component, you can add <a href="https://flowbite-svelte.vercel.app/icons/heroicons">Heroicons</a> or <a href="https://flowbite-svelte.vercel.app/icons/simple-icons">Simple-icons</a>. Use iconClass to modify the icon color.</p>
+<p>With the Iconinput component, you can add <a href="https://flowbite-svelte.vercel.app/icons/heroicons">Heroicons</a> or <a href="https://flowbite-svelte.vercel.app/icons/simple-icons">Simple-icons</a>. Use iconClass to modify the icon color.</p>
 
-<h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
+<h3>Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Iconinput id="email" type="email" name="email" placeholder="Your email" label="Border" icon={AtSymbolIconSolid} iconClass="h-4 w-4 mr-2 text-blue-500"/>
@@ -282,7 +282,7 @@ onMount(() => {
 
 <h2 class="text-2xl w-full dark:text-white py-8">Textarea</h2>
 
-<h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
+<h3>Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Textarea {...textareaprops} />
@@ -305,11 +305,11 @@ let textareaprops = {
 
 <h3 class="text-xl w-full dark:text-white py-8" id="Focus_on_load_textarea">Focus on load</h3>
 
-<p class="dark:text-white py-4 text-lg"><a href="#Focus_on_load" class="text-blue-600 hover:underline dark:text-blue-500">As mentioned in the Input field,</a> you can focus on the Textarea component on load.</p>
+<p><a href="#Focus_on_load" class="text-blue-600 hover:underline dark:text-blue-500">As mentioned in the Input field,</a> you can focus on the Textarea component on load.</p>
 
 <h2 class="text-2xl w-full dark:text-white py-8">Select input</h2>
 
-<h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
+<h3>Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Select {...selectprops} bind:value={selected}>
@@ -339,7 +339,7 @@ let selectprops = {
 
 <h2 class="text-2xl w-full dark:text-white py-8">Checkbox</h2>
 
-<h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
+<h3>Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Checkbox options={checkboxOptions} {legend} />
@@ -380,7 +380,7 @@ let checkboxOptions= [
 
 <h2 class="text-2xl w-full dark:text-white py-8">Single checkobx</h2>
 
-<h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
+<h3>Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <SingleCheckbox name="rememberme" id="rememberme" required label="Remember me" />
@@ -392,7 +392,7 @@ let checkboxOptions= [
 
 <h2 class="text-2xl w-full dark:text-white py-8">Radio</h2>
 
-<h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
+<h3>Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Radio options={radiooptions} name={radioname}/>
@@ -427,7 +427,7 @@ let radioname='countries'
 
 <h2 class="text-2xl w-full dark:text-white py-8">File upload</h2>
 
-<h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
+<h3>Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Fileupload {...fileuploadprops} />
@@ -456,7 +456,7 @@ let fileuploadprops2 = {
 
 <h2 class="text-2xl w-full dark:text-white py-8">Toggle</h2>
 
-<h3 class="text-xl w-full dark:text-white py-4">Examples</h3>
+<h3>Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Toggle {...props}/>
@@ -512,72 +512,72 @@ let props3 = {
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
+<p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-<h3 class="text-xl w-full dark:text-white py-8">Input</h3>
+<h3>Input</h3>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow items={items1} rowState='hover' />
 </Table>
 
 
-<h3 class="text-xl w-full dark:text-white py-8">Iconinput</h3>
+<h3>Iconinput</h3>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow items={items2} rowState='hover' />
 </Table>
 
 
-<h3 class="text-xl w-full dark:text-white py-8">FloatingLabelInput</h3>
+<h3>FloatingLabelInput</h3>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow items={items3} rowState='hover' />
 </Table>
 
 
-<h3 class="text-xl w-full dark:text-white py-8">Toggle</h3>
+<h3>Toggle</h3>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow items={items4} rowState='hover' />
 </Table>
 
 
-<h3 class="text-xl w-full dark:text-white py-8">Textarea</h3>
+<h3>Textarea</h3>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow items={items5} rowState='hover' />
 </Table>
 
 
-<h3 class="text-xl w-full dark:text-white py-8">Select</h3>
+<h3>Select</h3>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow items={items6} rowState='hover' />
 </Table>
 
 
-<h3 class="text-xl w-full dark:text-white py-8">Fileupload</h3>
+<h3>Fileupload</h3>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow items={items7} rowState='hover' />
 </Table>
 
 
-<h3 class="text-xl w-full dark:text-white py-8">Radio</h3>
+<h3>Radio</h3>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow items={items8} rowState='hover' />
 </Table>
 
 
-<h3 class="text-xl w-full dark:text-white py-8">SingleCheckbox</h3>
+<h3>SingleCheckbox</h3>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow items={items9} rowState='hover' />
 </Table>
 
 
-<h3 class="text-xl w-full dark:text-white py-8">Checkbox</h3>
+<h3>Checkbox</h3>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow items={items10} rowState='hover' />

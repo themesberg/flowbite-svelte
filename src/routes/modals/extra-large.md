@@ -35,7 +35,7 @@ layout: modalLayout
 
 <h2 class="text-2xl w-full dark:text-white py-8">Setup</h2>
 
-<p class="dark:text-white py-4 text-lg">Import ExtraLargeModal and ModalButton components and set variables in the script tag. To close a modal, use `closeModal` function in your event handler.</p>
+<p>Import ExtraLargeModal and ModalButton components and set variables in the script tag. To close a modal, use `closeModal` function in your event handler.</p>
 
 
 ```html
@@ -74,7 +74,7 @@ layout: modalLayout
   quis nostrud exercitation ullamco.
 </ExtraLargeModal>
 
-<p class="dark:text-white py-4 text-lg"> Create a button and modal.</p>
+<p> Create a button and modal.</p>
 
 ```html
 <script>
@@ -173,15 +173,15 @@ const handlebtn1 = () => {
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
+<p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-<h3 class="text-xl w-full dark:text-white py-8">ModalButton</h3>
+<h3>ModalButton</h3>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow items={items1} rowState='hover' />
 </Table>
 
-<h3 class="text-xl w-full dark:text-white py-8">ExtraLargeModal</h3>
+<h3>ExtraLargeModal</h3>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow items={items2} rowState='hover' />

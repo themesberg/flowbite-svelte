@@ -27,13 +27,13 @@ import { DarkMode } from "flowbite-svelte";
 
 <h2 class="text-2xl w-full dark:text-white py-8"><a id="Props">Props</a></h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p>The component has the following props, type, and default values:</p>
 
 ```js
 let btnClass: string = "text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 fixed left-2 top-16 z-50"
 ```
 
-<p class="dark:text-white py-4 text-lg">Set your CSS and add it to the prop.:</p>
+<p>Set your CSS and add it to the prop.:</p>
 
 ```html
 <script>
@@ -45,7 +45,7 @@ let btnClass="Add your class here"
 <DarkMode {btnClass} />
 ```
 
-<p class="dark:text-white py-4 text-lg">Add the following to the body tag:</p>
+<p>Add the following to the body tag:</p>
 
 ```html
 <!-- src/app.html -->
@@ -56,9 +56,9 @@ let btnClass="Add your class here"
 
 <h2 class="text-2xl w-full dark:text-white py-8"><a id="How_to_change_Dark_mode_color">How to change Dark mode color</a></h2>
 
-<p class="dark:text-white text-lg w-full"><a href="https://chir.ag/projects/name-that-color/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Find the name of the color from hex color code.</a></p>
+<p><a href="https://chir.ag/projects/name-that-color/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Find the name of the color from hex color code.</a></p>
 
-<p class="dark:text-white text-lg w-full">Update tailwind.config.cjs:</p>
+<p>Update tailwind.config.cjs:</p>
 
 ```js
 // ...
@@ -82,7 +82,7 @@ let btnClass="Add your class here"
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
+<p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow {items} rowState='hover' />

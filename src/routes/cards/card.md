@@ -20,7 +20,7 @@ layout: cardLayout
 
 <h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
 
-<p class="dark:text-white py-4 text-lg">Import Card in the script tag.</p>
+<p>Import Card in the script tag.</p>
 
 ```html
 <script>
@@ -112,7 +112,7 @@ layout: cardLayout
 
 <h2 class="text-2xl w-full dark:text-white py-8">Card with a Button component</h2>
 
-<p class="dark:text-white py-4 text-lg">If you need a click handler rather than a link, use a Button component.</p>
+<p>If you need a click handler rather than a link, use a Button component.</p>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Card
@@ -209,7 +209,7 @@ layout: cardLayout
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
+<p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow {items} rowState='hover' />

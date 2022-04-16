@@ -42,7 +42,7 @@ layout: tabLayout
 
 <h2 class="text-2xl mt-8 dark:text-white py-8">Examples</h2>
 
-<p class="dark:text-white py-4 text-lg">It is possible to add other components to the `InteractiveTabs` component but using `InteractiveTabHead` and `TabContent` make it easy to add other components to tabs. Here we are adding a timeline component in the tab 1 and a card component in the tab 3:</p>
+<p>It is possible to add other components to the `InteractiveTabs` component but using `InteractiveTabHead` and `TabContent` make it easy to add other components to tabs. Here we are adding a timeline component in the tab 1 and a card component in the tab 3:</p>
 
 <div class="container rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <InteractiveTabHead tabs={tabhead}>
@@ -52,7 +52,7 @@ layout: tabLayout
       </Timeline>
     </TabContent>
 	<TabContent tab={tab2}>
-    <p class="dark:text-white py-4 text-lg">Test 2 content here</p>
+    <p>Test 2 content here</p>
   </TabContent>
 	<TabContent tab={tab3}>
     <Card header="Card in a tab">
@@ -100,7 +100,7 @@ import { InteractiveTabHead, TabContent, Card, Timeline,
     </Timeline>
   </TabContent>
 	<TabContent tab={tab2}>
-    <p class="dark:text-white py-4 text-lg">Test 2 content here</p>
+    <p>Test 2 content here</p>
   </TabContent>
 	<TabContent tab={tab3}>
     <Card header="Card in a tab">
@@ -114,15 +114,15 @@ import { InteractiveTabHead, TabContent, Card, Timeline,
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
+<p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-<h3 class="text-xl w-full dark:text-white py-8">InteractiveTabHead</h3>
+<h3>InteractiveTabHead</h3>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow items={items1} rowState='hover' />
 </Table>
 
-<h3 class="text-xl w-full dark:text-white py-8">TabContent</h3>
+<h3>TabContent</h3>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow items={items2} rowState='hover' />

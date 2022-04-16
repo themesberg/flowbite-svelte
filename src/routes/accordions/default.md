@@ -17,7 +17,7 @@ layout: accordionLayout
 
 <h1 class="text-3xl w-full dark:text-white pt-16">Accordion</h1>
 
-<p class="dark:text-white py-4 text-lg">Add id 1,2,3,... to AccordionItem component.</p>
+<p>Add id 1,2,3,... to AccordionItem component.</p>
 
 <div
   class="container flex flex-wrap justify-center rounded-xl py-8 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
@@ -164,7 +164,7 @@ layout: accordionLayout
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props: AccordionDefault</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values:</p>
+<p>The component has the following props, type, and default values:</p>
 
 ```js
 let duration: number = 0.2;
@@ -181,15 +181,15 @@ body
 
 <h2 class="text-2xl w-full dark:text-white py-8">Props</h2>
 
-<p class="dark:text-white py-4 text-lg">The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
+<p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
-<h3 class="text-xl mt-8 dark:text-white py-4">AccordionDefault</h3>
+<h3>AccordionDefault</h3>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow {items} rowState='hover' />
 </Table>
 
-<h3 class="text-xl mt-8 dark:text-white py-4">AccordionItem</h3>
+<h3>AccordionItem</h3>
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow items={items2} rowState='hover' />

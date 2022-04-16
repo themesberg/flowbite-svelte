@@ -9,13 +9,13 @@
 
 		<h2 class="text-2xl w-full dark:text-white pt-16 pb-8">Related components</h2>
 
-		<p class="dark:text-white text-lg w-full">
+		<p>
 			<a href="/accordions/default" class="text-blue-600 hover:underline dark:text-blue-500"
 				>Default Accordion</a
 			>
 		</p>
 
-		<p class="dark:text-white text-lg w-full">
+		<p>
 			<a href="/accordions/icon-accordion" class="text-blue-600 hover:underline dark:text-blue-500"
 				>Icon Accordion</a
 			>
@@ -23,7 +23,7 @@
 
 		<h2 class="text-2xl w-full dark:text-white pt-8 pb-4">References</h2>
 
-		<p class="dark:text-white text-lg w-full">
+		<p>
 			<a
 				href="https://flowbite.com/docs/components/accordion/"
 				target="_blank"
