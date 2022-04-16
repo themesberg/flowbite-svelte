@@ -174,6 +174,7 @@
 		'grid gap-8 py-8 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-36  grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7';
 	let copyrightDivClass =
 		'py-6 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-36 text-gray-900 dark:bg-gray-700 md:flex md:items-center md:justify-between';
+	let linkClass = 'hover:underline hover:text-blue-600';
 </script>
 
 <Navbar {headerClass} {siteClass} {siteName} {logo} {alt} {spanClass} {logoClass}>
@@ -370,5 +371,6 @@
 		{liClass}
 		{linksClass}
 		{copyrightDivClass}
+		{linkClass}
 	/>
 </div>

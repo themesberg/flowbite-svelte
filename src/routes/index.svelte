@@ -59,7 +59,11 @@
 			<span slot="paragraph">
 				{#each accordions as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+						<a
+							{href}
+							class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
+							>{name}</a
+						>
 					</p>
 				{/each}
 			</span>
@@ -70,7 +74,11 @@
 			<span slot="paragraph">
 				{#each alerts as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+						<a
+							{href}
+							class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
+							>{name}</a
+						>
 					</p>
 				{/each}
 			</span>
@@ -80,7 +88,11 @@
 		<Card img="/images/avatar.webp" alt="Avatar">
 			<span slot="paragraph">
 				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-					<a href="/avatar" class="text-blue-600 hover:underline dark:text-blue-500">Avatar</a>
+					<a
+						href="/avatar"
+						class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
+						>Avatar</a
+					>
 				</p>
 			</span>
 		</Card>
@@ -90,7 +102,11 @@
 			<span slot="paragraph">
 				{#each badges as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+						<a
+							{href}
+							class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
+							>{name}</a
+						>
 					</p>
 				{/each}
 			</span>
@@ -100,7 +116,9 @@
 		<Card img="/images/breadcrumb.webp" alt="Breadcrumb">
 			<span slot="paragraph">
 				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-					<a href="/breadcrumbs" class="text-blue-600 hover:underline dark:text-blue-500"
+					<a
+						href="/breadcrumbs"
+						class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
 						>Breadcrumb</a
 					>
 				</p>
@@ -112,7 +130,11 @@
 			<span slot="paragraph">
 				{#each buttonGroups as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+						<a
+							{href}
+							class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
+							>{name}</a
+						>
 					</p>
 				{/each}
 			</span>
@@ -123,7 +145,11 @@
 			<span slot="paragraph">
 				{#each buttons as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+						<a
+							{href}
+							class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
+							>{name}</a
+						>
 					</p>
 				{/each}
 			</span>
@@ -134,7 +160,11 @@
 			<span slot="paragraph">
 				{#each cards as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+						<a
+							{href}
+							class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
+							>{name}</a
+						>
 					</p>
 				{/each}
 			</span>
@@ -145,7 +175,11 @@
 			<span slot="paragraph">
 				{#each carousels as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+						<a
+							{href}
+							class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
+							>{name}</a
+						>
 					</p>
 				{/each}
 			</span>
@@ -155,7 +189,11 @@
 		<Card img="/images/darkmode.webp" alt="Darkmode">
 			<span slot="paragraph">
 				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-					<a href="/darkmode" class="text-blue-600 hover:underline dark:text-blue-500">Dark mode</a>
+					<a
+						href="/darkmode"
+						class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
+						>Dark mode</a
+					>
 				</p>
 			</span>
 		</Card>
@@ -164,7 +202,10 @@
 		<Card img="/images/dropdowns.webp" alt="Dropdowns">
 			<span slot="paragraph">
 				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-					<a href="/dropdowns" class="text-blue-600 hover:underline dark:text-blue-500">Dropdowns</a
+					<a
+						href="/dropdowns"
+						class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
+						>Dropdowns</a
 					>
 				</p>
 			</span>
@@ -174,7 +215,11 @@
 		<Card img="/images/forms.webp" alt="Forms">
 			<span slot="paragraph">
 				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-					<a href="/forms" class="text-blue-600 hover:underline dark:text-blue-500">Forms</a>
+					<a
+						href="/forms"
+						class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
+						>Forms</a
+					>
 				</p>
 			</span>
 		</Card>
@@ -184,7 +229,11 @@
 			<span slot="paragraph">
 				{#each footers as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+						<a
+							{href}
+							class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
+							>{name}</a
+						>
 					</p>
 				{/each}
 			</span>
@@ -195,7 +244,11 @@
 			<span slot="paragraph">
 				{#each icons as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+						<a
+							{href}
+							class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
+							>{name}</a
+						>
 					</p>
 				{/each}
 			</span>
@@ -205,7 +258,9 @@
 		<Card img="/images/list-group.webp" alt="List group">
 			<span slot="paragraph">
 				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-					<a href="/list-group" class="text-blue-600 hover:underline dark:text-blue-500"
+					<a
+						href="/list-group"
+						class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
 						>List group</a
 					>
 				</p>
@@ -217,7 +272,11 @@
 			<span slot="paragraph">
 				{#each modals as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+						<a
+							{href}
+							class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
+							>{name}</a
+						>
 					</p>
 				{/each}
 			</span>
@@ -228,7 +287,11 @@
 			<span slot="paragraph">
 				{#each navbar as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+						<a
+							{href}
+							class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
+							>{name}</a
+						>
 					</p>
 				{/each}
 			</span>
@@ -238,7 +301,9 @@
 		<Card img="/images/pagination.webp" alt="Pagination">
 			<span slot="paragraph">
 				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-					<a href="/paginations" class="text-blue-600 hover:underline dark:text-blue-500"
+					<a
+						href="/paginations"
+						class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
 						>Pagination</a
 					>
 				</p>
@@ -249,7 +314,9 @@
 		<Card img="/images/progressbar.webp" alt="Progress bar">
 			<span slot="paragraph">
 				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-					<a href="/progressbars" class="text-blue-600 hover:underline dark:text-blue-500"
+					<a
+						href="/progressbars"
+						class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
 						>Progress bar</a
 					>
 				</p>
@@ -260,7 +327,11 @@
 		<Card img="/images/sidebar.webp" alt="Sidebar">
 			<span slot="paragraph">
 				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-					<a href="/sidebars" class="text-blue-600 hover:underline dark:text-blue-500">Sidebar</a>
+					<a
+						href="/sidebars"
+						class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
+						>Sidebar</a
+					>
 				</p>
 			</span>
 		</Card>
@@ -270,7 +341,11 @@
 			<span slot="paragraph">
 				{#each spinners as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+						<a
+							{href}
+							class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
+							>{name}</a
+						>
 					</p>
 				{/each}
 			</span>
@@ -280,7 +355,11 @@
 		<Card img="/images/table.webp" alt="Tables">
 			<span slot="paragraph">
 				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-					<a href="/tables" class="text-blue-600 hover:underline dark:text-blue-500">Table</a>
+					<a
+						href="/tables"
+						class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
+						>Table</a
+					>
 				</p>
 			</span>
 		</Card>
@@ -290,7 +369,11 @@
 			<span slot="paragraph">
 				{#each tabs as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+						<a
+							{href}
+							class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
+							>{name}</a
+						>
 					</p>
 				{/each}
 			</span>
@@ -301,7 +384,11 @@
 			<span slot="paragraph">
 				{#each timelines as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+						<a
+							{href}
+							class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
+							>{name}</a
+						>
 					</p>
 				{/each}
 			</span>
@@ -311,7 +398,11 @@
 		<Card img="/images/toast.webp" alt="Toast">
 			<span slot="paragraph">
 				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-					<a href="/toasts" class="text-blue-600 hover:underline dark:text-blue-500">Toast</a>
+					<a
+						href="/toasts"
+						class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
+						>Toast</a
+					>
 				</p>
 			</span>
 		</Card>
@@ -321,7 +412,11 @@
 			<span slot="paragraph">
 				{#each tooltips as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-blue-600 hover:underline dark:text-blue-500">{name}</a>
+						<a
+							{href}
+							class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500"
+							>{name}</a
+						>
 					</p>
 				{/each}
 			</span>
