@@ -10,14 +10,14 @@ layout: alertLayout
 	let propHeader = ['Name', 'Type', 'Default']
 	// console.log(items)
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
-let crumbs = [
+  let crumbs = [
     {
       label:'Home',
       href:'/'
     },
     {
-      label:'Accordion',
-      href:'/accordions/default'
+      label:'Alert',
+      href:'/alerts/default-alert'
     }
   ]
 </script>

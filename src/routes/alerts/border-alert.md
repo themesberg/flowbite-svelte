@@ -10,9 +10,19 @@ layout: alertLayout
 	let propHeader = ['Name', 'Type', 'Default']
 	// console.log(items)
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
-
+let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Border alert',
+      href:'/alerts/border-alert'
+    }
+  ]
 </script>
 
+<Breadcrumb {crumbs}/>
 <h1 class="text-3xl w-full dark:text-white py-8">Border Alert</h1>
 
 <h2 class="text-2xl w-full dark:text-white py-8">Set up</h2>
