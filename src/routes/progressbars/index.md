@@ -3,7 +3,7 @@ layout: progressbarLayout
 ---
 
 <script>
-  import { Progressbar, Table, TableDefaultRow } from '$lib/index'
+  import { Progressbar, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
 	import componentProps from '../props/Progressbar.json'
   // Props table
   export let items = componentProps.props

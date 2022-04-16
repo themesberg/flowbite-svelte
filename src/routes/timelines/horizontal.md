@@ -3,7 +3,7 @@ layout: timelineLayout
 ---
 
 <script lang="ts">
-	import { TimelineItemHorizontal, TimelineHorizontal, Table, TableDefaultRow } from '$lib/index';
+	import { TimelineItemHorizontal, TimelineHorizontal, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 	import { CalendarIconOutline, AdjustmentsIconSolid } from '@codewithshin/svelte-heroicons';
 	import componentProps1 from '../props/TimelineItemHorizontal.json'
   import componentProps2 from '../props/TimelineHorizontal.json'

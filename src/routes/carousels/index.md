@@ -3,7 +3,7 @@ layout: carouselLayout
 ---
 
 <script>
-  import { Carousel, Table, TableDefaultRow } from '$lib/index';
+  import { Carousel, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import { images } from './imageData';
   import componentProps from '../props/Carousel.json'
   // Props table

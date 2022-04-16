@@ -3,7 +3,7 @@ layout: timelineLayout
 ---
 
 <script lang="ts">
-	import { Activity, ActivityItem, Table, TableDefaultRow } from '$lib/index';
+	import { Activity, ActivityItem, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 	import componentProps1 from '../props/Activity.json'
   import componentProps2 from '../props/ActivityItem.json'
   export let items1 = componentProps1.props

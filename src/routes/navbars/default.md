@@ -3,7 +3,7 @@ layout: navbarLayout
 ---
 
 <script>
-  import { Navbar, Table, TableDefaultRow }from '$lib/index';
+  import { Navbar, Table, TableDefaultRow, Breadcrumb }from '$lib/index';
   import componentProps from '../props/Navbar.json'
   // Props table
   export let items = componentProps.props

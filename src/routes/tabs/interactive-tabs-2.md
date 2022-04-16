@@ -4,7 +4,7 @@ layout: tabLayout
 
 <script>
   import { InteractiveTabHead, TabContent, Card, Timeline,
-		TimelineItem, Table, TableDefaultRow }from '$lib/index';
+		TimelineItem, Table, TableDefaultRow, Breadcrumb }from '$lib/index';
 	import componentProps1 from '../props/InteractiveTabHead.json'
   import componentProps2 from '../props/TabContent.json'
   export let items1 = componentProps1.props

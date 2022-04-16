@@ -3,7 +3,7 @@ layout: tabLayout
 ---
 
 <script>
-  import { InteractiveTabs, Table, TableDefaultRow }from '$lib/index';
+  import { InteractiveTabs, Table, TableDefaultRow, Breadcrumb }from '$lib/index';
   import componentProps from '../props/InteractiveTabs.json'
   // Props table
   export let items = componentProps.props

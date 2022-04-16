@@ -3,7 +3,7 @@ layout: tabLayout
 ---
 
 <script>
-  import { FullWidthTabs, Table, TableDefaultRow } from '$lib/index'
+  import { FullWidthTabs, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
   import componentProps from '../props/FullWidthTabs.json'
   // Props table
   export let items = componentProps.props

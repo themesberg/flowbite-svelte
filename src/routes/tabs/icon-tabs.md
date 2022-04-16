@@ -3,7 +3,7 @@ layout: tabLayout
 ---
 
 <script>
-	import { IconTabs, Table, TableDefaultRow } from '$lib/index';
+	import { IconTabs, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 	import {
 		UserCircleIconSolid,
 		ViewGridIconSolid,

@@ -3,7 +3,7 @@ layout: modalLayout
 ---
 
 <script>
-  import { SignInModal, ModalButton, Table, TableDefaultRow }from '$lib/index';
+  import { SignInModal, ModalButton, Table, TableDefaultRow, Breadcrumb }from '$lib/index';
   import componentProps1 from '../props/ModalButton.json'
   import componentProps2 from '../props/SignInModal.json'
   export let items1 = componentProps1.props

@@ -3,7 +3,7 @@ layout: tabLayout
 ---
 
 <script>
-  import { DefaultTabs, Table, TableDefaultRow }from '$lib/index';
+  import { DefaultTabs, Table, TableDefaultRow, Breadcrumb }from '$lib/index';
   import { UserCircleIconSolid, ViewGridIconSolid, AdjustmentsIconSolid, ClipboardListIconSolid } from '@codewithshin/svelte-heroicons'
   import componentProps from '../props/DefaultTabs.json'
   // Props table

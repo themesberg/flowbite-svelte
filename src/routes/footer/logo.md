@@ -3,7 +3,7 @@ layout: footerLayout
 ---
 
 <script>
-  import { LogoFooter, Table, TableDefaultRow } from '$lib/index'
+  import { LogoFooter, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
   import componentProps from '../props/LogoFooter.json'
   // Props table
   export let items = componentProps.props

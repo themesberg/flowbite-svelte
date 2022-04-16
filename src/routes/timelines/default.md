@@ -3,7 +3,7 @@ layout: timelineLayout
 ---
 
 <script lang="ts">
-	import { Timeline, TimelineItem, Table, TableDefaultRow } from '$lib/index';
+	import { Timeline, TimelineItem, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps1 from '../props/Timeline.json'
   import componentProps2 from '../props/TimelineItem.json'
   export let items1 = componentProps1.props

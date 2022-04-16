@@ -3,7 +3,7 @@ layout: timelineLayout
 ---
 
 <script lang="ts">
-	import { Group, GroupItem, Table, TableDefaultRow } from '$lib/index';
+	import { Group, GroupItem, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 	import componentProps1 from '../props/Group.json'
   import componentProps2 from '../props/GroupItem.json'
   export let items1 = componentProps1.props

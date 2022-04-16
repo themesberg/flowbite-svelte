@@ -3,7 +3,7 @@ layout: badgeLayout
 ---
 
 <script>
-  import { BadgeIcon, Table, TableDefaultRow } from '$lib/index'
+  import { BadgeIcon, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
   import {InformationCircleIconOutline} from '@codewithshin/svelte-heroicons'
   import componentProps from '../props/BadgeLink.json'
   // Props table

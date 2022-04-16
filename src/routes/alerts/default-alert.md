@@ -3,15 +3,26 @@ layout: alertLayout
 ---
 
 <script>
-  import { Alert, Table, TableDefaultRow }from '$lib/index';
+  import { Alert, Table, TableDefaultRow, Breadcrumb }from '$lib/index';
   import componentProps from '../props/Alert.json'
   // Props table
   export let items = componentProps.props
 	let propHeader = ['Name', 'Type', 'Default']
 	// console.log(items)
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
-
+let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Accordion',
+      href:'/accordions/default'
+    }
+  ]
 </script>
+
+<Breadcrumb {crumbs}/>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Alert</h1>
 

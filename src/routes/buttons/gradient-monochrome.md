@@ -3,7 +3,7 @@ layout: buttonLayout
 ---
 
 <script>
-  import { GradientMonochromeButton , Table, TableDefaultRow }from '$lib/index';
+  import { GradientMonochromeButton , Table, TableDefaultRow, Breadcrumb }from '$lib/index';
   import componentProps from '../props/GradientMonochromeButton.json'
   // Props table
   export let items = componentProps.props

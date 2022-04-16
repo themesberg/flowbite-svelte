@@ -3,7 +3,7 @@ layout: toastLayout
 ---
 
 <script>
-import { Toast, Table, TableDefaultRow } from '$lib/index'
+import { Toast, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
 import { quintOut, elasticOut } from 'svelte/easing';
 import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIconSolid} from '@codewithshin/svelte-heroicons'
 import componentProps from '../props/Toast.json'

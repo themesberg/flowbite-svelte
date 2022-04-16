@@ -3,7 +3,7 @@ layout: sidebarLayout
 ---
 
 <script>
-  import { Sidebar, Table, TableDefaultRow } from '$lib/index';
+  import { Sidebar, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/Sidebar.json'
   // Props table
   export let items = componentProps.props

@@ -3,7 +3,7 @@ layout: footerLayout
 ---
 
 <script>
-  import { SimpleFooter, Table, TableDefaultRow } from '$lib/index'
+  import { SimpleFooter, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
   import componentProps from '../props/SimpleFooter.json'
   // Props table
   export let items = componentProps.props

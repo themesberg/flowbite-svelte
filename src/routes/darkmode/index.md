@@ -3,7 +3,7 @@ layout: darkmodeLayout
 ---
 
 <script>
-import { Table, TableDefaultRow }from '$lib/index';
+import { Table, TableDefaultRow, Breadcrumb }from '$lib/index';
   import componentProps from '../props/DarkMode.json'
   // Props table
   export let items = componentProps.props

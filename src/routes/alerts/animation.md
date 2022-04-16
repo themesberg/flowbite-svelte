@@ -3,7 +3,7 @@ layout: alertLayout
 ---
 
 <script>
-  import { Alert, Table, TableDefaultRow }from '$lib/index';
+  import { Alert, Table, TableDefaultRow, Breadcrumb }from '$lib/index';
   import { flip } from 'svelte/animate';
   import componentProps from '../props/Alert.json'
   // Props table
@@ -32,8 +32,19 @@ layout: alertLayout
 	function remove(alert) {
 		alerts = alerts.filter((t) => t !== alert);
 	}
+let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Accordion',
+      href:'/accordions/default'
+    }
+  ]
 </script>
 
+<Breadcrumb {crumbs}/>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Alert Animation Examples</h1>
 

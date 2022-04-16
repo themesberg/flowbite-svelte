@@ -3,7 +3,7 @@ layout: cardLayout
 ---
 
 <script>
-  import { InteractiveCard, Table, TableDefaultRow }from '$lib/index';
+  import { InteractiveCard, Table, TableDefaultRow, Breadcrumb }from '$lib/index';
   import componentProps from '../props/InteractiveCard.json'
   // Props table
   export let items = componentProps.props

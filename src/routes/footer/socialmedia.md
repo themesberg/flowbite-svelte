@@ -3,7 +3,7 @@ layout: footerLayout
 ---
 
 <script>
-import { SocialMediaFooter, Table, TableDefaultRow } from '$lib/index'
+import { SocialMediaFooter, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
 import componentProps from '../props/SocialMediaFooter.json'
   // Props table
   export let items = componentProps.props

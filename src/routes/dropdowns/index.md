@@ -3,7 +3,7 @@ layout: dropdownLayout
 ---
 
 <script>
-  import { Dropdown, Table, TableDefaultRow } from '$lib/index';
+  import { Dropdown, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/DropdownDefault.json'
   // Props table
   export let dropdownItems = componentProps.props

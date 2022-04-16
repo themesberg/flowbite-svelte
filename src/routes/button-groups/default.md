@@ -3,7 +3,7 @@ layout: buttongroupLayout
 ---
 
 <script>
-  import {ButtonGroup, ButtonGroupOutline, Table, TableDefaultRow } from '$lib/index';
+  import {ButtonGroup, ButtonGroupOutline, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import {UserCircleIconSolid, AdjustmentsIconSolid, CloudDownloadIconSolid} from "@codewithshin/svelte-heroicons"
   import componentProps from '../props/ButtonGroup.json'
   import componentProps2 from '../props/ButtonGroupOutline.json'

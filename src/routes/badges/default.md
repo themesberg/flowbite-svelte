@@ -3,7 +3,7 @@ layout: badgeLayout
 ---
 
 <script>
-  import { Badge, Table, TableDefaultRow } from '$lib/index'
+  import { Badge, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
   import componentProps from '../props/Badge.json'
   // Props table
   export let items = componentProps.props

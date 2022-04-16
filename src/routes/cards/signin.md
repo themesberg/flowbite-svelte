@@ -3,7 +3,7 @@ layout: cardLayout
 ---
 
 <script>
-  import { SignInCard, Table, TableDefaultRow } from '$lib/index';
+  import { SignInCard, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/SignInCard.json'
   // Props table
   export let items = componentProps.props

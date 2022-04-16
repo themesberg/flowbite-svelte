@@ -4,7 +4,7 @@ layout: badgeLayout
 
 <script>
   import {InformationCircleIconOutline} from '@codewithshin/svelte-heroicons'
-  import {BadgeLink, Table, TableDefaultRow } from '$lib/index'
+  import {BadgeLink, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
   import componentProps from '../props/BadgeLink.json'
   // Props table
   export let items = componentProps.props

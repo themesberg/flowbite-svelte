@@ -3,7 +3,7 @@ layout: carouselLayout
 ---
 
 <script>
-  import { CarouselTransition, Table, TableDefaultRow } from '$lib/index';
+  import { CarouselTransition, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import { quartInOut, sineInOut, bounceInOut, quintOut } from 'svelte/easing';
   import CarouselAnimation from '$lib/carousels/CarouselAnimation.svelte'
   import { images } from './imageData';

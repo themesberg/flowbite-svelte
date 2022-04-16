@@ -3,7 +3,7 @@ layout: tabLayout
 ---
 
 <script>
-import { UnderlineTabs, Table, TableDefaultRow }from '$lib/index';
+import { UnderlineTabs, Table, TableDefaultRow, Breadcrumb }from '$lib/index';
 import componentProps from '../props/UnderlineTabs.json'
   // Props table
   export let items = componentProps.props

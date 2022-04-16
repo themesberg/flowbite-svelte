@@ -3,7 +3,7 @@ layout: paginationLayout
 ---
 
 <script lang="ts">
-	import { Pagination, Previous, Next, TableData, Table, TableDefaultRow } from '$lib/index';
+	import { Pagination, Previous, Next, TableData, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 	import componentProps1 from '../props/Pagination.json'
   import componentProps2 from '../props/Previous.json'
 	import componentProps3 from '../props/Next.json'
