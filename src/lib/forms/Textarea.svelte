@@ -5,7 +5,7 @@
 	export let name: string = 'message';
 	export let label: string = 'Your message';
 	export let rows: number = 4;
-	export let ref: null = null;
+	export let ref: HTMLElement = null;
 	export let placeholder: string = 'Leave a comment...';
 	export let labelClass: string = 'block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400';
 	export let textareaClass: string =

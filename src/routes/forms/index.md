@@ -31,7 +31,6 @@ let propHeader = ['Name', 'Type', 'Default']
 // console.log(items)
 let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
-
 let props = {
   name: 'toggle-example',
   id: 'toggle-example',
@@ -180,7 +179,9 @@ import { Input } from 'flowbite-svelte'
 
 <p>To focus on an input field and a textarea field on load create a `ref` variable and bind it in an Input component. Add a `onMount` function as followings.</p>
 
-<p>In the next example, the First name field is focused on load.</p>
+<p>In the next example, when you reload/refresh the page, the First name field is focused on load.</p>
+
+<p>If you want to use this on your website, your link to the page must have `rel="external"`.</p>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Input class="mb-6" placeholder="First name" label="First name" bind:ref/>
