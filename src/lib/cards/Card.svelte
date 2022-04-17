@@ -70,7 +70,7 @@
 		{#if $$slots.paragraph}
 			<slot name="paragraph" />
 		{/if}
-		{#if link}
+		{#if link && btnLabel}
 			<a href={link} {rel} class={buttonClass}>
 				{btnLabel}
 				<svg

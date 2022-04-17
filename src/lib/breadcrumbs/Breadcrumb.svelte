@@ -1,8 +1,6 @@
 <script lang="ts">
-	export let crumbs: {
-		label: string;
-		href: string;
-	}[] = [];
+	import type { CrumbType } from '../types';
+	export let crumbs: CrumbType[] = [];
 	export let homeClass: string =
 		'inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white';
 	export let crumbClass: string =

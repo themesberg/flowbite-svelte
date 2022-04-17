@@ -21,6 +21,10 @@
 	const handleClick = () => {
 		goto('/getting-started');
 	};
+
+	// Cards
+	let divClass =
+		'max-w-sm md:max-w-xs lg:max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700';
 </script>
 
 <div class="relative bg-white overflow-hidden mt-8 lg:mb-8 mx-auto dark:bg-gray-800">
@@ -55,7 +59,7 @@
 
 <div class="container flex flex-wrap mx-auto mt-2 justify-center">
 	<div class="p-4">
-		<Card img="/images/accordions.webp" alt="Accordions">
+		<Card img="/images/accordions.webp" alt="Accordions" link="/accordions" {divClass}>
 			<span slot="paragraph">
 				{#each accordions as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
@@ -70,7 +74,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/alerts.webp" alt="Alerts">
+		<Card img="/images/alerts.webp" alt="Alerts" link="/alerts" {divClass}>
 			<span slot="paragraph">
 				{#each alerts as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
@@ -85,7 +89,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/avatar.webp" alt="Avatar">
+		<Card img="/images/avatar.webp" alt="Avatar" link="/avatar" {divClass}>
 			<span slot="paragraph">
 				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
 					<a
@@ -98,7 +102,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/badges.webp" alt="Badges">
+		<Card img="/images/badges.webp" alt="Badges" link="/badges" {divClass}>
 			<span slot="paragraph">
 				{#each badges as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
@@ -113,7 +117,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/breadcrumb.webp" alt="Breadcrumb">
+		<Card img="/images/breadcrumb.webp" alt="Breadcrumb" link="/breadcrumbs" {divClass}>
 			<span slot="paragraph">
 				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
 					<a
@@ -126,7 +130,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/buttongroups.webp" alt="Button Groups">
+		<Card img="/images/buttongroups.webp" alt="Button Groups" link="button-groups" {divClass}>
 			<span slot="paragraph">
 				{#each buttonGroups as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
@@ -141,7 +145,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/buttons.webp" alt="Buttons">
+		<Card img="/images/buttons.webp" alt="Buttons" link="/buttons" {divClass}>
 			<span slot="paragraph">
 				{#each buttons as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
@@ -156,7 +160,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/cards.webp" alt="Cards">
+		<Card img="/images/cards.webp" alt="Cards" link="/cards" {divClass}>
 			<span slot="paragraph">
 				{#each cards as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
@@ -171,7 +175,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/carousel.webp" alt="Carousel">
+		<Card img="/images/carousel.webp" alt="Carousel" link="carousels" {divClass}>
 			<span slot="paragraph">
 				{#each carousels as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
@@ -186,7 +190,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/darkmode.webp" alt="Darkmode">
+		<Card img="/images/darkmode.webp" alt="Darkmode" link="/darkmode" {divClass}>
 			<span slot="paragraph">
 				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
 					<a
@@ -199,7 +203,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/dropdowns.webp" alt="Dropdowns">
+		<Card img="/images/dropdowns.webp" alt="Dropdowns" link="dropdowns" {divClass}>
 			<span slot="paragraph">
 				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
 					<a
@@ -212,7 +216,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/forms.webp" alt="Forms">
+		<Card img="/images/forms.webp" alt="Forms" link="/forms" {divClass}>
 			<span slot="paragraph">
 				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
 					<a
@@ -225,7 +229,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/footer.webp" alt="Footer">
+		<Card img="/images/footer.webp" alt="Footer" link="/footer" {divClass}>
 			<span slot="paragraph">
 				{#each footers as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
@@ -240,7 +244,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/icons.webp" alt="Icons">
+		<Card img="/images/icons.webp" alt="Icons" link="/icons" {divClass}>
 			<span slot="paragraph">
 				{#each icons as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
@@ -255,7 +259,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/list-group.webp" alt="List group">
+		<Card img="/images/list-group.webp" alt="List group" link="/list-group" {divClass}>
 			<span slot="paragraph">
 				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
 					<a
@@ -268,7 +272,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/modals.webp" alt="Modals">
+		<Card img="/images/modals.webp" alt="Modals" link="/modals" {divClass}>
 			<span slot="paragraph">
 				{#each modals as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
@@ -283,7 +287,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/navbar.webp" alt="Navbars">
+		<Card img="/images/navbar.webp" alt="Navbars" link="/navbars" {divClass}>
 			<span slot="paragraph">
 				{#each navbar as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
@@ -298,7 +302,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/pagination.webp" alt="Pagination">
+		<Card img="/images/pagination.webp" alt="Pagination" link="/paginations" {divClass}>
 			<span slot="paragraph">
 				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
 					<a
@@ -311,7 +315,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/progressbar.webp" alt="Progress bar">
+		<Card img="/images/progressbar.webp" alt="Progress bar" link="/progressbars" {divClass}>
 			<span slot="paragraph">
 				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
 					<a
@@ -324,7 +328,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/sidebar.webp" alt="Sidebar">
+		<Card img="/images/sidebar.webp" alt="Sidebar" link="/sidebars" {divClass}>
 			<span slot="paragraph">
 				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
 					<a
@@ -337,7 +341,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/spinners.webp" alt="Spinners">
+		<Card img="/images/spinners.webp" alt="Spinners" link="/spinners" {divClass}>
 			<span slot="paragraph">
 				{#each spinners as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
@@ -352,7 +356,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/table.webp" alt="Tables">
+		<Card img="/images/table.webp" alt="Tables" link="/tables" {divClass}>
 			<span slot="paragraph">
 				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
 					<a
@@ -365,7 +369,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/tabs.webp" alt="Tabs">
+		<Card img="/images/tabs.webp" alt="Tabs" link="/tabs" {divClass}>
 			<span slot="paragraph">
 				{#each tabs as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
@@ -380,7 +384,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/timeline.webp" alt="Timeline">
+		<Card img="/images/timeline.webp" alt="Timeline" link="/timelines" {divClass}>
 			<span slot="paragraph">
 				{#each timelines as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
@@ -395,7 +399,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/toast.webp" alt="Toast">
+		<Card img="/images/toast.webp" alt="Toast" link="/toasts" {divClass}>
 			<span slot="paragraph">
 				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
 					<a
@@ -408,7 +412,7 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/tooltip.webp" alt="Tooltips">
+		<Card img="/images/tooltip.webp" alt="Tooltips" link="/tooltips" {divClass}>
 			<span slot="paragraph">
 				{#each tooltips as { href, name }}
 					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
