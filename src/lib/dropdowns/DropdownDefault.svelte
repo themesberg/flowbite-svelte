@@ -32,7 +32,8 @@
 	} else if (color === 'blue-outline') {
 		buttonClass = `inline-flex items-center text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg ${textSize} ${paddings} text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800`;
 	} else if (color === 'dark') {
-		buttonClass = buttonClass = `inline-flex items-center text-white bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 font-medium ${round} ${textSize} ${paddings} text-center mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-800 dark:border-gray-700`;
+		buttonClass =
+			buttonClass = `inline-flex items-center text-white bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 font-medium ${round} ${textSize} ${paddings} text-center mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-800 dark:border-gray-700`;
 	} else if (color === 'dark-outline') {
 		buttonClass = `inline-flex items-center text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg ${textSize} ${paddings} text-center mr-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800`;
 	} else if (color === 'light') {
@@ -61,10 +62,20 @@
 
 <button on:click={handleToggle} class={buttonClass} type="button"
 	>{label}
-	<svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /> </svg>
+	<svg
+		class="ml-2 w-4 h-4"
+		fill="none"
+		stroke="currentColor"
+		viewBox="0 0 24 24"
+		xmlns="http://www.w3.org/2000/svg"
+		><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+	</svg>
 </button>
 
-<div class:hidden={toggleHidden} class="hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
+<div
+	class:hidden={toggleHidden}
+	class="hidden absolute z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
+>
 	{#if $$slots.header}
 		<div class="py-3 px-4 text-gray-900 dark:text-white">
 			<slot name="header" />
@@ -72,8 +83,16 @@
 	{/if}
 	<ul class="py-1" aria-labelledby="dropdownButton">
 		{#each items as { href, name, divider }}
-			<li class:border-b={divider} class:border-gray-100={divider} class:dark:border-gray-500={divider}>
-				<a {href} class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">{name}</a>
+			<li
+				class:border-b={divider}
+				class:border-gray-100={divider}
+				class:dark:border-gray-500={divider}
+			>
+				<a
+					{href}
+					class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+					>{name}</a
+				>
 			</li>
 		{/each}
 	</ul>

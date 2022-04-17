@@ -22,7 +22,7 @@ export type AuthFunctionType = () => Promise<void>;
 export interface AvatarType {
     src?: string;
     alt?: string;
-    size?:  6 | 8 | 12 | 16 | 24 | 48;
+    size?: number;
     border?: boolean;
     round?: boolean;
     header?: string;
@@ -75,7 +75,7 @@ export type DropdownColorType = 'blue' | 'blue-outline' | 'dark' | 'dark-outline
 export interface DropdownType {
     name: string;
     href: string;
-    divider: boolean;
+    divider?: boolean;
 }
 
 export type Gradientduotones = 'purple2blue' | 'cyan2blue' | 'green2blue' | 'purple2pink' | 'pink2orange' | 'teal2lime' | 'red2yellow'
