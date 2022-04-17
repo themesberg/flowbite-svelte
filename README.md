@@ -31,6 +31,10 @@
 - [Icon badge](https://flowbite-svelte.vercel.app/badges/badge-icon)
 - [Link badge](https://flowbite-svelte.vercel.app/badges/badge-link)
 
+## Breadcrumb components
+
+- [Breadcrumb](https://flowbite-svelte.vercel.app/breadcrumbs)
+
 ## Button group compnents
 
 - [Default button group](https://flowbite-svelte.vercel.app/button-groups/default)
@@ -155,3 +159,12 @@ Run:
 ```sh
 npm run test
 ```
+
+## Create props
+
+```sh
+cd scripts
+node createProps.js
+```
+
+This will pull all props from components and replace files in `/src/routes/props` directory.
