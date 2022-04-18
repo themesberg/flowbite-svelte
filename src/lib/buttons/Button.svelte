@@ -4,7 +4,7 @@
 	export let textSize: Textsize = 'text-sm';
 	export let name: string = 'Read more';
 	export let btnColor: Buttontypes = 'blue';
-	export let btnType: ButtonType = 'button';
+	export let type: ButtonType = 'button';
 
 	let paddings: string;
 	if (textSize === 'text-xs') {
@@ -51,7 +51,7 @@
 	}
 </script>
 
-<button type={btnType} class={buttonClass} on:click {...$$restProps}>
+<button {type} class={buttonClass} {...$$restProps} on:click>
 	{name}
 	<slot />
 </button>

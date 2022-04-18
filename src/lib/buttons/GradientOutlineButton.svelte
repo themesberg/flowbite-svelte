@@ -3,7 +3,7 @@
 	export let textSize: Textsize = 'text-sm';
 	export let color: Gradientduotones = 'purple2blue';
 	export let name: string = 'Read more';
-	export let btnType: ButtonType = 'button';
+	export let type: ButtonType = 'button';
 	let btnClass: string;
 	let spanClass: string;
 
@@ -34,7 +34,7 @@
 	}
 </script>
 
-<button class={btnClass} type={btnType} {...$$restProps}>
-	<span class={spanClass} on:click>{name}</span>
+<button class={btnClass} {type} {...$$restProps} on:click>
+	<span class={spanClass}>{name}</span>
 	<slot />
 </button>
