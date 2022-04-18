@@ -14,7 +14,7 @@ specifiers:
   eslint: ^7.32.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-svelte3: ^3.2.1
-  flowbite: ^1.4.1
+  flowbite: ^1.4.2
   flowbite-svelte: ^0.13.8
   mdsvex: ^0.10.5
   postcss: ^8.4.12
@@ -31,6 +31,10 @@ specifiers:
   tslib: ^2.3.1
   typescript: ~4.6.2
 
+dependencies:
+  flowbite: 1.4.2
+  svelte-collapse: 0.0.4
+
 devDependencies:
   '@codewithshin/svelte-heroicons': 1.1.3
   '@codewithshin/svelte-sidebar': 0.4.8
@@ -45,7 +49,6 @@ devDependencies:
   eslint: 7.32.0
   eslint-config-prettier: 8.5.0_eslint@7.32.0
   eslint-plugin-svelte3: 3.4.1_eslint@7.32.0+svelte@3.47.0
-  flowbite: 1.4.1
   flowbite-svelte: 0.13.8
   mdsvex: 0.10.5_svelte@3.47.0
   postcss: 8.4.12
@@ -55,7 +58,6 @@ devDependencies:
   prism-themes: 1.9.0
   svelte: 3.47.0
   svelte-check: 2.7.0_8ad6e20ce4e2d7da0239e3010622d126
-  svelte-collapse: 0.0.4
   svelte-preprocess: 4.10.6_8f537df1deb1f807b69cd07414ab4868
   svelte2tsx: 0.5.9_svelte@3.47.0+typescript@4.6.3
   tailwindcss: 3.0.24
@@ -713,7 +715,6 @@ packages:
 
   /@popperjs/core/2.11.5:
     resolution: {integrity: sha512-9X2obfABZuDVLCgPK9aX0a/x4jaOEweTTWE2+9sr0Qqqevj2Uv5XorvusThmc9XGYpS9yI+fhh8RTafBtGposw==}
-    dev: true
 
   /@rollup/pluginutils/4.2.1:
     resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
@@ -1851,16 +1852,15 @@ packages:
     resolution: {integrity: sha512-fhlKnRw4Nm3PUHK90+aXwW7YqYV/l/pDj+k98G1/5OmSc+93ytI19EhKAwK7TtXWDMLQkTj4K7kBODhyckSe5Q==}
     dependencies:
       '@codewithshin/svelte-heroicons': 1.1.3
-      flowbite: 1.4.1
+      flowbite: 1.4.2
       svelte-collapse: 0.0.4
     dev: true
 
-  /flowbite/1.4.1:
-    resolution: {integrity: sha512-65QrhBUVa7BHGDLM1t1vySgS8unlxTw8PQfJXraTj5Fez+OE17XOTBuOSVk3DCDjAicWBydD+Gkmz53S/8IJ2A==}
+  /flowbite/1.4.2:
+    resolution: {integrity: sha512-5UWilgT6+iuO2OYJzSa2OZHU6YPPWHfc526YV/1lSFlVVAIWQ+V0WuwtE+JIhsUJs928+vevmEOThg6PtIl2Rg==}
     dependencies:
       '@popperjs/core': 2.11.5
       mini-svg-data-uri: 1.4.4
-    dev: true
 
   /fraction.js/4.2.0:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
@@ -2265,7 +2265,6 @@ packages:
   /mini-svg-data-uri/1.4.4:
     resolution: {integrity: sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==}
     hasBin: true
-    dev: true
 
   /minimatch/3.0.4:
     resolution: {integrity: sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA==}
@@ -2910,7 +2909,6 @@ packages:
 
   /svelte-collapse/0.0.4:
     resolution: {integrity: sha512-TXG836Uhn6SzDFsB3PIHBTormEl45Eb0denD34nYz1zM4PeArh5OYN6G3ZGmMHpG7DAHhRaEX5ikDpHfk2JNcA==}
-    dev: true
 
   /svelte-hmr/0.14.11_svelte@3.47.0:
     resolution: {integrity: sha512-R9CVfX6DXxW1Kn45Jtmx+yUe+sPhrbYSUp7TkzbW0jI5fVPn6lsNG9NEs5dFg5qRhFNAoVdRw5qQDLALNKhwbQ==}

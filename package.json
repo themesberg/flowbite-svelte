@@ -37,7 +37,6 @@
 		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^3.2.1",
-		"flowbite": "^1.4.1",
 		"flowbite-svelte": "^0.13.8",
 		"mdsvex": "^0.10.5",
 		"postcss": "^8.4.12",
@@ -47,7 +46,6 @@
 		"prism-themes": "^1.9.0",
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.2.6",
-		"svelte-collapse": "^0.0.4",
 		"svelte-preprocess": "^4.10.5",
 		"svelte2tsx": "^0.5.9",
 		"tailwindcss": "^3.0.23",
@@ -87,5 +85,9 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/shinokada/flowbite-svelte"
+	},
+	"dependencies": {
+		"flowbite": "^1.4.2",
+		"svelte-collapse": "^0.0.4"
 	}
 }

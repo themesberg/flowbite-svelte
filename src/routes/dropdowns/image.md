@@ -147,9 +147,9 @@ layout: dropdownLayout
 </ImgDropdown>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Header</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Position left and a header</h2>
 
-<p>Let's add a header.</p>
+<p>Let's move the dropdown to left and add a header.</p>
 
 <div class="container flex justify-center rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ImgDropdown {items} divClass="relative flex justify-end w-44" dropdownClass={dropdownClass2}>
