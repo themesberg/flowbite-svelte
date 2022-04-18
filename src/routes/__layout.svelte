@@ -3,25 +3,7 @@
 	import { DarkMode, Badge, SitemapFooter } from '$lib/index';
 	import { Aside, Nav, SidebarList, Navbar, TopMenu } from '@codewithshin/svelte-sidebar';
 	import { GithubIcon, TwitterIcon } from '@codewithshin/svelte-simpleicons';
-	import {
-		accordions,
-		alerts,
-		badges,
-		buttons,
-		buttonGroups,
-		cards,
-		carousels,
-		footers,
-		icons,
-		modals,
-		navbar,
-		spinners,
-		svelteflows,
-		tabs,
-		timelines,
-		tooltips,
-		topMenus
-	} from './items';
+	import { accordions, alerts, badges, buttons, buttonGroups, cards, carousels, dropdowns, footers, icons, modals, navbar, spinners, svelteflows, tabs, timelines, tooltips, topMenus } from './items';
 	let site = {
 		name: 'Flowbite Svelte',
 		href: '/',
@@ -32,29 +14,21 @@
 	let logoClass = 'w-8';
 	let alt = 'Flowbite Svelte';
 	let activeChildLi = 'block py-2 px-4 text-lg text-gray-700 hover:bg-gray-100 dark:text-white';
-	let childLi =
-		'block py-2 pr-4 pl-3  text-gray-700 border-b border-gray-100 md:border-0 md:p-0 text-lg dark:text-white';
-	let headerClass =
-		'fixed w-full z-50 px-6 bg-white h-14 pt-3 text-gray-600 border-b-2 bg-white dark:bg-gray-800 dark:text-white dark:border-b-1';
+	let childLi = 'block py-2 pr-4 pl-3  text-gray-700 border-b border-gray-100 md:border-0 md:p-0 text-lg dark:text-white';
+	let headerClass = 'fixed w-full z-50 px-6 bg-white h-14 pt-3 text-gray-600 border-b-2 bg-white dark:bg-gray-800 dark:text-white dark:border-b-1';
 	let siteName = 'Flowbite Svelte';
 	let navClass = 'py-0 px-8 bg-white text-lg bg-white dark:bg-gray-800 dark:text-white';
 	let navDivClass = 'pb-4';
 	let navDivClasslast = 'pb-24';
 	let siteClass = ' w-full pt-0.5';
-	let spanClass =
-		'pl-2 self-center text-lg font-semibold text-gray-900 whitespace-nowrap xs:dark:text-green-500';
+	let spanClass = 'pl-2 self-center text-lg font-semibold text-gray-900 whitespace-nowrap xs:dark:text-green-500';
 
-	let topli =
-		'block py-2 pr-4 pl-3 text-gray-700 md:border-0 md:p-0 dark:text-gray-300  dark:hover:bg-gray-700 text-lg z-50  dark:bg-gray-800 dark:border-0 hover:bg-gray-100 bg-white';
-	let topMenuDiv =
-		'container flex flex-wrap justify-end items-center mx-auto dark:bg-gray-800 h-8 pr-12';
-	let topul =
-		'flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium pt-1 dark:bg-gray-800 bg-white';
+	let topli = 'block py-2 pr-4 pl-3 text-gray-700 md:border-0 md:p-0 dark:text-gray-300  dark:hover:bg-gray-700 text-lg z-50  dark:bg-gray-800 dark:border-0 hover:bg-gray-100 bg-white';
+	let topMenuDiv = 'container flex flex-wrap justify-end items-center mx-auto dark:bg-gray-800 h-8 pr-12';
+	let topul = 'flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium pt-1 dark:bg-gray-800 bg-white';
 	// Others
-	let asideClass =
-		'fixed w-auto top-14 bg-white pt-8 shadow-lg z-50 px-4 h-screen z-50 overflow-scroll bg-white dark:bg-gray-800';
-	let darkmodebtn =
-		'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 fixed right-4 top-2 z-50';
+	let asideClass = 'fixed w-auto top-14 bg-white pt-8 shadow-lg z-50 px-4 h-screen z-50 overflow-scroll bg-white dark:bg-gray-800';
+	let darkmodebtn = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 fixed right-4 top-2 z-50';
 	let sideBarListClass = 'border-b border-gray-400 dark:border-gray-500 mb-2 px-4 text-base';
 	// activeDropdownDiv, activeChildLi, buttonClass, dropdownLi
 
@@ -170,10 +144,8 @@
 	let allRightsReserved = '';
 	let copyrightYear = '';
 	let liClass = 'mb-1';
-	let linksClass =
-		'grid gap-8 py-8 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-36  grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7';
-	let copyrightDivClass =
-		'py-6 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-36 text-gray-900 dark:bg-gray-700 md:flex md:items-center md:justify-between';
+	let linksClass = 'grid gap-8 py-8 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-36  grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7';
+	let copyrightDivClass = 'py-6 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-36 text-gray-900 dark:bg-gray-700 md:flex md:items-center md:justify-between';
 	let linkClass = 'hover:underline hover:text-blue-600';
 </script>
 
@@ -261,6 +233,9 @@
 		<h3 class="text-base pb-4">
 			<a href="/dropdowns">Dropdowns</a>
 		</h3>
+		{#each dropdowns as { href, name, rel }}
+			<SidebarList {href} {name} {rel} {sideBarListClass} />
+		{/each}
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4">
@@ -362,15 +337,5 @@
 	</div>
 </main>
 <div class="pt-4 ">
-	<SitemapFooter
-		{site}
-		{socialMedia}
-		{links}
-		{allRightsReserved}
-		{copyrightYear}
-		{liClass}
-		{linksClass}
-		{copyrightDivClass}
-		{linkClass}
-	/>
+	<SitemapFooter {site} {socialMedia} {links} {allRightsReserved} {copyrightYear} {liClass} {linksClass} {copyrightDivClass} {linkClass} />
 </div>

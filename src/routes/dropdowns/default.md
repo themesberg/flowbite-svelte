@@ -7,10 +7,11 @@ layout: dropdownLayout
   import componentProps from '../props/DropdownDefault.json'
   // Props table
   export let dropdownItems = componentProps.props
-	let propHeader = ['Name', 'Type', 'Default']
-	// console.log(items)
-	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
-
+  let propHeader = ['Name', 'Type', 'Default']
+  // console.log(items)
+  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+  let dropdownClass = 'hidden absolute top-12 right-8 z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700';
+  let dropdownClass2 = 'hidden absolute top-12 -left-48 z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700';
   let items = [
     {
       href: "/",
@@ -49,6 +50,10 @@ layout: dropdownLayout
     {
       label:'Dropdown',
       href:'/dropdowns/'
+    },
+    {
+      label:'Dropdown default',
+      href:'/dropdowns/default'
     }
   ]
 </script>
@@ -59,8 +64,8 @@ layout: dropdownLayout
 
 <h2 class="text-2xl w-full dark:text-white py-4"><a id="Default_Dropdown">Examples</a></h2>
 
-<div class="container rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Dropdown {items} />
+<div class="container flex justify-center rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<Dropdown {items} label="Dropdown button"/>
 </div>
 
 ```html
@@ -82,13 +87,13 @@ layout: dropdownLayout
   ];
 </script>
 
-<Dropdown {items} />
+<Dropdown {items} label="Dropdown button"/>
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-4"><a id="Dropdown_divider">Dropdown divider</a></h2>
 
-<div class="container rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Dropdown items={items2} color="red"/>
+<div class="container flex justify-center rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<Dropdown items={items2} color="red" label="Dropdown button"/>
 </div>
 
 ```html
@@ -111,29 +116,40 @@ layout: dropdownLayout
   ];
 </script>
 
-<Dropdown {items} color="red"/>
+<Dropdown {items} color="red" label="Dropdown button"/>
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-4">Dropdown header</h2>
 
-<div class="container rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Dropdown {items} color="purple-outline">
+<div class="container flex justify-center rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<Dropdown {items} color="purple-outline" label="Dropdown button">
 <div slot="header">
  <span class="block text-sm">Bonnie Green</span>
-      <span class="block text-sm font-medium truncat">name@flowbite.com</span>
+    <span class="block text-sm font-medium truncat">name@flowbite.com</span>
 </div>
 </Dropdown>
 </div>
 
 
 ```html
-<Dropdown {items} color="purple-outline">
+<Dropdown {items} color="purple-outline" label="Dropdown button">
 <div slot="header">
  <span class="block text-sm">Bonnie Green</span>
-      <span class="block text-sm font-medium truncat">name@flowbite.com</span>
+    <span class="block text-sm font-medium truncat">name@flowbite.com</span>
 </div>
 </Dropdown>
 ```
+
+<h2 class="text-2xl w-full dark:text-white py-4"><a id="Props">Dropdown positions</a></h2>
+
+<div class="container flex justify-center rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<Dropdown {items} {dropdownClass} label="Dropdown button"/>
+</div>
+
+<div class="container flex justify-center rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<Dropdown {items} dropdownClass={dropdownClass2} label="Dropdown button"/>
+</div>
+
 
 <h2 class="text-2xl w-full dark:text-white py-4"><a id="Props">Props</a></h2>
 

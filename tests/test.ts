@@ -227,11 +227,18 @@ test('Dark mode page should have h1', async ({ page }) => {
 });
 
 // Dropdown
-test('Dropdown page should have h1', async ({ page }) => {
+test('Dropdown main page should have h1', async ({ page }) => {
 	await page.goto('/dropdowns');
+	expect(await page.textContent('h1')).toBe('Dropdown Components');
+});
+test('Dropdown page should have h1', async ({ page }) => {
+	await page.goto('/dropdowns/default');
 	expect(await page.textContent('h1')).toBe('Dropdown');
 });
-
+test('Dropdown with Image page should have h1', async ({ page }) => {
+	await page.goto('/dropdowns/image');
+	expect(await page.textContent('h1')).toBe('Dropdown with Image');
+});
 // Footer
 test('Footer main page should have h1', async ({ page }) => {
 	await page.goto('/footer');

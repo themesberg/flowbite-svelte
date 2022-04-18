@@ -71,7 +71,8 @@
 
 ## Dropdown components
 
-- [Dropdowns](https://flowbite-svelte.vercel.app/dropdowns)
+- [Dropdown](https://flowbite-svelte.vercel.app/dropdowns/default)
+- [Dropdown with Image](https://flowbite-svelte.vercel.app/dropdowns/image)
 
 ## Form components
 

@@ -54,6 +54,11 @@ export const carousels = [
   { href: "/carousels/transition", name: "Transition" },
 ]
 
+export const dropdowns = [
+  { href: "/dropdowns/default", name: "Default" },
+  { href: "/dropdowns/image", name: "Image" },
+]
+
 export const footers = [
   { href: "/footer/default", name: "Default" },
   { href: "/footer/logo", name: "Logo" },
