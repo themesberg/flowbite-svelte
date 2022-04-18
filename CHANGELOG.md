@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.14.1](https://github.com/shinokada/flowbite-svelte/compare/v0.13.10...v0.14.1) (2022-04-18)
+
+
+### Features
+
+* add ImgDropdown ([30e9d01](https://github.com/shinokada/flowbite-svelte/commit/30e9d01dcd51559f6771ebaeef57100cf198c452))
+
 ### [0.13.10](https://github.com/shinokada/flowbite-svelte/compare/v0.13.9...v0.13.10) (2022-04-16)
 
 
