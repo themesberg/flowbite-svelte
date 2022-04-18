@@ -140,16 +140,6 @@ layout: dropdownLayout
 </Dropdown>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4"><a id="Props">Dropdown positions</a></h2>
-
-<div class="container flex justify-center rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Dropdown {items} {dropdownClass} label="Dropdown button"/>
-</div>
-
-<div class="container flex justify-center rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Dropdown {items} dropdownClass={dropdownClass2} label="Dropdown button"/>
-</div>
-
 
 <h2 class="text-2xl w-full dark:text-white py-4"><a id="Props">Props</a></h2>
 

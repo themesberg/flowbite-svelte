@@ -10,7 +10,6 @@ layout: dropdownLayout
   let propHeader = ['Name', 'Type', 'Default']
   // console.log(items)
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
-  
   let avatar = {
     src: '/images/profile-picture-1.webp',
     alt: 'My avatar',
@@ -50,7 +49,8 @@ layout: dropdownLayout
   let dropdownClass =
     'hidden absolute top-14 z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700';
   let dropdownClass2 =
-    'hidden absolute -left-36 top-14 z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700';
+    'absolute top-14 z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700';
+  
   let crumbs = [
     {
       label:'Home',
@@ -116,7 +116,7 @@ layout: dropdownLayout
 
 <div class="container flex justify-center rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 
-  <ImgDropdown items={items2} {dropdownClass}>
+  <ImgDropdown items={items2} {dropdownClass} >
     <Avatar {avatar} />
   </ImgDropdown>
 </div>
@@ -147,12 +147,12 @@ layout: dropdownLayout
 </ImgDropdown>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Position left and a header</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Header</h2>
 
-<p>Let's change the dropdown position to the left and add a header.</p>
+<p>Let's add a header.</p>
 
 <div class="container flex justify-center rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-  <ImgDropdown {items} dropdownClass={dropdownClass2}>
+  <ImgDropdown {items} divClass="relative flex justify-end w-44" dropdownClass={dropdownClass2}>
     <div slot="header">
       <span class="block text-sm">Bonnie Green</span>
       <span class="block text-sm font-medium truncat">name@flowbite.com</span>
@@ -167,26 +167,26 @@ layout: dropdownLayout
   let dropdownClass2 = 'hidden absolute -left-40 top-14 z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700';
 </script>
 
-<ImgDropdown {items} dropdownClass={dropdownClass2}>
-  <div slot="header">
-    <span class="block text-sm">Bonnie Green</span>
-    <span class="block text-sm font-medium truncat">name@flowbite.com</span>
-  </div>
-  <Avatar {avatar} />
-</ImgDropdown>
+<ImgDropdown {items} divClass="relative flex justify-end w-44" dropdownClass={dropdownClass2}>
+    <div slot="header">
+      <span class="block text-sm">Bonnie Green</span>
+      <span class="block text-sm font-medium truncat">name@flowbite.com</span>
+    </div>
+    <Avatar {avatar} />
+  </ImgDropdown>
 ```
 
 <p>You can use an image.</p>
 
 <div class="container flex justify-center rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ImgDropdown {items}>
-    <img src="/images/profile-picture-2.webp" width='50' alt="something" />
+    <img src="/images/profile-picture-3.webp" width='50' alt="something" />
   </ImgDropdown>
 </div>
 
 ```html
 <ImgDropdown {items}>
-  <img src="/images/profile-picture-2.webp" width='50' alt="something"/>
+  <img src="/images/profile-picture-3.webp" width='50' alt="something"/>
 </ImgDropdown>
 ```
 
