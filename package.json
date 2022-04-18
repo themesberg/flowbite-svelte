@@ -8,8 +8,8 @@
 		"email": "connect@codewithshin.com",
 		"url": "https://blog.codewithshin.com"
 	},
-	"bugs": "https://github.com/shinokada/flowbite-svelte/issues",
-	"homepage": "https://github.com/shinokada/flowbite-svelte",
+	"bugs": "https://github.com/themesberg/flowbite-svelte/issues",
+	"homepage": "https://github.com/themesberg/flowbite-svelte",
 	"license": "MIT",
 	"scripts": {
 		"dev": "svelte-kit dev",

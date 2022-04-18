@@ -1,6 +1,6 @@
 # FLOWBITE-SVELTE
 
-[Flowbite-Svelte](https://flowbite-svelte.vercel.app/) is an unofficial Flowbite component library for Svelte. All interactivities are handled by Svelte.
+[Flowbite-Svelte](https://flowbite-svelte.vercel.app/) is an official Flowbite component library for Svelte. All interactivities are handled by Svelte.
 
 ## Installation
 

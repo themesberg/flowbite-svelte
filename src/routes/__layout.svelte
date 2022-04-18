@@ -35,7 +35,7 @@
 	// Footer
 	let socialMedia = [
 		{
-			href: 'https://github.com/shinokada',
+			href: 'https://github.com/themesberg/flowbite-svelte',
 			icon: GithubIcon
 		},
 		{
@@ -129,7 +129,7 @@
 		{
 			parent: 'FOLLOW US',
 			children: [
-				{ name: 'Github', href: 'https://github.com/shinokada' },
+				{ name: 'Github', href: 'https://github.com/themesberg/flowbite-svelte' },
 				{
 					name: 'Twitter',
 					href: 'https://twitter.com/shinokada'

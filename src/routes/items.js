@@ -121,7 +121,7 @@ export const topMenus = [
   { href: "/", name: "Home" },
   { href: "/about", name: "About" },
   {
-    href: "https://github.com/shinokada/flowbite-svelte",
+    href: "https://github.com/themesberg/flowbite-svelte",
     name: "GitHub"
   },
 ];
