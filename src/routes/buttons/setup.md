@@ -42,6 +42,19 @@ layout: buttonLayout
 </script>
 ```
 
+<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Button type</h2>
+
+<p>The default `type` is set to `button`. You can chage it by using the `type` prop.</p>
+
+<div class="rounded-xl w-full flex justify-center my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<Button type="submit" name="Submit" />
+</div>
+
+```html
+<Button type="submit" name="Submit" />
+```
+
+
 <h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Button handler</h2>
 
 <p>You can use on:click to listen to the event. Add your event handler.</p>
