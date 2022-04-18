@@ -51,7 +51,7 @@
 	}
 </script>
 
-<button type={btnType} class={buttonClass} on:click>
+<button type={btnType} class={buttonClass} on:click {...$$restProps}>
 	{name}
 	<slot />
 </button>

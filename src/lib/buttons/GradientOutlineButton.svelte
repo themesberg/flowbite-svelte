@@ -34,6 +34,7 @@
 	}
 </script>
 
-<button class={btnClass} type={btnType}>
+<button class={btnClass} type={btnType} {...$$restProps}>
 	<span class={spanClass} on:click>{name}</span>
+	<slot />
 </button>
