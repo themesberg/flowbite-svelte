@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.14.4](https://github.com/shinokada/flowbite-svelte/compare/v0.14.3...v0.14.4) (2022-04-19)
+
+
+### Features
+
+* add close on body, add close another dropdown and open own ([addabf8](https://github.com/shinokada/flowbite-svelte/commit/addabf81ccb322e6a482f3baa0687b443914674b))
+
+
+### Bug Fixes
+
+* change btnType to type in Button components ([310d2d8](https://github.com/shinokada/flowbite-svelte/commit/310d2d8f5bd00f3339b59749e79c67d39717f652))
+* change z-50 to z-10 for DropdownDefault ([71d4640](https://github.com/shinokada/flowbite-svelte/commit/71d4640e613c671e11c972d8ceee3721b6c568cc))
+* moved @codewithshin/svelte-heroicons to dependencies ([5639d70](https://github.com/shinokada/flowbite-svelte/commit/5639d70d85fc829bc3827f0cbc82e01c56d644a2))
+* Utterances link update to themesberg ([584da7e](https://github.com/shinokada/flowbite-svelte/commit/584da7ecf8a755814b436998e3567b7ea46c35d9))
+
 ### [0.14.3](https://github.com/shinokada/flowbite-svelte/compare/v0.14.2...v0.14.3) (2022-04-18)
 
 
