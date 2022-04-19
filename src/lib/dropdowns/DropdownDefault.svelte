@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { DropdownType, DropdownColorType } from '../types';
 	export let label: string = 'Dropdown button';
-	export let rounded = false;
+	export let rounded: boolean = false;
 	export let textSize: string = 'text-sm';
 	export let color: DropdownColorType = 'blue';
 
@@ -22,17 +22,21 @@
 	let dropdownToggleHidden = true;
 
 	const handleToggle = () => {
-		console.log('toggle clicked.');
+		// console.log('toggle clicked.');
 		dropdownToggleHidden = !dropdownToggleHidden;
+	};
+
+	const closeDropdown = () => {
+		dropdownToggleHidden = true;
 	};
 
 	export let items: DropdownType[];
 
-	export let dropdownClass = 'hidden absolute -left-44 top-12 z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700';
+	export let dropdownClass: string = 'hidden absolute -left-44 top-12 z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700';
 
-	export let headerClass = 'py-3 px-4 text-gray-900 dark:text-white';
+	export let headerClass: string = 'py-3 px-4 text-gray-900 dark:text-white';
 
-	export let linkClass = 'block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white';
+	export let linkClass: string = 'block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white';
 
 	if (color === 'blue') {
 		buttonClass = `inline-flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium ${round} ${textSize} ${paddings} text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800`;
@@ -87,3 +91,7 @@
 		</ul>
 	</div>
 </div>
+
+{#if dropdownToggleHidden === false}
+	<div on:click={closeDropdown} class="fixed w-full h-full" />
+{/if}
