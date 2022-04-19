@@ -55,7 +55,8 @@ export { default as DarkMode } from'./darkmode/DarkMode.svelte'
 // Dropdown
 export { default as Dropdown } from './dropdowns/DropdownDefault.svelte' 
 export { default as ImgDropdown } from './dropdowns/ImgDropdown.svelte'
-export { dropdownIdStore } from'./modropdownsdals/dropdownStores'
+export { dropdownIdStore } from './dropdowns/dropdownStores'
+// export { modalIdStore } from'./modals/modalStores'
 
 // Footers
 export { default as SimpleFooter } from'./footer/SimpleFooter.svelte'
@@ -79,7 +80,7 @@ export { default as Toggle } from './forms/Toggle.svelte'
 export { default as List } from'./list-group/List.svelte'
 
 // Modals
-export { modalIdStore } from'./modals/modalStores'
+export { modalIdStore } from './modals/modalStores'
 export { default as ExtraLargeModal } from'./modals/ExtraLargeModal.svelte'
 export { default as LargeModal } from'./modals/LargeModal.svelte'
 export { default as MediumModal } from'./modals/MediumModal.svelte'
