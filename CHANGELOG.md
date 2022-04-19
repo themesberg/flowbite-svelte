@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.14.6](https://github.com/themesberg/flowbite-svelte/compare/v0.14.5...v0.14.6) (2022-04-19)
+
+
+### Bug Fixes
+
+* export dropdownStores in index.js ([f4b7f6c](https://github.com/themesberg/flowbite-svelte/commit/f4b7f6c6e5fcc118e5279ed61e017477c657fa0b))
+
 ### [0.14.5](https://github.com/themesberg/flowbite-svelte/compare/v0.14.4...v0.14.5) (2022-04-19)
 
 
