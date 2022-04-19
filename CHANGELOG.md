@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.14.10](https://github.com/themesberg/flowbite-svelte/compare/v0.14.9...v0.14.10) (2022-04-19)
+
+
+### Bug Fixes
+
+* change ts to js and removed types from modalStores and dropdownStores ([89e88e2](https://github.com/themesberg/flowbite-svelte/commit/89e88e2a53b4a791b608459dd05bafff6f81f2ae))
+
 ### [0.14.9](https://github.com/themesberg/flowbite-svelte/compare/v0.14.8...v0.14.9) (2022-04-19)
 
 
