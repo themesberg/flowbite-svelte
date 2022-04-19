@@ -10,41 +10,29 @@
 		<h2 class="text-2xl w-full dark:text-white pt-16 pb-8">Related components</h2>
 
 		<p>
-			<a href="/alerts/default-alert" class="text-blue-600 hover:underline dark:text-blue-500"
-				>Default Alert</a
-			>
+			<a href="/alerts/default-alert" class="text-blue-600 hover:underline dark:text-blue-500">Default Alert</a>
 		</p>
 
 		<p>
-			<a href="/alerts/border-alert" class="text-blue-600 hover:underline dark:text-blue-500"
-				>Border Alert</a
-			>
+			<a href="/alerts/border-alert" class="text-blue-600 hover:underline dark:text-blue-500">Border Alert</a>
 		</p>
 
 		<p>
-			<a href="/alerts/information-alert" class="text-blue-600 hover:underline dark:text-blue-500"
-				>Information Alert</a
-			>
+			<a href="/alerts/information-alert" class="text-blue-600 hover:underline dark:text-blue-500">Information Alert</a>
 		</p>
 
 		<p>
-			<a href="/alerts/animation" class="text-blue-600 hover:underline dark:text-blue-500"
-				>Animation</a
-			>
+			<a href="/alerts/animation" class="text-blue-600 hover:underline dark:text-blue-500">Animation</a>
 		</p>
 
 		<h2 class="text-2xl w-full dark:text-white pt-8 pb-4">References</h2>
 
 		<p class="dark:text-white text-lg">
-			<a
-				href="https://flowbite.com/docs/components/alerts/"
-				target="_blank"
-				class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Alerts</a
-			>
+			<a href="https://flowbite.com/docs/components/alerts/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Alerts</a>
 		</p>
 	</div>
 
 	<div class="container my-16 mx-auto">
-		<Utterances reponame="shinokada/flowbite-svelte" theme="dark-blue" />
+		<Utterances reponame="themesberg/flowbite-svelte" theme="dark-blue" />
 	</div>
 </div>

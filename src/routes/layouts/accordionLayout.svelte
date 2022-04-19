@@ -10,29 +10,21 @@
 		<h2 class="text-2xl w-full dark:text-white pt-16 pb-8">Related components</h2>
 
 		<p>
-			<a href="/accordions/default" class="text-blue-600 hover:underline dark:text-blue-500"
-				>Default Accordion</a
-			>
+			<a href="/accordions/default" class="text-blue-600 hover:underline dark:text-blue-500">Default Accordion</a>
 		</p>
 
 		<p>
-			<a href="/accordions/icon-accordion" class="text-blue-600 hover:underline dark:text-blue-500"
-				>Icon Accordion</a
-			>
+			<a href="/accordions/icon-accordion" class="text-blue-600 hover:underline dark:text-blue-500">Icon Accordion</a>
 		</p>
 
 		<h2 class="text-2xl w-full dark:text-white pt-8 pb-4">References</h2>
 
 		<p>
-			<a
-				href="https://flowbite.com/docs/components/accordion/"
-				target="_blank"
-				class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Accordion</a
-			>
+			<a href="https://flowbite.com/docs/components/accordion/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Accordion</a>
 		</p>
 	</div>
 
 	<div class="container my-16 mx-auto">
-		<Utterances reponame="shinokada/flowbite-svelte" theme="dark-blue" />
+		<Utterances reponame="themesberg/flowbite-svelte" theme="dark-blue" />
 	</div>
 </div>
