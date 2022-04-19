@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.14.5](https://github.com/themesberg/flowbite-svelte/compare/v0.14.4...v0.14.5) (2022-04-19)
+
+
+### Bug Fixes
+
+* export dropdownIdStore in index.js ([4c897d9](https://github.com/themesberg/flowbite-svelte/commit/4c897d973a88e7d1863e28c49a1675110649252f))
+* update test for /buttons/setup page ([90daabb](https://github.com/themesberg/flowbite-svelte/commit/90daabbad3d921e5938c990f3099bd268df4aebf))
+
 ### [0.14.4](https://github.com/shinokada/flowbite-svelte/compare/v0.14.3...v0.14.4) (2022-04-19)
 
 
