@@ -129,7 +129,7 @@ test('Buttons default page should have h1', async ({ page }) => {
 
 test('Button Component Set Up page should have h1', async ({ page }) => {
 	await page.goto('/buttons/setup');
-	expect(await page.textContent('h1')).toBe('Button Component Set Up');
+	expect(await page.textContent('h1')).toBe('Getting started with Button Component');
 });
 
 test('Colored Shadow Buttons page should have h1', async ({ page }) => {
