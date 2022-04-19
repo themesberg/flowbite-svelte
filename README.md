@@ -63,7 +63,8 @@
 
 ## Carousel components
 
-- [Carousel](https://flowbite-svelte.vercel.app/carousels)
+- [Carousel](https://flowbite-svelte.vercel.app/carousels/default)
+- [Carousel with transition](https://flowbite-svelte.vercel.app/carousels/transition)
 
 ## Dark mode components
 
@@ -111,6 +112,10 @@
 ## Pagination components
 
 - [Pagination](https://flowbite-svelte.vercel.app/paginations)
+
+## Progress bar
+
+- [Probress bar](https://flowbite-svelte.vercel.app/progressbars)
 
 ## Sidebar components
 

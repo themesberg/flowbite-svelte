@@ -62,10 +62,13 @@
 		"alert",
 		"avatar",
 		"badges",
+		"breadcrumbs",
 		"button-groups",
 		"buttons",
 		"cards",
+		"carousel",
 		"darkmode",
+		"dropdown",
 		"footer",
 		"forms",
 		"list group",
@@ -83,7 +86,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/shinokada/flowbite-svelte"
+		"url": "https://github.com/themesberg/flowbite-svelte"
 	},
 	"dependencies": {
 		"@codewithshin/svelte-heroicons": "^1.1.3",
