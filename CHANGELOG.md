@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.14.9](https://github.com/themesberg/flowbite-svelte/compare/v0.14.8...v0.14.9) (2022-04-19)
+
+
+### Bug Fixes
+
+* change js to ts and add ts in index.js ([7b3bb20](https://github.com/themesberg/flowbite-svelte/commit/7b3bb206f2db09efc3e6c4d3d85117a1d6946a4e))
+
 ### [0.14.8](https://github.com/themesberg/flowbite-svelte/compare/v0.14.7...v0.14.8) (2022-04-19)
 
 
