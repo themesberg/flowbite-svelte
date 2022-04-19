@@ -113,6 +113,7 @@ export { default as TableDefaultRow } from './tables/TableDefaultRow.svelte'
 export { default as TableSearch } from './tables/TableSearch.svelte'
 
 // Tabs
+export { tabStore } from './tabs/tabStores'
 export { default as InteractiveTabHead } from './tabs/InteractiveTabHead.svelte'
 export { default as InteractiveTabs } from'./tabs/InteractiveTabs.svelte'
 export { default as DefaultTabs } from './tabs/DefaultTabs.svelte'
