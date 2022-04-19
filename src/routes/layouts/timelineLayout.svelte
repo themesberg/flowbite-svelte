@@ -10,47 +10,33 @@
 		<h2 class="text-2xl w-full dark:text-white pt-16 pb-8">Related components</h2>
 
 		<p>
-			<a href="/timelines/default" class="text-blue-600 hover:underline dark:text-blue-500"
-				>Default timeline</a
-			>
+			<a href="/timelines/default" class="text-blue-600 hover:underline dark:text-blue-500">Default timeline</a>
 		</p>
 
 		<p>
-			<a href="/timelines/vertical/" class="text-blue-600 hover:underline dark:text-blue-500"
-				>Vetical timeline</a
-			>
+			<a href="/timelines/vertical/" class="text-blue-600 hover:underline dark:text-blue-500">Vetical timeline</a>
 		</p>
 
 		<p>
-			<a href="/timelines/horizontal" class="text-blue-600 hover:underline dark:text-blue-500"
-				>Horizontal timeline</a
-			>
+			<a href="/timelines/horizontal" class="text-blue-600 hover:underline dark:text-blue-500">Horizontal timeline</a>
 		</p>
 
 		<p>
-			<a href="/timelines/activity" class="text-blue-600 hover:underline dark:text-blue-500"
-				>Activity log</a
-			>
+			<a href="/timelines/activity" class="text-blue-600 hover:underline dark:text-blue-500">Activity log</a>
 		</p>
 
 		<p>
-			<a href="/timelines/group" class="text-blue-600 hover:underline dark:text-blue-500"
-				>Grouped timeline</a
-			>
+			<a href="/timelines/group" class="text-blue-600 hover:underline dark:text-blue-500">Grouped timeline</a>
 		</p>
 
 		<h2 class="text-2xl w-full dark:text-white pt-8 pb-4">References</h2>
 
 		<p class="dark:text-white text-lg">
-			<a
-				href="https://flowbite.com/docs/components/timeline/"
-				target="_blank"
-				class="text-blue-600 hover:underline dark:text-blue-500">Flowbite timeline</a
-			>
+			<a href="https://flowbite.com/docs/components/timeline/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite timeline</a>
 		</p>
 	</div>
 
 	<div class="container my-16 mx-auto">
-		<Utterances reponame="shinokada/flowbite-svelte" theme="dark-blue" />
+		<Utterances reponame="themesberg/flowbite-svelte" theme="dark-blue" />
 	</div>
 </div>

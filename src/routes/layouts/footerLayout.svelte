@@ -10,41 +10,29 @@
 		<h2 class="text-2xl w-full dark:text-white pt-16 pb-8">Related components</h2>
 
 		<p>
-			<a href="/footer/default" class="text-blue-600 hover:underline dark:text-blue-500"
-				>Default Footer</a
-			>
+			<a href="/footer/default" class="text-blue-600 hover:underline dark:text-blue-500">Default Footer</a>
 		</p>
 
 		<p>
-			<a href="/footer/logo" class="text-blue-600 hover:underline dark:text-blue-500"
-				>Footer with Logo</a
-			>
+			<a href="/footer/logo" class="text-blue-600 hover:underline dark:text-blue-500">Footer with Logo</a>
 		</p>
 
 		<p>
-			<a href="/footer/sitemap" class="text-blue-600 hover:underline dark:text-blue-500"
-				>Footer with Sitemap</a
-			>
+			<a href="/footer/sitemap" class="text-blue-600 hover:underline dark:text-blue-500">Footer with Sitemap</a>
 		</p>
 
 		<p>
-			<a href="/footer/socialmedia" class="text-blue-600 hover:underline dark:text-blue-500"
-				>Footer with Socialmedia</a
-			>
+			<a href="/footer/socialmedia" class="text-blue-600 hover:underline dark:text-blue-500">Footer with Socialmedia</a>
 		</p>
 
 		<h2 class="text-2xl w-full dark:text-white pt-8 pb-4">References</h2>
 
 		<p class="dark:text-white text-lg">
-			<a
-				href="https://flowbite.com/docs/components/footer/"
-				target="_blank"
-				class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Footer</a
-			>
+			<a href="https://flowbite.com/docs/components/footer/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Footer</a>
 		</p>
 	</div>
 
 	<div class="container my-16 mx-auto">
-		<Utterances reponame="shinokada/flowbite-svelte" theme="dark-blue" />
+		<Utterances reponame="themesberg/flowbite-svelte" theme="dark-blue" />
 	</div>
 </div>

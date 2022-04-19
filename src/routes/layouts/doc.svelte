@@ -8,6 +8,6 @@
 		<slot />
 	</div>
 	<div class="container my-16 mx-auto">
-		<Utterances reponame="shinokada/flowbite-svelte" theme="dark-blue" />
+		<Utterances reponame="themesberg/flowbite-svelte" theme="dark-blue" />
 	</div>
 </div>

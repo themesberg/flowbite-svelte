@@ -10,35 +10,25 @@
 		<h2 class="text-2xl w-full dark:text-white pt-16 pb-8">Related components</h2>
 
 		<p>
-			<a href="/badges/default" class="text-blue-600 hover:underline dark:text-blue-500"
-				>Default Badge</a
-			>
+			<a href="/badges/default" class="text-blue-600 hover:underline dark:text-blue-500">Default Badge</a>
 		</p>
 
 		<p>
-			<a href="/badges/badge-icon" class="text-blue-600 hover:underline dark:text-blue-500"
-				>Badge with icon</a
-			>
+			<a href="/badges/badge-icon" class="text-blue-600 hover:underline dark:text-blue-500">Badge with icon</a>
 		</p>
 
 		<p>
-			<a href="/badges/badge-link" class="text-blue-600 hover:underline dark:text-blue-500"
-				>Badge with link</a
-			>
+			<a href="/badges/badge-link" class="text-blue-600 hover:underline dark:text-blue-500">Badge with link</a>
 		</p>
 
 		<h2 class="text-2xl w-full dark:text-white pt-8 pb-4">References</h2>
 
 		<p class="dark:text-white text-lg">
-			<a
-				href="https://flowbite.com/docs/components/badge/"
-				target="_blank"
-				class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Badge</a
-			>
+			<a href="https://flowbite.com/docs/components/badge/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Badge</a>
 		</p>
 	</div>
 
 	<div class="container my-16 mx-auto">
-		<Utterances reponame="shinokada/flowbite-svelte" theme="dark-blue" />
+		<Utterances reponame="themesberg/flowbite-svelte" theme="dark-blue" />
 	</div>
 </div>
