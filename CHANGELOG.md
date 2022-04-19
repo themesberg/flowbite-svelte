@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.14.11](https://github.com/themesberg/flowbite-svelte/compare/v0.14.10...v0.14.11) (2022-04-19)
+
+
+### Bug Fixes
+
+* change ts to js for tabStore and changed file name to tabStores ([f46efd4](https://github.com/themesberg/flowbite-svelte/commit/f46efd46b64126dcadc331bd57b881dc32a0c13c))
+
 ### [0.14.10](https://github.com/themesberg/flowbite-svelte/compare/v0.14.9...v0.14.10) (2022-04-19)
 
 
