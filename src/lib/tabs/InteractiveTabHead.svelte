@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { TabHeadType } from '../types';
-	import { tabStore } from './tabStore';
+	import { tabStore } from './tabStores';
 	export let tabs: TabHeadType[];
 	export let tabId: string = 'myTab';
 
