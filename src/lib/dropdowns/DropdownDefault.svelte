@@ -8,10 +8,6 @@
 	export let textSize: string = 'text-sm';
 	export let color: DropdownColorType = 'blue';
 
-	// export const closeDropdown = () => {
-	// 	modalIdStore.update((value) => (value = null));
-	// };
-
 	let showDropdownId: string;
 	dropdownIdStore.subscribe((value) => {
 		showDropdownId = value;
@@ -31,23 +27,12 @@
 	let buttonClass: string;
 	let round = rounded ? 'rounded-full' : 'rounded-lg';
 
-	let dropdownToggleHidden = true;
-	$: dropdownToggleHidden;
-	// const handleToggle = () => {
-	// 	// console.log('toggle clicked.');
-	// 	dropdownToggleHidden = !dropdownToggleHidden;
-	// };
-
-	// let showDropdownId: string;
 	export const openFn = (id: string) => {
-		// dropdownToggleHidden = !dropdownToggleHidden;
 		if (showDropdownId === id) {
 			dropdownIdStore.update((n) => (n = null));
 		} else {
 			dropdownIdStore.update((n) => (n = id));
 		}
-		// showDropdownId = get(dropdownIdStore);
-		// console.log('showDropdownId', showDropdownId);
 	};
 
 	const closeDropdown = () => {
