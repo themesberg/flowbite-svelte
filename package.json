@@ -9,7 +9,7 @@
 		"url": "https://blog.codewithshin.com"
 	},
 	"bugs": "https://github.com/themesberg/flowbite-svelte/issues",
-	"homepage": "https://github.com/themesberg/flowbite-svelte",
+	"homepage": "https://flowbite-svelte.com/",
 	"license": "MIT",
 	"scripts": {
 		"dev": "svelte-kit dev",

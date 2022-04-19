@@ -56,7 +56,6 @@ export { default as DarkMode } from'./darkmode/DarkMode.svelte'
 export { default as Dropdown } from './dropdowns/DropdownDefault.svelte' 
 export { default as ImgDropdown } from './dropdowns/ImgDropdown.svelte'
 export { dropdownIdStore } from './dropdowns/dropdownStores'
-// export { modalIdStore } from'./modals/modalStores'
 
 // Footers
 export { default as SimpleFooter } from'./footer/SimpleFooter.svelte'
