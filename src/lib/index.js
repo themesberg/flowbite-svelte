@@ -55,7 +55,7 @@ export { default as DarkMode } from'./darkmode/DarkMode.svelte'
 // Dropdown
 export { default as Dropdown } from './dropdowns/DropdownDefault.svelte' 
 export { default as ImgDropdown } from './dropdowns/ImgDropdown.svelte'
-export { dropdownIdStore } from './dropdowns/dropdownStores'
+export { dropdownIdStore } from './dropdowns/dropdownStores.js'
 
 // Footers
 export { default as SimpleFooter } from'./footer/SimpleFooter.svelte'
@@ -79,7 +79,7 @@ export { default as Toggle } from './forms/Toggle.svelte'
 export { default as List } from'./list-group/List.svelte'
 
 // Modals
-export { modalIdStore } from './modals/modalStores'
+export { modalIdStore } from './modals/modalStores.js'
 export { default as ExtraLargeModal } from'./modals/ExtraLargeModal.svelte'
 export { default as LargeModal } from'./modals/LargeModal.svelte'
 export { default as MediumModal } from'./modals/MediumModal.svelte'
@@ -113,7 +113,7 @@ export { default as TableDefaultRow } from './tables/TableDefaultRow.svelte'
 export { default as TableSearch } from './tables/TableSearch.svelte'
 
 // Tabs
-export { tabStore } from './tabs/tabStores'
+export { tabStore } from './tabs/tabStores.js'
 export { default as InteractiveTabHead } from './tabs/InteractiveTabHead.svelte'
 export { default as InteractiveTabs } from'./tabs/InteractiveTabs.svelte'
 export { default as DefaultTabs } from './tabs/DefaultTabs.svelte'
