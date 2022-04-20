@@ -1,6 +1,5 @@
 /**
- * This script will create a json file for each route in the routes folder. First it will remove all files in the folder.
- * Then it will read each file in the routes folder and extract the props from the file.
+ * This script will create a json file for each component. First it will remove all files in the src/props directory. Then it will read each file in the lib directory and extract the props from the file and write in the `src/props` directory.
  * 
  * Run this script from the root of the project.
  * node createProps.js
