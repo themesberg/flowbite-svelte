@@ -27,6 +27,14 @@ layout: progressbarLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Progress bar Components</h1>
 
+<p>Import the `Progressbar` component in a script tag.</p>
+
+```html
+<script>
+	import { Progressbar } from 'flowbite-svelte'
+</script>
+```
+
 <h2 class="text-2xl w-full mt-8 dark:text-white py-4" id="Default_sidebar">Size</h2>
 
 <p>Use the `size` prop to change the size of a progress bar.</p>
