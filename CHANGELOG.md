@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.14.14](https://github.com/themesberg/flowbite-svelte/compare/v0.14.13...v0.14.14) (2022-04-21)
+
+
+### Features
+
+* add Rating, AdvancedRating, and ScoreRating components ([8c91712](https://github.com/themesberg/flowbite-svelte/commit/8c91712d703364948b00c387a2b3f1d42be6159f))
+
 ### [0.14.13](https://github.com/themesberg/flowbite-svelte/compare/v0.14.12...v0.14.13) (2022-04-20)
 
 
