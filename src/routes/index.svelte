@@ -1,7 +1,7 @@
 <script>
 	import { Card, Button } from '$lib/index';
 	import { goto } from '$app/navigation';
-	import { accordions, alerts, badges, buttons, buttonGroups, cards, carousels, dropdowns, footers, icons, modals, navbar, spinners, tabs, timelines, tooltips } from './items';
+	import { accordions, alerts, badges, buttons, buttonGroups, cards, carousels, dropdowns, footers, icons, modals, navbar, ratings, spinners, tabs, timelines, tooltips } from './items';
 	const handleClick = () => {
 		goto('/getting-started');
 	};
@@ -232,6 +232,17 @@
 				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
 					<a href="/progressbars" class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">Progress bar</a>
 				</p>
+			</span>
+		</Card>
+	</div>
+	<div class="p-4">
+		<Card img="/images/rating.webp" alt="Rating" link="/ratings" {divClass}>
+			<span slot="paragraph">
+				{#each ratings as { href, name }}
+					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
+						<a {href} class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">{name}</a>
+					</p>
+				{/each}
 			</span>
 		</Card>
 	</div>

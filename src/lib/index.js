@@ -100,6 +100,11 @@ export { default as TableData } from './paginations/TableData.svelte'
 // Progressbar
 export { default as Progressbar } from'./progressbars/Progressbar.svelte'
 
+// Rating
+export { default as Rating } from './ratings/Rating.svelte'
+export { default as AdvancedRating } from './ratings/AdvancedRating.svelte'
+export { default as ScoreRating } from './ratings/ScoreRating.svelte'
+
 // Sidebar
 export { default as Sidebar } from './sidebars/Sidebar.svelte'
 

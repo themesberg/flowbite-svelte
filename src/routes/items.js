@@ -89,6 +89,12 @@ export const navbar = [
   { href: "/navbars/dropdown", name: "Dropdown" },
 ];
 
+export const ratings = [
+  { href: "/ratings/rating", name: "Rating" },
+  { href: "/ratings/advanced-rating", name: "Advanced rating" },
+  { href: "/ratings/score-rating", name: "Score rating" },
+]
+
 export const spinners = [
   { href: "/spinners/default", name: "Spinner" },
   { href: "/spinners/button-spinner", name: "Button spinner" },

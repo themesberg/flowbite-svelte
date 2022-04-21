@@ -3,7 +3,7 @@
 	import { DarkMode, Badge, SitemapFooter } from '$lib/index';
 	import { Aside, Nav, SidebarList, Navbar, TopMenu } from '@codewithshin/svelte-sidebar';
 	import { GithubIcon, TwitterIcon } from '@codewithshin/svelte-simpleicons';
-	import { accordions, alerts, badges, buttons, buttonGroups, cards, carousels, dropdowns, footers, icons, modals, navbar, spinners, svelteflows, tabs, timelines, tooltips, topMenus } from './items';
+	import { accordions, alerts, badges, buttons, buttonGroups, cards, carousels, dropdowns, footers, icons, modals, navbar, ratings, spinners, svelteflows, tabs, timelines, tooltips, topMenus } from './items';
 	let site = {
 		name: 'Flowbite Svelte',
 		href: '/',
@@ -81,16 +81,17 @@
 			parent: 'COMPONENTS',
 			children: [
 				{ name: 'Progress bar', href: '/progressbars' },
+				{ name: 'Rating', href: '/ratings' },
 				{ name: 'Sidebar', href: '/sidebars' },
 				{ name: 'Spinner', href: '/spinners' },
 				{ name: 'Tables', href: '/tables' },
-				{ name: 'Tab', href: '/tabs' },
-				{ name: 'Timeline', href: '/timelines' }
+				{ name: 'Tab', href: '/tabs' }
 			]
 		},
 		{
 			parent: 'COMPONENTS',
 			children: [
+				{ name: 'Timeline', href: '/timelines' },
 				{ name: 'Toast', href: '/toasts' },
 				{ name: 'Tooltip', href: '/tooltips' }
 			]
@@ -284,6 +285,12 @@
 		<h3 class="text-base pb-4">
 			<a href="/progressbars">Progress bar <Badge name="NEW" color="purple" /></a>
 		</h3>
+	</Nav>
+	<Nav {navClass} {navDivClass}>
+		<h3 class="text-base pb-4"><a href="/ratings">Rating <Badge name="NEW" color="blue" /></a></h3>
+		{#each ratings as { href, name, rel }}
+			<SidebarList {href} {name} {rel} {sideBarListClass} />
+		{/each}
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4">

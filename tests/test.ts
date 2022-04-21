@@ -357,6 +357,29 @@ test('Progress bar page should have h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Progress bar Components');
 });
 
+// Ratings
+test('Rating main page should have h1', async ({ page }) => {
+	await page.goto('/ratings');
+	expect(await page.textContent('h1')).toBe('Rating Components');
+});
+
+test('Rating page should have h1', async ({ page }) => {
+	await page.goto('/ratings/rating');
+	expect(await page.textContent('h1')).toBe('Rating Component');
+});
+
+test('AdvancedRating page should have h1', async ({ page }) => {
+	await page.goto('/ratings/advanced-rating');
+	expect(await page.textContent('h1')).toBe('AdvancedRating Component');
+});
+
+test('ScoreRating page should have h1', async ({ page }) => {
+	await page.goto('/ratings/score-rating');
+	expect(await page.textContent('h1')).toBe('ScoreRating Component');
+});
+
+
+
 // Sidebar
 test('Sidebar page should have h1', async ({ page }) => {
 	await page.goto('/sidebars');

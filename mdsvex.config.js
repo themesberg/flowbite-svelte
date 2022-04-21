@@ -23,6 +23,7 @@ const config = defineConfig({
 		navbarLayout: './src/routes/layouts/navbarLayout.svelte',
 		paginationLayout: './src/routes/layouts/paginationLayout.svelte',
 		progressbarLayout: './src/routes/layouts/progressbarLayout.svelte',
+		ratingLayout: './src/routes/layouts/ratingLayout.svelte',
 		sidebarLayout: './src/routes/layouts/sidebarLayout.svelte',
 		spinnerLayout: './src/routes/layouts/spinnerLayout.svelte',
 		tabLayout: './src/routes/layouts/tabLayout.svelte',
