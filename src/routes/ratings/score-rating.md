@@ -18,7 +18,7 @@ layout: ratingLayout
       href:'/'
     },
     {
-      label:'Rating',
+      label:'Rating home',
       href:'/ratings/'
     },
     {

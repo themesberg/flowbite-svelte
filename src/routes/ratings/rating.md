@@ -18,8 +18,12 @@ layout: ratingLayout
       href:'/'
     },
     {
-      label:'Rating',
+      label:'Rating home',
       href:'/ratings/'
+    },
+    {
+      label:'Rating',
+      href:'/ratings/rating'
     }
   ]
 	let headerLabel = {
