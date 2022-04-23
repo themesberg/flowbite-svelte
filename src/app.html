@@ -10,10 +10,19 @@
 		<link rel="manifest" href="/site.webmanifest">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Flowbite Svelte</title>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-4Y9Y3WGG11"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-4Y9Y3WGG11');
+		</script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
 		%svelte.head%
 	</head>
 	<body class="bg-white dark:bg-gray-800">
 		<div id="svelte">%svelte.body%</div>
 	</body>
-	<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "caf861da46234faf84dcc5b2890ae35b"}'></script><!-- End Cloudflare Web Analytics -->
 </html>
