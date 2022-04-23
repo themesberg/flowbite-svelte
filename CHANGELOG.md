@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.14.15](https://github.com/themesberg/flowbite-svelte/compare/v0.14.14...v0.14.15) (2022-04-23)
+
+
+### Features
+
+* add loop to carousel components ([0ae0d66](https://github.com/themesberg/flowbite-svelte/commit/0ae0d66aaf74c7b588978ce88ab7c5117ee4a4e2))
+
 ### [0.14.14](https://github.com/themesberg/flowbite-svelte/compare/v0.14.13...v0.14.14) (2022-04-21)
 
 
