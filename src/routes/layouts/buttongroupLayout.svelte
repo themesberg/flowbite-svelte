@@ -19,7 +19,7 @@
 
 		<h2 class="text-2xl w-full dark:text-white pt-8 pb-4">References</h2>
 
-		<p class="dark:text-white text-lg">
+		<p>
 			<a href="https://flowbite.com/docs/components/button-group/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Button Group</a>
 		</p>
 	</div>

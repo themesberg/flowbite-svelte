@@ -84,7 +84,7 @@ let btnClass="Add your class here"
 // ...
 ```
 
-<p class="dark:text-white text-lg">Update the body class</p>
+<p>Update the body class</p>
 
 ```html
 <!-- src/app.html -->

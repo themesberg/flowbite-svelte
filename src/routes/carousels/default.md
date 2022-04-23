@@ -103,9 +103,28 @@ layout: carouselLayout
 <Carousel {images} />
 ```
 
+<h2 class="text-2xl w-full dark:text-white py-4" id="Loop">Loop</h2>
+
+<p>Use `loop` prop to loop the carousel. Use `duration=number` to set the interval</p>
+
+<div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+	<div class="max-w-4xl">
+		<Carousel {images} loop {showCaptions} {showThumbs} duration="3000"/>
+	</div>
+</div>
+
+```html
+<script>
+  let showThumbs=false
+  let showCaptions=false
+</script>
+
+<Carousel {images} loop {showCaptions} {showThumbs} duration="3000" />
+```
+
 <h2 class="text-2xl w-full dark:text-white py-4">Without thumbnails</h2>
 
-<p class="dark:text-white text-lg">The `showThumbs` is set to `true`. Set it to `false` to hide it.</p>
+<p>The `showThumbs` is set to `true`. Set it to `false` to hide it.</p>
 
 <div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <div class="max-w-4xl">
@@ -123,7 +142,7 @@ layout: carouselLayout
 
 <h2 class="text-2xl w-full dark:text-white py-4">Without caption</h2>
 
-<p class="dark:text-white text-lg">To hide the caption, set `showCaptions` to `false`.</p>
+<p>To hide the caption, set `showCaptions` to `false`.</p>
 
 <div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <div class="max-w-4xl">
@@ -142,7 +161,7 @@ layout: carouselLayout
 
 <h2 class="text-2xl w-full dark:text-white py-4">Without indicators</h2>
 
-<p class="dark:text-white text-lg">To hide the indicators, set `showIndicators` to `false`.</p>
+<p>To hide the indicators, set `showIndicators` to `false`.</p>
 
 <div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <div class="max-w-4xl">
@@ -162,7 +181,7 @@ layout: carouselLayout
 
 <h2 class="text-2xl w-full dark:text-white py-4">Without Slide controlers</h2>
 
-<p class="dark:text-white text-lg">To hide the slide controlers, set `slideControls` to `false`.</p>
+<p>To hide the slide controlers, set `slideControls` to `false`.</p>
 
 <div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <div class="max-w-4xl">

@@ -83,7 +83,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 </div>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-   <Toast transitionType="slide" iconColor='red' transitionParams={{delay: 250, duration: 300, easing: quintOut}}>
+   <Toast transitionType="slide" iconColor='red' transitionParams="{{delay: 250, duration: 300, easing: quintOut}}">
     <span slot="icon">
     <CheckCircleIconSolid className="h-5 w-5 text-red-500"/>
     </span>
@@ -94,7 +94,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 </div>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-   <Toast transitionType="slide" iconColor='red' transitionParams={{delay: 250, duration: 2000, easing: elasticOut}}>
+   <Toast transitionType="slide" iconColor='red' transitionParams="{{delay: 250, duration: 2000, easing: elasticOut}}">
     <span slot="icon">
     <CheckCircleIconSolid className="h-5 w-5 text-red-500"/>
     </span>
@@ -114,7 +114,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
   </span>
 </Toast>
 
- <Toast transitionType="slide" iconColor='red' transitionParams={{delay: 250, duration: 300, easing: quintOut}}>
+ <Toast transitionType="slide" iconColor='red' transitionParams="{{delay: 250, duration: 300, easing: quintOut}}">
   <span slot="icon">
   <CheckCircleIconSolid className="h-5 w-5 text-red-500"/>
   </span>
@@ -123,7 +123,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
   </span>
 </Toast>
 
-<Toast transitionType="slide" iconColor='red' transitionParams={{delay: 250, duration: 2000, easing: elasticOut}}>
+<Toast transitionType="slide" iconColor='red' transitionParams="{{delay: 250, duration: 2000, easing: elasticOut}}">
   <span slot="icon">
   <CheckCircleIconSolid className="h-5 w-5 text-red-500"/>
   </span>
@@ -136,7 +136,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 <h3>Blur examples</h3>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-  <Toast transitionType="blur" iconColor='purple' transitionParams={{amount: 10}}>
+  <Toast transitionType="blur" iconColor='purple' transitionParams="{{amount: 10}}">
     <span slot="icon">
     <PlusCircleIconOutline className="h-5 w-5 text-purple-500"/>
     </span>
@@ -147,7 +147,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 </div>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-  <Toast transitionType="blur" iconColor='purple' transitionParams={{amount: 50, delay: 1000}}>
+  <Toast transitionType="blur" iconColor='purple' transitionParams="{{amount: 50, delay: 1000}}">
     <span slot="icon">
     <PlusCircleIconOutline className="h-5 w-5 text-purple-500"/>
     </span>
@@ -158,7 +158,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 </div>
 
 ```html
-<Toast transitionType="blur" iconColor='purple' transitionParams={{amount: 10}}>
+<Toast transitionType="blur" iconColor='purple' transitionParams="{{amount: 10}}">
   <span slot="icon">
   <PlusCircleIconOutline className="h-5 w-5 text-purple-500"/>
   </span>
@@ -167,7 +167,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
   </span>
 </Toast>
 
-<Toast transitionType="blur" iconColor='purple' transitionParams={{amount: 50, delay: 1000}}>
+<Toast transitionType="blur" iconColor='purple' transitionParams="{{amount: 50, delay: 1000}}">
   <span slot="icon">
   <PlusCircleIconOutline className="h-5 w-5 text-purple-500"/>
   </span>
@@ -180,7 +180,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 <h3>Fly examples</h3>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-  <Toast transitionType="fly" transitionParams={{x: 200}} iconColor="green">
+  <Toast transitionType="fly" transitionParams="{{x: 200}}" iconColor="green">
     <span slot="icon">
     <ArchiveIconSolid  className="h-5 w-5 text-green-500"/>
     </span>
@@ -191,7 +191,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 </div>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-  <Toast transitionType="fly" transitionParams={{y: 200}} iconColor="green">
+  <Toast transitionType="fly" transitionParams="{{y: 200}}" iconColor="green">
     <span slot="icon">
     <ArchiveIconSolid  className="h-5 w-5 text-green-500"/>
     </span>
@@ -202,7 +202,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 </div>
 
 ```html
-<Toast transitionType="fly" transitionParams={{x: 200}} iconColor="green">
+<Toast transitionType="fly" transitionParams="{{x: 200}}" iconColor="green">
   <span slot="icon">
   <ArchiveIconSolid  className="h-5 w-5 text-green-500"/>
   </span>
@@ -211,7 +211,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
   </span>
 </Toast>
 
-<Toast transitionType="fly" transitionParams={{y: 200}} iconColor="green">
+<Toast transitionType="fly" transitionParams="{{y: 200}}" iconColor="green">
   <span slot="icon">
   <ArchiveIconSolid  className="h-5 w-5 text-green-500"/>
   </span>

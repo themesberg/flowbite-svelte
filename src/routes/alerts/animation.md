@@ -57,7 +57,7 @@ let crumbs = [
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6 h-64">
  
 {#each alerts as item (item.id)}
-	<div animate:flip={{ delay: 500 }}>
+	<div animate:flip="{{ delay: 500 }}">
 		<Alert alertId={item.id} color={item.btnColor} btn1 on:handlebtn1={() => remove(item)}>
 			{item.text}
 		</Alert>
@@ -93,7 +93,7 @@ function remove(alert) {
 </script>
 
 {#each alerts as item (item.id)}
-	<div animate:flip={{ delay: 500 }}>
+	<div animate:flip="{{ delay: 500 }}">
 		<Alert alertId={item.id} color={item.btnColor} btn1 on:handlebtn1={() => remove(item)}>
 			{item.text}
 		</Alert>
