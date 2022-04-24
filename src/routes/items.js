@@ -69,6 +69,7 @@ export const footers = [
 export const icons = [
   { href: "/icons/heroicons", name: "Heroicons" },
   { href: "/icons/simple-icons", name: "Simple-icons" },
+  { href: "/icons/feathericons", name: "Feathericons" },
 ]
 
 // export const list_group = [
