@@ -45,10 +45,24 @@ layout: iconLayout
 </div>
 
 ```html
+<script>
+  import { ActivityIcon, AlertTriangleIcon, AnchorIcon } from '@codewithshin/svelte-feathericons'
+</script>
+
 <ActivityIcon color="#c61515" size="12" />
 <ActivityIcon color="#c61515" size="16" />
 <AlertTriangleIcon color="#6dff6b" size="24" />
 <AlertTriangleIcon color="#6dff6b" size="28" />
 <AnchorIcon color="#23deff" size="32" />
 <AnchorIcon color="#23deff" size="36" />
+```
+
+<p>You can also include the whole icon pack:</p>
+
+```html
+<script>
+  import * as Icon from '@codewithshin/svelte-feathericons';
+</script>
+
+<Icon.UnlockIcon color="#6dff6b" size="24" />
 ```
