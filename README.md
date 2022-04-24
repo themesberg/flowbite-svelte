@@ -1,5 +1,16 @@
 # FLOWBITE-SVELTE
 
+[![npm version](https://badgen.net/npm/v/flowbite-svelte)](https://www.npmjs.com/package/flowbite-svelte)
+[![npm downloads](https://badgen.net/npm/dw/flowbite-svelte)](https://www.npmjs.com/package/flowbite-svelte)
+[![release](https://badgen.net/github/release/themesberg/flowbite-svelte)](https://github.com/themesberg/flowbite-svelte/releases)
+[![release](https://badgen.net/github/release/themesberg/flowbite-svelte)](https://github.com/themesberg/flowbite-svelte/releases)
+[![license](https://badgen.net/npm/license/themesberg/flowbite-svelte)](https://github.com/shinokada/svelte-feathericons/blob/main/LICENSE)
+
+
+
+
+
+
 [Flowbite-Svelte](https://flowbite-svelte.vercel.app/) is an official Flowbite component library for Svelte. All interactivities are handled by Svelte.
 
 ## Installation
