@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@codewithshin/svelte-feathericons': ^0.1.9
   '@codewithshin/svelte-heroicons': ^1.1.3
   '@codewithshin/svelte-sidebar': ^0.4.8
   '@codewithshin/svelte-simpleicons': ^0.2.2
@@ -37,6 +38,7 @@ dependencies:
   svelte-collapse: 0.0.4
 
 devDependencies:
+  '@codewithshin/svelte-feathericons': 0.1.9
   '@codewithshin/svelte-sidebar': 0.4.8
   '@codewithshin/svelte-simpleicons': 0.2.2
   '@codewithshin/svelte-utterances': 0.2.2
@@ -582,6 +584,10 @@ packages:
     dependencies:
       '@babel/helper-validator-identifier': 7.16.7
       to-fast-properties: 2.0.0
+    dev: true
+
+  /@codewithshin/svelte-feathericons/0.1.9:
+    resolution: {integrity: sha512-+3yc8NVALmkhvPaVKWl+Y4sulDZrmy7c6tWjfvE08vziV04rhF4vpGlvBIQ4AYpJwuDX72vyx2godOkiGOgx8A==}
     dev: true
 
   /@codewithshin/svelte-heroicons/1.1.3:

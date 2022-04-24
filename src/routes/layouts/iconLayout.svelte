@@ -17,6 +17,10 @@
 			<a href="/icons/simple-icons" class="text-blue-600 hover:underline dark:text-blue-500">Simpleicons</a>
 		</p>
 
+		<p>
+			<a href="/icons/feathericons" class="text-blue-600 hover:underline dark:text-blue-500">Feathericons</a>
+		</p>
+
 		<h2 class="text-2xl w-full dark:text-white pt-8 pb-4">References</h2>
 
 		<p class="w-full dark:text-white text-base">
@@ -24,7 +28,23 @@
 		</p>
 
 		<p class="w-full dark:text-white text-base">
+			<a href="https://github.com/shinokada/svelte-simpleicons" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">- Svelte-Simpleicons</a>
+		</p>
+
+		<p class="w-full dark:text-white text-base">
+			<a href="https://github.com/shinokada/svelte-feathericons/tree/main/src/lib" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">- Svelte-Feathericons</a>
+		</p>
+
+		<p class="w-full dark:text-white text-base">
 			<a href="https://heroicons.com/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">- Heroicons</a>
+		</p>
+
+		<p class="w-full dark:text-white text-base">
+			<a href="https://simpleicons.org/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">- Simple-Icons</a>
+		</p>
+
+		<p class="w-full dark:text-white text-base">
+			<a href="https://feathericons.com/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">- Feathericons</a>
 		</p>
 	</div>
 
