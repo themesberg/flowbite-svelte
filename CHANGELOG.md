@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.14.16](https://github.com/themesberg/flowbite-svelte/compare/v0.14.15...v0.14.16) (2022-04-24)
+
+
+### Features
+
+* update svelte to 3.47.0 ([2c51f1c](https://github.com/themesberg/flowbite-svelte/commit/2c51f1c21907f7a977249e3dfe7c2fe46dd85553))
+
 ### [0.14.15](https://github.com/themesberg/flowbite-svelte/compare/v0.14.14...v0.14.15) (2022-04-23)
 
 
