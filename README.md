@@ -7,163 +7,164 @@
 
 
 
-[Flowbite-Svelte](https://flowbite-svelte.vercel.app/) is an official Flowbite component library for Svelte. All interactivities are handled by Svelte.
+[Flowbite-Svelte](https://flowbite-svelte.com/) is an official Flowbite component library for Svelte. All interactivities are handled by Svelte.
 
 ## Installation
 
-- [Getting started](https://flowbite-svelte.vercel.app/getting-started)
-- [About](https://flowbite-svelte.vercel.app/about)
-- [Type list](https://flowbite-svelte.vercel.app/type-list)
-- [CLI](https://flowbite-svelte.vercel.app/cli)
+- [Getting started](https://flowbite-svelte.com/getting-started)
+- [About](https://flowbite-svelte.com/about)
+- [Type list](https://flowbite-svelte.com/type-list)
+- [CLI](https://flowbite-svelte.com/cli)
 
 ## Accordion components
 
-- [Default accordion](https://flowbite-svelte.vercel.app/accordions/default)
-- [Icon accordion](https://flowbite-svelte.vercel.app/accordions/icon-accordion)
+- [Default accordion](https://flowbite-svelte.com/accordions/default)
+- [Icon accordion](https://flowbite-svelte.com/accordions/icon-accordion)
 
 ## Alert components
 
-- [Default alert](https://flowbite-svelte.vercel.app/alerts/default-alert)
-- [Border alert](https://flowbite-svelte.vercel.app/alerts/border-alert)
-- [Information alert](https://flowbite-svelte.vercel.app/alerts/information-alert)
-- [Animation alert](https://flowbite-svelte.vercel.app/alerts/animation)
+- [Default alert](https://flowbite-svelte.com/alerts/default-alert)
+- [Border alert](https://flowbite-svelte.com/alerts/border-alert)
+- [Information alert](https://flowbite-svelte.com/alerts/information-alert)
+- [Animation alert](https://flowbite-svelte.com/alerts/animation)
 
 ## Avatar components
 
-- [Avatar](https://flowbite-svelte.vercel.app/avatar)
+- [Avatar](https://flowbite-svelte.com/avatar)
 
 ## Badges components
 
-- [Default badge](https://flowbite-svelte.vercel.app/badges/default)
-- [Icon badge](https://flowbite-svelte.vercel.app/badges/badge-icon)
-- [Link badge](https://flowbite-svelte.vercel.app/badges/badge-link)
+- [Default badge](https://flowbite-svelte.com/badges/default)
+- [Icon badge](https://flowbite-svelte.com/badges/badge-icon)
+- [Link badge](https://flowbite-svelte.com/badges/badge-link)
 
 ## Breadcrumb components
 
-- [Breadcrumb](https://flowbite-svelte.vercel.app/breadcrumbs)
+- [Breadcrumb](https://flowbite-svelte.com/breadcrumbs)
 
 ## Button group compnents
 
-- [Default button group](https://flowbite-svelte.vercel.app/button-groups/default)
-- [Outline button group](https://flowbite-svelte.vercel.app/button-groups/outline)
+- [Default button group](https://flowbite-svelte.com/button-groups/default)
+- [Outline button group](https://flowbite-svelte.com/button-groups/outline)
 
 ## Button components
 
-- [Setup](https://flowbite-svelte.vercel.app/buttons/setup)
-- [Default Button](https://flowbite-svelte.vercel.app/buttons/default)
-- [Colored Shadow Button](https://flowbite-svelte.vercel.app/buttons/colored-shadow)
-- [Gradient Duotone Button](https://flowbite-svelte.vercel.app/buttons/gradient-duotone)
-- [Gradient Monochrome Button](https://flowbite-svelte.vercel.app/buttons/gradient-monochrome)
-- [Gradietn Outline Button](https://flowbite-svelte.vercel.app/buttons/gradient-outline)
-- [Outlined Button](https://flowbite-svelte.vercel.app/buttons/outlined)
-- [Rounded Button](https://flowbite-svelte.vercel.app/buttons/rounded)
+- [Setup](https://flowbite-svelte.com/buttons/setup)
+- [Default Button](https://flowbite-svelte.com/buttons/default)
+- [Colored Shadow Button](https://flowbite-svelte.com/buttons/colored-shadow)
+- [Gradient Duotone Button](https://flowbite-svelte.com/buttons/gradient-duotone)
+- [Gradient Monochrome Button](https://flowbite-svelte.com/buttons/gradient-monochrome)
+- [Gradietn Outline Button](https://flowbite-svelte.com/buttons/gradient-outline)
+- [Outlined Button](https://flowbite-svelte.com/buttons/outlined)
+- [Rounded Button](https://flowbite-svelte.com/buttons/rounded)
 
 ## Card components
 
-- [Default Card](https://flowbite-svelte.vercel.app/cards/card)
-- [CTA Card](https://flowbite-svelte.vercel.app/cards/cta)
-- [Ecommerce Card](https://flowbite-svelte.vercel.app/cards/ecommerce)
-- [Horizontal Card](https://flowbite-svelte.vercel.app/cards/horizontal)
-- [Interactive Card](https://flowbite-svelte.vercel.app/cards/interactive)
-- [List Card](https://flowbite-svelte.vercel.app/cards/list)
-- [Signin Card](https://flowbite-svelte.vercel.app/cards/signin)
+- [Default Card](https://flowbite-svelte.com/cards/card)
+- [CTA Card](https://flowbite-svelte.com/cards/cta)
+- [Ecommerce Card](https://flowbite-svelte.com/cards/ecommerce)
+- [Horizontal Card](https://flowbite-svelte.com/cards/horizontal)
+- [Interactive Card](https://flowbite-svelte.com/cards/interactive)
+- [List Card](https://flowbite-svelte.com/cards/list)
+- [Signin Card](https://flowbite-svelte.com/cards/signin)
 
 ## Carousel components
 
-- [Carousel](https://flowbite-svelte.vercel.app/carousels/default)
-- [Carousel with transition](https://flowbite-svelte.vercel.app/carousels/transition)
+- [Carousel](https://flowbite-svelte.com/carousels/default)
+- [Carousel with transition](https://flowbite-svelte.com/carousels/transition)
 
 ## Dark mode components
 
-- [Dark mode](https://flowbite-svelte.vercel.app/darkmode)
+- [Dark mode](https://flowbite-svelte.com/darkmode)
 
 ## Dropdown components
 
-- [Dropdown](https://flowbite-svelte.vercel.app/dropdowns/default)
-- [Dropdown with Image](https://flowbite-svelte.vercel.app/dropdowns/image)
+- [Dropdown](https://flowbite-svelte.com/dropdowns/default)
+- [Dropdown with Image](https://flowbite-svelte.com/dropdowns/image)
 
 ## Form components
 
-- [Forms](https://flowbite-svelte.vercel.app/forms)
+- [Forms](https://flowbite-svelte.com/forms)
 
 ## Footer components
 
-- [Default Footer](https://flowbite-svelte.vercel.app/footer/default)
-- [Footer with Logo](https://flowbite-svelte.vercel.app/footer/logo)
-- [Footer with Sitemap](https://flowbite-svelte.vercel.app/footer/sitemap)
-- [Footer with Socialmedia](https://flowbite-svelte.vercel.app/footer/socialmedia)
+- [Default Footer](https://flowbite-svelte.com/footer/default)
+- [Footer with Logo](https://flowbite-svelte.com/footer/logo)
+- [Footer with Sitemap](https://flowbite-svelte.com/footer/sitemap)
+- [Footer with Socialmedia](https://flowbite-svelte.com/footer/socialmedia)
 
 ## Icons components
 
-- [Heroicons](https://flowbite-svelte.vercel.app/icons/heroicons)
-- [Simpleicons](https://flowbite-svelte.vercel.app/icons/simple-icons)
+- [Heroicons](https://flowbite-svelte.com/icons/heroicons)
+- [Simpleicons](https://flowbite-svelte.com/icons/simple-icons)
+- [Feathericons](https://flowbite-svelte.com/icons/feathericons)
 
 ## List group components
 
-- [List group](https://flowbite-svelte.vercel.app/list-group)
+- [List group](https://flowbite-svelte.com/list-group)
 
 ## Modal components
 
-- [Small Modal](https://flowbite-svelte.vercel.app/modals/small)
-- [Medium Modal](https://flowbite-svelte.vercel.app/modals/medium)
-- [Large Modal](https://flowbite-svelte.vercel.app/modals/large)
-- [Extra Large Modal](https://flowbite-svelte.vercel.app/modals/extra-large)
-- [Signin Modal](https://flowbite-svelte.vercel.app/modals/signin)
-- [All Modals](https://flowbite-svelte.vercel.app/modals/all-modals)
+- [Small Modal](https://flowbite-svelte.com/modals/small)
+- [Medium Modal](https://flowbite-svelte.com/modals/medium)
+- [Large Modal](https://flowbite-svelte.com/modals/large)
+- [Extra Large Modal](https://flowbite-svelte.com/modals/extra-large)
+- [Signin Modal](https://flowbite-svelte.com/modals/signin)
+- [All Modals](https://flowbite-svelte.com/modals/all-modals)
 
 ## Navbar components
 
-- [Default Navbar](https://flowbite-svelte.vercel.app/navbars/default)
-- [Dropdown Navbar](https://flowbite-svelte.vercel.app/navbars/dropdown)
+- [Default Navbar](https://flowbite-svelte.com/navbars/default)
+- [Dropdown Navbar](https://flowbite-svelte.com/navbars/dropdown)
 
 ## Pagination components
 
-- [Pagination](https://flowbite-svelte.vercel.app/paginations)
+- [Pagination](https://flowbite-svelte.com/paginations)
 
 ## Progress bar
 
-- [Probress bar](https://flowbite-svelte.vercel.app/progressbars)
+- [Probress bar](https://flowbite-svelte.com/progressbars)
 
 ## Sidebar components
 
-- [Sidebar](https://flowbite-svelte.vercel.app/sidebars)
+- [Sidebar](https://flowbite-svelte.com/sidebars)
 
 ## Spinner components
 
-- [Default Spinner](https://flowbite-svelte.vercel.app/spinners/default)
-- [Button Spinner](https://flowbite-svelte.vercel.app/spinners/button-spinner)
+- [Default Spinner](https://flowbite-svelte.com/spinners/default)
+- [Button Spinner](https://flowbite-svelte.com/spinners/button-spinner)
 
 ## Tab components
 
-- [Default Tabs](https://flowbite-svelte.vercel.app/tabs/default-tabs)
-- [Underline Tabs](https://flowbite-svelte.vercel.app/tabs/underline-tabs)
-- [Icon Tabs](https://flowbite-svelte.vercel.app/tabs/icon-tabs)
-- [Full width Tabs](https://flowbite-svelte.vercel.app/tabs/full-width-tabs)
-- [Interactive Tabs](https://flowbite-svelte.vercel.app/tabs/interactive-tabs)
-- [Interactive Tabs 2](https://flowbite-svelte.vercel.app/tabs/interactive-tabs-2)
-- [Multiple Interactive Tabs](https://flowbite-svelte.vercel.app/tabs/multiple-interactive-tabs)
-- [Pill Tabs](https://flowbite-svelte.vercel.app/tabs/pilltabs)
+- [Default Tabs](https://flowbite-svelte.com/tabs/default-tabs)
+- [Underline Tabs](https://flowbite-svelte.com/tabs/underline-tabs)
+- [Icon Tabs](https://flowbite-svelte.com/tabs/icon-tabs)
+- [Full width Tabs](https://flowbite-svelte.com/tabs/full-width-tabs)
+- [Interactive Tabs](https://flowbite-svelte.com/tabs/interactive-tabs)
+- [Interactive Tabs 2](https://flowbite-svelte.com/tabs/interactive-tabs-2)
+- [Multiple Interactive Tabs](https://flowbite-svelte.com/tabs/multiple-interactive-tabs)
+- [Pill Tabs](https://flowbite-svelte.com/tabs/pilltabs)
 
 ## Table components
 
-- [Tables](https://flowbite-svelte.vercel.app/tables)
+- [Tables](https://flowbite-svelte.com/tables)
 
 ## Timeline components
 
-- [Default timeline](https://flowbite-svelte.vercel.app/timelines/default)
-- [Vetical timeline](https://flowbite-svelte.vercel.app/timelines/vertical)
-- [Horizontal timeline](https://flowbite-svelte.vercel.app/timelines/horizontal)
-- [Activity log](https://flowbite-svelte.vercel.app/timelines/activity)
-- [Grouped timeline](https://flowbite-svelte.vercel.app/timelines/group)
+- [Default timeline](https://flowbite-svelte.com/timelines/default)
+- [Vetical timeline](https://flowbite-svelte.com/timelines/vertical)
+- [Horizontal timeline](https://flowbite-svelte.com/timelines/horizontal)
+- [Activity log](https://flowbite-svelte.com/timelines/activity)
+- [Grouped timeline](https://flowbite-svelte.com/timelines/group)
 
 ## Toast components
 
-- [Toast](https://flowbite-svelte.vercel.app/toasts)
+- [Toast](https://flowbite-svelte.com/toasts)
 
 ## Tooltip components
 
-- [Default Tooltip](https://flowbite-svelte.vercel.app/tooltips/default)
-- [Light Tooltip](https://flowbite-svelte.vercel.app/tooltips/light)
+- [Default Tooltip](https://flowbite-svelte.com/tooltips/default)
+- [Light Tooltip](https://flowbite-svelte.com/tooltips/light)
 
 ## Tests
 
