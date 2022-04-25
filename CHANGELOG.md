@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.14.17](https://github.com/themesberg/flowbite-svelte/compare/v0.14.16...v0.14.17) (2022-04-25)
+
+
+### Features
+
+* update heroicons ([9a96fca](https://github.com/themesberg/flowbite-svelte/commit/9a96fca12b1e3adc61088a56ae2c3d3ad65ceb67))
+
 ### [0.14.16](https://github.com/themesberg/flowbite-svelte/compare/v0.14.15...v0.14.16) (2022-04-24)
 
 
