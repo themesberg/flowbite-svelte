@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.15.0](https://github.com/themesberg/flowbite-svelte/compare/v0.14.17...v0.15.0) (2022-04-25)
+
+
+### Bug Fixes
+
+* update props dir files ([e52cfcb](https://github.com/themesberg/flowbite-svelte/commit/e52cfcbba6ce7fae124803f670ba280e95c96e85))
+
 ### [0.14.17](https://github.com/themesberg/flowbite-svelte/compare/v0.14.16...v0.14.17) (2022-04-25)
 
 
