@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@codewithshin/svelte-feathericons': ^0.1.9
-  '@codewithshin/svelte-heroicons': ^1.1.3
+  '@codewithshin/svelte-heroicons': ^1.2.0
   '@codewithshin/svelte-sidebar': ^0.4.8
   '@codewithshin/svelte-simpleicons': ^0.2.2
   '@codewithshin/svelte-utterances': ^0.2.2
@@ -33,7 +33,7 @@ specifiers:
   typescript: ~4.6.2
 
 dependencies:
-  '@codewithshin/svelte-heroicons': 1.1.3
+  '@codewithshin/svelte-heroicons': 1.2.0
   flowbite: 1.4.2
   svelte-collapse: 0.0.4
 
@@ -590,8 +590,8 @@ packages:
     resolution: {integrity: sha512-+3yc8NVALmkhvPaVKWl+Y4sulDZrmy7c6tWjfvE08vziV04rhF4vpGlvBIQ4AYpJwuDX72vyx2godOkiGOgx8A==}
     dev: true
 
-  /@codewithshin/svelte-heroicons/1.1.3:
-    resolution: {integrity: sha512-+Ot4Z1Cr536mXXpaxu1xoV5sbph9UZ9j0r7JNUb4gkJwp+Dnw8sAKJPsHc/mv55gFVjdv3/kSQ0ewBRmY4vNRg==}
+  /@codewithshin/svelte-heroicons/1.2.0:
+    resolution: {integrity: sha512-+whOdVTK+nQpWWHaOx2ODqSObC//sW4mWaetw2nel1WA9oSdyL33f5Mh1FHKqfIxv1br7Mb7a3rw6Rx2r6aLCQ==}
 
   /@codewithshin/svelte-sidebar/0.4.8:
     resolution: {integrity: sha512-NrMEvJaiH9HOWetlZVgb7QnUX8ms+dT1p0qDJnY/rTEq3BGV2HSbiKSIukvLgfRjA3LFeyhVY7tFlqLKtiZHiA==}
@@ -1857,7 +1857,7 @@ packages:
   /flowbite-svelte/0.13.8:
     resolution: {integrity: sha512-fhlKnRw4Nm3PUHK90+aXwW7YqYV/l/pDj+k98G1/5OmSc+93ytI19EhKAwK7TtXWDMLQkTj4K7kBODhyckSe5Q==}
     dependencies:
-      '@codewithshin/svelte-heroicons': 1.1.3
+      '@codewithshin/svelte-heroicons': 1.2.0
       flowbite: 1.4.2
       svelte-collapse: 0.0.4
     dev: true

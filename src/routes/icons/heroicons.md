@@ -45,19 +45,19 @@ You can find all the icon names from the <a class="text-blue-600 hover:underline
 
 <h2 class="text-2xl w-full dark:text-white mt-8">Examples</h2>
 
-<p class=" dark:text-white">If you want to change the color, add it to className.</p>
+<p class=" dark:text-white">If you want to change the color, add it to class prop.</p>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 
-<AdjustmentsIconSolid className="h-8 w-8 text-blue-500 dark:text-red-300" />
-<BellIconOutline  className="h-8 w-8 text-red-500 dark:text-green-300" />
-<BriefcaseIconSolid  className="h-8 w-8 text-green-500 dark:text-indigo-300" />
-<ChartSquareBarIconSolid className="h-8 w-8 text-purple-500 dark:text-pink-300" />
-<TicketIconOutline className="h-8 w-8 text-pink-500 dark:text-indigo-300" />
-<CameraIconOutline className="h-8 w-8 text-indigo-500 dark:text-white" />
-<BellIconSolid className="h-8 w-8 text-gray-500 dark:text-yellow-500" />
+<AdjustmentsIconSolid size="30" class="text-blue-500 dark:text-red-300" />
+<BellIconOutline  class="text-red-500 dark:text-green-300" />
+<BriefcaseIconSolid  size="30" class="text-green-500 dark:text-indigo-300" />
+<ChartSquareBarIconSolid size="30" class="text-purple-500 dark:text-pink-300" />
+<TicketIconOutline size="30" class="text-pink-500 dark:text-indigo-300" />
+<CameraIconOutline size="30" class="text-indigo-500 dark:text-white" />
+<BellIconSolid size="30" class="text-gray-500 dark:text-yellow-500" />
 <ChevronLeftIconSolid
-  className="h-8 w-8 text-yellow-300 dark:text-white"
+  size="30" class="text-yellow-300 dark:text-white"
 />
 </div>
 
@@ -75,21 +75,14 @@ import {
 } from "@codewithshin/svelte-heroicons";
 </script>
 
-<AdjustmentsIconSolid className="h-8 w-8 text-blue-500 dark:text-blue-300" />
-<BellIconOutline  className="h-8 w-8 text-red-500 dark:text-purple-300" />
-<BriefcaseIconSolid  className="h-8 w-8 text-green-500 dark:text-indigo-300" />
-<ChartSquareBarIconSolid className="h-8 w-8 text-purple-500 dark:text-red-300" />
-<TicketIconOutline className="h-8 w-8 text-pink-500 dark:text-yellow-300" />
-<CameraIconOutline className="h-8 w-8 text-indigo-500 dark:text-white" />
-<BellIconSolid className="h-8 w-8 text-gray-500 dark:text-blue-500" />
+<AdjustmentsIconSolid size="30" class="text-blue-500 dark:text-blue-300" />
+<BellIconOutline  size="30" class="text-red-500 dark:text-purple-300" />
+<BriefcaseIconSolid  size="30" class="text-green-500 dark:text-indigo-300" />
+<ChartSquareBarIconSolid size="30" class="text-purple-500 dark:text-red-300" />
+<TicketIconOutline size="30" class="text-pink-500 dark:text-yellow-300" />
+<CameraIconOutline size="30" class="text-indigo-500 dark:text-white" />
+<BellIconSolid size="30" class="text-gray-500 dark:text-blue-500" />
 <ChevronLeftIconSolid
-  className="h-8 w-8 text-yellow-300 dark:text-white"
+  size="30" class="text-yellow-300 dark:text-white"
 />
-```
-
-<h2 class="text-2xl w-full dark:text-white mt-8">Props</h2>
-
-```js
-let className = "h-6 w-6"
-let viewBox = "0 0 24 24"
 ```

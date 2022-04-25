@@ -5,7 +5,7 @@ layout: formLayout
 <script>
 import { onMount } from 'svelte';
 import { Input, Iconinput, FloatingLabelInput, Toggle, Textarea, Select, Fileupload, Radio, SingleCheckbox, Checkbox, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
-import { AtSymbolIconSolid , MailIconOutline } from '@codewithshin/svelte-heroicons'
+import { AtSymbolIconOutline , MailIconOutline } from '@codewithshin/svelte-heroicons'
 import componentProps1 from '../props/Input.json'
 export let items1 = componentProps1.props
 import componentProps2 from '../props/Iconinput.json'
@@ -279,9 +279,9 @@ onMount(() => {
 <h3>Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Iconinput id="email" type="email" name="email" placeholder="Your email" label="Border" icon={AtSymbolIconSolid} iconClass="h-4 w-4 mr-2 text-blue-500"/>
+<Iconinput id="email" type="email" name="email" placeholder="Your email" label="Border" icon={AtSymbolIconOutline} iconClass="h-4 w-4 mr-2 text-blue-500 dark:text-red-500"/>
 <div class="py-4">
-<Iconinput noBorder id="email" type="email" name="email" label="No border" icon={MailIconOutline} iconClass="h-4 w-4 mr-2 text-blue-500"/>
+<Iconinput noBorder id="email" type="email" name="email" label="No border" icon={MailIconOutline} iconClass="h-4 w-4 mr-2 text-blue-500 dark:text-green-500"/>
 </div>
 </div>
 
@@ -289,10 +289,9 @@ onMount(() => {
 <script>
   import { Iconinput } from 'flowbite-svelte'
 </script>
-
-<Iconinput id="email" type="email" name="email" placeholder="Your email" label="Border" icon={AtSymbolIconSolid} iconClass="h-4 w-4 mr-2 text-blue-500"/>
-
-<Iconinput noBorder id="email" type="email" name="email" label="No border" icon={MailIconOutline} iconClass="h-4 w-4 mr-2 text-blue-500"/>
+<Iconinput id="email" type="email" name="email" placeholder="Your email" label="Border" icon={AtSymbolIconOutline} iconClass="h-4 w-4 mr-2 text-blue-500 dark:text-red-500"/>
+<div class="py-4">
+<Iconinput noBorder id="email" type="email" name="email" label="No border" icon={MailIconOutline} iconClass="h-4 w-4 mr-2 text-blue-500 dark:text-green-500"/>
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-4">Textarea</h2>

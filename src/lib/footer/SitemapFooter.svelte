@@ -9,12 +9,10 @@
 	export let ulClass: string = 'text-gray-900 dark:text-gray-300';
 	export let liClass: string = 'mb-4';
 	export let linkClass: string = 'hover:underline';
-	export let copyrightDivClass: string =
-		'py-6 px-4 text-gray-900 dark:bg-gray-700 md:flex md:items-center md:justify-between';
+	export let copyrightDivClass: string = 'py-6 px-4 text-gray-900 dark:bg-gray-700 md:flex md:items-center md:justify-between';
 	export let copyrightClass: string = 'text-sm text-gray-900 dark:text-gray-300 sm:text-center';
 	export let socialMediaDivClass: string = 'flex mt-4 space-x-6 sm:justify-center md:mt-0';
-	export let socialMediaLinkClass: string =
-		'text-gray-900 dark:text-gray-400 hover:text-gray-300 dark:hover:text-white';
+	export let socialMediaLinkClass: string = 'text-gray-900 dark:text-gray-400 hover:text-gray-300 dark:hover:text-white';
 	export let iconClass: string = 'h-5 w-5 mr-2';
 	export let copyrightYear: string = '© 2022';
 	export let allRightsReserved: string = 'All Rights Reserved.';
@@ -38,9 +36,7 @@
 		{/each}
 	</div>
 	<div class={copyrightDivClass}>
-		<span class={copyrightClass}
-			>{copyrightYear} <a href={site.href}>{site.name}</a>. {allRightsReserved}
-		</span>
+		<span class={copyrightClass}>{copyrightYear} <a href={site.href}>{site.name}</a>. {allRightsReserved} </span>
 		<div class={socialMediaDivClass}>
 			{#each socialMedia as { href, icon }}
 				<a {href} class={socialMediaLinkClass}>

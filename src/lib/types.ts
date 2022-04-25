@@ -34,6 +34,8 @@ export interface ButtonGroupType {
     href?: string;
     rel?: string;
     icon?: typeof SvelteComponent;
+    iconSize?: number;
+    iconClass?: string;
 }
 
 export type ButtonType = 'button' | 'submit' | 'reset'
@@ -95,6 +97,7 @@ export interface IconTabType {
     href: string,
     rel?: string,
     icon?: typeof SvelteComponent;
+    iconSize?: number;
 }
 
 export type ImgType = {
@@ -159,6 +162,8 @@ export type SidebarType = {
     name: string;
     href?: string;
     icon?: typeof SvelteComponent;
+    iconSize?: number;
+    iconClass?: string;
     rel?: string;
     children?: SidebarType[];
     subtext?: HTMLElement;
@@ -183,6 +188,8 @@ export interface SocialMediaLinkType {
 export interface SocialMediaType {
     href: string;
     icon: typeof SvelteComponent;
+    iconSize?: number;
+    iconClass?: string;
 }
 
 
@@ -213,6 +220,8 @@ export interface TimelineItemVerticalType {
     date: Date | string;
     title: string;
     icon?: typeof SvelteComponent;
+    iconSize?: number;
+    iconClass?: string;
     href?: string;
     linkname?: string;
     text?: HTMLElement | string;
@@ -222,6 +231,8 @@ export interface TimelineItemHorizontalType {
     date: Date | string;
     title: string;
     icon?: typeof SvelteComponent;
+    iconSize?: number;
+    iconClass?: string;
     text?: HTMLElement | string;
 }
 

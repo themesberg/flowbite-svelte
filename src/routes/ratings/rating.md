@@ -96,15 +96,15 @@ layout: ratingLayout
 
 <h3>Size and color</h3>
 
-<p>The default icon size is `h-5 w-5`. Set the `className` in a icon component for size and color.</p>
+<p>The default icon size is `24`. Set the `class` in a icon component to change colors.</p>
 
 <div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 	<Rating total="5" rating="3.21">
 		<span slot="ratingUp">
-			<HeartIconSolid className="h-3 w-3 text-red-700 dark:text-red-500" />
+			<HeartIconSolid class="text-red-700 dark:text-red-500" />
 		</span>
 		<span slot="ratingDown">
-			<HeartIconSolid className="h-3 w-3 text-gray-300 dark:text-gray-500" />
+			<HeartIconSolid class="text-gray-300 dark:text-gray-500" />
 		</span>
 	</Rating>
 </div>
@@ -112,10 +112,10 @@ layout: ratingLayout
 ```html
 <Rating total="5" rating="3.21">
 	<span slot="ratingUp">
-		<HeartIconSolid className="h-3 w-3 text-red-700 dark:text-red-500" />
+		<HeartIconSolid class="text-red-700 dark:text-red-500" />
 	</span>
 	<span slot="ratingDown">
-		<HeartIconSolid className="h-3 w-3 text-gray-300 dark:text-gray-500" />
+		<HeartIconSolid class="text-gray-300 dark:text-gray-500" />
 	</span>
 </Rating>
 ```
@@ -123,10 +123,10 @@ layout: ratingLayout
 <div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 	<Rating total="5" rating="4.7">
 		<span slot="ratingUp">
-			<EmojiHappyIconSolid className="h-4 w-4 text-purple-500 dark:text-purple-700" />
+			<EmojiHappyIconSolid class="text-purple-500 dark:text-purple-700" />
 		</span>
 		<span slot="ratingDown">
-			<EmojiHappyIconSolid className="h-4 w-4 text-gray-300 dark:text-gray-500" />
+			<EmojiHappyIconSolid class="text-gray-300 dark:text-gray-500" />
 		</span>
 	</Rating>
 </div>
@@ -134,10 +134,10 @@ layout: ratingLayout
 ```html
 <Rating total="5" rating="4.7">
 	<span slot="ratingUp">
-		<EmojiHappyIconSolid className="h-4 w-4 text-purple-500 dark:text-purple-700" />
+		<EmojiHappyIconSolid class="text-purple-500 dark:text-purple-700" />
 	</span>
 	<span slot="ratingDown">
-		<EmojiHappyIconSolid className="h-4 w-4 text-gray-300 dark:text-gray-500" />
+		<EmojiHappyIconSolid class="text-gray-300 dark:text-gray-500" />
 	</span>
 </Rating>
 ```
@@ -145,10 +145,10 @@ layout: ratingLayout
 <div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 	<Rating total="5" rating="5">
 		<span slot="ratingUp">
-			<ThumbUpIconSolid className="h-6 w-6 text-yellow-300 dark:text-yellow-200" />
+			<ThumbUpIconSolid class="text-yellow-300 dark:text-yellow-200" />
 		</span>
 		<span slot="ratingDown">
-			<ThumbUpIconSolid className="h-6 w-6 text-gray-300 dark:text-gray-500" />
+			<ThumbUpIconSolid class="text-gray-300 dark:text-gray-500" />
 		</span>
 	</Rating>
 </div>
@@ -156,10 +156,10 @@ layout: ratingLayout
 ```html
 <Rating total="5" rating="5">
 	<span slot="ratingUp">
-		<ThumbUpIconSolid className="h-6 w-6 text-yellow-300 dark:text-yellow-200" />
+		<ThumbUpIconSolid class="text-yellow-300 dark:text-yellow-200" />
 	</span>
 	<span slot="ratingDown">
-		<ThumbUpIconSolid className="h-6 w-6 text-gray-300 dark:text-gray-500" />
+		<ThumbUpIconSolid class="text-gray-300 dark:text-gray-500" />
 	</span>
 </Rating>
 ```

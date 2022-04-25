@@ -7,7 +7,7 @@
 	<h1 class="py-16">Welcome to your new SvelteKit app</h1>
 	<Button name="Button disabled" disabled />
 	<Button name="">
-		<BellIconOutline className="h-6 w-6 text-red-500 dark:text-purple-300" />
+		<BellIconOutline class="text-red-500 dark:text-purple-300" />
 	</Button>
 	<ColorShadowButton color="blue" name="Blue" />
 	<ColorShadowButton color="green" name="Green" />

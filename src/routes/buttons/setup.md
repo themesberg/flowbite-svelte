@@ -99,10 +99,10 @@ layout: buttonLayout
 
 <div class="rounded-xl w-full flex justify-center my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Button name="">
-  <BellIconOutline className="h-6 w-6 text-red-500 dark:text-purple-300" />
+  <BellIconOutline size="24" class="text-red-500 dark:text-purple-300" />
 </Button>
 <Button name="" btnColor="red" >
-  <BellIconOutline className="h-6 w-6 text-red-500 dark:text-purple-300" />
+  <BellIconOutline size="24" class="text-red-500 dark:text-purple-300" />
 </Button>
 </div>
 
@@ -112,10 +112,10 @@ layout: buttonLayout
 </script>
 
 <Button name="">
-  <BellIconOutline className="h-6 w-6 text-red-500 dark:text-purple-300" />
+  <BellIconOutline size="24" class="text-red-500 dark:text-purple-300" />
 </Button>
 <Button name="" btnColor="red" >
-  <BellIconOutline className="h-6 w-6 text-red-500 dark:text-purple-300" />
+  <BellIconOutline size="24" class="text-red-500 dark:text-purple-300" />
 </Button>
 ```
 

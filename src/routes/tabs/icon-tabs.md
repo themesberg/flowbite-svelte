@@ -5,10 +5,10 @@ layout: tabLayout
 <script>
 	import { IconTabs, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 	import {
-		UserCircleIconSolid,
-		ViewGridIconSolid,
-		AdjustmentsIconSolid,
-		ClipboardListIconSolid
+		UserCircleIconOutline,
+		ViewGridIconOutline,
+		AdjustmentsIconOutline,
+		ClipboardListIconOutline
 	} from '@codewithshin/svelte-heroicons';
 	import componentProps from '../props/IconTabs.json'
   // Props table
@@ -22,25 +22,29 @@ layout: tabLayout
 			name: 'Profile',
 			active: true,
 			href: '/',
-			icon: UserCircleIconSolid
+			icon: UserCircleIconOutline,
+			iconSize: 18,
 		},
 		{
 			name: 'Dashboard',
 			active: false,
 			href: '/',
-			icon: ViewGridIconSolid
+			icon: ViewGridIconOutline,
+			iconSize: 18,
 		},
 		{
 			name: 'Settings',
 			active: false,
 			href: '/',
-			icon: AdjustmentsIconSolid
+			icon: AdjustmentsIconOutline,
+			iconSize: 18,
 		},
 		{
 			name: 'Contacts',
 			active: false,
 			href: '/',
-			icon: ClipboardListIconSolid
+			icon: ClipboardListIconOutline,
+			iconSize: 18,
 		}
 	];
 
@@ -77,10 +81,10 @@ layout: tabLayout
 <script>
 	import { IconTabs } from 'flowbite-svelte';
 	import {
-		UserCircleIconSolid,
-		ViewGridIconSolid,
-		AdjustmentsIconSolid,
-		ClipboardListIconSolid
+		UserCircleIconOutline,
+		ViewGridIconOutline,
+		AdjustmentsIconOutline,
+		ClipboardListIconOutline
 	} from '@codewithshin/svelte-heroicons';
 
 	let tabs = [
@@ -88,25 +92,29 @@ layout: tabLayout
 			name: 'Profile',
 			active: true,
 			href: '/',
-			icon: UserCircleIconSolid
+			icon: UserCircleIconOutline,
+			iconSize: 18,
 		},
 		{
 			name: 'Dashboard',
 			active: false,
 			href: '/',
-			icon: ViewGridIconSolid
+			icon: ViewGridIconOutline,
+			iconSize: 18,
 		},
 		{
 			name: 'Settings',
 			active: false,
 			href: '/',
-			icon: AdjustmentsIconSolid
+			icon: AdjustmentsIconOutline,
+			iconSize: 18,
 		},
 		{
 			name: 'Contacts',
 			active: false,
 			href: '/',
-			icon: ClipboardListIconSolid
+			icon: ClipboardListIconOutline,
+			iconSize: 18,
 		}
 	];
 </script>

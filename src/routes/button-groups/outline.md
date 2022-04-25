@@ -18,17 +18,23 @@ layout: buttongroupLayout
   {
     name: "Profile",
     href:"/",
-    icon: UserCircleIconSolid
+    icon: UserCircleIconSolid,
+    iconSize: 18,
+    iconClass: "text-blue-700"
   },
   {
     name: "Settings",
     href:"/",
-    icon: AdjustmentsIconSolid
+    icon: AdjustmentsIconSolid,
+    iconSize: 18,
+    iconClass: "text-blue-700"
   },
   {
     name: "Messages",
     href:"/",
-    icon: CloudDownloadIconSolid
+    icon: CloudDownloadIconSolid,
+    iconSize: 18,
+    iconClass: "text-blue-700"
   },
 ];
   let buttons2 = [
@@ -73,17 +79,23 @@ layout: buttongroupLayout
   {
     name: "Profile",
     href:"/",
-    icon: UserCircleIconSolid
+    icon: UserCircleIconSolid,
+    iconSize: 18,
+    iconClass: "text-blue-700"
   },
   {
     name: "Settings",
     href:"/",
-    icon: AdjustmentsIconSolid
+    icon: AdjustmentsIconSolid,
+    iconSize: 18,
+    iconClass: "text-blue-700"
   },
   {
     name: "Messages",
     href:"/",
-    icon: CloudDownloadIconSolid
+    icon: CloudDownloadIconSolid,
+    iconSize: 18,
+    iconClass: "text-blue-700"
   },
 ];
   let buttons2 = [

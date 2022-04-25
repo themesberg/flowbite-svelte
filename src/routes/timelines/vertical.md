@@ -4,7 +4,7 @@ layout: timelineLayout
 
 <script lang="ts">
 	import { Timeline, TimelineItemVertical, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
-	import { CalendarIconOutline, AdjustmentsIconSolid } from '@codewithshin/svelte-heroicons';
+	import { CalendarIconOutline, AdjustmentsIconOutline } from '@codewithshin/svelte-heroicons';
 	import componentProps1 from '../props/Timeline.json'
   import componentProps2 from '../props/TimelineItemVertical.json'
   export let items1 = componentProps1.props
@@ -19,19 +19,25 @@ layout: timelineLayout
 			title: 'Lorem ipsum dolor sit amet',
 			href: '/',
 			icon: CalendarIconOutline,
+			iconSize:14,
+			iconClass: "text-blue-700 dark:text-red-500",
 			linkname: 'Learn more',
 			text: 'Consectetur adipiscing elit. Aenean condimentum erat vitae elit convallis molestie. Maecenas felis nisl, semper vitae venenatis non'
 		},
 		{
 			date: 'March 2022',
 			title: 'Lorem ipsum dolor sit amet',
-			icon: AdjustmentsIconSolid,
+			icon: AdjustmentsIconOutline,
+			iconSize:14,
+			iconClass: "text-blue-700 dark:text-red-500",
 			text: 'Consectetur adipiscing elit. Aenean condimentum erat vitae elit convallis molestie. Maecenas felis nisl, semper vitae venenatis non'
 		},
 		{
 			date: 'February 2022',
 			title: 'Lorem ipsum dolor sit amet',
 			icon: CalendarIconOutline,
+			iconSize:14,
+			iconClass: "text-blue-700 dark:text-red-500",
 			text: 'Consectetur adipiscing elit. Aenean condimentum erat vitae elit convallis molestie. Maecenas felis nisl, semper vitae venenatis non'
 		}
 	];
@@ -66,13 +72,9 @@ layout: timelineLayout
 </div>
 
 ```html
-
-<script lang="ts">
-	import {
-		Timeline,
-		TimelineItemVertical,
-	} from '$lib/index';
-	import { CalendarIconOutline, AdjustmentsIconSolid } from '@codewithshin/svelte-heroicons';
+<script>
+	import { Timeline, TimelineItemVertical, } from 'flowbite-svelte';
+	import { CalendarIconOutline, AdjustmentsIconOutline } from '@codewithshin/svelte-heroicons';
 
 	let timelineItems2 = [
 		{
@@ -80,19 +82,25 @@ layout: timelineLayout
 			title: 'Lorem ipsum dolor sit amet',
 			href: '/',
 			icon: CalendarIconOutline,
+			iconSize:14,
+			iconClass: "text-blue-700 dark:text-red-500",
 			linkname: 'Learn more',
 			text: 'Consectetur adipiscing elit. Aenean condimentum erat vitae elit convallis molestie. Maecenas felis nisl, semper vitae venenatis non'
 		},
 		{
 			date: 'March 2022',
 			title: 'Lorem ipsum dolor sit amet',
-			icon: AdjustmentsIconSolid,
+			icon: AdjustmentsIconOutline,
+			iconSize:14,
+			iconClass: "text-blue-700 dark:text-red-500",
 			text: 'Consectetur adipiscing elit. Aenean condimentum erat vitae elit convallis molestie. Maecenas felis nisl, semper vitae venenatis non'
 		},
 		{
 			date: 'February 2022',
 			title: 'Lorem ipsum dolor sit amet',
 			icon: CalendarIconOutline,
+			iconSize:14,
+			iconClass: "text-blue-700 dark:text-red-500",
 			text: 'Consectetur adipiscing elit. Aenean condimentum erat vitae elit convallis molestie. Maecenas felis nisl, semper vitae venenatis non'
 		}
 	];

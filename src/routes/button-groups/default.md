@@ -4,7 +4,7 @@ layout: buttongroupLayout
 
 <script>
   import {ButtonGroup, ButtonGroupOutline, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
-  import {UserCircleIconSolid, AdjustmentsIconSolid, CloudDownloadIconSolid} from "@codewithshin/svelte-heroicons"
+  import {UserCircleIconOutline, AdjustmentsIconOutline, CloudDownloadIconOutline} from "@codewithshin/svelte-heroicons"
   import componentProps from '../props/ButtonGroup.json'
   import componentProps2 from '../props/ButtonGroupOutline.json'
   // Props table
@@ -29,17 +29,23 @@ layout: buttongroupLayout
   {
     name: "Profile",
     href:"/",
-    icon: UserCircleIconSolid
+    icon: UserCircleIconOutline,
+    iconSize: 18,
+    iconClass: "text-blue-700"
   },
   {
     name: "Settings",
     href:"/",
-    icon: AdjustmentsIconSolid
+    icon: AdjustmentsIconOutline,
+    iconSize: 18,
+    iconClass: "text-blue-700"
   },
   {
     name: "Messages",
     href:"/",
-    icon: CloudDownloadIconSolid
+    icon: CloudDownloadIconOutline,
+    iconSize: 18,
+    iconClass: "text-blue-700"
   },
 ];
 
@@ -68,7 +74,7 @@ layout: buttongroupLayout
 ```html
 <script>
   import {ButtonGroup, ButtonGroupOutline} from 'flowbite-svelte'
-  import {UserCircleIconSolid, AdjustmentsIconSolid, CloudDownloadIconSolid} from "@codewithshin/svelte-heroicons"
+  import {UserCircleIconOutline, AdjustmentsIconOutline, CloudDownloadIconOutline} from "@codewithshin/svelte-heroicons"
   let buttons1 = [
   {
     name: "Profile",
@@ -84,17 +90,23 @@ layout: buttongroupLayout
   {
     name: "Profile",
     href:"/",
-    icon: UserCircleIconSolid
+    icon: UserCircleIconOutline,
+    iconSize: 18,
+    iconClass: "text-blue-700"
   },
   {
     name: "Settings",
     href:"/",
-    icon: AdjustmentsIconSolid
+    icon: AdjustmentsIconOutline,
+    iconSize: 18,
+    iconClass: "text-blue-700"
   },
   {
     name: "Messages",
     href:"/",
-    icon: CloudDownloadIconSolid
+    icon: CloudDownloadIconOutline,
+    iconSize: 18,
+    iconClass: "text-blue-700"
   },
 ];
 </script>

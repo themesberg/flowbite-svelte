@@ -119,10 +119,10 @@ layout: ratingLayout
 		<span slot="rating">
 			<Rating total="5" rating="3.21" ceil>
         <span slot="ratingUp">
-          <ThumbUpIconSolid className="h-5 w-5 text-yellow-300 dark:text-yellow-200" />
+          <ThumbUpIconSolid class="text-yellow-300 dark:text-yellow-200" />
         </span>
         <span slot="ratingDown">
-          <ThumbUpIconSolid className="h-5 w-5 text-gray-300 dark:text-gray-500" />
+          <ThumbUpIconSolid class="text-gray-300 dark:text-gray-500" />
         </span>
 				<p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.21 out of 5</p>
 			</Rating>
@@ -146,10 +146,10 @@ layout: ratingLayout
   <span slot="rating">
     <Rating total="5" rating="3.21" ceil>
       <span slot="ratingUp">
-        <ThumbUpIconSolid className="h-5 w-5 text-yellow-300 dark:text-yellow-200" />
+        <ThumbUpIconSolid class="text-yellow-300 dark:text-yellow-200" />
       </span>
       <span slot="ratingDown">
-        <ThumbUpIconSolid className="h-5 w-5 text-gray-300 dark:text-gray-500" />
+        <ThumbUpIconSolid class="text-gray-300 dark:text-gray-500" />
       </span>
       <p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.21 out of 5</p>
     </Rating>
