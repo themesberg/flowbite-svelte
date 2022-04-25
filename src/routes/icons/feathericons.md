@@ -41,7 +41,7 @@ layout: iconLayout
 <AlertTriangleIcon color="#6dff6b" size="24" />
 <AlertTriangleIcon color="#6dff6b" size="28" />
 <AnchorIcon color="#23deff" size="32" />
-<AnchorIcon color="#23deff" size="36" />
+<AnchorIcon color="#23deff" size="36" class="dark:text-red-500"/>
 </div>
 
 ```html
@@ -54,7 +54,7 @@ layout: iconLayout
 <AlertTriangleIcon color="#6dff6b" size="24" />
 <AlertTriangleIcon color="#6dff6b" size="28" />
 <AnchorIcon color="#23deff" size="32" />
-<AnchorIcon color="#23deff" size="36" />
+<AnchorIcon color="#23deff" size="36" class="dark:text-red-500" />
 ```
 
 <p>You can also include the whole icon pack:</p>
