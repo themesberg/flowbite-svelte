@@ -11,6 +11,7 @@ let propHeader = ['Name', 'Type', 'Default']
 let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
   let minmaxValue=5
   let stepValue=2.5
+
 </script>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Range Components</h1>
@@ -42,7 +43,7 @@ let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
 <h2 class="text-2xl w-full dark:text-white py-4">Binding the value</h2>
 
-<p>Use `bind:value={your-variable}` to bind the range input value as seen the the following examples.</p>
+<p>Use bind:value to bind the range input value as seen the the following examples.</p>
 
 <h2 class="text-2xl w-full dark:text-white py-4">Min and max</h2>
 
