@@ -5,15 +5,15 @@ layout: iconLayout
 <script>
   import { Breadcrumb } from '$lib/index'
   import {
-    AdjustmentsIconSolid,
-    BellIconOutline,
-    BriefcaseIconSolid,
-    TicketIconOutline,
-    ChartSquareBarIconSolid,
-    CameraIconOutline,
-    BellIconSolid,
-    ChevronLeftIconSolid,
-  } from "@codewithshin/svelte-heroicons";
+    AdjustmentsSolid,
+    BellOutline,
+    BriefcaseSolid,
+    TicketOutline,
+    ChartSquareBarSolid,
+    CameraOutline,
+    BellSolid,
+    ChevronLeftSolid,
+  } from "svelte-heros";
 
   let crumbs = [
     {
@@ -49,14 +49,14 @@ You can find all the icon names from the <a class="text-blue-600 hover:underline
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 
-<AdjustmentsIconSolid size="30" class="text-blue-500 dark:text-red-300" />
-<BellIconOutline  class="text-red-500 dark:text-green-300" />
-<BriefcaseIconSolid  size="30" class="text-green-500 dark:text-indigo-300" />
-<ChartSquareBarIconSolid size="30" class="text-purple-500 dark:text-pink-300" />
-<TicketIconOutline size="30" class="text-pink-500 dark:text-indigo-300" />
-<CameraIconOutline size="30" class="text-indigo-500 dark:text-white" />
-<BellIconSolid size="30" class="text-gray-500 dark:text-yellow-500" />
-<ChevronLeftIconSolid
+<AdjustmentsSolid size="30" class="text-blue-500 dark:text-red-300" />
+<BellOutline  class="text-red-500 dark:text-green-300" />
+<BriefcaseSolid  size="30" class="text-green-500 dark:text-indigo-300" />
+<ChartSquareBarSolid size="30" class="text-purple-500 dark:text-pink-300" />
+<TicketOutline size="30" class="text-pink-500 dark:text-indigo-300" />
+<CameraOutline size="30" class="text-indigo-500 dark:text-white" />
+<BellSolid size="30" class="text-gray-500 dark:text-yellow-500" />
+<ChevronLeftSolid
   size="30" class="text-yellow-300 dark:text-white"
 />
 </div>
@@ -64,25 +64,25 @@ You can find all the icon names from the <a class="text-blue-600 hover:underline
 ```html
 <script>
 import {
-  AdjustmentsIconSolid,
-  BellIconOutline,
-  BriefcaseIconSolid,
-  TicketIconOutline,
-  ChartSquareBarIconSolid,
-  CameraIconOutline,
-  BellIconSolid,
-  ChevronLeftIconSolid,
-} from "@codewithshin/svelte-heroicons";
+  AdjustmentsSolid,
+  BellOutline,
+  BriefcaseSolid,
+  TicketOutline,
+  ChartSquareBarSolid,
+  CameraOutline,
+  BellSolid,
+  ChevronLeftSolid,
+} from "svelte-heros";
 </script>
 
-<AdjustmentsIconSolid size="30" class="text-blue-500 dark:text-blue-300" />
-<BellIconOutline  size="30" class="text-red-500 dark:text-purple-300" />
-<BriefcaseIconSolid  size="30" class="text-green-500 dark:text-indigo-300" />
-<ChartSquareBarIconSolid size="30" class="text-purple-500 dark:text-red-300" />
-<TicketIconOutline size="30" class="text-pink-500 dark:text-yellow-300" />
-<CameraIconOutline size="30" class="text-indigo-500 dark:text-white" />
-<BellIconSolid size="30" class="text-gray-500 dark:text-blue-500" />
-<ChevronLeftIconSolid
+<AdjustmentsSolid size="30" class="text-blue-500 dark:text-blue-300" />
+<BellOutline  size="30" class="text-red-500 dark:text-purple-300" />
+<BriefcaseSolid  size="30" class="text-green-500 dark:text-indigo-300" />
+<ChartSquareBarSolid size="30" class="text-purple-500 dark:text-red-300" />
+<TicketOutline size="30" class="text-pink-500 dark:text-yellow-300" />
+<CameraOutline size="30" class="text-indigo-500 dark:text-white" />
+<BellSolid size="30" class="text-gray-500 dark:text-blue-500" />
+<ChevronLeftSolid
   size="30" class="text-yellow-300 dark:text-white"
 />
 ```

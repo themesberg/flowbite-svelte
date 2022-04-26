@@ -4,7 +4,7 @@ layout: buttonLayout
 
 <script>
   import { Button, Breadcrumb }from '$lib/index';
-  import { BellIconOutline } from "@codewithshin/svelte-heroicons";
+  import { BellOutline } from "svelte-heros";
   import { goto }from '$app/navigation';
   const btn1 = ()=>{
     alert('This redirects to the home page.')
@@ -99,23 +99,23 @@ layout: buttonLayout
 
 <div class="rounded-xl w-full flex justify-center my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Button name="">
-  <BellIconOutline size="24" class="text-red-500 dark:text-purple-300" />
+  <BellOutline size="24" class="text-red-500 dark:text-purple-300" />
 </Button>
 <Button name="" btnColor="red" >
-  <BellIconOutline size="24" class="text-red-500 dark:text-purple-300" />
+  <BellOutline size="24" class="text-red-500 dark:text-purple-300" />
 </Button>
 </div>
 
 ```html
 <script>
-  import { BellIconOutline } from "@codewithshin/svelte-heroicons";
+  import { BellOutline } from "svelte-heros";
 </script>
 
 <Button name="">
-  <BellIconOutline size="24" class="text-red-500 dark:text-purple-300" />
+  <BellOutline size="24" class="text-red-500 dark:text-purple-300" />
 </Button>
 <Button name="" btnColor="red" >
-  <BellIconOutline size="24" class="text-red-500 dark:text-purple-300" />
+  <BellOutline size="24" class="text-red-500 dark:text-purple-300" />
 </Button>
 ```
 

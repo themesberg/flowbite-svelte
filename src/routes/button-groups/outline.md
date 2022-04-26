@@ -4,7 +4,7 @@ layout: buttongroupLayout
 
 <script>
   import { ButtonGroupOutline, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
-  import {UserCircleIconSolid, AdjustmentsIconSolid, CloudDownloadIconSolid} from "@codewithshin/svelte-heroicons"
+  import {UserCircleSolid, AdjustmentsSolid, CloudDownloadSolid} from "svelte-heros"
   
   import componentProps from '../props/ButtonGroupOutline.json'
   // Props table
@@ -18,21 +18,21 @@ layout: buttongroupLayout
   {
     name: "Profile",
     href:"/",
-    icon: UserCircleIconSolid,
+    icon: UserCircleSolid,
     iconSize: 18,
     iconClass: "text-blue-700"
   },
   {
     name: "Settings",
     href:"/",
-    icon: AdjustmentsIconSolid,
+    icon: AdjustmentsSolid,
     iconSize: 18,
     iconClass: "text-blue-700"
   },
   {
     name: "Messages",
     href:"/",
-    icon: CloudDownloadIconSolid,
+    icon: CloudDownloadSolid,
     iconSize: 18,
     iconClass: "text-blue-700"
   },
@@ -74,26 +74,26 @@ layout: buttongroupLayout
 ```html
 <script>
   import { ButtonGroupOutline} from 'flowbite-svelte'
-  import {UserCircleIconSolid, AdjustmentsIconSolid, CloudDownloadIconSolid} from "@codewithshin/svelte-heroicons"
+  import {UserCircleSolid, AdjustmentsSolid, CloudDownloadSolid} from "svelte-heros"
   let buttons1 = [
   {
     name: "Profile",
     href:"/",
-    icon: UserCircleIconSolid,
+    icon: UserCircleSolid,
     iconSize: 18,
     iconClass: "text-blue-700"
   },
   {
     name: "Settings",
     href:"/",
-    icon: AdjustmentsIconSolid,
+    icon: AdjustmentsSolid,
     iconSize: 18,
     iconClass: "text-blue-700"
   },
   {
     name: "Messages",
     href:"/",
-    icon: CloudDownloadIconSolid,
+    icon: CloudDownloadSolid,
     iconSize: 18,
     iconClass: "text-blue-700"
   },

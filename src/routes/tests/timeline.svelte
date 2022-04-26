@@ -1,16 +1,6 @@
 <script lang="ts">
-	import {
-		Activity,
-		ActivityItem,
-		Timeline,
-		TimelineItem,
-		TimelineItemVertical,
-		TimelineItemHorizontal,
-		TimelineHorizontal,
-		Group,
-		GroupItem
-	} from '$lib/index';
-	import { CalendarIconOutline, AdjustmentsIconSolid } from '@codewithshin/svelte-heroicons';
+	import { Activity, ActivityItem, Timeline, TimelineItem, TimelineItemVertical, TimelineItemHorizontal, TimelineHorizontal, Group, GroupItem } from '$lib/index';
+	import { CalendarOutline, AdjustmentsSolid } from 'svelte-heros';
 	let timelineItems = [
 		{
 			date: 'February 2022',
@@ -35,28 +25,27 @@
 			date: 'February 2022',
 			title: 'Lorem ipsum dolor sit amet',
 			href: '/',
-			icon: CalendarIconOutline,
+			icon: CalendarOutline,
 			linkname: 'Learn more',
 			text: 'Consectetur adipiscing elit. Aenean condimentum erat vitae elit convallis molestie. Maecenas felis nisl, semper vitae venenatis non'
 		},
 		{
 			date: 'March 2022',
 			title: 'Lorem ipsum dolor sit amet',
-			icon: AdjustmentsIconSolid,
+			icon: AdjustmentsSolid,
 			text: 'Consectetur adipiscing elit. Aenean condimentum erat vitae elit convallis molestie. Maecenas felis nisl, semper vitae venenatis non'
 		},
 		{
 			date: 'February 2022',
 			title: 'Lorem ipsum dolor sit amet',
-			icon: CalendarIconOutline,
+			icon: CalendarOutline,
 			text: 'Consectetur adipiscing elit. Aenean condimentum erat vitae elit convallis molestie. Maecenas felis nisl, semper vitae venenatis non'
 		}
 	];
 
 	let activities = [
 		{
-			title:
-				'Bonnie moved <a href="#" class="font-semibold text-blue-600 dark:text-blue-500 hover:underline">Jese Leos</a> to <span class="bg-gray-100 text-gray-800 text-xs font-normal mr-2 px-2.5 py-0.5 rounded dark:bg-gray-600 dark:text-gray-300">Funny Group</span>',
+			title: 'Bonnie moved <a href="#" class="font-semibold text-blue-600 dark:text-blue-500 hover:underline">Jese Leos</a> to <span class="bg-gray-100 text-gray-800 text-xs font-normal mr-2 px-2.5 py-0.5 rounded dark:bg-gray-600 dark:text-gray-300">Funny Group</span>',
 			date: 'just now',
 			alt: 'image alt here',
 			src: '/images/profile-picture-2.webp'
@@ -84,8 +73,7 @@
 	//   comment?: string | HTMLElement;
 	let timelines = [
 		{
-			title:
-				'<span class="font-medium text-gray-900 dark:text-white">Jese Leos</span> likes <span class="font-medium text-gray-900 dark:text-white">Bonnie Green\'s</span> post in <span class="font-medium text-gray-900 dark:text-white"> How to start with Flowbite library</span>',
+			title: '<span class="font-medium text-gray-900 dark:text-white">Jese Leos</span> likes <span class="font-medium text-gray-900 dark:text-white">Bonnie Green\'s</span> post in <span class="font-medium text-gray-900 dark:text-white"> How to start with Flowbite library</span>',
 			src: '/images/profile-picture-1.webp',
 			alt: 'alt here',
 			href: '/',
@@ -93,8 +81,7 @@
 			comment: '"I wanted to share a webinar zeroheight."'
 		},
 		{
-			title:
-				'<span class="font-medium text-gray-900 dark:text-white">Bonnie Green</span> react to <span class="font-medium text-gray-900 dark:text-white">Thomas Lean\'s</span> comment',
+			title: '<span class="font-medium text-gray-900 dark:text-white">Bonnie Green</span> react to <span class="font-medium text-gray-900 dark:text-white">Thomas Lean\'s</span> comment',
 			src: '/images/profile-picture-2.webp',
 			alt: 'alt here',
 			href: '/',
@@ -106,9 +93,7 @@
 
 <div class="max-w-3xl mx-auto mt-16">
 	<div class="container flex flex-wrap mx-auto">
-		<div
-			class="container rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
-		>
+		<div class="container rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 			<Timeline>
 				<TimelineItem {timelineItems} />
 			</Timeline>

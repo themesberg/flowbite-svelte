@@ -90,8 +90,8 @@
 		"url": "https://github.com/themesberg/flowbite-svelte"
 	},
 	"dependencies": {
-		"@codewithshin/svelte-heroicons": "^1.2.0",
 		"flowbite": "^1.4.2",
-		"svelte-collapse": "^0.0.4"
+		"svelte-collapse": "^0.0.4",
+		"svelte-heros": "^2.0.0"
 	}
 }

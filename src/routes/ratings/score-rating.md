@@ -4,7 +4,6 @@ layout: ratingLayout
 
 <script>
   import { Rating, ScoreRating, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
-  import { HeartIconSolid, ThumbUpIconSolid, EmojiHappyIconSolid } from '@codewithshin/svelte-heroicons';
   import componentProps from '../props/ScoreRating.json'
   // Props table
   let items = componentProps.props

@@ -5,11 +5,11 @@ layout: tabLayout
 <script>
 	import { IconTabs, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 	import {
-		UserCircleIconOutline,
-		ViewGridIconOutline,
-		AdjustmentsIconOutline,
-		ClipboardListIconOutline
-	} from '@codewithshin/svelte-heroicons';
+		UserCircleOutline,
+		ViewGridOutline,
+		AdjustmentsOutline,
+		ClipboardListOutline
+	} from 'svelte-heros';
 	import componentProps from '../props/IconTabs.json'
   // Props table
   export let items = componentProps.props
@@ -22,28 +22,28 @@ layout: tabLayout
 			name: 'Profile',
 			active: true,
 			href: '/',
-			icon: UserCircleIconOutline,
+			icon: UserCircleOutline,
 			iconSize: 18,
 		},
 		{
 			name: 'Dashboard',
 			active: false,
 			href: '/',
-			icon: ViewGridIconOutline,
+			icon: ViewGridOutline,
 			iconSize: 18,
 		},
 		{
 			name: 'Settings',
 			active: false,
 			href: '/',
-			icon: AdjustmentsIconOutline,
+			icon: AdjustmentsOutline,
 			iconSize: 18,
 		},
 		{
 			name: 'Contacts',
 			active: false,
 			href: '/',
-			icon: ClipboardListIconOutline,
+			icon: ClipboardListOutline,
 			iconSize: 18,
 		}
 	];
@@ -81,39 +81,39 @@ layout: tabLayout
 <script>
 	import { IconTabs } from 'flowbite-svelte';
 	import {
-		UserCircleIconOutline,
-		ViewGridIconOutline,
-		AdjustmentsIconOutline,
-		ClipboardListIconOutline
-	} from '@codewithshin/svelte-heroicons';
+		UserCircleOutline,
+		ViewGridOutline,
+		AdjustmentsOutline,
+		ClipboardListOutline
+	} from 'svelte-heros';
 
 	let tabs = [
 		{
 			name: 'Profile',
 			active: true,
 			href: '/',
-			icon: UserCircleIconOutline,
+			icon: UserCircleOutline,
 			iconSize: 18,
 		},
 		{
 			name: 'Dashboard',
 			active: false,
 			href: '/',
-			icon: ViewGridIconOutline,
+			icon: ViewGridOutline,
 			iconSize: 18,
 		},
 		{
 			name: 'Settings',
 			active: false,
 			href: '/',
-			icon: AdjustmentsIconOutline,
+			icon: AdjustmentsOutline,
 			iconSize: 18,
 		},
 		{
 			name: 'Contacts',
 			active: false,
 			href: '/',
-			icon: ClipboardListIconOutline,
+			icon: ClipboardListOutline,
 			iconSize: 18,
 		}
 	];

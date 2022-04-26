@@ -2,7 +2,6 @@ lockfileVersion: 5.3
 
 specifiers:
   '@codewithshin/svelte-feathericons': ^0.1.9
-  '@codewithshin/svelte-heroicons': ^1.2.0
   '@codewithshin/svelte-sidebar': ^0.4.8
   '@codewithshin/svelte-simpleicons': ^0.2.2
   '@codewithshin/svelte-utterances': ^0.2.2
@@ -26,6 +25,7 @@ specifiers:
   svelte: ^3.47.0
   svelte-check: ^2.2.6
   svelte-collapse: ^0.0.4
+  svelte-heros: ^2.0.0
   svelte-preprocess: ^4.10.5
   svelte2tsx: ^0.5.9
   tailwindcss: ^3.0.23
@@ -33,9 +33,9 @@ specifiers:
   typescript: ~4.6.2
 
 dependencies:
-  '@codewithshin/svelte-heroicons': 1.2.0
   flowbite: 1.4.2
   svelte-collapse: 0.0.4
+  svelte-heros: 2.0.0
 
 devDependencies:
   '@codewithshin/svelte-feathericons': 0.1.9
@@ -43,8 +43,8 @@ devDependencies:
   '@codewithshin/svelte-simpleicons': 0.2.2
   '@codewithshin/svelte-utterances': 0.2.2
   '@playwright/test': 1.21.0
-  '@sveltejs/adapter-auto': 1.0.0-next.38
-  '@sveltejs/kit': 1.0.0-next.320_svelte@3.47.0
+  '@sveltejs/adapter-auto': 1.0.0-next.39
+  '@sveltejs/kit': 1.0.0-next.321_svelte@3.47.0
   '@typescript-eslint/eslint-plugin': 5.19.0_edcb20b406075febffd90857e23671f0
   '@typescript-eslint/parser': 5.19.0_eslint@7.32.0+typescript@4.6.3
   autoprefixer: 10.4.4_postcss@8.4.12
@@ -592,6 +592,7 @@ packages:
 
   /@codewithshin/svelte-heroicons/1.2.0:
     resolution: {integrity: sha512-+whOdVTK+nQpWWHaOx2ODqSObC//sW4mWaetw2nel1WA9oSdyL33f5Mh1FHKqfIxv1br7Mb7a3rw6Rx2r6aLCQ==}
+    dev: true
 
   /@codewithshin/svelte-sidebar/0.4.8:
     resolution: {integrity: sha512-NrMEvJaiH9HOWetlZVgb7QnUX8ms+dT1p0qDJnY/rTEq3BGV2HSbiKSIukvLgfRjA3LFeyhVY7tFlqLKtiZHiA==}
@@ -729,12 +730,12 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@sveltejs/adapter-auto/1.0.0-next.38:
-    resolution: {integrity: sha512-1//aiV/Wzebj+j5X8VLRs0vJUT3andc/0+IRQwy5ykOwjpNo5/Mj2RX8SA+t5nxBFYyJJf2kj6sszKA8LjRAQQ==}
+  /@sveltejs/adapter-auto/1.0.0-next.39:
+    resolution: {integrity: sha512-mscydZQzI9HZ+IjD+/yxyuKKd4/KxZv/M43BaeBvpuhToEe3crmatIHDQIZc0GBZZgTVpvk8yp3yIM8q3RugLw==}
     dependencies:
       '@sveltejs/adapter-cloudflare': 1.0.0-next.18
       '@sveltejs/adapter-netlify': 1.0.0-next.55
-      '@sveltejs/adapter-vercel': 1.0.0-next.49
+      '@sveltejs/adapter-vercel': 1.0.0-next.50
     dev: true
 
   /@sveltejs/adapter-cloudflare/1.0.0-next.18:
@@ -752,14 +753,14 @@ packages:
       tiny-glob: 0.2.9
     dev: true
 
-  /@sveltejs/adapter-vercel/1.0.0-next.49:
-    resolution: {integrity: sha512-Me0Zb10iBv+ySVMc0XgI7rdzwiMmeVHq48iVv3oXORa/et/efJVEknVSVk22q15XRqys7DhoPirf54Mz4jElFQ==}
+  /@sveltejs/adapter-vercel/1.0.0-next.50:
+    resolution: {integrity: sha512-yta0AkuWEr7qrm8LB34F4ZdCtMxj+cHD4huwrRYCgjv+PSJHLPwe7aH53+Mhrv6La0TgeyQ/f2lTyhBMXZXn9Q==}
     dependencies:
       esbuild: 0.14.36
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.320_svelte@3.47.0:
-    resolution: {integrity: sha512-BDgF+gd73Gxls65rb3H2oacdQUrK8fM0X174t2kMfGS+MeNN6oZ+Kw+j0IJMzMaZSGco89+/wkPeArvDzM/2MQ==}
+  /@sveltejs/kit/1.0.0-next.321_svelte@3.47.0:
+    resolution: {integrity: sha512-Egdmxc+oxmKKhXAtLLHj6LnZQnfxgk/DpdRitDxDlSQq/hj1zSVswe3kGjPDaquNMkxXbvZcHwhbZvNnVTnWag==}
     engines: {node: '>=14.13'}
     hasBin: true
     peerDependencies:
@@ -2915,6 +2916,10 @@ packages:
 
   /svelte-collapse/0.0.4:
     resolution: {integrity: sha512-TXG836Uhn6SzDFsB3PIHBTormEl45Eb0denD34nYz1zM4PeArh5OYN6G3ZGmMHpG7DAHhRaEX5ikDpHfk2JNcA==}
+
+  /svelte-heros/2.0.0:
+    resolution: {integrity: sha512-qPDPtJYmRJhnbAF/eQuW5kah3zYGrS4/jivKAvMJYO6gX9wT2aa5xAJmWFta5M7QfyGUIkrXhbYBYXFB2jTuCQ==}
+    dev: false
 
   /svelte-hmr/0.14.11_svelte@3.47.0:
     resolution: {integrity: sha512-R9CVfX6DXxW1Kn45Jtmx+yUe+sPhrbYSUp7TkzbW0jI5fVPn6lsNG9NEs5dFg5qRhFNAoVdRw5qQDLALNKhwbQ==}

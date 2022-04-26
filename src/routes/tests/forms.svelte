@@ -1,19 +1,8 @@
 <script>
-	import {
-		Input,
-		Checkbox,
-		Fileupload,
-		FloatingLabelInput,
-		Iconinput,
-		Radio,
-		Select,
-		SingleCheckbox,
-		Toggle,
-		Textarea
-	} from '$lib/index';
+	import { Input, Checkbox, Fileupload, FloatingLabelInput, Iconinput, Radio, Select, SingleCheckbox, Toggle, Textarea } from '$lib/index';
 	let username;
 	let size;
-	import { AtSymbolIconSolid, MailIconOutline } from '@codewithshin/svelte-heroicons';
+	import { AtSymbolSolid } from 'svelte-heros';
 
 	let props = {
 		name: 'toggle-example',
@@ -87,8 +76,7 @@
 		{
 			id: 'checkbox-1',
 			checked: true,
-			label:
-				'I agree to the <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>'
+			label: 'I agree to the <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>'
 		},
 		{
 			id: 'checkbox-2',
@@ -102,70 +90,27 @@
 		{
 			id: 'checkbox-4',
 			label: 'Free shipping via Flowbite',
-			helper:
-				"For orders shipped from Flowbite from <span class='font-medium'>€ 25</span> in books or <span>€ 29</span> on other categories</span>"
+			helper: "For orders shipped from Flowbite from <span class='font-medium'>€ 25</span> in books or <span>€ 29</span> on other categories</span>"
 		}
 	];
 </script>
 
 <Input label="Username" id="username" name="username" type="text" bind:value={username} required />
 
-<Input
-	bind:value={size}
-	class="mb-6"
-	id="large-input"
-	name="size"
-	type="text"
-	size="sm:text-md"
-	placeholder="Write your text here."
-	label="Large input"
-	required
-/>
+<Input bind:value={size} class="mb-6" id="large-input" name="size" type="text" size="sm:text-md" placeholder="Write your text here." label="Large input" required />
 
-<Input
-	bind:value={size}
-	class="mb-6"
-	id="large-input2"
-	name="size"
-	type="text"
-	disabled
-	placeholder="disabled input"
-	label="Disabled input"
-/>
+<Input bind:value={size} class="mb-6" id="large-input2" name="size" type="text" disabled placeholder="disabled input" label="Disabled input" />
 
-<Input
-	bind:value={size}
-	label="Email"
-	id="email"
-	name="email"
-	type="email"
-	required
-	placeholder="Your email"
-	helper="You can add helper text in <b>HTML</b>."
-/>
+<Input bind:value={size} label="Email" id="email" name="email" type="email" required placeholder="Your email" helper="You can add helper text in <b>HTML</b>." />
 
 <form>
 	<FloatingLabelInput id="email" name="email" type="email" required label="Email" />
 	<FloatingLabelInput id="password" name="password" type="password" required label="Password" />
-	<FloatingLabelInput
-		id="confirmpassword"
-		name="confirm_password"
-		type="password"
-		required
-		label="Confirm password"
-	/>
+	<FloatingLabelInput id="confirmpassword" name="confirm_password" type="password" required label="Confirm password" />
 	<FloatingLabelInput id="first_name" name="first_name" type="text" required label="First name" />
 </form>
 
-<Iconinput
-	id="email"
-	type="email"
-	name="email"
-	placeholder="Your email"
-	label="Border"
-	icon={AtSymbolIconSolid}
-	iconClass="h-4 w-4 mr-2 text-blue-500"
-/>
+<Iconinput id="email" type="email" name="email" placeholder="Your email" label="Border" icon={AtSymbolSolid} iconClass="h-4 w-4 mr-2 text-blue-500" />
 
 <Textarea {...textareaprops} />
 

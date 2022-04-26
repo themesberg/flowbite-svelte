@@ -12,14 +12,14 @@ layout: sidebarLayout
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
   import {
-    ChartPieIconSolid,
-    ShoppingBagIconSolid,
-    TableIconSolid,
-    InboxInIconSolid,
-    UserIconSolid,
-    LoginIconSolid,
-    CogIconSolid
-  } from '@codewithshin/svelte-heroicons';
+    ChartPieSolid,
+    ShoppingBagSolid,
+    TableSolid,
+    InboxInSolid,
+    UserSolid,
+    LoginSolid,
+    CogSolid
+  } from 'svelte-heros';
   let site = {
     name: 'Flowbite-Svelte',
     href: '/',
@@ -31,14 +31,14 @@ layout: sidebarLayout
       id: uid++,
       name: 'Dashboard',
       href: '/',
-      icon: ChartPieIconSolid,
+      icon: ChartPieSolid,
       iconSize: 16,
       iconClass: "text-blue-500 dark:text-white",
     },
     {
       id: uid++,
       name: 'E-commerce',
-      icon: ShoppingBagIconSolid,
+      icon: ShoppingBagSolid,
       iconSize: 16,
       iconClass: "text-green-500",
       href: '/',
@@ -47,7 +47,7 @@ layout: sidebarLayout
     {
       id: uid++,
       name: 'Kanban',
-      icon: TableIconSolid,
+      icon: TableSolid,
       iconSize: 16,
       iconClass: "text-red-500",
       href: '/',
@@ -56,28 +56,28 @@ layout: sidebarLayout
     {
       id: uid++,
       name: 'Inbox',
-      icon: InboxInIconSolid,
+      icon: InboxInSolid,
       iconSize: 16,
       href: '/'
     },
     {
       id: uid++,
       name: 'Users',
-      icon: UserIconSolid,
+      icon: UserSolid,
       iconSize: 16,
       href: '/'
     },
     {
       id: uid++,
       name: 'Sign In',
-      icon: LoginIconSolid,
+      icon: LoginSolid,
       iconSize: 16,
       href: '/'
     },
     {
       id: uid++,
       name: 'Setting',
-      icon: CogIconSolid,
+      icon: CogSolid,
       iconSize: 16,
       href: '/'
     }
@@ -87,13 +87,13 @@ layout: sidebarLayout
       id: uid++,
       name: 'Dashboard',
       href: '/',
-      icon: ChartPieIconSolid,
+      icon: ChartPieSolid,
       iconSize: 16,
     },
     {
       id: uid++,
       name: 'E-commerce',
-      icon: ShoppingBagIconSolid,
+      icon: ShoppingBagSolid,
       iconSize: 16,
       children: [
         {
@@ -116,21 +116,21 @@ layout: sidebarLayout
     {
       id: uid++,
       name: 'Kanban',
-      icon: TableIconSolid,
+      icon: TableSolid,
       iconSize: 16,
       href: '/'
     },
     {
       id: uid++,
       name: 'Inbox',
-      icon: InboxInIconSolid,
+      icon: InboxInSolid,
       iconSize: 16,
       href: '/'
     },
     {
       id: uid++,
       name: 'Users',
-      icon: UserIconSolid,
+      icon: UserSolid,
       iconSize: 16,
       children: [
         {
@@ -153,14 +153,14 @@ layout: sidebarLayout
     {
       id: uid++,
       name: 'Sign In',
-      icon: LoginIconSolid,
+      icon: LoginSolid,
       iconSize: 16,
       href: '/'
     },
     {
       id: uid++,
       name: 'Setting',
-      icon: CogIconSolid,
+      icon: CogSolid,
       iconSize: 16,
       href: '/'
     }
@@ -197,14 +197,14 @@ layout: sidebarLayout
 <script>
   import { Sidebar } from 'flowbite-svelte';
   import {
-    ChartPieIconSolid,
-    ShoppingBagIconSolid,
-    TableIconSolid,
-    InboxInIconSolid,
-    UserIconSolid,
-    LoginIconSolid,
-    CogIconSolid
-  } from '@codewithshin/svelte-heroicons';
+    ChartPieSolid,
+    ShoppingBagSolid,
+    TableSolid,
+    InboxInSolid,
+    UserSolid,
+    LoginSolid,
+    CogSolid
+  } from 'svelte-heros';
 
   let uid = 1;
   let links = [
@@ -212,44 +212,44 @@ layout: sidebarLayout
       id: uid++,
       name: 'Dashboard',
       href: '/',
-      icon: ChartPieIconSolid
+      icon: ChartPieSolid
     },
     {
       id: uid++,
       name: 'E-commerce',
-      icon: ShoppingBagIconSolid,
+      icon: ShoppingBagSolid,
       href: '/',
       subtext: '3'
     },
     {
       id: uid++,
       name: 'Kanban',
-      icon: TableIconSolid,
+      icon: TableSolid,
       href: '/',
       subtext: 'Pro'
     },
     {
       id: uid++,
       name: 'Inbox',
-      icon: InboxInIconSolid,
+      icon: InboxInSolid,
       href: '/'
     },
     {
       id: uid++,
       name: 'Users',
-      icon: UserIconSolid,
+      icon: UserSolid,
       href: '/'
     },
     {
       id: uid++,
       name: 'Sign In',
-      icon: LoginIconSolid,
+      icon: LoginSolid,
       href: '/'
     },
     {
       id: uid++,
       name: 'Setting',
-      icon: CogIconSolid,
+      icon: CogSolid,
       href: '/'
     }
   ];
@@ -282,12 +282,12 @@ layout: sidebarLayout
       id: uid++,
       name: 'Dashboard',
       href: '/',
-      icon: ChartPieIconSolid
+      icon: ChartPieSolid
     },
     {
       id: uid++,
       name: 'E-commerce',
-      icon: ShoppingBagIconSolid,
+      icon: ShoppingBagSolid,
       children: [
         {
           id: uid++,
@@ -309,19 +309,19 @@ layout: sidebarLayout
     {
       id: uid++,
       name: 'Kanban',
-      icon: TableIconSolid,
+      icon: TableSolid,
       href: '/'
     },
     {
       id: uid++,
       name: 'Inbox',
-      icon: InboxInIconSolid,
+      icon: InboxInSolid,
       href: '/'
     },
     {
       id: uid++,
       name: 'Users',
-      icon: UserIconSolid,
+      icon: UserSolid,
       children: [
         {
           id: uid++,
@@ -343,13 +343,13 @@ layout: sidebarLayout
     {
       id: uid++,
       name: 'Sign In',
-      icon: LoginIconSolid,
+      icon: LoginSolid,
       href: '/'
     },
     {
       id: uid++,
       name: 'Setting',
-      icon: CogIconSolid,
+      icon: CogSolid,
       href: '/'
     }
   ];

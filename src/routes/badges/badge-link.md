@@ -3,7 +3,6 @@ layout: badgeLayout
 ---
 
 <script>
-  import {InformationCircleIconOutline} from '@codewithshin/svelte-heroicons'
   import {BadgeLink, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
   import componentProps from '../props/BadgeLink.json'
   // Props table
@@ -30,8 +29,6 @@ layout: badgeLayout
 </script>
 
 <Breadcrumb {crumbs}/>
-
-
 
 <h1 class="text-3xl w-full dark:text-white py-8">Badges with Link</h1>
 

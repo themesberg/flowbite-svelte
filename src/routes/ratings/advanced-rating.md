@@ -4,7 +4,7 @@ layout: ratingLayout
 
 <script>
 	import { Rating, AdvancedRating, ScoreRating, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
-	import { ThumbUpIconSolid } from '@codewithshin/svelte-heroicons';
+	import { ThumbUpSolid } from 'svelte-heros';
 	import componentProps from '../props/AdvancedRating.json'
   // Props table
   let items = componentProps.props
@@ -48,7 +48,7 @@ layout: ratingLayout
 ```html
 <script>
 	import { Rating, AdvancedRating } from 'flowbite-svelte';
-	import { ThumbUpIconSolid } from '@codewithshin/svelte-heroicons';
+	import { ThumbUpSolid } from 'svelte-heros';
 </script>
 ```
 
@@ -119,10 +119,10 @@ layout: ratingLayout
 		<span slot="rating">
 			<Rating total="5" rating="3.21" ceil>
         <span slot="ratingUp">
-          <ThumbUpIconSolid class="text-yellow-300 dark:text-yellow-200" />
+          <ThumbUpSolid class="text-yellow-300 dark:text-yellow-200" />
         </span>
         <span slot="ratingDown">
-          <ThumbUpIconSolid class="text-gray-300 dark:text-gray-500" />
+          <ThumbUpSolid class="text-gray-300 dark:text-gray-500" />
         </span>
 				<p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.21 out of 5</p>
 			</Rating>
@@ -146,10 +146,10 @@ layout: ratingLayout
   <span slot="rating">
     <Rating total="5" rating="3.21" ceil>
       <span slot="ratingUp">
-        <ThumbUpIconSolid class="text-yellow-300 dark:text-yellow-200" />
+        <ThumbUpSolid class="text-yellow-300 dark:text-yellow-200" />
       </span>
       <span slot="ratingDown">
-        <ThumbUpIconSolid class="text-gray-300 dark:text-gray-500" />
+        <ThumbUpSolid class="text-gray-300 dark:text-gray-500" />
       </span>
       <p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.21 out of 5</p>
     </Rating>

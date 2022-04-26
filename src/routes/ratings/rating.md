@@ -4,7 +4,7 @@ layout: ratingLayout
 
 <script>
 	import { Rating, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
-	import { HeartIconSolid, ThumbUpIconSolid, EmojiHappyIconSolid } from '@codewithshin/svelte-heroicons';
+	import { HeartSolid, ThumbUpSolid, EmojiHappySolid } from 'svelte-heros';
 	import componentProps from '../props/Rating.json'
   // Props table
   let items = componentProps.props
@@ -48,7 +48,7 @@ layout: ratingLayout
 ```html
 <script>
 	import { Rating } from 'flowbite-svelte';
-	import { HeartIconSolid, ThumbUpIconSolid, EmojiHappyIconSolid } from '@codewithshin/svelte-heroicons';
+	import { HeartSolid, ThumbUpSolid, EmojiHappySolid } from 'svelte-heros';
 </script>
 ```
 
@@ -101,10 +101,10 @@ layout: ratingLayout
 <div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 	<Rating total="5" rating="3.21">
 		<span slot="ratingUp">
-			<HeartIconSolid class="text-red-700 dark:text-red-500" />
+			<HeartSolid class="text-red-700 dark:text-red-500" />
 		</span>
 		<span slot="ratingDown">
-			<HeartIconSolid class="text-gray-300 dark:text-gray-500" />
+			<HeartSolid class="text-gray-300 dark:text-gray-500" />
 		</span>
 	</Rating>
 </div>
@@ -112,10 +112,10 @@ layout: ratingLayout
 ```html
 <Rating total="5" rating="3.21">
 	<span slot="ratingUp">
-		<HeartIconSolid class="text-red-700 dark:text-red-500" />
+		<HeartSolid class="text-red-700 dark:text-red-500" />
 	</span>
 	<span slot="ratingDown">
-		<HeartIconSolid class="text-gray-300 dark:text-gray-500" />
+		<HeartSolid class="text-gray-300 dark:text-gray-500" />
 	</span>
 </Rating>
 ```
@@ -123,10 +123,10 @@ layout: ratingLayout
 <div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 	<Rating total="5" rating="4.7">
 		<span slot="ratingUp">
-			<EmojiHappyIconSolid class="text-purple-500 dark:text-purple-700" />
+			<EmojiHappySolid class="text-purple-500 dark:text-purple-700" />
 		</span>
 		<span slot="ratingDown">
-			<EmojiHappyIconSolid class="text-gray-300 dark:text-gray-500" />
+			<EmojiHappySolid class="text-gray-300 dark:text-gray-500" />
 		</span>
 	</Rating>
 </div>
@@ -134,10 +134,10 @@ layout: ratingLayout
 ```html
 <Rating total="5" rating="4.7">
 	<span slot="ratingUp">
-		<EmojiHappyIconSolid class="text-purple-500 dark:text-purple-700" />
+		<EmojiHappySolid class="text-purple-500 dark:text-purple-700" />
 	</span>
 	<span slot="ratingDown">
-		<EmojiHappyIconSolid class="text-gray-300 dark:text-gray-500" />
+		<EmojiHappySolid class="text-gray-300 dark:text-gray-500" />
 	</span>
 </Rating>
 ```
@@ -145,10 +145,10 @@ layout: ratingLayout
 <div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 	<Rating total="5" rating="5">
 		<span slot="ratingUp">
-			<ThumbUpIconSolid class="text-yellow-300 dark:text-yellow-200" />
+			<ThumbUpSolid class="text-yellow-300 dark:text-yellow-200" />
 		</span>
 		<span slot="ratingDown">
-			<ThumbUpIconSolid class="text-gray-300 dark:text-gray-500" />
+			<ThumbUpSolid class="text-gray-300 dark:text-gray-500" />
 		</span>
 	</Rating>
 </div>
@@ -156,10 +156,10 @@ layout: ratingLayout
 ```html
 <Rating total="5" rating="5">
 	<span slot="ratingUp">
-		<ThumbUpIconSolid class="text-yellow-300 dark:text-yellow-200" />
+		<ThumbUpSolid class="text-yellow-300 dark:text-yellow-200" />
 	</span>
 	<span slot="ratingDown">
-		<ThumbUpIconSolid class="text-gray-300 dark:text-gray-500" />
+		<ThumbUpSolid class="text-gray-300 dark:text-gray-500" />
 	</span>
 </Rating>
 ```

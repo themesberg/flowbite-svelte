@@ -1,14 +1,6 @@
 <script>
 	import { Sidebar } from '$lib/index';
-	import {
-		ChartPieIconSolid,
-		ShoppingBagIconSolid,
-		TableIconSolid,
-		InboxInIconSolid,
-		UserIconSolid,
-		LoginIconSolid,
-		CogIconSolid
-	} from '@codewithshin/svelte-heroicons';
+	import { ChartPieSolid, ShoppingBagSolid, TableSolid, InboxInSolid, UserSolid, LoginSolid, CogSolid } from 'svelte-heros';
 	let site = {
 		name: 'Flowbite-Svelte',
 		href: '/',
@@ -20,12 +12,12 @@
 			id: uid++,
 			name: 'Dashboard',
 			href: '/',
-			icon: ChartPieIconSolid
+			icon: ChartPieSolid
 		},
 		{
 			id: uid++,
 			name: 'E-commerce',
-			icon: ShoppingBagIconSolid,
+			icon: ShoppingBagSolid,
 			children: [
 				{
 					id: uid++,
@@ -47,19 +39,19 @@
 		{
 			id: uid++,
 			name: 'Kanban',
-			icon: TableIconSolid,
+			icon: TableSolid,
 			href: '/'
 		},
 		{
 			id: uid++,
 			name: 'Inbox',
-			icon: InboxInIconSolid,
+			icon: InboxInSolid,
 			href: '/'
 		},
 		{
 			id: uid++,
 			name: 'Users',
-			icon: UserIconSolid,
+			icon: UserSolid,
 			children: [
 				{
 					id: uid++,
@@ -81,13 +73,13 @@
 		{
 			id: uid++,
 			name: 'Sign In',
-			icon: LoginIconSolid,
+			icon: LoginSolid,
 			href: '/'
 		},
 		{
 			id: uid++,
 			name: 'Setting',
-			icon: CogIconSolid,
+			icon: CogSolid,
 			href: '/'
 		}
 	];
@@ -97,8 +89,6 @@
 
 <h2 class="text-2xl mt-8 dark:text-white py-8">Example</h2>
 
-<div
-	class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
->
+<div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 	<Sidebar {links} {site} />
 </div>

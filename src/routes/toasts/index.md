@@ -5,7 +5,7 @@ layout: toastLayout
 <script>
 import { Toast, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
 import { quintOut, elasticOut } from 'svelte/easing';
-import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIconSolid} from '@codewithshin/svelte-heroicons'
+import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'svelte-heros'
 import componentProps from '../props/Toast.json'
   // Props table
   export let items = componentProps.props
@@ -35,7 +35,7 @@ import componentProps from '../props/Toast.json'
 ```html
 <script>
 import {Toast} from 'flowbite-svelte'
-import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIconSolid} from '@codewithshin/svelte-heroicons'
+import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'svelte-heros'
 </script>
 ```
 
@@ -48,7 +48,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Toast>
     <span slot="icon">
-    <FireIconOutline />
+    <FireOutline />
     </span>
     <span slot="text">
       Transition type: fade
@@ -59,7 +59,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 ```html
 <Toast>
   <span slot="icon">
-  <FireIconOutline />
+  <FireOutline />
   </span>
   <span slot="text">
     Transition type: fade
@@ -74,7 +74,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
    <Toast transitionType="slide" iconColor='red'>
     <span slot="icon">
-    <CheckCircleIconSolid class="text-red-500"/>
+    <CheckCircleSolid class="text-red-500"/>
     </span>
     <span slot="text">
       Transition type: slide
@@ -85,7 +85,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
    <Toast transitionType="slide" iconColor='red' transitionParams="{{delay: 250, duration: 300, easing: quintOut}}">
     <span slot="icon">
-    <CheckCircleIconSolid class="text-red-500"/>
+    <CheckCircleSolid class="text-red-500"/>
     </span>
     <span slot="text">
       Transition type: slide, delay: 250, duration: 300, easing: quintOut
@@ -96,7 +96,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
    <Toast transitionType="slide" iconColor='red' transitionParams="{{delay: 250, duration: 2000, easing: elasticOut}}">
     <span slot="icon">
-    <CheckCircleIconSolid class="text-red-500"/>
+    <CheckCircleSolid class="text-red-500"/>
     </span>
     <span slot="text">
       Transition type: slide, delay: 250, duration: 2000, easing: elasticOut
@@ -107,7 +107,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 ```html
 <Toast transitionType="slide" iconColor='red'>
   <span slot="icon">
-  <CheckCircleIconSolid class="text-red-500"/>
+  <CheckCircleSolid class="text-red-500"/>
   </span>
   <span slot="text">
     Transition type: slide
@@ -116,7 +116,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 
  <Toast transitionType="slide" iconColor='red' transitionParams="{{delay: 250, duration: 300, easing: quintOut}}">
   <span slot="icon">
-  <CheckCircleIconSolid class="text-red-500"/>
+  <CheckCircleSolid class="text-red-500"/>
   </span>
   <span slot="text">
     Transition type: slide, delay: 250, duration: 300, easing: quintOut
@@ -125,7 +125,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 
 <Toast transitionType="slide" iconColor='red' transitionParams="{{delay: 250, duration: 2000, easing: elasticOut}}">
   <span slot="icon">
-  <CheckCircleIconSolid class="text-red-500"/>
+  <CheckCircleSolid class="text-red-500"/>
   </span>
   <span slot="text">
     Transition type: slide, delay: 250, duration: 2000, easing: elasticOut
@@ -138,7 +138,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Toast transitionType="blur" iconColor='purple' transitionParams="{{amount: 10}}">
     <span slot="icon">
-    <PlusCircleIconOutline class="text-purple-500"/>
+    <PlusCircleOutline class="text-purple-500"/>
     </span>
     <span slot="text">
       Transition type: blur, amount: 10
@@ -149,7 +149,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Toast transitionType="blur" iconColor='purple' transitionParams="{{amount: 50, delay: 1000}}">
     <span slot="icon">
-    <PlusCircleIconOutline class="text-purple-500"/>
+    <PlusCircleOutline class="text-purple-500"/>
     </span>
     <span slot="text">
       Transition type: blur, amount: 50, delay 1000
@@ -160,7 +160,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 ```html
 <Toast transitionType="blur" iconColor='purple' transitionParams="{{amount: 10}}">
   <span slot="icon">
-  <PlusCircleIconOutline class="text-purple-500"/>
+  <PlusCircleOutline class="text-purple-500"/>
   </span>
   <span slot="text">
     Transition type: blur, amount: 10
@@ -169,7 +169,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 
 <Toast transitionType="blur" iconColor='purple' transitionParams="{{amount: 50, delay: 1000}}">
   <span slot="icon">
-  <PlusCircleIconOutline class="text-purple-500"/>
+  <PlusCircleOutline class="text-purple-500"/>
   </span>
   <span slot="text">
     Transition type: blur, amount: 50, delay 1000
@@ -182,7 +182,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Toast transitionType="fly" transitionParams="{{x: 200}}" iconColor="green">
     <span slot="icon">
-    <ArchiveIconSolid  class="text-green-500"/>
+    <ArchiveSolid  class="text-green-500"/>
     </span>
     <span slot="text">
       Transition type: fly right
@@ -193,7 +193,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Toast transitionType="fly" transitionParams="{{y: 200}}" iconColor="green">
     <span slot="icon">
-    <ArchiveIconSolid  class="text-green-500"/>
+    <ArchiveSolid  class="text-green-500"/>
     </span>
     <span slot="text">
       Transition type: fly down
@@ -204,7 +204,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 ```html
 <Toast transitionType="fly" transitionParams="{{x: 200}}" iconColor="green">
   <span slot="icon">
-  <ArchiveIconSolid  class="text-green-500"/>
+  <ArchiveSolid  class="text-green-500"/>
   </span>
   <span slot="text">
     Transition type: fly right
@@ -213,7 +213,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 
 <Toast transitionType="fly" transitionParams="{{y: 200}}" iconColor="green">
   <span slot="icon">
-  <ArchiveIconSolid  class="text-green-500"/>
+  <ArchiveSolid  class="text-green-500"/>
   </span>
   <span slot="text">
     Transition type: fly down
@@ -228,7 +228,7 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 ```html
 <script>
 import {Toast} from 'flowbite-svelte'
-import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIconSolid} from '@codewithshin/svelte-heroicons'
+import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIconSolid} from 'svelte-heros'
 </scrip>
 ```
 
