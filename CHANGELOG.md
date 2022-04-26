@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.3](https://github.com/themesberg/flowbite-svelte/compare/v0.15.2...v0.15.3) (2022-04-26)
+
+
+### Features
+
+* add range input ([215439f](https://github.com/themesberg/flowbite-svelte/commit/215439fc529856ecc8c72965cd39d7aff12d3eb7))
+
 ### [0.15.2](https://github.com/themesberg/flowbite-svelte/compare/v0.15.1...v0.15.2) (2022-04-26)
 
 
