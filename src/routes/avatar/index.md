@@ -8,7 +8,7 @@ layout: avatarLayout
   // Props table
   export let items = alertProp.props
 	let propHeader = ['Name', 'Type', 'Default']
-	// console.log(items)
+	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
   let avatar6 = {

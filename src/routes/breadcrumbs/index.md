@@ -5,9 +5,9 @@ layout: breadcrumbLayout
 <script>
   import { Breadcrumb, Table, TableDefaultRow } from '$lib/index'
   import componentProps from '../props/Breadcrumb.json'
-  export let items = componentProps.props
+  let items = componentProps.props
   let propHeader = ['Name', 'Type', 'Default']
-	// console.log(items)
+	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
   let crumbs = [
     {

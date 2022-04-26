@@ -3,7 +3,7 @@
 	import { DarkMode, Badge, SitemapFooter } from '$lib/index';
 	import { Aside, Nav, SidebarList, Navbar, TopMenu } from '@codewithshin/svelte-sidebar';
 	import { Github, Twitter } from 'svelte-simples';
-	import { accordions, alerts, badges, buttons, buttonGroups, cards, carousels, dropdowns, footers, icons, modals, navbar, ratings, spinners, svelteflows, tabs, timelines, tooltips, topMenus } from './items';
+	import { accordions, alerts, badges, buttons, buttonGroups, cards, carousels, dropdowns, forms, footers, icons, modals, navbar, ratings, spinners, svelteflows, tabs, timelines, tooltips, topMenus } from './items';
 	let site = {
 		name: 'Flowbite Svelte',
 		href: '/',
@@ -235,6 +235,14 @@
 			<a href="/dropdowns">Dropdowns</a>
 		</h3>
 		{#each dropdowns as { href, name, rel }}
+			<SidebarList {href} {name} {rel} {sideBarListClass} />
+		{/each}
+	</Nav>
+	<Nav {navClass} {navDivClass}>
+		<h3 class="text-base pb-4">
+			<a href="/forms">Forms</a>
+		</h3>
+		{#each forms as { href, name, rel }}
 			<SidebarList {href} {name} {rel} {sideBarListClass} />
 		{/each}
 	</Nav>

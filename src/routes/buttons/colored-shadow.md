@@ -6,9 +6,9 @@ layout: buttonLayout
   import { ColorShadowButton, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/ColorShadowButton.json'
   // Props table
-  export let items = componentProps.props
+  let items = componentProps.props
 	let propHeader = ['Name', 'Type', 'Default']
-	// console.log(items)
+	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
   let crumbs = [

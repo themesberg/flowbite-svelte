@@ -59,6 +59,17 @@ export const dropdowns = [
   { href: "/dropdowns/image", name: "Image" },
 ]
 
+export const forms = [
+  { href: "/forms/checkbox", name: "Checkbox" },
+  { href: "/forms/file-input", name: "File input" },
+  { href: "/forms/floating-label", name: "Floating label" },
+  { href: "/forms/input", name: "Input" },
+  { href: "/forms/radio", name: "Radio" },
+  { href: "/forms/range", name: "Range" },
+  { href: "/forms/textarea", name: "Textarea" },
+  { href: "/forms/toggle", name: "Toggle" },
+]
+
 export const footers = [
   { href: "/footer/default", name: "Default" },
   { href: "/footer/logo", name: "Logo" },

@@ -7,9 +7,9 @@ layout: alertLayout
   import { flip } from 'svelte/animate';
   import componentProps from '../props/Alert.json'
   // Props table
-  export let items = componentProps.props
+  let items = componentProps.props
 	let propHeader = ['Name', 'Type', 'Default']
-	// console.log(items)
+	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
 	let alerts = [

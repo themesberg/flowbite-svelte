@@ -7,10 +7,10 @@ layout: timelineLayout
 	import { CalendarOutline, AdjustmentsOutline } from 'svelte-heros';
 	import componentProps1 from '../props/Timeline.json'
   import componentProps2 from '../props/TimelineItemVertical.json'
-  export let items1 = componentProps1.props
-  export let items2 = componentProps2.props
+  let items1 = componentProps1.props
+  let items2 = componentProps2.props
 	let propHeader = ['Name', 'Type', 'Default']
-	// console.log(items)
+	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
 	let timelineItems2 = [

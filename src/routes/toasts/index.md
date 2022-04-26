@@ -8,9 +8,9 @@ import { quintOut, elasticOut } from 'svelte/easing';
 import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'svelte-heros'
 import componentProps from '../props/Toast.json'
   // Props table
-  export let items = componentProps.props
+  let items = componentProps.props
 	let propHeader = ['Name', 'Type', 'Default']
-	// console.log(items)
+	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
   let crumbs = [

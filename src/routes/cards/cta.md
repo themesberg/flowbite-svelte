@@ -6,9 +6,9 @@ layout: cardLayout
   import { CtaCard, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/CtaCard.json'
   // Props table
-  export let items = componentProps.props
+  let items = componentProps.props
 	let propHeader = ['Name', 'Type', 'Default']
-	// console.log(items)
+	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
   let title = "Be The First";

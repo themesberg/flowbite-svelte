@@ -7,9 +7,9 @@ layout: carouselLayout
   import { images } from './imageData';
   import componentProps from '../props/Carousel.json'
   // Props table
-  export let items = componentProps.props
+  let items = componentProps.props
 	let propHeader = ['Name', 'Type', 'Default']
-	// console.log(items)
+	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
   let showThumbs=false

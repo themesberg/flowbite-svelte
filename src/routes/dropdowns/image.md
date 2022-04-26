@@ -8,7 +8,7 @@ layout: dropdownLayout
   // Props table
   export let dropdownItems = componentProps.props
   let propHeader = ['Name', 'Type', 'Default']
-  // console.log(items)
+  
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
   let avatar = {
     src: '/images/profile-picture-1.webp',

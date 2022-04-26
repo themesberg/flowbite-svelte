@@ -8,12 +8,12 @@ layout: paginationLayout
   import componentProps2 from '../props/Previous.json'
 	import componentProps3 from '../props/Next.json'
   import componentProps4 from '../props/TableData.json'
-  export let items1 = componentProps1.props
-  export let items2 = componentProps2.props
-	export let items3 = componentProps3.props
-  export let items4 = componentProps4.props
+  let items1 = componentProps1.props
+  let items2 = componentProps2.props
+	let items3 = componentProps3.props
+  let items4 = componentProps4.props
 	let propHeader = ['Name', 'Type', 'Default']
-	// console.log(items)
+	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
 	let pages = [

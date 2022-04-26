@@ -6,10 +6,10 @@ layout: modalLayout
   import { LargeModal, ModalButton, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps1 from '../props/ModalButton.json'
   import componentProps2 from '../props/LargeModal.json'
-  export let items1 = componentProps1.props
-  export let items2 = componentProps2.props
+  let items1 = componentProps1.props
+  let items2 = componentProps2.props
 	let propHeader = ['Name', 'Type', 'Default']
-	// console.log(items)
+	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
 

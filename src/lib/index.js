@@ -70,6 +70,7 @@ export { default as FloatingLabelInput } from './forms/FloatingLabelInput.svelte
 export { default as Iconinput } from './forms/Iconinput.svelte'
 export { default as Input } from './forms/Input.svelte'
 export { default as Radio } from './forms/Radio.svelte'
+export { default as Range } from './forms/Range.svelte'
 export { default as SingleCheckbox } from './forms/SingleCheckbox.svelte'
 export { default as Select } from './forms/Select.svelte'
 export { default as Textarea } from './forms/Textarea.svelte'
