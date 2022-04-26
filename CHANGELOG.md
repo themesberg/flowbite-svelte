@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.2](https://github.com/themesberg/flowbite-svelte/compare/v0.15.1...v0.15.2) (2022-04-26)
+
+
+### Bug Fixes
+
+* update svelte-simples ([f958721](https://github.com/themesberg/flowbite-svelte/commit/f9587219ff3da038ee76c6d3b8483dfb2dddc856))
+
 ### [0.15.1](https://github.com/themesberg/flowbite-svelte/compare/v0.15.0...v0.15.1) (2022-04-26)
 
 ## [0.15.0](https://github.com/themesberg/flowbite-svelte/compare/v0.14.17...v0.15.0) (2022-04-25)
