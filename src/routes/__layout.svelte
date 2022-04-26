@@ -2,7 +2,7 @@
 	import '../app.css';
 	import { DarkMode, Badge, SitemapFooter } from '$lib/index';
 	import { Aside, Nav, SidebarList, Navbar, TopMenu } from '@codewithshin/svelte-sidebar';
-	import { GithubIcon, TwitterIcon } from '@codewithshin/svelte-simpleicons';
+	import { Github, Twitter } from 'svelte-simples';
 	import { accordions, alerts, badges, buttons, buttonGroups, cards, carousels, dropdowns, footers, icons, modals, navbar, ratings, spinners, svelteflows, tabs, timelines, tooltips, topMenus } from './items';
 	let site = {
 		name: 'Flowbite Svelte',
@@ -36,11 +36,11 @@
 	let socialMedia = [
 		{
 			href: 'https://github.com/themesberg/flowbite-svelte',
-			icon: GithubIcon
+			icon: Github
 		},
 		{
 			href: 'https://twitter.com/shinokada',
-			icon: TwitterIcon
+			icon: Twitter
 		}
 	];
 	let links = [

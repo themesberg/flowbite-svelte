@@ -3,7 +3,6 @@ lockfileVersion: 5.3
 specifiers:
   '@codewithshin/svelte-feathericons': ^0.1.9
   '@codewithshin/svelte-sidebar': ^0.4.8
-  '@codewithshin/svelte-simpleicons': ^0.2.2
   '@codewithshin/svelte-utterances': ^0.2.2
   '@playwright/test': ^1.21.0
   '@sveltejs/adapter-auto': next
@@ -27,6 +26,7 @@ specifiers:
   svelte-collapse: ^0.0.4
   svelte-heros: ^2.0.0
   svelte-preprocess: ^4.10.5
+  svelte-simples: ^0.3.1
   svelte2tsx: ^0.5.9
   tailwindcss: ^3.0.23
   tslib: ^2.3.1
@@ -40,7 +40,6 @@ dependencies:
 devDependencies:
   '@codewithshin/svelte-feathericons': 0.1.9
   '@codewithshin/svelte-sidebar': 0.4.8
-  '@codewithshin/svelte-simpleicons': 0.2.2
   '@codewithshin/svelte-utterances': 0.2.2
   '@playwright/test': 1.21.0
   '@sveltejs/adapter-auto': 1.0.0-next.39
@@ -61,6 +60,7 @@ devDependencies:
   svelte: 3.47.0
   svelte-check: 2.7.0_8ad6e20ce4e2d7da0239e3010622d126
   svelte-preprocess: 4.10.6_8f537df1deb1f807b69cd07414ab4868
+  svelte-simples: 0.3.1
   svelte2tsx: 0.5.9_svelte@3.47.0+typescript@4.6.3
   tailwindcss: 3.0.24
   tslib: 2.3.1
@@ -596,10 +596,6 @@ packages:
 
   /@codewithshin/svelte-sidebar/0.4.8:
     resolution: {integrity: sha512-NrMEvJaiH9HOWetlZVgb7QnUX8ms+dT1p0qDJnY/rTEq3BGV2HSbiKSIukvLgfRjA3LFeyhVY7tFlqLKtiZHiA==}
-    dev: true
-
-  /@codewithshin/svelte-simpleicons/0.2.2:
-    resolution: {integrity: sha512-RK5QYB5VJQx19254lDKJtqPw8fTE6ozP66Wr5WZzdYWY+g88/KJAkgrXkR6CmcNVkfTmoPbfJhoq5oDi6gJWaQ==}
     dev: true
 
   /@codewithshin/svelte-utterances/0.2.2:
@@ -2981,6 +2977,10 @@ packages:
       strip-indent: 3.0.0
       svelte: 3.47.0
       typescript: 4.6.3
+    dev: true
+
+  /svelte-simples/0.3.1:
+    resolution: {integrity: sha512-cCxhEV+i6whUyF+hmI3WrreePkoO3t/KpBwQpcDr2aEUQoTsl//WLO++JNkwgkfxuLd8c8Qa1m1cTvYHpxlLrw==}
     dev: true
 
   /svelte/3.47.0:

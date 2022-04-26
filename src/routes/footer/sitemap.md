@@ -12,11 +12,11 @@ layout: footerLayout
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
   import {
-    FacebookIcon,
-    GithubIcon,
-    TwitterIcon,
-    InstagramIcon,
-  } from "@codewithshin/svelte-simpleicons";
+    Facebook,
+    Github,
+    Twitter,
+    Instagram,
+  } from "svelte-simples";
   let site = {
     href: "/",
     name: "Flowbite Svelte",
@@ -83,19 +83,19 @@ layout: footerLayout
   let socialMedia = [
     {
       href: "/",
-      icon: FacebookIcon,
+      icon: Facebook,
     },
     {
       href: "/",
-      icon: GithubIcon,
+      icon: Github,
     },
     {
       href: "/",
-      icon: TwitterIcon,
+      icon: Twitter,
     },
     {
       href: "/",
-      icon: InstagramIcon,
+      icon: Instagram,
     },
   ];
 
@@ -130,11 +130,11 @@ layout: footerLayout
 <script>
   import {SitemapFooter} from 'flowbite-svelte'
   import {
-    FacebookIcon,
-    GithubIcon,
-    TwitterIcon,
-    InstagramIcon,
-  } from "@codewithshin/svelte-simpleicons";
+    Facebook,
+    Github,
+    Twitter,
+    Instagram,
+  } from "svelte-simples";
   let site = {
     href: "/",
     name: "Flowbite Svelte",
@@ -200,19 +200,19 @@ layout: footerLayout
   let socialMedia = [
     {
       href: "/",
-      icon: FacebookIcon,
+      icon: Facebook,
     },
     {
       href: "/",
-      icon: GithubIcon,
+      icon: Github,
     },
     {
       href: "/",
-      icon: TwitterIcon,
+      icon: Twitter,
     },
     {
       href: "/",
-      icon: InstagramIcon,
+      icon: Instagram,
     },
   ];
 </script>
