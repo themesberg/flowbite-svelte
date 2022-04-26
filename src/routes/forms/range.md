@@ -40,6 +40,10 @@ let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 <Range id="range-disabled" label="Disabled state" disabled/>
 ```
 
+<h2 class="text-2xl w-full dark:text-white py-4">Binding the value</h2>
+
+<p>Use `bind:value={your-variable}` to bind the range input value as seen the the following examples.</p>
+
 <h2 class="text-2xl w-full dark:text-white py-4">Min and max</h2>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -76,6 +80,10 @@ let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 <Range id="range-disabled" label="Range steps" min="0" max="5" bind:value={stepValue} step="0.5"/>
 <p>Value: {stepValue}</p>
 ```
+
+<h2 class="text-2xl w-full dark:text-white py-4">Unknow attributes</h2>
+
+<p>Since we added `$$restProps` to input field, you can contain the props which are not declared with export. It will pass down other unknown attributes to an element in a component.</p>
 
 <h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
 
