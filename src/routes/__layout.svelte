@@ -256,11 +256,6 @@
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class="text-base pb-4">
-			<a href="/forms">Forms <Badge name="NEW" color="red" /></a>
-		</h3>
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class="text-base pb-4">
 			<a href="/icons">Icons</a>
 		</h3>
 		{#each icons as { href, name, rel }}
