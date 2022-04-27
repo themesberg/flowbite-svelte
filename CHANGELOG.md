@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.6](https://github.com/themesberg/flowbite-svelte/compare/v0.15.5...v0.15.6) (2022-04-27)
+
+
+### Features
+
+* add iconColor to sidebar and sidebardropdown components ([9b239ba](https://github.com/themesberg/flowbite-svelte/commit/9b239bacd455436c9ab056a730574d3d3404e517))
+
 ### [0.15.5](https://github.com/themesberg/flowbite-svelte/compare/v0.15.4...v0.15.5) (2022-04-27)
 
 
