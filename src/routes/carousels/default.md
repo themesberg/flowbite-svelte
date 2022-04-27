@@ -4,6 +4,7 @@ layout: carouselLayout
 
 <script>
   import { Carousel, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
+  import {ChevronDoubleLeftOutline, ChevronDoubleRightOutline, ChevronLeftOutline, ChevronRightOutline} from 'svelte-heros'
   import { images } from './imageData';
   import componentProps from '../props/Carousel.json'
   // Props table
@@ -31,6 +32,12 @@ layout: carouselLayout
       href:'/carousels/default'
     },
   ]
+   let icons={
+      next: ChevronDoubleRightOutline,
+		  prev: ChevronDoubleLeftOutline,
+    }
+    let iconSize =20
+    let iconClass = 'text-white dark:text-gray-300 ml-2';
 </script>
 
 <Breadcrumb {crumbs}/>
@@ -179,9 +186,9 @@ layout: carouselLayout
 <Carousel {images} {showThumbs} {showCaptions} {showIndicators}/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Without Slide controlers</h2>
+<h2 class="text-2xl w-full dark:text-white py-4">Without Slide controllers</h2>
 
-<p>To hide the slide controlers, set `slideControls` to `false`.</p>
+<p>To hide the slide controllers, set `slideControls` to `false`.</p>
 
 <div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <div class="max-w-4xl">
@@ -197,6 +204,32 @@ layout: carouselLayout
 </script>
 
 <Carousel {images} {showThumbs} {showCaptions} {slideControls}/>
+```
+
+<h2 class="text-2xl w-full dark:text-white py-4" id="Custom_slide_controllers">Custom slide controllers</h2>
+
+<p>You can add custom slide controllers using <a class="text-blue-600 hover:underline dark:text-blue-500" href="/icons/heroicons">Svelte-Heros icons</a>. Change the size using the `iconSize` prop and style with the `iconClass` prop.</p>
+
+<div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+  <div class="max-w-4xl">
+    <Carousel {images} {showThumbs} {showCaptions} {icons} {iconSize} {iconClass}/>
+  </div>
+</div>
+
+```html
+<script>
+  import {ChevronDoubleLeftOutline, ChevronDoubleRightOutline } from 'svelte-heros'
+  let icons={
+    next: ChevronDoubleRightOutline,
+    prev: ChevronDoubleLeftOutline,
+  }
+  let iconSize =20
+  let iconClass = 'text-white dark:text-gray-300 ml-2';
+</script>
+
+<div class="max-w-4xl">
+  <Carousel {images} {showThumbs} {showCaptions} {icons} {iconSize} {iconClass}/>
+</div>
 ```
 
 <h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
