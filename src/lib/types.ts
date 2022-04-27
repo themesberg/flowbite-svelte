@@ -169,6 +169,7 @@ export type SidebarType = {
     icon?: typeof SvelteComponent;
     iconSize?: number;
     iconClass?: string;
+    iconColor?: string;
     rel?: string;
     children?: SidebarType[];
     subtext?: HTMLElement;

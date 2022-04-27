@@ -213,44 +213,54 @@ layout: sidebarLayout
       id: uid++,
       name: 'Dashboard',
       href: '/',
-      icon: ChartPieSolid
+      icon: ChartPieSolid,
+      iconSize: 16,
+      iconClass: "text-blue-500 dark:text-white",
     },
     {
       id: uid++,
       name: 'E-commerce',
       icon: ShoppingBagSolid,
+      iconSize: 16,
+      iconClass: "text-green-500",
       href: '/',
-      subtext: '3'
+      subtext: '<span class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200">3</span>'
     },
     {
       id: uid++,
       name: 'Kanban',
       icon: TableSolid,
+      iconSize: 16,
+      iconClass: "text-red-500",
       href: '/',
-      subtext: 'Pro'
+      subtext: '<span class="inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span>'
     },
     {
       id: uid++,
       name: 'Inbox',
       icon: InboxInSolid,
+      iconSize: 16,
       href: '/'
     },
     {
       id: uid++,
       name: 'Users',
       icon: UserSolid,
+      iconSize: 16,
       href: '/'
     },
     {
       id: uid++,
       name: 'Sign In',
       icon: LoginSolid,
+      iconSize: 16,
       href: '/'
     },
     {
       id: uid++,
       name: 'Setting',
       icon: CogSolid,
+      iconSize: 16,
       href: '/'
     }
   ];
@@ -283,12 +293,14 @@ layout: sidebarLayout
       id: uid++,
       name: 'Dashboard',
       href: '/',
-      icon: ChartPieSolid
+      icon: ChartPieSolid,
+      iconSize: 16,
     },
     {
       id: uid++,
       name: 'E-commerce',
       icon: ShoppingBagSolid,
+      iconSize: 16,
       children: [
         {
           id: uid++,
@@ -311,18 +323,21 @@ layout: sidebarLayout
       id: uid++,
       name: 'Kanban',
       icon: TableSolid,
+      iconSize: 16,
       href: '/'
     },
     {
       id: uid++,
       name: 'Inbox',
       icon: InboxInSolid,
+      iconSize: 16,
       href: '/'
     },
     {
       id: uid++,
       name: 'Users',
       icon: UserSolid,
+      iconSize: 16,
       children: [
         {
           id: uid++,
@@ -345,12 +360,14 @@ layout: sidebarLayout
       id: uid++,
       name: 'Sign In',
       icon: LoginSolid,
+      iconSize: 16,
       href: '/'
     },
     {
       id: uid++,
       name: 'Setting',
       icon: CogSolid,
+      iconSize: 16,
       href: '/'
     }
   ];

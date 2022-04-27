@@ -22,7 +22,7 @@
 					<li>
 						<a href={link.href} rel={link.rel} class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
 							{#if link.icon}
-								<svelte:component this={link.icon} size={link.iconSize} class="mr-2 {link.iconClass}" />
+								<svelte:component this={link.icon} size={link.iconSize} color={link.iconColor} class="mr-2 {link.iconClass}" />
 							{/if}
 							<span class="ml-3">{link.name}</span>
 							{#if link.subtext}
