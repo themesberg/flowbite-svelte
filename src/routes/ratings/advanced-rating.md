@@ -3,6 +3,7 @@ layout: ratingLayout
 ---
 
 <script>
+	import Htwo from '../utils/Htwo.svelte'
 	import { Rating, AdvancedRating, ScoreRating, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 	import { ThumbUpSolid } from 'svelte-heros';
 	import componentProps from '../props/AdvancedRating.json'
@@ -41,7 +42,7 @@ layout: ratingLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">AdvancedRating Component</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Set up</h2>
+<Htwo label="Set up" />
 
 <p>Let's import all necessary components in the script tag. We import a thumb-up icon but you can use any icons as you like.</p>
 
@@ -52,7 +53,7 @@ layout: ratingLayout
 </script>
 ```
 
-<h2 class="text-2xl w-full mt-8 dark:text-white py-4">AdvancedRating Component</h2>
+<Htwo label="AdvancedRating component" />
 
 <p>Set the `total`, rating`, and `ratings` prop for AdvancedRation component. Use the `rating` slot for Rating component with the `total` and `rating` props. Use the `globalText` slot for additional information.</p>
 
@@ -100,7 +101,7 @@ layout: ratingLayout
 </div>
 ```
 
-<h2 class="text-2xl w-full mt-8 dark:text-white py-4">Different icon</h2>
+<Htwo label="Different icon" />
 
 <p>As we describe in the Rating component, you can change an icon in the `ratingUp` and `ratingDown` in the Rating component.</p>
 
@@ -159,7 +160,7 @@ layout: ratingLayout
 ```
 
 
-<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

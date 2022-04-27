@@ -3,6 +3,7 @@ layout: ratingLayout
 ---
 
 <script>
+	import Htwo from '../utils/Htwo.svelte'
 	import { Rating, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 	import { HeartSolid, ThumbUpSolid, EmojiHappySolid } from 'svelte-heros';
 	import componentProps from '../props/Rating.json'
@@ -41,7 +42,7 @@ layout: ratingLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Rating Component</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Set up</h2>
+<Htwo label="Set up" />
 
 <p>Let's import all necessary components in the script tag. We import a heart, thumb-up, and smiley icons, but you can use any icons as you like.</p>
 
@@ -52,7 +53,8 @@ layout: ratingLayout
 </script>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Total and rating props</h2>
+<Htwo label="Total and rating props" />
+
 <p>The default rating icon is a star. Set the total and rating props.</p>
 
 <div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -63,7 +65,8 @@ layout: ratingLayout
 <Rating total="5" rating="4.66" />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Ceil prop</h2>
+<Htwo label="Ceil prop" />
+
 <p>The default rounding for the rate is `floor`, but by adding the `ceil` prop, you can round it up.</p>
 
 <div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -74,7 +77,7 @@ layout: ratingLayout
 <Rating total="5" rating="4.66" ceil />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Text slot</h2>
+<Htwo label="Text slot" />
 
 <p>Use the `text` slot to add any text.</p>
 
@@ -90,7 +93,7 @@ layout: ratingLayout
 </Rating>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Icon, size, and color</h2>
+<Htwo label="Icon size and color" />
 
 <p>Use the `ratingUp` and `ratingDown` slots to add icons of your choice.</p>
 
@@ -164,7 +167,7 @@ layout: ratingLayout
 </Rating>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

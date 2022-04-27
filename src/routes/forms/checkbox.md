@@ -3,6 +3,7 @@ layout: formLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
 import { SingleCheckbox, Checkbox, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
 import componentProps from '../props/SingleCheckbox.json'
 let items = componentProps.props
@@ -57,7 +58,7 @@ let checkboxOptions= [
 
 <h1 class="text-3xl w-full dark:text-white py-8">Checkbox Components</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Examples</h2>
+<Htwo label="Examples" />
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Checkbox options={checkboxOptions} {legend} />
@@ -96,9 +97,8 @@ let checkboxOptions= [
 <Checkbox options={checkboxOptions} {legend} />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Single checkbox</h2>
+<Htwo label="Signle checkbox" />
 
-<h3>Examples</h3>
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <SingleCheckbox name="rememberme" id="rememberme" required label="Remember me" />
@@ -108,7 +108,7 @@ let checkboxOptions= [
 <SingleCheckbox name="rememberme" id="rememberme" required label="Remember me" />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

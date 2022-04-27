@@ -3,8 +3,9 @@ layout: carouselLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { Carousel, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
-  import {ChevronDoubleLeftOutline, ChevronDoubleRightOutline, ChevronLeftOutline, ChevronRightOutline} from 'svelte-heros'
+  import {ChevronDoubleLeftOutline, ChevronDoubleRightOutline, LinkOutline} from 'svelte-heros'
   import { images } from './imageData';
   import componentProps from '../props/Carousel.json'
   // Props table
@@ -37,14 +38,23 @@ layout: carouselLayout
 		  prev: ChevronDoubleLeftOutline,
     }
     let iconSize =20
-    let iconClass = 'text-white dark:text-gray-300 ml-2';
+    let iconClass = 'text-white dark:text-red-500';
+
+    let hidden = true;
+    const handleMouseover = ()=>{
+      hidden = false
+      console.log('mouseover')
+    }
+    const handleMouseout = ()=>{
+      hidden = true
+    }
 </script>
 
 <Breadcrumb {crumbs}/>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Carousel</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Examples</h2>
+<Htwo label="Examples" />
 
 <div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <div class="max-w-4xl">
@@ -110,7 +120,7 @@ layout: carouselLayout
 <Carousel {images} />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4" id="Loop">Loop</h2>
+<Htwo label="Loop" />
 
 <p>Use `loop` prop to loop the carousel. Use `duration=number` to set the interval</p>
 
@@ -129,7 +139,7 @@ layout: carouselLayout
 <Carousel {images} loop {showCaptions} {showThumbs} duration="3000" />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Without thumbnails</h2>
+<Htwo label="Without thumbnails"/>
 
 <p>The `showThumbs` is set to `true`. Set it to `false` to hide it.</p>
 
@@ -147,7 +157,7 @@ layout: carouselLayout
 <Carousel {images} {showThumbs}/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Without caption</h2>
+<Htwo label="Without caption" />
 
 <p>To hide the caption, set `showCaptions` to `false`.</p>
 
@@ -166,7 +176,7 @@ layout: carouselLayout
 <Carousel {images} {showThumbs} {showCaptions}/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Without indicators</h2>
+<Htwo label="Without indicators" />
 
 <p>To hide the indicators, set `showIndicators` to `false`.</p>
 
@@ -186,7 +196,7 @@ layout: carouselLayout
 <Carousel {images} {showThumbs} {showCaptions} {showIndicators}/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Without Slide controllers</h2>
+<Htwo label="Without slide controllers" />
 
 <p>To hide the slide controllers, set `slideControls` to `false`.</p>
 
@@ -206,7 +216,7 @@ layout: carouselLayout
 <Carousel {images} {showThumbs} {showCaptions} {slideControls}/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4" id="Custom_slide_controllers">Custom slide controllers</h2>
+<Htwo label="Custom slide controllers" />
 
 <p>You can add custom slide controllers using <a class="text-blue-600 hover:underline dark:text-blue-500" href="/icons/heroicons">Svelte-Heros icons</a>. Change the size using the `iconSize` prop and style with the `iconClass` prop.</p>
 
@@ -224,7 +234,7 @@ layout: carouselLayout
     prev: ChevronDoubleLeftOutline,
   }
   let iconSize =20
-  let iconClass = 'text-white dark:text-gray-300 ml-2';
+  let iconClass = 'text-white dark:text-red-500';
 </script>
 
 <div class="max-w-4xl">
@@ -232,7 +242,7 @@ layout: carouselLayout
 </div>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

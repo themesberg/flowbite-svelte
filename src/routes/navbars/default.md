@@ -3,6 +3,7 @@ layout: navbarLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { Navbar, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/Navbar.json'
   // Props table
@@ -74,7 +75,7 @@ layout: navbarLayout
 <Navbar {menus} {siteName} {alt} {logo} {textsize} />
 ```
 
-<h2 class="text-lg dark:text-white py-8">Text Size text-xs</h2>
+<Htwo label="text-xs" />
 
 ```html
 <Navbar textsize="text-xs" {siteName} {menus}/>
@@ -84,7 +85,7 @@ layout: navbarLayout
 <Navbar textsize="text-xs" {siteName} {menus}/>
 </div>
 
-<h2 class="text-lg dark:text-white py-8">Text Size text-sm</h2>
+<Htwo label="text-sm" />
 
 ```html
 <Navbar textsize="text-sm" {siteName} {menus} />
@@ -94,7 +95,7 @@ layout: navbarLayout
 <Navbar textsize="text-sm" {siteName} {menus}/>
 </div>
 
-<h2 class="text-lg dark:text-white py-8">Text Size text-base</h2>
+<Htwo label="text-base" />
 
 ```html
 <Navbar textsize="text-base" {siteName} {menus} />
@@ -104,7 +105,7 @@ layout: navbarLayout
 <Navbar textsize="text-base" {siteName} {menus}/>
 </div>
 
-<h2 class="text-lg dark:text-white py-8">Text Size text-lg</h2>
+<Htwo label="text-lg" />
 
 ```html
 <Navbar textsize="text-lg" {siteName} {menus}/>
@@ -114,7 +115,7 @@ layout: navbarLayout
 <Navbar textsize="text-lg" {siteName} {menus}/>
 </div>
 
-<h2 class="text-lg dark:text-white py-8">Text Size text-xl</h2>
+<Htwo label="text-xl" />
 
 ```html
 <Navbar textsize="text-xl" {menus}/>
@@ -124,7 +125,7 @@ layout: navbarLayout
 <Navbar textsize="text-xl" {siteName} {menus} />
 </div>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

@@ -3,6 +3,7 @@ layout: dropdownLayout
 ---
 
 <script lang="ts">
+  import Htwo from '../utils/Htwo.svelte'
   import { ImgDropdown, Avatar, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/ImgDropdown.json'
   // Props table
@@ -73,7 +74,7 @@ layout: dropdownLayout
 
 <p>You can use an image or Avatar component with `ImgDropdown`.</p>
 
-<h2 class="text-2xl w-full dark:text-white py-4"><a id="Examples">Examples</a></h2>
+<Htwo label="Examples" />
 
 <div class="container flex justify-center rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <ImgDropdown {items}>
@@ -110,7 +111,7 @@ layout: dropdownLayout
 </script>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Position right and a divider</h2>
+<Htwo label="Position right" />
 
 <p>You can change the dropdown position to the right by adjusting the `dropdownClass` and add a divider.</p>
 
@@ -147,7 +148,7 @@ layout: dropdownLayout
 </ImgDropdown>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Position left and a header</h2>
+<Htwo label="Position left" />
 
 <p>Let's move the dropdown to left and add a header.</p>
 
@@ -190,7 +191,7 @@ layout: dropdownLayout
 </ImgDropdown>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4"><a id="Props">Props</a></h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

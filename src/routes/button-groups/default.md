@@ -3,6 +3,7 @@ layout: buttongroupLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import {ButtonGroup, ButtonGroupOutline, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import {UserCircleOutline, AdjustmentsOutline, CloudDownloadOutline} from "svelte-heros"
   import componentProps from '../props/ButtonGroup.json'
@@ -69,7 +70,7 @@ layout: buttongroupLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Button Group</h1>
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Setup</h2>
+<Htwo label="Set up" />
 
 ```html
 <script>
@@ -112,7 +113,7 @@ layout: buttongroupLayout
 </script>
 ```
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Default</h2>
+<Htwo label="Default" />
 
 <div
   class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -124,7 +125,7 @@ layout: buttongroupLayout
 <ButtonGroup buttons={buttons1}/>
 ```
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Default with icon</h2>
+<Htwo label="Default with icon" />
 
 <div
   class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -136,7 +137,7 @@ layout: buttongroupLayout
 <ButtonGroup buttons={buttons2}/>
 ```
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

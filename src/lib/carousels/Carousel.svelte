@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { CarouselIconType } from '../types';
 	import { ChevronRightOutline, ChevronLeftOutline } from 'svelte-heros';
 	import Slide from './Slide.svelte';
 	import Thumbnail from './Thumbnail.svelte';
@@ -12,7 +13,7 @@
 	export let slideControls: boolean = true;
 	export let loop: boolean = false;
 	export let duration: number = 2000;
-	export let icons = {
+	export let icons: CarouselIconType = {
 		next: ChevronRightOutline,
 		prev: ChevronLeftOutline
 	};
@@ -78,13 +79,13 @@
 		<!-- Slider controls -->
 		<button on:click={prevSlide} type="button" class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
 			<span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-				<svelte:component this={icons.prev} size={iconSize} class="mr-2 {iconClass}" />
+				<svelte:component this={icons.prev} size={iconSize} class=" {iconClass}" />
 				<span class="hidden">Previous</span>
 			</span>
 		</button>
 		<button on:click={nextSlide} type="button" class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-next>
 			<span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-				<svelte:component this={icons.next} size={iconSize} class="mr-2 {iconClass}" />
+				<svelte:component this={icons.next} size={iconSize} class=" {iconClass}" />
 				<span class="hidden">Next</span>
 			</span>
 		</button>

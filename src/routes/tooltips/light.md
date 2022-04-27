@@ -3,6 +3,7 @@ layout: tooltipLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
 import {LightTooltip, Button, Table, TableDefaultRow, Breadcrumb} from '$lib/index'
 import componentProps from '../props/LightTooltip.json'
 // Props table
@@ -32,7 +33,7 @@ let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
 
 <h1 class="text-3xl w-full dark:text-white py-8">Light Tooltip</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-4">LightTooltip top</h2>
+<Htwo label="LigtTootip top" />
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <LightTooltip tip="My tooltip content" top>
@@ -50,7 +51,7 @@ import {LightTooltip, Button} from 'flowbite-svelte'
 </LightTooltip>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">LightTooltip bottom</h2>
+<Htwo label="LightTooltip bottom" />
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <LightTooltip tip="My tooltip content" bottom>
@@ -68,7 +69,7 @@ import {LightTooltip, Button} from 'flowbite-svelte'
 </LightTooltip>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">LightTooltip right</h2>
+<Htwo label="LightTooltip right" />
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <LightTooltip tip="My tooltip content" right>
@@ -86,8 +87,7 @@ import {LightTooltip, Button} from 'flowbite-svelte'
 </LightTooltip>
 ```
 
-
-<h2 class="text-2xl w-full dark:text-white py-4">LightTooltip left</h2>
+<Htwo label="LightTooltip left" />
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <LightTooltip tip="My tooltip content" left>
@@ -105,7 +105,7 @@ import {LightTooltip, Button} from 'flowbite-svelte'
 </LightTooltip>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

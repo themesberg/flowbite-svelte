@@ -3,6 +3,7 @@ layout: iconLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { Breadcrumb } from '$lib/index'
   import { Facebook, Github, Git } from 'svelte-simples';
 
@@ -28,14 +29,13 @@ layout: iconLayout
 
 <p class=" dark:text-white py-4">Svelte-simpleicons has more than 2100 icons and they are monochrome icons.</p>
 
-
-<h2 class="text-2xl w-full dark:text-white py-4">Installing Simple-icons</h2>
+<Htwo label="Installing Simple-icons" />
 
 ```sh
 npm i -D @codewithshin/svelte-simpleicons
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Examples</h2>
+<Htwo label="Examples" />
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6 h-72">
 <Facebook class="mx-2" color="#4287f5" size="30" />
@@ -58,7 +58,7 @@ import { Facebook, Github, Git } from '@codewithshin/svelte-simpleicons';
 <Git class="mx-2" color="#fa0202" size="30"/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Default Props</h2>
+<Htwo label="Props" />
 
 ```js
 let class = ""

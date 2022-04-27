@@ -3,6 +3,7 @@ layout: cardLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { Card, Button, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/Card.json'
   // Props table
@@ -35,7 +36,7 @@ layout: cardLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Card</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Set up</h2>
+<Htwo label="Set up" />
 
 <p>Import Card in the script tag.</p>
 
@@ -45,8 +46,7 @@ layout: cardLayout
 </script>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Examples</h2>
-
+<Htwo label="Examples" />
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Card header="Simple card with header and content">
@@ -66,8 +66,7 @@ layout: cardLayout
 </Card>
 ```
 
-
-<h2 class="text-2xl w-full dark:text-white py-4">Card with a link</h2>
+<Htwo label="Card with a link" />
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Card header="Card with link" link="/" btnLabel="Read more">
@@ -87,7 +86,7 @@ layout: cardLayout
 </Card>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Card with a link and image</h2>
+<Htwo label="Card with a link and image" />
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Card img="/images/image-1.jpeg" header="Card with link and image" link="/" btnLabel="Read more">
@@ -107,7 +106,7 @@ layout: cardLayout
 </Card>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Card with an image</h2>
+<Htwo label="Card with an image" />
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Card img="/images/image-2.jpeg" header="Card with image" btnLabel="Read more">
@@ -127,7 +126,7 @@ layout: cardLayout
 </Card>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Card with a Button component</h2>
+<Htwo label="Card with a Button component" />
 
 <p>If you need a click handler rather than a link, use a Button component.</p>
 
@@ -168,7 +167,7 @@ layout: cardLayout
 </Card>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Card with yellow button</h2>
+<Htwo label="Card with yellow button" />
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Card
@@ -198,7 +197,7 @@ layout: cardLayout
 </Card>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Card with purple button</h2>
+<Htwo label="Card with purple button" />
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Card
@@ -232,7 +231,7 @@ layout: cardLayout
 </Card>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

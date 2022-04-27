@@ -3,6 +3,7 @@ layout: avatarLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { Avatar, Table, TableDefaultRow, Breadcrumb } from "$lib/index"
   import alertProp from '../props/Avatar.json'
   // Props table
@@ -86,7 +87,7 @@ layout: avatarLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Avatar</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Size</h2>
+<Htwo label="Sizes" />
 
 <p>Select size from  6 | 8 | 12 | 24 | 48.</p>
 
@@ -140,7 +141,7 @@ layout: avatarLayout
 
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Border and round</h2>
+<Htwo label="Border and round" />
 
 <p>Set true to border and/or round.</p>
 
@@ -180,7 +181,7 @@ layout: avatarLayout
 <Avatar avatar={avatar4} />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Placehoder</h2>
+<Htwo label="Placeholder" />
 
 <p>By setting placehoder, you display a placeholder avatar.</p>
 
@@ -194,7 +195,7 @@ layout: avatarLayout
 <Avatar placehoder />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Avatar text</h2>
+<Htwo label="Avatar text" />
 
 <p>You can set header and text to show additional information.</p>
 
@@ -219,7 +220,7 @@ layout: avatarLayout
 <Avatar avatar={avatarText} />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

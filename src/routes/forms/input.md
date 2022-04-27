@@ -3,6 +3,7 @@ layout: formLayout
 ---
 
 <script>
+import Htwo from '../utils/Htwo.svelte'
 import { onMount } from 'svelte';
 import { Input, Iconinput, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
 import { AtSymbolOutline , MailOutline } from 'svelte-heros'
@@ -41,11 +42,11 @@ onMount(() => {
 
 <p>The Input component allows you to change the input size, add disabled, helper text, and floating label.</p>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Sizes</h2>
+<Htwo label="Sizes" />
 
 <p>User the size prop to change the input size. Choose one from 'sm:text-md' | 'text-sm' | 'sm:text-xs'. The default size is text-sm.</p>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Examples</h2>
+<Htwo label="Examples" />
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Input class="mb-6"
@@ -81,7 +82,7 @@ import { Input } from 'flowbite-svelte'
 <Input class="mb-6" size="sm:text-xs" placeholder="Small input" label="Small input"/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8" id="Focus_on_load">Focus on load</h2>
+<Htwo label="Focus on load" />
 
 <p>To focus on an input field and a textarea field on load create a `ref` variable and bind it in an Input component. Add a `onMount` function as followings.</p>
 
@@ -108,7 +109,7 @@ onMount(() => {
 <Input class="mb-6" placeholder="Last name" label="Last name"/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Disabled</h2>
+<Htwo label="Disabled" />
 
 <p>Add the disabled prop to change the input to disabled.</p>
 
@@ -122,7 +123,7 @@ onMount(() => {
 <Input class="mb-6" disabled readonly placeholder="disabled readonly" label="Disabled readonly input"/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Helper text</h2>
+<Htwo label="Helper text" />
 
 <p>Use the helper prop to add your helper text. You can use HTML in the helper text.</p>
 
@@ -134,7 +135,7 @@ onMount(() => {
 <Input label="Email" id="email" name="email" required placeholder="Your email" helper="You can add helper text in <b>HTML</b>."/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Iconinput</h2>
+<Htwo label="Icon input" />
 
 <p>With the Iconinput component, you can add <a href="https://flowbite-svelte.vercel.app/icons/heroicons">Heroicons</a> or <a href="https://flowbite-svelte.vercel.app/icons/simple-icons">Simple-icons</a>. Use iconClass to modify the icon color.</p>
 
@@ -154,7 +155,7 @@ onMount(() => {
 <Iconinput noBorder id="email" type="email" name="email" label="No border" icon={MailOutline} iconClass="h-4 w-4 mr-2 text-blue-500 dark:text-green-500"/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

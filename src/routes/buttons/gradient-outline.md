@@ -3,6 +3,7 @@ layout: buttonLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { GradientOutlineButton , Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/GradientOutlineButton.json'
   // Props table
@@ -31,7 +32,7 @@ layout: buttonLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Gradient Outline Buttons</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-4">text-sm</h2>
+<Htwo label="text-sm" />
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <GradientOutlineButton color="purple2blue" name="purple2blue"/>
@@ -53,8 +54,7 @@ layout: buttonLayout
 <GradientOutlineButton color="red2yellow" name="red2yellow"/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">text-xs</h2>
-
+<Htwo label="text-xs" />
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <GradientOutlineButton color="purple2blue" name="purple2blue" textSize="text-xs"/>
@@ -76,7 +76,7 @@ layout: buttonLayout
 <GradientOutlineButton color="red2yellow" name="red2yellow" textSize="text-xs"/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">text-base</h2>
+<Htwo label="text-base" />
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <GradientOutlineButton color="purple2blue" name="purple2blue" textSize="text-base"/>
@@ -98,7 +98,7 @@ layout: buttonLayout
 <GradientOutlineButton color="red2yellow" name="red2yellow" textSize="text-base"/>
 ```
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Button Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

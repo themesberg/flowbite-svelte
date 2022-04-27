@@ -3,6 +3,7 @@ layout: formLayout
 ---
 
 <script>
+import Htwo from '../utils/Htwo.svelte'
 import { onMount } from 'svelte';
 import { Input, Iconinput, FloatingLabelInput, Toggle, Textarea, Select, Fileupload, Radio, SingleCheckbox, Checkbox, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
 import { AtSymbolOutline , MailOutline } from 'svelte-heros'
@@ -56,7 +57,7 @@ let props3 = {
 
 <h1 class="text-3xl w-full dark:text-white py-8">Toggle Components</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Examples</h2>
+<Htwo label="Examples" />
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Toggle {...props}/>
@@ -110,7 +111,7 @@ let props3 = {
 <Toggle {...props3}/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

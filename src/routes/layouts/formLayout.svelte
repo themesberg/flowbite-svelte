@@ -1,4 +1,5 @@
 <script>
+	import Htwo from '../utils/Htwo.svelte';
 	import 'prism-themes/themes/prism-holi-theme.css';
 	import { Utterances } from '@codewithshin/svelte-utterances';
 </script>
@@ -7,7 +8,7 @@
 	<div class="container flex flex-wrap mx-auto">
 		<slot />
 
-		<h2 class="text-2xl w-full dark:text-white pt-16 pb-8">Related components</h2>
+		<Htwo label="Related components" />
 
 		<p>
 			<a href="/forms/checkbox" class="text-blue-600 hover:underline dark:text-blue-500">Checkbox</a>
@@ -40,7 +41,7 @@
 			<a href="/forms/toggle" class="text-blue-600 hover:underline dark:text-blue-500">Toggle</a>
 		</p>
 
-		<h2 class="text-2xl w-full dark:text-white pt-8 pb-4">References</h2>
+		<Htwo label="References" />
 
 		<p>
 			<a href="https://flowbite.com/docs/components/forms/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Forms</a>

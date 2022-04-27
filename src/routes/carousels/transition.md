@@ -3,6 +3,7 @@ layout: carouselLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { CarouselTransition, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import { quartInOut, sineInOut, bounceInOut, quintOut } from 'svelte/easing';
   import { images } from './imageData';
@@ -38,7 +39,7 @@ layout: carouselLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Carousel transition</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Slide example</h2>
+<Htwo label="Example" />
 
 <div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <div class="max-w-4xl">
@@ -54,8 +55,7 @@ layout: carouselLayout
 <CarouselTransition {images} transitionType="slide" transitionParams="{{delay: 300, duration: 500}}"/>
 ```
 
-
-<h2 class="text-2xl w-full dark:text-white py-4" id="Loop">Loop</h2>
+<Htwo label="Loop" />
 
 <p>Use `loop` prop to loop the carousel. Use `duration=number` to set the interval</p>
 
@@ -74,8 +74,7 @@ layout: carouselLayout
 <CarouselTransition {images} loop transitionType="fade" transitionParams="{{ duration: 1000 }}" {showCaptions} {showThumbs} duration="5000" />
 ```
 
-
-<h2 class="text-2xl w-full dark:text-white py-4">Fly example</h2>
+<Htwo label="Fly example" />
 
 <div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <div class="max-w-4xl">
@@ -87,7 +86,7 @@ layout: carouselLayout
 <CarouselTransition {images} transitionType="fly" transitionParams="{{delay: 250, duration: 300, x: 100}}" />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Slide example</h2>
+<Htwo label="Slide example" />
 
 <div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <div class="max-w-4xl">
@@ -103,3 +102,7 @@ layout: carouselLayout
 
 <CarouselTransition {images} transitionType="slide" transitionParams="{{duration: 1500, easing: bounceInOut}}"/>
 ```
+
+<Htwo label="Custom slide controllers" />
+
+<p>You can add custom slide controllers using <a class="text-blue-600 hover:underline dark:text-blue-500" href="/icons/heroicons">Svelte-Heros icons</a>. Change the size using the `iconSize` prop and style with the `iconClass` prop. Please read <a class="text-blue-600 hover:underline dark:text-blue-500" href="/carousels/default#Custom_slide_controllers">Carousel default for more details</a>.</p>

@@ -3,6 +3,7 @@ layout: badgeLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { Badge, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
   import componentProps from '../props/Badge.json'
   // Props table
@@ -36,7 +37,7 @@ layout: badgeLayout
 </script>
 ```
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Size xs</h2>
+<Htwo label="Size xs" />
 
 <div
   class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -62,7 +63,7 @@ layout: badgeLayout
 <Badge name="Pink" color="pink"/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Size sm</h2>
+<Htwo label="Size sm" />
 
 <div
   class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6 ">
@@ -87,7 +88,7 @@ layout: badgeLayout
 <Badge name="Pink" color="pink" textSize="text-sm"/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Size base</h2>
+<Htwo label="Size base" />
 
 <div
   class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
@@ -112,7 +113,7 @@ layout: badgeLayout
 <Badge name="Pink" color="pink" textSize="text-base"/>
 ```
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

@@ -64,7 +64,7 @@ test('Information alert page should have h1', async ({ page }) => {
 
 test('Alert animation example page should have h1', async ({ page }) => {
 	await page.goto('/alerts/animation');
-	expect(await page.textContent('h1')).toBe('Alert Animation Examples');
+	expect(await page.textContent('h1')).toBe('Alert animation');
 });
 
 // Avatar

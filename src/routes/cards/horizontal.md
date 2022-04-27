@@ -3,6 +3,7 @@ layout: cardLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { HorizontalCard, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/HorizontalCard.json'
   // Props table
@@ -33,7 +34,7 @@ layout: cardLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Horizontal Card</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Set up</h2>
+<Htwo label="Set up" />
 
 ```html
 <script>
@@ -41,7 +42,7 @@ layout: cardLayout
 </script>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Examples</h2>
+<Htwo label="Examples" />
 
 ```html
 <HorizontalCard
@@ -78,7 +79,7 @@ layout: cardLayout
   </HorizontalCard>
 </div>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

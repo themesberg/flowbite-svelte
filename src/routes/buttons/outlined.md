@@ -3,6 +3,7 @@ layout: buttonLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { Button , Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/Button.json'
   // Props table
@@ -35,7 +36,7 @@ layout: buttonLayout
 import { Button } from "flowbite-svelte";
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Size xs</h2>
+<Htwo label="Size xs" />
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Button name="Button text-xs" textSize="text-xs" btnColor="blue-outline" />
@@ -55,8 +56,7 @@ import { Button } from "flowbite-svelte";
 <Button name="Button text-xs" textSize="text-xs" btnColor="purple-outline" />
 ```
 
-
-<h2 class="text-2xl w-full dark:text-white py-4">Size sm</h2>
+<Htwo label="Size sm" />
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Button name="Button" btnColor="blue-outline" />
@@ -76,8 +76,7 @@ import { Button } from "flowbite-svelte";
 <Button name="Button" btnColor="purple-outline" />
 ```
 
-
-<h2 class="text-2xl w-full dark:text-white py-4">Size base</h2>
+<Htwo label="Size base" />
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Button name="Button" textSize="text-base" btnColor="blue-outline" />
@@ -97,7 +96,7 @@ import { Button } from "flowbite-svelte";
 <Button name="Button" textSize="text-base" btnColor="purple-outline" />
 ```
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

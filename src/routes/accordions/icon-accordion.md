@@ -3,6 +3,7 @@ layout: accordionLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { Accordion, AccordionItem, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import { ArchiveOutline, BeakerOutline } from "svelte-heros";
   import accordionProps from '../props/AccordionDefault.json'
@@ -33,6 +34,8 @@ layout: accordionLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Icon Accordion</h1>
 
+<Htwo label="Examples" />
+
 <p class="dark:text-white w-full py-4">Add id 1,2,3,... to AccordionItem component.</p> 
 <p class="dark:text-white w-full py-4">Install svelte-heros.</p>
 
@@ -40,7 +43,7 @@ layout: accordionLayout
 npm i svelte-heros
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Examples</h2>
+<Htwo label="Examples" />
 
 <div
   class="rounded-xl bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
@@ -153,7 +156,7 @@ npm i svelte-heros
 </Accordion>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
