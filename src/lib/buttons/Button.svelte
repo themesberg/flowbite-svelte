@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Buttontypes, ButtonType, Textsize } from 'flowbite-svelte';
+	import type { Buttontypes, ButtonType, Textsize } from '../types';
 	export let rounded: boolean = false;
 	export let textSize: Textsize = 'text-sm';
 	export let name: string = '';
