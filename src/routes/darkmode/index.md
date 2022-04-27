@@ -3,6 +3,7 @@ layout: darkmodeLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
 import { Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/DarkMode.json'
   // Props table
@@ -38,7 +39,8 @@ import { DarkMode } from "flowbite-svelte";
 <DarkMode />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4"><a id="Props">Props</a></h2>
+<Htwo label="Props" />
+
 
 <p>The component has the following props, type, and default values:</p>
 
@@ -67,7 +69,7 @@ let btnClass="Add your class here"
 </body>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4"><a id="How_to_change_Dark_mode_color">How to change Dark mode color</a></h2>
+<Htwo label="How to change Dark mode color" />
 
 <p><a href="https://chir.ag/projects/name-that-color/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Find the name of the color from hex color code.</a></p>
 
@@ -93,7 +95,7 @@ let btnClass="Add your class here"
 </body>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

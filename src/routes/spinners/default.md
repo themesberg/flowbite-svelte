@@ -3,6 +3,7 @@ layout: spinnerLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { Spinner, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/Spinner.json'
   // Props table
@@ -38,7 +39,7 @@ layout: spinnerLayout
 </script>
 ```
 
-<h2 class="text-2xl mt-8 dark:text-white py-8">Colors</h2>
+<Htwo label="Colors" />
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Spinner />
@@ -60,7 +61,7 @@ layout: spinnerLayout
 <Spinner color="purple" />
 ```
 
-<h2 class="text-2xl mt-8 dark:text-white py-8">Sizing</h2>
+<Htwo label="Sizes" />
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Spinner size="w-4 h-4" />
@@ -74,8 +75,7 @@ layout: spinnerLayout
 <Spinner size="w-8 h-8"/>
 ```
 
-
-<h2 class="text-2xl mt-8 dark:text-white py-8">Alignment</h2>
+<Htwo label="Alignment" />
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Spinner align="text-left"/>
@@ -89,7 +89,7 @@ layout: spinnerLayout
 <Spinner align="text-right"/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

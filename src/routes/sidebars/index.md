@@ -3,6 +3,7 @@ layout: sidebarLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { Sidebar, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/Sidebar.json'
   // Props table
@@ -187,7 +188,7 @@ layout: sidebarLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Sidebar Components</h1>
 
-<h2 class="text-2xl w-full mt-8 dark:text-white py-8" id="Default_sidebar">Default sidebar</h2>
+<Htwo label="Default sidebar" />
 
 <div class="container flex flex-wrap rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Sidebar {links} />
@@ -259,7 +260,7 @@ layout: sidebarLayout
 
 ```
 
-<h2 class="text-2xl w-full mt-8 dark:text-white py-8" id="Multi_level_dropdown">Multi-level dropdown</h2>
+<Htwo label="Multi-level dropdown" />
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 
@@ -358,7 +359,7 @@ layout: sidebarLayout
 <Sidebar links={links2} {site} />
 ```
 
-<h2 class="text-2xl w-full mt-8 dark:text-white py-8">CTA button</h2>
+<Htwo label="CTA button" />
 
 <div class="container flex flex-wrap rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <Sidebar {links} {cta} />
@@ -373,7 +374,7 @@ layout: sidebarLayout
 </script>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

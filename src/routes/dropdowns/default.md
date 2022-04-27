@@ -3,6 +3,7 @@ layout: dropdownLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { Dropdown, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/DropdownDefault.json'
   // Props table
@@ -62,7 +63,7 @@ layout: dropdownLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Dropdown</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-4"><a id="Default_Dropdown">Examples</a></h2>
+<Htwo label="Examples" />
 
 <p>* Adding a dropdown id is recommended.</p>
 
@@ -92,7 +93,7 @@ layout: dropdownLayout
 <Dropdown {items} label="Dropdown button" id="drop1"/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4"><a id="Dropdown_divider">Dropdown divider</a></h2>
+<Htwo label="Dropdown divider" />
 
 <div class="container flex justify-center rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Dropdown items={items2} color="red" label="Dropdown button" id="drop2"/>
@@ -121,7 +122,7 @@ layout: dropdownLayout
 <Dropdown {items} color="red" label="Dropdown button" id="drop1"/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Dropdown header</h2>
+<Htwo label="Dropdown header" />
 
 <div class="container flex justify-center rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 <Dropdown {items} color="purple-outline" label="Dropdown button" id="drop3">
@@ -143,7 +144,7 @@ layout: dropdownLayout
 ```
 
 
-<h2 class="text-2xl w-full dark:text-white py-4"><a id="Props">Props</a></h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

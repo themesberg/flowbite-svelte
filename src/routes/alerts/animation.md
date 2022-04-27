@@ -3,6 +3,7 @@ layout: alertLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { Alert, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import { flip } from 'svelte/animate';
   import componentProps from '../props/Alert.json'
@@ -50,7 +51,9 @@ let crumbs = [
 
 <Breadcrumb {crumbs}/>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Alert Animation Examples</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Alert animation</h1>
+
+<Htwo label="Examples" />
 
 <p class="text-gray-900 dark:text-white py-4 text-lg">You can use Svelte animation by adding a custom event handler using the handlebtn1 prop.</p>
 
@@ -101,7 +104,7 @@ function remove(alert) {
 {/each}
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

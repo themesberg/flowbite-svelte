@@ -1,4 +1,5 @@
 <script>
+	import Htwo from '../utils/Htwo.svelte';
 	import 'prism-themes/themes/prism-holi-theme.css';
 	import { Utterances } from '@codewithshin/svelte-utterances';
 </script>
@@ -7,7 +8,7 @@
 	<div class="container flex flex-wrap mx-auto">
 		<slot />
 
-		<h2 class="text-2xl w-full dark:text-white pt-8 pb-4">References</h2>
+		<Htwo label="References" />
 
 		<p>
 			<a href="https://flowbite.com/docs/components/breadcrumb/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Breadcrumb</a>

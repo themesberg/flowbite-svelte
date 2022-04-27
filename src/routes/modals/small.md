@@ -3,6 +3,7 @@ layout: modalLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { SmallModal, ModalButton, modalIdStore, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import { goto } from "$app/navigation";
   import componentProps1 from '../props/ModalButton.json'
@@ -68,7 +69,7 @@ layout: modalLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Small Modals</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-8" id="Set_up">Set up</h2>
+<Htwo label="Set up" />
 
 <p>Import SmallModal, ModalButton, modalIdStor components and set variables in the script tag. Add `closeModal` method if you want to close the modal in a button.</p>
 
@@ -111,7 +112,7 @@ layout: modalLayout
 </script>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8" id="Examples">Examples</h2>
+<Htwo label="Examples" />
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton id={idBasic} btnName={btnBasicName} />
@@ -128,7 +129,7 @@ layout: modalLayout
 </SmallModal>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8" id="Small_Modals_with_Action_Buttons">Small Modals with Action Buttons</h2>
+<Htwo label="Small modal with action buttons" />
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton id={id1} btnName={btnName1} btnColor={btnColor1} />
@@ -151,7 +152,7 @@ layout: modalLayout
 </SmallModal>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-8" id="Small_Modals_with_different_colors">Small Modals with different colors</h2>
+<Htwo label="Small modal with different colors" />
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
@@ -207,7 +208,7 @@ eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </SmallModal>
 
 
-<h2 class="text-2xl w-full dark:text-white py-8" id="Props">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values:</p>
 
@@ -247,7 +248,7 @@ const handlebtnS2 = () => {
 >
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

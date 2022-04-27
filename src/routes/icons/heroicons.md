@@ -3,6 +3,7 @@ layout: iconLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { Breadcrumb } from '$lib/index'
   import {
     AdjustmentsSolid,
@@ -33,7 +34,6 @@ layout: iconLayout
 
 <Breadcrumb {crumbs}/>
 
-
 <h1 class="text-3xl w-full dark:text-white py-8">HeroIcons</h1>
 
 <p>Flowbite-svelte uses <a class="text-blue-600 hover:underline dark:text-blue-500" href="https://github.com/shinokada/svelte-heros" target="_blank">svelte-heros</a>.
@@ -43,7 +43,7 @@ You can find all the icon names from the <a class="text-blue-600 hover:underline
 
 <p class=" dark:text-white py-4">If you need brand icons, use <a class="text-blue-600 hover:underline dark:text-blue-500" href="https://github.com/shinokada/svelte-simpleicons" target="_blank">Svelte-simpleicons</a>.</p>
 
-<h2 class="text-2xl w-full dark:text-white mt-8">Examples</h2>
+<Htwo label="Examples" />
 
 <p class=" dark:text-white">If you want to change the color with Tailwind CSS, add it to class prop.</p>
 

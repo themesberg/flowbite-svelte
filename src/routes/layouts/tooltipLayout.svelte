@@ -1,4 +1,5 @@
 <script>
+	import Htwo from '../utils/Htwo.svelte';
 	import 'prism-themes/themes/prism-holi-theme.css';
 	import { Utterances } from '@codewithshin/svelte-utterances';
 </script>
@@ -17,7 +18,7 @@
 			<a href="/tooltips/light" class="text-blue-600 hover:underline dark:text-blue-500">- Light Tooltip</a>
 		</p>
 
-		<h2 class="text-2xl w-full dark:text-white pt-8 pb-4">References</h2>
+		<Htwo label="References" />
 
 		<p>
 			- Read more about <a href="/buttons" class="text-blue-600 hover:underline dark:text-blue-500">Buttons</a>

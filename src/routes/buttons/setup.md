@@ -3,6 +3,7 @@ layout: buttonLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { Button, Breadcrumb }from '$lib/index';
   import { BellOutline } from "svelte-heros";
   import { goto }from '$app/navigation';
@@ -42,7 +43,7 @@ layout: buttonLayout
 </script>
 ```
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Button type</h2>
+<Htwo label="Button types" />
 
 <p>The default `type` is set to `button`. You can chage it by using the `type` prop.</p>
 
@@ -54,8 +55,7 @@ layout: buttonLayout
 <Button type="submit" name="Submit" />
 ```
 
-
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Button handler</h2>
+<Htwo label="Button handler" />
 
 <p>You can use on:click to listen to the event. Add your event handler.</p>
 
@@ -81,7 +81,7 @@ layout: buttonLayout
 <Button name="Button text-xs" on:click={btn2} textSize="text-xs" />
 </div>
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Additional button attributes</h2>
+<Htwo label="Additional button attributes" />
 
 <p>You can add any additional button attributes. The following example shows adding the `disabled` attribute.</p>
 
@@ -93,7 +93,7 @@ layout: buttonLayout
 <Button name="Button disabled" disabled />
 ```
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Icon button</h2>
+<Htwo label="Icon button" />
 
 <p>Since all the buttons have the `slot` you can add an icon component to create an icon button.</p>
 

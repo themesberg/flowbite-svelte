@@ -3,6 +3,7 @@ layout: modalLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import {
     SmallModal,
     MediumModal,
@@ -118,7 +119,7 @@ layout: modalLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">All Modals</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Small Modals</h2>
+<Htwo label="Small modals" />
 
 ```html
 <script>
@@ -150,7 +151,7 @@ layout: modalLayout
   <ModalButton id={smallModalId} btnName={btnSName} />
 </div>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Medium Modals</h2>
+<Htwo label="Medium modals" />
 
 ```html
 <script>
@@ -183,7 +184,7 @@ layout: modalLayout
   <ModalButton id={mediumModalId} btnName={btnMName} btnColor={btnMColor} />
 </div>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Large Modals</h2>
+<Htwo label="Large modals" />
 
 ```html
 <script>
@@ -215,7 +216,7 @@ layout: modalLayout
   <ModalButton id={largeModalId} btnName={btnLName} btnColor={btnLColor} />
 </div>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Extra-Large Modals</h2>
+<Htwo label="Extra-large modals" />
 
 ```html
 <script>
@@ -256,7 +257,7 @@ layout: modalLayout
   />
 </div>
 
-<h2 class="text-2xl w-full dark:text-white py-4">SingIn Modals</h2>
+<Htwo label="Sign-In modals" />
 
 ```html
 <ModalButton

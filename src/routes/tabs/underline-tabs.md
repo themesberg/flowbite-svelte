@@ -3,6 +3,7 @@ layout: tabLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
 import { UnderlineTabs, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 import componentProps from '../props/UnderlineTabs.json'
   // Props table
@@ -59,7 +60,7 @@ let tabs = [
 
 <h1 class="text-3xl w-full dark:text-white py-8">Underline Tabs</h1>
 
-<h2 class="text-2xl mt-8 dark:text-white py-4">Examples</h2>
+<Htwo label="Examples" />
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <UnderlineTabs {tabs} />
@@ -99,7 +100,7 @@ let tabs = [
 <UnderlineTabs {tabs} />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

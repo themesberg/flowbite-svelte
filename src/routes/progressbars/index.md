@@ -3,6 +3,7 @@ layout: progressbarLayout
 ---
 
 <script>
+	import Htwo from '../utils/Htwo.svelte'
   import { Progressbar, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
 	import componentProps from '../props/Progressbar.json'
   // Props table
@@ -35,7 +36,7 @@ layout: progressbarLayout
 </script>
 ```
 
-<h2 class="text-2xl w-full mt-8 dark:text-white py-4" id="Default_sidebar">Size</h2>
+<Htwo label="Sizes" />
 
 <p>Use the `size` prop to change the size of a progress bar.</p>
 
@@ -74,7 +75,7 @@ layout: progressbarLayout
 
 ```
 
-<h2 class="text-2xl w-full mt-8 dark:text-white py-8" id="Default_sidebar">Colors</h2>
+<Htwo label="Colors" />
 
 <p>Use the `color` prop to change the color of a progress bar.</p>
 
@@ -133,7 +134,7 @@ layout: progressbarLayout
 <Progressbar progress="50" color="purple" />
 ```
 
-<h2 class="text-2xl w-full mt-8 dark:text-white py-8" id="Default_sidebar">Label inside</h2>
+<Htwo label="Label inside" />
 
 <p>Use the `labelInside` prop to add the progress in a progress bar.</p>
 
@@ -147,8 +148,7 @@ layout: progressbarLayout
 <Progressbar progress="50" labelInside />
 ```
 
-
-<h2 class="text-2xl w-full mt-8 dark:text-white py-8" id="Default_sidebar">Label outside</h2>
+<Htwo label="Label outside" />
 
 <p>Use the `labelOutside` prop to add the progress outside of a progress bar.</p>
 
@@ -162,7 +162,7 @@ layout: progressbarLayout
 <Progressbar progress="50" labelOutside="Flowbite-Svelte" />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

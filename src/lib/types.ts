@@ -54,6 +54,11 @@ export type CardButtonType = {
     rounded?: boolean;
 };
 
+export type CarouselIconType = {
+    next: typeof SvelteComponent;
+    prev: typeof SvelteComponent;
+}
+
 export interface CheckboxType {
     id: string;
     label: string;

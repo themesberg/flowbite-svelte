@@ -3,6 +3,7 @@ layout: navbarLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { DropdownNavbar, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/DropdownNavbar.json'
   // Props table
@@ -69,11 +70,9 @@ layout: navbarLayout
 
 <Breadcrumb {crumbs}/>
 
-
-
 <h1 class="text-3xl w-full dark:text-white pt-16" id="Dropdown_Navbar">Dropdown Navbar</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-8" id="Examples">Examples</h2>
+<Htwo label="Examples" />
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <DropdownNavbar textsize="text-lg" {menus} />
@@ -83,7 +82,7 @@ layout: navbarLayout
   You can change textsize prop to text-xs, text-sm, text-base, text-lg or text-xl.
 </p>
 
-<h1 class="text-3xl w-full dark:text-white py-8" id="Dropdown_Navbar_Setup">Dropdown Navbar Setup</h1>
+<Htwo label="Dropdown Navbar Setup" />
 
 ```html
 <script>
@@ -143,7 +142,7 @@ layout: navbarLayout
 <DropdownNavbar {menus} {sitename} {alt} {logo} {textsize} />
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

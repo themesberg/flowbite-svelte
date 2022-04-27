@@ -3,6 +3,7 @@ layout: alertLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { BorderAlert, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/BorderAlert.json'
   // Props table
@@ -29,7 +30,7 @@ let crumbs = [
 <Breadcrumb {crumbs}/>
 <h1 class="text-3xl w-full dark:text-white py-8">Border Alert</h1>
 
-<h2 class="text-2xl w-full dark:text-white py-4">Set up</h2>
+<Htwo label="Set up" />
 
 <p class="text-gray-900 dark:text-white py-4 text-lg">
 Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
@@ -41,7 +42,7 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
 </script>
 ```
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Border Alert Examples</h2>
+<Htwo label="Examples" />
 
 ```html
 <BorderAlert color="blue">
@@ -87,7 +88,7 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
   </BorderAlert>
 </div>
 
-<h2 class="text-2xl w-full text-gray-900 dark:text-white py-8">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

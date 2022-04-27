@@ -3,6 +3,7 @@ layout: accordionLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { Accordion, AccordionItem, Table, TableDefaultRow, Breadcrumb } from "$lib/index";
   import accordionProps from '../props/AccordionDefault.json'
   import accordionItemProps from '../props/AccordionItem.json'
@@ -177,24 +178,14 @@ layout: accordionLayout
 </Accordion>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Props: AccordionDefault</h2>
-
-<p>The component has the following props, type, and default values:</p>
-
-```js
-let duration: number = 0.2;
-let easing: string = 'ease';
-let id: number = undefined;
-```
-
-<h2 class="text-2xl w-full dark:text-white py-4">AccordionItem: Slot names</h2>
+<Htwo label="AccordionItem: slot names" />
 
 ```js
 header
 body
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

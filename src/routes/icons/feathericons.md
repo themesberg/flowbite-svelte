@@ -3,6 +3,7 @@ layout: iconLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { Breadcrumb } from '$lib/index'
   import { ActivityIcon, AlertTriangleIcon, AnchorIcon } from '@codewithshin/svelte-feathericons'
 
@@ -31,7 +32,7 @@ layout: iconLayout
 
 <p class=" dark:text-white py-4">Svelte-feathericons allow you to change icon color and size.</p>
 
-<h2 class="text-2xl w-full dark:text-white mt-8">Examples</h2>
+<Htwo label="Examples" />
 
 <p class=" dark:text-white">If you want to change the color add size.</p>
 

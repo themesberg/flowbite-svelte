@@ -3,6 +3,7 @@ layout: tableLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
 import { Table, TableDefaultRow, TableSearch, Breadcrumb } from '$lib/index'
 import componentProps1 from '../props/Table.json'
 import componentProps2 from '../props/TableDefaultRow.json'
@@ -36,7 +37,7 @@ let headerEx = [' Product name','Color','Category','Price','Edit']
 
 <h1 class="text-3xl w-full dark:text-white py-8">Table Components</h1>
 
-<h2 class="text-2xl mt-8 dark:text-white py-4">Examples</h2>
+<Htwo label="Examples" />
 
 <p>Add `html` to render HTML elements in a table.</p>
 
@@ -62,7 +63,8 @@ let headerEx = [' Product name','Color','Category','Price','Edit']
 </Table>
 ```
 
-<h2 id="Striped_rows" class="text-2xl w-full dark:text-white py-8">Striped rows</h2>
+<Htwo label="Striped rows" />
+
 
 <p>Set `rowState` to striped to alternate background colors of every second tabel row.</p>
 
@@ -78,7 +80,7 @@ let headerEx = [' Product name','Color','Category','Price','Edit']
 </Table>
 ```
 
-<h2 id="Hover" class="text-2xl w-full dark:text-white py-8">Hover</h2>
+<Htwo label="Hover" />
 
 <p>Set `rowState` to hover to change the background color of a data row when hovering over the element with the cursor.</p>
 
@@ -94,7 +96,7 @@ let headerEx = [' Product name','Color','Category','Price','Edit']
 </Table>
 ```
 
-<h2 id="Table_search" class="text-2xl w-full dark:text-white py-8">Table search</h2>
+<Htwo label="Table search" />
 
 <TableSearch menuItems={itemEx} header={headerEx} placeholder="Search by product name"/>
 
@@ -102,7 +104,7 @@ let headerEx = [' Product name','Color','Category','Price','Edit']
 <TableSearch menuItems={itemEx} header={headerEx} placeholder="Search by product name"/>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 

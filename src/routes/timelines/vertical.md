@@ -3,6 +3,7 @@ layout: timelineLayout
 ---
 
 <script lang="ts">
+	import Htwo from '../utils/Htwo.svelte'
 	import { Timeline, TimelineItemVertical, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 	import { CalendarOutline, AdjustmentsOutline } from 'svelte-heros';
 	import componentProps1 from '../props/Timeline.json'
@@ -60,7 +61,6 @@ layout: timelineLayout
 
 <Breadcrumb {crumbs}/>
 
-
 <h1 class="text-3xl w-full dark:text-white py-8">Vertical Timeline</h1>
 
 <div
@@ -112,7 +112,7 @@ layout: timelineLayout
 </Timeline>
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">Props</h2>
+<Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
 
