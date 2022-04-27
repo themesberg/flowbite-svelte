@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.5](https://github.com/themesberg/flowbite-svelte/compare/v0.15.4...v0.15.5) (2022-04-27)
+
+
+### Features
+
+* add custom slide controllers to carousel ([8a2a329](https://github.com/themesberg/flowbite-svelte/commit/8a2a329da816bd7d5fff357790d584dbce2aec31))
+
+
+### Bug Fixes
+
+* merge conflicts ([0514548](https://github.com/themesberg/flowbite-svelte/commit/0514548ab7d7ca54337434114ac8f2b9239f5e5d))
+* to original Carousel ([5e979ae](https://github.com/themesberg/flowbite-svelte/commit/5e979ae8b58403cdf91b82b236a8e730f02d9cb1))
+* to original Carousel ([198270f](https://github.com/themesberg/flowbite-svelte/commit/198270f623e4c0806a59cf3f9f5dd89430ddc0db))
+* update range page ([edbf37f](https://github.com/themesberg/flowbite-svelte/commit/edbf37f7b2c6ef0109d15bf1e76dcd52bf2b9b05))
+
 ### [0.15.4](https://github.com/themesberg/flowbite-svelte/compare/v0.15.3...v0.15.4) (2022-04-26)
 
 ### [0.15.3](https://github.com/themesberg/flowbite-svelte/compare/v0.15.2...v0.15.3) (2022-04-26)
