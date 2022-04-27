@@ -18,6 +18,7 @@
 	export let noBorderDivClass: string = 'flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none';
 	export let iconClass: string = 'h-4 w-4 mr-2';
 	export let iconSize: number = 18;
+
 	function setType(node) {
 		node.type = type;
 	}
@@ -30,14 +31,14 @@
 			<div class={noBorderDivClass}>
 				<svelte:component this={icon} size={iconSize} class={iconClass} />
 			</div>
-			<input bind:value use:setType {id} class={noBorderInputClass} {placeholder} />
+			<input bind:value use:setType {id} class={noBorderInputClass} {placeholder} {...$$restProps} />
 		</div>
 	{:else}
 		<div class="flex">
 			<span class={spanClass}>
 				<svelte:component this={icon} size={iconSize} class={iconClass} />
 			</span>
-			<input {type} {id} class={inputClass} {placeholder} />
+			<input {type} {id} class={inputClass} {placeholder} {...$$restProps} />
 		</div>
 	{/if}
 	{#if helper}
