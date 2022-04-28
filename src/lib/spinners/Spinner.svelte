@@ -1,15 +1,12 @@
 <script lang="ts">
 	import type { Colors } from '../types';
-    // that's the currentFill color (fill-*), can be #ff1234
 	export let color: Colors|undefined = 'blue';
-    // that's the currentColor (text-*), can be #ff1234
 	export let bg: string = 'text-gray-200';
 	export let size: string = "8";
+
+    // these two props add fine control over the spinner colors
     export let currentFill:string='currentFill';
     export let currentColor:string='currentColor';
-
-	// let klass: string = '';
-	// export { klass as class };
 
     if(currentFill!=='currentFill') {
         color=undefined
@@ -37,13 +34,6 @@
     {
         fillColorClass = 'fill-blue-600';
     }
-
-    // let bgColorClass:string;
-    // if (bg.charAt(0)==='#') {
-	// 	bgColorClass = `text-[${bg}]`;
-	// } else {
-    //     bgColorClass=bg
-    // }
 
 </script>
 
