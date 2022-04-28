@@ -92,8 +92,6 @@ export interface GroupTimelineType {
 	comment?: string | HTMLElement;
 }
 
-// export type IconPosition = 'first' | 'last';
-
 export interface IconTabType {
 	name: string;
 	active: boolean;
