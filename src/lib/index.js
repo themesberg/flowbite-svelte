@@ -111,7 +111,6 @@ export { default as Sidebar } from './sidebars/Sidebar.svelte'
 
 // Spin
 export { default as Spinner } from'./spinners/Spinner.svelte'
-export { default as SpinnerButton } from'./spinners/SpinnerButton.svelte'
 
 // Tables
 export { default as Table } from './tables/Table.svelte'
