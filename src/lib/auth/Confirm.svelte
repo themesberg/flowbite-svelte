@@ -14,7 +14,7 @@
 			Your email is confirmed.
 		</h1>
 		<a href={loginLink.href} class="py-4">
-			<Button name={loginLink.name} textSize="text-sm" />
+			<Button textSize="text-sm" >{loginLink.name}</Button>
 		</a>
 	{:else}
 		<Spinner />

@@ -5,7 +5,7 @@ layout: spinnerLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import { Button, Spinner, SpinnerButton, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
-  import componentProps from '../props/SpinnerButton.json'
+  import componentProps from '../props/Button.json'
   // Props table
   let items = componentProps.props
 	let propHeader = ['Name', 'Type', 'Default']
@@ -38,7 +38,7 @@ layout: spinnerLayout
 </script>
 ```
 
-<Htwo label="Colors" />
+<Htwo label="Spinner" />
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 
@@ -50,21 +50,6 @@ layout: spinnerLayout
 ```html
 <Button textSize="text-sm" color="light"><Spinner size="4" currentFill="#E5E7EB" currentColor="#1C64F2" />Loading ...</Button>
 <Button textSize="text-sm"><Spinner size="4" currentFill="#E5E7EB" currentColor="#fff" />Loading ...</Button>
-```
-
-<Htwo label="Slot" />
-
-<div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<SpinnerButton>Here you go ...</SpinnerButton>
-<SpinnerButton color="blue" >Here you go ...</SpinnerButton>
-
-<Button>Here you go ...</Button>
-<Button color="blue" >Here you go ...</Button>
-
-</div>
-
-```html
-<SpinnerButton>Here you go ...</SpinnerButton> <SpinnerButton color="blue">Here you go ...</SpinnerButton>
 ```
 
 <Htwo label="Props" />

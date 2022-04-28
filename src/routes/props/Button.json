@@ -1,1 +1,1 @@
-{"props":[["rounded"," boolean "," false"],["textSize"," Textsize "," 'text-sm'"],["btnColor"," Buttontypes "," 'blue'"],["type"," ButtonType "," 'button'"],["    disabled"," boolean "," false"]]}
+{"props":[["rounded"," boolean "," false"],["textSize"," Textsize "," 'text-sm'"],["color"," Buttontypes "," 'blue'"],["type"," ButtonType "," 'button'"],["disabled"," boolean "," false"]]}

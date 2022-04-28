@@ -32,6 +32,7 @@ export const buttons = [
   { href: "/buttons/gradient-outline", name: "Gradient outline" },
   { href: "/buttons/outlined", name: "Outlined" },
   { href: "/buttons/rounded", name: "Rounded" },
+  { href: "/buttons/button-spinner", name: "Spinner" },
 ];
 
 export const buttonGroups = [

@@ -67,4 +67,13 @@
 			btnLabel="Read more"
 		/>
 	</div>
+    <div class="p-4">
+		<Card
+			img="/images/buttons.webp"
+			btnColor="purple"
+			header="BUTTON SPINNER"
+			link="/buttons/button-spinner"
+			btnLabel="Read more"
+		/>
+	</div>
 </div>
