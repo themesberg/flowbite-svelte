@@ -5,6 +5,7 @@
 
 <section>
 	<h1 class="py-16">Welcome to your new SvelteKit app</h1>
+	<Button class="mr-8">Button</Button>
 	<Button disabled>Button disabled</Button>
 	<Button>
 		<BellOutline class="text-red-500 dark:text-purple-300" />

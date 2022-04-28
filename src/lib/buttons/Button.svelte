@@ -5,8 +5,6 @@
 	export let btnColor: Buttontypes = 'blue';
 	export let type: ButtonType = 'button';
 	export let disabled: boolean = false;
-	let klass: string = '';
-	export { klass as class };
 
 	let paddings: string;
 	if (textSize === 'text-xs') {
@@ -21,7 +19,7 @@
 	let buttonClass: string;
 	let round: string = rounded ? 'rounded-full' : 'rounded-lg';
 
-   	switch (btnColor) {
+	switch (btnColor) {
 		default:
 		case 'blue':
 			buttonClass = `text-white text-center font-medium ${round} ${textSize} ${paddings} mr-2 mb-2`;
@@ -35,15 +33,15 @@
 			buttonClass = `text-white text-center font-medium ${round} ${textSize} ${paddings} mr-2 mb-2`;
 			if (disabled) buttonClass += ' bg-gray-400 dark:bg-gray-500 cursor-not-allowed';
 			else buttonClass += ' bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-800 dark:border-gray-700';
-            break;
+			break;
 		case 'dark-outline':
 			buttonClass = `text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg ${textSize} ${paddings} text-center mr-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800`;
 			break;
 		case 'light':
-			buttonClass = `text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium ${round} ${textSize} ${paddings} text-center mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700`
+			buttonClass = `text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium ${round} ${textSize} ${paddings} text-center mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700`;
 			break;
 		case 'green':
-            buttonClass = `text-white text-center font-medium ${round} ${textSize} ${paddings} mr-2 mb-2`;
+			buttonClass = `text-white text-center font-medium ${round} ${textSize} ${paddings} mr-2 mb-2`;
 			if (disabled) buttonClass += ' bg-green-400 dark:bg-green-500 cursor-not-allowed';
 			else buttonClass += ' bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800';
 			break;
@@ -59,7 +57,7 @@
 			buttonClass = `text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg ${textSize} ${paddings} text-center mr-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900`;
 			break;
 		case 'yellow':
-            buttonClass = `text-white text-center font-medium ${round} ${textSize} ${paddings} mr-2 mb-2`;
+			buttonClass = `text-white text-center font-medium ${round} ${textSize} ${paddings} mr-2 mb-2`;
 			if (disabled) buttonClass += ' bg-yellow-400 dark:bg-yellow-500 cursor-not-allowed';
 			else buttonClass += ' bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 dark:focus:ring-yellow-900';
 			break;
@@ -77,10 +75,8 @@
 	}
 
 	buttonClass += ' items-center inline-flex';
-
-	if (klass.length > 0) buttonClass = buttonClass + ' ' + klass;
 </script>
 
-<button {type} class={buttonClass} {...$$restProps} on:click>
+<button {type} class="{buttonClass} {$$props.class}" on:click>
 	<slot>Read more</slot>
 </button>

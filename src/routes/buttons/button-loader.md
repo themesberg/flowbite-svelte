@@ -30,7 +30,7 @@ layout: spinnerLayout
 
 <Breadcrumb {crumbs}/>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Button loader</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Button Loader</h1>
 
 ```html
 <script>

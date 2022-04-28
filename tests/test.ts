@@ -164,7 +164,7 @@ test('Rounded Buttons page should have h1', async ({ page }) => {
 
 test('Loader Buttons page should have h1', async ({ page }) => {
 	await page.goto('/buttons/button-loader');
-	expect(await page.textContent('h1')).toBe('Button loader');
+	expect(await page.textContent('h1')).toBe('Button Loader');
 });
 
 
@@ -401,11 +401,6 @@ test('Spinner main page should have h1', async ({ page }) => {
 test('Spinner default page should have h1', async ({ page }) => {
 	await page.goto('/spinners/default');
 	expect(await page.textContent('h1')).toBe('Spinner');
-});
-
-test('Button Loader page should have h1', async ({ page }) => {
-	await page.goto('/buttons/button-loader');
-	expect(await page.textContent('h1')).toBe('Button Loader');
 });
 
 // Tables
