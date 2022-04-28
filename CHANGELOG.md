@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file. See [standa
 * Added more button use cases in the documentation and merged button/setup and button/default into one
 * Implemented button disable states with different styles and pointer exclusion
 * All buttons now implement 'items-center inline-flex' by default
+* Button can now be futher styled using the incremental 'class' attribute
 
 ### Bug Fixes
 
