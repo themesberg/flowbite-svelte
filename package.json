@@ -1,6 +1,6 @@
 {
 	"name": "flowbite-svelte",
-	"version": "0.15.6",
+	"version": "0.15.7",
 	"description": "Flowbite components for Svelte",
 	"main": "./package/index.js",
 	"author": {
@@ -13,7 +13,7 @@
 	"license": "MIT",
 	"scripts": {
 		"dev": "svelte-kit dev",
-    "gen:props": "cd scripts && node createProps.js",
+		"gen:props": "cd scripts && node createProps.js",
 		"build": "svelte-kit build",
 		"package": "svelte-kit package",
 		"preview": "svelte-kit preview",

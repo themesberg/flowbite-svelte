@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.7](https://github.com/themesberg/flowbite-svelte/compare/v0.15.6...v0.15.7) (2022-04-28)
+
+
+### Bug Fixes
+
+* add 32997restProps to Iconinput ([34c8ad5](https://github.com/themesberg/flowbite-svelte/commit/34c8ad5dc0ca6c1ce39c6281c185274fd0f49ca7))
 
 ### [0.15.7](https://github.com/themesberg/flowbite-svelte/compare/v0.15.6...v0.15.7) (2022-04-28)
 
