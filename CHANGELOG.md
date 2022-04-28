@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+
+### [0.15.7](https://github.com/themesberg/flowbite-svelte/compare/v0.15.6...v0.15.7) (2022-04-28)
+
+### Features
+
+* The build process now auto generates component props on build
+
+### Changed
+
+* The 'name' attribut on all buttons is now replaced with the more flexible <slot> pattern. As a consequence the SpinnerButton component has been removed.
+* Added more button use cases in the documentation and merged button/setup and button/default into one
+
+### Bug Fixes
+
+* button light theme had a color mismatch
+
 ### [0.15.6](https://github.com/themesberg/flowbite-svelte/compare/v0.15.5...v0.15.6) (2022-04-27)
 
 

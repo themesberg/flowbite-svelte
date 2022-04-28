@@ -49,7 +49,6 @@
 
 ## Button components
 
-- [Setup](https://flowbite-svelte.com/buttons/setup)
 - [Default Button](https://flowbite-svelte.com/buttons/default)
 - [Colored Shadow Button](https://flowbite-svelte.com/buttons/colored-shadow)
 - [Gradient Duotone Button](https://flowbite-svelte.com/buttons/gradient-duotone)

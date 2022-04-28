@@ -24,7 +24,6 @@ export const badges = [
 ];
 
 export const buttons = [
-  { href: "/buttons/setup", name: "Setup" },
   { href: "/buttons/default", name: "Default" },
   { href: "/buttons/colored-shadow", name: "Colored shadow" },
   { href: "/buttons/gradient-duotone", name: "Gradient duotone" },

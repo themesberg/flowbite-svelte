@@ -42,13 +42,13 @@ layout: spinnerLayout
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 
-<Button textSize="text-sm" color="light" ><Spinner size="4" currentFill="#E5E7EB" currentColor="#1C64F2" />Loading ...</Button>
+<Button textSize="text-sm" btnColor="light" ><Spinner size="4" currentFill="#E5E7EB" currentColor="#1C64F2" />Loading ...</Button>
 <Button textSize="text-sm"><Spinner size="4" currentFill="#E5E7EB" currentColor="#fff" />Loading ...</Button>
 
 </div>
 
 ```html
-<Button textSize="text-sm" color="light"><Spinner size="4" currentFill="#E5E7EB" currentColor="#1C64F2" />Loading ...</Button>
+<Button textSize="text-sm" btnColor="light"><Spinner size="4" currentFill="#E5E7EB" currentColor="#1C64F2" />Loading ...</Button>
 <Button textSize="text-sm"><Spinner size="4" currentFill="#E5E7EB" currentColor="#fff" />Loading ...</Button>
 ```
 
