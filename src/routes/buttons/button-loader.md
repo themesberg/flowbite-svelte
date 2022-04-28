@@ -25,7 +25,6 @@ layout: spinnerLayout
       label:'Loader button',
       href:'/buttons/button-loader'
     },
-    },
   ]
 </script>
 
