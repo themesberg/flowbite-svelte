@@ -71,7 +71,7 @@
 		<Card
 			img="/images/buttons.webp"
 			btnColor="purple"
-			header="BUTTON SPINNER"
+			header="LOADER"
 			link="/buttons/button-loader"
 			btnLabel="Read more"
 		/>
