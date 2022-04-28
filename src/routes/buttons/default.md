@@ -5,12 +5,22 @@ layout: buttonLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import { Button, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
+  import { ArrowRightOutline, BellOutline, ShoppingCartOutline, ChevronRightOutline } from "svelte-heros";
+  import { goto }from '$app/navigation';
   import componentProps from '../props/Button.json'
+
+  const btn1 = ()=>{
+    alert('This redirects to the home page.')
+    goto('/')
+  }
+  const btn2 = ()=>{
+    alert ('You clicked btn2.')
+  }
+
   // Props table
   let items = componentProps.props
-	let propHeader = ['Name', 'Type', 'Default']
-	
-	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+  let propHeader = ['Name', 'Type', 'Default']
+  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
   
   let crumbs = [
     {
@@ -32,56 +42,177 @@ layout: buttonLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Buttons</h1>
 
-<Htwo label="Sizes" />
+<p>Import a button component in the script tag.</p>
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-  <Button name="Button text-xs" textSize="text-xs" />
-  <Button name="Button text-sm" textSize="text-sm" />
-  <Button name="Button text-base" textSize="text-base" />
-  <Button name="Button text-lg" textSize="text-lg" />
-  <Button name="Button text-xl" textSize="text-xl" />
-  <Button name="Button text-2xl" textSize="text-2xl" />
-  <Button name="Button text-3xl" textSize="text-3xl" />
-  <Button name="Button text-4xl" textSize="text-4xl" />
+```html
+<script>
+	import { Button } from 'flowbite-svelte';
+</script>
+```
+
+<Htwo label="Types" />
+
+<p>The default `type` is set to `button`. You can chage it by using the `type` prop.</p>
+
+<div class="rounded-xl w-full flex justify-center my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<Button type="submit">Submit</Button>
 </div>
 
 ```html
-<Button name="Button text-xs" textSize="text-xs" />
-<Button name="Button text-sm" textSize="text-sm" />
-<Button name="Button text-base" textSize="text-base" />
-<Button name="Button text-lg" textSize="text-lg" />
-<Button name="Button text-xl" textSize="text-xl" />
-<Button name="Button text-2xl" textSize="text-2xl" />
-<Button name="Button text-3xl" textSize="text-3xl" />
-<Button name="Button text-4xl" textSize="text-4xl" />
+<Button type="submit">Submit</Button>
+```
+
+
+
+<Htwo label="Sizes" />
+
+<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+  <Button textSize="text-xs">Button text-xs</Button>
+  <Button textSize="text-sm">Button text-sm</Button>
+  <Button textSize="text-base">Button text-base</Button>
+  <Button textSize="text-lg">Button text-lg</Button>
+  <Button textSize="text-xl">Button text-xl</Button>
+  <Button textSize="text-2xl">Button text-2xl</Button>
+  <Button textSize="text-3xl">Button text-3xl</Button>
+  <Button textSize="text-4xl">Button text-4xl</Button>
+</div>
+
+```html
+<Button textSize="text-xs">Button text-xs</Button>
+<Button textSize="text-sm">Button text-sm</Button>
+<Button textSize="text-base">Button text-base</Button>
+<Button textSize="text-lg">Button text-lg</Button>
+<Button textSize="text-xl">Button text-xl</Button>
+<Button textSize="text-2xl">Button text-2xl</Button>
+<Button textSize="text-3xl">Button text-3xl</Button>
+<Button textSize="text-4xl">Button text-4xl</Button>
 ```
 
 <Htwo label="Colors" />
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-  <Button name="Button" textSize="text-sm" />
-  <Button name="Button" textSize="text-sm" btnColor="dark" />
-  <Button name="Button" textSize="text-sm" btnColor="light" />
-  <Button name="Button" textSize="text-sm" btnColor="red" />
-  <Button name="Button" textSize="text-sm" btnColor="green" />
-  <Button name="Button" textSize="text-sm" btnColor="yellow" />
-  <Button name="Button" textSize="text-sm" btnColor="purple" />
+  <Button textSize="text-sm">Button</Button>
+  <Button textSize="text-sm" btnColor="dark">Button</Button>
+  <Button textSize="text-sm" btnColor="light">Button</Button>
+  <Button textSize="text-sm" btnColor="red">Button</Button>
+  <Button textSize="text-sm" btnColor="green">Button</Button>
+  <Button textSize="text-sm" btnColor="yellow">Button</Button>
+  <Button textSize="text-sm" btnColor="purple">Button</Button>
 </div>
 
 ```html
-<Button name="Button" textSize="text-sm" />
-<Button name="Button" textSize="text-sm" btnColor="dark" />
-<Button name="Button" textSize="text-sm" btnColor="light" />
-<Button name="Button" textSize="text-sm" btnColor="red" />
-<Button name="Button" textSize="text-sm" btnColor="green" />
-<Button name="Button" textSize="text-sm" btnColor="yellow" />
-<Button name="Button" textSize="text-sm" btnColor="purple" />
+<Button textSize="text-sm">Button</Button>
+<Button textSize="text-sm" btnColor="dark">Button</Button>
+<Button textSize="text-sm" btnColor="light">Button</Button>
+<Button textSize="text-sm" btnColor="red">Button</Button>
+<Button textSize="text-sm" btnColor="green">Button</Button>
+<Button textSize="text-sm" btnColor="yellow">Button</Button>
+<Button textSize="text-sm" btnColor="purple">Button</Button>
 ```
+
+<Htwo label="Handlers" />
+
+<p>You can use on:click or any standard on:* to listen to the event.</p>
+
+```html
+<script>
+	import { Button } from 'flowbite-svelte';
+	import { goto } from '$app/navigation';
+	const btn1 = () => {
+		alert('This redirects to the home page.');
+		goto('/');
+	};
+	const btn2 = () => {
+		alert('You clicked btn2.');
+	};
+</script>
+
+<Button on:click={btn1} textSize="text-xs">Button text-xs</Button>
+<Button on:click={btn2} textSize="text-xl">Button text-xl</Button>
+```
+
+<div class="rounded-xl w-full flex justify-center my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<Button on:click={btn1} textSize="text-xs">Button text-xs</Button>
+<Button on:click={btn2} textSize="text-xl">Button text-xl</Button>
+</div>
+
+<Htwo label="Icons & Labels" />
+
+<p>Since all the buttons have a `slot` you can add an icon component to create an icon button.</p>
+
+<div class="rounded-xl w-full flex justify-center my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<Button>
+    <ArrowRightOutline/>
+</Button>
+<Button>
+  <BellOutline size="24" class="text-red-500 dark:text-purple-300" />
+</Button>
+<Button btnColor="red" >
+  <BellOutline size="24" class="text-red-500 dark:text-purple-300" />
+</Button>
+<Button btnColor="green">
+  <ShoppingCartOutline size="24"/> Buy Now
+</Button>
+<Button>
+  Choose Plan <ChevronRightOutline size="24" class="text-gray-500 dark:text-gray-300" />
+</Button>
+<Button>
+  Messages
+  <span class="inline-flex items-center justify-center w-4 h-4 ml-2 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full">
+    2
+  </span>
+</Button>
+</div>
+
+```html
+<script>
+	import { ArrowRightOutline, BellOutline, ShoppingCartOutline, ChevronRightOutline } from 'svelte-heros';
+</script>
+
+<Button>
+    <ArrowRightOutline/>
+</Button>
+<Button>
+  <BellOutline size="24" class="text-red-500 dark:text-purple-300" />
+</Button>
+<Button btnColor="red" >
+  <BellOutline size="24" class="text-red-500 dark:text-purple-300" />
+</Button>
+<Button btnColor="green">
+  <ShoppingCartOutline size="24"/> Buy Now
+</Button>
+<Button>
+  Choose Plan <ChevronRightOutline size="24" class="text-gray-500 dark:text-gray-300" />
+</Button>
+<Button>
+  Messages
+  <span class="inline-flex items-center justify-center w-4 h-4 ml-2 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full">
+    2
+  </span>
+</Button>
+```
+
+
+<Htwo label="Disabled" />
+
+<p>You can add any additional button attributes. The following example shows adding the `disabled` attribute.</p>
+
+<div class="rounded-xl w-full flex justify-center my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<Button disabled >Disabled</Button>
+<Button disabled btnColor="green">Disabled</Button>
+<Button disabled btnColor="red">Disabled</Button>
+<Button disabled btnColor="yellow">Disabled</Button>
+<Button disabled btnColor="purple">Disabled</Button>
+</div>
+
+```html
+<Button disabled>Button disabled</Button>
+```
+
 
 <Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
-
 
 <Table header={propHeader} {divClass} >
   <TableDefaultRow {items} rowState='hover' />

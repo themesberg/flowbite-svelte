@@ -38,7 +38,7 @@
 		{#if btns}
 			{#each btns as { name, textSize, type, href, rel, rounded }}
 				<a {href} {rel}>
-					<Button {name} {rounded} {type} {textSize} />
+					<Button {rounded} {type} {textSize}>{name}</Button>
 				</a>
 			{/each}
 		{/if}

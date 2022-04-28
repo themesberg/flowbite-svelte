@@ -11,10 +11,6 @@
 		<Htwo label="Related components" />
 
 		<p>
-			<a href="/buttons/setup" class="text-blue-600 hover:underline dark:text-blue-500">Button Setup</a>
-		</p>
-
-		<p>
 			<a href="/buttons/default" class="text-blue-600 hover:underline dark:text-blue-500">Default Button</a>
 		</p>
 
@@ -40,6 +36,10 @@
 
 		<p>
 			<a href="/buttons/rounded" class="text-blue-600 hover:underline dark:text-blue-500">Rounded Button</a>
+		</p>
+
+        <p>
+			<a href="/buttons/button-loader" class="text-blue-600 hover:underline dark:text-blue-500">Button Loader</a>
 		</p>
 
 		<Htwo label="References" />

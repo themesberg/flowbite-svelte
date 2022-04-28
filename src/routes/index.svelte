@@ -27,7 +27,7 @@
 					</p>
 					<div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
 						<div class="mt-3 sm:mt-0 sm:ml-3">
-							<Button textSize="text-lg" name="Getting started" on:click={handleClick} />
+							<Button textSize="text-lg" on:click={handleClick} >Getting started</Button>
 						</div>
 					</div>
 				</div>

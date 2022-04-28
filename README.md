@@ -49,7 +49,6 @@
 
 ## Button components
 
-- [Setup](https://flowbite-svelte.com/buttons/setup)
 - [Default Button](https://flowbite-svelte.com/buttons/default)
 - [Colored Shadow Button](https://flowbite-svelte.com/buttons/colored-shadow)
 - [Gradient Duotone Button](https://flowbite-svelte.com/buttons/gradient-duotone)
@@ -57,6 +56,7 @@
 - [Gradietn Outline Button](https://flowbite-svelte.com/buttons/gradient-outline)
 - [Outlined Button](https://flowbite-svelte.com/buttons/outlined)
 - [Rounded Button](https://flowbite-svelte.com/buttons/rounded)
+- [Loader Button](https://flowbite-svelte.com/spinners/button-loader)
 
 ## Card components
 
@@ -132,7 +132,6 @@
 ## Spinner components
 
 - [Default Spinner](https://flowbite-svelte.com/spinners/default)
-- [Button Spinner](https://flowbite-svelte.com/spinners/button-spinner)
 
 ## Tab components
 

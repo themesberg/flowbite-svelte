@@ -2,7 +2,6 @@
 	import type { Buttonshadows, Textsize, ButtonType } from '../types';
 	export let textSize: Textsize = 'text-sm';
 	export let color: Buttonshadows = 'blue';
-	export let name: string = 'Read more';
 	let btnClass: string;
 	export let type: ButtonType = 'button';
 
@@ -28,6 +27,5 @@
 </script>
 
 <button {type} class={btnClass} {...$$restProps} on:click>
-	{name}
-	<slot />
+	<slot>Read more</slot>
 </button>

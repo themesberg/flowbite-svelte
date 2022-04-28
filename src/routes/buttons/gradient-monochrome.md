@@ -36,73 +36,74 @@ layout: buttonLayout
 <Htwo label="text-sm" />
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<GradientMonochromeButton color="blue" name="blue"/>
-<GradientMonochromeButton color="green" name="green"/>
-<GradientMonochromeButton color="cyan" name="cyan"/>
-<GradientMonochromeButton color="teal" name="teal"/>
-<GradientMonochromeButton color="lime" name="lime"/>
-<GradientMonochromeButton color="red" name="red"/>
-<GradientMonochromeButton color="pink" name="pink"/>
-<GradientMonochromeButton color="pink" name="purple"/>
+<GradientMonochromeButton color="blue">blue</GradientMonochromeButton>
+<GradientMonochromeButton color="green">green</GradientMonochromeButton>
+<GradientMonochromeButton color="cyan">cyan</GradientMonochromeButton>
+<GradientMonochromeButton color="teal">teal</GradientMonochromeButton>
+<GradientMonochromeButton color="lime">lime</GradientMonochromeButton>
+<GradientMonochromeButton color="red">red</GradientMonochromeButton>
+<GradientMonochromeButton color="pink">pink</GradientMonochromeButton>
+<GradientMonochromeButton color="pink">purple</GradientMonochromeButton>
 </div>
 
 ```html
-<GradientMonochromeButton color="blue" name="blue"/>
-<GradientMonochromeButton color="green" name="green"/>
-<GradientMonochromeButton color="cyan" name="cyan"/>
-<GradientMonochromeButton color="teal" name="teal"/>
-<GradientMonochromeButton color="lime" name="lime"/>
-<GradientMonochromeButton color="red" name="red"/>
-<GradientMonochromeButton color="pink" name="pink"/>
-<GradientMonochromeButton color="pink" name="purple"/>
+<GradientMonochromeButton color="blue">blue</GradientMonochromeButton>
+<GradientMonochromeButton color="green">green</GradientMonochromeButton>
+<GradientMonochromeButton color="cyan">cyan</GradientMonochromeButton>
+<GradientMonochromeButton color="teal">teal</GradientMonochromeButton>
+<GradientMonochromeButton color="lime">lime</GradientMonochromeButton>
+<GradientMonochromeButton color="red">red</GradientMonochromeButton>
+<GradientMonochromeButton color="pink">pink</GradientMonochromeButton>
+<GradientMonochromeButton color="pink">purple</GradientMonochromeButton>
 ```
 
 <Htwo label="text-xs" />
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<GradientMonochromeButton color="blue" name="blue" textSize="text-xs"/>
-<GradientMonochromeButton color="green" name="green" textSize="text-xs"/>
-<GradientMonochromeButton color="cyan" name="cyan" textSize="text-xs"/>
-<GradientMonochromeButton color="teal" name="teal" textSize="text-xs"/>
-<GradientMonochromeButton color="lime" name="lime" textSize="text-xs"/>
-<GradientMonochromeButton color="red" name="red" textSize="text-xs"/>
-<GradientMonochromeButton color="pink" name="pink" textSize="text-xs"/>
-<GradientMonochromeButton color="pink" name="purple" textSize="text-xs"/>
+<GradientMonochromeButton color="blue" textSize="text-xs">blue</GradientMonochromeButton>
+<GradientMonochromeButton color="green" textSize="text-xs">green</GradientMonochromeButton>
+<GradientMonochromeButton color="cyan" textSize="text-xs">cyan</GradientMonochromeButton>
+<GradientMonochromeButton color="teal" textSize="text-xs">teal</GradientMonochromeButton>
+<GradientMonochromeButton color="lime" textSize="text-xs">lime</GradientMonochromeButton>
+<GradientMonochromeButton color="red" textSize="text-xs">red</GradientMonochromeButton>
+<GradientMonochromeButton color="pink" textSize="text-xs">pink</GradientMonochromeButton>
+<GradientMonochromeButton color="pink" textSize="text-xs">purple</GradientMonochromeButton>
+
 </div>
 
 ```html
-<GradientMonochromeButton color="blue" name="blue" textSize="text-xs"/>
-<GradientMonochromeButton color="green" name="green" textSize="text-xs"/>
-<GradientMonochromeButton color="cyan" name="cyan" textSize="text-xs"/>
-<GradientMonochromeButton color="teal" name="teal" textSize="text-xs"/>
-<GradientMonochromeButton color="lime" name="lime" textSize="text-xs"/>
-<GradientMonochromeButton color="red" name="red" textSize="text-xs"/>
-<GradientMonochromeButton color="pink" name="pink" textSize="text-xs"/>
-<GradientMonochromeButton color="pink" name="purple" textSize="text-xs"/>
+<GradientMonochromeButton color="blue" textSize="text-xs">blue</GradientMonochromeButton>
+<GradientMonochromeButton color="green" textSize="text-xs">green</GradientMonochromeButton>
+<GradientMonochromeButton color="cyan" textSize="text-xs">cyan</GradientMonochromeButton>
+<GradientMonochromeButton color="teal" textSize="text-xs">teal</GradientMonochromeButton>
+<GradientMonochromeButton color="lime" textSize="text-xs">lime</GradientMonochromeButton>
+<GradientMonochromeButton color="red" textSize="text-xs">red</GradientMonochromeButton>
+<GradientMonochromeButton color="pink" textSize="text-xs">pink</GradientMonochromeButton>
+<GradientMonochromeButton color="pink" textSize="text-xs">purple</GradientMonochromeButton>
 ```
 
 <Htwo label="text-base" />
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<GradientMonochromeButton color="blue" name="blue" textSize="text-base"/>
-<GradientMonochromeButton color="green" name="green" textSize="text-base"/>
-<GradientMonochromeButton color="cyan" name="cyan" textSize="text-base"/>
-<GradientMonochromeButton color="teal" name="teal" textSize="text-base"/>
-<GradientMonochromeButton color="lime" name="lime" textSize="text-base"/>
-<GradientMonochromeButton color="red" name="red" textSize="text-base"/>
-<GradientMonochromeButton color="pink" name="pink" textSize="text-base"/>
-<GradientMonochromeButton color="pink" name="purple" textSize="text-base"/>
+<GradientMonochromeButton color="blue" textSize="text-base">blue</GradientMonochromeButton>
+<GradientMonochromeButton color="green" textSize="text-base">green</GradientMonochromeButton>
+<GradientMonochromeButton color="cyan" textSize="text-base">cyan</GradientMonochromeButton>
+<GradientMonochromeButton color="teal" textSize="text-base">teal</GradientMonochromeButton>
+<GradientMonochromeButton color="lime" textSize="text-base">lime</GradientMonochromeButton>
+<GradientMonochromeButton color="red" textSize="text-base">red</GradientMonochromeButton>
+<GradientMonochromeButton color="pink" textSize="text-base">pink</GradientMonochromeButton>
+<GradientMonochromeButton color="pink" textSize="text-base">purple</GradientMonochromeButton>
 </div>
 
 ```html
-<GradientMonochromeButton color="blue" name="blue" textSize="text-base"/>
-<GradientMonochromeButton color="green" name="green" textSize="text-base"/>
-<GradientMonochromeButton color="cyan" name="cyan" textSize="text-base"/>
-<GradientMonochromeButton color="teal" name="teal" textSize="text-base"/>
-<GradientMonochromeButton color="lime" name="lime" textSize="text-base"/>
-<GradientMonochromeButton color="red" name="red" textSize="text-base"/>
-<GradientMonochromeButton color="pink" name="pink" textSize="text-base"/>
-<GradientMonochromeButton color="pink" name="purple" textSize="text-base"/>
+<GradientMonochromeButton color="blue" textSize="text-base">blue</GradientMonochromeButton>
+<GradientMonochromeButton color="green" textSize="text-base">green</GradientMonochromeButton>
+<GradientMonochromeButton color="cyan" textSize="text-base">cyan</GradientMonochromeButton>
+<GradientMonochromeButton color="teal" textSize="text-base">teal</GradientMonochromeButton>
+<GradientMonochromeButton color="lime" textSize="text-base">lime</GradientMonochromeButton>
+<GradientMonochromeButton color="red" textSize="text-base">red</GradientMonochromeButton>
+<GradientMonochromeButton color="pink" textSize="text-base">pink</GradientMonochromeButton>
+<GradientMonochromeButton color="pink" textSize="text-base">purple</GradientMonochromeButton>
 ```
 
 <Htwo label="Props" />

@@ -24,7 +24,6 @@ export const badges = [
 ];
 
 export const buttons = [
-  { href: "/buttons/setup", name: "Setup" },
   { href: "/buttons/default", name: "Default" },
   { href: "/buttons/colored-shadow", name: "Colored shadow" },
   { href: "/buttons/gradient-duotone", name: "Gradient duotone" },
@@ -32,6 +31,7 @@ export const buttons = [
   { href: "/buttons/gradient-outline", name: "Gradient outline" },
   { href: "/buttons/outlined", name: "Outlined" },
   { href: "/buttons/rounded", name: "Rounded" },
+  { href: "/buttons/button-loader", name: "Loader" },
 ];
 
 export const buttonGroups = [
@@ -109,7 +109,6 @@ export const ratings = [
 
 export const spinners = [
   { href: "/spinners/default", name: "Spinner" },
-  { href: "/spinners/button-spinner", name: "Button spinner" },
 ];
 
 export const tabs = [

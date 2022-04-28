@@ -128,8 +128,8 @@ test('Buttons default page should have h1', async ({ page }) => {
 });
 
 test('Button Component Set Up page should have h1', async ({ page }) => {
-	await page.goto('/buttons/setup');
-	expect(await page.textContent('h1')).toBe('Getting started with Button Component');
+	await page.goto('/buttons/default');
+	expect(await page.textContent('h1')).toBe('Buttons');
 });
 
 test('Colored Shadow Buttons page should have h1', async ({ page }) => {
@@ -161,6 +161,12 @@ test('Rounded Buttons page should have h1', async ({ page }) => {
 	await page.goto('/buttons/rounded');
 	expect(await page.textContent('h1')).toBe('Rounded Buttons');
 });
+
+test('Loader Buttons page should have h1', async ({ page }) => {
+	await page.goto('/buttons/button-loader');
+	expect(await page.textContent('h1')).toBe('Button Loader');
+});
+
 
 // Cards
 test('Card main page should have h1', async ({ page }) => {
@@ -395,11 +401,6 @@ test('Spinner main page should have h1', async ({ page }) => {
 test('Spinner default page should have h1', async ({ page }) => {
 	await page.goto('/spinners/default');
 	expect(await page.textContent('h1')).toBe('Spinner');
-});
-
-test('Button Spinner page should have h1', async ({ page }) => {
-	await page.goto('/spinners/button-spinner');
-	expect(await page.textContent('h1')).toBe('Button Spinner');
 });
 
 // Tables
