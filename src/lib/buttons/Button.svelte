@@ -2,7 +2,7 @@
 	import type { Buttontypes, ButtonType, Textsize } from '../types';
 	export let rounded: boolean = false;
 	export let textSize: Textsize = 'text-sm';
-	export let color: Buttontypes = 'blue';
+	export let btnColor: Buttontypes = 'blue';
 	export let type: ButtonType = 'button';
 	export let disabled: boolean = false;
 	let klass: string = '';
@@ -21,7 +21,7 @@
 	let buttonClass: string;
 	let round: string = rounded ? 'rounded-full' : 'rounded-lg';
 
-   	switch (color) {
+   	switch (btnColor) {
 		default:
 		case 'blue':
 			buttonClass = `text-white text-center font-medium ${round} ${textSize} ${paddings} mr-2 mb-2`;
