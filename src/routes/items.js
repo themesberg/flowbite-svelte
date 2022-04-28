@@ -107,9 +107,9 @@ export const ratings = [
   { href: "/ratings/score-rating", name: "Score rating" },
 ]
 
-export const spinners = [
-  { href: "/spinners/default", name: "Spinner" },
-];
+// export const spinners = [
+//   { href: "/spinners/default", name: "Spinner" },
+// ];
 
 export const tabs = [
   { href: "/tabs/default-tabs", name: "Default" },

@@ -1,7 +1,7 @@
 <script>
 	import { Card, Button } from '$lib/index';
 	import { goto } from '$app/navigation';
-	import { accordions, alerts, badges, buttons, buttonGroups, cards, carousels, dropdowns, forms, footers, icons, modals, navbar, ratings, spinners, tabs, timelines, tooltips } from './items';
+	import { accordions, alerts, badges, buttons, buttonGroups, cards, carousels, dropdowns, forms, footers, icons, modals, navbar, ratings, tabs, timelines, tooltips } from './items';
 	const handleClick = () => {
 		goto('/getting-started');
 	};
@@ -27,7 +27,7 @@
 					</p>
 					<div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
 						<div class="mt-3 sm:mt-0 sm:ml-3">
-							<Button textSize="text-lg" on:click={handleClick} >Getting started</Button>
+							<Button textSize="text-lg" on:click={handleClick}>Getting started</Button>
 						</div>
 					</div>
 				</div>
@@ -260,11 +260,9 @@
 	<div class="p-4">
 		<Card img="/images/spinners.webp" alt="Spinners" link="/spinners" {divClass}>
 			<span slot="paragraph">
-				{#each spinners as { href, name }}
-					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">{name}</a>
-					</p>
-				{/each}
+				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
+					<a href="/spinners" class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">Spinner</a>
+				</p>
 			</span>
 		</Card>
 	</div>

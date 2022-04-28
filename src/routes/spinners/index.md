@@ -20,17 +20,13 @@ layout: spinnerLayout
     {
       label:'Spinners',
       href:'/spinners/'
-    },
-    {
-      label:'Spinner default',
-      href:'/spinners/default'
-    },
+    }
   ]
 </script>
 
 <Breadcrumb {crumbs}/>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Spinner</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Spinner Components</h1>
 
 ```html
 <script>

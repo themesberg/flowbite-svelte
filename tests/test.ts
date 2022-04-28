@@ -398,11 +398,6 @@ test('Spinner main page should have h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Spinner Components');
 });
 
-test('Spinner default page should have h1', async ({ page }) => {
-	await page.goto('/spinners/default');
-	expect(await page.textContent('h1')).toBe('Spinner');
-});
-
 // Tables
 test('Table page should have h1', async ({ page }) => {
 	await page.goto('/tables');
