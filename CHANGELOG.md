@@ -11,8 +11,10 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Changed
 
-* The 'name' attribut on all buttons is now replaced with the more flexible <slot> pattern. As a consequence the SpinnerButton component has been removed.
+* The 'name' attribute on all buttons is now replaced with the more flexible <slot> pattern. As a consequence the SpinnerButton component has been removed.
 * Added more button use cases in the documentation and merged button/setup and button/default into one
+* Implemented button disable states with different styles and pointer exclusion
+* All buttons now implement 'items-center inline-flex' by default
 
 ### Bug Fixes
 
