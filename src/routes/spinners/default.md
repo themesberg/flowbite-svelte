@@ -32,10 +32,9 @@ layout: spinnerLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Spinner</h1>
 
-
 ```html
 <script>
-  import { Spinner } from "flowbite-svelte";
+	import { Spinner } from 'flowbite-svelte';
 </script>
 ```
 
@@ -64,29 +63,29 @@ layout: spinnerLayout
 <Htwo label="Sizes" />
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Spinner size="w-4 h-4" />
-<Spinner size="w-6 h-6" />
-<Spinner size="w-8 h-8" />
+<Spinner size={4} />
+<Spinner size={6} />
+<Spinner size={8} />
 </div>
 
 ```html
-<Spinner size="w-4 h-4"/>
-<Spinner size="w-6 h-6" />
-<Spinner size="w-8 h-8"/>
+<Spinner size="4" />
+<Spinner size="6" />
+<Spinner size="8" />
 ```
 
 <Htwo label="Alignment" />
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Spinner align="text-left"/>
-<Spinner align="text-center" />
-<Spinner align="text-right"/>
+<div class="text-left"><Spinner/></div>
+<div class="text-center"><Spinner/></div>
+<div class="text-right"><Spinner/></div>
 </div>
 
 ```html
-<Spinner align="text-left"/>
-<Spinner align="text-center" />
-<Spinner align="text-right"/>
+<div class="text-left"><Spinner /></div>
+<div class="text-center"><Spinner /></div>
+<div class="text-right"><Spinner /></div>
 ```
 
 <Htwo label="Props" />
