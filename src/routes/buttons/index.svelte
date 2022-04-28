@@ -72,7 +72,7 @@
 			img="/images/buttons.webp"
 			btnColor="purple"
 			header="BUTTON SPINNER"
-			link="/buttons/button-spinner"
+			link="/buttons/button-loader"
 			btnLabel="Read more"
 		/>
 	</div>

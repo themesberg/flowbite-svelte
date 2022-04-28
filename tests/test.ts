@@ -397,9 +397,9 @@ test('Spinner default page should have h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Spinner');
 });
 
-test('Button Spinner page should have h1', async ({ page }) => {
-	await page.goto('/spinners/button-spinner');
-	expect(await page.textContent('h1')).toBe('Button Spinner');
+test('Button Loader page should have h1', async ({ page }) => {
+	await page.goto('/buttons/button-loader');
+	expect(await page.textContent('h1')).toBe('Button Loader');
 });
 
 // Tables

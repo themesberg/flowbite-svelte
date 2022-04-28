@@ -42,6 +42,10 @@
 			<a href="/buttons/rounded" class="text-blue-600 hover:underline dark:text-blue-500">Rounded Button</a>
 		</p>
 
+        <p>
+			<a href="/buttons/button-loader" class="text-blue-600 hover:underline dark:text-blue-500">Button Loader</a>
+		</p>
+
 		<Htwo label="References" />
 
 		<p>

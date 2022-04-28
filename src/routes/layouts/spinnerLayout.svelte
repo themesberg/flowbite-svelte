@@ -14,10 +14,6 @@
 			<a href="/spinners/default" class="text-blue-600 hover:underline dark:text-blue-500">Default Spinner</a>
 		</p>
 
-		<p>
-			<a href="/spinners/button-spinner" class="text-blue-600 hover:underline dark:text-blue-500">Button Spinner</a>
-		</p>
-
 		<Htwo label="References" />
 
 		<p>

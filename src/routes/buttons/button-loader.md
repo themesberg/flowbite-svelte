@@ -18,19 +18,20 @@ layout: spinnerLayout
       href:'/'
     },
     {
-      label:'Spinners',
-      href:'/spinners/'
+      label:'Buttons',
+      href:'/buttons/'
     },
     {
-      label:'Button spinner',
-      href:'/spinners/button-spinner'
+      label:'Loader button',
+      href:'/buttons/button-loader'
+    },
     },
   ]
 </script>
 
 <Breadcrumb {crumbs}/>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Button Spinner</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Button loader</h1>
 
 ```html
 <script>
@@ -38,7 +39,7 @@ layout: spinnerLayout
 </script>
 ```
 
-<Htwo label="Spinner" />
+<Htwo label="Loaders" />
 
 <div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
 

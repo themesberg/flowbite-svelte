@@ -12,9 +12,9 @@
 	<ColorShadowButton color="blue" name="Blue" />
 	<ColorShadowButton color="green" name="Green" />
 	<ColorShadowButton color="cyan" name="Cyan" />
-	<ColorShadowButton color="teal" name="Teal" />
-	<ColorShadowButton color="lime" name="Lime" />
-	<ColorShadowButton color="red" name="Red" />
-	<ColorShadowButton color="pink" name="Pink" />
-	<ColorShadowButton color="purple" name="Purple" />
+	<ColorShadowButton color="teal" name="Teal" />Teal
+	<ColorShadowButton color="lime" name="Lime" />Lime
+	<ColorShadowButton color="red" name="Red" />Red
+	<ColorShadowButton color="pink" name="Pink" />Pink
+	<ColorShadowButton color="purple" name="Purple">Purple</ColorShadowButton>
 </section>
