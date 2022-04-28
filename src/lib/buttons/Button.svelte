@@ -61,7 +61,7 @@
 		case 'yellow':
             buttonClass = `text-white text-center font-medium ${round} ${textSize} ${paddings} mr-2 mb-2`;
 			if (disabled) buttonClass += ' bg-yellow-400 dark:bg-yellow-500 cursor-not-allowed';
-			else buttonClass += 'bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 dark:focus:ring-yellow-900';
+			else buttonClass += ' bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 dark:focus:ring-yellow-900';
 			break;
 		case 'yellow-outline':
 			buttonClass = `text-yellow-400 hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg ${textSize} ${paddings} text-center mr-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900`;
