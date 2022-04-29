@@ -8,7 +8,8 @@
 
 	// Cards
 	let divClass = 'max-w-sm md:max-w-xs lg:max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700';
-	let pClass = 'text-lg w-full text-gray-900 dark:text-white py-0';
+	let pClass = 'text-xl w-full text-gray-900 dark:text-white py-2';
+	let aClass = 'text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500';
 </script>
 
 <div class="relative bg-white overflow-hidden mt-8 lg:mb-8 mx-auto dark:bg-gray-800">
@@ -18,7 +19,7 @@
 				<div class="sm:text-center lg:text-left">
 					<h1 class="text-4xl tracking-tight font-extrabold text-gray-900  dark:text-white">
 						<span class="block xl:inline">Flowbite Svelte </span>
-						<span class="block text-indigo-600 xl:inline">UI Component</span>
+						<span class="block text-indigo-600 dark:text-white xl:inline">UI Component</span>
 					</h1>
 					<p
 						class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg 
@@ -45,8 +46,8 @@
 		<Card img="/images/accordions.webp" alt="Accordions" link="/accordions" {divClass}>
 			<span slot="paragraph">
 				{#each accordions as { href, name }}
-					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">{name}</a>
+					<p class={pClass}>
+						<a {href} class={aClass}>{name}</a>
 					</p>
 				{/each}
 			</span>
@@ -56,8 +57,8 @@
 		<Card img="/images/alerts.webp" alt="Alerts" link="/alerts" {divClass}>
 			<span slot="paragraph">
 				{#each alerts as { href, name }}
-					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">{name}</a>
+					<p class={pClass}>
+						<a {href} class={aClass}>{name}</a>
 					</p>
 				{/each}
 			</span>
@@ -66,8 +67,8 @@
 	<div class="p-4">
 		<Card img="/images/avatar.webp" alt="Avatar" link="/avatar" {divClass}>
 			<span slot="paragraph">
-				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-					<a href="/avatar" class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">Avatar</a>
+				<p class={pClass}>
+					<a href="/avatar" class={aClass}>Avatar</a>
 				</p>
 			</span>
 		</Card>
@@ -76,8 +77,8 @@
 		<Card img="/images/badges.webp" alt="Badges" link="/badges" {divClass}>
 			<span slot="paragraph">
 				{#each badges as { href, name }}
-					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">{name}</a>
+					<p class={pClass}>
+						<a {href} class={aClass}>{name}</a>
 					</p>
 				{/each}
 			</span>
@@ -86,8 +87,8 @@
 	<div class="p-4">
 		<Card img="/images/breadcrumb.webp" alt="Breadcrumb" link="/breadcrumbs" {divClass}>
 			<span slot="paragraph">
-				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-					<a href="/breadcrumbs" class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">Breadcrumb</a>
+				<p class={pClass}>
+					<a href="/breadcrumbs" class={aClass}>Breadcrumb</a>
 				</p>
 			</span>
 		</Card>
@@ -96,8 +97,8 @@
 		<Card img="/images/buttongroups.webp" alt="Button Groups" link="button-groups" {divClass}>
 			<span slot="paragraph">
 				{#each buttonGroups as { href, name }}
-					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">{name}</a>
+					<p class={pClass}>
+						<a {href} class={aClass}>{name}</a>
 					</p>
 				{/each}
 			</span>
@@ -107,8 +108,8 @@
 		<Card img="/images/buttons.webp" alt="Buttons" link="/buttons" {divClass}>
 			<span slot="paragraph">
 				{#each buttons as { href, name }}
-					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">{name}</a>
+					<p class={pClass}>
+						<a {href} class={aClass}>{name}</a>
 					</p>
 				{/each}
 			</span>
@@ -118,8 +119,8 @@
 		<Card img="/images/cards.webp" alt="Cards" link="/cards" {divClass}>
 			<span slot="paragraph">
 				{#each cards as { href, name }}
-					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">{name}</a>
+					<p class={pClass}>
+						<a {href} class={aClass}>{name}</a>
 					</p>
 				{/each}
 			</span>
@@ -129,8 +130,8 @@
 		<Card img="/images/carousel.webp" alt="Carousel" link="carousels" {divClass}>
 			<span slot="paragraph">
 				{#each carousels as { href, name }}
-					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">{name}</a>
+					<p class={pClass}>
+						<a {href} class={aClass}>{name}</a>
 					</p>
 				{/each}
 			</span>
@@ -139,8 +140,8 @@
 	<div class="p-4">
 		<Card img="/images/darkmode.webp" alt="Darkmode" link="/darkmode" {divClass}>
 			<span slot="paragraph">
-				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-					<a href="/darkmode" class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">Dark mode</a>
+				<p class={pClass}>
+					<a href="/darkmode" class={aClass}>Dark mode</a>
 				</p>
 			</span>
 		</Card>
@@ -149,8 +150,8 @@
 		<Card img="/images/dropdowns.webp" alt="Dropdowns" link="dropdowns" {divClass}>
 			<span slot="paragraph">
 				{#each dropdowns as { href, name }}
-					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">{name}</a>
+					<p class={pClass}>
+						<a {href} class={aClass}>{name}</a>
 					</p>
 				{/each}
 			</span>
@@ -160,8 +161,8 @@
 		<Card img="/images/forms.webp" alt="Forms" link="/forms" {divClass}>
 			<span slot="paragraph">
 				{#each forms as { href, name }}
-					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">{name}</a>
+					<p class={pClass}>
+						<a {href} class={aClass}>{name}</a>
 					</p>
 				{/each}
 			</span>
@@ -171,8 +172,8 @@
 		<Card img="/images/footer.webp" alt="Footer" link="/footer" {divClass}>
 			<span slot="paragraph">
 				{#each footers as { href, name }}
-					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">{name}</a>
+					<p class={pClass}>
+						<a {href} class={aClass}>{name}</a>
 					</p>
 				{/each}
 			</span>
@@ -182,8 +183,8 @@
 		<Card img="/images/icons.webp" alt="Icons" link="/icons" {divClass}>
 			<span slot="paragraph">
 				{#each icons as { href, name }}
-					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">{name}</a>
+					<p class={pClass}>
+						<a {href} class={aClass}>{name}</a>
 					</p>
 				{/each}
 			</span>
@@ -192,8 +193,8 @@
 	<div class="p-4">
 		<Card img="/images/list-group.webp" alt="List group" link="/list-group" {divClass}>
 			<span slot="paragraph">
-				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-					<a href="/list-group" class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">List group</a>
+				<p class={pClass}>
+					<a href="/list-group" class={aClass}>List group</a>
 				</p>
 			</span>
 		</Card>
@@ -202,8 +203,8 @@
 		<Card img="/images/modals.webp" alt="Modals" link="/modals" {divClass}>
 			<span slot="paragraph">
 				{#each modals as { href, name }}
-					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">{name}</a>
+					<p class={pClass}>
+						<a {href} class={aClass}>{name}</a>
 					</p>
 				{/each}
 			</span>
@@ -213,8 +214,8 @@
 		<Card img="/images/navbar.webp" alt="Navbars" link="/navbars" {divClass}>
 			<span slot="paragraph">
 				{#each navbar as { href, name }}
-					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">{name}</a>
+					<p class={pClass}>
+						<a {href} class={aClass}>{name}</a>
 					</p>
 				{/each}
 			</span>
@@ -223,8 +224,8 @@
 	<div class="p-4">
 		<Card img="/images/pagination.webp" alt="Pagination" link="/paginations" {divClass}>
 			<span slot="paragraph">
-				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-					<a href="/paginations" class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">Pagination</a>
+				<p class={pClass}>
+					<a href="/paginations" class={aClass}>Pagination</a>
 				</p>
 			</span>
 		</Card>
@@ -232,8 +233,8 @@
 	<div class="p-4">
 		<Card img="/images/progressbar.webp" alt="Progress bar" link="/progressbars" {divClass}>
 			<span slot="paragraph">
-				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-					<a href="/progressbars" class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">Progress bar</a>
+				<p class={pClass}>
+					<a href="/progressbars" class={aClass}>Progress bar</a>
 				</p>
 			</span>
 		</Card>
@@ -242,8 +243,8 @@
 		<Card img="/images/rating.webp" alt="Rating" link="/ratings" {divClass}>
 			<span slot="paragraph">
 				{#each ratings as { href, name }}
-					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">{name}</a>
+					<p class={pClass}>
+						<a {href} class={aClass}>{name}</a>
 					</p>
 				{/each}
 			</span>
@@ -252,8 +253,8 @@
 	<div class="p-4">
 		<Card img="/images/sidebar.webp" alt="Sidebar" link="/sidebars" {divClass}>
 			<span slot="paragraph">
-				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-					<a href="/sidebars" class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">Sidebar</a>
+				<p class={pClass}>
+					<a href="/sidebars" class={aClass}>Sidebar</a>
 				</p>
 			</span>
 		</Card>
@@ -261,8 +262,8 @@
 	<div class="p-4">
 		<Card img="/images/spinners.webp" alt="Spinners" link="/spinners" {divClass}>
 			<span slot="paragraph">
-				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-					<a href="/spinners" class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">Spinner</a>
+				<p class={pClass}>
+					<a href="/spinners" class={aClass}>Spinner</a>
 				</p>
 			</span>
 		</Card>
@@ -270,8 +271,8 @@
 	<div class="p-4">
 		<Card img="/images/table.webp" alt="Tables" link="/tables" {divClass}>
 			<span slot="paragraph">
-				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-					<a href="/tables" class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">Table</a>
+				<p class={pClass}>
+					<a href="/tables" class={aClass}>Table</a>
 				</p>
 			</span>
 		</Card>
@@ -280,8 +281,8 @@
 		<Card img="/images/tabs.webp" alt="Tabs" link="/tabs" {divClass}>
 			<span slot="paragraph">
 				{#each tabs as { href, name }}
-					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">{name}</a>
+					<p class={pClass}>
+						<a {href} class={aClass}>{name}</a>
 					</p>
 				{/each}
 			</span>
@@ -291,8 +292,8 @@
 		<Card img="/images/timeline.webp" alt="Timeline" link="/timelines" {divClass}>
 			<span slot="paragraph">
 				{#each timelines as { href, name }}
-					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">{name}</a>
+					<p class={pClass}>
+						<a {href} class={aClass}>{name}</a>
 					</p>
 				{/each}
 			</span>
@@ -301,8 +302,8 @@
 	<div class="p-4">
 		<Card img="/images/toast.webp" alt="Toast" link="/toasts" {divClass}>
 			<span slot="paragraph">
-				<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-					<a href="/toasts" class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">Toast</a>
+				<p class={pClass}>
+					<a href="/toasts" class={aClass}>Toast</a>
 				</p>
 			</span>
 		</Card>
@@ -311,8 +312,8 @@
 		<Card img="/images/tooltip.webp" alt="Tooltips" link="/tooltips" {divClass}>
 			<span slot="paragraph">
 				{#each tooltips as { href, name }}
-					<p class="text-lg w-full text-gray-900 dark:text-white py-0">
-						<a {href} class="text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500">{name}</a>
+					<p class={pClass}>
+						<a {href} class={aClass}>{name}</a>
 					</p>
 				{/each}
 			</span>
