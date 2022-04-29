@@ -11,13 +11,13 @@
 		<Htwo label="Related components" />
 
 		<p>
-			<a href="/spinners/default" class="text-blue-600 hover:underline dark:text-blue-500">Default Spinner</a>
+			<a href="/spinners/default">Default Spinner</a>
 		</p>
 
 		<Htwo label="References" />
 
 		<p>
-			<a href="https://flowbite.com/docs/components/spinner/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Spinner</a>
+			<a href="https://flowbite.com/docs/components/spinner/" target="_blank">Flowbite Spinner</a>
 		</p>
 	</div>
 

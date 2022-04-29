@@ -11,7 +11,7 @@
 		<Htwo label="References" />
 
 		<p>
-			<a href="https://flowbite.com/docs/components/list-group/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite List Group</a>
+			<a href="https://flowbite.com/docs/components/list-group/" target="_blank">Flowbite List Group</a>
 		</p>
 	</div>
 

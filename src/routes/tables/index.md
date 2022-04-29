@@ -14,10 +14,11 @@ let items3 = componentProps3.props
 let propHeader = ['Name', 'Type', 'Default']
 
 let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 let itemEx = [
-  ['Apple MacBook Pro 17"','Sliver','Laptop','$2999','<a href="/" class="text-blue-600 hover:underline dark:text-blue-500">Edit</a>'],
-  ['Microsoft Surface Pro','White','Laptop PC','$1999','<a href="/" class="text-blue-600 hover:underline dark:text-blue-500">Edit</a>'],
-  ['Magic Mouse 2','Black','Accessories','$99','<a href="/" class="text-blue-600 hover:underline dark:text-blue-500">Edit</a>']
+  ['Apple MacBook Pro 17"','Sliver','Laptop','$2999','<a href="/">Edit</a>'],
+  ['Microsoft Surface Pro','White','Laptop PC','$1999','<a href="/">Edit</a>'],
+  ['Magic Mouse 2','Black','Accessories','$99','<a href="/">Edit</a>']
 ]
 let headerEx = [' Product name','Color','Category','Price','Edit']
 
@@ -51,9 +52,9 @@ let headerEx = [' Product name','Color','Category','Price','Edit']
 <script>
 import { Table, TableDefaultRow } from 'flowbite-svelte'
 let itemEx = [
-  ['Apple MacBook Pro 17"','Sliver','Laptop','$2999','<a href="/" class="text-blue-600 hover:underline dark:text-blue-500">Edit</a>'],
-  ['Microsoft Surface Pro','White','Laptop PC','$1999','<a href="/" class="text-blue-600 hover:underline dark:text-blue-500">Edit</a>'],
-  ['Magic Mouse 2','Black','Accessories','$99','<a href="/" class="text-blue-600 hover:underline dark:text-blue-500">Edit</a>']
+  ['Apple MacBook Pro 17"','Sliver','Laptop','$2999','<a href="/">Edit</a>'],
+  ['Microsoft Surface Pro','White','Laptop PC','$1999','<a href="/">Edit</a>'],
+  ['Magic Mouse 2','Black','Accessories','$99','<a href="/">Edit</a>']
 ]
 let headerEx = [' Product name','Color','Category','Price','Edit']
 </script>
@@ -106,22 +107,22 @@ let headerEx = [' Product name','Color','Category','Price','Edit']
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
+<p>The component has the following props, type, and default values. See <a href="/type-list">type-list page</a> for type information.</p>
 
 <h3>Table</h3>
 
-<Table header={propHeader} {divClass} >
+<Table header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items1} rowState='hover' />
 </Table>
 
 <h3>TableDefaultRow</h3>
 
-<Table header={propHeader} {divClass} >
+<Table header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
 </Table>
 
 <h3>TableSearch</h3>
 
-<Table header={propHeader} {divClass} >
+<Table header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items3} rowState='hover' />
 </Table>

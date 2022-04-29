@@ -11,17 +11,17 @@
 		<Htwo label="Related components" />
 
 		<p>
-			<a href="/button-groups/default" class="text-blue-600 hover:underline dark:text-blue-500">Default Button Group</a>
+			<a href="/button-groups/default">Default Button Group</a>
 		</p>
 
 		<p>
-			<a href="/button-groups/outline" class="text-blue-600 hover:underline dark:text-blue-500">Outline Button Group</a>
+			<a href="/button-groups/outline">Outline Button Group</a>
 		</p>
 
 		<Htwo label="References" />
 
 		<p>
-			<a href="https://flowbite.com/docs/components/button-group/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Button Group</a>
+			<a href="https://flowbite.com/docs/components/button-group/" target="_blank">Flowbite Button Group</a>
 		</p>
 	</div>
 

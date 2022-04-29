@@ -11,33 +11,33 @@
 		<Htwo label="Related components" />
 
 		<p>
-			<a href="/modals/small" class="text-blue-600 hover:underline dark:text-blue-500">Small Modal</a>
+			<a href="/modals/small">Small Modal</a>
 		</p>
 
 		<p>
-			<a href="/modals/medium" class="text-blue-600 hover:underline dark:text-blue-500">Medium Modal</a>
+			<a href="/modals/medium">Medium Modal</a>
 		</p>
 
 		<p>
-			<a href="/modals/large" class="text-blue-600 hover:underline dark:text-blue-500">Large Modal</a>
+			<a href="/modals/large">Large Modal</a>
 		</p>
 
 		<p>
-			<a href="/modals/extra-large" class="text-blue-600 hover:underline dark:text-blue-500">Extra Large Modal</a>
+			<a href="/modals/extra-large">Extra Large Modal</a>
 		</p>
 
 		<p>
-			<a href="/modals/signin" class="text-blue-600 hover:underline dark:text-blue-500">Signin Modal</a>
+			<a href="/modals/signin">Signin Modal</a>
 		</p>
 
 		<p>
-			<a href="/modals/all-modals" class="text-blue-600 hover:underline dark:text-blue-500">All Modals</a>
+			<a href="/modals/all-modals">All Modals</a>
 		</p>
 
 		<Htwo label="References" />
 
 		<p>
-			<a href="https://flowbite.com/docs/components/modal/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Modal</a>
+			<a href="https://flowbite.com/docs/components/modal/" target="_blank">Flowbite Modal</a>
 		</p>
 	</div>
 

@@ -76,7 +76,7 @@
 		{
 			id: 'checkbox-1',
 			checked: true,
-			label: 'I agree to the <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>'
+			label: 'I agree to the <a href="#">terms and conditions</a>'
 		},
 		{
 			id: 'checkbox-2',

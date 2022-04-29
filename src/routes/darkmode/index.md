@@ -11,6 +11,7 @@ import { Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 	let propHeader = ['Name', 'Type', 'Default']
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
 
   let crumbs = [
@@ -71,7 +72,7 @@ let btnClass="Add your class here"
 
 <Htwo label="How to change Dark mode color" />
 
-<p><a href="https://chir.ag/projects/name-that-color/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Find the name of the color from hex color code.</a></p>
+<p><a href="https://chir.ag/projects/name-that-color/" target="_blank">Find the name of the color from hex color code.</a></p>
 
 <p>Update tailwind.config.cjs:</p>
 
@@ -97,8 +98,8 @@ let btnClass="Add your class here"
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
+<p>The component has the following props, type, and default values. See <a href="/type-list">type-list page</a> for type information.</p>
 
-<Table header={propHeader} {divClass} >
+<Table header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
 </Table>

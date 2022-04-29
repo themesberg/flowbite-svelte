@@ -11,7 +11,7 @@
 		<Htwo label="References" />
 
 		<p>
-			<a href="https://flowbite.com/docs/components/avatar/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Avatar</a>
+			<a href="https://flowbite.com/docs/components/avatar/" target="_blank">Flowbite Avatar</a>
 		</p>
 	</div>
 

@@ -12,6 +12,7 @@ let items2 = componentProps2.props
 
 let propHeader = ['Name', 'Type', 'Default']
 let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
 let legend = 'Checkbox variants';
 let checkboxOptions= [
@@ -19,7 +20,7 @@ let checkboxOptions= [
     id: 'checkbox-1',
     checked: true,
     label:
-      'I agree to the <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>'
+      'I agree to the <a href="#">terms and conditions</a>'
   },
   {
     id: 'checkbox-2',
@@ -74,7 +75,7 @@ let checkboxOptions= [
     id: 'checkbox-1',
     checked: true,
     label:
-      'I agree to the <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>'
+      'I agree to the <a href="#">terms and conditions</a>'
   },
   {
     id: 'checkbox-2',
@@ -110,17 +111,17 @@ let checkboxOptions= [
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
+<p>The component has the following props, type, and default values. See <a href="/type-list">type-list page</a> for type information.</p>
 
 <h3>SingleCheckbox</h3>
 
-<Table header={propHeader} {divClass} >
+<Table header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items} rowState='hover' />
 </Table>
 
 
 <h3>Checkbox</h3>
 
-<Table header={propHeader} {divClass} >
+<Table header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
 </Table>

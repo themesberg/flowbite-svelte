@@ -32,7 +32,7 @@ brew install fsc
 ```
 
 <h3 class="text-xl w-full mt-8 dark:text-white">Awesome Package Manager</h3>
-<p><a href="https://github.com/shinokada/awesome" class="text-blue-600 hover:underline dark:text-blue-500">Awesome package manager</a> is a shell script package manager. Awesome installs a shell script package from a GitHub repo on your macOS/Linux.</p>
+<p><a href="https://github.com/shinokada/awesome">Awesome package manager</a> is a shell script package manager. Awesome installs a shell script package from a GitHub repo on your macOS/Linux.</p>
 
 <p>Let's install the Awesome package manager:</p>
 

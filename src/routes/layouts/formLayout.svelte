@@ -11,40 +11,40 @@
 		<Htwo label="Related components" />
 
 		<p>
-			<a href="/forms/checkbox" class="text-blue-600 hover:underline dark:text-blue-500">Checkbox</a>
+			<a href="/forms/checkbox">Checkbox</a>
 		</p>
 		<p>
-			<a href="/forms/file-input" class="text-blue-600 hover:underline dark:text-blue-500">File input</a>
+			<a href="/forms/file-input">File input</a>
 		</p>
 		<p>
-			<a href="/forms/floating-label" class="text-blue-600 hover:underline dark:text-blue-500">Floating label</a>
+			<a href="/forms/floating-label">Floating label</a>
 		</p>
 		<p>
-			<a href="/forms/input" class="text-blue-600 hover:underline dark:text-blue-500">Input</a>
+			<a href="/forms/input">Input</a>
 		</p>
 		<p>
-			<a href="/forms/radio" class="text-blue-600 hover:underline dark:text-blue-500">Radio</a>
+			<a href="/forms/radio">Radio</a>
 		</p>
 		<p>
-			<a href="/forms/range" class="text-blue-600 hover:underline dark:text-blue-500">Range</a>
+			<a href="/forms/range">Range</a>
 		</p>
 		<p>
-			<a href="/forms/search" class="text-blue-600 hover:underline dark:text-blue-500">Search</a>
+			<a href="/forms/search">Search</a>
 		</p>
 		<p>
-			<a href="/forms/select" class="text-blue-600 hover:underline dark:text-blue-500">Select</a>
+			<a href="/forms/select">Select</a>
 		</p>
 		<p>
-			<a href="/forms/textarea" class="text-blue-600 hover:underline dark:text-blue-500">Textarea</a>
+			<a href="/forms/textarea">Textarea</a>
 		</p>
 		<p>
-			<a href="/forms/toggle" class="text-blue-600 hover:underline dark:text-blue-500">Toggle</a>
+			<a href="/forms/toggle">Toggle</a>
 		</p>
 
 		<Htwo label="References" />
 
 		<p>
-			<a href="https://flowbite.com/docs/components/forms/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Forms</a>
+			<a href="https://flowbite.com/docs/components/forms/" target="_blank">Flowbite Forms</a>
 		</p>
 	</div>
 

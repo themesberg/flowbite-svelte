@@ -11,17 +11,17 @@
 		<Htwo label="Related components" />
 
 		<p>
-			<a href="/navbars/default" class="text-blue-600 hover:underline dark:text-blue-500">Default Navbar</a>
+			<a href="/navbars/default">Default Navbar</a>
 		</p>
 
 		<p>
-			<a href="/navbars/dropdown" class="text-blue-600 hover:underline dark:text-blue-500">Dropdown Navbar</a>
+			<a href="/navbars/dropdown">Dropdown Navbar</a>
 		</p>
 
 		<Htwo label="References" />
 
 		<p>
-			<a href="https://flowbite.com/docs/components/navbar/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Navbar</a>
+			<a href="https://flowbite.com/docs/components/navbar/" target="_blank">Flowbite Navbar</a>
 		</p>
 	</div>
 

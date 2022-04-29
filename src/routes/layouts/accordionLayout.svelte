@@ -11,17 +11,17 @@
 		<Htwo label="Related components" />
 
 		<p>
-			<a href="/accordions/default" class="text-blue-600 hover:underline dark:text-blue-500">Default Accordion</a>
+			<a href="/accordions/default">Default Accordion</a>
 		</p>
 
 		<p>
-			<a href="/accordions/icon-accordion" class="text-blue-600 hover:underline dark:text-blue-500">Icon Accordion</a>
+			<a href="/accordions/icon-accordion">Icon Accordion</a>
 		</p>
 
 		<Htwo label="References" />
 
 		<p>
-			<a href="https://flowbite.com/docs/components/accordion/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Accordion</a>
+			<a href="https://flowbite.com/docs/components/accordion/" target="_blank">Flowbite Accordion</a>
 		</p>
 	</div>
 

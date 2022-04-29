@@ -27,9 +27,9 @@ layout: docLayout
 
 <h2 class="text-2xl dark:text-white w-full py-4">Flowbite-Svelte</h2>
 
-<p class="dark:text-white w-full text-lg py-2"><a href="/" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite-Svelte</a> is an unofficial Flowbite component library for Svelte. All interactivities are handled by Svelte.
+<p class="dark:text-white w-full text-lg py-2"><a href="/">Flowbite-Svelte</a> is an unofficial Flowbite component library for Svelte. All interactivities are handled by Svelte.
 </p>
 
 
-<p class="dark:text-white w-full text-lg py-2">This website uses Flowbite-Svelte components except the <a href="https://github.com/shinokada/svelte-sidebar" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">sidebar menu</a>.</p>
+<p class="dark:text-white w-full text-lg py-2">This website uses Flowbite-Svelte components except the <a href="https://github.com/shinokada/svelte-sidebar" target="_blank">sidebar menu</a>.</p>
 

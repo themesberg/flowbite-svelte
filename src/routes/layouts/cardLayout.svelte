@@ -10,37 +10,37 @@
 		<Htwo label="Related components" />
 
 		<p>
-			<a href="/cards/card" class="text-blue-600 hover:underline dark:text-blue-500">Default Card</a>
+			<a href="/cards/card">Default Card</a>
 		</p>
 
 		<p>
-			<a href="/cards/cta" class="text-blue-600 hover:underline dark:text-blue-500">CTA Card</a>
+			<a href="/cards/cta">CTA Card</a>
 		</p>
 
 		<p>
-			<a href="/cards/ecommerce" class="text-blue-600 hover:underline dark:text-blue-500">Ecommerce Card</a>
+			<a href="/cards/ecommerce">Ecommerce Card</a>
 		</p>
 
 		<p>
-			<a href="/cards/horizontal" class="text-blue-600 hover:underline dark:text-blue-500">Horizontal Card</a>
+			<a href="/cards/horizontal">Horizontal Card</a>
 		</p>
 
 		<p>
-			<a href="/cards/interactive" class="text-blue-600 hover:underline dark:text-blue-500">Interactive Card</a>
+			<a href="/cards/interactive">Interactive Card</a>
 		</p>
 
 		<p>
-			<a href="/cards/list" class="text-blue-600 hover:underline dark:text-blue-500">List Card</a>
+			<a href="/cards/list">List Card</a>
 		</p>
 
 		<p>
-			<a href="/cards/signin" class="text-blue-600 hover:underline dark:text-blue-500">Signin Card</a>
+			<a href="/cards/signin">Signin Card</a>
 		</p>
 
 		<Htwo label="References" />
 
 		<p>
-			<a href="https://flowbite.com/docs/components/card/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Card</a>
+			<a href="https://flowbite.com/docs/components/card/" target="_blank">Flowbite Card</a>
 		</p>
 	</div>
 

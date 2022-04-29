@@ -13,6 +13,7 @@ import componentProps from '../props/Toast.json'
 	let propHeader = ['Name', 'Type', 'Default']
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
   let crumbs = [
     {
@@ -70,7 +71,7 @@ import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'sve
 
 <h3>Slide examples</h3>
 
-<p>You can use one of <a href="https://svelte.dev/docs#run-time-svelte-easing" target="_blank"  class="text-blue-600 hover:underline dark:text-blue-500">Svelte/easing</a>.</p>
+<p>You can use one of <a href="https://svelte.dev/docs#run-time-svelte-easing" target="_blank" >Svelte/easing</a>.</p>
 
 <div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
    <Toast transitionType="slide" iconColor='red'>
@@ -224,7 +225,7 @@ import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'sve
 
 <Htwo label="Icons" />
 
-<p>Use any <a href="/icons" class="text-blue-600 hover:underline dark:text-blue-500">icon components.</a></p>
+<p>Use any <a href="/icons">icon components.</a></p>
 
 ```html
 <script>
@@ -235,8 +236,8 @@ import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIcon
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
+<p>The component has the following props, type, and default values. See <a href="/type-list">type-list page</a> for type information.</p>
 
-<Table header={propHeader} {divClass} >
+<Table header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
 </Table>

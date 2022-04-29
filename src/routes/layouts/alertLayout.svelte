@@ -11,25 +11,25 @@
 		<Htwo label="Related components" />
 
 		<p>
-			<a href="/alerts/default-alert" class="text-blue-600 hover:underline dark:text-blue-500">Default Alert</a>
+			<a href="/alerts/default-alert">Default Alert</a>
 		</p>
 
 		<p>
-			<a href="/alerts/border-alert" class="text-blue-600 hover:underline dark:text-blue-500">Border Alert</a>
+			<a href="/alerts/border-alert">Border Alert</a>
 		</p>
 
 		<p>
-			<a href="/alerts/information-alert" class="text-blue-600 hover:underline dark:text-blue-500">Information Alert</a>
+			<a href="/alerts/information-alert">Information Alert</a>
 		</p>
 
 		<p>
-			<a href="/alerts/animation" class="text-blue-600 hover:underline dark:text-blue-500">Animation</a>
+			<a href="/alerts/animation">Animation</a>
 		</p>
 
 		<Htwo label="References" />
 
 		<p>
-			<a href="https://flowbite.com/docs/components/alerts/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Alerts</a>
+			<a href="https://flowbite.com/docs/components/alerts/" target="_blank">Flowbite Alerts</a>
 		</p>
 	</div>
 

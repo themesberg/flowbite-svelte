@@ -13,6 +13,7 @@ layout: carouselLayout
 	let propHeader = ['Name', 'Type', 'Default']
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
   let showThumbs=false
   let showIndicators=false
@@ -218,7 +219,7 @@ layout: carouselLayout
 
 <Htwo label="Custom slide controllers" />
 
-<p>You can add custom slide controllers using <a class="text-blue-600 hover:underline dark:text-blue-500" href="/icons/heroicons">Svelte-Heros icons</a>. Change the size using the `iconSize` prop and style with the `iconClass` prop.</p>
+<p>You can add custom slide controllers using <a href="/icons/heroicons">Svelte-Heros icons</a>. Change the size using the `iconSize` prop and style with the `iconClass` prop.</p>
 
 <div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
   <div class="max-w-4xl">
@@ -244,8 +245,8 @@ layout: carouselLayout
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/type-list" class="text-blue-600 hover:underline dark:text-blue-500">type-list page</a> for type information.</p>
+<p>The component has the following props, type, and default values. See <a href="/type-list">type-list page</a> for type information.</p>
 
-<Table header={propHeader} {divClass} >
+<Table header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
 </Table>

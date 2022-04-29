@@ -13,6 +13,7 @@ layout: carouselLayout
 	let propHeader = ['Name', 'Type', 'Default']
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
   let showThumbs=false
   let showIndicators=false
@@ -105,4 +106,4 @@ layout: carouselLayout
 
 <Htwo label="Custom slide controllers" />
 
-<p>You can add custom slide controllers using <a class="text-blue-600 hover:underline dark:text-blue-500" href="/icons/heroicons">Svelte-Heros icons</a>. Change the size using the `iconSize` prop and style with the `iconClass` prop. Please read <a class="text-blue-600 hover:underline dark:text-blue-500" href="/carousels/default#Custom_slide_controllers">Carousel default for more details</a>.</p>
+<p>You can add custom slide controllers using <a href="/icons/heroicons">Svelte-Heros icons</a>. Change the size using the `iconSize` prop and style with the `iconClass` prop. Please read <a href="/carousels/default#Custom_slide_controllers">Carousel default for more details</a>.</p>

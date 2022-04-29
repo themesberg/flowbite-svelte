@@ -11,21 +11,21 @@
 		<Htwo label="Related components" />
 
 		<p>
-			<a href="/badges/default" class="text-blue-600 hover:underline dark:text-blue-500">Default Badge</a>
+			<a href="/badges/default">Default Badge</a>
 		</p>
 
 		<p>
-			<a href="/badges/badge-icon" class="text-blue-600 hover:underline dark:text-blue-500">Badge with icon</a>
+			<a href="/badges/badge-icon">Badge with icon</a>
 		</p>
 
 		<p>
-			<a href="/badges/badge-link" class="text-blue-600 hover:underline dark:text-blue-500">Badge with link</a>
+			<a href="/badges/badge-link">Badge with link</a>
 		</p>
 
 		<Htwo label="References" />
 
 		<p>
-			<a href="https://flowbite.com/docs/components/badge/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Badge</a>
+			<a href="https://flowbite.com/docs/components/badge/" target="_blank">Flowbite Badge</a>
 		</p>
 	</div>
 

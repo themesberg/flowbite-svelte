@@ -11,17 +11,17 @@
 		<Htwo label="Related components" />
 
 		<p>
-			<a href="/dropdowns/default" class="text-blue-600 hover:underline dark:text-blue-500">Default dropdown</a>
+			<a href="/dropdowns/default">Default dropdown</a>
 		</p>
 
 		<p>
-			<a href="/dropdowns/image" class="text-blue-600 hover:underline dark:text-blue-500">Image dropdown</a>
+			<a href="/dropdowns/image">Image dropdown</a>
 		</p>
 
 		<Htwo label="References" />
 
 		<p>
-			<a href="https://flowbite.com/docs/components/dropdowns/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Dropdown</a>
+			<a href="https://flowbite.com/docs/components/dropdowns/" target="_blank">Flowbite Dropdown</a>
 		</p>
 	</div>
 

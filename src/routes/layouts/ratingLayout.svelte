@@ -11,21 +11,21 @@
 		<Htwo label="Related components" />
 
 		<p>
-			<a href="/ratings/rating" class="text-blue-600 hover:underline dark:text-blue-500">Rating</a>
+			<a href="/ratings/rating">Rating</a>
 		</p>
 
 		<p>
-			<a href="/ratings/advanced-rating" class="text-blue-600 hover:underline dark:text-blue-500">Advanced Rating</a>
+			<a href="/ratings/advanced-rating">Advanced Rating</a>
 		</p>
 
 		<p>
-			<a href="/ratings/score-rating" class="text-blue-600 hover:underline dark:text-blue-500">Score Rating</a>
+			<a href="/ratings/score-rating">Score Rating</a>
 		</p>
 
 		<Htwo label="References" />
 
 		<p>
-			<a href="https://flowbite.com/docs/components/rating/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Rating</a>
+			<a href="https://flowbite.com/docs/components/rating/" target="_blank">Flowbite Rating</a>
 		</p>
 	</div>
 

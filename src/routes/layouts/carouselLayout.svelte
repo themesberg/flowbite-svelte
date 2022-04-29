@@ -11,17 +11,17 @@
 		<Htwo label="Related components" />
 
 		<p>
-			<a href="/carousels/default" class="text-blue-600 hover:underline dark:text-blue-500">Default Carousel</a>
+			<a href="/carousels/default">Default Carousel</a>
 		</p>
 
 		<p>
-			<a href="/carousels/transition" class="text-blue-600 hover:underline dark:text-blue-500">Carousel transition</a>
+			<a href="/carousels/transition">Carousel transition</a>
 		</p>
 
 		<Htwo label="References" />
 
 		<p>
-			<a href="https://flowbite.com/docs/components/carousel/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite carousel</a>
+			<a href="https://flowbite.com/docs/components/carousel/" target="_blank">Flowbite carousel</a>
 		</p>
 	</div>
 

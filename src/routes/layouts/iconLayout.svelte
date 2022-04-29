@@ -11,41 +11,41 @@
 		<Htwo label="Related components" />
 
 		<p>
-			<a href="/icons/heroicons" class="text-blue-600 hover:underline dark:text-blue-500">Heroicons</a>
+			<a href="/icons/heroicons">Heroicons</a>
 		</p>
 
 		<p>
-			<a href="/icons/simple-icons" class="text-blue-600 hover:underline dark:text-blue-500">Simpleicons</a>
+			<a href="/icons/simple-icons">Simpleicons</a>
 		</p>
 
 		<p>
-			<a href="/icons/feathericons" class="text-blue-600 hover:underline dark:text-blue-500">Feathericons</a>
+			<a href="/icons/feathericons">Feathericons</a>
 		</p>
 
 		<Htwo label="References" />
 
 		<p class="w-full dark:text-white text-base">
-			<a href="https://github.com/shinokada/svelte-heroicons" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">- Svelte-heroicons</a>
+			<a href="https://github.com/shinokada/svelte-heroicons" target="_blank">- Svelte-heroicons</a>
 		</p>
 
 		<p class="w-full dark:text-white text-base">
-			<a href="https://github.com/shinokada/svelte-simpleicons" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">- Svelte-Simpleicons</a>
+			<a href="https://github.com/shinokada/svelte-simpleicons" target="_blank">- Svelte-Simpleicons</a>
 		</p>
 
 		<p class="w-full dark:text-white text-base">
-			<a href="https://github.com/shinokada/svelte-feathericons/tree/main/src/lib" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">- Svelte-Feathericons</a>
+			<a href="https://github.com/shinokada/svelte-feathericons/tree/main/src/lib" target="_blank">- Svelte-Feathericons</a>
 		</p>
 
 		<p class="w-full dark:text-white text-base">
-			<a href="https://heroicons.com/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">- Heroicons</a>
+			<a href="https://heroicons.com/" target="_blank">- Heroicons</a>
 		</p>
 
 		<p class="w-full dark:text-white text-base">
-			<a href="https://simpleicons.org/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">- Simple-Icons</a>
+			<a href="https://simpleicons.org/" target="_blank">- Simple-Icons</a>
 		</p>
 
 		<p class="w-full dark:text-white text-base">
-			<a href="https://feathericons.com/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">- Feathericons</a>
+			<a href="https://feathericons.com/" target="_blank">- Feathericons</a>
 		</p>
 	</div>
 

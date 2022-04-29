@@ -36,12 +36,12 @@ layout: iconLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">HeroIcons</h1>
 
-<p>Flowbite-svelte uses <a class="text-blue-600 hover:underline dark:text-blue-500" href="https://github.com/shinokada/svelte-heros" target="_blank">svelte-heros</a>.
-You can find all the icon names from the <a class="text-blue-600 hover:underline dark:text-blue-500" href="https://github.com/shinokada/svelte-heros/blob/main/icon-names.md">repo</a>.</p>
+<p>Flowbite-svelte uses <a href="https://github.com/shinokada/svelte-heros" target="_blank">svelte-heros</a>.
+You can find all the icon names from the <a href="https://github.com/shinokada/svelte-heros/blob/main/icon-names.md">repo</a>.</p>
 
 <p class=" dark:text-white py-4">Svelte-heros icons allow you to change icon size and color by using HEX CSS code or TailwindCSS/Flowbite.</p>
 
-<p class=" dark:text-white py-4">If you need brand icons, use <a class="text-blue-600 hover:underline dark:text-blue-500" href="https://github.com/shinokada/svelte-simpleicons" target="_blank">Svelte-simpleicons</a>.</p>
+<p class=" dark:text-white py-4">If you need brand icons, use <a href="https://github.com/shinokada/svelte-simpleicons" target="_blank">Svelte-simpleicons</a>.</p>
 
 <Htwo label="Examples" />
 

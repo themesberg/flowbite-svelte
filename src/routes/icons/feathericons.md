@@ -28,7 +28,7 @@ layout: iconLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Feathericons</h1>
 
-<p>Flowbite-svelte can use <a class="text-blue-600 hover:underline dark:text-blue-500" href="https://github.com/shinokada/svelte-feathericons/tree/main/src/lib" target="_blank">svelte-feathericons</a>.</p>
+<p>Flowbite-svelte can use <a href="https://github.com/shinokada/svelte-feathericons/tree/main/src/lib" target="_blank">svelte-feathericons</a>.</p>
 
 <p class=" dark:text-white py-4">Svelte-feathericons allow you to change icon color and size.</p>
 

@@ -11,25 +11,25 @@
 		<Htwo label="Related components" />
 
 		<p>
-			<a href="/footer/default" class="text-blue-600 hover:underline dark:text-blue-500">Default Footer</a>
+			<a href="/footer/default">Default Footer</a>
 		</p>
 
 		<p>
-			<a href="/footer/logo" class="text-blue-600 hover:underline dark:text-blue-500">Footer with Logo</a>
+			<a href="/footer/logo">Footer with Logo</a>
 		</p>
 
 		<p>
-			<a href="/footer/sitemap" class="text-blue-600 hover:underline dark:text-blue-500">Footer with Sitemap</a>
+			<a href="/footer/sitemap">Footer with Sitemap</a>
 		</p>
 
 		<p>
-			<a href="/footer/socialmedia" class="text-blue-600 hover:underline dark:text-blue-500">Footer with Socialmedia</a>
+			<a href="/footer/socialmedia">Footer with Socialmedia</a>
 		</p>
 
 		<Htwo label="References" />
 
 		<p>
-			<a href="https://flowbite.com/docs/components/footer/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Footer</a>
+			<a href="https://flowbite.com/docs/components/footer/" target="_blank">Flowbite Footer</a>
 		</p>
 	</div>
 

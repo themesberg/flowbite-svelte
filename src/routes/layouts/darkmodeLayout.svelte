@@ -10,7 +10,7 @@
 		<Htwo label="References" />
 
 		<p>
-			<a href="https://flowbite.com/docs/customize/dark-mode/" target="_blank" class="text-blue-600 hover:underline dark:text-blue-500">Flowbite Dark mode</a>
+			<a href="https://flowbite.com/docs/customize/dark-mode/" target="_blank">Flowbite Dark mode</a>
 		</p>
 	</div>
 
