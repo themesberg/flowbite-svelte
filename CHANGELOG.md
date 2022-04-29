@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.8](https://github.com/themesberg/flowbite-svelte/compare/v0.15.7...v0.15.8) (2022-04-29)
+
+
+### Bug Fixes
+
+* update for lighthouse ([e81850d](https://github.com/themesberg/flowbite-svelte/commit/e81850db1d00851f2f8b3a1320ef7658f0654674))
+* update links, flowbite svelte link, sitemap links, white for dark mode ([024b079](https://github.com/themesberg/flowbite-svelte/commit/024b079c161678f2a683736a97d4431f8d8a5279))
+
 ### [0.15.7](https://github.com/themesberg/flowbite-svelte/compare/v0.15.6...v0.15.7) (2022-04-28)
 
 
