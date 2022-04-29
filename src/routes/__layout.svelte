@@ -29,7 +29,7 @@
 	// Others
 	let asideClass = 'fixed w-auto top-14 bg-white pt-8 shadow-lg z-50 px-4 h-screen z-50 overflow-scroll bg-white dark:bg-gray-800';
 	let darkmodebtn = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 fixed right-4 top-2 z-50';
-	let sideBarListClass = 'border-b border-gray-400 dark:border-gray-500 mb-2 px-4 text-base';
+	let sideBarListClass = 'border-b border-gray-400 dark:border-gray-500 mb-2 px-4 text-lg';
 	// activeDropdownDiv, activeChildLi, buttonClass, dropdownLi
 
 	// Footer
@@ -144,8 +144,8 @@
 	];
 	let allRightsReserved = '';
 	let copyrightYear = '';
-	let liClass = 'mb-1';
-	let linksClass = 'grid gap-8 py-8 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-36  grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7';
+	let liClass = 'mb-1 text-lg';
+	let linksClass = 'grid gap-8 py-8 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-36 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7';
 	let copyrightDivClass = 'py-6 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-36 text-gray-900 dark:bg-gray-700 md:flex md:items-center md:justify-between';
 	let linkClass = 'hover:underline hover:text-blue-600';
 </script>

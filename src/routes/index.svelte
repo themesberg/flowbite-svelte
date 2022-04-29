@@ -8,6 +8,7 @@
 
 	// Cards
 	let divClass = 'max-w-sm md:max-w-xs lg:max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700';
+	let pClass = 'text-lg w-full text-gray-900 dark:text-white py-0';
 </script>
 
 <div class="relative bg-white overflow-hidden mt-8 lg:mb-8 mx-auto dark:bg-gray-800">
