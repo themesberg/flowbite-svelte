@@ -3,6 +3,7 @@ layout: docLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { Breadcrumb } from '$lib/index'
   let crumbs = [
     {
@@ -22,7 +23,7 @@ layout: docLayout
 
 <p>This a Shell script CLI that allows you to find compoent default props from your command line.</p>
 
-<h2 class="text-2xl w-full mt-8 dark:text-white">Installation</h2>
+<Htwo label="Installation" />
 
 <h3 class="text-xl w-full mt-8 dark:text-white">Homebrew</h3>
 
@@ -58,7 +59,7 @@ export PATH=$HOME/.local/share/bin:$PATH
 awesome install shinokada/fsc
 ```
 
-<h2 class="text-2xl w-full dark:text-white py-4">How to use it</h2>
+<Htwo label="How to use it" />
 
 <h3>List components</h3>
 

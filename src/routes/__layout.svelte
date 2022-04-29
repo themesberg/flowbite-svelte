@@ -99,18 +99,22 @@
 		{
 			parent: 'DOCS',
 			children: [
-				{ name: 'Getting Started', href: '/getting-started' },
+				{ name: 'Getting Started', href: '/pages/getting-started' },
 				{
 					name: 'About',
-					href: '/about'
+					href: '/pages/about'
 				},
 				{
 					name: 'Type list',
-					href: '/type-list'
+					href: '/pages/types'
 				},
 				{
 					name: 'CLI',
-					href: '/cli'
+					href: '/pages/cli'
+				},
+				{
+					name: 'License',
+					href: '/pages/license'
 				}
 			]
 		},

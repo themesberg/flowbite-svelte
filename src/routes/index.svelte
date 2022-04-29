@@ -3,7 +3,7 @@
 	import { goto } from '$app/navigation';
 	import { accordions, alerts, badges, buttons, buttonGroups, cards, carousels, dropdowns, forms, footers, icons, modals, navbar, ratings, tabs, timelines, tooltips } from './items';
 	const handleClick = () => {
-		goto('/getting-started');
+		goto('/pages/getting-started');
 	};
 
 	// Cards

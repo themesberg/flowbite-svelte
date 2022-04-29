@@ -18,7 +18,7 @@ layout: docLayout
 
 <Breadcrumb {crumbs}/>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Type list</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Types</h1>
 
 ```js
 import type { SvelteComponent } from 'svelte';

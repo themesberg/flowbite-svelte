@@ -5,24 +5,34 @@ test('index page should have h1', async ({ page }) => {
 	expect(await page.textContent('h1 > span')).toBe('Flowbite Svelte');
 });
 
-test('Getting Started page should have h1', async ({ page }) => {
-	await page.goto('/getting-started');
-	expect(await page.textContent('h1')).toBe('Getting Started');
-});
-
 test('About page should have h1', async ({ page }) => {
-	await page.goto('/about');
+	await page.goto('/pages/about');
 	expect(await page.textContent('h1')).toBe('About Flowbite-Svelte');
 });
 
 test('CLI page should have h1', async ({ page }) => {
-	await page.goto('/cli');
+	await page.goto('/pages/cli');
 	expect(await page.textContent('h1')).toBe('Flowbite-Svelte-CLI (fsc)');
 });
 
+test('Getting Started page should have h1', async ({ page }) => {
+	await page.goto('/pages/getting-started');
+	expect(await page.textContent('h1')).toBe('Getting Started');
+});
+
+test('How to contribute page should have h1', async ({ page }) => {
+	await page.goto('/pages/how-to-contribute');
+	expect(await page.textContent('h1')).toBe('How to Contribute');
+});
+
+test('License page should have h1', async ({ page }) => {
+	await page.goto('/pages/license');
+	expect(await page.textContent('h1')).toBe('LICENSE');
+});
+
 test('Type list page should have h1', async ({ page }) => {
-	await page.goto('/type-list');
-	expect(await page.textContent('h1')).toBe('Type list');
+	await page.goto('/pages/types');
+	expect(await page.textContent('h1')).toBe('Types');
 });
 
 // Accordion

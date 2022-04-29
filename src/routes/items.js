@@ -1,8 +1,9 @@
 export const svelteflows = [
-  { href: "/getting-started", name: "Getting Started" },
-  { href: "/about", name: "About" },
-  { href: "/type-list", name: "Type list" },
-  { href: "/cli", name: "Flowbite-Svelte CLI" },
+  { href: "/pages/getting-started", name: "Getting Started" },
+  { href: "/pages/about", name: "About" },
+  { href: "/pages/types", name: "Types" },
+  { href: "/pages/cli", name: "Flowbite-Svelte CLI" },
+  { href: "/pages/license", name: "License" },
 ];
 
 export const accordions = [

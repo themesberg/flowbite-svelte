@@ -3,6 +3,7 @@ layout: docLayout
 ---
 
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { Breadcrumb } from '$lib/index'
   let crumbs = [
     {
@@ -20,12 +21,12 @@ layout: docLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">About Flowbite-Svelte</h1>
 
-<h2 class="text-2xl dark:text-white w-full py-4">Svelte</h2>
+<Htwo label="Svelte" />
 
 <p class="dark:text-white w-full text-lg py-2">
   Svelte is a modern and growing front-end compiler. Developers build boilerplate-free components using languages HTML, CSS and JavaScript. Svelte compiles your code to tiny, framework-less vanilla JS.</p>
 
-<h2 class="text-2xl dark:text-white w-full py-4">Flowbite-Svelte</h2>
+<Htwo label="Flowbite Svelte" />
 
 <p class="dark:text-white w-full text-lg py-2"><a href="/">Flowbite-Svelte</a> is an unofficial Flowbite component library for Svelte. All interactivities are handled by Svelte.
 </p>

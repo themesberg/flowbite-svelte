@@ -2,9 +2,13 @@
 layout: doc
 ---
 
+<script>
+import Htwo from '../utils/Htwo.svelte'
+</script>
+
 <h1 class="text-3xl dark:text-white w-full pb-4">LICENSE</h1>
 
-<h2 class="text-3xl dark:text-white w-full pb-4">MIT License</h2>
+<Htwo label="MIT License" />
 
 <h3 class="text-xl dark:text-white w-full pb-4">Copyright (c) 2022 Flowbite-Svelte</h3>
 

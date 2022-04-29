@@ -2,6 +2,7 @@
 layout: docLayout
 ---
 <script>
+  import Htwo from '../utils/Htwo.svelte'
   import { Breadcrumb } from '$lib/index'
   let crumbs = [
     {
@@ -18,7 +19,10 @@ layout: docLayout
 <Breadcrumb {crumbs}/>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Getting Started</h1>
-<h2 class="text-2xl w-full mt-8 dark:text-white py-4">Installation</h2>
+
+
+<Htwo label="Installation" />
+
 <p>Install SvelteKit:</p>
 
 ```bash

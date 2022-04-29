@@ -1,7 +1,6 @@
 <script>
 	import Htwo from '../utils/Htwo.svelte';
 	import 'prism-themes/themes/prism-holi-theme.css';
-	import { Utterances } from '@codewithshin/svelte-utterances';
 </script>
 
 <div class="max-w-3xl mx-auto mt-16">
@@ -13,9 +12,5 @@
 		<p>
 			<a href="https://flowbite.com/docs/components/pagination/" target="_blank">Flowbite Pagination</a>
 		</p>
-	</div>
-
-	<div class="container my-16 mx-auto">
-		<Utterances reponame="themesberg/flowbite-svelte" theme="dark-blue" />
 	</div>
 </div>
