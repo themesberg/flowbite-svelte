@@ -5,16 +5,16 @@
 [![release](https://badgen.net/github/release/themesberg/flowbite-svelte)](https://github.com/themesberg/flowbite-svelte/releases)
 [![license](https://badgen.net/npm/license/flowbite-svelte)](https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE)
 
-
-
 [Flowbite-Svelte](https://flowbite-svelte.com/) is an official Flowbite component library for Svelte. All interactivities are handled by Svelte.
 
 ## Installation
 
-- [Getting started](https://flowbite-svelte.com/getting-started)
-- [About](https://flowbite-svelte.com/about)
-- [Type list](https://flowbite-svelte.com/type-list)
-- [CLI](https://flowbite-svelte.com/cli)
+- [Getting started](https://flowbite-svelte.com/pages/getting-started)
+- [About](https://flowbite-svelte.com/pages/about)
+- [Types](https://flowbite-svelte.com/pages/types)
+- [How to contribute](https://flowbite-svelte.com/pages/how-to-contribute)
+- [CLI](https://flowbite-svelte.com/pages/cli)
+- [License](https://flowbite-svelte.com/pages/license)
 
 ## Accordion components
 
@@ -84,7 +84,14 @@
 
 ## Form components
 
-- [Forms](https://flowbite-svelte.com/forms)
+- [Checkbox](https://flowbite-svelte.com/forms/checkbox)
+- [File input](https://flowbite-svelte.com/forms/file-input)
+- [Floating label](https://flowbite-svelte.com/forms/floating-label)
+- [Input](https://flowbite-svelte.com/forms/input)
+- [Radio](https://flowbite-svelte.com/forms/radio)
+- [Range](https://flowbite-svelte.com/forms/range)
+- [Textarea](https://flowbite-svelte.com/forms/textarea)
+- [Toggle](https://flowbite-svelte.com/forms/toggle)
 
 ## Footer components
 
@@ -124,6 +131,12 @@
 ## Progress bar
 
 - [Probress bar](https://flowbite-svelte.com/progressbars)
+
+## Rating
+
+- [Rating](https://flowbite-svelte.com/ratings/rating)
+- [Advanced rating](https://flowbite-svelte.com/ratings/advanced-rating)
+- [Score rating](https://flowbite-svelte.com/ratings/score-rating)
 
 ## Sidebar components
 
@@ -176,8 +189,7 @@ npm run test
 ## Create props
 
 ```sh
-cd scripts
-node createProps.js
+npm run gen:props
 ```
 
 This will pull all props from components and replace files in `/src/routes/props` directory.
