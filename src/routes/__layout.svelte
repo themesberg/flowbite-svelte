@@ -105,8 +105,12 @@
 					href: '/pages/about'
 				},
 				{
-					name: 'Type list',
+					name: 'Types',
 					href: '/pages/types'
+				},
+				{
+					name: 'How to contribute',
+					href: '/pages/how-to-contribute'
 				},
 				{
 					name: 'CLI',
