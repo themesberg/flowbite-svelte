@@ -137,7 +137,7 @@ export const tooltips = [
 
 export const topMenus = [
   { href: "/", name: "Home" },
-  { href: "/about", name: "About" },
+  { href: "/pages/about", name: "About" },
   {
     href: "https://github.com/themesberg/flowbite-svelte",
     name: "GitHub"
