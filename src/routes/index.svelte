@@ -8,7 +8,7 @@
 
 	// Cards
 	let divClass = 'max-w-sm md:max-w-xs lg:max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700';
-	let pClass = 'text-xl w-full text-gray-900 dark:text-white py-2';
+	let pClass = 'text-xl w-full text-gray-900 dark:text-white py-2 sm:py-0';
 	let aClass = 'text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500';
 </script>
 

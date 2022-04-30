@@ -29,7 +29,7 @@
 	// Others
 	let asideClass = 'fixed w-auto top-14 bg-white pt-8 shadow-lg z-50 px-4 h-screen z-50 overflow-scroll bg-white dark:bg-gray-800';
 	let darkmodebtn = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 fixed right-4 top-2 z-50';
-	let sideBarListClass = 'border-b border-gray-400 dark:border-gray-500 mb-2 px-4 text-lg';
+	let sideBarListClass = 'border-b border-gray-400 dark:border-gray-500 mb-2 px-4 text-lg sm:text-base';
 	// activeDropdownDiv, activeChildLi, buttonClass, dropdownLi
 
 	// Footer
