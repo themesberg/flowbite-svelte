@@ -171,6 +171,14 @@ let props4 = {
 </div>
 </ExampleDiv>
 
+```html
+<Toggle size="small" value='small-toggle' name="small-toggle" id="small-toggle" label="Small toggle" checked/>
+
+<Toggle value='default-toggle' name="default-toggle" id="default-toggle" label="Default toggle" checked/>
+
+<Toggle size="large" value='large-toggle' name="large-toggle" id="large-toggle" label="Large toggle" checked/>
+```
+
 <Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list">type-list page</a> for type information.</p>
