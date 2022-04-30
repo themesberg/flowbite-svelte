@@ -4,6 +4,7 @@ layout: buttonLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Button, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import { ArrowRightOutline, BellOutline, ShoppingCartOutline, ChevronRightOutline } from "svelte-heros";
   import { goto }from '$app/navigation';
@@ -55,19 +56,17 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>The default `type` is set to `button`. You can chage it by using the `type` prop.</p>
 
-<div class="rounded-xl w-full flex justify-center my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Button type="submit">Submit</Button>
-</div>
+</ExampleDiv>
 
 ```html
 <Button type="submit">Submit</Button>
 ```
 
-
-
 <Htwo label="Sizes" />
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <Button textSize="text-xs">Button text-xs</Button>
   <Button textSize="text-sm">Button text-sm</Button>
   <Button textSize="text-base">Button text-base</Button>
@@ -76,7 +75,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <Button textSize="text-2xl">Button text-2xl</Button>
   <Button textSize="text-3xl">Button text-3xl</Button>
   <Button textSize="text-4xl">Button text-4xl</Button>
-</div>
+</ExampleDiv>
 
 ```html
 <Button textSize="text-xs">Button text-xs</Button>
@@ -91,7 +90,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Colors" />
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <Button textSize="text-sm">Button</Button>
   <Button textSize="text-sm" btnColor="dark">Button</Button>
   <Button textSize="text-sm" btnColor="light">Button</Button>
@@ -99,7 +98,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <Button textSize="text-sm" btnColor="green">Button</Button>
   <Button textSize="text-sm" btnColor="yellow">Button</Button>
   <Button textSize="text-sm" btnColor="purple">Button</Button>
-</div>
+</ExampleDiv>
 
 ```html
 <Button textSize="text-sm">Button</Button>
@@ -132,16 +131,16 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <Button on:click={btn2} textSize="text-xl">Button text-xl</Button>
 ```
 
-<div class="rounded-xl w-full flex justify-center my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Button on:click={btn1} textSize="text-xs">Button text-xs</Button>
 <Button on:click={btn2} textSize="text-xl">Button text-xl</Button>
-</div>
+</ExampleDiv>
 
 <Htwo label="Icons & Labels" />
 
 <p>Since all the buttons have a `slot` you can add an icon component to create an icon button.</p>
 
-<div class="rounded-xl w-full flex justify-center my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Button>
     <ArrowRightOutline/>
 </Button>
@@ -163,7 +162,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     2
   </span>
 </Button>
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -193,18 +192,17 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </Button>
 ```
 
-
 <Htwo label="Disabled" />
 
 <p>You can add any additional button attributes. The following example shows adding the `disabled` attribute.</p>
 
-<div class="rounded-xl w-full flex justify-center my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Button disabled >Disabled</Button>
 <Button disabled btnColor="green">Disabled</Button>
 <Button disabled btnColor="red">Disabled</Button>
 <Button disabled btnColor="yellow">Disabled</Button>
 <Button disabled btnColor="purple">Disabled</Button>
-</div>
+</ExampleDiv>
 
 ```html
 <Button disabled>Button disabled</Button>

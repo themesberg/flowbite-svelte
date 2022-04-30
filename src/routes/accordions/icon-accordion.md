@@ -4,6 +4,7 @@ layout: accordionLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Accordion, AccordionItem, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import { ArchiveOutline, BeakerOutline } from "svelte-heros";
   import accordionProps from '../props/AccordionDefault.json'
@@ -46,9 +47,7 @@ npm i svelte-heros
 
 <Htwo label="Examples" />
 
-<div
-  class="rounded-xl bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
->
+<ExampleDiv>
   <Accordion>
     <AccordionItem id="1">
       <h2 slot="header" class="text-base p-0 m-0">
@@ -116,7 +115,7 @@ npm i svelte-heros
       </div>
     </AccordionItem>
   </Accordion>
-</div>
+</ExampleDiv>
 
 
 ```html

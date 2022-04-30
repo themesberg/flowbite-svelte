@@ -4,6 +4,7 @@ layout: accordionLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Accordion, AccordionItem, Table, TableDefaultRow, Breadcrumb } from "$lib/index";
   import accordionProps from '../props/AccordionDefault.json'
   import accordionItemProps from '../props/AccordionItem.json'
@@ -36,9 +37,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>Add id 1,2,3,... to AccordionItem component.</p>
 
-<div
-  class="container flex flex-wrap justify-center rounded-xl py-8 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
->
+<ExampleDiv>
   <Accordion duration="0.5">
     <AccordionItem id="1">
       <h2 slot="header">My Header 1</h2>
@@ -100,11 +99,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       </div>
     </AccordionItem>
   </Accordion>
-</div>
+</ExampleDiv>
 
-<div
-  class="container flex flex-wrap justify-center rounded-xl py-8 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
->
+<ExampleDiv>
   <Accordion>
     <AccordionItem id="1">
       <h2 slot="header">Header 2-1</h2>
@@ -129,7 +126,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       </div>
     </AccordionItem>
   </Accordion>
-</div>
+</ExampleDiv>
 
 
 ```html

@@ -4,6 +4,7 @@ layout: paginationLayout
 
 <script lang="ts">
 	import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
 	import { Pagination, Previous, Next, TableData, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 	import componentProps1 from '../props/Pagination.json'
   import componentProps2 from '../props/Previous.json'
@@ -70,11 +71,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Default pagination" />
 
-<div
-	class="container w-full flex justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
-		>
+<ExampleDiv>
   <Pagination {pages} on:previous={previous} on:next={next} />
-</div>
+</ExampleDiv>
 
 ```html
 <script lang="ts">
@@ -114,11 +113,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Pagination with icons" />
 
-<div
-	class="container w-full flex justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
-		>
+<ExampleDiv>
   <Pagination {pages} on:previous={previous} on:next={next} icon />
-</div>
+</ExampleDiv>
 
 ```html
 <Pagination {pages} on:previous={previous} on:next={next} icon />
@@ -126,12 +123,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Previous and next" />
 
-<div
-	class="container w-full flex justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
-		>
+<ExampleDiv>
   <Previous on:previous={previous} />
   <Next on:next={next} />
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -144,12 +139,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Previous and next with icons" />
 
-<div
-	class="container w-full flex justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
-		>
+<ExampleDiv>
   <Previous on:previous={previous} icon />
   <Next on:next={next} icon />
-</div>
+</ExampleDiv>
 
 ```html
 <Previous on:previous={previous} icon />
@@ -158,19 +151,13 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Table data pagination" />
 
-<div
-	class="container w-full flex justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
-		>
-
+<ExampleDiv>
 <TableData on:next={next} on:previous={previous} />
-</div>
+</ExampleDiv>
 
-<div
-	class="container w-full flex justify-center rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
-		>
-
+<ExampleDiv>
 <TableData on:next={next} on:previous={previous} {helper}/>
-</div>
+</ExampleDiv>
 
 ```html
 <script>

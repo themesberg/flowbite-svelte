@@ -4,6 +4,7 @@ layout: tabLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
 import { UnderlineTabs, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 import componentProps from '../props/UnderlineTabs.json'
   // Props table
@@ -63,9 +64,9 @@ let tabs = [
 
 <Htwo label="Examples" />
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <UnderlineTabs {tabs} />
-</div>
+</ExampleDiv>
 
 ```html
 <script>

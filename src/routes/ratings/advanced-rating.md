@@ -4,6 +4,7 @@ layout: ratingLayout
 
 <script>
 	import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
 	import { Rating, AdvancedRating, ScoreRating, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 	import { ThumbUpSolid } from 'svelte-heros';
 	import componentProps from '../props/AdvancedRating.json'
@@ -58,8 +59,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>Set the `total`, rating`, and `ratings` prop for AdvancedRation component. Use the `rating` slot for Rating component with the `total` and `rating` props. Use the `globalText` slot for additional information.</p>
 
-<div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-	<AdvancedRating
+<ExampleDiv>	<AdvancedRating
 		total="5"
 		rating="3.21"
 		ratings={[
@@ -77,11 +77,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 		</span>
 		<p slot="globalText" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">1,745 global ratings</p>
 	</AdvancedRating>
-</div>
+</ExampleDiv>
 
 ```html
-<div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-	<AdvancedRating
+<ExampleDiv>	<AdvancedRating
 		total="5"
 		rating="3.21"
 		ratings={[
@@ -106,8 +105,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>As we describe in the Rating component, you can change an icon in the `ratingUp` and `ratingDown` in the Rating component.</p>
 
-<div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-	<AdvancedRating
+<ExampleDiv>	<AdvancedRating
 		total="5"
 		rating="3.21"
 		ratings={[
@@ -131,7 +129,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 		</span>
 		<p slot="globalText" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">1,745 global ratings</p>
 	</AdvancedRating>
-</div>
+</ExampleDiv>
 
 ```html
 <AdvancedRating
@@ -160,7 +158,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </AdvancedRating>
 ```
 
-
 <Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list">type-list page</a> for type information.</p>
@@ -168,6 +165,3 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <Table header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
 </Table>
-
-
-

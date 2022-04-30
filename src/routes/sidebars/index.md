@@ -4,6 +4,7 @@ layout: sidebarLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Sidebar, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/Sidebar.json'
   // Props table
@@ -273,11 +274,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Multi-level dropdown" />
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-
+<ExampleDiv>
   <Sidebar links={links2} {site} />
-  
-</div>
+</ExampleDiv>
 
 
 ```html
@@ -379,9 +378,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="CTA button" />
 
-<div class="container flex flex-wrap rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <Sidebar {links} {cta} />
-</div>
+</ExampleDiv>
 
 ```html
 <script>

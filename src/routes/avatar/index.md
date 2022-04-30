@@ -4,6 +4,7 @@ layout: avatarLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Avatar, Table, TableDefaultRow, Breadcrumb } from "$lib/index"
   import alertProp from '../props/Avatar.json'
   // Props table
@@ -92,7 +93,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>Select size from  6 | 8 | 12 | 24 | 48.</p>
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <div class=" flex flex-wrap justify-center space-x-4">
 <Avatar avatar={avatar6} />
 <Avatar avatar={avatar8}/>
@@ -100,7 +101,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <Avatar avatar={avatar24}/>
 <Avatar avatar={avatar48}/>
 </div>
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -146,13 +147,13 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>Set true to border and/or round.</p>
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <div class=" flex flex-wrap justify-center space-x-4">
     <Avatar avatar={avatar2} />
     <Avatar avatar={avatar3} />
     <Avatar avatar={avatar4} />
   </div>
-</div>
+</ExampleDiv>
 
 ```html
 <script>

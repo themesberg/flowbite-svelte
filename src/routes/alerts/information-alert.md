@@ -4,6 +4,7 @@ layout: alertLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { InfoAlert, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/InfoAlert.json'
   // Props table
@@ -47,13 +48,13 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
 <Htwo label="Examples" />
 
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 
   <InfoAlert>
     <span slot="header">Info header 1</span>
     InfoAlert without View more and Dismiss button.
   </InfoAlert>
-</div>
+</ExampleDiv>
 
 ```html
 <InfoAlert>
@@ -62,8 +63,7 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
 </InfoAlert>
 ```
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-
+<ExampleDiv>
   <InfoAlert
     alertId="info-alert-2"
     color="green"
@@ -73,7 +73,7 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
     <span slot="header">Info header 2</span>
     InfoAlert with View more and Dismiss button.
   </InfoAlert>
-</div>
+</ExampleDiv>
 
 ```html
  <InfoAlert
@@ -87,8 +87,7 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
   </InfoAlert>
 ```
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-
+<ExampleDiv>
   <InfoAlert
     alertId="info-alert-3"
     color="red"
@@ -98,7 +97,7 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
     <span slot="header">Info header 3</span>
     InfoAlert with View more and Dismiss button.
   </InfoAlert>
-</div>
+</ExampleDiv>
 
 ```html
 <InfoAlert
@@ -112,8 +111,7 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
   </InfoAlert>
 ```
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-
+<ExampleDiv>
   <InfoAlert
     alertId="info-alert-4"
     color="yellow"
@@ -123,7 +121,7 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
     <span slot="header">Info header 4</span>
     InfoAlert with View more and Dismiss button.
   </InfoAlert>
-</div>
+</ExampleDiv>
 
 ```html
 <InfoAlert
@@ -137,8 +135,7 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
   </InfoAlert>
 ```
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-
+<ExampleDiv>
   <InfoAlert
     alertId="info-alert-5"
     color="gray"
@@ -148,7 +145,7 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
     <span slot="header">Info header 5</span>
     InfoAlert with View more and Dismiss button.
   </InfoAlert>
-</div>
+</ExampleDiv>
 
 ```html
 <InfoAlert
@@ -162,8 +159,7 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
   </InfoAlert>
 ```
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-
+<ExampleDiv>
   <InfoAlert
     alertId="info-alert-6"
     color="indigo"
@@ -173,7 +169,7 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
     <span slot="header">Info header 4</span>
     InfoAlert with View more and Dismiss button.
   </InfoAlert>
-</div>
+</ExampleDiv>
 
 ```html
 <InfoAlert
@@ -187,8 +183,7 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
   </InfoAlert>
 ```
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-
+<ExampleDiv>
   <InfoAlert
     alertId="info-alert-7"
     color="purple"
@@ -198,7 +193,7 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
     <span slot="header">Info header 4</span>
     InfoAlert with View more and Dismiss button.
   </InfoAlert>
-</div>
+</ExampleDiv>
 
 ```html
 <InfoAlert
@@ -212,8 +207,7 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
   </InfoAlert>
 ```
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-
+<ExampleDiv>
   <InfoAlert
     alertId="info-alert-8"
     color="pink"
@@ -223,7 +217,7 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
     <span slot="header">Info header 4</span>
     InfoAlert with View more and Dismiss button.
   </InfoAlert>
-</div>
+</ExampleDiv>
 
 ```html
 <InfoAlert

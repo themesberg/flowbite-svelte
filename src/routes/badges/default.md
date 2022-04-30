@@ -4,6 +4,7 @@ layout: badgeLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Badge, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
   import componentProps from '../props/Badge.json'
   // Props table
@@ -40,8 +41,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Size xs" />
 
-<div
-  class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv class="flex justify-between">
 <Badge name="Default"/>
 <Badge name="Gray" color="gray"/>
 <Badge name="Red" color="red"/>
@@ -50,7 +50,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <Badge name="Indigo" color="indigo"/>
 <Badge name="Purple" color="purple"/>
 <Badge name="Pink" color="pink"/>
-</div>
+</ExampleDiv>
 
 
 ```html
@@ -66,8 +66,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Size sm" />
 
-<div
-  class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6 ">
+<ExampleDiv class="flex justify-between">
 <Badge name="Default" textSize="text-sm"/>
 <Badge name="Gray" color="gray" textSize="text-sm"/>
 <Badge name="Red" color="red" textSize="text-sm"/>
@@ -76,7 +75,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <Badge name="Indigo" color="indigo" textSize="text-sm"/>
 <Badge name="Purple" color="purple" textSize="text-sm"/>
 <Badge name="Pink" color="pink" textSize="text-sm"/>
-</div>
+</ExampleDiv>
 
 ```html
 <Badge name="Default" textSize="text-sm"/>
@@ -91,8 +90,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Size base" />
 
-<div
-  class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv class="flex justify-between">
 <Badge name="Default" textSize="text-base"/>
 <Badge name="Gray" color="gray" textSize="text-base"/>
 <Badge name="Red" color="red" textSize="text-base"/>
@@ -101,7 +99,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <Badge name="Indigo" color="indigo" textSize="text-base"/>
 <Badge name="Purple" color="purple" textSize="text-base"/>
 <Badge name="Pink" color="pink" textSize="text-base"/>
-</div>
+</ExampleDiv>
 
 ```html
 <Badge name="Default" textSize="text-base"/>

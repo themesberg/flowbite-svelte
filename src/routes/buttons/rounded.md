@@ -4,6 +4,7 @@ layout: buttonLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Button, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/Button.json'
   // Props table
@@ -35,7 +36,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Size xs" />
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <Button name="Button text-xs" textSize="text-xs" rounded="true" />
   <Button name="Button text-xs" textSize="text-xs" buttonType="dark" rounded="true" />
   <Button name="Button text-xs" textSize="text-xs" buttonType="light" rounded="true" />
@@ -43,7 +44,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <Button name="Button text-xs" textSize="text-xs" buttonType="red" rounded="true" />
   <Button name="Button text-xs" textSize="text-xs" buttonType="yellow" rounded="true" />
   <Button name="Button text-xs" textSize="text-xs" buttonType="purple" rounded="true" />
-</div>
+</ExampleDiv>
 
 ```html
 <Button name="Button text-xs" textSize="text-xs" rounded="true" />
@@ -57,7 +58,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Size sm" />
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <Button name="Button" textSize="text-sm" rounded="true" />
   <Button name="Button" textSize="text-sm" buttonType="dark" rounded="true" />
   <Button name="Button" textSize="text-sm" buttonType="light" rounded="true" />
@@ -65,7 +66,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <Button name="Button" textSize="text-sm" buttonType="red" rounded="true" />
   <Button name="Button" textSize="text-sm" buttonType="yellow" rounded="true" />
   <Button name="Button" textSize="text-sm" buttonType="purple" rounded="true" />
-</div>
+</ExampleDiv>
 
 ```html
 <Button name="Button" textSize="text-sm" rounded="true" />
@@ -79,7 +80,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Size base" />
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <Button name="Button" textSize="text-base" rounded="true" />
   <Button name="Button" textSize="text-base" buttonType="dark" rounded="true" />
   <Button name="Button" textSize="text-base" buttonType="light" rounded="true" />
@@ -87,7 +88,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <Button name="Button" textSize="text-base" buttonType="red" rounded="true" />
   <Button name="Button" textSize="text-base" buttonType="yellow" rounded="true" />
   <Button name="Button" textSize="text-base" buttonType="purple" rounded="true" />
-</div>
+</ExampleDiv>
 
 ```html
 <Button name="Button" textSize="text-base" rounded="true" />

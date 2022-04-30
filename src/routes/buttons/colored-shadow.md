@@ -4,6 +4,7 @@ layout: buttonLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { ColorShadowButton, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/ColorShadowButton.json'
   // Props table
@@ -35,7 +36,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="text-sm" />
 
-<div class=" flex flex-wrap justify-center rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <ColorShadowButton color="blue" >Blue</ColorShadowButton>
 <ColorShadowButton color="green" >Green</ColorShadowButton>
 <ColorShadowButton color="cyan" >Cyan</ColorShadowButton>
@@ -44,7 +45,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <ColorShadowButton color="red" >Red</ColorShadowButton>
 <ColorShadowButton color="pink" >Ping</ColorShadowButton>
 <ColorShadowButton color="purple" >Purple</ColorShadowButton>
-</div>
+</ExampleDiv>
 
 ```html
 <ColorShadowButton color="blue" >Blue</ColorShadowButton>
@@ -59,7 +60,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="text-xs" />
 
-<div class=" flex flex-wrap justify-center rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <ColorShadowButton color="blue"  textSize="text-xs" >Blue</ColorShadowButton>
 <ColorShadowButton color="green" textSize="text-xs" >Green</ColorShadowButton>
 <ColorShadowButton color="cyan"  textSize="text-xs" >Cyan</ColorShadowButton>
@@ -68,7 +69,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <ColorShadowButton color="red"   textSize="text-xs" >Red</ColorShadowButton>
 <ColorShadowButton color="pink"  textSize="text-xs" >Ping</ColorShadowButton>
 <ColorShadowButton color="purple" textSize="text-xs" >Purple</ColorShadowButton>
-</div>
+</ExampleDiv>
 
 ```html
 <ColorShadowButton color="blue"  textSize="text-xs" >Blue</ColorShadowButton>
@@ -83,7 +84,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="text-base" />
 
-<div class=" flex flex-wrap justify-center rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <ColorShadowButton color="blue"  textSize="text-base" >Blue</ColorShadowButton>
 <ColorShadowButton color="green" textSize="text-base" >Green</ColorShadowButton>
 <ColorShadowButton color="cyan"  textSize="text-base" >Cyan</ColorShadowButton>
@@ -92,7 +93,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <ColorShadowButton color="red"   textSize="text-base" >Red</ColorShadowButton>
 <ColorShadowButton color="pink"  textSize="text-base" >Ping</ColorShadowButton>
 <ColorShadowButton color="purple" textSize="text-base" >Purple</ColorShadowButton>
-</div>
+</ExampleDiv>
 
 ```html
 <ColorShadowButton color="blue" textSize="text-base">Blue</ColorShadowButton>

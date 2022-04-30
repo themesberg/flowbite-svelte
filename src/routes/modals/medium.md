@@ -4,6 +4,7 @@ layout: modalLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { MediumModal, ModalButton, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps1 from '../props/ModalButton.json'
   import componentProps2 from '../props/MediumModal.json'
@@ -77,9 +78,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Examples" />
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <ModalButton id="modal1" btnName="Medium Modal" />
-</div>
+</ExampleDiv>
 
 <MediumModal id="modal1" title="Basic Modal Title">
   Basic Modal Content: Lorem ipsum dolor sit, amet consectetur adipisicing
@@ -100,9 +101,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Medium modals with an action button" />
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <ModalButton id="id1" btnName="Medium Modal with one action button" btnColor="gray" />
-</div>
+</ExampleDiv>
 
 <MediumModal
   bind:this={modal1}
@@ -135,9 +136,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Medium modal with an action button" />
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <ModalButton id="id2" btnName="Medium Modal with two action buttons" btnColor="blue" />
-</div>
+</ExampleDiv>
 
 <MediumModal
   bind:this={modal2}

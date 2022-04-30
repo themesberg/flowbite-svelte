@@ -1,4 +1,5 @@
 <script>
+	import ExampleDiv from '../utils/ExampleDiv.svelte';
 	import { Sidebar } from '$lib/index';
 	import { ChartPieSolid, ShoppingBagSolid, TableSolid, InboxInSolid, UserSolid, LoginSolid, CogSolid } from 'svelte-heros';
 	let site = {
@@ -89,6 +90,4 @@
 
 <h2 class="text-2xl mt-8 dark:text-white py-8">Example</h2>
 
-<div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-	<Sidebar {links} {site} />
-</div>
+<ExampleDiv><Sidebar {links} {site} /></ExampleDiv>

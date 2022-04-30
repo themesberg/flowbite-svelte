@@ -93,26 +93,24 @@
 
 <div class="max-w-3xl mx-auto mt-16">
 	<div class="container flex flex-wrap mx-auto">
-		<div class="container rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-			<Timeline>
-				<TimelineItem {timelineItems} />
-			</Timeline>
+		<Timeline>
+			<TimelineItem {timelineItems} />
+		</Timeline>
 
-			<Timeline>
-				<TimelineItemVertical timelineItems={timelineItems2} />
-			</Timeline>
+		<Timeline>
+			<TimelineItemVertical timelineItems={timelineItems2} />
+		</Timeline>
 
-			<TimelineHorizontal>
-				<TimelineItemHorizontal timelineItems={timelineItems2} />
-			</TimelineHorizontal>
+		<TimelineHorizontal>
+			<TimelineItemHorizontal timelineItems={timelineItems2} />
+		</TimelineHorizontal>
 
-			<Activity>
-				<ActivityItem {activities} />
-			</Activity>
+		<Activity>
+			<ActivityItem {activities} />
+		</Activity>
 
-			<Group date="January 13th, 2022">
-				<GroupItem {timelines} />
-			</Group>
-		</div>
+		<Group date="January 13th, 2022">
+			<GroupItem {timelines} />
+		</Group>
 	</div>
 </div>

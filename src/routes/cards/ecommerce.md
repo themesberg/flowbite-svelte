@@ -4,6 +4,7 @@ layout: cardLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { EcommerceCard, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/EcommerceCard.json'
   // Props table
@@ -76,14 +77,14 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Examples" />
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <EcommerceCard
   title="Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport"
   link="/alerts"
   price="$543"
   img={img1}
 />
-</div>
+</ExampleDiv>
 
 ```html
 <EcommerceCard
@@ -94,7 +95,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 />
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <EcommerceCard
     title="Women's Cashmere Sweaters Lorem ipsum dolor sit amet."
     link="/tabs"
@@ -103,7 +104,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     price="$461"
     img={img2}
   />
-</div>
+</ExampleDiv>
 
 ```html
 <EcommerceCard
@@ -116,7 +117,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 />
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <EcommerceCard
     title="Pink cup Lorem ipsum dolor sit amet et mete."
     link="/cards"
@@ -125,7 +126,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     price="$321"
     img={img3}
   />
-</div>
+</ExampleDiv>
 
 
 ```html
@@ -139,7 +140,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 />
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <EcommerceCard
     title="Nintendo Game Lorem ipsum dolor sit amet."
     link="modals"
@@ -148,7 +149,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     price="$211"
     img={img4}
   />
-</div>
+</ExampleDiv>
 
 ```html
 <EcommerceCard

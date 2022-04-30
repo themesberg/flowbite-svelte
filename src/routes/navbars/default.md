@@ -4,6 +4,7 @@ layout: navbarLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Navbar, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/Navbar.json'
   // Props table
@@ -82,9 +83,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <Navbar textsize="text-xs" {siteName} {menus}/>
 ```
 
-<div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Navbar textsize="text-xs" {siteName} {menus}/>
-</div>
+</ExampleDiv>
 
 <Htwo label="text-sm" />
 
@@ -92,9 +93,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <Navbar textsize="text-sm" {siteName} {menus} />
 ```
 
-<div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Navbar textsize="text-sm" {siteName} {menus}/>
-</div>
+<ExampleDiv><Navbar textsize="text-sm" {siteName} {menus}/>
+</ExampleDiv>
 
 <Htwo label="text-base" />
 
@@ -102,9 +102,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <Navbar textsize="text-base" {siteName} {menus} />
 ```
 
-<div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Navbar textsize="text-base" {siteName} {menus}/>
-</div>
+<ExampleDiv><Navbar textsize="text-base" {siteName} {menus}/>
+</ExampleDiv>
 
 <Htwo label="text-lg" />
 
@@ -112,9 +111,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <Navbar textsize="text-lg" {siteName} {menus}/>
 ```
 
-<div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Navbar textsize="text-lg" {siteName} {menus}/>
-</div>
+<ExampleDiv><Navbar textsize="text-lg" {siteName} {menus}/>
+</ExampleDiv>
 
 <Htwo label="text-xl" />
 
@@ -122,9 +120,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <Navbar textsize="text-xl" {menus}/>
 ```
 
-<div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Navbar textsize="text-xl" {siteName} {menus} />
-</div>
+<ExampleDiv><Navbar textsize="text-xl" {siteName} {menus} />
+</ExampleDiv>
 
 <Htwo label="Props" />
 

@@ -4,6 +4,7 @@ layout: ratingLayout
 
 <script>
 	import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
 	import { Rating, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 	import { HeartSolid, ThumbUpSolid, EmojiHappySolid } from 'svelte-heros';
 	import componentProps from '../props/Rating.json'
@@ -58,9 +59,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>The default rating icon is a star. Set the total and rating props.</p>
 
-<div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-	<Rating total="5" rating="4.66" />
-</div>
+<ExampleDiv>	
+<Rating total="5" rating="4.66" />
+</ExampleDiv>
 
 ```html
 <Rating total="5" rating="4.66" />
@@ -70,9 +71,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>The default rounding for the rate is `floor`, but by adding the `ceil` prop, you can round it up.</p>
 
-<div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-	<Rating total="5" rating="4.66" ceil />
-</div>
+<ExampleDiv>	
+<Rating total="5" rating="4.66" ceil />
+</ExampleDiv>
 
 ```html
 <Rating total="5" rating="4.66" ceil />
@@ -82,11 +83,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>Use the `text` slot to add any text.</p>
 
-<div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-	<Rating total="5" rating="3.21">
+<ExampleDiv>	<Rating total="5" rating="3.21">
 		<p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.21 out of 5</p>
 	</Rating>
-</div>
+</ExampleDiv>
 
 ```html
 <Rating total="5" rating="3.21">
@@ -102,8 +102,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>The default icon size is `24`. Set the `class` in a icon component to change colors.</p>
 
-<div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-	<Rating total="5" rating="3.21">
+<ExampleDiv>	<Rating total="5" rating="3.21">
 		<span slot="ratingUp">
 			<HeartSolid class="text-red-700 dark:text-red-500" />
 		</span>
@@ -111,7 +110,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 			<HeartSolid class="text-gray-300 dark:text-gray-500" />
 		</span>
 	</Rating>
-</div>
+</ExampleDiv>
 
 ```html
 <Rating total="5" rating="3.21">
@@ -124,8 +123,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </Rating>
 ```
 
-<div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-	<Rating total="5" rating="4.7">
+<ExampleDiv>	<Rating total="5" rating="4.7">
 		<span slot="ratingUp">
 			<EmojiHappySolid class="text-purple-500 dark:text-purple-700" />
 		</span>
@@ -133,7 +131,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 			<EmojiHappySolid class="text-gray-300 dark:text-gray-500" />
 		</span>
 	</Rating>
-</div>
+</ExampleDiv>
 
 ```html
 <Rating total="5" rating="4.7">
@@ -146,8 +144,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </Rating>
 ```
 
-<div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-	<Rating total="5" rating="5">
+<ExampleDiv>	<Rating total="5" rating="5">
 		<span slot="ratingUp">
 			<ThumbUpSolid class="text-yellow-300 dark:text-yellow-200" />
 		</span>
@@ -155,7 +152,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 			<ThumbUpSolid class="text-gray-300 dark:text-gray-500" />
 		</span>
 	</Rating>
-</div>
+</ExampleDiv>
 
 ```html
 <Rating total="5" rating="5">

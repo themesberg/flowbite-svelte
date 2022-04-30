@@ -1,4 +1,5 @@
 <script>
+	import ExampleDiv from '../utils/ExampleDiv.svelte';
 	import { BadgeIcon } from '$lib/index';
 	import { InformationCircleOutline } from 'svelte-heros';
 	let link = '/';
@@ -6,7 +7,7 @@
 
 <h2 class="text-2xl w-full dark:text-white py-4">Size base</h2>
 
-<div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 	<BadgeIcon textSize="text-base"><InformationCircleOutline class="mr-1" /></BadgeIcon>
 	<BadgeIcon color="gray" textSize="text-base"><InformationCircleOutline class="mr-1" /></BadgeIcon>
 	<BadgeIcon color="red" textSize="text-base"><InformationCircleOutline class="mr-1" /></BadgeIcon>
@@ -15,4 +16,4 @@
 	<BadgeIcon color="indigo" textSize="text-base"><InformationCircleOutline class="mr-1" /></BadgeIcon>
 	<BadgeIcon color="purple" textSize="text-base"><InformationCircleOutline class="mr-1" /></BadgeIcon>
 	<BadgeIcon color="pink" textSize="text-base"><InformationCircleOutline class="mr-1" /></BadgeIcon>
-</div>
+</ExampleDiv>

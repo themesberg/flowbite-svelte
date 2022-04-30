@@ -4,6 +4,7 @@ layout: tableLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
 import { Table, TableDefaultRow, TableSearch, Breadcrumb } from '$lib/index'
 import componentProps1 from '../props/Table.json'
 import componentProps2 from '../props/TableDefaultRow.json'
@@ -42,11 +43,11 @@ let headerEx = [' Product name','Color','Category','Price','Edit']
 
 <p>Add `html` to render HTML elements in a table.</p>
 
-<div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Table header={headerEx} {divClass} >
   <TableDefaultRow items={itemEx} html />
 </Table>
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -69,11 +70,11 @@ let headerEx = [' Product name','Color','Category','Price','Edit']
 
 <p>Set `rowState` to striped to alternate background colors of every second tabel row.</p>
 
-<div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Table header={headerEx} {divClass} >
   <TableDefaultRow items={itemEx} rowState="striped" html />
 </Table>
-</div>
+</ExampleDiv>
 
 ```html
 <Table header={headerEx} {divClass} >
@@ -85,11 +86,11 @@ let headerEx = [' Product name','Color','Category','Price','Edit']
 
 <p>Set `rowState` to hover to change the background color of a data row when hovering over the element with the cursor.</p>
 
-<div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Table header={headerEx} {divClass} >
   <TableDefaultRow items={itemEx} rowState="hover" html />
 </Table>
-</div>
+</ExampleDiv>
 
 ```html
 <Table header={headerEx} {divClass} >

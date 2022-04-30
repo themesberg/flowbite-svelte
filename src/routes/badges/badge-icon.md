@@ -4,6 +4,7 @@ layout: badgeLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { BadgeIcon, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
   import {InformationCircleOutline} from 'svelte-heros'
   import componentProps from '../props/BadgeLink.json'
@@ -45,8 +46,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Size xs" />
 
-<div
-  class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <BadgeIcon name="Default" ><InformationCircleOutline class="mr-1" size="14"/></BadgeIcon>
 <BadgeIcon name="Gray" color="gray" ><InformationCircleOutline class="mr-1" size="14"/></BadgeIcon>
 <BadgeIcon name="Red" color="red" ><InformationCircleOutline class="mr-1" size="14"/></BadgeIcon>
@@ -55,7 +55,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <BadgeIcon name="Indigo" color="indigo" ><InformationCircleOutline class="mr-1" size="14"/></BadgeIcon>
 <BadgeIcon name="Purple" color="purple" ><InformationCircleOutline class="mr-1" size="14"/></BadgeIcon>
 <BadgeIcon name="Pink" color="pink" ><InformationCircleOutline class="mr-1" size="14"/></BadgeIcon>
-</div>
+</ExampleDiv>
 
 ```html
 <BadgeIcon name="Default" ><InformationCircleOutline class="mr-1" size="14"/></BadgeIcon>
@@ -70,8 +70,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Size sm" />
 
-<div
-  class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <BadgeIcon name="Default" textSize="text-sm" ><InformationCircleOutline class="mr-1" size="16"/></BadgeIcon>
 <BadgeIcon name="Gray" color="gray" textSize="text-sm" ><InformationCircleOutline class="mr-1" size="16"/></BadgeIcon>
 <BadgeIcon name="Red" color="red" textSize="text-sm" ><InformationCircleOutline class="mr-1" size="16"/></BadgeIcon>
@@ -80,7 +79,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <BadgeIcon name="Indigo" color="indigo" textSize="text-sm" ><InformationCircleOutline class="mr-1" size="16"/></BadgeIcon>
 <BadgeIcon name="Purple" color="purple" textSize="text-sm" ><InformationCircleOutline class="mr-1" size="16"/></BadgeIcon>
 <BadgeIcon name="Pink" color="pink" textSize="text-sm" ><InformationCircleOutline class="mr-1" size="16"/></BadgeIcon>
-</div>
+</ExampleDiv>
 
 ```html
 <BadgeIcon name="Default" textSize="text-sm" ><InformationCircleOutline class="mr-1" size="18"/></BadgeIcon>
@@ -95,8 +94,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Size base" />
 
-<div
-  class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <BadgeIcon name="Default" textSize="text-base" ><InformationCircleOutline class="mr-1" size="18"/></BadgeIcon>
 <BadgeIcon name="Gray" color="gray" textSize="text-base" ><InformationCircleOutline class="mr-1" size="18"/></BadgeIcon>
 <BadgeIcon name="Red" color="red" textSize="text-base" ><InformationCircleOutline class="mr-1" size="18"/></BadgeIcon>
@@ -105,7 +103,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <BadgeIcon name="Indigo" color="indigo" textSize="text-base" ><InformationCircleOutline class="mr-1" size="18"/></BadgeIcon>
 <BadgeIcon name="Purple" color="purple" textSize="text-base" ><InformationCircleOutline class="mr-1" size="18"/></BadgeIcon>
 <BadgeIcon name="Pink" color="pink" textSize="text-base" ><InformationCircleOutline class="mr-1" size="18"/></BadgeIcon>
-</div>
+</ExampleDiv>
 
 ```html
 <BadgeIcon name="Default" textSize="text-base" ><InformationCircleOutline class="mr-1" size="18"/></BadgeIcon>
@@ -120,8 +118,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Badges with icon only" />
 
-<div
-  class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <BadgeIcon textSize="text-base"><InformationCircleOutline size="16" /></BadgeIcon>
 <BadgeIcon color="gray" textSize="text-base"><InformationCircleOutline size="16" /></BadgeIcon>
 <BadgeIcon color="red" textSize="text-base"><InformationCircleOutline size="16" /></BadgeIcon>
@@ -130,7 +127,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <BadgeIcon color="indigo" textSize="text-base"><InformationCircleOutline size="16" /></BadgeIcon>
 <BadgeIcon color="purple" textSize="text-base"><InformationCircleOutline size="16" /></BadgeIcon>
 <BadgeIcon color="pink" textSize="text-base"><InformationCircleOutline size="16" /></BadgeIcon>
-</div>
+</ExampleDiv>
 
 ```html
 <BadgeIcon textSize="text-base"><InformationCircleOutline class="mr-1" size="18" /></BadgeIcon>

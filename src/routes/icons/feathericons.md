@@ -4,6 +4,7 @@ layout: iconLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Breadcrumb } from '$lib/index'
   import { ActivityIcon, AlertTriangleIcon, AnchorIcon } from '@codewithshin/svelte-feathericons'
 
@@ -36,14 +37,14 @@ layout: iconLayout
 
 <p class=" dark:text-white">If you want to change the color add size.</p>
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <ActivityIcon color="#c61515" size="12" />
 <ActivityIcon color="#c61515" size="16" />
 <AlertTriangleIcon color="#6dff6b" size="24" />
 <AlertTriangleIcon color="#6dff6b" size="28" />
 <AnchorIcon color="#23deff" size="32" />
 <AnchorIcon color="#23deff" size="36" class="dark:text-red-500"/>
-</div>
+</ExampleDiv>
 
 ```html
 <script>

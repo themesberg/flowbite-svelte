@@ -4,6 +4,7 @@ layout: dropdownLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Dropdown, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/DropdownDefault.json'
   // Props table
@@ -68,9 +69,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>* Adding a dropdown id is recommended.</p>
 
-<div class="container flex justify-center rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Dropdown {items} label="Dropdown button" id="drop1"/>
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -96,9 +97,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Dropdown divider" />
 
-<div class="container flex justify-center rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Dropdown items={items2} color="red" label="Dropdown button" id="drop2"/>
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -125,14 +126,14 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Dropdown header" />
 
-<div class="container flex justify-center rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Dropdown {items} color="purple-outline" label="Dropdown button" id="drop3">
 <div slot="header">
  <span class="block text-sm">Bonnie Green</span>
     <span class="block text-sm font-medium truncat">name@flowbite.com</span>
 </div>
 </Dropdown>
-</div>
+</ExampleDiv>
 
 
 ```html

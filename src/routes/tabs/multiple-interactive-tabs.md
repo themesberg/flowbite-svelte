@@ -4,6 +4,7 @@ layout: tabLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { InteractiveTabs, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/InteractiveTabs.json'
   // Props table
@@ -90,13 +91,13 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Examples" />
 
-<div class="container rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <InteractiveTabs tabId="myTab1" tabs={tabs1} />
-</div>
+</ExampleDiv>
 
-<div class="container rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <InteractiveTabs tabId="myTab2" tabs={tabs2} />
-</div>
+</ExampleDiv>
 
 ```html
 <script>

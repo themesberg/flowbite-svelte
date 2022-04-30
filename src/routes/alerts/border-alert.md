@@ -4,6 +4,8 @@ layout: alertLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
+
   import { BorderAlert, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/BorderAlert.json'
   // Props table
@@ -67,7 +69,7 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
 </BorderAlert>
 ```
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <BorderAlert color="blue">
     A border alert without the close button.
   </BorderAlert>
@@ -87,7 +89,7 @@ Import Alert, BorderAlert, and InfoAlert and set variables in the script tag.
   <BorderAlert alertId="border-alert-2" color="red" closeBtn>
     A border alert with the close button.
   </BorderAlert>
-</div>
+</ExampleDiv>
 
 <Htwo label="Props" />
 

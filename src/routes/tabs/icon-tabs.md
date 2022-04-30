@@ -4,6 +4,7 @@ layout: tabLayout
 
 <script>
 	import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
 	import { IconTabs, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 	import {
 		UserCircleOutline,
@@ -73,11 +74,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Examples" />
 
-<div
-	class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
->
+<ExampleDiv>
 	<IconTabs {tabs} />
-</div>
+</ExampleDiv>
 
 ```html
 <script>

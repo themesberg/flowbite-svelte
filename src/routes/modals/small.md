@@ -4,6 +4,7 @@ layout: modalLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { SmallModal, ModalButton, modalIdStore, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import { goto } from "$app/navigation";
   import componentProps1 from '../props/ModalButton.json'
@@ -115,9 +116,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Examples" />
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <ModalButton id={idBasic} btnName={btnBasicName} />
-</div>
+</ExampleDiv>
 
 <p>Create a button and modal.</p>
 
@@ -132,9 +133,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Small modal with action buttons" />
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <ModalButton id={id1} btnName={btnName1} btnColor={btnColor1} />
-</div>
+</ExampleDiv>
 
 ```html
 <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
@@ -155,9 +156,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Small modal with different colors" />
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
-</div>
+</ExampleDiv>
 
 ```html
 <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />

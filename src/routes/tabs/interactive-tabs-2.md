@@ -4,6 +4,7 @@ layout: tabLayout
 
 <script>
 	import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { InteractiveTabHead, TabContent, Card, Timeline,
 		TimelineItem, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 	import componentProps1 from '../props/InteractiveTabHead.json'
@@ -64,7 +65,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>It is possible to add other components to the `InteractiveTabs` component but using `InteractiveTabHead` and `TabContent` make it easy to add other components to tabs. Here we are adding a timeline component in the tab 1 and a card component in the tab 3:</p>
 
-<div class="container rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <InteractiveTabHead tabs={tabhead}>
     <TabContent tab={tab1}>
       <Timeline>
@@ -82,7 +83,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     </Card>
   </TabContent>
 </InteractiveTabHead>
-</div>
+</ExampleDiv>
 
 ```html
 <script>

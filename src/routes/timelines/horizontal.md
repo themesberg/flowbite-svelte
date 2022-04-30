@@ -4,6 +4,7 @@ layout: timelineLayout
 
 <script lang="ts">
 	import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
 	import { TimelineItemHorizontal, TimelineHorizontal, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 	import { CalendarOutline, AdjustmentsOutline } from 'svelte-heros';
 	import componentProps1 from '../props/TimelineItemHorizontal.json'
@@ -65,13 +66,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <h1 class="text-3xl w-full dark:text-white py-8">Horizontal Timeline</h1>
 
-<div
-  class="container rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
->
+<ExampleDiv>
   <TimelineHorizontal>
     <TimelineItemHorizontal timelineItems={timelineItems2} />
   </TimelineHorizontal>
-</div>
+</ExampleDiv>
 
 ```html
 

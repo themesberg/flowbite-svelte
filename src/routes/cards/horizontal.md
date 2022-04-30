@@ -4,6 +4,7 @@ layout: cardLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { HorizontalCard, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/HorizontalCard.json'
   // Props table
@@ -55,7 +56,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </HorizontalCard>
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <HorizontalCard
     img="/images/image-4.jpeg"
     header="Horizontal card"
@@ -65,7 +66,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     quos sed rem provident, aspernatur sunt illum eum ipsam quas. Sed ipsum ex
     non.
   </HorizontalCard>
-</div>
+</ExampleDiv>
 
 ```html
 <HorizontalCard>
@@ -73,12 +74,12 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </HorizontalCard>
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <HorizontalCard>
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam sint,iam
     quos sed rem provident, a
   </HorizontalCard>
-</div>
+</ExampleDiv>
 
 <Htwo label="Props" />
 

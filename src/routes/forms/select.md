@@ -4,6 +4,7 @@ layout: formLayout
 
 <script>
 import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
 import { onMount } from 'svelte';
 import { Select, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
 import componentProps from '../props/Select.json'
@@ -52,13 +53,13 @@ let fileuploadprops2 = {
 
 <Htwo label="Examples" />
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Select {...selectprops} bind:value={selected}>
   <option value="us">United States</option>
   <option value="ca">Canada</option>
   <option value="fr">France</option>
 </Select>
-</div>
+</ExampleDiv>
 
 ```html
 <script>

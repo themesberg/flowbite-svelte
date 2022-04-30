@@ -4,6 +4,7 @@ layout: buttonLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { GradientOutlineButton , Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/GradientOutlineButton.json'
   // Props table
@@ -35,7 +36,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="text-sm" />
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <GradientOutlineButton color="purple2blue" name="purple2blue"/>
 <GradientOutlineButton color="cyan2blue" name="cyan2blue"/>
 <GradientOutlineButton color="green2blue" name="green2blue"/>
@@ -43,7 +44,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <GradientOutlineButton color="pink2orange" name="pink2orange"/>
 <GradientOutlineButton color="teal2lime" name="teal2lime"/>
 <GradientOutlineButton color="red2yellow" name="red2yellow"/>
-</div>
+</ExampleDiv>
 
 ```html
 <GradientOutlineButton color="purple2blue" name="purple2blue"/>
@@ -57,7 +58,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="text-xs" />
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <GradientOutlineButton color="purple2blue" name="purple2blue" textSize="text-xs"/>
 <GradientOutlineButton color="cyan2blue" name="cyan2blue" textSize="text-xs"/>
 <GradientOutlineButton color="green2blue" name="green2blue" textSize="text-xs"/>
@@ -65,7 +66,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <GradientOutlineButton color="pink2orange" name="pink2orange" textSize="text-xs"/>
 <GradientOutlineButton color="teal2lime" name="teal2lime" textSize="text-xs"/>
 <GradientOutlineButton color="red2yellow" name="red2yellow" textSize="text-xs"/>
-</div>
+</ExampleDiv>
 
 ```html
 <GradientOutlineButton color="purple2blue" name="purple2blue" textSize="text-xs"/>
@@ -79,7 +80,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="text-base" />
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <GradientOutlineButton color="purple2blue" name="purple2blue" textSize="text-base"/>
 <GradientOutlineButton color="cyan2blue" name="cyan2blue" textSize="text-base"/>
 <GradientOutlineButton color="green2blue" name="green2blue" textSize="text-base"/>
@@ -87,7 +88,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <GradientOutlineButton color="pink2orange" name="pink2orange" textSize="text-base"/>
 <GradientOutlineButton color="teal2lime" name="teal2lime" textSize="text-base"/>
 <GradientOutlineButton color="red2yellow" name="red2yellow" textSize="text-base"/>
-</div>
+</ExampleDiv>
 
 ```html
 <GradientOutlineButton color="purple2blue" name="purple2blue" textSize="text-base"/>

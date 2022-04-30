@@ -4,6 +4,7 @@ layout: buttongroupLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import {ButtonGroup, ButtonGroupOutline, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import {UserCircleOutline, AdjustmentsOutline, CloudDownloadOutline} from "svelte-heros"
   import componentProps from '../props/ButtonGroup.json'
@@ -116,10 +117,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Default" />
 
-<div
-  class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <ButtonGroup buttons={buttons1}/>
-</div>
+</ExampleDiv>
 
 
 ```html
@@ -128,10 +128,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Default with icon" />
 
-<div
-  class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <ButtonGroup buttons={buttons2}/>
-</div>
+</ExampleDiv>
 
 
 ```html

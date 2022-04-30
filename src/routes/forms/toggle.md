@@ -4,8 +4,9 @@ layout: formLayout
 
 <script>
 import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
 import { onMount } from 'svelte';
-import { Input, Iconinput, FloatingLabelInput, Toggle, Textarea, Select, Fileupload, Radio, SingleCheckbox, Checkbox, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
+import { Toggle, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
 import { AtSymbolOutline , MailOutline } from 'svelte-heros'
 import componentProps from '../props/Toggle.json'
 let items = componentProps.props
@@ -19,24 +20,30 @@ let props = {
   name: 'toggle-example',
   id: 'toggle-example',
   label: 'Toggle me',
-  checked: false,
-  disabled: false
+  value:'toggle1'
 };
 let props2 = {
   name: 'toggle-example-checked',
   id: 'toggle-example-checked',
-  label: 'Toggle me (checked)',
+  label: 'Checked toggle',
   checked: true,
-  disabled: false
+  value:'toggle2'
 };
 let props3 = {
   name: 'toggle-example-disabled',
   id: 'toggle-example-disabled',
-  label: 'Toggle me (disabled)',
-  checked: false,
-  disabled: true
+  label: 'Disabled toggle',
+  disabled: true,
+  value:'toggle3'
 };
-
+let props4 = {
+  name: 'toggle-example-disabled',
+  id: 'toggle-example-disabled',
+  label: 'Disabled checked',
+  checked: true,
+  disabled: true,
+  value:'toggle4'
+};
   let crumbs = [
     {
       label:'Home',
@@ -60,49 +67,53 @@ let props3 = {
 
 <Htwo label="Examples" />
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Toggle {...props}/>
-
+<ExampleDiv>
+<div class="w-full py-2">
+<Toggle {...props} />
+</div>
+<div class="w-full py-2">
 <Toggle {...props2}/>
-
+</div>
+<div class="w-full py-2">
 <Toggle {...props3}/>
 </div>
+<div class="w-full py-2">
+<Toggle {...props4}/>
+</div>
+</ExampleDiv>
 
 ```html
 <script>
 import { Toggle } from 'flowbite-svelte'
+
 let props = {
-		name: 'toggle-example',
-		id: 'toggle-example',
-		label: 'Toggle me',
-		labelClass: 'flex relative items-center mb-4 cursor-pointer',
-		divClass:
-			'w-11 h-6 bg-gray-200 rounded-full border border-gray-200 toggle-bg dark:bg-gray-700 dark:border-gray-600',
-		spanClass: 'ml-3 text-sm font-medium text-gray-900 dark:text-gray-300',
-		checked: false,
-		disabled: false
-	};
+  name: 'toggle-example',
+  id: 'toggle-example',
+  label: 'Toggle me',
+  value:'toggle'
+};
 let props2 = {
-		name: 'toggle-example-checked',
-		id: 'toggle-example-checked',
-		label: 'Toggle me (checked)',
-		checked: true,
-		disabled: false
-	};
+  name: 'toggle-example-checked',
+  id: 'toggle-example-checked',
+  label: 'Checked toggle',
+  checked: true,
+  value:'toggle'
+};
 let props3 = {
-		name: 'toggle-example-disabled',
-		id: 'toggle-example-disabled',
-		label: 'Toggle me (disabled)',
-		checked: false,
-		disabled: true
-	};
- let textareaprops = {
-		id: 'message',
-		name: 'message',
-		label: 'Your message',
-		rows: 4,
-		placeholder: 'Leave a comment...',
-	};
+  name: 'toggle-example-disabled',
+  id: 'toggle-example-disabled',
+  label: 'Disabled toggle',
+  disabled: true,
+  value:'toggle'
+};
+let props4 = {
+  name: 'toggle-example-disabled',
+  id: 'toggle-example-disabled',
+  label: 'Disabled checked',
+  checked: true,
+  disabled: true,
+  value:'toggle'
+};
 </script>
 
 <Toggle {...props}/>
@@ -110,7 +121,55 @@ let props3 = {
 <Toggle {...props2}/>
 
 <Toggle {...props3}/>
+
+<Toggle {...props4}/>
 ```
+
+<Htwo label="Colors" />
+
+<ExampleDiv class="flex justify-between">
+
+<Toggle color="red" value='red-toggle' name="red-toggle" id="red-toggle" label="Red" checked/>
+
+<Toggle color="green" value='green-toggle' name="green-toggle" id="green-toggle" label="Green" checked/>
+
+<Toggle color="purple" value='purple-toggle' name="purple-toggle" id="purple-toggle" label="Purple" checked/>
+
+<Toggle color="yellow" value='yellow-toggle' name="yellow-toggle" id="yellow-toggle" label="Yellow" checked/>
+
+<Toggle color="teal" value='teal-toggle' name="teal-toggle" id="teal-toggle" label="Teal" checked/>
+
+<Toggle color="orange" value='orange-toggle' name="orange-toggle" id="orange-toggle" label="Orange" checked/>
+
+</ExampleDiv>
+
+```html
+<Toggle color="red" value='red-toggle' name="red-toggle" id="red-toggle" label="Red" checked/>
+
+<Toggle color="green" value='green-toggle' name="green-toggle" id="green-toggle" label="Green" checked/>
+
+<Toggle color="purple" value='purple-toggle' name="purple-toggle" id="purple-toggle" label="Purple" checked/>
+
+<Toggle color="yellow" value='yellow-toggle' name="yellow-toggle" id="yellow-toggle" label="Yellow" checked/>
+
+<Toggle color="teal" value='teal-toggle' name="teal-toggle" id="teal-toggle" label="Teal" checked/>
+
+<Toggle color="orange" value='orange-toggle' name="orange-toggle" id="orange-toggle" label="Orange" checked/>
+```
+
+<Htwo label="Sizes" />
+
+<ExampleDiv>
+<div class="w-full py-2">
+<Toggle size="small" value='small-toggle' name="small-toggle" id="small-toggle" label="Small toggle" checked/>
+</div>
+<div class="w-full py-2">
+<Toggle value='default-toggle' name="default-toggle" id="default-toggle" label="Default toggle" checked/>
+</div>
+<div class="w-full py-2">
+<Toggle size="large" value='large-toggle' name="large-toggle" id="large-toggle" label="Large toggle" checked/>
+</div>
+</ExampleDiv>
 
 <Htwo label="Props" />
 

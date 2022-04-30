@@ -4,6 +4,7 @@ layout: formLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Range, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
 import componentProps from '../props/Range.json'
 let items = componentProps.props
@@ -20,10 +21,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Examples" />
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Range id="range1" label="Default range" />
 
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -35,9 +36,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Disabled state" />
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Range id="range-disabled" label="Disabled state" disabled/>
-</div>
+</ExampleDiv>
 
 ```html
 <Range id="range-disabled" label="Disabled state" disabled/>
@@ -49,10 +50,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Min and max" />
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Range id="range-minmax" label="Min-max range" min="0" max="10" bind:value={minmaxValue}/>
 <p>Value: {minmaxValue}</p>
-</div>
+</ExampleDiv>
 
 ```html
 <Range id="range-minmax" label="Min-max range" min="0" max="10" bind:value={minmaxValue}/>
@@ -61,10 +62,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Steps" />
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Range id="range-steps" label="Range steps" min="0" max="5" bind:value={stepValue} step="0.5"/>
 <p>Value: {stepValue}</p>
-</div>
+</ExampleDiv>
 
 ```html
 <Range id="range-steps" label="Range steps" min="0" max="5" bind:value={stepValue} step="0.5"/>
@@ -73,11 +74,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Sizes" />
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Range id="small-range" label="Small range" size="small" />
 <Range id="default-range" label="Default range"  />
 <Range id="large-range" label="Large range" size="large" />
-</div>
+</ExampleDiv>
 
 ```html
 <Range id="range-disabled" label="Range steps" min="0" max="5" bind:value={stepValue} step="0.5"/>

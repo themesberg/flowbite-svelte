@@ -4,6 +4,7 @@ layout: dropdownLayout
 
 <script lang="ts">
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { ImgDropdown, Avatar, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/ImgDropdown.json'
   // Props table
@@ -77,11 +78,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Examples" />
 
-<div class="container flex justify-center rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <ImgDropdown {items}>
   <Avatar {avatar} />
 </ImgDropdown>
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -116,12 +117,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>You can change the dropdown position to the right by adjusting the `dropdownClass` and add a divider.</p>
 
-<div class="container flex justify-center rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-
+<ExampleDiv>
   <ImgDropdown items={items2} {dropdownClass} >
     <Avatar {avatar} />
   </ImgDropdown>
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -153,7 +153,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>Let's move the dropdown to left and add a header.</p>
 
-<div class="container flex justify-center rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <ImgDropdown {items} divClass="relative flex justify-end w-44" dropdownClass={dropdownClass2}>
     <div slot="header">
       <span class="block text-sm">Bonnie Green</span>
@@ -161,7 +161,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     </div>
     <Avatar {avatar} />
   </ImgDropdown>
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -180,11 +180,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>You can use an image.</p>
 
-<div class="container flex justify-center rounded-xl my-4 mx-auto bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <ImgDropdown {items}>
     <img src="/images/profile-picture-3.webp" width='50' alt="something" />
   </ImgDropdown>
-</div>
+</ExampleDiv>
 
 ```html
 <ImgDropdown {items}>

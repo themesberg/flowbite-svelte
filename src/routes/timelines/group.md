@@ -4,6 +4,7 @@ layout: timelineLayout
 
 <script lang="ts">
 	import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
 	import { Group, GroupItem, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 	import componentProps1 from '../props/Group.json'
   import componentProps2 from '../props/GroupItem.json'
@@ -57,13 +58,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <h1 class="text-3xl w-full dark:text-white py-8">Grouped Timeline</h1>
 
-<div
-  class="container rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6"
->
+<ExampleDiv>
   <Group date="January 13th, 2022">
     <GroupItem {timelines} />
   </Group>
-</div>
+</ExampleDiv>
 
 ```html
 

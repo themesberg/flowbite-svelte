@@ -4,6 +4,7 @@ layout: formLayout
 
 <script>
 import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
 import { onMount } from 'svelte';
 import { Textarea, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
 import componentProps from '../props/Textarea.json'
@@ -42,9 +43,9 @@ let textareaprops = {
 
 <Htwo label="Examples" />
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Textarea {...textareaprops} />
-</div>
+</ExampleDiv>
 
 ```html
 <script>

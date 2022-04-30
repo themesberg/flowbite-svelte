@@ -4,6 +4,7 @@ layout: buttonLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Button , Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/Button.json'
   // Props table
@@ -39,14 +40,14 @@ import { Button } from "flowbite-svelte";
 
 <Htwo label="Size xs" />
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <Button name="Button text-xs" textSize="text-xs" btnColor="blue-outline" />
   <Button name="Button text-xs" textSize="text-xs" btnColor="dark-outline" />
   <Button name="Button text-xs" textSize="text-xs" btnColor="green-outline" />
   <Button name="Button text-xs" textSize="text-xs" btnColor="red-outline" />
   <Button name="Button text-xs" textSize="text-xs" btnColor="red-outline" />
   <Button name="Button text-xs" textSize="text-xs" btnColor="purple-outline" />
-</div>
+</ExampleDiv>
 
 ```html
 <Button name="Button text-xs" textSize="text-xs" btnColor="blue-outline" />
@@ -59,14 +60,14 @@ import { Button } from "flowbite-svelte";
 
 <Htwo label="Size sm" />
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <Button name="Button" btnColor="blue-outline" />
   <Button name="Button" btnColor="dark-outline" />
   <Button name="Button" btnColor="green-outline" />
   <Button name="Button" btnColor="red-outline" />
   <Button name="Button" btnColor="red-outline" />
   <Button name="Button" btnColor="purple-outline" />
-</div>
+</ExampleDiv>
 
 ```html
 <Button name="Button" btnColor="blue-outline" />
@@ -79,14 +80,14 @@ import { Button } from "flowbite-svelte";
 
 <Htwo label="Size base" />
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Button name="Button" textSize="text-base" btnColor="blue-outline" />
 <Button name="Button" textSize="text-base" btnColor="dark-outline" />
 <Button name="Button" textSize="text-base" btnColor="green-outline" />
 <Button name="Button" textSize="text-base" btnColor="red-outline" />
 <Button name="Button" textSize="text-base" btnColor="red-outline" />
 <Button name="Button" textSize="text-base" btnColor="purple-outline" />
-</div>
+</ExampleDiv>
 
 ```html
 <Button name="Button" textSize="text-base" btnColor="blue-outline" />

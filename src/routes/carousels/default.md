@@ -4,6 +4,7 @@ layout: carouselLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Carousel, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import {ChevronDoubleLeftOutline, ChevronDoubleRightOutline, LinkOutline} from 'svelte-heros'
   import { images } from './imageData';
@@ -57,11 +58,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Examples" />
 
-<div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <div class="max-w-4xl">
     <Carousel {images} />
   </div>
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -125,11 +126,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>Use `loop` prop to loop the carousel. Use `duration=number` to set the interval</p>
 
-<div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 	<div class="max-w-4xl">
 		<Carousel {images} loop {showCaptions} {showThumbs} duration="3000"/>
 	</div>
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -144,11 +145,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>The `showThumbs` is set to `true`. Set it to `false` to hide it.</p>
 
-<div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <div class="max-w-4xl">
     <Carousel {images} {showThumbs}/>
   </div>
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -162,11 +163,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>To hide the caption, set `showCaptions` to `false`.</p>
 
-<div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <div class="max-w-4xl">
     <Carousel {images} {showThumbs} {showCaptions}/>
   </div>
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -181,11 +182,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>To hide the indicators, set `showIndicators` to `false`.</p>
 
-<div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <div class="max-w-4xl">
     <Carousel {images} {showThumbs} {showCaptions} {showIndicators}/>
   </div>
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -201,11 +202,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>To hide the slide controllers, set `slideControls` to `false`.</p>
 
-<div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <div class="max-w-4xl">
     <Carousel {images} {showThumbs} {showCaptions} {slideControls}/>
   </div>
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -221,11 +222,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>You can add custom slide controllers using <a href="/icons/heroicons">Svelte-Heros icons</a>. Change the size using the `iconSize` prop and style with the `iconClass` prop.</p>
 
-<div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <div class="max-w-4xl">
     <Carousel {images} {showThumbs} {showCaptions} {icons} {iconSize} {iconClass}/>
   </div>
-</div>
+</ExampleDiv>
 
 ```html
 <script>

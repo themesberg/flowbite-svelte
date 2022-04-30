@@ -4,6 +4,7 @@ layout: alertLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Alert, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import { flip } from 'svelte/animate';
   import componentProps from '../props/Alert.json'
@@ -58,7 +59,7 @@ let crumbs = [
 
 <p class="text-gray-900 dark:text-white py-4 text-lg">You can use Svelte animation by adding a custom event handler using the handlebtn1 prop.</p>
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6 h-64">
+<ExampleDiv>
  
 {#each alerts as item (item.id)}
 	<div animate:flip="{{ delay: 500 }}">
@@ -67,7 +68,7 @@ let crumbs = [
 		</Alert>
 	</div>
 {/each}
-</div>
+</ExampleDiv>
 
 ```html
 <script>

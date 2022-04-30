@@ -4,6 +4,7 @@ layout: buttongroupLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { ButtonGroupOutline, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
   import {UserCircleSolid, AdjustmentsSolid, CloudDownloadSolid} from "svelte-heros"
   
@@ -118,10 +119,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <Htwo label="OUtline default" />
 
 
-<div
-  class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <ButtonGroupOutline buttons={buttons2}/>
-</div>
+</ExampleDiv>
 
 ```html
 <ButtonGroupOutline buttons={buttons2}/>
@@ -129,11 +129,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Outline with icon" />
 
-<div
-  class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-  
+<ExampleDiv>
 <ButtonGroupOutline buttons={buttons1}/>
-</div>
+</ExampleDiv>
 
 ```html
 <ButtonGroupOutline buttons={buttons1}/>

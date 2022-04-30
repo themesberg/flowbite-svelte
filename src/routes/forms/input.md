@@ -4,6 +4,7 @@ layout: formLayout
 
 <script>
 import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
 import { onMount } from 'svelte';
 import { Input, Iconinput, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
 import { AtSymbolOutline , MailOutline } from 'svelte-heros'
@@ -49,7 +50,7 @@ onMount(() => {
 
 <Htwo label="Examples" />
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Input class="mb-6"
   id="large-input"
   name="size"
@@ -62,7 +63,7 @@ onMount(() => {
   />
 <Input class="mb-6" placeholder="Base input" label="Base input"/>
 <Input class="mb-6" size="sm:text-xs" placeholder="Small input" label="Small input"/>
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -91,10 +92,10 @@ import { Input } from 'flowbite-svelte'
 
 <p>If you want to use this on your website, your link to the page must have `rel="external"`.</p>
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-<Input class="mb-6" placeholder="First name" label="First name" bind:ref/>
-<Input class="mb-6" placeholder="Last name" label="Last name"/>
-</div>
+<ExampleDiv>
+<Input class="mb-6" placeholder="First name" label="First name" bind:ref />
+<Input class="mb-6" placeholder="Last name" label="Last name" />
+</ExampleDiv>
 
 ```html
 <script>
@@ -114,10 +115,10 @@ onMount(() => {
 
 <p>Add the disabled prop to change the input to disabled.</p>
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Input class="mb-6" disabled placeholder="disabled input" label="Disabled input"/>
 <Input class="mb-6" disabled readonly placeholder="disabled readonly" label="Disabled readonly input"/>
-</div>
+</ExampleDiv>
 
 ```html
 <Input class="mb-6" disabled placeholder="disabled input" label="Disabled input"/>
@@ -128,9 +129,9 @@ onMount(() => {
 
 <p>Use the helper prop to add your helper text. You can use HTML in the helper text.</p>
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Input label="Email" id="email" name="email" required placeholder="Your email" helper="You can add helper text in <b>HTML</b>."/>
-</div>
+</ExampleDiv>
 
 ```html
 <Input label="Email" id="email" name="email" required placeholder="Your email" helper="You can add helper text in <b>HTML</b>."/>
@@ -140,12 +141,12 @@ onMount(() => {
 
 <p>With the Iconinput component, you can add <a href="https://flowbite-svelte.vercel.app/icons/heroicons">Heroicons</a> or <a href="https://flowbite-svelte.vercel.app/icons/simple-icons">Simple-icons</a>. Use iconClass to modify the icon color.</p>
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Iconinput id="email" type="email" name="email" placeholder="Your email" label="Border" icon={AtSymbolOutline} iconClass="h-4 w-4 mr-2 text-blue-500 dark:text-red-500"/>
 <div class="py-4">
 <Iconinput noBorder id="email" type="email" name="email" label="No border" icon={MailOutline} iconClass="h-4 w-4 mr-2 text-blue-500 dark:text-green-500"/>
 </div>
-</div>
+</ExampleDiv>
 
 ```html
 <script>

@@ -4,6 +4,7 @@ layout: cardLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Card, Button, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/Card.json'
   // Props table
@@ -49,7 +50,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Examples" />
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <Card header="Simple card with header and content">
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
@@ -57,7 +58,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     ipsa.
     </p>
   </Card>
-</div>
+</ExampleDiv>
 
 ```html
 <Card header="Simple card with header and content">
@@ -69,7 +70,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Card with a link" />
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <Card header="Card with link" link="/" btnLabel="Read more">
   <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
@@ -77,7 +78,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     ipsa.
     </p>
   </Card>
-</div>
+</ExampleDiv>
 
 ```html
 <Card header="Card with link" link="/" btnLabel="Read more">
@@ -89,7 +90,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Card with a link and image" />
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <Card img="/images/image-1.jpeg" header="Card with link and image" link="/" btnLabel="Read more">
   <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
@@ -97,7 +98,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     ipsa.
     </p>
   </Card>
-</div>
+</ExampleDiv>
 
 ```html
 <Card img="/images/image-1.jpeg" header="Card with link and image" link="/" btnLabel="Read more">
@@ -109,7 +110,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Card with an image" />
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <Card img="/images/image-2.jpeg" header="Card with image" btnLabel="Read more">
   <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
@@ -117,7 +118,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     ipsa.
     </p>
   </Card>
-</div>
+</ExampleDiv>
 
 ```html
 <Card img="/images/image-2.jpeg" header="Card with image">
@@ -131,7 +132,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>If you need a click handler rather than a link, use a Button component.</p>
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <Card
     img="/images/image-1.jpeg"
     header="Button component"
@@ -145,7 +146,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     </div>
     </span>
   </Card>
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -170,7 +171,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Card with yellow button" />
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <Card
     img="/images/image-1.jpeg"
     header="Yellow button"
@@ -182,7 +183,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
     </p>
   </Card>
-</div>
+</ExampleDiv>
 
 ```html
 <Card
@@ -200,7 +201,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Card with purple button" />
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <Card
     img="/images/image-1.jpeg"
     header="Purple button"
@@ -214,7 +215,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     ipsa.
   </p>
   </Card>
-</div>
+</ExampleDiv>
 
 ```html
 <Card

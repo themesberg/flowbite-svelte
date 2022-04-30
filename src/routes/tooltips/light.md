@@ -4,6 +4,7 @@ layout: tooltipLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
 import {LightTooltip, Button, Table, TableDefaultRow, Breadcrumb} from '$lib/index'
 import componentProps from '../props/LightTooltip.json'
 // Props table
@@ -36,11 +37,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="LigtTootip top" />
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <LightTooltip tip="My tooltip content" top>
     <Button />
   </LightTooltip>
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -54,11 +55,11 @@ import {LightTooltip, Button} from 'flowbite-svelte'
 
 <Htwo label="LightTooltip bottom" />
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <LightTooltip tip="My tooltip content" bottom>
     <Button />
   </LightTooltip>
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -72,11 +73,11 @@ import {LightTooltip, Button} from 'flowbite-svelte'
 
 <Htwo label="LightTooltip right" />
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <LightTooltip tip="My tooltip content" right>
     <Button />
   </LightTooltip>
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -90,11 +91,11 @@ import {LightTooltip, Button} from 'flowbite-svelte'
 
 <Htwo label="LightTooltip left" />
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <LightTooltip tip="My tooltip content" left>
     <Button />
   </LightTooltip>
-</div>
+</ExampleDiv>
 
 ```html
 <script>

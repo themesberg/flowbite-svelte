@@ -4,6 +4,7 @@ layout: iconLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Breadcrumb } from '$lib/index'
   import {
     AdjustmentsSolid,
@@ -47,7 +48,7 @@ You can find all the icon names from the <a href="https://github.com/shinokada/s
 
 <p class=" dark:text-white">If you want to change the color with Tailwind CSS, add it to class prop.</p>
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <AdjustmentsSolid size="30" class="text-blue-700 dark:text-red-700" />
 <BellOutline size="30" class="text-red-700 dark:text-green-700" />
 <BriefcaseSolid  size="30" class="text-green-700 dark:text-indigo-700" />
@@ -58,7 +59,7 @@ You can find all the icon names from the <a href="https://github.com/shinokada/s
 <ChevronLeftSolid
   size="30" class="text-yellow-700 dark:text-white"
 />
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -89,11 +90,11 @@ import {
 <p>It is possible to change color with HEX color code by using the `color` prop.</p>
 
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <AdjustmentsSolid size="30"  color="#ff0000" />
 <BellOutline   color="#10ff00" />
 <BriefcaseSolid  size="30" color="#001dff" />
-</div>
+</ExampleDiv>
 
 ```html
 <AdjustmentsSolid size="30"  color="#ff0000" />

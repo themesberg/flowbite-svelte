@@ -4,6 +4,7 @@ layout: iconLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Breadcrumb } from '$lib/index'
   import { Facebook, Github, Git } from 'svelte-simples';
 
@@ -37,14 +38,14 @@ npm i -D @codewithshin/svelte-simpleicons
 
 <Htwo label="Examples" />
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6 h-72">
+<ExampleDiv>
 <Facebook class="mx-2" color="#4287f5" size="30" />
 <Github color="#66f5fa" size="30"/>  
 <Facebook class="mx-2" color="#02fa0b" size="30"/>
 <Github class="mx-2" color="#6e7070" size="30"/>
 <Git class="mx-2" color="#bc02fa" size="30"/>
 <Git class="mx-2" color="#fa0202" size="30"/>
-</div>
+</ExampleDiv>
 
 ```html
 <script>

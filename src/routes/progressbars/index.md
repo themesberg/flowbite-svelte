@@ -4,6 +4,7 @@ layout: progressbarLayout
 
 <script>
 	import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Progressbar, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
 	import componentProps from '../props/Progressbar.json'
   // Props table
@@ -41,8 +42,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>Use the `size` prop to change the size of a progress bar.</p>
 
-<div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-
+<ExampleDiv>
 <div class="my-4">
 <div class="mb-1 text-base font-medium dark:text-white">Small</div>
 	<Progressbar progress="50" size="h-1.5" />
@@ -63,7 +63,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 	<Progressbar progress="50" size="h-6" />
 </div>
 
-</div>
+</ExampleDiv>
 
 ```html
 <Progressbar progress="50" size="h-1.5" />
@@ -80,8 +80,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>Use the `color` prop to change the color of a progress bar.</p>
 
-<div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-
+<ExampleDiv>
 <div class="my-4">
 <div class="mb-1 text-base font-medium dark:text-white">Gray</div>
 	<Progressbar progress="50" color="gray" />
@@ -117,7 +116,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 	<Progressbar progress="50" color="purple" />
 </div>
 
-</div>
+</ExampleDiv>
 
 ```html
 <Progressbar progress="50" color="gray" />
@@ -139,11 +138,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>Use the `labelInside` prop to add the progress in a progress bar.</p>
 
-<div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-
+<ExampleDiv>
 <Progressbar progress="50" labelInside />
-
-</div>
+</ExampleDiv>
 
 ```html
 <Progressbar progress="50" labelInside />
@@ -153,11 +150,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>Use the `labelOutside` prop to add the progress outside of a progress bar.</p>
 
-<div class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-
+<ExampleDiv>
 <Progressbar progress="50" labelOutside="Flowbite-Svelte" />
-
-</div>
+</ExampleDiv>
 
 ```html
 <Progressbar progress="50" labelOutside="Flowbite-Svelte" />

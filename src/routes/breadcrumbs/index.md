@@ -4,6 +4,7 @@ layout: breadcrumbLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Breadcrumb, Table, TableDefaultRow } from '$lib/index'
   import componentProps from '../props/Breadcrumb.json'
   let items = componentProps.props
@@ -29,10 +30,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Default Breadcrumb" />
 
-<div
-  class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Breadcrumb {crumbs} />
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -54,10 +54,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Solid Breadcrumb" />
 
-<div
-  class="container rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <Breadcrumb {crumbs} solid/>
-</div>
+</ExampleDiv>
 
 ```html
 <Breadcrumb {crumbs} solid/>

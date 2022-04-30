@@ -4,6 +4,7 @@ layout: carouselLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { CarouselTransition, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import { quartInOut, sineInOut, bounceInOut, quintOut } from 'svelte/easing';
   import { images } from './imageData';
@@ -42,11 +43,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Example" />
 
-<div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <div class="max-w-4xl">
     <CarouselTransition {images} transitionType="fade" transitionParams="{{delay: 300, duration: 500}}"/>
   </div>
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -60,11 +61,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>Use `loop` prop to loop the carousel. Use `duration=number` to set the interval</p>
 
-<div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 	<div class="max-w-4xl">
 		<CarouselTransition {images} loop transitionType="fade" transitionParams="{{ duration: 1000 }}" {showCaptions} {showThumbs} duration="5000" />
 	</div>
-</div>
+</ExampleDiv>
 
 ```html
 <script>
@@ -77,11 +78,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Fly example" />
 
-<div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <div class="max-w-4xl">
     <CarouselTransition {images} transitionType="fly" transitionParams="{{delay: 250, duration: 300, x: 100}}" />
   </div>
-</div>
+</ExampleDiv>
 
 ```html
 <CarouselTransition {images} transitionType="fly" transitionParams="{{delay: 250, duration: 300, x: 100}}" />
@@ -89,11 +90,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Slide example" />
 
-<div class="container justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <div class="max-w-4xl">
     <CarouselTransition {images} transitionType="slide" transitionParams="{{duration: 1500, easing: bounceInOut}}"/>
   </div>
-</div>
+</ExampleDiv>
 
 ```html
 <script>

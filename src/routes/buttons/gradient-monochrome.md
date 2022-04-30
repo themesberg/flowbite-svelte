@@ -4,6 +4,7 @@ layout: buttonLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { GradientMonochromeButton , Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/GradientMonochromeButton.json'
   // Props table
@@ -36,7 +37,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="text-sm" />
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <GradientMonochromeButton color="blue">blue</GradientMonochromeButton>
 <GradientMonochromeButton color="green">green</GradientMonochromeButton>
 <GradientMonochromeButton color="cyan">cyan</GradientMonochromeButton>
@@ -45,7 +46,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <GradientMonochromeButton color="red">red</GradientMonochromeButton>
 <GradientMonochromeButton color="pink">pink</GradientMonochromeButton>
 <GradientMonochromeButton color="pink">purple</GradientMonochromeButton>
-</div>
+</ExampleDiv>
 
 ```html
 <GradientMonochromeButton color="blue">blue</GradientMonochromeButton>
@@ -60,7 +61,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="text-xs" />
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <GradientMonochromeButton color="blue" textSize="text-xs">blue</GradientMonochromeButton>
 <GradientMonochromeButton color="green" textSize="text-xs">green</GradientMonochromeButton>
 <GradientMonochromeButton color="cyan" textSize="text-xs">cyan</GradientMonochromeButton>
@@ -69,8 +70,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <GradientMonochromeButton color="red" textSize="text-xs">red</GradientMonochromeButton>
 <GradientMonochromeButton color="pink" textSize="text-xs">pink</GradientMonochromeButton>
 <GradientMonochromeButton color="pink" textSize="text-xs">purple</GradientMonochromeButton>
-
-</div>
+</ExampleDiv>
 
 ```html
 <GradientMonochromeButton color="blue" textSize="text-xs">blue</GradientMonochromeButton>
@@ -85,7 +85,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="text-base" />
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <GradientMonochromeButton color="blue" textSize="text-base">blue</GradientMonochromeButton>
 <GradientMonochromeButton color="green" textSize="text-base">green</GradientMonochromeButton>
 <GradientMonochromeButton color="cyan" textSize="text-base">cyan</GradientMonochromeButton>
@@ -94,7 +94,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <GradientMonochromeButton color="red" textSize="text-base">red</GradientMonochromeButton>
 <GradientMonochromeButton color="pink" textSize="text-base">pink</GradientMonochromeButton>
 <GradientMonochromeButton color="pink" textSize="text-base">purple</GradientMonochromeButton>
-</div>
+</ExampleDiv>
 
 ```html
 <GradientMonochromeButton color="blue" textSize="text-base">blue</GradientMonochromeButton>

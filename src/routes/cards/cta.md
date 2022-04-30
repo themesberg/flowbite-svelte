@@ -4,6 +4,7 @@ layout: cardLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { CtaCard, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/CtaCard.json'
   // Props table
@@ -91,13 +92,13 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </CtaCard>
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
 <CtaCard {btns} {title} {headColor}>
   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt libero
   dicta ex, suscipit, qui beatae in odio corrupti est quis quibusdam
   explicabo non atque!
 </CtaCard>
-</div>
+</ExampleDiv>
 
 <Htwo label="Props" />
 

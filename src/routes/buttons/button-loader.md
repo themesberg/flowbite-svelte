@@ -4,6 +4,7 @@ layout: spinnerLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Button, Spinner, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/Button.json'
   // Props table
@@ -41,12 +42,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Loaders" />
 
-<div class="container w-full rounded-xl my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-
+<ExampleDiv>
 <Button textSize="text-sm" btnColor="light" ><Spinner size="4" currentFill="#E5E7EB" currentColor="#1C64F2" />Loading ...</Button>
 <Button textSize="text-sm"><Spinner size="4" currentFill="#E5E7EB" currentColor="#fff" />Loading ...</Button>
-
-</div>
+</ExampleDiv>
 
 ```html
 <Button textSize="text-sm" btnColor="light"><Spinner size="4" currentFill="#E5E7EB" currentColor="#1C64F2" />Loading ...</Button>

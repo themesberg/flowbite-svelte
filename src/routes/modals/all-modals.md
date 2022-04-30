@@ -4,6 +4,7 @@ layout: modalLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import {
     SmallModal,
     MediumModal,
@@ -146,10 +147,10 @@ layout: modalLayout
 </SmallModal>
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <!-- Small Modal Button -->
   <ModalButton id={smallModalId} btnName={btnSName} />
-</div>
+</ExampleDiv>
 
 <Htwo label="Medium modals" />
 
@@ -179,10 +180,10 @@ layout: modalLayout
 </MediumModal>
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <!-- Medium Modal Button -->
   <ModalButton id={mediumModalId} btnName={btnMName} btnColor={btnMColor} />
-</div>
+</ExampleDiv>
 
 <Htwo label="Large modals" />
 
@@ -211,10 +212,10 @@ layout: modalLayout
 </LargeModal>
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <!-- Large Modal Button -->
   <ModalButton id={largeModalId} btnName={btnLName} btnColor={btnLColor} />
-</div>
+</ExampleDiv>
 
 <Htwo label="Extra-large modals" />
 
@@ -248,14 +249,14 @@ layout: modalLayout
 </ExtraLargeModal>   
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <!-- ExtraLarge Modal Button -->
   <ModalButton
     id={extraLargeModalId}
     btnName={btnExLName}
     btnColor={btnExLColor}
   />
-</div>
+</ExampleDiv>
 
 <Htwo label="Sign-In modals" />
 
@@ -274,14 +275,14 @@ layout: modalLayout
 />
 ```
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <!-- SignInModal Button -->
 <ModalButton
   id={signinId}
   btnName={btnSignInName}
   btnColor={btnSignInColor}
 />
-</div>
+</ExampleDiv>
 
 <SmallModal
   bind:this={smallModal}

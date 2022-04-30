@@ -24,8 +24,6 @@ import Htwo from '../utils/Htwo.svelte'
 <div class="{{ error ? 'text-red-600' : 'text-green-600' }}"></div>
 ```
 
-
-
 <Htwo label="Types and Props" />
 
 <p>Please add a type to `export`ed variables. When we generate props files, it will automatically pick up types from your file. If you don't add a type, it will break.</p>

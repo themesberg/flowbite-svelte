@@ -4,6 +4,7 @@ layout: modalLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { ModalButton, ExtraLargeModal, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps1 from '../props/ModalButton.json'
   import componentProps2 from '../props/ExtraLargeModal.json'
@@ -83,9 +84,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Examples" />
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <ModalButton id="exm1" btnName="Info Modal" />
-</div>
+</ExampleDiv>
 
 <ExtraLargeModal id="exm1" title="Info Modal">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -109,9 +110,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Extra-large modals with on button" />
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <ModalButton id="id1" btnName="Extra Large Modal with one button" btnColor="green" />
-</div>
+</ExampleDiv>
 
 <ExtraLargeModal
   bind:this={modal2}
@@ -151,9 +152,9 @@ const handlebtn1 = () => {
 
 <Htwo label="Extra-large modal with two buttons" />
 
-<div class="container flex flex-wrap justify-center rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
+<ExampleDiv>
   <ModalButton id="id2" btnName="Extra Large Modal with two buttons" btnColor="purple" />
-</div>
+</ExampleDiv>
 
 <p class=" dark:text-white py-4">Create a button and modal.</p>
 
