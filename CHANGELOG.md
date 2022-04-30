@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.9](https://github.com/themesberg/flowbite-svelte/compare/v0.15.8...v0.15.9) (2022-04-30)
+
+
+### Features
+
+* add color and size to Toggle component ([6595bb3](https://github.com/themesberg/flowbite-svelte/commit/6595bb38d95ae42862d134fee979ae97b66ab911))
+
 ### [0.15.8](https://github.com/themesberg/flowbite-svelte/compare/v0.15.7...v0.15.8) (2022-04-29)
 
 
