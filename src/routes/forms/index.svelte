@@ -14,21 +14,24 @@
 		<Card img="/images/forms.webp" btnColor="red" header="FLOATING LABEL" link="/forms/floating-label" btnLabel="Read more" />
 	</div>
 	<div class="p-4">
-		<Card img="/images/forms.webp" btnColor="blue" header="RADIO" link="/forms/radio" btnLabel="Read more" />
+		<Card img="/images/forms.webp" btnColor="yellow" header="INPUT" link="/forms/input" btnLabel="Read more" />
 	</div>
 	<div class="p-4">
-		<Card img="/images/forms.webp" btnColor="green" header="RANGE" link="/forms/range" btnLabel="Read more" />
+		<Card img="/images/forms.webp" btnColor="indigo" header="RADIO" link="/forms/radio" btnLabel="Read more" />
 	</div>
 	<div class="p-4">
-		<Card img="/images/forms.webp" btnColor="red" header="SEARCH" link="/forms/search" btnLabel="Read more" />
+		<Card img="/images/forms.webp" btnColor="gray" header="RANGE" link="/forms/range" btnLabel="Read more" />
 	</div>
 	<div class="p-4">
-		<Card img="/images/forms.webp" btnColor="blue" header="SELECT" link="/forms/select" btnLabel="Read more" />
+		<Card img="/images/forms.webp" btnColor="purple" header="SEARCH" link="/forms/search" btnLabel="Read more" />
+	</div>
+	<div class="p-4">
+		<Card img="/images/forms.webp" btnColor="pink" header="SELECT" link="/forms/select" btnLabel="Read more" />
 	</div>
 	<div class="p-4">
 		<Card img="/images/forms.webp" btnColor="green" header="TEXTAREA" link="/forms/textarea" btnLabel="Read more" />
 	</div>
 	<div class="p-4">
-		<Card img="/images/forms.webp" btnColor="red" header="TOGGLE" link="/forms/toggle" btnLabel="Read more" />
+		<Card img="/images/forms.webp" btnColor="blue" header="TOGGLE" link="/forms/toggle" btnLabel="Read more" />
 	</div>
 </div>
