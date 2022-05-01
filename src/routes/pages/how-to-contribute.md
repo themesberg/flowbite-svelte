@@ -10,6 +10,10 @@ import Htwo from '../utils/Htwo.svelte'
 
 <p>Here are some guidelines we'd like you to follow before submitting a PR.</p>
 
+<Htwo label="Pleas use pnpm to install a fork" />
+
+<p>The repo uses `pnpm`, so using `pnpm` is desiable when you fork and install dependencies to avoid unseen problems.</p>
+
 <Htwo label="Frontend pages" />
 
 <p><a href="https://tailwindcss.com/docs/content-configuration#dynamic-class-names">Tailwind warns</a> that you don't construct class names dynamically. In stead of this:</p>
