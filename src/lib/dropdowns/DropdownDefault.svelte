@@ -41,7 +41,7 @@
 
 	export let items: DropdownType[];
 
-	export let dropdownClass: string = 'absolute -left-44 top-12 z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700';
+	export let dropdownClass: string = 'absolute left-0 top-1 z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700';
 
 	export let headerClass: string = 'py-3 px-4 text-gray-900 dark:text-white';
 

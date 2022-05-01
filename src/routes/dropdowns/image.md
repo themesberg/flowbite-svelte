@@ -4,7 +4,7 @@ layout: dropdownLayout
 
 <script lang="ts">
   import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { ImgDropdown, Avatar, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/ImgDropdown.json'
   // Props table
@@ -12,7 +12,7 @@ import ExampleDiv from '../utils/ExampleDiv.svelte'
   let propHeader = ['Name', 'Type', 'Default']
   
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
-let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
   let avatar = {
     src: '/images/profile-picture-1.webp',
     alt: 'My avatar',
@@ -52,7 +52,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   let dropdownClass =
     'hidden absolute top-14 z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700';
   let dropdownClass2 =
-    'absolute top-14 z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700';
+    'absolute top-14 z-10 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700';
   
   let crumbs = [
     {
@@ -113,7 +113,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </script>
 ```
 
-<Htwo label="Position right" />
+<Htwo label="Dropdown position right" />
 
 <p>You can change the dropdown position to the right by adjusting the `dropdownClass` and add a divider.</p>
 
@@ -149,12 +149,12 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </ImgDropdown>
 ```
 
-<Htwo label="Position left" />
+<Htwo label="Dropdown position left" />
 
 <p>Let's move the dropdown to left and add a header.</p>
 
 <ExampleDiv>
-  <ImgDropdown {items} divClass="relative flex justify-end w-44" dropdownClass={dropdownClass2}>
+  <ImgDropdown {items} divClass="relative flex justify-end" dropdownClass={dropdownClass2}>
     <div slot="header">
       <span class="block text-sm">Bonnie Green</span>
       <span class="block text-sm font-medium truncat">name@flowbite.com</span>
@@ -165,11 +165,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 ```html
 <script>
-  ...
-  let dropdownClass2 = 'hidden absolute -left-40 top-14 z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700';
+  let dropdownClass2 ='absolute top-14 z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700';
 </script>
 
-<ImgDropdown {items} divClass="relative flex justify-end w-44" dropdownClass={dropdownClass2}>
+  <ImgDropdown {items} divClass="relative flex justify-end" >
     <div slot="header">
       <span class="block text-sm">Bonnie Green</span>
       <span class="block text-sm font-medium truncat">name@flowbite.com</span>
