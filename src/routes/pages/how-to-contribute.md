@@ -64,10 +64,24 @@ When you have a breaking change:
 git commit -a "feat: change btnClass name to bClass" -m "BREAKING CHANGE: change the Button component attributes"
 ```
 
-<Htwo label="Test" />
+<Htwo label="Playwright Test" />
 
 <p>Before submitting a PR, please run a test:</p>
 
 ```sh
 npm run test
+```
+
+<Htwo label="A11y Test" />
+
+<p>I'm in a process for the best A11y testing process at the moment. Fo now, please install [@axe-core/cli](https://www.npmjs.com/package/@axe-core/cli) to test a page.</p>
+
+```sh
+npm install @axe-core/cli -g
+```
+
+<p>Test a page.</p>
+
+```sh
+axe http://localhost:3000/dropdowns/image
 ```
