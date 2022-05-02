@@ -147,7 +147,7 @@ export interface PillTabType {
 
 export interface RadioType {
 	id: string;
-	label: string;
+	label: string | HTMLElement;
 	value: string;
 	checked?: boolean;
 	disabled?: boolean;

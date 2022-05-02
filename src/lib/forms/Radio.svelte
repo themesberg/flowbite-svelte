@@ -8,14 +8,12 @@
 	export let options: RadioType[];
 </script>
 
-<fieldset>
-	<legend class="sr-only">{legend}</legend>
-	{#each options as option}
-		<div class={divClass}>
-			<input id={option.id} type="radio" {name} value={option.value} class={inputClass} aria-labelledby={option.id} aria-describedby={option.id} checked={option.checked} disabled={option.disabled} />
-			<label for={option.id} class={labelClass}>
-				{option.label}
-			</label>
-		</div>
-	{/each}
-</fieldset>
+{#each options as option}
+	<div class={divClass}>
+		<input id={option.id} type="radio" {name} value={option.value} class={inputClass} aria-labelledby={option.id} aria-describedby={option.id} checked={option.checked} disabled={option.disabled} />
+		<label for={option.id} class={labelClass}>
+			{@html option.label}
+		</label>
+		<slot name="helper" />
+	</div>
+{/each}

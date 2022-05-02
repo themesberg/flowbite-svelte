@@ -34,8 +34,16 @@ let radiooptions = [
   }
 ];
 
-let radioname='countries'
+let radiooptions2 = [
+  {
+    id: 'country-option-1',
+    value: 'USA',
+    checked: true,
+    label: 'Radio button with a <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">link inside</a>.'
+  }
+];
 
+let radioname='countries'
 
   let crumbs = [
     {
@@ -88,6 +96,26 @@ let radioname='countries'
 </script>
 
 <Radio options={radiooptions} name={radioname}/>
+```
+
+<Htwo label="Radio label with a link" />
+
+<ExampleDiv>
+<Radio options={radiooptions2} name="label-link"/>
+</ExampleDiv>
+
+```html
+<script>
+let radiooptions2 = [
+  {
+    id: 'country-option-1',
+    value: 'USA',
+    checked: true,
+    label: 'Radio button with a <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">link inside</a>.'
+  }
+];
+</script>  
+<Radio options={radiooptions2} name="label-link"/>
 ```
 
 <Htwo label="Props" />
