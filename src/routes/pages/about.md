@@ -28,7 +28,7 @@ layout: docLayout
 
 <Htwo label="Flowbite Svelte" />
 
-<p class="dark:text-white w-full text-lg py-2"><a href="/">Flowbite-Svelte</a> is an unofficial Flowbite component library for Svelte. All interactivities are handled by Svelte.
+<p class="dark:text-white w-full text-lg py-2"><a href="/">Flowbite-Svelte</a> is an official Flowbite component library for Svelte. All interactivities are handled by Svelte.
 </p>
 
 

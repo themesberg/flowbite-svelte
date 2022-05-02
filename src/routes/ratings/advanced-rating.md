@@ -4,7 +4,7 @@ layout: ratingLayout
 
 <script>
 	import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
+	import ExampleDiv from '../utils/ExampleDiv.svelte'
 	import { Rating, AdvancedRating, ScoreRating, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 	import { ThumbUpSolid } from 'svelte-heros';
 	import componentProps from '../props/AdvancedRating.json'
@@ -13,7 +13,7 @@ import ExampleDiv from '../utils/ExampleDiv.svelte'
 	let propHeader = ['Name', 'Type', 'Default']
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
-let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+	let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
   let crumbs = [
     {
@@ -59,7 +59,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>Set the `total`, rating`, and `ratings` prop for AdvancedRation component. Use the `rating` slot for Rating component with the `total` and `rating` props. Use the `globalText` slot for additional information.</p>
 
-<ExampleDiv>	<AdvancedRating
+<ExampleDiv>	
+<AdvancedRating
 		total="5"
 		rating="3.21"
 		ratings={[
@@ -80,25 +81,24 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </ExampleDiv>
 
 ```html
-<ExampleDiv>	<AdvancedRating
-		total="5"
-		rating="3.21"
-		ratings={[
-			{ label: '5 star', rating: 70 },
-			{ label: '4 star', rating: 17 },
-			{ label: '3 star', rating: 8 },
-			{ label: '2 star', rating: 4 },
-			{ label: '1 star', rating: 1 }
-		]}
-	>
-		<span slot="rating">
-			<Rating total="5" rating="3.21">
-				<p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.21 out of 5</p>
-			</Rating>
-		</span>
-		<p slot="globalText" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">1,745 global ratings</p>
-	</AdvancedRating>
-</div>
+<AdvancedRating
+	total="5"
+	rating="3.21"
+	ratings={[
+		{ label: '5 star', rating: 70 },
+		{ label: '4 star', rating: 17 },
+		{ label: '3 star', rating: 8 },
+		{ label: '2 star', rating: 4 },
+		{ label: '1 star', rating: 1 }
+	]}
+>
+	<span slot="rating">
+		<Rating total="5" rating="3.21">
+			<p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.21 out of 5</p>
+		</Rating>
+	</span>
+	<p slot="globalText" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">1,745 global ratings</p>
+</AdvancedRating>
 ```
 
 <Htwo label="Different icon" />

@@ -45,7 +45,7 @@ npm run gen:props
 
 <Htwo label="Conventional commit" />
 
-<p>When make a commit, we recommend using <a href="https://www.conventionalcommits.org/en/v1.0.0/">the Coventional commits</a>.</p>
+<p>When makimg a commit, we recommend using <a href="https://www.conventionalcommits.org/en/v1.0.0/">the Coventional commits</a>.</p>
 
 Some examples are:
 
@@ -74,7 +74,7 @@ npm run test
 
 <Htwo label="A11y Test" />
 
-<p>I'm in a process for the best A11y testing process at the moment. Fo now, please install [@axe-core/cli](https://www.npmjs.com/package/@axe-core/cli) to test a page.</p>
+<p>I'm in a process of finding the best A11y testing method at the moment. For now, please install [@axe-core/cli](https://www.npmjs.com/package/@axe-core/cli) to test pages relating to your change.</p>
 
 ```sh
 npm install @axe-core/cli -g
