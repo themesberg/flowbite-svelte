@@ -86,7 +86,7 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/carousel/">
+        <a href="https://flowbite-svelte.com/carousels/">
             <img alt="Tailwind CSS Carousel" src="https://flowbite.s3.amazonaws.com/github/carousel.jpg">
         </a>
     </td>
@@ -326,3 +326,11 @@ npm run gen:props
 ```
 
 This will pull all props from components and replace files in `/src/routes/props` directory.
+
+## Contribute
+
+Please read [How to contribute](https://github.com/themesberg/flowbite-svelte/blob/main/CONTRIBUTING.md).
+
+## Changelog
+
+[Changelog](https://github.com/themesberg/flowbite-svelte/blob/main/CHANGELOG.md)
