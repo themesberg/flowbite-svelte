@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.11](https://github.com/themesberg/flowbite-svelte/compare/v0.15.10...v0.15.11) (2022-05-03)
+
+
+### Features
+
+* add Search component ([c9874ad](https://github.com/themesberg/flowbite-svelte/commit/c9874ada31fbf20c74a882ee6392e9a7cc8ecc36))
+
 ### [0.15.10](https://github.com/themesberg/flowbite-svelte/compare/v0.15.9...v0.15.10) (2022-05-03)
 
 
