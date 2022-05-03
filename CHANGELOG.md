@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.10](https://github.com/themesberg/flowbite-svelte/compare/v0.15.9...v0.15.10) (2022-05-03)
+
+
+### Features
+
+* add radio label with a link to radio form ([2c3fe6f](https://github.com/themesberg/flowbite-svelte/commit/2c3fe6f9b24a7364a61fc534163c87a157afff12))
+
+
+### Bug Fixes
+
+* add Input to form index ([00ec469](https://github.com/themesberg/flowbite-svelte/commit/00ec46911c2748fb9224cf91ae68b3dca1c02dd7))
+* position update for dropdown and imgdropdown components ([1aef255](https://github.com/themesberg/flowbite-svelte/commit/1aef2559e187458c89f4ad40acbbc8c94719b7ae))
+
 ### [0.15.9](https://github.com/themesberg/flowbite-svelte/compare/v0.15.8...v0.15.9) (2022-04-30)
 
 
