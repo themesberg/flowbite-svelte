@@ -16,167 +16,300 @@
 - [CLI](https://flowbite-svelte.com/pages/cli)
 - [License](https://flowbite-svelte.com/pages/license)
 
-## Accordion components
+## Documentation
 
-- [Default accordion](https://flowbite-svelte.com/accordions/default)
-- [Icon accordion](https://flowbite-svelte.com/accordions/icon-accordion)
+For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/).
 
-## Alert components
+## Components
 
-- [Default alert](https://flowbite-svelte.com/alerts/default-alert)
-- [Border alert](https://flowbite-svelte.com/alerts/border-alert)
-- [Information alert](https://flowbite-svelte.com/alerts/information-alert)
-- [Animation alert](https://flowbite-svelte.com/alerts/animation)
+<table>
+  <tr>
+    <td width="33.3333%">Accordion</td>
+    <td width="33.3333%">Alerts</td>
+     <td width="33.3333%">Avatar</td>
+  </tr>
+  <tr>
+  <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/accordions/">
+            <img alt="Tailwind CSS Accordion" src="https://flowbite.s3.amazonaws.com/github/accordion.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/alerts/">
+            <img alt="Tailwind CSS Alerts" src="https://flowbite.s3.amazonaws.com/github/alerts.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/avatar/">
+            <img alt="Tailwind CSS Avatar" src="https://flowbite.s3.amazonaws.com/github/avatar.jpg">
+        </a>
+    </td>
+  </tr>
+  <tr>
+      <td width="33.3333%">Badges</td>
+    <td width="33.3333%">Breadcrumbs</td>
+    <td width="33.3333%">Button group</td>
+    
+  </tr>
+  <tr>
+  <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/badges/">
+            <img alt="Tailwind CSS Badge" src="https://flowbite.s3.amazonaws.com/github/badge.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/breadcrumbs/">
+            <img alt="Tailwind CSS Breadcrumbs" src="https://flowbite.s3.amazonaws.com/github/breadcrumbs.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/button-groups/">
+            <img alt="Tailwind CSS Button Group" src="https://flowbite.s3.amazonaws.com/github/button-group.jpg">
+        </a>
+    </td>
+  </tr>
+  <tr>
+  <td width="33.3333%">Buttons</td>
+    <td width="33.3333%">Cards</td>
+    <td width="33.3333%">Carousel</td>
+    
+  </tr>
+  <tr>
+  <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/buttons/">
+            <img alt="Tailwind CSS Buttons" src="https://flowbite.s3.amazonaws.com/github/buttons.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/cards/">
+            <img alt="Tailwind CSS Cards" src="https://flowbite.s3.amazonaws.com/github/cards.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/carousel/">
+            <img alt="Tailwind CSS Carousel" src="https://flowbite.s3.amazonaws.com/github/carousel.jpg">
+        </a>
+    </td>
+  </tr>
+  <tr>
+   <td width="33.3333%">Dark mode</td>
+  <td width="33.3333%">Dropdown</td>
+  <td width="33.3333%">Footer</td>
+  </tr>
+  <tr>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/darkmode/">
+            <img alt="Tailwind CSS Forms" src="https://flowbite.s3.amazonaws.com/github/forms.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/dropdowns/">
+            <img alt="Tailwind CSS Dropdown" src="https://flowbite.s3.amazonaws.com/github/dropdown.jpg">
+        </a>
+    </td>
+     <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/footer/">
+            <img alt="Tailwind CSS Footer" src="https://flowbite.s3.amazonaws.com/github/footer.jpg">
+        </a>
+    </td>
+  </tr>
+  <tr>
+  <td width="33.3333%">Forms</td>
+  <td width="33.3333%">Icons</td>
+    <td width="33.3333%">List group</td>
+  </tr>
+  <tr>
+   <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/forms/">
+            <img alt="Tailwind CSS Forms" src="https://flowbite.s3.amazonaws.com/github/forms.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/icons/">
+            <img alt="Icons" src="https://flowbite.s3.amazonaws.com/github/navbar.jpg">
+        </a>
+    </td>
+     <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/list-group/">
+            <img alt="Tailwind CSS List group" src="https://flowbite.s3.amazonaws.com/github/list-group.jpg">
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="33.3333%">Modals</td>
+    <td width="33.3333%">Navbars</td>
+     <td width="33.3333%">Pagination</td>
+  </tr>
+  <tr>
+   <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/modals/">
+            <img alt="Tailwind CSS Modal" src="https://flowbite.s3.amazonaws.com/github/modal.jpg">
+        </a>
+    </td>
+     <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/navbars/">
+            <img alt="Tailwind CSS Navbar" src="https://flowbite.s3.amazonaws.com/github/navbar.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/paginations/">
+            <img alt="Tailwind CSS Pagination" src="https://flowbite.s3.amazonaws.com/github/pagination.jpg">
+        </a>
+    </td>
+  </tr>
+  <tr>
+  <td width="33.3333%">Progress bar</td>
+  <td width="33.3333%">Ratings</td>
+  <td width="33.3333%">Sidebars</td>
+  </tr>
+  <tr>
+  <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/progressbars/">
+            <img alt="Tailwind CSS Progress Bar" src="https://flowbite.s3.amazonaws.com/github/progress.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/ratings/">
+            <img alt="Tailwind CSS Rating" src="https://flowbite.s3.amazonaws.com/github/rating.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/sidebars/">
+            <img alt="Tailwind CSS Sidebar" src="https://flowbite.s3.amazonaws.com/github/sidebar.jpg">
+        </a>
+    </td>
+  </tr>
+  <tr>
+  <td width="33.3333%">Spinners</td>
+  <td width="33.3333%">Tables</td>
+    <td width="33.3333%">Tabs</td>
+  </tr>
+  <tr>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/spinners/">
+            <img alt="Tailwind CSS Spinner" src="https://flowbite.s3.amazonaws.com/github/spinner.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/tables/">
+            <img alt="Tailwind CSS Tables" src="https://flowbite.s3.amazonaws.com/github/tables.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/tabs/">
+            <img alt="Tailwind CSS Tabs" src="https://flowbite.s3.amazonaws.com/github/tabs.jpg">
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="33.3333%">Timelines</td>
+    <td width="33.3333%">Toast</td>
+    <td width="33.3333%">Tooltips</td>
+  </tr>
+  <tr>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/timelines/">
+            <img alt="Tailwind CSS Timeline" src="https://flowbite.s3.amazonaws.com/github/timeline.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/toasts/">
+            <img alt="Tailwind CSS Toast" src="https://flowbite.s3.amazonaws.com/github/toast.jpg">
+        </a>
+    </td>
+       <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/tooltips/">
+            <img alt="Tailwind CSS Tooltips" src="https://flowbite.s3.amazonaws.com/github/tooltips.jpg">
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="33.3333%">Input Field</td>
+    <td width="33.3333%">File Input</td>
+    <td width="33.3333%">Search Input</td>
+  </tr>
+  <tr>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/forms/input/">
+            <img alt="Tailwind CSS Input Field" src="https://flowbite.s3.amazonaws.com/github/input-field.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/forms/file-input/">
+            <img alt="Tailwind CSS File Input" src="https://flowbite.s3.amazonaws.com/github/file-input.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/forms/search/">
+            <img alt="Tailwind CSS Search Input" src="https://flowbite.s3.amazonaws.com/github/search-input.jpg">
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="33.3333%">Select</td>
+    <td width="33.3333%">Textarea</td>
+    <td width="33.3333%">Checkbox</td>
+  </tr>
+  <tr>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/forms/select/">
+            <img alt="Tailwind CSS Select" src="https://flowbite.s3.amazonaws.com/github/select.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/forms/textarea/">
+            <img alt="Tailwind CSS Textarea" src="https://flowbite.s3.amazonaws.com/github/textarea.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/forms/checkbox/">
+            <img alt="Tailwind CSS Checkbox" src="https://flowbite.s3.amazonaws.com/github/checkbox.jpg">
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="33.3333%">Radio</td>
+    <td width="33.3333%">Toggle</td>
+    <td width="33.3333%">Range Slider</td>
+  </tr>
+  <tr>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/forms/radio/">
+            <img alt="Tailwind CSS Radio" src="https://flowbite.s3.amazonaws.com/github/radio.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/forms/toggle/">
+            <img alt="Tailwind CSS Toggle" src="https://flowbite.s3.amazonaws.com/github/toggle.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/forms/range/">
+            <img alt="Tailwind CSS Range Slider" src="https://flowbite.s3.amazonaws.com/github/range-slider.jpg">
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="33.3333%">Floating Label</td>
+  </tr>
+  <tr>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/forms/floating-label/">
+            <img alt="Tailwind CSS Floating Label" src="https://flowbite.s3.amazonaws.com/github/floating-label.jpg">
+        </a>
+    </td>
+  </tr>
+</table>
 
-## Avatar components
+## Community
 
-- [Avatar](https://flowbite-svelte.com/avatar)
+If you need help or just want to discuss about the library join the community on Github:
 
-## Badges components
+⌨️ [Discuss about Flowbite on GitHub](https://github.com/themesberg/flowbite/discussions)
 
-- [Default badge](https://flowbite-svelte.com/badges/default)
-- [Icon badge](https://flowbite-svelte.com/badges/badge-icon)
-- [Link badge](https://flowbite-svelte.com/badges/badge-link)
+For casual chatting with others using the library:
 
-## Breadcrumb components
-
-- [Breadcrumb](https://flowbite-svelte.com/breadcrumbs)
-
-## Button group compnents
-
-- [Default button group](https://flowbite-svelte.com/button-groups/default)
-- [Outline button group](https://flowbite-svelte.com/button-groups/outline)
-
-## Button components
-
-- [Default Button](https://flowbite-svelte.com/buttons/default)
-- [Colored Shadow Button](https://flowbite-svelte.com/buttons/colored-shadow)
-- [Gradient Duotone Button](https://flowbite-svelte.com/buttons/gradient-duotone)
-- [Gradient Monochrome Button](https://flowbite-svelte.com/buttons/gradient-monochrome)
-- [Gradietn Outline Button](https://flowbite-svelte.com/buttons/gradient-outline)
-- [Outlined Button](https://flowbite-svelte.com/buttons/outlined)
-- [Rounded Button](https://flowbite-svelte.com/buttons/rounded)
-- [Loader Button](https://flowbite-svelte.com/spinners/button-loader)
-
-## Card components
-
-- [Default Card](https://flowbite-svelte.com/cards/card)
-- [CTA Card](https://flowbite-svelte.com/cards/cta)
-- [Ecommerce Card](https://flowbite-svelte.com/cards/ecommerce)
-- [Horizontal Card](https://flowbite-svelte.com/cards/horizontal)
-- [Interactive Card](https://flowbite-svelte.com/cards/interactive)
-- [List Card](https://flowbite-svelte.com/cards/list)
-- [Signin Card](https://flowbite-svelte.com/cards/signin)
-
-## Carousel components
-
-- [Carousel](https://flowbite-svelte.com/carousels/default)
-- [Carousel with transition](https://flowbite-svelte.com/carousels/transition)
-
-## Dark mode components
-
-- [Dark mode](https://flowbite-svelte.com/darkmode)
-
-## Dropdown components
-
-- [Dropdown](https://flowbite-svelte.com/dropdowns/default)
-- [Dropdown with Image](https://flowbite-svelte.com/dropdowns/image)
-
-## Form components
-
-- [Checkbox](https://flowbite-svelte.com/forms/checkbox)
-- [File input](https://flowbite-svelte.com/forms/file-input)
-- [Floating label](https://flowbite-svelte.com/forms/floating-label)
-- [Input](https://flowbite-svelte.com/forms/input)
-- [Radio](https://flowbite-svelte.com/forms/radio)
-- [Range](https://flowbite-svelte.com/forms/range)
-- [Textarea](https://flowbite-svelte.com/forms/textarea)
-- [Toggle](https://flowbite-svelte.com/forms/toggle)
-
-## Footer components
-
-- [Default Footer](https://flowbite-svelte.com/footer/default)
-- [Footer with Logo](https://flowbite-svelte.com/footer/logo)
-- [Footer with Sitemap](https://flowbite-svelte.com/footer/sitemap)
-- [Footer with Socialmedia](https://flowbite-svelte.com/footer/socialmedia)
-
-## Icons components
-
-- [Heroicons](https://flowbite-svelte.com/icons/heroicons)
-- [Simpleicons](https://flowbite-svelte.com/icons/simple-icons)
-- [Feathericons](https://flowbite-svelte.com/icons/feathericons)
-
-## List group components
-
-- [List group](https://flowbite-svelte.com/list-group)
-
-## Modal components
-
-- [Small Modal](https://flowbite-svelte.com/modals/small)
-- [Medium Modal](https://flowbite-svelte.com/modals/medium)
-- [Large Modal](https://flowbite-svelte.com/modals/large)
-- [Extra Large Modal](https://flowbite-svelte.com/modals/extra-large)
-- [Signin Modal](https://flowbite-svelte.com/modals/signin)
-- [All Modals](https://flowbite-svelte.com/modals/all-modals)
-
-## Navbar components
-
-- [Default Navbar](https://flowbite-svelte.com/navbars/default)
-- [Dropdown Navbar](https://flowbite-svelte.com/navbars/dropdown)
-
-## Pagination components
-
-- [Pagination](https://flowbite-svelte.com/paginations)
-
-## Progress bar
-
-- [Probress bar](https://flowbite-svelte.com/progressbars)
-
-## Rating
-
-- [Rating](https://flowbite-svelte.com/ratings/rating)
-- [Advanced rating](https://flowbite-svelte.com/ratings/advanced-rating)
-- [Score rating](https://flowbite-svelte.com/ratings/score-rating)
-
-## Sidebar components
-
-- [Sidebar](https://flowbite-svelte.com/sidebars)
-
-## Spinner components
-
-- [Default Spinner](https://flowbite-svelte.com/spinners/default)
-
-## Tab components
-
-- [Default Tabs](https://flowbite-svelte.com/tabs/default-tabs)
-- [Underline Tabs](https://flowbite-svelte.com/tabs/underline-tabs)
-- [Icon Tabs](https://flowbite-svelte.com/tabs/icon-tabs)
-- [Full width Tabs](https://flowbite-svelte.com/tabs/full-width-tabs)
-- [Interactive Tabs](https://flowbite-svelte.com/tabs/interactive-tabs)
-- [Interactive Tabs 2](https://flowbite-svelte.com/tabs/interactive-tabs-2)
-- [Multiple Interactive Tabs](https://flowbite-svelte.com/tabs/multiple-interactive-tabs)
-- [Pill Tabs](https://flowbite-svelte.com/tabs/pilltabs)
-
-## Table components
-
-- [Tables](https://flowbite-svelte.com/tables)
-
-## Timeline components
-
-- [Default timeline](https://flowbite-svelte.com/timelines/default)
-- [Vetical timeline](https://flowbite-svelte.com/timelines/vertical)
-- [Horizontal timeline](https://flowbite-svelte.com/timelines/horizontal)
-- [Activity log](https://flowbite-svelte.com/timelines/activity)
-- [Grouped timeline](https://flowbite-svelte.com/timelines/group)
-
-## Toast components
-
-- [Toast](https://flowbite-svelte.com/toasts)
-
-## Tooltip components
-
-- [Default Tooltip](https://flowbite-svelte.com/tooltips/default)
-- [Light Tooltip](https://flowbite-svelte.com/tooltips/light)
+💬 [Join the Flowbite Discord Server](https://discord.gg/4eeurUVvTy)
 
 ## Tests
 
