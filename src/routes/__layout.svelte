@@ -21,7 +21,7 @@
 		sidebarStayOpen.update((n) => (n = false)); // when open a sidebar clicking outside closes it
 	}
 
-	let asideClass = 'absolute w-auto bg-white pt-8 shadow-lg z-50 px-4 h-screen z-50 overflow-scroll dark:bg-gray-800';
+	let asideClass = 'absolute w-auto bg-white pt-8 shadow-lg z-50 px-4 h-full z-50 overflow-scroll dark:bg-gray-800';
 	// Navbar
 	let logo = '/images/flowbite-svelte-logo-95x66.svg';
 	let logoClass = 'w-8 ml-4 mr-2';
