@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import { DarkMode, Badge, SitemapFooter } from '$lib/index';
-	import { Aside, Nav, SidebarList, Navbar, TopMenu } from '@codewithshin/svelte-sidebar';
+	import { Aside, Nav, SidebarList, Navbar, TopMenu, sidebarOpen, sidebarIsInert, sidebarStayOpen } from '@codewithshin/svelte-sidebar';
 	import { Github, Twitter } from 'svelte-simples';
 	import { accordions, alerts, badges, buttons, buttonGroups, cards, carousels, dropdowns, forms, footers, icons, modals, navbar, ratings, svelteflows, tabs, timelines, tooltips, topMenus } from './items';
 	let site = {
@@ -9,15 +9,28 @@
 		href: '/',
 		img: '/images/flowbite-svelte-logo-40.png'
 	};
+	// Sidebar settings
+	let width;
+	$: if (width > 1024) {
+		sidebarOpen.update((n) => (n = true));
+		sidebarIsInert.update((n) => (n = false));
+		sidebarStayOpen.update((n) => (n = true));
+	} else {
+		sidebarOpen.update((n) => (n = false));
+		sidebarIsInert.update((n) => (n = true));
+		sidebarStayOpen.update((n) => (n = false)); // when open a sidebar clicking outside closes it
+	}
+
+	let asideClass = 'absolute w-auto bg-white pt-8 shadow-lg z-50 px-4 h-screen z-50 overflow-scroll dark:bg-gray-800';
 	// Navbar
 	let logo = '/images/flowbite-svelte-logo-95x66.svg';
 	let logoClass = 'w-8';
 	let alt = 'Flowbite Svelte';
 	let activeChildLi = 'block py-2 px-4 text-lg text-gray-700 hover:bg-gray-100 dark:text-white';
-	let childLi = 'block py-2 pr-4 pl-3  text-gray-700 border-b border-gray-100 md:border-0 md:p-0 text-lg dark:text-white';
-	let headerClass = 'fixed w-full z-50 px-6 bg-white h-14 pt-3 text-gray-600 border-b-2 bg-white dark:bg-gray-800 dark:text-white dark:border-b-1';
+	let childLi = 'block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 md:border-0 md:p-0 text-lg dark:text-white';
+	let headerClass = 'w-full z-50 px-6 bg-white h-14 pt-3 text-gray-600 border-b-2 dark:bg-gray-800 dark:text-white dark:border-b-1';
 	let siteName = 'Flowbite Svelte';
-	let navClass = 'py-0 px-8 bg-white text-lg bg-white dark:bg-gray-800 dark:text-white';
+	let navClass = 'py-0 px-8 text-lg bg-white dark:bg-gray-800 dark:text-white';
 	let navDivClass = 'pb-4';
 	let navDivClasslast = 'pb-24';
 	let siteClass = ' w-full pt-0.5';
@@ -27,7 +40,7 @@
 	let topMenuDiv = 'container flex flex-wrap justify-end items-center mx-auto dark:bg-gray-800 h-8 pr-12';
 	let topul = 'flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium pt-1 dark:bg-gray-800 bg-white';
 	// Others
-	let asideClass = 'fixed w-auto top-14 bg-white pt-8 shadow-lg z-50 px-4 h-screen z-50 overflow-scroll bg-white dark:bg-gray-800';
+
 	let darkmodebtn = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 fixed right-4 top-2 z-50';
 	let sideBarListClass = 'border-b border-gray-400 dark:border-gray-500 mb-2 px-4 text-lg sm:text-base';
 	// activeDropdownDiv, activeChildLi, buttonClass, dropdownLi
@@ -158,7 +171,8 @@
 	let linkClass = 'hover:underline hover:text-blue-600';
 </script>
 
-<Navbar {headerClass} {siteClass} {siteName} {logo} {alt} {spanClass} {logoClass}>
+<svelte:window bind:innerWidth={width} />
+<Navbar {headerClass} {siteClass} {siteName} {logo} {alt} {spanClass} {logoClass} hamburgerClass="block lg:hidden">
 	<TopMenu {topMenus} {topMenuDiv} {topul} {topli} {activeChildLi} {childLi} />
 </Navbar>
 
@@ -168,7 +182,7 @@
 			<a href="/">Flowbite Svelte</a>
 		</h3>
 		{#each svelteflows as { href, name, rel }}
-			<SidebarList {href} {name} {rel} {sideBarListClass} />
+			<SidebarList {href} {name} {sideBarListClass} />
 		{/each}
 	</Nav>
 	<Nav {navClass} {navDivClass}>
@@ -176,7 +190,7 @@
 			<a href="/accordions">Accordions</a>
 		</h3>
 		{#each accordions as { href, name, rel }}
-			<SidebarList {href} {name} {rel} {sideBarListClass} />
+			<SidebarList {href} {name} {sideBarListClass} />
 		{/each}
 	</Nav>
 	<Nav {navClass} {navDivClass}>
@@ -345,7 +359,7 @@
 	</Nav>
 </Aside>
 
-<main class="container mx-auto px-4 pt-4">
+<main class="container mx-auto px-4 pt-4 lg:pl-80">
 	<DarkMode btnClass={darkmodebtn} />
 	<div class="mt-4 w-full">
 		<slot />
