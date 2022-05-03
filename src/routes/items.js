@@ -68,6 +68,8 @@ export const forms = [
   { href: "/forms/input", name: "Input" },
   { href: "/forms/radio", name: "Radio" },
   { href: "/forms/range", name: "Range" },
+  { href: "/forms/search", name: "Search" },
+  { href: "/forms/select", name: "Select" },
   { href: "/forms/textarea", name: "Textarea" },
   { href: "/forms/toggle", name: "Toggle" },
 ]

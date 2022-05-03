@@ -14,7 +14,7 @@ let items2 = componentProps2.props
 let items3 = componentProps3.props
 let propHeader = ['Name', 'Type', 'Default']
 
-let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
 let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 let itemEx = [
   ['Apple MacBook Pro 17"','Sliver','Laptop','$2999','<a href="/">Edit</a>'],

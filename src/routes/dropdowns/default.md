@@ -11,7 +11,7 @@ import ExampleDiv from '../utils/ExampleDiv.svelte'
   export let dropdownItems = componentProps.props
   let propHeader = ['Name', 'Type', 'Default']
   
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+ let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
 let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
   let dropdownClass = 'hidden absolute top-12 right-8 z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700';
   let dropdownClass2 = 'hidden absolute top-12 -left-48 z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700';

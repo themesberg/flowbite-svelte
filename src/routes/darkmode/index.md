@@ -10,7 +10,7 @@ import { Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   let items = componentProps.props
 	let propHeader = ['Name', 'Type', 'Default']
 	
-	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
 let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
 

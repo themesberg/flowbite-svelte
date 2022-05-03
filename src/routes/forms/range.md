@@ -6,15 +6,29 @@ layout: formLayout
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Range, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
-import componentProps from '../props/Range.json'
-let items = componentProps.props
-let propHeader = ['Name', 'Type', 'Default']
+  import componentProps from '../props/Range.json'
+  let items = componentProps.props
+  let propHeader = ['Name', 'Type', 'Default']
 
-let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg'
-let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+ let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
+  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
   let minmaxValue=5
   let stepValue=2.5
 
+  let crumbs = [
+    {
+      label:'Home',
+      href:'/'
+    },
+    {
+      label:'Forms',
+      href:'/forms/'
+    },
+    {
+      label:'Range',
+      href:'/forms/range'
+    }
+  ]
 </script>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Range Components</h1>
