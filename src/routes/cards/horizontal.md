@@ -4,7 +4,7 @@ layout: cardLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { HorizontalCard, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/HorizontalCard.json'
   // Props table
@@ -56,7 +56,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </HorizontalCard>
 ```
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
   <HorizontalCard
     img="/images/image-4.jpeg"
     header="Horizontal card"
@@ -74,7 +74,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </HorizontalCard>
 ```
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
   <HorizontalCard>
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam sint,iam
     quos sed rem provident, a

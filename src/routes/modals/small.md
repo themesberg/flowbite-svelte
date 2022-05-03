@@ -116,7 +116,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Examples" />
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
   <ModalButton id={idBasic} btnName={btnBasicName} />
 </ExampleDiv>
 
@@ -133,7 +133,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Small modal with action buttons" />
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
   <ModalButton id={id1} btnName={btnName1} btnColor={btnColor1} />
 </ExampleDiv>
 
@@ -156,7 +156,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Small modal with different colors" />
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
   <ModalButton id={id2} btnName={btnName2} btnColor={btnColor2} />
 </ExampleDiv>
 

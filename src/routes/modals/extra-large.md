@@ -84,7 +84,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Examples" />
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
   <ModalButton id="exm1" btnName="Info Modal" />
 </ExampleDiv>
 
@@ -110,7 +110,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Extra-large modals with on button" />
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
   <ModalButton id="id1" btnName="Extra Large Modal with one button" btnColor="green" />
 </ExampleDiv>
 
@@ -152,7 +152,7 @@ const handlebtn1 = () => {
 
 <Htwo label="Extra-large modal with two buttons" />
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
   <ModalButton id="id2" btnName="Extra Large Modal with two buttons" btnColor="purple" />
 </ExampleDiv>
 

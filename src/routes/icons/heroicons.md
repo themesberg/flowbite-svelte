@@ -48,7 +48,7 @@ You can find all the icon names from the <a href="https://github.com/shinokada/s
 
 <p class=" dark:text-white">If you want to change the color with Tailwind CSS, add it to class prop.</p>
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
 <AdjustmentsSolid size="30" class="text-blue-700 dark:text-red-700" />
 <BellOutline size="30" class="text-red-700 dark:text-green-700" />
 <BriefcaseSolid  size="30" class="text-green-700 dark:text-indigo-700" />
@@ -90,7 +90,7 @@ import {
 <p>It is possible to change color with HEX color code by using the `color` prop.</p>
 
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
 <AdjustmentsSolid size="30"  color="#ff0000" />
 <BellOutline   color="#10ff00" />
 <BriefcaseSolid  size="30" color="#001dff" />

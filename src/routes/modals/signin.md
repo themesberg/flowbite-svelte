@@ -48,7 +48,7 @@ import { SignInModal, ModalButton } from "flowbite-svelte";
 
 <Htwo label="Examples" />
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
   <ModalButton
     id="signin1"
     btnName="Sign In Modal"

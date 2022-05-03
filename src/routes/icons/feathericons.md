@@ -37,7 +37,7 @@ import ExampleDiv from '../utils/ExampleDiv.svelte'
 
 <p class=" dark:text-white">If you want to change the color add size.</p>
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
 <ActivityIcon color="#c61515" size="12" />
 <ActivityIcon color="#c61515" size="16" />
 <AlertTriangleIcon color="#6dff6b" size="24" />

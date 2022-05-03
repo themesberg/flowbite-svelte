@@ -72,7 +72,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Examples" />
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
   <ListCard {action} {title} {lists}/>
 </ExampleDiv>
 

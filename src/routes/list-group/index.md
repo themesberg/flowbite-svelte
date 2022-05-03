@@ -96,7 +96,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Examples" />
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
  <List {lists} />
 </ExampleDiv>
 
@@ -134,7 +134,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </script>
 ````
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
   <List lists={lists2} />
 </ExampleDiv>
 

@@ -147,7 +147,7 @@ import ExampleDiv from '../utils/ExampleDiv.svelte'
 </SmallModal>
 ```
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
   <!-- Small Modal Button -->
   <ModalButton id={smallModalId} btnName={btnSName} />
 </ExampleDiv>
@@ -180,7 +180,7 @@ import ExampleDiv from '../utils/ExampleDiv.svelte'
 </MediumModal>
 ```
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
   <!-- Medium Modal Button -->
   <ModalButton id={mediumModalId} btnName={btnMName} btnColor={btnMColor} />
 </ExampleDiv>
@@ -212,7 +212,7 @@ import ExampleDiv from '../utils/ExampleDiv.svelte'
 </LargeModal>
 ```
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
   <!-- Large Modal Button -->
   <ModalButton id={largeModalId} btnName={btnLName} btnColor={btnLColor} />
 </ExampleDiv>
@@ -249,7 +249,7 @@ import ExampleDiv from '../utils/ExampleDiv.svelte'
 </ExtraLargeModal>   
 ```
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
   <!-- ExtraLarge Modal Button -->
   <ModalButton
     id={extraLargeModalId}
@@ -275,7 +275,7 @@ import ExampleDiv from '../utils/ExampleDiv.svelte'
 />
 ```
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
   <!-- SignInModal Button -->
 <ModalButton
   id={signinId}

@@ -77,7 +77,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Examples" />
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
 <EcommerceCard
   title="Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport"
   link="/alerts"
@@ -95,7 +95,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 />
 ```
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
   <EcommerceCard
     title="Women's Cashmere Sweaters Lorem ipsum dolor sit amet."
     link="/tabs"
@@ -117,7 +117,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 />
 ```
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
   <EcommerceCard
     title="Pink cup Lorem ipsum dolor sit amet et mete."
     link="/cards"
@@ -140,7 +140,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 />
 ```
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
   <EcommerceCard
     title="Nintendo Game Lorem ipsum dolor sit amet."
     link="modals"

@@ -38,7 +38,7 @@ npm i -D @codewithshin/svelte-simpleicons
 
 <Htwo label="Examples" />
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
 <Facebook class="mx-2" color="#4287f5" size="30" />
 <Github color="#66f5fa" size="30"/>  
 <Facebook class="mx-2" color="#02fa0b" size="30"/>

@@ -71,7 +71,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Default pagination" />
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
   <Pagination {pages} on:previous={previous} on:next={next} />
 </ExampleDiv>
 
@@ -113,7 +113,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Pagination with icons" />
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
   <Pagination {pages} on:previous={previous} on:next={next} icon />
 </ExampleDiv>
 
@@ -123,7 +123,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Previous and next" />
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
   <Previous on:previous={previous} />
   <Next on:next={next} />
 </ExampleDiv>
@@ -139,7 +139,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Previous and next with icons" />
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
   <Previous on:previous={previous} icon />
   <Next on:next={next} icon />
 </ExampleDiv>
@@ -151,11 +151,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Table data pagination" />
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
 <TableData on:next={next} on:previous={previous} />
 </ExampleDiv>
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
 <TableData on:next={next} on:previous={previous} {helper}/>
 </ExampleDiv>
 
