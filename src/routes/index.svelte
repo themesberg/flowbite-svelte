@@ -41,7 +41,7 @@
 	</div>
 </div>
 
-<div class="container flex flex-wrap mx-auto mt-2 justify-center">
+<div class="flex flex-wrap mx-auto mt-2 justify-center">
 	<div class="p-4">
 		<Card img="/images/accordions.webp" alt="Accordions" link="/accordions" {divClass}>
 			<span slot="paragraph">

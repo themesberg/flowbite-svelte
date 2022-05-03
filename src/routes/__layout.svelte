@@ -24,7 +24,7 @@
 	let asideClass = 'absolute w-auto bg-white pt-8 shadow-lg z-50 px-4 h-screen z-50 overflow-scroll dark:bg-gray-800';
 	// Navbar
 	let logo = '/images/flowbite-svelte-logo-95x66.svg';
-	let logoClass = 'w-8';
+	let logoClass = 'w-8 ml-4 mr-2';
 	let alt = 'Flowbite Svelte';
 	let activeChildLi = 'block py-2 px-4 text-lg text-gray-700 hover:bg-gray-100 dark:text-white';
 	let childLi = 'block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 md:border-0 md:p-0 text-lg dark:text-white';
@@ -359,9 +359,9 @@
 	</Nav>
 </Aside>
 
-<main class="container mx-auto px-4 pt-4 lg:pl-80">
+<main class="mx-auto lg:pl-80">
 	<DarkMode btnClass={darkmodebtn} />
-	<div class="mt-4 w-full">
+	<div class="w-full">
 		<slot />
 	</div>
 </main>
