@@ -7,7 +7,7 @@
 	};
 
 	// Cards
-	let divClass = 'max-w-sm md:max-w-xs lg:max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700';
+	let divClass = 'max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700';
 	let pClass = 'text-xl w-full text-gray-900 dark:text-white py-2 sm:py-0';
 	let aClass = 'text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500';
 </script>
@@ -15,7 +15,7 @@
 <div class="relative bg-white overflow-hidden mt-8 lg:mb-8 mx-auto dark:bg-gray-800">
 	<div class="max-w-7xl mx-auto ">
 		<div class="relative z-10 xl:pb-8 bg-transparent lg:max-w-2xl lg:w-full">
-			<main class="my-auto mx-auto max-w-7xl xl:pl-16 xl:pt-24 p-16">
+			<div class="my-auto mx-auto max-w-7xl xl:pl-8 xl:pt-8">
 				<div class="sm:text-center lg:text-left">
 					<h1 class="text-4xl tracking-tight font-extrabold text-gray-900  dark:text-white">
 						<span class="block xl:inline">Flowbite Svelte </span>
@@ -33,10 +33,10 @@
 						</div>
 					</div>
 				</div>
-			</main>
+			</div>
 		</div>
 	</div>
-	<div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-5/12 lg:pt-16 lg:mr-20">
+	<div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-5/12 lg:pt-8 ">
 		<img class="" src="/images/office1.webp" alt="Header" />
 	</div>
 </div>
