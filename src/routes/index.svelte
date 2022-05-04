@@ -36,7 +36,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-5/12 lg:pt-8 ">
+	<div class="px-16 py-4 lg:p-0 lg:pr-4 lg:absolute lg:inset-y-0 lg:right-0 lg:w-5/12 lg:pt-8 ">
 		<img class="" src="/images/office1.webp" alt="Header" />
 	</div>
 </div>

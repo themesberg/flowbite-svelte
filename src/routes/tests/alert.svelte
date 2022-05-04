@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Alert, BorderAlert, InfoAlert } from '$lib/index';
+	import { Alert } from '$lib/index';
 	import { flip } from 'svelte/animate';
 
 	let alerts = [
