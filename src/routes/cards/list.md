@@ -4,7 +4,7 @@ layout: cardLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { ListCard, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/ListCard.json'
   // Props table
@@ -63,7 +63,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       href:'/cards/list'
     },
   ]
+	import Responsive from '../utils/Responsive.svelte';
 </script>
+
+<Responsive />
 
 <Breadcrumb {crumbs}/>
 

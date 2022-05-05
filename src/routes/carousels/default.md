@@ -4,7 +4,7 @@ layout: carouselLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Carousel, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import {ChevronDoubleLeftOutline, ChevronDoubleRightOutline, LinkOutline} from 'svelte-heros'
   import { images } from './imageData';

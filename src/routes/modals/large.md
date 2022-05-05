@@ -4,7 +4,7 @@ layout: modalLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { LargeModal, ModalButton, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps1 from '../props/ModalButton.json'
   import componentProps2 from '../props/LargeModal.json'

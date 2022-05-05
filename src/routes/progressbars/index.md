@@ -4,7 +4,7 @@ layout: progressbarLayout
 
 <script>
 	import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Progressbar, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
 	import componentProps from '../props/Progressbar.json'
   // Props table

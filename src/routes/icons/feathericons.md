@@ -4,7 +4,7 @@ layout: iconLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Breadcrumb } from '$lib/index'
   import { ActivityIcon, AlertTriangleIcon, AnchorIcon } from '@codewithshin/svelte-feathericons'
 

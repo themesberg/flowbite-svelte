@@ -4,7 +4,7 @@ layout: tableLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
 import { Table, TableDefaultRow, TableSearch, Breadcrumb } from '$lib/index'
 import componentProps1 from '../props/Table.json'
 import componentProps2 from '../props/TableDefaultRow.json'

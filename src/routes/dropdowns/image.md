@@ -4,7 +4,7 @@ layout: dropdownLayout
 
 <script lang="ts">
   import Htwo from '../utils/Htwo.svelte'
-  import ExampleDiv from '../utils/ExampleDiv.svelte'
+    import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { ImgDropdown, Avatar, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/ImgDropdown.json'
   // Props table

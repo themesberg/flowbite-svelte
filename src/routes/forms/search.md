@@ -4,7 +4,7 @@ layout: formLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-  import ExampleDiv from '../utils/ExampleDiv.svelte'
+    import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Search, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
   import componentProps from '../props/Search.json'
   let items = componentProps.props

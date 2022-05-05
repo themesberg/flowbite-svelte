@@ -4,7 +4,7 @@ layout: buttonLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
+    import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Button, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import { ArrowRightOutline, BellOutline, ShoppingCartOutline, ChevronRightOutline } from "svelte-heros";
   import { goto }from '$app/navigation';
@@ -38,7 +38,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       href:'/buttons/default'
     },
   ]
+	import Responsive from '../utils/Responsive.svelte';
 </script>
+
+<Responsive />
 
 <Breadcrumb {crumbs}/>
 

@@ -4,7 +4,7 @@ layout: ratingLayout
 
 <script>
 	import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
 	import { Rating, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 	import { HeartSolid, ThumbUpSolid, EmojiHappySolid } from 'svelte-heros';
 	import componentProps from '../props/Rating.json'

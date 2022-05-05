@@ -4,7 +4,7 @@ layout: alertLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
+    import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { InfoAlert, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/InfoAlert.json'
   // Props table
@@ -27,7 +27,10 @@ let crumbs = [
       href:'/alerts/information-alert'
     }
   ]
+	import Responsive from '../utils/Responsive.svelte';
 </script>
+
+<Responsive />
 
 <Breadcrumb {crumbs}/>
 

@@ -4,7 +4,7 @@ layout: tabLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { PillTabs, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/PillTabs.json'
   // Props table

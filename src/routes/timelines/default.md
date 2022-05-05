@@ -4,7 +4,7 @@ layout: timelineLayout
 
 <script lang="ts">
 	import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
 	import { Timeline, TimelineItem, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps1 from '../props/Timeline.json'
   import componentProps2 from '../props/TimelineItem.json'

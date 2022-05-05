@@ -359,7 +359,7 @@
 	</Nav>
 </Aside>
 
-<main class="mx-auto lg:pl-80">
+<main class="container mx-auto px-2 pt-4 lg:pl-72">
 	<DarkMode btnClass={darkmodebtn} />
 	<div class="w-full">
 		<slot />

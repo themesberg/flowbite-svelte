@@ -4,7 +4,7 @@ layout: cardLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { EcommerceCard, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/EcommerceCard.json'
   // Props table
@@ -44,7 +44,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       href:'/cards/ecommerce'
     },
   ]
+	import Responsive from '../utils/Responsive.svelte';
 </script>
+
+<Responsive />
 
 <Breadcrumb {crumbs}/>
 

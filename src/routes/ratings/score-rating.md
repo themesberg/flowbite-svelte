@@ -4,7 +4,7 @@ layout: ratingLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Rating, ScoreRating, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/ScoreRating.json'
   // Props table

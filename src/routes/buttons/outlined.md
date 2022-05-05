@@ -4,7 +4,7 @@ layout: buttonLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
+    import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Button , Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/Button.json'
   // Props table
@@ -28,7 +28,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       href:'/buttons/outlined'
     },
   ]
+	import Responsive from '../utils/Responsive.svelte';
 </script>
+
+<Responsive />
 
 <Breadcrumb {crumbs}/>
 

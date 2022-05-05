@@ -4,7 +4,7 @@ layout: toastLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
 import { Toast, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
 import { quintOut, elasticOut } from 'svelte/easing';
 import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'svelte-heros'

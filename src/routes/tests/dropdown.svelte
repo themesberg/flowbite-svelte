@@ -1,5 +1,5 @@
 <script>
-	import ExampleDiv from '../utils/ExampleDiv.svelte'
+	import ExampleDiv from '../utils/ExampleDiv.svelte';
 	import { Dropdown } from '$lib/index';
 	let dropdownClass = 'absolute -left-40 top-12 z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700';
 	let items = [

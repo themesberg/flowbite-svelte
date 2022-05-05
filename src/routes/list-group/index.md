@@ -4,7 +4,7 @@ layout: listgroupLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { List, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import {
     AdjustmentsOutline,

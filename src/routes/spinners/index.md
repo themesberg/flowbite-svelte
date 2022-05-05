@@ -4,7 +4,7 @@ layout: spinnerLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Spinner, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/Spinner.json'
   // Props table

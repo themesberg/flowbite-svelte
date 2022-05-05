@@ -4,7 +4,7 @@ layout: badgeLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
+    import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { BadgeIcon, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
   import {InformationCircleOutline} from 'svelte-heros'
   import componentProps from '../props/BadgeLink.json'
@@ -28,7 +28,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       href:'/badges/badge-icon'
     }
   ]
+	import Responsive from '../utils/Responsive.svelte';
 </script>
+
+<Responsive />
 
 <Breadcrumb {crumbs}/>
 

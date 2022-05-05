@@ -4,7 +4,7 @@ layout: accordionLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-  import ExampleDiv from '../utils/ExampleDiv.svelte'
+    import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Accordion, AccordionItem, Table, TableDefaultRow, Breadcrumb } from "$lib/index";
   import accordionProps from '../props/AccordionDefault.json'
   import accordionItemProps from '../props/AccordionItem.json'
@@ -29,7 +29,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       href:'/accordions/default'
     }
   ]
+	import Responsive from '../utils/Responsive.svelte';
 </script>
+
+<Responsive />
 
 <Breadcrumb {crumbs}/>
 

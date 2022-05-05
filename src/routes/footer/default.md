@@ -4,7 +4,7 @@ layout: footerLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { SimpleFooter, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
   import componentProps from '../props/SimpleFooter.json'
   // Props table

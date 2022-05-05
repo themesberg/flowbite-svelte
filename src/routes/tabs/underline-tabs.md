@@ -4,7 +4,7 @@ layout: tabLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
 import { UnderlineTabs, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 import componentProps from '../props/UnderlineTabs.json'
   // Props table
