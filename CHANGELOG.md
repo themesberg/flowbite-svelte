@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.12](https://github.com/themesberg/flowbite-svelte/compare/v0.15.11...v0.15.12) (2022-05-05)
+
+
+### Features
+
+* add RadioItem and RadioInline for colors, inline, helper text ([9fc2812](https://github.com/themesberg/flowbite-svelte/commit/9fc281268f8008023e5a8d501893b8761ba8a5ef))
+
 ### [0.15.11](https://github.com/themesberg/flowbite-svelte/compare/v0.15.10...v0.15.11) (2022-05-03)
 
 
