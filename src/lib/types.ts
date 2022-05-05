@@ -81,6 +81,8 @@ export interface DropdownType {
 	divider?: boolean;
 }
 
+export type FormColorType = 'blue'|'red'|'green'|'purple'|'teal'|'yellow'|'orange'
+
 export type Gradientduotones = 'purple2blue' | 'cyan2blue' | 'green2blue' | 'purple2pink' | 'pink2orange' | 'teal2lime' | 'red2yellow';
 
 export interface GroupTimelineType {
@@ -143,19 +145,6 @@ export interface PillTabType {
 	name: string;
 	selected: boolean;
 	href: string;
-}
-
-export type RadioColorType = 'blue'|'red'|'green'|'purple'|'teal'|'yellow'|'orange'
-
-export interface RadioType {
-	id: string;
-	name: string;
-	label: string | HTMLElement;
-	value: string;
-	checked?: boolean;
-	disabled?: boolean;
-	helper?: string;
-	color?: RadioColorType;
 }
 
 export type SelectOptionType = {

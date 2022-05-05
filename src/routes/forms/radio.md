@@ -6,8 +6,8 @@ layout: formLayout
 import Htwo from '../utils/Htwo.svelte'
 import ExampleDiv from '../utils/ExampleDiv.svelte'
 import { onMount } from 'svelte';
-import { RadioInline, RadioItem, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
-import componentProps from '../props/RadioItem.json'
+import { RadioInline, Radio, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
+import componentProps from '../props/Radio.json'
 let items = componentProps.props
 
 let propHeader = ['Name', 'Type', 'Default']
@@ -155,13 +155,13 @@ let radiooptions5 =[
 
 <ExampleDiv>
 {#each radiooptions as option}
-<RadioItem {...option} divClass="flex items-center mb-4"/>
+<Radio {...option} divClass="flex items-center mb-4"/>
 {/each}
 </ExampleDiv>
 
 ```html
 <script>
-import { RadioItem } from 'flowbite-svelte'
+import { Radio } from 'flowbite-svelte'
 let radiooptions = [
   {
     id: 'country-option-1',
@@ -187,7 +187,7 @@ let radiooptions = [
 </script>
 
 {#each radiooptions as option}
-<RadioItem {...option} divClass="flex items-center mb-4"/>
+<Radio {...option} divClass="flex items-center mb-4"/>
 {/each}
 ```
 
@@ -195,7 +195,7 @@ let radiooptions = [
 
 <ExampleDiv>
 {#each radiooptions2 as option}
-<RadioItem {...option} />
+<Radio {...option} />
 {/each}
 </ExampleDiv>
 
@@ -213,7 +213,7 @@ let radiooptions2 = [
 </script>
 
 {#each radiooptions2 as option}
-<RadioItem {...option} />
+<Radio {...option} />
 {/each}
 ```
 
@@ -221,7 +221,7 @@ let radiooptions2 = [
 
 <ExampleDiv>
 {#each radiooptions3 as option}
-<RadioItem {...option} />
+<Radio {...option} />
 {/each}
 </ExampleDiv>
 
@@ -240,7 +240,7 @@ let radiooptions3 = [
 ];
 </script>
 {#each radiooptions3 as option}
-<RadioItem {...option} />
+<Radio {...option} />
 {/each}
 ```
 
@@ -249,7 +249,7 @@ let radiooptions3 = [
 <ExampleDiv>
 <RadioInline>
 {#each radiooptions4 as option}
-<RadioItem {...option} />
+<Radio {...option} />
 {/each}
 </RadioInline>
 </ExampleDiv>
@@ -288,7 +288,7 @@ let radiooptions4 =[
 
 <RadioInline>
 {#each radiooptions4 as option}
-<RadioItem {...option} />
+<Radio {...option} />
 {/each}
 </RadioInline>
 ```
@@ -299,7 +299,7 @@ let radiooptions4 =[
 <ExampleDiv>
 <RadioInline>
 {#each radiooptions5 as option}
-<RadioItem {...option} />
+<Radio {...option} />
 {/each}
 </RadioInline>
 </ExampleDiv>
@@ -354,7 +354,7 @@ let radiooptions5 =[
 
 <RadioInline>
 {#each radiooptions5 as option}
-<RadioItem {...option} />
+<Radio {...option} />
 {/each}
 </RadioInline>
 ```

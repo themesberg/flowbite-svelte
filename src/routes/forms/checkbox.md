@@ -5,11 +5,9 @@ layout: formLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
-import { SingleCheckbox, Checkbox, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
-import componentProps from '../props/SingleCheckbox.json'
-let items = componentProps.props
-import componentProps2 from '../props/Checkbox.json'
-let items2 = componentProps2.props
+  import { Checkbox, CheckboxInline ,Table, TableDefaultRow, Breadcrumb } from '$lib/index'
+  import componentProps from '../props/Checkbox.json'
+  let items = componentProps.props
 
 let propHeader = ['Name', 'Type', 'Default']
 let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
@@ -19,24 +17,121 @@ let legend = 'Checkbox variants';
 let checkboxOptions= [
   {
     id: 'checkbox-1',
-    checked: true,
-    label:
-      'I agree to the <a href="#">terms and conditions</a>'
+    name:'checkbox1',
+    label:'Default checkbox'
   },
   {
     id: 'checkbox-2',
-    label: 'I want to get promotional offers'
+    name:'checkbox1',
+    checked: true,
+    label: 'Checked state'
+  }
+]
+
+let checkboxOptions2= [
+  {
+    id: 'disabled-1',
+    name:'checkbox2',
+    label:'Disabled checkbox',
   },
   {
-    id: 'checkbox-3',
-    label: 'Eligible for international shipping (disabled)',
-    disabled: true
+    id: 'disabled-2',
+    name:'checkbox2',
+    checked: true,
+    label: 'Disabled checked',
+  }
+]
+
+let checkboxOptions3= [
+  {
+    id: 'link',
+    name:'checkbox3',
+    label:'I agree with the <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">terms and conditions</a>.',
+  }
+]
+
+let checkboxOptions4= [
+  {
+    id: 'helper',
+    name:'checkbox4',
+    label:'Free shipping via Flowbite',
+    helper:'For orders shipped from $25 in books or $29 in other categories'
+  }
+]
+
+let checkboxOptions5= [
+  {
+    id: 'inline',
+    name:'checkbox5',
+    label:'Inline 1',
   },
   {
-    id: 'checkbox-4',
-    label: 'Free shipping via Flowbite',
-    helper:
-      "For orders shipped from Flowbite from <span class='font-medium'>€ 25</span> in books or <span>€ 29</span> on other categories</span>"
+    id: 'inline2',
+    name:'checkbox5',
+    label:'Inline 2',
+  },
+  {
+    id: 'inline3',
+    name:'checkbox5',
+    label:'Inline checked',
+    checked:true,
+  },
+  {
+    id: 'inline4',
+    name:'checkbox5',
+    label:'Inline disabled',
+    disabled:true
+  },
+]
+
+let checkboxOptions6 =[
+  {
+    id: 'red',
+    name: 'color',
+    value:'red',
+    label: 'Red',
+    color: 'red',
+    checked:true
+  },
+  {
+    id: 'green',
+    name: 'color',
+    value:'green',
+    label: 'Green',
+    color:'green',
+    checked:true
+  },
+  {
+    id: 'purple',
+    name: 'color',
+    value:'purple',
+    label: 'Purple',
+    color: 'purple',
+    checked:true
+  },
+  {
+    id: 'teal',
+    name: 'color',
+    value:'teal',
+    label: 'Teal',
+    color: 'teal',
+    checked:true
+  },
+  {
+    id: 'yellow',
+    name: 'color',
+    value:'yellow',
+    label: 'Yellow',
+    color: 'yellow',
+    checked:true
+  },
+  {
+    id: 'orange',
+    name: 'color',
+    value:'orange',
+    label: 'Orange',
+    color: 'orange',
+    checked:true
   }
 ]
 
@@ -63,35 +158,25 @@ let checkboxOptions= [
 <Htwo label="Examples" />
 
 <ExampleDiv>
-<Checkbox options={checkboxOptions} {legend} />
+{#each checkboxOptions as option}
+<Checkbox {...option} divClass="flex items-center mb-4" />
+{/each}
 </ExampleDiv>
 
 ```html
 <script>
 import { Checkbox } from 'flowbite-svelte'
-
-let legend = 'Checkbox variants';
 let checkboxOptions= [
   {
     id: 'checkbox-1',
-    checked: true,
-    label:
-      'I agree to the <a href="#">terms and conditions</a>'
+    name:'checkbox1',
+    label:'Default checkbox'
   },
   {
     id: 'checkbox-2',
-    label: 'I want to get promotional offers'
-  },
-  {
-    id: 'checkbox-3',
-    label: 'Eligible for international shipping (disabled)',
-    disabled: true
-  },
-  {
-    id: 'checkbox-4',
-    label: 'Free shipping via Flowbite',
-    helper:
-      "For orders shipped from Flowbite from <span class='font-medium'>€ 25</span> in books or <span>€ 29</span> on other categories</span>"
+    name:'checkbox1',
+    checked: true,
+    label: 'Checked state'
   }
 ]
 </script>
@@ -99,30 +184,215 @@ let checkboxOptions= [
 <Checkbox options={checkboxOptions} {legend} />
 ```
 
-<Htwo label="Signle checkbox" />
-
+<Htwo label="Disabled state" />
 
 <ExampleDiv>
-<SingleCheckbox name="rememberme" id="rememberme" required label="Remember me" />
+{#each checkboxOptions2 as option}
+<Checkbox {...option} disabled divClass="flex items-center mb-4" />
+{/each}
 </ExampleDiv>
 
 ```html
-<SingleCheckbox name="rememberme" id="rememberme" required label="Remember me" />
+<script>
+
+let checkboxOptions2= [
+  {
+    id: 'disabled-1',
+    name:'checkbox2',
+    label:'Disabled checkbox',
+  },
+  {
+    id: 'disabled-2',
+    name:'checkbox2',
+    checked: true,
+    label: 'Disabled checked',
+  }
+]
+
+</script>
+
+{#each checkboxOptions2 as option}
+<Checkbox {...option} disabled divClass="flex items-center mb-4" />
+{/each}
+```
+
+<Htwo label="Checkbox with a link" />
+
+<ExampleDiv>
+{#each checkboxOptions3 as option}
+<Checkbox {...option} />
+{/each}
+</ExampleDiv>
+
+```html
+<script>
+let checkboxOptions3= [
+  {
+    id: 'link',
+    name:'checkbox3',
+    label:'I agree with the <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">terms and conditions</a>.',
+  }
+]
+
+</script>
+
+{#each checkboxOptions3 as option}
+<Checkbox {...option} />
+{/each}
+```
+
+<Htwo label="Helper text" />
+
+<ExampleDiv>
+{#each checkboxOptions4 as option}
+<Checkbox {...option} />
+{/each}
+</ExampleDiv>
+
+```html
+<script>
+
+</script>
+
+{#each checkboxOptions4 as option}
+<Checkbox {...option} />
+{/each}
+```
+
+<Htwo label="Inline" />
+
+<ExampleDiv>
+<CheckboxInline>
+{#each checkboxOptions5 as option}
+<Checkbox {...option} />
+{/each}
+</CheckboxInline>
+</ExampleDiv>
+
+```html
+<script>
+import { Checkbox, CheckboxInline } from 'flowbite-svelte'
+let checkboxOptions4= [
+  {
+    id: 'helper',
+    name:'checkbox4',
+    label:'Free shipping via Flowbite',
+    helper:'For orders shipped from $25 in books or $29 in other categories'
+  }
+]
+
+let checkboxOptions5= [
+  {
+    id: 'inline',
+    name:'checkbox5',
+    label:'Inline 1',
+  },
+  {
+    id: 'inline2',
+    name:'checkbox5',
+    label:'Inline 2',
+  },
+  {
+    id: 'inline3',
+    name:'checkbox5',
+    label:'Inline checked',
+    checked:true,
+  },
+  {
+    id: 'inline4',
+    name:'checkbox5',
+    label:'Inline disabled',
+    disabled:true
+  },
+]
+
+</script>
+
+<CheckboxInline>
+{#each checkboxOptions5 as option}
+<Checkbox {...option} />
+{/each}
+</CheckboxInline>
+```
+
+<Htwo label="Colors" />
+
+<ExampleDiv>
+<CheckboxInline>
+{#each checkboxOptions6 as option}
+<Checkbox {...option} />
+{/each}
+</CheckboxInline>
+</ExampleDiv>
+
+```html
+<script>
+
+let checkboxOptions6 =[
+  {
+    id: 'red',
+    name: 'color',
+    value:'red',
+    label: 'Red',
+    color: 'red',
+    checked:true
+  },
+  {
+    id: 'green',
+    name: 'color',
+    value:'green',
+    label: 'Green',
+    color:'green',
+    checked:true
+  },
+  {
+    id: 'purple',
+    name: 'color',
+    value:'purple',
+    label: 'Purple',
+    color: 'purple',
+    checked:true
+  },
+  {
+    id: 'teal',
+    name: 'color',
+    value:'teal',
+    label: 'Teal',
+    color: 'teal',
+    checked:true
+  },
+  {
+    id: 'yellow',
+    name: 'color',
+    value:'yellow',
+    label: 'Yellow',
+    color: 'yellow',
+    checked:true
+  },
+  {
+    id: 'orange',
+    name: 'color',
+    value:'orange',
+    label: 'Orange',
+    color: 'orange',
+    checked:true
+  }
+]
+
+</script>
+
+<CheckboxInline>
+{#each checkboxOptions6 as option}
+<Checkbox {...option} />
+{/each}
+</CheckboxInline>
 ```
 
 <Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/type-list">type-list page</a> for type information.</p>
 
-<h3>SingleCheckbox</h3>
-
 <Table header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items} rowState='hover' />
 </Table>
 
-
-<h3>Checkbox</h3>
-
-<Table header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={items2} rowState='hover' />
-</Table>

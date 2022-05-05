@@ -1,5 +1,5 @@
 <script>
-	import { Input, Checkbox, Fileupload, FloatingLabelInput, Iconinput, Select, SingleCheckbox, Toggle, Textarea } from '$lib/index';
+	import { Input, Checkbox, Fileupload, FloatingLabelInput, Iconinput, Select, Toggle, Textarea } from '$lib/index';
 	let username;
 	let size;
 	import { AtSymbolSolid } from 'svelte-heros';
@@ -100,8 +100,6 @@
 </Select>
 
 <Checkbox options={checkboxOptions} {legend} />
-
-<SingleCheckbox name="rememberme" id="rememberme" required label="Remember me" />
 
 <Fileupload {...fileuploadprops} />
 
