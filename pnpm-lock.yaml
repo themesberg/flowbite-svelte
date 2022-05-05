@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@codewithshin/svelte-feathericons': ^0.1.9
-  '@codewithshin/svelte-sidebar': ^0.5.7
+  '@codewithshin/svelte-sidebar': ^0.6.3
   '@codewithshin/svelte-utterances': ^0.2.2
   '@playwright/test': ^1.21.0
   '@sveltejs/adapter-auto': next
@@ -39,11 +39,11 @@ dependencies:
 
 devDependencies:
   '@codewithshin/svelte-feathericons': 0.1.9
-  '@codewithshin/svelte-sidebar': 0.5.7
+  '@codewithshin/svelte-sidebar': 0.6.3
   '@codewithshin/svelte-utterances': 0.2.2
   '@playwright/test': 1.21.0
   '@sveltejs/adapter-auto': 1.0.0-next.40
-  '@sveltejs/kit': 1.0.0-next.324_svelte@3.47.0
+  '@sveltejs/kit': 1.0.0-next.326_svelte@3.47.0
   '@typescript-eslint/eslint-plugin': 5.19.0_5xfsbnaga5p6x76zbbl6entr6a
   '@typescript-eslint/parser': 5.19.0_hrkuebk64jiu2ut2d2sm4oylnu
   autoprefixer: 10.4.4_postcss@8.4.12
@@ -594,8 +594,8 @@ packages:
     resolution: {integrity: sha512-+whOdVTK+nQpWWHaOx2ODqSObC//sW4mWaetw2nel1WA9oSdyL33f5Mh1FHKqfIxv1br7Mb7a3rw6Rx2r6aLCQ==}
     dev: true
 
-  /@codewithshin/svelte-sidebar/0.5.7:
-    resolution: {integrity: sha512-wIfOHd6FvGBCfxyG6SF2Z2avyb/fxv3EJkV19es3T0UA9LVK3sK3+PADQNlMv7ko/ZazoAht/V3Io0rkJGabCA==}
+  /@codewithshin/svelte-sidebar/0.6.3:
+    resolution: {integrity: sha512-3eybxRJR7mbkkH3NONrWhPUkDvk/m3sx/4HAfyyBpiISnRwTUClMNV13yxC9y6JexjHPDvvFMJwCAlLzykDq2A==}
     dev: true
 
   /@codewithshin/svelte-utterances/0.2.2:
@@ -755,8 +755,8 @@ packages:
       esbuild: 0.14.36
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.324_svelte@3.47.0:
-    resolution: {integrity: sha512-/CGW9rQpHQLBb2EcMw08yelD/C9hTsypymctUWdhryMTI8n1VWb0gkUcSHsz8n8oAAbKLXqwyHqeLATfcIMg2w==}
+  /@sveltejs/kit/1.0.0-next.326_svelte@3.47.0:
+    resolution: {integrity: sha512-prJqmXZ2H1wmFfnMw7wDujfbkcA8vuubuqUkpVVmXhfh2+SEzQscPTNwxoE5EJxb5sywtLWEvYx3hv1gPS4Lvg==}
     engines: {node: '>=14.13'}
     hasBin: true
     peerDependencies:
