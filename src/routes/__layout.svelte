@@ -30,7 +30,7 @@
 	let childLi = 'block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 md:border-0 md:p-0 text-lg dark:text-white';
 	let headerClass = 'w-full z-50 px-6 bg-white h-14 pt-3 text-gray-600 border-b-2 dark:bg-gray-800 dark:text-white dark:border-b-1';
 	let siteName = 'Flowbite Svelte';
-	let navClass = 'py-0 px-8 text-lg bg-white dark:bg-gray-800 dark:text-white';
+	let navClass = 'py-0 px-4 xl:px-8 text-lg bg-white dark:bg-gray-800 dark:text-white';
 	let navDivClass = 'pb-4';
 	let navDivClasslast = 'pb-24';
 	let siteClass = ' w-full pt-0.5';
@@ -42,7 +42,7 @@
 	// Others
 
 	let darkmodebtn = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 fixed right-4 top-2 z-50';
-	let sideBarListClass = 'border-b border-gray-400 dark:border-gray-500 mb-2 px-4 text-lg sm:text-base';
+	let sideBarListClass = 'border-b border-gray-400 dark:border-gray-500 mb-2 px-0 xl:px-4 text-xl';
 	// activeDropdownDiv, activeChildLi, buttonClass, dropdownLi
 
 	// Footer
