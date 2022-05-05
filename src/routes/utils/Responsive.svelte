@@ -1,7 +1,7 @@
 <script>
 	import { sidebarOpen, sidebarIsInert, sidebarStayOpen } from '@codewithshin/svelte-sidebar';
 	let width;
-	$: if (width > 1024) {
+	$: if (width >= 1024) {
 		sidebarOpen.update((n) => (n = true));
 		sidebarIsInert.update((n) => (n = false));
 		sidebarStayOpen.update((n) => (n = true));

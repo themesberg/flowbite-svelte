@@ -4,7 +4,7 @@ layout: breadcrumbLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-    import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Breadcrumb, Table, TableDefaultRow } from '$lib/index'
   import componentProps from '../props/Breadcrumb.json'
   let items = componentProps.props
@@ -22,10 +22,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       href:'breadcrumbs/index'
     }
   ]
-	import Responsive from '../utils/Responsive.svelte';
 </script>
-
-<Responsive />
 
 <Breadcrumb {crumbs}/>
 

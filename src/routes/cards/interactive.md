@@ -51,10 +51,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       href:'/cards/interactive'
     },
   ]
-	import Responsive from '../utils/Responsive.svelte';
 </script>
-
-<Responsive />
 
 <Breadcrumb {crumbs}/>
 

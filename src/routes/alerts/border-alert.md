@@ -4,7 +4,7 @@ layout: alertLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-    import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
 
   import { BorderAlert, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/BorderAlert.json'
@@ -28,10 +28,7 @@ let crumbs = [
       href:'/alerts/border-alert'
     }
   ]
-	import Responsive from '../utils/Responsive.svelte';
 </script>
-
-<Responsive />
 
 <Breadcrumb {crumbs}/>
 <h1 class="text-3xl w-full dark:text-white py-8">Border Alert</h1>
