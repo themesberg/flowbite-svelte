@@ -1,6 +1,7 @@
 <script>
 	import { Card, Button } from '$lib/index';
 	import { goto } from '$app/navigation';
+	import { Responsive } from '@codewithshin/svelte-sidebar';
 	import { accordions, alerts, badges, buttons, buttonGroups, cards, carousels, dropdowns, forms, footers, icons, modals, navbar, ratings, tabs, timelines, tooltips } from './items';
 	const handleClick = () => {
 		goto('/pages/getting-started');
@@ -11,6 +12,8 @@
 	let pClass = 'text-xl w-full text-gray-900 dark:text-white py-2 sm:py-0';
 	let aClass = 'text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500';
 </script>
+
+<Responsive />
 
 <div class="relative bg-white overflow-hidden mt-8 lg:mb-8 mx-auto dark:bg-gray-800">
 	<div class="max-w-7xl mx-auto ">

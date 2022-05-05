@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import { DarkMode, Badge, SitemapFooter } from '$lib/index';
-	import { Aside, Nav, SidebarList, Navbar, TopMenu, sidebarOpen, sidebarIsInert, sidebarStayOpen } from '@codewithshin/svelte-sidebar';
+	import { Aside, Nav, SidebarList, Navbar, TopMenu, Responsive } from '@codewithshin/svelte-sidebar';
 	import { Github, Twitter } from 'svelte-simples';
 	import { accordions, alerts, badges, buttons, buttonGroups, cards, carousels, dropdowns, forms, footers, icons, modals, navbar, ratings, svelteflows, tabs, timelines, tooltips, topMenus } from './items';
 	let site = {
@@ -9,17 +9,6 @@
 		href: '/',
 		img: '/images/flowbite-svelte-logo-40.png'
 	};
-	// Sidebar settings
-	let width;
-	$: if (width > 1024) {
-		sidebarOpen.update((n) => (n = true));
-		sidebarIsInert.update((n) => (n = false));
-		sidebarStayOpen.update((n) => (n = true));
-	} else {
-		sidebarOpen.update((n) => (n = false));
-		sidebarIsInert.update((n) => (n = true));
-		sidebarStayOpen.update((n) => (n = false)); // when open a sidebar clicking outside closes it
-	}
 
 	let asideClass = 'absolute w-auto bg-white pt-8 shadow-lg z-50 px-4 h-full z-50 overflow-scroll dark:bg-gray-800';
 	// Navbar
@@ -172,7 +161,8 @@
 	let h3Class = 'text-xl pb-4';
 </script>
 
-<svelte:window bind:innerWidth={width} />
+<Responsive />
+
 <Navbar {headerClass} {siteClass} {siteName} {logo} {alt} {spanClass} {logoClass} hamburgerClass="block lg:hidden">
 	<TopMenu {topMenus} {topMenuDiv} {topul} {topli} {activeChildLi} {childLi} />
 </Navbar>
