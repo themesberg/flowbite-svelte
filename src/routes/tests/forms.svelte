@@ -1,5 +1,5 @@
 <script>
-	import { Input, Checkbox, Fileupload, FloatingLabelInput, Iconinput, Radio, Select, SingleCheckbox, Toggle, Textarea } from '$lib/index';
+	import { Input, Checkbox, Fileupload, FloatingLabelInput, Iconinput, Select, SingleCheckbox, Toggle, Textarea } from '$lib/index';
 	let username;
 	let size;
 	import { AtSymbolSolid } from 'svelte-heros';
@@ -49,27 +49,6 @@
 		label: 'Upload file',
 		helper: 'A profile picture is useful to confirm your are logged into your account'
 	};
-	let radiooptions = [
-		{
-			id: 'country-option-1',
-			value: 'USA',
-			checked: true,
-			label: 'United States'
-		},
-		{
-			id: 'country-option-2',
-			label: 'Germany',
-			value: 'Germany'
-		},
-		{
-			id: 'country-option-3',
-			label: 'Spain (disabled)',
-			value: 'Spain',
-			disabled: true
-		}
-	];
-
-	let radioname = 'countries';
 
 	let legend = 'Checkbox variants';
 	let checkboxOptions = [
@@ -123,8 +102,6 @@
 <Checkbox options={checkboxOptions} {legend} />
 
 <SingleCheckbox name="rememberme" id="rememberme" required label="Remember me" />
-
-<Radio options={radiooptions} name={radioname} />
 
 <Fileupload {...fileuploadprops} />
 

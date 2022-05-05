@@ -4,7 +4,6 @@
 	export let inputClass: string = 'w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600';
 	export let labelClass: string = 'block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300';
 	export let name: string = '';
-	export let options: RadioType[];
 	export let divHelperClass: string = 'flex items-center h-5';
 	export let labelHelperClass: string = 'font-medium text-gray-900 dark:text-gray-300';
 	export let helperClass: string = 'text-xs font-normal text-gray-500 dark:text-gray-300';
