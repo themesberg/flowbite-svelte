@@ -6,7 +6,7 @@ layout: formLayout
 import Htwo from '../utils/Htwo.svelte'
 import ExampleDiv from '../utils/ExampleDiv.svelte'
 import { onMount } from 'svelte';
-import { Radio, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
+import { RadioInline, RadioItem, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
 import componentProps from '../props/Radio.json'
 let items = componentProps.props
 
@@ -17,17 +17,20 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 let radiooptions = [
   {
     id: 'country-option-1',
+    name: 'country',
     value: 'USA',
     checked: true,
     label: 'United States'
   },
   {
     id: 'country-option-2',
+    name: 'country',
     label: 'Germany',
     value: 'Germany'
   },
   {
     id: 'country-option-3',
+    name: 'country',
     label: 'Spain (disabled)',
     value: 'Spain',
     disabled: true
@@ -37,13 +40,96 @@ let radiooptions = [
 let radiooptions2 = [
   {
     id: 'country-option-1',
+    name: 'country',
     value: 'USA',
-    checked: true,
+    checked: false,
     label: 'Radio button with a <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">link inside</a>.'
   }
 ];
 
-let radioname='countries'
+let radiooptions3 = [
+  {
+    id: 'country-option-1',
+    name: 'country',
+    value: 'USA',
+    checked: false,
+    label: 'Free shipping via Flowbite',
+    helper: 'For orders shipped from $25 in books or $29 in other categories'
+  }
+];
+
+let radiooptions4 =[
+  {
+    id: 'inline-1',
+    name: 'inline',
+    value:'inline-1',
+    label: 'Inline 1',
+  },
+  {
+    id: 'inline-2',
+    name: 'inline',
+    value:'inline-2',
+    label: 'Inline 2',
+  },
+  {
+    id: 'inline-3',
+    name: 'inline',
+    value:'inline-3',
+    label: 'Inline 3',
+  },
+  {
+    id: 'inline-4',
+    name: 'inline',
+    value:'inline-4',
+    label: 'Inline 4 (disabled)',
+    disabled: true
+  }
+]
+
+let radiooptions5 =[
+  {
+    id: 'red',
+    name: 'color',
+    value:'red',
+    label: 'Red',
+    color: 'red'
+  },
+  {
+    id: 'green',
+    name: 'color',
+    value:'green',
+    label: 'Green',
+    color:'green'
+  },
+  {
+    id: 'purple',
+    name: 'color',
+    value:'purple',
+    label: 'Purple',
+    color: 'purple'
+  },
+  {
+    id: 'teal',
+    name: 'color',
+    value:'teal',
+    label: 'Teal',
+    color: 'teal'
+  },
+  {
+    id: 'yellow',
+    name: 'color',
+    value:'yellow',
+    label: 'Yellow',
+    color: 'yellow'
+  },
+  {
+    id: 'orange',
+    name: 'color',
+    value:'orange',
+    label: 'Orange',
+    color: 'orange'
+  }
+]
 
   let crumbs = [
     {
@@ -68,40 +154,49 @@ let radioname='countries'
 <Htwo label="Examples" />
 
 <ExampleDiv>
-<Radio options={radiooptions} name={radioname}/>
+{#each radiooptions as option}
+<RadioItem {...option} divClass="flex items-center mb-4"/>
+{/each}
 </ExampleDiv>
 
 ```html
 <script>
+import { RadioItem } from 'flowbite-svelte'
 let radiooptions = [
-		{
-			id: 'country-option-1',
-			value: 'USA',
-			checked: true,
-			label: 'United States'
-		},
-		{
-			id: 'country-option-2',
-			label: 'Germany',
-			value: 'Germany'
-		},
-		{
-			id: 'country-option-3',
-			label: 'Spain (disabled)',
-			value: 'Spain',
-			disabled: true
-		}
-	];
-let radioname='countries'
+  {
+    id: 'country-option-1',
+    name: 'country',
+    value: 'USA',
+    checked: true,
+    label: 'United States'
+  },
+  {
+    id: 'country-option-2',
+    name: 'country',
+    label: 'Germany',
+    value: 'Germany'
+  },
+  {
+    id: 'country-option-3',
+    name: 'country',
+    label: 'Spain (disabled)',
+    value: 'Spain',
+    disabled: true
+  }
+];
 </script>
 
-<Radio options={radiooptions} name={radioname}/>
+{#each radiooptions as option}
+<RadioItem {...option} divClass="flex items-center mb-4"/>
+{/each}
 ```
 
 <Htwo label="Radio label with a link" />
 
 <ExampleDiv>
-<Radio options={radiooptions2} name="label-link"/>
+{#each radiooptions2 as option}
+<RadioItem {...option} />
+{/each}
 </ExampleDiv>
 
 ```html
@@ -109,13 +204,159 @@ let radioname='countries'
 let radiooptions2 = [
   {
     id: 'country-option-1',
+    name: 'country',
     value: 'USA',
-    checked: true,
+    checked: false,
     label: 'Radio button with a <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">link inside</a>.'
   }
 ];
-</script>  
-<Radio options={radiooptions2} name="label-link"/>
+</script>
+
+{#each radiooptions2 as option}
+<RadioItem {...option} />
+{/each}
+```
+
+<Htwo label="Helper text" />
+
+<ExampleDiv>
+{#each radiooptions3 as option}
+<RadioItem {...option} />
+{/each}
+</ExampleDiv>
+
+
+```html
+<script>
+let radiooptions3 = [
+  {
+    id: 'country-option-1',
+    name: 'country',
+    value: 'USA',
+    checked: false,
+    label: 'Free shipping via Flowbite',
+    helper: 'For orders shipped from $25 in books or $29 in other categories'
+  }
+];
+</script>
+{#each radiooptions3 as option}
+<RadioItem {...option} />
+{/each}
+```
+
+<Htwo label="Inline" />
+
+<ExampleDiv>
+<RadioInline>
+{#each radiooptions4 as option}
+<RadioItem {...option} />
+{/each}
+</RadioInline>
+</ExampleDiv>
+
+```html
+<script>
+
+let radiooptions4 =[
+  {
+    id: 'inline-1',
+    name: 'inline',
+    value:'inline-1',
+    label: 'Inline 1',
+  },
+  {
+    id: 'inline-2',
+    name: 'inline',
+    value:'inline-2',
+    label: 'Inline 2',
+  },
+  {
+    id: 'inline-3',
+    name: 'inline',
+    value:'inline-3',
+    label: 'Inline 3',
+  },
+  {
+    id: 'inline-4',
+    name: 'inline',
+    value:'inline-4',
+    label: 'Inline 4 (disabled)',
+    disabled: true
+  }
+]
+</script>
+
+<RadioInline>
+{#each radiooptions4 as option}
+<RadioItem {...option} />
+{/each}
+</RadioInline>
+```
+
+
+<Htwo label="Colors" />
+
+<ExampleDiv>
+<RadioInline>
+{#each radiooptions5 as option}
+<RadioItem {...option} />
+{/each}
+</RadioInline>
+</ExampleDiv>
+
+```html
+<script>
+let radiooptions5 =[
+  {
+    id: 'red',
+    name: 'color',
+    value:'red',
+    label: 'Red',
+    color: 'red'
+  },
+  {
+    id: 'green',
+    name: 'color',
+    value:'green',
+    label: 'Green',
+    color:'green'
+  },
+  {
+    id: 'purple',
+    name: 'color',
+    value:'purple',
+    label: 'Purple',
+    color: 'purple'
+  },
+  {
+    id: 'teal',
+    name: 'color',
+    value:'teal',
+    label: 'Teal',
+    color: 'teal'
+  },
+  {
+    id: 'yellow',
+    name: 'color',
+    value:'yellow',
+    label: 'Yellow',
+    color: 'yellow'
+  },
+  {
+    id: 'orange',
+    name: 'color',
+    value:'orange',
+    label: 'Orange',
+    color: 'orange'
+  }
+]
+</script>
+
+<RadioInline>
+{#each radiooptions5 as option}
+<RadioItem {...option} />
+{/each}
+</RadioInline>
 ```
 
 <Htwo label="Props" />

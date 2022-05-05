@@ -145,12 +145,17 @@ export interface PillTabType {
 	href: string;
 }
 
+export type RadioColorType = 'blue'|'red'|'green'|'purple'|'teal'|'yellow'|'orange'
+
 export interface RadioType {
 	id: string;
+	name: string;
 	label: string | HTMLElement;
 	value: string;
 	checked?: boolean;
 	disabled?: boolean;
+	helper?: string;
+	color?: RadioColorType;
 }
 
 export type SelectOptionType = {
