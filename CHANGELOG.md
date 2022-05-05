@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.13](https://github.com/themesberg/flowbite-svelte/compare/v0.15.12...v0.15.13) (2022-05-05)
+
+
+### Features
+
+* add Checkbox, CheckboxInline, and checkbox page ([baab944](https://github.com/themesberg/flowbite-svelte/commit/baab944e588645bb2fbe751fd5a2beb00b8f6e77))
+
+
+### Bug Fixes
+
+* update RadioItem props ([fd2f9a0](https://github.com/themesberg/flowbite-svelte/commit/fd2f9a0c4b3854c3a644710a4cb1df238e1a6af2))
+
 ### [0.15.12](https://github.com/themesberg/flowbite-svelte/compare/v0.15.11...v0.15.12) (2022-05-05)
 
 
