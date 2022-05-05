@@ -251,6 +251,14 @@ let checkboxOptions3= [
 
 ```html
 <script>
+let checkboxOptions4= [
+  {
+    id: 'helper',
+    name:'checkbox4',
+    label:'Free shipping via Flowbite',
+    helper:'For orders shipped from $25 in books or $29 in other categories'
+  }
+]
 
 </script>
 
@@ -272,14 +280,6 @@ let checkboxOptions3= [
 ```html
 <script>
 import { Checkbox, CheckboxInline } from 'flowbite-svelte'
-let checkboxOptions4= [
-  {
-    id: 'helper',
-    name:'checkbox4',
-    label:'Free shipping via Flowbite',
-    helper:'For orders shipped from $25 in books or $29 in other categories'
-  }
-]
 
 let checkboxOptions5= [
   {
