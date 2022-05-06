@@ -1,7 +1,7 @@
 <script>
 	import { Card, Button } from '$lib/index';
 	import { goto } from '$app/navigation';
-	import { Responsive } from '@codewithshin/svelte-sidebar';
+	import { Responsive } from 'svelte-sidebar-menu';
 	import { accordions, alerts, badges, buttons, buttonGroups, cards, carousels, dropdowns, forms, footers, icons, modals, navbar, ratings, tabs, timelines, tooltips } from './items';
 	const handleClick = () => {
 		goto('/pages/getting-started');

@@ -6,7 +6,7 @@ layout: iconLayout
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Breadcrumb } from '$lib/index'
-  import { ActivityIcon, AlertTriangleIcon, AnchorIcon } from '@codewithshin/svelte-feathericons'
+  import { ActivityIcon, AlertTriangleIcon, AnchorIcon } from 'svelte-feathers'
 
   let crumbs = [
     {
@@ -25,7 +25,6 @@ layout: iconLayout
 </script>
 
 <Breadcrumb {crumbs}/>
-
 
 <h1 class="text-3xl w-full dark:text-white py-8">Feathericons</h1>
 
@@ -48,7 +47,7 @@ layout: iconLayout
 
 ```html
 <script>
-  import { ActivityIcon, AlertTriangleIcon, AnchorIcon } from '@codewithshin/svelte-feathericons'
+  import { ActivityIcon, AlertTriangleIcon, AnchorIcon } from 'svelte-feathers'
 </script>
 
 <ActivityIcon color="#c61515" size="12" />
@@ -63,7 +62,7 @@ layout: iconLayout
 
 ```html
 <script>
-  import * as Icon from '@codewithshin/svelte-feathericons';
+  import * as Icon from 'svelte-feathers';
 </script>
 
 <Icon.UnlockIcon color="#6dff6b" size="24" />

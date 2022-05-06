@@ -1,8 +1,6 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@codewithshin/svelte-feathericons': ^0.1.9
-  '@codewithshin/svelte-sidebar': ^0.6.3
   '@codewithshin/svelte-utterances': ^0.2.2
   '@playwright/test': ^1.21.0
   '@sveltejs/adapter-auto': next
@@ -24,8 +22,10 @@ specifiers:
   svelte: ^3.47.0
   svelte-check: ^2.2.6
   svelte-collapse: ^0.0.4
+  svelte-feathers: ^0.1.15
   svelte-heros: ^2.0.0
   svelte-preprocess: ^4.10.5
+  svelte-sidebar-menu: ^0.6.9
   svelte-simples: ^0.3.1
   svelte2tsx: ^0.5.9
   tailwindcss: ^3.0.23
@@ -38,8 +38,6 @@ dependencies:
   svelte-heros: 2.0.0
 
 devDependencies:
-  '@codewithshin/svelte-feathericons': 0.1.9
-  '@codewithshin/svelte-sidebar': 0.6.3
   '@codewithshin/svelte-utterances': 0.2.2
   '@playwright/test': 1.21.0
   '@sveltejs/adapter-auto': 1.0.0-next.40
@@ -59,7 +57,9 @@ devDependencies:
   prism-themes: 1.9.0
   svelte: 3.47.0
   svelte-check: 2.7.0_rlloedhe4ll5uarz4maqmiwrey
+  svelte-feathers: 0.1.15
   svelte-preprocess: 4.10.6_r5jx34o6wh4apnu42b2bjk2ina
+  svelte-sidebar-menu: 0.6.9
   svelte-simples: 0.3.1
   svelte2tsx: 0.5.9_ucc3fdkrl6lb7lhnlfimbouujy
   tailwindcss: 3.0.24
@@ -586,16 +586,8 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@codewithshin/svelte-feathericons/0.1.9:
-    resolution: {integrity: sha512-+3yc8NVALmkhvPaVKWl+Y4sulDZrmy7c6tWjfvE08vziV04rhF4vpGlvBIQ4AYpJwuDX72vyx2godOkiGOgx8A==}
-    dev: true
-
   /@codewithshin/svelte-heroicons/1.2.0:
     resolution: {integrity: sha512-+whOdVTK+nQpWWHaOx2ODqSObC//sW4mWaetw2nel1WA9oSdyL33f5Mh1FHKqfIxv1br7Mb7a3rw6Rx2r6aLCQ==}
-    dev: true
-
-  /@codewithshin/svelte-sidebar/0.6.3:
-    resolution: {integrity: sha512-3eybxRJR7mbkkH3NONrWhPUkDvk/m3sx/4HAfyyBpiISnRwTUClMNV13yxC9y6JexjHPDvvFMJwCAlLzykDq2A==}
     dev: true
 
   /@codewithshin/svelte-utterances/0.2.2:
@@ -2913,6 +2905,10 @@ packages:
   /svelte-collapse/0.0.4:
     resolution: {integrity: sha512-TXG836Uhn6SzDFsB3PIHBTormEl45Eb0denD34nYz1zM4PeArh5OYN6G3ZGmMHpG7DAHhRaEX5ikDpHfk2JNcA==}
 
+  /svelte-feathers/0.1.15:
+    resolution: {integrity: sha512-wyKisXqqXSfGCzVFWP74i7dRyWsCdgVOvCb8bFSdRsYGJH9gzkihLAx/uj/bDfIl0hKirARiztnPX7+vb7re5g==}
+    dev: true
+
   /svelte-heros/2.0.0:
     resolution: {integrity: sha512-qPDPtJYmRJhnbAF/eQuW5kah3zYGrS4/jivKAvMJYO6gX9wT2aa5xAJmWFta5M7QfyGUIkrXhbYBYXFB2jTuCQ==}
     dev: false
@@ -2977,6 +2973,10 @@ packages:
       strip-indent: 3.0.0
       svelte: 3.47.0
       typescript: 4.6.3
+    dev: true
+
+  /svelte-sidebar-menu/0.6.9:
+    resolution: {integrity: sha512-O0rNegH4HxKxg4xSxYQ0H+Nxa0PX/X9JL5FCEGNa8RNxAPJ5VAWufQJJdNYctkm6eHwoDv5v0XlOM0zCoL8FTA==}
     dev: true
 
   /svelte-simples/0.3.1:
