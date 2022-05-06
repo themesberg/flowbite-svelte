@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.14](https://github.com/themesberg/flowbite-svelte/compare/v0.15.13...v0.15.14) (2022-05-06)
+
+
+### Bug Fixes
+
+* change width limit to >=1024 in Responsive component ([e95c10f](https://github.com/themesberg/flowbite-svelte/commit/e95c10f59422b18408a73c7780767371420cb80e))
+* move from @codewithshin/svelte-sidebar to svelte-sidebar-menu ([4584351](https://github.com/themesberg/flowbite-svelte/commit/45843519c11eda6de199fc213374d0d293432255))
+* move Responsive component from layout to all pages ([381ee20](https://github.com/themesberg/flowbite-svelte/commit/381ee20922335f0c535c06c21a107ebc38849693))
+* rename index.js to index.ts ([216db5a](https://github.com/themesberg/flowbite-svelte/commit/216db5a42abff31b85644daacd441355da7805b8))
+* update checkbox page ([aa45560](https://github.com/themesberg/flowbite-svelte/commit/aa455604516ef6a4b73193d4898f7f2a5365baca))
+* use svelte-sidebar Responsive for all layouts ([dc9ed0d](https://github.com/themesberg/flowbite-svelte/commit/dc9ed0dbd7b99cbdc199f222dc6e68c4dd1a317f))
+
 ### [0.15.13](https://github.com/themesberg/flowbite-svelte/compare/v0.15.12...v0.15.13) (2022-05-05)
 
 
