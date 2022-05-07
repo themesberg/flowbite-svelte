@@ -11,7 +11,7 @@
 		img: '/images/flowbite-svelte-logo-40.png'
 	};
 
-	let asideClass = 'absolute w-auto bg-white pt-8 shadow-lg z-50 px-4 h-full z-50 overflow-scroll dark:bg-gray-800';
+	let asideClass = 'absolute w-auto bg-white pt-8 shadow-lg z-50 px-4 h-screen z-50 overflow-scroll dark:bg-gray-800';
 	// Navbar
 	let logo = '/images/flowbite-svelte-logo-95x66.svg';
 	let logoClass = 'w-8 ml-4 mr-2';
@@ -63,194 +63,196 @@
 	};
 </script>
 
-<Navbar {headerClass} {siteClass} {siteName} {logo} {alt} {spanClass} {logoClass} hamburgerClass="block lg:hidden">
-	<TopMenu {topMenus} {topMenuDiv} {topul} {topli} {activeChildLi} {childLi} />
-</Navbar>
+<div class="fixed z-50 top-0 left-0 w-full">
+	<Navbar {headerClass} {siteClass} {siteName} {logo} {alt} {spanClass} {logoClass} hamburgerClass="block lg:hidden">
+		<TopMenu {topMenus} {topMenuDiv} {topul} {topli} {activeChildLi} {childLi} />
+	</Navbar>
 
-<Aside {asideClass} transitionType="fly" {transitionParams}>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}>
-			<a href="/">Flowbite Svelte</a>
-		</h3>
-		{#each svelteflows as { href, name, rel }}
-			<SidebarList {href} {name} {sideBarListClass} />
-		{/each}
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}>
-			<a href="/accordions">Accordions</a>
-		</h3>
-		{#each accordions as { href, name, rel }}
-			<SidebarList {href} {name} {sideBarListClass} />
-		{/each}
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}><a href="/alerts">Alerts</a></h3>
-		{#each alerts as { href, name, rel }}
-			<SidebarList {href} {name} {rel} {sideBarListClass} />
-		{/each}
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}>
-			<a href="/avatar">Avatar <Badge name="NEW" /></a>
-		</h3>
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}>
-			<a href="/badges">Badges</a>
-		</h3>
-		{#each badges as { href, name, rel }}
-			<SidebarList {href} {name} {rel} {sideBarListClass} />
-		{/each}
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}>
-			<a href="/breadcrumbs">Breadcrumb <Badge name="NEW" color="pink" /></a>
-		</h3>
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}>
-			<a href="/button-groups">Button groups</a>
-		</h3>
-		{#each buttonGroups as { href, name, rel }}
-			<SidebarList {href} {name} {rel} {sideBarListClass} />
-		{/each}
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}>
-			<a href="/buttons">Buttons</a>
-		</h3>
-		{#each buttons as { href, name, rel }}
-			<SidebarList {href} {name} {rel} {sideBarListClass} />
-		{/each}
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}><a href="/cards">Cards</a></h3>
-		{#each cards as { href, name, rel }}
-			<SidebarList {href} {name} {rel} {sideBarListClass} />
-		{/each}
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}>
-			<a href="/carousels">Carousel <Badge name="NEW" color="green" /></a>
-		</h3>
-		{#each carousels as { href, name, rel }}
-			<SidebarList {href} {name} {rel} {sideBarListClass} />
-		{/each}
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}>
-			<a href="/darkmode">Dark mode</a>
-		</h3>
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}>
-			<a href="/dropdowns">Dropdowns</a>
-		</h3>
-		{#each dropdowns as { href, name, rel }}
-			<SidebarList {href} {name} {rel} {sideBarListClass} />
-		{/each}
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}>
-			<a href="/forms">Forms</a>
-		</h3>
-		{#each forms as { href, name, rel }}
-			<SidebarList {href} {name} {rel} {sideBarListClass} />
-		{/each}
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}>
-			<a href="/footer">Footer</a>
-		</h3>
-		{#each footers as { href, name, rel }}
-			<SidebarList {href} {name} {rel} {sideBarListClass} />
-		{/each}
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}>
-			<a href="/icons">Icons</a>
-		</h3>
-		{#each icons as { href, name, rel }}
-			<SidebarList {href} {name} {rel} {sideBarListClass} />
-		{/each}
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}>
-			<a href="/list-group">List group</a>
-		</h3>
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}><a href="/modals">Modals</a></h3>
-		{#each modals as { href, name, rel }}
-			<SidebarList {href} {name} {rel} {sideBarListClass} />
-		{/each}
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}><a href="/navbars">Navbar</a></h3>
-		{#each navbar as { href, name, rel }}
-			<SidebarList {href} {name} {rel} {sideBarListClass} />
-		{/each}
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}>
-			<a href="/paginations">Pagination <Badge name="NEW" color="yellow" /></a>
-		</h3>
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}>
-			<a href="/progressbars">Progress bar <Badge name="NEW" color="purple" /></a>
-		</h3>
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}><a href="/ratings">Rating <Badge name="NEW" color="blue" /></a></h3>
-		{#each ratings as { href, name, rel }}
-			<SidebarList {href} {name} {rel} {sideBarListClass} />
-		{/each}
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}>
-			<a href="/sidebars">Sidebar</a>
-		</h3>
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}>
-			<a href="/spinners">Spinners</a>
-		</h3>
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}>
-			<a href="/tables">Tables <Badge name="NEW" color="pink" /></a>
-		</h3>
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}><a href="/tabs">Tabs</a></h3>
-		{#each tabs as { href, name, rel }}
-			<SidebarList {href} {name} {rel} {sideBarListClass} />
-		{/each}
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}>
-			<a href="/timelines">Timelines <Badge name="NEW" color="green" /></a>
-		</h3>
-		{#each timelines as { href, name, rel }}
-			<SidebarList {href} {name} {rel} {sideBarListClass} />
-		{/each}
-	</Nav>
-	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}><a href="/toasts">Toast <Badge name="NEW" color="indigo" /></a></h3>
-	</Nav>
-	<Nav {navClass} navDivClass={navDivClasslast}>
-		<h3 class={h3Class}>
-			<a href="/tooltips">Tooltips</a>
-		</h3>
-		{#each tooltips as { href, name, rel }}
-			<SidebarList {href} {name} {rel} {sideBarListClass} />
-		{/each}
-	</Nav>
-</Aside>
+	<Aside {asideClass} transitionType="fly" {transitionParams}>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}>
+				<a href="/">Flowbite Svelte</a>
+			</h3>
+			{#each svelteflows as { href, name, rel }}
+				<SidebarList {href} {name} {sideBarListClass} />
+			{/each}
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}>
+				<a href="/accordions">Accordions</a>
+			</h3>
+			{#each accordions as { href, name, rel }}
+				<SidebarList {href} {name} {sideBarListClass} />
+			{/each}
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}><a href="/alerts">Alerts</a></h3>
+			{#each alerts as { href, name, rel }}
+				<SidebarList {href} {name} {rel} {sideBarListClass} />
+			{/each}
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}>
+				<a href="/avatar">Avatar <Badge name="NEW" /></a>
+			</h3>
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}>
+				<a href="/badges">Badges</a>
+			</h3>
+			{#each badges as { href, name, rel }}
+				<SidebarList {href} {name} {rel} {sideBarListClass} />
+			{/each}
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}>
+				<a href="/breadcrumbs">Breadcrumb <Badge name="NEW" color="pink" /></a>
+			</h3>
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}>
+				<a href="/button-groups">Button groups</a>
+			</h3>
+			{#each buttonGroups as { href, name, rel }}
+				<SidebarList {href} {name} {rel} {sideBarListClass} />
+			{/each}
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}>
+				<a href="/buttons">Buttons</a>
+			</h3>
+			{#each buttons as { href, name, rel }}
+				<SidebarList {href} {name} {rel} {sideBarListClass} />
+			{/each}
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}><a href="/cards">Cards</a></h3>
+			{#each cards as { href, name, rel }}
+				<SidebarList {href} {name} {rel} {sideBarListClass} />
+			{/each}
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}>
+				<a href="/carousels">Carousel <Badge name="NEW" color="green" /></a>
+			</h3>
+			{#each carousels as { href, name, rel }}
+				<SidebarList {href} {name} {rel} {sideBarListClass} />
+			{/each}
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}>
+				<a href="/darkmode">Dark mode</a>
+			</h3>
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}>
+				<a href="/dropdowns">Dropdowns</a>
+			</h3>
+			{#each dropdowns as { href, name, rel }}
+				<SidebarList {href} {name} {rel} {sideBarListClass} />
+			{/each}
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}>
+				<a href="/forms">Forms</a>
+			</h3>
+			{#each forms as { href, name, rel }}
+				<SidebarList {href} {name} {rel} {sideBarListClass} />
+			{/each}
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}>
+				<a href="/footer">Footer</a>
+			</h3>
+			{#each footers as { href, name, rel }}
+				<SidebarList {href} {name} {rel} {sideBarListClass} />
+			{/each}
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}>
+				<a href="/icons">Icons</a>
+			</h3>
+			{#each icons as { href, name, rel }}
+				<SidebarList {href} {name} {rel} {sideBarListClass} />
+			{/each}
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}>
+				<a href="/list-group">List group</a>
+			</h3>
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}><a href="/modals">Modals</a></h3>
+			{#each modals as { href, name, rel }}
+				<SidebarList {href} {name} {rel} {sideBarListClass} />
+			{/each}
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}><a href="/navbars">Navbar</a></h3>
+			{#each navbar as { href, name, rel }}
+				<SidebarList {href} {name} {rel} {sideBarListClass} />
+			{/each}
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}>
+				<a href="/paginations">Pagination <Badge name="NEW" color="yellow" /></a>
+			</h3>
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}>
+				<a href="/progressbars">Progress bar <Badge name="NEW" color="purple" /></a>
+			</h3>
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}><a href="/ratings">Rating <Badge name="NEW" color="blue" /></a></h3>
+			{#each ratings as { href, name, rel }}
+				<SidebarList {href} {name} {rel} {sideBarListClass} />
+			{/each}
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}>
+				<a href="/sidebars">Sidebar</a>
+			</h3>
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}>
+				<a href="/spinners">Spinners</a>
+			</h3>
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}>
+				<a href="/tables">Tables <Badge name="NEW" color="pink" /></a>
+			</h3>
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}><a href="/tabs">Tabs</a></h3>
+			{#each tabs as { href, name, rel }}
+				<SidebarList {href} {name} {rel} {sideBarListClass} />
+			{/each}
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}>
+				<a href="/timelines">Timelines <Badge name="NEW" color="green" /></a>
+			</h3>
+			{#each timelines as { href, name, rel }}
+				<SidebarList {href} {name} {rel} {sideBarListClass} />
+			{/each}
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}><a href="/toasts">Toast <Badge name="NEW" color="indigo" /></a></h3>
+		</Nav>
+		<Nav {navClass} navDivClass={navDivClasslast}>
+			<h3 class={h3Class}>
+				<a href="/tooltips">Tooltips</a>
+			</h3>
+			{#each tooltips as { href, name, rel }}
+				<SidebarList {href} {name} {rel} {sideBarListClass} />
+			{/each}
+		</Nav>
+	</Aside>
+</div>
 
-<main class="container mx-auto px-2 pt-4 lg:pl-72">
+<main class="container mx-auto px-2 pt-16 lg:pl-72">
 	<DarkMode btnClass={darkmodebtn} />
 	<div class="w-full">
 		<slot />
