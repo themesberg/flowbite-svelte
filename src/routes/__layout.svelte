@@ -78,26 +78,26 @@
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class={h3Class}>
-			<a href="/accordions" rel="external">Accordions</a>
+			<a href="/accordions">Accordions</a>
 		</h3>
 		{#each accordions as { href, name, rel }}
 			<SidebarList {href} {name} {sideBarListClass} />
 		{/each}
 	</Nav>
 	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}><a href="/alerts" rel="external">Alerts</a></h3>
+		<h3 class={h3Class}><a href="/alerts">Alerts</a></h3>
 		{#each alerts as { href, name, rel }}
 			<SidebarList {href} {name} {rel} {sideBarListClass} />
 		{/each}
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class={h3Class}>
-			<a href="/avatar" rel="external">Avatar <Badge name="NEW" /></a>
+			<a href="/avatar">Avatar <Badge name="NEW" /></a>
 		</h3>
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class={h3Class}>
-			<a href="/badges" rel="external">Badges</a>
+			<a href="/badges">Badges</a>
 		</h3>
 		{#each badges as { href, name, rel }}
 			<SidebarList {href} {name} {rel} {sideBarListClass} />
@@ -105,12 +105,12 @@
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class={h3Class}>
-			<a href="/breadcrumbs" rel="external">Breadcrumb <Badge name="NEW" color="pink" /></a>
+			<a href="/breadcrumbs">Breadcrumb <Badge name="NEW" color="pink" /></a>
 		</h3>
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class={h3Class}>
-			<a href="/button-groups" rel="external">Button groups</a>
+			<a href="/button-groups">Button groups</a>
 		</h3>
 		{#each buttonGroups as { href, name, rel }}
 			<SidebarList {href} {name} {rel} {sideBarListClass} />
@@ -118,7 +118,7 @@
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class={h3Class}>
-			<a href="/buttons" rel="external">Buttons</a>
+			<a href="/buttons">Buttons</a>
 		</h3>
 		{#each buttons as { href, name, rel }}
 			<SidebarList {href} {name} {rel} {sideBarListClass} />
