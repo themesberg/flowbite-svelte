@@ -258,6 +258,6 @@
 		<slot />
 	</div>
 </main>
-<div class="pt-4 ">
+<div class="pt-4 lg:pl-72">
 	<SitemapFooter {site} {socialMedia} links={footerLinks} {allRightsReserved} {copyrightYear} {liClass} {linksClass} {copyrightDivClass} {linkClass} />
 </div>
