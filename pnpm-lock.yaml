@@ -25,7 +25,7 @@ specifiers:
   svelte-feathers: ^0.1.15
   svelte-heros: ^2.0.0
   svelte-preprocess: ^4.10.5
-  svelte-sidebar-menu: ^0.7.5
+  svelte-sidebar-menu: ^0.7.6
   svelte-simples: ^0.3.1
   svelte2tsx: ^0.5.9
   tailwindcss: ^3.0.23
@@ -59,7 +59,7 @@ devDependencies:
   svelte-check: 2.7.0_rlloedhe4ll5uarz4maqmiwrey
   svelte-feathers: 0.1.15
   svelte-preprocess: 4.10.6_r5jx34o6wh4apnu42b2bjk2ina
-  svelte-sidebar-menu: 0.7.5
+  svelte-sidebar-menu: 0.7.6
   svelte-simples: 0.3.1
   svelte2tsx: 0.5.9_ucc3fdkrl6lb7lhnlfimbouujy
   tailwindcss: 3.0.24
@@ -2975,8 +2975,8 @@ packages:
       typescript: 4.6.3
     dev: true
 
-  /svelte-sidebar-menu/0.7.5:
-    resolution: {integrity: sha512-pnwz4B1C1FGyncmsobMiqFTPszMAVk8mRG4UoXEUbjoor7Q9s3JMi4MU7GLkZrQAgUi3kfaDnFaeHSPv8Oa94w==}
+  /svelte-sidebar-menu/0.7.6:
+    resolution: {integrity: sha512-TaAG+OAlF6uo7T3/FySEjhnB6civXgbMq7gJ/MyW1C2evHXt1D54Eb0yCtM4EbWN0XfNPhDaX4/EuEJ3x5HUfQ==}
     dev: true
 
   /svelte-simples/0.3.1:
