@@ -1,9 +1,10 @@
 <script lang="ts">
 	import '../app.css';
 	import { DarkMode, Badge, SitemapFooter } from '$lib/index';
-	import { Aside, Nav, SidebarList, Navbar, TopMenu, Responsive } from 'svelte-sidebar-menu';
+	import { Aside, Nav, SidebarList, Navbar, TopMenu } from 'svelte-sidebar-menu';
 	import { Github, Twitter } from 'svelte-simples';
-	import { accordions, alerts, badges, buttons, buttonGroups, cards, carousels, dropdowns, forms, footers, icons, modals, navbar, ratings, svelteflows, tabs, timelines, tooltips, topMenus } from './items';
+	import { accordions, alerts, badges, buttons, buttonGroups, cards, carousels, dropdowns, forms, footers, icons, modals, navbar, ratings, svelteflows, tabs, timelines, tooltips, topMenus, footerLinks } from './moduleItems';
+
 	let site = {
 		name: 'Flowbite Svelte',
 		href: '/',
@@ -45,113 +46,7 @@
 			icon: Twitter
 		}
 	];
-	let links = [
-		{
-			parent: 'COMPONENTS',
-			children: [
-				{ name: 'Accordion', href: '/accordions/' },
-				{ name: 'Alert', href: '/alerts' },
-				{ name: 'Avatar', href: '/avatar' },
-				{ name: 'Badge', href: '/badges' },
-				{ name: 'Breadcrumb', href: '/breadcrumbs' },
-				{ name: 'Button', href: '/buttons' }
-			]
-		},
-		{
-			parent: 'COMPONENTS',
-			children: [
-				{ name: 'Button Group', href: '/button-groups' },
-				{ name: 'Card', href: '/cards' },
-				{ name: 'Carousel', href: '/carousels' },
-				{ name: 'Dark', href: '/darkmode' },
-				{ name: 'Dropdown', href: '/dropdowns' },
-				{ name: 'Footer', href: '/footer' }
-			]
-		},
-		{
-			parent: 'COMPONENTS',
-			children: [
-				{ name: 'Form', href: '/forms' },
-				{ name: 'Icon', href: '/icons' },
-				{ name: 'List group', href: '/list-group' },
-				{ name: 'Modal', href: '/modals' },
-				{ name: 'Navbar', href: '/navbars' },
-				{ name: 'Pagination', href: '/paginations' }
-			]
-		},
-		{
-			parent: 'COMPONENTS',
-			children: [
-				{ name: 'Progress bar', href: '/progressbars' },
-				{ name: 'Rating', href: '/ratings' },
-				{ name: 'Sidebar', href: '/sidebars' },
-				{ name: 'Spinner', href: '/spinners' },
-				{ name: 'Tables', href: '/tables' },
-				{ name: 'Tab', href: '/tabs' }
-			]
-		},
-		{
-			parent: 'COMPONENTS',
-			children: [
-				{ name: 'Timeline', href: '/timelines' },
-				{ name: 'Toast', href: '/toasts' },
-				{ name: 'Tooltip', href: '/tooltips' }
-			]
-		},
-		{
-			parent: 'DOCS',
-			children: [
-				{ name: 'Getting Started', href: '/pages/getting-started' },
-				{
-					name: 'About',
-					href: '/pages/about'
-				},
-				{
-					name: 'Types',
-					href: '/pages/types'
-				},
-				{
-					name: 'How to contribute',
-					href: '/pages/how-to-contribute'
-				},
-				{
-					name: 'CLI',
-					href: '/pages/cli'
-				},
-				{
-					name: 'License',
-					href: '/pages/license'
-				}
-			]
-		},
-		{
-			parent: 'RESOURCES',
-			children: [
-				{
-					name: 'Flowbite',
-					href: 'https://flowbite.com/docs/getting-started/introduction/'
-				},
-				{
-					name: 'Tailwind CSS',
-					href: 'https://tailwindcss.com/docs/installation'
-				}
-			]
-		},
-		{
-			parent: 'FOLLOW US',
-			children: [
-				{ name: 'Github', href: 'https://github.com/themesberg/flowbite-svelte' },
-				{
-					name: 'Twitter',
-					href: 'https://twitter.com/shinokada'
-				}
-			]
-		},
-		{
-			parent: 'LEGAL',
-			children: [{ name: 'License', href: 'license' }]
-		}
-	];
+
 	let allRightsReserved = '';
 	let copyrightYear = '';
 	let liClass = 'mb-1 text-lg';
@@ -159,15 +54,20 @@
 	let copyrightDivClass = 'py-6 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-36 text-gray-900 dark:bg-gray-700 md:flex md:items-center md:justify-between';
 	let linkClass = 'hover:underline hover:text-blue-600';
 	let h3Class = 'text-xl pb-4';
+	import { quartInOut } from 'svelte/easing';
+	let transitionParams = {
+		duration: 500,
+		delay: 100,
+		easing: quartInOut,
+		x: -200
+	};
 </script>
-
-<Responsive />
 
 <Navbar {headerClass} {siteClass} {siteName} {logo} {alt} {spanClass} {logoClass} hamburgerClass="block lg:hidden">
 	<TopMenu {topMenus} {topMenuDiv} {topul} {topli} {activeChildLi} {childLi} />
 </Navbar>
 
-<Aside {asideClass}>
+<Aside {asideClass} transitionType="fly" {transitionParams}>
 	<Nav {navClass} {navDivClass}>
 		<h3 class={h3Class}>
 			<a href="/">Flowbite Svelte</a>
@@ -178,26 +78,26 @@
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class={h3Class}>
-			<a href="/accordions">Accordions</a>
+			<a href="/accordions" rel="external">Accordions</a>
 		</h3>
 		{#each accordions as { href, name, rel }}
 			<SidebarList {href} {name} {sideBarListClass} />
 		{/each}
 	</Nav>
 	<Nav {navClass} {navDivClass}>
-		<h3 class={h3Class}><a href="/alerts">Alerts</a></h3>
+		<h3 class={h3Class}><a href="/alerts" rel="external">Alerts</a></h3>
 		{#each alerts as { href, name, rel }}
 			<SidebarList {href} {name} {rel} {sideBarListClass} />
 		{/each}
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class={h3Class}>
-			<a href="/avatar">Avatar <Badge name="NEW" /></a>
+			<a href="/avatar" rel="external">Avatar <Badge name="NEW" /></a>
 		</h3>
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class={h3Class}>
-			<a href="/badges">Badges</a>
+			<a href="/badges" rel="external">Badges</a>
 		</h3>
 		{#each badges as { href, name, rel }}
 			<SidebarList {href} {name} {rel} {sideBarListClass} />
@@ -205,12 +105,12 @@
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class={h3Class}>
-			<a href="/breadcrumbs">Breadcrumb <Badge name="NEW" color="pink" /></a>
+			<a href="/breadcrumbs" rel="external">Breadcrumb <Badge name="NEW" color="pink" /></a>
 		</h3>
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class={h3Class}>
-			<a href="/button-groups">Button groups</a>
+			<a href="/button-groups" rel="external">Button groups</a>
 		</h3>
 		{#each buttonGroups as { href, name, rel }}
 			<SidebarList {href} {name} {rel} {sideBarListClass} />
@@ -218,7 +118,7 @@
 	</Nav>
 	<Nav {navClass} {navDivClass}>
 		<h3 class={h3Class}>
-			<a href="/buttons">Buttons</a>
+			<a href="/buttons" rel="external">Buttons</a>
 		</h3>
 		{#each buttons as { href, name, rel }}
 			<SidebarList {href} {name} {rel} {sideBarListClass} />
@@ -357,5 +257,5 @@
 	</div>
 </main>
 <div class="pt-4 ">
-	<SitemapFooter {site} {socialMedia} {links} {allRightsReserved} {copyrightYear} {liClass} {linksClass} {copyrightDivClass} {linkClass} />
+	<SitemapFooter {site} {socialMedia} links={footerLinks} {allRightsReserved} {copyrightYear} {liClass} {linksClass} {copyrightDivClass} {linkClass} />
 </div>

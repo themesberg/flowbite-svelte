@@ -2,7 +2,7 @@
 	import { Card, Button } from '$lib/index';
 	import { goto } from '$app/navigation';
 	import { Responsive } from 'svelte-sidebar-menu';
-	import { accordions, alerts, badges, buttons, buttonGroups, cards, carousels, dropdowns, forms, footers, icons, modals, navbar, ratings, tabs, timelines, tooltips } from './items';
+	import { accordions, alerts, badges, buttons, buttonGroups, cards, carousels, dropdowns, forms, footers, icons, modals, navbar, ratings, tabs, timelines, tooltips } from './moduleItems';
 	const handleClick = () => {
 		goto('/pages/getting-started');
 	};
