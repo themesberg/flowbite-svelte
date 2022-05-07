@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.15](https://github.com/themesberg/flowbite-svelte/compare/v0.15.14...v0.15.15) (2022-05-07)
+
+
+### Bug Fixes
+
+* update svelte-sidebar-menu ([f6fb17f](https://github.com/themesberg/flowbite-svelte/commit/f6fb17f3ea37ea0fd0a489dc3e167849d372e367))
+
 ### [0.15.14](https://github.com/themesberg/flowbite-svelte/compare/v0.15.13...v0.15.14) (2022-05-06)
 
 
