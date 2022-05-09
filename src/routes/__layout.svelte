@@ -16,6 +16,7 @@
 	let logo = '/images/flowbite-svelte-logo-95x66.svg';
 	let logoClass = 'w-8 ml-4 mr-2';
 	let alt = 'Flowbite Svelte';
+	let hamburgerClass = 'text-gray-300 hover:text-blue-500 cursor-pointer mr-4 border-none focus:outline-none lg:hidden';
 	let activeChildLi = 'block py-2 px-4 text-lg text-gray-700 hover:bg-gray-100 dark:text-white';
 	let childLi = 'block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 md:border-0 md:p-0 text-lg dark:text-white';
 	let headerClass = 'w-full z-50 px-6 bg-white h-14 pt-3 text-gray-600 border-b-2 dark:bg-gray-800 dark:text-white dark:border-b-1';
@@ -64,7 +65,7 @@
 </script>
 
 <div class="fixed z-50 top-0 left-0 w-full">
-	<Side {siteName} {siteClass} {transitionParams} {topMenus} {headerClass} {asideClass} {logo} {logoClass} {alt} {activeChildLi} {spanClass} {topli} {topMenuDiv} {topul} {childLi}>
+	<Side {siteName} {siteClass} {transitionParams} {topMenus} {headerClass} {asideClass} {logo} {logoClass} {alt} {activeChildLi} {spanClass} {topli} {topMenuDiv} {topul} {childLi} {hamburgerClass}>
 		<Nav {navClass} {navDivClass}>
 			<h3 class={h3Class}>
 				<a href="/">Flowbite Svelte</a>
