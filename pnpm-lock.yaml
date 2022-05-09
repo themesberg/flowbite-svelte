@@ -25,7 +25,7 @@ specifiers:
   svelte-feathers: ^0.1.15
   svelte-heros: ^2.0.0
   svelte-preprocess: ^4.10.5
-  svelte-sidebar-menu: ^0.7.6
+  svelte-sidebar-menu: ^0.8.4
   svelte-simples: ^0.3.1
   svelte2tsx: ^0.5.9
   tailwindcss: ^3.0.23
@@ -59,7 +59,7 @@ devDependencies:
   svelte-check: 2.7.0_rlloedhe4ll5uarz4maqmiwrey
   svelte-feathers: 0.1.15
   svelte-preprocess: 4.10.6_r5jx34o6wh4apnu42b2bjk2ina
-  svelte-sidebar-menu: 0.7.6
+  svelte-sidebar-menu: 0.8.4
   svelte-simples: 0.3.1
   svelte2tsx: 0.5.9_ucc3fdkrl6lb7lhnlfimbouujy
   tailwindcss: 3.0.24
@@ -288,6 +288,8 @@ packages:
     resolution: {integrity: sha512-vqUSBLP8dQHFPdPi9bc5GK9vRkYHJ49fsZdtoJ8EQ8ibpwk5rPKfvNIwChB0KVXcIjcepEBBd2VHC5r9Gy8ueg==}
     engines: {node: '>=6.0.0'}
     hasBin: true
+    dependencies:
+      '@babel/types': 7.17.0
     dev: true
 
   /@babel/plugin-proposal-class-properties/7.16.7_@babel+core@7.16.12:
@@ -2975,8 +2977,8 @@ packages:
       typescript: 4.6.3
     dev: true
 
-  /svelte-sidebar-menu/0.7.6:
-    resolution: {integrity: sha512-TaAG+OAlF6uo7T3/FySEjhnB6civXgbMq7gJ/MyW1C2evHXt1D54Eb0yCtM4EbWN0XfNPhDaX4/EuEJ3x5HUfQ==}
+  /svelte-sidebar-menu/0.8.4:
+    resolution: {integrity: sha512-FCrqsTZdSJViRUMJURooIDz+2u9nM72uzQhFhkN2ppm0t0nkxQGpxsbt/L+RHufbW2Yner7Zp+kKskbdiJGmuw==}
     dev: true
 
   /svelte-simples/0.3.1:
