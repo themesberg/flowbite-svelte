@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.17](https://github.com/themesberg/flowbite-svelte/compare/v0.15.16...v0.15.17) (2022-05-09)
+
+
+### Bug Fixes
+
+* remove svelte-collapse from Accordion component ([7b8a642](https://github.com/themesberg/flowbite-svelte/commit/7b8a642284947c7b8c6bbabecad2ddb2cc1f3d04))
+* update svelte-sidebar-menu to 0.8.4 ([3b07355](https://github.com/themesberg/flowbite-svelte/commit/3b073553c392f4adb47254beb49769d4e150eaa4))
+
 ### [0.15.16](https://github.com/themesberg/flowbite-svelte/compare/v0.15.15...v0.15.16) (2022-05-09)
 
 
