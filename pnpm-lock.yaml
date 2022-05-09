@@ -21,7 +21,6 @@ specifiers:
   prism-themes: ^1.9.0
   svelte: ^3.47.0
   svelte-check: ^2.2.6
-  svelte-collapse: ^0.0.4
   svelte-feathers: ^0.1.15
   svelte-heros: ^2.0.0
   svelte-preprocess: ^4.10.5
@@ -34,7 +33,6 @@ specifiers:
 
 dependencies:
   flowbite: 1.4.2
-  svelte-collapse: 0.0.4
   svelte-heros: 2.0.0
 
 devDependencies:
@@ -2906,6 +2904,7 @@ packages:
 
   /svelte-collapse/0.0.4:
     resolution: {integrity: sha512-TXG836Uhn6SzDFsB3PIHBTormEl45Eb0denD34nYz1zM4PeArh5OYN6G3ZGmMHpG7DAHhRaEX5ikDpHfk2JNcA==}
+    dev: true
 
   /svelte-feathers/0.1.15:
     resolution: {integrity: sha512-wyKisXqqXSfGCzVFWP74i7dRyWsCdgVOvCb8bFSdRsYGJH9gzkihLAx/uj/bDfIl0hKirARiztnPX7+vb7re5g==}
