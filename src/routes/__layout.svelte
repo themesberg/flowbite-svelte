@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import { DarkMode, Badge, SitemapFooter } from '$lib/index';
-	import { Aside, Nav, SidebarList, Navbar, TopMenu } from 'svelte-sidebar-menu';
+	import { Side, Nav, SidebarList } from 'svelte-sidebar-menu';
 	import { Github, Twitter } from 'svelte-simples';
 	import { accordions, alerts, badges, buttons, buttonGroups, cards, carousels, dropdowns, forms, footers, icons, modals, navbar, ratings, svelteflows, tabs, timelines, tooltips, topMenus, footerLinks } from './moduleItems';
 
@@ -64,11 +64,7 @@
 </script>
 
 <div class="fixed z-50 top-0 left-0 w-full">
-	<Navbar {headerClass} {siteClass} {siteName} {logo} {alt} {spanClass} {logoClass} hamburgerClass="block lg:hidden">
-		<TopMenu {topMenus} {topMenuDiv} {topul} {topli} {activeChildLi} {childLi} />
-	</Navbar>
-
-	<Aside {asideClass} transitionType="fly" {transitionParams}>
+	<Side {siteName} {siteClass} {transitionParams} {topMenus} {headerClass} {asideClass} {logo} {logoClass} {alt} {activeChildLi} {spanClass} {topli} {topMenuDiv} {topul} {childLi}>
 		<Nav {navClass} {navDivClass}>
 			<h3 class={h3Class}>
 				<a href="/">Flowbite Svelte</a>
@@ -249,7 +245,7 @@
 				<SidebarList {href} {name} {rel} {sideBarListClass} />
 			{/each}
 		</Nav>
-	</Aside>
+	</Side>
 </div>
 
 <main class="container mx-auto px-2 pt-16 lg:pl-72">
