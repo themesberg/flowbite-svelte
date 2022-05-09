@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.16](https://github.com/themesberg/flowbite-svelte/compare/v0.15.15...v0.15.16) (2022-05-09)
+
+
+### Bug Fixes
+
+* remove __layout from pages dir ([7224e31](https://github.com/themesberg/flowbite-svelte/commit/7224e31b66009bd6fcf207e8da1f69ccec159728))
+* remove rel=external from __layout since it doesn't show the sidemenu ([a0cee08](https://github.com/themesberg/flowbite-svelte/commit/a0cee08e3312a66bdc1a4e070ca45abb0fdc7a84))
+* update svelte-sidebar-menu ([59b37b5](https://github.com/themesberg/flowbite-svelte/commit/59b37b5a8f3bea06ecd8b8fdf5cc5ac5967dd149))
+* update svelte-sidebar-menu and __layout ([9314f7a](https://github.com/themesberg/flowbite-svelte/commit/9314f7ac55204505f4cffe2e166b36c474a92985))
+
 ### [0.15.15](https://github.com/themesberg/flowbite-svelte/compare/v0.15.14...v0.15.15) (2022-05-07)
 
 
