@@ -2,9 +2,7 @@
 export { default as AccordionItem }  from'./accordions/AccordionItem.svelte'
 
 // Alerts
-export { default as Alert }  from'./alerts/Alert.svelte'
-export { default as BorderAlert }  from'./alerts/BorderAlert.svelte'
-export { default as InfoAlert }   from'./alerts/InfoAlert.svelte'
+export { default as Alert } from './alerts/Alert.svelte';
 
 // Avatar
 export { default as Avatar } from './avatar/Avatar.svelte'

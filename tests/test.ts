@@ -54,27 +54,7 @@ test('Icon Accordion page should have h1', async ({ page }) => {
 // Alert
 test('Alert main page should have h1', async ({ page }) => {
 	await page.goto('/alerts');
-	expect(await page.textContent('h1')).toBe('Alert Components');
-});
-
-test('Alert default page should have h1', async ({ page }) => {
-	await page.goto('/alerts/default-alert');
 	expect(await page.textContent('h1')).toBe('Alert');
-});
-
-test('Border alert page should have h1', async ({ page }) => {
-	await page.goto('/alerts/border-alert');
-	expect(await page.textContent('h1')).toBe('Border Alert');
-});
-
-test('Information alert page should have h1', async ({ page }) => {
-	await page.goto('/alerts/information-alert');
-	expect(await page.textContent('h1')).toBe('Information Alert');
-});
-
-test('Alert animation example page should have h1', async ({ page }) => {
-	await page.goto('/alerts/animation');
-	expect(await page.textContent('h1')).toBe('Alert animation');
 });
 
 // Avatar
@@ -177,7 +157,6 @@ test('Loader Buttons page should have h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Button Loader');
 });
 
-
 // Cards
 test('Card main page should have h1', async ({ page }) => {
 	await page.goto('/cards');
@@ -234,7 +213,6 @@ test('Carousel transition page should have h1', async ({ page }) => {
 	await page.goto('/carousels/transition');
 	expect(await page.textContent('h1')).toBe('Carousel transition');
 });
-
 
 // Darkmode
 test('Dark mode page should have h1', async ({ page }) => {
@@ -393,8 +371,6 @@ test('ScoreRating page should have h1', async ({ page }) => {
 	await page.goto('/ratings/score-rating');
 	expect(await page.textContent('h1')).toBe('ScoreRating Component');
 });
-
-
 
 // Sidebar
 test('Sidebar page should have h1', async ({ page }) => {

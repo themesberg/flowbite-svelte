@@ -1,1 +1,9 @@
-{"props":[["color"," Colors "," 'blue'"],["alertId"," string | number "," 'alert-1'"],["closeBtn"," boolean "," false"],["btn1"," boolean "," false"]]}
+{
+	"props": [
+		["color", " Colors ", " 'blue'"],
+		["icon", " Component? ", " null"],
+		["closeBtn", " boolean ", " false"],
+		["rounded", " boolean ", " true"],
+		["borderAccent", " boolean ", " false"]
+	]
+}

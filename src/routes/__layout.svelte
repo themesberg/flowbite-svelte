@@ -4,7 +4,7 @@
 	import { Side, Nav, SidebarList } from 'svelte-sidebar-menu';
 	import Twitter from './utils/icons/Twitter.svelte';
 	import Github from './utils/icons/Github.svelte';
-	import { accordions, alerts, badges, buttons, buttonGroups, cards, carousels, dropdowns, forms, footers, icons, modals, navbar, ratings, svelteflows, tabs, timelines, tooltips, topMenus, footerLinks } from './moduleItems';
+	import { accordions, badges, buttons, buttonGroups, cards, carousels, dropdowns, forms, footers, icons, modals, navbar, ratings, svelteflows, tabs, timelines, tooltips, topMenus, footerLinks } from './moduleItems';
 
 	let site = {
 		name: 'Flowbite Svelte',
@@ -84,10 +84,9 @@
 			{/each}
 		</Nav>
 		<Nav {navClass} {navDivClass}>
-			<h3 class={h3Class}><a href="/alerts">Alerts</a></h3>
-			{#each alerts as { href, name, rel }}
-				<SidebarList {href} {name} {rel} {sideBarListClass} />
-			{/each}
+			<h3 class={h3Class}>
+				<a href="/alerts">Alert</a>
+			</h3>
 		</Nav>
 		<Nav {navClass} {navDivClass}>
 			<h3 class={h3Class}>

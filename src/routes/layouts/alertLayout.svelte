@@ -13,19 +13,7 @@
 		<Htwo label="Related components" />
 
 		<p>
-			<a href="/alerts/default-alert">Default Alert</a>
-		</p>
-
-		<p>
-			<a href="/alerts/border-alert">Border Alert</a>
-		</p>
-
-		<p>
-			<a href="/alerts/information-alert">Information Alert</a>
-		</p>
-
-		<p>
-			<a href="/alerts/animation">Animation</a>
+			<a href="/icons">Icons</a>
 		</p>
 
 		<Htwo label="References" />
