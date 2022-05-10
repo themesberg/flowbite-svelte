@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.20](https://github.com/themesberg/flowbite-svelte/compare/v0.15.19...v0.15.20) (2022-05-10)
+
+
+### Features
+
+* add always open, color, flush, and arrow style to Accordion component ([e435bb6](https://github.com/themesberg/flowbite-svelte/commit/e435bb6cb29cbc778409379484a996a9d8fad76b))
+
 ### [0.15.19](https://github.com/themesberg/flowbite-svelte/compare/v0.15.18...v0.15.19) (2022-05-10)
 
 
