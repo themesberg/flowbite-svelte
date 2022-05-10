@@ -5,7 +5,7 @@ layout: sidebarLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import { Sidebar, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
+  import { Sidebar, SidebarItem, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/Sidebar.json'
   // Props table
   let items = componentProps.props
@@ -23,20 +23,22 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     LoginSolid,
     CogSolid
   } from 'svelte-heros';
+
   let site = {
     name: 'Flowbite-Svelte',
     href: '/',
     img: '/images/flowbite-svelte-logo-30.png'
   };
+
   let uid = 1;
-  let links = [
+  let sidebarItem1 = [
     {
       id: uid++,
       name: 'Dashboard',
       href: '/',
       icon: ChartPieSolid,
       iconSize: 16,
-      iconClass: "text-blue-500 dark:text-white",
+      iconClass: "text-blue-500",
     },
     {
       id: uid++,
@@ -61,6 +63,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       name: 'Inbox',
       icon: InboxInSolid,
       iconSize: 16,
+      iconClass: "text-pink-500",
       href: '/'
     },
     {
@@ -68,6 +71,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       name: 'Users',
       icon: UserSolid,
       iconSize: 16,
+      iconClass: "text-purple-500",
       href: '/'
     },
     {
@@ -75,6 +79,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       name: 'Sign In',
       icon: LoginSolid,
       iconSize: 16,
+      iconClass: "text-green-300",
+      iconClass: "text-indigo-500",
       href: '/'
     },
     {
@@ -82,22 +88,25 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       name: 'Setting',
       icon: CogSolid,
       iconSize: 16,
+      iconClass: "text-yellow-300",
       href: '/'
     }
   ];
-  let links2 = [
+  let sidebarItem2 = [
     {
       id: uid++,
       name: 'Dashboard',
       href: '/',
       icon: ChartPieSolid,
       iconSize: 16,
+      iconClass: "text-red-500",
     },
     {
       id: uid++,
       name: 'E-commerce',
       icon: ShoppingBagSolid,
       iconSize: 16,
+      iconClass: "text-blue-500",
       children: [
         {
           id: uid++,
@@ -121,6 +130,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       name: 'Kanban',
       icon: TableSolid,
       iconSize: 16,
+      iconClass: "text-purple-500",
       href: '/'
     },
     {
@@ -128,12 +138,14 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       name: 'Inbox',
       icon: InboxInSolid,
       iconSize: 16,
+      iconClass: "text-yellow-500",
       href: '/'
     },
     {
       id: uid++,
       name: 'Users',
       icon: UserSolid,
+      iconClass: "text-green-500",
       iconSize: 16,
       children: [
         {
@@ -158,6 +170,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       name: 'Sign In',
       icon: LoginSolid,
       iconSize: 16,
+      iconClass: "text-pink-500",
       href: '/'
     },
     {
@@ -165,9 +178,46 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       name: 'Setting',
       icon: CogSolid,
       iconSize: 16,
+      iconClass: "text-indigo-500",
       href: '/'
     }
   ];
+
+  let sidebarItem3 = [
+    {
+      id: uid++,
+      name: 'Upgrade to Pro',
+      href: '/',
+      icon: ChartPieSolid,
+      iconSize: 16,
+      iconClass: "text-blue-500 dark:text-red-500",
+    },
+    {
+      id: uid++,
+      name: 'Documentation',
+      href: '/',
+      icon: ShoppingBagSolid,
+      iconSize: 16,
+      iconClass: "text-green-500 dark:text-purple-500",
+    },
+    {
+      id: uid++,
+      name: 'Components',
+      href: '/',
+      icon: TableSolid,
+      iconSize: 16,
+      iconClass: "text-pink-500 dark:text-indigo-500",
+    },
+    {
+      id: uid++,
+      name: 'Help',
+      href: '/',
+      icon: UserSolid,
+      iconSize: 16,
+      iconClass: "text-yellow-500 dark:text-blue-500",
+    },
+  ]
+
   let cta ={
     label:'Beta',
     text: 'Preview the new Flowbite dashboard navigation! You can turn the new navigation off for a limited time in your profile.'
@@ -187,18 +237,19 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Breadcrumb {crumbs}/>
 
-
 <h1 class="text-3xl w-full dark:text-white py-8">Sidebar Components</h1>
 
 <Htwo label="Default sidebar" />
 
 <div class="container flex flex-wrap rounded-xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6">
-  <Sidebar {links} />
+  <Sidebar {site}>
+		<SidebarItem links={sidebarItem1} />
+  </Sidebar>
 </div>
 
 ```html
 <script>
-  import { Sidebar } from 'flowbite-svelte';
+  import { Sidebar, SidebarItem } from 'flowbite-svelte';
   import {
     ChartPieSolid,
     ShoppingBagSolid,
@@ -210,14 +261,14 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   } from 'svelte-heros';
 
   let uid = 1;
-  let links = [
+  let sidebarItem1 = [
     {
       id: uid++,
       name: 'Dashboard',
       href: '/',
       icon: ChartPieSolid,
       iconSize: 16,
-      iconClass: "text-blue-500 dark:text-white",
+      iconClass: "text-blue-500",
     },
     {
       id: uid++,
@@ -242,6 +293,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       name: 'Inbox',
       icon: InboxInSolid,
       iconSize: 16,
+      iconClass: "text-pink-500",
       href: '/'
     },
     {
@@ -249,6 +301,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       name: 'Users',
       icon: UserSolid,
       iconSize: 16,
+      iconClass: "text-purple-500",
       href: '/'
     },
     {
@@ -256,6 +309,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       name: 'Sign In',
       icon: LoginSolid,
       iconSize: 16,
+      iconClass: "text-green-300",
+      iconClass: "text-indigo-500",
       href: '/'
     },
     {
@@ -263,19 +318,24 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       name: 'Setting',
       icon: CogSolid,
       iconSize: 16,
+      iconClass: "text-yellow-300",
       href: '/'
     }
   ];
+  
 </script>
 
-<Sidebar {links} />
-
+<Sidebar {site}>
+  <SidebarItem links={sidebarItem1} />
+</Sidebar>
 ```
 
 <Htwo label="Multi-level dropdown" />
 
 <ExampleDiv>
-  <Sidebar links={links2} {site} />
+  <Sidebar  {site} >
+		<SidebarItem links={sidebarItem2} />
+  </Sidebar>
 </ExampleDiv>
 
 
@@ -288,19 +348,21 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     img: '/images/flowbite-svelte-logo-30.png'
   };
   let uid = 1;
-  let links2 = [
+  let sidebarItem2 = [
     {
       id: uid++,
       name: 'Dashboard',
       href: '/',
       icon: ChartPieSolid,
       iconSize: 16,
+      iconClass: "text-red-500",
     },
     {
       id: uid++,
       name: 'E-commerce',
       icon: ShoppingBagSolid,
       iconSize: 16,
+      iconClass: "text-blue-500",
       children: [
         {
           id: uid++,
@@ -324,6 +386,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       name: 'Kanban',
       icon: TableSolid,
       iconSize: 16,
+      iconClass: "text-purple-500",
       href: '/'
     },
     {
@@ -331,12 +394,14 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       name: 'Inbox',
       icon: InboxInSolid,
       iconSize: 16,
+      iconClass: "text-yellow-500",
       href: '/'
     },
     {
       id: uid++,
       name: 'Users',
       icon: UserSolid,
+      iconClass: "text-green-500",
       iconSize: 16,
       children: [
         {
@@ -361,6 +426,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       name: 'Sign In',
       icon: LoginSolid,
       iconSize: 16,
+      iconClass: "text-pink-500",
       href: '/'
     },
     {
@@ -368,18 +434,24 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       name: 'Setting',
       icon: CogSolid,
       iconSize: 16,
+      iconClass: "text-indigo-500",
       href: '/'
     }
   ];
+
 </script>
 
-<Sidebar links={links2} {site} />
+ <Sidebar  {site} >
+    <SidebarItem links={sidebarItem2} />
+</Sidebar>
 ```
 
 <Htwo label="CTA button" />
 
 <ExampleDiv>
-  <Sidebar {links} {cta} />
+  <Sidebar {cta} >
+		<SidebarItem links={sidebarItem1} />
+  </Sidebar>
 </ExampleDiv>
 
 ```html
@@ -389,6 +461,65 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     text: 'Preview the new Flowbite dashboard navigation! You can turn the new navigation off for a limited time in your profile.'
   }
 </script>
+
+<Sidebar {cta} >
+  <SidebarItem links={sidebarItem1} />
+</Sidebar>
+```
+
+<Htwo label="Content separator" />
+
+<p>Use the `border` prop to add a top border.</p>
+
+<ExampleDiv>
+  <Sidebar {site}>
+		<SidebarItem links={sidebarItem1} />
+		<SidebarItem links={sidebarItem3} border />
+  </Sidebar>
+</ExampleDiv>
+
+```html
+<script>
+  let sidebarItem3 = [
+    {
+      id: uid++,
+      name: 'Upgrade to Pro',
+      href: '/',
+      icon: ChartPieSolid,
+      iconSize: 16,
+      iconClass: "text-blue-500 dark:text-red-500",
+    },
+    {
+      id: uid++,
+      name: 'Documentation',
+      href: '/',
+      icon: ShoppingBagSolid,
+      iconSize: 16,
+      iconClass: "text-green-500 dark:text-purple-500",
+    },
+    {
+      id: uid++,
+      name: 'Components',
+      href: '/',
+      icon: TableSolid,
+      iconSize: 16,
+      iconClass: "text-pink-500 dark:text-indigo-500",
+    },
+    {
+      id: uid++,
+      name: 'Help',
+      href: '/',
+      icon: UserSolid,
+      iconSize: 16,
+      iconClass: "text-yellow-500 dark:text-blue-500",
+    },
+  ]
+</script>
+
+<Sidebar {site}>
+  <SidebarItem links={sidebarItem1} />
+  <SidebarItem links={sidebarItem3} border />
+</Sidebar>
 ```
 
 <Htwo label="Props" />

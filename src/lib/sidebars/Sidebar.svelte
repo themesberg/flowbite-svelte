@@ -1,8 +1,6 @@
 <script lang="ts">
-	import type { SiteType, SidebarType, SidebarCtaType } from '../types';
-	import SidebarDropdown from './SidebarDropdown.svelte';
+	import type { SiteType, SidebarCtaType } from '../types';
 	export let site: SiteType;
-	export let links: SidebarType[];
 	export let cta: SidebarCtaType;
 </script>
 
@@ -14,25 +12,7 @@
 				<span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">{site.name}</span>
 			</a>
 		{/if}
-		<ul class="space-y-2">
-			{#each links as link (link.id)}
-				{#if link.children}
-					<SidebarDropdown {link} />
-				{:else}
-					<li>
-						<a href={link.href} rel={link.rel} class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-							{#if link.icon}
-								<svelte:component this={link.icon} size={link.iconSize} color={link.iconColor} class="mr-2 {link.iconClass}" />
-							{/if}
-							<span class="ml-3">{link.name}</span>
-							{#if link.subtext}
-								{@html link.subtext}
-							{/if}
-						</a>
-					</li>
-				{/if}
-			{/each}
-		</ul>
+		<slot />
 		{#if cta}
 			<div id="dropdown-cta" class="p-4 mt-6 bg-blue-50 rounded-lg dark:bg-blue-900" role="alert">
 				<div class="flex items-center mb-3">

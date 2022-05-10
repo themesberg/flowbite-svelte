@@ -103,6 +103,7 @@ export { default as ScoreRating } from './ratings/ScoreRating.svelte'
 
 // Sidebar
 export { default as Sidebar } from './sidebars/Sidebar.svelte'
+export { default as SidebarItem } from './sidebars/SidebarItem.svelte'
 
 // Spin
 export { default as Spinner } from'./spinners/Spinner.svelte'
