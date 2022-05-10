@@ -13,7 +13,7 @@
 	"license": "MIT",
 	"scripts": {
 		"dev": "svelte-kit dev",
-		"gen:props": "cd scripts && node createProps.js",
+		"gen:props": "cd scripts && node createProps.js && cd .. && npm run test",
 		"build": "svelte-kit build",
 		"package": "svelte-kit package",
 		"preview": "svelte-kit preview",

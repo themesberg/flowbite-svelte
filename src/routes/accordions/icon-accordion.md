@@ -7,11 +7,9 @@ layout: accordionLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { AccordionItem, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import { ArchiveOutline, BeakerOutline } from "svelte-heros";
-  import accordionProps from '../props/AccordionDefault.json'
-  import accordionItemProps from '../props/AccordionItem.json'
+  import accordionProps from '../props/AccordionItem.json'
   // Props table
   export let items = accordionProps.props
-  export let items2 = accordionItemProps.props
 	let propHeader = ['Name', 'Type', 'Default']
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
@@ -156,14 +154,7 @@ npm i svelte-heros
 
 <p>The component has the following props, type, and default values. See <a href="/type-list">type-list page</a> for type information.</p>
 
-<h3>AccordionDefault</h3>
-
 <Table header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
 </Table>
 
-<h3>AccordionItem</h3>
-
-<Table header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={items2} rowState='hover' />
-</Table>

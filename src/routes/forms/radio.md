@@ -7,7 +7,7 @@ import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
 import { onMount } from 'svelte';
 import { RadioInline, Radio, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
-import componentProps from '../props/Radio.json'
+import componentProps from '../props/RadioItem.json'
 let items = componentProps.props
 
 let propHeader = ['Name', 'Type', 'Default']
