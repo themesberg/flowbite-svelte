@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { FormColorType } from '../types';
 	export let divClass: string = 'flex items-center mr-4';
-	export let inputClass: string = 'w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600';
+	export let inputClass: string = 'w-4 h-4 bg-gray-100 rounded border-gray-300 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 ';
 	export let labelClass: string = 'ml-2 text-sm font-medium text-gray-900 dark:text-gray-300';
 	export let disabled: boolean = false;
 	if (disabled) {
@@ -13,19 +13,19 @@
 	export let helperClass: string = 'text-xs font-normal text-gray-500 dark:text-gray-300';
 	export let color: FormColorType = 'blue';
 	if (color === 'red') {
-		inputClass = 'w-4 h-4 text-red-600 bg-gray-100 rounded border-gray-300 focus:ring-red-500 dark:focus:ring-red-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600';
+		inputClass += 'text-red-600 focus:ring-red-500 dark:focus:ring-red-600';
 	} else if (color === 'green') {
-		inputClass = 'w-4 h-4 text-green-600 bg-gray-100 rounded border-gray-300 focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600';
+		inputClass += 'text-green-600 focus:ring-green-500 dark:focus:ring-green-600';
 	} else if (color === 'purple') {
-		inputClass = 'w-4 h-4 text-purple-600 bg-gray-100 rounded border-gray-300 focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600';
+		inputClass += 'text-purple-600 focus:ring-purple-500 dark:focus:ring-purple-600';
 	} else if (color === 'teal') {
-		inputClass = 'w-4 h-4 text-teal-600 bg-gray-100 rounded border-gray-300 focus:ring-teal-500 dark:focus:ring-teal-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600';
+		inputClass += 'text-teal-600 focus:ring-teal-500 dark:focus:ring-teal-600';
 	} else if (color === 'yellow') {
-		inputClass = 'w-4 h-4 text-yellow-400 bg-gray-100 rounded border-gray-300 focus:ring-yellow-500 dark:focus:ring-yellow-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600';
+		inputClass += 'text-yellow-400 focus:ring-yellow-500 dark:focus:ring-yellow-600';
 	} else if (color === 'orange') {
-		inputClass = 'w-4 h-4 text-orange-500 bg-gray-100 rounded border-gray-300 focus:ring-orange-500 dark:focus:ring-orange-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600';
+		inputClass += 'text-orange-500 focus:ring-orange-500 dark:focus:ring-orange-600';
 	} else {
-		inputClass = 'w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600';
+		inputClass += 'text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600';
 	}
 	export let helper: string;
 	export let id: string;

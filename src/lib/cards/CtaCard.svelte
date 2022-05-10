@@ -5,25 +5,24 @@
 	export let headColor: Colors = 'gray';
 	export let btns: CardButtonType[];
 	export let divClass: string = 'p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700';
-	let headClass: string;
+	let headClass: string = 'mb-2 text-3xl font-bold dark:text-white ';
+	
 	if (headColor === 'blue') {
-		headClass = 'mb-2 text-3xl font-bold text-blue-900 dark:text-white';
+		headClass += 'text-blue-900';
 	} else if (headColor === 'gray') {
-		headClass = 'mb-2 text-3xl font-bold text-gray-900 dark:text-white';
+		headClass += 'text-gray-900';
 	} else if (headColor === 'red') {
-		headClass = 'mb-2 text-3xl font-bold text-red-900 dark:text-white';
+		headClass += 'text-red-900';
 	} else if (headColor === 'yellow') {
-		headClass = 'mb-2 text-3xl font-bold text-yellow-900 dark:text-white';
+		headClass += 'text-yellow-900';
 	} else if (headColor === 'green') {
-		headClass = 'mb-2 text-3xl font-bold text-green-900 dark:text-white';
+		headClass += 'text-green-900';
 	} else if (headColor === 'indigo') {
-		headClass = 'mb-2 text-3xl font-bold text-indigo-900 dark:text-white';
+		headClass += 'text-indigo-900';
 	} else if (headColor === 'purple') {
-		headClass = 'mb-2 text-3xl font-bold text-purple-900 dark:text-white';
+		headClass += 'text-purple-900';
 	} else if (headColor === 'pink') {
-		headClass = 'mb-2 text-3xl font-bold text-pink-900 dark:text-white';
-	} else {
-		headClass = 'mb-2 text-3xl font-bold text-blue-900 dark:text-white';
+		headClass += 'text-pink-900';
 	}
 </script>
 
