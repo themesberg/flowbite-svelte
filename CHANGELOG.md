@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.19](https://github.com/themesberg/flowbite-svelte/compare/v0.15.18...v0.15.19) (2022-05-10)
+
+
+### Bug Fixes
+
+* add SidebarItem to Sidebar component ([a3a9654](https://github.com/themesberg/flowbite-svelte/commit/a3a965498817449cc90bdb20d9babe4f000e4466))
+
 ### [0.15.18](https://github.com/themesberg/flowbite-svelte/compare/v0.15.17...v0.15.18) (2022-05-10)
 
 ### [0.15.17](https://github.com/themesberg/flowbite-svelte/compare/v0.15.16...v0.15.17) (2022-05-09)
