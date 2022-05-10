@@ -5,9 +5,10 @@ layout: accordionLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import { Accordion, AccordionItem, Table, TableDefaultRow, Breadcrumb } from "$lib/index";
+  import { AccordionItem, Table, TableDefaultRow, Breadcrumb } from "$lib/index";
   import accordionProps from '../props/AccordionDefault.json'
   import accordionItemProps from '../props/AccordionItem.json'
+  import {ArrowCircleUpOutline, ArrowCircleDownOutline} from 'svelte-heros'
   // Props table
   export let items = accordionProps.props
   export let items2 = accordionItemProps.props
@@ -15,6 +16,11 @@ layout: accordionLayout
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
 let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
+let icons={
+  up:ArrowCircleUpOutline,
+  down:ArrowCircleDownOutline
+}
  let crumbs = [
     {
       label:'Home',
@@ -35,145 +41,319 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <h1 class="text-3xl w-full dark:text-white py-8">Accordion</h1>
 
-<p>Add id 1,2,3,... to AccordionItem component.</p>
+<Htwo label="Default accordion" />
+
+<p>Use id=1,2,3,.. to add top and bottom border.</p>
 
 <ExampleDiv>
-  <Accordion duration="0.5">
-    <AccordionItem id="1">
-      <h2 slot="header">My Header 1</h2>
-      <div slot="body">
-        <p class="mb-2 text-gray-500 dark:text-gray-400">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-          necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-          voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-          nisi quis perspiciatis.
-        </p>
-        <p class="text-gray-500 dark:text-gray-400">
-          Check out this guide to learn how to <a
-            href="/"
-            target="_blank"
-            class="text-blue-600 dark:text-blue-500 hover:underline"
-            >get started</a
-          > and start developing websites even faster with components on top of Tailwind
-          CSS.
-        </p>
-      </div>
-    </AccordionItem>
-    <AccordionItem id="2">
-      <h2 slot="header">My Header 2</h2>
-      <div slot="body">
-        <p class="mb-2 text-gray-500 dark:text-gray-400">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-          necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-          voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-          nisi quis perspiciatis.
-        </p>
-        <p class="mb-2 text-gray-500 dark:text-gray-400">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-          necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-          voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-          nisi quis perspiciatis.
-        </p>
-        <p class="mb-2 text-gray-500 dark:text-gray-400">
-          Learn more about these technologies:
-        </p>
-        <ul class="list-disc pl-5 dark:text-gray-400 text-gray-500">
-          <li>
-            <a
-              href="/"
-              target="_blank"
-              class="text-blue-600 dark:text-blue-500 hover:underline"
-              >Lorem ipsum</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://tailwindui.com/"
-              rel="nofollow"
-              target="_blank"
-              class="text-blue-600 dark:text-blue-500 hover:underline"
-              >Tailwind UI</a
-            >
-          </li>
-        </ul>
-      </div>
-    </AccordionItem>
-  </Accordion>
-</ExampleDiv>
-
-<ExampleDiv>
-  <Accordion>
-    <AccordionItem id="1">
-      <h2 slot="header">Header 2-1</h2>
-      <div slot="body">
-<p class="mb-2 text-gray-500 dark:text-gray-400">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-        necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-        voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-        nisi quis perspiciatis.
-      </p>
-      </div>
-    </AccordionItem>
-    <AccordionItem id="2">
-      <h2 slot="header">Header 2-2</h2>
-      <div slot="body">
-      <p class="mb-2 text-gray-500 dark:text-gray-400">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-        necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-        voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-        nisi quis perspiciatis.
-      </p>
-      </div>
-    </AccordionItem>
-  </Accordion>
-</ExampleDiv>
-
-
-```html
-<script>
-  import { Accordion } from "flowbite-svelte";
-  import { AccordionItem } from "flowbite-svelte";
-</script>
-
-<Accordion>
   <AccordionItem id="1">
     <h2 slot="header">My Header 1</h2>
     <div slot="body">
       <p class="mb-2 text-gray-500 dark:text-gray-400">
-        Lorem ipsum dolor sit amet ...
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+        necessitatibus sint explicabo, atque temporibus rem iusto, dicta
+        voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
+        nisi quis perspiciatis.
       </p>
-      ...
+      <p class="text-gray-500 dark:text-gray-400">
+        Check out this guide to learn how to <a
+          href="/"
+          target="_blank"
+          class="text-blue-600 dark:text-blue-500 hover:underline"
+          >get started</a
+        > and start developing websites even faster with components on top of Tailwind
+        CSS.
+      </p>
     </div>
   </AccordionItem>
   <AccordionItem id="2">
     <h2 slot="header">My Header 2</h2>
     <div slot="body">
       <p class="mb-2 text-gray-500 dark:text-gray-400">
-        Lorem ipsum dolor sit amet ...
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+        necessitatibus sint explicabo, atque temporibus rem iusto, dicta
+        voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
+        nisi quis perspiciatis.
       </p>
-      ...
+      <p class="mb-2 text-gray-500 dark:text-gray-400">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+        necessitatibus sint explicabo, atque temporibus rem iusto, dicta
+        voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
+        nisi quis perspiciatis.
+      </p>
+      <p class="mb-2 text-gray-500 dark:text-gray-400">
+        Learn more about these technologies:
+      </p>
+      <ul class="list-disc pl-5 dark:text-gray-400 text-gray-500">
+        <li>
+          <a
+            href="/"
+            target="_blank"
+            class="text-blue-600 dark:text-blue-500 hover:underline"
+            >Lorem ipsum</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://tailwindui.com/"
+            rel="nofollow"
+            target="_blank"
+            class="text-blue-600 dark:text-blue-500 hover:underline"
+            >Tailwind UI</a
+          >
+        </li>
+      </ul>
     </div>
   </AccordionItem>
-</Accordion>
+</ExampleDiv>
 
-<Accordion>
-  <AccordionItem id="1">
+```html
+<script>
+  import { AccordionItem } from "flowbite-svelte";
+</script>
+
+<AccordionItem id="1">
+  <h2 slot="header">My Header 1</h2>
+  <div slot="body">
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet ...
+    </p>
+    ...
+  </div>
+</AccordionItem>
+<AccordionItem id="2">
+  <h2 slot="header">My Header 2</h2>
+  <div slot="body">
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet ...
+    </p>
+    ...
+  </div>
+</AccordionItem>
+```
+
+<Htwo label="Always open" />
+
+<p>Use the `isOpen` prop to make an item open on mount.</p>
+
+<ExampleDiv>
+  <AccordionItem id="1" isOpen>
     <h2 slot="header">Header 2-1</h2>
     <div slot="body">
-      <p class="mb-2 text-gray-500 dark:text-gray-400">
-        Lorem ipsum dolor sit amet ...
-      </p>
+  <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+      necessitatibus sint explicabo, atque temporibus rem iusto, dicta
+      voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
+      nisi quis perspiciatis.
+    </p>
     </div>
   </AccordionItem>
   <AccordionItem id="2">
     <h2 slot="header">Header 2-2</h2>
     <div slot="body">
     <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet ...
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+      necessitatibus sint explicabo, atque temporibus rem iusto, dicta
+      voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
+      nisi quis perspiciatis.
     </p>
     </div>
   </AccordionItem>
-</Accordion>
+</ExampleDiv>
+
+```html
+<AccordionItem id="1" isOpen>
+  <h2 slot="header">Header 2-1</h2>
+  <div slot="body">
+<p class="mb-2 text-gray-500 dark:text-gray-400">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+    necessitatibus sint explicabo, atque temporibus rem iusto, dicta
+    voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
+    nisi quis perspiciatis.
+  </p>
+  </div>
+</AccordionItem>
+<AccordionItem id="2">
+  <h2 slot="header">Header 2-2</h2>
+  <div slot="body">
+  <p class="mb-2 text-gray-500 dark:text-gray-400">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+    necessitatibus sint explicabo, atque temporibus rem iusto, dicta
+    voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
+    nisi quis perspiciatis.
+  </p>
+  </div>
+</AccordionItem>
+```
+
+<Htwo label="Color option" />
+
+<p>Use the `color` prop to add color.</p>
+
+<ExampleDiv>
+  <AccordionItem id="1" color>
+    <h2 slot="header">Header 2-1</h2>
+    <div slot="body">
+  <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+      necessitatibus sint explicabo, atque temporibus rem iusto, dicta
+      voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
+      nisi quis perspiciatis.
+    </p>
+    </div>
+  </AccordionItem>
+  <AccordionItem id="2" color>
+    <h2 slot="header">Header 2-2</h2>
+    <div slot="body">
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+      necessitatibus sint explicabo, atque temporibus rem iusto, dicta
+      voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
+      nisi quis perspiciatis.
+    </p>
+    </div>
+  </AccordionItem>
+</ExampleDiv>
+
+```html
+<AccordionItem id="1" color>
+  <h2 slot="header">Header 2-1</h2>
+  <div slot="body">
+<p class="mb-2 text-gray-500 dark:text-gray-400">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+    necessitatibus sint explicabo, atque temporibus rem iusto, dicta
+    voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
+    nisi quis perspiciatis.
+  </p>
+  </div>
+</AccordionItem>
+<AccordionItem id="2" color>
+  <h2 slot="header">Header 2-2</h2>
+  <div slot="body">
+  <p class="mb-2 text-gray-500 dark:text-gray-400">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+    necessitatibus sint explicabo, atque temporibus rem iusto, dicta
+    voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
+    nisi quis perspiciatis.
+  </p>
+  </div>
+</AccordionItem>
+```
+
+<Htwo label="Flush accordion" />
+
+<p>Use the `flush` prop to remove the rounded borders.</p>
+
+<ExampleDiv>
+  <AccordionItem id="1" flush>
+    <h2 slot="header">Header 2-1</h2>
+    <div slot="body">
+  <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+      necessitatibus sint explicabo, atque temporibus rem iusto, dicta
+      voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
+      nisi quis perspiciatis.
+    </p>
+    </div>
+  </AccordionItem>
+  <AccordionItem id="2" flush>
+    <h2 slot="header">Header 2-2</h2>
+    <div slot="body">
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+      necessitatibus sint explicabo, atque temporibus rem iusto, dicta
+      voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
+      nisi quis perspiciatis.
+    </p>
+    </div>
+  </AccordionItem>
+</ExampleDiv>
+
+```html
+<AccordionItem id="1" flush>
+  <h2 slot="header">Header 2-1</h2>
+  <div slot="body">
+<p class="mb-2 text-gray-500 dark:text-gray-400">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+    necessitatibus sint explicabo, atque temporibus rem iusto, dicta
+    voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
+    nisi quis perspiciatis.
+  </p>
+  </div>
+</AccordionItem>
+<AccordionItem id="2" flush>
+  <h2 slot="header">Header 2-2</h2>
+  <div slot="body">
+  <p class="mb-2 text-gray-500 dark:text-gray-400">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+    necessitatibus sint explicabo, atque temporibus rem iusto, dicta
+    voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
+    nisi quis perspiciatis.
+  </p>
+  </div>
+</AccordionItem>
+```
+
+<Htwo label="Arrow style" />
+
+<p>Use the `icons` prop to set up and down icons.</p>
+
+<ExampleDiv>
+  <AccordionItem id="1" {icons}>
+    <h2 slot="header">Header 2-1</h2>
+    <div slot="body">
+  <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+      necessitatibus sint explicabo, atque temporibus rem iusto, dicta
+      voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
+      nisi quis perspiciatis.
+    </p>
+    </div>
+  </AccordionItem>
+  <AccordionItem id="2" {icons}>
+    <h2 slot="header">Header 2-2</h2>
+    <div slot="body">
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+      necessitatibus sint explicabo, atque temporibus rem iusto, dicta
+      voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
+      nisi quis perspiciatis.
+    </p>
+    </div>
+  </AccordionItem>
+</ExampleDiv>
+
+```html
+<script>
+  import {ArrowCircleUpOutline, ArrowCircleDownOutline} from 'svelte-heros'
+  let icons={
+    up:ArrowCircleUpOutline,
+    down:ArrowCircleDownOutline
+  }
+</script>
+
+<AccordionItem id="1" {icons}>
+  <h2 slot="header">Header 2-1</h2>
+  <div slot="body">
+<p class="mb-2 text-gray-500 dark:text-gray-400">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+    necessitatibus sint explicabo, atque temporibus rem iusto, dicta
+    voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
+    nisi quis perspiciatis.
+  </p>
+  </div>
+</AccordionItem>
+<AccordionItem id="2" {icons}>
+  <h2 slot="header">Header 2-2</h2>
+  <div slot="body">
+  <p class="mb-2 text-gray-500 dark:text-gray-400">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+    necessitatibus sint explicabo, atque temporibus rem iusto, dicta
+    voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
+    nisi quis perspiciatis.
+  </p>
+  </div>
+</AccordionItem>
 ```
 
 <Htwo label="AccordionItem: slot names" />

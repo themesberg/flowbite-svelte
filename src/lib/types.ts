@@ -1,5 +1,10 @@
 import type { SvelteComponent } from 'svelte';
 
+export type AccordionIconType = {
+	up: typeof SvelteComponent;
+	down: typeof SvelteComponent;
+};
+
 export interface ActivityType {
 	title: HTMLElement | string;
 	date: Date | string;

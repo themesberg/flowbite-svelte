@@ -1,5 +1,4 @@
 // Accordion
-export { default as Accordion }  from'./accordions/AccordionDefault.svelte'
 export { default as AccordionItem }  from'./accordions/AccordionItem.svelte'
 
 // Alerts
