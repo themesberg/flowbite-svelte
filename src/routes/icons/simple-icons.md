@@ -6,7 +6,9 @@ layout: iconLayout
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Breadcrumb } from '$lib/index'
-  import { Facebook, Github, Git } from 'svelte-simples';
+  import Facebook from '../utils/icons/Facebook.svelte'
+  import Github from '../utils/icons/Github.svelte'
+  import Git from '../utils/icons/Git.svelte'
 
   let crumbs = [
     {
@@ -33,7 +35,7 @@ layout: iconLayout
 <Htwo label="Installing Simple-icons" />
 
 ```sh
-npm i -D @codewithshin/svelte-simpleicons
+npm i -D svelte-simples
 ```
 
 <Htwo label="Examples" />
@@ -49,7 +51,7 @@ npm i -D @codewithshin/svelte-simpleicons
 
 ```html
 <script>
-import { Facebook, Github, Git } from '@codewithshin/svelte-simpleicons';
+import { Facebook, Github, Git } from 'svelte-simples';
 </script>
 <Facebook class="mx-2" color="#4287f5" size="30" />
 <Github color="#66f5fa" size="30"/>  

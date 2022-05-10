@@ -12,14 +12,13 @@ layout: footerLayout
 	let propHeader = ['Name', 'Type', 'Default']
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
-  import {
-    Facebook,
-    Github,
-    Twitter,
-    Instagram,
-  } from "svelte-simples";
+  import Facebook from '../utils/icons/Facebook.svelte'
+  import Github from '../utils/icons/Github.svelte'
+  import Twitter from '../utils/icons/Twitter.svelte'
+  import Instagram from '../utils/icons/Instagram.svelte'
+
   let site = {
     href: "/",
     name: "Flowbite Svelte",

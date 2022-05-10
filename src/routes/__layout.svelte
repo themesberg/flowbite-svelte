@@ -2,7 +2,8 @@
 	import '../app.css';
 	import { DarkMode, Badge, SitemapFooter } from '$lib/index';
 	import { Side, Nav, SidebarList } from 'svelte-sidebar-menu';
-	import { Github, Twitter } from 'svelte-simples';
+	import Twitter from './utils/icons/Twitter.svelte';
+	import Github from './utils/icons/Github.svelte';
 	import { accordions, alerts, badges, buttons, buttonGroups, cards, carousels, dropdowns, forms, footers, icons, modals, navbar, ratings, svelteflows, tabs, timelines, tooltips, topMenus, footerLinks } from './moduleItems';
 
 	let site = {

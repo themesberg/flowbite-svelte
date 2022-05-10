@@ -5,8 +5,8 @@ layout: footerLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
-import { SocialMediaFooter, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
-import componentProps from '../props/SocialMediaFooter.json'
+  import { SocialMediaFooter, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
+  import componentProps from '../props/SocialMediaFooter.json'
   // Props table
   let items = componentProps.props
 	let propHeader = ['Name', 'Type', 'Default']
@@ -14,12 +14,10 @@ import componentProps from '../props/SocialMediaFooter.json'
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
 let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
-import {
-    Facebook,
-    Github,
-    Twitter,
-    Instagram,
-  } from "svelte-simples";
+import Facebook from '../utils/icons/Facebook.svelte'
+import Github from '../utils/icons/Github.svelte'
+import Twitter from '../utils/icons/Twitter.svelte'
+import Instagram from '../utils/icons/Instagram.svelte'
 let site = {
     href: "/",
     name: "Company",

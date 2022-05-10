@@ -21,11 +21,9 @@ specifiers:
   prism-themes: ^1.9.0
   svelte: ^3.47.0
   svelte-check: ^2.2.6
-  svelte-feathers: ^0.1.15
   svelte-heros: ^2.0.0
   svelte-preprocess: ^4.10.5
   svelte-sidebar-menu: ^0.8.4
-  svelte-simples: ^0.3.1
   svelte2tsx: ^0.5.9
   tailwindcss: ^3.0.23
   tslib: ^2.3.1
@@ -55,10 +53,8 @@ devDependencies:
   prism-themes: 1.9.0
   svelte: 3.47.0
   svelte-check: 2.7.0_rlloedhe4ll5uarz4maqmiwrey
-  svelte-feathers: 0.1.15
   svelte-preprocess: 4.10.6_r5jx34o6wh4apnu42b2bjk2ina
   svelte-sidebar-menu: 0.8.4
-  svelte-simples: 0.3.1
   svelte2tsx: 0.5.9_ucc3fdkrl6lb7lhnlfimbouujy
   tailwindcss: 3.0.24
   tslib: 2.3.1
@@ -2906,10 +2902,6 @@ packages:
     resolution: {integrity: sha512-TXG836Uhn6SzDFsB3PIHBTormEl45Eb0denD34nYz1zM4PeArh5OYN6G3ZGmMHpG7DAHhRaEX5ikDpHfk2JNcA==}
     dev: true
 
-  /svelte-feathers/0.1.15:
-    resolution: {integrity: sha512-wyKisXqqXSfGCzVFWP74i7dRyWsCdgVOvCb8bFSdRsYGJH9gzkihLAx/uj/bDfIl0hKirARiztnPX7+vb7re5g==}
-    dev: true
-
   /svelte-heros/2.0.0:
     resolution: {integrity: sha512-qPDPtJYmRJhnbAF/eQuW5kah3zYGrS4/jivKAvMJYO6gX9wT2aa5xAJmWFta5M7QfyGUIkrXhbYBYXFB2jTuCQ==}
     dev: false
@@ -2978,10 +2970,6 @@ packages:
 
   /svelte-sidebar-menu/0.8.4:
     resolution: {integrity: sha512-FCrqsTZdSJViRUMJURooIDz+2u9nM72uzQhFhkN2ppm0t0nkxQGpxsbt/L+RHufbW2Yner7Zp+kKskbdiJGmuw==}
-    dev: true
-
-  /svelte-simples/0.3.1:
-    resolution: {integrity: sha512-cCxhEV+i6whUyF+hmI3WrreePkoO3t/KpBwQpcDr2aEUQoTsl//WLO++JNkwgkfxuLd8c8Qa1m1cTvYHpxlLrw==}
     dev: true
 
   /svelte/3.47.0:

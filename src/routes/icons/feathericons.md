@@ -6,7 +6,9 @@ layout: iconLayout
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Breadcrumb } from '$lib/index'
-  import { ActivityIcon, AlertTriangleIcon, AnchorIcon } from 'svelte-feathers'
+  import ActivityIcon from '../utils/icons/ActivityIcon.svelte'
+  import AlertTriangleIcon from '../utils/icons/AlertTriangleIcon.svelte'
+  import AnchorIcon from '../utils/icons/AnchorIcon.svelte'
 
   let crumbs = [
     {
