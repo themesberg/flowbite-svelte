@@ -3,23 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
-pre{
+pre {
     background-color: rgb(242, 242, 242);
     white-space: pre-wrap;
     width: 100%;
-}
-
-@layer base {
-    p {
-        @apply text-lg w-full text-gray-900 dark:text-white py-1;
-    }
-    h2{
-        /* @apply text-2xl w-full dark:text-white py-8; */
-    }
-    h3{
-        @apply text-xl w-full dark:text-white py-4;
-    }
-    .max-w-3xl a{
-        @apply text-blue-600 hover:underline dark:text-blue-300;
-    }
 }
