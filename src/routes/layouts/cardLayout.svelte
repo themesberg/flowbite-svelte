@@ -10,39 +10,40 @@
 	<div class="container flex flex-wrap mx-auto">
 		<slot />
 		<Htwo label="Related components" />
+		<div class="related-components">
+			<p>
+				<a href="/cards/card">Default Card</a>
+			</p>
 
-		<p>
-			<a href="/cards/card">Default Card</a>
-		</p>
+			<p>
+				<a href="/cards/cta">CTA Card</a>
+			</p>
 
-		<p>
-			<a href="/cards/cta">CTA Card</a>
-		</p>
+			<p>
+				<a href="/cards/ecommerce">Ecommerce Card</a>
+			</p>
 
-		<p>
-			<a href="/cards/ecommerce">Ecommerce Card</a>
-		</p>
+			<p>
+				<a href="/cards/horizontal">Horizontal Card</a>
+			</p>
 
-		<p>
-			<a href="/cards/horizontal">Horizontal Card</a>
-		</p>
+			<p>
+				<a href="/cards/interactive">Interactive Card</a>
+			</p>
 
-		<p>
-			<a href="/cards/interactive">Interactive Card</a>
-		</p>
+			<p>
+				<a href="/cards/list">List Card</a>
+			</p>
 
-		<p>
-			<a href="/cards/list">List Card</a>
-		</p>
-
-		<p>
-			<a href="/cards/signin">Signin Card</a>
-		</p>
-
+			<p>
+				<a href="/cards/signin">Signin Card</a>
+			</p>
+		</div>
 		<Htwo label="References" />
-
-		<p>
-			<a href="https://flowbite.com/docs/components/card/" target="_blank">Flowbite Card</a>
-		</p>
+		<div class="references">
+			<p>
+				<a href="https://flowbite.com/docs/components/card/" target="_blank">Flowbite Card</a>
+			</p>
+		</div>
 	</div>
 </div>

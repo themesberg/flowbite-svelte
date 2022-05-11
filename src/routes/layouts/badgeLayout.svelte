@@ -10,23 +10,24 @@
 		<slot />
 
 		<Htwo label="Related components" />
+		<div class="related-components">
+			<p>
+				<a href="/badges/default">Default Badge</a>
+			</p>
 
-		<p>
-			<a href="/badges/default">Default Badge</a>
-		</p>
+			<p>
+				<a href="/badges/badge-icon">Badge with icon</a>
+			</p>
 
-		<p>
-			<a href="/badges/badge-icon">Badge with icon</a>
-		</p>
-
-		<p>
-			<a href="/badges/badge-link">Badge with link</a>
-		</p>
-
+			<p>
+				<a href="/badges/badge-link">Badge with link</a>
+			</p>
+		</div>
 		<Htwo label="References" />
-
-		<p>
-			<a href="https://flowbite.com/docs/components/badge/" target="_blank">Flowbite Badge</a>
-		</p>
+		<div class="references">
+			<p>
+				<a href="https://flowbite.com/docs/components/badge/" target="_blank">Flowbite Badge</a>
+			</p>
+		</div>
 	</div>
 </div>

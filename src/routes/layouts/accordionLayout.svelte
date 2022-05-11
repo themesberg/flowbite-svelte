@@ -10,19 +10,20 @@
 		<slot />
 
 		<Htwo label="Related components" />
+		<div class="related-components">
+			<p>
+				<a href="/accordions/default">Default Accordion</a>
+			</p>
 
-		<p>
-			<a href="/accordions/default">Default Accordion</a>
-		</p>
-
-		<p>
-			<a href="/accordions/icon-accordion">Icon Accordion</a>
-		</p>
-
+			<p>
+				<a href="/accordions/icon-accordion">Icon Accordion</a>
+			</p>
+		</div>
 		<Htwo label="References" />
-
-		<p>
-			<a href="https://flowbite.com/docs/components/accordion/" target="_blank">Flowbite Accordion</a>
-		</p>
+		<div class="references">
+			<p>
+				<a href="https://flowbite.com/docs/components/accordion/" target="_blank">Flowbite Accordion</a>
+			</p>
+		</div>
 	</div>
 </div>

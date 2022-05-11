@@ -10,23 +10,24 @@
 		<slot />
 
 		<Htwo label="Related components" />
+		<div class="related-components">
+			<p>
+				<a href="/ratings/rating">Rating</a>
+			</p>
 
-		<p>
-			<a href="/ratings/rating">Rating</a>
-		</p>
+			<p>
+				<a href="/ratings/advanced-rating">Advanced Rating</a>
+			</p>
 
-		<p>
-			<a href="/ratings/advanced-rating">Advanced Rating</a>
-		</p>
-
-		<p>
-			<a href="/ratings/score-rating">Score Rating</a>
-		</p>
-
+			<p>
+				<a href="/ratings/score-rating">Score Rating</a>
+			</p>
+		</div>
 		<Htwo label="References" />
-
-		<p>
-			<a href="https://flowbite.com/docs/components/rating/" target="_blank">Flowbite Rating</a>
-		</p>
+		<div class="references">
+			<p>
+				<a href="https://flowbite.com/docs/components/rating/" target="_blank">Flowbite Rating</a>
+			</p>
+		</div>
 	</div>
 </div>

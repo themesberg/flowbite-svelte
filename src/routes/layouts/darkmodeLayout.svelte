@@ -10,9 +10,10 @@
 	<div class="container flex flex-wrap mx-auto">
 		<slot />
 		<Htwo label="References" />
-
-		<p>
-			<a href="https://flowbite.com/docs/customize/dark-mode/" target="_blank">Flowbite Dark mode</a>
-		</p>
+		<div class="references">
+			<p>
+				<a href="https://flowbite.com/docs/customize/dark-mode/" target="_blank">Flowbite Dark mode</a>
+			</p>
+		</div>
 	</div>
 </div>

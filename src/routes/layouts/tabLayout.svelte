@@ -10,43 +10,44 @@
 		<slot />
 
 		<Htwo label="Related components" />
+		<div class="related-components">
+			<p>
+				<a href="/tabs/default-tabs">Default Tabs</a>
+			</p>
 
-		<p>
-			<a href="/tabs/default-tabs">Default Tabs</a>
-		</p>
+			<p>
+				<a href="/tabs/underline-tabs">Underline Tabs</a>
+			</p>
 
-		<p>
-			<a href="/tabs/underline-tabs">Underline Tabs</a>
-		</p>
+			<p>
+				<a href="/tabs/icon-tabs">Icon Tabs</a>
+			</p>
 
-		<p>
-			<a href="/tabs/icon-tabs">Icon Tabs</a>
-		</p>
+			<p>
+				<a href="/tabs/full-width-tabs">Full width Tabs</a>
+			</p>
 
-		<p>
-			<a href="/tabs/full-width-tabs">Full width Tabs</a>
-		</p>
+			<p>
+				<a href="/tabs/interactive-tabs">Interactive Tabs</a>
+			</p>
 
-		<p>
-			<a href="/tabs/interactive-tabs">Interactive Tabs</a>
-		</p>
+			<p>
+				<a href="/tabs/interactive-tabs-2">Interactive Tabs 2</a>
+			</p>
 
-		<p>
-			<a href="/tabs/interactive-tabs-2">Interactive Tabs 2</a>
-		</p>
+			<p>
+				<a href="/tabs/multiple-interactive-tabs">Multiple Interactive Tabs</a>
+			</p>
 
-		<p>
-			<a href="/tabs/multiple-interactive-tabs">Multiple Interactive Tabs</a>
-		</p>
-
-		<p>
-			<a href="/tabs/pilltabs">Pill Tabs</a>
-		</p>
-
+			<p>
+				<a href="/tabs/pilltabs">Pill Tabs</a>
+			</p>
+		</div>
 		<Htwo label="References" />
-
-		<p>
-			<a href="https://flowbite.com/docs/components/tabs/" target="_blank">Flowbite Tabs</a>
-		</p>
+		<div class="references">
+			<p>
+				<a href="https://flowbite.com/docs/components/tabs/" target="_blank">Flowbite Tabs</a>
+			</p>
+		</div>
 	</div>
 </div>

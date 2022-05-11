@@ -11,15 +11,16 @@
 		<slot />
 
 		<Htwo label="Related components" />
-
-		<p>
-			<a href="/icons">Icons</a>
-		</p>
-
+		<div class="related-components">
+			<p>
+				<a href="/icons">Icons</a>
+			</p>
+		</div>
 		<Htwo label="References" />
-
-		<p>
-			<a href="https://flowbite.com/docs/components/alerts/" target="_blank">Flowbite Alerts</a>
-		</p>
+		<div class="references">
+			<p>
+				<a href="https://flowbite.com/docs/components/alerts/" target="_blank">Flowbite Alerts</a>
+			</p>
+		</div>
 	</div>
 </div>

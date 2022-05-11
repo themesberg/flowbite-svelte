@@ -10,9 +10,10 @@
 		<slot />
 
 		<Htwo label="References" />
-
-		<p>
-			<a href="https://flowbite.com/docs/components/list-group/" target="_blank">Flowbite List Group</a>
-		</p>
+		<div class="references">
+			<p>
+				<a href="https://flowbite.com/docs/components/list-group/" target="_blank">Flowbite List Group</a>
+			</p>
+		</div>
 	</div>
 </div>

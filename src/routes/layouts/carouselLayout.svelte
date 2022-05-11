@@ -11,19 +11,20 @@
 		<slot />
 
 		<Htwo label="Related components" />
+		<div class="related-components">
+			<p>
+				<a href="/carousels/default">Default Carousel</a>
+			</p>
 
-		<p>
-			<a href="/carousels/default">Default Carousel</a>
-		</p>
-
-		<p>
-			<a href="/carousels/transition">Carousel transition</a>
-		</p>
-
+			<p>
+				<a href="/carousels/transition">Carousel transition</a>
+			</p>
+		</div>
 		<Htwo label="References" />
-
-		<p>
-			<a href="https://flowbite.com/docs/components/carousel/" target="_blank">Flowbite carousel</a>
-		</p>
+		<div class="references">
+			<p>
+				<a href="https://flowbite.com/docs/components/carousel/" target="_blank">Flowbite carousel</a>
+			</p>
+		</div>
 	</div>
 </div>

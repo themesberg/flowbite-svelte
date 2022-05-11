@@ -10,15 +10,16 @@
 		<slot />
 
 		<Htwo label="Related components" />
-
-		<p>
-			<a href="/spinners/default">Default Spinner</a>
-		</p>
-
+		<div class="related-components">
+			<p>
+				<a href="/spinners/default">Default Spinner</a>
+			</p>
+		</div>
 		<Htwo label="References" />
-
-		<p>
-			<a href="https://flowbite.com/docs/components/spinner/" target="_blank">Flowbite Spinner</a>
-		</p>
+		<div class="references">
+			<p>
+				<a href="https://flowbite.com/docs/components/spinner/" target="_blank">Flowbite Spinner</a>
+			</p>
+		</div>
 	</div>
 </div>

@@ -10,35 +10,36 @@
 		<slot />
 
 		<Htwo label="Related components" />
+		<div class="related-components">
+			<p>
+				<a href="/modals/small">Small Modal</a>
+			</p>
 
-		<p>
-			<a href="/modals/small">Small Modal</a>
-		</p>
+			<p>
+				<a href="/modals/medium">Medium Modal</a>
+			</p>
 
-		<p>
-			<a href="/modals/medium">Medium Modal</a>
-		</p>
+			<p>
+				<a href="/modals/large">Large Modal</a>
+			</p>
 
-		<p>
-			<a href="/modals/large">Large Modal</a>
-		</p>
+			<p>
+				<a href="/modals/extra-large">Extra Large Modal</a>
+			</p>
 
-		<p>
-			<a href="/modals/extra-large">Extra Large Modal</a>
-		</p>
+			<p>
+				<a href="/modals/signin">Signin Modal</a>
+			</p>
 
-		<p>
-			<a href="/modals/signin">Signin Modal</a>
-		</p>
-
-		<p>
-			<a href="/modals/all-modals">All Modals</a>
-		</p>
-
+			<p>
+				<a href="/modals/all-modals">All Modals</a>
+			</p>
+		</div>
 		<Htwo label="References" />
-
-		<p>
-			<a href="https://flowbite.com/docs/components/modal/" target="_blank">Flowbite Modal</a>
-		</p>
+		<div class="references">
+			<p>
+				<a href="https://flowbite.com/docs/components/modal/" target="_blank">Flowbite Modal</a>
+			</p>
+		</div>
 	</div>
 </div>

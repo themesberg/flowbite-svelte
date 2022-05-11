@@ -11,42 +11,43 @@
 		<slot />
 
 		<Htwo label="Related components" />
-
-		<p>
-			<a href="/forms/checkbox">Checkbox</a>
-		</p>
-		<p>
-			<a href="/forms/file-input">File input</a>
-		</p>
-		<p>
-			<a href="/forms/floating-label">Floating label</a>
-		</p>
-		<p>
-			<a href="/forms/input">Input</a>
-		</p>
-		<p>
-			<a href="/forms/radio">Radio</a>
-		</p>
-		<p>
-			<a href="/forms/range">Range</a>
-		</p>
-		<p>
-			<a href="/forms/search">Search</a>
-		</p>
-		<p>
-			<a href="/forms/select">Select</a>
-		</p>
-		<p>
-			<a href="/forms/textarea">Textarea</a>
-		</p>
-		<p>
-			<a href="/forms/toggle">Toggle</a>
-		</p>
-
+		<div class="related-components">
+			<p>
+				<a href="/forms/checkbox">Checkbox</a>
+			</p>
+			<p>
+				<a href="/forms/file-input">File input</a>
+			</p>
+			<p>
+				<a href="/forms/floating-label">Floating label</a>
+			</p>
+			<p>
+				<a href="/forms/input">Input</a>
+			</p>
+			<p>
+				<a href="/forms/radio">Radio</a>
+			</p>
+			<p>
+				<a href="/forms/range">Range</a>
+			</p>
+			<p>
+				<a href="/forms/search">Search</a>
+			</p>
+			<p>
+				<a href="/forms/select">Select</a>
+			</p>
+			<p>
+				<a href="/forms/textarea">Textarea</a>
+			</p>
+			<p>
+				<a href="/forms/toggle">Toggle</a>
+			</p>
+		</div>
 		<Htwo label="References" />
-
-		<p>
-			<a href="https://flowbite.com/docs/components/forms/" target="_blank">Flowbite Forms</a>
-		</p>
+		<div class="references">
+			<p>
+				<a href="https://flowbite.com/docs/components/forms/" target="_blank">Flowbite Forms</a>
+			</p>
+		</div>
 	</div>
 </div>

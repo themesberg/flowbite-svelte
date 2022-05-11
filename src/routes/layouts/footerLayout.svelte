@@ -11,27 +11,28 @@
 		<slot />
 
 		<Htwo label="Related components" />
+		<div class="related-components">
+			<p>
+				<a href="/footer/default">Default Footer</a>
+			</p>
 
-		<p>
-			<a href="/footer/default">Default Footer</a>
-		</p>
+			<p>
+				<a href="/footer/logo">Footer with Logo</a>
+			</p>
 
-		<p>
-			<a href="/footer/logo">Footer with Logo</a>
-		</p>
+			<p>
+				<a href="/footer/sitemap">Footer with Sitemap</a>
+			</p>
 
-		<p>
-			<a href="/footer/sitemap">Footer with Sitemap</a>
-		</p>
-
-		<p>
-			<a href="/footer/socialmedia">Footer with Socialmedia</a>
-		</p>
-
+			<p>
+				<a href="/footer/socialmedia">Footer with Socialmedia</a>
+			</p>
+		</div>
 		<Htwo label="References" />
-
-		<p>
-			<a href="https://flowbite.com/docs/components/footer/" target="_blank">Flowbite Footer</a>
-		</p>
+		<div class="references">
+			<p>
+				<a href="https://flowbite.com/docs/components/footer/" target="_blank">Flowbite Footer</a>
+			</p>
+		</div>
 	</div>
 </div>

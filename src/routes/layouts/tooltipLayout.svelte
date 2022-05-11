@@ -10,22 +10,23 @@
 		<slot />
 
 		<Htwo label="Related components" />
+		<div class="related-components">
+			<p>
+				<a href="/tooltips/default">- Default Tooltip</a>
+			</p>
 
-		<p>
-			<a href="/tooltips/default">- Default Tooltip</a>
-		</p>
-
-		<p>
-			<a href="/tooltips/light">- Light Tooltip</a>
-		</p>
-
+			<p>
+				<a href="/tooltips/light">- Light Tooltip</a>
+			</p>
+		</div>
 		<Htwo label="References" />
-
-		<p>
-			- Read more about <a href="/buttons">Buttons</a>
-		</p>
-		<p>
-			<a href="https://flowbite.com/docs/components/tooltips/" target="_blank">- Flowbite Tooltip</a>
-		</p>
+		<div class="references">
+			<p>
+				- Read more about <a href="/buttons">Buttons</a>
+			</p>
+			<p>
+				<a href="https://flowbite.com/docs/components/tooltips/" target="_blank">- Flowbite Tooltip</a>
+			</p>
+		</div>
 	</div>
 </div>

@@ -11,43 +11,44 @@
 		<slot />
 
 		<Htwo label="Related components" />
+		<div class="related-components">
+			<p>
+				<a href="/buttons/default">Default Button</a>
+			</p>
 
-		<p>
-			<a href="/buttons/default">Default Button</a>
-		</p>
+			<p>
+				<a href="/buttons/colored-shadow">Colored Shadow Button</a>
+			</p>
 
-		<p>
-			<a href="/buttons/colored-shadow">Colored Shadow Button</a>
-		</p>
+			<p>
+				<a href="/buttons/gradient-duotone">Gradient Duotone Button</a>
+			</p>
 
-		<p>
-			<a href="/buttons/gradient-duotone">Gradient Duotone Button</a>
-		</p>
+			<p>
+				<a href="/buttons/gradient-monochrome">Gradient Monochrome Button</a>
+			</p>
 
-		<p>
-			<a href="/buttons/gradient-monochrome">Gradient Monochrome Button</a>
-		</p>
+			<p>
+				<a href="/buttons/gradient-outline">Gradietn Outline Button</a>
+			</p>
 
-		<p>
-			<a href="/buttons/gradient-outline">Gradietn Outline Button</a>
-		</p>
+			<p>
+				<a href="/buttons/outlined">Outlined Button</a>
+			</p>
 
-		<p>
-			<a href="/buttons/outlined">Outlined Button</a>
-		</p>
+			<p>
+				<a href="/buttons/rounded">Rounded Button</a>
+			</p>
 
-		<p>
-			<a href="/buttons/rounded">Rounded Button</a>
-		</p>
-
-		<p>
-			<a href="/buttons/button-loader">Button Loader</a>
-		</p>
-
+			<p>
+				<a href="/buttons/button-loader">Button Loader</a>
+			</p>
+		</div>
 		<Htwo label="References" />
-
-		<p>
-			<a href="https://flowbite.com/docs/components/buttons/" target="_blank">Flowbite Buttons</a>
-		</p>
+		<div class="references">
+			<p>
+				<a href="https://flowbite.com/docs/components/buttons/" target="_blank">Flowbite Buttons</a>
+			</p>
+		</div>
 	</div>
 </div>

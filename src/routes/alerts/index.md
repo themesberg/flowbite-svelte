@@ -184,7 +184,7 @@ Import Alert and set variables in the script tag.
           type="button"
           class="rounded-lg border border-blue-700 bg-transparent px-3 py-1.5 text-center text-xs font-medium text-blue-700 hover:bg-blue-800 hover:text-white focus:ring-4 focus:ring-blue-300 dark:border-blue-800 dark:text-blue-800 dark:hover:text-white"
         >
-          Dismiss
+          Go to Home
         </button>
       </div>
     </div>
