@@ -11,6 +11,12 @@ pre {
 
 @layer base {
 	p {
-		@apply text-gray-900 dark:text-white;
+		@apply text-lg w-full text-gray-900 dark:text-white py-1;
+	}
+	h3{
+		@apply text-xl w-full dark:text-white py-4;
+	}
+	.max-w-3xl a{
+		@apply text-blue-600 hover:underline dark:text-blue-300;
 	}
 }

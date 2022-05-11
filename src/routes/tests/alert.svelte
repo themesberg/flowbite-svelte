@@ -1,22 +1,21 @@
-<script lang="ts">
+<script>
 	import { Alert } from '$lib/index';
 	import { flip } from 'svelte/animate';
-
 	let alerts = [
 		{
-			id: 'alert1',
-			btnColor: 'blue' as const,
-			text: 'Alert 1'
+			id: 1,
+			btnColor: 'blue',
+			text: 'Alert 1 Change a few things up and try submitting again.'
 		},
 		{
-			id: 'alert2',
-			btnColor: 'green' as const,
-			text: 'Alert 2'
+			id: 2,
+			btnColor: 'green',
+			text: 'Alert 2 Change a few things up and try submitting again.'
 		},
 		{
 			id: 3,
-			btnColor: 'purple' as const,
-			text: 'Alert 3'
+			btnColor: 'red',
+			text: 'Alert 3 Change a few things up and try submitting again.'
 		}
 	];
 	function remove(alert) {
@@ -24,10 +23,12 @@
 	}
 </script>
 
-{#each alerts as item (item.id)}
-	<div animate:flip={{ delay: 500 }}>
-		<Alert alertId={item.id} color={item.btnColor} closeBtn on:handlebtn1={() => remove(item)}>
-			{item.text}
+{#each alerts as item (item)}
+	<div animate:flip={{ delay: 1000 }} class="py-16">
+		<Alert alertId={item.id} color={item.btnColor} on:handleAlert={() => remove(item)} closeBtn>
+			<span slot="content">
+				{item.text}
+			</span>
 		</Alert>
 	</div>
 {/each}
