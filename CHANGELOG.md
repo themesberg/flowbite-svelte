@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.23](https://github.com/themesberg/flowbite-svelte/compare/v0.15.22...v0.15.23) (2022-05-11)
+
+
+### Features
+
+* more alert options ([7071490](https://github.com/themesberg/flowbite-svelte/commit/7071490d458312c3f0833097c10829b20a34919a))
+
+
+### Bug Fixes
+
+* add handleAlert to Alert component ([bd82de3](https://github.com/themesberg/flowbite-svelte/commit/bd82de36be389de61d4c11348d081e9637dd51b1))
+* demo page bugs ([542b88a](https://github.com/themesberg/flowbite-svelte/commit/542b88a386fdc34acf904b589215441e65b8fb69))
+* demo page text dark mode, dropdown error ([fa46244](https://github.com/themesberg/flowbite-svelte/commit/fa46244d3871bdc5a9cd5bed0f4a3e8b0fc6d3fd))
+
 ### [0.15.22](https://github.com/themesberg/flowbite-svelte/compare/v0.15.21...v0.15.22) (2022-05-10)
 
 ### [0.15.21](https://github.com/themesberg/flowbite-svelte/compare/v0.15.20...v0.15.21) (2022-05-10)
