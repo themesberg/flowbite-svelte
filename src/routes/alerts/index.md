@@ -165,7 +165,7 @@ Import Alert and set variables in the script tag.
 
 <Htwo label="Additional content" />
 <ExampleDiv>
-  <Alert id="alert-extra" color="blue" icon={InformationCircleSolid}>
+  <Alert id="alert-extra" color="blue" icon={InformationCircleSolid} closeBtn>
     <span slot="content">
       <span class="font-medium">
         Info alert!
@@ -191,7 +191,7 @@ Import Alert and set variables in the script tag.
   </Alert>
 
   ```html
-  <Alert id="alert-extra" color="blue" icon={InformationCircleSolid}>
+  <Alert id="alert-extra" color="blue" icon={InformationCircleSolid} closeBtn>
     <span slot="content">
       <span class="font-medium">
         Info alert!

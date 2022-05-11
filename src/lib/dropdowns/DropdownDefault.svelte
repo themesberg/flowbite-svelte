@@ -24,8 +24,8 @@
 		paddings = 'py-2.5 px-5';
 	}
 
-	let buttonClass: string = `inline-flex z-10 items-center font-medium ${round} ${textSize} ${paddings} text-center `;
 	let round = rounded ? 'rounded-full' : 'rounded-lg';
+	let buttonClass: string = `inline-flex z-10 items-center font-medium ${round} ${textSize} ${paddings} text-center `;
 
 	export const openFn = (id: string) => {
 		if (showDropdownId === id) {

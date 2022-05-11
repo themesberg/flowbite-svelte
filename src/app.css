@@ -4,7 +4,13 @@
 @tailwind utilities;
 
 pre {
-    background-color: rgb(242, 242, 242);
-    white-space: pre-wrap;
-    width: 100%;
+	background-color: rgb(242, 242, 242);
+	white-space: pre-wrap;
+	width: 100%;
+}
+
+@layer base {
+	p {
+		@apply text-gray-900 dark:text-white;
+	}
 }
