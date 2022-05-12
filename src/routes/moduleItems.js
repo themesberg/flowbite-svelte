@@ -13,10 +13,7 @@ export const accordions = [
 ];
 
 export const alerts = [
-  { href: "/alerts/default-alert", name: "Alert" },
-  { href: "/alerts/border-alert", name: "Border alert" },
-  { href: "/alerts/information-alert", name: "Information alert" },
-  { href: "/alerts/animation", name: "Animation" },
+  { href: "/alerts/", name: "Alert" },
 ];
 
 export const badges = [
@@ -110,10 +107,6 @@ export const ratings = [
   { href: "/ratings/advanced-rating", name: "Advanced rating" },
   { href: "/ratings/score-rating", name: "Score rating" },
 ]
-
-// export const spinners = [
-//   { href: "/spinners/default", name: "Spinner" },
-// ];
 
 export const tabs = [
   { href: "/tabs/default-tabs", name: "Default" },
