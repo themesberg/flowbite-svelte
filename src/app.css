@@ -25,4 +25,7 @@ pre {
 	.related-components p, .references p{
 		@apply w-full md:w-1/2 lg:w-1/3
 	}
+	.max-w-3xl li{
+		@apply dark:text-white list-inside list-disc py-1;
+	}
 }

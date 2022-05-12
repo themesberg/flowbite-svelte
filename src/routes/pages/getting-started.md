@@ -20,8 +20,9 @@ layout: docLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Getting Started</h1>
 
+<p>You can install Flowbite-Svelte by using the Flowbite-Svelte-Start or from scrach.</p>
 
-<Htwo label="Installation" />
+<Htwo label="Installing from scrach" />
 
 <p>Install SvelteKit:</p>
 
@@ -73,3 +74,28 @@ module.exports = config;
 ```
 
 <p>Now you are ready to go!</p>
+
+<Htwo label="Installing Flowbite-Svelte-Starter" />
+
+<p>Flowbite-Svelte-Starter comes with the followings:</p>
+
+- Svelte
+- SvelteKit
+- Tailwind CSS
+- Flowbite
+- Flowbite-Svelte
+- ESlint
+- Typescript
+- Playwright
+- Prettier
+- Svelte-heros(Heroicons)
+- Darkmode activated
+
+<h3>You need to run git clone the repo</h3>
+
+```sh
+git clone git@github.com:shinokada/flowbite-svelte-starter.git my-demo
+cd my-demo
+pnpm i
+pnpm run dev
+```
