@@ -13,19 +13,15 @@ pre {
 	p {
 		@apply text-lg w-full text-gray-900 dark:text-white py-1;
 	}
-	h3{
+	h3 {
 		@apply text-xl w-full dark:text-white py-4;
 	}
-	.max-w-3xl a{
-		@apply text-blue-600 hover:underline dark:text-blue-300;
-	}
-	.related-components, .references {
+	.related-components,
+	.references {
 		@apply w-full flex flex-wrap;
 	}
-	.related-components p, .references p{
-		@apply w-full md:w-1/2 lg:w-1/3
-	}
-	.max-w-3xl li{
-		@apply dark:text-white list-inside list-disc py-1;
+	.related-components p,
+	.references p {
+		@apply w-full md:w-1/2 lg:w-1/3;
 	}
 }
