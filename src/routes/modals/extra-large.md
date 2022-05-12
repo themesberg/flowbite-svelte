@@ -193,7 +193,8 @@ const handlebtn1 = () => {
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/types">type-list page</a> for type information.</p>
+<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
+ page</a> for type information.</p>
 
 <h3>ModalButton</h3>
 
