@@ -224,7 +224,7 @@ layout: footerLayout
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/type-list">type-list page</a> for type information.</p>
+<p>The component has the following props, type, and default values. See <a href="/types">type-list page</a> for type information.</p>
 
 <Table header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />

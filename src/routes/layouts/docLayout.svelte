@@ -17,7 +17,7 @@
 			</p>
 
 			<p>
-				<a href="/pages/type-list">Type list</a>
+				<a href="/pages/types">Type list</a>
 			</p>
 			<p>
 				<a href="/pages/about">About</a>

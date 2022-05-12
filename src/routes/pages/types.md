@@ -11,7 +11,7 @@ layout: docLayout
     },
     {
       label:'Type list',
-      href:'/type-list'
+      href:'/types'
     }
   ]
 </script>
