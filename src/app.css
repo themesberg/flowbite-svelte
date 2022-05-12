@@ -20,7 +20,7 @@ pre {
 		@apply text-blue-600 hover:underline dark:text-blue-300;
 	}
 	.related-components, .references {
-		@apply w-full flex flex-wrap justify-between;
+		@apply w-full flex flex-wrap;
 	}
 	.related-components p, .references p{
 		@apply w-full md:w-1/2 lg:w-1/3
