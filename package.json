@@ -13,7 +13,7 @@
 	"license": "MIT",
 	"scripts": {
 		"dev": "svelte-kit dev",
-		"gen:props": "cd scripts && node createProps.js && cd .. && npm run test",
+		"gen:props": "node ./node_modules/createprops/createprops.js",
 		"build": "svelte-kit build",
 		"package": "svelte-kit package",
 		"preview": "svelte-kit preview",
@@ -31,6 +31,7 @@
 		"@typescript-eslint/eslint-plugin": "^5.10.1",
 		"@typescript-eslint/parser": "^5.10.1",
 		"autoprefixer": "^10.4.4",
+		"createprops": "^0.1.1",
 		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^3.2.1",
