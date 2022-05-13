@@ -155,7 +155,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <ExampleDiv class="flex justify-center">
   <EcommerceCard
     title="Nintendo Game Lorem ipsum dolor sit amet."
-    link="modals"
+    link="/"
     img={img4}
   />
 </ExampleDiv>
@@ -163,7 +163,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 ```html
 <EcommerceCard
   title="Nintendo Game Lorem ipsum dolor sit amet."
-  link="modals"
+  link="/"
   img={img4}
 />
 ```
