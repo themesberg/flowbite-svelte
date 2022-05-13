@@ -86,7 +86,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <ExampleDiv class="flex justify-center">
 <EcommerceCard
   title="Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport"
-  link="/"
+  href="/"
   price="$543"
   img={img1}
   stars={star5}
@@ -97,7 +97,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 ```html
 <EcommerceCard
   title="Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport"
-  link="/"
+  href="/"
   price="$543"
   img={img1}
   stars={star5}
@@ -110,7 +110,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <ExampleDiv class="flex justify-center">
   <EcommerceCard
     title="Women's Cashmere Sweaters Lorem ipsum dolor sit amet."
-    link="/"
+    href="/"
     btnColor="red"
     price="$461"
     img={img2}
@@ -121,7 +121,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 ```html
 <EcommerceCard
   title="Women's Cashmere Sweaters Lorem ipsum dolor sit amet."
-  link="/"
+  href="/"
   btnColor="red"
   price="$461"
   img={img2}
@@ -134,7 +134,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <ExampleDiv class="flex justify-center">
   <EcommerceCard
     title="Pink cup Lorem ipsum dolor sit amet et mete."
-    link="/"
+    href="/"
     price="$321"
     img={img3}
   />
@@ -144,7 +144,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 ```html
 <EcommerceCard
   title="Pink cup Lorem ipsum dolor sit amet et mete."
-  link="/"
+  href="/"
   price="$321"
   img={img3}
 />
@@ -155,7 +155,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <ExampleDiv class="flex justify-center">
   <EcommerceCard
     title="Nintendo Game Lorem ipsum dolor sit amet."
-    link="/"
+    href="/"
     img={img4}
   />
 </ExampleDiv>
@@ -163,7 +163,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 ```html
 <EcommerceCard
   title="Nintendo Game Lorem ipsum dolor sit amet."
-  link="/"
+  href="/"
   img={img4}
 />
 ```
