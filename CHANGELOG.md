@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.29](https://github.com/themesberg/flowbite-svelte/compare/v0.15.28...v0.15.29) (2022-05-13)
+
+
+### Bug Fixes
+
+* 28115props.class returns undefined if class is not given ([c1d4ab8](https://github.com/themesberg/flowbite-svelte/commit/c1d4ab8eb6b379078a3fb3fc51952d94c31cf452))
+
 ### [0.15.28](https://github.com/themesberg/flowbite-svelte/compare/v0.15.27...v0.15.28) (2022-05-13)
 
 
