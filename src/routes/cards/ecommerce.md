@@ -86,7 +86,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <ExampleDiv class="flex justify-center">
 <EcommerceCard
   title="Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport"
-  link="/alerts"
+  link="/"
   price="$543"
   img={img1}
   stars={star5}
@@ -97,7 +97,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 ```html
 <EcommerceCard
   title="Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport"
-  link="/alerts"
+  link="/"
   price="$543"
   img={img1}
   stars={star5}
@@ -110,7 +110,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <ExampleDiv class="flex justify-center">
   <EcommerceCard
     title="Women's Cashmere Sweaters Lorem ipsum dolor sit amet."
-    link="/tabs"
+    link="/"
     btnColor="red"
     price="$461"
     img={img2}
@@ -121,7 +121,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 ```html
 <EcommerceCard
   title="Women's Cashmere Sweaters Lorem ipsum dolor sit amet."
-  link="/tabs"
+  link="/"
   btnColor="red"
   price="$461"
   img={img2}
@@ -134,7 +134,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <ExampleDiv class="flex justify-center">
   <EcommerceCard
     title="Pink cup Lorem ipsum dolor sit amet et mete."
-    link="/cards"
+    link="/"
     price="$321"
     img={img3}
   />
@@ -144,7 +144,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 ```html
 <EcommerceCard
   title="Pink cup Lorem ipsum dolor sit amet et mete."
-  link="/cards"
+  link="/"
   price="$321"
   img={img3}
 />
@@ -164,9 +164,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <EcommerceCard
   title="Nintendo Game Lorem ipsum dolor sit amet."
   link="modals"
-  btnColor="green"
-  stars="5"
-  price="$211"
   img={img4}
 />
 ```
