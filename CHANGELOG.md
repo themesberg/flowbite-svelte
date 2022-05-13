@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.25](https://github.com/themesberg/flowbite-svelte/compare/v0.15.24...v0.15.25) (2022-05-13)
+
+
+### Bug Fixes
+
+* demo page issues ([268db3c](https://github.com/themesberg/flowbite-svelte/commit/268db3ca3db363ee8bbd6eec69d9f622350050ee))
+* input label margin on empty labels ([e08bb0d](https://github.com/themesberg/flowbite-svelte/commit/e08bb0d5caaf10b2c14a852cc68047be7c9e6fdc))
+* remove button margin ([9cc1795](https://github.com/themesberg/flowbite-svelte/commit/9cc179505bd77ed775fee1879415f191f36b4764))
+
 ### [0.15.24](https://github.com/themesberg/flowbite-svelte/compare/v0.15.23...v0.15.24) (2022-05-12)
 
 ### [0.15.23](https://github.com/themesberg/flowbite-svelte/compare/v0.15.22...v0.15.23) (2022-05-11)
