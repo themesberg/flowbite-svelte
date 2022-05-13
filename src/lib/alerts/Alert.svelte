@@ -69,7 +69,7 @@
 	}
 </script>
 
-<div id={$$props.id} class:hidden class="{divClass} {$$props.class}" role="alert">
+<div id={$$props.id} class:hidden class="{divClass} {$$props.class ? $$props.class : ''}" role="alert">
 	<div class="flex">
 		{#if icon}
 			<svelte:component this={icon} class="flex-shrink-0 w-5 h-5 {contentClass} mr-3" />

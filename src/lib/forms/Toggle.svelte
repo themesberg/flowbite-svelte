@@ -37,6 +37,6 @@
 
 <label for={id} class={labelClass}>
 	<input type="checkbox" {id} class={inputClass} {value} {checked} {name} {disabled} />
-	<div class="{divClass} {$$props.class}" />
+	<div class="{divClass} {$$props.class ? $$props.class : ''}" />
 	<span class={spanClass}>{label}</span>
 </label>

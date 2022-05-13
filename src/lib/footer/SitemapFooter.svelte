@@ -18,7 +18,7 @@
 	export let allRightsReserved: string = 'All Rights Reserved.';
 </script>
 
-<footer class="{footerClass} {$$props.class}">
+<footer class="{footerClass} {$$props.class ? $$props.class : ''}">
 	<div class={linksClass}>
 		{#each links as { parent, children }}
 			<div>

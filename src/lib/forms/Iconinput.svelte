@@ -24,7 +24,7 @@
 	}
 </script>
 
-<div class={$$props.class}>
+<div class={$$props.class ? $$props.class : ''}>
 	<label for={id} class={labelClass}>{label}</label>
 	{#if noBorder}
 		<div class="relative">

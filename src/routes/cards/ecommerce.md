@@ -91,7 +91,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   img={img1}
   stars={star5}
   btnText="Buy now"
-/>
+>
+<p cloass="dark:text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+</EcommerceCard>
 </ExampleDiv>
 
 ```html
@@ -102,7 +104,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   img={img1}
   stars={star5}
   btnText="Buy now"
-/>
+>
+<p cloass="dark:text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+</EcommerceCard>
 ```
 
 <Htwo label="Without stars" />

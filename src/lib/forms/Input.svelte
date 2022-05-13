@@ -30,22 +30,11 @@
 	}
 </script>
 
-<div class={$$props.class}>
+<div class={$$props.class ? $$props.class : ''}>
 	{#if label}
 		<label for={id} class={labelClass}>{label}</label>
 	{/if}
-	<input
-		bind:value
-		bind:this={ref}
-		{name}
-		use:setType
-		{id}
-		class={inputClass}
-		{placeholder}
-		{required}
-		{disabled}
-		{readonly}
-	/>
+	<input bind:value bind:this={ref} {name} use:setType {id} class={inputClass} {placeholder} {required} {disabled} {readonly} />
 	{#if helper}
 		<p class={helperClass}>{@html helper}</p>
 	{/if}

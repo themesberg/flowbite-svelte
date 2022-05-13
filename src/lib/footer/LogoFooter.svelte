@@ -17,7 +17,7 @@
 	export let allRightsReserved: string = 'All Rights Reserved.';
 </script>
 
-<footer class="{footerClass} {$$props.class}">
+<footer class="{footerClass} {$$props.class ? $$props.class : ''}">
 	<div class={divClass}>
 		<a href={site.href} class={siteNameLinkClass}>
 			<img src={site.img} class={imgClass} alt={site.name} />
