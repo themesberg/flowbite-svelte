@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.28](https://github.com/themesberg/flowbite-svelte/compare/v0.15.27...v0.15.28) (2022-05-13)
+
+
+### Features
+
+* add slot to EcommerceCard ([d777c87](https://github.com/themesberg/flowbite-svelte/commit/d777c87d3097998e840a9e2ed79cafc036c74713))
+
 ### [0.15.27](https://github.com/themesberg/flowbite-svelte/compare/v0.15.26...v0.15.27) (2022-05-13)
 
 ### [0.15.26](https://github.com/themesberg/flowbite-svelte/compare/v0.15.25...v0.15.26) (2022-05-13)
