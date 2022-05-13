@@ -12,14 +12,21 @@
 		<Htwo label="Related components" />
 		<div class="related-components">
 			<p>
-				<a href="/spinners/default">Default Spinner</a>
+				<a href="/spinners/default" class="link">Default Spinner</a>
 			</p>
 		</div>
 		<Htwo label="References" />
 		<div class="references">
 			<p>
-				<a href="https://flowbite.com/docs/components/spinner/" target="_blank">Flowbite Spinner</a>
+				<a href="https://flowbite.com/docs/components/spinner/" target="_blank" class="link">Flowbite Spinner</a>
 			</p>
 		</div>
 	</div>
 </div>
+
+<style>
+	.link:hover {
+		color: #3277ff;
+		text-decoration: underline;
+	}
+</style>

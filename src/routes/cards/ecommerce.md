@@ -29,6 +29,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     src: "/images/product-4.webp",
     alt: "product image",
   };
+  let star5 = 5.0
+  let star4 = 4.7
+  let star3 = 3.5
 
   let crumbs = [
     {
@@ -72,6 +75,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     src: "/images/product-4.webp",
     alt: "product image",
   };
+  let star5 = 5.0
+  let star4 = 4.7
+  let star3 = 3.5
 </script>
 ```
 
@@ -83,6 +89,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   link="/alerts"
   price="$543"
   img={img1}
+  stars={star5}
+  btnText="Buy now"
 />
 </ExampleDiv>
 
@@ -92,17 +100,21 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   link="/alerts"
   price="$543"
   img={img1}
+  stars={star5}
+  btnText="Buy now"
 />
 ```
+
+<Htwo label="Without stars" />
 
 <ExampleDiv class="flex justify-center">
   <EcommerceCard
     title="Women's Cashmere Sweaters Lorem ipsum dolor sit amet."
     link="/tabs"
     btnColor="red"
-    stars="4.0"
     price="$461"
     img={img2}
+    btnText="Buy now"
   />
 </ExampleDiv>
 
@@ -111,18 +123,18 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   title="Women's Cashmere Sweaters Lorem ipsum dolor sit amet."
   link="/tabs"
   btnColor="red"
-  stars="4.0"
   price="$461"
   img={img2}
+  btnText="Buy now"
 />
 ```
+
+<Htwo label="Without stars and button" />
 
 <ExampleDiv class="flex justify-center">
   <EcommerceCard
     title="Pink cup Lorem ipsum dolor sit amet et mete."
     link="/cards"
-    btnColor="purple"
-    stars="3"
     price="$321"
     img={img3}
   />
@@ -133,20 +145,17 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <EcommerceCard
   title="Pink cup Lorem ipsum dolor sit amet et mete."
   link="/cards"
-  btnColor="purple"
-  stars="3"
   price="$321"
   img={img3}
 />
 ```
 
+<Htwo label="Without stars, button, price" />
+
 <ExampleDiv class="flex justify-center">
   <EcommerceCard
     title="Nintendo Game Lorem ipsum dolor sit amet."
     link="modals"
-    btnColor="green"
-    stars="5"
-    price="$211"
     img={img4}
   />
 </ExampleDiv>

@@ -28,3 +28,10 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.link:hover {
+		color: #3277ff;
+		text-decoration: underline;
+	}
+</style>

@@ -13,14 +13,21 @@
 		<Htwo label="Related components" />
 		<div class="related-components">
 			<p>
-				<a href="/icons">Icons</a>
+				<a href="/icons" class="link">Icons</a>
 			</p>
 		</div>
 		<Htwo label="References" />
 		<div class="references">
 			<p>
-				<a href="https://flowbite.com/docs/components/alerts/" target="_blank">Flowbite Alerts</a>
+				<a href="https://flowbite.com/docs/components/alerts/" target="_blank" class="link">Flowbite Alerts</a>
 			</p>
 		</div>
 	</div>
 </div>
+
+<style>
+	.link:hover {
+		color: #3277ff;
+		text-decoration: underline;
+	}
+</style>

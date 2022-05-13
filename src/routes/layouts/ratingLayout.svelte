@@ -12,22 +12,29 @@
 		<Htwo label="Related components" />
 		<div class="related-components">
 			<p>
-				<a href="/ratings/rating">Rating</a>
+				<a href="/ratings/rating" class="link">Rating</a>
 			</p>
 
 			<p>
-				<a href="/ratings/advanced-rating">Advanced Rating</a>
+				<a href="/ratings/advanced-rating" class="link">Advanced Rating</a>
 			</p>
 
 			<p>
-				<a href="/ratings/score-rating">Score Rating</a>
+				<a href="/ratings/score-rating" class="link">Score Rating</a>
 			</p>
 		</div>
 		<Htwo label="References" />
 		<div class="references">
 			<p>
-				<a href="https://flowbite.com/docs/components/rating/" target="_blank">Flowbite Rating</a>
+				<a href="https://flowbite.com/docs/components/rating/" target="_blank" class="link">Flowbite Rating</a>
 			</p>
 		</div>
 	</div>
 </div>
+
+<style>
+	.link:hover {
+		color: #3277ff;
+		text-decoration: underline;
+	}
+</style>

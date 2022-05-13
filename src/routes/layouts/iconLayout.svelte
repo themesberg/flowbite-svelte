@@ -12,42 +12,49 @@
 		<Htwo label="Related components" />
 		<div class="related-components">
 			<p>
-				<a href="/icons/heroicons">Heroicons</a>
+				<a href="/icons/heroicons" class="link">Heroicons</a>
 			</p>
 
 			<p>
-				<a href="/icons/simple-icons">Simpleicons</a>
+				<a href="/icons/simple-icons" class="link">Simpleicons</a>
 			</p>
 
 			<p>
-				<a href="/icons/feathericons">Feathericons</a>
+				<a href="/icons/feathericons" class="link">Feathericons</a>
 			</p>
 		</div>
 		<Htwo label="References" />
 		<div class="references">
 			<p class="w-full dark:text-white text-base">
-				<a href="https://github.com/shinokada/svelte-heroicons" target="_blank">- Svelte-heroicons</a>
+				<a href="https://github.com/shinokada/svelte-heroicons" target="_blank" class="link">Svelte-heroicons</a>
 			</p>
 
 			<p class="w-full dark:text-white text-base">
-				<a href="https://github.com/shinokada/svelte-simpleicons" target="_blank">- Svelte-Simpleicons</a>
+				<a href="https://github.com/shinokada/svelte-simpleicons" target="_blank" class="link">Svelte-Simpleicons</a>
 			</p>
 
 			<p class="w-full dark:text-white text-base">
-				<a href="https://github.com/shinokada/svelte-feathericons/tree/main/src/lib" target="_blank">- Svelte-Feathericons</a>
+				<a href="https://github.com/shinokada/svelte-feathericons/tree/main/src/lib" target="_blank" class="link">Svelte-Feathericons</a>
 			</p>
 
 			<p class="w-full dark:text-white text-base">
-				<a href="https://heroicons.com/" target="_blank">- Heroicons</a>
+				<a href="https://heroicons.com/" target="_blank" class="link">Heroicons</a>
 			</p>
 
 			<p class="w-full dark:text-white text-base">
-				<a href="https://simpleicons.org/" target="_blank">- Simple-Icons</a>
+				<a href="https://simpleicons.org/" target="_blank" class="link">Simple-Icons</a>
 			</p>
 
 			<p class="w-full dark:text-white text-base">
-				<a href="https://feathericons.com/" target="_blank">- Feathericons</a>
+				<a href="https://feathericons.com/" target="_blank" class="link">Feathericons</a>
 			</p>
 		</div>
 	</div>
 </div>
+
+<style>
+	.link:hover {
+		color: #3277ff;
+		text-decoration: underline;
+	}
+</style>

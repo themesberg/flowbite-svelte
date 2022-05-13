@@ -12,18 +12,25 @@
 		<Htwo label="Related components" />
 		<div class="related-components">
 			<p>
-				<a href="/accordions/default">Default Accordion</a>
+				<a href="/accordions/default" class="link">Default Accordion</a>
 			</p>
 
 			<p>
-				<a href="/accordions/icon-accordion">Icon Accordion</a>
+				<a href="/accordions/icon-accordion" class="link">Icon Accordion</a>
 			</p>
 		</div>
 		<Htwo label="References" />
 		<div class="references">
 			<p>
-				<a href="https://flowbite.com/docs/components/accordion/" target="_blank">Flowbite Accordion</a>
+				<a href="https://flowbite.com/docs/components/accordion/" target="_blank" class="link">Flowbite Accordion</a>
 			</p>
 		</div>
 	</div>
 </div>
+
+<style>
+	.link:hover {
+		color: #3277ff;
+		text-decoration: underline;
+	}
+</style>

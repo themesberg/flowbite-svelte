@@ -5,13 +5,15 @@
 	export let btnColor: Colors = 'blue';
 	export let rel: string = '';
 	export let title: string = 'Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport';
-	export let stars: number = 5;
-	export let price: string = '$555';
+	export let stars: number;
+	export let price: string = '';
+	export let btnText: string = '';
 	export let headerClass: string = 'text-xl font-semibold tracking-tight text-gray-900 dark:text-white';
 	export let divClass: string = 'max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700';
+	export let priceClass: string = 'text-3xl font-bold text-gray-900 dark:text-white';
 	let spanClass: string = 'text-xs font-semibold mr-2 px-2.5 py-0.5 rounded ml-3 ';
 	let linkClass: string = 'text-white focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 text-center ';
-	
+
 	if (btnColor === 'gray') {
 		spanClass += 'bg-gray-100 text-gray-800 dark:bg-gray-200 dark:text-gray-800';
 		linkClass += 'bg-gray-700 hover:bg-gray-800 focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800';
@@ -50,14 +52,21 @@
 			</h3>
 		</a>
 		<div class="flex items-center mt-2.5 mb-5">
-			{#each { length: stars } as _, i}
-				<svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-			{/each}
-			<span class={spanClass}>{stars}</span>
+			{#if stars}
+				{#each { length: stars } as _, i}
+					<svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+				{/each}
+
+				<span class={spanClass}>{stars}</span>
+			{/if}
 		</div>
 		<div class="flex justify-between items-center">
-			<span class="text-3xl font-bold text-gray-900 dark:text-white">{price}</span>
-			<a {href} {rel} class={linkClass}>Add to cart</a>
+			{#if price}
+				<span class={priceClass}>{price}</span>
+			{/if}
+			{#if btnText}
+				<a {href} {rel} class={linkClass}>{btnText}</a>
+			{/if}
 		</div>
 	</div>
 </div>

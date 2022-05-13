@@ -12,8 +12,15 @@
 		<Htwo label="References" />
 		<div class="references">
 			<p>
-				<a href="https://flowbite.com/docs/components/pagination/" target="_blank">Flowbite Pagination</a>
+				<a href="https://flowbite.com/docs/components/pagination/" target="_blank" class="link">Flowbite Pagination</a>
 			</p>
 		</div>
 	</div>
 </div>
+
+<style>
+	.link:hover {
+		color: #3277ff;
+		text-decoration: underline;
+	}
+</style>

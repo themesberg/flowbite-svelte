@@ -12,8 +12,15 @@
 		<Htwo label="References" />
 		<div class="references">
 			<p>
-				<a href="https://flowbite.com/docs/components/toast/" target="_blank">Flowbite Toast</a>
+				<a href="https://flowbite.com/docs/components/toast/" target="_blank" class="link">Flowbite Toast</a>
 			</p>
 		</div>
 	</div>
 </div>
+
+<style>
+	.link:hover {
+		color: #3277ff;
+		text-decoration: underline;
+	}
+</style>

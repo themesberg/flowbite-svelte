@@ -12,8 +12,15 @@
 		<Htwo label="References" />
 		<div class="references">
 			<p>
-				<a href="https://flowbite.com/docs/customize/dark-mode/" target="_blank">Flowbite Dark mode</a>
+				<a href="https://flowbite.com/docs/customize/dark-mode/" target="_blank" class="link">Flowbite Dark mode</a>
 			</p>
 		</div>
 	</div>
 </div>
+
+<style>
+	.link:hover {
+		color: #3277ff;
+		text-decoration: underline;
+	}
+</style>

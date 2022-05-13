@@ -12,22 +12,29 @@
 		<Htwo label="Related components" />
 		<div class="related-components">
 			<p>
-				<a href="/badges/default">Default Badge</a>
+				<a href="/badges/default" class="link">Default Badge</a>
 			</p>
 
 			<p>
-				<a href="/badges/badge-icon">Badge with icon</a>
+				<a href="/badges/badge-icon" class="link">Badge with icon</a>
 			</p>
 
 			<p>
-				<a href="/badges/badge-link">Badge with link</a>
+				<a href="/badges/badge-link" class="link">Badge with link</a>
 			</p>
 		</div>
 		<Htwo label="References" />
 		<div class="references">
 			<p>
-				<a href="https://flowbite.com/docs/components/badge/" target="_blank">Flowbite Badge</a>
+				<a href="https://flowbite.com/docs/components/badge/" target="_blank" class="link">Flowbite Badge</a>
 			</p>
 		</div>
 	</div>
 </div>
+
+<style>
+	.link:hover {
+		color: #3277ff;
+		text-decoration: underline;
+	}
+</style>

@@ -13,43 +13,50 @@
 		<Htwo label="Related topics" />
 		<div class="related-components">
 			<p>
-				<a href="/pages/getting-started">Getting started</a>
+				<a href="/pages/getting-started" class="link">Getting started</a>
 			</p>
 
 			<p>
-				<a href="/pages/types">Type list</a>
+				<a href="/pages/types" class="link">Type list</a>
 			</p>
 			<p>
-				<a href="/pages/about">About</a>
+				<a href="/pages/about" class="link">About</a>
 			</p>
 			<p>
-				<a href="/pages/how-to-contribute">How to contribute</a>
+				<a href="/pages/how-to-contribute" class="link">How to contribute</a>
 			</p>
 			<p>
-				<a href="/pages/cli">Flowbite-Svelte-CLI</a>
+				<a href="/pages/cli" class="link">Flowbite-Svelte-CLI</a>
 			</p>
 		</div>
 		<Htwo label="References" />
 		<div class="references">
 			<p>
-				<a href="https://svelte.dev/docs">Svelte</a>
+				<a href="https://svelte.dev/docs" class="link">Svelte</a>
 			</p>
 
 			<p>
-				<a href="https://kit.svelte.dev/docs">SvelteKit</a>
+				<a href="https://kit.svelte.dev/docs" class="link">SvelteKit</a>
 			</p>
 
 			<p>
-				<a href="https://tailwindcss.com/docs/installation">TailwindCSS</a>
+				<a href="https://tailwindcss.com/docs/installation" class="link">TailwindCSS</a>
 			</p>
 
 			<p>
-				<a href="https://flowbite.com/docs/getting-started/introduction/">Flowbite</a>
+				<a href="https://flowbite.com/docs/getting-started/introduction/" class="link">Flowbite</a>
 			</p>
 
 			<p>
-				<a href="https://github.com/shinokada/svelte-sidebar">Svelte-sidebar</a>
+				<a href="https://github.com/shinokada/svelte-sidebar" class="link">Svelte-sidebar</a>
 			</p>
 		</div>
 	</div>
 </div>
+
+<style>
+	.link:hover {
+		color: #3277ff;
+		text-decoration: underline;
+	}
+</style>

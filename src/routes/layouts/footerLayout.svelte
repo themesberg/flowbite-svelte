@@ -13,26 +13,33 @@
 		<Htwo label="Related components" />
 		<div class="related-components">
 			<p>
-				<a href="/footer/default">Default Footer</a>
+				<a href="/footer/default" class="link">Default Footer</a>
 			</p>
 
 			<p>
-				<a href="/footer/logo">Footer with Logo</a>
+				<a href="/footer/logo" class="link">Footer with Logo</a>
 			</p>
 
 			<p>
-				<a href="/footer/sitemap">Footer with Sitemap</a>
+				<a href="/footer/sitemap" class="link">Footer with Sitemap</a>
 			</p>
 
 			<p>
-				<a href="/footer/socialmedia">Footer with Socialmedia</a>
+				<a href="/footer/socialmedia" class="link">Footer with Socialmedia</a>
 			</p>
 		</div>
 		<Htwo label="References" />
 		<div class="references">
 			<p>
-				<a href="https://flowbite.com/docs/components/footer/" target="_blank">Flowbite Footer</a>
+				<a href="https://flowbite.com/docs/components/footer/" target="_blank" class="link">Flowbite Footer</a>
 			</p>
 		</div>
 	</div>
 </div>
+
+<style>
+	.link:hover {
+		color: #3277ff;
+		text-decoration: underline;
+	}
+</style>

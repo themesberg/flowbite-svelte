@@ -13,18 +13,25 @@
 		<Htwo label="Related components" />
 		<div class="related-components">
 			<p>
-				<a href="/dropdowns/default">Default dropdown</a>
+				<a href="/dropdowns/default" class="link">Default dropdown</a>
 			</p>
 
 			<p>
-				<a href="/dropdowns/image">Image dropdown</a>
+				<a href="/dropdowns/image" class="link">Image dropdown</a>
 			</p>
 		</div>
 		<Htwo label="References" />
 		<div class="references">
 			<p>
-				<a href="https://flowbite.com/docs/components/dropdowns/" target="_blank">Flowbite Dropdown</a>
+				<a href="https://flowbite.com/docs/components/dropdowns/" target="_blank" class="link">Flowbite Dropdown</a>
 			</p>
 		</div>
 	</div>
 </div>
+
+<style>
+	.link:hover {
+		color: #3277ff;
+		text-decoration: underline;
+	}
+</style>

@@ -12,42 +12,49 @@
 		<Htwo label="Related components" />
 		<div class="related-components">
 			<p>
-				<a href="/tabs/default-tabs">Default Tabs</a>
+				<a href="/tabs/default-tabs" class="link">Default Tabs</a>
 			</p>
 
 			<p>
-				<a href="/tabs/underline-tabs">Underline Tabs</a>
+				<a href="/tabs/underline-tabs" class="link">Underline Tabs</a>
 			</p>
 
 			<p>
-				<a href="/tabs/icon-tabs">Icon Tabs</a>
+				<a href="/tabs/icon-tabs" class="link">Icon Tabs</a>
 			</p>
 
 			<p>
-				<a href="/tabs/full-width-tabs">Full width Tabs</a>
+				<a href="/tabs/full-width-tabs" class="link">Full width Tabs</a>
 			</p>
 
 			<p>
-				<a href="/tabs/interactive-tabs">Interactive Tabs</a>
+				<a href="/tabs/interactive-tabs" class="link">Interactive Tabs</a>
 			</p>
 
 			<p>
-				<a href="/tabs/interactive-tabs-2">Interactive Tabs 2</a>
+				<a href="/tabs/interactive-tabs-2" class="link">Interactive Tabs 2</a>
 			</p>
 
 			<p>
-				<a href="/tabs/multiple-interactive-tabs">Multiple Interactive Tabs</a>
+				<a href="/tabs/multiple-interactive-tabs" class="link">Multiple Interactive Tabs</a>
 			</p>
 
 			<p>
-				<a href="/tabs/pilltabs">Pill Tabs</a>
+				<a href="/tabs/pilltabs" class="link">Pill Tabs</a>
 			</p>
 		</div>
 		<Htwo label="References" />
 		<div class="references">
 			<p>
-				<a href="https://flowbite.com/docs/components/tabs/" target="_blank">Flowbite Tabs</a>
+				<a href="https://flowbite.com/docs/components/tabs/" target="_blank" class="link">Flowbite Tabs</a>
 			</p>
 		</div>
 	</div>
 </div>
+
+<style>
+	.link:hover {
+		color: #3277ff;
+		text-decoration: underline;
+	}
+</style>
