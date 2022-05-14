@@ -1,1 +1,0 @@
-{"props":[["id"," string "," 'range'"],["label"," string "," 'Range'"],["min"," number","-"],["max"," number","-"],["value"," number","-"],["step"," number","-"],["size"," 'small' | 'large'","-"]]}

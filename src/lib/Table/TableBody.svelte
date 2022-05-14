@@ -1,0 +1,3 @@
+<tbody {...$$props}>
+  <slot />
+</tbody>

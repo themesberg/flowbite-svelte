@@ -1,27 +1,11 @@
-/* Write your global styles here, in PostCSS syntax */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-pre {
-	background-color: rgb(242, 242, 242);
-	white-space: pre-wrap;
-	width: 100%;
+code {
+    @apply rounded-lg;
 }
 
-@layer base {
-	p {
-		@apply text-lg w-full text-gray-900 dark:text-white py-1;
-	}
-	h3 {
-		@apply text-xl w-full dark:text-white py-4;
-	}
-	.related-components,
-	.references {
-		@apply w-full flex flex-wrap;
-	}
-	.related-components p,
-	.references p {
-		@apply w-full md:w-1/2 lg:w-1/3;
-	}
+html {
+    @apply h-screen overflow-y-hidden;
 }
