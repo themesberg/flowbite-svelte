@@ -12,28 +12,31 @@
 		<Htwo label="Related components" />
 		<div class="related-components">
 			<p>
-				<a href="/tooltips/default" class="link">- Default Tooltip</a>
+				<a href="/tooltips/default" class="link">Default Tooltip</a>
 			</p>
 
 			<p>
-				<a href="/tooltips/light" class="link">- Light Tooltip</a>
+				<a href="/tooltips/light" class="link">Light Tooltip</a>
 			</p>
 		</div>
 		<Htwo label="References" />
 		<div class="references">
 			<p>
-				- Read more about <a href="/buttons" class="link">Buttons</a>
+				<a href="/buttons" class="link">Buttons</a>
 			</p>
 			<p>
-				<a href="https://flowbite.com/docs/components/tooltips/" target="_blank" class="link">- Flowbite Tooltip</a>
+				<a href="https://flowbite.com/docs/components/tooltips/" target="_blank" class="link">Flowbite Tooltip</a>
 			</p>
 		</div>
 	</div>
 </div>
 
 <style>
+	.link {
+		color: #256cfa;
+	}
 	.link:hover {
-		color: #3277ff;
+		color: #6599ff;
 		text-decoration: underline;
 	}
 </style>

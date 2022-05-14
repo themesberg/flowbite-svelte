@@ -69,7 +69,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Breadcrumb {crumbs}/>
 
-
 <h1 class="text-3xl w-full dark:text-white py-8">Icon Tabs</h1>
 
 <Htwo label="Examples" />

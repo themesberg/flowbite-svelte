@@ -41,8 +41,11 @@
 </div>
 
 <style>
+	.link {
+		color: #256cfa;
+	}
 	.link:hover {
-		color: #3277ff;
+		color: #6599ff;
 		text-decoration: underline;
 	}
 </style>

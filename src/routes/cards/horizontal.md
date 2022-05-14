@@ -4,7 +4,7 @@ layout: cardLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-    import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { HorizontalCard, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/HorizontalCard.json'
   // Props table
@@ -13,7 +13,6 @@ layout: cardLayout
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
 let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
-
 
   let crumbs = [
     {
@@ -32,7 +31,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </script>
 
 <Breadcrumb {crumbs}/>
-
 
 <h1 class="text-3xl w-full dark:text-white py-8">Horizontal Card</h1>
 

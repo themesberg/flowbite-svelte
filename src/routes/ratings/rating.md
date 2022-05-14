@@ -21,7 +21,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       href:'/'
     },
     {
-      label:'Rating home',
+      label:'Ratings',
       href:'/ratings/'
     },
     {
