@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.30](https://github.com/themesberg/flowbite-svelte/compare/v0.15.29...v0.15.30) (2022-05-14)
+
+
+### Bug Fixes
+
+* move all index.svelte to index.md and add breadcrumb ([c691d92](https://github.com/themesberg/flowbite-svelte/commit/c691d92fe5b47dafb2d1f5bc4dee39dc3a5c61b8))
+
 ### [0.15.29](https://github.com/themesberg/flowbite-svelte/compare/v0.15.28...v0.15.29) (2022-05-13)
 
 
