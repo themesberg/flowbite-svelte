@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.32](https://github.com/themesberg/flowbite-svelte/compare/v0.15.31...v0.15.32) (2022-05-15)
+
+
+### Bug Fixes
+
+* change mr-4 to mr-2 in SidebarDropdown component ([2961555](https://github.com/themesberg/flowbite-svelte/commit/296155587bf2fa35d081b5373ad941a804d4170a))
+
 ### [0.15.31](https://github.com/themesberg/flowbite-svelte/compare/v0.15.30...v0.15.31) (2022-05-15)
 
 
