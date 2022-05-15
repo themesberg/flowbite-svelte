@@ -10,18 +10,10 @@
 	export let slotClass: string = 'p-5 border border-t-0 border-gray-200 dark:border-gray-700';
 	export let isOpen = false;
 	export let color: boolean = false;
-	// export let flush: boolean = false;
 	export let icons: AccordionIconType = {
 		up: ChevronUpSolid,
 		down: ChevronDownSolid
 	};
-
-	// if (flush) {
-	// 	btnClass = 'flex justify-between items-center py-5 w-full font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400';
-	// 	slotClass = 'py-5 border-b border-gray-200 dark:border-gray-700';
-	// }
-
-	// $: console.log('isOpen', isOpen);
 
 	onMount(() => {
 		if (isOpen) {

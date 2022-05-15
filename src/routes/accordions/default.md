@@ -8,8 +8,10 @@ layout: accordionLayout
   import {ArrowCircleUpOutline, ArrowCircleDownOutline} from 'svelte-heros'
   import { AccordionItem, AccordionFlush, Table, TableDefaultRow, Breadcrumb } from "$lib/index";
   import accordionProps from '../props/AccordionItem.json'
+  import accordionProps2 from '../props/AccordionFlush.json'
    // Props table
-  export let items = accordionProps.props
+  let items = accordionProps.props
+  let items2 = accordionProps2.props
 
 	let propHeader = ['Name', 'Type', 'Default']
 	
@@ -371,6 +373,14 @@ body
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
+<h3>AccordionItem</h3>
+
 <Table header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
+</Table>
+
+<h3>AccordionFlush</h3>
+
+<Table header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items2} rowState='hover' />
 </Table>
