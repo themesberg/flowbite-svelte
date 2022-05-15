@@ -241,7 +241,7 @@ let icons={
 
 <Htwo label="Flush accordion" />
 
-<p>Use the `flush` prop to remove the rounded borders.</p>
+<p>Use `AccordionFlush` component to remove the rounded borders.</p>
 
 <ExampleDiv>
   <AccordionFlush id="1" >
@@ -269,7 +269,11 @@ let icons={
 </ExampleDiv>
 
 ```html
-<AccordionItem id="1" flush>
+<script>
+  import { AccordionFlush } from 'flowbite-svelte'
+</script>
+
+<AccordionFlush id="1" >
   <h2 slot="header">Header 2-1</h2>
   <div slot="body">
 <p class="mb-2 text-gray-500 dark:text-gray-400">
@@ -279,8 +283,8 @@ let icons={
     nisi quis perspiciatis.
   </p>
   </div>
-</AccordionItem>
-<AccordionItem id="2" flush>
+</AccordionFlush>
+<AccordionFlush id="2">
   <h2 slot="header">Header 2-2</h2>
   <div slot="body">
   <p class="mb-2 text-gray-500 dark:text-gray-400">
@@ -290,7 +294,7 @@ let icons={
     nisi quis perspiciatis.
   </p>
   </div>
-</AccordionItem>
+</AccordionFlush>
 ```
 
 <Htwo label="Arrow style" />
