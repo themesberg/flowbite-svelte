@@ -46,7 +46,7 @@
 </script>
 
 <h2 aria-expanded={isOpen}>
-	<button on:click={() => handleToggle(id)} type="button" class:rounded-t-xl={id === '1' && !flush} class:border-t-0={id !== '1'} class={btnClass}>
+	<button on:click={() => handleToggle(id)} type="button" class:rounded-t-xl={id === '1' && !flush} class:border-t-0={id !== '1'} class="{btnClass} {$$props.class ? $$props.class : ''}">
 		<slot name="header" />
 		{#if isOpen}
 			<svelte:component this={icons.up} size={iconSize} class="mr-2 {iconClass}" />
