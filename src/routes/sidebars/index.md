@@ -7,8 +7,13 @@ layout: sidebarLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Sidebar, SidebarItem, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/Sidebar.json'
+  import componentProps2 from '../props/SidebarDropdown.json'
+  import componentProps3 from '../props/SidebarItem.json'
   // Props table
   let items = componentProps.props
+  let items2 = componentProps2.props
+  let items3 = componentProps3.props
+
 	let propHeader = ['Name', 'Type', 'Default']
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
@@ -527,6 +532,20 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
+<h3>Sidebar</h3>
+
 <Table header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
+</Table>
+
+<h3>SidebarDropdown</h3>
+
+<Table header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items2} rowState='hover' />
+</Table>
+
+<h3>SidebarItem</h3>
+
+<Table header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items3} rowState='hover' />
 </Table>
