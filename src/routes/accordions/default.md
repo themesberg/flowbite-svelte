@@ -6,7 +6,7 @@ layout: accordionLayout
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import {ArrowCircleUpOutline, ArrowCircleDownOutline} from 'svelte-heros'
-  import { AccordionItem, Table, TableDefaultRow, Breadcrumb } from "$lib/index";
+  import { AccordionItem, AccordionFlush, Table, TableDefaultRow, Breadcrumb } from "$lib/index";
   import accordionProps from '../props/AccordionItem.json'
    // Props table
   export let items = accordionProps.props
@@ -244,7 +244,7 @@ let icons={
 <p>Use the `flush` prop to remove the rounded borders.</p>
 
 <ExampleDiv>
-  <AccordionItem id="1" flush>
+  <AccordionFlush id="1" >
     <h2 slot="header">Header 2-1</h2>
     <div slot="body">
   <p class="mb-2 text-gray-500 dark:text-gray-400">
@@ -254,8 +254,8 @@ let icons={
       nisi quis perspiciatis.
     </p>
     </div>
-  </AccordionItem>
-  <AccordionItem id="2" flush>
+  </AccordionFlush>
+  <AccordionFlush id="2">
     <h2 slot="header">Header 2-2</h2>
     <div slot="body">
     <p class="mb-2 text-gray-500 dark:text-gray-400">
@@ -265,7 +265,7 @@ let icons={
       nisi quis perspiciatis.
     </p>
     </div>
-  </AccordionItem>
+  </AccordionFlush>
 </ExampleDiv>
 
 ```html

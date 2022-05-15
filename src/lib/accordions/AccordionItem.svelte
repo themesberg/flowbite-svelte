@@ -10,16 +10,16 @@
 	export let slotClass: string = 'p-5 border border-t-0 border-gray-200 dark:border-gray-700';
 	export let isOpen = false;
 	export let color: boolean = false;
-	export let flush: boolean = false;
+	// export let flush: boolean = false;
 	export let icons: AccordionIconType = {
 		up: ChevronUpSolid,
 		down: ChevronDownSolid
 	};
 
-	if (flush) {
-		btnClass = 'flex justify-between items-center py-5 w-full font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400';
-		slotClass = 'py-5 border-b border-gray-200 dark:border-gray-700';
-	}
+	// if (flush) {
+	// 	btnClass = 'flex justify-between items-center py-5 w-full font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400';
+	// 	slotClass = 'py-5 border-b border-gray-200 dark:border-gray-700';
+	// }
 
 	// $: console.log('isOpen', isOpen);
 
@@ -33,9 +33,6 @@
 		isOpen = !isOpen;
 		if (color && isOpen) {
 			btnClass = 'flex items-center focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 justify-between p-5 w-full font-medium border border-gray-200 dark:border-gray-700 text-left text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:ring-blue-200 dark:focus:ring-blue-800  hover:bg-blue-100 text-blue-500 bg-blue-200 text-blue-700';
-		} else if (flush) {
-			btnClass = 'flex justify-between items-center py-5 w-full font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400';
-			slotClass = 'py-5 border-b border-gray-200 dark:border-gray-700';
 		} else {
 			btnClass = 'flex items-center focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 justify-between p-5 w-full font-medium border border-gray-200 dark:border-gray-700 text-left text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800';
 		}
@@ -46,7 +43,7 @@
 </script>
 
 <h2 aria-expanded={isOpen}>
-	<button on:click={() => handleToggle(id)} type="button" class:rounded-t-xl={id === '1' && !flush} class:border-t-0={id !== '1'} class="{btnClass} {$$props.class ? $$props.class : ''}">
+	<button on:click={() => handleToggle(id)} type="button" class:rounded-t-xl={id === '1'} class:border-t-0={id !== '1'} class="{btnClass} {$$props.class ? $$props.class : ''}">
 		<slot name="header" />
 		{#if isOpen}
 			<svelte:component this={icons.up} size={iconSize} class="mr-2 {iconClass}" />
