@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.33](https://github.com/themesberg/flowbite-svelte/compare/v0.15.32...v0.15.33) (2022-05-15)
+
+
+### Features
+
+* add AccordionFlush component ([e2d297d](https://github.com/themesberg/flowbite-svelte/commit/e2d297def8272347a68fe39e3296d07d1bd2b436))
+
 ### [0.15.32](https://github.com/themesberg/flowbite-svelte/compare/v0.15.31...v0.15.32) (2022-05-15)
 
 
