@@ -4,7 +4,7 @@ layout: darkmodeLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-import { Table, TableDefaultRow, Breadcrumb } from '$lib/index';
+  import { Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/DarkMode.json'
   // Props table
   let items = componentProps.props
@@ -40,6 +40,24 @@ import { DarkMode } from "flowbite-svelte";
 <DarkMode />
 ```
 
+<p>Add the following to the body tag:</p>
+
+```html
+<!-- src/app.html -->
+<body class="bg-white dark:bg-gray-800">
+	<div>%svelte.body%</div>
+</body>
+```
+
+<p>Add the following to `tailwind.config.cjs`:</p>
+
+```cjs
+const config = {
+	...
+  darkMode: 'class',
+};
+```
+
 <Htwo label="Props" />
 
 
@@ -49,7 +67,7 @@ import { DarkMode } from "flowbite-svelte";
 let btnClass: string = "text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 fixed left-2 top-16 z-50"
 ```
 
-<p>Set your CSS and add it to the prop.:</p>
+<p>Set your CSS and add it to the prop:</p>
 
 ```html
 <script>
@@ -59,15 +77,6 @@ let btnClass="Add your class here"
 </script>
 
 <DarkMode {btnClass} />
-```
-
-<p>Add the following to the body tag:</p>
-
-```html
-<!-- src/app.html -->
-<body class="bg-white dark:bg-gray-800">
-	<div>%svelte.body%</div>
-</body>
 ```
 
 <Htwo label="How to change Dark mode color" />
