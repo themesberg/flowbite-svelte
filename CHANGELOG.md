@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.31](https://github.com/themesberg/flowbite-svelte/compare/v0.15.30...v0.15.31) (2022-05-15)
+
+
+### Bug Fixes
+
+* add {41578props.class ? 41578props.class : ''} to AccordionItem component ([b90ee19](https://github.com/themesberg/flowbite-svelte/commit/b90ee19dc8a82a801eba01901eb6f2dbf3c9df1a))
+
 ### [0.15.30](https://github.com/themesberg/flowbite-svelte/compare/v0.15.29...v0.15.30) (2022-05-14)
 
 
