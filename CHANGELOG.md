@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.35](https://github.com/themesberg/flowbite-svelte/compare/v0.15.34...v0.15.35) (2022-05-15)
+
+
+### Bug Fixes
+
+* add ulClass and childClass in SidebarItem's SidebarDropdown ([2e0f46b](https://github.com/themesberg/flowbite-svelte/commit/2e0f46b6c65037e4a40bba688936af99839bd863))
+
 ### [0.15.34](https://github.com/themesberg/flowbite-svelte/compare/v0.15.33...v0.15.34) (2022-05-15)
 
 
