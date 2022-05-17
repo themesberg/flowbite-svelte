@@ -79,17 +79,18 @@ module.exports = config;
 
 <p>Flowbite-Svelte-Starter comes with the followings:</p>
 
-- Svelte
-- SvelteKit
-- Tailwind CSS
-- Flowbite
-- Flowbite-Svelte
-- ESlint
-- Typescript
-- Playwright
-- Prettier
-- Svelte-heros(Heroicons)
-- Darkmode activated
+
+<span class="w-full dark:text-white">Svelte</span>
+<span class="w-full dark:text-white">SvelteKit</span>
+<span class="w-full dark:text-white">Tailwind CSS</span>
+<span class="w-full dark:text-white">Flowbite</span>
+<span class="w-full dark:text-white">Flowbite-Svelte</span>
+<span class="w-full dark:text-white">ESlint</span>
+<span class="w-full dark:text-white">Typescript</span>
+<span class="w-full dark:text-white">Playwright</span>
+<span class="w-full dark:text-white">Prettier</span>
+<span class="w-full dark:text-white">Svelte-heros(Heroicons)</span>
+<span class="w-full dark:text-white">Darkmode activated</span>
 
 <h3>You need to run git clone the repo</h3>
 
