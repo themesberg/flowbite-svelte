@@ -27,10 +27,10 @@
 	} else {
 		inputClass += 'text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600';
 	}
-	export let helper: string;
-	export let id: string;
-	export let value: string;
-	export let label: string;
+	export let helper: string = '';
+	export let id: string = '';
+	export let value: string = '';
+	export let label: string = '';
 </script>
 
 {#if helper}

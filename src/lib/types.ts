@@ -236,7 +236,7 @@ export interface TimelineItemHorizontalType {
 	text?: HTMLElement | string;
 }
 
-export type ToggleColorType = 'red'|'green'|'purple'|'yellow'|'teal'|'orange';
+export type ToggleColorType = 'blue'|'red'|'green'|'purple'|'yellow'|'teal'|'orange';
 
 export interface TransitionParamTypes {
 	delay?: number;

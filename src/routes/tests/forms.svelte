@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { Input, Checkbox, Fileupload, FloatingLabelInput, Iconinput, Select, Toggle, Textarea } from '$lib/index';
 	let username;
 	let size;
@@ -72,7 +72,19 @@
 			helper: "For orders shipped from Flowbite from <span class='font-medium'>€ 25</span> in books or <span>€ 29</span> on other categories</span>"
 		}
 	];
+	let c1: boolean = false,
+		c2: boolean = false,
+		c3: boolean = false,
+		c4: boolean = false;
 </script>
+
+<h1 class="text-3xl py-8 dark:text-white">Forms Test</h1>
+<Toggle id="t1" name="t1" label="test" bind:checked={c1} />
+<Checkbox id="cb1" name="cb1" label="test" bind:checked={c2} />
+<Input type="checkbox" id="i1" name="i1" label="test" bind:checked={c3} />
+<input type="checkbox" id="i2" name="i2" bind:checked={c4} />
+
+<div class="text-red-500">{c1}, {c2}, {c3}, {c4}</div>
 
 <Input label="Username" id="username" name="username" type="text" bind:value={username} required />
 

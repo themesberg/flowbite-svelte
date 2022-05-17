@@ -2,15 +2,16 @@
 	import type { ToggleColorType } from '../types.js';
 	import generateId from '../utils/generateId.js';
 	export let name: string = 'toggle-example';
-	export let color: ToggleColorType;
+	export let color: ToggleColorType = 'blue';
 	export let size: 'small' | 'default' | 'large' = 'default';
 	export let id: string = generateId();
 	export let label: string = 'Toggle me';
-	export let value: string;
+	export let value: string = '';
 	export let checked: boolean = false;
 	export let disabled: boolean = false;
 	export let labelClass: string = 'relative inline-flex items-center cursor-pointer';
-	export let divClass: string = 'w-11 h-6 bg-gray-200 rounded-full border border-gray-200 toggle-bg dark:bg-gray-700 dark:border-gray-600';
+	export let divClass: string = "w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600";
+
 	export let inputClass: string = 'sr-only';
 	if (color || size) {
 		inputClass += ' peer';
