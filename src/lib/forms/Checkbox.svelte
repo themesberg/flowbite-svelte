@@ -31,12 +31,13 @@
 	export let id: string = '';
 	export let value: string = '';
 	export let label: string = '';
+	export let checked: boolean = false;
 </script>
 
 {#if helper}
 	<div class="flex">
 		<div class={divHelperClass}>
-			<input {id} type="checkbox" {name} {value} class={inputClass} aria-labelledby={id} aria-describedby={id} {disabled} {...$$restProps} />
+			<input {id} type="checkbox" bind:checked {name} {value} class={inputClass} aria-labelledby={id} aria-describedby={id} {disabled} {...$$restProps} />
 		</div>
 		<div class="ml-2 text-sm">
 			<label for={id} class={labelHelperClass}>
@@ -47,7 +48,7 @@
 	</div>
 {:else}
 	<div class={divClass}>
-		<input {id} type="checkbox" {name} {value} class={inputClass} aria-labelledby={id} aria-describedby={id} {disabled} {...$$restProps} />
+		<input {id} type="checkbox" bind:checked {name} {value} class={inputClass} aria-labelledby={id} aria-describedby={id} {disabled} {...$$restProps} />
 		<label for={id} class={labelClass}>
 			{@html label}
 		</label>
