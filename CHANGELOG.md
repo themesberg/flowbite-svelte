@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.36](https://github.com/themesberg/flowbite-svelte/compare/v0.15.35...v0.15.36) (2022-05-17)
+
+
+### Bug Fixes
+
+* add '' to string types ([387363a](https://github.com/themesberg/flowbite-svelte/commit/387363a3b3668dc66a7790331927e1c1641e4de6))
+* add bind:checked to Checkbox ([7cfcf67](https://github.com/themesberg/flowbite-svelte/commit/7cfcf67b52a1496f57f8ef31b4205464f9eb82a0))
+* add bind:checked to Toggle ([18a34ea](https://github.com/themesberg/flowbite-svelte/commit/18a34eaaf65539bf176da642b4a04f644265f647))
+* remove radio, search etc from InputType ([ed95418](https://github.com/themesberg/flowbite-svelte/commit/ed9541808da054b383c6addff55907d955dad32f))
+
 ### [0.15.35](https://github.com/themesberg/flowbite-svelte/compare/v0.15.34...v0.15.35) (2022-05-15)
 
 
