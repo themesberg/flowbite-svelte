@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.37](https://github.com/themesberg/flowbite-svelte/compare/v0.15.36...v0.15.37) (2022-05-18)
+
+
+### Bug Fixes
+
+* add buttonClass to AccordionItem ([8387244](https://github.com/themesberg/flowbite-svelte/commit/83872440ebb872843a0f016f7fb576d156295b96))
+
 ### [0.15.36](https://github.com/themesberg/flowbite-svelte/compare/v0.15.35...v0.15.36) (2022-05-17)
 
 
