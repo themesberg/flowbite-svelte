@@ -20,7 +20,7 @@ Steps to reproduce the behavior:
 4. See error
 
 **Code samples**
-Simple code that reproduce the bug.
+Simple code that reproduces the bug.
 
 **Expected behavior**
 A clear and concise description of what you expected to happen.
