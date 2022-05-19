@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.38](https://github.com/themesberg/flowbite-svelte/compare/v0.15.37...v0.15.38) (2022-05-19)
+
+
+### Bug Fixes
+
+* add props.class to Spinner ([3fe4f8b](https://github.com/themesberg/flowbite-svelte/commit/3fe4f8b20d7d89b2230b23904b0671cec900684d))
+
 ### [0.15.37](https://github.com/themesberg/flowbite-svelte/compare/v0.15.36...v0.15.37) (2022-05-18)
 
 
