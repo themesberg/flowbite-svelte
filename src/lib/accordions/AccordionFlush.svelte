@@ -9,7 +9,7 @@
 		'flex justify-between items-center py-5 w-full font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400';
 
 	export let slotClass: string = 'py-5 border-b border-gray-200 dark:border-gray-700';
-	export let isOpen = false;
+	export let isOpen: boolean = false;
 	export let icons: AccordionIconType = {
 		up: ChevronUpSolid,
 		down: ChevronDownSolid

@@ -1,1 +1,1 @@
-{"props":[["avatar"," AvatarType "," {}"],["avatarClass"," string "," `w-${avatar.size} h-${avatar.size} ${isCircle} ${isBorder}`"],["placehoder"," boolean "," false"]]}
+{"props":[["avatar","AvatarType ","{}"],["avatarClass","string ","`w-${avatar.size} h-${avatar.size} ${isCircle} ${isBorder}`"],["placehoder","boolean ","false"]]}

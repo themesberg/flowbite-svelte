@@ -1,1 +1,1 @@
-{"props":[["login"," AuthFunctionType","-"],["title"," string "," 'Sign in'"],["btnSignInColor"," Colors "," 'blue'"],["rememberMe"," boolean "," false"],["signup"," LinkType","-"],["lostPassword"," LinkType","-"]]}
+{"props":[[" login"," AuthFunctionType",""],["title","string ","'Sign in'"],["btnSignInColor","Colors ","'blue'"],["rememberMe","boolean ","false"],[" signup"," LinkType",""],[" lostPassword"," LinkType",""]]}
