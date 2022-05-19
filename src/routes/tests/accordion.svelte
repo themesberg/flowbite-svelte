@@ -5,7 +5,7 @@
 </script>
 
 <ExampleDiv>
-	<AccordionItem id="1" color>
+	<AccordionItem id="1" color class="text-xl text-red-500">
 		<h2 slot="header">My Header 1</h2>
 		<div slot="body">
 			<p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet ...</p>

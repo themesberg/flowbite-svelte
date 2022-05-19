@@ -20,9 +20,11 @@
 		}
 	});
 
-	export let btnClass: string = 'flex items-center focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 justify-between p-5 w-full font-medium border border-gray-200 dark:border-gray-700 text-left text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800';
+	export let btnClass: string =
+		'flex items-center focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 justify-between p-5 w-full font-medium border border-gray-200 dark:border-gray-700 text-left text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800';
 	$: btnClass;
-	export let colorClass: string = 'focus:ring-blue-200 dark:focus:ring-blue-800  hover:bg-blue-100 text-blue-500 bg-blue-200 text-blue-700';
+	export let colorClass: string =
+		'focus:ring-blue-200 dark:focus:ring-blue-800  hover:bg-blue-100 text-blue-500 bg-blue-200 text-blue-700';
 	const handleToggle = (id: string) => {
 		isOpen = !isOpen;
 	};
@@ -38,7 +40,13 @@
 </script>
 
 <h2 aria-expanded={isOpen}>
-	<button on:click={() => handleToggle(id)} type="button" class:rounded-t-xl={id === '1'} class:border-t-0={id !== '1'} class="{buttonClass} {$$props.class ? $$props.class : ''}">
+	<button
+		on:click={() => handleToggle(id)}
+		type="button"
+		class:rounded-t-xl={id === '1'}
+		class:border-t-0={id !== '1'}
+		class="{buttonClass} {$$props.class || ''}"
+	>
 		<slot name="header" />
 		{#if isOpen}
 			<svelte:component this={icons.up} size={iconSize} class="mr-2 {iconClass}" />

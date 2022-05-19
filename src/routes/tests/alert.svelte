@@ -25,7 +25,7 @@
 
 {#each alerts as item (item)}
 	<div animate:flip={{ delay: 1000 }}>
-		<Alert alertId={item.id} color={item.btnColor} on:handleAlert={() => remove(item)} closeBtn>
+		<Alert alertId={item.id} color={item.btnColor} on:handleAlert={() => remove(item)} closeBtn class="p-8">
 			<span slot="content">
 				{item.text}
 			</span>

@@ -2,6 +2,6 @@
 	"useTabs": true,
 	"singleQuote": true,
 	"trailingComma": "none",
-	"printWidth": 500,
+	"printWidth": 100,
 	"embeddedLanguageFormatting": "auto"
 }

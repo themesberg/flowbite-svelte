@@ -4,9 +4,10 @@
 	export let title: string = 'Work fast from anywhere';
 	export let headColor: Colors = 'gray';
 	export let btns: CardButtonType[];
-	export let divClass: string = 'p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700';
+	export let divClass: string =
+		'p-4 w-full text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700';
 	let headClass: string = 'mb-2 text-3xl font-bold dark:text-white ';
-	
+
 	if (headColor === 'blue') {
 		headClass += 'text-blue-900';
 	} else if (headColor === 'gray') {
