@@ -83,6 +83,10 @@ export { default as SmallModal } from './modals/SmallModal.svelte';
 
 // Navbar
 export { default as Navbar } from './navbar/Navbar.svelte';
+export { default as NavBrand } from './navbar/NavBrand.svelte';
+export { default as NavHamburger } from './navbar/NavHamburger.svelte';
+export { default as NavLi } from './navbar/NavLi.svelte';
+export { default as NavUl } from './navbar/NavUl.svelte';
 export { default as DropdownNavbar } from './navbar/DropdownNavbar.svelte';
 
 // Pagination
