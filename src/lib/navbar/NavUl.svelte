@@ -11,16 +11,7 @@
 </script>
 
 <div class={divClass} class:hidden id="mobile-menu">
-	{#if !hidden}
-		<ul
-			class="{ulClass} {$$props.class || ''}"
-			transition:slide={{ delay: 250, duration: 500, easing: quintOut }}
-		>
-			<slot />
-		</ul>
-	{:else}
-		<ul class="{ulClass} {$$props.class || ''}">
-			<slot />
-		</ul>
-	{/if}
+	<ul class="{ulClass} {$$props.class || ''}">
+		<slot />
+	</ul>
 </div>
