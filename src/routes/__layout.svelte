@@ -4,7 +4,27 @@
 	import { Side, Nav, SidebarList } from 'svelte-sidebar-menu';
 	import Twitter from './utils/icons/Twitter.svelte';
 	import Github from './utils/icons/Github.svelte';
-	import { accordions, badges, buttons, buttonGroups, cards, carousels, dropdowns, forms, footers, icons, modals, navbar, ratings, svelteflows, tabs, timelines, tooltips, topMenus, footerLinks } from './moduleItems';
+	import {
+		accordions,
+		badges,
+		buttons,
+		buttonGroups,
+		cards,
+		carousels,
+		dropdowns,
+		forms,
+		footers,
+		icons,
+		modals,
+		navbar,
+		ratings,
+		svelteflows,
+		tabs,
+		timelines,
+		tooltips,
+		topMenus,
+		footerLinks
+	} from './moduleItems';
 
 	let site = {
 		name: 'Flowbite Svelte',
@@ -12,28 +32,37 @@
 		img: '/images/flowbite-svelte-logo-40.png'
 	};
 
-	let asideClass = 'absolute w-auto bg-white pt-8 shadow-lg z-50 px-4 h-screen z-50 overflow-scroll dark:bg-gray-800';
+	let asideClass =
+		'absolute w-auto bg-white pt-8 shadow-lg z-50 px-4 h-screen z-50 overflow-scroll dark:bg-gray-800';
 	// Navbar
-	let logo = '/images/flowbite-svelte-logo-95x66.svg';
+	let logo = 'https://flowbite.com/docs/images/logo.svg';
 	let logoClass = 'w-8 ml-4 mr-2';
 	let alt = 'Flowbite Svelte';
-	let hamburgerClass = 'text-gray-300 hover:text-blue-500 cursor-pointer mr-4 border-none focus:outline-none lg:hidden';
+	let hamburgerClass =
+		'text-gray-300 hover:text-blue-500 cursor-pointer mr-4 border-none focus:outline-none lg:hidden';
 	let activeChildLi = 'block py-2 px-4 text-lg text-gray-700 hover:bg-gray-100 dark:text-white';
-	let childLi = 'block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 md:border-0 md:p-0 text-lg dark:text-white';
-	let headerClass = 'w-full z-50 px-6 bg-white h-14 pt-3 text-gray-600 border-b-2 dark:bg-gray-800 dark:text-white dark:border-b-1';
+	let childLi =
+		'block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 md:border-0 md:p-0 text-lg dark:text-white';
+	let headerClass =
+		'w-full z-50 px-6 bg-white h-14 pt-2 text-gray-600 border-b-2 dark:bg-gray-800 dark:text-white dark:border-b-1';
 	let siteName = 'Flowbite Svelte';
 	let navClass = 'py-0 px-4 xl:px-8 text-xl bg-white dark:bg-gray-800 dark:text-white';
 	let navDivClass = 'pb-4';
 	let navDivClasslast = 'pb-24';
 	let siteClass = ' w-full pt-0.5';
-	let spanClass = 'pl-2 self-center text-lg font-semibold text-gray-900 whitespace-nowrap xs:dark:text-white';
+	let spanClass =
+		'pl-2 self-center text-lg font-semibold text-gray-900 whitespace-nowrap xs:dark:text-white';
 
-	let topli = 'block py-2 pr-4 pl-3 text-gray-700 md:border-0 md:p-0 dark:text-gray-300  dark:hover:bg-gray-700 text-lg z-50  dark:bg-gray-800 dark:border-0 hover:bg-gray-100 bg-white';
-	let topMenuDiv = 'container flex flex-wrap justify-end items-center mx-auto dark:bg-gray-800 h-8 pr-12';
-	let topul = 'flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium pt-1 dark:bg-gray-800 bg-white';
+	let topli =
+		'block py-2 pr-4 pl-3 text-gray-700 md:border-0 md:p-0 dark:text-gray-300  dark:hover:bg-gray-700 text-lg z-50  dark:bg-gray-800 dark:border-0 hover:bg-gray-100 bg-white';
+	let topMenuDiv =
+		'container flex flex-wrap justify-end items-center mx-auto dark:bg-gray-800 h-8 pr-12';
+	let topul =
+		'flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium pt-1 dark:bg-gray-800 bg-white';
 	// Others
 
-	let darkmodebtn = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 fixed right-4 top-2 z-50';
+	let darkmodebtn =
+		'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 fixed right-4 top-2 z-50';
 	let sideBarListClass = 'border-b border-gray-400 dark:border-gray-500 mb-2 px-0 xl:px-4 text-xl';
 	// activeDropdownDiv, activeChildLi, buttonClass, dropdownLi
 
@@ -52,8 +81,10 @@
 	let allRightsReserved = '';
 	let copyrightYear = '';
 	let liClass = 'mb-1 text-lg';
-	let linksClass = 'grid gap-8 py-8 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-36 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7';
-	let copyrightDivClass = 'py-6 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-36 text-gray-900 dark:bg-gray-700 md:flex md:items-center md:justify-between';
+	let linksClass =
+		'grid gap-8 py-8 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-36 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7';
+	let copyrightDivClass =
+		'py-6 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-36 text-gray-900 dark:bg-gray-700 md:flex md:items-center md:justify-between';
 	let linkClass = 'hover:underline hover:text-blue-600';
 	let h3Class = 'text-xl pb-4';
 	import { quartInOut } from 'svelte/easing';
@@ -66,7 +97,24 @@
 </script>
 
 <div class="fixed z-50 top-0 left-0 w-full">
-	<Side {siteName} {siteClass} {transitionParams} {topMenus} {headerClass} {asideClass} {logo} {logoClass} {alt} {activeChildLi} {spanClass} {topli} {topMenuDiv} {topul} {childLi} {hamburgerClass}>
+	<Side
+		{siteName}
+		{siteClass}
+		{transitionParams}
+		{topMenus}
+		{headerClass}
+		{asideClass}
+		{logo}
+		{logoClass}
+		{alt}
+		{activeChildLi}
+		{spanClass}
+		{topli}
+		{topMenuDiv}
+		{topul}
+		{childLi}
+		{hamburgerClass}
+	>
 		<Nav {navClass} {navDivClass}>
 			<h3 class={h3Class}>
 				<a href="/">Flowbite Svelte</a>
@@ -256,5 +304,15 @@
 	</div>
 </main>
 <div class="pt-4 lg:pl-72">
-	<SitemapFooter {site} {socialMedia} links={footerLinks} {allRightsReserved} {copyrightYear} {liClass} {linksClass} {copyrightDivClass} {linkClass} />
+	<SitemapFooter
+		{site}
+		{socialMedia}
+		links={footerLinks}
+		{allRightsReserved}
+		{copyrightYear}
+		{liClass}
+		{linksClass}
+		{copyrightDivClass}
+		{linkClass}
+	/>
 </div>
