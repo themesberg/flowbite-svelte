@@ -6,16 +6,11 @@
 		NavBrand,
 		NavLi,
 		NavUl,
-		NavHamburger,
+		NavWrapper,
 		ImgDropdown,
 		Avatar
 	} from '$lib/index';
-	let hidden1 = true;
-	let hidden2 = true;
-	let hidden3 = true;
-	const toggle1 = () => (hidden1 = !hidden1);
-	const toggle2 = () => (hidden2 = !hidden2);
-	const toggle3 = () => (hidden3 = !hidden3);
+
 	let avatar = {
 		src: '/images/profile-picture-1.webp',
 		alt: 'My avatar',
@@ -56,13 +51,16 @@
 			<ImgDropdown {items}>
 				<Avatar {avatar} />
 			</ImgDropdown>
-			<NavHamburger on:toggleNav={toggle3} />
 		</div>
-		<NavUl bind:hidden={hidden3}>
-			<NavLi href="/" active={true}>Home</NavLi>
-			<NavLi href="/about">About</NavLi>
-			<NavLi href="/contact">Contact</NavLi>
-		</NavUl>
+		<NavWrapper let:hidden>
+			<NavUl {hidden}>
+				<NavLi href="/" active={true}>Home</NavLi>
+				<NavLi href="/about">About</NavLi>
+				<NavLi href="/services">Services</NavLi>
+				<NavLi href="/pricing">Pricing</NavLi>
+				<NavLi href="/contact">Contact</NavLi>
+			</NavUl>
+		</NavWrapper>
 	</Navbar>
 </ExampleDiv>
 
@@ -81,13 +79,16 @@
 		</NavBrand>
 		<div class="flex md:order-2">
 			<Button>Get started</Button>
-			<NavHamburger on:toggleNav={toggle1} />
 		</div>
-		<NavUl bind:hidden={hidden1}>
-			<NavLi href="/" active={true}>Home</NavLi>
-			<NavLi href="/about">About</NavLi>
-			<NavLi href="/contact">Contact</NavLi>
-		</NavUl>
+		<NavWrapper let:hidden>
+			<NavUl {hidden}>
+				<NavLi href="/" active={true}>Home</NavLi>
+				<NavLi href="/about">About</NavLi>
+				<NavLi href="/services">Services</NavLi>
+				<NavLi href="/pricing">Pricing</NavLi>
+				<NavLi href="/contact">Contact</NavLi>
+			</NavUl>
+		</NavWrapper>
 	</Navbar>
 </ExampleDiv>
 
@@ -104,11 +105,14 @@
 				Flowbite
 			</span>
 		</NavBrand>
-		<NavHamburger on:toggleNav={toggle2} />
-		<NavUl bind:hidden={hidden2}>
-			<NavLi href="/" active={true}>Home</NavLi>
-			<NavLi href="/about">About</NavLi>
-			<NavLi href="/contact">Contact</NavLi>
-		</NavUl>
+		<NavWrapper let:hidden>
+			<NavUl {hidden}>
+				<NavLi href="/" active={true}>Home</NavLi>
+				<NavLi href="/about">About</NavLi>
+				<NavLi href="/services">Services</NavLi>
+				<NavLi href="/pricing">Pricing</NavLi>
+				<NavLi href="/contact">Contact</NavLi>
+			</NavUl>
+		</NavWrapper>
 	</Navbar>
 </ExampleDiv>
