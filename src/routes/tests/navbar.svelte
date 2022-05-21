@@ -1,4 +1,5 @@
 <script>
+	// testing navbar components
 	import ExampleDiv from '../utils/ExampleDiv.svelte';
 	import {
 		Button,
