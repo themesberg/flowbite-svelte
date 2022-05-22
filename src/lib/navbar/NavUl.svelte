@@ -12,10 +12,7 @@
 </script>
 
 <div class={divClass} class:hidden id="mobile-menu">
-	<ul
-		class="{ulClass} {$$props.class || ''}"
-		transition:slide={{ delay: 250, duration: 500, easing: quintOut }}
-	>
+	<ul class="{ulClass} {$$props.class || ''}">
 		<slot />
 	</ul>
 </div>
