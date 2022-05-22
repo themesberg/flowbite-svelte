@@ -1,6 +1,6 @@
 {
 	"name": "flowbite-svelte",
-	"version": "0.15.38",
+	"version": "0.15.39",
 	"description": "Flowbite components for Svelte",
 	"main": "index.js",
 	"author": {
@@ -92,8 +92,8 @@
 		"flowbite": "^1.4.2",
 		"svelte-heros": "^2.0.0"
 	},
-	"engines" : { 
-    "npm" : ">=7.0.0",
-    "node" : ">=16.0.0"
-  }
+	"engines": {
+		"npm": ">=7.0.0",
+		"node": ">=16.0.0"
+	}
 }

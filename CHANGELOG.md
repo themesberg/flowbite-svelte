@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.39](https://github.com/themesberg/flowbite-svelte/compare/v0.15.38...v0.15.39) (2022-05-22)
+
+
+### Features
+
+* add new Navbar with dropdown demo ([d48b42f](https://github.com/themesberg/flowbite-svelte/commit/d48b42f15da7155e396702011fe70e7cb5898eb5))
+* change Navbar component structure ([81b83fb](https://github.com/themesberg/flowbite-svelte/commit/81b83fb6805412b85ecf23186ccf50b4c737bdd4))
+* favicon and logo update ([6c317a9](https://github.com/themesberg/flowbite-svelte/commit/6c317a967d5a0b8acdf19e7d8a74fe059407c34f))
+* update Navbar components ([66170da](https://github.com/themesberg/flowbite-svelte/commit/66170dab34128dbe510131f2cd75a9123e06bdfe))
+
+
+### Bug Fixes
+
+* add engines node version >=16.0.0 to package.json ([5f859be](https://github.com/themesberg/flowbite-svelte/commit/5f859be127ee5d541a9a49535f71eedbc5ea5137))
+* restucturing Navbar components ([3f4fa07](https://github.com/themesberg/flowbite-svelte/commit/3f4fa076fe3cb5c0ca2a0a3e3b88e47aba7078af))
+* update Navbar components ([57a7205](https://github.com/themesberg/flowbite-svelte/commit/57a7205e3c5db1dcec4f677878b2001fde749c67))
+
 ### [0.15.38](https://github.com/themesberg/flowbite-svelte/compare/v0.15.37...v0.15.38) (2022-05-19)
 
 
