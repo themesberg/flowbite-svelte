@@ -5,7 +5,7 @@
 
 	let hidden = true;
 	let toggle = () => {
-		console.log('Toggled');
+		// console.log('Toggled');
 		hidden = !hidden;
 	};
 </script>
