@@ -177,7 +177,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 			</span>
 		</NavBrand>
 		<div class="flex md:order-2">
-			<ImgDropdown {items}>
+			<ImgDropdown items={menus}>
 				<Avatar {avatar} />
 			</ImgDropdown>
 			<NavHamburger on:click={toggle} />
