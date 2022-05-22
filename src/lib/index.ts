@@ -88,6 +88,7 @@ export { default as NavHamburger } from './navbar/NavHamburger.svelte';
 export { default as NavLi } from './navbar/NavLi.svelte';
 export { default as NavUl } from './navbar/NavUl.svelte';
 export { default as DropdownNavbar } from './navbar/DropdownNavbar.svelte';
+export { default as NavWrapper } from './navbar/NavWrapper.svelte';
 
 // Pagination
 export { default as Pagination } from './paginations/Pagination.svelte';
