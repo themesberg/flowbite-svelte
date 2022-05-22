@@ -97,11 +97,6 @@ export const modals = [
   { href: "/modals/all-modals", name: "All modals" },
 ];
 
-export const navbar = [
-  { href: "/navbars/default", name: "Navbar" },
-  { href: "/navbars/dropdown", name: "Dropdown" },
-];
-
 export const ratings = [
   { href: "/ratings/rating", name: "Rating" },
   { href: "/ratings/advanced-rating", name: "Advanced rating" },
@@ -170,7 +165,7 @@ export const footerLinks = [
       { name: 'Icon', href: '/icons' },
       { name: 'List group', href: '/list-group' },
       { name: 'Modal', href: '/modals' },
-      { name: 'Navbar', href: '/navbars' },
+      { name: 'Navbar', href: '/navbar' },
       { name: 'Pagination', href: '/paginations' }
     ]
   },

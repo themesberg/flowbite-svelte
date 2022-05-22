@@ -16,7 +16,6 @@
 		footers,
 		icons,
 		modals,
-		navbar,
 		ratings,
 		svelteflows,
 		tabs,
@@ -233,10 +232,7 @@
 			{/each}
 		</Nav>
 		<Nav {navClass} {navDivClass}>
-			<h3 class={h3Class}><a href="/navbars">Navbar</a></h3>
-			{#each navbar as { href, name, rel }}
-				<SidebarList {href} {name} {rel} {sideBarListClass} />
-			{/each}
+			<h3 class={h3Class}><a href="/navbar">Navbar</a></h3>
 		</Nav>
 		<Nav {navClass} {navDivClass}>
 			<h3 class={h3Class}>

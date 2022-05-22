@@ -9,20 +9,12 @@
 	<div class="container flex flex-wrap mx-auto">
 		<slot />
 
-		<Htwo label="Related components" />
-		<div class="related-components">
-			<p>
-				<a href="/navbars/default" class="link">Default Navbar</a>
-			</p>
-
-			<p>
-				<a href="/navbars/dropdown" class="link">Dropdown Navbar</a>
-			</p>
-		</div>
 		<Htwo label="References" />
 		<div class="references">
 			<p>
-				<a href="https://flowbite.com/docs/components/navbar/" target="_blank" class="link">Flowbite Navbar</a>
+				<a href="https://flowbite.com/docs/components/navbar/" target="_blank" class="link"
+					>Flowbite Navbar</a
+				>
 			</p>
 		</div>
 	</div>

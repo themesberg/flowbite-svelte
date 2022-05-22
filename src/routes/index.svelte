@@ -2,15 +2,34 @@
 	import { Card, Button } from '$lib/index';
 	import { goto } from '$app/navigation';
 	import { Responsive } from 'svelte-sidebar-menu';
-	import { accordions, alerts, badges, buttons, buttonGroups, cards, carousels, dropdowns, forms, footers, icons, modals, navbar, ratings, tabs, timelines, tooltips } from './moduleItems';
+	import {
+		accordions,
+		alerts,
+		badges,
+		buttons,
+		buttonGroups,
+		cards,
+		carousels,
+		dropdowns,
+		forms,
+		footers,
+		icons,
+		modals,
+		ratings,
+		tabs,
+		timelines,
+		tooltips
+	} from './moduleItems';
 	const handleClick = () => {
 		goto('/pages/getting-started');
 	};
 
 	// Cards
-	let divClass = 'max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700';
+	let divClass =
+		'max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700';
 	let pClass = 'text-xl w-full text-gray-900 dark:text-white py-2 sm:py-0';
-	let aClass = 'text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500';
+	let aClass =
+		'text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500';
 </script>
 
 <Responsive />
@@ -28,7 +47,8 @@
 						class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg 
             lg:max-w-sm sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 dark:text-white"
 					>
-						Speed up your web development with Flowbite Svelte. Flowbite Svelte is an official Flowbite component library for Svelte. All interactivities are handled by Svelte.
+						Speed up your web development with Flowbite Svelte. Flowbite Svelte is an official
+						Flowbite component library for Svelte. All interactivities are handled by Svelte.
 					</p>
 					<div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
 						<div class="mt-3 sm:mt-0 sm:ml-3">
@@ -214,13 +234,11 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/navbar.webp" alt="Navbars" link="/navbars" {divClass}>
+		<Card img="/images/navbar.webp" alt="Navbar" link="/navbar" {divClass}>
 			<span slot="paragraph">
-				{#each navbar as { href, name }}
-					<p class={pClass}>
-						<a {href} class={aClass}>{name}</a>
-					</p>
-				{/each}
+				<p class={pClass}>
+					<a href="/navbar" class={aClass}>Navbar</a>
+				</p>
 			</span>
 		</Card>
 	</div>

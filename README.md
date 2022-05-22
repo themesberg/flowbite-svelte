@@ -141,7 +141,7 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
   </tr>
   <tr>
     <td width="33.3333%">Modals</td>
-    <td width="33.3333%">Navbars</td>
+    <td width="33.3333%">Navbar</td>
      <td width="33.3333%">Pagination</td>
   </tr>
   <tr>
@@ -151,7 +151,7 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
         </a>
     </td>
      <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/navbars/">
+        <a href="https://flowbite-svelte.com/navbar/">
             <img alt="Tailwind CSS Navbar" src="https://flowbite.s3.amazonaws.com/github/navbar.jpg">
         </a>
     </td>

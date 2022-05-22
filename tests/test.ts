@@ -323,20 +323,10 @@ test('Sign-in Modals page should have h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Sign-in Modals');
 });
 
-// Navbars
-test('Navbar main page should have h1', async ({ page }) => {
-	await page.goto('/navbars');
-	expect(await page.textContent('h1')).toBe('Navbar Components');
-});
-
-test('Navbar Default page should have h1', async ({ page }) => {
-	await page.goto('/navbars/default');
-	expect(await page.textContent('h1')).toBe('Navbar Default');
-});
-
-test('Dropdown Navbar page should have h1', async ({ page }) => {
-	await page.goto('/navbars/dropdown');
-	expect(await page.textContent('h1')).toBe('Dropdown Navbar');
+// Navbar
+test('Navbar index page should have h1', async ({ page }) => {
+	await page.goto('/navbar');
+	expect(await page.textContent('h1')).toBe('Navbar');
 });
 
 // Pagination
