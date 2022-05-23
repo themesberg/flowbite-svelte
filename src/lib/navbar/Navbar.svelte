@@ -10,7 +10,7 @@
 	};
 </script>
 
-<nav class={navClass}>
+<nav class="{navClass} {$$props.class || ''}">
 	<div class={navDivClass}>
 		<slot {hidden} {toggle} />
 	</div>
