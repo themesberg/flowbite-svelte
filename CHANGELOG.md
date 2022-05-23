@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.40](https://github.com/themesberg/flowbite-svelte/compare/v0.15.39...v0.15.40) (2022-05-23)
+
+
+### Features
+
+* add transition slide to navbar ([755ae7f](https://github.com/themesberg/flowbite-svelte/commit/755ae7f39823f9cdbcea375722eadabcc80d385a))
+
+
+### Bug Fixes
+
+* add {4126props.class || ''} to Navbar nav ([39a50fe](https://github.com/themesberg/flowbite-svelte/commit/39a50fe2a4296856d9fa97082f1807e6e1ddc0e8))
+* remove transition for navbar ([4f078d0](https://github.com/themesberg/flowbite-svelte/commit/4f078d038b1b1babe216f55e937e0a1e64e2a7a5))
+* remove transition for NavUl ([6a29a1d](https://github.com/themesberg/flowbite-svelte/commit/6a29a1d82ef3e5e6a7afcf68dd953f8830562e05))
+
 ### [0.15.39](https://github.com/themesberg/flowbite-svelte/compare/v0.15.38...v0.15.39) (2022-05-22)
 
 
