@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.15.41](https://github.com/themesberg/flowbite-svelte/compare/v0.15.40...v0.15.41) (2022-05-24)
+
+
+### Features
+
+* add transition slide to navbar ([da3d34a](https://github.com/themesberg/flowbite-svelte/commit/da3d34a34d209b599440225baa92d440ff291e03))
+
 ### [0.15.40](https://github.com/themesberg/flowbite-svelte/compare/v0.15.39...v0.15.40) (2022-05-23)
 
 
