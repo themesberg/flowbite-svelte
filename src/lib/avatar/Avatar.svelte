@@ -14,7 +14,7 @@
 	</div>
 {:else if avatar.header && avatar.text}
 	<div class="flex items-center space-x-4">
-		<img class="class={avatarClass}" alt={avatar.alt} src={avatar.src} />
+		<img class={avatarClass} alt={avatar.alt} src={avatar.src} />
 		<div class="space-y-1 font-medium dark:text-white">
 			<div>{avatar.header}</div>
 			<div class="text-sm text-gray-500 dark:text-gray-400">{avatar.text}</div>
