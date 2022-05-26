@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.16.0](https://github.com/themesberg/flowbite-svelte/compare/v0.15.41...v0.16.0) (2022-05-26)
+
+
+### Bug Fixes
+
+* update ButtonGroup components ([72fa977](https://github.com/themesberg/flowbite-svelte/commit/72fa9779438d5344fd30014fa00e1fe9f779f432))
+
 ### [0.15.41](https://github.com/themesberg/flowbite-svelte/compare/v0.15.40...v0.15.41) (2022-05-24)
 
 
