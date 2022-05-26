@@ -93,17 +93,7 @@ test('Breadcrumb page should have h1', async ({ page }) => {
 // Button groups
 test('Button Group main page should have h1', async ({ page }) => {
 	await page.goto('/button-groups');
-	expect(await page.textContent('h1')).toBe('Button-group Components');
-});
-
-test('Button Group default page should have h1', async ({ page }) => {
-	await page.goto('/button-groups/default');
-	expect(await page.textContent('h1')).toBe('Button Group');
-});
-
-test('Button Group outline page should have h1', async ({ page }) => {
-	await page.goto('/button-groups/outline');
-	expect(await page.textContent('h1')).toBe('Outline Button Group');
+	expect(await page.textContent('h1')).toBe('Button group');
 });
 
 // Buttons

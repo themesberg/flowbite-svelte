@@ -7,7 +7,6 @@
 		alerts,
 		badges,
 		buttons,
-		buttonGroups,
 		cards,
 		carousels,
 		dropdowns,
@@ -117,13 +116,11 @@
 		</Card>
 	</div>
 	<div class="p-4">
-		<Card img="/images/buttongroups.webp" alt="Button Groups" link="button-groups" {divClass}>
+		<Card img="/images/buttongroups.webp" alt="Button Group" link="/button-groups" {divClass}>
 			<span slot="paragraph">
-				{#each buttonGroups as { href, name }}
-					<p class={pClass}>
-						<a {href} class={aClass}>{name}</a>
-					</p>
-				{/each}
+				<p class={pClass}>
+					<a href="/button-groups" class={aClass}>Button group</a>
+				</p>
 			</span>
 		</Card>
 	</div>

@@ -33,11 +33,6 @@ export const buttons = [
   { href: "/buttons/button-loader", name: "Loader" },
 ];
 
-export const buttonGroups = [
-  { href: "/button-groups/default", name: "Button group" },
-  { href: "/button-groups/outline", name: "Outline button group" },
-];
-
 export const cards = [
   { href: "/cards/card", name: "Card" },
   { href: "/cards/ecommerce", name: "E-commerce" },

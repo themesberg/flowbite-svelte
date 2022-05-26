@@ -25,7 +25,7 @@ export { default as GradientOutlineButton } from './buttons/GradientOutlineButto
 
 // Buttongroups
 export { default as ButtonGroup } from './buttongroups/ButtonGroup.svelte';
-export { default as ButtonGroupOutline } from './buttongroups/ButtonGroupOutline.svelte';
+export { default as ButtonGroupItem } from './buttongroups/ButtonGroupItem.svelte';
 
 // Cards
 export { default as Card } from './cards/Card.svelte';

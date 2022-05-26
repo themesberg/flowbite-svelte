@@ -8,7 +8,6 @@
 		accordions,
 		badges,
 		buttons,
-		buttonGroups,
 		cards,
 		carousels,
 		dropdowns,
@@ -137,7 +136,7 @@
 		</Nav>
 		<Nav {navClass} {navDivClass}>
 			<h3 class={h3Class}>
-				<a href="/avatar">Avatar <Badge name="NEW" /></a>
+				<a href="/avatar">Avatar</a>
 			</h3>
 		</Nav>
 		<Nav {navClass} {navDivClass}>
@@ -150,16 +149,13 @@
 		</Nav>
 		<Nav {navClass} {navDivClass}>
 			<h3 class={h3Class}>
-				<a href="/breadcrumbs">Breadcrumb <Badge name="NEW" color="pink" /></a>
+				<a href="/breadcrumbs">Breadcrumb</a>
 			</h3>
 		</Nav>
 		<Nav {navClass} {navDivClass}>
 			<h3 class={h3Class}>
 				<a href="/button-groups">Button groups</a>
 			</h3>
-			{#each buttonGroups as { href, name, rel }}
-				<SidebarList {href} {name} {rel} {sideBarListClass} />
-			{/each}
 		</Nav>
 		<Nav {navClass} {navDivClass}>
 			<h3 class={h3Class}>
@@ -177,7 +173,7 @@
 		</Nav>
 		<Nav {navClass} {navDivClass}>
 			<h3 class={h3Class}>
-				<a href="/carousels">Carousel <Badge name="NEW" color="green" /></a>
+				<a href="/carousels">Carousel</a>
 			</h3>
 			{#each carousels as { href, name, rel }}
 				<SidebarList {href} {name} {rel} {sideBarListClass} />
@@ -236,16 +232,16 @@
 		</Nav>
 		<Nav {navClass} {navDivClass}>
 			<h3 class={h3Class}>
-				<a href="/paginations">Pagination <Badge name="NEW" color="yellow" /></a>
+				<a href="/paginations">Pagination</a>
 			</h3>
 		</Nav>
 		<Nav {navClass} {navDivClass}>
 			<h3 class={h3Class}>
-				<a href="/progressbars">Progress bar <Badge name="NEW" color="purple" /></a>
+				<a href="/progressbars">Progress bar</a>
 			</h3>
 		</Nav>
 		<Nav {navClass} {navDivClass}>
-			<h3 class={h3Class}><a href="/ratings">Rating <Badge name="NEW" color="blue" /></a></h3>
+			<h3 class={h3Class}><a href="/ratings">Rating</a></h3>
 			{#each ratings as { href, name, rel }}
 				<SidebarList {href} {name} {rel} {sideBarListClass} />
 			{/each}
@@ -262,7 +258,7 @@
 		</Nav>
 		<Nav {navClass} {navDivClass}>
 			<h3 class={h3Class}>
-				<a href="/tables">Tables <Badge name="NEW" color="pink" /></a>
+				<a href="/tables">Tables</a>
 			</h3>
 		</Nav>
 		<Nav {navClass} {navDivClass}>
@@ -273,14 +269,14 @@
 		</Nav>
 		<Nav {navClass} {navDivClass}>
 			<h3 class={h3Class}>
-				<a href="/timelines">Timelines <Badge name="NEW" color="green" /></a>
+				<a href="/timelines">Timelines</a>
 			</h3>
 			{#each timelines as { href, name, rel }}
 				<SidebarList {href} {name} {rel} {sideBarListClass} />
 			{/each}
 		</Nav>
 		<Nav {navClass} {navDivClass}>
-			<h3 class={h3Class}><a href="/toasts">Toast <Badge name="NEW" color="indigo" /></a></h3>
+			<h3 class={h3Class}><a href="/toasts">Toast</a></h3>
 		</Nav>
 		<Nav {navClass} navDivClass={navDivClasslast}>
 			<h3 class={h3Class}>
