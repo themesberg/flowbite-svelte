@@ -102,15 +102,15 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 ```html
 <ButtonGroup>
 	<ButtonGroupItem>
-		<UserSolid size="18" class="mr-2" />
+		<UserSolid size="18" class="mr-2 text-purple-500 dark:text-green-500" />
 		Proflie</ButtonGroupItem
 	>
 	<ButtonGroupItem>
-		<AdjustmentsSolid size="18" class="mr-2" />
+		<AdjustmentsSolid size="18" class="mr-2 text-purple-500 dark:text-green-500" />
 		Settings</ButtonGroupItem
 	>
 	<ButtonGroupItem>
-		<CloudDownloadSolid size="18" class="mr-2" />
+		<CloudDownloadSolid size="18" class="mr-2 text-purple-500 dark:text-green-500" />
 		Messages</ButtonGroupItem
 	>
 </ButtonGroup>
