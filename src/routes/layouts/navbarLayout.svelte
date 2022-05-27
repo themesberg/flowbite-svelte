@@ -22,10 +22,10 @@
 
 <style>
 	.link {
-		color: #256cfa;
+		color: #f83c00;
 	}
 	.link:hover {
-		color: #6599ff;
+		color: #fc7146;
 		text-decoration: underline;
 	}
 </style>

@@ -26,15 +26,23 @@
 		<Htwo label="References" />
 		<div class="references">
 			<p class="w-full dark:text-white text-base">
-				<a href="https://github.com/shinokada/svelte-heroicons" target="_blank" class="link">Svelte-heroicons</a>
+				<a href="https://github.com/shinokada/svelte-heroicons" target="_blank" class="link"
+					>Svelte-heroicons</a
+				>
 			</p>
 
 			<p class="w-full dark:text-white text-base">
-				<a href="https://github.com/shinokada/svelte-simpleicons" target="_blank" class="link">Svelte-Simpleicons</a>
+				<a href="https://github.com/shinokada/svelte-simpleicons" target="_blank" class="link"
+					>Svelte-Simpleicons</a
+				>
 			</p>
 
 			<p class="w-full dark:text-white text-base">
-				<a href="https://github.com/shinokada/svelte-feathericons/tree/main/src/lib" target="_blank" class="link">Svelte-Feathericons</a>
+				<a
+					href="https://github.com/shinokada/svelte-feathericons/tree/main/src/lib"
+					target="_blank"
+					class="link">Svelte-Feathericons</a
+				>
 			</p>
 
 			<p class="w-full dark:text-white text-base">
@@ -54,10 +62,10 @@
 
 <style>
 	.link {
-		color: #256cfa;
+		color: #f83c00;
 	}
 	.link:hover {
-		color: #6599ff;
+		color: #fc7146;
 		text-decoration: underline;
 	}
 </style>

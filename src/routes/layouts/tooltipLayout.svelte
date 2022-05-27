@@ -25,7 +25,9 @@
 				<a href="/buttons" class="link">Buttons</a>
 			</p>
 			<p>
-				<a href="https://flowbite.com/docs/components/tooltips/" target="_blank" class="link">Flowbite Tooltip</a>
+				<a href="https://flowbite.com/docs/components/tooltips/" target="_blank" class="link"
+					>Flowbite Tooltip</a
+				>
 			</p>
 		</div>
 	</div>
@@ -33,10 +35,10 @@
 
 <style>
 	.link {
-		color: #256cfa;
+		color: #f83c00;
 	}
 	.link:hover {
-		color: #6599ff;
+		color: #fc7146;
 		text-decoration: underline;
 	}
 </style>

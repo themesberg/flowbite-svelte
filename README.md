@@ -7,6 +7,13 @@
 
 [Flowbite-Svelte](https://flowbite-svelte.com/) is an official Flowbite component library for Svelte. All interactivities are handled by Svelte.
 
+<p>
+    <a href="https://flowbite-svelte.com" >
+      <img alt="Flowbite-Svelte CSS components" width="350" src="https://raw.githubusercontent.com/themesberg/flowbite/main/static/flowbite-svelte.png">
+    </a><br>
+    Build websites even faster with components on top of Tailwind CSS
+</p>
+
 ## Flowbite-Svelte-Starter
 
 You can use [Flowbite-Svelte Starter](https://github.com/shinokada/flowbite-svelte-starter) for a quick start.

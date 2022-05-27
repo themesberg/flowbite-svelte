@@ -42,7 +42,9 @@
 		<Htwo label="References" />
 		<div class="references">
 			<p>
-				<a href="https://flowbite.com/docs/components/card/" target="_blank" class="link">Flowbite Card</a>
+				<a href="https://flowbite.com/docs/components/card/" target="_blank" class="link"
+					>Flowbite Card</a
+				>
 			</p>
 		</div>
 	</div>
@@ -50,10 +52,10 @@
 
 <style>
 	.link {
-		color: #256cfa;
+		color: #f83c00;
 	}
 	.link:hover {
-		color: #6599ff;
+		color: #fc7146;
 		text-decoration: underline;
 	}
 </style>
