@@ -9,7 +9,7 @@
 
 <p>
     <a href="https://flowbite-svelte.com" >
-      <img alt="Flowbite-Svelte CSS components" width="350" src="https://raw.githubusercontent.com/themesberg/flowbite/main/static/flowbite-svelte.png">
+      <img alt="Flowbite-Svelte CSS components" width="350" src="https://raw.githubusercontent.com/themesberg/flowbite-svelte/main/static/images/flowbite-svelte.png">
     </a><br>
     Build websites even faster with components on top of Tailwind CSS
 </p>

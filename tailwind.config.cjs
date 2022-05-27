@@ -7,6 +7,9 @@ const config = {
   ],
 
   theme: {
+    colors: {
+      'ebony': '#1f2937',
+    },
     screens: {
       'xs': '475px',
       ...defaultTheme.screens,
