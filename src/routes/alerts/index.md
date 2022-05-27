@@ -24,10 +24,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     {
       label:'Alerts',
       href:'/alerts/'
-    },
-    {
-      label:'Alert default',
-      href:'/alerts/default-alert'
     }
   ]
 </script>

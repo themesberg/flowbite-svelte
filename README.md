@@ -5,14 +5,14 @@
 [![release](https://badgen.net/github/release/themesberg/flowbite-svelte)](https://github.com/themesberg/flowbite-svelte/releases)
 [![license](https://badgen.net/npm/license/flowbite-svelte)](https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE)
 
-[Flowbite-Svelte](https://flowbite-svelte.com/) is an official Flowbite component library for Svelte. All interactivities are handled by Svelte.
-
 <p>
     <a href="https://flowbite-svelte.com" >
       <img alt="Flowbite-Svelte CSS components" width="350" src="https://raw.githubusercontent.com/themesberg/flowbite-svelte/main/static/images/flowbite-svelte.png">
     </a><br>
     Build websites even faster with components on top of Tailwind CSS
 </p>
+
+[Flowbite-Svelte](https://flowbite-svelte.com/) is an official Flowbite component library for Svelte. All interactivities are handled by Svelte.
 
 ## Flowbite-Svelte-Starter
 
