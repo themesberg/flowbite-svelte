@@ -25,15 +25,15 @@
 
 	// Cards
 	let divClass =
-		'max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700';
-	let pClass = 'text-base w-full text-gray-900 dark:text-white py-2 sm:py-0';
+		'max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-900 dark:border-gray-700';
+	let pClass = 'text-xl w-full text-gray-900 dark:text-white py-2 sm:py-0';
 	let aClass =
 		'text-gray-700 hover:underline hover:text-blue-600 dark:text-white dark:hover:text-blue-500';
 </script>
 
 <Responsive />
 
-<div class="relative bg-white overflow-hidden mt-8 lg:mb-8 mx-auto dark:bg-gray-800">
+<div class="relative bg-white overflow-hidden mt-8 lg:mb-8 mx-auto dark:bg-gray-900">
 	<div class="max-w-7xl mx-auto ">
 		<div class="relative z-10 xl:pb-8 bg-transparent lg:max-w-2xl lg:w-full">
 			<div class="my-auto mx-auto max-w-7xl xl:pl-8 xl:pt-8">
