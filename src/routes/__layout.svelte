@@ -31,7 +31,7 @@
 	};
 
 	let asideClass =
-		'absolute w-auto bg-white pt-8 shadow-lg z-50 px-4 h-screen z-50 overflow-scroll dark:bg-gray-800';
+		'absolute w-auto bg-white pt-8 shadow-lg z-50 px-4 h-screen z-50 overflow-scroll dark:bg-gray-900';
 	// Navbar
 	let logo = '/images/flowbite-svelte-icon-logo.svg';
 	let logoClass = 'w-8 ml-4 mr-2';
@@ -44,8 +44,8 @@
 	let headerClass =
 		'w-full z-50 px-6 bg-white h-14 pt-2 text-gray-600 border-b-2 dark:bg-gray-800 dark:text-white dark:border-b-1';
 	let siteName = 'Flowbite Svelte';
-	let navClass = 'py-0 px-4 xl:px-8 text-lg bg-white dark:bg-gray-800 dark:text-white';
-	let navDivClass = 'pb-4';
+	let navClass = 'py-0 px-4 xl:px-8 text-lg bg-white dark:bg-gray-900 dark:text-white';
+	let navDivClass = 'pb-2';
 	let navDivClasslast = 'pb-24';
 	let siteClass = ' w-full pt-0.5';
 	let spanClass =
@@ -84,8 +84,8 @@
 		'grid gap-8 py-8 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-36 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7';
 	let copyrightDivClass =
 		'py-6 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-36 text-gray-900 dark:bg-gray-700 md:flex md:items-center md:justify-between';
-	let linkClass = 'hover:underline hover:text-blue-600';
-	let h3Class = 'text-xl pb-4';
+	let linkClass = 'hover:underline hover:text-red-600';
+	let h3Class = 'text-lg pb-2';
 	import { quartInOut } from 'svelte/easing';
 	let transitionParams = {
 		duration: 500,
@@ -95,7 +95,7 @@
 	};
 </script>
 
-<div class="fixed z-50 top-0 left-0 w-full">
+<div class="px-4 mx-auto w-full max-w-7xl">
 	<Side
 		{siteName}
 		{siteClass}
@@ -288,14 +288,14 @@
 			{/each}
 		</Nav>
 	</Side>
-</div>
 
-<main class="container mx-auto px-2 pt-16 lg:pl-72">
-	<DarkMode btnClass={darkmodebtn} />
-	<div class="w-full">
-		<slot />
-	</div>
-</main>
+	<main class="flex w-full mx-auto px-2 pt-16 lg:pl-72 2xl:pl-24">
+		<DarkMode btnClass={darkmodebtn} />
+		<div class="w-full">
+			<slot />
+		</div>
+	</main>
+</div>
 <div class="pt-4 lg:pl-72">
 	<SitemapFooter
 		{site}
