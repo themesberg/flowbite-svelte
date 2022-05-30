@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.16.2](https://github.com/themesberg/flowbite-svelte/compare/v0.16.1...v0.16.2) (2022-05-30)
+
+
+### Bug Fixes
+
+* spinner fill and colour were back to front. ([83e6ec7](https://github.com/themesberg/flowbite-svelte/commit/83e6ec75cec5aade59570337a829938e46bcdfa3))
+
 ### [0.16.1](https://github.com/themesberg/flowbite-svelte/compare/v0.16.0...v0.16.1) (2022-05-27)
 
 ## [0.16.0](https://github.com/themesberg/flowbite-svelte/compare/v0.15.41...v0.16.0) (2022-05-26)
