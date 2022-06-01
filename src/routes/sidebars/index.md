@@ -24,7 +24,7 @@ layout: sidebarLayout
   let site = {
     name: 'Flowbite-Svelte',
     href: '/',
-    img: '/images/flowbite-svelte-logo-30.png'
+    img: '/images/flowbite-svelte-icon-logo.svg'
   };
 
   let uid = 1;

@@ -27,7 +27,7 @@
 	let site = {
 		name: 'Flowbite Svelte',
 		href: '/',
-		img: '/images/flowbite-svelte-logo-40.png'
+		img: '/images/flowbite-svelte-icon-logo.svg'
 	};
 
 	let asideClass =
