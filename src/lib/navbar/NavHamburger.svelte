@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { MenuOutline } from 'svelte-heros';
+	import { Menu } from 'svelte-heros';
 </script>
 
 <button
@@ -8,5 +8,5 @@
 	on:click
 >
 	<span class="sr-only">Open main menu</span>
-	<MenuOutline class="h-6 w-6 shrink-0" />
+	<Menu class="h-6 w-6 shrink-0" />
 </button>

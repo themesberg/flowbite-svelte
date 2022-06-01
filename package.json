@@ -90,7 +90,7 @@
 	},
 	"dependencies": {
 		"flowbite": "^1.4.2",
-		"svelte-heros": "^2.0.0"
+		"svelte-heros": "^2.2.2"
 	},
 	"engines": {
 		"npm": ">=7.0.0",

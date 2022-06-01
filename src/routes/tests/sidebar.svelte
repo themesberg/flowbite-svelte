@@ -1,7 +1,7 @@
 <script>
 	import ExampleDiv from '../utils/ExampleDiv.svelte';
-	import { Sidebar } from '$lib/index';
-	import { ChartPieSolid, ShoppingBagSolid, TableSolid, InboxInSolid, UserSolid, LoginSolid, CogSolid } from 'svelte-heros';
+	import { Sidebar, SidebarItem } from '$lib/index';
+	import { ChartPie, ShoppingBag, Table, InboxIn, User, Login, Cog } from 'svelte-heros';
 	let site = {
 		name: 'Flowbite-Svelte',
 		href: '/',
@@ -13,12 +13,12 @@
 			id: uid++,
 			name: 'Dashboard',
 			href: '/',
-			icon: ChartPieSolid
+			icon: ChartPie
 		},
 		{
 			id: uid++,
 			name: 'E-commerce',
-			icon: ShoppingBagSolid,
+			icon: ShoppingBag,
 			children: [
 				{
 					id: uid++,
@@ -40,19 +40,19 @@
 		{
 			id: uid++,
 			name: 'Kanban',
-			icon: TableSolid,
+			icon: Table,
 			href: '/'
 		},
 		{
 			id: uid++,
 			name: 'Inbox',
-			icon: InboxInSolid,
+			icon: InboxIn,
 			href: '/'
 		},
 		{
 			id: uid++,
 			name: 'Users',
-			icon: UserSolid,
+			icon: User,
 			children: [
 				{
 					id: uid++,
@@ -74,13 +74,13 @@
 		{
 			id: uid++,
 			name: 'Sign In',
-			icon: LoginSolid,
+			icon: Login,
 			href: '/'
 		},
 		{
 			id: uid++,
 			name: 'Setting',
-			icon: CogSolid,
+			icon: Cog,
 			href: '/'
 		}
 	];
@@ -90,4 +90,8 @@
 
 <h2 class="text-2xl mt-8 dark:text-white py-8">Example</h2>
 
-<ExampleDiv><Sidebar {links} {site} /></ExampleDiv>
+<ExampleDiv>
+	<Sidebar {site}>
+		<SidebarItem {links} />
+	</Sidebar>
+</ExampleDiv>

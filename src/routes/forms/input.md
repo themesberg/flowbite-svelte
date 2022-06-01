@@ -7,7 +7,7 @@ import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
 import { onMount } from 'svelte';
 import { Input, Iconinput, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
-import { AtSymbolOutline , MailOutline } from 'svelte-heros'
+import { AtSymbol , Mail } from 'svelte-heros'
 import componentProps1 from '../props/Input.json'
 let items1 = componentProps1.props
 import componentProps2 from '../props/Iconinput.json'
@@ -142,9 +142,9 @@ onMount(() => {
 <p>With the Iconinput component, you can add <a href="https://flowbite-svelte.vercel.app/icons/heroicons">Heroicons</a> or <a href="https://flowbite-svelte.vercel.app/icons/simple-icons">Simple-icons</a>. Use iconClass to modify the icon color.</p>
 
 <ExampleDiv>
-<Iconinput id="email" type="email" name="email" placeholder="Your email" label="Border" icon={AtSymbolOutline} iconClass="h-4 w-4 mr-2 text-blue-500 dark:text-red-500"/>
+<Iconinput id="email" type="email" name="email" placeholder="Your email" label="Border" icon={AtSymbol} iconClass="h-4 w-4 mr-2 text-blue-500 dark:text-red-500"/>
 <div class="py-4">
-<Iconinput noBorder id="email" type="email" name="email" label="No border" icon={MailOutline} iconClass="h-4 w-4 mr-2 text-blue-500 dark:text-green-500"/>
+<Iconinput noBorder id="email" type="email" name="email" label="No border" icon={Mail} iconClass="h-4 w-4 mr-2 text-blue-500 dark:text-green-500"/>
 </div>
 </ExampleDiv>
 
@@ -152,9 +152,9 @@ onMount(() => {
 <script>
   import { Iconinput } from 'flowbite-svelte'
 </script>
-<Iconinput id="email" type="email" name="email" placeholder="Your email" label="Border" icon={AtSymbolOutline} iconClass="h-4 w-4 mr-2 text-blue-500 dark:text-red-500"/>
+<Iconinput id="email" type="email" name="email" placeholder="Your email" label="Border" icon={AtSymbol} iconClass="h-4 w-4 mr-2 text-blue-500 dark:text-red-500"/>
 <div class="py-4">
-<Iconinput noBorder id="email" type="email" name="email" label="No border" icon={MailOutline} iconClass="h-4 w-4 mr-2 text-blue-500 dark:text-green-500"/>
+<Iconinput noBorder id="email" type="email" name="email" label="No border" icon={Mail} iconClass="h-4 w-4 mr-2 text-blue-500 dark:text-green-500"/>
 ```
 
 <Htwo label="Props" />

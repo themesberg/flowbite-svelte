@@ -6,7 +6,7 @@ layout: accordionLayout
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { AccordionItem, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
-  import { ArchiveOutline, BeakerOutline } from "svelte-heros";
+  import { Archive, Beaker } from "svelte-heros";
   import accordionProps from '../props/AccordionItem.json'
   // Props table
   export let items = accordionProps.props
@@ -49,7 +49,7 @@ npm i svelte-heros
   <AccordionItem id="1">
     <h2 slot="header" class="text-base p-0 m-0">
       <span class="flex"
-        ><span class="mr-2"><ArchiveOutline /></span> My Header 1</span
+        ><span class="mr-2"><Archive /></span> My Header 1</span
       >
     </h2>
     <div slot="body">
@@ -72,7 +72,7 @@ npm i svelte-heros
   </AccordionItem>
   <AccordionItem id="2">
     <h2 slot="header" class="text-base m-0 p-0"><span class="flex "
-        ><span class="mr-2"><BeakerOutline /></span> My Header 2</span
+        ><span class="mr-2"><Beaker /></span> My Header 2</span
       ></h2>
     <div slot="body">
       <p class="mb-2 text-gray-500 dark:text-gray-400">
@@ -118,13 +118,13 @@ npm i svelte-heros
 <script>
   import { Accordion } from "flowbite-svelte";
   import { AccordionItem } from "flowbite-svelte";
-  import { ArchiveOutline, BeakerOutline } from "svelte-heros";
+  import { Archive, Beaker } from "svelte-heros";
 </script>
 
 <AccordionItem id="1">
   <h2 slot="header">
     <span class="flex">
-      <span class="mr-2"><ArchiveOutline /></span> 
+      <span class="mr-2"><Archive /></span> 
         My Header 1
     </span>
   </h2>
@@ -137,7 +137,7 @@ npm i svelte-heros
 </AccordionItem>
 <AccordionItem id="2">
   <h2 slot="header"><span class="flex ">
-    <span class="mr-2"><BeakerOutline /></span> 
+    <span class="mr-2"><Beaker /></span> 
       My Header 2
     </span>
   </h2>

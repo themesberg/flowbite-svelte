@@ -6,7 +6,7 @@ layout: buttongroupLayout
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import {ButtonGroup, ButtonGroupItem, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
-	import { UserSolid, AdjustmentsSolid, CloudDownloadSolid } from 'svelte-heros';
+	import { User, Adjustments, CloudDownload } from 'svelte-heros';
   import componentProps from '../props/ButtonGroup.json'
   import componentProps2 from '../props/ButtonGroupItem.json'
   // Props table
@@ -38,7 +38,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 ```html
 <script>
   	import { ButtonGroup, ButtonGroupItem } from 'flowbite-svelte';
-	import { UserSolid, AdjustmentsSolid, CloudDownloadSolid } from 'svelte-heros';
+	import { User, Adjustments, CloudDownload } from 'svelte-heros';
 </script>
 ```
 
@@ -84,15 +84,15 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <ExampleDiv>
 <ButtonGroup>
 	<ButtonGroupItem>
-		<UserSolid size="18" class="mr-2 text-purple-500 dark:text-green-500" />
+		<User size="18" class="mr-2 text-purple-500 dark:text-green-500" />
 		Proflie</ButtonGroupItem
 	>
 	<ButtonGroupItem>
-		<AdjustmentsSolid size="18" class="mr-2 text-purple-500 dark:text-green-500" />
+		<Adjustments size="18" class="mr-2 text-purple-500 dark:text-green-500" />
 		Settings</ButtonGroupItem
 	>
 	<ButtonGroupItem>
-		<CloudDownloadSolid size="18" class="mr-2 text-purple-500 dark:text-green-500" />
+		<CloudDownload size="18" class="mr-2 text-purple-500 dark:text-green-500" />
 		Messages</ButtonGroupItem
 	>
 </ButtonGroup>
@@ -102,15 +102,15 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 ```html
 <ButtonGroup>
 	<ButtonGroupItem>
-		<UserSolid size="18" class="mr-2 text-purple-500 dark:text-green-500" />
+		<User size="18" class="mr-2 text-purple-500 dark:text-green-500" />
 		Proflie</ButtonGroupItem
 	>
 	<ButtonGroupItem>
-		<AdjustmentsSolid size="18" class="mr-2 text-purple-500 dark:text-green-500" />
+		<Adjustments size="18" class="mr-2 text-purple-500 dark:text-green-500" />
 		Settings</ButtonGroupItem
 	>
 	<ButtonGroupItem>
-		<CloudDownloadSolid size="18" class="mr-2 text-purple-500 dark:text-green-500" />
+		<CloudDownload size="18" class="mr-2 text-purple-500 dark:text-green-500" />
 		Messages</ButtonGroupItem
 	>
 </ButtonGroup>
@@ -139,15 +139,15 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <ExampleDiv>
 <ButtonGroup>
 	<ButtonGroupItem outline>
-		<UserSolid size="18" class="mr-2 text-blue-500 dark:text-red-500" />
+		<User size="18" class="mr-2 text-blue-500 dark:text-red-500" />
 		Proflie</ButtonGroupItem
 	>
 	<ButtonGroupItem outline>
-		<AdjustmentsSolid size="18" class="mr-2 text-blue-500 dark:text-red-500" />
+		<Adjustments size="18" class="mr-2 text-blue-500 dark:text-red-500" />
 		Settings</ButtonGroupItem
 	>
 	<ButtonGroupItem outline>
-		<CloudDownloadSolid size="18" class="mr-2 text-blue-500 dark:text-red-500" />
+		<CloudDownload size="18" class="mr-2 text-blue-500 dark:text-red-500" />
 		Messages</ButtonGroupItem
 	>
 </ButtonGroup>
@@ -156,15 +156,15 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 ```html
 <ButtonGroup>
 	<ButtonGroupItem outline>
-		<UserSolid size="18" class="mr-2 text-blue-500 dark:text-red-500" />
+		<User size="18" class="mr-2 text-blue-500 dark:text-red-500" />
 		Proflie</ButtonGroupItem
 	>
 	<ButtonGroupItem outline>
-		<AdjustmentsSolid size="18" class="mr-2 text-blue-500 dark:text-red-500" />
+		<Adjustments size="18" class="mr-2 text-blue-500 dark:text-red-500" />
 		Settings</ButtonGroupItem
 	>
 	<ButtonGroupItem outline>
-		<CloudDownloadSolid size="18" class="mr-2 text-blue-500 dark:text-red-500" />
+		<CloudDownload size="18" class="mr-2 text-blue-500 dark:text-red-500" />
 		Messages</ButtonGroupItem
 	>
 </ButtonGroup>

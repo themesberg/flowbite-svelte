@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { StarSolid } from 'svelte-heros';
+	import { Star } from 'svelte-heros';
 	export let divClass: string = 'flex items-center';
 	export let total: number = 5;
 	export let rating: number = 4;
@@ -12,12 +12,12 @@
 <div class={divClass}>
 	{#each Array(roundedRating) as _, star}
 		<slot name="ratingUp">
-			<StarSolid class="text-yellow-300 dark:text-yellow-200" />
+			<Star variation="solid" class="text-yellow-300 dark:text-yellow-200" />
 		</slot>
 	{/each}
 	{#each Array(grayStars) as _, star}
 		<slot name="ratingDown">
-			<StarSolid class="text-gray-300 dark:text-gray-500" />
+			<Star class="text-gray-300 dark:text-gray-500" />
 		</slot>
 	{/each}
 	{#if $$slots.text}

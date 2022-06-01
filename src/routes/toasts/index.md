@@ -7,7 +7,7 @@ layout: toastLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
 import { Toast, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
 import { quintOut, elasticOut } from 'svelte/easing';
-import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'svelte-heros'
+import {Fire, CheckCircle, PlusCircle,Archive} from 'svelte-heros'
 import componentProps from '../props/Toast.json'
   // Props table
   let items = componentProps.props
@@ -38,7 +38,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 ```html
 <script>
 import {Toast} from 'flowbite-svelte'
-import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'svelte-heros'
+import {Fire, CheckCircle, PlusCircle,Archive} from 'svelte-heros'
 </script>
 ```
 
@@ -51,7 +51,7 @@ import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'sve
 <ExampleDiv>
   <Toast>
     <span slot="icon">
-    <FireOutline />
+    <Fire />
     </span>
     <span slot="text">
       Transition type: fade
@@ -62,7 +62,7 @@ import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'sve
 ```html
 <Toast>
   <span slot="icon">
-  <FireOutline />
+  <Fire />
   </span>
   <span slot="text">
     Transition type: fade
@@ -77,7 +77,7 @@ import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'sve
 <ExampleDiv>
    <Toast transitionType="slide" iconColor='red'>
     <span slot="icon">
-    <CheckCircleSolid class="text-red-500"/>
+    <CheckCircle class="text-red-500"/>
     </span>
     <span slot="text">
       Transition type: slide
@@ -88,7 +88,7 @@ import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'sve
 <ExampleDiv>
    <Toast transitionType="slide" iconColor='red' transitionParams="{{delay: 250, duration: 300, easing: quintOut}}">
     <span slot="icon">
-    <CheckCircleSolid class="text-red-500"/>
+    <CheckCircle class="text-red-500"/>
     </span>
     <span slot="text">
       Transition type: slide, delay: 250, duration: 300, easing: quintOut
@@ -99,7 +99,7 @@ import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'sve
 <ExampleDiv>
    <Toast transitionType="slide" iconColor='red' transitionParams="{{delay: 250, duration: 2000, easing: elasticOut}}">
     <span slot="icon">
-    <CheckCircleSolid class="text-red-500"/>
+    <CheckCircle class="text-red-500"/>
     </span>
     <span slot="text">
       Transition type: slide, delay: 250, duration: 2000, easing: elasticOut
@@ -110,7 +110,7 @@ import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'sve
 ```html
 <Toast transitionType="slide" iconColor='red'>
   <span slot="icon">
-  <CheckCircleSolid class="text-red-500"/>
+  <CheckCircle class="text-red-500"/>
   </span>
   <span slot="text">
     Transition type: slide
@@ -119,7 +119,7 @@ import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'sve
 
  <Toast transitionType="slide" iconColor='red' transitionParams="{{delay: 250, duration: 300, easing: quintOut}}">
   <span slot="icon">
-  <CheckCircleSolid class="text-red-500"/>
+  <CheckCircle class="text-red-500"/>
   </span>
   <span slot="text">
     Transition type: slide, delay: 250, duration: 300, easing: quintOut
@@ -128,7 +128,7 @@ import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'sve
 
 <Toast transitionType="slide" iconColor='red' transitionParams="{{delay: 250, duration: 2000, easing: elasticOut}}">
   <span slot="icon">
-  <CheckCircleSolid class="text-red-500"/>
+  <CheckCircle class="text-red-500"/>
   </span>
   <span slot="text">
     Transition type: slide, delay: 250, duration: 2000, easing: elasticOut
@@ -141,7 +141,7 @@ import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'sve
 <ExampleDiv>
   <Toast transitionType="blur" iconColor='purple' transitionParams="{{amount: 10}}">
     <span slot="icon">
-    <PlusCircleOutline class="text-purple-500"/>
+    <PlusCircle class="text-purple-500"/>
     </span>
     <span slot="text">
       Transition type: blur, amount: 10
@@ -152,7 +152,7 @@ import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'sve
 <ExampleDiv>
   <Toast transitionType="blur" iconColor='purple' transitionParams="{{amount: 50, delay: 1000}}">
     <span slot="icon">
-    <PlusCircleOutline class="text-purple-500"/>
+    <PlusCircle class="text-purple-500"/>
     </span>
     <span slot="text">
       Transition type: blur, amount: 50, delay 1000
@@ -163,7 +163,7 @@ import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'sve
 ```html
 <Toast transitionType="blur" iconColor='purple' transitionParams="{{amount: 10}}">
   <span slot="icon">
-  <PlusCircleOutline class="text-purple-500"/>
+  <PlusCircle class="text-purple-500"/>
   </span>
   <span slot="text">
     Transition type: blur, amount: 10
@@ -172,7 +172,7 @@ import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'sve
 
 <Toast transitionType="blur" iconColor='purple' transitionParams="{{amount: 50, delay: 1000}}">
   <span slot="icon">
-  <PlusCircleOutline class="text-purple-500"/>
+  <PlusCircle class="text-purple-500"/>
   </span>
   <span slot="text">
     Transition type: blur, amount: 50, delay 1000
@@ -185,7 +185,7 @@ import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'sve
 <ExampleDiv>
   <Toast transitionType="fly" transitionParams="{{x: 200}}" iconColor="green">
     <span slot="icon">
-    <ArchiveSolid  class="text-green-500"/>
+    <Archive  class="text-green-500"/>
     </span>
     <span slot="text">
       Transition type: fly right
@@ -196,7 +196,7 @@ import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'sve
 <ExampleDiv>
   <Toast transitionType="fly" transitionParams="{{y: 200}}" iconColor="green">
     <span slot="icon">
-    <ArchiveSolid  class="text-green-500"/>
+    <Archive  class="text-green-500"/>
     </span>
     <span slot="text">
       Transition type: fly down
@@ -207,7 +207,7 @@ import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'sve
 ```html
 <Toast transitionType="fly" transitionParams="{{x: 200}}" iconColor="green">
   <span slot="icon">
-  <ArchiveSolid  class="text-green-500"/>
+  <Archive  class="text-green-500"/>
   </span>
   <span slot="text">
     Transition type: fly right
@@ -216,7 +216,7 @@ import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'sve
 
 <Toast transitionType="fly" transitionParams="{{y: 200}}" iconColor="green">
   <span slot="icon">
-  <ArchiveSolid  class="text-green-500"/>
+  <Archive  class="text-green-500"/>
   </span>
   <span slot="text">
     Transition type: fly down
@@ -231,7 +231,7 @@ import {FireOutline, CheckCircleSolid, PlusCircleOutline,ArchiveSolid} from 'sve
 ```html
 <script>
 import {Toast} from 'flowbite-svelte'
-import {FireIconOutline, CheckCircleIconSolid, PlusCircleIconOutline,ArchiveIconSolid} from 'svelte-heros'
+import {FireIcon, CheckCircleIcon, PlusCircleIcon,ArchiveIcon} from 'svelte-heros'
 </scrip>
 ```
 

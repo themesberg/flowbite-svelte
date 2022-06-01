@@ -6,7 +6,7 @@ layout: timelineLayout
 	import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
 	import { Timeline, TimelineItemVertical, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
-	import { CalendarOutline, AdjustmentsOutline } from 'svelte-heros';
+	import { Calendar, Adjustments } from 'svelte-heros';
 	import componentProps1 from '../props/Timeline.json'
   import componentProps2 from '../props/TimelineItemVertical.json'
   let items1 = componentProps1.props
@@ -21,7 +21,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 			date: 'February 2022',
 			title: 'Lorem ipsum dolor sit amet',
 			href: '/',
-			icon: CalendarOutline,
+			icon: Calendar,
 			iconSize:14,
 			iconClass: "text-blue-700 dark:text-red-500",
 			linkname: 'Learn more',
@@ -30,7 +30,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 		{
 			date: 'March 2022',
 			title: 'Lorem ipsum dolor sit amet',
-			icon: AdjustmentsOutline,
+			icon: Adjustments,
 			iconSize:14,
 			iconClass: "text-blue-700 dark:text-red-500",
 			text: 'Consectetur adipiscing elit. Aenean condimentum erat vitae elit convallis molestie. Maecenas felis nisl, semper vitae venenatis non'
@@ -38,7 +38,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 		{
 			date: 'February 2022',
 			title: 'Lorem ipsum dolor sit amet',
-			icon: CalendarOutline,
+			icon: Calendar,
 			iconSize:14,
 			iconClass: "text-blue-700 dark:text-red-500",
 			text: 'Consectetur adipiscing elit. Aenean condimentum erat vitae elit convallis molestie. Maecenas felis nisl, semper vitae venenatis non'
@@ -74,14 +74,14 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 ```html
 <script>
 	import { Timeline, TimelineItemVertical, } from 'flowbite-svelte';
-	import { CalendarOutline, AdjustmentsOutline } from 'svelte-heros';
+	import { Calendar, Adjustments } from 'svelte-heros';
 
 	let timelineItems2 = [
 		{
 			date: 'February 2022',
 			title: 'Lorem ipsum dolor sit amet',
 			href: '/',
-			icon: CalendarOutline,
+			icon: Calendar,
 			iconSize:14,
 			iconClass: "text-blue-700 dark:text-red-500",
 			linkname: 'Learn more',
@@ -90,7 +90,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 		{
 			date: 'March 2022',
 			title: 'Lorem ipsum dolor sit amet',
-			icon: AdjustmentsOutline,
+			icon: Adjustments,
 			iconSize:14,
 			iconClass: "text-blue-700 dark:text-red-500",
 			text: 'Consectetur adipiscing elit. Aenean condimentum erat vitae elit convallis molestie. Maecenas felis nisl, semper vitae venenatis non'
@@ -98,7 +98,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 		{
 			date: 'February 2022',
 			title: 'Lorem ipsum dolor sit amet',
-			icon: CalendarOutline,
+			icon: Calendar,
 			iconSize:14,
 			iconClass: "text-blue-700 dark:text-red-500",
 			text: 'Consectetur adipiscing elit. Aenean condimentum erat vitae elit convallis molestie. Maecenas felis nisl, semper vitae venenatis non'

@@ -2,7 +2,7 @@
 	import { slide } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	import type { AccordionIconType } from '../types';
-	import { ChevronDownSolid, ChevronUpSolid } from 'svelte-heros';
+	import { ChevronDown, ChevronUp } from 'svelte-heros';
 
 	export let id: string = '';
 	export let btnClass: string =
@@ -11,8 +11,8 @@
 	export let slotClass: string = 'py-5 border-b border-gray-200 dark:border-gray-700';
 	export let isOpen: boolean = false;
 	export let icons: AccordionIconType = {
-		up: ChevronUpSolid,
-		down: ChevronDownSolid
+		up: ChevronUp,
+		down: ChevronDown
 	};
 
 	onMount(() => {

@@ -6,7 +6,7 @@ layout: ratingLayout
 	import Htwo from '../utils/Htwo.svelte'
 	  import ExampleDiv from '../utils/ExampleDiv.svelte'
 	import { Rating, AdvancedRating, ScoreRating, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
-	import { ThumbUpSolid } from 'svelte-heros';
+	import { ThumbUp } from 'svelte-heros';
 	import componentProps from '../props/AdvancedRating.json'
   // Props table
   let items = componentProps.props
@@ -51,7 +51,7 @@ layout: ratingLayout
 ```html
 <script>
 	import { Rating, AdvancedRating } from 'flowbite-svelte';
-	import { ThumbUpSolid } from 'svelte-heros';
+	import { ThumbUp } from 'svelte-heros';
 </script>
 ```
 
@@ -119,10 +119,10 @@ layout: ratingLayout
 		<span slot="rating">
 			<Rating total="5" rating="3.21" ceil>
         <span slot="ratingUp">
-          <ThumbUpSolid class="text-yellow-300 dark:text-yellow-200" />
+          <ThumbUp class="text-yellow-300 dark:text-yellow-200" />
         </span>
         <span slot="ratingDown">
-          <ThumbUpSolid class="text-gray-300 dark:text-gray-500" />
+          <ThumbUp class="text-gray-300 dark:text-gray-500" />
         </span>
 				<p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.21 out of 5</p>
 			</Rating>
@@ -146,10 +146,10 @@ layout: ratingLayout
   <span slot="rating">
     <Rating total="5" rating="3.21" ceil>
       <span slot="ratingUp">
-        <ThumbUpSolid class="text-yellow-300 dark:text-yellow-200" />
+        <ThumbUp class="text-yellow-300 dark:text-yellow-200" />
       </span>
       <span slot="ratingDown">
-        <ThumbUpSolid class="text-gray-300 dark:text-gray-500" />
+        <ThumbUp class="text-gray-300 dark:text-gray-500" />
       </span>
       <p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.21 out of 5</p>
     </Rating>

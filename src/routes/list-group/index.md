@@ -7,10 +7,10 @@ layout: listgroupLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { List, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import {
-    AdjustmentsOutline,
-    UserCircleOutline,
-    InboxInOutline,
-    CloudDownloadOutline,
+    Adjustments,
+    UserCircle,
+    InboxIn,
+    CloudDownload,
   } from "svelte-heros";
   import componentProps from '../props/List.json'
   // Props table
@@ -49,28 +49,28 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   let lists2 = [
     {
       name: "Profile",
-      icon: UserCircleOutline,
+      icon: UserCircle,
       iconSize: 18,
       iconClass: "text-blue-500 dark:text-pink-700",
       href: "/",
     },
     {
       name: "Settings",
-      icon: AdjustmentsOutline,
+      icon: Adjustments,
       iconSize: 18,
       iconClass: "text-blue-500 dark:text-purple-500",
       href: "/",
     },
     {
       name: "Messages",
-      icon: InboxInOutline,
+      icon: InboxIn,
       iconSize: 18,
       iconClass: "text-blue-500 dark:text-green-500",
       href: "/",
     },
     {
       name: "Download",
-      icon: CloudDownloadOutline,
+      icon: CloudDownload,
       iconSize: 18,
       iconClass: "text-blue-500 dark:text-red-500",
       href: "/",
@@ -142,37 +142,37 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <script>
   import { List } from "flowbite-svelte";
   import {
-    AdjustmentsOutline,
-    UserCircleOutline,
-    InboxInOutline,
-    CloudDownloadOutline,
+    Adjustments,
+    UserCircle,
+    InboxIn,
+    CloudDownload,
   } from "svelte-heros";
 
   let lists2 = [
     {
       name: "Profile",
-      icon: UserCircleOutline,
+      icon: UserCircle,
       iconSize: 18,
       iconClass: "text-blue-500 dark:text-pink-700",
       href: "/",
     },
     {
       name: "Settings",
-      icon: AdjustmentsOutline,
+      icon: Adjustments,
       iconSize: 18,
       iconClass: "text-blue-500 dark:text-purple-500",
       href: "/",
     },
     {
       name: "Messages",
-      icon: InboxInOutline,
+      icon: InboxIn,
       iconSize: 18,
       iconClass: "text-blue-500 dark:text-green-500",
       href: "/",
     },
     {
       name: "Download",
-      icon: CloudDownloadOutline,
+      icon: CloudDownload,
       iconSize: 18,
       iconClass: "text-blue-500 dark:text-red-500",
       href: "/",

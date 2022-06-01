@@ -6,7 +6,7 @@ layout: carouselLayout
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Carousel, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
-  import {ChevronDoubleLeftOutline, ChevronDoubleRightOutline, LinkOutline} from 'svelte-heros'
+  import {ChevronDoubleLeft, ChevronDoubleRight, Link} from 'svelte-heros'
   import { images } from './imageData';
   import componentProps from '../props/Carousel.json'
   // Props table
@@ -36,8 +36,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     },
   ]
    let icons={
-      next: ChevronDoubleRightOutline,
-		  prev: ChevronDoubleLeftOutline,
+      next: ChevronDoubleRight,
+		  prev: ChevronDoubleLeft,
     }
     let iconSize =20
     let iconClass = 'text-white dark:text-red-500';
@@ -230,10 +230,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 ```html
 <script>
-  import {ChevronDoubleLeftOutline, ChevronDoubleRightOutline } from 'svelte-heros'
+  import {ChevronDoubleLeft, ChevronDoubleRight } from 'svelte-heros'
   let icons={
-    next: ChevronDoubleRightOutline,
-    prev: ChevronDoubleLeftOutline,
+    next: ChevronDoubleRight,
+    prev: ChevronDoubleLeft,
   }
   let iconSize =20
   let iconClass = 'text-white dark:text-red-500';

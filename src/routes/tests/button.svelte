@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { ColorShadowButton, Button } from '$lib/index';
-	import { BellOutline } from 'svelte-heros';
+	import { Bell } from 'svelte-heros';
 </script>
 
 <section>
@@ -8,7 +8,7 @@
 	<Button class="mr-8">Button</Button>
 	<Button disabled>Button disabled</Button>
 	<Button>
-		<BellOutline class="text-red-500 dark:text-purple-300" />
+		<Bell class="text-red-500 dark:text-purple-300" />
 	</Button>
 	<ColorShadowButton color="blue">Blue</ColorShadowButton>
 	<ColorShadowButton color="green">Green</ColorShadowButton>

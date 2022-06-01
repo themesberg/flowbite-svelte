@@ -6,7 +6,7 @@ layout: ratingLayout
 	import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
 	import { Rating, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
-	import { HeartSolid, ThumbUpSolid, EmojiHappySolid } from 'svelte-heros';
+	import { Heart, ThumbUp, EmojiHappy } from 'svelte-heros';
 	import componentProps from '../props/Rating.json'
   // Props table
   let items = componentProps.props
@@ -51,7 +51,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 ```html
 <script>
 	import { Rating } from 'flowbite-svelte';
-	import { HeartSolid, ThumbUpSolid, EmojiHappySolid } from 'svelte-heros';
+	import { Heart, ThumbUp, EmojiHappy } from 'svelte-heros';
 </script>
 ```
 
@@ -104,10 +104,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <ExampleDiv>	<Rating total="5" rating="3.21">
 		<span slot="ratingUp">
-			<HeartSolid class="text-red-700 dark:text-red-500" />
+			<Heart class="text-red-700 dark:text-red-500" />
 		</span>
 		<span slot="ratingDown">
-			<HeartSolid class="text-gray-300 dark:text-gray-500" />
+			<Heart class="text-gray-300 dark:text-gray-500" />
 		</span>
 	</Rating>
 </ExampleDiv>
@@ -115,20 +115,20 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 ```html
 <Rating total="5" rating="3.21">
 	<span slot="ratingUp">
-		<HeartSolid class="text-red-700 dark:text-red-500" />
+		<Heart class="text-red-700 dark:text-red-500" />
 	</span>
 	<span slot="ratingDown">
-		<HeartSolid class="text-gray-300 dark:text-gray-500" />
+		<Heart class="text-gray-300 dark:text-gray-500" />
 	</span>
 </Rating>
 ```
 
 <ExampleDiv>	<Rating total="5" rating="4.7">
 		<span slot="ratingUp">
-			<EmojiHappySolid class="text-purple-500 dark:text-purple-700" />
+			<EmojiHappy class="text-purple-500 dark:text-purple-700" />
 		</span>
 		<span slot="ratingDown">
-			<EmojiHappySolid class="text-gray-300 dark:text-gray-500" />
+			<EmojiHappy class="text-gray-300 dark:text-gray-500" />
 		</span>
 	</Rating>
 </ExampleDiv>
@@ -136,20 +136,20 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 ```html
 <Rating total="5" rating="4.7">
 	<span slot="ratingUp">
-		<EmojiHappySolid class="text-purple-500 dark:text-purple-700" />
+		<EmojiHappy class="text-purple-500 dark:text-purple-700" />
 	</span>
 	<span slot="ratingDown">
-		<EmojiHappySolid class="text-gray-300 dark:text-gray-500" />
+		<EmojiHappy class="text-gray-300 dark:text-gray-500" />
 	</span>
 </Rating>
 ```
 
 <ExampleDiv>	<Rating total="5" rating="5">
 		<span slot="ratingUp">
-			<ThumbUpSolid class="text-yellow-300 dark:text-yellow-200" />
+			<ThumbUp class="text-yellow-300 dark:text-yellow-200" />
 		</span>
 		<span slot="ratingDown">
-			<ThumbUpSolid class="text-gray-300 dark:text-gray-500" />
+			<ThumbUp class="text-gray-300 dark:text-gray-500" />
 		</span>
 	</Rating>
 </ExampleDiv>
@@ -157,10 +157,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 ```html
 <Rating total="5" rating="5">
 	<span slot="ratingUp">
-		<ThumbUpSolid class="text-yellow-300 dark:text-yellow-200" />
+		<ThumbUp class="text-yellow-300 dark:text-yellow-200" />
 	</span>
 	<span slot="ratingDown">
-		<ThumbUpSolid class="text-gray-300 dark:text-gray-500" />
+		<ThumbUp class="text-gray-300 dark:text-gray-500" />
 	</span>
 </Rating>
 ```

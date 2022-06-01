@@ -7,7 +7,7 @@ layout: alertLayout
 import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Alert, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import {
-    XCircleSolid, EyeSolid, InformationCircleSolid
+    XCircle, Eye, InformationCircle
   } from "svelte-heros";
   import componentProps from '../props/Alert.json'
   // Props table
@@ -69,7 +69,7 @@ Import Alert and set variables in the script tag.
 
 <Htwo label="Alerts with icon" />
 <ExampleDiv>
-  <Alert id="alert-red" color="red" icon={XCircleSolid}>
+  <Alert id="alert-red" color="red" icon={XCircle}>
     <span slot="content">
       <span class="font-medium">
         Info alert!
@@ -79,7 +79,7 @@ Import Alert and set variables in the script tag.
   </Alert>
 
   ```html
-  <Alert id="alert-red" color="red" icon={XCircleSolid}>
+  <Alert id="alert-red" color="red" icon={XCircle}>
     <span slot="content">
       <span class="font-medium">
         Info alert!
@@ -161,7 +161,7 @@ Import Alert and set variables in the script tag.
 
 <Htwo label="Additional content" />
 <ExampleDiv>
-  <Alert id="alert-extra" color="blue" icon={InformationCircleSolid} closeBtn>
+  <Alert id="alert-extra" color="blue" icon={InformationCircle} closeBtn>
     <span slot="content">
       <span class="font-medium">
         Info alert!
@@ -174,7 +174,7 @@ Import Alert and set variables in the script tag.
       </div>
       <div class="flex">
         <button type="button" class="mr-2 inline-flex items-center rounded-lg bg-blue-700 px-3 py-1.5 text-center text-xs font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-800 dark:hover:bg-blue-900">
-          <EyeSolid class="-ml-0.5 mr-2 h-4 w-4" />View more
+          <Eye class="-ml-0.5 mr-2 h-4 w-4" />View more
         </button>
         <button
           type="button"
@@ -187,7 +187,7 @@ Import Alert and set variables in the script tag.
   </Alert>
 
   ```html
-  <Alert id="alert-extra" color="blue" icon={InformationCircleSolid} closeBtn>
+  <Alert id="alert-extra" color="blue" icon={InformationCircle} closeBtn>
     <span slot="content">
       <span class="font-medium">
         Info alert!
@@ -200,7 +200,7 @@ Import Alert and set variables in the script tag.
       </div>
       <div class="flex">
         <button type="button" class="mr-2 inline-flex items-center rounded-lg bg-blue-700 px-3 py-1.5 text-center text-xs font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-800 dark:hover:bg-blue-900">
-          <EyeSolid class="-ml-0.5 mr-2 h-4 w-4" />View more
+          <Eye class="-ml-0.5 mr-2 h-4 w-4" />View more
         </button>
         <button
           type="button"

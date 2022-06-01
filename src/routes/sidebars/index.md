@@ -17,17 +17,9 @@ layout: sidebarLayout
 	let propHeader = ['Name', 'Type', 'Default']
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
-  import {
-    ChartPieSolid,
-    ShoppingBagSolid,
-    TableSolid,
-    InboxInSolid,
-    UserSolid,
-    LoginSolid,
-    CogSolid
-  } from 'svelte-heros';
+  import { ChartPie, ShoppingBag, Pencil, InboxIn, User, Login, Cog} from 'svelte-heros';
 
   let site = {
     name: 'Flowbite-Svelte',
@@ -41,14 +33,14 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       id: uid++,
       name: 'Dashboard',
       href: '/',
-      icon: ChartPieSolid,
+      icon: ChartPie,
       iconSize: 16,
       iconClass: "text-blue-500",
     },
     {
       id: uid++,
       name: 'E-commerce',
-      icon: ShoppingBagSolid,
+      icon: ShoppingBag,
       iconSize: 16,
       iconClass: "text-green-500",
       href: '/',
@@ -57,7 +49,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     {
       id: uid++,
       name: 'Kanban',
-      icon: TableSolid,
+      icon: Pencil,
       iconSize: 16,
       iconClass: "text-red-500",
       href: '/',
@@ -66,7 +58,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     {
       id: uid++,
       name: 'Inbox',
-      icon: InboxInSolid,
+      icon: InboxIn,
       iconSize: 16,
       iconClass: "text-pink-500",
       href: '/'
@@ -74,7 +66,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     {
       id: uid++,
       name: 'Users',
-      icon: UserSolid,
+      icon: User,
       iconSize: 16,
       iconClass: "text-purple-500",
       href: '/'
@@ -82,7 +74,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     {
       id: uid++,
       name: 'Sign In',
-      icon: LoginSolid,
+      icon: Login,
       iconSize: 16,
       iconClass: "text-green-300",
       iconClass: "text-indigo-500",
@@ -91,7 +83,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     {
       id: uid++,
       name: 'Setting',
-      icon: CogSolid,
+      icon: Cog,
       iconSize: 16,
       iconClass: "text-yellow-300",
       href: '/'
@@ -102,14 +94,14 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       id: uid++,
       name: 'Dashboard',
       href: '/',
-      icon: ChartPieSolid,
+      icon: ChartPie,
       iconSize: 16,
       iconClass: "text-red-500",
     },
     {
       id: uid++,
       name: 'E-commerce',
-      icon: ShoppingBagSolid,
+      icon: ShoppingBag,
       iconSize: 16,
       iconClass: "text-blue-500",
       children: [
@@ -133,7 +125,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     {
       id: uid++,
       name: 'Kanban',
-      icon: TableSolid,
+      icon: Pencil,
       iconSize: 16,
       iconClass: "text-purple-500",
       href: '/'
@@ -141,7 +133,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     {
       id: uid++,
       name: 'Inbox',
-      icon: InboxInSolid,
+      icon: InboxIn,
       iconSize: 16,
       iconClass: "text-yellow-500",
       href: '/'
@@ -149,7 +141,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     {
       id: uid++,
       name: 'Users',
-      icon: UserSolid,
+      icon: User,
       iconClass: "text-green-500",
       iconSize: 16,
       children: [
@@ -173,7 +165,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     {
       id: uid++,
       name: 'Sign In',
-      icon: LoginSolid,
+      icon: Login,
       iconSize: 16,
       iconClass: "text-pink-500",
       href: '/'
@@ -181,7 +173,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     {
       id: uid++,
       name: 'Setting',
-      icon: CogSolid,
+      icon: Cog,
       iconSize: 16,
       iconClass: "text-indigo-500",
       href: '/'
@@ -193,7 +185,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       id: uid++,
       name: 'Upgrade to Pro',
       href: '/',
-      icon: ChartPieSolid,
+      icon: ChartPie,
       iconSize: 16,
       iconClass: "text-blue-500 dark:text-red-500",
     },
@@ -201,7 +193,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       id: uid++,
       name: 'Documentation',
       href: '/',
-      icon: ShoppingBagSolid,
+      icon: ShoppingBag,
       iconSize: 16,
       iconClass: "text-green-500 dark:text-purple-500",
     },
@@ -209,7 +201,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       id: uid++,
       name: 'Components',
       href: '/',
-      icon: TableSolid,
+      icon: Pencil,
       iconSize: 16,
       iconClass: "text-pink-500 dark:text-indigo-500",
     },
@@ -217,7 +209,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       id: uid++,
       name: 'Help',
       href: '/',
-      icon: UserSolid,
+      icon: User,
       iconSize: 16,
       iconClass: "text-yellow-500 dark:text-blue-500",
     },
@@ -256,13 +248,13 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <script>
   import { Sidebar, SidebarItem } from 'flowbite-svelte';
   import {
-    ChartPieSolid,
-    ShoppingBagSolid,
-    TableSolid,
-    InboxInSolid,
-    UserSolid,
-    LoginSolid,
-    CogSolid
+    ChartPie,
+    ShoppingBag,
+    Pencil,
+    InboxIn,
+    User,
+    Login,
+    Cog
   } from 'svelte-heros';
 
   let uid = 1;
@@ -271,14 +263,14 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       id: uid++,
       name: 'Dashboard',
       href: '/',
-      icon: ChartPieSolid,
+      icon: ChartPie,
       iconSize: 16,
       iconClass: "text-blue-500",
     },
     {
       id: uid++,
       name: 'E-commerce',
-      icon: ShoppingBagSolid,
+      icon: ShoppingBag,
       iconSize: 16,
       iconClass: "text-green-500",
       href: '/',
@@ -287,7 +279,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     {
       id: uid++,
       name: 'Kanban',
-      icon: TableSolid,
+      icon: Pencil,
       iconSize: 16,
       iconClass: "text-red-500",
       href: '/',
@@ -296,7 +288,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     {
       id: uid++,
       name: 'Inbox',
-      icon: InboxInSolid,
+      icon: InboxIn,
       iconSize: 16,
       iconClass: "text-pink-500",
       href: '/'
@@ -304,7 +296,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     {
       id: uid++,
       name: 'Users',
-      icon: UserSolid,
+      icon: User,
       iconSize: 16,
       iconClass: "text-purple-500",
       href: '/'
@@ -312,7 +304,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     {
       id: uid++,
       name: 'Sign In',
-      icon: LoginSolid,
+      icon: Login,
       iconSize: 16,
       iconClass: "text-green-300",
       iconClass: "text-indigo-500",
@@ -321,7 +313,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     {
       id: uid++,
       name: 'Setting',
-      icon: CogSolid,
+      icon: Cog,
       iconSize: 16,
       iconClass: "text-yellow-300",
       href: '/'
@@ -358,14 +350,14 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       id: uid++,
       name: 'Dashboard',
       href: '/',
-      icon: ChartPieSolid,
+      icon: ChartPie,
       iconSize: 16,
       iconClass: "text-red-500",
     },
     {
       id: uid++,
       name: 'E-commerce',
-      icon: ShoppingBagSolid,
+      icon: ShoppingBag,
       iconSize: 16,
       iconClass: "text-blue-500",
       children: [
@@ -389,7 +381,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     {
       id: uid++,
       name: 'Kanban',
-      icon: TableSolid,
+      icon: Pencil,
       iconSize: 16,
       iconClass: "text-purple-500",
       href: '/'
@@ -397,7 +389,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     {
       id: uid++,
       name: 'Inbox',
-      icon: InboxInSolid,
+      icon: InboxIn,
       iconSize: 16,
       iconClass: "text-yellow-500",
       href: '/'
@@ -405,7 +397,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     {
       id: uid++,
       name: 'Users',
-      icon: UserSolid,
+      icon: User,
       iconClass: "text-green-500",
       iconSize: 16,
       children: [
@@ -429,7 +421,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     {
       id: uid++,
       name: 'Sign In',
-      icon: LoginSolid,
+      icon: Login,
       iconSize: 16,
       iconClass: "text-pink-500",
       href: '/'
@@ -437,7 +429,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     {
       id: uid++,
       name: 'Setting',
-      icon: CogSolid,
+      icon: Cog,
       iconSize: 16,
       iconClass: "text-indigo-500",
       href: '/'
@@ -490,7 +482,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       id: uid++,
       name: 'Upgrade to Pro',
       href: '/',
-      icon: ChartPieSolid,
+      icon: ChartPie,
       iconSize: 16,
       iconClass: "text-blue-500 dark:text-red-500",
     },
@@ -498,7 +490,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       id: uid++,
       name: 'Documentation',
       href: '/',
-      icon: ShoppingBagSolid,
+      icon: ShoppingBag,
       iconSize: 16,
       iconClass: "text-green-500 dark:text-purple-500",
     },
@@ -506,7 +498,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       id: uid++,
       name: 'Components',
       href: '/',
-      icon: TableSolid,
+      icon: Pencil,
       iconSize: 16,
       iconClass: "text-pink-500 dark:text-indigo-500",
     },
@@ -514,7 +506,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       id: uid++,
       name: 'Help',
       href: '/',
-      icon: UserSolid,
+      icon: User,
       iconSize: 16,
       iconClass: "text-yellow-500 dark:text-blue-500",
     },

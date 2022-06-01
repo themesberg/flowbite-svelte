@@ -7,14 +7,13 @@ layout: iconLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Breadcrumb } from '$lib/index'
   import {
-    AdjustmentsSolid,
-    BellOutline,
-    BriefcaseSolid,
-    TicketOutline,
-    ChartSquareBarSolid,
-    CameraOutline,
-    BellSolid,
-    ChevronLeftSolid,
+    Adjustments,
+    Bell,
+    Briefcase,
+    Ticket,
+    ChartSquareBar,
+    Camera,
+    ChevronLeft,
   } from "svelte-heros";
 
   let crumbs = [
@@ -49,14 +48,14 @@ You can find all the icon names from the <a href="https://github.com/shinokada/s
 <p class=" dark:text-white">If you want to change the color with Tailwind CSS, add it to class prop.</p>
 
 <ExampleDiv class="flex justify-center">
-<AdjustmentsSolid size="30" class="text-blue-700 dark:text-red-700" />
-<BellOutline size="30" class="text-red-700 dark:text-green-700" />
-<BriefcaseSolid  size="30" class="text-green-700 dark:text-indigo-700" />
-<ChartSquareBarSolid size="30" class="text-purple-700 dark:text-pink-700" />
-<TicketOutline size="30" class="text-pink-700 dark:text-indigo-700" />
-<CameraOutline size="30" class="text-indigo-700 dark:text-gray-100" />
-<BellSolid size="30" class="text-gray-700 dark:text-white" />
-<ChevronLeftSolid
+<Adjustments size="30" class="text-blue-700 dark:text-red-700" />
+<Bell size="30" class="text-red-700 dark:text-green-700" />
+<Briefcase  size="30" class="text-green-700 dark:text-indigo-700" />
+<ChartSquareBar size="30" class="text-purple-700 dark:text-pink-700" />
+<Ticket size="30" class="text-pink-700 dark:text-indigo-700" />
+<Camera size="30" class="text-indigo-700 dark:text-gray-100" />
+<Bell size="30" class="text-gray-700 dark:text-white" />
+<ChevronLeft
   size="30" class="text-yellow-700 dark:text-white"
 />
 </ExampleDiv>
@@ -64,25 +63,25 @@ You can find all the icon names from the <a href="https://github.com/shinokada/s
 ```html
 <script>
 import {
-  AdjustmentsSolid,
-  BellOutline,
-  BriefcaseSolid,
-  TicketOutline,
-  ChartSquareBarSolid,
-  CameraOutline,
-  BellSolid,
-  ChevronLeftSolid,
+  Adjustments,
+  Bell,
+  Briefcase,
+  Ticket,
+  ChartSquareBar,
+  Camera,
+  Bell,
+  ChevronLeft,
 } from "svelte-heros";
 </script>
 
-<AdjustmentsSolid size="30" class="text-blue-700 dark:text-red-700" />
-<BellOutline size="30" class="text-red-700 dark:text-green-700" />
-<BriefcaseSolid  size="30" class="text-green-700 dark:text-indigo-700" />
-<ChartSquareBarSolid size="30" class="text-purple-700 dark:text-pink-700" />
-<TicketOutline size="30" class="text-pink-700 dark:text-indigo-700" />
-<CameraOutline size="30" class="text-indigo-700 dark:text-gray-100" />
-<BellSolid size="30" class="text-gray-700 dark:text-white" />
-<ChevronLeftSolid
+<Adjustments size="30" class="text-blue-700 dark:text-red-700" />
+<Bell size="30" class="text-red-700 dark:text-green-700" />
+<Briefcase  size="30" class="text-green-700 dark:text-indigo-700" />
+<ChartSquareBar size="30" class="text-purple-700 dark:text-pink-700" />
+<Ticket size="30" class="text-pink-700 dark:text-indigo-700" />
+<Camera size="30" class="text-indigo-700 dark:text-gray-100" />
+<Bell size="30" class="text-gray-700 dark:text-white" />
+<ChevronLeft
   size="30" class="text-yellow-700 dark:text-white"
 />
 ```
@@ -91,13 +90,13 @@ import {
 
 
 <ExampleDiv class="flex justify-center">
-<AdjustmentsSolid size="30"  color="#ff0000" />
-<BellOutline   color="#10ff00" />
-<BriefcaseSolid  size="30" color="#001dff" />
+<Adjustments size="30"  color="#ff0000" />
+<Bell   color="#10ff00" />
+<Briefcase  size="30" color="#001dff" />
 </ExampleDiv>
 
 ```html
-<AdjustmentsSolid size="30"  color="#ff0000" />
-<BellOutline   color="#10ff00" />
-<BriefcaseSolid  size="30" color="#001dff" />
+<Adjustments size="30"  color="#ff0000" />
+<Bell   color="#10ff00" />
+<Briefcase  size="30" color="#001dff" />
 ```

@@ -7,7 +7,7 @@ import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
 import { onMount } from 'svelte';
 import { Toggle, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
-import { AtSymbolOutline , MailOutline } from 'svelte-heros'
+import { AtSymbol , Mail } from 'svelte-heros'
 import componentProps from '../props/Toggle.json'
 let items = componentProps.props
 

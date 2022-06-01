@@ -6,7 +6,7 @@ layout: buttonLayout
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import { Button, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
-  import { ArrowRightOutline, BellOutline, ShoppingCartOutline, ChevronRightOutline } from "svelte-heros";
+  import { ArrowRight, Bell, ShoppingCart, ChevronRight } from "svelte-heros";
   import { goto }from '$app/navigation';
   import componentProps from '../props/Button.json'
 
@@ -142,19 +142,19 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <ExampleDiv>
 <Button>
-    <ArrowRightOutline/>
+    <ArrowRight/>
 </Button>
 <Button>
-  <BellOutline size="24" class="text-red-500 dark:text-purple-300" />
+  <Bell size="24" class="text-red-500 dark:text-purple-300" />
 </Button>
 <Button btnColor="red" >
-  <BellOutline size="24" class="text-red-500 dark:text-purple-300" />
+  <Bell size="24" class="text-red-500 dark:text-purple-300" />
 </Button>
 <Button btnColor="green">
-  <ShoppingCartOutline size="24"/> Buy Now
+  <ShoppingCart size="24"/> Buy Now
 </Button>
 <Button>
-  Choose Plan <ChevronRightOutline size="24" class="text-gray-500 dark:text-gray-300" />
+  Choose Plan <ChevronRight size="24" class="text-gray-500 dark:text-gray-300" />
 </Button>
 <Button>
   Messages
@@ -166,23 +166,23 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 ```html
 <script>
-	import { ArrowRightOutline, BellOutline, ShoppingCartOutline, ChevronRightOutline } from 'svelte-heros';
+	import { ArrowRight, Bell, ShoppingCart, ChevronRight } from 'svelte-heros';
 </script>
 
 <Button>
-    <ArrowRightOutline/>
+    <ArrowRight/>
 </Button>
 <Button>
-  <BellOutline size="24" class="text-red-500 dark:text-purple-300" />
+  <Bell size="24" class="text-red-500 dark:text-purple-300" />
 </Button>
 <Button btnColor="red" >
-  <BellOutline size="24" class="text-red-500 dark:text-purple-300" />
+  <Bell size="24" class="text-red-500 dark:text-purple-300" />
 </Button>
 <Button btnColor="green">
-  <ShoppingCartOutline size="24"/> Buy Now
+  <ShoppingCart size="24"/> Buy Now
 </Button>
 <Button>
-  Choose Plan <ChevronRightOutline size="24" class="text-gray-500 dark:text-gray-300" />
+  Choose Plan <ChevronRight size="24" class="text-gray-500 dark:text-gray-300" />
 </Button>
 <Button>
   Messages

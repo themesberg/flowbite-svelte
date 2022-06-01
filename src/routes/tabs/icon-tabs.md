@@ -7,10 +7,10 @@ layout: tabLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
 	import { IconTabs, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
 	import {
-		UserCircleOutline,
-		ViewGridOutline,
-		AdjustmentsOutline,
-		ClipboardListOutline
+		UserCircle,
+		ViewGrid,
+		Adjustments,
+		ClipboardList
 	} from 'svelte-heros';
 	import componentProps from '../props/IconTabs.json'
   // Props table
@@ -25,28 +25,28 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 			name: 'Profile',
 			active: true,
 			href: '/',
-			icon: UserCircleOutline,
+			icon: UserCircle,
 			iconSize: 18,
 		},
 		{
 			name: 'Dashboard',
 			active: false,
 			href: '/',
-			icon: ViewGridOutline,
+			icon: ViewGrid,
 			iconSize: 18,
 		},
 		{
 			name: 'Settings',
 			active: false,
 			href: '/',
-			icon: AdjustmentsOutline,
+			icon: Adjustments,
 			iconSize: 18,
 		},
 		{
 			name: 'Contacts',
 			active: false,
 			href: '/',
-			icon: ClipboardListOutline,
+			icon: ClipboardList,
 			iconSize: 18,
 		}
 	];
@@ -81,10 +81,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <script>
 	import { IconTabs } from 'flowbite-svelte';
 	import {
-		UserCircleOutline,
-		ViewGridOutline,
-		AdjustmentsOutline,
-		ClipboardListOutline
+		UserCircle,
+		ViewGrid,
+		Adjustments,
+		ClipboardList
 	} from 'svelte-heros';
 
 	let tabs = [
@@ -92,28 +92,28 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 			name: 'Profile',
 			active: true,
 			href: '/',
-			icon: UserCircleOutline,
+			icon: UserCircle,
 			iconSize: 18,
 		},
 		{
 			name: 'Dashboard',
 			active: false,
 			href: '/',
-			icon: ViewGridOutline,
+			icon: ViewGrid,
 			iconSize: 18,
 		},
 		{
 			name: 'Settings',
 			active: false,
 			href: '/',
-			icon: AdjustmentsOutline,
+			icon: Adjustments,
 			iconSize: 18,
 		},
 		{
 			name: 'Contacts',
 			active: false,
 			href: '/',
-			icon: ClipboardListOutline,
+			icon: ClipboardList,
 			iconSize: 18,
 		}
 	];

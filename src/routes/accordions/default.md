@@ -5,7 +5,7 @@ layout: accordionLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import {ArrowCircleUpOutline, ArrowCircleDownOutline} from 'svelte-heros'
+  import {ArrowCircleUp, ArrowCircleDown} from 'svelte-heros'
   import { AccordionItem, AccordionFlush, Table, TableDefaultRow, Breadcrumb } from "$lib/index";
   import accordionProps from '../props/AccordionItem.json'
   import accordionProps2 from '../props/AccordionFlush.json'
@@ -19,8 +19,8 @@ layout: accordionLayout
 let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
 let icons={
-  up:ArrowCircleUpOutline,
-  down:ArrowCircleDownOutline
+  up:ArrowCircleUp,
+  down:ArrowCircleDown
 }
  let crumbs = [
     {
@@ -330,10 +330,10 @@ let icons={
 
 ```html
 <script>
-  import {ArrowCircleUpOutline, ArrowCircleDownOutline} from 'svelte-heros'
+  import {ArrowCircleUp, ArrowCircleDown} from 'svelte-heros'
   let icons={
-    up:ArrowCircleUpOutline,
-    down:ArrowCircleDownOutline
+    up:ArrowCircleUp,
+    down:ArrowCircleDown
   }
 </script>
 
