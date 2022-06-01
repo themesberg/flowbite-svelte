@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.16.3](https://github.com/themesberg/flowbite-svelte/compare/v0.16.2...v0.16.3) (2022-06-01)
+
+
+### Bug Fixes
+
+* heros update ([89b8755](https://github.com/themesberg/flowbite-svelte/commit/89b87555fee018361058d888916b8e1cb774c145))
+* index page add padding px-8 ([01d29a1](https://github.com/themesberg/flowbite-svelte/commit/01d29a17883a8ba94fb4370aafb398a97b1adee3))
+
 ### [0.16.2](https://github.com/themesberg/flowbite-svelte/compare/v0.16.1...v0.16.2) (2022-05-30)
 
 
