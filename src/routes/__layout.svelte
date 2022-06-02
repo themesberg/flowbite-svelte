@@ -13,7 +13,6 @@
 		dropdowns,
 		forms,
 		footers,
-		icons,
 		modals,
 		ratings,
 		svelteflows,
@@ -213,9 +212,6 @@
 			<h3 class={h3Class}>
 				<a href="/icons">Icons</a>
 			</h3>
-			{#each icons as { href, name, rel }}
-				<SidebarList {href} {name} {rel} {sideBarListClass} />
-			{/each}
 		</Nav>
 		<Nav {navClass} {navDivClass}>
 			<h3 class={h3Class}>

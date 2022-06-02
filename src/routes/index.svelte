@@ -12,7 +12,6 @@
 		dropdowns,
 		forms,
 		footers,
-		icons,
 		modals,
 		ratings,
 		tabs,
@@ -202,11 +201,9 @@
 	<div class="p-4">
 		<Card img="/images/icons.webp" alt="Icons" link="/icons" {divClass}>
 			<span slot="paragraph">
-				{#each icons as { href, name }}
-					<p class={pClass}>
-						<a {href} class={aClass}>{name}</a>
-					</p>
-				{/each}
+				<p class={pClass}>
+					<a href="/icons" class={aClass}>Icons</a>
+				</p>
 			</span>
 		</Card>
 	</div>

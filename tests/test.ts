@@ -258,18 +258,18 @@ test('Form page should have h1', async ({ page }) => {
 // Icons
 test('Icon main page should have h1', async ({ page }) => {
 	await page.goto('/icons');
-	expect(await page.textContent('h1')).toBe('Icon Components');
+	expect(await page.textContent('h1')).toBe('Icons');
 });
 
-test('HeroIcon page should have h1', async ({ page }) => {
-	await page.goto('/icons/heroicons');
-	expect(await page.textContent('h1')).toBe('HeroIcons');
-});
+// test('Icon main page should have h1', async ({ page }) => {
+// 	await page.goto('/icons/heroicons');
+// 	expect(await page.textContent('h1')).toBe('Icons');
+// });
 
-test('Simple-icon page should have h1', async ({ page }) => {
-	await page.goto('/icons/simple-icons');
-	expect(await page.textContent('h1')).toBe('Simple-icons');
-});
+// test('Simple-icon page should have h1', async ({ page }) => {
+// 	await page.goto('/icons/simple-icons');
+// 	expect(await page.textContent('h1')).toBe('Simple-icons');
+// });
 
 // List group
 test('List group page should have h1', async ({ page }) => {

@@ -73,11 +73,11 @@ export const footers = [
   { href: "/footer/sitemap", name: "Sitemap" },
 ]
 
-export const icons = [
-  { href: "/icons/heroicons", name: "Heroicons" },
-  { href: "/icons/simple-icons", name: "Simple-icons" },
-  { href: "/icons/feathericons", name: "Feathericons" },
-]
+// export const icons = [
+//   { href: "/icons/heroicons", name: "Heroicons" },
+//   { href: "/icons/simple-icons", name: "Simple-icons" },
+//   { href: "/icons/feathericons", name: "Feathericons" },
+// ]
 
 // export const list_group = [
 //   { href: "list-group", name: "List group" },
