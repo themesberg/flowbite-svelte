@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { InteractiveTabs, InteractiveTabHead, TabContent, Card } from '$lib/index';
-	import Cardtest from './Cardtest.svelte';
+
 	let tab1 = { name: 'Tab1', id: 1 };
 	let tab2 = { name: 'Tab2', id: 2 };
 	let tab3 = { name: 'Tab3', id: 3 };
@@ -10,7 +10,7 @@
 		{
 			name: 'Profile-1',
 			id: 1,
-			content: Cardtest
+			content: '1-1 Lorem ipsum dolor sit amet, consectetur adipiscing elit'
 		},
 		{
 			name: 'Dashboard-1',

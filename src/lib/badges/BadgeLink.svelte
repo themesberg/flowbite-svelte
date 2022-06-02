@@ -25,4 +25,4 @@
 	}
 </script>
 
-<a {href} class={badgeClass}>{name}</a>
+<a {href} class="{badgeClass} {$$props.class || ''}" {...$$restProps}>{name}</a>

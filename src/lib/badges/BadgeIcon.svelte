@@ -24,7 +24,7 @@
 	}
 </script>
 
-<span class={badgeClass}>
+<span class="{badgeClass} {$$props.class || ''}" {...$$restProps}>
 	<slot />
 	{name}
 </span>
