@@ -45,7 +45,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     let hidden = true;
     const handleMouseover = ()=>{
       hidden = false
-      console.log('mouseover')
     }
     const handleMouseout = ()=>{
       hidden = true

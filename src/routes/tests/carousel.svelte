@@ -2,7 +2,6 @@
 	import ExampleDiv from '../utils/ExampleDiv.svelte';
 	import { Carousel, CarouselTransition } from '$lib/index';
 	import { images } from '../carousels/imageData';
-	console.log(images);
 	let showThumbs = false;
 	let showCaptions = false;
 </script>
@@ -15,6 +14,14 @@
 </ExampleDiv>
 <ExampleDiv>
 	<div class="max-w-4xl">
-		<CarouselTransition {images} loop transitionType="fade" transitionParams={{ duration: 1000 }} {showCaptions} {showThumbs} duration="5000" />
+		<CarouselTransition
+			{images}
+			loop
+			transitionType="fade"
+			transitionParams={{ duration: 1000 }}
+			{showCaptions}
+			{showThumbs}
+			duration="5000"
+		/>
 	</div>
 </ExampleDiv>

@@ -8,7 +8,6 @@
 
 	onMount(() => {
 		pathname = window.location.pathname;
-		// console.log('pathname', pathname);
 	});
 
 	let barHidden = true;

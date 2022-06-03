@@ -37,7 +37,6 @@
 	export let slideClass: string = '';
 
 	let imageShowingIndex: number = 0;
-	// $: console.log(imageShowingIndex);
 	$: image = images[imageShowingIndex];
 
 	const nextSlide = () => {

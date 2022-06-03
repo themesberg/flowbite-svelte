@@ -5,7 +5,6 @@
 	let hidden = true;
 	const handleMouseover = () => {
 		hidden = false;
-		console.log('mouseover');
 	};
 	const handleMouseout = () => {
 		hidden = true;

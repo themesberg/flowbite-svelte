@@ -5,7 +5,6 @@
 	let tab2 = { name: 'Tab2', id: 2 };
 	let tab3 = { name: 'Tab3', id: 3 };
 	let tabhead = [tab1, tab2, tab3];
-	// console.log(tabhead);
 	let tabs = [
 		{
 			name: 'Profile-1',
