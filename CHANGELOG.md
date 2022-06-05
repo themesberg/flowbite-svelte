@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.16.10](https://github.com/themesberg/flowbite-svelte/compare/v0.16.9...v0.16.10) (2022-06-05)
+
+
+### Features
+
+* add on:click to forms/Toggle component ([3b9ba37](https://github.com/themesberg/flowbite-svelte/commit/3b9ba3730421fa7096efee80225c60038ad903b9))
+
 ### [0.16.9](https://github.com/themesberg/flowbite-svelte/compare/v0.16.8...v0.16.9) (2022-06-05)
 
 

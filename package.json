@@ -1,6 +1,6 @@
 {
 	"name": "flowbite-svelte",
-	"version": "0.16.9",
+	"version": "0.16.10",
 	"description": "Flowbite components for Svelte",
 	"main": "index.js",
 	"author": {
