@@ -31,6 +31,10 @@ This script will update/generate files in `src/routes/props`.
 
 Again avoid type inference for `export`ed variables.
 
+## One or two at a time
+
+Please don't send a large amount of changes at once. It takes time to go through all changes. It is easier to check and update the repo asap.
+
 ## Conventional commit
 
 <p>When make a commit, we recommend using <a href="https://www.conventionalcommits.org/en/v1.0.0/">the Coventional commits</a>.</p>
