@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.16.9](https://github.com/themesberg/flowbite-svelte/compare/v0.16.8...v0.16.9) (2022-06-05)
+
+
+### Features
+
+* add bind:group to Radio component ([386ab02](https://github.com/themesberg/flowbite-svelte/commit/386ab0246d0a3a7ae60416c6f9979501f4c434af))
+
 ### [0.16.8](https://github.com/themesberg/flowbite-svelte/compare/v0.16.7...v0.16.8) (2022-06-03)
 
 ### [0.16.7](https://github.com/themesberg/flowbite-svelte/compare/v0.16.6...v0.16.7) (2022-06-02)
