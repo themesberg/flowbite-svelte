@@ -62,7 +62,7 @@ export { default as FloatingLabelInput } from './forms/FloatingLabelInput.svelte
 export { default as Iconinput } from './forms/Iconinput.svelte';
 export { default as Input } from './forms/Input.svelte';
 export { default as RadioInline } from './forms/RadioInline.svelte';
-export { default as Radio } from './forms/RadioItem.svelte';
+export { default as Radio } from './forms/Radio.svelte';
 export { default as Range } from './forms/Range.svelte';
 export { default as Search } from './forms/Search.svelte';
 export { default as Select } from './forms/Select.svelte';

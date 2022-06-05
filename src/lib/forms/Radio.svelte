@@ -1,7 +1,8 @@
 <script lang="ts">
 	import type { FormColorType } from '../types';
 	export let divClass: string = 'flex items-center mr-4';
-	export let inputClass: string = 'w-4 h-4 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 bg-gray-100 border-gray-300 ';
+	export let inputClass: string =
+		'w-4 h-4 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 bg-gray-100 border-gray-300 ';
 	export let labelClass: string = 'block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300';
 	export let disabled: boolean = false;
 	if (disabled) {
@@ -32,12 +33,24 @@
 	export let id: string;
 	export let value: string;
 	export let label: string;
+	export let group: number | string;
 </script>
 
 {#if helper}
 	<div class="flex">
 		<div class={divHelperClass}>
-			<input {id} type="radio" {name} {value} class={inputClass} aria-labelledby={id} aria-describedby={id} {disabled} {...$$restProps} />
+			<input
+				bind:group
+				{id}
+				type="radio"
+				{name}
+				{value}
+				class={inputClass}
+				aria-labelledby={id}
+				aria-describedby={id}
+				{disabled}
+				{...$$restProps}
+			/>
 		</div>
 		<div class="ml-2 text-sm">
 			<label for={id} class={labelHelperClass}>
@@ -48,7 +61,18 @@
 	</div>
 {:else}
 	<div class={divClass}>
-		<input {id} type="radio" {name} {value} class={inputClass} aria-labelledby={id} aria-describedby={id} {disabled} {...$$restProps} />
+		<input
+			bind:group
+			{id}
+			type="radio"
+			{name}
+			{value}
+			class={inputClass}
+			aria-labelledby={id}
+			aria-describedby={id}
+			{disabled}
+			{...$$restProps}
+		/>
 		<label for={id} class={labelClass}>
 			{@html label}
 		</label>
