@@ -255,6 +255,57 @@ test('Form page should have h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Form Components');
 });
 
+test('Checkbox page should have h1', async ({ page }) => {
+	await page.goto('/forms/checkbox');
+	expect(await page.textContent('h1')).toBe('Checkbox Components');
+});
+
+test('File input page should have h1', async ({ page }) => {
+	await page.goto('/forms/file-input');
+	expect(await page.textContent('h1')).toBe('File Components');
+});
+
+test('Floating label page should have h1', async ({ page }) => {
+	await page.goto('/forms/floating-label');
+	expect(await page.textContent('h1')).toBe('Floating label Components');
+});
+
+test('Input page should have h1', async ({ page }) => {
+	await page.goto('/forms/input');
+	expect(await page.textContent('h1')).toBe('Input Components');
+});
+
+test('Radio page should have h1', async ({ page }) => {
+	await page.goto('/forms/radio');
+	expect(await page.textContent('h1')).toBe('Radio Components');
+});
+
+test('Range page should have h1', async ({ page }) => {
+	await page.goto('/forms/range');
+	expect(await page.textContent('h1')).toBe('Range Components');
+});
+
+test('Search page should have h1', async ({ page }) => {
+	await page.goto('/forms/search');
+	expect(await page.textContent('h1')).toBe('Search Components');
+});
+
+test('Seletct page should have h1', async ({ page }) => {
+	await page.goto('/forms/select');
+	expect(await page.textContent('h1')).toBe('Select Components');
+});
+
+test('Textarea page should have h1', async ({ page }) => {
+	await page.goto('/forms/textarea');
+	expect(await page.textContent('h1')).toBe('Textarea Components');
+});
+
+test('Toggle page should have h1', async ({ page }) => {
+	await page.goto('/forms/toggle');
+	expect(await page.textContent('h1')).toBe('Toggle Components');
+});
+
+
 // Icons
 test('Icon main page should have h1', async ({ page }) => {
 	await page.goto('/icons');

@@ -31,6 +31,8 @@ layout: formLayout
   ]
 </script>
 
+<Breadcrumb {crumbs}/>
+
 <h1 class="text-3xl w-full dark:text-white py-8">Range Components</h1>
 
 <Htwo label="Examples" />
