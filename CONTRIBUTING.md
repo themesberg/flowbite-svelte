@@ -31,6 +31,8 @@ This script will update/generate files in `src/routes/props`.
 
 Again avoid type inference for `export`ed variables.
 
+Please put all export variables before functions to avoid breaking props tables.
+
 ## One or two at a time
 
 Please don't send a large amount of changes at once. It takes time to go through all changes. It is easier to check and update the repo asap.

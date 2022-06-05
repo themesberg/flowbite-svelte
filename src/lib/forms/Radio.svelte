@@ -1,19 +1,25 @@
 <script lang="ts">
 	import type { FormColorType } from '../types';
+	export let helper: string;
+	export let id: string;
+	export let value: string;
+	export let label: string;
+	export let group: number | string;
 	export let divClass: string = 'flex items-center mr-4';
 	export let inputClass: string =
 		'w-4 h-4 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 bg-gray-100 border-gray-300 ';
 	export let labelClass: string = 'block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300';
 	export let disabled: boolean = false;
-	if (disabled) {
-		labelClass = 'ml-2 text-sm font-medium text-gray-400 dark:text-gray-500';
-	}
 	export let name: string = '';
 	export let divHelperClass: string = 'flex items-center h-5';
 	export let labelHelperClass: string = 'font-medium text-gray-900 dark:text-gray-300';
-
 	export let helperClass: string = 'text-xs font-normal text-gray-500 dark:text-gray-300';
 	export let color: FormColorType = 'blue';
+
+	if (disabled) {
+		labelClass = 'ml-2 text-sm font-medium text-gray-400 dark:text-gray-500';
+	}
+
 	if (color === 'red') {
 		inputClass = 'text-red-600 focus:ring-red-500 dark:focus:ring-red-600';
 	} else if (color === 'green') {
@@ -29,11 +35,6 @@
 	} else {
 		inputClass = 'text-blue-500 focus:ring-blue-500 dark:focus:ring-blue-600';
 	}
-	export let helper: string;
-	export let id: string;
-	export let value: string;
-	export let label: string;
-	export let group: number | string;
 </script>
 
 {#if helper}
