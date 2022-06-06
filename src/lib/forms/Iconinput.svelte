@@ -38,7 +38,7 @@
 			<span class={spanClass}>
 				<svelte:component this={icon} size={iconSize} class={iconClass} />
 			</span>
-			<input {type} {id} class={inputClass} {placeholder} {...$$restProps} />
+			<input bind:value {type} {id} class={inputClass} {placeholder} {...$$restProps} />
 		</div>
 	{/if}
 	{#if helper}
