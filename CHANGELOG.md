@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.16.11](https://github.com/themesberg/flowbite-svelte/compare/v0.16.10...v0.16.11) (2022-06-06)
+
+
+### Features
+
+* add on:click to ButtonGroupItem ([f3229de](https://github.com/themesberg/flowbite-svelte/commit/f3229dedfced6dcb4114a47370bb144bf4a07ae3))
+
+
+### Bug Fixes
+
+* forms components moved all export variables before function ([13d518b](https://github.com/themesberg/flowbite-svelte/commit/13d518b58f5aa09a0dcb4de439860afb1d84e3d0))
+* Input component move let padding before using it ([4fac17c](https://github.com/themesberg/flowbite-svelte/commit/4fac17cab3ebf67eb2ed4502356bbd5b5eb9aea1))
+* props update ([2feb352](https://github.com/themesberg/flowbite-svelte/commit/2feb3520eb74eb5f7ef0c0688e288723a7d7ee40))
+
 ### [0.16.10](https://github.com/themesberg/flowbite-svelte/compare/v0.16.9...v0.16.10) (2022-06-05)
 
 
