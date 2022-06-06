@@ -13,9 +13,9 @@
 </script>
 
 {#if href}
-	<a {href} class="{btnClass} {$$props.class}"><slot /></a>
+	<a {href} class="{btnClass} {$$props.class}" on:click><slot /></a>
 {:else}
-	<button type="button" class="{btnClass} {$$props.class}">
+	<button type="button" class="{btnClass} {$$props.class}" on:click>
 		<slot />
 	</button>
 {/if}
