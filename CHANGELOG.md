@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.16.14](https://github.com/themesberg/flowbite-svelte/compare/v0.16.13...v0.16.14) (2022-06-07)
+
+
+### Features
+
+* add {...39090restProps} to ButtonGroupItem ([6af6066](https://github.com/themesberg/flowbite-svelte/commit/6af6066928200750036b5f19e2711383f02ccfa3))
+
 ### [0.16.13](https://github.com/themesberg/flowbite-svelte/compare/v0.16.12...v0.16.13) (2022-06-07)
 
 ### [0.16.12](https://github.com/themesberg/flowbite-svelte/compare/v0.16.11...v0.16.12) (2022-06-07)
