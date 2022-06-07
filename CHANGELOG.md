@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.17.0](https://github.com/themesberg/flowbite-svelte/compare/v0.16.14...v0.17.0) (2022-06-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* read the doc how to use them
+
+### Features
+
+* add {...39090restProps} to ButtonGroup ([9744917](https://github.com/themesberg/flowbite-svelte/commit/9744917f9a036771e1ec285f43de56502e776a3d))
+* new sidebar structure ([bf35b3e](https://github.com/themesberg/flowbite-svelte/commit/bf35b3e230b9d2f9b27d2e9576c70a3db47bc48c))
+* update Sidebar components ([4f15325](https://github.com/themesberg/flowbite-svelte/commit/4f153257b519d4cbbb405a357e4c6ee7ebe30249))
+
 ### [0.16.14](https://github.com/themesberg/flowbite-svelte/compare/v0.16.13...v0.16.14) (2022-06-07)
 
 
