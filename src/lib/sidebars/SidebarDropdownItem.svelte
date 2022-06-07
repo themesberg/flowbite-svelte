@@ -6,5 +6,5 @@
 </script>
 
 <li>
-	<a {href} class={aClass}>{label}</a>
+	<a {href} class="{aClass} {$$props.class || ''}" {...$$restProps}>{label}</a>
 </li>

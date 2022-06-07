@@ -6,7 +6,12 @@
 	export let label: string = '';
 </script>
 
-<div id="dropdown-cta" class={divWrapperClass} role="alert">
+<div
+	id="dropdown-cta"
+	class="{divWrapperClass} {$$props.class || ''}"
+	{...$$restProps}
+	role="alert"
+>
 	<div class={divClass}>
 		<span class={spanClass}>{label}</span>
 		{#if $$slots.icon}
