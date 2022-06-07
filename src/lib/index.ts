@@ -106,6 +106,12 @@ export { default as ScoreRating } from './ratings/ScoreRating.svelte';
 // Sidebar
 export { default as Sidebar } from './sidebars/Sidebar.svelte';
 export { default as SidebarItem } from './sidebars/SidebarItem.svelte';
+export { default as SidebarBrand } from './sidebars/SidebarBrand.svelte';
+export { default as SidebarCta } from './sidebars/SidebarCta.svelte';
+export { default as SidebarDropdownItem } from './sidebars/SidebarDropdownItem.svelte';
+export { default as SidebarDropdownWrapper } from './sidebars/SidebarDropdownWrapper.svelte';
+export { default as SidebarGroup } from './sidebars/SidebarGroup.svelte';
+export { default as SidebarWrapper } from './sidebars/SidebarWrapper.svelte';
 
 // Spin
 export { default as Spinner } from './spinners/Spinner.svelte';

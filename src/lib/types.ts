@@ -99,6 +99,12 @@ export interface GroupTimelineType {
 	comment?: string | HTMLElement;
 }
 
+export interface IconType {
+	name: string;
+	size?: number;
+	color?: Colors;
+	class?: string;
+}
 export interface IconTabType {
 	name: string;
 	active: boolean;
