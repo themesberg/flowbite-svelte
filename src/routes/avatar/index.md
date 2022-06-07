@@ -101,7 +101,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <Avatar avatar={avatar24}/>
 <Avatar avatar={avatar48}/>
 </div>
-</ExampleDiv>
+
 
 ```html
 <script>
@@ -132,7 +132,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     alt: 'My avatar',
     size: 48,
   }
-
 </script>
 
 <Avatar avatar={avatar6} />
@@ -140,8 +139,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <Avatar avatar={avatar12}/>
 <Avatar avatar={avatar24}/>
 <Avatar avatar={avatar48}/>
-
 ```
+</ExampleDiv>
 
 <Htwo label="Border and round" />
 
@@ -153,7 +152,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     <Avatar avatar={avatar3} />
     <Avatar avatar={avatar4} />
   </div>
-</ExampleDiv>
 
 ```html
 <script>
@@ -182,6 +180,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <Avatar avatar={avatar3} />
 <Avatar avatar={avatar4} />
 ```
+</ExampleDiv>
 
 <Htwo label="Placeholder" />
 
@@ -191,11 +190,12 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
   <Avatar placehoder />
 
-</div>
+
 
 ```html
 <Avatar placehoder />
 ```
+</div>
 
 <Htwo label="Avatar text" />
 
@@ -203,7 +203,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6 flex flex-wrap justify-center">
   <Avatar avatar={avatarText} />
-</div>
+
 
 
 ```html
@@ -221,6 +221,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Avatar avatar={avatarText} />
 ```
+</div>
 
 <Htwo label="Props" />
 

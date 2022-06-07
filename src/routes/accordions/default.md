@@ -42,6 +42,12 @@ let icons={
 
 <h1 class="text-3xl w-full dark:text-white py-8">Accordion</h1>
 
+<p>Use the accordion component to show hidden information based on the collapse and expand state of the child elements using data attribute options</p>
+
+<p>The accordion component is a collection of vertically collapsing header and body elements that can be used to show and hide information based on the Tailwind CSS utility classes and JavaScript from Flowbite.</p>
+
+<p>A popular use case would be the “Frequently Asked Questions” section of a website or page when you can show questions and answers for each child element.</p>
+
 <Htwo label="Default accordion" />
 
 <p>Use id=1,2,3,.. to add top and bottom border.</p>
@@ -52,9 +58,7 @@ let icons={
     <div slot="body">
       <p class="mb-2 text-gray-500 dark:text-gray-400">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-        necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-        voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-        nisi quis perspiciatis.
+        necessitatibus sint explicabo ...
       </p>
       <p class="text-gray-500 dark:text-gray-400">
         Check out this guide to learn how to <a
@@ -72,15 +76,11 @@ let icons={
     <div slot="body">
       <p class="mb-2 text-gray-500 dark:text-gray-400">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-        necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-        voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-        nisi quis perspiciatis.
+        necessitatibus sint explicabo ...
       </p>
       <p class="mb-2 text-gray-500 dark:text-gray-400">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-        necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-        voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-        nisi quis perspiciatis.
+        necessitatibus sint explicabo ...
       </p>
       <p class="mb-2 text-gray-500 dark:text-gray-400">
         Learn more about these technologies:
@@ -106,7 +106,6 @@ let icons={
       </ul>
     </div>
   </AccordionItem>
-</ExampleDiv>
 
 ```html
 <script>
@@ -132,6 +131,7 @@ let icons={
   </div>
 </AccordionItem>
 ```
+</ExampleDiv>
 
 <Htwo label="Always open" />
 
@@ -156,7 +156,6 @@ let icons={
       </p>
     </div>
   </AccordionItem>
-</ExampleDiv>
 
 ```html
 <AccordionItem id="1" isOpen>
@@ -178,6 +177,7 @@ let icons={
   </div>
 </AccordionItem>
 ```
+</ExampleDiv>
 
 <Htwo label="Color option" />
 
@@ -202,7 +202,6 @@ let icons={
       </p>
     </div>
   </AccordionItem>
-</ExampleDiv>
 
 ```html
 <AccordionItem id="1" color>
@@ -224,6 +223,7 @@ let icons={
   </div>
 </AccordionItem>
 ```
+</ExampleDiv>
 
 <Htwo label="Flush accordion" />
 
@@ -248,7 +248,7 @@ let icons={
       </p>
     </div>
   </AccordionFlush>
-</ExampleDiv>
+
 
 ```html
 <script>
@@ -274,6 +274,7 @@ let icons={
   </div>
 </AccordionFlush>
 ```
+</ExampleDiv>
 
 <Htwo label="Arrow style" />
 
@@ -298,7 +299,7 @@ let icons={
       </p>
     </div>
   </AccordionItem>
-</ExampleDiv>
+
 
 ```html
 <script>
@@ -328,6 +329,7 @@ let icons={
   </div>
 </AccordionItem>
 ```
+</ExampleDiv>
 
 <Htwo label="AccordionItem: slot names" />
 

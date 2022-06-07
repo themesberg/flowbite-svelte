@@ -34,9 +34,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>Show contextual information to your users using alert elements based on Tailwind CSS</p>
 
-<p>The alert component can be used to provide information to your users such as success or error messages, but also highlighted information complementing the normal flow of paragraphs and headers on a page.
-
-Flowbite also includes dismissable alerts which can be hidden by the users by clicking on the close icon.</p>
+<p>The alert component can be used to provide information to your users such as success or error messages, but also highlighted information complementing the normal flow of paragraphs and headers on a page. Flowbite also includes dismissable alerts which can be hidden by the users by clicking on the close icon.</p>
 
 <Htwo label="Set up" />
 
