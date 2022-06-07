@@ -43,15 +43,8 @@
 	<Sidebar>
 		<SidebarWrapper>
 			<SidebarGroup>
-				<SidebarItem label="Dashboard">
-					<svelte:fragment slot="icon">
-						<ChartPie />
-					</svelte:fragment>
-				</SidebarItem>
-				<SidebarItem label="Kanban" {spanClass}>
-					<svelte:fragment slot="icon">
-						<ViewGrid />
-					</svelte:fragment>
+				<SidebarItem label="Dashboard" icon={{ name: ChartPie }} />
+				<SidebarItem label="Kanban" {spanClass} icon={{ name: ViewGrid }}>
 					<svelte:fragment slot="subtext">
 						<span
 							class="inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"
@@ -59,10 +52,7 @@
 						>
 					</svelte:fragment>
 				</SidebarItem>
-				<SidebarItem label="Inbox" {spanClass}>
-					<svelte:fragment slot="icon">
-						<InboxIn />
-					</svelte:fragment>
+				<SidebarItem label="Inbox" {spanClass} icon={{ name: InboxIn }}>
 					<svelte:fragment slot="subtext">
 						<span
 							class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200"
@@ -70,21 +60,9 @@
 						>
 					</svelte:fragment>
 				</SidebarItem>
-				<SidebarItem label="Users">
-					<svelte:fragment slot="icon">
-						<User />
-					</svelte:fragment>
-				</SidebarItem>
-				<SidebarItem label="Sign In">
-					<svelte:fragment slot="icon">
-						<Login />
-					</svelte:fragment>
-				</SidebarItem>
-				<SidebarItem label="Sign Up">
-					<svelte:fragment slot="icon">
-						<Cog />
-					</svelte:fragment>
-				</SidebarItem>
+				<SidebarItem label="Users" icon={{ name: User }} />
+				<SidebarItem label="Sign In" icon={{ name: Login }} />
+				<SidebarItem label="Sign Up" icon={{ name: Cog }} />
 			</SidebarGroup>
 		</SidebarWrapper>
 	</Sidebar>
@@ -94,24 +72,14 @@
 	<Sidebar>
 		<SidebarWrapper>
 			<SidebarGroup>
-				<SidebarItem label="Dashboard">
-					<svelte:fragment slot="icon">
-						<ChartPie />
-					</svelte:fragment>
-				</SidebarItem>
-				<SidebarDropdownWrapper label="E-commerce">
-					<svelte:fragment slot="icon">
-						<ShoppingCart />
-					</svelte:fragment>
+				<SidebarItem label="Dashboard" icon={{ name: ChartPie }} />
+				<SidebarDropdownWrapper label="E-commerce" icon={{ name: ShoppingCart }}>
 					<SidebarDropdownItem label="Products" />
 					<SidebarDropdownItem label="Billing" />
 					<SidebarDropdownItem label="Invoice" />
 				</SidebarDropdownWrapper>
 
-				<SidebarItem label="Kanban" {spanClass}>
-					<svelte:fragment slot="icon">
-						<ViewGrid />
-					</svelte:fragment>
+				<SidebarItem label="Kanban" {spanClass} icon={{ name: ViewGrid }}>
 					<svelte:fragment slot="subtext">
 						<span
 							class="inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"
@@ -119,10 +87,7 @@
 						>
 					</svelte:fragment>
 				</SidebarItem>
-				<SidebarItem label="Inbox" {spanClass}>
-					<svelte:fragment slot="icon">
-						<InboxIn />
-					</svelte:fragment>
+				<SidebarItem label="Inbox" {spanClass} icon={{ name: InboxIn }}>
 					<svelte:fragment slot="subtext">
 						<span
 							class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200"
@@ -130,21 +95,9 @@
 						>
 					</svelte:fragment>
 				</SidebarItem>
-				<SidebarItem label="Users">
-					<svelte:fragment slot="icon">
-						<User />
-					</svelte:fragment>
-				</SidebarItem>
-				<SidebarItem label="Sign In">
-					<svelte:fragment slot="icon">
-						<Login />
-					</svelte:fragment>
-				</SidebarItem>
-				<SidebarItem label="Sign Up">
-					<svelte:fragment slot="icon">
-						<Cog />
-					</svelte:fragment>
-				</SidebarItem>
+				<SidebarItem label="Users" icon={{ name: User }} />
+				<SidebarItem label="Sign In" icon={{ name: Login }} />
+				<SidebarItem label="Sign Up" icon={{ name: Cog }} />
 			</SidebarGroup>
 		</SidebarWrapper>
 	</Sidebar>
@@ -154,15 +107,8 @@
 	<Sidebar>
 		<SidebarWrapper>
 			<SidebarGroup>
-				<SidebarItem label="Dashboard">
-					<svelte:fragment slot="icon">
-						<ChartPie />
-					</svelte:fragment>
-				</SidebarItem>
-				<SidebarItem label="Kanban" {spanClass}>
-					<svelte:fragment slot="icon">
-						<ViewGrid />
-					</svelte:fragment>
+				<SidebarItem label="Dashboard" icon={{ name: ChartPie }} />
+				<SidebarItem label="Kanban" {spanClass} icon={{ name: ViewGrid }}>
 					<svelte:fragment slot="subtext">
 						<span
 							class="inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"
@@ -170,10 +116,7 @@
 						>
 					</svelte:fragment>
 				</SidebarItem>
-				<SidebarItem label="Inbox" {spanClass}>
-					<svelte:fragment slot="icon">
-						<InboxIn />
-					</svelte:fragment>
+				<SidebarItem label="Inbox" {spanClass} icon={{ name: InboxIn }}>
 					<svelte:fragment slot="subtext">
 						<span
 							class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200"
@@ -181,43 +124,15 @@
 						>
 					</svelte:fragment>
 				</SidebarItem>
-				<SidebarItem label="Users">
-					<svelte:fragment slot="icon">
-						<User />
-					</svelte:fragment>
-				</SidebarItem>
-				<SidebarItem label="Sign In">
-					<svelte:fragment slot="icon">
-						<Login />
-					</svelte:fragment>
-				</SidebarItem>
-				<SidebarItem label="Sign Up">
-					<svelte:fragment slot="icon">
-						<Cog />
-					</svelte:fragment>
-				</SidebarItem>
+				<SidebarItem label="Users" icon={{ name: User }} />
+				<SidebarItem label="Sign In" icon={{ name: Login }} />
+				<SidebarItem label="Sign Up" icon={{ name: Cog }} />
 			</SidebarGroup>
 			<SidebarGroup border>
-				<SidebarItem label="Upgrade to Pro">
-					<svelte:fragment slot="icon">
-						<Star />
-					</svelte:fragment>
-				</SidebarItem>
-				<SidebarItem label="Documentation">
-					<svelte:fragment slot="icon">
-						<ClipboardList />
-					</svelte:fragment>
-				</SidebarItem>
-				<SidebarItem label="Components">
-					<svelte:fragment slot="icon">
-						<Collection />
-					</svelte:fragment>
-				</SidebarItem>
-				<SidebarItem label="Help">
-					<svelte:fragment slot="icon">
-						<Support />
-					</svelte:fragment>
-				</SidebarItem>
+				<SidebarItem label="Upgrade to Pro" icon={{ name: Star }} />
+				<SidebarItem label="Documentation" icon={{ name: ClipboardList }} />
+				<SidebarItem label="Components" icon={{ name: Collection }} />
+				<SidebarItem label="Help" icon={{ name: Support }} />
 			</SidebarGroup>
 		</SidebarWrapper>
 	</Sidebar>
@@ -227,15 +142,8 @@
 	<Sidebar>
 		<SidebarWrapper>
 			<SidebarGroup>
-				<SidebarItem label="Dashboard">
-					<svelte:fragment slot="icon">
-						<ChartPie />
-					</svelte:fragment>
-				</SidebarItem>
-				<SidebarItem label="Kanban" {spanClass}>
-					<svelte:fragment slot="icon">
-						<ViewGrid />
-					</svelte:fragment>
+				<SidebarItem label="Dashboard" icon={{ name: ChartPie }} />
+				<SidebarItem label="Kanban" {spanClass} icon={{ name: ViewGrid }}>
 					<svelte:fragment slot="subtext">
 						<span
 							class="inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"
@@ -243,10 +151,7 @@
 						>
 					</svelte:fragment>
 				</SidebarItem>
-				<SidebarItem label="Inbox" {spanClass}>
-					<svelte:fragment slot="icon">
-						<InboxIn />
-					</svelte:fragment>
+				<SidebarItem label="Inbox" {spanClass} icon={{ name: InboxIn }}>
 					<svelte:fragment slot="subtext">
 						<span
 							class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200"
@@ -254,21 +159,9 @@
 						>
 					</svelte:fragment>
 				</SidebarItem>
-				<SidebarItem label="Users">
-					<svelte:fragment slot="icon">
-						<User />
-					</svelte:fragment>
-				</SidebarItem>
-				<SidebarItem label="Sign In">
-					<svelte:fragment slot="icon">
-						<Login />
-					</svelte:fragment>
-				</SidebarItem>
-				<SidebarItem label="Sign Up">
-					<svelte:fragment slot="icon">
-						<Cog />
-					</svelte:fragment>
-				</SidebarItem>
+				<SidebarItem label="Users" icon={{ name: User }} />
+				<SidebarItem label="Sign In" icon={{ name: Login }} />
+				<SidebarItem label="Sign Up" icon={{ name: Cog }} />
 				<SidebarCta label="Beta">
 					<svelte:fragment slot="icon">
 						<button
@@ -300,15 +193,8 @@
 		<SidebarWrapper>
 			<SidebarGroup>
 				<SidebarBrand {site} />
-				<SidebarItem label="Dashboard">
-					<svelte:fragment slot="icon">
-						<ChartPie />
-					</svelte:fragment>
-				</SidebarItem>
-				<SidebarItem label="Kanban" {spanClass}>
-					<svelte:fragment slot="icon">
-						<ViewGrid />
-					</svelte:fragment>
+				<SidebarItem label="Dashboard" icon={{ name: ChartPie }} />
+				<SidebarItem label="Kanban" {spanClass} icon={{ name: ViewGrid }}>
 					<svelte:fragment slot="subtext">
 						<span
 							class="inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"
@@ -316,10 +202,7 @@
 						>
 					</svelte:fragment>
 				</SidebarItem>
-				<SidebarItem label="Inbox" {spanClass}>
-					<svelte:fragment slot="icon">
-						<InboxIn />
-					</svelte:fragment>
+				<SidebarItem label="Inbox" {spanClass} icon={{ name: InboxIn }}>
 					<svelte:fragment slot="subtext">
 						<span
 							class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200"
@@ -327,21 +210,9 @@
 						>
 					</svelte:fragment>
 				</SidebarItem>
-				<SidebarItem label="Users">
-					<svelte:fragment slot="icon">
-						<User />
-					</svelte:fragment>
-				</SidebarItem>
-				<SidebarItem label="Sign In">
-					<svelte:fragment slot="icon">
-						<Login />
-					</svelte:fragment>
-				</SidebarItem>
-				<SidebarItem label="Sign Up">
-					<svelte:fragment slot="icon">
-						<Cog />
-					</svelte:fragment>
-				</SidebarItem>
+				<SidebarItem label="Users" icon={{ name: User }} />
+				<SidebarItem label="Sign In" icon={{ name: Login }} />
+				<SidebarItem label="Sign Up" icon={{ name: Cog }} />
 			</SidebarGroup>
 		</SidebarWrapper>
 	</Sidebar>

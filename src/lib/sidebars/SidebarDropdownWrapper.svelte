@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { IconType } from '../types';
 	import { slide } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import { ChevronDown } from 'svelte-heros';
@@ -7,6 +8,7 @@
 	export let label: string = '';
 	export let spanClass: string = 'flex-1 ml-3 text-left whitespace-nowrap';
 	export let ulClass: string = 'py-2 space-y-2';
+	export let icon: IconType;
 	let isOpen = false;
 	const handleDropdown = () => {
 		isOpen = !isOpen;
@@ -21,9 +23,12 @@
 		{...$$restProps}
 		aria-controls="sidebar-dropdown"
 	>
-		{#if $$slots.icon}
-			<slot name="icon" />
-		{/if}
+		<svelte:component
+			this={icon.name}
+			size={icon.size}
+			color={icon.color}
+			class="mr-2 {icon.class}"
+		/>
 		<span class={spanClass} sidebar-toggle-item>{label}</span>
 		<ChevronDown />
 	</button>
