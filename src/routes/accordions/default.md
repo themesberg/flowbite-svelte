@@ -141,23 +141,19 @@ let icons={
   <AccordionItem id="1" isOpen>
     <h2 slot="header">Header 2-1</h2>
     <div slot="body">
-  <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-      necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-      voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-      nisi quis perspiciatis.
-    </p>
+      <p class="mb-2 text-gray-500 dark:text-gray-400">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+        necessitatibus sint explicabo ...
+      </p>
     </div>
   </AccordionItem>
   <AccordionItem id="2">
     <h2 slot="header">Header 2-2</h2>
     <div slot="body">
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-      necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-      voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-      nisi quis perspiciatis.
-    </p>
+      <p class="mb-2 text-gray-500 dark:text-gray-400">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+        necessitatibus sint explicabo ...
+      </p>
     </div>
   </AccordionItem>
 </ExampleDiv>
@@ -166,23 +162,19 @@ let icons={
 <AccordionItem id="1" isOpen>
   <h2 slot="header">Header 2-1</h2>
   <div slot="body">
-<p class="mb-2 text-gray-500 dark:text-gray-400">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-    necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-    voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-    nisi quis perspiciatis.
-  </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+      necessitatibus sint explicabo ...
+    </p>
   </div>
 </AccordionItem>
 <AccordionItem id="2">
   <h2 slot="header">Header 2-2</h2>
   <div slot="body">
-  <p class="mb-2 text-gray-500 dark:text-gray-400">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-    necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-    voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-    nisi quis perspiciatis.
-  </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+      necessitatibus sint explicabo ...
+    </p>
   </div>
 </AccordionItem>
 ```
@@ -195,23 +187,19 @@ let icons={
   <AccordionItem id="1" color>
     <h2 slot="header">Header 2-1</h2>
     <div slot="body">
-  <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-      necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-      voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-      nisi quis perspiciatis.
-    </p>
+      <p class="mb-2 text-gray-500 dark:text-gray-400">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+        necessitatibus sint explicabo ...
+      </p>
     </div>
   </AccordionItem>
   <AccordionItem id="2" color>
     <h2 slot="header">Header 2-2</h2>
     <div slot="body">
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-      necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-      voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-      nisi quis perspiciatis.
-    </p>
+      <p class="mb-2 text-gray-500 dark:text-gray-400">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+        necessitatibus sint explicabo ...
+      </p>
     </div>
   </AccordionItem>
 </ExampleDiv>
@@ -220,23 +208,19 @@ let icons={
 <AccordionItem id="1" color>
   <h2 slot="header">Header 2-1</h2>
   <div slot="body">
-<p class="mb-2 text-gray-500 dark:text-gray-400">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-    necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-    voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-    nisi quis perspiciatis.
-  </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+      necessitatibus sint explicabo ...
+    </p>
   </div>
 </AccordionItem>
 <AccordionItem id="2" color>
   <h2 slot="header">Header 2-2</h2>
   <div slot="body">
-  <p class="mb-2 text-gray-500 dark:text-gray-400">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-    necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-    voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-    nisi quis perspiciatis.
-  </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+      necessitatibus sint explicabo...
+    </p>
   </div>
 </AccordionItem>
 ```
@@ -249,23 +233,19 @@ let icons={
   <AccordionFlush id="1" >
     <h2 slot="header">Header 2-1</h2>
     <div slot="body">
-  <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-      necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-      voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-      nisi quis perspiciatis.
-    </p>
+      <p class="mb-2 text-gray-500 dark:text-gray-400">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+        necessitatibus sint explicabo ...
+      </p>
     </div>
   </AccordionFlush>
   <AccordionFlush id="2">
     <h2 slot="header">Header 2-2</h2>
     <div slot="body">
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-      necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-      voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-      nisi quis perspiciatis.
-    </p>
+      <p class="mb-2 text-gray-500 dark:text-gray-400">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+        necessitatibus sint explicabo ...
+      </p>
     </div>
   </AccordionFlush>
 </ExampleDiv>
@@ -278,23 +258,19 @@ let icons={
 <AccordionFlush id="1" >
   <h2 slot="header">Header 2-1</h2>
   <div slot="body">
-<p class="mb-2 text-gray-500 dark:text-gray-400">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-    necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-    voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-    nisi quis perspiciatis.
-  </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+      necessitatibus sint explicabo ...
+    </p>
   </div>
 </AccordionFlush>
 <AccordionFlush id="2">
   <h2 slot="header">Header 2-2</h2>
   <div slot="body">
-  <p class="mb-2 text-gray-500 dark:text-gray-400">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-    necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-    voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-    nisi quis perspiciatis.
-  </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+      necessitatibus sint explicabo ...
+    </p>
   </div>
 </AccordionFlush>
 ```
@@ -307,23 +283,19 @@ let icons={
   <AccordionItem id="1" {icons}>
     <h2 slot="header">Header 2-1</h2>
     <div slot="body">
-  <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-      necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-      voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-      nisi quis perspiciatis.
-    </p>
+      <p class="mb-2 text-gray-500 dark:text-gray-400">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+        necessitatibus sint explicabo ...
+      </p>
     </div>
   </AccordionItem>
   <AccordionItem id="2" {icons}>
     <h2 slot="header">Header 2-2</h2>
     <div slot="body">
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-      necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-      voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-      nisi quis perspiciatis.
-    </p>
+      <p class="mb-2 text-gray-500 dark:text-gray-400">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+        necessitatibus sint explicabo ...
+      </p>
     </div>
   </AccordionItem>
 </ExampleDiv>
@@ -340,23 +312,19 @@ let icons={
 <AccordionItem id="1" {icons}>
   <h2 slot="header">Header 2-1</h2>
   <div slot="body">
-<p class="mb-2 text-gray-500 dark:text-gray-400">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-    necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-    voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-    nisi quis perspiciatis.
-  </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+      necessitatibus sint explicabo ...
+    </p>
   </div>
 </AccordionItem>
 <AccordionItem id="2" {icons}>
   <h2 slot="header">Header 2-2</h2>
   <div slot="body">
-  <p class="mb-2 text-gray-500 dark:text-gray-400">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-    necessitatibus sint explicabo, atque temporibus rem iusto, dicta
-    voluptatem molestias ex quibusdam ipsa omnis laboriosam deleniti ipsum
-    nisi quis perspiciatis.
-  </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+      necessitatibus sint explicabo ...
+    </p>
   </div>
 </AccordionItem>
 ```
