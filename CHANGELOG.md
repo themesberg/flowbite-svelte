@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.17.1](https://github.com/themesberg/flowbite-svelte/compare/v0.17.0...v0.17.1) (2022-06-07)
+
+
+### Bug Fixes
+
+* add  {39090props.class || ''} {...39090restProps} to Sidebar components ([7ea5815](https://github.com/themesberg/flowbite-svelte/commit/7ea5815d939dd6041a3a9e965127ea61736d5849))
+
 ## [0.17.0](https://github.com/themesberg/flowbite-svelte/compare/v0.16.14...v0.17.0) (2022-06-07)
 
 
