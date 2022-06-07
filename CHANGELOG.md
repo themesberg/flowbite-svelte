@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.16.12](https://github.com/themesberg/flowbite-svelte/compare/v0.16.11...v0.16.12) (2022-06-07)
+
+
+### Features
+
+* add type to ButtonGroupItem ([1aefa6b](https://github.com/themesberg/flowbite-svelte/commit/1aefa6bd85acabc05b9ba8016b8e1f46bd55baef))
+
 ### [0.16.11](https://github.com/themesberg/flowbite-svelte/compare/v0.16.10...v0.16.11) (2022-06-06)
 
 
