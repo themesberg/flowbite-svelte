@@ -2,6 +2,6 @@
 	export let divClass = 'inline-flex rounded-md shadow-sm';
 </script>
 
-<div class="{divClass} {$$props.class}" role="group">
+<div class="{divClass} {$$props.class}" {...$$restProps} role="group">
 	<slot />
 </div>
