@@ -419,6 +419,15 @@ layout: sidebarLayout
 </ExampleDiv>
 
 ```html
+<script>
+  import { Sidebar, SidebarWrapper, SidebarBrand, SidebarItem }
+  let site = {
+    name: 'Flowbite-Svelte',
+    href: '/',
+    img: '/images/flowbite-svelte-icon-logo.svg'
+  };
+<script>
+
 <Sidebar>
   <SidebarWrapper>
     <SidebarGroup>
