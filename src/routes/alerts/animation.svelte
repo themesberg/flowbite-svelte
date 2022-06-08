@@ -1,5 +1,5 @@
 <script>
-	import { Alert } from 'flowbite-svelte';
+	import { Alert } from '$lib';
 	import { flip } from 'svelte/animate';
 	let alerts = [
 		{
