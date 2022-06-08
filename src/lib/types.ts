@@ -100,13 +100,13 @@ export interface GroupTimelineType {
 }
 
 export interface IconType {
-	name: string;
+	name: typeof SvelteComponent;
 	size?: number;
 	color?: Colors;
 	class?: string;
 }
 export interface IconTabType {
-	name: string;
+	name: typeof SvelteComponent;
 	active: boolean;
 	href: string;
 	rel?: string;
