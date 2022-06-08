@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.17.2](https://github.com/themesberg/flowbite-svelte/compare/v0.17.1...v0.17.2) (2022-06-08)
+
+
+### Bug Fixes
+
+* change type string to typeof SvelteComponent ([277c3e2](https://github.com/themesberg/flowbite-svelte/commit/277c3e24201088aa051726ae16f2e12f66a8a69e))
+
 ### [0.17.1](https://github.com/themesberg/flowbite-svelte/compare/v0.17.0...v0.17.1) (2022-06-07)
 
 
