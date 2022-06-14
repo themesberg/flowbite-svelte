@@ -18,7 +18,6 @@
 		svelteflows,
 		tabs,
 		timelines,
-		tooltips,
 		topMenus,
 		footerLinks
 	} from './moduleItems';
@@ -279,9 +278,6 @@
 			<h3 class={h3Class}>
 				<a href="/tooltips">Tooltips</a>
 			</h3>
-			{#each tooltips as { href, name, rel }}
-				<SidebarList {href} {name} {rel} {sideBarListClass} />
-			{/each}
 		</Nav>
 	</Side>
 

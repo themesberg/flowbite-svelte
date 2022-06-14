@@ -88,6 +88,8 @@
 		"url": "https://github.com/themesberg/flowbite-svelte"
 	},
 	"dependencies": {
+		"@floating-ui/dom": "^0.5.3",
+		"classnames": "^2.3.1",
 		"flowbite": "^1.4.2",
 		"svelte-heros": "^2.2.2"
 	},

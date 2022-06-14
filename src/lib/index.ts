@@ -148,4 +148,3 @@ export { default as Toast } from './toasts/Toast.svelte';
 
 // Tooltips
 export { default as Tooltip } from './tooltips/Tooltip.svelte';
-export { default as LightTooltip } from './tooltips/LightTooltip.svelte';

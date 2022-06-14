@@ -507,15 +507,6 @@ test('Toast Components page should have h1', async ({ page }) => {
 // Tooltips
 test('Tooltip Components main page should have h1', async ({ page }) => {
 	await page.goto('/tooltips');
-	expect(await page.textContent('h1')).toBe('Tooltip Components');
+	expect(await page.textContent('h1')).toBe('Tooltips');
 });
 
-test('Default Tooltip page should have h1', async ({ page }) => {
-	await page.goto('/tooltips/default');
-	expect(await page.textContent('h1')).toBe('Default Tooltip');
-});
-
-test('Light Tooltip page should have h1', async ({ page }) => {
-	await page.goto('/tooltips/light');
-	expect(await page.textContent('h1')).toBe('Light Tooltip');
-});

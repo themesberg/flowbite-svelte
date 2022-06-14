@@ -3,9 +3,17 @@ layout: tooltipLayout
 ---
 
 <script>
-	import { Card, Breadcrumb } from '$lib/index';
-	let divClass = 'max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700';
-	
+  import Htwo from '../utils/Htwo.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
+import {Tooltip, Button, Table, TableDefaultRow, Breadcrumb} from '$lib/index'
+import componentProps from '../props/Tooltip.json'
+// Props table
+let items = componentProps.props
+let propHeader = ['Name', 'Type', 'Default']
+
+let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
+let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   let crumbs = [
     {
       label:'Home',
@@ -14,17 +22,123 @@ layout: tooltipLayout
     {
       label:'Tooltips',
       href:'/tooltips/'
-    },
+    }
   ]
 </script>
 
 <Breadcrumb {crumbs}/>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Tooltip Components</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Tooltips</h1>
 
-<div class="p-4">
-	<Card {divClass} img="/images/tooltip.webp" btnColor="green" header="Default Tooltip" link="/tooltips/default" btnLabel="Read more" />
+<Htwo label="Tooltip top" />
+
+<ExampleDiv>
+  <Tooltip content="Tooltip content">
+    <Button>Default tooltip</Button>
+  </Tooltip>
+</ExampleDiv>
+
+```html
+<script>
+import {Tooltip, Button} from 'flowbite-svelte'
+</script>
+
+<Tooltip content="Tooltip content">
+  <Button>Default tooltip</Button>
+</Tooltip>
+```
+
+<Htwo label="Tooltip styles" />
+
+<ExampleDiv>
+ <div class="flex gap-2">
+<Tooltip content="Tooltip content" style="light">
+  <Button>Light tooltip</Button>
+</Tooltip>
+<Tooltip content="Tooltip content" style="dark">
+  <Button>Dark tooltip</Button>
+</Tooltip>
 </div>
-<div class="p-4">
-	<Card {divClass} img="/images/tooltip.webp" btnColor="pink" header="Light Tooltip" link="/tooltips/light" btnLabel="Read more" />
+</ExampleDiv>
+
+```html
+<Tooltip content="Tooltip content" style="light">
+  <Button>Light tooltip</Button>
+</Tooltip>
+<Tooltip content="Tooltip content" style="dark">
+  <Button>Dark tooltip</Button>
+</Tooltip>
+```
+
+<Htwo label="Placement" />
+
+<ExampleDiv>
+<div class="flex gap-2">
+  <Tooltip content="Tooltip content" placement="top">
+    <Button>Tooltip top</Button>
+  </Tooltip>
+  <Tooltip content="Tooltip content" placement="right">
+    <Button>Tooltip right</Button>
+  </Tooltip>
+  <Tooltip content="Tooltip content" placement="bottom">
+    <Button>Tooltip bottom</Button>
+  </Tooltip>
+  <Tooltip content="Tooltip content" placement="left">
+    <Button>Tooltip left</Button>
+  </Tooltip>
 </div>
+</ExampleDiv>
+
+```html
+<Tooltip content="Tooltip content" placement="top">
+  <Button>Tooltip top</Button>
+</Tooltip>
+<Tooltip content="Tooltip content" placement="right">
+  <Button>Tooltip right</Button>
+</Tooltip>
+<Tooltip content="Tooltip content" placement="bottom">
+  <Button>Tooltip bottom</Button>
+</Tooltip>
+<Tooltip content="Tooltip content" placement="left">
+  <Button>Tooltip left</Button>
+</Tooltip>
+```
+
+<Htwo label="Triggering" />
+
+<ExampleDiv>
+<div class="flex gap-2">
+  <Tooltip content="Tooltip content" trigger="hover">
+    <Button>Tooltip hover</Button>
+  </Tooltip>
+  <Tooltip content="Tooltip content" trigger="click">
+    <Button>Tooltip click</Button>
+  </Tooltip>
+</div>
+</ExampleDiv>
+
+```html
+<Tooltip content="Tooltip content" trigger="hover">
+  <Button>Tooltip hover</Button>
+</Tooltip>
+<Tooltip content="Tooltip content" trigger="click">
+  <Button>Tooltip click</Button>
+</Tooltip>
+```
+
+<Htwo label="Disable arrow" />
+
+<ExampleDiv>
+  <Tooltip content="Tooltip content" arrow={false}>
+    <Button>Default tooltip</Button>
+  </Tooltip>
+</ExampleDiv>
+
+<Htwo label="Props" />
+
+<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
+ page</a> for type information.</p>
+
+<Table header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow {items} rowState='hover' />
+</Table>
