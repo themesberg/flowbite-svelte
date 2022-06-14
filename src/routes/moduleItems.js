@@ -116,10 +116,10 @@ export const timelines = [
   { href: "/timelines/activity", name: "Activity log" },
   { href: "/timelines/group", name: "Grouped"}
 ]
-export const tooltips = [
-  { href: "/tooltips/default", name: "Default" },
-  { href: "/tooltips/light", name: "Light tooltip" },
-];
+// export const tooltips = [
+//   { href: "/tooltips/default", name: "Default" },
+//   { href: "/tooltips/light", name: "Light tooltip" },
+// ];
 
 export const topMenus = [
   { id:"1", href: "/", name: "Home" },

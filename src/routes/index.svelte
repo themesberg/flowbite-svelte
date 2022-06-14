@@ -15,8 +15,7 @@
 		modals,
 		ratings,
 		tabs,
-		timelines,
-		tooltips
+		timelines
 	} from './moduleItems';
 	const handleClick = () => {
 		goto('/pages/getting-started');
@@ -326,11 +325,9 @@
 	<div class="p-4">
 		<Card img="/images/tooltip.webp" alt="Tooltips" link="/tooltips" {divClass}>
 			<span slot="paragraph">
-				{#each tooltips as { href, name }}
-					<p class={pClass}>
-						<a {href} class={aClass}>{name}</a>
-					</p>
-				{/each}
+				<p class={pClass}>
+					<a href="/tooltips" class={aClass}>Tooltips</a>
+				</p>
 			</span>
 		</Card>
 	</div>
