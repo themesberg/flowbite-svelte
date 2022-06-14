@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.17.3](https://github.com/themesberg/flowbite-svelte/compare/v0.17.2...v0.17.3) (2022-06-14)
+
+
+### Bug Fixes
+
+* update ButtonGroupItem border ([365b6d2](https://github.com/themesberg/flowbite-svelte/commit/365b6d2b21b903a8b15057a9bb009e0d3d65e884))
+
 ### [0.17.2](https://github.com/themesberg/flowbite-svelte/compare/v0.17.1...v0.17.2) (2022-06-08)
 
 
