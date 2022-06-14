@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.17.4](https://github.com/themesberg/flowbite-svelte/compare/v0.17.3...v0.17.4) (2022-06-14)
 
+### Breaking Change
+
+* Tooltip component has different structures.
 
 ### Bug Fixes
 
