@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.17.4](https://github.com/themesberg/flowbite-svelte/compare/v0.17.3...v0.17.4) (2022-06-14)
+
+
+### Bug Fixes
+
+* update Tooltip component ([d0cc06e](https://github.com/themesberg/flowbite-svelte/commit/d0cc06e991e5677463a5625b4abaee2a6edef3fc))
+
 ### [0.17.3](https://github.com/themesberg/flowbite-svelte/compare/v0.17.2...v0.17.3) (2022-06-14)
 
 
