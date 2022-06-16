@@ -45,6 +45,9 @@ export { default as DarkMode } from './darkmode/DarkMode.svelte';
 
 // Dropdown
 export { default as Dropdown } from './dropdowns/DropdownDefault.svelte';
+export { default as DropdownDivider } from './dropdowns/DropdownDivider.svelte';
+export { default as DropdownHeader } from './dropdowns/DropdownHeader.svelte';
+export { default as DropdownItem } from './dropdowns/DropdownItem.svelte';
 export { default as ImgDropdown } from './dropdowns/ImgDropdown.svelte';
 export { dropdownIdStore } from './dropdowns/dropdownStores.js';
 

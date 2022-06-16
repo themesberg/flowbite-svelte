@@ -5,7 +5,7 @@ layout: dropdownLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import { Dropdown, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
+  import { Dropdown, DropdownDivider, DropdownHeader, DropdownItem, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
   import componentProps from '../props/DropdownDefault.json'
   // Props table
   export let dropdownItems = componentProps.props
@@ -59,6 +59,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       href:'/dropdowns/default'
     }
   ]
+
+  const onClick = (name)=>(e)=>alert(name)
 </script>
 
 <Breadcrumb {crumbs}/>
@@ -70,35 +72,26 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <p>* Adding a dropdown id is recommended.</p>
 
 <ExampleDiv>
-<Dropdown {items} label="Dropdown button" id="drop1"/>
+  <Dropdown label="Dropdown button">
+    <DropdownItem on:click={onClick('dashboard')}>Dashboard</DropdownItem>
+    <DropdownItem on:click={onClick('Seggints')}>Settings</DropdownItem>
+    <DropdownItem on:click={onClick('Earnings')}>Earnings</DropdownItem>
+    <DropdownItem on:click={onClick('Sign out')}>Sign out</DropdownItem>
+  </Dropdown>
 </ExampleDiv>
 
 ```html
 <script>
-  import { Dropdown } from 'flowbite-svelte';
-  let items = [
-    {
-      href: "/",
-      name: "Dashboard",
-    },
-    {
-      href: "/",
-      name: "Settings",
-    },
-    {
-      href: "/",
-      name: "Sign out",
-    },
-  ];
+  
 </script>
 
-<Dropdown {items} label="Dropdown button" id="drop1"/>
 ```
 
 <Htwo label="Dropdown divider" />
 
 <ExampleDiv>
-<Dropdown items={items2} color="red" label="Dropdown button" id="drop2"/>
+
+
 </ExampleDiv>
 
 ```html
