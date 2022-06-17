@@ -1,6 +1,6 @@
 <script lang="ts">
 	export let id: string = '';
-	export let labelClass: string = 'only';
+	export let labelClass: string = 'sr-only';
 	export let iconClass: string = 'w-5 h-5 text-gray-500 dark:text-gray-400';
 	export let iconDivClass: string =
 		'flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none';
