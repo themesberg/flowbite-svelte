@@ -5,8 +5,10 @@ layout: accordionLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import TableProp from '../utils/TableProp.svelte'
+  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import {ArrowCircleUp, ArrowCircleDown} from 'svelte-heros'
-  import { AccordionItem, AccordionFlush, Table, TableDefaultRow, Breadcrumb } from "$lib/index";
+  import { AccordionItem, AccordionFlush, Breadcrumb } from "$lib/index";
   import accordionProps from '../props/AccordionItem.json'
   import accordionProps2 from '../props/AccordionFlush.json'
    // Props table
@@ -345,12 +347,12 @@ body
 
 <h3>AccordionItem</h3>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
-</Table>
+</TableProp>
 
 <h3>AccordionFlush</h3>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
-</Table>
+</TableProp>

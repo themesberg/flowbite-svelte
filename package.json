@@ -96,5 +96,11 @@
 	"engines": {
 		"npm": ">=7.0.0",
 		"node": ">=16.0.0"
-	}
+	},
+	"contributors": [
+    "Zoltán Szőgyényi <zoltan@themesberg.com>",
+    "Robert Tanislav <robert@themesberg.com>",
+    "Victor Cordos <victor@themesberg.com>",
+		"Shinichi Okada <okada.shin@gmail.com>"
+  ]
 }

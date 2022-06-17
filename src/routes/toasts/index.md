@@ -5,7 +5,9 @@ layout: toastLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
-import { Toast, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
+  import TableProp from '../utils/TableProp.svelte'
+  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+import { Toast, Breadcrumb } from "$lib/index"
 import { quintOut, elasticOut } from 'svelte/easing';
 import {Fire, CheckCircle, PlusCircle,Archive} from 'svelte-heros'
 import componentProps from '../props/Toast.json'
@@ -240,6 +242,6 @@ import {FireIcon, CheckCircleIcon, PlusCircleIcon,ArchiveIcon} from 'svelte-hero
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
-</Table>
+</TableProp>

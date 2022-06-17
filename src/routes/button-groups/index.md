@@ -5,7 +5,9 @@ layout: buttongroupLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import {ButtonGroup, ButtonGroupItem, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
+  import TableProp from '../utils/TableProp.svelte'
+  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import {ButtonGroup, ButtonGroupItem, Breadcrumb } from '$lib/index';
 	import { User, Adjustments, CloudDownload } from 'svelte-heros';
   import componentProps from '../props/ButtonGroup.json'
   import componentProps2 from '../props/ButtonGroupItem.json'
@@ -177,12 +179,12 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <h3>ButtonGroup</h3>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
-</Table>
+</TableProp>
 
 <h3>ButtonGroupItem</h3>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
-</Table>
+</TableProp>

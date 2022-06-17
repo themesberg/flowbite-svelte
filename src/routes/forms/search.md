@@ -5,12 +5,15 @@ layout: formLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import { Search, SimpleSearch, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
+  import TableProp from '../utils/TableProp.svelte'
+  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import { Search, SimpleSearch, Breadcrumb } from '$lib/index'
   import componentProps1 from '../props/Search.json'
   import componentProps2 from '../props/SimpleSearch.json'
 
   let items1 = componentProps1.props
   let items2 = componentProps2.props
+
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -79,12 +82,12 @@ on:submit
 
 <h3>Search</h3>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items1} rowState='hover' />
-</Table>
+</TableProp>
 
 <h3>SimpleSearch</h3>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
-</Table>
+</TableProp>

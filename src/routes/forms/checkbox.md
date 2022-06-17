@@ -4,8 +4,10 @@ layout: formLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-    import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import { Checkbox, CheckboxInline ,Table, TableDefaultRow, Breadcrumb } from '$lib/index'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import TableProp from '../utils/TableProp.svelte'
+  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import { Checkbox, CheckboxInline ,Breadcrumb } from "$lib/index"
   import componentProps from '../props/Checkbox.json'
   let items = componentProps.props
 
@@ -393,7 +395,7 @@ let checkboxOptions6 =[
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items} rowState='hover' />
-</Table>
+</TableProp>
 

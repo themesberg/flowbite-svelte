@@ -1,20 +1,22 @@
 <script lang="ts">
-	import TableDefaultRow from './TableDefaultRow.svelte';
+	import classNames from 'classnames';
+	import { setContext } from 'svelte';
+	export let divClass: string = 'relative overflow-x-auto shadow-md sm:rounded-lg';
 	export let inputValue: string = '';
+	export let striped: boolean = false;
+	export let hoverable: boolean = false;
 	export let menuItems: Array<Array<string>>;
 	export let filteredItems: Array<Array<string>> = [];
 	export let placeholder: string = 'Search';
+
+	$: setContext('striped', striped);
+	$: setContext('hoverable', hoverable);
 	const handleInput = () => {
 		let result = (filteredItems = menuItems.filter((item) =>
 			item[0].toLowerCase().match(inputValue.toLowerCase())
 		));
 		return result;
 	};
-	export let header: Array<string>;
-	export let divClass: string = 'relative overflow-x-auto shadow-md sm:rounded-lg';
-	export let tableClass: string = 'w-full text-sm text-left text-gray-500 dark:text-gray-400';
-	export let theadClass: string =
-		'text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400';
 </script>
 
 <div class={divClass}>
@@ -44,23 +46,10 @@
 			/>
 		</div>
 	</div>
-
-	<table class={tableClass}>
-		<thead class={theadClass}>
-			<tr>
-				{#each header as column}
-					<th scope="col" class="px-6 py-3">
-						{column}
-					</th>
-				{/each}
-			</tr>
-		</thead>
-		<tbody>
-			{#if filteredItems.length > 0}
-				<TableDefaultRow items={filteredItems} html />
-			{:else}
-				<TableDefaultRow items={menuItems} html />
-			{/if}
-		</tbody>
+	<table
+		{...$$restProps}
+		class={classNames('w-full text-left text-sm text-gray-500 dark:text-gray-400', $$props.class)}
+	>
+		<slot />
 	</table>
 </div>

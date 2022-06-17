@@ -5,7 +5,9 @@ layout: modalLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import { SmallModal, ModalButton, modalIdStore, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
+  import TableProp from '../utils/TableProp.svelte'
+  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import { SmallModal, ModalButton, modalIdStore, Breadcrumb } from '$lib/index';
   import { goto } from "$app/navigation";
   import componentProps1 from '../props/ModalButton.json'
   import componentProps2 from '../props/SmallModal.json'
@@ -257,12 +259,12 @@ const handlebtnS2 = () => {
 
 <h3>ModalButton</h3>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items1} rowState='hover' />
-</Table>
+</TableProp>
 
 <h3>SmallModal</h3>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
-</Table>
+</TableProp>

@@ -4,9 +4,11 @@ layout: formLayout
 
 <script>
 import Htwo from '../utils/Htwo.svelte'
-  import ExampleDiv from '../utils/ExampleDiv.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
+import TableProp from '../utils/TableProp.svelte'
+import TableDefaultRow from '../utils/TableDefaultRow.svelte'
 import { onMount } from 'svelte';
-import { Input, Iconinput, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
+import { Input, Iconinput, Breadcrumb } from "$lib/index"
 import { AtSymbol , Mail } from 'svelte-heros'
 import componentProps1 from '../props/Input.json'
 let items1 = componentProps1.props
@@ -163,13 +165,13 @@ onMount(() => {
 
 <h3>Input</h3>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items1} rowState='hover' />
-</Table>
+</TableProp>
 
 <h3>Iconinput</h3>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
-</Table>
+</TableProp>
 

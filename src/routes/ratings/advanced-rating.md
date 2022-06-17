@@ -4,8 +4,10 @@ layout: ratingLayout
 
 <script>
 	import Htwo from '../utils/Htwo.svelte'
-	  import ExampleDiv from '../utils/ExampleDiv.svelte'
-	import { Rating, AdvancedRating, ScoreRating, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
+	import ExampleDiv from '../utils/ExampleDiv.svelte'
+	import TableProp from '../utils/TableProp.svelte'
+  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+	import { Rating, AdvancedRating, ScoreRating, Breadcrumb } from '$lib/index';
 	import { ThumbUp } from 'svelte-heros';
 	import componentProps from '../props/AdvancedRating.json'
   // Props table
@@ -163,6 +165,6 @@ layout: ratingLayout
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
-</Table>
+</TableProp>

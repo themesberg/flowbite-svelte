@@ -5,7 +5,9 @@ layout: avatarLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import { Avatar, Table, TableDefaultRow, Breadcrumb } from "$lib/index"
+  import TableProp from '../utils/TableProp.svelte'
+  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import { Avatar, Breadcrumb } from "$lib/index"
   import alertProp from '../props/Avatar.json'
   // Props table
   export let items = alertProp.props
@@ -228,6 +230,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
-</Table>
+</TableProp>
