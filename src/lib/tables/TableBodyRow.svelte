@@ -1,11 +1,13 @@
 <script lang="ts">
 	import classNames from 'classnames';
 	import { getContext } from 'svelte';
+	export let trClass: string = 'bg-white dark:border-gray-700 dark:bg-gray-800';
 </script>
 
 <tr
 	{...$$restProps}
 	class={classNames(
+		trClass,
 		{
 			'odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700':
 				getContext('striped') === true,

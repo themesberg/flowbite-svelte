@@ -4,8 +4,10 @@ layout: dropdownLayout
 
 <script lang="ts">
   import Htwo from '../utils/Htwo.svelte'
-    import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import { ImgDropdown, Avatar, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import TableProp from '../utils/TableProp.svelte'
+  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import { ImgDropdown, Avatar, Breadcrumb } from '$lib/index';
   import componentProps from '../props/ImgDropdown.json'
   // Props table
   export let dropdownItems = componentProps.props
@@ -196,6 +198,6 @@ layout: dropdownLayout
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={dropdownItems} rowState='hover' />
-</Table>
+</TableProp>

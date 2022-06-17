@@ -5,7 +5,9 @@ layout: tabLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
-import { UnderlineTabs, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
+  import TableProp from '../utils/TableProp.svelte'
+  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+import { UnderlineTabs, Breadcrumb } from '$lib/index';
 import componentProps from '../props/UnderlineTabs.json'
   // Props table
   let items = componentProps.props
@@ -107,6 +109,6 @@ let tabs = [
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
-</Table>
+</TableProp>

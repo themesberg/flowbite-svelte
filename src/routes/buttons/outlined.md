@@ -5,7 +5,9 @@ layout: buttonLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import { Button , Table, TableDefaultRow, Breadcrumb } from '$lib/index';
+  import TableProp from '../utils/TableProp.svelte'
+  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import { Button , Breadcrumb } from '$lib/index';
   import componentProps from '../props/Button.json'
   // Props table
   let items = componentProps.props
@@ -104,6 +106,6 @@ import { Button } from "flowbite-svelte";
  page</a> for type information.</p>
 
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
-</Table>
+</TableProp>

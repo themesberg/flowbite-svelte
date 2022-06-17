@@ -5,6 +5,8 @@ layout: iconLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import TableProp from '../utils/TableProp.svelte'
+  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { Breadcrumb } from '$lib/index'
   import {
     Adjustments,

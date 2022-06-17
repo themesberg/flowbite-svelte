@@ -4,9 +4,11 @@ layout: formLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-    import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import TableProp from '../utils/TableProp.svelte'
+  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
 import { onMount } from 'svelte';
-import { Fileupload, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
+import { Fileupload, Breadcrumb } from "$lib/index"
 
 import componentProps from '../props/Fileupload.json'
 let items = componentProps.props
@@ -75,6 +77,6 @@ let fileuploadprops2 = {
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
-</Table>
+</TableProp>

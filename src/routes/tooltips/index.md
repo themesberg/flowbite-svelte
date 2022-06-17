@@ -5,7 +5,9 @@ layout: tooltipLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
-import {Tooltip, Button, Table, TableDefaultRow, Breadcrumb} from '$lib/index'
+  import TableProp from '../utils/TableProp.svelte'
+  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+import {Tooltip, Button, Breadcrumb} from '$lib/index'
 import componentProps from '../props/Tooltip.json'
 // Props table
 let items = componentProps.props
@@ -139,6 +141,6 @@ import {Tooltip, Button} from 'flowbite-svelte'
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
-</Table>
+</TableProp>

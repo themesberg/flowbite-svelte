@@ -5,7 +5,9 @@ layout: timelineLayout
 <script lang="ts">
 	import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
-	import { TimelineItemHorizontal, TimelineHorizontal, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
+	import TableProp from '../utils/TableProp.svelte'
+  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+	import { TimelineItemHorizontal, TimelineHorizontal, Breadcrumb } from '$lib/index';
 	import { Calendar, Adjustments } from 'svelte-heros';
 	import componentProps1 from '../props/TimelineItemHorizontal.json'
   import componentProps2 from '../props/TimelineHorizontal.json'
@@ -122,12 +124,12 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <h3>TimelineItemHorizontal</h3>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items1} rowState='hover' />
-</Table>
+</TableProp>
 
 <h3>TimelineHorizontal</h3>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
-</Table>
+</TableProp>
