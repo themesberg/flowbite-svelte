@@ -5,7 +5,9 @@ layout: navbarLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import { Table, TableDefaultRow, Breadcrumb, Button, Navbar, NavBrand, NavLi, NavUl, NavHamburger, ImgDropdown, Avatar } from '$lib/index';
+  import TableProp from '../utils/TableProp.svelte'
+  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import { Breadcrumb, Button, Navbar, NavBrand, NavLi, NavUl, NavHamburger, ImgDropdown, Avatar } from '$lib/index';
   import componentProps from '../props/Navbar.json'
 	import componentProps2 from '../props/NavBrand.json'
 	import componentProps3 from '../props/NavLi.json'
@@ -266,24 +268,24 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <h3>Navbar</h3>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
-</Table>
+</TableProp>
 
 <h3>NavBrand</h3>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
-</Table>
+</TableProp>
 
 <h3>NavLi</h3>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items3} rowState='hover' />
-</Table>
+</TableProp>
 
 <h3>NavUl</h3>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items4} rowState='hover' />
-</Table>
+</TableProp>

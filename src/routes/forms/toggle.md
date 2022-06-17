@@ -4,9 +4,11 @@ layout: formLayout
 
 <script>
 import Htwo from '../utils/Htwo.svelte'
-  import ExampleDiv from '../utils/ExampleDiv.svelte'
+import ExampleDiv from '../utils/ExampleDiv.svelte'
+import TableProp from '../utils/TableProp.svelte'
+import TableDefaultRow from '../utils/TableDefaultRow.svelte'
 import { onMount } from 'svelte';
-import { Toggle, Table, TableDefaultRow, Breadcrumb } from '$lib/index'
+import { Toggle, Breadcrumb } from "$lib/index"
 import { AtSymbol , Mail } from 'svelte-heros'
 import componentProps from '../props/Toggle.json'
 let items = componentProps.props
@@ -184,6 +186,6 @@ let props4 = {
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
-</Table>
+</TableProp>

@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.18.0](https://github.com/themesberg/flowbite-svelte/compare/v0.17.6...v0.18.0) (2022-06-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* new Table components
+
+### Features
+
+* add simeple search component ([945c27b](https://github.com/themesberg/flowbite-svelte/commit/945c27b5299ae52f9c160cbda74a0b0540d98be8))
+* new Table components ([b2d4c8c](https://github.com/themesberg/flowbite-svelte/commit/b2d4c8cca892da8e18fd0e2f688ccc9280bc8df8))
+
+
+### Bug Fixes
+
+* add SimpleSearch to index.ts ([64a8f49](https://github.com/themesberg/flowbite-svelte/commit/64a8f496a22948874dac2695e96ba397e53026b5))
+* update Tabel component, add TableHead, TableBody, TableHeadCell, TabelRow ([09b7ad9](https://github.com/themesberg/flowbite-svelte/commit/09b7ad971a2d5ba01eca463e251f2c078a86b708))
+* wrong label class name ([39735b3](https://github.com/themesberg/flowbite-svelte/commit/39735b3a85285bd69d064aef22145d60d278da46))
+
+### [0.17.6](https://github.com/themesberg/flowbite-svelte/compare/v0.17.5...v0.17.6) (2022-06-17)
+
+
+### Bug Fixes
+
+* removed $app/env browser from Tooltip component ([604a1e0](https://github.com/themesberg/flowbite-svelte/commit/604a1e075c6333c5532e04916a20500a31fb4716))
+
+### [0.17.5](https://github.com/themesberg/flowbite-svelte/compare/v0.17.4...v0.17.5) (2022-06-16)
+
 ### [0.17.4](https://github.com/themesberg/flowbite-svelte/compare/v0.17.3...v0.17.4) (2022-06-14)
 
 ### Breaking Change

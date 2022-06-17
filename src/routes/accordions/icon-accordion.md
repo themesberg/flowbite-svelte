@@ -5,7 +5,9 @@ layout: accordionLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import { AccordionItem, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
+  import TableProp from '../utils/TableProp.svelte'
+  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import { AccordionItem, Breadcrumb } from '$lib/index';
   import { Archive, Beaker } from "svelte-heros";
   import accordionProps from '../props/AccordionItem.json'
   // Props table
@@ -123,7 +125,7 @@ npm i svelte-heros
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
-</Table>
+</TableProp>
 

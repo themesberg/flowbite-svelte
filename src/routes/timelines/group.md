@@ -5,7 +5,9 @@ layout: timelineLayout
 <script lang="ts">
 	import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
-	import { Group, GroupItem, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
+	import TableProp from '../utils/TableProp.svelte'
+  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+	import { Group, GroupItem, Breadcrumb } from '$lib/index';
 	import componentProps1 from '../props/Group.json'
   import componentProps2 from '../props/GroupItem.json'
   let items1 = componentProps1.props
@@ -106,12 +108,12 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <h3>Group</h3>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items1} rowState='hover' />
-</Table>
+</TableProp>
 
 <h3>GroupItem</h3>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
-</Table>
+</TableProp>

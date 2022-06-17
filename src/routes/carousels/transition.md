@@ -5,7 +5,9 @@ layout: carouselLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import { CarouselTransition, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
+  import TableProp from '../utils/TableProp.svelte'
+  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import { CarouselTransition, Breadcrumb } from '$lib/index';
   import { quartInOut, sineInOut, bounceInOut, quintOut } from 'svelte/easing';
   import { images } from './imageData';
   // import componentProps from '../props/Carousel.json'

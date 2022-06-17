@@ -4,8 +4,10 @@ layout: alertLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import { Alert, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import TableProp from '../utils/TableProp.svelte'
+  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import { Alert, Breadcrumb } from '$lib/index';
   import {
     XCircle, Eye, InformationCircle
   } from "svelte-heros";
@@ -242,6 +244,6 @@ Import Alert and set variables in the script tag.
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
-</Table>
+</TableProp>

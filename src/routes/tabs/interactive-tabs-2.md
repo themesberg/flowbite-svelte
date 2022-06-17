@@ -5,8 +5,10 @@ layout: tabLayout
 <script>
 	import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+	import TableProp from '../utils/TableProp.svelte'
+  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { InteractiveTabHead, TabContent, Card, Timeline,
-		TimelineItem, Table, TableDefaultRow, Breadcrumb } from '$lib/index';
+		TimelineItem, Breadcrumb } from '$lib/index';
 	import componentProps1 from '../props/InteractiveTabHead.json'
   import componentProps2 from '../props/TabContent.json'
   let items1 = componentProps1.props
@@ -140,12 +142,12 @@ import { InteractiveTabHead, TabContent, Card, Timeline,
 
 <h3>InteractiveTabHead</h3>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items1} rowState='hover' />
-</Table>
+</TableProp>
 
 <h3>TabContent</h3>
 
-<Table header={propHeader} {divClass} {theadClass}>
+<TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
-</Table>
+</TableProp>

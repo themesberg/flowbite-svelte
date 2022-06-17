@@ -68,6 +68,7 @@ export { default as RadioInline } from './forms/RadioInline.svelte';
 export { default as Radio } from './forms/Radio.svelte';
 export { default as Range } from './forms/Range.svelte';
 export { default as Search } from './forms/Search.svelte';
+export { default as SimpleSearch } from './forms/SimpleSearch.svelte';
 export { default as Select } from './forms/Select.svelte';
 export { default as Textarea } from './forms/Textarea.svelte';
 export { default as Toggle } from './forms/Toggle.svelte';
@@ -121,7 +122,11 @@ export { default as Spinner } from './spinners/Spinner.svelte';
 
 // Tables
 export { default as Table } from './tables/Table.svelte';
-export { default as TableDefaultRow } from './tables/TableDefaultRow.svelte';
+export { default as TableBody } from './tables/TableBody.svelte'
+export { default as TableBodyCell } from './tables/TableBodyCell.svelte'
+export { default as TableBodyRow } from './tables/TableBodyRow.svelte'
+export { default as TableHead } from './tables/TableHead.svelte'
+export { default as TableHeadCell } from './tables/TableHeadCell.svelte'
 export { default as TableSearch } from './tables/TableSearch.svelte';
 
 // Tabs
