@@ -1,6 +1,5 @@
 <script lang="ts">
 	import classNames from 'classnames';
-	import { browser } from '$app/env';
 	import { clickOutside } from '$lib/utils/clickOutside';
 	import {
 		computePosition,
@@ -62,9 +61,9 @@
 			placement: floatingPlacement({ placement })
 		}).then((data) => (placementData = data));
 	let attachedScroll: boolean = false;
-	$: browser && tooltipRef && open && updatePosition();
+	$: tooltipRef && open && updatePosition();
 	$: {
-		if (browser && open && !attachedScroll) {
+		if (open && !attachedScroll) {
 			attachedScroll = true;
 			window.addEventListener('scroll', updatePosition, true);
 		} else if (!open && attachedScroll) {
