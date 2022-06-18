@@ -36,9 +36,9 @@ layout: formLayout
 
 <Breadcrumb {crumbs}/>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Search Components</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Search</h1>
 
-<Htwo label="Examples" />
+<Htwo label="Default search" />
 
 <ExampleDiv>
 <Search />
@@ -52,9 +52,7 @@ layout: formLayout
 <Search />
 ```
 
-<h1 class="text-3xl w-full dark:text-white py-8">SimpleSearch Components</h1>
-
-<Htwo label="Examples" />
+<Htwo label="Simple Search" />
 
 <ExampleDiv>
 <SimpleSearch />
