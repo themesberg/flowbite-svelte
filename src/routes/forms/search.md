@@ -7,16 +7,23 @@ layout: formLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Search, SimpleSearch, Breadcrumb } from '$lib/index'
-  import componentProps1 from '../props/Search.json'
-  import componentProps2 from '../props/SimpleSearch.json'
+  import { Search, SimpleSearch, VoiceSearch, Breadcrumb } from '$lib/index'
 
-  let items1 = componentProps1.props
-  let items2 = componentProps2.props
+  import searchComponentProps from '../props/Search.json'
+  import simpleSearchComponentProps from '../props/SimpleSearch.json'
+  import voiceSearchcomponentProps from '../props/VoiceSearch.json'
+
+  let searchItems = searchComponentProps.props
+  let simpleSearchItems = simpleSearchComponentProps.props
+  let voiceSearchItems = voiceSearchcomponentProps.props
 
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
+  function handleVoiceBtn() {
+    alert('You clicked voice button');
+  }
 
   let crumbs = [
     {
@@ -36,7 +43,7 @@ layout: formLayout
 
 <Breadcrumb {crumbs}/>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Search</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Search Components</h1>
 
 <Htwo label="Default search" />
 
@@ -66,6 +73,23 @@ layout: formLayout
 <SimpleSearch />
 ```
 
+<Htwo label="Voice Search" />
+
+<ExampleDiv>
+<VoiceSearch on:handleVoiceBtn={handleVoiceBtn}/>
+</ExampleDiv>
+
+```html
+<script>
+  import { VoiceSearch } from 'flowbite-svelte'
+  
+  function handleVoiceBtn() {
+    alert('You clicked voice button');
+  }
+</script>
+
+<VoiceSearch on:handleVoiceBtn={handleVoiceBtn}/>
+```
 
 <Htwo label="Event handlers" />
 
@@ -81,11 +105,17 @@ on:submit
 <h3>Search</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={items1} rowState='hover' />
+  <TableDefaultRow items={searchItems} rowState='hover' />
 </TableProp>
 
-<h3>SimpleSearch</h3>
+<h3>Simple Search</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={items2} rowState='hover' />
+  <TableDefaultRow items={simpleSearchItems} rowState='hover' />
+</TableProp>
+
+<h3>Voice Search</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={voiceSearchItems} rowState='hover' />
 </TableProp>
