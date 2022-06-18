@@ -77,6 +77,6 @@
 	buttonClass += ' items-center inline-flex';
 </script>
 
-<button {type} class="{buttonClass} {$$props.class ? $$props.class : ''}" on:click>
+<button {type} class="{buttonClass} {$$props.class ? $$props.class : ''}" on:click {disabled}>
 	<slot>Read more</slot>
 </button>
