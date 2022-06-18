@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.18.1](https://github.com/themesberg/flowbite-svelte/compare/v0.18.0...v0.18.1) (2022-06-18)
+
+
+### Features
+
+* add voice search component ([8e6e610](https://github.com/themesberg/flowbite-svelte/commit/8e6e6101fb54c5307a4d3e32cf61042308532cae))
+
 ## [0.18.0](https://github.com/themesberg/flowbite-svelte/compare/v0.17.6...v0.18.0) (2022-06-17)
 
 
