@@ -17,25 +17,26 @@ Closes # <!-- Issue # here -->
 
 ## ✅ Checks
 <!-- Make sure your pr passes the tests and do check the following fields as needed - -->
+
 - [ ] My pull request adheres to the code style of this project
 - [ ] My code requires changes to the documentation
 - [ ] I have updated the documentation as required
 - [ ] All the tests have passed
 - [ ] My pull request is based on the latest version
 
-## ℹ Additional Information
-<!-- Any additional information like breaking changes, dependencies added, screenshots, comparisons between new and old behavior, etc. -->
-
 If your branch is behind the upstream master, I will have difficulties to merge the request. Please fetch the latest version of the branch:
 
 ```sh
 git checkout your-branch
-git pull upstream master
+git pull upstream main
 ```
 
 or
 
 ```sh
 git checkout your-branch
-git pull --rebase upstream master
+git pull --rebase upstream main
 ```
+
+## ℹ Additional Information
+<!-- Any additional information like breaking changes, dependencies added, screenshots, comparisons between new and old behavior, etc. -->
