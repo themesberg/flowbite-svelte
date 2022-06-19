@@ -19,7 +19,7 @@
 	let buttonClass: string;
 	let round: string = rounded ? 'rounded-full' : 'rounded-lg';
 
-	switch (btnColor) {
+	$: switch (btnColor) {
 		default:
 		case 'blue':
 			buttonClass = `text-white text-center font-medium ${round} ${textSize} ${paddings}`;
