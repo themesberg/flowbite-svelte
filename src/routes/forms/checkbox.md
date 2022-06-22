@@ -182,8 +182,9 @@ let checkboxOptions= [
   }
 ]
 </script>
-
-<Checkbox options={checkboxOptions} {legend} />
+{#each checkboxOptions as option}
+  <Checkbox options={checkboxOptions} {legend} />
+{/each}
 ```
 
 <Htwo label="Disabled state" />
