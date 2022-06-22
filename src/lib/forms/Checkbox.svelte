@@ -18,8 +18,8 @@
 </script>
 
 <input
+	{...$$restProps}
 	type="checkbox"
 	bind:checked
 	class={classNames(inputClass, colorClasses[color], $$props.class)}
-	{...$$restProps}
 />
