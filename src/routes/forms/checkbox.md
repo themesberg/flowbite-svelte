@@ -15,9 +15,9 @@ layout: formLayout
   let items2 = componentProps2.props
   let items3 = componentProps3.props
 
-let propHeader = ['Name', 'Type', 'Default']
-let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  let propHeader = ['Name', 'Type', 'Default']
+  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
+  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
   let crumbs = [
     {
@@ -43,12 +43,12 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <ExampleDiv>
 <div class="flex items-center mb-4">
-<Checkbox id='default-checkbox' value='' />
-<Label for='default-checkbox' class='ml-2'>Default checkbox</Label>
+  <Checkbox id='default-checkbox' value='' />
+  <Label for='default-checkbox' class='ml-2'>Default checkbox</Label>
 </div>
 <div class="flex items-center mb-4">
-<Checkbox checked id='checked-checkbox' value='' />
-<Label for='checked-checkbox' class='ml-2'>Checked state</Label>
+  <Checkbox checked id='checked-checkbox' value='' />
+  <Label for='checked-checkbox' class='ml-2'>Checked state</Label>
 </div>
 </ExampleDiv>
 
@@ -58,12 +58,12 @@ import { Checkbox, Label, Helper } from 'flowbite-svelte'
 </script>
 
 <div class="flex items-center mb-4">
-<Checkbox id='default-checkbox' value='' />
-<Label for='default-checkbox' class='ml-2'>Default checkbox</Label>
+  <Checkbox id='default-checkbox' value='' />
+  <Label for='default-checkbox' class='ml-2'>Default checkbox</Label>
 </div>
 <div class="flex items-center mb-4">
-<Checkbox checked id='checked-checkbox' value='' />
-<Label for='checked-checkbox' class='ml-2'>Checked state</Label>
+  <Checkbox checked id='checked-checkbox' value='' />
+  <Label for='checked-checkbox' class='ml-2'>Checked state</Label>
 </div>
 ```
 
