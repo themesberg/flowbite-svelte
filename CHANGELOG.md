@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.18.3](https://github.com/themesberg/flowbite-svelte/compare/v0.18.2...v0.18.3) (2022-06-22)
+
+
+### Bug Fixes
+
+* update Input component ([94df473](https://github.com/themesberg/flowbite-svelte/commit/94df473935baaa4f22124ceb0d6501a1359bd4b4))
+
 ### [0.18.2](https://github.com/themesberg/flowbite-svelte/compare/v0.18.1...v0.18.2) (2022-06-22)
 
 
