@@ -8,7 +8,7 @@ layout: dropdownLayout
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
 
-  import { Dropdown, DropdownDivider, DropdownHeader, DropdownItem, Breadcrumb } from '$lib/index';
+  import {Tooltip,Button, Dropdown, DropdownDivider, DropdownHeader, DropdownItem, Breadcrumb } from '$lib/index';
   import componentProps from '../props/DropdownDefault.json'
   // Props table
   export let dropdownItems = componentProps.props
@@ -75,12 +75,15 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <p>* Adding a dropdown id is recommended.</p>
 
 <ExampleDiv>
-  <Dropdown label="Dropdown button">
-    <DropdownItem on:click={onClick('dashboard')}>Dashboard</DropdownItem>
-    <DropdownItem on:click={onClick('Seggints')}>Settings</DropdownItem>
-    <DropdownItem on:click={onClick('Earnings')}>Earnings</DropdownItem>
-    <DropdownItem on:click={onClick('Sign out')}>Sign out</DropdownItem>
-  </Dropdown>
+ <DropdownItem>Dashboard</DropdownItem>
+      <Dropdown label="Dropdown button test">
+      hi
+      there
+        <DropdownItem>Dashboard</DropdownItem>
+        <DropdownItem>Settings</DropdownItem>
+        <DropdownItem>Earnings</DropdownItem>
+        <DropdownItem>Sign out</DropdownItem>
+      </Dropdown>
 </ExampleDiv>
 
 ```html
