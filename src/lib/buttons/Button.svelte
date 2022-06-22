@@ -19,7 +19,7 @@
 	let buttonClass: string;
 	let round: string = rounded ? 'rounded-full' : 'rounded-lg';
 
-	switch (btnColor) {
+	$: switch (btnColor) {
 		default:
 		case 'blue':
 			buttonClass = `text-white text-center font-medium ${round} ${textSize} ${paddings}`;
@@ -77,6 +77,6 @@
 	buttonClass += ' items-center inline-flex';
 </script>
 
-<button {type} class="{buttonClass} {$$props.class ? $$props.class : ''}" on:click>
+<button {type} class="{buttonClass} {$$props.class ? $$props.class : ''}" on:click {disabled}>
 	<slot>Read more</slot>
 </button>

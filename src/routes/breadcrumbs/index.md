@@ -38,7 +38,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 ```html
 <script>
-  import { Breadcrumb } from '$lib/index'
+  import { Breadcrumb } from 'flowbite-svelte'
   let crumbs = [
     {
       label:'Home',
