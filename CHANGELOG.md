@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.18.2](https://github.com/themesberg/flowbite-svelte/compare/v0.18.1...v0.18.2) (2022-06-22)
+
+
+### Features
+
+* make button styles reactive ([d74dd9b](https://github.com/themesberg/flowbite-svelte/commit/d74dd9b37c58716e33ca72ce5058b557a6b43ced))
+
+
+### Bug Fixes
+
+* make disabled button unclickable ([df1c66d](https://github.com/themesberg/flowbite-svelte/commit/df1c66d08e6090a66cff12d2d41f6b72a93324dc))
+* update checkbox, add Label and Helper components, update checkbox page ([07de620](https://github.com/themesberg/flowbite-svelte/commit/07de6208e256cb364d9ae1ed02b321168119514d))
+
 ### [0.18.1](https://github.com/themesberg/flowbite-svelte/compare/v0.18.0...v0.18.1) (2022-06-18)
 
 
