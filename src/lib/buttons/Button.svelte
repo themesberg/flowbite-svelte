@@ -46,6 +46,15 @@
 		| 'purple'
 		| null = null;
 	export let positionInGroup: 'start' | 'middle' | 'end' | null = null;
+	export let outlineStyle:
+		| 'default'
+		| 'dark'
+		| 'green'
+		| 'red'
+		| 'yellow'
+		| 'purple'
+		| 'white'
+		| null = null;
 	const colorClasses = {
 		blue: 'text-white bg-blue-700 border border-transparent hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 disabled:hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 dark:disabled:hover:bg-blue-600',
 		alternative:
@@ -102,15 +111,6 @@
 		purple:
 			'text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80'
 	};
-	export let outlineStyle:
-		| 'default'
-		| 'dark'
-		| 'green'
-		| 'red'
-		| 'yellow'
-		| 'purple'
-		| 'white'
-		| null = null;
 	const outlineClasses = {
 		default:
 			'text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300',
