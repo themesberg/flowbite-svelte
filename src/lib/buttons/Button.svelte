@@ -102,6 +102,19 @@
 		purple:
 			'text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80'
 	};
+	export let outlineStyle: 'default' | 'dark' | 'green' | 'red' | 'yellow' | 'purple' | null = null;
+	const outlineClasses = {
+		default:
+			'text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300',
+		dark: 'text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300',
+		green:
+			'text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 ',
+		red: 'text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300',
+		yellow:
+			'text-yellow-400 hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300',
+		purple:
+			'text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300'
+	};
 	const sizeClasses = {
 		xs: 'text-xs px-2 py-1',
 		sm: 'text-sm px-3 py-1.5',
@@ -126,10 +139,15 @@
 	class={classNames(
 		'group flex h-min w-fit items-center justify-center p-0.5 text-center font-medium focus:z-10',
 		pill ? 'rounded-full' : 'rounded-lg',
-		!gradientMonochrome && !gradientDuoTone && !coloredShadow && colorClasses[color],
+		!gradientMonochrome &&
+			!gradientDuoTone &&
+			!coloredShadow &&
+			!outlineStyle &&
+			colorClasses[color],
 		!gradientDuoTone && gradientMonochrome && gradientMonochromeClasses[gradientMonochrome],
 		gradientDuoTone && gradientDuoToneClasses[gradientDuoTone],
 		coloredShadow && coloredShadowClasses[coloredShadow],
+		outlineStyle && outlineClasses[outlineStyle],
 		{
 			'border border-gray-900 dark:border-white': color === 'alternative' && outline,
 			'cursor-not-allowed opacity-50': $$props.disabled,

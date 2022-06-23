@@ -312,41 +312,29 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 ```html
 <script>
-	import { ArrowRight, Bell, ShoppingCart, ChevronRight } from 'svelte-heros';
+	import { ArrowRight } from 'svelte-heros';
 </script>
 
-<Button>
-    <ArrowRight/>
-</Button>
-<Button>
-  <Bell size="24" class="text-red-500 dark:text-purple-300" />
-</Button>
-<Button btnColor="red" >
-  <Bell size="24" class="text-red-500 dark:text-purple-300" />
-</Button>
-<Button btnColor="green">
-  <ShoppingCart size="24"/> Buy Now
-</Button>
-<Button>
-  Choose Plan <ChevronRight size="24" class="text-gray-500 dark:text-gray-300" />
-</Button>
-<Button>
-  Messages
-  <span class="inline-flex items-center justify-center w-4 h-4 ml-2 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full">
-    2
-  </span>
-</Button>
+<div class="flex flex-wrap items-center gap-2">
+<Button icon={ArrowRight} />
+<Button icon={ArrowRight} pill={true} />
+<Button icon={ArrowRight} outline={true} />
+<Button icon={ArrowRight} pill={true} outline={true} />
+</div>
 ```
+
+<Htwo label="Outline buttons" />
+
+<p>Use the following button styles to show the colors only for the border of the element.</p>
+
 <ExampleDiv>
 <div class="flex flex-wrap gap-2">
-  <Button gradientMonochrome="blue">Blue</Button>
-  <Button gradientMonochrome="green">Green</Button>
-  <Button gradientMonochrome="cyan">Cyan</Button>
-  <Button gradientMonochrome="teal">Teal</Button>
-  <Button gradientMonochrome="lime">Lime</Button>
-  <Button gradientMonochrome="red">Red</Button>
-  <Button gradientMonochrome="pink">Pink</Button>
-  <Button gradientMonochrome="purple">Purple</Button>
+  <Button outlineStyle="default">Default</Button>
+  <Button outlineStyle="dark">Dark</Button>
+  <Button outlineStyle="green">Green</Button>
+  <Button outlineStyle="red">Red</Button>
+  <Button outlineStyle="yellow">Yellow</Button>
+  <Button outlineStyle="purple">Purple</Button>
 </div>
 </ExampleDiv>
 
