@@ -102,7 +102,15 @@
 		purple:
 			'text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80'
 	};
-	export let outlineStyle: 'default' | 'dark' | 'green' | 'red' | 'yellow' | 'purple' | null = null;
+	export let outlineStyle:
+		| 'default'
+		| 'dark'
+		| 'green'
+		| 'red'
+		| 'yellow'
+		| 'purple'
+		| 'white'
+		| null = null;
 	const outlineClasses = {
 		default:
 			'text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300',
@@ -113,7 +121,9 @@
 		yellow:
 			'text-yellow-400 hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300',
 		purple:
-			'text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300'
+			'text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300',
+		white:
+			'text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700'
 	};
 	const sizeClasses = {
 		xs: 'text-xs px-2 py-1',

@@ -7,7 +7,7 @@ layout: buttonLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Button, Breadcrumb } from '$lib/index';
+  import { Button, Spinner, Breadcrumb } from '$lib/index';
   import { ArrowRight, Bell, ShoppingCart, ChevronRight } from "svelte-heros";
   import BrandFacebook from '../utils/icons/Facebook.svelte'
   import { goto }from '$app/navigation';
@@ -231,9 +231,29 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Outline buttons" />
 
-<ExampleDiv class="flex flex-wrap items-center gap-2">
+<p>Use the following button styles to show the colors only for the border of the element.</p>
 
+<ExampleDiv>
+<div class="flex flex-wrap gap-2">
+  <Button outlineStyle="default">Default</Button>
+  <Button outlineStyle="dark">Dark</Button>
+  <Button outlineStyle="green">Green</Button>
+  <Button outlineStyle="red">Red</Button>
+  <Button outlineStyle="yellow">Yellow</Button>
+  <Button outlineStyle="purple">Purple</Button>
+</div>
 </ExampleDiv>
+
+```html
+<div class="flex flex-wrap gap-2">
+  <Button outlineStyle="default">Default</Button>
+  <Button outlineStyle="dark">Dark</Button>
+  <Button outlineStyle="green">Green</Button>
+  <Button outlineStyle="red">Red</Button>
+  <Button outlineStyle="yellow">Yellow</Button>
+  <Button outlineStyle="purple">Purple</Button>
+</div>
+```
 
 <Htwo label="Button sizes" />
 
@@ -259,19 +279,19 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <ExampleDiv class="flex flex-wrap items-center gap-2">
 <Button>
-  <ShoppingCart size="24" class="mr-2"/> Buy Now
+  <ShoppingCart size="18" class="mr-2"/> Buy Now
 </Button>
 <Button>
-  Choose Plan <ArrowRight size="24" class="ml-2" />
+  Choose Plan <ArrowRight size="18" class="ml-2" />
 </Button>
 </ExampleDiv>
 
 ```html
 <Button>
-  <ShoppingCart size="24" class="mr-2"/> Buy Now
+  <ShoppingCart size="18" class="mr-2"/> Buy Now
 </Button>
 <Button>
-  Choose Plan <ArrowRight size="24" class="ml-2" />
+  Choose Plan <ArrowRight size="18" class="ml-2" />
 </Button>
 ```
 
@@ -323,18 +343,18 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </div>
 ```
 
-<Htwo label="Outline buttons" />
-
-<p>Use the following button styles to show the colors only for the border of the element.</p>
+<Htwo label="Loader" />
 
 <ExampleDiv>
-<div class="flex flex-wrap gap-2">
-  <Button outlineStyle="default">Default</Button>
-  <Button outlineStyle="dark">Dark</Button>
-  <Button outlineStyle="green">Green</Button>
-  <Button outlineStyle="red">Red</Button>
-  <Button outlineStyle="yellow">Yellow</Button>
-  <Button outlineStyle="purple">Purple</Button>
+<div class="flex flex-wrap items-center gap-2">
+<Button>
+  <Spinner class="mr-3" size="4" />
+  Loading ...
+</Button>
+<Button outlineStyle="white">
+  <Spinner class="mr-3" size="4" />
+  Loading ...
+</Button>
 </div>
 </ExampleDiv>
 
@@ -344,10 +364,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <ExampleDiv>
 <Button disabled >Disabled</Button>
-<Button disabled btnColor="green">Disabled</Button>
-<Button disabled btnColor="red">Disabled</Button>
-<Button disabled btnColor="yellow">Disabled</Button>
-<Button disabled btnColor="purple">Disabled</Button>
 </ExampleDiv>
 
 ```html
