@@ -9,12 +9,12 @@ layout: buttonLayout
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { Button, Breadcrumb } from '$lib/index';
   import { ArrowRight, Bell, ShoppingCart, ChevronRight } from "svelte-heros";
+  import BrandFacebook from '../utils/icons/Facebook.svelte'
   import { goto }from '$app/navigation';
   import componentProps from '../props/Button.json'
 
   const btn1 = ()=>{
-    alert('This redirects to the home page.')
-    goto('/')
+    alert('You clicked btn1.')
   }
   const btn2 = ()=>{
     alert ('You clicked btn2.')
@@ -54,116 +54,260 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </script>
 ```
 
-<Htwo label="Types" />
-
-<p>The default `type` is set to `button`. You can chage it by using the `type` prop.</p>
-
-<ExampleDiv>
-<Button type="submit">Submit</Button>
-</ExampleDiv>
-
-```html
-<Button type="submit">Submit</Button>
-```
-
-<Htwo label="Sizes" />
-
-<ExampleDiv>
-  <Button textSize="text-xs">Button text-xs</Button>
-  <Button textSize="text-sm">Button text-sm</Button>
-  <Button textSize="text-base">Button text-base</Button>
-  <Button textSize="text-lg">Button text-lg</Button>
-  <Button textSize="text-xl">Button text-xl</Button>
-  <Button textSize="text-2xl">Button text-2xl</Button>
-  <Button textSize="text-3xl">Button text-3xl</Button>
-  <Button textSize="text-4xl">Button text-4xl</Button>
-</ExampleDiv>
-
-```html
-<Button textSize="text-xs">Button text-xs</Button>
-<Button textSize="text-sm">Button text-sm</Button>
-<Button textSize="text-base">Button text-base</Button>
-<Button textSize="text-lg">Button text-lg</Button>
-<Button textSize="text-xl">Button text-xl</Button>
-<Button textSize="text-2xl">Button text-2xl</Button>
-<Button textSize="text-3xl">Button text-3xl</Button>
-<Button textSize="text-4xl">Button text-4xl</Button>
-```
-
-<Htwo label="Colors" />
-
-<ExampleDiv>
-  <Button textSize="text-sm">Button</Button>
-  <Button textSize="text-sm" btnColor="dark">Button</Button>
-  <Button textSize="text-sm" btnColor="light">Button</Button>
-  <Button textSize="text-sm" btnColor="red">Button</Button>
-  <Button textSize="text-sm" btnColor="green">Button</Button>
-  <Button textSize="text-sm" btnColor="yellow">Button</Button>
-  <Button textSize="text-sm" btnColor="purple">Button</Button>
-</ExampleDiv>
-
-```html
-<Button textSize="text-sm">Button</Button>
-<Button textSize="text-sm" btnColor="dark">Button</Button>
-<Button textSize="text-sm" btnColor="light">Button</Button>
-<Button textSize="text-sm" btnColor="red">Button</Button>
-<Button textSize="text-sm" btnColor="green">Button</Button>
-<Button textSize="text-sm" btnColor="yellow">Button</Button>
-<Button textSize="text-sm" btnColor="purple">Button</Button>
-```
-
 <Htwo label="Handlers" />
 
 <p>You can use on:click or any standard on:* to listen to the event.</p>
+
+<ExampleDiv class="flex flex-wrap items-center gap-2">
+<Button on:click={btn1}>Button 1</Button>
+<Button on:click={btn2}>Button 2</Button>
+</ExampleDiv>
 
 ```html
 <script>
 	import { Button } from 'flowbite-svelte';
 	import { goto } from '$app/navigation';
 	const btn1 = () => {
-		alert('This redirects to the home page.');
-		goto('/');
+		alert('You clicked btn1.');
 	};
 	const btn2 = () => {
 		alert('You clicked btn2.');
 	};
 </script>
 
-<Button on:click={btn1} textSize="text-xs">Button text-xs</Button>
-<Button on:click={btn2} textSize="text-xl">Button text-xl</Button>
+<Button on:click={btn1}>Button 1</Button>
+<Button on:click={btn2}>Button 2</Button>
 ```
 
-<ExampleDiv>
-<Button on:click={btn1} textSize="text-xs">Button text-xs</Button>
-<Button on:click={btn2} textSize="text-xl">Button text-xl</Button>
+<Htwo label="Default button" />
+
+<p>Use these default button styles with multiple colors to indicate an action or link within your website. The default `type` is set to `button`. You can chage it by using the `type` prop.</p>
+
+<ExampleDiv class="flex flex-wrap gap-2">
+<Button>Default</Button>
+<Button color="alternative">Alternative</Button>
+<Button color="dark">Dark</Button>
+<Button color="light">Light</Button>
+<Button color="green">Green</Button>
+<Button color="red">Red</Button>
+<Button color="yellow">Yellow</Button>
+<Button color="purple">Purple</Button>
 </ExampleDiv>
 
-<Htwo label="Icons & Labels" />
+```html
+<Button>Default</Button>
+<Button color="alternative">Alternative</Button>
+<Button color="dark">Dark</Button>
+<Button color="light">Light</Button>
+<Button color="green">Green</Button>
+<Button color="red">Red</Button>
+<Button color="yellow">Yellow</Button>
+<Button color="purple">Purple</Button>
+```
 
-<p>Since all the buttons have a `slot` you can add an icon component to create an icon button.</p>
+<Htwo label="Button pills" />
 
-<ExampleDiv>
+<ExampleDiv class="flex flex-wrap gap-2">
+  <Button pill={true}>Default</Button>
+  <Button color="alternative" pill={true}>Alternative</Button>
+  <Button color="dark" pill={true}>Dark</Button>
+  <Button color="light" pill={true}>Light</Button>
+  <Button color="green" pill={true}>Green</Button>
+  <Button color="red" pill={true}>Red</Button>
+  <Button color="yellow" pill={true}>Yellow</Button>
+  <Button color="purple" pill={true}>Purple</Button>
+</ExampleDiv>
+
+```html
+<Button pill={true}>Default</Button>
+<Button color="alternative" pill={true}>Alternative</Button>
+<Button color="dark" pill={true}>Dark</Button>
+<Button color="light" pill={true}>Light</Button>
+<Button color="green" pill={true}>Green</Button>
+<Button color="red" pill={true}>Red</Button>
+<Button color="yellow" pill={true}>Yellow</Button>
+<Button color="purple" pill={true}>Purple</Button>
+```
+
+<Htwo label="Gradient monochrome" />
+
+<p>These beautifully colored buttons built with the gradient color stops utility classes from Tailwind CSS can be used as a creative alternative to the default button styles.</p>
+
+<ExampleDiv class="flex flex-wrap gap-2">
+  <Button gradientMonochrome="blue">Blue</Button>
+  <Button gradientMonochrome="green">Green</Button>
+  <Button gradientMonochrome="cyan">Cyan</Button>
+  <Button gradientMonochrome="teal">Teal</Button>
+  <Button gradientMonochrome="lime">Lime</Button>
+  <Button gradientMonochrome="red">Red</Button>
+  <Button gradientMonochrome="pink">Pink</Button>
+  <Button gradientMonochrome="purple">Purple</Button>
+</ExampleDiv>
+
+```html
+<Button gradientMonochrome="blue">Blue</Button>
+<Button gradientMonochrome="green">Green</Button>
+<Button gradientMonochrome="cyan">Cyan</Button>
+<Button gradientMonochrome="teal">Teal</Button>
+<Button gradientMonochrome="lime">Lime</Button>
+<Button gradientMonochrome="red">Red</Button>
+<Button gradientMonochrome="pink">Pink</Button>
+<Button gradientMonochrome="purple">Purple</Button>
+```
+
+<Htwo label="Gradient duotone" />
+
+<p>These buttons use a style that includes two contrasted colors creating an impressive mesh gradient effect.</p>
+
+<ExampleDiv class="flex flex-wrap items-center gap-2">
+  <Button gradientDuoTone="purpleToBlue">Purple to Blue</Button>
+  <Button gradientDuoTone="cyanToBlue">Cyan to Blue</Button>
+  <Button gradientDuoTone="greenToBlue">Green to Blue</Button>
+  <Button gradientDuoTone="purpleToPink">Purple to Pink</Button>
+  <Button gradientDuoTone="pinkToOrange">Pink to Orange</Button>
+  <Button gradientDuoTone="tealToLime">Teal to Lime</Button>
+  <Button gradientDuoTone="redToYellow">Red to Yellow</Button>
+</ExampleDiv>
+
+```html
+<Button gradientDuoTone="purpleToBlue">Purple to Blue</Button>
+<Button gradientDuoTone="cyanToBlue">Cyan to Blue</Button>
+<Button gradientDuoTone="greenToBlue">Green to Blue</Button>
+<Button gradientDuoTone="purpleToPink">Purple to Pink</Button>
+<Button gradientDuoTone="pinkToOrange">Pink to Orange</Button>
+<Button gradientDuoTone="tealToLime">Teal to Lime</Button>
+<Button gradientDuoTone="redToYellow">Red to Yellow</Button>
+```
+
+<Htwo label="Gradient outline" />
+
+<p>This is a special button style that incorporates a gradient color for the outline that can be used as a secondary style to the fully colored gradient buttons.</p>
+
+<ExampleDiv class="flex flex-wrap items-center gap-2">
+  <Button outline={true} gradientDuoTone="purpleToBlue">Purple to Blue</Button>
+  <Button outline={true} gradientDuoTone="cyanToBlue">Cyan to Blue</Button>
+  <Button outline={true} gradientDuoTone="greenToBlue">Green to Blue</Button>
+  <Button outline={true} gradientDuoTone="purpleToPink">Purple to Pink</Button>
+  <Button outline={true} gradientDuoTone="pinkToOrange">Pink to Orange</Button>
+  <Button outline={true} gradientDuoTone="tealToLime">Teal to Lime</Button>
+  <Button outline={true} gradientDuoTone="redToYellow">Red to Yellow</Button>
+</ExampleDiv>
+
+```html
+<Button outline={true} gradientDuoTone="purpleToBlue">Purple to Blue</Button>
+<Button outline={true} gradientDuoTone="cyanToBlue">Cyan to Blue</Button>
+<Button outline={true} gradientDuoTone="greenToBlue">Green to Blue</Button>
+<Button outline={true} gradientDuoTone="purpleToPink">Purple to Pink</Button>
+<Button outline={true} gradientDuoTone="pinkToOrange">Pink to Orange</Button>
+<Button outline={true} gradientDuoTone="tealToLime">Teal to Lime</Button>
+<Button outline={true} gradientDuoTone="redToYellow">Red to Yellow</Button>
+```
+
+<Htwo label="Colored shadows" />
+
+<p>These beautiful button elements with color shadows can be used since the release of Tailwind v3.0.</p>
+
+<ExampleDiv class="flex flex-wrap items-center gap-2">
+  <Button coloredShadow="blue">Blue</Button>
+  <Button coloredShadow="green">Green</Button>
+  <Button coloredShadow="cyan">Cyan</Button>
+  <Button coloredShadow="teal">Teal</Button>
+  <Button coloredShadow="lime">Lime</Button>
+  <Button coloredShadow="red">Red</Button>
+  <Button coloredShadow="pink">Pink</Button>
+  <Button coloredShadow="purple">Purple</Button>
+</ExampleDiv>
+
+```html
+<Button coloredShadow="blue">Blue</Button>
+<Button coloredShadow="green">Green</Button>
+<Button coloredShadow="cyan">Cyan</Button>
+<Button coloredShadow="teal">Teal</Button>
+<Button coloredShadow="lime">Lime</Button>
+<Button coloredShadow="red">Red</Button>
+<Button coloredShadow="pink">Pink</Button>
+<Button coloredShadow="purple">Purple</Button>
+```
+
+<Htwo label="Outline buttons" />
+
+<ExampleDiv class="flex flex-wrap items-center gap-2">
+
+</ExampleDiv>
+
+<Htwo label="Button sizes" />
+
+<ExampleDiv class="flex flex-wrap items-center gap-2">
+  <Button size="xs">Extra small</Button>
+  <Button size="sm">Small</Button>
+  <Button size="md">Base</Button>
+  <Button size="lg">Large</Button>
+  <Button size="xl">Extra large</Button>
+</ExampleDiv>
+
+```html
+<Button size="xs">Extra small</Button>
+<Button size="sm">Small</Button>
+<Button size="md">Base</Button>
+<Button size="lg">Large</Button>
+<Button size="xl">Extra large</Button>
+```
+
+<Htwo label="Buttons with icon" />
+
+<p>Use the following examples to add a SVG icon inside the button either on the left or right side.</p>
+
+<ExampleDiv class="flex flex-wrap items-center gap-2">
 <Button>
-    <ArrowRight/>
+  <ShoppingCart size="24" class="mr-2"/> Buy Now
 </Button>
 <Button>
-  <Bell size="24" class="text-red-500 dark:text-purple-300" />
+  Choose Plan <ArrowRight size="24" class="ml-2" />
 </Button>
-<Button btnColor="red" >
-  <Bell size="24" class="text-red-500 dark:text-purple-300" />
-</Button>
-<Button btnColor="green">
-  <ShoppingCart size="24"/> Buy Now
+</ExampleDiv>
+
+```html
+<Button>
+  <ShoppingCart size="24" class="mr-2"/> Buy Now
 </Button>
 <Button>
-  Choose Plan <ChevronRight size="24" class="text-gray-500 dark:text-gray-300" />
+  Choose Plan <ArrowRight size="24" class="ml-2" />
 </Button>
+```
+
+<Htwo label="Button with label" />
+
+<p>This example can be used to show a notification count or helper text inside a button using the badge element.</p>
+
+<ExampleDiv class="flex flex-wrap items-center gap-2">
 <Button>
   Messages
   <span class="inline-flex items-center justify-center w-4 h-4 ml-2 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full">
     2
   </span>
 </Button>
+</ExampleDiv>
+
+```html
+<Button>
+  Messages
+  <span class="inline-flex items-center justify-center w-4 h-4 ml-2 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full">
+    2
+  </span>
+</Button>
+```
+
+<Htwo label="Icon buttons" />
+
+<p>Sometimes you need a button to indicate an action using only an icon.</p>
+
+<ExampleDiv>
+<div class="flex flex-wrap items-center gap-2">
+<Button icon={ArrowRight} />
+<Button icon={ArrowRight} pill={true} />
+<Button icon={ArrowRight} outline={true} />
+<Button icon={ArrowRight} pill={true} outline={true} />
+</div>
 </ExampleDiv>
 
 ```html
@@ -193,6 +337,18 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   </span>
 </Button>
 ```
+<ExampleDiv>
+<div class="flex flex-wrap gap-2">
+  <Button gradientMonochrome="blue">Blue</Button>
+  <Button gradientMonochrome="green">Green</Button>
+  <Button gradientMonochrome="cyan">Cyan</Button>
+  <Button gradientMonochrome="teal">Teal</Button>
+  <Button gradientMonochrome="lime">Lime</Button>
+  <Button gradientMonochrome="red">Red</Button>
+  <Button gradientMonochrome="pink">Pink</Button>
+  <Button gradientMonochrome="purple">Purple</Button>
+</div>
+</ExampleDiv>
 
 <Htwo label="Disabled" />
 
