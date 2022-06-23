@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.18.4](https://github.com/themesberg/flowbite-svelte/compare/v0.18.3...v0.18.4) (2022-06-23)
+
+
+### Features
+
+* add button colored shadows ([96e20c5](https://github.com/themesberg/flowbite-svelte/commit/96e20c568f2fcc7d51e9a430fcb0007f02290bd2))
+* add outline button ([aa14b26](https://github.com/themesberg/flowbite-svelte/commit/aa14b267ec1bf283ca3684fa956776b6ce4e6932))
+* add outlineStyle white for loader ([7769c19](https://github.com/themesberg/flowbite-svelte/commit/7769c19df48cac833fa08ce659ebfa651160bbf5))
+
 ### [0.18.3](https://github.com/themesberg/flowbite-svelte/compare/v0.18.2...v0.18.3) (2022-06-22)
 
 
