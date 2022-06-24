@@ -167,17 +167,10 @@ test('Dark mode page should have h1', async ({ page }) => {
 
 // Dropdown
 test('Dropdown main page should have h1', async ({ page }) => {
-	await page.goto('/dropdowns');
-	expect(await page.textContent('h1')).toBe('Dropdown Components');
-});
-test('Dropdown page should have h1', async ({ page }) => {
-	await page.goto('/dropdowns/default');
+	await page.goto('/dropdowns/');
 	expect(await page.textContent('h1')).toBe('Dropdown');
 });
-test('Dropdown with Image page should have h1', async ({ page }) => {
-	await page.goto('/dropdowns/image');
-	expect(await page.textContent('h1')).toBe('Dropdown with Image');
-});
+
 // Footer
 test('Footer main page should have h1', async ({ page }) => {
 	await page.goto('/footer');
@@ -266,16 +259,6 @@ test('Icon main page should have h1', async ({ page }) => {
 	await page.goto('/icons');
 	expect(await page.textContent('h1')).toBe('Icons');
 });
-
-// test('Icon main page should have h1', async ({ page }) => {
-// 	await page.goto('/icons/heroicons');
-// 	expect(await page.textContent('h1')).toBe('Icons');
-// });
-
-// test('Simple-icon page should have h1', async ({ page }) => {
-// 	await page.goto('/icons/simple-icons');
-// 	expect(await page.textContent('h1')).toBe('Simple-icons');
-// });
 
 // List group
 test('List group page should have h1', async ({ page }) => {

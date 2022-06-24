@@ -7,7 +7,7 @@ layout: navbarLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Breadcrumb, Button, Navbar, NavBrand, NavLi, NavUl, NavHamburger, ImgDropdown, Avatar } from '$lib/index';
+  import { Breadcrumb, Button, Dropdown, Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar } from '$lib/index';
   import componentProps from '../props/Navbar.json'
 	import componentProps2 from '../props/NavBrand.json'
 	import componentProps3 from '../props/NavLi.json'
@@ -179,9 +179,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 			</span>
 		</NavBrand>
 		<div class="flex md:order-2">
-			<ImgDropdown items={menus}>
+			<Dropdown items={menus}>
 				<Avatar {avatar} />
-			</ImgDropdown>
+			</Dropdown>
 			<NavHamburger on:click={toggle} />
 		</div>
 		<NavUl {hidden}>

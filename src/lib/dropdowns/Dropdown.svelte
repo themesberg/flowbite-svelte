@@ -8,8 +8,10 @@
 	export let inline: boolean = false;
 	export let tooltipArrow: boolean = false;
 	export let arrowIcon: boolean = true;
-	let placement: Placement;
-	$: placement = inline ? 'bottom-start' : 'bottom';
+	export let labelClass: string =
+		'flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent';
+	export let placement: 'auto' | Placement = 'bottom';
+
 	const icons = {
 		top: ChevronUp,
 		right: ChevronRight,
@@ -29,7 +31,7 @@
 	trigger="click"
 >
 	{#if inline}
-		<button class="flex items-center">
+		<button class={labelClass}>
 			<slot name="label">{label}</slot>
 			{#if arrowIcon}
 				<svelte:component this={icon ?? ChevronDown} class="ml-2 h-4 w-4" />
