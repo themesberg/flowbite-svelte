@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.19.2](https://github.com/themesberg/flowbite-svelte/compare/v0.19.1...v0.19.2) (2022-06-24)
+
+
+### Bug Fixes
+
+* update Button outline ([6f419c3](https://github.com/themesberg/flowbite-svelte/commit/6f419c38a365fbfb3a466ec81eedc6fcd5fa9a75))
+
 ### [0.19.1](https://github.com/themesberg/flowbite-svelte/compare/v0.19.0...v0.19.1) (2022-06-24)
 
 ## [0.19.0](https://github.com/themesberg/flowbite-svelte/compare/v0.18.6...v0.19.0) (2022-06-24)
