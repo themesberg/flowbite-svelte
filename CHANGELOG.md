@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.19.0](https://github.com/themesberg/flowbite-svelte/compare/v0.18.6...v0.19.0) (2022-06-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* Dropdown has a new structure
+
+### Bug Fixes
+
+* Dropdown has a new structure ([2c5d7b0](https://github.com/themesberg/flowbite-svelte/commit/2c5d7b0a7ac6e93074d11c986835e1f24dd5e00e))
+* update Dropdown components ([4dd3254](https://github.com/themesberg/flowbite-svelte/commit/4dd3254b037be1db5718c4a03662e7cf455a4ee6))
+* update dropdown creating Dropdown, DropdownDivider, DropdownHeader, DropdownItem ([58db150](https://github.com/themesberg/flowbite-svelte/commit/58db150ee321f849ece954f43213e09a3634e191))
+
 ### [0.18.6](https://github.com/themesberg/flowbite-svelte/compare/v0.18.5...v0.18.6) (2022-06-24)
 
 ### [0.18.5](https://github.com/themesberg/flowbite-svelte/compare/v0.18.4...v0.18.5) (2022-06-24)
