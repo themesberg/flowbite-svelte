@@ -6,7 +6,7 @@
 
 <Responsive />
 <div class="max-w-3xl mx-auto mt-16">
-	<div class="container flex flex-wrap mx-auto">
+	<div class="container mx-auto">
 		<slot />
 
 		<Htwo label="References" />
