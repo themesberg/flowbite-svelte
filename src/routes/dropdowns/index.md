@@ -8,10 +8,17 @@ layout: dropdownLayout
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
 
-  import {Tooltip, Button, Dropdown, DropdownDivider, DropdownHeader, DropdownItem,Navbar,NavBrand,NavHamburger, NavUl, NavLi, Breadcrumb } from '$lib/index';
-  import componentProps from '../props/DropdownDefault.json'
+  import { Button, Dropdown, DropdownDivider, DropdownHeader, DropdownItem,Navbar,NavBrand,NavHamburger, NavUl, NavLi, Breadcrumb } from '$lib/index';
+  import componentProps from '../props/Dropdown.json'
+  import componentProps2 from '../props/DropdownDivider.json'
+  import componentProps3 from '../props/DropdownHeader.json'
+  import componentProps4 from '../props/DropdownItem.json'
   // Props table
-  export let dropdownItems = componentProps.props
+  export let propItems = componentProps.props
+  export let propItems2 = componentProps2.props
+  export let propItems3 = componentProps3.props
+  export let propItems4 = componentProps4.props
+
   let propHeader = ['Name', 'Type', 'Default']
   
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
@@ -290,6 +297,26 @@ layout: dropdownLayout
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
+<h3>Dropdown</h3>
+
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={dropdownItems} rowState='hover' />
+  <TableDefaultRow items={propItems} rowState='hover' />
+</TableProp>
+
+<h3>DropdownDivider</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={propItems2} rowState='hover' />
+</TableProp>
+
+<h3>DropdownHeader</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={propItems3} rowState='hover' />
+</TableProp>
+
+<h3>DropdownItem</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={propItems4} rowState='hover' />
 </TableProp>
