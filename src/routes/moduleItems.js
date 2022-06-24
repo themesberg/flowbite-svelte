@@ -22,16 +22,16 @@ export const badges = [
   { href: "/badges/badge-link", name: "Badges with link" },
 ];
 
-export const buttons = [
-  { href: "/buttons/default", name: "Default" },
-  { href: "/buttons/colored-shadow", name: "Colored shadow" },
-  { href: "/buttons/gradient-duotone", name: "Gradient duotone" },
-  { href: "/buttons/gradient-monochrome", name: "Gradient monochrome" },
-  { href: "/buttons/gradient-outline", name: "Gradient outline" },
-  { href: "/buttons/outlined", name: "Outlined" },
-  { href: "/buttons/rounded", name: "Rounded" },
-  { href: "/buttons/button-loader", name: "Loader" },
-];
+// export const buttons = [
+//   { href: "/buttons/default", name: "Default" },
+//   { href: "/buttons/colored-shadow", name: "Colored shadow" },
+//   { href: "/buttons/gradient-duotone", name: "Gradient duotone" },
+//   { href: "/buttons/gradient-monochrome", name: "Gradient monochrome" },
+//   { href: "/buttons/gradient-outline", name: "Gradient outline" },
+//   { href: "/buttons/outlined", name: "Outlined" },
+//   { href: "/buttons/rounded", name: "Rounded" },
+//   { href: "/buttons/button-loader", name: "Loader" },
+// ];
 
 export const cards = [
   { href: "/cards/card", name: "Card" },

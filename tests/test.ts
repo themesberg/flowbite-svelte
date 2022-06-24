@@ -98,53 +98,8 @@ test('Button Group main page should have h1', async ({ page }) => {
 
 // Buttons
 test('Buttons main page should have h1', async ({ page }) => {
-	await page.goto('/buttons');
-	expect(await page.textContent('h1')).toBe('Button Components');
-});
-
-test('Buttons default page should have h1', async ({ page }) => {
-	await page.goto('/buttons/default');
+	await page.goto('/buttons/');
 	expect(await page.textContent('h1')).toBe('Buttons');
-});
-
-test('Button Component Set Up page should have h1', async ({ page }) => {
-	await page.goto('/buttons/default');
-	expect(await page.textContent('h1')).toBe('Buttons');
-});
-
-test('Colored Shadow Buttons page should have h1', async ({ page }) => {
-	await page.goto('/buttons/colored-shadow');
-	expect(await page.textContent('h1')).toBe('Colored Shadow Buttons');
-});
-
-test('Gradient Duotone Buttons page should have h1', async ({ page }) => {
-	await page.goto('/buttons/gradient-duotone');
-	expect(await page.textContent('h1')).toBe('Gradient Duotone Buttons');
-});
-
-test('Gradient Monochrome Buttons page should have h1', async ({ page }) => {
-	await page.goto('/buttons/gradient-monochrome');
-	expect(await page.textContent('h1')).toBe('Gradient Monochrome Buttons');
-});
-
-test('Gradient Outline Buttons page should have h1', async ({ page }) => {
-	await page.goto('/buttons/gradient-outline');
-	expect(await page.textContent('h1')).toBe('Gradient Outline Buttons');
-});
-
-test('Outlined Buttons page should have h1', async ({ page }) => {
-	await page.goto('/buttons/outlined');
-	expect(await page.textContent('h1')).toBe('Outlined Buttons');
-});
-
-test('Rounded Buttons page should have h1', async ({ page }) => {
-	await page.goto('/buttons/rounded');
-	expect(await page.textContent('h1')).toBe('Rounded Buttons');
-});
-
-test('Loader Buttons page should have h1', async ({ page }) => {
-	await page.goto('/buttons/button-loader');
-	expect(await page.textContent('h1')).toBe('Button Loader');
 });
 
 // Cards
