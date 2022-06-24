@@ -1,7 +1,8 @@
 <script lang="ts">
+	import classNames from 'classnames';
 	export let href: string = '';
 </script>
 
-<a {href} class="flex items-center {$$props.class || ''}">
+<a {href} {...$$restProps} class={classNames('flex items-center', $$props.class)}>
 	<slot />
 </a>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import classNames from 'classnames';
 	import { slide } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	export let divClass: string = ' justify-between items-center w-full md:flex md:w-auto md:order-1';
@@ -11,7 +12,8 @@
 
 {#if !hidden}
 	<div
-		class={divClass}
+		{...$$restProps}
+		class={classNames(divClass, $$props.class)}
 		id="mobile-menu"
 		transition:slide={{ delay: 250, duration: 500, easing: quintOut }}
 	>
@@ -20,7 +22,7 @@
 		</ul>
 	</div>
 {:else}
-	<div class={divClass} {hidden} id="mobile-menu">
+	<div {...$$restProps} class={classNames(divClass, $$props.class)} {hidden} id="mobile-menu">
 		<ul class="{ulClass} {$$props.class || ''}">
 			<slot />
 		</ul>

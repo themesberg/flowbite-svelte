@@ -128,7 +128,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 			<Button>Get started</Button>
 			<NavHamburger on:click={toggle} />
 		</div>
-		<NavUl {hidden}>
+		<NavUl {hidden} class="order-1">
 			<NavLi href="/" active={true}>Home</NavLi>
 			<NavLi href="/about">About</NavLi>
 			<NavLi href="/services">Services</NavLi>
