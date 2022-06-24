@@ -7,7 +7,6 @@
 	import {
 		accordions,
 		badges,
-		buttons,
 		cards,
 		carousels,
 		dropdowns,
@@ -47,7 +46,7 @@
 	let navDivClasslast = 'pb-24';
 	let siteClass = ' w-full pt-0.5';
 	let spanClass =
-		'pl-2 self-center text-lg font-semibold text-gray-900 whitespace-nowrap xs:dark:text-white';
+		'pl-2 self-center text-lg font-semibold text-gray-900 whitespace-nowrap sm:dark:text-white';
 
 	let topli =
 		'block py-2 pr-4 pl-3 text-gray-700 md:border-0 md:p-0 dark:text-gray-300  dark:hover:bg-gray-700 text-lg z-50  dark:bg-gray-800 dark:border-0 hover:bg-gray-100 bg-white';
@@ -160,9 +159,6 @@
 			<h3 class={h3Class}>
 				<a href="/buttons">Buttons</a>
 			</h3>
-			{#each buttons as { href, name, rel }}
-				<SidebarList {href} {name} {rel} {sideBarListClass} />
-			{/each}
 		</Nav>
 		<Nav {navClass} {navDivClass}>
 			<h3 class={h3Class}><a href="/cards">Cards</a></h3>

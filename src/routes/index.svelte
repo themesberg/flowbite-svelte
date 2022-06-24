@@ -6,7 +6,6 @@
 		accordions,
 		alerts,
 		badges,
-		buttons,
 		cards,
 		carousels,
 		dropdowns,
@@ -125,11 +124,9 @@
 	<div class="p-4">
 		<Card img="/images/buttons.webp" alt="Buttons" link="/buttons" {divClass}>
 			<span slot="paragraph">
-				{#each buttons as { href, name }}
-					<p class={pClass}>
-						<a {href} class={aClass}>{name}</a>
-					</p>
-				{/each}
+				<p class={pClass}>
+					<a href="/buttons" class={aClass}>Buttons</a>
+				</p>
 			</span>
 		</Card>
 	</div>
