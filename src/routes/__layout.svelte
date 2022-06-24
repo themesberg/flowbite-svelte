@@ -7,7 +7,6 @@
 	import {
 		accordions,
 		badges,
-		buttons,
 		cards,
 		carousels,
 		dropdowns,
@@ -160,9 +159,6 @@
 			<h3 class={h3Class}>
 				<a href="/buttons">Buttons</a>
 			</h3>
-			{#each buttons as { href, name, rel }}
-				<SidebarList {href} {name} {rel} {sideBarListClass} />
-			{/each}
 		</Nav>
 		<Nav {navClass} {navDivClass}>
 			<h3 class={h3Class}><a href="/cards">Cards</a></h3>
