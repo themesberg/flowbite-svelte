@@ -8,7 +8,6 @@
 		badges,
 		cards,
 		carousels,
-		dropdowns,
 		forms,
 		footers,
 		modals,
@@ -164,11 +163,9 @@
 	<div class="p-4">
 		<Card img="/images/dropdowns.webp" alt="Dropdowns" link="dropdowns" {divClass}>
 			<span slot="paragraph">
-				{#each dropdowns as { href, name }}
-					<p class={pClass}>
-						<a {href} class={aClass}>{name}</a>
-					</p>
-				{/each}
+				<p class={pClass}>
+					<a href="/dropdowns" class={aClass}>Dropdowns</a>
+				</p>
 			</span>
 		</Card>
 	</div>

@@ -9,7 +9,6 @@
 		badges,
 		cards,
 		carousels,
-		dropdowns,
 		forms,
 		footers,
 		modals,
@@ -183,9 +182,6 @@
 			<h3 class={h3Class}>
 				<a href="/dropdowns">Dropdowns</a>
 			</h3>
-			{#each dropdowns as { href, name, rel }}
-				<SidebarList {href} {name} {rel} {sideBarListClass} />
-			{/each}
 		</Nav>
 		<Nav {navClass} {navDivClass}>
 			<h3 class={h3Class}>

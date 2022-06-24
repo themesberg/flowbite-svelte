@@ -22,17 +22,6 @@ export const badges = [
   { href: "/badges/badge-link", name: "Badges with link" },
 ];
 
-// export const buttons = [
-//   { href: "/buttons/default", name: "Default" },
-//   { href: "/buttons/colored-shadow", name: "Colored shadow" },
-//   { href: "/buttons/gradient-duotone", name: "Gradient duotone" },
-//   { href: "/buttons/gradient-monochrome", name: "Gradient monochrome" },
-//   { href: "/buttons/gradient-outline", name: "Gradient outline" },
-//   { href: "/buttons/outlined", name: "Outlined" },
-//   { href: "/buttons/rounded", name: "Rounded" },
-//   { href: "/buttons/button-loader", name: "Loader" },
-// ];
-
 export const cards = [
   { href: "/cards/card", name: "Card" },
   { href: "/cards/ecommerce", name: "E-commerce" },
@@ -46,11 +35,6 @@ export const cards = [
 export const carousels = [
   { href: "/carousels/default", name: "Default" },
   { href: "/carousels/transition", name: "Transition" },
-]
-
-export const dropdowns = [
-  { href: "/dropdowns/default", name: "Default" },
-  { href: "/dropdowns/image", name: "Image" },
 ]
 
 export const forms = [
