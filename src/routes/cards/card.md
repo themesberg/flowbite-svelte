@@ -53,19 +53,17 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <Htwo label="Examples" />
 
 <ExampleDiv class="flex justify-center">
-  <Card header="Simple card with header and content">
+  <Card header="Noteworthy technology acquisitions 2021">
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
-    consequatur modi ab nisi perferendis placeat natus repellendus officiis
-    ipsa.
+   Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
     </p>
   </Card>
 </ExampleDiv>
 
 ```html
-<Card header="Simple card with header and content">
+<Card header="Noteworthy technology acquisitions 2021">
   <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
+  Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
   </p>
 </Card>
 ```
@@ -73,59 +71,35 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <Htwo label="Card with a link" />
 
 <ExampleDiv class="flex justify-center">
-  <Card header="Card with link" link="/" btnLabel="Read more">
+  <Card header="Noteworthy technology acquisitions 2021" link="/" btnLabel="Read more">
   <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
-    consequatur modi ab nisi perferendis placeat natus repellendus officiis
-    ipsa.
+   Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
     </p>
   </Card>
 </ExampleDiv>
 
 ```html
-<Card header="Card with link" link="/" btnLabel="Read more">
+<Card header="Noteworthy technology acquisitions 2021" link="/" btnLabel="Read more">
   <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
+ Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
   </p>
 </Card>
 ```
 
-<Htwo label="Card with a link and image" />
+<Htwo label="Card with image" />
 
 <ExampleDiv class="flex justify-center">
-  <Card img="/images/image-1.jpeg" header="Card with link and image" link="/" btnLabel="Read more">
+  <Card img="/images/image-1.jpeg" header="Noteworthy technology acquisitions 2021" link="/" btnLabel="Read more">
   <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
-    consequatur modi ab nisi perferendis placeat natus repellendus officiis
-    ipsa.
+   Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
     </p>
   </Card>
 </ExampleDiv>
 
 ```html
-<Card img="/images/image-1.jpeg" header="Card with link and image" link="/" btnLabel="Read more">
+<Card img="/images/image-1.jpeg" header="Noteworthy technology acquisitions 2021" link="/" btnLabel="Read more">
   <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
-  </p>
-</Card>
-```
-
-<Htwo label="Card with an image" />
-
-<ExampleDiv class="flex justify-center">
-  <Card img="/images/image-2.jpeg" header="Card with image" btnLabel="Read more">
-  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
-    consequatur modi ab nisi perferendis placeat natus repellendus officiis
-    ipsa.
-    </p>
-  </Card>
-</ExampleDiv>
-
-```html
-<Card img="/images/image-2.jpeg" header="Card with image">
-  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
+  Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
   </p>
 </Card>
 ```
@@ -144,7 +118,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     Lorem ipsum dolor sit amet consectetur adipisicing elit.
     </p>
     <div class="w-full pt-4">
-      <Button name="Click me" on:click={btn1} />
+      <Button on:click={btn1}>Click me</Button>
     </div>
     </span>
   </Card>
@@ -165,73 +139,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   Lorem ipsum dolor sit amet consectetur adipisicing elit.
   </p>
   <div class="w-full pt-4">
-    <Button name="Click me" on:click={btn1} />
+    <Button on:click={btn1}>Click me</Button>
   </div>
   </span>
-</Card>
-```
-
-<Htwo label="Card with yellow button" />
-
-<ExampleDiv class="flex justify-center">
-  <Card
-    img="/images/image-1.jpeg"
-    header="Yellow button"
-    link="/"
-    btnColor="yellow"
-    btnLabel="Read more"
-  >
-    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
-    </p>
-  </Card>
-</ExampleDiv>
-
-```html
-<Card
-  img="/images/image-1.jpeg"
-  header="Yellow button"
-  link="/"
-  btnColor="yellow"
-  btnLabel="Read more"
->
-  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.
-  </p>
-</Card>
-```
-
-<Htwo label="Card with purple button" />
-
-<ExampleDiv class="flex justify-center">
-  <Card
-    img="/images/image-1.jpeg"
-    header="Purple button"
-    link="/"
-    btnColor="purple"
-    btnLabel="Read more"
-  >
-  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
-    consequatur modi ab nisi perferendis placeat natus repellendus officiis
-    ipsa.
-  </p>
-  </Card>
-</ExampleDiv>
-
-```html
-<Card
-  img="/images/image-1.jpeg"
-  header="Purple button"
-  link="/"
-  btnColor="purple"
-  btnLabel="Read more"
->
-  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400" slot="paragraph">
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio
-  consequatur modi ab nisi perferendis placeat natus repellendus officiis
-  ipsa.
-  </p>
 </Card>
 ```
 

@@ -46,16 +46,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Examples" />
 
-```html
-<HorizontalCard
-  img="/images/image-4.jpeg"
-  header="Horizontal card"
-  link="/"
->
-  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam sint,iam.
-</HorizontalCard>
-```
-
 <ExampleDiv class="flex justify-center">
   <HorizontalCard
     img="/images/image-4.jpeg"
@@ -69,17 +59,14 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </ExampleDiv>
 
 ```html
-<HorizontalCard>
-  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam sint.
+<HorizontalCard
+  img="/images/image-4.jpeg"
+  header="Horizontal card"
+  link="/"
+>
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam sint,iam.
 </HorizontalCard>
 ```
-
-<ExampleDiv class="flex justify-center">
-  <HorizontalCard>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam sint,iam
-    quos sed rem provident, a
-  </HorizontalCard>
-</ExampleDiv>
 
 <Htwo label="Props" />
 
