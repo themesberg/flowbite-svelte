@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.19.3](https://github.com/themesberg/flowbite-svelte/compare/v0.19.2...v0.19.3) (2022-06-24)
+
+
+### Bug Fixes
+
+* navbar page ([d0a704e](https://github.com/themesberg/flowbite-svelte/commit/d0a704e658d86090e38a3d0feadaf89cccb401a6))
+* update card page ([0fd6e0e](https://github.com/themesberg/flowbite-svelte/commit/0fd6e0eeb8a42e6f51f0ac8465803ea40100bd55))
+* update navbar ([7cdfa05](https://github.com/themesberg/flowbite-svelte/commit/7cdfa0525499faca856632278f5cb6b6c4213e75))
+
 ### [0.19.2](https://github.com/themesberg/flowbite-svelte/compare/v0.19.1...v0.19.2) (2022-06-24)
 
 
