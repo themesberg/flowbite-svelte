@@ -10,16 +10,6 @@
 	<div class="container flex flex-wrap mx-auto">
 		<slot />
 
-		<Htwo label="Related components" />
-		<div class="related-components">
-			<p>
-				<a href="/dropdowns/default" class="link">Default dropdown</a>
-			</p>
-
-			<p>
-				<a href="/dropdowns/image" class="link">Image dropdown</a>
-			</p>
-		</div>
 		<Htwo label="References" />
 		<div class="references">
 			<p>
