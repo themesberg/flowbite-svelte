@@ -65,7 +65,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <Htwo label="Default navbar" />
 
 <ExampleDiv>
-	<Navbar let:hidden let:toggle fluid={true} rounded={true}>
+	<Navbar let:hidden let:toggle rounded={true}>
 		<NavBrand href="/">
 			<img
 				src="https://flowbite.com/docs/images/logo.svg"
@@ -113,7 +113,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <Htwo label="Navbar with dropdown" />
 
 <ExampleDiv>
-	<Navbar let:hidden let:toggle fluid={true} rounded={true}>
+	<Navbar let:hidden let:toggle rounded={true}>
 		<NavBrand href="/">
 			<img
 				src="https://flowbite.com/docs/images/logo.svg"
@@ -124,7 +124,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 				Flowbite
 			</span>
 		</NavBrand>
-		<div class="flex order-2">
+		<div class="flex items-center md:order-2">
 			<Dropdown arrowIcon={false} inline={true}>
 				<Avatar {avatar} slot="label" />
 				<DropdownHeader>
@@ -150,7 +150,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </ExampleDiv>
 
 ```html
-<Navbar let:hidden let:toggle fluid={true} rounded={true}>
+<Navbar let:hidden let:toggle rounded={true}>
 	<NavBrand href="/">
 		<img
 			src="https://flowbite.com/docs/images/logo.svg"
@@ -161,7 +161,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 			Flowbite
 		</span>
 	</NavBrand>
-	<div class="flex order-2">
+	<div class="flex md:order-2">
 		<Dropdown arrowIcon={false} inline={true}>
 			<Avatar {avatar} slot="label" />
 			<DropdownHeader>
@@ -189,7 +189,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <Htwo label="Navbar with search" />
 
 <ExampleDiv>
-	<Navbar let:hidden let:toggle fluid={true} rounded={true}>
+	<Navbar let:hidden let:toggle rounded={true}>
 		<NavBrand href="/">
 			<img
 				src="https://flowbite.com/docs/images/logo.svg"
@@ -221,7 +221,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </ExampleDiv>
 
 ```html
-<Navbar let:hidden let:toggle fluid={true} rounded={true}>
+<Navbar let:hidden let:toggle rounded={true}>
 	<NavBrand href="/">
 		<img
 			src="https://flowbite.com/docs/images/logo.svg"
@@ -254,7 +254,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <Htwo label="Navbar with CTA button" />
 
 <ExampleDiv>
-	<Navbar let:hidden let:toggle fluid={true} rounded={true}>
+	<Navbar let:hidden let:toggle rounded={true}>
 		<NavBrand href="/">
 			<img
 				src="https://flowbite.com/docs/images/logo.svg"
@@ -280,7 +280,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </ExampleDiv>
 
 ```html
-<Navbar let:hidden let:toggle fluid={true} rounded={true}>
+<Navbar let:hidden let:toggle rounded={true}>
 	<NavBrand href="/">
 		<img
 			src="https://flowbite.com/docs/images/logo.svg"
