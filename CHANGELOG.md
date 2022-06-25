@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.19.4](https://github.com/themesberg/flowbite-svelte/compare/v0.19.3...v0.19.4) (2022-06-25)
+
+
+### Bug Fixes
+
+* change from const to let navDivClass ([ffdcd9f](https://github.com/themesberg/flowbite-svelte/commit/ffdcd9fa2cde37a13103e493905d6076f61e5df6))
+* update navbar index page by adding flex items-center md:order-2 ([efc0209](https://github.com/themesberg/flowbite-svelte/commit/efc0209c87d063157f225476f0b8e5beb04ed36f))
+
 ### [0.19.3](https://github.com/themesberg/flowbite-svelte/compare/v0.19.2...v0.19.3) (2022-06-24)
 
 
