@@ -12,26 +12,17 @@
 		color = undefined;
 	}
 
-	let fillColorClass: string;
-	if (color === undefined) {
-		fillColorClass = '';
-	} else if (color === 'blue') {
-		fillColorClass = 'fill-blue-600';
-	} else if (color === 'gray') {
-		fillColorClass = 'fill-gray-600';
-	} else if (color === 'green') {
-		fillColorClass = 'fill-green-500';
-	} else if (color === 'red') {
-		fillColorClass = 'fill-red-600';
-	} else if (color === 'yellow') {
-		fillColorClass = 'fill-yellow-400';
-	} else if (color === 'pink') {
-		fillColorClass = 'fill-pink-600';
-	} else if (color === 'purple') {
-		fillColorClass = 'fill-purple-600';
-	} else {
-		fillColorClass = 'fill-blue-600';
-	}
+	const fillColorClasses = {
+		blue: 'fill-blue-600',
+		gray: 'fill-gray-600',
+		green: 'fill-green-500',
+		red: 'fill-red-600',
+		yellow: 'fill-yellow-400',
+		pink: 'fill-pink-600',
+		purple: 'fill-purple-600'
+	};
+	let fillColorClass: string =
+		color === undefined ? '' : fillColorClasses[color] ?? fillColorClasses.blue;
 </script>
 
 <svg
