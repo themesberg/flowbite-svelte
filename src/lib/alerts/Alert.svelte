@@ -28,55 +28,59 @@
 	// TODO: update on change
 	if (rounded) divClass += 'rounded-lg ';
 	if (borderAccent) divClass += 'border-t-4 ';
-	if (color === 'gray') {
-		divClass += 'bg-gray-100 dark:bg-gray-200 ';
-		if (borderAccent) divClass += 'border-gray-500 dark:bg-gray-200 ';
-		contentClass = 'text-gray-700 dark:text-gray-800';
-		buttonClass +=
-			'bg-gray-100 text-gray-500 focus:ring-gray-400 hover:bg-gray-200 dark:bg-gray-200 dark:text-gray-600 dark:hover:bg-gray-300';
-	} else if (color === 'red') {
-		divClass += 'bg-red-100 dark:bg-red-200';
-		if (borderAccent) divClass += 'border-red-500 dark:bg-red-200 ';
-		contentClass = 'text-red-700 dark:text-red-800';
-		buttonClass +=
-			'bg-red-100 text-red-500 focus:ring-red-400 hover:bg-red-200 dark:bg-red-200 dark:text-red-600 dark:hover:bg-red-300';
-	} else if (color === 'yellow') {
-		divClass += 'bg-yellow-100 dark:bg-yellow-200 ';
-		if (borderAccent) divClass += 'border-yellow-500 dark:bg-tellow-200 ';
-		contentClass = 'text-yellow-700 dark:text-yellow-800';
-		buttonClass +=
-			'bg-yellow-100 text-yellow-500 focus:ring-yellow-400 hover:bg-yellow-200 dark:bg-yellow-200 dark:text-yellow-600 dark:hover:bg-yellow-300';
-	} else if (color === 'green') {
-		divClass += 'bg-green-100 dark:bg-green-200 ';
-		if (borderAccent) divClass += 'border-green-500 dark:bg-green-200 ';
-		contentClass = 'text-green-700 dark:text-green-800';
-		buttonClass +=
-			'bg-green-100 text-green-500 focus:ring-green-400 hover:bg-green-200 dark:bg-green-200 dark:text-green-600 dark:hover:bg-green-300';
-	} else if (color === 'indigo') {
-		divClass += 'bg-indigo-100 dark:bg-indigo-200 ';
-		if (borderAccent) divClass += 'border-indigo-500 dark:bg-indigo-200 ';
-		contentClass = 'text-indigo-700 dark:text-indigo-800';
-		buttonClass +=
-			'bg-indigo-100 text-indigo-500 focus:ring-indigo-400 hover:bg-indigo-200 dark:bg-indigo-200 dark:text-indigo-600 dark:hover:bg-indigo-300';
-	} else if (color === 'purple') {
-		divClass += 'bg-purple-100 dark:bg-purple-200 ';
-		if (borderAccent) divClass += 'border-purple-500 dark:bg-purple-200 ';
-		contentClass = 'text-purple-700 dark:text-purple-800';
-		buttonClass +=
-			'bg-purple-100 text-purple-500 focus:ring-purple-400 hover:bg-purple-200 dark:bg-purple-200 dark:text-purple-600 dark:hover:bg-purple-300';
-	} else if (color === 'pink') {
-		divClass += 'bg-pink-100 dark:bg-pink-200 ';
-		if (borderAccent) divClass += 'border-pink-500 dark:bg-pink-200 ';
-		contentClass = 'text-pink-700 dark:text-pink-800';
-		buttonClass +=
-			'bg-pink-100 text-pink-500 focus:ring-pink-400 hover:bg-pink-200 dark:bg-pink-200 dark:text-pink-600 dark:hover:bg-pink-300';
-	} else {
-		divClass += 'bg-blue-100 dark:bg-blue-200 ';
-		if (borderAccent) divClass += 'border-blue-500 dark:bg-blue-200 ';
-		contentClass = 'text-blue-700 dark:text-blue-800';
-		buttonClass +=
-			'bg-blue-100 text-blue-500 focus:ring-blue-400 hover:bg-blue-200 dark:bg-blue-200 dark:text-blue-600 dark:hover:bg-blue-300';
-	}
+
+	const bgClasses = {
+		gray: 'bg-gray-100 dark:bg-gray-200 ',
+		red: 'bg-red-100 dark:bg-red-200',
+		yellow: 'bg-yellow-100 dark:bg-yellow-200 ',
+		green: 'bg-green-100 dark:bg-green-200 ',
+		indigo: 'bg-indigo-100 dark:bg-indigo-200 ',
+		purple: 'bg-purple-100 dark:bg-purple-200 ',
+		pink: 'bg-pink-100 dark:bg-pink-200 ',
+		blue: 'bg-blue-100 dark:bg-blue-200 '
+	};
+
+	const borderAccentClasses = {
+		gray: 'border-gray-500 dark:bg-gray-200 ',
+		red: 'border-red-500 dark:bg-red-200 ',
+		yellow: 'border-yellow-500 dark:bg-tellow-200 ',
+		green: 'border-green-500 dark:bg-green-200 ',
+		indigo: 'border-indigo-500 dark:bg-indigo-200 ',
+		purple: 'border-purple-500 dark:bg-purple-200 ',
+		pink: 'border-pink-500 dark:bg-pink-200 ',
+		blue: 'border-blue-500 dark:bg-blue-200 '
+	};
+
+	const contentClasses = {
+		gray: 'text-gray-700 dark:text-gray-800',
+		red: 'text-red-700 dark:text-red-800',
+		yellow: 'text-yellow-700 dark:text-yellow-800',
+		green: 'text-green-700 dark:text-green-800',
+		indigo: 'text-indigo-700 dark:text-indigo-800',
+		purple: 'text-purple-700 dark:text-purple-800',
+		pink: 'text-pink-700 dark:text-pink-800',
+		blue: 'text-blue-700 dark:text-blue-800'
+	};
+
+	const buttonClasses = {
+		gray: 'bg-gray-100 text-gray-500 focus:ring-gray-400 hover:bg-gray-200 dark:bg-gray-200 dark:text-gray-600 dark:hover:bg-gray-300',
+		red: 'bg-red-100 text-red-500 focus:ring-red-400 hover:bg-red-200 dark:bg-red-200 dark:text-red-600 dark:hover:bg-red-300',
+		yellow:
+			'bg-yellow-100 text-yellow-500 focus:ring-yellow-400 hover:bg-yellow-200 dark:bg-yellow-200 dark:text-yellow-600 dark:hover:bg-yellow-300',
+		green:
+			'bg-green-100 text-green-500 focus:ring-green-400 hover:bg-green-200 dark:bg-green-200 dark:text-green-600 dark:hover:bg-green-300',
+		indigo:
+			'bg-indigo-100 text-indigo-500 focus:ring-indigo-400 hover:bg-indigo-200 dark:bg-indigo-200 dark:text-indigo-600 dark:hover:bg-indigo-300',
+		purple:
+			'bg-purple-100 text-purple-500 focus:ring-purple-400 hover:bg-purple-200 dark:bg-purple-200 dark:text-purple-600 dark:hover:bg-purple-300',
+		pink: 'bg-pink-100 text-pink-500 focus:ring-pink-400 hover:bg-pink-200 dark:bg-pink-200 dark:text-pink-600 dark:hover:bg-pink-300',
+		blue: 'bg-blue-100 text-blue-500 focus:ring-blue-400 hover:bg-blue-200 dark:bg-blue-200 dark:text-blue-600 dark:hover:bg-blue-300'
+	};
+
+	divClass += bgClasses[color] ?? bgClasses.blue;
+	if (borderAccent) divClass += borderAccentClasses[color] ?? borderAccentClasses.blue;
+	contentClass = contentClasses[color] ?? contentClasses.blue;
+	buttonClass += buttonClasses[color] ?? buttonClasses.blue;
 </script>
 
 <div id={$$props.id} class:hidden class={classNames(divClass, $$props.class)} role="alert">
@@ -112,6 +116,5 @@
 			</button>
 		{/if}
 	</div>
-
 	<slot name="extra" />
 </div>
