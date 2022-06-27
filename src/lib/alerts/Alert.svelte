@@ -1,4 +1,5 @@
 <script lang="ts">
+	import classNames from 'classnames';
 	import { createEventDispatcher } from 'svelte';
 	import type { SvelteComponent } from 'svelte';
 
@@ -78,7 +79,7 @@
 	}
 </script>
 
-<div id={$$props.id} class:hidden class="{divClass} {$$props.class || ''}" role="alert">
+<div id={$$props.id} class:hidden class={classNames(divClass, $$props.class)} role="alert">
 	<div class="flex">
 		{#if icon}
 			<svelte:component this={icon} class="flex-shrink-0 w-5 h-5 {contentClass} mr-3" />

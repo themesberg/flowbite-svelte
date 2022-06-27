@@ -1,4 +1,5 @@
 <script lang="ts">
+	import classNames from 'classnames';
 	export let divWrapperClass: string = 'p-4 mt-6 bg-blue-50 rounded-lg dark:bg-blue-900';
 	export let divClass: string = 'flex items-center mb-3';
 	export let spanClass: string =
@@ -8,7 +9,7 @@
 
 <div
 	id="dropdown-cta"
-	class="{divWrapperClass} {$$props.class || ''}"
+	class={classNames(divWrapperClass, $$props.class)}
 	{...$$restProps}
 	role="alert"
 >

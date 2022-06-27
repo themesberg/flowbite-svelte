@@ -1,4 +1,5 @@
 <script lang="ts">
+	import classNames from 'classnames';
 	import type { SiteType } from '../types';
 	export let site: SiteType;
 	export let aClass: string = 'flex items-center pl-2.5 mb-5';
@@ -7,7 +8,7 @@
 		'self-center text-xl font-semibold whitespace-nowrap dark:text-white';
 </script>
 
-<a href={site.href} class="{aClass} {$$props.class || ''}" {...$$restProps}>
+<a href={site.href} class={classNames(aClass, $$props.class)} {...$$restProps}>
 	<img src={site.img} class={imgClass} alt={site.name} />
 	<span class={spanClass}>{site.name}</span>
 </a>

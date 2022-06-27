@@ -1,4 +1,5 @@
 <script lang="ts">
+	import classNames from 'classnames';
 	import type { IconType } from '../types';
 	import { slide } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
@@ -19,7 +20,7 @@
 	<button
 		on:click={() => handleDropdown()}
 		type="button"
-		class="{btnClass} {$$props.class || ''}"
+		class={classNames(btnClass, $$props.class)}
 		{...$$restProps}
 		aria-controls="sidebar-dropdown"
 	>

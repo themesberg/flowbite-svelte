@@ -1,4 +1,5 @@
 <script lang="ts">
+	import classNames from 'classnames';
 	import { slide } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	import type { AccordionIconType } from '../types';
@@ -35,7 +36,7 @@
 		type="button"
 		class:rounded-t-xl={id === '1'}
 		class:border-t-0={id !== '1'}
-		class="{btnClass} {$$props.class || ''}"
+		class={classNames(btnClass, $$props.class)}
 	>
 		<slot name="header" />
 		{#if isOpen}
