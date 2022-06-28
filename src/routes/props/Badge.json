@@ -1,1 +1,1 @@
-{"props":[["textSize","Textsize ","'text-xs'"],["name","string ","'Read more'"],["color","Colors ","'blue'"]]}
+{"props":[["large","boolean ","false"],["color","Colors ","'blue'"],["href","string ","undefined"]]}

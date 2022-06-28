@@ -140,9 +140,6 @@
 			<h3 class={h3Class}>
 				<a href="/badges">Badges</a>
 			</h3>
-			{#each badges as { href, name, rel }}
-				<SidebarList {href} {name} {rel} {sideBarListClass} />
-			{/each}
 		</Nav>
 		<Nav {navClass} {navDivClass}>
 			<h3 class={h3Class}>

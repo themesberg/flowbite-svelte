@@ -9,20 +9,6 @@
 	<div class="container flex flex-wrap mx-auto">
 		<slot />
 
-		<Htwo label="Related components" />
-		<div class="related-components">
-			<p>
-				<a href="/badges/default" class="link">Default Badge</a>
-			</p>
-
-			<p>
-				<a href="/badges/badge-icon" class="link">Badge with icon</a>
-			</p>
-
-			<p>
-				<a href="/badges/badge-link" class="link">Badge with link</a>
-			</p>
-		</div>
 		<Htwo label="References" />
 		<div class="references">
 			<p>
