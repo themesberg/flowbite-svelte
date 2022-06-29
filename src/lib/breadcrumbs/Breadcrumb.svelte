@@ -6,7 +6,7 @@
 	export let crumbClass: string =
 		'ml-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white';
 	export let solid: boolean = false;
-	let navClass: string = 'flex';
+	export let navClass: string = 'flex';
 	if (solid) {
 		navClass =
 			'flex py-3 px-5 text-gray-700 bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700';
