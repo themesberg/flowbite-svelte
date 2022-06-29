@@ -7,7 +7,8 @@ layout: carouselLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { CarouselTransition, Breadcrumb } from '$lib/index';
+  import { CarouselTransition, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Home } from 'svelte-heros';
   import { quartInOut, sineInOut, bounceInOut, quintOut } from 'svelte/easing';
   import { images } from './imageData';
   // import componentProps from '../props/Carousel.json'
@@ -22,24 +23,13 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   let showIndicators=false
   let showCaptions=false
   let slideControls=false
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Carousels',
-      href:'/carousels/'
-    },
-    {
-      label:'Carousel default',
-      href:'/carousels/default'
-    },
-  ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/carousels">Carousels</BreadcrumbItem>
+  <BreadcrumbItem>Carousel transition</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Carousel transition</h1>
 

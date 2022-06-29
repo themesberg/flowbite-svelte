@@ -7,12 +7,13 @@ layout: listgroupLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { List, Breadcrumb } from '$lib/index';
+  import { List, Breadcrumb, BreadcrumbItem } from '$lib/index'
   import {
     Adjustments,
     UserCircle,
     InboxIn,
     CloudDownload,
+    Home
   } from "svelte-heros";
   import componentProps from '../props/List.json'
   // Props table
@@ -78,21 +79,12 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       href: "/",
     },
   ];
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'List group',
-      href:'/list-group/'
-    }
-  ]
 </script>
 
-<Breadcrumb {crumbs}/>
-
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/footer">List group</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">List group</h1>
 

@@ -7,7 +7,8 @@ layout: tableLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox, TableSearch, Breadcrumb } from '$lib/index'
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox, TableSearch, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Home } from 'svelte-heros'
   import componentProps1 from '../props/Table.json'
   import componentProps2 from '../props/TableBodyCell.json'
   import componentProps3 from '../props/TableBodyRow.json'
@@ -20,20 +21,12 @@ layout: tableLayout
 
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
- 
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Tables',
-      href:'/tables/'
-    }
-  ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem>Tables</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Table Components</h1>
 

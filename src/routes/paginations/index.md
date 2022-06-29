@@ -7,7 +7,8 @@ layout: paginationLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
 	import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-	import { Pagination, Previous, Next, TableData, Breadcrumb } from '$lib/index';
+	import { Pagination, Previous, Next, TableData, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Home } from 'svelte-heros';
 	import componentProps1 from '../props/Pagination.json'
   import componentProps2 from '../props/Previous.json'
 	import componentProps3 from '../props/Next.json'
@@ -67,7 +68,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem>Pagination</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Pagination Components</h1>
 

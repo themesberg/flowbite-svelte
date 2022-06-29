@@ -7,7 +7,8 @@ layout: avatarLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Avatar, Breadcrumb } from "$lib/index"
+  import { Avatar, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { Home } from 'svelte-heros'
   import alertProp from '../props/Avatar.json'
   // Props table
   export let items = alertProp.props
@@ -75,19 +76,12 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     header:'Jese Leos',
     text:'Joined in August 2014'
   }
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Avatar',
-      href:'/avatar/'
-    }
-  ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem>Avatar</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Avatar</h1>
 

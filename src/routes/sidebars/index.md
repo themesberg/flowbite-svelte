@@ -7,8 +7,9 @@ layout: sidebarLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Sidebar, SidebarBrand, SidebarCta,	SidebarDropdownItem, SidebarDropdownWrapper,	SidebarGroup,	SidebarItem, SidebarWrapper, Breadcrumb } from '$lib/index';
+  import { Sidebar, SidebarBrand, SidebarCta,	SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup,	SidebarItem, SidebarWrapper, Breadcrumb, BreadcrumbItem } from '$lib/index'
   import {
+    Home,
     ChartPie,
     InboxIn,
     User,
@@ -64,7 +65,10 @@ layout: sidebarLayout
   ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem>Sidebars</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Sidebar Components</h1>
 

@@ -7,7 +7,8 @@ layout: modalLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { SmallModal, ModalButton, modalIdStore, Breadcrumb } from '$lib/index';
+  import { SmallModal, ModalButton, modalIdStore, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Home } from 'svelte-heros';
   import { goto } from "$app/navigation";
   import componentProps1 from '../props/ModalButton.json'
   import componentProps2 from '../props/SmallModal.json'
@@ -51,25 +52,13 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   const handlebtnS4 = () => {
     smallModal2.closeModal();
   };
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Modals',
-      href:'/modals/'
-    },
-    {
-      label:'Small modals',
-      href:'/modals/small'
-    },
-  ]
 </script>
 
-<Breadcrumb {crumbs}/>
-
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/modals">Modals</BreadcrumbItem>
+  <BreadcrumbItem>Small modals</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Small Modals</h1>
 

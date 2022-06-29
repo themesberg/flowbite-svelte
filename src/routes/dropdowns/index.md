@@ -8,7 +8,8 @@ layout: dropdownLayout
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
 
-  import { Button, Dropdown, DropdownDivider, DropdownHeader, DropdownItem,Navbar,NavBrand,NavHamburger, NavUl, NavLi, Breadcrumb } from '$lib/index';
+  import { Button, Dropdown, DropdownDivider, DropdownHeader, DropdownItem,Navbar,NavBrand,NavHamburger, NavUl, NavLi, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Home } from 'svelte-heros';
   import componentProps from '../props/Dropdown.json'
   import componentProps2 from '../props/DropdownDivider.json'
   import componentProps3 from '../props/DropdownHeader.json'
@@ -23,25 +24,12 @@ layout: dropdownLayout
   
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Dropdown',
-      href:'/dropdowns/'
-    },
-    {
-      label:'Dropdown default',
-      href:'/dropdowns/default'
-    }
-  ]
-
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem>Dropdown</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Dropdown</h1>
 

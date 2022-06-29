@@ -7,7 +7,8 @@ layout: modalLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { ModalButton, ExtraLargeModal, Breadcrumb } from '$lib/index';
+  import { ModalButton, ExtraLargeModal, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Home } from 'svelte-heros';
   import componentProps1 from '../props/ModalButton.json'
   import componentProps2 from '../props/ExtraLargeModal.json'
   let items1 = componentProps1.props
@@ -51,7 +52,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/modals">Modals</BreadcrumbItem>
+  <BreadcrumbItem>Extra-large modals</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Extra-large Modals</h1>
 

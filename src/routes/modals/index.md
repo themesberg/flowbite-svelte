@@ -3,22 +3,15 @@ layout: modalLayout
 ---
 
 <script>
-	import { Card, Breadcrumb} from '$lib/index';
+	import { Card, Breadcrumb, BreadcrumbItem } from '$lib/index';
+  import { Home } from 'svelte-heros'
 	let divClass = 'max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700';
-	let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Modals',
-      href:'/modals/'
-    },
-    
-  ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem>Modals</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Modal Components</h1>
 <div class="p-4">

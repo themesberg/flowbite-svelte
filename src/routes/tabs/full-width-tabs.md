@@ -7,7 +7,8 @@ layout: tabLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { FullWidthTabs, Breadcrumb } from "$lib/index"
+  import { FullWidthTabs, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { Home } from 'svelte-heros'
   import componentProps from '../props/FullWidthTabs.json'
   // Props table
   let items = componentProps.props
@@ -40,24 +41,13 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     href: "/",
   },
 ];
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Tabs',
-      href:'/tabs/'
-    },
-    {
-      label:'Full-width tabs',
-      href:'/tabs/full-width-tabs'
-    },
-  ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/tabs">Tabs</BreadcrumbItem>
+  <BreadcrumbItem>Full-width tabs</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Full Width Tabs</h1>
 

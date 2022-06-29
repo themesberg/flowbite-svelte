@@ -7,30 +7,22 @@ layout: toastLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-import { Toast, Breadcrumb } from "$lib/index"
-import { quintOut, elasticOut } from 'svelte/easing';
-import {Fire, CheckCircle, PlusCircle,Archive} from 'svelte-heros'
-import componentProps from '../props/Toast.json'
+  import { Toast, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { quintOut, elasticOut } from 'svelte/easing';
+  import {Fire, CheckCircle, PlusCircle,Archive, Home } from 'svelte-heros'
+  import componentProps from '../props/Toast.json'
   // Props table
   let items = componentProps.props
 	let propHeader = ['Name', 'Type', 'Default']
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Toasts',
-      href:'/toasts/'
-    }
-  ]
+  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem>Toasts</BreadcrumbItem>
+</Breadcrumb>
 
 
 <h1 class="text-3xl w-full dark:text-white py-8">Toast Components</h1>

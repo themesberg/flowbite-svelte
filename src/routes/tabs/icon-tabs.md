@@ -7,8 +7,9 @@ layout: tabLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
 	import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-	import { IconTabs, Breadcrumb } from '$lib/index';
+	import { IconTabs, Breadcrumb, BreadcrumbItem } from '$lib/index'
 	import {
+		Home,
 		UserCircle,
 		ViewGrid,
 		Adjustments,
@@ -52,24 +53,13 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 			iconSize: 18,
 		}
 	];
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Tabs',
-      href:'/tabs/'
-    },
-    {
-      label:'Icon tabs',
-      href:'/tabs/icon-tabs'
-    },
-  ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/tabs">Tabs</BreadcrumbItem>
+  <BreadcrumbItem>Icon tabs</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Icon Tabs</h1>
 

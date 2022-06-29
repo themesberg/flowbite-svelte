@@ -3,8 +3,15 @@ layout: doc
 ---
 
 <script>
-import Htwo from '../utils/Htwo.svelte'
+  import Htwo from '../utils/Htwo.svelte'
+  import { Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Home } from 'svelte-heros'
 </script>
+
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem>License</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl dark:text-white w-full pb-4">LICENSE</h1>
 

@@ -7,31 +7,22 @@ layout: formLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-import { onMount } from 'svelte';
-import { FloatingLabelInput, Breadcrumb } from "$lib/index"
-import componentProps from '../props/FloatingLabelInput.json'
-let items = componentProps.props
-let propHeader = ['Name', 'Type', 'Default']
-let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Forms',
-      href:'/forms/'
-    },
-    {
-      label:'Floating label',
-      href:'/forms/floating-label'
-    }
-  ]
+  import { onMount } from 'svelte';
+  import { FloatingLabelInput, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { Home } from 'svelte-heros'
+  import componentProps from '../props/FloatingLabelInput.json'
+  let items = componentProps.props
+  let propHeader = ['Name', 'Type', 'Default']
+  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
+  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/forms">Forms</BreadcrumbItem>
+  <BreadcrumbItem>Floating label</BreadcrumbItem>
+</Breadcrumb>
+
 
 <h1 class="text-3xl w-full dark:text-white py-8">Floating label Components</h1>
 

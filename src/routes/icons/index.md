@@ -7,7 +7,8 @@ layout: iconLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Breadcrumb } from '$lib/index'
+  import { Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Home } from 'svelte-heros'
   import {
     Adjustments,
     Bell,
@@ -30,7 +31,10 @@ layout: iconLayout
   ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem>Icons</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Icons</h1>
 

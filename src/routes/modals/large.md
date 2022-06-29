@@ -7,7 +7,8 @@ layout: modalLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { LargeModal, ModalButton, Breadcrumb } from '$lib/index';
+  import { LargeModal, ModalButton, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Home } from 'svelte-heros';
   import componentProps1 from '../props/ModalButton.json'
   import componentProps2 from '../props/LargeModal.json'
   let items1 = componentProps1.props
@@ -35,24 +36,13 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     alert("handlebtn3 is clicked from a parent page.");
     modal2.closeModal()
   };
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Modals',
-      href:'/modals/'
-    },
-    {
-      label:'Large modals',
-      href:'/modals/large'
-    },
-  ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/modals">Modals</BreadcrumbItem>
+  <BreadcrumbItem>Large modals</BreadcrumbItem>
+</Breadcrumb>
 
 
 <h1 class="text-3xl w-full dark:text-white py-8">Large Modals</h1>

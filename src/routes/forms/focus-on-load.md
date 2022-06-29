@@ -1,40 +1,31 @@
 <script>
-import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
-import TableProp from '../utils/TableProp.svelte'
-import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-import { onMount } from 'svelte';
-import { Input, Label, Helper, Iconinput, Breadcrumb } from "$lib/index"
-import { AtSymbol , Mail } from 'svelte-heros'
-import componentProps1 from '../props/Input.json'
-let items1 = componentProps1.props
-import componentProps2 from '../props/Iconinput.json'
-let items2 = componentProps2.props
-let propHeader = ['Name', 'Type', 'Default']
-let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
-let ref
+  import Htwo from '../utils/Htwo.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import TableProp from '../utils/TableProp.svelte'
+  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import { onMount } from 'svelte';
+  import { Input, Label, Helper, Iconinput, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { Home } from 'svelte-heros'
+  import { AtSymbol , Mail } from 'svelte-heros'
+  import componentProps1 from '../props/Input.json'
+  let items1 = componentProps1.props
+  import componentProps2 from '../props/Iconinput.json'
+  let items2 = componentProps2.props
+  let propHeader = ['Name', 'Type', 'Default']
+  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
+  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  let ref
 
-onMount(() => {
-  ref.focus();
-});
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Forms',
-      href:'/forms/'
-    },
-    {
-      label:'Input',
-      href:'/forms/input'
-    }
-  ]
+  onMount(() => {
+    ref.focus();
+  });
 </script>
-<Breadcrumb {crumbs}/>
+
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/forms">Forms</BreadcrumbItem>
+  <BreadcrumbItem>Focus on load</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Focus on load</h1>
 

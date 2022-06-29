@@ -7,8 +7,8 @@ layout: ratingLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
 	import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-	import { Rating, Breadcrumb } from '$lib/index';
-	import { Heart, ThumbUp, EmojiHappy } from 'svelte-heros';
+	import { Rating, Breadcrumb, BreadcrumbItem } from '$lib/index'
+	import { Heart, ThumbUp, EmojiHappy, Home } from 'svelte-heros';
 	import componentProps from '../props/Rating.json'
   // Props table
   let items = componentProps.props
@@ -16,21 +16,6 @@ layout: ratingLayout
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
 let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Ratings',
-      href:'/ratings/'
-    },
-    {
-      label:'Rating',
-      href:'/ratings/rating'
-    }
-  ]
 	let headerLabel = {
 		desc1: '8.7',
 		desc2: 'Excellent',
@@ -42,7 +27,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 	};
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/ratings">Ratings</BreadcrumbItem>
+  <BreadcrumbItem>Ratings</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Rating Component</h1>
 

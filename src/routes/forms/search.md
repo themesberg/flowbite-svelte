@@ -7,8 +7,8 @@ layout: formLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Search, SimpleSearch, VoiceSearch, Breadcrumb } from '$lib/index'
-
+  import { Search, SimpleSearch, VoiceSearch, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Home } from 'svelte-heros'
   import searchComponentProps from '../props/Search.json'
   import simpleSearchComponentProps from '../props/SimpleSearch.json'
   import voiceSearchcomponentProps from '../props/VoiceSearch.json'
@@ -24,24 +24,13 @@ layout: formLayout
   function handleVoiceBtn() {
     alert('You clicked voice button');
   }
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Forms',
-      href:'/forms/'
-    },
-    {
-      label:'Search',
-      href:'/forms/search'
-    }
-  ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/forms">Forms</BreadcrumbItem>
+  <BreadcrumbItem>Search</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Search Components</h1>
 

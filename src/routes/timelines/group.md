@@ -7,7 +7,8 @@ layout: timelineLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
 	import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-	import { Group, GroupItem, Breadcrumb } from '$lib/index';
+	import { Group, GroupItem, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Home } from 'svelte-heros';
 	import componentProps1 from '../props/Group.json'
   import componentProps2 from '../props/GroupItem.json'
   let items1 = componentProps1.props
@@ -38,26 +39,13 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 			comment: '"I wanted to share a webinar zeroheight."'
 		}
 	];
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Timelines',
-      href:'/timelines/'
-    },
-    {
-      label:'Timeline group',
-      href:'/timelines/group'
-    },
-  ]
 </script>
 
-<Breadcrumb {crumbs}/>
-
-
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/timelines">Timelines</BreadcrumbItem>
+  <BreadcrumbItem>Timeline group</BreadcrumbItem>
+</Breadcrumb>
 <h1 class="text-3xl w-full dark:text-white py-8">Grouped Timeline</h1>
 
 <ExampleDiv>

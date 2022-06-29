@@ -7,7 +7,8 @@ layout: cardLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Card, Button, Breadcrumb } from '$lib/index';
+  import { Card, Button, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Home } from 'svelte-heros';
   import componentProps from '../props/Card.json'
   // Props table
   let items = componentProps.props
@@ -19,24 +20,13 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   const btn1 = ()　=>　{
     alert('You clicked.')
   }
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Cards',
-      href:'/cards/'
-    },
-    {
-      label:'Card default',
-      href:'/cards/card'
-    },
-  ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/cards">Cards</BreadcrumbItem>
+  <BreadcrumbItem>Card default</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Card</h1>
 

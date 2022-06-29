@@ -7,7 +7,8 @@ layout: timelineLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
 	import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-	import { Activity, ActivityItem, Breadcrumb } from '$lib/index';
+	import { Activity, ActivityItem, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Home } from 'svelte-heros';
 	import componentProps1 from '../props/Activity.json'
   import componentProps2 from '../props/ActivityItem.json'
   let items1 = componentProps1.props
@@ -40,24 +41,13 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 			src: '/images/profile-picture-3.webp'
 		}
 	];
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Timelines',
-      href:'/timelines/'
-    },
-    {
-      label:'Timeline activity',
-      href:'/timelines/activity'
-    },
-  ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/timelines">Timelines</BreadcrumbItem>
+  <BreadcrumbItem>Timeline activity</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Activity Log</h1>
 

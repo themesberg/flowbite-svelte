@@ -7,7 +7,8 @@ layout: modalLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { SignInModal, ModalButton, Breadcrumb } from '$lib/index';
+  import { SignInModal, ModalButton, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Home } from 'svelte-heros';
   import componentProps1 from '../props/ModalButton.json'
   import componentProps2 from '../props/SignInModal.json'
   let items1 = componentProps1.props
@@ -15,28 +16,15 @@ layout: modalLayout
 	let propHeader = ['Name', 'Type', 'Default']
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
-
+  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
   let signmodal;
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Modals',
-      href:'/modals/'
-    },
-    {
-      label:'Signin modals',
-      href:'/modals/signin'
-    },
-  ]
 </script>
 
-<Breadcrumb {crumbs}/>
-
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/modals">Modals</BreadcrumbItem>
+  <BreadcrumbItem>Signin modals</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Sign-in Modals</h1>
 

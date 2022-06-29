@@ -7,8 +7,8 @@ layout: timelineLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
 	import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-	import { Timeline, TimelineItemVertical, Breadcrumb } from '$lib/index';
-	import { Calendar, Adjustments } from 'svelte-heros';
+	import { Timeline, TimelineItemVertical, Breadcrumb, BreadcrumbItem } from '$lib/index'
+	import { Calendar, Adjustments, Home } from 'svelte-heros';
 	import componentProps1 from '../props/Timeline.json'
   import componentProps2 from '../props/TimelineItemVertical.json'
   let items1 = componentProps1.props
@@ -46,24 +46,13 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 			text: 'Consectetur adipiscing elit. Aenean condimentum erat vitae elit convallis molestie. Maecenas felis nisl, semper vitae venenatis non'
 		}
 	];
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Timelines',
-      href:'/timelines/'
-    },
-    {
-      label:'Timeline vertical',
-      href:'/timelines/vertical'
-    },
-  ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/timelines">Timelines</BreadcrumbItem>
+  <BreadcrumbItem>Timeline vertical</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Vertical Timeline</h1>
 

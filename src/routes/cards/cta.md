@@ -7,7 +7,8 @@ layout: cardLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { CtaCard, Breadcrumb } from '$lib/index';
+  import { CtaCard, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Home } from 'svelte-heros';
   import componentProps from '../props/CtaCard.json'
   // Props table
   let items = componentProps.props
@@ -35,24 +36,13 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       rel: "external",
     },
   ];
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Cards',
-      href:'/cards/'
-    },
-    {
-      label:'CTA Card',
-      href:'/cards/cta'
-    },
-  ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/cards">Cards</BreadcrumbItem>
+  <BreadcrumbItem>CTA card</BreadcrumbItem>
+</Breadcrumb>
 
 
 <h1 class="text-3xl w-full dark:text-white py-8">CTA Card</h1>

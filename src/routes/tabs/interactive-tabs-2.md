@@ -8,7 +8,8 @@ layout: tabLayout
 	import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { InteractiveTabHead, TabContent, Card, Timeline,
-		TimelineItem, Breadcrumb } from '$lib/index';
+		TimelineItem, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Home } from 'svelte-heros';
 	import componentProps1 from '../props/InteractiveTabHead.json'
   import componentProps2 from '../props/TabContent.json'
   let items1 = componentProps1.props
@@ -41,25 +42,13 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 			text: 'Consectetur adipiscing elit...'
 		}
 	];
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Tabs',
-      href:'/tabs/'
-    },
-    {
-      label:'Interactive tabs 2',
-      href:'/tabs/interactive-tabs-2'
-    },
-  ]
 </script>
 
-<Breadcrumb {crumbs}/>
-
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/tabs">Tabs</BreadcrumbItem>
+  <BreadcrumbItem>Interactive tabs 2</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Interactive Tabs 2: Adding other components</h1>
 

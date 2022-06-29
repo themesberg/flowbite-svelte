@@ -15,6 +15,7 @@ export { default as BadgeLink } from './badges/BadgeLink.svelte';
 
 // Breadcrumbs
 export { default as Breadcrumb } from './breadcrumbs/Breadcrumb.svelte';
+export { default as BreadcrumbItem } from './breadcrumbs/BreadcrumbItem.svelte'
 
 // Buttons
 export { default as Button } from './buttons/Button.svelte';

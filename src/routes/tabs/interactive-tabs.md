@@ -7,7 +7,8 @@ layout: tabLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { InteractiveTabs, Breadcrumb } from '$lib/index';
+  import { InteractiveTabs, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Home } from 'svelte-heros';
   import componentProps from '../props/InteractiveTabs.json'
   // Props table
   let items = componentProps.props
@@ -42,24 +43,13 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
         "1-4Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     },
   ];
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Tabs',
-      href:'/tabs/'
-    },
-    {
-      label:'Interactive tabs',
-      href:'/tabs/interactive-tabs'
-    },
-  ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/tabs">Tabs</BreadcrumbItem>
+  <BreadcrumbItem>Interactive tabs</BreadcrumbItem>
+</Breadcrumb>
 
 
 <h1 class="text-3xl w-full dark:text-white py-8">Interactive Tabs</h1>

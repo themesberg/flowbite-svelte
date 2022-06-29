@@ -7,7 +7,8 @@ layout: footerLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { SimpleFooter, Breadcrumb } from "$lib/index"
+  import { SimpleFooter, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { Home } from 'svelte-heros'
   import componentProps from '../props/SimpleFooter.json'
   // Props table
   let items = componentProps.props
@@ -25,24 +26,13 @@ layout: footerLayout
     { name: "Profile", href: "/" },
     { name: "Contact", href: "/" },
   ];
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Footer',
-      href:'/footer/'
-    },
-    {
-      label:'Footer default',
-      href:'/footer/default'
-    },
-  ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/footer">Footer</BreadcrumbItem>
+  <BreadcrumbItem>Footer default</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Simple Footer</h1>
 

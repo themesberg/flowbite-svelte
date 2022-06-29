@@ -7,7 +7,8 @@ layout: ratingLayout
 	import ExampleDiv from '../utils/ExampleDiv.svelte'
 	import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-	import { Rating, AdvancedRating, ScoreRating, Breadcrumb } from '$lib/index';
+	import { Rating, AdvancedRating, ScoreRating, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Home } from 'svelte-heros';
 	import { ThumbUp } from 'svelte-heros';
 	import componentProps from '../props/AdvancedRating.json'
   // Props table
@@ -16,21 +17,6 @@ layout: ratingLayout
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
 	let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Ratings',
-      href:'/ratings/'
-    },
-    {
-      label:'Advanced rating',
-      href:'/ratings/advanced-rating'
-    }
-  ]
 	let headerLabel = {
 		desc1: '8.7',
 		desc2: 'Excellent',
@@ -42,7 +28,11 @@ layout: ratingLayout
 	};
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/ratings">Ratings</BreadcrumbItem>
+  <BreadcrumbItem>Advanced ratings</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">AdvancedRating Component</h1>
 

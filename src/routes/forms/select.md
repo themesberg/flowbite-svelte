@@ -8,7 +8,8 @@ import ExampleDiv from '../utils/ExampleDiv.svelte'
 import TableProp from '../utils/TableProp.svelte'
 import TableDefaultRow from '../utils/TableDefaultRow.svelte'
 import { onMount } from 'svelte';
-import { Select, Breadcrumb } from "$lib/index"
+import { Select, Breadcrumb, BreadcrumbItem } from "$lib/index"
+import { Home } from 'svelte-heros'
 import componentProps from '../props/Select.json'
 let items = componentProps.props
 
@@ -31,25 +32,13 @@ let fileuploadprops2 = {
   label : 'Upload file',
   helper : 'A profile picture is useful to confirm your are logged into your account'
 }
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Forms',
-      href:'/forms/'
-    },
-    {
-      label:'Select',
-      href:'/forms/select'
-    }
-  ]
 </script>
 
-<Breadcrumb {crumbs}/>
-
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/forms">Forms</BreadcrumbItem>
+  <BreadcrumbItem>Select</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Select Components</h1>
 

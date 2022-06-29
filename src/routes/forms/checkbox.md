@@ -7,7 +7,8 @@ layout: formLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Checkbox, Label, Helper ,Breadcrumb } from "$lib/index"
+  import { Checkbox, Label, Helper ,Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { Home } from 'svelte-heros'
   import componentProps from '../props/Checkbox.json'
   import componentProps2 from '../props/Label.json'
   import componentProps3 from '../props/Helper.json'
@@ -18,24 +19,13 @@ layout: formLayout
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Forms',
-      href:'/forms/'
-    },
-    {
-      label:'Checkbox',
-      href:'/forms/checkbox'
-    }
-  ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/forms">Forms</BreadcrumbItem>
+  <BreadcrumbItem>Checkbox</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Checkbox Components</h1>
 

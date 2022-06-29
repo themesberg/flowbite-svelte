@@ -3,20 +3,14 @@ layout: docLayout
 ---
 <script>
   import Htwo from '../utils/Htwo.svelte'
-  import { Breadcrumb } from '$lib/index'
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Getting started',
-      href:'/getting-started'
-    }
-  ]
+  import { Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Home } from 'svelte-heros'
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem>Getting started</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Getting Started</h1>
 

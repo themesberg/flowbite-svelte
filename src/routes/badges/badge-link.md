@@ -7,33 +7,23 @@ layout: badgeLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import {BadgeLink, Breadcrumb } from "$lib/index"
+  import {BadgeLink, Breadcrumb, BreadcrumbItem } from "$lib/index"
+   import { Home } from 'svelte-heros'
   import componentProps from '../props/BadgeLink.json'
   // Props table
   let items = componentProps.props
 	let propHeader = ['Name', 'Type', 'Default']
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
-
+  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
   let link="/"
-    let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Badges',
-      href:'/badges/'
-    },
-    {
-      label:'Link badge',
-      href:'/badges/badge-link'
-    }
-  ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/badges">Badges</BreadcrumbItem>
+  <BreadcrumbItem>Link badge</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Badges with Link</h1>
 

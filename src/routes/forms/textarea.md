@@ -8,7 +8,8 @@ import ExampleDiv from '../utils/ExampleDiv.svelte'
 import TableProp from '../utils/TableProp.svelte'
 import TableDefaultRow from '../utils/TableDefaultRow.svelte'
 import { onMount } from 'svelte';
-import { Textarea, Breadcrumb } from "$lib/index"
+import { Textarea, Breadcrumb, BreadcrumbItem } from "$lib/index"
+import { Home } from 'svelte-heros'
 import componentProps from '../props/Textarea.json'
 let items = componentProps.props
 let propHeader = ['Name', 'Type', 'Default']
@@ -23,23 +24,14 @@ let textareaprops = {
   rows: 4,
   placeholder: 'Leave a comment...',
 };
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Forms',
-      href:'/forms/'
-    },
-    {
-      label:'Textarea',
-      href:'/forms/textarea'
-    }
-  ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/forms">Forms</BreadcrumbItem>
+  <BreadcrumbItem>Textarea</BreadcrumbItem>
+</Breadcrumb>
+
 
 <h1 class="text-3xl w-full dark:text-white py-8">Textarea Components</h1>
 

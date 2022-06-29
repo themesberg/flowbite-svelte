@@ -7,7 +7,8 @@ layout: carouselLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Carousel, Breadcrumb } from '$lib/index';
+  import { Carousel, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Home } from 'svelte-heros';
   import {ChevronDoubleLeft, ChevronDoubleRight, Link} from 'svelte-heros'
   import { images } from './imageData';
   import componentProps from '../props/Carousel.json'
@@ -22,38 +23,27 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   let showIndicators=false
   let showCaptions=false
   let slideControls=false
+  let icons={
+    next: ChevronDoubleRight,
+    prev: ChevronDoubleLeft,
+  }
+  let iconSize =20
+  let iconClass = 'text-white dark:text-red-500';
 
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Carousels',
-      href:'/carousels/'
-    },
-    {
-      label:'Carousel default',
-      href:'/carousels/default'
-    },
-  ]
-   let icons={
-      next: ChevronDoubleRight,
-		  prev: ChevronDoubleLeft,
-    }
-    let iconSize =20
-    let iconClass = 'text-white dark:text-red-500';
-
-    let hidden = true;
-    const handleMouseover = ()=>{
-      hidden = false
-    }
-    const handleMouseout = ()=>{
-      hidden = true
-    }
+  let hidden = true;
+  const handleMouseover = ()=>{
+    hidden = false
+  }
+  const handleMouseout = ()=>{
+    hidden = true
+  }
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/carousels">Carousels</BreadcrumbItem>
+  <BreadcrumbItem>Carousel default</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Carousel</h1>
 

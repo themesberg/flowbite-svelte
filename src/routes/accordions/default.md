@@ -8,7 +8,8 @@ layout: accordionLayout
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import {ArrowCircleUp, ArrowCircleDown} from 'svelte-heros'
-  import { AccordionItem, AccordionFlush, Breadcrumb } from "$lib/index";
+  import { AccordionItem, AccordionFlush,Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Home } from 'svelte-heros'
   import accordionProps from '../props/AccordionItem.json'
   import accordionProps2 from '../props/AccordionFlush.json'
    // Props table
@@ -24,23 +25,13 @@ let icons={
   up:ArrowCircleUp,
   down:ArrowCircleDown
 }
- let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Accordions',
-      href:'/accordions/'
-    },
-    {
-      label:'Accordion default',
-      href:'/accordions/default'
-    }
-  ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/accordions">Accordions</BreadcrumbItem>
+  <BreadcrumbItem>Accordion default</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Accordion</h1>
 

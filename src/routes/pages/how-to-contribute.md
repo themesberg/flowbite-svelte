@@ -3,8 +3,15 @@ layout: docLayout
 ---
 
 <script>
-import Htwo from '../utils/Htwo.svelte'
+  import Htwo from '../utils/Htwo.svelte'
+  import { Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Home } from 'svelte-heros'
 </script>
+
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem>How to contribute</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">How to Contribute</h1>
 

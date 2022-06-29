@@ -3,67 +3,56 @@ layout: formLayout
 ---
 
 <script>
-import Htwo from '../utils/Htwo.svelte'
-import ExampleDiv from '../utils/ExampleDiv.svelte'
-import TableProp from '../utils/TableProp.svelte'
-import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-import { onMount } from 'svelte';
-import { Toggle, Breadcrumb } from "$lib/index"
-import { AtSymbol , Mail } from 'svelte-heros'
-import componentProps from '../props/Toggle.json'
-let items = componentProps.props
+  import Htwo from '../utils/Htwo.svelte'
+  import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import TableProp from '../utils/TableProp.svelte'
+  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import { onMount } from 'svelte';
+  import { Toggle, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { AtSymbol , Mail , Home} from 'svelte-heros'
+  import componentProps from '../props/Toggle.json'
+  let items = componentProps.props
 
-let propHeader = ['Name', 'Type', 'Default']
+  let propHeader = ['Name', 'Type', 'Default']
 
-let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
+  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
-let props = {
-  name: 'toggle-example',
-  id: 'toggle-example',
-  label: 'Toggle me',
-  value:'toggle1'
-};
-let props2 = {
-  name: 'toggle-example-checked',
-  id: 'toggle-example-checked',
-  label: 'Checked toggle',
-  checked: true,
-  value:'toggle2'
-};
-let props3 = {
-  name: 'toggle-example-disabled',
-  id: 'toggle-example-disabled',
-  label: 'Disabled toggle',
-  disabled: true,
-  value:'toggle3'
-};
-let props4 = {
-  name: 'toggle-example-disabled',
-  id: 'toggle-example-disabled',
-  label: 'Disabled checked',
-  checked: true,
-  disabled: true,
-  value:'toggle4'
-};
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Forms',
-      href:'/forms/'
-    },
-    {
-      label:'Toggle',
-      href:'/forms/toggle'
-    }
-  ]
+  let props = {
+    name: 'toggle-example',
+    id: 'toggle-example',
+    label: 'Toggle me',
+    value:'toggle1'
+  };
+  let props2 = {
+    name: 'toggle-example-checked',
+    id: 'toggle-example-checked',
+    label: 'Checked toggle',
+    checked: true,
+    value:'toggle2'
+  };
+  let props3 = {
+    name: 'toggle-example-disabled',
+    id: 'toggle-example-disabled',
+    label: 'Disabled toggle',
+    disabled: true,
+    value:'toggle3'
+  };
+  let props4 = {
+    name: 'toggle-example-disabled',
+    id: 'toggle-example-disabled',
+    label: 'Disabled checked',
+    checked: true,
+    disabled: true,
+    value:'toggle4'
+  };
 </script>
 
-<Breadcrumb {crumbs}/>
-
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/forms">Forms</BreadcrumbItem>
+  <BreadcrumbItem>Toggle</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Toggle Components</h1>
 

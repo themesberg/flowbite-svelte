@@ -15,9 +15,10 @@ layout: modalLayout
     SignInModal,
     ModalButton,
     modalIdStore,
-    Breadcrumb
+    Breadcrumb,
+    BreadcrumbItem
   }from '$lib/index';
-  
+  import { Home } from 'svelte-heros'
   // small
   let smallModalId = "small-modal";
   let btnSName = "Small Modal";
@@ -118,7 +119,11 @@ layout: modalLayout
   ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/modals">Modals</BreadcrumbItem>
+  <BreadcrumbItem>All modals</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">All Modals</h1>
 

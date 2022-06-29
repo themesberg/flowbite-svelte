@@ -7,7 +7,8 @@ layout: buttonLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Button, Spinner, Breadcrumb } from '$lib/index';
+  import { Button, Spinner, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Home } from 'svelte-heros';
   import { ArrowRight, Bell, ShoppingCart, ChevronRight } from "svelte-heros";
   import BrandFacebook from '../utils/icons/Facebook.svelte'
   import { goto }from '$app/navigation';
@@ -38,7 +39,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem>Buttons</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Buttons</h1>
 

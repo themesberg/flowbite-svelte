@@ -7,7 +7,8 @@ layout: accordionLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { AccordionItem, Breadcrumb } from '$lib/index';
+  import { AccordionItem, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Home } from 'svelte-heros';
   import { Archive, Beaker } from "svelte-heros";
   import accordionProps from '../props/AccordionItem.json'
   // Props table
@@ -15,24 +16,14 @@ layout: accordionLayout
 	let propHeader = ['Name', 'Type', 'Default']
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Accordions',
-      href:'/accordions/'
-    },
-    {
-      label:'Icon accordion',
-      href:'/accordions/icon-accordion'
-    }
-  ]
+  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/accordions">Accordions</BreadcrumbItem>
+  <BreadcrumbItem>Icon accordions</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Icon Accordion</h1>
 

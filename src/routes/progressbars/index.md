@@ -7,7 +7,8 @@ layout: progressbarLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
 	import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Progressbar, Breadcrumb } from "$lib/index"
+  import { Progressbar, Breadcrumb, BreadcrumbItem } from "$lib/index"
+	import { Home } from 'svelte-heros'
 	import componentProps from '../props/Progressbar.json'
   // Props table
   let items = componentProps.props
@@ -28,7 +29,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   ]
 </script>
 
-<Breadcrumb {crumbs}/>
+<Breadcrumb>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem>Progress bar</BreadcrumbItem>
+</Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Progress bar Components</h1>
 
