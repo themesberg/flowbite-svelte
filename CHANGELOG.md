@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.19.13](https://github.com/themesberg/flowbite-svelte/compare/v0.19.12...v0.19.13) (2022-06-30)
+
+
+### Bug Fixes
+
+* removed gradient outline examples since Flowbite site does not have them ([56ac6b4](https://github.com/themesberg/flowbite-svelte/commit/56ac6b4a57512a0d0a086c26a0f179e114af7690))
+
 ### [0.19.12](https://github.com/themesberg/flowbite-svelte/compare/v0.19.11...v0.19.12) (2022-06-30)
 
 ### [0.19.11](https://github.com/themesberg/flowbite-svelte/compare/v0.19.10...v0.19.11) (2022-06-30)
