@@ -184,29 +184,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <p>This is a special button style that incorporates a gradient color for the outline that can be used as a secondary style to the fully colored gradient buttons.</p>
 
 <ExampleDiv class="flex flex-wrap items-center gap-2">
-  <Button outline={true} gradient={true} color="blue">Blue</Button>
-  <Button outline={true} gradient={true} color="green">Green</Button>
-  <Button outline={true} gradient={true} color="cyan">Cyan</Button>
-  <Button outline={true} gradient={true} color="teal">Teal</Button>
-  <Button outline={true} gradient={true} color="lime">Lime</Button>
-  <Button outline={true} gradient={true} color="red">Red</Button>
-  <Button outline={true} gradient={true} color="pink">Pink</Button>
-  <Button outline={true} gradient={true} color="purple">Purple</Button>
-</ExampleDiv>
-
-```html
-  <Button outline={true} gradient={true} color="blue">Blue</Button>
-  <Button outline={true} gradient={true} color="green">Green</Button>
-  <Button outline={true} gradient={true} color="cyan">Cyan</Button>
-  <Button outline={true} gradient={true} color="teal">Teal</Button>
-  <Button outline={true} gradient={true} color="lime">Lime</Button>
-  <Button outline={true} gradient={true} color="red">Red</Button>
-  <Button outline={true} gradient={true} color="pink">Pink</Button>
-  <Button outline={true} gradient={true} color="purple">Purple</Button>
-```
-
-
-<ExampleDiv class="flex flex-wrap items-center gap-2">
   <Button outline={true} gradient={true} color="purpleToBlue">Purple to Blue</Button>
   <Button outline={true} gradient={true} color="cyanToBlue">Cyan to Blue</Button>
   <Button outline={true} gradient={true} color="greenToBlue">Green to Blue</Button>
