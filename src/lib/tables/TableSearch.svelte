@@ -5,18 +5,9 @@
 	export let inputValue: string = '';
 	export let striped: boolean = false;
 	export let hoverable: boolean = false;
-	export let menuItems: Array<Array<string>>;
-	export let filteredItems: Array<Array<string>> = [];
 	export let placeholder: string = 'Search';
-
 	$: setContext('striped', striped);
 	$: setContext('hoverable', hoverable);
-	const handleInput = () => {
-		let result = (filteredItems = menuItems.filter((item) =>
-			item[0].toLowerCase().match(inputValue.toLowerCase())
-		));
-		return result;
-	};
 </script>
 
 <div class={divClass}>
@@ -38,7 +29,6 @@
 			</div>
 			<input
 				bind:value={inputValue}
-				on:input={handleInput}
 				type="text"
 				id="table-search"
 				class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
