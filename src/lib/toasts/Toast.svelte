@@ -28,25 +28,25 @@
 	// have a custom transition function that returns the desired transition
 	let transitionFunc;
 	$: transitionFunc = transitions[transition] ?? transitions.fade;
+
+	let divClass;
+	$: divClass = classNames(
+		'w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800',
+		$$props.class
+	);
+
+	let iconClass;
+	$: iconClass = classNames(
+		'inline-flex items-center justify-center flex-shrink-0 rounded-lg w-8 h-8 mr-3',
+		colors[color]
+	);
 </script>
 
 {#if visible}
-	<div
-		transition:transitionFunc={params}
-		class={classNames(
-			'w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800',
-			$$props.class
-		)}
-		role="alert"
-	>
+	<div transition:transitionFunc={params} class={divClass} role="alert">
 		<div class="flex items-center w-full">
 			{#if $$slots.icon}
-				<div
-					class={classNames(
-						'inline-flex items-center justify-center flex-shrink-0 rounded-lg w-8 h-8 mr-3',
-						colors[color]
-					)}
-				>
+				<div class={iconClass}>
 					<slot name="icon" />
 				</div>
 			{/if}
