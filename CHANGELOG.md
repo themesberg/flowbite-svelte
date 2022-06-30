@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.19.10](https://github.com/themesberg/flowbite-svelte/compare/v0.19.9...v0.19.10) (2022-06-30)
+
+
+### Features
+
+* add on change event dispatch to select ([bda74a6](https://github.com/themesberg/flowbite-svelte/commit/bda74a619530567d06d1badc600a3f663711b179))
+* update Breadcrumb components ([b35a970](https://github.com/themesberg/flowbite-svelte/commit/b35a9701ae08f795e37c55b92d24805d02a19b96))
+
 ### [0.19.9](https://github.com/themesberg/flowbite-svelte/compare/v0.19.8...v0.19.9) (2022-06-27)
 
 ### [0.19.8](https://github.com/themesberg/flowbite-svelte/compare/v0.19.7...v0.19.8) (2022-06-27)
