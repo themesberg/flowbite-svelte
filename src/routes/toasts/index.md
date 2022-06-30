@@ -7,9 +7,9 @@ layout: toastLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Toast, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { Toast, Breadcrumb, BreadcrumbItem, Avatar, Button } from "$lib/index"
   import { quintOut, elasticOut } from 'svelte/easing';
-  import {Fire, CheckCircle, PlusCircle,Archive, Home } from 'svelte-heros'
+  import { Fire, CheckCircle, PlusCircle, Archive, Home, Mail, Refresh } from 'svelte-heros'
   import componentProps from '../props/Toast.json'
   // Props table
   let items = componentProps.props
@@ -32,203 +32,249 @@ layout: toastLayout
 ```html
 <script>
 import {Toast} from 'flowbite-svelte'
-import {Fire, CheckCircle, PlusCircle,Archive} from 'svelte-heros'
+import {Fire, CheckCircle, PlusCircle, Archive, Mail} from 'svelte-heros'
 </script>
 ```
 
-<Htwo label="Examples" />
+<Htwo label="Default toast" />
 
-<p>Use fade, fly, slide, or blur for transitionType.</p>
-
-<h3>Fade examples</h3>
+Use this simple toast component with an icon, message, and dismissable close button to show alert messages to your website visitors.
 
 <ExampleDiv>
   <Toast>
-    <span slot="icon">
-    <Fire />
-    </span>
-    <span slot="text">
-      Transition type: fade
-    </span>
+    <Fire slot="icon"/>
+    Dismissable user notification.
   </Toast>
 </ExampleDiv>
 
 ```html
 <Toast>
-  <span slot="icon">
-  <Fire />
-  </span>
-  <span slot="text">
-    Transition type: fade
-  </span>
+  <Fire slot="icon"/>
+  Dismissable user notification.
 </Toast>
 ```
 
-<h3>Slide examples</h3>
-
-<p>You can use one of <a href="https://svelte.dev/docs#run-time-svelte-easing" target="_blank" >Svelte/easing</a>.</p>
-
-<ExampleDiv>
-   <Toast transitionType="slide" iconColor='red'>
-    <span slot="icon">
-    <CheckCircle class="text-red-500"/>
-    </span>
-    <span slot="text">
-      Transition type: slide
-    </span>
-  </Toast>
-</ExampleDiv>
+<Htwo label="Simple toast" />
+<p>This component can be used to show simple messages and notifications without the use of a close button.</p>
 
 <ExampleDiv>
-   <Toast transitionType="slide" iconColor='red' transitionParams="{{delay: 250, duration: 300, easing: quintOut}}">
-    <span slot="icon">
-    <CheckCircle class="text-red-500"/>
-    </span>
-    <span slot="text">
-      Transition type: slide, delay: 250, duration: 300, easing: quintOut
-    </span>
-  </Toast>
-</ExampleDiv>
-
-<ExampleDiv>
-   <Toast transitionType="slide" iconColor='red' transitionParams="{{delay: 250, duration: 2000, easing: elasticOut}}">
-    <span slot="icon">
-    <CheckCircle class="text-red-500"/>
-    </span>
-    <span slot="text">
-      Transition type: slide, delay: 250, duration: 2000, easing: elasticOut
-    </span>
+  <Toast simple={true}>
+    <Mail slot="icon"/>
+    New message arrived.
   </Toast>
 </ExampleDiv>
 
 ```html
-<Toast transitionType="slide" iconColor='red'>
-  <span slot="icon">
-  <CheckCircle class="text-red-500"/>
-  </span>
-  <span slot="text">
+<Toast simple={true}>
+  <Mail slot="icon"/>
+  New message arrived.
+</Toast>
+```
+
+
+<Htwo label="Icons" />
+
+<p>For the right positioning of the icon use: <span class="font-mono italic">slot="icon"</span>.</p>
+<p>Icons are wrapped with blue background by default. Set the color name property to change it. Note,
+that if you want no color at all set property to empty string.</p>
+<p>Use any <a href="/icons">icon components.</a></p>
+
+<ExampleDiv>
+  <Toast>
+    <Archive slot="icon"/>
+    Default color is blue.
+  </Toast>
+<p></p>
+  <Toast  color="green">
+    <Archive slot="icon"/>
+    Color set to green.
+  </Toast>
+<p></p>
+  <Toast  color="">
+    <Archive slot="icon"/>
+    No color set.
+  </Toast>
+<p></p>
+  <Toast>
+    No icon at all.
+  </Toast>
+</ExampleDiv>
+
+```html
+<Toast>
+  <Archive slot="icon"/>
+  Default color is blue.
+</Toast>
+
+<Toast color="green">
+  <Archive slot="icon"/>
+  Color set to green.
+</Toast>
+
+<Toast color="">
+  <Archive slot="icon"/>
+  No color set.
+</Toast>
+
+<Toast>
+  No icon at all.
+</Toast>
+
+```
+
+<Htwo label="Transitions" />
+
+<p>You can use one of <a href="https://svelte.dev/docs#run-time-svelte-easing" target="_blank" >Svelte/easing</a>.</p>
+
+<ExampleDiv>
+   <Toast transition="slide">
+    <CheckCircle slot="icon"/>
     Transition type: slide
-  </span>
-</Toast>
-
- <Toast transitionType="slide" iconColor='red' transitionParams="{{delay: 250, duration: 300, easing: quintOut}}">
-  <span slot="icon">
-  <CheckCircle class="text-red-500"/>
-  </span>
-  <span slot="text">
+  </Toast>
+<p></p>
+  <Toast transition="slide" params="{{delay: 250, duration: 300, easing: quintOut}}">
+    <CheckCircle slot="icon"/>
     Transition type: slide, delay: 250, duration: 300, easing: quintOut
-  </span>
+  </Toast>
+<p></p>
+   <Toast transition="slide" params="{{delay: 250, duration: 2000, easing: elasticOut}}">
+    <CheckCircle slot="icon"/>
+    Transition type: slide, delay: 250, duration: 2000, easing: elasticOut
+  </Toast>
+</ExampleDiv>
+
+```html
+<Toast transition="slide">
+  <CheckCircle slot="icon"/>
+  Transition type: slide
 </Toast>
 
-<Toast transitionType="slide" iconColor='red' transitionParams="{{delay: 250, duration: 2000, easing: elasticOut}}">
-  <span slot="icon">
-  <CheckCircle class="text-red-500"/>
-  </span>
-  <span slot="text">
-    Transition type: slide, delay: 250, duration: 2000, easing: elasticOut
-  </span>
+ <Toast transition="slide" params="{{delay: 250, duration: 300, easing: quintOut}}">
+  <CheckCircle slot="icon"/>
+  Transition type: slide, delay: 250, duration: 300, easing: quintOut
+</Toast>
+
+<Toast transition="slide" params="{{delay: 250, duration: 2000, easing: elasticOut}}">
+  <CheckCircle slot="icon"/>
+  Transition type: slide, delay: 250, duration: 2000, easing: elasticOut
 </Toast>
 ```
 
 <h3>Blur examples</h3>
 
 <ExampleDiv>
-  <Toast transitionType="blur" iconColor='purple' transitionParams="{{amount: 10}}">
-    <span slot="icon">
-    <PlusCircle class="text-purple-500"/>
-    </span>
-    <span slot="text">
-      Transition type: blur, amount: 10
-    </span>
+  <Toast transition="blur" color='purple' params="{{amount: 10}}">
+    <PlusCircle slot="icon"/>
+    Transition type: blur, amount: 10
   </Toast>
-</ExampleDiv>
-
-<ExampleDiv>
-  <Toast transitionType="blur" iconColor='purple' transitionParams="{{amount: 50, delay: 1000}}">
-    <span slot="icon">
-    <PlusCircle class="text-purple-500"/>
-    </span>
-    <span slot="text">
-      Transition type: blur, amount: 50, delay 1000
-    </span>
+<p></p>
+  <Toast transition="blur" color='purple' params="{{amount: 50, delay: 1000}}">
+    <PlusCircle slot="icon"/>
+    Transition type: blur, amount: 50, delay 1000
   </Toast>
 </ExampleDiv>
 
 ```html
-<Toast transitionType="blur" iconColor='purple' transitionParams="{{amount: 10}}">
-  <span slot="icon">
-  <PlusCircle class="text-purple-500"/>
-  </span>
-  <span slot="text">
-    Transition type: blur, amount: 10
-  </span>
+<Toast transition="blur" color='purple' params="{{amount: 10}}">
+  <PlusCircle slot="icon"/>
+  Transition type: blur, amount: 10
 </Toast>
 
-<Toast transitionType="blur" iconColor='purple' transitionParams="{{amount: 50, delay: 1000}}">
-  <span slot="icon">
-  <PlusCircle class="text-purple-500"/>
-  </span>
-  <span slot="text">
-    Transition type: blur, amount: 50, delay 1000
-  </span>
+<Toast transition="blur" color='purple' params="{{amount: 50, delay: 1000}}">
+  <PlusCircle slot="icon"/>
+  Transition type: blur, amount: 50, delay 1000
 </Toast>
 ```
 
 <h3>Fly examples</h3>
 
 <ExampleDiv>
-  <Toast transitionType="fly" transitionParams="{{x: 200}}" iconColor="green">
-    <span slot="icon">
-    <Archive  class="text-green-500"/>
-    </span>
-    <span slot="text">
-      Transition type: fly right
-    </span>
+  <Toast transition="fly" params="{{x: 200}}" color="green">
+    <Archive slot="icon"/>
+    Transition type: fly right
+  </Toast>
+<p></p>
+  <Toast transition="fly" params="{{y: 200}}" color="green">
+    <Archive slot="icon"/>
+    Transition type: fly down
   </Toast>
 </ExampleDiv>
+
+```html
+<Toast transition="fly" params="{{x: 200}}" color="green">
+  <Archive slot="icon"/>
+  Transition type: fly right
+</Toast>
+
+<Toast transition="fly" params="{{y: 200}}" color="green">
+  <Archive slot="icon"/>
+  Transition type: fly down
+</Toast>
+```
+
+<Htwo label="Extra content" />
+
+<p>Use the <span class="font-mono italic">slot="extra"</span> to add some more arbitrary content in the toast.</p>
 
 <ExampleDiv>
-  <Toast transitionType="fly" transitionParams="{{y: 200}}" iconColor="green">
-    <span slot="icon">
-    <Archive  class="text-green-500"/>
-    </span>
-    <span slot="text">
-      Transition type: fly down
-    </span>
+  <Toast>
+    <span class="font-semibold text-gray-900 dark:text-white">New notification</span>
+    <div class="flex items-center mt-3" slot="extra">
+      <Avatar avatar={{src: '/images/profile-picture-3.webp', alt: 'My avatar 2', size: 12, round: true}}/>
+      <div class="ml-3">
+        <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Bonnie Green</h4>
+        <div class="text-sm font-normal">commmented on your photo</div>
+        <span class="text-xs font-medium text-blue-600 dark:text-blue-500">a few seconds ago</span>
+      </div>
+    </div>
+  </Toast>
+</ExampleDiv>
+
+
+```html
+<Toast>
+  <span class="font-semibold text-gray-900 dark:text-white">New notification</span>
+
+  <div class="flex items-center mt-3" slot="extra">
+    <Avatar avatar={{src: '/images/profile-picture-3.webp', alt: 'My avatar 2', size: 12, round: true}}/>
+    <div class="ml-3">
+      <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Bonnie Green</h4>
+      <div class="text-sm font-normal">commmented on your photo</div>
+      <span class="text-xs font-medium text-blue-600 dark:text-blue-500">a few seconds ago</span>
+    </div>
+  </div>
+</Toast>
+```
+
+<p>Example with the icon and extra content at the same time.</p>
+
+<ExampleDiv>
+  <Toast>
+    <Refresh slot="icon"/>
+    <span class="font-semibold text-gray-900 dark:text-white">Update available</span>
+    <div class="mt-3" slot="extra">
+        <div class="mb-2 text-sm font-normal">A new software version is available for download.</div>
+        <div class="flex gap-2 justify-center">
+            <Button size="xs" class="w-full">Update</Button>
+            <Button size="xs" color="dark">Not now</Button>
+        </div>
+    </div>
   </Toast>
 </ExampleDiv>
 
 ```html
-<Toast transitionType="fly" transitionParams="{{x: 200}}" iconColor="green">
-  <span slot="icon">
-  <Archive  class="text-green-500"/>
-  </span>
-  <span slot="text">
-    Transition type: fly right
-  </span>
-</Toast>
-
-<Toast transitionType="fly" transitionParams="{{y: 200}}" iconColor="green">
-  <span slot="icon">
-  <Archive  class="text-green-500"/>
-  </span>
-  <span slot="text">
-    Transition type: fly down
-  </span>
+<Toast>
+  <Refresh slot="icon"/>
+  <span class="font-semibold text-gray-900 dark:text-white">Update available</span>
+  <div class="mt-3" slot="extra">
+      <div class="mb-2 text-sm font-normal">A new software version is available for download.</div>
+      <div class="flex gap-2 justify-center">
+          <Button size="xs" class="w-full">Update</Button>
+          <Button size="xs" color="dark">Not now</Button>
+      </div>
+  </div>
 </Toast>
 ```
-
-<Htwo label="Icons" />
-
-<p>Use any <a href="/icons">icon components.</a></p>
-
-```html
-<script>
-import {Toast} from 'flowbite-svelte'
-import {FireIcon, CheckCircleIcon, PlusCircleIcon,ArchiveIcon} from 'svelte-heros'
-</scrip>
-```
-
 <Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
