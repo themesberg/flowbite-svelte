@@ -66,22 +66,7 @@ test('Avatar page should have h1', async ({ page }) => {
 // Badges
 test('Badges main page should have h1', async ({ page }) => {
 	await page.goto('/badges');
-	expect(await page.textContent('h1')).toBe('Badge Components');
-});
-
-test('Badge default page should have h1', async ({ page }) => {
-	await page.goto('/badges/default');
 	expect(await page.textContent('h1')).toBe('Badges');
-});
-
-test('Badge with Icon page should have h1', async ({ page }) => {
-	await page.goto('/badges/badge-icon');
-	expect(await page.textContent('h1')).toBe('Badges with Icon');
-});
-
-test('Badge with Link page should have h1', async ({ page }) => {
-	await page.goto('/badges/badge-link');
-	expect(await page.textContent('h1')).toBe('Badges with Link');
 });
 
 // Breadcrumbs
