@@ -17,9 +17,7 @@ export const alerts = [
 ];
 
 export const badges = [
-  { href: "/badges/default", name: "Badges" },
-  { href: "/badges/badge-icon", name: "Badges with icon" },
-  { href: "/badges/badge-link", name: "Badges with link" },
+  { href: "/badges/", name: "Badges" },
 ];
 
 export const cards = [
