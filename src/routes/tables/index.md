@@ -21,6 +21,16 @@ layout: tableLayout
 
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  let searchTerm = '';
+	let items = [
+		{ id: 1, maker: 'Toyota', type: 'ABC', make: 2017 },
+		{ id: 2, maker: 'Ford', type: 'CDE', make: 2018 },
+		{ id: 3, maker: 'Volvo', type: 'FGH', make: 2019 },
+		{ id: 4, maker: 'Saab', type: 'IJK', make: 2020 }
+	];
+	$: filteredItems = items.filter(
+		(item) => item.maker.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
+	);
 </script>
 
 <Breadcrumb>
@@ -510,100 +520,57 @@ layout: tableLayout
 <Htwo label="Search input" />
 
 <ExampleDiv>
-<TableSearch hoverable={true}>
-  <TableHead>
-    <TableHeadCell>Product name</TableHeadCell>
-    <TableHeadCell>Color</TableHeadCell>
-    <TableHeadCell>Category</TableHeadCell>
-    <TableHeadCell>Price</TableHeadCell>
-    <TableHeadCell>
-      <span class="sr-only"> Edit </span>
-    </TableHeadCell>
-  </TableHead>
-  <TableBody class="divide-y">
-  <TableBodyRow>
-      <TableBodyCell>
-        Apple MacBook Pro 17"
-      </TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
-      <TableBodyCell>Laptop</TableBodyCell>
-      <TableBodyCell>$2999</TableBodyCell>
-      <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500"> Edit </a>
-      </TableBodyCell>
-    </TableBodyRow>
-    <TableBodyRow>
-      <TableBodyCell>
-        Microsoft Surface Pro
-      </TableBodyCell>
-      <TableBodyCell>White</TableBodyCell>
-      <TableBodyCell>Laptop PC</TableBodyCell>
-      <TableBodyCell>$1999</TableBodyCell>
-      <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500"> Edit </a>
-      </TableBodyCell>
-    </TableBodyRow>
-    <TableBodyRow>
-      <TableBodyCell>
-        Magic Mouse 2
-      </TableBodyCell>
-      <TableBodyCell>Black</TableBodyCell>
-      <TableBodyCell>Accessories</TableBodyCell>
-      <TableBodyCell>$99</TableBodyCell>
-      <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500"> Edit </a>
-      </TableBodyCell>
-    </TableBodyRow>
-  </TableBody>
+<TableSearch placeholder="Search by maker name" hoverable={true} bind:inputValue={searchTerm}>
+	<TableHead>
+		<TableHeadCell>ID</TableHeadCell>
+		<TableHeadCell>Maker</TableHeadCell>
+		<TableHeadCell>Type</TableHeadCell>
+		<TableHeadCell>Make</TableHeadCell>
+	</TableHead>
+	<TableBody class="divide-y">
+		{#each filteredItems as item}
+			<TableBodyRow>
+				<TableBodyCell>{item.id}</TableBodyCell>
+				<TableBodyCell>{item.maker}</TableBodyCell>
+				<TableBodyCell>{item.type}</TableBodyCell>
+				<TableBodyCell>{item.make}</TableBodyCell>
+			</TableBodyRow>
+		{/each}
+	</TableBody>
 </TableSearch>
 </ExampleDiv>
 
 ```html
-<TableSearch hoverable={true}>
-  <TableHead>
-    <TableHeadCell>Product name</TableHeadCell>
-    <TableHeadCell>Color</TableHeadCell>
-    <TableHeadCell>Category</TableHeadCell>
-    <TableHeadCell>Price</TableHeadCell>
-    <TableHeadCell>
-      <span class="sr-only"> Edit </span>
-    </TableHeadCell>
-  </TableHead>
-  <TableBody class="divide-y">
-  <TableBodyRow>
-      <TableBodyCell>
-        Apple MacBook Pro 17"
-      </TableBodyCell>
-      <TableBodyCell>Sliver</TableBodyCell>
-      <TableBodyCell>Laptop</TableBodyCell>
-      <TableBodyCell>$2999</TableBodyCell>
-      <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500"> Edit </a>
-      </TableBodyCell>
-    </TableBodyRow>
-    <TableBodyRow>
-      <TableBodyCell>
-        Microsoft Surface Pro
-      </TableBodyCell>
-      <TableBodyCell>White</TableBodyCell>
-      <TableBodyCell>Laptop PC</TableBodyCell>
-      <TableBodyCell>$1999</TableBodyCell>
-      <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500"> Edit </a>
-      </TableBodyCell>
-    </TableBodyRow>
-    <TableBodyRow>
-      <TableBodyCell>
-        Magic Mouse 2
-      </TableBodyCell>
-      <TableBodyCell>Black</TableBodyCell>
-      <TableBodyCell>Accessories</TableBodyCell>
-      <TableBodyCell>$99</TableBodyCell>
-      <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500"> Edit </a>
-      </TableBodyCell>
-    </TableBodyRow>
-  </TableBody>
+<script>
+let searchTerm = '';
+	let items = [
+		{ id: 1, maker: 'Toyota', type: 'ABC', make: 2017 },
+		{ id: 2, maker: 'Ford', type: 'CDE', make: 2018 },
+		{ id: 3, maker: 'Volvo', type: 'FGH', make: 2019 },
+		{ id: 4, maker: 'Saab', type: 'IJK', make: 2020 }
+	];
+	$: filteredItems = items.filter(
+		(item) => item.maker.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
+	);
+</script>
+
+<TableSearch placeholder="Search by maker name" hoverable={true} bind:inputValue={searchTerm}>
+	<TableHead>
+		<TableHeadCell>ID</TableHeadCell>
+		<TableHeadCell>Maker</TableHeadCell>
+		<TableHeadCell>Type</TableHeadCell>
+		<TableHeadCell>Make</TableHeadCell>
+	</TableHead>
+	<TableBody class="divide-y">
+		{#each filteredItems as item}
+			<TableBodyRow>
+				<TableBodyCell>{item.id}</TableBodyCell>
+				<TableBodyCell>{item.maker}</TableBodyCell>
+				<TableBodyCell>{item.type}</TableBodyCell>
+				<TableBodyCell>{item.make}</TableBodyCell>
+			</TableBodyRow>
+		{/each}
+	</TableBody>
 </TableSearch>
 ```
 

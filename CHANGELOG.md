@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.19.11](https://github.com/themesberg/flowbite-svelte/compare/v0.19.10...v0.19.11) (2022-06-30)
+
+
+### Features
+
+* can add own search function to TableSearch component ([514c7f7](https://github.com/themesberg/flowbite-svelte/commit/514c7f71ba0ff48637ff37051c9e453a40a56f11))
+
 ### [0.19.10](https://github.com/themesberg/flowbite-svelte/compare/v0.19.9...v0.19.10) (2022-06-30)
 
 
