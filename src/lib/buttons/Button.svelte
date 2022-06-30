@@ -16,26 +16,18 @@
 		| 'none' = 'blue';
 	export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
 	export let icon: typeof SvelteComponent | undefined = undefined;
-	export let gradientMonochrome:
-		| 'blue'
-		| 'green'
-		| 'cyan'
-		| 'teal'
-		| 'lime'
-		| 'red'
-		| 'pink'
-		| 'purple'
-		| null = null;
-	export let gradientDuoTone:
+	export let gradient: boolean = false;
+	let gradientMonochrome: 'blue' | 'green' | 'cyan' | 'teal' | 'lime' | 'red' | 'pink' | 'purple';
+
+	let gradientDuoTone:
 		| 'purpleToBlue'
 		| 'cyanToBlue'
 		| 'greenToBlue'
 		| 'purpleToPink'
 		| 'pinkToOrange'
 		| 'tealToLime'
-		| 'redToYellow'
-		| null = null;
-	export let coloredShadow:
+		| 'redToYellow';
+	export let shadow:
 		| 'blue'
 		| 'green'
 		| 'cyan'
@@ -46,15 +38,7 @@
 		| 'purple'
 		| null = null;
 	export let positionInGroup: 'start' | 'middle' | 'end' | null = null;
-	export let outlineStyle:
-		| 'default'
-		| 'dark'
-		| 'green'
-		| 'red'
-		| 'yellow'
-		| 'purple'
-		| 'white'
-		| null = null;
+	let outlineStyle: 'default' | 'dark' | 'green' | 'red' | 'yellow' | 'purple' | 'white';
 	const colorClasses = {
 		blue: 'text-white bg-blue-700 border border-transparent hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 disabled:hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 dark:disabled:hover:bg-blue-600',
 		alternative:
@@ -71,7 +55,7 @@
 			'text-white bg-purple-700 border border-transparent hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 disabled:hover:bg-purple-700 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 dark:disabled:hover:bg-purple-600',
 		none: ''
 	};
-	const gradientMonochromeClasses = {
+	const gradientClasses = {
 		blue: 'text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 ',
 		green:
 			'text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-green-300 dark:focus:ring-green-800',
@@ -81,9 +65,7 @@
 		red: 'text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800',
 		pink: 'text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-pink-300 dark:focus:ring-pink-800',
 		purple:
-			'text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:ring-purple-300 dark:focus:ring-purple-800'
-	};
-	const gradientDuoToneClasses = {
+			'text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:ring-purple-300 dark:focus:ring-purple-800',
 		purpleToBlue:
 			'text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800',
 		cyanToBlue:
@@ -100,16 +82,14 @@
 			'text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:ring-red-100 dark:focus:ring-red-400'
 	};
 	const coloredShadowClasses = {
-		blue: 'text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80',
-		green:
-			'text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80',
-		cyan: 'text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80',
-		teal: 'text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 ',
-		lime: 'text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80',
-		red: 'text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 ',
-		pink: 'text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 shadow-lg shadow-pink-500/50 dark:shadow-lg dark:shadow-pink-800/80',
-		purple:
-			'text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80'
+		blue: 'shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80',
+		green: 'shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80',
+		cyan: 'shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80',
+		teal: 'shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 ',
+		lime: 'shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80',
+		red: 'shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 ',
+		pink: 'shadow-lg shadow-pink-500/50 dark:shadow-lg dark:shadow-pink-800/80',
+		purple: 'shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80'
 	};
 	const outlineClasses = {
 		default:
@@ -149,15 +129,9 @@
 	class={classNames(
 		'group flex h-min w-fit items-center justify-center p-0.5 text-center font-medium focus:z-10',
 		pill ? 'rounded-full' : 'rounded-lg',
-		!gradientMonochrome &&
-			!gradientDuoTone &&
-			!coloredShadow &&
-			!outlineStyle &&
-			colorClasses[color],
-		!gradientDuoTone && gradientMonochrome && gradientMonochromeClasses[gradientMonochrome],
-		gradientDuoTone && gradientDuoToneClasses[gradientDuoTone],
-		coloredShadow && coloredShadowClasses[coloredShadow],
-		outlineStyle && outlineClasses[outlineStyle],
+		gradient && gradientClasses[color],
+		outline ? outlineClasses[color] : colorClasses[color],
+		shadow && coloredShadowClasses[shadow],
 		{
 			'border border-gray-900 dark:border-white': color === 'alternative' && outline,
 			'cursor-not-allowed opacity-50': $$props.disabled,
