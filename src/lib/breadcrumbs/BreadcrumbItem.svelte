@@ -2,7 +2,7 @@
 	import { ChevronRight } from 'svelte-heros';
 	import type { SvelteComponent } from 'svelte';
 	export let icon: typeof SvelteComponent | null = null;
-	export let variation: 'solid' | null;
+	export let variation: 'solid' | null = null;
 	export let iconSize: number = 20;
 	export let iconClass: string = 'mr-2';
 </script>

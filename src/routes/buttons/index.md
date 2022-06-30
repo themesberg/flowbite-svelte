@@ -134,25 +134,25 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <p>These beautifully colored buttons built with the gradient color stops utility classes from Tailwind CSS can be used as a creative alternative to the default button styles.</p>
 
 <ExampleDiv class="flex flex-wrap gap-2">
-  <Button gradientMonochrome="blue">Blue</Button>
-  <Button gradientMonochrome="green">Green</Button>
-  <Button gradientMonochrome="cyan">Cyan</Button>
-  <Button gradientMonochrome="teal">Teal</Button>
-  <Button gradientMonochrome="lime">Lime</Button>
-  <Button gradientMonochrome="red">Red</Button>
-  <Button gradientMonochrome="pink">Pink</Button>
-  <Button gradientMonochrome="purple">Purple</Button>
+  <Button gradient={true} color="blue">Blue</Button>
+  <Button gradient={true} color="green">Green</Button>
+  <Button gradient={true} color="cyan">Cyan</Button>
+  <Button gradient={true} color="teal">Teal</Button>
+  <Button gradient={true} color="lime">Lime</Button>
+  <Button gradient={true} color="red">Red</Button>
+  <Button gradient={true} color="pink">Pink</Button>
+  <Button gradient={true} color="purple">Purple</Button>
 </ExampleDiv>
 
 ```html
-<Button gradientMonochrome="blue">Blue</Button>
-<Button gradientMonochrome="green">Green</Button>
-<Button gradientMonochrome="cyan">Cyan</Button>
-<Button gradientMonochrome="teal">Teal</Button>
-<Button gradientMonochrome="lime">Lime</Button>
-<Button gradientMonochrome="red">Red</Button>
-<Button gradientMonochrome="pink">Pink</Button>
-<Button gradientMonochrome="purple">Purple</Button>
+<Button gradient={true} color="blue">Blue</Button>
+<Button gradient={true} color="green">Green</Button>
+<Button gradient={true} color="cyan">Cyan</Button>
+<Button gradient={true} color="teal">Teal</Button>
+<Button gradient={true} color="lime">Lime</Button>
+<Button gradient={true} color="red">Red</Button>
+<Button gradient={true} color="pink">Pink</Button>
+<Button gradient={true} color="purple">Purple</Button>
 ```
 
 <Htwo label="Gradient duotone" />
@@ -160,23 +160,23 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <p>These buttons use a style that includes two contrasted colors creating an impressive mesh gradient effect.</p>
 
 <ExampleDiv class="flex flex-wrap items-center gap-2">
-  <Button gradientDuoTone="purpleToBlue">Purple to Blue</Button>
-  <Button gradientDuoTone="cyanToBlue">Cyan to Blue</Button>
-  <Button gradientDuoTone="greenToBlue">Green to Blue</Button>
-  <Button gradientDuoTone="purpleToPink">Purple to Pink</Button>
-  <Button gradientDuoTone="pinkToOrange">Pink to Orange</Button>
-  <Button gradientDuoTone="tealToLime">Teal to Lime</Button>
-  <Button gradientDuoTone="redToYellow">Red to Yellow</Button>
+  <Button gradient={true} color="purpleToBlue">Purple to Blue</Button>
+  <Button gradient={true} color="cyanToBlue">Cyan to Blue</Button>
+  <Button gradient={true} color="greenToBlue">Green to Blue</Button>
+  <Button gradient={true} color="purpleToPink">Purple to Pink</Button>
+  <Button gradient={true} color="pinkToOrange">Pink to Orange</Button>
+  <Button gradient={true} color="tealToLime">Teal to Lime</Button>
+  <Button gradient={true} color="redToYellow">Red to Yellow</Button>
 </ExampleDiv>
 
 ```html
-<Button gradientDuoTone="purpleToBlue">Purple to Blue</Button>
-<Button gradientDuoTone="cyanToBlue">Cyan to Blue</Button>
-<Button gradientDuoTone="greenToBlue">Green to Blue</Button>
-<Button gradientDuoTone="purpleToPink">Purple to Pink</Button>
-<Button gradientDuoTone="pinkToOrange">Pink to Orange</Button>
-<Button gradientDuoTone="tealToLime">Teal to Lime</Button>
-<Button gradientDuoTone="redToYellow">Red to Yellow</Button>
+<Button gradient={true} color="purpleToBlue">Purple to Blue</Button>
+<Button gradient={true} color="cyanToBlue">Cyan to Blue</Button>
+<Button gradient={true} color="greenToBlue">Green to Blue</Button>
+<Button gradient={true} color="purpleToPink">Purple to Pink</Button>
+<Button gradient={true} color="pinkToOrange">Pink to Orange</Button>
+<Button gradient={true} color="tealToLime">Teal to Lime</Button>
+<Button gradient={true} color="redToYellow">Red to Yellow</Button>
 ```
 
 <Htwo label="Gradient outline" />
@@ -184,23 +184,23 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <p>This is a special button style that incorporates a gradient color for the outline that can be used as a secondary style to the fully colored gradient buttons.</p>
 
 <ExampleDiv class="flex flex-wrap items-center gap-2">
-  <Button outline={true} gradientDuoTone="purpleToBlue">Purple to Blue</Button>
-  <Button outline={true} gradientDuoTone="cyanToBlue">Cyan to Blue</Button>
-  <Button outline={true} gradientDuoTone="greenToBlue">Green to Blue</Button>
-  <Button outline={true} gradientDuoTone="purpleToPink">Purple to Pink</Button>
-  <Button outline={true} gradientDuoTone="pinkToOrange">Pink to Orange</Button>
-  <Button outline={true} gradientDuoTone="tealToLime">Teal to Lime</Button>
-  <Button outline={true} gradientDuoTone="redToYellow">Red to Yellow</Button>
+  <Button outline={true} gradient={true} color="purpleToBlue">Purple to Blue</Button>
+  <Button outline={true} gradient={true} color="cyanToBlue">Cyan to Blue</Button>
+  <Button outline={true} gradient={true} color="greenToBlue">Green to Blue</Button>
+  <Button outline={true} gradient={true} color="purpleToPink">Purple to Pink</Button>
+  <Button outline={true} gradient={true} color="pinkToOrange">Pink to Orange</Button>
+  <Button outline={true} gradient={true} color="tealToLime">Teal to Lime</Button>
+  <Button outline={true} gradient={true} color="redToYellow">Red to Yellow</Button>
 </ExampleDiv>
 
 ```html
-<Button outline={true} gradientDuoTone="purpleToBlue">Purple to Blue</Button>
-<Button outline={true} gradientDuoTone="cyanToBlue">Cyan to Blue</Button>
-<Button outline={true} gradientDuoTone="greenToBlue">Green to Blue</Button>
-<Button outline={true} gradientDuoTone="purpleToPink">Purple to Pink</Button>
-<Button outline={true} gradientDuoTone="pinkToOrange">Pink to Orange</Button>
-<Button outline={true} gradientDuoTone="tealToLime">Teal to Lime</Button>
-<Button outline={true} gradientDuoTone="redToYellow">Red to Yellow</Button>
+<Button outline={true} gradient={true} color="purpleToBlue">Purple to Blue</Button>
+<Button outline={true} gradient={true} color="cyanToBlue">Cyan to Blue</Button>
+<Button outline={true} gradient={true} color="greenToBlue">Green to Blue</Button>
+<Button outline={true} gradient={true} color="purpleToPink">Purple to Pink</Button>
+<Button outline={true} gradient={true} color="pinkToOrange">Pink to Orange</Button>
+<Button outline={true} gradient={true} color="tealToLime">Teal to Lime</Button>
+<Button outline={true} gradient={true} color="redToYellow">Red to Yellow</Button>
 ```
 
 <Htwo label="Colored shadows" />
@@ -208,25 +208,25 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <p>These beautiful button elements with color shadows can be used since the release of Tailwind v3.0.</p>
 
 <ExampleDiv class="flex flex-wrap items-center gap-2">
-  <Button coloredShadow="blue">Blue</Button>
-  <Button coloredShadow="green">Green</Button>
-  <Button coloredShadow="cyan">Cyan</Button>
-  <Button coloredShadow="teal">Teal</Button>
-  <Button coloredShadow="lime">Lime</Button>
-  <Button coloredShadow="red">Red</Button>
-  <Button coloredShadow="pink">Pink</Button>
-  <Button coloredShadow="purple">Purple</Button>
+  <Button shadow="blue" gradient={true} color="blue">Blue</Button>
+  <Button shadow="green" gradient={true} color="green">Green</Button>
+  <Button shadow="cyan" gradient={true} color="cyan">Cyan</Button>
+  <Button shadow="teal" gradient={true} color="teal">Teal</Button>
+  <Button shadow="lime" gradient={true} color="lime">Lime</Button>
+  <Button shadow="red" gradient={true} color="red">Red</Button>
+  <Button shadow="pink" gradient={true} color="pink">Pink</Button>
+  <Button shadow="purple" gradient={true} color="purple">Purple</Button>
 </ExampleDiv>
 
 ```html
-<Button coloredShadow="blue">Blue</Button>
-<Button coloredShadow="green">Green</Button>
-<Button coloredShadow="cyan">Cyan</Button>
-<Button coloredShadow="teal">Teal</Button>
-<Button coloredShadow="lime">Lime</Button>
-<Button coloredShadow="red">Red</Button>
-<Button coloredShadow="pink">Pink</Button>
-<Button coloredShadow="purple">Purple</Button>
+<Button shadow="blue" gradient={true} color="blue">Blue</Button>
+<Button shadow="green" gradient={true} color="green">Green</Button>
+<Button shadow="cyan" gradient={true} color="cyan">Cyan</Button>
+<Button shadow="teal" gradient={true} color="teal">Teal</Button>
+<Button shadow="lime" gradient={true} color="lime">Lime</Button>
+<Button shadow="red" gradient={true} color="red">Red</Button>
+<Button shadow="pink" gradient={true} color="pink">Pink</Button>
+<Button shadow="purple" gradient={true} color="purple">Purple</Button>
 ```
 
 <Htwo label="Outline buttons" />
@@ -235,23 +235,23 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <ExampleDiv>
 <div class="flex flex-wrap gap-2">
-  <Button outlineStyle="default">Default</Button>
-  <Button outlineStyle="dark">Dark</Button>
-  <Button outlineStyle="green">Green</Button>
-  <Button outlineStyle="red">Red</Button>
-  <Button outlineStyle="yellow">Yellow</Button>
-  <Button outlineStyle="purple">Purple</Button>
+  <Button outline={true} color="default">Default</Button>
+  <Button outline={true} color="dark">Dark</Button>
+  <Button outline={true} color="green">Green</Button>
+  <Button outline={true} color="red">Red</Button>
+  <Button outline={true} color="yellow">Yellow</Button>
+  <Button outline={true} color="purple">Purple</Button>
 </div>
 </ExampleDiv>
 
 ```html
 <div class="flex flex-wrap gap-2">
-  <Button outlineStyle="default">Default</Button>
-  <Button outlineStyle="dark">Dark</Button>
-  <Button outlineStyle="green">Green</Button>
-  <Button outlineStyle="red">Red</Button>
-  <Button outlineStyle="yellow">Yellow</Button>
-  <Button outlineStyle="purple">Purple</Button>
+  <Button outline={true} color="default">Default</Button>
+  <Button outline={true} color="dark">Dark</Button>
+  <Button outline={true} color="green">Green</Button>
+  <Button outline={true} color="red">Red</Button>
+  <Button outline={true} color="yellow">Yellow</Button>
+  <Button outline={true} color="purple">Purple</Button>
 </div>
 ```
 
