@@ -44,19 +44,18 @@
 
 {#if visible}
 	<div transition:transitionFunc={params} class={divClass} role="alert">
-		<div class="flex items-center w-full">
+		<div class="flex {$$slots.extra ? 'items-start' : 'items-center'}">
 			{#if $$slots.icon}
-				<div class={iconClass}>
-					<slot name="icon" />
-				</div>
+				<div class={iconClass}><slot name="icon" /></div>
 			{/if}
 
-			<div class="text-sm font-normal"><slot /></div>
-
+			<div class="text-sm font-normal">
+				<slot />
+				<slot name="extra" />
+			</div>
 			{#if !simple}
 				<CloseButton on:click={() => (visible = false)} />
 			{/if}
 		</div>
-		<slot name="extra" />
 	</div>
 {/if}

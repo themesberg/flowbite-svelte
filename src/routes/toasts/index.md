@@ -254,9 +254,9 @@ that if you want no color at all set property to empty string.</p>
     <span class="font-semibold text-gray-900 dark:text-white">Update available</span>
     <div class="mt-3" slot="extra">
         <div class="mb-2 text-sm font-normal">A new software version is available for download.</div>
-        <div class="flex gap-2 justify-center">
+        <div class="grid grid-cols-2 gap-2">
             <Button size="xs" class="w-full">Update</Button>
-            <Button size="xs" color="dark">Not now</Button>
+            <Button size="xs" class="w-full" color="dark">Not now</Button>
         </div>
     </div>
   </Toast>
@@ -268,9 +268,9 @@ that if you want no color at all set property to empty string.</p>
   <span class="font-semibold text-gray-900 dark:text-white">Update available</span>
   <div class="mt-3" slot="extra">
       <div class="mb-2 text-sm font-normal">A new software version is available for download.</div>
-      <div class="flex gap-2 justify-center">
-          <Button size="xs" class="w-full">Update</Button>
-          <Button size="xs" color="dark">Not now</Button>
+      <div class="grid grid-cols-2 gap-2">
+            <Button size="xs" class="w-full">Update</Button>
+            <Button size="xs" class="w-full" color="dark">Not now</Button>
       </div>
   </div>
 </Toast>

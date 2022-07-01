@@ -28,7 +28,6 @@
 		| 'pink'
 		| 'purple'
 		| null = null;
-	export let positionInGroup: 'start' | 'middle' | 'end' | null = null;
 
 	const colorClasses = {
 		blue: 'text-white bg-blue-700 border border-transparent hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 disabled:hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 dark:disabled:hover:bg-blue-600',
@@ -118,18 +117,15 @@
 	type="button"
 	{...$$props}
 	class={classNames(
-		'group flex h-min w-fit items-center justify-center p-0.5 text-center font-medium focus:z-10',
+		'group flex h-min items-center justify-center p-0.5 text-center font-medium focus:z-10',
 		pill ? 'rounded-full' : 'rounded-lg',
 		gradient && gradientClasses[color],
-		outline ? outlineClasses[color] : colorClasses[color],
+		outline && outlineClasses[color],
+		!gradient && !outline && colorClasses[color],
 		shadow && coloredShadowClasses[shadow],
 		{
 			'border border-gray-900 dark:border-white': color === 'alternative' && outline,
-			'cursor-not-allowed opacity-50': $$props.disabled,
-			'focus:!ring-2': !!positionInGroup,
-			'rounded-r-none': positionInGroup === 'start',
-			'!rounded-none border-l-0 pl-0': positionInGroup === 'middle',
-			'rounded-l-none border-l-0 pl-0': positionInGroup === 'end'
+			'cursor-not-allowed opacity-50': $$props.disabled
 		},
 		$$props.class
 	)}
@@ -142,9 +138,6 @@
 			{
 				'bg-white text-gray-900 transition-all duration-75 ease-in group-hover:bg-opacity-0 group-hover:text-inherit dark:bg-gray-900 dark:text-white':
 					outline,
-				'rounded-r-none': positionInGroup === 'start',
-				'!rounded-none': positionInGroup === 'middle',
-				'rounded-l-none': positionInGroup === 'end',
 
 				[iconSizeClasses[size]]: !!icon
 			}

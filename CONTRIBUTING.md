@@ -55,7 +55,7 @@ test: add modal test
 When you have a breaking change:
 
 ```
-git commit -a "feat: change btnClass name to bClass" -m "BREAKING CHANGE: change the Button component attributes"
+git commit -am "feat: change btnClass name to bClass" -m "BREAKING CHANGE: change the Button component attributes"
 ```
 
 ## Testing
