@@ -26,6 +26,7 @@
 	bind:value
 	bind:this={ref}
 	use:setType
+       	on:change
 	class={classNames(
 		inputClass,
 		colorClasses[color],
