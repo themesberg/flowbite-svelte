@@ -17,16 +17,7 @@
 	export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
 	export let icon: typeof SvelteComponent | undefined = undefined;
 	export let gradient: boolean = false;
-	let gradientMonochrome: 'blue' | 'green' | 'cyan' | 'teal' | 'lime' | 'red' | 'pink' | 'purple';
 
-	let gradientDuoTone:
-		| 'purpleToBlue'
-		| 'cyanToBlue'
-		| 'greenToBlue'
-		| 'purpleToPink'
-		| 'pinkToOrange'
-		| 'tealToLime'
-		| 'redToYellow';
 	export let shadow:
 		| 'blue'
 		| 'green'
@@ -38,7 +29,7 @@
 		| 'purple'
 		| null = null;
 	export let positionInGroup: 'start' | 'middle' | 'end' | null = null;
-	let outlineStyle: 'default' | 'dark' | 'green' | 'red' | 'yellow' | 'purple' | 'white';
+
 	const colorClasses = {
 		blue: 'text-white bg-blue-700 border border-transparent hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 disabled:hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 dark:disabled:hover:bg-blue-600',
 		alternative:
