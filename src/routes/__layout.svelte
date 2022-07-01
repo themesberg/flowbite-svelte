@@ -2,7 +2,6 @@
 	import '../app.css';
 	import {
 		DarkMode,
-		Badge,
 		Footer,
 		FooterBrand,
 		FooterCopyright,
@@ -11,7 +10,6 @@
 		FooterLinkGroup
 	} from '$lib/index';
 	import { Side, Nav, SidebarList } from 'svelte-sidebar-menu';
-	import Twitter from './utils/icons/Twitter.svelte';
 	import Github from './utils/icons/Github.svelte';
 	import {
 		accordions,
@@ -23,8 +21,7 @@
 		svelteflows,
 		tabs,
 		timelines,
-		topMenus,
-		footerLinks
+		topMenus
 	} from './moduleItems';
 
 	let site = {
@@ -60,34 +57,11 @@
 		'container flex flex-wrap justify-end items-center mx-auto dark:bg-gray-800 h-8 pr-12';
 	let topul =
 		'flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium pt-1 dark:bg-gray-800 bg-white';
-	// Others
 
 	let darkmodebtn =
 		'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 fixed right-4 top-2 z-50';
 	let sideBarListClass =
 		'border-b border-gray-400 dark:border-gray-500 mb-2 px-0 xl:px-4 text-base';
-	// activeDropdownDiv, activeChildLi, buttonClass, dropdownLi
-
-	// Footer
-	let socialMedia = [
-		{
-			href: 'https://github.com/themesberg/flowbite-svelte',
-			icon: Github
-		},
-		{
-			href: 'https://twitter.com/shinokada',
-			icon: Twitter
-		}
-	];
-
-	let allRightsReserved = '';
-	let copyrightYear = '';
-	let liClass = 'mb-1 text-lg';
-	let linksClass =
-		'grid gap-8 py-8 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-36 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7';
-	let copyrightDivClass =
-		'py-6 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-36 text-gray-900 dark:bg-gray-700 md:flex md:items-center md:justify-between';
-	let linkClass = 'hover:underline hover:text-red-600';
 	let h3Class = 'text-lg pb-2';
 	import { quartInOut } from 'svelte/easing';
 	let transitionParams = {
@@ -282,50 +256,58 @@
 	</main>
 </div>
 <div class="pt-4 lg:pl-72">
-	<Footer>
-		<div class="grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4">
-			<div>
-				<h2 class="mb-6 text-sm font-semibold uppercase text-gray-400">Company</h2>
-				<FooterLinkGroup class="flex-col">
-					<FooterLink class="mb-4 text-gray-300" href="#">About</FooterLink>
-					<FooterLink class="mb-4 text-gray-300" href="#">Careers</FooterLink>
-					<FooterLink class="mb-4 text-gray-300" href="#">Brand Center</FooterLink>
-					<FooterLink class="mb-4 text-gray-300" href="#">Blog</FooterLink>
-				</FooterLinkGroup>
+	<Footer footerType="socialmedia">
+		<div class="md:flex md:justify-between">
+			<div class="mb-6 md:mb-0">
+				<FooterBrand
+					href="https://flowbite-svelte.com"
+					src="images/flowbite-svelte-icon-logo.svg"
+					alt="Flowbite-Svelte Logo"
+					name="Flowbite-Svelte"
+				/>
 			</div>
-			<div>
-				<h2 class="mb-6 text-sm font-semibold uppercase text-gray-400">Download</h2>
-				<FooterLinkGroup class="flex-col">
-					<FooterLink class="mb-4 text-gray-300" href="#">Discord Server</FooterLink>
-					<FooterLink class="mb-4 text-gray-300" href="#">Twitter</FooterLink>
-					<FooterLink class="mb-4 text-gray-300" href="#">Facebook</FooterLink>
-					<FooterLink class="mb-4 text-gray-300" href="#">Contact Us</FooterLink>
-				</FooterLinkGroup>
-			</div>
-			<div>
-				<h2 class="mb-6 text-sm font-semibold uppercase text-gray-400">Legal</h2>
-				<FooterLinkGroup class="flex-col">
-					<FooterLink class="mb-4 text-gray-300" href="#">Privacy Policy</FooterLink>
-					<FooterLink class="mb-4 text-gray-300" href="#">Licensing</FooterLink>
-					<FooterLink class="mb-4 text-gray-300" href="#">Terms & Conditions</FooterLink>
-				</FooterLinkGroup>
-			</div>
-			<div>
-				<h2 class="mb-6 text-sm font-semibold uppercase text-gray-400">Download</h2>
-				<FooterLinkGroup class="flex-col">
-					<FooterLink class="mb-4 text-gray-300" href="#">iOS</FooterLink>
-					<FooterLink class="mb-4 text-gray-300" href="#">Android</FooterLink>
-					<FooterLink class="mb-4 text-gray-300" href="#">Windows</FooterLink>
-					<FooterLink class="mb-4 text-gray-300" href="#">MacOS</FooterLink>
-				</FooterLinkGroup>
+			<div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+				<div>
+					<h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+						Resources
+					</h2>
+					<FooterLinkGroup>
+						<FooterLink liClass="mb-4" href="https://flowbite.com/">Flowbite</FooterLink>
+						<FooterLink liClass="mb-4" href="https://tailwindcss.com/">Tailwind CSS</FooterLink>
+					</FooterLinkGroup>
+				</div>
+				<div>
+					<h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
+						Follow us
+					</h2>
+					<FooterLinkGroup>
+						<FooterLink liClass="mb-4" href="https://github.com/themesberg/flowbite-svelte"
+							>Gihub</FooterLink
+						>
+						<FooterLink liClass="mb-4" href="https://discord.gg/4eeurUVvTy">Discord</FooterLink>
+					</FooterLinkGroup>
+				</div>
+				<div>
+					<h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Legal</h2>
+					<FooterLinkGroup>
+						<FooterLink
+							liClass="mb-4"
+							href="https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE"
+							>License</FooterLink
+						>
+					</FooterLinkGroup>
+				</div>
 			</div>
 		</div>
-		<hr class="my-6 w-full border-gray-200 p-1 dark:border-gray-700 sm:mx-auto lg:my-8" />
-		<div class="w-full sm:flex sm:items-center sm:justify-between">
-			<FooterCopyright class="text-gray-300" href="#" by="Flowbite™" year={2022} />
-			<div class="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
-				<FooterIcon href="#" class="text-gray-400 hover:text-white" icon={Twitter} />
-				<FooterIcon href="#" class="text-gray-400 hover:text-white" icon={Github} />
+		<hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+		<div class="sm:flex sm:items-center sm:justify-between">
+			<FooterCopyright href="/" by="Flowbite™" />
+			<div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+				<FooterIcon
+					href="https://github.com/themesberg/flowbite-svelte"
+					class="text-gray-400 hover:text-gray-900"
+					icon={Github}
+				/>
 			</div>
 		</div>
 	</Footer>
