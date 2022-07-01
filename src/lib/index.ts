@@ -17,10 +17,6 @@ export { default as BreadcrumbItem } from './breadcrumbs/BreadcrumbItem.svelte'
 
 // Buttons
 export { default as Button } from './buttons/Button.svelte';
-export { default as ColorShadowButton } from './buttons/ColorShadowButton.svelte';
-export { default as GradientDuotoneButton } from './buttons/GradientDuotoneButton.svelte';
-export { default as GradientMonochromeButton } from './buttons/GradientMonochromeButton.svelte';
-export { default as GradientOutlineButton } from './buttons/GradientOutlineButton.svelte';
 
 // Buttongroups
 export { default as ButtonGroup } from './buttongroups/ButtonGroup.svelte';
