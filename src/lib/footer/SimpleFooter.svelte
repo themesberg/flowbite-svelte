@@ -3,8 +3,6 @@
 	import type { LinkType, SiteType } from '../types';
 	export let site: SiteType;
 	export let links: LinkType[];
-	export let footerClass: string =
-		'p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800';
 	export let siteNameClass: string = 'text-sm text-gray-500 sm:text-center dark:text-gray-400';
 	export let ulClass: string = 'flex flex-wrap items-center mt-3 sm:mt-0';
 	export let aClass: string =
@@ -14,16 +12,14 @@
 	export let allRightsReserved: string = 'All Rights Reserved.';
 </script>
 
-<footer class={classNames(footerClass, $$props.class)}>
-	<span class={siteNameClass}
-		>{copyrightYear}
-		<a href={site.href} class={siteNameLinkClass} target="_blank">{site.name}</a>. {allRightsReserved}
-	</span>
-	<ul class={ulClass}>
-		{#each links as { name, href, rel }}
-			<li>
-				<a {href} {rel} class={aClass}>{name}</a>
-			</li>
-		{/each}
-	</ul>
-</footer>
+<span class={siteNameClass}
+	>{copyrightYear}
+	<a href={site.href} class={siteNameLinkClass} target="_blank">{site.name}</a>. {allRightsReserved}
+</span>
+<ul class={ulClass}>
+	{#each links as { name, href, rel }}
+		<li>
+			<a {href} {rel} class={aClass}>{name}</a>
+		</li>
+	{/each}
+</ul>

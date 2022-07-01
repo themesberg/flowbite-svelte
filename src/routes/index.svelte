@@ -9,7 +9,6 @@
 		cards,
 		carousels,
 		forms,
-		footers,
 		modals,
 		ratings,
 		tabs,
@@ -183,11 +182,9 @@
 	<div class="p-4">
 		<Card img="/images/footer.webp" alt="Footer" link="/footer" {divClass}>
 			<span slot="paragraph">
-				{#each footers as { href, name }}
-					<p class={pClass}>
-						<a {href} class={aClass}>{name}</a>
-					</p>
-				{/each}
+				<p class={pClass}>
+					<a href="/footer" class={aClass}>Footer</a>
+				</p>
 			</span>
 		</Card>
 	</div>

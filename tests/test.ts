@@ -157,29 +157,9 @@ test('Dropdown main page should have h1', async ({ page }) => {
 });
 
 // Footer
-test('Footer main page should have h1', async ({ page }) => {
+test('Footer index page should have h1', async ({ page }) => {
 	await page.goto('/footer');
-	expect(await page.textContent('h1')).toBe('Footer Components');
-});
-
-test('Footer default page should have h1', async ({ page }) => {
-	await page.goto('/footer/default');
-	expect(await page.textContent('h1')).toBe('Simple Footer');
-});
-
-test('Footer with Logo page should have h1', async ({ page }) => {
-	await page.goto('/footer/logo');
-	expect(await page.textContent('h1')).toBe('Footer with Logo');
-});
-
-test('Sitemap Footer page should have h1', async ({ page }) => {
-	await page.goto('/footer/sitemap');
-	expect(await page.textContent('h1')).toBe('Sitemap Footer');
-});
-
-test('Socialmeida Footer page should have h1', async ({ page }) => {
-	await page.goto('/footer/socialmedia');
-	expect(await page.textContent('h1')).toBe('Socialmedia Footer');
+	expect(await page.textContent('h1')).toBe('Footer');
 });
 
 // Forms

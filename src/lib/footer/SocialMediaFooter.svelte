@@ -4,7 +4,6 @@
 	export let site: SiteType;
 	export let links: SocialMediaLinkType[];
 	export let socialMedia: SocialMediaType[];
-	export let footerClass: string = 'p-4 bg-white sm:p-6 dark:bg-gray-800';
 	export let divClass: string = 'md:flex md:justify-between';
 	export let divClass2: string = 'mb-6 md:mb-0';
 	export let siteLinkClass: string = 'flex items-center';
@@ -28,44 +27,42 @@
 	export let allRightsReserved: string = 'All Rights Reserved.';
 </script>
 
-<footer class={classNames(footerClass, $$props.class)}>
-	<div class={divClass}>
-		<div class={divClass2}>
-			<a href={site.href} class={siteLinkClass}>
-				<img src={site.img} class={imgClass} alt={site.name} />
-				<span class={siteNameSpanClass}>{site.name}</span>
+<div class={divClass}>
+	<div class={divClass2}>
+		<a href={site.href} class={siteLinkClass}>
+			<img src={site.img} class={imgClass} alt={site.name} />
+			<span class={siteNameSpanClass}>{site.name}</span>
+		</a>
+		<slot />
+	</div>
+	<div class={linksDivClass}>
+		{#each links as { parent, children }}
+			<div>
+				<h2 class={parentClass}>
+					{parent}
+				</h2>
+				<ul class={ulClass}>
+					{#each children as { name, href }}
+						<li class={liClass}>
+							<a {href} class={linkClass}>{name}</a>
+						</li>
+					{/each}
+				</ul>
+			</div>
+		{/each}
+	</div>
+</div>
+<hr class={hrClass} />
+<div class={copyrightDivClass}>
+	<span class={copyrightClass}
+		>{copyrightYear}
+		<a href={site.href} class="hover:underline">{site.name}</a>. {allRightsReserved}
+	</span>
+	<div class={socialMediaDivClass}>
+		{#each socialMedia as { href, icon }}
+			<a {href} class={socialMediaLinkClass}>
+				<svelte:component this={icon} class={iconClass} />
 			</a>
-			<slot />
-		</div>
-		<div class={linksDivClass}>
-			{#each links as { parent, children }}
-				<div>
-					<h2 class={parentClass}>
-						{parent}
-					</h2>
-					<ul class={ulClass}>
-						{#each children as { name, href }}
-							<li class={liClass}>
-								<a {href} class={linkClass}>{name}</a>
-							</li>
-						{/each}
-					</ul>
-				</div>
-			{/each}
-		</div>
+		{/each}
 	</div>
-	<hr class={hrClass} />
-	<div class={copyrightDivClass}>
-		<span class={copyrightClass}
-			>{copyrightYear}
-			<a href={site.href} class="hover:underline">{site.name}</a>. {allRightsReserved}
-		</span>
-		<div class={socialMediaDivClass}>
-			{#each socialMedia as { href, icon }}
-				<a {href} class={socialMediaLinkClass}>
-					<svelte:component this={icon} class={iconClass} />
-				</a>
-			{/each}
-		</div>
-	</div>
-</footer>
+</div>

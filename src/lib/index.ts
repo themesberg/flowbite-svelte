@@ -45,10 +45,12 @@ export { default as DropdownHeader } from './dropdowns/DropdownHeader.svelte';
 export { default as DropdownItem } from './dropdowns/DropdownItem.svelte';
 
 // Footers
-export { default as SimpleFooter } from './footer/SimpleFooter.svelte';
-export { default as LogoFooter } from './footer/LogoFooter.svelte';
-export { default as SocialMediaFooter } from './footer/SocialMediaFooter.svelte';
-export { default as SitemapFooter } from './footer/SitemapFooter.svelte';
+export { default as Footer } from './footer/Footer.svelte'
+export { default as FooterBrand } from './footer/FooterBrand.svelte'
+export { default as FooterCopyright } from './footer/FooterCopyright.svelte'
+export { default as FooterIcon } from './footer/FooterIcon.svelte'
+export { default as FooterLink } from './footer/FooterLink.svelte'
+export { default as FooterLinkGroup } from './footer/FooterLinkGroup.svelte'
 
 // Forms
 export { default as Checkbox } from './forms/Checkbox.svelte';

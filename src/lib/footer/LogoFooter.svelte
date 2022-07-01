@@ -4,8 +4,6 @@
 	export let site: SiteType;
 
 	export let links: LinkType[];
-	export let footerClass: string =
-		'p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-800';
 	export let divClass: string = 'sm:flex sm:items-center sm:justify-between';
 	export let siteNameClass: string =
 		'self-center text-2xl font-semibold whitespace-nowrap dark:text-white';
@@ -22,23 +20,21 @@
 	export let allRightsReserved: string = 'All Rights Reserved.';
 </script>
 
-<footer class={classNames(footerClass, $$props.class)}>
-	<div class={divClass}>
-		<a href={site.href} class={siteNameLinkClass}>
-			<img src={site.img} class={imgClass} alt={site.name} />
-			<span class={siteNameClass}>{site.name}</span>
-		</a>
-		<ul class={ulClass}>
-			{#each links as { name, href, rel }}
-				<li>
-					<a {href} {rel} class={aClass}>{name}</a>
-				</li>
-			{/each}
-		</ul>
-	</div>
-	<hr class={hrClass} />
-	<span class={copyRightSpanClass}
-		>{copyrightYear}
-		<a href={site.href} class={copyRightLinkClass}>{site.name}</a>. {allRightsReserved}
-	</span>
-</footer>
+<div class={divClass}>
+	<a href={site.href} class={siteNameLinkClass}>
+		<img src={site.img} class={imgClass} alt={site.name} />
+		<span class={siteNameClass}>{site.name}</span>
+	</a>
+	<ul class={ulClass}>
+		{#each links as { name, href, rel }}
+			<li>
+				<a {href} {rel} class={aClass}>{name}</a>
+			</li>
+		{/each}
+	</ul>
+</div>
+<hr class={hrClass} />
+<span class={copyRightSpanClass}
+	>{copyrightYear}
+	<a href={site.href} class={copyRightLinkClass}>{site.name}</a>. {allRightsReserved}
+</span>

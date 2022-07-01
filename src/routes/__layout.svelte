@@ -1,16 +1,23 @@
 <script lang="ts">
 	import '../app.css';
-	import { DarkMode, Badge, SitemapFooter } from '$lib/index';
+	import {
+		DarkMode,
+		Badge,
+		Footer,
+		FooterBrand,
+		FooterCopyright,
+		FooterIcon,
+		FooterLink,
+		FooterLinkGroup
+	} from '$lib/index';
 	import { Side, Nav, SidebarList } from 'svelte-sidebar-menu';
 	import Twitter from './utils/icons/Twitter.svelte';
 	import Github from './utils/icons/Github.svelte';
 	import {
 		accordions,
-		badges,
 		cards,
 		carousels,
 		forms,
-		footers,
 		modals,
 		ratings,
 		svelteflows,
@@ -192,9 +199,6 @@
 			<h3 class={h3Class}>
 				<a href="/footer">Footer</a>
 			</h3>
-			{#each footers as { href, name, rel }}
-				<SidebarList {href} {name} {rel} {sideBarListClass} />
-			{/each}
 		</Nav>
 		<Nav {navClass} {navDivClass}>
 			<h3 class={h3Class}>
@@ -278,15 +282,51 @@
 	</main>
 </div>
 <div class="pt-4 lg:pl-72">
-	<SitemapFooter
-		{site}
-		{socialMedia}
-		links={footerLinks}
-		{allRightsReserved}
-		{copyrightYear}
-		{liClass}
-		{linksClass}
-		{copyrightDivClass}
-		{linkClass}
-	/>
+	<Footer>
+		<div class="grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4">
+			<div>
+				<h2 class="mb-6 text-sm font-semibold uppercase text-gray-400">Company</h2>
+				<FooterLinkGroup class="flex-col">
+					<FooterLink class="mb-4 text-gray-300" href="#">About</FooterLink>
+					<FooterLink class="mb-4 text-gray-300" href="#">Careers</FooterLink>
+					<FooterLink class="mb-4 text-gray-300" href="#">Brand Center</FooterLink>
+					<FooterLink class="mb-4 text-gray-300" href="#">Blog</FooterLink>
+				</FooterLinkGroup>
+			</div>
+			<div>
+				<h2 class="mb-6 text-sm font-semibold uppercase text-gray-400">Download</h2>
+				<FooterLinkGroup class="flex-col">
+					<FooterLink class="mb-4 text-gray-300" href="#">Discord Server</FooterLink>
+					<FooterLink class="mb-4 text-gray-300" href="#">Twitter</FooterLink>
+					<FooterLink class="mb-4 text-gray-300" href="#">Facebook</FooterLink>
+					<FooterLink class="mb-4 text-gray-300" href="#">Contact Us</FooterLink>
+				</FooterLinkGroup>
+			</div>
+			<div>
+				<h2 class="mb-6 text-sm font-semibold uppercase text-gray-400">Legal</h2>
+				<FooterLinkGroup class="flex-col">
+					<FooterLink class="mb-4 text-gray-300" href="#">Privacy Policy</FooterLink>
+					<FooterLink class="mb-4 text-gray-300" href="#">Licensing</FooterLink>
+					<FooterLink class="mb-4 text-gray-300" href="#">Terms & Conditions</FooterLink>
+				</FooterLinkGroup>
+			</div>
+			<div>
+				<h2 class="mb-6 text-sm font-semibold uppercase text-gray-400">Download</h2>
+				<FooterLinkGroup class="flex-col">
+					<FooterLink class="mb-4 text-gray-300" href="#">iOS</FooterLink>
+					<FooterLink class="mb-4 text-gray-300" href="#">Android</FooterLink>
+					<FooterLink class="mb-4 text-gray-300" href="#">Windows</FooterLink>
+					<FooterLink class="mb-4 text-gray-300" href="#">MacOS</FooterLink>
+				</FooterLinkGroup>
+			</div>
+		</div>
+		<hr class="my-6 w-full border-gray-200 p-1 dark:border-gray-700 sm:mx-auto lg:my-8" />
+		<div class="w-full sm:flex sm:items-center sm:justify-between">
+			<FooterCopyright class="text-gray-300" href="#" by="Flowbite™" year={2022} />
+			<div class="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
+				<FooterIcon href="#" class="text-gray-400 hover:text-white" icon={Twitter} />
+				<FooterIcon href="#" class="text-gray-400 hover:text-white" icon={Github} />
+			</div>
+		</div>
+	</Footer>
 </div>

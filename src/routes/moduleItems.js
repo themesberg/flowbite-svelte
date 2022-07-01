@@ -48,23 +48,6 @@ export const forms = [
   { href: "/forms/toggle", name: "Toggle" },
 ]
 
-export const footers = [
-  { href: "/footer/default", name: "Default" },
-  { href: "/footer/logo", name: "Logo" },
-  { href: "/footer/socialmedia", name: "Socialmedia" },
-  { href: "/footer/sitemap", name: "Sitemap" },
-]
-
-// export const icons = [
-//   { href: "/icons/heroicons", name: "Heroicons" },
-//   { href: "/icons/simple-icons", name: "Simple-icons" },
-//   { href: "/icons/feathericons", name: "Feathericons" },
-// ]
-
-// export const list_group = [
-//   { href: "list-group", name: "List group" },
-// ];
-
 export const modals = [
   { href: "/modals/small", name: "Small" },
   { href: "/modals/medium", name: "Medium" },

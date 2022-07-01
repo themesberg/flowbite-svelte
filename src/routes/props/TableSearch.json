@@ -1,1 +1,1 @@
-{"props":[["divClass","string ","'relative overflow-x-auto shadow-md sm:rounded-lg'"],["inputValue","string ","''"],["striped","boolean ","false"],["hoverable","boolean ","false"],[" menuItems"," Array<Array<string>>",""],["filteredItems","Array<Array<string>> ","[]"],["placeholder","string ","'Search'"]]}
+{"props":[["divClass","string ","'relative overflow-x-auto shadow-md sm:rounded-lg'"],["inputValue","string ","''"],["striped","boolean ","false"],["hoverable","boolean ","false"],["placeholder","string ","'Search'"]]}
