@@ -7,7 +7,7 @@ layout: toastLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Toast, Breadcrumb, BreadcrumbItem, Avatar, Button, Badge } from "$lib/index"
+  import { Toast, Breadcrumb, BreadcrumbItem, Avatar, Button } from "$lib/index"
   import { quintOut, elasticOut } from 'svelte/easing';
   import { Fire, CheckCircle, PlusCircle, Archive, Home, Mail, Refresh } from 'svelte-heros'
   import componentProps from '../props/Toast.json'
@@ -237,7 +237,7 @@ This component can be used to show messages and a CTA button when receiveing cha
 			<div class="mb-2 text-sm font-normal">
 				Hi Neil, thanks for sharing your thoughts regarding Flowbite.
 			</div>
-			<button size="xs">Replay</button>
+			<Button size="xs">Replay</Button>
 		</div>
 	</div>
 </Toast>
@@ -302,8 +302,8 @@ This component can be used to show messages and a CTA button when receiveing cha
 	<div class="mt-3" slot="extra">
 		<div class="mb-2 text-sm font-normal">A new software version is available for download.</div>
 		<div class="grid grid-cols-2 gap-2">
-			<button size="xs" class="w-full">Update</button>
-			<button size="xs" class="w-full" color="dark">Not now</button>
+			<Button size="xs" class="w-full">Update</Button>
+			<Button size="xs" class="w-full" color="dark">Not now</Button>
 		</div>
 	</div>
 </Toast>
