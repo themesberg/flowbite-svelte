@@ -13,6 +13,9 @@
 	// Pass in extra transition params
 	export let params: TransitionParamTypes = {};
 
+	// Absolute position
+	export let position: 'tl' | 'tr' | 'bl' | 'br' = undefined; // default not set
+
 	let visible = true;
 
 	const colors = {
@@ -32,6 +35,12 @@
 	let divClass;
 	$: divClass = classNames(
 		'w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800',
+		{
+			'absolute top-5 left-5': position == 'tl',
+			'absolute top-5 right-5': position == 'tr',
+			'absolute bottom-5 left-5': position == 'bl',
+			'absolute bottom-5 right-5': position == 'br'
+		},
 		$$props.class
 	);
 
@@ -44,19 +53,18 @@
 
 {#if visible}
 	<div transition:transitionFunc={params} class={divClass} role="alert">
-		<div class="flex items-center w-full">
+		<div class="flex {$$slots.extra ? 'items-start' : 'items-center'}">
 			{#if $$slots.icon}
-				<div class={iconClass}>
-					<slot name="icon" />
-				</div>
+				<div class={iconClass}><slot name="icon" /></div>
 			{/if}
 
-			<div class="text-sm font-normal"><slot /></div>
-
+			<div class="text-sm font-normal">
+				<slot />
+				<slot name="extra" />
+			</div>
 			{#if !simple}
 				<CloseButton on:click={() => (visible = false)} />
 			{/if}
 		</div>
-		<slot name="extra" />
 	</div>
 {/if}

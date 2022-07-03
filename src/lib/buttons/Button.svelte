@@ -118,7 +118,7 @@
 	type="button"
 	{...$$props}
 	class={classNames(
-		'group flex h-min w-fit items-center justify-center p-0.5 text-center font-medium focus:z-10',
+		'group flex h-min items-center justify-center p-0.5 text-center font-medium focus:z-10',
 		pill ? 'rounded-full' : 'rounded-lg',
 		gradient && gradientClasses[color],
 		outline ? outlineClasses[color] : colorClasses[color],
