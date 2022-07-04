@@ -5,6 +5,7 @@
 
 	const dispatch = createEventDispatcher();
 	import type { Colors } from '../types';
+	import CloseButton from '$lib/utils/CloseButton.svelte';
 	export let color: Colors = 'blue';
 	export let icon: typeof SvelteComponent | null = null;
 	export let closeBtn: boolean = false;
@@ -83,17 +84,23 @@
 	buttonClass += buttonClasses[color] ?? buttonClasses.blue;
 </script>
 
-<div id={$$props.id} class:hidden class={classNames(divClass, $$props.class)} role="alert">
+<div
+	id={$$props.id}
+	class:hidden
+	class={classNames(divClass, contentClass, $$props.class)}
+	role="alert"
+>
 	<div class="flex">
 		{#if icon}
-			<svelte:component this={icon} class="flex-shrink-0 w-5 h-5 {contentClass} mr-3" />
+			<svelte:component this={icon} class="flex-shrink-0 w-5 h-5 mr-3" />
 		{/if}
 
-		<div class="text-sm font-medium {contentClass}">
+		<div class="text-sm font-medium">
 			<slot name="content" />
 		</div>
 
 		{#if closeBtn}
+			<CloseButton on:click={handleHide} on:click={handleAlert} {color} />
 			<button
 				on:click={handleHide}
 				on:click={handleAlert}
