@@ -207,6 +207,28 @@ that if you want no color at all set property to empty string.</p>
 </Toast>
 ```
 
+<Htwo label="Undo button" />
+
+<p>Use this toast component to also show an “undo” button to reverse the action of the user.</p>
+
+<ExampleDiv>
+  <Toast>
+    <div class="inline-flex justify-between items-center w-full">
+    Conversation archived.
+    <a class="text-sm font-medium text-blue-600 p-1.5 hover:bg-blue-100 rounded-lg dark:text-blue-500 dark:hover:bg-gray-700" href="#">Undo</a>
+    </div>
+  </Toast>
+</ExampleDiv>
+
+```html
+<Toast>
+  <div class="inline-flex justify-between items-center w-full">
+  Conversation archived.
+  <a class="text-sm font-medium text-blue-600 p-1.5 hover:bg-blue-100 rounded-lg dark:text-blue-500 dark:hover:bg-gray-700" href="#">Undo</a>
+  </div>
+</Toast>
+```
+
 <Htwo label="Extra content" />
 <p>Use the <span class="font-mono italic">slot="extra"</span> to add some more arbitrary content in the toast.</p>
 

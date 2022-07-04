@@ -58,7 +58,7 @@
 				<div class={iconClass}><slot name="icon" /></div>
 			{/if}
 
-			<div class="text-sm font-normal">
+			<div class="text-sm font-normal w-full">
 				<slot />
 				<slot name="extra" />
 			</div>
