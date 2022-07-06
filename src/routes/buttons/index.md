@@ -301,6 +301,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <span class="inline-flex items-center justify-center w-4 h-4 ml-2 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full">
     2
   </span>
+  <!-- Badge color="blue" rounded class="w-4 h-4 ml-2 font-semibold">2</Badge -->
 </Button>
 </ExampleDiv>
 
@@ -346,10 +347,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <ExampleDiv>
 <div class="flex flex-wrap items-center gap-2">
 <Button>
-  <Spinner class="mr-3" size="4" />
+  <Spinner class="mr-3" size="4" color="white" />
   Loading ...
 </Button>
-<Button outlineStyle="white">
+<Button outline color="dark">
   <Spinner class="mr-3" size="4" />
   Loading ...
 </Button>

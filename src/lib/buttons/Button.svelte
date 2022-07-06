@@ -103,7 +103,7 @@
 
 	let buttonClass;
 	$: buttonClass = classNames(
-		'group text-center font-medium focus:ring-4 focus:outline-none focus:z-10',
+		'group text-center font-medium focus:ring-4 focus:outline-none',
 		outline && gradient ? 'p-0.5' : 'inline-flex items-center justify-center ' + sizeClasses[size],
 		gradient ? gradientClasses[color] : outline ? outlineClasses[color] : colorClasses[color],
 		pill ? 'rounded-full' : 'rounded-lg',
