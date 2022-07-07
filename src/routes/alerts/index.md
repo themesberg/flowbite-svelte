@@ -7,11 +7,9 @@ layout: alertLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Alert, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Alert, Breadcrumb, BreadcrumbItem, Button } from '$lib/index'
   import { Home } from 'svelte-heros';
-  import {
-    XCircle, Eye, InformationCircle
-  } from "svelte-heros";
+  import { XCircle, Eye, InformationCircle } from "svelte-heros";
   import componentProps from '../props/Alert.json'
   // Props table
   let items = componentProps.props
@@ -40,7 +38,7 @@ Import Alert and set variables in the script tag.
 
 ```html
 <script>
-  import { Alert } from "flowbite-svelte";
+	import { Alert } from 'flowbite-svelte';
 </script>
 ```
 
@@ -49,189 +47,174 @@ Import Alert and set variables in the script tag.
 <p>Use the following examples of alert components to show messages as feedback to your users.</p>
 
 <ExampleDiv>
-  <Alert id="alert-blue">
-    <span slot="content">
-      <span class="font-medium">
-        Info alert!
-      </span>
-      Change a few things up and try submitting again.
-    </span>
+  <Alert>
+    <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
   </Alert>
-
-  ```html
-  <Alert id="alert-blue">
-    <span slot="content">
-      <span class="font-medium">
-        Info alert!
-      </span>
-      Change a few things up and try submitting again.
-    </span>
+  <Alert color="red">
+    <span class="font-medium">Danger alert!</span> Change a few things up and try submitting again.
   </Alert>
-  ```
+  <Alert color="green">
+    <span class="font-medium">Success alert!</span> Change a few things up and try submitting again.
+  </Alert>
+  <Alert color="yellow">
+    <span class="font-medium">Warning alert!</span> Change a few things up and try submitting again.
+  </Alert>
+  <Alert color="dark">
+    <span class="font-medium">Dark alert!</span> Change a few things up and try submitting again.
+  </Alert>
 </ExampleDiv>
+
+```html
+<Alert>
+	<span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
+</Alert>
+<Alert color="red">
+	<span class="font-medium">Danger alert!</span> Change a few things up and try submitting again.
+</Alert>
+<Alert color="green">
+	<span class="font-medium">Success alert!</span> Change a few things up and try submitting again.
+</Alert>
+<Alert color="yellow">
+	<span class="font-medium">Warning alert!</span> Change a few things up and try submitting again.
+</Alert>
+<Alert color="dark">
+	<span class="font-medium">Dark alert!</span> Change a few things up and try submitting again.
+</Alert>
+```
 
 <Htwo label="Alerts with icon" />
 
 <p>You can also include a descriptive icon to complement the message inside the alert component with the following example.</p>
 
 <ExampleDiv>
-  <Alert id="alert-red" color="red" icon={XCircle}>
-    <span slot="content">
-      <span class="font-medium">
-        Info alert!
-      </span>
-      Change a few things up and try submitting again.
-    </span>
+  <Alert icon={InformationCircle}>
+    <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
   </Alert>
-
-  ```html
-  <Alert id="alert-red" color="red" icon={XCircle}>
-    <span slot="content">
-      <span class="font-medium">
-        Info alert!
-      </span>
-      Change a few things up and try submitting again.
-    </span>
+  <Alert color="red" icon={InformationCircle}>
+    <span class="font-medium">Danger alert!</span> Change a few things up and try submitting again.
   </Alert>
-  ```
+  <Alert color="green" icon={InformationCircle}>
+    <span class="font-medium">Success alert!</span> Change a few things up and try submitting again.
+  </Alert>
+  <Alert color="yellow" icon={InformationCircle}>
+    <span class="font-medium">Warning alert!</span> Change a few things up and try submitting again.
+  </Alert>
+  <Alert color="dark" icon={InformationCircle}>
+    <span class="font-medium">Dark alert!</span> Change a few things up and try submitting again.
+  </Alert>
 </ExampleDiv>
+
+```html
+<Alert icon="{InformationCircle}">
+	<span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
+</Alert>
+<Alert color="red" icon="{InformationCircle}">
+	<span class="font-medium">Danger alert!</span> Change a few things up and try submitting again.
+</Alert>
+<Alert color="green" icon="{InformationCircle}">
+	<span class="font-medium">Success alert!</span> Change a few things up and try submitting again.
+</Alert>
+<Alert color="yellow" icon="{InformationCircle}">
+	<span class="font-medium">Warning alert!</span> Change a few things up and try submitting again.
+</Alert>
+<Alert color="dark" icon="{InformationCircle}">
+	<span class="font-medium">Dark alert!</span> Change a few things up and try submitting again.
+</Alert>
+```
 
 <Htwo label="Dismissable alerts" />
 
 <p>Use the following alert elements that are also dismissable.</p>
 
 <ExampleDiv>
-  <Alert id="alert-green" color="green" closeBtn>
-    <span slot="content">
-      <span class="font-medium">
-        Info alert!
-      </span>
-      Change a few things up and try submitting again.
-    </span>
+  <Alert color="green" icon={InformationCircle} dismissable>
+    A simple info alert with an <a href="#" class="font-semibold underline hover:text-green-800 dark:hover:text-green-900">example link</a>. Give it a click if you like.
   </Alert>
-
-  ```html
-  <Alert id="alert-green" color="green" closeBtn>
-    <span slot="content">
-      <span class="font-medium">
-        Info alert!
-      </span>
-      Change a few things up and try submitting again.
-    </span>
-  </Alert>
-  ```
 </ExampleDiv>
 
+```html
+<Alert color="green" icon="{InformationCircle}" dismissable>
+	A simple info alert with an
+	<a href="#" class="font-semibold underline hover:text-green-800 dark:hover:text-green-900"
+		>example link</a
+	>. Give it a click if you like.
+</Alert>
+```
 
 <Htwo label="Border accent" />
 
 <p>Use the following alert components with a border accent as an alternative style.</p>
 
 <ExampleDiv>
-  <Alert id="alert-yellow" color="yellow" borderAccent={true}>
-    <span slot="content">
-      <span class="font-medium">
-        Info alert!
-      </span>
-      Change a few things up and try submitting again.
-    </span>
+  <Alert accent rounded={false} icon={InformationCircle}>
+    <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
   </Alert>
-
-```html
-<Alert id="alert-yellow" color="yellow" borderAccent={true}>
-  <span slot="content">
-    <span class="font-medium">
-      Info alert!
-    </span>
-    Change a few things up and try submitting again.
-  </span>
-</Alert>
-```
+  <Alert color="red" accent rounded={false} icon={InformationCircle}>
+    <span class="font-medium">Danger alert!</span> Change a few things up and try submitting again.
+  </Alert>
+  <Alert color="green" accent rounded={false} icon={InformationCircle}>
+    <span class="font-medium">Success alert!</span> Change a few things up and try submitting again.
+  </Alert>
+  <Alert color="yellow" accent rounded={false} icon={InformationCircle}>
+    <span class="font-medium">Warning alert!</span> Change a few things up and try submitting again.
+  </Alert>
+  <Alert color="dark" accent rounded={false} icon={InformationCircle}>
+    <span class="font-medium">Dark alert!</span> Change a few things up and try submitting again.
+  </Alert>
 </ExampleDiv>
 
-<Htwo label="Rounded" />
-
-<p>Use rounded props to control roundedness.</p>
-
-<ExampleDiv>
-  <Alert id="alert-yellow" color="yellow" rounded={false}>
-    <span slot="content">
-      <span class="font-medium">
-        Info alert!
-      </span>
-      Change a few things up and try submitting again.
-    </span>
-  </Alert>
-
 ```html
-<Alert id="alert-yellow" color="yellow" rounded={false}>
-  <span slot="content">
-    <span class="font-medium">
-      Info alert!
-    </span>
-    Change a few things up and try submitting again.
-  </span>
+<Alert accent rounded="{false}" icon="{InformationCircle}">
+	<span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
+</Alert>
+<Alert color="red" accent rounded="{false}" icon="{InformationCircle}">
+	<span class="font-medium">Danger alert!</span> Change a few things up and try submitting again.
+</Alert>
+<Alert color="green" accent rounded="{false}" icon="{InformationCircle}">
+	<span class="font-medium">Success alert!</span> Change a few things up and try submitting again.
+</Alert>
+<Alert color="yellow" accent rounded="{false}" icon="{InformationCircle}">
+	<span class="font-medium">Warning alert!</span> Change a few things up and try submitting again.
+</Alert>
+<Alert color="dark" accent rounded="{false}" icon="{InformationCircle}">
+	<span class="font-medium">Dark alert!</span> Change a few things up and try submitting again.
 </Alert>
 ```
-</ExampleDiv>
 
 <Htwo label="Additional content" />
 
 <p>The following alert components can be used if you wish to disclose more information inside the element.</p>
 
 <ExampleDiv>
-  <Alert id="alert-extra" color="blue" icon={InformationCircle} closeBtn>
-    <span slot="content">
-      <span class="font-medium">
-        Info alert!
-      </span>
-      Change a few things up and try submitting again.
-    </span>
+  <Alert color="blue" icon={InformationCircle}>
+    <span class="text-lg font-medium text-blue-700 dark:text-blue-800">This is a info alert</span>
     <div slot="extra">
       <div class="mt-2 mb-4 text-sm text-blue-700 dark:text-blue-800">
         More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
       </div>
-      <div class="flex">
-        <button type="button" class="mr-2 inline-flex items-center rounded-lg bg-blue-700 px-3 py-1.5 text-center text-xs font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-800 dark:hover:bg-blue-900">
-          <Eye class="-ml-0.5 mr-2 h-4 w-4" />View more
-        </button>
-        <button
-          type="button"
-          class="rounded-lg border border-blue-700 bg-transparent px-3 py-1.5 text-center text-xs font-medium text-blue-700 hover:bg-blue-800 hover:text-white focus:ring-4 focus:ring-blue-300 dark:border-blue-800 dark:text-blue-800 dark:hover:text-white"
-        >
-          Go to Home
-        </button>
+      <div class="flex gap-2">
+      <Button size="xs"><Eye class="mr-2 h-4 w-4" />View more</Button>
+      <Button size="xs" outline color="default">Go to Home</Button>
       </div>
     </div>
   </Alert>
+</ExampleDiv>
 
 ```html
-<Alert id="alert-extra" color="blue" icon={InformationCircle} closeBtn>
-  <span slot="content">
-    <span class="font-medium">
-      Info alert!
-    </span>
-    Change a few things up and try submitting again.
-  </span>
-  <div slot="extra">
-    <div class="mt-2 mb-4 text-sm text-blue-700 dark:text-blue-800">
-      More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
-    </div>
-    <div class="flex">
-      <button type="button" class="mr-2 inline-flex items-center rounded-lg bg-blue-700 px-3 py-1.5 text-center text-xs font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-800 dark:hover:bg-blue-900">
-        <Eye class="-ml-0.5 mr-2 h-4 w-4" />View more
-      </button>
-      <button
-        type="button"
-        class="rounded-lg border border-blue-700 bg-transparent px-3 py-1.5 text-center text-xs font-medium text-blue-700 hover:bg-blue-800 hover:text-white focus:ring-4 focus:ring-blue-300 dark:border-blue-800 dark:text-blue-800 dark:hover:text-white"
-      >
-        Dismiss
-      </button>
-    </div>
-  </div>
+<Alert color="blue" icon="{InformationCircle}">
+	<span class="text-lg font-medium text-blue-700 dark:text-blue-800">This is a info alert</span>
+	<div slot="extra">
+		<div class="mt-2 mb-4 text-sm text-blue-700 dark:text-blue-800">
+			More info about this info alert goes here. This example text is going to run a bit longer so
+			that you can see how spacing within an alert works with this kind of content.
+		</div>
+		<div class="flex gap-2">
+			<button size="xs"><Eye class="-ml-0.5 mr-2 h-4 w-4" />View more</button>
+			<button size="xs" outline color="default">Go to Home</button>
+		</div>
+	</div>
 </Alert>
 ```
-</ExampleDiv>
 
 <Htwo label="Props" />
 
@@ -239,5 +222,5 @@ Import Alert and set variables in the script tag.
  page</a> for type information.</p>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow {items} rowState='hover' />
+<TableDefaultRow {items} rowState='hover' />
 </TableProp>
