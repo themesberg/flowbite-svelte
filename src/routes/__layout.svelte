@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '../app.css';
+
 	import {
 		DarkMode,
 		Footer,
@@ -64,6 +65,7 @@
 		'border-b border-gray-400 dark:border-gray-500 mb-2 px-0 xl:px-4 text-base';
 	let h3Class = 'text-lg pb-2';
 	import { quartInOut } from 'svelte/easing';
+	import Toc from './Toc.svelte';
 	let transitionParams = {
 		duration: 500,
 		delay: 100,
@@ -253,6 +255,7 @@
 		<div class="w-full">
 			<slot />
 		</div>
+		<Toc />
 	</main>
 </div>
 <div class="pt-4 lg:pl-72">
