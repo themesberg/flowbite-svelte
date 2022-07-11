@@ -215,7 +215,7 @@ that if you want no color at all set property to empty string.</p>
   <Toast>
     <div class="inline-flex justify-between items-center w-full">
     Conversation archived.
-    <a class="text-sm font-medium text-blue-600 p-1.5 hover:bg-blue-100 rounded-lg dark:text-blue-500 dark:hover:bg-gray-700" href="#">Undo</a>
+    <a class="text-sm font-medium text-blue-600 p-1.5 hover:bg-blue-100 rounded-lg dark:text-blue-500 dark:hover:bg-gray-700" href="/">Undo</a>
     </div>
   </Toast>
 </ExampleDiv>
@@ -224,7 +224,7 @@ that if you want no color at all set property to empty string.</p>
 <Toast>
   <div class="inline-flex justify-between items-center w-full">
   Conversation archived.
-  <a class="text-sm font-medium text-blue-600 p-1.5 hover:bg-blue-100 rounded-lg dark:text-blue-500 dark:hover:bg-gray-700" href="#">Undo</a>
+  <a class="text-sm font-medium text-blue-600 p-1.5 hover:bg-blue-100 rounded-lg dark:text-blue-500 dark:hover:bg-gray-700" href="/">Undo</a>
   </div>
 </Toast>
 ```

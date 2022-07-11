@@ -37,8 +37,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 ```html
 <Breadcrumb aria-label="Default breadcrumb example">
-  <BreadcrumbItem href="#" icon={Home} variation="solid">Home</BreadcrumbItem>
-  <BreadcrumbItem href="#">Projects</BreadcrumbItem>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/">Projects</BreadcrumbItem>
   <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
 </Breadcrumb>
 ```
@@ -47,16 +47,16 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <ExampleDiv>
 <Breadcrumb aria-label="Solid background breadcrumb example" class="bg-gray-50 py-3 px-5 dark:bg-gray-900">
-  <BreadcrumbItem href="#" icon={Home} variation="solid">Home</BreadcrumbItem>
-  <BreadcrumbItem href="#">Projects</BreadcrumbItem>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/">Projects</BreadcrumbItem>
   <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
 </Breadcrumb>
 </ExampleDiv>
 
 ```html
 <Breadcrumb aria-label="Solid background breadcrumb example" class="bg-gray-50 py-3 px-5 dark:bg-gray-900">
-  <BreadcrumbItem href="#" icon={Home} variation="solid">Home</BreadcrumbItem>
-  <BreadcrumbItem href="#">Projects</BreadcrumbItem>
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/">Projects</BreadcrumbItem>
   <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
 </Breadcrumb>
 ```

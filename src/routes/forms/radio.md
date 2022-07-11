@@ -46,7 +46,7 @@ layout: formLayout
       name: 'country',
       value: 'USA',
       checked: false,
-      label: 'Radio button with a <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">link inside</a>.'
+      label: 'Radio button with a <a href="/" class="text-blue-600 dark:text-blue-500 hover:underline">link inside</a>.'
     }
   ];
 
@@ -200,7 +200,7 @@ let radiooptions2 = [
     name: 'country',
     value: 'USA',
     checked: false,
-    label: 'Radio button with a <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">link inside</a>.'
+    label: 'Radio button with a <a href="/" class="text-blue-600 dark:text-blue-500 hover:underline">link inside</a>.'
   }
 ];
 </script>

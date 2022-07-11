@@ -87,14 +87,14 @@ layout: badgeLayout
 <p>You can also use badges as anchor elements to link to another page.</p>
 
 <ExampleDiv class="justify-start gap-2">
-<Badge href="#" >Default</Badge>
-<Badge href="#" large={true}>Default</Badge>
+<Badge href="/" >Default</Badge>
+<Badge href="/" large={true}>Default</Badge>
 </ExampleDiv>
 
 
 ```html
-<Badge href="#">Default</Badge>
-<Badge href="#" large={true}>Default</Badge>
+<Badge href="/">Default</Badge>
+<Badge href="/" large={true}>Default</Badge>
 ```
 
 <Htwo label="Badges with icon" />
