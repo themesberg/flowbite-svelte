@@ -8,7 +8,7 @@ layout: badgeLayout
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { Badge, Card, Breadcrumb, BreadcrumbItem } from '$lib/index'
-  import { Home, Clock } from 'svelte-heros';
+  import { Home, Clock, Check } from 'svelte-heros';
   import componentProps from '../props/Badge.json'
   // Props table
   let items = componentProps.props
@@ -28,6 +28,7 @@ layout: badgeLayout
 ```html
 <script>
   import { Badge } from 'flowbite-svelte'
+  import { Clock, Check } from 'svelte-heros'
 </script>
 ```
 
@@ -105,15 +106,27 @@ layout: badgeLayout
 <Badge large={true}><Clock class="mr-1 w-4 h-4"/>2 minutes ago</Badge>
 </ExampleDiv>
 
-
-
 ```html
-<script>
-  import { Clock } from 'svelte-heros'
-</script>
-
 <Badge color="dark"><Clock class="mr-1 w-3 h-3"/>3 days ago</Badge>
 <Badge large={true}><Clock class="mr-1 w-4 h-4"/>2 minutes ago</Badge>
+```
+
+<Htwo label="Badge with icon only" />
+
+<p>Alternatively you can also use badges which indicate only a SVG icon.</p>
+
+<ExampleDiv class="justify-start gap-2">
+<Badge rounded ><Check class="w-3 h-3"/></Badge>
+<Badge rounded color="dark" ><Check class="w-3 h-3"/></Badge>
+<Badge rounded large ><Check class="w-4 h-4"/></Badge>
+<Badge rounded large color="dark" ><Check class="w-4 h-4"/></Badge>
+</ExampleDiv>
+
+```html
+<Badge rounded ><Check class="w-3 h-3"/></Badge>
+<Badge rounded color="dark" ><Check class="w-3 h-3"/></Badge>
+<Badge rounded large ><Check class="w-4 h-4"/></Badge>
+<Badge rounded large color="dark" ><Check class="w-4 h-4"/></Badge>
 ```
 
 <Htwo label="Props" />

@@ -5,6 +5,7 @@
 	export let color: Colors = 'blue';
 	export let large: boolean = false;
 	export let href: string;
+	export let rounded: boolean = false;
 
 	let badgeClass;
 
@@ -31,14 +32,15 @@
 	};
 
 	$: badgeClass = classNames(
-		'inline-flex items-center mr-2 px-2.5 py-0.5 rounded',
+		'inline-flex items-center justify-center mr-2',
 		large ? 'text-sm font-medium' : 'text-xs font-semibold',
 		colors[color] ?? colors.blue,
 		href && (hovers[color] ?? hovers.blue),
+		rounded ? 'rounded-full p-1' : 'rounded px-2.5 py-0.5',
 		$$props.class
 	);
 </script>
 
-<svelte:element this={href ? 'a' : 'span'} {href} class={badgeClass} {...$$restProps}>
+<svelte:element this={href ? 'a' : 'span'} {href} {...$$restProps} class={badgeClass}>
 	<slot />
 </svelte:element>
