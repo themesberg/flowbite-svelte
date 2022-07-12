@@ -1,8 +1,10 @@
 <script lang="ts">
+	import classNames from 'classnames';
 	import type { Colors } from '../types';
 	export let color: Colors | undefined = 'blue';
 	export let bg: string = 'text-gray-300';
 	export let size: string = '8';
+	let iconsize = `w-${size} h-${size}`;
 
 	// these two props add fine control over the spinner colors
 	export let currentFill: string = 'currentFill';
@@ -29,8 +31,13 @@
 
 <svg
 	role="status"
-	class="inline -mt-px w-{size} h-{size} {$$props.class ||
-		''} {bg} animate-spin dark:text-gray-600 {fillColorClass}"
+	class={classNames(
+		'inline -mt-px animate-spin dark:text-gray-600',
+		iconsize,
+		bg,
+		fillColorClass,
+		$$props.class
+	)}
 	viewBox="0 0 100 101"
 	fill="none"
 	xmlns="http://www.w3.org/2000/svg"
