@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.21.1](https://github.com/themesberg/flowbite-svelte/compare/v0.21.0...v0.21.1) (2022-07-12)
+
+
+### Features
+
+* add positioning to Toasts ([a88f641](https://github.com/themesberg/flowbite-svelte/commit/a88f641731efc52d55c6474a8f9696598fd339cc))
+* merging jjagielka-buttons ([94ffdcb](https://github.com/themesberg/flowbite-svelte/commit/94ffdcba071488d0d56492c3a1fdb148afdb9450))
+
+
+### Bug Fixes
+
+* buttons - transparency for outline ([6ae3d0f](https://github.com/themesberg/flowbite-svelte/commit/6ae3d0ff767e307ae5a4968f7b3c9a52dbb324f4))
+* documentation typos ([942c3b2](https://github.com/themesberg/flowbite-svelte/commit/942c3b2a2624aec3ba4d34cfab2c1098d41cd362))
+* removed bg and text from CloseButton to keep transparency ([b5d36ee](https://github.com/themesberg/flowbite-svelte/commit/b5d36eec584f89a46d59346995b79b9b0d0fd906))
+* reverting Alert ([ccda53a](https://github.com/themesberg/flowbite-svelte/commit/ccda53ad474e0c6a39ffa6297555485f08ea9b5d))
+
 ## [0.21.0](https://github.com/themesberg/flowbite-svelte/compare/v0.20.0...v0.21.0) (2022-07-01)
 
 
