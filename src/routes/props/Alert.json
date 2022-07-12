@@ -1,1 +1,1 @@
-{"props":[["color","Colors ","'blue'"],["icon","typeof SvelteComponent | null ","null"],["closeBtn","boolean ","false"],["rounded","boolean ","true"],["borderAccent","boolean ","false"]]}
+{"props":[["color","Colors ","'blue'"],["icon","typeof SvelteComponent | null ","null"],["dismissable","boolean ","false"],["rounded","boolean ","true"],["accent","boolean ","false"]]}
