@@ -12,7 +12,7 @@
 </script>
 
 <h2
-	class="text-2xl w-full dark:text-white py-4"
+	class="htwo text-2xl w-full dark:text-white py-4"
 	on:mouseover={handleMouseover}
 	on:focus
 	on:mouseout={handleMouseout}
