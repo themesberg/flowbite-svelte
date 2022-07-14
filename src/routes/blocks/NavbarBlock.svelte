@@ -28,12 +28,12 @@
 				style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"
 				><img
 					alt="Navbar"
-					src="http://flowbite.com/images/components/navbar.svg"
+					src="/images/components/navbar.svg"
 					decoding="async"
 					data-nimg="fill"
 					style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
 					sizes="100vw"
-					srcset="http://flowbite.com/images/components/navbar.svg 640w, http://flowbite.com/images/components/navbar.svg 750w, http://flowbite.com/images/components/navbar.svg 828w, http://flowbite.com/images/components/navbar.svg 1080w, http://flowbite.com/images/components/navbar.svg 1200w, http://flowbite.com/images/components/navbar.svg 1920w, http://flowbite.com/images/components/navbar.svg 2048w, http://flowbite.com/images/components/navbar.svg 3840w"
+					srcset="/images/components/navbar.svg 640w, /images/components/navbar.svg 750w, /images/components/navbar.svg 828w, /images/components/navbar.svg 1080w, /images/components/navbar.svg 1200w, /images/components/navbar.svg 1920w, /images/components/navbar.svg 2048w, /images/components/navbar.svg 3840w"
 				/><noscript /></span
 			>
 		</div>

@@ -28,12 +28,12 @@
 				style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"
 				><img
 					alt="Alerts"
-					src="https://flowbite.com/images/components/alerts.svg"
+					src="/images/components/alerts.svg"
 					decoding="async"
 					data-nimg="fill"
 					style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
 					sizes="100vw"
-					srcset="https://flowbite.com/images/components/alerts.svg 640w, https://flowbite.com/images/components/alerts.svg 750w, https://flowbite.com/images/components/alerts.svg 828w, https://flowbite.com/images/components/alerts.svg 1080w, https://flowbite.com/images/components/alerts.svg 1200w, https://flowbite.com/images/components/alerts.svg 1920w, https://flowbite.com/images/components/alerts.svg 2048w, http://flowbite.com/images/components/alerts.svg 3840w"
+					srcset="/images/components/alerts.svg 640w, /images/components/alerts.svg 750w, /images/components/alerts.svg 828w, /images/components/alerts.svg 1080w, /images/components/alerts.svg 1200w, /images/components/alerts.svg 1920w, /images/components/alerts.svg 2048w, /images/components/alerts.svg 3840w"
 				/><noscript /></span
 			>
 		</div>
