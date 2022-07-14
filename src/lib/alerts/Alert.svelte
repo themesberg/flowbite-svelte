@@ -74,12 +74,12 @@
 </script>
 
 <div id={$$props.id} class:hidden class={divClass} role="alert">
-	<div class="flex items-center">
+	<div class="flex items-center {textColor}">
 		{#if icon}
-			<svelte:component this={icon} class="flex-shrink-0 w-5 h-5 {textColor} mr-3" />
+			<svelte:component this={icon} class="flex-shrink-0 w-5 h-5 mr-3" />
 		{/if}
 
-		<div class="text-sm {textColor}">
+		<div class="text-sm">
 			<slot />
 		</div>
 

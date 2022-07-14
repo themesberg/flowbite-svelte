@@ -127,9 +127,22 @@ Import Alert and set variables in the script tag.
 <p>Use the following alert elements that are also dismissable.</p>
 
 <ExampleDiv>
+  <Alert icon={InformationCircle} dismissable>
+    A simple info alert with an <a href="#" class="font-semibold underline hover:text-blue-800 dark:hover:text-blue-900">example link</a>. Give it a click if you like.
+  </Alert>
+  <Alert color="red" icon={InformationCircle} dismissable>
+    A simple info alert with an <a href="#" class="font-semibold underline hover:text-red-800 dark:hover:text-red-900">example link</a>. Give it a click if you like.
+  </Alert>
   <Alert color="green" icon={InformationCircle} dismissable>
     A simple info alert with an <a href="#" class="font-semibold underline hover:text-green-800 dark:hover:text-green-900">example link</a>. Give it a click if you like.
   </Alert>
+  <Alert color="yellow" icon={InformationCircle} dismissable>
+    A simple info alert with an <a href="#" class="font-semibold underline hover:text-yellow-800 dark:hover:text-yellow-900">example link</a>. Give it a click if you like.
+  </Alert>
+  <Alert color="dark" icon={InformationCircle} dismissable>
+    A simple info alert with an <a href="#" class="font-semibold underline hover:text-gray-800 dark:hover:text-white">example link</a>. Give it a click if you like.
+  </Alert>
+
 </ExampleDiv>
 
 ```html
