@@ -13,69 +13,10 @@ layout: avatarLayout
   // Props table
   export let items = alertProp.props
 	let propHeader = ['Name', 'Type', 'Default']
-	
+
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
-  let avatar6 = {
-    src: '/images/profile-picture-1.webp',
-    alt: 'My avatar',
-    size: 6
-  }
-  let avatar8= {
-    src: '/images/profile-picture-1.webp',
-    alt: 'My avatar',
-    size: 8
-  }
-  let avatar12 = {
-    src: '/images/profile-picture-1.webp',
-    alt: 'My avatar',
-    size: 12
-  }
-  let avatar16 = {
-    src: '/images/profile-picture-1.webp',
-    alt: 'My avatar',
-    size: 16
-  }
-  let avatar24 = {
-    src: '/images/profile-picture-1.webp',
-    alt: 'My avatar',
-    size: 24
-  }
-  let avatar48 = {
-    src: '/images/profile-picture-1.webp',
-    alt: 'My avatar',
-    size: 48
-  }
-
-  let avatar2 = {
-    src: '/images/profile-picture-2.webp',
-    alt: 'My avatar 2',
-    size: 12,
-    round: true
-  }
-  let avatar3 = {
-    src: '/images/profile-picture-3.webp',
-    alt: 'My avatar 3',
-    size: 12,
-    border: true,
-  }
-  let avatar4 = {
-    src: '/images/profile-picture-1.webp',
-    alt: 'My avatar 4',
-    size: 12,
-    border: true,
-    round: true
-  }
-  let avatarText ={
-    src: '/images/profile-picture-2.webp',
-    alt: 'My avatar 4',
-    size: 12,
-    border: true,
-    round: true,
-    header:'Jese Leos',
-    text:'Joined in August 2014'
-  }
 </script>
 
 <Breadcrumb>
@@ -85,139 +26,187 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <h1 class="text-3xl w-full dark:text-white py-8">Avatar</h1>
 
-<Htwo label="Sizes" />
+<Htwo label="Default avatar" />
 
-<p>Select size from  6 | 8 | 12 | 24 | 48.</p>
+<p>Use this example to create a circle and rounded avatar on an image element.</p>
 
 <ExampleDiv>
-<div class=" flex flex-wrap justify-center space-x-4">
-<Avatar avatar={avatar6} />
-<Avatar avatar={avatar8}/>
-<Avatar avatar={avatar12}/>
-<Avatar avatar={avatar24}/>
-<Avatar avatar={avatar48}/>
+<div class="flex space-x-4">
+<Avatar src="/images/profile-picture-2.webp"/>
+<Avatar src="/images/profile-picture-2.webp" rounded/>
 </div>
-
+</ExampleDiv>
 
 ```html
 <script>
-  import { Avatar } from "$lib/index"
-  let avatar6 = {
-    src: '/images/profile-picture-1.webp',
-    alt: 'My avatar',
-    size: 6
-  }
-  let avatar8= {
-    src: '/images/profile-picture-1.webp',
-    alt: 'My avatar',
-    size: 8
-  }
-  let avatar12 = {
-    src: '/images/profile-picture-1.webp',
-    alt: 'My avatar',
-    size: 12
-  }
- 
-  let avatar24 = {
-    src: '/images/profile-picture-1.webp',
-    alt: 'My avatar',
-    size: 24
-  }
-  let avatar48 = {
-    src: '/images/profile-picture-1.webp',
-    alt: 'My avatar',
-    size: 48,
-  }
+	import { Avatar } from 'flowbite-svelte';
+
+	 <Avatar src="/images/profile-picture-2.webp"/>
+	 <Avatar src="/images/profile-picture-2.webp" rounded/>
 </script>
-
-<Avatar avatar={avatar6} />
-<Avatar avatar={avatar8}/>
-<Avatar avatar={avatar12}/>
-<Avatar avatar={avatar24}/>
-<Avatar avatar={avatar48}/>
 ```
-</ExampleDiv>
 
-<Htwo label="Border and round" />
+<Htwo label="Bordered" />
 
-<p>Set true to border and/or round.</p>
+<p>You can apply a border around the avatar component</p>
+<p>If you can use the ring-&#123;color&#125; class from Tailwind CSS to modify ring color.</p>
 
 <ExampleDiv>
-  <div class=" flex flex-wrap justify-center space-x-4">
-    <Avatar avatar={avatar2} />
-    <Avatar avatar={avatar3} />
-    <Avatar avatar={avatar4} />
-  </div>
+<div class="flex space-x-4">
+<Avatar src="/images/profile-picture-2.webp" border/>
+<Avatar src="/images/profile-picture-2.webp" border class="ring-red-400 dark:ring-red-300"/>
+</div>
+</ExampleDiv>
 
 ```html
-<script>
-  let avatar2 = {
-    src: '/images/profile-picture-2.webp',
-    alt: 'My avatar 2',
-    size: 12,
-    round: true
-  }
-  let avatar3 = {
-    src: '/images/profile-picture-3.webp',
-    alt: 'My avatar 3',
-    size: 12,
-    border: true,
-  }
-  let avatar4 = {
-    src: '/images/profile-picture-1.webp',
-    alt: 'My avatar 4',
-    size: 12,
-    border: true,
-    round: true
-  }
-</script>  
-
-<Avatar avatar={avatar2} />
-<Avatar avatar={avatar3} />
-<Avatar avatar={avatar4} />
+<Avatar src="/images/profile-picture-2.webp" border />
+<Avatar src="/images/profile-picture-2.webp" border class="ring-red-400 dark:ring-red-300" />
 ```
-</ExampleDiv>
 
 <Htwo label="Placeholder" />
 
-<p>By setting placehoder, you display a placeholder avatar.</p>
+<p>When there is no custom image available a placehoder is displayed.</p>
 
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6 flex flex-wrap justify-center">
-
-  <Avatar placehoder />
-
-
+<ExampleDiv>
+<div class="flex space-x-4">
+  <Avatar />
+  <Avatar rounded />
+  <Avatar border />
+  <Avatar rounded border />
+</div>
+</ExampleDiv>
 
 ```html
-<Avatar placehoder />
+<Avatar />
+<Avatar rounded />
+<Avatar border />
+<Avatar rounded border />
 ```
+
+<Htwo label="Dot indicator" />
+
+<p>Use a dot element relative to the avatar component as an indicator for the user (eg. online or offline status).</p>
+
+<ExampleDiv>
+<div class="flex space-x-4 flex-wrap">
+  <Avatar src="/images/profile-picture-3.webp" dot={{top:true, color:"bg-red-400"}}/>
+  <Avatar src="/images/profile-picture-3.webp" dot={{top:true, color:"bg-red-400"}} rounded />
+  <Avatar src="/images/profile-picture-3.webp" dot={{color:"bg-green-400"}}/>
+  <Avatar src="/images/profile-picture-3.webp" dot={{color:"bg-green-400"}} rounded/>
+  <!-- for positioning tests purpose
+  <Avatar src="/images/profile-picture-3.webp" dotColor="bg-red-400" border />
+  <Avatar src="/images/profile-picture-3.webp" dotColor="bg-green-400" size="sm"/>
+  <Avatar src="/images/profile-picture-3.webp" dotColor="bg-green-400" rounded size="sm"/>
+  <Avatar src="/images/profile-picture-3.webp" dotColor="bg-green-400" size="sm"/>
+  <Avatar src="/images/profile-picture-3.webp" dotColor="bg-green-400" size="sm" dotTop/>
+  <Avatar src="/images/profile-picture-3.webp" dotColor="bg-green-400" rounded dotTop size="sm"/>
+  <Avatar src="/images/profile-picture-3.webp" dotColor="bg-green-400" size="xs"/>
+  <Avatar src="/images/profile-picture-3.webp" dotColor="bg-green-400" rounded size="xs"/>
+  <Avatar src="/images/profile-picture-3.webp" dotColor="bg-green-400" size="xs"/>
+  <Avatar src="/images/profile-picture-3.webp" dotColor="bg-green-400" size="xs" dotTop/>
+  <Avatar src="/images/profile-picture-3.webp" dotColor="bg-green-400" rounded dotTop size="xs"/>
+  <Avatar src="/images/profile-picture-3.webp" dotColor="bg-green-400" size="lg"/>
+  <Avatar src="/images/profile-picture-3.webp" dotColor="bg-green-400" rounded size="lg"/>
+  <Avatar src="/images/profile-picture-3.webp" dotColor="bg-green-400" size="lg"/>
+  <Avatar src="/images/profile-picture-3.webp" dotColor="bg-green-400" size="lg" dotTop/>
+  <Avatar src="/images/profile-picture-3.webp" dotColor="bg-green-400" rounded dotTop size="lg"/>
+  <Avatar src="/images/profile-picture-3.webp" dotColor="bg-green-400" size="xl"/>
+  <Avatar src="/images/profile-picture-3.webp" dotColor="bg-green-400" rounded size="xl"/>
+  <Avatar src="/images/profile-picture-3.webp" dotColor="bg-green-400" size="xl"/>
+  <Avatar src="/images/profile-picture-3.webp" dotColor="bg-green-400" size="xl" dotTop/>
+  <Avatar src="/images/profile-picture-3.webp" dotColor="bg-green-400" rounded dotTop size="xl"/>
+  -->
 </div>
-
-<Htwo label="Avatar text" />
-
-<p>You can set header and text to show additional information.</p>
-
-<div class="rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6 flex flex-wrap justify-center">
-  <Avatar avatar={avatarText} />
-
-
+</ExampleDiv>
 
 ```html
 <script>
-  let avatarText ={
-    src: '/images/profile-picture-2.webp',
-    alt: 'My avatar 4',
-    size: 12,
-    border: true,
-    round: true,
-    header:'Jese Leos',
-    text:'Joined in August 2014'
-  }
+	<Avatar src="/images/profile-picture-3.webp" dot={{top:true, color:"bg-red-400"}}/>
+	<Avatar	src="/images/profile-picture-3.webp" dot={{top:true, color:"bg-red-400"}} rounded />
+	<Avatar	src="/images/profile-picture-3.webp" dot={{color:"bg-green-400"}}/>
+	<Avatar	src="/images/profile-picture-3.webp" dot={{color:"bg-green-400"}} rounded/>
 </script>
-
-<Avatar avatar={avatarText} />
 ```
+
+<Htwo label="Stacked" />
+
+<p>Use this example if you want to stack a group of users by overlapping the avatar components.</p>
+
+<ExampleDiv>
+<div class="flex mb-5">
+<Avatar src="/images/profile-picture-1.webp" stacked/>
+<Avatar src="/images/profile-picture-2.webp" stacked />
+<Avatar src="/images/profile-picture-3.webp" stacked />
+<Avatar stacked />
 </div>
+<div class="flex">
+<Avatar src="/images/profile-picture-1.webp" stacked />
+<Avatar src="/images/profile-picture-2.webp" stacked />
+<Avatar src="/images/profile-picture-3.webp" stacked />
+<Avatar stacked >+99</Avatar>
+</div>
+</ExampleDiv>
+
+```html
+<div class="flex mb-5">
+	<Avatar src="/images/profile-picture-1.webp" stacked />
+	<Avatar src="/images/profile-picture-2.webp" stacked />
+	<Avatar src="/images/profile-picture-3.webp" stacked />
+	<Avatar stacked />
+</div>
+<div class="flex">
+	<Avatar src="/images/profile-picture-1.webp" stacked />
+	<Avatar src="/images/profile-picture-2.webp" stacked />
+	<Avatar src="/images/profile-picture-3.webp" stacked />
+	<Avatar stacked>+99</Avatar>
+</div>
+```
+
+<Htwo label="Avatar text" />
+
+<p>This example can be used if you want to show additional information in the form of text elements such as the user’s name and join date.</p>
+
+<ExampleDiv>
+<div class="flex items-center space-x-4">
+    <Avatar src="/images/profile-picture-1.webp" rounded/>
+    <div class="space-y-1 font-medium dark:text-white">
+        <div>Jese Leos</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400">Joined in August 2014</div>
+    </div>
+</div>
+</ExampleDiv>
+
+```html
+<div class="flex items-center space-x-4">
+	<Avatar src="/images/profile-picture-1.webp" rounded />
+	<div class="space-y-1 font-medium dark:text-white">
+		<div>Jese Leos</div>
+		<div class="text-sm text-gray-500 dark:text-gray-400">Joined in August 2014</div>
+	</div>
+</div>
+```
+
+<Htwo label="Sizes" />
+
+<p>Select size from  xs | sm | md | lg | xl.</p>
+
+<ExampleDiv>
+<div class=" flex flex-wrap justify-center space-x-4">
+<Avatar src="/images/profile-picture-3.webp" rounded size="xs" />
+<Avatar src="/images/profile-picture-3.webp" rounded size="sm" />
+<Avatar src="/images/profile-picture-3.webp" rounded size="md" />
+<Avatar src="/images/profile-picture-3.webp" rounded size="lg" />
+<Avatar src="/images/profile-picture-3.webp" rounded size="xl" />
+</div>
+</ExampleDiv>
+
+```html
+<Avatar src="/images/profile-picture-3.webp" rounded size="xs" />
+<Avatar src="/images/profile-picture-3.webp" rounded size="sm" />
+<Avatar src="/images/profile-picture-3.webp" rounded size="md" />
+<Avatar src="/images/profile-picture-3.webp" rounded size="lg" />
+<Avatar src="/images/profile-picture-3.webp" rounded size="xl" />
+```
 
 <Htwo label="Props" />
 
@@ -225,5 +214,5 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
  page</a> for type information.</p>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow {items} rowState='hover' />
+<TableDefaultRow {items} rowState='hover' />
 </TableProp>

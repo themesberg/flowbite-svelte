@@ -1,1 +1,1 @@
-{"props":[["avatar","AvatarType ","{}"],["avatarClass","string ","`w-${avatar.size} h-${avatar.size} ${isCircle} ${isBorder}`"],["placehoder","boolean ","false"]]}
+{"props":[["src","string ","''"],["rounded","boolean ","false"],["border","boolean ","false"],["stacked","boolean ","false"],["dot","DotType ","{ top: false, color: 'bg-gray-300 dark:bg-gray-500' }"],["alt","string ","''"],["size","'xs' | 'sm' | 'md' | 'lg' | 'xl' ","'md'"]]}

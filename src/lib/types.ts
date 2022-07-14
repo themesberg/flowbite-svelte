@@ -78,6 +78,11 @@ export type CrumbType = {
 	href: string;
 };
 
+export interface DotType {
+	top?: boolean;
+	color?: string;
+}
+
 export type DropdownColorType = 'blue' | 'blue-outline' | 'dark' | 'dark-outline' | 'light' | 'green' | 'green-outline' | 'red' | 'red-outline' | 'yellow' | 'yellow-outline' | 'purple' | 'purple-outline';
 
 export interface DropdownType {
