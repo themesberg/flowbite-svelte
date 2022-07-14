@@ -184,7 +184,7 @@ test('Floating label page should have h1', async ({ page }) => {
 });
 
 test('Input page should have h1', async ({ page }) => {
-	await page.goto('/forms/input');
+	await page.goto('/forms/input-field');
 	expect(await page.textContent('h1')).toBe('Input Components');
 });
 
@@ -199,7 +199,7 @@ test('Range page should have h1', async ({ page }) => {
 });
 
 test('Search page should have h1', async ({ page }) => {
-	await page.goto('/forms/search');
+	await page.goto('/forms/search-input');
 	expect(await page.textContent('h1')).toBe('Search Components');
 });
 

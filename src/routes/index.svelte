@@ -12,10 +12,32 @@
 		ButtongroupBlock,
 		CardBlock,
 		CarouselBlock,
+		CheckboxBlock,
 		DropdownBlock,
+		FileinputBlock,
+		FloatingLabelBlock,
+		FooterBlock,
 		FormBlock,
+		InputfieldBlock,
 		ListgroupBlock,
-		ModalBlock
+		ModalBlock,
+		NavbarBlock,
+		PaginationBlock,
+		ProgressbarBlock,
+		RadioBlock,
+		RangeBlock,
+		RatingBlock,
+		SearchinputBlock,
+		SelectBlock,
+		SidebarBlock,
+		SpinnerBlock,
+		TabBlock,
+		TableBlock,
+		TextareaBlock,
+		TimelineBlock,
+		ToastBlock,
+		ToggleBlock,
+		TooltipBlock
 	} from './blocks';
 	import ButtongroupLayout from './layouts/buttongroupLayout.svelte';
 	const handleClick = () => {
@@ -72,8 +94,30 @@
 	<ButtongroupBlock />
 	<CardBlock />
 	<CarouselBlock />
+	<CheckboxBlock />
 	<DropdownBlock />
+	<FileinputBlock />
+	<FloatingLabelBlock />
+	<FooterBlock />
 	<FormBlock />
+	<InputfieldBlock />
 	<ListgroupBlock />
 	<ModalBlock />
+	<NavbarBlock />
+	<PaginationBlock />
+	<ProgressbarBlock />
+	<RadioBlock />
+	<RangeBlock />
+	<RatingBlock />
+	<SearchinputBlock />
+	<SelectBlock />
+	<SidebarBlock />
+	<SpinnerBlock />
+	<TabBlock />
+	<TableBlock />
+	<TextareaBlock />
+	<TimelineBlock />
+	<ToastBlock />
+	<ToggleBlock />
+	<TooltipBlock />
 </div>
