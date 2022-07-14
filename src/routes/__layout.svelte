@@ -25,12 +25,6 @@
 		topMenus
 	} from './moduleItems';
 
-	let site = {
-		name: 'Flowbite Svelte',
-		href: '/',
-		img: '/images/flowbite-svelte-icon-logo.svg'
-	};
-
 	let asideClass =
 		'absolute w-auto bg-white pt-8 shadow-lg z-50 px-4 h-screen z-50 overflow-scroll dark:bg-gray-900';
 	// Navbar
@@ -258,7 +252,7 @@
 		<Toc />
 	</main>
 </div>
-<div class="pt-4 lg:pl-72">
+<div class="pt-4 lg:pl-56">
 	<Footer footerType="socialmedia">
 		<div class="md:flex md:justify-between">
 			<div class="mb-6 md:mb-0">
