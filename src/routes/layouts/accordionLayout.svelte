@@ -28,13 +28,6 @@
 			</p>
 		</div>
 	</div>
-	<div class="hidden flex-none pl-8 mr-8 w-64 xl:text-sm xl:block">
-		<p>
-			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error excepturi mollitia
-			consequuntur tempore reiciendis laudantium optio commodi? Natus nihil suscipit a itaque fugiat
-			illo unde commodi distinctio, aliquam praesentium iure? sidebar
-		</p>
-	</div>
 </div>
 
 <style>
