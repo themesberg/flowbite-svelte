@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.21.4](https://github.com/themesberg/flowbite-svelte/compare/v0.21.3...v0.21.4) (2022-07-14)
+
+
+### Bug Fixes
+
+* alerts dismissable button color ([779e863](https://github.com/themesberg/flowbite-svelte/commit/779e863a6b321ea84ae65484b05ed6cd7d73ccd9))
+
 ### [0.21.3](https://github.com/themesberg/flowbite-svelte/compare/v0.21.2...v0.21.3) (2022-07-14)
 
 ### [0.21.2](https://github.com/themesberg/flowbite-svelte/compare/v0.21.1...v0.21.2) (2022-07-13)
