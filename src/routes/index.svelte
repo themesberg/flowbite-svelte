@@ -3,17 +3,21 @@
 	import { goto } from '$app/navigation';
 	import { Responsive } from 'svelte-sidebar-menu';
 	import {
-		accordions,
-		alerts,
-		badges,
-		cards,
-		carousels,
-		forms,
-		modals,
-		ratings,
-		tabs,
-		timelines
-	} from './moduleItems';
+		AccordionBlock,
+		AlertBlock,
+		AvatarBlock,
+		BadgeBlock,
+		BreadcrumbBlock,
+		ButtonBlock,
+		ButtongroupBlock,
+		CardBlock,
+		CarouselBlock,
+		DropdownBlock,
+		FormBlock,
+		ListgroupBlock,
+		ModalBlock
+	} from './blocks';
+	import ButtongroupLayout from './layouts/buttongroupLayout.svelte';
 	const handleClick = () => {
 		goto('/pages/getting-started');
 	};
@@ -58,268 +62,18 @@
 	</div>
 </div>
 
-<div class="flex flex-wrap mx-auto mt-2 justify-center">
-	<div class="p-4">
-		<Card img="/images/accordions.webp" alt="Accordions" link="/accordions" {divClass}>
-			<span slot="paragraph">
-				{#each accordions as { href, name }}
-					<p class={pClass}>
-						<a {href} class={aClass}>{name}</a>
-					</p>
-				{/each}
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/alerts.webp" alt="Alerts" link="/alerts" {divClass}>
-			<span slot="paragraph">
-				{#each alerts as { href, name }}
-					<p class={pClass}>
-						<a {href} class={aClass}>{name}</a>
-					</p>
-				{/each}
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/avatar.webp" alt="Avatar" link="/avatar" {divClass}>
-			<span slot="paragraph">
-				<p class={pClass}>
-					<a href="/avatar" class={aClass}>Avatar</a>
-				</p>
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/badges.webp" alt="Badges" link="/badges" {divClass}>
-			<span slot="paragraph">
-				{#each badges as { href, name }}
-					<p class={pClass}>
-						<a {href} class={aClass}>{name}</a>
-					</p>
-				{/each}
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/breadcrumb.webp" alt="Breadcrumb" link="/breadcrumbs" {divClass}>
-			<span slot="paragraph">
-				<p class={pClass}>
-					<a href="/breadcrumbs" class={aClass}>Breadcrumb</a>
-				</p>
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/buttongroups.webp" alt="Button Group" link="/button-groups" {divClass}>
-			<span slot="paragraph">
-				<p class={pClass}>
-					<a href="/button-groups" class={aClass}>Button group</a>
-				</p>
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/buttons.webp" alt="Buttons" link="/buttons" {divClass}>
-			<span slot="paragraph">
-				<p class={pClass}>
-					<a href="/buttons" class={aClass}>Buttons</a>
-				</p>
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/cards.webp" alt="Cards" link="/cards" {divClass}>
-			<span slot="paragraph">
-				{#each cards as { href, name }}
-					<p class={pClass}>
-						<a {href} class={aClass}>{name}</a>
-					</p>
-				{/each}
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/carousel.webp" alt="Carousel" link="carousels" {divClass}>
-			<span slot="paragraph">
-				{#each carousels as { href, name }}
-					<p class={pClass}>
-						<a {href} class={aClass}>{name}</a>
-					</p>
-				{/each}
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/darkmode.webp" alt="Darkmode" link="/darkmode" {divClass}>
-			<span slot="paragraph">
-				<p class={pClass}>
-					<a href="/darkmode" class={aClass}>Dark mode</a>
-				</p>
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/dropdowns.webp" alt="Dropdowns" link="dropdowns" {divClass}>
-			<span slot="paragraph">
-				<p class={pClass}>
-					<a href="/dropdowns" class={aClass}>Dropdowns</a>
-				</p>
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/forms.webp" alt="Forms" link="/forms" {divClass}>
-			<span slot="paragraph">
-				{#each forms as { href, name }}
-					<p class={pClass}>
-						<a {href} class={aClass}>{name}</a>
-					</p>
-				{/each}
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/footer.webp" alt="Footer" link="/footer" {divClass}>
-			<span slot="paragraph">
-				<p class={pClass}>
-					<a href="/footer" class={aClass}>Footer</a>
-				</p>
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/icons.webp" alt="Icons" link="/icons" {divClass}>
-			<span slot="paragraph">
-				<p class={pClass}>
-					<a href="/icons" class={aClass}>Icons</a>
-				</p>
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/list-group.webp" alt="List group" link="/list-group" {divClass}>
-			<span slot="paragraph">
-				<p class={pClass}>
-					<a href="/list-group" class={aClass}>List group</a>
-				</p>
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/modals.webp" alt="Modals" link="/modals" {divClass}>
-			<span slot="paragraph">
-				{#each modals as { href, name }}
-					<p class={pClass}>
-						<a {href} class={aClass}>{name}</a>
-					</p>
-				{/each}
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/navbar.webp" alt="Navbar" link="/navbar" {divClass}>
-			<span slot="paragraph">
-				<p class={pClass}>
-					<a href="/navbar" class={aClass}>Navbar</a>
-				</p>
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/pagination.webp" alt="Pagination" link="/paginations" {divClass}>
-			<span slot="paragraph">
-				<p class={pClass}>
-					<a href="/paginations" class={aClass}>Pagination</a>
-				</p>
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/progressbar.webp" alt="Progress bar" link="/progressbars" {divClass}>
-			<span slot="paragraph">
-				<p class={pClass}>
-					<a href="/progressbars" class={aClass}>Progress bar</a>
-				</p>
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/rating.webp" alt="Rating" link="/ratings" {divClass}>
-			<span slot="paragraph">
-				{#each ratings as { href, name }}
-					<p class={pClass}>
-						<a {href} class={aClass}>{name}</a>
-					</p>
-				{/each}
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/sidebar.webp" alt="Sidebar" link="/sidebars" {divClass}>
-			<span slot="paragraph">
-				<p class={pClass}>
-					<a href="/sidebars" class={aClass}>Sidebar</a>
-				</p>
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/spinners.webp" alt="Spinners" link="/spinners" {divClass}>
-			<span slot="paragraph">
-				<p class={pClass}>
-					<a href="/spinners" class={aClass}>Spinner</a>
-				</p>
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/table.webp" alt="Tables" link="/tables" {divClass}>
-			<span slot="paragraph">
-				<p class={pClass}>
-					<a href="/tables" class={aClass}>Table</a>
-				</p>
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/tabs.webp" alt="Tabs" link="/tabs" {divClass}>
-			<span slot="paragraph">
-				{#each tabs as { href, name }}
-					<p class={pClass}>
-						<a {href} class={aClass}>{name}</a>
-					</p>
-				{/each}
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/timeline.webp" alt="Timeline" link="/timelines" {divClass}>
-			<span slot="paragraph">
-				{#each timelines as { href, name }}
-					<p class={pClass}>
-						<a {href} class={aClass}>{name}</a>
-					</p>
-				{/each}
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/toast.webp" alt="Toast" link="/toasts" {divClass}>
-			<span slot="paragraph">
-				<p class={pClass}>
-					<a href="/toasts" class={aClass}>Toast</a>
-				</p>
-			</span>
-		</Card>
-	</div>
-	<div class="p-4">
-		<Card img="/images/tooltip.webp" alt="Tooltips" link="/tooltips" {divClass}>
-			<span slot="paragraph">
-				<p class={pClass}>
-					<a href="/tooltips" class={aClass}>Tooltips</a>
-				</p>
-			</span>
-		</Card>
-	</div>
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
+	<AccordionBlock />
+	<AlertBlock />
+	<AvatarBlock />
+	<BadgeBlock />
+	<BreadcrumbBlock />
+	<ButtonBlock />
+	<ButtongroupBlock />
+	<CardBlock />
+	<CarouselBlock />
+	<DropdownBlock />
+	<FormBlock />
+	<ListgroupBlock />
+	<ModalBlock />
 </div>

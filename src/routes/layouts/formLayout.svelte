@@ -13,31 +13,13 @@
 		<Htwo label="Related components" />
 		<div class="related-components">
 			<p>
-				<a href="/forms/checkbox" class="link">Checkbox</a>
-			</p>
-			<p>
-				<a href="/forms/file-input" class="link">File input</a>
-			</p>
-			<p>
 				<a href="/forms/floating-label" class="link">Floating label</a>
-			</p>
-			<p>
-				<a href="/forms/input" class="link">Input</a>
 			</p>
 			<p>
 				<a href="/forms/radio" class="link">Radio</a>
 			</p>
 			<p>
 				<a href="/forms/range" class="link">Range</a>
-			</p>
-			<p>
-				<a href="/forms/search" class="link">Search</a>
-			</p>
-			<p>
-				<a href="/forms/select" class="link">Select</a>
-			</p>
-			<p>
-				<a href="/forms/textarea" class="link">Textarea</a>
 			</p>
 			<p>
 				<a href="/forms/toggle" class="link">Toggle</a>

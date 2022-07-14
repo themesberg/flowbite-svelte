@@ -128,14 +128,14 @@ Import Alert and set variables in the script tag.
 
 <ExampleDiv>
   <Alert color="green" icon={InformationCircle} dismissable>
-    A simple info alert with an <a href="#" class="font-semibold underline hover:text-green-800 dark:hover:text-green-900">example link</a>. Give it a click if you like.
+    A simple info alert with an <a href="/" class="font-semibold underline hover:text-green-800 dark:hover:text-green-900">example link</a>. Give it a click if you like.
   </Alert>
 </ExampleDiv>
 
 ```html
 <Alert color="green" icon="{InformationCircle}" dismissable>
 	A simple info alert with an
-	<a href="#" class="font-semibold underline hover:text-green-800 dark:hover:text-green-900"
+	<a href="/" class="font-semibold underline hover:text-green-800 dark:hover:text-green-900"
 		>example link</a
 	>. Give it a click if you like.
 </Alert>
