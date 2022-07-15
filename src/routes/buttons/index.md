@@ -321,12 +321,12 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <p>Sometimes you need a button to indicate an action using only an icon.</p>
 
 <ExampleDiv>
-<div class="flex flex-wrap items-center gap-2">
-<Button><ArrowRight class="w-5 h-5"/></Button>
-<Button pill={true} ><ArrowRight class="w-5 h-5"/></Button>
-<Button outline={true} ><ArrowRight class="w-5 h-5"/></Button>
-<Button pill={true} outline={true} ><ArrowRight class="w-5 h-5"/></Button>
-</div>
+  <div class="flex flex-wrap items-center gap-2">
+    <Button class="!p-2"><ArrowRight class="w-5 h-5"/></Button>
+    <Button pill={true} class="!p-2"><ArrowRight class="w-5 h-5"/></Button>
+    <Button outline={true} class="!p-2" size="lg"><ArrowRight class="w-5 h-5"/></Button>
+    <Button pill={true} outline={true} class="!p-2" size="xl"><ArrowRight class="w-5 h-5"/></Button>
+  </div>
 </ExampleDiv>
 
 ```html
@@ -335,10 +335,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </script>
 
 <div class="flex flex-wrap items-center gap-2">
-	<Button><ArrowRight class="w-5 h-5" /></Button>
-	<Button pill="{true}"><ArrowRight class="w-5 h-5" /></Button>
-	<Button outline="{true}"><ArrowRight class="w-5 h-5" /></Button>
-	<Button pill="{true}" outline="{true}"><ArrowRight class="w-5 h-5" /></Button>
+	<Button class="!p-2"><ArrowRight class="w-5 h-5" /></Button>
+	<Button pill="{true}" class="!p-2"><ArrowRight class="w-5 h-5" /></Button>
+	<Button outline="{true}" class="!p-2"><ArrowRight class="w-5 h-5" /></Button>
+	<Button pill="{true}" class="!p-2" outline="{true}"><ArrowRight class="w-5 h-5" /></Button>
 </div>
 ```
 
