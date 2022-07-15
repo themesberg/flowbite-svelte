@@ -30,10 +30,6 @@
 		inputClass,
 		colorClasses[color],
 		{
-			// 'pl-10': icon !== null,
-			// 'rounded-lg': !($$slots.addon || addon),
-			// 'rounded-r-lg': $$slots.addon || addon,
-			// 'shadow-sm dark:shadow-sm-light': shadow,
 			'p-2 sm:text-xs': size === 'sm',
 			'p-2.5 text-sm': size === 'md',
 			'sm:text-md p-4': size === 'lg'

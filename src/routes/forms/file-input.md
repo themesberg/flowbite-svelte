@@ -8,7 +8,7 @@ layout: formLayout
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { onMount } from 'svelte';
-  import { Fileupload, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { Label, Fileupload, Helper, Breadcrumb, BreadcrumbItem } from "$lib/index"
   import { Home } from 'svelte-heros'
   import componentProps from '../props/Fileupload.json'
   let items = componentProps.props
@@ -17,13 +17,10 @@ layout: formLayout
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
   let fileuploadprops = {
-    id : 'user_avatar',
-    label : 'Upload file'
+    id : 'user_avatar'
   }
   let fileuploadprops2 = {
-    id : 'user_avatar',
-    label : 'Upload file',
-    helper : 'A profile picture is useful to confirm your are logged into your account'
+    id : 'user_avatar2',
   }
 </script>
 
@@ -36,11 +33,11 @@ layout: formLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">File Components</h1>
 
-<Htwo label="Examples" />
+<Htwo label="File upload example" />
 
 <ExampleDiv>
+<Label>Upload file</Label>
 <Fileupload {...fileuploadprops} />
-<Fileupload {...fileuploadprops2} />
 </ExampleDiv>
 
 ```html
@@ -48,20 +45,25 @@ layout: formLayout
 import { Fileupload } from 'flowbite-svelte'
 
 let fileuploadprops = {
-  id : 'user_avatar',
-  label : 'Upload file'
+  id : 'user_avatar'
 }
 
 let fileuploadprops2 = {
-  id : 'user_avatar',
-  label : 'Upload file',
-  helper : 'A profile picture is useful to confirm your are logged into your account'
+  id : 'user_avatar2'
 }
 </script>
 
 <Fileupload {...fileuploadprops} />
-<Fileupload {...fileuploadprops2} />
+
 ```
+
+<Htwo label="Helper text" />
+
+<ExampleDiv>
+<Label>Upload file</Label>
+<Fileupload {...fileuploadprops2} />
+<Helper>SVG, PNG, JPG or GIF (MAX. 800x400px).</Helper>
+</ExampleDiv>
 
 <Htwo label="Props" />
 

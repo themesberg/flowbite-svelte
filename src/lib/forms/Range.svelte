@@ -1,6 +1,5 @@
 <script lang="ts">
 	export let id: string = 'range';
-	export let label: string = 'Range';
 	export let min: number;
 	export let max: number;
 	export let value: number;
@@ -18,9 +17,6 @@
 	}
 </script>
 
-<label for={id} class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-	>{label}</label
->
 <input
 	{id}
 	name={id}

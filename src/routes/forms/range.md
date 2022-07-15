@@ -7,7 +7,7 @@ layout: formLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Range, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { Label, Range, Breadcrumb, BreadcrumbItem } from "$lib/index"
   import { Home } from 'svelte-heros'
   import componentProps from '../props/Range.json'
   let items = componentProps.props
@@ -30,26 +30,28 @@ layout: formLayout
 <Htwo label="Examples" />
 
 <ExampleDiv>
-<Range id="range1" label="Default range" />
-
+<Label>Default range</Label>
+<Range id="range1" />
 </ExampleDiv>
 
 ```html
 <script>
   import { Range } from 'flowbite-svelte'
 </script>
-
-<Range id="range1" label="Default range"/>
+<Label>Default range</Label>
+<Range id="range1"/>
 ```
 
 <Htwo label="Disabled state" />
 
 <ExampleDiv>
-<Range id="range-disabled" label="Disabled state" disabled/>
+<Label>Default range</Label>
+<Range id="range-disabled" disabled/>
 </ExampleDiv>
 
 ```html
-<Range id="range-disabled" label="Disabled state" disabled/>
+<Label>Default range</Label>
+<Range id="range-disabled" disabled/>
 ```
 
 <Htwo label="Binding value" />
@@ -59,38 +61,49 @@ layout: formLayout
 <Htwo label="Min and max" />
 
 <ExampleDiv>
-<Range id="range-minmax" label="Min-max range" min="0" max="10" bind:value={minmaxValue}/>
+<Label>Min-max range</Label>
+<Range id="range-minmax" min="0" max="10" bind:value={minmaxValue}/>
 <p>Value: {minmaxValue}</p>
 </ExampleDiv>
 
 ```html
-<Range id="range-minmax" label="Min-max range" min="0" max="10" bind:value={minmaxValue}/>
+<Label>Min-max range</Label>
+<Range id="range-minmax" min="0" max="10" bind:value={minmaxValue}/>
 <p>Value: {minmaxValue}</p>
 ```
 
 <Htwo label="Steps" />
 
 <ExampleDiv>
-<Range id="range-steps" label="Range steps" min="0" max="5" bind:value={stepValue} step="0.5"/>
+<Label>Range steps</Label>
+<Range id="range-steps" min="0" max="5" bind:value={stepValue} step="0.5"/>
 <p>Value: {stepValue}</p>
 </ExampleDiv>
 
 ```html
-<Range id="range-steps" label="Range steps" min="0" max="5" bind:value={stepValue} step="0.5"/>
+<Label>Range steps</Label>
+<Range id="range-steps" min="0" max="5" bind:value={stepValue} step="0.5"/>
 <p>Value: {stepValue}</p>
 ```
 
 <Htwo label="Sizes" />
 
 <ExampleDiv>
-<Range id="small-range" label="Small range" size="small" />
-<Range id="default-range" label="Default range"  />
-<Range id="large-range" label="Large range" size="large" />
+<Label>Small range</Label>
+<Range id="small-range" size="small" />
+<Label>Default range</Label>
+<Range id="default-range" />
+<Label>Large range</Label>
+<Range id="large-range" size="large" />
 </ExampleDiv>
 
 ```html
-<Range id="range-disabled" label="Range steps" min="0" max="5" bind:value={stepValue} step="0.5"/>
-<p>Value: {stepValue}</p>
+<Label>Small range</Label>
+<Range id="small-range" size="small" />
+<Label>Default range</Label>
+<Range id="default-range" />
+<Label>Large range</Label>
+<Range id="large-range" size="large" />
 ```
 
 <Htwo label="Unknown attributes" />

@@ -4,7 +4,6 @@
 	export let id: string = generateId();
 	export let type: InputType;
 	export let value: string = '';
-	export let name: string = '';
 	export let label: string = '';
 	export let required: boolean = false;
 	export let divClass: string = 'relative z-0 mb-6 w-full group';
@@ -19,6 +18,6 @@
 </script>
 
 <div class={divClass}>
-	<input bind:value use:setType {name} class={inputClass} placeholder=" " {required} />
+	<input bind:value use:setType class={inputClass} placeholder=" " {...$$restProps} />
 	<label for={id} class={labelClass}>{label}</label>
 </div>
