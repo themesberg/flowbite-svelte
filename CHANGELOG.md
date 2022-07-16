@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.21.5](https://github.com/themesberg/flowbite-svelte/compare/v0.21.4...v0.21.5) (2022-07-16)
+
+
+### Features
+
+* alerts more functions, changed API ([a2306fb](https://github.com/themesberg/flowbite-svelte/commit/a2306fb2a980a140da51f4f36ac299a5ce33c1c8))
+
+
+### Bug Fixes
+
+* add href prop to jjagielka avatars and fix doc ([ea97577](https://github.com/themesberg/flowbite-svelte/commit/ea975779365d8a9d8b6fd2fe22e36d94636957f2))
+* buttons - update sizes and force round ([22284ad](https://github.com/themesberg/flowbite-svelte/commit/22284ada79396136f8dce288de87112e74e6f82a))
+
 ### [0.21.4](https://github.com/themesberg/flowbite-svelte/compare/v0.21.3...v0.21.4) (2022-07-14)
 
 
