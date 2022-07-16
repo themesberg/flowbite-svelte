@@ -19,9 +19,10 @@
 	const id = generateId();
 
 	let inputClass: string =
-		'w-4 h-4 bg-gray-100 rounded border-gray-300 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 mr-2';
+		'peer w-4 h-4 bg-gray-100 rounded border-gray-300 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 mr-2';
 	export let checked: boolean = false;
 	export let color: FormColorType = 'blue';
+	export let hidden: boolean = false;
 
 	export let inline: boolean = false;
 
@@ -54,6 +55,7 @@
 		colorClassesLabel[colorLabel],
 		$$restProps.class
 	)}
+	{checked}
 >
 	<input
 		type="checkbox"
@@ -61,6 +63,7 @@
 		aria-describedby={$$slots.helper ? `${id}-helper` : null}
 		{...$$restProps}
 		class={classNames(inputClass, colorClasses[color])}
+		class:hidden
 	/>
 
 	{#if $$slots.helper}
