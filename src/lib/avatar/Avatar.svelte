@@ -1,25 +1,53 @@
 <script lang="ts">
-	import type { AvatarType } from '../types';
-	export let avatar: AvatarType = {};
+	import classNames from 'classnames';
 
-	let isCircle = avatar.round ? 'rounded-full' : 'rounded';
-	let isBorder = avatar.border ? 'p-1 ring-2 ring-gray-300 dark:ring-gray-500' : '';
-	export let avatarClass: string = `w-${avatar.size} h-${avatar.size} ${isCircle} ${isBorder}`;
-	export let placehoder: boolean = false;
+	import AvatarPlaceholder from './Placeholder.svelte';
+	import Dot from './Dot.svelte';
+	import type { DotType } from '$lib/types';
+
+	export let src: string = '';
+	export let href: string = '#';
+
+	export let rounded: boolean = false;
+	export let border: boolean = false;
+	export let stacked: boolean = false;
+
+	export let dot: DotType = { top: false, color: 'bg-gray-300 dark:bg-gray-500' };
+	export let alt: string = '';
+	export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
+
+	// export let ring: string = 'ring-gray-300 dark:ring-gray-500';
+
+	const sizes = {
+		xs: 'w-6 h-6',
+		sm: 'w-8 h-8',
+		md: 'w-10 h-10',
+		lg: 'w-20 h-20',
+		xl: 'w-36 h-36'
+	};
+
+	let avatarClass;
+	$: avatarClass = classNames(
+		rounded ? 'rounded' : 'rounded-full',
+		border && 'p-1 ring-2 ring-gray-300 dark:ring-gray-500',
+		sizes[size],
+		stacked && 'border-2 -ml-4 border-white dark:border-gray-800',
+		$$props.class
+	);
 </script>
 
-{#if placehoder}
-	<div class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
-		<svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" /></svg>
-	</div>
-{:else if avatar.header && avatar.text}
-	<div class="flex items-center space-x-4">
-		<img class={avatarClass} alt={avatar.alt} src={avatar.src} />
-		<div class="space-y-1 font-medium dark:text-white">
-			<div>{avatar.header}</div>
-			<div class="text-sm text-gray-500 dark:text-gray-400">{avatar.text}</div>
+<Dot show={$$props.dot} {rounded} {...dot} {size}>
+	{#if src}
+		<img class={avatarClass} {alt} {src} />
+	{:else if $$slots.default}
+		<a
+			class="flex justify-center items-center {avatarClass} text-xs font-medium text-white bg-gray-700 hover:bg-gray-600"
+			{href}
+			><slot />
+		</a>
+	{:else}
+		<div class={avatarClass}>
+			<AvatarPlaceholder {rounded} />
 		</div>
-	</div>
-{:else}
-	<img class={avatarClass} alt={avatar.alt} src={avatar.src} />
-{/if}
+	{/if}
+</Dot>
