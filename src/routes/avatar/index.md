@@ -40,10 +40,10 @@ layout: avatarLayout
 ```html
 <script>
 	import { Avatar } from 'flowbite-svelte';
+</script>
 
 	 <Avatar src="/images/profile-picture-2.webp"/>
 	 <Avatar src="/images/profile-picture-2.webp" rounded/>
-</script>
 ```
 
 <Htwo label="Bordered" />
@@ -143,7 +143,7 @@ layout: avatarLayout
 <Avatar src="/images/profile-picture-1.webp" stacked />
 <Avatar src="/images/profile-picture-2.webp" stacked />
 <Avatar src="/images/profile-picture-3.webp" stacked />
-<Avatar stacked >+99</Avatar>
+<Avatar stacked href="/">+99</Avatar>
 </div>
 </ExampleDiv>
 
@@ -158,7 +158,7 @@ layout: avatarLayout
 	<Avatar src="/images/profile-picture-1.webp" stacked />
 	<Avatar src="/images/profile-picture-2.webp" stacked />
 	<Avatar src="/images/profile-picture-3.webp" stacked />
-	<Avatar stacked>+99</Avatar>
+	<Avatar stacked href="/">+99</Avatar>
 </div>
 ```
 

@@ -6,6 +6,7 @@
 	import type { DotType } from '$lib/types';
 
 	export let src: string = '';
+	export let href: string = '#';
 
 	export let rounded: boolean = false;
 	export let border: boolean = false;
@@ -41,7 +42,7 @@
 	{:else if $$slots.default}
 		<a
 			class="flex justify-center items-center {avatarClass} text-xs font-medium text-white bg-gray-700 hover:bg-gray-600"
-			href="#"
+			{href}
 			><slot />
 		</a>
 	{:else}
