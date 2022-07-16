@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.21.6](https://github.com/themesberg/flowbite-svelte/compare/v0.21.5...v0.21.6) (2022-07-16)
+
+
+### Bug Fixes
+
+* links in form index ([1149aa2](https://github.com/themesberg/flowbite-svelte/commit/1149aa2f7411ceb9a3e29ce3c6c3d446634f09a9))
+* sidebars and forms {...$$restProps} position updates ([d983225](https://github.com/themesberg/flowbite-svelte/commit/d983225a4e4c7526bf7bee3a7cd51ecc6035bba8))
+
 ### [0.21.5](https://github.com/themesberg/flowbite-svelte/compare/v0.21.4...v0.21.5) (2022-07-16)
 
 
