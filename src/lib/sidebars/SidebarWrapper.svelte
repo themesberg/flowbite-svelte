@@ -3,6 +3,6 @@
 	export let divClass: string = 'overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800';
 </script>
 
-<div class={classNames(divClass, $$props.class)} {...$$restProps}>
+<div {...$$restProps} class={classNames(divClass, $$props.class)}>
 	<slot />
 </div>

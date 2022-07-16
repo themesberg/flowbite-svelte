@@ -27,7 +27,7 @@
 				/></svg
 			>
 		</div>
-		<input type="text" {id} class={inputClass} {placeholder} {...$$restProps} />
+		<input {...$$restProps} type="text" {id} class={inputClass} {placeholder} />
 	</div>
 	<button type="submit" class={btnClass}
 		><svg

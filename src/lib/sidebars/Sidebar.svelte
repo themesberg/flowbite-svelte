@@ -3,6 +3,6 @@
 	export let asideClass: string = 'w-64';
 </script>
 
-<aside class={classNames(asideClass, $$props.class)} {...$$restProps} aria-label="Sidebar">
+<aside {...$$restProps} class={classNames(asideClass, $$props.class)} aria-label="Sidebar">
 	<slot />
 </aside>

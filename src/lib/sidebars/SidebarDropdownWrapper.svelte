@@ -18,10 +18,10 @@
 
 <li>
 	<button
+		{...$$restProps}
 		on:click={() => handleDropdown()}
 		type="button"
 		class={classNames(btnClass, $$props.class)}
-		{...$$restProps}
 		aria-controls="sidebar-dropdown"
 	>
 		<svelte:component

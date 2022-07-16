@@ -8,7 +8,7 @@
 		'self-center text-xl font-semibold whitespace-nowrap dark:text-white';
 </script>
 
-<a href={site.href} class={classNames(aClass, $$props.class)} {...$$restProps}>
+<a {...$$restProps} href={site.href} class={classNames(aClass, $$props.class)}>
 	<img src={site.img} class={imgClass} alt={site.name} />
 	<span class={spanClass}>{site.name}</span>
 </a>

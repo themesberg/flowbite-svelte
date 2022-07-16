@@ -18,6 +18,7 @@
 </script>
 
 <input
+	{...$$restProps}
 	{id}
 	name={id}
 	type="range"
@@ -26,5 +27,4 @@
 	bind:value
 	{step}
 	class={inputClass}
-	{...$$restProps}
 />

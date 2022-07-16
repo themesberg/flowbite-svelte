@@ -8,6 +8,6 @@
 	}
 </script>
 
-<ul class={classNames(ulClass, $$props.class)} {...$$restProps}>
+<ul {...$$restProps} class={classNames(ulClass, $$props.class)}>
 	<slot />
 </ul>

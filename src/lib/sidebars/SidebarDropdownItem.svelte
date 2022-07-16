@@ -7,5 +7,5 @@
 </script>
 
 <li>
-	<a {href} class={classNames(aClass, $$props.class)} {...$$restProps}>{label}</a>
+	<a {...$$restProps} {href} class={classNames(aClass, $$props.class)}>{label}</a>
 </li>

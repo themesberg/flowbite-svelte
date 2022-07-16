@@ -8,9 +8,9 @@
 </script>
 
 <div
+	{...$$restProps}
 	id="dropdown-cta"
 	class={classNames(divWrapperClass, $$props.class)}
-	{...$$restProps}
 	role="alert"
 >
 	<div class={divClass}>

@@ -38,7 +38,7 @@
 				/></svg
 			>
 		</div>
-		<input type="text" {id} class={inputClass} {placeholder} {...$$restProps} />
+		<input {...$$restProps} type="text" {id} class={inputClass} {placeholder} />
 		<button type="button" class={voiceBtnClass} on:click={handleVoiceBtn}>
 			<svg
 				class={voiceIconClass}

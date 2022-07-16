@@ -41,6 +41,7 @@
 	<div class="flex">
 		<div class={divHelperClass}>
 			<input
+				{...$$restProps}
 				bind:group
 				{id}
 				type="radio"
@@ -50,7 +51,6 @@
 				aria-labelledby={id}
 				aria-describedby={id}
 				{disabled}
-				{...$$restProps}
 			/>
 		</div>
 		<div class="ml-2 text-sm">
