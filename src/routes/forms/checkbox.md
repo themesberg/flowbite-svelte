@@ -7,7 +7,7 @@ layout: formLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Checkbox, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { Checkbox, Breadcrumb, BreadcrumbItem, Label, Helper } from "$lib/index"
   import { Home } from 'svelte-heros'
   import componentProps from '../props/Checkbox.json'
   import componentProps2 from '../props/Label.json'
@@ -78,16 +78,43 @@ layout: formLayout
 <p>Get started with this example if you want to add a secondary helper text for the checkbox component.</p>
 
 <ExampleDiv>
-  <Checkbox>Free shipping via Flowbite
+  <Checkbox>
+    Free shipping via Flowbite
     <span slot="helper">For orders shipped from $25 in books or $29 in other categories</span>
   </Checkbox>
 </ExampleDiv>
 
 ```html
-<Checkbox
-	>Free shipping via Flowbite
-	<span slot="helper">For orders shipped from $25 in books or $29 in other categories</span>
+<Checkbox>
+  Free shipping via Flowbite
+  <span slot="helper">For orders shipped from $25 in books or $29 in other categories</span>
 </Checkbox>
+```
+
+You can achive the same result with more verbose implementation using Label and Helper.
+
+<ExampleDiv>
+  <div class="flex">
+    <div class="flex items-center h-5">
+      <Checkbox id='helper-checkbox' aria-describedby="helper-checkbox-text" value='' />
+    </div>
+    <div class="text-sm">
+      <Label for='helper-checkbox'>Free shipping via Flowbite</Label>
+      <Helper>For orders shipped from $25 in books or $29 in other categories</Helper>
+    </div>
+  </div>
+</ExampleDiv>
+
+```html
+<div class="flex">
+  <div class="flex items-center h-5">
+    <Checkbox id='helper-checkbox' aria-describedby="helper-checkbox-text" value='' />
+  </div>
+  <div class="text-sm">
+    <Label for='helper-checkbox'>Free shipping via Flowbite</Label>
+    <Helper>For orders shipped from $25 in books or $29 in other categories</Helper>
+  </div>
+</div>
 ```
 
 <Htwo label="Bordered" />
