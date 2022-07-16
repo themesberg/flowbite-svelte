@@ -1,1 +1,1 @@
-{"props":[["inputClass","string ","'w-4 h-4 bg-gray-100 rounded border-gray-300 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 '"],["checked","boolean ","false"],["color","FormColorType ","'blue'"]]}
+{"props":[["checked","boolean ","false"],["color","FormColorType ","'blue'"],["inline","boolean ","false"]]}
