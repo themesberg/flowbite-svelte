@@ -26,7 +26,7 @@ layout: formLayout
 	<Card {divClass} img="/images/forms.webp" btnColor="red" header="FLOATING LABEL" link="/forms/floating-label" btnLabel="Read more" />
 </div>
 <div class="p-4">
-	<Card {divClass} img="/images/forms.webp" btnColor="yellow" header="INPUT" link="/forms/input" btnLabel="Read more" />
+	<Card {divClass} img="/images/forms.webp" btnColor="yellow" header="INPUT" link="/forms/input-field" btnLabel="Read more" />
 </div>
 <div class="p-4">
 	<Card {divClass} img="/images/forms.webp" btnColor="indigo" header="RADIO" link="/forms/radio" btnLabel="Read more" />
@@ -35,7 +35,7 @@ layout: formLayout
 	<Card {divClass} img="/images/forms.webp" btnColor="gray" header="RANGE" link="/forms/range" btnLabel="Read more" />
 </div>
 <div class="p-4">
-	<Card {divClass} img="/images/forms.webp" btnColor="purple" header="SEARCH" link="/forms/search" btnLabel="Read more" />
+	<Card {divClass} img="/images/forms.webp" btnColor="purple" header="SEARCH" link="/forms/search-input" btnLabel="Read more" />
 </div>
 <div class="p-4">
 	<Card {divClass} img="/images/forms.webp" btnColor="pink" header="SELECT" link="/forms/select" btnLabel="Read more" />
