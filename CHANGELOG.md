@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.21.10](https://github.com/themesberg/flowbite-svelte/compare/v0.21.9...v0.21.10) (2022-07-17)
+
+
+### Features
+
+* add Dropzone ([bb69872](https://github.com/themesberg/flowbite-svelte/commit/bb698721e07c489f1d1900012e60204e0af12e5a))
+
 ### [0.21.9](https://github.com/themesberg/flowbite-svelte/compare/v0.21.8...v0.21.9) (2022-07-17)
 
 
