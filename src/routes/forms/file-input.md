@@ -65,6 +65,38 @@ let fileuploadprops2 = {
 <Helper>SVG, PNG, JPG or GIF (MAX. 800x400px).</Helper>
 </ExampleDiv>
 
+<Htwo label='Multiple files' />
+
+<ExampleDiv>
+<Label for='multiple_files' >Upload multiple files</Label>
+<Fileupload id='multiple_files' multiple/>
+</ExampleDiv>
+
+```html
+<Label for='multiple_files' >Upload multiple files</Label>
+<Fileupload id='multiple_files' multiple/>
+```
+
+<Htwo label='Sizes' />
+
+<ExampleDiv>
+<Label for='small_size' >Small file input</Label>
+<Fileupload id="small_size" size='xs' />
+<Label for='default_size' >Default size</Label>
+<Fileupload id="default_size" />
+<Label for='larg_size' >Large file input</Label>
+<Fileupload id="larg_size" size='lg' />
+</ExampleDiv>
+
+```html
+<Label for='small_size' >Small file input</Label>
+<Fileupload id="small_size" size='xs' />
+<Label for='default_size' >Default size</Label>
+<Fileupload id="default_size" />
+<Label for='larg_size' >Large file input</Label>
+<Fileupload id="larg_size" size='lg' />
+```
+
 <Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
