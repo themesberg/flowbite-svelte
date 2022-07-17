@@ -262,7 +262,7 @@
 		<Toc />
 	</main>
 </div>
-<div class="pt-4 lg:pl-56">
+<div class="pt-4 lg:pl-64">
 	<Footer footerType="socialmedia">
 		<div class="md:flex md:justify-between">
 			<div class="mb-6 md:mb-0">
