@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.21.7](https://github.com/themesberg/flowbite-svelte/compare/v0.21.6...v0.21.7) (2022-07-17)
+
+
+### Features
+
+* add kbd component and page ([66c1f2e](https://github.com/themesberg/flowbite-svelte/commit/66c1f2ec9c516da147c7eca9e8cb11c3eea2e1e2))
+
 ### [0.21.6](https://github.com/themesberg/flowbite-svelte/compare/v0.21.5...v0.21.6) (2022-07-16)
 
 
