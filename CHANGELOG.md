@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.21.8](https://github.com/themesberg/flowbite-svelte/compare/v0.21.7...v0.21.8) (2022-07-17)
+
+
+### Features
+
+* add skeleton components and page ([cf1f421](https://github.com/themesberg/flowbite-svelte/commit/cf1f421964a7122c77cf2b27615f4837ec3cf687))
+
 ### [0.21.7](https://github.com/themesberg/flowbite-svelte/compare/v0.21.6...v0.21.7) (2022-07-17)
 
 
