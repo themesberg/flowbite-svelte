@@ -54,6 +54,7 @@ export { default as FooterLinkGroup } from './footer/FooterLinkGroup.svelte'
 
 // Forms
 export { default as Checkbox } from './forms/Checkbox.svelte';
+export { default as Dropzone } from './forms/Dropzone.svelte';
 export { default as Fileupload } from './forms/Fileupload.svelte';
 export { default as FloatingLabelInput } from './forms/FloatingLabelInput.svelte';
 export { default as Helper } from './forms/Helper.svelte';
