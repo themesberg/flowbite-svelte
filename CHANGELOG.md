@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.21.9](https://github.com/themesberg/flowbite-svelte/compare/v0.21.8...v0.21.9) (2022-07-17)
+
+
+### Features
+
+* add fileupload multiple files and sizes ([81ab128](https://github.com/themesberg/flowbite-svelte/commit/81ab1284902e9e89bf08725a74b22394aae57244))
+
 ### [0.21.8](https://github.com/themesberg/flowbite-svelte/compare/v0.21.7...v0.21.8) (2022-07-17)
 
 
