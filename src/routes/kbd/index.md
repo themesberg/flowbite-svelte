@@ -10,8 +10,16 @@ layout: kbdLayout
   import { Kbd, Table, TableHead, TableHeadCell, TableBody, TableBodyRow, TableBodyCell, ArrowKeyDown, ArrowKeyLeft, ArrowKeyRight, ArrowKeyUp, Breadcrumb, BreadcrumbItem } from "$lib/index"
   import { Home } from 'svelte-heros'
   import componentProps from '../props/Kbd.json'
+  import componentProps2 from '../props/ArrowKeyDown.json'
+  import componentProps3 from '../props/ArrowKeyLeft.json'
+  import componentProps4 from '../props/ArrowKeyRight.json'
+  import componentProps5 from '../props/ArrowKeyUp.json'
 
   let items = componentProps.props
+  let items2 = componentProps2.props
+  let items3 = componentProps3.props
+  let items4 = componentProps4.props
+  let items5 = componentProps5.props
 
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
@@ -316,6 +324,33 @@ Please press <Kbd class="px-2 py-1.5">Ctrl</Kbd> + <Kbd class="px-2 py-1.5">Shif
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
+<h3>Kbd</h3>
+
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items} rowState='hover' />
 </TableProp>
+
+<h3>ArrowKeyDown</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items2} rowState='hover' />
+</TableProp>
+
+<h3>ArrowKeyLeft</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items3} rowState='hover' />
+</TableProp>
+
+<h3>ArrowKeyRight</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items4} rowState='hover' />
+</TableProp>
+
+<h3>ArrowKeyUp</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items5} rowState='hover' />
+</TableProp>
+
