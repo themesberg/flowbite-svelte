@@ -225,6 +225,12 @@ test('Icon main page should have h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Icons');
 });
 
+// Kbd
+test('Kbd group page should have h1', async ({ page }) => {
+	await page.goto('/kbd');
+	expect(await page.textContent('h1')).toBe('Tailwind CSS KBD (Keyboard)');
+});
+
 // List group
 test('List group page should have h1', async ({ page }) => {
 	await page.goto('/list-group');

@@ -177,6 +177,11 @@
 		</Nav>
 		<Nav {navClass} {navDivClass}>
 			<h3 class={h3Class}>
+				<a href="/kbd">KBD</a>
+			</h3>
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}>
 				<a href="/list-group">List group</a>
 			</h3>
 		</Nav>

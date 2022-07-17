@@ -70,6 +70,13 @@ export { default as Select } from './forms/Select.svelte';
 export { default as Textarea } from './forms/Textarea.svelte';
 export { default as Toggle } from './forms/Toggle.svelte';
 
+// Kbd
+export { default as Kbd } from './kbd/Kbd.svelte';
+export { default as ArrowKeyDown } from './kbd/ArrowKeyDown.svelte';
+export { default as ArrowKeyLeft } from './kbd/ArrowKeyLeft.svelte';
+export { default as ArrowKeyRight } from './kbd/ArrowKeyRight.svelte';
+export { default as ArrowKeyUp } from './kbd/ArrowKeyUp.svelte';
+
 // List
 export { default as List } from './list-group/List.svelte';
 

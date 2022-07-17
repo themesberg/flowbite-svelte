@@ -19,6 +19,7 @@
 		FooterBlock,
 		FormBlock,
 		InputfieldBlock,
+		KbdBlock,
 		ListgroupBlock,
 		ModalBlock,
 		NavbarBlock,
@@ -94,6 +95,7 @@
 	<FooterBlock />
 	<FormBlock />
 	<InputfieldBlock />
+	<KbdBlock />
 	<ListgroupBlock />
 	<ModalBlock />
 	<NavbarBlock />

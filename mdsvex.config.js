@@ -18,6 +18,7 @@ const config = defineConfig({
 		footerLayout: './src/routes/layouts/footerLayout.svelte',
 		formLayout: './src/routes/layouts/formLayout.svelte',
 		iconLayout: './src/routes/layouts/iconLayout.svelte',
+		kbdLayout: './src/routes/layouts/kbdLayout.svelte',
 		listgroupLayout: './src/routes/layouts/listgroupLayout.svelte',
 		modalLayout: './src/routes/layouts/modalLayout.svelte',
 		navbarLayout: './src/routes/layouts/navbarLayout.svelte',
