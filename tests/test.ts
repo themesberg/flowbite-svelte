@@ -318,6 +318,12 @@ test('Sidebar page should have h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Sidebar Components');
 });
 
+// Skeleton
+test('Skeleton page should have h1', async ({ page }) => {
+	await page.goto('/skeleton');
+	expect(await page.textContent('h1')).toBe('Tailwind CSS Skeleton');
+});
+
 // Spinner
 test('Spinner main page should have h1', async ({ page }) => {
 	await page.goto('/spinners');

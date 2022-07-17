@@ -121,6 +121,16 @@ export { default as SidebarDropdownWrapper } from './sidebars/SidebarDropdownWra
 export { default as SidebarGroup } from './sidebars/SidebarGroup.svelte';
 export { default as SidebarWrapper } from './sidebars/SidebarWrapper.svelte';
 
+// Skeleton
+export { default as CardPlaceholder } from './skeleton/CardPlaceholder.svelte';
+export { default as ImagePlaceholder } from './skeleton/ImagePlaceholder.svelte';
+export { default as ListPlaceholder } from './skeleton/ListPlaceholder.svelte';
+export { default as Skeleton } from './skeleton/Skeleton.svelte';
+export { default as TestimonialPlaceholder } from './skeleton/TestimonialPlaceholder.svelte';
+export { default as TextPlaceholder } from './skeleton/TextPlaceholder.svelte';
+export { default as VideoPlaceholder } from './skeleton/VideoPlaceholder.svelte';
+export { default as WidgetPlaceholder } from './skeleton/WidgetPlaceholder.svelte';
+
 // Spin
 export { default as Spinner } from './spinners/Spinner.svelte';
 

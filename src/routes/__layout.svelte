@@ -217,6 +217,11 @@
 		</Nav>
 		<Nav {navClass} {navDivClass}>
 			<h3 class={h3Class}>
+				<a href="/skeleton">Skeleton</a>
+			</h3>
+		</Nav>
+		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}>
 				<a href="/spinners">Spinners</a>
 			</h3>
 		</Nav>

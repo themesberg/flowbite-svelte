@@ -31,6 +31,7 @@
 		SearchinputBlock,
 		SelectBlock,
 		SidebarBlock,
+		SkeletonBlock,
 		SpinnerBlock,
 		TabBlock,
 		TableBlock,
@@ -107,6 +108,7 @@
 	<SearchinputBlock />
 	<SelectBlock />
 	<SidebarBlock />
+	<SkeletonBlock />
 	<SpinnerBlock />
 	<TabBlock />
 	<TableBlock />

@@ -26,6 +26,7 @@ const config = defineConfig({
 		progressbarLayout: './src/routes/layouts/progressbarLayout.svelte',
 		ratingLayout: './src/routes/layouts/ratingLayout.svelte',
 		sidebarLayout: './src/routes/layouts/sidebarLayout.svelte',
+		skeletonLayout: './src/routes/layouts/skeletonLayout.svelte',
 		spinnerLayout: './src/routes/layouts/spinnerLayout.svelte',
 		tabLayout: './src/routes/layouts/tabLayout.svelte',
 		tableLayout: './src/routes/layouts/tableLayout.svelte',

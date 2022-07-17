@@ -13,8 +13,8 @@
 		<Htwo label="References" />
 		<div class="references">
 			<p>
-				<a href="https://flowbite.com/docs/components/kbd/" target="_blank" class="link"
-					>Tailwind CSS KBD (Keyboard)</a
+				<a href="https://flowbite.com/docs/components/skeleton/" target="_blank" class="link"
+					>Tailwind CSS Skeleton</a
 				>
 			</p>
 		</div>
