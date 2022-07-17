@@ -18,10 +18,16 @@
 	export let color: FormColorType = 'blue';
 	export let custom: boolean = false;
 	export let inline: boolean = false;
-	export let rounded: boolean = false;
 
-	let inputClass: string =
-		'w-4 h-4 bg-gray-100 border-gray-300 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 mr-2';
+	export let group: number | string = '';
+	export let value: string = '';
+
+	export let inputClass: string;
+	$: inputClass = classNames(
+		'w-4 h-4 bg-gray-100 border-gray-300 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 mr-2',
+		custom && 'sr-only peer',
+		colorClasses[color]
+	);
 
 	let colorLabel: 'gray' | 'green' | 'red' | 'disabled' = 'gray';
 	$: colorLabel = $$restProps.disabled ? 'disabled' : colorLabel;
@@ -52,12 +58,10 @@
 	};
 </script>
 
+<!-- svelte-ignore a11y-label-has-associated-control -->
 <label class={labelClass}>
-	<input
-		type="radio"
-		{...$$restProps}
-		class:rounded
-		class={classNames(inputClass, custom && 'sr-only peer', colorClasses[color])}
-	/>
+	<slot name="input">
+		<input type="radio" bind:group {value} {...$$restProps} class={inputClass} />
+	</slot>
 	<slot />
 </label>

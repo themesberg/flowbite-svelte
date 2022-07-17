@@ -1,6 +1,6 @@
 <script lang="ts">
 	import classNames from 'classnames';
-	import Radio from './Radio.svelte';
+	import Checkbox from './Checkbox.svelte';
 
 	export let size: 'small' | 'default' | 'large' = 'default';
 
@@ -24,7 +24,7 @@
 	};
 </script>
 
-<Radio type="checkbox" custom class="relative {$$restProps.class}" {...$$restProps}>
+<Checkbox custom class="relative {$$restProps.class}" {...$$restProps}>
 	<div class={classNames(common, colors[$$restProps.color ?? 'blue'], sizes[size])} />
 	<slot />
-</Radio>
+</Checkbox>

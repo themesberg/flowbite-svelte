@@ -1,1 +1,1 @@
-{"props":[["color","FormColorType ","'blue'"],["custom","boolean ","false"],["inline","boolean ","false"],["rounded","boolean ","false"]]}
+{"props":[["color","FormColorType ","'blue'"],["custom","boolean ","false"],["inline","boolean ","false"],["group","number | string ","''"],["value","string ","''"],["  inputClass"," string",""]]}

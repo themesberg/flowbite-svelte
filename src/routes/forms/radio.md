@@ -19,6 +19,9 @@ layout: formLayout
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
+  let colors = 'green';
+  let technology = 'svelte';
 </script>
 
 <Breadcrumb>
@@ -120,24 +123,26 @@ Use this example of a radio inside a card element to enable a larger area of cli
 Use this example to show a list of radio items grouped inside a card.
 
 <ExampleDiv>
-<p class="mb-4 font-semibold text-gray-900 dark:text-white">Technology</p>
+<p class="mb-4 font-semibold text-gray-900 dark:text-white">Technology <span class="capitalize">{technology}</span></p>
 <ul class="w-48 bg-white rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-600 divide-y divide-gray-200 dark:divide-gray-600">
-    <li><Radio name="list-group" class="p-3">Svelte</Radio></li>
-    <li><Radio name="list-group" class="p-3">Vue JS</Radio></li>
-    <li><Radio name="list-group" class="p-3">React</Radio></li>
-    <li><Radio name="list-group" class="p-3">Angular</Radio></li>
+    <li><Radio class="p-3" bind:group={technology} value="svelte">Svelte</Radio></li>
+    <li><Radio class="p-3" bind:group={technology} value="vue js">Vue JS</Radio></li>
+    <li><Radio class="p-3" bind:group={technology} value="react">React</Radio></li>
+    <li><Radio class="p-3" bind:group={technology} value="angular">Angular</Radio></li>
 </ul>
 </ExampleDiv>
 
 ```html
-<p class="mb-4 font-semibold text-gray-900 dark:text-white">Technology</p>
-<ul
-	class="w-48 bg-white rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-600 divide-y divide-gray-200 dark:divide-gray-600"
->
-	<li><Radio name="list-group" class="p-3">svelte</Radio></li>
-	<li><Radio name="list-group" class="p-3">Vue JS</Radio></li>
-	<li><Radio name="list-group" class="p-3">React</Radio></li>
-	<li><Radio name="list-group" class="p-3">Angular</Radio></li>
+<script>
+  let technology = 'svelte';
+</script>
+
+<p class="mb-4 font-semibold text-gray-900 dark:text-white">Technology <span class="capitalize">{technology}</span></p>
+<ul	class="w-48 bg-white rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-600 divide-y divide-gray-200 dark:divide-gray-600">
+	<li><Radio class="p-3" bind:group={technology} value="svelte">svelte</Radio></li>
+	<li><Radio class="p-3" bind:group={technology} value="vue js">Vue JS</Radio></li>
+	<li><Radio class="p-3" bind:group={technology} value="react">React</Radio></li>
+	<li><Radio class="p-3" bind:group={technology} value="angular">Angular</Radio></li>
 </ul>
 ```
 
@@ -157,9 +162,7 @@ Use this example to show a list of radio items inside a card horizontally.
 
 ```html
 <p class="mb-4 font-semibold text-gray-900 dark:text-white">Identification</p>
-<ul
-	class="items-center w-full rounded-lg border border-gray-200 sm:flex dark:bg-gray-800 dark:border-gray-600 divide-x divide-gray-200 dark:divide-gray-600"
->
+<ul class="items-center w-full rounded-lg border border-gray-200 sm:flex dark:bg-gray-800 dark:border-gray-600 divide-x divide-gray-200 dark:divide-gray-600">
 	<li class="w-full"><Radio name="hor-list" class="p-3">Svelte</Radio></li>
 	<li class="w-full"><Radio name="hor-list" class="p-3">Vue JS</Radio></li>
 	<li class="w-full"><Radio name="hor-list" class="p-3">React</Radio></li>
@@ -216,24 +219,29 @@ You can use the property `inline` as the alternative.
 <Htwo label="Colors" />
 
 <ExampleDiv>
+<p class="mb-4 font-semibold text-gray-900 dark:text-white {colors}">Select color</p>
 <div class="flex gap-4">
-  <Radio name="colors" color='red' >Red</Radio>
-  <Radio name="colors" color='green' >Green</Radio>
-  <Radio name="colors" color='purple' >Purple</Radio>
-  <Radio name="colors" color='teal' >Teal</Radio>
-  <Radio name="colors" color='yellow' >Yellow</Radio>
-  <Radio name="colors" color='orange' >Orange</Radio>
+  <Radio bind:group={colors} color='red' value='text-red-500' >Red</Radio>
+  <Radio bind:group={colors} color='green' value='text-green-500' >Green</Radio>
+  <Radio bind:group={colors} color='purple' value='text-purple-500' >Purple</Radio>
+  <Radio bind:group={colors} color='teal' value='text-teal-500' >Teal</Radio>
+  <Radio bind:group={colors} color='yellow' value='text-yellow-500' >Yellow</Radio>
+  <Radio bind:group={colors} color='orange' value='text-orange-500' >Orange</Radio>
 </div>
 </ExampleDiv>
 
 ```html
+<script>
+  let colors;
+</script>
+<p class="mb-4 font-semibold text-gray-900 dark:text-white {colors}">Select color</p>
 <div class="flex">
-	<Radio name="colors" color="red">Red</Radio>
-	<Radio name="colors" color="green">Green</Radio>
-	<Radio name="colors" color="purple">Purple</Radio>
-	<Radio name="colors" color="teal">Teal</Radio>
-	<Radio name="colors" color="yellow">Yellow</Radio>
-	<Radio name="colors" color="orange">Orange</Radio>
+	<Radio bind:group={colors} color="red">Red</Radio>
+	<Radio bind:group={colors} color="green">Green</Radio>
+	<Radio bind:group={colors} color="purple">Purple</Radio>
+	<Radio bind:group={colors} color="teal">Teal</Radio>
+	<Radio bind:group={colors} color="yellow">Yellow</Radio>
+	<Radio bind:group={colors} color="orange">Orange</Radio>
 </div>
 ```
 
