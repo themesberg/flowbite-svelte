@@ -12,7 +12,7 @@
 	"homepage": "https://flowbite-svelte.com/",
 	"license": "MIT",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "svelte-kit dev",
 		"gen:props": "node ./node_modules/createprops/createprops.js",
 		"build": "svelte-kit build",
 		"package": "svelte-kit package",
@@ -48,8 +48,7 @@
 		"svelte2tsx": "^0.5.9",
 		"tailwindcss": "^3.0.23",
 		"tslib": "^2.3.1",
-		"typescript": "~4.6.2",
-		"vite": "^3.0.0"
+		"typescript": "~4.6.2"
 	},
 	"type": "module",
 	"keywords": [
