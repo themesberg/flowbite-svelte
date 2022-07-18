@@ -39,7 +39,7 @@ layout: iconLayout
 <h1 class="text-3xl w-full dark:text-white py-8">Icons</h1>
 
 <p>Flowbite-svelte uses <a href="https://github.com/shinokada/svelte-heros" target="_blank">svelte-heros</a>.
-You can find all the icon names from the <a href="https://github.com/shinokada/svelte-heros/blob/main/icon-names.md" class="text-red-700 underline">repo</a>.</p>
+You can find all the icon names from the <a href="https://github.com/shinokada/svelte-heros/blob/main/icon-list.md" class="text-red-700 underline">repo</a>.</p>
 
 <p class=" dark:text-white py-4">Svelte-heros icons allow you to change icon size and color by using HEX CSS code or TailwindCSS/Flowbite.</p>
 
