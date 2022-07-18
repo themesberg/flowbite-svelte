@@ -25,6 +25,7 @@
 	{...$$restProps}
 	bind:value
 	bind:this={ref}
+	on:change
 	use:setType
 	class={classNames(
 		inputClass,
