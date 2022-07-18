@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.21.11](https://github.com/themesberg/flowbite-svelte/compare/v0.21.10...v0.21.11) (2022-07-18)
+
+
+### Bug Fixes
+
+* add on:change to Input component requested by https://github.com/themesberg/flowbite-svelte/pull/127 ([af5e64d](https://github.com/themesberg/flowbite-svelte/commit/af5e64d84b45f424b6166ff4fa1b5634a6f387d0))
+
 ### [0.21.10](https://github.com/themesberg/flowbite-svelte/compare/v0.21.9...v0.21.10) (2022-07-17)
 
 
