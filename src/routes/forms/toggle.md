@@ -11,41 +11,14 @@ layout: formLayout
   import { Toggle, Breadcrumb, BreadcrumbItem } from "$lib/index"
   import { AtSymbol , Mail , Home} from 'svelte-heros'
   import componentProps from '../props/Toggle.json'
+  import componentProps1 from '../props/Radio.json'
   let items = componentProps.props
+  let items1 = componentProps1.props.filter(x=>['color', 'inline'].includes(x[0]))
 
   let propHeader = ['Name', 'Type', 'Default']
 
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
-
-  let props = {
-    name: 'toggle-example',
-    id: 'toggle-example',
-    label: 'Toggle me',
-    value:'toggle1'
-  };
-  let props2 = {
-    name: 'toggle-example-checked',
-    id: 'toggle-example-checked',
-    label: 'Checked toggle',
-    checked: true,
-    value:'toggle2'
-  };
-  let props3 = {
-    name: 'toggle-example-disabled',
-    id: 'toggle-example-disabled',
-    label: 'Disabled toggle',
-    disabled: true,
-    value:'toggle3'
-  };
-  let props4 = {
-    name: 'toggle-example-disabled',
-    id: 'toggle-example-disabled',
-    label: 'Disabled checked',
-    checked: true,
-    disabled: true,
-    value:'toggle4'
-  };
 </script>
 
 <Breadcrumb>
@@ -56,118 +29,60 @@ layout: formLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Toggle Components</h1>
 
-<Htwo label="Examples" />
+<Htwo label="Toggle examples" />
 
-<ExampleDiv>
-<div class="w-full py-2">
-<Toggle {...props} />
-</div>
-<div class="w-full py-2">
-<Toggle {...props2}/>
-</div>
-<div class="w-full py-2">
-<Toggle {...props3}/>
-</div>
-<div class="w-full py-2">
-<Toggle {...props4}/>
-</div>
+Get started with the default toggle component example as a checkbox element to receive a true or false selection from the user.
+
+<ExampleDiv class="flex flex-col gap-2">
+  <Toggle>Toggle me</Toggle>
+  <Toggle checked={true}>Checked toggle</Toggle>
+  <Toggle disabled>Disabled toggle</Toggle>
+  <Toggle checked disabled>Disabled checked</Toggle>
 </ExampleDiv>
 
 ```html
 <script>
-import { Toggle } from 'flowbite-svelte'
-
-let props = {
-  name: 'toggle-example',
-  id: 'toggle-example',
-  label: 'Toggle me',
-  value:'toggle'
-};
-let props2 = {
-  name: 'toggle-example-checked',
-  id: 'toggle-example-checked',
-  label: 'Checked toggle',
-  checked: true,
-  value:'toggle'
-};
-let props3 = {
-  name: 'toggle-example-disabled',
-  id: 'toggle-example-disabled',
-  label: 'Disabled toggle',
-  disabled: true,
-  value:'toggle'
-};
-let props4 = {
-  name: 'toggle-example-disabled',
-  id: 'toggle-example-disabled',
-  label: 'Disabled checked',
-  checked: true,
-  disabled: true,
-  value:'toggle'
-};
+  import { Toggle } from 'flowbite-svelte'
 </script>
 
-<Toggle {...props}/>
-
-<Toggle {...props2}/>
-
-<Toggle {...props3}/>
-
-<Toggle {...props4}/>
+<Toggle>Toggle me</Toggle>
+<Toggle checked>Checked toggle</Toggle>
+<Toggle disabled>Disabled toggle</Toggle>
+<Toggle checked disabled>Disabled checked</Toggle>
 ```
 
 <Htwo label="Colors" />
 
 <ExampleDiv class="flex justify-between">
-
-<Toggle color="red" value='red-toggle' name="red-toggle" id="red-toggle" label="Red" checked/>
-
-<Toggle color="green" value='green-toggle' name="green-toggle" id="green-toggle" label="Green" checked/>
-
-<Toggle color="purple" value='purple-toggle' name="purple-toggle" id="purple-toggle" label="Purple" checked/>
-
-<Toggle color="yellow" value='yellow-toggle' name="yellow-toggle" id="yellow-toggle" label="Yellow" checked/>
-
-<Toggle color="teal" value='teal-toggle' name="teal-toggle" id="teal-toggle" label="Teal" checked/>
-
-<Toggle color="orange" value='orange-toggle' name="orange-toggle" id="orange-toggle" label="Orange" checked/>
-
+  <Toggle color="red" checked>Red</Toggle>
+  <Toggle color="green" checked>Green</Toggle>
+  <Toggle color="purple" checked>Purple</Toggle>
+  <Toggle color="yellow" checked>Yellow</Toggle>
+  <Toggle color="teal" checked>Teal</Toggle>
+  <Toggle color="orange" checked>Orange</Toggle>
 </ExampleDiv>
 
 ```html
-<Toggle color="red" value='red-toggle' name="red-toggle" id="red-toggle" label="Red" checked/>
-
-<Toggle color="green" value='green-toggle' name="green-toggle" id="green-toggle" label="Green" checked/>
-
-<Toggle color="purple" value='purple-toggle' name="purple-toggle" id="purple-toggle" label="Purple" checked/>
-
-<Toggle color="yellow" value='yellow-toggle' name="yellow-toggle" id="yellow-toggle" label="Yellow" checked/>
-
-<Toggle color="teal" value='teal-toggle' name="teal-toggle" id="teal-toggle" label="Teal" checked/>
-
-<Toggle color="orange" value='orange-toggle' name="orange-toggle" id="orange-toggle" label="Orange" checked/>
+<Toggle color="red" checked>Red</Toggle>
+<Toggle color="green" checked>Green</Toggle>
+<Toggle color="purple" checked>Purple</Toggle>
+<Toggle color="yellow" checked>Yellow</Toggle>
+<Toggle color="teal" checked>Teal</Toggle>
+<Toggle color="orange" checked>Orange</Toggle>
 ```
 
 <Htwo label="Sizes" />
 
-<ExampleDiv>
-<div class="w-full py-2">
-<Toggle size="small" value='small-toggle' name="small-toggle" id="small-toggle" label="Small toggle" checked/>
-</div>
-<div class="w-full py-2">
-<Toggle value='default-toggle' name="default-toggle" id="default-toggle" label="Default toggle" checked/>
-</div>
-<div class="w-full py-2">
-<Toggle size="large" value='large-toggle' name="large-toggle" id="large-toggle" label="Large toggle" checked/>
-</div>
+<ExampleDiv class="flex flex-col gap-2">
+  <Toggle size="small">Small toggle</Toggle>
+  <Toggle size="default" checked>Default toggle</Toggle>
+  <Toggle size="large" checked>Large toggle</Toggle>
 </ExampleDiv>
 
 ```html
-<Toggle size="small" value='small-toggle' name="small-toggle" id="small-toggle" label="Small toggle" checked/>
-
-<Toggle value='default-toggle' name="default-toggle" id="default-toggle" label="Default toggle" checked/>
-
-<Toggle size="large" value='large-toggle' name="large-toggle" id="large-toggle" label="Large toggle" checked/>
+<Toggle size="small">Small toggle</Toggle>
+<Toggle size="default" checked>Default toggle</Toggle>
+<Toggle size="large" checked>Large toggle</Toggle>
 ```
 
 <Htwo label="Props" />
@@ -175,6 +90,8 @@ let props4 = {
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
+<h3>Toggle</h3>
+
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow {items} rowState='hover' />
+  <TableDefaultRow items={items.concat(items1)} rowState='hover' />
 </TableProp>
