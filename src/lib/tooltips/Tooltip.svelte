@@ -81,7 +81,13 @@
 
 <svelte:window on:resize={() => open && updatePosition()} />
 
-<div>
+<div
+	use:clickOutside={() => {
+		if (open) {
+			open = false;
+		}
+	}}
+>
 	<div
 		class="w-fit"
 		bind:this={triggerRef}
@@ -98,11 +104,6 @@
 		on:click={() => {
 			if (trigger === 'click') {
 				open = !open;
-			}
-		}}
-		use:clickOutside={() => {
-			if (open) {
-				open = false;
 			}
 		}}
 	>

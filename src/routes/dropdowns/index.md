@@ -8,8 +8,11 @@ layout: dropdownLayout
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
 
-  import { Button, Dropdown, DropdownDivider, DropdownHeader, DropdownItem,Navbar,NavBrand,NavHamburger, NavUl, NavLi, Breadcrumb, BreadcrumbItem } from '$lib/index'
-  import { Home } from 'svelte-heros';
+  import { Avatar, Button, Checkbox, Label, Helper, Dropdown, DropdownDivider, DropdownHeader, DropdownItem,
+    Navbar,NavBrand,NavHamburger, NavUl, NavLi, SimpleSearch, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import CloseButton from "$lib/utils/CloseButton.svelte";
+
+  import { Home, ChevronDown, DotsHorizontal, DotsVertical, UserAdd, UserRemove } from 'svelte-heros';
   import componentProps from '../props/Dropdown.json'
   import componentProps2 from '../props/DropdownDivider.json'
   import componentProps3 from '../props/DropdownHeader.json'
@@ -21,7 +24,7 @@ layout: dropdownLayout
   export let propItems4 = componentProps4.props
 
   let propHeader = ['Name', 'Type', 'Default']
-  
+
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 </script>
@@ -38,7 +41,7 @@ layout: dropdownLayout
 <p>* Adding a dropdown id is recommended.</p>
 
 <ExampleDiv>
-<Dropdown label="Dropdown button">
+<Dropdown label="Dropdown button" class="w-44">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
@@ -51,7 +54,7 @@ layout: dropdownLayout
   import { Dropdown, DropdownItem} from 'flowbite-svelte'
 </script>
 
-<Dropdown label="Dropdown button">
+<Dropdown label="Dropdown button" class="w-44">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
@@ -62,7 +65,7 @@ layout: dropdownLayout
 <Htwo label="Dropdown divider" />
 
 <ExampleDiv>
-<Dropdown label="Dropdown button">
+<Dropdown label="Dropdown button" class="w-44">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
@@ -72,7 +75,7 @@ layout: dropdownLayout
 </ExampleDiv>
 
 ```html
-<Dropdown label="Dropdown button">
+<Dropdown label="Dropdown button" class="w-44">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
@@ -84,7 +87,7 @@ layout: dropdownLayout
 <Htwo label="Dropdown header" />
 
 <ExampleDiv>
-<Dropdown label="Dropdown button">
+<Dropdown label="Dropdown button" class="w-44">
   <DropdownHeader>
     <span class="block text-sm"> Bonnie Green </span>
     <span class="block truncate text-sm font-medium"> name@flowbite.com </span>
@@ -99,7 +102,7 @@ layout: dropdownLayout
 
 
 ```html
-<Dropdown label="Dropdown button">
+<Dropdown label="Dropdown button" class="w-44">
   <DropdownHeader>
     <span class="block text-sm"> Bonnie Green </span>
     <span class="block truncate text-sm font-medium"> name@flowbite.com </span>
@@ -109,6 +112,214 @@ layout: dropdownLayout
   <DropdownItem>Earnings</DropdownItem>
   <DropdownDivider />
   <DropdownItem>Sign out</DropdownItem>
+</Dropdown>
+```
+
+<Htwo label="Multi-level dropdown" />
+
+Use this example to enable multi-level dropdown menus by adding stacked elements inside of each other.
+
+<ExampleDiv>
+<Dropdown label="Dropdown button" class="w-44">
+  <DropdownItem>Dashboard</DropdownItem>
+  <DropdownItem>
+    <Dropdown label="Dropdown" inline={true} placement="right-start" class="ml-16 w-44">
+    <DropdownItem>Overview</DropdownItem>
+    <DropdownItem>My downloads</DropdownItem>
+    <DropdownItem>Billing</DropdownItem>
+    </Dropdown>
+  </DropdownItem>
+  <DropdownItem>Earnings</DropdownItem>
+  <DropdownDivider />
+  <DropdownItem>Sign out</DropdownItem>
+</Dropdown>
+</ExampleDiv>
+
+```html
+<Dropdown label="Dropdown button" class="w-44">
+  <DropdownItem>Dashboard</DropdownItem>
+  <DropdownItem>
+    <Dropdown label="Dropdown" inline={true} placement="right-start" class="ml-16 w-44">
+    <DropdownItem>Overview</DropdownItem>
+    <DropdownItem>My downloads</DropdownItem>
+    <DropdownItem>Billing</DropdownItem>
+    </Dropdown>
+  </DropdownItem>
+  <DropdownItem>Earnings</DropdownItem>
+  <DropdownDivider />
+  <DropdownItem>Sign out</DropdownItem>
+</Dropdown>
+```
+
+<Htwo label="Dropdown with checkbox" />
+
+Add multiple checkbox elements inside your dropdown menu to enable more advanced input interaction.
+
+<ExampleDiv>
+<Dropdown label="Dropdown checkbox" class="w-44">
+  <DropdownItem>
+    <div class="flex items-center">
+      <Checkbox id='default-checkbox-1' value='' />
+      <Label for='default-checkbox-1' class='ml-2'>Default checkbox</Label>
+    </div>
+  </DropdownItem>
+  <DropdownItem>
+    <div class="flex items-center">
+      <Checkbox checked id='checked-checkbox-1' value='' />
+      <Label for='checked-checkbox-1' class='ml-2'>Checked state</Label>
+    </div>
+  </DropdownItem>
+  <DropdownItem>
+    <div class="flex items-center">
+      <Checkbox id='default-checkbox-2' value='' />
+      <Label for='default-checkbox-2' class='ml-2'>Default checkbox</Label>
+    </div>
+  </DropdownItem>
+</Dropdown>
+</ExampleDiv>
+
+
+```html
+<Dropdown label="Dropdown checkbox" class="w-44">
+  <DropdownItem>
+    <div class="flex items-center">
+      <Checkbox id='default-checkbox-1' value='' />
+      <Label for='default-checkbox-1' class='ml-2'>Default checkbox</Label>
+    </div>
+  </DropdownItem>
+  <DropdownItem>
+    <div class="flex items-center">
+      <Checkbox checked id='checked-checkbox-1' value='' />
+      <Label for='checked-checkbox-1' class='ml-2'>Checked state</Label>
+    </div>
+  </DropdownItem>
+  <DropdownItem>
+    <div class="flex items-center">
+      <Checkbox id='default-checkbox-2' value='' />
+      <Label for='default-checkbox-2' class='ml-2'>Default checkbox</Label>
+    </div>
+  </DropdownItem>
+</Dropdown>
+```
+
+<Htwo label="Background hover" />
+
+Use this example to update the background color of a menu item when using a list of checkbox elements.
+
+
+<ExampleDiv>
+<Dropdown label="Dropdown checkbox" class="w-48">
+  <ul slot="content" class="p-3 space-y-1">
+    <DropdownItem class="rounded">
+        <Checkbox id='default-checkbox-3' value='' />
+        <Label for='default-checkbox-3' class='ml-2'>Default checkbox</Label>
+    </DropdownItem>
+    <DropdownItem class="rounded">
+        <Checkbox checked id='checked-checkbox-2' value='' />
+        <Label for='checked-checkbox-2' class='ml-2'>Checked state</Label>
+    </DropdownItem>
+    <DropdownItem class="rounded">
+        <Checkbox id='default-checkbox-4' value='' />
+        <Label for='default-checkbox-4' class='ml-2'>Default checkbox</Label>
+    </DropdownItem>
+  </ul>
+</Dropdown>
+</ExampleDiv>
+
+
+```html
+<Dropdown label="Dropdown checkbox" class="w-48">
+  <ul slot="content" class="p-3 space-y-1">
+    <DropdownItem class="rounded">
+        <Checkbox id='default-checkbox-3' value='' />
+        <Label for='default-checkbox-3' class='ml-2'>Default checkbox</Label>
+    </DropdownItem>
+    <DropdownItem class="rounded">
+        <Checkbox checked id='checked-checkbox-2' value='' />
+        <Label for='checked-checkbox-2' class='ml-2'>Checked state</Label>
+    </DropdownItem>
+    <DropdownItem class="rounded">
+        <Checkbox id='default-checkbox-4' value='' />
+        <Label for='default-checkbox-4' class='ml-2'>Default checkbox</Label>
+    </DropdownItem>
+  </ul>
+</Dropdown>
+```
+
+
+<Htwo label="Helper text" />
+
+Add an extra helper text to each checkbox element inside the dropdown menu list with this example.
+
+
+<ExampleDiv>
+<Dropdown class="w-64">
+  <span slot="label" class="w-48">Dropdown checkbox</span>
+  <ul slot="content" class="p-3 space-y-1">
+    <DropdownItem class="rounded flex">
+        <div class="flex items-center h-5">
+          <Checkbox id='default-checkbox-3' value='' />
+        </div>
+        <div class="ml-2 text-sm">
+          <Label for='default-checkbox-3'>Enable notifications</Label>
+          <Helper>Some helpful instruction goes over here.</Helper>
+        </div>
+    </DropdownItem>
+    <DropdownItem class="rounded flex">
+      <div class="flex items-center h-5">
+        <Checkbox checked id='checked-checkbox-2' value='' />
+      </div>
+      <div class="ml-2 text-sm">
+        <Label for='checked-checkbox-2'>Enable 2FA auth</Label>
+        <Helper>Some helpful instruction goes over here.</Helper>
+      </div>
+    </DropdownItem>
+    <DropdownItem class="rounded flex">
+      <div class="flex items-center h-5">
+        <Checkbox id='default-checkbox-4' value='' />
+      </div>
+      <div class="ml-2 text-sm">
+        <Label for='default-checkbox-4'>Subscribe newsletter</Label>
+        <Helper>Some helpful instruction goes over here.</Helper>
+      </div>
+    </DropdownItem>
+  </ul>
+</Dropdown>
+</ExampleDiv>
+
+
+```html
+<Dropdown class="w-64">
+  <Button slot="trigger" class="w-64">Dropdown checkbox <ChevronDown size="18" class="ml-2" /></Button>
+  <ul slot="content" class="p-3 space-y-1">
+    <DropdownItem class="rounded flex">
+        <div class="flex items-center h-5">
+          <Checkbox id='default-checkbox-3' value='' />
+        </div>
+        <div class="ml-2 text-sm">
+          <Label for='default-checkbox-3'>Enable notifications</Label>
+          <Helper>Some helpful instruction goes over here.</Helper>
+        </div>
+    </DropdownItem>
+    <DropdownItem class="rounded flex">
+      <div class="flex items-center h-5">
+        <Checkbox checked id='checked-checkbox-2' value='' />
+      </div>
+      <div class="ml-2 text-sm">
+        <Label for='checked-checkbox-2'>Enable 2FA auth</Label>
+        <Helper>Some helpful instruction goes over here.</Helper>
+      </div>
+    </DropdownItem>
+    <DropdownItem class="rounded flex">
+      <div class="flex items-center h-5">
+        <Checkbox id='default-checkbox-4' value='' />
+      </div>
+      <div class="ml-2 text-sm">
+        <Label for='default-checkbox-4'>Subscribe newsletter</Label>
+        <Helper>Some helpful instruction goes over here.</Helper>
+      </div>
+    </DropdownItem>
+  </ul>
 </Dropdown>
 ```
 
@@ -131,7 +342,7 @@ layout: dropdownLayout
 		<NavHamburger on:click={toggle} />
 		<NavUl {hidden}>
 			<NavLi href="/" active={true}>Home</NavLi>
-      <Dropdown label="Dropdown" inline={true} placement="bottom-start">
+      <Dropdown label="Dropdown" placement="bottom-start" inline={true}>
         <DropdownItem>Dashboard</DropdownItem>
         <DropdownItem>Settings</DropdownItem>
         <DropdownItem>Earnings</DropdownItem>
@@ -160,7 +371,7 @@ layout: dropdownLayout
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
     <NavLi href="/" active={true}>Home</NavLi>
-    <Dropdown label="Dropdown" inline={true} placement="bottom-start">
+    <Dropdown label="Dropdown" placement="bottom-start" inline={true}>
       <DropdownItem>Dashboard</DropdownItem>
       <DropdownItem>Settings</DropdownItem>
       <DropdownItem>Earnings</DropdownItem>
@@ -172,6 +383,372 @@ layout: dropdownLayout
     <NavLi href="/contact">Contact</NavLi>
   </NavUl>
 </Navbar>
+```
+
+<Htwo label="Dropdown with scrolling" />
+
+This example can be used when you want to show a long list of items that won’t affect the height of the dropdown menu by enabling a scrolling behaviour.
+
+<ExampleDiv class="flex gap-2">
+<Dropdown label="Project users" class="w-48">
+  <svelte:fragment slot="content">
+  <ul class="overflow-y-auto py-1 h-48 text-gray-700 dark:text-gray-200">
+    <DropdownItem class="flex items-center text-base font-semibold gap-2">
+      <Avatar src="/images/profile-picture-1.webp" size="xs"/>Jese Leos
+    </DropdownItem>
+    <DropdownItem class="flex items-center text-base font-semibold gap-2">
+      <Avatar src="/images/profile-picture-2.webp" size="xs"/>Robert Gouth
+    </DropdownItem>
+    <DropdownItem class="flex items-center text-base font-semibold gap-2">
+      <Avatar src="/images/profile-picture-3.webp" size="xs"/>Bonnie Green
+    </DropdownItem>
+    <DropdownItem class="flex items-center text-base font-semibold gap-2">
+      <Avatar src="/images/profile-picture-1.webp" size="xs"/>Jese Leos
+    </DropdownItem>
+    <DropdownItem class="flex items-center text-base font-semibold gap-2">
+      <Avatar src="/images/profile-picture-2.webp" size="xs"/>Robert Gouth
+    </DropdownItem>
+    <DropdownItem class="flex items-center text-base font-semibold gap-2">
+      <Avatar src="/images/profile-picture-3.webp" size="xs"/>Bonnie Green
+    </DropdownItem>
+    <DropdownItem class="flex items-center text-base font-semibold gap-2">
+      <Avatar src="/images/profile-picture-1.webp" size="xs"/>Jese Leos
+    </DropdownItem>
+    <DropdownItem class="flex items-center text-base font-semibold gap-2">
+      <Avatar src="/images/profile-picture-2.webp" size="xs"/>Robert Gouth
+    </DropdownItem>
+    <DropdownItem class="flex items-center text-base font-semibold gap-2">
+      <Avatar src="/images/profile-picture-3.webp" size="xs"/>Bonnie Green
+    </DropdownItem>
+  </ul>
+  <DropdownDivider/>
+    <DropdownItem class="flex items-center text-base font-semibold gap-2" color="red">
+      <UserAdd class="h-5 w-5"/>Add new user
+    </DropdownItem>
+  </svelte:fragment>
+</Dropdown>
+</ExampleDiv>
+
+```html
+<Dropdown label="Project users" class="w-48">
+  <svelte:fragment slot="content">
+  <ul class="overflow-y-auto py-1 h-48 text-gray-700 dark:text-gray-200">
+    <DropdownItem class="flex items-center text-base font-semibold gap-2">
+      <Avatar src="/images/profile-picture-1.webp" size="xs"/>Jese Leos
+    </DropdownItem>
+    <DropdownItem class="flex items-center text-base font-semibold gap-2">
+      <Avatar src="/images/profile-picture-2.webp" size="xs"/>Robert Gouth
+    </DropdownItem>
+    <DropdownItem class="flex items-center text-base font-semibold gap-2">
+      <Avatar src="/images/profile-picture-3.webp" size="xs"/>Bonnie Green
+    </DropdownItem>
+    <DropdownItem class="flex items-center text-base font-semibold gap-2">
+      <Avatar src="/images/profile-picture-1.webp" size="xs"/>Jese Leos
+    </DropdownItem>
+    <DropdownItem class="flex items-center text-base font-semibold gap-2">
+      <Avatar src="/images/profile-picture-2.webp" size="xs"/>Robert Gouth
+    </DropdownItem>
+    <DropdownItem class="flex items-center text-base font-semibold gap-2">
+      <Avatar src="/images/profile-picture-3.webp" size="xs"/>Bonnie Green
+    </DropdownItem>
+    <DropdownItem class="flex items-center text-base font-semibold gap-2">
+      <Avatar src="/images/profile-picture-1.webp" size="xs"/>Jese Leos
+    </DropdownItem>
+    <DropdownItem class="flex items-center text-base font-semibold gap-2">
+      <Avatar src="/images/profile-picture-2.webp" size="xs"/>Robert Gouth
+    </DropdownItem>
+    <DropdownItem class="flex items-center text-base font-semibold gap-2">
+      <Avatar src="/images/profile-picture-3.webp" size="xs"/>Bonnie Green
+    </DropdownItem>
+  </ul>
+  <DropdownDivider/>
+    <DropdownItem class="flex items-center text-base font-semibold gap-2" color="red">
+      <UserAdd class="h-5 w-5"/>Add new user
+    </DropdownItem>
+  </svelte:fragment>
+</Dropdown>
+```
+
+<Htwo label="Dropdown with search" />
+
+Use this example if you want to add a search bar inside the dropdown menu to be able to filter through a long list of menu items with scrolling behaviour.
+
+<ExampleDiv class="flex gap-2">
+<Dropdown label="Project users" class="w-48">
+  <svelte:fragment slot="content">
+  <div class="p-3 text-gray-700 dark:text-gray-200 dark:bg-gray-800">
+    <SimpleSearch btnClass="hidden"/>
+  </div>
+  <ul class="overflow-y-auto p-3 space-y-1 h-48 text-gray-700 dark:text-gray-200 dark:bg-gray-800">
+    <DropdownItem class="rounded">
+      <Checkbox id="project-user-1" value=""/>
+      <Label for="project-user-1" class="ml-2">Jese Leos</Label>
+    </DropdownItem>
+    <DropdownItem class="rounded">
+      <Checkbox id="project-user-1" value=""/>
+      <Label for="project-user-1" class="ml-2">Robert Gouth</Label>
+    </DropdownItem>
+    <DropdownItem class="rounded">
+      <Checkbox id="project-user-1" value=""/>
+      <Label for="project-user-1" class="ml-2">Bonnie Green</Label>
+    </DropdownItem>
+    <DropdownItem class="rounded">
+      <Checkbox id="project-user-1" value=""/>
+      <Label for="project-user-1" class="ml-2">Jese Leos</Label>
+    </DropdownItem>
+    <DropdownItem class="rounded">
+      <Checkbox id="project-user-1" value=""/>
+      <Label for="project-user-1" class="ml-2">Robert Gouth</Label>
+    </DropdownItem>
+    <DropdownItem class="rounded">
+      <Checkbox id="project-user-1" value=""/>
+      <Label for="project-user-1" class="ml-2">Bonnie Green</Label>
+    </DropdownItem>
+  </ul>
+  <DropdownDivider/>
+    <DropdownItem class="flex items-center text-base font-semibold gap-2 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 hover:underline" color="red">
+      <UserRemove class="w-5 h-5" />Delete user
+    </DropdownItem>
+  </svelte:fragment>
+</Dropdown>
+</ExampleDiv>
+
+```html
+<Dropdown label="Project users" class="w-48">
+  <svelte:fragment slot="content">
+  <div class="p-3 text-gray-700 dark:text-gray-200 dark:bg-gray-800">
+    <SimpleSearch btnClass="hidden"/>
+  </div>
+  <ul class="overflow-y-auto p-3 space-y-1 h-48 text-gray-700 dark:text-gray-200 dark:bg-gray-800">
+    <DropdownItem class="rounded">
+      <Checkbox id="project-user-1" value=""/>
+      <Label for="project-user-1" class="ml-2">Jese Leos</Label>
+    </DropdownItem>
+    <DropdownItem class="rounded">
+      <Checkbox id="project-user-1" value=""/>
+      <Label for="project-user-1" class="ml-2">Robert Gouth</Label>
+    </DropdownItem>
+    <DropdownItem class="rounded">
+      <Checkbox id="project-user-1" value=""/>
+      <Label for="project-user-1" class="ml-2">Bonnie Green</Label>
+    </DropdownItem>
+    <DropdownItem class="rounded">
+      <Checkbox id="project-user-1" value=""/>
+      <Label for="project-user-1" class="ml-2">Jese Leos</Label>
+    </DropdownItem>
+    <DropdownItem class="rounded">
+      <Checkbox id="project-user-1" value=""/>
+      <Label for="project-user-1" class="ml-2">Robert Gouth</Label>
+    </DropdownItem>
+    <DropdownItem class="rounded">
+      <Checkbox id="project-user-1" value=""/>
+      <Label for="project-user-1" class="ml-2">Bonnie Green</Label>
+    </DropdownItem>
+  </ul>
+  <DropdownDivider/>
+    <DropdownItem class="flex items-center text-base font-semibold gap-2 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 hover:underline" color="red">
+      <UserRemove class="w-5 h-5" />Delete user
+    </DropdownItem>
+  </svelte:fragment>
+</Dropdown>
+```
+
+<Htwo label="Menu icon" />
+
+Use the menu icon trigger element on components such as cards as an alternative element to the button.
+
+<ExampleDiv class="flex gap-2">
+<Dropdown class="w-44">
+  <CloseButton slot="trigger" class="text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+    <DotsHorizontal class="w-5 h-5"/>
+  </CloseButton>
+  <DropdownItem>Dashboard</DropdownItem>
+  <DropdownItem>Settings</DropdownItem>
+  <DropdownItem>Earnings</DropdownItem>
+  <DropdownDivider />
+  <DropdownItem>Sign out</DropdownItem>
+</Dropdown>
+<Dropdown class="w-44">
+  <CloseButton slot="trigger" class="text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+    <DotsVertical class="w-5 h-5"/>
+  </CloseButton>
+  <DropdownItem>Dashboard</DropdownItem>
+  <DropdownItem>Settings</DropdownItem>
+  <DropdownItem>Earnings</DropdownItem>
+  <DropdownDivider />
+  <DropdownItem>Sign out</DropdownItem>
+</Dropdown>
+</ExampleDiv>
+
+```html
+<Dropdown class="w-44">
+  <CloseButton slot="trigger" class="text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+    <DotsHorizontal class="w-5 h-5"/>
+  </CloseButton>
+  <DropdownItem>Dashboard</DropdownItem>
+  <DropdownItem>Settings</DropdownItem>
+  <DropdownItem>Earnings</DropdownItem>
+  <DropdownDivider />
+  <DropdownItem>Sign out</DropdownItem>
+</Dropdown>
+<Dropdown class="w-44">
+  <CloseButton slot="trigger" class="text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+    <DotsVertical class="w-5 h-5"/>
+  </CloseButton>
+  <DropdownItem>Dashboard</DropdownItem>
+  <DropdownItem>Settings</DropdownItem>
+  <DropdownItem>Earnings</DropdownItem>
+  <DropdownDivider />
+  <DropdownItem>Sign out</DropdownItem>
+</Dropdown>
+```
+
+<Htwo label="Notification bell" />
+
+Use this example to show a list of notifications inside your application by providing more detailed information such as the user avatar, content and time of notification triggered by a notification bell icon.
+
+<ExampleDiv class="flex justify-center">
+  <Dropdown class="w-full max-w-sm">
+    <div slot="trigger" class="inline-flex items-center text-sm font-medium text-center text-gray-500 hover:text-gray-900 focus:outline-none dark:hover:text-white dark:text-gray-400">
+      <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path></svg>
+      <div class="flex relative">
+        <div class="inline-flex relative -top-2 right-3 w-3 h-3 bg-red-500 rounded-full border-2 border-white dark:border-gray-900"></div>
+      </div>
+    </div>
+    <ul slot="content" class="rounded divide-y divide-gray-100 shadow dark:bg-gray-800 dark:divide-gray-700">
+      <DropdownHeader class="font-bold text-center"  divider={false}>Notifications</DropdownHeader>
+      <DropdownItem class="flex space-x-4 ">
+          <Avatar src="/images/profile-picture-1.webp" dot={{color:'bg-gray-300'}} rounded />
+          <div class="pl-3 w-full">
+              <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400">New message from <span class="font-semibold text-gray-900 dark:text-white">Jese Leos</span>: "Hey, what's up? All set for the presentation?"</div>
+              <div class="text-xs text-blue-600 dark:text-blue-500">a few moments ago</div>
+          </div>
+      </DropdownItem>
+      <DropdownItem class="flex space-x-4">
+          <Avatar src="/images/profile-picture-2.webp" dot={{color:'bg-red-400'}} rounded />
+          <div class="pl-3 w-full">
+              <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400"><span class="font-semibold text-gray-900 dark:text-white">Joseph Mcfall</span> and <span class="font-medium text-gray-900 dark:text-white">5 others</span> started following you.</div>
+              <div class="text-xs text-blue-600 dark:text-blue-500">10 minutes ago</div>
+          </div>
+      </DropdownItem>
+      <DropdownItem class="flex space-x-4">
+          <Avatar src="/images/profile-picture-3.webp" dot={{color:'bg-green-400'}} rounded />
+          <div class="pl-3 w-full">
+              <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400"><span class="font-semibold text-gray-900 dark:text-white">Bonnie Green</span> and <span class="font-medium text-gray-900 dark:text-white">141 others</span> love your story. See it and view more stories.</div>
+              <div class="text-xs text-blue-600 dark:text-blue-500">44 minutes ago</div>
+          </div>
+      </DropdownItem>
+    </ul>
+  </Dropdown>
+</ExampleDiv>
+
+```html
+<Dropdown class="w-full max-w-sm">
+  <div slot="trigger" class="inline-flex items-center text-sm font-medium text-center text-gray-500 hover:text-gray-900 focus:outline-none dark:hover:text-white dark:text-gray-400">
+    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path></svg>
+    <div class="flex relative">
+      <div class="inline-flex relative -top-2 right-3 w-3 h-3 bg-red-500 rounded-full border-2 border-white dark:border-gray-900"></div>
+    </div>
+  </div>
+  <ul slot="content" class="rounded divide-y divide-gray-100 shadow dark:bg-gray-800 dark:divide-gray-700">
+    <DropdownHeader class="font-bold text-center"  divider={false}>Notifications</DropdownHeader>
+    <DropdownItem class="flex space-x-4 ">
+        <Avatar src="/images/profile-picture-1.webp" dot={{color:'bg-gray-300'}} rounded />
+        <div class="pl-3 w-full">
+            <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400">New message from <span class="font-semibold text-gray-900 dark:text-white">Jese Leos</span>: "Hey, what's up? All set for the presentation?"</div>
+            <div class="text-xs text-blue-600 dark:text-blue-500">a few moments ago</div>
+        </div>
+    </DropdownItem>
+    <DropdownItem class="flex space-x-4">
+        <Avatar src="/images/profile-picture-2.webp" dot={{color:'bg-red-400'}} rounded />
+        <div class="pl-3 w-full">
+            <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400"><span class="font-semibold text-gray-900 dark:text-white">Joseph Mcfall</span> and <span class="font-medium text-gray-900 dark:text-white">5 others</span> started following you.</div>
+            <div class="text-xs text-blue-600 dark:text-blue-500">10 minutes ago</div>
+        </div>
+    </DropdownItem>
+    <DropdownItem class="flex space-x-4">
+        <Avatar src="/images/profile-picture-3.webp" dot={{color:'bg-green-400'}} rounded />
+        <div class="pl-3 w-full">
+            <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400"><span class="font-semibold text-gray-900 dark:text-white">Bonnie Green</span> and <span class="font-medium text-gray-900 dark:text-white">141 others</span> love your story. See it and view more stories.</div>
+            <div class="text-xs text-blue-600 dark:text-blue-500">44 minutes ago</div>
+        </div>
+    </DropdownItem>
+  </ul>
+</Dropdown>
+```
+
+<Htwo label="User avatar" />
+
+This example can be used to show a list of menu items and options when a user is logged into your application.
+
+<ExampleDiv>
+  <Dropdown>
+    <Avatar slot="trigger" src="/images/profile-picture-3.webp" dot={{color:'bg-green-400'}} />
+    <DropdownHeader>
+      <span class="block text-sm"> Bonnie Green </span>
+      <span class="block truncate text-sm font-medium"> name@flowbite.com </span>
+    </DropdownHeader>
+    <DropdownItem>Dashboard</DropdownItem>
+    <DropdownItem>Settings</DropdownItem>
+    <DropdownItem>Earnings</DropdownItem>
+    <DropdownDivider />
+    <DropdownItem>Sign out</DropdownItem>
+  </Dropdown>
+</ExampleDiv>
+
+```html
+<Dropdown>
+  <Avatar slot="trigger" src="/images/profile-picture-3.webp" dot={{color:'bg-green-400'}} />
+  <DropdownHeader>
+    <span class="block text-sm"> Bonnie Green </span>
+    <span class="block truncate text-sm font-medium"> name@flowbite.com </span>
+  </DropdownHeader>
+  <DropdownItem>Dashboard</DropdownItem>
+  <DropdownItem>Settings</DropdownItem>
+  <DropdownItem>Earnings</DropdownItem>
+  <DropdownDivider />
+  <DropdownItem>Sign out</DropdownItem>
+</Dropdown>
+```
+
+<Htwo label="Avatar with name" />
+
+Use this example to also show the name or email of the user next to the avatar for the dropdown menu.
+
+<ExampleDiv>
+  <Dropdown inline>
+    <svelte:fragment slot="label" >
+      <Avatar src="/images/profile-picture-3.webp" class="mr-2"/>
+      Bonnie Green
+    </svelte:fragment>
+    <DropdownHeader>
+      <span class="block text-sm"> Bonnie Green </span>
+      <span class="block truncate text-sm font-medium"> name@flowbite.com </span>
+    </DropdownHeader>
+    <DropdownItem>Dashboard</DropdownItem>
+    <DropdownItem>Settings</DropdownItem>
+    <DropdownItem>Earnings</DropdownItem>
+    <DropdownDivider />
+    <DropdownItem>Sign out</DropdownItem>
+  </Dropdown>
+</ExampleDiv>
+
+```html
+<Dropdown inline>
+  <svelte:fragment slot="label" >
+    <Avatar src="/images/profile-picture-3.webp" class="mr-2"/>
+    Bonnie Green
+  </svelte:fragment>
+  <DropdownHeader>
+    <span class="block text-sm"> Bonnie Green </span>
+    <span class="block truncate text-sm font-medium"> name@flowbite.com </span>
+  </DropdownHeader>
+  <DropdownItem>Dashboard</DropdownItem>
+  <DropdownItem>Settings</DropdownItem>
+  <DropdownItem>Earnings</DropdownItem>
+  <DropdownDivider />
+  <DropdownItem>Sign out</DropdownItem>
+</Dropdown>
 ```
 
 <Htwo label="Sizes" />

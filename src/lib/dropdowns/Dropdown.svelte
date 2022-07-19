@@ -23,39 +23,40 @@
 </script>
 
 <Tooltip
-	class={classNames('w-44 !rounded !p-0', $$props.class)}
+	class={classNames('!rounded !p-0', $$props.class)}
 	style="auto"
 	animation="duration-100"
 	{placement}
 	arrow={tooltipArrow}
 	trigger="click"
 >
-	{#if inline}
-		<button class={labelClass}>
-			<slot name="label">{label}</slot>
-			{#if arrowIcon}
-				<svelte:component this={icon ?? ChevronDown} class="ml-2 h-4 w-4" />
-			{/if}
-		</button>
-	{:else}
-		<Button
-			pill={$$props.pill}
-			outline={$$props.outline}
-			color={$$props.color}
-			size={$$props.size}
-			icon={$$props.icon}
-			gradientDuoTone={$$props.gradientDuoTone}
-			gradientMonochrome={$$props.gradientMonochrome}
-		>
-			<slot name="label">{label}</slot>
-			{#if arrowIcon}
-				<svelte:component this={icon ?? ChevronDown} class="ml-2 h-4 w-4" />
-			{/if}
-		</Button>
-	{/if}
-	<div slot="content">
+	<slot name="trigger">
+		{#if inline}
+			<button class={labelClass}>
+				<slot name="label">{label}</slot>
+				{#if arrowIcon}
+					<svelte:component this={icon ?? ChevronDown} class="ml-2 h-4 w-4" />
+				{/if}
+			</button>
+		{:else}
+			<Button
+				pill={$$props.pill}
+				outline={$$props.outline}
+				color={$$props.color}
+				size={$$props.size}
+				icon={$$props.icon}
+				gradient={$$props.gradient}
+			>
+				<slot name="label">{label}</slot>
+				{#if arrowIcon}
+					<svelte:component this={icon ?? ChevronDown} class="ml-2 h-4 w-4" />
+				{/if}
+			</Button>
+		{/if}
+	</slot>
+	<slot name="content" slot="content">
 		<ul class="py-1">
 			<slot />
 		</ul>
-	</div>
+	</slot>
 </Tooltip>
