@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.21.14](https://github.com/themesberg/flowbite-svelte/compare/v0.21.13...v0.21.14) (2022-07-19)
+
+
+### Features
+
+* update floating label component ([d04caf9](https://github.com/themesberg/flowbite-svelte/commit/d04caf981a0cbbed37a82df1899d4584908b9171))
+
+
+### Bug Fixes
+
+* multi-dropdown detach ([3ad1abb](https://github.com/themesberg/flowbite-svelte/commit/3ad1abb66e0fcb4ea53db8e0180e28b568e98aa6))
+
 ### [0.21.13](https://github.com/themesberg/flowbite-svelte/compare/v0.21.12...v0.21.13) (2022-07-19)
 
 ### [0.21.12](https://github.com/themesberg/flowbite-svelte/compare/v0.21.11...v0.21.12) (2022-07-19)
