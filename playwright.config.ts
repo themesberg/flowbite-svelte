@@ -4,7 +4,7 @@ const config: PlaywrightTestConfig = {
 	fullyParallel: true,
 	webServer: {
 		command: 'npm run build && npm run preview',
-		port: 3000
+		port: 4173
 	}
 };
 
