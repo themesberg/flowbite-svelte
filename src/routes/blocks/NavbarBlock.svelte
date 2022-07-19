@@ -42,7 +42,7 @@
 				style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"
 				><img
 					alt="Navbar"
-					src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+					src="/images/components/navbar-dark.svg"
 					decoding="async"
 					data-nimg="fill"
 					class="w-56"
