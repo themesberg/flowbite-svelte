@@ -1,22 +1,66 @@
 <script lang="ts">
+	import classNames from 'classnames';
+	import generateId from '$lib/utils/generateId.js';
 	import type { InputType } from '../types';
-	import generateId from '../utils/generateId.js';
 	export let id: string = generateId();
-	export let type: InputType;
+	export let style: 'filled' | 'outlined' | 'standard' = 'standard';
+	export let type: InputType = 'text';
+	// export let size: 'sm' | 'md' | 'lg' = 'md';
+	export let color: 'base' | 'green' | 'red' = 'base';
 	export let value: string = '';
 	export let label: string = '';
-	export let divClass: string = 'relative z-0 mb-6 w-full group';
-	export let inputClass: string =
-		'block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer';
-	export let labelClass: string =
-		'absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6';
 
+	export let divClass: string = 'relative';
+	const inputClasses = {
+		filled:
+			'block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 appearance-none dark:text-white focus:outline-none focus:ring-0 ',
+		outlined:
+			'block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 appearance-none dark:text-white  focus:outline-none focus:ring-0 peer',
+		standard:
+			'block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none dark:text-white  focus:outline-none focus:ring-0 peer'
+	};
+
+	const labelClasses = {
+		filled:
+			'absolute text-sm duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4',
+		outlined:
+			'absolute text-sm duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1',
+		standard:
+			'absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
+	};
+
+	const inputColorClasses = {
+		base: 'border-gray-300 dark:border-gray-600 dark:focus:border-blue-500 focus:border-blue-600',
+		green:
+			'border-green-600 dark:border-green-500 dark:focus:border-green-500 focus:border-green-600',
+		red: 'border-red-600 dark:border-red-500 dark:focus:border-red-500  focus:border-red-600'
+	};
+
+	const labelColorClasses = {
+		base: 'text-gray-500 dark:text-gray-400 peer-focus:text-blue-600 peer-focus:dark:text-blue-500',
+		green: 'text-green-600 dark:text-green-500',
+		red: 'text-red-600 dark:text-red-500'
+	};
+
+	export let ref: HTMLElement = null;
+
+	// you need to this to avoid 2-way binding
 	function setType(node) {
 		node.type = type;
 	}
 </script>
 
 <div class={divClass}>
-	<input {...$$restProps} bind:value use:setType class={inputClass} placeholder=" " />
-	<label for={id} class={labelClass}>{label}</label>
+	<input
+		{id}
+		{...$$restProps}
+		bind:value
+		bind:this={ref}
+		use:setType
+		class={classNames(inputClasses[style], inputColorClasses[color], $$props.class)}
+	/>
+
+	<label for={id} class={classNames(labelClasses[style], labelColorClasses[color], $$props.class)}>
+		{label}
+	</label>
 </div>
