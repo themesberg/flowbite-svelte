@@ -5,19 +5,54 @@
 	export let id: string = generateId();
 	export let style: 'filled' | 'outlined' | 'standard' = 'standard';
 	export let type: InputType = 'text';
-	// export let size: 'sm' | 'md' | 'lg' = 'md';
+	export let size: 'small' | 'default' = 'default';
 	export let color: 'base' | 'green' | 'red' = 'base';
 	export let value: string = '';
 	export let label: string = '';
 
-	export let divClass: string = 'relative';
+	const divClasses = {
+		filled: 'relative',
+		outlined: 'relative',
+		standard: 'relative z-0'
+	};
+
+	const inputSizes = {
+		filled: {
+			small: 'px-2.5 pb-1.5 pt-4',
+			default: 'px-2.5 pb-2.5 pt-5'
+		},
+		outlined: {
+			small: 'px-2.5 pb-1.5 pt-3',
+			default: 'px-2.5 pb-2.5 pt-4'
+		},
+		standard: {
+			small: 'py-2 px-0',
+			default: 'py-2.5 px-0'
+		}
+	};
+
+	const labelSizes = {
+		filled: {
+			small: 'top-3',
+			default: 'top-4'
+		},
+		outlined: {
+			small: 'top-1',
+			default: 'top-2'
+		},
+		standard: {
+			small: 'top-3',
+			default: 'top-3'
+		}
+	};
+
 	const inputClasses = {
 		filled:
-			'block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 appearance-none dark:text-white focus:outline-none focus:ring-0 ',
+			'block rounded-t-lg w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 appearance-none dark:text-white focus:outline-none focus:ring-0 peer',
 		outlined:
-			'block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 appearance-none dark:text-white  focus:outline-none focus:ring-0 peer',
+			'block w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 appearance-none dark:text-white  focus:outline-none focus:ring-0 peer',
 		standard:
-			'block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none dark:text-white  focus:outline-none focus:ring-0 peer'
+			'block w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none dark:text-white  focus:outline-none focus:ring-0 peer'
 	};
 
 	const labelClasses = {
@@ -50,17 +85,31 @@
 	}
 </script>
 
-<div class={divClass}>
+<div class={divClasses[style]}>
 	<input
 		{id}
 		{...$$restProps}
 		bind:value
 		bind:this={ref}
 		use:setType
-		class={classNames(inputClasses[style], inputColorClasses[color], $$props.class)}
+		placeholder=" "
+		class={classNames(
+			inputClasses[style],
+			inputColorClasses[color],
+			inputSizes[style][size],
+			$$props.class
+		)}
 	/>
 
-	<label for={id} class={classNames(labelClasses[style], labelColorClasses[color], $$props.class)}>
+	<label
+		for={id}
+		class={classNames(
+			labelClasses[style],
+			labelColorClasses[color],
+			labelSizes[style][size],
+			$$props.labelClass
+		)}
+	>
 		{label}
 	</label>
 </div>

@@ -8,10 +8,13 @@ layout: formLayout
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { onMount } from 'svelte';
-  import { FloatingLabelInput, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { FloatingLabelInput, Helper, Breadcrumb, BreadcrumbItem } from "$lib/index"
   import { Home } from 'svelte-heros'
   import componentProps from '../props/FloatingLabelInput.json'
+   import componentProps2 from '../props/Helper.json'
   let items = componentProps.props
+  let items2 = componentProps2.props
+  
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -23,43 +26,11 @@ layout: formLayout
   <BreadcrumbItem>Floating label</BreadcrumbItem>
 </Breadcrumb>
 
-
 <h1 class="text-3xl w-full dark:text-white py-8">Floating label Components</h1>
 
 <Htwo label="Examples" />
 
-<ExampleDiv>
-
-<div class="relative">
-    <input type="text" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" ">
-    <label for="floating_filled" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Floating filled</label>
-</div>
-<div class="relative">
-    <input type="text" id="floating_outlined" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" ">
-    <label for="floating_outlined" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Floating outlined</label>
-</div>
-<div class="relative z-0">
-    <input type="text" id="floating_standard" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" ">
-    <label for="floating_standard" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Floating standard</label>
-</div>
-</ExampleDiv>
-
-<ExampleDiv>
-<div id="exampleWrapper" class="grid gap-6 items-end w-full md:grid-cols-3">
-  <div class="relative">
-    <input type="text" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" ">
-    <label for="floating_filled" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">Floating filled</label>
-  </div>
-  <div class="relative">
-    <input type="text" id="floating_outlined" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" ">
-    <label for="floating_outlined" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Floating outlined</label>
-  </div>
-  <div class="relative z-0">
-    <input type="text" id="floating_standard" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" ">
-    <label for="floating_standard" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Floating standard</label>
-  </div>
-</div>
-</ExampleDiv>
+<p>Get started with the following three styles for the floating label component and use the label tag as a visual placeholder using the peer-placeholder-shown and peer-focus utility classes from Tailwind CSS.</p>
 
 <ExampleDiv>
 <div id="exampleWrapper" class="grid gap-6 items-end w-full md:grid-cols-3">
@@ -74,12 +45,143 @@ layout: formLayout
   import { FloatingLabelInput } from 'flowbite-svelte'
 </script>
 
-<form> 
-<FloatingLabelInput id="email" name="email" type="email" required label="Email"/>
-<FloatingLabelInput id="password" name="password" type="password" required label="Password" />
-<FloatingLabelInput id="confirmpassword" name="confirm_password" type="password" required label="Confirm password" />
-<FloatingLabelInput id="first_name" name="first_name" type="text" required label="First name" />
-</form>
+<FloatingLabelInput style="filled" id="floating_filled" name="floating_filled" type="text" label="Floating filled"/>
+<FloatingLabelInput style="outlined" id="floating_outlined" name="floating_outlined" type="text" label="Floating outlined" />
+<FloatingLabelInput id="floating_standard" name="floating_standard" type="text" label="Floating standard" />
+```
+
+<Htwo label="Disabled state" />
+
+<p>Apply the disabled attribute to the input fields to disallow the user from changing the content.</p>
+
+<ExampleDiv>
+<div id="exampleWrapper" class="grid gap-6 items-end w-full md:grid-cols-3">
+<FloatingLabelInput style="filled" id="disabled_filled" name="disabled_filled" type="text" label="Disabled filled" disabled/>
+<FloatingLabelInput style="outlined" id="disabled_outlined" name="disabled_outlined" type="text" label="Disabled outlined" disabled/>
+<FloatingLabelInput id="disabled_standard" name="disabled_standard" type="text" label="Disabled standard" disabled/>
+</div>
+</ExampleDiv>
+
+```html
+<div id="exampleWrapper" class="grid gap-6 items-end w-full md:grid-cols-3">
+<FloatingLabelInput style="filled" id="disabled_filled" name="disabled_filled" type="text" label="Disabled filled" disabled/>
+<FloatingLabelInput style="outlined" id="disabled_outlined" name="disabled_outlined" type="text" label="Disabled outlined" disabled/>
+<FloatingLabelInput id="disabled_standard" name="disabled_standard" type="text" label="Disabled standard" disabled/>
+</div>
+```
+
+<Htwo label="Validation" />
+
+<p>Use the following examples of input validation for the success and error messages by applying the validation text below the input field and using the green or red color classes from Tailwind CSS.</p>
+
+<ExampleDiv>
+<!-- Success messages -->
+<div class="grid gap-6 items-end mb-6 md:grid-cols-3">
+  <div>
+    <FloatingLabelInput color="green" style="filled" id="filled_success" aria-describedby="filled_success_help" name="filled_success" type="text" label="Filled success"/>
+    <Helper color="green"><span class="font-medium">Well done!</span> Some success message.</Helper>
+  </div>
+  <div>
+    <FloatingLabelInput color="green" style="outlined" id="outlined_success" aria-describedby="outlined_success_help" name="outlined_success" type="text" label="Outlined success"/>
+    <Helper color="green"><span class="font-medium">Well done!</span> Some success message.</Helper>
+  </div>
+  <div>
+    <FloatingLabelInput color="green" style="standard" id="standard_success" aria-describedby="standard_success_help" name="standard_success" type="text" label="Standard success"/>
+    <Helper color="green"><span class="font-medium">Well done!</span> Some success message.</Helper>
+  </div>
+</div>
+<!-- Error messages -->
+<div class="grid gap-6 items-end mb-6 md:grid-cols-3">
+  <div>
+    <FloatingLabelInput color="red" style="filled" id="filled_error" aria-describedby="filled_error_help" name="filled_error" type="text" label="Filled error"/>
+    <Helper color="red"><span class="font-medium">Oh, snapp!</span> Some error message.</Helper>
+  </div>
+  <div>
+    <FloatingLabelInput color="red" style="outlined" id="outlined_error" aria-describedby="outlined_error_help" name="outlined_success" type="text" label="Outlined error"/>
+    <Helper color="red"><span class="font-medium">Oh, snapp!</span> Some error message.</Helper>
+  </div>
+  <div>
+    <FloatingLabelInput color="red" style="standard" id="standard_error" aria-describedby="standard_error_help" name="standard_success" type="text" label="Standard error"/>
+    <Helper color="red"><span class="font-medium">Oh, snapp!</span> Some error message.</Helper>
+  </div>
+</div>
+</ExampleDiv>
+
+```html
+<!-- Success messages -->
+<div class="grid gap-6 items-end mb-6 md:grid-cols-3">
+  <div>
+    <FloatingLabelInput color="green" style="filled" id="filled_success" aria-describedby="filled_success_help" name="filled_success" type="text" label="Filled success"/>
+    <Helper color="green"><span class="font-medium">Well done!</span> Some success message.</Helper>
+  </div>
+  <div>
+    <FloatingLabelInput color="green" style="outlined" id="outlined_success" aria-describedby="outlined_success_help" name="outlined_success" type="text" label="Outlined success"/>
+    <Helper color="green"><span class="font-medium">Well done!</span> Some success message.</Helper>
+  </div>
+  <div>
+    <FloatingLabelInput color="green" style="standard" id="standard_success" aria-describedby="standard_success_help" name="standard_success" type="text" label="Standard success"/>
+    <Helper color="green"><span class="font-medium">Well done!</span> Some success message.</Helper>
+  </div>
+</div>
+<!-- Error messages -->
+<div class="grid gap-6 items-end mb-6 md:grid-cols-3">
+  <div>
+    <FloatingLabelInput color="red" style="filled" id="filled_error" aria-describedby="filled_error_help" name="filled_error" type="text" label="Filled error"/>
+    <Helper color="red"><span class="font-medium">Oh, snapp!</span> Some error message.</Helper>
+  </div>
+  <div>
+    <FloatingLabelInput color="red" style="outlined" id="outlined_error" aria-describedby="outlined_error_help" name="outlined_success" type="text" label="Outlined error"/>
+    <Helper color="red"><span class="font-medium">Oh, snapp!</span> Some error message.</Helper>
+  </div>
+  <div>
+    <FloatingLabelInput color="red" style="standard" id="standard_error" aria-describedby="standard_error_help" name="standard_success" type="text" label="Standard error"/>
+    <Helper color="red"><span class="font-medium">Oh, snapp!</span> Some error message.</Helper>
+  </div>
+</div>
+```
+
+<Htwo label="Sizes" />
+
+<p>Use the small and default sizes of the floating label input fields from the following example.</p>
+
+<ExampleDiv>
+<div class="grid gap-6 items-end mb-6 md:grid-cols-3">
+<FloatingLabelInput size="small" style="filled" id="small_filled" name="small_filled" type="text" label="Small filled"/>
+<FloatingLabelInput size="small" style="outlined" id="small_outlined" name="small_outlined" type="text" label="Small outlined" />
+<FloatingLabelInput size="small" id="small_standard" name="small_standard" type="text" label="Small standard" />
+</div>
+<div class="grid gap-6 items-end md:grid-cols-3">
+<FloatingLabelInput style="filled" id="default_filled" name="default_filled" type="text" label="Default filled"/>
+<FloatingLabelInput style="outlined" id="default_outlined" name="default_outlined" type="text" label="Default outlined" />
+<FloatingLabelInput id="default_standard" name="default_standard" type="text" label="Default standard" />
+</div>
+</ExampleDiv>
+
+```html
+<div class="grid gap-6 items-end mb-6 md:grid-cols-3">
+<FloatingLabelInput size="small" style="filled" id="small_filled" name="small_filled" type="text" label="Small filled"/>
+<FloatingLabelInput size="small" style="outlined" id="small_outlined" name="small_outlined" type="text" label="Small outlined" />
+<FloatingLabelInput size="small" id="small_standard" name="small_standard" type="text" label="Small standard" />
+</div>
+<div class="grid gap-6 items-end md:grid-cols-3">
+<FloatingLabelInput style="filled" id="default_filled" name="default_filled" type="text" label="Default filled"/>
+<FloatingLabelInput style="outlined" id="default_outlined" name="default_outlined" type="text" label="Default outlined" />
+<FloatingLabelInput id="default_standard" name="default_standard" type="text" label="Default standard" />
+</div>
+```
+
+<Htwo label="Helper text" />
+
+<p>Add a helper text in addition to the label if you want to show more information below the input field.</p>
+
+<ExampleDiv>
+<FloatingLabelInput style="filled" id="floating_helper" aria-describedby="floating_helper_text" name="floating_helper" type="text" label="Floating helper"/>
+<Helper>Remember, contributions to this topic should follow our <a href="/" class="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a>.</Helper>
+</ExampleDiv>
+
+```html
+<FloatingLabelInput style="filled" id="floating_helper" aria-describedby="floating_helper_text" name="floating_helper" type="text" label="Floating helper"/>
+<Helper>Remember, contributions to this topic should follow our <a href="/" class="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a>.</Helper>
 ```
 
 <Htwo label="Props" />
@@ -89,4 +191,10 @@ layout: formLayout
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
+</TableProp>
+
+<h3>Helper</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+<TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
