@@ -1,25 +1,48 @@
 <script lang="ts">
-	import classNames from 'classnames';
 	import type { FormColorType } from '../types';
-	export let inputClass: string =
-		'w-4 h-4 bg-gray-100 rounded border-gray-300 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 ';
-	export let checked: boolean = false;
-	export let color: FormColorType = 'blue';
+	import Radio from './Radio.svelte';
 
-	const colorClasses = {
-		red: 'text-red-600 focus:ring-red-500 dark:focus:ring-red-600',
-		green: 'text-green-600 focus:ring-green-500 dark:focus:ring-green-600',
-		purple: 'text-purple-600 focus:ring-purple-500 dark:focus:ring-purple-600',
-		teal: 'text-teal-600 focus:ring-teal-500 dark:focus:ring-teal-600',
-		yellow: 'text-yellow-400 focus:ring-yellow-500 dark:focus:ring-yellow-600',
-		orange: 'text-orange-500 focus:ring-orange-500 dark:focus:ring-orange-600',
-		blue: 'text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600'
-	};
+	export let group: string[] = [];
+	export let value: string = '';
+	export let checked: boolean = undefined;
+
+	$: {
+		// There's a bug in Svelte and bind:group is not working with wrapped checkbox
+		// This workaround is taken from:
+		// https://svelte.dev/repl/de117399559f4e7e9e14e2fc9ab243cc?version=3.12.1
+		const index = group.indexOf(value);
+
+		if (checked === undefined) checked = index >= 0;
+
+		if (checked) {
+			if (index < 0) {
+				group.push(value);
+				group = group;
+			}
+		} else {
+			if (index >= 0) {
+				group.splice(index, 1);
+				group = group;
+			}
+		}
+	}
+
+	let inputClass; // get the value from the underlying Radio
+
+	// properties forwarding
+	export let custom: boolean = false;
+	export let color: FormColorType = 'blue';
+	export let inline: boolean = false;
 </script>
 
-<input
-	{...$$restProps}
-	type="checkbox"
-	bind:checked
-	class={classNames(inputClass, colorClasses[color], $$props.class)}
-/>
+<Radio class={$$restProps.class} bind:inputClass {color} {custom} {inline}>
+	<input
+		slot="input"
+		type="checkbox"
+		bind:checked
+		{value}
+		{...$$restProps}
+		class="rounded {inputClass}"
+	/>
+	<slot />
+</Radio>
