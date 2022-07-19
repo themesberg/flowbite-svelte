@@ -42,7 +42,7 @@
 				style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"
 				><img
 					alt="KBD (Keyboard)"
-					src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+					src="/images/components/keyboard-dark.svg"
 					decoding="async"
 					data-nimg="fill"
 					class="w-40"
