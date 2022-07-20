@@ -7,6 +7,7 @@
 	export let color: FormColorType = 'blue';
 	export let custom: boolean = false;
 	export let inline: boolean = false;
+	export let tinted: boolean = false;
 
 	export let group: string[] = [];
 	export let value: string = '';
@@ -38,10 +39,9 @@
 	<input
 		type="checkbox"
 		bind:checked
-		bind:group
+		on:click
 		{value}
 		{...$$restProps}
-		class={inputClass(custom, color, true, $$slots.default || $$restProps.class)}
-	/>
-	<slot />
+		class={inputClass(custom, color, true, tinted, $$slots.default || $$restProps.class)}
+	/><slot />
 </Label>

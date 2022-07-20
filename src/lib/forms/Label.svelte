@@ -6,6 +6,8 @@
 
 	export let show: boolean = true; // helper for inheritance
 
+	let node: HTMLLabelElement;
+
 	const colorClasses = {
 		gray: 'text-gray-900 dark:text-gray-300',
 		green: 'text-green-700 dark:text-green-500',
@@ -13,15 +15,10 @@
 		disabled: 'text-gray-400 dark:text-gray-500'
 	};
 
-	function checkDisabled(node: HTMLLabelElement) {
-		const control: HTMLFormElement = node.control as HTMLFormElement;
+	// function checkDisabled(node: HTMLLabelElement) {
+	$: {
+		const control: HTMLInputElement = node?.control as HTMLInputElement;
 		color = control?.disabled ? 'disabled' : color;
-
-		return {
-			update() {
-				color = control?.disabled ? 'disabled' : color;
-			}
-		};
 	}
 
 	let labelClass;
@@ -30,9 +27,7 @@
 
 {#if show}
 	<!-- svelte-ignore a11y-label-has-associated-control -->
-	<label {...$$restProps} class={labelClass} use:checkDisabled>
-		<slot />
-	</label>
+	<label bind:this={node} {...$$restProps} class={labelClass}><slot /></label>
 {:else}
 	<slot />
 {/if}

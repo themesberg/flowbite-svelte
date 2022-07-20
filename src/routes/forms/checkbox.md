@@ -8,6 +8,7 @@ layout: formLayout
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { Checkbox, Breadcrumb, BreadcrumbItem, Label, Helper } from "$lib/index"
+  import { Table, TableBody, TableBodyRow, TableBodyCell, TableHead, TableHeadCell } from "$lib/index"
   import { Home } from 'svelte-heros'
   import componentProps from '../props/Radio.json'
   import componentProps2 from '../props/Label.json'
@@ -59,6 +60,56 @@ The checkbox component can be used to receive one or more selected options from 
 ```html
 <Checkbox disabled class="mb-4">Disabled checkbox</Checkbox>
 <Checkbox disabled checked>Disabled checkbox</Checkbox>
+```
+
+<Htwo label="Alternative syntax" />
+
+If you need separate control over the label and the checkbox you can use the verbose syntax, but then you need to take care about aligning manually.
+
+<ExampleDiv>
+  <Table>
+  <TableHead>
+    <TableHeadCell>Left column</TableHeadCell>
+    <TableHeadCell>Right column</TableHeadCell>
+  </TableHead>
+  <TableBody class="divide-y dark:divide-gray-700">
+    <TableBodyRow class="divide-x dark:divide-gray-700">
+      <TableBodyCell><Label for="checkbox1">Default checkbox</Label></TableBodyCell>
+      <TableBodyCell><Label for="checkbox2">Disabled checkbox</Label></TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow class="divide-x dark:divide-gray-700">
+      <TableBodyCell><Checkbox id="checkbox1" /></TableBodyCell>
+      <TableBodyCell><Checkbox id="checkbox2" disabled/></TableBodyCell>
+    </TableBodyRow>
+  </TableBody>
+  </Table>
+
+  <Label color='red' class="mt-4 flex items-center font-bold italic">
+    Label on the other side <Checkbox class="ml-2"/>
+  </Label>
+</ExampleDiv>
+
+```html
+  <Table>
+    <TableHead>
+      <TableHeadCell>Left column</TableHeadCell>
+      <TableHeadCell>Right column</TableHeadCell>
+    </TableHead>
+    <TableBody class="divide-y">
+      <TableBodyRow class="divide-x dark:divide-gray-700">
+        <TableBodyCell><Label for="checkbox1">Default checkbox</Label></TableBodyCell>
+        <TableBodyCell><Label for="checkbox2">Disabled checkbox</Label></TableBodyCell>
+      </TableBodyRow>
+      <TableBodyRow class="divide-x dark:divide-gray-700">
+        <TableBodyCell><Checkbox id="checkbox1" /></TableBodyCell>
+        <TableBodyCell><Checkbox id="checkbox2" disabled/></TableBodyCell>
+      </TableBodyRow>
+    </TableBody>
+  </Table>
+
+  <Label color='red' class="mt-4 flex items-center font-bold italic">
+    Label on the other side <Checkbox class="ml-2"/>
+  </Label>
 ```
 
 <Htwo label="Checkbox with a link" />
