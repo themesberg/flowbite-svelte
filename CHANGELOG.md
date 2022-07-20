@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.22.0](https://github.com/themesberg/flowbite-svelte/compare/v0.21.17...v0.22.0) (2022-07-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* update dependencies and vite. script dev, build preview and test work
+
+### Features
+
+* update dependencies and vite. script dev, build preview and test work ([bf1b837](https://github.com/themesberg/flowbite-svelte/commit/bf1b83788d7f3ec53c2d5e5c85a825606cbce38f))
+
+
+### Bug Fixes
+
+* update all dependencies ([d7ae979](https://github.com/themesberg/flowbite-svelte/commit/d7ae979973ba092f36236fe877b98314a0328a42))
+* update package.json ([a77e3e5](https://github.com/themesberg/flowbite-svelte/commit/a77e3e57f58ac95dda547cc9a410a2aaa4559fe8))
+
 ### [0.21.17](https://github.com/themesberg/flowbite-svelte/compare/v0.21.16...v0.21.17) (2022-07-20)
 
 
