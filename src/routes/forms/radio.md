@@ -59,7 +59,7 @@ Apply the `disabled` attribute to the radio component to disallow the selection 
 
 <ExampleDiv>
 <Radio name="disabled-state" disabled class="mb-4">Disabled radio</Radio>
-<Radio name="disabled-state" disabled checked >Disabled radio</Radio>
+<Radio name="disabled-state" disabled checked >Disabled checked</Radio>
 </ExampleDiv>
 
 ```html
