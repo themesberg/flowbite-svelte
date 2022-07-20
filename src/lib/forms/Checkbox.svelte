@@ -33,9 +33,10 @@
 	export let custom: boolean = false;
 	export let color: FormColorType = 'blue';
 	export let inline: boolean = false;
+	export let tinted: boolean = false;
 </script>
 
-<Radio class={$$restProps.class} bind:inputClass {color} {custom} {inline}>
+<Radio class={$$restProps.class} bind:inputClass {color} {custom} {inline} {tinted}>
 	<input
 		slot="input"
 		type="checkbox"
