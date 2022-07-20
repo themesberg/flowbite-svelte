@@ -581,41 +581,34 @@ This example can be used when you want to show a long list of items that won’t
 Use this example if you want to add a search bar inside the dropdown menu to be able to filter through a long list of menu items with scrolling behaviour.
 
 <ExampleDiv class="flex justify-center h-96">
-<Dropdown label="Project users" class="w-48">
+<Dropdown label="Project users" class="w-64">
   <svelte:fragment slot="content">
   <div class="p-3 text-gray-700 dark:text-gray-200 dark:bg-gray-800">
     <SimpleSearch btnClass="hidden"/>
   </div>
-  <ul class="overflow-y-auto p-3 space-y-1 h-48 text-gray-700 dark:text-gray-200 dark:bg-gray-800">
-    <DropdownItem class="rounded">
-      <Checkbox id="project-user-1" value=""/>
-      <Label for="project-user-1" class="ml-2">Jese Leos</Label>
+  <ul class="overflow-y-auto p-3 space-y-1 h-48">
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Checkbox tinted>Jese Leos</Checkbox>
     </DropdownItem>
-    <DropdownItem class="rounded">
-      <Checkbox id="project-user-1" value=""/>
-      <Label for="project-user-1" class="ml-2">Robert Gouth</Label>
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Checkbox tinted>Robert Gouth</Checkbox>
     </DropdownItem>
-    <DropdownItem class="rounded">
-      <Checkbox id="project-user-1" value=""/>
-      <Label for="project-user-1" class="ml-2">Bonnie Green</Label>
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Checkbox tinted checked>Bonnie Green</Checkbox>
     </DropdownItem>
-    <DropdownItem class="rounded">
-      <Checkbox id="project-user-1" value=""/>
-      <Label for="project-user-1" class="ml-2">Jese Leos</Label>
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Checkbox tinted>Jese Leos</Checkbox>
     </DropdownItem>
-    <DropdownItem class="rounded">
-      <Checkbox id="project-user-1" value=""/>
-      <Label for="project-user-1" class="ml-2">Robert Gouth</Label>
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Checkbox tinted>Robert Gouth</Checkbox>
     </DropdownItem>
-    <DropdownItem class="rounded">
-      <Checkbox id="project-user-1" value=""/>
-      <Label for="project-user-1" class="ml-2">Bonnie Green</Label>
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Checkbox tinted>Bonnie Green</Checkbox>
     </DropdownItem>
   </ul>
-  <DropdownDivider/>
-    <DropdownItem class="flex items-center text-base font-semibold gap-2 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 hover:underline" color="red">
-      <UserRemove class="w-5 h-5" />Delete user
-    </DropdownItem>
+  <DropdownItem class="flex items-center text-base font-semibold gap-2 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 hover:underline" color="red">
+    <UserRemove class="w-5 h-5" />Delete user
+  </DropdownItem>
   </svelte:fragment>
 </Dropdown>
 </ExampleDiv>
@@ -626,30 +619,24 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
   <div class="p-3 text-gray-700 dark:text-gray-200 dark:bg-gray-800">
     <SimpleSearch btnClass="hidden"/>
   </div>
-  <ul class="overflow-y-auto p-3 space-y-1 h-48 text-gray-700 dark:text-gray-200 dark:bg-gray-800">
-    <DropdownItem class="rounded">
-      <Checkbox id="project-user-1" value=""/>
-      <Label for="project-user-1" class="ml-2">Jese Leos</Label>
+  <ul class="overflow-y-auto p-3 space-y-1 h-48">
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Checkbox tinted>Jese Leos</Checkbox>
     </DropdownItem>
-    <DropdownItem class="rounded">
-      <Checkbox id="project-user-1" value=""/>
-      <Label for="project-user-1" class="ml-2">Robert Gouth</Label>
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Checkbox tinted>Robert Gouth</Checkbox>
     </DropdownItem>
-    <DropdownItem class="rounded">
-      <Checkbox id="project-user-1" value=""/>
-      <Label for="project-user-1" class="ml-2">Bonnie Green</Label>
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Checkbox tinted checked>Bonnie Green</Checkbox>
     </DropdownItem>
-    <DropdownItem class="rounded">
-      <Checkbox id="project-user-1" value=""/>
-      <Label for="project-user-1" class="ml-2">Jese Leos</Label>
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Checkbox tinted>Jese Leos</Checkbox>
     </DropdownItem>
-    <DropdownItem class="rounded">
-      <Checkbox id="project-user-1" value=""/>
-      <Label for="project-user-1" class="ml-2">Robert Gouth</Label>
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Checkbox tinted>Robert Gouth</Checkbox>
     </DropdownItem>
-    <DropdownItem class="rounded">
-      <Checkbox id="project-user-1" value=""/>
-      <Label for="project-user-1" class="ml-2">Bonnie Green</Label>
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Checkbox tinted>Bonnie Green</Checkbox>
     </DropdownItem>
   </ul>
   <DropdownDivider/>
