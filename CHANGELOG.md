@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.21.16](https://github.com/themesberg/flowbite-svelte/compare/v0.21.14...v0.21.16) (2022-07-20)
+
+
+### Bug Fixes
+
+* dropdown search ([4416a31](https://github.com/themesberg/flowbite-svelte/commit/4416a312756331f6dd04b1d5fe5dd61b764fd38d))
+* padding issues with dropdown ([6a48d4d](https://github.com/themesberg/flowbite-svelte/commit/6a48d4dc6a262fc62aa2d9b4c6233bf1cee4b741))
+* padding issues with dropdown ([8e8c2d4](https://github.com/themesberg/flowbite-svelte/commit/8e8c2d4bed3e85e95c28e936c513489e6d975e8f))
+
 ### [0.21.15](https://github.com/themesberg/flowbite-svelte/compare/v0.21.14...v0.21.15) (2022-07-20)
 
 
