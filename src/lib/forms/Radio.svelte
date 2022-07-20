@@ -63,7 +63,7 @@
 <!-- svelte-ignore a11y-label-has-associated-control -->
 <label class={labelClass}>
 	<slot name="input">
-		<input type="radio" bind:group {value} {...$$restProps} class={inputClass} />
+		<input on:click type="radio" bind:group {value} {...$$restProps} class={inputClass} />
 	</slot>
 	<slot />
 </label>

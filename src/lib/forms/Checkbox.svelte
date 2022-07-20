@@ -36,7 +36,7 @@
 	export let tinted: boolean = false;
 </script>
 
-<Radio class={$$restProps.class} bind:inputClass {color} {custom} {inline} {tinted}>
+<Radio on:click class={$$restProps.class} bind:inputClass {color} {custom} {inline} {tinted}>
 	<input
 		slot="input"
 		type="checkbox"
