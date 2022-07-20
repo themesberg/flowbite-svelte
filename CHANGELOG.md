@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.21.17](https://github.com/themesberg/flowbite-svelte/compare/v0.21.16...v0.21.17) (2022-07-20)
+
+
+### Bug Fixes
+
+* Checkbox on:click position ([cfb1c65](https://github.com/themesberg/flowbite-svelte/commit/cfb1c658ae971bb689cd4e01f797ccc5c11db991))
+* on:click for Toggle, Checkbox and Radio ([48710b5](https://github.com/themesberg/flowbite-svelte/commit/48710b59c9a9096ec95dfa26d1764a312552b49e))
+
 ### [0.21.16](https://github.com/themesberg/flowbite-svelte/compare/v0.21.14...v0.21.16) (2022-07-20)
 
 
