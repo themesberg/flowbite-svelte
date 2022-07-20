@@ -18,13 +18,15 @@
 	export let color: FormColorType = 'blue';
 	export let custom: boolean = false;
 	export let inline: boolean = false;
+	export let tinted: boolean = false;
 
 	export let group: number | string = '';
 	export let value: string = '';
 
 	export let inputClass: string;
 	$: inputClass = classNames(
-		'w-4 h-4 bg-gray-100 border-gray-300 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 mr-2',
+		'w-4 h-4 bg-gray-100 border-gray-300 dark:ring-offset-gray-800 focus:ring-2 mr-2',
+		tinted ? 'dark:bg-gray-600 dark:border-gray-500' : 'dark:bg-gray-700 dark:border-gray-600',
 		custom && 'sr-only peer',
 		colorClasses[color]
 	);
