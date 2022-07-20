@@ -1,6 +1,13 @@
 <script lang="ts">
 	import type { FormColorType } from '../types';
-	import Radio from './Radio.svelte';
+	import Radio, { labelClass, inputClass } from './Radio.svelte';
+	import Label from './Label.svelte';
+
+	// properties forwarding
+	export let color: FormColorType = 'blue';
+	export let custom: boolean = false;
+	export let inline: boolean = false;
+	export let tinted: boolean = false;
 
 	export let group: string[] = [];
 	export let value: string = '';
@@ -26,25 +33,15 @@
 			}
 		}
 	}
-
-	let inputClass; // get the value from the underlying Radio
-
-	// properties forwarding
-	export let custom: boolean = false;
-	export let color: FormColorType = 'blue';
-	export let inline: boolean = false;
-	export let tinted: boolean = false;
 </script>
 
-<Radio class={$$restProps.class} bind:inputClass {color} {custom} {inline} {tinted}>
+<Label class={labelClass(inline, $$restProps.class)} show={!!$$slots.default}>
 	<input
-		on:click
-		slot="input"
 		type="checkbox"
 		bind:checked
+		on:click
 		{value}
 		{...$$restProps}
-		class="rounded {inputClass}"
-	/>
-	<slot />
-</Radio>
+		class={inputClass(custom, color, true, tinted, $$slots.default || $$restProps.class)}
+	/><slot />
+</Label>

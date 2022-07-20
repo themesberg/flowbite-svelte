@@ -24,7 +24,7 @@
 	};
 </script>
 
-<Checkbox on:click custom class="relative {$$restProps.class}" {...$$restProps}>
+<Checkbox custom class="relative {$$restProps.class}" {...$$restProps} on:click>
 	<div class={classNames(common, colors[$$restProps.color ?? 'blue'], sizes[size])} />
 	<slot />
 </Checkbox>

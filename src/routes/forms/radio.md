@@ -7,7 +7,8 @@ layout: formLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Radio, Breadcrumb, BreadcrumbItem, Helper } from "$lib/index"
+  import { Radio, Breadcrumb, BreadcrumbItem, Label, Helper } from "$lib/index"
+  import { Table, TableBody, TableBodyRow, TableBodyCell, TableHead, TableHeadCell } from "$lib/index"
   import { Home } from 'svelte-heros'
   import componentProps from '../props/Radio.json'
   import componentProps2 from '../props/Label.json'
@@ -58,12 +59,63 @@ Apply the `disabled` attribute to the radio component to disallow the selection 
 
 <ExampleDiv>
 <Radio name="disabled-state" disabled class="mb-4">Disabled radio</Radio>
-<Radio name="disabled-state" disabled checked >Disabled radio</Radio>
+<Radio name="disabled-state" disabled checked >Disabled checked</Radio>
 </ExampleDiv>
 
 ```html
 <Radio name="disabled-state" disabled class="mb-4">Disabled radio</Radio>
 <Radio name="disabled-state" disabled checked>Disabled radio</Radio>
+```
+
+
+<Htwo label="Alternative syntax" />
+
+If you need separate control over the label and the radio you can use the verbose syntax, but then you need to take care about aligning manually.
+
+<ExampleDiv>
+  <Table>
+  <TableHead>
+    <TableHeadCell>Left column</TableHeadCell>
+    <TableHeadCell>Right column</TableHeadCell>
+  </TableHead>
+  <TableBody class="divide-y dark:divide-gray-700">
+    <TableBodyRow class="divide-x dark:divide-gray-700">
+      <TableBodyCell><Label for="radio1">Default radio</Label></TableBodyCell>
+      <TableBodyCell><Label for="radio2">Disabled radio</Label></TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow class="divide-x dark:divide-gray-700">
+      <TableBodyCell><Radio name="separate" id="radio1" /></TableBodyCell>
+      <TableBodyCell><Radio name="separate" id="radio2" disabled/></TableBodyCell>
+    </TableBodyRow>
+  </TableBody>
+  </Table>
+
+  <Label color='red' class="mt-4 flex items-center font-bold italic">
+    Label on the other side <Radio name="separate" class="ml-2"/>
+  </Label>
+</ExampleDiv>
+
+```html
+  <Table>
+    <TableHead>
+      <TableHeadCell>Left column</TableHeadCell>
+      <TableHeadCell>Right column</TableHeadCell>
+    </TableHead>
+    <TableBody class="divide-y">
+      <TableBodyRow class="divide-x dark:divide-gray-700">
+        <TableBodyCell><Label for="radio1">Default radio</Label></TableBodyCell>
+        <TableBodyCell><Label for="radio2">Disabled radio</Label></TableBodyCell>
+      </TableBodyRow>
+      <TableBodyRow class="divide-x dark:divide-gray-700">
+        <TableBodyCell><Radio name="separate" id="radio1" /></TableBodyCell>
+        <TableBodyCell><Radio name="separate" id="radio2" disabled/></TableBodyCell>
+      </TableBodyRow>
+    </TableBody>
+  </Table>
+
+  <Label color='red' class="mt-4 flex items-center font-bold italic">
+    Label on the other side <Checkbox class="ml-2"/>
+  </Label>
 ```
 
 <Htwo label="Radio with a link" />

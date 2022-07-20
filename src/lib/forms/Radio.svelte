@@ -1,53 +1,6 @@
-<script lang="ts">
-	/* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Label
-
-	To associate the <label> with an <input> element, you need to give the <input> an id attribute.
-	The <label> then needs a for attribute	whose value is the same as the input's id.
-
-	Alternatively, you can nest the <input> directly inside the <label>, in which case the for and
-	id attributes are not needed because the association is implicit:
-
-	<label>Do you like peas?
-	<input type="checkbox" name="peas">
-	</label>
-
-	 */
+<script context="module">
+	// this part is shared between Radio and Checkbox
 	import classNames from 'classnames';
-	import type { FormColorType } from '../types';
-
-	export let color: FormColorType = 'blue';
-	export let custom: boolean = false;
-	export let inline: boolean = false;
-	export let tinted: boolean = false;
-
-	export let group: number | string = '';
-	export let value: string = '';
-
-	export let inputClass: string;
-	$: inputClass = classNames(
-		'w-4 h-4 bg-gray-100 border-gray-300 dark:ring-offset-gray-800 focus:ring-2 mr-2',
-		tinted ? 'dark:bg-gray-600 dark:border-gray-500' : 'dark:bg-gray-700 dark:border-gray-600',
-		custom && 'sr-only peer',
-		colorClasses[color]
-	);
-
-	let colorLabel: 'gray' | 'green' | 'red' | 'disabled' = 'gray';
-	$: colorLabel = $$restProps.disabled ? 'disabled' : colorLabel;
-
-	let labelClass;
-	$: labelClass = classNames(
-		inline ? 'inline-flex' : 'flex',
-		'items-center text-sm font-medium',
-		colorClassesLabel[colorLabel],
-		$$restProps.class
-	);
-
-	const colorClassesLabel = {
-		gray: 'text-gray-900 dark:text-gray-300',
-		green: 'text-green-700 dark:text-green-500',
-		red: 'text-red-700 dark:text-red-500',
-		disabled: 'text-gray-400 dark:text-gray-500'
-	};
 
 	const colorClasses = {
 		red: 'text-red-600 focus:ring-red-500 dark:focus:ring-red-600',
@@ -58,12 +11,41 @@
 		orange: 'text-orange-500 focus:ring-orange-500 dark:focus:ring-orange-600',
 		blue: 'text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600'
 	};
+
+	export const labelClass = (inline, extraClass) =>
+		classNames(inline ? 'inline-flex' : 'flex', 'items-center', extraClass);
+
+	export const inputClass = (custom, color, rounded, tinted, extraClass) =>
+		classNames(
+			'w-4 h-4 bg-gray-100 border-gray-300 dark:ring-offset-gray-800 focus:ring-2 mr-2',
+			tinted ? 'dark:bg-gray-600 dark:border-gray-500' : 'dark:bg-gray-700 dark:border-gray-600',
+			custom && 'sr-only peer',
+			rounded && 'rounded',
+			colorClasses[color],
+			extraClass
+		);
 </script>
 
-<!-- svelte-ignore a11y-label-has-associated-control -->
-<label class={labelClass}>
-	<slot name="input">
-		<input on:click type="radio" bind:group {value} {...$$restProps} class={inputClass} />
-	</slot>
-	<slot />
-</label>
+<script lang="ts">
+	import type { FormColorType } from '../types';
+	import Label from './Label.svelte';
+
+	export let color: FormColorType = 'blue';
+	export let custom: boolean = false;
+	export let inline: boolean = false;
+	export let tinted: boolean = false;
+
+	export let group: number | string = '';
+	export let value: string = '';
+</script>
+
+<Label class={labelClass(inline, $$restProps.class)} show={!!$$slots.default}>
+	<input
+		type="radio"
+		bind:group
+		on:click
+		{value}
+		{...$$restProps}
+		class={inputClass(custom, color, false, tinted, $$slots.default || $$restProps.class)}
+	/><slot />
+</Label>
