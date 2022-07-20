@@ -449,7 +449,7 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 		<NavHamburger on:click={toggle} />
 		<NavUl {hidden}>
 			<NavLi href="/" active={true}>Home</NavLi>
-      <Dropdown label="Dropdown" placement="bottom-start" inline={true}>
+      <Dropdown label="Dropdown" placement="bottom-start" inline={true} open={true}>
         <DropdownItem>Dashboard</DropdownItem>
         <DropdownItem>Settings</DropdownItem>
         <DropdownItem>Earnings</DropdownItem>
