@@ -912,20 +912,38 @@ Use this example to also show the name or email of the user next to the avatar f
 </Dropdown>
 ```
 
+<Htwo label="Double placement"/>
+
 <ExampleDiv class="flex justify-center flex items-center gap-2">
-<Dropdown label="Dropdown right start" placement="right-start">
-  <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem>Settings</DropdownItem>
-  <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem>Sign out</DropdownItem>
-</Dropdown>
 <Dropdown label="Dropdown left start" placement="left-start">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
   <DropdownItem>Sign out</DropdownItem>
 </Dropdown>
+<Dropdown label="Dropdown right start" placement="right-start">
+  <DropdownItem>Dashboard</DropdownItem>
+  <DropdownItem>Settings</DropdownItem>
+  <DropdownItem>Earnings</DropdownItem>
+  <DropdownItem>Sign out</DropdownItem>
+</Dropdown>
 </ExampleDiv>
+
+```html
+<Dropdown label="Dropdown left start" placement="left-start">
+  <DropdownItem>Dashboard</DropdownItem>
+  <DropdownItem>Settings</DropdownItem>
+  <DropdownItem>Earnings</DropdownItem>
+  <DropdownItem>Sign out</DropdownItem>
+</Dropdown>
+<Dropdown label="Dropdown right start" placement="right-start">
+  <DropdownItem>Dashboard</DropdownItem>
+  <DropdownItem>Settings</DropdownItem>
+  <DropdownItem>Earnings</DropdownItem>
+  <DropdownItem>Sign out</DropdownItem>
+</Dropdown>
+```
+
 <Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
