@@ -145,11 +145,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <p>Use the `labelInside` prop to add the progress in a progress bar.</p>
 
 <ExampleDiv>
-<Progressbar progress="50" labelInside />
+<Progressbar progress="50" size="h-4" labelInside />
 </ExampleDiv>
 
 ```html
-<Progressbar progress="50" labelInside />
+<Progressbar progress="50" size="h-4" labelInside />
 ```
 
 <Htwo label="Label outside" />
