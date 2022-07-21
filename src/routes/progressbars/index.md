@@ -44,6 +44,18 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </script>
 ```
 
+<Htwo label="Default progress bar" />
+
+<p>Use the following example of a progress bar element to show a completion rate of 45% by using an inline style and the utility classes from Tailwind CSS.</p>
+
+<ExampleDiv>
+<Progressbar progress="50" />
+</ExampleDiv>
+
+```html
+<Progressbar progress="50" />
+```
+
 <Htwo label="Sizes" />
 
 <p>Use the `size` prop to change the size of a progress bar.</p>
@@ -80,6 +92,30 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Progressbar progress="50" size="h-6" />
 
+```
+
+<Htwo label="With label inside" />
+
+<p>Use the `labelInside` prop to add the progress in a progress bar.</p>
+
+<ExampleDiv>
+<Progressbar progress="50" size="h-4" labelInside />
+</ExampleDiv>
+
+```html
+<Progressbar progress="50" size="h-4" labelInside />
+```
+
+<Htwo label="With label outside" />
+
+<p>Use the `labelOutside` prop to add the progress outside of a progress bar.</p>
+
+<ExampleDiv>
+<Progressbar progress="50" labelOutside="Flowbite-Svelte" />
+</ExampleDiv>
+
+```html
+<Progressbar progress="50" labelOutside="Flowbite-Svelte" />
 ```
 
 <Htwo label="Colors" />
@@ -138,30 +174,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <Progressbar progress="50" color="indigo" />
 
 <Progressbar progress="50" color="purple" />
-```
-
-<Htwo label="Label inside" />
-
-<p>Use the `labelInside` prop to add the progress in a progress bar.</p>
-
-<ExampleDiv>
-<Progressbar progress="50" labelInside />
-</ExampleDiv>
-
-```html
-<Progressbar progress="50" labelInside />
-```
-
-<Htwo label="Label outside" />
-
-<p>Use the `labelOutside` prop to add the progress outside of a progress bar.</p>
-
-<ExampleDiv>
-<Progressbar progress="50" labelOutside="Flowbite-Svelte" />
-</ExampleDiv>
-
-```html
-<Progressbar progress="50" labelOutside="Flowbite-Svelte" />
 ```
 
 <Htwo label="Props" />
