@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.22.4](https://github.com/themesberg/flowbite-svelte/compare/v0.22.3...v0.22.4) (2022-07-21)
+
+
+### Bug Fixes
+
+* [#165](https://github.com/themesberg/flowbite-svelte/issues/165) toggle bind:group bind:checked ([3ca4010](https://github.com/themesberg/flowbite-svelte/commit/3ca40109f13e31afa76e02c96d387ff476880e52))
+* change from # to / for href ([b79fd81](https://github.com/themesberg/flowbite-svelte/commit/b79fd8112d2fb15657058dd0184b113228d8a6aa))
+
 ### [0.22.3](https://github.com/themesberg/flowbite-svelte/compare/v0.22.2...v0.22.3) (2022-07-21)
 
 
