@@ -4,6 +4,7 @@
 	import classNames from 'classnames';
 	import { ChevronUp, ChevronRight, ChevronDown, ChevronLeft } from 'svelte-heros';
 	import type { Placement } from '@floating-ui/dom';
+
 	export let label: string = '';
 	export let inline: boolean = false;
 	export let tooltipArrow: boolean = false;
@@ -39,14 +40,7 @@
 				{/if}
 			</button>
 		{:else}
-			<Button
-				pill={$$props.pill}
-				outline={$$props.outline}
-				color={$$props.color}
-				size={$$props.size}
-				icon={$$props.icon}
-				gradient={$$props.gradient}
-			>
+			<Button {...$$restProps}>
 				<slot name="label">{label}</slot>
 				{#if arrowIcon}
 					<svelte:component this={icon ?? ChevronDown} class="ml-2 h-4 w-4" />

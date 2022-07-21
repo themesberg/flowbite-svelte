@@ -1,9 +1,9 @@
 <script lang="ts">
 	import classNames from 'classnames';
 	import Checkbox from './Checkbox.svelte';
-
 	export let size: 'small' | 'default' | 'large' = 'default';
-	export let value: string | number = '';
+	export let value: string = '';
+
 	const common =
 		"mr-3 bg-gray-200 rounded-full peer-focus:ring-4 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:bg-white after:border-gray-300 after:border after:rounded-full after:transition-all dark:border-gray-600";
 

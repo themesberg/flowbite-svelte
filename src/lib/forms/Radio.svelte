@@ -39,13 +39,13 @@
 	export let value: string = '';
 </script>
 
-<Label class={labelClass(inline, $$restProps.class)} show={!!$$slots.default}>
+<Label class={labelClass(inline, $$props.class)} show={!!$$slots.default}>
 	<input
 		type="radio"
 		bind:group
 		on:click
 		{value}
 		{...$$restProps}
-		class={inputClass(custom, color, false, tinted, $$slots.default || $$restProps.class)}
+		class={inputClass(custom, color, false, tinted, $$slots.default || $$props.class)}
 	/><slot />
 </Label>
