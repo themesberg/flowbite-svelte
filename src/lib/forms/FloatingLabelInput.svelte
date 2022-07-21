@@ -90,6 +90,8 @@
 		{id}
 		{...$$restProps}
 		bind:value
+		on:change
+		on:blur
 		bind:this={ref}
 		use:setType
 		placeholder=" "
