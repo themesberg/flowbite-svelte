@@ -33,17 +33,23 @@
 >
 	<slot name="trigger">
 		{#if inline}
-			<button class={labelClass}>
+			<button class={labelClass} class:flex-row-reverse={icon == ChevronLeft}>
 				<slot name="label">{label}</slot>
 				{#if arrowIcon}
-					<svelte:component this={icon ?? ChevronDown} class="ml-2 h-4 w-4" />
+					<svelte:component
+						this={icon ?? ChevronDown}
+						class={classNames('h-4 w-4', icon == ChevronLeft ? 'mr-2' : 'ml-2')}
+					/>
 				{/if}
 			</button>
 		{:else}
-			<Button {...$$restProps}>
+			<Button {...$$restProps} class={icon == ChevronLeft && 'flex-row-reverse'}>
 				<slot name="label">{label}</slot>
 				{#if arrowIcon}
-					<svelte:component this={icon ?? ChevronDown} class="ml-2 h-4 w-4" />
+					<svelte:component
+						this={icon ?? ChevronDown}
+						class={classNames('h-4 w-4', icon == ChevronLeft ? 'mr-2' : 'ml-2')}
+					/>
 				{/if}
 			</Button>
 		{/if}
