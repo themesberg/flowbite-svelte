@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.22.3](https://github.com/themesberg/flowbite-svelte/compare/v0.22.2...v0.22.3) (2022-07-21)
+
+
+### Bug Fixes
+
+* for [#165](https://github.com/themesberg/flowbite-svelte/issues/165) and [#170](https://github.com/themesberg/flowbite-svelte/issues/170) and changed $$restProps.class to $$props.class ([99399b8](https://github.com/themesberg/flowbite-svelte/commit/99399b8aebdec68bc5c52641ed768dc601fe36a2))
+
 ### [0.22.2](https://github.com/themesberg/flowbite-svelte/compare/v0.22.1...v0.22.2) (2022-07-21)
 
 
