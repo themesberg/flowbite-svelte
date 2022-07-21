@@ -35,13 +35,13 @@
 	}
 </script>
 
-<Label class={labelClass(inline, $$restProps.class)} show={!!$$slots.default}>
+<Label class={labelClass(inline, $$props.class)} show={!!$$slots.default}>
 	<input
 		type="checkbox"
 		bind:checked
 		on:click
 		{value}
 		{...$$restProps}
-		class={inputClass(custom, color, true, tinted, $$slots.default || $$restProps.class)}
+		class={inputClass(custom, color, true, tinted, $$slots.default || $$props.class)}
 	/><slot />
 </Label>

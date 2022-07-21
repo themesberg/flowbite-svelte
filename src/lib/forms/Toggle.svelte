@@ -1,7 +1,7 @@
 <script lang="ts">
 	import classNames from 'classnames';
 	import Checkbox from './Checkbox.svelte';
-
+	export let value: string | number;
 	export let size: 'small' | 'default' | 'large' = 'default';
 
 	const common =
@@ -24,7 +24,7 @@
 	};
 </script>
 
-<Checkbox custom class="relative {$$restProps.class}" {...$$restProps} on:click>
+<Checkbox custom class="relative {value} {$$props.class}" {...$$restProps} on:click>
 	<div class={classNames(common, colors[$$restProps.color ?? 'blue'], sizes[size])} />
 	<slot />
 </Checkbox>
