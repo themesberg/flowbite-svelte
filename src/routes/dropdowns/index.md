@@ -157,13 +157,13 @@ Add multiple checkbox elements inside your dropdown menu to enable more advanced
 <ExampleDiv class="flex justify-center h-52">
   <Dropdown label="Dropdown checkbox" class="w-44">
     <DropdownItem>
-      <Checkbox tinted>Default checkbox</Checkbox>
+      <Checkbox>Default checkbox</Checkbox>
     </DropdownItem>
     <DropdownItem>
-      <Checkbox tinted checked>Checked state</Checkbox>
+      <Checkbox checked>Checked state</Checkbox>
     </DropdownItem>
     <DropdownItem>
-      <Checkbox tinted>Default checkbox</Checkbox>
+      <Checkbox>Default checkbox</Checkbox>
     </DropdownItem>
   </Dropdown>
 </ExampleDiv>
@@ -172,13 +172,13 @@ Add multiple checkbox elements inside your dropdown menu to enable more advanced
 ```html
 <Dropdown label="Dropdown checkbox" class="w-44">
   <DropdownItem>
-    <Checkbox tinted>Default checkbox</Checkbox>
+    <Checkbox>Default checkbox</Checkbox>
   </DropdownItem>
   <DropdownItem>
-    <Checkbox tinted checked>Checked state</Checkbox>
+    <Checkbox checked>Checked state</Checkbox>
   </DropdownItem>
   <DropdownItem>
-    <Checkbox tinted>Default checkbox</Checkbox>
+    <Checkbox>Default checkbox</Checkbox>
   </DropdownItem>
 </Dropdown>
 ```
@@ -192,13 +192,13 @@ Use this example to update the background color of a menu item when using a list
   <Dropdown label="Dropdown checkbox" class="w-48" >
     <ul slot="content" class="p-3 space-y-1">
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted>Default checkbox</Checkbox>
+        <Checkbox>Default checkbox</Checkbox>
       </DropdownItem>
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted checked>Checked state</Checkbox>
+        <Checkbox checked>Checked state</Checkbox>
       </DropdownItem>
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted>Default checkbox</Checkbox>
+        <Checkbox>Default checkbox</Checkbox>
       </DropdownItem>
     </ul>
   </Dropdown>
@@ -209,13 +209,13 @@ Use this example to update the background color of a menu item when using a list
 <Dropdown label="Dropdown checkbox" class="w-48">
   <ul slot="content" class="p-3 space-y-1">
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted>Default checkbox</Checkbox>
+      <Checkbox>Default checkbox</Checkbox>
     </DropdownItem>
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted checked>Checked state</Checkbox>
+      <Checkbox checked>Checked state</Checkbox>
     </DropdownItem>
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted>Default checkbox</Checkbox>
+      <Checkbox>Default checkbox</Checkbox>
     </DropdownItem>
   </ul>
 </Dropdown>
@@ -231,15 +231,15 @@ Add an extra helper text to each checkbox element inside the dropdown menu list 
   <Dropdown label="Dropdown checkbox" class="w-60" >
     <ul slot="content" class="p-3 space-y-1">
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted>Enable notifications</Checkbox>
+        <Checkbox>Enable notifications</Checkbox>
         <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
       </DropdownItem>
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted checked>Enable 2FA auth</Checkbox>
+        <Checkbox checked>Enable 2FA auth</Checkbox>
         <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
       </DropdownItem>
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted>Subscribe newsletter</Checkbox>
+        <Checkbox>Subscribe newsletter</Checkbox>
         <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
       </DropdownItem>
     </ul>
@@ -251,15 +251,15 @@ Add an extra helper text to each checkbox element inside the dropdown menu list 
 <Dropdown label="Dropdown checkbox" class="w-60" >
   <ul slot="content" class="p-3 space-y-1">
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted>Enable notifications</Checkbox>
+      <Checkbox>Enable notifications</Checkbox>
       <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
     </DropdownItem>
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted checked>Enable 2FA auth</Checkbox>
+      <Checkbox checked>Enable 2FA auth</Checkbox>
       <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
     </DropdownItem>
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted>Subscribe newsletter</Checkbox>
+      <Checkbox>Subscribe newsletter</Checkbox>
       <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
     </DropdownItem>
   </ul>
@@ -273,13 +273,13 @@ Add multiple radio elements inside your dropdown menu to enable more advanced in
 <ExampleDiv class="flex justify-center h-64">
   <Dropdown label="Dropdown radio" class="w-44">
     <DropdownItem>
-      <Radio bind:group={group1} value={1} tinted>Default radio</Radio>
+      <Radio bind:group={group1} value={1}>Default radio</Radio>
     </DropdownItem>
     <DropdownItem>
-      <Radio bind:group={group1} value={2} tinted>Checked state</Radio>
+      <Radio bind:group={group1} value={2}>Checked state</Radio>
     </DropdownItem>
     <DropdownItem>
-      <Radio bind:group={group1} value={3} tinted>Default radio</Radio>
+      <Radio bind:group={group1} value={3}>Default radio</Radio>
     </DropdownItem>
   </Dropdown>
 </ExampleDiv>
@@ -292,13 +292,13 @@ Add multiple radio elements inside your dropdown menu to enable more advanced in
 
 <Dropdown label="Dropdown radio" class="w-44">
     <DropdownItem>
-      <Radio bind:group={group1} value={1} tinted>Default radio</Radio>
+      <Radio bind:group={group1} value={1}>Default radio</Radio>
     </DropdownItem>
     <DropdownItem>
-      <Radio bind:group={group1} value={2} tinted>Checked state</Radio>
+      <Radio bind:group={group1} value={2}>Checked state</Radio>
     </DropdownItem>
     <DropdownItem>
-      <Radio bind:group={group1} value={3} tinted>Default radio</Radio>
+      <Radio bind:group={group1} value={3}>Default radio</Radio>
     </DropdownItem>
 </Dropdown>
 ```
@@ -312,13 +312,13 @@ Use this example to update the background color of a menu item when using a list
   <Dropdown label="Dropdown radio" class="w-48">
     <ul slot="content" class="p-3 space-y-1">
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Radio bind:group={group2} value={1} tinted>Default radio</Radio>
+        <Radio bind:group={group2} value={1}>Default radio</Radio>
       </DropdownItem>
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Radio bind:group={group2} value={2} tinted>Checked state</Radio>
+        <Radio bind:group={group2} value={2}>Checked state</Radio>
       </DropdownItem>
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Radio bind:group={group2} value={3} tinted>Default radio</Radio>
+        <Radio bind:group={group2} value={3}>Default radio</Radio>
       </DropdownItem>
     </ul>
   </Dropdown>
@@ -333,13 +333,13 @@ Use this example to update the background color of a menu item when using a list
 <Dropdown label="Dropdown radio" class="w-48">
   <ul slot="content" class="p-3 space-y-1">
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio bind:group={group2} value={1} tinted>Default radio</Radio>
+      <Radio bind:group={group2} value={1}>Default radio</Radio>
     </DropdownItem>
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio bind:group={group2} value={2} tinted>Checked state</Radio>
+      <Radio bind:group={group2} value={2}>Checked state</Radio>
     </DropdownItem>
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio bind:group={group2} value={3} tinted>Default radio</Radio>
+      <Radio bind:group={group2} value={3}>Default radio</Radio>
     </DropdownItem>
   </ul>
 </Dropdown>
@@ -355,15 +355,15 @@ Add an extra helper text to each radio element inside the dropdown menu list wit
   <Dropdown label="Dropdown radio" class="w-60" >
     <ul slot="content" class="p-3 space-y-1">
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Radio bind:group={group3} value={1} tinted>Enable notifications</Radio>
+        <Radio bind:group={group3} value={1}>Enable notifications</Radio>
         <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
       </DropdownItem>
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Radio bind:group={group3} value={2} tinted>Enable 2FA auth</Radio>
+        <Radio bind:group={group3} value={2}>Enable 2FA auth</Radio>
         <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
       </DropdownItem>
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Radio bind:group={group3} value={3} tinted>Subscribe newsletter</Radio>
+        <Radio bind:group={group3} value={3}>Subscribe newsletter</Radio>
         <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
       </DropdownItem>
     </ul>
@@ -375,15 +375,15 @@ Add an extra helper text to each radio element inside the dropdown menu list wit
 <Dropdown label="Dropdown radio" class="w-60" >
   <ul slot="content" class="p-3 space-y-1">
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio bind:group={group3} value={1} tinted>Enable notifications</Radio>
+      <Radio bind:group={group3} value={1}>Enable notifications</Radio>
       <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
     </DropdownItem>
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio bind:group={group3} value={2} tinted>Enable 2FA auth</Radio>
+      <Radio bind:group={group3} value={2}>Enable 2FA auth</Radio>
       <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
     </DropdownItem>
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio bind:group={group3} value={3} tinted>Subscribe newsletter</Radio>
+      <Radio bind:group={group3} value={3}>Subscribe newsletter</Radio>
       <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
     </DropdownItem>
   </ul>
@@ -395,16 +395,16 @@ Add an extra helper text to each radio element inside the dropdown menu list wit
 Show a list of toggle switch elements inside the dropdown menu to enable a yes or no type of choice.
 
 <ExampleDiv class="flex justify-center h-64">
-  <Dropdown label="Dropdown radio" class="w-56">
+  <Dropdown label="Dropdown toggle" class="w-56">
   <ul slot="content" class="p-3 space-y-1">
     <DropdownItem class="rounded">
-      <Toggle checked>Default radio</Toggle>
+      <Toggle>Default toggle</Toggle>
     </DropdownItem>
     <DropdownItem class="rounded">
       <Toggle checked>Checked state</Toggle>
     </DropdownItem>
     <DropdownItem class="rounded">
-      <Toggle checked>Default radio</Toggle>
+      <Toggle>Default toggle</Toggle>
     </DropdownItem>
   </ul>
   </Dropdown>
@@ -414,13 +414,13 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 <Dropdown label="Dropdown radio" class="w-56">
 <ul slot="content" class="p-3 space-y-1">
   <DropdownItem class="rounded">
-    <Toggle checked>Default radio</Toggle>
+    <Toggle>Default radio</Toggle>
   </DropdownItem>
   <DropdownItem class="rounded">
     <Toggle checked>Checked state</Toggle>
   </DropdownItem>
   <DropdownItem class="rounded">
-    <Toggle checked>Default radio</Toggle>
+    <Toggle>Default radio</Toggle>
   </DropdownItem>
 </ul>
 </Dropdown>
@@ -560,26 +560,26 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
 <Dropdown label="Project users" class="w-60">
   <svelte:fragment slot="content">
     <div class="p-3">
-      <SimpleSearch btnClass="hidden" tinted/>
+      <SimpleSearch btnClass="hidden"/>
     </div>
     <ul class="overflow-y-auto px-3 pb-3 space-y-1 h-48">
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted>Jese Leos</Checkbox>
+        <Checkbox>Jese Leos</Checkbox>
       </DropdownItem>
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted>Robert Gouth</Checkbox>
+        <Checkbox>Robert Gouth</Checkbox>
       </DropdownItem>
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted checked>Bonnie Green</Checkbox>
+        <Checkbox checked>Bonnie Green</Checkbox>
       </DropdownItem>
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted>Jese Leos</Checkbox>
+        <Checkbox>Jese Leos</Checkbox>
       </DropdownItem>
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted>Robert Gouth</Checkbox>
+        <Checkbox>Robert Gouth</Checkbox>
       </DropdownItem>
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted>Bonnie Green</Checkbox>
+        <Checkbox>Bonnie Green</Checkbox>
       </DropdownItem>
     </ul>
     <a href="/" class="flex items-center p-3 text-sm font-medium text-red-600 bg-gray-50 border-t border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
@@ -593,26 +593,26 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
 <Dropdown label="Project users" class="w-60">
   <svelte:fragment slot="content">
     <div class="p-3">
-      <SimpleSearch btnClass="hidden" tinted/>
+      <SimpleSearch btnClass="hidden"/>
     </div>
     <ul class="overflow-y-auto px-3 pb-3 space-y-1 h-48">
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted>Jese Leos</Checkbox>
+        <Checkbox>Jese Leos</Checkbox>
       </DropdownItem>
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted>Robert Gouth</Checkbox>
+        <Checkbox>Robert Gouth</Checkbox>
       </DropdownItem>
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted checked>Bonnie Green</Checkbox>
+        <Checkbox checked>Bonnie Green</Checkbox>
       </DropdownItem>
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted>Jese Leos</Checkbox>
+        <Checkbox>Jese Leos</Checkbox>
       </DropdownItem>
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted>Robert Gouth</Checkbox>
+        <Checkbox>Robert Gouth</Checkbox>
       </DropdownItem>
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted>Bonnie Green</Checkbox>
+        <Checkbox>Bonnie Green</Checkbox>
       </DropdownItem>
     </ul>
     <a href="/" class="flex items-center p-3 text-sm font-medium text-red-600 bg-gray-50 border-t border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
