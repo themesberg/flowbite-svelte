@@ -17,6 +17,21 @@ layout: toastLayout
 
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
+  let show = true;
+  let counter = 6;
+
+  function trigger() {
+    show = true;
+    counter = 6;
+    timeout();
+  }
+
+  function timeout() {
+    if (--counter > 0)
+      return setTimeout(timeout, 1000);
+    show = false;
+  }
 </script>
 
 <Breadcrumb>
@@ -115,6 +130,43 @@ that if you want no color at all set property to empty string.</p>
 </Toast>
 
 <Toast> No icon at all. </Toast>
+```
+
+<Htwo label="Autohide example" />
+
+<ExampleDiv>
+<div class="flex gap-10">
+  <Button on:click={trigger} class="my-3">Restart</Button>
+
+  <Toast simple transition="slide" bind:visible={show}>
+    <CheckCircle slot="icon"/> Autohide in {counter}s.
+  </Toast>
+</div>
+</ExampleDiv>
+
+```html
+<script>
+  let show = true;
+  let counter = 6;
+
+  function trigger() {
+    show = true;
+    counter = 6;
+    timeout();
+  }
+
+  function timeout() {
+    if (--counter > 0)
+      return setTimeout(timeout, 1000);
+    show = false;
+  }
+</script>
+
+<Button on:click={trigger} class="my-3">Restart</Button>
+
+<Toast simple transition="slide" bind:visible={show}>
+  <CheckCircle slot="icon"/> Autohide in {counter}s.
+</Toast>
 ```
 
 <Htwo label="Transitions" />

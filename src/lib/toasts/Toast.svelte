@@ -16,7 +16,7 @@
 	// Absolute position
 	export let position: 'tl' | 'tr' | 'bl' | 'br' = undefined; // default not set
 
-	let visible = true;
+	export let visible = true;
 
 	const colors = {
 		blue: 'text-blue-500 bg-blue-100 dark:bg-blue-800 dark:text-blue-200',
