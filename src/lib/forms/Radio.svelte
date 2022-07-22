@@ -44,6 +44,7 @@
 		type="radio"
 		bind:group
 		on:click
+		on:change
 		{value}
 		{...$$restProps}
 		class={inputClass(custom, color, false, tinted, $$slots.default || $$props.class)}
