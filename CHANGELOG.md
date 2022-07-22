@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.22.7](https://github.com/themesberg/flowbite-svelte/compare/v0.22.6...v0.22.7) (2022-07-22)
+
+
+### Features
+
+* form buttons tinted removed ([5c2d619](https://github.com/themesberg/flowbite-svelte/commit/5c2d619c8c5ade960e2b3a59c20b809a40174829))
+
+
+### Bug Fixes
+
+* [#177](https://github.com/themesberg/flowbite-svelte/issues/177) export visible/autohide ([2127151](https://github.com/themesberg/flowbite-svelte/commit/2127151550a778d35bee5eb3b2b77f38423f50e4))
+
 ### [0.22.6](https://github.com/themesberg/flowbite-svelte/compare/v0.22.5...v0.22.6) (2022-07-22)
 
 
