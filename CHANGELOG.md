@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.22.6](https://github.com/themesberg/flowbite-svelte/compare/v0.22.5...v0.22.6) (2022-07-22)
+
+
+### Features
+
+* select input [#50](https://github.com/themesberg/flowbite-svelte/issues/50) ([8cea993](https://github.com/themesberg/flowbite-svelte/commit/8cea993344f1427f83ab46f29a9bc1613c67960c))
+
+
+### Bug Fixes
+
+* add on:change to Radio ([074bd16](https://github.com/themesberg/flowbite-svelte/commit/074bd1677ced075971173c8abf1cf15387026efd))
+
 ### [0.22.5](https://github.com/themesberg/flowbite-svelte/compare/v0.22.4...v0.22.5) (2022-07-21)
 
 
