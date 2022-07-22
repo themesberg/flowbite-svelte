@@ -27,16 +27,19 @@
 </script>
 
 <script lang="ts">
+	import { getContext } from 'svelte';
 	import type { FormColorType } from '../types';
 	import Label from './Label.svelte';
 
 	export let color: FormColorType = 'blue';
 	export let custom: boolean = false;
 	export let inline: boolean = false;
-	export let tinted: boolean = false;
 
 	export let group: number | string = '';
 	export let value: string = '';
+
+	// tinted if put in component having its own background
+	let background: boolean = getContext('background');
 </script>
 
 <Label class={labelClass(inline, $$props.class)} show={!!$$slots.default}>
@@ -47,6 +50,6 @@
 		on:change
 		{value}
 		{...$$restProps}
-		class={inputClass(custom, color, false, tinted, $$slots.default || $$props.class)}
+		class={inputClass(custom, color, false, background, $$slots.default || $$props.class)}
 	/><slot />
 </Label>
