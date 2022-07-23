@@ -14,7 +14,8 @@ layout: listgroupLayout
     UserCircle,
     InboxIn,
     CloudDownload,
-    Home
+    Home,
+    ArrowSmRight
   } from "svelte-heros";
   import componentProps from '../props/MegaMenu.json'
   // Props table
@@ -25,18 +26,34 @@ layout: listgroupLayout
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
   let menu = [
-    {name: 'About us', href: '/about'},
-    {name: 'Library', href: '/library'},
-    {name: 'Resources', href: '/resource'},
-    {name: 'Pro Version', href: '/pro'},
-    {name: 'Blog', href: '/blog'},
-    {name: 'Newsletter', href: '/news'},
-    {name: 'Playground', href: '/play'},
-    {name: 'License', href: '/license'},
-    {name: 'Contact us', href: '/contact'},
-    {name: 'Support Center', href: '/support'},
-    {name: 'Terms', href: '/tersm'},
-  ]
+    {name: 'About us', href: '/about', icon: UserCircle},
+    {name: 'Blog', href: '/blog', icon: UserCircle},
+    {name: 'Contact us', href: '/contact', icon: UserCircle},
+    {name: 'Library', href: '/library', icon: UserCircle},
+    {name: 'Newsletter', href: '/news', icon: UserCircle},
+    {name: 'Support Center', href: '/support', icon: UserCircle},
+    {name: 'Resources', href: '/resource', icon: UserCircle},
+    {name: 'Playground', href: '/play', icon: UserCircle},
+    {name: 'Terms', href: '/tersm', icon: UserCircle},
+    {name: 'Pro Version', href: '/pro', icon: UserCircle},
+    {name: 'License', href: '/license', icon: UserCircle},
+  ];
+
+
+  let menu2 = [
+    {name: 'Online Stores', help: "Connect with third-party tools that you're already using."},
+    {name: 'Segmentation', help: "Connect with third-party tools that you're already using."},
+    {name: 'Marketing CRM', help: "Connect with third-party tools that you're already using."},
+
+    {name: 'Online Stores', help: "Connect with third-party tools that you're already using."},
+    {name: 'Segmentation', help: "Connect with third-party tools that you're already using."},
+    {name: 'Marketing CRM', help: "Connect with third-party tools that you're already using."},
+
+    {name: 'Audience Management', help: "Connect with third-party tools that you're already using."},
+    {name: 'Creative Tools', help: "Connect with third-party tools that you're already using."},
+    // {name: 'Marketing Automation', help: "Connect with third-party tools that you're already using."},
+  ];
+
 </script>
 
 <Breadcrumb>
@@ -48,7 +65,7 @@ layout: listgroupLayout
 
 <Htwo label="Mega menu examples" />
 
-<ExampleDiv class="flex justify-center">
+<ExampleDiv class="flex justify-center flex-col gap-2">
     <Navbar let:hidden let:toggle>
     <NavBrand href="/">
         <img
@@ -75,10 +92,46 @@ layout: listgroupLayout
         <NavLi href="/contact">Contact</NavLi>
     </NavUl>
     </Navbar>
-    <MegaMenu />
+    <MegaMenu items={menu} let:item>
+        <a href={item.href}>{item.name}</a>
+    </MegaMenu>
 </ExampleDiv>
 
+<ExampleDiv class="flex justify-center flex-col gap-2">
+    <MegaMenu items={menu} let:item>
+        <a href={item.href} class="flex items-center hover:text-blue-600 dark:hover:text-blue-500">
+            <span class="sr-only">{items.term}</span>
+            <svelte:component this={item.icon} class="w-4 h-4 mr-2" />
+            {item.name}
+        </a>
+    </MegaMenu>
+</ExampleDiv>
 
+<ExampleDiv class="flex justify-center flex-col gap-2">
+    <MegaMenu full items={menu2} let:item>
+        <a href="/" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 h-full">
+        <div class="font-semibold dark:text-white">{item.name}</div>
+        <span class="text-sm font-light text-gray-500 dark:text-gray-400">{item.help}</span>
+        </a>
+    </MegaMenu>
+</ExampleDiv>
+
+<ExampleDiv class="flex justify-center flex-col gap-2">
+    <MegaMenu full items={menu2} let:item>
+        <a href="/" class="hover:underline">
+        {item.name}
+        </a>
+            <div slot="extra" class="mt-4 md:mt-0">
+                <h2 class="mb-2 font-semibold text-gray-900 dark:text-white">Our brands</h2>
+                <p class="mb-2 p-0 text-sm font-light text-gray-500 dark:text-gray-300">At Flowbite, we have a portfolio of brands that cater to a variety of preferences.</p>
+                <a href="/" class="inline-flex items-center text-sm font-medium text-blue-600 hover:underline hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-700">
+                    Explore our brands 
+                    <span class="sr-only">Explore our brands </span>
+                    <ArrowSmRight class="w-4 h-4 ml-1"/>
+                </a>
+            </div>
+    </MegaMenu>
+</ExampleDiv>
 ```html
 <MegaMenu />
 ````

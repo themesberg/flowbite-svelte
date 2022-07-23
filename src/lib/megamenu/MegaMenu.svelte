@@ -1,42 +1,53 @@
 <script lang="ts">
-	import Tooltip from '$lib/tooltips/Tooltip.svelte';
-	export let open: boolean = false;
+	import { setContext } from 'svelte';
+	import classNames from 'classnames';
+
+	import type { LinkType } from '$lib/types';
+	//import ListItem from './ListItem.svelte';
+
+	export let items: LinkType[] = [];
+	export let active: boolean = false;
+	export let full: boolean = false;
+
+	setContext('background', true);
+	$: setContext('active', active);
+
+	let wrapperClass;
+	$: wrapperClass = classNames(
+		'flex flex-col md:flex-row p-4',
+		'border-gray-100 shadow-md dark:border-gray-700',
+		full ? 'border-y' : 'rounded-lg border',
+		full ? 'max-w-screen-xl' : 'max-w-screen-lg',
+		full ? 'bg-white dark:bg-gray-800' : 'bg-white dark:bg-gray-700',
+		full ? 'w-full' : 'mx-auto'
+	);
+
+	// 'mt-1 bg-white border-gray-200 shadow-sm border-y dark:bg-gray-800 dark:border-gray-600',
+	let groupClass: string;
+	$: groupClass = classNames(
+		'grid grid-flow-row gap-y-4 md:gap-x-8 auto-rows-max auto-col-max',
+		$$slots.extra ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-3',
+		'text-sm font-medium',
+		'text-gray-500 dark:text-gray-400',
+		$$slots.extra && 'md:w-2/3',
+		$$props.class
+	);
 </script>
 
-<Tooltip
-	class={classNames('!rounded !p-0', $$props.class)}
-	style="auto"
-	animation="duration-100"
-	{placement}
-	arrow={tooltipArrow}
-	trigger="click"
->
-	<slot name="trigger">
-		{#if inline}
-			<button class={labelClass} class:flex-row-reverse={icon == ChevronLeft}>
-				<slot name="label">{label}</slot>
-				{#if arrowIcon}
-					<svelte:component
-						this={icon ?? ChevronDown}
-						class={classNames('h-4 w-4', icon == ChevronLeft ? 'mr-2' : 'ml-2')}
-					/>
-				{/if}
-			</button>
+<div class={wrapperClass}>
+	<svelte:element this={active ? 'div' : 'ul'} class={groupClass}>
+		{#each items as item, index}
+			<!-- <ListItem {active} {...item} {index} on:click><slot {item} {index} /></ListItem> -->
+			<li class="flex items-center h-full">
+				<slot {item} {index} />
+			</li>
 		{:else}
-			<Button {...$$restProps} class={icon == ChevronLeft && 'flex-row-reverse'}>
-				<slot name="label">{label}</slot>
-				{#if arrowIcon}
-					<svelte:component
-						this={icon ?? ChevronDown}
-						class={classNames('h-4 w-4', icon == ChevronLeft ? 'mr-2' : 'ml-2')}
-					/>
-				{/if}
-			</Button>
-		{/if}
-	</slot>
-	<slot name="content" slot="content">
-		<ul class="py-1">
 			<slot />
-		</ul>
-	</slot>
-</Tooltip>
+		{/each}
+	</svelte:element>
+	{#if $$slots.extra}
+		<div class="md:w-1/3">
+			<slot name="extra" />
+		</div>
+	{/if}
+</div>
