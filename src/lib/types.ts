@@ -134,7 +134,7 @@ export interface InteractiveTabType {
 
 
 export interface ListGroupItemType {
-	active?: boolean;
+	current?: boolean;
 	disabled?: boolean;
 	href?: string;
 	[propName: string]: any;
