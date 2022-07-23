@@ -262,11 +262,7 @@
 		<Toc />
 	</main>
 </div>
-<<<<<<< HEAD
-<div class="pt-20 pb-8 pr-4 lg:pl-80 2xl:pl-32">
-=======
 <div class="w-3/4 mx-auto mb-4 pt-4 lg:pl-80 2xl:pl-32">
->>>>>>> Hetarth02-main
 	<Footer footerType="custom" customClass="p-4 bg-white sm:p-6 dark:bg-gray-900">
 		<div class="md:flex md:justify-between">
 			<div class="mb-6 md:mb-0">
