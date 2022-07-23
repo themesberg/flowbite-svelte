@@ -17,67 +17,32 @@ layout: listgroupLayout
   } from "svelte-heros";
   import componentProps from '../props/List.json'
   // Props table
-  let items = componentProps.props
 	let propHeader = ['Name', 'Type', 'Default']
-	
-	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
-  let lists = [
-    {
-      name: "Home",
-      href: "/",
-    },
-    {
-      name: "Alerts",
-      href: "/alert",
-    },
-    {
-      name: "Cards",
-      href: "/cards",
-    },
-    {
-      name: "List Group",
-      href: "/list-group/list",
-    },
-    {
-      name: "Modals",
-      href: "/modals",
-    },
-    {
-      name: "Tabs",
-      href: "/tabs",
-    },
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
+  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
+  let simpleList = ["Profile", "Settings", "Messages", "Download"]
+
+  let links = [
+    { name: "Accordions", href: "/accordions" },
+    { name: "Alerts", href: "/alerts" },
+    { name: "Badges", href: "/badges"  },
+    { name: "Breadcrumbs", href: "/breadcrumbs" },
   ];
-  let lists2 = [
-    {
-      name: "Profile",
-      icon: UserCircle,
-      iconSize: 18,
-      iconClass: "text-blue-500 dark:text-pink-700",
-      href: "/",
-    },
-    {
-      name: "Settings",
-      icon: Adjustments,
-      iconSize: 18,
-      iconClass: "text-blue-500 dark:text-purple-500",
-      href: "/",
-    },
-    {
-      name: "Messages",
-      icon: InboxIn,
-      iconSize: 18,
-      iconClass: "text-blue-500 dark:text-green-500",
-      href: "/",
-    },
-    {
-      name: "Download",
-      icon: CloudDownload,
-      iconSize: 18,
-      iconClass: "text-blue-500 dark:text-red-500",
-      href: "/",
-    },
+
+  let buttons = [
+    { name: "Profile", mycustomfield: "data1", active: true },
+    { name: "Settings", mycustomfield: "data2" },
+    { name: "Messages", mycustomfield: "data3" },
+    { name: "Download", mycustomfield: "data4",  disabled: true },
+  ];
+
+  let icons = [
+    { name: "Profile",   icon: UserCircle },
+    { name: "Settings",  icon:Adjustments },
+    { name: "Messages",  icon:InboxIn },
+    { name: "Download", icon:CloudDownload },
   ];
 </script>
 
@@ -90,90 +55,98 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Examples" />
 
-<ExampleDiv class="flex justify-center">
- <List {lists} />
-</ExampleDiv>
-
-
-```html
-<script>
-  import { List } from "flowbite-svelte";
-
-  let lists = [
-    {
-      name: "Home",
-      href: "/",
-    },
-    {
-      name: "Alerts",
-      href: "/alert",
-    },
-    {
-      name: "Cards",
-      href: "/cards",
-    },
-    {
-      name: "List Group",
-      href: "/list-group/list",
-    },
-    {
-      name: "Modals",
-      href: "/modals",
-    },
-    {
-      name: "Tabs",
-      href: "/tabs",
-    },
-  ];
-</script>
-````
-
-<ExampleDiv class="flex justify-center">
-  <List lists={lists2} />
+<ExampleDiv>
+  <List items={simpleList} let:item class="w-48">
+    {item}
+  </List>
 </ExampleDiv>
 
 ```html
 <script>
-  import { List } from "flowbite-svelte";
-  import {
-    Adjustments,
-    UserCircle,
-    InboxIn,
-    CloudDownload,
-  } from "svelte-heros";
+  import {List} from "flowbite-svelte";
 
-  let lists2 = [
-    {
-      name: "Profile",
-      icon: UserCircle,
-      iconSize: 18,
-      iconClass: "text-blue-500 dark:text-pink-700",
-      href: "/",
-    },
-    {
-      name: "Settings",
-      icon: Adjustments,
-      iconSize: 18,
-      iconClass: "text-blue-500 dark:text-purple-500",
-      href: "/",
-    },
-    {
-      name: "Messages",
-      icon: InboxIn,
-      iconSize: 18,
-      iconClass: "text-blue-500 dark:text-green-500",
-      href: "/",
-    },
-    {
-      name: "Download",
-      icon: CloudDownload,
-      iconSize: 18,
-      iconClass: "text-blue-500 dark:text-red-500",
-      href: "/",
-    },
-  ];
+  let simpleList = ["Profile", "Settings", "Messages", "Download"]
 </script>
+
+<List items={simpleList} let:item class="w-48">
+  {item}
+</List>
 ```
+
+<Htwo label="List group with links" />
+
+You can also display a series of links inside the list group element. Notice how items provide the `href` field.
+
+You need to set the list to `active` mode to enable hovering, focus and links.
+
+If list is active and data items contain `href` field entries are presented as `<a>` elements.
+
+<ExampleDiv>
+  <List active items={links} let:item class="w-48">
+    {item.name}
+  </List>
+</ExampleDiv>
+
+```html
+<script>
+  import {List} from "flowbite-svelte";
+
+  let links = [
+    { name: "Accordions", href: "/accordions" },
+    { name: "Alerts", href: "/alerts" },
+    { name: "Badges", href: "/badges"  },
+    { name: "Breadcrumbs", href: "/breadcrumbs" },
+  ];
+</script>
+
+<List active items={links} let:item class="w-48">
+  {item.name}
+</List>
+```
+
+<Htwo label="List group with buttons" />
+
+It is also possible to display a list of button element inside the list group component. The following example includes an active and disabled item as well.
+
+You need to set the list to `active` mode to enable hovering, focus and `on:click`.
+
+If list is active and data items do not contain `href` field entries are presented as `<button>` elements triggering `on:click` events.
+
+<ExampleDiv>
+  <List active items={buttons} let:item class="w-48" on:click={(e) => alert(Object.entries(e.detail))}>
+    {item.name}
+  </List>
+</ExampleDiv>
+
+```html
+<script>
+  import {List} from "flowbite-svelte";
+
+  let links = [
+    { name: "Accordions", href: "/accordions" },
+    { name: "Alerts", href: "/alerts" },
+    { name: "Badges", href: "/badges"  },
+    { name: "Breadcrumbs", href: "/breadcrumbs" },
+  ];
+</script>
+
+<List active items={links} let:item class="w-48">
+  {item.name}
+</List>
+```
+
+<Htwo label="List group with icons" />
+
+Use the following example to create a list of buttons as a menu together with SVG icons.
+
+<ExampleDiv>
+  <List active items={icons} let:item class="w-48" on:click={console.log}>
+      <svelte:component this={item.icon} class="mr-2 w-5 h-5" />
+      {item.name}
+  </List>
+</ExampleDiv>
+
+
 
 <Htwo label="Props" />
 
@@ -181,5 +154,5 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
  page</a> for type information.</p>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow {items} rowState='hover' />
+  <TableDefaultRow items={componentProps.props} rowState='hover' />
 </TableProp>

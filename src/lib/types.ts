@@ -132,6 +132,14 @@ export interface InteractiveTabType {
 	content: string | typeof SvelteComponent;
 }
 
+
+export interface ListGroupItemType {
+	active?: boolean;
+	disabled?: boolean;
+	href?: string;
+	[propName: string]: any;
+}
+
 export interface LinkType {
 	name: string;
 	href: string;
