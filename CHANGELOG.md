@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.22.8](https://github.com/themesberg/flowbite-svelte/compare/v0.22.7...v0.22.8) (2022-07-23)
+
+
+### Bug Fixes
+
+* add custom to Footer ([22f8f43](https://github.com/themesberg/flowbite-svelte/commit/22f8f430ae9a21acbbd95300b8633531d9a6dc5f))
+
 ### [0.22.7](https://github.com/themesberg/flowbite-svelte/compare/v0.22.6...v0.22.7) (2022-07-22)
 
 
