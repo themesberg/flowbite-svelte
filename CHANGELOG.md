@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.22.9](https://github.com/themesberg/flowbite-svelte/compare/v0.22.8...v0.22.9) (2022-07-23)
+
+
+### Bug Fixes
+
+* using classnames dynamic class name for Footer ([52e17c7](https://github.com/themesberg/flowbite-svelte/commit/52e17c7dd8ad2599d1f41bc938930db615459b63))
+
 ### [0.22.8](https://github.com/themesberg/flowbite-svelte/compare/v0.22.7...v0.22.8) (2022-07-23)
 
 
