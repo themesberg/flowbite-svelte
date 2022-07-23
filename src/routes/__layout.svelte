@@ -254,7 +254,7 @@
 		</Nav>
 	</Side>
 
-	<main class="flex w-11/12 mx-auto mb-8 px-2 pt-16 lg:pl-80 2xl:pl-32">
+	<main class="flex w-3/4 mx-auto mb-8 px-2 pt-16 lg:pl-24 2xl:pl-32">
 		<DarkMode btnClass={darkmodebtn} />
 		<div class="w-full">
 			<slot />
@@ -262,13 +262,13 @@
 		<Toc />
 	</main>
 </div>
-<div class="w-3/4 mx-auto mb-4 pt-4 lg:pl-80 2xl:pl-32">
+<div class="w-3/4 mx-auto mb-4 pt-4 lg:pl-24 2xl:pl-16">
 	<Footer footerType="custom" customClass="p-4 bg-white sm:p-6 dark:bg-gray-900">
 		<div class="md:flex md:justify-between">
 			<div class="mb-6 md:mb-0">
 				<FooterBrand
 					href="https://flowbite-svelte.com"
-					src="images/flowbite-svelte-icon-logo.svg"
+					src="/images/flowbite-svelte-icon-logo.svg"
 					alt="Flowbite-Svelte Logo"
 					name="Flowbite-Svelte"
 				/>
