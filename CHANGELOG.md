@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.22.11](https://github.com/themesberg/flowbite-svelte/compare/v0.22.10...v0.22.11) (2022-07-23)
+
+
+### Features
+
+* list group rewritten - API changed ([86c97dc](https://github.com/themesberg/flowbite-svelte/commit/86c97dc54581f634baed601c609e9d90c6c4611b))
+
+
+### Bug Fixes
+
+* background context added ([52c8dd5](https://github.com/themesberg/flowbite-svelte/commit/52c8dd5693f3d890e7b875ae1b0435c5a7313876))
+* error fix for deployment ([be684a8](https://github.com/themesberg/flowbite-svelte/commit/be684a8057c08a7c07f3f6c370114d008dc2182e))
+* field name change for ListGroupItemType ([da93d46](https://github.com/themesberg/flowbite-svelte/commit/da93d460c864e0a94f803420f73dbf976e185fee))
+
 ### [0.22.10](https://github.com/themesberg/flowbite-svelte/compare/v0.22.9...v0.22.10) (2022-07-23)
 
 
