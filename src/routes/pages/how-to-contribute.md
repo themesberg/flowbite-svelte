@@ -17,7 +17,7 @@ layout: docLayout
 
 <p>Here are some guidelines we'd like you to follow before submitting a PR.</p>
 
-<Htwo label="Pleas use pnpm to install a fork" />
+<Htwo label="Please use pnpm to install a fork" />
 
 <p>The repo uses `pnpm`, so using `pnpm` is desiable when you fork and install dependencies to avoid unseen problems.</p>
 
