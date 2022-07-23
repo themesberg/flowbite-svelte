@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.22.10](https://github.com/themesberg/flowbite-svelte/compare/v0.22.9...v0.22.10) (2022-07-23)
+
+
+### Bug Fixes
+
+* merge conflict fix with Hetarth02-main ([914c1f9](https://github.com/themesberg/flowbite-svelte/commit/914c1f95f80dfbd73542d68d39622d79bed1ea04))
+
+### [0.22.9](https://github.com/themesberg/flowbite-svelte/compare/v0.22.8...v0.22.9) (2022-07-23)
+
+
+### Bug Fixes
+
+* using classnames dynamic class name for Footer ([52e17c7](https://github.com/themesberg/flowbite-svelte/commit/52e17c7dd8ad2599d1f41bc938930db615459b63))
+
+### [0.22.8](https://github.com/themesberg/flowbite-svelte/compare/v0.22.7...v0.22.8) (2022-07-23)
+
+
+### Bug Fixes
+
+* add custom to Footer ([22f8f43](https://github.com/themesberg/flowbite-svelte/commit/22f8f430ae9a21acbbd95300b8633531d9a6dc5f))
+
+### [0.22.7](https://github.com/themesberg/flowbite-svelte/compare/v0.22.6...v0.22.7) (2022-07-22)
+
+
+### Features
+
+* form buttons tinted removed ([5c2d619](https://github.com/themesberg/flowbite-svelte/commit/5c2d619c8c5ade960e2b3a59c20b809a40174829))
+
+
+### Bug Fixes
+
+* [#177](https://github.com/themesberg/flowbite-svelte/issues/177) export visible/autohide ([2127151](https://github.com/themesberg/flowbite-svelte/commit/2127151550a778d35bee5eb3b2b77f38423f50e4))
+
 ### [0.22.6](https://github.com/themesberg/flowbite-svelte/compare/v0.22.5...v0.22.6) (2022-07-22)
 
 

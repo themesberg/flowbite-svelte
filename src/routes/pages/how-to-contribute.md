@@ -17,13 +17,13 @@ layout: docLayout
 
 <p>Here are some guidelines we'd like you to follow before submitting a PR.</p>
 
-<Htwo label="Pleas use pnpm to install a fork" />
+<Htwo label="Please use pnpm to install a fork" />
 
 <p>The repo uses `pnpm`, so using `pnpm` is desiable when you fork and install dependencies to avoid unseen problems.</p>
 
 <Htwo label="Frontend pages" />
 
-<p><a href="https://tailwindcss.com/docs/content-configuration#dynamic-class-names">Tailwind warns</a> that you don't construct class names dynamically. In stead of this:</p>
+<p><a href="https://tailwindcss.com/docs/content-configuration#dynamic-class-names">Tailwind warns</a> that you don't construct class names dynamically. Instead of this:</p>
 
 ```html
 <div class="text-{{ error ? 'red' : 'green' }}-600"></div>
@@ -52,7 +52,7 @@ npm run gen:props
 
 <Htwo label="Conventional commit" />
 
-<p>When makimg a commit, we recommend using <a href="https://www.conventionalcommits.org/en/v1.0.0/">the Coventional commits</a>.</p>
+<p>When making a commit, we recommend using <a href="https://www.conventionalcommits.org/en/v1.0.0/">the Coventional commits</a>.</p>
 
 Some examples are:
 
