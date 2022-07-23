@@ -16,7 +16,7 @@ layout: docLayout
 
 <p>You can install Flowbite-Svelte by using the Flowbite-Svelte-Start or from scratch.</p>
 
-<Htwo label="Installing from scrach" />
+<Htwo label="Installing from scratch" />
 
 <p>Install SvelteKit:</p>
 
