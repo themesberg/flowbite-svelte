@@ -54,7 +54,9 @@
 		<div class="relative z-10 xl:pb-8 bg-transparent lg:max-w-2xl lg:w-full">
 			<div class="my-auto mx-auto max-w-7xl xl:pl-8 xl:pt-8">
 				<div class="sm:text-center lg:text-left">
-					<h1 class="text-4xl tracking-tight font-extrabold text-gray-900  dark:text-white">
+					<h1
+						class="max-w-md text-4xl tracking-tight font-extrabold text-gray-900  dark:text-white"
+					>
 						<span class="block xl:inline">Flowbite Svelte </span>
 						<span class="block text-indigo-600 dark:text-white xl:inline">UI Component</span>
 					</h1>
