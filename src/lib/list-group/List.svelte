@@ -7,6 +7,7 @@
 	export let items: ListGroupItemType[] = [];
 	export let active: boolean = false;
 
+	setContext('background', true);
 	$: setContext('active', active);
 
 	let groupClass: string;
