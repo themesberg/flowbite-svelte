@@ -59,8 +59,7 @@
 						<span class="block text-indigo-600 dark:text-white xl:inline">UI Component</span>
 					</h1>
 					<p
-						class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg 
-            lg:max-w-sm sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 dark:text-white"
+						class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg lg:max-w-sm sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 dark:text-white"
 					>
 						Speed up your web development with Flowbite Svelte. Flowbite Svelte is an official
 						Flowbite component library for Svelte. All interactivities are handled by Svelte.
