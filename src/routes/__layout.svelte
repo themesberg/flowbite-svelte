@@ -254,7 +254,7 @@
 		</Nav>
 	</Side>
 
-	<main class="flex w-full mx-auto px-2 pt-16 lg:pl-72 2xl:pl-24">
+	<main class="flex w-full mx-auto px-2 pt-16 lg:pl-80 2xl:pl-32">
 		<DarkMode btnClass={darkmodebtn} />
 		<div class="w-full">
 			<slot />
