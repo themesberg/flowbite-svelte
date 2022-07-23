@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.22.10](https://github.com/themesberg/flowbite-svelte/compare/v0.22.9...v0.22.10) (2022-07-23)
+
+
+### Bug Fixes
+
+* merge conflict fix with Hetarth02-main ([914c1f9](https://github.com/themesberg/flowbite-svelte/commit/914c1f95f80dfbd73542d68d39622d79bed1ea04))
+
 ### [0.22.9](https://github.com/themesberg/flowbite-svelte/compare/v0.22.8...v0.22.9) (2022-07-23)
 
 
