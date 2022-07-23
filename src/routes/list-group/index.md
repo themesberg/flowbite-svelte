@@ -7,7 +7,7 @@ layout: listgroupLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { List, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Avatar, List, ListItem, Breadcrumb, BreadcrumbItem } from '$lib/index'
   import {
     Adjustments,
     UserCircle,
@@ -25,14 +25,14 @@ layout: listgroupLayout
   let simpleList = ["Profile", "Settings", "Messages", "Download"]
 
   let links = [
-    { name: "Accordions", href: "/accordions" },
+    { name: "Accordions", href: "/accordions", current: true },
     { name: "Alerts", href: "/alerts" },
     { name: "Badges", href: "/badges"  },
     { name: "Breadcrumbs", href: "/breadcrumbs" },
   ];
 
   let buttons = [
-    { name: "Profile", mycustomfield: "data1", active: true },
+    { name: "Profile", mycustomfield: "data1", current: true },
     { name: "Settings", mycustomfield: "data2" },
     { name: "Messages", mycustomfield: "data3" },
     { name: "Download", mycustomfield: "data4",  disabled: true },
@@ -53,7 +53,9 @@ layout: listgroupLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">List group</h1>
 
-<Htwo label="Examples" />
+<Htwo label="Default list group" />
+
+Here’s an example of a list group that you can use right away.
 
 <ExampleDiv>
   <List items={simpleList} let:item class="w-48">
@@ -92,7 +94,7 @@ If list is active and data items contain `href` field entries are presented as `
   import {List} from "flowbite-svelte";
 
   let links = [
-    { name: "Accordions", href: "/accordions" },
+    { name: "Accordions", href: "/accordions", current: true },
     { name: "Alerts", href: "/alerts" },
     { name: "Badges", href: "/badges"  },
     { name: "Breadcrumbs", href: "/breadcrumbs" },
@@ -122,15 +124,15 @@ If list is active and data items do not contain `href` field entries are present
 <script>
   import {List} from "flowbite-svelte";
 
-  let links = [
-    { name: "Accordions", href: "/accordions" },
-    { name: "Alerts", href: "/alerts" },
-    { name: "Badges", href: "/badges"  },
-    { name: "Breadcrumbs", href: "/breadcrumbs" },
+  let buttons = [
+    { name: "Profile", mycustomfield: "data1", current: true },
+    { name: "Settings", mycustomfield: "data2" },
+    { name: "Messages", mycustomfield: "data3" },
+    { name: "Download", mycustomfield: "data4",  disabled: true },
   ];
 </script>
 
-<List active items={links} let:item class="w-48">
+<List active items={buttons} let:item class="w-48" on:click={(e) => alert(Object.entries(e.detail))}>
   {item.name}
 </List>
 ```
@@ -146,7 +148,62 @@ Use the following example to create a list of buttons as a menu together with SV
   </List>
 </ExampleDiv>
 
+```html
+<script>
+    let icons = [
+    { name: "Profile",   icon: UserCircle },
+    { name: "Settings",  icon:Adjustments },
+    { name: "Messages",  icon:InboxIn },
+    { name: "Download", icon:CloudDownload },
+  ];
+</script>
 
+<List active items={icons} let:item class="w-48" on:click={console.log}>
+    <svelte:component this={item.icon} class="mr-2 w-5 h-5" />
+    {item.name}
+</List>
+```
+
+<Htwo label="Advanced" />
+
+When non standard usage is needed you can omit the `items` props and add elements directly to the list.
+Usage of hidden so far `ListItem` helps you with proper layout.
+
+<ExampleDiv>
+  <List active class="w-48">
+      <h3 class="text-center bg-red-500 text-white font-bold rounded-t-lg">User list</h3>
+      <ListItem class="text-base font-semibold gap-2">
+        <Avatar src="/images/profile-picture-1.webp" size="xs"/>Jese Leos
+      </ListItem>
+      <ListItem class="text-base font-semibold gap-2">
+        <Avatar src="/images/profile-picture-2.webp" size="xs"/>Robert Gouth
+      </ListItem>
+      <ListItem class="text-base font-semibold gap-2">
+        <Avatar src="/images/profile-picture-3.webp" size="xs"/>Bonnie Green
+      </ListItem>
+      <a href="/" class="flex items-center p-3 text-sm font-medium text-red-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline rounded-b-lg">
+        <InboxIn class="w-5 h-5 mr-1" />Delete user
+    </a>
+  </List>
+</ExampleDiv>
+
+```html
+<List active class="w-48">
+    <h3 class="text-center bg-red-500 text-white font-bold rounded-t-lg">User list</h3>
+    <ListItem class="text-base font-semibold gap-2">
+      <Avatar src="/images/profile-picture-1.webp" size="xs"/>Jese Leos
+    </ListItem>
+    <ListItem class="text-base font-semibold gap-2">
+      <Avatar src="/images/profile-picture-2.webp" size="xs"/>Robert Gouth
+    </ListItem>
+    <ListItem class="text-base font-semibold gap-2">
+      <Avatar src="/images/profile-picture-3.webp" size="xs"/>Bonnie Green
+    </ListItem>
+    <a href="/" class="flex items-center p-3 text-sm font-medium text-red-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline rounded-b-lg">
+      <InboxIn class="w-5 h-5 mr-1" />Delete user
+  </a>
+</List>
+```
 
 <Htwo label="Props" />
 

@@ -80,6 +80,7 @@ export { default as ArrowKeyUp } from './kbd/ArrowKeyUp.svelte';
 
 // List
 export { default as List } from './list-group/List.svelte';
+export { default as ListItem } from './list-group/ListItem.svelte';
 
 // Modals
 export { modalIdStore } from './modals/modalStores.js';
