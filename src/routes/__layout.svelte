@@ -268,7 +268,7 @@
 			<div class="mb-6 md:mb-0">
 				<FooterBrand
 					href="https://flowbite-svelte.com"
-					src="/images/flowbite-svelte-icon-logo.svg"
+					src={logo}
 					alt="Flowbite-Svelte Logo"
 					name="Flowbite-Svelte"
 				/>
