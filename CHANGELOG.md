@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.22.12](https://github.com/themesberg/flowbite-svelte/compare/v0.22.11...v0.22.12) (2022-07-24)
+
+
+### Features
+
+* megamenu - code skel ([d02c5c7](https://github.com/themesberg/flowbite-svelte/commit/d02c5c78a5360f623ffe3fb3659265d679e43426))
+* megamenu - wip ([02bbabc](https://github.com/themesberg/flowbite-svelte/commit/02bbabcdda0f924aefa2829a94e3b822bdb0bbf6))
+* megamenu + examples ([2f24a26](https://github.com/themesberg/flowbite-svelte/commit/2f24a268dfe474da45a654d6a4bd128f4175ae44))
+
+
+### Bug Fixes
+
+* layout and index page ([7db0e00](https://github.com/themesberg/flowbite-svelte/commit/7db0e00d1094d4d03a7386fd96c13c5b2ee09f6f))
+* layout logo ([1a78683](https://github.com/themesberg/flowbite-svelte/commit/1a78683e734bf0dae58fe704bd652fcef196dae9))
+* layout width ([e17969e](https://github.com/themesberg/flowbite-svelte/commit/e17969ec2c6f2938ed1a7c7b8f083bd3da6801e8))
+* position and classes ([caa1f13](https://github.com/themesberg/flowbite-svelte/commit/caa1f136e964503ff1976c7de7c006615038489b))
+* removed console.log ([f0f7ee9](https://github.com/themesberg/flowbite-svelte/commit/f0f7ee96bc48310ed245c00678960ac9d2eaa05b))
+
 ### [0.22.11](https://github.com/themesberg/flowbite-svelte/compare/v0.22.10...v0.22.11) (2022-07-23)
 
 
