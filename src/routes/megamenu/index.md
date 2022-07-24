@@ -78,7 +78,7 @@ Use this example to show a list of links aligned on three columns inside the meg
       <NavLi href="/">Home</NavLi>
       <NavDropdown name="Mega menu">
         <MegaMenu items={menu} let:item>
-          <a href={item.href}>{item.name}</a>
+          <a href={item.href} class="hover:text-blue-600 dark:hover:text-blue-500">{item.name}</a>
         </MegaMenu>
       </NavDropdown>
       <NavLi href="/services">Services</NavLi>
@@ -115,7 +115,7 @@ Use this example to show a list of links aligned on three columns inside the meg
     <NavLi href="/">Home</NavLi>
     <NavDropdown name="Mega menu">
       <MegaMenu items={menu} let:item>
-        <a href={item.href}>{item.name}</a>
+        <a href={item.href} class="hover:text-blue-600 dark:hover:text-blue-500">{item.name}</a>
       </MegaMenu>
     </NavDropdown>
     <NavLi href="/services">Services</NavLi>
@@ -250,7 +250,7 @@ This example can be used to also show a CTA button or link next to the menu item
           <NavLi href="/">Home</NavLi>
           <NavDropdown name="Mega menu">
             <MegaMenu full items={menu} let:item>
-              <a href={item.href} class="hover:underline">{item.name}</a>
+              <a href={item.href} class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">{item.name}</a>
               <div slot="extra" class="">
                   <h2 class="mt-4 mb-2 font-semibold text-gray-900 dark:text-white">Our brands</h2>
                   <p class="mb-2 p-0 text-sm font-light text-gray-500 dark:text-gray-300">At Flowbite, we have a portfolio of brands that cater to a variety of preferences.</p>
@@ -288,7 +288,7 @@ This example can be used to also show a CTA button or link next to the menu item
 ...
 <NavDropdown name="Mega menu">
   <MegaMenu full items={menu} let:item>
-    <a href={item.href} class="hover:underline">{item.name}</a>
+    <a href={item.href} class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">{item.name}</a>
     <div slot="extra" class="">
         <h2 class="mt-4 mb-2 font-semibold text-gray-900 dark:text-white">Our brands</h2>
         <p class="mb-2 p-0 text-sm font-light text-gray-500 dark:text-gray-300">At Flowbite, we have a portfolio of brands that cater to a variety of preferences.</p>
@@ -317,7 +317,7 @@ This example can be used to also show a CTA with a backdround image inside the d
           <NavLi href="/">Home</NavLi>
           <NavDropdown name="Mega menu">
             <MegaMenu full items={menu} let:item>
-              <a href={item.href} class="hover:underline">{item.name}</a>
+              <a href={item.href} class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">{item.name}</a>
               <a slot="extra" href="/" class="block mt-4 p-4 text-left bg-local bg-gray-500 bg-center bg-no-repeat bg-cover rounded-lg bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken" style="background-image: url(/images/nature-1.jpeg)">
                   <p class="mb-5 max-w-xl text-sm p-0 font-extrabold tracking-tight leading-tight text-white">Preview the new Flowbite dashboard navigation.</p>
                   <Button>Get started</Button>
@@ -335,7 +335,7 @@ This example can be used to also show a CTA with a backdround image inside the d
 ...
 <NavDropdown name="Mega menu">
   <MegaMenu full items={menu} let:item>
-    <a href={item.href} class="hover:underline">{item.name}</a>
+    <a href={item.href} class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">{item.name}</a>
     <a slot="extra" href="/" class="block mt-4 p-4 text-left bg-local bg-gray-500 bg-center bg-no-repeat bg-cover rounded-lg bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken" style="background-image: url(/images/nature-1.jpeg)">
         <p class="mb-5 max-w-xl text-sm p-0 font-extrabold tracking-tight leading-tight text-white">Preview the new Flowbite dashboard navigation.</p>
         <Button>Get started</Button>

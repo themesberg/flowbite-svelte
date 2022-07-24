@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { setContext } from 'svelte';
+	import { setContext, afterUpdate } from 'svelte';
 	import classNames from 'classnames';
 
 	import type { LinkType } from '$lib/types';
@@ -35,13 +35,23 @@
 			node.parentElement.classList.add('inset-x-0');
 		}
 	}
+
+	let wrapper: HTMLElement;
+	afterUpdate(() => {
+		if (wrapper) {
+			const width = wrapper.getBoundingClientRect();
+			// wrapper.style.marginLeft = '-50%';
+			console.log('after', width);
+			console.log(wrapper.clientWidth);
+		}
+	});
 </script>
 
-<div class={wrapperClass} use:init>
+<div class={wrapperClass} use:init bind:this={wrapper}>
 	<div class="flex flex-col md:flex-row p-4 max-w-screen-xl justify-center mx-auto">
 		<ul class={ulClass}>
 			{#each items as item, index}
-				<li class="flex items-center hover:text-blue-600 dark:hover:text-blue-500">
+				<li>
 					<slot {item} {index} />
 				</li>
 			{:else}
