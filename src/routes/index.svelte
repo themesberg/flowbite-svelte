@@ -21,6 +21,7 @@
 		InputfieldBlock,
 		KbdBlock,
 		ListgroupBlock,
+		MegamenuBlock,
 		ModalBlock,
 		NavbarBlock,
 		PaginationBlock,
@@ -99,6 +100,7 @@
 	<InputfieldBlock />
 	<KbdBlock />
 	<ListgroupBlock />
+	<MegamenuBlock />
 	<ModalBlock />
 	<NavbarBlock />
 	<PaginationBlock />

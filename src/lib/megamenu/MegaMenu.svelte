@@ -1,15 +1,14 @@
 <script lang="ts">
 	import { setContext, afterUpdate } from 'svelte';
 	import classNames from 'classnames';
-
 	import type { LinkType } from '$lib/types';
+
+	export let items: LinkTypeLike[] = [];
+	export let full: boolean = false;
 
 	interface LinkTypeLike extends LinkType {
 		[propName: string]: any;
 	}
-
-	export let items: LinkTypeLike[] = [];
-	export let full: boolean = false;
 
 	setContext('background', true);
 

@@ -186,7 +186,7 @@
 			</h3>
 		</Nav>
 		<Nav {navClass} {navDivClass}>
-			<h3 class={h3Class}><a href="/megamenu">Mega menu</a></h3>
+			<h3 class={h3Class}><a href="/mega-menu">Mega menu</a></h3>
 		</Nav>
 		<Nav {navClass} {navDivClass}>
 			<h3 class={h3Class}><a href="/modals">Modals</a></h3>

@@ -58,10 +58,10 @@ layout: listgroupLayout
 
 <Breadcrumb>
   <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
-  <BreadcrumbItem href="/footer">List group</BreadcrumbItem>
+  <BreadcrumbItem href="/footer">Mega Menu</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">List group</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Mega Menu</h1>
 
 <Htwo label="Default mega menu" />
 
