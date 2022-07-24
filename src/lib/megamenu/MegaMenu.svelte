@@ -41,8 +41,8 @@
 		if (wrapper) {
 			const width = wrapper.getBoundingClientRect();
 			// wrapper.style.marginLeft = '-50%';
-			console.log('after', width);
-			console.log(wrapper.clientWidth);
+			// console.log('after', width);
+			// console.log(wrapper.clientWidth);
 		}
 	});
 </script>
