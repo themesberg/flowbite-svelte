@@ -186,6 +186,9 @@
 			</h3>
 		</Nav>
 		<Nav {navClass} {navDivClass}>
+			<h3 class={h3Class}><a href="/megamenu">Mega menu</a></h3>
+		</Nav>
+		<Nav {navClass} {navDivClass}>
 			<h3 class={h3Class}><a href="/modals">Modals</a></h3>
 			{#each modals as { href, name, rel }}
 				<SidebarList {href} {name} {rel} {sideBarListClass} />
