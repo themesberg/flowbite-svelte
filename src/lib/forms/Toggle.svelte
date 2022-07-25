@@ -35,19 +35,12 @@
 		common,
 		background ? 'dark:bg-gray-600 dark:border-gray-500' : 'dark:bg-gray-700 dark:border-gray-600',
 		colors[$$restProps.color ?? 'blue'],
-		sizes[size]
+		sizes[size],
+		'relative'
 	);
 </script>
 
-<Checkbox
-	custom
-	class="relative {$$props.class}"
-	{value}
-	bind:checked
-	bind:group
-	{...$$restProps}
-	on:click
->
+<Checkbox custom class={$$props.class} {value} bind:checked bind:group {...$$restProps} on:click>
 	<div class={divClass} />
 	<slot />
 </Checkbox>

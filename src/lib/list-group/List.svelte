@@ -12,6 +12,7 @@
 
 	let groupClass: string;
 	$: groupClass = classNames(
+		'text-gray-900 bg-white dark:text-gray-200 dark:bg-gray-700',
 		'rounded-lg border border-gray-200 dark:border-gray-600',
 		'divide-y divide-gray-200 dark:divide-gray-600',
 		$$props.class

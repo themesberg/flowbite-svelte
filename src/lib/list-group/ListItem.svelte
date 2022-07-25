@@ -12,7 +12,7 @@
 
 	const states = {
 		current: 'text-white bg-blue-700 dark:text-white dark:bg-gray-800',
-		normal: 'text-gray-900 bg-white dark:text-gray-200 dark:bg-gray-700',
+		normal: '',
 		disabled: 'text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400'
 	};
 	let focusClass =
