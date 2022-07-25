@@ -4,7 +4,7 @@
 
 	export let color: Colors = 'blue';
 	export let large: boolean = false;
-	export let href: string;
+	export let href: string = undefined;
 	export let rounded: boolean = false;
 
 	let badgeClass;
