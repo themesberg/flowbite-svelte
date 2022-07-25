@@ -19,31 +19,20 @@
 	let error: string;
 </script>
 
-<Card class="w-full">
+<Card>
 	<form class="flex flex-col space-y-6" on:submit|preventDefault={login}>
 		<h3 class="text-xl font-medium text-gray-900 dark:text-white">{title}</h3>
-		<div>
-			<Label for="email" class="mb-2">Email</Label>
-			<Input
-				type="email"
-				name="email"
-				id="email"
-				bind:value={email}
-				placeholder="name@company.com"
-				required
-			/>
-		</div>
-		<div>
-			<Label for="password" class="mb-2">Your password</Label>
-			<Input
-				type="password"
-				name="password"
-				id="password"
-				placeholder="••••••••"
-				bind:value={password}
-				required
-			/>
-		</div>
+
+		<Label class="space-y-2">
+			<span>Email</span>
+			<Input type="email" name="email" bind:value={email} placeholder="name@company.com" required />
+		</Label>
+
+		<Label class="space-y-2">
+			<span>Your password</span>
+			<Input type="password" name="password" placeholder="•••••" bind:value={password} required />
+		</Label>
+
 		<div class="flex items-start">
 			{#if rememberMe}
 				<Checkbox>Remember me</Checkbox>

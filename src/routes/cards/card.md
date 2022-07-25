@@ -31,34 +31,16 @@ layout: cardLayout
   };
   let star5 = "5.0";
   let list = [
-    {
-      img: {
-        src: "/images/profile-picture-1.webp",
-        alt: "Neil Sims",
-      },
-      name: "Neil Sims",
-      email: "email@windster.com",
-      value: "$320",
+    { img: { src: "/images/profile-picture-1.webp", alt: "Neil Sims",},
+      name: "Neil Sims", email: "email@windster.com", value: "$320"
     },
-    {
-      img: {
-        src: "/images/profile-picture-2.webp",
-        alt: "Bonnie Green",
-      },
-      name: "Bonnie Green",
-      email: "email@windster.com",
-      value: "$3467",
+    { img: { src: "/images/profile-picture-2.webp", alt: "Bonnie Green" },
+      name: "Bonnie Green", email: "email@windster.com", value: "$3467"
     },
-    {
-      img: {
-        src: "/images/profile-picture-3.webp",
-        alt: "Michael Gough",
-      },
-      name: "Michael Gough",
-      email: "email@windster.com",
-      value: "$67",
+    { img: { src: "/images/profile-picture-3.webp", alt: "Michael Gough" },
+      name: "Michael Gough", email: "email@windster.com", value: "$67"
     },
-  ]; 
+  ];
 </script>
 
 <Breadcrumb>
@@ -88,11 +70,20 @@ Notice the `href` prop set, as that card is one big `<a/>` element.
 <ExampleDiv>
   <Card href="/cards">
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-    <p class="font-normal text-gray-700 dark:text-gray-400">
-   Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+    <p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">
+      Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
     </p>
   </Card>
 </ExampleDiv>
+
+```html
+<Card href="/cards">
+  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+  <p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">
+    Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+  </p>
+</Card>
+```
 
 <Htwo label="Card with action button" />
 
@@ -101,14 +92,26 @@ Use the following example of a card element if you also want to have an action b
 <ExampleDiv>
   <Card>
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-   Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
+      Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
     </p>
     <Button>
       Read more <ArrowRight class="w-5 h-5 ml-2"/>
     </Button>
   </Card>
 </ExampleDiv>
+
+```html
+<Card>
+  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
+    Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+  </p>
+  <Button>
+    Read more <ArrowRight class="w-5 h-5 ml-2"/>
+  </Button>
+</Card>
+```
 
 <Htwo label="Card with image" />
 
@@ -117,16 +120,28 @@ You can use the following example of a card element with an image for blog posts
 <ExampleDiv>
   <Card img="/images/image-1.jpeg" reverse={vCard}>
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-   Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
+      Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
     </p>
     <Button>
-    Read more <ArrowRight class="w-5 h-5 ml-2"/>
+      Read more <ArrowRight class="w-5 h-5 ml-2"/>
     </Button>
   </Card>
   <Toggle bind:checked={vCard} class="mt-4 italic dark:text-gray-500">Reverse</Toggle>
 </ExampleDiv>
 
+```html
+<Card img="/images/image-1.jpeg" reverse={vCard}>
+  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
+    Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+  </p>
+  <Button>
+    Read more <ArrowRight class="w-5 h-5 ml-2"/>
+  </Button>
+</Card>
+<Toggle bind:checked={vCard} class="mt-4 italic dark:text-gray-500">Reverse</Toggle>
+```
 <Htwo label="Horizontal card" />
 
 If you want to spice up your cards you can use the following card which has its child elements aligned horizontally.
@@ -134,19 +149,21 @@ If you want to spice up your cards you can use the following card which has its 
 <ExampleDiv>
   <Card img="/images/image-1.jpeg" href="/" horizontal reverse={hCard}>
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-   Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
+      Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
     </p>
   </Card>
   <Toggle bind:checked={hCard} class="mt-4 italic dark:text-gray-500">Reverse</Toggle>
 </ExampleDiv>
 
 ```html
-<Card header="Noteworthy technology acquisitions 2021">
-  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-  Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+<Card img="/images/image-1.jpeg" href="/" horizontal reverse={hCard}>
+  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
+    Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
   </p>
 </Card>
+<Toggle bind:checked={vCard} class="mt-4 italic dark:text-gray-500">Reverse</Toggle>
 ```
 
 <Htwo label="User profile card" />
@@ -171,7 +188,7 @@ Use this user profile card example if you want to show a dropdown menu and butto
         <span class="text-sm text-gray-500 dark:text-gray-400">Visual Designer</span>
         <div class="flex mt-4 space-x-3 lg:mt-6">
           <Button>Add friend</Button>
-          <Button outline color="dark" class="dark:text-white">Message</Button>
+          <Button color="light" class="dark:text-white">Message</Button>
         </div>
     </div>
   </Card>
@@ -184,12 +201,17 @@ Use this card example where you can add form input elements that can be used for
 [See `SignInCard` for details](/cards/signin)
 
 <ExampleDiv>
-  <SignInCard rememberMe signup={{name: 'Sign up', href:'/'}} lostPassword={{name: 'Forgot password', href:"/"}}/>
+  <SignInCard rememberMe signup={{name: 'Create account', href:'/'}} lostPassword={{name: 'Lost password', href:"/"}}/>
 </ExampleDiv>
+
+```html
+  <SignInCard rememberMe signup={{name: 'Create account', href:'/'}} lostPassword={{name: 'Lost password', href:"/"}}/>
+```
 
 <Htwo label="Call to action card" />
 
 Use this CTA card example to encourage your users to visit a certain page such as downloading the iOS or Android application for your project.
+
 <ExampleDiv>
   <Card class="!max-w-2xl text-center" padding='xl'>
     <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Work fast from anywhere</h5>
@@ -203,6 +225,18 @@ Use this CTA card example to encourage your users to visit a certain page such a
   </Card>
 </ExampleDiv>
 
+```html
+<Card class="!max-w-2xl text-center" padding='xl'>
+  <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Work fast from anywhere</h5>
+  <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">
+    Stay up to date and move work forward with Flowbite on iOS & Android. Download the app today.
+  </p>
+  <div class="justify-center items-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+    <Button>Download it</Button>
+    <Button>Get it on</Button>
+  </div>
+</Card>
+```
 <Htwo label="Card with list" />
 
 Use this card example if you want to show a list of data:
@@ -211,7 +245,7 @@ Use this card example if you want to show a list of data:
   <Card padding="xl">
     <div class="flex justify-between items-center mb-4">
         <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Latest Customers</h5>
-        <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
+        <a href="/" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
             View all
         </a>
    </div>
@@ -230,6 +264,45 @@ Use this card example if you want to show a list of data:
   </Card>
 </ExampleDiv>
 
+```html
+<script>
+  let list = [
+    { img: { src: "/images/profile-picture-1.webp", alt: "Neil Sims",},
+      name: "Neil Sims", email: "email@windster.com", value: "$320"
+    },
+    { img: { src: "/images/profile-picture-2.webp", alt: "Bonnie Green" },
+      name: "Bonnie Green", email: "email@windster.com", value: "$3467"
+    },
+    { img: { src: "/images/profile-picture-3.webp", alt: "Michael Gough" },
+      name: "Michael Gough", email: "email@windster.com", value: "$67"
+    },
+  ];
+</script>
+
+<Card padding="xl">
+  <div class="flex justify-between items-center mb-4">
+      <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">
+        Latest Customers
+      </h5>
+      <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
+          View all
+      </a>
+  </div>
+  <List items={list} let:item class="border-0 dark:!bg-transparent">
+    <div class="flex items-center space-x-4">
+      <Avatar src={item.img.src} alt={item.img.alt}/>
+      <div class="flex-1 space-y-1 font-medium dark:text-white">
+        <div>{item.name}</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400">{item.email}</div>
+      </div>
+      <div class="inline-flex items-center text-xl font-semibold text-gray-900 dark:text-white">
+          {item.value}
+      </div>
+    </div>
+  </List>
+</Card>
+```
+
 <Htwo label="E-commerce card" />
 
 Use this card for your e-commerce websites and show information about the products and enable actions such as adding a review and adding the product to the cart.
@@ -237,6 +310,19 @@ Use this card for your e-commerce websites and show information about the produc
 [See `EcommerceCard` for details](/cards/ecommerce)
 
 <ExampleDiv>
+  <EcommerceCard
+    title="Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport"
+    href="/"
+    price="$543"
+    img={img1}
+    stars={star5}
+    btnText="Buy now"
+  >
+  <p cloass="dark:text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+  </EcommerceCard>
+</ExampleDiv>
+
+```html
 <EcommerceCard
   title="Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport"
   href="/"
@@ -247,7 +333,8 @@ Use this card for your e-commerce websites and show information about the produc
 >
 <p cloass="dark:text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
 </EcommerceCard>
-</ExampleDiv>
+```
+
 <Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 

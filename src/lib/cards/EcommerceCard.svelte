@@ -16,7 +16,7 @@
 	export let divClass: string =
 		'max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700';
 	export let priceClass: string = 'text-3xl font-bold text-gray-900 dark:text-white';
-	let spanClass: string = 'text-xs font-semibold mr-2 px-2.5 py-0.5 rounded ml-3 ';
+	let spanClass: string = 'text-xs font-semibold mr-2 py-0.5 rounded';
 	let linkClass: string =
 		'text-white focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 text-center ';
 
