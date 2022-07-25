@@ -259,7 +259,7 @@
 
 	<main class="flex mx-auto mb-8 px-2 pt-16 lg:pl-64 2xl:pl-16">
 		<DarkMode btnClass={darkmodebtn} />
-		<div class="w-full">
+		<div class="w-full px-8">
 			<slot />
 		</div>
 		<Toc />
