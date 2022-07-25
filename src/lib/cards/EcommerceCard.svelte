@@ -13,10 +13,8 @@
 	export let btnText: string = '';
 	export let headerClass: string =
 		'text-xl font-semibold tracking-tight text-gray-900 dark:text-white';
-	export let divClass: string =
-		'max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700';
 	export let priceClass: string = 'text-3xl font-bold text-gray-900 dark:text-white';
-	let spanClass: string = 'text-xs font-semibold mr-2 py-0.5 rounded';
+	let spanClass: string = 'flex items-center text-xs font-semibold mr-2 py-0.5 rounded';
 	let linkClass: string =
 		'text-white focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 text-center ';
 
@@ -47,7 +45,7 @@
 		</h3>
 	</a>
 	{#if stars}
-		<Rating rating={stars} divClass="flex items-center {spanClass}">
+		<Rating rating={stars} divClass={spanClass}>
 			<Badge slot="text" color={btnColor}>5</Badge>
 		</Rating>
 	{/if}

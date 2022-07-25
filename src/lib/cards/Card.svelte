@@ -1,15 +1,12 @@
 <script lang="ts">
 	import classNames from 'classnames';
-	import Options from './Options.svelte';
 	import { setContext } from 'svelte';
-	import type { LinkType } from '$lib/types';
 
 	export let href: string = undefined;
 	export let horizontal: boolean = false;
 	export let reverse: boolean = false;
 	export let img: string = undefined;
 
-	export let options: LinkType[] = undefined;
 	export let padding: 'sm' | 'md' | 'lg' = 'lg';
 
 	setContext('background', true);
@@ -50,11 +47,9 @@
 	{#if img}
 		<img class={imgClass} src={img} alt="" />
 		<div class="flex flex-col {innerPdding}">
-			<Options {options} />
 			<slot />
 		</div>
 	{:else}
-		<Options {options} />
 		<div><slot /></div>
 	{/if}
 </svelte:element>
