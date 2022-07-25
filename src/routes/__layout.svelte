@@ -68,7 +68,7 @@
 	};
 </script>
 
-<div class="px-4 mx-auto w-full max-w-7xl">
+<div class="px-4 mx-auto w-full max-w-full">
 	<Side
 		{siteName}
 		{siteClass}
@@ -257,15 +257,15 @@
 		</Nav>
 	</Side>
 
-	<main class="flex w-3/4 mx-auto mb-8 px-2 pt-16 lg:pl-10 2xl:pl-16">
+	<main class="flex mx-auto mb-8 px-2 pt-16 lg:pl-64 2xl:pl-16">
 		<DarkMode btnClass={darkmodebtn} />
-		<div class="w-full">
+		<div class="w-full px-8">
 			<slot />
 		</div>
 		<Toc />
 	</main>
 </div>
-<div class="w-3/4 mx-auto mb-4 pt-4 lg:pl-24 2xl:pl-16">
+<div class="mx-auto mb-4 pt-4 lg:pl-64 2xl:pl-16">
 	<Footer footerType="custom" customClass="p-4 bg-white sm:p-6 dark:bg-gray-900">
 		<div class="md:flex md:justify-between">
 			<div class="mb-6 md:mb-0">
