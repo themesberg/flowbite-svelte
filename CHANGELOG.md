@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.22.14](https://github.com/themesberg/flowbite-svelte/compare/v0.22.13...v0.22.14) (2022-07-25)
+
+
+### Bug Fixes
+
+* $$restProps before $$props.class ([9378cf5](https://github.com/themesberg/flowbite-svelte/commit/9378cf5349446ec8355317e98e462e379350a697))
+* add padding to w-full ([e1008c9](https://github.com/themesberg/flowbite-svelte/commit/e1008c9620f18b42664059595ae3fe1e421e097b))
+* layout and Toc padding ([6a67345](https://github.com/themesberg/flowbite-svelte/commit/6a6734545429c7228a1bf3cbc58f7e4739dbfe65))
+* various minor fixes ([9ac3296](https://github.com/themesberg/flowbite-svelte/commit/9ac3296635db9e7af2a45cc928477ac15e831dc4))
+
 ### [0.22.13](https://github.com/themesberg/flowbite-svelte/compare/v0.22.12...v0.22.13) (2022-07-24)
 
 ### [0.22.12](https://github.com/themesberg/flowbite-svelte/compare/v0.22.11...v0.22.12) (2022-07-24)
