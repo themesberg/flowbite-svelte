@@ -115,6 +115,8 @@ Use the following example of a card element if you also want to have an action b
 
 <Htwo label="Card with image" />
 
+User <code>reverse={true}</code> to reverse the position of an image.
+
 You can use the following example of a card element with an image for blog posts, user cards, and many more.
 
 <ExampleDiv>
@@ -131,7 +133,7 @@ You can use the following example of a card element with an image for blog posts
 </ExampleDiv>
 
 ```html
-<Card img="/images/image-1.jpeg" reverse={vCard}>
+<Card img="/images/image-1.jpeg" reverse={true}>
   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
   <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
     Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
@@ -140,7 +142,6 @@ You can use the following example of a card element with an image for blog posts
     Read more <ArrowRight class="w-5 h-5 ml-2"/>
   </Button>
 </Card>
-<Toggle bind:checked={vCard} class="mt-4 italic dark:text-gray-500">Reverse</Toggle>
 ```
 <Htwo label="Horizontal card" />
 
@@ -157,13 +158,12 @@ If you want to spice up your cards you can use the following card which has its 
 </ExampleDiv>
 
 ```html
-<Card img="/images/image-1.jpeg" href="/" horizontal reverse={hCard}>
+<Card img="/images/image-1.jpeg" href="/" horizontal reverse={true}>
   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
   <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
     Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
   </p>
 </Card>
-<Toggle bind:checked={vCard} class="mt-4 italic dark:text-gray-500">Reverse</Toggle>
 ```
 
 <Htwo label="User profile card" />
