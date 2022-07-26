@@ -9,20 +9,6 @@
 	<div class="container flex flex-wrap mx-auto">
 		<slot />
 
-		<Htwo label="Related components" />
-		<div class="related-components">
-			<p>
-				<a href="/ratings/rating" class="link">Rating</a>
-			</p>
-
-			<p>
-				<a href="/ratings/advanced-rating" class="link">Advanced Rating</a>
-			</p>
-
-			<p>
-				<a href="/ratings/score-rating" class="link">Score Rating</a>
-			</p>
-		</div>
 		<Htwo label="References" />
 		<div class="references">
 			<p>

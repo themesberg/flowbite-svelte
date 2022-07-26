@@ -7,10 +7,6 @@ export const svelteflows = [
 	{ href: '/pages/license', name: 'License' }
 ];
 
-export const accordions = [
-	{ href: '/accordions/default', name: 'Accordion' },
-	{ href: '/accordions/icon-accordion', name: 'Icon accordion' }
-];
 
 export const alerts = [{ href: '/alerts/', name: 'Alert' }];
 
@@ -24,11 +20,6 @@ export const cards = [
 	{ href: '/cards/interactive', name: 'Interactive' },
 	{ href: '/cards/list', name: 'List' },
 	{ href: '/cards/signin', name: 'SignIn' }
-];
-
-export const carousels = [
-	{ href: '/carousels/default', name: 'Default' },
-	{ href: '/carousels/transition', name: 'Transition' }
 ];
 
 export const forms = [
@@ -53,12 +44,6 @@ export const modals = [
 	{ href: '/modals/all-modals', name: 'All modals' }
 ];
 
-export const ratings = [
-	{ href: '/ratings/rating', name: 'Rating' },
-	{ href: '/ratings/advanced-rating', name: 'Advanced rating' },
-	{ href: '/ratings/score-rating', name: 'Score rating' }
-];
-
 export const tabs = [
 	{ href: '/tabs/default-tabs', name: 'Default' },
 	{ href: '/tabs/interactive-tabs', name: 'Interactive' },
@@ -69,18 +54,6 @@ export const tabs = [
 	{ href: '/tabs/icon-tabs', name: 'Icon tabs' },
 	{ href: '/tabs/multiple-interactive-tabs', name: 'Multiple Interactive' }
 ];
-
-export const timelines = [
-	{ href: '/timelines/default', name: 'Default' },
-	{ href: '/timelines/vertical', name: 'Vertical' },
-	{ href: '/timelines/horizontal', name: 'Horizontal' },
-	{ href: '/timelines/activity', name: 'Activity log' },
-	{ href: '/timelines/group', name: 'Grouped' }
-];
-// export const tooltips = [
-//   { href: "/tooltips/default", name: "Default" },
-//   { href: "/tooltips/light", name: "Light tooltip" },
-// ];
 
 export const topMenus = [
 	{ id: '1', href: '/', name: 'Home' },

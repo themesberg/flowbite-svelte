@@ -10,16 +10,6 @@
 	<div class="container flex flex-wrap mx-auto">
 		<slot />
 
-		<Htwo label="Related components" />
-		<div class="related-components">
-			<p>
-				<a href="/carousels/default" class="link">Default Carousel</a>
-			</p>
-
-			<p>
-				<a href="/carousels/transition" class="link">Carousel transition</a>
-			</p>
-		</div>
 		<Htwo label="References" />
 		<div class="references">
 			<p>

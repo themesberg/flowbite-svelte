@@ -9,28 +9,6 @@
 	<div class="container flex flex-wrap mx-auto">
 		<slot />
 
-		<Htwo label="Related components" />
-		<div class="related-components">
-			<p>
-				<a href="/timelines/default" class="link">Default timeline</a>
-			</p>
-
-			<p>
-				<a href="/timelines/vertical/" class="link">Vetical timeline</a>
-			</p>
-
-			<p>
-				<a href="/timelines/horizontal" class="link">Horizontal timeline</a>
-			</p>
-
-			<p>
-				<a href="/timelines/activity" class="link">Activity log</a>
-			</p>
-
-			<p>
-				<a href="/timelines/group" class="link">Grouped timeline</a>
-			</p>
-		</div>
 		<Htwo label="References" />
 		<div class="references">
 			<p>

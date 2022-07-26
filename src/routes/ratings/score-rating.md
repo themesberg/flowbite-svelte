@@ -56,7 +56,8 @@ layout: ratingLayout
 
 <Htwo label="Score rating" />
 
-<ExampleDiv>  <ScoreRating
+<ExampleDiv>  
+<ScoreRating
     {headerLabel}
     ratings={[
       { label: 'Staff', rating: 8.8 },
