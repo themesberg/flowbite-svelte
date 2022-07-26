@@ -12,7 +12,7 @@
 	} from '$lib/index';
 	import { Side, Nav, SidebarList } from 'svelte-sidebar-menu';
 	import Github from './utils/icons/Github.svelte';
-	import { cards, forms, modals, svelteflows, tabs, topMenus } from './moduleItems';
+	import { cards, forms, modals, svelteflows, topMenus } from './moduleItems';
 
 	let asideClass =
 		'absolute w-auto bg-white pt-8 shadow-lg z-50 px-4 h-screen z-50 overflow-scroll dark:bg-gray-900';
@@ -214,9 +214,6 @@
 		</Nav>
 		<Nav {navClass}>
 			<h3 class={h3Class}><a href="/tabs">Tabs</a></h3>
-			{#each tabs as { href, name, rel }}
-				<SidebarList {href} {name} {rel} {sideBarListClass} />
-			{/each}
 		</Nav>
 		<Nav {navClass}>
 			<h3 class={h3Class}>

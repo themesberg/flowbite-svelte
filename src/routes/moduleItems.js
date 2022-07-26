@@ -44,17 +44,6 @@ export const modals = [
 	{ href: '/modals/all-modals', name: 'All modals' }
 ];
 
-export const tabs = [
-	{ href: '/tabs/default-tabs', name: 'Default' },
-	{ href: '/tabs/interactive-tabs', name: 'Interactive' },
-	{ href: '/tabs/interactive-tabs-2', name: 'Interactive Tabs 2' },
-	{ href: '/tabs/pilltabs', name: 'Pilltabs' },
-	{ href: '/tabs/full-width-tabs', name: 'Full width tabs' },
-	{ href: '/tabs/underline-tabs', name: 'Underline tabs' },
-	{ href: '/tabs/icon-tabs', name: 'Icon tabs' },
-	{ href: '/tabs/multiple-interactive-tabs', name: 'Multiple Interactive' }
-];
-
 export const topMenus = [
 	{ id: '1', href: '/', name: 'Home' },
 	{ id: '2', href: '/pages/about', name: 'About' },
