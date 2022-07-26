@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.22.16](https://github.com/themesberg/flowbite-svelte/compare/v0.22.15...v0.22.16) (2022-07-26)
+
+
+### Bug Fixes
+
+* cards/index.md, buttons ([9b2ca39](https://github.com/themesberg/flowbite-svelte/commit/9b2ca3914681439e667b5b6026f6c6e22b56b6fd))
+
 ### [0.22.15](https://github.com/themesberg/flowbite-svelte/compare/v0.22.14...v0.22.15) (2022-07-26)
 
 
