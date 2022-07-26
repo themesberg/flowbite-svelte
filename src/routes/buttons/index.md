@@ -44,7 +44,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Buttons</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Buttons</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Button</h1>
 
 <p>Import a button component in the script tag.</p>
 

@@ -36,7 +36,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Ratings</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Rating Component</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Rating</h1>
 
 <Htwo label="Set up" />
 

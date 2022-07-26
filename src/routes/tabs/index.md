@@ -146,8 +146,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     },
   ];
 
-
-
   let itabs1 = [
     {
       name: "Profile-1",
@@ -201,7 +199,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     },
   ];
 
-
 	let tab1 = { name: 'Tab1', id: 1 };
 	let tab2 = { name: 'Tab2', id: 2 };
 	let tab3 = { name: 'Tab3', id: 3 };
@@ -247,7 +244,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Tabs</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Default Tabs</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Tabs</h1>
 
 <Htwo label="Examples" />
 
