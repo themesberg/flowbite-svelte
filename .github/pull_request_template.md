@@ -22,9 +22,9 @@ Closes # <!-- Issue # here -->
 - [ ] My code requires changes to the documentation
 - [ ] I have updated the documentation as required
 - [ ] All the tests have passed
-- [ ] My pull request is based on the latest commit/version
+- [ ] My pull request is based on the latest commit (not the npm version).
 
-If your branch is behind the upstream master, I will have difficulties to merge the request. Please fetch the latest version of the branch:
+If your branch is behind the upstream master, I may have difficulties to merge the request. Please fetch the latest version of the main branch:
 
 ```sh
 git checkout your-branch
