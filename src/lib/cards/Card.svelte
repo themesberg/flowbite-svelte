@@ -46,7 +46,7 @@
 <svelte:element this={href ? 'a' : 'div'} {href} class={cardClass}>
 	{#if img}
 		<img class={imgClass} src={img} alt="" />
-		<div class="flex flex-col {innerPdding}">
+		<div class={innerPdding}>
 			<slot />
 		</div>
 	{:else}

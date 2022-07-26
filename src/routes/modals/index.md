@@ -3,9 +3,9 @@ layout: modalLayout
 ---
 
 <script>
-	import { Card, Breadcrumb, BreadcrumbItem } from '$lib/index';
-  import { Home } from 'svelte-heros'
-	let divClass = 'max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700';
+	import { Breadcrumb, BreadcrumbItem } from '$lib/index';
+  	import { Home } from 'svelte-heros'
+	import NavCard from "../utils/NavCard.svelte";
 </script>
 
 <Breadcrumb>
@@ -14,22 +14,11 @@ layout: modalLayout
 </Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white py-8">Modal Components</h1>
-<div class="p-4">
-	<Card {divClass} img="/images/modals.webp" btnColor="blue" header="All Modals" link="/modals/all-modals" btnLabel="Read more" />
+<div class="flex gap-2 flex-wrap">
+	<NavCard img="/images/modals.webp" color="blue" href="/modals/all-modals">All Modals</NavCard>
+	<NavCard img="/images/modals.webp" color="red" href="/modals/small">Small Modals</NavCard>
+	<NavCard img="/images/modals.webp" color="green" href="/modals/medium">Medium Modals</NavCard>
+	<NavCard img="/images/modals.webp" color="purple" href="/modals/large">Large Modals</NavCard>
+	<NavCard img="/images/modals.webp" color="blue" href="/modals/extra-large">Extra-large</NavCard>
+	<NavCard img="/images/modals.webp" color="red" href="/modals/signin">Signin Modals</NavCard>
 </div>
-<div class="p-4">
-	<Card {divClass} img="/images/modals.webp" btnColor="red" header="Small Modals" link="/modals/small" btnLabel="Read more" />
-</div>
-<div class="p-4">
-	<Card {divClass} img="/images/modals.webp" btnColor="green" header="Medium Modals" link="/modals/medium" btnLabel="Read more" />
-</div>
-<div class="p-4">
-	<Card {divClass} img="/images/modals.webp" btnColor="purple" header="Large Modals" link="/modals/large" btnLabel="Read more" />
-</div>
-<div class="p-4">
-	<Card {divClass} img="/images/modals.webp" btnColor="pink" header="Extra-large Modals" link="/modals/extra-large" btnLabel="Read more" />
-</div>
-<div class="p-4">
-	<Card {divClass} img="/images/modals.webp" btnColor="indigo" header="Signin Modals" link="/modals/signin" btnLabel="Read more" />
-</div>
-
