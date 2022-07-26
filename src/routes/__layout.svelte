@@ -75,7 +75,7 @@
 		{childLi}
 		{hamburgerClass}
 	>
-		<Nav {navClass}>
+		<Nav {navClass} class="pb-4">
 			<h3 class={h3Class}>
 				<a href="/">Flowbite Svelte</a>
 			</h3>
