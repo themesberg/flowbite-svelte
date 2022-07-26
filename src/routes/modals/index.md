@@ -14,10 +14,15 @@ layout: modalLayout
   import componentProps2 from '../props/SmallModal.json'
 	import componentProps3 from '../props/MediumModal.json'
 	import componentProps4 from '../props/LargeModal.json'
+  import componentProps5 from '../props/ExtraLargeModal.json'
+  import componentProps6 from '../props/SignInModal.json'
+
   let items1 = componentProps1.props
   let items2 = componentProps2.props
 	let items3 = componentProps3.props
 	let items4 = componentProps4.props
+  let items5 = componentProps5.props
+  let items6 = componentProps6.props
 
 	let propHeader = ['Name', 'Type', 'Default']
 	
@@ -86,6 +91,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     alert("handlebtn3 is clicked from a parent page.");
     modal2.closeModal()
   };
+
+  let exModal1;
+  let exModal2;
 </script>
 
 <Breadcrumb>
@@ -299,7 +307,7 @@ const handlebtnS2 = () => {
 </MediumModal>
 ```
 
-<Htwo label="Medium modals with an action button" />
+<Htwo label="Medium modals with action buttons" />
 
 <ExampleDiv class="flex justify-center">
   <ModalButton id="id1" btnName="Medium Modal with one action button" btnColor="gray" />
@@ -334,10 +342,10 @@ const handlebtnS2 = () => {
 </MediumModal>
 ```
 
-<Htwo label="Medium modal with an action button" />
+<Htwo label="Medium modal with action buttons" />
 
-<ExampleDiv>
-  <ModalButton id="id2" btnName="Medium Modal with two action buttons" btnColor="blue" />
+<ExampleDiv class="flex justify-center">
+  <ModalButton id="id2" btnName="Medium modal with two action buttons" btnColor="blue" />
 </ExampleDiv>
 
 <MediumModal
@@ -355,9 +363,8 @@ const handlebtnS2 = () => {
   quis nostrud exercitation ullamco.
 </MediumModal>
 
-
 ```html
-<ModalButton id="id2" btnName="Medium Modal with two action buttons" btnColor="blue" />
+<ModalButton id="id2" btnName="Medium modal with two action buttons" btnColor="blue" />
 <MediumModal
   bind:this={modal2}
   id="id2"
@@ -452,16 +459,16 @@ const handlebtnS2 = () => {
 </LargeModal>
 ```
 
-<Htwo label="Large modal with two action buttons" />
+<Htwo label="Large modal with action buttons" />
 
 <ExampleDiv class="flex justify-center">
-  <ModalButton id="id2" btnName="Large Modal with two buttons" btnColor="indigo" />
+  <ModalButton id="lid2" btnName="Large modal with action buttons" color="purple" />
 </ExampleDiv>
 
 <LargeModal
   bind:this={modal2}
-  id="id2"
-  btnColor="indigo"
+  id="lid2"
+  btnColor="purple"
   title="Default Modal Title"
   btn1="Go home"
   btn2="Close"
@@ -472,7 +479,6 @@ const handlebtnS2 = () => {
   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
   quis nostrud exercitation ullamco.
 </LargeModal>
-
 
 ```html
 <ModalButton id="id2" btnName="Large Modal with two buttons" btnColor="indigo" />
@@ -491,11 +497,202 @@ const handlebtnS2 = () => {
 </LargeModal>
 ```
 
+<Htwo label="Extra-large Modals" />
+
+<h3>Set up</h3>
+
+<p>Import ExtraLargeModal and ModalButton components and set variables in the script tag. To close a modal, use `closeModal` function in your event handler.</p>
 
 
+```html
+<script>
+  import { ModalButton, ExtraLargeModal }from '$lib/index';
 
+  let modal2;
+  let modal3;
 
+  const handlebtn1 = () => {
+    alert("handlebtn1 is clicked from a parent page.");
+    modal2.closeModal()
+  };
 
+  const handlebtn2 = () => {
+    alert("handlebtn2 is clicked from a parent page.");
+    modal3.closeModal()
+  };
+
+  const handlebtn3 = () => {
+    alert("handlebtn3 is clicked from a parent page.");
+    modal3.closeModal()
+  };
+</script>
+```
+
+<ExampleDiv class="flex justify-center">
+  <ModalButton id="exm1" btnName="Info Modal" />
+</ExampleDiv>
+
+<ExtraLargeModal id="exm1" title="Info Modal">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco.
+</ExtraLargeModal>
+
+<p> Create a button and modal.</p>
+
+```html
+<script>
+ import { ModalButton, ExtraLargeModal } from "flowbite-svelte";
+</script>
+
+<ModalButton id="exm1" btnName="Info Modal" />
+
+<ExtraLargeModal id="exm1" title="Info Modal">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+</ExtraLargeModal>
+```
+
+<Htwo label="Extra-large modals with action buttons" />
+
+<ExampleDiv class="flex justify-center">
+  <ModalButton id="id1" btnName="Extra Large Modal with one button" btnColor="green" />
+</ExampleDiv>
+
+<ExtraLargeModal
+  bind:this={modal2}
+  id="id1"
+  title="Default Modal Title"
+  btn1="Go home"
+  on:handlebtn1={handlebtn1}
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco.
+</ExtraLargeModal>
+
+<p class=" dark:text-white py-4"> Create a button and modal.</p>
+
+```html
+<script>
+import { ModalButton, ExtraLargeModal } from "flowbite-svelte";
+let modal2;
+const handlebtn1 = () => {
+  alert("handlebtn1 is clicked from a parent page.");
+  extraLargModal.closeModal()
+};
+</script>  
+<ModalButton id="id1" btnName="Extra Large Modal with one button" btnColor="green" />
+
+<ExtraLargeModal
+  bind:this={modal2}
+  id="id1"
+  title="Default Modal Title"
+  btn1="Go home"
+  on:handlebtn1={handlebtn1}
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+</ExtraLargeModal>
+```
+
+<Htwo label="Extra-large modal with two buttons" />
+
+<ExampleDiv class="flex justify-center">
+  <ModalButton id="id2" btnName="Extra Large Modal with two buttons" btnColor="purple" />
+</ExampleDiv>
+
+<p class=" dark:text-white py-4">Create a button and modal.</p>
+
+```html
+<ModalButton id="id2" btnName="Extra Large Modal with two buttons" btnColor="purple" />
+
+<ExtraLargeModal
+  bind:this={exModal1}
+  id="id2"
+  btnColor="indigo"
+  title="Default Modal Title"
+  btn1="Go home"
+  btn2="Close"
+  on:handlebtn1={handlebtn2}
+  on:handlebtn2={handlebtn3}
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+</ExtraLargeModal>
+```
+
+<ExtraLargeModal
+  bind:this={exModal2}
+  id="id2"
+  btnColor="indigo"
+  title="Default Modal Title"
+  btn1="Go home"
+  btn2="Close"
+  on:handlebtn1={handlebtn2}
+  on:handlebtn2={handlebtn3}
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco.
+</ExtraLargeModal>
+
+```html
+
+<ExtraLargeModal
+  bind:this={exModal2}
+  id="id2"
+  btnColor="indigo"
+  title="Default Modal Title"
+  btn1="Go home"
+  btn2="Close"
+  on:handlebtn1={handlebtn2}
+  on:handlebtn2={handlebtn3}
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco.
+</ExtraLargeModal>
+```
+
+<Htwo label="Sign-in Modals" />
+<h3>Set up</h3>
+
+<p class="dark:text-white text-base py-4">Import SignInModal, ModalButton components and set variables in the script tag.</p>
+
+```html
+import { SignInModal, ModalButton } from "flowbite-svelte";
+```
+
+<ExampleDiv class="flex justify-center">
+  <ModalButton
+    id="signin1"
+    btnName="Sign In Modal"
+    btnColor="green"
+  />
+</ExampleDiv>
+
+<SignInModal
+  id="signin1"
+  titleSignIn="SignIn Modal Title"
+  lostPasswordLink="/"
+  signUpLink="/about"
+  formLink="/modals"
+/>
+
+<p class="dark:text-white text-base py-4">Create a button and modal.</p>
+
+```html
+ <ModalButton
+    id="signin1"
+    btnName="Sign In Modal"
+    btnColor="green"
+/>
+<SignInModal
+  id="signin1"
+  titleSignIn="SignIn Modal Title"
+  lostPasswordLink="/"
+  signUpLink="/about"
+  formLink="/modals"
+/>
+```
 
 <Htwo label="Props" />
 
@@ -512,4 +709,28 @@ const handlebtnS2 = () => {
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
+</TableProp>
+
+<h3>MediumModal</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items3} rowState='hover' />
+</TableProp>
+
+<h3>LargeModal</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items4} rowState='hover' />
+</TableProp>
+
+<h3>ExtraLargeModal</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items5} rowState='hover' />
+</TableProp>
+
+<h3>SignInModal</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
