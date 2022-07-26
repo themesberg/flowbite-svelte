@@ -7,42 +7,9 @@ export const svelteflows = [
 	{ href: '/pages/license', name: 'License' }
 ];
 
-
 export const alerts = [{ href: '/alerts/', name: 'Alert' }];
 
 export const badges = [{ href: '/badges/', name: 'Badges' }];
-
-export const cards = [
-	{ href: '/cards/card', name: 'Card' },
-	{ href: '/cards/ecommerce', name: 'E-commerce' },
-	{ href: '/cards/cta', name: 'CTA' },
-	{ href: '/cards/horizontal', name: 'Horizontal' },
-	{ href: '/cards/interactive', name: 'Interactive' },
-	{ href: '/cards/list', name: 'List' },
-	{ href: '/cards/signin', name: 'SignIn' }
-];
-
-export const forms = [
-	{ href: '/forms/checkbox', name: 'Checkbox' },
-	{ href: '/forms/file-input', name: 'File input' },
-	{ href: '/forms/floating-label', name: 'Floating label' },
-	{ href: '/forms/input-field', name: 'Input' },
-	{ href: '/forms/radio', name: 'Radio' },
-	{ href: '/forms/range', name: 'Range' },
-	{ href: '/forms/search-input', name: 'Search' },
-	{ href: '/forms/select', name: 'Select' },
-	{ href: '/forms/textarea', name: 'Textarea' },
-	{ href: '/forms/toggle', name: 'Toggle' }
-];
-
-export const modals = [
-	{ href: '/modals/small', name: 'Small' },
-	{ href: '/modals/medium', name: 'Medium' },
-	{ href: '/modals/large', name: 'Large' },
-	{ href: '/modals/extra-large', name: 'Extra-large' },
-	{ href: '/modals/signin', name: 'Sign-in' },
-	{ href: '/modals/all-modals', name: 'All modals' }
-];
 
 export const topMenus = [
 	{ id: '1', href: '/', name: 'Home' },
