@@ -7,9 +7,18 @@ export const svelteflows = [
 	{ href: '/pages/license', name: 'License' }
 ];
 
-export const alerts = [{ href: '/alerts/', name: 'Alert' }];
-
-export const badges = [{ href: '/badges/', name: 'Badges' }];
+export const forms = [
+	{ href: '/forms/checkbox', name: 'Checkbox' },
+	{ href: '/forms/file-input', name: 'File input' },
+	{ href: '/forms/floating-label', name: 'Floating label' },
+	{ href: '/forms/input-field', name: 'Input' },
+	{ href: '/forms/radio', name: 'Radio' },
+	{ href: '/forms/range', name: 'Range' },
+	{ href: '/forms/search-input', name: 'Search' },
+	{ href: '/forms/select', name: 'Select' },
+	{ href: '/forms/textarea', name: 'Textarea' },
+	{ href: '/forms/toggle', name: 'Toggle' }
+];
 
 export const topMenus = [
 	{ id: '1', href: '/', name: 'Home' },
