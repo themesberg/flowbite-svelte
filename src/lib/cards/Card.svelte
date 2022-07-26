@@ -1,89 +1,55 @@
 <script lang="ts">
-	import type { Colors } from '../types';
-	export let link: string = '';
-	export let rel: string = '';
-	export let alt: string = '';
-	export let img: string = '';
-	export let btnLabel: string = '';
-	export let btnColor: Colors = 'blue';
-	export let textdivClass: string = 'p-5';
-	export let headerClass: string =
-		'mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white';
-	export let header: string = '';
-	export let divClass: string =
-		'max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700';
-	let buttonClass: string =
-		'inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white focus:ring-4 ';
+	import classNames from 'classnames';
+	import { setContext } from 'svelte';
 
-	if (btnColor === 'gray') {
-		buttonClass +=
-			'bg-gray-700 rounded-lg hover:bg-gray-800 focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800';
-	} else if (btnColor === 'red') {
-		buttonClass +=
-			'bg-red-700 rounded-lg hover:bg-red-800 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800';
-	} else if (btnColor === 'yellow') {
-		buttonClass +=
-			'bg-yellow-700 rounded-lg hover:bg-yellow-800 focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800';
-	} else if (btnColor === 'green') {
-		buttonClass +=
-			'bg-green-700 rounded-lg hover:bg-green-800 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800';
-	} else if (btnColor === 'indigo') {
-		buttonClass +=
-			'bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-indigo-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800';
-	} else if (btnColor === 'purple') {
-		buttonClass +=
-			'bg-purple-700 rounded-lg hover:bg-purple-800 focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800';
-	} else if (btnColor === 'pink') {
-		buttonClass +=
-			'bg-pink-700 rounded-lg hover:bg-pink-800 focus:ring-pink-300 dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800';
-	} else {
-		buttonClass +=
-			'bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800';
-	}
+	export let href: string = undefined;
+	export let horizontal: boolean = false;
+	export let reverse: boolean = false;
+	export let img: string = undefined;
+
+	export let padding: 'sm' | 'md' | 'lg' = 'lg';
+
+	setContext('background', true);
+
+	const paddings = {
+		sm: 'p-4',
+		md: 'p-5',
+		lg: 'p-6',
+		xl: 'p-8'
+	};
+
+	let innerPdding;
+	$: innerPdding = paddings[padding];
+
+	let cardClass;
+	$: cardClass = classNames(
+		'block max-w-sm',
+		'flex',
+		reverse ? 'flex-col-reverse' : 'flex-col',
+		horizontal && (reverse ? 'md:flex-row-reverse md:max-w-xl' : 'md:flex-row md:max-w-xl'),
+		'bg-white dark:bg-gray-800 shadow-md',
+		'text-gray-500 dark:text-gray-400',
+		'rounded-lg border border-gray-200 dark:border-gray-700',
+		href && 'hover:bg-gray-100 dark:hover:bg-gray-700',
+		!img && innerPdding,
+		$$props.class
+	);
+
+	let imgClass;
+	$: imgClass = classNames(
+		reverse ? 'rounded-b-lg' : 'rounded-t-lg',
+		horizontal && 'object-cover w-full h-96 md:h-auto md:w-48 md:rounded-none',
+		horizontal && (reverse ? 'md:rounded-r-lg' : 'md:rounded-l-lg')
+	);
 </script>
 
-<div class={divClass} class:has-paragraph={$$slots.paragraph}>
+<svelte:element this={href ? 'a' : 'div'} {href} class={cardClass}>
 	{#if img}
-		{#if link}
-			<a href={link} {rel}>
-				<img class="rounded-t-lg" src={img} {alt} />
-			</a>
-		{:else}
-			<img class="rounded-t-lg" src={img} {alt} />
-		{/if}
+		<img class={imgClass} src={img} alt="" />
+		<div class={innerPdding}>
+			<slot />
+		</div>
+	{:else}
+		<div><slot /></div>
 	{/if}
-	<div class={textdivClass}>
-		{#if header}
-			{#if link}
-				<a href={link} {rel}>
-					<h3 class={headerClass}>
-						{header}
-					</h3>
-				</a>
-			{:else}
-				<h3 class={headerClass}>
-					{header}
-				</h3>
-			{/if}
-		{/if}
-		{#if $$slots.paragraph}
-			<slot name="paragraph" />
-		{/if}
-		{#if link && btnLabel}
-			<a href={link} {rel} class={buttonClass}>
-				{btnLabel}
-				<svg
-					class="ml-2 -mr-1 w-4 h-4"
-					fill="currentColor"
-					viewBox="0 0 20 20"
-					xmlns="http://www.w3.org/2000/svg"
-					><path
-						fill-rule="evenodd"
-						d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-						clip-rule="evenodd"
-					/></svg
-				>
-			</a>
-		{/if}
-	</div>
-</div>
+</svelte:element>

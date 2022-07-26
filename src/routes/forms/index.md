@@ -3,9 +3,9 @@ layout: formLayout
 ---
 
 <script>
-	import { Card, Breadcrumb, BreadcrumbItem } from '$lib/index'
-  import { Home } from 'svelte-heros';
-	let divClass = 'max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700';
+	import { Breadcrumb, BreadcrumbItem } from '$lib/index'
+  	import { Home } from 'svelte-heros';
+	import NavCard from "../utils/NavCard.svelte";
 </script>
 
 <Breadcrumb>
@@ -13,36 +13,16 @@ layout: formLayout
   <BreadcrumbItem>Forms</BreadcrumbItem>
 </Breadcrumb>
 
-
 <h1 class="text-3xl w-full dark:text-white py-8">Form Components</h1>
-
-<div class="p-4">
-	<Card {divClass} img="/images/forms.webp" header="CHECKBOX" link="/forms/checkbox" btnLabel="Read more" />
-</div>
-<div class="p-4">
-	<Card {divClass} img="/images/forms.webp" btnColor="green" header="FILE INPUT" link="/forms/file-input" btnLabel="Read more" />
-</div>
-<div class="p-4">
-	<Card {divClass} img="/images/forms.webp" btnColor="red" header="FLOATING LABEL" link="/forms/floating-label" btnLabel="Read more" />
-</div>
-<div class="p-4">
-	<Card {divClass} img="/images/forms.webp" btnColor="yellow" header="INPUT" link="/forms/input-field" btnLabel="Read more" />
-</div>
-<div class="p-4">
-	<Card {divClass} img="/images/forms.webp" btnColor="indigo" header="RADIO" link="/forms/radio" btnLabel="Read more" />
-</div>
-<div class="p-4">
-	<Card {divClass} img="/images/forms.webp" btnColor="gray" header="RANGE" link="/forms/range" btnLabel="Read more" />
-</div>
-<div class="p-4">
-	<Card {divClass} img="/images/forms.webp" btnColor="purple" header="SEARCH" link="/forms/search-input" btnLabel="Read more" />
-</div>
-<div class="p-4">
-	<Card {divClass} img="/images/forms.webp" btnColor="pink" header="SELECT" link="/forms/select" btnLabel="Read more" />
-</div>
-<div class="p-4">
-	<Card {divClass} img="/images/forms.webp" btnColor="green" header="TEXTAREA" link="/forms/textarea" btnLabel="Read more" />
-</div>
-<div class="p-4">
-	<Card {divClass} img="/images/forms.webp" btnColor="blue" header="TOGGLE" link="/forms/toggle" btnLabel="Read more" />
+<div class="flex space-x-1 space flex-wrap">
+	<NavCard img="/images/forms.webp" href="/forms/checkbox">CHECKBOX</NavCard>
+	<NavCard img="/images/forms.webp" color="green" href="/forms/file-input">FILE input</NavCard>
+	<NavCard img="/images/forms.webp" color="red" href="/forms/floating-label">FLOATING label</NavCard>
+	<NavCard img="/images/forms.webp" color="yellow" href="/forms/input-field">INPUT</NavCard>
+	<NavCard img="/images/forms.webp" color="light" href="/forms/radio">RADIO</NavCard>
+	<NavCard img="/images/forms.webp" color="blue" href="/forms/range">RANGE</NavCard>
+	<NavCard img="/images/forms.webp" color="purple" href="/forms/search-input">SEARCH</NavCard>
+	<NavCard img="/images/forms.webp" color="yellow" href="/forms/select">SELECT</NavCard>
+	<NavCard img="/images/forms.webp" color="green" href="/forms/textarea">TEXTAREA</NavCard>
+	<NavCard img="/images/forms.webp" color="red" href="/forms/toggle">TOGGLE</NavCard>
 </div>
