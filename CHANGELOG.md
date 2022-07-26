@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.22.15](https://github.com/themesberg/flowbite-svelte/compare/v0.22.14...v0.22.15) (2022-07-26)
+
+
+### Features
+
+* cards - re-written ([1084f38](https://github.com/themesberg/flowbite-svelte/commit/1084f38514e4cac5662ae6b969dde27e829ea24e))
+* cards - re-written ([52716e0](https://github.com/themesberg/flowbite-svelte/commit/52716e08ac0f4446e3c7160fc3dc83e515201d7d))
+* cards - wip ([0948c89](https://github.com/themesberg/flowbite-svelte/commit/0948c89a124662b7c5c238350df341e0956dac8a))
+
+
+### Bug Fixes
+
+* cards layout on index.md pages ([2080f8e](https://github.com/themesberg/flowbite-svelte/commit/2080f8ee29163a8ad5208f37c95ebf498be92c39))
+
 ### [0.22.14](https://github.com/themesberg/flowbite-svelte/compare/v0.22.13...v0.22.14) (2022-07-25)
 
 
