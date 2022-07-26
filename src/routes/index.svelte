@@ -101,7 +101,6 @@
 	<KbdBlock />
 	<ListgroupBlock />
 	<MegamenuBlock />
-	<ModalBlock />
 	<NavbarBlock />
 	<PaginationBlock />
 	<ProgressbarBlock />
