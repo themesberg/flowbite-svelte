@@ -2,6 +2,7 @@
 	import classNames from 'classnames';
 
 	export let color = 'default';
+	export let name = 'Close';
 
 	const colors = {
 		gray: 'focus:ring-gray-400 hover:bg-gray-200 dark:hover:bg-gray-300',
@@ -25,7 +26,7 @@
 
 <button on:click type="button" class={buttonClass} aria-label="Close">
 	<slot>
-		<span class="sr-only">Close</span>
+		<span class="sr-only">{name}</span>
 		<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 			<path
 				fill-rule="evenodd"
