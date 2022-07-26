@@ -123,26 +123,19 @@
 	);
 </script>
 
-{#if href}
-	<a {href} {...$$restProps} class={buttonClass}>
-		{#if outline && gradient}
-			<!-- Trick to prentend outline without using border
+<svelte:element
+	this={href ? 'a' : 'button'}
+	type={href ? undefined : 'button'}
+	{...$$restProps}
+	class={buttonClass}
+	on:click
+>
+	{#if outline && gradient}
+		<!-- Trick to prentend outline without using border
 		This has a limitation of no supporting transparency as
 		background is set to bg-white dark:bg-gray-900 -->
-			<span class={gradientOutlineClass}><slot /></span>
-		{:else}
-			<slot />
-		{/if}
-	</a>
-{:else}
-	<button type="button" {...$$restProps} class={buttonClass} on:click>
-		{#if outline && gradient}
-			<!-- Trick to prentend outline without using border
-		This has a limitation of no supporting transparency as
-		background is set to bg-white dark:bg-gray-900 -->
-			<span class={gradientOutlineClass}><slot /></span>
-		{:else}
-			<slot />
-		{/if}
-	</button>
-{/if}
+		<span class={gradientOutlineClass}><slot /></span>
+	{:else}
+		<slot />
+	{/if}
+</svelte:element>
