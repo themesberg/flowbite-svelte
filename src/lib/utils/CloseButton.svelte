@@ -1,7 +1,11 @@
 <script lang="ts">
+	import { getContext } from 'svelte';
 	import classNames from 'classnames';
 
+	const background = getContext('background');
+
 	export let color = 'default';
+	export let name = 'Close';
 
 	const colors = {
 		gray: 'focus:ring-gray-400 hover:bg-gray-200 dark:hover:bg-gray-300',
@@ -12,20 +16,24 @@
 		purple: 'focus:ring-purple-400 hover:bg-purple-200 dark:hover:bg-purple-300',
 		pink: 'focus:ring-pink-400 hover:bg-pink-200 dark:hover:bg-pink-300',
 		blue: 'focus:ring-blue-400 hover:bg-blue-200 dark:hover:bg-blue-300',
-		default: 'focus:ring-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+		default: 'focus:ring-gray-300 '
 	};
 
 	let buttonClass: string = '';
 	$: buttonClass = classNames(
 		'ml-auto -mx-1 -my-1.5 rounded-lg focus:ring-2 p-1.5 focus:outline-none',
 		colors[color],
+		color === 'default' &&
+			(background
+				? 'hover:bg-gray-100 dark:hover:bg-gray-600'
+				: 'hover:bg-gray-100 dark:hover:bg-gray-700'),
 		$$props.class
 	);
 </script>
 
 <button on:click type="button" class={buttonClass} aria-label="Close">
 	<slot>
-		<span class="sr-only">Close</span>
+		<span class="sr-only">{name}</span>
 		<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 			<path
 				fill-rule="evenodd"

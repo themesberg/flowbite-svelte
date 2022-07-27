@@ -1,0 +1,1 @@
+{"props":[["  open ","date"," false"],["title","string ","undefined"],["size","'xs' | 'sm' | 'md' | 'lg' | 'xl' ","'md'"],[" placement ","string"," 'center'"],["autoclose","boolean ","true"],[" backdropClasses ","string"," 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40'"]]}

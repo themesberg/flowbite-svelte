@@ -90,6 +90,7 @@ export { default as MediumModal } from './modals/MediumModal.svelte';
 export { default as ModalButton } from './modals/ModalButton.svelte';
 export { default as SignInModal } from './modals/SignInModal.svelte';
 export { default as SmallModal } from './modals/SmallModal.svelte';
+export { default as Modal } from './modals/Modal.svelte';
 
 // MegaMenu
 export { default as MegaMenu } from './megamenu/MegaMenu.svelte';

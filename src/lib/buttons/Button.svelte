@@ -1,5 +1,8 @@
 <script lang="ts">
 	import classNames from 'classnames';
+	import { getContext } from 'svelte';
+
+	const background = getContext('background');
 
 	export let pill: boolean = false;
 	export let outline: boolean = false;
@@ -107,6 +110,10 @@
 		'group text-center font-medium focus:ring-4 focus:outline-none',
 		outline && gradient ? 'p-0.5' : 'inline-flex items-center justify-center ' + sizeClasses[size],
 		gradient ? gradientClasses[color] : outline ? outlineClasses[color] : colorClasses[color],
+		color === 'alternative' &&
+			(background
+				? 'dark:bg-transparent dark:border-gray-700 dark:hover:border-gray-600'
+				: 'dark:bg-transparent dark:border-gray-800 dark:hover:border-gray-700'),
 		pill ? 'rounded-full' : 'rounded-lg',
 		shadow && coloredShadowClasses[shadow],
 		$$props.disabled && 'cursor-not-allowed opacity-50',
