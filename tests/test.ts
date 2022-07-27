@@ -187,36 +187,6 @@ test('Modals main page should have h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Modals');
 });
 
-test('All Modals page should have h1', async ({ page }) => {
-	await page.goto('/modals/all-modals');
-	expect(await page.textContent('h1')).toBe('All Modals');
-});
-
-test('Small Modals page should have h1', async ({ page }) => {
-	await page.goto('/modals/small');
-	expect(await page.textContent('h1')).toBe('Small Modals');
-});
-
-test('Medium Modals page should have h1', async ({ page }) => {
-	await page.goto('/modals/medium');
-	expect(await page.textContent('h1')).toBe('Medium Modals');
-});
-
-test('Large Modals page should have h1', async ({ page }) => {
-	await page.goto('/modals/large');
-	expect(await page.textContent('h1')).toBe('Large Modals');
-});
-
-test('Extra-large Modals page should have h1', async ({ page }) => {
-	await page.goto('/modals/extra-large');
-	expect(await page.textContent('h1')).toBe('Extra-large Modals');
-});
-
-test('Sign-in Modals page should have h1', async ({ page }) => {
-	await page.goto('/modals/signin');
-	expect(await page.textContent('h1')).toBe('Sign-in Modals');
-});
-
 // Navbar
 test('Navbar index page should have h1', async ({ page }) => {
 	await page.goto('/navbar');
