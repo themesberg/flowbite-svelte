@@ -7,7 +7,7 @@ layout: modalLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Modal, SmallModal, MediumModal, LargeModal, ExtraLargeModal, SignInModal, ModalButton, modalIdStore, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Button, Modal, SmallModal, MediumModal, LargeModal, ExtraLargeModal, SignInModal, ModalButton, modalIdStore, Breadcrumb, BreadcrumbItem } from '$lib/index'
   import { Home } from 'svelte-heros';
   import { goto } from "$app/navigation";
   import componentProps1 from '../props/ModalButton.json'
@@ -16,6 +16,7 @@ layout: modalLayout
 	import componentProps4 from '../props/LargeModal.json'
   import componentProps5 from '../props/ExtraLargeModal.json'
   import componentProps6 from '../props/SignInModal.json'
+
 
   let items1 = componentProps1.props
   let items2 = componentProps2.props
@@ -94,6 +95,13 @@ layout: modalLayout
 
   let exModal1;
   let exModal2;
+
+  let defModal = false;
+  let popModal = false;
+  let sizesModal = false;
+  let size;
+  let placement;
+  let plModal = false;
 </script>
 
 <Breadcrumb>
@@ -103,73 +111,101 @@ layout: modalLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Modals</h1>
 
-<Htwo label="Small modal" />
+<Htwo label="Default modal" />
 
-<p>Import SmallModal, ModalButton, modalIdStor components and set variables in the script tag. Add `closeModal` method if you want to close the modal in a button.</p>
-
-<h3>Set up</h3>
-
-```html
-<script>
-  import { SmallModal, ModalButton } from "flowbite-svelte";
-  import { goto } from "$app/navigation";
-
-  // for basic
-  const idBasic = "basic-modal";
-  const btnBasicName = "Basic Modal";
-
-  // for small modal 1
-  const btnName1 = "Small Modal";
-  const id1 = "small-modal";
-  const btnColor1 = "purple";
-  let smallModal1;
-
-  const handlebtnS1 = () => {
-    goto("/");
-  };
-
-  const handlebtnS2 = () => {
-    smallModal1.closeModal()
-  };
-
-  // for small modal 2
-  const btnName2 = "Small Modal 2";
-  const id2 = "small-modal-2";
-  const btnColor2 = "red";
-  let smallModal2;
-
-  const handlebtnS3 = () => {
-    goto("/");
-  };
-
-  const handlebtnS4 = () => {
-    smallModal2.closeModal()
-  };
-</script>
-```
+You can also use the `visible=true` attribute to show open the modal by default.
 
 <ExampleDiv>
-  <Modal>
-    <svelte:fragment slot='title'>Example modal</svelte:fragment>
-  Modal 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
+  <Button on:click={() => defModal = !defModal}>Default modal</Button>
+  <Modal title="Terms of Service" bind:visible={defModal}>
+    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+      With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+    </p>
+    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+      The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+    </p>
+    <svelte:fragment slot='footer'>
+      <Button>I accept</Button>
+      <Button color="alternative">Decline</Button>
+    </svelte:fragment>
   </Modal>
 </ExampleDiv>
 
-<ExampleDiv class="flex justify-center">
-  <ModalButton id={idBasic} btnName={btnBasicName} />
+<Htwo label="Pop-up modal" />
+
+You can use this modal example to show a pop-up decision dialog to your users especially when deleting an item and making sure if the user really wants to do that by double confirming.
+
+<ExampleDiv>
+<Button on:click={() => popModal = !popModal}>Pop-up modal</Button>
+<Modal bind:visible={popModal}>
+  <div class="text-center">
+      <svg aria-hidden="true" class="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this product?</h3>
+      <Button color="red" class="mr-2">Yes, I'm sure</Button>
+      <Button color='alternative'>No, cancel</Button>
+  </div>
+</Modal>
 </ExampleDiv>
 
+<Htwo label="Form element" />
 
-```html
-<ModalButton id={idBasic} btnName={btnBasicName} />
-<SmallModal
-  id={idBasic}
-  title="Basic Modal Title">
-  Basic Modal Content
-</SmallModal>
-```
+Use this modal example with form input element to receive information from your users with the advantage of not having to link to another page but keeping the user on the currently active page. A great example would be a login or a register form.
+
+<Htwo label="Sizes" />
+
+You can use four different modal sizing options starting from small to extra large, but keep in mind that the width of these modals will remain the same when browsing on smaller devices.
+
+<ExampleDiv class="flex gap-2">
+  <Button on:click={()=> {size = 'sm'; sizesModal = !sizesModal} }>Small modal</Button>
+  <Button on:click={()=> {size = 'lg'; sizesModal = !sizesModal} }>Large modal</Button>
+
+  <Modal title="Terms of Service" bind:visible={sizesModal} {size}>
+    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+      With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+    </p>
+    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+      The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+    </p>
+    <svelte:fragment slot='footer'>
+      <Button>I accept</Button>
+      <Button color="alternative">Decline</Button>
+    </svelte:fragment>
+  </Modal>
+</ExampleDiv>
+
+<Htwo label="Placement" />
+
+<ExampleDiv>
+<div class="grid grid-cols-3 grid-rows-3 gap-4">
+  <Button on:click={() => {placement='top-left'; plModal = !plModal} }>top-left</Button>
+	<Button on:click={() => {placement='top-center'; plModal = !plModal} }>top-center</Button>
+	<Button on:click={() => {placement='top-right'; plModal = !plModal} }>top-right</Button>
+	<Button on:click={() => {placement='center-left'; plModal = !plModal} }>center-left</Button>
+	<Button on:click={() => {placement='center'; plModal = !plModal} }>center</Button>
+	<Button on:click={() => {placement='center-right'; plModal = !plModal} }>center-right</Button>
+	<Button on:click={() => {placement='bottom-left'; plModal = !plModal} }>bottom-left</Button>
+	<Button on:click={() => {placement='bottom-center'; plModal = !plModal} }>bottom-center</Button>
+	<Button on:click={() => {placement='bottom-right'; plModal = !plModal} }>bottom-right</Button>
+
+  <Modal title="Terms of Service" bind:visible={plModal} {placement}>
+    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+      With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+    </p>
+    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+      The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+    </p>
+    <svelte:fragment slot='footer'>
+      <Button>I accept</Button>
+      <Button color="alternative">Decline</Button>
+    </svelte:fragment>
+  </Modal>
+</div>
+
+</ExampleDiv>
+
+Use the data-modal-placement data attribute on the modal element to set the position relative to the document body based on the available values from `top|center|bottom-left|center|right` (eg. top-left or bottom-right).
+
+The default position is the center of the page.
 
 <Htwo label="Small modal with action buttons" />
 

@@ -1,5 +1,8 @@
 <script lang="ts">
+	import { getContext } from 'svelte';
 	import classNames from 'classnames';
+
+	const background = getContext('background');
 
 	export let color = 'default';
 	export let name = 'Close';
@@ -13,15 +16,21 @@
 		purple: 'focus:ring-purple-400 hover:bg-purple-200 dark:hover:bg-purple-300',
 		pink: 'focus:ring-pink-400 hover:bg-pink-200 dark:hover:bg-pink-300',
 		blue: 'focus:ring-blue-400 hover:bg-blue-200 dark:hover:bg-blue-300',
-		default: 'focus:ring-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+		default: 'focus:ring-gray-300 '
 	};
 
 	let buttonClass: string = '';
 	$: buttonClass = classNames(
 		'ml-auto -mx-1 -my-1.5 rounded-lg focus:ring-2 p-1.5 focus:outline-none',
 		colors[color],
+		color === 'default' &&
+			(background
+				? 'hover:bg-gray-100 dark:hover:bg-gray-600'
+				: 'hover:bg-gray-100 dark:hover:bg-gray-700'),
 		$$props.class
 	);
+
+	$: console.log(buttonClass);
 </script>
 
 <button on:click type="button" class={buttonClass} aria-label="Close">
