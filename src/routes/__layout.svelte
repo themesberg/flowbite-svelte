@@ -15,7 +15,7 @@
 	import { forms, svelteflows, topMenus } from './moduleItems';
 
 	let asideClass =
-		'absolute w-auto bg-white pt-8 shadow-lg z-50 px-4 h-screen z-50 overflow-scroll dark:bg-gray-900';
+		'absolute w-auto bg-white pt-8 shadow-lg z-50 px-4 h-screen z-40 overflow-scroll dark:bg-gray-900';
 	// Navbar
 	let logo = '/images/flowbite-svelte-icon-logo.svg';
 	let logoClass = 'w-8 ml-4 mr-2';
