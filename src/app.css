@@ -10,8 +10,8 @@ pre {
 }
 
 @layer base {
-	main p {
-		@apply text-lg w-full text-gray-900 dark:text-white py-1;
+	main p1 {
+		@apply w-full text-gray-900 dark:text-white py-1;
 	}
 	main h3 {
 		@apply text-xl w-full dark:text-white py-4;
@@ -23,5 +23,11 @@ pre {
 	.related-components p,
 	.references p {
 		@apply w-full md:w-1/2 lg:w-1/3;
+	}
+
+	main  p > code,
+	main  ul > li > code,
+	main  ol > li > code {
+		@apply px-1 font-mono text-sm text-blue-600 break-all dark:text-blue-400 whitespace-nowrap;
 	}
 }

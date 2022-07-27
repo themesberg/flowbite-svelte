@@ -1,25 +1,17 @@
-<script context="module" lang="ts">
-	export function toggle(variable) {
-		return function () {
-			variable = !variable;
-		};
-	}
-</script>
-
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
 	import { setContext } from 'svelte';
 	import CloseButton from '$lib/utils/CloseButton.svelte';
 
+	export let open = false;
+	export let title: string = undefined;
+	export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
+	export let placement = 'center';
+	export let autoclose: boolean = true;
+	export let backdropClasses = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40';
+
 	const dispatch = createEventDispatcher();
 	setContext('background', true);
-
-	export let placement = 'center';
-	export let backdropClasses = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40';
-	export let size: 'sm' | 'md' | 'default' | 'lg' | 'xl' = 'default';
-	export let title: string = undefined;
-	export let autoclose: boolean = true;
-	export let visible = false;
 
 	const allPlacementClasses = [
 		'justify-start',
@@ -40,25 +32,40 @@
 			update(_visible) {
 				allPlacementClasses.map((c) => node.classList.remove(c));
 				getPlacementClasses().map((c) => node.classList.add(c));
-				_visible ? createBackdrop(node) : destroyBackdropEl(node);
+				_visible ? createBackdrop(node) : destroyBackdrop(node);
 			},
 
 			destroy() {
-				destroyBackdropEl(node);
+				destroyBackdrop(node);
 			}
 		};
 	}
 
+	function handleEscape(e) {
+		if (open && e.key === 'Escape') open = false;
+	}
+
 	function createBackdrop(node) {
-		backdropEl = document.createElement('div');
-		backdropEl.classList.add(...backdropClasses.split(' '));
-		document.querySelector('body').append(backdropEl);
+		if (!backdropEl) {
+			backdropEl = document.createElement('div');
+			backdropEl.classList.add(...backdropClasses.split(' '));
+
+			const body = document.querySelector('body');
+			body.append(backdropEl);
+			body.style.overflow = 'hidden';
+			body.addEventListener('keydown', handleEscape, true);
+		}
 
 		dispatch('show', node);
 	}
 
-	function destroyBackdropEl(node) {
+	function destroyBackdrop(node) {
+		const body = document.querySelector('body');
+		body.style.overflow = 'auto';
+		body.removeEventListener('keydown', handleEscape, true);
+
 		if (backdropEl) backdropEl.remove();
+		backdropEl = undefined;
 
 		dispatch('hide', node);
 	}
@@ -95,19 +102,19 @@
 	}
 
 	const sizes = {
-		sm: 'max-w-md',
-		md: 'max-w-lg',
-		default: 'max-w-2xl',
+		xs: 'max-w-md',
+		sm: 'max-w-lg',
+		md: 'max-w-2xl',
 		lg: 'max-w-4xl',
 		xl: 'max-w-7xl'
 	};
 
 	function onButtonsClick({ target }) {
-		if (autoclose && target.tagName === 'BUTTON') visible = !visible;
+		if (autoclose && target.tagName === 'BUTTON') open = !open;
 	}
 
 	function hide() {
-		visible = false;
+		open = false;
 	}
 </script>
 
@@ -115,14 +122,15 @@
 <div
 	tabindex="-1"
 	class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full"
-	class:flex={visible}
-	class:hidden={!visible}
-	aria-hidden={visible ? undefined : 'true'}
-	aria-modal={visible ? 'true' : undefined}
-	role={visible ? 'dialog' : undefined}
-	use:init={visible}
+	class:flex={open}
+	class:hidden={!open}
+	aria-hidden={open ? undefined : 'true'}
+	aria-modal={open ? 'true' : undefined}
+	role={open ? 'dialog' : undefined}
+	use:init={open}
+	on:click={onButtonsClick}
 >
-	<div class="relative p-4 w-full1 {sizes[size]} h-full md:h-auto">
+	<div class="relative p-4 w-full {sizes[size]} h-full md:h-auto">
 		<!-- Modal content -->
 		<div
 			class="relative bg-white rounded-lg shadow dark:bg-gray-700 text-gray-500 dark:text-gray-400"
@@ -148,7 +156,6 @@
 			{#if $$slots.footer}
 				<div
 					class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600"
-					on:click={onButtonsClick}
 				>
 					<slot name="footer" />
 				</div>

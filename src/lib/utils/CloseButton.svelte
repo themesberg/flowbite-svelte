@@ -29,8 +29,6 @@
 				: 'hover:bg-gray-100 dark:hover:bg-gray-700'),
 		$$props.class
 	);
-
-	$: console.log(buttonClass);
 </script>
 
 <button on:click type="button" class={buttonClass} aria-label="Close">
