@@ -7,7 +7,7 @@ layout: modalLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { SmallModal, MediumModal, LargeModal, ExtraLargeModal, SignInModal, ModalButton, modalIdStore, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Modal, SmallModal, MediumModal, LargeModal, ExtraLargeModal, SignInModal, ModalButton, modalIdStore, Breadcrumb, BreadcrumbItem } from '$lib/index'
   import { Home } from 'svelte-heros';
   import { goto } from "$app/navigation";
   import componentProps1 from '../props/ModalButton.json'
@@ -27,7 +27,7 @@ layout: modalLayout
 	let propHeader = ['Name', 'Type', 'Default']
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
   // for basic
   const idBasic = "basic-modal";
@@ -147,6 +147,15 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   };
 </script>
 ```
+
+<ExampleDiv>
+  <Modal>
+    <svelte:fragment slot='title'>Example modal</svelte:fragment>
+  Modal 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+  </Modal>
+</ExampleDiv>
 
 <ExampleDiv class="flex justify-center">
   <ModalButton id={idBasic} btnName={btnBasicName} />

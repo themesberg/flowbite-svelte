@@ -99,11 +99,6 @@
 	<div class="relative p-4 w-full1 {sizes[size]} h-full md:h-auto">
 		<!-- Modal content -->
 		<div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-			<CloseButton
-				name="Close modal"
-				class="absolute top-3 right-2.5"
-				on:click={() => (visible = false)}
-			/>
 			<!-- Modal header -->
 			{#if $$slots.header || $$slots.title}
 				<div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
@@ -112,7 +107,14 @@
 							<slot name="title" />
 						</h3>
 					</slot>
+					<CloseButton name="Close modal" on:click={() => (visible = false)} />
 				</div>
+			{:else}
+				<CloseButton
+					name="Close modal"
+					class="absolute top-3 right-2.5"
+					on:click={() => (visible = false)}
+				/>
 			{/if}
 			<!-- Modal body -->
 			<div class="p-6 space-y-6 text-gray-500 dark:text-gray-400">
