@@ -46,7 +46,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Carousels</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Carousel</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Carousel</h1>
 
 <Htwo label="Examples" />
 

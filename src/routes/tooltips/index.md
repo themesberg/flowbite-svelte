@@ -23,7 +23,7 @@ layout: tooltipLayout
   <BreadcrumbItem>Tooltips</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Tooltips</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Tooltips</h1>
 
 <Htwo label="Tooltip top" />
 

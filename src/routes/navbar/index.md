@@ -64,7 +64,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Navbar</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Navbar</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Navbar</h1>
 
 <Htwo label="Default navbar" />
 

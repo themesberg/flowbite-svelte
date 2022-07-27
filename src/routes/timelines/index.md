@@ -130,7 +130,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Timelines</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Timeline</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Timeline</h1>
 
 <ExampleDiv>
   <Timeline>

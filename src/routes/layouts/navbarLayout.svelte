@@ -5,7 +5,7 @@
 </script>
 
 <Responsive />
-<div class="max-w-3xl mx-auto mt-16">
+<div class="max-w-3xl mx-auto mt-8">
 	<div class="container mx-auto">
 		<slot />
 

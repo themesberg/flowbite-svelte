@@ -33,7 +33,7 @@ layout: formLayout
 </Breadcrumb>
 
 
-<h1 class="text-3xl w-full dark:text-white py-8">File</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">File</h1>
 
 <Htwo label="File upload example" />
 

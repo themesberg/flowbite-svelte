@@ -28,7 +28,7 @@ layout: formLayout
   <BreadcrumbItem>Checkbox</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Checkbox</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Checkbox</h1>
 
 The checkbox component can be used to receive one or more selected options from the user in the form of a square box available in multiple styles, sizes, colors, and variants coded with the utility classes from Tailwind CSS and with support for dark mode.
 

@@ -244,7 +244,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Tabs</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Tabs</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Tabs</h1>
 
 <Htwo label="Examples" />
 
@@ -557,7 +557,7 @@ import { InteractiveTabHead, TabContent, Card, Timeline,
 ```
 
 
-<h1 class="text-3xl w-full dark:text-white py-8">Multiple Interactive Tabs</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Multiple Interactive Tabs</h1>
 
 <Htwo label="Examples" />
 

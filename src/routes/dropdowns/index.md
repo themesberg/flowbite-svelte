@@ -35,7 +35,7 @@ layout: dropdownLayout
   <BreadcrumbItem>Dropdown</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Dropdown</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Dropdown</h1>
 
 <Htwo label="Examples" />
 

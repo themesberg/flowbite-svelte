@@ -39,7 +39,7 @@ layout: toastLayout
   <BreadcrumbItem>Toasts</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Toast</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Toast</h1>
 
 <p>Import the Toast component and Icons.</p>
 

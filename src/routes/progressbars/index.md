@@ -34,7 +34,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Progress bar</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Progress</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Progress</h1>
 
 <p>Import the `Progressbar` component in a script tag.</p>
 

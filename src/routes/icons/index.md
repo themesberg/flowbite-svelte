@@ -36,7 +36,7 @@ layout: iconLayout
   <BreadcrumbItem>Icons</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Icons</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Icons</h1>
 
 <p>Flowbite-svelte uses <a href="https://github.com/shinokada/svelte-heros" target="_blank">svelte-heros</a>.
 You can find all the icon names from the <a href="https://github.com/shinokada/svelte-heros/blob/main/icon-list.md" class="text-red-700 underline">repo</a>.</p>

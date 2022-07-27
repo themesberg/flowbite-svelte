@@ -24,7 +24,7 @@ layout: alertLayout
   <BreadcrumbItem>Alerts</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Alert</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Alert</h1>
 
 <p>Show contextual information to your users using alert elements based on Tailwind CSS</p>
 

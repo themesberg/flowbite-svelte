@@ -12,7 +12,7 @@ layout: docLayout
   <BreadcrumbItem>Getting started</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Getting Started</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Getting Started</h1>
 
 <p>You can install Flowbite-Svelte by using the Flowbite-Svelte-Start or from scratch.</p>
 

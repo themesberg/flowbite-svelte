@@ -23,7 +23,7 @@ layout: spinnerLayout
   <BreadcrumbItem>Spinners</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Spinner</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Spinner</h1>
 
 ```html
 <script>

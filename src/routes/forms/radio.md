@@ -31,7 +31,7 @@ layout: formLayout
   <BreadcrumbItem>Radio</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Radio</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Radio</h1>
 
 The radio component can be used to allow the user to choose a single option from one or more available options coded with the utility classes from Tailwind CSS and available in multiple styles, variants, and colors and support dark mode.
 

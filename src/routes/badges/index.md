@@ -23,7 +23,7 @@ layout: badgeLayout
   <BreadcrumbItem>Badges</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Badges</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Badges</h1>
 
 ```html
 <script>

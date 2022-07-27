@@ -13,7 +13,7 @@ layout: docLayout
   <BreadcrumbItem>Flowbite-Svelte-CLI</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Flowbite-Svelte-CLI (fsc)</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Flowbite-Svelte-CLI (fsc)</h1>
 
 <p>This a shell-script CLI that allows you to find compoent default props from your command line.</p>
 

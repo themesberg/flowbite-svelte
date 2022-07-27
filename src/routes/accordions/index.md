@@ -32,7 +32,7 @@ let icons={
   <BreadcrumbItem>Accordions</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Accordion</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Accordion</h1>
 
 <p>Use the accordion component to show hidden information based on the collapse and expand state of the child elements using data attribute options</p>
 

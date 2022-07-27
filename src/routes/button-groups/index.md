@@ -37,7 +37,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Button groups</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Button group</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Button group</h1>
 
 <Htwo label="Set up" />
 

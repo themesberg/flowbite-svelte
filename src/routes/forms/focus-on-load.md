@@ -27,7 +27,7 @@
   <BreadcrumbItem>Focus on load</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Focus on load</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Focus on load</h1>
 
 <p>To focus on an input field and a textarea field on load create a `ref` variable and bind it in an Input component. Add a `onMount` function as followings.</p>
 

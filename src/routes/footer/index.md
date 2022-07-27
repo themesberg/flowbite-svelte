@@ -38,7 +38,7 @@ layout: footerLayout
   <BreadcrumbItem>Footer</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Footer</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Footer</h1>
 
 <Htwo label="Default footer" />
 

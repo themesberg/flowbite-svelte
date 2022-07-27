@@ -26,7 +26,7 @@ layout: formLayout
   <BreadcrumbItem>Floating label</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Floating label</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Floating label</h1>
 
 <Htwo label="Examples" />
 

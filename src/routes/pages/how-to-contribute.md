@@ -13,7 +13,7 @@ layout: docLayout
   <BreadcrumbItem>How to contribute</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">How to Contribute</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">How to Contribute</h1>
 
 <p>Here are some guidelines we'd like you to follow before submitting a PR.</p>
 

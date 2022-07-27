@@ -23,7 +23,7 @@ layout: skeletonLayout
   <BreadcrumbItem>Skeleton</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Tailwind CSS Skeleton</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Tailwind CSS Skeleton</h1>
 
 <Htwo label="Default skeleton" />
 

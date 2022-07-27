@@ -73,7 +73,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Pagination</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Pagination</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Pagination</h1>
 
 <Htwo label="Default pagination" />
 

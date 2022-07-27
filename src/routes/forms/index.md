@@ -73,7 +73,7 @@ layout: formLayout
   <BreadcrumbItem>Forms</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Forms</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Forms</h1>
 
 <p>The Input component allows you to change the input size, add disabled, helper text, and floating label.</p>
 
