@@ -38,7 +38,7 @@ layout: tableLayout
   <BreadcrumbItem>Tables</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Table Components</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Tables</h1>
 
 <Htwo label="Default table" />
 

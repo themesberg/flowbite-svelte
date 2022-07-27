@@ -1,21 +1,27 @@
 <script lang="ts">
 	import type { NavbarType } from '../types';
-	export let liButtonClass: string;
+	import { clickOutside } from '$lib/utils/clickOutside';
+
+	export let liButtonClass: string = 'flex items-center';
 	export let name: string;
+	export let child: NavbarType[] = [];
+
 	let hidden = true;
 	let block = false;
-	export let child: NavbarType[];
 
 	const handleDropdown = () => {
 		hidden = !hidden;
 		block = !block;
 	};
-	export let dropdownDiv: string;
-	export let dropdownLinkClassWithChild: string;
-	export let rel: string;
+	export let dropdownDiv: string = '';
+	export let dropdownLinkClassWithChild: string = undefined;
+	export let rel: string = undefined;
+
+	let liClass =
+		'flex justify-center py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700';
 </script>
 
-<li>
+<li use:clickOutside={() => !hidden && handleDropdown()} class={liClass}>
 	<button on:click={() => handleDropdown()} class={liButtonClass}
 		>{name}
 		<svg
@@ -32,13 +38,15 @@
 	>
 
 	<!-- Dropdown menu -->
-	<div class:hidden class:block class={dropdownDiv} style="position: absolute; margin: 0px;">
-		<ul class="py-1" aria-labelledby="dropdownLargeButton">
-			{#each child as item}
-				<li>
-					<a href={item.href} {rel} class={dropdownLinkClassWithChild}>{item.name}</a>
-				</li>
-			{/each}
-		</ul>
+	<div class:hidden class="absolute {dropdownDiv} mt-8 z-10">
+		<slot>
+			<ul class="py-1" aria-labelledby="dropdownLargeButton">
+				{#each child as item}
+					<li>
+						<a href={item.href} {rel} class={dropdownLinkClassWithChild}>{item.name}</a>
+					</li>
+				{/each}
+			</ul>
+		</slot>
 	</div>
 </li>

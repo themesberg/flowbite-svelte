@@ -7,9 +7,9 @@ layout: formLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Checkbox, Breadcrumb, BreadcrumbItem, Label, Helper } from "$lib/index"
+  import { Checkbox, Breadcrumb, BreadcrumbItem, Dropdown, DropdownItem, DropdownDivider, SimpleSearch, Label, Helper } from "$lib/index"
   import { Table, TableBody, TableBodyRow, TableBodyCell, TableHead, TableHeadCell } from "$lib/index"
-  import { Home } from 'svelte-heros'
+  import { Home, UserRemove } from 'svelte-heros'
   import componentProps from '../props/Radio.json'
   import componentProps2 from '../props/Label.json'
   import componentProps3 from '../props/Helper.json'
@@ -28,14 +28,14 @@ layout: formLayout
   <BreadcrumbItem>Checkbox</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Checkbox Components</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Checkbox</h1>
 
 The checkbox component can be used to receive one or more selected options from the user in the form of a square box available in multiple styles, sizes, colors, and variants coded with the utility classes from Tailwind CSS and with support for dark mode.
 
 <Htwo label="Checkbox examples" />
 
-<ExampleDiv>
-<Checkbox class="mb-4">Default checkbox</Checkbox>
+<ExampleDiv class="flex flex-col gap-4">
+<Checkbox>Default checkbox</Checkbox>
 <Checkbox checked >Checked state</Checkbox>
 </ExampleDiv>
 
@@ -44,7 +44,7 @@ The checkbox component can be used to receive one or more selected options from 
 	import { Checkbox, Label, Helper } from 'flowbite-svelte';
 </script>
 
-<Checkbox class="mb-4">Default checkbox</Checkbox>
+<Checkbox>Default checkbox</Checkbox>
 <Checkbox checked>Checked state</Checkbox>
 ```
 
@@ -52,14 +52,14 @@ The checkbox component can be used to receive one or more selected options from 
 
 <p>This example can be used for the disabled state of the checkbox component by applying the disabled attribute to the input element.</p>
 
-<ExampleDiv>
-<Checkbox disabled class="mb-4">Disabled checkbox</Checkbox>
-<Checkbox disabled checked >Disabled checkbox</Checkbox>
+<ExampleDiv class="flex flex-col gap-4">
+<Checkbox disabled>Disabled checkbox</Checkbox>
+<Checkbox disabled checked >Disabled checked</Checkbox>
 </ExampleDiv>
 
 ```html
-<Checkbox disabled class="mb-4">Disabled checkbox</Checkbox>
-<Checkbox disabled checked>Disabled checkbox</Checkbox>
+<Checkbox disabled>Disabled checkbox</Checkbox>
+<Checkbox disabled checked>Disabled checked</Checkbox>
 ```
 
 <Htwo label="Alternative syntax" />
@@ -132,12 +132,12 @@ If you need separate control over the label and the checkbox you can use the ver
 
 <ExampleDiv>
   <Checkbox aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Checkbox>
-  <Helper id="helper-checkbox-text" class="ml-6">For orders shipped from $25 in books or $29 in other categories</Helper>
+  <Helper id="helper-checkbox-text" class="pl-6 -mt-1">For orders shipped from $25 in books or $29 in other categories</Helper>
 </ExampleDiv>
 
 ```html
   <Checkbox aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Checkbox>
-  <Helper id="helper-checkbox-text" class="ml-6">For orders shipped from $25 in books or $29 in other categories</Helper>
+  <Helper id="helper-checkbox-text" class="pl-6 -mt-1">For orders shipped from $25 in books or $29 in other categories</Helper>
 ```
 
 <Htwo label="Bordered" />
@@ -213,15 +213,77 @@ Use this example to show a list of checkbox items inside a card horizontally.
 </ul>
 ```
 
-<!--
+
 <Htwo label="Checkbox dropdown" />
 
 Use this example to show a list of checkbox items inside a dropdown menu.
 
-<ExampleDiv>
-To do.
+
+<ExampleDiv class="flex justify-center h-96">
+  <Dropdown label="Dropdown search" class="w-60">
+    <svelte:fragment slot="content">
+      <div class="p-3">
+        <SimpleSearch btnClass="hidden" tinted/>
+      </div>
+      <ul class="overflow-y-auto px-3 pb-3 space-y-1 h-48">
+        <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+          <Checkbox tinted>Jese Leos</Checkbox>
+        </DropdownItem>
+        <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+          <Checkbox tinted>Robert Gouth</Checkbox>
+        </DropdownItem>
+        <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+          <Checkbox tinted checked>Bonnie Green</Checkbox>
+        </DropdownItem>
+        <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+          <Checkbox tinted>Joseph Mcfall</Checkbox>
+        </DropdownItem>
+        <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+          <Checkbox tinted>Leslie Livingston</Checkbox>
+        </DropdownItem>
+        <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+          <Checkbox tinted>Roberta Casas</Checkbox>
+        </DropdownItem>
+      </ul>
+      <a href="/" class="flex items-center p-3 text-sm font-medium text-red-600 bg-gray-50 border-t border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
+          <UserRemove class="w-5 h-5 mr-1" /> Delete user
+      </a>
+    </svelte:fragment>
+  </Dropdown>
 </ExampleDiv>
--->
+
+```html
+<Dropdown label="Project users" class="w-60">
+  <svelte:fragment slot="content">
+    <div class="p-3">
+      <SimpleSearch btnClass="hidden" tinted/>
+    </div>
+    <ul class="overflow-y-auto px-3 pb-3 space-y-1 h-48">
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox tinted>Jese Leos</Checkbox>
+      </DropdownItem>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox tinted>Robert Gouth</Checkbox>
+      </DropdownItem>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox tinted checked>Bonnie Green</Checkbox>
+      </DropdownItem>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox tinted>Joseph Mcfall</Checkbox>
+      </DropdownItem>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox tinted>Leslie Livingston</Checkbox>
+      </DropdownItem>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox tinted>Roberta Casas</Checkbox>
+      </DropdownItem>
+    </ul>
+    <a href="/" class="flex items-center p-3 text-sm font-medium text-red-600 bg-gray-50 border-t border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
+        <UserRemove class="w-5 h-5 mr-1" /> Delete user
+    </a>
+  </svelte:fragment>
+</Dropdown>
+``
 
 <Htwo label="Inline layout" />
 

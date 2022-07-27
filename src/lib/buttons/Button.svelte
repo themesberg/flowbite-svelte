@@ -5,6 +5,7 @@
 	export let outline: boolean = false;
 	export let gradient: boolean = false;
 	export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
+	export let href: string = undefined;
 
 	export let color:
 		| 'blue'
@@ -122,7 +123,13 @@
 	);
 </script>
 
-<button type="button" {...$$restProps} class={buttonClass} on:click>
+<svelte:element
+	this={href ? 'a' : 'button'}
+	type={href ? undefined : 'button'}
+	{...$$restProps}
+	class={buttonClass}
+	on:click
+>
 	{#if outline && gradient}
 		<!-- Trick to prentend outline without using border
 		This has a limitation of no supporting transparency as
@@ -131,4 +138,4 @@
 	{:else}
 		<slot />
 	{/if}
-</button>
+</svelte:element>

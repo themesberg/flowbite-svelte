@@ -157,13 +157,13 @@ Add multiple checkbox elements inside your dropdown menu to enable more advanced
 <ExampleDiv class="flex justify-center h-52">
   <Dropdown label="Dropdown checkbox" class="w-44">
     <DropdownItem>
-      <Checkbox tinted>Default checkbox</Checkbox>
+      <Checkbox>Default checkbox</Checkbox>
     </DropdownItem>
     <DropdownItem>
-      <Checkbox tinted checked>Checked state</Checkbox>
+      <Checkbox checked>Checked state</Checkbox>
     </DropdownItem>
     <DropdownItem>
-      <Checkbox tinted>Default checkbox</Checkbox>
+      <Checkbox>Default checkbox</Checkbox>
     </DropdownItem>
   </Dropdown>
 </ExampleDiv>
@@ -172,18 +172,18 @@ Add multiple checkbox elements inside your dropdown menu to enable more advanced
 ```html
 <Dropdown label="Dropdown checkbox" class="w-44">
   <DropdownItem>
-    <Checkbox tinted>Default checkbox</Checkbox>
+    <Checkbox>Default checkbox</Checkbox>
   </DropdownItem>
   <DropdownItem>
-    <Checkbox tinted checked>Checked state</Checkbox>
+    <Checkbox checked>Checked state</Checkbox>
   </DropdownItem>
   <DropdownItem>
-    <Checkbox tinted>Default checkbox</Checkbox>
+    <Checkbox>Default checkbox</Checkbox>
   </DropdownItem>
 </Dropdown>
 ```
 
-<Htwo label="Background hover" />
+<Htwo label="Checkbox: Background hover" />
 
 Use this example to update the background color of a menu item when using a list of checkbox elements.
 
@@ -192,13 +192,13 @@ Use this example to update the background color of a menu item when using a list
   <Dropdown label="Dropdown checkbox" class="w-48" >
     <ul slot="content" class="p-3 space-y-1">
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted>Default checkbox</Checkbox>
+        <Checkbox>Default checkbox</Checkbox>
       </DropdownItem>
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted checked>Checked state</Checkbox>
+        <Checkbox checked>Checked state</Checkbox>
       </DropdownItem>
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted>Default checkbox</Checkbox>
+        <Checkbox>Default checkbox</Checkbox>
       </DropdownItem>
     </ul>
   </Dropdown>
@@ -209,60 +209,58 @@ Use this example to update the background color of a menu item when using a list
 <Dropdown label="Dropdown checkbox" class="w-48">
   <ul slot="content" class="p-3 space-y-1">
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted>Default checkbox</Checkbox>
+      <Checkbox>Default checkbox</Checkbox>
     </DropdownItem>
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted checked>Checked state</Checkbox>
+      <Checkbox checked>Checked state</Checkbox>
     </DropdownItem>
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted>Default checkbox</Checkbox>
+      <Checkbox>Default checkbox</Checkbox>
     </DropdownItem>
   </ul>
 </Dropdown>
 ```
 
 
-<Htwo label="Helper text" />
+<Htwo label="Checkbox: Helper text" />
 
 Add an extra helper text to each checkbox element inside the dropdown menu list with this example.
 
 
 <ExampleDiv class="flex justify-center h-96">
-<Dropdown class="w-64" >
-  <span slot="label" class="w-48">Dropdown checkbox</span>
-  <ul slot="content" class="p-3 space-y-1">
-    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted>Enable notifications</Checkbox>
-      <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
-    </DropdownItem>
-    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted checked>Enable 2FA auth</Checkbox>
-      <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
-    </DropdownItem>
-    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted>Subscribe newsletter</Checkbox>
-      <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
-    </DropdownItem>
-  </ul>
-</Dropdown>
+  <Dropdown label="Dropdown checkbox" class="w-60" >
+    <ul slot="content" class="p-3 space-y-1">
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox>Enable notifications</Checkbox>
+        <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
+      </DropdownItem>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox checked>Enable 2FA auth</Checkbox>
+        <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
+      </DropdownItem>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox>Subscribe newsletter</Checkbox>
+        <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
+      </DropdownItem>
+    </ul>
+  </Dropdown>
 </ExampleDiv>
 
 
 ```html
-<Dropdown class="w-64">
-  <Button slot="trigger" class="w-64">Dropdown checkbox <ChevronDown size="18" class="ml-2" /></Button>
+<Dropdown label="Dropdown checkbox" class="w-60" >
   <ul slot="content" class="p-3 space-y-1">
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted>Enable notifications</Checkbox>
-      <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
+      <Checkbox>Enable notifications</Checkbox>
+      <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
     </DropdownItem>
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted checked>Enable 2FA auth</Checkbox>
-      <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
+      <Checkbox checked>Enable 2FA auth</Checkbox>
+      <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
     </DropdownItem>
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted>Subscribe newsletter</Checkbox>
-      <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
+      <Checkbox>Subscribe newsletter</Checkbox>
+      <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
     </DropdownItem>
   </ul>
 </Dropdown>
@@ -275,13 +273,13 @@ Add multiple radio elements inside your dropdown menu to enable more advanced in
 <ExampleDiv class="flex justify-center h-64">
   <Dropdown label="Dropdown radio" class="w-44">
     <DropdownItem>
-      <Radio bind:group={group1} value={1} tinted>Default radio</Radio>
+      <Radio bind:group={group1} value={1}>Default radio</Radio>
     </DropdownItem>
     <DropdownItem>
-      <Radio bind:group={group1} value={2} tinted>Checked state</Radio>
+      <Radio bind:group={group1} value={2}>Checked state</Radio>
     </DropdownItem>
     <DropdownItem>
-      <Radio bind:group={group1} value={3} tinted>Default radio</Radio>
+      <Radio bind:group={group1} value={3}>Default radio</Radio>
     </DropdownItem>
   </Dropdown>
 </ExampleDiv>
@@ -294,18 +292,18 @@ Add multiple radio elements inside your dropdown menu to enable more advanced in
 
 <Dropdown label="Dropdown radio" class="w-44">
     <DropdownItem>
-      <Radio bind:group={group1} value={1} tinted>Default radio</Radio>
+      <Radio bind:group={group1} value={1}>Default radio</Radio>
     </DropdownItem>
     <DropdownItem>
-      <Radio bind:group={group1} value={2} tinted>Checked state</Radio>
+      <Radio bind:group={group1} value={2}>Checked state</Radio>
     </DropdownItem>
     <DropdownItem>
-      <Radio bind:group={group1} value={3} tinted>Default radio</Radio>
+      <Radio bind:group={group1} value={3}>Default radio</Radio>
     </DropdownItem>
 </Dropdown>
 ```
 
-<Htwo label="Background hover" />
+<Htwo label="Radio: Background hover" />
 
 Use this example to update the background color of a menu item when using a list of radio elements.
 
@@ -314,13 +312,13 @@ Use this example to update the background color of a menu item when using a list
   <Dropdown label="Dropdown radio" class="w-48">
     <ul slot="content" class="p-3 space-y-1">
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Radio bind:group={group2} value={1} tinted>Default radio</Radio>
+        <Radio bind:group={group2} value={1}>Default radio</Radio>
       </DropdownItem>
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Radio bind:group={group2} value={2} tinted>Checked state</Radio>
+        <Radio bind:group={group2} value={2}>Checked state</Radio>
       </DropdownItem>
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Radio bind:group={group2} value={3} tinted>Default radio</Radio>
+        <Radio bind:group={group2} value={3}>Default radio</Radio>
       </DropdownItem>
     </ul>
   </Dropdown>
@@ -335,60 +333,58 @@ Use this example to update the background color of a menu item when using a list
 <Dropdown label="Dropdown radio" class="w-48">
   <ul slot="content" class="p-3 space-y-1">
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio bind:group={group2} value={1} tinted>Default radio</Radio>
+      <Radio bind:group={group2} value={1}>Default radio</Radio>
     </DropdownItem>
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio bind:group={group2} value={2} tinted>Checked state</Radio>
+      <Radio bind:group={group2} value={2}>Checked state</Radio>
     </DropdownItem>
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio bind:group={group2} value={3} tinted>Default radio</Radio>
+      <Radio bind:group={group2} value={3}>Default radio</Radio>
     </DropdownItem>
   </ul>
 </Dropdown>
 ```
 
 
-<Htwo label="Helper text" />
+<Htwo label="Radio: Helper text" />
 
 Add an extra helper text to each radio element inside the dropdown menu list with this example.
 
 
 <ExampleDiv class="flex justify-center h-96">
-<Dropdown class="w-64" >
-  <span slot="label" class="w-48">Dropdown radio</span>
-  <ul slot="content" class="p-3 space-y-1">
-    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio bind:group={group3} value={1} tinted>Enable notifications</Radio>
-      <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
-    </DropdownItem>
-    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio bind:group={group3} value={2} tinted>Enable 2FA auth</Radio>
-      <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
-    </DropdownItem>
-    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio bind:group={group3} value={3} tinted>Subscribe newsletter</Radio>
-      <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
-    </DropdownItem>
-  </ul>
-</Dropdown>
+  <Dropdown label="Dropdown radio" class="w-60" >
+    <ul slot="content" class="p-3 space-y-1">
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Radio bind:group={group3} value={1}>Enable notifications</Radio>
+        <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
+      </DropdownItem>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Radio bind:group={group3} value={2}>Enable 2FA auth</Radio>
+        <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
+      </DropdownItem>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Radio bind:group={group3} value={3}>Subscribe newsletter</Radio>
+        <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
+      </DropdownItem>
+    </ul>
+  </Dropdown>
 </ExampleDiv>
 
 
 ```html
-<Dropdown class="w-64">
-  <Button slot="trigger" class="w-64">Dropdown radio <ChevronDown size="18" class="ml-2" /></Button>
+<Dropdown label="Dropdown radio" class="w-60" >
   <ul slot="content" class="p-3 space-y-1">
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio bind:group={group3} value={1} tinted>Enable notifications</Radio>
-      <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
+      <Radio bind:group={group3} value={1}>Enable notifications</Radio>
+      <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
     </DropdownItem>
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio bind:group={group3} value={2} tinted>Enable 2FA auth</Radio>
-      <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
+      <Radio bind:group={group3} value={2}>Enable 2FA auth</Radio>
+      <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
     </DropdownItem>
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio bind:group={group3} value={3} tinted>Subscribe newsletter</Radio>
-      <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
+      <Radio bind:group={group3} value={3}>Subscribe newsletter</Radio>
+      <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
     </DropdownItem>
   </ul>
 </Dropdown>
@@ -399,16 +395,16 @@ Add an extra helper text to each radio element inside the dropdown menu list wit
 Show a list of toggle switch elements inside the dropdown menu to enable a yes or no type of choice.
 
 <ExampleDiv class="flex justify-center h-64">
-  <Dropdown label="Dropdown radio" class="w-56">
+  <Dropdown label="Dropdown toggle" class="w-56">
   <ul slot="content" class="p-3 space-y-1">
     <DropdownItem class="rounded">
-      <Toggle checked>Default radio</Toggle>
+      <Toggle>Default toggle</Toggle>
     </DropdownItem>
     <DropdownItem class="rounded">
       <Toggle checked>Checked state</Toggle>
     </DropdownItem>
     <DropdownItem class="rounded">
-      <Toggle checked>Default radio</Toggle>
+      <Toggle>Default toggle</Toggle>
     </DropdownItem>
   </ul>
   </Dropdown>
@@ -418,13 +414,13 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 <Dropdown label="Dropdown radio" class="w-56">
 <ul slot="content" class="p-3 space-y-1">
   <DropdownItem class="rounded">
-    <Toggle checked>Default radio</Toggle>
+    <Toggle>Default radio</Toggle>
   </DropdownItem>
   <DropdownItem class="rounded">
     <Toggle checked>Checked state</Toggle>
   </DropdownItem>
   <DropdownItem class="rounded">
-    <Toggle checked>Default radio</Toggle>
+    <Toggle>Default radio</Toggle>
   </DropdownItem>
 </ul>
 </Dropdown>
@@ -497,81 +493,61 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 This example can be used when you want to show a long list of items that won’t affect the height of the dropdown menu by enabling a scrolling behaviour.
 
 <ExampleDiv class="flex justify-center h-80">
-<Dropdown label="Project users" class="w-48">
-  <svelte:fragment slot="content">
-  <ul class="overflow-y-auto py-1 h-48 text-gray-700 dark:text-gray-200">
-    <DropdownItem class="flex items-center text-base font-semibold gap-2">
-      <Avatar src="/images/profile-picture-1.webp" size="xs"/>Jese Leos
-    </DropdownItem>
-    <DropdownItem class="flex items-center text-base font-semibold gap-2">
-      <Avatar src="/images/profile-picture-2.webp" size="xs"/>Robert Gouth
-    </DropdownItem>
-    <DropdownItem class="flex items-center text-base font-semibold gap-2">
-      <Avatar src="/images/profile-picture-3.webp" size="xs"/>Bonnie Green
-    </DropdownItem>
-    <DropdownItem class="flex items-center text-base font-semibold gap-2">
-      <Avatar src="/images/profile-picture-1.webp" size="xs"/>Jese Leos
-    </DropdownItem>
-    <DropdownItem class="flex items-center text-base font-semibold gap-2">
-      <Avatar src="/images/profile-picture-2.webp" size="xs"/>Robert Gouth
-    </DropdownItem>
-    <DropdownItem class="flex items-center text-base font-semibold gap-2">
-      <Avatar src="/images/profile-picture-3.webp" size="xs"/>Bonnie Green
-    </DropdownItem>
-    <DropdownItem class="flex items-center text-base font-semibold gap-2">
-      <Avatar src="/images/profile-picture-1.webp" size="xs"/>Jese Leos
-    </DropdownItem>
-    <DropdownItem class="flex items-center text-base font-semibold gap-2">
-      <Avatar src="/images/profile-picture-2.webp" size="xs"/>Robert Gouth
-    </DropdownItem>
-    <DropdownItem class="flex items-center text-base font-semibold gap-2">
-      <Avatar src="/images/profile-picture-3.webp" size="xs"/>Bonnie Green
-    </DropdownItem>
-  </ul>
-  <DropdownDivider/>
-    <DropdownItem class="flex items-center text-base font-semibold gap-2" color="red">
-      <UserAdd class="h-5 w-5"/>Add new user
-    </DropdownItem>
-  </svelte:fragment>
-</Dropdown>
+  <Dropdown label="Project users" class="w-48">
+    <svelte:fragment slot="content">
+      <ul class="overflow-y-auto py-1 h-48 text-gray-700 dark:text-gray-200">
+        <DropdownItem class="flex items-center text-base font-semibold gap-2">
+          <Avatar src="/images/profile-picture-1.webp" size="xs"/>Jese Leos
+        </DropdownItem>
+        <DropdownItem class="flex items-center text-base font-semibold gap-2">
+          <Avatar src="/images/profile-picture-2.webp" size="xs"/>Robert Gouth
+        </DropdownItem>
+        <DropdownItem class="flex items-center text-base font-semibold gap-2">
+          <Avatar src="/images/profile-picture-3.webp" size="xs"/>Bonnie Green
+        </DropdownItem>
+        <DropdownItem class="flex items-center text-base font-semibold gap-2">
+          <Avatar src="/images/profile-picture-1.webp" size="xs"/>Robert Wall
+        </DropdownItem>
+        <DropdownItem class="flex items-center text-base font-semibold gap-2">
+          <Avatar src="/images/profile-picture-2.webp" size="xs"/>Joseph Mcfall
+        </DropdownItem>
+        <DropdownItem class="flex items-center text-base font-semibold gap-2">
+          <Avatar src="/images/profile-picture-3.webp" size="xs"/>Leslie Livingston
+        </DropdownItem>
+      </ul>
+      <a href="/" class="flex items-center p-3 text-sm font-medium text-blue-600 bg-gray-50 border-t border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-blue-500 hover:underline">
+          <UserAdd class="h-5 w-5 mr-1"/>Add new user
+      </a>
+    </svelte:fragment>
+  </Dropdown>
 </ExampleDiv>
 
 ```html
 <Dropdown label="Project users" class="w-48">
   <svelte:fragment slot="content">
-  <ul class="overflow-y-auto py-1 h-48 text-gray-700 dark:text-gray-200">
-    <DropdownItem class="flex items-center text-base font-semibold gap-2">
-      <Avatar src="/images/profile-picture-1.webp" size="xs"/>Jese Leos
-    </DropdownItem>
-    <DropdownItem class="flex items-center text-base font-semibold gap-2">
-      <Avatar src="/images/profile-picture-2.webp" size="xs"/>Robert Gouth
-    </DropdownItem>
-    <DropdownItem class="flex items-center text-base font-semibold gap-2">
-      <Avatar src="/images/profile-picture-3.webp" size="xs"/>Bonnie Green
-    </DropdownItem>
-    <DropdownItem class="flex items-center text-base font-semibold gap-2">
-      <Avatar src="/images/profile-picture-1.webp" size="xs"/>Jese Leos
-    </DropdownItem>
-    <DropdownItem class="flex items-center text-base font-semibold gap-2">
-      <Avatar src="/images/profile-picture-2.webp" size="xs"/>Robert Gouth
-    </DropdownItem>
-    <DropdownItem class="flex items-center text-base font-semibold gap-2">
-      <Avatar src="/images/profile-picture-3.webp" size="xs"/>Bonnie Green
-    </DropdownItem>
-    <DropdownItem class="flex items-center text-base font-semibold gap-2">
-      <Avatar src="/images/profile-picture-1.webp" size="xs"/>Jese Leos
-    </DropdownItem>
-    <DropdownItem class="flex items-center text-base font-semibold gap-2">
-      <Avatar src="/images/profile-picture-2.webp" size="xs"/>Robert Gouth
-    </DropdownItem>
-    <DropdownItem class="flex items-center text-base font-semibold gap-2">
-      <Avatar src="/images/profile-picture-3.webp" size="xs"/>Bonnie Green
-    </DropdownItem>
-  </ul>
-  <DropdownDivider/>
-    <DropdownItem class="flex items-center text-base font-semibold gap-2" color="red">
-      <UserAdd class="h-5 w-5"/>Add new user
-    </DropdownItem>
+      <ul class="overflow-y-auto py-1 h-48 text-gray-700 dark:text-gray-200">
+        <DropdownItem class="flex items-center text-base font-semibold gap-2">
+          <Avatar src="/images/profile-picture-1.webp" size="xs"/>Jese Leos
+        </DropdownItem>
+        <DropdownItem class="flex items-center text-base font-semibold gap-2">
+          <Avatar src="/images/profile-picture-2.webp" size="xs"/>Robert Gouth
+        </DropdownItem>
+        <DropdownItem class="flex items-center text-base font-semibold gap-2">
+          <Avatar src="/images/profile-picture-3.webp" size="xs"/>Bonnie Green
+        </DropdownItem>
+        <DropdownItem class="flex items-center text-base font-semibold gap-2">
+          <Avatar src="/images/profile-picture-1.webp" size="xs"/>Robert Wall
+        </DropdownItem>
+        <DropdownItem class="flex items-center text-base font-semibold gap-2">
+          <Avatar src="/images/profile-picture-2.webp" size="xs"/>Joseph Mcfall
+        </DropdownItem>
+        <DropdownItem class="flex items-center text-base font-semibold gap-2">
+          <Avatar src="/images/profile-picture-3.webp" size="xs"/>Leslie Livingston
+        </DropdownItem>
+      </ul>
+    <a href="/" class="flex items-center p-3 text-sm font-medium text-blue-600 bg-gray-50 border-t border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-blue-500 hover:underline">
+        <UserAdd class="h-5 w-5 mr-1"/>Add new user
+    </a>
   </svelte:fragment>
 </Dropdown>
 ```
@@ -581,68 +557,67 @@ This example can be used when you want to show a long list of items that won’t
 Use this example if you want to add a search bar inside the dropdown menu to be able to filter through a long list of menu items with scrolling behaviour.
 
 <ExampleDiv class="flex justify-center h-96">
-<Dropdown label="Project users" class="w-64">
+<Dropdown label="Project users" class="w-60">
   <svelte:fragment slot="content">
-  <div class="p-3 text-gray-700 dark:text-gray-200 dark:bg-gray-800">
-    <SimpleSearch btnClass="hidden"/>
-  </div>
-  <ul class="overflow-y-auto p-3 space-y-1 h-48">
-    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted>Jese Leos</Checkbox>
-    </DropdownItem>
-    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted>Robert Gouth</Checkbox>
-    </DropdownItem>
-    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted checked>Bonnie Green</Checkbox>
-    </DropdownItem>
-    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted>Jese Leos</Checkbox>
-    </DropdownItem>
-    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted>Robert Gouth</Checkbox>
-    </DropdownItem>
-    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted>Bonnie Green</Checkbox>
-    </DropdownItem>
-  </ul>
-  <DropdownItem class="flex items-center text-base font-semibold gap-2 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 hover:underline" color="red">
-    <UserRemove class="w-5 h-5" />Delete user
-  </DropdownItem>
+    <div class="p-3">
+      <SimpleSearch btnClass="hidden"/>
+    </div>
+    <ul class="overflow-y-auto px-3 pb-3 space-y-1 h-48">
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox>Jese Leos</Checkbox>
+      </DropdownItem>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox>Robert Gouth</Checkbox>
+      </DropdownItem>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox checked>Bonnie Green</Checkbox>
+      </DropdownItem>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox>Jese Leos</Checkbox>
+      </DropdownItem>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox>Robert Gouth</Checkbox>
+      </DropdownItem>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox>Bonnie Green</Checkbox>
+      </DropdownItem>
+    </ul>
+    <a href="/" class="flex items-center p-3 text-sm font-medium text-red-600 bg-gray-50 border-t border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
+        <UserRemove class="w-5 h-5 mr-1" />Delete user
+    </a>
   </svelte:fragment>
 </Dropdown>
 </ExampleDiv>
 
 ```html
-<Dropdown label="Project users" class="w-48">
+<Dropdown label="Project users" class="w-60">
   <svelte:fragment slot="content">
-  <div class="p-3 text-gray-700 dark:text-gray-200 dark:bg-gray-800">
-    <SimpleSearch btnClass="hidden"/>
-  </div>
-  <ul class="overflow-y-auto p-3 space-y-1 h-48">
-    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted>Jese Leos</Checkbox>
-    </DropdownItem>
-    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted>Robert Gouth</Checkbox>
-    </DropdownItem>
-    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted checked>Bonnie Green</Checkbox>
-    </DropdownItem>
-    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted>Jese Leos</Checkbox>
-    </DropdownItem>
-    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted>Robert Gouth</Checkbox>
-    </DropdownItem>
-    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Checkbox tinted>Bonnie Green</Checkbox>
-    </DropdownItem>
-  </ul>
-  <DropdownDivider/>
-    <DropdownItem class="flex items-center text-base font-semibold gap-2 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 hover:underline" color="red">
-      <UserRemove class="w-5 h-5" />Delete user
-    </DropdownItem>
+    <div class="p-3">
+      <SimpleSearch btnClass="hidden"/>
+    </div>
+    <ul class="overflow-y-auto px-3 pb-3 space-y-1 h-48">
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox>Jese Leos</Checkbox>
+      </DropdownItem>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox>Robert Gouth</Checkbox>
+      </DropdownItem>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox checked>Bonnie Green</Checkbox>
+      </DropdownItem>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox>Jese Leos</Checkbox>
+      </DropdownItem>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox>Robert Gouth</Checkbox>
+      </DropdownItem>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Checkbox>Bonnie Green</Checkbox>
+      </DropdownItem>
+    </ul>
+    <a href="/" class="flex items-center p-3 text-sm font-medium text-red-600 bg-gray-50 border-t border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
+        <UserRemove class="w-5 h-5 mr-1" />Delete user
+    </a>
   </svelte:fragment>
 </Dropdown>
 ```
@@ -937,20 +912,38 @@ Use this example to also show the name or email of the user next to the avatar f
 </Dropdown>
 ```
 
+<Htwo label="Double placement"/>
+
 <ExampleDiv class="flex justify-center flex items-center gap-2">
-<Dropdown label="Dropdown right start" placement="right-start">
-  <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem>Settings</DropdownItem>
-  <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem>Sign out</DropdownItem>
-</Dropdown>
 <Dropdown label="Dropdown left start" placement="left-start">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
   <DropdownItem>Sign out</DropdownItem>
 </Dropdown>
+<Dropdown label="Dropdown right start" placement="right-start">
+  <DropdownItem>Dashboard</DropdownItem>
+  <DropdownItem>Settings</DropdownItem>
+  <DropdownItem>Earnings</DropdownItem>
+  <DropdownItem>Sign out</DropdownItem>
+</Dropdown>
 </ExampleDiv>
+
+```html
+<Dropdown label="Dropdown left start" placement="left-start">
+  <DropdownItem>Dashboard</DropdownItem>
+  <DropdownItem>Settings</DropdownItem>
+  <DropdownItem>Earnings</DropdownItem>
+  <DropdownItem>Sign out</DropdownItem>
+</Dropdown>
+<Dropdown label="Dropdown right start" placement="right-start">
+  <DropdownItem>Dashboard</DropdownItem>
+  <DropdownItem>Settings</DropdownItem>
+  <DropdownItem>Earnings</DropdownItem>
+  <DropdownItem>Sign out</DropdownItem>
+</Dropdown>
+```
+
 <Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 

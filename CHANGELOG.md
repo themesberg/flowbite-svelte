@@ -2,6 +2,147 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.22.17](https://github.com/themesberg/flowbite-svelte/compare/v0.22.16...v0.22.17) (2022-07-26)
+
+### [0.22.16](https://github.com/themesberg/flowbite-svelte/compare/v0.22.15...v0.22.16) (2022-07-26)
+
+
+### Bug Fixes
+
+* cards/index.md, buttons ([9b2ca39](https://github.com/themesberg/flowbite-svelte/commit/9b2ca3914681439e667b5b6026f6c6e22b56b6fd))
+
+### [0.22.15](https://github.com/themesberg/flowbite-svelte/compare/v0.22.14...v0.22.15) (2022-07-26)
+
+
+### Features
+
+* cards - re-written ([1084f38](https://github.com/themesberg/flowbite-svelte/commit/1084f38514e4cac5662ae6b969dde27e829ea24e))
+* cards - re-written ([52716e0](https://github.com/themesberg/flowbite-svelte/commit/52716e08ac0f4446e3c7160fc3dc83e515201d7d))
+* cards - wip ([0948c89](https://github.com/themesberg/flowbite-svelte/commit/0948c89a124662b7c5c238350df341e0956dac8a))
+
+
+### Bug Fixes
+
+* cards layout on index.md pages ([2080f8e](https://github.com/themesberg/flowbite-svelte/commit/2080f8ee29163a8ad5208f37c95ebf498be92c39))
+
+### [0.22.14](https://github.com/themesberg/flowbite-svelte/compare/v0.22.13...v0.22.14) (2022-07-25)
+
+
+### Bug Fixes
+
+* $$restProps before $$props.class ([9378cf5](https://github.com/themesberg/flowbite-svelte/commit/9378cf5349446ec8355317e98e462e379350a697))
+* add padding to w-full ([e1008c9](https://github.com/themesberg/flowbite-svelte/commit/e1008c9620f18b42664059595ae3fe1e421e097b))
+* layout and Toc padding ([6a67345](https://github.com/themesberg/flowbite-svelte/commit/6a6734545429c7228a1bf3cbc58f7e4739dbfe65))
+* various minor fixes ([9ac3296](https://github.com/themesberg/flowbite-svelte/commit/9ac3296635db9e7af2a45cc928477ac15e831dc4))
+
+### [0.22.13](https://github.com/themesberg/flowbite-svelte/compare/v0.22.12...v0.22.13) (2022-07-24)
+
+### [0.22.12](https://github.com/themesberg/flowbite-svelte/compare/v0.22.11...v0.22.12) (2022-07-24)
+
+
+### Features
+
+* megamenu - code skel ([d02c5c7](https://github.com/themesberg/flowbite-svelte/commit/d02c5c78a5360f623ffe3fb3659265d679e43426))
+* megamenu - wip ([02bbabc](https://github.com/themesberg/flowbite-svelte/commit/02bbabcdda0f924aefa2829a94e3b822bdb0bbf6))
+* megamenu + examples ([2f24a26](https://github.com/themesberg/flowbite-svelte/commit/2f24a268dfe474da45a654d6a4bd128f4175ae44))
+
+
+### Bug Fixes
+
+* layout and index page ([7db0e00](https://github.com/themesberg/flowbite-svelte/commit/7db0e00d1094d4d03a7386fd96c13c5b2ee09f6f))
+* layout logo ([1a78683](https://github.com/themesberg/flowbite-svelte/commit/1a78683e734bf0dae58fe704bd652fcef196dae9))
+* layout width ([e17969e](https://github.com/themesberg/flowbite-svelte/commit/e17969ec2c6f2938ed1a7c7b8f083bd3da6801e8))
+* position and classes ([caa1f13](https://github.com/themesberg/flowbite-svelte/commit/caa1f136e964503ff1976c7de7c006615038489b))
+* removed console.log ([f0f7ee9](https://github.com/themesberg/flowbite-svelte/commit/f0f7ee96bc48310ed245c00678960ac9d2eaa05b))
+
+### [0.22.11](https://github.com/themesberg/flowbite-svelte/compare/v0.22.10...v0.22.11) (2022-07-23)
+
+
+### Features
+
+* list group rewritten - API changed ([86c97dc](https://github.com/themesberg/flowbite-svelte/commit/86c97dc54581f634baed601c609e9d90c6c4611b))
+
+
+### Bug Fixes
+
+* background context added ([52c8dd5](https://github.com/themesberg/flowbite-svelte/commit/52c8dd5693f3d890e7b875ae1b0435c5a7313876))
+* error fix for deployment ([be684a8](https://github.com/themesberg/flowbite-svelte/commit/be684a8057c08a7c07f3f6c370114d008dc2182e))
+* field name change for ListGroupItemType ([da93d46](https://github.com/themesberg/flowbite-svelte/commit/da93d460c864e0a94f803420f73dbf976e185fee))
+
+### [0.22.10](https://github.com/themesberg/flowbite-svelte/compare/v0.22.9...v0.22.10) (2022-07-23)
+
+
+### Bug Fixes
+
+* merge conflict fix with Hetarth02-main ([914c1f9](https://github.com/themesberg/flowbite-svelte/commit/914c1f95f80dfbd73542d68d39622d79bed1ea04))
+
+### [0.22.9](https://github.com/themesberg/flowbite-svelte/compare/v0.22.8...v0.22.9) (2022-07-23)
+
+
+### Bug Fixes
+
+* using classnames dynamic class name for Footer ([52e17c7](https://github.com/themesberg/flowbite-svelte/commit/52e17c7dd8ad2599d1f41bc938930db615459b63))
+
+### [0.22.8](https://github.com/themesberg/flowbite-svelte/compare/v0.22.7...v0.22.8) (2022-07-23)
+
+
+### Bug Fixes
+
+* add custom to Footer ([22f8f43](https://github.com/themesberg/flowbite-svelte/commit/22f8f430ae9a21acbbd95300b8633531d9a6dc5f))
+
+### [0.22.7](https://github.com/themesberg/flowbite-svelte/compare/v0.22.6...v0.22.7) (2022-07-22)
+
+
+### Features
+
+* form buttons tinted removed ([5c2d619](https://github.com/themesberg/flowbite-svelte/commit/5c2d619c8c5ade960e2b3a59c20b809a40174829))
+
+
+### Bug Fixes
+
+* [#177](https://github.com/themesberg/flowbite-svelte/issues/177) export visible/autohide ([2127151](https://github.com/themesberg/flowbite-svelte/commit/2127151550a778d35bee5eb3b2b77f38423f50e4))
+
+### [0.22.6](https://github.com/themesberg/flowbite-svelte/compare/v0.22.5...v0.22.6) (2022-07-22)
+
+
+### Features
+
+* select input [#50](https://github.com/themesberg/flowbite-svelte/issues/50) ([8cea993](https://github.com/themesberg/flowbite-svelte/commit/8cea993344f1427f83ab46f29a9bc1613c67960c))
+
+
+### Bug Fixes
+
+* add on:change to Radio ([074bd16](https://github.com/themesberg/flowbite-svelte/commit/074bd1677ced075971173c8abf1cf15387026efd))
+
+### [0.22.5](https://github.com/themesberg/flowbite-svelte/compare/v0.22.4...v0.22.5) (2022-07-21)
+
+
+### Bug Fixes
+
+* [#144](https://github.com/themesberg/flowbite-svelte/issues/144) ChevronLeft fix ([016940b](https://github.com/themesberg/flowbite-svelte/commit/016940b36c6782c2481d8ff6c489c2808945d674))
+
+### [0.22.4](https://github.com/themesberg/flowbite-svelte/compare/v0.22.3...v0.22.4) (2022-07-21)
+
+
+### Bug Fixes
+
+* [#165](https://github.com/themesberg/flowbite-svelte/issues/165) toggle bind:group bind:checked ([3ca4010](https://github.com/themesberg/flowbite-svelte/commit/3ca40109f13e31afa76e02c96d387ff476880e52))
+* change from # to / for href ([b79fd81](https://github.com/themesberg/flowbite-svelte/commit/b79fd8112d2fb15657058dd0184b113228d8a6aa))
+
+### [0.22.3](https://github.com/themesberg/flowbite-svelte/compare/v0.22.2...v0.22.3) (2022-07-21)
+
+
+### Bug Fixes
+
+* for [#165](https://github.com/themesberg/flowbite-svelte/issues/165) and [#170](https://github.com/themesberg/flowbite-svelte/issues/170) and changed $$restProps.class to $$props.class ([99399b8](https://github.com/themesberg/flowbite-svelte/commit/99399b8aebdec68bc5c52641ed768dc601fe36a2))
+
+### [0.22.2](https://github.com/themesberg/flowbite-svelte/compare/v0.22.1...v0.22.2) (2022-07-21)
+
+
+### Bug Fixes
+
+* update for [#165](https://github.com/themesberg/flowbite-svelte/issues/165) and [#170](https://github.com/themesberg/flowbite-svelte/issues/170) ([ff43f26](https://github.com/themesberg/flowbite-svelte/commit/ff43f265b163d2c3ac7a145772e18a95326c0651))
+
 ### [0.22.1](https://github.com/themesberg/flowbite-svelte/compare/v0.22.0...v0.22.1) (2022-07-20)
 
 

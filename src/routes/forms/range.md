@@ -25,7 +25,7 @@ layout: formLayout
   <BreadcrumbItem>Range</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Range Components</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Range</h1>
 
 <Htwo label="Examples" />
 

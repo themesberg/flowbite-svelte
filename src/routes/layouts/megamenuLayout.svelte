@@ -12,8 +12,8 @@
 		<Htwo label="References" />
 		<div class="references">
 			<p>
-				<a href="https://flowbite.com/docs/components/rating/" target="_blank" class="link"
-					>Flowbite Rating</a
+				<a href="https://flowbite.com/docs/components/mega-menu/" target="_blank" class="link"
+					>Flowbite Mega Menu</a
 				>
 			</p>
 		</div>

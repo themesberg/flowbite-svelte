@@ -8,17 +8,6 @@
 <div class="max-w-3xl mx-auto mt-16">
 	<div class="container flex flex-wrap mx-auto">
 		<slot />
-
-		<Htwo label="Related components" />
-		<div class="related-components">
-			<p>
-				<a href="/accordions/default" class="link">Default Accordion</a>
-			</p>
-
-			<p>
-				<a href="/accordions/icon-accordion" class="link">Icon Accordion</a>
-			</p>
-		</div>
 		<Htwo label="References" />
 		<div class="references">
 			<p>

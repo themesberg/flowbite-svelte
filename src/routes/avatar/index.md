@@ -7,7 +7,7 @@ layout: avatarLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Avatar, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider, Breadcrumb, BreadcrumbItem } from "$lib/index"
   import { Home } from 'svelte-heros'
   import alertProp from '../props/Avatar.json'
   // Props table
@@ -184,6 +184,40 @@ layout: avatarLayout
 		<div class="text-sm text-gray-500 dark:text-gray-400">Joined in August 2014</div>
 	</div>
 </div>
+```
+
+<Htwo label="User dropdown" />
+
+Use this example if you want to show a dropdown menu when clicking on the avatar component.
+
+<ExampleDiv class="flex justify-center h-64">
+  <Dropdown>
+    <Avatar slot="trigger" src="/images/profile-picture-3.webp" dot={{color:'bg-green-400'}} />
+    <DropdownHeader>
+      <span class="block text-sm"> Bonnie Green </span>
+      <span class="block truncate text-sm font-medium"> name@flowbite.com </span>
+    </DropdownHeader>
+    <DropdownItem>Dashboard</DropdownItem>
+    <DropdownItem>Settings</DropdownItem>
+    <DropdownItem>Earnings</DropdownItem>
+    <DropdownDivider />
+    <DropdownItem>Sign out</DropdownItem>
+  </Dropdown>
+</ExampleDiv>
+
+```html
+<Dropdown>
+  <Avatar slot="trigger" src="/images/profile-picture-3.webp" dot={{color:'bg-green-400'}} />
+  <DropdownHeader>
+    <span class="block text-sm"> Bonnie Green </span>
+    <span class="block truncate text-sm font-medium"> name@flowbite.com </span>
+  </DropdownHeader>
+  <DropdownItem>Dashboard</DropdownItem>
+  <DropdownItem>Settings</DropdownItem>
+  <DropdownItem>Earnings</DropdownItem>
+  <DropdownDivider />
+  <DropdownItem>Sign out</DropdownItem>
+</Dropdown>
 ```
 
 <Htwo label="Sizes" />

@@ -1,6 +1,6 @@
 {
 	"name": "flowbite-svelte",
-	"version": "0.22.1",
+	"version": "0.22.17",
 	"description": "Flowbite components for Svelte",
 	"main": "index.js",
 	"author": {
@@ -12,7 +12,7 @@
 	"homepage": "https://flowbite-svelte.com/",
 	"license": "MIT",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite dev --host --port 8000",
 		"gen:props": "node ./node_modules/createprops/createprops.js",
 		"build": "vite build",
 		"package": "svelte-kit package",
@@ -71,12 +71,15 @@
 		"dropdown",
 		"footer",
 		"forms",
+		"kbd",
 		"list group",
-		"modals",
+		"modal",
 		"navbar",
 		"paginations",
 		"progress bars",
+		"rating",
 		"sidebars",
+		"skeleton",
 		"spinners",
 		"tables",
 		"tabs",

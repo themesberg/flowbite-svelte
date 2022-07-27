@@ -1,9 +1,11 @@
 <script lang="ts">
+	import { setContext } from 'svelte';
 	import Tooltip from '$lib/tooltips/Tooltip.svelte';
 	import Button from '$lib/buttons/Button.svelte';
 	import classNames from 'classnames';
 	import { ChevronUp, ChevronRight, ChevronDown, ChevronLeft } from 'svelte-heros';
 	import type { Placement } from '@floating-ui/dom';
+
 	export let label: string = '';
 	export let inline: boolean = false;
 	export let tooltipArrow: boolean = false;
@@ -11,6 +13,8 @@
 	export let labelClass: string =
 		'flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent';
 	export let placement: 'auto' | Placement = 'bottom';
+
+	setContext('background', true);
 
 	const icons = {
 		top: ChevronUp,
@@ -32,24 +36,23 @@
 >
 	<slot name="trigger">
 		{#if inline}
-			<button class={labelClass}>
+			<button class={labelClass} class:flex-row-reverse={icon == ChevronLeft}>
 				<slot name="label">{label}</slot>
 				{#if arrowIcon}
-					<svelte:component this={icon ?? ChevronDown} class="ml-2 h-4 w-4" />
+					<svelte:component
+						this={icon ?? ChevronDown}
+						class={classNames('h-4 w-4', icon == ChevronLeft ? 'mr-2' : 'ml-2')}
+					/>
 				{/if}
 			</button>
 		{:else}
-			<Button
-				pill={$$props.pill}
-				outline={$$props.outline}
-				color={$$props.color}
-				size={$$props.size}
-				icon={$$props.icon}
-				gradient={$$props.gradient}
-			>
+			<Button {...$$restProps} class={icon == ChevronLeft && 'flex-row-reverse'}>
 				<slot name="label">{label}</slot>
 				{#if arrowIcon}
-					<svelte:component this={icon ?? ChevronDown} class="ml-2 h-4 w-4" />
+					<svelte:component
+						this={icon ?? ChevronDown}
+						class={classNames('h-4 w-4', icon == ChevronLeft ? 'mr-2' : 'ml-2')}
+					/>
 				{/if}
 			</Button>
 		{/if}

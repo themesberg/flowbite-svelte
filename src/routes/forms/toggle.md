@@ -27,7 +27,7 @@ layout: formLayout
   <BreadcrumbItem>Toggle</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Toggle Components</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Toggle</h1>
 
 <Htwo label="Toggle examples" />
 

@@ -1,11 +1,18 @@
 <script lang="ts">
+	import { getContext } from 'svelte';
 	import classNames from 'classnames';
 	import Checkbox from './Checkbox.svelte';
-
 	export let size: 'small' | 'default' | 'large' = 'default';
 
+	export let group: string[] = [];
+	export let value: string = '';
+	export let checked: boolean = undefined;
+
+	// tinted if put in component having its own background
+	let background: boolean = getContext('background');
+
 	const common =
-		"mr-3 bg-gray-200 rounded-full peer-focus:ring-4 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:bg-white after:border-gray-300 after:border after:rounded-full after:transition-all dark:border-gray-600";
+		"mr-3 bg-gray-200 rounded-full peer-focus:ring-4 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:bg-white after:border-gray-300 after:border after:rounded-full after:transition-all";
 
 	const colors = {
 		red: 'peer-focus:ring-red-300 dark:peer-focus:ring-red-800 peer-checked:bg-red-600',
@@ -22,9 +29,18 @@
 		default: 'w-11 h-6 after:top-0.5 after:left-[2px] after:h-5 after:w-5',
 		large: 'w-14 h-7 after:top-0.5 after:left-[4px]  after:h-6 after:w-6'
 	};
+
+	let divClass;
+	$: divClass = classNames(
+		common,
+		background ? 'dark:bg-gray-600 dark:border-gray-500' : 'dark:bg-gray-700 dark:border-gray-600',
+		colors[$$restProps.color ?? 'blue'],
+		sizes[size],
+		'relative'
+	);
 </script>
 
-<Checkbox custom class="relative {$$restProps.class}" {...$$restProps} on:click>
-	<div class={classNames(common, colors[$$restProps.color ?? 'blue'], sizes[size])} />
+<Checkbox custom {...$$restProps} class={$$props.class} {value} bind:checked bind:group on:click>
+	<div class={divClass} />
 	<slot />
 </Checkbox>

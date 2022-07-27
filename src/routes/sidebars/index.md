@@ -70,7 +70,7 @@ layout: sidebarLayout
   <BreadcrumbItem>Sidebars</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Sidebar Components</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Sidebar</h1>
 
 <p>Use the sidebar components to show a list of menu items and multi-level dropdown items on either side of the page to navigate on your website</p>
 

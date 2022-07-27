@@ -80,6 +80,7 @@ export { default as ArrowKeyUp } from './kbd/ArrowKeyUp.svelte';
 
 // List
 export { default as List } from './list-group/List.svelte';
+export { default as ListItem } from './list-group/ListItem.svelte';
 
 // Modals
 export { modalIdStore } from './modals/modalStores.js';
@@ -89,6 +90,9 @@ export { default as MediumModal } from './modals/MediumModal.svelte';
 export { default as ModalButton } from './modals/ModalButton.svelte';
 export { default as SignInModal } from './modals/SignInModal.svelte';
 export { default as SmallModal } from './modals/SmallModal.svelte';
+
+// MegaMenu
+export { default as MegaMenu } from './megamenu/MegaMenu.svelte';
 
 // Navbar
 export { default as Navbar } from './navbar/Navbar.svelte';

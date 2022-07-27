@@ -7,7 +7,7 @@ layout: formLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Radio, Breadcrumb, BreadcrumbItem, Label, Helper } from "$lib/index"
+  import { Radio, Breadcrumb, BreadcrumbItem, Dropdown, DropdownItem, Label, Helper } from "$lib/index"
   import { Table, TableBody, TableBodyRow, TableBodyCell, TableHead, TableHeadCell } from "$lib/index"
   import { Home } from 'svelte-heros'
   import componentProps from '../props/Radio.json'
@@ -31,14 +31,14 @@ layout: formLayout
   <BreadcrumbItem>Radio</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Radio Components</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Radio</h1>
 
 The radio component can be used to allow the user to choose a single option from one or more available options coded with the utility classes from Tailwind CSS and available in multiple styles, variants, and colors and support dark mode.
 
 <Htwo label="Radio examples" />
 
-<ExampleDiv>
-<Radio name="example" class="mb-4">Default radio</Radio>
+<ExampleDiv class="flex flex-col gap-4">
+<Radio name="example">Default radio</Radio>
 <Radio name="example" checked={true}>Checked state</Radio>
 </ExampleDiv>
 
@@ -47,7 +47,7 @@ The radio component can be used to allow the user to choose a single option from
 	import { Radio, Label, Helper } from 'flowbite-svelte';
 </script>
 
-<Radio name="example" class="mb-4">Default radio</Radio>
+<Radio name="example">Default radio</Radio>
 <Radio name="example" checked>Checked state</Radio>
 ```
 
@@ -57,14 +57,14 @@ Apply the `disabled` attribute to the radio component to disallow the selection 
 
 <p>This example can be used for the disabled state of the radio component by applying the disabled attribute to the input element.</p>
 
-<ExampleDiv>
-<Radio name="disabled-state" disabled class="mb-4">Disabled radio</Radio>
+<ExampleDiv class="flex flex-col gap-4">
+<Radio name="disabled-state" disabled>Disabled radio</Radio>
 <Radio name="disabled-state" disabled checked >Disabled checked</Radio>
 </ExampleDiv>
 
 ```html
-<Radio name="disabled-state" disabled class="mb-4">Disabled radio</Radio>
-<Radio name="disabled-state" disabled checked>Disabled radio</Radio>
+<Radio name="disabled-state" disabled>Disabled radio</Radio>
+<Radio name="disabled-state" disabled checked>Disabled checked</Radio>
 ```
 
 
@@ -138,12 +138,12 @@ If you need separate control over the label and the radio you can use the verbos
 
 <ExampleDiv>
   <Radio aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Radio>
-  <Helper id="helper-checkbox-text" class="ml-6">For orders shipped from $25 in books or $29 in other categories</Helper>
+  <Helper id="helper-checkbox-text" class="pl-6 -mt-1">For orders shipped from $25 in books or $29 in other categories</Helper>
 </ExampleDiv>
 
 ```html
   <Radio aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Radio>
-  <Helper id="helper-checkbox-text" class="ml-6">For orders shipped from $25 in books or $29 in other categories</Helper>
+  <Helper id="helper-checkbox-text" class="pl-6 -mt-1">For orders shipped from $25 in books or $29 in other categories</Helper>
 ```
 
 <Htwo label="Bordered" />
@@ -222,15 +222,47 @@ Use this example to show a list of radio items inside a card horizontally.
 </ul>
 ```
 
-<!--
-<Htwo label="Radio dropdown" />
+<Htwo label="Radio in dropdown" />
 
-Use this example to show a list of radio items inside a dropdown menu.
+Here’s an example of a list group that you can use right away.
 
-<ExampleDiv>
-To do.
+<ExampleDiv class="flex justify-center h-96">
+  <Dropdown label="Dropdown radio" class="w-60" >
+    <ul slot="content" class="p-3">
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Radio name="dropdown" value={1} tinted>Individual</Radio>
+        <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
+      </DropdownItem>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Radio name="dropdown" value={2} tinted>Company</Radio>
+        <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
+      </DropdownItem>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Radio name="dropdown" value={3} tinted>Non profit</Radio>
+        <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
+      </DropdownItem>
+    </ul>
+  </Dropdown>
 </ExampleDiv>
--->
+
+```html
+<Dropdown label="Dropdown radio" class="w-60" >
+  <ul slot="content" class="p-3">
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Radio name="dropdown" value={1} tinted>Individual</Radio>
+      <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
+    </DropdownItem>
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Radio name="dropdown" value={2} tinted>Company</Radio>
+      <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
+    </DropdownItem>
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Radio name="dropdown" value={3} tinted>Non profit</Radio>
+      <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
+    </DropdownItem>
+  </ul>
+</Dropdown>
+```
 
 <Htwo label="Inline layout" />
 

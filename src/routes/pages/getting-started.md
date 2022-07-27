@@ -14,9 +14,9 @@ layout: docLayout
 
 <h1 class="text-3xl w-full dark:text-white py-8">Getting Started</h1>
 
-<p>You can install Flowbite-Svelte by using the Flowbite-Svelte-Start or from scrach.</p>
+<p>You can install Flowbite-Svelte by using the Flowbite-Svelte-Start or from scratch.</p>
 
-<Htwo label="Installing from scrach" />
+<Htwo label="Installing from scratch" />
 
 <p>Install SvelteKit:</p>
 

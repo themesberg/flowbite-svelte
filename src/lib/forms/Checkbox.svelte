@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { getContext } from 'svelte';
 	import type { FormColorType } from '../types';
 	import Radio, { labelClass, inputClass } from './Radio.svelte';
 	import Label from './Label.svelte';
@@ -7,11 +8,13 @@
 	export let color: FormColorType = 'blue';
 	export let custom: boolean = false;
 	export let inline: boolean = false;
-	export let tinted: boolean = false;
 
 	export let group: string[] = [];
 	export let value: string = '';
 	export let checked: boolean = undefined;
+
+	// tinted if put in component having its own background
+	let background: boolean = getContext('background');
 
 	$: {
 		// There's a bug in Svelte and bind:group is not working with wrapped checkbox
@@ -35,13 +38,13 @@
 	}
 </script>
 
-<Label class={labelClass(inline, $$restProps.class)} show={!!$$slots.default}>
+<Label class={labelClass(inline, $$props.class)} show={!!$$slots.default}>
 	<input
 		type="checkbox"
 		bind:checked
 		on:click
 		{value}
 		{...$$restProps}
-		class={inputClass(custom, color, true, tinted, $$slots.default || $$restProps.class)}
+		class={inputClass(custom, color, true, background, $$slots.default || $$props.class)}
 	/><slot />
 </Label>

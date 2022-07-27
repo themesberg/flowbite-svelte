@@ -33,7 +33,7 @@ let textareaprops = {
 </Breadcrumb>
 
 
-<h1 class="text-3xl w-full dark:text-white py-8">Textarea Components</h1>
+<h1 class="text-3xl w-full dark:text-white py-8">Textarea</h1>
 
 <Htwo label="Examples" />
 

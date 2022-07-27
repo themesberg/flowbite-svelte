@@ -20,6 +20,7 @@ const config = defineConfig({
 		iconLayout: './src/routes/layouts/iconLayout.svelte',
 		kbdLayout: './src/routes/layouts/kbdLayout.svelte',
 		listgroupLayout: './src/routes/layouts/listgroupLayout.svelte',
+		megamenuLayout: './src/routes/layouts/megamenuLayout.svelte',
 		modalLayout: './src/routes/layouts/modalLayout.svelte',
 		navbarLayout: './src/routes/layouts/navbarLayout.svelte',
 		paginationLayout: './src/routes/layouts/paginationLayout.svelte',

@@ -12,21 +12,10 @@
 	} from '$lib/index';
 	import { Side, Nav, SidebarList } from 'svelte-sidebar-menu';
 	import Github from './utils/icons/Github.svelte';
-	import {
-		accordions,
-		cards,
-		carousels,
-		forms,
-		modals,
-		ratings,
-		svelteflows,
-		tabs,
-		timelines,
-		topMenus
-	} from './moduleItems';
+	import { forms, svelteflows, topMenus } from './moduleItems';
 
 	let asideClass =
-		'absolute w-auto bg-white pt-8 shadow-lg z-50 px-4 h-screen z-50 overflow-scroll dark:bg-gray-900';
+		'absolute w-auto bg-white pt-8 shadow-lg z-50 px-4 h-screen z-40 overflow-scroll dark:bg-gray-900';
 	// Navbar
 	let logo = '/images/flowbite-svelte-icon-logo.svg';
 	let logoClass = 'w-8 ml-4 mr-2';
@@ -40,7 +29,6 @@
 		'w-full z-50 px-6 bg-white h-14 pt-2 text-gray-600 border-b-2 dark:bg-gray-800 dark:text-white dark:border-b-1';
 	let siteName = 'Flowbite Svelte';
 	let navClass = 'py-0 px-4 xl:px-8 text-lg bg-white dark:bg-gray-900 dark:text-white';
-	let navDivClass = 'pb-2';
 	let navDivClasslast = 'pb-24';
 	let siteClass = ' w-full pt-0.5';
 	let spanClass =
@@ -68,7 +56,7 @@
 	};
 </script>
 
-<div class="px-4 mx-auto w-full max-w-7xl">
+<div class="px-4 mx-auto w-full max-w-full">
 	<Side
 		{siteName}
 		{siteClass}
@@ -87,7 +75,7 @@
 		{childLi}
 		{hamburgerClass}
 	>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass} class="pb-4">
 			<h3 class={h3Class}>
 				<a href="/">Flowbite Svelte</a>
 			</h3>
@@ -95,180 +83,165 @@
 				<SidebarList {href} {name} {sideBarListClass} />
 			{/each}
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}>
 				<a href="/accordions">Accordions</a>
 			</h3>
-			{#each accordions as { href, name, rel }}
-				<SidebarList {href} {name} {sideBarListClass} />
-			{/each}
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}>
 				<a href="/alerts">Alert</a>
 			</h3>
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}>
 				<a href="/avatar">Avatar</a>
 			</h3>
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}>
 				<a href="/badges">Badges</a>
 			</h3>
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}>
 				<a href="/breadcrumbs">Breadcrumb</a>
 			</h3>
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}>
 				<a href="/button-groups">Button groups</a>
 			</h3>
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}>
 				<a href="/buttons">Buttons</a>
 			</h3>
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}><a href="/cards">Cards</a></h3>
-			{#each cards as { href, name, rel }}
-				<SidebarList {href} {name} {rel} {sideBarListClass} />
-			{/each}
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}>
 				<a href="/carousels">Carousel</a>
 			</h3>
-			{#each carousels as { href, name, rel }}
-				<SidebarList {href} {name} {rel} {sideBarListClass} />
-			{/each}
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}>
 				<a href="/darkmode">Dark mode</a>
 			</h3>
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}>
 				<a href="/dropdowns">Dropdowns</a>
 			</h3>
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}>
 				<a href="/forms">Forms</a>
 			</h3>
-			{#each forms as { href, name, rel }}
-				<SidebarList {href} {name} {rel} {sideBarListClass} />
-			{/each}
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}>
 				<a href="/footer">Footer</a>
 			</h3>
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}>
 				<a href="/icons">Icons</a>
 			</h3>
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}>
 				<a href="/kbd">KBD</a>
 			</h3>
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}>
 				<a href="/list-group">List group</a>
 			</h3>
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}><a href="/modals">Modals</a></h3>
-			{#each modals as { href, name, rel }}
-				<SidebarList {href} {name} {rel} {sideBarListClass} />
-			{/each}
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
+			<h3 class={h3Class}><a href="/mega-menu">Mega menu</a></h3>
+		</Nav>
+		<Nav {navClass}>
 			<h3 class={h3Class}><a href="/navbar">Navbar</a></h3>
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}>
 				<a href="/paginations">Pagination</a>
 			</h3>
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}>
 				<a href="/progressbars">Progress bar</a>
 			</h3>
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}><a href="/ratings">Rating</a></h3>
-			{#each ratings as { href, name, rel }}
-				<SidebarList {href} {name} {rel} {sideBarListClass} />
-			{/each}
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}>
 				<a href="/sidebars">Sidebar</a>
 			</h3>
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}>
 				<a href="/skeleton">Skeleton</a>
 			</h3>
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}>
 				<a href="/spinners">Spinners</a>
 			</h3>
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}>
 				<a href="/tables">Tables</a>
 			</h3>
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}><a href="/tabs">Tabs</a></h3>
-			{#each tabs as { href, name, rel }}
-				<SidebarList {href} {name} {rel} {sideBarListClass} />
-			{/each}
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}>
 				<a href="/timelines">Timelines</a>
 			</h3>
-			{#each timelines as { href, name, rel }}
-				<SidebarList {href} {name} {rel} {sideBarListClass} />
-			{/each}
 		</Nav>
-		<Nav {navClass} {navDivClass}>
+		<Nav {navClass}>
 			<h3 class={h3Class}><a href="/toasts">Toast</a></h3>
 		</Nav>
-		<Nav {navClass} navDivClass={navDivClasslast}>
+		<Nav {navClass}>
 			<h3 class={h3Class}>
 				<a href="/tooltips">Tooltips</a>
 			</h3>
 		</Nav>
+		<Nav {navClass} navDivClass={navDivClasslast}>
+			<h3 class={h3Class}>Forms</h3>
+			{#each forms as { href, name, rel }}
+				<SidebarList {href} {name} {rel} {sideBarListClass} />
+			{/each}
+		</Nav>
 	</Side>
 
-	<main class="flex w-full mx-auto px-2 pt-16 lg:pl-72 2xl:pl-24">
+	<main class="flex mx-auto mb-8 px-2 pt-16 lg:pl-64 2xl:pl-16">
 		<DarkMode btnClass={darkmodebtn} />
-		<div class="w-full">
+		<div class="w-full px-8">
 			<slot />
 		</div>
 		<Toc />
 	</main>
 </div>
-<div class="pt-4 lg:pl-64">
-	<Footer footerType="socialmedia">
+<div class="mx-auto mb-4 pt-4 lg:pl-64 2xl:pl-16">
+	<Footer footerType="custom" customClass="p-4 bg-white sm:p-6 dark:bg-gray-900">
 		<div class="md:flex md:justify-between">
 			<div class="mb-6 md:mb-0">
 				<FooterBrand
 					href="https://flowbite-svelte.com"
-					src="images/flowbite-svelte-icon-logo.svg"
+					src={logo}
 					alt="Flowbite-Svelte Logo"
 					name="Flowbite-Svelte"
 				/>
