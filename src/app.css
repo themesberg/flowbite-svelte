@@ -10,7 +10,7 @@ pre {
 }
 
 @layer base {
-	main p1 {
+	main p {
 		@apply w-full text-gray-900 dark:text-white py-1;
 	}
 	main h3 {
