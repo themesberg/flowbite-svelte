@@ -83,6 +83,31 @@ export interface DotType {
 	color?: string;
 }
 
+export interface drawerTransitionParamTypes {
+	amount?: number;
+	delay?: number;
+	duration?: number;
+	easing?: (t: number) => number;
+	opacity?: number;
+	x?: number;
+	y?: number;
+}
+
+export type drawerTransitionTypes =
+	| 'fade'
+	| 'fly'
+	| 'slide'
+	| 'blur'
+	| 'in:fly'
+	| 'out:fly'
+	| 'in:slide'
+	| 'out:slide'
+	| 'in:fade'
+	| 'out:fade'
+	| 'in:blur'
+	| 'out:blur'
+	| undefined;
+
 export type DropdownColorType = 'blue' | 'blue-outline' | 'dark' | 'dark-outline' | 'light' | 'green' | 'green-outline' | 'red' | 'red-outline' | 'yellow' | 'yellow-outline' | 'purple' | 'purple-outline';
 
 export interface DropdownType {
