@@ -7,8 +7,7 @@ layout: megamenuLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Button, Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, Breadcrumb, BreadcrumbItem } from '$lib/index'
-  import NavDropdown from '$lib/navbar/NavDropdown.svelte';
+  import { Button, Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, NavDropdown, Breadcrumb, BreadcrumbItem } from '$lib/index'
   import {
     Adjustments,
     UserCircle,
@@ -90,7 +89,8 @@ Use this example to show a list of links aligned on three columns inside the meg
 
 ```html
 <script>
- let menu = [
+  import { Button, Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, NavDropdown } from 'flowbite-svelte'
+  let menu = [
     {name: 'About us', href: '/about},
     {name: 'Blog', href: '/blog},
     {name: 'Contact us', href: '/contact},
@@ -155,7 +155,7 @@ This example of a mega menu dropdown can be used to also show an icon near the t
 
 ```html
 <script>
-    let menu = [
+  let menu = [
     {name: 'About us', href: '/about', icon: UserCircle},
     {name: 'Blog', href: '/blog', icon: UserCircle},
     {name: 'Contact us', href: '/contact', icon: UserCircle},
