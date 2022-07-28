@@ -120,6 +120,7 @@ User <code>reverse={true}</code> to reverse the position of an image.
 You can use the following example of a card element with an image for blog posts, user cards, and many more.
 
 <ExampleDiv>
+<div>
   <Card img="/images/image-1.jpeg" reverse={vCard}>
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
@@ -130,6 +131,7 @@ You can use the following example of a card element with an image for blog posts
     </Button>
   </Card>
   <Toggle bind:checked={vCard} class="mt-4 italic dark:text-gray-500">Reverse</Toggle>
+  </div>
 </ExampleDiv>
 
 ```html
@@ -143,11 +145,13 @@ You can use the following example of a card element with an image for blog posts
   </Button>
 </Card>
 ```
+
 <Htwo label="Horizontal card" />
 
 If you want to spice up your cards you can use the following card which has its child elements aligned horizontally.
 
 <ExampleDiv>
+<div>
   <Card img="/images/image-1.jpeg" href="/" horizontal reverse={hCard}>
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
@@ -155,6 +159,7 @@ If you want to spice up your cards you can use the following card which has its 
     </p>
   </Card>
   <Toggle bind:checked={hCard} class="mt-4 italic dark:text-gray-500">Reverse</Toggle>
+  </div>
 </ExampleDiv>
 
 ```html
@@ -237,6 +242,7 @@ Use this CTA card example to encourage your users to visit a certain page such a
   </div>
 </Card>
 ```
+
 <Htwo label="Card with list" />
 
 Use this card example if you want to show a list of data:
@@ -334,15 +340,6 @@ Use this card for your e-commerce websites and show information about the produc
 <p cloass="dark:text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
 </EcommerceCard>
 ```
-
-
-
-
-
-
-
-
-
 
 <Htwo label="Props" />
 
