@@ -23,7 +23,7 @@
 	let ulClass: string;
 	$: ulClass = classNames(
 		'grid grid-flow-row gap-y-4 md:gap-x-0 auto-col-max auto-row-max',
-		full && $$slots.extra ? 'sm:grid-cols-2' : 'sm:grid-cols-2 md:grid-cols-3',
+		full && $$slots.extra ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-3',
 		'text-sm font-medium',
 		'text-gray-500 dark:text-gray-400',
 		full && $$slots.extra && 'md:w-2/3'
