@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.22.21](https://github.com/themesberg/flowbite-svelte/compare/v0.22.20...v0.22.21) (2022-07-28)
+
+
+### Bug Fixes
+
+* megamenu centered in small screen ([713aa9a](https://github.com/themesberg/flowbite-svelte/commit/713aa9ab5d1c390291bb61910f9eae4b68d5981e))
+
 ### [0.22.20](https://github.com/themesberg/flowbite-svelte/compare/v0.22.19...v0.22.20) (2022-07-28)
 
 ### [0.22.19](https://github.com/themesberg/flowbite-svelte/compare/v0.22.17...v0.22.19) (2022-07-27)
