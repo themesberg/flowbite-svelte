@@ -2,6 +2,7 @@
 	import { createEventDispatcher } from 'svelte';
 	import { setContext } from 'svelte';
 	import CloseButton from '$lib/utils/CloseButton.svelte';
+	import focusTrap from '$lib/utils/focusTrap';
 
 	export let open = false;
 	export let title: string = undefined;
@@ -24,15 +25,16 @@
 
 	let backdropEl: HTMLElement;
 
-	function init(node, _visible) {
+	function init(node, _open) {
 		getPlacementClasses().map((c) => node.classList.add(c));
-		if (_visible) createBackdrop(node);
+		_open && createBackdrop(node);
 
 		return {
-			update(_visible) {
+			update(_open) {
 				allPlacementClasses.map((c) => node.classList.remove(c));
 				getPlacementClasses().map((c) => node.classList.add(c));
-				_visible ? createBackdrop(node) : destroyBackdrop(node);
+
+				_open ? createBackdrop(node) : destroyBackdrop(node);
 			},
 
 			destroy() {
@@ -53,7 +55,8 @@
 			const body = document.querySelector('body');
 			body.append(backdropEl);
 			body.style.overflow = 'hidden';
-			body.addEventListener('keydown', handleEscape, true);
+
+			document.addEventListener('keydown', handleEscape, true);
 		}
 
 		dispatch('show', node);
@@ -62,10 +65,11 @@
 	function destroyBackdrop(node) {
 		const body = document.querySelector('body');
 		body.style.overflow = 'auto';
-		body.removeEventListener('keydown', handleEscape, true);
 
 		if (backdropEl) backdropEl.remove();
 		backdropEl = undefined;
+
+		document.removeEventListener('keydown', handleEscape, true);
 
 		dispatch('hide', node);
 	}
@@ -128,6 +132,7 @@
 	aria-modal={open ? 'true' : undefined}
 	role={open ? 'dialog' : undefined}
 	use:init={open}
+	use:focusTrap={open}
 	on:click={onButtonsClick}
 >
 	<div class="relative p-4 w-full {sizes[size]} h-full md:h-auto">
