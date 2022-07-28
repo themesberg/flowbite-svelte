@@ -858,7 +858,7 @@ Use this example to also show the name or email of the user next to the avatar f
 
 <p>You can also use the placement="top|right|bottom|left" options to choose the placement of the dropdown menu. By default the positioning is set to the bottom side of the button.</p>
 
-<ExampleDiv class="flex justify-center flex items-center gap-2 h-96">
+<ExampleDiv class="flex justify-center items-center gap-2 h-96">
 <Dropdown label="Dropdown top" placement="top">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
@@ -914,7 +914,7 @@ Use this example to also show the name or email of the user next to the avatar f
 
 <Htwo label="Double placement"/>
 
-<ExampleDiv class="flex justify-center flex items-center gap-2">
+<ExampleDiv class="flex justify-center items-center gap-2">
 <Dropdown label="Dropdown left start" placement="left-start">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>

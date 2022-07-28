@@ -141,7 +141,7 @@ This example of a mega menu dropdown can be used to also show an icon near the t
       <NavDropdown name="Mega menu">
         <MegaMenu items={menu} let:item>
             <a href={item.href} class="flex items-center hover:text-blue-600 dark:hover:text-blue-500">
-              <span class="sr-only">{items.name}</span>
+              <span class="sr-only">{item.name}</span>
               <svelte:component this={item.icon} class="w-4 h-4 mr-2" />{item.name}
             </a>
         </MegaMenu>
@@ -173,7 +173,7 @@ This example of a mega menu dropdown can be used to also show an icon near the t
 <NavDropdown name="Mega menu">
   <MegaMenu items={menu} let:item>
     <a href={item.href} class="flex items-center hover:text-blue-600 dark:hover:text-blue-500">
-      <span class="sr-only">{items.name}</span>
+      <span class="sr-only">{item.name}</span>
       <svelte:component this={item.icon} class="w-4 h-4 mr-2" />{item.name}
     </a>
   </MegaMenu>
