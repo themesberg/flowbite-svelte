@@ -122,6 +122,52 @@ Import Alert and set variables in the script tag.
 </Alert>
 ```
 
+<Htwo label="Alerts with list" />
+
+Use this example to show a list and a description inside an alert component.
+
+<ExampleDiv>
+  <Alert icon={InformationCircle} class="bg-blue-50 text-blue-900">
+    <span class="sr-only">Info</span>
+    <span class="font-medium">Ensure that these requirements are met:</span>
+    <ul slot="extra" class="mt-0 ml-8 list-disc list-inside">
+      <li>At least 10 characters (and up to 100 characters)</li>
+      <li>At least one lowercase character</li>
+      <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+    </ul>
+  </Alert>
+  <Alert color="red" icon={InformationCircle} class="bg-red-50 text-red-900">
+    <span class="sr-only">Info</span>
+    <span class="font-medium">Ensure that these requirements are met:</span>
+    <ul slot="extra" class="mt-0 ml-8 list-disc list-inside">
+      <li>At least 10 characters (and up to 100 characters)</li>
+      <li>At least one lowercase character</li>
+      <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+    </ul>
+  </Alert>
+</ExampleDiv>
+
+```html
+<Alert icon={InformationCircle} class="bg-blue-50 text-blue-900">
+  <span class="sr-only">Info</span>
+  <span class="font-medium">Ensure that these requirements are met:</span>
+  <ul slot="extra" class="mt-0 ml-8 list-disc list-inside">
+    <li>At least 10 characters (and up to 100 characters)</li>
+    <li>At least one lowercase character</li>
+    <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+  </ul>
+</Alert>
+<Alert color="red" icon={InformationCircle} class="bg-red-50 text-red-900">
+  <span class="sr-only">Info</span>
+  <span class="font-medium">Ensure that these requirements are met:</span>
+  <ul slot="extra" class="mt-0 ml-8 list-disc list-inside">
+    <li>At least 10 characters (and up to 100 characters)</li>
+    <li>At least one lowercase character</li>
+    <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
+  </ul>
+</Alert>
+```
+
 <Htwo label="Dismissable alerts" />
 
 <p>Use the following alert elements that are also dismissable.</p>
