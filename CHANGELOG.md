@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.22.24](https://github.com/themesberg/flowbite-svelte/compare/v0.22.23...v0.22.24) (2022-07-29)
+
+
+### Features
+
+* badges new features ([775ecbc](https://github.com/themesberg/flowbite-svelte/commit/775ecbc04df58cd7c2517d103c963e7add92b5f6))
+
+
+### Bug Fixes
+
+* pink color ([e4551b5](https://github.com/themesberg/flowbite-svelte/commit/e4551b54e0b56c07bae45d2bddb1b2930a20fe72))
+
 ### [0.22.23](https://github.com/themesberg/flowbite-svelte/compare/v0.22.22...v0.22.23) (2022-07-29)
 
 
