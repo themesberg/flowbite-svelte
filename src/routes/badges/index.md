@@ -44,7 +44,7 @@ layout: badgeLayout
 <Badge color="yellow">Yellow</Badge>
 <Badge color="indigo">Indigo</Badge>
 <Badge color="purple">Purple</Badge>
-<Badge color="!pink">Pink</Badge>
+<Badge color="pink">Pink</Badge>
 </ExampleDiv>
 
 
