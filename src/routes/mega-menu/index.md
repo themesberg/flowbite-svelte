@@ -66,7 +66,7 @@ layout: megamenuLayout
 
 Use this example to show a list of links aligned on three columns inside the mega menu dropdown.
 
-<ExampleDiv class="flex justify-center flex-col gap-2">
+<ExampleDiv class="h-60">
   <Navbar let:hidden let:toggle>
     <NavBrand href="/">
       <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
@@ -129,7 +129,7 @@ Use this example to show a list of links aligned on three columns inside the meg
 
 This example of a mega menu dropdown can be used to also show an icon near the text of the link.
 
-<ExampleDiv>
+<ExampleDiv class="h-60">
   <Navbar let:hidden let:toggle>
     <NavBrand href="/">
       <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
@@ -184,7 +184,7 @@ This example of a mega menu dropdown can be used to also show an icon near the t
 
 Use this example to show a mega menu dropdown that spans the entire width of the document page.
 
-<ExampleDiv class="relative">
+<ExampleDiv class="relative h-96">
   <Navbar let:hidden let:toggle>
       <NavBrand href="/">
           <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
@@ -239,7 +239,7 @@ Use this example to show a mega menu dropdown that spans the entire width of the
 
 This example can be used to also show a CTA button or link next to the menu items inside the dropdown.
 
-<ExampleDiv class="relative">
+<ExampleDiv class="relative h-80">
   <Navbar let:hidden let:toggle>
       <NavBrand href="/">
           <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
@@ -306,7 +306,7 @@ This example can be used to also show a CTA button or link next to the menu item
 
 This example can be used to also show a CTA with a backdround image inside the dropdown next to the other menu items and links.
 
-<ExampleDiv class="relative">
+<ExampleDiv class="relative h-80">
   <Navbar let:hidden let:toggle>
       <NavBrand href="/">
           <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>

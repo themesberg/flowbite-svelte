@@ -6,6 +6,7 @@
 
 	export let color = 'default';
 	export let name = 'Close';
+	export let size: 'xs' | 'sm' | 'md' = 'md';
 
 	const colors = {
 		gray: 'focus:ring-gray-400 hover:bg-gray-200 dark:hover:bg-gray-300',
@@ -19,9 +20,15 @@
 		default: 'focus:ring-gray-300 '
 	};
 
+	const sizing = {
+		xs: 'm-0.5 rounded focus:ring-1 p-0.5',
+		sm: 'm-0.5 rounded focus:ring-1 p-0.5',
+		md: '-mx-1 -my-1.5 rounded-lg focus:ring-2 p-1.5'
+	};
 	let buttonClass: string = '';
 	$: buttonClass = classNames(
-		'ml-auto -mx-1 -my-1.5 rounded-lg focus:ring-2 p-1.5 focus:outline-none',
+		'ml-auto focus:outline-none',
+		sizing[size],
 		colors[color],
 		color === 'default' &&
 			(background
@@ -29,12 +36,23 @@
 				: 'hover:bg-gray-100 dark:hover:bg-gray-700'),
 		$$props.class
 	);
+
+	const svgSizes = {
+		xs: 'w-3 h-3',
+		sm: 'w-3.5 h-3.5',
+		md: 'w-5 h-5'
+	};
 </script>
 
 <button on:click type="button" class={buttonClass} aria-label="Close">
 	<slot>
 		<span class="sr-only">{name}</span>
-		<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+		<svg
+			class={svgSizes[size]}
+			fill="currentColor"
+			viewBox="0 0 20 20"
+			xmlns="http://www.w3.org/2000/svg"
+		>
 			<path
 				fill-rule="evenodd"
 				d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
