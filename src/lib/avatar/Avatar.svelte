@@ -16,8 +16,6 @@
 	export let alt: string = '';
 	export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
 
-	// export let ring: string = 'ring-gray-300 dark:ring-gray-500';
-
 	const sizes = {
 		xs: 'w-6 h-6',
 		sm: 'w-8 h-8',
@@ -32,6 +30,7 @@
 		border && 'p-1 ring-2 ring-gray-300 dark:ring-gray-500',
 		sizes[size],
 		stacked && 'border-2 -ml-4 border-white dark:border-gray-800',
+		'bg-gray-100 dark:bg-gray-600 text-gray-600 dark:text-gray-300',
 		$$props.class
 	);
 </script>
@@ -40,14 +39,16 @@
 	{#if src}
 		<img class={avatarClass} {alt} {src} />
 	{:else if $$slots.default}
-		<a
-			class="flex justify-center items-center {avatarClass} text-xs font-medium text-white bg-gray-700 hover:bg-gray-600"
+		<svelte:element
+			this={href ? 'a' : 'div'}
+			class="flex justify-center items-center text-xs font-medium {avatarClass}"
 			{href}
-			><slot />
-		</a>
+		>
+			<slot />
+		</svelte:element>
 	{:else}
-		<div class={avatarClass}>
+		<svelte:element this={href ? 'a' : 'div'} class={avatarClass}>
 			<AvatarPlaceholder {rounded} />
-		</div>
+		</svelte:element>
 	{/if}
 </Dot>

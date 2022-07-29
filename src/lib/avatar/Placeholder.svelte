@@ -3,7 +3,7 @@
 </script>
 
 <svg
-	class="text-gray-400 bg-gray-200 dark:bg-gray-600 {rounded ? 'rounded' : 'rounded-full'}"
+	class="text-gray-400 bg-gray-100 dark:bg-gray-600 {rounded ? 'rounded' : 'rounded-full'}"
 	fill="currentColor"
 	viewBox="0 0 16 16"
 	xmlns="http://www.w3.org/2000/svg"
