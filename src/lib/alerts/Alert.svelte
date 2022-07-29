@@ -63,7 +63,7 @@
 
 	let divClass: string;
 	$: divClass = classNames(
-		'flex flex-col p-4 mb-4 gap-2 ',
+		'flex flex-col p-4 mb-4 gap-2 text-sm',
 		bgClasses[color] ?? bgClasses.blue,
 		accent && (borderAccentClasses[color] ?? borderAccentClasses.blue),
 		rounded && 'rounded-lg ',
@@ -79,7 +79,7 @@
 			<svelte:component this={icon} class="flex-shrink-0 w-5 h-5 mr-3" />
 		{/if}
 
-		<div class="text-sm">
+		<div>
 			<slot />
 		</div>
 
