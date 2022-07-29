@@ -43,6 +43,7 @@
 		type="checkbox"
 		bind:checked
 		on:click
+		on:change
 		{value}
 		{...$$restProps}
 		class={inputClass(custom, color, true, background, $$slots.default || $$props.class)}
