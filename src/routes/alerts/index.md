@@ -207,25 +207,24 @@ Import Alert and set variables in the script tag.
       </div>
       <div class="flex gap-2">
       <Button size="xs"><Eye class="mr-2 h-4 w-4" />View more</Button>
-      <Button size="xs" outline color="default">Go to Home</Button>
+      <Button size="xs" outline color="blue">Go to Home</Button>
       </div>
     </div>
   </Alert>
 </ExampleDiv>
 
 ```html
-<Alert color="blue" icon="{InformationCircle}">
-	<span class="text-lg font-medium text-blue-700 dark:text-blue-800">This is a info alert</span>
-	<div slot="extra">
-		<div class="mt-2 mb-4 text-sm text-blue-700 dark:text-blue-800">
-			More info about this info alert goes here. This example text is going to run a bit longer so
-			that you can see how spacing within an alert works with this kind of content.
-		</div>
-		<div class="flex gap-2">
-			<button size="xs"><Eye class="-ml-0.5 mr-2 h-4 w-4" />View more</button>
-			<button size="xs" outline color="default">Go to Home</button>
-		</div>
-	</div>
+<Alert color="blue" icon={InformationCircle}>
+  <span class="text-lg font-medium text-blue-700 dark:text-blue-800">This is a info alert</span>
+  <div slot="extra">
+    <div class="mt-2 mb-4 text-sm text-blue-700 dark:text-blue-800">
+      More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
+    </div>
+    <div class="flex gap-2">
+    <Button size="xs"><Eye class="mr-2 h-4 w-4" />View more</Button>
+    <Button size="xs" outline color="blue">Go to Home</Button>
+    </div>
+  </div>
 </Alert>
 ```
 
