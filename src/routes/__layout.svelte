@@ -262,7 +262,7 @@
 					</h2>
 					<FooterLinkGroup>
 						<FooterLink liClass="mb-4" href="https://github.com/themesberg/flowbite-svelte"
-							>Gihub</FooterLink
+							>GitHub</FooterLink
 						>
 						<FooterLink liClass="mb-4" href="https://discord.gg/4eeurUVvTy">Discord</FooterLink>
 					</FooterLinkGroup>

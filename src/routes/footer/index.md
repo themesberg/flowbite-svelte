@@ -144,7 +144,7 @@ layout: footerLayout
       <div>
         <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Follow us</h2>
         <FooterLinkGroup>
-          <FooterLink liClass="mb-4" href="/">Gihub</FooterLink>
+          <FooterLink liClass="mb-4" href="/">GitHub</FooterLink>
           <FooterLink liClass="mb-4" href="/">Discord</FooterLink>
         </FooterLinkGroup>
       </div>
@@ -192,7 +192,7 @@ layout: footerLayout
       <div>
         <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Follow us</h2>
         <FooterLinkGroup>
-          <FooterLink liClass="mb-4" href="/">Gihub</FooterLink>
+          <FooterLink liClass="mb-4" href="/">GitHub</FooterLink>
           <FooterLink liClass="mb-4" href="/">Discord</FooterLink>
         </FooterLinkGroup>
       </div>
