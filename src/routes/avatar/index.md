@@ -7,7 +7,7 @@ layout: avatarLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider, Breadcrumb, BreadcrumbItem, Tooltip } from "$lib/index"
   import { Home } from 'svelte-heros'
   import alertProp from '../props/Avatar.json'
   // Props table
@@ -51,11 +51,9 @@ layout: avatarLayout
 <p>You can apply a border around the avatar component</p>
 <p>If you can use the ring-&#123;color&#125; class from Tailwind CSS to modify ring color.</p>
 
-<ExampleDiv>
-<div class="flex space-x-4">
-<Avatar src="/images/profile-picture-2.webp" border/>
-<Avatar src="/images/profile-picture-2.webp" border class="ring-red-400 dark:ring-red-300"/>
-</div>
+<ExampleDiv class="flex space-x-4">
+  <Avatar src="/images/profile-picture-2.webp" border/>
+  <Avatar src="/images/profile-picture-2.webp" border class="ring-red-400 dark:ring-red-300"/>
 </ExampleDiv>
 
 ```html
@@ -67,13 +65,11 @@ layout: avatarLayout
 
 <p>When there is no custom image available a placehoder is displayed.</p>
 
-<ExampleDiv>
-<div class="flex space-x-4">
+<ExampleDiv class="flex space-x-4">
   <Avatar />
   <Avatar rounded />
   <Avatar border />
   <Avatar rounded border />
-</div>
 </ExampleDiv>
 
 ```html
@@ -83,12 +79,39 @@ layout: avatarLayout
 <Avatar rounded border />
 ```
 
+<Htwo label="Placeholder initials" />
+
+This example can be used to show the initials of the user’s first and last name as a placeholder when no profile picture is available.
+
+<ExampleDiv>
+  <Avatar>JL</Avatar>
+</ExampleDiv>
+
+```html
+<Avatar>JL</Avatar>
+```
+
+<Htwo label="Avatar tooltip" />
+
+Use this example to show a tooltip when hovering over the avatar.
+
+<ExampleDiv class="flex space-x-4">
+<Tooltip content="Jese Leos">
+  <Avatar rounded src="/images/profile-picture-1.webp"/>
+</Tooltip>
+<Tooltip content="Jese Leos">
+  <Avatar rounded src="/images/profile-picture-2.webp"/>
+</Tooltip>
+<Tooltip content="Bonnie Green">
+  <Avatar rounded src="/images/profile-picture-3.webp"/>
+</Tooltip>
+</ExampleDiv>
+
 <Htwo label="Dot indicator" />
 
 <p>Use a dot element relative to the avatar component as an indicator for the user (eg. online or offline status).</p>
 
-<ExampleDiv>
-<div class="flex space-x-4 flex-wrap">
+<ExampleDiv class="flex space-x-4 flex-wrap">
   <Avatar src="/images/profile-picture-3.webp" dot={{top:true, color:"bg-red-400"}}/>
   <Avatar src="/images/profile-picture-3.webp" dot={{top:true, color:"bg-red-400"}} rounded />
   <Avatar src="/images/profile-picture-3.webp" dot={{color:"bg-green-400"}}/>
@@ -116,7 +139,6 @@ layout: avatarLayout
   <Avatar src="/images/profile-picture-3.webp" dotColor="bg-green-400" size="xl" dotTop/>
   <Avatar src="/images/profile-picture-3.webp" dotColor="bg-green-400" rounded dotTop size="xl"/>
   -->
-</div>
 </ExampleDiv>
 
 ```html
@@ -143,7 +165,7 @@ layout: avatarLayout
 <Avatar src="/images/profile-picture-1.webp" stacked />
 <Avatar src="/images/profile-picture-2.webp" stacked />
 <Avatar src="/images/profile-picture-3.webp" stacked />
-<Avatar stacked href="/">+99</Avatar>
+<Avatar stacked href="/" class="bg-gray-700 text-white hover:bg-gray-600">+99</Avatar>
 </div>
 </ExampleDiv>
 
@@ -158,7 +180,7 @@ layout: avatarLayout
 	<Avatar src="/images/profile-picture-1.webp" stacked />
 	<Avatar src="/images/profile-picture-2.webp" stacked />
 	<Avatar src="/images/profile-picture-3.webp" stacked />
-	<Avatar stacked href="/">+99</Avatar>
+	<Avatar stacked href="/" class="bg-gray-700 dark:bg-gray-700 text-white hover:bg-gray-600">+99</Avatar>
 </div>
 ```
 
