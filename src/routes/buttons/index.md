@@ -5,6 +5,7 @@ layout: buttonLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { Button, Spinner, Breadcrumb, BreadcrumbItem } from '$lib/index'
@@ -45,6 +46,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Button</h1>
+
+<ExampleDiv>
+<GitHubSource href="buttons/Button.svelte">Button</GitHubSource>
+</ExampleDiv>
 
 <p>Import a button component in the script tag.</p>
 

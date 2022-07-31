@@ -5,6 +5,7 @@ layout: breadcrumbLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { Breadcrumb, BreadcrumbItem } from '$lib/index'
@@ -24,6 +25,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Breadcrumb</h1>
+
+<ExampleDiv>
+<GitHubSource href="breadcrumbs/Breadcrumb.svelte">Breadcrumb</GitHubSource>
+<GitHubSource href="breadcrumbs/BreadcrumbItem.svelte">BreadcrumbItem</GitHubSource>
+</ExampleDiv>
 
 <Htwo label="Default Breadcrumb" />
 

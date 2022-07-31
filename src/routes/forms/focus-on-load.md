@@ -1,6 +1,7 @@
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { onMount } from 'svelte';

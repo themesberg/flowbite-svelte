@@ -5,6 +5,7 @@ layout: tabLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { DefaultTabs, UnderlineTabs, IconTabs, PillTabs, FullWidthTabs, InteractiveTabs, InteractiveTabHead, TabContent, Timeline, TimelineItem, Breadcrumb, BreadcrumbItem } from '$lib/index'

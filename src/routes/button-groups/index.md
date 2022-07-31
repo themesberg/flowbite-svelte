@@ -5,6 +5,7 @@ layout: buttongroupLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import {ButtonGroup, ButtonGroupItem, Breadcrumb, BreadcrumbItem } from '$lib/index'
@@ -30,6 +31,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       href:'/button-groups/'
     }
   ]
+	const handleClick = ()=> {
+		alert('Clicked')
+	}
 </script>
 
 <Breadcrumb>
@@ -39,12 +43,17 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Button group</h1>
 
-<Htwo label="Set up" />
+<ExampleDiv>
+<GitHubSource href="buttongroups/ButtonGroup.svelte">ButtonGroup</GitHubSource>
+<GitHubSource href="buttongroups/ButtonGroupItem.svelte">ButtonGroupItem</GitHubSource>
+</ExampleDiv>
+
+<Htwo label="Setup" />
 
 ```html
 <script>
-  	import { ButtonGroup, ButtonGroupItem } from 'flowbite-svelte';
-	import { User, Adjustments, CloudDownload } from 'svelte-heros';
+  import { ButtonGroup, ButtonGroupItem } from 'flowbite-svelte';
+  import { User, Adjustments, CloudDownload } from 'svelte-heros';
 </script>
 ```
 
@@ -173,6 +182,25 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 		<CloudDownload size="18" class="mr-2 text-blue-500 dark:text-red-500" />
 		Messages</ButtonGroupItem
 	>
+</ButtonGroup>
+```
+<Htwo label="Events" />
+
+You can add the `on:click` event to the `ButtonGroupItem` component.
+
+<ExampleDiv>
+<ButtonGroup>
+	<ButtonGroupItem on:click={handleClick}>Click me</ButtonGroupItem>
+	<ButtonGroupItem>Settings</ButtonGroupItem>
+	<ButtonGroupItem>Messages</ButtonGroupItem>
+</ButtonGroup>
+</ExampleDiv>
+
+```html
+<ButtonGroup>
+	<ButtonGroupItem on:click={handleClick}>Click me</ButtonGroupItem>
+	<ButtonGroupItem>Settings</ButtonGroupItem>
+	<ButtonGroupItem>Messages</ButtonGroupItem>
 </ButtonGroup>
 ```
 

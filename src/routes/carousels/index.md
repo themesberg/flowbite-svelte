@@ -5,6 +5,7 @@ layout: carouselLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { Carousel, CarouselTransition, Breadcrumb, BreadcrumbItem } from '$lib/index'
@@ -48,7 +49,20 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Carousel</h1>
 
-<Htwo label="Examples" />
+<ExampleDiv>
+<GitHubSource href="carousels/Carousel.svelte">Carousel</GitHubSource>
+<GitHubSource href="carousels/CarouselTransition.svelte">CarouselTransition</GitHubSource>
+</ExampleDiv>
+
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { Carousel, CarouselTransition 'flowbite-svelte'
+</script>
+```
+
+<Htwo label="Default Carousel" />
 
 <ExampleDiv>
   <div class="max-w-4xl">

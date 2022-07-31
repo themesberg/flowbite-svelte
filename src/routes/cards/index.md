@@ -5,6 +5,7 @@ layout: cardLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { Avatar, Button, Breadcrumb, BreadcrumbItem, Card, SignInCard, EcommerceCard, Dropdown, DropdownItem, List, Toggle } from '$lib/index'
@@ -50,6 +51,12 @@ layout: cardLayout
 </Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Card</h1>
+
+<ExampleDiv>
+<GitHubSource href="cards/Card.svelte">Card</GitHubSource>
+<GitHubSource href="cards/SignInCard.svelte">SignInCard</GitHubSource>
+<GitHubSource href="cards/EcommerceCard.svelte">EcommerceCard</GitHubSource>
+</ExampleDiv>
 
 <Htwo label="Set up" />
 
@@ -198,6 +205,30 @@ Use this user profile card example if you want to show a dropdown menu and butto
     </div>
   </Card>
 </ExampleDiv>
+
+```html
+<Card padding='sm'>
+  <div class="flex justify-end">
+    <Dropdown class="w-44">
+      <CloseButton slot="trigger" class="text-gray-500 dark:text-gray-400">
+        <DotsHorizontal class="w-6 h-6"/>
+      </CloseButton>
+      <DropdownItem>Edit</DropdownItem>
+      <DropdownItem>Export data</DropdownItem>
+      <DropdownItem>Delete</DropdownItem>
+    </Dropdown>
+  </div>
+  <div class="flex flex-col items-center pb-4">
+    <Avatar size="lg" src="/images/profile-picture-3.webp" />
+      <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Bonnie Green</h5>
+      <span class="text-sm text-gray-500 dark:text-gray-400">Visual Designer</span>
+      <div class="flex mt-4 space-x-3 lg:mt-6">
+        <Button>Add friend</Button>
+        <Button color="light" class="dark:text-white">Message</Button>
+      </div>
+  </div>
+</Card>
+```
 
 <Htwo label="Card with form inputs" />
 

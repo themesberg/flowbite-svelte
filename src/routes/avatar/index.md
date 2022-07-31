@@ -5,6 +5,7 @@ layout: avatarLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider, Breadcrumb, BreadcrumbItem, Tooltip } from "$lib/index"
@@ -25,6 +26,22 @@ layout: avatarLayout
 </Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Avatar</h1>
+
+<ExampleDiv>
+<GitHubSource href="avatar/Avatar.svelte">Avatar</GitHubSource>
+</ExampleDiv>
+
+<Htwo label="Setup" />
+
+Import `Avatar`.
+If you are using the user dropdown, import `Dropdown`, `DropdownHeader`, `DropdownItem`, `DropdownDivider`.
+If you are using tooltip for avatar import `Tooltip`.
+
+```html
+<script>
+  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider, Tooltip } from "flowbite-svelte"
+</script>
+```
 
 <Htwo label="Default avatar" />
 
@@ -106,6 +123,18 @@ Use this example to show a tooltip when hovering over the avatar.
   <Avatar rounded src="/images/profile-picture-3.webp"/>
 </Tooltip>
 </ExampleDiv>
+
+```html
+<Tooltip content="Jese Leos">
+  <Avatar rounded src="/images/profile-picture-1.webp"/>
+</Tooltip>
+<Tooltip content="Jese Leos">
+  <Avatar rounded src="/images/profile-picture-2.webp"/>
+</Tooltip>
+<Tooltip content="Bonnie Green">
+  <Avatar rounded src="/images/profile-picture-3.webp"/>
+</Tooltip>
+```
 
 <Htwo label="Dot indicator" />
 

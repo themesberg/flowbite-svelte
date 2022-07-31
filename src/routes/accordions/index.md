@@ -5,6 +5,7 @@ layout: accordionLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { Home, ArrowCircleUp, ArrowCircleDown, Archive, Beaker } from 'svelte-heros'
@@ -35,6 +36,11 @@ let icons={
 </Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Accordion</h1>
+
+<ExampleDiv>
+<GitHubSource href="accordion/AccordionItem.svelte">AccordionItem</GitHubSource>
+<GitHubSource href="accordion/AccordionFlush.svelte">AccordionFlush</GitHubSource>
+</ExampleDiv>
 
 <p>Use the accordion component to show hidden information based on the collapse and expand state of the child elements using data attribute options</p>
 

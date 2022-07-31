@@ -5,6 +5,7 @@ layout: badgeLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { Badge, Button, Breadcrumb, BreadcrumbItem } from '$lib/index'
@@ -25,6 +26,11 @@ layout: badgeLayout
 </Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Badges</h1>
+
+<ExampleDiv>
+<GitHubSource href="badges/Badge.svelte">Badge</GitHubSource>
+</ExampleDiv>
+
 
 ```html
 <script>

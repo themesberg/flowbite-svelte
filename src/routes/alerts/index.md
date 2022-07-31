@@ -5,6 +5,7 @@ layout: alertLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { Alert, Breadcrumb, BreadcrumbItem, Button } from '$lib/index'
@@ -32,6 +33,10 @@ layout: alertLayout
 </Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Alert</h1>
+
+<ExampleDiv>
+<GitHubSource href="alerts/Alert.svelte">Alert</GitHubSource>
+</ExampleDiv>
 
 <p>Show contextual information to your users using alert elements based on Tailwind CSS</p>
 
