@@ -14,6 +14,9 @@ layout: buttonLayout
   import BrandFacebook from '../utils/icons/Facebook.svelte'
   import { goto }from '$app/navigation';
   import componentProps from '../props/Button.json'
+  let slotHeader = ['Name', 'Description']
+
+  let slotItems = [['default', 'For a button label.']]
 
   const btn1 = ()=>{
     alert('You clicked btn1.')
@@ -381,4 +384,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <TableProp header={propHeader} {divClass} {theadClass}>
 <TableDefaultRow {items} rowState='hover' />
+</TableProp>
+
+<Htwo label="Slots" />
+
+<TableProp header={slotHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={slotItems} rowState='hover' />
 </TableProp>

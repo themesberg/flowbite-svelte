@@ -13,9 +13,17 @@ layout: cardLayout
   import CloseButton from "$lib/utils/CloseButton.svelte"
   import { Home } from 'svelte-heros';
   import componentProps from '../props/Card.json'
+  import componentProps2 from '../props/SignInCard.json'
+  import componentProps3 from '../props/EcommerceCard.json'
   // Props table
   let items = componentProps.props
+  let items2 = componentProps2.props
+  let items3 = componentProps3.props
+
 	let propHeader = ['Name', 'Type', 'Default']
+  let slotHeader = ['Name', 'Description']
+
+  let slotItems = [['default', 'For a button label.']]
 
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -30,7 +38,6 @@ layout: cardLayout
     src: "/images/product-1.webp",
     alt: "product image",
   };
-  let star5 = "5.0";
   let list = [
     { img: { src: "/images/profile-picture-1.webp", alt: "Neil Sims",},
       name: "Neil Sims", email: "email@windster.com", value: "$320"
@@ -64,7 +71,7 @@ layout: cardLayout
 
 ```html
 <script>
-  import { Card } from "flowbite-svelte";
+  import { Card, SignInCard, EcommerceCard } from "flowbite-svelte";
 </script>
 ```
 
@@ -352,7 +359,7 @@ Use this card for your e-commerce websites and show information about the produc
     href="/"
     price="$543"
     img={img1}
-    stars={star5}
+    stars={4}
     btnText="Buy now"
   >
   <p cloass="dark:text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
@@ -377,6 +384,26 @@ Use this card for your e-commerce websites and show information about the produc
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
+<h3>Card</h3>
+
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
+</TableProp>
+
+<h3>SignInCard</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items2} rowState='hover' />
+</TableProp>
+
+<h3>EcommerceCard</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items3} rowState='hover' />
+</TableProp>
+
+<Htwo label="Slots: Card" />
+
+<TableProp header={slotHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={slotItems} rowState='hover' />
 </TableProp>
