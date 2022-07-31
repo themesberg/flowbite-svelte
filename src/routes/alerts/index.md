@@ -14,9 +14,16 @@ layout: alertLayout
   // Props table
   let items = componentProps.props
 	let propHeader = ['Name', 'Type', 'Default']
+  let slotHeader = ['Name', 'Description']
+
+  let slotItems = [['default', 'The first slot.'],['extra','A slot after the default slot.']]
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
+  const handleAlert = ()=>{
+    alert('Clicked handleAlert.')
+  }
 </script>
 
 <Breadcrumb>
@@ -274,6 +281,24 @@ Use this example to show a list and a description inside an alert component.
 </Alert>
 ```
 
+<Htwo label="Events" />
+
+Use the `handleAlert` event with `dismissable` prop.
+
+<ExampleDiv>
+<Alert dismissable on:handleAlert={handleAlert}>Close me</Alert>
+</ExampleDiv>
+
+```html
+<script>
+  const handleAlert = ()=>{
+    alert('Clicked handleAlert.')
+  }
+</script>
+
+<Alert dismissable on:handleAlert={handleAlert}>Close me</Alert>
+```
+
 <Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
@@ -281,4 +306,10 @@ Use this example to show a list and a description inside an alert component.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
 <TableDefaultRow {items} rowState='hover' />
+</TableProp>
+
+<Htwo label="Slots" />
+
+<TableProp header={slotHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={slotItems} rowState='hover' />
 </TableProp>

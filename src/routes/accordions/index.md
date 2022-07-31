@@ -7,9 +7,8 @@ layout: accordionLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import {ArrowCircleUp, ArrowCircleDown, Archive, Beaker} from 'svelte-heros'
+  import { Home, ArrowCircleUp, ArrowCircleDown, Archive, Beaker } from 'svelte-heros'
   import { AccordionItem, AccordionFlush,Breadcrumb, BreadcrumbItem } from '$lib/index'
-  import { Home } from 'svelte-heros'
   import accordionProps from '../props/AccordionItem.json'
   import accordionProps2 from '../props/AccordionFlush.json'
    // Props table
@@ -17,6 +16,9 @@ layout: accordionLayout
   let items2 = accordionProps2.props
 
 	let propHeader = ['Name', 'Type', 'Default']
+  let slotHeader = ['Name', 'Description']
+
+  let slotItems = [['header', 'Table header slot'],['body','Table body slot']]
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
 let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -39,6 +41,16 @@ let icons={
 <p>The accordion component is a collection of vertically collapsing header and body elements that can be used to show and hide information based on the Tailwind CSS utility classes and JavaScript from Flowbite.</p>
 
 <p>A popular use case would be the “Frequently Asked Questions” section of a website or page when you can show questions and answers for each child element.</p>
+
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { AccordionItem, AccordionFlush } from 'flowbite-svelte'
+  // if you are using icons
+  import { Home, ArrowCircleUp, ArrowCircleDown, Archive, Beaker } from 'svelte-heros'
+</script>
+```
 
 <Htwo label="Default accordion" />
 
@@ -428,3 +440,10 @@ npm i svelte-heros
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
+
+<Htwo label="Slots: AccordionItem, AccordionFlush" />
+
+<TableProp header={slotHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={slotItems} rowState='hover' />
+</TableProp>
+
