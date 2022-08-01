@@ -5,9 +5,11 @@ layout: tableLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox, TableSearch, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox, TableSearch, Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros'
   import componentProps1 from '../props/Table.json'
   import componentProps2 from '../props/TableBodyCell.json'
@@ -38,11 +40,36 @@ layout: tableLayout
   <BreadcrumbItem>Tables</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Tables</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Tables</h1>
+
+<CompoDescription>Use the table component to show text, images, links, and other elements inside a structured set of data made up of rows and columns of table cells</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="tables/Table.svelte">Table</GitHubSource>
+<GitHubSource href="tables/TableBody.svelte">TableBody</GitHubSource>
+<GitHubSource href="tables/TableBodyCell.svelte">TableBodyCell</GitHubSource>
+<GitHubSource href="tables/TableBodyRow.svelte">TableBodyRow</GitHubSource>
+<GitHubSource href="tables/TableHead.svelte">TableHead</GitHubSource>
+<GitHubSource href="tables/TableHeadCell.svelte">TableHeadCell</GitHubSource>
+<GitHubSource href="tables/TableSearch.svelte">TableSearch</GitHubSource>
+</ExampleDiv>
+
+The table component represents a set of structured elements made up of rows and columns as table cells that can be used to show data sets to your website users.
+
+Get started with multiple variants and styles of these table components.
+
+
+<Htwo label="Setup" />
+
+```html
+<script>
+	import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox, TableSearch } from 'flowbite-svelte';
+</script>
+```
 
 <Htwo label="Default table" />
 
-<p>Use the following example of a responsive table component to show multiple rows and columns of text data.</p>
+Use the following example of a responsive table component to show multiple rows and columns of text data.
 
 <ExampleDiv>
 <Table>
@@ -144,7 +171,7 @@ layout: tableLayout
 
 <Htwo label="Striped rows" />
 
-<p>Set the `stiped` prop to `true` to alternate background colors of every second tabel row.</p>
+Set the `stiped` prop to `true` to alternate background colors of every second tabel row.
 
 <ExampleDiv>
 <Table striped={true}>
@@ -290,7 +317,7 @@ layout: tableLayout
 
 <Htwo label="Hover state" />
 
-<p>Set `hoverable` to `true` to change the background color of a data row when hovering over the element with the cursor.</p>
+Set `hoverable` to `true` to change the background color of a data row when hovering over the element with the cursor.
 
 <ExampleDiv>
 <Table hoverable={true}>
@@ -392,7 +419,7 @@ layout: tableLayout
 
 <Htwo label="Checkbox" />
 
-<p>Checkboxes can be used inside table data rows to select multiple data sets and apply a bulk action.</p>
+Checkboxes can be used inside table data rows to select multiple data sets and apply a bulk action.
 
 <ExampleDiv>
 <Table hoverable={true}>
@@ -576,8 +603,8 @@ let searchTerm = '';
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types 
+ page</a> for type information.
 
 <h3>Table</h3>
 

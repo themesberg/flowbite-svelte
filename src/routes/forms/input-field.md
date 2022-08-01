@@ -5,10 +5,12 @@ layout: formLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { onMount } from 'svelte';
-  import { Input, Label, Helper, Iconinput, Button, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { Input, Label, Helper, Iconinput, Button, Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros'
   import { AtSymbol , Mail, Search } from 'svelte-heros'
   import componentProps1 from '../props/Input.json'
@@ -31,15 +33,32 @@ layout: formLayout
   <BreadcrumbItem>Input</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Input</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Input</h1>
 
-<p>The Input component allows you to change the input size, add disabled, helper text, and floating label.</p>
+<CompoDescription>Get started with a collection of input fields built with Tailwind CSS to start accepting data from the user based on multiple sizes, variants, and input types</CompoDescription>
 
-<Htwo label="Sizes" />
+<ExampleDiv>
+<GitHubSource href="forms/Input.svelte">Input</GitHubSource>
+</ExampleDiv>
 
-<p>User the size prop to change the input size. Choose one from 'sm:text-md' | 'text-sm' | 'sm:text-xs'. The default size is text-sm.</p>
+The input field is an important part of the form element that can be used to create interactive controls to accept data from the user based on multiple input types, such as text, email, number, password, URL, phone number, and more.
 
-<Htwo label="Examples" />
+On this page you will find all of the input types based on multiple variants, styles, colors, and sizes built with the utility classes from Tailwind CSS and components from Flowbite.
+
+
+<Htwo label="Setup" />
+
+```html
+<script>
+	import { Input, Label, Helper } from 'flowbite-svelte';
+</script>
+```
+
+<Htwo label="Input sizes" />
+
+Use the following examples to apply a small, default or large size for the input fields.
+
+User the size prop to change the input size. Choose one from 'sm:text-md' | 'text-sm' | 'sm:text-xs'. The default size is text-sm.
 
 <ExampleDiv>
 <div class='mb-6'>
@@ -74,9 +93,9 @@ import { Input, Label } from 'flowbite-svelte'
 </div>
 ```
 
-<Htwo label="Disabled" />
+<Htwo label="Disabled state" />
 
-<p>Get started with this example if you want to apply the disabled state to an input field. Add the disabled to change the input to disabled.</p>
+Get started with this example if you want to apply the disabled state to an input field. Add the disabled to change the input to disabled.
 
 <ExampleDiv>
 <Input id="disabled-input" class="mb-6" disabled value="Disabled input" />
@@ -90,7 +109,7 @@ import { Input, Label } from 'flowbite-svelte'
 
 <Htwo label="Validation" />
 
-<p>Use the following example to apply validation styles for success and error messages.</p>
+Use the following example to apply validation styles for success and error messages.
 
 <ExampleDiv>
 <div class="mb-6">
@@ -120,9 +139,9 @@ import { Input, Label } from 'flowbite-svelte'
 
 <Htwo label="Input group" />
 
-<p>This example can be used to add a descriptive icon or additional text inside the input field.</p>
+This example can be used to add a descriptive icon or additional text inside the input field.
 
-<p>With the Iconinput component, you can add <a href="https://flowbite-svelte.vercel.app/icons/heroicons" class="text-blue-700 dark:text-blue-500 hover:underline">Heroicons</a> or <a href="https://svelte-svg-icons.vercel.app/" class="text-blue-700 dark:text-blue-500 hover:underline">other icon sets</a>. Use iconClass to modify the icon color.</p>
+With the Iconinput component, you can add <a href="https://flowbite-svelte.vercel.app/icons/heroicons" class="text-blue-700 dark:text-blue-500 hover:underline">Heroicons</a> or <a href="https://svelte-svg-icons.vercel.app/" class="text-blue-700 dark:text-blue-500 hover:underline">other icon sets</a>. Use iconClass to modify the icon color.
 
 <ExampleDiv>
 <div class="mb-6">
@@ -151,7 +170,7 @@ import { Input, Label } from 'flowbite-svelte'
 
 <Htwo label="Helper text" />
 
-<p>Use the helper prop to add your helper text. You can use HTML in the helper text.</p>
+Use the helper prop to add your helper text. You can use HTML in the helper text.
 
 <ExampleDiv>
 <Label class='block mb-2' >Your email</Label>
@@ -189,8 +208,8 @@ import { Input, Label } from 'flowbite-svelte'
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types 
+ page</a> for type information.
 
 <h3>Input</h3>
 

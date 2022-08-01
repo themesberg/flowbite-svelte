@@ -5,11 +5,13 @@ layout: dropdownLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
 
   import { Avatar, Button, Checkbox, Label, Helper, Dropdown, DropdownDivider, DropdownHeader, DropdownItem,
-    Navbar,NavBrand,NavHamburger, NavUl, NavLi, Radio, Toggle, SimpleSearch, Breadcrumb, BreadcrumbItem } from '$lib/index'
+    Navbar,NavBrand,NavHamburger, NavUl, NavLi, Radio, Toggle, SimpleSearch, Breadcrumb, BreadcrumbItem } from '$lib'
   import CloseButton from "$lib/utils/CloseButton.svelte";
 
   import { Home, ChevronDown, DotsHorizontal, DotsVertical, UserAdd, UserRemove } from 'svelte-heros';
@@ -24,10 +26,19 @@ layout: dropdownLayout
   export let propItems4 = componentProps4.props
 
   let propHeader = ['Name', 'Type', 'Default']
+  let slotHeader = ['Name', 'Description']
+
+  let slotItems = [['trigger', 'Dropdown trigger icon/button.'],['content','Dropdown content']]
+  let slotDropdownHeader = [['default', 'Dropdown header content.']]
+  let slotDropdownItem = [['default', 'Dropdown item content.']]
 
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
   let group1=2, group2=2, group3=2;
+
+  const handleClick = ()=>{
+    alert ('Clicked.')
+  }
 </script>
 
 <Breadcrumb>
@@ -35,7 +46,26 @@ layout: dropdownLayout
   <BreadcrumbItem>Dropdown</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Dropdown</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Dropdown</h1>
+
+<CompoDescription>Get started with the dropdown component to show a list of menu items when clicking on the trigger element based on multiple layouts, styles, and placements</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="dropdowns/Dropdown.svelte">Dropdown</GitHubSource>
+<GitHubSource href="dropdowns/DropdownItem.svelte">DropdownItem</GitHubSource>
+<GitHubSource href="dropdowns/DropdownDivider.svelte">DropdownDivider</GitHubSource>
+<GitHubSource href="dropdowns/DropdownHeader.svelte">DropdownHeader</GitHubSource>
+</ExampleDiv>
+
+The dropdown component can be used to show a list of menu items when clicking on an element such as a button and hiding it when clicking outside of the triggering element.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { Dropdown, DropdownItem, DropdownDivider, DropdownHeader } from 'flowbite-svelte'
+</script>
+```
 
 <Htwo label="Examples" />
 
@@ -49,10 +79,6 @@ layout: dropdownLayout
 </ExampleDiv>
 
 ```html
-<script>
-  import { Dropdown, DropdownItem} from 'flowbite-svelte'
-</script>
-
 <Dropdown label="Dropdown button" class="w-44">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
@@ -84,6 +110,8 @@ layout: dropdownLayout
 ```
 
 <Htwo label="Dropdown header" />
+
+Use this example to show extra information outside of the list of menu items inside the dropdown.
 
 <ExampleDiv class="flex justify-center h-80">
 <Dropdown label="Dropdown button" class="w-44">
@@ -858,7 +886,7 @@ Use this example to also show the name or email of the user next to the avatar f
 
 <p>You can also use the placement="top|right|bottom|left" options to choose the placement of the dropdown menu. By default the positioning is set to the bottom side of the button.</p>
 
-<ExampleDiv class="flex justify-center flex items-center gap-2 h-96">
+<ExampleDiv class="flex justify-center items-center gap-2 h-96">
 <Dropdown label="Dropdown top" placement="top">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
@@ -914,7 +942,7 @@ Use this example to also show the name or email of the user next to the avatar f
 
 <Htwo label="Double placement"/>
 
-<ExampleDiv class="flex justify-center flex items-center gap-2">
+<ExampleDiv class="flex justify-center items-center gap-2">
 <Dropdown label="Dropdown left start" placement="left-start">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
@@ -941,6 +969,22 @@ Use this example to also show the name or email of the user next to the avatar f
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
   <DropdownItem>Sign out</DropdownItem>
+</Dropdown>
+```
+
+<Htwo label="Events" />
+
+The `DropdownItem` component has `on:click` event.
+
+<ExampleDiv class="flex justify-center h-32">
+<Dropdown label="Dropdown button" class="w-44">
+  <DropdownItem on:click={handleClick}>Click me</DropdownItem>
+</Dropdown>
+</ExampleDiv>
+
+```html
+<Dropdown label="Dropdown button" class="w-44">
+  <DropdownItem on:click={handleClick}>Click me</DropdownItem>
 </Dropdown>
 ```
 
@@ -971,4 +1015,24 @@ Use this example to also show the name or email of the user next to the avatar f
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={propItems4} rowState='hover' />
+</TableProp>
+
+<Htwo label="Slots" />
+
+<h3>Dropdown</h3>
+
+<TableProp header={slotHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={slotItems} rowState='hover' />
+</TableProp>
+
+<h3>DropdownDivider</h3>
+
+<TableProp header={slotHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={slotDropdownHeader} rowState='hover' />
+</TableProp>
+
+<h3>DropdownItem</h3>
+
+<TableProp header={slotHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={slotDropdownItem} rowState='hover' />
 </TableProp>

@@ -5,9 +5,11 @@ layout: formLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Label, Range, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { Label, Range, Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros'
   import componentProps from '../props/Range.json'
   let items = componentProps.props
@@ -25,9 +27,25 @@ layout: formLayout
   <BreadcrumbItem>Range</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Range</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Range</h1>
 
-<Htwo label="Examples" />
+<CompoDescription>Get started with the range component to receive a number from the user anywhere from 1 to 100 by sliding form control horizontally based on multiple options</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="forms/Range.svelte">Range</GitHubSource>
+</ExampleDiv>
+
+The range component can be used as an input field to get a number from the user based on your custom selection (ie. from 1 to 100) by using a sliding animation.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { Range } from 'flowbite-svelte'
+</script>
+```
+
+<Htwo label="Range slider example" />
 
 <ExampleDiv>
 <Label>Default range</Label>
@@ -56,7 +74,7 @@ layout: formLayout
 
 <Htwo label="Binding value" />
 
-<p>Use bind:value to bind the range input value as seen the the following examples.</p>
+Use bind:value to bind the range input value as seen the the following examples.
 
 <Htwo label="Min and max" />
 
@@ -108,12 +126,11 @@ layout: formLayout
 
 <Htwo label="Unknown attributes" />
 
-<p>Since we added `$$restProps` to input field, you can contain the props which are not declared with export. It will pass down other unknown attributes to an element in a component.</p>
+Since we added `$$restProps` to input field, you can contain the props which are not declared with export. It will pass down other unknown attributes to an element in a component.
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
 
 <TableProp header={propHeader} {divClass} {theadClass}>

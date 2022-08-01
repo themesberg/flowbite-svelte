@@ -5,9 +5,11 @@ layout: breadcrumbLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros'
   import componentProps from '../props/Breadcrumb.json'
   import componentProps2 from '../props/BreadcrumbItem.json'
@@ -23,9 +25,30 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Breadcrumb</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Breadcrumb</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Breadcrumb</h1>
+
+<CompoDescription>Show the location of the current page in a hierarchical structure using the breadcrumb components</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="breadcrumbs/Breadcrumb.svelte">Breadcrumb</GitHubSource>
+<GitHubSource href="breadcrumbs/BreadcrumbItem.svelte">BreadcrumbItem</GitHubSource>
+</ExampleDiv>
+
+The breadcrumb component is an important part of any website or application that can be used to show the current location of a page in a hierarchical structure of pages.
+
+Flowbite includes two styles of breadcrumb elements, one that has a transparent background and a few more that come with a background in different colors.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+	import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
+</script>
+```
 
 <Htwo label="Default Breadcrumb" />
+
+Use the following breadcrumb example to show the hierarchical structure of pages.
 
 <ExampleDiv>
 <Breadcrumb aria-label="Default breadcrumb example">
@@ -45,6 +68,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Solid Breadcrumb" />
 
+You can alternatively also use the breadcrumb components with a solid background.
+
 <ExampleDiv>
 <Breadcrumb aria-label="Solid background breadcrumb example" class="bg-gray-50 py-3 px-5 dark:bg-gray-900">
   <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
@@ -63,8 +88,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
 <h3>Breadcrumb</h3>
 

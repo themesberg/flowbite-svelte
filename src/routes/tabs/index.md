@@ -5,9 +5,11 @@ layout: tabLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { DefaultTabs, UnderlineTabs, IconTabs, PillTabs, FullWidthTabs, InteractiveTabs, InteractiveTabHead, TabContent, Timeline, TimelineItem, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { DefaultTabs, UnderlineTabs, IconTabs, PillTabs, FullWidthTabs, InteractiveTabs, InteractiveTabHead, TabContent, Timeline, TimelineItem, Breadcrumb, BreadcrumbItem } from '$lib'
   import {
 		Home,
 		UserCircle,
@@ -244,9 +246,34 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Tabs</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Tabs</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Tabs</h1>
 
-<Htwo label="Examples" />
+<CompoDescription>Use these responsive tabs components to create a secondary navigational hierarchy for your website or toggle content inside a container</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="tabs/DefaultTabs.svelte">DefaultTabs</GitHubSource>
+<GitHubSource href="tabs/UnderlineTabs.svelte">UnderlineTabs</GitHubSource>
+<GitHubSource href="tabs/IconTabs.svelte">IconTabs</GitHubSource>
+<GitHubSource href="tabs/PillTabs.svelte">PillTabs</GitHubSource>
+<GitHubSource href="tabs/FullWidthTabs.svelte">FullWidthTabs</GitHubSource>
+<GitHubSource href="tabs/InteractiveTabs.svelte">InteractiveTabs</GitHubSource>
+<GitHubSource href="tabs/InteractiveTabHead.svelte">InteractiveTabHead, TabContent</GitHubSource>
+<GitHubSource href="tabs/TabContent.svelte">TabContent</GitHubSource>
+</ExampleDiv>
+
+The tabs component can be used either as an extra navigational hierarchy complementing the main navbar or you can also use it to change content inside a container just below the tabs using the data attributes from Flowbite.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+	import { DefaultTabs, UnderlineTabs, IconTabs, PillTabs, FullWidthTabs, InteractiveTabs, InteractiveTabHead, TabContent } from 'flowbite-svelte';
+</script>
+```
+
+<Htwo label="Default tabs" />
+
+Use the following default tabs component example to show a list of links that the user can navigate from on your website.
 
 <ExampleDiv>
   <DefaultTabs {tabs} />
@@ -288,6 +315,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Tabs with underline" />
 
+Use this alternative tabs component style with an underline instead of a background when hovering and being active on a certain page.
+
 <ExampleDiv>
   <UnderlineTabs {tabs} />
 </ExampleDiv>
@@ -326,8 +355,9 @@ let tabs = [
 <UnderlineTabs {tabs} />
 ```
 
-
 <Htwo label="Tabs with icons" />
+
+This is an example of the tabs component where you can also use a SVG powered icon to complement the text within the navigational tabs.
 
 <ExampleDiv>
 	<IconTabs tabs={iconTabs} />
@@ -380,6 +410,8 @@ let tabs = [
 
 <Htwo label="Pills tabs" />
 
+If you want to use pills as a style for the tabs component you can do so by using this example.
+
 <ExampleDiv>
    <PillTabs tabs={pillsTabs} />
 </ExampleDiv>
@@ -415,6 +447,8 @@ let tabs = [
 ```
 
 <Htwo label="Full width tabs" />
+
+If you want to show the tabs on the full width relative to the parent element you can do so by using the full width tabs component example.
 
 <ExampleDiv>
 <FullWidthTabs {tabs} {tabLabel} />
@@ -453,6 +487,8 @@ let tabs = [
 ```
 
 <Htwo label="Interactive tabs" />
+
+Use the dynamic tabs component to interactively show and hide the content below the tabs based on the currently active tab item. 
 
 <ExampleDiv>
   <InteractiveTabs tabId="myTab1" tabs={tabs1} />
@@ -494,7 +530,7 @@ let tabs = [
 
 <Htwo label="Interactive tabs 2" />
 
-<p>It is possible to add other components to the `InteractiveTabs` component but using `InteractiveTabHead` and `TabContent` make it easy to add other components to tabs. Here we are adding a timeline component in the tab 1:</p>
+It is possible to add other components to the `InteractiveTabs` component but using `InteractiveTabHead` and `TabContent` make it easy to add other components to tabs. Here we are adding a timeline component in the tab 1:
 
 <ExampleDiv>
   <InteractiveTabHead tabs={tabhead}>
@@ -556,10 +592,7 @@ import { InteractiveTabHead, TabContent, Card, Timeline,
 </InteractiveTabHead>
 ```
 
-
-<h1 class="text-3xl w-full dark:text-white py-8">Multiple Interactive Tabs</h1>
-
-<Htwo label="Examples" />
+<Htwo label="Multiple Interactive Tabs"/>
 
 <ExampleDiv>
   <InteractiveTabs tabId="myTab1" tabs={itabs1} />
@@ -630,8 +663,6 @@ import { InteractiveTabHead, TabContent, Card, Timeline,
 <InteractiveTabs tabId="myTab1" tabs={tabs1} />
 <InteractiveTabs tabId="myTab2" tabs={tabs2} />
 ```
-
-
 
 <Htwo label="Props" />
 

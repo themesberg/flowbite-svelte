@@ -12,12 +12,12 @@
 <div class={divClass}>
 	{#each Array(roundedRating) as _, star}
 		<slot name="ratingUp">
-			<Star variation="solid" class="text-yellow-300 dark:text-yellow-200" />
+			<Star variation="solid" size="24" class="text-yellow-300 dark:text-yellow-200" />
 		</slot>
 	{/each}
 	{#each Array(grayStars) as _, star}
 		<slot name="ratingDown">
-			<Star class="text-gray-300 dark:text-gray-500" />
+			<Star size="26" class="px-0.5 text-gray-300 dark:text-gray-500" />
 		</slot>
 	{/each}
 	{#if $$slots.text}

@@ -5,10 +5,12 @@ layout: formLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { onMount } from 'svelte';
-  import { Label, Fileupload, Helper, Dropzone, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { Label, Fileupload, Helper, Dropzone, Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros'
   import componentProps from '../props/Fileupload.json'
   import componentProps2 from '../props/Dropzone.json'
@@ -32,8 +34,23 @@ layout: formLayout
   <BreadcrumbItem>File input</BreadcrumbItem>
 </Breadcrumb>
 
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">File</h1>
 
-<h1 class="text-3xl w-full dark:text-white py-8">File</h1>
+<CompoDescription>Get started with the file input component to let the user to upload one or more files from their device storage based on multiple styles and sizes</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="forms/Fileupload.svelte">Fileupload</GitHubSource>
+</ExampleDiv>
+
+The file input component can be used to upload one or more files from the device storage of the user available in multiple sizes, styles, variants and support for dark mode.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+import { Fileupload } from 'flowbite-svelte'
+</script>
+```
 
 <Htwo label="File upload example" />
 
@@ -44,19 +61,13 @@ layout: formLayout
 
 ```html
 <script>
-import { Fileupload } from 'flowbite-svelte'
-
 let fileuploadprops = {
   id : 'user_avatar'
 }
-
-let fileuploadprops2 = {
-  id : 'user_avatar2'
-}
 </script>
 
+<Label>Upload file</Label>
 <Fileupload {...fileuploadprops} />
-
 ```
 
 <Htwo label="Helper text" />
@@ -119,8 +130,7 @@ let fileuploadprops2 = {
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
 <h3>Fileupload</h3>
 

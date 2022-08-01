@@ -5,10 +5,12 @@ layout: formLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Checkbox, Breadcrumb, BreadcrumbItem, Dropdown, DropdownItem, DropdownDivider, SimpleSearch, Label, Helper } from "$lib/index"
-  import { Table, TableBody, TableBodyRow, TableBodyCell, TableHead, TableHeadCell } from "$lib/index"
+  import { Checkbox, Breadcrumb, BreadcrumbItem, Dropdown, DropdownItem, DropdownDivider, SimpleSearch, Label, Helper } from '$lib'
+  import { Table, TableBody, TableBodyRow, TableBodyCell, TableHead, TableHeadCell } from '$lib'
   import { Home, UserRemove } from 'svelte-heros'
   import componentProps from '../props/Radio.json'
   import componentProps2 from '../props/Label.json'
@@ -28,11 +30,27 @@ layout: formLayout
   <BreadcrumbItem>Checkbox</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Checkbox</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Checkbox</h1>
 
 The checkbox component can be used to receive one or more selected options from the user in the form of a square box available in multiple styles, sizes, colors, and variants coded with the utility classes from Tailwind CSS and with support for dark mode.
 
+<ExampleDiv>
+<GitHubSource href="forms/Checkbox.svelte">Checkbox</GitHubSource>
+</ExampleDiv>
+
+The checkbox component can be used to receive one or more selected options from the user in the form of a square box available in multiple styles, sizes, colors, and variants.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { Checkbox } from 'flowbite-svelte'
+</script>
+```
+
 <Htwo label="Checkbox examples" />
+
+Use this default example of a checbkox element in a checked and unchecked state.
 
 <ExampleDiv class="flex flex-col gap-4">
 <Checkbox>Default checkbox</Checkbox>
@@ -50,7 +68,7 @@ The checkbox component can be used to receive one or more selected options from 
 
 <Htwo label="Disabled state" />
 
-<p>This example can be used for the disabled state of the checkbox component by applying the disabled attribute to the input element.</p>
+This example can be used for the disabled state of the checkbox component by applying the disabled attribute to the input element.
 
 <ExampleDiv class="flex flex-col gap-4">
 <Checkbox disabled>Disabled checkbox</Checkbox>
@@ -114,7 +132,7 @@ If you need separate control over the label and the checkbox you can use the ver
 
 <Htwo label="Checkbox with a link" />
 
-<p>Use this example if you want to add an anchor link inside the label of the checkbox component.</p>
+Use this example if you want to add an anchor link inside the label of the checkbox component.
 
 <ExampleDiv>
 <Checkbox>I agree with the <a href="/" class="text-blue-600 dark:text-blue-500 hover:underline ml-1">terms and conditions</a>.</Checkbox>
@@ -128,7 +146,7 @@ If you need separate control over the label and the checkbox you can use the ver
 ```
 
 <Htwo label="Helper text" />
-<p>Get started with this example if you want to add a secondary helper text for the checkbox component.</p>
+Get started with this example if you want to add a secondary helper text for the checkbox component.
 
 <ExampleDiv>
   <Checkbox aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Checkbox>
@@ -141,7 +159,7 @@ If you need separate control over the label and the checkbox you can use the ver
 ```
 
 <Htwo label="Bordered" />
-<p>Use this example of a checkbox inside a card element to enable a larger area of clicking activation.</p>
+Use this example of a checkbox inside a card element to enable a larger area of clicking activation.
 
 <ExampleDiv>
 <div class="grid grid-cols-2 gap-6">

@@ -5,9 +5,11 @@ layout: carouselLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Carousel, CarouselTransition, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Carousel, CarouselTransition, Breadcrumb, BreadcrumbItem } from '$lib'
    import { quartInOut, sineInOut, bounceInOut, quintOut } from 'svelte/easing';
   import { Home, ChevronDoubleLeft, ChevronDoubleRight, Link} from 'svelte-heros'
   import { images } from './imageData';
@@ -46,9 +48,26 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Carousels</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Carousel</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Carousel</h1>
 
-<Htwo label="Examples" />
+<CompoDescription>Use the carousel component to slide through multiple elements and images using custom controls, indicators, intervals, and options</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="carousels/Carousel.svelte">Carousel</GitHubSource>
+<GitHubSource href="carousels/CarouselTransition.svelte">CarouselTransition</GitHubSource>
+</ExampleDiv>
+
+The carousel component can be used to cycle through a set of elements using custom options, controls, and indicators.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { Carousel, CarouselTransition 'flowbite-svelte'
+</script>
+```
+
+<Htwo label="Default Carousel" />
 
 <ExampleDiv>
   <div class="max-w-4xl">
@@ -58,7 +77,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 ```html
 <script>
-  import { Carousel } from '$lib/index';
+  import { Carousel } from '$lib';
   const images = [
   {
     id: 0,

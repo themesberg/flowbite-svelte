@@ -3,7 +3,7 @@ layout: docLayout
 ---
 
 <script>
-  import { Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros'
 </script>
 
@@ -12,7 +12,7 @@ layout: docLayout
   <BreadcrumbItem>Type list</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Types</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Types</h1>
 
 ```js
 import type { SvelteComponent } from 'svelte';

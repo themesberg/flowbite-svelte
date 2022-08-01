@@ -5,9 +5,11 @@ layout: progressbarLayout
 <script>
 	import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
 	import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Progressbar, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { Progressbar, Breadcrumb, BreadcrumbItem } from '$lib'
 	import { Home } from 'svelte-heros'
 	import componentProps from '../props/Progressbar.json'
   // Props table
@@ -34,9 +36,19 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Progress bar</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Progress</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Progress</h1>
 
-<p>Import the `Progressbar` component in a script tag.</p>
+<CompoDescription>Use the progress bar component to show the completion rate of a data indicator or use it as a loader element</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="progressbars/Progressbar.svelte">Progressbar</GitHubSource>
+</ExampleDiv>
+
+The progress bar component can be used as an indicator to show the completion rate of data sets or it can be used as an animated loader component. There are multiple sizes, colors, and styles available.
+
+<Htwo label="Setup" />
+
+Import the `Progressbar` component in a script tag.
 
 ```html
 <script>
@@ -46,7 +58,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Default progress bar" />
 
-<p>Use the following example of a progress bar element to show a completion rate of 45% by using an inline style and the utility classes from Tailwind CSS.</p>
+Use the following example of a progress bar element to show a completion rate of 45% by using an inline style and the utility classes from Tailwind CSS.
 
 <ExampleDiv>
 <Progressbar progress="50" />
@@ -58,7 +70,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Sizes" />
 
-<p>Use the `size` prop to change the size of a progress bar.</p>
+Use the `size` prop to change the size of a progress bar.
 
 <ExampleDiv>
 <div class="my-4">
@@ -96,7 +108,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="With label inside" />
 
-<p>Use the `labelInside` prop to add the progress in a progress bar.</p>
+Use the `labelInside` prop to add the progress in a progress bar.
 
 <ExampleDiv>
 <Progressbar progress="50" size="h-4" labelInside />
@@ -108,7 +120,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="With label outside" />
 
-<p>Use the `labelOutside` prop to add the progress outside of a progress bar.</p>
+Use the `labelOutside` prop to add the progress outside of a progress bar.
 
 <ExampleDiv>
 <Progressbar progress="50" labelOutside="Flowbite-Svelte" />
@@ -120,7 +132,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Colors" />
 
-<p>Use the `color` prop to change the color of a progress bar.</p>
+Use the `color` prop to change the color of a progress bar.
 
 <ExampleDiv>
 <div class="my-4">
@@ -178,8 +190,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />

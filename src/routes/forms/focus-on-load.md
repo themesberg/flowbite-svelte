@@ -1,10 +1,12 @@
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { onMount } from 'svelte';
-  import { Input, Label, Helper, Iconinput, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { Input, Label, Helper, Iconinput, Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros'
   import { AtSymbol , Mail } from 'svelte-heros'
   import componentProps1 from '../props/Input.json'
@@ -27,7 +29,7 @@
   <BreadcrumbItem>Focus on load</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Focus on load</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Focus on load</h1>
 
 <p>To focus on an input field and a textarea field on load create a `ref` variable and bind it in an Input component. Add a `onMount` function as followings.</p>
 

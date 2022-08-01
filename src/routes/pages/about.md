@@ -4,7 +4,7 @@ layout: docLayout
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-  import { Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros'
 </script>
 
@@ -13,7 +13,7 @@ layout: docLayout
   <BreadcrumbItem>About</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">About Flowbite-Svelte</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">About Flowbite-Svelte</h1>
 
 <Htwo label="Svelte" />
 

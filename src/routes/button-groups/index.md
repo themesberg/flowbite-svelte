@@ -5,9 +5,11 @@ layout: buttongroupLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import {ButtonGroup, ButtonGroupItem, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import {ButtonGroup, ButtonGroupItem, Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros';
 	import { User, Adjustments, CloudDownload } from 'svelte-heros';
   import componentProps from '../props/ButtonGroup.json'
@@ -30,6 +32,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
       href:'/button-groups/'
     }
   ]
+	const handleClick = ()=> {
+		alert('Clicked')
+	}
 </script>
 
 <Breadcrumb>
@@ -37,19 +42,30 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Button groups</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Button group</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Button group</h1>
 
-<Htwo label="Set up" />
+<CompoDescription>Button groups are a Tailwind CSS powered set of buttons sticked together in a horizontal line</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="buttongroups/ButtonGroup.svelte">ButtonGroup</GitHubSource>
+<GitHubSource href="buttongroups/ButtonGroupItem.svelte">ButtonGroupItem</GitHubSource>
+</ExampleDiv>
+
+The button group component from Flowbite-Svelte can be used to stack together multiple buttons and links inside a single element.
+
+<Htwo label="Setup" />
 
 ```html
 <script>
-  	import { ButtonGroup, ButtonGroupItem } from 'flowbite-svelte';
-	import { User, Adjustments, CloudDownload } from 'svelte-heros';
+  import { ButtonGroup, ButtonGroupItem } from 'flowbite-svelte';
+  import { User, Adjustments, CloudDownload } from 'svelte-heros';
 </script>
 ```
 
 <Htwo label="Default" />
 
+Use the following code to stack together buttons into a single group.
+
 <ExampleDiv>
 <ButtonGroup>
 	<ButtonGroupItem>Proflie</ButtonGroupItem>
@@ -67,7 +83,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </ButtonGroup>
 ```
 
-<Htwo label="Default with links" />
+<Htwo label="Button group as links" />
+
+You can also use the button group component as links.
 
 <ExampleDiv>
 <ButtonGroup>
@@ -85,7 +103,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </ButtonGroup>
 ```
 
-<Htwo label="Default with icon" />
+<Htwo label="Group buttons with icons" />
+
+You can also use SVG icons inside the grouped buttons.
 
 <ExampleDiv>
 <ButtonGroup>
@@ -124,6 +144,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Outline" />
 
+Group a series of buttons together on a single line or stack them in a vertical column.
+
 <ExampleDiv>
 <ButtonGroup>
 	<ButtonGroupItem outline>Proflie</ButtonGroupItem>
@@ -142,6 +164,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Outline with icon" />
 
+Group a series of buttons together on a single line or stack them in a vertical column.
+
 <ExampleDiv>
 <ButtonGroup>
 	<ButtonGroupItem outline>
@@ -175,11 +199,29 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 	>
 </ButtonGroup>
 ```
+<Htwo label="Events" />
+
+You can add the `on:click` event to the `ButtonGroupItem` component.
+
+<ExampleDiv>
+<ButtonGroup>
+	<ButtonGroupItem on:click={handleClick}>Click me</ButtonGroupItem>
+	<ButtonGroupItem>Settings</ButtonGroupItem>
+	<ButtonGroupItem>Messages</ButtonGroupItem>
+</ButtonGroup>
+</ExampleDiv>
+
+```html
+<ButtonGroup>
+	<ButtonGroupItem on:click={handleClick}>Click me</ButtonGroupItem>
+	<ButtonGroupItem>Settings</ButtonGroupItem>
+	<ButtonGroupItem>Messages</ButtonGroupItem>
+</ButtonGroup>
+```
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
 <h3>ButtonGroup</h3>
 

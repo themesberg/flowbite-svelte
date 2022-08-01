@@ -5,9 +5,11 @@ layout: navbarLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Breadcrumb, BreadcrumbItem, Button, Dropdown, DropdownItem, DropdownHeader, DropdownDivider, Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Input } from '$lib/index';
+  import { Breadcrumb, BreadcrumbItem, Button, Dropdown, DropdownItem, DropdownHeader, DropdownDivider, Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Input } from '$lib';
 	import { Search , Home} from 'svelte-heros'
   import componentProps from '../props/Navbar.json'
 	import componentProps2 from '../props/NavBrand.json'
@@ -64,9 +66,31 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Navbar</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Navbar</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Navbar</h1>
+
+<CompoDescription>The navbar component can be used to show a list of navigation links positioned on the top side of your page based on multiple layouts, sizes, and dropdowns</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="navbar/Navbar.svelte">Navbar</GitHubSource>
+<GitHubSource href="navbar/NavBrand.svelte">NavBrand</GitHubSource>
+<GitHubSource href="navbar/NavLi.svelte">NavLi</GitHubSource>
+<GitHubSource href="navbar/NavUl.svelte">NavUl</GitHubSource>
+<GitHubSource href="navbar/NavHamburger.svelte">NavHamburger</GitHubSource>
+</ExampleDiv>
+
+Get started with the responsive navbar component from Flowbite to quickly set up a navigation menu for your website and set up the logo, list of pages, CTA button, search input, user profile options with a dropdown, and more.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte'
+</script>
+```
 
 <Htwo label="Default navbar" />
+
+Use this example of a navigation bar built with the utility classes from Tailwind CSS to enable users to navigate across the pages of your website.
 
 <ExampleDiv>
 	<Navbar let:hidden let:toggle rounded={true}>
@@ -115,6 +139,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 ```
 
 <Htwo label="Navbar with dropdown" />
+
+This example can be used to show a secondary dropdown menu when clicking on one of the navigation links.
 
 <ExampleDiv>
 	<Navbar let:hidden let:toggle rounded={true}>
@@ -192,6 +218,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Navbar with search" />
 
+Use this example of a navbar element to also show a search input element that you can integrate for a site-wide search.
+
 <ExampleDiv>
 	<Navbar let:hidden let:toggle rounded={true}>
 		<NavBrand href="/">
@@ -257,6 +285,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 ```
 
 <Htwo label="Navbar with CTA button" />
+
+Use the following navbar element to show a call to action button alongside the logo and page links.
 
 <ExampleDiv>
 	<Navbar let:hidden let:toggle rounded={true}>

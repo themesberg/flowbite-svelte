@@ -5,10 +5,12 @@ layout: formLayout
 <script>
 import Htwo from '../utils/Htwo.svelte'
 import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
 import TableProp from '../utils/TableProp.svelte'
 import TableDefaultRow from '../utils/TableDefaultRow.svelte'
 import { onMount } from 'svelte';
-import { Label, Dropdown, DropdownItem, Select, Breadcrumb, BreadcrumbItem } from "$lib/index"
+import { Label, Dropdown, DropdownItem, Select, Breadcrumb, BreadcrumbItem } from '$lib'
 import CloseButton from "$lib/utils/CloseButton.svelte";
 import { Home } from 'svelte-heros'
 import componentProps from '../props/Select.json'
@@ -57,7 +59,23 @@ let states = [
   <BreadcrumbItem>Select</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Select</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Select</h1>
+
+<CompoDescription>Get started with the select component to allow the user to choose from one or more options from a dropdown list based on multiple styles, sizes, and variants</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="forms/Select.svelte">Select</GitHubSource>
+</ExampleDiv>
+
+The select input component can be used to gather information from users based on multiple options in the form of a dropdown list and by browsing this page you will find multiple options, styles, sizes, and variants built with the utility classes from Tailwind CSS also available in dark mode.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { Select } from 'flowbite-svelte'
+</script>
+```
 
 <Htwo label="Select input example" />
 
@@ -238,10 +256,10 @@ Get started with the small, default, and large sizes for the select component fr
 <Label for="select-lg" class="sr-only">Underline large select</Label>
 <Select id="select-lg" underline size="lg" items={countries} class="mb-6"/>
 ```
+
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />

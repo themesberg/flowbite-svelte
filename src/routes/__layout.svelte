@@ -9,7 +9,7 @@
 		FooterIcon,
 		FooterLink,
 		FooterLinkGroup
-	} from '$lib/index';
+	} from '$lib';
 	import { Side, Nav, SidebarList } from 'svelte-sidebar-menu';
 	import Github from './utils/icons/Github.svelte';
 	import { forms, svelteflows, topMenus } from './moduleItems';
@@ -18,7 +18,7 @@
 		'absolute w-auto bg-white pt-8 shadow-lg z-50 px-4 h-screen z-40 overflow-scroll dark:bg-gray-900';
 	// Navbar
 	let logo = '/images/flowbite-svelte-icon-logo.svg';
-	let logoClass = 'w-8 ml-4 mr-2';
+	let logoClass = 'w-8 ml-0 sm:ml-4 sm:mr-2';
 	let alt = 'Flowbite Svelte';
 	let hamburgerClass =
 		'text-gray-300 hover:text-blue-500 cursor-pointer mr-4 border-none focus:outline-none lg:hidden';
@@ -32,12 +32,12 @@
 	let navDivClasslast = 'pb-24';
 	let siteClass = ' w-full pt-0.5';
 	let spanClass =
-		'pl-2 self-center text-lg font-semibold text-gray-900 whitespace-nowrap sm:dark:text-white';
+		'pl-2 self-center text-md sm:text-lg font-semibold text-gray-900 whitespace-nowrap dark:text-white';
 
 	let topli =
 		'block py-2 pr-4 pl-3 text-gray-700 md:border-0 md:p-0 dark:text-gray-300  dark:hover:bg-gray-700 text-lg z-50  dark:bg-gray-800 dark:border-0 hover:bg-gray-100 bg-white';
 	let topMenuDiv =
-		'container flex flex-wrap justify-end items-center mx-auto dark:bg-gray-800 h-8 pr-12';
+		'flex flex-wrap justify-end items-center mx-auto dark:bg-gray-800 h-8 pr-8 pt-1 sm:pr-12';
 	let topul =
 		'flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium pt-1 dark:bg-gray-800 bg-white';
 
@@ -162,10 +162,10 @@
 			</h3>
 		</Nav>
 		<Nav {navClass}>
-			<h3 class={h3Class}><a href="/modals">Modals</a></h3>
+			<h3 class={h3Class}><a href="/mega-menu">Mega menu</a></h3>
 		</Nav>
 		<Nav {navClass}>
-			<h3 class={h3Class}><a href="/mega-menu">Mega menu</a></h3>
+			<h3 class={h3Class}><a href="/modals">Modals</a></h3>
 		</Nav>
 		<Nav {navClass}>
 			<h3 class={h3Class}><a href="/navbar">Navbar</a></h3>
@@ -227,9 +227,9 @@
 		</Nav>
 	</Side>
 
-	<main class="flex mx-auto mb-8 px-2 pt-16 lg:pl-64 2xl:pl-16">
+	<main class="flex mx-auto mb-8 px-0 sm:px-2 pt-16 lg:pl-64 2xl:pl-16">
 		<DarkMode btnClass={darkmodebtn} />
-		<div class="w-full px-8">
+		<div class="w-full px-0 sm:px-8">
 			<slot />
 		</div>
 		<Toc />
@@ -262,7 +262,7 @@
 					</h2>
 					<FooterLinkGroup>
 						<FooterLink liClass="mb-4" href="https://github.com/themesberg/flowbite-svelte"
-							>Gihub</FooterLink
+							>GitHub</FooterLink
 						>
 						<FooterLink liClass="mb-4" href="https://discord.gg/4eeurUVvTy">Discord</FooterLink>
 					</FooterLinkGroup>

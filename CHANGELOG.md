@@ -2,6 +2,73 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.22.27](https://github.com/themesberg/flowbite-svelte/compare/v0.22.26...v0.22.27) (2022-08-01)
+
+
+### Bug Fixes
+
+* update skeleton components ([6c49370](https://github.com/themesberg/flowbite-svelte/commit/6c49370ef244234373d4b87cb1a60e4aebdbf86f))
+* update Svelte-Heros icon for Rating component ([d1c03fa](https://github.com/themesberg/flowbite-svelte/commit/d1c03fa4a0cb4b2cd4ccfe956d7d36ebd4161ed4))
+
+### [0.22.26](https://github.com/themesberg/flowbite-svelte/compare/v0.22.25...v0.22.26) (2022-07-30)
+
+
+### Features
+
+* avatar w/tooltip / initials ([6b9a333](https://github.com/themesberg/flowbite-svelte/commit/6b9a333c96f3485b33a2fdeecc113138452acca0))
+
+### [0.22.25](https://github.com/themesberg/flowbite-svelte/compare/v0.22.24...v0.22.25) (2022-07-29)
+
+
+### Features
+
+* alerts with lists ([5ad5f3c](https://github.com/themesberg/flowbite-svelte/commit/5ad5f3cfb6b8f68464475b11086f85b0d60cc068))
+
+### [0.22.24](https://github.com/themesberg/flowbite-svelte/compare/v0.22.23...v0.22.24) (2022-07-29)
+
+
+### Features
+
+* badges new features ([775ecbc](https://github.com/themesberg/flowbite-svelte/commit/775ecbc04df58cd7c2517d103c963e7add92b5f6))
+
+
+### Bug Fixes
+
+* pink color ([e4551b5](https://github.com/themesberg/flowbite-svelte/commit/e4551b54e0b56c07bae45d2bddb1b2930a20fe72))
+
+### [0.22.23](https://github.com/themesberg/flowbite-svelte/compare/v0.22.22...v0.22.23) (2022-07-29)
+
+
+### Bug Fixes
+
+* minor fixes / fine tuning ([57c1cf7](https://github.com/themesberg/flowbite-svelte/commit/57c1cf7f1bd461c417be1fd925766c045d72c015))
+
+### [0.22.22](https://github.com/themesberg/flowbite-svelte/compare/v0.22.21...v0.22.22) (2022-07-28)
+
+
+### Features
+
+* focus trap for modals ([08604ac](https://github.com/themesberg/flowbite-svelte/commit/08604ac3475f28a5a35c037e47ecfc13ee13b877))
+
+### [0.22.21](https://github.com/themesberg/flowbite-svelte/compare/v0.22.20...v0.22.21) (2022-07-28)
+
+
+### Bug Fixes
+
+* megamenu centered in small screen ([713aa9a](https://github.com/themesberg/flowbite-svelte/commit/713aa9ab5d1c390291bb61910f9eae4b68d5981e))
+
+### [0.22.20](https://github.com/themesberg/flowbite-svelte/compare/v0.22.19...v0.22.20) (2022-07-28)
+
+### [0.22.19](https://github.com/themesberg/flowbite-svelte/compare/v0.22.17...v0.22.19) (2022-07-27)
+
+
+### Features
+
+* modal - re-written ([4dd27af](https://github.com/themesberg/flowbite-svelte/commit/4dd27afd996328fcdc6c19895e1a6a6beef2c772))
+* modal - re-written ([1c6a93d](https://github.com/themesberg/flowbite-svelte/commit/1c6a93dfe332a7f65058d25a4a68e542d15e9a21))
+
+### [0.22.18](https://github.com/themesberg/flowbite-svelte/compare/v0.22.17...v0.22.18) (2022-07-27)
+
 ### [0.22.17](https://github.com/themesberg/flowbite-svelte/compare/v0.22.16...v0.22.17) (2022-07-26)
 
 ### [0.22.16](https://github.com/themesberg/flowbite-svelte/compare/v0.22.15...v0.22.16) (2022-07-26)

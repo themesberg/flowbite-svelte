@@ -5,9 +5,11 @@ layout: listgroupLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Avatar, List, ListItem, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Avatar, List, ListItem, Breadcrumb, BreadcrumbItem } from '$lib'
   import {
     Adjustments,
     UserCircle,
@@ -51,7 +53,24 @@ layout: listgroupLayout
   <BreadcrumbItem href="/footer">List group</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">List group</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">List group</h1>
+
+<CompoDescription>Use the list group component to display a series of items, buttons or links inside a single element</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="list-group/List.svelte">List</GitHubSource>
+<GitHubSource href="list-group/LisListItemt.svelte">ListItem</GitHubSource>
+</ExampleDiv>
+
+The list group component can be used to display a series of elements, buttons or links inside a single card component similar to a sidebar.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { List, ListItem } from 'flowbite-svelte'
+</script>
+```
 
 <Htwo label="Default list group" />
 

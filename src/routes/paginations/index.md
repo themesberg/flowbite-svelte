@@ -5,9 +5,11 @@ layout: paginationLayout
 <script lang="ts">
 	import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
 	import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-	import { Pagination, Previous, Next, TableData, Breadcrumb, BreadcrumbItem } from '$lib/index'
+	import { Pagination, Previous, Next, TableData, Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros';
 	import componentProps1 from '../props/Pagination.json'
   import componentProps2 from '../props/Previous.json'
@@ -73,9 +75,29 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Pagination</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Pagination</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Pagination</h1>
+
+<CompoDescription>Use the Tailwind CSS pagination element to indicate a series of content across various pages</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="pagination/Pagination.svelte">Pagination</GitHubSource>
+<GitHubSource href="pagination/Previous.svelte">Previous</GitHubSource>
+<GitHubSource href="pagination/Next.svelte">Next</GitHubSource>
+</ExampleDiv>
+
+The pagination component can be used to navigate across a series of content and data sets for various pages such as blog posts, products, and more. You can use multiple variants of this component with or without icons and even for paginating table data entries.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { Pagination, Previous, Next } from 'flowbite-svelte'
+</script>
+```
 
 <Htwo label="Default pagination" />
+
+Use the following list of pagination items to indicate a series of content for your website.
 
 <ExampleDiv class="flex justify-center">
   <Pagination {pages} on:previous={previous} on:next={next} />
@@ -119,6 +141,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Pagination with icons" />
 
+The following pagination component example shows how you can use SVG icons instead of text to show the previous and next pages.
+
 <ExampleDiv class="flex justify-center">
   <Pagination {pages} on:previous={previous} on:next={next} icon />
 </ExampleDiv>
@@ -128,6 +152,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 ```
 
 <Htwo label="Previous and next" />
+
+Use the following markup to show simple previous and next elements.
 
 <ExampleDiv class="flex justify-center">
   <Previous on:previous={previous} />
@@ -145,6 +171,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Previous and next with icons" />
 
+Use the following code to show simple previous and next elements with icons.
+
 <ExampleDiv class="flex justify-center">
   <Previous on:previous={previous} icon />
   <Next on:next={next} icon />
@@ -157,9 +185,19 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Table data pagination" />
 
+You can use the following markup to show the number of data shown inside a table element and also the previous and next action buttons.
+
 <ExampleDiv class="flex justify-center">
 <TableData on:next={next} on:previous={previous} />
 </ExampleDiv>
+
+```html
+<TableData on:next={next} on:previous={previous} />
+```
+
+<Htwo label="Table data pagination with icons" />
+
+You can use the following code to show the number of data shown inside a table element and also the previous and next action buttons coupled with icons.
 
 <ExampleDiv class="flex justify-center">
 <TableData on:next={next} on:previous={previous} {helper}/>
@@ -174,7 +212,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   }
 </script>
 
-<TableData on:next={next} on:previous={previous} />
 <TableData on:next={next} on:previous={previous} {helper}/>
 ```
 

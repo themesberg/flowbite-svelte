@@ -5,9 +5,11 @@ layout: formLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Search, SimpleSearch, VoiceSearch, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Search, SimpleSearch, VoiceSearch, Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros'
   import searchComponentProps from '../props/Search.json'
   import simpleSearchComponentProps from '../props/SimpleSearch.json'
@@ -32,37 +34,39 @@ layout: formLayout
   <BreadcrumbItem>Search</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Search</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Search</h1>
 
-<Htwo label="Default search" />
+<CompoDescription>Use the search input component as a text field to allow users to enter search queries and receive relevant page results available in multiple styles and sizes</CompoDescription>
 
 <ExampleDiv>
-<Search />
+<GitHubSource href="forms/Range.svelte">Range</GitHubSource>
 </ExampleDiv>
+
+The search input component can be used to let your users search through your website using string queries and it comes in multiple styles, variants, and sizes built with the utility classes from Tailwind CSS.
+
+You will also find more advanced search components on this page including dropdown category selections, search buttons positioned inside the input field, voice search fields and more.
+
+<Htwo label="Setup" />
 
 ```html
 <script>
-  import { Search } from 'flowbite-svelte'
+  import { Search, SimpleSearch, VoiceSearch } from 'flowbite-svelte'
 </script>
-
-<Search />
 ```
 
-<Htwo label="Simple Search" />
+<Htwo label="Search bar example" />
 
 <ExampleDiv>
-<SimpleSearch />
+<Search />
 </ExampleDiv>
 
 ```html
-<script>
-  import { SimpleSearch } from 'flowbite-svelte'
-</script>
-
-<SimpleSearch />
+<Search />
 ```
 
 <Htwo label="Voice Search" />
+
+Get started with this example if you would like to enable voice search for your website and users.
 
 <ExampleDiv>
 <VoiceSearch on:handleVoiceBtn={handleVoiceBtn}/>
@@ -70,8 +74,7 @@ layout: formLayout
 
 ```html
 <script>
-  import { VoiceSearch } from 'flowbite-svelte'
-  
+  ...
   function handleVoiceBtn() {
     alert('You clicked voice button');
   }
@@ -80,7 +83,7 @@ layout: formLayout
 <VoiceSearch on:handleVoiceBtn={handleVoiceBtn}/>
 ```
 
-<Htwo label="Event handlers" />
+<Htwo label="Events" />
 
 ```js
 on:submit
@@ -88,8 +91,7 @@ on:submit
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
 <h3>Search</h3>
 

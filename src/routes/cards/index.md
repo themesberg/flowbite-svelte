@@ -5,16 +5,26 @@ layout: cardLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Avatar, Button, Breadcrumb, BreadcrumbItem, Card, SignInCard, EcommerceCard, Dropdown, DropdownItem, List, Toggle } from '$lib/index'
+  import { Avatar, Button, Breadcrumb, BreadcrumbItem, Card, SignInCard, EcommerceCard, Dropdown, DropdownItem, List, Toggle } from '$lib'
   import { DotsHorizontal, ArrowRight } from 'svelte-heros'
   import CloseButton from "$lib/utils/CloseButton.svelte"
   import { Home } from 'svelte-heros';
   import componentProps from '../props/Card.json'
+  import componentProps2 from '../props/SignInCard.json'
+  import componentProps3 from '../props/EcommerceCard.json'
   // Props table
   let items = componentProps.props
+  let items2 = componentProps2.props
+  let items3 = componentProps3.props
+
 	let propHeader = ['Name', 'Type', 'Default']
+  let slotHeader = ['Name', 'Description']
+
+  let slotItems = [['default', 'For a button label.']]
 
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -29,7 +39,6 @@ layout: cardLayout
     src: "/images/product-1.webp",
     alt: "product image",
   };
-  let star5 = "5.0";
   let list = [
     { img: { src: "/images/profile-picture-1.webp", alt: "Neil Sims",},
       name: "Neil Sims", email: "email@windster.com", value: "$320"
@@ -49,22 +58,31 @@ layout: cardLayout
   <BreadcrumbItem>Card default</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Card</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Card</h1>
+
+<CompoDescription>Get started with a large variety of Tailwind CSS card examples for your web project</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="cards/Card.svelte">Card</GitHubSource>
+<GitHubSource href="cards/SignInCard.svelte">SignInCard</GitHubSource>
+<GitHubSource href="cards/EcommerceCard.svelte">EcommerceCard</GitHubSource>
+</ExampleDiv>
+
+Use these responsive card components to show data entries and information to your users in multiple forms and contexts such as for your blog, application, user profiles, and more.
 
 <Htwo label="Set up" />
 
-<p>Import Card in the script tag.</p>
+Import Card in the script tag.
 
 ```html
 <script>
-  import { Card } from "flowbite-svelte";
+  import { Card, SignInCard, EcommerceCard } from "flowbite-svelte";
 </script>
 ```
 
 <Htwo label="Default card" />
 
 Use the following simple card component with a title and description.
-
 Notice the `href` prop set, as that card is one big `<a/>` element.
 
 <ExampleDiv>
@@ -120,6 +138,7 @@ User <code>reverse={true}</code> to reverse the position of an image.
 You can use the following example of a card element with an image for blog posts, user cards, and many more.
 
 <ExampleDiv>
+<div>
   <Card img="/images/image-1.jpeg" reverse={vCard}>
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
@@ -130,6 +149,7 @@ You can use the following example of a card element with an image for blog posts
     </Button>
   </Card>
   <Toggle bind:checked={vCard} class="mt-4 italic dark:text-gray-500">Reverse</Toggle>
+  </div>
 </ExampleDiv>
 
 ```html
@@ -143,11 +163,13 @@ You can use the following example of a card element with an image for blog posts
   </Button>
 </Card>
 ```
+
 <Htwo label="Horizontal card" />
 
 If you want to spice up your cards you can use the following card which has its child elements aligned horizontally.
 
 <ExampleDiv>
+<div>
   <Card img="/images/image-1.jpeg" href="/" horizontal reverse={hCard}>
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
@@ -155,6 +177,7 @@ If you want to spice up your cards you can use the following card which has its 
     </p>
   </Card>
   <Toggle bind:checked={hCard} class="mt-4 italic dark:text-gray-500">Reverse</Toggle>
+  </div>
 </ExampleDiv>
 
 ```html
@@ -193,6 +216,30 @@ Use this user profile card example if you want to show a dropdown menu and butto
     </div>
   </Card>
 </ExampleDiv>
+
+```html
+<Card padding='sm'>
+  <div class="flex justify-end">
+    <Dropdown class="w-44">
+      <CloseButton slot="trigger" class="text-gray-500 dark:text-gray-400">
+        <DotsHorizontal class="w-6 h-6"/>
+      </CloseButton>
+      <DropdownItem>Edit</DropdownItem>
+      <DropdownItem>Export data</DropdownItem>
+      <DropdownItem>Delete</DropdownItem>
+    </Dropdown>
+  </div>
+  <div class="flex flex-col items-center pb-4">
+    <Avatar size="lg" src="/images/profile-picture-3.webp" />
+      <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Bonnie Green</h5>
+      <span class="text-sm text-gray-500 dark:text-gray-400">Visual Designer</span>
+      <div class="flex mt-4 space-x-3 lg:mt-6">
+        <Button>Add friend</Button>
+        <Button color="light" class="dark:text-white">Message</Button>
+      </div>
+  </div>
+</Card>
+```
 
 <Htwo label="Card with form inputs" />
 
@@ -237,6 +284,7 @@ Use this CTA card example to encourage your users to visit a certain page such a
   </div>
 </Card>
 ```
+
 <Htwo label="Card with list" />
 
 Use this card example if you want to show a list of data:
@@ -315,7 +363,7 @@ Use this card for your e-commerce websites and show information about the produc
     href="/"
     price="$543"
     img={img1}
-    stars={star5}
+    stars={4}
     btnText="Buy now"
   >
   <p cloass="dark:text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
@@ -335,20 +383,39 @@ Use this card for your e-commerce websites and show information about the produc
 </EcommerceCard>
 ```
 
-
-
-
-
-
-
-
-
-
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types 
+ page</a> for type information.
+
+<h3>Card</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
+</TableProp>
+
+<h3>SignInCard</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items2} rowState='hover' />
+</TableProp>
+
+<h3>EcommerceCard</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items3} rowState='hover' />
+</TableProp>
+
+<Htwo label="Slots" />
+
+<h3>Card</h3>
+
+<TableProp header={slotHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={slotItems} rowState='hover' />
+</TableProp>
+
+<h3>EcommerceCard</h3>
+
+<TableProp header={slotHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={slotItems} rowState='hover' />
 </TableProp>

@@ -5,9 +5,11 @@ layout: avatarLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider, Breadcrumb, BreadcrumbItem, Tooltip } from '$lib'
   import { Home } from 'svelte-heros'
   import alertProp from '../props/Avatar.json'
   // Props table
@@ -24,11 +26,31 @@ layout: avatarLayout
   <BreadcrumbItem>Avatar</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Avatar</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Avatar</h1>
+
+<CompoDescription>Use the avatar component to show a visual representation of a user profile using an image element or SVG object based on multiple styles and sizes</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="avatar/Avatar.svelte">Avatar</GitHubSource>
+</ExampleDiv>
+
+The avatar component can be used as a visual identifier for a user profile on your website and you can use the examples from Flowbite to modify the styles and sizes of these components using the utility classes from Tailwind CSS.
+
+<Htwo label="Setup" />
+
+Import `Avatar`.
+If you are using the user dropdown, import `Dropdown`, `DropdownHeader`, `DropdownItem`, `DropdownDivider`.
+If you are using tooltip for avatar import `Tooltip`.
+
+```html
+<script>
+  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider, Tooltip } from "flowbite-svelte"
+</script>
+```
 
 <Htwo label="Default avatar" />
 
-<p>Use this example to create a circle and rounded avatar on an image element.</p>
+Use this example to create a circle and rounded avatar on an image element.
 
 <ExampleDiv>
 <div class="flex space-x-4">
@@ -48,14 +70,13 @@ layout: avatarLayout
 
 <Htwo label="Bordered" />
 
-<p>You can apply a border around the avatar component</p>
-<p>If you can use the ring-&#123;color&#125; class from Tailwind CSS to modify ring color.</p>
+You can apply a border around the avatar component.
 
-<ExampleDiv>
-<div class="flex space-x-4">
-<Avatar src="/images/profile-picture-2.webp" border/>
-<Avatar src="/images/profile-picture-2.webp" border class="ring-red-400 dark:ring-red-300"/>
-</div>
+If you can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify ring color.
+
+<ExampleDiv class="flex space-x-4">
+  <Avatar src="/images/profile-picture-2.webp" border/>
+  <Avatar src="/images/profile-picture-2.webp" border class="ring-red-400 dark:ring-red-300"/>
 </ExampleDiv>
 
 ```html
@@ -65,15 +86,13 @@ layout: avatarLayout
 
 <Htwo label="Placeholder" />
 
-<p>When there is no custom image available a placehoder is displayed.</p>
+When there is no custom image available a placehoder is displayed.
 
-<ExampleDiv>
-<div class="flex space-x-4">
+<ExampleDiv class="flex space-x-4">
   <Avatar />
   <Avatar rounded />
   <Avatar border />
   <Avatar rounded border />
-</div>
 </ExampleDiv>
 
 ```html
@@ -83,12 +102,51 @@ layout: avatarLayout
 <Avatar rounded border />
 ```
 
-<Htwo label="Dot indicator" />
+<Htwo label="Placeholder initials" />
 
-<p>Use a dot element relative to the avatar component as an indicator for the user (eg. online or offline status).</p>
+This example can be used to show the initials of the user’s first and last name as a placeholder when no profile picture is available.
 
 <ExampleDiv>
-<div class="flex space-x-4 flex-wrap">
+  <Avatar>JL</Avatar>
+</ExampleDiv>
+
+```html
+<Avatar>JL</Avatar>
+```
+
+<Htwo label="Avatar tooltip" />
+
+Use this example to show a tooltip when hovering over the avatar.
+
+<ExampleDiv class="flex space-x-4">
+<Tooltip content="Jese Leos">
+  <Avatar rounded src="/images/profile-picture-1.webp"/>
+</Tooltip>
+<Tooltip content="Jese Leos">
+  <Avatar rounded src="/images/profile-picture-2.webp"/>
+</Tooltip>
+<Tooltip content="Bonnie Green">
+  <Avatar rounded src="/images/profile-picture-3.webp"/>
+</Tooltip>
+</ExampleDiv>
+
+```html
+<Tooltip content="Jese Leos">
+  <Avatar rounded src="/images/profile-picture-1.webp"/>
+</Tooltip>
+<Tooltip content="Jese Leos">
+  <Avatar rounded src="/images/profile-picture-2.webp"/>
+</Tooltip>
+<Tooltip content="Bonnie Green">
+  <Avatar rounded src="/images/profile-picture-3.webp"/>
+</Tooltip>
+```
+
+<Htwo label="Dot indicator" />
+
+Use a dot element relative to the avatar component as an indicator for the user (eg. online or offline status).
+
+<ExampleDiv class="flex space-x-4 flex-wrap">
   <Avatar src="/images/profile-picture-3.webp" dot={{top:true, color:"bg-red-400"}}/>
   <Avatar src="/images/profile-picture-3.webp" dot={{top:true, color:"bg-red-400"}} rounded />
   <Avatar src="/images/profile-picture-3.webp" dot={{color:"bg-green-400"}}/>
@@ -116,7 +174,6 @@ layout: avatarLayout
   <Avatar src="/images/profile-picture-3.webp" dotColor="bg-green-400" size="xl" dotTop/>
   <Avatar src="/images/profile-picture-3.webp" dotColor="bg-green-400" rounded dotTop size="xl"/>
   -->
-</div>
 </ExampleDiv>
 
 ```html
@@ -130,7 +187,7 @@ layout: avatarLayout
 
 <Htwo label="Stacked" />
 
-<p>Use this example if you want to stack a group of users by overlapping the avatar components.</p>
+Use this example if you want to stack a group of users by overlapping the avatar components.
 
 <ExampleDiv>
 <div class="flex mb-5">
@@ -143,7 +200,7 @@ layout: avatarLayout
 <Avatar src="/images/profile-picture-1.webp" stacked />
 <Avatar src="/images/profile-picture-2.webp" stacked />
 <Avatar src="/images/profile-picture-3.webp" stacked />
-<Avatar stacked href="/">+99</Avatar>
+<Avatar stacked href="/" class="bg-gray-700 text-white hover:bg-gray-600">+99</Avatar>
 </div>
 </ExampleDiv>
 
@@ -158,13 +215,13 @@ layout: avatarLayout
 	<Avatar src="/images/profile-picture-1.webp" stacked />
 	<Avatar src="/images/profile-picture-2.webp" stacked />
 	<Avatar src="/images/profile-picture-3.webp" stacked />
-	<Avatar stacked href="/">+99</Avatar>
+	<Avatar stacked href="/" class="bg-gray-700 dark:bg-gray-700 text-white hover:bg-gray-600">+99</Avatar>
 </div>
 ```
 
 <Htwo label="Avatar text" />
 
-<p>This example can be used if you want to show additional information in the form of text elements such as the user’s name and join date.</p>
+This example can be used if you want to show additional information in the form of text elements such as the user’s name and join date.
 
 <ExampleDiv>
 <div class="flex items-center space-x-4">
@@ -222,7 +279,7 @@ Use this example if you want to show a dropdown menu when clicking on the avatar
 
 <Htwo label="Sizes" />
 
-<p>Select size from  xs | sm | md | lg | xl.</p>
+Select size from  xs | sm | md | lg | xl.
 
 <ExampleDiv>
 <div class=" flex flex-wrap justify-center space-x-4">
@@ -244,8 +301,8 @@ Use this example if you want to show a dropdown menu when clicking on the avatar
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types 
+ page</a> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
 <TableDefaultRow {items} rowState='hover' />

@@ -5,9 +5,11 @@ layout: iconLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros'
   import {
     Adjustments,
@@ -36,19 +38,20 @@ layout: iconLayout
   <BreadcrumbItem>Icons</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Icons</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Icons</h1>
 
-<p>Flowbite-svelte uses <a href="https://github.com/shinokada/svelte-heros" target="_blank">svelte-heros</a>.
-You can find all the icon names from the <a href="https://github.com/shinokada/svelte-heros/blob/main/icon-list.md" class="text-red-700 underline">repo</a>.</p>
+Flowbite-svelte uses <a href="https://github.com/shinokada/svelte-heros" target="_blank">svelte-heros</a>.
 
-<p class=" dark:text-white py-4">Svelte-heros icons allow you to change icon size and color by using HEX CSS code or TailwindCSS/Flowbite.</p>
+You can find all the icon names from the <a href="https://github.com/shinokada/svelte-heros/blob/main/icon-list.md" class="text-red-700 underline">repo</a>.
 
-<p class=" dark:text-white py-4">You can select any icons from <a href="https://svelte-svg-icons.vercel.app/" class="text-red-700 underline" target="_blank">Svelte Icon Sets</a>.</p>
+Svelte-heros icons allow you to change icon size and color by using HEX CSS code or TailwindCSS/Flowbite.
 
+You can select any icons from <a href="https://svelte-svg-icons.vercel.app/" class="text-red-700 underline" target="_blank">Svelte Icon Sets</a>.
 <Htwo label="Color and size" />
 
-<p class=" dark:text-white">If you want to change the color with Tailwind CSS, add it to class prop. To change the icon size use the `size` prop or use class like, `class="h-24 w-24"`.</p>
-<p>Use `dark:` to specify the dark mode color for icons.</p>
+If you want to change the color with Tailwind CSS, add it to class prop. To change the icon size use the `size` prop or use class like, `class="h-24 w-24"`.
+
+Use `dark:` to specify the dark mode color for icons.
 
 <ExampleDiv class="flex justify-center">
 <Adjustments size="30" class="text-blue-700 dark:text-red-700" />
@@ -89,7 +92,7 @@ import {
 />
 ```
 
-<p>You can change icon colors with HEX color code by using the `color` prop.</p>
+You can change icon colors with HEX color code by using the `color` prop.
 
 <ExampleDiv class="flex justify-center">
 <Adjustments size="30"  color="#ff0000" />
@@ -105,7 +108,7 @@ import {
 
 <Htwo label="Aria label" />
 
-<p>Use the `aria-label` prop to change `aria-label` attribute. All icons have aria-label. For example, `Adjustments` has `aria-label="adjustments"`.</p>
+Use the `aria-label` prop to change `aria-label` attribute. All icons have aria-label. For example, `Adjustments` has `aria-label="adjustments"`.
 
 ```html
 <Adjustments aria-label="adjustments icon" />>
@@ -113,7 +116,7 @@ import {
 
 <Htwo label="Passing down other attributes" />
 
-<p>You can pass other attibutes as well.</p>
+You can pass other attibutes as well.
 
 ```html
 <Adjustments tabindex="0" />
@@ -121,7 +124,7 @@ import {
 
 <Htwo label="Import all" />
 
-<p>Use import * as Icon from 'svelte-heros`.</p>
+Use import * as Icon from `svelte-heros`.
 
 ```html
 <script>

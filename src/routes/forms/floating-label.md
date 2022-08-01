@@ -5,10 +5,12 @@ layout: formLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { onMount } from 'svelte';
-  import { FloatingLabelInput, Helper, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { FloatingLabelInput, Helper, Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros'
   import componentProps from '../props/FloatingLabelInput.json'
    import componentProps2 from '../props/Helper.json'
@@ -26,11 +28,29 @@ layout: formLayout
   <BreadcrumbItem>Floating label</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Floating label</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Floating label</h1>
 
-<Htwo label="Examples" />
+<CompoDescription>Use the floating label style for the input field elements to replicate the Material UI design system from Google and choose from multiple styles and sizes</CompoDescription>
 
-<p>Get started with the following three styles for the floating label component and use the label tag as a visual placeholder using the peer-placeholder-shown and peer-focus utility classes from Tailwind CSS.</p>
+<ExampleDiv>
+<GitHubSource href="forms/FloatingLabelInput.svelte">FloatingLabel</GitHubSource>
+</ExampleDiv>
+
+The floating label style was first pioneered by Google in its infamous Material UI design system and it’s basically a label tag which floats just above the input field when it is being focused or already has content inside.
+
+On this page you will find a three different input field styles including a standard, outlined, and filled style including validation styles and sizes coded with Tailwind CSS and supported for dark mode.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+	import { FloatingLabelInput, Helper } from 'flowbite-svelte';
+</script>
+```
+
+<Htwo label="Floating label examples" />
+
+Get started with the following three styles for the floating label component and use the label tag as a visual placeholder using the peer-placeholder-shown and peer-focus utility classes from Tailwind CSS.
 
 <ExampleDiv>
 <div id="exampleWrapper" class="grid gap-6 items-end w-full md:grid-cols-3">
@@ -52,7 +72,7 @@ layout: formLayout
 
 <Htwo label="Disabled state" />
 
-<p>Apply the disabled attribute to the input fields to disallow the user from changing the content.</p>
+Apply the disabled attribute to the input fields to disallow the user from changing the content.
 
 <ExampleDiv>
 <div id="exampleWrapper" class="grid gap-6 items-end w-full md:grid-cols-3">
@@ -72,7 +92,7 @@ layout: formLayout
 
 <Htwo label="Validation" />
 
-<p>Use the following examples of input validation for the success and error messages by applying the validation text below the input field and using the green or red color classes from Tailwind CSS.</p>
+Use the following examples of input validation for the success and error messages by applying the validation text below the input field and using the green or red color classes from Tailwind CSS.
 
 <ExampleDiv>
 <!-- Success messages -->
@@ -142,7 +162,7 @@ layout: formLayout
 
 <Htwo label="Sizes" />
 
-<p>Use the small and default sizes of the floating label input fields from the following example.</p>
+Use the small and default sizes of the floating label input fields from the following example.
 
 <ExampleDiv>
 <div class="grid gap-6 items-end mb-6 md:grid-cols-3">
@@ -172,7 +192,7 @@ layout: formLayout
 
 <Htwo label="Helper text" />
 
-<p>Add a helper text in addition to the label if you want to show more information below the input field.</p>
+Add a helper text in addition to the label if you want to show more information below the input field.
 
 <ExampleDiv>
 <FloatingLabelInput style="filled" id="floating_helper" aria-describedby="floating_helper_text" name="floating_helper" type="text" label="Floating helper"/>
@@ -186,8 +206,8 @@ layout: formLayout
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types 
+ page</a> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />

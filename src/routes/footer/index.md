@@ -5,9 +5,11 @@ layout: footerLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup, Breadcrumb, BreadcrumbItem } from '$lib'
   import Facebook from '../utils/icons/Facebook.svelte'
   import Github from '../utils/icons/Github.svelte'
   import Twitter from '../utils/icons/Twitter.svelte'
@@ -38,7 +40,28 @@ layout: footerLayout
   <BreadcrumbItem>Footer</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Footer</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Footer</h1>
+
+<CompoDescription>Use the footer section at the bottom of every page to show valuable information to your users, such as sitemap links, a copyright notice, and a logo</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="footer/Footer.svelte">Footer</GitHubSource>
+<GitHubSource href="footer/FooterBrand.svelte">FooterBrand</GitHubSource>
+<GitHubSource href="footer/FooterCopyright.svelte">FooterCopyright</GitHubSource>
+<GitHubSource href="footer/FooterIcon.svelte">FooterIcon</GitHubSource>
+<GitHubSource href="footer/FooterLink.svelte">FooterLink</GitHubSource>
+<GitHubSource href="footer/FooterLinkGroup.svelte">FooterLinkGroup</GitHubSource>
+</ExampleDiv>
+
+The footer is one of the most underestimated sections of a website being located at the very bottom of every page, however, it can be used as a way to try to convince users to stay on your website if they haven’t found the information they’ve been looking for inside the main content area.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup } from "flowbite-svelte"
+</script>
+```
 
 <Htwo label="Default footer" />
 
@@ -144,7 +167,7 @@ layout: footerLayout
       <div>
         <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Follow us</h2>
         <FooterLinkGroup>
-          <FooterLink liClass="mb-4" href="/">Gihub</FooterLink>
+          <FooterLink liClass="mb-4" href="/">GitHub</FooterLink>
           <FooterLink liClass="mb-4" href="/">Discord</FooterLink>
         </FooterLinkGroup>
       </div>
@@ -192,7 +215,7 @@ layout: footerLayout
       <div>
         <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Follow us</h2>
         <FooterLinkGroup>
-          <FooterLink liClass="mb-4" href="/">Gihub</FooterLink>
+          <FooterLink liClass="mb-4" href="/">GitHub</FooterLink>
           <FooterLink liClass="mb-4" href="/">Discord</FooterLink>
         </FooterLinkGroup>
       </div>

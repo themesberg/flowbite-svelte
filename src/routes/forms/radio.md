@@ -5,10 +5,12 @@ layout: formLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Radio, Breadcrumb, BreadcrumbItem, Dropdown, DropdownItem, Label, Helper } from "$lib/index"
-  import { Table, TableBody, TableBodyRow, TableBodyCell, TableHead, TableHeadCell } from "$lib/index"
+  import { Radio, Breadcrumb, BreadcrumbItem, Dropdown, DropdownItem, Label, Helper } from '$lib'
+  import { Table, TableBody, TableBodyRow, TableBodyCell, TableHead, TableHeadCell } from '$lib'
   import { Home } from 'svelte-heros'
   import componentProps from '../props/Radio.json'
   import componentProps2 from '../props/Label.json'
@@ -31,11 +33,27 @@ layout: formLayout
   <BreadcrumbItem>Radio</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Radio</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Radio</h1>
+
+<CompoDescription>Get started with the radio component to let the user choose a single option from multiple options in the form of a circle based on multiple styles and colors</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="forms/Radio.svelte">Radio</GitHubSource>
+</ExampleDiv>
 
 The radio component can be used to allow the user to choose a single option from one or more available options coded with the utility classes from Tailwind CSS and available in multiple styles, variants, and colors and support dark mode.
 
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { Radio } from 'flowbite-svelte'
+</script>
+```
+
 <Htwo label="Radio examples" />
+
+Use the default example of a radio component with the checked and unchecked state.
 
 <ExampleDiv class="flex flex-col gap-4">
 <Radio name="example">Default radio</Radio>
@@ -55,7 +73,7 @@ The radio component can be used to allow the user to choose a single option from
 
 Apply the `disabled` attribute to the radio component to disallow the selection for the user.
 
-<p>This example can be used for the disabled state of the radio component by applying the disabled attribute to the input element.</p>
+This example can be used for the disabled state of the radio component by applying the disabled attribute to the input element.
 
 <ExampleDiv class="flex flex-col gap-4">
 <Radio name="disabled-state" disabled>Disabled radio</Radio>
@@ -66,7 +84,6 @@ Apply the `disabled` attribute to the radio component to disallow the selection 
 <Radio name="disabled-state" disabled>Disabled radio</Radio>
 <Radio name="disabled-state" disabled checked>Disabled checked</Radio>
 ```
-
 
 <Htwo label="Alternative syntax" />
 
@@ -120,7 +137,7 @@ If you need separate control over the label and the radio you can use the verbos
 
 <Htwo label="Radio with a link" />
 
-<p>Use this example if you want to add an anchor link inside the label of the radio component.</p>
+Use this example if you want to add an anchor link inside the label of the radio component.
 
 <ExampleDiv>
 <Radio name="with-link">I agree with the <a href="/" class="text-blue-600 dark:text-blue-500 hover:underline ml-1">terms and conditions</a>.</Radio>
@@ -134,7 +151,8 @@ If you need separate control over the label and the radio you can use the verbos
 ```
 
 <Htwo label="Helper text" />
-<p>Get started with this example if you want to add a secondary helper text for the radio component.</p>
+
+Get started with this example if you want to add a secondary helper text for the radio component.
 
 <ExampleDiv>
   <Radio aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Radio>
@@ -319,13 +337,13 @@ You can use the property `inline` as the alternative.
   let colors;
 </script>
 <p class="mb-4 font-semibold text-gray-900 dark:text-white {colors}">Select color</p>
-<div class="flex">
-	<Radio bind:group={colors} color="red">Red</Radio>
-	<Radio bind:group={colors} color="green">Green</Radio>
-	<Radio bind:group={colors} color="purple">Purple</Radio>
-	<Radio bind:group={colors} color="teal">Teal</Radio>
-	<Radio bind:group={colors} color="yellow">Yellow</Radio>
-	<Radio bind:group={colors} color="orange">Orange</Radio>
+<div class="flex gap-4">
+  <Radio bind:group={colors} color='red' value='text-red-500' >Red</Radio>
+  <Radio bind:group={colors} color='green' value='text-green-500' >Green</Radio>
+  <Radio bind:group={colors} color='purple' value='text-purple-500' >Purple</Radio>
+  <Radio bind:group={colors} color='teal' value='text-teal-500' >Teal</Radio>
+  <Radio bind:group={colors} color='yellow' value='text-yellow-500' >Yellow</Radio>
+  <Radio bind:group={colors} color='orange' value='text-orange-500' >Orange</Radio>
 </div>
 ```
 

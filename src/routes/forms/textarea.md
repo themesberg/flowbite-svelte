@@ -5,10 +5,12 @@ layout: formLayout
 <script>
 import Htwo from '../utils/Htwo.svelte'
 import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
 import TableProp from '../utils/TableProp.svelte'
 import TableDefaultRow from '../utils/TableDefaultRow.svelte'
 import { onMount } from 'svelte';
-import { Textarea, Breadcrumb, BreadcrumbItem } from "$lib/index"
+import { Textarea, Breadcrumb, BreadcrumbItem } from '$lib'
 import { Home } from 'svelte-heros'
 import componentProps from '../props/Textarea.json'
 let items = componentProps.props
@@ -32,10 +34,25 @@ let textareaprops = {
   <BreadcrumbItem>Textarea</BreadcrumbItem>
 </Breadcrumb>
 
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Textarea</h1>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Textarea</h1>
+<CompoDescription>Use the textarea component as a multi-line text field input and use it inside form elements available in multiple sizes, styles, and variants</CompoDescription>
 
-<Htwo label="Examples" />
+<ExampleDiv>
+<GitHubSource href="forms/Textarea.svelte">Textarea</GitHubSource>
+</ExampleDiv>
+
+The textarea component is a multi-line text field input that can be used to receive longer chuncks of text from the user in the form of a comment box, description field, and more.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { Textarea } from 'flowbite-svelte'
+</script>
+```
+
+<Htwo label="Textarea examples" />
 
 <ExampleDiv>
 <Textarea {...textareaprops} />
@@ -43,7 +60,7 @@ let textareaprops = {
 
 ```html
 <script>
-import { Textarea } from 'flowbite-svelte'
+...
 let textareaprops = {
   id: 'message',
   name: 'message',
@@ -58,8 +75,7 @@ let textareaprops = {
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
 
 <TableProp header={propHeader} {divClass} {theadClass}>

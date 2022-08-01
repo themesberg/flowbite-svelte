@@ -5,10 +5,13 @@ layout: badgeLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Badge, Card, Breadcrumb, BreadcrumbItem } from '$lib/index'
-  import { Home, Clock, Check } from 'svelte-heros';
+  import { Badge, Button, Breadcrumb, BreadcrumbItem } from '$lib'
+  import Dot from '$lib/avatar/Dot.svelte';
+  import { Home, Clock, Check, Mail } from 'svelte-heros';
   import componentProps from '../props/Badge.json'
   // Props table
   let items = componentProps.props
@@ -23,19 +26,33 @@ layout: badgeLayout
   <BreadcrumbItem>Badges</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Badges</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Badges</h1>
+
+<CompoDescription>Use Tailwind CSS badges as elements to show counts or labels separately or inside other components</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="badges/Badge.svelte">Badge</GitHubSource>
+</ExampleDiv>
+
+The badge component can be used to complement other elements such as buttons or text elements as a label or to show the count of a given data, such as the number of comments for an article or how much time has passed by since a comment has been made.
+
+Alternatively, badges can also be used as standalone elements that link to a certain page.
+
+<Htwo label="Setup" />
+
+Import a button component in the script tag.
 
 ```html
 <script>
-  import { Badge } from 'flowbite-svelte'
-  import { Clock, Check } from 'svelte-heros'
+	import { Badge } from 'flowbite-svelte';
 </script>
 ```
 
 <Htwo label="Default badge" />
-<p>Use the following badge elements to indicate counts or labels inside or outside components.</p>
 
-<ExampleDiv class="justify-start gap-2">
+Use the following badge elements to indicate counts or labels inside or outside components.
+
+<ExampleDiv class="flex gap-2 text-white">
 <Badge>Default</Badge>
 <Badge color="dark">Dark</Badge>
 <Badge color="red">Red</Badge>
@@ -58,11 +75,11 @@ layout: badgeLayout
 <Badge color="pink">Pink</Badge>
 ```
 
-<Htwo label="Larger badges" />
+<Htwo label="Large badges" />
 
-<p>Use the <code>large={true}</code> to create a large variant of the badges.</p>
+Use the `large={true}` to create a large variant of the badges.
 
-<ExampleDiv class="justify-start gap-2">
+<ExampleDiv class="flex gap-2">
 <Badge large={true}>Default</Badge>
 <Badge large={true} color="dark">Dark</Badge>
 <Badge large={true} color="red">Red</Badge>
@@ -85,24 +102,24 @@ layout: badgeLayout
 ```
 
 <Htwo label="Badges as links" />
-<p>You can also use badges as anchor elements to link to another page.</p>
+You can also use badges as anchor elements to link to another page.
 
-<ExampleDiv class="justify-start gap-2">
-<Badge href="/" >Default</Badge>
-<Badge href="/" large={true}>Default</Badge>
+<ExampleDiv> <!-- Don't use flex. You won't see the size difference -->
+<Badge href="/" class="mr-2">Badge link</Badge>
+<Badge href="/" large={true}>Badge link</Badge>
 </ExampleDiv>
 
 
 ```html
-<Badge href="/">Default</Badge>
-<Badge href="/" large={true}>Default</Badge>
+<Badge href="/">Badge link</Badge>
+<Badge href="/" large={true}>Badge link</Badge>
 ```
 
 <Htwo label="Badges with icon" />
-<p>You can also use SVG icons inside the badge elements.</p>
+You can also use SVG icons inside the badge elements.
 
-<ExampleDiv class="justify-start gap-2">
-<Badge color="dark" ><Clock class="mr-1 w-3 h-3"/>3 days ago</Badge>
+<ExampleDiv> <!-- Don't use flex. You won't see the size difference -->
+<Badge color="dark" class="mr-2"><Clock class="mr-1 w-3 h-3"/>3 days ago</Badge>
 <Badge large={true}><Clock class="mr-1 w-4 h-4"/>2 minutes ago</Badge>
 </ExampleDiv>
 
@@ -111,11 +128,59 @@ layout: badgeLayout
 <Badge large={true}><Clock class="mr-1 w-4 h-4"/>2 minutes ago</Badge>
 ```
 
+<Htwo label="Notification badge" />
+
+You can also use the badge elements as index. Remember to add the `relative` class to parent element.
+
+<ExampleDiv class="flex gap-4">
+<Button class="relative" size='sm'>
+  <Mail class="w-7 h-7" />
+  <span class="sr-only">Notifications</span>
+  <Badge rounded index color="!red">20</Badge>
+</Button>
+
+<Button class="relative" size='sm'>
+  <Mail class="w-7 h-7" />
+  <span class="sr-only">Notifications</span>
+  <Badge large rounded index color="!green">20</Badge>
+</Button>
+</ExampleDiv>
+
+```html
+<Button class="relative" size='sm'>
+  <Mail class="w-7 h-7" />
+  <span class="sr-only">Notifications</span>
+  <Badge rounded index color="!red">20</Badge>
+</Button>
+
+<Button class="relative" size='sm'>
+  <Mail class="w-7 h-7" />
+  <span class="sr-only">Notifications</span>
+  <Badge large rounded index color="!green">20</Badge>
+</Button>
+```
+
+<Htwo label="Button with badge" />
+
+Use this example to add a badge inside a button component for a count indicator.
+
+<ExampleDiv>
+  <Button>
+    Messages<Badge rounded class="ml-2 w-5 h-5">2</Badge>
+  </Button>
+</ExampleDiv>
+
+```html
+<Button>
+  Messages<Badge rounded class="ml-2 w-5 h-5">2</Badge>
+</Button>
+```
+
 <Htwo label="Badge with icon only" />
 
-<p>Alternatively you can also use badges which indicate only a SVG icon.</p>
+Alternatively you can also use badges which indicate only a SVG icon.
 
-<ExampleDiv class="justify-start gap-2">
+<ExampleDiv> <!-- Don't use flex. You won't see the size difference -->
 <Badge rounded ><Check class="w-3 h-3"/></Badge>
 <Badge rounded color="dark" ><Check class="w-3 h-3"/></Badge>
 <Badge rounded large ><Check class="w-4 h-4"/></Badge>
@@ -129,11 +194,24 @@ layout: badgeLayout
 <Badge rounded large color="dark" ><Check class="w-4 h-4"/></Badge>
 ```
 
+<Htwo label="Dismissable badges" />
+
+Use the `dimissable` attribute to dismiss the current badge.
+
+<ExampleDiv> <!-- Don't use flex. You won't see the size difference -->
+<Badge dismissable >Dismissable</Badge>
+<Badge dismissable large color="red">Dismissable</Badge>
+</ExampleDiv>
+
+```html
+<Badge dismissable >Dismissable</Badge>
+<Badge dismissable large color="red">Dismissable</Badge>
+```
+
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
-
+The component has the following props, type, and default values. See <a href="/pages/types">types 
+ page</a> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />

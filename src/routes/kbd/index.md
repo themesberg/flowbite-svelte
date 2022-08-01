@@ -5,9 +5,11 @@ layout: kbdLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Kbd, Table, TableHead, TableHeadCell, TableBody, TableBodyRow, TableBodyCell, ArrowKeyDown, ArrowKeyLeft, ArrowKeyRight, ArrowKeyUp, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { Kbd, Table, TableHead, TableHeadCell, TableBody, TableBodyRow, TableBodyCell, ArrowKeyDown, ArrowKeyLeft, ArrowKeyRight, ArrowKeyUp, Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros'
   import componentProps from '../props/Kbd.json'
   import componentProps2 from '../props/ArrowKeyDown.json'
@@ -31,9 +33,27 @@ layout: kbdLayout
   <BreadcrumbItem>Kbd</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Tailwind CSS KBD (Keyboard)</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Tailwind CSS KBD (Keyboard)</h1>
+
+<CompoDescription>Use the KBD component as an inline element to denote textual user input from the keyboard inside paragraphs, tables, and other components</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="kbd/Kbd.svelte">Kbd</GitHubSource>
+</ExampleDiv>
+
+The KBD (Keyboard) component can be used to indicate a textual user input from the keyboard inside other elements such as in text, tables, cards, and more.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { Kbd } from 'flowbite-svelte'
+</script>
+```
 
 <Htwo label="Default KBD" />
+
+Here’s a list of KBD components that you can use inside any other element.
 
 <ExampleDiv>
 <Kbd class='px-2 py-1.5'>Shift</Kbd>
@@ -57,6 +77,8 @@ layout: kbdLayout
 
 <Htwo label="KBD inside text" />
 
+Use this example by nesting an inline KBD component inside a paragraph.
+
 <ExampleDiv>
 <p class="text-gray-500 dark:text-gray-400">
 Please press <Kbd class="px-2 py-1.5">Ctrl</Kbd> + <Kbd class="px-2 py-1.5">Shift</Kbd> + <Kbd class="px-2 py-1.5">R</Kbd> to re-render an MDN page.
@@ -70,6 +92,8 @@ Please press <Kbd class="px-2 py-1.5">Ctrl</Kbd> + <Kbd class="px-2 py-1.5">Shif
 ```
 
 <Htwo label="KBD inside table" />
+
+The KBD component can also be used inside table components to denote what type of key can be pressed for certain descriptions.
 
 <ExampleDiv>
 <Table>
@@ -161,6 +185,8 @@ Please press <Kbd class="px-2 py-1.5">Ctrl</Kbd> + <Kbd class="px-2 py-1.5">Shif
 
 <Htwo label='Arrow keys' />
 
+Use this example to show arrow keys inside the KBD styled element.
+
 <ExampleDiv>
 <Kbd class="inline-flex items-center mr-1 px-2 py-1.5" >
   <ArrowKeyUp />
@@ -200,6 +226,8 @@ Please press <Kbd class="px-2 py-1.5">Ctrl</Kbd> + <Kbd class="px-2 py-1.5">Shif
 ```
 
 <Htwo label='Letter keys' />
+
+Use this example if you need to show a key from the latin alphabet
 
 <ExampleDiv>
 <Kbd class="px-2 py-1.5">Q</Kbd>
@@ -261,6 +289,8 @@ Please press <Kbd class="px-2 py-1.5">Ctrl</Kbd> + <Kbd class="px-2 py-1.5">Shif
 
 <Htwo label='Number keys' />
 
+Use this example to show a key inside a KBD component from the english numeral system.
+
 <ExampleDiv>
 <Kbd class="px-2 py-1.5">1</Kbd>
 <Kbd class="px-2 py-1.5">2</Kbd>
@@ -288,6 +318,8 @@ Please press <Kbd class="px-2 py-1.5">Ctrl</Kbd> + <Kbd class="px-2 py-1.5">Shif
 ```
 
 <Htwo label='Function keys' />
+
+This example can be used to denote function keys inside the KBD component.
 
 <ExampleDiv>
 <Kbd class="px-2 py-1.5">F1</Kbd>

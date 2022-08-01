@@ -5,14 +5,19 @@ layout: buttonLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Button, Spinner, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Button, Spinner, Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros';
   import { ArrowRight, Bell, ShoppingCart, ChevronRight } from "svelte-heros";
   import BrandFacebook from '../utils/icons/Facebook.svelte'
   import { goto }from '$app/navigation';
   import componentProps from '../props/Button.json'
+  let slotHeader = ['Name', 'Description']
+
+  let slotItems = [['default', 'For a button label.']]
 
   const btn1 = ()=>{
     alert('You clicked btn1.')
@@ -44,44 +49,31 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Buttons</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Button</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Button</h1>
 
-<p>Import a button component in the script tag.</p>
+<CompoDescription>Use the button component inside forms, as links, social login, payment options with support for multiple styles, colors, sizes, gradients, and shadows</CompoDescription>
 
-```html
-<script>
-	import { Button } from 'flowbite-svelte';
-</script>
-```
-
-<Htwo label="Handlers" />
-
-<p>You can use on:click or any standard on:* to listen to the event.</p>
-
-<ExampleDiv class="flex flex-wrap items-center gap-2">
-<Button on:click={btn1}>Button 1</Button>
-<Button on:click={btn2}>Button 2</Button>
+<ExampleDiv>
+<GitHubSource href="buttons/Button.svelte">Button</GitHubSource>
 </ExampleDiv>
 
+The button component is probably the most widely used element in any user interface or website as it can be used to launch an action but also to link to other pages.
+
+Flowbite-Svelte provides a large variety of styles and sizes for the button component including outlined buttons, multiple colors, sizes, buttons with icons, and more.
+
+<Htwo label="Setup" />
+
+Import a button component in the script tag.
+
 ```html
 <script>
 	import { Button } from 'flowbite-svelte';
-	import { goto } from '$app/navigation';
-	const btn1 = () => {
-		alert('You clicked btn1.');
-	};
-	const btn2 = () => {
-		alert('You clicked btn2.');
-	};
 </script>
-
-<Button on:click="{btn1}">Button 1</Button>
-<Button on:click="{btn2}">Button 2</Button>
 ```
 
 <Htwo label="Default button" />
 
-<p>Use these default button styles with multiple colors to indicate an action or link within your website. The default `type` is set to `button`. You can chage it by using the `type` prop.</p>
+Use these default button styles with multiple colors to indicate an action or link within your website. The default `type` is set to `button`. You can chage it by using the `type` prop.
 
 <ExampleDiv class="flex flex-wrap gap-2">
 <Button>Default</Button>
@@ -107,6 +99,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Button pills" />
 
+The button pills can be used as an alternative style by using fully rounded edges.
+
 <ExampleDiv class="flex flex-wrap gap-2">
   <Button pill={true}>Default</Button>
   <Button color="alternative" pill={true}>Alternative</Button>
@@ -131,7 +125,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Gradient monochrome" />
 
-<p>These beautifully colored buttons built with the gradient color stops utility classes from Tailwind CSS can be used as a creative alternative to the default button styles.</p>
+These beautifully colored buttons built with the gradient color stops utility classes from Tailwind CSS can be used as a creative alternative to the default button styles.
 
 <ExampleDiv class="flex flex-wrap gap-2">
   <Button gradient color="blue">Blue</Button>
@@ -157,7 +151,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Gradient duotone" />
 
-<p>These buttons use a style that includes two contrasted colors creating an impressive mesh gradient effect.</p>
+These buttons use a style that includes two contrasted colors creating an impressive mesh gradient effect.
 
 <ExampleDiv class="flex flex-wrap items-center gap-2">
   <Button gradient color="purpleToBlue">Purple to Blue</Button>
@@ -181,7 +175,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Gradient outline" />
 
-<p>This is a special button style that incorporates a gradient color for the outline that can be used as a secondary style to the fully colored gradient buttons.</p>
+This is a special button style that incorporates a gradient color for the outline that can be used as a secondary style to the fully colored gradient buttons.
 
 <ExampleDiv class="flex flex-wrap items-center gap-2">
   <Button outline gradient color="purpleToBlue">Purple to Blue</Button>
@@ -205,7 +199,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Colored shadows" />
 
-<p>These beautiful button elements with color shadows can be used since the release of Tailwind v3.0.</p>
+These beautiful button elements with color shadows can be used since the release of Tailwind v3.0.
 
 <ExampleDiv class="flex flex-wrap items-center gap-2">
   <Button shadow="blue" gradient color="blue">Blue</Button>
@@ -231,7 +225,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Outline buttons" />
 
-<p>Use the following button styles to show the colors only for the border of the element.</p>
+Use the following button styles to show the colors only for the border of the element.
 
 <ExampleDiv>
 <div class="flex flex-wrap gap-2">
@@ -257,6 +251,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Button sizes" />
 
+Use these examples if you want to use smaller or larger buttons.
+
 <ExampleDiv class="flex flex-wrap items-center gap-2">
   <Button size="xs">Extra small</Button>
   <Button size="sm">Small</Button>
@@ -275,7 +271,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Buttons with icon" />
 
-<p>Use the following examples to add a SVG icon inside the button either on the left or right side.</p>
+Use the following examples to add a SVG icon inside the button either on the left or right side.
 
 <ExampleDiv class="flex flex-wrap items-center gap-2">
 <Button>
@@ -293,7 +289,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Button with label" />
 
-<p>This example can be used to show a notification count or helper text inside a button using the badge element.</p>
+This example can be used to show a notification count or helper text inside a button using the badge element.
 
 <ExampleDiv class="flex flex-wrap items-center gap-2">
 <Button>
@@ -318,7 +314,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Icon buttons" />
 
-<p>Sometimes you need a button to indicate an action using only an icon.</p>
+Sometimes you need a button to indicate an action using only an icon.
 
 <ExampleDiv>
   <div class="flex flex-wrap items-center gap-2">
@@ -344,6 +340,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Loader" />
 
+Use the spinner components from Flowbite-Svelte to indicate a loader animation inside buttons.
+
 <ExampleDiv>
 <div class="flex flex-wrap items-center gap-2">
 <Button>
@@ -359,7 +357,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Disabled" />
 
-<p>You can add any additional button attributes. The following example shows adding the `disabled` attribute.</p>
+You can add any additional button attributes. The following example shows adding the `disabled` attribute.
 
 <ExampleDiv>
 <Button disabled >Disabled</Button>
@@ -369,11 +367,42 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <Button disabled>Button disabled</Button>
 ```
 
+<Htwo label="Events" />
+
+You can use on:click or any standard on:* to listen to the event.
+
+<ExampleDiv class="flex flex-wrap items-center gap-2">
+<Button on:click={btn1}>Button 1</Button>
+<Button on:click={btn2}>Button 2</Button>
+</ExampleDiv>
+
+```html
+<script>
+	import { Button } from 'flowbite-svelte';
+	import { goto } from '$app/navigation';
+	const btn1 = () => {
+		alert('You clicked btn1.');
+	};
+	const btn2 = () => {
+		alert('You clicked btn2.');
+	};
+</script>
+
+<Button on:click="{btn1}">Button 1</Button>
+<Button on:click="{btn2}">Button 2</Button>
+```
+
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types 
+ page</a> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
 <TableDefaultRow {items} rowState='hover' />
+</TableProp>
+
+<Htwo label="Slots" />
+
+<TableProp header={slotHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={slotItems} rowState='hover' />
 </TableProp>

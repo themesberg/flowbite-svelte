@@ -46,7 +46,7 @@
 	</a>
 	{#if stars}
 		<Rating rating={stars} divClass={spanClass}>
-			<Badge slot="text" color={btnColor}>5</Badge>
+			<Badge slot="text" color={btnColor}>{stars}</Badge>
 		</Rating>
 	{/if}
 	<slot />

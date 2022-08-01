@@ -5,11 +5,12 @@ layout: accordionLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import {ArrowCircleUp, ArrowCircleDown, Archive, Beaker} from 'svelte-heros'
-  import { AccordionItem, AccordionFlush,Breadcrumb, BreadcrumbItem } from '$lib/index'
-  import { Home } from 'svelte-heros'
+  import { Home, ArrowCircleUp, ArrowCircleDown, Archive, Beaker } from 'svelte-heros'
+  import { AccordionItem, AccordionFlush,Breadcrumb, BreadcrumbItem } from '$lib'
   import accordionProps from '../props/AccordionItem.json'
   import accordionProps2 from '../props/AccordionFlush.json'
    // Props table
@@ -17,6 +18,9 @@ layout: accordionLayout
   let items2 = accordionProps2.props
 
 	let propHeader = ['Name', 'Type', 'Default']
+  let slotHeader = ['Name', 'Description']
+
+  let slotItems = [['header', 'Table header slot'],['body','Table body slot']]
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
 let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -32,17 +36,32 @@ let icons={
   <BreadcrumbItem>Accordions</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Accordion</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Accordion</h1>
 
-<p>Use the accordion component to show hidden information based on the collapse and expand state of the child elements using data attribute options</p>
+<CompoDescription>Use the accordion component to show hidden information based on the collapse and expand state of the child elements using data attribute options</CompoDescription>
 
-<p>The accordion component is a collection of vertically collapsing header and body elements that can be used to show and hide information based on the Tailwind CSS utility classes and JavaScript from Flowbite.</p>
+<ExampleDiv>
+<GitHubSource href="accordion/AccordionItem.svelte">AccordionItem</GitHubSource>
+<GitHubSource href="accordion/AccordionFlush.svelte">AccordionFlush</GitHubSource>
+</ExampleDiv>
 
-<p>A popular use case would be the “Frequently Asked Questions” section of a website or page when you can show questions and answers for each child element.</p>
+The accordion component is a collection of vertically collapsing header and body elements that can be used to show and hide information based on the Tailwind CSS utility classes and JavaScript from Flowbite.
+
+A popular use case would be the “Frequently Asked Questions” section of a website or page when you can show questions and answers for each child element.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { AccordionItem, AccordionFlush } from 'flowbite-svelte'
+  // if you are using icons
+  import { Home, ArrowCircleUp, ArrowCircleDown, Archive, Beaker } from 'svelte-heros'
+</script>
+```
 
 <Htwo label="Default accordion" />
 
-<p>Use id=1,2,3,.. to add top and bottom border.</p>
+Use id=1,2,3,.. to add top and bottom border.
 
 <ExampleDiv>
   <AccordionItem id="1">
@@ -127,7 +146,7 @@ let icons={
 
 <Htwo label="Always open" />
 
-<p>Use the `isOpen` prop to make an item open on mount.</p>
+Use the `isOpen` prop to make an item open on mount.
 
 <ExampleDiv>
   <AccordionItem id="1" isOpen>
@@ -173,7 +192,7 @@ let icons={
 
 <Htwo label="Color option" />
 
-<p>Use the `color` prop to add color.</p>
+Use the `color` prop to add color.
 
 <ExampleDiv>
   <AccordionItem id="1" color>
@@ -219,7 +238,7 @@ let icons={
 
 <Htwo label="Flush accordion" />
 
-<p>Use `AccordionFlush` component to remove the rounded borders.</p>
+Use `AccordionFlush` component to remove the rounded borders.
 
 <ExampleDiv>
   <AccordionFlush id="1" >
@@ -270,7 +289,7 @@ let icons={
 
 <Htwo label="Arrow style" />
 
-<p>Use the `icons` prop to set up and down icons.</p>
+Use the `icons` prop to set up and down icons.
 
 <ExampleDiv>
   <AccordionItem id="1" {icons}>
@@ -332,8 +351,8 @@ body
 
 <Htwo label="Icon Accordion" />
 
-<p class="dark:text-white w-full py-4">Add id 1,2,3,... to AccordionItem component.</p> 
-<p class="dark:text-white w-full py-4">Install svelte-heros.</p>
+<p class="dark:text-white w-full py-4">Add id 1,2,3,... to AccordionItem component. 
+<p class="dark:text-white w-full py-4">Install svelte-heros.
 
 ```sh
 npm i svelte-heros
@@ -414,8 +433,8 @@ npm i svelte-heros
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types 
+ page</a> for type information.
 
 <h3>AccordionItem</h3>
 
@@ -428,3 +447,12 @@ npm i svelte-heros
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
+
+<Htwo label="Slots" />
+
+<h3>AccordionItem, AccordionFlush</h3>
+
+<TableProp header={slotHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={slotItems} rowState='hover' />
+</TableProp>
+

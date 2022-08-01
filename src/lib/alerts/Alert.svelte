@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { setContext } from 'svelte';
 	import classNames from 'classnames';
 	import { createEventDispatcher } from 'svelte';
 	import type { SvelteComponent } from 'svelte';
@@ -6,6 +7,7 @@
 	import CloseButton from '$lib/utils/CloseButton.svelte';
 
 	const dispatch = createEventDispatcher();
+	setContext('background', true);
 
 	export let color: Colors = 'blue';
 	export let icon: typeof SvelteComponent | null = null;
@@ -61,25 +63,23 @@
 
 	let divClass: string;
 	$: divClass = classNames(
-		'flex flex-col p-4 mb-4 gap-2 ',
+		'flex flex-col p-4 mb-4 gap-2 text-sm',
 		bgClasses[color] ?? bgClasses.blue,
 		accent && (borderAccentClasses[color] ?? borderAccentClasses.blue),
 		rounded && 'rounded-lg ',
 		accent && 'border-t-4 ',
+		textColors[color],
 		$$props.class
 	);
-
-	let textColor: string;
-	$: textColor = textColors[color] ?? textColors.blue;
 </script>
 
 <div id={$$props.id} class:hidden class={divClass} role="alert">
-	<div class="flex items-center {textColor}">
+	<div class="flex items-center">
 		{#if icon}
 			<svelte:component this={icon} class="flex-shrink-0 w-5 h-5 mr-3" />
 		{/if}
 
-		<div class="text-sm">
+		<div>
 			<slot />
 		</div>
 

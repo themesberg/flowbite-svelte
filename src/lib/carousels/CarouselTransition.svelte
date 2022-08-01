@@ -17,19 +17,7 @@
 	export let transitionParams: TransitionParamTypes = {};
 	export let loop: boolean = false;
 	export let duration: number = 2000;
-	// have a custom transition function that returns the desired transition
-	function multiple(node: HTMLElement, params: any) {
-		switch (transitionType) {
-			case 'slide':
-				return slide(node, params);
-			case 'blur':
-				return blur(node, params);
-			case 'fly':
-				return fly(node, params);
-			case 'fade':
-				return fade(node, params);
-		}
-	}
+
 	// Carousel
 	export let divClass: string = 'overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96';
 	export let indicatorDivClass: string =
@@ -51,6 +39,19 @@
 	export let indicatorClass: string =
 		'w-3 h-3 rounded-full bg-gray-100 hover:bg-gray-300 opacity-60';
 
+	// have a custom transition function that returns the desired transition
+	function multiple(node: HTMLElement, params: any) {
+		switch (transitionType) {
+			case 'slide':
+				return slide(node, params);
+			case 'blur':
+				return blur(node, params);
+			case 'fly':
+				return fly(node, params);
+			case 'fade':
+				return fade(node, params);
+		}
+	}
 	// Slide
 	// export let slideClass: string = 'hidden';
 

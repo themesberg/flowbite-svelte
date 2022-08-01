@@ -5,9 +5,11 @@ layout: toastLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Toast, Breadcrumb, BreadcrumbItem, Avatar, Button } from "$lib/index"
+  import { Toast, Breadcrumb, BreadcrumbItem, Avatar, Button } from '$lib'
   import { quintOut, elasticOut } from 'svelte/easing';
   import { Fire, CheckCircle, PlusCircle, Archive, Home, Mail, Refresh } from 'svelte-heros'
   import componentProps from '../props/Toast.json'
@@ -39,14 +41,21 @@ layout: toastLayout
   <BreadcrumbItem>Toasts</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Toast</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Toast</h1>
 
-<p>Import the Toast component and Icons.</p>
+<CompoDescription>Push notifications to your users using the toast component and choose from multiple sizes, colors, styles, and positions</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="toasts/Toast.svelte">Toast</GitHubSource>
+</ExampleDiv>
+
+The toast component can be used to enhance your website’s interactivity by pushing notifications to your visitors. You can choose from multiple styles, colors, sizes, and positions and even dismiss the component.
+
+<Htwo label="Setup" />
 
 ```html
 <script>
 	import { Toast } from 'flowbite-svelte';
-	import { Fire, CheckCircle, PlusCircle, Archive, Mail } from 'svelte-heros';
 </script>
 ```
 
@@ -69,7 +78,8 @@ Use this simple toast component with an icon, message, and dismissable close but
 ```
 
 <Htwo label="Simple toast" />
-<p>This component can be used to show simple messages and notifications without the use of a close button.</p>
+
+This component can be used to show simple messages and notifications without the use of a close button.
 
 <ExampleDiv>
   <Toast simple={true}>
@@ -87,10 +97,11 @@ Use this simple toast component with an icon, message, and dismissable close but
 
 <Htwo label="Icons" />
 
-<p>For the right positioning of the icon use: <span class="font-mono italic">slot="icon"</span>.</p>
-<p>Icons are wrapped with blue background by default. Set the color name property to change it. Note,
-that if you want no color at all set property to empty string.</p>
-<p>Use any <a href="/icons">icon components.</a></p>
+For the right positioning of the icon use: <span class="font-mono italic">slot="icon"</span>.
+
+Icons are wrapped with blue background by default. Set the color name property to change it. Note, that if you want no color at all set property to empty string.
+
+Use any <a href="/icons">icon components.</a>
 
 <ExampleDiv>
   <Toast>
@@ -171,7 +182,7 @@ that if you want no color at all set property to empty string.</p>
 
 <Htwo label="Transitions" />
 
-<p>You can use one of <a href="https://svelte.dev/docs#run-time-svelte-easing" target="_blank" >Svelte/easing</a>.</p>
+You can use one of <a href="https://svelte.dev/docs#run-time-svelte-easing" target="_blank" >Svelte/easing</a>.
 
 <ExampleDiv>
    <Toast transition="slide">
@@ -261,7 +272,7 @@ that if you want no color at all set property to empty string.</p>
 
 <Htwo label="Undo button" />
 
-<p>Use this toast component to also show an “undo” button to reverse the action of the user.</p>
+Use this toast component to also show an “undo” button to reverse the action of the user.
 
 <ExampleDiv>
   <Toast>
@@ -282,7 +293,7 @@ that if you want no color at all set property to empty string.</p>
 ```
 
 <Htwo label="Extra content" />
-<p>Use the <span class="font-mono italic">slot="extra"</span> to add some more arbitrary content in the toast.</p>
+Use the <span class="font-mono italic">slot="extra"</span> to add some more arbitrary content in the toast.
 
 <h3>Toast message</h3>
 
@@ -319,7 +330,7 @@ This component can be used to show messages and a CTA button when receiveing cha
 
 <h3>Push notification</h3>
 
-<p>This component can be used to show notifications for an action from another user such as posting a comment, receiving a like, being tagged. You can show an avatar, icon, message, and the time of the notification.</p>
+This component can be used to show notifications for an action from another user such as posting a comment, receiving a like, being tagged. You can show an avatar, icon, message, and the time of the notification.
 
 <ExampleDiv>
   <Toast>
@@ -352,7 +363,8 @@ This component can be used to show messages and a CTA button when receiveing cha
 
 <h3>Interactive toast</h3>
 
-<p>Use this interactive toast component to encourage users to make a certain action such as updating to the latest software version. You can set an icon, message, and two CTA buttons.</p>
+Use this interactive toast component to encourage users to make a certain action such as updating to the latest software version. You can set an icon, message, and two CTA buttons.
+
 <p class="italic">This is an example with the icon and extra content at the same time.</p>
 
 <ExampleDiv>
@@ -405,8 +417,7 @@ Use the position property to position these toast components relative to the mai
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
 <TableDefaultRow {items} rowState='hover' />

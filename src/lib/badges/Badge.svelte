@@ -1,13 +1,16 @@
 <script lang="ts">
 	import classNames from 'classnames';
 	import type { Colors } from '../types';
+	import CloseButton from '$lib/utils/CloseButton.svelte';
 
 	export let color: Colors = 'blue';
 	export let large: boolean = false;
 	export let href: string = undefined;
 	export let rounded: boolean = false;
+	export let index: boolean = false;
+	export let dismissable: boolean = false;
 
-	let badgeClass;
+	let hidden = false;
 
 	const colors = {
 		blue: 'bg-blue-100 text-blue-800 dark:bg-blue-200 dark:text-blue-800',
@@ -17,7 +20,15 @@
 		yellow: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-200 dark:text-yellow-900',
 		indigo: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-200 dark:text-indigo-900',
 		purple: 'bg-purple-100 text-purple-800 dark:bg-purple-200 dark:text-purple-900',
-		pink: 'bg-pink-100 text-pink-800 dark:bg-pink-200 dark:text-pink-900'
+		pink: 'bg-pink-100 text-pink-800 dark:bg-pink-200 dark:text-pink-900',
+		['!blue']: 'bg-blue-500 text-blue-100',
+		['!dark']: 'bg-gray-500 text-gray-100',
+		['!red']: 'bg-red-500 text-white',
+		['!green']: 'bg-green-500 text-green-100',
+		['!yellow']: 'bg-yellow-300 text-yellow-800',
+		['!indigo']: 'bg-indigo-500 text-indigo-100',
+		['!purple']: 'bg-purple-500 text-purple-100',
+		['!pink']: 'bg-pink-500 text-pink-100'
 	};
 
 	const hovers = {
@@ -31,16 +42,25 @@
 		pink: 'hover:bg-pink-200 dark:hover:bg-pink-300'
 	};
 
+	let badgeClass;
 	$: badgeClass = classNames(
-		'inline-flex items-center justify-center mr-2',
+		'inline-flex items-center justify-center -mb-0.5',
 		large ? 'text-sm font-medium' : 'text-xs font-semibold',
-		colors[color] ?? colors.blue,
+		colors[color],
 		href && (hovers[color] ?? hovers.blue),
 		rounded ? 'rounded-full p-1' : 'rounded px-2.5 py-0.5',
+		index && 'absolute font-bold border-2 border-white dark:border-gray-900',
+		index && (large ? 'w-7 h-7 -top-3 -right-3' : 'w-6 h-6 -top-2 -right-2'),
 		$$props.class
 	);
+	const handleHide = () => {
+		hidden = !hidden;
+	};
 </script>
 
-<svelte:element this={href ? 'a' : 'span'} {href} {...$$restProps} class={badgeClass}>
+<svelte:element this={href ? 'a' : 'span'} {href} {...$$restProps} class={badgeClass} class:hidden>
 	<slot />
+	{#if dismissable}
+		<CloseButton {color} on:click={handleHide} size={large ? 'sm' : 'xs'} class="ml-1.5 -mr-1.5" />
+	{/if}
 </svelte:element>

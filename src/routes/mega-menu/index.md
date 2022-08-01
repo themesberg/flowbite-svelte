@@ -5,10 +5,11 @@ layout: megamenuLayout
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
+  import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Button, Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, Breadcrumb, BreadcrumbItem } from '$lib/index'
-  import NavDropdown from '$lib/navbar/NavDropdown.svelte';
+  import { Button, Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, NavDropdown, Breadcrumb, BreadcrumbItem } from '$lib'
   import {
     Adjustments,
     UserCircle,
@@ -61,13 +62,29 @@ layout: megamenuLayout
   <BreadcrumbItem href="/footer">Mega Menu</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white py-8">Mega Menu</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Mega Menu</h1>
+
+<CompoDescription>Use the mega menu component as a full-width dropdown inside the navbar to show a list of menu items based on multiple sizes, variants, and styles.</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="megamenu/MegaMenu.svelte">MegaMenu</GitHubSource>
+</ExampleDiv>
+
+The mega menu component is a full-width dropdown that can be triggered by clicking on the menu item and it shows a list of links that you can use to navigate through the pages on a website.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { MegaMenu } from 'flowbite-svelte'
+</script>
+```
 
 <Htwo label="Default mega menu" />
 
 Use this example to show a list of links aligned on three columns inside the mega menu dropdown.
 
-<ExampleDiv class="flex justify-center flex-col gap-2">
+<ExampleDiv class="h-60">
   <Navbar let:hidden let:toggle>
     <NavBrand href="/">
       <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
@@ -90,7 +107,8 @@ Use this example to show a list of links aligned on three columns inside the meg
 
 ```html
 <script>
- let menu = [
+  import { Button, Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, NavDropdown } from 'flowbite-svelte'
+  let menu = [
     {name: 'About us', href: '/about},
     {name: 'Blog', href: '/blog},
     {name: 'Contact us', href: '/contact},
@@ -129,7 +147,7 @@ Use this example to show a list of links aligned on three columns inside the meg
 
 This example of a mega menu dropdown can be used to also show an icon near the text of the link.
 
-<ExampleDiv>
+<ExampleDiv class="h-60">
   <Navbar let:hidden let:toggle>
     <NavBrand href="/">
       <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
@@ -141,7 +159,7 @@ This example of a mega menu dropdown can be used to also show an icon near the t
       <NavDropdown name="Mega menu">
         <MegaMenu items={menu} let:item>
             <a href={item.href} class="flex items-center hover:text-blue-600 dark:hover:text-blue-500">
-              <span class="sr-only">{items.name}</span>
+              <span class="sr-only">{item.name}</span>
               <svelte:component this={item.icon} class="w-4 h-4 mr-2" />{item.name}
             </a>
         </MegaMenu>
@@ -155,7 +173,7 @@ This example of a mega menu dropdown can be used to also show an icon near the t
 
 ```html
 <script>
-    let menu = [
+  let menu = [
     {name: 'About us', href: '/about', icon: UserCircle},
     {name: 'Blog', href: '/blog', icon: UserCircle},
     {name: 'Contact us', href: '/contact', icon: UserCircle},
@@ -173,7 +191,7 @@ This example of a mega menu dropdown can be used to also show an icon near the t
 <NavDropdown name="Mega menu">
   <MegaMenu items={menu} let:item>
     <a href={item.href} class="flex items-center hover:text-blue-600 dark:hover:text-blue-500">
-      <span class="sr-only">{items.name}</span>
+      <span class="sr-only">{item.name}</span>
       <svelte:component this={item.icon} class="w-4 h-4 mr-2" />{item.name}
     </a>
   </MegaMenu>
@@ -184,7 +202,7 @@ This example of a mega menu dropdown can be used to also show an icon near the t
 
 Use this example to show a mega menu dropdown that spans the entire width of the document page.
 
-<ExampleDiv class="relative">
+<ExampleDiv class="relative h-96">
   <Navbar let:hidden let:toggle>
       <NavBrand href="/">
           <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
@@ -239,7 +257,7 @@ Use this example to show a mega menu dropdown that spans the entire width of the
 
 This example can be used to also show a CTA button or link next to the menu items inside the dropdown.
 
-<ExampleDiv class="relative">
+<ExampleDiv class="relative h-80">
   <Navbar let:hidden let:toggle>
       <NavBrand href="/">
           <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
@@ -306,7 +324,7 @@ This example can be used to also show a CTA button or link next to the menu item
 
 This example can be used to also show a CTA with a backdround image inside the dropdown next to the other menu items and links.
 
-<ExampleDiv class="relative">
+<ExampleDiv class="relative h-80">
   <Navbar let:hidden let:toggle>
       <NavBrand href="/">
           <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
