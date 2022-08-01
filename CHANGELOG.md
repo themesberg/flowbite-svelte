@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.22.27](https://github.com/themesberg/flowbite-svelte/compare/v0.22.26...v0.22.27) (2022-08-01)
+
+
+### Bug Fixes
+
+* update skeleton components ([6c49370](https://github.com/themesberg/flowbite-svelte/commit/6c49370ef244234373d4b87cb1a60e4aebdbf86f))
+* update Svelte-Heros icon for Rating component ([d1c03fa](https://github.com/themesberg/flowbite-svelte/commit/d1c03fa4a0cb4b2cd4ccfe956d7d36ebd4161ed4))
+
 ### [0.22.26](https://github.com/themesberg/flowbite-svelte/compare/v0.22.25...v0.22.26) (2022-07-30)
 
 
