@@ -2,8 +2,8 @@
 	import { getContext } from 'svelte';
 	import classNames from 'classnames';
 	import Checkbox from './Checkbox.svelte';
-	export let size: 'small' | 'default' | 'large' = 'default';
 
+	export let size: 'small' | 'default' | 'large' = 'default';
 	export let group: string[] = [];
 	export let value: string = '';
 	export let checked: boolean = undefined;
@@ -40,7 +40,16 @@
 	);
 </script>
 
-<Checkbox custom {...$$restProps} class={$$props.class}	{value}	bind:checked bind:group	on:click on:change>
+<Checkbox
+	custom
+	{...$$restProps}
+	class={$$props.class}
+	{value}
+	bind:checked
+	bind:group
+	on:click
+	on:change
+>
 	<div class={divClass} />
 	<slot />
 </Checkbox>

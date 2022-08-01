@@ -1,5 +1,6 @@
 <script lang="ts">
 	import generateId from '../utils/generateId.js';
+
 	export let value: string = '';
 	export let id: string = generateId();
 	export let name: string = 'message';

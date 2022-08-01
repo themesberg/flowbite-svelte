@@ -1,9 +1,6 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
 
-	// tainted if put in component having its own background
-	let background: boolean = getContext('background');
-
 	export let id: string = '';
 	export let labelClass: string = 'sr-only';
 	export let iconClass: string = 'w-5 h-5 text-gray-500 dark:text-gray-400';
@@ -14,6 +11,9 @@
 	export let btnClass: string =
 		'p-2.5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800';
 	export let placeholder: string = 'Search';
+
+	// tainted if put in component having its own background
+	let background: boolean = getContext('background');
 </script>
 
 <form class="flex items-center" on:submit>

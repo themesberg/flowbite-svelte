@@ -34,7 +34,6 @@
 	export let color: FormColorType = 'blue';
 	export let custom: boolean = false;
 	export let inline: boolean = false;
-
 	export let group: number | string = '';
 	export let value: string = '';
 

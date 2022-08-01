@@ -2,6 +2,7 @@
 	import classNames from 'classnames';
 	import generateId from '$lib/utils/generateId.js';
 	import type { InputType } from '../types';
+
 	export let id: string = generateId();
 	export let style: 'filled' | 'outlined' | 'standard' = 'standard';
 	export let type: InputType = 'text';
@@ -9,6 +10,7 @@
 	export let color: 'base' | 'green' | 'red' = 'base';
 	export let value: string = '';
 	export let label: string = '';
+	export let ref: HTMLElement = null;
 
 	const divClasses = {
 		filled: 'relative',
@@ -76,8 +78,6 @@
 		green: 'text-green-600 dark:text-green-500',
 		red: 'text-red-600 dark:text-red-500'
 	};
-
-	export let ref: HTMLElement = null;
 
 	// you need to this to avoid 2-way binding
 	function setType(node) {

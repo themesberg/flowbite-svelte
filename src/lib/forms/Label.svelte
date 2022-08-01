@@ -3,7 +3,6 @@
 
 	export let color: 'gray' | 'green' | 'red' | 'disabled' = 'gray';
 	export let defaultClass: string = 'text-sm font-medium block';
-
 	export let show: boolean = true; // helper for inheritance
 
 	let node: HTMLLabelElement;

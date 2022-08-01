@@ -64,11 +64,11 @@ export { default as RadioInline } from './forms/RadioInline.svelte';
 export { default as Radio } from './forms/Radio.svelte';
 export { default as Range } from './forms/Range.svelte';
 export { default as Search } from './forms/Search.svelte';
-export { default as SimpleSearch } from './forms/SimpleSearch.svelte';
-export { default as VoiceSearch } from './forms/VoiceSearch.svelte';
 export { default as Select } from './forms/Select.svelte';
+export { default as SimpleSearch } from './forms/SimpleSearch.svelte';
 export { default as Textarea } from './forms/Textarea.svelte';
 export { default as Toggle } from './forms/Toggle.svelte';
+export { default as VoiceSearch } from './forms/VoiceSearch.svelte';
 
 // Kbd
 export { default as Kbd } from './kbd/Kbd.svelte';
@@ -83,12 +83,6 @@ export { default as ListItem } from './list-group/ListItem.svelte';
 
 // Modals
 export { modalIdStore } from './modals/modalStores.js';
-export { default as ExtraLargeModal } from './modals/ExtraLargeModal.svelte';
-export { default as LargeModal } from './modals/LargeModal.svelte';
-export { default as MediumModal } from './modals/MediumModal.svelte';
-export { default as ModalButton } from './modals/ModalButton.svelte';
-export { default as SignInModal } from './modals/SignInModal.svelte';
-export { default as SmallModal } from './modals/SmallModal.svelte';
 export { default as Modal } from './modals/Modal.svelte';
 
 // MegaMenu
