@@ -34,6 +34,10 @@ layout: dropdownLayout
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
   let group1=2, group2=2, group3=2;
+
+  const handleClick = ()=>{
+    alert ('Clicked.')
+  }
 </script>
 
 <Breadcrumb>
@@ -958,6 +962,22 @@ Use this example to also show the name or email of the user next to the avatar f
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
   <DropdownItem>Sign out</DropdownItem>
+</Dropdown>
+```
+
+<Htwo label="Events" />
+
+The `DropdownItem` component has `on:click` event.
+
+<ExampleDiv class="flex justify-center h-32">
+<Dropdown label="Dropdown button" class="w-44">
+  <DropdownItem on:click={handleClick}>Click me</DropdownItem>
+</Dropdown>
+</ExampleDiv>
+
+```html
+<Dropdown label="Dropdown button" class="w-44">
+  <DropdownItem on:click={handleClick}>Click me</DropdownItem>
 </Dropdown>
 ```
 
