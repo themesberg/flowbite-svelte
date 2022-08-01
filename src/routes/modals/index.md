@@ -45,6 +45,24 @@ layout: modalLayout
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Modals</h1>
 
+<CompoDescription>Use the modal component to show interactive dialogs and notifications to your website users available in multiple sizes, colors, and styles</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="modals/Modal.svelte">Modal</GitHubSource>
+</ExampleDiv>
+
+The modal component can be used as an interactive dialog on top of the main content area of the website to show notifications and gather information using form elements from your website users.
+
+Get started with multiple sizes, colors, and styles built with the utility classes from Tailwind CSS and the components from Flowbite.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { Modal } from 'flowbite-svelte'
+</script>
+```
+
 <Htwo label="Default modal" />
 
 Modal visibility (open/close) is controlled by the `open` property. You can bind it to a variable that other element (usually button) will toggle.

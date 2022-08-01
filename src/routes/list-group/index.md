@@ -64,7 +64,6 @@ layout: listgroupLayout
 
 The list group component can be used to display a series of elements, buttons or links inside a single card component similar to a sidebar.
 
-
 <Htwo label="Setup" />
 
 ```html

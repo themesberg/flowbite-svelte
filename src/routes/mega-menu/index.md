@@ -64,6 +64,22 @@ layout: megamenuLayout
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Mega Menu</h1>
 
+<CompoDescription>Use the mega menu component as a full-width dropdown inside the navbar to show a list of menu items based on multiple sizes, variants, and styles.</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="megamenu/MegaMenu.svelte">MegaMenu</GitHubSource>
+</ExampleDiv>
+
+The mega menu component is a full-width dropdown that can be triggered by clicking on the menu item and it shows a list of links that you can use to navigate through the pages on a website.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { MegaMenu } from 'flowbite-svelte'
+</script>
+```
+
 <Htwo label="Default mega menu" />
 
 Use this example to show a list of links aligned on three columns inside the mega menu dropdown.
