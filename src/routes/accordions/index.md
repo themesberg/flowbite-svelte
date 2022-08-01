@@ -38,16 +38,16 @@ let icons={
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Accordion</h1>
 
+<CompoDescription>Use the accordion component to show hidden information based on the collapse and expand state of the child elements using data attribute options</CompoDescription>
+
 <ExampleDiv>
 <GitHubSource href="accordion/AccordionItem.svelte">AccordionItem</GitHubSource>
 <GitHubSource href="accordion/AccordionFlush.svelte">AccordionFlush</GitHubSource>
 </ExampleDiv>
 
-<p>Use the accordion component to show hidden information based on the collapse and expand state of the child elements using data attribute options</p>
+The accordion component is a collection of vertically collapsing header and body elements that can be used to show and hide information based on the Tailwind CSS utility classes and JavaScript from Flowbite.
 
-<p>The accordion component is a collection of vertically collapsing header and body elements that can be used to show and hide information based on the Tailwind CSS utility classes and JavaScript from Flowbite.</p>
-
-<p>A popular use case would be the “Frequently Asked Questions” section of a website or page when you can show questions and answers for each child element.</p>
+A popular use case would be the “Frequently Asked Questions” section of a website or page when you can show questions and answers for each child element.
 
 <Htwo label="Setup" />
 
@@ -61,7 +61,7 @@ let icons={
 
 <Htwo label="Default accordion" />
 
-<p>Use id=1,2,3,.. to add top and bottom border.</p>
+Use id=1,2,3,.. to add top and bottom border.
 
 <ExampleDiv>
   <AccordionItem id="1">
@@ -146,7 +146,7 @@ let icons={
 
 <Htwo label="Always open" />
 
-<p>Use the `isOpen` prop to make an item open on mount.</p>
+Use the `isOpen` prop to make an item open on mount.
 
 <ExampleDiv>
   <AccordionItem id="1" isOpen>
@@ -192,7 +192,7 @@ let icons={
 
 <Htwo label="Color option" />
 
-<p>Use the `color` prop to add color.</p>
+Use the `color` prop to add color.
 
 <ExampleDiv>
   <AccordionItem id="1" color>
@@ -238,7 +238,7 @@ let icons={
 
 <Htwo label="Flush accordion" />
 
-<p>Use `AccordionFlush` component to remove the rounded borders.</p>
+Use `AccordionFlush` component to remove the rounded borders.
 
 <ExampleDiv>
   <AccordionFlush id="1" >
@@ -289,7 +289,7 @@ let icons={
 
 <Htwo label="Arrow style" />
 
-<p>Use the `icons` prop to set up and down icons.</p>
+Use the `icons` prop to set up and down icons.
 
 <ExampleDiv>
   <AccordionItem id="1" {icons}>
@@ -351,8 +351,8 @@ body
 
 <Htwo label="Icon Accordion" />
 
-<p class="dark:text-white w-full py-4">Add id 1,2,3,... to AccordionItem component.</p> 
-<p class="dark:text-white w-full py-4">Install svelte-heros.</p>
+<p class="dark:text-white w-full py-4">Add id 1,2,3,... to AccordionItem component. 
+<p class="dark:text-white w-full py-4">Install svelte-heros.
 
 ```sh
 npm i svelte-heros
@@ -433,8 +433,8 @@ npm i svelte-heros
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types 
+ page</a> for type information.
 
 <h3>AccordionItem</h3>
 

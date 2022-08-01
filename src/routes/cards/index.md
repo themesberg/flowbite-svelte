@@ -60,15 +60,19 @@ layout: cardLayout
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Card</h1>
 
+<CompoDescription>Get started with a large variety of Tailwind CSS card examples for your web project</CompoDescription>
+
 <ExampleDiv>
 <GitHubSource href="cards/Card.svelte">Card</GitHubSource>
 <GitHubSource href="cards/SignInCard.svelte">SignInCard</GitHubSource>
 <GitHubSource href="cards/EcommerceCard.svelte">EcommerceCard</GitHubSource>
 </ExampleDiv>
 
+Use these responsive card components to show data entries and information to your users in multiple forms and contexts such as for your blog, application, user profiles, and more.
+
 <Htwo label="Set up" />
 
-<p>Import Card in the script tag.</p>
+Import Card in the script tag.
 
 ```html
 <script>
@@ -79,7 +83,6 @@ layout: cardLayout
 <Htwo label="Default card" />
 
 Use the following simple card component with a title and description.
-
 Notice the `href` prop set, as that card is one big `<a/>` element.
 
 <ExampleDiv>
@@ -382,8 +385,8 @@ Use this card for your e-commerce websites and show information about the produc
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types 
+ page</a> for type information.
 
 <h3>Card</h3>
 

@@ -48,12 +48,16 @@ layout: dropdownLayout
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Dropdown</h1>
 
+<CompoDescription>Get started with the dropdown component to show a list of menu items when clicking on the trigger element based on multiple layouts, styles, and placements</CompoDescription>
+
 <ExampleDiv>
 <GitHubSource href="dropdowns/Dropdown.svelte">Dropdown</GitHubSource>
 <GitHubSource href="dropdowns/DropdownItem.svelte">DropdownItem</GitHubSource>
 <GitHubSource href="dropdowns/DropdownDivider.svelte">DropdownDivider</GitHubSource>
 <GitHubSource href="dropdowns/DropdownHeader.svelte">DropdownHeader</GitHubSource>
 </ExampleDiv>
+
+The dropdown component can be used to show a list of menu items when clicking on an element such as a button and hiding it when clicking outside of the triggering element.
 
 <Htwo label="Setup" />
 
@@ -106,6 +110,8 @@ layout: dropdownLayout
 ```
 
 <Htwo label="Dropdown header" />
+
+Use this example to show extra information outside of the list of menu items inside the dropdown.
 
 <ExampleDiv class="flex justify-center h-80">
 <Dropdown label="Dropdown button" class="w-44">

@@ -28,10 +28,15 @@ layout: badgeLayout
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Badges</h1>
 
+<CompoDescription>Use Tailwind CSS badges as elements to show counts or labels separately or inside other components</CompoDescription>
+
 <ExampleDiv>
 <GitHubSource href="badges/Badge.svelte">Badge</GitHubSource>
 </ExampleDiv>
 
+The badge component can be used to complement other elements such as buttons or text elements as a label or to show the count of a given data, such as the number of comments for an article or how much time has passed by since a comment has been made.
+
+Alternatively, badges can also be used as standalone elements that link to a certain page.
 
 ```html
 <script>
@@ -41,7 +46,8 @@ layout: badgeLayout
 ```
 
 <Htwo label="Default badge" />
-<p>Use the following badge elements to indicate counts or labels inside or outside components.</p>
+
+Use the following badge elements to indicate counts or labels inside or outside components.
 
 <ExampleDiv class="flex gap-2 text-white">
 <Badge>Default</Badge>
@@ -68,7 +74,7 @@ layout: badgeLayout
 
 <Htwo label="Large badges" />
 
-<p>Use the <code>large={true}</code> to create a large variant of the badges.</p>
+Use the `large={true}` to create a large variant of the badges.
 
 <ExampleDiv class="flex gap-2">
 <Badge large={true}>Default</Badge>
@@ -93,7 +99,7 @@ layout: badgeLayout
 ```
 
 <Htwo label="Badges as links" />
-<p>You can also use badges as anchor elements to link to another page.</p>
+You can also use badges as anchor elements to link to another page.
 
 <ExampleDiv> <!-- Don't use flex. You won't see the size difference -->
 <Badge href="/" class="mr-2">Badge link</Badge>
@@ -107,7 +113,7 @@ layout: badgeLayout
 ```
 
 <Htwo label="Badges with icon" />
-<p>You can also use SVG icons inside the badge elements.</p>
+You can also use SVG icons inside the badge elements.
 
 <ExampleDiv> <!-- Don't use flex. You won't see the size difference -->
 <Badge color="dark" class="mr-2"><Clock class="mr-1 w-3 h-3"/>3 days ago</Badge>
@@ -169,7 +175,7 @@ Use this example to add a badge inside a button component for a count indicator.
 
 <Htwo label="Badge with icon only" />
 
-<p>Alternatively you can also use badges which indicate only a SVG icon.</p>
+Alternatively you can also use badges which indicate only a SVG icon.
 
 <ExampleDiv> <!-- Don't use flex. You won't see the size difference -->
 <Badge rounded ><Check class="w-3 h-3"/></Badge>
@@ -201,8 +207,8 @@ Use the `dimissable` attribute to dismiss the current badge.
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types 
+ page</a> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />

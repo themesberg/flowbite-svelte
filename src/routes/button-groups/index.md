@@ -44,10 +44,14 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Button group</h1>
 
+<CompoDescription>Button groups are a Tailwind CSS powered set of buttons sticked together in a horizontal line</CompoDescription>
+
 <ExampleDiv>
 <GitHubSource href="buttongroups/ButtonGroup.svelte">ButtonGroup</GitHubSource>
 <GitHubSource href="buttongroups/ButtonGroupItem.svelte">ButtonGroupItem</GitHubSource>
 </ExampleDiv>
+
+The button group component from Flowbite-Svelte can be used to stack together multiple buttons and links inside a single element.
 
 <Htwo label="Setup" />
 
@@ -60,6 +64,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Default" />
 
+Use the following code to stack together buttons into a single group.
+
 <ExampleDiv>
 <ButtonGroup>
 	<ButtonGroupItem>Proflie</ButtonGroupItem>
@@ -77,7 +83,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </ButtonGroup>
 ```
 
-<Htwo label="Default with links" />
+<Htwo label="Button group as links" />
+
+You can also use the button group component as links.
 
 <ExampleDiv>
 <ButtonGroup>
@@ -95,7 +103,9 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </ButtonGroup>
 ```
 
-<Htwo label="Default with icon" />
+<Htwo label="Group buttons with icons" />
+
+You can also use SVG icons inside the grouped buttons.
 
 <ExampleDiv>
 <ButtonGroup>
@@ -134,6 +144,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Outline" />
 
+Group a series of buttons together on a single line or stack them in a vertical column.
+
 <ExampleDiv>
 <ButtonGroup>
 	<ButtonGroupItem outline>Proflie</ButtonGroupItem>
@@ -151,6 +163,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 ```
 
 <Htwo label="Outline with icon" />
+
+Group a series of buttons together on a single line or stack them in a vertical column.
 
 <ExampleDiv>
 <ButtonGroup>
@@ -207,8 +221,7 @@ You can add the `on:click` event to the `ButtonGroupItem` component.
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
 <h3>ButtonGroup</h3>
 

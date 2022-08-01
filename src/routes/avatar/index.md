@@ -28,9 +28,13 @@ layout: avatarLayout
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Avatar</h1>
 
+<CompoDescription>Use the avatar component to show a visual representation of a user profile using an image element or SVG object based on multiple styles and sizes</CompoDescription>
+
 <ExampleDiv>
 <GitHubSource href="avatar/Avatar.svelte">Avatar</GitHubSource>
 </ExampleDiv>
+
+The avatar component can be used as a visual identifier for a user profile on your website and you can use the examples from Flowbite to modify the styles and sizes of these components using the utility classes from Tailwind CSS.
 
 <Htwo label="Setup" />
 
@@ -46,7 +50,7 @@ If you are using tooltip for avatar import `Tooltip`.
 
 <Htwo label="Default avatar" />
 
-<p>Use this example to create a circle and rounded avatar on an image element.</p>
+Use this example to create a circle and rounded avatar on an image element.
 
 <ExampleDiv>
 <div class="flex space-x-4">
@@ -66,8 +70,9 @@ If you are using tooltip for avatar import `Tooltip`.
 
 <Htwo label="Bordered" />
 
-<p>You can apply a border around the avatar component</p>
-<p>If you can use the ring-&#123;color&#125; class from Tailwind CSS to modify ring color.</p>
+You can apply a border around the avatar component.
+
+If you can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify ring color.
 
 <ExampleDiv class="flex space-x-4">
   <Avatar src="/images/profile-picture-2.webp" border/>
@@ -81,7 +86,7 @@ If you are using tooltip for avatar import `Tooltip`.
 
 <Htwo label="Placeholder" />
 
-<p>When there is no custom image available a placehoder is displayed.</p>
+When there is no custom image available a placehoder is displayed.
 
 <ExampleDiv class="flex space-x-4">
   <Avatar />
@@ -139,7 +144,7 @@ Use this example to show a tooltip when hovering over the avatar.
 
 <Htwo label="Dot indicator" />
 
-<p>Use a dot element relative to the avatar component as an indicator for the user (eg. online or offline status).</p>
+Use a dot element relative to the avatar component as an indicator for the user (eg. online or offline status).
 
 <ExampleDiv class="flex space-x-4 flex-wrap">
   <Avatar src="/images/profile-picture-3.webp" dot={{top:true, color:"bg-red-400"}}/>
@@ -182,7 +187,7 @@ Use this example to show a tooltip when hovering over the avatar.
 
 <Htwo label="Stacked" />
 
-<p>Use this example if you want to stack a group of users by overlapping the avatar components.</p>
+Use this example if you want to stack a group of users by overlapping the avatar components.
 
 <ExampleDiv>
 <div class="flex mb-5">
@@ -216,7 +221,7 @@ Use this example to show a tooltip when hovering over the avatar.
 
 <Htwo label="Avatar text" />
 
-<p>This example can be used if you want to show additional information in the form of text elements such as the user’s name and join date.</p>
+This example can be used if you want to show additional information in the form of text elements such as the user’s name and join date.
 
 <ExampleDiv>
 <div class="flex items-center space-x-4">
@@ -274,7 +279,7 @@ Use this example if you want to show a dropdown menu when clicking on the avatar
 
 <Htwo label="Sizes" />
 
-<p>Select size from  xs | sm | md | lg | xl.</p>
+Select size from  xs | sm | md | lg | xl.
 
 <ExampleDiv>
 <div class=" flex flex-wrap justify-center space-x-4">
@@ -296,8 +301,8 @@ Use this example if you want to show a dropdown menu when clicking on the avatar
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types 
+ page</a> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
 <TableDefaultRow {items} rowState='hover' />

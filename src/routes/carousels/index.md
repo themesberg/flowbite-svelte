@@ -50,10 +50,14 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Carousel</h1>
 
+<CompoDescription>Use the carousel component to slide through multiple elements and images using custom controls, indicators, intervals, and options</CompoDescription>
+
 <ExampleDiv>
 <GitHubSource href="carousels/Carousel.svelte">Carousel</GitHubSource>
 <GitHubSource href="carousels/CarouselTransition.svelte">CarouselTransition</GitHubSource>
 </ExampleDiv>
+
+The carousel component can be used to cycle through a set of elements using custom options, controls, and indicators.
 
 <Htwo label="Setup" />
 

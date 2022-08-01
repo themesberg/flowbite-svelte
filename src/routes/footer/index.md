@@ -7,7 +7,6 @@ layout: footerLayout
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import GitHubSource from '../utils/GitHubSource.svelte'
   import CompoDescription from '../utils/CompoDescription.svelte'
-  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup, Breadcrumb, BreadcrumbItem } from "$lib/index"
@@ -43,6 +42,8 @@ layout: footerLayout
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Footer</h1>
 
+<CompoDescription>Use the footer section at the bottom of every page to show valuable information to your users, such as sitemap links, a copyright notice, and a logo</CompoDescription>
+
 <ExampleDiv>
 <GitHubSource href="footer/Footer.svelte">Footer</GitHubSource>
 <GitHubSource href="footer/FooterBrand.svelte">FooterBrand</GitHubSource>
@@ -51,6 +52,8 @@ layout: footerLayout
 <GitHubSource href="footer/FooterLink.svelte">FooterLink</GitHubSource>
 <GitHubSource href="footer/FooterLinkGroup.svelte">FooterLinkGroup</GitHubSource>
 </ExampleDiv>
+
+The footer is one of the most underestimated sections of a website being located at the very bottom of every page, however, it can be used as a way to try to convince users to stay on your website if they haven’t found the information they’ve been looking for inside the main content area.
 
 <Htwo label="Setup" />
 

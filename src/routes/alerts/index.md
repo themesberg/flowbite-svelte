@@ -35,19 +35,17 @@ layout: alertLayout
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Alert</h1>
 
+<CompoDescription>Show contextual information to your users using alert elements based on Tailwind CSS</CompoDescription>
+
 <ExampleDiv>
 <GitHubSource href="alerts/Alert.svelte">Alert</GitHubSource>
 </ExampleDiv>
 
-<p>Show contextual information to your users using alert elements based on Tailwind CSS</p>
-
-<p>The alert component can be used to provide information to your users such as success or error messages, but also highlighted information complementing the normal flow of paragraphs and headers on a page. Flowbite also includes dismissable alerts which can be hidden by the users by clicking on the close icon.</p>
+The alert component can be used to provide information to your users such as success or error messages, but also highlighted information complementing the normal flow of paragraphs and headers on a page. Flowbite also includes dismissable alerts which can be hidden by the users by clicking on the close icon.
 
 <Htwo label="Set up" />
 
-<p class="text-gray-900 dark:text-white py-4 text-lg">
 Import Alert and set variables in the script tag.
-</p>
 
 ```html
 <script>
@@ -57,7 +55,7 @@ Import Alert and set variables in the script tag.
 
 <Htwo label="Default alert" />
 
-<p>Use the following examples of alert components to show messages as feedback to your users.</p>
+Use the following examples of alert components to show messages as feedback to your users.
 
 <ExampleDiv>
   <Alert>
@@ -97,7 +95,7 @@ Import Alert and set variables in the script tag.
 
 <Htwo label="Alerts with icon" />
 
-<p>You can also include a descriptive icon to complement the message inside the alert component with the following example.</p>
+You can also include a descriptive icon to complement the message inside the alert component with the following example.
 
 <ExampleDiv>
   <Alert icon={InformationCircle}>
@@ -183,7 +181,7 @@ Use this example to show a list and a description inside an alert component.
 
 <Htwo label="Dismissable alerts" />
 
-<p>Use the following alert elements that are also dismissable.</p>
+Use the following alert elements that are also dismissable.
 
 <ExampleDiv>
   <Alert icon={InformationCircle} dismissable>
@@ -215,7 +213,7 @@ Use this example to show a list and a description inside an alert component.
 
 <Htwo label="Border accent" />
 
-<p>Use the following alert components with a border accent as an alternative style.</p>
+Use the following alert components with a border accent as an alternative style.
 
 <ExampleDiv>
   <Alert accent rounded={false} icon={InformationCircle}>
@@ -255,7 +253,7 @@ Use this example to show a list and a description inside an alert component.
 
 <Htwo label="Additional content" />
 
-<p>The following alert components can be used if you wish to disclose more information inside the element.</p>
+The following alert components can be used if you wish to disclose more information inside the element.
 
 <ExampleDiv>
   <Alert color="blue" icon={InformationCircle}>
@@ -307,8 +305,8 @@ Use the `handleAlert` event with `dismissable` prop.
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types 
+ page</a> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
 <TableDefaultRow {items} rowState='hover' />
