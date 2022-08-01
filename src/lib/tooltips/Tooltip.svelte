@@ -12,12 +12,14 @@
 	} from '@floating-ui/dom';
 	import type { Placement } from '@floating-ui/dom';
 	import { onDestroy } from 'svelte';
+
 	export let placement: 'auto' | Placement = 'top';
 	export let trigger: 'hover' | 'click' = 'hover';
 	export let style: 'dark' | 'light' | 'auto' = 'dark';
 	export let content: string = '';
 	export let animation: false | `duration-${number}` = 'duration-300';
 	export let arrow: boolean = true;
+
 	let open = false;
 	const floatingPlacement = ({
 		placement

@@ -82,7 +82,6 @@ export { default as List } from './list-group/List.svelte';
 export { default as ListItem } from './list-group/ListItem.svelte';
 
 // Modals
-export { modalIdStore } from './modals/modalStores.js';
 export { default as Modal } from './modals/Modal.svelte';
 
 // MegaMenu
@@ -95,7 +94,6 @@ export { default as NavDropdown } from './navbar/NavDropdown.svelte';
 export { default as NavHamburger } from './navbar/NavHamburger.svelte';
 export { default as NavLi } from './navbar/NavLi.svelte';
 export { default as NavUl } from './navbar/NavUl.svelte';
-export { default as DropdownNavbar } from './navbar/DropdownNavbar.svelte';
 
 // Pagination
 export { default as Pagination } from './paginations/Pagination.svelte';

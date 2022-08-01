@@ -1,1 +1,1 @@
-{"props":[["  color ","string"," 'default'"]]}
+{"props":[["  color ","string"," 'default'"],[" name ","string"," 'Close'"],["size","'xs' | 'sm' | 'md' ","'md'"]]}

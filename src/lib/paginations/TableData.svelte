@@ -1,5 +1,12 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
+
+	export let helper: { start: number; end: number; total: number };
+	export let btnPreClass: string =
+		'py-2 px-4 text-sm font-medium text-white bg-gray-800 rounded-l hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white';
+	export let btnNextClass: string =
+		'py-2 px-4 text-sm font-medium text-white bg-gray-800 rounded-r border-0 border-l border-gray-700 hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white';
+
 	const dispatch = createEventDispatcher();
 	const previous = () => {
 		dispatch('previous');
@@ -7,11 +14,6 @@
 	const next = () => {
 		dispatch('next');
 	};
-	export let helper: { start: number; end: number; total: number };
-	export let btnPreClass: string =
-		'py-2 px-4 text-sm font-medium text-white bg-gray-800 rounded-l hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white';
-	export let btnNextClass: string =
-		'py-2 px-4 text-sm font-medium text-white bg-gray-800 rounded-r border-0 border-l border-gray-700 hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white';
 </script>
 
 <div class="flex flex-col items-center">

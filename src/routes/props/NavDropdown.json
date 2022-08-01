@@ -1,1 +1,1 @@
-{"props":[["liButtonClass","string ","'flex items-center'"],[" name"," string",""],["child","NavbarType[] ","[]"],["dropdownDiv","string ","''"],["dropdownLinkClassWithChild","string ","undefined"],["rel","string ","undefined"]]}
+{"props":[["liButtonClass","string ","'flex items-center justify-between w-full'"],[" name"," string",""],["child","NavbarType[] ","[]"],["dropdownDiv","string ","''"],["dropdownLinkClassWithChild","string ","undefined"],["rel","string ","undefined"]]}

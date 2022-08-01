@@ -1,10 +1,12 @@
 <script lang="ts">
 	import { Star } from 'svelte-heros';
+
 	export let divClass: string = 'flex items-center';
 	export let total: number = 5;
 	export let rating: number = 4;
 	// default is floor
 	export let ceil: boolean = false;
+
 	let roundedRating: number = ceil ? Math.ceil(rating) : Math.floor(rating);
 	let grayStars: number = total - roundedRating;
 </script>

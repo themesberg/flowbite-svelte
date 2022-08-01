@@ -1,6 +1,7 @@
 <script lang="ts">
 	import classNames from 'classnames';
 	import type { SiteType } from '../types';
+
 	export let site: SiteType;
 	export let aClass: string = 'flex items-center pl-2.5 mb-5';
 	export let imgClass: string = 'h-6 mr-3 sm:h-7';

@@ -6,16 +6,12 @@
 
 	export let color: Colors = 'blue';
 	export let simple: boolean = false;
-
 	// Export a prop through which you can set a desired transition
 	export let transition: TransitionTypes = 'fade';
-
 	// Pass in extra transition params
 	export let params: TransitionParamTypes = {};
-
 	// Absolute position
 	export let position: 'tl' | 'tr' | 'bl' | 'br' = undefined; // default not set
-
 	export let visible = true;
 
 	const colors = {

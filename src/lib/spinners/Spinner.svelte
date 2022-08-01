@@ -1,14 +1,15 @@
 <script lang="ts">
 	import classNames from 'classnames';
 	import type { Colors } from '../types';
+
 	export let color: Colors | undefined = 'blue';
 	export let bg: string = 'text-gray-300';
 	export let size: string = '8';
-	let iconsize = `w-${size} h-${size}`;
-
 	// these two props add fine control over the spinner colors
 	export let currentFill: string = 'currentFill';
 	export let currentColor: string = 'currentColor';
+
+	let iconsize = `w-${size} h-${size}`;
 
 	if (currentFill !== 'currentFill') {
 		color = undefined;

@@ -252,13 +252,13 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <ExampleDiv>
 <GitHubSource href="tabs/DefaultTabs.svelte">DefaultTabs</GitHubSource>
-<GitHubSource href="tabs/UnderlineTabs.svelte">UnderlineTabs</GitHubSource>
-<GitHubSource href="tabs/IconTabs.svelte">IconTabs</GitHubSource>
-<GitHubSource href="tabs/PillTabs.svelte">PillTabs</GitHubSource>
 <GitHubSource href="tabs/FullWidthTabs.svelte">FullWidthTabs</GitHubSource>
-<GitHubSource href="tabs/InteractiveTabs.svelte">InteractiveTabs</GitHubSource>
+<GitHubSource href="tabs/IconTabs.svelte">IconTabs</GitHubSource>
 <GitHubSource href="tabs/InteractiveTabHead.svelte">InteractiveTabHead, TabContent</GitHubSource>
+<GitHubSource href="tabs/InteractiveTabs.svelte">InteractiveTabs</GitHubSource>
+<GitHubSource href="tabs/PillTabs.svelte">PillTabs</GitHubSource>
 <GitHubSource href="tabs/TabContent.svelte">TabContent</GitHubSource>
+<GitHubSource href="tabs/UnderlineTabs.svelte">UnderlineTabs</GitHubSource>
 </ExampleDiv>
 
 The tabs component can be used either as an extra navigational hierarchy complementing the main navbar or you can also use it to change content inside a container just below the tabs using the data attributes from Flowbite.

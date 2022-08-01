@@ -1,9 +1,11 @@
 <script lang="ts">
 	import classNames from 'classnames';
 	import { setContext } from 'svelte';
+
 	export let divClass: string = 'relative overflow-x-auto shadow-md sm:rounded-lg';
 	export let striped: boolean = false;
 	export let hoverable: boolean = false;
+
 	$: setContext('striped', striped);
 	$: setContext('hoverable', hoverable);
 </script>

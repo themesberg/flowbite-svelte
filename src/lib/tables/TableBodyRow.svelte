@@ -1,6 +1,7 @@
 <script lang="ts">
 	import classNames from 'classnames';
 	import { getContext } from 'svelte';
+
 	export let trClass: string = 'bg-white dark:border-gray-700 dark:bg-gray-800';
 </script>
 
