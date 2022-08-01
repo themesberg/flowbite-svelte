@@ -1,3 +1,7 @@
+<script lang="ts">
+	export let size: string = '48';
+</script>
+
 <div
 	role="status"
 	class="space-y-8 animate-pulse md:space-y-0 md:space-x-8 md:flex md:items-center"
@@ -6,7 +10,9 @@
 		class="flex justify-center items-center w-full h-48 bg-gray-300 rounded sm:w-96 dark:bg-gray-700"
 	>
 		<svg
-			class="w-12 h-12 text-gray-200"
+			width={size}
+			height={size}
+			class="text-gray-200"
 			xmlns="http://www.w3.org/2000/svg"
 			aria-hidden="true"
 			fill="currentColor"

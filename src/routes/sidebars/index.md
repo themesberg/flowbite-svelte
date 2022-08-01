@@ -9,7 +9,7 @@ layout: sidebarLayout
   import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Sidebar, SidebarBrand, SidebarCta,	SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup,	SidebarItem, SidebarWrapper, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Sidebar, SidebarBrand, SidebarCta,	SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup,SidebarItem, SidebarWrapper, Breadcrumb, BreadcrumbItem } from '$lib/index'
   import {
     Home,
     ChartPie,
@@ -74,11 +74,32 @@ layout: sidebarLayout
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Sidebar</h1>
 
-<p>Use the sidebar components to show a list of menu items and multi-level dropdown items on either side of the page to navigate on your website</p>
+<CompoDescription>Use the sidebar component to show a list of menu items and multi-level dropdown items on either side of the page to navigate on your website</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="sidebars/Sidebar.svelte">Sidebar</GitHubSource>
+<GitHubSource href="sidebars/SidebarBrand.svelte">SidebarBrand</GitHubSource>
+<GitHubSource href="sidebars/SidebarCta.svelte">SidebarCta</GitHubSource>
+<GitHubSource href="sidebars/SidebarDropdownItem.svelte">SidebarDropdownItem</GitHubSource>
+<GitHubSource href="sidebars/SidebarDropdownWrapper.svelte">SidebarDropdownWrapper</GitHubSource>
+<GitHubSource href="sidebars/SidebarGroup.svelte">SidebarGroup</GitHubSource>
+<GitHubSource href="sidebars/SidebarItem.svelte">SidebarItem</GitHubSource>
+<GitHubSource href="sidebars/SidebarWrapper.svelte">SidebarWrapper</GitHubSource>
+</ExampleDiv>
+
+The sidebar component can be used as a complementary element relative to the navbar shown on either the left or right side of the page used for the navigation on your web application, including menu items, multi-level dropdown items, call to actions elements, and more.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+	import { Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper } from 'flowbite-svelte';
+</script>
+```
 
 <Htwo label="Default sidebar" />
 
-<p>Use this example to show a responsive list of menu items inside the sidebar with icons and labels.</p>
+Use this example to show a responsive list of menu items inside the sidebar with icons and labels.
 
 <ExampleDiv>
 	<Sidebar>
@@ -140,7 +161,7 @@ layout: sidebarLayout
 
 <Htwo label="Multi-level dropdown" />
 
-<p>Use this sidebar example to create multi-level menu items by using the dSidebarDropdownWrapper and SidebarDropdownItem components.</p>
+Use this sidebar example to create multi-level menu items by using the dSidebarDropdownWrapper and SidebarDropdownItem components.
 
 <ExampleDiv>
 	<Sidebar>
@@ -214,7 +235,7 @@ layout: sidebarLayout
 
 <Htwo label="Content separator" />
 
-<p>Separate the content inside the sidebar component by applying a border separator to the SidebarGroup component.</p>
+Separate the content inside the sidebar component by applying a border separator to the SidebarGroup component.
 
 <ExampleDiv>
 	<Sidebar>
@@ -288,7 +309,7 @@ layout: sidebarLayout
 
 <Htwo label="CTA button" />
 
-<p>Use this example to add a CTA button inside the sidebar component and encourage your users to visit the dedicated page.</p>
+Use this example to add a CTA button inside the sidebar component and encourage your users to visit the dedicated page.
 
 
 <ExampleDiv>
@@ -393,7 +414,7 @@ layout: sidebarLayout
 
 <Htwo label="Logo branding" />
 
-<p>Show the logo of your brand and link back to the homepage from the top part of the sidebar.</p>
+Show the logo of your brand and link back to the homepage from the top part of the sidebar.
 
 
 <ExampleDiv>
@@ -467,8 +488,7 @@ layout: sidebarLayout
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
 <h3>Sidebar</h3>
 

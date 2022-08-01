@@ -27,6 +27,20 @@ layout: skeletonLayout
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Tailwind CSS Skeleton</h1>
 
+<CompoDescription>The skeleton component can be used as an alternative loading indicator to the spinner by mimicking the content that will be loaded such as text, images, or video</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="skeleton/CardPlaceholder.svelte">CardPlaceholder</GitHubSource>
+<GitHubSource href="skeleton/ImagePlaceholder.svelte">ImagePlaceholder</GitHubSource>
+<GitHubSource href="skeleton/CardPlaceListPlaceholderholder.svelte">ListPlaceholder</GitHubSource>
+<GitHubSource href="skeleton/Skeleton.svelte">Skeleton</GitHubSource>
+<GitHubSource href="skeleton/TestimonialPlaceholder.svelte">TestimonialPlaceholder</GitHubSource>
+<GitHubSource href="skeleton/TextPlaceholder.svelte">TextPlaceholder</GitHubSource>
+<GitHubSource href="skeleton/VideoPlaceholder.svelte">VideoPlaceholder</GitHubSource>
+<GitHubSource href="skeleton/WidgetPlaceholder.svelte">WidgetPlaceholder</GitHubSource>
+</ExampleDiv>
+
+
 <Htwo label="Default skeleton" />
 
 <ExampleDiv>

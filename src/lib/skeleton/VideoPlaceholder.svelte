@@ -1,9 +1,15 @@
+<script lang="ts">
+	export let size: string = '48';
+</script>
+
 <div
 	role="status"
 	class="flex justify-center items-center max-w-sm h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700"
 >
 	<svg
-		class="w-12 h-12 text-gray-200 dark:text-gray-600"
+		width={size}
+		height={size}
+		class="text-gray-200 dark:text-gray-600"
 		xmlns="http://www.w3.org/2000/svg"
 		aria-hidden="true"
 		fill="currentColor"
