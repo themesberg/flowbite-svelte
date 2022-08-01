@@ -13,7 +13,7 @@ layout: doc
   <BreadcrumbItem>License</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl dark:text-white w-full pb-4">LICENSE</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">LICENSE</h1>
 
 <Htwo label="MIT License" />
 
