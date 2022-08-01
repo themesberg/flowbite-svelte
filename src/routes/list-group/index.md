@@ -9,7 +9,7 @@ layout: listgroupLayout
   import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Avatar, List, ListItem, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Avatar, List, ListItem, Breadcrumb, BreadcrumbItem } from '$lib'
   import {
     Adjustments,
     UserCircle,

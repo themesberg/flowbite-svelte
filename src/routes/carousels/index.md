@@ -9,7 +9,7 @@ layout: carouselLayout
   import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Carousel, CarouselTransition, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Carousel, CarouselTransition, Breadcrumb, BreadcrumbItem } from '$lib'
    import { quartInOut, sineInOut, bounceInOut, quintOut } from 'svelte/easing';
   import { Home, ChevronDoubleLeft, ChevronDoubleRight, Link} from 'svelte-heros'
   import { images } from './imageData';
@@ -77,7 +77,7 @@ The carousel component can be used to cycle through a set of elements using cust
 
 ```html
 <script>
-  import { Carousel } from '$lib/index';
+  import { Carousel } from '$lib';
   const images = [
   {
     id: 0,

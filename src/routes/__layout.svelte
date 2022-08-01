@@ -9,7 +9,7 @@
 		FooterIcon,
 		FooterLink,
 		FooterLinkGroup
-	} from '$lib/index';
+	} from '$lib';
 	import { Side, Nav, SidebarList } from 'svelte-sidebar-menu';
 	import Github from './utils/icons/Github.svelte';
 	import { forms, svelteflows, topMenus } from './moduleItems';

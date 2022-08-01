@@ -10,7 +10,7 @@ layout: formLayout
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { onMount } from 'svelte';
-  import { Label, Fileupload, Helper, Dropzone, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { Label, Fileupload, Helper, Dropzone, Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros'
   import componentProps from '../props/Fileupload.json'
   import componentProps2 from '../props/Dropzone.json'

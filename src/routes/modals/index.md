@@ -9,7 +9,7 @@ layout: modalLayout
   import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Button, Checkbox, Modal, Label, Input, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Button, Checkbox, Modal, Label, Input, Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros';
   import { goto } from "$app/navigation";
   import componentProps1 from '../props/Modal.json'

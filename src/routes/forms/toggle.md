@@ -10,7 +10,7 @@ layout: formLayout
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { onMount } from 'svelte';
-  import { Toggle, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { Toggle, Breadcrumb, BreadcrumbItem } from '$lib'
   import { AtSymbol , Mail , Home} from 'svelte-heros'
   import componentProps from '../props/Toggle.json'
   import componentProps1 from '../props/Radio.json'

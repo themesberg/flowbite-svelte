@@ -10,7 +10,7 @@ layout: accordionLayout
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { Home, ArrowCircleUp, ArrowCircleDown, Archive, Beaker } from 'svelte-heros'
-  import { AccordionItem, AccordionFlush,Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { AccordionItem, AccordionFlush,Breadcrumb, BreadcrumbItem } from '$lib'
   import accordionProps from '../props/AccordionItem.json'
   import accordionProps2 from '../props/AccordionFlush.json'
    // Props table

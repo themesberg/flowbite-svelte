@@ -9,7 +9,7 @@ layout: footerLayout
   import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup, Breadcrumb, BreadcrumbItem } from '$lib'
   import Facebook from '../utils/icons/Facebook.svelte'
   import Github from '../utils/icons/Github.svelte'
   import Twitter from '../utils/icons/Twitter.svelte'

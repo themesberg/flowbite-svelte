@@ -9,7 +9,7 @@ layout: badgeLayout
   import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Badge, Button, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Badge, Button, Breadcrumb, BreadcrumbItem } from '$lib'
   import Dot from '$lib/avatar/Dot.svelte';
   import { Home, Clock, Check, Mail } from 'svelte-heros';
   import componentProps from '../props/Badge.json'

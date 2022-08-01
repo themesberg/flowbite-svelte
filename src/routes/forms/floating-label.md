@@ -10,7 +10,7 @@ layout: formLayout
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { onMount } from 'svelte';
-  import { FloatingLabelInput, Helper, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { FloatingLabelInput, Helper, Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros'
   import componentProps from '../props/FloatingLabelInput.json'
    import componentProps2 from '../props/Helper.json'

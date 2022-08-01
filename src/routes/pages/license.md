@@ -4,7 +4,7 @@ layout: doc
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-  import { Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros'
 </script>
 

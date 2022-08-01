@@ -6,7 +6,7 @@
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { onMount } from 'svelte';
-  import { Input, Label, Helper, Iconinput, Breadcrumb, BreadcrumbItem } from "$lib/index"
+  import { Input, Label, Helper, Iconinput, Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros'
   import { AtSymbol , Mail } from 'svelte-heros'
   import componentProps1 from '../props/Input.json'

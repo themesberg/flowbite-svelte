@@ -10,7 +10,7 @@ import ExampleDiv from '../utils/ExampleDiv.svelte'
 import TableProp from '../utils/TableProp.svelte'
 import TableDefaultRow from '../utils/TableDefaultRow.svelte'
 import { onMount } from 'svelte';
-import { Label, Dropdown, DropdownItem, Select, Breadcrumb, BreadcrumbItem } from "$lib/index"
+import { Label, Dropdown, DropdownItem, Select, Breadcrumb, BreadcrumbItem } from '$lib'
 import CloseButton from "$lib/utils/CloseButton.svelte";
 import { Home } from 'svelte-heros'
 import componentProps from '../props/Select.json'

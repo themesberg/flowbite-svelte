@@ -9,7 +9,7 @@ layout: tooltipLayout
   import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Tooltip, Button, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Tooltip, Button, Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros'
   import componentProps from '../props/Tooltip.json'
   // Props table
@@ -27,7 +27,23 @@ layout: tooltipLayout
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Tooltips</h1>
 
-<Htwo label="Tooltip top" />
+<CompoDescription>Use the following Tailwind CSS powered tooltips to show extra content when hovering or focusing on an element</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="tooltips/Tooltip.svelte">Tooltip</GitHubSource>
+</ExampleDiv>
+
+Flowbite-Svelte allows you to show extra information when hovering or focusing over an element in multiple positions, styles, and animations.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+	import { Tooltip } from 'flowbite-svelte';
+</script>
+```
+
+<Htwo label="Default tooltip example" />
 
 <ExampleDiv>
   <Tooltip content="Tooltip content">

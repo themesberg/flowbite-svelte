@@ -9,7 +9,7 @@ layout: timelineLayout
   import CompoDescription from '../utils/CompoDescription.svelte'
 	import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-	import { Timeline, TimelineItem, TimelineItemVertical, TimelineItemHorizontal, TimelineHorizontal, Activity, ActivityItem, Group, GroupItem, Breadcrumb, BreadcrumbItem } from '$lib/index'
+	import { Timeline, TimelineItem, TimelineItemVertical, TimelineItemHorizontal, TimelineHorizontal, Activity, ActivityItem, Group, GroupItem, Breadcrumb, BreadcrumbItem } from '$lib'
   import { Calendar, Adjustments, Home } from 'svelte-heros';
   import componentProps1 from '../props/Timeline.json'
   import componentProps2 from '../props/TimelineItem.json'
@@ -134,7 +134,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Timeline</h1>
 
-<CompoDescription>Get started with the responsive timeline component to show data in a chronological order with support for multiple styles, sizes, and variants</Compodescription>
+<CompoDescription>Get started with the responsive timeline component to show data in a chronological order with support for multiple styles, sizes, and variants</CompoDescription>
 
 <ExampleDiv>
 <GitHubSource href="timelines/Timeline.svelte">Timeline</GitHubSource>
@@ -148,7 +148,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </ExampleDiv>
 
 The timeline component can be used to show series of data in a chronological order for use cases such as activity feeds, user actions, application updates, and more.
-
 
 <Htwo label="Setup" />
 

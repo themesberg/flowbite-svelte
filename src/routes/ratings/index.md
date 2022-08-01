@@ -9,7 +9,7 @@ layout: ratingLayout
   import CompoDescription from '../utils/CompoDescription.svelte'
 	import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-	import { Rating, AdvancedRating, ScoreRating, Breadcrumb, BreadcrumbItem } from '$lib/index'
+	import { Rating, AdvancedRating, ScoreRating, Breadcrumb, BreadcrumbItem } from '$lib'
 	import { Heart, ThumbUp, EmojiHappy, Home } from 'svelte-heros';
 	import componentProps from '../props/Rating.json'
 	import componentProps2 from '../props/AdvancedRating.json'

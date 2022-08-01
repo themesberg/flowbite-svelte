@@ -9,7 +9,7 @@ layout: buttonLayout
   import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Button, Spinner, Breadcrumb, BreadcrumbItem } from '$lib/index'
+  import { Button, Spinner, Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros';
   import { ArrowRight, Bell, ShoppingCart, ChevronRight } from "svelte-heros";
   import BrandFacebook from '../utils/icons/Facebook.svelte'

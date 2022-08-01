@@ -9,7 +9,7 @@ layout: alertLayout
   import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Alert, Breadcrumb, BreadcrumbItem, Button } from '$lib/index'
+  import { Alert, Breadcrumb, BreadcrumbItem, Button } from '$lib'
   import { Home } from 'svelte-heros';
   import { XCircle, Eye, InformationCircle } from "svelte-heros";
   import componentProps from '../props/Alert.json'

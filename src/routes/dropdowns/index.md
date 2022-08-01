@@ -11,7 +11,7 @@ layout: dropdownLayout
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
 
   import { Avatar, Button, Checkbox, Label, Helper, Dropdown, DropdownDivider, DropdownHeader, DropdownItem,
-    Navbar,NavBrand,NavHamburger, NavUl, NavLi, Radio, Toggle, SimpleSearch, Breadcrumb, BreadcrumbItem } from '$lib/index'
+    Navbar,NavBrand,NavHamburger, NavUl, NavLi, Radio, Toggle, SimpleSearch, Breadcrumb, BreadcrumbItem } from '$lib'
   import CloseButton from "$lib/utils/CloseButton.svelte";
 
   import { Home, ChevronDown, DotsHorizontal, DotsVertical, UserAdd, UserRemove } from 'svelte-heros';

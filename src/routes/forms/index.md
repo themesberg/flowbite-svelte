@@ -10,7 +10,7 @@ layout: formLayout
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { onMount } from 'svelte';
-	import { Input, Label, Helper, Iconinput, Fileupload, Textarea, Select, Checkbox, Radio, Toggle, Breadcrumb, BreadcrumbItem } from "$lib/index"
+	import { Input, Label, Helper, Iconinput, Fileupload, Textarea, Select, Checkbox, Radio, Toggle, Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home, AtSymbol, Mail, Search } from 'svelte-heros'
   import componentProps from '../props/Input.json'
   import componentProps2 from '../props/Label.json'
