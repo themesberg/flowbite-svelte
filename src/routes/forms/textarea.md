@@ -75,8 +75,7 @@ let textareaprops = {
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
 
 <TableProp header={propHeader} {divClass} {theadClass}>

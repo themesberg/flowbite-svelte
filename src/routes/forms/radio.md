@@ -73,7 +73,7 @@ Use the default example of a radio component with the checked and unchecked stat
 
 Apply the `disabled` attribute to the radio component to disallow the selection for the user.
 
-<p>This example can be used for the disabled state of the radio component by applying the disabled attribute to the input element.</p>
+This example can be used for the disabled state of the radio component by applying the disabled attribute to the input element.
 
 <ExampleDiv class="flex flex-col gap-4">
 <Radio name="disabled-state" disabled>Disabled radio</Radio>
@@ -137,7 +137,7 @@ If you need separate control over the label and the radio you can use the verbos
 
 <Htwo label="Radio with a link" />
 
-<p>Use this example if you want to add an anchor link inside the label of the radio component.</p>
+Use this example if you want to add an anchor link inside the label of the radio component.
 
 <ExampleDiv>
 <Radio name="with-link">I agree with the <a href="/" class="text-blue-600 dark:text-blue-500 hover:underline ml-1">terms and conditions</a>.</Radio>
@@ -151,7 +151,8 @@ If you need separate control over the label and the radio you can use the verbos
 ```
 
 <Htwo label="Helper text" />
-<p>Get started with this example if you want to add a secondary helper text for the radio component.</p>
+
+Get started with this example if you want to add a secondary helper text for the radio component.
 
 <ExampleDiv>
   <Radio aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Radio>

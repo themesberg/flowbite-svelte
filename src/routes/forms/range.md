@@ -74,7 +74,7 @@ The range component can be used as an input field to get a number from the user 
 
 <Htwo label="Binding value" />
 
-<p>Use bind:value to bind the range input value as seen the the following examples.</p>
+Use bind:value to bind the range input value as seen the the following examples.
 
 <Htwo label="Min and max" />
 
@@ -126,12 +126,11 @@ The range component can be used as an input field to get a number from the user 
 
 <Htwo label="Unknown attributes" />
 
-<p>Since we added `$$restProps` to input field, you can contain the props which are not declared with export. It will pass down other unknown attributes to an element in a component.</p>
+Since we added `$$restProps` to input field, you can contain the props which are not declared with export. It will pass down other unknown attributes to an element in a component.
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
 
 <TableProp header={propHeader} {divClass} {theadClass}>

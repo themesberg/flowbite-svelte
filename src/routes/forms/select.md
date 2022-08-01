@@ -256,10 +256,10 @@ Get started with the small, default, and large sizes for the select component fr
 <Label for="select-lg" class="sr-only">Underline large select</Label>
 <Select id="select-lg" underline size="lg" items={countries} class="mb-6"/>
 ```
+
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />

@@ -101,8 +101,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
 <h3>Toggle</h3>
 
