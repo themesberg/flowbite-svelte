@@ -43,7 +43,6 @@ layout: kbdLayout
 
 The KBD (Keyboard) component can be used to indicate a textual user input from the keyboard inside other elements such as in text, tables, cards, and more.
 
-
 <Htwo label="Setup" />
 
 ```html

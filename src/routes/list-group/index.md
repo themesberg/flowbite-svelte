@@ -55,6 +55,24 @@ layout: listgroupLayout
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">List group</h1>
 
+<CompoDescription>Use the list group component to display a series of items, buttons or links inside a single element</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="list-group/List.svelte">List</GitHubSource>
+<GitHubSource href="list-group/LisListItemt.svelte">ListItem</GitHubSource>
+</ExampleDiv>
+
+The list group component can be used to display a series of elements, buttons or links inside a single card component similar to a sidebar.
+
+
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { List, ListItem } from 'flowbite-svelte'
+</script>
+```
+
 <Htwo label="Default list group" />
 
 Here’s an example of a list group that you can use right away.
