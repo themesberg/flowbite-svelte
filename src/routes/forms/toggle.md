@@ -31,6 +31,22 @@ layout: formLayout
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Toggle</h1>
 
+<CompoDescription>Use the toggle component to switch between a binary state of true or false using a single click available in multiple sizes, variants, and colors</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="forms/Toggle.svelte">Toggle</GitHubSource>
+</ExampleDiv>
+
+The toggle component can be used to receive a simple “yes” or “no” type of answer from the user by choosing a single option from two options available in multiple sizes, styles, and colors coded with the utility classes from Tailwind CSS and with dark mode support.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { Toggle } from 'flowbite-svelte'
+</script>
+```
+
 <Htwo label="Toggle examples" />
 
 Get started with the default toggle component example as a checkbox element to receive a true or false selection from the user.
@@ -43,10 +59,6 @@ Get started with the default toggle component example as a checkbox element to r
 </ExampleDiv>
 
 ```html
-<script>
-  import { Toggle } from 'flowbite-svelte'
-</script>
-
 <Toggle>Toggle me</Toggle>
 <Toggle checked>Checked toggle</Toggle>
 <Toggle disabled>Disabled toggle</Toggle>

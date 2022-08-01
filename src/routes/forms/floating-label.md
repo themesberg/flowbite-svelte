@@ -30,9 +30,19 @@ layout: formLayout
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Floating label</h1>
 
+<CompoDescription>Use the floating label style for the input field elements to replicate the Material UI design system from Google and choose from multiple styles and sizes</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="forms/FloatingLabelInput.svelte">FloatingLabel</GitHubSource>
+</ExampleDiv>
+
+The floating label style was first pioneered by Google in its infamous Material UI design system and it’s basically a label tag which floats just above the input field when it is being focused or already has content inside.
+
+On this page you will find a three different input field styles including a standard, outlined, and filled style including validation styles and sizes coded with Tailwind CSS and supported for dark mode.
+
 <Htwo label="Examples" />
 
-<p>Get started with the following three styles for the floating label component and use the label tag as a visual placeholder using the peer-placeholder-shown and peer-focus utility classes from Tailwind CSS.</p>
+Get started with the following three styles for the floating label component and use the label tag as a visual placeholder using the peer-placeholder-shown and peer-focus utility classes from Tailwind CSS.
 
 <ExampleDiv>
 <div id="exampleWrapper" class="grid gap-6 items-end w-full md:grid-cols-3">
@@ -54,7 +64,7 @@ layout: formLayout
 
 <Htwo label="Disabled state" />
 
-<p>Apply the disabled attribute to the input fields to disallow the user from changing the content.</p>
+Apply the disabled attribute to the input fields to disallow the user from changing the content.
 
 <ExampleDiv>
 <div id="exampleWrapper" class="grid gap-6 items-end w-full md:grid-cols-3">
@@ -74,7 +84,7 @@ layout: formLayout
 
 <Htwo label="Validation" />
 
-<p>Use the following examples of input validation for the success and error messages by applying the validation text below the input field and using the green or red color classes from Tailwind CSS.</p>
+Use the following examples of input validation for the success and error messages by applying the validation text below the input field and using the green or red color classes from Tailwind CSS.
 
 <ExampleDiv>
 <!-- Success messages -->
@@ -144,7 +154,7 @@ layout: formLayout
 
 <Htwo label="Sizes" />
 
-<p>Use the small and default sizes of the floating label input fields from the following example.</p>
+Use the small and default sizes of the floating label input fields from the following example.
 
 <ExampleDiv>
 <div class="grid gap-6 items-end mb-6 md:grid-cols-3">
@@ -174,7 +184,7 @@ layout: formLayout
 
 <Htwo label="Helper text" />
 
-<p>Add a helper text in addition to the label if you want to show more information below the input field.</p>
+Add a helper text in addition to the label if you want to show more information below the input field.
 
 <ExampleDiv>
 <FloatingLabelInput style="filled" id="floating_helper" aria-describedby="floating_helper_text" name="floating_helper" type="text" label="Floating helper"/>
@@ -188,8 +198,8 @@ layout: formLayout
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types 
+ page</a> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />

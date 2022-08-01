@@ -38,7 +38,9 @@ The checkbox component can be used to receive one or more selected options from 
 <GitHubSource href="forms/Checkbox.svelte">Checkbox</GitHubSource>
 </ExampleDiv>
 
-<Htwo lable="Setup" />
+The checkbox component can be used to receive one or more selected options from the user in the form of a square box available in multiple styles, sizes, colors, and variants.
+
+<Htwo label="Setup" />
 
 ```html
 <script>
@@ -47,6 +49,8 @@ The checkbox component can be used to receive one or more selected options from 
 ```
 
 <Htwo label="Checkbox examples" />
+
+Use this default example of a checbkox element in a checked and unchecked state.
 
 <ExampleDiv class="flex flex-col gap-4">
 <Checkbox>Default checkbox</Checkbox>
@@ -64,7 +68,7 @@ The checkbox component can be used to receive one or more selected options from 
 
 <Htwo label="Disabled state" />
 
-<p>This example can be used for the disabled state of the checkbox component by applying the disabled attribute to the input element.</p>
+This example can be used for the disabled state of the checkbox component by applying the disabled attribute to the input element.
 
 <ExampleDiv class="flex flex-col gap-4">
 <Checkbox disabled>Disabled checkbox</Checkbox>
@@ -128,7 +132,7 @@ If you need separate control over the label and the checkbox you can use the ver
 
 <Htwo label="Checkbox with a link" />
 
-<p>Use this example if you want to add an anchor link inside the label of the checkbox component.</p>
+Use this example if you want to add an anchor link inside the label of the checkbox component.
 
 <ExampleDiv>
 <Checkbox>I agree with the <a href="/" class="text-blue-600 dark:text-blue-500 hover:underline ml-1">terms and conditions</a>.</Checkbox>
@@ -142,7 +146,7 @@ If you need separate control over the label and the checkbox you can use the ver
 ```
 
 <Htwo label="Helper text" />
-<p>Get started with this example if you want to add a secondary helper text for the checkbox component.</p>
+Get started with this example if you want to add a secondary helper text for the checkbox component.
 
 <ExampleDiv>
   <Checkbox aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Checkbox>
@@ -155,7 +159,7 @@ If you need separate control over the label and the checkbox you can use the ver
 ```
 
 <Htwo label="Bordered" />
-<p>Use this example of a checkbox inside a card element to enable a larger area of clicking activation.</p>
+Use this example of a checkbox inside a card element to enable a larger area of clicking activation.
 
 <ExampleDiv>
 <div class="grid grid-cols-2 gap-6">

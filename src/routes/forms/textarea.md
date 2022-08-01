@@ -34,10 +34,25 @@ let textareaprops = {
   <BreadcrumbItem>Textarea</BreadcrumbItem>
 </Breadcrumb>
 
-
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Textarea</h1>
 
-<Htwo label="Examples" />
+<CompoDescription>Use the textarea component as a multi-line text field input and use it inside form elements available in multiple sizes, styles, and variants</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="forms/Textarea.svelte">Textarea</GitHubSource>
+</ExampleDiv>
+
+The textarea component is a multi-line text field input that can be used to receive longer chuncks of text from the user in the form of a comment box, description field, and more.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { Textarea } from 'flowbite-svelte'
+</script>
+```
+
+<Htwo label="Textarea examples" />
 
 <ExampleDiv>
 <Textarea {...textareaprops} />
@@ -45,7 +60,7 @@ let textareaprops = {
 
 ```html
 <script>
-import { Textarea } from 'flowbite-svelte'
+...
 let textareaprops = {
   id: 'message',
   name: 'message',

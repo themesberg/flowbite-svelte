@@ -35,9 +35,25 @@ layout: formLayout
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Radio</h1>
 
+<CompoDescription>Get started with the radio component to let the user choose a single option from multiple options in the form of a circle based on multiple styles and colors</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="forms/Radio.svelte">Radio</GitHubSource>
+</ExampleDiv>
+
 The radio component can be used to allow the user to choose a single option from one or more available options coded with the utility classes from Tailwind CSS and available in multiple styles, variants, and colors and support dark mode.
 
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { Radio } from 'flowbite-svelte'
+</script>
+```
+
 <Htwo label="Radio examples" />
+
+Use the default example of a radio component with the checked and unchecked state.
 
 <ExampleDiv class="flex flex-col gap-4">
 <Radio name="example">Default radio</Radio>
@@ -68,7 +84,6 @@ Apply the `disabled` attribute to the radio component to disallow the selection 
 <Radio name="disabled-state" disabled>Disabled radio</Radio>
 <Radio name="disabled-state" disabled checked>Disabled checked</Radio>
 ```
-
 
 <Htwo label="Alternative syntax" />
 

@@ -61,6 +61,22 @@ let states = [
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Select</h1>
 
+<CompoDescription>Get started with the select component to allow the user to choose from one or more options from a dropdown list based on multiple styles, sizes, and variants</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="forms/Select.svelte">Select</GitHubSource>
+</ExampleDiv>
+
+The select input component can be used to gather information from users based on multiple options in the form of a dropdown list and by browsing this page you will find multiple options, styles, sizes, and variants built with the utility classes from Tailwind CSS also available in dark mode.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { Select } from 'flowbite-svelte'
+</script>
+```
+
 <Htwo label="Select input example" />
 
 Get started with the default example of a select input component to get a single option selection.

@@ -29,7 +29,23 @@ layout: formLayout
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Range</h1>
 
-<Htwo label="Examples" />
+<CompoDescription>Get started with the range component to receive a number from the user anywhere from 1 to 100 by sliding form control horizontally based on multiple options</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="forms/Range.svelte">Range</GitHubSource>
+</ExampleDiv>
+
+The range component can be used as an input field to get a number from the user based on your custom selection (ie. from 1 to 100) by using a sliding animation.
+
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { Range } from 'flowbite-svelte'
+</script>
+```
+
+<Htwo label="Range slider example" />
 
 <ExampleDiv>
 <Label>Default range</Label>
