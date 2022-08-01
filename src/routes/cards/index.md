@@ -402,7 +402,15 @@ Use this card for your e-commerce websites and show information about the produc
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<Htwo label="Slots: Card" />
+<Htwo label="Slots" />
+
+<h3>Card</h3>
+
+<TableProp header={slotHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={slotItems} rowState='hover' />
+</TableProp>
+
+<h3>EcommerceCard</h3>
 
 <TableProp header={slotHeader} {divClass} {theadClass}>
   <TableDefaultRow items={slotItems} rowState='hover' />

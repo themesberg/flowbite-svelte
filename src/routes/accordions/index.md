@@ -447,7 +447,9 @@ npm i svelte-heros
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<Htwo label="Slots: AccordionItem, AccordionFlush" />
+<Htwo label="Slots" />
+
+<h3>AccordionItem, AccordionFlush</h3>
 
 <TableProp header={slotHeader} {divClass} {theadClass}>
   <TableDefaultRow items={slotItems} rowState='hover' />

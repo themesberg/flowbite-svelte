@@ -25,6 +25,11 @@ layout: dropdownLayout
   export let propItems4 = componentProps4.props
 
   let propHeader = ['Name', 'Type', 'Default']
+  let slotHeader = ['Name', 'Description']
+
+  let slotItems = [['trigger', 'Dropdown trigger icon/button.'],['content','Dropdown content']]
+  let slotDropdownHeader = [['default', 'Dropdown header content.']]
+  let slotDropdownItem = [['default', 'Dropdown item content.']]
 
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -38,6 +43,21 @@ layout: dropdownLayout
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Dropdown</h1>
 
+<ExampleDiv>
+<GitHubSource href="dropdowns/Dropdown.svelte">Dropdown</GitHubSource>
+<GitHubSource href="dropdowns/DropdownItem.svelte">DropdownItem</GitHubSource>
+<GitHubSource href="dropdowns/DropdownDivider.svelte">DropdownDivider</GitHubSource>
+<GitHubSource href="dropdowns/DropdownHeader.svelte">DropdownHeader</GitHubSource>
+</ExampleDiv>
+
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { Dropdown, DropdownItem, DropdownDivider, DropdownHeader } from 'flowbite-svelte'
+</script>
+```
+
 <Htwo label="Examples" />
 
 <ExampleDiv class="flex justify-center h-64">
@@ -50,10 +70,6 @@ layout: dropdownLayout
 </ExampleDiv>
 
 ```html
-<script>
-  import { Dropdown, DropdownItem} from 'flowbite-svelte'
-</script>
-
 <Dropdown label="Dropdown button" class="w-44">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
@@ -972,4 +988,24 @@ Use this example to also show the name or email of the user next to the avatar f
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={propItems4} rowState='hover' />
+</TableProp>
+
+<Htwo label="Slots" />
+
+<h3>Dropdown</h3>
+
+<TableProp header={slotHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={slotItems} rowState='hover' />
+</TableProp>
+
+<h3>DropdownDivider</h3>
+
+<TableProp header={slotHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={slotDropdownHeader} rowState='hover' />
+</TableProp>
+
+<h3>DropdownItem</h3>
+
+<TableProp header={slotHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={slotDropdownItem} rowState='hover' />
 </TableProp>
