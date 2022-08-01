@@ -38,10 +38,13 @@ The badge component can be used to complement other elements such as buttons or 
 
 Alternatively, badges can also be used as standalone elements that link to a certain page.
 
+<Htwo label="Setup" />
+
+Import a button component in the script tag.
+
 ```html
 <script>
-  import { Badge } from 'flowbite-svelte'
-  import { Clock, Check } from 'svelte-heros'
+	import { Badge } from 'flowbite-svelte';
 </script>
 ```
 

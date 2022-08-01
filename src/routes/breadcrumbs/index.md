@@ -38,6 +38,14 @@ The breadcrumb component is an important part of any website or application that
 
 Flowbite includes two styles of breadcrumb elements, one that has a transparent background and a few more that come with a background in different colors.
 
+<Htwo label="Setup" />
+
+```html
+<script>
+	import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
+</script>
+```
+
 <Htwo label="Default Breadcrumb" />
 
 Use the following breadcrumb example to show the hierarchical structure of pages.

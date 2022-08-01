@@ -71,7 +71,6 @@ Import a button component in the script tag.
 </script>
 ```
 
-
 <Htwo label="Default button" />
 
 Use these default button styles with multiple colors to indicate an action or link within your website. The default `type` is set to `button`. You can chage it by using the `type` prop.

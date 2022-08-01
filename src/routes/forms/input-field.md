@@ -45,6 +45,15 @@ The input field is an important part of the form element that can be used to cre
 
 On this page you will find all of the input types based on multiple variants, styles, colors, and sizes built with the utility classes from Tailwind CSS and components from Flowbite.
 
+
+<Htwo label="Setup" />
+
+```html
+<script>
+	import { Input, Label, Helper } from 'flowbite-svelte';
+</script>
+```
+
 <Htwo label="Input sizes" />
 
 Use the following examples to apply a small, default or large size for the input fields.
