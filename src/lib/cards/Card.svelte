@@ -6,7 +6,6 @@
 	export let horizontal: boolean = false;
 	export let reverse: boolean = false;
 	export let img: string = undefined;
-
 	export let padding: 'sm' | 'md' | 'lg' = 'lg';
 
 	setContext('background', true);

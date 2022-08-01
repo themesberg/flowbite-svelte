@@ -17,6 +17,11 @@ layout: docLayout
 ```js
 import type { SvelteComponent } from 'svelte';
 
+export type AccordionIconType = {
+	up: typeof SvelteComponent;
+	down: typeof SvelteComponent;
+};
+
 export interface ActivityType {
 	title: HTMLElement | string;
 	date: Date | string;
@@ -90,6 +95,36 @@ export type CrumbType = {
 	href: string;
 };
 
+export interface DotType {
+	top?: boolean;
+	color?: string;
+}
+
+export interface drawerTransitionParamTypes {
+	amount?: number;
+	delay?: number;
+	duration?: number;
+	easing?: (t: number) => number;
+	opacity?: number;
+	x?: number;
+	y?: number;
+}
+
+export type drawerTransitionTypes =
+	| 'fade'
+	| 'fly'
+	| 'slide'
+	| 'blur'
+	| 'in:fly'
+	| 'out:fly'
+	| 'in:slide'
+	| 'out:slide'
+	| 'in:fade'
+	| 'out:fade'
+	| 'in:blur'
+	| 'out:blur'
+	| undefined;
+
 export type DropdownColorType = 'blue' | 'blue-outline' | 'dark' | 'dark-outline' | 'light' | 'green' | 'green-outline' | 'red' | 'red-outline' | 'yellow' | 'yellow-outline' | 'purple' | 'purple-outline';
 
 export interface DropdownType {
@@ -97,6 +132,8 @@ export interface DropdownType {
 	href: string;
 	divider?: boolean;
 }
+
+export type FormColorType = 'blue'|'red'|'green'|'purple'|'teal'|'yellow'|'orange'
 
 export type Gradientduotones = 'purple2blue' | 'cyan2blue' | 'green2blue' | 'purple2pink' | 'pink2orange' | 'teal2lime' | 'red2yellow';
 
@@ -109,8 +146,14 @@ export interface GroupTimelineType {
 	comment?: string | HTMLElement;
 }
 
+export interface IconType {
+	name: typeof SvelteComponent;
+	size?: number;
+	color?: Colors;
+	class?: string;
+}
 export interface IconTabType {
-	name: string;
+	name: typeof SvelteComponent;
 	active: boolean;
 	href: string;
 	rel?: string;
@@ -123,12 +166,20 @@ export type ImgType = {
 	alt?: string;
 };
 
-export type InputType = 'button' | 'checkbox' | 'color' | 'date' | 'datetime-local' | 'email' | 'file' | 'hidden' | 'image' | 'month' | 'number' | 'password' | 'radio' | 'range' | 'reset' | 'search' | 'submit' | 'tel' | 'text' | 'time' | 'url' | 'week';
+export type InputType = 'color' | 'date' | 'datetime-local' | 'email' | 'file' | 'hidden' | 'image' | 'month' | 'number' | 'password' |  'reset' | 'submit' | 'tel' | 'text' | 'time' | 'url' | 'week';
 
 export interface InteractiveTabType {
 	name: string;
 	id: number;
 	content: string | typeof SvelteComponent;
+}
+
+
+export interface ListGroupItemType {
+	current?: boolean;
+	disabled?: boolean;
+	href?: string;
+	[propName: string]: any;
 }
 
 export interface LinkType {
@@ -160,14 +211,6 @@ export interface PillTabType {
 	name: string;
 	selected: boolean;
 	href: string;
-}
-
-export interface RadioType {
-	id: string;
-	label: string;
-	value: string;
-	checked?: boolean;
-	disabled?: boolean;
 }
 
 export type SelectOptionType = {
@@ -253,6 +296,8 @@ export interface TimelineItemHorizontalType {
 	iconClass?: string;
 	text?: HTMLElement | string;
 }
+
+export type ToggleColorType = 'blue'|'red'|'green'|'purple'|'yellow'|'teal'|'orange';
 
 export interface TransitionParamTypes {
 	delay?: number;

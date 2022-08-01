@@ -3,6 +3,7 @@
 	import Rating from '$lib/ratings/Rating.svelte';
 	import type { ImgType, Colors } from '../types';
 	import Card from './Card.svelte';
+
 	export let img: ImgType;
 	export let href: string = '/';
 	export let btnColor: Colors = 'blue';

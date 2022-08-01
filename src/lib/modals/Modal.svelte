@@ -4,12 +4,22 @@
 	import CloseButton from '$lib/utils/CloseButton.svelte';
 	import focusTrap from '$lib/utils/focusTrap';
 
-	export let open = false;
+	export let open: boolean = false;
 	export let title: string = undefined;
 	export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
-	export let placement = 'center';
+	export let placement:
+		| 'top-left'
+		| 'top-center'
+		| 'top-right'
+		| 'center-left'
+		| 'center'
+		| 'center-right'
+		| 'bottom-left'
+		| 'bottom-center'
+		| 'bottom-right' = 'center';
 	export let autoclose: boolean = true;
-	export let backdropClasses = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40';
+	export let backdropClasses: string =
+		'bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40';
 
 	const dispatch = createEventDispatcher();
 	setContext('background', true);

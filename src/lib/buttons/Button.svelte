@@ -2,8 +2,6 @@
 	import classNames from 'classnames';
 	import { getContext } from 'svelte';
 
-	const background = getContext('background');
-
 	export let pill: boolean = false;
 	export let outline: boolean = false;
 	export let gradient: boolean = false;
@@ -31,6 +29,7 @@
 		| 'purple'
 		| null = null;
 
+	const background = getContext('background');
 	const colorClasses = {
 		blue: 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800',
 		dark: 'text-white bg-gray-800 hover:bg-gray-900 focus:ring-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700',
