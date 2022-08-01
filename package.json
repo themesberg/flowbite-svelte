@@ -43,6 +43,7 @@
 		"prism-themes": "^1.9.0",
 		"svelte": "^3.47.0",
 		"svelte-check": "^2.8.0",
+		"svelte-heros": "^2.3.3",
 		"svelte-preprocess": "^4.10.7",
 		"svelte-sidebar-menu": "^0.8.4",
 		"svelte2tsx": "^0.5.11",
@@ -94,8 +95,7 @@
 	"dependencies": {
 		"@floating-ui/dom": "^0.5.3",
 		"classnames": "^2.3.1",
-		"flowbite": "^1.4.2",
-		"svelte-heros": "^2.2.2"
+		"flowbite": "^1.4.2"
 	},
 	"engines": {
 		"npm": ">=7.0.0",

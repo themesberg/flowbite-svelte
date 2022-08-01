@@ -40,9 +40,21 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Rating</h1>
 
-<Htwo label="Set up" />
+<CompoDescription>Use the rating component to show reviews and testimonials from your users using stars and scores based on multiple styles and sizes</CompoDescription>
 
-<p>Let's import all necessary components in the script tag. We import a heart, thumb-up, and smiley icons, but you can use any icons as you like.</p>
+<ExampleDiv>
+<GitHubSource href="ratings/Rating.svelte">Rating</GitHubSource>
+<GitHubSource href="ratings/AdvancedRating.svelte">AdvancedRating</GitHubSource>
+<GitHubSource href="ratings/ScoreRating.svelte">ScoreRating</GitHubSource>
+</ExampleDiv>
+
+Get started with the rating component to show an aggregate of reviews and scores in the forms of stars or numbers.
+
+You can find multiple examples on this page including different styles, sizes, and variants of the rating component and other associated elements such as a comment or card.
+
+<Htwo label="Setup" />
+
+Let's import all necessary components in the script tag. We import a heart, thumb-up, and smiley icons, but you can use any icons as you like.
 
 ```html
 <script>
@@ -53,7 +65,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Total and rating props" />
 
-<p>The default rating icon is a star. Set the total and rating props.</p>
+The default rating icon is a star. Set the total and rating props.
 
 <ExampleDiv>	
 <Rating total="5" rating="4.66" />
@@ -65,7 +77,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Ceil prop" />
 
-<p>The default rounding for the rate is `floor`, but by adding the `ceil` prop, you can round it up.</p>
+The default rounding for the rate is `floor`, but by adding the `ceil` prop, you can round it up.
 
 <ExampleDiv>	
 <Rating total="5" rating="4.66" ceil />
@@ -77,7 +89,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Text slot" />
 
-<p>Use the `text` slot to add any text.</p>
+Use the `text` slot to add any text.
 
 <ExampleDiv>	<Rating total="5" rating="3.21">
 		<p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.21 out of 5</p>
@@ -92,11 +104,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Icon size and color" />
 
-<p>Use the `ratingUp` and `ratingDown` slots to add icons of your choice.</p>
+Use the `ratingUp` and `ratingDown` slots to add icons of your choice.
 
 <h3>Size and color</h3>
 
-<p>The default icon size is `24`. Set the `class` in a icon component to change colors.</p>
+The default icon size is `24`. Set the `class` in a icon component to change colors.
 
 <ExampleDiv>	<Rating total="5" rating="3.21">
 		<span slot="ratingUp">
@@ -164,7 +176,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="AdvancedRating component" />
 
-<p>Set the `total`, rating`, and `ratings` prop for AdvancedRation component. Use the `rating` slot for Rating component with the `total` and `rating` props. Use the `globalText` slot for additional information.</p>
+Set the `total`, rating`, and `ratings` prop for AdvancedRation component. Use the `rating` slot for Rating component with the `total` and `rating` props. Use the `globalText` slot for additional information.
 
 <ExampleDiv>	
 <AdvancedRating
@@ -210,7 +222,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Different icon" />
 
-<p>As we describe in the Rating component, you can change an icon in the `ratingUp` and `ratingDown` in the Rating component.</p>
+As we describe in the Rating component, you can change an icon in the `ratingUp` and `ratingDown` in the Rating component.
 
 <ExampleDiv>	<AdvancedRating
 		total="5"
@@ -306,8 +318,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <a href="/pages/types">types 
+ page</a> for type information.
 
 <h3>Rating</h3>
 
