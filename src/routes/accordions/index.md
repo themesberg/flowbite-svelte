@@ -6,6 +6,7 @@ layout: accordionLayout
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { Home, ArrowCircleUp, ArrowCircleDown, Archive, Beaker } from 'svelte-heros'

@@ -6,6 +6,7 @@ layout: formLayout
   import Htwo from '../utils/Htwo.svelte'
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import GitHubSource from '../utils/GitHubSource.svelte'
+  import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { Checkbox, Breadcrumb, BreadcrumbItem, Dropdown, DropdownItem, DropdownDivider, SimpleSearch, Label, Helper } from "$lib/index"
@@ -32,6 +33,18 @@ layout: formLayout
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Checkbox</h1>
 
 The checkbox component can be used to receive one or more selected options from the user in the form of a square box available in multiple styles, sizes, colors, and variants coded with the utility classes from Tailwind CSS and with support for dark mode.
+
+<ExampleDiv>
+<GitHubSource href="forms/Checkbox.svelte">Checkbox</GitHubSource>
+</ExampleDiv>
+
+<Htwo lable="Setup" />
+
+```html
+<script>
+  import { Checkbox } from 'flowbite-svelte'
+</script>
+```
 
 <Htwo label="Checkbox examples" />
 
