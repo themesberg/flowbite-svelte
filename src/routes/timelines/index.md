@@ -134,6 +134,32 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Timeline</h1>
 
+<CompoDescription>Get started with the responsive timeline component to show data in a chronological order with support for multiple styles, sizes, and variants</Compodescription>
+
+<ExampleDiv>
+<GitHubSource href="timelines/Timeline.svelte">Timeline</GitHubSource>
+<GitHubSource href="timelines/TimelineItem.svelte">TimelineItem</GitHubSource>
+<GitHubSource href="timelines/TimelineItemVertical.svelte">TimelineItemVertical</GitHubSource>
+<GitHubSource href="timelines/TimelineItemHorizontal.svelte">TimelineItemHorizontal</GitHubSource>
+<GitHubSource href="timelines/Activity.svelte">Activity</GitHubSource>
+<GitHubSource href="timelines/ActivityItem.svelte">ActivityItem</GitHubSource>
+<GitHubSource href="timelines/Group.svelte">Group</GitHubSource>
+<GitHubSource href="timelines/GroupItem.svelte">GroupItem</GitHubSource>
+</ExampleDiv>
+
+The timeline component can be used to show series of data in a chronological order for use cases such as activity feeds, user actions, application updates, and more.
+
+
+<Htwo label="Setup" />
+
+```html
+<script>
+	import { Timeline, TimelineItem, TimelineItemVertical, TimelineItemHorizontal, TimelineHorizontal, Activity, ActivityItem, Group, GroupItem } from 'flowbite-svelte';
+</script>
+```
+
+<Htwo label="Default timeline" />
+
 <ExampleDiv>
   <Timeline>
     <TimelineItem {timelineItems} />
@@ -142,11 +168,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 ```html
 <script lang="ts">
-	import {
-		Timeline,
-		TimelineItem,
-	} from 'flowbite-svelte';
-
 	let timelineItems = [
 		{
 			date: 'February 2022',
@@ -175,6 +196,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Vertical Timeline" />
 
+Use this vertical timeline component with icons and badges to show a more advanced set of data.
+
 <ExampleDiv>
   <Timeline>
     <TimelineItemVertical timelineItems={timelineItems2} />
@@ -183,7 +206,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 ```html
 <script>
-	import { Timeline, TimelineItemVertical, } from 'flowbite-svelte';
 	import { Calendar, Adjustments } from 'svelte-heros';
 
 	let timelineItems2 = [
@@ -223,6 +245,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Horizontal Timeline" />
 
+Use this horizontally aligned timeline component to show a series of data in a chronological order.
+
 <ExampleDiv>
   <TimelineHorizontal>
     <TimelineItemHorizontal timelineItems={timelineItems2} />
@@ -230,12 +254,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </ExampleDiv>
 
 ```html
-
 <script lang="ts">
-	import {
-		TimelineItemHorizontal,
-		TimelineHorizontal,
-	} from '$lib/index';
 	import { Calendar, Adjustments } from 'svelte-heros';
 
 	let timelineItems2 = [
@@ -275,6 +294,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Activity Log" />
 
+This component can be used to show the timline of a user’s activity history inside your application by using an avatar, datetime, description, and links to specific pages.
+
 <ExampleDiv>
   <Activity>
     <ActivityItem {activities} />
@@ -284,11 +305,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 ```html
 
 <script lang="ts">
-	import {
-		Activity,
-		ActivityItem,
-	} from '$lib/index';
-
 	let activities = [
 		{
 			title:
@@ -320,6 +336,8 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Htwo label="Grouped timeline" />
 
+Use this component to group multiple data entries inside a single date and show elements like the avatar, title, description, tag and link to a relevant page.
+
 <ExampleDiv>
   <Group date="January 13th, 2022">
     <GroupItem timelines={groupTimelines} />
@@ -328,11 +346,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 ```html
 <script lang="ts">
-	import {
-		Group,
-		GroupItem
-	} from '$lib/index';
-
 	let groupTimelines = [
 		{
 			title:
@@ -359,12 +372,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <GroupItem {timelines} />
 </Group>
 ```
-
-
-
-
-
-
 
 <Htwo label="Props" />
 
