@@ -41,6 +41,23 @@ layout: footerLayout
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Footer</h1>
 
+<ExampleDiv>
+<GitHubSource href="footer/Footer.svelte">Footer</GitHubSource>
+<GitHubSource href="footer/FooterBrand.svelte">FooterBrand</GitHubSource>
+<GitHubSource href="footer/FooterCopyright.svelte">FooterCopyright</GitHubSource>
+<GitHubSource href="footer/FooterIcon.svelte">FooterIcon</GitHubSource>
+<GitHubSource href="footer/FooterLink.svelte">FooterLink</GitHubSource>
+<GitHubSource href="footer/FooterLinkGroup.svelte">FooterLinkGroup</GitHubSource>
+</ExampleDiv>
+
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup } from "flowbite-svelte"
+</script>
+```
+
 <Htwo label="Default footer" />
 
 <p>Use this footer component to show a copyright notice and some helpful website links.</p>
