@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.22.28](https://github.com/themesberg/flowbite-svelte/compare/v0.22.27...v0.22.28) (2022-08-02)
+
+
+### Features
+
+* drawer on progress ([027c6de](https://github.com/themesberg/flowbite-svelte/commit/027c6de72ff563df34a5d56fbe9d8ea571440ff8))
+* start working drawer ([55a0ebf](https://github.com/themesberg/flowbite-svelte/commit/55a0ebfcb29743ad1b5222cad41b6ccf8610582b))
+
+
+### Bug Fixes
+
+* update Tooltip component ([df80539](https://github.com/themesberg/flowbite-svelte/commit/df8053996f8ea67d96ee5e70976a61f13e7df2ec))
+
 ### [0.22.27](https://github.com/themesberg/flowbite-svelte/compare/v0.22.26...v0.22.27) (2022-08-01)
 
 
