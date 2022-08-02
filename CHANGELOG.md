@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.22.29](https://github.com/themesberg/flowbite-svelte/compare/v0.22.28...v0.22.29) (2022-08-02)
+
+
+### Bug Fixes
+
+* call updatePosition and floatingMiddleware functions in onMount ([b905101](https://github.com/themesberg/flowbite-svelte/commit/b905101f9cdfc9573e455200a2e28ad5766705e1))
+
 ### [0.22.28](https://github.com/themesberg/flowbite-svelte/compare/v0.22.27...v0.22.28) (2022-08-02)
 
 
