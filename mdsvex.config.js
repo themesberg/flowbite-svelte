@@ -13,6 +13,7 @@ const config = defineConfig({
 		cardLayout: './src/routes/layouts/cardLayout.svelte',
 		carouselLayout: './src/routes/layouts/carouselLayout.svelte',
 		darkmodeLayout: './src/routes/layouts/darkmodeLayout.svelte',
+		datepickerLayout: './src/routes/layouts/datepickerLayout.svelte',
 		docLayout: './src/routes/layouts/docLayout.svelte',
 		dropdownLayout: './src/routes/layouts/dropdownLayout.svelte',
 		footerLayout: './src/routes/layouts/footerLayout.svelte',

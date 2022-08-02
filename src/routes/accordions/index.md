@@ -117,6 +117,7 @@ Use id=1,2,3,.. to add top and bottom border.
       </ul>
     </div>
   </AccordionItem>
+</ExampleDiv>
 
 ```html
 <script>
@@ -142,7 +143,6 @@ Use id=1,2,3,.. to add top and bottom border.
   </div>
 </AccordionItem>
 ```
-</ExampleDiv>
 
 <Htwo label="Always open" />
 
@@ -167,6 +167,7 @@ Use the `isOpen` prop to make an item open on mount.
       </p>
     </div>
   </AccordionItem>
+</ExampleDiv>
 
 ```html
 <AccordionItem id="1" isOpen>
@@ -188,7 +189,7 @@ Use the `isOpen` prop to make an item open on mount.
   </div>
 </AccordionItem>
 ```
-</ExampleDiv>
+
 
 <Htwo label="Color option" />
 
@@ -213,6 +214,7 @@ Use the `color` prop to add color.
       </p>
     </div>
   </AccordionItem>
+</ExampleDiv>
 
 ```html
 <AccordionItem id="1" color>
@@ -234,7 +236,6 @@ Use the `color` prop to add color.
   </div>
 </AccordionItem>
 ```
-</ExampleDiv>
 
 <Htwo label="Flush accordion" />
 
@@ -259,7 +260,7 @@ Use `AccordionFlush` component to remove the rounded borders.
       </p>
     </div>
   </AccordionFlush>
-
+</ExampleDiv>
 
 ```html
 <script>
@@ -285,7 +286,6 @@ Use `AccordionFlush` component to remove the rounded borders.
   </div>
 </AccordionFlush>
 ```
-</ExampleDiv>
 
 <Htwo label="Arrow style" />
 
@@ -310,7 +310,7 @@ Use the `icons` prop to set up and down icons.
       </p>
     </div>
   </AccordionItem>
-
+</ExampleDiv>
 
 ```html
 <script>
@@ -340,7 +340,7 @@ Use the `icons` prop to set up and down icons.
   </div>
 </AccordionItem>
 ```
-</ExampleDiv>
+
 
 <Htwo label="AccordionItem: slot names" />
 
@@ -392,7 +392,7 @@ npm i svelte-heros
       </p>
     </div>
   </AccordionItem>
-
+</ExampleDiv>
 
 ```html
 <script>
@@ -429,7 +429,6 @@ npm i svelte-heros
   </div>
 </AccordionItem>
 ```
-</ExampleDiv>
 
 <Htwo label="Props" />
 

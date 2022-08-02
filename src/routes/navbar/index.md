@@ -180,6 +180,17 @@ This example can be used to show a secondary dropdown menu when clicking on one 
 </ExampleDiv>
 
 ```html
+<script>
+...
+  let avatar = {
+		src: '/images/profile-picture-1.webp',
+		alt: 'My avatar',
+		size: 12,
+		border: true,
+		round: true
+	};
+ 
+</script>
 <Navbar let:hidden let:toggle rounded={true}>
 	<NavBrand href="/">
 		<img
