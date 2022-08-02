@@ -75,8 +75,8 @@
 			attachedScroll = false;
 			window.removeEventListener('scroll', updatePosition, true);
 		}
-		// console.log('updatePosition', updatePosition());
-		// console.log('floatingMiddleware', floatingMiddleware({ arrowRef, placement }));
+		updatePosition();
+		floatingMiddleware({ arrowRef, placement });
 	});
 
 	// console.log('placement', placement);
