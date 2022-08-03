@@ -15,11 +15,38 @@
 
 	export let placement: 'auto' | Placement = 'top';
 	export let trigger: 'hover' | 'click' = 'hover';
-	export let style: 'dark' | 'light' | 'auto' = 'dark';
+	export let style: 'dark' | 'light' | 'auto' | 'custom' = 'dark';
 	export let content: string = '';
 	export let animation: false | `duration-${number}` = 'duration-300';
 	export let arrow: boolean = true;
+	export let tipClass: string =
+		'absolute inline-block rounded-lg py-2 px-3 text-sm font-medium shadow-sm';
+	export let tipColor: string = '';
 
+	const tipStyleClasses = {
+		dark: 'bg-gray-900 text-white dark:bg-gray-700',
+		light: 'border border-gray-200 bg-white text-gray-900',
+		auto: 'border border-gray-200 bg-white text-gray-900 dark:border-none dark:bg-gray-700 dark:text-white',
+		custom: tipColor
+	};
+
+	const arrowStyleClasses = {
+		dark: 'bg-gray-900 dark:bg-gray-700',
+		light: 'bg-white',
+		auto: 'bg-white dark:bg-gray-700',
+		custom: tipColor
+	};
+
+	let toolTipClass;
+	$: toolTipClass = classNames(
+		tipClass,
+		animation !== false && `transition-opacity ${animation}`,
+		{
+			'invisible opacity-0': !open
+		},
+		tipStyleClasses[style],
+		$$props.class
+	);
 	let open = false;
 	const floatingPlacement = ({
 		placement
@@ -115,18 +142,7 @@
 	<div
 		bind:this={tooltipRef}
 		data-testid="tooltip"
-		class={classNames(
-			'absolute inline-block rounded-lg py-2 px-3 text-sm font-medium shadow-sm',
-			animation !== false && `transition-opacity ${animation}`,
-			{
-				'invisible opacity-0': !open,
-				'bg-gray-900 text-white dark:bg-gray-700': style === 'dark',
-				'border border-gray-200 bg-white text-gray-900': style === 'light',
-				'border border-gray-200 bg-white text-gray-900 dark:border-none dark:bg-gray-700 dark:text-white':
-					style === 'auto'
-			},
-			$$props.class
-		)}
+		class={toolTipClass}
 		style={`left:${placementData?.x}px;top:${placementData?.y}px;position:${placementData?.strategy}`}
 	>
 		<div class="relative z-20">
@@ -136,11 +152,7 @@
 		</div>
 		{#if arrow}
 			<div
-				class={classNames('absolute z-10 h-2 w-2 rotate-45', {
-					'bg-gray-900 dark:bg-gray-700': style === 'dark',
-					'bg-white': style === 'light',
-					'bg-white dark:bg-gray-700': style === 'auto'
-				})}
+				class={classNames('absolute z-10 h-2 w-2 rotate-45', arrowStyleClasses[style])}
 				data-testid="tooltip-arrow"
 				style={`left:${placementData?.middlewareData.arrow?.x}px;top:${
 					placementData?.middlewareData.arrow?.y
