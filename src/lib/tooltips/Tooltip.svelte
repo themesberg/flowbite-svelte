@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import classNames from 'classnames';
 	import { clickOutside } from '$lib/utils/clickOutside';
 	import {
@@ -12,6 +11,7 @@
 		type ComputePositionReturn
 	} from '@floating-ui/dom';
 	import type { Placement } from '@floating-ui/dom';
+	import { onDestroy } from 'svelte';
 
 	export let placement: 'auto' | Placement = 'top';
 	export let trigger: 'hover' | 'click' = 'hover';
@@ -39,35 +39,32 @@
 			left: 'right'
 		}[placement.split('-')[0]] as Placement;
 	};
+	const floatingMiddleware = ({
+		arrowRef,
+		placement
+	}: {
+		arrowRef: any;
+		placement: 'auto' | Placement;
+	}) => {
+		const middleware = [];
+		middleware.push(offset(8));
+		middleware.push(placement === 'auto' ? autoPlacement() : flip());
+		middleware.push(shift({ padding: 8 }));
+		if (arrowRef) {
+			middleware.push(arrowFloat({ element: arrowRef }));
+		}
+		return middleware;
+	};
 	let placementData: ComputePositionReturn;
 	let tooltipRef: HTMLElement, triggerRef: HTMLElement, arrowRef: HTMLElement;
+	const updatePosition = () =>
+		computePosition(triggerRef as Element, tooltipRef as Element, {
+			middleware: floatingMiddleware({ arrowRef, placement }),
+			placement: floatingPlacement({ placement })
+		}).then((data) => (placementData = data));
 	let attachedScroll: boolean = false;
-	onMount(async () => {
-		// dynamic import, to access 'window', since ace use it directly,
-		const floatingMiddleware = ({
-			arrowRef,
-			placement
-		}: {
-			arrowRef: any;
-			placement: 'auto' | Placement;
-		}) => {
-			const middleware = [];
-			middleware.push(offset(8));
-			middleware.push(placement === 'auto' ? autoPlacement() : flip());
-			middleware.push(shift({ padding: 8 }));
-			if (arrowRef) {
-				middleware.push(arrowFloat({ element: arrowRef }));
-			}
-			return middleware;
-		};
-		const updatePosition = () =>
-			computePosition(triggerRef, tooltipRef, {
-				middleware: floatingMiddleware({ arrowRef, placement }),
-				placement: floatingPlacement({ placement })
-			}).then((data) => (placementData = data));
-
-		tooltipRef && open && updatePosition();
-
+	$: tooltipRef && open && updatePosition();
+	$: {
 		if (open && !attachedScroll) {
 			attachedScroll = true;
 			window.addEventListener('scroll', updatePosition, true);
@@ -75,13 +72,16 @@
 			attachedScroll = false;
 			window.removeEventListener('scroll', updatePosition, true);
 		}
-		updatePosition();
-		floatingMiddleware({ arrowRef, placement });
+	}
+	onDestroy(() => {
+		if (attachedScroll) {
+			attachedScroll = false;
+			window.removeEventListener('scroll', updatePosition, true);
+		}
 	});
-
-	// console.log('placement', placement);
-	// console.log('floatingPlacement', floatingPlacement({ placement }));
 </script>
+
+<svelte:window on:resize={() => open && updatePosition()} />
 
 <div
 	use:clickOutside={() => {
