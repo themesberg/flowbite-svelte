@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.22.30](https://github.com/themesberg/flowbite-svelte/compare/v0.22.29...v0.22.30) (2022-08-03)
+
+
+### Features
+
+* add Tooltip custom CSS ([1466d16](https://github.com/themesberg/flowbite-svelte/commit/1466d16fff312ccdb22e1c282f49b7b156121d57))
+
+
+### Bug Fixes
+
+* revert Tooltip component ([9cedc68](https://github.com/themesberg/flowbite-svelte/commit/9cedc68014a7114c0e15691c26081bb9f5af88af))
+
 ### [0.22.29](https://github.com/themesberg/flowbite-svelte/compare/v0.22.28...v0.22.29) (2022-08-02)
 
 
