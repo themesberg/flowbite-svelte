@@ -155,7 +155,7 @@ import {Tooltip, Button} from 'flowbite-svelte'
 
 <Htwo label="Custom style" />
 
-When you want to add custome styles, use `style="custom"`, `tipClass`, and `tipColor` to modify the style.
+When you want to add custom styles, use `style="custom"`, `tipClass`, and `tipColor` to modify the style.
 
 <ExampleDiv>
   <Tooltip
