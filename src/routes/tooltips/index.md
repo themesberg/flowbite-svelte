@@ -147,6 +147,40 @@ import {Tooltip, Button} from 'flowbite-svelte'
   </Tooltip>
 </ExampleDiv>
 
+```html
+<Tooltip content="Tooltip content" arrow={false}>
+  <Button>Default tooltip</Button>
+</Tooltip>
+```
+
+<Htwo label="Custom style" />
+
+When you want to add custome styles, use `style="custom"`, `tipClass`, and `tipColor` to modify the style.
+
+<ExampleDiv>
+  <Tooltip
+		content="tooltip content"
+		placement="auto"
+		tipClass="absolute inline-block rounded-lg p-24 text-lg font-medium shadow-sm text-white"
+		style="custom"
+		tipColor="bg-red-900 dark:bg-red-700"
+	>
+		<Button>Custom style</Button>
+	</Tooltip>
+</ExampleDiv>
+
+```html
+<Tooltip
+  content="tooltip content"
+  placement="auto"
+  tipClass="absolute inline-block rounded-lg p-24 text-lg font-medium shadow-sm text-white"
+  style="custom"
+  tipColor="bg-red-900 dark:bg-red-700"
+>
+  <Button>Custom style</Button>
+</Tooltip>
+```
+
 <Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
