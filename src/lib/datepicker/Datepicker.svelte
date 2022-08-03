@@ -1,15 +1,17 @@
 <script lang="ts">
+	// import { onMount } from 'svelte';
 	import { Calendar } from 'svelte-heros';
 
 	export let range: boolean = false;
 	// autoHide not working
 	// export let autoHide: boolean = false;
 	export let datepickerButtons: boolean = false;
-	export let datepickerFormat = 'mm/dd/yyyy';
+	export let datepickerFormat: string = 'mm/dd/yyyy';
+	export let datepickerOrientation: string = 'bottom';
+	export let datepickerTitle: string = 'Flowbite datepicker';
 </script>
 
 <svelte:head>
-	<link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css" />
 	<script src="https://unpkg.com/flowbite@1.5.1/dist/datepicker.js"></script>
 </svelte:head>
 
@@ -49,7 +51,9 @@
 				{...$$restProps}
 				datepicker
 				datepicker-buttons
-				{datepickerFormat}
+				datepicker-format={datepickerFormat}
+				datepicker-orientation={datepickerOrientation}
+				datepicker-title={datepickerTitle}
 				type="text"
 				class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 				placeholder="Select date"
@@ -58,7 +62,9 @@
 			<input
 				{...$$restProps}
 				datepicker
-				{datepickerFormat}
+				datepicker-format={datepickerFormat}
+				datepicker-orientation={datepickerOrientation}
+				datepicker-title={datepickerTitle}
 				type="text"
 				class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 				placeholder="Select date"

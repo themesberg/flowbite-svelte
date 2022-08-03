@@ -6,7 +6,7 @@
 
 <Responsive />
 
-<div class="max-w-3xl mx-auto mt-8">
+<div class="max-w-3xl mx-auto mt-8 pl-16">
 	<div class="container flex flex-wrap mx-auto">
 		<slot />
 

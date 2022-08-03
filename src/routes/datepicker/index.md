@@ -1,9 +1,7 @@
----
-layout: datepickerLayout
----
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+	import 'prism-themes/themes/prism-holi-theme.css';
   import ExampleDiv from '../utils/ExampleDiv.svelte'
   import GitHubSource from '../utils/GitHubSource.svelte'
   import CompoDescription from '../utils/CompoDescription.svelte'
@@ -29,9 +27,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <CompoDescription>Start receiving date and time data from your users using this free datepicker element based on Tailwind utility-classes and vanilla JavaScript</CompoDescription>
 
-
 <Htwo label="Setup" />
-
 
 ```html
 <script>
@@ -53,8 +49,16 @@ Use the following example of an input element to create a datepicker component. 
 
 <Htwo label="Inline datepicker"/>
 
+Use the inline-datepicker and data-date data attributes to initalize and set the default date for an inline datepicker inside a block element such as a div.
+
 <ExampleDiv>
 <div inline-datepicker data-date="02/25/2022"></div>
+
+<div class="relative">
+  
+  <div inline-datepicker data-date="02/25/2022"></div>
+
+</div>
 </ExampleDiv>
 
 <Htwo label="Date range picker" />
@@ -77,5 +81,17 @@ By adding the `datepickerButtons` prop you will enable the today and clear butto
 <Htwo label="Date format" />
 
 <ExampleDiv>
-<Datepicker datepickerFormat="dd/mm/yy" />
+<Datepicker datepickerFormat="dd/mm/yyyy" />
+</ExampleDiv>
+
+<Htwo label="Orientation" />
+
+<ExampleDiv>
+<Datepicker datepickerOrientation="bottom right" />
+</ExampleDiv>
+
+<Htwo label="Title" />
+
+<ExampleDiv>
+<Datepicker datepickerTitle="My Vacation" />
 </ExampleDiv>
