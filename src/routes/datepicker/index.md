@@ -43,28 +43,25 @@ Use the following example of an input element to create a datepicker component. 
 <Datepicker />
 </ExampleDiv>
 
-```html
-<Datepicker />
-```
 
-<Htwo label="Inline datepicker"/>
+<Htwo label="Inline datepicker" />
 
 Use the inline-datepicker and data-date data attributes to initalize and set the default date for an inline datepicker inside a block element such as a div.
 
 <ExampleDiv>
-<div inline-datepicker data-date="02/25/2022"></div>
-
-<div class="relative">
-  
-  <div inline-datepicker data-date="02/25/2022"></div>
-
-</div>
+test
 </ExampleDiv>
 
 <Htwo label="Date range picker" />
 
 <ExampleDiv>
 <Datepicker range />
+</ExampleDiv>
+
+<Htwo label="Autohide" />
+
+<ExampleDiv>
+<Datepicker />
 </ExampleDiv>
 
 <Htwo label="Action buttons" />

@@ -9,9 +9,15 @@
 	export let datepickerFormat: string = 'mm/dd/yyyy';
 	export let datepickerOrientation: string = 'bottom';
 	export let datepickerTitle: string = 'Flowbite datepicker';
+	export let attribute: string = '';
+
+	$: setAttribute = (node, params) => {
+		node.setAttribute(params, '');
+	};
 </script>
 
 <svelte:head>
+	<link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css" />
 	<script src="https://unpkg.com/flowbite@1.5.1/dist/datepicker.js"></script>
 </svelte:head>
 
@@ -54,6 +60,7 @@
 				datepicker-format={datepickerFormat}
 				datepicker-orientation={datepickerOrientation}
 				datepicker-title={datepickerTitle}
+				use:setAttribute={attribute}
 				type="text"
 				class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 				placeholder="Select date"
@@ -65,6 +72,7 @@
 				datepicker-format={datepickerFormat}
 				datepicker-orientation={datepickerOrientation}
 				datepicker-title={datepickerTitle}
+				use:setAttribute={attribute}
 				type="text"
 				class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 				placeholder="Select date"
