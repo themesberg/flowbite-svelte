@@ -34,6 +34,9 @@ export { default as CarouselTransition } from './carousels/CarouselTransition.sv
 // Dark mode
 export { default as DarkMode } from './darkmode/DarkMode.svelte';
 
+// Datepicker
+export { default as Datepicker } from './datepicker/Datepicker.svelte';
+
 // Drawer
 export { default as Drawer } from './drawers/Drawer.svelte';
 
