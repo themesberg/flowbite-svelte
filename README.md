@@ -302,11 +302,17 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
   </tr>
   <tr>
     <td width="33.3333%">Floating Label</td>
+    <td width="33.3333%">Datepicker</td>
   </tr>
   <tr>
     <td width="33.3333%">
         <a href="https://flowbite-svelte.com/forms/floating-label/">
             <img alt="Tailwind CSS Floating Label" src="https://flowbite.s3.amazonaws.com/github/floating-label.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/datepicker/">
+            <img alt="Tailwind CSS Datepicker" src="https://flowbite.s3.amazonaws.com/github/datepicker.jpg">
         </a>
     </td>
   </tr>
