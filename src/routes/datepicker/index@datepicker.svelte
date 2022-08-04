@@ -63,12 +63,14 @@ to a page using this component, use rel="external".
 
 <Htwo label="Name and other attributes" />
 
+The component has $$...restProps attributes that can be used to pass any other attribute.
+
 <ExampleDiv>
 	<Datepicker name="start" />
 </ExampleDiv>
 
 <pre class="language-html"><code class="language-html">
-	&lt;Datepicker name="start" /&gt;
+&lt;Datepicker name="start" /&gt;
 	
 	</code></pre>
 
