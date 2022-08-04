@@ -36,9 +36,12 @@
 
 </code></pre>
 
-<h3>Use rel="external"</h3>
-This component is importing Flowbite datepicker javascript in the svelte:head section. When you are linking
-to a page using this component, use rel="external".
+<h3 class="dark:text-white">Use rel="external"</h3>
+
+<p class="dark:text-white">
+	This component is importing Flowbite datepicker javascript in the svelte:head section. When you
+	are linking to a page using this component, use rel="external".
+</p>
 
 <pre class="language-html"><code class="language-html">
 &lt;a href="/datepicker" rel="external"&gt;Datepicker page&lt:/a&gt;
@@ -63,7 +66,9 @@ to a page using this component, use rel="external".
 
 <Htwo label="Name and other attributes" />
 
-The component has $$...restProps attributes that can be used to pass any other attribute.
+<p class="dark:text-white">
+	The component has $$...restProps attributes that can be used to pass any other attribute.
+</p>
 
 <ExampleDiv>
 	<Datepicker name="start" />
@@ -132,9 +137,11 @@ The component has $$...restProps attributes that can be used to pass any other a
 
 <Htwo label="Orientation" />
 
-You can override the default positioning algorithm by using the
-<code>datepickerOrientation="top | right | bottom | left"</code>
-prop. You can even combine right with bottom or left with top.
+<p class="dark:text-white">
+	You can override the default positioning algorithm by using the
+	<code>datepickerOrientation="top | right | bottom | left"</code>
+	prop. You can even combine right with bottom or left with top.
+</p>
 
 <ExampleDiv>
 	<Datepicker datepickerOrientation="bottom right" />
@@ -147,7 +154,9 @@ prop. You can even combine right with bottom or left with top.
 
 <Htwo label="Title" />
 
-You can also add a title to the datepicker by using the <code>datepicker-title="title"</code> prop.
+<p class="dark:text-white">
+	You can also add a title to the datepicker by using the <code>datepicker-title="title"</code> prop.
+</p>
 
 <ExampleDiv>
 	<Datepicker datepickerTitle="My Vacation" />
@@ -160,9 +169,11 @@ You can also add a title to the datepicker by using the <code>datepicker-title="
 
 <Htwo label="Props" />
 
-The component has the following props, type, and default values. See
-<a href="/pages/types">types page</a>
-for type information.
+<p class="dark:text-white">
+	The component has the following props, type, and default values. See
+	<a href="/pages/types">types page</a>
+	for type information.
+</p>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
 	<TableDefaultRow {items} rowState="hover" />
