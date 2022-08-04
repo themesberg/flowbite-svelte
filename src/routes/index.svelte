@@ -41,7 +41,8 @@
 		TimelineBlock,
 		ToastBlock,
 		ToggleBlock,
-		TooltipBlock
+		TooltipBlock,
+		TypographyBlock
 	} from './blocks';
 
 	const handleClick = () => {
@@ -122,4 +123,5 @@
 	<ToastBlock />
 	<ToggleBlock />
 	<TooltipBlock />
+	<TypographyBlock />
 </div>
