@@ -67,6 +67,11 @@ to a page using this component, use rel="external".
 	<Datepicker name="start" />
 </ExampleDiv>
 
+<pre class="language-html"><code class="language-html">
+	&lt;Datepicker name="start" /&gt;
+	
+	</code></pre>
+
 <Htwo label="Date range picker" />
 
 <p class="dark:text-white">
