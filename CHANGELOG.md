@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.23.1](https://github.com/themesberg/flowbite-svelte/compare/v0.23.0...v0.23.1) (2022-08-04)
+
+
+### Features
+
+* add events to components ([d24e023](https://github.com/themesberg/flowbite-svelte/commit/d24e023ba671b9976e2c0df3529a66b15e251cea))
+* add typography page ([52923fb](https://github.com/themesberg/flowbite-svelte/commit/52923fb66b55fed20c876ef7b9348fccadde04a3))
+
 ## [0.23.0](https://github.com/themesberg/flowbite-svelte/compare/v0.22.30...v0.23.0) (2022-08-04)
 
 
