@@ -42,8 +42,16 @@
 	<input
 		type="checkbox"
 		bind:checked
+		on:keyup
+		on:keydown
+		on:keypress
+		on:focus
+		on:blur
 		on:click
-		on:change
+		on:mouseover
+		on:mouseenter
+		on:mouseleave
+		on:paste
 		{value}
 		{...$$restProps}
 		class={inputClass(custom, color, true, background, $$slots.default || $$props.class)}

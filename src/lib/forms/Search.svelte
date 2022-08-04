@@ -27,7 +27,24 @@
 				/></svg
 			>
 		</div>
-		<input {...$$restProps} type="search" {id} class={inputClass} {placeholder} />
+		<input
+			{...$$restProps}
+			on:change
+			on:keyup
+			on:keydown
+			on:keypress
+			on:focus
+			on:blur
+			on:click
+			on:mouseover
+			on:mouseenter
+			on:mouseleave
+			on:paste
+			type="search"
+			{id}
+			class={inputClass}
+			{placeholder}
+		/>
 		<button type="submit" class={btnClass}>Search</button>
 	</div>
 </form>

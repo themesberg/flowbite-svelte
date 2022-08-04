@@ -135,6 +135,12 @@
 	{...$$restProps}
 	class={buttonClass}
 	on:click
+	on:change
+	on:keydown
+	on:keyup
+	on:mouseenter
+	on:mouseleave
+	on:mouseenter
 >
 	{#if outline && gradient}
 		<!-- Trick to prentend outline without using border

@@ -92,6 +92,15 @@
 		bind:value
 		on:change
 		on:blur
+		on:keyup
+		on:keydown
+		on:keypress
+		on:focus
+		on:click
+		on:mouseover
+		on:mouseenter
+		on:mouseleave
+		on:paste
 		bind:this={ref}
 		use:setType
 		placeholder=" "

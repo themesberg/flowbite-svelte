@@ -8,6 +8,17 @@
 
 <input
 	{...$$restProps}
+	on:change
+	on:keyup
+	on:keydown
+	on:keypress
+	on:focus
+	on:blur
+	on:click
+	on:mouseover
+	on:mouseenter
+	on:mouseleave
+	on:paste
 	bind:value
 	class={classNames(inputClass, {
 		'mb-5 text-xs': size === 'xs',

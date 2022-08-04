@@ -32,6 +32,16 @@
 	bind:value
 	bind:this={ref}
 	on:change
+	on:keyup
+	on:keydown
+	on:keypress
+	on:focus
+	on:blur
+	on:click
+	on:mouseover
+	on:mouseenter
+	on:mouseleave
+	on:paste
 	use:setType
 	class={classNames(
 		inputClass,

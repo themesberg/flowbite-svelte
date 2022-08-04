@@ -47,7 +47,16 @@ Header part of Interactive tab component. Use with TabContent.
 					role="tab"
 					class:active={activeTabValue === id}
 					aria-controls={name}
-					aria-selected="false">{name}</button
+					aria-selected="false"
+					on:click
+					on:change
+					on:keydown
+					on:keyup
+					on:focus
+					on:blur
+					on:mouseenter
+					on:mouseleave
+					on:mouseenter>{name}</button
 				>
 			</li>
 		{/each}

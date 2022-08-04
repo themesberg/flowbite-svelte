@@ -45,8 +45,17 @@
 	<input
 		type="radio"
 		bind:group
-		on:click
 		on:change
+		on:keyup
+		on:keydown
+		on:keypress
+		on:focus
+		on:blur
+		on:click
+		on:mouseover
+		on:mouseenter
+		on:mouseleave
+		on:paste
 		{value}
 		{...$$restProps}
 		class={inputClass(custom, color, false, background, $$slots.default || $$props.class)}

@@ -16,7 +16,26 @@
 </script>
 
 <label for={id} class={labelClass}>{label}</label>
-<textarea bind:value bind:this={ref} {id} {name} {rows} class={textareaClass} {placeholder} />
+<textarea
+	bind:value
+	bind:this={ref}
+	on:change
+	on:keyup
+	on:keydown
+	on:keypress
+	on:focus
+	on:blur
+	on:click
+	on:mouseover
+	on:mouseenter
+	on:mouseleave
+	on:paste
+	{id}
+	{name}
+	{rows}
+	class={textareaClass}
+	{placeholder}
+/>
 {#if helper}
 	<p class={helperClass}>{@html helper}</p>
 {/if}

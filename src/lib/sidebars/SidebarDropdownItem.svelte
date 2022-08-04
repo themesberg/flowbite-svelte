@@ -8,5 +8,18 @@
 </script>
 
 <li>
-	<a {...$$restProps} {href} class={classNames(aClass, $$props.class)}>{label}</a>
+	<a
+		{...$$restProps}
+		{href}
+		on:click
+		on:change
+		on:keydown
+		on:keyup
+		on:focus
+		on:blur
+		on:mouseenter
+		on:mouseleave
+		on:mouseenter
+		class={classNames(aClass, $$props.class)}>{label}</a
+	>
 </li>

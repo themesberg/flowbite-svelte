@@ -11,7 +11,20 @@
 </script>
 
 <li>
-	<a {...$$restProps} {href} class={classNames(aClass, $$props.class)}>
+	<a
+		{...$$restProps}
+		{href}
+		on:click
+		on:change
+		on:keydown
+		on:keyup
+		on:focus
+		on:blur
+		on:mouseenter
+		on:mouseleave
+		on:mouseenter
+		class={classNames(aClass, $$props.class)}
+	>
 		<svelte:component
 			this={icon.name}
 			size={icon.size}

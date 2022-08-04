@@ -14,6 +14,14 @@
 	{...$$restProps}
 	class={classNames(liClass, colors[color] ?? colors.default, $$props.class)}
 	on:click|stopPropagation
+	on:change
+	on:keydown
+	on:keyup
+	on:focus
+	on:blur
+	on:mouseenter
+	on:mouseleave
+	on:mouseenter
 >
 	<slot />
 </li>

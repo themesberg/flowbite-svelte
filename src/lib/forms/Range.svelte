@@ -27,4 +27,9 @@
 	bind:value
 	{step}
 	class={inputClass}
+	on:change
+	on:keyup
+	on:keydown
+	on:keypress
+	on:click
 />

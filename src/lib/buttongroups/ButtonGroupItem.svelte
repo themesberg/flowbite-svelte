@@ -17,9 +17,33 @@
 </script>
 
 {#if href}
-	<a {href} {...$$restProps} class={classNames(btnClass, $$props.class)} on:click><slot /></a>
+	<a
+		{href}
+		{...$$restProps}
+		class={classNames(btnClass, $$props.class)}
+		on:click
+		on:change
+		on:keydown
+		on:keyup
+		on:mouseenter
+		on:mouseleave
+		on:mouseenter><slot /></a
+	>
 {:else}
-	<button {type} {...$$restProps} class={classNames(btnClass, $$props.class)} on:click>
+	<button
+		{type}
+		{...$$restProps}
+		class={classNames(btnClass, $$props.class)}
+		on:click
+		on:change
+		on:keydown
+		on:keyup
+		on:focus
+		on:blur
+		on:mouseenter
+		on:mouseleave
+		on:mouseenter
+	>
 		<slot />
 	</button>
 {/if}
