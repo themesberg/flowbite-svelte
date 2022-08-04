@@ -133,6 +133,11 @@
 		</Nav>
 		<Nav {navClass}>
 			<h3 class={h3Class}>
+				<a href="/datepicker" rel="external">Datepicker</a>
+			</h3>
+		</Nav>
+		<Nav {navClass}>
+			<h3 class={h3Class}>
 				<a href="/dropdowns">Dropdowns</a>
 			</h3>
 		</Nav>

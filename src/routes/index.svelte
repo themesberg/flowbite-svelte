@@ -13,6 +13,7 @@
 		CardBlock,
 		CarouselBlock,
 		CheckboxBlock,
+		DatepickerBlock,
 		DropdownBlock,
 		FileinputBlock,
 		FloatingLabelBlock,
@@ -92,6 +93,7 @@
 	<CardBlock />
 	<CarouselBlock />
 	<CheckboxBlock />
+	<DatepickerBlock rel="external" />
 	<DropdownBlock />
 	<FileinputBlock />
 	<FloatingLabelBlock />

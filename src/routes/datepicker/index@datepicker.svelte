@@ -36,6 +36,15 @@
 
 </code></pre>
 
+<h3>Use rel="external"</h3>
+This component is importing Flowbite datepicker javascript in the svelte:head section. When you are linking
+to a page using this component, use rel="external".
+
+<pre class="language-html"><code class="language-html">
+&lt;a href="/datepicker" rel="external"&gt;Datepicker page&lt:/a&gt;
+	
+</code></pre>
+
 <Htwo label="Datepicker example" />
 
 <p class="dark:text-white">
