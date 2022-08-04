@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.23.0](https://github.com/themesberg/flowbite-svelte/compare/v0.22.30...v0.23.0) (2022-08-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* add datepicker
+
+### Features
+
+* add datepicker ([a8b70e6](https://github.com/themesberg/flowbite-svelte/commit/a8b70e67b61e4e038520cc66238861e368716e60))
+* add datepicker ([32f8889](https://github.com/themesberg/flowbite-svelte/commit/32f88899256bed9effe6b23b4d24cd8380ce2aff))
+* add datepicker examples ([590ec66](https://github.com/themesberg/flowbite-svelte/commit/590ec660f27e43b18c588d44c0899aa16a3fc870))
+* add datepicker examples ([68e2462](https://github.com/themesberg/flowbite-svelte/commit/68e2462567838816ef116c3ed5b389e8de52f643))
+* working on datepicker ([4fedccf](https://github.com/themesberg/flowbite-svelte/commit/4fedccfc3f04308b53712cc87849098a7e502d2a))
+
 ### [0.22.30](https://github.com/themesberg/flowbite-svelte/compare/v0.22.29...v0.22.30) (2022-08-03)
 
 
