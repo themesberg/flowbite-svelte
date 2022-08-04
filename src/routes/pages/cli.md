@@ -19,14 +19,15 @@ layout: docLayout
 
 <Htwo label="Installation" />
 
-<h3 class="text-xl w-full mt-8 dark:text-white">Homebrew</h3>
+<h3>Homebrew</h3>
 
 ```sh
 brew tap shinokada/fsc
 brew install fsc
 ```
 
-<h3 class="text-xl w-full mt-8 dark:text-white">Awesome Package Manager</h3>
+<h3>Awesome Package Manager</h3>
+
 <p><a class="text-blue-700" href="https://github.com/shinokada/awesome">Awesome package manager</a> is a shell script package manager. Awesome installs a shell script package from a GitHub repo on your macOS/Linux.</p>
 
 <p>Let's install the Awesome package manager:</p>

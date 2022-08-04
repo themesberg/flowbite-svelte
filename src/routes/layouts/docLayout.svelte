@@ -15,7 +15,9 @@
 			<p>
 				<a href="/pages/getting-started" class="link">Getting started</a>
 			</p>
-
+			<p>
+				<a href="/pages/flowbite-svelte-starter" class="link">Flowbite-Svelte starter</a>
+			</p>
 			<p>
 				<a href="/pages/types" class="link">Type list</a>
 			</p>
@@ -24,9 +26,6 @@
 			</p>
 			<p>
 				<a href="/pages/how-to-contribute" class="link">How to contribute</a>
-			</p>
-			<p>
-				<a href="/pages/cli" class="link">Flowbite-Svelte-CLI</a>
 			</p>
 		</div>
 		<Htwo label="References" />
