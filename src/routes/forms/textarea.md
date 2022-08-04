@@ -10,7 +10,7 @@ import ExampleDiv from '../utils/ExampleDiv.svelte'
 import TableProp from '../utils/TableProp.svelte'
 import TableDefaultRow from '../utils/TableDefaultRow.svelte'
 import { onMount } from 'svelte';
-import { Textarea, Breadcrumb, BreadcrumbItem } from '$lib'
+import { Textarea, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
 import { Home } from 'svelte-heros'
 import componentProps from '../props/Textarea.json'
 let items = componentProps.props
@@ -82,3 +82,18 @@ The component has the following props, type, and default values. See <a href="/p
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
+<Htwo label="Forwarded Events" />
+
+<div class="flex flex-wrap gap-2">
+<Badge large={true}>on:blur</Badge>
+<Badge large={true}>on:change</Badge>
+<Badge large={true}>on:click</Badge>
+<Badge large={true}>on:focus</Badge>
+<Badge large={true}>on:keydown</Badge>
+<Badge large={true}>on:keypress</Badge>
+<Badge large={true}>on:keyup</Badge>
+<Badge large={true}>on:mouseenter</Badge>
+<Badge large={true}>on:mouseleave</Badge>
+<Badge large={true}>on:mouseover</Badge>
+<Badge large={true}>on:paste</Badge>
+</div>

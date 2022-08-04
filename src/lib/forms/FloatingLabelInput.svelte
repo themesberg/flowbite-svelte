@@ -90,16 +90,16 @@
 		{id}
 		{...$$restProps}
 		bind:value
-		on:change
 		on:blur
-		on:keyup
+		on:change
+		on:click
+		on:focus
 		on:keydown
 		on:keypress
-		on:focus
-		on:click
-		on:mouseover
+		on:keyup
 		on:mouseenter
 		on:mouseleave
+		on:mouseover
 		on:paste
 		bind:this={ref}
 		use:setType

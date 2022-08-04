@@ -11,6 +11,18 @@
 		<div class={innerDivClass}>
 			<slot />
 		</div>
-		<input {...$$restProps} bind:value type="file" class="hidden" />
+		<input
+			{...$$restProps}
+			bind:value
+			type="file"
+			class="hidden"
+			on:click
+			on:change
+			on:focus
+			on:blur
+			on:mouseenter
+			on:mouseleave
+			on:mouseover
+		/>
 	</label>
 </div>

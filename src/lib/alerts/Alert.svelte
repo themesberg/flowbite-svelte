@@ -84,7 +84,19 @@
 		</div>
 
 		{#if dismissable}
-			<CloseButton {color} on:click={handleHide} on:click={handleAlert} />
+			<CloseButton
+				{color}
+				on:click={handleHide}
+				on:click={handleAlert}
+				on:click
+				on:change
+				on:keydown
+				on:keyup
+				on:focus
+				on:blur
+				on:mouseenter
+				on:mouseleave
+			/>
 		{/if}
 	</div>
 	<slot name="extra" />

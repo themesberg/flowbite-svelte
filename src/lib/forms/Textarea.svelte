@@ -19,16 +19,16 @@
 <textarea
 	bind:value
 	bind:this={ref}
+	on:blur
 	on:change
-	on:keyup
+	on:click
+	on:focus
 	on:keydown
 	on:keypress
-	on:focus
-	on:blur
-	on:click
-	on:mouseover
+	on:keyup
 	on:mouseenter
 	on:mouseleave
+	on:mouseover
 	on:paste
 	{id}
 	{name}

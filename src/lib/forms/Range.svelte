@@ -28,8 +28,8 @@
 	{step}
 	class={inputClass}
 	on:change
-	on:keyup
+	on:click
 	on:keydown
 	on:keypress
-	on:click
+	on:keyup
 />

@@ -10,7 +10,7 @@ import ExampleDiv from '../utils/ExampleDiv.svelte'
 import TableProp from '../utils/TableProp.svelte'
 import TableDefaultRow from '../utils/TableDefaultRow.svelte'
 import { onMount } from 'svelte';
-import { Label, Dropdown, DropdownItem, Select, Breadcrumb, BreadcrumbItem } from '$lib'
+import { Label, Dropdown, DropdownItem, Select, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
 import CloseButton from "$lib/utils/CloseButton.svelte";
 import { Home } from 'svelte-heros'
 import componentProps from '../props/Select.json'
@@ -265,3 +265,9 @@ The component has the following props, type, and default values. See <a href="/p
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
+<Htwo label="Forwarded Events" />
+
+<div class="flex flex-wrap gap-2">
+<Badge large={true}>on:change</Badge>
+<Badge large={true}>on:input</Badge>
+</div>

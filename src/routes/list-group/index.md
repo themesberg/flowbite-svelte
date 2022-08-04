@@ -9,7 +9,7 @@ layout: listgroupLayout
   import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Avatar, List, ListItem, Breadcrumb, BreadcrumbItem } from '$lib'
+  import { Avatar, List, ListItem, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
   import {
     Adjustments,
     UserCircle,
@@ -232,3 +232,18 @@ Usage of hidden so far `ListItem` helps you with proper layout.
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={componentProps.props} rowState='hover' />
 </TableProp>
+
+<Htwo label="Forwarded Events: ListItem" />
+
+<div class="flex flex-wrap gap-2">
+<Badge large={true}>on:blur</Badge>
+<Badge large={true}>on:change</Badge>
+<Badge large={true}>on:click</Badge>
+<Badge large={true}>on:focus</Badge>
+<Badge large={true}>on:keydown</Badge>
+<Badge large={true}>on:keypress</Badge>
+<Badge large={true}>on:keyup</Badge>
+<Badge large={true}>on:mouseenter</Badge>
+<Badge large={true}>on:mouseleave</Badge>
+<Badge large={true}>on:mouseover</Badge>
+</div>

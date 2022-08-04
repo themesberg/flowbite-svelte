@@ -36,8 +36,7 @@
 				on:focus
 				on:blur
 				on:mouseenter
-				on:mouseleave
-				on:mouseenter>{name}</a
+				on:mouseleave>{name}</a
 			>
 		</li>
 	{/each}

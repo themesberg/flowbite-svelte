@@ -9,7 +9,7 @@ layout: formLayout
   import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Label, Range, Breadcrumb, BreadcrumbItem } from '$lib'
+  import { Label, Range, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
   import { Home } from 'svelte-heros'
   import componentProps from '../props/Range.json'
   let items = componentProps.props
@@ -137,3 +137,12 @@ The component has the following props, type, and default values. See <a href="/p
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
+<Htwo label="Forwarded Events" />
+
+<div class="flex flex-wrap gap-2">
+<Badge large={true}>on:change</Badge>
+<Badge large={true}>on:click</Badge>
+<Badge large={true}>on:keydown</Badge>
+<Badge large={true}>on:keypress</Badge>
+<Badge large={true}>on:keyup</Badge>
+</div>

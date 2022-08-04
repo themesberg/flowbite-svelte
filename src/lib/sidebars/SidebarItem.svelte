@@ -22,7 +22,6 @@
 		on:blur
 		on:mouseenter
 		on:mouseleave
-		on:mouseenter
 		class={classNames(aClass, $$props.class)}
 	>
 		<svelte:component

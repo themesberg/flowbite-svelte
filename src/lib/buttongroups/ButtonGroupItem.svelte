@@ -26,8 +26,7 @@
 		on:keydown
 		on:keyup
 		on:mouseenter
-		on:mouseleave
-		on:mouseenter><slot /></a
+		on:mouseleave><slot /></a
 	>
 {:else}
 	<button
@@ -42,7 +41,6 @@
 		on:blur
 		on:mouseenter
 		on:mouseleave
-		on:mouseenter
 	>
 		<slot />
 	</button>

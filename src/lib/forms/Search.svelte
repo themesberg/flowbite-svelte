@@ -29,16 +29,16 @@
 		</div>
 		<input
 			{...$$restProps}
+			on:blur
 			on:change
-			on:keyup
+			on:click
+			on:focus
 			on:keydown
 			on:keypress
-			on:focus
-			on:blur
-			on:click
-			on:mouseover
+			on:keyup
 			on:mouseenter
 			on:mouseleave
+			on:mouseover
 			on:paste
 			type="search"
 			{id}

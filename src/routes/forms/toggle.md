@@ -10,7 +10,7 @@ layout: formLayout
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { onMount } from 'svelte';
-  import { Toggle, Breadcrumb, BreadcrumbItem } from '$lib'
+  import { Toggle, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
   import { AtSymbol , Mail , Home} from 'svelte-heros'
   import componentProps from '../props/Toggle.json'
   import componentProps1 from '../props/Radio.json'
@@ -108,3 +108,10 @@ The component has the following props, type, and default values. See <a href="/p
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items.concat(items1)} rowState='hover' />
 </TableProp>
+
+<Htwo label="Forwarded Events" />
+
+<div class="flex flex-wrap gap-2">
+<Badge large={true}>on:change</Badge>
+<Badge large={true}>on:click</Badge>
+</div>

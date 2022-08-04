@@ -11,7 +11,7 @@ layout: dropdownLayout
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
 
   import { Avatar, Button, Checkbox, Label, Helper, Dropdown, DropdownDivider, DropdownHeader, DropdownItem,
-    Navbar,NavBrand,NavHamburger, NavUl, NavLi, Radio, Toggle, SimpleSearch, Breadcrumb, BreadcrumbItem } from '$lib'
+    Navbar,NavBrand,NavHamburger, NavUl, NavLi, Radio, Toggle, SimpleSearch, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
   import CloseButton from "$lib/utils/CloseButton.svelte";
 
   import { Home, ChevronDown, DotsHorizontal, DotsVertical, UserAdd, UserRemove } from 'svelte-heros';
@@ -1036,3 +1036,16 @@ The `DropdownItem` component has `on:click` event.
 <TableProp header={slotHeader} {divClass} {theadClass}>
   <TableDefaultRow items={slotDropdownItem} rowState='hover' />
 </TableProp>
+
+<Htwo label="Forwarded Events: DropdownItem" />
+
+<div class="flex flex-wrap gap-2">
+<Badge large={true}>on:blur</Badge>
+<Badge large={true}>on:change</Badge>
+<Badge large={true}>on:click</Badge>
+<Badge large={true}>on:focus</Badge>
+<Badge large={true}>on:keydown</Badge>
+<Badge large={true}>on:keyup</Badge>
+<Badge large={true}>on:mouseenter</Badge>
+<Badge large={true}>on:mouseleave</Badge>
+</div>

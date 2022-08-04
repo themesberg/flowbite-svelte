@@ -45,6 +45,16 @@
 		class="block {itemClass}"
 		on:click={() => dispatch('click', $$props)}
 		aria-current={current}
+		on:blur
+		on:change
+		on:click
+		on:focus
+		on:keydown
+		on:keypress
+		on:keyup
+		on:mouseenter
+		on:mouseleave
+		on:mouseover
 	>
 		<slot item={$$props} />
 	</a>
@@ -53,6 +63,16 @@
 		class="inline-flex relative items-center text-left {itemClass}"
 		{disabled}
 		on:click={() => dispatch('click', $$props)}
+		on:blur
+		on:change
+		on:click
+		on:focus
+		on:keydown
+		on:keypress
+		on:keyup
+		on:mouseenter
+		on:mouseleave
+		on:mouseover
 		aria-current={current}
 	>
 		<slot item={$$props} />

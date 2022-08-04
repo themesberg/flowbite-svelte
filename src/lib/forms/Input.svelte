@@ -31,13 +31,13 @@
 	{...$$restProps}
 	bind:value
 	bind:this={ref}
+	on:blur
 	on:change
-	on:keyup
+	on:click
+	on:focus
 	on:keydown
 	on:keypress
-	on:focus
-	on:blur
-	on:click
+	on:keyup
 	on:mouseover
 	on:mouseenter
 	on:mouseleave

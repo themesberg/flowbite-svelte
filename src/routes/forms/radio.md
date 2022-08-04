@@ -9,7 +9,7 @@ layout: formLayout
   import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Radio, Breadcrumb, BreadcrumbItem, Dropdown, DropdownItem, Label, Helper } from '$lib'
+  import { Radio, Breadcrumb, BreadcrumbItem, Dropdown, DropdownItem, Label, Helper, Badge } from '$lib'
   import { Table, TableBody, TableBodyRow, TableBodyCell, TableHead, TableHeadCell } from '$lib'
   import { Home } from 'svelte-heros'
   import componentProps from '../props/Radio.json'
@@ -417,3 +417,19 @@ All attributes of the `input` element like: name, id, autofocus, etc, can be set
 <TableProp header={propHeader} {divClass} {theadClass}>
 <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
+
+<Htwo label="Forwarded Events" />
+
+<div class="flex flex-wrap gap-2">
+<Badge large={true}>on:blur</Badge>
+<Badge large={true}>on:change</Badge>
+<Badge large={true}>on:click</Badge>
+<Badge large={true}>on:focus</Badge>
+<Badge large={true}>on:keydown</Badge>
+<Badge large={true}>on:keypress</Badge>
+<Badge large={true}>on:keyup</Badge>
+<Badge large={true}>on:mouseenter</Badge>
+<Badge large={true}>on:mouseleave</Badge>
+<Badge large={true}>on:mouseover</Badge>
+<Badge large={true}>on:paste</Badge>
+</div>

@@ -55,8 +55,7 @@ Header part of Interactive tab component. Use with TabContent.
 					on:focus
 					on:blur
 					on:mouseenter
-					on:mouseleave
-					on:mouseenter>{name}</button
+					on:mouseleave>{name}</button
 				>
 			</li>
 		{/each}

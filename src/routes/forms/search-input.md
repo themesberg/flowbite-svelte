@@ -9,7 +9,7 @@ layout: formLayout
   import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Search, SimpleSearch, VoiceSearch, Breadcrumb, BreadcrumbItem } from '$lib'
+  import { Search, SimpleSearch, VoiceSearch, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
   import { Home } from 'svelte-heros'
   import searchComponentProps from '../props/Search.json'
   import simpleSearchComponentProps from '../props/SimpleSearch.json'
@@ -110,3 +110,19 @@ The component has the following props, type, and default values. See <a href="/p
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={voiceSearchItems} rowState='hover' />
 </TableProp>
+
+<Htwo label="Forwarded Events: Search, SimpleSearch" />
+
+<div class="flex flex-wrap gap-2">
+<Badge large={true}>on:blur</Badge>
+<Badge large={true}>on:change</Badge>
+<Badge large={true}>on:click</Badge>
+<Badge large={true}>on:focus</Badge>
+<Badge large={true}>on:keydown</Badge>
+<Badge large={true}>on:keypress</Badge>
+<Badge large={true}>on:keyup</Badge>
+<Badge large={true}>on:mouseenter</Badge>
+<Badge large={true}>on:mouseleave</Badge>
+<Badge large={true}>on:mouseover</Badge>
+<Badge large={true}>on:paste</Badge>
+</div>

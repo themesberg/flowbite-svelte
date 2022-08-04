@@ -9,7 +9,7 @@ layout: buttonLayout
   import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Button, Spinner, Breadcrumb, BreadcrumbItem } from '$lib'
+  import { Button, Spinner, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
   import { Home } from 'svelte-heros';
   import { ArrowRight, Bell, ShoppingCart, ChevronRight } from "svelte-heros";
   import BrandFacebook from '../utils/icons/Facebook.svelte'
@@ -406,3 +406,14 @@ The component has the following props, type, and default values. See <a href="/p
 <TableProp header={slotHeader} {divClass} {theadClass}>
   <TableDefaultRow items={slotItems} rowState='hover' />
 </TableProp>
+
+<Htwo label="Forwarded Events" />
+
+<div class="flex flex-wrap gap-2">
+<Badge large={true}>on:change</Badge>
+<Badge large={true}>on:click</Badge>
+<Badge large={true}>on:keydown</Badge>
+<Badge large={true}>on:keyup</Badge>
+<Badge large={true}>on:mouseenter</Badge>
+<Badge large={true}>on:mouseleave</Badge>
+</div>

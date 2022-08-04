@@ -25,7 +25,6 @@
 					on:blur
 					on:mouseenter
 					on:mouseleave
-					on:mouseenter
 				>
 					<svelte:component this={icon} size={iconSize} class={iconClass} />
 					{name}

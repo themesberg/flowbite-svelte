@@ -54,7 +54,6 @@
 							on:blur
 							on:mouseenter
 							on:mouseleave
-							on:mouseenter
 							class={dropdownLinkClassWithChild}>{item.name}</a
 						>
 					</li>
