@@ -23,7 +23,7 @@ layout: docLayout
 
 <Htwo label="Frontend pages" />
 
-<p><a href="https://tailwindcss.com/docs/content-configuration#dynamic-class-names">Tailwind warns</a> that you don't construct class names dynamically. Instead of this:</p>
+<p><a class="text-blue-700" href="https://tailwindcss.com/docs/content-configuration#dynamic-class-names">Tailwind warns</a> that you don't construct class names dynamically. Instead of this:</p>
 
 ```html
 <div class="text-{{ error ? 'red' : 'green' }}-600"></div>
@@ -52,7 +52,7 @@ npm run gen:props
 
 <Htwo label="Conventional commit" />
 
-<p>When making a commit, we recommend using <a href="https://www.conventionalcommits.org/en/v1.0.0/">the Coventional commits</a>.</p>
+<p>When making a commit, we recommend using <a class="text-blue-700" href="https://www.conventionalcommits.org/en/v1.0.0/">the Coventional commits</a>.</p>
 
 Some examples are:
 

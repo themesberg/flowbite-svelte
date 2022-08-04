@@ -15,6 +15,10 @@ layout: docLayout
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Flowbite-Svelte-Starter</h1>
 
+<Htwo label="Demo" />
+
+<p class="dark:text-white" ><a class="text-blue-700" href="https://flowbite-svelte-starter.vercel.app/">Flowbite-Svelte-Starter Demo</a></p>
+
 <Htwo label="Features" />
 
 <ul class="dark:text-white">
