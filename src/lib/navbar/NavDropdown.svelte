@@ -43,7 +43,20 @@
 			<ul class="py-1" aria-labelledby="dropdownLargeButton">
 				{#each child as item}
 					<li>
-						<a href={item.href} {rel} class={dropdownLinkClassWithChild}>{item.name}</a>
+						<a
+							href={item.href}
+							{rel}
+							on:click
+							on:change
+							on:keydown
+							on:keyup
+							on:focus
+							on:blur
+							on:mouseenter
+							on:mouseleave
+							on:mouseenter
+							class={dropdownLinkClassWithChild}>{item.name}</a
+						>
 					</li>
 				{/each}
 			</ul>

@@ -12,7 +12,20 @@
 </script>
 
 <li>
-	<a {href} {...$$restProps} class={classNames(aClass, $$props.class)}>
+	<a
+		{href}
+		{...$$restProps}
+		on:click
+		on:change
+		on:keydown
+		on:keyup
+		on:focus
+		on:blur
+		on:mouseenter
+		on:mouseleave
+		on:mouseenter
+		class={classNames(aClass, $$props.class)}
+	>
 		<slot />
 	</a>
 </li>
