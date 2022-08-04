@@ -1,5 +1,6 @@
 export const svelteflows = [
 	{ href: '/pages/getting-started', name: 'Getting Started' },
+	{ href: '/pages/flowbite-svelte-starter', name: 'Flowbite Svelte starter' },
 	{ href: '/pages/about', name: 'About' },
 	{ href: '/pages/types', name: 'Types' },
 	{ href: '/pages/how-to-contribute', name: 'How to contribute' },
