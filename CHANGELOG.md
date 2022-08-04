@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.23.2](https://github.com/themesberg/flowbite-svelte/compare/v0.23.1...v0.23.2) (2022-08-04)
+
+
+### Features
+
+* add events to NavLi and NavDropdown ([02e4032](https://github.com/themesberg/flowbite-svelte/commit/02e403211c93d8e81457e1006e21341f4deed352))
+
 ### [0.23.1](https://github.com/themesberg/flowbite-svelte/compare/v0.23.0...v0.23.1) (2022-08-04)
 
 
