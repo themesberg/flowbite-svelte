@@ -9,18 +9,14 @@ layout: cardLayout
   import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Avatar, Button, Breadcrumb, BreadcrumbItem, Card, SignInCard, EcommerceCard, Dropdown, DropdownItem, List, Toggle } from '$lib'
+  import { Avatar, Button, Breadcrumb, BreadcrumbItem, Card, Dropdown, DropdownItem, List, Toggle } from '$lib'
   import { Badge, Label, Input, Checkbox, Rating } from "$lib"
   import { DotsHorizontal, ArrowRight } from 'svelte-heros'
   import CloseButton from "$lib/utils/CloseButton.svelte"
   import { Home } from 'svelte-heros';
   import componentProps from '../props/Card.json'
-  import componentProps2 from '../props/SignInCard.json'
-  import componentProps3 from '../props/EcommerceCard.json'
   // Props table
   let items = componentProps.props
-  let items2 = componentProps2.props
-  let items3 = componentProps3.props
 
 	let propHeader = ['Name', 'Type', 'Default']
   let slotHeader = ['Name', 'Description']
@@ -65,8 +61,6 @@ layout: cardLayout
 
 <ExampleDiv>
 <GitHubSource href="cards/Card.svelte">Card</GitHubSource>
-<GitHubSource href="cards/SignInCard.svelte">SignInCard</GitHubSource>
-<GitHubSource href="cards/EcommerceCard.svelte">EcommerceCard</GitHubSource>
 </ExampleDiv>
 
 Use these responsive card components to show data entries and information to your users in multiple forms and contexts such as for your blog, application, user profiles, and more.
@@ -77,7 +71,7 @@ Import Card in the script tag.
 
 ```html
 <script>
-  import { Card, SignInCard, EcommerceCard } from "flowbite-svelte";
+  import { Card } from "flowbite-svelte";
 </script>
 ```
 
@@ -447,27 +441,9 @@ The component has the following props, type, and default values. See <a href="/p
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3>SignInCard</h3>
-
-<TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
-
-<h3>EcommerceCard</h3>
-
-<TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={items3} rowState='hover' />
-</TableProp>
-
 <Htwo label="Slots" />
 
 <h3>Card</h3>
-
-<TableProp header={slotHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={slotItems} rowState='hover' />
-</TableProp>
-
-<h3>EcommerceCard</h3>
 
 <TableProp header={slotHeader} {divClass} {theadClass}>
   <TableDefaultRow items={slotItems} rowState='hover' />
