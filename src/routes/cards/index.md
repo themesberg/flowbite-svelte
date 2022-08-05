@@ -10,8 +10,8 @@ layout: cardLayout
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { Avatar, Button, Breadcrumb, BreadcrumbItem, Card, Dropdown, DropdownItem, List, Toggle } from '$lib'
-  import { Badge, Label, Input, Checkbox, Rating } from "$lib"
-  import { DotsHorizontal, ArrowRight } from 'svelte-heros'
+  import { Badge, Label, Input, Checkbox, Rating, DefaultTabs, InteractiveTabHead, TabContent } from "$lib"
+  import { DotsHorizontal, ArrowRight, ExternalLink, Gift, CheckCircle } from 'svelte-heros'
   import CloseButton from "$lib/utils/CloseButton.svelte"
   import { Home } from 'svelte-heros';
   import componentProps from '../props/Card.json'
@@ -47,6 +47,9 @@ layout: cardLayout
       name: "Michael Gough", email: "email@windster.com", value: "$67"
     },
   ];
+
+  let tabLabel = 'Select a target'
+  let tabs = [{name: 'About', id:'about'},{name: 'Services', id:'services'},{name: 'Statistics', id:'stats'},];
 </script>
 
 <Breadcrumb>
@@ -108,7 +111,7 @@ Use the following example of a card element if you also want to have an action b
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
       Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
     </p>
-    <Button>
+    <Button class="w-fit">
       Read more <ArrowRight class="w-5 h-5 ml-2"/>
     </Button>
   </Card>
@@ -120,9 +123,41 @@ Use the following example of a card element if you also want to have an action b
   <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
     Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
   </p>
-  <Button>
+  <Button class="w-fit">
     Read more <ArrowRight class="w-5 h-5 ml-2"/>
   </Button>
+</Card>
+```
+
+<Htwo label="Card with link" />
+
+This example can be used to show a CTA as a link instead of a button inside the card.
+
+<ExampleDiv>
+  <Card>
+    <Gift variation="solid" class="mb-2 w-12 h-12 text-gray-500 dark:text-gray-400"/>
+    <a href="/">
+        <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Need a help in Claim?</h5>
+    </a>
+    <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
+    <a href="/" class="inline-flex items-center text-blue-600 hover:underline">
+        See our guideline
+        <ExternalLink class="ml-2 w-5 h-5"/>
+    </a> 
+  </Card>
+</ExampleDiv>
+
+```html
+<Card>
+  <Gift variation="solid" class="mb-2 w-12 h-12 text-gray-500 dark:text-gray-400"/>
+  <a href="/">
+      <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Need a help in Claim?</h5>
+  </a>
+  <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
+  <a href="/" class="inline-flex items-center text-blue-600 hover:underline">
+      See our guideline
+      <ExternalLink class="ml-2 w-5 h-5"/>
+  </a> 
 </Card>
 ```
 
@@ -256,7 +291,7 @@ Use this card example where you can add form input elements that can be used for
 				<Checkbox>Remember me</Checkbox>
 				<a href="/" class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500">Lost password?</a>
 		</div>
-		<Button type="submit" class="w-full1">Login to your account</Button>
+		<Button type="submit" class="w-full">Login to your account</Button>
 			<div class="text-sm font-medium text-gray-500 dark:text-gray-300">
 				Not registered? <a href="/" class="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
 			</div>
@@ -289,12 +324,58 @@ Use this card example where you can add form input elements that can be used for
 </Card>
 ```
 
+
+<Htwo label="E-commerce card" />
+
+Use this card for your e-commerce websites and show information about the products and enable actions such as adding a review and adding the product to the cart.
+
+<ExampleDiv>
+<Card padding="sm">
+	<a href="/">
+		<img class="p-3" src="images/product-1.webp" alt="images/product-1.webp" />
+	</a>
+	<a href="/">
+		<h3 class='text-xl font-semibold tracking-tight text-gray-900 dark:text-white'>
+			Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
+		</h3>
+	</a>
+  <Rating rating=4>
+    <Badge slot="text">4</Badge>
+  </Rating>
+	<div class="flex justify-between items-center">
+		<span class="text-3xl font-bold text-gray-900 dark:text-white">$543</span>
+		<Button href="/">Buy now</Button>
+	</div>
+</Card>
+</ExampleDiv>
+
+
+```html
+<Card padding="sm">
+	<a href="/">
+		<img class="p-3" src="images/product-1.webp" alt="images/product-1.webp" />
+	</a>
+	<a href="/">
+		<h3 class='text-xl font-semibold tracking-tight text-gray-900 dark:text-white'>
+			Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
+		</h3>
+	</a>
+  <Rating rating=4>
+    <Badge slot="text">4</Badge>
+  </Rating>
+	<div class="flex justify-between items-center">
+		<span class="text-3xl font-bold text-gray-900 dark:text-white">$543</span>
+		<Button href="/">Buy now</Button>
+	</div>
+</Card>
+```
+
 <Htwo label="Call to action card" />
 
 Use this CTA card example to encourage your users to visit a certain page such as downloading the iOS or Android application for your project.
 
 <ExampleDiv>
-  <Card class="!max-w-2xl text-center" padding='xl'>
+  <Card class="text-center" size="lg" padding='xl'>
     <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Work fast from anywhere</h5>
     <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">
       Stay up to date and move work forward with Flowbite on iOS & Android. Download the app today.
@@ -307,7 +388,7 @@ Use this CTA card example to encourage your users to visit a certain page such a
 </ExampleDiv>
 
 ```html
-<Card class="!max-w-2xl text-center" padding='xl'>
+<Card class="text-center" size="lg" padding='xl'>
   <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Work fast from anywhere</h5>
   <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">
     Stay up to date and move work forward with Flowbite on iOS & Android. Download the app today.
@@ -318,6 +399,36 @@ Use this CTA card example to encourage your users to visit a certain page such a
   </div>
 </Card>
 ```
+
+<!-- <Htwo label="Card with nav tabs" />
+
+Use this example of a card component with navigation tabs that can change the content inside the card based on which one is currently active.
+
+<ExampleDiv>
+  <Card padding="xl">
+    <p>Text</p>
+  </Card>
+</ExampleDiv>
+
+<Htwo label="Card full width tabs" />
+
+Use this example of a card component to show tabs that span the full width of the element and change the content area clicking on each one.
+
+<ExampleDiv>
+  <Card padding="none">
+    <InteractiveTabHead {tabs}>
+      <TabContent tab={tabs[0]}>
+        Raz
+      </TabContent>
+      <TabContent tab={tabs[1]}>
+        Dwa
+      </TabContent>
+      <TabContent tab={tabs[2]}>
+        Trzy
+      </TabContent>
+    </InteractiveTabHead>
+  </Card>
+</ExampleDiv> -->
 
 <Htwo label="Card with list" />
 
@@ -385,55 +496,216 @@ Use this card example if you want to show a list of data:
 </Card>
 ```
 
-<Htwo label="E-commerce card" />
+<Htwo label="Pricing card" />
 
-Use this card for your e-commerce websites and show information about the products and enable actions such as adding a review and adding the product to the cart.
+Show detailed information to potential customers about your product’s pricing plan, list of features, and a purchase button.
 
 <ExampleDiv>
-<Card padding="sm">
-	<a href="/">
-		<img class="p-3" src="images/product-1.webp" alt="images/product-1.webp" />
-	</a>
-	<a href="/">
-		<h3 class='text-xl font-semibold tracking-tight text-gray-900 dark:text-white'>
-			Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
-		</h3>
-	</a>
-  <Rating rating=4>
-    <Badge slot="text">4</Badge>
-  </Rating>
-	<div class="flex justify-between items-center">
-		<span class="text-3xl font-bold text-gray-900 dark:text-white">$543</span>
-		<Button href="/">Buy now</Button>
-	</div>
+  <Card padding="xl">
+    <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Standard plan</h5>
+    <div class="flex items-baseline text-gray-900 dark:text-white">
+        <span class="text-3xl font-semibold">$</span>
+        <span class="text-5xl font-extrabold tracking-tight">49</span>
+        <span class="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400">/month</span>
+    </div>
+    <!-- List -->
+    <ul class="my-7 space-y-4">
+        <li class="flex space-x-2">
+            <CheckCircle variation="solid" class="text-blue-600 dark:text-blue-500" />
+            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">2 team members</span>
+        </li>
+        <li class="flex space-x-2">
+            <CheckCircle variation="solid" class="text-blue-600 dark:text-blue-500" />
+            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">20GB Cloud storage</span>
+        </li>
+        <li class="flex space-x-2">
+            <CheckCircle variation="solid" class="text-blue-600 dark:text-blue-500" />
+            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">Integration help</span>
+        </li>
+        <li class="flex space-x-2 line-through decoration-gray-500">
+            <CheckCircle variation="solid" class="text-gray-400 dark:text-gray-500" />
+            <span class="text-base font-normal leading-tight text-gray-500">Sketch Files</span>
+        </li>
+        <li class="flex space-x-2 line-through decoration-gray-500">
+            <CheckCircle variation="solid" class="text-gray-400 dark:text-gray-500" />
+            <span class="text-base font-normal leading-tight text-gray-500">API Access</span>
+        </li>
+        <li class="flex space-x-2 line-through decoration-gray-500">
+            <CheckCircle variation="solid" class="text-gray-400 dark:text-gray-500" />
+            <span class="text-base font-normal leading-tight text-gray-500">Complete documentation</span>
+        </li>
+        <li class="flex space-x-2 line-through decoration-gray-500">
+            <CheckCircle variation="solid" class="text-gray-400 dark:text-gray-500" />
+            <span class="text-base font-normal leading-tight text-gray-500">24×7 phone & email support</span>
+        </li>
+    </ul>
+    <Button class="w-full">Choose plan</Button>
+  </Card>
+</ExampleDiv>
+
+```html
+<Card padding="xl">
+  <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Standard plan</h5>
+  <div class="flex items-baseline text-gray-900 dark:text-white">
+      <span class="text-3xl font-semibold">$</span>
+      <span class="text-5xl font-extrabold tracking-tight">49</span>
+      <span class="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400">/month</span>
+  </div>
+  <!-- List -->
+  <ul role="list" class="my-7 space-y-4">
+      <li class="flex space-x-2">
+          <CheckCircle variation="solid" class="text-blue-600 dark:text-blue-500" />
+          <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">2 team members</span>
+      </li>
+      <li class="flex space-x-2">
+          <CheckCircle variation="solid" class="text-blue-600 dark:text-blue-500" />
+          <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">20GB Cloud storage</span>
+      </li>
+      <li class="flex space-x-2">
+          <CheckCircle variation="solid" class="text-blue-600 dark:text-blue-500" />
+          <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">Integration help</span>
+      </li>
+      <li class="flex space-x-2 line-through decoration-gray-500">
+          <CheckCircle variation="solid" class="text-gray-400 dark:text-gray-500" />
+          <span class="text-base font-normal leading-tight text-gray-500">Sketch Files</span>
+      </li>
+      <li class="flex space-x-2 line-through decoration-gray-500">
+          <CheckCircle variation="solid" class="text-gray-400 dark:text-gray-500" />
+          <span class="text-base font-normal leading-tight text-gray-500">API Access</span>
+      </li>
+      <li class="flex space-x-2 line-through decoration-gray-500">
+          <CheckCircle variation="solid" class="text-gray-400 dark:text-gray-500" />
+          <span class="text-base font-normal leading-tight text-gray-500">Complete documentation</span>
+      </li>
+      <li class="flex space-x-2 line-through decoration-gray-500">
+          <CheckCircle variation="solid" class="text-gray-400 dark:text-gray-500" />
+          <span class="text-base font-normal leading-tight text-gray-500">24×7 phone & email support</span>
+      </li>
+  </ul>
+  <Button class="w-full">Choose plan</Button>
 </Card>
+```
+
+<Htwo label="Testimonial card" />
+
+Use this example to split cards into multiple sections such as for testimonials or reviews.
+<ExampleDiv>
+  <Card padding="none" size="xl" class="grid md:grid-cols-2">
+    <figure class="flex flex-col justify-center items-center p-8 text-center bg-white rounded-t-lg border-b border-gray-200 md:rounded-t-none md:rounded-tl-lg md:border-r dark:bg-gray-800 dark:border-gray-700">
+    <blockquote class="mx-auto mb-4 max-w-2xl text-gray-500 dark:text-gray-400">
+      <h3 class="p-0 text-lg font-semibold text-gray-900 dark:text-white">Very easy this was to integrate</h3>
+      <p class="my-4 font-light">If you care for your time, I hands down would go with this."</p>
+    </blockquote>
+    <figcaption class="flex justify-center items-center space-x-3">
+      <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png" alt="profile picture">
+      <div class="space-y-0.5 font-medium dark:text-white text-left">
+        <div>Bonnie Green</div>
+        <div class="text-sm font-light text-gray-500 dark:text-gray-400">Developer at Open AI</div>
+      </div>
+    </figcaption>
+    </figure>
+    <figure class="flex flex-col justify-center items-center p-8 text-center bg-white rounded-tr-lg border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+      <blockquote class="mx-auto mb-4 max-w-2xl text-gray-500 dark:text-gray-400">
+        <h3 class="p-0 text-lg font-semibold text-gray-900 dark:text-white">Solid foundation for any project</h3>
+      <p class="my-4 font-light">Designing with Figma components that can be easily translated to the utility classes of Tailwind CSS is a huge timesaver!"</p>
+      </blockquote>
+      <figcaption class="flex justify-center items-center space-x-3">
+        <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png" alt="profile picture">
+        <div class="space-y-0.5 font-medium dark:text-white text-left">
+          <div>Roberta Casas</div>
+          <div class="text-sm font-light text-gray-500 dark:text-gray-400">Lead designer at Dropbox</div>
+        </div>
+        </figcaption>
+    </figure>
+    <figure class="flex flex-col justify-center items-center p-8 text-center bg-white rounded-bl-lg border-b border-gray-200 md:border-b-0 md:border-r dark:bg-gray-800 dark:border-gray-700">
+      <blockquote class="mx-auto mb-4 max-w-2xl text-gray-500 dark:text-gray-400">
+        <h3 class="p-0 text-lg font-semibold text-gray-900 dark:text-white">Mindblowing workflow</h3>
+        <p class="my-4 font-light">Aesthetically, the well designed components are beautiful and will undoubtedly level up your next application."</p>
+      </blockquote>
+      <figcaption class="flex justify-center items-center space-x-3">
+        <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="profile picture">
+        <div class="space-y-0.5 font-medium dark:text-white text-left">
+          <div>Jese Leos</div>
+          <div class="text-sm font-light text-gray-500 dark:text-gray-400">Software Engineer at Facebook</div>
+        </div>
+      </figcaption>
+    </figure>
+    <figure class="flex flex-col justify-center items-center p-8 text-center bg-white rounded-b-lg border-gray-200 md:rounded-br-lg dark:bg-gray-800 dark:border-gray-700">
+      <blockquote class="mx-auto mb-4 max-w-2xl text-gray-500 dark:text-gray-400">
+        <h3 class="p-0 text-lg font-semibold text-gray-900 dark:text-white">Efficient Collaborating</h3>
+        <p class="my-4 font-light">You have many examples that can be used to create a fast prototype for your team."</p>
+      </blockquote>
+      <figcaption class="flex justify-center items-center space-x-3">
+        <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png" alt="profile picture">
+        <div class="space-y-0.5 font-medium dark:text-white text-left">
+          <div>Joseph McFall</div>
+          <div class="text-sm font-light text-gray-500 dark:text-gray-400">CTO at Google</div>
+        </div>
+        </figcaption>
+    </figure>
+  </Card>
 </ExampleDiv>
 
 
 ```html
-<Card padding="sm">
-	<a href="/">
-		<img class="p-3" src="images/product-1.webp" alt="images/product-1.webp" />
-	</a>
-	<a href="/">
-		<h3 class='text-xl font-semibold tracking-tight text-gray-900 dark:text-white'>
-			Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
-		</h3>
-	</a>
-  <Rating rating=4>
-    <Badge slot="text">4</Badge>
-  </Rating>
-	<div class="flex justify-between items-center">
-		<span class="text-3xl font-bold text-gray-900 dark:text-white">$543</span>
-		<Button href="/">Buy now</Button>
-	</div>
+<Card padding="none" size="xl" class="grid md:grid-cols-2">
+  <figure class="flex flex-col justify-center items-center p-8 text-center bg-white rounded-t-lg border-b border-gray-200 md:rounded-t-none md:rounded-tl-lg md:border-r dark:bg-gray-800 dark:border-gray-700">
+  <blockquote class="mx-auto mb-4 max-w-2xl text-gray-500 dark:text-gray-400">
+    <h3 class="p-0 text-lg font-semibold text-gray-900 dark:text-white">Very easy this was to integrate</h3>
+    <p class="my-4 font-light">If you care for your time, I hands down would go with this."</p>
+  </blockquote>
+  <figcaption class="flex justify-center items-center space-x-3">
+    <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png" alt="profile picture">
+    <div class="space-y-0.5 font-medium dark:text-white text-left">
+      <div>Bonnie Green</div>
+      <div class="text-sm font-light text-gray-500 dark:text-gray-400">Developer at Open AI</div>
+    </div>
+  </figcaption>
+  </figure>
+  <figure class="flex flex-col justify-center items-center p-8 text-center bg-white rounded-tr-lg border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+    <blockquote class="mx-auto mb-4 max-w-2xl text-gray-500 dark:text-gray-400">
+      <h3 class="p-0 text-lg font-semibold text-gray-900 dark:text-white">Solid foundation for any project</h3>
+    <p class="my-4 font-light">Designing with Figma components that can be easily translated to the utility classes of Tailwind CSS is a huge timesaver!"</p>
+    </blockquote>
+    <figcaption class="flex justify-center items-center space-x-3">
+      <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png" alt="profile picture">
+      <div class="space-y-0.5 font-medium dark:text-white text-left">
+        <div>Roberta Casas</div>
+        <div class="text-sm font-light text-gray-500 dark:text-gray-400">Lead designer at Dropbox</div>
+      </div>
+      </figcaption>
+  </figure>
+  <figure class="flex flex-col justify-center items-center p-8 text-center bg-white rounded-bl-lg border-b border-gray-200 md:border-b-0 md:border-r dark:bg-gray-800 dark:border-gray-700">
+    <blockquote class="mx-auto mb-4 max-w-2xl text-gray-500 dark:text-gray-400">
+      <h3 class="p-0 text-lg font-semibold text-gray-900 dark:text-white">Mindblowing workflow</h3>
+      <p class="my-4 font-light">Aesthetically, the well designed components are beautiful and will undoubtedly level up your next application."</p>
+    </blockquote>
+    <figcaption class="flex justify-center items-center space-x-3">
+      <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="profile picture">
+      <div class="space-y-0.5 font-medium dark:text-white text-left">
+        <div>Jese Leos</div>
+        <div class="text-sm font-light text-gray-500 dark:text-gray-400">Software Engineer at Facebook</div>
+      </div>
+    </figcaption>
+  </figure>
+  <figure class="flex flex-col justify-center items-center p-8 text-center bg-white rounded-b-lg border-gray-200 md:rounded-br-lg dark:bg-gray-800 dark:border-gray-700">
+    <blockquote class="mx-auto mb-4 max-w-2xl text-gray-500 dark:text-gray-400">
+      <h3 class="p-0 text-lg font-semibold text-gray-900 dark:text-white">Efficient Collaborating</h3>
+      <p class="my-4 font-light">You have many examples that can be used to create a fast prototype for your team."</p>
+    </blockquote>
+    <figcaption class="flex justify-center items-center space-x-3">
+      <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png" alt="profile picture">
+      <div class="space-y-0.5 font-medium dark:text-white text-left">
+        <div>Joseph McFall</div>
+        <div class="text-sm font-light text-gray-500 dark:text-gray-400">CTO at Google</div>
+      </div>
+      </figcaption>
+  </figure>
 </Card>
 ```
-
 <Htwo label="Props" />
 
-The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.
+The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
 <h3>Card</h3>
 
