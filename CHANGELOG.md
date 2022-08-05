@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.23.3](https://github.com/themesberg/flowbite-svelte/compare/v0.23.2...v0.23.3) (2022-08-05)
+
+
+### Bug Fixes
+
+* remove EcommerceCard and SignInCard ([7e6b2b6](https://github.com/themesberg/flowbite-svelte/commit/7e6b2b689a86cb47df080908ef3217345361667a))
+* SignInCard type update ([55c824a](https://github.com/themesberg/flowbite-svelte/commit/55c824aa08727eb3f07c12fc589158e7cc94fd5f))
+
 ### [0.23.2](https://github.com/themesberg/flowbite-svelte/compare/v0.23.1...v0.23.2) (2022-08-04)
 
 
