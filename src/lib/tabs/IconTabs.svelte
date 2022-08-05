@@ -17,14 +17,15 @@
 					class={active
 						? 'inline-flex p-4 text-blue-600 rounded-t-lg border-b-2 border-blue-600 active dark:text-blue-500 dark:border-blue-500 group'
 						: '  inline-flex p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 group '}
-					on:click
-					on:change
-					on:keydown
-					on:keyup
-					on:focus
 					on:blur
+					on:click
+					on:focus
+					on:keydown
+					on:keypress
+					on:keyup
 					on:mouseenter
 					on:mouseleave
+					on:mouseover
 				>
 					<svelte:component this={icon} size={iconSize} class={iconClass} />
 					{name}

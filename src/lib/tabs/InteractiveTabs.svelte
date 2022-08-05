@@ -14,14 +14,15 @@
 			<li class="mr-2" role="presentation">
 				<button
 					on:click={handleClick(id)}
-					on:click
-					on:change
-					on:keydown
-					on:keyup
-					on:focus
 					on:blur
+					on:click
+					on:focus
+					on:keydown
+					on:keypress
+					on:keyup
 					on:mouseenter
 					on:mouseleave
+					on:mouseover
 					class="inline-block py-4 px-4 text-sm font-medium text-center text-gray-500 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300"
 					id="{name}-tab"
 					type="button"

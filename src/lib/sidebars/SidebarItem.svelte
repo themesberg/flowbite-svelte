@@ -14,14 +14,15 @@
 	<a
 		{...$$restProps}
 		{href}
-		on:click
-		on:change
-		on:keydown
-		on:keyup
-		on:focus
 		on:blur
+		on:click
+		on:focus
+		on:keydown
+		on:keypress
+		on:keyup
 		on:mouseenter
 		on:mouseleave
+		on:mouseover
 		class={classNames(aClass, $$props.class)}
 	>
 		<svelte:component

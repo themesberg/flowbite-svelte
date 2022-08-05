@@ -538,7 +538,7 @@ The component has the following props, type, and default values. See <a href="/p
   <TableDefaultRow items={items8} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events: SidebarDropdownItem" />
+<Htwo label="Forwarded Events: SidebarDropdownItem, SidebarItem" />
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:blur</Badge>
