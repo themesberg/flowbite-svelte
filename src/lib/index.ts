@@ -24,8 +24,6 @@ export { default as ButtonGroupItem } from './buttongroups/ButtonGroupItem.svelt
 
 // Cards
 export { default as Card } from './cards/Card.svelte';
-export { default as EcommerceCard } from './cards/EcommerceCard.svelte';
-export { default as SignInCard } from './cards/SignInCard.svelte';
 
 // Carousels
 export { default as Carousel } from './carousels/Carousel.svelte';
