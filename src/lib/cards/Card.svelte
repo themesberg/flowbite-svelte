@@ -6,15 +6,25 @@
 	export let horizontal: boolean = false;
 	export let reverse: boolean = false;
 	export let img: string = undefined;
-	export let padding: 'sm' | 'md' | 'lg' = 'lg';
+	export let padding: 'none' | 'sm' | 'md' | 'lg' = 'lg';
+	export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'sm';
 
 	setContext('background', true);
 
 	const paddings = {
+		none: 'p-0',
 		sm: 'p-4',
 		md: 'p-5',
 		lg: 'p-6',
 		xl: 'p-8'
+	};
+
+	const sizes = {
+		xs: 'max-w-xs',
+		sm: 'max-w-sm',
+		md: 'max-w-lg',
+		lg: 'max-w-2xl',
+		xl: 'max-w-screen-xl'
 	};
 
 	let innerPdding;
@@ -22,8 +32,8 @@
 
 	let cardClass;
 	$: cardClass = classNames(
-		'block max-w-sm',
 		'flex',
+		sizes[size],
 		reverse ? 'flex-col-reverse' : 'flex-col',
 		horizontal && (reverse ? 'md:flex-row-reverse md:max-w-xl' : 'md:flex-row md:max-w-xl'),
 		'bg-white dark:bg-gray-800 shadow-md',
@@ -49,6 +59,6 @@
 			<slot />
 		</div>
 	{:else}
-		<div><slot /></div>
+		<slot />
 	{/if}
 </svelte:element>
