@@ -41,38 +41,16 @@
 	$: toolTipClass = classNames(
 		tipClass,
 		animation !== false && `transition-opacity ${animation}`,
-		{
-			'invisible opacity-0': !open
-		},
+		!open && 'invisible opacity-0',
 		tipStyleClasses[style],
 		$$props.class
 	);
 	let open = false;
-	const floatingPlacement = ({
-		placement
-	}: {
-		placement: 'auto' | Placement;
-	}): Placement | undefined => {
+	const floatingPlacement = (placement: 'auto' | Placement): Placement | undefined => {
 		return placement === 'auto' ? undefined : placement;
 	};
-	const floatingArrowPlacement = ({ placement }: { placement: Placement }): Placement => {
-		if (!placement) {
-			return 'top';
-		}
-		return {
-			top: 'bottom',
-			right: 'left',
-			bottom: 'top',
-			left: 'right'
-		}[placement.split('-')[0]] as Placement;
-	};
-	const floatingMiddleware = ({
-		arrowRef,
-		placement
-	}: {
-		arrowRef: any;
-		placement: 'auto' | Placement;
-	}) => {
+
+	const floatingMiddleware = (arrowRef: any, placement: 'auto' | Placement) => {
 		const middleware = [];
 		middleware.push(offset(8));
 		middleware.push(placement === 'auto' ? autoPlacement() : flip());
@@ -86,8 +64,8 @@
 	let tooltipRef: HTMLElement, triggerRef: HTMLElement, arrowRef: HTMLElement;
 	const updatePosition = () =>
 		computePosition(triggerRef as Element, tooltipRef as Element, {
-			middleware: floatingMiddleware({ arrowRef, placement }),
-			placement: floatingPlacement({ placement })
+			middleware: floatingMiddleware(arrowRef, placement),
+			placement: floatingPlacement(placement)
 		}).then((data) => (placementData = data));
 	let attachedScroll: boolean = false;
 	$: tooltipRef && open && updatePosition();
@@ -106,6 +84,26 @@
 			window.removeEventListener('scroll', updatePosition, true);
 		}
 	});
+
+	const arrPos = {
+		top: 'bottom',
+		right: 'left',
+		bottom: 'top',
+		left: 'right'
+	};
+
+	let floatingArrowPlacement;
+	$: {
+		if (placementData) {
+			const arrow = placementData.middlewareData.arrow;
+			const pos = arrPos[placementData?.placement?.split('-')[0]] ?? 'top';
+			if (pos === 'top' || pos === 'bottom')
+				floatingArrowPlacement = `${pos}: -4px; left: ${px(arrow?.x)}`;
+			else floatingArrowPlacement = `${pos}: -4px; top: ${px(arrow?.y)}`;
+		}
+	}
+
+	const px = (x) => (x === undefined ? '' : x + 'px');
 </script>
 
 <svelte:window on:resize={() => open && updatePosition()} />
@@ -143,7 +141,9 @@
 		bind:this={tooltipRef}
 		data-testid="tooltip"
 		class={toolTipClass}
-		style={`left:${placementData?.x}px;top:${placementData?.y}px;position:${placementData?.strategy}`}
+		style:left={px(placementData?.x)}
+		style:top={px(placementData?.y)}
+		style:position={placementData?.strategy ?? ''}
 	>
 		<div class="relative z-20">
 			<slot name="content">
@@ -154,9 +154,7 @@
 			<div
 				class={classNames('absolute z-10 h-2 w-2 rotate-45', arrowStyleClasses[style])}
 				data-testid="tooltip-arrow"
-				style={`left:${placementData?.middlewareData.arrow?.x}px;top:${
-					placementData?.middlewareData.arrow?.y
-				}px;${floatingArrowPlacement({ placement: placementData?.placement })}:-4px`}
+				style={floatingArrowPlacement}
 				bind:this={arrowRef}
 			>
 				&nbsp;
