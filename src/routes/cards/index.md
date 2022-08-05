@@ -34,7 +34,7 @@ layout: cardLayout
   let hCard = false;
   let img1 = {
     src: "/images/product-1.webp",
-    alt: "product image",
+    alt: "product 1",
   };
   let list = [
     { img: { src: "/images/profile-picture-1.webp", alt: "Neil Sims",},
@@ -332,7 +332,7 @@ Use this card for your e-commerce websites and show information about the produc
 <ExampleDiv>
 <Card padding="sm">
 	<a href="/">
-		<img class="p-3" src="images/product-1.webp" alt="images/product-1.webp" />
+		<img class="p-3" src="images/product-1.webp" alt="product 1" />
 	</a>
 	<a href="/">
 		<h3 class='text-xl font-semibold tracking-tight text-gray-900 dark:text-white'>
@@ -353,7 +353,7 @@ Use this card for your e-commerce websites and show information about the produc
 ```html
 <Card padding="sm">
 	<a href="/">
-		<img class="p-3" src="images/product-1.webp" alt="images/product-1.webp" />
+		<img class="p-3" src="images/product-1.webp" alt="product 1" />
 	</a>
 	<a href="/">
 		<h3 class='text-xl font-semibold tracking-tight text-gray-900 dark:text-white'>
@@ -597,7 +597,7 @@ Use this example to split cards into multiple sections such as for testimonials 
       <p class="my-4 font-light">If you care for your time, I hands down would go with this."</p>
     </blockquote>
     <figcaption class="flex justify-center items-center space-x-3">
-      <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png" alt="profile picture">
+      <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png" alt="Karen profile">
       <div class="space-y-0.5 font-medium dark:text-white text-left">
         <div>Bonnie Green</div>
         <div class="text-sm font-light text-gray-500 dark:text-gray-400">Developer at Open AI</div>
@@ -610,7 +610,7 @@ Use this example to split cards into multiple sections such as for testimonials 
       <p class="my-4 font-light">Designing with Figma components that can be easily translated to the utility classes of Tailwind CSS is a huge timesaver!"</p>
       </blockquote>
       <figcaption class="flex justify-center items-center space-x-3">
-        <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png" alt="profile picture">
+        <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png" alt="Robert profile">
         <div class="space-y-0.5 font-medium dark:text-white text-left">
           <div>Roberta Casas</div>
           <div class="text-sm font-light text-gray-500 dark:text-gray-400">Lead designer at Dropbox</div>
@@ -623,7 +623,7 @@ Use this example to split cards into multiple sections such as for testimonials 
         <p class="my-4 font-light">Aesthetically, the well designed components are beautiful and will undoubtedly level up your next application."</p>
       </blockquote>
       <figcaption class="flex justify-center items-center space-x-3">
-        <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="profile picture">
+        <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="Jese profile">
         <div class="space-y-0.5 font-medium dark:text-white text-left">
           <div>Jese Leos</div>
           <div class="text-sm font-light text-gray-500 dark:text-gray-400">Software Engineer at Facebook</div>
@@ -636,7 +636,7 @@ Use this example to split cards into multiple sections such as for testimonials 
         <p class="my-4 font-light">You have many examples that can be used to create a fast prototype for your team."</p>
       </blockquote>
       <figcaption class="flex justify-center items-center space-x-3">
-        <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png" alt="profile picture">
+        <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png" alt="joseph profile">
         <div class="space-y-0.5 font-medium dark:text-white text-left">
           <div>Joseph McFall</div>
           <div class="text-sm font-light text-gray-500 dark:text-gray-400">CTO at Google</div>
@@ -655,7 +655,7 @@ Use this example to split cards into multiple sections such as for testimonials 
     <p class="my-4 font-light">If you care for your time, I hands down would go with this."</p>
   </blockquote>
   <figcaption class="flex justify-center items-center space-x-3">
-    <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png" alt="profile picture">
+    <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png" alt="karen profile">
     <div class="space-y-0.5 font-medium dark:text-white text-left">
       <div>Bonnie Green</div>
       <div class="text-sm font-light text-gray-500 dark:text-gray-400">Developer at Open AI</div>
@@ -668,7 +668,7 @@ Use this example to split cards into multiple sections such as for testimonials 
     <p class="my-4 font-light">Designing with Figma components that can be easily translated to the utility classes of Tailwind CSS is a huge timesaver!"</p>
     </blockquote>
     <figcaption class="flex justify-center items-center space-x-3">
-      <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png" alt="profile picture">
+      <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png" alt="roberta profile">
       <div class="space-y-0.5 font-medium dark:text-white text-left">
         <div>Roberta Casas</div>
         <div class="text-sm font-light text-gray-500 dark:text-gray-400">Lead designer at Dropbox</div>
@@ -681,7 +681,7 @@ Use this example to split cards into multiple sections such as for testimonials 
       <p class="my-4 font-light">Aesthetically, the well designed components are beautiful and will undoubtedly level up your next application."</p>
     </blockquote>
     <figcaption class="flex justify-center items-center space-x-3">
-      <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="profile picture">
+      <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="jese profile">
       <div class="space-y-0.5 font-medium dark:text-white text-left">
         <div>Jese Leos</div>
         <div class="text-sm font-light text-gray-500 dark:text-gray-400">Software Engineer at Facebook</div>
@@ -694,7 +694,7 @@ Use this example to split cards into multiple sections such as for testimonials 
       <p class="my-4 font-light">You have many examples that can be used to create a fast prototype for your team."</p>
     </blockquote>
     <figcaption class="flex justify-center items-center space-x-3">
-      <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png" alt="profile picture">
+      <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png" alt="joseph profile">
       <div class="space-y-0.5 font-medium dark:text-white text-left">
         <div>Joseph McFall</div>
         <div class="text-sm font-light text-gray-500 dark:text-gray-400">CTO at Google</div>
