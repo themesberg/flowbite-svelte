@@ -137,7 +137,7 @@ You can also include a descriptive icon to complement the message inside the ale
 Use this example to show a list and a description inside an alert component.
 
 <ExampleDiv>
-  <Alert icon={InformationCircle} class="bg-blue-50 text-blue-900">
+  <Alert icon={InformationCircle}>
     <span class="sr-only">Info</span>
     <span class="font-medium">Ensure that these requirements are met:</span>
     <ul slot="extra" class="mt-0 ml-8 list-disc list-inside">
@@ -146,7 +146,7 @@ Use this example to show a list and a description inside an alert component.
       <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
     </ul>
   </Alert>
-  <Alert color="red" icon={InformationCircle} class="bg-red-50 text-red-900">
+  <Alert color="red" icon={InformationCircle}>
     <span class="sr-only">Info</span>
     <span class="font-medium">Ensure that these requirements are met:</span>
     <ul slot="extra" class="mt-0 ml-8 list-disc list-inside">
@@ -158,7 +158,7 @@ Use this example to show a list and a description inside an alert component.
 </ExampleDiv>
 
 ```html
-<Alert icon={InformationCircle} class="bg-blue-50 text-blue-900">
+<Alert icon={InformationCircle}>
   <span class="sr-only">Info</span>
   <span class="font-medium">Ensure that these requirements are met:</span>
   <ul slot="extra" class="mt-0 ml-8 list-disc list-inside">
@@ -167,7 +167,7 @@ Use this example to show a list and a description inside an alert component.
     <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
   </ul>
 </Alert>
-<Alert color="red" icon={InformationCircle} class="bg-red-50 text-red-900">
+<Alert color="red" icon={InformationCircle}>
   <span class="sr-only">Info</span>
   <span class="font-medium">Ensure that these requirements are met:</span>
   <ul slot="extra" class="mt-0 ml-8 list-disc list-inside">
@@ -198,15 +198,23 @@ Use the following alert elements that are also dismissable.
   <Alert color="dark" icon={InformationCircle} dismissable>
     A simple info alert with an <a href="/" class="font-semibold underline hover:text-gray-800 dark:hover:text-white">example link</a>. Give it a click if you like.
   </Alert>
-
 </ExampleDiv>
 
 ```html
-<Alert color="green" icon="{InformationCircle}" dismissable>
-	A simple info alert with an
-	<a href="/" class="font-semibold underline hover:text-green-800 dark:hover:text-green-900"
-		>example link</a
-	>. Give it a click if you like.
+<Alert icon={InformationCircle} dismissable>
+  A simple info alert with an <a href="/" class="font-semibold underline hover:text-blue-800 dark:hover:text-blue-900">example link</a>. Give it a click if you like.
+</Alert>
+<Alert color="red" icon={InformationCircle} dismissable>
+  A simple info alert with an <a href="/" class="font-semibold underline hover:text-red-800 dark:hover:text-red-900">example link</a>. Give it a click if you like.
+</Alert>
+<Alert color="green" icon={InformationCircle} dismissable>
+  A simple info alert with an <a href="/" class="font-semibold underline hover:text-green-800 dark:hover:text-green-900">example link</a>. Give it a click if you like.
+</Alert>
+<Alert color="yellow" icon={InformationCircle} dismissable>
+  A simple info alert with an <a href="/" class="font-semibold underline hover:text-yellow-800 dark:hover:text-yellow-900">example link</a>. Give it a click if you like.
+</Alert>
+<Alert color="dark" icon={InformationCircle} dismissable>
+  A simple info alert with an <a href="/" class="font-semibold underline hover:text-gray-800 dark:hover:text-white">example link</a>. Give it a click if you like.
 </Alert>
 ```
 
