@@ -10,6 +10,7 @@ layout: cardLayout
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { Avatar, Button, Breadcrumb, BreadcrumbItem, Card, SignInCard, EcommerceCard, Dropdown, DropdownItem, List, Toggle } from '$lib'
+  import { Badge, Label, Input, Checkbox, Rating } from "$lib"
   import { DotsHorizontal, ArrowRight } from 'svelte-heros'
   import CloseButton from "$lib/utils/CloseButton.svelte"
   import { Home } from 'svelte-heros';
@@ -245,14 +246,53 @@ Use this user profile card example if you want to show a dropdown menu and butto
 
 Use this card example where you can add form input elements that can be used for authentication actions or any other context where you need to receive information from your users.
 
-[See `SignInCard` for details](/cards/signin)
-
 <ExampleDiv>
-  <SignInCard rememberMe signup={{name: 'Create account', href:'/'}} lostPassword={{name: 'Lost password', href:"/"}}/>
+<Card>
+	<form class="flex flex-col space-y-6" action="/">
+		<h3 class="text-xl font-medium text-gray-900 dark:text-white p-0">Sign in to our platform</h3>
+		<Label class="space-y-2">
+			<span>Email</span>
+			<Input type="email" name="email" placeholder="name@company.com" required />
+		</Label>
+		<Label class="space-y-2">
+			<span>Your password</span>
+			<Input type="password" name="password" placeholder="•••••" required />
+		</Label>
+		<div class="flex items-start">
+				<Checkbox>Remember me</Checkbox>
+				<a href="/" class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500">Lost password?</a>
+		</div>
+		<Button type="submit" class="w-full1">Login to your account</Button>
+			<div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+				Not registered? <a href="/" class="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
+			</div>
+	</form>
+</Card>
 </ExampleDiv>
 
+
 ```html
-  <SignInCard rememberMe signup={{name: 'Create account', href:'/'}} lostPassword={{name: 'Lost password', href:"/"}}/>
+<Card>
+	<form class="flex flex-col space-y-6" action="/">
+		<h3 class="text-xl font-medium text-gray-900 dark:text-white p-0">Sign in to our platform</h3>
+		<Label class="space-y-2">
+			<span>Email</span>
+			<Input type="email" name="email" placeholder="name@company.com" required />
+		</Label>
+		<Label class="space-y-2">
+			<span>Your password</span>
+			<Input type="password" name="password" placeholder="•••••" required />
+		</Label>
+		<div class="flex items-start">
+			<Checkbox>Remember me</Checkbox>
+			<a href="/" class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500">Lost password?</a>
+		</div>
+		<Button type="submit" class="w-full1">Login to your account</Button>
+			<div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+				Not registered? <a href="/" class="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
+			</div>
+	</form>
+</Card>
 ```
 
 <Htwo label="Call to action card" />
@@ -355,32 +395,45 @@ Use this card example if you want to show a list of data:
 
 Use this card for your e-commerce websites and show information about the products and enable actions such as adding a review and adding the product to the cart.
 
-[See `EcommerceCard` for details](/cards/ecommerce)
-
 <ExampleDiv>
-  <EcommerceCard
-    title="Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport"
-    href="/"
-    price="$543"
-    img={img1}
-    stars={4}
-    btnText="Buy now"
-  >
-  <p cloass="dark:text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-  </EcommerceCard>
+<Card padding="sm">
+	<a href="/">
+		<img class="p-3" src="images/product-1.webp" alt="images/product-1.webp" />
+	</a>
+	<a href="/">
+		<h3 class='text-xl font-semibold tracking-tight text-gray-900 dark:text-white'>
+			Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
+		</h3>
+	</a>
+  <Rating rating=4>
+    <Badge slot="text">4</Badge>
+  </Rating>
+	<div class="flex justify-between items-center">
+		<span class="text-3xl font-bold text-gray-900 dark:text-white">$543</span>
+		<Button href="/">Buy now</Button>
+	</div>
+</Card>
 </ExampleDiv>
 
+
 ```html
-<EcommerceCard
-  title="Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport"
-  href="/"
-  price="$543"
-  img={img1}
-  stars={star5}
-  btnText="Buy now"
->
-<p cloass="dark:text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-</EcommerceCard>
+<Card padding="sm">
+	<a href="/">
+		<img class="p-3" src="images/product-1.webp" alt="images/product-1.webp" />
+	</a>
+	<a href="/">
+		<h3 class='text-xl font-semibold tracking-tight text-gray-900 dark:text-white'>
+			Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
+		</h3>
+	</a>
+  <Rating rating=4>
+    <Badge slot="text">4</Badge>
+  </Rating>
+	<div class="flex justify-between items-center">
+		<span class="text-3xl font-bold text-gray-900 dark:text-white">$543</span>
+		<Button href="/">Buy now</Button>
+	</div>
+</Card>
 ```
 
 <Htwo label="Props" />
