@@ -29,7 +29,20 @@
 	<ul class={ulClass}>
 		<li>
 			{#if icon}
-				<a href="/" on:click|preventDefault={previous} class={iconPreviousClass}>
+				<a
+					href="/"
+					on:click|preventDefault={previous}
+					class={iconPreviousClass}
+					on:blur
+					on:click
+					on:focus
+					on:keydown
+					on:keypress
+					on:keyup
+					on:mouseenter
+					on:mouseleave
+					on:mouseover
+				>
 					<span class="sr-only">Previous</span>
 					<svg
 						class="w-5 h-5"
@@ -44,17 +57,55 @@
 					>
 				</a>
 			{:else}
-				<a href="/" on:click|preventDefault={previous} class={previousClass}>Previous</a>
+				<a
+					href="/"
+					on:click|preventDefault={previous}
+					class={previousClass}
+					on:blur
+					on:click
+					on:focus
+					on:keydown
+					on:keypress
+					on:keyup
+					on:mouseenter
+					on:mouseleave
+					on:mouseover>Previous</a
+				>
 			{/if}
 		</li>
 		{#each pages as { pageNum, href }}
 			<li>
-				<a {href} class={pageClass}>{pageNum}</a>
+				<a
+					{href}
+					class={pageClass}
+					on:blur
+					on:click
+					on:focus
+					on:keydown
+					on:keypress
+					on:keyup
+					on:mouseenter
+					on:mouseleave
+					on:mouseover>{pageNum}</a
+				>
 			</li>
 		{/each}
 		<li>
 			{#if icon}
-				<a href="/" on:click|preventDefault={next} class={iconNextClass}>
+				<a
+					href="/"
+					on:click|preventDefault={next}
+					class={iconNextClass}
+					on:blur
+					on:click
+					on:focus
+					on:keydown
+					on:keypress
+					on:keyup
+					on:mouseenter
+					on:mouseleave
+					on:mouseover
+				>
 					<span class="sr-only">Next</span>
 					<svg
 						class="w-5 h-5"
@@ -69,7 +120,20 @@
 					>
 				</a>
 			{:else}
-				<a href="/" on:click|preventDefault={next} class={nextClass}>Next</a>
+				<a
+					href="/"
+					on:click|preventDefault={next}
+					class={nextClass}
+					on:blur
+					on:click
+					on:focus
+					on:keydown
+					on:keypress
+					on:keyup
+					on:mouseenter
+					on:mouseleave
+					on:mouseover>Next</a
+				>
 			{/if}
 		</li>
 	</ul>

@@ -27,7 +27,35 @@
 	{/if}
 	<!-- Buttons -->
 	<div class="inline-flex mt-2">
-		<button on:click={previous} class={btnPreClass}> Prev </button>
-		<button on:click={next} class={btnNextClass}> Next </button>
+		<button
+			on:click={previous}
+			class={btnPreClass}
+			on:blur
+			on:click
+			on:focus
+			on:keydown
+			on:keypress
+			on:keyup
+			on:mouseenter
+			on:mouseleave
+			on:mouseover
+		>
+			Prev
+		</button>
+		<button
+			on:click={next}
+			class={btnNextClass}
+			on:blur
+			on:click
+			on:focus
+			on:keydown
+			on:keypress
+			on:keyup
+			on:mouseenter
+			on:mouseleave
+			on:mouseover
+		>
+			Next
+		</button>
 	</div>
 </div>

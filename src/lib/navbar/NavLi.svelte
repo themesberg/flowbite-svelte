@@ -15,14 +15,16 @@
 	<a
 		{href}
 		{...$$restProps}
-		on:click
-		on:change
-		on:keydown
-		on:keyup
-		on:focus
 		on:blur
+		on:change
+		on:click
+		on:focus
+		on:keydown
+		on:keypress
+		on:keyup
 		on:mouseenter
 		on:mouseleave
+		on:mouseover
 		class={classNames(aClass, $$props.class)}
 	>
 		<slot />

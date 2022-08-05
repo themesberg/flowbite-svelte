@@ -223,7 +223,6 @@ The component has the following props, type, and default values. See <a href="/p
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-
 <Htwo label="Forwarded Events: DropdownItem" />
 
 <div class="flex flex-wrap gap-2">

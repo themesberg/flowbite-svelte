@@ -14,7 +14,20 @@
 	}
 </script>
 
-<a href="/" on:click|preventDefault={previous} class={previousClass}>
+<a
+	href="/"
+	on:click|preventDefault={previous}
+	class={previousClass}
+	on:blur
+	on:click
+	on:focus
+	on:keydown
+	on:keypress
+	on:keyup
+	on:mouseenter
+	on:mouseleave
+	on:mouseover
+>
 	{#if icon}
 		<svg
 			class="mr-2 w-5 h-5"

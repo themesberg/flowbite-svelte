@@ -46,14 +46,16 @@
 						<a
 							href={item.href}
 							{rel}
-							on:click
-							on:change
-							on:keydown
-							on:keyup
-							on:focus
 							on:blur
+							on:change
+							on:click
+							on:focus
+							on:keydown
+							on:keypress
+							on:keyup
 							on:mouseenter
 							on:mouseleave
+							on:mouseover
 							class={dropdownLinkClassWithChild}>{item.name}</a
 						>
 					</li>

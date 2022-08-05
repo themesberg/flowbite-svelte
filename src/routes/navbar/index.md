@@ -9,7 +9,7 @@ layout: navbarLayout
   import CompoDescription from '../utils/CompoDescription.svelte'
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Breadcrumb, BreadcrumbItem, Button, Dropdown, DropdownItem, DropdownHeader, DropdownDivider, Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Input } from '$lib';
+  import { Breadcrumb, BreadcrumbItem, Button, Dropdown, DropdownItem, DropdownHeader, DropdownDivider, Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Input, Badge } from '$lib';
 	import { Search , Home} from 'svelte-heros'
   import componentProps from '../props/Navbar.json'
 	import componentProps2 from '../props/NavBrand.json'
@@ -379,3 +379,18 @@ Use the following navbar element to show a call to action button alongside the l
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
+
+<Htwo label="Forwarded Events: NavDropdown, NavLi" />
+
+<div class="flex flex-wrap gap-2">
+<Badge large={true}>on:blur</Badge>
+<Badge large={true}>on:change</Badge>
+<Badge large={true}>on:click</Badge>
+<Badge large={true}>on:focus</Badge>
+<Badge large={true}>on:keydown</Badge>
+<Badge large={true}>on:keypress</Badge>
+<Badge large={true}>on:keyup</Badge>
+<Badge large={true}>on:mouseenter</Badge>
+<Badge large={true}>on:mouseleave</Badge>
+<Badge large={true}>on:mouseover</Badge>
+</div>
