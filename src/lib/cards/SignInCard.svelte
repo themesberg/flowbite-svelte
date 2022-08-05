@@ -9,7 +9,15 @@
 
 	export let login: AuthFunctionType;
 	export let title: string = 'Sign in';
-	export let btnSignInColor: Colors = 'blue';
+	export let btnSignInColor:
+		| 'blue'
+		| 'alternative'
+		| 'dark'
+		| 'light'
+		| 'green'
+		| 'red'
+		| 'yellow'
+		| 'purple' = 'blue';
 	export let rememberMe: boolean = false;
 	export let signup: LinkType;
 	export let lostPassword: LinkType;
