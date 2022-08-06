@@ -46,7 +46,7 @@ You can find all the icon names from the <a href="https://github.com/shinokada/s
 
 Svelte-heros icons allow you to change icon size and color by using HEX CSS code or TailwindCSS/Flowbite.
 
-You can select any icons from <a href="https://svelte-svg-icons.vercel.app/" class="text-red-700 underline" target="_blank">Svelte Icon Sets</a>.
+If you need more icons use any icon sets from <a href="https://svelte-svg-icons.vercel.app/" class="text-red-700 underline" target="_blank">Svelte Icon Sets</a>.
 <Htwo label="Color and size" />
 
 If you want to change the color with Tailwind CSS, add it to class prop. To change the icon size use the `size` prop or use class like, `class="h-24 w-24"`.
