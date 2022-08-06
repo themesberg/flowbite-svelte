@@ -14,6 +14,8 @@
 
 [Flowbite-Svelte](https://flowbite-svelte.com/) is an official Flowbite component library for Svelte. All interactivities are handled by Svelte.
 
+**⚠️ Flowbite-Svelte is currently in early development and APIs and packages are likely to change quite often.**
+
 ## Flowbite-Svelte-Starter
 
 You can use [Flowbite-Svelte Starter](https://github.com/shinokada/flowbite-svelte-starter) for a quick start.
