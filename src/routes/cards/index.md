@@ -703,6 +703,7 @@ Use this example to split cards into multiple sections such as for testimonials 
   </figure>
 </Card>
 ```
+
 <Htwo label="Props" />
 
 The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.

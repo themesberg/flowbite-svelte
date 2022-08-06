@@ -143,7 +143,7 @@
 		</Nav>
 		<Nav {navClass}>
 			<h3 class={h3Class}>
-				<a href="/forms">Forms</a>
+				<a href="/forms" rel="external">Forms</a>
 			</h3>
 		</Nav>
 		<Nav {navClass}>

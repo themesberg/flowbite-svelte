@@ -69,6 +69,8 @@ The dropdown component can be used to show a list of menu items when clicking on
 
 <Htwo label="Examples" />
 
+If you want to show a dropdown menu when clicking on an element add the `Dropdown` and `DropdownItem` components.
+
 <ExampleDiv class="flex justify-center h-64">
 <Dropdown label="Dropdown button" class="w-44">
   <DropdownItem>Dashboard</DropdownItem>
@@ -88,6 +90,8 @@ The dropdown component can be used to show a list of menu items when clicking on
 ```
 
 <Htwo label="Dropdown divider" />
+
+You can use the `DropdownDivider` component to add separate elements inside the dropdown menu.
 
 <ExampleDiv class="flex justify-center h-64">
 <Dropdown label="Dropdown button" class="w-44">
@@ -126,7 +130,6 @@ Use this example to show extra information outside of the list of menu items ins
   <DropdownItem>Sign out</DropdownItem>
 </Dropdown>
 </ExampleDiv>
-
 
 ```html
 <Dropdown label="Dropdown button" class="w-44">

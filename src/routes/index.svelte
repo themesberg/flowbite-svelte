@@ -99,7 +99,7 @@
 	<FileinputBlock />
 	<FloatingLabelBlock />
 	<FooterBlock />
-	<FormBlock />
+	<FormBlock rel="external" />
 	<InputfieldBlock />
 	<KbdBlock />
 	<ListgroupBlock />

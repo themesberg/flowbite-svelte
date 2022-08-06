@@ -102,6 +102,7 @@ Use the `large={true}` to create a large variant of the badges.
 ```
 
 <Htwo label="Badges as links" />
+
 You can also use badges as anchor elements to link to another page.
 
 <ExampleDiv> <!-- Don't use flex. You won't see the size difference -->
@@ -116,6 +117,7 @@ You can also use badges as anchor elements to link to another page.
 ```
 
 <Htwo label="Badges with icon" />
+
 You can also use SVG icons inside the badge elements.
 
 <ExampleDiv> <!-- Don't use flex. You won't see the size difference -->
