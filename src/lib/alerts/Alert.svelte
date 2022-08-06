@@ -4,7 +4,7 @@
 	import { createEventDispatcher } from 'svelte';
 	import type { SvelteComponent } from 'svelte';
 	import type { Colors } from '../types';
-	import CloseButton from '$lib/utils/CloseButton.svelte';
+	import { CloseButton } from '$lib';
 
 	const dispatch = createEventDispatcher();
 	setContext('background', true);

@@ -10,9 +10,8 @@ layout: cardLayout
   import TableProp from '../utils/TableProp.svelte'
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
   import { Avatar, Button, Breadcrumb, BreadcrumbItem, Card, Dropdown, DropdownItem, List, Toggle } from '$lib'
-  import { Badge, Label, Input, Checkbox, Rating, DefaultTabs, InteractiveTabHead, TabContent } from "$lib"
+  import { Badge, Label, Input, Checkbox, Rating, DefaultTabs, InteractiveTabHead, TabContent, CloseButton } from "$lib"
   import { DotsHorizontal, ArrowRight, ExternalLink, Gift, CheckCircle } from 'svelte-heros'
-  import CloseButton from "$lib/utils/CloseButton.svelte"
   import { Home } from 'svelte-heros';
   import componentProps from '../props/Card.json'
   // Props table

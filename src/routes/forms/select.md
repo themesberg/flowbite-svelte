@@ -10,8 +10,7 @@ import ExampleDiv from '../utils/ExampleDiv.svelte'
 import TableProp from '../utils/TableProp.svelte'
 import TableDefaultRow from '../utils/TableDefaultRow.svelte'
 import { onMount } from 'svelte';
-import { Label, Dropdown, DropdownItem, Select, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
-import CloseButton from "$lib/utils/CloseButton.svelte";
+import { Label, Dropdown, DropdownItem, Select, Breadcrumb, BreadcrumbItem, Badge, CloseButton} from '$lib'
 import { Home } from 'svelte-heros'
 import componentProps from '../props/Select.json'
 let items = componentProps.props

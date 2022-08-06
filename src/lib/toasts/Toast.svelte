@@ -2,7 +2,7 @@
 	import classNames from 'classnames';
 	import * as transitions from 'svelte/transition';
 	import type { Colors, TransitionTypes, TransitionParamTypes } from '../types';
-	import CloseButton from '$lib/utils/CloseButton.svelte';
+	import { CloseButton } from '$lib';
 
 	export let color: Colors = 'blue';
 	export let simple: boolean = false;

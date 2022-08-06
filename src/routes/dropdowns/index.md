@@ -11,8 +11,7 @@ layout: dropdownLayout
   import TableDefaultRow from '../utils/TableDefaultRow.svelte'
 
   import { Avatar, Button, Checkbox, Label, Helper, Dropdown, DropdownDivider, DropdownHeader, DropdownItem,
-    Navbar,NavBrand,NavHamburger, NavUl, NavLi, Radio, Toggle, SimpleSearch, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
-  import CloseButton from "$lib/utils/CloseButton.svelte";
+    Navbar,NavBrand,NavHamburger, NavUl, NavLi, Radio, Toggle, SimpleSearch, Breadcrumb, BreadcrumbItem, Badge, CloseButton } from '$lib'
 
   import { Home, ChevronDown, DotsHorizontal, DotsVertical, UserAdd, UserRemove } from 'svelte-heros';
   import componentProps from '../props/Dropdown.json'
@@ -201,6 +200,9 @@ Add multiple checkbox elements inside your dropdown menu to enable more advanced
 
 
 ```html
+<script>
+  import { ..., ...., Checkbox } from 'flowbite-svelte'
+</script>
 <Dropdown label="Dropdown checkbox" class="w-44">
   <DropdownItem>
     <Checkbox>Default checkbox</Checkbox>
@@ -279,6 +281,9 @@ Add an extra helper text to each checkbox element inside the dropdown menu list 
 
 
 ```html
+<script>
+  import { ..., ..., Helper } from 'flowbite-svelte'
+</script>
 <Dropdown label="Dropdown checkbox" class="w-60" >
   <ul slot="content" class="p-3 space-y-1">
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
@@ -318,6 +323,7 @@ Add multiple radio elements inside your dropdown menu to enable more advanced in
 
 ```html
 <script>
+  import { ..., ..., Radio } from 'flowbite-svelte'
   let group1 = 2;
 </script>
 
@@ -442,6 +448,10 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 </ExampleDiv>
 
 ```html
+<script>
+  import { ..., ..., Toggle } from 'flowbite-svelte'
+</script>
+
 <Dropdown label="Dropdown radio" class="w-56">
 <ul slot="content" class="p-3 space-y-1">
   <DropdownItem class="rounded">
@@ -491,6 +501,9 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 </ExampleDiv>
 
 ```html
+<script>
+  import { ..., ...., Navbar, NavBrand, NavHamburger, NavUl, NavLi } from 'flowbite-svelte'
+</script>
 <Navbar let:hidden let:toggle>
   <NavBrand href="/">
     <img
@@ -554,6 +567,9 @@ This example can be used when you want to show a long list of items that won’t
 </ExampleDiv>
 
 ```html
+<script>
+  import { ..., ..., Avatar } from 'flowbite-svelte'
+</script>
 <Dropdown label="Project users" class="w-48">
   <svelte:fragment slot="content">
       <ul class="overflow-y-auto py-1 h-48 text-gray-700 dark:text-gray-200">
@@ -621,6 +637,9 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
 </ExampleDiv>
 
 ```html
+<script>
+  import { ..., ..., SimpleSearch, Checkbox,  } from 'flowbite-svelte'
+</script>
 <Dropdown label="Project users" class="w-60">
   <svelte:fragment slot="content">
     <div class="p-3">
