@@ -3,20 +3,10 @@ layout: tabLayout
 ---
 
 <script>
-  import Htwo from '../utils/Htwo.svelte'
-  import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import GitHubSource from '../utils/GitHubSource.svelte'
-  import CompoDescription from '../utils/CompoDescription.svelte'
-  import TableProp from '../utils/TableProp.svelte'
-  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { DefaultTabs, UnderlineTabs, IconTabs, PillTabs, FullWidthTabs, InteractiveTabs, InteractiveTabHead, TabContent, Timeline, TimelineItem, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
-  import {
-		Home,
-		UserCircle,
-		ViewGrid,
-		Adjustments,
-		ClipboardList
-	} from 'svelte-heros';
+  import { Home, UserCircle, ViewGrid, Adjustments, ClipboardList } from 'svelte-heros';
+  
   import componentProps from '../props/DefaultTabs.json'
 	import componentProps2 from '../props/UnderlineTabs.json'
 	import componentProps3 from '../props/IconTabs.json'

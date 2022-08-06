@@ -3,15 +3,10 @@ layout: buttongroupLayout
 ---
 
 <script>
-  import Htwo from '../utils/Htwo.svelte'
-  import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import GitHubSource from '../utils/GitHubSource.svelte'
-  import CompoDescription from '../utils/CompoDescription.svelte'
-  import TableProp from '../utils/TableProp.svelte'
-  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import {ButtonGroup, ButtonGroupItem, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
-  import { Home } from 'svelte-heros';
-	import { User, Adjustments, CloudDownload } from 'svelte-heros';
+	import { Home, User, Adjustments, CloudDownload } from 'svelte-heros';
+	
   import componentProps from '../props/ButtonGroup.json'
   import componentProps2 from '../props/ButtonGroupItem.json'
   // Props table

@@ -3,14 +3,10 @@ layout: ratingLayout
 ---
 
 <script>
-	import Htwo from '../utils/Htwo.svelte'
-  import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import GitHubSource from '../utils/GitHubSource.svelte'
-  import CompoDescription from '../utils/CompoDescription.svelte'
-	import TableProp from '../utils/TableProp.svelte'
-  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
 	import { Rating, AdvancedRating, ScoreRating, Breadcrumb, BreadcrumbItem } from '$lib'
 	import { Heart, ThumbUp, EmojiHappy, Home } from 'svelte-heros';
+	
 	import componentProps from '../props/Rating.json'
 	import componentProps2 from '../props/AdvancedRating.json'
 	import componentProps3 from '../props/ScoreRating.json'

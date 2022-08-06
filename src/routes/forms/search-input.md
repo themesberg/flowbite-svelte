@@ -3,14 +3,10 @@ layout: formLayout
 ---
 
 <script>
-  import Htwo from '../utils/Htwo.svelte'
-  import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import GitHubSource from '../utils/GitHubSource.svelte'
-  import CompoDescription from '../utils/CompoDescription.svelte'
-  import TableProp from '../utils/TableProp.svelte'
-  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Search, SimpleSearch, VoiceSearch, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
   import { Home } from 'svelte-heros'
+
   import searchComponentProps from '../props/Search.json'
   import simpleSearchComponentProps from '../props/SimpleSearch.json'
   import voiceSearchcomponentProps from '../props/VoiceSearch.json'

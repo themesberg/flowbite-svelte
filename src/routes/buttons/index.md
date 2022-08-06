@@ -3,17 +3,11 @@ layout: buttonLayout
 ---
 
 <script>
-  import Htwo from '../utils/Htwo.svelte'
-  import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import GitHubSource from '../utils/GitHubSource.svelte'
-  import CompoDescription from '../utils/CompoDescription.svelte'
-  import TableProp from '../utils/TableProp.svelte'
-  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import {Htwo,ExampleDiv,GitHubSource,CompoDescription,TableProp, TableDefaultRow, BrandFacebook} from '../utils'
   import { Button, Spinner, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
-  import { Home } from 'svelte-heros';
-  import { ArrowRight, Bell, ShoppingCart, ChevronRight } from "svelte-heros";
-  import BrandFacebook from '../utils/icons/Facebook.svelte'
+  import { Home, ArrowRight, Bell, ShoppingCart, ChevronRight } from "svelte-heros";
   import { goto }from '$app/navigation';
+  
   import componentProps from '../props/Button.json'
   let slotHeader = ['Name', 'Description']
 

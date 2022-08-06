@@ -3,15 +3,10 @@ layout: alertLayout
 ---
 
 <script>
-  import Htwo from '../utils/Htwo.svelte'
-  import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import GitHubSource from '../utils/GitHubSource.svelte'
-  import CompoDescription from '../utils/CompoDescription.svelte'
-  import TableProp from '../utils/TableProp.svelte'
-  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Alert, Breadcrumb, BreadcrumbItem, Button, Badge } from '$lib'
-  import { Home } from 'svelte-heros';
-  import { XCircle, Eye, InformationCircle } from "svelte-heros";
+  import { Home, XCircle, Eye, InformationCircle } from "svelte-heros";
+
   import componentProps from '../props/Alert.json'
   // Props table
   let items = componentProps.props

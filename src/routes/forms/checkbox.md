@@ -3,15 +3,10 @@ layout: formLayout
 ---
 
 <script>
-  import Htwo from '../utils/Htwo.svelte'
-  import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import GitHubSource from '../utils/GitHubSource.svelte'
-  import CompoDescription from '../utils/CompoDescription.svelte'
-  import TableProp from '../utils/TableProp.svelte'
-  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Checkbox, Breadcrumb, BreadcrumbItem, Dropdown, DropdownItem, DropdownDivider, SimpleSearch, Label, Helper, Badge } from '$lib'
-  import { Table, TableBody, TableBodyRow, TableBodyCell, TableHead, TableHeadCell } from '$lib'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
+  import { Checkbox, Breadcrumb, BreadcrumbItem, Dropdown, DropdownItem, DropdownDivider, SimpleSearch, Label, Helper, Badge, Table, TableBody, TableBodyRow, TableBodyCell, TableHead, TableHeadCell } from '$lib'
   import { Home, UserRemove } from 'svelte-heros'
+  
   import componentProps from '../props/Radio.json'
   import componentProps2 from '../props/Label.json'
   import componentProps3 from '../props/Helper.json'

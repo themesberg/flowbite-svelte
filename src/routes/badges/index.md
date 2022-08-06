@@ -3,22 +3,16 @@ layout: badgeLayout
 ---
 
 <script>
-  import Htwo from '../utils/Htwo.svelte'
-  import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import GitHubSource from '../utils/GitHubSource.svelte'
-  import CompoDescription from '../utils/CompoDescription.svelte'
-  import TableProp from '../utils/TableProp.svelte'
-  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Badge, Button, Breadcrumb, BreadcrumbItem } from '$lib'
-  import Dot from '$lib/avatar/Dot.svelte';
   import { Home, Clock, Check, Mail } from 'svelte-heros';
+  
   import componentProps from '../props/Badge.json'
   // Props table
   let items = componentProps.props
 	let propHeader = ['Name', 'Type', 'Default']
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 	let divClass = 'max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700';
-
 </script>
 
 <Breadcrumb>

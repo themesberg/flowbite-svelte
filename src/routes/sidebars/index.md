@@ -3,28 +3,10 @@ layout: sidebarLayout
 ---
 
 <script>
-  import Htwo from '../utils/Htwo.svelte'
-  import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import GitHubSource from '../utils/GitHubSource.svelte'
-  import CompoDescription from '../utils/CompoDescription.svelte'
-  import TableProp from '../utils/TableProp.svelte'
-  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Sidebar, SidebarBrand, SidebarCta,	SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup,SidebarItem, SidebarWrapper, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
-  import {
-    Home,
-    ChartPie,
-    InboxIn,
-    User,
-    Login,
-    Cog,
-    ShoppingCart,
-    ClipboardList,
-    Collection,
-    Support,
-    ViewGrid,
-    Star,
-    X
-  } from 'svelte-heros';
+  import { Home, ChartPie, InboxIn, User, Login, Cog, ShoppingCart, ClipboardList, Collection, Support, ViewGrid, Star, X } from 'svelte-heros';
+  
   import componentProps from '../props/Sidebar.json'
   import componentProps2 from '../props/SidebarBrand.json'
   import componentProps3 from '../props/SidebarCta.json'

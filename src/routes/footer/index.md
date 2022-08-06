@@ -3,18 +3,10 @@ layout: footerLayout
 ---
 
 <script>
-  import Htwo from '../utils/Htwo.svelte'
-  import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import GitHubSource from '../utils/GitHubSource.svelte'
-  import CompoDescription from '../utils/CompoDescription.svelte'
-  import TableProp from '../utils/TableProp.svelte'
-  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import {Htwo,ExampleDiv,Facebook, Github, GitHubSource,CompoDescription,Instagram, TableProp, TableDefaultRow, Twitter} from '../utils'
   import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup, Breadcrumb, BreadcrumbItem } from '$lib'
-  import Facebook from '../utils/icons/Facebook.svelte'
-  import Github from '../utils/icons/Github.svelte'
-  import Twitter from '../utils/icons/Twitter.svelte'
-  import Instagram from '../utils/icons/Instagram.svelte'
   import { Home } from 'svelte-heros'
+  
   import componentProps from '../props/Footer.json'
   import componentProps2 from '../props/FooterBrand.json'
   import componentProps3 from '../props/FooterCopyright.json'

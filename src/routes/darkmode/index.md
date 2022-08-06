@@ -3,11 +3,10 @@ layout: darkmodeLayout
 ---
 
 <script>
-  import Htwo from '../utils/Htwo.svelte'
-  import TableProp from '../utils/TableProp.svelte'
-  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import {Htwo,TableProp, TableDefaultRow} from '../utils'
   import { Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros';
+  
   import componentProps from '../props/DarkMode.json'
   // Props table
   let items = componentProps.props

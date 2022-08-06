@@ -3,21 +3,15 @@ layout: modalLayout
 ---
 
 <script>
-  import Htwo from '../utils/Htwo.svelte'
-  import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import GitHubSource from '../utils/GitHubSource.svelte'
-  import CompoDescription from '../utils/CompoDescription.svelte'
-  import TableProp from '../utils/TableProp.svelte'
-  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Button, Checkbox, Modal, Label, Input, Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros';
   import { goto } from "$app/navigation";
+
   import componentProps1 from '../props/Modal.json'
 
   let items1 = componentProps1.props
-
 	let propHeader = ['Name', 'Type', 'Default']
-
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 

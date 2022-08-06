@@ -3,14 +3,10 @@ layout: breadcrumbLayout
 ---
 
 <script>
-  import Htwo from '../utils/Htwo.svelte'
-  import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import GitHubSource from '../utils/GitHubSource.svelte'
-  import CompoDescription from '../utils/CompoDescription.svelte'
-  import TableProp from '../utils/TableProp.svelte'
-  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros'
+  
   import componentProps from '../props/Breadcrumb.json'
   import componentProps2 from '../props/BreadcrumbItem.json'
   let items = componentProps.props

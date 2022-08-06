@@ -3,20 +3,10 @@ layout: listgroupLayout
 ---
 
 <script>
-  import Htwo from '../utils/Htwo.svelte'
-  import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import GitHubSource from '../utils/GitHubSource.svelte'
-  import CompoDescription from '../utils/CompoDescription.svelte'
-  import TableProp from '../utils/TableProp.svelte'
-  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Avatar, List, ListItem, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
-  import {
-    Adjustments,
-    UserCircle,
-    InboxIn,
-    CloudDownload,
-    Home
-  } from "svelte-heros";
+  import { Adjustments, UserCircle, InboxIn, CloudDownload, Home } from "svelte-heros";
+
   import componentProps from '../props/List.json'
   // Props table
 	let propHeader = ['Name', 'Type', 'Default']

@@ -3,16 +3,10 @@ layout: cardLayout
 ---
 
 <script>
-  import Htwo from '../utils/Htwo.svelte'
-  import ExampleDiv from '../utils/ExampleDiv.svelte'
-  import GitHubSource from '../utils/GitHubSource.svelte'
-  import CompoDescription from '../utils/CompoDescription.svelte'
-  import TableProp from '../utils/TableProp.svelte'
-  import TableDefaultRow from '../utils/TableDefaultRow.svelte'
-  import { Avatar, Button, Breadcrumb, BreadcrumbItem, Card, Dropdown, DropdownItem, List, Toggle } from '$lib'
-  import { Badge, Label, Input, Checkbox, Rating, DefaultTabs, InteractiveTabHead, TabContent, CloseButton } from "$lib"
-  import { DotsHorizontal, ArrowRight, ExternalLink, Gift, CheckCircle } from 'svelte-heros'
-  import { Home } from 'svelte-heros';
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
+  import { Avatar, Badge, Button, Breadcrumb, BreadcrumbItem, Card, Checkbox,CloseButton, DefaultTabs,Dropdown, DropdownItem,Input, InteractiveTabHead,Label,List, Rating, TabContent,Toggle } from '$lib'
+  import { Home, DotsHorizontal, ArrowRight, ExternalLink, Gift, CheckCircle } from 'svelte-heros'
+ 
   import componentProps from '../props/Card.json'
   // Props table
   let items = componentProps.props

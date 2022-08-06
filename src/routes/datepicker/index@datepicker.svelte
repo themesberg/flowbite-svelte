@@ -1,12 +1,9 @@
 <script>
-	import Htwo from '../utils/Htwo.svelte';
-	import ExampleDiv from '../utils/ExampleDiv.svelte';
+	import { Htwo, ExampleDiv, CompoDescription, TableProp, TableDefaultRow } from '../utils';
 	import 'prism-themes/themes/prism-holi-theme.css';
-	import CompoDescription from '../utils/CompoDescription.svelte';
-	import TableProp from '../utils/TableProp.svelte';
-	import TableDefaultRow from '../utils/TableDefaultRow.svelte';
 	import { Datepicker, Breadcrumb, BreadcrumbItem } from '$lib';
 	import { Home } from 'svelte-heros';
+
 	import componentProps from '../props/Datepicker.json';
 	let items = componentProps.props;
 
