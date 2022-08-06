@@ -68,11 +68,11 @@ Let's import all necessary components in the script tag. We import a heart, thum
 The default rating icon is a star. Set the total and rating props.
 
 <ExampleDiv>	
-<Rating total="5" rating="4.66" />
+<Rating total={5} rating={4.66} />
 </ExampleDiv>
 
 ```html
-<Rating total="5" rating="4.66" />
+<Rating total={5} rating={4.66} />
 ```
 
 <Htwo label="Ceil prop" />
@@ -80,24 +80,25 @@ The default rating icon is a star. Set the total and rating props.
 The default rounding for the rate is `floor`, but by adding the `ceil` prop, you can round it up.
 
 <ExampleDiv>	
-<Rating total="5" rating="4.66" ceil />
+<Rating total={5} rating={4.66} ceil />
 </ExampleDiv>
 
 ```html
-<Rating total="5" rating="4.66" ceil />
+<Rating total={5} rating={4.66} ceil />
 ```
 
 <Htwo label="Text slot" />
 
 Use the `text` slot to add any text.
 
-<ExampleDiv>	<Rating total="5" rating="3.21">
+<ExampleDiv>	
+  <Rating total={5} rating={3.21}>
 		<p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.21 out of 5</p>
 	</Rating>
 </ExampleDiv>
 
 ```html
-<Rating total="5" rating="3.21">
+<Rating total={5} rating={3.21}>
 	<p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.21 out of 5</p>
 </Rating>
 ```
@@ -110,7 +111,8 @@ Use the `ratingUp` and `ratingDown` slots to add icons of your choice.
 
 The default icon size is `24`. Set the `class` in a icon component to change colors.
 
-<ExampleDiv>	<Rating total="5" rating="3.21">
+<ExampleDiv>	
+  <Rating total={5} rating={3.21}>
 		<span slot="ratingUp">
 			<Heart class="text-red-700 dark:text-red-500" />
 		</span>
@@ -121,7 +123,7 @@ The default icon size is `24`. Set the `class` in a icon component to change col
 </ExampleDiv>
 
 ```html
-<Rating total="5" rating="3.21">
+<Rating total={5} rating={3.21}>
 	<span slot="ratingUp">
 		<Heart class="text-red-700 dark:text-red-500" />
 	</span>
@@ -131,7 +133,8 @@ The default icon size is `24`. Set the `class` in a icon component to change col
 </Rating>
 ```
 
-<ExampleDiv>	<Rating total="5" rating="4.7">
+<ExampleDiv>	
+  <Rating total={5} rating={4.7}>
 		<span slot="ratingUp">
 			<EmojiHappy class="text-purple-500 dark:text-purple-700" />
 		</span>
@@ -142,7 +145,7 @@ The default icon size is `24`. Set the `class` in a icon component to change col
 </ExampleDiv>
 
 ```html
-<Rating total="5" rating="4.7">
+<Rating total={5} rating={4.7}>
 	<span slot="ratingUp">
 		<EmojiHappy class="text-purple-500 dark:text-purple-700" />
 	</span>
@@ -152,7 +155,8 @@ The default icon size is `24`. Set the `class` in a icon component to change col
 </Rating>
 ```
 
-<ExampleDiv>	<Rating total="5" rating="5">
+<ExampleDiv>	
+  <Rating total={5} rating={5}>
 		<span slot="ratingUp">
 			<ThumbUp class="text-yellow-300 dark:text-yellow-200" />
 		</span>
@@ -163,7 +167,7 @@ The default icon size is `24`. Set the `class` in a icon component to change col
 </ExampleDiv>
 
 ```html
-<Rating total="5" rating="5">
+<Rating total={5} rating={5}>
 	<span slot="ratingUp">
 		<ThumbUp class="text-yellow-300 dark:text-yellow-200" />
 	</span>
@@ -180,8 +184,8 @@ Set the `total`, rating`, and `ratings` prop for AdvancedRation component. Use t
 
 <ExampleDiv>	
 <AdvancedRating
-		total="5"
-		rating="3.21"
+		total={5}
+		rating={3.21}
 		ratings={[
 			{ label: '5 star', rating: 70 },
 			{ label: '4 star', rating: 17 },
@@ -191,7 +195,7 @@ Set the `total`, rating`, and `ratings` prop for AdvancedRation component. Use t
 		]}
 	>
 		<span slot="rating">
-			<Rating total="5" rating="3.21">
+			<Rating total={5} rating={3.21}>
 				<p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.21 out of 5</p>
 			</Rating>
 		</span>
@@ -201,8 +205,8 @@ Set the `total`, rating`, and `ratings` prop for AdvancedRation component. Use t
 
 ```html
 <AdvancedRating
-	total="5"
-	rating="3.21"
+	total={5}
+	rating={3.21}
 	ratings={[
 		{ label: '5 star', rating: 70 },
 		{ label: '4 star', rating: 17 },
@@ -212,7 +216,7 @@ Set the `total`, rating`, and `ratings` prop for AdvancedRation component. Use t
 	]}
 >
 	<span slot="rating">
-		<Rating total="5" rating="3.21">
+		<Rating total={5} rating={3.21}>
 			<p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.21 out of 5</p>
 		</Rating>
 	</span>
@@ -225,8 +229,8 @@ Set the `total`, rating`, and `ratings` prop for AdvancedRation component. Use t
 As we describe in the Rating component, you can change an icon in the `ratingUp` and `ratingDown` in the Rating component.
 
 <ExampleDiv>	<AdvancedRating
-		total="5"
-		rating="3.21"
+		total={5}
+		rating={3.21}
 		ratings={[
 			{ label: '5 star', rating: 70 },
 			{ label: '4 star', rating: 17 },
@@ -236,7 +240,7 @@ As we describe in the Rating component, you can change an icon in the `ratingUp`
 		]}
 	>
 		<span slot="rating">
-			<Rating total="5" rating="3.21" ceil>
+			<Rating total={5} rating={3.21} ceil>
         <span slot="ratingUp">
           <ThumbUp class="text-yellow-300 dark:text-yellow-200" />
         </span>
@@ -252,8 +256,8 @@ As we describe in the Rating component, you can change an icon in the `ratingUp`
 
 ```html
 <AdvancedRating
-  total="5"
-  rating="3.21"
+  total={5}
+  rating={3.21}
   ratings={[
     { label: '5 star', rating: 70 },
     { label: '4 star', rating: 17 },
@@ -263,7 +267,7 @@ As we describe in the Rating component, you can change an icon in the `ratingUp`
   ]}
 >
   <span slot="rating">
-    <Rating total="5" rating="3.21" ceil>
+    <Rating total={5} rating={3.21} ceil>
       <span slot="ratingUp">
         <ThumbUp class="text-yellow-300 dark:text-yellow-200" />
       </span>
