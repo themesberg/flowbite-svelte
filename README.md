@@ -5,6 +5,8 @@
 [![release](https://badgen.net/github/release/themesberg/flowbite-svelte)](https://github.com/themesberg/flowbite-svelte/releases)
 [![license](https://badgen.net/npm/license/flowbite-svelte)](https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE)
 
+**⚠️ Flowbite-Svelte is currently in early development and APIs and packages are likely to change quite often.**
+
 <p>
     <a href="https://flowbite-svelte.com" >
       <img alt="Flowbite-Svelte CSS components" width="350" src="https://raw.githubusercontent.com/themesberg/flowbite-svelte/main/static/images/flowbite-svelte.png">
@@ -13,8 +15,6 @@
 </p>
 
 [Flowbite-Svelte](https://flowbite-svelte.com/) is an official Flowbite component library for Svelte. All interactivities are handled by Svelte.
-
-**⚠️ Flowbite-Svelte is currently in early development and APIs and packages are likely to change quite often.**
 
 ## Flowbite-Svelte-Starter
 
