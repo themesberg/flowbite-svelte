@@ -13,6 +13,8 @@
 	// Absolute position
 	export let position: 'tl' | 'tr' | 'bl' | 'br' = undefined; // default not set
 	export let visible = true;
+	export let divClass: string =
+		'w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800';
 
 	const colors = {
 		blue: 'text-blue-500 bg-blue-100 dark:bg-blue-800 dark:text-blue-200',
@@ -28,9 +30,8 @@
 	let transitionFunc;
 	$: transitionFunc = transitions[transition] ?? transitions.fade;
 
-	let divClass;
-	$: divClass = classNames(
-		'w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800',
+	$: classDiv = classNames(
+		divClass,
 		{
 			'absolute top-5 left-5': position == 'tl',
 			'absolute top-5 right-5': position == 'tr',
@@ -48,7 +49,7 @@
 </script>
 
 {#if visible}
-	<div transition:transitionFunc={params} class={divClass} role="alert">
+	<div transition:transitionFunc={params} class={classDiv} role="alert">
 		<div class="flex {$$slots.extra ? 'items-start' : 'items-center'}">
 			{#if $$slots.icon}
 				<div class={iconClass}><slot name="icon" /></div>
