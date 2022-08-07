@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.24.1](https://github.com/themesberg/flowbite-svelte/compare/v0.24.0...v0.24.1) (2022-08-07)
+
+
+### Bug Fixes
+
+* change from import { CloseButton } from $lib to import CloseButton from "../utils/CloseButton.svelte" in lib dir ([4eb4346](https://github.com/themesberg/flowbite-svelte/commit/4eb4346a2c4679d58c00309e0cb1a28304888a72))
+* update Button color types ([974df12](https://github.com/themesberg/flowbite-svelte/commit/974df12eaf2d796676700df09f2ee83d24ffc328))
+
 ## [0.24.0](https://github.com/themesberg/flowbite-svelte/compare/v0.23.3...v0.24.0) (2022-08-07)
 
 
