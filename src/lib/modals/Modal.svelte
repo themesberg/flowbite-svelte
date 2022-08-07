@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { createEventDispatcher } from 'svelte';
-	import { setContext } from 'svelte';
-	import { CloseButton } from '$lib';
-	import focusTrap from '$lib/utils/focusTrap';
+	import { createEventDispatcher, setContext } from 'svelte';
+	import CloseButton from '../utils/CloseButton.svelte';
+	import focusTrap from '../utils/focusTrap';
 
 	export let open: boolean = false;
 	export let title: string = undefined;

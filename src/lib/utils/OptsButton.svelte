@@ -1,5 +1,5 @@
 <script>
-	import { CloseButton } from '$lib';
+	import CloseButton from './CloseButton.svelte';
 </script>
 
 <CloseButton on:click {...$$props}>

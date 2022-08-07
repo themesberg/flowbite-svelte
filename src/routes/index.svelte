@@ -1,5 +1,5 @@
 <script>
-	import { Card, Button } from '$lib';
+	import { Button } from '$lib';
 	import { goto } from '$app/navigation';
 	import { Responsive } from 'svelte-sidebar-menu';
 	import {

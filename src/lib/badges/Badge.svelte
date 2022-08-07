@@ -1,7 +1,7 @@
 <script lang="ts">
 	import classNames from 'classnames';
 	import type { Colors } from '../types';
-	import { CloseButton } from '$lib';
+	import CloseButton from '../utils/CloseButton.svelte';
 
 	export let color: Colors = 'blue';
 	export let large: boolean = false;

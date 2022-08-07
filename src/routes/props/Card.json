@@ -1,1 +1,1 @@
-{"props":[["href","string ","undefined"],["horizontal","boolean ","false"],["reverse","boolean ","false"],["img","string ","undefined"],["padding","'sm' | 'md' | 'lg' ","'lg'"]]}
+{"props":[["href","string ","undefined"],["horizontal","boolean ","false"],["reverse","boolean ","false"],["img","string ","undefined"],["padding","'none' | 'sm' | 'md' | 'lg' ","'lg'"],["size","'xs' | 'sm' | 'md' | 'lg' | 'xl' ","'sm'"]]}
