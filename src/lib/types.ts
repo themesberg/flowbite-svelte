@@ -71,7 +71,7 @@ export interface CheckboxType {
 	helper?: string;
 }
 
-export type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
+export type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink' | 'white';
 
 export type CrumbType = {
 	label: string;

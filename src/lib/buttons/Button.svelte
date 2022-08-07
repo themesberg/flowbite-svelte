@@ -9,14 +9,25 @@
 	export let href: string = undefined;
 
 	export let color:
-		| 'blue'
 		| 'alternative'
+		| 'blue'
+		| 'cyan'
 		| 'dark'
 		| 'light'
+		| 'lime'
 		| 'green'
+		| 'pink'
 		| 'red'
+		| 'teal'
 		| 'yellow'
-		| 'purple' = 'blue';
+		| 'purple'
+		| 'purpleToBlue'
+		| 'cyanToBlue'
+		| 'greenToBlue'
+		| 'purpleToPink'
+		| 'pinkToOrange'
+		| 'tealToLime'
+		| 'redToYellow' = 'blue';
 
 	export let shadow:
 		| 'blue'
