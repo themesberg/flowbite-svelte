@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.24.0](https://github.com/themesberg/flowbite-svelte/compare/v0.23.3...v0.24.0) (2022-08-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* change node version to 0.16.16 since new playwright and sveltekit require it, https://github.com/sveltejs/kit/issues/5842
+
+### Features
+
+* change node version to 0.16.16 since new playwright and sveltekit require it, https://github.com/sveltejs/kit/issues/5842 ([6175c2c](https://github.com/themesberg/flowbite-svelte/commit/6175c2cb54c60829eb329bce90772e59b888063f))
+
+
+### Bug Fixes
+
+* [#200](https://github.com/themesberg/flowbite-svelte/issues/200) undefined in tooltips ([4ed2ec0](https://github.com/themesberg/flowbite-svelte/commit/4ed2ec04945676cbc3e40011fb7790d1de18d8db))
+* A11y fix for all alt taking out picture for img tag ([a247c32](https://github.com/themesberg/flowbite-svelte/commit/a247c32171543450647877a0f7192e63ee64fbb5))
+* add CloseButton to index and change import from $lib ([cc8fe25](https://github.com/themesberg/flowbite-svelte/commit/cc8fe2504474f6a0fbefb5474ef5cf798f6a28a8))
+* alerts with list color removal ([f940441](https://github.com/themesberg/flowbite-svelte/commit/f940441098e4f033b6dd405d0cb774e6d8b5030e))
+* clean up import from utils for docs ([b50126d](https://github.com/themesberg/flowbite-svelte/commit/b50126d2f78e7613e48008b46c0bd77cdc7471fa))
+
 ### [0.23.3](https://github.com/themesberg/flowbite-svelte/compare/v0.23.2...v0.23.3) (2022-08-05)
 
 
