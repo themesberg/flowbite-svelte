@@ -47,8 +47,7 @@ layout: cardLayout
 
 <Breadcrumb>
   <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
-  <BreadcrumbItem href="/cards">Cards</BreadcrumbItem>
-  <BreadcrumbItem>Card default</BreadcrumbItem>
+  <BreadcrumbItem>Card</BreadcrumbItem>
 </Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4 text-teal-50">Card</h1>
