@@ -24,7 +24,7 @@ layout: formLayout
 
 <Breadcrumb>
   <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
-  <BreadcrumbItem href="/forms" rel="external">Forms</BreadcrumbItem>
+  <BreadcrumbItem href="/forms/" rel="external">Forms</BreadcrumbItem>
   <BreadcrumbItem>File input</BreadcrumbItem>
 </Breadcrumb>
 
