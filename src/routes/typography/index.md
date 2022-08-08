@@ -1,5 +1,5 @@
 ---
-layout: progressbarLayout
+layout: typographyLayout
 ---
 
 <script>

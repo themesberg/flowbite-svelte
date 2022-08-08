@@ -298,7 +298,6 @@ This component can be used to show the timline of a user’s activity history in
 </ExampleDiv>
 
 ```html
-
 <script lang="ts">
 	let activities = [
 		{

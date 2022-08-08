@@ -246,7 +246,7 @@
 	</main>
 </div>
 <div class="mx-auto mb-4 pt-4 lg:pl-64 2xl:pl-16">
-	<Footer footerType="custom" customClass="p-4 bg-white sm:p-6 dark:bg-gray-900">
+	<Footer footerType="custom" customClass="py-6 px-16 bg-white dark:bg-gray-900">
 		<div class="md:flex md:justify-between">
 			<div class="mb-6 md:mb-0">
 				<FooterBrand
