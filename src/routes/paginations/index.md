@@ -54,16 +54,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
     total: 100
   }
 
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Pagination',
-      href:'/paginations/'
-    }
-  ]
 </script>
 
 <Breadcrumb>

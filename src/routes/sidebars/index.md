@@ -37,16 +37,7 @@ layout: sidebarLayout
   };
 
   let spanClass = 'flex-1 ml-3 whitespace-nowrap';
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Sidebar',
-      href:'/sidebars/'
-    }
-  ]
+  
 </script>
 
 <Breadcrumb>

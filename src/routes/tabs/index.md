@@ -214,21 +214,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 			text: 'Consectetur adipiscing elit...'
 		}
 	];
-
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Tabs',
-      href:'/tabs/'
-    },
-    {
-      label:'Tabs default',
-      href:'/tabs/default'
-    },
-  ]
 </script>
 
 <Breadcrumb>

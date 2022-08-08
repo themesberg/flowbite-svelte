@@ -7,16 +7,6 @@ layout: iconLayout
   import { Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home,Adjustments, Bell, Briefcase,Ticket, ChartSquareBar, Camera, ChevronLeft } from "svelte-heros";
 
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Icons',
-      href:'/icons/'
-    }
-  ]
 </script>
 
 <Breadcrumb>

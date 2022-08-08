@@ -17,16 +17,6 @@ layout: buttongroupLayout
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
 let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
-  let crumbs = [
-    {
-      label:'Home',
-      href:'/'
-    },
-    {
-      label:'Button groups',
-      href:'/button-groups/'
-    }
-  ]
 	const handleClick = ()=> {
 		alert('Clicked')
 	}
@@ -194,6 +184,7 @@ Group a series of buttons together on a single line or stack them in a vertical 
 	>
 </ButtonGroup>
 ```
+
 <Htwo label="Events" />
 
 You can add the `on:click` event to the `ButtonGroupItem` component.
