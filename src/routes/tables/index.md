@@ -479,7 +479,6 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
 </ExampleDiv>
 
 ```html
-
 <Table hoverable={true}>
   <TableHead>
     <TableHeadCell class="!p-4">

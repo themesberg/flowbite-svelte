@@ -11,3 +11,4 @@ node_modules
 .vscode/
 
 /src/routes/tests
+/src/routes/typechecktests
