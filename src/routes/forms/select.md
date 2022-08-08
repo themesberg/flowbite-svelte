@@ -4,7 +4,6 @@ layout: formLayout
 
 <script>
 import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-import { onMount } from 'svelte';
 import { Label, Dropdown, DropdownItem, Select, Breadcrumb, BreadcrumbItem, Badge, CloseButton} from '$lib'
 import { Home } from 'svelte-heros'
 
@@ -15,20 +14,8 @@ let propHeader = ['Name', 'Type', 'Default']
 let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
 let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
-
-let selected1;
 let selected;
 let selectedArr = ['ca'];
-
-let fileuploadprops = {
-  id : 'user_avatar',
-	label : 'Upload file'
-}
-let fileuploadprops2 = {
-  id : 'user_avatar',
-  label : 'Upload file',
-  helper : 'A profile picture is useful to confirm your are logged into your account'
-}
 
 let countries = [
   {value:"us", name: "United States"},
@@ -100,8 +87,8 @@ Get started with the default example of a select input component to get a single
 <Label>Select an option
   <Select class="mt-2" items={countries} bind:value={selected} />
 </Label>
-```
 
+```
 <!--
 <Htwo label="Multiple options" />
 

@@ -1,5 +1,4 @@
 <script lang="ts">
-	// import { onMount } from 'svelte';
 	import Calendar from './Calender.svelte';
 
 	export let range: boolean = false;

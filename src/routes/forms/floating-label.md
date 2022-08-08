@@ -4,7 +4,6 @@ layout: formLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { onMount } from 'svelte';
   import { FloatingLabelInput, Helper, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
   import { Home } from 'svelte-heros'
   import componentProps from '../props/FloatingLabelInput.json'

@@ -296,7 +296,7 @@ Use this example to show a list of checkbox items inside a dropdown menu.
     </a>
   </svelte:fragment>
 </Dropdown>
-``
+```
 
 <Htwo label="Inline layout" />
 

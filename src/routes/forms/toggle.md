@@ -9,10 +9,7 @@ layout: formLayout
   import { AtSymbol , Mail , Home} from 'svelte-heros'
 
   import componentProps from '../props/Toggle.json'
-  import componentProps1 from '../props/Radio.json'
   let items = componentProps.props
-  let items1 = componentProps1.props.filter(x=>['color', 'inline'].includes(x[0]))
-
   let propHeader = ['Name', 'Type', 'Default']
 
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
@@ -102,7 +99,7 @@ The component has the following props, type, and default values. See <a href="/p
 <h3>Toggle</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={items.concat(items1)} rowState='hover' />
+  <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
 <Htwo label="Forwarded Events" />
