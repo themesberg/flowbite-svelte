@@ -16,9 +16,9 @@
 
 <article>
 	<div class="flex items-center mb-4 space-x-4">
-		<img class="w-10 h-10 rounded-full" src={user.img.src} alt={user.img.alt} />
+		<img class="w-10 h-10 rounded-full" src={comment.user.img.src} alt={comment.user.img.alt} />
 		<div class="space-y-1 font-medium dark:text-white">
-			<p>{user.name} {user.desc}</p>
+			<p>{comment.user.name} {comment.user.desc}</p>
 		</div>
 	</div>
 	<div class="flex items-center mb-1">
