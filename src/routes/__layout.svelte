@@ -229,6 +229,11 @@
 				<a href="/typography">Typography</a>
 			</h3>
 		</Nav>
+		<Nav {navClass}>
+			<h3 class={h3Class}>
+				<a href="/utilities">Utilities</a>
+			</h3>
+		</Nav>
 		<Nav {navClass} navDivClass={navDivClasslast}>
 			<h3 class={h3Class}>Forms</h3>
 			{#each forms as { href, name, rel }}

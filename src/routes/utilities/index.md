@@ -4,9 +4,20 @@ layout: typographyLayout
 
 <script>
 	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-	import { Breadcrumb, BreadcrumbItem, CloseButton } from '$lib';
+	import { Breadcrumb, BreadcrumbItem, CloseButton, Label, Checkbox } from '$lib';
 	import { Home } from 'svelte-heros';
   export let visible = true;
+
+
+	import componentProps from '../props/CloseButton.json'
+	import componentProps2 from '../props/Label.json'
+  // Props table
+  let items = componentProps.props
+	let items2 = componentProps2.props
+	let propHeader = ['Name', 'Type', 'Default']
+	
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
+	let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 </script>
 
 <Breadcrumb>
@@ -15,6 +26,14 @@ layout: typographyLayout
 </Breadcrumb>
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Utilities</h1>
+
+
+<CompoDescription>The following components are used throughout the library and you can use them for your app as well</CompoDescription>
+
+<ExampleDiv>
+<GitHubSource href="utils/CloseButton.svelte">CloseButton</GitHubSource>
+<GitHubSource href="forms/Label.svelte">Label</GitHubSource>
+</ExampleDiv>
 
 <Htwo label="CloseButton" />
 
@@ -43,3 +62,36 @@ Use `CloseButton` component to close a component.
   </div>
 {/if}
 ```
+
+<Htwo label="Label" />
+
+Use the `Label` component when you need to add a label.
+
+<ExampleDiv>
+<Label color='red' class="mt-4 flex items-center font-bold italic">
+	 <Checkbox class="mr-2"/> Your Label
+</Label>
+</ExampleDiv>
+
+```html
+<Label color='red' class="mt-4 flex items-center font-bold italic">
+	<Checkbox class="mr-2"/> Your Label
+</Label>
+```
+
+
+<Htwo label="Props" />
+
+The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
+
+<h3>CloseButton</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow {items} rowState='hover' />
+</TableProp>
+
+<h3>Label</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items2} rowState='hover' />
+</TableProp>
