@@ -133,28 +133,148 @@ This example can be used to add a descriptive icon or additional text inside the
 
 With the Iconinput component, you can add <a href="https://flowbite-svelte.vercel.app/icons/heroicons" class="text-blue-700 dark:text-blue-500 hover:underline">Heroicons</a> or <a href="https://svelte-svg-icons.vercel.app/" class="text-blue-700 dark:text-blue-500 hover:underline">other icon sets</a>. Use iconClass to modify the icon color.
 
+
 <ExampleDiv>
-<div class="mb-6">
-  <Label for="input-group-1" class="block mb-2">Your Email</Label>
-  <Iconinput noBorder id="email" type="email" icon={Mail} iconClass="h-4 w-4 mr-2 dark:text-green-500" placeholder="name@flowbite.com" />
-</div>
-<div class="mb-6">
-  <Label for="website-admin" class="block mb-2">Username</Label>
-  <Iconinput id="website-admin" placeholder="elonmusk" label="Border" icon={AtSymbol} iconClass="h-4 w-4 mr-2 dark:text-red-500"/>
-</div>
+	<div class="mb-6">
+		<Label for="input-group-1" class="block mb-2">No border small icon input</Label>
+		<Iconinput
+			noBorder
+			id="email"
+			type="email"
+			icon={Mail}
+			iconClass="h-4 w-4 mr-2 dark:text-green-500"
+			placeholder="name@flowbite.com"
+			size="sm"
+		/>
+	</div>
+	<div class="mb-6">
+		<Label for="input-group-1" class="block mb-2">No border default icon input</Label>
+		<Iconinput
+			noBorder
+			id="email"
+			type="email"
+			icon={Mail}
+			iconClass="h-4 w-4 mr-2 dark:text-green-500"
+			placeholder="name@flowbite.com"
+		/>
+	</div>
+	<div class="mb-6">
+		<Label for="input-group-1" class="block mb-2">No border large icon input</Label>
+		<Iconinput
+			noBorder
+			id="email"
+			type="email"
+			icon={Mail}
+			iconClass="h-4 w-4 mr-2 dark:text-green-500"
+			placeholder="name@flowbite.com"
+			size="lg"
+		/>
+	</div>
+	<div class="mb-6">
+		<Label for="website-admin" class="block mb-2">Small icon input</Label>
+		<Iconinput
+			id="website-admin"
+			placeholder="elonmusk"
+			label="Border"
+			icon={AtSymbol}
+			iconClass="mr-2 dark:text-red-500"
+			size="sm"
+		/>
+	</div>
+	<div class="mb-6">
+		<Label for="website-admin" class="block mb-2">Default icon input</Label>
+		<Iconinput
+			id="website-admin"
+			placeholder="elonmusk"
+			label="Border"
+			icon={AtSymbol}
+			iconClass="mr-2 dark:text-red-500"
+		/>
+	</div>
+	<div class="mb-6">
+		<Label for="website-admin" class="block mb-2">Large icon input</Label>
+		<Iconinput
+			id="website-admin"
+			placeholder="elonmusk"
+			label="Border"
+			icon={AtSymbol}
+			iconClass="mr-2 dark:text-red-500"
+			size="lg"
+		/>
+	</div>
 </ExampleDiv>
 
 ```html
 <script>
   import { Iconinput } from 'flowbite-svelte'
 </script>
+
 <div class="mb-6">
-  <Label for="input-group-1" class="block mb-2">Your Email</Label>
-  <Iconinput noBorder id="email" type="email" icon={Mail} iconClass="h-4 w-4 mr-2 dark:text-green-500" placeholder="name@flowbite.com" />
+  <Label for="input-group-1" class="block mb-2">No border small icon input</Label>
+  <Iconinput
+    noBorder
+    id="email"
+    type="email"
+    icon={Mail}
+    iconClass="h-4 w-4 mr-2 dark:text-green-500"
+    placeholder="name@flowbite.com"
+    size="sm"
+  />
 </div>
 <div class="mb-6">
-  <Label for="website-admin" class="block mb-2">Username</Label>
-  <Iconinput id="website-admin" placeholder="elonmusk" label="Border" icon={AtSymbol} iconClass="h-4 w-4 mr-2 dark:text-red-500"/>
+  <Label for="input-group-1" class="block mb-2">No border default icon input</Label>
+  <Iconinput
+    noBorder
+    id="email"
+    type="email"
+    icon={Mail}
+    iconClass="h-4 w-4 mr-2 dark:text-green-500"
+    placeholder="name@flowbite.com"
+  />
+</div>
+<div class="mb-6">
+  <Label for="input-group-1" class="block mb-2">No border large icon input</Label>
+  <Iconinput
+    noBorder
+    id="email"
+    type="email"
+    icon={Mail}
+    iconClass="h-4 w-4 mr-2 dark:text-green-500"
+    placeholder="name@flowbite.com"
+    size="lg"
+  />
+</div>
+<div class="mb-6">
+  <Label for="website-admin" class="block mb-2">Small icon input</Label>
+  <Iconinput
+    id="website-admin"
+    placeholder="elonmusk"
+    label="Border"
+    icon={AtSymbol}
+    iconClass="mr-2 dark:text-red-500"
+    size="sm"
+  />
+</div>
+<div class="mb-6">
+  <Label for="website-admin" class="block mb-2">Default icon input</Label>
+  <Iconinput
+    id="website-admin"
+    placeholder="elonmusk"
+    label="Border"
+    icon={AtSymbol}
+    iconClass="mr-2 dark:text-red-500"
+  />
+</div>
+<div class="mb-6">
+  <Label for="website-admin" class="block mb-2">Large icon input</Label>
+  <Iconinput
+    id="website-admin"
+    placeholder="elonmusk"
+    label="Border"
+    icon={AtSymbol}
+    iconClass="mr-2 dark:text-red-500"
+    size="lg"
+  />
 </div>
 ```
 

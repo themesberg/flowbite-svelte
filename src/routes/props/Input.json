@@ -1,1 +1,1 @@
-{"props":[["type","InputType ","'text'"],["value","string ","''"],["size","'sm' | 'md' | 'lg' ","'md'"],["inputClass","string ","'block w-full border disabled:cursor-not-allowed disabled:opacity-50 rounded-lg'"],["color","'base' | 'green' | 'red' ","'base'"],["ref","HTMLElement ","null"]]}
+{"props":[["type","InputType ","'text'"],["value","string ","''"],["size","'sm' | 'md' | 'lg' ","'md'"],["inputClass","string ","'block w-full border disabled:cursor-not-allowed disabled:opacity-50 rounded-lg'"],["color","'base' | 'green' | 'red' ","'base'"]]}
