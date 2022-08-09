@@ -180,8 +180,6 @@ Set the `total`, rating`, and `ratings` prop for AdvancedRation component. Use t
 
 <ExampleDiv>	
 <AdvancedRating
-		total={5}
-		rating={3.21}
 		ratings={[
 			{ label: '5 star', rating: 70 },
 			{ label: '4 star', rating: 17 },
@@ -201,8 +199,6 @@ Set the `total`, rating`, and `ratings` prop for AdvancedRation component. Use t
 
 ```html
 <AdvancedRating
-	total={5}
-	rating={3.21}
 	ratings={[
 		{ label: '5 star', rating: 70 },
 		{ label: '4 star', rating: 17 },
@@ -224,9 +220,8 @@ Set the `total`, rating`, and `ratings` prop for AdvancedRation component. Use t
 
 As we describe in the Rating component, you can change an icon in the `ratingUp` and `ratingDown` in the Rating component.
 
-<ExampleDiv>	<AdvancedRating
-		total={5}
-		rating={3.21}
+<ExampleDiv>
+<AdvancedRating
 		ratings={[
 			{ label: '5 star', rating: 70 },
 			{ label: '4 star', rating: 17 },
@@ -252,8 +247,6 @@ As we describe in the Rating component, you can change an icon in the `ratingUp`
 
 ```html
 <AdvancedRating
-  total={5}
-  rating={3.21}
   ratings={[
     { label: '5 star', rating: 70 },
     { label: '4 star', rating: 17 },
