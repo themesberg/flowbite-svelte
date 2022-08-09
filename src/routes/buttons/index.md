@@ -385,6 +385,10 @@ The component has the following props, type, and default values. See <a href="/p
 <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
+<h3>Custom CSS</h3>
+
+Use `btnClass` to overwrite Button class.
+
 <Htwo label="Slots" />
 
 <TableProp header={slotHeader} {divClass} {theadClass}>
