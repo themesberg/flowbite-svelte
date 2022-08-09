@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.24.3](https://github.com/themesberg/flowbite-svelte/compare/v0.24.2...v0.24.3) (2022-08-09)
+
+
+### Features
+
+* add size to Iconinput component ([f041953](https://github.com/themesberg/flowbite-svelte/commit/f04195350a179d55a7315a127d5b116deaac1f41))
+
+
+### Bug Fixes
+
+* add rel=external and / to links to form page ([a237d18](https://github.com/themesberg/flowbite-svelte/commit/a237d1811eb1d6d6f3af545f109c71b8cadbd014))
+* breadcrumb and add rel=external to pages in the forms dir. ([509d72a](https://github.com/themesberg/flowbite-svelte/commit/509d72ae703a0d844653da87aea9119a90cc1018))
+* change package.json>engines>node to 16.0.0 since Verce does not accept. But use local node v16.16.0 for playwright test ([08130e9](https://github.com/themesberg/flowbite-svelte/commit/08130e988c1243b6a248737ed604223c694d5981))
+* clean up ref ([9e8427b](https://github.com/themesberg/flowbite-svelte/commit/9e8427bdbe7ee397a8c5c123a75e48abca298781))
+* done type check for all pages ([d91b018](https://github.com/themesberg/flowbite-svelte/commit/d91b018c3a66a6ac4cef2317651e1821083ab033))
+* remove utils/OptsButton ([04ebd83](https://github.com/themesberg/flowbite-svelte/commit/04ebd83aae8a3f3efabac8f3f144b65fabb04da1))
+* Toggle props and typo update ([9a40224](https://github.com/themesberg/flowbite-svelte/commit/9a40224fc26bfefd9d28ec5d364bf4d7430da6f0))
+* type and layout footer padding fix ([999d291](https://github.com/themesberg/flowbite-svelte/commit/999d29158fde736dbf4e19c9545fff6ba41dc7e7))
+* typo ([ec6f019](https://github.com/themesberg/flowbite-svelte/commit/ec6f019501acf4ba2fb105b8cc04a6d347d0dcf1))
+
 ### [0.24.2](https://github.com/themesberg/flowbite-svelte/compare/v0.24.1...v0.24.2) (2022-08-07)
 
 
