@@ -32,11 +32,6 @@ layout: formLayout
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
-  let ref
-
-  onMount(() => {
-    ref.focus();
-  });
 
 	let fileuploadprops = {
     id : 'user_avatar'

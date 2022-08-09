@@ -10,7 +10,6 @@
 	export let color: 'base' | 'green' | 'red' = 'base';
 	export let value: string = '';
 	export let label: string = '';
-	export let ref: HTMLElement = null;
 
 	const divClasses = {
 		filled: 'relative',
@@ -101,7 +100,6 @@
 		on:mouseleave
 		on:mouseover
 		on:paste
-		bind:this={ref}
 		use:setType
 		placeholder=" "
 		class={classNames(

@@ -9,7 +9,6 @@
 	export let inputClass: string =
 		'block w-full border disabled:cursor-not-allowed disabled:opacity-50 rounded-lg';
 	export let color: 'base' | 'green' | 'red' = 'base';
-	export let ref: HTMLElement = null;
 
 	const colorClasses = {
 		base: 'bg-gray-50 border-gray-300 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500',
@@ -30,7 +29,6 @@
 <input
 	{...$$restProps}
 	bind:value
-	bind:this={ref}
 	on:blur
 	on:change
 	on:click
