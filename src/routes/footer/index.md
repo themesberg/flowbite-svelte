@@ -346,7 +346,7 @@ The footer is one of the most underestimated sections of a website being located
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3>Footer</h3>
+<h3>FooterBrand</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
