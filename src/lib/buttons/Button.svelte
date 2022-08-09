@@ -7,10 +7,12 @@
 	export let gradient: boolean = false;
 	export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
 	export let href: string = undefined;
+	export let btnClass: string = undefined;
 
 	export let color:
 		| 'alternative'
 		| 'blue'
+		| 'custom'
 		| 'cyan'
 		| 'dark'
 		| 'light'
@@ -116,19 +118,23 @@
 	};
 
 	let buttonClass;
-	$: buttonClass = classNames(
-		'group text-center font-medium focus:ring-4 focus:outline-none',
-		outline && gradient ? 'p-0.5' : 'inline-flex items-center justify-center ' + sizeClasses[size],
-		gradient ? gradientClasses[color] : outline ? outlineClasses[color] : colorClasses[color],
-		color === 'alternative' &&
-			(background
-				? 'dark:bg-transparent dark:border-gray-700 dark:hover:border-gray-600'
-				: 'dark:bg-transparent dark:border-gray-800 dark:hover:border-gray-700'),
-		pill ? 'rounded-full' : 'rounded-lg',
-		shadow && coloredShadowClasses[shadow],
-		$$props.disabled && 'cursor-not-allowed opacity-50',
-		$$props.class
-	);
+	$: buttonClass = btnClass
+		? btnClass
+		: classNames(
+				'group text-center font-medium focus:ring-4 focus:outline-none',
+				outline && gradient
+					? 'p-0.5'
+					: 'inline-flex items-center justify-center ' + sizeClasses[size],
+				gradient ? gradientClasses[color] : outline ? outlineClasses[color] : colorClasses[color],
+				color === 'alternative' &&
+					(background
+						? 'dark:bg-transparent dark:border-gray-700 dark:hover:border-gray-600'
+						: 'dark:bg-transparent dark:border-gray-800 dark:hover:border-gray-700'),
+				pill ? 'rounded-full' : 'rounded-lg',
+				shadow && coloredShadowClasses[shadow],
+				$$props.disabled && 'cursor-not-allowed opacity-50',
+				$$props.class
+		  );
 
 	let gradientOutlineClass;
 	$: gradientOutlineClass = classNames(
