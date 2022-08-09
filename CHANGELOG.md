@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.24.4](https://github.com/themesberg/flowbite-svelte/compare/v0.24.3...v0.24.4) (2022-08-09)
+
+
+### Bug Fixes
+
+* remove custom from Button component ([6114f4c](https://github.com/themesberg/flowbite-svelte/commit/6114f4c9f5d9ad0848d5e7c000db6c4c9661ad39))
+* remove h-4 w-4 from Iconinput example in the input-field page ([4d5f396](https://github.com/themesberg/flowbite-svelte/commit/4d5f396ea80389b88ec6a8437228d5dbadd46877))
+* update Button component ([330aae9](https://github.com/themesberg/flowbite-svelte/commit/330aae91c6c1b19cbbd1f35177f5e4bac9de3904))
+* update Iconinput ([2b4a7b5](https://github.com/themesberg/flowbite-svelte/commit/2b4a7b55f7db35f3e5b0cc042aa27a84ff741194))
+
 ### [0.24.3](https://github.com/themesberg/flowbite-svelte/compare/v0.24.2...v0.24.3) (2022-08-09)
 
 
