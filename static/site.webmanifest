@@ -5,5 +5,5 @@
 	"theme_color":"#ffffff",
 	"background_color":"#ffffff",
 	"display":"standalone",
-	"description": "Unofficial Svelte UI Components for Flowbite"
+	"description": "Official Svelte UI Components for Flowbite"
 }
