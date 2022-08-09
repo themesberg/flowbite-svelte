@@ -17,7 +17,6 @@
 	export let noBorderDivClass: string =
 		'flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none';
 	export let iconClass: string = 'mr-2';
-	export let iconSize: string;
 
 	function setType(node) {
 		node.type = type;
