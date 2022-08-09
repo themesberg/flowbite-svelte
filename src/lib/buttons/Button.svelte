@@ -12,7 +12,6 @@
 	export let color:
 		| 'alternative'
 		| 'blue'
-		| 'custom'
 		| 'cyan'
 		| 'dark'
 		| 'light'
