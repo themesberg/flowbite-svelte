@@ -35,6 +35,7 @@ const config = defineConfig({
 		toastLayout: './src/routes/layouts/toastLayout.svelte',
 		tooltipLayout: './src/routes/layouts/tooltipLayout.svelte',
 		typographyLayout: './src/routes/layouts/typographyLayout.svelte',
+		utilitiesLayout: './src/routes/layouts/utilitiesLayout.svelte'
   },
 	extensions: ['.svelte.md', '.md', '.svx'],
 
