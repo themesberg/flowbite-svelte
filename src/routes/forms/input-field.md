@@ -142,7 +142,7 @@ With the Iconinput component, you can add <a href="https://flowbite-svelte.verce
 			id="email"
 			type="email"
 			icon={Mail}
-			iconClass="h-4 w-4 mr-2 dark:text-green-500"
+			iconClass="mr-2 dark:text-green-500"
 			placeholder="name@flowbite.com"
 			size="sm"
 		/>
@@ -154,7 +154,7 @@ With the Iconinput component, you can add <a href="https://flowbite-svelte.verce
 			id="email"
 			type="email"
 			icon={Mail}
-			iconClass="h-4 w-4 mr-2 dark:text-green-500"
+			iconClass="mr-2 dark:text-green-500"
 			placeholder="name@flowbite.com"
 		/>
 	</div>
@@ -165,7 +165,7 @@ With the Iconinput component, you can add <a href="https://flowbite-svelte.verce
 			id="email"
 			type="email"
 			icon={Mail}
-			iconClass="h-4 w-4 mr-2 dark:text-green-500"
+			iconClass="mr-2 dark:text-green-500"
 			placeholder="name@flowbite.com"
 			size="lg"
 		/>
