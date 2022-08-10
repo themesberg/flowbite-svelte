@@ -19,7 +19,7 @@ layout: docLayout
 
 <Htwo label="Please use pnpm to install a fork" />
 
-<p>The repo uses `pnpm`, so using `pnpm` is desiable when you fork and install dependencies to avoid unseen problems.</p>
+<p>The repo uses `pnpm`, so using `pnpm` is desirable when you fork and install dependencies to avoid unseen problems.</p>
 
 <Htwo label="Frontend pages" />
 
@@ -52,7 +52,7 @@ npm run gen:props
 
 <Htwo label="Conventional commit" />
 
-<p>When making a commit, we recommend using <a class="text-blue-700" href="https://www.conventionalcommits.org/en/v1.0.0/">the Coventional commits</a>.</p>
+<p>When making a commit, we recommend using <a class="text-blue-700" href="https://www.conventionalcommits.org/en/v1.0.0/">the Conventional commits</a>.</p>
 
 Some examples are:
 
