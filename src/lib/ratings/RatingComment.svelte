@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { Star } from 'svelte-heros';
-	export let total: number = 5;
-	export let rating: number = 4;
 	// default is floor
 	export let ceil: boolean = false;
 	export let comment: {
@@ -12,22 +10,30 @@
 				src: string;
 				alt: string;
 			};
-			desc: string;
+			joined: string;
 		};
+		total: number;
 		rating: number;
-		comment: string;
+		heading: string;
+		address: string;
+		datetime: number;
 	};
 	export let helpfullink: string = '';
 	export let abuselink: string = '';
-	let roundedRating: number = ceil ? Math.ceil(rating) : Math.floor(rating);
-	let grayStars: number = total - roundedRating;
+	let roundedRating: number = ceil ? Math.ceil(comment.rating) : Math.floor(comment.rating);
+	let grayStars: number = comment.total - roundedRating;
 </script>
 
 <article>
 	<div class="flex items-center mb-4 space-x-4">
 		<img class="w-10 h-10 rounded-full" src={comment.user.img.src} alt={comment.user.img.alt} />
 		<div class="space-y-1 font-medium dark:text-white">
-			<p>{comment.user.name} {comment.user.desc}</p>
+			<p>
+				{comment.user.name}
+				<time datetime="2014-08-16 19:00" class="block text-sm text-gray-500 dark:text-gray-400"
+					>{comment.user.joined}</time
+				>
+			</p>
 		</div>
 	</div>
 	<div class="flex items-center mb-1">
@@ -41,15 +47,15 @@
 				<Star size="26" class="px-0.5 text-gray-300 dark:text-gray-500" />
 			</slot>
 		{/each}
-		{#if $$slots.h3}
+		{#if comment.heading}
 			<h3 class="ml-2 text-sm font-semibold text-gray-900 dark:text-white">
-				<slot name="h3" />
+				{comment.heading}
 			</h3>
 		{/if}
 	</div>
-	{#if $$slots.headfooter}
+	{#if comment.address || comment.datetime}
 		<footer class="mb-5 text-sm text-gray-500 dark:text-gray-400">
-			<slot name="headfooter" />
+			<p>Reviewed in {comment.address} on {comment.datetime}</p>
 		</footer>
 	{/if}
 	<slot />
