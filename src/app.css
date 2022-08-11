@@ -10,8 +10,9 @@ pre {
 }
 
 @layer base {
+	/* Do not change these. Changing this affect components as well */
 	main p {
-		@apply w-full text-gray-900 dark:text-white py-1;
+		@apply text-gray-900 dark:text-white;
 	}
 	.related-components,
 	.references {

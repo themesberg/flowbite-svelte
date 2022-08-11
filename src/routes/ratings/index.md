@@ -120,12 +120,29 @@ If you also want to show a text near the stars you can use the `text` slot to ad
 
 <Htwo label="Rating count" />
 
-<ExampleDiv>	
-  <Rating count={true} rating={4.95}>
-		<span class="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400"></span>
-    <a href="#" class="text-sm font-medium text-gray-900 underline hover:no-underline dark:text-white">73 reviews</a>
+Aggregate more results by using this example to show the amount of reviews and the average score.
+
+<ExampleDiv >
+	<Rating count rating={4.95} >
+		<span class="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400" />
+		<a
+			href="/"
+			class="text-sm font-medium text-gray-900 underline hover:no-underline dark:text-white"
+			>73 reviews</a
+		>
 	</Rating>
 </ExampleDiv>
+
+```html
+<Rating count rating={4.95} >
+	<span class="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400" />
+	<a
+		href="/"
+		class="text-sm font-medium text-gray-900 underline hover:no-underline dark:text-white"
+		>73 reviews</a
+	>
+</Rating>
+```
 
 <Htwo label="Icon size and color" />
 
@@ -138,10 +155,10 @@ The default icon size is `24`. Set the `class` in a icon component to change col
 <ExampleDiv>	
   <Rating total={5} rating={3.21}>
 		<span slot="ratingUp">
-			<Heart class="text-red-700 dark:text-red-500" />
+			<Heart  size="24" class="text-red-700 dark:text-red-500" />
 		</span>
 		<span slot="ratingDown">
-			<Heart class="text-gray-300 dark:text-gray-500" />
+			<Heart  size="24" class="text-gray-300 dark:text-gray-500" />
 		</span>
 	</Rating>
 </ExampleDiv>
@@ -149,10 +166,10 @@ The default icon size is `24`. Set the `class` in a icon component to change col
 ```html
 <Rating total={5} rating={3.21}>
 	<span slot="ratingUp">
-		<Heart class="text-red-700 dark:text-red-500" />
+		<Heart size="24"  class="text-red-700 dark:text-red-500" />
 	</span>
 	<span slot="ratingDown">
-		<Heart class="text-gray-300 dark:text-gray-500" />
+		<Heart  size="24" class="text-gray-300 dark:text-gray-500" />
 	</span>
 </Rating>
 ```
@@ -160,10 +177,10 @@ The default icon size is `24`. Set the `class` in a icon component to change col
 <ExampleDiv>	
   <Rating total={5} rating={4.7}>
 		<span slot="ratingUp">
-			<EmojiHappy class="text-purple-500 dark:text-purple-700" />
+			<EmojiHappy  size="24" class="text-purple-500 dark:text-purple-700" />
 		</span>
 		<span slot="ratingDown">
-			<EmojiHappy class="text-gray-300 dark:text-gray-500" />
+			<EmojiHappy size="24" class="text-gray-300 dark:text-gray-500" />
 		</span>
 	</Rating>
 </ExampleDiv>
@@ -171,32 +188,32 @@ The default icon size is `24`. Set the `class` in a icon component to change col
 ```html
 <Rating total={5} rating={4.7}>
 	<span slot="ratingUp">
-		<EmojiHappy class="text-purple-500 dark:text-purple-700" />
+		<EmojiHappy size="24" class="text-purple-500 dark:text-purple-700" />
 	</span>
 	<span slot="ratingDown">
-		<EmojiHappy class="text-gray-300 dark:text-gray-500" />
+		<EmojiHappy size="24" class="text-gray-300 dark:text-gray-500" />
 	</span>
 </Rating>
 ```
 
 <ExampleDiv>	
-  <Rating total={5} rating={5}>
+  <Rating total={5} rating={2.4}>
 		<span slot="ratingUp">
-			<ThumbUp class="text-yellow-300 dark:text-yellow-200" />
+			<ThumbUp size="24" class="text-yellow-300 dark:text-yellow-200" />
 		</span>
 		<span slot="ratingDown">
-			<ThumbUp class="text-gray-300 dark:text-gray-500" />
+			<ThumbUp size="24" class="text-gray-300 dark:text-gray-500" />
 		</span>
 	</Rating>
 </ExampleDiv>
 
 ```html
-<Rating total={5} rating={5}>
+<Rating total={5} rating={2.4}>
 	<span slot="ratingUp">
-		<ThumbUp class="text-yellow-300 dark:text-yellow-200" />
+		<ThumbUp size="24" class="text-yellow-300 dark:text-yellow-200" />
 	</span>
 	<span slot="ratingDown">
-		<ThumbUp class="text-gray-300 dark:text-gray-500" />
+		<ThumbUp size="24" class="text-gray-300 dark:text-gray-500" />
 	</span>
 </Rating>
 ```

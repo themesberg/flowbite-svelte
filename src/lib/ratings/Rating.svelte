@@ -14,7 +14,7 @@
 
 <div class={divClass}>
 	{#if count}
-		<Star variation="solid" size="40" class="text-yellow-300 dark:text-yellow-200" />
+		<Star variation="solid" size="24" class="text-yellow-300 dark:text-yellow-200" />
 		<p class="ml-2 text-sm font-bold text-gray-900 dark:text-white">{rating}</p>
 		<slot />
 	{:else}
@@ -25,7 +25,7 @@
 		{/each}
 		{#each Array(grayStars) as _, star}
 			<slot name="ratingDown">
-				<Star size="26" class="px-0.5 text-gray-300 dark:text-gray-500" />
+				<Star size="24" class="text-gray-300 dark:text-gray-500" />
 			</slot>
 		{/each}
 		{#if $$slots.text}
