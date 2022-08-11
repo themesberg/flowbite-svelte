@@ -4,18 +4,23 @@ layout: ratingLayout
 
 <script>
 	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-	import { Rating, AdvancedRating, ScoreRating, RatingComment, Breadcrumb, BreadcrumbItem } from '$lib'
-	import { Heart, ThumbUp, EmojiHappy, Home } from 'svelte-heros';
+	import { Rating, AdvancedRating, ScoreRating, RatingComment, Review, Breadcrumb, BreadcrumbItem } from '$lib'
+	import { Heart, ThumbUp, EmojiHappy, Home, OfficeBuilding,
+		Calendar, UserGroup, ThumbDown } from 'svelte-heros';
+	import { Us } from 'svelte-flag-icons';
 	
 	import componentProps from '../props/Rating.json'
 	import componentProps2 from '../props/AdvancedRating.json'
 	import componentProps3 from '../props/ScoreRating.json'
 	import componentProps4 from '../props/RatingComment.json'
+	import componentProps5 from '../props/Review.json'
+	
   // Props table
   let items = componentProps.props
 	let items2 = componentProps2.props
 	let items3 = componentProps3.props
 	let items4 = componentProps4.props
+	let items5 = componentProps5.props
 	let propHeader = ['Name', 'Type', 'Default']
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
@@ -45,6 +50,23 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 		heading: 'Thinking to buy another one!',
 		address: 'the UK',
 		datetime: '2022-03-25'
+	};
+
+	let review = {
+		name: 'Jese Leos',
+		imgSrc: '/images/profile-picture-2.webp',
+		imgAlt: 'jese leos',
+		address: 'United States',
+		addressIcon: Us,
+		reviewDate: 'January 20, 2022',
+		title: 'Spotless, good appliances, excellent layout, host was genuinely nice and helpful.',
+		rating: 8.79,
+		item: 'Apartament with City View',
+		itemIcon: OfficeBuilding,
+		option1: '3 nights December 2021',
+		option1Icon: Calendar,
+		option2: 'Family',
+		option2Icon: UserGroup
 	};
 </script>
 
@@ -414,6 +436,97 @@ Use this component to show a single rating comment and its score alongside other
 </RatingComment>
 ```
 
+<Htwo label="Review content" />
+
+Use this component to show the review content from a user alongside the avatar, location, details, and the score inside a card element.
+
+<ExampleDiv>
+	<Review {review}>
+		<p class="mb-2 font-light text-gray-500 dark:text-gray-400">
+			The flat was spotless, very comfortable, and the host was amazing. I highly recommend this
+			accommodation for anyone visiting Brasov city centre. It's quite a while since we are no
+			longer using hotel facilities but self contained places. And the main reason is poor
+			cleanliness and staff not being trained properly. This place exceeded our expectation and will
+			return for sure.
+		</p>
+		<p class="mb-5 font-light text-gray-500 dark:text-gray-400">
+			It is obviously not the same build quality as those very expensive watches. But that is like
+			comparing a Citroën to a Ferrari. This watch was well under £100! An absolute bargain.
+		</p>
+		<svelte:fragment slot="item">
+			<OfficeBuilding size="16" class="mr-2" variation="solid" />
+			{review.item}
+		</svelte:fragment>
+		<svelte:fragment slot="option1">
+			<Calendar size="16" class="mr-2" variation="solid" />
+			{review.option1}
+		</svelte:fragment>
+		<svelte:fragment slot="option2">
+			<UserGroup size="16" class="mr-2" variation="solid" />
+			{review.option2}
+		</svelte:fragment>
+		<aside class="flex items-center mt-3 space-x-5">
+			<a
+				href="/"
+				class="inline-flex items-center text-sm font-medium text-blue-600 hover:underline dark:text-blue-500"
+			>
+				<ThumbUp size="18" variation="solid" class="mr-1" />
+				Helpful
+			</a>
+			<a
+				href="/"
+				class="inline-flex items-center text-sm font-medium text-blue-600 hover:underline dark:text-blue-500 group"
+			>
+				<ThumbDown size="18" variation="solid" class="mr-1" />
+				Not helpful
+			</a>
+		</aside>
+	</Review>
+</ExampleDiv>
+
+```html
+<Review {review}>
+	<p class="mb-2 font-light text-gray-500 dark:text-gray-400">
+		The flat was spotless, very comfortable, and the host was amazing. I highly recommend this
+		accommodation for anyone visiting Brasov city centre. It's quite a while since we are no
+		longer using hotel facilities but self contained places. And the main reason is poor
+		cleanliness and staff not being trained properly. This place exceeded our expectation and will
+		return for sure.
+	</p>
+	<p class="mb-5 font-light text-gray-500 dark:text-gray-400">
+		It is obviously not the same build quality as those very expensive watches. But that is like
+		comparing a Citroën to a Ferrari. This watch was well under £100! An absolute bargain.
+	</p>
+	<svelte:fragment slot="item">
+		<OfficeBuilding size="16" class="mr-2" variation="solid" />
+		{review.item}
+	</svelte:fragment>
+	<svelte:fragment slot="option1">
+		<Calendar size="16" class="mr-2" variation="solid" />
+		{review.option1}
+	</svelte:fragment>
+	<svelte:fragment slot="option2">
+		<UserGroup size="16" class="mr-2" variation="solid" />
+		{review.option2}
+	</svelte:fragment>
+	<aside class="flex items-center mt-3 space-x-5">
+		<a
+			href="/"
+			class="inline-flex items-center text-sm font-medium text-blue-600 hover:underline dark:text-blue-500"
+		>
+			<ThumbUp size="18" variation="solid" class="mr-1" />
+			Helpful
+		</a>
+		<a
+			href="/"
+			class="inline-flex items-center text-sm font-medium text-blue-600 hover:underline dark:text-blue-500 group"
+		>
+			<ThumbDown size="18" variation="solid" class="mr-1" />
+			Not helpful
+		</a>
+	</aside>
+</Review>
+```
 
 <Htwo label="Props" />
 
@@ -442,4 +555,10 @@ The component has the following props, type, and default values. See <a href="/p
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items4} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>Review</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
