@@ -19,7 +19,7 @@
 		rating: number;
 		heading: string;
 		address: string;
-		datetime: number;
+		datetime: string;
 	};
 
 	let roundedRating: number = ceil ? Math.ceil(comment.rating) : Math.floor(comment.rating);

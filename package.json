@@ -43,6 +43,7 @@
 		"prism-themes": "^1.9.0",
 		"svelte": "^3.47.0",
 		"svelte-check": "^2.8.0",
+		"svelte-flag-icons": "^0.1.0",
 		"svelte-heros": "^2.3.3",
 		"svelte-preprocess": "^4.10.7",
 		"svelte-sidebar-menu": "^0.8.4",
