@@ -323,13 +323,13 @@ The carousel component can be used to cycle through a set of elements using cust
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
-<h3>Carousel</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Carousel</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3>CarouselTransition</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>CarouselTransition</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />

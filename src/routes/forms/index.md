@@ -338,61 +338,61 @@ let fileuploadprops2 = {
 The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.
 
-<h3>Input</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Input</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items} rowState='hover' />
 </TableProp>
 
-<h3>Label</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Label</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<h3>Helper</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Helper</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<h3>Iconinput</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Iconinput</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
-<h3>Fileupload</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Fileupload</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
-<h3>Textarea</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Textarea</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
 
-<h3>Select</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Select</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items7} rowState='hover' />
 </TableProp>
 
-<h3>Checkbox</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Checkbox</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items8} rowState='hover' />
 </TableProp>
 
-<h3>Radio</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Radio</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items9} rowState='hover' />
 </TableProp>
 
-<h3>Toggle</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Toggle</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items10} rowState='hover' />

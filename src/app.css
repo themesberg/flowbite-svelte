@@ -13,9 +13,6 @@ pre {
 	main p {
 		@apply w-full text-gray-900 dark:text-white py-1;
 	}
-	main h3 {
-		@apply text-xl w-full dark:text-white py-4;
-	}
 	.related-components,
 	.references {
 		@apply w-full flex flex-wrap;

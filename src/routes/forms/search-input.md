@@ -89,19 +89,19 @@ on:submit
 
 The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
-<h3>Search</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Search</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={searchItems} rowState='hover' />
 </TableProp>
 
-<h3>Simple Search</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Simple Search</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={simpleSearchItems} rowState='hover' />
 </TableProp>
 
-<h3>Voice Search</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Voice Search</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={voiceSearchItems} rowState='hover' />

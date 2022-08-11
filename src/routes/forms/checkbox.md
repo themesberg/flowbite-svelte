@@ -423,13 +423,13 @@ page</a> for type information.
 
 All attributes of the `input` element like: name, id, autofocus, etc, can be set directly as component props.
 
-<h3>Checkbox</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Checkbox</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
 <TableDefaultRow items={items} rowState='hover' />
 </TableProp>
 
-<h3>Helper</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Helper</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
 <TableDefaultRow items={items3} rowState='hover' />

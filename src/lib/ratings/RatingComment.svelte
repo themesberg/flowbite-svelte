@@ -1,7 +1,10 @@
 <script lang="ts">
+	import Button from '../buttons/Button.svelte';
 	import { Star } from 'svelte-heros';
 	// default is floor
 	export let ceil: boolean = false;
+	export let helpfullink: string = '';
+	export let abuselink: string = '';
 	export let comment: {
 		id: string;
 		user: {
@@ -18,8 +21,7 @@
 		address: string;
 		datetime: number;
 	};
-	export let helpfullink: string = '';
-	export let abuselink: string = '';
+
 	let roundedRating: number = ceil ? Math.ceil(comment.rating) : Math.floor(comment.rating);
 	let grayStars: number = comment.total - roundedRating;
 </script>
@@ -66,11 +68,7 @@
 		{#if helpfullink || abuselink}
 			<div class="flex items-center mt-3 space-x-3 divide-x divide-gray-200 dark:divide-gray-600">
 				{#if helpfullink}
-					<a
-						href={helpfullink}
-						class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-xs px-2 py-1.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
-						>Helpful</a
-					>
+					<Button size="xs" href="/" color="dark">Helpful</Button>
 				{/if}
 				{#if abuselink}
 					<a

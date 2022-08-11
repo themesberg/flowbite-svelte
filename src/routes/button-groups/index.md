@@ -209,13 +209,13 @@ You can add the `on:click` event to the `ButtonGroupItem` component.
 
 The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
-<h3>ButtonGroup</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>ButtonGroup</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3>ButtonGroupItem</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>ButtonGroupItem</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />

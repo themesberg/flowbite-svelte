@@ -1009,25 +1009,25 @@ The `DropdownItem` component has `on:click` event.
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
-<h3>Dropdown</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Dropdown</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={propItems} rowState='hover' />
 </TableProp>
 
-<h3>DropdownDivider</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>DropdownDivider</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={propItems2} rowState='hover' />
 </TableProp>
 
-<h3>DropdownHeader</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>DropdownHeader</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={propItems3} rowState='hover' />
 </TableProp>
 
-<h3>DropdownItem</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>DropdownItem</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={propItems4} rowState='hover' />
@@ -1035,19 +1035,19 @@ The `DropdownItem` component has `on:click` event.
 
 <Htwo label="Slots" />
 
-<h3>Dropdown</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Dropdown</h3>
 
 <TableProp header={slotHeader} {divClass} {theadClass}>
   <TableDefaultRow items={slotItems} rowState='hover' />
 </TableProp>
 
-<h3>DropdownDivider</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>DropdownDivider</h3>
 
 <TableProp header={slotHeader} {divClass} {theadClass}>
   <TableDefaultRow items={slotDropdownHeader} rowState='hover' />
 </TableProp>
 
-<h3>DropdownItem</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>DropdownItem</h3>
 
 <TableProp header={slotHeader} {divClass} {theadClass}>
   <TableDefaultRow items={slotDropdownItem} rowState='hover' />

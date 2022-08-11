@@ -385,7 +385,7 @@ The component has the following props, type, and default values. See <a href="/p
 <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3>Custom CSS</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Custom CSS</h3>
 
 Use `btnClass` to overwrite Button class.
 

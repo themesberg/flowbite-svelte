@@ -96,7 +96,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
-<h3>Toggle</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Toggle</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />

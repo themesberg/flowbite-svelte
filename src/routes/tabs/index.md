@@ -644,49 +644,49 @@ import { InteractiveTabHead, TabContent, Card, Timeline,
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
-<h3>DefaultTabs</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>DefaultTabs</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3>UnderlineTabs</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>UnderlineTabs</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<h3>IconTabs</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>IconTabs</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<h3>PillTabs</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>PillTabs</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
-<h3>FullWidthTabs</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>FullWidthTabs</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
-<h3>InteractiveTabs</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>InteractiveTabs</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
 
-<h3>InteractiveTabHead</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>InteractiveTabHead</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items7} rowState='hover' />
 </TableProp>
 
-<h3>TabContent</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>TabContent</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items8} rowState='hover' />

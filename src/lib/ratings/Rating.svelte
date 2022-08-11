@@ -6,23 +6,30 @@
 	export let rating: number = 4;
 	// default is floor
 	export let ceil: boolean = false;
+	export let count: boolean = false;
 
 	let roundedRating: number = ceil ? Math.ceil(rating) : Math.floor(rating);
 	let grayStars: number = total - roundedRating;
 </script>
 
 <div class={divClass}>
-	{#each Array(roundedRating) as _, star}
-		<slot name="ratingUp">
-			<Star variation="solid" size="24" class="text-yellow-300 dark:text-yellow-200" />
-		</slot>
-	{/each}
-	{#each Array(grayStars) as _, star}
-		<slot name="ratingDown">
-			<Star size="26" class="px-0.5 text-gray-300 dark:text-gray-500" />
-		</slot>
-	{/each}
-	{#if $$slots.text}
-		<slot name="text" />
+	{#if count}
+		<Star variation="solid" size="40" class="text-yellow-300 dark:text-yellow-200" />
+		<p class="ml-2 text-sm font-bold text-gray-900 dark:text-white">{rating}</p>
+		<slot />
+	{:else}
+		{#each Array(roundedRating) as _, star}
+			<slot name="ratingUp">
+				<Star variation="solid" size="24" class="text-yellow-300 dark:text-yellow-200" />
+			</slot>
+		{/each}
+		{#each Array(grayStars) as _, star}
+			<slot name="ratingDown">
+				<Star size="26" class="px-0.5 text-gray-300 dark:text-gray-500" />
+			</slot>
+		{/each}
+		{#if $$slots.text}
+			<slot name="text" />
+		{/if}
 	{/if}
 </div>

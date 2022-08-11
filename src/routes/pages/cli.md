@@ -19,14 +19,14 @@ layout: docLayout
 
 <Htwo label="Installation" />
 
-<h3>Homebrew</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Homebrew</h3>
 
 ```sh
 brew tap shinokada/fsc
 brew install fsc
 ```
 
-<h3>Awesome Package Manager</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Awesome Package Manager</h3>
 
 <p><a class="text-blue-700" href="https://github.com/shinokada/awesome">Awesome package manager</a> is a shell script package manager. Awesome installs a shell script package from a GitHub repo on your macOS/Linux.</p>
 
@@ -56,7 +56,7 @@ awesome install shinokada/fsc
 
 <Htwo label="How to use it" />
 
-<h3>List components</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>List components</h3>
 
 ```sh
 fsc
@@ -64,7 +64,7 @@ fsc
 
 <img src="/images/fsc.png" alt="fsc list" />
 
-<h3>List component props</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>List component props</h3>
 
 <p>For example, displaying navbar component props:
 

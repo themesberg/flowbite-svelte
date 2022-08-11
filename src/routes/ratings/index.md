@@ -4,16 +4,18 @@ layout: ratingLayout
 
 <script>
 	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-	import { Rating, AdvancedRating, ScoreRating, Breadcrumb, BreadcrumbItem } from '$lib'
+	import { Rating, AdvancedRating, ScoreRating, RatingComment, Breadcrumb, BreadcrumbItem } from '$lib'
 	import { Heart, ThumbUp, EmojiHappy, Home } from 'svelte-heros';
 	
 	import componentProps from '../props/Rating.json'
 	import componentProps2 from '../props/AdvancedRating.json'
 	import componentProps3 from '../props/ScoreRating.json'
+	import componentProps4 from '../props/RatingComment.json'
   // Props table
   let items = componentProps.props
 	let items2 = componentProps2.props
 	let items3 = componentProps3.props
+	let items4 = componentProps4.props
 	let propHeader = ['Name', 'Type', 'Default']
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
@@ -26,6 +28,23 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 			label: 'Read all reviews',
 			url: '/'
 		}
+	};
+
+	export let comment = {
+		id: '1',
+		user: {
+			name: 'Jese Leos',
+			img: {
+				src: '/images/profile-picture-2.webp',
+				alt: 'Jese Leos'
+			},
+			joined: 'Joined on August 2014'
+		},
+		total: 5,
+		rating: 4.5,
+		heading: 'Thinking to buy another one!',
+		address: 'the UK',
+		datetime: '2022-03-25'
 	};
 </script>
 
@@ -59,7 +78,7 @@ Let's import all necessary components in the script tag. We import a heart, thum
 </script>
 ```
 
-<Htwo label="Total and rating props" />
+<Htwo label="Default rating" />
 
 The default rating icon is a star. Set the total and rating props.
 
@@ -83,9 +102,9 @@ The default rounding for the rate is `floor`, but by adding the `ceil` prop, you
 <Rating total={5} rating={4.66} ceil />
 ```
 
-<Htwo label="Text slot" />
+<Htwo label="Rating with text" />
 
-Use the `text` slot to add any text.
+If you also want to show a text near the stars you can use the `text` slot to add any text.
 
 <ExampleDiv>	
   <Rating total={5} rating={3.21}>
@@ -99,11 +118,20 @@ Use the `text` slot to add any text.
 </Rating>
 ```
 
+<Htwo label="Rating count" />
+
+<ExampleDiv>	
+  <Rating count={true} rating={4.95}>
+		<span class="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400"></span>
+    <a href="#" class="text-sm font-medium text-gray-900 underline hover:no-underline dark:text-white">73 reviews</a>
+	</Rating>
+</ExampleDiv>
+
 <Htwo label="Icon size and color" />
 
 Use the `ratingUp` and `ratingDown` slots to add icons of your choice.
 
-<h3>Size and color</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Size and color</h3>
 
 The default icon size is `24`. Set the `class` in a icon component to change colors.
 
@@ -176,7 +204,7 @@ The default icon size is `24`. Set the `class` in a icon component to change col
 
 <Htwo label="AdvancedRating component" />
 
-Set the `total`, rating`, and `ratings` prop for AdvancedRation component. Use the `rating` slot for Rating component with the `total` and `rating` props. Use the `globalText` slot for additional information.
+Set the `total`,` rating`, and `ratings` prop for AdvancedRation component. Use the `rating` slot for Rating component with the `total` and `rating` props. Use the `globalText` slot for additional information.
 
 <ExampleDiv>	
 <AdvancedRating
@@ -307,6 +335,67 @@ As we describe in the Rating component, you can change an icon in the `ratingUp`
 />
 ```
 
+<Htwo label="Rating comment" />
+
+Use this component to show a single rating comment and its score alongside other components such as the user profile avatar, name, post date, and more.
+
+<ExampleDiv>
+	<RatingComment {comment} helpfullink="/" abuselink="/">
+		<p class="mb-2 font-light text-gray-500 dark:text-gray-400">
+			This is my third Invicta Pro Diver. They are just fantastic value for money. This one arrived
+			yesterday and the first thing I did was set the time, popped on an identical strap from
+			another Invicta and went in the shower with it to test the waterproofing.... No problems.
+		</p>
+		<p class="mb-3 font-light text-gray-500 dark:text-gray-400">
+			It is obviously not the same build quality as those very expensive watches. But that is like
+			comparing a Citroën to a Ferrari. This watch was well under £100! An absolute bargain.
+		</p>
+		<a
+			href="/"
+			class="block mb-5 text-sm font-medium text-blue-600 hover:underline dark:text-blue-500"
+			>Read more</a
+		>
+		<svelte:fragment slot="evaluation">19 people found this helpful</svelte:fragment>
+	</RatingComment>
+</ExampleDiv>
+
+```html
+<script>
+	export let comment = {
+		id: '1',
+		user: {
+			name: 'Jese Leos',
+			img: {
+				src: '/images/profile-picture-2.webp',
+				alt: 'Jese Leos'
+			},
+			joined: 'Joined on August 2014'
+		},
+		total: 5,
+		rating: 4.5,
+		heading: 'Thinking to buy another one!',
+		address: 'the UK',
+		datetime: '2022-03-25'
+	};
+</script>
+<RatingComment {comment} helpfullink="/" abuselink="/">
+	<p class="mb-2 font-light text-gray-500 dark:text-gray-400">
+		This is my third Invicta Pro Diver. They are just fantastic value for money. This one arrived
+		yesterday and the first thing I did was set the time, popped on an identical strap from
+		another Invicta and went in the shower with it to test the waterproofing.... No problems.
+	</p>
+	<p class="mb-3 font-light text-gray-500 dark:text-gray-400">
+		It is obviously not the same build quality as those very expensive watches. But that is like
+		comparing a Citroën to a Ferrari. This watch was well under £100! An absolute bargain.
+	</p>
+	<a
+		href="/"
+		class="block mb-5 text-sm font-medium text-blue-600 hover:underline dark:text-blue-500"
+		>Read more</a
+	>
+	<svelte:fragment slot="evaluation">19 people found this helpful</svelte:fragment>
+</RatingComment>
+```
 
 
 <Htwo label="Props" />
@@ -314,20 +403,26 @@ As we describe in the Rating component, you can change an icon in the `ratingUp`
 The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.
 
-<h3>Rating</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Rating</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3>AdvancedRating</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>AdvancedRating</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<h3>ScoreRating</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>ScoreRating</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items3} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>RatingComment</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>

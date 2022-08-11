@@ -342,25 +342,25 @@ Use the following navbar element to show a call to action button alongside the l
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
-<h3>Navbar</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Navbar</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3>NavBrand</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>NavBrand</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<h3>NavLi</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>NavLi</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<h3>NavUl</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>NavUl</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items4} rowState='hover' />
