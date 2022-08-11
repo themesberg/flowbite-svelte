@@ -5,17 +5,17 @@
 		name: string;
 		imgSrc: string;
 		imgAlt: string;
-		address: string;
-		addressIcon: typeof SvelteComponent;
-		reviewDate: string;
+		address: string | undefined;
+		addressIcon: typeof SvelteComponent | undefined;
+		reviewDate: string | undefined;
 		title: string;
 		rating: number;
-		item: string;
-		itemIcon: typeof SvelteComponent;
-		option1: string;
-		option1Icon: typeof SvelteComponent;
-		option2: string;
-		option2Icon: typeof SvelteComponent;
+		item: string | undefined;
+		itemIcon: typeof SvelteComponent | undefined;
+		option1: string | undefined;
+		option1Icon: typeof SvelteComponent | undefined;
+		option2: string | undefined;
+		option2Icon: typeof SvelteComponent | undefined;
 	};
 </script>
 
@@ -28,37 +28,28 @@
 				{#if review.address}
 					<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
 						{#if review.addressIcon}
-							<svelte:component this={review.addressIcon} />
+							<svelte:component this={review.addressIcon} size="16" class="mr-2" />
 						{/if}
 						{review.address}
 					</div>
 				{/if}
 			</div>
 		</div>
-		{#if review.item || review.option1 || review.option2}
+		{#if $$slots.item || $$slots.option1 || $$slots.option2}
 			<ul class="space-y-4 text-sm text-gray-500 dark:text-gray-400">
-				{#if review.item}
+				{#if $$slots.item}
 					<li class="flex items-center">
-						{#if review.itemIcon}
-							<svelte:component this={review.addressIcon} />
-						{/if}
-						{review.item}
+						<slot name="item" />
 					</li>
 				{/if}
-				{#if review.option1}
+				{#if $$slots.option1}
 					<li class="flex items-center">
-						{#if review.option1Icon}
-							<svelte:component this={review.option1Icon} />
-						{/if}
-						{review.option1}
+						<slot name="option1" />
 					</li>
 				{/if}
-				{#if review.option2}
+				{#if $$slots.option2}
 					<li class="flex items-center">
-						{#if review.option2Icon}
-							<svelte:component this={review.option2Icon} />
-						{/if}
-						{review.option2}
+						<slot name="option2" />
 					</li>
 				{/if}
 			</ul>
@@ -67,10 +58,10 @@
 	<div class="col-span-2 mt-6 md:mt-0">
 		<div class="flex items-start mb-5">
 			<div class="pr-4">
-				{#if review.date}
+				{#if review.reviewDate}
 					<footer>
 						<p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-							Reviewed: {review.date}
+							Reviewed: {review.reviewDate}
 						</p>
 					</footer>
 				{/if}
