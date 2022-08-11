@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.24.6](https://github.com/themesberg/flowbite-svelte/compare/v0.24.5...v0.24.6) (2022-08-11)
+
+
+### Features
+
+* add Review component ([d41b11d](https://github.com/themesberg/flowbite-svelte/commit/d41b11d4ef00d1d6d0d824d4fcdc9c964a78a7d2))
+
+### [0.24.5](https://github.com/themesberg/flowbite-svelte/compare/v0.24.4...v0.24.5) (2022-08-11)
+
+
+### Features
+
+* add rating count and update app.css ([e5d642b](https://github.com/themesberg/flowbite-svelte/commit/e5d642b4a246c1716db8461e6ecbc26a7abad9d0))
+
+
+### Bug Fixes
+
+* h3 change, modal page update ([945762f](https://github.com/themesberg/flowbite-svelte/commit/945762f325736ac316a7d1cb68d546f0c8acd982))
+* RatingComment component ([032aa24](https://github.com/themesberg/flowbite-svelte/commit/032aa24925f082459992104d5040804e0d532153))
+* update rating page for AdvancedRating ([f1dc978](https://github.com/themesberg/flowbite-svelte/commit/f1dc978b5775e0089cc6c8aa1fac1c5ed8b97dca))
+
 ### [0.24.4](https://github.com/themesberg/flowbite-svelte/compare/v0.24.3...v0.24.4) (2022-08-09)
 
 
