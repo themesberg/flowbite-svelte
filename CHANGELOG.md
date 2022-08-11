@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.24.6](https://github.com/themesberg/flowbite-svelte/compare/v0.24.5...v0.24.6) (2022-08-11)
+
+
+### Features
+
+* add Review component ([d41b11d](https://github.com/themesberg/flowbite-svelte/commit/d41b11d4ef00d1d6d0d824d4fcdc9c964a78a7d2))
+
 ### [0.24.5](https://github.com/themesberg/flowbite-svelte/compare/v0.24.4...v0.24.5) (2022-08-11)
 
 
