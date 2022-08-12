@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.24.8](https://github.com/themesberg/flowbite-svelte/compare/v0.24.7...v0.24.8) (2022-08-12)
+
+
+### Bug Fixes
+
+* change function clickOutside to arrow function ([71e71e0](https://github.com/themesberg/flowbite-svelte/commit/71e71e0e482ad9939f9d135b1608b5cc8d31d899))
+* update createprops and update props ([0739b92](https://github.com/themesberg/flowbite-svelte/commit/0739b9296caddcba85f849b222e6548a961dbd34))
+
 ### [0.24.7](https://github.com/themesberg/flowbite-svelte/compare/v0.24.5...v0.24.7) (2022-08-11)
 
 
