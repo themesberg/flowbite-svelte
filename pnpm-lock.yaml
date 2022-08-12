@@ -9,7 +9,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.30.7
   autoprefixer: ^10.4.4
   classnames: ^2.3.1
-  createprops: ^0.4.4
+  createprops: ^0.4.9
   eslint: ^8.20.0
   eslint-config-prettier: ^8.5.0
   eslint-plugin-svelte3: ^4.0.0
@@ -44,7 +44,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.30.7_6wltbjakwuqm7awqswigmiuhd4
   '@typescript-eslint/parser': 5.30.7_he2ccbldppg44uulnyq4rwocfa
   autoprefixer: 10.4.7_postcss@8.4.14
-  createprops: 0.4.4
+  createprops: 0.4.9
   eslint: 8.20.0
   eslint-config-prettier: 8.5.0_eslint@8.20.0
   eslint-plugin-svelte3: 4.0.0_piwa6j2njmnknm35bh3wz5v52y
@@ -677,8 +677,8 @@ packages:
     resolution: {integrity: sha512-ty/fTekppD2fIwRvnZAVdeOiGd1c7YXEixbgJTNzqcxJWKQnjJ/V1bNEEE6hygpM3WjwHFUVK6HTjWSzV4a8sQ==}
     dev: true
 
-  /createprops/0.4.4:
-    resolution: {integrity: sha512-tJTqBboOUinlOj/dE8cotNQvkectjPyBB7mqihgUltMN3eiONZh0OmmblPB/VDL5KnGX07J0bJqTTl6ypD2YWg==}
+  /createprops/0.4.9:
+    resolution: {integrity: sha512-jr701jvWkZhNQWwYnbuD+NGSeH6KpioMHuzFAtTcovE1akq9zyW2UC4f6Q8odKgoZ3AE3HM0YjxaqoWD5YtjPA==}
     dev: true
 
   /cross-spawn/7.0.3:

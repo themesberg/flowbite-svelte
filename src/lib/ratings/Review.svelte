@@ -1,28 +1,18 @@
 <script lang="ts">
-	import type { SvelteComponent } from 'svelte';
+	import type { ReviewType } from '$lib/types';
 	import classNames from 'classnames';
-	export let review: {
-		name: string;
-		imgSrc: string;
-		imgAlt: string;
-		address: string | undefined;
-		addressIcon: typeof SvelteComponent | undefined;
-		reviewDate: string | undefined;
-		title: string;
-		rating: number;
-		item: string | undefined;
-		itemIcon: typeof SvelteComponent | undefined;
-		option1: string | undefined;
-		option1Icon: typeof SvelteComponent | undefined;
-		option2: string | undefined;
-		option2Icon: typeof SvelteComponent | undefined;
-	};
+	export let review: ReviewType;
+	export let articleClass: string = 'md:gap-8 md:grid md:grid-cols-3';
+	export let divClass: string = 'flex items-center mb-6 space-x-4';
+	export let imgClass: string = 'w-10 h-10 rounded-full';
+	export let ulClass: string = 'space-y-4 text-sm text-gray-500 dark:text-gray-400';
+	export let liClass: string = 'flex items-center';
 </script>
 
-<article class="md:gap-8 md:grid md:grid-cols-3">
+<article class={classNames(articleClass, $$props.classArticle)}>
 	<div>
-		<div class="flex items-center mb-6 space-x-4">
-			<img class="w-10 h-10 rounded-full" src={review.imgSrc} alt={review.imgAlt} />
+		<div class={classNames(divClass, $$props.classDiv)}>
+			<img class={classNames(imgClass, $$props.classImg)} src={review.imgSrc} alt={review.imgAlt} />
 			<div class="space-y-1 font-medium dark:text-white">
 				<p>{review.name}</p>
 				{#if review.address}
@@ -36,19 +26,19 @@
 			</div>
 		</div>
 		{#if $$slots.item || $$slots.option1 || $$slots.option2}
-			<ul class="space-y-4 text-sm text-gray-500 dark:text-gray-400">
+			<ul class={classNames(ulClass, $$props.classUl)}>
 				{#if $$slots.item}
-					<li class="flex items-center">
+					<li class={classNames(liClass, $$props.classLi)}>
 						<slot name="item" />
 					</li>
 				{/if}
 				{#if $$slots.option1}
-					<li class="flex items-center">
+					<li class={classNames(liClass, $$props.classLi)}>
 						<slot name="option1" />
 					</li>
 				{/if}
 				{#if $$slots.option2}
-					<li class="flex items-center">
+					<li class={classNames(liClass, $$props.classLi)}>
 						<slot name="option2" />
 					</li>
 				{/if}

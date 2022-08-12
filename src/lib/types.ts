@@ -196,6 +196,23 @@ export interface PillTabType {
 	href: string;
 }
 
+export type ReviewType = {
+	name: string;
+	imgSrc: string;
+	imgAlt: string;
+	address: string | undefined;
+	addressIcon: typeof SvelteComponent | undefined;
+	reviewDate: string | undefined;
+	title: string;
+	rating: number;
+	item: string | undefined;
+	itemIcon: typeof SvelteComponent | undefined;
+	option1: string | undefined;
+	option1Icon: typeof SvelteComponent | undefined;
+	option2: string | undefined;
+	option2Icon: typeof SvelteComponent | undefined;
+}
+
 export type SelectOptionType = {
 	name: string;
 	value: string;
@@ -248,6 +265,12 @@ export interface TabType {
 	href: string;
 	rel?: string;
 }
+
+export interface TableDataHelperType {
+	start: number;
+	end: number;
+	total: number
+} 
 
 export type Textsize = 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl';
 

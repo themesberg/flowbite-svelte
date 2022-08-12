@@ -15,21 +15,21 @@ layout: docLayout
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">How to Contribute</h1>
 
-<p>Here are some guidelines we'd like you to follow before submitting a PR.</p>
+<p class='w-full'>Here are some guidelines we'd like you to follow before submitting a PR.</p>
 
 <Htwo label="Please use pnpm to install a fork" />
 
-<p>The repo uses `pnpm`, so using `pnpm` is desiable when you fork and install dependencies to avoid unseen problems.</p>
+<p class='w-full'>The repo uses `pnpm`, so using `pnpm` is desiable when you fork and install dependencies to avoid unseen problems.</p>
 
 <Htwo label="Frontend pages" />
 
-<p><a class="text-blue-700" href="https://tailwindcss.com/docs/content-configuration#dynamic-class-names">Tailwind warns</a> that you don't construct class names dynamically. Instead of this:</p>
+<p class='w-full'><a class="text-blue-700" href="https://tailwindcss.com/docs/content-configuration#dynamic-class-names">Tailwind warns</a> that you don't construct class names dynamically. Instead of this:</p>
 
 ```html
 <div class="text-{{ error ? 'red' : 'green' }}-600"></div>
 ```
 
-<p>Always use complete class names:</p>
+<p class='w-full'>Always use complete class names:</p>
 
 ```html
 <div class="{{ error ? 'text-red-600' : 'text-green-600' }}"></div>
@@ -37,24 +37,58 @@ layout: docLayout
 
 <Htwo label="Types and Props" />
 
-<p>Please add a type to `export`ed variables. When we generate props files, it will automatically pick up types from your file. If you don't add a type, it will break.</p>
+<p class='w-full'>Add a type to `export`ed variables. When we generate props files, it will automatically pick up types from your file. If you don't add a type, it will break.</p>
 
-<p>Please run the following to update prop files.</p>
+<p class='w-full'>Use `lib/types file for nested objects.</p>
+
+```js
+// these work
+export let icons: AccordionIconType = {
+  up: ChevronUpSolid,
+  down: ChevronDownSolid
+};
+
+export let child: TopMenuType[] | undefined = undefined;
+...
+
+// doesn't work
+export let comment: CommentType = {
+  id: number | string;
+  user: {
+    name: string;
+    joined: string;
+  };
+};
+// put it in lib/types
+export interface CommentType {
+  id: number | string;
+  user: {
+    name: string;
+    joined: string;
+  };
+};
+
+// then 
+export let comment: CommentType;
+```
+
+<p class='w-full'>See more details in the [createprops' README](https://github.com/shinokada/createprops) file.</p>
+
+<p class='w-full'>Please run the following to update prop files.</p>
 
 ```sh
 npm run gen:props
 ```
 
-<p>This script will update/generate files in `src/routes/props`.</p>
+<p class='w-full'>This script will update/generate files in `src/routes/props`.</p>
 
-<p>Again avoid type inference for `export`ed variables.</p>
-
+<p class='w-full'>Again avoid type inference for `export`ed variables.</p>
 
 <Htwo label="Conventional commit" />
 
-<p>When making a commit, we recommend using <a class="text-blue-700" href="https://www.conventionalcommits.org/en/v1.0.0/">the Coventional commits</a>.</p>
+<p class='w-full'>When making a commit, we recommend using <a class="text-blue-700" href="https://www.conventionalcommits.org/en/v1.0.0/">the Coventional commits</a>.</p>
 
-Some examples are:
+<p class='w-full'>Some examples are:</p>
 
 ```sh
 feat: add rating component
@@ -65,7 +99,13 @@ style: update home page
 test: add modal test
 ```
 
-When you have a breaking change:
+<p class='w-full'>Use `!` for a minor bump.</p>
+
+```sh
+feat!: add drawer compoent and page
+```
+
+<p class='w-full'>When you have a breaking change:</p>
 
 ```
 git commit -a "feat: change btnClass name to bClass" -m "BREAKING CHANGE: change the Button component attributes"
@@ -73,7 +113,7 @@ git commit -a "feat: change btnClass name to bClass" -m "BREAKING CHANGE: change
 
 <Htwo label="Playwright Test" />
 
-<p>Before submitting a PR, please run a test:</p>
+<p class='w-full'>Before submitting a PR, please run a test:</p>
 
 ```sh
 npm run test
@@ -81,13 +121,13 @@ npm run test
 
 <Htwo label="A11y Test" />
 
-<p>I'm in a process of finding the best A11y testing method at the moment. For now, please install [@axe-core/cli](https://www.npmjs.com/package/@axe-core/cli) to test pages relating to your change.</p>
+<p class='w-full'>I'm in a process of finding the best A11y testing method at the moment. For now, please install [@axe-core/cli](https://www.npmjs.com/package/@axe-core/cli) to test pages relating to your change.</p>
 
 ```sh
 npm install @axe-core/cli -g
 ```
 
-<p>Test a page.</p>
+<p class='w-full'>Test a page.</p>
 
 ```sh
 axe http://localhost:3000/dropdowns/image
