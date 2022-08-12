@@ -19,20 +19,16 @@
 	};
 	export let iconSize: number = 24;
 	export let iconClass: string = 'text-white sm:w-6 sm:h-6 dark:text-gray-300';
-
 	// Carousel
 	export let divClass: string = 'overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96';
 	export let indicatorDivClass: string =
 		'flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2';
-
 	// Caption
 	export let captionClass: string =
 		'h-10 bg-gray-300 dark:bg-gray-700 dark:text-white p-2 my-2 text-center';
-
 	// Indicator
 	export let indicatorClass: string =
 		'w-3 h-3 rounded-full bg-gray-100 hover:bg-gray-300 opacity-60';
-
 	// Slide
 	export let slideClass: string = '';
 

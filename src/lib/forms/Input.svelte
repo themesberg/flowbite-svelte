@@ -21,9 +21,9 @@
 	let background: boolean = getContext('background');
 
 	// you need to this to avoid 2-way binding
-	function setType(node) {
+	const setType = (node) => {
 		node.type = type;
-	}
+	};
 </script>
 
 <input

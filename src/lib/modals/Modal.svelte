@@ -34,7 +34,7 @@
 
 	let backdropEl: HTMLElement;
 
-	function init(node, _open) {
+	const init = (node, _open) => {
 		getPlacementClasses().map((c) => node.classList.add(c));
 		_open && createBackdrop(node);
 
@@ -50,13 +50,13 @@
 				destroyBackdrop(node);
 			}
 		};
-	}
+	};
 
-	function handleEscape(e) {
+	const handleEscape = (e) => {
 		if (open && e.key === 'Escape') open = false;
-	}
+	};
 
-	function createBackdrop(node) {
+	const createBackdrop = (node) => {
 		if (!backdropEl) {
 			backdropEl = document.createElement('div');
 			backdropEl.classList.add(...backdropClasses.split(' '));
@@ -69,9 +69,9 @@
 		}
 
 		dispatch('show', node);
-	}
+	};
 
-	function destroyBackdrop(node) {
+	const destroyBackdrop = (node) => {
 		const body = document.querySelector('body');
 		body.style.overflow = 'auto';
 
@@ -81,9 +81,9 @@
 		document.removeEventListener('keydown', handleEscape, true);
 
 		dispatch('hide', node);
-	}
+	};
 
-	function getPlacementClasses() {
+	const getPlacementClasses = () => {
 		switch (placement) {
 			// top
 			case 'top-left':
@@ -112,7 +112,7 @@
 			default:
 				return ['justify-center', 'items-center'];
 		}
-	}
+	};
 
 	const sizes = {
 		xs: 'max-w-md',
@@ -122,13 +122,13 @@
 		xl: 'max-w-7xl'
 	};
 
-	function onButtonsClick({ target }) {
+	const onButtonsClick = ({ target }) => {
 		if (autoclose && target.tagName === 'BUTTON') open = !open;
-	}
+	};
 
-	function hide() {
+	const hide = () => {
 		open = false;
-	}
+	};
 </script>
 
 <!-- Main modal -->
