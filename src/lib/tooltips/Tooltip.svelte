@@ -22,6 +22,7 @@
 	export let tipClass: string =
 		'absolute inline-block rounded-lg py-2 px-3 text-sm font-medium shadow-sm';
 	export let tipColor: string = '';
+	export let open = false;
 
 	const tipStyleClasses = {
 		dark: 'bg-gray-900 text-white dark:bg-gray-700',
@@ -45,7 +46,6 @@
 		tipStyleClasses[style],
 		$$props.class
 	);
-	let open = false;
 	const floatingPlacement = (placement: 'auto' | Placement): Placement | undefined => {
 		return placement === 'auto' ? undefined : placement;
 	};
@@ -63,7 +63,7 @@
 	let placementData: ComputePositionReturn;
 	let tooltipRef: HTMLElement, triggerRef: HTMLElement, arrowRef: HTMLElement;
 	const updatePosition = () =>
-		computePosition(triggerRef as Element, tooltipRef as Element, {
+		computePosition(triggerRef as Element, tooltipRef as HTMLElement, {
 			middleware: floatingMiddleware(arrowRef, placement),
 			placement: floatingPlacement(placement)
 		}).then((data) => (placementData = data));
