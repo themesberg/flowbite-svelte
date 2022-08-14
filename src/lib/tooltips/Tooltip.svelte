@@ -12,6 +12,7 @@
 	} from '@floating-ui/dom';
 	import type { Placement } from '@floating-ui/dom';
 	import { onDestroy } from 'svelte';
+	import { browser } from '$app/env';
 
 	export let placement: 'auto' | Placement = 'top';
 	export let trigger: 'hover' | 'click' = 'hover';
@@ -70,12 +71,14 @@
 	let attachedScroll: boolean = false;
 	$: tooltipRef && open && updatePosition();
 	$: {
-		if (open && !attachedScroll) {
-			attachedScroll = true;
-			window.addEventListener('scroll', updatePosition, true);
-		} else if (!open && attachedScroll) {
-			attachedScroll = false;
-			window.removeEventListener('scroll', updatePosition, true);
+		if (browser) {
+			if (open && !attachedScroll) {
+				attachedScroll = true;
+				window.addEventListener('scroll', updatePosition, true);
+			} else if (!open && attachedScroll) {
+				attachedScroll = false;
+				window.removeEventListener('scroll', updatePosition, true);
+			}
 		}
 	}
 	onDestroy(() => {
