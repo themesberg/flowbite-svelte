@@ -46,7 +46,6 @@
 		| null = null;
 
 	const background = getContext('background');
-	$: console.log(background);
 
 	const colorClasses = {
 		blue: 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800',
@@ -173,6 +172,7 @@
 <svelte:element
 	this={href ? 'a' : 'button'}
 	type={href ? undefined : type}
+	{href}
 	{...$$restProps}
 	class={buttonClass}
 	on:click
