@@ -196,6 +196,22 @@ When you want to control your dropdown open status via javascript code you can b
 </Dropdown>
 </ExampleDiv>
 
+```html
+<Dropdown label="Dropdown button" class="w-44" bind:open={dropdownOpen}>
+  <DropdownItem on:click={() => dropdownOpen = false}>Dashboard (close)</DropdownItem>
+  <DropdownItem>
+    <Dropdown label="Dropdown" inline={true} placement="right-start" class="ml-10 md:ml-16 w-44">
+    <DropdownItem on:click={() => dropdownOpen = false}>Overview (close)</DropdownItem>
+    <DropdownItem>My downloads</DropdownItem>
+    <DropdownItem>Billing</DropdownItem>
+    </Dropdown>
+  </DropdownItem>
+  <DropdownItem>Earnings</DropdownItem>
+  <DropdownDivider />
+  <DropdownItem>Sign out</DropdownItem>
+</Dropdown>
+```
+
 <Htwo label="Dropdown with checkbox" />
 
 Add multiple checkbox elements inside your dropdown menu to enable more advanced input interaction.
