@@ -20,7 +20,6 @@ export { default as Button } from './buttons/Button.svelte';
 
 // Buttongroups
 export { default as ButtonGroup } from './buttongroups/ButtonGroup.svelte';
-export { default as ButtonGroupItem } from './buttongroups/ButtonGroupItem.svelte';
 
 // Cards
 export { default as Card } from './cards/Card.svelte';
