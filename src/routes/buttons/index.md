@@ -328,16 +328,23 @@ Use the spinner components from Flowbite-Svelte to indicate a loader animation i
 
 <ExampleDiv>
 <div class="flex flex-wrap items-center gap-2">
-<Button>
-  <Spinner class="mr-3" size="4" color="white" />
-  Loading ...
-</Button>
-<Button outline color="dark">
-  <Spinner class="mr-3" size="4" />
-  Loading ...
-</Button>
+  <Button>
+    <Spinner class="mr-3" size="4" color="white" />Loading ...
+  </Button>
+  <Button color="alternative">
+    <Spinner class="mr-3" size="4" />Loading ...
+  </Button>
 </div>
 </ExampleDiv>
+
+```html
+<Button>
+  <Spinner class="mr-3" size="4" color="white" />Loading ...
+</Button>
+<Button color="alternative">
+  <Spinner class="mr-3" size="4" />Loading ...
+</Button>
+```
 
 <Htwo label="Disabled" />
 
