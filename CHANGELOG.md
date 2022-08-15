@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.24.10](https://github.com/themesberg/flowbite-svelte/compare/v0.24.9...v0.24.10) (2022-08-15)
+
+
+### Features
+
+* modal - crypto ([47cf678](https://github.com/themesberg/flowbite-svelte/commit/47cf678ef2a7bf10c842e367a37e2aedebe7a8fc))
+* modal - crypto + html ([26475ed](https://github.com/themesberg/flowbite-svelte/commit/26475edd98a2c73fbe02580fefb4c8455e25f1bb))
+
+
+### Bug Fixes
+
+* create Coinbase, Fortmatic, Metamask, OperaWallet, and WalletConnect component ([f8eabc5](https://github.com/themesberg/flowbite-svelte/commit/f8eabc5b23b8c0d9fab75deca393858952406660))
+
 ### [0.24.9](https://github.com/themesberg/flowbite-svelte/compare/v0.24.8...v0.24.9) (2022-08-15)
 
 
