@@ -10,11 +10,6 @@ test('About page should have h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('About Flowbite-Svelte');
 });
 
-test('CLI page should have h1', async ({ page }) => {
-	await page.goto('/pages/cli');
-	expect(await page.textContent('h1')).toBe('Flowbite-Svelte-CLI (fsc)');
-});
-
 test('Getting Started page should have h1', async ({ page }) => {
 	await page.goto('/pages/getting-started');
 	expect(await page.textContent('h1')).toBe('Getting Started');
