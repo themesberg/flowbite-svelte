@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.24.9](https://github.com/themesberg/flowbite-svelte/compare/v0.24.8...v0.24.9) (2022-08-15)
+
+
+### Features
+
+* button group ([bb95b98](https://github.com/themesberg/flowbite-svelte/commit/bb95b98c0e4b70f3958c778ac2dc8367c67df8d7))
+
+
+### Bug Fixes
+
+* dropdown open/close api ([d2aa6f7](https://github.com/themesberg/flowbite-svelte/commit/d2aa6f71e7e804d474eb46e58030097d9bd9962f))
+* dropdown open/close api - docs ([f299c28](https://github.com/themesberg/flowbite-svelte/commit/f299c284a4ef3c9539e17677b815f60dd8d1e6f2))
+* no href on <a> buttons ([ab13df8](https://github.com/themesberg/flowbite-svelte/commit/ab13df85aeac5368383bb708c9cb3146e418066f))
+* window is undefined ([b752882](https://github.com/themesberg/flowbite-svelte/commit/b752882ad0f0f6a7c196223649463903453f48d6))
+* window is undefined/2 ([4c0ca77](https://github.com/themesberg/flowbite-svelte/commit/4c0ca77eddfae2a04d10bc1ea3dc53671864b181))
+
 ### [0.24.8](https://github.com/themesberg/flowbite-svelte/compare/v0.24.7...v0.24.8) (2022-08-12)
 
 
