@@ -2,6 +2,60 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.24.9](https://github.com/themesberg/flowbite-svelte/compare/v0.24.8...v0.24.9) (2022-08-15)
+
+
+### Features
+
+* button group ([bb95b98](https://github.com/themesberg/flowbite-svelte/commit/bb95b98c0e4b70f3958c778ac2dc8367c67df8d7))
+
+
+### Bug Fixes
+
+* dropdown open/close api ([d2aa6f7](https://github.com/themesberg/flowbite-svelte/commit/d2aa6f71e7e804d474eb46e58030097d9bd9962f))
+* dropdown open/close api - docs ([f299c28](https://github.com/themesberg/flowbite-svelte/commit/f299c284a4ef3c9539e17677b815f60dd8d1e6f2))
+* no href on <a> buttons ([ab13df8](https://github.com/themesberg/flowbite-svelte/commit/ab13df85aeac5368383bb708c9cb3146e418066f))
+* window is undefined ([b752882](https://github.com/themesberg/flowbite-svelte/commit/b752882ad0f0f6a7c196223649463903453f48d6))
+* window is undefined/2 ([4c0ca77](https://github.com/themesberg/flowbite-svelte/commit/4c0ca77eddfae2a04d10bc1ea3dc53671864b181))
+
+### [0.24.8](https://github.com/themesberg/flowbite-svelte/compare/v0.24.7...v0.24.8) (2022-08-12)
+
+
+### Bug Fixes
+
+* change function clickOutside to arrow function ([71e71e0](https://github.com/themesberg/flowbite-svelte/commit/71e71e0e482ad9939f9d135b1608b5cc8d31d899))
+* update createprops and update props ([0739b92](https://github.com/themesberg/flowbite-svelte/commit/0739b9296caddcba85f849b222e6548a961dbd34))
+
+### [0.24.7](https://github.com/themesberg/flowbite-svelte/compare/v0.24.5...v0.24.7) (2022-08-11)
+
+
+### Features
+
+* add Review component ([67af517](https://github.com/themesberg/flowbite-svelte/commit/67af517e32dfc19c6079e5d1925a234f0162cc34))
+* add Review component ([d41b11d](https://github.com/themesberg/flowbite-svelte/commit/d41b11d4ef00d1d6d0d824d4fcdc9c964a78a7d2))
+* add Review component, page, and prop ([4446e1e](https://github.com/themesberg/flowbite-svelte/commit/4446e1eba3706e291f0cb3812b4ffb61df48eb46))
+
+### [0.24.6](https://github.com/themesberg/flowbite-svelte/compare/v0.24.5...v0.24.6) (2022-08-11)
+
+
+### Features
+
+* add Review component ([d41b11d](https://github.com/themesberg/flowbite-svelte/commit/d41b11d4ef00d1d6d0d824d4fcdc9c964a78a7d2))
+
+### [0.24.5](https://github.com/themesberg/flowbite-svelte/compare/v0.24.4...v0.24.5) (2022-08-11)
+
+
+### Features
+
+* add rating count and update app.css ([e5d642b](https://github.com/themesberg/flowbite-svelte/commit/e5d642b4a246c1716db8461e6ecbc26a7abad9d0))
+
+
+### Bug Fixes
+
+* h3 change, modal page update ([945762f](https://github.com/themesberg/flowbite-svelte/commit/945762f325736ac316a7d1cb68d546f0c8acd982))
+* RatingComment component ([032aa24](https://github.com/themesberg/flowbite-svelte/commit/032aa24925f082459992104d5040804e0d532153))
+* update rating page for AdvancedRating ([f1dc978](https://github.com/themesberg/flowbite-svelte/commit/f1dc978b5775e0089cc6c8aa1fac1c5ed8b97dca))
+
 ### [0.24.4](https://github.com/themesberg/flowbite-svelte/compare/v0.24.3...v0.24.4) (2022-08-09)
 
 

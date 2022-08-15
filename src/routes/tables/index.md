@@ -601,25 +601,25 @@ let searchTerm = '';
 The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.
 
-<h3>Table</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Table</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
-<h3>TableBodyCell</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>TableBodyCell</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<h3>TableBodyRow</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>TableBodyRow</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<h3>TableSearch</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>TableSearch</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items4} rowState='hover' />

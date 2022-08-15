@@ -10,9 +10,10 @@ layout: badgeLayout
   import componentProps from '../props/Badge.json'
   // Props table
   let items = componentProps.props
-	let propHeader = ['Name', 'Type', 'Default']
+  let propHeader = ['Name', 'Type', 'Default']
+
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
-	let divClass = 'max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700';
 </script>
 
 <Breadcrumb>

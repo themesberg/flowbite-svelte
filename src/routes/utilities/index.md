@@ -84,13 +84,13 @@ Use the `Label` component when you need to add a label.
 
 The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
-<h3>CloseButton</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>CloseButton</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3>Label</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Label</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />

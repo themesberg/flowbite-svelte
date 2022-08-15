@@ -321,13 +321,13 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
 The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.
 
-<h3>Input</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Input</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
-<h3>Iconinput</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Iconinput</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />

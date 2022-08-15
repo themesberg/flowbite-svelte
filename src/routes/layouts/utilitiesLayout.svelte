@@ -10,13 +10,3 @@
 		<slot />
 	</div>
 </div>
-
-<style>
-	.link {
-		color: #f83c00;
-	}
-	.link:hover {
-		color: #fc7146;
-		text-decoration: underline;
-	}
-</style>

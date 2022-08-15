@@ -463,49 +463,49 @@ Show the logo of your brand and link back to the homepage from the top part of t
 
 The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
-<h3>Sidebar</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Sidebar</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3>SidebarBrand</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>SidebarBrand</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<h3>SidebarCta</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>SidebarCta</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<h3>SidebarDropdownItem</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>SidebarDropdownItem</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
-<h3>SidebarDropdownWrapper</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>SidebarDropdownWrapper</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
-<h3>SidebarGroup</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>SidebarGroup</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
 
-<h3>SidebarItem</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>SidebarItem</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items7} rowState='hover' />
 </TableProp>
 
-<h3>SidebarWrapper</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>SidebarWrapper</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items8} rowState='hover' />

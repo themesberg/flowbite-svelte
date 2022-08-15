@@ -431,13 +431,13 @@ npm i svelte-heros
 The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.
 
-<h3>AccordionItem</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>AccordionItem</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3>AccordionFlush</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>AccordionFlush</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
@@ -445,7 +445,7 @@ The component has the following props, type, and default values. See <a href="/p
 
 <Htwo label="Slots" />
 
-<h3>AccordionItem, AccordionFlush</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>AccordionItem, AccordionFlush</h3>
 
 <TableProp header={slotHeader} {divClass} {theadClass}>
   <TableDefaultRow items={slotItems} rowState='hover' />

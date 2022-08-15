@@ -700,7 +700,7 @@ Use this example to split cards into multiple sections such as for testimonials 
 
 The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
-<h3>Card</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Card</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
@@ -708,7 +708,7 @@ The component has the following props, type, and default values. See <a href="/p
 
 <Htwo label="Slots" />
 
-<h3>Card</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Card</h3>
 
 <TableProp header={slotHeader} {divClass} {theadClass}>
   <TableDefaultRow items={slotItems} rowState='hover' />

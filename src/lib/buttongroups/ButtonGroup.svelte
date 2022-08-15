@@ -1,6 +1,11 @@
 <script lang="ts">
+	import { setContext } from 'svelte';
 	import classNames from 'classnames';
-	export let divClass: string = 'inline-flex rounded-md shadow-sm';
+
+	export let divClass: string = 'inline-flex rounded-lg shadow-sm';
+
+	setContext('group', true);
+	setContext('background', true);
 </script>
 
 <div {...$$restProps} class={classNames(divClass, $$props.class)} role="group">

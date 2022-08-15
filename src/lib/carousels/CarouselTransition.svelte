@@ -40,7 +40,7 @@
 		'w-3 h-3 rounded-full bg-gray-100 hover:bg-gray-300 opacity-60';
 
 	// have a custom transition function that returns the desired transition
-	function multiple(node: HTMLElement, params: any) {
+	const multiple = (node: HTMLElement, params: any) => {
 		switch (transitionType) {
 			case 'slide':
 				return slide(node, params);
@@ -51,7 +51,7 @@
 			case 'fade':
 				return fade(node, params);
 		}
-	}
+	};
 	// Slide
 	// export let slideClass: string = 'hidden';
 

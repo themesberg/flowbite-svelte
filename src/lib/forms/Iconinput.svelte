@@ -18,9 +18,9 @@
 		'flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none';
 	export let iconClass: string = 'mr-2';
 
-	function setType(node) {
+	const setType = (node) => {
 		node.type = type;
-	}
+	};
 </script>
 
 {#if noBorder}

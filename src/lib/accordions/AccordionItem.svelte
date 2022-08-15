@@ -6,7 +6,6 @@
 	import { ChevronDown, ChevronUp } from 'svelte-heros';
 
 	export let id: string = '';
-
 	export let slotClass: string = 'p-5 border border-t-0 border-gray-200 dark:border-gray-700';
 	export let isOpen: boolean = false;
 	export let color: boolean = false;
@@ -14,13 +13,10 @@
 		up: ChevronUp,
 		down: ChevronDown
 	};
-
 	export let iconSize: number = 24;
 	export let iconClass: string = 'text-gray-500 sm:w-6 sm:h-6 dark:text-gray-300';
-
 	export let btnClass: string =
 		'flex items-center focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 justify-between p-5 w-full font-medium border border-gray-200 dark:border-gray-700 text-left text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800';
-
 	export let colorClass: string =
 		'focus:ring-blue-200 dark:focus:ring-blue-800  hover:bg-blue-100 text-blue-500 bg-blue-200 text-blue-700';
 

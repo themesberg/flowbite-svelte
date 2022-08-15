@@ -340,37 +340,37 @@ The footer is one of the most underestimated sections of a website being located
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
-<h3>Footer</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Footer</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3>FooterBrand</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>FooterBrand</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<h3>FooterCopyright</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>FooterCopyright</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<h3>FooterIcon</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>FooterIcon</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
-<h3>FooterLink</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>FooterLink</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
-<h3>FooterLinkGroup</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>FooterLinkGroup</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items6} rowState='hover' />

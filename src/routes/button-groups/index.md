@@ -4,18 +4,17 @@ layout: buttongroupLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import {ButtonGroup, ButtonGroupItem, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
-	import { Home, User, Adjustments, CloudDownload } from 'svelte-heros';
-	
+  import { Button, ButtonGroup, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
+  import { Home, User, Adjustments, CloudDownload } from 'svelte-heros';
+
   import componentProps from '../props/ButtonGroup.json'
-  import componentProps2 from '../props/ButtonGroupItem.json'
+
   // Props table
   let items = componentProps.props
-  let items2 = componentProps2.props
-	let propHeader = ['Name', 'Type', 'Default']
-	
-	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  let propHeader = ['Name', 'Type', 'Default']
+
+  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
+  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
 	const handleClick = ()=> {
 		alert('Clicked')
@@ -33,7 +32,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <ExampleDiv>
 <GitHubSource href="buttongroups/ButtonGroup.svelte">ButtonGroup</GitHubSource>
-<GitHubSource href="buttongroups/ButtonGroupItem.svelte">ButtonGroupItem</GitHubSource>
 </ExampleDiv>
 
 The button group component from Flowbite-Svelte can be used to stack together multiple buttons and links inside a single element.
@@ -42,7 +40,7 @@ The button group component from Flowbite-Svelte can be used to stack together mu
 
 ```html
 <script>
-  import { ButtonGroup, ButtonGroupItem } from 'flowbite-svelte';
+  import { ButtonGroup, Button } from 'flowbite-svelte';
   import { User, Adjustments, CloudDownload } from 'svelte-heros';
 </script>
 ```
@@ -53,38 +51,74 @@ Use the following code to stack together buttons into a single group.
 
 <ExampleDiv>
 <ButtonGroup>
-	<ButtonGroupItem>Proflie</ButtonGroupItem>
-	<ButtonGroupItem>Settings</ButtonGroupItem>
-	<ButtonGroupItem>Messages</ButtonGroupItem>
+	<Button>Proflie</Button>
+	<Button>Settings</Button>
+	<Button>Messages</Button>
 </ButtonGroup>
 </ExampleDiv>
 
-
 ```html
 <ButtonGroup>
-	<ButtonGroupItem>Proflie</ButtonGroupItem>
-	<ButtonGroupItem>Settings</ButtonGroupItem>
-	<ButtonGroupItem>Messages</ButtonGroupItem>
+	<Button>Proflie</Button>
+	<Button>Settings</Button>
+	<Button>Messages</Button>
 </ButtonGroup>
 ```
+
+<Htwo label="More examples" />
+
+<ExampleDiv>
+  <div class="grid grid-cols-2 gap-4 w-fit text-gray-900 dark:text-gray-100">
+    <div>Pills</div>
+    <ButtonGroup class="space-x-px">
+      <Button pill color="purple">Proflie</Button>
+      <Button pill color="purple">Settings</Button>
+      <Button pill color="purple">Messages</Button>
+    </ButtonGroup>
+    <div>Standard buttons</div>
+    <ButtonGroup>
+      <Button color="red">Proflie</Button>
+      <Button color="green">Settings</Button>
+      <Button color="yellow">Messages</Button>
+    </ButtonGroup>
+    <div>Outline</div>
+    <ButtonGroup>
+      <Button outline color="red">Proflie</Button>
+      <Button outline color="green">Settings</Button>
+      <Button outline color="yellow">Messages</Button>
+    </ButtonGroup>
+    <div>Gradient with shadows</div>
+    <ButtonGroup>
+      <Button gradient shadow="green" color="green">Proflie</Button>
+      <Button gradient shadow="pink" color="pink">Settings</Button>
+      <Button gradient shadow="teal" color="teal">Messages</Button>
+    </ButtonGroup>
+    <div>Dualtone gradient</div>
+    <ButtonGroup class="space-x-px">
+      <Button gradient color="purpleToBlue">Profile</Button>
+      <Button gradient color="cyanToBlue">Settings</Button>
+      <Button gradient color="greenToBlue">Messages</Button>
+    </ButtonGroup>
+  </div>
+</ExampleDiv>
 
 <Htwo label="Button group as links" />
 
 You can also use the button group component as links.
 
 <ExampleDiv>
-<ButtonGroup>
-	<ButtonGroupItem href="/">Proflie</ButtonGroupItem>
-	<ButtonGroupItem href="/">Settings</ButtonGroupItem>
-	<ButtonGroupItem href="/">Messages</ButtonGroupItem>
-</ButtonGroup>
+	<ButtonGroup>
+		<Button href="/">Proflie</Button>
+		<Button href="/">Settings</Button>
+		<Button href="/">Messages</Button>
+	</ButtonGroup>
 </ExampleDiv>
 
 ```html
 <ButtonGroup>
-	<ButtonGroupItem href="/">Proflie</ButtonGroupItem>
-	<ButtonGroupItem href="/">Settings</ButtonGroupItem>
-	<ButtonGroupItem href="/">Messages</ButtonGroupItem>
+	<Button href="/">Proflie</Button>
+	<Button href="/">Settings</Button>
+	<Button href="/">Messages</Button>
 </ButtonGroup>
 ```
 
@@ -93,37 +127,37 @@ You can also use the button group component as links.
 You can also use SVG icons inside the grouped buttons.
 
 <ExampleDiv>
-<ButtonGroup>
-	<ButtonGroupItem>
-		<User size="18" class="mr-2 text-purple-500 dark:text-green-500" />
-		Proflie</ButtonGroupItem
-	>
-	<ButtonGroupItem>
-		<Adjustments size="18" class="mr-2 text-purple-500 dark:text-green-500" />
-		Settings</ButtonGroupItem
-	>
-	<ButtonGroupItem>
-		<CloudDownload size="18" class="mr-2 text-purple-500 dark:text-green-500" />
-		Messages</ButtonGroupItem
-	>
-</ButtonGroup>
+	<ButtonGroup>
+		<Button>
+			<User size="18" class="mr-2 text-purple-500 dark:text-green-500" />
+			Proflie
+		</Button>
+		<Button>
+			<Adjustments size="18" class="mr-2 text-purple-500 dark:text-green-500" />
+			Settings
+		</Button>
+		<Button>
+			<CloudDownload size="18" class="mr-2 text-purple-500 dark:text-green-500" />
+			Messages
+		</Button>
+	</ButtonGroup>
 </ExampleDiv>
 
 
 ```html
 <ButtonGroup>
-	<ButtonGroupItem>
+	<Button>
 		<User size="18" class="mr-2 text-purple-500 dark:text-green-500" />
-		Proflie</ButtonGroupItem
-	>
-	<ButtonGroupItem>
+		Proflie
+	</Button>
+	<Button>
 		<Adjustments size="18" class="mr-2 text-purple-500 dark:text-green-500" />
-		Settings</ButtonGroupItem
-	>
-	<ButtonGroupItem>
+		Settings
+	</Button>
+	<Button>
 		<CloudDownload size="18" class="mr-2 text-purple-500 dark:text-green-500" />
-		Messages</ButtonGroupItem
-	>
+		Messages
+	</Button>
 </ButtonGroup>
 ```
 
@@ -132,18 +166,18 @@ You can also use SVG icons inside the grouped buttons.
 Group a series of buttons together on a single line or stack them in a vertical column.
 
 <ExampleDiv>
-<ButtonGroup>
-	<ButtonGroupItem outline>Proflie</ButtonGroupItem>
-	<ButtonGroupItem outline>Settings</ButtonGroupItem>
-	<ButtonGroupItem outline>Messages</ButtonGroupItem>
-</ButtonGroup>
+  <ButtonGroup>
+    <Button outline color="dark">Proflie</Button>
+    <Button outline color="dark">Settings</Button>
+    <Button outline color="dark">Messages</Button>
+  </ButtonGroup>
 </ExampleDiv>
 
 ```html
 <ButtonGroup>
-	<ButtonGroupItem outline>Proflie</ButtonGroupItem>
-	<ButtonGroupItem outline>Settings</ButtonGroupItem>
-	<ButtonGroupItem outline>Messages</ButtonGroupItem>
+	<Button outline color="dark">Proflie</Button>
+	<Button outline color="dark">Settings</Button>
+	<Button outline color="dark">Messages</Button>
 </ButtonGroup>
 ```
 
@@ -152,56 +186,56 @@ Group a series of buttons together on a single line or stack them in a vertical 
 Group a series of buttons together on a single line or stack them in a vertical column.
 
 <ExampleDiv>
-<ButtonGroup>
-	<ButtonGroupItem outline>
-		<User size="18" class="mr-2 text-blue-500 dark:text-red-500" />
-		Proflie</ButtonGroupItem
-	>
-	<ButtonGroupItem outline>
-		<Adjustments size="18" class="mr-2 text-blue-500 dark:text-red-500" />
-		Settings</ButtonGroupItem
-	>
-	<ButtonGroupItem outline>
-		<CloudDownload size="18" class="mr-2 text-blue-500 dark:text-red-500" />
-		Messages</ButtonGroupItem
-	>
-</ButtonGroup>
+  <ButtonGroup>
+    <Button outline color="dark">
+      <User size="18" class="mr-2 text-blue-500 dark:text-red-500" />
+      Proflie
+    </Button>
+    <Button outline color="dark">
+      <Adjustments size="18" class="mr-2 text-blue-500 dark:text-red-500" />
+      Settings
+    </Button>
+    <Button outline color="dark">
+      <CloudDownload size="18" class="mr-2 text-blue-500 dark:text-red-500" />
+      Messages
+    </Button>
+  </ButtonGroup>
 </ExampleDiv>
 
 ```html
 <ButtonGroup>
-	<ButtonGroupItem outline>
-		<User size="18" class="mr-2 text-blue-500 dark:text-red-500" />
-		Proflie</ButtonGroupItem
-	>
-	<ButtonGroupItem outline>
-		<Adjustments size="18" class="mr-2 text-blue-500 dark:text-red-500" />
-		Settings</ButtonGroupItem
-	>
-	<ButtonGroupItem outline>
-		<CloudDownload size="18" class="mr-2 text-blue-500 dark:text-red-500" />
-		Messages</ButtonGroupItem
-	>
+  <Button outline color="dark">
+    <User size="18" class="mr-2 text-blue-500 dark:text-red-500" />
+    Proflie
+  </Button>
+  <Button outline color="dark">
+    <Adjustments size="18" class="mr-2 text-blue-500 dark:text-red-500" />
+    Settings
+  </Button>
+  <Button outline color="dark">
+    <CloudDownload size="18" class="mr-2 text-blue-500 dark:text-red-500" />
+    Messages
+  </Button>
 </ButtonGroup>
 ```
 
 <Htwo label="Events" />
 
-You can add the `on:click` event to the `ButtonGroupItem` component.
+You can add the `on:click` event to the `Button` component.
 
 <ExampleDiv>
-<ButtonGroup>
-	<ButtonGroupItem on:click={handleClick}>Click me</ButtonGroupItem>
-	<ButtonGroupItem>Settings</ButtonGroupItem>
-	<ButtonGroupItem>Messages</ButtonGroupItem>
-</ButtonGroup>
+  <ButtonGroup>
+    <Button on:click={handleClick}>Click me</Button>
+    <Button>Settings</Button>
+    <Button>Messages</Button>
+  </ButtonGroup>
 </ExampleDiv>
 
 ```html
 <ButtonGroup>
-	<ButtonGroupItem on:click={handleClick}>Click me</ButtonGroupItem>
-	<ButtonGroupItem>Settings</ButtonGroupItem>
-	<ButtonGroupItem>Messages</ButtonGroupItem>
+	<Button on:click={handleClick}>Click me</Button>
+	<Button>Settings</Button>
+	<Button>Messages</Button>
 </ButtonGroup>
 ```
 
@@ -209,18 +243,11 @@ You can add the `on:click` event to the `ButtonGroupItem` component.
 
 The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
-<h3>ButtonGroup</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>ButtonGroup</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
-
-<h3>ButtonGroupItem</h3>
-
-<TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
-
 
 <Htwo label="Forwarded Events" />
 

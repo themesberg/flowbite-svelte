@@ -20,7 +20,6 @@ export { default as Button } from './buttons/Button.svelte';
 
 // Buttongroups
 export { default as ButtonGroup } from './buttongroups/ButtonGroup.svelte';
-export { default as ButtonGroupItem } from './buttongroups/ButtonGroupItem.svelte';
 
 // Cards
 export { default as Card } from './cards/Card.svelte';
@@ -109,6 +108,8 @@ export { default as Progressbar } from './progressbars/Progressbar.svelte';
 export { default as Rating } from './ratings/Rating.svelte';
 export { default as AdvancedRating } from './ratings/AdvancedRating.svelte';
 export { default as ScoreRating } from './ratings/ScoreRating.svelte';
+export { default as RatingComment } from './ratings/RatingComment.svelte';
+export { default as Review } from './ratings/Review.svelte'
 
 // Sidebar
 export { default as Sidebar } from './sidebars/Sidebar.svelte';

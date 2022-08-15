@@ -32,6 +32,8 @@ layout: dropdownLayout
   const handleClick = ()=>{
     alert ('Clicked.')
   }
+
+  let dropdownOpen = false;
 </script>
 
 <Breadcrumb>
@@ -164,6 +166,42 @@ Use this example to enable multi-level dropdown menus by adding stacked elements
   <DropdownItem>
     <Dropdown label="Dropdown" inline={true} placement="right-start" class="ml-16 w-44">
     <DropdownItem>Overview</DropdownItem>
+    <DropdownItem>My downloads</DropdownItem>
+    <DropdownItem>Billing</DropdownItem>
+    </Dropdown>
+  </DropdownItem>
+  <DropdownItem>Earnings</DropdownItem>
+  <DropdownDivider />
+  <DropdownItem>Sign out</DropdownItem>
+</Dropdown>
+```
+
+<Htwo label="Programatic open/close" />
+
+When you want to control your dropdown open status via javascript code you can bind to `open` property.
+
+<ExampleDiv class="flex justify-center h-64">
+<Dropdown label="Dropdown button" class="w-44" bind:open={dropdownOpen}>
+  <DropdownItem on:click={() => dropdownOpen = false}>Dashboard (close)</DropdownItem>
+  <DropdownItem>
+    <Dropdown label="Dropdown" inline={true} placement="right-start" class="ml-10 md:ml-16 w-44">
+    <DropdownItem on:click={() => dropdownOpen = false}>Overview (close)</DropdownItem>
+    <DropdownItem>My downloads</DropdownItem>
+    <DropdownItem>Billing</DropdownItem>
+    </Dropdown>
+  </DropdownItem>
+  <DropdownItem>Earnings</DropdownItem>
+  <DropdownDivider />
+  <DropdownItem>Sign out</DropdownItem>
+</Dropdown>
+</ExampleDiv>
+
+```html
+<Dropdown label="Dropdown button" class="w-44" bind:open={dropdownOpen}>
+  <DropdownItem on:click={() => dropdownOpen = false}>Dashboard (close)</DropdownItem>
+  <DropdownItem>
+    <Dropdown label="Dropdown" inline={true} placement="right-start" class="ml-10 md:ml-16 w-44">
+    <DropdownItem on:click={() => dropdownOpen = false}>Overview (close)</DropdownItem>
     <DropdownItem>My downloads</DropdownItem>
     <DropdownItem>Billing</DropdownItem>
     </Dropdown>
@@ -1009,25 +1047,25 @@ The `DropdownItem` component has `on:click` event.
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
-<h3>Dropdown</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Dropdown</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={propItems} rowState='hover' />
 </TableProp>
 
-<h3>DropdownDivider</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>DropdownDivider</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={propItems2} rowState='hover' />
 </TableProp>
 
-<h3>DropdownHeader</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>DropdownHeader</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={propItems3} rowState='hover' />
 </TableProp>
 
-<h3>DropdownItem</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>DropdownItem</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={propItems4} rowState='hover' />
@@ -1035,19 +1073,19 @@ The `DropdownItem` component has `on:click` event.
 
 <Htwo label="Slots" />
 
-<h3>Dropdown</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Dropdown</h3>
 
 <TableProp header={slotHeader} {divClass} {theadClass}>
   <TableDefaultRow items={slotItems} rowState='hover' />
 </TableProp>
 
-<h3>DropdownDivider</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>DropdownDivider</h3>
 
 <TableProp header={slotHeader} {divClass} {theadClass}>
   <TableDefaultRow items={slotDropdownHeader} rowState='hover' />
 </TableProp>
 
-<h3>DropdownItem</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>DropdownItem</h3>
 
 <TableProp header={slotHeader} {divClass} {theadClass}>
   <TableDefaultRow items={slotDropdownItem} rowState='hover' />

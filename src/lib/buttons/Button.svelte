@@ -1,13 +1,17 @@
 <script lang="ts">
 	import classNames from 'classnames';
 	import { getContext } from 'svelte';
+	import type { ButtonType } from '../types';
+
+	const group = getContext('group');
 
 	export let pill: boolean = false;
 	export let outline: boolean = false;
 	export let gradient: boolean = false;
-	export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
+	export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = group ? 'sm' : 'md';
 	export let href: string = undefined;
 	export let btnClass: string = undefined;
+	export let type: ButtonType = 'button';
 
 	export let color:
 		| 'alternative'
@@ -28,7 +32,7 @@
 		| 'purpleToPink'
 		| 'pinkToOrange'
 		| 'tealToLime'
-		| 'redToYellow' = 'blue';
+		| 'redToYellow' = group ? (outline ? 'dark' : 'alternative') : 'blue';
 
 	export let shadow:
 		| 'blue'
@@ -42,11 +46,12 @@
 		| null = null;
 
 	const background = getContext('background');
+
 	const colorClasses = {
 		blue: 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800',
-		dark: 'text-white bg-gray-800 hover:bg-gray-900 focus:ring-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700',
+		dark: 'text-white bg-gray-800 hover:bg-gray-900 focus:ring-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700',
 		alternative:
-			'text-gray-900 bg-white border border-gray-200 hover:bg-gray-100 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 hover:text-blue-700 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700',
+			'text-gray-900 bg-white border border-gray-200 dark:border-gray-600 hover:bg-gray-100 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 hover:text-blue-700 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700',
 		light:
 			'text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700',
 		green:
@@ -98,7 +103,7 @@
 
 	const outlineClasses = {
 		blue: 'text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-blue-300 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800',
-		dark: 'text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-gray-300 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800',
+		dark: 'text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-gray-300 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800',
 		green:
 			'text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-green-300 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800',
 		red: 'text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-red-300 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900',
@@ -110,11 +115,24 @@
 
 	const sizeClasses = {
 		xs: 'px-3 py-2 text-xs',
-		sm: 'px-3 py-2 text-sm',
+		sm: 'px-4 py-2 text-sm',
 		md: 'px-5 py-2.5 text-sm',
 		lg: 'px-5 py-3 text-base',
 		xl: 'px-6 py-3.5 text-base'
 	};
+
+	function rounded(gradientOutline: boolean = false) {
+		if (group) {
+			return pill
+				? 'first:rounded-l-full last:rounded-r-full'
+				: gradientOutline
+				? 'first:rounded-l-md last:rounded-r-md'
+				: 'first:rounded-l-lg last:rounded-r-lg';
+		}
+		return pill ? 'rounded-full' : gradientOutline ? 'rounded-md' : 'rounded-lg';
+	}
+
+	const hasBorder = () => outline || color === 'alternative' || color === 'light';
 
 	let buttonClass;
 	$: buttonClass = btnClass
@@ -127,9 +145,15 @@
 				gradient ? gradientClasses[color] : outline ? outlineClasses[color] : colorClasses[color],
 				color === 'alternative' &&
 					(background
-						? 'dark:bg-transparent dark:border-gray-700 dark:hover:border-gray-600'
+						? 'dark:bg-gray-700 dark:text-white dark:border-gray-700 dark:hover:border-gray-600 dark:hover:bg-gray-600'
 						: 'dark:bg-transparent dark:border-gray-800 dark:hover:border-gray-700'),
-				pill ? 'rounded-full' : 'rounded-lg',
+				outline &&
+					color === 'dark' &&
+					(background
+						? 'dark:text-white dark:border-white'
+						: 'dark:text-gray-400 dark:border-gray-700'),
+				hasBorder() && group && 'border-l-0 first:border-l',
+				rounded(false),
 				shadow && coloredShadowClasses[shadow],
 				$$props.disabled && 'cursor-not-allowed opacity-50',
 				$$props.class
@@ -139,7 +163,7 @@
 	$: gradientOutlineClass = classNames(
 		'inline-flex items-center justify-center',
 		sizeClasses[size],
-		pill ? 'rounded-full' : 'rounded-md',
+		rounded(true),
 		'bg-white text-gray-900 dark:bg-gray-900 dark:text-white', // this is limitation - no transparency
 		'transition-all duration-75 ease-in group-hover:bg-opacity-0 group-hover:text-inherit'
 	);
@@ -147,7 +171,8 @@
 
 <svelte:element
 	this={href ? 'a' : 'button'}
-	type={href ? undefined : 'button'}
+	type={href ? undefined : type}
+	{href}
 	{...$$restProps}
 	class={buttonClass}
 	on:click

@@ -29,11 +29,11 @@
 		full && $$slots.extra && 'md:w-2/3'
 	);
 
-	function init(node: HTMLElement) {
+	const init = (node: HTMLElement) => {
 		if (full) {
 			node.parentElement.classList.add('inset-x-0');
 		}
-	}
+	};
 </script>
 
 <div class={wrapperClass} use:init>

@@ -207,7 +207,7 @@ The component has the following props, type, and default values. See <a href="/p
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3>Helper</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Helper</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
 <TableDefaultRow items={items2} rowState='hover' />

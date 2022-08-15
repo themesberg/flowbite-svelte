@@ -86,13 +86,13 @@ You can alternatively also use the breadcrumb components with a solid background
 
 The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
-<h3>Breadcrumb</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Breadcrumb</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3>BreadcrumbItem</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>BreadcrumbItem</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
