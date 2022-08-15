@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.24.11](https://github.com/themesberg/flowbite-svelte/compare/v0.24.10...v0.24.11) (2022-08-15)
+
+
+### Features
+
+* add sticky footer, add $$props.class to all skeleton components ([1fad8dc](https://github.com/themesberg/flowbite-svelte/commit/1fad8dc9d8c0bc1428daeada82f44accc5f7e9a0))
+
 ### [0.24.10](https://github.com/themesberg/flowbite-svelte/compare/v0.24.9...v0.24.10) (2022-08-15)
 
 
