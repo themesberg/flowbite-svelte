@@ -4,7 +4,7 @@ layout: footerLayout
 
 <script>
   import {Htwo,ExampleDiv,Facebook, Github, GitHubSource,CompoDescription,Instagram, TableProp, TableDefaultRow, Twitter} from '../utils'
-  import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup, Breadcrumb, BreadcrumbItem } from '$lib'
+  import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup, Skeleton, ImagePlaceholder,	TextPlaceholder,Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros'
   
   import componentProps from '../props/Footer.json'
@@ -334,6 +334,49 @@ The footer is one of the most underestimated sections of a website being located
   </div>
 </Footer>
 ```
+
+<Htwo label="Sticky footer " />
+
+Use this example to set create a sticky footer by using a fixed position to the bottom of the document page as the user scrolls up or down the main content area.
+
+
+<ExampleDiv class="relative">
+	<div style="height:300px;" class="overflow-scroll pb-16">
+		<Skeleton class="my-8" />
+		<ImagePlaceholder class="my-8" />
+		<TextPlaceholder class="my-8" />
+	</div>
+	<Footer class="absolute bottom-0 left-0 z-20 w-full">
+		<FooterCopyright href="/" by="Flowbite™" year={2022} />
+		<FooterLinkGroup
+			ulClass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"
+		>
+			<FooterLink href="/">About</FooterLink>
+			<FooterLink href="/">Privacy Policy</FooterLink>
+			<FooterLink href="/">Licensing</FooterLink>
+			<FooterLink href="/">Contact</FooterLink>
+		</FooterLinkGroup>
+	</Footer>
+</ExampleDiv>
+
+```html
+<div style="height:300px;" class="overflow-scroll pb-16">
+  <Skeleton class="my-8" />
+  <ImagePlaceholder />
+  <TextPlaceholder />
+</div>
+<Footer class="absolute bottom-0 left-0 z-20 w-full">
+  <FooterCopyright href="/" by="Flowbite™" year={2022} />
+  <FooterLinkGroup
+    ulClass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"
+  >
+    <FooterLink href="/">About</FooterLink>
+    <FooterLink href="/">Privacy Policy</FooterLink>
+    <FooterLink href="/">Licensing</FooterLink>
+    <FooterLink href="/">Contact</FooterLink>
+  </FooterLinkGroup>
+</Footer>
+````
 
 <Htwo label="Props" />
 

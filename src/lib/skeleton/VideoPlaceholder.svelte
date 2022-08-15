@@ -1,11 +1,11 @@
 <script lang="ts">
+	import classNames from 'classnames';
+	export let divClass: string =
+		'flex justify-center items-center max-w-sm h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700';
 	export let size: string = '48';
 </script>
 
-<div
-	role="status"
-	class="flex justify-center items-center max-w-sm h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700"
->
+<div role="status" class={classNames(divClass, $$props.class)}>
 	<svg
 		width={size}
 		height={size}

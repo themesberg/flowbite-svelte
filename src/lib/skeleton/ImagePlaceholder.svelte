@@ -1,11 +1,11 @@
 <script lang="ts">
+	import classNames from 'classnames';
+	export let divClass: string =
+		'space-y-8 animate-pulse md:space-y-0 md:space-x-8 md:flex md:items-center';
 	export let size: string = '48';
 </script>
 
-<div
-	role="status"
-	class="space-y-8 animate-pulse md:space-y-0 md:space-x-8 md:flex md:items-center"
->
+<div role="status" class={classNames(divClass, $$props.class)}>
 	<div
 		class="flex justify-center items-center w-full h-48 bg-gray-300 rounded sm:w-96 dark:bg-gray-700"
 	>

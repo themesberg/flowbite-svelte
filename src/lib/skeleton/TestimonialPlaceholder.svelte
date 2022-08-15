@@ -1,4 +1,9 @@
-<div role="status" class="animate-pulse">
+<script lang="ts">
+	import classNames from 'classnames';
+	export let divClass: string = 'animate-pulse';
+</script>
+
+<div role="status" class={classNames(divClass, $$props.class)}>
 	<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 max-w-[640px] mb-2.5 mx-auto" />
 	<div class="h-2.5 mx-auto bg-gray-300 rounded-full dark:bg-gray-700 max-w-[540px]" />
 	<div class="flex justify-center items-center mt-4">
