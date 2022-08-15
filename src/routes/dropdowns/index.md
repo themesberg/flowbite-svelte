@@ -32,6 +32,8 @@ layout: dropdownLayout
   const handleClick = ()=>{
     alert ('Clicked.')
   }
+
+  let dropdownOpen = false;
 </script>
 
 <Breadcrumb>
@@ -164,6 +166,42 @@ Use this example to enable multi-level dropdown menus by adding stacked elements
   <DropdownItem>
     <Dropdown label="Dropdown" inline={true} placement="right-start" class="ml-16 w-44">
     <DropdownItem>Overview</DropdownItem>
+    <DropdownItem>My downloads</DropdownItem>
+    <DropdownItem>Billing</DropdownItem>
+    </Dropdown>
+  </DropdownItem>
+  <DropdownItem>Earnings</DropdownItem>
+  <DropdownDivider />
+  <DropdownItem>Sign out</DropdownItem>
+</Dropdown>
+```
+
+<Htwo label="Programatic open/close" />
+
+When you want to control your dropdown open status via javascript code you can bind to `open` property.
+
+<ExampleDiv class="flex justify-center h-64">
+<Dropdown label="Dropdown button" class="w-44" bind:open={dropdownOpen}>
+  <DropdownItem on:click={() => dropdownOpen = false}>Dashboard (close)</DropdownItem>
+  <DropdownItem>
+    <Dropdown label="Dropdown" inline={true} placement="right-start" class="ml-10 md:ml-16 w-44">
+    <DropdownItem on:click={() => dropdownOpen = false}>Overview (close)</DropdownItem>
+    <DropdownItem>My downloads</DropdownItem>
+    <DropdownItem>Billing</DropdownItem>
+    </Dropdown>
+  </DropdownItem>
+  <DropdownItem>Earnings</DropdownItem>
+  <DropdownDivider />
+  <DropdownItem>Sign out</DropdownItem>
+</Dropdown>
+</ExampleDiv>
+
+```html
+<Dropdown label="Dropdown button" class="w-44" bind:open={dropdownOpen}>
+  <DropdownItem on:click={() => dropdownOpen = false}>Dashboard (close)</DropdownItem>
+  <DropdownItem>
+    <Dropdown label="Dropdown" inline={true} placement="right-start" class="ml-10 md:ml-16 w-44">
+    <DropdownItem on:click={() => dropdownOpen = false}>Overview (close)</DropdownItem>
     <DropdownItem>My downloads</DropdownItem>
     <DropdownItem>Billing</DropdownItem>
     </Dropdown>
