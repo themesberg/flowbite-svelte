@@ -5,8 +5,13 @@ layout: modalLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Button, Checkbox, Modal, Label, Input, Breadcrumb, BreadcrumbItem } from '$lib'
-  import { Home } from 'svelte-heros';
+  import { Home, QuestionMarkCircle } from 'svelte-heros';
   import { goto } from "$app/navigation";
+  import Metamask from "./Metamask.svelte"
+  import Coinbase from "./Coinbase.svelte"
+  import Fortmatic from "./Fortmatic.svelte"
+  import OperaWallet from "./OperaWallet.svelte"
+  import WalletConnect from "./WalletConnect.svelte"
 
   import componentProps1 from '../props/Modal.json'
 
@@ -21,6 +26,7 @@ layout: modalLayout
   let defaultModal = false;
   let popupModal = false;
   let formModal = false;
+  let walletModal = false;
   let size;
   let sizesModal = false;
   let placement;
@@ -187,6 +193,107 @@ Use this modal example with form input element to receive information from your 
 			Not registered? <a href="/" class="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
 		</div>
 	</form>
+</Modal>
+```
+
+<Htwo label="Crypto wallet" />
+
+Use this web3 modal component to show crypto wallet connection options like MetaMask or WalletConnect when building a website based on NFT authentication and collectibles.
+
+<ExampleDiv>
+<Button on:click={() => walletModal = true}>Crypto wallet modal</Button>
+<Modal title="Connect wallet"  bind:open={walletModal} size="xs" padding="xs">
+  <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Connect with one of our available wallet providers or create a new one.</p>
+  <ul class="my-4 space-y-3">
+    <li>
+        <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+            <Metamask />
+            <span class="flex-1 ml-3 whitespace-nowrap">MetaMask</span>
+            <span class="inline-flex items-center justify-center px-2 py-0.5 ml-3 text-xs font-medium text-gray-500 bg-gray-200 rounded dark:bg-gray-700 dark:text-gray-400">Popular</span>
+        </a>
+    </li>
+    <li>
+        <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+            <Coinbase />
+            <span class="flex-1 ml-3 whitespace-nowrap">Coinbase Wallet</span>
+        </a>
+    </li>
+    <li>
+        <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+            <OperaWallet />
+            <span class="flex-1 ml-3 whitespace-nowrap">Opera Wallet</span>
+        </a>
+    </li>
+    <li>
+        <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+            <WalletConnect />
+            <span class="flex-1 ml-3 whitespace-nowrap">WalletConnect</span>
+        </a>
+    </li>
+    <li>
+        <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+            <Fortmatic />
+            <span class="flex-1 ml-3 whitespace-nowrap">Fortmatic</span>
+        </a>
+    </li>
+  </ul>
+  <div>
+      <a href="/" class="inline-flex items-center text-xs font-normal text-gray-500 hover:underline dark:text-gray-400">
+          <QuestionMarkCircle size=14 class="mr-2"/>Why do I need to connect with my wallet?</a>
+  </div>
+</Modal>
+</ExampleDiv>
+
+```html
+<script>
+  let walletModal = false
+  import Metamask from "./Metamask.svelte"
+  import Coinbase from "./Coinbase.svelte"
+  import Fortmatic from "./Fortmatic.svelte"
+  import OperaWallet from "./OperaWallet.svelte"
+  import WalletConnect from "./WalletConnect.svelte"
+</script>
+
+<Button on:click={() => walletModal = true}>Crypto wallet modal</Button>
+<Modal title="Connect wallet"  bind:open={walletModal} size="xs" padding="xs">
+  <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Connect with one of our available wallet providers or create a new one.</p>
+  <ul class="my-4 space-y-3">
+    <li>
+        <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+            <Metamask />
+            <span class="flex-1 ml-3 whitespace-nowrap">MetaMask</span>
+            <span class="inline-flex items-center justify-center px-2 py-0.5 ml-3 text-xs font-medium text-gray-500 bg-gray-200 rounded dark:bg-gray-700 dark:text-gray-400">Popular</span>
+        </a>
+    </li>
+    <li>
+        <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+            <Coinbase />
+            <span class="flex-1 ml-3 whitespace-nowrap">Coinbase Wallet</span>
+        </a>
+    </li>
+    <li>
+        <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+            <OperaWallet />
+            <span class="flex-1 ml-3 whitespace-nowrap">Opera Wallet</span>
+        </a>
+    </li>
+    <li>
+        <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+            <WalletConnect />
+            <span class="flex-1 ml-3 whitespace-nowrap">WalletConnect</span>
+        </a>
+    </li>
+    <li>
+        <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+            <Fortmatic />
+            <span class="flex-1 ml-3 whitespace-nowrap">Fortmatic</span>
+        </a>
+    </li>
+  </ul>
+  <div>
+      <a href="/" class="inline-flex items-center text-xs font-normal text-gray-500 hover:underline dark:text-gray-400">
+          <QuestionMarkCircle size=14 class="mr-2"/>Why do I need to connect with my wallet?</a>
+  </div>
 </Modal>
 ```
 
