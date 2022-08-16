@@ -6,6 +6,10 @@
 	export let tabs: TabHeadType[];
 	export let tabId: string = 'myTab';
 	export let activeTabValue: number = 1;
+	export let disabled: boolean = false;
+	export let divClass: string = 'mb-4 border-b border-gray-200';
+	export let ulClass: string = 'flex flex-wrap -mb-px text-sm font-medium text-center';
+	export let liClass: string = 'mr-2';
 	export let btnClass: string =
 		'inline-block py-4 px-4 text-sm font-medium text-center rounded-t-lg border-b-2 border-transparent';
 	export let activeClass: string =
@@ -36,15 +40,10 @@ Header part of Interactive tab component. Use with TabContent.
   </InteractiveHead>
   ```
   -->
-<div class="mb-4 border-b border-gray-200">
-	<ul
-		class="flex flex-wrap -mb-px text-sm font-medium text-center"
-		id={tabId}
-		data-tabs-toggle="#myTabContent"
-		role="tablist"
-	>
+<div class={divClass}>
+	<ul class={ulClass} id={tabId} data-tabs-toggle="#myTabContent" role="tablist">
 		{#each tabs as { name, id }}
-			<li class="mr-2" role="presentation">
+			<li class={liClass} role="presentation">
 				<button
 					on:click={handleClick(id)}
 					class={classNames(btnClass, activeTabValue === id ? activeClass : inactiveClasses)}
@@ -62,7 +61,8 @@ Header part of Interactive tab component. Use with TabContent.
 					on:keyup
 					on:mouseenter
 					on:mouseleave
-					on:mouseover>{name}</button
+					on:mouseover
+					{disabled}>{name}</button
 				>
 			</li>
 		{/each}
