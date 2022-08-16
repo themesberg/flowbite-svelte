@@ -86,7 +86,7 @@
 	<ul class={ulClasses[tabStyle]} id={tabId} role="tablist">
 		{#each tabs as { name, id, disabled, icon, iconSize }}
 			<li class={liClasses[tabStyle]} role="presentation">
-				<a
+				<button
 					on:click={handleClick(id)}
 					on:blur
 					on:click
@@ -109,7 +109,7 @@
 					{#if icon}
 						<svelte:component this={icon} size={iconSize} class={iconClass} />
 					{/if}
-					{name}</a
+					{name}</button
 				>
 			</li>
 		{/each}
