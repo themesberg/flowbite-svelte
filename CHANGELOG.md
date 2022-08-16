@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.24.15](https://github.com/themesberg/flowbite-svelte/compare/v0.24.14...v0.24.15) (2022-08-16)
+
+
+### Bug Fixes
+
+* update prop names for Alert ([3775700](https://github.com/themesberg/flowbite-svelte/commit/377570061f48de43af44c5f87f46b049f4d87341))
+
 ### [0.24.14](https://github.com/themesberg/flowbite-svelte/compare/v0.24.13...v0.24.14) (2022-08-16)
 
 
