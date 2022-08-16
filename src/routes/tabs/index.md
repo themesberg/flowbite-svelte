@@ -505,7 +505,7 @@ Use the dynamic tabs component to interactively show and hide the content below 
 
 <Htwo label="Interactive tabs 2" />
 
-It is possible to add other components to the `InteractiveTabs` component but using `InteractiveTabHead` and `TabContent` make it easy to add other components to tabs. Here we are adding a timeline component in the tab 1:
+By using `InteractiveTabHead` and `TabContent` you can add other components to the `InteractiveTabs` component. Here we are adding a timeline component in the tab 1:
 
 <ExampleDiv>
   <InteractiveTabHead tabs={tabhead}>
@@ -514,12 +514,12 @@ It is possible to add other components to the `InteractiveTabs` component but us
         <TimelineItem {timelineItems} />
       </Timeline>
     </TabContent>
-	<TabContent tab={tab2}>
-    <p>Test 2 content here</p>
-  </TabContent>
-	<TabContent tab={tab3}>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.</p>
-  </TabContent>
+    <TabContent tab={tab2}>
+      <p>Test 2 content here</p>
+    </TabContent>
+    <TabContent tab={tab3}>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio.</p>
+    </TabContent>
 </InteractiveTabHead>
 </ExampleDiv>
 
