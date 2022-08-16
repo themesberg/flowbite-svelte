@@ -154,6 +154,7 @@ export type InputType = 'color' | 'date' | 'datetime-local' | 'email' | 'file' |
 export interface InteractiveTabType {
 	name: string;
 	id: number;
+	disabled: boolean,
 	content: string | typeof SvelteComponent;
 }
 

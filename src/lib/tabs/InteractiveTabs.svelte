@@ -17,7 +17,7 @@
 
 <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
 	<ul class="flex flex-wrap -mb-px" id={tabId} role="tablist">
-		{#each tabs as { name, id }}
+		{#each tabs as { name, id, disabled }}
 			<li class="mr-2" role="presentation">
 				<button
 					on:click={handleClick(id)}
@@ -34,7 +34,8 @@
 					id="{name}-tab"
 					type="button"
 					role="tab"
-					aria-controls={name}>{name}</button
+					aria-controls={name}
+					{disabled}>{name}</button
 				>
 			</li>
 		{/each}
