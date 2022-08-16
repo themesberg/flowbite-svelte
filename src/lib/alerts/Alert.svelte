@@ -14,9 +14,9 @@
 	export let dismissable: boolean = false;
 	export let rounded: boolean = true;
 	export let accent: boolean = false;
-	export let customBgClasses: string = '';
-	export let customBorderAccentClasses: string = '';
-	export let customTextColors: string = '';
+	export let customBgClass: string = '';
+	export let customBorderAccentClass: string = '';
+	export let customTextColor: string = '';
 
 	let hidden = false;
 
@@ -38,7 +38,7 @@
 		pink: 'bg-pink-100 dark:bg-pink-200 ',
 		blue: 'bg-blue-100 dark:bg-blue-200 ',
 		dark: 'bg-gray-100 dark:bg-gray-700',
-		custom: customBgClasses
+		custom: customBgClass
 	};
 
 	const borderAccentClasses = {
@@ -51,7 +51,7 @@
 		pink: 'border-pink-500 dark:bg-pink-200 ',
 		blue: 'border-blue-500 dark:bg-blue-200 ',
 		dark: 'border-gray-500',
-		custom: customBorderAccentClasses
+		custom: customBorderAccentClass
 	};
 
 	const textColors = {
@@ -64,7 +64,7 @@
 		pink: 'text-pink-700 dark:text-pink-800',
 		blue: 'text-blue-700 dark:text-blue-800',
 		dark: 'text-gray-700  dark:text-gray-300',
-		custom: customTextColors
+		custom: customTextColor
 	};
 
 	let divClass: string;
