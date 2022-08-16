@@ -1,1 +1,1 @@
-{"props":[["spanClass","string ","'text-sm text-gray-500 sm:text-center dark:text-gray-400'"],["aClass","string ","'hover:underline'"],["year","number ","new Date().getFullYear()"],["href","string ","''"],["by","string ","''"]]}
+{"props":[["spanClass","string ","'block text-sm text-gray-500 sm:text-center dark:text-gray-400'"],["aClass","string ","'hover:underline'"],["year","number ","new Date().getFullYear()"],["href","string ","''"],["by","string ","''"]]}

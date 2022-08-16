@@ -7,6 +7,19 @@ layout: skeletonLayout
   import { CardPlaceholder, ImagePlaceholder, ListPlaceholder, Skeleton, TestimonialPlaceholder, TextPlaceholder, VideoPlaceholder, WidgetPlaceholder, Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros'
 
+  import componentProps from '../props/ListPlaceholder.json'
+  import componentProps2 from '../props/Skeleton.json'
+  import componentProps3 from '../props/TestimonialPlaceholder.json'
+  import componentProps4 from '../props/TextPlaceholder.json'
+  import componentProps5 from '../props/WidgetPlaceholder.json'
+
+  let items = componentProps.props
+  let items2 = componentProps2.props
+  let items3 = componentProps3.props
+  let items4 = componentProps4.props
+  let items5 = componentProps5.props
+
+  let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 </script>
@@ -120,3 +133,38 @@ Use the skeleton component to indicate a loading status with placeholder element
 ```html
 <TestimonialPlaceholder />
 ```
+
+
+<Htwo label="Props" />
+
+The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
+
+<h3 class='text-xl w-full dark:text-white py-4'>ListPlaceholder</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow {items} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>Skeleton</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items2} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>TestimonialPlaceholder</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items3} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>TextPlaceholder</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items4} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>WidgetPlaceholder</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items5} rowState='hover' />
+</TableProp>
