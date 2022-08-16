@@ -82,6 +82,35 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 		}
 	];
 
+  let disabledTabs = [
+		{
+			name: 'Profile',
+			id: 1,
+			content:
+				'1-1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+		},
+		{
+			name: 'Dashboard',
+			id: 2,
+			content:
+				'1-2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+		},
+		{
+			name: 'Disabled 1',
+			id: 3,
+      disabled: true,
+			content:
+				'1-3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+		},
+		{
+			name: 'Disabled 2',
+			id: 4,
+      disabled: true,
+			content:
+				'1-4Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+		}
+	];
+
 	let tab1 = { name: 'Tab1', id: 1 };
 	let tab2 = { name: 'Tab2', id: 2 };
 	let tab3 = { name: 'Tab3', id: 3 };
@@ -105,6 +134,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 			text: 'Consectetur adipiscing elit...'
 		}
 	];
+  
 </script>
 
 <Breadcrumb>
@@ -143,30 +173,28 @@ Use the following default tabs component example to show a list of links that th
 
 ```html
 <script>
-  import { DefaultTabs } from "flowbite-svelte";
-  let tabs1 = [
+  import { let tabs1 = [
 		{
-			name: 'Profile-1',
+			name: 'Profile5',
 			id: 1,
 			content:
 				'1-1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
 		},
 		{
-			name: 'Dashboard-1',
+			name: 'Dashboard',
 			id: 2,
 			content:
 				'1-2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
 		},
 		{
-			name: 'Settings-1',
+			name: 'Settings',
 			id: 3,
 			content:
 				'1-3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
 		},
 		{
-			name: 'Disabled',
+			name: 'Users',
 			id: 4,
-			disabled: true,
 			content:
 				'1-4Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
 		}
@@ -222,6 +250,49 @@ If you want to show the tabs on the full width relative to the parent element yo
 
 ```html
 <Tabs tabId="fullTab" tabs={tabs1} tabStyle="full" />
+```
+
+<Htwo label="Disabled tabs" />
+
+Use `disabled: true` to disable a tab.
+
+<ExampleDiv>
+	<Tabs tabId="disabledTabs" tabs={disabledTabs} />
+</ExampleDiv>
+
+```html
+<script>
+  let disabledTabs = [
+		{
+			name: 'Profile',
+			id: 1,
+			content:
+				'1-1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+		},
+		{
+			name: 'Dashboard',
+			id: 2,
+			content:
+				'1-2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+		},
+		{
+			name: 'Disabled 1',
+			id: 3,
+      disabled: true,
+			content:
+				'1-3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+		},
+		{
+			name: 'Disabled 2',
+			id: 4,
+      disabled: true,
+			content:
+				'1-4Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+		}
+	];
+</script>
+
+<Tabs tabId="disabledTabs" tabs={disabledTabs} />
 ```
 
 <Htwo label="Components in tab contents" />
