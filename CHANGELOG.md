@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.24.13](https://github.com/themesberg/flowbite-svelte/compare/v0.24.12...v0.24.13) (2022-08-16)
+
+
+### Features
+
+* add disabled to InteractiveTabs ([f5ca0fe](https://github.com/themesberg/flowbite-svelte/commit/f5ca0fe858a50ef2c017ed6ec266c0012166b5f9))
+* add Tabs component for all tab ([758e2e7](https://github.com/themesberg/flowbite-svelte/commit/758e2e743eb845c7190a7c6c2a9888c67c46db73))
+
 ### [0.24.12](https://github.com/themesberg/flowbite-svelte/compare/v0.24.11...v0.24.12) (2022-08-16)
 
 
