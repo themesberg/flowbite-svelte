@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.24.14](https://github.com/themesberg/flowbite-svelte/compare/v0.24.13...v0.24.14) (2022-08-16)
+
+
+### Features
+
+* add custom color to Alert component and update props ([2e2a71b](https://github.com/themesberg/flowbite-svelte/commit/2e2a71b4fb83bca28a1bf6b107f4163acbb6b011))
+
 ### [0.24.13](https://github.com/themesberg/flowbite-svelte/compare/v0.24.12...v0.24.13) (2022-08-16)
 
 
