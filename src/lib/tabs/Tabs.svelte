@@ -21,11 +21,11 @@
 
 	const divClasses = {
 		default: 'mb-4 border-b border-gray-200 dark:border-gray-700',
-		full: ' ',
-		icon: 'border-b border-gray-200 dark:border-gray-700',
-		pill: ' ',
+		full: 'mb-4',
+		icon: 'mb-4 border-b border-gray-200 dark:border-gray-700',
+		pill: 'mb-4 ',
 		underline:
-			'text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700',
+			'mb-4 text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700',
 		custom: customDivClass
 	};
 
@@ -73,7 +73,7 @@
 </script>
 
 {#if tabStyle === 'full'}
-	<div class="sm:hidden mb-4">
+	<div class="sm:hidden">
 		<label for="tabs" class="sr-only">{tabLabel}</label>
 		<select id="tabs" class={fullSelectClass}>
 			{#each tabs as { name }}
