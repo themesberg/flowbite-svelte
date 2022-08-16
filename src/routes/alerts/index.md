@@ -287,6 +287,16 @@ The following alert components can be used if you wish to disclose more informat
 </Alert>
 ```
 
+<Htwo label="Custom color" />
+
+Use `color='custom'` to indicate using your custom color. Then use `customBgClass`, `customBorderAccentClass`, and `customTextColor` to add your custom colors.
+
+```html
+<Alert color='custom' customBgClass='your-bg-css' customTextColor='your-text-css'>
+  Your content
+</Alert>
+```
+
 <Htwo label="Events" />
 
 Use the `handleAlert` event with `dismissable` prop.
