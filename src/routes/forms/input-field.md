@@ -6,7 +6,7 @@ layout: formLayout
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { onMount } from 'svelte';
   import { Input, Label, Helper, Iconinput, Button, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
-  import { Home, AtSymbol , Mail, Search } from 'svelte-heros'
+  import { Home, AtSymbol , Mail, Search, Eye, EyeOff } from 'svelte-heros'
 
   import componentProps1 from '../props/Input.json'
   let items1 = componentProps1.props
@@ -15,6 +15,9 @@ layout: formLayout
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  // Iconinput event handler
+	let show = false;
+	$: toggleIcon = show ? Eye : EyeOff;
 </script>
 
 <Breadcrumb>
@@ -275,6 +278,40 @@ With the Iconinput component, you can add <a href="https://flowbite-svelte.verce
     iconClass="mr-2 dark:text-red-500"
     size="lg"
   />
+</div>
+```
+
+<Htwo label="Iconinput click handler" />
+
+This example shows how to add `on:click` event handler to `Iconinput`. By clicking an icon, it toggles icon and `type`:
+
+<ExampleDiv>
+<div class="mb-6">
+	<Label for="website-admin" class="block mb-2">Your password</Label>
+	<Iconinput
+		on:click={() => (show = !show)}
+		placeholder="Your password here"
+		icon={toggleIcon}
+		type={show ? 'text' : 'password'}
+		iconClass="dark:text-red-500"
+	/>
+</div>
+</ExampleDiv>
+
+```html
+<script>
+  let show = false;
+	$: toggleIcon = show ? Eye : EyeOff;
+</script>
+<div class="mb-6">
+	<Label for="website-admin" class="block mb-2">Your password</Label>
+	<Iconinput
+		on:click={() => (show = !show)}
+		placeholder="Your password here"
+		icon={toggleIcon}
+		type={show ? 'text' : 'password'}
+		iconClass="dark:text-red-500"
+	/>
 </div>
 ```
 

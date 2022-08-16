@@ -34,6 +34,7 @@
 		>
 			<svelte:component
 				this={icon}
+				on:click
 				size={classNames({
 					16: size === 'sm',
 					18: size === 'md',
@@ -62,6 +63,7 @@
 		<span class={spanClass}>
 			<svelte:component
 				this={icon}
+				on:click
 				size={classNames({
 					16: size === 'sm',
 					18: size === 'md',
