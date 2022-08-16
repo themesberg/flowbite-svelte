@@ -4,7 +4,7 @@ layout: navbarLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Button, Dropdown, DropdownItem, DropdownHeader, DropdownDivider, Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Input, Badge } from '$lib';
+  import { Breadcrumb, BreadcrumbItem, Button, Dropdown, DropdownItem, DropdownHeader, DropdownDivider, Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Input, Badge, Skeleton, ImagePlaceholder, TextPlaceholder } from '$lib';
 	import { Search , Home} from 'svelte-heros'
 	
   import componentProps from '../props/Navbar.json'
@@ -335,6 +335,80 @@ Use the following navbar element to show a call to action button alongside the l
 		<NavLi href="/contact">Contact</NavLi>
 	</NavUl>
 </Navbar>
+```
+
+<Htwo label="Sticky navbar" />
+
+Use this example to keep the navbar positioned fixed to the top side as you scroll down the document page.
+
+<ExampleDiv class="h-80">
+	<div class="relative px-8">
+		<Navbar
+			navClass="bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-800 absolute w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600"
+			let:hidden
+			let:toggle
+			rounded={true}
+		>
+			<NavBrand href="/">
+				<img
+					src="https://flowbite.com/docs/images/logo.svg"
+					class="mr-3 h-6 sm:h-9"
+					alt="Flowbite Logo"
+				/>
+				<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+					Flowbite
+				</span>
+			</NavBrand>
+			<NavHamburger on:click={toggle} />
+			<NavUl {hidden}>
+				<NavLi href="/" active={true}>Home</NavLi>
+				<NavLi href="/about">About</NavLi>
+				<NavLi href="/services">Services</NavLi>
+				<NavLi href="/pricing">Pricing</NavLi>
+				<NavLi href="/contact">Contact</NavLi>
+			</NavUl>
+		</Navbar>
+		<div style="height:300px;" class="overflow-scroll pb-16">
+			<Skeleton class="mt-16 mb-8" />
+			<ImagePlaceholder class="my-8" />
+			<TextPlaceholder class="my-8" />
+		</div>
+	</div>
+</ExampleDiv>
+
+```html
+<div class="relative px-8">
+	<Navbar
+		navClass="bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-800 absolute w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600"
+		let:hidden
+		let:toggle
+		rounded={true}
+	>
+		<NavBrand href="/">
+			<img
+				src="https://flowbite.com/docs/images/logo.svg"
+				class="mr-3 h-6 sm:h-9"
+				alt="Flowbite Logo"
+			/>
+			<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+				Flowbite
+			</span>
+		</NavBrand>
+		<NavHamburger on:click={toggle} />
+		<NavUl {hidden}>
+			<NavLi href="/" active={true}>Home</NavLi>
+			<NavLi href="/about">About</NavLi>
+			<NavLi href="/services">Services</NavLi>
+			<NavLi href="/pricing">Pricing</NavLi>
+			<NavLi href="/contact">Contact</NavLi>
+		</NavUl>
+	</Navbar>
+	<div style="height:300px;" class="overflow-scroll pb-16">
+		<Skeleton class="mt-16 mb-8" />
+		<ImagePlaceholder class="my-8" />
+		<TextPlaceholder class="my-8" />
+	</div>
+</div>
 ```
 
 <Htwo label="Props" />
