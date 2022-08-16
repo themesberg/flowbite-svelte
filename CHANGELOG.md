@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.24.18](https://github.com/themesberg/flowbite-svelte/compare/v0.24.17...v0.24.18) (2022-08-16)
+
+
+### Features
+
+* add Iconinput click handler example ([d815212](https://github.com/themesberg/flowbite-svelte/commit/d8152126236e839d3d7bc6e035d0afa432d96856))
+
 ### [0.24.17](https://github.com/themesberg/flowbite-svelte/compare/v0.24.16...v0.24.17) (2022-08-16)
 
 
