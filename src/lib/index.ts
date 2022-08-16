@@ -144,6 +144,7 @@ export { default as TableHeadCell } from './tables/TableHeadCell.svelte'
 export { default as TableSearch } from './tables/TableSearch.svelte';
 
 // Tabs
+export { default as Tabs } from './tabs/Tabs.svelte'
 export { tabStore } from './tabs/tabStores.js';
 export { default as InteractiveTabHead } from './tabs/InteractiveTabHead.svelte';
 export { default as InteractiveTabs } from './tabs/InteractiveTabs.svelte';

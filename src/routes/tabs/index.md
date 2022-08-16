@@ -4,198 +4,89 @@ layout: tabLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { DefaultTabs, UnderlineTabs, IconTabs, PillTabs, FullWidthTabs, InteractiveTabs, InteractiveTabHead, TabContent, Timeline, TimelineItem, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
+  import { Tabs, InteractiveTabHead, TabContent, Timeline, TimelineItem, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
   import { Home, UserCircle, ViewGrid, Adjustments, ClipboardList } from 'svelte-heros';
   
-  import componentProps from '../props/DefaultTabs.json'
-	import componentProps2 from '../props/UnderlineTabs.json'
-	import componentProps3 from '../props/IconTabs.json'
-	import componentProps4 from '../props/PillTabs.json'
-	import componentProps5 from '../props/FullWidthTabs.json'
-	import componentProps6 from '../props/InteractiveTabs.json'
-	import componentProps7 from '../props/InteractiveTabHead.json'
-  import componentProps8 from '../props/TabContent.json'
+  import componentProps from '../props/Tabs.json'
+	import componentProps2 from '../props/InteractiveTabHead.json'
+  import componentProps3 from '../props/TabContent.json'
   // Props table
   let items = componentProps.props
 	let items2 = componentProps2.props
 	let items3 = componentProps3.props
-	let items4 = componentProps4.props
-	let items5 = componentProps5.props
-	let items6 = componentProps6.props
-	let items7 = componentProps7.props
-	let items8 = componentProps8.props
 	let propHeader = ['Name', 'Type', 'Default']
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
 let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
-  export let tabs = [
-    {
-      name: "Profile",
-      active: true,
-      href: "/#",
-      rel: undefined,
-    },
-    {
-      name: "Dashboard",
-      active: false,
-      href: "/#",
-      rel: undefined,
-    },
-    {
-      name: "Settings",
-      active: false,
-      href: "/#",
-      rel: undefined,
-    },
-    {
-      name: "Contacts",
-      active: false,
-      href: "/#",
-      rel: undefined,
-    },
-  ];
-
 	let iconTabs = [
 		{
+			id: 1,
 			name: 'Profile',
 			active: true,
-			href: '/',
 			icon: UserCircle,
 			iconSize: 18,
+			content:
+				'1-1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
 		},
 		{
+			id: 2,
 			name: 'Dashboard',
-			active: false,
-			href: '/',
 			icon: ViewGrid,
 			iconSize: 18,
+			content:
+				'1-2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
 		},
 		{
+			id: 3,
 			name: 'Settings',
-			active: false,
-			href: '/',
 			icon: Adjustments,
 			iconSize: 18,
+			content:
+				'1-3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
 		},
 		{
+			id: 4,
 			name: 'Contacts',
-			active: false,
-			href: '/',
 			icon: ClipboardList,
 			iconSize: 18,
+			content:
+				'1-4 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
 		}
 	];
 
-  let pillsTabs = [
-    {
-      name: "Profile",
-      selected: true,
-      href: "/profile",
-    },
-    {
-      name: "Dashboard",
-      selected: false,
-      href: "/dashboard",
-    },
-    {
-      name: "Settings",
-      selected: false,
-      href: "/settings",
-    },
-    {
-      name: "Contact",
-      selected: false,
-      href: "/contact",
-    },
-  ];
-
-	let tabLabel = 'Select a target'
 	let tabs1 = [
-    {
-      name: "Profile-1",
-      id: 1,
-      content:
-        "1-1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-    },
-    {
-      name: "Dashboard-1",
-      id: 2,
-      content:
-        "1-2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-    },
-    {
-      name: "Settings-1",
-      id: 3,
-      content:
-        "1-3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-    },
-    {
-      name: "Contacts-1",
-      id: 4,
-      content:
-        "1-4Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-    },
-  ];
-
-  let itabs1 = [
-    {
-      name: "Profile-1",
-      id: 1,
-      content:
-        "1-1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-    },
-    {
-      name: "Dashboard-1",
-      id: 2,
-      content:
-        "1-2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-    },
-    {
-      name: "Settings-1",
-      id: 3,
-      content:
-        "1-3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-    },
-    {
-      name: "Contacts-1",
-      id: 4,
-      content:
-        "1-4 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-    },
-  ];
-  let itabs2 = [
-    {
-      name: "Profile-2",
-      id: 1,
-      content:
-        "2-1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-    },
-    {
-      name: "Dashboard-2",
-      id: 2,
-      content:
-        "2-2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-    },
-    {
-      name: "Settings-2",
-      id: 3,
-      content:
-        "2-3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-    },
-    {
-      name: "Contacts-2",
-      id: 4,
-      content:
-        "2-4 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-    },
-  ];
+		{
+			name: 'Profile',
+			id: 1,
+			content:
+				'1-1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+		},
+		{
+			name: 'Dashboard',
+			id: 2,
+			content:
+				'1-2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+		},
+		{
+			name: 'Settings',
+			id: 3,
+			content:
+				'1-3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+		},
+		{
+			name: 'Users',
+			id: 4,
+			content:
+				'1-4Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+		}
+	];
 
 	let tab1 = { name: 'Tab1', id: 1 };
 	let tab2 = { name: 'Tab2', id: 2 };
 	let tab3 = { name: 'Tab3', id: 3 };
 	let tabhead = [tab1, tab2, tab3];
-  let timelineItems = [
+	let timelineItems = [
 		{
 			date: 'February 2022',
 			title: 'Lorem ipsum dolor sit amet',
@@ -226,12 +117,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <CompoDescription>Use these responsive tabs components to create a secondary navigational hierarchy for your website or toggle content inside a container</CompoDescription>
 
 <ExampleDiv>
-<GitHubSource href="tabs/DefaultTabs.svelte">DefaultTabs</GitHubSource>
-<GitHubSource href="tabs/FullWidthTabs.svelte">FullWidthTabs</GitHubSource>
-<GitHubSource href="tabs/IconTabs.svelte">IconTabs</GitHubSource>
-<GitHubSource href="tabs/InteractiveTabHead.svelte">InteractiveTabHead, TabContent</GitHubSource>
-<GitHubSource href="tabs/InteractiveTabs.svelte">InteractiveTabs</GitHubSource>
-<GitHubSource href="tabs/PillTabs.svelte">PillTabs</GitHubSource>
+<GitHubSource href="tabs/DefaultTabs.svelte">Tabs</GitHubSource>
 <GitHubSource href="tabs/TabContent.svelte">TabContent</GitHubSource>
 <GitHubSource href="tabs/UnderlineTabs.svelte">UnderlineTabs</GitHubSource>
 </ExampleDiv>
@@ -242,7 +128,7 @@ The tabs component can be used either as an extra navigational hierarchy complem
 
 ```html
 <script>
-	import { DefaultTabs, UnderlineTabs, IconTabs, PillTabs, FullWidthTabs, InteractiveTabs, InteractiveTabHead, TabContent } from 'flowbite-svelte';
+	import { Tabs, InteractiveTabHead, TabContent } from 'flowbite-svelte';
 </script>
 ```
 
@@ -251,41 +137,43 @@ The tabs component can be used either as an extra navigational hierarchy complem
 Use the following default tabs component example to show a list of links that the user can navigate from on your website.
 
 <ExampleDiv>
-  <DefaultTabs {tabs} />
+	<Tabs tabId="defaultTab" tabs={tabs1} />
 </ExampleDiv>
+
 
 ```html
 <script>
   import { DefaultTabs } from "flowbite-svelte";
-  export let tabs = [
-    {
-      name: "Profile",
-      active: true,
-      href: "/#",
-      rel: undefined,
-    },
-    {
-      name: "Dashboard",
-      active: false,
-      href: "/#",
-      rel: undefined,
-    },
-    {
-      name: "Settings",
-      active: false,
-      href: "/#",
-      rel: undefined,
-    },
-    {
-      name: "Contacts",
-      active: false,
-      href: "/#",
-      rel: undefined,
-    },
-  ];
+  let tabs1 = [
+		{
+			name: 'Profile-1',
+			id: 1,
+			content:
+				'1-1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+		},
+		{
+			name: 'Dashboard-1',
+			id: 2,
+			content:
+				'1-2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+		},
+		{
+			name: 'Settings-1',
+			id: 3,
+			content:
+				'1-3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+		},
+		{
+			name: 'Disabled',
+			id: 4,
+			disabled: true,
+			content:
+				'1-4Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+		}
+	];
 </script>
 
-<DefaultTabs {tabs} />
+<Tabs tabId="defaultTab" tabs={tabs1} />
 ```
 
 <Htwo label="Tabs with underline" />
@@ -293,41 +181,11 @@ Use the following default tabs component example to show a list of links that th
 Use this alternative tabs component style with an underline instead of a background when hovering and being active on a certain page.
 
 <ExampleDiv>
-  <UnderlineTabs {tabs} />
+	<Tabs tabId="underlineTab" tabs={tabs1} tabStyle="underline" />
 </ExampleDiv>
 
 ```html
-<script>
-import { UnderlineTabs }from 'flowbite-svelte';
-let tabs = [
-  {
-    name: "Profile",
-    active: true,
-    href: "/#",
-    rel: undefined,
-  },
-  {
-    name: "Dashboard",
-    active: false,
-    href: "/#",
-    rel: undefined,
-  },
-  {
-    name: "Settings",
-    active: false,
-    href: "/#",
-    rel: undefined,
-  },
-  {
-    name: "Contacts",
-    active: false,
-    href: "/#",
-    rel: undefined,
-  },
-];
-</script>
-
-<UnderlineTabs {tabs} />
+<Tabs tabId="underlineTab" tabs={tabs1} tabStyle="underline" />
 ```
 
 <Htwo label="Tabs with icons" />
@@ -335,52 +193,11 @@ let tabs = [
 This is an example of the tabs component where you can also use a SVG powered icon to complement the text within the navigational tabs.
 
 <ExampleDiv>
-	<IconTabs tabs={iconTabs} />
+	<Tabs tabId="iconTab" tabs={iconTabs} tabStyle="icon" />
 </ExampleDiv>
 
 ```html
-<script>
-	import { IconTabs } from 'flowbite-svelte';
-	import {
-		UserCircle,
-		ViewGrid,
-		Adjustments,
-		ClipboardList
-	} from 'svelte-heros';
-
-	let iconTabs = [
-		{
-			name: 'Profile',
-			active: true,
-			href: '/',
-			icon: UserCircle,
-			iconSize: 18,
-		},
-		{
-			name: 'Dashboard',
-			active: false,
-			href: '/',
-			icon: ViewGrid,
-			iconSize: 18,
-		},
-		{
-			name: 'Settings',
-			active: false,
-			href: '/',
-			icon: Adjustments,
-			iconSize: 18,
-		},
-		{
-			name: 'Contacts',
-			active: false,
-			href: '/',
-			icon: ClipboardList,
-			iconSize: 18,
-		}
-	];
-</script>
-
-<IconTabs tabs={iconTabs} />
+<Tabs tabId="iconTab" tabs={iconTabs} tabStyle="icon" />
 ```
 
 <Htwo label="Pills tabs" />
@@ -388,37 +205,11 @@ This is an example of the tabs component where you can also use a SVG powered ic
 If you want to use pills as a style for the tabs component you can do so by using this example.
 
 <ExampleDiv>
-   <PillTabs tabs={pillsTabs} />
+	<Tabs tabId="pillTab" tabs={tabs1} tabStyle="pill" />
 </ExampleDiv>
 
 ```html
-<script>
-  import { PillTabs } from "flowbite-svelte";
-  let pillsTabs = [
-    {
-      name: "Profile",
-      selected: true,
-      href: "/profile",
-    },
-    {
-      name: "Dashboard",
-      selected: false,
-      href: "/dashboard",
-    },
-    {
-      name: "Settings",
-      selected: false,
-      href: "/settings",
-    },
-    {
-      name: "Contact",
-      selected: false,
-      href: "/contact",
-    },
-  ];
-</script>
-
-<PillTabs tabs={pillsTabs} />
+<Tabs tabId="pillTab" tabs={tabs1} tabStyle="pill" />
 ```
 
 <Htwo label="Full width tabs" />
@@ -426,84 +217,14 @@ If you want to use pills as a style for the tabs component you can do so by usin
 If you want to show the tabs on the full width relative to the parent element you can do so by using the full width tabs component example.
 
 <ExampleDiv>
-<FullWidthTabs {tabs} {tabLabel} />
+	<Tabs tabId="fullTab" tabs={tabs1} tabStyle="full" />
 </ExampleDiv>
 
 ```html
-<script>
-  import { FullWidthTabs } from 'flowbite-svelte'
-  let tabLabel = 'Select a target'
-  let tabs = [
-  {
-    name: "Profile",
-    active: true,
-    href: "/#",
-    rel: undefined,
-  },
-  {
-    name: "Dashboard",
-    active: false,
-    href: "/",
-  },
-  {
-    name: "Settings",
-    active: false,
-    href: "/",
-  },
-  {
-    name: "Contacts",
-    active: false,
-    href: "/",
-  },
-];
-</script>
-
-<FullWidthTabs {tabs} {tabLabel}/>
+<Tabs tabId="fullTab" tabs={tabs1} tabStyle="full" />
 ```
 
-<Htwo label="Interactive tabs" />
-
-Use the dynamic tabs component to interactively show and hide the content below the tabs based on the currently active tab item. 
-
-<ExampleDiv>
-  <InteractiveTabs tabId="myTab1" tabs={tabs1} />
-</ExampleDiv>
-
-```html
-<script>
-  import { InteractiveTabs } from "flowbite-svelte";
-  let tabs1 = [
-    {
-      name: "Profile-1",
-      id: 1,
-      content:
-        "1-1 Lorem ipsum dolor sit amet, consectetur adipiscing ... ",
-    },
-    {
-      name: "Dashboard-1",
-      id: 2,
-      content:
-        "1-2 Lorem ipsum dolor sit amet, consectetur adipiscing ... ",
-    },
-    {
-      name: "Settings-1",
-      id: 3,
-      content:
-        "1-3 Lorem ipsum dolor sit amet, consectetur adipiscing ... ",
-    },
-    {
-      name: "Contacts-1",
-      id: 4,
-      content:
-        "1-4Lorem ipsum dolor sit amet, consectetur adipiscing ... ",
-    },
-  ];
-</script>
-
-<InteractiveTabs tabId="myTab1" tabs={tabs1} />
-```
-
-<Htwo label="Interactive tabs 2" />
+<Htwo label="Components in tab contents" />
 
 By using `InteractiveTabHead` and `TabContent` you can add other components to the `InteractiveTabs` component. Here we are adding a timeline component in the tab 1:
 
@@ -567,132 +288,33 @@ import { InteractiveTabHead, TabContent, Card, Timeline,
 </InteractiveTabHead>
 ```
 
-<Htwo label="Multiple Interactive Tabs"/>
-
-<ExampleDiv>
-  <InteractiveTabs tabId="myTab1" tabs={itabs1} />
-</ExampleDiv>
-
-<ExampleDiv>
-  <InteractiveTabs tabId="myTab2" tabs={itabs2} />
-</ExampleDiv>
-
-```html
-<script>
-  import { InteractiveTabs } from "flowbite-svelte";
-
-  let tabs1 = [
-    {
-      name: "Profile-1",
-      id: 1,
-      content:
-        "1-1 Lorem ipsum dolor sit amet, consectetur adipiscing ... ",
-    },
-    {
-      name: "Dashboard-1",
-      id: 2,
-      content:
-        "1-2 Lorem ipsum dolor sit amet, consectetur adipiscing ... ",
-    },
-    {
-      name: "Settings-1",
-      id: 3,
-      content:
-        "1-3 Lorem ipsum dolor sit amet, consectetur adipiscing ... ",
-    },
-    {
-      name: "Contacts-1",
-      id: 4,
-      content:
-        "1-4 Lorem ipsum dolor sit amet, consectetur adipiscing ... ",
-    },
-  ];
-  let tabs2 = [
-    {
-      name: "Profile-2",
-      id: 1,
-      content:
-        "2-1 Lorem ipsum dolor sit amet, consectetur adipiscing ... ",
-    },
-    {
-      name: "Dashboard-2",
-      id: 2,
-      content:
-        "2-2 Lorem ipsum dolor sit amet, consectetur adipiscing ... ",
-    },
-    {
-      name: "Settings-2",
-      id: 3,
-      content:
-        "2-3 Lorem ipsum dolor sit amet, consectetur adipiscing ... ",
-    },
-    {
-      name: "Contacts-2",
-      id: 4,
-      content:
-        "2-4 Lorem ipsum dolor sit amet, consectetur adipiscing ... ",
-    },
-  ];
-</script>
-
-<InteractiveTabs tabId="myTab1" tabs={tabs1} />
-<InteractiveTabs tabId="myTab2" tabs={tabs2} />
-```
-
 <Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
-<h3 class='text-xl w-full dark:text-white py-4'>DefaultTabs</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Tabs</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>UnderlineTabs</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>InteractiveTabHead</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>IconTabs</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>TabContent</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>PillTabs</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={items4} rowState='hover' />
-</TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>FullWidthTabs</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={items5} rowState='hover' />
-</TableProp>
-
-<h3 class='text-xl w-full dark:text-white py-4'>InteractiveTabs</h3>
-
-<TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={items6} rowState='hover' />
-</TableProp>
-
-<h3 class='text-xl w-full dark:text-white py-4'>InteractiveTabHead</h3>
-
-<TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={items7} rowState='hover' />
-</TableProp>
-
-<h3 class='text-xl w-full dark:text-white py-4'>TabContent</h3>
-
-<TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={items8} rowState='hover' />
-</TableProp>
-
-<Htwo label="Forwarded Events: DefaultTabs, FullWidthTabs, IconTabs, InteractiveTabHead, InteractiveTabs, PillTabs" />
+<Htwo label="Forwarded Events: Tabs, InteractiveTabHead" />
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:blur</Badge>
