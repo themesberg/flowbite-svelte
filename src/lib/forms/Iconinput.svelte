@@ -14,23 +14,23 @@
 		'inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600';
 	export let noBorderInputClass: string =
 		'bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10   dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
-	export let noBorderDivClass: string =
-		'flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none';
+	export let pointerEvent: boolean = false;
+	export let noBorderDivClass: string = 'flex absolute inset-y-0 left-0 items-center pl-3';
 	export let iconClass: string = 'mr-2';
-
-	const setType = (node) => {
-		node.type = type;
-	};
 </script>
 
 {#if noBorder}
 	<div class="relative">
-		<div
-			class={classNames(noBorderDivClass, {
-				'p-2 sm:text-xs': size === 'sm',
-				'p-2.5 text-sm': size === 'md',
-				'sm:text-md p-4': size === 'lg'
-			})}
+		<span
+			class={classNames(
+				noBorderDivClass,
+				{
+					'p-2 sm:text-xs': size === 'sm',
+					'p-2.5 text-sm': size === 'md',
+					'sm:text-md p-4': size === 'lg'
+				},
+				pointerEvent ? 'cursor-pointer' : 'pointer-events-none'
+			)}
 		>
 			<svelte:component
 				this={icon}
@@ -42,11 +42,10 @@
 				})}
 				class={iconClass}
 			/>
-		</div>
+		</span>
 		<input
 			{...$$restProps}
-			bind:value
-			use:setType
+			{type}
 			class={classNames(
 				noBorderInputClass,
 				{
@@ -60,7 +59,7 @@
 	</div>
 {:else}
 	<div class="flex">
-		<span class={spanClass}>
+		<div class={spanClass}>
 			<svelte:component
 				this={icon}
 				on:click
@@ -69,9 +68,9 @@
 					18: size === 'md',
 					20: size === 'lg'
 				})}
-				class={iconClass}
+				class={classNames(iconClass, pointerEvent ? 'cursor-pointer' : 'pointer-events-none')}
 			/>
-		</span>
+		</div>
 		<input
 			{...$$restProps}
 			{type}

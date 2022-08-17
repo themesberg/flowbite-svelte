@@ -17,6 +17,7 @@ layout: formLayout
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
   // Iconinput event handler
 	let show = false;
+  let show1 = false;
 	$: toggleIcon = show ? Eye : EyeOff;
 </script>
 
@@ -289,10 +290,26 @@ This example shows how to add `on:click` event handler to `Iconinput`. By clicki
 <div class="mb-6">
 	<Label for="website-admin" class="block mb-2">Your password</Label>
 	<Iconinput
+  pointerEvent
 		on:click={() => (show = !show)}
 		placeholder="Your password here"
 		icon={toggleIcon}
 		type={show ? 'text' : 'password'}
+		iconClass="dark:text-red-500"
+	/>
+</div>
+<div class="mb-6">
+	<Label for="website-admin" class="block mb-2">No border</Label>
+	<Iconinput
+  noBorder
+  pointerEvent
+		on:click={() => {
+      show1 = !show1
+      console.log('clicked')
+      }}
+		placeholder="Your password here"
+		icon={toggleIcon}
+		type={show1 ? 'text' : 'password'}
 		iconClass="dark:text-red-500"
 	/>
 </div>
@@ -301,15 +318,32 @@ This example shows how to add `on:click` event handler to `Iconinput`. By clicki
 ```html
 <script>
   let show = false;
+  let show1 = false;
 	$: toggleIcon = show ? Eye : EyeOff;
 </script>
 <div class="mb-6">
 	<Label for="website-admin" class="block mb-2">Your password</Label>
 	<Iconinput
+  pointerEvent
 		on:click={() => (show = !show)}
 		placeholder="Your password here"
 		icon={toggleIcon}
 		type={show ? 'text' : 'password'}
+		iconClass="dark:text-red-500"
+	/>
+</div>
+<div class="mb-6">
+	<Label for="website-admin" class="block mb-2">No border</Label>
+	<Iconinput
+  noBorder
+  pointerEvent
+		on:click={() => {
+      show1 = !show1
+      console.log('clicked')
+      }}
+		placeholder="Your password here"
+		icon={toggleIcon}
+		type={show1 ? 'text' : 'password'}
 		iconClass="dark:text-red-500"
 	/>
 </div>
