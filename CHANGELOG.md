@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.24.19](https://github.com/themesberg/flowbite-svelte/compare/v0.24.18...v0.24.19) (2022-08-17)
+
+
+### Features
+
+* add pointerEvent prop to Iconinput to show/hide cursor ([dffa324](https://github.com/themesberg/flowbite-svelte/commit/dffa3247856c7245ecb8a67554ce77b797fe8627))
+
 ### [0.24.18](https://github.com/themesberg/flowbite-svelte/compare/v0.24.17...v0.24.18) (2022-08-16)
 
 
