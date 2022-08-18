@@ -265,3 +265,9 @@ test('Typography page should have h1', async ({ page }) => {
 	await page.goto('/typography');
 	expect(await page.textContent('h1')).toBe('Typography');
 });
+
+// Utilities
+test('Utilities page should have h1', async ({ page }) => {
+await page.goto('/utilities');
+expect(await page.textContent('h1')).toBe('Utilities');
+});

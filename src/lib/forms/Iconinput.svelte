@@ -4,7 +4,6 @@
 	import type { SvelteComponent } from 'svelte';
 
 	export let type: InputType = 'text';
-	export let value: string = '';
 	export let size: 'sm' | 'md' | 'lg' = 'md';
 	export let icon: typeof SvelteComponent;
 	export let noBorder: boolean = false;

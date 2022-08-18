@@ -30,6 +30,7 @@
 		"@typescript-eslint/eslint-plugin": "^5.33.0",
 		"@typescript-eslint/parser": "^5.33.0",
 		"autoprefixer": "^10.4.8",
+		"classnames": "^2.3.1",
 		"createprops": "^0.4.9",
 		"eslint": "^8.21.0",
 		"eslint-config-prettier": "^8.5.0",
@@ -94,7 +95,6 @@
 	},
 	"dependencies": {
 		"@floating-ui/dom": "^0.5.4",
-		"classnames": "^2.3.1",
 		"flowbite": "^1.5.2"
 	},
 	"engines": {
