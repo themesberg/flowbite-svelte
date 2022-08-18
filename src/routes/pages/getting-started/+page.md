@@ -21,8 +21,8 @@ layout: docLayout
 <p>Install SvelteKit:</p>
 
 ```bash
-npm init svelte@next sveltekit-demo 
-cd sveltekit-demo
+npm create svelte@latest my-app
+cd my-app
 npm install 
 ```
 
@@ -42,7 +42,7 @@ npm run dev
 <p>Install flowbite, flowbite-svelte, and svelte-heros:</p>
 
 ```sh
-npm i -D flowbite flowbite-svelte svelte-heros
+npm i -D flowbite flowbite-svelte svelte-heros @floating-ui/dom
 ```
 
 <p>Update tailwind.config.cjs:</p>
@@ -67,5 +67,20 @@ const config = {
 module.exports = config;
 ```
 
-<p>Now you are ready to go!</p>
+<p>Now you are ready to go! Add the following to `src/routes/+page.svelte`.</p>
 
+```html
+<script>
+	import { Alert } from 'flowbite-svelte';
+</script>
+
+<div class="p-8">
+	<Alert>
+		<span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
+	</Alert>
+</div>
+```
+
+If you see the following image, then your setting is complete.
+
+<img src="/images/getting-started.png" alt="alert example" />
