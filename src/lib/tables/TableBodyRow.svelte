@@ -8,7 +8,7 @@
 <tr
 	{...$$restProps}
 	class={classNames(
-		trClass,
+		getContext('noborder') ? 'bg-white dark:bg-gray-800' : trClass,
 		{
 			'odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700':
 				getContext('striped') === true,
