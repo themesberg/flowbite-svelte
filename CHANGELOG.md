@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.25.1](https://github.com/themesberg/flowbite-svelte/compare/v0.25.0...v0.25.1) (2022-08-18)
+
+
+### Bug Fixes
+
+* move @floating-ui/dom from dependencies to devDependencies ([6668ec8](https://github.com/themesberg/flowbite-svelte/commit/6668ec8ca1559366ad0cbc223c9c91e3337ceb22))
+
 ## [0.25.0](https://github.com/themesberg/flowbite-svelte/compare/v0.24.19...v0.25.0) (2022-08-18)
 
 
