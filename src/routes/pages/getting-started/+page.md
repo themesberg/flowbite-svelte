@@ -2,8 +2,8 @@
 layout: docLayout
 ---
 <script>
-  import Htwo from '../../utils/Htwo.svelte'
-  import { Breadcrumb, BreadcrumbItem } from '$lib'
+  import { Htwo, ExampleDiv } from '../../utils'
+  import { Breadcrumb, BreadcrumbItem, Alert } from '$lib'
   import { Home } from 'svelte-heros'
 </script>
 
@@ -83,4 +83,10 @@ module.exports = config;
 
 If you see the following image, then your setting is complete.
 
-<img src="/images/getting-started.png" alt="alert example" />
+<ExampleDiv>
+<div class="p-8">
+	<Alert>
+		<span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
+	</Alert>
+</div>
+</ExampleDiv>
