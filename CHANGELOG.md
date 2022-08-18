@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.25.0](https://github.com/themesberg/flowbite-svelte/compare/v0.24.19...v0.25.0) (2022-08-18)
+
+
+### Bug Fixes
+
+* [#226](https://github.com/themesberg/flowbite-svelte/issues/226) for double on:click in DropdownItem ([c125d2d](https://github.com/themesberg/flowbite-svelte/commit/c125d2d02e3818cedb83994e930ca5cc7075571c))
+* migrate to sveltekit 1.0.0 ([434ec99](https://github.com/themesberg/flowbite-svelte/commit/434ec998e1f96ab5e35eda6c6c78f6db2279aa4e))
+* update pnpm-lock ([4926a47](https://github.com/themesberg/flowbite-svelte/commit/4926a47bd529601b1a0709533fee2b5291e59eb8))
+
 ### [0.24.19](https://github.com/themesberg/flowbite-svelte/compare/v0.24.18...v0.24.19) (2022-08-17)
 
 
