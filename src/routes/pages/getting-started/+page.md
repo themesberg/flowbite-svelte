@@ -23,7 +23,7 @@ layout: docLayout
 ```bash
 npm create svelte@latest my-app
 cd my-app
-npm install 
+npm install
 ```
 
 <p>Install Tailwind CSS:</p>

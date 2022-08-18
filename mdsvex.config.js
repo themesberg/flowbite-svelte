@@ -24,6 +24,7 @@ const config = defineConfig({
 		modalLayout: './src/routes/layouts/modalLayout/+page.svelte',
 		navbarLayout: './src/routes/layouts/navbarLayout/+page.svelte',
 		paginationLayout: './src/routes/layouts/paginationLayout/+page.svelte',
+		popoverLayout: './src/routes/layouts/popoverLayout/+page.svelte',
 		progressbarLayout: './src/routes/layouts/progressbarLayout/+page.svelte',
 		ratingLayout: './src/routes/layouts/ratingLayout/+page.svelte',
 		sidebarLayout: './src/routes/layouts/sidebarLayout/+page.svelte',

@@ -200,6 +200,12 @@ test('Pagination page should have h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Pagination');
 });
 
+// Popover
+test('Popover page should have h1', async ({ page }) => {
+	await page.goto('/popover');
+	expect(await page.textContent('h1')).toBe('Popover');
+});
+
 // Progress bar
 test('Progress bar page should have h1', async ({ page }) => {
 	await page.goto('/progressbars');
