@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.25.2](https://github.com/themesberg/flowbite-svelte/compare/v0.25.1...v0.25.2) (2022-08-19)
+
+
+### Features
+
+* add popover related files ([8b5050b](https://github.com/themesberg/flowbite-svelte/commit/8b5050b0e9f6e45533b858c7aa392463cfb6cc91))
+* popover ([c41ddc4](https://github.com/themesberg/flowbite-svelte/commit/c41ddc408f3696e05ee66de4922b95ee5cee1a08))
+
+
+### Bug Fixes
+
+* change href=# to href=/ in popover page ([f885a92](https://github.com/themesberg/flowbite-svelte/commit/f885a924706e477349c975641fc6fba0b4df45e5))
+* missing Popper ([ff4b0e7](https://github.com/themesberg/flowbite-svelte/commit/ff4b0e772e228f03c1024e222fcc91e63adc23ba))
+
 ### [0.25.1](https://github.com/themesberg/flowbite-svelte/compare/v0.25.0...v0.25.1) (2022-08-18)
 
 
