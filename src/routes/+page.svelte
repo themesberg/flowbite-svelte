@@ -26,6 +26,7 @@
 		ModalBlock,
 		NavbarBlock,
 		PaginationBlock,
+		PopoverBlock,
 		ProgressbarBlock,
 		RadioBlock,
 		RangeBlock,
@@ -44,6 +45,7 @@
 		TooltipBlock,
 		TypographyBlock
 	} from './blocks/+server.ts';
+	import Popover from '$lib/popover/Popover.svelte';
 
 	const handleClick = () => {
 		goto('/pages/getting-started');
@@ -107,6 +109,7 @@
 	<ModalBlock />
 	<NavbarBlock />
 	<PaginationBlock />
+	<PopoverBlock />
 	<ProgressbarBlock />
 	<RadioBlock />
 	<RangeBlock />
