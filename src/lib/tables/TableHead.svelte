@@ -4,14 +4,19 @@
 
 	export let theadClass: string = 'text-xs uppercase';
 	export let theadnoborderClass: string = 'text-xs text-gray-900 uppercase dark:text-gray-400';
+	const bgColors = {
+		default: 'bg-gray-50 dark:bg-gray-700',
+		blue: 'text-white dark:text-white',
+		custom: ''
+	};
 	// text-xs text-gray-900 uppercase dark:text-gray-400
 	const colors = {
-		default: 'bg-gray-50 text-gray-700 dark:bg-gray-700 dark:text-gray-400',
-		blue: 'text-white bg-blue-600 dark:text-white',
-		green: 'text-white bg-green-600 dark:text-white',
-		red: 'text-white bg-red-600 dark:text-white',
-		yellow: 'text-white bg-yellow-600 dark:text-white',
-		purple: 'text-white bg-purple-600 dark:text-white',
+		default: 'text-gray-700 dark:text-gray-400',
+		blue: 'bg-blue-600',
+		green: 'bg-green-600',
+		red: 'bg-red-600',
+		yellow: 'bg-yellow-600',
+		purple: 'bg-purple-600',
 		custom: ''
 	};
 	let color = 'default';
