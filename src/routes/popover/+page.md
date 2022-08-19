@@ -1,5 +1,5 @@
 ---
-layout: modalLayout
+layout: popoverLayout
 ---
 
 <script>
@@ -116,8 +116,6 @@ Show helpful information inside a popover when hovering over a question mark but
 <Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.</p>
-
-<h3 class='text-xl w-full dark:text-white py-4'>Modal</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={props} rowState='hover' />

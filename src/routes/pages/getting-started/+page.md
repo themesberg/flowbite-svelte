@@ -18,11 +18,21 @@ layout: docLayout
 
 <Htwo label="Installing from scratch" />
 
-<p>Install SvelteKit:</p>
+<h3 class='text-xl w-full dark:text-white py-4'>SvelteKit or Svelte</h3>
+
+<p>You can install SvelteKit or Svelte to start your app. For SvelteKit:</p>
 
 ```bash
 npm create svelte@latest my-app
 cd my-app
+npm install
+```
+
+<p>OR if you want to get started with Svelte:</p>
+
+```bash
+npm create vite@latest myapp -- --template svelte
+cd myapp
 npm install
 ```
 
