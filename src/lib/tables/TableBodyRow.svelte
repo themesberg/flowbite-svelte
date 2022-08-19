@@ -12,16 +12,25 @@
 		purple: 'bg-purple-500 border-b border-purple-400',
 		custom: ''
 	};
+	const hoverColors = {
+		default: 'hover:bg-gray-50 dark:hover:bg-gray-600',
+		blue: 'hover:bg-blue-400',
+		green: 'hover:bg-green-400',
+		red: 'hover:bg-red-400',
+		yellow: 'hover:bg-yellow-400',
+		purple: 'hover:bg-purple-400',
+		custom: ''
+	};
 	let color = 'default';
 	color = getContext('color');
 	let trClassfinal;
 	$: trClassfinal = classNames(
 		getContext('noborder') ? 'bg-white dark:bg-gray-800' : trClass,
 		colors[color],
+		getContext('hoverable') && hoverColors[color],
 		{
 			'odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700':
-				getContext('striped') === true,
-			'hover:bg-gray-50 dark:hover:bg-gray-600': getContext('hoverable') === true
+				getContext('striped') === true
 		},
 		$$props.class
 	);

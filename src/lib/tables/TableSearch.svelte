@@ -7,9 +7,21 @@
 	export let striped: boolean = false;
 	export let hoverable: boolean = false;
 	export let placeholder: string = 'Search';
+	export let color: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom' =
+		'default';
+	const colors = {
+		default: 'text-gray-500 dark:text-gray-400',
+		blue: 'text-blue-100 dark:text-blue-100',
+		green: 'text-green-100 dark:text-green-100',
+		red: 'text-red-100 dark:text-red-100',
+		yellow: 'text-yellow-100 dark:text-yellow-100',
+		purple: 'text-purple-100 dark:text-purple-100',
+		custom: ''
+	};
 
 	$: setContext('striped', striped);
 	$: setContext('hoverable', hoverable);
+	$: setContext('color', color);
 </script>
 
 <div class={divClass}>
@@ -40,7 +52,7 @@
 	</div>
 	<table
 		{...$$restProps}
-		class={classNames('w-full text-left text-sm text-gray-500 dark:text-gray-400', $$props.class)}
+		class={classNames('w-full text-left text-sm', colors[color], $$props.class)}
 	>
 		<slot />
 	</table>
