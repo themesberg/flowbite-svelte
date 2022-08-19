@@ -26,6 +26,7 @@
 	"devDependencies": {
 		"@floating-ui/dom": "^1.0.1",
 		"@playwright/test": "^1.25.0",
+		"@popperjs/core": "^2.11.6",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "1.0.0-next.420",
 		"@typescript-eslint/eslint-plugin": "^5.33.0",
