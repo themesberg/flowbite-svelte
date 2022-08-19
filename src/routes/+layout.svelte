@@ -182,6 +182,11 @@
 		</Nav>
 		<Nav {navClass}>
 			<h3 class={h3Class}>
+				<a href="/popover">Popover</a>
+			</h3>
+		</Nav>
+		<Nav {navClass}>
+			<h3 class={h3Class}>
 				<a href="/progressbars">Progress bar</a>
 			</h3>
 		</Nav>
