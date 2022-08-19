@@ -1,7 +1,7 @@
 <script>
 	import { Htwo, ExampleDiv, CompoDescription, TableProp, TableDefaultRow } from '../utils';
 	import 'prism-themes/themes/prism-holi-theme.css';
-	import { Datepicker, Breadcrumb, BreadcrumbItem } from '$lib';
+	import { Datepicker, Breadcrumb, BreadcrumbItem, Alert } from '$lib';
 	import { Home } from 'svelte-heros';
 
 	import componentProps from '../props/Datepicker.json';
@@ -17,7 +17,15 @@
 	<BreadcrumbItem>Datepicker</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-16 pb-4">Datepicker</h1>
+<div class="p-8">
+	<Alert color="red">
+		<span class="font-medium"
+			>⚠️ Datepicker component is experimental and only works with SvelteKit.
+		</span></Alert
+	>
+</div>
+
+<h1 class="text-3xl w-full dark:text-white pb-4">Datepicker</h1>
 
 <CompoDescription
 	>Start receiving date and time data from your users using this free datepicker element based on
