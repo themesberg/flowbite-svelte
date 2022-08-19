@@ -102,7 +102,7 @@ export { default as Next } from './paginations/Next.svelte';
 export { default as TableData } from './paginations/TableData.svelte';
 
 // Popover
-export { default as Popover } from './popover/Popover.svelte'
+export { default as Popover } from './popover/Popover.svelte';
 
 // Progressbar
 export { default as Progressbar } from './progressbars/Progressbar.svelte';
