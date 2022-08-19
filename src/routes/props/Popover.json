@@ -1,0 +1,1 @@
+{"props":[["open","boolean ","false"],["placement","Placement ","'top'"],["offset","number ","8"],["trigger","'hover' | 'click' ","'hover'"],["arrow","boolean ","true"],["animation","false | `duration-${number}` ","'duration-300'"],["  activeContent"," boolean",""]]}
