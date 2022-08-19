@@ -11,7 +11,7 @@
 		green: 'text-white bg-green-600 dark:text-white',
 		red: 'text-white bg-red-600 dark:text-white',
 		yellow: 'text-white bg-yellow-600 dark:text-white',
-		purple: 'text-white bg-yellow-600 dark:text-white',
+		purple: 'text-white bg-purple-600 dark:text-white',
 		custom: ''
 	};
 	let color = 'default';

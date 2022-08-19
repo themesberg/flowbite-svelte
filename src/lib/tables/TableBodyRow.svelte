@@ -21,6 +21,17 @@
 		purple: 'hover:bg-purple-400',
 		custom: ''
 	};
+
+	const stripColors = {
+		default: 'odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700',
+		blue: 'odd:bg-blue-800 even:bg-blue-700 odd:dark:bg-blue-800 even:dark:bg-blue-700',
+		green: 'odd:bg-green-800 even:bg-green-700 odd:dark:bg-green-800 even:dark:bg-green-700',
+		red: 'odd:bg-red-800 even:bg-red-700 odd:dark:bg-red-800 even:dark:bg-red-700',
+		yellow: 'odd:bg-yellow-800 even:bg-yellow-700 odd:dark:bg-yellow-800 even:dark:bg-yellow-700',
+		purple: 'odd:bg-purple-800 even:bg-purple-700 odd:dark:bg-purple-800 even:dark:bg-purple-700',
+		custom: ''
+	};
+
 	let color = 'default';
 	color = getContext('color');
 	let trClassfinal;
@@ -28,10 +39,7 @@
 		getContext('noborder') ? 'bg-white dark:bg-gray-800' : trClass,
 		colors[color],
 		getContext('hoverable') && hoverColors[color],
-		{
-			'odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700':
-				getContext('striped') === true
-		},
+		getContext('striped') && stripColors[color],
 		$$props.class
 	);
 </script>
