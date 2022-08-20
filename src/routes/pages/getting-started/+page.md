@@ -49,10 +49,10 @@ npm i
 npm run dev
 ```
 
-<p>Install flowbite, flowbite-svelte, and svelte-heros:</p>
+<p>Install flowbite, flowbite-svelte, and other dependencies:</p>
 
 ```sh
-npm i -D flowbite flowbite-svelte svelte-heros @floating-ui/dom
+npm i -D flowbite flowbite-svelte svelte-heros @floating-ui/dom classnames
 ```
 
 <p>Update tailwind.config.cjs:</p>
