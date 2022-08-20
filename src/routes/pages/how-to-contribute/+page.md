@@ -20,7 +20,6 @@ layout: docLayout
 <Htwo label="Please use pnpm to install a fork" />
 
 <p>The repo uses `pnpm`, so using `pnpm` is desirable when you fork and install dependencies to avoid unseen problems.</p>
-|
 
 <Htwo label="Frontend pages" />
 

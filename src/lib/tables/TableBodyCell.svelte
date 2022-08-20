@@ -12,7 +12,6 @@
 		color === 'default'
 			? 'text-gray-900 dark:text-white'
 			: 'text-blue-50 whitespace-nowrap dark:text-blue-100',
-
 		$$props.class
 	);
 </script>

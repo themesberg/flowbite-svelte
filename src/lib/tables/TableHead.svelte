@@ -3,15 +3,13 @@
 	import { getContext } from 'svelte';
 
 	export let theadClass: string = 'text-xs uppercase';
-	export let theadnoborderClass: string = 'text-xs text-gray-900 uppercase dark:text-gray-400';
+	let color: string;
+	color = getContext('color');
+	let noborder: boolean = getContext('noborder');
+	let striped: boolean = getContext('striped');
+	let defatultBgColor = noborder || striped ? '' : 'bg-gray-50 dark:bg-gray-700';
 	const bgColors = {
-		default: 'bg-gray-50 dark:bg-gray-700',
-		blue: 'text-white dark:text-white',
-		custom: ''
-	};
-	// text-xs text-gray-900 uppercase dark:text-gray-400
-	const colors = {
-		default: 'text-gray-700 dark:text-gray-400',
+		default: defatultBgColor,
 		blue: 'bg-blue-600',
 		green: 'bg-green-600',
 		red: 'bg-red-600',
@@ -19,12 +17,26 @@
 		purple: 'bg-purple-600',
 		custom: ''
 	};
-	let color = 'default';
-	color = getContext('color');
-	let theadClassfinal;
+
+	let textColor =
+		color === 'default'
+			? 'text-gray-700 dark:text-gray-400'
+			: color === 'custom'
+			? ''
+			: 'text-white  dark:text-white';
+	let borderColors = striped
+		? ''
+		: color === 'default'
+		? 'border-gray-700'
+		: color === 'custom'
+		? ''
+		: `border-${color}-400`;
+
 	$: theadClassfinal = classNames(
-		getContext('noborder') ? theadnoborderClass : theadClass,
-		colors[color],
+		theadClass,
+		textColor,
+		striped && borderColors,
+		bgColors[color],
 		$$props.class
 	);
 </script>
