@@ -1,7 +1,7 @@
 <script lang="ts">
 	import classNames from 'classnames';
-	import type { InputType } from '../types';
 	import type { SvelteComponent } from 'svelte';
+	import type { InputType } from '../types';
 
 	export let type: InputType = 'text';
 	export let size: 'sm' | 'md' | 'lg' = 'md';
