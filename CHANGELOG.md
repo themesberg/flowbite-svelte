@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.25.4](https://github.com/themesberg/flowbite-svelte/compare/v0.25.2...v0.25.4) (2022-08-20)
+
+
+### Bug Fixes
+
+* add Table color hover and example ([b49c139](https://github.com/themesberg/flowbite-svelte/commit/b49c139c6d09a4563d462b35a5c49da605006d79))
+
 ### [0.25.2](https://github.com/themesberg/flowbite-svelte/compare/v0.25.1...v0.25.2) (2022-08-19)
 
 
