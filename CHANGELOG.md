@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.25.5](https://github.com/themesberg/flowbite-svelte/compare/v0.25.4...v0.25.5) (2022-08-20)
+
+
+### Bug Fixes
+
+* Iconinput has unused export property value when I install it ([b19afc9](https://github.com/themesberg/flowbite-svelte/commit/b19afc9284aa2c92c5a15b89de9dc9111652f0f7))
+
 ### [0.25.4](https://github.com/themesberg/flowbite-svelte/compare/v0.25.2...v0.25.4) (2022-08-20)
 
 
