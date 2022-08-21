@@ -21,6 +21,10 @@ export const forms = [
 	{ href: '/forms/toggle', name: 'Toggle' }
 ];
 
+export const typography = [
+	{ href: '/typography/headings', name: 'Headings' }
+];
+
 export const topMenus = [
 	{ id: '1', href: '/', name: 'Home' },
 	{ id: '2', href: '/pages/about', name: 'About' },
