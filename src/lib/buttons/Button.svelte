@@ -153,6 +153,7 @@
 						? 'dark:text-white dark:border-white'
 						: 'dark:text-gray-400 dark:border-gray-700'),
 				hasBorder() && group && 'border-l-0 first:border-l',
+				group && 'focus:z-10',
 				rounded(false),
 				shadow && coloredShadowClasses[shadow],
 				$$props.disabled && 'cursor-not-allowed opacity-50',
