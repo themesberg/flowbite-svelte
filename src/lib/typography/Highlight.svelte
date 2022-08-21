@@ -1,8 +1,8 @@
 <script lang="ts">
 	import classNames from 'classnames';
-	export let spanClass: string = 'text-blue-600 dark:text-blue-500';
+	export let textColor: string = 'text-blue-600 dark:text-blue-500';
 </script>
 
-<span class={classNames(spanClass, $$props.class)}>
+<span class={classNames(textColor, $$props.class)}>
 	<slot />
 </span>

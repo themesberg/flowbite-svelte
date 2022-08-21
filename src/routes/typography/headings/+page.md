@@ -4,8 +4,8 @@ layout: typographyLayout
 
 <script>
 	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../../utils'
-	import { H1, H2, P, Highlight, Button, Breadcrumb, BreadcrumbItem } from '$lib';
-	import { Home } from 'svelte-heros';
+	import { H1, H2, P, Highlight, A, Mark, TextGradient, Button, Breadcrumb, BreadcrumbItem } from '$lib';
+	import { Home, ArrowRight, ChevronRight } from 'svelte-heros';
 	
 	
 	let propHeader = ['Name', 'Type', 'Default']
@@ -49,9 +49,13 @@ At least one unique H1 tag should be available for each page on your website wit
 Use this example of a H1 heading in the context of a paragraph and CTA button for landing pages.
 
 <ExampleDiv>
-	<H1 color='text-blue-500' class="mb-4 md:text-5xl lg:text-6xl dark:text-white">We invest in the world’s potential</H1>
-	<P class="mb-6 lg:text-xl sm:px-16 xl:px-24 dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
+<div  class="text-center">
+	<H1 class="mb-4 md:text-5xl lg:text-6xl dark:text-white">We invest in the world’s potential</H1>
+	<P class="mb-6 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
+	<Button href="/">Learn more <ArrowRight size="18" class="ml-2" /></Button>
+</div>
 </ExampleDiv>
+
 
 <Htwo label="Second-level heading" />
 
@@ -61,4 +65,33 @@ Use this example of a second-level H2 heading as the main subtitle for each sect
 <H2>Payments tool for companies</H2>
 <P class="my-4">Start developing with an open-source library of over 450+ UI components, sections, and pages built with the utility classes from Tailwind CSS and designed in Figma.</P>
 <P class="mb-4 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions. Accelerate critical development work, eliminate toil, and deploy changes with ease.</P>
+<A>Read more <ChevronRight /></A>
+</ExampleDiv>
+
+
+<Htwo label="Highlighted heading" />
+
+Use this example to highlight a certain portion of the heading text with a different color.
+
+<ExampleDiv>
+<H1 class="mb-4">Get back to growth with <Highlight>the world's #1</Highlight> CRM.</H1>
+<P textColor="text-gray-500 dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
+</ExampleDiv>
+
+<Htwo label="Heading mark" />
+
+This example can be used to mark one part of the heading text with a solid background for highlighting.
+
+<ExampleDiv>
+<H1 class='mb-4'>Regain <Mark>control</Mark> over your days</H1>
+<P textColor='text-gray-500 dark:text-gray-400'>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
+</ExampleDiv>
+
+<Htwo label="Heading gradient" />
+
+Use this example to highlight a portion of the heading text by using a gradient style.
+
+<ExampleDiv>
+<H1><TextGradient>Better Data</TextGradient> Scalable AI.</H1>
+<P textColor='text-gray-500 dark:text-gray-400'>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
 </ExampleDiv>

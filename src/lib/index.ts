@@ -176,10 +176,13 @@ export { default as Toast } from './toasts/Toast.svelte';
 export { default as Tooltip } from './tooltips/Tooltip.svelte';
 
 // Typography
+export { default as A } from './typography/A.svelte';
 export { default as H1 } from './typography/H1.svelte';
 export { default as H2 } from './typography/H2.svelte';
 export { default as Highlight } from './typography/Highlight.svelte';
+export { default as Mark } from './typography/Mark.svelte';
 export { default as P } from './typography/P.svelte';
+export { default as TextGradient } from './typography/TextGradient.svelte';
 
 // utils
 export { default as CloseButton } from './utils/CloseButton.svelte';
