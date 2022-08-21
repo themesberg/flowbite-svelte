@@ -36,7 +36,7 @@
 </script>
 
 {#if show}
-	<div class="relative flex-shrink-0 h-full">
+	<div class="relative flex-shrink-0">
 		<slot />
 		<span class={dotClass} />
 	</div>

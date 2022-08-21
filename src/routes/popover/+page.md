@@ -1,5 +1,5 @@
 ---
-layout: popoverLayout
+layout: modalLayout
 ---
 
 <script>
@@ -8,7 +8,7 @@ layout: popoverLayout
   import { QuestionMarkCircle, ChevronRight } from 'svelte-heros';
   import { Home } from 'svelte-heros';
   
-  import componentProps from '../props/Popper.json'
+  import componentProps from '../props/Popover.json'
 
   let props = componentProps.props
   let propHeader = ['Name', 'Type', 'Default']
@@ -46,16 +46,18 @@ Make sure that you have the Flowbite JavaScript included in your project to enab
 <Htwo label="Default popover" />
 
 <ExampleDiv  class="flex h-44 items-end justify-center">
-  <Popover class="w-64 text-sm font-light text-gray-500 bg-white dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
+  <Popover class="w-64 text-sm font-light " title="Popover title">
     <Button slot="trigger">Default popover</Button>
-    <div class="py-2 px-3 bg-gray-100 rounded-t-lg border-b border-gray-200 dark:border-gray-600 dark:bg-gray-700">
-      <h3 class="font-semibold text-gray-900 dark:text-white">Popover title</h3>
-    </div>
-    <div class="py-2 px-3">
       And here's some amazing content. It's very engaging. Right?
-    </div>
   </Popover>
 </ExampleDiv>
+
+```html
+<Popover class="w-64 text-sm font-light " title="Popover title">
+  <Button slot="trigger">Default popover</Button>
+    And here's some amazing content. It's very engaging. Right?
+</Popover>
+```
 
 <Htwo label="User profile" />
 
@@ -116,6 +118,8 @@ Show helpful information inside a popover when hovering over a question mark but
 <Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.</p>
+
+<h3 class='text-xl w-full dark:text-white py-4'>Modal</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={props} rowState='hover' />
