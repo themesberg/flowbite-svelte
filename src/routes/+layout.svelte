@@ -12,10 +12,13 @@
 	} from '$lib';
 	import { Side, Nav, SidebarList } from 'svelte-sidebar-menu';
 	import Github from './utils/icons/Github.svelte';
-	import { forms, svelteflows, topMenus } from './moduleItems/+server.js';
+	import { forms, svelteflows, topMenus, typography } from './moduleItems/+server.js';
 
 	let asideClass =
 		'absolute w-auto bg-white pt-8 shadow-lg z-50 px-4 h-screen z-40 overflow-scroll dark:bg-gray-900';
+
+	// Nav
+	let navDivClass = 'pb-4';
 	// Navbar
 	let logo = '/images/flowbite-svelte-icon-logo.svg';
 	let logoClass = 'w-8 ml-0 sm:ml-4 sm:mr-2';
@@ -44,8 +47,8 @@
 	let darkmodebtn =
 		'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 fixed right-4 top-2 z-50';
 	let sideBarListClass =
-		'border-b border-gray-400 dark:border-gray-500 mb-2 px-0 xl:px-4 text-base';
-	let h3Class = 'text-lg pb-2';
+		'border-b border-gray-400 dark:border-gray-500 mb-4 px-0 xl:px-4 text-base';
+	let h3Class = 'text-lg pb-4';
 	import { quartInOut } from 'svelte/easing';
 	import Toc from './Toc/+page.svelte';
 	let transitionParams = {
@@ -75,7 +78,7 @@
 		{childLi}
 		{hamburgerClass}
 	>
-		<Nav {navClass} class="pb-4">
+		<Nav {navClass} class="pb-2">
 			<h3 class={h3Class}>
 				<a href="/">Flowbite Svelte</a>
 			</h3>
@@ -83,171 +86,177 @@
 				<SidebarList {href} {name} {sideBarListClass} />
 			{/each}
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/accordions">Accordions</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/alerts">Alert</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/avatar">Avatar</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/badges">Badges</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/breadcrumbs">Breadcrumb</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/button-groups">Button groups</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/buttons">Buttons</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}><a href="/cards">Cards</a></h3>
+		<Nav {navClass} {navDivClass}>
+			<h3><a href="/cards">Cards</a></h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/carousels">Carousel</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/darkmode">Dark mode</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/datepicker" rel="external">Datepicker</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/dropdowns">Dropdowns</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/forms" rel="external">Forms</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/footer">Footer</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/icons">Icons</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/kbd">KBD</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/list-group">List group</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}><a href="/mega-menu">Mega menu</a></h3>
+		<Nav {navClass} {navDivClass}>
+			<h3><a href="/mega-menu">Mega menu</a></h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}><a href="/modals">Modals</a></h3>
+		<Nav {navClass} {navDivClass}>
+			<h3><a href="/modals">Modals</a></h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}><a href="/navbar">Navbar</a></h3>
+		<Nav {navClass} {navDivClass}>
+			<h3><a href="/navbar">Navbar</a></h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/paginations">Pagination</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/popover">Popover</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/progressbars">Progress bar</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}><a href="/ratings">Rating</a></h3>
+		<Nav {navClass} {navDivClass}>
+			<h3><a href="/ratings">Rating</a></h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/sidebars">Sidebar</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/skeleton">Skeleton</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/spinners">Spinners</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/tables">Tables</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}><a href="/tabs">Tabs</a></h3>
+		<Nav {navClass} {navDivClass}>
+			<h3><a href="/tabs">Tabs</a></h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/timelines">Timelines</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}><a href="/toasts">Toast</a></h3>
+		<Nav {navClass} {navDivClass}>
+			<h3><a href="/toasts">Toast</a></h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/tooltips">Tooltips</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/typography">Typography</a>
 			</h3>
 		</Nav>
-		<Nav {navClass}>
-			<h3 class={h3Class}>
+		<Nav {navClass} {navDivClass}>
+			<h3>
 				<a href="/utilities">Utilities</a>
 			</h3>
 		</Nav>
-		<Nav {navClass} navDivClass={navDivClasslast}>
+		<Nav {navClass} class="pb-2">
 			<h3 class={h3Class}>Forms</h3>
 			{#each forms as { href, name, rel }}
 				<SidebarList {href} {name} {rel} {sideBarListClass} />
 			{/each}
 		</Nav>
+		<Nav {navClass} navDivClass={navDivClasslast}>
+			<h3 class={h3Class}>Typography</h3>
+			{#each typography as { href, name, rel }}
+				<SidebarList {href} {name} {rel} {sideBarListClass} />
+			{/each}
+		</Nav>
 	</Side>
 
-	<main class="flex mx-auto mb-8 px-0 sm:px-2 pt-16 lg:pl-64 2xl:pl-16">
+	<main class="flex mx-auto pt-12 pb:12 xl:pb-24 lg:pb-16 lg:pl-64">
 		<DarkMode btnClass={darkmodebtn} />
 		<div class="w-full px-0 sm:px-8">
 			<slot />

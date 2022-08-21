@@ -9,6 +9,7 @@
 	export let rounded: boolean = false;
 	export let index: boolean = false;
 	export let dismissable: boolean = false;
+	export let baseClass: string = 'inline-flex items-center justify-center -mb-0.5';
 
 	let hidden = false;
 
@@ -44,7 +45,7 @@
 
 	let badgeClass;
 	$: badgeClass = classNames(
-		'inline-flex items-center justify-center -mb-0.5',
+		baseClass,
 		large ? 'text-sm font-medium' : 'text-xs font-semibold',
 		colors[color],
 		href && (hovers[color] ?? hovers.blue),

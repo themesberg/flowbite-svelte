@@ -175,5 +175,15 @@ export { default as Toast } from './toasts/Toast.svelte';
 // Tooltips
 export { default as Tooltip } from './tooltips/Tooltip.svelte';
 
+// Typography
+export { default as A } from './typography/A.svelte';
+export { default as Heading } from './typography/Heading.svelte';
+export { default as Highlight } from './typography/Highlight.svelte';
+export { default as Mark } from './typography/Mark.svelte';
+export { default as P } from './typography/P.svelte';
+export { default as Secondary } from './typography/Secondary.svelte'
+export { default as TextGradient } from './typography/TextGradient.svelte';
+export { default as Underline } from './typography/Underline.svelte';
+
 // utils
 export { default as CloseButton } from './utils/CloseButton.svelte';
