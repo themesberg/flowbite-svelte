@@ -24,16 +24,13 @@
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
-		"@floating-ui/dom": "^1.0.1",
 		"@playwright/test": "^1.25.0",
-		"@popperjs/core": "^2.11.6",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "1.0.0-next.420",
 		"@sveltejs/package": "1.0.0-next.1",
 		"@typescript-eslint/eslint-plugin": "^5.33.0",
 		"@typescript-eslint/parser": "^5.33.0",
 		"autoprefixer": "^10.4.8",
-		"classnames": "^2.3.1",
 		"createprops": "^0.4.9",
 		"eslint": "^8.21.0",
 		"eslint-config-prettier": "^8.5.0",
@@ -47,7 +44,6 @@
 		"svelte": "^3.49.0",
 		"svelte-check": "^2.8.0",
 		"svelte-flag-icons": "^0.1.1",
-		"svelte-heros": "^2.3.3",
 		"svelte-preprocess": "^4.10.7",
 		"svelte-sidebar-menu": "^0.8.11",
 		"svelte2tsx": "^0.5.13",
@@ -97,7 +93,11 @@
 		"url": "https://github.com/themesberg/flowbite-svelte"
 	},
 	"dependencies": {
-		"flowbite": "^1.5.2"
+		"@floating-ui/dom": "^1.0.1",
+		"@popperjs/core": "^2.11.6",
+		"classnames": "^2.3.1",
+		"flowbite": "^1.5.2",
+		"svelte-heros": "^2.3.3"
 	},
 	"engines": {
 		"npm": ">=7.0.0",
