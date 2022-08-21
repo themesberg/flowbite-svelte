@@ -145,12 +145,12 @@ Get started with this example if you want to add a secondary helper text for the
 
 <ExampleDiv>
   <Checkbox aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Checkbox>
-  <Helper id="helper-checkbox-text" class="pl-6 -mt-1">For orders shipped from $25 in books or $29 in other categories</Helper>
+  <Helper id="helper-checkbox-text" class="pl-6">For orders shipped from $25 in books or $29 in other categories</Helper>
 </ExampleDiv>
 
 ```html
   <Checkbox aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Checkbox>
-  <Helper id="helper-checkbox-text" class="pl-6 -mt-1">For orders shipped from $25 in books or $29 in other categories</Helper>
+  <Helper id="helper-checkbox-text" class="pl-6">For orders shipped from $25 in books or $29 in other categories</Helper>
 ```
 
 <Htwo label="Bordered" />

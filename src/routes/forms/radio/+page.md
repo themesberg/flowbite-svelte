@@ -20,6 +20,8 @@ layout: formLayout
 
   let colors = 'green';
   let technology = 'svelte';
+  let inline1 = 'second';
+  let inline2 = 'thrid';
 </script>
 
 <Breadcrumb>
@@ -52,7 +54,7 @@ Use the default example of a radio component with the checked and unchecked stat
 
 <ExampleDiv class="flex flex-col gap-4">
 <Radio name="example">Default radio</Radio>
-<Radio name="example" checked={true}>Checked state</Radio>
+<Radio name="example">Checked state</Radio>
 </ExampleDiv>
 
 ```html
@@ -61,7 +63,7 @@ Use the default example of a radio component with the checked and unchecked stat
 </script>
 
 <Radio name="example">Default radio</Radio>
-<Radio name="example" checked>Checked state</Radio>
+<Radio name="example">Checked state</Radio>
 ```
 
 <Htwo label="Disabled state" />
@@ -72,12 +74,12 @@ This example can be used for the disabled state of the radio component by applyi
 
 <ExampleDiv class="flex flex-col gap-4">
 <Radio name="disabled-state" disabled>Disabled radio</Radio>
-<Radio name="disabled-state" disabled checked >Disabled checked</Radio>
+<Radio name="disabled-state" disabled>Disabled checked</Radio>
 </ExampleDiv>
 
 ```html
 <Radio name="disabled-state" disabled>Disabled radio</Radio>
-<Radio name="disabled-state" disabled checked>Disabled checked</Radio>
+<Radio name="disabled-state" disabled>Disabled checked</Radio>
 ```
 
 <Htwo label="Alternative syntax" />
@@ -151,12 +153,12 @@ Get started with this example if you want to add a secondary helper text for the
 
 <ExampleDiv>
   <Radio aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Radio>
-  <Helper id="helper-checkbox-text" class="pl-6 -mt-1">For orders shipped from $25 in books or $29 in other categories</Helper>
+  <Helper id="helper-checkbox-text" class="pl-6">For orders shipped from $25 in books or $29 in other categories</Helper>
 </ExampleDiv>
 
 ```html
   <Radio aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Radio>
-  <Helper id="helper-checkbox-text" class="pl-6 -mt-1">For orders shipped from $25 in books or $29 in other categories</Helper>
+  <Helper id="helper-checkbox-text" class="pl-6">For orders shipped from $25 in books or $29 in other categories</Helper>
 ```
 
 <Htwo label="Bordered" />
@@ -169,7 +171,7 @@ Use this example of a radio inside a card element to enable a larger area of cli
     <Radio name="bordered" class="w-full p-4">Default radio</Radio>
   </div>
   <div class="rounded border border-gray-200 dark:border-gray-700">
-    <Radio name="bordered" checked class="w-full p-4">Checked state</Radio>
+    <Radio name="bordered" class="w-full p-4">Checked state</Radio>
   </div>
 </div>
 </ExampleDiv>
@@ -179,7 +181,7 @@ Use this example of a radio inside a card element to enable a larger area of cli
 	<Radio name="bordered" class="w-full p-4">Default radio</Radio>
 </div>
 <div class="rounded border border-gray-200 dark:border-gray-700">
-	<Radio name="bordered" checked class="w-full p-4">Checked state</Radio>
+	<Radio name="bordered" class="w-full p-4">Checked state</Radio>
 </div>
 ```
 
@@ -239,20 +241,20 @@ Use this example to show a list of radio items inside a card horizontally.
 
 Here’s an example of a list group that you can use right away.
 
-<ExampleDiv class="flex justify-center h-96">
+<ExampleDiv class="flex justify-center items-start h-96">
   <Dropdown label="Dropdown radio" class="w-60" >
     <ul slot="content" class="p-3">
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
         <Radio name="dropdown" value={1} tinted>Individual</Radio>
-        <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
+        <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
       </DropdownItem>
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
         <Radio name="dropdown" value={2} tinted>Company</Radio>
-        <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
+        <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
       </DropdownItem>
       <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
         <Radio name="dropdown" value={3} tinted>Non profit</Radio>
-        <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
+        <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
       </DropdownItem>
     </ul>
   </Dropdown>
@@ -263,15 +265,15 @@ Here’s an example of a list group that you can use right away.
   <ul slot="content" class="p-3">
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
       <Radio name="dropdown" value={1} tinted>Individual</Radio>
-      <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
+      <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
     </DropdownItem>
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
       <Radio name="dropdown" value={2} tinted>Company</Radio>
-      <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
+      <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
     </DropdownItem>
     <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
       <Radio name="dropdown" value={3} tinted>Non profit</Radio>
-      <Helper class="pl-6 -mt-1">Some helpful instruction goes over here.</Helper>
+      <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
     </DropdownItem>
   </ul>
 </Dropdown>
@@ -283,34 +285,39 @@ You can align the radio elements horizontally by using a wrapper tag and applyin
 
 <ExampleDiv>
 	<div class="flex gap-3">
-		<Radio name="inline1">Inline 1</Radio>
-		<Radio name="inline1">Inline 2</Radio>
-		<Radio name="inline1" checked>Inline checked</Radio>
-		<Radio name="inline1" disabled>Inline disabled</Radio>
+		<Radio group={inline1} value="first">Inline 1</Radio>
+		<Radio group={inline1} value="second">Inline 2 checked</Radio>
+		<Radio group={inline1} value="third">Inline 3</Radio>
+		<Radio group={inline1} value="fourth" disabled>Inline disabled</Radio>
 	</div>
 </ExampleDiv>
 
 You can use the property `inline` as the alternative.
 
 <ExampleDiv>
-	<Radio name="inline2" inline class="mr-2">Inline 1</Radio>
-	<Radio name="inline2" inline class="mr-2">Inline 2</Radio>
-	<Radio name="inline2" inline class="mr-2" checked>Inline checked</Radio>
-	<Radio name="inline2" inline class="mr-2" disabled>Inline disabled</Radio>
+  <Radio group={inline2} inline value="first" class="mr-2">Inline 1</Radio>
+  <Radio group={inline2} inline value="second" class="mr-2">Inline 2</Radio>
+  <Radio group={inline2} inline value="thrid" class="mr-2">Inline checked</Radio>
+  <Radio group={inline2} inline value="fourth" class="mr-2" disabled>Inline disabled</Radio>
 </ExampleDiv>
 
 ```html
+<script>
+  let inline1="second";
+  let inline2="thrid";
+</script>
+
 <div class="flex gap-3">
-	<Radio name="inline1">Inline 1</Radio>
-	<Radio name="inline1">Inline 2</Radio>
-	<Radio name="inline1" checked>Inline checked</Radio>
-	<Radio name="inline1" disabled>Inline disabled</Radio>
+  <Radio group={inline1} value="first">Inline 1</Radio>
+  <Radio group={inline1} value="second">Inline 2 checked</Radio>
+  <Radio group={inline1} value="third">Inline 3</Radio>
+  <Radio group={inline1} value="fourth" disabled>Inline disabled</Radio>
 </div>
 
-<Radio name="inline2" inline class="mr-2">Inline 1</Radio>
-<Radio name="inline2" inline class="mr-2">Inline 2</Radio>
-<Radio name="inline2" inline class="mr-2" checked>Inline checked</Radio>
-<Radio name="inline2" inline class="mr-2" disabled>Inline disabled</Radio>
+<Radio group={inline2} inline value="first" class="mr-2">Inline 1</Radio>
+<Radio group={inline2} inline value="second" class="mr-2">Inline 2</Radio>
+<Radio group={inline2} inline value="thrid" class="mr-2">Inline checked</Radio>
+<Radio group={inline2} inline value="fourth" class="mr-2" disabled>Inline disabled</Radio>
 ```
 
 <Htwo label="Colors" />

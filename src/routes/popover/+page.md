@@ -115,6 +115,48 @@ Show helpful information inside a popover when hovering over a question mark but
   </div>
 </ExampleDiv>
 
+<Htwo label="Placement" />
+
+Set the position of the popover component relative to the trigger element by using the `placement={top|right|bottom|left}` data attribute and its values.
+
+<ExampleDiv class="flex gap-4">
+  <Popover placement="top" class="w-64 text-sm font-light " title="Popover top">
+    <Button slot="trigger">Top popover</Button>
+      And here's some amazing content. It's very engaging. Right?
+  </Popover>
+  <Popover placement="right" class="w-64 text-sm font-light " title="Popover right">
+    <Button slot="trigger">Right popover</Button>
+      And here's some amazing content. It's very engaging. Right?
+  </Popover>
+  <Popover placement="bottom" class="w-64 text-sm font-light " title="Popover bottom">
+    <Button slot="trigger">Bottom popover</Button>
+      And here's some amazing content. It's very engaging. Right?
+  </Popover>
+  <Popover placement="left" class="w-64 text-sm font-light " title="Popover left">
+    <Button slot="trigger">Left popover</Button>
+      And here's some amazing content. It's very engaging. Right?
+  </Popover>
+</ExampleDiv>
+
+```html
+<Popover placement="top" class="w-64 text-sm font-light " title="Popover top">
+  <Button slot="trigger">Top popover</Button>
+    And here's some amazing content. It's very engaging. Right?
+</Popover>
+<Popover placement="right" class="w-64 text-sm font-light " title="Popover right">
+  <Button slot="trigger">Right popover</Button>
+    And here's some amazing content. It's very engaging. Right?
+</Popover>
+<Popover placement="bottom" class="w-64 text-sm font-light " title="Popover bottom">
+  <Button slot="trigger">Bottom popover</Button>
+    And here's some amazing content. It's very engaging. Right?
+</Popover>
+<Popover placement="left" class="w-64 text-sm font-light " title="Popover left">
+  <Button slot="trigger">Left popover</Button>
+    And here's some amazing content. It's very engaging. Right?
+</Popover>
+```
+
 <Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.</p>
