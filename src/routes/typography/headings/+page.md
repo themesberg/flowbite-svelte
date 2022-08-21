@@ -42,10 +42,15 @@ layout: typographyLayout
 
 
 <ExampleDiv>
-	<GitHubSource href="typography/H1.svelte">H1</GitHubSource>
-	<GitHubSource href="typography/H2.svelte">H2</GitHubSource>
+, , , , Mark, , , 
+	<GitHubSource href="typography/P.svelte">P</GitHubSource>
+	<GitHubSource href="typography/Heading.svelte">Heading</GitHubSource>
 	<GitHubSource href="typography/P.svelte">P</GitHubSource>
 	<GitHubSource href="typography/Highlight.svelte">Highlight</GitHubSource>
+		<GitHubSource href="typography/Mark.svelte">Mark</GitHubSource>
+	<GitHubSource href="typography/Secondary.svelte">Secondary</GitHubSource>
+	<GitHubSource href="typography/TextGradient.svelte">TextGradient</GitHubSource>
+	<GitHubSource href="typography/Underline.svelte">Underline</GitHubSource>
 </ExampleDiv>
 
 Get started with the heading component to define titles and subtitles on a web page and also improve the on-page SEO metrics of your website by targeting high-traffic keywords on Google.
@@ -73,6 +78,14 @@ Use this example of a H1 heading in the context of a paragraph and CTA button fo
 </div>
 </ExampleDiv>
 
+```html
+<div  class="text-center">
+	<Heading tag="h1" class="mb-4" customSize="text-4xl font-extrabold  md:text-5xl lg:text-6xl">We invest in the world’s potential</Heading>
+	<P class="mb-6 text-lg lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
+	<Button href="/">Learn more <ArrowRight size="18" class="ml-2" /></Button>
+</div>
+```
+
 
 <Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
 Second-level heading</Heading>
@@ -86,6 +99,12 @@ Use this example of a second-level H2 heading as the main subtitle for each sect
 <A>Read more <ChevronRight /></A>
 </ExampleDiv>
 
+```html
+<Heading tag="h2" customeSize="text-4xl font-extrabold ">Payments tool for companies</Heading>
+<P class="my-4 text-gray-500">Start developing with an open-source library of over 450+ UI components, sections, and ...</P>
+<P class="mb-4">Deliver great service experiences fast - without the complexity of ...</P>
+<A>Read more <ChevronRight /></A>
+```
 
 <Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
 Highlighted heading</Heading>
@@ -97,6 +116,11 @@ Use this example to highlight a certain portion of the heading text with a diffe
 <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
 </ExampleDiv>
 
+```html
+<Heading tag="h1" class="mb-4">Get back to growth with <Highlight>the world's #1</Highlight> CRM.</Heading>
+<P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
+```
+
 <Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
 Heading mark</Heading>
 
@@ -106,6 +130,11 @@ This example can be used to mark one part of the heading text with a solid backg
 <Heading tag="h1" class='mb-4'>Regain <Mark>control</Mark> over your days</Heading>
 <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
 </ExampleDiv>
+
+```html
+<Heading tag="h1" class='mb-4'>Regain <Mark>control</Mark> over your days</Heading>
+<P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
+```
 
 <Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
 Heading gradient</Heading>
@@ -117,6 +146,11 @@ Use this example to highlight a portion of the heading text by using a gradient 
 <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
 </ExampleDiv>
 
+```html
+<Heading tag="h1" class="mb-4" customSize="text-3xl font-extrabold  md:text-5xl lg:text-6xl"><TextGradient>Better Data</TextGradient> Scalable AI.</Heading>
+<P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
+```
+
 <Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
 Heading underline</Heading>
 
@@ -126,6 +160,11 @@ Get started with this example to underline an important part of the heading comp
 <Heading tag="h1" class="mb-4">We invest in the <Underline>world’s potential</Underline></Heading>
 <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
 </ExampleDiv>
+
+```html
+<Heading tag="h1" class="mb-4">We invest in the <Underline>world’s potential</Underline></Heading>
+<P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
+```
 
 <Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
 Breadcrumb context</Heading>
@@ -141,6 +180,15 @@ Get started with this example to position a breadcrumb component above the headi
 <Heading tag="h2" class="mb-4">Team management</Heading>
 </ExampleDiv>
 
+```html
+<Breadcrumb class="mb-4">
+  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/">Settings</BreadcrumbItem>
+	<BreadcrumbItem>Team</BreadcrumbItem>
+</Breadcrumb>
+<Heading tag="h2" class="mb-4">Team management</Heading>
+```
+
 <Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
 Badge context</Heading>
 
@@ -149,6 +197,10 @@ Use this example to show a badge component inside the heading text element as a 
 <ExampleDiv>
 <Heading tag="h1" class='flex items-center' size='text-5xl'>Flowbite <Badge class="text-2xl font-semibold ml-2" >PRO</Badge></Heading>
 </ExampleDiv>
+
+```html
+<Heading tag="h1" class='flex items-center' size='text-5xl'>Flowbite <Badge class="text-2xl font-semibold ml-2" >PRO</Badge></Heading>
+```
 
 <Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
 Secondary text</Heading>
@@ -159,6 +211,9 @@ This example can be used to add a secondary text inside the main heading compone
 <Heading tag="h1" customSize="text-5xl font-extrabold">Flowbite <Secondary class="ml-2">This is secondary text</Secondary></Heading>
 </ExampleDiv>
 
+```html
+<Heading tag="h1" customSize="text-5xl font-extrabold">Flowbite <Secondary class="ml-2">This is secondary text</Secondary></Heading>
+```
 
 <Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
 Sizes</Heading>
@@ -173,6 +228,10 @@ Use the `tag="h1"` as the most important text element to indicate the title of y
 <Heading tag="h1">Heading 1</Heading>
 </ExampleDiv>
 
+```html
+<Heading tag="h1">Heading 1</Heading>
+```
+
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">Heading two (H2)</Heading>
 
 The `tag="h2"` can be used as subtitles of the page’s sections.
@@ -181,8 +240,9 @@ The `tag="h2"` can be used as subtitles of the page’s sections.
 <Heading tag="h2">Heading 2</Heading>
 </ExampleDiv>
 
-
-
+```html
+<Heading tag="h2">Heading 2</Heading>
+```
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">Heading three (H3)</Heading>
 
@@ -192,6 +252,9 @@ The `tag="h3"` can be used as subtitles of the page’s sections.
 <Heading tag="h3">Heading 3</Heading>
 </ExampleDiv>
 
+```html
+<Heading tag="h3">Heading 3</Heading>
+```
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">Heading four (H4)</Heading>
 
@@ -201,6 +264,9 @@ The `tag="h4"` can be used as subtitles of the page’s sections.
 <Heading tag="h4">Heading 4</Heading>
 </ExampleDiv>
 
+```html
+<Heading tag="h4">Heading 4</Heading>
+```
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">Heading five (H5)</Heading>
 
@@ -210,6 +276,9 @@ The `tag="h5"` can be used as subtitles of the page’s sections.
 <Heading tag="h5">Heading 5</Heading>
 </ExampleDiv>
 
+```html
+<Heading tag="h5">Heading 5</Heading>
+```
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">Heading six (H6)</Heading>
 
@@ -218,6 +287,10 @@ The `tag="h6"` can be used as subtitles of the page’s sections.
 <ExampleDiv>
 <Heading tag="h6">Heading 6</Heading>
 </ExampleDiv>
+
+```html
+<Heading tag="h6">Heading 6</Heading>
+```
 
 <Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
 Props</Heading>
