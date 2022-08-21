@@ -81,7 +81,7 @@ Use this example of a H1 heading in the context of a paragraph and CTA button fo
 ```html
 <div  class="text-center">
 	<Heading tag="h1" class="mb-4" customSize="text-4xl font-extrabold  md:text-5xl lg:text-6xl">We invest in the world’s potential</Heading>
-	<P class="mb-6 text-lg lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
+	<P class="mb-6 text-lg lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Here at Flowbite we focus on markets ...</P>
 	<Button href="/">Learn more <ArrowRight size="18" class="ml-2" /></Button>
 </div>
 ```
@@ -101,8 +101,8 @@ Use this example of a second-level H2 heading as the main subtitle for each sect
 
 ```html
 <Heading tag="h2" customeSize="text-4xl font-extrabold ">Payments tool for companies</Heading>
-<P class="my-4 text-gray-500">Start developing with an open-source library of over 450+ UI components, sections, and ...</P>
-<P class="mb-4">Deliver great service experiences fast - without the complexity of ...</P>
+<P class="my-4 text-gray-500">Start developing with an open-source library ...</P>
+<P class="mb-4">Deliver great service experiences fast - without ...</P>
 <A>Read more <ChevronRight /></A>
 ```
 
@@ -118,7 +118,7 @@ Use this example to highlight a certain portion of the heading text with a diffe
 
 ```html
 <Heading tag="h1" class="mb-4">Get back to growth with <Highlight>the world's #1</Highlight> CRM.</Heading>
-<P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
+<P>Here at Flowbite we focus on markets where technology ...</P>
 ```
 
 <Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
@@ -133,7 +133,7 @@ This example can be used to mark one part of the heading text with a solid backg
 
 ```html
 <Heading tag="h1" class='mb-4'>Regain <Mark>control</Mark> over your days</Heading>
-<P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
+<P>Here at Flowbite we focus on markets where ...</P>
 ```
 
 <Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
@@ -148,7 +148,7 @@ Use this example to highlight a portion of the heading text by using a gradient 
 
 ```html
 <Heading tag="h1" class="mb-4" customSize="text-3xl font-extrabold  md:text-5xl lg:text-6xl"><TextGradient>Better Data</TextGradient> Scalable AI.</Heading>
-<P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
+<P>Here at Flowbite we focus on markets where ...</P>
 ```
 
 <Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
@@ -163,7 +163,7 @@ Get started with this example to underline an important part of the heading comp
 
 ```html
 <Heading tag="h1" class="mb-4">We invest in the <Underline>world’s potential</Underline></Heading>
-<P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
+<P>Here at Flowbite we focus on markets where ...</P>
 ```
 
 <Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
