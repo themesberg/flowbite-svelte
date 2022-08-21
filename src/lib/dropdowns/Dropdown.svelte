@@ -1,14 +1,13 @@
 <script lang="ts">
 	import { setContext } from 'svelte';
-	import Tooltip from '$lib/tooltips/Tooltip.svelte';
 	import Button from '$lib/buttons/Button.svelte';
+	import Popper from '$lib/utils/Popper.svelte';
 	import classNames from 'classnames';
 	import { ChevronUp, ChevronRight, ChevronDown, ChevronLeft } from 'svelte-heros';
-	import type { Placement } from '@floating-ui/dom';
+	import type { Placement } from '@popperjs/core';
 
 	export let label: string = '';
 	export let inline: boolean = false;
-	export let tooltipArrow: boolean = false;
 	export let arrowIcon: boolean = true;
 	export let labelClass: string =
 		'flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent';
@@ -25,18 +24,29 @@
 	};
 	// @ts-ignore
 	$: icon = icons[placement.split('-')[0]];
+
+	let popoverClass;
+	$: popoverClass = classNames(
+		'rounded-lg shadow-sm',
+		'bg-white dark:bg-gray-800',
+		'text-gray-500 dark:text-gray-400',
+		'border border-gray-200 dark:border-gray-700',
+		'outline-none',
+		$$props.class
+	);
 </script>
 
-<Tooltip
-	class={classNames('!rounded !p-0', $$props.class)}
-	style="auto"
-	animation="duration-100"
+<Popper
+	activeContent={true}
+	arrow={false}
 	{placement}
-	arrow={tooltipArrow}
+	{...$$restProps}
+	class={popoverClass}
 	trigger="click"
+	on:show
 	bind:open
 >
-	<slot name="trigger">
+	<slot name="trigger" slot="trigger">
 		{#if inline}
 			<button class={labelClass} class:flex-row-reverse={icon == ChevronLeft}>
 				<slot name="label">{label}</slot>
@@ -59,9 +69,9 @@
 			</Button>
 		{/if}
 	</slot>
-	<slot name="content" slot="content">
+	<slot name="content">
 		<ul class="py-1">
 			<slot />
 		</ul>
 	</slot>
-</Tooltip>
+</Popper>

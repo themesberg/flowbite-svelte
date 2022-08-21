@@ -33,7 +33,10 @@
 	const hideHandler = (ev) => {
 		if (activeContent)
 			setTimeout(
-				() => triggerEl.matches(':hover') || contentEl.matches(':hover') || (open = false),
+				() =>
+					(!clickable && (triggerEl.matches(':hover') || contentEl.matches(':hover'))) ||
+					contentEl.contains(document.activeElement) ||
+					(open = false),
 				100
 			);
 		else open = false;
@@ -76,7 +79,7 @@
 	);
 </script>
 
-<span
+<div
 	bind:this={triggerEl}
 	on:focusin={showHandler}
 	on:focusout={hideHandler}
@@ -86,14 +89,14 @@
 	class="inline-block"
 >
 	<slot name="trigger" />
-</span>
+</div>
 <div
 	bind:this={contentEl}
 	role="tooltip"
 	tabindex={activeContent ? -1 : undefined}
 	class={divClass}
-	on:focus={activeContent ? showHandler : undefined}
-	on:blur={activeContent ? hideHandler : undefined}
+	on:focusin={activeContent ? showHandler : undefined}
+	on:focusout={activeContent ? hideHandler : undefined}
 	on:mouseenter={activeContent && !clickable ? showHandler : undefined}
 	on:mouseleave={activeContent && !clickable ? hideHandler : undefined}
 >
