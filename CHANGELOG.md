@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.25.7](https://github.com/themesberg/flowbite-svelte/compare/v0.25.6...v0.25.7) (2022-08-21)
+
+
+### Features
+
+* dropdown as Popper + fixes ([67fdf78](https://github.com/themesberg/flowbite-svelte/commit/67fdf7837f36d63b3683e0b6f6e78fbf91f6bf23))
+
 ### [0.25.6](https://github.com/themesberg/flowbite-svelte/compare/v0.25.5...v0.25.6) (2022-08-20)
 
 
