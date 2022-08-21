@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.25.9](https://github.com/themesberg/flowbite-svelte/compare/v0.25.8...v0.25.9) (2022-08-21)
+
+
+### Bug Fixes
+
+* docs for radio ([add38b2](https://github.com/themesberg/flowbite-svelte/commit/add38b26fd4669a591916b7fa42e107868cc90a1))
+* move @floating-ui/dom, classnames, svelte-heros, @popperjs/core from devDpendencies to dependencies ([ee5d31a](https://github.com/themesberg/flowbite-svelte/commit/ee5d31af1b23e00e565c2a60b354b85f2beb54d1))
+* popover html ([d49f808](https://github.com/themesberg/flowbite-svelte/commit/d49f808b8a05bd735a9f90c661710dddfd163cad))
+
 ### [0.25.8](https://github.com/themesberg/flowbite-svelte/compare/v0.25.7...v0.25.8) (2022-08-21)
 
 
