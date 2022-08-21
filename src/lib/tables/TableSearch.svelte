@@ -9,6 +9,7 @@
 	export let placeholder: string = 'Search';
 	export let color: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom' =
 		'default';
+
 	const colors = {
 		default: 'text-gray-500 dark:text-gray-400',
 		blue: 'text-blue-100 dark:text-blue-100',

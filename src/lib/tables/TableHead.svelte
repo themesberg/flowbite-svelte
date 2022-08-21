@@ -3,6 +3,7 @@
 	import { getContext } from 'svelte';
 
 	export let theadClass: string = 'text-xs uppercase';
+
 	let color: string;
 	color = getContext('color');
 	let noborder: boolean = getContext('noborder');

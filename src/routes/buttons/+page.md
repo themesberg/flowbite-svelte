@@ -81,6 +81,19 @@ Use these default button styles with multiple colors to indicate an action or li
 <Button color="purple">Purple</Button>
 ```
 
+<Htwo label="Button with link" />
+
+You can add a link to a Button component:
+
+<ExampleDiv>
+<Button href="/">Home</Button>
+</ExampleDiv>
+
+```html
+<Button href="/">Home</Button>
+```
+
+
 <Htwo label="Button pills" />
 
 The button pills can be used as an alternative style by using fully rounded edges.

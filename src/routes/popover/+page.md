@@ -8,7 +8,7 @@ layout: popoverLayout
   import { QuestionMarkCircle, ChevronRight } from 'svelte-heros';
   import { Home } from 'svelte-heros';
   
-  import componentProps from '../props/Popover.json'
+  import componentProps from '../props/Popper.json'
 
   let props = componentProps.props
   let propHeader = ['Name', 'Type', 'Default']

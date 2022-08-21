@@ -11,10 +11,12 @@ layout: tableLayout
   import componentProps2 from '../props/TableBodyCell.json'
   import componentProps3 from '../props/TableBodyRow.json'
   import componentProps4 from '../props/TableSearch.json'
+	import componentProps5 from '../props/TableHead.json'
   let items1 = componentProps1.props
   let items2 = componentProps2.props
   let items3 = componentProps3.props
   let items4 = componentProps4.props
+	let items5 = componentProps5.props
   let propHeader = ['Name', 'Type', 'Default']
 
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
@@ -1407,4 +1409,10 @@ The component has the following props, type, and default values. See <a href="/p
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items4} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>TableHead</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
