@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.25.8](https://github.com/themesberg/flowbite-svelte/compare/v0.25.7...v0.25.8) (2022-08-21)
+
+
+### Features
+
+* add H1, H2, A, P, Higlight components ([3f80473](https://github.com/themesberg/flowbite-svelte/commit/3f804731e6a093c1e34f8b3be6289f930c372a96))
+* add Heading and removed H1 and H2 ([b2be994](https://github.com/themesberg/flowbite-svelte/commit/b2be9945c39bcbfe23a0df53348ce768c5958255))
+* add Mark and TextGradient ([343e719](https://github.com/themesberg/flowbite-svelte/commit/343e719406bc146639882f97bbeafbc2de9514cb))
+
 ### [0.25.7](https://github.com/themesberg/flowbite-svelte/compare/v0.25.6...v0.25.7) (2022-08-21)
 
 
