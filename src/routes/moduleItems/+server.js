@@ -22,7 +22,8 @@ export const forms = [
 ];
 
 export const typography = [
-	{ href: '/typography/headings', name: 'Headings' }
+	{ href: '/typography/headings', name: 'Headings' },
+	{ href: '/typography/blockquote', name: 'Blockquote' }
 ];
 
 export const topMenus = [

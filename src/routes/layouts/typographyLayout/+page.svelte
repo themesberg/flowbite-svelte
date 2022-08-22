@@ -9,11 +9,31 @@
 	<div class="container flex flex-wrap mx-auto">
 		<slot />
 
+		<Htwo label="Related components" />
+		<div class="related-components">
+			<p>
+				<a href="/typography/headings" class="link">Headings</a>
+			</p>
+			<p>
+				<a href="/typography/blockquote" class="link">Blockquote</a>
+			</p>
+		</div>
+
 		<Htwo label="References" />
 		<div class="references">
 			<p>
 				<a href="https://flowbite.com/docs/components/typography/" target="_blank" class="link"
 					>Flowbite Typography</a
+				>
+			</p>
+			<p>
+				<a href="https://flowbite.com/docs/typography/headings/" target="_blank" class="link"
+					>Flowbite Headings</a
+				>
+			</p>
+			<p>
+				<a href="https://flowbite.com/docs/typography/blockquote/" target="_blank" class="link"
+					>Flowbite Blockquote</a
 				>
 			</p>
 		</div>
