@@ -49,16 +49,11 @@ The button group component from Flowbite-Svelte can be used to stack together mu
 
 Use the following code to stack together buttons into a single group.
 
-<ExampleDiv class="flex flex-col gap-4">
+<ExampleDiv>
   <ButtonGroup>
     <Button>Proflie</Button>
     <Button>Settings</Button>
     <Button>Messages</Button>
-  </ButtonGroup>
-  <ButtonGroup>
-    <Button class="focus:ring-blue-700 focus:ring-2 focus:text-blue-700 dark:focus:text-white dark:focus:ring-blue-500">Proflie</Button>
-    <Button class="focus:ring-blue-700 focus:ring-2 focus:text-blue-700 dark:focus:text-white dark:focus:ring-blue-500">Settings</Button>
-    <Button class="focus:ring-blue-700 focus:ring-2 focus:text-blue-700 dark:focus:text-white dark:focus:ring-blue-500">Messages</Button>
   </ButtonGroup>
 </ExampleDiv>
 
@@ -67,12 +62,6 @@ Use the following code to stack together buttons into a single group.
 	<Button>Proflie</Button>
 	<Button>Settings</Button>
 	<Button>Messages</Button>
-</ButtonGroup>
-
-<ButtonGroup>
-  <Button class="focus:ring-blue-700 focus:ring-2 focus:text-blue-700 dark:focus:text-white dark:focus:ring-blue-500">Proflie</Button>
-  <Button class="focus:ring-blue-700 focus:ring-2 focus:text-blue-700 dark:focus:text-white dark:focus:ring-blue-500">Settings</Button>
-  <Button class="focus:ring-blue-700 focus:ring-2 focus:text-blue-700 dark:focus:text-white dark:focus:ring-blue-500">Messages</Button>
 </ButtonGroup>
 ```
 
@@ -176,7 +165,7 @@ You can also use SVG icons inside the grouped buttons.
 
 Group a series of buttons together on a single line or stack them in a vertical column.
 
-<ExampleDiv>
+<ExampleDiv class="flex flex-col gap-4">
   <ButtonGroup>
     <Button outline color="dark">Proflie</Button>
     <Button outline color="dark">Settings</Button>
