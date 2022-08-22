@@ -19,10 +19,10 @@ layout: typographyLayout
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
   <BreadcrumbItem href="/typography/">Typography</BreadcrumbItem>
-	<BreadcrumbItem>Headings</BreadcrumbItem>
+	<BreadcrumbItem>Blockquote</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="w-full mb-2" tag="h1" customSize="text-3xl">HeaBlockquote dings</Heading>
+<Heading class="w-full mb-2" tag="h1" customSize="text-3xl">Blockquote</Heading>
 
 <CompoDescription>The blockquote component can be used to quote text content from an external source that can be used for testimonials, reviews, and quotes inside an article</CompoDescription>
 
