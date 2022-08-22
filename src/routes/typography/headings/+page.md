@@ -42,11 +42,11 @@ layout: typographyLayout
 
 
 <ExampleDiv>
+  <GitHubSource href="typography/Heading.svelte">Heading</GitHubSource>
 	<GitHubSource href="typography/P.svelte">P</GitHubSource>
-	<GitHubSource href="typography/Heading.svelte">Heading</GitHubSource>
-	<GitHubSource href="typography/P.svelte">P</GitHubSource>
+	<GitHubSource href="typography/A.svelte">A</GitHubSource>
 	<GitHubSource href="typography/Highlight.svelte">Highlight</GitHubSource>
-		<GitHubSource href="typography/Mark.svelte">Mark</GitHubSource>
+	<GitHubSource href="typography/Mark.svelte">Mark</GitHubSource>
 	<GitHubSource href="typography/Secondary.svelte">Secondary</GitHubSource>
 	<GitHubSource href="typography/TextGradient.svelte">TextGradient</GitHubSource>
 	<GitHubSource href="typography/Underline.svelte">Underline</GitHubSource>
