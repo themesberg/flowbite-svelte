@@ -183,6 +183,7 @@ export { default as A } from './typography/A.svelte';
 export { default as Blockquote } from './typography/Blockquote.svelte';
 export { default as Heading } from './typography/Heading.svelte';
 export { default as Highlight } from './typography/Highlight.svelte';
+export { default as Hr } from './typography/Hr.svelte'
 export { default as Mark } from './typography/Mark.svelte';
 export { default as P } from './typography/P.svelte';
 export { default as Secondary } from './typography/Secondary.svelte'

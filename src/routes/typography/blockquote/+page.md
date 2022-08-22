@@ -22,7 +22,7 @@ layout: typographyLayout
 	<BreadcrumbItem>Blockquote</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="w-full mb-2" tag="h1" customSize="text-3xl">Blockquote</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Blockquote</Heading>
 
 <CompoDescription>The blockquote component can be used to quote text content from an external source that can be used for testimonials, reviews, and quotes inside an article</CompoDescription>
 
@@ -33,7 +33,7 @@ layout: typographyLayout
 Get started with Blockquote component when quoting external sources such as quotes inside an article, user reviews, and testimonials based on multiple examples of layouts, styles, and contexts.
 
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold w-full">Default blockquote</Heading>
+<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Default blockquote</Heading>
 
 Use this example to quote an external source inside a blockquote element.
 
@@ -49,7 +49,7 @@ Use this example to quote an external source inside a blockquote element.
 </Blockquote>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold w-full">Solid background</Heading>
+<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Solid background</Heading>
 
 This example can be used as an alternative style to the default one by applying a solid background color.
 
@@ -69,7 +69,7 @@ This example can be used as an alternative style to the default one by applying 
 <P>First of all you need to understand how Flowbite works...</P>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold w-full">Blockquote icon</Heading>
+<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Blockquote icon</Heading>
 
 Use this example to show an icon above the blockquote text content.
 
@@ -87,7 +87,7 @@ Use this example to show an icon above the blockquote text content.
 </Blockquote>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold w-full">Paragraph context</Heading>
+<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Paragraph context</Heading>
 
 Use this example to show a blockquote component between multiple paragraph elements.
 
@@ -113,7 +113,7 @@ Use this example to show a blockquote component between multiple paragraph eleme
 <P class="mb-3">Deliver great service experiences ...</P>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold w-full">User testimonial</Heading>
+<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">User testimonial</Heading>
 
 This example can be used for user testimonials by mentioning the author and occupation of the author.
 
@@ -149,7 +149,7 @@ This example can be used for user testimonials by mentioning the author and occu
 </figure>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold w-full">User Review</Heading>
+<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">User Review</Heading>
 
 Use this example to show a user review with rating stars and the name and occupation of the author.
 
@@ -189,13 +189,13 @@ Use this example to show a user review with rating stars and the name and occupa
 </figure>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold w-full">
+<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
 Alignment</Heading>
 
 Choose from the following examples the blockquote text alignment from starting from left, center to right based on the utility classes from Tailwind CSS.
 
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">Left</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Left</Heading>
 
 The default alignment of the blockquote text content is the left side of the document.
 
@@ -211,7 +211,7 @@ The default alignment of the blockquote text content is the left side of the doc
 </Blockquote>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">Center</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Center</Heading>
 
 Use the `alignment="center"` prop to align the text content inside the blockquote to the center.
 
@@ -226,7 +226,7 @@ Use the `alignment="center"` prop to align the text content inside the blockquot
 </Blockquote>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">Right</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Right</Heading>
 
 Use the `alignment="right"` prop to align the blockquote text content to the right side of the page.
 
@@ -242,10 +242,10 @@ Use the `alignment="right"` prop to align the blockquote text content to the rig
 </Blockquote>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold w-full">
+<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
 Sizes</Heading>
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">Small</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Small</Heading>
 
 Use the `size="lg"` prop to apply the small size for the blockquote component.
 
@@ -261,7 +261,7 @@ Use the `size="lg"` prop to apply the small size for the blockquote component.
 </Blockquote>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">Medium</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Medium</Heading>
 
 Use the `size="xl"` to set the default size for the blockquote element.
 
@@ -277,7 +277,7 @@ Use the `size="xl"` to set the default size for the blockquote element.
 </Blockquote>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">Large</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Large</Heading>
 
 The `size="xxl"` prop can be used to set a large size for the blockquote component.
 

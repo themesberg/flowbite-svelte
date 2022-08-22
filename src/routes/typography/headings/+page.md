@@ -219,7 +219,7 @@ Sizes</Heading>
 
 The heading component has six levels of importance starting from H1 which has to be unique on the page and has the greatest weight of importance all the way to H6.
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">Heading one (H1)</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Heading one (H1)</Heading>
 
 Use the `tag="h1"` as the most important text element to indicate the title of your web page.
 
@@ -231,7 +231,7 @@ Use the `tag="h1"` as the most important text element to indicate the title of y
 <Heading tag="h1">Heading 1</Heading>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">Heading two (H2)</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Heading two (H2)</Heading>
 
 The `tag="h2"` can be used as subtitles of the page’s sections.
 
@@ -243,7 +243,7 @@ The `tag="h2"` can be used as subtitles of the page’s sections.
 <Heading tag="h2">Heading 2</Heading>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">Heading three (H3)</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Heading three (H3)</Heading>
 
 The `tag="h3"` can be used as subtitles of the page’s sections.
 
@@ -255,7 +255,7 @@ The `tag="h3"` can be used as subtitles of the page’s sections.
 <Heading tag="h3">Heading 3</Heading>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">Heading four (H4)</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Heading four (H4)</Heading>
 
 The `tag="h4"` can be used as subtitles of the page’s sections.
 
@@ -267,7 +267,7 @@ The `tag="h4"` can be used as subtitles of the page’s sections.
 <Heading tag="h4">Heading 4</Heading>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">Heading five (H5)</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Heading five (H5)</Heading>
 
 The `tag="h5"` can be used as subtitles of the page’s sections.
 
@@ -279,7 +279,7 @@ The `tag="h5"` can be used as subtitles of the page’s sections.
 <Heading tag="h5">Heading 5</Heading>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">Heading six (H6)</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Heading six (H6)</Heading>
 
 The `tag="h6"` can be used as subtitles of the page’s sections.
 
@@ -296,49 +296,49 @@ Props</Heading>
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">Heading</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Heading</Heading>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">Highlight</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Highlight</Heading>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">Mark</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Mark</Heading>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">A</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">A</Heading>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">Secondary</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Secondary</Heading>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">TextGradient</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">TextGradient</Heading>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">Underline</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Underline</Heading>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items7} rowState='hover' />
 </TableProp>
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8 w-full">P</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">P</Heading>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items8} rowState='hover' />

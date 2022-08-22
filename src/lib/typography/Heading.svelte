@@ -15,7 +15,7 @@
 
 <svelte:element
 	this={tag}
-	class={classNames(customSize ? customSize : textSizes[tag], textColor, $$props.class)}
+	class={classNames(customSize ? customSize : textSizes[tag], textColor, 'w-full', $$props.class)}
 >
 	<slot />
 </svelte:element>
