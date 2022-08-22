@@ -5,8 +5,8 @@ layout: typographyLayout
 
 <script>
 	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../../utils'
-	import { Blockquote, P, Heading, Highlight, A, Mark, Secondary, TextGradient, Underline, QuoteLeft, Button, Badge, Rating, Breadcrumb, BreadcrumbItem } from '$lib';
-	import { Home, ArrowRight, ChevronRight } from 'svelte-heros';
+	import { Blockquote, P, Heading, Highlight, A, Mark, Secondary, TextGradient, Underline, QuoteLeft, Rating, Breadcrumb, BreadcrumbItem } from '$lib';
+	import { Home } from 'svelte-heros';
 	
 	import componentProps1 from '../../props/Blockquote.json'
   let items1 = componentProps1.props

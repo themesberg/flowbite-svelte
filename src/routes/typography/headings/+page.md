@@ -308,13 +308,13 @@ The component has the following props, type, and default values. See <A href="/p
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Mark</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">A</Heading>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">A</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Mark</Heading>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items4} rowState='hover' />

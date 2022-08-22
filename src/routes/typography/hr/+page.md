@@ -5,7 +5,7 @@ layout: typographyLayout
 <script>
 	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../../utils'
 	import { Hr, Heading, P, A, QuoteLeft, Blockquote, Breadcrumb, BreadcrumbItem } from '$lib';
-	import { Home, ArrowRight, ChevronRight } from 'svelte-heros';
+	import { Home } from 'svelte-heros';
 	
 	import componentProps1 from '../../props/Hr.json'
   let items1 = componentProps1.props

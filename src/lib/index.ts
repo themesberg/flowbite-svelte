@@ -72,6 +72,7 @@ export { default as VoiceSearch } from './forms/VoiceSearch.svelte';
 
 // Icons
 export { default as QuoteLeft } from './icons/QuoteLeft.svelte'
+export { default as Figma } from './icons/Figma.svelte'
 
 // Kbd
 export { default as Kbd } from './kbd/Kbd.svelte';
