@@ -50,11 +50,11 @@ The button group component from Flowbite-Svelte can be used to stack together mu
 Use the following code to stack together buttons into a single group.
 
 <ExampleDiv>
-<ButtonGroup>
-	<Button>Proflie</Button>
-	<Button>Settings</Button>
-	<Button>Messages</Button>
-</ButtonGroup>
+  <ButtonGroup>
+    <Button>Proflie</Button>
+    <Button>Settings</Button>
+    <Button>Messages</Button>
+  </ButtonGroup>
 </ExampleDiv>
 
 ```html
@@ -165,7 +165,7 @@ You can also use SVG icons inside the grouped buttons.
 
 Group a series of buttons together on a single line or stack them in a vertical column.
 
-<ExampleDiv>
+<ExampleDiv class="flex flex-col gap-4">
   <ButtonGroup>
     <Button outline color="dark">Proflie</Button>
     <Button outline color="dark">Settings</Button>
