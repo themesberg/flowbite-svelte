@@ -2,6 +2,7 @@
 	import { Star } from 'svelte-heros';
 
 	export let divClass: string = 'flex items-center';
+	export let size: string = '24';
 	export let total: number = 5;
 	export let rating: number = 4;
 	// default is floor
@@ -14,13 +15,13 @@
 
 <div class={divClass}>
 	{#if count}
-		<Star variation="solid" size="24" class="text-yellow-300 dark:text-yellow-200" />
+		<Star variation="solid" {size} class="text-yellow-300 dark:text-yellow-200" />
 		<p class="ml-2 text-sm font-bold text-gray-900 dark:text-white">{rating}</p>
 		<slot />
 	{:else}
 		{#each Array(roundedRating) as _, star}
 			<slot name="ratingUp">
-				<Star variation="solid" size="24" class="text-yellow-300 dark:text-yellow-200" />
+				<Star variation="solid" {size} class="text-yellow-300 dark:text-yellow-200" />
 			</slot>
 		{/each}
 		{#each Array(grayStars) as _, star}

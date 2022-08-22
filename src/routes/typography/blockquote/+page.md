@@ -5,7 +5,7 @@ layout: typographyLayout
 
 <script>
 	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../../utils'
-	import { Blockquote, P, Heading, Highlight, A, Mark, Secondary, TextGradient, Underline, QuoteLeft, Button, Badge, Breadcrumb, BreadcrumbItem } from '$lib';
+	import { Blockquote, P, Heading, Highlight, A, Mark, Secondary, TextGradient, Underline, QuoteLeft, Button, Badge, Rating, Breadcrumb, BreadcrumbItem } from '$lib';
 	import { Home, ArrowRight, ChevronRight } from 'svelte-heros';
 	
 	import componentProps1 from '../../props/Heading.json'
@@ -93,17 +93,17 @@ This example can be used for user testimonials by mentioning the author and occu
 
 <ExampleDiv>
 <figure class="mx-auto max-w-screen-md text-center">
-<QuoteLeft size="48" class="text-center text-gray-400 dark:text-gray-600" />
+<QuoteLeft size="48" class="mx-auto mb-3 text-gray-400 dark:text-gray-600" />
 <Blockquote alignment="center">
 <p>"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
 </Blockquote>
 <figcaption class="flex justify-center items-center mt-6 space-x-3">
-        <img class="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile picture">
-        <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-            <cite class="pr-3 font-medium text-gray-900 dark:text-white">Micheal Gough</cite>
-            <cite class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">CEO at Google</cite>
-        </div>
-    </figcaption>
+  <img class="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile picture">
+  <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
+      <cite class="pr-3 font-medium text-gray-900 dark:text-white">Micheal Gough</cite>
+      <cite class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">CEO at Google</cite>
+  </div>
+</figcaption>
 </figure>
 </ExampleDiv>
 
@@ -111,6 +111,24 @@ This example can be used for user testimonials by mentioning the author and occu
 <Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold w-full">User Review</Heading>
 
 Use this example to show a user review with rating stars and the name and occupation of the author.
+
+<ExampleDiv>
+<figure class="max-w-screen-md">
+    <div class="flex items-center mb-4 text-yellow-300">
+        <Rating total={5} rating={4.66} ceil size="30"/>
+    </div>
+    <blockquote>
+        <p class="text-2xl font-semibold text-gray-900 dark:text-white">"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
+    </blockquote>
+    <figcaption class="flex items-center mt-6 space-x-3">
+        <img class="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" alt="profile picture">
+        <div class="flex items-center divide-x-2 divide-gray-300 dark:divide-gray-700">
+            <cite class="pr-3 font-medium text-gray-900 dark:text-white">Bonnie Green</cite>
+            <cite class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">CTO at Flowbite</cite>
+        </div>
+    </figcaption>
+</figure>
+</ExampleDiv>
 
 <Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold w-full">
 Alignment</Heading>
