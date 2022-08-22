@@ -27,7 +27,7 @@
 </Navbar>
 <main class="flex mx-auto pb-40 px-8 pt-8">
 	<DarkMode btnClass={darkmodebtn} />
-	<div class="w-full px-0 sm:px-8">
+	<div class="w-full px-4 sm:px-8">
 		<slot />
 	</div>
 	<Toc />

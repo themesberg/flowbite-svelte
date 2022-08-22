@@ -27,11 +27,11 @@
 		'text-gray-300 hover:text-blue-500 cursor-pointer mr-4 border-none focus:outline-none lg:hidden';
 	let activeChildLi = 'block py-2 px-4 text-lg text-gray-700 hover:bg-gray-100 dark:text-white';
 	let childLi =
-		'block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 md:border-0 md:p-0 text-lg dark:text-white';
+		'block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 md:border-0 md:p-0 text-base dark:text-white';
 	let headerClass =
 		'w-full z-50 px-6 bg-white h-14 pt-2 text-gray-600 border-b-2 dark:bg-gray-800 dark:text-white dark:border-b-1';
 	let siteName = 'Flowbite Svelte';
-	let navClass = 'py-0 px-4 xl:px-8 text-lg bg-white dark:bg-gray-900 dark:text-white';
+	let navClass = 'py-0 px-4 xl:px-8 text-base bg-white dark:bg-gray-900 dark:text-white';
 	let navDivClasslast = 'pb-24';
 	let siteClass = ' w-full pt-0.5';
 	let spanClass =
@@ -258,7 +258,7 @@
 
 	<main class="flex mx-auto pt-12 pb:12 xl:pb-24 lg:pb-16 lg:pl-64">
 		<DarkMode btnClass={darkmodebtn} />
-		<div class="w-full px-0 sm:px-8">
+		<div class="w-full px-4 sm:px-8">
 			<slot />
 		</div>
 		<Toc />
