@@ -19,7 +19,7 @@ pre {
 	}
 	/* Do not change these. Changing this affect components as well */
 	main  p {
-		@apply text-base font-light text-gray-600 dark:text-gray-400;
+		@apply text-gray-900 dark:text-white;
 	}
 	.related-components,
 	.references {

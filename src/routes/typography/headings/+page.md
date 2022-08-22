@@ -42,7 +42,6 @@ layout: typographyLayout
 
 
 <ExampleDiv>
-, , , , Mark, , , 
 	<GitHubSource href="typography/P.svelte">P</GitHubSource>
 	<GitHubSource href="typography/Heading.svelte">Heading</GitHubSource>
 	<GitHubSource href="typography/P.svelte">P</GitHubSource>
@@ -61,7 +60,7 @@ At least one unique H1 tag should be available for each page on your website wit
 
 ```html
 <script>
-	import {  H1, H2, P, Highlight } from 'flowbite-svelte'
+	import {  Heading, P, Highlight, A, Mark, Underline, Secondary, TextGradient } from 'flowbite-svelte'
 </script>
 ```
 

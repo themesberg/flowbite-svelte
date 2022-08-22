@@ -70,6 +70,9 @@ export { default as Textarea } from './forms/Textarea.svelte';
 export { default as Toggle } from './forms/Toggle.svelte';
 export { default as VoiceSearch } from './forms/VoiceSearch.svelte';
 
+// Icons
+export { default as QuoteLeft } from './icons/QuoteLeft.svelte'
+
 // Kbd
 export { default as Kbd } from './kbd/Kbd.svelte';
 export { default as ArrowKeyDown } from './kbd/ArrowKeyDown.svelte';
@@ -177,6 +180,7 @@ export { default as Tooltip } from './tooltips/Tooltip.svelte';
 
 // Typography
 export { default as A } from './typography/A.svelte';
+export { default as Blockquote } from './typography/Blockquote.svelte';
 export { default as Heading } from './typography/Heading.svelte';
 export { default as Highlight } from './typography/Highlight.svelte';
 export { default as Mark } from './typography/Mark.svelte';
