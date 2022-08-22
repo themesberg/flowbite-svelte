@@ -98,7 +98,7 @@ This example can be used for user testimonials by mentioning the author and occu
 <p>"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
 </Blockquote>
 <figcaption class="flex justify-center items-center mt-6 space-x-3">
-  <img class="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile picture">
+  <img class="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="Micheal Gough profile">
   <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
       <cite class="pr-3 font-medium text-gray-900 dark:text-white">Micheal Gough</cite>
       <cite class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">CEO at Google</cite>
@@ -121,7 +121,7 @@ Use this example to show a user review with rating stars and the name and occupa
         <p class="text-2xl font-semibold text-gray-900 dark:text-white">"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
     </Blockquote>
     <figcaption class="flex items-center mt-6 space-x-3">
-        <img class="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" alt="profile picture">
+        <img class="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" alt="Bonnie Green profile">
         <div class="flex items-center divide-x-2 divide-gray-300 dark:divide-gray-700">
             <cite class="pr-3 font-medium text-gray-900 dark:text-white">Bonnie Green</cite>
             <cite class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">CTO at Flowbite</cite>
