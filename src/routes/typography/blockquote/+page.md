@@ -117,9 +117,9 @@ Use this example to show a user review with rating stars and the name and occupa
     <div class="flex items-center mb-4 text-yellow-300">
         <Rating total={5} rating={4.66} ceil size="30"/>
     </div>
-    <blockquote>
+    <Blockquote italic={false}>
         <p class="text-2xl font-semibold text-gray-900 dark:text-white">"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
-    </blockquote>
+    </Blockquote>
     <figcaption class="flex items-center mt-6 space-x-3">
         <img class="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" alt="profile picture">
         <div class="flex items-center divide-x-2 divide-gray-300 dark:divide-gray-700">
