@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.25.11](https://github.com/themesberg/flowbite-svelte/compare/v0.25.10...v0.25.11) (2022-08-22)
+
+
+### Features
+
+* add Blockquote ([89cbfbd](https://github.com/themesberg/flowbite-svelte/commit/89cbfbdf56e7beca90b00cf4c9c033789b2a2ba5))
+* add size to Rating component ([7c2784e](https://github.com/themesberg/flowbite-svelte/commit/7c2784efff60877014c14a8acc7760f845671100))
+* add User review, User testimonial, Paragraph context, Blockquote icon to typography/blockquote page ([73143ba](https://github.com/themesberg/flowbite-svelte/commit/73143bad816f6b3249fff3486d3b8569f45fde7f))
+
 ### [0.25.10](https://github.com/themesberg/flowbite-svelte/compare/v0.25.9...v0.25.10) (2022-08-22)
 
 
