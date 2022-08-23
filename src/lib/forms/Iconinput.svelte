@@ -1,9 +1,10 @@
 <script lang="ts">
 	import classNames from 'classnames';
 	import type { SvelteComponent } from 'svelte';
-	import type { InputType } from '../types';
+	// import type { InputType } from '../types';
 
-	export let type: InputType = 'text';
+	// export let type: InputType = 'text';
+	export let value: string = '';
 	export let size: 'sm' | 'md' | 'lg' = 'md';
 	export let icon: typeof SvelteComponent;
 	export let noBorder: boolean = false;
@@ -44,7 +45,7 @@
 		</span>
 		<input
 			{...$$restProps}
-			{type}
+			bind:value
 			class={classNames(
 				noBorderInputClass,
 				{
@@ -72,7 +73,7 @@
 		</div>
 		<input
 			{...$$restProps}
-			{type}
+			bind:value
 			class={classNames(
 				inputClass,
 				{
