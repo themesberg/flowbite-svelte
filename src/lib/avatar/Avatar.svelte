@@ -35,7 +35,7 @@
 	);
 </script>
 
-<Dot show={$$props.dot} {rounded} {...dot} {size}>
+<Dot show={$$props.dot} {rounded} {...dot} {size} class={sizes[size]}>
 	{#if src}
 		<img class={avatarClass} {alt} {src} />
 	{:else if $$slots.default}
