@@ -33,10 +33,13 @@
 		rounded && !top && 'transform translate-y-1/4',
 		color
 	);
+
+	let divClass;
+	$: divClass = classNames('relative flex-shrink-0', $$props.class);
 </script>
 
 {#if show}
-	<div class="relative flex-shrink-0">
+	<div class={divClass}>
 		<slot />
 		<span class={dotClass} />
 	</div>
