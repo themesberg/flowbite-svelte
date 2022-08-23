@@ -155,7 +155,7 @@
 					(background
 						? 'dark:text-white dark:border-white'
 						: 'dark:text-gray-400 dark:border-gray-700'),
-				hasBorder() && group && 'border-l-0 border-r-0 first:border last:border',
+				hasBorder() && group && 'border-l-0 first:border-l',
 				rounded(false),
 				shadow && coloredShadowClasses[shadow],
 				$$props.disabled && 'cursor-not-allowed opacity-50',
