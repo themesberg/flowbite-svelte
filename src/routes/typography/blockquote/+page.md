@@ -33,7 +33,7 @@ layout: typographyLayout
 Get started with Blockquote component when quoting external sources such as quotes inside an article, user reviews, and testimonials based on multiple examples of layouts, styles, and contexts.
 
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Default blockquote</Heading>
+<Htwo label="Default blockquote" />
 
 Use this example to quote an external source inside a blockquote element.
 
@@ -49,7 +49,7 @@ Use this example to quote an external source inside a blockquote element.
 </Blockquote>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Solid background</Heading>
+<Htwo label="Solid background" />
 
 This example can be used as an alternative style to the default one by applying a solid background color.
 
@@ -69,7 +69,7 @@ This example can be used as an alternative style to the default one by applying 
 <P>First of all you need to understand how Flowbite works...</P>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Blockquote icon</Heading>
+<Htwo label="Blockquote icon" />
 
 Use this example to show an icon above the blockquote text content.
 
@@ -87,7 +87,7 @@ Use this example to show an icon above the blockquote text content.
 </Blockquote>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Paragraph context</Heading>
+<Htwo label="Paragraph context" />
 
 Use this example to show a blockquote component between multiple paragraph elements.
 
@@ -113,7 +113,7 @@ Use this example to show a blockquote component between multiple paragraph eleme
 <P class="mb-3">Deliver great service experiences ...</P>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">User testimonial</Heading>
+<Htwo label="User testimonial" />
 
 This example can be used for user testimonials by mentioning the author and occupation of the author.
 
@@ -149,7 +149,7 @@ This example can be used for user testimonials by mentioning the author and occu
 </figure>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">User Review</Heading>
+<Htwo label="User Review" />
 
 Use this example to show a user review with rating stars and the name and occupation of the author.
 
@@ -189,8 +189,8 @@ Use this example to show a user review with rating stars and the name and occupa
 </figure>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
-Alignment</Heading>
+<Htwo label="
+Alignment" />
 
 Choose from the following examples the blockquote text alignment from starting from left, center to right based on the utility classes from Tailwind CSS.
 
@@ -242,8 +242,7 @@ Use the `alignment="right"` prop to align the blockquote text content to the rig
 </Blockquote>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
-Sizes</Heading>
+<Htwo label="Sizes" />
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Small</Heading>
 
@@ -293,8 +292,7 @@ The `size="xxl"` prop can be used to set a large size for the blockquote compone
 </Blockquote>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
-Props</Heading>
+<Htwo label="Props" />
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 

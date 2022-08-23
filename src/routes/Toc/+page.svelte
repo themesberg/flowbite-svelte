@@ -10,6 +10,7 @@
 	$: $page &&
 		typeof document !== `undefined` &&
 		(headings = [...document.querySelectorAll(headingSelector)].map((x) => {
+			console.log('x.id', x.id);
 			return { href: '#' + x.id, label: x.innerText };
 		}));
 </script>

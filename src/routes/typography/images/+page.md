@@ -32,7 +32,7 @@ layout: typographyLayout
 
 Get started with a collection of responsive image components coded with the utility classes from Tailwind CSS that you can use inside articles, cards, sections, and other components based on multiple styles, sizes, layouts, and hover animations.
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Setup</Heading>
+<Htwo label="Setup" />
 
 ```html
 <script>
@@ -40,7 +40,7 @@ Get started with a collection of responsive image components coded with the util
 </script>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Default image</Heading>
+<Htwo label="Default image" />
 
 Use this example to show the a responsive image that won’t grow beyond the maximum original width.
 
@@ -52,7 +52,7 @@ Use this example to show the a responsive image that won’t grow beyond the max
 <Img src="/docs/images/examples/image-1@2x.jpg" alt="sample 1"/>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Image caption</Heading>
+<Htwo label="Image caption" />
 
 This example can be used to add a caption for the image often used inside articles.
 
@@ -64,7 +64,7 @@ This example can be used to add a caption for the image often used inside articl
 <Img src="/images/examples/image-1@2x.jpg" alt="sample 1" caption="Image caption" />
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Rounded corners</Heading>
+<Htwo label="Rounded corners" />
 
 Apply rounded corners to the image by using the specific utility classes from Tailwind CSS.
 
@@ -93,7 +93,7 @@ Use this example to mask the image inside a circle using the rounded-full utilit
 <Img src="/images/examples/image-4@2x.jpg" alt="sample 1" size="w-96" imgClass="h-96" class="rounded-full" />
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Image shadow</Heading>
+<Htwo label="Image shadow" />
 
 This example can be used to show a shadow effect for the image using the shadow-size utility class.
 
@@ -105,7 +105,7 @@ This example can be used to show a shadow effect for the image using the shadow-
 <Img src="/images/examples/image-2@2x.jpg" alt="sample 1" size="max-w-xl"  class="shadow-xl dark:shadow-gray-800" />
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Retina-ready</Heading>
+<Htwo label="Retina-ready" />
 
 Use the srcset attribute to set Retina-ready images with double resolution.
 
@@ -117,7 +117,7 @@ Use the srcset attribute to set Retina-ready images with double resolution.
 <Img srcset="/images/examples/image-1.jpg 1x, /images/examples/image-1@2x.jpg 2x" alt="sample 1" size="w-full max-w-xl" class="rounded-lg"/>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Image card</Heading>
+<Htwo label="Image card" />
 
 Use this example to make the image a card item with a link and a short text description.
 
@@ -129,7 +129,7 @@ Use this example to make the image a card item with a link and a short text desc
 <Img src="/images/examples/content-gallery-3.png" alt="sample 1" class="rounded-lg" figClass="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0" captionClass="absolute bottom-6 px-4 text-lg text-white" caption="Do you want to get notified when a new component is added to Flowbite?" />
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Image effects</Heading>
+<Htwo label="Image effects" />
 
 Use image effects such as grayscale or blur to change the appearances of the image when being hovered.
 
@@ -157,7 +157,7 @@ Apply a blur by using the blur-size utility class from Tailwind CSS to an image 
 <Img src="/images/examples/content-gallery-3.png" size="max-w-lg" alt="My gallery" class="rounded-lg transition-all duration-300 blur-sm hover:blur-none" />
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Alignment</Heading>
+<Htwo label="Alignment" />
 
 Align the image component to the left, center or right side of the document page using margin styles.
 
@@ -197,7 +197,7 @@ Use the `ml-auto` class to align the image to the right side of the page.
 <Img src="/images/examples/image-1@2x.jpg" size="max-w-lg" alignment="ml-auto" alt="sample 1"/>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Sizes</Heading>
+<Htwo label="Sizes" />
 
 Set the size of the image using the w-size and h-size or max-w-size utility classes from Tailwind CSS to set the width and height of the element.
 
@@ -249,7 +249,7 @@ Use the max-w-full class to set the full width of the image as long as it doesn�
 <Img src="/images/examples/image-1@2x.jpg" size="max-w-full" alt="sample 1"/>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Props</Heading>
+<Htwo label="Props" />
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
