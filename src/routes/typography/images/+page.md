@@ -7,7 +7,7 @@ layout: typographyLayout
   import {  Img, A, P, Heading, Figma, Breadcrumb, BreadcrumbItem } from '$lib'
   import { Home } from 'svelte-heros';
 
-  import componentProps from '../../props/A.json'
+  import componentProps from '../../props/Img.json'
 
   // Props table
   let items1 = componentProps.props
@@ -27,7 +27,7 @@ layout: typographyLayout
 <CompoDescription>The image component can be used to embed images inside the web page in articles and sections based on multiple styles, sizes, layouts and hover animations</CompoDescription>
 
 <ExampleDiv>
-<GitHubSource href="buttongroups/A.svelte">A</GitHubSource>
+<GitHubSource href="buttongroups/Img.svelte">Img</GitHubSource>
 </ExampleDiv>
 
 Get started with a collection of responsive image components coded with the utility classes from Tailwind CSS that you can use inside articles, cards, sections, and other components based on multiple styles, sizes, layouts, and hover animations.
@@ -44,7 +44,7 @@ Get started with a collection of responsive image components coded with the util
 
 Use this example to show the a responsive image that won’t grow beyond the maximum original width.
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
 <Img src="/images/examples/image-1@2x.jpg" alt="sample 1"/>
 </ExampleDiv>
 
@@ -97,7 +97,7 @@ Use this example to mask the image inside a circle using the rounded-full utilit
 
 This example can be used to show a shadow effect for the image using the shadow-size utility class.
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
 <Img src="/images/examples/image-2@2x.jpg" alt="sample 1" size="max-w-xl"  class="shadow-xl dark:shadow-gray-800" />
 </ExampleDiv>
 
@@ -109,40 +109,52 @@ This example can be used to show a shadow effect for the image using the shadow-
 
 Use the srcset attribute to set Retina-ready images with double resolution.
 
-<ExampleDiv>
+<ExampleDiv class="flex justify-center">
 <Img srcset="/images/examples/image-1.jpg 1x, /images/examples/image-1@2x.jpg 2x" alt="sample 1" size="w-full max-w-xl" class="rounded-lg"/>
 </ExampleDiv>
 
 ```html
-
+<Img srcset="/images/examples/image-1.jpg 1x, /images/examples/image-1@2x.jpg 2x" alt="sample 1" size="w-full max-w-xl" class="rounded-lg"/>
 ```
 
 <Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Image card</Heading>
 
 Use this example to make the image a card item with a link and a short text description.
 
+<ExampleDiv class="flex justify-center">
+<Img src="/images/examples/content-gallery-3.png" alt="sample 1" class="rounded-lg" figClass="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0" captionClass="absolute bottom-6 px-4 text-lg text-white" caption="Do you want to get notified when a new component is added to Flowbite?" />
+</ExampleDiv>
+
+```html
+<Img src="/images/examples/content-gallery-3.png" alt="sample 1" class="rounded-lg" figClass="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0" captionClass="absolute bottom-6 px-4 text-lg text-white" caption="Do you want to get notified when a new component is added to Flowbite?" />
+```
+
+<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Image effects</Heading>
+
+Use image effects such as grayscale or blur to change the appearances of the image when being hovered.
+
 <Heading tag="h3" class='mb-4 mt-8' customSize="text-xl font-semibold">Grayscale</Heading>
 
 Use the filter option and apply a grayscale to the image element using the grayscale class.
 
-<ExampleDiv>
-<Img src="/images/examples/image-1@2x.jpg" size="max-w-lg" alt="sample 1" class="rounded-lg"/>
+<ExampleDiv class="flex justify-center">
+<Img src="/images/examples/content-gallery-3.png" size="max-w-lg" alt="My gallery" class="rounded-lg transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0" />
 </ExampleDiv>
 
 ```html
-
+<Img src="/images/examples/content-gallery-3.png" size="max-w-lg" alt="My gallery" class="rounded-lg transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0" />
 ```
 
 <Heading tag="h3" class='mb-4 mt-8' customSize="text-xl font-semibold">Blur</Heading>
 
 Apply a blur by using the blur-size utility class from Tailwind CSS to an image component.
 
-<ExampleDiv>
-
+<ExampleDiv class="flex justify-center">
+<Img src="/images/examples/content-gallery-3.png" size="max-w-lg" alt="My gallery" class="rounded-lg transition-all duration-300 blur-sm hover:blur-none" />
 </ExampleDiv>
 
 ```html
-
+<Img src="/images/examples/content-gallery-3.png" size="max-w-lg" alt="My gallery" class="rounded-lg transition-all duration-300 blur-sm hover:blur-none" />
 ```
 
 <Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Alignment</Heading>

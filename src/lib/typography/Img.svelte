@@ -1,7 +1,8 @@
 <script lang="ts">
 	import classNames from 'classnames';
 	export let caption: string | undefined = undefined;
-	export let src: string = '';
+	export let src: string | undefined = undefined;
+	export let srcset: string | undefined = undefined;
 	export let size: string = 'max-w-full';
 	export let alignment: string = '';
 	export let imgClass: string = 'h-auto';
@@ -13,9 +14,14 @@
 
 {#if caption}
 	<figure class={figClass}>
-		<img class={classNames(imgClass, size, alignment, effect, $$props.class)} {src} {alt} />
-		<figcaption class={captionClass}>{caption}</figcaption>
+		<img
+			class={classNames(imgClass, size, alignment, effect, $$props.class)}
+			{src}
+			{srcset}
+			{alt}
+		/>
+		<figcaption class={captionClass}>{@html caption}</figcaption>
 	</figure>
 {:else}
-	<img class={classNames(imgClass, size, alignment, effect, $$props.class)} {src} {alt} />
+	<img class={classNames(imgClass, size, alignment, effect, $$props.class)} {src} {srcset} {alt} />
 {/if}
