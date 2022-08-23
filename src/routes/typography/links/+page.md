@@ -27,7 +27,7 @@ layout: typographyLayout
 <CompoDescription>The link component can be used to set hyperlinks from one page to another or to an external website when clicking on an inline text item, button, or card</CompoDescription>
 
 <ExampleDiv>
-<GitHubSource href="buttongroups/A.svelte">Link</GitHubSource>
+<GitHubSource href="buttongroups/A.svelte">A</GitHubSource>
 </ExampleDiv>
 
 Get started with the link component to enable hyperlinks across pages and external websites applied to elements such as inline text, buttons, cards, inside paragraphs, and more.
