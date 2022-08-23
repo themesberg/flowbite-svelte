@@ -24,6 +24,7 @@ export const forms = [
 export const typography = [
 	{ href: '/typography/headings', name: 'Headings' },
 	{ href: '/typography/blockquote', name: 'Blockquote' },
+	{ href: '/typography/links', name: 'Links' },
 	{ href: '/typography/hr', name: 'HR' }
 ];
 
