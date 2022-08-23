@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.25.13](https://github.com/themesberg/flowbite-svelte/compare/v0.25.12...v0.25.13) (2022-08-23)
+
+
+### Features
+
+* add bind:value to Iconinput ([87616e2](https://github.com/themesberg/flowbite-svelte/commit/87616e2222611bfabd77c3f7699c5f716015e420))
+* add link examples ([b129251](https://github.com/themesberg/flowbite-svelte/commit/b12925106d6ffe482dfbde5623925f72abe8a577))
+* add links page ([cdb2566](https://github.com/themesberg/flowbite-svelte/commit/cdb2566640bc5153e4d310dc2306aaafe432f5de))
+
 ### [0.25.12](https://github.com/themesberg/flowbite-svelte/compare/v0.25.11...v0.25.12) (2022-08-22)
 
 
