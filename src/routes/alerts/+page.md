@@ -51,7 +51,7 @@ Import Alert and set variables in the script tag.
 
 Use the following examples of alert components to show messages as feedback to your users.
 
-<ExampleDiv>
+<ExampleDiv class="flex flex-col gap-4">
   <Alert>
     <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
   </Alert>
@@ -91,7 +91,7 @@ Use the following examples of alert components to show messages as feedback to y
 
 You can also include a descriptive icon to complement the message inside the alert component with the following example.
 
-<ExampleDiv>
+<ExampleDiv class="flex flex-col gap-4">
   <Alert icon={InformationCircle}>
     <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
   </Alert>
@@ -131,7 +131,7 @@ You can also include a descriptive icon to complement the message inside the ale
 
 Use this example to show a list and a description inside an alert component.
 
-<ExampleDiv>
+<ExampleDiv class="flex flex-col gap-4">
   <Alert icon={InformationCircle}>
     <span class="sr-only">Info</span>
     <span class="font-medium">Ensure that these requirements are met:</span>
@@ -177,7 +177,7 @@ Use this example to show a list and a description inside an alert component.
 
 Use the following alert elements that are also dismissable.
 
-<ExampleDiv>
+<ExampleDiv class="flex flex-col gap-4">
   <Alert icon={InformationCircle} dismissable>
     A simple info alert with an <a href="/" class="font-semibold underline hover:text-blue-800 dark:hover:text-blue-900">example link</a>. Give it a click if you like.
   </Alert>
@@ -217,7 +217,7 @@ Use the following alert elements that are also dismissable.
 
 Use the following alert components with a border accent as an alternative style.
 
-<ExampleDiv>
+<ExampleDiv class="flex flex-col gap-4">
   <Alert accent rounded={false} icon={InformationCircle}>
     <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
   </Alert>
@@ -257,7 +257,7 @@ Use the following alert components with a border accent as an alternative style.
 
 The following alert components can be used if you wish to disclose more information inside the element.
 
-<ExampleDiv>
+<ExampleDiv class="flex flex-col gap-4">
   <Alert color="blue" icon={InformationCircle}>
     <span class="text-lg font-medium text-blue-700 dark:text-blue-800">This is a info alert</span>
     <div slot="extra">

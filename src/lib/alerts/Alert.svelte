@@ -37,7 +37,7 @@
 		purple: 'bg-purple-100 dark:bg-purple-200 ',
 		pink: 'bg-pink-100 dark:bg-pink-200 ',
 		blue: 'bg-blue-100 dark:bg-blue-200 ',
-		dark: 'bg-gray-100 dark:bg-gray-700',
+		dark: 'bg-gray-50 dark:bg-gray-700',
 		custom: customBgClass
 	};
 
@@ -69,7 +69,7 @@
 
 	let divClass: string;
 	$: divClass = classNames(
-		'flex flex-col p-4 mb-4 gap-2 text-sm',
+		'p-4 text-sm',
 		bgClasses[color] ?? bgClasses.blue,
 		accent && (borderAccentClasses[color] ?? borderAccentClasses.blue),
 		rounded && 'rounded-lg ',
@@ -80,17 +80,16 @@
 </script>
 
 <div id={$$props.id} class:hidden class={divClass} role="alert">
-	<div class="flex items-center">
+	<div class="flex items-center whitespace-pre-wrap">
 		{#if icon}
 			<svelte:component this={icon} class="flex-shrink-0 w-5 h-5 mr-3" />
 		{/if}
 
-		<div>
-			<slot />
-		</div>
+		<slot />
 
 		{#if dismissable}
 			<CloseButton
+				class="-mx-1.5 -my-1.5"
 				{color}
 				on:click={handleHide}
 				on:click={handleAlert}

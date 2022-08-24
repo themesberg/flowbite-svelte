@@ -9,6 +9,7 @@
 	export let size: 'xs' | 'sm' | 'md' = 'md';
 
 	const colors = {
+		dark: 'hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600',
 		gray: 'focus:ring-gray-400 hover:bg-gray-200 dark:hover:bg-gray-300',
 		red: 'focus:ring-red-400 hover:bg-red-200 dark:hover:bg-red-300',
 		yellow: 'focus:ring-yellow-400 hover:bg-yellow-200 dark:hover:bg-yellow-300',
@@ -23,11 +24,11 @@
 	const sizing = {
 		xs: 'm-0.5 rounded focus:ring-1 p-0.5',
 		sm: 'm-0.5 rounded focus:ring-1 p-0.5',
-		md: '-mx-1 -my-1.5 rounded-lg focus:ring-2 p-1.5'
+		md: 'rounded-lg focus:ring-2 p-1.5'
 	};
 	let buttonClass: string = '';
 	$: buttonClass = classNames(
-		'ml-auto focus:outline-none',
+		'ml-auto focus:outline-none whitespace-normal',
 		sizing[size],
 		colors[color],
 		color === 'default' &&
