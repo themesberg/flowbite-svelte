@@ -32,7 +32,7 @@ layout: typographyLayout
 
 The `Hr` component can be used to separate content using a horizontal line by adding space between elements based on multiple styles, variants, and layouts.
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Setup</Heading>
+<Htwo label="Setup" />
 
 ```html
 <script>
@@ -40,7 +40,7 @@ The `Hr` component can be used to separate content using a horizontal line by ad
 </script>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Default HR</Heading>
+<Htwo label="Default HR" />
 
 <ExampleDiv>
 <P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
@@ -54,7 +54,7 @@ The `Hr` component can be used to separate content using a horizontal line by ad
 <P>Deliver great service experiences fast ...</P>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Trimmed</Heading>
+<Htwo label="Trimmed" />
 
 Use this example to show a shorter version of the horizontal line.
 
@@ -70,7 +70,7 @@ Use this example to show a shorter version of the horizontal line.
 <P>Deliver great service experiences fast ...</P>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Icon HR</Heading>
+<Htwo label="Icon HR" />
 
 This example can be used to set a custom SVG icon in the middle of the HR element.
 
@@ -90,7 +90,7 @@ This example can be used to set a custom SVG icon in the middle of the HR elemen
 </div>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">HR with text</Heading>
+<Htwo label="HR with text" />
 
 Use this example to add a text in the middle of the HR component.
 
@@ -110,7 +110,7 @@ Use this example to add a text in the middle of the HR component.
 </div>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">HR shape</Heading>
+<Htwo label="HR shape" />
 
 This example can be used to separate content with a HR tag as a shape instead of a line.
 
@@ -126,8 +126,7 @@ This example can be used to separate content with a HR tag as a shape instead of
 <Blockquote alignment="center"><p>"Flowbite is just awesome ..."</p></Blockquote>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
-Props</Heading>
+<Htwo label="Props" />
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 

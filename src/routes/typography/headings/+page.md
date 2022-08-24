@@ -56,7 +56,7 @@ Get started with the heading component to define titles and subtitles on a web p
 
 At least one unique H1 tag should be available for each page on your website with the next tags starting from H2 to H6 for each section. Choose from a collection of custom heading components based on multiple styles and layouts built with the utility classes from Tailwind CSS.
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">Setup</Heading>
+<Htwo label="Setup" />
 
 ```html
 <script>
@@ -64,8 +64,7 @@ At least one unique H1 tag should be available for each page on your website wit
 </script>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
-Default heading</Heading>
+<Htwo label="Default heading" />
 
 Use this example of a H1 heading in the context of a paragraph and CTA button for landing pages.
 
@@ -86,8 +85,7 @@ Use this example of a H1 heading in the context of a paragraph and CTA button fo
 ```
 
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
-Second-level heading</Heading>
+<Htwo label="Second-level heading" />
 
 Use this example of a second-level H2 heading as the main subtitle for each section of your web page.
 
@@ -105,8 +103,7 @@ Use this example of a second-level H2 heading as the main subtitle for each sect
 <A>Read more <ChevronRight /></A>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
-Highlighted heading</Heading>
+<Htwo label="Highlighted heading" />
 
 Use this example to highlight a certain portion of the heading text with a different color.
 
@@ -120,8 +117,7 @@ Use this example to highlight a certain portion of the heading text with a diffe
 <P>Here at Flowbite we focus on markets where technology ...</P>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
-Heading mark</Heading>
+<Htwo label="Heading mark" />
 
 This example can be used to mark one part of the heading text with a solid background for highlighting.
 
@@ -135,8 +131,7 @@ This example can be used to mark one part of the heading text with a solid backg
 <P>Here at Flowbite we focus on markets where ...</P>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
-Heading gradient</Heading>
+<Htwo label="Heading gradient" />
 
 Use this example to highlight a portion of the heading text by using a gradient style.
 
@@ -150,8 +145,7 @@ Use this example to highlight a portion of the heading text by using a gradient 
 <P>Here at Flowbite we focus on markets where ...</P>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
-Heading underline</Heading>
+<Htwo label="Heading underline" />
 
 Get started with this example to underline an important part of the heading component using the `Underline` component.
 
@@ -165,8 +159,7 @@ Get started with this example to underline an important part of the heading comp
 <P>Here at Flowbite we focus on markets where ...</P>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
-Breadcrumb context</Heading>
+<Htwo label="Breadcrumb context" />
 
 Get started with this example to position a breadcrumb component above the heading component.
 
@@ -188,8 +181,7 @@ Get started with this example to position a breadcrumb component above the headi
 <Heading tag="h2" class="mb-4">Team management</Heading>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
-Badge context</Heading>
+<Htwo label="Badge context" />
 
 Use this example to show a badge component inside the heading text element as a secondary indicator.
 
@@ -201,8 +193,7 @@ Use this example to show a badge component inside the heading text element as a 
 <Heading tag="h1" class='flex items-center' size='text-5xl'>Flowbite <Badge class="text-2xl font-semibold ml-2" >PRO</Badge></Heading>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
-Secondary text</Heading>
+<Htwo label="Secondary text" />
 
 This example can be used to add a secondary text inside the main heading component.
 
@@ -214,8 +205,7 @@ This example can be used to add a secondary text inside the main heading compone
 <Heading tag="h1" customSize="text-5xl font-extrabold">Flowbite <Secondary class="ml-2">This is secondary text</Secondary></Heading>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
-Sizes</Heading>
+<Htwo label="Sizes" />
 
 The heading component has six levels of importance starting from H1 which has to be unique on the page and has the greatest weight of importance all the way to H6.
 
@@ -291,8 +281,7 @@ The `tag="h6"` can be used as subtitles of the page’s sections.
 <Heading tag="h6">Heading 6</Heading>
 ```
 
-<Heading tag="h2" class='htwo mb-4 mt-8' customSize="text-2xl font-semibold">
-Props</Heading>
+<Htwo label="Props" />
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
