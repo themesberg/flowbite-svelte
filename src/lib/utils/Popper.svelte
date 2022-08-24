@@ -74,7 +74,7 @@
 	$: divClass = classNames(
 		'z-10',
 		animation && `transition-opacity ${animation}`,
-		open ? 'visible opacity-100' : 'invisible opacity-0',
+		open ? 'visible opacity-100' : 'absolute invisible opacity-0',
 		$$props.class
 	);
 </script>
