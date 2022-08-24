@@ -6,7 +6,6 @@ layout: formLayout
 import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
 import { Button, Textarea, Label, Breadcrumb, BreadcrumbItem, Badge, Alert } from '$lib'
 import CloseButton from "$lib/utils/CloseButton.svelte";
-import ToolbarButton from "$lib/utils/ToolbarButton.svelte";
 import { Upload } from 'svelte-heros';
 import { Home } from 'svelte-heros'
 
