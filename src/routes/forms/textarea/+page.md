@@ -4,8 +4,8 @@ layout: formLayout
 
 <script>
 import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
-import { Textarea, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
-import { Home } from 'svelte-heros'
+import { Button, Textarea, Label, Heading, Breadcrumb, BreadcrumbItem, Badge, Alert, CloseButton, CodeBracket, FaceSmile, MapPin, PaperClip, PaperAirplane,  Photo } from '$lib'
+import { Home, Upload } from 'svelte-heros';
 
 import componentProps from '../../props/Textarea.json'
 let items = componentProps.props
@@ -29,7 +29,7 @@ let textareaprops = {
   <BreadcrumbItem>Textarea</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Textarea</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Textarea</Heading>
 
 <CompoDescription>Use the textarea component as a multi-line text field input and use it inside form elements available in multiple sizes, styles, and variants</CompoDescription>
 
@@ -47,25 +47,188 @@ The textarea component is a multi-line text field input that can be used to rece
 </script>
 ```
 
-<Htwo label="Textarea examples" />
+<Htwo label="Textarea example" />
+
+Get started with the default example of a textarea component below.
 
 <ExampleDiv>
-<Textarea {...textareaprops} />
+  <Label for="textarea-id" class="mb-2">Your message</Label>
+  <Textarea id="textarea-id" placeholder="Your message" rows="4" name="message"/>
+</ExampleDiv>
+
+```html
+  <Label for="textarea-id" class="mb-2">Your message</Label>
+  <Textarea id="textarea-id" placeholder="Your message" rows="4" name="message"/>
+```
+
+<Htwo label="WYSIWYG Editor" />
+
+If you want to add other actions as buttons alongside your textarea component, such as with a WYSIWYG editor, then you can use the example below.
+
+<ExampleDiv>
+<form>
+  <label for="editor" class="sr-only">Publish post</label>
+  <Textarea id="editor" rows="8" class="mb-4" placeholder="Write a comment">
+    <div slot="header" class="flex items-center space-x-1 sm:pr-4 text-gray-500 dark:text-gray-400">
+      <CloseButton color="dark" class="!ml-0">
+          <PaperClip size={20} variation="solid"/>
+          <span class="sr-only">Attach file</span>
+      </CloseButton>
+      <CloseButton color="dark">
+          <MapPin size={20} variation="solid" />
+          <span class="sr-only">Embed map</span>
+      </CloseButton>
+      <CloseButton color="dark">
+          <Photo size={20} variation="solid" />
+          <span class="sr-only">Upload image</span>
+      </CloseButton>
+      <CloseButton color="dark">
+          <CodeBracket size={20} variation="solid" />
+          <span class="sr-only">Format code</span>
+      </CloseButton>
+      <CloseButton color="dark">
+          <FaceSmile size={20} variation="solid" />
+          <span class="sr-only">Add emoji</span>
+      </CloseButton>
+    </div>
+  </Textarea>
+  <Button>Publish post</Button>
+</form>
 </ExampleDiv>
 
 ```html
 <script>
-...
-let textareaprops = {
-  id: 'message',
-  name: 'message',
-  label: 'Your message',
-  rows: 4,
-  placeholder: 'Leave a comment...',
-};
+  import {CodeBracket, FaceSmile, MapPin, PaperClip, PaperAirplane, Photo } from 'flowbite-svelte'
 </script>
 
-<Textarea {...textareaprops} />
+<form>
+  <label for="editor" class="sr-only">Publish post</label>
+  <Textarea id="editor" rows="8" class="mb-4" placeholder="Write a comment">
+    <div slot="header" class="flex items-center space-x-1 sm:pr-4 text-gray-500 dark:text-gray-400">
+      <CloseButton color="dark" class="!ml-0">
+          <PaperClip size={20} variation="solid"/>
+          <span class="sr-only">Attach file</span>
+      </CloseButton>
+      <CloseButton color="dark">
+          <MapPin size={20} variation="solid" />
+          <span class="sr-only">Embed map</span>
+      </CloseButton>
+      <CloseButton color="dark">
+          <Photo size={20} variation="solid" />
+          <span class="sr-only">Upload image</span>
+      </CloseButton>
+      <CloseButton color="dark">
+          <CodeBracket size={20} variation="solid" />
+          <span class="sr-only">Format code</span>
+      </CloseButton>
+      <CloseButton color="dark">
+          <FaceSmile size={20} variation="solid" />
+          <span class="sr-only">Add emoji</span>
+      </CloseButton>
+    </div>
+  </Textarea>
+  <Button>Publish post</Button>
+</form>
+```
+
+<Htwo label="Comment box" />
+
+Most often the textarea component is used as the main text field input element in comment sections. Use this example to also apply a helper text and buttons below the textarea itself.
+
+<ExampleDiv>
+<form>
+  <Textarea class="mb-4" placeholder="Write a comment">
+    <div slot="footer" class="flex justify-between items-center">
+        <Button type="submit">Post comment</Button>
+        <div class="flex pl-0 space-x-1 sm:pl-2 text-gray-500 dark:text-gray-400">
+            <CloseButton color="dark">
+                <PaperClip size={20} variation="solid" />
+                <span class="sr-only">Attach file</span>
+            </CloseButton>
+            <CloseButton color="dark">
+                <MapPin size={20} variation="solid" />
+                <span class="sr-only">Set location</span>
+            </CloseButton>
+            <CloseButton color="dark">
+                <Photo size={20} variation="solid" />
+                <span class="sr-only">Upload image</span>
+            </CloseButton>
+        </div>
+    </div>
+  </Textarea>
+</form>
+<p class="ml-auto text-xs text-gray-500 dark:text-gray-400">Remember, contributions to this topic should follow our <a href="/" class="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a>.</p>
+</ExampleDiv>
+
+```html
+<form>
+  <Textarea class="mb-4" placeholder="Write a comment">
+    <div slot="footer" class="flex justify-between items-center">
+        <Button type="submit">Post comment</Button>
+        <div class="flex pl-0 space-x-1 sm:pl-2 text-gray-500 dark:text-gray-400">
+            <CloseButton color="dark">
+                <PaperClip size={20} variation="solid" />
+                <span class="sr-only">Attach file</span>
+            </CloseButton>
+            <CloseButton color="dark">
+                <MapPin size={20} variation="solid" />
+                <span class="sr-only">Set location</span>
+            </CloseButton>
+            <CloseButton color="dark">
+                <Photo size={20} variation="solid" />
+                <span class="sr-only">Upload image</span>
+            </CloseButton>
+        </div>
+    </div>
+  </Textarea>
+</form>
+<p class="ml-auto text-xs text-gray-500 dark:text-gray-400">Remember, contributions to this topic should follow our <a href="/" class="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a>.</p>
+```
+
+<Htwo label="Chatroom input" />
+
+If you want to build a chatroom component you will usually want to use a textarea element to allow users to write multi-line chunks of text.
+
+<ExampleDiv>
+<form>
+    <label for="chat" class="sr-only">Your message</label>
+    <Alert color="dark" class="px-3 py-2">
+      <CloseButton color="dark" class="text-gray-500 dark:text-gray-400">
+          <Photo variation="solid" />
+          <span class="sr-only">Upload image</span>
+      </CloseButton>
+      <CloseButton color="dark" class="text-gray-500 dark:text-gray-400">
+          <FaceSmile variation="solid" />
+          <span class="sr-only">Add emoji</span>
+      </CloseButton>
+      <Textarea id="chat" class="mx-4" rows="1" placeholder="Your message..."/>
+      <CloseButton type="submit" color="blue" class="rounded-full text-blue-600 dark:text-blue-500">
+          <PaperAirplane variation="solid" />
+          <span class="sr-only">Send message</span>
+      </CloseButton>
+    </Alert>
+</form>
+</ExampleDiv>
+
+```html
+<form>
+  <label for="chat" class="sr-only">Your message</label>
+  <Alert color="dark" class="px-3 py-2">
+    <CloseButton color="dark" class="text-gray-500 dark:text-gray-400">
+        <Photo variation="solid" />
+        <span class="sr-only">Upload image</span>
+    </CloseButton>
+    <CloseButton color="dark" class="text-gray-500 dark:text-gray-400">
+        <FaceSmile variation="solid" />
+        <span class="sr-only">Add emoji</span>
+    </CloseButton>
+    <Textarea id="chat" class="mx-4" rows="1" placeholder="Your message..."/>
+    <CloseButton type="submit" color="blue" class="rounded-full text-blue-600 dark:text-blue-500">
+        <PaperAirplane variation="solid" />
+        <span class="sr-only">Send message</span>
+    </CloseButton>
+  </Alert>
+</form>
 ```
 
 <Htwo label="Props" />
