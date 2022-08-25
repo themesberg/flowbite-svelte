@@ -50,6 +50,15 @@ layout: tooltipLayout
 </Toolbar>
 </ExampleDiv>
 
+```html
+<Toolbar>
+	<ToolbarButton><Home variation="solid"/></ToolbarButton>
+	<ToolbarButton><Qrcode variation="solid"/></ToolbarButton>
+    <ToolbarButton><Mail variation="solid" /></ToolbarButton>
+    <ToolbarButton slot="end"><Home variation="solid"/></ToolbarButton>
+</Toolbar>
+```
+
 <Htwo label="Colored toolbars" />
 
 <ExampleDiv class="space-y-4">
@@ -66,6 +75,22 @@ layout: tooltipLayout
     <ToolbarButton slot="end" color="blue"><Home variation="solid"/></ToolbarButton>
 </Toolbar>
 </ExampleDiv>
+
+```html
+<Toolbar color="red">
+	<ToolbarButton color="red"><Home variation="solid"/></ToolbarButton>
+	<ToolbarButton color="red"><Qrcode variation="solid"/></ToolbarButton>
+    <ToolbarButton color="red"><Mail variation="solid" /></ToolbarButton>
+    <ToolbarButton slot="end" color="red"><Home variation="solid"/></ToolbarButton>
+</Toolbar>
+
+<Toolbar color="blue">
+	<ToolbarButton color="blue"><Home variation="solid"/></ToolbarButton>
+	<ToolbarButton color="blue"><Qrcode variation="solid"/></ToolbarButton>
+    <ToolbarButton color="blue"><Mail variation="solid" /></ToolbarButton>
+    <ToolbarButton slot="end" color="blue"><Home variation="solid"/></ToolbarButton>
+</Toolbar>
+```
 
 <Htwo label="Toolbar with groups" />
 
@@ -84,6 +109,22 @@ layout: tooltipLayout
     <ToolbarButton slot="end" color="green"><Home variation="solid"/></ToolbarButton>
 </Toolbar>
 </ExampleDiv>
+
+```html
+<Toolbar color="green">
+    <ToolbarGroup>
+        <ToolbarButton color="green"><Home variation="solid"/></ToolbarButton>
+        <ToolbarButton color="green"><Qrcode variation="solid"/></ToolbarButton>
+        <ToolbarButton color="green"><Mail variation="solid" /></ToolbarButton>
+    </ToolbarGroup>
+    <ToolbarGroup>
+        <ToolbarButton color="green"><Home variation="solid"/></ToolbarButton>
+        <ToolbarButton color="green"><Qrcode variation="solid"/></ToolbarButton>
+        <ToolbarButton color="green"><Mail variation="solid" /></ToolbarButton>
+    </ToolbarGroup>
+    <ToolbarButton slot="end" color="green"><Home variation="solid"/></ToolbarButton>
+</Toolbar>
+```
 
 <Htwo label="WYSIWYG Editor" />
 
@@ -110,6 +151,26 @@ If you want to add other actions as buttons alongside your textarea component, s
 </form>
 </ExampleDiv>
 
+```html
+<form>
+  <label for="editor" class="sr-only">Publish post</label>
+  <Textarea id="editor" rows="8" class="mb-4" placeholder="Write a comment">
+    <Toolbar slot="header" embedded>
+      <ToolbarGroup>
+        <ToolbarButton name="Attach file"><PaperClip size={20} variation="solid"/></ToolbarButton>
+        <ToolbarButton name="Embed map"><MapPin size={20} variation="solid" /></ToolbarButton>
+        <ToolbarButton name="Upload image"><Photo size={20} variation="solid" /></ToolbarButton>
+      </ToolbarGroup>
+      <ToolbarGroup>
+        <ToolbarButton name="Format code"><CodeBracket size={20} variation="solid" /></ToolbarButton>
+        <ToolbarButton name="Add emoji"><FaceSmile size={20} variation="solid" /></ToolbarButton>
+      </ToolbarGroup>
+      <ToolbarButton name="send" slot="end"><PaperAirplane size={20} variation="solid" /></ToolbarButton>
+    </Toolbar>
+  </Textarea>
+  <Button>Publish post</Button>
+</form>
+```
 <Htwo label="Comment box" />
 
 Most often the textarea component is used as the main text field input element in comment sections. Use this example to also apply a helper text and buttons below the textarea itself.
@@ -128,8 +189,23 @@ Most often the textarea component is used as the main text field input element i
   </Textarea>
 </form>
 <p class="ml-auto text-xs text-gray-500 dark:text-gray-400">Remember, contributions to this topic should follow our <a href="/" class="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a>.</p>
-
 </ExampleDiv>
+
+```html
+<form>
+  <Textarea class="mb-4" placeholder="Write a comment">
+    <div slot="footer" class="flex items-center justify-between">
+    <Button type="submit">Post comment</Button>
+    <Toolbar embedded>
+        <ToolbarButton name="Attach file"><PaperClip size={20} variation="solid" /></ToolbarButton>
+        <ToolbarButton name="Set location"><MapPin size={20} variation="solid" /></ToolbarButton>
+        <ToolbarButton name="Upload image"><Photo size={20} variation="solid" /></ToolbarButton>
+    </Toolbar>
+    </div>
+  </Textarea>
+</form>
+<p class="ml-auto text-xs text-gray-500 dark:text-gray-400">Remember, contributions to this topic should follow our <a href="/" class="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a>.</p>
+```
 
 <Htwo label="Props" />
 
