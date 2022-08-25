@@ -13,7 +13,7 @@
 <li
 	{...$$restProps}
 	class={classNames(liClass, colors[color] ?? colors.default, $$props.class)}
-	on:click|stopPropagation
+	on:click
 	on:change
 	on:keydown
 	on:keyup
