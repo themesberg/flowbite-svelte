@@ -277,6 +277,26 @@ test('Headings page should have h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Headings');
 });
 
+test('Blockquote page should have h1', async ({ page }) => {
+	await page.goto('/typography/blockquote');
+	expect(await page.textContent('h1')).toBe('Blockquote');
+});
+
+test('Images page should have h1', async ({ page }) => {
+	await page.goto('/typography/images');
+	expect(await page.textContent('h1')).toBe('Images');
+});
+
+test('Links page should have h1', async ({ page }) => {
+	await page.goto('/typography/links');
+	expect(await page.textContent('h1')).toBe('Links');
+});
+
+test('HR page should have h1', async ({ page }) => {
+	await page.goto('/typography/hr');
+	expect(await page.textContent('h1')).toBe('Horizontal Line (HR)');
+});
+
 // Utilities
 test('Utilities page should have h1', async ({ page }) => {
 await page.goto('/utilities');
