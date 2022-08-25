@@ -15,7 +15,7 @@
 	import { forms, svelteflows, topMenus, typography } from './moduleItems/+server.js';
 
 	let asideClass =
-		'absolute w-auto bg-white pt-8 shadow-lg z-50 px-4 h-screen z-40 overflow-scroll dark:bg-gray-900';
+		'absolute w-auto bg-white pt-8 shadow-lg z-50 h-screen z-40 overflow-scroll dark:bg-gray-900';
 
 	// Nav
 	let navDivClass = 'pb-4';
@@ -31,7 +31,7 @@
 	let headerClass =
 		'w-full z-50 px-6 bg-white h-14 pt-2 text-gray-600 border-b-2 dark:bg-gray-800 dark:text-white dark:border-b-1';
 	let siteName = 'Flowbite Svelte';
-	let navClass = 'py-0 px-4 xl:px-8 text-base bg-white dark:bg-gray-900 dark:text-white';
+	let navClass = 'py-0 px-4 text-base bg-white dark:bg-gray-900 dark:text-white';
 	let navDivClasslast = 'pb-24';
 	let siteClass = ' w-full pt-0.5';
 	let spanClass =
