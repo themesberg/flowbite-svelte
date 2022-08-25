@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.25.14](https://github.com/themesberg/flowbite-svelte/compare/v0.25.13...v0.25.14) (2022-08-25)
+
+
+### Features
+
+* add icon components rather than import a library ([9dffb40](https://github.com/themesberg/flowbite-svelte/commit/9dffb400607d8bb4dd98e877e466956157016ff7))
+* add Img component, images, and page ([b2aec04](https://github.com/themesberg/flowbite-svelte/commit/b2aec047694aab0bbcbc58d93af8c021e27d4f96))
+* add Img page and examples ([ed3d83f](https://github.com/themesberg/flowbite-svelte/commit/ed3d83f34e195d67e3c7a334d1226d0876441f47))
+* add PaperAirplane icon ([90d2543](https://github.com/themesberg/flowbite-svelte/commit/90d25435eb9cc68b38febaba41b5782efb755981))
+* textarea ([47d51be](https://github.com/themesberg/flowbite-svelte/commit/47d51be427b056793cf64e4089cf4a4a7ba310d7))
+* textarea / fix ([93cdb01](https://github.com/themesberg/flowbite-svelte/commit/93cdb019326ebcaddd3482c5e41c8a635461ac67))
+
+
+### Bug Fixes
+
+* avatar dot alignment ([2273c0c](https://github.com/themesberg/flowbite-svelte/commit/2273c0ceb82cc634558e7e88aff295c722d73c9f))
+* buttongroup divider ([f5bedaf](https://github.com/themesberg/flowbite-svelte/commit/f5bedafa9a0b36f4a42a54e8c37593d7ee9d8916))
+* Htwo for typography pages ([0921539](https://github.com/themesberg/flowbite-svelte/commit/0921539d06e54f89d9e9dd52c70cdbc81b62dd3e))
+
 ### [0.25.13](https://github.com/themesberg/flowbite-svelte/compare/v0.25.12...v0.25.13) (2022-08-23)
 
 
