@@ -181,6 +181,11 @@ export { default as TimelineItemVertical } from './timelines/TimelineItemVertica
 // Toast
 export { default as Toast } from './toasts/Toast.svelte';
 
+// Toolbar
+export { default as Toolbar } from './toolbar/Toolbar.svelte';
+export { default as ToolbarButton } from './toolbar/ToolbarButton.svelte';
+export { default as ToolbarGroup } from './toolbar/ToolbarGroup.svelte';
+
 // Tooltips
 export { default as Tooltip } from './tooltips/Tooltip.svelte';
 
