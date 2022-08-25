@@ -4,10 +4,8 @@ layout: formLayout
 
 <script>
 import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
-import { Button, Textarea, Label, Breadcrumb, BreadcrumbItem, Badge, Alert } from '$lib'
-import CloseButton from "$lib/utils/CloseButton.svelte";
-import { Upload } from 'svelte-heros';
-import { Home } from 'svelte-heros'
+import { Button, Textarea, Label, Heading, Breadcrumb, BreadcrumbItem, Badge, Alert, CloseButton, CodeBracket, FaceSmile, MapPin, PaperClip, PaperAirplane,  Photo } from '$lib'
+import { Home, Upload } from 'svelte-heros';
 
 import componentProps from '../../props/Textarea.json'
 let items = componentProps.props
@@ -31,7 +29,7 @@ let textareaprops = {
   <BreadcrumbItem>Textarea</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Textarea</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Textarea</Heading>
 
 <CompoDescription>Use the textarea component as a multi-line text field input and use it inside form elements available in multiple sizes, styles, and variants</CompoDescription>
 
@@ -73,23 +71,23 @@ If you want to add other actions as buttons alongside your textarea component, s
   <Textarea id="editor" rows="8" class="mb-4" placeholder="Write a comment">
     <div slot="header" class="flex items-center space-x-1 sm:pr-4 text-gray-500 dark:text-gray-400">
       <CloseButton color="dark" class="!ml-0">
-          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd"></path></svg>
+          <PaperClip size={20} variation="solid"/>
           <span class="sr-only">Attach file</span>
       </CloseButton>
       <CloseButton color="dark">
-          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+          <MapPin size={20} variation="solid" />
           <span class="sr-only">Embed map</span>
       </CloseButton>
       <CloseButton color="dark">
-          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path></svg>
+          <Photo size={20} variation="solid" />
           <span class="sr-only">Upload image</span>
       </CloseButton>
       <CloseButton color="dark">
-          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          <CodeBracket size={20} variation="solid" />
           <span class="sr-only">Format code</span>
       </CloseButton>
       <CloseButton color="dark">
-          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z" clip-rule="evenodd"></path></svg>
+          <FaceSmile size={20} variation="solid" />
           <span class="sr-only">Add emoji</span>
       </CloseButton>
     </div>
@@ -99,28 +97,32 @@ If you want to add other actions as buttons alongside your textarea component, s
 </ExampleDiv>
 
 ```html
+<script>
+  import {CodeBracket, FaceSmile, MapPin, PaperClip, PaperAirplane, Photo } from 'flowbite-svelte'
+</script>
+
 <form>
   <label for="editor" class="sr-only">Publish post</label>
   <Textarea id="editor" rows="8" class="mb-4" placeholder="Write a comment">
     <div slot="header" class="flex items-center space-x-1 sm:pr-4 text-gray-500 dark:text-gray-400">
       <CloseButton color="dark" class="!ml-0">
-          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd"></path></svg>
+          <PaperClip size={20} variation="solid"/>
           <span class="sr-only">Attach file</span>
       </CloseButton>
       <CloseButton color="dark">
-          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+          <MapPin size={20} variation="solid" />
           <span class="sr-only">Embed map</span>
       </CloseButton>
       <CloseButton color="dark">
-          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path></svg>
+          <Photo size={20} variation="solid" />
           <span class="sr-only">Upload image</span>
       </CloseButton>
       <CloseButton color="dark">
-          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          <CodeBracket size={20} variation="solid" />
           <span class="sr-only">Format code</span>
       </CloseButton>
       <CloseButton color="dark">
-          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z" clip-rule="evenodd"></path></svg>
+          <FaceSmile size={20} variation="solid" />
           <span class="sr-only">Add emoji</span>
       </CloseButton>
     </div>
@@ -140,15 +142,15 @@ Most often the textarea component is used as the main text field input element i
         <Button type="submit">Post comment</Button>
         <div class="flex pl-0 space-x-1 sm:pl-2 text-gray-500 dark:text-gray-400">
             <CloseButton color="dark">
-                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd"></path></svg>
+                <PaperClip size={20} variation="solid" />
                 <span class="sr-only">Attach file</span>
             </CloseButton>
             <CloseButton color="dark">
-                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                <MapPin size={20} variation="solid" />
                 <span class="sr-only">Set location</span>
             </CloseButton>
             <CloseButton color="dark">
-                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path></svg>
+                <Photo size={20} variation="solid" />
                 <span class="sr-only">Upload image</span>
             </CloseButton>
         </div>
@@ -165,15 +167,15 @@ Most often the textarea component is used as the main text field input element i
         <Button type="submit">Post comment</Button>
         <div class="flex pl-0 space-x-1 sm:pl-2 text-gray-500 dark:text-gray-400">
             <CloseButton color="dark">
-                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd"></path></svg>
+                <PaperClip size={20} variation="solid" />
                 <span class="sr-only">Attach file</span>
             </CloseButton>
             <CloseButton color="dark">
-                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                <MapPin size={20} variation="solid" />
                 <span class="sr-only">Set location</span>
             </CloseButton>
             <CloseButton color="dark">
-                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path></svg>
+                <Photo size={20} variation="solid" />
                 <span class="sr-only">Upload image</span>
             </CloseButton>
         </div>
@@ -192,16 +194,16 @@ If you want to build a chatroom component you will usually want to use a textare
     <label for="chat" class="sr-only">Your message</label>
     <Alert color="dark" class="px-3 py-2">
       <CloseButton color="dark" class="text-gray-500 dark:text-gray-400">
-          <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path></svg>
+          <Photo variation="solid" />
           <span class="sr-only">Upload image</span>
       </CloseButton>
       <CloseButton color="dark" class="text-gray-500 dark:text-gray-400">
-          <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z" clip-rule="evenodd"></path></svg>
+          <FaceSmile variation="solid" />
           <span class="sr-only">Add emoji</span>
       </CloseButton>
       <Textarea id="chat" class="mx-4" rows="1" placeholder="Your message..."/>
       <CloseButton type="submit" color="blue" class="rounded-full text-blue-600 dark:text-blue-500">
-          <svg aria-hidden="true" class="w-6 h-6 rotate-90" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path></svg>
+          <PaperAirplane variation="solid" />
           <span class="sr-only">Send message</span>
       </CloseButton>
     </Alert>
@@ -210,22 +212,22 @@ If you want to build a chatroom component you will usually want to use a textare
 
 ```html
 <form>
-    <label for="chat" class="sr-only">Your message</label>
-    <Alert color="dark" class="px-3 py-2">
-      <CloseButton color="dark" class="text-gray-500 dark:text-gray-400">
-          <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path></svg>
-          <span class="sr-only">Upload image</span>
-      </CloseButton>
-      <CloseButton color="dark" class="text-gray-500 dark:text-gray-400">
-          <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z" clip-rule="evenodd"></path></svg>
-          <span class="sr-only">Add emoji</span>
-      </CloseButton>
-      <Textarea id="chat" class="mx-4" rows="1" placeholder="Your message..."/>
-      <CloseButton type="submit" color="blue" class="rounded-full text-blue-600 dark:text-blue-500">
-          <svg aria-hidden="true" class="w-6 h-6 rotate-90" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path></svg>
-          <span class="sr-only">Send message</span>
-      </CloseButton>
-    </Alert>
+  <label for="chat" class="sr-only">Your message</label>
+  <Alert color="dark" class="px-3 py-2">
+    <CloseButton color="dark" class="text-gray-500 dark:text-gray-400">
+        <Photo variation="solid" />
+        <span class="sr-only">Upload image</span>
+    </CloseButton>
+    <CloseButton color="dark" class="text-gray-500 dark:text-gray-400">
+        <FaceSmile variation="solid" />
+        <span class="sr-only">Add emoji</span>
+    </CloseButton>
+    <Textarea id="chat" class="mx-4" rows="1" placeholder="Your message..."/>
+    <CloseButton type="submit" color="blue" class="rounded-full text-blue-600 dark:text-blue-500">
+        <PaperAirplane variation="solid" />
+        <span class="sr-only">Send message</span>
+    </CloseButton>
+  </Alert>
 </form>
 ```
 
