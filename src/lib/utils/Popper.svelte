@@ -74,7 +74,7 @@
 	$: divClass = classNames(
 		'z-10',
 		animation && `transition-opacity ${animation}`,
-		open ? 'visible opacity-100' : 'absolute invisible opacity-0',
+		open ? 'visible opacity-100' : 'invisible opacity-0',
 		$$props.class
 	);
 </script>
@@ -99,6 +99,7 @@
 	on:focusout={activeContent ? hideHandler : undefined}
 	on:mouseenter={activeContent && !clickable ? showHandler : undefined}
 	on:mouseleave={activeContent && !clickable ? hideHandler : undefined}
+	style="position: absolute;"
 >
 	<slot />
 	{#if arrow}<div data-popper-arrow />{/if}
