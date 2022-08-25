@@ -119,6 +119,12 @@ git commit -a "feat: change btnClass name to bClass" -m "BREAKING CHANGE: change
 npm run test
 ```
 
+If you want to run an single test file, `tests/typography.spec.ts`:
+
+```sh
+npx playwright test tests/typography.spec.ts
+```
+
 <Htwo label="A11y Test" />
 
 <p class='w-full'>I'm in a process of finding the best A11y testing method at the moment. For now, please install [@axe-core/cli](https://www.npmjs.com/package/@axe-core/cli) to test pages relating to your change.</p>
