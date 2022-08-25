@@ -12,7 +12,7 @@
 	} from '$lib';
 	import { Side, Nav, SidebarList } from 'svelte-sidebar-menu';
 	import Github from './utils/icons/Github.svelte';
-	import { forms, svelteflows, topMenus, typography } from './moduleItems/+server.js';
+	import { forms, svelteflows, topMenus, typography, utilities } from './moduleItems/+server.js';
 
 	let asideClass =
 		'absolute w-auto bg-white pt-8 shadow-lg z-50 h-screen z-40 overflow-scroll dark:bg-gray-900';
@@ -237,20 +237,21 @@
 				<a href="/typography">Typography</a>
 			</h3>
 		</Nav>
-		<Nav {navClass} {navDivClass}>
-			<h3>
-				<a href="/utilities">Utilities</a>
-			</h3>
-		</Nav>
 		<Nav {navClass} class="pb-2">
 			<h3 class={h3Class}>Forms</h3>
 			{#each forms as { href, name, rel }}
 				<SidebarList {href} {name} {rel} {sideBarListClass} />
 			{/each}
 		</Nav>
-		<Nav {navClass} navDivClass={navDivClasslast}>
+		<Nav {navClass} class="pb-2">
 			<h3 class={h3Class}>Typography</h3>
 			{#each typography as { href, name, rel }}
+				<SidebarList {href} {name} {rel} {sideBarListClass} />
+			{/each}
+		</Nav>
+		<Nav {navClass} navDivClass={navDivClasslast}>
+			<h3 class={h3Class}>Utilities</h3>
+			{#each utilities as { href, name, rel }}
 				<SidebarList {href} {name} {rel} {sideBarListClass} />
 			{/each}
 		</Nav>
@@ -264,7 +265,7 @@
 		<Toc />
 	</main>
 </div>
-<div class="mx-auto mb-4 pt-4 lg:pl-64 2xl:pl-16">
+<div class="mx-auto mb-4 pt-4 lg:pl-64">
 	<Footer footerType="custom" customClass="py-6 px-16 bg-white dark:bg-gray-900">
 		<div class="md:flex md:justify-between">
 			<div class="mb-6 md:mb-0">

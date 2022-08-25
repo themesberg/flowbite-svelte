@@ -1,27 +1,27 @@
 ---
-layout: tooltipLayout
+layout: utilitiesLayout
 ---
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Toolbar, ToolbarButton, ToolbarGroup, Avatar, Button, Textarea, Breadcrumb, BreadcrumbItem, PaperAirplane, PaperClip, Photo, MapPin, CodeBracket, FaceSmile } from '$lib'
-  import { Home, Mail, QuestionMarkCircle, Qrcode } from 'svelte-heros'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../../utils'
+  import { Toolbar, ToolbarButton, ToolbarGroup, Avatar, Button, Textarea, Breadcrumb, BreadcrumbItem, PaperAirplane, PaperClip, Photo, MapPin, CodeBracket, FaceSmile, Envelope, QrCode, Home, Heading } from '$lib'
   
-  import componentProps from '../props/Toolbar.json'
+  import componentProps1 from '../../props/Toolbar.json'
+  import componentProps2 from '../../props/ToolbarButton.json'
   // Props table
-  let items = componentProps.props
+  let items1 = componentProps1.props
+  let items2 = componentProps2.props
   let propHeader = ['Name', 'Type', 'Default']
-
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 </script>
 
-<Breadcrumb>
+<Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
   <BreadcrumbItem>Toolbar</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Tooltips</h1>
+<Heading class="w-full mb-2" tag="h1" customSize="text-3xl">Toolbar</Heading>
 
 <CompoDescription>Use the following Tailwind CSS powered toolbars to show groups of tool buttons</CompoDescription>
 
@@ -44,8 +44,8 @@ layout: tooltipLayout
 <ExampleDiv>
 <Toolbar>
 	<ToolbarButton><Home variation="solid"/></ToolbarButton>
-	<ToolbarButton><Qrcode variation="solid"/></ToolbarButton>
-    <ToolbarButton><Mail variation="solid" /></ToolbarButton>
+	<ToolbarButton><QrCode variation="solid"/></ToolbarButton>
+    <ToolbarButton><Envelope variation="solid" /></ToolbarButton>
     <ToolbarButton slot="end"><Home variation="solid"/></ToolbarButton>
 </Toolbar>
 </ExampleDiv>
@@ -53,8 +53,8 @@ layout: tooltipLayout
 ```html
 <Toolbar>
 	<ToolbarButton><Home variation="solid"/></ToolbarButton>
-	<ToolbarButton><Qrcode variation="solid"/></ToolbarButton>
-    <ToolbarButton><Mail variation="solid" /></ToolbarButton>
+	<ToolbarButton><QrCode variation="solid"/></ToolbarButton>
+    <ToolbarButton><Envelope variation="solid" /></ToolbarButton>
     <ToolbarButton slot="end"><Home variation="solid"/></ToolbarButton>
 </Toolbar>
 ```
@@ -64,14 +64,14 @@ layout: tooltipLayout
 <ExampleDiv class="space-y-4">
 <Toolbar color="red">
 	<ToolbarButton color="red"><Home variation="solid"/></ToolbarButton>
-	<ToolbarButton color="red"><Qrcode variation="solid"/></ToolbarButton>
-    <ToolbarButton color="red"><Mail variation="solid" /></ToolbarButton>
+	<ToolbarButton color="red"><QrCode variation="solid"/></ToolbarButton>
+    <ToolbarButton color="red"><Envelope variation="solid" /></ToolbarButton>
     <ToolbarButton slot="end" color="red"><Home variation="solid"/></ToolbarButton>
 </Toolbar>
 <Toolbar color="blue">
 	<ToolbarButton color="blue"><Home variation="solid"/></ToolbarButton>
-	<ToolbarButton color="blue"><Qrcode variation="solid"/></ToolbarButton>
-    <ToolbarButton color="blue"><Mail variation="solid" /></ToolbarButton>
+	<ToolbarButton color="blue"><QrCode variation="solid"/></ToolbarButton>
+    <ToolbarButton color="blue"><Envelope variation="solid" /></ToolbarButton>
     <ToolbarButton slot="end" color="blue"><Home variation="solid"/></ToolbarButton>
 </Toolbar>
 </ExampleDiv>
@@ -79,15 +79,15 @@ layout: tooltipLayout
 ```html
 <Toolbar color="red">
 	<ToolbarButton color="red"><Home variation="solid"/></ToolbarButton>
-	<ToolbarButton color="red"><Qrcode variation="solid"/></ToolbarButton>
-    <ToolbarButton color="red"><Mail variation="solid" /></ToolbarButton>
+	<ToolbarButton color="red"><QrCode variation="solid"/></ToolbarButton>
+    <ToolbarButton color="red"><Envelope variation="solid" /></ToolbarButton>
     <ToolbarButton slot="end" color="red"><Home variation="solid"/></ToolbarButton>
 </Toolbar>
 
 <Toolbar color="blue">
 	<ToolbarButton color="blue"><Home variation="solid"/></ToolbarButton>
-	<ToolbarButton color="blue"><Qrcode variation="solid"/></ToolbarButton>
-    <ToolbarButton color="blue"><Mail variation="solid" /></ToolbarButton>
+	<ToolbarButton color="blue"><QrCode variation="solid"/></ToolbarButton>
+    <ToolbarButton color="blue"><Envelope variation="solid" /></ToolbarButton>
     <ToolbarButton slot="end" color="blue"><Home variation="solid"/></ToolbarButton>
 </Toolbar>
 ```
@@ -98,13 +98,13 @@ layout: tooltipLayout
 <Toolbar color="green">
     <ToolbarGroup>
         <ToolbarButton color="green"><Home variation="solid"/></ToolbarButton>
-        <ToolbarButton color="green"><Qrcode variation="solid"/></ToolbarButton>
-        <ToolbarButton color="green"><Mail variation="solid" /></ToolbarButton>
+        <ToolbarButton color="green"><QrCode variation="solid"/></ToolbarButton>
+        <ToolbarButton color="green"><Envelope variation="solid" /></ToolbarButton>
     </ToolbarGroup>
     <ToolbarGroup>
         <ToolbarButton color="green"><Home variation="solid"/></ToolbarButton>
-        <ToolbarButton color="green"><Qrcode variation="solid"/></ToolbarButton>
-        <ToolbarButton color="green"><Mail variation="solid" /></ToolbarButton>
+        <ToolbarButton color="green"><QrCode variation="solid"/></ToolbarButton>
+        <ToolbarButton color="green"><Envelope variation="solid" /></ToolbarButton>
     </ToolbarGroup>
     <ToolbarButton slot="end" color="green"><Home variation="solid"/></ToolbarButton>
 </Toolbar>
@@ -114,13 +114,13 @@ layout: tooltipLayout
 <Toolbar color="green">
     <ToolbarGroup>
         <ToolbarButton color="green"><Home variation="solid"/></ToolbarButton>
-        <ToolbarButton color="green"><Qrcode variation="solid"/></ToolbarButton>
-        <ToolbarButton color="green"><Mail variation="solid" /></ToolbarButton>
+        <ToolbarButton color="green"><QrCode variation="solid"/></ToolbarButton>
+        <ToolbarButton color="green"><Envelope variation="solid" /></ToolbarButton>
     </ToolbarGroup>
     <ToolbarGroup>
         <ToolbarButton color="green"><Home variation="solid"/></ToolbarButton>
-        <ToolbarButton color="green"><Qrcode variation="solid"/></ToolbarButton>
-        <ToolbarButton color="green"><Mail variation="solid" /></ToolbarButton>
+        <ToolbarButton color="green"><QrCode variation="solid"/></ToolbarButton>
+        <ToolbarButton color="green"><Envelope variation="solid" /></ToolbarButton>
     </ToolbarGroup>
     <ToolbarButton slot="end" color="green"><Home variation="solid"/></ToolbarButton>
 </Toolbar>
@@ -209,9 +209,17 @@ Most often the textarea component is used as the main text field input element i
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
+<p>Components have the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.</p>
 
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Toolbar</Heading>
+
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow {items} rowState='hover' />
+  <TableDefaultRow items={items1} rowState='hover' />
+</TableProp>
+
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">ToolbarButton</Heading>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>

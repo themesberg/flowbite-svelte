@@ -69,13 +69,16 @@ export { default as VoiceSearch } from './forms/VoiceSearch.svelte';
 
 // Icons
 export { default as CodeBracket } from './icons/CodeBracket.svelte'
+export { default as Envelope } from './icons/Envelope.svelte'
 export { default as FaceSmile } from './icons/FaceSmile.svelte'
 export { default as Figma } from './icons/Figma.svelte'
+export { default as Home } from './icons/Home.svelte'
 export { default as Map } from './icons/Map.svelte'
 export { default as MapPin } from './icons/MapPin.svelte'
 export { default as PaperAirplane } from './icons/PaperAirplane.svelte'
 export { default as PaperClip } from './icons/PaperClip.svelte'
 export { default as Photo } from './icons/Photo.svelte'
+export { default as QrCode } from './icons/QrCode.svelte'
 export { default as QuoteLeft } from './icons/QuoteLeft.svelte'
 
 

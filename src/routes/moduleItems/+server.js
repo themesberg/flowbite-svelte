@@ -29,6 +29,12 @@ export const typography = [
 	{ href: '/typography/hr', name: 'HR' }
 ];
 
+export const utilities = [
+	{ href: '/utilities/closebutton', name: 'Close button' },
+	{ href: '/utilities/label', name: 'Label' },
+	{ href: '/utilities/toolbar', name: 'Toolbar' },
+]
+
 export const topMenus = [
 	{ id: '1', href: '/', name: 'Home' },
 	{ id: '2', href: '/pages/about', name: 'About' },
