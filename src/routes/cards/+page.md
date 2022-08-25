@@ -50,7 +50,7 @@ layout: cardLayout
   <BreadcrumbItem>Card</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4 text-teal-50">Card</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Card</h1>
 
 <CompoDescription>Get started with a large variety of Tailwind CSS card examples for your web project</CompoDescription>
 
