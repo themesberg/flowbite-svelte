@@ -34,9 +34,6 @@ export { default as DarkMode } from './darkmode/DarkMode.svelte';
 // Datepicker
 export { default as Datepicker } from './datepicker/Datepicker.svelte';
 
-// Drawer
-export { default as Drawer } from './drawers/Drawer.svelte';
-
 // Dropdown
 export { default as Dropdown } from './dropdowns/Dropdown.svelte'
 export { default as DropdownDivider } from './dropdowns/DropdownDivider.svelte';
