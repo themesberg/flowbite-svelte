@@ -99,6 +99,7 @@
 	on:focusout={activeContent ? hideHandler : undefined}
 	on:mouseenter={activeContent && !clickable ? showHandler : undefined}
 	on:mouseleave={activeContent && !clickable ? hideHandler : undefined}
+	style="position: absolute;"
 >
 	<slot />
 	{#if arrow}<div data-popper-arrow />{/if}
