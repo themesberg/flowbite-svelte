@@ -11,7 +11,7 @@ layout: utilitiesLayout
 		TableProp,
 		TableDefaultRow
 	} from '../../utils';
-	import { Breadcrumb, BreadcrumbItem, CloseButton, Label, Checkbox, Home, Heading } from '$lib';
+	import { Breadcrumb, BreadcrumbItem, CloseButton, Label, Checkbox, Home, Heading, A } from '$lib';
 	export let visible = true;
 
 	import componentProps from '../../props/CloseButton.json';
@@ -85,8 +85,8 @@ Use `CloseButton` component to close a component.
 
 <Htwo label="Props" />
 
-The component has the following props, type, and default values. See
-<a href="/pages/types">types page</a>
+The component has the following props, type, and default values. 
+See <A class="hover:underline" href="/pages/types">the types page</A>
 for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>

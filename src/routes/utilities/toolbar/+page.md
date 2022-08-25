@@ -4,7 +4,7 @@ layout: utilitiesLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../../utils'
-  import { Toolbar, ToolbarButton, ToolbarGroup, Avatar, Button, Textarea, Breadcrumb, BreadcrumbItem, PaperAirplane, PaperClip, Photo, MapPin, CodeBracket, FaceSmile, Envelope, QrCode, Home, Heading } from '$lib'
+  import { Toolbar, ToolbarButton, ToolbarGroup, Avatar, Button, Textarea, Breadcrumb, BreadcrumbItem, PaperAirplane, PaperClip, Photo, MapPin, CodeBracket, FaceSmile, Envelope, QrCode, Home, Heading, A } from '$lib'
   
   import componentProps1 from '../../props/Toolbar.json'
   import componentProps2 from '../../props/ToolbarButton.json'
@@ -209,8 +209,9 @@ Most often the textarea component is used as the main text field input element i
 
 <Htwo label="Props" />
 
-<p>Components have the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. 
+See <A class="hover:underline" href="/pages/types">the types page</A>
+for type information.
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Toolbar</Heading>
 
