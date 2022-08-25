@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.25.15](https://github.com/themesberg/flowbite-svelte/compare/v0.25.14...v0.25.15) (2022-08-25)
+
+
+### Bug Fixes
+
+* removed drawer component and page from the main ([5cf77f0](https://github.com/themesberg/flowbite-svelte/commit/5cf77f008aff26e64bd210a3bdf60e5f25aebc89))
+
 ### [0.25.14](https://github.com/themesberg/flowbite-svelte/compare/v0.25.13...v0.25.14) (2022-08-25)
 
 
