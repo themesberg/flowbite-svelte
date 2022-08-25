@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.25.16](https://github.com/themesberg/flowbite-svelte/compare/v0.25.15...v0.25.16) (2022-08-25)
+
+
+### Features
+
+* create utilities/closebutton, label, and toolbar ([3ad9775](https://github.com/themesberg/flowbite-svelte/commit/3ad9775ffbed66908cbaa82845b86151e179d534))
+* toolbar ([f02ff55](https://github.com/themesberg/flowbite-svelte/commit/f02ff558fa938913c32117ff51b46bdd6088e38a))
+* toolbar w/html ([93116c3](https://github.com/themesberg/flowbite-svelte/commit/93116c34b4063eb9d166d85ef3dd7e20126fa29e))
+
 ### [0.25.15](https://github.com/themesberg/flowbite-svelte/compare/v0.25.14...v0.25.15) (2022-08-25)
 
 
