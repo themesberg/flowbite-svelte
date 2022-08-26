@@ -5,7 +5,7 @@ layout: formLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { onMount } from 'svelte';
-	import { Input, Label, Helper, Iconinput, Fileupload, Textarea, Select, Checkbox, Radio, Toggle, Breadcrumb, BreadcrumbItem } from '$lib'
+	import { Input, Label, Helper, Iconinput, Fileupload, Textarea, Select, Checkbox, Radio, Toggle, Breadcrumb, BreadcrumbItem, Heading } from '$lib'
   import { Home, AtSymbol, Mail, Search } from 'svelte-heros'
   import componentProps from '../props/Input.json'
   import componentProps2 from '../props/Label.json'
@@ -60,12 +60,12 @@ layout: formLayout
   ]
 </script>
 
-<Breadcrumb>
+<Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
   <BreadcrumbItem>Forms</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Forms</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Forms</Heading>
 
 <CompoDescription>Use the Tailwind CSS form and input elements such as checkboxes, radios, textarea, text inputs to collect information from users with Flowbite</CompoDescription>
 

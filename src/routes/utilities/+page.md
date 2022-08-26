@@ -4,10 +4,9 @@ layout: typographyLayout
 
 <script>
 	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-	import { Breadcrumb, BreadcrumbItem, CloseButton, Label, Checkbox } from '$lib';
-	import { Home } from 'svelte-heros';
+	import { Breadcrumb, BreadcrumbItem, CloseButton, Label, Checkbox, Heading, Home } from '$lib';
+	
   export let visible = true;
-
 
 	import componentProps from '../props/CloseButton.json'
 	import componentProps2 from '../props/Label.json'
@@ -20,12 +19,13 @@ layout: typographyLayout
 	let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 </script>
 
-<Breadcrumb>
+<Breadcrumb class="pb-8">
 	<BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
 	<BreadcrumbItem>Utilities</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Utilities</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Utilities</Heading>
+
 
 
 <CompoDescription>The following components are used throughout the library and you can use them for your app as well</CompoDescription>
