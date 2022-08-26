@@ -4,7 +4,7 @@ layout: formLayout
 
 <script>
 import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
-import { Button, Textarea, Label, Heading, Breadcrumb, BreadcrumbItem, Badge, Alert, CloseButton, CodeBracket, FaceSmile, MapPin, PaperClip, PaperAirplane,  Photo } from '$lib'
+import { Button, Textarea, Label, Heading, Breadcrumb, BreadcrumbItem, Badge, Alert, CloseButton, CodeBracket, FaceSmile, MapPin, PaperClip, PaperAirplane,  Photo, Toolbar, ToolbarButton, ToolbarGroup } from '$lib'
 import { Home, Upload } from 'svelte-heros';
 
 import componentProps from '../../props/Textarea.json'
@@ -69,91 +69,57 @@ If you want to add other actions as buttons alongside your textarea component, s
 <form>
   <label for="editor" class="sr-only">Publish post</label>
   <Textarea id="editor" rows="8" class="mb-4" placeholder="Write a comment">
-    <div slot="header" class="flex items-center space-x-1 sm:pr-4 text-gray-500 dark:text-gray-400">
-      <CloseButton color="dark" class="!ml-0">
-          <PaperClip size={20} variation="solid"/>
-          <span class="sr-only">Attach file</span>
-      </CloseButton>
-      <CloseButton color="dark">
-          <MapPin size={20} variation="solid" />
-          <span class="sr-only">Embed map</span>
-      </CloseButton>
-      <CloseButton color="dark">
-          <Photo size={20} variation="solid" />
-          <span class="sr-only">Upload image</span>
-      </CloseButton>
-      <CloseButton color="dark">
-          <CodeBracket size={20} variation="solid" />
-          <span class="sr-only">Format code</span>
-      </CloseButton>
-      <CloseButton color="dark">
-          <FaceSmile size={20} variation="solid" />
-          <span class="sr-only">Add emoji</span>
-      </CloseButton>
-    </div>
+    <Toolbar slot="header" embedded>
+      <ToolbarGroup>
+        <ToolbarButton name="Attach file"><PaperClip size={20} variation="solid"/></ToolbarButton>
+        <ToolbarButton name="Embed map"><MapPin size={20} variation="solid" /></ToolbarButton>
+        <ToolbarButton name="Upload image"><Photo size={20} variation="solid" /></ToolbarButton>
+      </ToolbarGroup>
+      <ToolbarGroup>
+        <ToolbarButton name="Format code"><CodeBracket size={20} variation="solid" /></ToolbarButton>
+        <ToolbarButton name="Add emoji"><FaceSmile size={20} variation="solid" /></ToolbarButton>
+      </ToolbarGroup>
+      <ToolbarButton name="send" slot="end"><PaperAirplane size={20} variation="solid" /></ToolbarButton>
+    </Toolbar>
   </Textarea>
   <Button>Publish post</Button>
 </form>
 </ExampleDiv>
 
 ```html
-<script>
-  import {CodeBracket, FaceSmile, MapPin, PaperClip, PaperAirplane, Photo } from 'flowbite-svelte'
-</script>
-
 <form>
   <label for="editor" class="sr-only">Publish post</label>
   <Textarea id="editor" rows="8" class="mb-4" placeholder="Write a comment">
-    <div slot="header" class="flex items-center space-x-1 sm:pr-4 text-gray-500 dark:text-gray-400">
-      <CloseButton color="dark" class="!ml-0">
-          <PaperClip size={20} variation="solid"/>
-          <span class="sr-only">Attach file</span>
-      </CloseButton>
-      <CloseButton color="dark">
-          <MapPin size={20} variation="solid" />
-          <span class="sr-only">Embed map</span>
-      </CloseButton>
-      <CloseButton color="dark">
-          <Photo size={20} variation="solid" />
-          <span class="sr-only">Upload image</span>
-      </CloseButton>
-      <CloseButton color="dark">
-          <CodeBracket size={20} variation="solid" />
-          <span class="sr-only">Format code</span>
-      </CloseButton>
-      <CloseButton color="dark">
-          <FaceSmile size={20} variation="solid" />
-          <span class="sr-only">Add emoji</span>
-      </CloseButton>
-    </div>
+    <Toolbar slot="header" embedded>
+      <ToolbarGroup>
+        <ToolbarButton name="Attach file"><PaperClip size={20} variation="solid"/></ToolbarButton>
+        <ToolbarButton name="Embed map"><MapPin size={20} variation="solid" /></ToolbarButton>
+        <ToolbarButton name="Upload image"><Photo size={20} variation="solid" /></ToolbarButton>
+      </ToolbarGroup>
+      <ToolbarGroup>
+        <ToolbarButton name="Format code"><CodeBracket size={20} variation="solid" /></ToolbarButton>
+        <ToolbarButton name="Add emoji"><FaceSmile size={20} variation="solid" /></ToolbarButton>
+      </ToolbarGroup>
+      <ToolbarButton name="send" slot="end"><PaperAirplane size={20} variation="solid" /></ToolbarButton>
+    </Toolbar>
   </Textarea>
   <Button>Publish post</Button>
 </form>
 ```
-
 <Htwo label="Comment box" />
 
 Most often the textarea component is used as the main text field input element in comment sections. Use this example to also apply a helper text and buttons below the textarea itself.
 
-<ExampleDiv>
+<ExampleDiv class="space-y-4">
 <form>
   <Textarea class="mb-4" placeholder="Write a comment">
-    <div slot="footer" class="flex justify-between items-center">
-        <Button type="submit">Post comment</Button>
-        <div class="flex pl-0 space-x-1 sm:pl-2 text-gray-500 dark:text-gray-400">
-            <CloseButton color="dark">
-                <PaperClip size={20} variation="solid" />
-                <span class="sr-only">Attach file</span>
-            </CloseButton>
-            <CloseButton color="dark">
-                <MapPin size={20} variation="solid" />
-                <span class="sr-only">Set location</span>
-            </CloseButton>
-            <CloseButton color="dark">
-                <Photo size={20} variation="solid" />
-                <span class="sr-only">Upload image</span>
-            </CloseButton>
-        </div>
+    <div slot="footer" class="flex items-center justify-between">
+    <Button type="submit">Post comment</Button>
+    <Toolbar embedded>
+        <ToolbarButton name="Attach file"><PaperClip size={20} variation="solid" /></ToolbarButton>
+        <ToolbarButton name="Set location"><MapPin size={20} variation="solid" /></ToolbarButton>
+        <ToolbarButton name="Upload image"><Photo size={20} variation="solid" /></ToolbarButton>
+    </Toolbar>
     </div>
   </Textarea>
 </form>
@@ -163,22 +129,13 @@ Most often the textarea component is used as the main text field input element i
 ```html
 <form>
   <Textarea class="mb-4" placeholder="Write a comment">
-    <div slot="footer" class="flex justify-between items-center">
-        <Button type="submit">Post comment</Button>
-        <div class="flex pl-0 space-x-1 sm:pl-2 text-gray-500 dark:text-gray-400">
-            <CloseButton color="dark">
-                <PaperClip size={20} variation="solid" />
-                <span class="sr-only">Attach file</span>
-            </CloseButton>
-            <CloseButton color="dark">
-                <MapPin size={20} variation="solid" />
-                <span class="sr-only">Set location</span>
-            </CloseButton>
-            <CloseButton color="dark">
-                <Photo size={20} variation="solid" />
-                <span class="sr-only">Upload image</span>
-            </CloseButton>
-        </div>
+    <div slot="footer" class="flex items-center justify-between">
+    <Button type="submit">Post comment</Button>
+    <Toolbar embedded>
+        <ToolbarButton name="Attach file"><PaperClip size={20} variation="solid" /></ToolbarButton>
+        <ToolbarButton name="Set location"><MapPin size={20} variation="solid" /></ToolbarButton>
+        <ToolbarButton name="Upload image"><Photo size={20} variation="solid" /></ToolbarButton>
+    </Toolbar>
     </div>
   </Textarea>
 </form>
