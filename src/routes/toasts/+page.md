@@ -6,7 +6,7 @@ layout: toastLayout
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Toast, Breadcrumb, BreadcrumbItem, Avatar, Button } from '$lib'
   import { quintOut, elasticOut } from 'svelte/easing';
-  import { Fire, CheckCircle, PlusCircle, Archive, Home, Mail, Refresh } from 'svelte-heros'
+  import { Fire, CheckCircle, PlusCircle, Archive, Mail, Refresh } from 'svelte-heros'
   
   import componentProps from '../props/Toast.json'
   // Props table

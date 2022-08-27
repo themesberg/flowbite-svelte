@@ -2,8 +2,6 @@
 	import { Htwo, ExampleDiv, CompoDescription, TableProp, TableDefaultRow } from '../utils';
 	import 'prism-themes/themes/prism-holi-theme.css';
 	import { Datepicker, Breadcrumb, BreadcrumbItem, Alert } from '$lib';
-	import { Home } from 'svelte-heros';
-
 	import componentProps from '../props/Datepicker.json';
 	let items = componentProps.props;
 

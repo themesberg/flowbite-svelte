@@ -5,7 +5,7 @@ layout: darkmodeLayout
 <script>
   import {Htwo,TableProp, TableDefaultRow} from '../utils'
   import { Breadcrumb, BreadcrumbItem } from '$lib'
-  import { Home } from 'svelte-heros';
+  ;
   
   import componentProps from '../props/DarkMode.json'
   // Props table

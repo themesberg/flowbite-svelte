@@ -5,7 +5,7 @@ layout: avatarLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider, Breadcrumb, BreadcrumbItem, Tooltip } from '$lib'
-  import { Home } from 'svelte-heros'
+  
   
   import alertProp from '../props/Avatar.json'
   // Props table

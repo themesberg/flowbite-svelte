@@ -5,7 +5,7 @@ layout: skeletonLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { CardPlaceholder, ImagePlaceholder, ListPlaceholder, Skeleton, TestimonialPlaceholder, TextPlaceholder, VideoPlaceholder, WidgetPlaceholder, Breadcrumb, BreadcrumbItem } from '$lib'
-  import { Home } from 'svelte-heros'
+  
 
   import componentProps from '../props/ListPlaceholder.json'
   import componentProps2 from '../props/Skeleton.json'

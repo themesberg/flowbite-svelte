@@ -5,7 +5,7 @@ layout: buttongroupLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Button, ButtonGroup, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
-  import { Home, User, Adjustments, CloudDownload } from 'svelte-heros';
+  import { User, Adjustments, CloudDownload } from 'svelte-heros';
 
   import componentProps from '../props/ButtonGroup.json'
 

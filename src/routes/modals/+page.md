@@ -5,7 +5,7 @@ layout: modalLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Button, Checkbox, Modal, Label, Input, Breadcrumb, BreadcrumbItem } from '$lib'
-  import { Home, QuestionMarkCircle } from 'svelte-heros';
+  import { QuestionMarkCircle } from 'svelte-heros';
   import { goto } from "$app/navigation";
   import Metamask from "./Metamask/+page.svelte"
   import Coinbase from "./Coinbase/+page.svelte"

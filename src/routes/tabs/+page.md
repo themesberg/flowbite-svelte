@@ -5,7 +5,7 @@ layout: tabLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Tabs, InteractiveTabHead, TabContent, Timeline, TimelineItem, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
-  import { Home, UserCircle, ViewGrid, Adjustments, ClipboardList } from 'svelte-heros';
+  import { UserCircle, ViewGrid, Adjustments, ClipboardList } from 'svelte-heros';
   
   import componentProps from '../props/Tabs.json'
 	import componentProps2 from '../props/InteractiveTabHead.json'

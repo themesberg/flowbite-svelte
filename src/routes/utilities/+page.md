@@ -4,7 +4,7 @@ layout: typographyLayout
 
 <script>
 	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-	import { Breadcrumb, BreadcrumbItem, CloseButton, Label, Checkbox, Heading, Home } from '$lib';
+	import { Breadcrumb, BreadcrumbItem, CloseButton, Label, Checkbox, Heading } from '$lib';
 	
   export let visible = true;
 

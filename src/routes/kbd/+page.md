@@ -5,7 +5,7 @@ layout: kbdLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Kbd, Table, TableHead, TableHeadCell, TableBody, TableBodyRow, TableBodyCell, ArrowKeyDown, ArrowKeyLeft, ArrowKeyRight, ArrowKeyUp, Breadcrumb, BreadcrumbItem } from '$lib'
-  import { Home } from 'svelte-heros'
+  
 
   import componentProps from '../props/Kbd.json'
   import componentProps2 from '../props/ArrowKeyDown.json'

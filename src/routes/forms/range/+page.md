@@ -5,7 +5,7 @@ layout: formLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
   import { Label, Range, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
-  import { Home } from 'svelte-heros'
+  
 
   import componentProps from '../../props/Range.json'
   let items = componentProps.props

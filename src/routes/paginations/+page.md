@@ -5,7 +5,7 @@ layout: paginationLayout
 <script lang="ts">
 	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
 	import { Pagination, Previous, Next, TableData, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
-  import { Home } from 'svelte-heros';
+  ;
 	
 	import componentProps1 from '../props/Pagination.json'
   import componentProps2 from '../props/Previous.json'

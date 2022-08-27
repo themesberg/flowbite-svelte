@@ -5,7 +5,7 @@ layout: navbarLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Breadcrumb, BreadcrumbItem, Button, Dropdown, DropdownItem, DropdownHeader, DropdownDivider, Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Input, Badge, Skeleton, ImagePlaceholder, TextPlaceholder } from '$lib';
-	import { Search , Home} from 'svelte-heros'
+	import { Search } from 'svelte-heros'
 	
   import componentProps from '../props/Navbar.json'
 	import componentProps2 from '../props/NavBrand.json'
