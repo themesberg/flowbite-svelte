@@ -58,7 +58,7 @@ The carousel component can be used to cycle through a set of elements using cust
 
 ```html
 <script>
-  import { Carousel, CarouselTransition } 'flowbite-svelte'
+  import { Carousel, CarouselTransition } from 'flowbite-svelte'
 </script>
 ```
 
@@ -72,7 +72,7 @@ The carousel component can be used to cycle through a set of elements using cust
 
 ```html
 <script>
-  import { Carousel } from '$lib';
+  ...
   const images = [
   {
     id: 0,
@@ -125,7 +125,9 @@ The carousel component can be used to cycle through a set of elements using cust
 ];
 </script>
 
-<Carousel {images} />
+<div class="max-w-4xl">
+  <Carousel {images} />
+</div>
 ```
 
 <Htwo label="Loop" />
@@ -144,7 +146,9 @@ The carousel component can be used to cycle through a set of elements using cust
   let showCaptions=false
 </script>
 
-<Carousel {images} loop {showCaptions} {showThumbs} duration="3000" />
+<div class="max-w-4xl">
+  <Carousel {images} loop {showCaptions} {showThumbs} duration="3000" />
+</div>
 ```
 
 <Htwo label="Without thumbnails"/>
@@ -162,7 +166,9 @@ The carousel component can be used to cycle through a set of elements using cust
     let showThumbs=false
 </script>
 
-<Carousel {images} {showThumbs}/>
+<div class="max-w-4xl">
+  <Carousel {images} {showThumbs}/>
+</div>
 ```
 
 <Htwo label="Without caption" />
@@ -181,7 +187,9 @@ The carousel component can be used to cycle through a set of elements using cust
   let showCaptions=false
 </script>
 
-<Carousel {images} {showThumbs} {showCaptions}/>
+<div class="max-w-4xl">
+  <Carousel {images} {showThumbs} {showCaptions}/>
+</div>
 ```
 
 <Htwo label="Without indicators" />
@@ -201,7 +209,9 @@ The carousel component can be used to cycle through a set of elements using cust
   let showIndicators=false
 </script>
 
-<Carousel {images} {showThumbs} {showCaptions} {showIndicators}/>
+<div class="max-w-4xl">
+  <Carousel {images} {showThumbs} {showCaptions} {showIndicators}/>
+</div>
 ```
 
 <Htwo label="Without slide controllers" />
@@ -221,7 +231,9 @@ The carousel component can be used to cycle through a set of elements using cust
   let slideControls=false
 </script>
 
-<Carousel {images} {showThumbs} {showCaptions} {slideControls}/>
+<div class="max-w-4xl">
+  <Carousel {images} {showThumbs} {showCaptions} {slideControls}/>
+</div>
 ```
 
 <Htwo label="Custom slide controllers" />
@@ -263,7 +275,9 @@ The carousel component can be used to cycle through a set of elements using cust
   import { CarouselTransition } from 'flowbite-svelte';
 </script>
 
-<CarouselTransition {images} transitionType="slide" transitionParams="{{delay: 300, duration: 500}}"/>
+<div class="max-w-4xl">
+  <CarouselTransition {images} transitionType="slide" transitionParams="{{delay: 300, duration: 500}}"/>
+</div>
 ```
 
 <Htwo label="Loop" />
@@ -282,7 +296,9 @@ The carousel component can be used to cycle through a set of elements using cust
   let showCaptions=false
 </script>
 
-<CarouselTransition {images} loop transitionType="fade" transitionParams="{{ duration: 1000 }}" {showCaptions} {showThumbs} duration="5000" />
+<div class="max-w-4xl">
+  <CarouselTransition {images} loop transitionType="fade" transitionParams="{{ duration: 1000 }}" {showCaptions} {showThumbs} duration="5000" />
+</div>
 ```
 
 <Htwo label="Fly example" />
@@ -311,7 +327,9 @@ The carousel component can be used to cycle through a set of elements using cust
   import { bounceInOut } from 'svelte/easing';
 </script>
 
-<CarouselTransition {images} transitionType="slide" transitionParams="{{duration: 1500, easing: bounceInOut}}"/>
+<div class="max-w-4xl">
+  <CarouselTransition {images} transitionType="slide" transitionParams="{{duration: 1500, easing: bounceInOut}}"/>
+</div>
 ```
 
 <Htwo label="Custom slide controllers" />
