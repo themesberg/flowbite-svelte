@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.25.20](https://github.com/themesberg/flowbite-svelte/compare/v0.25.19...v0.25.20) (2022-08-27)
+
+
+### Bug Fixes
+
+* index page space ([6ab9a19](https://github.com/themesberg/flowbite-svelte/commit/6ab9a19e004fc19ba3bd696acedbc5bbc0ced966))
+* remove heros from: ([7055f4c](https://github.com/themesberg/flowbite-svelte/commit/7055f4c5ddaa91e15cabaf7d1112a149cf81374d))
+* remove heros icon from Carousel ([2c7d4c9](https://github.com/themesberg/flowbite-svelte/commit/2c7d4c9a6edc1a4dd4005e5dcf46fec8b5dc0a52))
+
 ### [0.25.19](https://github.com/themesberg/flowbite-svelte/compare/v0.25.18...v0.25.19) (2022-08-27)
 
 
