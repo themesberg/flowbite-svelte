@@ -66,9 +66,6 @@ export { default as Textarea } from './forms/Textarea.svelte';
 export { default as Toggle } from './forms/Toggle.svelte';
 export { default as VoiceSearch } from './forms/VoiceSearch.svelte';
 
-export { default as QuoteLeft } from './icons/QuoteLeft.svelte'
-
-
 // Kbd
 export { default as Kbd } from './kbd/Kbd.svelte';
 export { default as ArrowKeyDown } from './kbd/ArrowKeyDown.svelte';
