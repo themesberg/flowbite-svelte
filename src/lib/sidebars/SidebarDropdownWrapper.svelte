@@ -3,7 +3,7 @@
 	import type { IconType } from '../types';
 	import { slide } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
-	import { ChevronDown } from 'svelte-heros';
+	import ChevronDown from '../utils/ChevronDown.svelte';
 
 	export let btnClass: string =
 		'flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700';
@@ -24,14 +24,12 @@
 		on:click={() => handleDropdown()}
 		type="button"
 		class={classNames(btnClass, $$props.class)}
-		aria-controls="sidebar-dropdown"
-	>
+		aria-controls="sidebar-dropdown">
 		<svelte:component
 			this={icon.name}
 			size={icon.size}
 			color={icon.color}
-			class="mr-2 {icon.class}"
-		/>
+			class="mr-2 {icon.class}" />
 		<span class={spanClass} sidebar-toggle-item>{label}</span>
 		<ChevronDown />
 	</button>
@@ -39,8 +37,7 @@
 		<ul
 			id="dropdown"
 			class={ulClass}
-			transition:slide={{ delay: 250, duration: 300, easing: quintOut }}
-		>
+			transition:slide={{ delay: 250, duration: 300, easing: quintOut }}>
 			<slot />
 		</ul>
 	{/if}
