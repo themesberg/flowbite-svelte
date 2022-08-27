@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.25.18](https://github.com/themesberg/flowbite-svelte/compare/v0.25.17...v0.25.18) (2022-08-27)
+
+
+### Bug Fixes
+
+* change BreadcrumbItem home for all pages ([f5f895f](https://github.com/themesberg/flowbite-svelte/commit/f5f895f6157b03e435975c5735329f8dfc984485))
+
 ### [0.25.17](https://github.com/themesberg/flowbite-svelte/compare/v0.25.16...v0.25.17) (2022-08-27)
 
 
