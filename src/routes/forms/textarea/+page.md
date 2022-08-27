@@ -3,24 +3,36 @@ layout: formLayout
 ---
 
 <script>
-import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
-import { Button, Textarea, Label, Heading, Breadcrumb, BreadcrumbItem, Badge, Alert, CloseButton, CodeBracket, FaceSmile, MapPin, PaperClip, PaperAirplane,  Photo, Toolbar, ToolbarButton, ToolbarGroup } from '$lib'
-import { Upload } from 'svelte-heros';
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
+  import { Button, Textarea, Label, Heading, Breadcrumb, BreadcrumbItem, Badge, Alert, CloseButton, Toolbar, ToolbarButton, ToolbarGroup } from '$lib'
 
-import componentProps from '../../props/Textarea.json'
-let items = componentProps.props
-let propHeader = ['Name', 'Type', 'Default']
+  import componentProps from '../../props/Textarea.json'
+  let items = componentProps.props
+  let propHeader = ['Name', 'Type', 'Default']
 
-let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
+  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
-let textareaprops = {
-  id: 'message',
-  name: 'message',
-  label: 'Your message',
-  rows: 4,
-  placeholder: 'Leave a comment...',
-};
+  let textareaprops = {
+    id: 'message',
+    name: 'message',
+    label: 'Your message',
+    rows: 4,
+    placeholder: 'Leave a comment...',
+  };
+
+  let PaperAirplane =`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg>`
+
+  let PaperClip = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M18.375 12.739l-7.693 7.693a4.5 4.5 0 01-6.364-6.364l10.94-10.94A3 3 0 1119.5 7.372L8.552 18.32m.009-.01l-.01.01m5.699-9.941l-7.81 7.81a1.5 1.5 0 002.112 2.13" /></svg>`
+
+  let Photo = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" /></svg>`
+
+  let MapPin = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>`
+  
+  let CodeBracket = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" /></svg>`
+  
+  let FaceSmile = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" /></svg>`
+
 </script>
 
 <Breadcrumb class="pb-8">
@@ -44,6 +56,10 @@ The textarea component is a multi-line text field input that can be used to rece
 ```html
 <script>
   import { Textarea } from 'flowbite-svelte'
+  // You can import icon components here. See more details on icon page 
+  let PaperAirplane =`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg>`
+
+  let PaperClip = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M18.375 12.739l-7.693 7.693a4.5 4.5 0 01-6.364-6.364l10.94-10.94A3 3 0 1119.5 7.372L8.552 18.32m.009-.01l-.01.01m5.699-9.941l-7.81 7.81a1.5 1.5 0 002.112 2.13" /></svg>`
 </script>
 ```
 
@@ -71,15 +87,15 @@ If you want to add other actions as buttons alongside your textarea component, s
   <Textarea id="editor" rows="8" class="mb-4" placeholder="Write a comment">
     <Toolbar slot="header" embedded>
       <ToolbarGroup>
-        <ToolbarButton name="Attach file"><PaperClip size={20} variation="solid"/></ToolbarButton>
-        <ToolbarButton name="Embed map"><MapPin size={20} variation="solid" /></ToolbarButton>
-        <ToolbarButton name="Upload image"><Photo size={20} variation="solid" /></ToolbarButton>
+        <ToolbarButton name="Attach file">{@html PaperClip}</ToolbarButton>
+        <ToolbarButton name="Embed map">{@html MapPin}</ToolbarButton>
+        <ToolbarButton name="Upload image">{@html Photo}</ToolbarButton>
       </ToolbarGroup>
       <ToolbarGroup>
-        <ToolbarButton name="Format code"><CodeBracket size={20} variation="solid" /></ToolbarButton>
-        <ToolbarButton name="Add emoji"><FaceSmile size={20} variation="solid" /></ToolbarButton>
+        <ToolbarButton name="Format code">{@html CodeBracket}</ToolbarButton>
+        <ToolbarButton name="Add emoji">{@html FaceSmile}</ToolbarButton>
       </ToolbarGroup>
-      <ToolbarButton name="send" slot="end"><PaperAirplane size={20} variation="solid" /></ToolbarButton>
+      <ToolbarButton name="send" slot="end">{@html PaperAirplane}</ToolbarButton>
     </Toolbar>
   </Textarea>
   <Button>Publish post</Button>
@@ -92,15 +108,15 @@ If you want to add other actions as buttons alongside your textarea component, s
   <Textarea id="editor" rows="8" class="mb-4" placeholder="Write a comment">
     <Toolbar slot="header" embedded>
       <ToolbarGroup>
-        <ToolbarButton name="Attach file"><PaperClip size={20} variation="solid"/></ToolbarButton>
-        <ToolbarButton name="Embed map"><MapPin size={20} variation="solid" /></ToolbarButton>
-        <ToolbarButton name="Upload image"><Photo size={20} variation="solid" /></ToolbarButton>
+        <ToolbarButton name="Attach file">{@html PaperClip}</ToolbarButton>
+        <ToolbarButton name="Embed map">{@html MapPin}</ToolbarButton>
+        <ToolbarButton name="Upload image">{@html Photo}</ToolbarButton>
       </ToolbarGroup>
       <ToolbarGroup>
-        <ToolbarButton name="Format code"><CodeBracket size={20} variation="solid" /></ToolbarButton>
-        <ToolbarButton name="Add emoji"><FaceSmile size={20} variation="solid" /></ToolbarButton>
+        <ToolbarButton name="Format code">{@html CodeBracket}</ToolbarButton>
+        <ToolbarButton name="Add emoji">{@html FaceSmile}</ToolbarButton>
       </ToolbarGroup>
-      <ToolbarButton name="send" slot="end"><PaperAirplane size={20} variation="solid" /></ToolbarButton>
+      <ToolbarButton name="send" slot="end">{@html PaperAirplane}</ToolbarButton>
     </Toolbar>
   </Textarea>
   <Button>Publish post</Button>
@@ -116,9 +132,9 @@ Most often the textarea component is used as the main text field input element i
     <div slot="footer" class="flex items-center justify-between">
     <Button type="submit">Post comment</Button>
     <Toolbar embedded>
-        <ToolbarButton name="Attach file"><PaperClip size={20} variation="solid" /></ToolbarButton>
-        <ToolbarButton name="Set location"><MapPin size={20} variation="solid" /></ToolbarButton>
-        <ToolbarButton name="Upload image"><Photo size={20} variation="solid" /></ToolbarButton>
+        <ToolbarButton name="Attach file">{@html PaperClip}</ToolbarButton>
+        <ToolbarButton name="Set location">{@html MapPin}</ToolbarButton>
+        <ToolbarButton name="Upload image">{@html Photo}</ToolbarButton>
     </Toolbar>
     </div>
   </Textarea>
@@ -132,9 +148,9 @@ Most often the textarea component is used as the main text field input element i
     <div slot="footer" class="flex items-center justify-between">
     <Button type="submit">Post comment</Button>
     <Toolbar embedded>
-        <ToolbarButton name="Attach file"><PaperClip size={20} variation="solid" /></ToolbarButton>
-        <ToolbarButton name="Set location"><MapPin size={20} variation="solid" /></ToolbarButton>
-        <ToolbarButton name="Upload image"><Photo size={20} variation="solid" /></ToolbarButton>
+        <ToolbarButton name="Attach file">{@html PaperClip}</ToolbarButton>
+        <ToolbarButton name="Set location">{@html MapPin}</ToolbarButton>
+        <ToolbarButton name="Upload image">{@html Photo}</ToolbarButton>
     </Toolbar>
     </div>
   </Textarea>
@@ -151,16 +167,16 @@ If you want to build a chatroom component you will usually want to use a textare
     <label for="chat" class="sr-only">Your message</label>
     <Alert color="dark" class="px-3 py-2">
       <CloseButton color="dark" class="text-gray-500 dark:text-gray-400">
-          <Photo variation="solid" />
+          {@html Photo}
           <span class="sr-only">Upload image</span>
       </CloseButton>
       <CloseButton color="dark" class="text-gray-500 dark:text-gray-400">
-          <FaceSmile variation="solid" />
+          {@html FaceSmile}
           <span class="sr-only">Add emoji</span>
       </CloseButton>
       <Textarea id="chat" class="mx-4" rows="1" placeholder="Your message..."/>
       <CloseButton type="submit" color="blue" class="rounded-full text-blue-600 dark:text-blue-500">
-          <PaperAirplane variation="solid" />
+          {@html PaperAirplane}
           <span class="sr-only">Send message</span>
       </CloseButton>
     </Alert>
@@ -172,16 +188,16 @@ If you want to build a chatroom component you will usually want to use a textare
   <label for="chat" class="sr-only">Your message</label>
   <Alert color="dark" class="px-3 py-2">
     <CloseButton color="dark" class="text-gray-500 dark:text-gray-400">
-        <Photo variation="solid" />
+        {@html Photo}
         <span class="sr-only">Upload image</span>
     </CloseButton>
     <CloseButton color="dark" class="text-gray-500 dark:text-gray-400">
-        <FaceSmile variation="solid" />
+        {@html FaceSmile}
         <span class="sr-only">Add emoji</span>
     </CloseButton>
     <Textarea id="chat" class="mx-4" rows="1" placeholder="Your message..."/>
     <CloseButton type="submit" color="blue" class="rounded-full text-blue-600 dark:text-blue-500">
-        <PaperAirplane variation="solid" />
+        {@html PaperAirplane}
         <span class="sr-only">Send message</span>
     </CloseButton>
   </Alert>
