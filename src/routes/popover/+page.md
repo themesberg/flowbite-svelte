@@ -6,7 +6,7 @@ layout: modalLayout
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Popover, Avatar, Breadcrumb, BreadcrumbItem, Button } from '$lib'
   import { QuestionMarkCircle, ChevronRight } from 'svelte-heros';
-  import { Home } from 'svelte-heros';
+  ;
   
   import componentProps from '../props/Popover.json'
 

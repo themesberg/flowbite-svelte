@@ -5,7 +5,7 @@ layout: formLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
   import { Search, SimpleSearch, VoiceSearch, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
-  import { Home } from 'svelte-heros'
+  
 
   import searchComponentProps from '../../props/Search.json'
   import simpleSearchComponentProps from '../../props/SimpleSearch.json'

@@ -5,7 +5,7 @@ layout: badgeLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Badge, Button, Breadcrumb, BreadcrumbItem } from '$lib'
-  import { Home, Clock, Check, Mail } from 'svelte-heros';
+  import { Clock, Check, Mail } from 'svelte-heros';
   
   import componentProps from '../props/Badge.json'
   // Props table

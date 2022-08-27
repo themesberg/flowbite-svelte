@@ -5,7 +5,7 @@ layout: formLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
   import { Checkbox, Breadcrumb, BreadcrumbItem, Dropdown, DropdownItem, DropdownDivider, SimpleSearch, Label, Helper, Badge, Table, TableBody, TableBodyRow, TableBodyCell, TableHead, TableHeadCell } from '$lib'
-  import { Home, UserRemove } from 'svelte-heros'
+  import { UserRemove } from 'svelte-heros'
   
   import componentProps from '../../props/Radio.json'
   import componentProps2 from '../../props/Label.json'

@@ -5,7 +5,7 @@ layout: typographyLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
   import {  A, P, Button, Card, Heading, Figma, Breadcrumb, BreadcrumbItem } from '$lib'
-  import { Home, ArrowRight } from 'svelte-heros';
+  import { ArrowRight } from 'svelte-heros';
 
   import componentProps from '../../props/A.json'
 

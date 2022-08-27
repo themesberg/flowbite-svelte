@@ -4,7 +4,7 @@ layout: accordionLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Home } from 'svelte-heros'
+  
   import { AccordionItem, Breadcrumb, BreadcrumbItem, Heading } from '$lib'
   
   import accordionProps from '../props/AccordionItem.json'

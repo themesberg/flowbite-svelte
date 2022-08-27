@@ -5,7 +5,7 @@ layout: alertLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Alert, Breadcrumb, BreadcrumbItem, Button, Badge } from '$lib'
-  import { Home, XCircle, Eye, InformationCircle } from "svelte-heros";
+  import { XCircle, Eye, InformationCircle } from "svelte-heros";
 
   import componentProps from '../props/Alert.json'
   // Props table

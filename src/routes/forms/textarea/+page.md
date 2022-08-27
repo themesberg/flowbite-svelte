@@ -5,7 +5,7 @@ layout: formLayout
 <script>
 import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
 import { Button, Textarea, Label, Heading, Breadcrumb, BreadcrumbItem, Badge, Alert, CloseButton, CodeBracket, FaceSmile, MapPin, PaperClip, PaperAirplane,  Photo, Toolbar, ToolbarButton, ToolbarGroup } from '$lib'
-import { Home, Upload } from 'svelte-heros';
+import { Upload } from 'svelte-heros';
 
 import componentProps from '../../props/Textarea.json'
 let items = componentProps.props

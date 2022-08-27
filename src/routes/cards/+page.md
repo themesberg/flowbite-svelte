@@ -5,7 +5,7 @@ layout: cardLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Avatar, Badge, Button, Breadcrumb, BreadcrumbItem, Card, Checkbox,CloseButton, DefaultTabs,Dropdown, DropdownItem,Input, InteractiveTabHead,Label,List, Rating, TabContent,Toggle } from '$lib'
-  import { Home, DotsHorizontal, ArrowRight, ExternalLink, Gift, CheckCircle } from 'svelte-heros'
+  import { DotsHorizontal, ArrowRight, ExternalLink, Gift, CheckCircle } from 'svelte-heros'
  
   import componentProps from '../props/Card.json'
   // Props table

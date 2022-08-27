@@ -5,7 +5,7 @@ layout: megamenuLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Button, Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, NavDropdown, Breadcrumb, BreadcrumbItem } from '$lib'
-  import { Adjustments, UserCircle, InboxIn, CloudDownload, Home, ArrowSmRight } from "svelte-heros";
+  import { Adjustments, UserCircle, InboxIn, CloudDownload, ArrowSmRight } from "svelte-heros";
   
   import componentProps from '../props/MegaMenu.json'
   // Props table

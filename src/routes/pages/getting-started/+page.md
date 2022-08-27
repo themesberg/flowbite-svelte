@@ -4,7 +4,7 @@ layout: docLayout
 <script>
   import { Htwo, ExampleDiv } from '../../utils'
   import { Breadcrumb, BreadcrumbItem, Alert } from '$lib'
-  import { Home } from 'svelte-heros'
+  
 </script>
 
 <Breadcrumb>

@@ -11,7 +11,7 @@ layout: utilitiesLayout
 		TableProp,
 		TableDefaultRow
 	} from '../../utils';
-	import { Breadcrumb, BreadcrumbItem, CloseButton, Label, Checkbox, Home, Heading, A } from '$lib';
+	import { Breadcrumb, BreadcrumbItem, CloseButton, Label, Checkbox,  Heading, A } from '$lib';
 
 	import componentProps from '../../props/Label.json';
 	// Props table

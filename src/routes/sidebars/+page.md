@@ -5,7 +5,7 @@ layout: sidebarLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Sidebar, SidebarBrand, SidebarCta,	SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup,SidebarItem, SidebarWrapper, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
-  import { Home, ChartPie, InboxIn, User, Login, Cog, ShoppingCart, ClipboardList, Collection, Support, ViewGrid, Star, X } from 'svelte-heros';
+  import { ChartPie, InboxIn, User, Login, Cog, ShoppingCart, ClipboardList, Collection, Support, ViewGrid, Star, X } from 'svelte-heros';
   
   import componentProps from '../props/Sidebar.json'
   import componentProps2 from '../props/SidebarBrand.json'

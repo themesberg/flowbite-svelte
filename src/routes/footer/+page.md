@@ -5,7 +5,7 @@ layout: footerLayout
 <script>
   import {Htwo,ExampleDiv,Facebook, Github, GitHubSource,CompoDescription,Instagram, TableProp, TableDefaultRow, Twitter} from '../utils'
   import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup, Skeleton, ImagePlaceholder,	TextPlaceholder,Breadcrumb, BreadcrumbItem } from '$lib'
-  import { Home } from 'svelte-heros'
+  
   
   import componentProps from '../props/Footer.json'
   import componentProps2 from '../props/FooterBrand.json'

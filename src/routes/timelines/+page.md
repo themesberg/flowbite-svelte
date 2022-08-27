@@ -5,7 +5,7 @@ layout: timelineLayout
 <script lang="ts">
 	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
 	import { Timeline, TimelineItem, TimelineItemVertical, TimelineItemHorizontal, TimelineHorizontal, Activity, ActivityItem, Group, GroupItem, Breadcrumb, BreadcrumbItem } from '$lib'
-  import { Calendar, Adjustments, Home } from 'svelte-heros';
+  import { Calendar, Adjustments } from 'svelte-heros';
 	
   import componentProps1 from '../props/Timeline.json'
   import componentProps2 from '../props/TimelineItem.json'

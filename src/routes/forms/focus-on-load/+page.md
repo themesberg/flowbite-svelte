@@ -2,7 +2,7 @@
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
   import { onMount } from 'svelte';
   import { Input, Label, Helper, Iconinput, Breadcrumb, BreadcrumbItem } from '$lib'
-  import { Home, AtSymbol , Mail } from 'svelte-heros'
+  import { AtSymbol , Mail } from 'svelte-heros'
   
   import componentProps1 from '../../props/Input.json'
   let items1 = componentProps1.props

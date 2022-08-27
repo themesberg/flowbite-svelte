@@ -4,7 +4,7 @@ layout: docLayout
 
 <script>
   import { Breadcrumb, BreadcrumbItem } from '$lib'
-  import { Home } from 'svelte-heros'
+  
 </script>
 
 <Breadcrumb>

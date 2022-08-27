@@ -5,7 +5,7 @@ layout: iconLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Breadcrumb, BreadcrumbItem } from '$lib'
-  import { Home,Adjustments, Bell, Briefcase,Ticket, ChartSquareBar, Camera, ChevronLeft } from "svelte-heros";
+  import { Adjustments, Bell, Briefcase,Ticket, ChartSquareBar, Camera, ChevronLeft } from "svelte-heros";
 
 </script>
 

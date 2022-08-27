@@ -6,7 +6,7 @@ layout: carouselLayout
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Carousel, CarouselTransition, Breadcrumb, BreadcrumbItem } from '$lib'
    import { quartInOut, sineInOut, bounceInOut, quintOut } from 'svelte/easing';
-  import { Home, ChevronDoubleLeft, ChevronDoubleRight, Link} from 'svelte-heros'
+  import { ChevronDoubleLeft, ChevronDoubleRight, Link} from 'svelte-heros'
   import { images } from './imageData/+server.js';
   import componentProps from '../props/Carousel.json'
   import componentProps2 from '../props/CarouselTransition.json'
