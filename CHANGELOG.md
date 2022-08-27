@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.25.19](https://github.com/themesberg/flowbite-svelte/compare/v0.25.18...v0.25.19) (2022-08-27)
+
+
+### Bug Fixes
+
+* remove Home icons from all pages ([7ac0e7a](https://github.com/themesberg/flowbite-svelte/commit/7ac0e7aa3edc5486d597a61775a5694c76b4bb35))
+* removed Home icon from BreadcrumbItem ([66f00dd](https://github.com/themesberg/flowbite-svelte/commit/66f00dd9e024d97c2b9766e30b03b775f227c672))
+
 ### [0.25.18](https://github.com/themesberg/flowbite-svelte/compare/v0.25.17...v0.25.18) (2022-08-27)
 
 
