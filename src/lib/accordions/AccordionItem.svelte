@@ -1,31 +1,24 @@
 <script lang="ts">
 	import classNames from 'classnames';
 	import { slide } from 'svelte/transition';
-	import { onMount } from 'svelte';
-	import type { AccordionIconType } from '../types';
-	import { ChevronDown, ChevronUp } from 'svelte-heros';
 
+	export let flush: boolean = false;
 	export let id: string = '';
-	export let slotClass: string = 'p-5 border border-t-0 border-gray-200 dark:border-gray-700';
+	export let slotClass: string = 'border-gray-200 dark:border-gray-700';
+	let classSlot: string = classNames(slotClass, flush ? 'py-5 border-b' : 'p-5 border border-t-0');
 	export let isOpen: boolean = false;
 	export let color: boolean = false;
-	export let icons: AccordionIconType = {
-		up: ChevronUp,
-		down: ChevronDown
-	};
-	export let iconSize: number = 24;
-	export let iconClass: string = 'text-gray-500 sm:w-6 sm:h-6 dark:text-gray-300';
-	export let btnClass: string =
-		'flex items-center focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 justify-between p-5 w-full font-medium border border-gray-200 dark:border-gray-700 text-left text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800';
-	export let colorClass: string =
-		'focus:ring-blue-200 dark:focus:ring-blue-800  hover:bg-blue-100 text-blue-500 bg-blue-200 text-blue-700';
 
-	$: btnClass;
-	onMount(() => {
-		if (isOpen) {
-			isOpen = true;
-		}
-	});
+	export let btnClass: string =
+		'flex items-center justify-between w-full font-medium text-left text-gray-500 border-gray-200 dark:border-gray-700 dark:text-gray-400';
+	let classBtn: string = classNames(
+		btnClass,
+		flush
+			? 'py-5 border-b'
+			: 'focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 p-5 border hover:bg-gray-100 dark:hover:bg-gray-800'
+	);
+	export let colorClass: string =
+		'focus:ring-blue-200 dark:focus:ring-blue-800 hover:bg-blue-100 text-blue-500 bg-blue-200 text-blue-700';
 
 	const handleToggle = (id: string) => {
 		isOpen = !isOpen;
@@ -34,9 +27,9 @@
 	let buttonClass: string;
 
 	$: if (color && isOpen) {
-		buttonClass = btnClass + colorClass;
+		buttonClass = classBtn + colorClass;
 	} else {
-		buttonClass = btnClass;
+		buttonClass = classBtn;
 	}
 </script>
 
@@ -50,15 +43,43 @@
 	>
 		<slot name="header" />
 		{#if isOpen}
-			<svelte:component this={icons.up} size={iconSize} class="mr-2 {iconClass}" />
+			{#if $$slots.arrowup}
+				<slot name="arrowup" />
+			{:else}
+				<svg
+					data-accordion-icon
+					class="w-6 h-6 rotate-180 shrink-0"
+					fill="currentColor"
+					viewBox="0 0 20 20"
+					xmlns="http://www.w3.org/2000/svg"
+					><path
+						fill-rule="evenodd"
+						d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+						clip-rule="evenodd"
+					/></svg
+				>
+			{/if}
+		{:else if $$slots.arrowdown}
+			<slot name="arrowdown" />
 		{:else}
-			<svelte:component this={icons.down} size={iconSize} class="mr-2 {iconClass}" />
+			<svg
+				data-accordion-icon
+				class="w-6 h-6 shrink-0"
+				fill="currentColor"
+				viewBox="0 0 20 20"
+				xmlns="http://www.w3.org/2000/svg"
+				><path
+					fill-rule="evenodd"
+					d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+					clip-rule="evenodd"
+				/></svg
+			>
 		{/if}
 	</button>
 </h2>
 {#if isOpen}
 	<div transition:slide={{ duration: 500 }}>
-		<div class={slotClass}>
+		<div class={classSlot}>
 			<slot name="body" />
 		</div>
 	</div>

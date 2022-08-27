@@ -1,6 +1,5 @@
 // Accordion
 export { default as AccordionItem } from './accordions/AccordionItem.svelte';
-export { default as AccordionFlush } from './accordions/AccordionFlush.svelte';
 
 // Alerts
 export { default as Alert } from './alerts/Alert.svelte';

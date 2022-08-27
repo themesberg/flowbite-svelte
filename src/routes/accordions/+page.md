@@ -4,41 +4,34 @@ layout: accordionLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Home, ArrowCircleUp, ArrowCircleDown, Archive, Beaker } from 'svelte-heros'
-  import { AccordionItem, AccordionFlush, Breadcrumb, BreadcrumbItem } from '$lib'
+  import { Home } from 'svelte-heros'
+  import { AccordionItem, Breadcrumb, BreadcrumbItem, Heading } from '$lib'
   
   import accordionProps from '../props/AccordionItem.json'
-  import accordionProps2 from '../props/AccordionFlush.json'
    // Props table
   let items = accordionProps.props
-  let items2 = accordionProps2.props
 
 	let propHeader = ['Name', 'Type', 'Default']
   let slotHeader = ['Name', 'Description']
 
-  let slotItems = [['header', 'Table header slot'],['body','Table body slot']]
+  let slotItems = [['header', 'Table header slot'],['body','Table body slot'],['arrowup', 'Icon to close an accordion item'],['arrowdown','Icon to open an accordion item']]
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
 let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
-let icons={
-  up:ArrowCircleUp,
-  down:ArrowCircleDown
-}
 </script>
 
-<Breadcrumb>
+<Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
   <BreadcrumbItem>Accordions</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Accordion</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Accordion</Heading>
 
 <CompoDescription>Use the accordion component to show hidden information based on the collapse and expand state of the child elements using data attribute options</CompoDescription>
 
 <ExampleDiv>
 <GitHubSource href="accordion/AccordionItem.svelte">AccordionItem</GitHubSource>
-<GitHubSource href="accordion/AccordionFlush.svelte">AccordionFlush</GitHubSource>
 </ExampleDiv>
 
 The accordion component is a collection of vertically collapsing header and body elements that can be used to show and hide information based on the Tailwind CSS utility classes and JavaScript from Flowbite.
@@ -49,9 +42,7 @@ A popular use case would be the “Frequently Asked Questions” section of a we
 
 ```html
 <script>
-  import { AccordionItem, AccordionFlush } from 'flowbite-svelte'
-  // if you are using icons
-  import { Home, ArrowCircleUp, ArrowCircleDown, Archive, Beaker } from 'svelte-heros'
+  import { AccordionItem } from 'flowbite-svelte'
 </script>
 ```
 
@@ -116,10 +107,6 @@ Use id=1,2,3,.. to add top and bottom border.
 </ExampleDiv>
 
 ```html
-<script>
-  import { AccordionItem } from "flowbite-svelte";
-</script>
-
 <AccordionItem id="1">
   <h2 slot="header">My Header 1</h2>
   <div slot="body">
@@ -186,7 +173,6 @@ Use the `isOpen` prop to make an item open on mount.
 </AccordionItem>
 ```
 
-
 <Htwo label="Color option" />
 
 Use the `color` prop to add color.
@@ -235,10 +221,10 @@ Use the `color` prop to add color.
 
 <Htwo label="Flush accordion" />
 
-Use `AccordionFlush` component to remove the rounded borders.
+Use `flush` prop to remove the rounded borders.
 
 <ExampleDiv>
-  <AccordionFlush id="1" >
+  <AccordionItem flush id="1" >
     <h2 slot="header">Header 2-1</h2>
     <div slot="body">
       <p class="mb-2 text-gray-500 dark:text-gray-400">
@@ -246,8 +232,8 @@ Use `AccordionFlush` component to remove the rounded borders.
         necessitatibus sint explicabo ...
       </p>
     </div>
-  </AccordionFlush>
-  <AccordionFlush id="2">
+  </AccordionItem>
+  <AccordionItem flush id="2">
     <h2 slot="header">Header 2-2</h2>
     <div slot="body">
       <p class="mb-2 text-gray-500 dark:text-gray-400">
@@ -255,15 +241,11 @@ Use `AccordionFlush` component to remove the rounded borders.
         necessitatibus sint explicabo ...
       </p>
     </div>
-  </AccordionFlush>
+  </AccordionItem>
 </ExampleDiv>
 
 ```html
-<script>
-  import { AccordionFlush } from 'flowbite-svelte'
-</script>
-
-<AccordionFlush id="1" >
+<AccordionItem flush id="1" >
   <h2 slot="header">Header 2-1</h2>
   <div slot="body">
     <p class="mb-2 text-gray-500 dark:text-gray-400">
@@ -271,8 +253,8 @@ Use `AccordionFlush` component to remove the rounded borders.
       necessitatibus sint explicabo ...
     </p>
   </div>
-</AccordionFlush>
-<AccordionFlush id="2">
+</AccordionItem>
+<AccordionItem flush id="2">
   <h2 slot="header">Header 2-2</h2>
   <div slot="body">
     <p class="mb-2 text-gray-500 dark:text-gray-400">
@@ -280,148 +262,305 @@ Use `AccordionFlush` component to remove the rounded borders.
       necessitatibus sint explicabo ...
     </p>
   </div>
-</AccordionFlush>
+</AccordionItem>
 ```
 
 <Htwo label="Arrow style" />
 
-Use the `icons` prop to set up and down icons.
+Use the `arrowup` and `arrowdown` slots to set up and down icons.
 
 <ExampleDiv>
-  <AccordionItem id="1" {icons}>
-    <h2 slot="header">Header 2-1</h2>
-    <div slot="body">
-      <p class="mb-2 text-gray-500 dark:text-gray-400">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-        necessitatibus sint explicabo ...
-      </p>
-    </div>
-  </AccordionItem>
-  <AccordionItem id="2" {icons}>
-    <h2 slot="header">Header 2-2</h2>
-    <div slot="body">
-      <p class="mb-2 text-gray-500 dark:text-gray-400">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-        necessitatibus sint explicabo ...
-      </p>
-    </div>
-  </AccordionItem>
+	<AccordionItem id="1">
+		<h2 slot="header">Header 2-1</h2>
+		<div slot="arrowup">
+			<svg
+				class="w-6 h-6 shrink-0 rotate-180"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
+				><path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"
+				/></svg
+			>
+		</div>
+		<div slot="arrowdown">
+			<svg
+				class="w-6 h-6 shrink-0"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
+				><path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"
+				/></svg
+			>
+		</div>
+		<div slot="body">
+			<p class="mb-2 text-gray-500 dark:text-gray-400">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
+				explicabo ...
+			</p>
+		</div>
+	</AccordionItem>
+	<AccordionItem id="2">
+		<h2 slot="header">Header 2-2</h2>
+		<div slot="arrowup">
+			<svg
+				class="w-6 h-6 shrink-0 rotate-180"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
+				><path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"
+				/></svg
+			>
+		</div>
+		<div slot="arrowdown">
+			<svg
+				class="w-6 h-6 shrink-0"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
+				><path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"
+				/></svg
+			>
+		</div>
+		<div slot="body">
+			<p class="mb-2 text-gray-500 dark:text-gray-400">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
+				explicabo ...
+			</p>
+		</div>
+	</AccordionItem>
 </ExampleDiv>
 
 ```html
-<script>
-  import {ArrowCircleUp, ArrowCircleDown} from 'svelte-heros'
-  let icons={
-    up:ArrowCircleUp,
-    down:ArrowCircleDown
-  }
-</script>
-
-<AccordionItem id="1" {icons}>
-  <h2 slot="header">Header 2-1</h2>
-  <div slot="body">
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-      necessitatibus sint explicabo ...
-    </p>
-  </div>
-</AccordionItem>
-<AccordionItem id="2" {icons}>
-  <h2 slot="header">Header 2-2</h2>
-  <div slot="body">
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-      necessitatibus sint explicabo ...
-    </p>
-  </div>
-</AccordionItem>
-```
-
-
-<Htwo label="AccordionItem: slot names" />
-
-```js
-header
-body
+<AccordionItem id="1">
+		<h2 slot="header">Header 2-1</h2>
+		<div slot="arrowup">
+			<svg
+				class="w-6 h-6 shrink-0 rotate-180"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
+				><path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"
+				/></svg
+			>
+		</div>
+		<div slot="arrowdown">
+			<svg
+				class="w-6 h-6 shrink-0"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
+				><path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"
+				/></svg
+			>
+		</div>
+		<div slot="body">
+			<p class="mb-2 text-gray-500 dark:text-gray-400">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
+				explicabo ...
+			</p>
+		</div>
+	</AccordionItem>
+	<AccordionItem id="2">
+		<h2 slot="header">Header 2-2</h2>
+		<div slot="arrowup">
+			<svg
+				class="w-6 h-6 shrink-0 rotate-180"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
+				><path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"
+				/></svg
+			>
+		</div>
+		<div slot="arrowdown">
+			<svg
+				class="w-6 h-6 shrink-0"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
+				><path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"
+				/></svg
+			>
+		</div>
+		<div slot="body">
+			<p class="mb-2 text-gray-500 dark:text-gray-400">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
+				explicabo ...
+			</p>
+		</div>
+	</AccordionItem>
 ```
 
 <Htwo label="Icon Accordion" />
 
-<p class="dark:text-white w-full py-4">Add id 1,2,3,... to AccordionItem component. 
-<p class="dark:text-white w-full py-4">Install svelte-heros.
-
-```sh
-npm i svelte-heros
-```
-
 <ExampleDiv>
   <AccordionItem id="1">
-    <h2 slot="header" class="text-base p-0 m-0">
-      <span class="flex"
-        ><span class="mr-2"><Archive /></span> My Header 1</span
-      >
-    </h2>
-    <div slot="body">
-      <p class="mb-2 text-gray-500 dark:text-gray-400">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-        necessitatibus sint explicabo...
-      </p>
-      <p class="text-gray-500 dark:text-gray-400">
-        Check out this guide to learn how to <a
-          href="/"
-          target="_blank"
-          class="text-blue-600 dark:text-blue-500 hover:underline"
-          >get started</a
-        > and start developing websites even faster with components on top of Tailwind
-        CSS.
-      </p>
-    </div>
-  </AccordionItem>
-  <AccordionItem id="2">
-    <h2 slot="header" class="text-base m-0 p-0"><span class="flex "
-        ><span class="mr-2"><Beaker /></span> My Header 2</span
-      ></h2>
-    <div slot="body">
-      <p class="mb-2 text-gray-500 dark:text-gray-400">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-        necessitatibus sint explicabo...
-      </p>
-    </div>
-  </AccordionItem>
+		<h2 slot="header" class="text-base p-0 m-0">
+			<span class="flex"
+				><span class="mr-2">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="w-6 h-6"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"
+						/>
+					</svg>
+				</span> My Header 1</span
+			>
+		</h2>
+		<div slot="body">
+			<p class="mb-2 text-gray-500 dark:text-gray-400">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
+				explicabo...
+			</p>
+			<p class="text-gray-500 dark:text-gray-400">
+				Check out this guide to learn how to <a
+					href="/"
+					target="_blank"
+					class="text-blue-600 dark:text-blue-500 hover:underline">get started</a
+				> and start developing websites even faster with components on top of Tailwind CSS.
+			</p>
+		</div>
+	</AccordionItem>
+	<AccordionItem id="2">
+		<h2 slot="header" class="text-base m-0 p-0">
+			<span class="flex "
+				><span class="mr-2">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="w-6 h-6"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"
+						/>
+					</svg>
+				</span> My Header 2</span
+			>
+		</h2>
+		<div slot="body">
+			<p class="mb-2 text-gray-500 dark:text-gray-400">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
+				explicabo...
+			</p>
+		</div>
+	</AccordionItem>
 </ExampleDiv>
 
 ```html
-<script>
-  import { Accordion } from "flowbite-svelte";
-  import { AccordionItem } from "flowbite-svelte";
-  import { Archive, Beaker } from "svelte-heros";
-</script>
-
 <AccordionItem id="1">
-  <h2 slot="header">
-    <span class="flex">
-      <span class="mr-2"><Archive /></span> 
-        My Header 1
-    </span>
+  <h2 slot="header" class="text-base p-0 m-0">
+    <span class="flex"
+      ><span class="mr-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"
+          />
+        </svg>
+      </span> My Header 1</span
+    >
   </h2>
   <div slot="body">
     <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing ...
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
+      explicabo...
     </p>
-    ...
+    <p class="text-gray-500 dark:text-gray-400">
+      Check out this guide to learn how to <a
+        href="/"
+        target="_blank"
+        class="text-blue-600 dark:text-blue-500 hover:underline">get started</a
+      > and start developing websites even faster with components on top of Tailwind CSS.
+    </p>
   </div>
 </AccordionItem>
 <AccordionItem id="2">
-  <h2 slot="header"><span class="flex ">
-    <span class="mr-2"><Beaker /></span> 
-      My Header 2
-    </span>
+  <h2 slot="header" class="text-base m-0 p-0">
+    <span class="flex "
+      ><span class="mr-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"
+          />
+        </svg>
+      </span> My Header 2</span
+    >
   </h2>
   <div slot="body">
     <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing ...
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
+      explicabo...
     </p>
-    ...
   </div>
 </AccordionItem>
 ```
@@ -431,21 +570,13 @@ npm i svelte-heros
 The component has the following props, type, and default values. See <a href="/pages/types">types 
  page</a> for type information.
 
-<h3 class='text-xl w-full dark:text-white py-4'>AccordionItem</h3>
-
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>AccordionFlush</h3>
-
-<TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
-
 <Htwo label="Slots" />
 
-<h3 class='text-xl w-full dark:text-white py-4'>AccordionItem, AccordionFlush</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>AccordionItem</h3>
 
 <TableProp header={slotHeader} {divClass} {theadClass}>
   <TableDefaultRow items={slotItems} rowState='hover' />
