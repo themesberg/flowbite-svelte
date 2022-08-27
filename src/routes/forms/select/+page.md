@@ -37,7 +37,7 @@ let states = [
 </script>
 
 <Breadcrumb>
-  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem href="/forms/" rel="external">Forms</BreadcrumbItem>
   <BreadcrumbItem>Select</BreadcrumbItem>
 </Breadcrumb>

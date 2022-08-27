@@ -10,7 +10,7 @@ layout: typographyLayout
 
 
 <Breadcrumb>
-	<BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+	<BreadcrumbItem href="/" home >Home</BreadcrumbItem>
 	<BreadcrumbItem>Typography</BreadcrumbItem>
 </Breadcrumb>
 

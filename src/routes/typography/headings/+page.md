@@ -31,7 +31,7 @@ layout: typographyLayout
 </script>
 
 <Breadcrumb class="pb-8">
-  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem href="/typography/">Typography</BreadcrumbItem>
 	<BreadcrumbItem>Headings</BreadcrumbItem>
 </Breadcrumb>
@@ -165,7 +165,7 @@ Get started with this example to position a breadcrumb component above the headi
 
 <ExampleDiv>
 <Breadcrumb class="mb-4">
-  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem href="/">Settings</BreadcrumbItem>
 	<BreadcrumbItem>Team</BreadcrumbItem>
 </Breadcrumb>
@@ -174,7 +174,7 @@ Get started with this example to position a breadcrumb component above the headi
 
 ```html
 <Breadcrumb class="mb-4">
-  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem href="/">Settings</BreadcrumbItem>
 	<BreadcrumbItem>Team</BreadcrumbItem>
 </Breadcrumb>

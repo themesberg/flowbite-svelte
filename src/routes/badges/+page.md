@@ -17,7 +17,7 @@ layout: badgeLayout
 </script>
 
 <Breadcrumb>
-  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>Badges</BreadcrumbItem>
 </Breadcrumb>
 

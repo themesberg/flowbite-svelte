@@ -17,7 +17,7 @@ layout: typographyLayout
 </script>
 
 <Breadcrumb class="pb-8">
-  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem href="/typography/">Typography</BreadcrumbItem>
 	<BreadcrumbItem>Horizontal Line (HR)</BreadcrumbItem>
 </Breadcrumb>

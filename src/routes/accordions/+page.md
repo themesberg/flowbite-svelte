@@ -22,7 +22,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 </script>
 
 <Breadcrumb class="pb-8">
-  <BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>Accordions</BreadcrumbItem>
 </Breadcrumb>
 

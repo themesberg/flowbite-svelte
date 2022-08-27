@@ -24,7 +24,7 @@ layout: utilitiesLayout
 
 
 <Breadcrumb class="pb-8">
-	<BreadcrumbItem href="/" icon={Home} variation="solid">Home</BreadcrumbItem>
+	<BreadcrumbItem href="/" home >Home</BreadcrumbItem>
 	<BreadcrumbItem>Utilities</BreadcrumbItem>
 	<BreadcrumbItem>CloseButton</BreadcrumbItem>
 </Breadcrumb>
