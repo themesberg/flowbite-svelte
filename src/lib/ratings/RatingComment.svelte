@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Button from '../buttons/Button.svelte';
-	import { Star } from 'svelte-heros';
+	import Star from './Star.svelte';
 	// default is floor
 	export let ceil: boolean = false;
 	export let helpfullink: string = '';
@@ -33,8 +33,7 @@
 			<p>
 				{comment.user.name}
 				<time datetime="2014-08-16 19:00" class="block text-sm text-gray-500 dark:text-gray-400"
-					>{comment.user.joined}</time
-				>
+					>{comment.user.joined}</time>
 			</p>
 		</div>
 	</div>
@@ -46,7 +45,7 @@
 		{/each}
 		{#each Array(grayStars) as _, star}
 			<slot name="ratingDown">
-				<Star size="26" class="px-0.5 text-gray-300 dark:text-gray-500" />
+				<Star size="24" class="px-0.5 text-gray-300 dark:text-gray-500" />
 			</slot>
 		{/each}
 		{#if comment.heading}
@@ -74,8 +73,7 @@
 					<a
 						href={abuselink}
 						class="pl-4 text-sm font-medium text-blue-600 hover:underline dark:text-blue-500"
-						>Report abuse</a
-					>
+						>Report abuse</a>
 				{/if}
 			</div>
 		{/if}
