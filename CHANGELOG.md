@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.25.17](https://github.com/themesberg/flowbite-svelte/compare/v0.25.16...v0.25.17) (2022-08-27)
+
+
+### Features
+
+* combine Accordionflush and AccordionItem ([e53fa64](https://github.com/themesberg/flowbite-svelte/commit/e53fa6421ca747ed46d6432b67715b3eedf4cbba))
+
+
+### Bug Fixes
+
+* textarea docs ([133b933](https://github.com/themesberg/flowbite-svelte/commit/133b9334841ac13d82c3a86bc24b3375de0972ff))
+
 ### [0.25.16](https://github.com/themesberg/flowbite-svelte/compare/v0.25.15...v0.25.16) (2022-08-25)
 
 
