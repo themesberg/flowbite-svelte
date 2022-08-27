@@ -58,7 +58,7 @@ The carousel component can be used to cycle through a set of elements using cust
 
 ```html
 <script>
-  import { Carousel, CarouselTransition 'flowbite-svelte'
+  import { Carousel, CarouselTransition } 'flowbite-svelte'
 </script>
 ```
 
