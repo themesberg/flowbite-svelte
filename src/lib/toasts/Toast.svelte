@@ -23,7 +23,8 @@
 		gray: 'text-gray-500 bg-gray-100 dark:bg-gray-800 dark:text-gray-200',
 		purple: 'text-purple-500 bg-purple-100 dark:bg-purple-800 dark:text-purple-200',
 		indigo: 'text-indigo-500 bg-indigo-100 dark:bg-indigo-800 dark:text-indigo-200',
-		yellow: 'text-yellow-500 bg-yellow-100 dark:bg-yellow-800 dark:text-yellow-200'
+		yellow: 'text-yellow-500 bg-yellow-100 dark:bg-yellow-800 dark:text-yellow-200',
+		pink: 'text-pink-500 bg-pink-100 dark:bg-pink-800 dark:text-pink-200'
 	};
 
 	// have a custom transition function that returns the desired transition

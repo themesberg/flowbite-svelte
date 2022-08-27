@@ -5,7 +5,6 @@ layout: typographyLayout
 <script>
 	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../../utils'
 	import { P, Heading, Highlight, A, Mark, Secondary, TextGradient, Underline, Button, Badge, Breadcrumb, BreadcrumbItem } from '$lib';
-	import { ArrowRight, ChevronRight } from 'svelte-heros';
 	
 	import componentProps1 from '../../props/Heading.json'
   import componentProps2 from '../../props/Highlight.json'
@@ -72,7 +71,9 @@ Use this example of a H1 heading in the context of a paragraph and CTA button fo
 <div  class="text-center">
 	<Heading tag="h1" class="mb-4" customSize="text-4xl font-extrabold  md:text-5xl lg:text-6xl">We invest in the world’s potential</Heading>
 	<P class="mb-6 text-lg lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
-	<Button href="/">Learn more <ArrowRight size="18" class="ml-2" /></Button>
+	<Button href="/">Learn more 
+	<svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+	</Button>
 </div>
 </ExampleDiv>
 
@@ -80,7 +81,9 @@ Use this example of a H1 heading in the context of a paragraph and CTA button fo
 <div  class="text-center">
 	<Heading tag="h1" class="mb-4" customSize="text-4xl font-extrabold  md:text-5xl lg:text-6xl">We invest in the world’s potential</Heading>
 	<P class="mb-6 text-lg lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Here at Flowbite we focus on markets ...</P>
-	<Button href="/">Learn more <ArrowRight size="18" class="ml-2" /></Button>
+	<Button href="/">Learn more 
+		<svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+	</Button>
 </div>
 ```
 
@@ -93,14 +96,18 @@ Use this example of a second-level H2 heading as the main subtitle for each sect
 <Heading tag="h2" customeSize="text-4xl font-extrabold ">Payments tool for companies</Heading>
 <P class="my-4 text-gray-500">Start developing with an open-source library of over 450+ UI components, sections, and pages built with the utility classes from Tailwind CSS and designed in Figma.</P>
 <P class="mb-4">Deliver great service experiences fast - without the complexity of traditional ITSM solutions. Accelerate critical development work, eliminate toil, and deploy changes with ease.</P>
-<A>Read more <ChevronRight /></A>
+<A>Read more 
+  <svg class="ml-1 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+</A>
 </ExampleDiv>
 
 ```html
 <Heading tag="h2" customeSize="text-4xl font-extrabold ">Payments tool for companies</Heading>
 <P class="my-4 text-gray-500">Start developing with an open-source library ...</P>
 <P class="mb-4">Deliver great service experiences fast - without ...</P>
-<A>Read more <ChevronRight /></A>
+<A>Read more 
+	<svg class="ml-1 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+</A>
 ```
 
 <Htwo label="Highlighted heading" />
