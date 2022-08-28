@@ -195,3 +195,5 @@ export { default as ChevronDown } from './utils/ChevronDown.svelte';
 export { default as ChevronLeft } from './utils/ChevronLeft.svelte';
 export { default as ChevronRight } from './utils/ChevronRight.svelte';
 export { default as ChevronUp } from './utils/ChevronUp.svelte';
+export { default as InformationCircle } from './utils/InformationCircle.svelte';
+export { default as UserCircle } from './utils/UserCircle.svelte';
