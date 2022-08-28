@@ -3,7 +3,6 @@
 	import classNames from 'classnames';
 	import { createEventDispatcher } from 'svelte';
 	import type { SvelteComponent } from 'svelte';
-	import type { Colors } from '../types';
 	import CloseButton from '../utils/CloseButton.svelte';
 
 	const dispatch = createEventDispatcher();
@@ -20,7 +19,6 @@
 		| 'pink'
 		| 'dark'
 		| 'custom' = 'blue';
-	export let icon: typeof SvelteComponent | null = null;
 	export let dismissable: boolean = false;
 	export let rounded: boolean = true;
 	export let accent: boolean = false;
