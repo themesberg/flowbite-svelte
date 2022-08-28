@@ -21,6 +21,7 @@
 	on:blur
 	on:mouseenter
 	on:mouseleave
+	tabindex="0"
 >
 	<slot />
 </li>

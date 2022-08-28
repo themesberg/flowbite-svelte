@@ -5,8 +5,8 @@ layout: dropdownLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Avatar, Button, Checkbox, Label, Helper, Dropdown, DropdownDivider, DropdownHeader, DropdownItem,
-    Navbar,NavBrand,NavHamburger, NavUl, NavLi, Radio, Toggle, SimpleSearch, Breadcrumb, BreadcrumbItem, Badge, CloseButton } from '$lib'
-  import { ChevronDown, DotsHorizontal, DotsVertical, UserAdd, UserRemove } from 'svelte-heros';
+    Navbar,NavBrand,NavHamburger, NavUl, NavLi, Radio, Toggle, SimpleSearch, Breadcrumb, BreadcrumbItem, Badge, ToolbarButton } from '$lib'
+  import { Home, ChevronDown, DotsHorizontal, DotsVertical, UserAdd, UserRemove } from 'svelte-heros';
   
   import componentProps from '../props/Dropdown.json'
   import componentProps2 from '../props/DropdownDivider.json'
@@ -518,18 +518,19 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 		<NavHamburger on:click={toggle} />
 		<NavUl {hidden}>
 			<NavLi href="/" active={true}>Home</NavLi>
-      <Dropdown label="Dropdown" placement="bottom-start" inline={true} open={true}>
+      <NavLi href="#" id="nav_dropdown"><Button>Dropdown</Button></NavLi>
+			<NavLi href="/services">Services</NavLi>
+			<NavLi href="/pricing">Pricing</NavLi>
+			<NavLi href="/contact">Contact</NavLi>
+		</NavUl>
+	</Navbar>
+      <Dropdown placement="bottom-start" triggers="#nav_dropdown" open={false}>
         <DropdownItem>Dashboard</DropdownItem>
         <DropdownItem>Settings</DropdownItem>
         <DropdownItem>Earnings</DropdownItem>
         <DropdownDivider />
         <DropdownItem>Sign out</DropdownItem>
       </Dropdown>
-			<NavLi href="/services">Services</NavLi>
-			<NavLi href="/pricing">Pricing</NavLi>
-			<NavLi href="/contact">Contact</NavLi>
-		</NavUl>
-	</Navbar>
 </ExampleDiv>
 
 ```html
@@ -708,21 +709,14 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
 
 Use the menu icon trigger element on components such as cards as an alternative element to the button.
 
-<ExampleDiv class="flex justify-center items-start gap-2 h-56">
-<Dropdown class="w-44">
-  <CloseButton slot="trigger" class="text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+<ExampleDiv class="flex justify-center items-start gap-2 h-60">
+  <ToolbarButton class="dots-menu text-gray-900 bg-white dark:text-white dark:bg-gray-800">
     <DotsHorizontal class="w-5 h-5"/>
-  </CloseButton>
-  <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem>Settings</DropdownItem>
-  <DropdownItem>Earnings</DropdownItem>
-  <DropdownDivider />
-  <DropdownItem>Sign out</DropdownItem>
-</Dropdown>
-<Dropdown class="w-44">
-  <CloseButton slot="trigger" class="text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+  </ToolbarButton>
+  <ToolbarButton class="dots-menu text-gray-900 bg-white dark:text-white dark:bg-gray-800">
     <DotsVertical class="w-5 h-5"/>
-  </CloseButton>
+  </ToolbarButton>
+<Dropdown class="w-44" triggers=".dots-menu">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
@@ -733,9 +727,9 @@ Use the menu icon trigger element on components such as cards as an alternative 
 
 ```html
 <Dropdown class="w-44">
-  <CloseButton slot="trigger" class="text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+  <ToolbarButton slot="trigger" class="text-gray-900 bg-white dark:text-white dark:bg-gray-800">
     <DotsHorizontal class="w-5 h-5"/>
-  </CloseButton>
+  </ToolbarButton>
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
@@ -743,9 +737,9 @@ Use the menu icon trigger element on components such as cards as an alternative 
   <DropdownItem>Sign out</DropdownItem>
 </Dropdown>
 <Dropdown class="w-44">
-  <CloseButton slot="trigger" class="text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+  <ToolbarButton slot="trigger" class="text-gray-900 bg-white dark:text-white dark:bg-gray-800">
     <DotsVertical class="w-5 h-5"/>
-  </CloseButton>
+  </ToolbarButton>
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
@@ -759,13 +753,13 @@ Use the menu icon trigger element on components such as cards as an alternative 
 Use this example to show a list of notifications inside your application by providing more detailed information such as the user avatar, content and time of notification triggered by a notification bell icon.
 
 <ExampleDiv class="flex justify-center items-start h-56">
-  <Dropdown class="w-full max-w-sm">
-    <div slot="trigger" class="inline-flex items-center text-sm font-medium text-center text-gray-500 hover:text-gray-900 focus:outline-none dark:hover:text-white dark:text-gray-400">
+    <div id="bell" class="inline-flex items-center text-sm font-medium text-center text-gray-500 hover:text-gray-900 focus:outline-none dark:hover:text-white dark:text-gray-400">
       <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path></svg>
       <div class="flex relative">
         <div class="inline-flex relative -top-2 right-3 w-3 h-3 bg-red-500 rounded-full border-2 border-white dark:border-gray-900"></div>
       </div>
     </div>
+  <Dropdown class="w-full max-w-sm" triggers="#bell">
     <ul slot="content" class="rounded divide-y divide-gray-100 shadow dark:bg-gray-800 dark:divide-gray-700">
       <DropdownHeader class="font-bold text-center"  divider={false}>Notifications</DropdownHeader>
       <DropdownItem class="flex space-x-4 ">
@@ -832,9 +826,10 @@ Use this example to show a list of notifications inside your application by prov
 
 This example can be used to show a list of menu items and options when a user is logged into your application.
 
-<ExampleDiv class="flex justify-center items-start h-64">
-  <Dropdown>
-    <Avatar slot="trigger" src="/images/profile-picture-3.webp" dot={{color:'bg-green-400'}} />
+<ExampleDiv class="flex justify-between items-start h-64">
+  <Avatar class="acs" src="/images/profile-picture-3.webp" dot={{color:'bg-green-400'}} />
+  <Button class="acs">Test 2</Button>
+  <Dropdown triggers=".acs">
     <DropdownHeader>
       <span class="block text-sm"> Bonnie Green </span>
       <span class="block truncate text-sm font-medium"> name@flowbite.com </span>
@@ -867,11 +862,11 @@ This example can be used to show a list of menu items and options when a user is
 Use this example to also show the name or email of the user next to the avatar for the dropdown menu.
 
 <ExampleDiv class="flex justify-center items-start h-64">
-  <Dropdown inline>
-    <svelte:fragment slot="label" >
-      <Avatar src="/images/profile-picture-3.webp" class="mr-2"/>
-      Bonnie Green
-    </svelte:fragment>
+  <Button pill color="light" id="avatar_with_name">
+    <Avatar src="/images/profile-picture-3.webp" class="mr-2"/>
+    Bonnie Green
+  </Button>
+  <Dropdown inline triggers="#avatar_with_name">
     <DropdownHeader>
       <span class="block text-sm"> Bonnie Green </span>
       <span class="block truncate text-sm font-medium"> name@flowbite.com </span>
