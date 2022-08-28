@@ -5,7 +5,6 @@ layout: listgroupLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Avatar, List, ListItem, Breadcrumb, BreadcrumbItem, Badge, UserCircle, InformationCircle } from '$lib'
-  import {  InboxIn } from "svelte-heros";
 
   import componentProps from '../props/List.json'
   // Props table

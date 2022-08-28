@@ -17,29 +17,26 @@
 				<p>{review.name}</p>
 				{#if review.address}
 					<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
-						{#if review.addressIcon}
-							<svelte:component this={review.addressIcon} size="16" class="mr-2" />
-						{/if}
-						{review.address}
+						<slot name="address" />
 					</div>
 				{/if}
 			</div>
 		</div>
-		{#if $$slots.item || $$slots.option1 || $$slots.option2}
+		{#if $$slots.item1 || $$slots.item2 || $$slots.item3}
 			<ul class={classNames(ulClass, $$props.classUl)}>
-				{#if $$slots.item}
+				{#if $$slots.item1}
 					<li class={classNames(liClass, $$props.classLi)}>
-						<slot name="item" />
+						<slot name="item1" />
 					</li>
 				{/if}
-				{#if $$slots.option1}
+				{#if $$slots.item2}
 					<li class={classNames(liClass, $$props.classLi)}>
-						<slot name="option1" />
+						<slot name="item2" />
 					</li>
 				{/if}
-				{#if $$slots.option2}
+				{#if $$slots.item3}
 					<li class={classNames(liClass, $$props.classLi)}>
-						<slot name="option2" />
+						<slot name="item3" />
 					</li>
 				{/if}
 			</ul>
@@ -60,8 +57,7 @@
 				</h4>
 			</div>
 			<p
-				class="bg-blue-700 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded"
-			>
+				class="bg-blue-700 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded">
 				{review.rating}
 			</p>
 		</div>

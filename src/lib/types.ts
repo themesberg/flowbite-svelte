@@ -205,16 +205,12 @@ export type ReviewType = {
 	imgSrc: string;
 	imgAlt: string;
 	address: string | undefined;
-	addressIcon: typeof SvelteComponent | undefined;
 	reviewDate: string | undefined;
 	title: string;
 	rating: number;
-	item: string | undefined;
-	itemIcon: typeof SvelteComponent | undefined;
-	option1: string | undefined;
-	option1Icon: typeof SvelteComponent | undefined;
-	option2: string | undefined;
-	option2Icon: typeof SvelteComponent | undefined;
+	item1: string | undefined;
+	item2: string | undefined;
+	item3: string | undefined;
 }
 
 export type SelectOptionType = {
