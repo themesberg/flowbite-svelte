@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.25.22](https://github.com/themesberg/flowbite-svelte/compare/v0.25.21...v0.25.22) (2022-08-28)
+
+
+### Bug Fixes
+
+* create icon slot for Alert so that users can add svg or svelte component ([45244ec](https://github.com/themesberg/flowbite-svelte/commit/45244ec05f99298d150751209980dce519873163))
+* remove heros from: ([57f6928](https://github.com/themesberg/flowbite-svelte/commit/57f69282190f5d33d7ac17c6adeab36b89184f47))
+* update Alert color type ([fd819fb](https://github.com/themesberg/flowbite-svelte/commit/fd819fb59d2d01f900ad76449afabfa22de6d5b1))
+* update Timeline components ([4b47d6b](https://github.com/themesberg/flowbite-svelte/commit/4b47d6b5d09abad3b2d8fc29c2b38287726c44d7))
+
 ### [0.25.21](https://github.com/themesberg/flowbite-svelte/compare/v0.25.20...v0.25.21) (2022-08-27)
 
 
