@@ -1,9 +1,6 @@
 <script lang="ts">
-	import type { SvelteComponent } from 'svelte';
 	import classNames from 'classnames';
-
 	import { getContext } from 'svelte';
-	export let icon: string | SvelteComponent;
 	export let title: string = '';
 	export let date: string = '';
 	export let customDiv: string = '';
@@ -61,8 +58,8 @@
 		<slot />
 	{:else if order === 'vertical'}
 		<div class={divClasses[order]} />
-		{#if icon}
-			{@html icon}
+		{#if $$slots.icon}
+			<slot name="icon" />
 		{:else}
 			<svg
 				aria-hidden="true"
@@ -86,8 +83,8 @@
 		<slot />
 	{:else if order === 'horizontal'}
 		<div class={divClasses[order]} />
-		{#if icon}
-			{@html icon}
+		{#if $$slots.icon}
+			<slot name="icon" />
 		{:else}
 			<svg
 				aria-hidden="true"
@@ -111,8 +108,8 @@
 		<slot />
 	{:else}
 		<div class={divClasses[order]} />
-		{#if icon}
-			{@html icon}
+		{#if $$slots.icon}
+			<slot name="icon" />
 		{:else}
 			<svg
 				aria-hidden="true"

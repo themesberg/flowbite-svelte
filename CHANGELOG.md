@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.25.23](https://github.com/themesberg/flowbite-svelte/compare/v0.25.22...v0.25.23) (2022-08-28)
+
+
+### Bug Fixes
+
+* BREAKING CHANGE for timeline components ([8b30105](https://github.com/themesberg/flowbite-svelte/commit/8b30105060d150d632ea6fbfac8e1f5639f82546))
+
 ### [0.25.22](https://github.com/themesberg/flowbite-svelte/compare/v0.25.21...v0.25.22) (2022-08-28)
 
 

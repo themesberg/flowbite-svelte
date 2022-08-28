@@ -4,7 +4,7 @@ layout: tabLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Tabs, InteractiveTabHead, TabContent, Timeline, TimelineItem, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
+  import { Tabs, InteractiveTabHead, TabContent, Timeline, TimelineItem, Breadcrumb, BreadcrumbItem, Badge, Button } from '$lib'
   import { UserCircle, ViewGrid, Adjustments, ClipboardList } from 'svelte-heros';
   
   import componentProps from '../props/Tabs.json'
@@ -303,8 +303,35 @@ By using `InteractiveTabHead` and `TabContent` you can add other components to t
   <InteractiveTabHead tabs={tabhead}>
     <TabContent tab={tab1}>
       <Timeline>
-        <TimelineItem {timelineItems} />
-      </Timeline>
+		<TimelineItem title="Application UI code in Tailwind CSS" date="February 2022">
+			<p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+				Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar,
+				and pre-order E-commerce & Marketing pages.
+			</p>
+			<Button color="alternative"
+				>Learn more<svg
+					class="ml-2 w-3 h-3"
+					fill="currentColor"
+					viewBox="0 0 20 20"
+					xmlns="http://www.w3.org/2000/svg"
+					><path
+						fill-rule="evenodd"
+						d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+						clip-rule="evenodd" /></svg></Button>
+		</TimelineItem>
+		<TimelineItem title="Application UI code in Tailwind CSS" date="March 2022">
+			<p class="text-base font-normal text-gray-500 dark:text-gray-400">
+				All of the pages and components are first designed in Figma and we keep a parity between the
+				two versions even as we update the project.
+			</p>
+		</TimelineItem>
+		<TimelineItem title="Application UI code in Tailwind CSS" date="April 2022">
+			<p class="text-base font-normal text-gray-500 dark:text-gray-400">
+				Get started with dozens of web components and interactive elements built on top of Tailwind
+				CSS.
+			</p>
+		</TimelineItem>
+	</Timeline>
     </TabContent>
     <TabContent tab={tab2}>
       <p>Test 2 content here</p>
@@ -316,39 +343,39 @@ By using `InteractiveTabHead` and `TabContent` you can add other components to t
 </ExampleDiv>
 
 ```html
-<script>
-import { InteractiveTabHead, TabContent, Card, Timeline,
-		TimelineItem, }from 'flowbite-svelte';
-	let tab1 = { name: 'Tab1', id: 1 };
-	let tab2 = { name: 'Tab2', id: 2 };
-	let tab3 = { name: 'Tab3', id: 3 };
-	let tabhead = [tab1, tab2, tab3];
-  let timelineItems = [
-		{
-			date: 'February 2022',
-			title: 'Lorem ipsum dolor sit amet',
-			href: '/',
-			linkname: 'Learn more',
-			text: 'Consectetur adipiscing elit...'
-		},
-		{
-			date: 'March 2022',
-			title: 'Lorem ipsum dolor sit amet',
-			text: 'Consectetur adipiscing elit...'
-		},
-		{
-			date: 'February 2022',
-			title: 'Lorem ipsum dolor sit amet',
-			text: 'Consectetur adipiscing elit...'
-		}
-	];
-</script>
-
 <InteractiveTabHead tabs={tabhead}>
   <TabContent tab={tab1}>
     <Timeline>
-      <TimelineItem {timelineItems} />
-    </Timeline>
+		<TimelineItem title="Application UI code in Tailwind CSS" date="February 2022">
+			<p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+				Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar,
+				and pre-order E-commerce & Marketing pages.
+			</p>
+			<Button color="alternative"
+				>Learn more<svg
+					class="ml-2 w-3 h-3"
+					fill="currentColor"
+					viewBox="0 0 20 20"
+					xmlns="http://www.w3.org/2000/svg"
+					><path
+						fill-rule="evenodd"
+						d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+						clip-rule="evenodd" /></svg
+				></Button>
+		</TimelineItem>
+		<TimelineItem title="Application UI code in Tailwind CSS" date="March 2022">
+			<p class="text-base font-normal text-gray-500 dark:text-gray-400">
+				All of the pages and components are first designed in Figma and we keep a parity between the
+				two versions even as we update the project.
+			</p>
+		</TimelineItem>
+		<TimelineItem title="Application UI code in Tailwind CSS" date="April 2022">
+			<p class="text-base font-normal text-gray-500 dark:text-gray-400">
+				Get started with dozens of web components and interactive elements built on top of Tailwind
+				CSS.
+			</p>
+		</TimelineItem>
+	</Timeline>
   </TabContent>
 	<TabContent tab={tab2}>
     <p>Test 2 content here</p>
