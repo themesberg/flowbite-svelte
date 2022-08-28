@@ -1,11 +1,11 @@
 <script lang="ts">
 	import classNames from 'classnames';
-	export let name: string = '';
 	export let id: number;
-	export let activeTabValue: number = 1;
+	export let tabStyle: string;
+	export let activeTabValue: number;
+	$: activeTabValue;
 	export let customActiveClass: string = '';
 	export let customInActiveClass: string = '';
-	export let tabStyle: 'default' | 'full' | 'icon' | 'pill' | 'underline' | 'custom' = 'default';
 	export let customLiClass: string = '';
 
 	const activeClasses = {
@@ -38,14 +38,12 @@
 		underline: 'mr-2',
 		custom: customLiClass
 	};
-
-	const handleClick = (tabValue: number) => () => (activeTabValue = tabValue);
 </script>
 
 <li class={liClasses[tabStyle]} role="presentation">
 	<button
 		{...$$restProps}
-		on:click={handleClick(id)}
+		on:click
 		on:blur
 		on:click
 		on:focus
@@ -56,10 +54,10 @@
 		on:mouseleave
 		on:mouseover
 		class={classNames(activeTabValue === id ? activeClasses[tabStyle] : inactiveClasses[tabStyle])}
-		id="{name}-tab"
+		id="{id}-tabhead"
 		type="button"
 		role="tab"
-		aria-controls={name}>
+		{...$$restProps}>
 		<slot />
-		{name}</button>
+	</button>
 </li>

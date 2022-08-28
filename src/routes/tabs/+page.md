@@ -299,7 +299,7 @@ Use `disabled: true` to disable a tab.
 
 By using `InteractiveTabHead` and `TabContent` you can add other components to the `InteractiveTabs` component. Here we are adding a timeline component in the tab 1:
 
-<ExampleDiv>
+<ExampleDiv class="h-96">
   <InteractiveTabHead tabs={tabhead}>
     <TabContent tab={tab1}>
       <Timeline>

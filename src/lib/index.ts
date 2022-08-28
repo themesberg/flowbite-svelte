@@ -157,7 +157,8 @@ export { default as UnderlineTabs } from './tabs/UnderlineTabs.svelte';
 // Tabs new
 export { default as TabHead } from './tabs/TabHead.svelte'
 export { default as TabHeadItem } from './tabs/TabHeadItem.svelte'
-export { default as TabItemContent } from './tabs/TabItemContent.svelte'
+export { default as TabContentItem } from './tabs/TabContentItem.svelte'
+export { default as TabWrapper } from './tabs/TabWrapper.svelte'
 
 // Timeline
 export { default as Group } from './timelines/Group.svelte';
