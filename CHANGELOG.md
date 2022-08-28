@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.25.24](https://github.com/themesberg/flowbite-svelte/compare/v0.25.23...v0.25.24) (2022-08-28)
+
+
+### Features
+
+* popper reloaded ([a4b851e](https://github.com/themesberg/flowbite-svelte/commit/a4b851e2409356a90fd6aaae62db327b505bdcb2))
+* popper reloaded part 2 ([2482870](https://github.com/themesberg/flowbite-svelte/commit/2482870842386c8c1e5824869ce7822b8682e8a0))
+
+
+### Bug Fixes
+
+* tab page timeline ([ab598a5](https://github.com/themesberg/flowbite-svelte/commit/ab598a59a3d373f14740a42bbaec3cb276eed34b))
+
 ### [0.25.23](https://github.com/themesberg/flowbite-svelte/compare/v0.25.22...v0.25.23) (2022-08-28)
 
 
