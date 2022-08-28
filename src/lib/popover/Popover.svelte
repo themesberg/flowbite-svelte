@@ -3,6 +3,7 @@
 	import classNames from 'classnames';
 
 	export let title: string = '';
+	export let triggeredBy: string;
 
 	let popoverClass: string;
 	$: popoverClass = classNames(
@@ -14,12 +15,11 @@
 	);
 </script>
 
-<Popper activeContent={true} {...$$restProps} class={popoverClass} on:show>
+<Popper activeContent={true} {triggeredBy} {...$$restProps} class={popoverClass} on:show>
 	<slot name="trigger" slot="trigger" />
 	{#if $$slots.title || title}
 		<div
-			class="py-2 px-3 bg-gray-100 rounded-t-lg border-b border-gray-200 dark:border-gray-600 dark:bg-gray-700"
-		>
+			class="py-2 px-3 bg-gray-100 rounded-t-lg border-b border-gray-200 dark:border-gray-600 dark:bg-gray-700">
 			<slot name="title">
 				<h3 class="font-semibold text-gray-900 dark:text-white">{title}</h3>
 			</slot>
