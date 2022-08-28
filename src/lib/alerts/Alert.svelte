@@ -3,14 +3,22 @@
 	import classNames from 'classnames';
 	import { createEventDispatcher } from 'svelte';
 	import type { SvelteComponent } from 'svelte';
-	import type { Colors } from '../types';
 	import CloseButton from '../utils/CloseButton.svelte';
 
 	const dispatch = createEventDispatcher();
 	setContext('background', true);
 
-	export let color: Colors = 'blue';
-	export let icon: typeof SvelteComponent | null = null;
+	export let color:
+		| 'gray'
+		| 'blue'
+		| 'red'
+		| 'green'
+		| 'yellow'
+		| 'indigo'
+		| 'purple'
+		| 'pink'
+		| 'dark'
+		| 'custom' = 'blue';
 	export let dismissable: boolean = false;
 	export let rounded: boolean = true;
 	export let accent: boolean = false;
@@ -81,8 +89,8 @@
 
 <div id={$$props.id} class:hidden class={divClass} role="alert">
 	<div class="flex items-center whitespace-pre-wrap">
-		{#if icon}
-			<svelte:component this={icon} class="flex-shrink-0 w-5 h-5 mr-3" />
+		{#if $$slots.icon}
+			<slot name="icon" />
 		{/if}
 
 		<slot />
@@ -100,8 +108,7 @@
 				on:focus
 				on:blur
 				on:mouseenter
-				on:mouseleave
-			/>
+				on:mouseleave />
 		{/if}
 	</div>
 	<slot name="extra" />

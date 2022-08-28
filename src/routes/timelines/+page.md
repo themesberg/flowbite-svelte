@@ -5,7 +5,8 @@ layout: timelineLayout
 <script lang="ts">
 	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
 	import { Timeline, TimelineItem, TimelineItemVertical, TimelineItemHorizontal, TimelineHorizontal, Activity, ActivityItem, Group, GroupItem, Breadcrumb, BreadcrumbItem } from '$lib'
-  import { Calendar, Adjustments } from 'svelte-heros';
+  import { Adjustments } from 'svelte-heros';
+	let Calendar = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" /></svg>`
 	
   import componentProps1 from '../props/Timeline.json'
   import componentProps2 from '../props/TimelineItem.json'
@@ -121,6 +122,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 			comment: '"I wanted to share a webinar zeroheight."'
 		}
 	];
+	
 </script>
 
 <Breadcrumb>
@@ -195,7 +197,9 @@ Use this vertical timeline component with icons and badges to show a more advanc
 
 <ExampleDiv>
   <Timeline>
-    <TimelineItemVertical timelineItems={timelineItems2} />
+	{#each timelineItems2 as {title, date, href, text, linkname}}
+    <TimelineItemVertical {title} {date} {href} {text} {linkname}/>
+	{/each}
   </Timeline>
 </ExampleDiv>
 
@@ -234,8 +238,10 @@ Use this vertical timeline component with icons and badges to show a more advanc
 </script>
 
 <Timeline>
-  <TimelineItemVertical timelineItems={timelineItems2} />
-</Timeline>
+	{#each timelineItems2 as {title, date, href, text, linkname}}
+    <TimelineItemVertical {title} {date} {href} {text} {linkname}/>
+	{/each}
+  </Timeline>
 ```
 
 <Htwo label="Horizontal Timeline" />

@@ -191,3 +191,7 @@ export { default as Underline } from './typography/Underline.svelte';
 
 // utils
 export { default as CloseButton } from './utils/CloseButton.svelte';
+export { default as ChevronDown } from './utils/ChevronDown.svelte';
+export { default as ChevronLeft } from './utils/ChevronLeft.svelte';
+export { default as ChevronRight } from './utils/ChevronRight.svelte';
+export { default as ChevronUp } from './utils/ChevronUp.svelte';

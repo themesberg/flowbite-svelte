@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Star } from 'svelte-heros';
+	import Star from './Star.svelte';
 
 	export let divClass: string = 'flex items-center';
 	export let size: string = '24';

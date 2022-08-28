@@ -3,7 +3,10 @@
 	import Button from '$lib/buttons/Button.svelte';
 	import Popper from '$lib/utils/Popper.svelte';
 	import classNames from 'classnames';
-	import { ChevronUp, ChevronRight, ChevronDown, ChevronLeft } from 'svelte-heros';
+	import ChevronUp from '../utils/ChevronUp.svelte';
+	import ChevronRight from '../utils/ChevronRight.svelte';
+	import ChevronDown from '../utils/ChevronDown.svelte';
+	import ChevronLeft from '../utils/ChevronLeft.svelte';
 	import type { Placement } from '@popperjs/core';
 
 	export let label: string = '';
@@ -44,8 +47,7 @@
 	class={popoverClass}
 	trigger="click"
 	on:show
-	bind:open
->
+	bind:open>
 	<slot name="trigger" slot="trigger">
 		{#if inline}
 			<button class={labelClass} class:flex-row-reverse={icon == ChevronLeft}>
@@ -53,8 +55,7 @@
 				{#if arrowIcon}
 					<svelte:component
 						this={icon ?? ChevronDown}
-						class={classNames('h-4 w-4', icon == ChevronLeft ? 'mr-2' : 'ml-2')}
-					/>
+						class={classNames('h-4 w-4', icon == ChevronLeft ? 'mr-2' : 'ml-2')} />
 				{/if}
 			</button>
 		{:else}
@@ -63,8 +64,7 @@
 				{#if arrowIcon}
 					<svelte:component
 						this={icon ?? ChevronDown}
-						class={classNames('h-4 w-4', icon == ChevronLeft ? 'mr-2' : 'ml-2')}
-					/>
+						class={classNames('h-4 w-4', icon == ChevronLeft ? 'mr-2' : 'ml-2')} />
 				{/if}
 			</Button>
 		{/if}
