@@ -154,6 +154,11 @@ export { default as PillTabs } from './tabs/PillTabs.svelte';
 export { default as TabContent } from './tabs/TabContent.svelte';
 export { default as UnderlineTabs } from './tabs/UnderlineTabs.svelte';
 
+// Tabs new
+export { default as TabHead } from './tabs/TabHead.svelte'
+export { default as TabHeadItem } from './tabs/TabHeadItem.svelte'
+export { default as TabItemContent } from './tabs/TabItemContent.svelte'
+
 // Timeline
 export { default as Group } from './timelines/Group.svelte';
 export { default as GroupItem } from './timelines/GroupItem.svelte';
