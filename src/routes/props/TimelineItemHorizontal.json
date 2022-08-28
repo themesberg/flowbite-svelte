@@ -1,1 +1,1 @@
-{"props":[[" timelineItems"," TimelineItemHorizontalType[]",""]]}
+{"props":[["title"," string",""],[" date"," string",""],[" href"," string",""],[" text"," string",""],[" linkname"," string",""],[" icon"," string",""]]}

@@ -1,1 +1,1 @@
-{"props":[["content","string ","''"],["style","'dark' | 'light' | 'auto' | 'custom' ","'dark'"],["tipColor","string ","''"],["tipClass","string ","'py-2 px-3 text-sm font-medium rounded-lg shadow-sm tooltip'"]]}
+{"props":[["content","string ","''"],["style","'dark' | 'light' | 'auto' | 'custom' ","'dark'"],["tipColor","string ","''"],["tipClass","string ","'py-2 px-3 text-sm font-medium rounded-lg shadow-sm tooltip'"],["  triggeredBy"," string",""]]}

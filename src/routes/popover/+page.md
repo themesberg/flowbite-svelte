@@ -184,6 +184,22 @@ Show a progress bar with details inside a popover when hovering over a settings 
 </Popover>
 </ExampleDiv>
 
+```html
+<Button id="progress"><svg class="mr-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z"></path><path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z"></path><path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z"></path></svg> Storage status</Button>
+<Popover triggeredBy="#progress" class="text-sm w-64 font-light">
+  <div class="space-y-2">
+    <h3 class="font-semibold text-gray-900 dark:text-white">Available storage</h3>
+    <p class="text-gray-500 dark:text-gray-400">This server has <span class="font-semibold text-gray-900 dark:text-white">30</span> of <span class="font-semibold text-gray-900 dark:text-white">150 GB</span> of block storage remaining.</p>
+    <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
+        <div class="bg-red-600 h-2.5 rounded-full" style="width: 85%"></div>
+    </div>
+    <a href="/" class="flex items-center font-medium text-blue-600 dark:text-blue-500 dark:hover:text-blue-600 hover:text-blue-700">
+      Upgrade now <ChevronRight size="12" variation="solid"/>
+    </a>
+  </div>
+</Popover>
+```
+
 <Htwo label="Password strength" />
 
 Dynamically show the password strength progress when creating a new password positioned relative to the input element.
@@ -336,6 +352,13 @@ You can also disable the popover arrow by setting `arrow` attribute to `false`.
       And here's some amazing content. It's very engaging. Right?
   </Popover>
 </ExampleDiv>
+
+```html
+<Button  id="arrow">Default popover</Button>
+<Popover arrow={false} class="w-64 text-sm font-light" title="Popover title" triggeredBy="#arrow">
+    And here's some amazing content. It's very engaging. Right?
+</Popover>
+```
 
 <Htwo label="Props" />
 
