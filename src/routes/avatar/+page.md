@@ -173,12 +173,10 @@ Use a dot element relative to the avatar component as an indicator for the user 
 </ExampleDiv>
 
 ```html
-<script>
-	<Avatar src="/images/profile-picture-3.webp" dot={{top:true, color:"bg-red-400"}}/>
-	<Avatar	src="/images/profile-picture-3.webp" dot={{top:true, color:"bg-red-400"}} rounded />
-	<Avatar	src="/images/profile-picture-3.webp" dot={{color:"bg-green-400"}}/>
-	<Avatar	src="/images/profile-picture-3.webp" dot={{color:"bg-green-400"}} rounded/>
-</script>
+<Avatar src="/images/profile-picture-3.webp" dot={{top:true, color:"bg-red-400"}}/>
+<Avatar	src="/images/profile-picture-3.webp" dot={{top:true, color:"bg-red-400"}} rounded />
+<Avatar	src="/images/profile-picture-3.webp" dot={{color:"bg-green-400"}}/>
+<Avatar	src="/images/profile-picture-3.webp" dot={{color:"bg-green-400"}} rounded/>
 ```
 
 <Htwo label="Stacked" />
