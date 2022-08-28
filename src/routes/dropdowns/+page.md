@@ -524,7 +524,7 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 			<NavLi href="/contact">Contact</NavLi>
 		</NavUl>
 	</Navbar>
-      <Dropdown placement="bottom-start" triggers="#nav_dropdown" open={false}>
+      <Dropdown placement="bottom-start" triggeredBy="#nav_dropdown" open={false}>
         <DropdownItem>Dashboard</DropdownItem>
         <DropdownItem>Settings</DropdownItem>
         <DropdownItem>Earnings</DropdownItem>
@@ -716,7 +716,7 @@ Use the menu icon trigger element on components such as cards as an alternative 
   <ToolbarButton class="dots-menu text-gray-900 bg-white dark:text-white dark:bg-gray-800">
     <DotsVertical class="w-5 h-5"/>
   </ToolbarButton>
-<Dropdown class="w-44" triggers=".dots-menu">
+<Dropdown class="w-44" triggeredBy=".dots-menu">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
@@ -759,7 +759,7 @@ Use this example to show a list of notifications inside your application by prov
         <div class="inline-flex relative -top-2 right-3 w-3 h-3 bg-red-500 rounded-full border-2 border-white dark:border-gray-900"></div>
       </div>
     </div>
-  <Dropdown class="w-full max-w-sm" triggers="#bell">
+  <Dropdown class="w-full max-w-sm" triggeredBy="#bell">
     <ul slot="content" class="rounded divide-y divide-gray-100 shadow dark:bg-gray-800 dark:divide-gray-700">
       <DropdownHeader class="font-bold text-center"  divider={false}>Notifications</DropdownHeader>
       <DropdownItem class="flex space-x-4 ">
@@ -826,10 +826,9 @@ Use this example to show a list of notifications inside your application by prov
 
 This example can be used to show a list of menu items and options when a user is logged into your application.
 
-<ExampleDiv class="flex justify-between items-start h-64">
+<ExampleDiv class="flex justify-center items-start h-64">
   <Avatar class="acs" src="/images/profile-picture-3.webp" dot={{color:'bg-green-400'}} />
-  <Button class="acs">Test 2</Button>
-  <Dropdown triggers=".acs">
+  <Dropdown triggeredBy=".acs">
     <DropdownHeader>
       <span class="block text-sm"> Bonnie Green </span>
       <span class="block truncate text-sm font-medium"> name@flowbite.com </span>
@@ -843,8 +842,8 @@ This example can be used to show a list of menu items and options when a user is
 </ExampleDiv>
 
 ```html
-<Dropdown>
-  <Avatar slot="trigger" src="/images/profile-picture-3.webp" dot={{color:'bg-green-400'}} />
+<Avatar class="acs" src="/images/profile-picture-3.webp" dot={{color:'bg-green-400'}} />
+<Dropdown triggeredBy=".acs">
   <DropdownHeader>
     <span class="block text-sm"> Bonnie Green </span>
     <span class="block truncate text-sm font-medium"> name@flowbite.com </span>
@@ -862,11 +861,11 @@ This example can be used to show a list of menu items and options when a user is
 Use this example to also show the name or email of the user next to the avatar for the dropdown menu.
 
 <ExampleDiv class="flex justify-center items-start h-64">
-  <Button pill color="light" id="avatar_with_name">
+  <Button pill color="light" id="avatar_with_name" class="!p-1">
     <Avatar src="/images/profile-picture-3.webp" class="mr-2"/>
     Bonnie Green
   </Button>
-  <Dropdown inline triggers="#avatar_with_name">
+  <Dropdown inline triggeredBy="#avatar_with_name">
     <DropdownHeader>
       <span class="block text-sm"> Bonnie Green </span>
       <span class="block truncate text-sm font-medium"> name@flowbite.com </span>

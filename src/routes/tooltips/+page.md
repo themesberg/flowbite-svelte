@@ -42,9 +42,8 @@ Flowbite-Svelte allows you to show extra information when hovering or focusing o
 <Htwo label="Default tooltip example" />
 
 <ExampleDiv>
-  <Tooltip content="Tooltip content">
-    <Button>Default tooltip</Button>
-  </Tooltip>
+<Button id="default">Default tooltip</Button>
+<Tooltip content="Tooltip content" triggeredBy='#default'/>
 </ExampleDiv>
 
 ```html
@@ -52,8 +51,8 @@ Flowbite-Svelte allows you to show extra information when hovering or focusing o
 import {Tooltip, Button} from 'flowbite-svelte'
 </script>
 
-<Tooltip content="Tooltip content">
-  <Button>Default tooltip</Button>
+<Button id="default">Default tooltip</Button>
+<Tooltip content="Tooltip content" triggeredBy='#default'>
 </Tooltip>
 ```
 
@@ -137,7 +136,7 @@ import {Tooltip, Button} from 'flowbite-svelte'
 
 <Htwo label="Disable arrow" />
 
-<ExampleDiv>
+<ExampleDiv class="flex">
   <Tooltip content="Tooltip content" arrow={false}>
     <Button>Default tooltip</Button>
   </Tooltip>
@@ -153,11 +152,11 @@ import {Tooltip, Button} from 'flowbite-svelte'
 
 When you want to add custom styles, use `style="custom"`, `tipClass`, and `tipColor` to modify the style.
 
-<ExampleDiv>
+<ExampleDiv class="flex">
   <Tooltip
 		content="tooltip content"
 		placement="auto"
-		tipClass="absolute inline-block rounded-lg p-24 text-lg font-medium shadow-sm text-white"
+		tipClass="rounded-lg p-24 text-lg font-medium shadow-sm text-white"
 		style="custom"
 		tipColor="bg-red-900 dark:bg-red-700"
 	>

@@ -17,7 +17,7 @@
 		'flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent';
 	export let placement: 'auto' | Placement = 'bottom';
 	export let open: boolean = false;
-	export let triggers: string = undefined;
+	export let triggeredBy: string = undefined;
 
 	let id = generateId();
 
@@ -76,7 +76,7 @@
 	trigger="click"
 	on:show
 	bind:open
-	triggers={triggers ?? '#' + id}>
+	triggeredBy={triggeredBy ?? '#' + id}>
 	<slot name="content">
 		<ul class="py-1">
 			<slot />

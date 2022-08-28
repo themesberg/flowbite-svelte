@@ -37,17 +37,17 @@
 
 <Dot show={$$props.dot} {rounded} {...dot} {size} class={sizes[size]}>
 	{#if src}
-		<img class={avatarClass} {alt} {src} />
+		<img {alt} {src} {...$$restProps} class={avatarClass} />
 	{:else if $$slots.default}
 		<svelte:element
 			this={href ? 'a' : 'div'}
-			class="flex justify-center items-center text-xs font-medium {avatarClass}"
 			{href}
-		>
+			{...$$restProps}
+			class="flex justify-center items-center text-xs font-medium {avatarClass}">
 			<slot />
 		</svelte:element>
 	{:else}
-		<svelte:element this={href ? 'a' : 'div'} class={avatarClass}>
+		<svelte:element this={href ? 'a' : 'div'} {...$$restProps} class={avatarClass}>
 			<AvatarPlaceholder {rounded} />
 		</svelte:element>
 	{/if}
