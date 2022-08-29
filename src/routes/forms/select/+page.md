@@ -4,8 +4,7 @@ layout: formLayout
 
 <script>
 import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
-import { Label, Dropdown, DropdownItem, Select, Breadcrumb, BreadcrumbItem, Badge, CloseButton} from '$lib'
-import { ChevronDown } from 'svelte-heros'
+import { Label, Dropdown, DropdownItem, Select, Breadcrumb, BreadcrumbItem, Badge, CloseButton, ChevronDown} from '$lib'
 import { Us, De, It, Cn } from 'svelte-flag-icons'
 
 import componentProps from '../../props/Select.json'

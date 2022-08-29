@@ -6,7 +6,6 @@ layout: formLayout
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
   import { onMount } from 'svelte';
   import { Toggle, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
-  import { AtSymbol , Mail} from 'svelte-heros'
 
   import componentProps from '../../props/Toggle.json'
   let items = componentProps.props
