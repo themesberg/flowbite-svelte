@@ -4,7 +4,7 @@ layout: cardLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Avatar, Badge, Button, Breadcrumb, BreadcrumbItem, Card, Checkbox,CloseButton, DefaultTabs,Dropdown, DropdownItem,Input, InteractiveTabHead,Label,List, Rating, TabContent,Toggle } from '$lib'
+  import { Avatar, Badge, Button, Breadcrumb, BreadcrumbItem, Card, Checkbox,CloseButton, Dropdown, DropdownItem,Input,Label,List, Rating,Toggle } from '$lib'
  
   import componentProps from '../props/Card.json'
   // Props table
@@ -390,36 +390,6 @@ Use this CTA card example to encourage your users to visit a certain page such a
   </div>
 </Card>
 ```
-
-<!-- <Htwo label="Card with nav tabs" />
-
-Use this example of a card component with navigation tabs that can change the content inside the card based on which one is currently active.
-
-<ExampleDiv>
-  <Card padding="xl">
-    <p>Text</p>
-  </Card>
-</ExampleDiv>
-
-<Htwo label="Card full width tabs" />
-
-Use this example of a card component to show tabs that span the full width of the element and change the content area clicking on each one.
-
-<ExampleDiv>
-  <Card padding="none">
-    <InteractiveTabHead {tabs}>
-      <TabContent tab={tabs[0]}>
-        Raz
-      </TabContent>
-      <TabContent tab={tabs[1]}>
-        Dwa
-      </TabContent>
-      <TabContent tab={tabs[2]}>
-        Trzy
-      </TabContent>
-    </InteractiveTabHead>
-  </Card>
-</ExampleDiv> -->
 
 <Htwo label="Card with list" />
 

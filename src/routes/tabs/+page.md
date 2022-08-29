@@ -67,9 +67,10 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <CompoDescription>Use these responsive tabs components to create a secondary navigational hierarchy for your website or toggle content inside a container</CompoDescription>
 
 <ExampleDiv>
-<GitHubSource href="tabs/DefaultTabs.svelte">Tabs</GitHubSource>
-<GitHubSource href="tabs/TabContent.svelte">TabContent</GitHubSource>
-<GitHubSource href="tabs/UnderlineTabs.svelte">UnderlineTabs</GitHubSource>
+<GitHubSource href="tabs/TabWrapper.svelte">TabWrapper</GitHubSource>
+<GitHubSource href="tabs/TabHead.svelte">TabHead</GitHubSource>
+<GitHubSource href="tabs/TabHeadItem.svelte">TabHeadItem</GitHubSource>
+<GitHubSource href="tabs/TabContentItem.svelte">TabContentItem</GitHubSource>
 </ExampleDiv>
 
 The tabs component can be used either as an extra navigational hierarchy complementing the main navbar or you can also use it to change content inside a container just below the tabs using the data attributes from Flowbite.
