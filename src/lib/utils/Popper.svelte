@@ -1,9 +1,10 @@
 <script lang="ts">
-	import { createEventDispatcher, onMount } from 'svelte';
+	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { createPopper } from '@popperjs/core';
 	import classNames from 'classnames';
 	import type { Placement, Instance } from '@popperjs/core';
+	import createEventDispatcher from './createEventDispatcher';
 
 	export let activeContent: boolean = false;
 	export let animation: false | number = 100;
@@ -20,7 +21,7 @@
 	let clickable: boolean;
 	$: clickable = trigger === 'click';
 
-	$: dispatch('show', open);
+	$: dispatch('show', triggerEl, open);
 
 	let triggerEl;
 	let triggerEls = [];
@@ -32,14 +33,15 @@
 	const showHandler = (ev: Event) => {
 		if (triggerEl === undefined) triggerEl = ev.target;
 		else if (triggerEls.includes(ev.target) && triggerEl !== ev.target) {
-			popper.state.elements.reference = ev.target as HTMLElement;
-			popper.setOptions({ placement });
 			triggerEl = ev.target;
 			block();
 		}
 		if (clickable && ev.type === 'focusin' && !open) block();
 		open = clickable && ev.type === 'click' && !_blocked ? !open : true;
 	};
+
+	// reactivity
+	$: popper && (popper.state.elements.reference = triggerEl) && popper.setOptions({ placement });
 
 	// typescript typeguards - poper.state.element.reference: Element|HTMLElement|VirtualElement
 	const hasHover = (el) => (el as Element).matches && (el as Element).matches(':hover');
@@ -85,8 +87,7 @@
 		if (!triggerEls.length) console.error('no triggers given');
 
 		triggerEls.forEach((element: HTMLElement) => {
-			// trigger must be focusable
-			if (element.tabIndex < 0) element.tabIndex = 0;
+			if (element.tabIndex < 0) element.tabIndex = 0; // trigger must be focusable
 			for (const [name, handler, cond] of events) if (cond) element.addEventListener(name, handler);
 		});
 
@@ -94,7 +95,7 @@
 			triggerEl = undefined;
 			triggerEls.forEach((element: HTMLElement) => {
 				if (element) {
-					for (const [name, handler, cond] of events) element.removeEventListener(name, handler);
+					for (const [name, handler] of events) element.removeEventListener(name, handler);
 				}
 			});
 		};

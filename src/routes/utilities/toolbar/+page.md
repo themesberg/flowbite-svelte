@@ -27,7 +27,7 @@ layout: utilitiesLayout
 <CompoDescription>Use the following Tailwind CSS powered toolbars to show groups of tool buttons</CompoDescription>
 
 <ExampleDiv>
-<GitHubSource href="tooltips/Tooltip.svelte">Tooltip</GitHubSource>
+<GitHubSource href="toolbar/Toolbar.svelte">Toolbar</GitHubSource>
 </ExampleDiv>
 
 

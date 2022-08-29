@@ -5,8 +5,7 @@ layout: tooltipLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Tooltip, Button, Breadcrumb, BreadcrumbItem } from '$lib'
-  
-  
+
   import componentProps from '../props/Tooltip.json'
   // Props table
   let items = componentProps.props
@@ -14,6 +13,9 @@ layout: tooltipLayout
 
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
+  let style = 'dark';
+  let placement = 'top';
 </script>
 
 <Breadcrumb>
@@ -41,138 +43,128 @@ Flowbite-Svelte allows you to show extra information when hovering or focusing o
 
 <Htwo label="Default tooltip example" />
 
-<ExampleDiv>
-<Button id="default">Default tooltip</Button>
-<Tooltip content="Tooltip content" triggeredBy='#default'/>
+To get started with using tooltips all you need to do is set `triggeredBy` attribute of the tooltip component to any CSS query targeting trigger element(s). In the following example you can see the tooltip that will be trigger by the `tooltip-default` element to be shown when hovered or focused.
+
+<ExampleDiv class="flex items-end gap-2 h-32">
+  <Button id="tooltip-default">Default tooltip</Button>
+  <Tooltip triggeredBy='#tooltip-default'>
+    Tooltip content
+  </Tooltip>
 </ExampleDiv>
 
 ```html
 <script>
-import {Tooltip, Button} from 'flowbite-svelte'
+  import {Tooltip, Button} from 'flowbite-svelte'
 </script>
 
-<Button id="default">Default tooltip</Button>
-<Tooltip content="Tooltip content" triggeredBy='#default'>
+<Button id="tooltip-default">Default tooltip</Button>
+<Tooltip triggeredBy='#tooltip-default'>
+  Tooltip content
 </Tooltip>
 ```
 
 <Htwo label="Tooltip styles" />
 
-<ExampleDiv>
- <div class="flex gap-2">
-<Tooltip content="Tooltip content" style="light">
-  <Button>Light tooltip</Button>
-</Tooltip>
-<Tooltip content="Tooltip content" style="dark">
-  <Button>Dark tooltip</Button>
-</Tooltip>
-</div>
+You can use choose between dark and light version styles for the tooltip component by changing the utility classes from Tailwind CSS and by applying the `style={light|dark}` data attribute.
+
+<ExampleDiv class="flex items-end gap-2 h-32">
+  <Button id="style-light">Light tooltip</Button>
+  <Button id="style-dark">Dark tooltip</Button>
+  <Tooltip style="light" triggeredBy="#style-light">Tooltip content</Tooltip>
+  <Tooltip style="dark" triggeredBy="#style-dark">Tooltip content</Tooltip>
 </ExampleDiv>
 
 ```html
-<Tooltip content="Tooltip content" style="light">
-  <Button>Light tooltip</Button>
-</Tooltip>
-<Tooltip content="Tooltip content" style="dark">
-  <Button>Dark tooltip</Button>
-</Tooltip>
+  <Button id="style-light">Light tooltip</Button>
+  <Button id="style-dark">Dark tooltip</Button>
+  <Tooltip style="light" triggeredBy="#style-light">Tooltip content</Tooltip>
+  <Tooltip style="dark" triggeredBy="#style-dark">Tooltip content</Tooltip>
 ```
 
 <Htwo label="Placement" />
 
-<ExampleDiv>
-<div class="flex gap-2">
-  <Tooltip content="Tooltip content" placement="top">
-    <Button>Tooltip top</Button>
+The positioning of the tooltip element relative to the triggering element (eg. button, link) can be set using the `placement={top|right|bottom|left}` attribute.
+
+**Note!** This examples shows you also how to share one tooltip between multiple triggering elements using advanced CSS query.
+
+<ExampleDiv class="flex items-center gap-2 h-36">
+  <Button id="placement-left">Tooltip left</Button>
+  <Button id="placement-top">Tooltip top</Button>
+  <Button id="placement-bottom">Tooltip bottom</Button>
+  <Button id="placement-right">Tooltip right</Button>
+  <Tooltip triggeredBy="[id^='placement-']" {placement} on:show={(e)=> [, placement] = e.target.id.split('-')}>
+    Tooltip content - {placement}
   </Tooltip>
-  <Tooltip content="Tooltip content" placement="right">
-    <Button>Tooltip right</Button>
-  </Tooltip>
-  <Tooltip content="Tooltip content" placement="bottom">
-    <Button>Tooltip bottom</Button>
-  </Tooltip>
-  <Tooltip content="Tooltip content" placement="left">
-    <Button>Tooltip left</Button>
-  </Tooltip>
-</div>
 </ExampleDiv>
 
-```html
-<Tooltip content="Tooltip content" placement="top">
-  <Button>Tooltip top</Button>
-</Tooltip>
-<Tooltip content="Tooltip content" placement="right">
-  <Button>Tooltip right</Button>
-</Tooltip>
-<Tooltip content="Tooltip content" placement="bottom">
-  <Button>Tooltip bottom</Button>
-</Tooltip>
-<Tooltip content="Tooltip content" placement="left">
-  <Button>Tooltip left</Button>
+```svelte
+<script>
+  let placement = 'left';
+</script>
+<Button id="placement-left">Tooltip left</Button>
+<Button id="placement-top">Tooltip top</Button>
+<Button id="placement-bottom">Tooltip bottom</Button>
+<Button id="placement-right">Tooltip right</Button>
+<Tooltip triggeredBy="[id^='placement-']" {placement} on:show={(e)=> [, placement] = e.target.id.split('-')}>
+  Tooltip content - {placement}
 </Tooltip>
 ```
 
 <Htwo label="Triggering" />
 
-<ExampleDiv>
-<div class="flex gap-2">
-  <Tooltip content="Tooltip content" trigger="hover">
-    <Button>Tooltip hover</Button>
-  </Tooltip>
-  <Tooltip content="Tooltip content" trigger="click">
-    <Button>Tooltip click</Button>
-  </Tooltip>
-</div>
+<ExampleDiv class="flex items-end gap-2 h-32">
+  <Button id="hover">Tooltip hover</Button>
+  <Button id="click">Tooltip click</Button>
+  <Tooltip triggeredBy="#hover">Hover tooltip content</Tooltip>
+  <Tooltip trigger="click" triggeredBy="#click">Click tooltip content</Tooltip>
 </ExampleDiv>
 
 ```html
-<Tooltip content="Tooltip content" trigger="hover">
-  <Button>Tooltip hover</Button>
-</Tooltip>
-<Tooltip content="Tooltip content" trigger="click">
-  <Button>Tooltip click</Button>
-</Tooltip>
+  <Button id="hover">Tooltip hover</Button>
+  <Button id="click">Tooltip click</Button>
+  <Tooltip triggeredBy="#hover">Hover tooltip content</Tooltip>
+  <Tooltip trigger="click" triggeredBy="#click">Click tooltip content</Tooltip>
 ```
 
 <Htwo label="Disable arrow" />
 
-<ExampleDiv class="flex">
-  <Tooltip content="Tooltip content" arrow={false}>
-    <Button>Default tooltip</Button>
-  </Tooltip>
+<ExampleDiv class="flex items-end gap-2 h-32">
+  <Button id="disable-arrow">Default tooltip</Button>
+  <Tooltip arrow={false} triggeredBy='#disable-arrow'>Tooltip content</Tooltip>
 </ExampleDiv>
 
 ```html
-<Tooltip content="Tooltip content" arrow={false}>
-  <Button>Default tooltip</Button>
-</Tooltip>
+<Button id="disable-arrow">Default tooltip</Button>
+<Tooltip arrow={false} triggeredBy='#disable-arrow'>Tooltip content</Tooltip>
 ```
 
 <Htwo label="Custom style" />
 
-When you want to add custom styles, use `style="custom"`, `tipClass`, and `tipColor` to modify the style.
+When you want to add custom styles, use `style="custom"`, `tipClass`, and `color` to modify the style.
 
-<ExampleDiv class="flex">
+<ExampleDiv class="flex items-center gap-2 h-64">
+	<Button id="custom">Custom style</Button>
   <Tooltip
-		content="tooltip content"
+    triggeredBy="#custom"
 		placement="auto"
 		tipClass="rounded-lg p-24 text-lg font-medium shadow-sm text-white"
 		style="custom"
-		tipColor="bg-red-900 dark:bg-red-700"
+		color="bg-red-900 dark:bg-red-700"
 	>
-		<Button>Custom style</Button>
+		Tooltip content
 	</Tooltip>
 </ExampleDiv>
 
 ```html
+<Button id="custom">Custom style</Button>
 <Tooltip
-  content="tooltip content"
+  triggeredBy="#custom"
   placement="auto"
-  tipClass="absolute inline-block rounded-lg p-24 text-lg font-medium shadow-sm text-white"
+  tipClass="rounded-lg p-24 text-lg font-medium shadow-sm text-white"
   style="custom"
-  tipColor="bg-red-900 dark:bg-red-700"
+  color="bg-red-900 dark:bg-red-700"
 >
-  <Button>Custom style</Button>
+  Tooltip content
 </Tooltip>
 ```
 
