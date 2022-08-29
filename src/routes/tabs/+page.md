@@ -80,7 +80,7 @@ The tabs component can be used either as an extra navigational hierarchy complem
 <script>
 	import { TabWrapper, TabHead, TabHeadItem, TabContentItem } from '$lib';
 	let activeTabValue = 1;
-	const handleClick = (tabValue: number) => () => {
+	const handleClick = (tabValue) => () => {
 		activeTabValue = tabValue;
 	};
 </script>
@@ -91,15 +91,15 @@ If you have more than one tabs, you need to create `activeTabValue` and `handleC
 ```js
 <script>
 	let activeTabValue1 = 1;
-	const handleClick1 = (tabValue: number) => () => {
+	const handleClick1 = (tabValue) => () => {
 		activeTabValue1 = tabValue;
 	};
 	let activeTabValue2 = 1;
-	const handleClick2 = (tabValue: number) => () => {
+	const handleClick2 = (tabValue) => () => {
 		activeTabValue2 = tabValue;
 	};
 	let activeTabValue3 = 1;
-	const handleClick3 = (tabValue: number) => () => {
+	const handleClick3 = (tabValue) => () => {
 		activeTabValue3 = tabValue;
 	};
 ...
@@ -276,7 +276,8 @@ Use this alternative tabs component style with an underline instead of a backgro
 
 <Htwo label="Tabs with icons" />
 
-This is an example of the tabs component where you can also use a SVG powered icon to complement the text within the navigational tabs.
+This is an example of the tabs component where you can also use a SVG powered icon to complement the text within the navigational tabs. 
+Use icon components for a simple syntax. See <a href="/icons">Icons</a> for more details.
 
 <ExampleDiv>
 	<TabWrapper
@@ -444,7 +445,7 @@ This is an example of the tabs component where you can also use a SVG powered ic
 
 <Htwo label="Pills tabs" />
 
-If you want to use pills as a style for the tabs component you can do so by using this example.
+If you want to use pills as a style for the tabs component use `tabStyle="pill"`.
 
 <ExampleDiv>
 	<TabWrapper
@@ -536,7 +537,7 @@ If you want to use pills as a style for the tabs component you can do so by usin
 
 <Htwo label="Full width tabs" />
 
-If you want to show the tabs on the full width relative to the parent element you can do so by using the full width tabs component example.
+If you want to show the tabs on the full width relative to the parent element use `tabStype="full"` prop.
 
 <ExampleDiv>
 	<TabWrapper
@@ -628,7 +629,7 @@ If you want to show the tabs on the full width relative to the parent element yo
 
 <Htwo label="Disabled tabs" />
 
-Use `disabled: true` to disable a tab.
+To disable a tab, add `disabled` to a `TabHeadItem`.
 
 <ExampleDiv>
 	<TabWrapper class="mb-4" bind:activeTabValue={activeTabValue6} let:tabStyle let:tabId>
@@ -728,7 +729,7 @@ Use `disabled: true` to disable a tab.
 
 You can add other components to the `TabContentItem` component. Here we are adding a timeline component in the tab 1:
 
-<ExampleDiv class="h-96">
+<ExampleDiv class="h-auto">
   <TabWrapper class="mb-4" bind:activeTabValue={activeTabValue7} let:tabStyle let:tabId>
 	<TabHead {tabStyle} {tabId}>
 		<TabHeadItem id={1} {tabStyle} activeTabValue={activeTabValue7} on:click={handleClick7(1)}
@@ -888,7 +889,7 @@ You can add other components to the `TabContentItem` component. Here we are addi
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events: Tabs, InteractiveTabHead" />
+<Htwo label="Forwarded Events: TabHeadItem" />
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:blur</Badge>
