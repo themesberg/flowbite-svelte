@@ -5,8 +5,7 @@ layout: avatarLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider, Breadcrumb, BreadcrumbItem, Tooltip } from '$lib'
-  
-  
+
   import alertProp from '../props/Avatar.json'
   // Props table
   export let items = alertProp.props
@@ -15,6 +14,7 @@ layout: avatarLayout
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
+  let name;
 </script>
 
 <Breadcrumb>
@@ -115,27 +115,17 @@ This example can be used to show the initials of the user’s first and last nam
 Use this example to show a tooltip when hovering over the avatar.
 
 <ExampleDiv class="flex space-x-4">
-<Tooltip content="Jese Leos">
-  <Avatar rounded src="/images/profile-picture-1.webp"/>
-</Tooltip>
-<Tooltip content="Jese Leos">
-  <Avatar rounded src="/images/profile-picture-2.webp"/>
-</Tooltip>
-<Tooltip content="Bonnie Green">
-  <Avatar rounded src="/images/profile-picture-3.webp"/>
-</Tooltip>
+  <Avatar data-name="Jese Leos" rounded src="/images/profile-picture-1.webp"/>
+  <Avatar data-name="Robert Gouth" rounded src="/images/profile-picture-2.webp"/>
+  <Avatar data-name="Bonnie Green" rounded src="/images/profile-picture-3.webp"/>
+  <Tooltip triggeredBy="[data-name]" on:show={e => name = e.target.dataset.name}>{name}</Tooltip>
 </ExampleDiv>
 
 ```html
-<Tooltip content="Jese Leos">
-  <Avatar rounded src="/images/profile-picture-1.webp"/>
-</Tooltip>
-<Tooltip content="Jese Leos">
-  <Avatar rounded src="/images/profile-picture-2.webp"/>
-</Tooltip>
-<Tooltip content="Bonnie Green">
-  <Avatar rounded src="/images/profile-picture-3.webp"/>
-</Tooltip>
+<Avatar data-name="Jese Leos" rounded src="/images/profile-picture-1.webp"/>
+<Avatar data-name="Robert Gouth" rounded src="/images/profile-picture-2.webp"/>
+<Avatar data-name="Bonnie Green" rounded src="/images/profile-picture-3.webp"/>
+<Tooltip triggeredBy="[data-name]" on:show={e => name = e.target.dataset.name}>{name}</Tooltip>
 ```
 
 <Htwo label="Dot indicator" />
@@ -172,7 +162,7 @@ Use a dot element relative to the avatar component as an indicator for the user 
   -->
 </ExampleDiv>
 
-```html
+```svelte
 <Avatar src="/images/profile-picture-3.webp" dot={{top:true, color:"bg-red-400"}}/>
 <Avatar	src="/images/profile-picture-3.webp" dot={{top:true, color:"bg-red-400"}} rounded />
 <Avatar	src="/images/profile-picture-3.webp" dot={{color:"bg-green-400"}}/>
