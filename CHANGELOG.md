@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.1](https://github.com/themesberg/flowbite-svelte/compare/v0.26.0...v0.26.1) (2022-08-29)
+
+
+### Features
+
+* new tab components and page ([7c53437](https://github.com/themesberg/flowbite-svelte/commit/7c534377c31384b609774db19b0bace7fee3d5cb))
+* working on Tabs ([201c124](https://github.com/themesberg/flowbite-svelte/commit/201c124e33bed0d1b13cfe2e3f6ba5ea0bfc6c1c))
+
+
+### Bug Fixes
+
+* fixing the tab page layout problem ([bc3b7bf](https://github.com/themesberg/flowbite-svelte/commit/bc3b7bf32100abbbab3fede7fa6a912ff81d00f6))
+* remove heros from cards page ([c46f0b3](https://github.com/themesberg/flowbite-svelte/commit/c46f0b3f9a16793f12d68fd3d1b9e973dd1f7b4a))
+* remove heros from megamenu and list-group page ([9980b7d](https://github.com/themesberg/flowbite-svelte/commit/9980b7d98668c0356217dd3aac810c52cd5e0e51))
+* remove heros from popover page ([eeff79f](https://github.com/themesberg/flowbite-svelte/commit/eeff79f53733a8f5cbb480eead692f111f96b07c))
+* remove heros from sidebars page ([a3981a0](https://github.com/themesberg/flowbite-svelte/commit/a3981a09b6b36dcbcb90cfad789bee6a10dae9a1))
+* remove heros icons from select and toggle pages ([fba7660](https://github.com/themesberg/flowbite-svelte/commit/fba7660c1bf08c47a9d0200db545f0b1fce457a9))
+* remove unused icon prop ([10e8c81](https://github.com/themesberg/flowbite-svelte/commit/10e8c81dae9e0470ef875fc95dd7d89decdae732))
+* Review component and review in the ratings page ([afe6972](https://github.com/themesberg/flowbite-svelte/commit/afe69726d08a3cad7de7f29db131909816bc9c3e))
+
 ## [0.26.0](https://github.com/themesberg/flowbite-svelte/compare/v0.25.24...v0.26.0) (2022-08-29)
 
 
