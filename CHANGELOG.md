@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.26.0](https://github.com/themesberg/flowbite-svelte/compare/v0.25.24...v0.26.0) (2022-08-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* Tooltip changed in accordance to new Popper implementation.
+
+- Tooltip examples corrected
+- Avatar example corrected
+
+### Features
+
+* tooltips new API ([d9dacf9](https://github.com/themesberg/flowbite-svelte/commit/d9dacf9f65e85be93a3458dd5359d614a0dd12a0))
+
+
+### Bug Fixes
+
+* Avatar tooltip example ([ff7c1af](https://github.com/themesberg/flowbite-svelte/commit/ff7c1af20306609f77831ff1d2632700a9f596da))
+* docs corrections ([f208323](https://github.com/themesberg/flowbite-svelte/commit/f208323ac1457b88572aaae37531e6b3da1055de))
+* docs corrections 2 ([5adb4d8](https://github.com/themesberg/flowbite-svelte/commit/5adb4d816591d7bc9aff2e549fc364c80e650b4b))
+
+
+* Merge branch 'jjagielka-tooltip' ([1c37601](https://github.com/themesberg/flowbite-svelte/commit/1c3760139e24569287891c1ca3f67f2e0e3b9168))
+
 ### [0.25.24](https://github.com/themesberg/flowbite-svelte/compare/v0.25.23...v0.25.24) (2022-08-28)
 
 
