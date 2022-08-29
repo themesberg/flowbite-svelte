@@ -25,11 +25,7 @@
 		type="button"
 		class={classNames(btnClass, $$props.class)}
 		aria-controls="sidebar-dropdown">
-		<svelte:component
-			this={icon.name}
-			size={icon.size}
-			color={icon.color}
-			class="mr-2 {icon.class}" />
+		<slot name="icon" />
 		<span class={spanClass} sidebar-toggle-item>{label}</span>
 		<ChevronDown />
 	</button>

@@ -6,7 +6,6 @@ layout: carouselLayout
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Carousel, CarouselTransition, Breadcrumb, BreadcrumbItem } from '$lib'
    import { quartInOut, sineInOut, bounceInOut, quintOut } from 'svelte/easing';
-  import { ChevronDoubleLeft, ChevronDoubleRight, Link} from 'svelte-heros'
   import { images } from './imageData/+server.js';
   import componentProps from '../props/Carousel.json'
   import componentProps2 from '../props/CarouselTransition.json'
@@ -22,10 +21,6 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   let showIndicators=false
   let showCaptions=false
   let slideControls=false
-  let icons={
-    next: ChevronDoubleRight,
-    prev: ChevronDoubleLeft,
-  }
   let iconSize =20
   let iconClass = 'text-white dark:text-red-500';
 
@@ -240,15 +235,9 @@ The carousel component can be used to cycle through a set of elements using cust
 
 <p>You can add custom slide controllers using <a href="/icons/heroicons">Svelte-Heros icons</a>. Change the size using the `iconSize` prop and style with the `iconClass` prop.</p>
 
-<ExampleDiv>
-  <div class="max-w-4xl">
-    <Carousel {images} {showThumbs} {showCaptions} {icons} {iconSize} {iconClass}/>
-  </div>
-</ExampleDiv>
-
 ```html
 <script>
-  import {ChevronDoubleLeft, ChevronDoubleRight } from 'svelte-heros'
+  import {ChevronDoubleLeft, ChevronDoubleRight } from 'svelte-heros-v2'
   let icons={
     next: ChevronDoubleRight,
     prev: ChevronDoubleLeft,

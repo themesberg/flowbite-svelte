@@ -23,14 +23,8 @@
 		on:mouseenter
 		on:mouseleave
 		on:mouseover
-		class={classNames(aClass, $$props.class)}
-	>
-		<svelte:component
-			this={icon.name}
-			size={icon.size}
-			color={icon.color}
-			class="mr-2 {icon.class}"
-		/>
+		class={classNames(aClass, $$props.class)}>
+		<slot name="icon" />
 		<span class={spanClass}>{label}</span>
 		{#if $$slots.subtext}
 			<slot name="subtext" />
