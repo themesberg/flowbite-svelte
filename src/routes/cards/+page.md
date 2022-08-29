@@ -5,7 +5,6 @@ layout: cardLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Avatar, Badge, Button, Breadcrumb, BreadcrumbItem, Card, Checkbox,CloseButton, DefaultTabs,Dropdown, DropdownItem,Input, InteractiveTabHead,Label,List, Rating, TabContent,Toggle } from '$lib'
-  import { DotsHorizontal, ArrowRight, ExternalLink, Gift, CheckCircle } from 'svelte-heros'
  
   import componentProps from '../props/Card.json'
   // Props table
@@ -104,7 +103,7 @@ Use the following example of a card element if you also want to have an action b
       Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
     </p>
     <Button class="w-fit">
-      Read more <ArrowRight class="w-5 h-5 ml-2"/>
+      Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ml-2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
     </Button>
   </Card>
 </ExampleDiv>
@@ -116,7 +115,7 @@ Use the following example of a card element if you also want to have an action b
     Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
   </p>
   <Button class="w-fit">
-    Read more <ArrowRight class="w-5 h-5 ml-2"/>
+    Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ml-2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
   </Button>
 </Card>
 ```
@@ -127,28 +126,28 @@ This example can be used to show a CTA as a link instead of a button inside the 
 
 <ExampleDiv>
   <Card>
-    <Gift variation="solid" class="mb-2 w-12 h-12 text-gray-500 dark:text-gray-400"/>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 mb-2text-gray-500 dark:text-gray-400 "><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>
     <a href="/">
         <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Need a help in Claim?</h5>
     </a>
     <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
     <a href="/" class="inline-flex items-center text-blue-600 hover:underline">
         See our guideline
-        <ExternalLink class="ml-2 w-5 h-5"/>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ml-2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
     </a> 
   </Card>
 </ExampleDiv>
 
 ```html
 <Card>
-  <Gift variation="solid" class="mb-2 w-12 h-12 text-gray-500 dark:text-gray-400"/>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 mb-2text-gray-500 dark:text-gray-400 "><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>
   <a href="/">
       <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Need a help in Claim?</h5>
   </a>
   <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
   <a href="/" class="inline-flex items-center text-blue-600 hover:underline">
       See our guideline
-      <ExternalLink class="ml-2 w-5 h-5"/>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ml-2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
   </a> 
 </Card>
 ```
@@ -167,7 +166,7 @@ You can use the following example of a card element with an image for blog posts
       Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
     </p>
     <Button>
-      Read more <ArrowRight class="w-5 h-5 ml-2"/>
+      Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ml-2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
     </Button>
   </Card>
   <Toggle bind:checked={vCard} class="mt-4 italic dark:text-gray-500">Reverse</Toggle>
@@ -181,7 +180,7 @@ You can use the following example of a card element with an image for blog posts
     Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
   </p>
   <Button>
-    Read more <ArrowRight class="w-5 h-5 ml-2"/>
+    Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ml-2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
   </Button>
 </Card>
 ```
@@ -220,7 +219,7 @@ Use this user profile card example if you want to show a dropdown menu and butto
     <div class="flex justify-end">
       <Dropdown class="w-44">
         <CloseButton slot="trigger" class="text-gray-500 dark:text-gray-400">
-          <DotsHorizontal class="w-6 h-6"/>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" /></svg>
         </CloseButton>
         <DropdownItem>Edit</DropdownItem>
         <DropdownItem>Export data</DropdownItem>
@@ -244,7 +243,7 @@ Use this user profile card example if you want to show a dropdown menu and butto
   <div class="flex justify-end">
     <Dropdown class="w-44">
       <CloseButton slot="trigger" class="text-gray-500 dark:text-gray-400">
-        <DotsHorizontal class="w-6 h-6"/>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" /></svg>
       </CloseButton>
       <DropdownItem>Edit</DropdownItem>
       <DropdownItem>Export data</DropdownItem>
@@ -503,31 +502,31 @@ Show detailed information to potential customers about your product’s pricing 
     <!-- List -->
     <ul class="my-7 space-y-4">
         <li class="flex space-x-2">
-            <CheckCircle variation="solid" class="text-blue-600 dark:text-blue-500" />
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-600 dark:text-blue-500"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">2 team members</span>
         </li>
         <li class="flex space-x-2">
-            <CheckCircle variation="solid" class="text-blue-600 dark:text-blue-500" />
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-600 dark:text-blue-500"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">20GB Cloud storage</span>
         </li>
         <li class="flex space-x-2">
-            <CheckCircle variation="solid" class="text-blue-600 dark:text-blue-500" />
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-600 dark:text-blue-500"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">Integration help</span>
         </li>
         <li class="flex space-x-2 line-through decoration-gray-500">
-            <CheckCircle variation="solid" class="text-gray-400 dark:text-gray-500" />
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-600 dark:text-blue-500"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             <span class="text-base font-normal leading-tight text-gray-500">Sketch Files</span>
         </li>
         <li class="flex space-x-2 line-through decoration-gray-500">
-            <CheckCircle variation="solid" class="text-gray-400 dark:text-gray-500" />
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-600 dark:text-blue-500"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             <span class="text-base font-normal leading-tight text-gray-500">API Access</span>
         </li>
         <li class="flex space-x-2 line-through decoration-gray-500">
-            <CheckCircle variation="solid" class="text-gray-400 dark:text-gray-500" />
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-600 dark:text-blue-500"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             <span class="text-base font-normal leading-tight text-gray-500">Complete documentation</span>
         </li>
         <li class="flex space-x-2 line-through decoration-gray-500">
-            <CheckCircle variation="solid" class="text-gray-400 dark:text-gray-500" />
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-600 dark:text-blue-500"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             <span class="text-base font-normal leading-tight text-gray-500">24×7 phone & email support</span>
         </li>
     </ul>
@@ -558,19 +557,19 @@ Show detailed information to potential customers about your product’s pricing 
           <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">Integration help</span>
       </li>
       <li class="flex space-x-2 line-through decoration-gray-500">
-          <CheckCircle variation="solid" class="text-gray-400 dark:text-gray-500" />
+           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-600 dark:text-blue-500"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
           <span class="text-base font-normal leading-tight text-gray-500">Sketch Files</span>
       </li>
       <li class="flex space-x-2 line-through decoration-gray-500">
-          <CheckCircle variation="solid" class="text-gray-400 dark:text-gray-500" />
+           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-600 dark:text-blue-500"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
           <span class="text-base font-normal leading-tight text-gray-500">API Access</span>
       </li>
       <li class="flex space-x-2 line-through decoration-gray-500">
-          <CheckCircle variation="solid" class="text-gray-400 dark:text-gray-500" />
+           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-600 dark:text-blue-500"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
           <span class="text-base font-normal leading-tight text-gray-500">Complete documentation</span>
       </li>
       <li class="flex space-x-2 line-through decoration-gray-500">
-          <CheckCircle variation="solid" class="text-gray-400 dark:text-gray-500" />
+           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-600 dark:text-blue-500"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
           <span class="text-base font-normal leading-tight text-gray-500">24×7 phone & email support</span>
       </li>
   </ul>
