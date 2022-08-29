@@ -75,12 +75,10 @@ You can use choose between dark and light version styles for the tooltip compone
 </ExampleDiv>
 
 ```html
-<Tooltip content="Tooltip content" style="light">
-  <Button>Light tooltip</Button>
-</Tooltip>
-<Tooltip content="Tooltip content" style="dark">
-  <Button>Dark tooltip</Button>
-</Tooltip>
+  <Button id="style-light">Light tooltip</Button>
+  <Button id="style-dark">Dark tooltip</Button>
+  <Tooltip style="light" triggeredBy="#style-light">Tooltip content</Tooltip>
+  <Tooltip style="dark" triggeredBy="#style-dark">Tooltip content</Tooltip>
 ```
 
 <Htwo label="Placement" />
