@@ -13,8 +13,7 @@
 		<div class="references">
 			<p>
 				<a href="https://flowbite.com/docs/components/tabs/" target="_blank" class="link"
-					>Flowbite Tabs</a
-				>
+					>Flowbite Tabs</a>
 			</p>
 		</div>
 	</div>

@@ -3,7 +3,6 @@
 	export let id: number;
 	export let tabStyle: string;
 	export let activeTabValue: number;
-	$: activeTabValue;
 	export let customActiveClass: string = '';
 	export let customInActiveClass: string = '';
 	export let customLiClass: string = '';

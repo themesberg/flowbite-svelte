@@ -2,7 +2,7 @@
 layout: tabLayout
 ---
 
-<script lang="ts">
+<script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { TabWrapper,
 		TabHead,
@@ -27,32 +27,32 @@ layout: tabLayout
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
 let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
-	let activeTabValue = 1;
-	const handleClick = (tabValue) => () => {
-		activeTabValue = tabValue;
+	let activeTabValue1 = 1;
+	const handleClick1 = (tabValue: number) => () => {
+		activeTabValue1 = tabValue;
 	};
 	let activeTabValue2 = 1;
-	const handleClick2 = (tabValue) => () => {
+	const handleClick2 = (tabValue: number) => () => {
 		activeTabValue2 = tabValue;
 	};
 	let activeTabValue3 = 1;
-	const handleClick3 = (tabValue) => () => {
+	const handleClick3 = (tabValue: number) => () => {
 		activeTabValue3 = tabValue;
 	};
 	let activeTabValue4 = 1;
-	const handleClick4 = (tabValue) => () => {
+	const handleClick4 = (tabValue: number) => () => {
 		activeTabValue4 = tabValue;
 	};
 	let activeTabValue5 = 1;
-	const handleClick5 = (tabValue) => () => {
+	const handleClick5 = (tabValue: number) => () => {
 		activeTabValue5 = tabValue;
 	};
 	let activeTabValue6 = 1;
-	const handleClick6 = (tabValue) => () => {
+	const handleClick6 = (tabValue: number) => () => {
 		activeTabValue6 = tabValue;
 	};
 	let activeTabValue7 = 1;
-	const handleClick7 = (tabValue) => () => {
+	const handleClick7 = (tabValue: number) => () => {
 		activeTabValue7 = tabValue;
 	};
 </script>
@@ -111,12 +111,13 @@ If you have more than one tabs, you need to create `activeTabValue` and `handleC
 Use the following default tabs component example to show a list of links that the user can navigate from on your website.
 
 <ExampleDiv>
-	<TabWrapper class="mb-4" bind:activeTabValue let:tabStyle let:tabId>
+	<TabWrapper class="mb-4" bind:activeTabValue={activeTabValue1} let:tabStyle let:tabId>
 		<TabHead {tabStyle} {tabId}>
-			<TabHeadItem id={1} {tabStyle} {activeTabValue} on:click={handleClick(1)}>Profile</TabHeadItem>
-			<TabHeadItem id={2} {tabStyle} {activeTabValue} on:click={handleClick(2)}>Dashboard</TabHeadItem>
-			<TabHeadItem id={3} {tabStyle} {activeTabValue} on:click={handleClick(3)}>Settings</TabHeadItem>
-			<TabHeadItem id={4} {tabStyle} {activeTabValue} on:click={handleClick(4)}>Users</TabHeadItem>
+			<TabHeadItem id={1} {tabStyle} activeTabValue={activeTabValue1} on:click={handleClick1(1)}>Profile</TabHeadItem>
+			<TabHeadItem id={2} {tabStyle} activeTabValue={activeTabValue1} on:click={handleClick1(2)}
+				>Dashboard</TabHeadItem>
+			<TabHeadItem id={3} {tabStyle} activeTabValue={activeTabValue1} on:click={handleClick1(3)}>Settings</TabHeadItem>
+			<TabHeadItem id={4} {tabStyle} activeTabValue={activeTabValue1} on:click={handleClick1(4)}>Users</TabHeadItem>
 		</TabHead>
 		<TabContentItem id={1} {activeTabValue}>
 			<p class="text-sm text-gray-500 dark:text-gray-400">
@@ -726,10 +727,10 @@ Use `disabled: true` to disable a tab.
 
 <Htwo label="Components in tab contents" />
 
-You can add other components to the `TabContentItem` component. Here we are adding a timeline component in the tab 1:
+By using `InteractiveTabHead` and `TabContent` you can add other components to the `InteractiveTabs` component. Here we are adding a timeline component in the tab 1:
 
 <ExampleDiv class="h-96">
-  <TabWrapper class="mb-4" bind:activeTabValue={activeTabValue7} let:tabStyle let:tabId>
+  <TabWrapper class="mb-4" bind:activeTabValue let:tabStyle let:tabId>
 	<TabHead {tabStyle} {tabId}>
 		<TabHeadItem id={1} {tabStyle} activeTabValue={activeTabValue7} on:click={handleClick7(1)}
 			>Profile</TabHeadItem>
@@ -794,7 +795,7 @@ You can add other components to the `TabContentItem` component. Here we are addi
 </ExampleDiv>
 
 ```html
-<TabWrapper class="mb-4" bind:activeTabValue={activeTabValue7} let:tabStyle let:tabId>
+<TabWrapper class="mb-4" bind:activeTabValue let:tabStyle let:tabId>
 	<TabHead {tabStyle} {tabId}>
 		<TabHeadItem id={1} {tabStyle} activeTabValue={activeTabValue7} on:click={handleClick7(1)}
 			>Profile</TabHeadItem>
