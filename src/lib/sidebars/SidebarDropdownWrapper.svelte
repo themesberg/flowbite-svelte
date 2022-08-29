@@ -1,6 +1,5 @@
 <script lang="ts">
 	import classNames from 'classnames';
-	import type { IconType } from '../types';
 	import { slide } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import ChevronDown from '../utils/ChevronDown.svelte';
@@ -10,7 +9,6 @@
 	export let label: string = '';
 	export let spanClass: string = 'flex-1 ml-3 text-left whitespace-nowrap';
 	export let ulClass: string = 'py-2 space-y-2';
-	export let icon: IconType;
 
 	let isOpen = false;
 	const handleDropdown = () => {
