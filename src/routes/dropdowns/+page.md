@@ -716,49 +716,42 @@ Use the menu icon trigger element on components such as cards as an alternative 
   <ToolbarButton class="dots-menu text-gray-900 bg-white dark:text-white dark:bg-gray-800">
     <DotsVertical class="w-5 h-5"/>
   </ToolbarButton>
-<Dropdown class="w-44" triggeredBy=".dots-menu">
-  <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem>Settings</DropdownItem>
-  <DropdownItem>Earnings</DropdownItem>
-  <DropdownDivider />
-  <DropdownItem>Sign out</DropdownItem>
-</Dropdown>
+  <Dropdown class="w-44" triggeredBy=".dots-menu">
+    <DropdownItem>Dashboard</DropdownItem>
+    <DropdownItem>Settings</DropdownItem>
+    <DropdownItem>Earnings</DropdownItem>
+    <DropdownDivider />
+    <DropdownItem>Sign out</DropdownItem>
+  </Dropdown>
 </ExampleDiv>
 
 ```html
-<Dropdown class="w-44">
-  <ToolbarButton slot="trigger" class="text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+  <ToolbarButton class="dots-menu text-gray-900 bg-white dark:text-white dark:bg-gray-800">
     <DotsHorizontal class="w-5 h-5"/>
   </ToolbarButton>
-  <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem>Settings</DropdownItem>
-  <DropdownItem>Earnings</DropdownItem>
-  <DropdownDivider />
-  <DropdownItem>Sign out</DropdownItem>
-</Dropdown>
-<Dropdown class="w-44">
-  <ToolbarButton slot="trigger" class="text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+  <ToolbarButton class="dots-menu text-gray-900 bg-white dark:text-white dark:bg-gray-800">
     <DotsVertical class="w-5 h-5"/>
   </ToolbarButton>
-  <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem>Settings</DropdownItem>
-  <DropdownItem>Earnings</DropdownItem>
-  <DropdownDivider />
-  <DropdownItem>Sign out</DropdownItem>
-</Dropdown>
+  <Dropdown class="w-44" triggeredBy=".dots-menu">
+    <DropdownItem>Dashboard</DropdownItem>
+    <DropdownItem>Settings</DropdownItem>
+    <DropdownItem>Earnings</DropdownItem>
+    <DropdownDivider />
+    <DropdownItem>Sign out</DropdownItem>
+  </Dropdown>
 ```
 
 <Htwo label="Notification bell" />
 
 Use this example to show a list of notifications inside your application by providing more detailed information such as the user avatar, content and time of notification triggered by a notification bell icon.
 
-<ExampleDiv class="flex justify-center items-start h-56">
-    <div id="bell" class="inline-flex items-center text-sm font-medium text-center text-gray-500 hover:text-gray-900 focus:outline-none dark:hover:text-white dark:text-gray-400">
-      <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path></svg>
-      <div class="flex relative">
-        <div class="inline-flex relative -top-2 right-3 w-3 h-3 bg-red-500 rounded-full border-2 border-white dark:border-gray-900"></div>
-      </div>
+<ExampleDiv class="flex justify-center items-start h-96">
+  <div id="bell" class="inline-flex items-center text-sm font-medium text-center text-gray-500 hover:text-gray-900 focus:outline-none dark:hover:text-white dark:text-gray-400">
+    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path></svg>
+    <div class="flex relative">
+      <div class="inline-flex relative -top-2 right-3 w-3 h-3 bg-red-500 rounded-full border-2 border-white dark:border-gray-900"></div>
     </div>
+  </div>
   <Dropdown class="w-full max-w-sm" triggeredBy="#bell">
     <ul slot="content" class="rounded divide-y divide-gray-100 shadow dark:bg-gray-800 dark:divide-gray-700">
       <DropdownHeader class="font-bold text-center"  divider={false}>Notifications</DropdownHeader>
@@ -788,13 +781,13 @@ Use this example to show a list of notifications inside your application by prov
 </ExampleDiv>
 
 ```html
-<Dropdown class="w-full max-w-sm">
-  <div slot="trigger" class="inline-flex items-center text-sm font-medium text-center text-gray-500 hover:text-gray-900 focus:outline-none dark:hover:text-white dark:text-gray-400">
-    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path></svg>
-    <div class="flex relative">
-      <div class="inline-flex relative -top-2 right-3 w-3 h-3 bg-red-500 rounded-full border-2 border-white dark:border-gray-900"></div>
-    </div>
+<div id="bell" class="inline-flex items-center text-sm font-medium text-center text-gray-500 hover:text-gray-900 focus:outline-none dark:hover:text-white dark:text-gray-400">
+  <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path></svg>
+  <div class="flex relative">
+    <div class="inline-flex relative -top-2 right-3 w-3 h-3 bg-red-500 rounded-full border-2 border-white dark:border-gray-900"></div>
   </div>
+</div>
+<Dropdown class="w-full max-w-sm" triggeredBy="#bell">
   <ul slot="content" class="rounded divide-y divide-gray-100 shadow dark:bg-gray-800 dark:divide-gray-700">
     <DropdownHeader class="font-bold text-center"  divider={false}>Notifications</DropdownHeader>
     <DropdownItem class="flex space-x-4 ">
