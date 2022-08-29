@@ -7,8 +7,6 @@ layout: modalLayout
 
   import { Popover, Avatar, Breadcrumb, BreadcrumbItem, Button, Input, Label, Checkbox } from '$lib'
   import  ChevronRight  from "$lib/utils/ChevronRight.svelte";
-  import { QuestionMarkCircle, Check, X } from 'svelte-heros';
-  import { Home } from 'svelte-heros';
   import componentProps from '../props/Popover.json'
 
   let props = componentProps.props
@@ -136,7 +134,9 @@ Show helpful information inside a popover when hovering over a question mark but
 
 <ExampleDiv>
   <div class="flex items-center text-sm font-light text-gray-500 dark:text-gray-400">This is just some informational text
-    <button id="b3"><QuestionMarkCircle class="ml-1 w-4 h-4" variation="solid"/><span class="sr-only">Show information</span></button>
+    <button id="b3">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 ml-1"><path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 01-.988-1.129c1.454-1.272 3.776-1.272 5.23 0 1.513 1.324 1.513 3.518 0 4.842a3.75 3.75 0 01-.837.552c-.676.328-1.028.774-1.028 1.152v.75a.75.75 0 01-1.5 0v-.75c0-1.279 1.06-2.107 1.875-2.502.182-.088.351-.199.503-.331.83-.727.83-1.857 0-2.584zM12 18a.75.75 0 100-1.5.75.75 0 000 1.5z" clip-rule="evenodd" /></svg>
+    <span class="sr-only">Show information</span></button>
   </div>
   <Popover triggeredBy="#b3" class="w-72 text-sm font-light text-gray-500 bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400" placement="bottom-start">
     <div class="p-3 space-y-2">
@@ -151,7 +151,9 @@ Show helpful information inside a popover when hovering over a question mark but
 
 ```svelte
 <div class="flex items-center text-sm font-light text-gray-500 dark:text-gray-400">This is just some informational text
-  <button id="b3"><QuestionMarkCircle class="ml-1 w-4 h-4" variation="solid"/><span class="sr-only">Show information</span></button>
+  <button id="b3">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 ml-1"><path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 01-.988-1.129c1.454-1.272 3.776-1.272 5.23 0 1.513 1.324 1.513 3.518 0 4.842a3.75 3.75 0 01-.837.552c-.676.328-1.028.774-1.028 1.152v.75a.75.75 0 01-1.5 0v-.75c0-1.279 1.06-2.107 1.875-2.502.182-.088.351-.199.503-.331.83-.727.83-1.857 0-2.584zM12 18a.75.75 0 100-1.5.75.75 0 000 1.5z" clip-rule="evenodd" /></svg>
+    <span class="sr-only">Show information</span></button>
 </div>
 <Popover triggeredBy="#b3" class="w-72 text-sm font-light text-gray-500 bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400" placement="bottom-start">
   <div class="p-3 space-y-2">
@@ -228,13 +230,15 @@ Dynamically show the password strength progress when creating a new password pos
   <p class="py-2">It’s better to have:</p>
   <ul>
       <li class="flex items-center mb-1">
-          <Check class="mr-2 w-4 h-4 text-green-400 dark:text-green-500" />Upper &amp; lower case letters 
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-2 w-4 h-4 text-green-400 dark:text-green-500"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+Upper &amp; lower case letters 
       </li>
       <li class="flex items-center mb-1">
-          <X class="mr-2 w-4 h-4 text-gray-300 dark:text-gray-400"/>A symbol (#$&amp;) 
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-2 w-4 h-4 text-gray-300 dark:text-gray-400"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+          A symbol (#$&amp;) 
       </li>
       <li class="flex items-center">
-          <X class="mr-2 w-4 h-4 text-gray-300 dark:text-gray-400"/>A longer password (min. 12 chars.)
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-2 w-4 h-4 text-gray-300 dark:text-gray-400"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>A longer password (min. 12 chars.)
       </li>
   </ul>
 </Popover>
@@ -264,13 +268,13 @@ Dynamically show the password strength progress when creating a new password pos
   <p class="py-2">It’s better to have:</p>
   <ul>
       <li class="flex items-center mb-1">
-          <Check class="mr-2 w-4 h-4 text-green-400 dark:text-green-500" />Upper &amp; lower case letters 
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-2 w-4 h-4 text-green-400 dark:text-green-500"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>Upper &amp; lower case letters 
       </li>
       <li class="flex items-center mb-1">
-          <X class="mr-2 w-4 h-4 text-gray-300 dark:text-gray-400"/>A symbol (#$&amp;) 
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-2 w-4 h-4 text-gray-300 dark:text-gray-400"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>A symbol (#$&amp;) 
       </li>
       <li class="flex items-center">
-          <X class="mr-2 w-4 h-4 text-gray-300 dark:text-gray-400"/>A longer password (min. 12 chars.)
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-2 w-4 h-4 text-gray-300 dark:text-gray-400"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>A longer password (min. 12 chars.)
       </li>
   </ul>
 </Popover>
