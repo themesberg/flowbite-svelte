@@ -4,7 +4,7 @@ layout: cardLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Avatar, Badge, Button, Breadcrumb, BreadcrumbItem, Card, Checkbox,CloseButton, Dropdown, DropdownItem,Input,Label,List, Rating,Toggle } from '$lib'
+  import { Avatar, Badge, Button, Breadcrumb, BreadcrumbItem, Card, Checkbox,CloseButton, Dropdown, DropdownItem,Input,Label,List, Rating,Toggle, ToolbarButton } from '$lib'
  
   import componentProps from '../props/Card.json'
   // Props table
@@ -217,10 +217,10 @@ Use this user profile card example if you want to show a dropdown menu and butto
 <ExampleDiv>
   <Card padding='sm'>
     <div class="flex justify-end">
-      <Dropdown class="w-44">
-        <CloseButton slot="trigger" class="text-gray-500 dark:text-gray-400">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" /></svg>
-        </CloseButton>
+      <ToolbarButton class="dots-menu text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" /></svg>
+      </ToolbarButton>
+      <Dropdown class="w-36" triggeredBy=".dots-menu">
         <DropdownItem>Edit</DropdownItem>
         <DropdownItem>Export data</DropdownItem>
         <DropdownItem>Delete</DropdownItem>
@@ -241,10 +241,10 @@ Use this user profile card example if you want to show a dropdown menu and butto
 ```html
 <Card padding='sm'>
   <div class="flex justify-end">
-    <Dropdown class="w-44">
-      <CloseButton slot="trigger" class="text-gray-500 dark:text-gray-400">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" /></svg>
-      </CloseButton>
+    <ToolbarButton class="dots-menu text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" /></svg>
+    </ToolbarButton>
+    <Dropdown class="w-36" triggeredBy=".dots-menu">
       <DropdownItem>Edit</DropdownItem>
       <DropdownItem>Export data</DropdownItem>
       <DropdownItem>Delete</DropdownItem>

@@ -230,7 +230,7 @@ Use this example to show a list of checkbox items inside a card horizontally.
 
 Use this example to show a list of checkbox items inside a dropdown menu.
 
-<ExampleDiv class="flex justify-center h-96">
+<ExampleDiv class="flex justify-center items-start h-96">
   <Dropdown label="Dropdown search" class="w-60">
     <svelte:fragment slot="content">
       <div class="p-3">

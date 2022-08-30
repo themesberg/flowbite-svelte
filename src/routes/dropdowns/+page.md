@@ -5,7 +5,7 @@ layout: dropdownLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Avatar, Button, Checkbox, Label, Helper, Dropdown, DropdownDivider, DropdownHeader, DropdownItem,
-    Navbar,NavBrand,NavHamburger, NavUl, NavLi, Radio, Toggle, SimpleSearch, Breadcrumb, BreadcrumbItem, Badge, ToolbarButton } from '$lib'
+    Navbar,NavBrand,NavHamburger, NavUl, NavLi, Radio, Toggle, SimpleSearch, Breadcrumb, BreadcrumbItem, Badge, ToolbarButton, ChevronDown } from '$lib'
   
   import componentProps from '../props/Dropdown.json'
   import componentProps2 from '../props/DropdownDivider.json'
@@ -517,7 +517,9 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 		<NavHamburger on:click={toggle} />
 		<NavUl {hidden}>
 			<NavLi href="/" active={true}>Home</NavLi>
-      <NavLi href="#" id="nav_dropdown"><Button>Dropdown</Button></NavLi>
+      <NavLi id="nav_dropdown">
+        <button class="flex items-center gap-1" on:click|preventDefault>Dropdown <ChevronDown size="14"/></button>
+      </NavLi>
 			<NavLi href="/services">Services</NavLi>
 			<NavLi href="/pricing">Pricing</NavLi>
 			<NavLi href="/contact">Contact</NavLi>

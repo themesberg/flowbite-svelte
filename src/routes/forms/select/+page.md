@@ -150,12 +150,12 @@ Use this example if you want to create a multi-level dropdown and select compone
 
 <ExampleDiv>
   <div class="flex">
-    <Dropdown>
-      <button slot="trigger" id="states-button" data-dropdown-toggle="dropdown-states" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-500 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600" type="button">
+      <button id="states-button" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-500 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600" type="button">
         <Us size="18" class="mr-2"/>
         USA 
         <ChevronDown size="14" class="ml-2"/>
       </button>
+    <Dropdown triggeredBy="#states-button">
       <DropdownItem class="flex items-center">
         <Us size="16" class="mr-2"/>
         United States
@@ -183,31 +183,31 @@ import { Us, De, It, Cn } from 'svelte-flag-icons'
 </script>
 
 <div class="flex">
-    <Dropdown>
-      <button slot="trigger" id="states-button" data-dropdown-toggle="dropdown-states" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-500 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600" type="button">
-        <Us size="18" class="mr-2"/>
-        USA 
-        <ChevronDown size="14" class="ml-2"/>
-      </button>
-      <DropdownItem class="flex items-center">
-        <Us size="16" class="mr-2"/>
-        United States
-      </DropdownItem>
-      <DropdownItem class="flex items-center">
-        <De size="16" class="mr-2"/>
-        Germany
-      </DropdownItem>
-      <DropdownItem class="flex items-center">
-        <It size="16" class="mr-2"/>
-        Italy
-      </DropdownItem>
-      <DropdownItem class="flex items-center">
-        <Cn size="16" class="mr-2"/>
-        China
-      </DropdownItem>
-    </Dropdown>
-    <Select items={states} placeholder="Choose the state" class="!rounded-l-none"/>
-  </div>
+    <button id="states-button" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-500 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600" type="button">
+      <Us size="18" class="mr-2"/>
+      USA 
+      <ChevronDown size="14" class="ml-2"/>
+    </button>
+  <Dropdown triggeredBy="#states-button">
+    <DropdownItem class="flex items-center">
+      <Us size="16" class="mr-2"/>
+      United States
+    </DropdownItem>
+    <DropdownItem class="flex items-center">
+      <De size="16" class="mr-2"/>
+      Germany
+    </DropdownItem>
+    <DropdownItem class="flex items-center">
+      <It size="16" class="mr-2"/>
+      Italy
+    </DropdownItem>
+    <DropdownItem class="flex items-center">
+      <Cn size="16" class="mr-2"/>
+      China
+    </DropdownItem>
+  </Dropdown>
+  <Select items={states} placeholder="Choose the state" class="!rounded-l-none"/>
+</div>
 ```
 
 <Htwo label="Sizes" />
