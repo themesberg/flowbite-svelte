@@ -5,7 +5,6 @@ layout: formLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
   import { Checkbox, Breadcrumb, BreadcrumbItem, Dropdown, DropdownItem, DropdownDivider, SimpleSearch, Label, Helper, Badge, Table, TableBody, TableBodyRow, TableBodyCell, TableHead, TableHeadCell } from '$lib'
-  import { UserRemove } from 'svelte-heros'
   
   import componentProps from '../../props/Radio.json'
   import componentProps2 from '../../props/Label.json'
@@ -231,7 +230,6 @@ Use this example to show a list of checkbox items inside a card horizontally.
 
 Use this example to show a list of checkbox items inside a dropdown menu.
 
-
 <ExampleDiv class="flex justify-center h-96">
   <Dropdown label="Dropdown search" class="w-60">
     <svelte:fragment slot="content">
@@ -259,7 +257,7 @@ Use this example to show a list of checkbox items inside a dropdown menu.
         </DropdownItem>
       </ul>
       <a href="/" class="flex items-center p-3 text-sm font-medium text-red-600 bg-gray-50 border-t border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
-          <UserRemove class="w-5 h-5 mr-1" /> Delete user
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-1"><path stroke-linecap="round" stroke-linejoin="round" d="M22 10.5h-6m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" /></svg>Delete user
       </a>
     </svelte:fragment>
   </Dropdown>
@@ -291,9 +289,9 @@ Use this example to show a list of checkbox items inside a dropdown menu.
         <Checkbox tinted>Roberta Casas</Checkbox>
       </DropdownItem>
     </ul>
-    <a href="/" class="flex items-center p-3 text-sm font-medium text-red-600 bg-gray-50 border-t border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
-        <UserRemove class="w-5 h-5 mr-1" /> Delete user
-    </a>
+   <a href="/" class="flex items-center p-3 text-sm font-medium text-red-600 bg-gray-50 border-t border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-1"><path stroke-linecap="round" stroke-linejoin="round" d="M22 10.5h-6m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" /></svg>Delete user
+      </a>
   </svelte:fragment>
 </Dropdown>
 ```
