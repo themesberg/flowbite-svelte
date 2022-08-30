@@ -3,7 +3,7 @@ layout: formLayout
 ---
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../../utils'
   import { onMount } from 'svelte';
   import { Input, Label, Helper, Iconinput, Button, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
   import { AtSymbol , Mail, Search, Eye, EyeOff } from 'svelte-heros'
@@ -18,8 +18,7 @@ layout: formLayout
   // Iconinput event handler
 	let show = false;
   let show1 = false;
-	$: toggleIcon = show ? `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>`
- : `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" /></svg>`;
+
 </script>
 
 <Breadcrumb class="pb-8">
@@ -209,72 +208,66 @@ With the Iconinput component, you can add <a href="https://flowbite-svelte.verce
 </script>
 
 <div class="mb-6">
-  <Label for="input-group-1" class="block mb-2">No border small icon input</Label>
-  <Iconinput
-    noBorder
-    id="email"
-    type="email"
-    icon={Mail}
-    iconClass="h-4 w-4 mr-2 dark:text-green-500"
-    placeholder="name@flowbite.com"
-    size="sm"
-  />
-</div>
-<div class="mb-6">
-  <Label for="input-group-1" class="block mb-2">No border default icon input</Label>
-  <Iconinput
-    noBorder
-    id="email"
-    type="email"
-    icon={Mail}
-    iconClass="h-4 w-4 mr-2 dark:text-green-500"
-    placeholder="name@flowbite.com"
-  />
-</div>
-<div class="mb-6">
-  <Label for="input-group-1" class="block mb-2">No border large icon input</Label>
-  <Iconinput
-    noBorder
-    id="email"
-    type="email"
-    icon={Mail}
-    iconClass="h-4 w-4 mr-2 dark:text-green-500"
-    placeholder="name@flowbite.com"
-    size="lg"
-  />
-</div>
-<div class="mb-6">
-  <Label for="website-admin" class="block mb-2">Small icon input</Label>
-  <Iconinput
-    id="website-admin"
-    placeholder="elonmusk"
-    label="Border"
-    icon={AtSymbol}
-    iconClass="mr-2 dark:text-red-500"
-    size="sm"
-  />
-</div>
-<div class="mb-6">
-  <Label for="website-admin" class="block mb-2">Default icon input</Label>
-  <Iconinput
-    id="website-admin"
-    placeholder="elonmusk"
-    label="Border"
-    icon={AtSymbol}
-    iconClass="mr-2 dark:text-red-500"
-  />
-</div>
-<div class="mb-6">
-  <Label for="website-admin" class="block mb-2">Large icon input</Label>
-  <Iconinput
-    id="website-admin"
-    placeholder="elonmusk"
-    label="Border"
-    icon={AtSymbol}
-    iconClass="mr-2 dark:text-red-500"
-    size="lg"
-  />
-</div>
+		<Label for="input-group-1" class="block mb-2">No border small icon input</Label>
+		<Iconinput
+			noBorder
+			id="email"
+			type="email"
+			placeholder="name@flowbite.com"
+			size="sm">
+        <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+		</Iconinput>
+	</div>
+	<div class="mb-6">
+		<Label for="input-group-1" class="block mb-2">No border default icon input</Label>
+		<Iconinput
+			noBorder
+			id="email"
+			type="email"
+			placeholder="name@flowbite.com">
+      <svg aria-hidden="true" class="w-6 h-6 text-gray-500 dark:text-gray-400 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+		</Iconinput>
+	</div>
+	<div class="mb-6">
+		<Label for="input-group-1" class="block mb-2">No border large icon input</Label>
+		<Iconinput
+			noBorder
+			id="email"
+			type="email"
+			placeholder="name@flowbite.com"
+			size="lg">
+      <svg aria-hidden="true" class="w-7 h-7 text-gray-500 dark:text-gray-400 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+		</Iconinput>
+	</div>
+	<div class="mb-6">
+		<Label for="website-admin" class="block mb-2">Small icon input</Label>
+		<Iconinput
+			id="website-admin"
+			placeholder="elonmusk"
+			label="Border"
+			size="sm">
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" d="M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25" /></svg>
+		</Iconinput>
+	</div>
+	<div class="mb-6">
+		<Label for="website-admin" class="block mb-2">Default icon input</Label>
+		<Iconinput
+			id="website-admin"
+			placeholder="elonmusk"
+			label="Border">
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" d="M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25" /></svg>
+       </Iconinput>
+	</div>
+	<div class="mb-6">
+		<Label for="website-admin" class="block mb-2">Large icon input</Label>
+		<Iconinput
+			id="website-admin"
+			placeholder="elonmusk"
+			label="Border"
+			size="lg">
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" d="M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25" /></svg>
+		</Iconinput>
+	</div>
 ```
 
 <Htwo label="Iconinput click handler" />
@@ -285,28 +278,26 @@ This example shows how to add `on:click` event handler to `Iconinput`. By clicki
 <div class="mb-6">
 	<Label for="website-admin" class="block mb-2">Your password</Label>
 	<Iconinput
-  pointerEvent
-		on:click={() => (show = !show)}
 		placeholder="Your password here"
-		icon={toggleIcon}
 		type={show ? 'text' : 'password'}
-		iconClass="dark:text-red-500"
-	/>
+		iconClass="dark:text-red-500">
+      <div on:click={() => (show = !show)}>
+      {@html show ? '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>' : '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" /></svg>'}
+      </div>
+    </Iconinput>
 </div>
 <div class="mb-6">
 	<Label for="website-admin" class="block mb-2">No border</Label>
 	<Iconinput
-  noBorder
-  pointerEvent
-		on:click={() => {
-      show1 = !show1
-      console.log('clicked')
-      }}
+    noBorder
+    pointerEvent
 		placeholder="Your password here"
-		icon={toggleIcon}
 		type={show1 ? 'text' : 'password'}
-		iconClass="dark:text-red-500"
-	/>
+		iconClass="dark:text-red-500">
+      <div on:click={() => (show1 = !show1)}>
+      {@html show1 ? '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>' : '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" /></svg>'}
+      </div>
+    </Iconinput>
 </div>
 </ExampleDiv>
 
@@ -314,33 +305,30 @@ This example shows how to add `on:click` event handler to `Iconinput`. By clicki
 <script>
   let show = false;
   let show1 = false;
-	$: toggleIcon = show ? Eye : EyeOff;
 </script>
 <div class="mb-6">
 	<Label for="website-admin" class="block mb-2">Your password</Label>
 	<Iconinput
-  pointerEvent
-		on:click={() => (show = !show)}
 		placeholder="Your password here"
-		icon={toggleIcon}
 		type={show ? 'text' : 'password'}
-		iconClass="dark:text-red-500"
-	/>
+		iconClass="dark:text-red-500">
+      <div on:click={() => (show = !show)}>
+      {@html show ? '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>' : '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" /></svg>'}
+      </div>
+    </Iconinput>
 </div>
 <div class="mb-6">
 	<Label for="website-admin" class="block mb-2">No border</Label>
 	<Iconinput
-  noBorder
-  pointerEvent
-		on:click={() => {
-      show1 = !show1
-      console.log('clicked')
-      }}
+    noBorder
+    pointerEvent
 		placeholder="Your password here"
-		icon={toggleIcon}
 		type={show1 ? 'text' : 'password'}
-		iconClass="dark:text-red-500"
-	/>
+		iconClass="dark:text-red-500">
+      <div on:click={() => (show1 = !show1)}>
+      {@html show1 ? '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>' : '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" /></svg>'}
+      </div>
+    </Iconinput>
 </div>
 ```
 

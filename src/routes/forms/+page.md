@@ -145,17 +145,18 @@ With the Iconinput component, you can add <a href="https://flowbite-svelte.verce
 <ExampleDiv>
 <div class="mb-6">
   <Label for="input-group-1" class="block mb-2">Your Email</Label>
-  <Iconinput noBorder id="email" type="email" icon={Mail} iconClass="h-4 w-4 mr-2 dark:text-green-500" placeholder="name@flowbite.com" />
+  <Iconinput noBorder id="email" type="email" iconClass="h-4 w-4 mr-2 dark:text-green-500" placeholder="name@flowbite.com">
+  <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+  </Iconinput>
 </div>
 </ExampleDiv>
 
 ```html
-<script>
-  import { Iconinput } from 'flowbite-svelte'
-</script>
 <div class="mb-6">
   <Label for="input-group-1" class="block mb-2">Your Email</Label>
-  <Iconinput noBorder id="email" type="email" icon={Mail} iconClass="h-4 w-4 mr-2 dark:text-green-500" placeholder="name@flowbite.com" />
+  <Iconinput noBorder id="email" type="email" iconClass="h-4 w-4 mr-2 dark:text-green-500" placeholder="name@flowbite.com">
+  <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+  </Iconinput>
 </div>
 ```
 
@@ -164,17 +165,18 @@ With the Iconinput component, you can add <a href="https://flowbite-svelte.verce
 <ExampleDiv>
 <div class="mb-6">
   <Label for="website-admin" class="block mb-2">Username</Label>
-  <Iconinput id="website-admin" placeholder="elonmusk" label="Border" icon={AtSymbol} iconClass="h-4 w-4 mr-2 dark:text-red-500"/>
+  <Iconinput id="website-admin" placeholder="elonmusk" label="Border" iconClass="h-4 w-4 mr-2 dark:text-red-500">
+  <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+  </Iconinput>
 </div>
 </ExampleDiv>
 
 ```html
-<script>
-  import { Iconinput } from 'flowbite-svelte'
-</script>
 <div class="mb-6">
   <Label for="website-admin" class="block mb-2">Username</Label>
-  <Iconinput id="website-admin" placeholder="elonmusk" label="Border" icon={AtSymbol} iconClass="h-4 w-4 mr-2 dark:text-red-500"/>
+  <Iconinput id="website-admin" placeholder="elonmusk" label="Border" iconClass="h-4 w-4 mr-2 dark:text-red-500">
+  <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+  </Iconinput>
 </div>
 ```
 
