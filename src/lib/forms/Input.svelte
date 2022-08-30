@@ -54,5 +54,4 @@
 			'sm:text-md p-4': size === 'lg'
 		},
 		$$props.class
-	)}
-/>
+	)} />
