@@ -3,18 +3,18 @@ layout: iconLayout
 ---
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
   import { Breadcrumb, BreadcrumbItem } from '$lib'
   import { Adjustments, Bell, Briefcase,Ticket, ChartSquareBar, Camera, ChevronLeft } from "svelte-heros";
-
 </script>
 
 <Breadcrumb>
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
+  <BreadcrumbItem>Extend</BreadcrumbItem>
   <BreadcrumbItem>Icons</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Icons</h1>
+<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Guidance for using external icon libraries</h1>
 
 Flowbite-svelte uses <a href="https://github.com/shinokada/svelte-heros" target="_blank">svelte-heros</a>.
 
@@ -121,3 +121,7 @@ Use import * as Icon from `svelte-heros`.
 <Icon.ShoppingCart class="text-blue-500" />
 <Icon.Users class="text-pink-700" />
 ```
+
+<Htwo label="Examples" />
+
+<Htwo label="Alternatives" />

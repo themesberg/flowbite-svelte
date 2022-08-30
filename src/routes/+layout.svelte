@@ -11,7 +11,14 @@
 		FooterLinkGroup
 	} from '$lib';
 	import { Side, Nav, SidebarList } from 'svelte-sidebar-menu';
-	import { forms, svelteflows, topMenus, typography, utilities } from './moduleItems/+server.js';
+	import {
+		forms,
+		svelteflows,
+		topMenus,
+		typography,
+		utilities,
+		extend
+	} from './moduleItems/+server.js';
 
 	let asideClass =
 		'absolute w-auto bg-white pt-8 shadow-lg z-50 h-screen z-40 overflow-scroll dark:bg-gray-900';
@@ -154,11 +161,6 @@
 		</Nav>
 		<Nav {navClass} {navDivClass}>
 			<h3>
-				<a href="/icons">Icons</a>
-			</h3>
-		</Nav>
-		<Nav {navClass} {navDivClass}>
-			<h3>
 				<a href="/kbd">KBD</a>
 			</h3>
 		</Nav>
@@ -245,6 +247,12 @@
 			<h3 class={h3Class}>Typography</h3>
 			{#each typography as { href, name, rel }}
 				<SidebarList {href} {name} {rel} {sideBarListClass} />
+			{/each}
+		</Nav>
+		<Nav {navClass} class="pb-2">
+			<h3 class={h3Class}>Extend</h3>
+			{#each extend as { href, name, rel }}
+				<SidebarList {href} {name} {sideBarListClass} />
 			{/each}
 		</Nav>
 		<Nav {navClass} navDivClass={navDivClasslast}>

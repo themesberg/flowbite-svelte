@@ -10,6 +10,7 @@ layout: docLayout
 
 <Breadcrumb>
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
+  <BreadcrumbItem>Extend</BreadcrumbItem>
   <BreadcrumbItem>Flowbite-Svelte-Starter</BreadcrumbItem>
 </Breadcrumb>
 

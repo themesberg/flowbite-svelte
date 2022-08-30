@@ -1,7 +1,5 @@
 export const svelteflows = [
 	{ href: '/pages/getting-started', name: 'Getting Started' },
-	{ href: '/pages/flowbite-svelte-starter', name: 'Flowbite Svelte Starter' },
-	{ href: 'https://flowbite-svelte-blocks.vercel.app/', name: 'Flowbite Svelte Blocks' },
 	{ href: '/pages/about', name: 'About' },
 	{ href: '/pages/types', name: 'Types' },
 	{ href: '/pages/how-to-contribute', name: 'How to contribute' },
@@ -45,3 +43,8 @@ export const topMenus = [
 	}
 ];
 
+export const extend = [
+	{ href: '/extend/icons', name: 'Icons' },
+	{ href: '/extend/flowbite-svelte-starter', name: 'Flowbite Svelte Starter' },
+	{ href: '/extend/flowbite-svelte-blocks', name: 'Flowbite Svelte Blocks' },
+]

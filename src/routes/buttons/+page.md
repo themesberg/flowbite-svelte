@@ -3,7 +3,7 @@ layout: buttonLayout
 ---
 
 <script>
-  import {Htwo,ExampleDiv,GitHubSource,CompoDescription,TableProp, TableDefaultRow, BrandFacebook} from '../utils'
+  import {Htwo,ExampleDiv,GitHubSource,CompoDescription,TableProp, TableDefaultRow} from '../utils'
   import { Button, Spinner, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
   import { ArrowRight, Bell, ShoppingCart, ChevronRight } from "svelte-heros";
   import { goto }from '$app/navigation';

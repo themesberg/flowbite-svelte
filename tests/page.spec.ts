@@ -108,11 +108,7 @@ test('Footer index page should have h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Footer');
 });
 
-// Icons
-test('Icon page should have h1', async ({ page }) => {
-	await page.goto('/icons');
-	expect(await page.textContent('h1')).toBe('Icons');
-});
+
 
 // Kbd
 test('Kbd group page should have h1', async ({ page }) => {
