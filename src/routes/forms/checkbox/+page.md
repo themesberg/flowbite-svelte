@@ -140,6 +140,7 @@ Use this example if you want to add an anchor link inside the label of the check
 ```
 
 <Htwo label="Helper text" />
+
 Get started with this example if you want to add a secondary helper text for the checkbox component.
 
 <ExampleDiv>
@@ -153,6 +154,7 @@ Get started with this example if you want to add a secondary helper text for the
 ```
 
 <Htwo label="Bordered" />
+
 Use this example of a checkbox inside a card element to enable a larger area of clicking activation.
 
 <ExampleDiv>
@@ -230,7 +232,7 @@ Use this example to show a list of checkbox items inside a card horizontally.
 
 Use this example to show a list of checkbox items inside a dropdown menu.
 
-<ExampleDiv class="flex justify-center h-96">
+<ExampleDiv class="flex justify-center items-start h-96">
   <Dropdown label="Dropdown search" class="w-60">
     <svelte:fragment slot="content">
       <div class="p-3">
