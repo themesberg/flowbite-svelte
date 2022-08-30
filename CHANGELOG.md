@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.2](https://github.com/themesberg/flowbite-svelte/compare/v0.26.1...v0.26.2) (2022-08-30)
+
+
+### Bug Fixes
+
+* add icon page ([0f5c966](https://github.com/themesberg/flowbite-svelte/commit/0f5c96626954d4174d10b99f2934365628f2ec08))
+* Iconinput click handler example ([2f5afc7](https://github.com/themesberg/flowbite-svelte/commit/2f5afc7554a7bb43d231cc39001ea31b9deafd1c))
+* remove heros icons from buttons page ([ec81a39](https://github.com/themesberg/flowbite-svelte/commit/ec81a393f438e2285d36ed7fea787af956c6f128))
+* remove heros icons from checkbox page ([1ed983c](https://github.com/themesberg/flowbite-svelte/commit/1ed983c2b230e6309ae6882972176480f8060487))
+* remove old tab components ([a61dd72](https://github.com/themesberg/flowbite-svelte/commit/a61dd728d1eb01bdbfeb61ff3adf8f96d7a1fbde))
+* remove svelte:component from FooterIcon ([0406128](https://github.com/themesberg/flowbite-svelte/commit/04061286046845c7f5c34f56ef89013d4a610aee))
+
 ### [0.26.1](https://github.com/themesberg/flowbite-svelte/compare/v0.26.0...v0.26.1) (2022-08-29)
 
 
