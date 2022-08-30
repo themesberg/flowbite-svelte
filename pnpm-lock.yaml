@@ -24,7 +24,6 @@ specifiers:
   prism-themes: ^1.9.0
   svelte: ^3.49.0
   svelte-check: ^2.8.0
-  svelte-flag-icons: ^0.1.1
   svelte-preprocess: ^4.10.7
   svelte-sidebar-menu: ^0.8.11
   svelte2tsx: ^0.5.13
@@ -59,7 +58,6 @@ devDependencies:
   prism-themes: 1.9.0
   svelte: 3.49.0
   svelte-check: 2.9.0_mllf5aeob3alhqyhywbspjtrfy
-  svelte-flag-icons: 0.1.1
   svelte-preprocess: 4.10.7_l7q3nrlpy44fkjv4575d7e5a4m
   svelte-sidebar-menu: 0.8.11
   svelte2tsx: 0.5.16_uslzfc62di2n2otc2tvfklnwji
@@ -2222,10 +2220,6 @@ packages:
       - sass
       - stylus
       - sugarss
-    dev: true
-
-  /svelte-flag-icons/0.1.1:
-    resolution: {integrity: sha512-0A39JTRrT+/fg1ZGn8Rpta628i1v0i4eDY8P/Lk7Eg2MRR4ENQT/lwdEfnPc1mYbRMK4W1gw5mcYBFcjPSr1OQ==}
     dev: true
 
   /svelte-hmr/0.14.12_svelte@3.49.0:
