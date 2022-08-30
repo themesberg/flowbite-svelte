@@ -17,12 +17,17 @@ layout: iconLayout
 
 Instead of using SVG icons, using an icon library simplifies the code. You can uses <A href="https://www.npmjs.com/package/svelte-heros-v2" target="_blank">Svelte-Heros-v2</A> and <A href="https://svelte-svg-icons.vercel.app/" target="_blank">other icon sets</A> for Flowbite-Svelte.
 
+Svelte-Heros-v2 icons allow you to change the icon color, size, and other props.
 
-Svelte-Heros-v2 icons allow you to change the icon color by using HEX CSS code and icon size by using TailwindCSS.
+<Htwo label="Installation" />
+
+```sh
+npm i -D svelte-heros-v2
+```
 
 <Htwo label="Color and size" />
 
-If you want to change the color with Tailwind CSS, add it to class prop. To change the icon size use the `size` prop or use class like, `class="h-24 w-24"`.
+If you want to change the color with Tailwind CSS, add it in the class prop. To change the icon size use the `size` prop or use class like, `class="h-24 w-24"`.
 
 Use `dark:` to specify the dark mode color for icons.
 

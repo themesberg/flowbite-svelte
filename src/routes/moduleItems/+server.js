@@ -46,5 +46,5 @@ export const topMenus = [
 export const extend = [
 	{ href: '/extend/icons', name: 'Icons' },
 	{ href: '/extend/flowbite-svelte-starter', name: 'Flowbite Svelte Starter' },
-	{ href: '/extend/flowbite-svelte-blocks', name: 'Flowbite Svelte Blocks' },
+	{ href: 'https://flowbite-svelte-blocks.vercel.app/', name: 'Flowbite Svelte Blocks' },
 ]
