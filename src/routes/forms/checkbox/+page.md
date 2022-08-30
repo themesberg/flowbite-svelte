@@ -140,6 +140,7 @@ Use this example if you want to add an anchor link inside the label of the check
 ```
 
 <Htwo label="Helper text" />
+
 Get started with this example if you want to add a secondary helper text for the checkbox component.
 
 <ExampleDiv>
@@ -153,6 +154,7 @@ Get started with this example if you want to add a secondary helper text for the
 ```
 
 <Htwo label="Bordered" />
+
 Use this example of a checkbox inside a card element to enable a larger area of clicking activation.
 
 <ExampleDiv>
