@@ -36,7 +36,7 @@ layout: dropdownLayout
   let dropdownOpen = false;
 </script>
 
-<Breadcrumb>
+<Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>Dropdown</BreadcrumbItem>
 </Breadcrumb>

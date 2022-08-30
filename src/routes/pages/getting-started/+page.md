@@ -7,7 +7,7 @@ layout: docLayout
   
 </script>
 
-<Breadcrumb>
+<Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>Getting started</BreadcrumbItem>
 </Breadcrumb>

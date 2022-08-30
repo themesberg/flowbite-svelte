@@ -44,7 +44,7 @@ layout: cardLayout
   let tabs = [{name: 'About', id:'about'},{name: 'Services', id:'services'},{name: 'Statistics', id:'stats'},];
 </script>
 
-<Breadcrumb>
+<Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>Card</BreadcrumbItem>
 </Breadcrumb>

@@ -17,7 +17,7 @@ layout: modalLayout
   let placement;
 </script>
 
-<Breadcrumb>
+<Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>Popover</BreadcrumbItem>
 </Breadcrumb>

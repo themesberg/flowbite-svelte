@@ -18,7 +18,7 @@ layout: tooltipLayout
   let placement = 'top';
 </script>
 
-<Breadcrumb>
+<Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>Tooltips</BreadcrumbItem>
 </Breadcrumb>

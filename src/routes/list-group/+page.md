@@ -37,7 +37,7 @@ layout: listgroupLayout
   ];
 </script>
 
-<Breadcrumb>
+<Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem href="/footer">List group</BreadcrumbItem>
 </Breadcrumb>

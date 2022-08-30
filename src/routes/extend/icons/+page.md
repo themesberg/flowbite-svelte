@@ -3,23 +3,22 @@ layout: iconLayout
 ---
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
-  import { Breadcrumb, BreadcrumbItem, A } from '$lib'
-  import { Adjustments, Bell, Briefcase,Ticket, ChartSquareBar, Camera, ChevronLeft } from "svelte-heros";
+  import { Htwo } from '../../utils'
+  import { Breadcrumb, BreadcrumbItem, A, Heading } from '$lib'
 </script>
 
-<Breadcrumb>
+<Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>Extend</BreadcrumbItem>
   <BreadcrumbItem>Icons</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Guidance for using external icon libraries</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Guidance for using external icon libraries</Heading>
 
-Using an icon library simplifies the code. You can uses <a href="https://www.npmjs.com/package/svelte-heros-v2" target="_blank">Svelte-Heros-v2</a> and <a href="https://svelte-svg-icons.vercel.app/" target="_blank">other icon sets</a> for Flowbite-Svelte.
+Instead of using SVG icons, using an icon library simplifies the code. You can uses <A href="https://www.npmjs.com/package/svelte-heros-v2" target="_blank">Svelte-Heros-v2</A> and <A href="https://svelte-svg-icons.vercel.app/" target="_blank">other icon sets</A> for Flowbite-Svelte.
 
 
-Svelte-Heros-v2 icons allow you to change icon size and color by using HEX CSS code or TailwindCSS/Flowbite.
+Svelte-Heros-v2 icons allow you to change the icon color by using HEX CSS code and icon size by using TailwindCSS.
 
 <Htwo label="Color and size" />
 
@@ -27,40 +26,26 @@ If you want to change the color with Tailwind CSS, add it to class prop. To chan
 
 Use `dark:` to specify the dark mode color for icons.
 
-<ExampleDiv class="flex justify-center">
-<Adjustments size="30" class="text-blue-700 dark:text-red-700" />
-<Bell size="30" class="text-red-700 dark:text-green-700" />
-<Briefcase  size="30" class="text-green-700 dark:text-indigo-700" />
-<ChartSquareBar size="30" class="text-purple-700 dark:text-pink-700" />
-<Ticket size="30" class="text-pink-700 dark:text-indigo-700" />
-<Camera size="30" class="text-indigo-700 dark:text-gray-100" />
-<Bell size="30" class="text-gray-700 dark:text-white" />
-<ChevronLeft
-  size="30" class="text-yellow-700 dark:text-white"
-/>
-</ExampleDiv>
 
 ```html
 <script>
 import {
-  Adjustments,
+  AdjustmentsVertical,
   Bell,
   Briefcase,
   Ticket,
-  ChartSquareBar,
+  ChartBarSquare,
   Camera,
-  Bell,
   ChevronLeft,
-} from "svelte-heros";
+} from "svelte-heros-v2";
 </script>
 
-<Adjustments size="30" class="text-blue-700 dark:text-red-700" />
+<AdjustmentsVertical size="30" class="text-blue-700 dark:text-red-700" />
 <Bell size="30" class="text-red-700 dark:text-green-700" />
 <Briefcase  size="30" class="text-green-700 dark:text-indigo-700" />
-<ChartSquareBar size="30" class="text-purple-700 dark:text-pink-700" />
+<ChartBarSquare size="30" class="text-purple-700 dark:text-pink-700" />
 <Ticket size="30" class="text-pink-700 dark:text-indigo-700" />
 <Camera size="30" class="text-indigo-700 dark:text-gray-100" />
-<Bell size="30" class="text-gray-700 dark:text-white" />
 <ChevronLeft
   size="30" class="text-yellow-700 dark:text-white"
 />
@@ -68,14 +53,9 @@ import {
 
 You can change icon colors with HEX color code by using the `color` prop.
 
-<ExampleDiv class="flex justify-center">
-<Adjustments size="30"  color="#ff0000" />
-<Bell   color="#10ff00" />
-<Briefcase  size="30" color="#001dff" />
-</ExampleDiv>
 
 ```html
-<Adjustments size="30"  color="#ff0000" />
+<AdjustmentsVertical size="30"  color="#ff0000" />
 <Bell   color="#10ff00" />
 <Briefcase  size="30" color="#001dff" />
 ```
@@ -85,7 +65,7 @@ You can change icon colors with HEX color code by using the `color` prop.
 Use the `aria-label` prop to change `aria-label` attribute. All icons have aria-label. For example, `Adjustments` has `aria-label="adjustments"`.
 
 ```html
-<Adjustments aria-label="adjustments icon" />>
+<AdjustmentsVertical aria-label="adjustments icon" />>
 ```
 
 <Htwo label="Passing down other attributes" />
@@ -93,27 +73,28 @@ Use the `aria-label` prop to change `aria-label` attribute. All icons have aria-
 You can pass other attibutes as well.
 
 ```html
-<Adjustments tabindex="0" />
+<AdjustmentsVertical tabindex="0" />
 ```
 
 <Htwo label="Import all" />
 
-Use import * as Icon from `svelte-heros`.
+Use import * as Icon from `svelte-heros-v2`.
 
 ```html
 <script>
-	import * as Icon from 'svelte-heros';
+	import * as Icon from 'svelte-heros-v2';
 </script>
 
 <Icon.Cog />
 <Icon.Calendar />
 
 <h1>Size</h1>
-<Icon.Database size="30" />
-<Icon.Filter size="40" />
+
+<Icon.CircleStack size="30" />
+<Icon.Funnel size="40" />
 
 <h1>CSS HEX color</h1>
-<Icon.Login color="#c61515" size="40" />
+<Icon.Bookmark color="#c61515" size="40" />
 
 <h1>Tailwind CSS</h1>
 <Icon.ShoppingCart class="text-blue-500" />
@@ -122,7 +103,129 @@ Use import * as Icon from `svelte-heros`.
 
 <Htwo label="Examples" />
 
+Here are some of examples using Svelte-Heros-v2.
+
+<Heading tag="h3"><A href="https://hero2-with-flowbite-svelte.vercel.app/accordion" textSize="text-2xl">Accordion</A></Heading>
+
+```html
+<script>
+	import { AccordionItem } from 'flowbite-svelte';
+	import { ArrowDownCircle, ArrowUpCircle } from 'svelte-heros-v2';
+</script>
+
+<AccordionItem id="1">
+	<h2 slot="header">Header 2-1</h2>
+	<div slot="arrowup">
+		<ArrowUpCircle />
+	</div>
+	<div slot="arrowdown">
+		<ArrowDownCircle />
+	</div>
+	<div slot="body">
+		<p class="mb-2 text-gray-500 dark:text-gray-400">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
+			explicabo ...
+		</p>
+	</div>
+</AccordionItem>
+<AccordionItem id="2">
+	<h2 slot="header">Header 2-2</h2>
+	<div slot="arrowup">
+		<ArrowUpCircle />
+	</div>
+	<div slot="arrowdown">
+		<ArrowDownCircle />
+	</div>
+	<div slot="body">
+		<p class="mb-2 text-gray-500 dark:text-gray-400">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
+			explicabo ...
+		</p>
+	</div>
+</AccordionItem>
+```
+
+<Heading tag="h3"><A href="https://hero2-with-flowbite-svelte.vercel.app/alert" textSize="text-2xl">Alert</A></Heading>
+
+```html
+<script>
+	import { Alert } from 'flowbite-svelte';
+	import { InformationCircle } from 'svelte-heros-v2';
+</script>
+
+<Alert class="mb-2">
+	<svelte:fragment slot="icon">
+		<InformationCircle class="text-blue-700 flex-shrink-0 w-5 h-5 mr-3" />
+	</svelte:fragment>
+	<span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
+</Alert>
+<Alert color="red" class="mb-2">
+	<svelte:fragment slot="icon">
+		<InformationCircle class="text-red-700 flex-shrink-0 w-5 h-5 mr-3" />
+	</svelte:fragment>
+	<span class="font-medium">Danger alert!</span> Change a few things up and try submitting again.
+</Alert>
+<Alert color="green" class="mb-2">
+	<svelte:fragment slot="icon">
+		<InformationCircle class="text-green-700 flex-shrink-0 w-5 h-5 mr-3" />
+	</svelte:fragment>
+	<span class="font-medium">Success alert!</span> Change a few things up and try submitting again.
+</Alert>
+<Alert color="yellow" class="mb-2">
+	<svelte:fragment slot="icon">
+		<InformationCircle class="text-yellow-700 flex-shrink-0 w-5 h-5 mr-3" />
+	</svelte:fragment>
+	<span class="font-medium">Warning alert!</span> Change a few things up and try submitting again.
+</Alert>
+<Alert color="gray" class="mb-2">
+	<svelte:fragment slot="icon">
+		<InformationCircle class="text-gray-500 flex-shrink-0 w-5 h-5 mr-3" />
+	</svelte:fragment>
+	<span class="font-medium">Dark alert!</span> Change a few things up and try submitting again.
+</Alert>
+```
+
+<Heading tag="h3"><A href="https://hero2-with-flowbite-svelte.vercel.app/breadcrumb" textSize="text-2xl">Breadcrumb</A></Heading>
+
+```html
+<script>
+  import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
+  import { Home, ChevronDoubleRight } from 'svelte-heros-v2';
+</script>
+
+<Breadcrumb
+  aria-label="Solid background breadcrumb example"
+  class="bg-gray-50 py-3 px-5 dark:bg-gray-900">
+  <BreadcrumbItem href="/" home>
+    <svelte:fragment slot="icon">
+      <Home />
+    </svelte:fragment>Home</BreadcrumbItem>
+  <BreadcrumbItem href="/">
+    <svelte:fragment slot="icon">
+      <ChevronDoubleRight />
+    </svelte:fragment>
+    Projects</BreadcrumbItem>
+  <BreadcrumbItem>
+    <svelte:fragment slot="icon">
+      <ChevronDoubleRight />
+    </svelte:fragment>
+    Flowbite Svelte</BreadcrumbItem>
+</Breadcrumb>
+```
+
+<Heading tag="h3" class="mb-2">Find out more examples:</Heading>
+
+- <A href="https://hero2-with-flowbite-svelte.vercel.app/carousel">Carousel</A>
+- <A href="https://hero2-with-flowbite-svelte.vercel.app/hr">HR</A>
+- <A href="https://hero2-with-flowbite-svelte.vercel.app/link">Link</A>
+- <A href="https://hero2-with-flowbite-svelte.vercel.app/textarea">Textarea</A>
+- <A href="https://hero2-with-flowbite-svelte.vercel.app/toast">Toast</A>
+- <A href="https://hero2-with-flowbite-svelte.vercel.app/toolbar">Toolbar</A>
+
+
 <Htwo label="Alternatives" />
+
+These icon sets have the same functionalities mentioned above.
 
 - <A href="https://www.npmjs.com/package/svelte-awesome-icons">Svelte-Awesome-Icons</A>
 - <A href="https://www.npmjs.com/package/svelte-bootstrap-svg-icons">Svelte-Bootstrap-svg-Icons</A>

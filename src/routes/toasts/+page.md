@@ -31,7 +31,7 @@ layout: toastLayout
   }
 </script>
 
-<Breadcrumb>
+<Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>Toasts</BreadcrumbItem>
 </Breadcrumb>

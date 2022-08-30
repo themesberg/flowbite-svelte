@@ -9,7 +9,7 @@ layout: typographyLayout
 </script>
 
 
-<Breadcrumb>
+<Breadcrumb class="pb-8">
 	<BreadcrumbItem href="/" home >Home</BreadcrumbItem>
 	<BreadcrumbItem>Typography</BreadcrumbItem>
 </Breadcrumb>

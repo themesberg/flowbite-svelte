@@ -9,7 +9,7 @@ layout: docLayout
 
 </script>
 
-<Breadcrumb>
+<Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>Extend</BreadcrumbItem>
   <BreadcrumbItem>Flowbite-Svelte-Blocks</BreadcrumbItem>

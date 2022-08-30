@@ -21,7 +21,7 @@ layout: buttongroupLayout
 	}
 </script>
 
-<Breadcrumb>
+<Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>Button groups</BreadcrumbItem>
 </Breadcrumb>

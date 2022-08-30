@@ -8,7 +8,7 @@ layout: doc
   
 </script>
 
-<Breadcrumb>
+<Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>License</BreadcrumbItem>
 </Breadcrumb>

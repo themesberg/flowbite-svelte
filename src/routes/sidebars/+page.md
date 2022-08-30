@@ -39,7 +39,7 @@ layout: sidebarLayout
   
 </script>
 
-<Breadcrumb>
+<Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>Sidebars</BreadcrumbItem>
 </Breadcrumb>

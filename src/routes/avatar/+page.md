@@ -17,7 +17,7 @@ layout: avatarLayout
   let name;
 </script>
 
-<Breadcrumb>
+<Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>Avatar</BreadcrumbItem>
 </Breadcrumb>

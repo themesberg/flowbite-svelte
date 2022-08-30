@@ -22,7 +22,7 @@ layout: formLayout
   }
 </script>
 
-<Breadcrumb>
+<Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem href="/forms/" rel="external">Forms</BreadcrumbItem>
   <BreadcrumbItem>File input</BreadcrumbItem>
