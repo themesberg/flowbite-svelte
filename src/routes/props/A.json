@@ -1,1 +1,1 @@
-{"props":[["href","string ","'#'"],["textColor","string ","'text-blue-600 dark:text-blue-500'"],["aClass","string ","'inline-flex items-center text-lg  hover:underline'"]]}
+{"props":[["href","string ","'#'"],["textColor","string ","'text-blue-600 dark:text-blue-500'"],["aClass","string ","'inline-flex items-center hover:underline'"],["textSize","string ","'text-lg'"]]}

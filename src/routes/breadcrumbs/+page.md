@@ -74,7 +74,11 @@ You can alternatively also use the breadcrumb components with a solid background
 </ExampleDiv>
 
 ```html
-
+<Breadcrumb aria-label="Solid background breadcrumb example" solid>
+  <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
+  <BreadcrumbItem href="/">Projects</BreadcrumbItem>
+  <BreadcrumbItem>Flowbite Svelte</BreadcrumbItem>
+</Breadcrumb>
 ```
 
 <Htwo label="Icons" />
