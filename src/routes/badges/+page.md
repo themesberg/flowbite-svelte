@@ -4,7 +4,7 @@ layout: badgeLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Badge, Button, Breadcrumb, BreadcrumbItem } from '$lib'
+  import { Badge, Button, Breadcrumb, BreadcrumbItem, Heading } from '$lib'
   
   import componentProps from '../props/Badge.json'
   // Props table
@@ -20,7 +20,7 @@ layout: badgeLayout
   <BreadcrumbItem>Badges</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Badges</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Badges</Heading>
 
 <CompoDescription>Use Tailwind CSS badges as elements to show counts or labels separately or inside other components</CompoDescription>
 

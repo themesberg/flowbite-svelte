@@ -4,7 +4,7 @@ layout: carouselLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Carousel, CarouselTransition, Breadcrumb, BreadcrumbItem } from '$lib'
+  import { Carousel, CarouselTransition, Breadcrumb, BreadcrumbItem, Heading } from '$lib'
    import { quartInOut, sineInOut, bounceInOut, quintOut } from 'svelte/easing';
   import { images } from './imageData/+server.js';
   import componentProps from '../props/Carousel.json'
@@ -38,7 +38,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Carousels</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Carousel</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Carousel</Heading>
 
 <CompoDescription>Use the carousel component to slide through multiple elements and images using custom controls, indicators, intervals, and options</CompoDescription>
 

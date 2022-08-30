@@ -4,8 +4,7 @@ layout: darkmodeLayout
 
 <script>
   import {Htwo,TableProp, TableDefaultRow} from '../utils'
-  import { Breadcrumb, BreadcrumbItem } from '$lib'
-  ;
+  import { Breadcrumb, BreadcrumbItem, Heading } from '$lib'
   
   import componentProps from '../props/DarkMode.json'
   // Props table
@@ -21,7 +20,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Dark mode</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Dark mode</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Dark mode</Heading>
 
 <p class=" dark:text-white py-8">The best place to import is in the __layout.svelte.</p>
 

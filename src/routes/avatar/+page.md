@@ -4,7 +4,7 @@ layout: avatarLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider, Breadcrumb, BreadcrumbItem, Tooltip } from '$lib'
+  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider, Breadcrumb, BreadcrumbItem, Tooltip, Heading } from '$lib'
 
   import alertProp from '../props/Avatar.json'
   // Props table
@@ -22,7 +22,8 @@ layout: avatarLayout
   <BreadcrumbItem>Avatar</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Avatar</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Avatar</Heading>
+
 
 <CompoDescription>Use the avatar component to show a visual representation of a user profile using an image element or SVG object based on multiple styles and sizes</CompoDescription>
 

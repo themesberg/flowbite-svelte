@@ -4,7 +4,7 @@ layout: breadcrumbLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Breadcrumb, BreadcrumbItem } from '$lib'
+  import { Breadcrumb, BreadcrumbItem, Heading } from '$lib'
   
   import componentProps from '../props/Breadcrumb.json'
   import componentProps2 from '../props/BreadcrumbItem.json'
@@ -20,7 +20,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Breadcrumb</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Breadcrumb</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Breadcrumb</Heading>
 
 <CompoDescription>Show the location of the current page in a hierarchical structure using the breadcrumb components</CompoDescription>
 

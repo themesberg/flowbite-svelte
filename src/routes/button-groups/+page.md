@@ -4,7 +4,7 @@ layout: buttongroupLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Button, ButtonGroup, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
+  import { Button, ButtonGroup, Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
 
   import componentProps from '../props/ButtonGroup.json'
 
@@ -25,7 +25,7 @@ layout: buttongroupLayout
   <BreadcrumbItem>Button groups</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Button group</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Button group</Heading>
 
 <CompoDescription>Button groups are a Tailwind CSS powered set of buttons sticked together in a horizontal line</CompoDescription>
 

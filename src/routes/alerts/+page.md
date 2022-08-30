@@ -4,7 +4,7 @@ layout: alertLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Alert, Breadcrumb, BreadcrumbItem, Button, Badge } from '$lib'
+  import { Alert, Breadcrumb, BreadcrumbItem, Button, Badge, Heading } from '$lib'
 
   import componentProps from '../props/Alert.json'
   // Props table
@@ -26,7 +26,7 @@ layout: alertLayout
   <BreadcrumbItem>Alerts</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Alert</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Alert</Heading>
 
 <CompoDescription>Show contextual information to your users using alert elements based on Tailwind CSS</CompoDescription>
 

@@ -4,7 +4,7 @@ layout: buttonLayout
 
 <script>
   import {Htwo,ExampleDiv,GitHubSource,CompoDescription,TableProp, TableDefaultRow} from '../utils'
-  import { Button, Spinner, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
+  import { Button, Spinner, Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
   import { goto }from '$app/navigation';
   
   import componentProps from '../props/Button.json'
@@ -32,7 +32,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Buttons</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Button</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Button</Heading>
 
 <CompoDescription>Use the button component inside forms, as links, social login, payment options with support for multiple styles, colors, sizes, gradients, and shadows</CompoDescription>
 

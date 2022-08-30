@@ -4,7 +4,7 @@ layout: cardLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Avatar, Badge, Button, Breadcrumb, BreadcrumbItem, Card, Checkbox,CloseButton, Dropdown, DropdownItem,Input,Label,List, Rating,Toggle, ToolbarButton } from '$lib'
+  import { Avatar, Badge, Button, Breadcrumb, BreadcrumbItem, Card, Checkbox,CloseButton, Dropdown, DropdownItem,Input,Label,List, Rating,Toggle, ToolbarButton, Heading } from '$lib'
  
   import componentProps from '../props/Card.json'
   // Props table
@@ -49,7 +49,7 @@ layout: cardLayout
   <BreadcrumbItem>Card</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Card</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Card</Heading>
 
 <CompoDescription>Get started with a large variety of Tailwind CSS card examples for your web project</CompoDescription>
 
