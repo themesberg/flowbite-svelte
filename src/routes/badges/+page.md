@@ -5,7 +5,6 @@ layout: badgeLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Badge, Button, Breadcrumb, BreadcrumbItem } from '$lib'
-  import { Clock, Check, Mail } from 'svelte-heros';
   
   import componentProps from '../props/Badge.json'
   // Props table
@@ -116,13 +115,14 @@ You can also use badges as anchor elements to link to another page.
 You can also use SVG icons inside the badge elements.
 
 <ExampleDiv> <!-- Don't use flex. You won't see the size difference -->
-<Badge color="dark" class="mr-2"><Clock class="mr-1 w-3 h-3"/>3 days ago</Badge>
-<Badge large={true}><Clock class="mr-1 w-4 h-4"/>2 minutes ago</Badge>
+<Badge color="dark" class="mr-2">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-1 w-3 h-3"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>3 days ago</Badge>
+<Badge large={true}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-1 w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>2 minutes ago</Badge>
 </ExampleDiv>
 
 ```html
-<Badge color="dark"><Clock class="mr-1 w-3 h-3"/>3 days ago</Badge>
-<Badge large={true}><Clock class="mr-1 w-4 h-4"/>2 minutes ago</Badge>
+<Badge color="dark"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-1 w-3 h-3"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>3 days ago</Badge>
+<Badge large={true}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-1 w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>2 minutes ago</Badge>
 ```
 
 <Htwo label="Notification badge" />
@@ -131,13 +131,13 @@ You can also use the badge elements as index. Remember to add the `relative` cla
 
 <ExampleDiv class="flex gap-4">
 <Button class="relative" size='sm'>
-  <Mail class="w-7 h-7" />
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
   <span class="sr-only">Notifications</span>
   <Badge rounded index color="!red">20</Badge>
 </Button>
 
 <Button class="relative" size='sm'>
-  <Mail class="w-7 h-7" />
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
   <span class="sr-only">Notifications</span>
   <Badge large rounded index color="!green">20</Badge>
 </Button>
@@ -145,13 +145,13 @@ You can also use the badge elements as index. Remember to add the `relative` cla
 
 ```html
 <Button class="relative" size='sm'>
-  <Mail class="w-7 h-7" />
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
   <span class="sr-only">Notifications</span>
   <Badge rounded index color="!red">20</Badge>
 </Button>
 
 <Button class="relative" size='sm'>
-  <Mail class="w-7 h-7" />
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
   <span class="sr-only">Notifications</span>
   <Badge large rounded index color="!green">20</Badge>
 </Button>
@@ -178,17 +178,17 @@ Use this example to add a badge inside a button component for a count indicator.
 Alternatively you can also use badges which indicate only a SVG icon.
 
 <ExampleDiv> <!-- Don't use flex. You won't see the size difference -->
-<Badge rounded ><Check class="w-3 h-3"/></Badge>
-<Badge rounded color="dark" ><Check class="w-3 h-3"/></Badge>
-<Badge rounded large ><Check class="w-4 h-4"/></Badge>
-<Badge rounded large color="dark" ><Check class="w-4 h-4"/></Badge>
+<Badge rounded ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></Badge>
+<Badge rounded color="dark" ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></Badge>
+<Badge rounded large ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></Badge>
+<Badge rounded large color="dark" ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></Badge>
 </ExampleDiv>
 
 ```html
-<Badge rounded ><Check class="w-3 h-3"/></Badge>
-<Badge rounded color="dark" ><Check class="w-3 h-3"/></Badge>
-<Badge rounded large ><Check class="w-4 h-4"/></Badge>
-<Badge rounded large color="dark" ><Check class="w-4 h-4"/></Badge>
+<Badge rounded ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></Badge>
+<Badge rounded color="dark" ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-3 h-3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></Badge>
+<Badge rounded large ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></Badge>
+<Badge rounded large color="dark" ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></Badge>
 ```
 
 <Htwo label="Dismissable badges" />

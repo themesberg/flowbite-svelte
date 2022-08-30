@@ -6,7 +6,6 @@ layout: formLayout
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { onMount } from 'svelte';
 	import { Input, Label, Helper, Iconinput, Fileupload, Textarea, Select, Checkbox, Radio, Toggle, Breadcrumb, BreadcrumbItem, Heading } from '$lib'
-  import { AtSymbol, Mail, Search } from 'svelte-heros'
   import componentProps from '../props/Input.json'
   import componentProps2 from '../props/Label.json'
 	import componentProps3 from '../props/Helper.json'

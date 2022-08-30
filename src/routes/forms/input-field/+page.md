@@ -6,7 +6,6 @@ layout: formLayout
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../../utils'
   import { onMount } from 'svelte';
   import { Input, Label, Helper, Iconinput, Button, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
-  import { AtSymbol , Mail, Search, Eye, EyeOff } from 'svelte-heros'
 
   import componentProps1 from '../../props/Input.json'
   let items1 = componentProps1.props
@@ -366,7 +365,9 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
 <form>
   <Label for="search" class="block mb-2">Your Email</Label>
   <div class="relative">
-  <Iconinput noBorder id="search" icon={Search} iconClass="h-5 w-5 mr-2 dark:text-green-500" placeholder="Search" class="p-4" />
+  <Iconinput noBorder id="search" placeholder="Search" class="p-4">
+  <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+  </Iconinput>
   <Button textSize="text-sm" class="text-white absolute right-2.5 bottom-2" type="submit">Submit</Button>
   </div>
 </form>

@@ -6,7 +6,6 @@ layout: dropdownLayout
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Avatar, Button, Checkbox, Label, Helper, Dropdown, DropdownDivider, DropdownHeader, DropdownItem,
     Navbar,NavBrand,NavHamburger, NavUl, NavLi, Radio, Toggle, SimpleSearch, Breadcrumb, BreadcrumbItem, Badge, ToolbarButton } from '$lib'
-  import { Home, ChevronDown, DotsHorizontal, DotsVertical, UserAdd, UserRemove } from 'svelte-heros';
   
   import componentProps from '../props/Dropdown.json'
   import componentProps2 from '../props/DropdownDivider.json'
@@ -593,7 +592,7 @@ This example can be used when you want to show a long list of items that won’t
         </DropdownItem>
       </ul>
       <a href="/" class="flex items-center p-3 text-sm font-medium text-blue-600 bg-gray-50 border-t border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-blue-500 hover:underline">
-          <UserAdd class="h-5 w-5 mr-1"/>Add new user
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 mr-1"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" /></svg>Add new user
       </a>
     </svelte:fragment>
   </Dropdown>
@@ -626,7 +625,7 @@ This example can be used when you want to show a long list of items that won’t
         </DropdownItem>
       </ul>
     <a href="/" class="flex items-center p-3 text-sm font-medium text-blue-600 bg-gray-50 border-t border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-blue-500 hover:underline">
-        <UserAdd class="h-5 w-5 mr-1"/>Add new user
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 mr-1"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" /></svg>Add new user
     </a>
   </svelte:fragment>
 </Dropdown>
@@ -663,7 +662,7 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
       </DropdownItem>
     </ul>
     <a href="/" class="flex items-center p-3 text-sm font-medium text-red-600 bg-gray-50 border-t border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
-        <UserRemove class="w-5 h-5 mr-1" />Delete user
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-1"><path stroke-linecap="round" stroke-linejoin="round" d="M22 10.5h-6m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" /></svg>Delete user
     </a>
   </svelte:fragment>
 </Dropdown>
@@ -699,7 +698,7 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
       </DropdownItem>
     </ul>
     <a href="/" class="flex items-center p-3 text-sm font-medium text-red-600 bg-gray-50 border-t border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
-        <UserRemove class="w-5 h-5 mr-1" />Delete user
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-1"><path stroke-linecap="round" stroke-linejoin="round" d="M22 10.5h-6m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" /></svg>Delete user
     </a>
   </svelte:fragment>
 </Dropdown>
@@ -711,10 +710,10 @@ Use the menu icon trigger element on components such as cards as an alternative 
 
 <ExampleDiv class="flex justify-center items-start gap-2 h-60">
   <ToolbarButton class="dots-menu text-gray-900 bg-white dark:text-white dark:bg-gray-800">
-    <DotsHorizontal class="w-5 h-5"/>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" /></svg>
   </ToolbarButton>
   <ToolbarButton class="dots-menu text-gray-900 bg-white dark:text-white dark:bg-gray-800">
-    <DotsVertical class="w-5 h-5"/>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" /></svg>
   </ToolbarButton>
   <Dropdown class="w-44" triggeredBy=".dots-menu">
     <DropdownItem>Dashboard</DropdownItem>
@@ -727,10 +726,10 @@ Use the menu icon trigger element on components such as cards as an alternative 
 
 ```html
   <ToolbarButton class="dots-menu text-gray-900 bg-white dark:text-white dark:bg-gray-800">
-    <DotsHorizontal class="w-5 h-5"/>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" /></svg>
   </ToolbarButton>
   <ToolbarButton class="dots-menu text-gray-900 bg-white dark:text-white dark:bg-gray-800">
-    <DotsVertical class="w-5 h-5"/>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" /></svg>
   </ToolbarButton>
   <Dropdown class="w-44" triggeredBy=".dots-menu">
     <DropdownItem>Dashboard</DropdownItem>

@@ -52,7 +52,7 @@ npm run dev
 <p>Install flowbite, flowbite-svelte, and other dependencies:</p>
 
 ```sh
-npm i -D flowbite-svelte svelte-heros @floating-ui/dom classnames @popperjs/core
+npm i -D flowbite flowbite-svelte @floating-ui/dom classnames @popperjs/core
 ```
 
 <p>Update tailwind.config.cjs:</p>
