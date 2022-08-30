@@ -25,7 +25,7 @@ specifiers:
   svelte: ^3.49.0
   svelte-check: ^2.8.0
   svelte-preprocess: ^4.10.7
-  svelte-sidebar-menu: ^0.8.11
+  svelte-sidebar-menu: ^0.9.11
   svelte2tsx: ^0.5.13
   tailwindcss: ^3.1.8
   tslib: ^2.4.0
@@ -59,7 +59,7 @@ devDependencies:
   svelte: 3.49.0
   svelte-check: 2.9.0_mllf5aeob3alhqyhywbspjtrfy
   svelte-preprocess: 4.10.7_l7q3nrlpy44fkjv4575d7e5a4m
-  svelte-sidebar-menu: 0.8.11
+  svelte-sidebar-menu: 0.9.11
   svelte2tsx: 0.5.16_uslzfc62di2n2otc2tvfklnwji
   tailwindcss: 3.1.8_postcss@8.4.16
   tslib: 2.4.0
@@ -2284,8 +2284,9 @@ packages:
       typescript: 4.7.4
     dev: true
 
-  /svelte-sidebar-menu/0.8.11:
-    resolution: {integrity: sha512-HKegQyHLc+tFTIhuxYgATKIuqmIdTjLdg40hJEQgC/dpPWC/aXdkSGq76gAFmCLsSIyig6S1QUJ5ug8C/tKWjw==}
+  /svelte-sidebar-menu/0.9.11:
+    resolution: {integrity: sha512-6es1jSp0KxS0HIWg121Ibp/Kp78f/TVK5E/4qnkkt7zP7eoz93oe4WZegSVQrWUPmWt2UZKZxRGOaWi2mLOI9w==}
+    engines: {node: '>=16.0.0', npm: '>=7.0.0'}
     dev: true
 
   /svelte/3.49.0:

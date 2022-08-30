@@ -44,7 +44,7 @@
 		"svelte": "^3.49.0",
 		"svelte-check": "^2.8.0",
 		"svelte-preprocess": "^4.10.7",
-		"svelte-sidebar-menu": "^0.8.11",
+		"svelte-sidebar-menu": "^0.9.11",
 		"svelte2tsx": "^0.5.13",
 		"tailwindcss": "^3.1.8",
 		"tslib": "^2.4.0",
