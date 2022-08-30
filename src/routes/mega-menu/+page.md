@@ -3,7 +3,7 @@ layout: megamenuLayout
 ---
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../utils'
   import { Button, Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, NavDropdown, Breadcrumb, BreadcrumbItem, UserCircle } from '$lib'
   
   import componentProps from '../props/MegaMenu.json'
@@ -97,17 +97,17 @@ Use this example to show a list of links aligned on three columns inside the meg
 <script>
   import { Button, Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, NavDropdown } from 'flowbite-svelte'
   let menu = [
-    {name: 'About us', href: '/about},
-    {name: 'Blog', href: '/blog},
-    {name: 'Contact us', href: '/contact},
-    {name: 'Library', href: '/library},
-    {name: 'Newsletter', href: '/news},
-    {name: 'Support Center', href: '/support},
-    {name: 'Resources', href: '/resource},
-    {name: 'Playground', href: '/play},
-    {name: 'Terms', href: '/tersm},
-    {name: 'Pro Version', href: '/pro},
-    {name: 'License', href: '/license},
+    {name: 'About us', href: '/about'},
+    {name: 'Blog', href: '/blog'},
+    {name: 'Contact us', href: '/contact'},
+    {name: 'Library', href: '/library'},
+    {name: 'Newsletter', href: '/news'},
+    {name: 'Support Center', href: '/support'},
+    {name: 'Resources', href: '/resource'},
+    {name: 'Playground', href: '/play'},
+    {name: 'Terms', href: '/terms'},
+    {name: 'Pro Version', href: '/pro'},
+    {name: 'License', href: '/license'},
   ];
 </script>
 

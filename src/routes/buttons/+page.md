@@ -5,7 +5,6 @@ layout: buttonLayout
 <script>
   import {Htwo,ExampleDiv,GitHubSource,CompoDescription,TableProp, TableDefaultRow} from '../utils'
   import { Button, Spinner, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
-  import { ArrowRight, Bell, ShoppingCart, ChevronRight } from "svelte-heros";
   import { goto }from '$app/navigation';
   
   import componentProps from '../props/Button.json'
@@ -272,16 +271,20 @@ Use the following examples to add a SVG icon inside the button either on the lef
 
 <ExampleDiv class="flex flex-wrap items-center gap-2">
 <Button>
-  <ShoppingCart size="18" class="mr-2"/> Buy Now
+  <svg aria-hidden="true" class="mr-2 -ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg> Buy Now
 </Button>
 <Button>
-  Choose Plan <ArrowRight size="18" class="ml-2" />
+  Choose Plan <svg aria-hidden="true" class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
 </Button>
 </ExampleDiv>
 
 ```html
-<Button><ShoppingCart size="18" class="mr-2" /> Buy Now</Button>
-<Button>Choose Plan <ArrowRight size="18" class="ml-2" /></Button>
+<Button>
+  <svg aria-hidden="true" class="mr-2 -ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg> Buy Now
+</Button>
+<Button>
+  Choose Plan <svg aria-hidden="true" class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+</Button>
 ```
 
 <Htwo label="Button with label" />
@@ -315,24 +318,20 @@ Sometimes you need a button to indicate an action using only an icon.
 
 <ExampleDiv>
   <div class="flex flex-wrap items-center gap-2">
-    <Button class="!p-2"><ArrowRight class="w-5 h-5"/></Button>
-    <Button pill={true} class="!p-2"><ArrowRight class="w-5 h-5"/></Button>
-    <Button outline={true} class="!p-2" size="lg"><ArrowRight class="w-5 h-5"/></Button>
-    <Button pill={true} outline={true} class="!p-2" size="xl"><ArrowRight class="w-5 h-5"/></Button>
+    <Button class="!p-2"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></Button>
+    <Button pill={true} class="!p-2"><svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></Button>
+    <Button outline={true} class="!p-2" size="lg"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></Button>
+    <Button pill={true} outline={true} class="!p-2" size="xl"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></Button>
   </div>
 </ExampleDiv>
 
 ```html
-<script>
-	import { ArrowRight } from 'svelte-heros';
-</script>
-
 <div class="flex flex-wrap items-center gap-2">
-	<Button class="!p-2"><ArrowRight class="w-5 h-5" /></Button>
-	<Button pill="{true}" class="!p-2"><ArrowRight class="w-5 h-5" /></Button>
-	<Button outline="{true}" class="!p-2"><ArrowRight class="w-5 h-5" /></Button>
-	<Button pill="{true}" class="!p-2" outline="{true}"><ArrowRight class="w-5 h-5" /></Button>
-</div>
+    <Button class="!p-2"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></Button>
+    <Button pill={true} class="!p-2"><svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></Button>
+    <Button outline={true} class="!p-2" size="lg"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></Button>
+    <Button pill={true} outline={true} class="!p-2" size="xl"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></Button>
+  </div>
 ```
 
 <Htwo label="Loader" />

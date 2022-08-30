@@ -4,7 +4,7 @@ layout: iconLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
-  import { Breadcrumb, BreadcrumbItem } from '$lib'
+  import { Breadcrumb, BreadcrumbItem, A } from '$lib'
   import { Adjustments, Bell, Briefcase,Ticket, ChartSquareBar, Camera, ChevronLeft } from "svelte-heros";
 </script>
 
@@ -16,13 +16,11 @@ layout: iconLayout
 
 <h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Guidance for using external icon libraries</h1>
 
-Flowbite-svelte uses <a href="https://github.com/shinokada/svelte-heros" target="_blank">svelte-heros</a>.
+Using an icon library simplifies the code. You can uses <a href="https://www.npmjs.com/package/svelte-heros-v2" target="_blank">Svelte-Heros-v2</a> and <a href="https://svelte-svg-icons.vercel.app/" target="_blank">other icon sets</a> for Flowbite-Svelte.
 
-You can find all the icon names from the <a href="https://github.com/shinokada/svelte-heros/blob/main/icon-list.md" class="text-red-700 underline">repo</a>.
 
-Svelte-heros icons allow you to change icon size and color by using HEX CSS code or TailwindCSS/Flowbite.
+Svelte-Heros-v2 icons allow you to change icon size and color by using HEX CSS code or TailwindCSS/Flowbite.
 
-If you need more icons use any icon sets from <a href="https://svelte-svg-icons.vercel.app/" class="text-red-700 underline" target="_blank">Svelte Icon Sets</a>.
 <Htwo label="Color and size" />
 
 If you want to change the color with Tailwind CSS, add it to class prop. To change the icon size use the `size` prop or use class like, `class="h-24 w-24"`.
@@ -125,3 +123,26 @@ Use import * as Icon from `svelte-heros`.
 <Htwo label="Examples" />
 
 <Htwo label="Alternatives" />
+
+- <A href="https://www.npmjs.com/package/svelte-awesome-icons">Svelte-Awesome-Icons</A>
+- <A href="https://www.npmjs.com/package/svelte-bootstrap-svg-icons">Svelte-Bootstrap-svg-Icons</A>
+- <A href="https://www.npmjs.com/package/svelte-circle-flags">Svelte-Circle-Flags</A>
+- <A href="https://www.npmjs.com/package/svelte-cryptocurrency-icons">Svelte-Cryptocurrency-Icons</A>
+- <A href="https://www.npmjs.com/package/svelte-feathers">Svelte-Feathers</A>
+- <A href="https://www.npmjs.com/package/svelte-flag-icons">Svelte-Flag-Icons</A>
+- <A href="https://www.npmjs.com/package/svelte-flags">Svelte-Flags</A>
+- <A href="https://www.npmjs.com/package/svelte-file-icons">Svelte-File-Icons</A>
+- <A href="https://www.npmjs.com/package/svelte-google-materialdesign-icons">Svelte-Google-Materialdesign-Icons</A>
+- <A href="https://www.npmjs.com/package/svelte-heros">Svelte-Heros v1</A>
+- <A href="https://www.npmjs.com/package/svelte-ionicons">Svelte-Ionicons</A>
+- <A href="https://www.npmjs.com/package/svelte-lucide">Svelte-Lucide</A>
+- <A href="https://www.npmjs.com/package/svelte-materialdesign-icons">Svelte-Materialdesign-Icons</A>
+- <A href="https://www.npmjs.com/package/svelte-oct">Svelte-Oct</A>
+- <A href="https://www.npmjs.com/package/svelte-radix">Svelte-Radix</A>
+- <A href="https://www.npmjs.com/package/svelte-remix">Svelte-Remix</A>
+- <A href="https://www.npmjs.com/package/svelte-simples">Svlete-simples</A>
+- <A href="https://www.npmjs.com/package/svelte-tabler">Svelte-Tabler</A>
+- <A href="https://www.npmjs.com/package/svelte-teenyicons">Svelte-Teenyicons</A>
+- <A href="https://www.npmjs.com/package/svelte-twitter-emoji">Svelte-Twitter-Emoji</A>
+- <A href="https://www.npmjs.com/package/svelte-weather">Svelte-Weather</A>
+
