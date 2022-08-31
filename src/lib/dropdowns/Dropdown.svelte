@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { setContext } from 'svelte';
 	import Button from '$lib/buttons/Button.svelte';
+	import Frame from '$lib/utils/Frame.svelte';
 	import Popper from '$lib/utils/Popper.svelte';
 	import classNames from 'classnames';
 	import ChevronUp from '../utils/ChevronUp.svelte';
@@ -21,8 +21,6 @@
 
 	let id = generateId();
 
-	setContext('background', true);
-
 	const icons = {
 		top: ChevronUp,
 		right: ChevronRight,
@@ -33,14 +31,7 @@
 	$: icon = icons[placement.split('-')[0]];
 
 	let popoverClass;
-	$: popoverClass = classNames(
-		'rounded-lg shadow-sm',
-		'bg-white dark:bg-gray-800',
-		'text-gray-500 dark:text-gray-400',
-		'border border-gray-200 dark:border-gray-700',
-		'outline-none',
-		$$props.class
-	);
+	$: popoverClass = classNames('outline-none', $$props.class);
 </script>
 
 {#if label}
@@ -72,14 +63,15 @@
 	arrow={false}
 	{placement}
 	{...$$restProps}
-	class={popoverClass}
 	trigger="click"
 	on:show
 	bind:open
 	triggeredBy={triggeredBy ?? '#' + id}>
-	<slot name="content">
-		<ul class="py-1">
-			<slot />
-		</ul>
-	</slot>
+	<Frame class={popoverClass} rounded border shadow>
+		<slot name="content">
+			<ul class="py-1">
+				<slot />
+			</ul>
+		</slot>
+	</Frame>
 </Popper>

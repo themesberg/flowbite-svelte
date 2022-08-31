@@ -6,7 +6,7 @@ layout: toastLayout
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Toast, Breadcrumb, BreadcrumbItem, Avatar, Button, A, Heading } from '$lib'
   import { quintOut, elasticOut } from 'svelte/easing';
-  
+
   import componentProps from '../props/Toast.json'
   // Props table
   let items = componentProps.props
@@ -388,7 +388,8 @@ Use this toast component to also show an “undo” button to reverse the action
 ```
 
 <Htwo label="Extra content" />
-Use the <span class="font-mono italic">slot="extra"</span> to add some more arbitrary content in the toast.
+
+Use the `slot="extra` to add some more arbitrary content in the toast.
 
 <h3 class='text-xl w-full dark:text-white py-4'>Toast message</h3>
 
@@ -397,7 +398,7 @@ This component can be used to show messages and a CTA button when receiveing cha
 <ExampleDiv>
   <Toast>
       <div class="flex" slot="extra">
-        <Avatar avatar={{src: '/images/profile-picture-1.webp', alt: 'My avatar 2', size: 12, round: true}}/>
+        <Avatar src='/images/profile-picture-1.webp' />
         <div class="ml-3 text-sm font-normal">
             <span class="mb-1 text-sm font-semibold text-gray-900 dark:text-white">Jese Leos</span>
             <div class="mb-2 text-sm font-normal">Hi Neil, thanks for sharing your thoughts regarding Flowbite.</div>
@@ -410,8 +411,7 @@ This component can be used to show messages and a CTA button when receiveing cha
 ```html
 <Toast>
 	<div class="flex" slot="extra">
-		<Avatar avatar={{src: '/images/profile-picture-1.webp', alt: 'My avatar 2', size: 12, round:
-		true}}/>
+    <Avatar src='/images/profile-picture-1.webp' />
 		<div class="ml-3 text-sm font-normal">
 			<span class="mb-1 text-sm font-semibold text-gray-900 dark:text-white">Jese Leos</span>
 			<div class="mb-2 text-sm font-normal">
@@ -431,7 +431,7 @@ This component can be used to show notifications for an action from another user
   <Toast>
     <span class="font-semibold text-gray-900 dark:text-white">New notification</span>
     <div class="flex items-center mt-3" slot="extra">
-      <Avatar avatar={{src: '/images/profile-picture-3.webp', alt: 'My avatar 2', size: 12, round: true}}/>
+      <Avatar src='/images/profile-picture-3.webp'/>
       <div class="ml-3">
         <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Bonnie Green</h4>
         <div class="text-sm font-normal">commmented on your photo</div>
@@ -445,9 +445,8 @@ This component can be used to show notifications for an action from another user
 <Toast>
 	<span class="font-semibold text-gray-900 dark:text-white">New notification</span>
 	<div class="flex items-center mt-3" slot="extra">
-		<Avatar avatar={{src: '/images/profile-picture-3.webp', alt: 'My avatar 2', size: 12, round:
-		true}}/>
-		<div class="ml-3">
+    <Avatar src='/images/profile-picture-3.webp'/>
+    <div class="ml-3">
 			<h4 class="text-sm font-semibold text-gray-900 dark:text-white">Bonnie Green</h4>
 			<div class="text-sm font-normal">commmented on your photo</div>
 			<span class="text-xs font-medium text-blue-600 dark:text-blue-500">a few seconds ago</span>
