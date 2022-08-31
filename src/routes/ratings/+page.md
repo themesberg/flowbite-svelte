@@ -4,7 +4,7 @@ layout: ratingLayout
 
 <script>
 	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-	import { Rating, AdvancedRating, ScoreRating, RatingComment, Review, Breadcrumb, BreadcrumbItem } from '$lib'
+	import { Rating, AdvancedRating, ScoreRating, RatingComment, Review, Breadcrumb, BreadcrumbItem, Heading } from '$lib'
 	
 	import componentProps from '../props/Rating.json'
 	import componentProps2 from '../props/AdvancedRating.json'
@@ -68,7 +68,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Ratings</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Rating</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Rating</Heading>
 
 <CompoDescription>Use the rating component to show reviews and testimonials from your users using stars and scores based on multiple styles and sizes</CompoDescription>
 

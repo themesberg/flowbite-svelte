@@ -4,7 +4,7 @@ layout: skeletonLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { CardPlaceholder, ImagePlaceholder, ListPlaceholder, Skeleton, TestimonialPlaceholder, TextPlaceholder, VideoPlaceholder, WidgetPlaceholder, Breadcrumb, BreadcrumbItem } from '$lib'
+  import { CardPlaceholder, ImagePlaceholder, ListPlaceholder, Skeleton, TestimonialPlaceholder, TextPlaceholder, VideoPlaceholder, WidgetPlaceholder, Breadcrumb, BreadcrumbItem, Heading } from '$lib'
   
 
   import componentProps from '../props/ListPlaceholder.json'
@@ -29,7 +29,7 @@ layout: skeletonLayout
   <BreadcrumbItem>Skeleton</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Tailwind CSS Skeleton</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Tailwind CSS Skeleton</Heading>
 
 <CompoDescription>The skeleton component can be used as an alternative loading indicator to the spinner by mimicking the content that will be loaded such as text, images, or video</CompoDescription>
 

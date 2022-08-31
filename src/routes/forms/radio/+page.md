@@ -4,7 +4,7 @@ layout: formLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
-  import { Radio, Breadcrumb, BreadcrumbItem, Dropdown, DropdownItem, Label, Helper, Badge, Table, TableBody, TableBodyRow, TableBodyCell, TableHead, TableHeadCell } from '$lib'
+  import { Radio, Breadcrumb, BreadcrumbItem, Dropdown, DropdownItem, Label, Helper, Badge, Table, TableBody, TableBodyRow, TableBodyCell, TableHead, TableHeadCell, Heading } from '$lib'
   
 
   import componentProps from '../../props/Radio.json'
@@ -30,7 +30,7 @@ layout: formLayout
   <BreadcrumbItem>Radio</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Radio</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Radio</Heading>
 
 <CompoDescription>Get started with the radio component to let the user choose a single option from multiple options in the form of a circle based on multiple styles and colors</CompoDescription>
 

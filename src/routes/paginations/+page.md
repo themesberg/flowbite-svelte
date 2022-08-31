@@ -4,7 +4,7 @@ layout: paginationLayout
 
 <script lang="ts">
 	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-	import { Pagination, Previous, Next, TableData, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
+	import { Pagination, Previous, Next, TableData, Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
   ;
 	
 	import componentProps1 from '../props/Pagination.json'
@@ -61,7 +61,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Pagination</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Pagination</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Pagination</Heading>
 
 <CompoDescription>Use the Tailwind CSS pagination element to indicate a series of content across various pages</CompoDescription>
 

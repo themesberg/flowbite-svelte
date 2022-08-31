@@ -5,7 +5,7 @@ layout: dropdownLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Avatar, Button, Checkbox, Label, Helper, Dropdown, DropdownDivider, DropdownHeader, DropdownItem,
-    Navbar,NavBrand,NavHamburger, NavUl, NavLi, Radio, Toggle, SimpleSearch, Breadcrumb, BreadcrumbItem, Badge, ToolbarButton, ChevronDown } from '$lib'
+    Navbar,NavBrand,NavHamburger, NavUl, NavLi, Radio, Toggle, SimpleSearch, Breadcrumb, BreadcrumbItem, Badge, ToolbarButton, ChevronDown, Heading  } from '$lib'
   
   import componentProps from '../props/Dropdown.json'
   import componentProps2 from '../props/DropdownDivider.json'
@@ -40,7 +40,7 @@ layout: dropdownLayout
   <BreadcrumbItem>Dropdown</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Dropdown</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Dropdown</Heading>
 
 <CompoDescription>Get started with the dropdown component to show a list of menu items when clicking on the trigger element based on multiple layouts, styles, and placements</CompoDescription>
 

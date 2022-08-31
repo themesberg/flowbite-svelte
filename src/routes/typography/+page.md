@@ -4,7 +4,7 @@ layout: typographyLayout
 
 <script>
 	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-	import { Breadcrumb, BreadcrumbItem } from '$lib';
+	import { Breadcrumb, BreadcrumbItem, Heading } from '$lib';
 	;
 </script>
 
@@ -14,7 +14,7 @@ layout: typographyLayout
 	<BreadcrumbItem>Typography</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Typography</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Typography</Heading>
 
 <CompoDescription>Use the typography and the utility classes from Tailwind CSS to style text with FlowBite</CompoDescription>
 

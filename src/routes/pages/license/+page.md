@@ -4,7 +4,7 @@ layout: doc
 
 <script>
   import Htwo from '../../utils/Htwo.svelte'
-  import { Breadcrumb, BreadcrumbItem } from '$lib'
+  import { Breadcrumb, BreadcrumbItem, Heading } from '$lib'
   
 </script>
 
@@ -13,7 +13,7 @@ layout: doc
   <BreadcrumbItem>License</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">LICENSE</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">LICENSE</Heading>
 
 <Htwo label="MIT License" />
 

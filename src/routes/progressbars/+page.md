@@ -4,7 +4,7 @@ layout: progressbarLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Progressbar, Breadcrumb, BreadcrumbItem } from '$lib'
+  import { Progressbar, Breadcrumb, BreadcrumbItem, Heading } from '$lib'
 	
   
 	import componentProps from '../props/Progressbar.json'
@@ -22,7 +22,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Progress bar</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Progress</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Progress</Heading>
 
 <CompoDescription>Use the progress bar component to show the completion rate of a data indicator or use it as a loader element</CompoDescription>
 

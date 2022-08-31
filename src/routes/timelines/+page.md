@@ -4,7 +4,7 @@ layout: timelineLayout
 
 <script lang="ts">
 	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-	import { Timeline, TimelineItem, TimelineItemVertical, TimelineItemHorizontal, TimelineHorizontal, Activity, ActivityItem, Group, GroupItem, Breadcrumb, BreadcrumbItem, Button } from '$lib'
+	import { Timeline, TimelineItem, TimelineItemVertical, TimelineItemHorizontal, TimelineHorizontal, Activity, ActivityItem, Group, GroupItem, Breadcrumb, BreadcrumbItem, Button, Heading } from '$lib'
 	
   import componentProps1 from '../props/Timeline.json'
   import componentProps2 from '../props/TimelineItem.json'
@@ -80,7 +80,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Timelines</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Timeline</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Timeline</Heading>
 
 <CompoDescription>Get started with the responsive timeline component to show data in a chronological order with support for multiple styles, sizes, and variants</CompoDescription>
 

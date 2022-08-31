@@ -4,7 +4,7 @@ layout: sidebarLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Sidebar, SidebarBrand, SidebarCta,	SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup,SidebarItem, SidebarWrapper, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
+  import { Sidebar, SidebarBrand, SidebarCta,	SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup,SidebarItem, SidebarWrapper, Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
   
   import componentProps from '../props/Sidebar.json'
   import componentProps2 from '../props/SidebarBrand.json'
@@ -44,7 +44,7 @@ layout: sidebarLayout
   <BreadcrumbItem>Sidebars</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Sidebar</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Sidebar</Heading>
 
 <CompoDescription>Use the sidebar component to show a list of menu items and multi-level dropdown items on either side of the page to navigate on your website</CompoDescription>
 

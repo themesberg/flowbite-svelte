@@ -5,7 +5,7 @@ layout: modalLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
 
-  import { Popover, Avatar, Breadcrumb, BreadcrumbItem, Button, Input, Label, Checkbox } from '$lib'
+  import { Popover, Avatar, Breadcrumb, BreadcrumbItem, Button, Input, Label, Checkbox, Heading } from '$lib'
   import  ChevronRight  from "$lib/utils/ChevronRight.svelte";
   import componentProps from '../props/Popover.json'
 
@@ -22,7 +22,7 @@ layout: modalLayout
   <BreadcrumbItem>Popover</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Popover</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Popover</Heading>
 
 <CompoDescription>Use the popover component to show detailed information inside a pop-up box relative to the element that is being clicked or hovered based on multiple styles</CompoDescription>
 

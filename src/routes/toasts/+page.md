@@ -4,7 +4,7 @@ layout: toastLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Toast, Breadcrumb, BreadcrumbItem, Avatar, Button, A } from '$lib'
+  import { Toast, Breadcrumb, BreadcrumbItem, Avatar, Button, A, Heading } from '$lib'
   import { quintOut, elasticOut } from 'svelte/easing';
   
   import componentProps from '../props/Toast.json'
@@ -36,7 +36,7 @@ layout: toastLayout
   <BreadcrumbItem>Toasts</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Toast</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Toast</Heading>
 
 <CompoDescription>Push notifications to your users using the toast component and choose from multiple sizes, colors, styles, and positions</CompoDescription>
 

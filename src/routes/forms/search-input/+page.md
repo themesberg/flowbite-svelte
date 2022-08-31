@@ -4,7 +4,7 @@ layout: formLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
-  import { Search, SimpleSearch, VoiceSearch, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
+  import { Search, SimpleSearch, VoiceSearch, Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
   
 
   import searchComponentProps from '../../props/Search.json'
@@ -30,7 +30,7 @@ layout: formLayout
   <BreadcrumbItem>Search</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Search</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Search</Heading>
 
 <CompoDescription>Use the search input component as a text field to allow users to enter search queries and receive relevant page results available in multiple styles and sizes</CompoDescription>
 

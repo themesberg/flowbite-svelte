@@ -4,7 +4,7 @@ layout: formLayout
 
 <script>
 import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
-import { Label, Dropdown, DropdownItem, Select, Breadcrumb, BreadcrumbItem, Badge, CloseButton, ChevronDown} from '$lib'
+import { Label, Dropdown, DropdownItem, Select, Breadcrumb, BreadcrumbItem, Badge, CloseButton, ChevronDown, Heading } from '$lib'
 
 import componentProps from '../../props/Select.json'
 let items = componentProps.props
@@ -40,7 +40,7 @@ let states = [
   <BreadcrumbItem>Select</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Select</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Select</Heading>
 
 <CompoDescription>Get started with the select component to allow the user to choose from one or more options from a dropdown list based on multiple styles, sizes, and variants</CompoDescription>
 

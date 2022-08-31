@@ -4,7 +4,7 @@ layout: formLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
-  import { FloatingLabelInput, Helper, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
+  import { FloatingLabelInput, Helper, Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
   
   import componentProps from '../../props/FloatingLabelInput.json'
    import componentProps2 from '../../props/Helper.json'
@@ -22,7 +22,7 @@ layout: formLayout
   <BreadcrumbItem>Floating label</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Floating label</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Floating label</Heading>
 
 <CompoDescription>Use the floating label style for the input field elements to replicate the Material UI design system from Google and choose from multiple styles and sizes</CompoDescription>
 

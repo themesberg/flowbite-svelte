@@ -10,7 +10,7 @@ layout: tabLayout
 		TabContentItem,
 		Timeline,
 		TimelineItem,
-		Button, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
+		Button, Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
   
   import componentProps from '../props/TabWrapper.json'
 	import componentProps2 from '../props/TabHead.json'
@@ -62,7 +62,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Tabs</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Tabs</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Tabs</Heading>
 
 <CompoDescription>Use these responsive tabs components to create a secondary navigational hierarchy for your website or toggle content inside a container</CompoDescription>
 

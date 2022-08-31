@@ -4,7 +4,7 @@ layout: modalLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Button, Checkbox, Modal, Label, Input, Breadcrumb, BreadcrumbItem } from '$lib'
+  import { Button, Checkbox, Modal, Label, Input, Breadcrumb, BreadcrumbItem, Heading } from '$lib'
   import { goto } from "$app/navigation";
   import Metamask from "./Metamask/+page.svelte"
   import Coinbase from "./Coinbase/+page.svelte"
@@ -43,7 +43,7 @@ layout: modalLayout
   <BreadcrumbItem>Modals</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Modals</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Modals</Heading>
 
 <CompoDescription>Use the modal component to show interactive dialogs and notifications to your website users available in multiple sizes, colors, and styles</CompoDescription>
 

@@ -4,7 +4,7 @@ layout: formLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
-  import { Checkbox, Breadcrumb, BreadcrumbItem, Dropdown, DropdownItem, DropdownDivider, SimpleSearch, Label, Helper, Badge, Table, TableBody, TableBodyRow, TableBodyCell, TableHead, TableHeadCell } from '$lib'
+  import { Checkbox, Breadcrumb, BreadcrumbItem, Dropdown, DropdownItem, DropdownDivider, SimpleSearch, Label, Helper, Badge, Table, TableBody, TableBodyRow, TableBodyCell, TableHead, TableHeadCell, Heading } from '$lib'
   
   import componentProps from '../../props/Radio.json'
   import componentProps2 from '../../props/Label.json'
@@ -24,7 +24,7 @@ layout: formLayout
   <BreadcrumbItem>Checkbox</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Checkbox</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Checkbox</Heading>
 
 The checkbox component can be used to receive one or more selected options from the user in the form of a square box available in multiple styles, sizes, colors, and variants coded with the utility classes from Tailwind CSS and with support for dark mode.
 

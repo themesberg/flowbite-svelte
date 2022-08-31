@@ -4,7 +4,7 @@ layout: tableLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../utils'
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox, TableSearch, Breadcrumb, BreadcrumbItem } from '$lib'
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox, TableSearch, Breadcrumb, BreadcrumbItem, Heading } from '$lib'
   
   
   import componentProps1 from '../props/Table.json'
@@ -38,7 +38,7 @@ layout: tableLayout
   <BreadcrumbItem>Tables</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Tables</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Tables</Heading>
 
 <CompoDescription>Use the table component to show text, images, links, and other elements inside a structured set of data made up of rows and columns of table cells</CompoDescription>
 

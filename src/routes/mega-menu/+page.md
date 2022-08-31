@@ -4,7 +4,7 @@ layout: megamenuLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../utils'
-  import { Button, Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, NavDropdown, Breadcrumb, BreadcrumbItem, UserCircle } from '$lib'
+  import { Button, Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, NavDropdown, Breadcrumb, BreadcrumbItem, UserCircle, Heading } from '$lib'
   
   import componentProps from '../props/MegaMenu.json'
   // Props table
@@ -50,7 +50,7 @@ layout: megamenuLayout
   <BreadcrumbItem href="/footer">Mega Menu</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Mega Menu</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Mega Menu</Heading>
 
 <CompoDescription>Use the mega menu component as a full-width dropdown inside the navbar to show a list of menu items based on multiple sizes, variants, and styles.</CompoDescription>
 

@@ -4,7 +4,7 @@ layout: formLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
-  import { Label, Fileupload, Helper, Dropzone, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
+  import { Label, Fileupload, Helper, Dropzone, Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
   
   import componentProps from '../../props/Fileupload.json'
   import componentProps2 from '../../props/Dropzone.json'
@@ -28,7 +28,7 @@ layout: formLayout
   <BreadcrumbItem>File input</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">File</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">File</Heading>
 
 <CompoDescription>Get started with the file input component to let the user to upload one or more files from their device storage based on multiple styles and sizes</CompoDescription>
 

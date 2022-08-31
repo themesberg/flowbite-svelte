@@ -4,7 +4,7 @@ layout: listgroupLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Avatar, List, ListItem, Breadcrumb, BreadcrumbItem, Badge, UserCircle, InformationCircle } from '$lib'
+  import { Avatar, List, ListItem, Breadcrumb, BreadcrumbItem, Badge, UserCircle, InformationCircle, Heading } from '$lib'
 
   import componentProps from '../props/List.json'
   // Props table
@@ -42,7 +42,7 @@ layout: listgroupLayout
   <BreadcrumbItem href="/footer">List group</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">List group</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">List group</Heading>
 
 <CompoDescription>Use the list group component to display a series of items, buttons or links inside a single element</CompoDescription>
 

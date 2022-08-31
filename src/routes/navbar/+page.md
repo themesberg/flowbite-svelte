@@ -4,7 +4,7 @@ layout: navbarLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Button, Dropdown, DropdownItem, DropdownHeader, DropdownDivider, Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Input, Badge, Skeleton, ImagePlaceholder, TextPlaceholder } from '$lib';
+  import { Breadcrumb, BreadcrumbItem, Button, Dropdown, DropdownItem, DropdownHeader, DropdownDivider, Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Input, Badge, Skeleton, ImagePlaceholder, TextPlaceholder, Heading } from '$lib';
 	
   import componentProps from '../props/Navbar.json'
 	import componentProps2 from '../props/NavBrand.json'
@@ -51,7 +51,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Navbar</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Navbar</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Navbar</Heading>
 
 <CompoDescription>The navbar component can be used to show a list of navigation links positioned on the top side of your page based on multiple layouts, sizes, and dropdowns</CompoDescription>
 

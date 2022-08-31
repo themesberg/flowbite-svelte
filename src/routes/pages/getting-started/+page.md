@@ -3,7 +3,7 @@ layout: docLayout
 ---
 <script>
   import { Htwo, ExampleDiv } from '../../utils'
-  import { Breadcrumb, BreadcrumbItem, Alert } from '$lib'
+  import { Breadcrumb, BreadcrumbItem, Alert, Heading } from '$lib'
   
 </script>
 
@@ -12,7 +12,7 @@ layout: docLayout
   <BreadcrumbItem>Getting started</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Getting Started</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Getting Started</Heading>
 
 <p>You can install Flowbite-Svelte by using the Flowbite-Svelte-Start or from scratch.</p>
 

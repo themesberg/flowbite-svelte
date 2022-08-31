@@ -4,7 +4,7 @@ layout: tooltipLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Tooltip, Button, Breadcrumb, BreadcrumbItem } from '$lib'
+  import { Tooltip, Button, Breadcrumb, BreadcrumbItem, Heading } from '$lib'
 
   import componentProps from '../props/Tooltip.json'
   // Props table
@@ -23,7 +23,7 @@ layout: tooltipLayout
   <BreadcrumbItem>Tooltips</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Tooltips</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Tooltips</Heading>
 
 <CompoDescription>Use the following Tailwind CSS powered tooltips to show extra content when hovering or focusing on an element</CompoDescription>
 

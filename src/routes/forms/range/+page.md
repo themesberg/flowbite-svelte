@@ -4,7 +4,7 @@ layout: formLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
-  import { Label, Range, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
+  import { Label, Range, Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
   
 
   import componentProps from '../../props/Range.json'
@@ -23,7 +23,7 @@ layout: formLayout
   <BreadcrumbItem>Range</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Range</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Range</Heading>
 
 <CompoDescription>Get started with the range component to receive a number from the user anywhere from 1 to 100 by sliding form control horizontally based on multiple options</CompoDescription>
 

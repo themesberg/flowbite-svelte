@@ -5,7 +5,7 @@ layout: formLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
   import { onMount } from 'svelte';
-  import { Toggle, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
+  import { Toggle, Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
 
   import componentProps from '../../props/Toggle.json'
   let items = componentProps.props
@@ -21,7 +21,7 @@ layout: formLayout
   <BreadcrumbItem>Toggle</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Toggle</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Toggle</Heading>
 
 <CompoDescription>Use the toggle component to switch between a binary state of true or false using a single click available in multiple sizes, variants, and colors</CompoDescription>
 

@@ -4,7 +4,7 @@ layout: footerLayout
 
 <script>
   import {Htwo,ExampleDiv, GitHubSource,CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup, Skeleton, ImagePlaceholder,	TextPlaceholder,Breadcrumb, BreadcrumbItem } from '$lib'
+  import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup, Skeleton, ImagePlaceholder,	TextPlaceholder,Breadcrumb, BreadcrumbItem, Heading } from '$lib'
   
   
   import componentProps from '../props/Footer.json'
@@ -32,7 +32,7 @@ layout: footerLayout
   <BreadcrumbItem>Footer</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Footer</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Footer</Heading>
 
 <CompoDescription>Use the footer section at the bottom of every page to show valuable information to your users, such as sitemap links, a copyright notice, and a logo</CompoDescription>
 

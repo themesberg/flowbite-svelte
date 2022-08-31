@@ -4,7 +4,7 @@ layout: kbdLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Kbd, Table, TableHead, TableHeadCell, TableBody, TableBodyRow, TableBodyCell, ArrowKeyDown, ArrowKeyLeft, ArrowKeyRight, ArrowKeyUp, Breadcrumb, BreadcrumbItem } from '$lib'
+  import { Kbd, Table, TableHead, TableHeadCell, TableBody, TableBodyRow, TableBodyCell, ArrowKeyDown, ArrowKeyLeft, ArrowKeyRight, ArrowKeyUp, Breadcrumb, BreadcrumbItem, Heading } from '$lib'
   
 
   import componentProps from '../props/Kbd.json'
@@ -29,7 +29,7 @@ layout: kbdLayout
   <BreadcrumbItem>Kbd</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Tailwind CSS KBD (Keyboard)</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Tailwind CSS KBD (Keyboard)</Heading>
 
 <CompoDescription>Use the KBD component as an inline element to denote textual user input from the keyboard inside paragraphs, tables, and other components</CompoDescription>
 

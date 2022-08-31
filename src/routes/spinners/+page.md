@@ -4,7 +4,7 @@ layout: spinnerLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Spinner, Button, Breadcrumb, BreadcrumbItem } from '$lib'
+  import { Spinner, Button, Breadcrumb, BreadcrumbItem, Heading } from '$lib'
   ;
   
   import componentProps from '../props/Spinner.json'
@@ -21,7 +21,7 @@ layout: spinnerLayout
   <BreadcrumbItem>Spinners</BreadcrumbItem>
 </Breadcrumb>
 
-<h1 class="text-3xl w-full dark:text-white pt-8 pb-4">Spinner</h1>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Spinner</Heading>
 
 <CompoDescription>Use the spinner component as a loader indicator in your projects when fetching data based on an animated SVG</CompoDescription>
 
