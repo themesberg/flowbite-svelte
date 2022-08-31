@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { createEventDispatcher, setContext } from 'svelte';
+	import Frame from '$lib/utils/Frame.svelte';
+	import { createEventDispatcher } from 'svelte';
 	import CloseButton from '../utils/CloseButton.svelte';
 	import focusTrap from '../utils/focusTrap';
 
@@ -17,11 +18,9 @@
 		| 'bottom-center'
 		| 'bottom-right' = 'center';
 	export let autoclose: boolean = true;
-	export let backdropClasses: string =
-		'bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40';
+	export let backdropClasses: string = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40';
 
 	const dispatch = createEventDispatcher();
-	setContext('background', true);
 
 	const allPlacementClasses = [
 		'justify-start',
@@ -142,13 +141,10 @@
 	role={open ? 'dialog' : undefined}
 	use:init={open}
 	use:focusTrap={open}
-	on:click={onButtonsClick}
->
+	on:click={onButtonsClick}>
 	<div class="relative p-4 w-full {sizes[size]} h-full md:h-auto">
 		<!-- Modal content -->
-		<div
-			class="relative bg-white rounded-lg shadow dark:bg-gray-700 text-gray-500 dark:text-gray-400"
-		>
+		<Frame rounded shadow class="relative">
 			<!-- Modal header -->
 			{#if $$slots.header || title}
 				<div class="flex justify-between items-center p-4 rounded-t border-b dark:border-gray-600">
@@ -168,12 +164,10 @@
 			</div>
 			<!-- Modal footer -->
 			{#if $$slots.footer}
-				<div
-					class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600"
-				>
+				<div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
 					<slot name="footer" />
 				</div>
 			{/if}
-		</div>
+		</Frame>
 	</div>
 </div>

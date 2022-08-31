@@ -1,4 +1,5 @@
 <script lang="ts">
+	import A from '$lib/typography/A.svelte';
 	import classNames from 'classnames';
 	import { setContext } from 'svelte';
 	import { noop } from 'svelte/internal';
@@ -8,6 +9,7 @@
 	setContext('background', true);
 	$: setContext('color', color);
 
+	export let tag: string = 'div';
 	export let color: string = 'default';
 	export let rounded: boolean = false;
 	export let border: boolean = false;
@@ -80,4 +82,6 @@
 	);
 </script>
 
-<div class={divClass} transition:transitionFunc={params}><slot /></div>
+<svelte:element this={tag} transition:transitionFunc={params} {...$$restProps} class={divClass}>
+	<slot />
+</svelte:element>

@@ -20,9 +20,6 @@
 	export let dismissable: boolean = false;
 	export let rounded: boolean = true;
 	export let accent: boolean = false;
-	export let customBgClass: string = '';
-	export let customBorderAccentClass: string = '';
-	export let customTextColor: string = '';
 
 	let hidden = false;
 

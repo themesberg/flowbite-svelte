@@ -1,16 +1,11 @@
 <script lang="ts">
 	import Frame from '$lib/utils/Frame.svelte';
 	import classNames from 'classnames';
-	import * as transitions from 'svelte/transition';
-	import type { Colors, TransitionTypes, TransitionParamTypes } from '../types';
+	import type { Colors } from '../types';
 	import CloseButton from '../utils/CloseButton.svelte';
 
 	export let color: Colors = 'blue';
 	export let simple: boolean = false;
-	// Export a prop through which you can set a desired transition
-	export let transition: TransitionTypes = 'fade';
-	// Pass in extra transition params
-	export let params: TransitionParamTypes = {};
 	// Absolute position
 	export let position: 'tl' | 'tr' | 'bl' | 'br' = undefined; // default not set
 	export let visible = true;
@@ -32,7 +27,7 @@
 </script>
 
 {#if visible}
-	<Frame rounded border {transition} {params} {...$$restProps} class={classDiv} role="alert">
+	<Frame rounded border transition="fade" {...$$restProps} class={classDiv} role="alert">
 		<div class="flex {$$slots.extra ? 'items-start' : 'items-center'}">
 			{#if $$slots.icon}
 				<Frame {color} rounded class={iconClass}><slot name="icon" /></Frame>

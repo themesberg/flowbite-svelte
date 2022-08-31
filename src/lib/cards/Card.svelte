@@ -31,6 +31,7 @@
 	let cardClass;
 	$: cardClass = classNames(
 		'flex',
+		sizes[size],
 		reverse ? 'flex-col-reverse' : 'flex-col',
 		horizontal && (reverse ? 'md:flex-row-reverse md:max-w-xl' : 'md:flex-row md:max-w-xl'),
 		href && 'hover:bg-gray-100 dark:hover:bg-gray-700',
@@ -46,15 +47,13 @@
 	);
 </script>
 
-<Frame class={sizes[size]} rounded shadow border>
-	<svelte:element this={href ? 'a' : 'div'} {href} class={cardClass}>
-		{#if img}
-			<img class={imgClass} src={img} alt="" />
-			<div class={innerPdding}>
-				<slot />
-			</div>
-		{:else}
+<Frame tag={href ? 'a' : 'div'} rounded shadow border {href} class={cardClass}>
+	{#if img}
+		<img class={imgClass} src={img} alt="" />
+		<div class={innerPdding}>
 			<slot />
-		{/if}
-	</svelte:element>
+		</div>
+	{:else}
+		<slot />
+	{/if}
 </Frame>
