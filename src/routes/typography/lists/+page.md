@@ -4,7 +4,7 @@ layout: typographyLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
-  import {  Ul, Li, A, P, Button, Card, Heading, Breadcrumb, BreadcrumbItem } from '$lib'
+  import {  List, Li, A, P, Button, Card, Heading, Breadcrumb, BreadcrumbItem } from '$lib'
 
   // import componentProps from '../../props/Ul.json'
   // import componentProps2 from '../../props/Li.json'
@@ -50,10 +50,10 @@ Use this example to create a default unordered list of items.
 
 <ExampleDiv>
 <Heading tag="h3" class="text-lg mb-2">Password requirements</Heading>
-<Ul>
+<List tag="ul">
   <Li>At least 10 </Li>
   <Li>At least one</Li>
   <Li>Inclusion of at least one special character, e.g., ! @ # ?</Li>
-</Ul>
+</List>
 </ExampleDiv>
 
