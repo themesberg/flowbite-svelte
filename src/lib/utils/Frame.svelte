@@ -1,10 +1,8 @@
 <script lang="ts">
-	import A from '$lib/typography/A.svelte';
 	import classNames from 'classnames';
 	import { setContext } from 'svelte';
-	import { noop } from 'svelte/internal';
 	import * as transitions from 'svelte/transition';
-	import type { Colors, TransitionTypes, TransitionParamTypes } from '../types';
+	import type { TransitionTypes, TransitionParamTypes } from '../types';
 
 	setContext('background', true);
 	$: setContext('color', color);
@@ -16,7 +14,7 @@
 	export let shadow: boolean = false;
 
 	// Export a prop through which you can set a desired transition
-	export let transition: TransitionTypes | 'none' = 'none';
+	export let transition: TransitionTypes = undefined;
 	// Pass in extra transition params
 	export let params: TransitionParamTypes = {};
 
@@ -67,7 +65,7 @@
 
 	// have a custom transition function that returns the desired transition
 	let transitionFunc;
-	$: transitionFunc = transitions[transition] ?? noop;
+	$: transitionFunc = transitions[transition];
 
 	let divClass: string;
 
@@ -82,6 +80,12 @@
 	);
 </script>
 
-<svelte:element this={tag} transition:transitionFunc={params} {...$$restProps} class={divClass}>
-	<slot />
-</svelte:element>
+{#if transitionFunc}
+	<svelte:element this={tag} transition:transitionFunc={params} {...$$restProps} class={divClass}>
+		<slot />
+	</svelte:element>
+{:else}
+	<svelte:element this={tag} {...$$restProps} class={divClass}>
+		<slot />
+	</svelte:element>
+{/if}

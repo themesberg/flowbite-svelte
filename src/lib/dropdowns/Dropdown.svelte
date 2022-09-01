@@ -62,7 +62,6 @@
 	activeContent={true}
 	arrow={false}
 	{placement}
-	{...$$restProps}
 	trigger="click"
 	on:show
 	bind:open

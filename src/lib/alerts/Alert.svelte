@@ -23,12 +23,10 @@
 
 	let hidden = false;
 
-	const handleAlert = () => {
-		dispatch('handleAlert');
-	};
-
 	const handleHide = () => {
 		hidden = !hidden;
+		dispatch('handleAlert');
+		dispatch('close'); // preffered name
 	};
 
 	let divClass: string;
@@ -48,7 +46,6 @@
 				class="-mx-1.5 -my-1.5"
 				{color}
 				on:click={handleHide}
-				on:click={handleAlert}
 				on:click
 				on:change
 				on:keydown
