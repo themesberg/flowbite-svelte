@@ -74,8 +74,8 @@ export { default as ArrowKeyRight } from './kbd/ArrowKeyRight.svelte';
 export { default as ArrowKeyUp } from './kbd/ArrowKeyUp.svelte';
 
 // List
-export { default as List } from './list-group/List.svelte';
-export { default as ListItem } from './list-group/ListItem.svelte';
+export { default as Listgroup } from './list-group/Listgroup.svelte';
+export { default as ListgroupItem } from './list-group/ListgroupItem.svelte';
 
 // Modals
 export { default as Modal } from './modals/Modal.svelte';
@@ -179,9 +179,10 @@ export { default as Hr } from './typography/Hr.svelte'
 export { default as Img } from './typography/Img.svelte'
 export { default as Li } from './typography/Li.svelte';
 export { default as Mark } from './typography/Mark.svelte';
-export { default as Ol } from './typography/Ol.svelte';
+export { default as List } from './typography/List.svelte';
 export { default as P } from './typography/P.svelte';
 export { default as Secondary } from './typography/Secondary.svelte'
+export { default as Span } from './typography/Span.svelte'
 export { default as TextGradient } from './typography/TextGradient.svelte';
 export { default as Ul } from './typography/Ul.svelte';
 export { default as Underline } from './typography/Underline.svelte';

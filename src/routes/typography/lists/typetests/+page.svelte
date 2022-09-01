@@ -7,7 +7,7 @@
     TableProp,
     TableDefaultRow
   } from '../../../utils';
-  import { Ul, Li, Ol, A, P, Button, Card, Heading, Breadcrumb, BreadcrumbItem } from '$lib';
+  import { Ul, Li, Ol, Span, A, P, Button, Card, Heading, Breadcrumb, BreadcrumbItem } from '$lib';
 </script>
 
 <ExampleDiv>
@@ -108,8 +108,39 @@
   <Heading tag="h2" class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white"
     >Top students:</Heading>
   <Ul class="space-y-1">
-    <Li>At least 10 characters (and up to 100 characters)</Li>
-    <Li>At least one lowercase character</Li>
-    <Li>Inclusion of at least one special character, e.g., ! @ # ?</Li>
+    <Li><Span>Bonnie Green</Span> with <Span>70</Span> points</Li>
+    <Li><Span>Jese Leos</Span> with <Span>63</Span> points</Li>
+    <Li><Span>Leslie Livingston</Span> with <Span>57</Span> points</Li>
   </Ul>
+</ExampleDiv>
+
+Nested
+
+<ExampleDiv>
+  <Ol>
+    <Li
+      >List item one
+      <Ul class="pl-5 mt-2 space-y-1">
+        <Li>You might feel like you are being really "organized" o</Li>
+        <Li>Nested navigation in UIs is a bad idea too, keep things as flat as possible.</Li>
+        <Li>Nesting tons of folders in your source code is also not helpful.</Li>
+      </Ul>
+    </Li>
+    <Li
+      >List item two
+      <Ul class="pl-5 mt-2 space-y-1">
+        <Li>I'm not sure if we'll bother styling more than two levels deep.</Li>
+        <Li>Two is already too much, three is guaranteed to be a bad idea.</Li>
+        <Li>If you nest four levels deep you belong in prison.</Li>
+      </Ul>
+    </Li>
+    <Li
+      >List item three
+      <Ul class="pl-5 mt-2 space-y-1">
+        <Li>Again please don't nest lists if you want</Li>
+        <Li>Nobody wants to look at this.</Li>
+        <Li>I'm upset that we even have to bother styling this.</Li>
+      </Ul>
+    </Li>
+  </Ol>
 </ExampleDiv>

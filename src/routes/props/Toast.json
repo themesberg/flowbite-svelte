@@ -1,1 +1,1 @@
-{"props":[["color","Colors ","'blue'"],["simple","boolean ","false"],["transition","TransitionTypes ","'fade'"],["params","TransitionParamTypes ","{}"],[" visible ","boolean"," true"],["divClass","string ","'w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800'"]]}
+{"props":[["color","Colors ","'blue'"],["simple","boolean ","false"],[" visible ","boolean"," true"],["divClass","string ","'w-full max-w-xs p-4'"]]}

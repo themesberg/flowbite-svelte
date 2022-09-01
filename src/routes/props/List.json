@@ -1,1 +1,1 @@
-{"props":[["items","ListGroupItemType[] ","[]"],["active","boolean ","false"]]}
+{"props":[["tag","'ul' | 'ol' ","'ul'"],["list","'disc' | 'none' | 'decimal' ","'disc'"],["position","'inside' | 'outside' ","'inside'"],["color","string ","'text-gray-500 dark:text-gray-400'"],["olClass","string ","'list-decimal list-inside'"],["ulClass","string ","'max-w-md  '"]]}
