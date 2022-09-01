@@ -32,7 +32,7 @@ layout: dropdownLayout
     alert ('Clicked.')
   }
 
-  let dropdownOpen = false;
+  let dropdownOpen = true;
 </script>
 
 <Breadcrumb class="pb-8">
@@ -147,7 +147,7 @@ Use this example to enable multi-level dropdown menus by adding stacked elements
 <Dropdown label="Dropdown button" class="w-44">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>
-    <Dropdown label="Dropdown" inline={true} placement="right-start" class="ml-10 md:ml-16 w-44">
+    <Dropdown label="Dropdown" inline={true} placement="right-start" class="w-44">
     <DropdownItem>Overview</DropdownItem>
     <DropdownItem>My downloads</DropdownItem>
     <DropdownItem>Billing</DropdownItem>
@@ -163,7 +163,7 @@ Use this example to enable multi-level dropdown menus by adding stacked elements
 <Dropdown label="Dropdown button" class="w-44">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>
-    <Dropdown label="Dropdown" inline={true} placement="right-start" class="ml-16 w-44">
+    <Dropdown label="Dropdown" inline={true} placement="right-start" class="w-44">
     <DropdownItem>Overview</DropdownItem>
     <DropdownItem>My downloads</DropdownItem>
     <DropdownItem>Billing</DropdownItem>

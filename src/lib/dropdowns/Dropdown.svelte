@@ -7,7 +7,6 @@
 	import ChevronRight from '../utils/ChevronRight.svelte';
 	import ChevronDown from '../utils/ChevronDown.svelte';
 	import ChevronLeft from '../utils/ChevronLeft.svelte';
-	import generateId from '$lib/utils/generateId';
 	import type { Placement } from '@popperjs/core';
 
 	export let label: string = '';
@@ -18,8 +17,6 @@
 	export let placement: 'auto' | Placement = 'bottom';
 	export let open: boolean = false;
 	export let triggeredBy: string = undefined;
-
-	let id = generateId();
 
 	const icons = {
 		top: ChevronUp,
@@ -37,7 +34,7 @@
 {#if label}
 	<slot name="trigger">
 		{#if inline}
-			<button {id} class={labelClass} class:flex-row-reverse={icon == ChevronLeft}>
+			<button class={labelClass} class:flex-row-reverse={icon == ChevronLeft}>
 				<slot name="label">{label}</slot>
 				{#if arrowIcon}
 					<svelte:component
@@ -46,7 +43,7 @@
 				{/if}
 			</button>
 		{:else}
-			<Button {id} {...$$restProps} class={icon == ChevronLeft && 'flex-row-reverse'}>
+			<Button {...$$restProps} class={icon == ChevronLeft && 'flex-row-reverse'}>
 				<slot name="label">{label}</slot>
 				{#if arrowIcon}
 					<svelte:component
@@ -58,14 +55,7 @@
 	</slot>
 {/if}
 
-<Popper
-	activeContent={true}
-	arrow={false}
-	{placement}
-	trigger="click"
-	on:show
-	bind:open
-	triggeredBy={triggeredBy ?? '#' + id}>
+<Popper activeContent={true} arrow={false} {placement} trigger="click" on:show bind:open {triggeredBy}>
 	<Frame class={popoverClass} rounded border shadow>
 		<slot name="content">
 			<ul class="py-1">

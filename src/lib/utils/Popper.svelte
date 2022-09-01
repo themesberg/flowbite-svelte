@@ -12,11 +12,10 @@
 	export let offset: number = 8;
 	export let placement: Placement = 'top';
 	export let trigger: 'hover' | 'click' = 'hover';
-	export let triggeredBy: string;
+	export let triggeredBy: string = undefined;
+	export let open: boolean = false;
 
 	const dispatch = createEventDispatcher();
-
-	let open: boolean = false;
 
 	let clickable: boolean;
 	$: clickable = trigger === 'click';
@@ -24,6 +23,7 @@
 	$: dispatch('show', triggerEl, open);
 
 	let triggerEl;
+	let contentEl;
 	let triggerEls = [];
 	let popper: Instance;
 
@@ -31,8 +31,8 @@
 	const block = () => ((_blocked = true), setTimeout(() => (_blocked = false), 250));
 
 	const showHandler = (ev: Event) => {
-		if (triggerEl === undefined) triggerEl = ev.target;
-		else if (triggerEls.includes(ev.target) && triggerEl !== ev.target) {
+		if (triggerEl === undefined) console.error('trigger undefined');
+		if (triggerEls.includes(ev.target) && triggerEl !== ev.target) {
 			triggerEl = ev.target;
 			block();
 		}
@@ -41,7 +41,7 @@
 	};
 
 	// reactivity
-	$: popper && (popper.state.elements.reference = triggerEl) && popper.setOptions({ placement });
+	$: popper && popper.setOptions({ placement });
 
 	// typescript typeguards - poper.state.element.reference: Element|HTMLElement|VirtualElement
 	const hasHover = (el) => (el as Element).matches && (el as Element).matches(':hover');
@@ -58,8 +58,8 @@
 		} else open = false;
 	};
 
-	function init(node, _open) {
-		popper = createPopper(triggerEl, node, {
+	function init(node, _triggerEl) {
+		popper = createPopper(_triggerEl, node, {
 			placement,
 			modifiers: [
 				{ name: 'offset', options: { offset: [0, offset] } },
@@ -67,6 +67,10 @@
 			]
 		});
 		return {
+			update(_triggerEl) {
+				popper.state.elements.reference = _triggerEl;
+				popper.update();
+			},
 			destroy() {
 				popper.destroy();
 			}
@@ -83,15 +87,19 @@
 		];
 
 		triggerEls = [...document.querySelectorAll(triggeredBy)];
-		if (!triggerEls.length) console.error('no triggers given');
+		if (!triggerEls.length) {
+			if (contentEl.previousElementSibling) triggerEls.push(contentEl.previousElementSibling);
+			else console.error('No triggers found.');
+		}
 
 		triggerEls.forEach((element: HTMLElement) => {
 			if (element.tabIndex < 0) element.tabIndex = 0; // trigger must be focusable
 			for (const [name, handler, cond] of events) if (cond) element.addEventListener(name, handler);
 		});
 
+		triggerEl = triggerEls[0];
+
 		return () => {
-			triggerEl = undefined;
 			triggerEls.forEach((element: HTMLElement) => {
 				if (element) {
 					for (const [name, handler] of events) element.removeEventListener(name, handler);
@@ -101,9 +109,13 @@
 	});
 </script>
 
-{#if open}
+{#if !triggerEl}
+	<div id="empty" bind:this={contentEl} />
+{/if}
+
+{#if open && triggerEl}
 	<div
-		use:init={open}
+		use:init={triggerEl}
 		transition:fade={{ duration: animation ? animation : 0 }}
 		role="tooltip"
 		tabIndex={activeContent ? -1 : undefined}
