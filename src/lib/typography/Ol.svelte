@@ -2,7 +2,7 @@
   import classNames from 'classnames';
   export let list: 'disc' | 'none' | 'decimal' = 'disc';
   export let position: 'inside' | 'outside' = 'inside';
-  export let ulClass: string = 'max-w-md  text-gray-500 dark:text-gray-400';
+  export let olClass: string = 'list-decimal list-inside';
   let lists = {
     disc: 'list-disc',
     none: 'list-none',
@@ -12,10 +12,9 @@
     inside: 'list-inside',
     outside: 'list-outside'
   };
-  let classUl = classNames(ulClass, lists[list], positions[position], $$props.class);
-  console.log('list', list);
+  let classOl = classNames(olClass, lists[list], positions[position], $$props.class);
 </script>
 
-<ul class={classUl} {list}>
+<ol class={classOl}>
   <slot />
-</ul>
+</ol>

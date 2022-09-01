@@ -179,6 +179,7 @@ export { default as Hr } from './typography/Hr.svelte'
 export { default as Img } from './typography/Img.svelte'
 export { default as Li } from './typography/Li.svelte';
 export { default as Mark } from './typography/Mark.svelte';
+export { default as Ol } from './typography/Ol.svelte';
 export { default as P } from './typography/P.svelte';
 export { default as Secondary } from './typography/Secondary.svelte'
 export { default as TextGradient } from './typography/TextGradient.svelte';
