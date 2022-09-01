@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.3](https://github.com/themesberg/flowbite-svelte/compare/v0.26.2...v0.26.3) (2022-09-01)
+
+
+### Features
+
+* frame abstraction ([47e4126](https://github.com/themesberg/flowbite-svelte/commit/47e4126fa02ff6b9c93d3ee7e17fee79195ac1d3))
+
+
+### Bug Fixes
+
+* docs fixes due to dropdown api change ([869f8d7](https://github.com/themesberg/flowbite-svelte/commit/869f8d7bdea3a7ba97702e31b52f0e33fce3c911))
+* remove flowbite-svelte-blocks page, add a link ([2b9e3d3](https://github.com/themesberg/flowbite-svelte/commit/2b9e3d3f72731ace8abb563e28e98309dbc58b3b))
+* remove heros icons from ([203f14c](https://github.com/themesberg/flowbite-svelte/commit/203f14c578e57429892e0df41452abbdef1b3a4e))
+* remove svelte-flag-icons from devDependencies ([8f48867](https://github.com/themesberg/flowbite-svelte/commit/8f488677958313a2debaa3f953314d6452a63013))
+* update svelte-sidebar-menu version ([1106d16](https://github.com/themesberg/flowbite-svelte/commit/1106d161d06244d5db61641babc7691d28388fbd))
+
 ### [0.26.2](https://github.com/themesberg/flowbite-svelte/compare/v0.26.1...v0.26.2) (2022-08-30)
 
 
