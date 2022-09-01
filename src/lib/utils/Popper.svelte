@@ -45,8 +45,7 @@
 
 	// typescript typeguards - poper.state.element.reference: Element|HTMLElement|VirtualElement
 	const hasHover = (el) => (el as Element).matches && (el as Element).matches(':hover');
-	const hasFocus = (el) =>
-		(el as Element).contains && (el as Element).contains(document.activeElement);
+	const hasFocus = (el) => (el as Element).contains && (el as Element).contains(document.activeElement);
 
 	const hideHandler = (ev) => {
 		if (activeContent) {

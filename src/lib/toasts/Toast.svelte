@@ -1,35 +1,15 @@
 <script lang="ts">
+	import Frame from '$lib/utils/Frame.svelte';
 	import classNames from 'classnames';
-	import * as transitions from 'svelte/transition';
-	import type { Colors, TransitionTypes, TransitionParamTypes } from '../types';
+	import type { Colors } from '../types';
 	import CloseButton from '../utils/CloseButton.svelte';
 
 	export let color: Colors = 'blue';
 	export let simple: boolean = false;
-	// Export a prop through which you can set a desired transition
-	export let transition: TransitionTypes = 'fade';
-	// Pass in extra transition params
-	export let params: TransitionParamTypes = {};
 	// Absolute position
 	export let position: 'tl' | 'tr' | 'bl' | 'br' = undefined; // default not set
 	export let visible = true;
-	export let divClass: string =
-		'w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800';
-
-	const colors = {
-		blue: 'text-blue-500 bg-blue-100 dark:bg-blue-800 dark:text-blue-200',
-		green: 'text-green-500 bg-green-100 dark:bg-green-800 dark:text-green-200',
-		red: 'text-red-500 bg-red-100 dark:bg-red-800 dark:text-red-200',
-		gray: 'text-gray-500 bg-gray-100 dark:bg-gray-800 dark:text-gray-200',
-		purple: 'text-purple-500 bg-purple-100 dark:bg-purple-800 dark:text-purple-200',
-		indigo: 'text-indigo-500 bg-indigo-100 dark:bg-indigo-800 dark:text-indigo-200',
-		yellow: 'text-yellow-500 bg-yellow-100 dark:bg-yellow-800 dark:text-yellow-200',
-		pink: 'text-pink-500 bg-pink-100 dark:bg-pink-800 dark:text-pink-200'
-	};
-
-	// have a custom transition function that returns the desired transition
-	let transitionFunc;
-	$: transitionFunc = transitions[transition] ?? transitions.fade;
+	export let divClass: string = 'w-full max-w-xs p-4';
 
 	$: classDiv = classNames(
 		divClass,
@@ -43,17 +23,14 @@
 	);
 
 	let iconClass;
-	$: iconClass = classNames(
-		'inline-flex items-center justify-center flex-shrink-0 rounded-lg w-8 h-8 mr-3',
-		colors[color]
-	);
+	$: iconClass = classNames('inline-flex items-center justify-center flex-shrink-0 w-8 h-8 mr-3');
 </script>
 
 {#if visible}
-	<div transition:transitionFunc={params} class={classDiv} role="alert">
+	<Frame rounded border transition="fade" {...$$restProps} class={classDiv} role="alert">
 		<div class="flex {$$slots.extra ? 'items-start' : 'items-center'}">
 			{#if $$slots.icon}
-				<div class={iconClass}><slot name="icon" /></div>
+				<Frame {color} rounded class={iconClass}><slot name="icon" /></Frame>
 			{/if}
 
 			<div class="text-sm font-normal w-full">
@@ -64,5 +41,5 @@
 				<CloseButton on:click={() => (visible = false)} />
 			{/if}
 		</div>
-	</div>
+	</Frame>
 {/if}

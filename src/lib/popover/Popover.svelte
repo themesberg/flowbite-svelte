@@ -16,7 +16,6 @@
 </script>
 
 <Popper activeContent={true} {triggeredBy} {...$$restProps} class={popoverClass} on:show>
-	<slot name="trigger" slot="trigger" />
 	{#if $$slots.title || title}
 		<div
 			class="py-2 px-3 bg-gray-100 rounded-t-lg border-b border-gray-200 dark:border-gray-600 dark:bg-gray-700">

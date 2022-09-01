@@ -3,26 +3,21 @@
 	import classNames from 'classnames';
 	import type { ListGroupItemType } from '$lib/types';
 	import ListItem from './ListItem.svelte';
+	import Frame from '$lib/utils/Frame.svelte';
 
 	export let items: ListGroupItemType[] = [];
 	export let active: boolean = false;
 
-	setContext('background', true);
 	$: setContext('active', active);
 
 	let groupClass: string;
-	$: groupClass = classNames(
-		'text-gray-900 bg-white dark:text-gray-200 dark:bg-gray-700',
-		'rounded-lg border border-gray-200 dark:border-gray-600',
-		'divide-y divide-gray-200 dark:divide-gray-600',
-		$$props.class
-	);
+	$: groupClass = classNames('divide-y divide-gray-200 dark:divide-gray-600', $$props.class);
 </script>
 
-<svelte:element this={active ? 'div' : 'ul'} class={groupClass}>
+<Frame tag={active ? 'div' : 'ul'} rounded border class={groupClass}>
 	{#each items as item, index}
 		<ListItem {active} {...item} {index} on:click><slot {item} {index} /></ListItem>
 	{:else}
 		<slot />
 	{/each}
-</svelte:element>
+</Frame>
