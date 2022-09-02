@@ -47,6 +47,7 @@
 	arrow={false}
 	{placement}
 	trigger="click"
+	{...$$restProps}
 	class={popoverClass}
 	on:show
 	bind:open>

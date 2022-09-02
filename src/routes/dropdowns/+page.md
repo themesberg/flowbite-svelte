@@ -4,7 +4,7 @@ layout: dropdownLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Avatar, Button, Checkbox, Label, Helper, Dropdown, DropdownDivider, DropdownHeader, DropdownItem,
+  import { Avatar, Button, Checkbox, Label, Helper, Dropdown, DropdownDivider, DropdownHeader, DropdownItem, Popover,
     Navbar,NavBrand,NavHamburger, NavUl, NavLi, Radio, Toggle, SimpleSearch, Breadcrumb, BreadcrumbItem, Badge, ToolbarButton, ChevronDown, Heading  } from '$lib'
   import Chevron from "$lib/utils/Chevron.svelte";
   import componentProps from '../props/Dropdown.json'
@@ -515,21 +515,21 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 			</span>
 		</NavBrand>
 		<NavHamburger on:click={toggle} />
-		<NavUl {hidden}>
+		<NavUl {hidden} class="ml-3">
 			<NavLi href="/" active={true}>Home</NavLi>
       <NavLi id="nav_dropdown" class="flex items-center"><Chevron>Dropdown</Chevron></NavLi>
 			<NavLi href="/services">Services</NavLi>
 			<NavLi href="/pricing">Pricing</NavLi>
 			<NavLi href="/contact">Contact</NavLi>
 		</NavUl>
-	</Navbar>
-  <Dropdown placement="bottom-start" triggeredBy="#nav_dropdown" open>
+  <Dropdown placement="bottom" triggeredBy="#nav_dropdown" offset="18">
     <DropdownItem>Dashboard</DropdownItem>
     <DropdownItem>Settings</DropdownItem>
     <DropdownItem>Earnings</DropdownItem>
     <DropdownDivider />
     <DropdownItem>Sign out</DropdownItem>
   </Dropdown>
+	</Navbar>
 </ExampleDiv>
 
 ```html
@@ -548,21 +548,21 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
     </span>
   </NavBrand>
   <NavHamburger on:click={toggle} />
-  <NavUl {hidden}>
+  <NavUl {hidden} class="ml-3">
     <NavLi href="/" active={true}>Home</NavLi>
     <NavLi id="nav_dropdown" class="flex items-center"><Chevron>Dropdown</Chevron></NavLi>
     <NavLi href="/services">Services</NavLi>
     <NavLi href="/pricing">Pricing</NavLi>
     <NavLi href="/contact">Contact</NavLi>
   </NavUl>
-</Navbar>
-<Dropdown placement="bottom-start" triggeredBy="#nav_dropdown" open>
+<Dropdown placement="bottom" triggeredBy="#nav_dropdown" offset="18">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
   <DropdownDivider />
   <DropdownItem>Sign out</DropdownItem>
 </Dropdown>
+</Navbar>
 ```
 
 <Htwo label="Dropdown with scrolling" />
@@ -894,13 +894,15 @@ Use this example to also show the name or email of the user next to the avatar f
 <p>The dropdown menus work with buttons of all sizes including smaller or larger ones.</p>
 
 <ExampleDiv class="flex justify-center items-start gap-2 h-64">
-  <Dropdown label="Small dropdown" size="sm">
+  <Button size="sm"><Chevron>Small dropdown</Chevron></Button>
+  <Dropdown>
     <DropdownItem>Dashboard</DropdownItem>
     <DropdownItem>Settings</DropdownItem>
     <DropdownItem>Earnings</DropdownItem>
     <DropdownItem>Sign out</DropdownItem>
   </Dropdown>
-  <Dropdown label="Large dropdown" size="lg">
+  <Button size="lg"><Chevron>Large dropdown</Chevron></Button>
+  <Dropdown>
     <DropdownItem>Dashboard</DropdownItem>
     <DropdownItem>Settings</DropdownItem>
     <DropdownItem>Earnings</DropdownItem>
