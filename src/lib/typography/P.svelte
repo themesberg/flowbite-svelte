@@ -5,6 +5,7 @@
   export let align: 'left' | 'center' | 'right' = 'left';
   export let justify: boolean = false;
   export let italic: boolean = false;
+  export let opacity: number = 100;
   export let whitespace: 'normal' | 'nowrap' | 'pre' | 'preline' | 'prewrap' = 'normal';
   export let size:
     | 'xs'
@@ -86,9 +87,18 @@
     prewrap: 'whitespace-pre-wrap'
   };
 
+  let colorAndopacity = color
+    .split(' ')
+    .map((element) => element.trim())
+    .map((element) => element + '/' + String(opacity))
+    .join(' ');
+  // console.log('colorArr', colorAndopacity);
+  // console.log(typeof colorAndopacity);
+
   let classP = classNames(
     size && sizes[size],
-    color && color,
+
+    (opacity && colorAndopacity) || (color && color),
     height && heights[height],
     weight && weights[weight],
     space && spaces[space],

@@ -158,40 +158,74 @@ example here
 
 <Htwo label="Font style" />
 
+Set italic or non italic styles with the props.
+
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Italic</Heading>
+
+Use the `italic` prop to set italic font style to a text element.
 
 <ExampleDiv>
   <P italic>The crypto identity primitive.</P>
 </ExampleDiv>
 
+```html
+<P italic>The crypto identity primitive.</P>
+```
+
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Normal</Heading>
+
+Text elements by default are non-italic.
 
 <ExampleDiv>
   <P>The crypto identity primitive.</P>
 </ExampleDiv>
 
+```html
+<P>The crypto identity primitive.</P>
+```
+
 <Htwo label="Line Height" />
 
+Set the height between lines using the `height` prop.
+
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Leading normal</Heading>
+
+Use the `height="normal"` (default) prop to set default line height.
 
 <ExampleDiv>
   <P size="3xl" height="normal" class="max-w-lg" weight="semibold"
     >The Al-powered app will help you improve yourself by analysing your everyday life.</P>
 </ExampleDiv>
 
+```html
+<P size="3xl" height="normal" class="max-w-lg" weight="semibold">The Al-powered app will help you improve yourself by analysing your everyday life.</P>
+```
+
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Leading relaxed</Heading>
+
+Use the `height="relaxed"` prop to increase the space between lines.
 
 <ExampleDiv>
   <P size="3xl" height="relaxed" class="max-w-lg" weight="semibold"
     >The Al-powered app will help you improve yourself by analysing your everyday life.</P>
 </ExampleDiv>
 
+```html
+<P size="3xl" height="relaxed" class="max-w-lg" weight="semibold">The Al-powered app will help you improve yourself by analysing your everyday life.</P>
+```
+
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Leading loose</Heading>
+
+Use the `height="loose"` prop to set a large amount of space between text lines.
 
 <ExampleDiv>
   <P size="3xl" height="loose" class="max-w-lg" weight="semibold"
     >The Al-powered app will help you improve yourself by analysing your everyday life.</P>
 </ExampleDiv>
+
+```html
+<P size="3xl" height="loose" class="max-w-lg" weight="semibold">The Al-powered app will help you improve yourself by analysing your everyday life.</P>
+```
 
 <Htwo label="Text Align" />
 
@@ -216,7 +250,6 @@ example here
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Right</Heading>
 
 Use the `align="right"` prop to align the text element to the right side of the page.
-
 
 <ExampleDiv>
   <P align="right"
@@ -292,12 +325,30 @@ Use the `whitespace="preline'` prop to add whitespace exactly how it has been se
 
 <Htwo label="Text Decoration Style" />
 
+Update the text decoration style using the `underline` and `decorationClass` props.
+
 <ExampleDiv>
-example
+<P>Track work across the enterprise through an open, collaborative platform. <Span underline>Link issues across Jira</Span> and ingest data from other <Span underline decorationClass="decoration-blue-500 decoration-double">software development</Span> tools, so your IT support and operations teams have richer contextual information to rapidly respond to <Span underline decorationClass="decoration-green-500 decoration-dotted">requests</Span>, <Span underline decorationClass="decoration-4 decoration-red-500 decoration-dashed">incidents</Span>, and <Span underline decorationClass="decoration-sky-500 decoration-wavy">changes</Span>.</P>
 </ExampleDiv>
+
+```html
+<P>Track work across the enterprise through an open, collaborative platform. <Span underline>Link issues across Jira</Span> and ingest data from other <Span underline decorationClass="decoration-blue-500 decoration-double">software development</Span> tools, so your IT support and operations teams have richer contextual information to rapidly respond to <Span underline decorationClass="decoration-green-500 decoration-dotted">requests</Span>, <Span underline decorationClass="decoration-4 decoration-red-500 decoration-dashed">incidents</Span>, and <Span underline decorationClass="decoration-sky-500 decoration-wavy">changes</Span>.</P>
+```
 
 <Htwo label="Opacity" />
 
+Use the `opacity` and `color` props to set the opacity of inline text elements.
+
 <ExampleDiv>
-example
+<P size='xl' opacity={100} color="text-blue-600 dark:text-blue-500">Flowbite app will help you improve yourself by analysing your everyday life.</P>
+<P size='xl' opacity={75} color="text-blue-600 dark:text-blue-500">Flowbite app will help you improve yourself by analysing your everyday life.</P>
+<P size='xl' opacity={50} color="text-blue-600 dark:text-blue-500">Flowbite app will help you improve yourself by analysing your everyday life.</P>
+<P size='xl' opacity={25} color="text-blue-600 dark:text-blue-500">Flowbite app will help you improve yourself by analysing your everyday life.</P>
 </ExampleDiv>
+
+```html
+<P size='xl' opacity={100} color="text-blue-600 dark:text-blue-500">Flowbite app will help you improve yourself by analysing your everyday life.</P>
+<P size='xl' opacity={75} color="text-blue-600 dark:text-blue-500">Flowbite app will help you improve yourself by analysing your everyday life.</P>
+<P size='xl' opacity={50} color="text-blue-600 dark:text-blue-500">Flowbite app will help you improve yourself by analysing your everyday life.</P>
+<P size='xl' opacity={25} color="text-blue-600 dark:text-blue-500">Flowbite app will help you improve yourself by analysing your everyday life.</P>
+```

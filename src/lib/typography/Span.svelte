@@ -7,11 +7,11 @@
   export let gradient: boolean = false;
   export let highlight: boolean = false;
   export let highlightClass: string = 'text-blue-600 dark:text-blue-500';
-  export let underDecoration: string = 'decoration-2 decoration-blue-400 dark:decoration-blue-600';
+  export let decorationClass: string = 'decoration-2 decoration-blue-400 dark:decoration-blue-600';
   export let gradientClass: string =
     'text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400';
 
-  let underlineClass = classNames('underline', underDecoration);
+  let underlineClass = classNames('underline', decorationClass);
   let classSpan: string = classNames(
     italic && 'italic',
     underline && underlineClass,
