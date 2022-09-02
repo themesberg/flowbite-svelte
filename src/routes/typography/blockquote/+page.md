@@ -44,7 +44,7 @@ Use this example to quote an external source inside a blockquote element.
 
 ```html
 <Blockquote>
-<p>"Flowbite is just awesome. It contains tons of predesigned ..."</p>
+  <p>"Flowbite is just awesome. It contains tons of predesigned ..."</p>
 </Blockquote>
 ```
 
@@ -63,7 +63,7 @@ This example can be used as an alternative style to the default one by applying 
 ```html
 <P>Does your user know how to exit out of screens?...</P>
 <Blockquote border bg class="p-4 my-4">
-<p>"Flowbite is just awesome. It contains tons ..."</p>
+  <p>"Flowbite is just awesome. It contains tons ..."</p>
 </Blockquote>
 <P>First of all you need to understand how Flowbite works...</P>
 ```
@@ -81,8 +81,8 @@ Use this example to show an icon above the blockquote text content.
 
 ```html
 <Blockquote>
-<svg aria-hidden="true" class="w-10 h-10 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/></svg>
-<p>"Flowbite is just awesome. It contains tons of ..."</p>
+  <svg aria-hidden="true" class="w-10 h-10 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/></svg>
+  <p>"Flowbite is just awesome. It contains tons of ..."</p>
 </Blockquote>
 ```
 
@@ -104,7 +104,7 @@ Use this example to show a blockquote component between multiple paragraph eleme
 ```html
 <P class="mb-3">Track work across the enterprise ...</P>
 <div class="grid grid-cols-1 md:gap-6 md:grid-cols-2">
-<P class="mb-3">Track work across the enterprise ...</P>
+  <P class="mb-3">Track work across the enterprise ...</P>
   <Blockquote class="mb-3">
     <p>" Flowbite is just awesome. It contains tons ... "</p>
   </Blockquote>
@@ -134,17 +134,17 @@ This example can be used for user testimonials by mentioning the author and occu
 
 ```html
 <figure class="mx-auto max-w-screen-md text-center">
-<svg aria-hidden="true" class="w-10 h-10 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/></svg>
-<Blockquote alignment="center">
-<p>"Flowbite is just awesome. It contains tons ..."</p>
-</Blockquote>
-<figcaption class="flex justify-center items-center mt-6 space-x-3">
-  <img class="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="Micheal Gough profile">
-  <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-      <cite class="pr-3 font-medium text-gray-900 dark:text-white">Micheal Gough</cite>
-      <cite class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">CEO at Google</cite>
-  </div>
-</figcaption>
+  <svg aria-hidden="true" class="w-10 h-10 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/></svg>
+  <Blockquote alignment="center">
+  <p>"Flowbite is just awesome. It contains tons ..."</p>
+  </Blockquote>
+  <figcaption class="flex justify-center items-center mt-6 space-x-3">
+    <img class="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="Micheal Gough profile">
+    <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
+        <cite class="pr-3 font-medium text-gray-900 dark:text-white">Micheal Gough</cite>
+        <cite class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">CEO at Google</cite>
+    </div>
+  </figcaption>
 </figure>
 ```
 
@@ -172,19 +172,19 @@ Use this example to show a user review with rating stars and the name and occupa
 
 ```html
 <figure class="max-w-screen-md">
-    <div class="flex items-center mb-4 text-yellow-300">
-        <Rating total={5} rating={4.66} ceil size="30"/>
-    </div>
-    <Blockquote italic={false}>
-        <p class="text-2xl font-semibold text-gray-900 dark:text-white">"Flowbite is just awesome..."</p>
-    </Blockquote>
-    <figcaption class="flex items-center mt-6 space-x-3">
-        <img class="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" alt="Bonnie Green profile">
-        <div class="flex items-center divide-x-2 divide-gray-300 dark:divide-gray-700">
-            <cite class="pr-3 font-medium text-gray-900 dark:text-white">Bonnie Green</cite>
-            <cite class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">CTO at Flowbite</cite>
-        </div>
-    </figcaption>
+  <div class="flex items-center mb-4 text-yellow-300">
+      <Rating total={5} rating={4.66} ceil size="30"/>
+  </div>
+  <Blockquote italic={false}>
+      <p class="text-2xl font-semibold text-gray-900 dark:text-white">"Flowbite is just awesome..."</p>
+  </Blockquote>
+  <figcaption class="flex items-center mt-6 space-x-3">
+      <img class="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" alt="Bonnie Green profile">
+      <div class="flex items-center divide-x-2 divide-gray-300 dark:divide-gray-700">
+          <cite class="pr-3 font-medium text-gray-900 dark:text-white">Bonnie Green</cite>
+          <cite class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">CTO at Flowbite</cite>
+      </div>
+  </figcaption>
 </figure>
 ```
 
@@ -205,7 +205,7 @@ The default alignment of the blockquote text content is the left side of the doc
 
 ```html
 <Blockquote>
-<p>"Flowbite is just awesome. It contains tons ..."</p>
+  <p>"Flowbite is just awesome. It contains tons ..."</p>
 </Blockquote>
 ```
 
@@ -221,7 +221,7 @@ Use the `alignment="center"` prop to align the text content inside the blockquot
 
 ```html
 <Blockquote alignment="center">
-<p>"Flowbite is just awesome. It contains tons of ..."</p>
+  <p>"Flowbite is just awesome. It contains tons of ..."</p>
 </Blockquote>
 ```
 
@@ -231,13 +231,13 @@ Use the `alignment="right"` prop to align the blockquote text content to the rig
 
 <ExampleDiv>
 <Blockquote alignment="right">
-<p>"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
+  <p>"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
 </Blockquote>
 </ExampleDiv>
 
 ```html
 <Blockquote alignment="right">
-<p>"Flowbite is just awesome. It contains tons ..."</p>
+  <p>"Flowbite is just awesome. It contains tons ..."</p>
 </Blockquote>
 ```
 
@@ -249,13 +249,13 @@ Use the `size="lg"` prop to apply the small size for the blockquote component.
 
 <ExampleDiv>
 <Blockquote>
-<p>"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
+  <p>"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
 </Blockquote>
 </ExampleDiv>
 
 ```html
 <Blockquote>
-<p>"Flowbite is just awesome. It contains tons of ..."</p>
+  <p>"Flowbite is just awesome. It contains tons of ..."</p>
 </Blockquote>
 ```
 
@@ -271,7 +271,7 @@ Use the `size="xl"` to set the default size for the blockquote element.
 
 ```html
 <Blockquote size="xl">
-<p>"Flowbite is just awesome. It contains tons of ..."</p>
+  <p>"Flowbite is just awesome. It contains tons of ..."</p>
 </Blockquote>
 ```
 
@@ -287,7 +287,7 @@ The `size="xxl"` prop can be used to set a large size for the blockquote compone
 
 ```html
 <Blockquote size="xxl">
-<p>"Flowbite is just awesome. It contains tons of ..."</p>
+  <p>"Flowbite is just awesome. It contains tons of ..."</p>
 </Blockquote>
 ```
 
