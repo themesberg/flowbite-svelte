@@ -4,20 +4,19 @@ layout: typographyLayout
 
 <script>
 	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../../utils'
-	import { P, Heading, Highlight, A, Span, Mark, Secondary,  Button, Badge, Breadcrumb, BreadcrumbItem } from '$lib';
+	import { P, Heading, A, Span, Mark, Secondary,  Button, Badge, Breadcrumb, BreadcrumbItem } from '$lib';
 	
 	import componentProps1 from '../../props/Heading.json'
-  import componentProps2 from '../../props/Highlight.json'
+	import componentProps2 from '../../props/P.json'
 	import componentProps3 from '../../props/A.json'
   import componentProps4 from '../../props/Mark.json'
 	import componentProps5 from '../../props/Secondary.json'
-	import componentProps6 from '../../props/P.json'
+
   let items1 = componentProps1.props
   let items2 = componentProps2.props
 	let items3 = componentProps3.props
   let items4 = componentProps4.props
 	let items5 = componentProps5.props
-  let items6 = componentProps6.props
 	
 	let propHeader = ['Name', 'Type', 'Default']
 
@@ -109,12 +108,12 @@ Use this example of a second-level H2 heading as the main subtitle for each sect
 Use this example to highlight a certain portion of the heading text with a different color.
 
 <ExampleDiv>
-<Heading tag="h1" class="mb-4">Get back to growth with <Highlight>the world's #1</Highlight> CRM.</Heading>
+<Heading tag="h1" class="mb-4">Get back to growth with <Span highlight>the world's #1</Span> CRM.</Heading>
 <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
 </ExampleDiv>
 
 ```html
-<Heading tag="h1" class="mb-4">Get back to growth with <Highlight>the world's #1</Highlight> CRM.</Heading>
+<Heading tag="h1" class="mb-4">Get back to growth with <Span highlight>the world's #1</Span> CRM.</Heading>
 <P>Here at Flowbite we focus on markets where technology ...</P>
 ```
 
@@ -292,7 +291,7 @@ The component has the following props, type, and default values. See <A href="/p
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Highlight</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">P</Heading>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
@@ -315,11 +314,3 @@ The component has the following props, type, and default values. See <A href="/p
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
-
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">P</Heading>
-
-<TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={items6} rowState='hover' />
-</TableProp>
-
-
