@@ -24,6 +24,7 @@ export const typography = [
 	{ href: '/typography/blockquote', name: 'Blockquote' },
 	{ href: '/typography/images', name: 'Images' },
 	{ href: '/typography/links', name: 'Links' },
+	{ href: '/typography/lists', name: 'Lists' },
 	{ href: '/typography/hr', name: 'HR' }
 ];
 

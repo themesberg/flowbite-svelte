@@ -188,8 +188,7 @@ Use this example to show a user review with rating stars and the name and occupa
 </figure>
 ```
 
-<Htwo label="
-Alignment" />
+<Htwo label="Alignment" />
 
 Choose from the following examples the blockquote text alignment from starting from left, center to right based on the utility classes from Tailwind CSS.
 
@@ -221,6 +220,7 @@ Use the `alignment="center"` prop to align the text content inside the blockquot
 </ExampleDiv>
 
 ```html
+<Blockquote alignment="center">
 <p>"Flowbite is just awesome. It contains tons of ..."</p>
 </Blockquote>
 ```
