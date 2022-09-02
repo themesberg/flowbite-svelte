@@ -263,6 +263,12 @@ Use the `height="loose"` prop to set a large amount of space between text lines.
     from Tailwind CSS and based on the Flowbite component library</P>
 </ExampleDiv>
 
+```html
+<P align="left">Get started with an enterprise-level, profesionally designed, fully responsive, and HTML
+semantic set of web pages, sections and over 400+ components crafted with the utility classes
+from Tailwind CSS and based on the Flowbite component library</P>
+```
+
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Center</Heading>
 
 <ExampleDiv>
@@ -271,6 +277,12 @@ Use the `height="loose"` prop to set a large amount of space between text lines.
     semantic set of web pages, sections and over 400+ components crafted with the utility classes
     from Tailwind CSS and based on the Flowbite component library</P>
 </ExampleDiv>
+
+```html
+<P align="center">Get started with an enterprise-level, profesionally designed, fully responsive, and HTML
+semantic set of web pages, sections and over 400+ components crafted with the utility classes
+from Tailwind CSS and based on the Flowbite component library</P>
+```
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Right</Heading>
 
@@ -283,6 +295,12 @@ Use the `align="right"` prop to align the text element to the right side of the 
     from Tailwind CSS and based on the Flowbite component library</P>
 </ExampleDiv>
 
+```html
+<P align="right">Get started with an enterprise-level, profesionally designed, fully responsive, and HTML
+semantic set of web pages, sections and over 400+ components crafted with the utility classes
+from Tailwind CSS and based on the Flowbite component library</P>
+```
+
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Text justify</Heading>
 
 Use the `justify` prop to justify the text content.
@@ -294,10 +312,15 @@ Use the `justify` prop to justify the text content.
     from Tailwind CSS and based on the Flowbite component library</P>
 </ExampleDiv>
 
+```html
+<P justify>Get started with an enterprise-level, profesionally designed, fully responsive, and HTML
+semantic set of web pages, sections and over 400+ components crafted with the utility classes
+from Tailwind CSS and based on the Flowbite component library</P>
+```
+
 <Htwo label="Whitespace" />
 
 Configure the whitespace behaviour of inline text elements using the `whitespace` prop.
-
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Normal</Heading>
 
@@ -308,6 +331,11 @@ Use the `whitespace="normal"` prop to set the default whitespace behaviour.
     >This is some text. This is some text. This is some text. This is some text. This is some text.
     This is some text. This is some text. This is some text. This is some text.</P>
 </ExampleDiv>
+
+```html
+<P whitespace="normal">This is some text. This is some text. This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text. This is some text.</P>
+```
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Nowrap</Heading>
 
