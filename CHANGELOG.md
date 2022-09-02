@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.5](https://github.com/themesberg/flowbite-svelte/compare/v0.26.4...v0.26.5) (2022-09-02)
+
+
+### Features
+
+* add DescriptionList, List, Span components ([495b61e](https://github.com/themesberg/flowbite-svelte/commit/495b61eb0d81eb9ae06a34fa981dd42a81983ea6))
+* add Ul, Li, Span component ([86d8b66](https://github.com/themesberg/flowbite-svelte/commit/86d8b661f2524f25162a99b6d3b8df761a85b01b))
+
+
+### Bug Fixes
+
+* blockquote page formating ([1641d45](https://github.com/themesberg/flowbite-svelte/commit/1641d45bdc032c01cd201967bf362d9f8a19a422))
+* Heading to the original code ([5604da5](https://github.com/themesberg/flowbite-svelte/commit/5604da5f348420f8878e44d591e9a8704b23e4a0))
+* List in cards page to Listgroup ([b8e05f4](https://github.com/themesberg/flowbite-svelte/commit/b8e05f4f97fbbb0236872b2b5f18f0928c34ad55))
+* rebase merge conflict Alert.svelte ([38df84a](https://github.com/themesberg/flowbite-svelte/commit/38df84a21124d3d3c3c1d716ff21bd678b156b09))
+* removed Ol component ([569f2e3](https://github.com/themesberg/flowbite-svelte/commit/569f2e3a51a59abba641c669949b4b5372c56a01))
+* rename List to Listgroup and ListItem to ListgroupItem ([1b70110](https://github.com/themesberg/flowbite-svelte/commit/1b7011062a729452604b3a0dd1ed54f28ab49132))
+
 ### [0.26.4](https://github.com/themesberg/flowbite-svelte/compare/v0.26.3...v0.26.4) (2022-09-02)
 
 
