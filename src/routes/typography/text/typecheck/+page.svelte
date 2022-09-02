@@ -6,7 +6,7 @@
     CompoDescription,
     TableProp,
     TableDefaultRow
-  } from '../../utils';
+  } from '../../../../utils';
   import { P } from '$lib';
 </script>
 
