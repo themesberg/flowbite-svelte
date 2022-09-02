@@ -12,14 +12,14 @@
 </script>
 
 <h2
-  class="htwo relative group text-2xl w-full font-semibold dark:text-white mb-4 mt-8"
+  class="htwo group text-2xl w-full font-semibold dark:text-white mb-4 pt-24 -mt-16"
   on:mouseover={handleMouseover}
   on:focus
   on:mouseout={handleMouseout}
   on:blur
   id={modifiedLabel}>
   {label}
-  <span class:hidden class="absolute">
+  <span class:hidden>
     <a
       href="#{modifiedLabel}"
       class="ml-2 text-blue-700 opacity-0 transition-opacity dark:text-blue-500 group-hover:opacity-100"
