@@ -12,7 +12,8 @@
 </script>
 
 <li>
-	<a
+	<svelte:element
+		this={href ? 'a' : 'div'}
 		{href}
 		{...$$restProps}
 		on:blur
@@ -25,8 +26,7 @@
 		on:mouseenter
 		on:mouseleave
 		on:mouseover
-		class={classNames(aClass, $$props.class)}
-	>
+		class={classNames(aClass, $$props.class)}>
 		<slot />
-	</a>
+	</svelte:element>
 </li>

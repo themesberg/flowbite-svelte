@@ -3,11 +3,8 @@
 	import Frame from '$lib/utils/Frame.svelte';
 	import Popper from '$lib/utils/Popper.svelte';
 	import classNames from 'classnames';
-	import ChevronUp from '../utils/ChevronUp.svelte';
-	import ChevronRight from '../utils/ChevronRight.svelte';
-	import ChevronDown from '../utils/ChevronDown.svelte';
-	import ChevronLeft from '../utils/ChevronLeft.svelte';
 	import type { Placement } from '@popperjs/core';
+	import Chevron from '$lib/utils/Chevron.svelte';
 
 	export let label: string = '';
 	export let inline: boolean = false;
@@ -18,15 +15,6 @@
 	export let open: boolean = false;
 	export let triggeredBy: string = undefined;
 
-	const icons = {
-		top: ChevronUp,
-		right: ChevronRight,
-		bottom: ChevronDown,
-		left: ChevronLeft
-	};
-	// @ts-ignore
-	$: icon = icons[placement.split('-')[0]];
-
 	let popoverClass;
 	$: popoverClass = classNames('outline-none', $$props.class);
 </script>
@@ -34,21 +22,19 @@
 {#if label}
 	<slot name="trigger">
 		{#if inline}
-			<button class={labelClass} class:flex-row-reverse={icon == ChevronLeft}>
-				<slot name="label">{label}</slot>
+			<button class={labelClass}>
 				{#if arrowIcon}
-					<svelte:component
-						this={icon ?? ChevronDown}
-						class={classNames('h-4 w-4', icon == ChevronLeft ? 'mr-2' : 'ml-2')} />
+					<Chevron {placement}><slot name="label">{label}</slot></Chevron>
+				{:else}
+					<slot name="label">{label}</slot>
 				{/if}
 			</button>
 		{:else}
-			<Button {...$$restProps} class={icon == ChevronLeft && 'flex-row-reverse'}>
-				<slot name="label">{label}</slot>
+			<Button>
 				{#if arrowIcon}
-					<svelte:component
-						this={icon ?? ChevronDown}
-						class={classNames('h-4 w-4', icon == ChevronLeft ? 'mr-2' : 'ml-2')} />
+					<Chevron {placement}><slot name="label">{label}</slot></Chevron>
+				{:else}
+					<slot name="label">{label}</slot>
 				{/if}
 			</Button>
 		{/if}
