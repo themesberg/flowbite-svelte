@@ -144,17 +144,39 @@ Increase or decrease the spacing between letters using the `space` prop.
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Underline</Heading>
 
+Update the text decoration style using the `underline` and `decorationClass` props.
+
 <ExampleDiv>
-example here
+<P>Track work across the enterprise through an open, collaborative platform. <Span underline>Link issues across Jira</Span> and ingest data from other <Span underline decorationClass="decoration-blue-500 decoration-double">software development</Span> tools, so your IT support and operations teams have richer contextual information to rapidly respond to <Span underline decorationClass="decoration-green-500 decoration-dotted">requests</Span>, <Span underline decorationClass="decoration-4 decoration-red-500 decoration-dashed">incidents</Span>, and <Span underline decorationClass="decoration-sky-500 decoration-wavy">changes</Span>.</P>
 </ExampleDiv>
+
+```html
+<P>Track work across the enterprise through an open, collaborative platform. <Span underline>Link issues across Jira</Span> and ingest data from other <Span underline decorationClass="decoration-blue-500 decoration-double">software development</Span> tools, so your IT support and operations teams have richer contextual information to rapidly respond to <Span underline decorationClass="decoration-green-500 decoration-dotted">requests</Span>, <Span underline decorationClass="decoration-4 decoration-red-500 decoration-dashed">incidents</Span>, and <Span underline decorationClass="decoration-sky-500 decoration-wavy">changes</Span>.</P>
+```
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Line through</Heading>
 
-<ExampleDiv>test</ExampleDiv>
+Set a strikethrough line on a text element using the `line-through` class.
+
+<ExampleDiv>
+<Span class="line-through">$109</Span><Span class='ml-3'>$79</Span>
+</ExampleDiv>
+
+```html
+<Span class="line-through">$109</Span><Span class='ml-3'>$79</Span>
+```
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Uppercase</Heading>
 
-<ExampleDiv>test</ExampleDiv>
+Force uppercase characters for a given portion of text using the uppercase class.
+
+<ExampleDiv>
+<P>The crypto <Span class='uppercase'>identity</Span> primitive.</P>
+</ExampleDiv>
+
+```html
+<P>The crypto <Span class='uppercase'>identity</Span> primitive.</P>
+```
 
 <Htwo label="Font style" />
 
