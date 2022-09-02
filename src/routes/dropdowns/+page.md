@@ -32,7 +32,7 @@ layout: dropdownLayout
     alert ('Clicked.')
   }
 
-  let dropdownOpen = true;
+  let dropdownOpen = false;
 </script>
 
 <Breadcrumb class="pb-8">

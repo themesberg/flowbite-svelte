@@ -2,12 +2,15 @@
 	import classNames from 'classnames';
 	import { setContext } from 'svelte';
 	import * as transitions from 'svelte/transition';
+
+	import type { Action } from 'svelte/action';
 	import type { TransitionTypes, TransitionParamTypes } from '../types';
+	import { noop } from 'svelte/internal';
 
 	setContext('background', true);
 	$: setContext('color', color);
 
-	export let tag: string = 'div';
+	export let tag: 'div' | 'a' = 'div';
 	export let color: string = 'default';
 	export let rounded: boolean = false;
 	export let border: boolean = false;
@@ -17,6 +20,11 @@
 	export let transition: TransitionTypes = undefined;
 	// Pass in extra transition params
 	export let params: TransitionParamTypes = {};
+
+	// For components development
+	export let node: HTMLElement = undefined;
+	export let use: Action = noop;
+	export let options = {};
 
 	// your script goes here
 	const bgColors = {
@@ -81,11 +89,17 @@
 </script>
 
 {#if transitionFunc}
-	<svelte:element this={tag} transition:transitionFunc={params} {...$$restProps} class={divClass}>
+	<svelte:element
+		this={tag}
+		use:use={options}
+		bind:this={node}
+		transition:transitionFunc={params}
+		{...$$restProps}
+		class={divClass}>
 		<slot />
 	</svelte:element>
 {:else}
-	<svelte:element this={tag} {...$$restProps} class={divClass}>
+	<svelte:element this={tag} use:use={options} bind:this={node} {...$$restProps} class={divClass}>
 		<slot />
 	</svelte:element>
 {/if}

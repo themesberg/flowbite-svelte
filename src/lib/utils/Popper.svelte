@@ -5,6 +5,7 @@
 	import classNames from 'classnames';
 	import type { Placement, Instance } from '@popperjs/core';
 	import createEventDispatcher from './createEventDispatcher';
+	import Frame from './Frame.svelte';
 
 	export let activeContent: boolean = false;
 	export let animation: false | number = 100;
@@ -114,18 +115,19 @@
 {/if}
 
 {#if open && triggerEl}
-	<div
-		use:init={triggerEl}
-		transition:fade={{ duration: animation ? animation : 0 }}
+	<Frame
+		use={init}
+		options={triggerEl}
 		role="tooltip"
 		tabIndex={activeContent ? -1 : undefined}
-		class={classNames('z-10', $$props.class)}
 		on:focusin={activeContent ? showHandler : undefined}
 		on:focusout={activeContent ? hideHandler : undefined}
 		on:mouseenter={activeContent && !clickable ? showHandler : undefined}
 		on:mouseleave={activeContent && !clickable ? hideHandler : undefined}
+		{...$$restProps}
+		class={classNames('z-10', $$props.class)}
 		style="position: absolute;">
 		<slot />
 		{#if arrow}<div data-popper-arrow />{/if}
-	</div>
+	</Frame>
 {/if}

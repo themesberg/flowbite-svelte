@@ -69,15 +69,19 @@ You can use choose between dark and light version styles for the tooltip compone
 
 <ExampleDiv class="flex items-end gap-2 h-32">
   <Button id="style-light">Light tooltip</Button>
+  <Button id="style-auto">Default tooltip</Button>
   <Button id="style-dark">Dark tooltip</Button>
   <Tooltip style="light" triggeredBy="#style-light">Tooltip content</Tooltip>
+  <Tooltip style="auto" triggeredBy="#style-auto">Tooltip content</Tooltip>
   <Tooltip style="dark" triggeredBy="#style-dark">Tooltip content</Tooltip>
 </ExampleDiv>
 
 ```html
   <Button id="style-light">Light tooltip</Button>
+  <Button id="style-auto">Default tooltip</Button>
   <Button id="style-dark">Dark tooltip</Button>
   <Tooltip style="light" triggeredBy="#style-light">Tooltip content</Tooltip>
+  <Tooltip style="auto" triggeredBy="#style-auto">Tooltip content</Tooltip>
   <Tooltip style="dark" triggeredBy="#style-dark">Tooltip content</Tooltip>
 ```
 
@@ -147,9 +151,10 @@ When you want to add custom styles, use `style="custom"`, `tipClass`, and `color
   <Tooltip
     triggeredBy="#custom"
 		placement="auto"
-		tipClass="rounded-lg p-24 text-lg font-medium shadow-sm text-white"
 		style="custom"
-		color="bg-red-900 dark:bg-red-700"
+    tipClass=""
+		class="p-24 text-lg font-medium text-white"
+    color='green'
 	>
 		Tooltip content
 	</Tooltip>
