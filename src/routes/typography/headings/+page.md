@@ -4,24 +4,20 @@ layout: typographyLayout
 
 <script>
 	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../../utils'
-	import { P, Heading, Highlight, A, Mark, Secondary, TextGradient, Underline, Button, Badge, Breadcrumb, BreadcrumbItem } from '$lib';
+	import { P, Heading, Highlight, A, Span, Mark, Secondary,  Button, Badge, Breadcrumb, BreadcrumbItem } from '$lib';
 	
 	import componentProps1 from '../../props/Heading.json'
   import componentProps2 from '../../props/Highlight.json'
 	import componentProps3 from '../../props/A.json'
   import componentProps4 from '../../props/Mark.json'
 	import componentProps5 from '../../props/Secondary.json'
-	import componentProps6 from '../../props/TextGradient.json'
-	import componentProps7 from '../../props/Underline.json'
-	import componentProps8 from '../../props/P.json'
+	import componentProps6 from '../../props/P.json'
   let items1 = componentProps1.props
   let items2 = componentProps2.props
 	let items3 = componentProps3.props
   let items4 = componentProps4.props
 	let items5 = componentProps5.props
   let items6 = componentProps6.props
-	let items7 = componentProps7.props
-  let items8 = componentProps8.props
 	
 	let propHeader = ['Name', 'Type', 'Default']
 
@@ -47,8 +43,6 @@ layout: typographyLayout
 	<GitHubSource href="typography/Highlight.svelte">Highlight</GitHubSource>
 	<GitHubSource href="typography/Mark.svelte">Mark</GitHubSource>
 	<GitHubSource href="typography/Secondary.svelte">Secondary</GitHubSource>
-	<GitHubSource href="typography/TextGradient.svelte">TextGradient</GitHubSource>
-	<GitHubSource href="typography/Underline.svelte">Underline</GitHubSource>
 </ExampleDiv>
 
 Get started with the heading component to define titles and subtitles on a web page and also improve the on-page SEO metrics of your website by targeting high-traffic keywords on Google.
@@ -59,7 +53,7 @@ At least one unique H1 tag should be available for each page on your website wit
 
 ```html
 <script>
-	import {  Heading, P, Highlight, A, Mark, Underline, Secondary, TextGradient } from 'flowbite-svelte'
+	import {  Heading, P, Highlight, A, Mark, Secondary } from 'flowbite-svelte'
 </script>
 ```
 
@@ -143,26 +137,26 @@ This example can be used to mark one part of the heading text with a solid backg
 Use this example to highlight a portion of the heading text by using a gradient style.
 
 <ExampleDiv>
-<Heading tag="h1" class="mb-4" customSize="text-3xl font-extrabold  md:text-5xl lg:text-6xl"><TextGradient>Better Data</TextGradient> Scalable AI.</Heading>
+<Heading tag="h1" class="mb-4" customSize="text-3xl font-extrabold  md:text-5xl lg:text-6xl"><Span gradient>Better Data</Span> Scalable AI.</Heading>
 <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
 </ExampleDiv>
 
 ```html
-<Heading tag="h1" class="mb-4" customSize="text-3xl font-extrabold  md:text-5xl lg:text-6xl"><TextGradient>Better Data</TextGradient> Scalable AI.</Heading>
+<Heading tag="h1" class="mb-4" customSize="text-3xl font-extrabold  md:text-5xl lg:text-6xl"><Span gradient>Better Data</Span> Scalable AI.</Heading>
 <P>Here at Flowbite we focus on markets where ...</P>
 ```
 
 <Htwo label="Heading underline" />
 
-Get started with this example to underline an important part of the heading component using the `Underline` component.
+Get started with this example to underline an important part of the heading component using the `underline` prop in the `Span` component.
 
 <ExampleDiv>
-<Heading tag="h1" class="mb-4">We invest in the <Underline>world’s potential</Underline></Heading>
+<Heading tag="h1" class="mb-4">We invest in the <Span underline underDecoration="decoration-8 decoration-blue-400 dark:decoration-blue-600">world’s potential</Span></Heading>
 <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
 </ExampleDiv>
 
 ```html
-<Heading tag="h1" class="mb-4">We invest in the <Underline>world’s potential</Underline></Heading>
+<Heading tag="h1" class="mb-4">We invest in the <Span underline underDecoration="decoration-8 decoration-blue-400 dark:decoration-blue-600">world’s potential</Underline></Heading>
 <P>Here at Flowbite we focus on markets where ...</P>
 ```
 
@@ -322,20 +316,10 @@ The component has the following props, type, and default values. See <A href="/p
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">TextGradient</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">P</Heading>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Underline</Heading>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={items7} rowState='hover' />
-</TableProp>
-
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">P</Heading>
-
-<TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={items8} rowState='hover' />
-</TableProp>

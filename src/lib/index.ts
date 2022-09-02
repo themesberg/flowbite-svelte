@@ -184,8 +184,6 @@ export { default as List } from './typography/List.svelte';
 export { default as P } from './typography/P.svelte';
 export { default as Secondary } from './typography/Secondary.svelte'
 export { default as Span } from './typography/Span.svelte'
-export { default as TextGradient } from './typography/TextGradient.svelte';
-export { default as Underline } from './typography/Underline.svelte';
 
 // utils
 export { default as CloseButton } from './utils/CloseButton.svelte';
