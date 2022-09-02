@@ -15,6 +15,7 @@ layout: modalLayout
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
   let click = false;
   let placement;
+  let animation = 'none';
 </script>
 
 <Breadcrumb class="pb-8">
@@ -28,6 +29,8 @@ layout: modalLayout
 
 <ExampleDiv>
 <GitHubSource href="popover/Popover.svelte">Popover</GitHubSource>
+<Popover triggeredBy="#last">Test</Popover>
+<Popover>Test2</Popover>
 </ExampleDiv>
 
 Get started with the popover component to show any type of content inside a pop-up box when hovering or clicking over a trigger element. There are multiple examples that you can choose from, such as showing more information about a user profile, company profile, password strength, and more.
@@ -285,21 +288,21 @@ Upper &amp; lower case letters
 Set the position of the popover component relative to the trigger element by using the `placement={top|right|bottom|left}` data attribute and its values.
 
 <ExampleDiv class="flex gap-4">
-  <Button id="placement-left" on:mouseenter={()=> placement="left"}>Left popover</Button>
-  <Button id="placement-top" on:mouseenter={()=> placement="top"}>Top popover</Button>
-  <Button id="placement-bottom" on:mouseenter={()=> placement="bottom"}>Bottom popover</Button>
-  <Button id="placement-right" on:mouseenter={()=> placement="right"}>Right popover</Button>
-  <Popover triggeredBy="[id^='placement-']" {placement} class="w-64 text-sm font-light " title="Popover left">
+  <Button id="placement-left">Left popover</Button>
+  <Button id="placement-top">Top popover</Button>
+  <Button id="placement-bottom">Bottom popover</Button>
+  <Button id="placement-right">Right popover</Button>
+  <Popover triggeredBy="[id^='placement-']" {placement} class="w-64 text-sm font-light " title="Popover {placement}" on:show={(ev)=>placement = ev.target.id.split('-')[1]}>
       And here's some amazing content. It's very engaging. Right?
   </Popover>
 </ExampleDiv>
 
 ```svelte
-<Button id="placement-left" on:mouseenter={()=> placement="left"}>Left popover</Button>
-<Button id="placement-top" on:mouseenter={()=> placement="top"}>Top popover</Button>
-<Button id="placement-bottom" on:mouseenter={()=> placement="bottom"}>Bottom popover</Button>
-<Button id="placement-right" on:mouseenter={()=> placement="right"}>Right popover</Button>
-<Popover triggeredBy="[id^='placement-']" {placement} class="w-64 text-sm font-light " title="Popover left">
+<Button id="placement-left">Left popover</Button>
+<Button id="placement-top">Top popover</Button>
+<Button id="placement-bottom">Bottom popover</Button>
+<Button id="placement-right">Right popover</Button>
+<Popover triggeredBy="[id^='placement-']" {placement} class="w-64 text-sm font-light " title="Popover {placement}" on:show={(ev)=>placement = ev.target.id.split('-')[1]}>
     And here's some amazing content. It's very engaging. Right?
 </Popover>
 ```
@@ -346,6 +349,32 @@ Increase or decrease the default offset by adding the `offset` attribute where t
 </Popover>
 ```
 
+<Htwo label="Animation" />
+
+Customize the animation of the popover component by using the utility classes from Tailwind CSS such as transition-opacity.
+
+<ExampleDiv>
+  <Button>Default popover</Button>
+  <Popover animation="none" class="w-64 text-sm font-light" title="Popover title">And here's some amazing content. It's very engaging. Right?</Popover>
+  <Button>Fast animation</Button>
+  <Popover animation="fast" class="w-64 text-sm font-light" title="Popover title">And here's some amazing content. It's very engaging. Right?</Popover>
+  <Button>Medium animation</Button>
+  <Popover animation="medium" class="w-64 text-sm font-light" title="Popover title">And here's some amazing content. It's very engaging. Right?</Popover>
+  <Button>Slow animation</Button>
+  <Popover animation="slow" class="w-64 text-sm font-light" title="Popover title">And here's some amazing content. It's very engaging. Right?</Popover>
+</ExampleDiv>
+
+```html
+<Button>Default popover</Button>
+<Popover animation="none" class="w-64 text-sm font-light" title="Popover title">And here's some amazing content. It's very engaging. Right?</Popover>
+<Button>Fast animation</Button>
+<Popover animation="fast" class="w-64 text-sm font-light" title="Popover title">And here's some amazing content. It's very engaging. Right?</Popover>
+<Button>Medium animation</Button>
+<Popover animation="medium" class="w-64 text-sm font-light" title="Popover title">And here's some amazing content. It's very engaging. Right?</Popover>
+<Button>Slow animation</Button>
+<Popover animation="slow" class="w-64 text-sm font-light" title="Popover title">And here's some amazing content. It's very engaging. Right?</Popover>
+```
+
 <Htwo label="Disable arrow" />
 
 You can also disable the popover arrow by setting `arrow` attribute to `false`.
@@ -373,3 +402,7 @@ You can also disable the popover arrow by setting `arrow` attribute to `false`.
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={props} rowState='hover' />
 </TableProp>
+
+<ExampleDiv>
+<Button id="last">Last</Button>
+</ExampleDiv>

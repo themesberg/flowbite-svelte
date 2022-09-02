@@ -1,13 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
 	import { createPopper } from '@popperjs/core';
 	import classNames from 'classnames';
 	import type { Placement, Instance } from '@popperjs/core';
 	import createEventDispatcher from './createEventDispatcher';
 
 	export let activeContent: boolean = false;
-	export let animation: false | number = 100;
+	export let animation: 'none' | 'fast' | 'medium' | 'slow' = 'none';
 	export let arrow: boolean = true;
 	export let offset: number = 8;
 	export let placement: Placement = 'top';
@@ -20,9 +19,8 @@
 	let clickable: boolean;
 	$: clickable = trigger === 'click';
 
-	$: dispatch('show', triggerEl, open);
+	$: popper && dispatch('show', popper.state.elements.reference, open);
 
-	let triggerEl;
 	let contentEl;
 	let triggerEls = [];
 	let popper: Instance;
@@ -31,9 +29,8 @@
 	const block = () => ((_blocked = true), setTimeout(() => (_blocked = false), 250));
 
 	const showHandler = (ev: Event) => {
-		if (triggerEl === undefined) console.error('trigger undefined');
-		if (triggerEls.includes(ev.target) && triggerEl !== ev.target) {
-			triggerEl = ev.target;
+		if (triggerEls.includes(ev.target) && popper.state.elements.reference !== ev.target) {
+			popper.state.elements.reference = ev.target as Element;
 			block();
 		}
 		if (clickable && ev.type === 'focusin' && !open) block();
@@ -41,7 +38,7 @@
 	};
 
 	// reactivity
-	$: popper && popper.setOptions({ placement });
+	$: popper && open && popper.setOptions({ placement });
 
 	// typescript typeguards - poper.state.element.reference: Element|HTMLElement|VirtualElement
 	const hasHover = (el) => (el as Element).matches && (el as Element).matches(':hover');
@@ -57,25 +54,6 @@
 			}, 100);
 		} else open = false;
 	};
-
-	function init(node, _triggerEl) {
-		popper = createPopper(_triggerEl, node, {
-			placement,
-			modifiers: [
-				{ name: 'offset', options: { offset: [0, offset] } },
-				{ name: 'eventListeners', enabled: open }
-			]
-		});
-		return {
-			update(_triggerEl) {
-				popper.state.elements.reference = _triggerEl;
-				popper.update();
-			},
-			destroy() {
-				popper.destroy();
-			}
-		};
-	}
 
 	onMount(() => {
 		const events: [string, any, boolean][] = [
@@ -97,7 +75,14 @@
 			for (const [name, handler, cond] of events) if (cond) element.addEventListener(name, handler);
 		});
 
-		triggerEl = triggerEls[0];
+		if (triggerEls[0])
+			popper = createPopper(triggerEls[0], contentEl, {
+				placement,
+				modifiers: [
+					{ name: 'offset', options: { offset: [0, offset] } },
+					{ name: 'eventListeners', enabled: open }
+				]
+			});
 
 		return () => {
 			triggerEls.forEach((element: HTMLElement) => {
@@ -105,27 +90,36 @@
 					for (const [name, handler] of events) element.removeEventListener(name, handler);
 				}
 			});
+			popper && popper.destroy();
 		};
 	});
+
+	const animationDuration = {
+		fast: 'duration-100',
+		medium: 'duration-300',
+		slow: 'duration-700'
+	};
+
+	let popperClass;
+	$: popperClass = classNames(
+		'z-10',
+		open ? 'opacity-100 visible' : 'opacity-0 invisible',
+		animationDuration[animation] && 'transition-opacity',
+		animationDuration[animation],
+		$$props.class
+	);
 </script>
 
-{#if !triggerEl}
-	<div id="empty" bind:this={contentEl} />
-{/if}
-
-{#if open && triggerEl}
-	<div
-		use:init={triggerEl}
-		transition:fade={{ duration: animation ? animation : 0 }}
-		role="tooltip"
-		tabIndex={activeContent ? -1 : undefined}
-		class={classNames('z-10', $$props.class)}
-		on:focusin={activeContent ? showHandler : undefined}
-		on:focusout={activeContent ? hideHandler : undefined}
-		on:mouseenter={activeContent && !clickable ? showHandler : undefined}
-		on:mouseleave={activeContent && !clickable ? hideHandler : undefined}
-		style="position: absolute;">
-		<slot />
-		{#if arrow}<div data-popper-arrow />{/if}
-	</div>
-{/if}
+<div
+	bind:this={contentEl}
+	role="tooltip"
+	tabIndex={activeContent ? -1 : undefined}
+	class={popperClass}
+	on:focusin={activeContent ? showHandler : undefined}
+	on:focusout={activeContent ? hideHandler : undefined}
+	on:mouseenter={activeContent && !clickable ? showHandler : undefined}
+	on:mouseleave={activeContent && !clickable ? hideHandler : undefined}
+	style:position="absolute">
+	<slot />
+	{#if arrow}<div data-popper-arrow />{/if}
+</div>
