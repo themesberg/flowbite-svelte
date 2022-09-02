@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.4](https://github.com/themesberg/flowbite-svelte/compare/v0.26.3...v0.26.4) (2022-09-02)
+
+
+### Bug Fixes
+
+* programatic popper open merged ([86f9874](https://github.com/themesberg/flowbite-svelte/commit/86f9874e1c2390e3571b6df96acfa61af23fd865))
+
 ### [0.26.3](https://github.com/themesberg/flowbite-svelte/compare/v0.26.2...v0.26.3) (2022-09-01)
 
 
