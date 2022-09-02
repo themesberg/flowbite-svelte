@@ -4,7 +4,7 @@ layout: cardLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Avatar, Badge, Button, Breadcrumb, BreadcrumbItem, Card, Checkbox,CloseButton, Dropdown, DropdownItem,Input,Label,List, Rating,Toggle, ToolbarButton, Heading } from '$lib'
+  import { Avatar, Badge, Button, Breadcrumb, BreadcrumbItem, Card, Checkbox,CloseButton, Dropdown, DropdownItem,Input,Label,Listgroup, Rating,Toggle, ToolbarButton, Heading } from '$lib'
  
   import componentProps from '../props/Card.json'
   // Props table
@@ -323,7 +323,7 @@ Use this card for your e-commerce websites and show information about the produc
 <ExampleDiv>
 <Card padding="sm">
 	<a href="/">
-		<img class="p-3" src="images/product-1.webp" alt="product 1" />
+		<img class="p-3" src="/images/product-1.webp" alt="product 1" />
 	</a>
 	<a href="/">
 		<h3 class='text-xl font-semibold tracking-tight text-gray-900 dark:text-white'>
@@ -344,7 +344,7 @@ Use this card for your e-commerce websites and show information about the produc
 ```html
 <Card padding="sm">
 	<a href="/">
-		<img class="p-3" src="images/product-1.webp" alt="product 1" />
+		<img class="p-3" src="/images/product-1.webp" alt="product 1" />
 	</a>
 	<a href="/">
 		<h3 class='text-xl font-semibold tracking-tight text-gray-900 dark:text-white'>
@@ -403,7 +403,7 @@ Use this card example if you want to show a list of data:
             View all
         </a>
    </div>
-    <List items={list} let:item class="border-0 dark:!bg-transparent">
+    <Listgroup items={list} let:item class="border-0 dark:!bg-transparent">
       <div class="flex items-center space-x-4">
         <Avatar src={item.img.src} alt={item.img.alt}/>
         <div class="flex-1 space-y-1 font-medium dark:text-white">
@@ -414,7 +414,7 @@ Use this card example if you want to show a list of data:
             {item.value}
         </div>
       </div>
-    </List>
+    </Listgroup>
   </Card>
 </ExampleDiv>
 
@@ -442,7 +442,7 @@ Use this card example if you want to show a list of data:
           View all
       </a>
   </div>
-  <List items={list} let:item class="border-0 dark:!bg-transparent">
+  <Listgroup items={list} let:item class="border-0 dark:!bg-transparent">
     <div class="flex items-center space-x-4">
       <Avatar src={item.img.src} alt={item.img.alt}/>
       <div class="flex-1 space-y-1 font-medium dark:text-white">
@@ -453,7 +453,7 @@ Use this card example if you want to show a list of data:
           {item.value}
       </div>
     </div>
-  </List>
+  </Listgroup>
 </Card>
 ```
 
