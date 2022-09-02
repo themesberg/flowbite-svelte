@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.6](https://github.com/themesberg/flowbite-svelte/compare/v0.26.5...v0.26.6) (2022-09-02)
+
+
+### Features
+
+* add highlight to Span component and update heading page ([d47121b](https://github.com/themesberg/flowbite-svelte/commit/d47121ba47e6c6e3dfdd366128f51da77a966e0f))
+* add Text decoration examples to text page ([fe074cd](https://github.com/themesberg/flowbite-svelte/commit/fe074cd2a36d780333444f276de69edec51649d5))
+* add underline and decoratio class to Span ([f3b11a9](https://github.com/themesberg/flowbite-svelte/commit/f3b11a92b3782c27e09f25c894a81402661b73d3))
+
+
+### Bug Fixes
+
+* header blocking anchor links ([af6d2d6](https://github.com/themesberg/flowbite-svelte/commit/af6d2d6eb9bb630e58e76fd214f8a14f0435dc2f))
+* remove TextGradient and Underline ([cb7b2d7](https://github.com/themesberg/flowbite-svelte/commit/cb7b2d753f110cad4677f990d60a11154e38ac93))
+
 ### [0.26.5](https://github.com/themesberg/flowbite-svelte/compare/v0.26.4...v0.26.5) (2022-09-02)
 
 
