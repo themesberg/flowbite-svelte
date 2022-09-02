@@ -4,12 +4,15 @@ layout: typographyLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
-  import { Span, A, P, Button, Card, Heading, Breadcrumb, BreadcrumbItem } from '$lib'
+  import { Span, P, A, Heading, Breadcrumb, BreadcrumbItem } from '$lib'
 
-  import componentProps from '../../props/A.json'
+  import componentProps from '../../props/P.json'
+  import componentProps2 from '../../props/Span.json'
 
   // Props table
   let items1 = componentProps.props
+  let items2 = componentProps2.props
+
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -374,3 +377,19 @@ Use the `opacity` and `color` props to set the opacity of inline text elements.
 <P size='xl' opacity={50} color="text-blue-600 dark:text-blue-500">Flowbite app will help you improve yourself by analysing your everyday life.</P>
 <P size='xl' opacity={25} color="text-blue-600 dark:text-blue-500">Flowbite app will help you improve yourself by analysing your everyday life.</P>
 ```
+
+<Htwo label="Props" />
+
+The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
+
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">P</Heading>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items1} rowState='hover' />
+</TableProp>
+
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Span</Heading>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items1} rowState='hover' />
+</TableProp>
