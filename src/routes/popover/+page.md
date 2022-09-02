@@ -8,7 +8,7 @@ layout: modalLayout
   import { Popover, Avatar, Breadcrumb, BreadcrumbItem, Button, Input, Label, Checkbox, Heading } from '$lib'
   import  ChevronRight  from "$lib/utils/ChevronRight.svelte";
   import componentProps from '../props/Popover.json'
-
+  import { blur, fade, slide } from 'svelte/transition';
   let props = componentProps.props
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
@@ -63,7 +63,7 @@ Make sure that you have the Flowbite JavaScript included in your project to enab
 Use this example to show more information about a user profile when hovering over the trigger component.
 
 <ExampleDiv class="flex h-72 items-end justify-center">
-  <Button  id="b2">User profile</Button>
+  <Button  id="b2" class="-mb-2">User profile</Button>
   <Popover triggeredBy="#b2" class="w-64 text-sm font-light text-gray-500 bg-white dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
     <div class="p-3">
         <div class="flex justify-between items-center mb-2">
@@ -124,6 +124,136 @@ Use this example to show more information about a user profile when hovering ove
               </a>
           </li>
       </ul>
+  </div>
+</Popover>
+```
+
+<Htwo label="Company profile" />
+
+This example can be used to show more information about a company profile.
+
+<ExampleDiv class="flex items-end justify-center h-96">
+<Button class="-mb-4">Company profile</Button>
+<Popover class="w-80 text-sm">  
+  <div class="flex">
+    <div class="mr-3 shrink-0">
+      <a href="/" class="block p-2 bg-gray-100 rounded-lg dark:bg-gray-700">
+        <img class="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/logo.svg" alt="Flowbite logo">
+      </a>
+    </div>
+    <div>
+      <p class="mb-1 text-base font-semibold leading-none text-gray-900 dark:text-white">
+          <a href="/" class="hover:underline">Flowbite</a>
+      </p>
+      <p class="mb-3 text-sm font-normal">Tech company</p>
+      <p class="mb-4 text-sm font-light">Open-source library of Tailwind CSS components and Figma design system.</p>
+      <ul class="text-sm font-light">
+        <li class="flex items-center mb-2">
+            <svg class="w-4 h-4 mr-1 font-semibold text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.766 3.556h3.936c-.093-1.414-.377-2.649-.766-3.556-.24-.56-.5-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.971 5c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9h-1.946zm-2.003 2H8.032c.093 1.414.377 2.649.766 3.556.24.56.5.948.737 1.182.233.23.389.262.465.262.076 0 .232-.032.465-.262.238-.234.498-.623.737-1.182.389-.907.673-2.142.766-3.556zm1.166 4.118c.454-1.147.748-2.572.837-4.118h1.946a6.004 6.004 0 01-2.783 4.118zm-6.268 0C6.412 13.97 6.118 12.546 6.03 11H4.083a6.004 6.004 0 002.783 4.118z" clip-rule="evenodd"></path></svg>
+            <a href="/" class="text-blue-600 dark:text-blue-500 hover:underline">https://flowbite.com/</a>
+        </li>
+        <li class="flex items-start mb-2">
+            <svg class="mr-1 w-6 font-semibold text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
+            <span>4,567,346 people like this including 5 of your friends</span>
+        </li>
+      </ul>
+      <div class="flex mb-3 ml-4">
+        <Avatar src="/images/profile-picture-1.webp" stacked />
+        <Avatar src="/images/profile-picture-2.webp" stacked />
+        <Avatar src="/images/profile-picture-3.webp" stacked />
+        <Avatar stacked href="/" class="bg-gray-700 dark:bg-gray-700 text-white hover:bg-gray-600">+3</Avatar>
+      </div>
+      <div class="flex">
+        <Button color="alternative" class="mr-2 w-full">
+          <svg class="mr-2 w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
+          Like page
+        </Button>
+        <Button color="alternative">
+          <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+        </Button>
+      </div>
+    </div>
+  </div>
+</Popover>
+</ExampleDiv>
+
+```html
+<Button>Company profile</Button>
+<Popover class="w-80 text-sm">  
+  <div class="flex">
+    <div class="mr-3 shrink-0">
+      <a href="/" class="block p-2 bg-gray-100 rounded-lg dark:bg-gray-700">
+        <img class="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/logo.svg" alt="Flowbite logo">
+      </a>
+    </div>
+    <div>
+      <p class="mb-1 text-base font-semibold leading-none text-gray-900 dark:text-white">
+          <a href="/" class="hover:underline">Flowbite</a>
+      </p>
+      <p class="mb-3 text-sm font-normal">Tech company</p>
+      <p class="mb-4 text-sm font-light">Open-source library of Tailwind CSS components and Figma design system.</p>
+      <ul class="text-sm font-light">
+        <li class="flex items-center mb-2">
+            <svg class="w-4 h-4 mr-1 font-semibold text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.766 3.556h3.936c-.093-1.414-.377-2.649-.766-3.556-.24-.56-.5-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.971 5c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9h-1.946zm-2.003 2H8.032c.093 1.414.377 2.649.766 3.556.24.56.5.948.737 1.182.233.23.389.262.465.262.076 0 .232-.032.465-.262.238-.234.498-.623.737-1.182.389-.907.673-2.142.766-3.556zm1.166 4.118c.454-1.147.748-2.572.837-4.118h1.946a6.004 6.004 0 01-2.783 4.118zm-6.268 0C6.412 13.97 6.118 12.546 6.03 11H4.083a6.004 6.004 0 002.783 4.118z" clip-rule="evenodd"></path></svg>
+            <a href="/" class="text-blue-600 dark:text-blue-500 hover:underline">https://flowbite.com/</a>
+        </li>
+        <li class="flex items-start mb-2">
+            <svg class="mr-1 w-6 font-semibold text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
+            <span>4,567,346 people like this including 5 of your friends</span>
+        </li>
+      </ul>
+      <div class="flex mb-3 ml-4">
+        <Avatar src="/images/profile-picture-1.webp" stacked />
+        <Avatar src="/images/profile-picture-2.webp" stacked />
+        <Avatar src="/images/profile-picture-3.webp" stacked />
+        <Avatar stacked href="/" class="bg-gray-700 dark:bg-gray-700 text-white hover:bg-gray-600">+3</Avatar>
+      </div>
+      <div class="flex">
+        <Button color="alternative" class="mr-2 w-full">
+          <svg class="mr-2 w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
+          Like page
+        </Button>
+        <Button color="alternative">
+          <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+        </Button>
+      </div>
+    </div>
+  </div>
+</Popover>
+```
+
+<Htwo label="Image popover" />
+
+Use this example to trigger a popover component with detailed information and an image when hovering over a portion of highlighted text inspired by Wikipedia and other large news outlets.
+
+<ExampleDiv class="flex items-end h-96">
+<p class="font-light text-gray-500 dark:text-gray-400">Due to its central geographic location in Southern Europe, <a href="/" class="text-blue-600 underline dark:text-blue-500 hover:no-underline" id="popover-image">Italy</a> has historically been home to myriad peoples and cultures. In addition to the various ancient peoples dispersed throughout what is now modern-day Italy, the most predominant being the Indo-European Italic peoples who gave the peninsula its name, beginning from the classical era, Phoenicians and Carthaginians founded colonies mostly in insular Italy</p>
+<Popover triggeredBy="#popover-image" class="w-96 text-sm font-light" defaultClass="">
+  <div class="grid grid-cols-5">
+    <div class="col-span-3 p-3">
+      <div class="space-y-2">
+        <h3 class="font-semibold text-gray-900 dark:text-white">About Italy</h3>
+        <p class="text-gray-500 dark:text-gray-500">Italy is located in the middle of the Mediterranean Sea, in Southern Europe it is also considered part of Western Europe. A unitary parliamentary republic with Rome as its capital and largest city.</p>
+        <a href="/" class="flex items-center font-medium text-blue-600 dark:text-blue-500 dark:hover:text-blue-600 hover:text-blue-700">Read more <svg class="ml-1 w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></a>
+      </div>
+    </div>
+    <img src="/images/image-1.jpeg" class="col-span-2 h-full rounded-r-lg" alt="Italy map" />
+  </div>
+</Popover>
+</ExampleDiv>
+
+```html
+<p class="font-light text-gray-500 dark:text-gray-400">Due to its central geographic location in Southern Europe, <a href="/" class="text-blue-600 underline dark:text-blue-500 hover:no-underline" id="popover-image">Italy</a> has historically been home to myriad peoples and cultures. In addition to the various ancient peoples dispersed throughout what is now modern-day Italy, the most predominant being the Indo-European Italic peoples who gave the peninsula its name, beginning from the classical era, Phoenicians and Carthaginians founded colonies mostly in insular Italy</p>
+<Popover triggeredBy="#popover-image" class="w-96 text-sm font-light" defaultClass="">
+  <div class="grid grid-cols-5">
+    <div class="col-span-3 p-3">
+      <div class="space-y-2">
+        <h3 class="font-semibold text-gray-900 dark:text-white">About Italy</h3>
+        <p class="text-gray-500 dark:text-gray-400">Italy is located in the middle of the Mediterranean Sea, in Southern Europe it is also considered part of Western Europe. A unitary parliamentary republic with Rome as its capital and largest city.</p>
+        <a href="/" class="flex items-center font-medium text-blue-600 dark:text-blue-500 dark:hover:text-blue-600 hover:text-blue-700">Read more <svg class="ml-1 w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></a>
+      </div>
+    </div>
+    <img src="/images/image-1.jpeg" class="col-span-2 h-full rounded-r-lg" alt="Italy map" />
   </div>
 </Popover>
 ```
@@ -345,6 +475,25 @@ Increase or decrease the default offset by adding the `offset` attribute where t
     And here's some amazing content. It's very engaging. Right?
 </Popover>
 ```
+
+<Htwo label="Animation" />
+
+Customize the animation of the popover component by using the transition functions from Svelte.
+
+<ExampleDiv  class="flex h-44 items-end justify-center gap-8">
+  <Button>Fade popover</Button>
+  <Popover class="w-64 text-sm font-light" title="Popover title" transition={fade} params={{duration: 700}}>
+      And here's some amazing content. It's very engaging. Right?
+  </Popover>
+  <Button>Blur popover</Button>
+  <Popover class="w-64 text-sm font-light" title="Popover title" transition={blur} params={{duration: 500}}>
+      And here's some amazing content. It's very engaging. Right?
+  </Popover>
+  <Button>Slide popover</Button>
+  <Popover class="w-64 text-sm font-light" title="Popover title" transition={slide}>
+      And here's some amazing content. It's very engaging. Right?
+  </Popover>
+</ExampleDiv>
 
 <Htwo label="Disable arrow" />
 

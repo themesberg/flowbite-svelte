@@ -8,7 +8,6 @@
 	import Frame from './Frame.svelte';
 
 	export let activeContent: boolean = false;
-	export let animation: false | number = 100;
 	export let arrow: boolean = true;
 	export let offset: number = 8;
 	export let placement: Placement = 'top';
@@ -122,7 +121,7 @@
 		tabIndex={activeContent ? -1 : undefined}
 		on:focusin={activeContent ? showHandler : undefined}
 		on:focusout={activeContent ? hideHandler : undefined}
-		on:mouseenter={activeContent && !clickable ? showHandler : undefined}
+		on:mouseenter={showHandler}
 		on:mouseleave={activeContent && !clickable ? hideHandler : undefined}
 		{...$$restProps}
 		class={classNames('z-10', $$props.class)}
