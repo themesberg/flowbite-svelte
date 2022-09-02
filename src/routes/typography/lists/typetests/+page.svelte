@@ -23,8 +23,10 @@
 </script>
 
 <ExampleDiv>
-  <Heading tag="h2" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white"
-    >Password requirements</Heading>
+  <Heading
+    tag="h2"
+    customSize="text-lg font-semibold"
+    class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
   <List tag="ul" class="space-y-1">
     <Li>At least 10 characters (and up to 100 characters)</Li>
     <Li>At least one lowercase character</Li>
@@ -33,8 +35,10 @@
 </ExampleDiv>
 
 <ExampleDiv>
-  <Heading tag="h2" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white"
-    >Password requirements</Heading>
+  <Heading
+    tag="h2"
+    customSize="text-lg font-semibold"
+    class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
   <List tag="ul" class="space-y-1" list="none">
     <Li icon>
       <svg
@@ -107,7 +111,10 @@
 <Htwo label="Unstyled" />
 
 <ExampleDiv>
-  <Heading tag="h2" class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white"
+  <Heading
+    tag="h2"
+    customSize="text-lg font-semibold"
+    class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white"
     >Password requirements</Heading>
   <List tag="ul" class="space-y-1" list="none">
     <Li>At least 10 characters (and up to 100 characters)</Li>
@@ -117,8 +124,10 @@
 </ExampleDiv>
 
 <ExampleDiv>
-  <Heading tag="h2" class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white"
-    >Top students:</Heading>
+  <Heading
+    tag="h2"
+    customSize="text-lg font-semibold"
+    class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white">Top students:</Heading>
   <List tag="ul" class="space-y-1">
     <Li><Span>Bonnie Green</Span> with <Span>70</Span> points</Li>
     <Li><Span>Jese Leos</Span> with <Span>63</Span> points</Li>
