@@ -85,10 +85,11 @@
 			['mouseleave', hideHandler, !clickable]
 		];
 
-		triggerEls = [...document.querySelectorAll(triggeredBy)];
+		if (triggeredBy) triggerEls = [...document.querySelectorAll(triggeredBy)];
+		else triggerEls = contentEl.previousElementSibling ? [contentEl.previousElementSibling] : [];
+
 		if (!triggerEls.length) {
-			if (contentEl.previousElementSibling) triggerEls.push(contentEl.previousElementSibling);
-			else console.error('No triggers found.');
+			console.error('No triggers found.');
 		}
 
 		triggerEls.forEach((element: HTMLElement) => {

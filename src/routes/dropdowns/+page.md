@@ -894,30 +894,20 @@ Use this example to also show the name or email of the user next to the avatar f
 <p>The dropdown menus work with buttons of all sizes including smaller or larger ones.</p>
 
 <ExampleDiv class="flex justify-center items-start gap-2 h-64">
-  <Button size="sm"><Chevron>Small dropdown</Chevron></Button>
-  <Dropdown>
+  <Dropdown >
     <DropdownItem>Dashboard</DropdownItem>
     <DropdownItem>Settings</DropdownItem>
     <DropdownItem>Earnings</DropdownItem>
     <DropdownItem>Sign out</DropdownItem>
   </Dropdown>
-  <Button size="lg"><Chevron>Large dropdown</Chevron></Button>
-  <Dropdown>
-    <DropdownItem>Dashboard</DropdownItem>
-    <DropdownItem>Settings</DropdownItem>
-    <DropdownItem>Earnings</DropdownItem>
-    <DropdownItem>Sign out</DropdownItem>
-  </Dropdown>
+  <Button class="sizes" size="sm"><Chevron>Small dropdown</Chevron></Button>
+  <Button class="sizes" size="lg"><Chevron>Large dropdown</Chevron></Button>
 </ExampleDiv>
 
 ```html
-<Dropdown label="Small dropdown" size="sm">
-  <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem>Settings</DropdownItem>
-  <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem>Sign out</DropdownItem>
-</Dropdown>
-<Dropdown label="Large dropdown" size="lg">
+<Button class="sizes" size="sm"><Chevron>Small dropdown</Chevron></Button>
+<Button class="sizes" size="lg"><Chevron>Large dropdown</Chevron></Button>
+<Dropdown triggeredBy=".sizes">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
