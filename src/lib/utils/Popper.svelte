@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
 	import { createPopper } from '@popperjs/core';
 	import classNames from 'classnames';
 	import type { Placement, Instance } from '@popperjs/core';

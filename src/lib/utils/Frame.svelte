@@ -1,7 +1,6 @@
 <script lang="ts">
 	import classNames from 'classnames';
 	import { setContext } from 'svelte';
-	import * as transitions from 'svelte/transition';
 
 	import { noop } from 'svelte/internal';
 	import type { Action } from 'svelte/action';
@@ -16,7 +15,7 @@
 	export let border: boolean = false;
 	export let shadow: boolean = false;
 
-	// Export a prop through which you can set a desired transition
+	// Export a prop through which you can set a desired svelte transition
 	export let transition: (node: Element, params: object) => TransitionConfig = undefined;
 	// Pass in extra transition params
 	export let params: object = {};
