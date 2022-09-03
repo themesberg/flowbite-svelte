@@ -689,7 +689,6 @@ Use this example to create a horizontally aligned list of items.
 </List>
 ```
 
-
 <Htwo label="Props" />
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.

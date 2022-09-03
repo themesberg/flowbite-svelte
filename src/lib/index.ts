@@ -177,6 +177,7 @@ export { default as DescriptionList } from './typography/DescriptionList.svelte'
 export { default as Heading } from './typography/Heading.svelte';
 export { default as Hr } from './typography/Hr.svelte'
 export { default as Img } from './typography/Img.svelte'
+export { default as Layout } from './typography/Layout.svelte'
 export { default as Li } from './typography/Li.svelte';
 export { default as Mark } from './typography/Mark.svelte';
 export { default as List } from './typography/List.svelte';

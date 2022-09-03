@@ -5,6 +5,9 @@
   export let align: 'left' | 'center' | 'right' = 'left';
   export let justify: boolean = false;
   export let italic: boolean = false;
+  export let firstupper: boolean = false;
+  export let upperClass: string =
+    'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:mr-3 first-letter:float-left';
   export let opacity: number;
   export let whitespace: 'normal' | 'nowrap' | 'pre' | 'preline' | 'prewrap' = 'normal';
   export let size:
@@ -32,6 +35,7 @@
     | 'bold'
     | 'extrabold'
     | 'black';
+
   const sizes = {
     xs: 'text-xs',
     sm: 'text-sm',
@@ -97,7 +101,6 @@
 
   let classP = classNames(
     size && sizes[size],
-
     (opacity && colorAndopacity) || (color && color),
     height && heights[height],
     weight && weights[weight],
@@ -105,6 +108,7 @@
     align && aligns[align],
     justify && 'text-justify',
     italic && 'italic',
+    firstupper && upperClass,
     whitespace && whitespaces[whitespace],
     $$props.class
   );
