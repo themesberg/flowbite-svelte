@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.7](https://github.com/themesberg/flowbite-svelte/compare/v0.26.6...v0.26.7) (2022-09-03)
+
+
+### Features
+
+* add Layout component ([2204586](https://github.com/themesberg/flowbite-svelte/commit/22045861703bf3e46cc7900e15c4db64d5246c50))
+* add paragraphs page ([db973a3](https://github.com/themesberg/flowbite-svelte/commit/db973a3929bfdc8c4dd48338cc114bdc2c808fb8))
+
+
+### Bug Fixes
+
+* add html block to text page ([37e910a](https://github.com/themesberg/flowbite-svelte/commit/37e910ae269099865865580d419b8dd05dccb7a8))
+
 ### [0.26.6](https://github.com/themesberg/flowbite-svelte/compare/v0.26.5...v0.26.6) (2022-09-02)
 
 
