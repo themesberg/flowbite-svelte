@@ -6,6 +6,34 @@ export const svelteflows = [
 	{ href: '/pages/license', name: 'License' }
 ];
 
+export const components = [
+	{ href: '/accordions', name: 'Accordions' },
+	{ href: '/alert', name: 'Alert' },
+	{ href: '/avatar', name: 'Avatar' },
+	{ href: '/badges', name: 'Badges' },
+	{ href: '/breadcrumbs', name: 'Breadcrumbs' },
+	{ href: '/button-groups', name: 'Buton groups' },
+	{ href: '/buttons', name: 'Buttons' },
+	{ href: '/cards', name: 'Cards' },
+	{ href: '/carousels', name: 'Carousels' },
+	{ href: '/darkmode', name: 'Dark mode' },
+	{ href: '/datepicker', name: 'Datepicker' },
+	{ href: '/dropdowns', name: 'Dropdowns' },
+	{ href: '/forms', name: 'Forms' },
+	{ href: '/kbd', name: 'KBD' },
+	{ href: '/list-group', name: 'List group' },
+	{ href: '/mega-menu', name: 'Mega menu' },
+	{ href: '/modals', name: 'Modals' },
+	{ href: '/navbar', name: 'Navbar' },
+	{ href: '/pagination', name: 'Pagination' },
+	{ href: '/popover', name: 'Popover' },
+	{ href: '/progressbar', name: 'Progress bar' },
+	{ href: '/ratins', name: 'Rating' },
+	{ href: '/modals', name: 'Modals' },
+	{ href: '/modals', name: 'Modals' },
+	{ href: '/modals', name: 'Modals' },
+]
+
 export const forms = [
 	{ href: '/forms/checkbox', name: 'Checkbox' },
 	{ href: '/forms/file-input', name: 'File input' },
