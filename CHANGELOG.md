@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.8](https://github.com/themesberg/flowbite-svelte/compare/v0.26.7...v0.26.8) (2022-09-03)
+
+
+### Features
+
+* dropdown button ([f6347f2](https://github.com/themesberg/flowbite-svelte/commit/f6347f280cbfc552d001aa22128026174b46a6f3))
+* more Frame inheritance ([bb72d69](https://github.com/themesberg/flowbite-svelte/commit/bb72d6952386bd0f6dec4711795e3591a6837c02))
+* popover finalization ([c71481e](https://github.com/themesberg/flowbite-svelte/commit/c71481ec18e2850488d86cfdb583587eae4a19b2))
+
+
+### Bug Fixes
+
+* missing 683restProps ([0d52fd1](https://github.com/themesberg/flowbite-svelte/commit/0d52fd1b4168c8cc707c174dc2c18f532cf2e93c))
+* no triggers error ([83075e1](https://github.com/themesberg/flowbite-svelte/commit/83075e1a969bdf93a520bd9e35b339e36bf4f325))
+* remove unused imports ([acb58b9](https://github.com/themesberg/flowbite-svelte/commit/acb58b9144948feeb3c1c14b41a71d2122187340))
+
 ### [0.26.7](https://github.com/themesberg/flowbite-svelte/compare/v0.26.6...v0.26.7) (2022-09-03)
 
 
