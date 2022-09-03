@@ -25,6 +25,7 @@ export const typography = [
 	{ href: '/typography/images', name: 'Images' },
 	{ href: '/typography/links', name: 'Links' },
 	{ href: '/typography/lists', name: 'Lists' },
+	{ href: '/typography/paragraphs', name: 'Paragraphs' },
 	{ href: '/typography/text', name: 'Text' },
 	{ href: '/typography/hr', name: 'HR' }
 ];

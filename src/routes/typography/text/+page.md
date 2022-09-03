@@ -35,7 +35,6 @@ layout: typographyLayout
 
 Get started with a collection of text customization examples to learn how to update the size, font weight, style, decoration and spacing of inline text elements.
 
-
 <Htwo label="Font size" />
 
 Use this example to set the font size of inline text elements using the `size` prop.

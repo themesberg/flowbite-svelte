@@ -5,7 +5,7 @@
   export let align: 'left' | 'center' | 'right' = 'left';
   export let justify: boolean = false;
   export let italic: boolean = false;
-  export let opacity: number = 100;
+  export let opacity: number;
   export let whitespace: 'normal' | 'nowrap' | 'pre' | 'preline' | 'prewrap' = 'normal';
   export let size:
     | 'xs'
@@ -20,7 +20,7 @@
     | '6xl'
     | '7xl'
     | '8xl'
-    | '9xl' = 'lg';
+    | '9xl' = 'base';
   export let space: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest';
   export let weight:
     | 'thin'
