@@ -1,22 +1,29 @@
 <script lang="ts">
 	import classNames from 'classnames';
 	import { setContext } from 'svelte';
-	import * as transitions from 'svelte/transition';
-	import type { TransitionTypes, TransitionParamTypes } from '../types';
+
+	import { noop } from 'svelte/internal';
+	import type { Action } from 'svelte/action';
+	import type { TransitionConfig } from 'svelte/transition';
 
 	setContext('background', true);
 	$: setContext('color', color);
 
-	export let tag: string = 'div';
+	export let tag: 'div' | 'a' = 'div';
 	export let color: string = 'default';
 	export let rounded: boolean = false;
 	export let border: boolean = false;
 	export let shadow: boolean = false;
 
-	// Export a prop through which you can set a desired transition
-	export let transition: TransitionTypes = undefined;
+	// Export a prop through which you can set a desired svelte transition
+	export let transition: (node: Element, params: object) => TransitionConfig = undefined;
 	// Pass in extra transition params
-	export let params: TransitionParamTypes = {};
+	export let params: object = {};
+
+	// For components development
+	export let node: HTMLElement = undefined;
+	export let use: Action = noop;
+	export let options = {};
 
 	// your script goes here
 	const bgColors = {
@@ -65,7 +72,8 @@
 
 	// have a custom transition function that returns the desired transition
 	let transitionFunc;
-	$: transitionFunc = transitions[transition];
+	// $: transitionFunc = (node: Element) => (transition ? transition(node, params) : noop);
+	$: transitionFunc = transition ?? noop;
 
 	let divClass: string;
 
@@ -80,12 +88,16 @@
 	);
 </script>
 
-{#if transitionFunc}
-	<svelte:element this={tag} transition:transitionFunc={params} {...$$restProps} class={divClass}>
-		<slot />
-	</svelte:element>
-{:else}
-	<svelte:element this={tag} {...$$restProps} class={divClass}>
-		<slot />
-	</svelte:element>
-{/if}
+<svelte:element
+	this={tag}
+	use:use={options}
+	bind:this={node}
+	transition:transitionFunc={params}
+	{...$$restProps}
+	class={divClass}
+	on:mouseenter
+	on:mouseleave
+	on:focusin
+	on:focusout>
+	<slot />
+</svelte:element>

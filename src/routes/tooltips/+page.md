@@ -28,7 +28,7 @@ layout: tooltipLayout
 <CompoDescription>Use the following Tailwind CSS powered tooltips to show extra content when hovering or focusing on an element</CompoDescription>
 
 <ExampleDiv>
-<GitHubSource href="tooltips/Tooltip.svelte">Tooltip</GitHubSource>
+  <GitHubSource href="tooltips/Tooltip.svelte">Tooltip</GitHubSource>
 </ExampleDiv>
 
 Flowbite-Svelte allows you to show extra information when hovering or focusing over an element in multiple positions, styles, and animations.
@@ -46,10 +46,8 @@ Flowbite-Svelte allows you to show extra information when hovering or focusing o
 To get started with using tooltips all you need to do is set `triggeredBy` attribute of the tooltip component to any CSS query targeting trigger element(s). In the following example you can see the tooltip that will be trigger by the `tooltip-default` element to be shown when hovered or focused.
 
 <ExampleDiv class="flex items-end gap-2 h-32">
-  <Button id="tooltip-default">Default tooltip</Button>
-  <Tooltip triggeredBy='#tooltip-default'>
-    Tooltip content
-  </Tooltip>
+  <Button>Default tooltip</Button>
+  <Tooltip>Tooltip content</Tooltip>
 </ExampleDiv>
 
 ```html
@@ -57,10 +55,8 @@ To get started with using tooltips all you need to do is set `triggeredBy` attri
   import {Tooltip, Button} from 'flowbite-svelte'
 </script>
 
-<Button id="tooltip-default">Default tooltip</Button>
-<Tooltip triggeredBy='#tooltip-default'>
-  Tooltip content
-</Tooltip>
+<Button>Default tooltip</Button>
+<Tooltip>Tooltip content</Tooltip>
 ```
 
 <Htwo label="Tooltip styles" />
@@ -69,16 +65,16 @@ You can use choose between dark and light version styles for the tooltip compone
 
 <ExampleDiv class="flex items-end gap-2 h-32">
   <Button id="style-light">Light tooltip</Button>
+  <Button id="style-auto">Default tooltip</Button>
   <Button id="style-dark">Dark tooltip</Button>
-  <Tooltip style="light" triggeredBy="#style-light">Tooltip content</Tooltip>
-  <Tooltip style="dark" triggeredBy="#style-dark">Tooltip content</Tooltip>
+  <Tooltip {style} triggeredBy="[id^='style-']" on:show={ev => style = ev.target.id.split('-')[1]}>Tooltip content</Tooltip>
 </ExampleDiv>
 
 ```html
   <Button id="style-light">Light tooltip</Button>
+  <Button id="style-auto">Default tooltip</Button>
   <Button id="style-dark">Dark tooltip</Button>
-  <Tooltip style="light" triggeredBy="#style-light">Tooltip content</Tooltip>
-  <Tooltip style="dark" triggeredBy="#style-dark">Tooltip content</Tooltip>
+  <Tooltip {style} triggeredBy="[id^='style-']" on:show={ev => style = ev.target.id.split('-')[1]}>Tooltip content</Tooltip>
 ```
 
 <Htwo label="Placement" />
@@ -147,9 +143,10 @@ When you want to add custom styles, use `style="custom"`, `tipClass`, and `color
   <Tooltip
     triggeredBy="#custom"
 		placement="auto"
-		tipClass="rounded-lg p-24 text-lg font-medium shadow-sm text-white"
 		style="custom"
-		color="bg-red-900 dark:bg-red-700"
+    tipClass=""
+		class="p-24 text-lg font-medium text-white"
+    color='green'
 	>
 		Tooltip content
 	</Tooltip>

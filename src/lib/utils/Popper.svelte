@@ -1,13 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
 	import { createPopper } from '@popperjs/core';
 	import classNames from 'classnames';
 	import type { Placement, Instance } from '@popperjs/core';
 	import createEventDispatcher from './createEventDispatcher';
+	import Frame from './Frame.svelte';
 
 	export let activeContent: boolean = false;
-	export let animation: false | number = 100;
 	export let arrow: boolean = true;
 	export let offset: number = 8;
 	export let placement: Placement = 'top';
@@ -86,10 +85,11 @@
 			['mouseleave', hideHandler, !clickable]
 		];
 
-		triggerEls = [...document.querySelectorAll(triggeredBy)];
+		if (triggeredBy) triggerEls = [...document.querySelectorAll(triggeredBy)];
+		else triggerEls = contentEl.previousElementSibling ? [contentEl.previousElementSibling] : [];
+
 		if (!triggerEls.length) {
-			if (contentEl.previousElementSibling) triggerEls.push(contentEl.previousElementSibling);
-			else console.error('No triggers found.');
+			console.error('No triggers found.');
 		}
 
 		triggerEls.forEach((element: HTMLElement) => {
@@ -114,18 +114,19 @@
 {/if}
 
 {#if open && triggerEl}
-	<div
-		use:init={triggerEl}
-		transition:fade={{ duration: animation ? animation : 0 }}
+	<Frame
+		use={init}
+		options={triggerEl}
 		role="tooltip"
 		tabIndex={activeContent ? -1 : undefined}
-		class={classNames('z-10', $$props.class)}
 		on:focusin={activeContent ? showHandler : undefined}
 		on:focusout={activeContent ? hideHandler : undefined}
-		on:mouseenter={activeContent && !clickable ? showHandler : undefined}
+		on:mouseenter={showHandler}
 		on:mouseleave={activeContent && !clickable ? hideHandler : undefined}
+		{...$$restProps}
+		class={classNames('z-10', $$props.class)}
 		style="position: absolute;">
 		<slot />
 		{#if arrow}<div data-popper-arrow />{/if}
-	</div>
+	</Frame>
 {/if}
