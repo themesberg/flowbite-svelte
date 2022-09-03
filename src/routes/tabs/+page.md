@@ -79,7 +79,7 @@ The tabs component can be used either as an extra navigational hierarchy complem
 
 ```html
 <script>
-	import { TabWrapper, TabHead, TabHeadItem, TabContentItem } from '$lib';
+	import { TabWrapper, TabHead, TabHeadItem, TabContentItem } from 'flowbite-svelte';
 	let activeTabValue = 1;
 	const handleClick = (tabValue) => () => {
 		activeTabValue = tabValue;
