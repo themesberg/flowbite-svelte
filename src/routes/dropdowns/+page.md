@@ -149,7 +149,7 @@ Use this example to enable multi-level dropdown menus by adding stacked elements
 <Dropdown label="Dropdown button" class="w-44">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem class="flex items-center justify-between"><Chevron placement="right">Dropdown</Chevron></DropdownItem>
-  <Dropdown placement="right-start" offset="100" class="w-44">
+  <Dropdown placement="right-start" class="w-44">
     <DropdownItem>Overview</DropdownItem>
     <DropdownItem>My downloads</DropdownItem>
     <DropdownItem>Billing</DropdownItem>
@@ -894,7 +894,7 @@ Use this example to also show the name or email of the user next to the avatar f
 <p>The dropdown menus work with buttons of all sizes including smaller or larger ones.</p>
 
 <ExampleDiv class="flex justify-center items-start gap-2 h-64">
-  <Dropdown >
+  <Dropdown triggeredBy=".sizes">
     <DropdownItem>Dashboard</DropdownItem>
     <DropdownItem>Settings</DropdownItem>
     <DropdownItem>Earnings</DropdownItem>
@@ -905,14 +905,14 @@ Use this example to also show the name or email of the user next to the avatar f
 </ExampleDiv>
 
 ```html
-<Button class="sizes" size="sm"><Chevron>Small dropdown</Chevron></Button>
-<Button class="sizes" size="lg"><Chevron>Large dropdown</Chevron></Button>
 <Dropdown triggeredBy=".sizes">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
   <DropdownItem>Sign out</DropdownItem>
 </Dropdown>
+<Button class="sizes" size="sm"><Chevron>Small dropdown</Chevron></Button>
+<Button class="sizes" size="lg"><Chevron>Large dropdown</Chevron></Button>
 ```
 
 <Htwo label="Placement" />
