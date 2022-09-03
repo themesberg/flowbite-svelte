@@ -2,16 +2,24 @@
   import Htwo from '../utils/Htwo.svelte';
   import ExampleDiv from '../utils/ExampleDiv.svelte';
   import { Drawer, Button } from '$lib';
+  import { sineIn } from 'svelte/easing';
   let defaultDrawer = false;
-  let drawerOpen = false;
+  let transitionParams = {
+    x: -200,
+    duration: 300,
+    easing: sineIn
+  };
+  let hidden = true;
 </script>
 
-<ExampleDiv>
+<h1 class="my-40">TEst</h1>
+<ExampleDiv
+  class="h-96 relative rounded-xl w-full m-0 mx-auto p-0 bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700">
   <div class="text-center">
-    <Button on:click={() => (drawerOpen = true)}>Show drawer</Button>
+    <Button on:click={() => (hidden = false)}>Show drawer</Button>
   </div>
   <!-- drawer component -->
-  <Drawer bind:drawerOpen>
+  <Drawer transitionType="fly" {transitionParams} bind:hidden class="h-72">
     <h5
       id="drawer-label"
       class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
