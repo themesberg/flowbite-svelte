@@ -88,7 +88,7 @@ Let's import all necessary components in the script tag. We import a heart, thum
 
 ```html
 <script>
-	import { Rating, AdvancedRating } from 'flowbite-svelte';
+	import { Rating, AdvancedRating, ScoreRating } from 'flowbite-svelte';
 </script>
 ```
 

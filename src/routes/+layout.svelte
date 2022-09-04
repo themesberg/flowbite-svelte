@@ -13,6 +13,7 @@
   import { Side, Nav, SidebarList } from 'svelte-sidebar-menu';
   import {
     forms,
+    components,
     svelteflows,
     topMenus,
     typography,
@@ -92,150 +93,9 @@
     </Nav>
     <Nav {navClass} {navDivClass}>
       <h3 class={h3Category}>Components</h3>
-      <h3>
-        <a href="/accordions">Accordions</a>
-      </h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3>
-        <a href="/alerts">Alert</a>
-      </h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3>
-        <a href="/avatar">Avatar</a>
-      </h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3>
-        <a href="/badges">Badges</a>
-      </h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3>
-        <a href="/breadcrumbs">Breadcrumb</a>
-      </h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3>
-        <a href="/button-groups">Button groups</a>
-      </h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3>
-        <a href="/buttons">Buttons</a>
-      </h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3><a href="/cards">Cards</a></h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3>
-        <a href="/carousels">Carousel</a>
-      </h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3>
-        <a href="/darkmode">Dark mode</a>
-      </h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3>
-        <a href="/datepicker" rel="external">Datepicker</a>
-      </h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3>
-        <a href="/dropdowns">Dropdowns</a>
-      </h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3>
-        <a href="/forms" rel="external">Forms</a>
-      </h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3>
-        <a href="/footer">Footer</a>
-      </h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3>
-        <a href="/kbd">KBD</a>
-      </h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3>
-        <a href="/list-group">List group</a>
-      </h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3><a href="/mega-menu">Mega menu</a></h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3><a href="/modals">Modals</a></h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3><a href="/navbar">Navbar</a></h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3>
-        <a href="/paginations">Pagination</a>
-      </h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3>
-        <a href="/popover">Popover</a>
-      </h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3>
-        <a href="/progressbars">Progress bar</a>
-      </h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3><a href="/ratings">Rating</a></h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3>
-        <a href="/sidebars">Sidebar</a>
-      </h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3>
-        <a href="/skeleton">Skeleton</a>
-      </h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3>
-        <a href="/spinners">Spinners</a>
-      </h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3>
-        <a href="/tables">Tables</a>
-      </h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3><a href="/tabs">Tabs</a></h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3>
-        <a href="/timelines">Timelines</a>
-      </h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3><a href="/toasts">Toast</a></h3>
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3>
-        <a href="/tooltips">Tooltips</a>
-      </h3>
-    </Nav>
-    <Nav {navClass} {navDivClass} class="mb-8">
-      <h3>
-        <a href="/typography">Typography</a>
-      </h3>
+      {#each components as { href, name, rel }}
+        <SidebarList {href} {name} {sideBarListClass} />
+      {/each}
     </Nav>
     <Nav {navClass} class="pb-2">
       <h3 class={h3Category}>Forms</h3>

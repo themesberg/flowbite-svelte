@@ -40,7 +40,7 @@ layout: dropdownLayout
   <BreadcrumbItem>Dropdown</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Dropdown</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Dropdowns</Heading>
 
 <CompoDescription>Get started with the dropdown component to show a list of menu items when clicking on the trigger element based on multiple layouts, styles, and placements</CompoDescription>
 

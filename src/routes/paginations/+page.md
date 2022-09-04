@@ -61,7 +61,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Pagination</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Pagination</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Paginations</Heading>
 
 <CompoDescription>Use the Tailwind CSS pagination element to indicate a series of content across various pages</CompoDescription>
 

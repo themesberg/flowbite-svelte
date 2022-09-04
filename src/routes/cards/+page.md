@@ -49,7 +49,7 @@ layout: cardLayout
   <BreadcrumbItem>Card</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Card</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Cards</Heading>
 
 <CompoDescription>Get started with a large variety of Tailwind CSS card examples for your web project</CompoDescription>
 

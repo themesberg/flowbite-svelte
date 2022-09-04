@@ -7,12 +7,12 @@ export const svelteflows = [
 ];
 
 export const components = [
-	{ href: '/accordions', name: 'Accordions' },
-	{ href: '/alert', name: 'Alert' },
+	{ href: '/accordion', name: 'Accordion' },
+	{ href: '/alerts', name: 'Alert' },
 	{ href: '/avatar', name: 'Avatar' },
 	{ href: '/badges', name: 'Badges' },
 	{ href: '/breadcrumbs', name: 'Breadcrumbs' },
-	{ href: '/button-groups', name: 'Buton groups' },
+	{ href: '/button-groups', name: 'Button groups' },
 	{ href: '/buttons', name: 'Buttons' },
 	{ href: '/cards', name: 'Cards' },
 	{ href: '/carousels', name: 'Carousels' },
@@ -25,13 +25,18 @@ export const components = [
 	{ href: '/mega-menu', name: 'Mega menu' },
 	{ href: '/modals', name: 'Modals' },
 	{ href: '/navbar', name: 'Navbar' },
-	{ href: '/pagination', name: 'Pagination' },
+	{ href: '/paginations', name: 'Paginations' },
 	{ href: '/popover', name: 'Popover' },
 	{ href: '/progressbar', name: 'Progress bar' },
 	{ href: '/ratins', name: 'Rating' },
-	{ href: '/modals', name: 'Modals' },
-	{ href: '/modals', name: 'Modals' },
-	{ href: '/modals', name: 'Modals' },
+	{ href: '/sidebars', name: 'Sidebars' },
+	{ href: '/skeleton', name: 'Skeleton' },
+	{ href: '/spinners', name: 'Spinners' },
+	{ href: '/tables', name: 'Tables' },
+	{ href: '/tabs', name: 'Tabs' },
+	{ href: '/timelines', name: 'Timelines' },
+	{ href: '/toasts', name: 'Toasts' },
+	{ href: '/tooltips', name: 'Tooltips' }
 ]
 
 export const forms = [
