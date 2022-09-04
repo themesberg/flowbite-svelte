@@ -1,10 +1,11 @@
 ---
-layout: iconLayout
+layout: componentLayout
 ---
 
 <script>
   import { Htwo } from '../../utils'
-  import { Breadcrumb, BreadcrumbItem, A, Heading } from '$lib'
+  import { Breadcrumb, BreadcrumbItem, P, A, List, Li, Heading } from '$lib'
+	import CheckCircle from './CheckCircle.svelte'
 </script>
 
 <Breadcrumb class="pb-8">
@@ -108,9 +109,9 @@ Use import * as Icon from `svelte-heros-v2`.
 
 <Htwo label="Examples" />
 
-Here are some of examples using Svelte-Heros-v2.
+Here are some examples using Svelte-Heros-v2.
 
-<Heading tag="h3"><A href="https://hero2-with-flowbite-svelte.vercel.app/accordion" textSize="text-2xl">Accordion</A></Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class='my-4'><A href="https://hero2-with-flowbite-svelte.vercel.app/accordion" textSize="text-2xl">Accordion</A></Heading>
 
 ```html
 <script>
@@ -150,7 +151,7 @@ Here are some of examples using Svelte-Heros-v2.
 </AccordionItem>
 ```
 
-<Heading tag="h3"><A href="https://hero2-with-flowbite-svelte.vercel.app/alert" textSize="text-2xl">Alert</A></Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class='my-4'><A href="https://hero2-with-flowbite-svelte.vercel.app/alert" textSize="text-2xl">Alert</A></Heading>
 
 ```html
 <script>
@@ -190,7 +191,7 @@ Here are some of examples using Svelte-Heros-v2.
 </Alert>
 ```
 
-<Heading tag="h3"><A href="https://hero2-with-flowbite-svelte.vercel.app/breadcrumb" textSize="text-2xl">Breadcrumb</A></Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class='my-4'><A href="https://hero2-with-flowbite-svelte.vercel.app/breadcrumb" textSize="text-2xl">Breadcrumb</A></Heading>
 
 ```html
 <script>
@@ -218,39 +219,45 @@ Here are some of examples using Svelte-Heros-v2.
 </Breadcrumb>
 ```
 
-<Heading tag="h3" class="mb-2">Find out more examples:</Heading>
+<Htwo label="More examples" />
 
-- <A href="https://hero2-with-flowbite-svelte.vercel.app/carousel">Carousel</A>
-- <A href="https://hero2-with-flowbite-svelte.vercel.app/hr">HR</A>
-- <A href="https://hero2-with-flowbite-svelte.vercel.app/link">Link</A>
-- <A href="https://hero2-with-flowbite-svelte.vercel.app/textarea">Textarea</A>
-- <A href="https://hero2-with-flowbite-svelte.vercel.app/toast">Toast</A>
-- <A href="https://hero2-with-flowbite-svelte.vercel.app/toolbar">Toolbar</A>
+<List list='none'>
+<Li icon>
+<CheckCircle />
+<A href="https://hero2-with-flowbite-svelte.vercel.app/carousel">Carousel</A></Li>
+<Li icon><CheckCircle /><A href="https://hero2-with-flowbite-svelte.vercel.app/hr">HR</A></Li>
+<Li icon><CheckCircle /><A href="https://hero2-with-flowbite-svelte.vercel.app/link">Link</A></Li>
+<Li icon><CheckCircle /><A href="https://hero2-with-flowbite-svelte.vercel.app/textarea">Textarea</A></Li>
+<Li icon><CheckCircle /><A href="https://hero2-with-flowbite-svelte.vercel.app/toast">Toast</A></Li>
+<Li icon><CheckCircle /><A href="https://hero2-with-flowbite-svelte.vercel.app/toolbar">Toolbar</A></Li>
+</List>
 
 
 <Htwo label="Alternatives" />
 
-These icon sets have the same functionalities mentioned above.
+<P class='w-full mb-4'>These icon sets have the same functionalities mentioned above.</P>
 
-- <A href="https://www.npmjs.com/package/svelte-awesome-icons">Svelte-Awesome-Icons</A>
-- <A href="https://www.npmjs.com/package/svelte-bootstrap-svg-icons">Svelte-Bootstrap-svg-Icons</A>
-- <A href="https://www.npmjs.com/package/svelte-circle-flags">Svelte-Circle-Flags</A>
-- <A href="https://www.npmjs.com/package/svelte-cryptocurrency-icons">Svelte-Cryptocurrency-Icons</A>
-- <A href="https://www.npmjs.com/package/svelte-feathers">Svelte-Feathers</A>
-- <A href="https://www.npmjs.com/package/svelte-flag-icons">Svelte-Flag-Icons</A>
-- <A href="https://www.npmjs.com/package/svelte-flags">Svelte-Flags</A>
-- <A href="https://www.npmjs.com/package/svelte-file-icons">Svelte-File-Icons</A>
-- <A href="https://www.npmjs.com/package/svelte-google-materialdesign-icons">Svelte-Google-Materialdesign-Icons</A>
-- <A href="https://www.npmjs.com/package/svelte-heros">Svelte-Heros v1</A>
-- <A href="https://www.npmjs.com/package/svelte-ionicons">Svelte-Ionicons</A>
-- <A href="https://www.npmjs.com/package/svelte-lucide">Svelte-Lucide</A>
-- <A href="https://www.npmjs.com/package/svelte-materialdesign-icons">Svelte-Materialdesign-Icons</A>
-- <A href="https://www.npmjs.com/package/svelte-oct">Svelte-Oct</A>
-- <A href="https://www.npmjs.com/package/svelte-radix">Svelte-Radix</A>
-- <A href="https://www.npmjs.com/package/svelte-remix">Svelte-Remix</A>
-- <A href="https://www.npmjs.com/package/svelte-simples">Svlete-simples</A>
-- <A href="https://www.npmjs.com/package/svelte-tabler">Svelte-Tabler</A>
-- <A href="https://www.npmjs.com/package/svelte-teenyicons">Svelte-Teenyicons</A>
-- <A href="https://www.npmjs.com/package/svelte-twitter-emoji">Svelte-Twitter-Emoji</A>
-- <A href="https://www.npmjs.com/package/svelte-weather">Svelte-Weather</A>
+<List tag='ul' class='space-y-1' list='none'>
+<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-awesome-icons">Svelte-Awesome-Icons</A></Li>
+<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-bootstrap-svg-icons">Svelte-Bootstrap-svg-Icons</A></Li>
+<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-circle-flags">Svelte-Circle-Flags</A></Li>
+<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-cryptocurrency-icons">Svelte-Cryptocurrency-Icons</A></Li>
+<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-feathers">Svelte-Feathers</A></Li>
+<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-flag-icons">Svelte-Flag-Icons</A></Li>
+<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-flags">Svelte-Flags</A></Li>
+<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-file-icons">Svelte-File-Icons</A></Li>
+<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-google-materialdesign-icons">Svelte-Google-Materialdesign-Icons</A></Li>
+<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-heros">Svelte-Heros v1</A></Li>
+<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-ionicons">Svelte-Ionicons</A></Li>
+<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-lucide">Svelte-Lucide</A></Li>
+<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-materialdesign-icons">Svelte-Materialdesign-Icons</A></Li>
+<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-oct">Svelte-Oct</A></Li>
+<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-radix">Svelte-Radix</A></Li>
+<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-remix">Svelte-Remix</A></Li>
+<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-simples">Svlete-simples</A></Li>
+<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-tabler">Svelte-Tabler</A></Li>
+<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-teenyicons">Svelte-Teenyicons</A></Li>
+<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-twitter-emoji">Svelte-Twitter-Emoji</A></Li>
+<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-weather">Svelte-Weather</A></Li>
+</List>
 

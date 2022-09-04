@@ -1,10 +1,10 @@
 ---
-layout: listgroupLayout
+layout: componentLayout
 ---
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Avatar, Listgroup, ListgroupItem, Breadcrumb, BreadcrumbItem, Badge, UserCircle, InformationCircle, Heading } from '$lib'
+  import { Avatar, Listgroup, ListgroupItem, Breadcrumb, BreadcrumbItem, Badge, UserCircle, InformationCircle, Heading, P, A } from '$lib'
 
   import componentProps from '../props/Listgroup.json'
   // Props table
@@ -223,7 +223,9 @@ Delete user
   <TableDefaultRow items={componentProps.props} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events: ListgroupItem" />
+<Htwo label="Forwarded Events" />
+
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">ListgroupItem</Heading>
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:blur</Badge>
@@ -237,3 +239,11 @@ Delete user
 <Badge large={true}>on:mouseleave</Badge>
 <Badge large={true}>on:mouseover</Badge>
 </div>
+
+<Htwo label="References" />
+
+<P>
+  <A href="https://flowbite.com/docs/components/list-group/" target="_blank" class="link"
+    >Flowbite List Group</A
+  >
+</P>

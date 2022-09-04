@@ -1,10 +1,10 @@
 ---
-layout: kbdLayout
+layout: componentLayout
 ---
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Kbd, Table, TableHead, TableHeadCell, TableBody, TableBodyRow, TableBodyCell, ArrowKeyDown, ArrowKeyLeft, ArrowKeyRight, ArrowKeyUp, Breadcrumb, BreadcrumbItem, Heading } from '$lib'
+  import { Kbd, Table, TableHead, TableHeadCell, TableBody, TableBodyRow, TableBodyCell, ArrowKeyDown, ArrowKeyLeft, ArrowKeyRight, ArrowKeyUp, Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   
 
   import componentProps from '../props/Kbd.json'
@@ -382,3 +382,10 @@ This example can be used to denote function keys inside the KBD component.
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
+<Htwo label="References" />
+
+<P>
+  <A href="https://flowbite.com/docs/components/kbd/" target="_blank" class="link"
+    >Tailwind CSS KBD (Keyboard)</A
+  >
+</P>
