@@ -4,7 +4,7 @@ layout: typographyLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../../utils'
-  import {  Img, A, P, Heading, Figma, Breadcrumb, BreadcrumbItem } from '$lib'
+  import { Img, A, P, Heading, Breadcrumb, BreadcrumbItem } from '$lib'
   ;
 
   import componentProps from '../../props/Img.json'
