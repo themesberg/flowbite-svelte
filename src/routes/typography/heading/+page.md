@@ -30,7 +30,7 @@ layout: typographyLayout
 	<BreadcrumbItem>Headings</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="w-full mb-2" tag="h1" customSize="text-3xl">Headings</Heading>
+<Heading class="w-full mb-2" tag="h1" customSize="text-3xl">Heading</Heading>
 
 <CompoDescription>The heading component defines six levels of title elements from H1 to H6 that are used as titles and subtitles on a web page based on multiple styles and layouts</CompoDescription>
 

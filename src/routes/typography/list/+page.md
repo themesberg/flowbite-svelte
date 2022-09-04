@@ -28,7 +28,7 @@ layout: typographyLayout
 	<BreadcrumbItem>Lists</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="w-full mb-2" tag="h1" customSize="text-3xl">Lists</Heading>
+<Heading class="w-full mb-2" tag="h1" customSize="text-3xl">List</Heading>
 
 <CompoDescription>
 Use the list component to show an unordered or ordered list of items based on multiple styles, layouts, and variants built with Tailwind CSS and Flowbite

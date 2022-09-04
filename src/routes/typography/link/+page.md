@@ -21,7 +21,7 @@ layout: typographyLayout
 	<BreadcrumbItem>Links</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="w-full mb-2" tag="h1" customSize="text-3xl">Links</Heading>
+<Heading class="w-full mb-2" tag="h1" customSize="text-3xl">Link</Heading>
 
 <CompoDescription>The link component can be used to set hyperlinks from one page to another or to an external website when clicking on an inline text item, button, or card</CompoDescription>
 

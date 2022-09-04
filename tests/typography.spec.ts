@@ -17,8 +17,8 @@ test('Blockquote page should have h1', async ({ page }) => {
 });
 
 test('Headings page should have h1', async ({ page }) => {
-	await page.goto('/typography/headings');
-	expect(await page.textContent('h1')).toBe('Headings');
+	await page.goto('/typography/heading');
+	expect(await page.textContent('h1')).toBe('Heading');
 });
 
 test('HR page should have h1', async ({ page }) => {
@@ -27,23 +27,23 @@ test('HR page should have h1', async ({ page }) => {
 });
 
 test('Images page should have h1', async ({ page }) => {
-	await page.goto('/typography/images');
-	expect(await page.textContent('h1')).toBe('Images');
+	await page.goto('/typography/image');
+	expect(await page.textContent('h1')).toBe('Image');
 });
 
 test('Links page should have h1', async ({ page }) => {
-	await page.goto('/typography/links');
-	expect(await page.textContent('h1')).toBe('Links');
+	await page.goto('/typography/link');
+	expect(await page.textContent('h1')).toBe('Link');
 });
 
 test('Lists page should have h1', async ({ page }) => {
-	await page.goto('/typography/lists');
-	expect(await page.textContent('h1')).toBe('Lists');
+	await page.goto('/typography/list');
+	expect(await page.textContent('h1')).toBe('List');
 });
 
 test('Paragraphs page should have h1', async ({ page }) => {
-	await page.goto('/typography/paragraphs');
-	expect(await page.textContent('h1')).toBe('Paragraphs');
+	await page.goto('/typography/paragraph');
+	expect(await page.textContent('h1')).toBe('Paragraph');
 });
 
 test('Text page should have h1', async ({ page }) => {

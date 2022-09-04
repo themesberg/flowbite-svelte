@@ -22,7 +22,7 @@ layout: typographyLayout
 	<BreadcrumbItem>Images</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="w-full mb-2" tag="h1" customSize="text-3xl">Images</Heading>
+<Heading class="w-full mb-2" tag="h1" customSize="text-3xl">Image</Heading>
 
 <CompoDescription>The image component can be used to embed images inside the web page in articles and sections based on multiple styles, sizes, layouts and hover animations</CompoDescription>
 

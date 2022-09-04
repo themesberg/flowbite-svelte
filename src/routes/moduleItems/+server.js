@@ -53,12 +53,12 @@ export const forms = [
 ];
 
 export const typography = [
-	{ href: '/typography/headings', name: 'Headings' },
+	{ href: '/typography/heading', name: 'Heading' },
 	{ href: '/typography/blockquote', name: 'Blockquote' },
-	{ href: '/typography/images', name: 'Images' },
-	{ href: '/typography/links', name: 'Links' },
-	{ href: '/typography/lists', name: 'Lists' },
-	{ href: '/typography/paragraphs', name: 'Paragraphs' },
+	{ href: '/typography/image', name: 'Image' },
+	{ href: '/typography/link', name: 'Link' },
+	{ href: '/typography/list', name: 'List' },
+	{ href: '/typography/paragraph', name: 'Paragraph' },
 	{ href: '/typography/text', name: 'Text' },
 	{ href: '/typography/hr', name: 'HR' }
 ];

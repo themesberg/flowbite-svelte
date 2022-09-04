@@ -31,7 +31,7 @@ layout: typographyLayout
   <BreadcrumbItem>Paragraphs</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="w-full mb-2" tag="h1" customSize="text-3xl">Paragraphs</Heading>
+<Heading class="w-full mb-2" tag="h1" customSize="text-3xl">Paragraph</Heading>
 
 <CompoDescription>
   Use the paragraph component to create multiple blocks of text separated by blank lines and write
