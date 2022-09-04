@@ -12,19 +12,25 @@
     <Htwo label="Related components" />
     <div class="related-components">
       <p>
-        <a href="/typography/headings" class="link">Headings</a>
+        <a href="/typography/heading" class="link">Heading</a>
       </p>
       <p>
         <a href="/typography/blockquote" class="link">Blockquote</a>
       </p>
       <p>
-        <a href="/typography/images" class="link">Images</a>
+        <a href="/typography/image" class="link">Image</a>
       </p>
       <p>
-        <a href="/typography/links" class="link">Links</a>
+        <a href="/typography/link" class="link">Link</a>
       </p>
       <p>
-        <a href="/typography/lists" class="link">Lists</a>
+        <a href="/typography/list" class="link">List</a>
+      </p>
+      <p>
+        <a href="/typography/paragraph" class="link">Paragraph</a>
+      </p>
+      <p>
+        <a href="/typography/text" class="link">Text</a>
       </p>
       <p>
         <a href="/typography/hr" class="link">HR</a>
