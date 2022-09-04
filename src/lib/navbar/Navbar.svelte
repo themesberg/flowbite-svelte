@@ -1,33 +1,20 @@
 <script lang="ts">
+	import Frame from '$lib/utils/Frame.svelte';
 	import classNames from 'classnames';
 
-	export let navClass: string = 'bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-800';
+	export let navClass: string = 'px-2 sm:px-4 py-2.5';
 	export let navDivClass: string = 'mx-auto flex flex-wrap justify-between items-center ';
 	export let fluid: boolean = true;
-	export let rounded: boolean = false;
-	export let border: boolean = false;
+	export let color: string = 'navbar';
+
 	let hidden = true;
 	let toggle = () => {
 		hidden = !hidden;
 	};
 </script>
 
-<nav
-	{...$$restProps}
-	class={classNames(
-		navClass,
-		{
-			rounded: rounded,
-			border: border
-		},
-		$$props.class
-	)}
->
-	<div
-		class={classNames(navDivClass, {
-			container: fluid
-		})}
-	>
+<Frame tag="nav" {color} {...$$restProps} class={classNames(navClass, $$props.class)}>
+	<div class={classNames(navDivClass, fluid && 'container')}>
 		<slot {hidden} {toggle} />
 	</div>
-</nav>
+</Frame>

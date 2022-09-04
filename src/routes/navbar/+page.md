@@ -5,7 +5,7 @@ layout: componentLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Breadcrumb, BreadcrumbItem, Button, Dropdown, DropdownItem, DropdownHeader, DropdownDivider, Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Input, Badge, Skeleton, ImagePlaceholder, TextPlaceholder, Heading, P, A } from '$lib';
-	
+  import Chevron from "$lib/utils/Chevron.svelte"
   import componentProps from '../props/Navbar.json'
 	import componentProps2 from '../props/NavBrand.json'
 	import componentProps3 from '../props/NavLi.json'
@@ -127,7 +127,7 @@ Use this example of a navigation bar built with the utility classes from Tailwin
 
 This example can be used to show a secondary dropdown menu when clicking on one of the navigation links.
 
-<ExampleDiv>
+<ExampleDiv class="h-80 md:h-64">
 	<Navbar let:hidden let:toggle rounded={true}>
 		<NavBrand href="/">
 			<img
@@ -139,78 +139,54 @@ This example can be used to show a secondary dropdown menu when clicking on one 
 				Flowbite
 			</span>
 		</NavBrand>
-		<div class="flex items-center md:order-2">
-			<Dropdown arrowIcon={false} inline={true}>
-				<Avatar {avatar} slot="label" />
-				<DropdownHeader>
-					<span class="block text-sm"> Bonnie Green </span>
-					<span class="block truncate text-sm font-medium"> name@flowbite.com </span>
-				</DropdownHeader>
+		<NavHamburger on:click={toggle} />
+		<NavUl {hidden}>
+			<NavLi href="/" active={true}>Home</NavLi>
+			<NavLi id="nav-menu1" class="cursor-pointer"><Chevron aligned>Dropdown</Chevron></NavLi>
+			<NavLi href="/services">Services</NavLi>
+			<NavLi href="/pricing">Pricing</NavLi>
+			<NavLi href="/contact">Contact</NavLi>
+			<Dropdown triggeredBy="#nav-menu1" class="w-44 z-20">
 				<DropdownItem>Dashboard</DropdownItem>
 				<DropdownItem>Settings</DropdownItem>
 				<DropdownItem>Earnings</DropdownItem>
 				<DropdownDivider />
 				<DropdownItem>Sign out</DropdownItem>
 			</Dropdown>
-			<NavHamburger on:click={toggle} />
-		</div>
-		<NavUl {hidden}>
-			<NavLi href="/" active={true}>Home</NavLi>
-			<NavLi href="/about">About</NavLi>
-			<NavLi href="/services">Services</NavLi>
-			<NavLi href="/pricing">Pricing</NavLi>
-			<NavLi href="/contact">Contact</NavLi>
 		</NavUl>
 	</Navbar>
 </ExampleDiv>
 
 ```html
-<script>
-...
-  let avatar = {
-		src: '/images/profile-picture-1.webp',
-		alt: 'My avatar',
-		size: 12,
-		border: true,
-		round: true
-	};
- 
-</script>
-<Navbar let:hidden let:toggle rounded={true}>
-	<NavBrand href="/">
-		<img
-			src="https://flowbite.com/docs/images/logo.svg"
-			class="mr-3 h-6 sm:h-9"
-			alt="Flowbite Logo"
-		/>
-		<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-			Flowbite
-		</span>
-	</NavBrand>
-	<div class="flex md:order-2">
-		<Dropdown arrowIcon={false} inline={true}>
-			<Avatar {avatar} slot="label" />
-			<DropdownHeader>
-				<span class="block text-sm"> Bonnie Green </span>
-				<span class="block truncate text-sm font-medium"> name@flowbite.com </span>
-			</DropdownHeader>
-			<DropdownItem>Dashboard</DropdownItem>
-			<DropdownItem>Settings</DropdownItem>
-			<DropdownItem>Earnings</DropdownItem>
-			<DropdownDivider />
-			<DropdownItem>Sign out</DropdownItem>
-		</Dropdown>
+	<Navbar let:hidden let:toggle rounded={true}>
+		<NavBrand href="/">
+			<img
+				src="https://flowbite.com/docs/images/logo.svg"
+				class="mr-3 h-6 sm:h-9"
+				alt="Flowbite Logo"
+			/>
+			<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+				Flowbite
+			</span>
+		</NavBrand>
 		<NavHamburger on:click={toggle} />
-	</div>
-	<NavUl {hidden}>
-		<NavLi href="/" active={true}>Home</NavLi>
-		<NavLi href="/about">About</NavLi>
-		<NavLi href="/services">Services</NavLi>
-		<NavLi href="/pricing">Pricing</NavLi>
-		<NavLi href="/contact">Contact</NavLi>
-	</NavUl>
-</Navbar>
+		<NavUl {hidden}>
+			<NavLi href="/" active={true}>Home</NavLi>
+			<NavLi id="nav-menu1" class="cursor-pointer"><Chevron aligned>Dropdown</Chevron></NavLi>
+			<NavLi href="/services">Services</NavLi>
+			<NavLi href="/pricing">Pricing</NavLi>
+			<NavLi href="/contact">Contact</NavLi>
+			<Dropdown triggeredBy="#nav-menu1" class="w-44 z-20">
+				<DropdownItem>Dashboard</DropdownItem>
+				<DropdownItem>Settings</DropdownItem>
+				<DropdownItem>Earnings</DropdownItem>
+				<DropdownDivider />
+				<DropdownItem>Sign out</DropdownItem>
+			</Dropdown>
+		</NavUl>
+	</Navbar>
 ```
+
 
 <Htwo label="Navbar with search" />
 
@@ -347,20 +323,13 @@ Use this example to keep the navbar positioned fixed to the top side as you scro
 <ExampleDiv class="h-80">
 	<div class="relative px-8">
 		<Navbar
-			navClass="bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-800 absolute w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600"
+			navClass="px-2 sm:px-4 py-2.5 absolute w-full z-20 top-0 left-0 border-b"
 			let:hidden
 			let:toggle
-			rounded={true}
 		>
 			<NavBrand href="/">
-				<img
-					src="https://flowbite.com/docs/images/logo.svg"
-					class="mr-3 h-6 sm:h-9"
-					alt="Flowbite Logo"
-				/>
-				<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-					Flowbite
-				</span>
+				<img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
+				<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
 			</NavBrand>
 			<NavHamburger on:click={toggle} />
 			<NavUl {hidden}>
@@ -413,6 +382,89 @@ Use this example to keep the navbar positioned fixed to the top side as you scro
 	</div>
 </div>
 ```
+
+<Htwo label="User menu dropdown" />
+
+Use this example to create a navigation bar with a user profile or button to toggle a dropdown menu.
+
+<ExampleDiv class="h-64">
+	<Navbar let:hidden let:toggle rounded={true}>
+		<NavBrand href="/">
+			<img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
+			<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
+		</NavBrand>
+		<NavHamburger on:click={toggle} />
+		<NavUl {hidden}>
+			<NavLi href="/" active={true}>Home</NavLi>
+			<NavLi href="/about">About</NavLi>
+			<NavLi href="/services">Services</NavLi>
+			<NavLi href="/pricing">Pricing</NavLi>
+			<NavLi href="/contact">Contact</NavLi>
+		</NavUl>
+		<Avatar src="/images/profile-picture-3.webp" />
+		<Dropdown placement="bottom-end">
+			<DropdownHeader>
+			<span class="block text-sm"> Bonnie Green </span>
+			<span class="block truncate text-sm font-medium"> name@flowbite.com </span>
+			</DropdownHeader>
+			<DropdownItem>Dashboard</DropdownItem>
+			<DropdownItem>Settings</DropdownItem>
+			<DropdownItem>Earnings</DropdownItem>
+			<DropdownDivider />
+			<DropdownItem>Sign out</DropdownItem>
+		</Dropdown>
+	</Navbar>
+</ExampleDiv>
+
+```html
+<Navbar let:hidden let:toggle rounded={true}>
+	<NavBrand href="/">
+		<img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
+		<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
+	</NavBrand>
+	<NavHamburger on:click={toggle} />
+	<NavUl {hidden}>
+		<NavLi href="/" active={true}>Home</NavLi>
+		<NavLi href="/about">About</NavLi>
+		<NavLi href="/services">Services</NavLi>
+		<NavLi href="/pricing">Pricing</NavLi>
+		<NavLi href="/contact">Contact</NavLi>
+	</NavUl>
+	<Avatar src="/images/profile-picture-3.webp" />
+	<Dropdown placement="bottom-end">
+		<DropdownHeader>
+		<span class="block text-sm"> Bonnie Green </span>
+		<span class="block truncate text-sm font-medium"> name@flowbite.com </span>
+		</DropdownHeader>
+		<DropdownItem>Dashboard</DropdownItem>
+		<DropdownItem>Settings</DropdownItem>
+		<DropdownItem>Earnings</DropdownItem>
+		<DropdownDivider />
+		<DropdownItem>Sign out</DropdownItem>
+	</Dropdown>
+</Navbar>
+```
+
+<Htwo label="Solid background" />
+
+Use this example to show a solid background for the navbar component instead of being transparent.
+
+<ExampleDiv class="h-64">
+<Navbar let:hidden let:toggle rounded color="navbar">
+	<NavBrand href="/">
+		<img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
+		<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
+	</NavBrand>
+	<NavHamburger on:click={toggle} />
+	<NavUl {hidden}>
+		<NavLi href="/" active={true}>Home</NavLi>
+		<NavLi href="/about">About</NavLi>
+		<NavLi href="/services">Services</NavLi>
+		<NavLi href="/pricing">Pricing</NavLi>
+		<NavLi href="/contact">Contact</NavLi>
+	</NavUl>
+</Navbar>
+</ExampleDiv>
 
 <Htwo label="Props" />
 

@@ -9,7 +9,7 @@
 	setContext('background', true);
 	$: setContext('color', color);
 
-	export let tag: 'div' | 'a' = 'div';
+	export let tag: 'div' | 'a' | 'nav' | 'ul' = 'div';
 	export let color: string = 'default';
 	export let rounded: boolean = false;
 	export let border: boolean = false;
@@ -38,6 +38,9 @@
 		light: 'bg-gray-50 dark:bg-gray-700',
 		dark: 'bg-gray-100 dark:bg-gray-700',
 		default: 'bg-white dark:bg-gray-800',
+		dropdown: 'bg-white dark:bg-gray-700',
+		navbar: 'bg-white dark:bg-gray-900',
+		navbarUl: 'bg-gray-50 dark:bg-gray-800',
 		none: ''
 	};
 	const textColors = {
@@ -52,6 +55,8 @@
 		light: 'text-gray-700 dark:text-gray-300',
 		dark: 'text-gray-700 dark:text-gray-300',
 		default: 'text-gray-500 dark:text-gray-400',
+		default2: 'text-gray-700 dark:text-gray-200',
+		navbarUl: 'text-gray-700 dark:text-gray-400',
 		none: ''
 	};
 
@@ -67,6 +72,8 @@
 		light: 'border-gray-500',
 		dark: 'border-gray-500',
 		default: 'border-gray-200 dark:border-gray-700',
+		navbar: 'border-gray-100 dark:border-gray-700',
+		navbarUl: 'border-gray-100 dark:border-gray-700',
 		none: ''
 	};
 
