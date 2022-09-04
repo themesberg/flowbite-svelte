@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.9](https://github.com/themesberg/flowbite-svelte/compare/v0.26.8...v0.26.9) (2022-09-04)
+
+
+### Features
+
+* add id to typograpy components ([64cbe1b](https://github.com/themesberg/flowbite-svelte/commit/64cbe1b6f2cbe43fdf5cb71a0d82e3a5caad1586))
+* add placement to Drawer component ([1b91e52](https://github.com/themesberg/flowbite-svelte/commit/1b91e52618da8935b326a69161d01f0cc7739158))
+* working on drawer ([07a8e02](https://github.com/themesberg/flowbite-svelte/commit/07a8e02ceac450e7e7ceeb2ad9b98bfac7c7c1cf))
+
+
+### Bug Fixes
+
+* folder names without s and update tests ([4e9c9ce](https://github.com/themesberg/flowbite-svelte/commit/4e9c9ce69e06b1a8e4394c3920c75606894c06d3))
+* no dropdown docs ([4f92d9b](https://github.com/themesberg/flowbite-svelte/commit/4f92d9b56a53677bed7264b6f044e64a10c42c7e))
+* update Htwo using scroll-mt-20 ([2006490](https://github.com/themesberg/flowbite-svelte/commit/200649069a05c6df4ed0e269d3479526092afe01))
+
 ### [0.26.8](https://github.com/themesberg/flowbite-svelte/compare/v0.26.7...v0.26.8) (2022-09-03)
 
 
