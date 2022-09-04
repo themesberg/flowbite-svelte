@@ -5,7 +5,7 @@ layout: componentLayout
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../utils'
   import { Button, Chevron, Navbar, Dropdown, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, Breadcrumb, BreadcrumbItem, UserCircle, Heading, P, A } from '$lib'
-  
+
   import componentProps from '../props/MegaMenu.json'
   // Props table
   let items = componentProps.props
@@ -72,7 +72,7 @@ The mega menu component is a full-width dropdown that can be triggered by clicki
 
 Use this example to show a list of links aligned on three columns inside the mega menu dropdown.
 
-<ExampleDiv class="h-60">
+<ExampleDiv class="h-80 md:h-64">
   <Navbar let:hidden let:toggle>
     <NavBrand href="/">
       <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
@@ -133,7 +133,7 @@ Use this example to show a list of links aligned on three columns inside the meg
 
 This example of a mega menu dropdown can be used to also show an icon near the text of the link.
 
-<ExampleDiv class="h-60">
+<ExampleDiv class="h-80 md:h-60">
   <Navbar let:hidden let:toggle>
     <NavBrand href="/">
       <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>

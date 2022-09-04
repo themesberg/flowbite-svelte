@@ -78,7 +78,7 @@ Get started with the responsive navbar component from Flowbite to quickly set up
 Use this example of a navigation bar built with the utility classes from Tailwind CSS to enable users to navigate across the pages of your website.
 
 <ExampleDiv>
-	<Navbar let:hidden let:toggle rounded={true}>
+	<Navbar let:hidden let:toggle>
 		<NavBrand href="/">
 			<img
 				src="https://flowbite.com/docs/images/logo.svg"
@@ -127,8 +127,8 @@ Use this example of a navigation bar built with the utility classes from Tailwin
 
 This example can be used to show a secondary dropdown menu when clicking on one of the navigation links.
 
-<ExampleDiv class="h-80 md:h-64">
-	<Navbar let:hidden let:toggle rounded={true}>
+<ExampleDiv class1="h-80 md:h-64">
+	<Navbar let:hidden let:toggle>
 		<NavBrand href="/">
 			<img
 				src="https://flowbite.com/docs/images/logo.svg"
@@ -158,7 +158,7 @@ This example can be used to show a secondary dropdown menu when clicking on one 
 </ExampleDiv>
 
 ```html
-	<Navbar let:hidden let:toggle rounded={true}>
+	<Navbar let:hidden let:toggle>
 		<NavBrand href="/">
 			<img
 				src="https://flowbite.com/docs/images/logo.svg"
@@ -193,7 +193,7 @@ This example can be used to show a secondary dropdown menu when clicking on one 
 Use this example of a navbar element to also show a search input element that you can integrate for a site-wide search.
 
 <ExampleDiv>
-	<Navbar let:hidden let:toggle rounded={true}>
+	<Navbar let:hidden let:toggle>
 		<NavBrand href="/">
 			<img
 				src="https://flowbite.com/docs/images/logo.svg"
@@ -229,7 +229,7 @@ Use this example of a navbar element to also show a search input element that yo
 	...
 	let MagnifyingGlass = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 dark:text-white"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>`
 </script>	
-<Navbar let:hidden let:toggle rounded={true}>
+<Navbar let:hidden let:toggle>
 	<NavBrand href="/">
 		<img
 			src="https://flowbite.com/docs/images/logo.svg"
@@ -264,8 +264,8 @@ Use this example of a navbar element to also show a search input element that yo
 
 Use the following navbar element to show a call to action button alongside the logo and page links.
 
-<ExampleDiv>
-	<Navbar let:hidden let:toggle rounded={true}>
+<ExampleDiv class1="h-80 md:h-64">
+	<Navbar let:hidden let:toggle>
 		<NavBrand href="/">
 			<img
 				src="https://flowbite.com/docs/images/logo.svg"
@@ -277,7 +277,7 @@ Use the following navbar element to show a call to action button alongside the l
 			</span>
 		</NavBrand>
 		<div class="flex md:order-2">
-			<Button>Get started</Button>
+			<Button size="sm">Get started</Button>
 			<NavHamburger on:click={toggle} />
 		</div>
 		<NavUl {hidden} class="order-1">
@@ -291,7 +291,7 @@ Use the following navbar element to show a call to action button alongside the l
 </ExampleDiv>
 
 ```html
-<Navbar let:hidden let:toggle rounded={true}>
+<Navbar let:hidden let:toggle>
 	<NavBrand href="/">
 		<img
 			src="https://flowbite.com/docs/images/logo.svg"
@@ -351,10 +351,9 @@ Use this example to keep the navbar positioned fixed to the top side as you scro
 ```html
 <div class="relative px-8">
 	<Navbar
-		navClass="bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-800 absolute w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600"
+		navClass="bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-800 absolute w-full z-20 top-0 left-0 border-b"
 		let:hidden
 		let:toggle
-		rounded={true}
 	>
 		<NavBrand href="/">
 			<img
@@ -387,22 +386,17 @@ Use this example to keep the navbar positioned fixed to the top side as you scro
 
 Use this example to create a navigation bar with a user profile or button to toggle a dropdown menu.
 
-<ExampleDiv class="h-64">
-	<Navbar let:hidden let:toggle rounded={true}>
+<ExampleDiv class="h-80">
+	<Navbar let:hidden let:toggle>
 		<NavBrand href="/">
 			<img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
 			<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
 		</NavBrand>
-		<NavHamburger on:click={toggle} />
-		<NavUl {hidden}>
-			<NavLi href="/" active={true}>Home</NavLi>
-			<NavLi href="/about">About</NavLi>
-			<NavLi href="/services">Services</NavLi>
-			<NavLi href="/pricing">Pricing</NavLi>
-			<NavLi href="/contact">Contact</NavLi>
-		</NavUl>
-		<Avatar src="/images/profile-picture-3.webp" />
-		<Dropdown placement="bottom-end">
+		<div class="flex items-center md:order-2">
+			<Avatar id="avatar-menu" src="/images/profile-picture-3.webp" />
+			<NavHamburger on:click={toggle} class1="w-full md:flex md:w-auto md:order-1"/>
+		</div>
+		<Dropdown placement="bottom" triggeredBy="#avatar-menu">
 			<DropdownHeader>
 			<span class="block text-sm"> Bonnie Green </span>
 			<span class="block truncate text-sm font-medium"> name@flowbite.com </span>
@@ -413,35 +407,44 @@ Use this example to create a navigation bar with a user profile or button to tog
 			<DropdownDivider />
 			<DropdownItem>Sign out</DropdownItem>
 		</Dropdown>
+		<NavUl {hidden}>
+			<NavLi href="/" active={true}>Home</NavLi>
+			<NavLi href="/about">About</NavLi>
+			<NavLi href="/services">Services</NavLi>
+			<NavLi href="/pricing">Pricing</NavLi>
+			<NavLi href="/contact">Contact</NavLi>
+		</NavUl>
 	</Navbar>
 </ExampleDiv>
 
 ```html
-<Navbar let:hidden let:toggle rounded={true}>
-	<NavBrand href="/">
-		<img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
-		<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
-	</NavBrand>
-	<NavHamburger on:click={toggle} />
-	<NavUl {hidden}>
-		<NavLi href="/" active={true}>Home</NavLi>
-		<NavLi href="/about">About</NavLi>
-		<NavLi href="/services">Services</NavLi>
-		<NavLi href="/pricing">Pricing</NavLi>
-		<NavLi href="/contact">Contact</NavLi>
-	</NavUl>
-	<Avatar src="/images/profile-picture-3.webp" />
-	<Dropdown placement="bottom-end">
-		<DropdownHeader>
-		<span class="block text-sm"> Bonnie Green </span>
-		<span class="block truncate text-sm font-medium"> name@flowbite.com </span>
-		</DropdownHeader>
-		<DropdownItem>Dashboard</DropdownItem>
-		<DropdownItem>Settings</DropdownItem>
-		<DropdownItem>Earnings</DropdownItem>
-		<DropdownDivider />
-		<DropdownItem>Sign out</DropdownItem>
-	</Dropdown>
+<Navbar let:hidden let:toggle>
+  <NavBrand href="/">
+    <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
+    <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
+  </NavBrand>
+  <div class="flex items-center md:order-2">
+    <Avatar id="avatar-menu" src="/images/profile-picture-3.webp" />
+    <NavHamburger on:click={toggle} class1="w-full md:flex md:w-auto md:order-1"/>
+  </div>
+  <Dropdown placement="bottom" triggeredBy="#avatar-menu">
+    <DropdownHeader>
+    <span class="block text-sm"> Bonnie Green </span>
+    <span class="block truncate text-sm font-medium"> name@flowbite.com </span>
+    </DropdownHeader>
+    <DropdownItem>Dashboard</DropdownItem>
+    <DropdownItem>Settings</DropdownItem>
+    <DropdownItem>Earnings</DropdownItem>
+    <DropdownDivider />
+    <DropdownItem>Sign out</DropdownItem>
+  </Dropdown>
+  <NavUl {hidden}>
+    <NavLi href="/" active={true}>Home</NavLi>
+    <NavLi href="/about">About</NavLi>
+    <NavLi href="/services">Services</NavLi>
+    <NavLi href="/pricing">Pricing</NavLi>
+    <NavLi href="/contact">Contact</NavLi>
+  </NavUl>
 </Navbar>
 ```
 
@@ -449,8 +452,8 @@ Use this example to create a navigation bar with a user profile or button to tog
 
 Use this example to show a solid background for the navbar component instead of being transparent.
 
-<ExampleDiv class="h-64">
-<Navbar let:hidden let:toggle rounded color="navbar">
+<ExampleDiv>
+<Navbar let:hidden let:toggle rounded color="form">
 	<NavBrand href="/">
 		<img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
 		<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
@@ -465,6 +468,23 @@ Use this example to show a solid background for the navbar component instead of 
 	</NavUl>
 </Navbar>
 </ExampleDiv>
+
+```html
+<Navbar let:hidden let:toggle rounded color="form">
+	<NavBrand href="/">
+		<img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
+		<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
+	</NavBrand>
+	<NavHamburger on:click={toggle} />
+	<NavUl {hidden}>
+		<NavLi href="/" active={true}>Home</NavLi>
+		<NavLi href="/about">About</NavLi>
+		<NavLi href="/services">Services</NavLi>
+		<NavLi href="/pricing">Pricing</NavLi>
+		<NavLi href="/contact">Contact</NavLi>
+	</NavUl>
+</Navbar>
+```
 
 <Htwo label="Props" />
 

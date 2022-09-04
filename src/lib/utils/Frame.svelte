@@ -41,6 +41,7 @@
 		dropdown: 'bg-white dark:bg-gray-700',
 		navbar: 'bg-white dark:bg-gray-900',
 		navbarUl: 'bg-gray-50 dark:bg-gray-800',
+		form: 'bg-gray-50 dark:bg-gray-700',
 		none: ''
 	};
 	const textColors = {
@@ -58,6 +59,7 @@
 		dropdown: 'text-gray-500 dark:text-gray-400',
 		navbar: 'text-gray-700 dark:text-gray-200',
 		navbarUl: 'text-gray-700 dark:text-gray-400',
+		from: 'text-gray-900 dark:text-white',
 		none: ''
 	};
 
@@ -76,6 +78,7 @@
 		dropdown: 'border-gray-100 dark:border-gray-700',
 		navbar: 'border-gray-100 dark:border-gray-700',
 		navbarUl: 'border-gray-100 dark:border-gray-700',
+		form: 'border-gray-300 dark:border-gray-700',
 		none: ''
 	};
 
