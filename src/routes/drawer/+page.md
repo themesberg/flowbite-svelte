@@ -41,7 +41,7 @@ layout: componentLayout
   let spanClass = 'flex-1 ml-3 whitespace-nowrap';
 
   // Props table
-  import componentProps from '../props/Button.json'
+  import componentProps from '../props/Drawer.json'
   let items = componentProps.props
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
