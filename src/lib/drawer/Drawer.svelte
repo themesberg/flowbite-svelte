@@ -8,6 +8,8 @@
   export let position: 'fixed' | 'absolute' = 'fixed';
   export let width: string = 'w-80';
   export let backdrop: boolean = true;
+  export let bgColor: string = 'bg-gray-900';
+  export let bgOpacity: string = 'bg-opacity-75';
   export let placement: 'left' | 'right' | 'top' | 'bottom' = 'left';
   export let id: string = 'drawer-example';
   export let divClass: string = 'overflow-y-auto z-50 p-4 bg-white dark:bg-gray-800';
@@ -39,13 +41,17 @@
     hidden = !hidden;
     console.log('clicked');
   };
+
+  let backdropDivClass = classNames(
+    'fixed top-0 left-0 z-50 w-full h-full',
+    backdrop && bgColor,
+    backdrop && bgOpacity
+  );
 </script>
 
 {#if !hidden}
   {#if backdrop}
-    <div
-      class="fixed top-0 left-0 z-50 w-full h-full bg-gray-900/70"
-      on:click={() => !hidden && handleDrawer()} />
+    <div class={backdropDivClass} on:click={() => !hidden && handleDrawer()} />
   {/if}
   <div
     use:clickOutside={() => !hidden && handleDrawer()}
