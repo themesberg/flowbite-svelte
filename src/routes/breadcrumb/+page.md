@@ -20,7 +20,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Breadcrumb</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Breadcrumbs</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Breadcrumb</Heading>
 
 <CompoDescription>Show the location of the current page in a hierarchical structure using the breadcrumb components</CompoDescription>
 

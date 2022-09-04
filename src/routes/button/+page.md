@@ -32,7 +32,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
   <BreadcrumbItem>Buttons</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Buttons</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Button</Heading>
 
 <CompoDescription>Use the button component inside forms, as links, social login, payment options with support for multiple styles, colors, sizes, gradients, and shadows</CompoDescription>
 

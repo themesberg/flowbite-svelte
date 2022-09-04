@@ -42,7 +42,7 @@ layout: listgroupLayout
   <BreadcrumbItem href="/footer">List group</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">List group</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">List Group</Heading>
 
 <CompoDescription>Use the list group component to display a series of items, buttons or links inside a single element</CompoDescription>
 

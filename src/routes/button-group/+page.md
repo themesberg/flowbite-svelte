@@ -25,7 +25,7 @@ layout: buttongroupLayout
   <BreadcrumbItem>Button groups</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Button group</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Button Group</Heading>
 
 <CompoDescription>Button groups are a Tailwind CSS powered set of buttons sticked together in a horizontal line</CompoDescription>
 

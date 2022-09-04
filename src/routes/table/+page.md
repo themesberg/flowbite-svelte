@@ -38,7 +38,7 @@ layout: tableLayout
   <BreadcrumbItem>Tables</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Tables</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Table</Heading>
 
 <CompoDescription>Use the table component to show text, images, links, and other elements inside a structured set of data made up of rows and columns of table cells</CompoDescription>
 

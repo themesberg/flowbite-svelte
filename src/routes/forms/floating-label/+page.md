@@ -22,7 +22,7 @@ layout: formLayout
   <BreadcrumbItem>Floating label</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Floating label</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Floating Label</Heading>
 
 <CompoDescription>Use the floating label style for the input field elements to replicate the Material UI design system from Google and choose from multiple styles and sizes</CompoDescription>
 

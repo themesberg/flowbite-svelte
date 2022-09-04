@@ -29,7 +29,7 @@ layout: skeletonLayout
   <BreadcrumbItem>Skeleton</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Tailwind CSS Skeleton</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Skeleton</Heading>
 
 <CompoDescription>The skeleton component can be used as an alternative loading indicator to the spinner by mimicking the content that will be loaded such as text, images, or video</CompoDescription>
 

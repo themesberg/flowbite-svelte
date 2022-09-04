@@ -23,7 +23,7 @@ layout: tooltipLayout
   <BreadcrumbItem>Tooltips</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Tooltips</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Tooltip</Heading>
 
 <CompoDescription>Use the following Tailwind CSS powered tooltips to show extra content when hovering or focusing on an element</CompoDescription>
 

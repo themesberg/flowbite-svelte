@@ -8,8 +8,8 @@ test('Accordion page should have h1', async ({ page }) => {
 
 // Alert
 test('Alert page should have h1', async ({ page }) => {
-	await page.goto('/alerts');
-	expect(await page.textContent('h1')).toBe('Alerts');
+	await page.goto('/alert');
+	expect(await page.textContent('h1')).toBe('Alert');
 });
 
 // Avatar
@@ -20,37 +20,37 @@ test('Avatar page should have h1', async ({ page }) => {
 
 // Badges
 test('Badges page should have h1', async ({ page }) => {
-	await page.goto('/badges');
-	expect(await page.textContent('h1')).toBe('Badges');
+	await page.goto('/badge');
+	expect(await page.textContent('h1')).toBe('Badge');
 });
 
 // Breadcrumbs
 test('Breadcrumb page should have h1', async ({ page }) => {
-	await page.goto('/breadcrumbs/');
-	expect(await page.textContent('h1')).toBe('Breadcrumbs');
+	await page.goto('/breadcrumb');
+	expect(await page.textContent('h1')).toBe('Breadcrumb');
 });
 
 // Button groups
 test('Button Group page should have h1', async ({ page }) => {
-	await page.goto('/button-groups');
-	expect(await page.textContent('h1')).toBe('Button group');
+	await page.goto('/button-group');
+	expect(await page.textContent('h1')).toBe('Button Group');
 });
 
 // Buttons
 test('Buttons page should have h1', async ({ page }) => {
-	await page.goto('/buttons/');
-	expect(await page.textContent('h1')).toBe('Buttons');
+	await page.goto('/button');
+	expect(await page.textContent('h1')).toBe('Button');
 });
 
 // Cards
 test('Cards page should have h1', async ({ page }) => {
-	await page.goto('/cards');
-	expect(await page.textContent('h1')).toBe('Cards');
+	await page.goto('/card');
+	expect(await page.textContent('h1')).toBe('Card');
 });
 
 // Carousel
 test('Carousel page should have h1', async ({ page }) => {
-	await page.goto('/carousels/');
+	await page.goto('/carousel');
 	expect(await page.textContent('h1')).toBe('Carousel');
 });
 
@@ -68,8 +68,8 @@ test('Datepicker page should have h1', async ({ page }) => {
 
 // Dropdown
 test('Dropdown page should have h1', async ({ page }) => {
-	await page.goto('/dropdowns/');
-	expect(await page.textContent('h1')).toBe('Dropdowns');
+	await page.goto('/dropdown');
+	expect(await page.textContent('h1')).toBe('Dropdown');
 });
 
 // Footer
@@ -79,23 +79,22 @@ test('Footer index page should have h1', async ({ page }) => {
 });
 
 
-
 // Kbd
 test('Kbd group page should have h1', async ({ page }) => {
 	await page.goto('/kbd');
-	expect(await page.textContent('h1')).toBe('Tailwind CSS KBD (Keyboard)');
+	expect(await page.textContent('h1')).toBe('KBD (Keyboard)');
 });
 
 // List group
 test('List group page should have h1', async ({ page }) => {
 	await page.goto('/list-group');
-	expect(await page.textContent('h1')).toBe('List group');
+	expect(await page.textContent('h1')).toBe('List Group');
 });
 
 // Modals
 test('Modals page should have h1', async ({ page }) => {
-	await page.goto('/modals');
-	expect(await page.textContent('h1')).toBe('Modals');
+	await page.goto('/modal');
+	expect(await page.textContent('h1')).toBe('Modal');
 });
 
 // Navbar
@@ -106,8 +105,8 @@ test('Navbar page should have h1', async ({ page }) => {
 
 // Pagination
 test('Paginations page should have h1', async ({ page }) => {
-	await page.goto('/paginations');
-	expect(await page.textContent('h1')).toBe('Paginations');
+	await page.goto('/pagination');
+	expect(await page.textContent('h1')).toBe('Pagination');
 });
 
 // Popover
@@ -118,61 +117,61 @@ test('Popover page should have h1', async ({ page }) => {
 
 // Progress bar
 test('Progress bar page should have h1', async ({ page }) => {
-	await page.goto('/progressbars');
+	await page.goto('/progress');
 	expect(await page.textContent('h1')).toBe('Progress');
 });
 
 // Ratings
 test('Rating page should have h1', async ({ page }) => {
-	await page.goto('/ratings');
+	await page.goto('/rating');
 	expect(await page.textContent('h1')).toBe('Rating');
 });
 
 // Sidebar
 test('Sidebar page should have h1', async ({ page }) => {
-	await page.goto('/sidebars');
+	await page.goto('/sidebar');
 	expect(await page.textContent('h1')).toBe('Sidebar');
 });
 
 // Skeleton
 test('Skeleton page should have h1', async ({ page }) => {
 	await page.goto('/skeleton');
-	expect(await page.textContent('h1')).toBe('Tailwind CSS Skeleton');
+	expect(await page.textContent('h1')).toBe('Skeleton');
 });
 
 // Spinner
 test('Spinner page should have h1', async ({ page }) => {
-	await page.goto('/spinners');
+	await page.goto('/spinner');
 	expect(await page.textContent('h1')).toBe('Spinner');
 });
 
 // Tables
 test('Table page should have h1', async ({ page }) => {
-	await page.goto('/tables');
-	expect(await page.textContent('h1')).toBe('Tables');
+	await page.goto('/table');
+	expect(await page.textContent('h1')).toBe('Table');
 });
 
 // Tabs
 test('Tab page should have h1', async ({ page }) => {
-	await page.goto('/tabs');
-	expect(await page.textContent('h1')).toBe('Tabs');
+	await page.goto('/tab');
+	expect(await page.textContent('h1')).toBe('Tab');
 });
 
 // Timeline
 test('Timeline page should have h1', async ({ page }) => {
-	await page.goto('/timelines');
+	await page.goto('/timeline');
 	expect(await page.textContent('h1')).toBe('Timeline');
 });
 
 // Toasts
 test('Toast page should have h1', async ({ page }) => {
-	await page.goto('/toasts');
+	await page.goto('/toast');
 	expect(await page.textContent('h1')).toBe('Toast');
 });
 
 // Tooltips
 test('Tooltip page should have h1', async ({ page }) => {
-	await page.goto('/tooltips');
-	expect(await page.textContent('h1')).toBe('Tooltips');
+	await page.goto('/tooltip');
+	expect(await page.textContent('h1')).toBe('Tooltip');
 });
 

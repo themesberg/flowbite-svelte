@@ -20,7 +20,7 @@ layout: badgeLayout
   <BreadcrumbItem>Badges</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Badges</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Badge</Heading>
 
 <CompoDescription>Use Tailwind CSS badges as elements to show counts or labels separately or inside other components</CompoDescription>
 

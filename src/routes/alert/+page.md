@@ -26,7 +26,7 @@ layout: alertLayout
   <BreadcrumbItem>Alerts</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Alerts</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Alert</Heading>
 
 <CompoDescription>Show contextual information to your users using alert elements based on Tailwind CSS</CompoDescription>
 

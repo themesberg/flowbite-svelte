@@ -84,9 +84,6 @@
     {childLi}
     {hamburgerClass}>
     <Nav {navClass} class="pb-2">
-      <h3 class={h3Category}>
-        <a href="/">Flowbite Svelte</a>
-      </h3>
       {#each svelteflows as { href, name, rel }}
         <SidebarList {href} {name} {sideBarListClass} />
       {/each}

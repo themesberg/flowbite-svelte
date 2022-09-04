@@ -29,7 +29,7 @@ layout: kbdLayout
   <BreadcrumbItem>Kbd</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Tailwind CSS KBD (Keyboard)</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">KBD (Keyboard)</Heading>
 
 <CompoDescription>Use the KBD component as an inline element to denote textual user input from the keyboard inside paragraphs, tables, and other components</CompoDescription>
 

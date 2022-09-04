@@ -43,7 +43,7 @@ layout: modalLayout
   <BreadcrumbItem>Modals</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Modals</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">Modal</Heading>
 
 <CompoDescription>Use the modal component to show interactive dialogs and notifications to your website users available in multiple sizes, colors, and styles</CompoDescription>
 

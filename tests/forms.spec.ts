@@ -23,7 +23,7 @@ test('File input page should have h1', async ({ page }) => {
 
 test('Floating label page should have h1', async ({ page }) => {
 	await page.goto('/forms/floating-label');
-	expect(await page.textContent('h1')).toBe('Floating label');
+	expect(await page.textContent('h1')).toBe('Floating Label');
 });
 
 test('Input page should have h1', async ({ page }) => {
