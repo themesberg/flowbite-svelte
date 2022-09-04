@@ -22,7 +22,7 @@
   } from './moduleItems/+server.js';
 
   let asideClass =
-    'absolute w-auto bg-white pt-8 shadow-lg z-50 h-screen z-40 overflow-scroll dark:bg-gray-900';
+    'absolute w-auto bg-white pt-8 shadow-lg z-50 h-screen px-4 overflow-scroll dark:bg-gray-900';
 
   // Nav
   let navDivClass = 'pb-4';
@@ -120,7 +120,7 @@
     </Nav>
   </Side>
 
-  <main class="flex mx-auto pt-12 pb:12 xl:pb-24 lg:pb-16 lg:pl-64">
+  <main class="flex mx-auto pt-12 pb:12 xl:pb-24 lg:pb-16 lg:pl-60 ">
     <DarkMode btnClass={darkmodebtn} />
     <div class="w-full px-4 sm:px-8">
       <slot />
@@ -128,7 +128,7 @@
     <Toc />
   </main>
 </div>
-<div class="mx-auto mb-4 pt-4 lg:pl-64">
+<div class="mx-auto mb-4 pt-4 lg:pl-60">
   <Footer footerType="custom" customClass="py-6 px-16 bg-white dark:bg-gray-900">
     <div class="md:flex md:justify-between">
       <div class="mb-6 md:mb-0">
