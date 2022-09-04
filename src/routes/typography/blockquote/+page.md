@@ -4,7 +4,7 @@ layout: typographyLayout
 
 <script>
 	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../../utils'
-	import { Blockquote, P, Heading, A, Mark, Secondary, TextGradient, Underline, Rating, Breadcrumb, BreadcrumbItem } from '$lib';
+	import { Blockquote, P, Heading, A, Mark, Secondary, TextGradient,  Rating, Breadcrumb, BreadcrumbItem } from '$lib';
 	
 	import componentProps1 from '../../props/Blockquote.json'
   let items1 = componentProps1.props

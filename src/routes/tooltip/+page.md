@@ -20,7 +20,7 @@ layout: componentLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>Tooltips</BreadcrumbItem>
+  <BreadcrumbItem>Tooltip</BreadcrumbItem>
 </Breadcrumb>
 
 <Heading class="mb-2" tag="h1" customSize="text-3xl">Tooltip</Heading>

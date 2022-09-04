@@ -19,7 +19,7 @@ layout: typographyLayout
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem href="/typography/">Typography</BreadcrumbItem>
-	<BreadcrumbItem>Images</BreadcrumbItem>
+	<BreadcrumbItem>Image</BreadcrumbItem>
 </Breadcrumb>
 
 <Heading class="w-full mb-2" tag="h1" customSize="text-3xl">Image</Heading>

@@ -1,6 +1,7 @@
 <script lang="ts">
   import classNames from 'classnames';
 
+  export let id: string;
   export let tag: 'ul' | 'ol' | 'dl' = 'ul';
   export let list: 'disc' | 'none' | 'decimal' = 'disc';
   export let position: 'inside' | 'outside' = 'inside';
@@ -28,6 +29,6 @@
   );
 </script>
 
-<svelte:element this={tag} class={classList}>
+<svelte:element this={tag} {id} class={classList}>
   <slot />
 </svelte:element>

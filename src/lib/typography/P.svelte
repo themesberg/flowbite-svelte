@@ -1,5 +1,7 @@
 <script lang="ts">
   import classNames from 'classnames';
+
+  export let id: string;
   export let color: string = 'text-gray-900 dark:text-white';
   export let height: 'normal' | 'relaxed' | 'loose' = 'normal';
   export let align: 'left' | 'center' | 'right' = 'left';
@@ -114,6 +116,6 @@
   );
 </script>
 
-<p class={classP}>
+<p {id} class={classP}>
   <slot />
 </p>

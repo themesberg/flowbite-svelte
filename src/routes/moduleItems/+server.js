@@ -18,6 +18,7 @@ export const components = [
 	{ href: '/carousel', name: 'Carousel' },
 	{ href: '/darkmode', name: 'Dark mode' },
 	{ href: '/datepicker', name: 'Datepicker' },
+	{ href: '/drawer', name: 'Drawer' },
 	{ href: '/dropdown', name: 'Dropdown' },
 	{ href: '/footer', name: 'Footer' },
 	{ href: '/forms', name: 'Forms' },

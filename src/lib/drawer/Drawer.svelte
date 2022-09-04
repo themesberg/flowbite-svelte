@@ -7,7 +7,7 @@
   export let hidden: boolean = true;
   export let id: string = 'drawer-example';
   export let divClass: string =
-    'overflow-y-auto absolute top-0 z-40 p-4 w-80 h-screen bg-white dark:bg-gray-800';
+    'overflow-y-auto fixed left-0 top-0 z-50 p-4 w-80 h-full bg-white dark:bg-gray-800';
 
   export let transitionParams: drawerTransitionParamTypes = {};
   export let transitionType: drawerTransitionTypes = 'fly';
@@ -33,13 +33,17 @@
 
 {#if !hidden}
   <div
+    class="fixed top-0 left-0 z-50 w-full h-full bg-gray-900/70"
+    on:click={() => !hidden && handleDrawer()} />
+  <div
     use:clickOutside={() => !hidden && handleDrawer()}
     {id}
     {...$$restProps}
     class={classNames(divClass, $$props.class)}
     transition:multiple={transitionParams}
     tabindex="-1"
-    aria-labelledby="drawer-label">
+    aria-controls={id}
+    aria-labelledby={id}>
     <slot {hidden} />
   </div>
 {/if}

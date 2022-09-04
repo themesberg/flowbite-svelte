@@ -1,5 +1,7 @@
 <script lang="ts">
   import classNames from 'classnames';
+
+  export let id: string;
   export let list: 'disc' | 'none' | 'decimal' = 'disc';
   export let position: 'inside' | 'outside' = 'inside';
   export let ulClass: string = 'max-w-md text-gray-500 dark:text-gray-400';
@@ -16,6 +18,6 @@
   console.log('list', list);
 </script>
 
-<ul class={classUl} {list}>
+<ul {id} class={classUl} {list}>
   <slot />
 </ul>

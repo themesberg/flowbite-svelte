@@ -22,7 +22,7 @@
   } from './moduleItems/+server.js';
 
   let asideClass =
-    'absolute w-auto bg-white pt-8 shadow-lg z-50 h-screen px-4 overflow-scroll dark:bg-gray-900';
+    'absolute w-auto bg-white pt-8 shadow-lg z-40 h-screen px-4 overflow-scroll dark:bg-gray-900';
 
   // Nav
   let navDivClass = 'pb-4';

@@ -55,10 +55,7 @@ Use `CloseButton` component to close a component.
 				earum quis? Neque unde aliquam enim, distinctio repellendus delectus? Illo numquam ex fugit
 				dolor esse, cumque nesciunt?
 			</p>
-			<CloseButton
-				on:click={() => (visible = false)}
-				class="text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white"
-			/>
+			<CloseButton on:click={() => (visible = false)} />
 		</div>
 	{/if}
 </ExampleDiv>
@@ -75,10 +72,7 @@ Use `CloseButton` component to close a component.
 			earum quis? Neque unde aliquam enim, distinctio repellendus delectus? Illo numquam ex fugit
 			dolor esse, cumque nesciunt?
 		</p>
-		<CloseButton
-			on:click={() => (visible = false)}
-			class="text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white"
-		/>
+		<CloseButton on:click={() => (visible = false)} />
 	</div>
 {/if}
 ```

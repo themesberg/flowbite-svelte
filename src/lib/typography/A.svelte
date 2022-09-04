@@ -1,10 +1,11 @@
 <script lang="ts">
   import classNames from 'classnames';
+  export let id: string;
   export let href: string = '#';
   export let color: string = 'text-blue-600 dark:text-blue-500';
   export let aClass: string = 'inline-flex items-center hover:underline';
 </script>
 
-<a {href} class={classNames(aClass, color, $$props.class)}>
+<a {href} {id} class={classNames(aClass, color, $$props.class)}>
   <slot />
 </a>
