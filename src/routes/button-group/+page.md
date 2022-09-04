@@ -1,10 +1,10 @@
 ---
-layout: buttongroupLayout
+layout: componentLayout
 ---
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Button, ButtonGroup, Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
+  import { Button, ButtonGroup, Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
 
   import componentProps from '../props/ButtonGroup.json'
 
@@ -294,3 +294,11 @@ The component has the following props, type, and default values. See <a href="/p
 <Badge large={true}>on:mouseenter</Badge>
 <Badge large={true}>on:mouseleave</Badge>
 </div>
+
+<Htwo label="References" />
+
+<P>
+  <A href="https://flowbite.com/docs/components/button-group/" target="_blank" class="link"
+    >Flowbite Button Group</A
+  >
+</P>

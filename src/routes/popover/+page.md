@@ -1,11 +1,11 @@
 ---
-layout: modalLayout
+layout: componentLayout
 ---
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../utils'
 
-  import { Popover, Avatar, Breadcrumb, BreadcrumbItem, Button, Input, Label, Checkbox, Heading } from '$lib'
+  import { Popover, Avatar, Breadcrumb, BreadcrumbItem, Button, Input, Label, Checkbox, Heading, P, A } from '$lib'
   import  ChevronRight  from "$lib/utils/ChevronRight.svelte";
   import componentProps from '../props/Popover.json'
   import { blur, fade, slide } from 'svelte/transition';
@@ -522,3 +522,11 @@ You can also disable the popover arrow by setting `arrow` attribute to `false`.
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={props} rowState='hover' />
 </TableProp>
+
+<Htwo label="References" />
+
+<P>
+  <A href="https://flowbite.com/docs/components/popover/" target="_blank" class="link"
+    >Flowbite Popover</A
+  >
+</P>

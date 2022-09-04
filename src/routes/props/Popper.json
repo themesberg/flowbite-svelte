@@ -1,1 +1,1 @@
-{"props":[["activeContent","boolean ","false"],["animation","false | number ","100"],["arrow","boolean ","true"],["offset","number ","8"],["placement","Placement ","'top'"],["trigger","'hover' | 'click' ","'hover'"],["triggeredBy","string ","undefined"],["open","boolean ","false"]]}
+{"props":[["activeContent","boolean ","false"],["arrow","boolean ","true"],["offset","number ","8"],["placement","Placement ","'top'"],["trigger","'hover' | 'click' ","'hover'"],["triggeredBy","string ","undefined"],["open","boolean ","false"]]}

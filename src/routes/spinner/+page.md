@@ -1,10 +1,10 @@
 ---
-layout: spinnerLayout
+layout: componentLayout
 ---
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Spinner, Button, Breadcrumb, BreadcrumbItem, Heading } from '$lib'
+  import { Spinner, Button, Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   ;
   
   import componentProps from '../props/Spinner.json'
@@ -144,3 +144,10 @@ The component has the following props, type, and default values. See <a href="/p
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
+
+<Htwo label="References" />
+
+<P>
+  <A href="https://flowbite.com/docs/components/spinner/" target="_blank" class="link"
+    >Flowbite Spinner</A>
+</P>

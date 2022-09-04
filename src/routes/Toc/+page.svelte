@@ -4,7 +4,7 @@
     */
   import { page } from '$app/stores';
 
-  export let headingSelector = `main :where(h2.htwo):not(.toc-exclude,#References,#Related_components)`;
+  export let headingSelector = `main :where(h2.htwo)`;
   let headings = [];
 
   $: $page &&

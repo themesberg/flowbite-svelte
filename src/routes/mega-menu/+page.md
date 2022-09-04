@@ -1,10 +1,10 @@
 ---
-layout: megamenuLayout
+layout: componentLayout
 ---
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../utils'
-  import { Button, Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, NavDropdown, Breadcrumb, BreadcrumbItem, UserCircle, Heading } from '$lib'
+  import { Button, Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, NavDropdown, Breadcrumb, BreadcrumbItem, UserCircle, Heading, P, A } from '$lib'
   
   import componentProps from '../props/MegaMenu.json'
   // Props table
@@ -360,3 +360,11 @@ This example can be used to also show a CTA with a backdround image inside the d
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
+
+<Htwo label="References" />
+
+<P>
+  <A href="https://flowbite.com/docs/components/mega-menu/" target="_blank" class="link"
+    >Flowbite Mega Menu</A
+  >
+</P>

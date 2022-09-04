@@ -1,10 +1,10 @@
 ---
-layout: badgeLayout
+layout: componentLayout
 ---
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Badge, Button, Breadcrumb, BreadcrumbItem, Heading } from '$lib'
+  import { Badge, Button, Breadcrumb, BreadcrumbItem, Heading , P, A } from '$lib'
   
   import componentProps from '../props/Badge.json'
   // Props table
@@ -213,3 +213,11 @@ The component has the following props, type, and default values. See <a href="/p
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
+
+<Htwo label="References" />
+		
+<P>
+  <A href="https://flowbite.com/docs/components/badge/" target="_blank" class="link"
+    >Flowbite Badge</A>
+</P>
+		

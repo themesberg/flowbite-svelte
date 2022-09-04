@@ -1,10 +1,10 @@
 ---
-layout: toastLayout
+layout: componentLayout
 ---
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Toast, Breadcrumb, BreadcrumbItem, Avatar, Button, A, Heading } from '$lib'
+  import { Toast, Breadcrumb, BreadcrumbItem, Avatar, Button, Heading, P, A } from '$lib'
   import { quintOut, elasticOut } from 'svelte/easing';
 
   import componentProps from '../props/Toast.json'
@@ -520,3 +520,12 @@ The component has the following props, type, and default values. See <A href="/p
 <TableProp header={propHeader} {divClass} {theadClass}>
 <TableDefaultRow {items} rowState='hover' />
 </TableProp>
+
+<Htwo label="References" />
+
+<P>
+  <A href="https://flowbite.com/docs/components/toast/" target="_blank" class="link"
+    >Flowbite Toast</A
+  >
+</P>
+		

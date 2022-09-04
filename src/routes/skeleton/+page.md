@@ -1,10 +1,10 @@
 ---
-layout: skeletonLayout
+layout: componentLayout
 ---
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { CardPlaceholder, ImagePlaceholder, ListPlaceholder, Skeleton, TestimonialPlaceholder, TextPlaceholder, VideoPlaceholder, WidgetPlaceholder, Breadcrumb, BreadcrumbItem, Heading } from '$lib'
+  import { CardPlaceholder, ImagePlaceholder, ListPlaceholder, Skeleton, TestimonialPlaceholder, TextPlaceholder, VideoPlaceholder, WidgetPlaceholder, Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   
 
   import componentProps from '../props/ListPlaceholder.json'
@@ -168,3 +168,11 @@ The component has the following props, type, and default values. See <a href="/p
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
+
+<Htwo label="References" />
+
+<P>
+  <A href="https://flowbite.com/docs/components/skeleton/" target="_blank" class="link"
+    >Tailwind CSS Skeleton</A
+  >
+</P>

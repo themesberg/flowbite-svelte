@@ -1,10 +1,10 @@
 ---
-layout: darkmodeLayout
+layout: componentLayout
 ---
 
 <script>
   import {Htwo,TableProp, TableDefaultRow} from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading } from '$lib'
+  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   
   import componentProps from '../props/DarkMode.json'
   // Props table
@@ -105,3 +105,12 @@ let btnClass="Add your class here"
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
+
+<Htwo label="References" />
+
+<P>
+  <A href="https://flowbite.com/docs/customize/dark-mode/" target="_blank" class="link"
+    >Flowbite Dark mode</A
+  >
+</P>
+		

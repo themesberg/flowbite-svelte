@@ -1,10 +1,10 @@
 ---
-layout: sidebarLayout
+layout: componentLayout
 ---
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Sidebar, SidebarBrand, SidebarCta,	SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup,SidebarItem, SidebarWrapper, Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
+  import { Sidebar, SidebarBrand, SidebarCta,	SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup,SidebarItem, SidebarWrapper, Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
   
   import componentProps from '../props/Sidebar.json'
   import componentProps2 from '../props/SidebarBrand.json'
@@ -766,7 +766,9 @@ The component has the following props, type, and default values. See <a href="/p
   <TableDefaultRow items={items8} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events: SidebarDropdownItem, SidebarItem" />
+<Htwo label="Forwarded Events" />
+
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">SidebarDropdownItem, SidebarItem</Heading>
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:blur</Badge>
@@ -779,3 +781,11 @@ The component has the following props, type, and default values. See <a href="/p
 <Badge large={true}>on:mouseleave</Badge>
 <Badge large={true}>on:mouseover</Badge>
 </div>
+
+<Htwo label="References" />
+
+<P>
+  <A href="https://flowbite.com/docs/components/sidebar/" target="_blank" class="link"
+    >Flowbite Sidebar</A
+  >
+</P>

@@ -1,10 +1,10 @@
 ---
-layout: ratingLayout
+layout: componentLayout
 ---
 
 <script>
 	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-	import { Rating, AdvancedRating, ScoreRating, RatingComment, Review, Breadcrumb, BreadcrumbItem, Heading } from '$lib'
+	import { Rating, AdvancedRating, ScoreRating, RatingComment, Review, Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
 	
 	import componentProps from '../props/Rating.json'
 	import componentProps2 from '../props/AdvancedRating.json'
@@ -554,3 +554,11 @@ The component has the following props, type, and default values. See <a href="/p
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
+
+<Htwo label="References" />
+
+<P>
+	<A href="https://flowbite.com/docs/components/rating/" target="_blank" class="link"
+		>Flowbite Rating</A
+	>
+</P>

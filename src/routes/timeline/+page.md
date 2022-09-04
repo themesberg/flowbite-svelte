@@ -1,10 +1,10 @@
 ---
-layout: timelineLayout
+layout: componentLayout
 ---
 
 <script lang="ts">
 	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-	import { Timeline, TimelineItem, TimelineItemVertical, TimelineItemHorizontal, TimelineHorizontal, Activity, ActivityItem, Group, GroupItem, Breadcrumb, BreadcrumbItem, Button, Heading } from '$lib'
+	import { Timeline, TimelineItem, TimelineItemVertical, TimelineItemHorizontal, TimelineHorizontal, Activity, ActivityItem, Group, GroupItem, Breadcrumb, BreadcrumbItem, Button, Heading, P, A } from '$lib'
 	
   import componentProps1 from '../props/Timeline.json'
   import componentProps2 from '../props/TimelineItem.json'
@@ -545,3 +545,11 @@ Use this component to group multiple data entries inside a single date and show 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items9} rowState='hover' />
 </TableProp>
+
+<Htwo label="References" />
+
+<P>
+	<A href="https://flowbite.com/docs/components/timeline/" target="_blank" class="link"
+		>Flowbite timeline</A
+	>
+</P>

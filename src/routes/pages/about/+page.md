@@ -1,5 +1,5 @@
 ---
-layout: docLayout
+layout: pageLayout
 ---
 
 <script>

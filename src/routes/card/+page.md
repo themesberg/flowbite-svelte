@@ -1,10 +1,10 @@
 ---
-layout: cardLayout
+layout: componentLayout
 ---
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Avatar, Badge, Button, Breadcrumb, BreadcrumbItem, Card, Checkbox,CloseButton, Dropdown, DropdownItem,Input,Label,Listgroup, Rating,Toggle, ToolbarButton, Heading } from '$lib'
+  import { Avatar, Badge, Button, Breadcrumb, BreadcrumbItem, Card, Checkbox,CloseButton, Dropdown, DropdownItem,Input,Label,Listgroup, Rating,Toggle, ToolbarButton, Heading, P, A } from '$lib'
  
   import componentProps from '../props/Card.json'
   // Props table
@@ -682,3 +682,10 @@ The component has the following props, type, and default values. See <a href="/p
 <TableProp header={slotHeader} {divClass} {theadClass}>
   <TableDefaultRow items={slotItems} rowState='hover' />
 </TableProp>
+
+<Htwo label="References" />
+
+<P>
+  <A href="https://flowbite.com/docs/components/card/" target="_blank" class="link"
+    >Flowbite Card</A>
+</P>
