@@ -768,7 +768,7 @@ The component has the following props, type, and default values. See <a href="/p
 
 <Htwo label="Forwarded Events" />
 
-<Heading tag="h3" size="xl">SidebarDropdownItem, SidebarItem</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">SidebarDropdownItem, SidebarItem</Heading>
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:blur</Badge>

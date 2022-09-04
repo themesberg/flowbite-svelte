@@ -1,10 +1,10 @@
 ---
-layout: paginationLayout
+layout: componentLayout
 ---
 
 <script lang="ts">
 	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-	import { Pagination, Previous, Next, TableData, Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
+	import { Pagination, Previous, Next, TableData, Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
   ;
 	
 	import componentProps1 from '../props/Pagination.json'
@@ -230,7 +230,9 @@ You can use the following code to show the number of data shown inside a table e
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events: Next, Pagination, Previous, TableData" />
+<Htwo label="Forwarded Events" />
+
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">Next, Pagination, Previous, TableData</Heading>
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:blur</Badge>
@@ -243,3 +245,11 @@ You can use the following code to show the number of data shown inside a table e
 <Badge large={true}>on:mouseleave</Badge>
 <Badge large={true}>on:mouseover</Badge>
 </div>
+
+<Htwo label="References" />
+
+<P>
+	<A href="https://flowbite.com/docs/components/pagination/" target="_blank" class="link"
+		>Flowbite Pagination</A
+	>
+</P>

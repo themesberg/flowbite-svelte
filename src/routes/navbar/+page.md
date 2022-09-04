@@ -1,10 +1,10 @@
 ---
-layout: navbarLayout
+layout: componentLayout
 ---
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Button, Dropdown, DropdownItem, DropdownHeader, DropdownDivider, Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Input, Badge, Skeleton, ImagePlaceholder, TextPlaceholder, Heading } from '$lib';
+  import { Breadcrumb, BreadcrumbItem, Button, Dropdown, DropdownItem, DropdownHeader, DropdownDivider, Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Input, Badge, Skeleton, ImagePlaceholder, TextPlaceholder, Heading, P, A } from '$lib';
 	
   import componentProps from '../props/Navbar.json'
 	import componentProps2 from '../props/NavBrand.json'
@@ -443,7 +443,9 @@ Use this example to keep the navbar positioned fixed to the top side as you scro
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events: NavDropdown, NavLi" />
+<Htwo label="Forwarded Events" />
+
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">NavDropdown, NavLi</Heading>
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:blur</Badge>
@@ -457,3 +459,12 @@ Use this example to keep the navbar positioned fixed to the top side as you scro
 <Badge large={true}>on:mouseleave</Badge>
 <Badge large={true}>on:mouseover</Badge>
 </div>
+
+
+<Htwo label="References" />
+
+<P>
+	<A href="https://flowbite.com/docs/components/navbar/" target="_blank" class="link"
+		>Flowbite Navbar</A
+	>
+</P>

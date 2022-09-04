@@ -28,7 +28,7 @@ export const components = [
 	{ href: '/navbar', name: 'Navbar' },
 	{ href: '/pagination', name: 'Pagination' },
 	{ href: '/popover', name: 'Popover' },
-	{ href: '/progressbar', name: 'Progress' },
+	{ href: '/progress', name: 'Progress' },
 	{ href: '/rating', name: 'Rating' },
 	{ href: '/sidebar', name: 'Sidebar' },
 	{ href: '/skeleton', name: 'Skeleton' },
