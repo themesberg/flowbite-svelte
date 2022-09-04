@@ -86,7 +86,6 @@ export { default as MegaMenu } from './megamenu/MegaMenu.svelte';
 // Navbar
 export { default as Navbar } from './navbar/Navbar.svelte';
 export { default as NavBrand } from './navbar/NavBrand.svelte';
-export { default as NavDropdown } from './navbar/NavDropdown.svelte';
 export { default as NavHamburger } from './navbar/NavHamburger.svelte';
 export { default as NavLi } from './navbar/NavLi.svelte';
 export { default as NavUl } from './navbar/NavUl.svelte';
@@ -191,5 +190,6 @@ export { default as ChevronDown } from './utils/ChevronDown.svelte';
 export { default as ChevronLeft } from './utils/ChevronLeft.svelte';
 export { default as ChevronRight } from './utils/ChevronRight.svelte';
 export { default as ChevronUp } from './utils/ChevronUp.svelte';
+export { default as Chevron } from './utils/Chevron.svelte';
 export { default as InformationCircle } from './utils/InformationCircle.svelte';
 export { default as UserCircle } from './utils/UserCircle.svelte';

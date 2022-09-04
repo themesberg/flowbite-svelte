@@ -12,6 +12,7 @@
 	export let placement: Placement = 'top';
 	export let trigger: 'hover' | 'click' = 'hover';
 	export let triggeredBy: string = undefined;
+	export let strategy: 'absolute' | 'fixed' = 'absolute';
 	export let open: boolean = false;
 
 	const dispatch = createEventDispatcher();
@@ -60,6 +61,7 @@
 	function init(node, _triggerEl) {
 		popper = createPopper(_triggerEl, node, {
 			placement,
+			strategy,
 			modifiers: [
 				{ name: 'offset', options: { offset: [0, offset] } },
 				{ name: 'eventListeners', enabled: open }

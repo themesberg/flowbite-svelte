@@ -55,7 +55,8 @@
 		light: 'text-gray-700 dark:text-gray-300',
 		dark: 'text-gray-700 dark:text-gray-300',
 		default: 'text-gray-500 dark:text-gray-400',
-		default2: 'text-gray-700 dark:text-gray-200',
+		dropdown: 'text-gray-500 dark:text-gray-400',
+		navbar: 'text-gray-700 dark:text-gray-200',
 		navbarUl: 'text-gray-700 dark:text-gray-400',
 		none: ''
 	};
@@ -72,6 +73,7 @@
 		light: 'border-gray-500',
 		dark: 'border-gray-500',
 		default: 'border-gray-200 dark:border-gray-700',
+		dropdown: 'border-gray-100 dark:border-gray-700',
 		navbar: 'border-gray-100 dark:border-gray-700',
 		navbarUl: 'border-gray-100 dark:border-gray-700',
 		none: ''

@@ -4,7 +4,7 @@ layout: componentLayout
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../utils'
-  import { Button, Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, NavDropdown, Breadcrumb, BreadcrumbItem, UserCircle, Heading, P, A } from '$lib'
+  import { Button, Chevron, Navbar, Dropdown, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, Breadcrumb, BreadcrumbItem, UserCircle, Heading, P, A } from '$lib'
   
   import componentProps from '../props/MegaMenu.json'
   // Props table
@@ -81,11 +81,10 @@ Use this example to show a list of links aligned on three columns inside the meg
     <NavHamburger on:click={toggle} />
     <NavUl {hidden}>
       <NavLi href="/">Home</NavLi>
-      <NavDropdown name="Mega menu">
-        <MegaMenu items={menu} let:item>
-          <a href={item.href} class="hover:text-blue-600 dark:hover:text-blue-500">{item.name}</a>
-        </MegaMenu>
-      </NavDropdown>
+      <NavLi><Chevron aligned>Mega menu</Chevron></NavLi>
+      <MegaMenu items={menu} let:item>
+        <a href={item.href} class="hover:text-blue-600 dark:hover:text-blue-500">{item.name}</a>
+      </MegaMenu>
       <NavLi href="/services">Services</NavLi>
       <NavLi href="/services">Products</NavLi>
       <NavLi href="/services">Contact</NavLi>
@@ -95,7 +94,7 @@ Use this example to show a list of links aligned on three columns inside the meg
 
 ```html
 <script>
-  import { Button, Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, NavDropdown } from 'flowbite-svelte'
+  import { Button, Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, Chevron } from 'flowbite-svelte'
   let menu = [
     {name: 'About us', href: '/about'},
     {name: 'Blog', href: '/blog'},
@@ -119,11 +118,10 @@ Use this example to show a list of links aligned on three columns inside the meg
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
     <NavLi href="/">Home</NavLi>
-    <NavDropdown name="Mega menu">
-      <MegaMenu items={menu} let:item>
-        <a href={item.href} class="hover:text-blue-600 dark:hover:text-blue-500">{item.name}</a>
-      </MegaMenu>
-    </NavDropdown>
+    <NavLi><Chevron aligned>Mega menu</Chevron></NavLi>
+    <MegaMenu items={menu} let:item>
+      <a href={item.href} class="hover:text-blue-600 dark:hover:text-blue-500">{item.name}</a>
+    </MegaMenu>
     <NavLi href="/services">Services</NavLi>
     <NavLi href="/services">Products</NavLi>
     <NavLi href="/services">Contact</NavLi>
@@ -144,14 +142,13 @@ This example of a mega menu dropdown can be used to also show an icon near the t
     <NavHamburger on:click={toggle} />
     <NavUl {hidden}>
       <NavLi href="/">Home</NavLi>
-      <NavDropdown name="Mega menu">
-        <MegaMenu items={menu} let:item>
-            <a href={item.href} class="flex items-center hover:text-blue-600 dark:hover:text-blue-500">
-              <span class="sr-only">{item.name}</span>
-              <svelte:component this={item.icon} class="w-4 h-4 mr-2" />{item.name}
-            </a>
-        </MegaMenu>
-      </NavDropdown>
+      <NavLi><Chevron aligned>Mega menu</Chevron></NavLi>
+      <MegaMenu items={menu} let:item>
+          <a href={item.href} class="flex items-center hover:text-blue-600 dark:hover:text-blue-500">
+            <span class="sr-only">{item.name}</span>
+            <svelte:component this={item.icon} class="w-4 h-4 mr-2" />{item.name}
+          </a>
+      </MegaMenu>
       <NavLi href="/services">Services</NavLi>
       <NavLi href="/services">Products</NavLi>
       <NavLi href="/services">Contact</NavLi>
@@ -177,14 +174,13 @@ This example of a mega menu dropdown can be used to also show an icon near the t
 </script>
 
 ...
-<NavDropdown name="Mega menu">
-  <MegaMenu items={menu} let:item>
+<NavLi><Chevron aligned>Mega menu</Chevron></NavLi>
+<MegaMenu items={menu} let:item>
     <a href={item.href} class="flex items-center hover:text-blue-600 dark:hover:text-blue-500">
       <span class="sr-only">{item.name}</span>
       <svelte:component this={item.icon} class="w-4 h-4 mr-2" />{item.name}
     </a>
-  </MegaMenu>
-</NavDropdown>
+</MegaMenu>
 ```
 
 <Htwo label="Full width dropdown" />
@@ -200,14 +196,13 @@ Use this example to show a mega menu dropdown that spans the entire width of the
       <NavHamburger on:click={toggle} />
       <NavUl {hidden}>
           <NavLi href="/">Home</NavLi>
-          <NavDropdown name="Mega menu">
-            <MegaMenu full items={menu2} let:item>
-              <a href="/" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 h-full">
+          <NavLi><Chevron aligned>Mega menu</Chevron></NavLi>
+          <MegaMenu full items={menu2} let:item>
+            <a href="/" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 h-full">
               <div class="font-semibold dark:text-white">{item.name}</div>
               <span class="text-sm font-light text-gray-500 dark:text-gray-400">{item.help}</span>
-              </a>
-            </MegaMenu>
-          </NavDropdown>
+            </a>
+          </MegaMenu>
           <NavLi href="/services">Services</NavLi>
           <NavLi href="/services">Products</NavLi>
           <NavLi href="/services">Contact</NavLi>
@@ -232,14 +227,13 @@ Use this example to show a mega menu dropdown that spans the entire width of the
   ];
 </script>
 ...
-<NavDropdown name="Mega menu">
-  <MegaMenu full items={menu2} let:item>
-    <a href="/" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 h-full">
+<NavLi><Chevron aligned>Mega menu</Chevron></NavLi>
+<MegaMenu full items={menu2} let:item>
+  <a href="/" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 h-full">
     <div class="font-semibold dark:text-white">{item.name}</div>
     <span class="text-sm font-light text-gray-500 dark:text-gray-400">{item.help}</span>
-    </a>
-  </MegaMenu>
-</NavDropdown>
+  </a>
+</MegaMenu>
 ```
 
 <Htwo label="Full width with CTA" />
@@ -255,20 +249,19 @@ This example can be used to also show a CTA button or link next to the menu item
       <NavHamburger on:click={toggle} />
       <NavUl {hidden}>
           <NavLi href="/">Home</NavLi>
-          <NavDropdown name="Mega menu">
-            <MegaMenu full items={menu} let:item>
-              <a href={item.href} class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">{item.name}</a>
-              <div slot="extra" class="">
-                  <h2 class="mt-4 mb-2 font-semibold text-gray-900 dark:text-white">Our brands</h2>
-                  <p class="mb-2 p-0 text-sm font-light text-gray-500 dark:text-gray-300">At Flowbite, we have a portfolio of brands that cater to a variety of preferences.</p>
-                  <a href="/" class="inline-flex items-center text-sm font-medium text-blue-600 hover:underline hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-700">
-                      Explore our brands 
-                      <span class="sr-only">Explore our brands </span>
-                      <svg class="ml-1 w-4 h-4" aria-hidden="true"  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                  </a>
-              </div>
-            </MegaMenu>
-          </NavDropdown>
+          <NavLi><Chevron aligned>Mega menu</Chevron></NavLi>
+          <MegaMenu full items={menu} let:item>
+            <a href={item.href} class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">{item.name}</a>
+            <div slot="extra" class="">
+                <h2 class="mt-4 mb-2 font-semibold text-gray-900 dark:text-white">Our brands</h2>
+                <p class="mb-2 p-0 text-sm font-light text-gray-500 dark:text-gray-300">At Flowbite, we have a portfolio of brands that cater to a variety of preferences.</p>
+                <a href="/" class="inline-flex items-center text-sm font-medium text-blue-600 hover:underline hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-700">
+                    Explore our brands 
+                    <span class="sr-only">Explore our brands </span>
+                    <svg class="ml-1 w-4 h-4" aria-hidden="true"  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </a>
+            </div>
+          </MegaMenu>
           <NavLi href="/services">Services</NavLi>
           <NavLi href="/services">Products</NavLi>
           <NavLi href="/services">Contact</NavLi>
@@ -293,21 +286,19 @@ This example can be used to also show a CTA button or link next to the menu item
   ];
 </script>
 ...
-<NavDropdown name="Mega menu">
-  <MegaMenu full items={menu} let:item>
-    <a href={item.href} class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">{item.name}</a>
-    <div slot="extra" class="">
-        <h2 class="mt-4 mb-2 font-semibold text-gray-900 dark:text-white">Our brands</h2>
-        <p class="mb-2 p-0 text-sm font-light text-gray-500 dark:text-gray-300">At Flowbite, we have a portfolio of brands that cater to a variety of preferences.</p>
-        <a href="/" class="inline-flex items-center text-sm font-medium text-blue-600 hover:underline hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-700">
-            Explore our brands 
-            <span class="sr-only">Explore our brands </span>
-            <svg class="ml-1 w-4 h-4" aria-hidden="true"  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-          
-        </a>
-    </div>
-  </MegaMenu>
-</NavDropdown>
+<NavLi><Chevron aligned>Mega menu</Chevron></NavLi>
+<MegaMenu full items={menu} let:item>
+  <a href={item.href} class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">{item.name}</a>
+  <div slot="extra" class="">
+      <h2 class="mt-4 mb-2 font-semibold text-gray-900 dark:text-white">Our brands</h2>
+      <p class="mb-2 p-0 text-sm font-light text-gray-500 dark:text-gray-300">At Flowbite, we have a portfolio of brands that cater to a variety of preferences.</p>
+      <a href="/" class="inline-flex items-center text-sm font-medium text-blue-600 hover:underline hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-700">
+          Explore our brands 
+          <span class="sr-only">Explore our brands </span>
+          <svg class="ml-1 w-4 h-4" aria-hidden="true"  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+      </a>
+  </div>
+</MegaMenu>
 ```
 
 <Htwo label="Full width with image" />
@@ -323,15 +314,14 @@ This example can be used to also show a CTA with a backdround image inside the d
       <NavHamburger on:click={toggle} />
       <NavUl {hidden}>
           <NavLi href="/">Home</NavLi>
-          <NavDropdown name="Mega menu">
-            <MegaMenu full items={menu} let:item>
-              <a href={item.href} class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">{item.name}</a>
-              <a slot="extra" href="/" class="block mt-4 p-4 text-left bg-local bg-gray-500 bg-center bg-no-repeat bg-cover rounded-lg bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken" style="background-image: url(/images/nature-1.jpeg)">
-                  <p class="mb-5 max-w-xl text-sm p-0 font-extrabold tracking-tight leading-tight text-white">Preview the new Flowbite dashboard navigation.</p>
-                  <Button>Get started</Button>
-              </a>
-            </MegaMenu>
-          </NavDropdown>
+          <NavLi><Chevron aligned>Mega menu</Chevron></NavLi>
+          <MegaMenu full items={menu} let:item>
+            <a href={item.href} class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">{item.name}</a>
+            <a slot="extra" href="/" class="block mt-4 p-4 text-left bg-local bg-gray-500 bg-center bg-no-repeat bg-cover rounded-lg bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken" style="background-image: url(/images/nature-1.jpeg)">
+                <p class="mb-5 max-w-xl text-sm p-0 font-extrabold tracking-tight leading-tight text-white">Preview the new Flowbite dashboard navigation.</p>
+                <Button>Get started</Button>
+            </a>
+          </MegaMenu>
           <NavLi href="/services">Services</NavLi>
           <NavLi href="/services">Products</NavLi>
           <NavLi href="/services">Contact</NavLi>
@@ -341,15 +331,14 @@ This example can be used to also show a CTA with a backdround image inside the d
 
 ```html
 ...
-<NavDropdown name="Mega menu">
-  <MegaMenu full items={menu} let:item>
-    <a href={item.href} class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">{item.name}</a>
-    <a slot="extra" href="/" class="block mt-4 p-4 text-left bg-local bg-gray-500 bg-center bg-no-repeat bg-cover rounded-lg bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken" style="background-image: url(/images/nature-1.jpeg)">
-        <p class="mb-5 max-w-xl text-sm p-0 font-extrabold tracking-tight leading-tight text-white">Preview the new Flowbite dashboard navigation.</p>
-        <Button>Get started</Button>
-    </a>
-  </MegaMenu>
-</NavDropdown>
+<NavLi><Chevron aligned>Mega menu</Chevron></NavLi>
+<MegaMenu full items={menu} let:item>
+  <a href={item.href} class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">{item.name}</a>
+  <a slot="extra" href="/" class="block mt-4 p-4 text-left bg-local bg-gray-500 bg-center bg-no-repeat bg-cover rounded-lg bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken" style="background-image: url(/images/nature-1.jpeg)">
+      <p class="mb-5 max-w-xl text-sm p-0 font-extrabold tracking-tight leading-tight text-white">Preview the new Flowbite dashboard navigation.</p>
+      <Button>Get started</Button>
+  </a>
+</MegaMenu>
 ```
 
 <Htwo label="Props" />

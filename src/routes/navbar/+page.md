@@ -497,7 +497,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 <Htwo label="Forwarded Events" />
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">NavDropdown, NavLi</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">NavLi</Heading>
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:blur</Badge>
