@@ -19,6 +19,7 @@ export const components = [
 	{ href: '/darkmode', name: 'Dark mode' },
 	{ href: '/datepicker', name: 'Datepicker' },
 	{ href: '/dropdown', name: 'Dropdown' },
+	{ href: '/footer', name: 'Footer' },
 	{ href: '/forms', name: 'Forms' },
 	{ href: '/kbd', name: 'KBD' },
 	{ href: '/list-group', name: 'List group' },

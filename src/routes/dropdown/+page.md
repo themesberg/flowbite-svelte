@@ -1,11 +1,11 @@
 ---
-layout: dropdownLayout
+layout: componentLayout
 ---
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Avatar, Button, Checkbox, Label, Helper, Dropdown, DropdownDivider, DropdownHeader, DropdownItem, Popover,
-    Navbar,NavBrand,NavHamburger, NavUl, NavLi, Radio, Toggle, SimpleSearch, Breadcrumb, BreadcrumbItem, Badge, ToolbarButton, ChevronDown, Heading  } from '$lib'
+    Navbar,NavBrand,NavHamburger, NavUl, NavLi, Radio, Toggle, SimpleSearch, Breadcrumb, BreadcrumbItem, Badge, ToolbarButton, ChevronDown, Heading, P, A  } from '$lib'
   import Chevron from "$lib/utils/Chevron.svelte";
   import componentProps from '../props/Dropdown.json'
   import componentProps2 from '../props/DropdownDivider.json'
@@ -1082,3 +1082,12 @@ The `DropdownItem` component has `on:click` event.
 <Badge large={true}>on:mouseenter</Badge>
 <Badge large={true}>on:mouseleave</Badge>
 </div>
+
+<Htwo label="References" />
+
+<P>
+  <A href="https://flowbite.com/docs/components/dropdowns/" target="_blank" class="link"
+    >Flowbite Dropdown</A
+  >
+</P>
+	

@@ -1,11 +1,11 @@
 ---
-layout: accordionLayout
+layout: componentLayout
 ---
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   
-  import { AccordionItem, Breadcrumb, BreadcrumbItem, Heading } from '$lib'
+  import { AccordionItem, Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   
   import accordionProps from '../props/AccordionItem.json'
    // Props table
@@ -582,3 +582,6 @@ The component has the following props, type, and default values. See <a href="/p
   <TableDefaultRow items={slotItems} rowState='hover' />
 </TableProp>
 
+<Htwo label="References" />
+
+<P><A href="https://flowbite.com/docs/components/accordion/" target="_blank" class="link">Flowbite Accordion</A></P>

@@ -3,10 +3,8 @@ import { defineMDSveXConfig as defineConfig } from 'mdsvex';
 const config = defineConfig({
   layout: {
 		doc: './src/routes/layouts/doc/+page.svelte',
-		accordionLayout: './src/routes/layouts/accordionLayout/+page.svelte',
-		alertLayout: './src/routes/layouts/alertLayout/+page.svelte',
-		avatarLayout: './src/routes/layouts/avatarLayout/+page.svelte',
-		badgeLayout: './src/routes/layouts/badgeLayout/+page.svelte',
+		componentLayout: './src/routes/layouts/component/+page.svelte',
+
 		breadcrumbLayout: './src/routes/layouts/breadcrumbLayout/+page.svelte',
 		buttongroupLayout: './src/routes/layouts/buttongroupLayout/+page.svelte',
 		buttonLayout: './src/routes/layouts/buttonLayout/+page.svelte',

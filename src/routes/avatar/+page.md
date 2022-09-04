@@ -1,10 +1,10 @@
 ---
-layout: avatarLayout
+layout: componentLayout
 ---
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider, Breadcrumb, BreadcrumbItem, Tooltip, Heading } from '$lib'
+  import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider, Breadcrumb, BreadcrumbItem, Tooltip, Heading, P, A } from '$lib'
 
   import alertProp from '../props/Avatar.json'
   // Props table
@@ -292,3 +292,12 @@ The component has the following props, type, and default values. See <a href="/p
 <TableProp header={propHeader} {divClass} {theadClass}>
 <TableDefaultRow {items} rowState='hover' />
 </TableProp>
+
+
+<Htwo label="References" />
+
+<P>
+  <A href="https://flowbite.com/docs/components/avatar/" target="_blank" class="link">
+  Flowbite Avatar
+  </A>
+</P>

@@ -1,10 +1,10 @@
 ---
-layout: footerLayout
+layout: componentLayout
 ---
 
 <script>
   import {Htwo,ExampleDiv, GitHubSource,CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup, Skeleton, ImagePlaceholder,	TextPlaceholder,Breadcrumb, BreadcrumbItem, Heading } from '$lib'
+  import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup, Skeleton, ImagePlaceholder,	TextPlaceholder,Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   
   
   import componentProps from '../props/Footer.json'
@@ -441,3 +441,11 @@ Use this example to set create a sticky footer by using a fixed position to the 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
+
+<Htwo label="References" />
+
+<P>
+  <A href="https://flowbite.com/docs/components/footer/" target="_blank" class="link"
+    >Flowbite Footer</A
+  >
+</P>

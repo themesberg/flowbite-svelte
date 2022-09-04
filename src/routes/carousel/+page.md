@@ -1,10 +1,10 @@
 ---
-layout: carouselLayout
+layout: componentLayout
 ---
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Carousel, CarouselTransition, Breadcrumb, BreadcrumbItem, Heading } from '$lib'
+  import { Carousel, CarouselTransition, Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
    import { quartInOut, sineInOut, bounceInOut, quintOut } from 'svelte/easing';
   import { images } from './imageData/+server.js';
   import componentProps from '../props/Carousel.json'
@@ -341,3 +341,11 @@ The carousel component can be used to cycle through a set of elements using cust
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
+
+<Htwo label="References" />
+
+<P>
+  <A href="https://flowbite.com/docs/components/carousel/" target="_blank" class="link"
+    >Flowbite carousel</A
+  >
+</P>

@@ -1,10 +1,10 @@
 ---
-layout: alertLayout
+layout: componentLayout
 ---
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Alert, Breadcrumb, BreadcrumbItem, Button, Badge, Heading } from '$lib'
+  import { Alert, Breadcrumb, BreadcrumbItem, Button, Badge, Heading, P, A } from '$lib'
 
   import componentProps from '../props/Alert.json'
   // Props table
@@ -449,3 +449,11 @@ The component has the following props, type, and default values. See <a href="/p
 <Badge large={true}>on:mouseenter</Badge>
 <Badge large={true}>on:mouseleave</Badge>
 </div>
+
+<Htwo label="References" />
+
+<P>
+  <A href="https://flowbite.com/docs/components/alerts/" target="_blank" class="link">
+  Flowbite Alerts
+  </A>
+</P>

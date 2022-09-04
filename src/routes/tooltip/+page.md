@@ -1,10 +1,10 @@
 ---
-layout: tooltipLayout
+layout: componentLayout
 ---
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Tooltip, Button, Breadcrumb, BreadcrumbItem, Heading } from '$lib'
+  import { Tooltip, Button, Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
 
   import componentProps from '../props/Tooltip.json'
   // Props table
@@ -173,3 +173,10 @@ When you want to add custom styles, use `style="custom"`, `tipClass`, and `color
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
+
+<Htwo label="References" />
+
+<P>
+  <A href="https://flowbite.com/docs/components/tooltips/" target="_blank" class="link"
+    >Flowbite Tooltip</A>
+</P>

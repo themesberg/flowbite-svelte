@@ -1,5 +1,5 @@
 ---
-layout: tabLayout
+layout: componentLayout
 ---
 
 <script lang="ts">
@@ -10,7 +10,7 @@ layout: tabLayout
 		TabContentItem,
 		Timeline,
 		TimelineItem,
-		Button, Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
+		Button, Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
   
   import componentProps from '../props/TabWrapper.json'
 	import componentProps2 from '../props/TabHead.json'
@@ -903,3 +903,11 @@ You can add other components to the `TabContentItem` component. Here we are addi
 <Badge large={true}>on:mouseleave</Badge>
 <Badge large={true}>on:mouseover</Badge>
 </div>
+
+<Htwo label="References" />
+
+<P>
+	<A href="https://flowbite.com/docs/components/tabs/" target="_blank" class="link"
+		>Flowbite Tabs</A>
+</P>
+		

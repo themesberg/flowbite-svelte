@@ -1,10 +1,10 @@
 ---
-layout: breadcrumbLayout
+layout: componentLayout
 ---
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading } from '$lib'
+  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   
   import componentProps from '../props/Breadcrumb.json'
   import componentProps2 from '../props/BreadcrumbItem.json'
@@ -153,3 +153,11 @@ The component has the following props, type, and default values. See <a href="/p
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
+
+<Htwo label="References" />
+
+<P>
+  <A href="https://flowbite.com/docs/components/breadcrumb/" target="_blank" class="link"
+    >Flowbite Breadcrumb</A
+  >
+</P>

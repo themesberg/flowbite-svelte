@@ -1,10 +1,10 @@
 ---
-layout: buttonLayout
+layout: componentLayout
 ---
 
 <script>
   import {Htwo,ExampleDiv,GitHubSource,CompoDescription,TableProp, TableDefaultRow} from '../utils'
-  import { Button, Spinner, Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
+  import { Button, Spinner, Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
   import { goto }from '$app/navigation';
   
   import componentProps from '../props/Button.json'
@@ -424,3 +424,11 @@ Use `btnClass` to overwrite Button class.
 <Badge large={true}>on:mouseenter</Badge>
 <Badge large={true}>on:mouseleave</Badge>
 </div>
+
+<Htwo label="References" />
+
+<P>
+  <A href="https://flowbite.com/docs/components/buttons/" target="_blank" class="link"
+    >Flowbite Buttons</A
+  >
+</P>
