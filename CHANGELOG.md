@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.11](https://github.com/themesberg/flowbite-svelte/compare/v0.26.10...v0.26.11) (2022-09-05)
+
+
+### Features
+
+* range - clean up ([79d35ca](https://github.com/themesberg/flowbite-svelte/commit/79d35ca127094efb20e12ad3e14635cf607edddc))
+* video component and page ([27cd7df](https://github.com/themesberg/flowbite-svelte/commit/27cd7df226dde37e8a598b6693ae8278671d5782))
+
+
+### Bug Fixes
+
+* [#266](https://github.com/themesberg/flowbite-svelte/issues/266) change {id} to  {...$$restProps} ([b02822f](https://github.com/themesberg/flowbite-svelte/commit/b02822f273fe5b14613ec77e39285078a740cda0))
+* github issue template ([b6b8fd4](https://github.com/themesberg/flowbite-svelte/commit/b6b8fd46aa7491e29935fe62ca5dc617513ee5ee))
+* github issue template 2 ([343c102](https://github.com/themesberg/flowbite-svelte/commit/343c102ee1901c8d14fc75ab06a0fe28ac594a98))
+* github issue template 3 ([e8c6a1b](https://github.com/themesberg/flowbite-svelte/commit/e8c6a1b7d148d0137ca0e395bf5904e3a2ed408c))
+* github issue template 4 ([5565625](https://github.com/themesberg/flowbite-svelte/commit/5565625e343c197bd4d903878a2955eaae08b788))
+* video component and page ([cc8dcb5](https://github.com/themesberg/flowbite-svelte/commit/cc8dcb54843ecff1f9aacc82d9139aedf7d6e0c1))
+
 ### [0.26.10](https://github.com/themesberg/flowbite-svelte/compare/v0.26.9...v0.26.10) (2022-09-05)
 
 
