@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.12](https://github.com/themesberg/flowbite-svelte/compare/v0.26.11...v0.26.12) (2022-09-05)
+
+
+### Features
+
+* add labelInsideClass to progressbar component ([fe20cd7](https://github.com/themesberg/flowbite-svelte/commit/fe20cd7f693f21e052dc5adb3fd3eb4bcfa80b76))
+
 ### [0.26.11](https://github.com/themesberg/flowbite-svelte/compare/v0.26.10...v0.26.11) (2022-09-05)
 
 
