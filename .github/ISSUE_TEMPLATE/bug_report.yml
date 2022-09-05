@@ -1,6 +1,6 @@
 name: "\U0001F41E Bug report"
 description: Report an issue with Flowbite-Svelte
-labels: ["triage: bug"]
+labels: ['triage: bug']
 body:
   - type: markdown
     attributes:
@@ -22,20 +22,12 @@ body:
       placeholder: Reproduction
     validations:
       required: true
-  - type: markdown
-    id: flowbite-svelte-info
-    attributes:
-      label: Flowbite-Svelte Info
-      description: Flowbite-Svelte version from your package.json. Are you using the latest version? Use npm i -D flowbite-svelte@latest to update and check the problem before submitting this issue please.
-      placeholder: flowbite-svelte: vx.xx.xx
-    validations:
-      required: true
   - type: textarea
     id: system-info
     attributes:
-      label: System Info
-      description: Output of `npx envinfo --system --npmPackages svelte,rollup,webpack --binaries --browsers`
+      label: Flowbite version and System Info
+      description: Flowbite version from pacakge.json and output of `npx envinfo --system --npmPackages svelte,rollup,webpack --binaries --browsers`
       render: shell
-      placeholder: System, Binaries, Browsers
+      placeholder: Version, System, Binaries, Browsers
     validations:
       required: true
