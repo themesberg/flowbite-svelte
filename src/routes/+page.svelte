@@ -44,7 +44,8 @@
     ToastBlock,
     ToggleBlock,
     TooltipBlock,
-    TypographyBlock
+    TypographyBlock,
+    VideoBlock
   } from './blocks/+server.ts';
 
   const handleClick = () => {
@@ -126,4 +127,5 @@
   <ToggleBlock />
   <TooltipBlock />
   <TypographyBlock />
+  <VideoBlock />
 </div>

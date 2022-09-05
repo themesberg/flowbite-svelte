@@ -196,3 +196,6 @@ export { default as ChevronUp } from './utils/ChevronUp.svelte';
 export { default as Chevron } from './utils/Chevron.svelte';
 export { default as InformationCircle } from './utils/InformationCircle.svelte';
 export { default as UserCircle } from './utils/UserCircle.svelte';
+
+// video
+export { default as Video } from './video/Video.svelte'

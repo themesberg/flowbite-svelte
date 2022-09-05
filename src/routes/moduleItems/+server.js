@@ -38,7 +38,8 @@ export const components = [
 	{ href: '/tab', name: 'Tab' },
 	{ href: '/timeline', name: 'Timeline' },
 	{ href: '/toast', name: 'Toast' },
-	{ href: '/tooltip', name: 'Tooltip' }
+	{ href: '/tooltip', name: 'Tooltip' },
+	{ href: '/video', name: 'Video' }
 ]
 
 export const forms = [
