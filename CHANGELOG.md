@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.10](https://github.com/themesberg/flowbite-svelte/compare/v0.26.9...v0.26.10) (2022-09-05)
+
+
+### Features
+
+* add bgColor and bgOpacity to Drawer component ([8dc01fb](https://github.com/themesberg/flowbite-svelte/commit/8dc01fb9ec82b14d5f893d1255b646630e205ce2))
+
+
+### Bug Fixes
+
+* 683restProps for toolbarbutton ([6ce830c](https://github.com/themesberg/flowbite-svelte/commit/6ce830c2657c6727835ded2b01728c8830a1a7d2))
+* change ml-2 after get access to ml-1 ([b8ffc2c](https://github.com/themesberg/flowbite-svelte/commit/b8ffc2ca5016737da2d40ed5b83d4ef5fdc07e08))
+* megamenu fullscreen position ([eaf0729](https://github.com/themesberg/flowbite-svelte/commit/eaf07294a728b524f2873df26f8250d23682dd81))
+* navbar updates ([468839b](https://github.com/themesberg/flowbite-svelte/commit/468839bd2efee738787b428ef902cecee3f70e12))
+* remove Figma from image page ([0276b51](https://github.com/themesberg/flowbite-svelte/commit/0276b517fc828e77bfd383be122b514bb0793da0))
+
 ### [0.26.9](https://github.com/themesberg/flowbite-svelte/compare/v0.26.8...v0.26.9) (2022-09-04)
 
 
