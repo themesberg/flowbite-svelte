@@ -22,7 +22,7 @@ body:
       placeholder: Reproduction
     validations:
       required: true
-   - type: markdown
+  - type: markdown
     id: flowbite-svelte-info
     attributes:
       label: Flowbite-Svelte Info
