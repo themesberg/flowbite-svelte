@@ -14,6 +14,7 @@
 	export let triggeredBy: string = undefined;
 	export let strategy: 'absolute' | 'fixed' = 'absolute';
 	export let open: boolean = false;
+	export let yOnly: boolean = false;
 
 	const dispatch = createEventDispatcher();
 
@@ -63,7 +64,14 @@
 			placement,
 			strategy,
 			modifiers: [
-				{ name: 'offset', options: { offset: [0, offset] } },
+				{
+					name: 'offset',
+					options: {
+						offset: ({ placement, reference, popper }) => {
+							return [yOnly ? popper.width / 2 - reference.width / 2 - reference.x : 0, offset];
+						}
+					}
+				},
 				{ name: 'eventListeners', enabled: open }
 			]
 		});

@@ -35,9 +35,9 @@
 	rounded={!full}
 	activeContent
 	arrow={false}
-	strategy={full ? 'fixed' : 'absolute'}
 	trigger="click"
 	placement="bottom"
+	yOnly={full}
 	{...$$restProps}
 	class={wrapperClass}
 	on:show
