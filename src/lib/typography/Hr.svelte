@@ -1,7 +1,6 @@
 <script lang="ts">
   import classNames from 'classnames';
 
-  export let id: string;
   export let icon: boolean = false;
   export let width: string = 'w-full';
   export let height: string = 'h-px';
@@ -18,7 +17,7 @@
 </script>
 
 {#if $$slots}
-  <div class={classDiv} {id}>
+  <div {...$$restProps} class={classDiv}>
     <hr class={horizontalClass} />
     <div class={middleClass}>
       <slot />

@@ -1,7 +1,6 @@
 <script lang="ts">
   import classNames from 'classnames';
 
-  export let id: string;
   export let caption: string | undefined = undefined;
   export let src: string | undefined = undefined;
   export let srcset: string | undefined = undefined;
@@ -25,7 +24,7 @@
   </figure>
 {:else}
   <img
-    {id}
+    {...$$restProps}
     class={classNames(imgClass, size, alignment, effect, $$props.class)}
     {src}
     {srcset}

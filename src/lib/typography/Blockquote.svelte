@@ -1,6 +1,6 @@
 <script lang="ts">
   import classNames from 'classnames';
-  export let id: string;
+
   export let border: boolean = false;
   export let italic: boolean = true;
   export let borderClass: string = 'border-l-4 border-gray-300 dark:border-gray-500';
@@ -45,7 +45,7 @@
 </script>
 
 <blockquote
-  {id}
+  {...$$restProps}
   class={classNames(
     baseClass,
     alignmentClasses[alignment],

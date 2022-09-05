@@ -1,7 +1,6 @@
 <script lang="ts">
   import classNames from 'classnames';
 
-  export let id: string;
   export let italic: boolean = false;
   export let underline: boolean = false;
   export let linethrough: boolean = false;
@@ -25,6 +24,6 @@
   );
 </script>
 
-<span {id} class={classSpan}>
+<span {...$$restProps} class={classSpan}>
   <slot />
 </span>
