@@ -102,22 +102,22 @@ Use bind:value to bind the range input value as seen the the following examples.
 
 <Htwo label="Sizes" />
 
-<ExampleDiv>
+<ExampleDiv class="space-y-6">
 <Label>Small range</Label>
-<Range id="small-range" size="small" />
+<Range id="small-range" size="sm" />
 <Label>Default range</Label>
-<Range id="default-range" />
+<Range id="default-range" size="md"/>
 <Label>Large range</Label>
-<Range id="large-range" size="large" />
+<Range id="large-range" size="lg" />
 </ExampleDiv>
 
 ```html
 <Label>Small range</Label>
-<Range id="small-range" size="small" />
+<Range id="small-range" size="sm" />
 <Label>Default range</Label>
-<Range id="default-range" />
+<Range id="default-range" size="md"/>
 <Label>Large range</Label>
-<Range id="large-range" size="large" />
+<Range id="large-range" size="lg" />
 ```
 
 <Htwo label="Unknown attributes" />
