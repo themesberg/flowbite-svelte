@@ -22,11 +22,11 @@ body:
       placeholder: Reproduction
     validations:
       required: true
-   - type: textarea
+   - type: markdown
     id: flowbite-svelte-info
     attributes:
       label: Flowbite-Svelte Info
-      description: Flowbite-Svelte version from your package.json. Are you using the latest version? Use `npm i -D flowbite-svelte@latest` to update and check the problem before submitting this issue please.
+      description: Flowbite-Svelte version from your package.json. Are you using the latest version? Use npm i -D flowbite-svelte@latest to update and check the problem before submitting this issue please.
       placeholder: flowbite-svelte: vx.xx.xx
     validations:
       required: true
