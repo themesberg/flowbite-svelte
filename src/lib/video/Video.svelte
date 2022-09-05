@@ -1,19 +1,19 @@
 <script lang="ts">
   import classNames from 'classnames';
-  export let width = 'w-full';
-  export let controls: boolean = true;
-  export let autoplay: boolean = false;
+  // export let width;
+  // export let controls: boolean = true;
+  // export let autoplay: boolean = false;
   export let src: string;
   export let type: string = 'video/mp4';
-  export let attribute = '';
+  // export let attribute = '';
 
-  let videoClass = classNames(width, $$props.class);
-  const setAttribute = (node, params) => {
-    node.setAttribute(params, '');
-  };
+  let videoClass = classNames($$props.class);
+  // const setAttribute = (node, params) => {
+  //   node.setAttribute(params, '');
+  // };
 </script>
 
-<video class={videoClass} {controls} {autoplay} use:setAttribute={attribute}>
+<video {...$$restProps} class={videoClass}>
   <source {src} {type} />
   <slot />
   Your browser does not support the video tag.

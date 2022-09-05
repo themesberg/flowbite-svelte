@@ -6,7 +6,7 @@ layout: componentLayout
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Video, Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
 
-  import componentProps from '../props/Tooltip.json'
+  import componentProps from '../props/Video.json'
   // Props table
   let items = componentProps.props
   let propHeader = ['Name', 'Type', 'Default']
@@ -21,7 +21,6 @@ layout: componentLayout
 
 <Heading class="mb-2" tag="h1" customSize="text-3xl">Video</Heading>
 
-
 <Htwo label="Video player" />
 
 Use this example to create a native browser video player and apply the w-full utility class from Tailwind CSS to span the full width of the parent container.
@@ -31,6 +30,12 @@ Use this example to create a native browser video player and apply the w-full ut
   <track src="flowbite.mp4" kind="captions" srclang="en" label="english_captions">
 </Video>
 </ExampleDiv>
+
+```html
+<Video src='/videos/flowbite.mp4' controls>
+  <track src="flowbite.mp4" kind="captions" srclang="en" label="english_captions">
+</Video>
+```
 
 <Htwo label="Autoplay" />
 
@@ -42,6 +47,12 @@ Use the autoplay attribute on the video component to automatically start the vid
 </Video>
 </ExampleDiv>
 
+```html
+<Video src='/videos/flowbite.mp4' autoplay controls>
+  <track src="flowbite.mp4" kind="captions" srclang="en" label="english_captions">
+</Video>
+```
+
 <Htwo label="Muted" />
 
 Use the muted attribute together with the autoplay option to start the video while the sound is muted.
@@ -51,3 +62,96 @@ Use the muted attribute together with the autoplay option to start the video whi
   <track src="flowbite.mp4" kind="captions" srclang="en" label="english_captions">
 </Video>
 </ExampleDiv>
+
+```html
+<Video src='/videos/flowbite.mp4' autoplay muted controls>
+  <track src="flowbite.mp4" kind="captions" srclang="en" label="english_captions">
+</Video>
+```
+
+<Htwo label="Sizes" />
+
+Set the width and height of the video component using the `w-{size}` and `h-{size}` classes.
+
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Width</Heading>
+
+Use the `w-{size}` class to set the height of the video player.
+
+<ExampleDiv>
+<Video src='/videos/flowbite.mp4' controls class='w-96'>
+  <track src="flowbite.mp4" kind="captions" srclang="en" label="english_captions">
+</Video>
+</ExampleDiv>
+
+```html
+<Video src='/videos/flowbite.mp4' controls class='w-96'>
+  <track src="flowbite.mp4" kind="captions" srclang="en" label="english_captions">
+</Video>
+```
+
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Height</Heading>
+
+Use the `h-{size}` class to set the height of the video player.
+
+<ExampleDiv>
+<Video src='/videos/flowbite.mp4' controls class='h-80'>
+  <track src="flowbite.mp4" kind="captions" srclang="en" label="english_captions">
+</Video>
+</ExampleDiv>
+
+```html
+<Video src='/videos/flowbite.mp4' controls class='h-80'>
+  <track src="flowbite.mp4" kind="captions" srclang="en" label="english_captions">
+</Video>
+```
+
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Responsive
+</Heading>
+
+Use the following example to make the video responsive across all devices and viewports.
+
+<ExampleDiv>
+<Video src='/videos/flowbite.mp4' controls class='w-full max-w-full h-auto'>
+  <track src="flowbite.mp4" kind="captions" srclang="en" label="english_captions">
+</Video>
+</ExampleDiv>
+
+```html
+<Video src='/videos/flowbite.mp4' controls class='w-full max-w-full h-auto'>
+  <track src="flowbite.mp4" kind="captions" srclang="en" label="english_captions">
+</Video>
+```
+
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Custom styles
+</Heading>
+
+Customize the video player appearance using the utility classes from Tailwind CSS such as `rounded-{size}` or border to set rounded corners and border.
+
+<ExampleDiv>
+<Video src='/videos/flowbite.mp4' controls class='w-full max-w-full h-auto rounded-lg border border-gray-200 dark:border-gray-700'>
+  <track src="flowbite.mp4" kind="captions" srclang="en" label="english_captions">
+</Video>
+</ExampleDiv>
+
+```html
+<Video src='/videos/flowbite.mp4' controls class='w-full max-w-full h-auto rounded-lg border border-gray-200 dark:border-gray-700'>
+  <track src="flowbite.mp4" kind="captions" srclang="en" label="english_captions">
+</Video>
+```
+
+
+<Htwo label="Props" />
+
+<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
+ page</a> for type information.</p>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow {items} rowState='hover' />
+</TableProp>
+
+<Htwo label="References" />
+
+<P>
+  <A href="https://flowbite.com/docs/components/video/" target="_blank" class="link"
+    >Flowbite Tooltip</A>
+</P>
