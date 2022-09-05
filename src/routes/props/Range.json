@@ -1,1 +1,1 @@
-{"props":[["id","string ","'range'"],[" min"," number",""],[" max"," number",""],[" value"," number",""],[" step"," number",""],[" size"," 'small' | 'large'",""]]}
+{"props":[["  value"," number",""],["size","'sm' | 'md' | 'lg' ","'md'"]]}
