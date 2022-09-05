@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.13](https://github.com/themesberg/flowbite-svelte/compare/v0.26.12...v0.26.13) (2022-09-05)
+
+
+### Bug Fixes
+
+* add track to video component for A11y ([ef69a83](https://github.com/themesberg/flowbite-svelte/commit/ef69a83325ab11e4d3548e5e28033ae9e02bfe40))
+
 ### [0.26.12](https://github.com/themesberg/flowbite-svelte/compare/v0.26.11...v0.26.12) (2022-09-05)
 
 
