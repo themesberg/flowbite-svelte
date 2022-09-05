@@ -1,35 +1,29 @@
 <script lang="ts">
-	export let id: string = 'range';
-	export let min: number;
-	export let max: number;
-	export let value: number;
-	export let step: number;
-	export let size: 'small' | 'large';
+	import classNames from 'classnames';
 
-	let inputClass: string =
-		'w-full bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 ';
-	if (size === 'small') {
-		inputClass += 'h-1 mb-6 range-sm';
-	} else if (size === 'large') {
-		inputClass += 'h-3 range-lg';
-	} else {
-		inputClass += 'h-2 mb-6';
-	}
+	export let value: number;
+	export let size: 'sm' | 'md' | 'lg' = 'md';
+
+	const sizes = {
+		sm: 'h-1 range-sm',
+		md: 'h-2',
+		lg: 'h-3 range-lg'
+	};
+	let inputClass;
+	$: inputClass = classNames(
+		'w-full bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700',
+		sizes[size] ?? sizes.md,
+		$$props.class
+	);
 </script>
 
 <input
-	{...$$restProps}
-	{id}
-	name={id}
 	type="range"
-	{min}
-	{max}
 	bind:value
-	{step}
+	{...$$restProps}
 	class={inputClass}
 	on:change
 	on:click
 	on:keydown
 	on:keypress
-	on:keyup
-/>
+	on:keyup />
