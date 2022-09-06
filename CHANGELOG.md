@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.14](https://github.com/themesberg/flowbite-svelte/compare/v0.26.13...v0.26.14) (2022-09-06)
+
+
+### Bug Fixes
+
+* Heading and P update ([2313e3e](https://github.com/themesberg/flowbite-svelte/commit/2313e3e5ecb38ee69839a26b12b7c41cc099f75e))
+* toast transitions ([6659682](https://github.com/themesberg/flowbite-svelte/commit/6659682250ab9d2337f06c2b424431366cf9ced0))
+
 ### [0.26.13](https://github.com/themesberg/flowbite-svelte/compare/v0.26.12...v0.26.13) (2022-09-05)
 
 
