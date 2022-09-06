@@ -4,7 +4,7 @@
   class="h-64 bg-white rounded-lg border border-gray-100 hover:border-white dark:border-gray-700 dark:hover:border-gray-600 hover:shadow-lg dark:hover:shadow-lg-light dark:bg-gray-900"
   ><div
     class="bg-gray-50 dark:bg-gray-700 rounded-t-md py-2.5 px-5 flex justify-between items-center border-b border-gray-200 dark:border-gray-700">
-    <span class="text-lg font-medium text-gray-500 dark:text-gray-400">Breadcrumbs</span><span
+    <span class="text-lg font-medium text-gray-500 dark:text-gray-400">Breadcrumb</span><span
       class="text-gray-900 dark:text-white"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
