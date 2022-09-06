@@ -6,6 +6,10 @@
 
   export let hidden: boolean = true;
   export let position: 'fixed' | 'absolute' = 'fixed';
+  export let leftOffset: string = 'inset-y-0 left-0';
+  export let rightOffset: string = 'inset-y-0right-0';
+  export let topOffset: string = 'inset-x-0 top-0';
+  export let bottomOffset: string = 'inset-x-0 bottom-0';
   export let width: string = 'w-80';
   export let backdrop: boolean = true;
   export let bgColor: string = 'bg-gray-900';
@@ -31,10 +35,10 @@
   }
 
   const placements = {
-    left: 'inset-y-0 left-0',
-    right: 'inset-y-0 right-0',
-    top: 'inset-x-0 top-0',
-    bottom: 'inset-x-0 bottom-0'
+    left: leftOffset,
+    right: rightOffset,
+    top: topOffset,
+    bottom: bottomOffset
   };
 
   const handleDrawer = () => {
