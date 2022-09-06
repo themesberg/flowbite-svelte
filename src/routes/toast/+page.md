@@ -6,6 +6,7 @@ layout: componentLayout
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Toast, Breadcrumb, BreadcrumbItem, Avatar, Button, Heading, P, A } from '$lib'
   import { quintOut, elasticOut } from 'svelte/easing';
+  import { slide, fly, blur } from 'svelte/transition';
 
   import componentProps from '../props/Toast.json'
   // Props table
@@ -17,6 +18,9 @@ layout: componentLayout
 
   let show = true;
   let counter = 6;
+
+  let visible;
+
 
   function trigger() {
     show = true;
@@ -214,7 +218,7 @@ You can use any <A href="/icons">icon components.</A>
 <ExampleDiv>
 <div class="flex gap-10">
   <Button on:click={trigger} class="my-3">Restart</Button>
-  <Toast simple transition="slide" bind:visible={show}>
+  <Toast simple transition={slide} bind:visible={show}>
     <svelte:fragment slot="icon">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
     </svelte:fragment>
@@ -225,6 +229,8 @@ You can use any <A href="/icons">icon components.</A>
 
 ```html
 <script>
+  import { slide } from 'svelte/transition';
+
   let show = true;
   let counter = 6;
 
@@ -243,7 +249,7 @@ You can use any <A href="/icons">icon components.</A>
 
 <Button on:click={trigger} class="my-3">Restart</Button>
 
-<Toast simple transition="slide" bind:visible={show}>
+<Toast simple transition={slide} bind:visible={show}>
   <svelte:fragment slot="icon">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
   </svelte:fragment>
@@ -256,19 +262,19 @@ You can use any <A href="/icons">icon components.</A>
 You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" target="_blank" >Svelte/easing</A>.
 
 <ExampleDiv>
-   <Toast transition="slide" class="my-2">
+   <Toast transition={slide} class="my-2">
       <svelte:fragment slot="icon">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
       </svelte:fragment>
     Transition type: slide
   </Toast>
-  <Toast transition="slide" params="{{delay: 250, duration: 300, easing: quintOut}}" class="my-2">
+  <Toast transition={slide} params="{{delay: 250, duration: 300, easing: quintOut}}" class="my-2">
     <svelte:fragment slot="icon">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
     </svelte:fragment>
     Transition type: slide, delay: 250, duration: 300, easing: quintOut
   </Toast>
-   <Toast transition="slide" params="{{delay: 250, duration: 2000, easing: elasticOut}}">
+   <Toast transition={slide} params="{{delay: 250, duration: 2000, easing: elasticOut}}">
     <svelte:fragment slot="icon">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
     </svelte:fragment>
@@ -277,19 +283,19 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 </ExampleDiv>
 
 ```html
-<Toast transition="slide" class="my-2">
+<Toast transition={slide} class="my-2">
 	<svelte:fragment slot="icon">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
   </svelte:fragment>
 	Transition type: slide
 </Toast>
-<Toast transition="slide" params="{{delay: 250, duration: 300, easing: quintOut}}" class="my-2">
+<Toast transition={slide} params="{{delay: 250, duration: 300, easing: quintOut}}" class="my-2">
 	<svelte:fragment slot="icon">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
   </svelte:fragment>
 	Transition type: slide, delay: 250, duration: 300, easing: quintOut
 </Toast>
-<Toast transition="slide" params="{{delay: 250, duration: 2000, easing: elasticOut}}">
+<Toast transition={slide} params="{{delay: 250, duration: 2000, easing: elasticOut}}">
 	<svelte:fragment slot="icon">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
   </svelte:fragment>
@@ -300,14 +306,14 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 <h3 class='text-xl w-full dark:text-white py-4'>Blur examples</h3>
 
 <ExampleDiv>
-  <Toast transition="blur" color='purple' params="{{amount: 10}}" class="my-2">
+  <Toast transition={blur} color='purple' params="{{amount: 10}}" class="my-2">
     <svelte:fragment slot="icon">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
     </svelte:fragment>
     Transition type: blur, amount: 10
   </Toast>
 <p></p>
-  <Toast transition="blur" color='purple' params="{{amount: 50, delay: 1000}}">
+  <Toast transition={blur} color='purple' params="{{amount: 50, delay: 1000}}">
     <svelte:fragment slot="icon">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
     </svelte:fragment>
@@ -316,14 +322,14 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 </ExampleDiv>
 
 ```html
-<Toast transition="blur" color="purple" params="{{amount: 10}}">
+<Toast transition={blur} color="purple" params="{{amount: 10}}">
 	<svelte:fragment slot="icon">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
   </svelte:fragment>
 	Transition type: blur, amount: 10
 </Toast>
 
-<Toast transition="blur" color="purple" params="{{amount: 50, delay: 1000}}">
+<Toast transition={blur} color="purple" params="{{amount: 50, delay: 1000}}">
 	<svelte:fragment slot="icon">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
   </svelte:fragment>
@@ -334,14 +340,14 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 <h3 class='text-xl w-full dark:text-white py-4'>Fly examples</h3>
 
 <ExampleDiv>
-  <Toast transition="fly" params="{{x: 200}}" color="green" class="mb-2">
+  <Toast transition={fly} params="{{x: 200}}" color="green" class="mb-2">
     <svelte:fragment slot="icon">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>
     </svelte:fragment>
     Transition type: fly right
   </Toast>
 <p></p>
-  <Toast transition="fly" params="{{y: 200}}" color="green">
+  <Toast transition={fly} params="{{y: 200}}" color="green">
     <svelte:fragment slot="icon">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>
     </svelte:fragment>
@@ -350,14 +356,14 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 </ExampleDiv>
 
 ```html
-<Toast transition="fly" params="{{x: 200}}" color="green">
+<Toast transition={fly} params="{{x: 200}}" color="green">
 	<svelte:fragment slot="icon">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>
   </svelte:fragment>
 	Transition type: fly right
 </Toast>
 
-<Toast transition="fly" params="{{y: 200}}" color="green">
+<Toast transition={fly} params="{{y: 200}}" color="green">
 	<svelte:fragment slot="icon">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>
   </svelte:fragment>
