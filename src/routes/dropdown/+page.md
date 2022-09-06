@@ -28,8 +28,9 @@ layout: componentLayout
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
   let group1=2, group2=2, group3=2;
 
-  const handleClick = ()=>{
-    alert ('Clicked.')
+  const handleClick = (e)=>{
+    e.preventDefault()
+    alert ('Clicked on: ' + e.target)
   }
 
   let dropdownOpen = false;
@@ -998,17 +999,29 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
 
 <Htwo label="Events" />
 
-The `DropdownItem` component has `on:click` event.
+If you provide the `href` property to the `DropdownItem` component you can listen to standard `<a/>` events like `on:click` event.
+
+If you do not provide the `href` property, it means you are inserting another interactive element inside the `DropdownItem` like `button` or `checkbox`. Events listening can be then done directly on the inserted element.
 
 <ExampleDiv class="flex items-start justify-center h-32">
-<Dropdown label="Dropdown button" class="w-44">
-  <DropdownItem on:click={handleClick}>Click me</DropdownItem>
+<Button><Chevron>Dropdown button</Chevron></Button>
+<Dropdown class="w-44">
+  <DropdownItem href="/link" on:click={handleClick}>Click me</DropdownItem>
+  <DropdownItem><Checkbox on:click={handleClick}>Checkbox</Checkbox></DropdownItem>
 </Dropdown>
 </ExampleDiv>
 
 ```html
-<Dropdown label="Dropdown button" class="w-44">
+<script>
+  const handleClick = (e)=>{
+    e.preventDefault()
+    alert ('Clicked on: ' + e.target)
+  }
+</script>
+<Button><Chevron>Dropdown button</Chevron></Button>
+<Dropdown class="w-44">
   <DropdownItem on:click={handleClick}>Click me</DropdownItem>
+  <DropdownItem><Checkbox on:click={handleClick}>Checkbox</Checkbox></DropdownItem>
 </Dropdown>
 ```
 
