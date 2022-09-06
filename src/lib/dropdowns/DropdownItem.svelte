@@ -11,20 +11,26 @@
 	};
 </script>
 
-<li>
-	<svelte:element
-		this={href ? 'a' : 'div'}
-		{href}
-		{...$$restProps}
-		class={classNames(liClass, colors[color] ?? colors.default, $$props.class)}
-		on:click
-		on:change
-		on:keydown
-		on:keyup
-		on:focus
-		on:blur
-		on:mouseenter
-		on:mouseleave>
+{#if href}
+	<li>
+		<svelte:element
+			this={href ? 'a' : 'div'}
+			{href}
+			{...$$restProps}
+			class={classNames(liClass, colors[color] ?? colors.default, $$props.class)}
+			on:click
+			on:change
+			on:keydown
+			on:keyup
+			on:focus
+			on:blur
+			on:mouseenter
+			on:mouseleave>
+			<slot />
+		</svelte:element>
+	</li>
+{:else}
+	<li class={classNames(liClass, colors[color] ?? colors.default, $$props.class)}>
 		<slot />
-	</svelte:element>
-</li>
+	</li>
+{/if}

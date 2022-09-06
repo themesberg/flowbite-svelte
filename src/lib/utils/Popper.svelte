@@ -68,11 +68,13 @@
 					name: 'offset',
 					options: {
 						offset: ({ placement, reference, popper }) => {
+							// for full screen mega menu
 							return [yOnly ? popper.width / 2 - reference.width / 2 - reference.x : 0, offset];
 						}
 					}
 				},
-				{ name: 'eventListeners', enabled: open }
+				{ name: 'eventListeners', enabled: open },
+				{ name: 'flip', enabled: false }
 			]
 		});
 		return {
@@ -134,8 +136,7 @@
 		on:mouseenter={showHandler}
 		on:mouseleave={activeContent && !clickable ? hideHandler : undefined}
 		{...$$restProps}
-		class={classNames('z-10', $$props.class)}
-		style="position: absolute;">
+		class={classNames('z-10', $$props.class)}>
 		<slot />
 		{#if arrow}<div data-popper-arrow />{/if}
 	</Frame>
