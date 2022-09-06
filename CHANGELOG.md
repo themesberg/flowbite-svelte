@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.16](https://github.com/themesberg/flowbite-svelte/compare/v0.26.15...v0.26.16) (2022-09-06)
+
+
+### Features
+
+* add offset position props to Drawer and example in the drawer page ([680d358](https://github.com/themesberg/flowbite-svelte/commit/680d358ef3d55df202ae2bcaf5deb9c3e6834c18))
+
+
+### Bug Fixes
+
+* [#273](https://github.com/themesberg/flowbite-svelte/issues/273) remove number from select value type ([529510b](https://github.com/themesberg/flowbite-svelte/commit/529510bc50e561b544175a350390d7f32291727c))
+* [#274](https://github.com/themesberg/flowbite-svelte/issues/274) change the links to singular for blocks components ([7378935](https://github.com/themesberg/flowbite-svelte/commit/73789353f4d598722db88cecb595303e8d60ac31))
+* index blocks names, e.g. Tooltips to Tooltip ([5f902b2](https://github.com/themesberg/flowbite-svelte/commit/5f902b22043838a3e3413679632c9516ea81b906))
+
 ### [0.26.15](https://github.com/themesberg/flowbite-svelte/compare/v0.26.14...v0.26.15) (2022-09-06)
 
 
