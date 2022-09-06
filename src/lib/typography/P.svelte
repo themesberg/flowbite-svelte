@@ -35,7 +35,7 @@
     | 'semibold'
     | 'bold'
     | 'extrabold'
-    | 'black';
+    | 'black' = 'normal';
 
   const sizes = {
     xs: 'text-xs',
@@ -97,8 +97,6 @@
     .map((element) => element.trim())
     .map((element) => element + '/' + String(opacity))
     .join(' ');
-  // console.log('colorArr', colorAndopacity);
-  // console.log(typeof colorAndopacity);
 
   let classP = classNames(
     size && sizes[size],
