@@ -28,11 +28,13 @@ layout: componentLayout
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
   let group1=2, group2=2, group3=2;
 
-  const handleClick = ()=>{
-    alert ('Clicked.')
+  const handleClick = (e)=>{
+    e.preventDefault()
+    alert ('Clicked on: ' + e.target)
   }
 
   let dropdownOpen = false;
+  let placement = 'left';
 </script>
 
 <Breadcrumb class="pb-8">
@@ -90,7 +92,8 @@ If you want to show a dropdown menu when clicking on an element add the `Dropdow
 You can use the `DropdownDivider` component to add separate elements inside the dropdown menu.
 
 <ExampleDiv class="flex justify-center items-start h-64">
-<Dropdown label="Dropdown button" class="w-44">
+<Button><Chevron>Dropdown button</Chevron></Button>
+<Dropdown class="w-44">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
@@ -100,7 +103,8 @@ You can use the `DropdownDivider` component to add separate elements inside the 
 </ExampleDiv>
 
 ```html
-<Dropdown label="Dropdown button" class="w-44">
+<Button><Chevron>Dropdown button</Chevron></Button>
+<Dropdown class="w-44">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
@@ -114,7 +118,8 @@ You can use the `DropdownDivider` component to add separate elements inside the 
 Use this example to show extra information outside of the list of menu items inside the dropdown.
 
 <ExampleDiv class="flex justify-center items-start h-80">
-<Dropdown label="Dropdown button" class="w-44">
+<Button><Chevron>Dropdown button</Chevron></Button>
+<Dropdown class="w-44">
   <DropdownHeader>
     <span class="block text-sm"> Bonnie Green </span>
     <span class="block truncate text-sm font-medium"> name@flowbite.com </span>
@@ -128,7 +133,8 @@ Use this example to show extra information outside of the list of menu items ins
 </ExampleDiv>
 
 ```html
-<Dropdown label="Dropdown button" class="w-44">
+<Button><Chevron>Dropdown button</Chevron></Button>
+<Dropdown class="w-44">
   <DropdownHeader>
     <span class="block text-sm"> Bonnie Green </span>
     <span class="block truncate text-sm font-medium"> name@flowbite.com </span>
@@ -146,7 +152,8 @@ Use this example to show extra information outside of the list of menu items ins
 Use this example to enable multi-level dropdown menus by adding stacked elements inside of each other.
 
 <ExampleDiv class="flex justify-center items-start h-64">
-<Dropdown label="Dropdown button" class="w-44">
+<Button><Chevron>Dropdown button</Chevron></Button>
+<Dropdown class="w-44">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem class="flex items-center justify-between"><Chevron placement="right">Dropdown</Chevron></DropdownItem>
   <Dropdown placement="right-start" class="w-44">
@@ -161,7 +168,8 @@ Use this example to enable multi-level dropdown menus by adding stacked elements
 </ExampleDiv>
 
 ```html
-<Dropdown label="Dropdown button" class="w-44">
+<Button><Chevron>Dropdown button</Chevron></Button>
+<Dropdown class="w-44">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem class="flex items-center justify-between"><Chevron placement="right">Dropdown</Chevron></DropdownItem>
   <Dropdown placement="right-start" class="w-44">
@@ -216,14 +224,15 @@ When you want to control your dropdown open status via javascript code you can b
 Add multiple checkbox elements inside your dropdown menu to enable more advanced input interaction.
 
 <ExampleDiv class="flex justify-center items-start h-52">
-  <Dropdown label="Dropdown checkbox" class="w-44">
-    <DropdownItem tabindex="-1">
+  <Button><Chevron>Dropdown checkbox</Chevron></Button>
+  <Dropdown class="w-44">
+    <DropdownItem>
       <Checkbox>Default checkbox</Checkbox>
     </DropdownItem>
-    <DropdownItem tabindex="-1">
+    <DropdownItem>
       <Checkbox checked>Checked state</Checkbox>
     </DropdownItem>
-    <DropdownItem tabindex="-1">
+    <DropdownItem>
       <Checkbox>Default checkbox</Checkbox>
     </DropdownItem>
   </Dropdown>
@@ -234,14 +243,15 @@ Add multiple checkbox elements inside your dropdown menu to enable more advanced
 <script>
   import { ..., ...., Checkbox } from 'flowbite-svelte'
 </script>
-<Dropdown label="Dropdown checkbox" class="w-44">
-  <DropdownItem tabindex="-1">
+<Button><Chevron>Dropdown checkbox</Chevron></Button>
+<Dropdown class="w-44">
+  <DropdownItem>
     <Checkbox>Default checkbox</Checkbox>
   </DropdownItem>
-  <DropdownItem tabindex="-1">
+  <DropdownItem>
     <Checkbox checked>Checked state</Checkbox>
   </DropdownItem>
-  <DropdownItem tabindex="-1">
+  <DropdownItem>
     <Checkbox>Default checkbox</Checkbox>
   </DropdownItem>
 </Dropdown>
@@ -253,15 +263,16 @@ Use this example to update the background color of a menu item when using a list
 
 
 <ExampleDiv class="flex justify-center items-start h-56">
-  <Dropdown label="Dropdown checkbox" class="w-48" >
+  <Button><Chevron>Dropdown checkbox</Chevron></Button>
+  <Dropdown class="w-48" >
     <ul slot="content" class="p-3 space-y-1">
-      <DropdownItem class="rounded" tabindex="-1" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
         <Checkbox>Default checkbox</Checkbox>
       </DropdownItem>
-      <DropdownItem class="rounded" tabindex="-1" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
         <Checkbox checked>Checked state</Checkbox>
       </DropdownItem>
-      <DropdownItem class="rounded" tabindex="-1" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
         <Checkbox>Default checkbox</Checkbox>
       </DropdownItem>
     </ul>
@@ -270,15 +281,16 @@ Use this example to update the background color of a menu item when using a list
 
 
 ```html
-<Dropdown label="Dropdown checkbox" class="w-48">
+<Button><Chevron>Dropdown checkbox</Chevron></Button>
+<Dropdown class="w-48">
   <ul slot="content" class="p-3 space-y-1">
-    <DropdownItem class="rounded" tabindex="-1" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
       <Checkbox>Default checkbox</Checkbox>
     </DropdownItem>
-    <DropdownItem class="rounded" tabindex="-1" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
       <Checkbox checked>Checked state</Checkbox>
     </DropdownItem>
-    <DropdownItem class="rounded" tabindex="-1" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
       <Checkbox>Default checkbox</Checkbox>
     </DropdownItem>
   </ul>
@@ -292,17 +304,18 @@ Add an extra helper text to each checkbox element inside the dropdown menu list 
 
 
 <ExampleDiv class="flex justify-center items-start h-96">
-  <Dropdown label="Dropdown checkbox" class="w-60" >
+  <Button><Chevron>Dropdown checkbox</Chevron></Button>
+  <Dropdown class="w-60" >
     <ul slot="content" class="p-3 space-y-1">
-      <DropdownItem class="rounded" tabindex="-1" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
         <Checkbox>Enable notifications</Checkbox>
         <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
       </DropdownItem>
-      <DropdownItem class="rounded" tabindex="-1" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
         <Checkbox checked>Enable 2FA auth</Checkbox>
         <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
       </DropdownItem>
-      <DropdownItem class="rounded" tabindex="-1" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
         <Checkbox>Subscribe newsletter</Checkbox>
         <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
       </DropdownItem>
@@ -315,17 +328,18 @@ Add an extra helper text to each checkbox element inside the dropdown menu list 
 <script>
   import { ..., ..., Helper } from 'flowbite-svelte'
 </script>
-<Dropdown label="Dropdown checkbox" class="w-60" >
+<Button><Chevron>Dropdown checkbox</Chevron></Button>
+<Dropdown class="w-60" >
   <ul slot="content" class="p-3 space-y-1">
-    <DropdownItem class="rounded" tabindex="-1" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
       <Checkbox>Enable notifications</Checkbox>
       <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
     </DropdownItem>
-    <DropdownItem class="rounded" tabindex="-1" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
       <Checkbox checked>Enable 2FA auth</Checkbox>
       <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
     </DropdownItem>
-    <DropdownItem class="rounded" tabindex="-1" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
       <Checkbox>Subscribe newsletter</Checkbox>
       <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
     </DropdownItem>
@@ -338,15 +352,16 @@ Add an extra helper text to each checkbox element inside the dropdown menu list 
 Add multiple radio elements inside your dropdown menu to enable more advanced input interaction.
 
 <ExampleDiv class="flex justify-center items-start h-64">
-  <Dropdown label="Dropdown radio" class="w-44">
-    <DropdownItem tabindex="-1">
-      <Radio bind:group={group1} value={1}>Default radio</Radio>
+  <Button><Chevron>Dropdown radio {group1}</Chevron></Button>
+  <Dropdown class="w-44">
+    <DropdownItem>
+      <Radio name="group1" bind:group={group1} value={1}>Default radio</Radio>
     </DropdownItem>
-    <DropdownItem tabindex="-1">
-      <Radio bind:group={group1} value={2}>Checked state</Radio>
+    <DropdownItem>
+      <Radio name="group1" bind:group={group1} value={2}>Checked state</Radio>
     </DropdownItem>
-    <DropdownItem tabindex="-1">
-      <Radio bind:group={group1} value={3}>Default radio</Radio>
+    <DropdownItem>
+      <Radio name="group1" bind:group={group1} value={3}>Default radio</Radio>
     </DropdownItem>
   </Dropdown>
 </ExampleDiv>
@@ -358,16 +373,17 @@ Add multiple radio elements inside your dropdown menu to enable more advanced in
   let group1 = 2;
 </script>
 
-<Dropdown label="Dropdown radio" class="w-44">
-    <DropdownItem tabindex="-1">
-      <Radio bind:group={group1} value={1}>Default radio</Radio>
-    </DropdownItem>
-    <DropdownItem tabindex="-1">
-      <Radio bind:group={group1} value={2}>Checked state</Radio>
-    </DropdownItem>
-    <DropdownItem tabindex="-1">
-      <Radio bind:group={group1} value={3}>Default radio</Radio>
-    </DropdownItem>
+<Button><Chevron>Dropdown radio {group1}</Chevron></Button>
+<Dropdown class="w-44">
+  <DropdownItem>
+    <Radio name="group1" bind:group={group1} value={1}>Default radio</Radio>
+  </DropdownItem>
+  <DropdownItem>
+    <Radio name="group1" bind:group={group1} value={2}>Checked state</Radio>
+  </DropdownItem>
+  <DropdownItem>
+    <Radio name="group1" bind:group={group1} value={3}>Default radio</Radio>
+  </DropdownItem>
 </Dropdown>
 ```
 
@@ -377,16 +393,17 @@ Use this example to update the background color of a menu item when using a list
 
 
 <ExampleDiv class="flex justify-center items-start h-64">
-  <Dropdown label="Dropdown radio" class="w-48">
+  <Button><Chevron>Dropdown radio</Chevron></Button>
+  <Dropdown class="w-48">
     <ul slot="content" class="p-3 space-y-1">
-      <DropdownItem class="rounded" tabindex="-1" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Radio bind:group={group2} value={1}>Default radio</Radio>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Radio name="group2" bind:group={group2} value={1}>Default radio</Radio>
       </DropdownItem>
-      <DropdownItem class="rounded" tabindex="-1" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Radio bind:group={group2} value={2}>Checked state</Radio>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Radio name="group2" bind:group={group2} value={2}>Checked state</Radio>
       </DropdownItem>
-      <DropdownItem class="rounded" tabindex="-1" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Radio bind:group={group2} value={3}>Default radio</Radio>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Radio name="group2" bind:group={group2} value={3}>Default radio</Radio>
       </DropdownItem>
     </ul>
   </Dropdown>
@@ -398,16 +415,17 @@ Use this example to update the background color of a menu item when using a list
   let group2 = 2;
 </script>
 
-<Dropdown label="Dropdown radio" class="w-48">
+<Button><Chevron>Dropdown radio</Chevron></Button>
+<Dropdown class="w-48">
   <ul slot="content" class="p-3 space-y-1">
-    <DropdownItem class="rounded" tabindex="-1" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio bind:group={group2} value={1}>Default radio</Radio>
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Radio name="group2" bind:group={group2} value={1}>Default radio</Radio>
     </DropdownItem>
-    <DropdownItem class="rounded" tabindex="-1" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio bind:group={group2} value={2}>Checked state</Radio>
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Radio name="group2" bind:group={group2} value={2}>Checked state</Radio>
     </DropdownItem>
-    <DropdownItem class="rounded" tabindex="-1" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio bind:group={group2} value={3}>Default radio</Radio>
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Radio name="group2" bind:group={group2} value={3}>Default radio</Radio>
     </DropdownItem>
   </ul>
 </Dropdown>
@@ -420,18 +438,19 @@ Add an extra helper text to each radio element inside the dropdown menu list wit
 
 
 <ExampleDiv class="flex justify-center items-start h-96">
-  <Dropdown label="Dropdown radio" class="w-60" trigger="hover">
+  <Button><Chevron>Dropdown radio</Chevron></Button>
+  <Dropdown class="w-60" trigger="hover">
     <ul slot="content" class="p-3 space-y-1">
-      <DropdownItem class="rounded" tabindex="-1" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Radio bind:group={group3} value={1}>Enable notifications</Radio>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Radio name="group3" bind:group={group3} value={1}>Enable notifications</Radio>
         <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
       </DropdownItem>
-      <DropdownItem class="rounded" tabindex="-1" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Radio bind:group={group3} value={2}>Enable 2FA auth</Radio>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Radio name="group3" bind:group={group3} value={2}>Enable 2FA auth</Radio>
         <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
       </DropdownItem>
-      <DropdownItem class="rounded" tabindex="-1" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Radio bind:group={group3} value={3}>Subscribe newsletter</Radio>
+      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+        <Radio name="group3" bind:group={group3} value={3}>Subscribe newsletter</Radio>
         <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
       </DropdownItem>
     </ul>
@@ -440,18 +459,19 @@ Add an extra helper text to each radio element inside the dropdown menu list wit
 
 
 ```html
-<Dropdown label="Dropdown radio" class="w-60" >
+<Button><Chevron>Dropdown radio</Chevron></Button>
+<Dropdown class="w-60" >
   <ul slot="content" class="p-3 space-y-1">
-    <DropdownItem class="rounded" tabindex="-1" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio bind:group={group3} value={1}>Enable notifications</Radio>
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Radio name="group3" bind:group={group3} value={1}>Enable notifications</Radio>
       <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
     </DropdownItem>
-    <DropdownItem class="rounded" tabindex="-1" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio bind:group={group3} value={2}>Enable 2FA auth</Radio>
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Radio name="group3" bind:group={group3} value={2}>Enable 2FA auth</Radio>
       <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
     </DropdownItem>
-    <DropdownItem class="rounded" tabindex="-1" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-      <Radio bind:group={group3} value={3}>Subscribe newsletter</Radio>
+    <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <Radio name="group3" bind:group={group3} value={3}>Subscribe newsletter</Radio>
       <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
     </DropdownItem>
   </ul>
@@ -463,15 +483,16 @@ Add an extra helper text to each radio element inside the dropdown menu list wit
 Show a list of toggle switch elements inside the dropdown menu to enable a yes or no type of choice.
 
 <ExampleDiv class="flex justify-center items-start h-64">
-  <Dropdown label="Dropdown toggle" class="w-56">
+  <Button><Chevron>Dropdown toggle</Chevron></Button>
+  <Dropdown class="w-56">
   <ul slot="content" class="p-3 space-y-1">
-    <DropdownItem class="rounded" tabindex="-1">
+    <DropdownItem class="rounded">
       <Toggle>Default toggle</Toggle>
     </DropdownItem>
-    <DropdownItem class="rounded" tabindex="-1">
+    <DropdownItem class="rounded">
       <Toggle checked>Checked state</Toggle>
     </DropdownItem>
-    <DropdownItem class="rounded" tabindex="-1">
+    <DropdownItem class="rounded">
       <Toggle>Default toggle</Toggle>
     </DropdownItem>
   </ul>
@@ -483,16 +504,17 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
   import { ..., ..., Toggle } from 'flowbite-svelte'
 </script>
 
-<Dropdown label="Dropdown radio" class="w-56">
+<Button><Chevron>Dropdown toggle</Chevron></Button>
+<Dropdown class="w-56">
 <ul slot="content" class="p-3 space-y-1">
-  <DropdownItem class="rounded" tabindex="-1">
-    <Toggle>Default radio</Toggle>
+  <DropdownItem class="rounded">
+    <Toggle>Default toggle</Toggle>
   </DropdownItem>
-  <DropdownItem class="rounded" tabindex="-1">
+  <DropdownItem class="rounded">
     <Toggle checked>Checked state</Toggle>
   </DropdownItem>
-  <DropdownItem class="rounded" tabindex="-1">
-    <Toggle>Default radio</Toggle>
+  <DropdownItem class="rounded">
+    <Toggle>Default toggle</Toggle>
   </DropdownItem>
 </ul>
 </Dropdown>
@@ -780,7 +802,7 @@ Use this example to show a list of notifications inside your application by prov
   </Dropdown>
 </ExampleDiv>
 
-```html
+```svelte
 <div id="bell" class="inline-flex items-center text-sm font-medium text-center text-gray-500 hover:text-gray-900 focus:outline-none dark:hover:text-white dark:text-gray-400">
   <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path></svg>
   <div class="flex relative">
@@ -819,7 +841,7 @@ Use this example to show a list of notifications inside your application by prov
 
 This example can be used to show a list of menu items and options when a user is logged into your application.
 
-<ExampleDiv class="flex justify-center items-start h-64">
+<ExampleDiv class="flex justify-center items-start h-80">
   <Avatar class="acs" src="/images/profile-picture-3.webp" dot={{color:'bg-green-400'}} />
   <Dropdown triggeredBy=".acs">
     <DropdownHeader>
@@ -834,7 +856,7 @@ This example can be used to show a list of menu items and options when a user is
   </Dropdown>
 </ExampleDiv>
 
-```html
+```svelte
 <Avatar class="acs" src="/images/profile-picture-3.webp" dot={{color:'bg-green-400'}} />
 <Dropdown triggeredBy=".acs">
   <DropdownHeader>
@@ -853,7 +875,7 @@ This example can be used to show a list of menu items and options when a user is
 
 Use this example to also show the name or email of the user next to the avatar for the dropdown menu.
 
-<ExampleDiv class="flex justify-center items-start h-64">
+<ExampleDiv class="flex justify-center items-start h-80">
   <Button pill color="light" id="avatar_with_name" class="!p-1">
     <Avatar src="/images/profile-picture-3.webp" class="mr-2"/>
     Bonnie Green
@@ -871,7 +893,7 @@ Use this example to also show the name or email of the user next to the avatar f
   </Dropdown>
 </ExampleDiv>
 
-```html
+```svelte
 <Dropdown inline>
   <svelte:fragment slot="label" >
     <Avatar src="/images/profile-picture-3.webp" class="mr-2"/>
@@ -904,7 +926,7 @@ Use this example to also show the name or email of the user next to the avatar f
   <Button class="sizes" size="lg"><Chevron>Large dropdown</Chevron></Button>
 </ExampleDiv>
 
-```html
+```svelte
 <Dropdown triggeredBy=".sizes">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
@@ -917,72 +939,46 @@ Use this example to also show the name or email of the user next to the avatar f
 
 <Htwo label="Placement" />
 
-<p>You can also use the placement="top|right|bottom|left" options to choose the placement of the dropdown menu. By default the positioning is set to the bottom side of the button.</p>
+You can also use the `placement={top|right|bottom|left}` options to choose the placement of the dropdown menu. By default the positioning is set to the bottom side of the button.
 
-<ExampleDiv class="flex justify-center items-center gap-2 h-96">
-<Dropdown label="Dropdown top" placement="top">
+<ExampleDiv class="h-96 justify-center items-center flex">
+<Dropdown {placement} triggeredBy="#placements button"
+  on:show={e=> placement = e.target.textContent.trim().split(' ')[1]}>
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
   <DropdownItem>Sign out</DropdownItem>
 </Dropdown>
-<Dropdown label="Dropdown right" placement="right">
-  <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem>Settings</DropdownItem>
-  <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem>Sign out</DropdownItem>
-</Dropdown>
-<Dropdown label="Dropdown bottom" placement="bottom">
-  <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem>Settings</DropdownItem>
-  <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem>Sign out</DropdownItem>
-</Dropdown>
-<Dropdown label="Dropdown left" placement="left">
-  <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem>Settings</DropdownItem>
-  <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem>Sign out</DropdownItem>
-</Dropdown>
+<div id="placements" class="flex gap-2">
+  <Button><Chevron placement="left">Dropdown left</Chevron></Button>
+  <Button><Chevron placement="top">Dropdown top</Chevron></Button>
+  <Button><Chevron placement="bottom">Dropdown bottom</Chevron></Button>
+  <Button><Chevron placement="right">Dropdown right</Chevron></Button>
+</div>
 </ExampleDiv>
 
-```html
-<Dropdown label="Dropdown top" placement="top">
+```svelte
+<Dropdown {placement} triggeredBy="#placements button"
+  on:show={e=> placement = e.target.textContent.trim().split(' ')[1]}>
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
   <DropdownItem>Sign out</DropdownItem>
 </Dropdown>
-<Dropdown label="Dropdown right" placement="right">
-  <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem>Settings</DropdownItem>
-  <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem>Sign out</DropdownItem>
-</Dropdown>
-<Dropdown label="Dropdown bottom" placement="bottom">
-  <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem>Settings</DropdownItem>
-  <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem>Sign out</DropdownItem>
-</Dropdown>
-<Dropdown label="Dropdown left" placement="left">
-  <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem>Settings</DropdownItem>
-  <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem>Sign out</DropdownItem>
-</Dropdown>
+<div id="placements" class="flex gap-2">
+  <Button><Chevron placement="left">Dropdown left</Chevron></Button>
+  <Button><Chevron placement="top">Dropdown top</Chevron></Button>
+  <Button><Chevron placement="bottom">Dropdown bottom</Chevron></Button>
+  <Button><Chevron placement="right">Dropdown right</Chevron></Button>
+</div>
 ```
 
 <Htwo label="Double placement"/>
 
-<ExampleDiv class="flex justify-center items-center gap-2">
-<Dropdown label="Dropdown left start" placement="left-start">
-  <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem>Settings</DropdownItem>
-  <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem>Sign out</DropdownItem>
-</Dropdown>
-<Dropdown label="Dropdown right start" placement="right-start">
+<ExampleDiv class="flex justify-center items-center gap-2 h-96">
+<Button data-placement="left-start"><Chevron placement="left">Dropdown left start</Chevron></Button>
+<Button data-placement="right-end"><Chevron placement="right">Dropdown right end</Chevron></Button>
+<Dropdown {placement} triggeredBy="[data-placement]" on:show={e => placement = e.target.dataset.placement}>
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
@@ -990,14 +986,10 @@ Use this example to also show the name or email of the user next to the avatar f
 </Dropdown>
 </ExampleDiv>
 
-```html
-<Dropdown label="Dropdown left start" placement="left-start">
-  <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem>Settings</DropdownItem>
-  <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem>Sign out</DropdownItem>
-</Dropdown>
-<Dropdown label="Dropdown right start" placement="right-start">
+```svelte
+<Button data-placement="left-start"><Chevron placement="left">Dropdown left start</Chevron></Button>
+<Button data-placement="right-end"><Chevron placement="right">Dropdown right end</Chevron></Button>
+<Dropdown {placement} triggeredBy="[data-placement]" on:show={e => placement = e.target.dataset.placement}>
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
@@ -1007,17 +999,29 @@ Use this example to also show the name or email of the user next to the avatar f
 
 <Htwo label="Events" />
 
-The `DropdownItem` component has `on:click` event.
+If you provide the `href` property to the `DropdownItem` component you can listen to standard `<a/>` events like `on:click` event.
 
-<ExampleDiv class="flex justify-center h-32">
-<Dropdown label="Dropdown button" class="w-44">
-  <DropdownItem on:click={handleClick}>Click me</DropdownItem>
+If you do not provide the `href` property, it means you are inserting another interactive element inside the `DropdownItem` like `button` or `checkbox`. Events listening can be then done directly on the inserted element.
+
+<ExampleDiv class="flex items-start justify-center h-32">
+<Button><Chevron>Dropdown button</Chevron></Button>
+<Dropdown class="w-44">
+  <DropdownItem href="/link" on:click={handleClick}>Click me</DropdownItem>
+  <DropdownItem><Checkbox on:click={handleClick}>Checkbox</Checkbox></DropdownItem>
 </Dropdown>
 </ExampleDiv>
 
 ```html
-<Dropdown label="Dropdown button" class="w-44">
+<script>
+  const handleClick = (e)=>{
+    e.preventDefault()
+    alert ('Clicked on: ' + e.target)
+  }
+</script>
+<Button><Chevron>Dropdown button</Chevron></Button>
+<Dropdown class="w-44">
   <DropdownItem on:click={handleClick}>Click me</DropdownItem>
+  <DropdownItem><Checkbox on:click={handleClick}>Checkbox</Checkbox></DropdownItem>
 </Dropdown>
 ```
 
