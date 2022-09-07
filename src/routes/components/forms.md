@@ -61,6 +61,7 @@ layout: formLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
+  <BreadcrumbItem>Components</BreadcrumbItem>
   <BreadcrumbItem>Forms</BreadcrumbItem>
 </Breadcrumb>
 

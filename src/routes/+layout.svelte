@@ -18,7 +18,8 @@
     topMenus,
     typography,
     utilities,
-    extend
+    extend,
+    experimental
   } from './moduleItems/+server.js';
 
   let asideClass =
@@ -112,9 +113,15 @@
         <SidebarList {href} {name} {sideBarListClass} />
       {/each}
     </Nav>
-    <Nav {navClass} navDivClass={navDivClasslast}>
+    <Nav {navClass} class="pb-2">
       <h3 class={h3Category}>Utilities</h3>
       {#each utilities as { href, name, rel }}
+        <SidebarList {href} {name} {rel} {sideBarListClass} />
+      {/each}
+    </Nav>
+    <Nav {navClass} navDivClass={navDivClasslast}>
+      <h3 class={h3Category}>Experimental</h3>
+      {#each experimental as { href, name, rel }}
         <SidebarList {href} {name} {rel} {sideBarListClass} />
       {/each}
     </Nav>

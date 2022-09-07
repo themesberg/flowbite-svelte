@@ -7,7 +7,7 @@ import { expect, test } from '@playwright/test';
 
 // Typography
 test('Typography page should have h1', async ({ page }) => {
-	await page.goto('/typography');
+	await page.goto('/components/typography');
 	expect(await page.textContent('h1')).toBe('Typography');
 });
 

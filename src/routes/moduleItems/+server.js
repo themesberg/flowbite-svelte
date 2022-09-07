@@ -17,7 +17,6 @@ export const components = [
 	{ href: '/components/card', name: 'Card' },
 	{ href: '/components/carousel', name: 'Carousel' },
 	{ href: '/components/darkmode', name: 'Dark mode' },
-	{ href: '/datepicker', name: 'Datepicker' },
 	{ href: '/components/drawer', name: 'Drawer' },
 	{ href: '/components/dropdown', name: 'Dropdown' },
 	{ href: '/components/footer', name: 'Footer' },
@@ -43,33 +42,37 @@ export const components = [
 ]
 
 export const forms = [
-	{ href: '/components/checkbox', name: 'Checkbox' },
-	{ href: '/components/file-input', name: 'File input' },
-	{ href: '/components/floating-label', name: 'Floating label' },
-	{ href: '/components/input-field', name: 'Input', rel:'external' },
-	{ href: '/components/radio', name: 'Radio' },
-	{ href: '/components/range', name: 'Range' },
-	{ href: '/components/search-input', name: 'Search' },
-	{ href: '/components/select', name: 'Select' },
-	{ href: '/components/textarea', name: 'Textarea' },
-	{ href: '/components/toggle', name: 'Toggle' }
+	{ href: '/forms/checkbox', name: 'Checkbox' },
+	{ href: '/forms/file-input', name: 'File input' },
+	{ href: '/forms/floating-label', name: 'Floating label' },
+	{ href: '/forms/input-field', name: 'Input', rel:'external' },
+	{ href: '/forms/radio', name: 'Radio' },
+	{ href: '/forms/range', name: 'Range' },
+	{ href: '/forms/search-input', name: 'Search' },
+	{ href: '/forms/select', name: 'Select' },
+	{ href: '/forms/textarea', name: 'Textarea' },
+	{ href: '/forms/toggle', name: 'Toggle' }
 ];
 
 export const typography = [
-	{ href: '/components/heading', name: 'Heading' },
-	{ href: '/components/blockquote', name: 'Blockquote' },
-	{ href: '/components/image', name: 'Image' },
-	{ href: '/components/link', name: 'Link' },
-	{ href: '/components/list', name: 'List' },
-	{ href: '/components/paragraph', name: 'Paragraph' },
-	{ href: '/components/text', name: 'Text' },
-	{ href: '/components/hr', name: 'HR' }
+	{ href: '/typography/heading', name: 'Heading' },
+	{ href: '/typography/blockquote', name: 'Blockquote' },
+	{ href: '/typography/image', name: 'Image' },
+	{ href: '/typography/link', name: 'Link' },
+	{ href: '/typography/list', name: 'List' },
+	{ href: '/typography/paragraph', name: 'Paragraph' },
+	{ href: '/typography/text', name: 'Text' },
+	{ href: '/typography/hr', name: 'HR' }
 ];
 
 export const utilities = [
-	{ href: '/components/closebutton', name: 'Close button' },
-	{ href: '/components/label', name: 'Label' },
-	{ href: '/components/toolbar', name: 'Toolbar' },
+	{ href: '/utilities/closebutton', name: 'Close button' },
+	{ href: '/utilities/label', name: 'Label' },
+	{ href: '/utilities/toolbar', name: 'Toolbar' },
+]
+
+export const experimental = [
+	{ href: '/datepicker', name: 'Datepicker' }
 ]
 
 export const topMenus = [

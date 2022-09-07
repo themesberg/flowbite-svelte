@@ -7,7 +7,7 @@ import { expect, test } from '@playwright/test';
 
 // Forms
 test('Form page should have h1', async ({ page }) => {
-	await page.goto('/forms');
+	await page.goto('/components/forms');
 	expect(await page.textContent('h1')).toBe('Forms');
 });
 

@@ -47,6 +47,7 @@ layout: componentLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
+  <BreadcrumbItem>Components</BreadcrumbItem>
   <BreadcrumbItem href="/footer">Mega Menu</BreadcrumbItem>
 </Breadcrumb>
 

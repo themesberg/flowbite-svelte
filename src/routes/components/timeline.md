@@ -77,6 +77,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
+  <BreadcrumbItem>Components</BreadcrumbItem>
   <BreadcrumbItem>Timeline</BreadcrumbItem>
 </Breadcrumb>
 
