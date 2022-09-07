@@ -1,5 +1,7 @@
 ---
 layout: pageLayout
+dir: Pages
+title: Getting Started
 ---
 <script>
   import { Htwo, ExampleDiv } from '../utils'
@@ -9,10 +11,11 @@ layout: pageLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>Getting started</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Getting Started</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <P class='mb-8'>You can install Flowbite-Svelte by using the <A href='/extend/flowbite-svelte-starter'>Flowbite-Svelte-Start</A> or from scratch.</P>
 

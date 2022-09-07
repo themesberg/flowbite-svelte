@@ -1,5 +1,7 @@
 ---
 layout: formLayout
+dir: Forms
+title: Toggle
 ---
 
 <script>
@@ -17,11 +19,11 @@ layout: formLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem href="/forms/" rel="external">Forms</BreadcrumbItem>
-  <BreadcrumbItem>Toggle</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Toggle</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>Use the toggle component to switch between a binary state of true or false using a single click available in multiple sizes, variants, and colors</CompoDescription>
 

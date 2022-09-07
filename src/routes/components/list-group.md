@@ -1,5 +1,7 @@
 ---
 layout: componentLayout
+dir: Components
+title: List Group
 ---
 
 <script>
@@ -39,11 +41,11 @@ layout: componentLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>Components</BreadcrumbItem>
-  <BreadcrumbItem href="/footer">List group</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">List Group</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>Use the list group component to display a series of items, buttons or links inside a single element</CompoDescription>
 

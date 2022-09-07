@@ -1,5 +1,7 @@
 ---
 layout: formLayout
+dir: Forms
+title: Textarea
 ---
 
 <script>
@@ -25,11 +27,11 @@ layout: formLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem href="/forms/" rel="external">Forms</BreadcrumbItem>
-  <BreadcrumbItem>Textarea</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Textarea</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>Use the textarea component as a multi-line text field input and use it inside form elements available in multiple sizes, styles, and variants</CompoDescription>
 

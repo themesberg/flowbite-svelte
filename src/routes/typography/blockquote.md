@@ -1,10 +1,12 @@
 ---
 layout: typographyLayout
+dir: Typography
+title: Blockquote
 ---
 
 <script>
 	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../utils'
-	import { Blockquote, P, Heading, A, Mark, Secondary, TextGradient,  Rating, Breadcrumb, BreadcrumbItem } from '$lib';
+	import { Blockquote, P, Heading, A, Mark, Secondary,  Rating, Breadcrumb, BreadcrumbItem } from '$lib';
 	
 	import componentProps1 from '../props/Blockquote.json'
   let items1 = componentProps1.props
@@ -16,11 +18,11 @@ layout: typographyLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem href="/components/typography/">Typography</BreadcrumbItem>
-	<BreadcrumbItem>Blockquote</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Blockquote</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>The blockquote component can be used to quote text content from an external source that can be used for testimonials, reviews, and quotes inside an article</CompoDescription>
 

@@ -1,5 +1,7 @@
 ---
 layout: componentLayout
+dir: Components
+title: Button
 ---
 
 <script>
@@ -29,11 +31,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>Components</BreadcrumbItem>
-  <BreadcrumbItem>Button</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Button</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>Use the button component inside forms, as links, social login, payment options with support for multiple styles, colors, sizes, gradients, and shadows</CompoDescription>
 

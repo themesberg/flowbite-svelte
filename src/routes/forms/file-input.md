@@ -1,5 +1,7 @@
 ---
 layout: formLayout
+dir: Forms
+title: File Input
 ---
 
 <script>
@@ -24,11 +26,11 @@ layout: formLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem href="/forms/" rel="external">Forms</BreadcrumbItem>
-  <BreadcrumbItem>File input</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">File</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>Get started with the file input component to let the user to upload one or more files from their device storage based on multiple styles and sizes</CompoDescription>
 

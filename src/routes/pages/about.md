@@ -1,5 +1,7 @@
 ---
 layout: pageLayout
+dir: Pages
+title: About Flowbite-Svelte
 ---
 
 <script>
@@ -10,10 +12,11 @@ layout: pageLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>About</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">About Flowbite-Svelte</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <Htwo label="Svelte" />
 

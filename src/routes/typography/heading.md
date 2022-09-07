@@ -1,5 +1,7 @@
 ---
 layout: typographyLayout
+dir: Typography
+title: Heading
 ---
 
 <script>
@@ -26,11 +28,11 @@ layout: typographyLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem href="/components/typography/">Typography</BreadcrumbItem>
-	<BreadcrumbItem>Heading</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="w-full mb-2" tag="h1" customSize="text-3xl">Heading</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>The heading component defines six levels of title elements from H1 to H6 that are used as titles and subtitles on a web page based on multiple styles and layouts</CompoDescription>
 

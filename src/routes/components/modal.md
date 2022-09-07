@@ -1,5 +1,7 @@
 ---
 layout: componentLayout
+dir: Components
+title: Modal
 ---
 
 <script>
@@ -35,11 +37,11 @@ layout: componentLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>Components</BreadcrumbItem>
-  <BreadcrumbItem>Modal</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Modal</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>Use the modal component to show interactive dialogs and notifications to your website users available in multiple sizes, colors, and styles</CompoDescription>
 

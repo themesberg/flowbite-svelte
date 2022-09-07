@@ -1,5 +1,7 @@
 ---
 layout: componentLayout
+dir: Components
+title: Progress
 ---
 
 <script>
@@ -19,11 +21,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>Components</BreadcrumbItem>
-  <BreadcrumbItem>Progress bar</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Progress</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>Use the progress bar component to show the completion rate of a data indicator or use it as a loader element</CompoDescription>
 

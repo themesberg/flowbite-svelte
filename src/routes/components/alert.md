@@ -1,5 +1,7 @@
 ---
 layout: componentLayout
+title: Alert
+dir: Components
 ---
 
 <script>
@@ -23,8 +25,8 @@ layout: componentLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>Components</BreadcrumbItem>
-  <BreadcrumbItem>Alert</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
 <Heading class="mb-2" tag="h1" customSize="text-3xl">Alert</Heading>
@@ -32,7 +34,7 @@ layout: componentLayout
 <CompoDescription>Show contextual information to your users using alert elements based on Tailwind CSS</CompoDescription>
 
 <ExampleDiv>
-<GitHubSource href="alerts/Alert.svelte">Alert</GitHubSource>
+<GitHubSource href="alerts/Alert.svelte">{title}</GitHubSource>
 </ExampleDiv>
 
 The alert component can be used to provide information to your users such as success or error messages, but also highlighted information complementing the normal flow of paragraphs and headers on a page. Flowbite also includes dismissable alerts which can be hidden by the users by clicking on the close icon.

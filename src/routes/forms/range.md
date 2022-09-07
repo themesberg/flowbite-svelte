@@ -1,5 +1,7 @@
 ---
 layout: formLayout
+dir: Forms
+title: Range
 ---
 
 <script>
@@ -19,11 +21,11 @@ layout: formLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem href="/forms/" rel="external">Forms</BreadcrumbItem>
-  <BreadcrumbItem>Range</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Range</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>Get started with the range component to receive a number from the user anywhere from 1 to 100 by sliding form control horizontally based on multiple options</CompoDescription>
 

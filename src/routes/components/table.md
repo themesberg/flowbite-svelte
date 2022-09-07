@@ -1,5 +1,7 @@
 ---
 layout: componentLayout
+dir: Components
+title: Table
 ---
 
 <script>
@@ -35,11 +37,11 @@ layout: componentLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>Components</BreadcrumbItem>
-  <BreadcrumbItem>Table</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Table</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>Use the table component to show text, images, links, and other elements inside a structured set of data made up of rows and columns of table cells</CompoDescription>
 

@@ -1,5 +1,7 @@
 ---
 layout: componentLayout
+title: Avatar
+dir: Components
 ---
 
 <script>
@@ -19,11 +21,11 @@ layout: componentLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>Components</BreadcrumbItem>
-  <BreadcrumbItem>Avatar</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Avatar</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 
 <CompoDescription>Use the avatar component to show a visual representation of a user profile using an image element or SVG object based on multiple styles and sizes</CompoDescription>

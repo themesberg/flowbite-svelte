@@ -1,5 +1,7 @@
 ---
 layout: pageLayout
+dir: Pages
+title: How to Contribute
 ---
 
 <script>
@@ -10,10 +12,11 @@ layout: pageLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>How to contribute</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">How to Contribute</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <p class='w-full'>Here are some guidelines we'd like you to follow before submitting a PR.</p>
 

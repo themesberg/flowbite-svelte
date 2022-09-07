@@ -1,5 +1,7 @@
 ---
 layout: utilitiesLayout
+dir: Utilities
+title: Label
 ---
 
 <script>
@@ -22,12 +24,12 @@ layout: utilitiesLayout
 </script>
 
 <Breadcrumb class="pb-8">
-	<BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-	<BreadcrumbItem>Utilities</BreadcrumbItem>
-	<BreadcrumbItem>Label</BreadcrumbItem>
+  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="w-full mb-2" tag="h1" customSize="text-3xl">Label</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription
 	>The Label components are used throughout the library and you can use it for your app as well</CompoDescription

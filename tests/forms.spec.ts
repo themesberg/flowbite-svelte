@@ -18,7 +18,7 @@ test('Checkbox page should have h1', async ({ page }) => {
 
 test('File input page should have h1', async ({ page }) => {
 	await page.goto('/forms/file-input');
-	expect(await page.textContent('h1')).toBe('File');
+	expect(await page.textContent('h1')).toBe('File Input');
 });
 
 test('Floating label page should have h1', async ({ page }) => {

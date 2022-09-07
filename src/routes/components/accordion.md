@@ -1,5 +1,7 @@
 ---
 layout: componentLayout
+title: Accordion
+dir: Components
 ---
 
 <script>
@@ -23,11 +25,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>Components</BreadcrumbItem>
-  <BreadcrumbItem>Accordion</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Accordion</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>Use the accordion component to show hidden information based on the collapse and expand state of the child elements using data attribute options</CompoDescription>
 

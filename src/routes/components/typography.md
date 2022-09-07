@@ -1,5 +1,7 @@
 ---
 layout: typographyLayout
+dir: Components
+title: Typography
 ---
 
 <script>
@@ -8,14 +10,13 @@ layout: typographyLayout
 	;
 </script>
 
-
 <Breadcrumb class="pb-8">
-	<BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-	<BreadcrumbItem>Components</BreadcrumbItem>
-	<BreadcrumbItem>Typography</BreadcrumbItem>
+  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Typography</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>Use the typography and the utility classes from Tailwind CSS to style text with FlowBite</CompoDescription>
 

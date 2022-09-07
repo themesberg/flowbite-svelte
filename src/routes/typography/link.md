@@ -1,5 +1,7 @@
 ---
 layout: typographyLayout
+dir: Typography
+title: Link
 ---
 
 <script>
@@ -17,11 +19,11 @@ layout: typographyLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem href="/components/typography/">Typography</BreadcrumbItem>
-	<BreadcrumbItem>Link</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="w-full mb-2" tag="h1" customSize="text-3xl">Link</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>The link component can be used to set hyperlinks from one page to another or to an external website when clicking on an inline text item, button, or card</CompoDescription>
 

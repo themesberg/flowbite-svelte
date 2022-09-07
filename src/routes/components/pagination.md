@@ -1,5 +1,7 @@
 ---
 layout: componentLayout
+dir: Components
+title: Pagination
 ---
 
 <script lang="ts">
@@ -58,11 +60,11 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>Components</BreadcrumbItem>
-  <BreadcrumbItem>Pagination</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Pagination</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>Use the Tailwind CSS pagination element to indicate a series of content across various pages</CompoDescription>
 

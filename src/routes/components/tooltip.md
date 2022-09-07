@@ -1,5 +1,7 @@
 ---
 layout: componentLayout
+dir: Components
+title: Tooltip
 ---
 
 <script>
@@ -20,11 +22,11 @@ layout: componentLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>Components</BreadcrumbItem>
-  <BreadcrumbItem>Tooltip</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Tooltip</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>Use the following Tailwind CSS powered tooltips to show extra content when hovering or focusing on an element</CompoDescription>
 

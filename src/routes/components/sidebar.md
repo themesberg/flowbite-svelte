@@ -1,5 +1,7 @@
 ---
 layout: componentLayout
+dir: Components
+title: Sidebar
 ---
 
 <script>
@@ -41,11 +43,11 @@ layout: componentLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>Components</BreadcrumbItem>
-  <BreadcrumbItem>Sidebar</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Sidebar</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>Use the sidebar component to show a list of menu items and multi-level dropdown items on either side of the page to navigate on your website</CompoDescription>
 

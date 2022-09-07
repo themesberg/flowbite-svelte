@@ -1,5 +1,7 @@
 ---
 layout: componentLayout
+dir: Components
+title: Drawer
 ---
 
 <script>
@@ -51,11 +53,11 @@ layout: componentLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>Components</BreadcrumbItem>
-  <BreadcrumbItem>Drawer</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Drawer</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>The Drawer component can be used as a hidden off-canvas sidebar for navigation and to show other information based on multiple styles and placements</CompoDescription>
 

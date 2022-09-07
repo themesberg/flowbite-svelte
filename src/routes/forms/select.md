@@ -1,5 +1,7 @@
 ---
 layout: formLayout
+dir: Forms
+title: Select
 ---
 
 <script>
@@ -36,11 +38,11 @@ let states = [
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem href="/forms/" rel="external">Forms</BreadcrumbItem>
-  <BreadcrumbItem>Select</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Select</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>Get started with the select component to allow the user to choose from one or more options from a dropdown list based on multiple styles, sizes, and variants</CompoDescription>
 

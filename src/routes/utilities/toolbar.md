@@ -1,5 +1,7 @@
 ---
 layout: utilitiesLayout
+dir: Utilities
+title: Toolbar
 ---
 
 <script>
@@ -19,11 +21,11 @@ layout: utilitiesLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>Utilities</BreadcrumbItem>
-  <BreadcrumbItem>Toolbar</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="w-full mb-2" tag="h1" customSize="text-3xl">Toolbar</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>Use the following Tailwind CSS powered toolbars to show groups of tool buttons</CompoDescription>
 

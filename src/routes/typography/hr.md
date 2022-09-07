@@ -1,5 +1,7 @@
 ---
 layout: typographyLayout
+dir: Typography
+title: Horizontal Line (HR)
 ---
 
 <script>
@@ -18,11 +20,11 @@ layout: typographyLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem href="/components/typography/">Typography</BreadcrumbItem>
-	<BreadcrumbItem>Horizontal Line (HR)</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="w-full mb-2" tag="h1" customSize="text-3xl">Horizontal Line (HR)</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>Create a horizontal line using the `Hr` component to separate content such as paragraphs, blockquotes, and other elements</CompoDescription>
 

@@ -1,5 +1,7 @@
 ---
 layout: componentLayout
+dir: Extend
+title: Guidance for using external icon libraries
 ---
 
 <script>
@@ -10,11 +12,11 @@ layout: componentLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>Extend</BreadcrumbItem>
-  <BreadcrumbItem>Icons</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Guidance for using external icon libraries</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 Instead of using SVG icons, using an icon library simplifies the code. You can uses <A href="https://www.npmjs.com/package/svelte-heros-v2" target="_blank">Svelte-Heros-v2</A> and <A href="https://svelte-svg-icons.vercel.app/" target="_blank">other icon sets</A> for Flowbite-Svelte.
 

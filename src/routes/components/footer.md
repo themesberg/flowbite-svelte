@@ -1,5 +1,7 @@
 ---
 layout: componentLayout
+dir: Components
+title: Footer
 ---
 
 <script>
@@ -29,11 +31,11 @@ layout: componentLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>Components</BreadcrumbItem>
-  <BreadcrumbItem>Footer</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Footer</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>Use the footer section at the bottom of every page to show valuable information to your users, such as sitemap links, a copyright notice, and a logo</CompoDescription>
 

@@ -1,5 +1,7 @@
 ---
 layout: formLayout
+dir: Forms
+title: Floating Label
 ---
 
 <script>
@@ -18,11 +20,11 @@ layout: formLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem href="/forms/" rel="external">Forms</BreadcrumbItem>
-  <BreadcrumbItem>Floating label</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Floating Label</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>Use the floating label style for the input field elements to replicate the Material UI design system from Google and choose from multiple styles and sizes</CompoDescription>
 

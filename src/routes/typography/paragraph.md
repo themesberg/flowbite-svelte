@@ -1,5 +1,7 @@
 ---
 layout: typographyLayout
+dir: Typography
+title: Paragraph
 ---
 
 <script>
@@ -26,12 +28,12 @@ layout: typographyLayout
 </script>
 
 <Breadcrumb class="pb-8">
-  <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
-  <BreadcrumbItem href="/components/typography/">Typography</BreadcrumbItem>
-  <BreadcrumbItem>Paragraph</BreadcrumbItem>
+  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="w-full mb-2" tag="h1" customSize="text-3xl">Paragraph</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>
   Use the paragraph component to create multiple blocks of text separated by blank lines and write

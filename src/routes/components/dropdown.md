@@ -1,5 +1,7 @@
 ---
 layout: componentLayout
+dir: Component
+title: Dropdown
 ---
 
 <script>
@@ -39,11 +41,11 @@ layout: componentLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>Components</BreadcrumbItem>
-  <BreadcrumbItem>Dropdown</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">Dropdown</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>Get started with the dropdown component to show a list of menu items when clicking on the trigger element based on multiple layouts, styles, and placements</CompoDescription>
 

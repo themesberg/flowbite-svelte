@@ -1,5 +1,7 @@
 ---
 layout: componentLayout
+dir: Components
+title: KBD (Keyboard)
 ---
 
 <script>
@@ -26,11 +28,11 @@ layout: componentLayout
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>Components</BreadcrumbItem>
-  <BreadcrumbItem>Kbd</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">KBD (Keyboard)</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>Use the KBD component as an inline element to denote textual user input from the keyboard inside paragraphs, tables, and other components</CompoDescription>
 

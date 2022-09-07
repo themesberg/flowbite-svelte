@@ -22,7 +22,7 @@ test('How to contribute page should have h1', async ({ page }) => {
 
 test('License page should have h1', async ({ page }) => {
 	await page.goto('/pages/license');
-	expect(await page.textContent('h1')).toBe('LICENSE');
+	expect(await page.textContent('h1')).toBe('License');
 });
 
 test('Type list page should have h1', async ({ page }) => {

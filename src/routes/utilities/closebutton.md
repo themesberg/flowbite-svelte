@@ -1,5 +1,7 @@
 ---
 layout: utilitiesLayout
+dir: Utilities
+title: CloseButton
 ---
 
 <script>
@@ -22,14 +24,13 @@ layout: utilitiesLayout
 	let theadClass = 'text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white';
 </script>
 
-
 <Breadcrumb class="pb-8">
-	<BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-	<BreadcrumbItem>Utilities</BreadcrumbItem>
-	<BreadcrumbItem>CloseButton</BreadcrumbItem>
+  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
+  <BreadcrumbItem>{dir}</BreadcrumbItem>
+  <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
 
-<Heading class="w-full mb-2" tag="h1" customSize="text-3xl">CloseButton</Heading>
+<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>
 The CloseButton components are used throughout the library and you can use it for your app as well
