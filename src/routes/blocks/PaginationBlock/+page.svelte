@@ -1,5 +1,5 @@
 <a
-  href="/pagination/"
+  href="/components/pagination"
   {...$$restProps}
   class="h-64 bg-white rounded-lg border border-gray-100 hover:border-white dark:border-gray-700 dark:hover:border-gray-600 hover:shadow-lg dark:hover:shadow-lg-light dark:bg-gray-900"
   ><div
