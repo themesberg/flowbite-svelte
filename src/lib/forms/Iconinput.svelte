@@ -1,6 +1,8 @@
 <script lang="ts">
 	import classNames from 'classnames';
+	import type { InputType } from '../types';
 
+	export let type: InputType = 'text';
 	export let value: string = '';
 	export let size: 'sm' | 'md' | 'lg' = 'md';
 	export let noBorder: boolean = false;
@@ -12,6 +14,11 @@
 		'bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full   dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
 	export let pointerEvent: boolean = false;
 	export let noBorderDivClass: string = 'flex absolute inset-y-0 left-0 items-center pl-3';
+
+	// you need to this to avoid 2-way binding
+	const setType = (node) => {
+		node.type = type;
+	};
 </script>
 
 {#if noBorder}
@@ -31,6 +38,18 @@
 		<input
 			{...$$restProps}
 			bind:value
+      on:blur
+      on:change
+      on:click
+      on:focus
+      on:keydown
+      on:keypress
+      on:keyup
+      on:mouseover
+      on:mouseenter
+      on:mouseleave
+      on:paste
+      use:setType
 			class={classNames(
 				noBorderInputClass,
 				{
@@ -49,6 +68,18 @@
 		<input
 			{...$$restProps}
 			bind:value
+      on:blur
+      on:change
+      on:click
+      on:focus
+      on:keydown
+      on:keypress
+      on:keyup
+      on:mouseover
+      on:mouseenter
+      on:mouseleave
+      on:paste
+      use:setType
 			class={classNames(
 				inputClass,
 				{
