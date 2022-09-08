@@ -38,18 +38,18 @@
 		<input
 			{...$$restProps}
 			bind:value
-      on:blur
-      on:change
-      on:click
-      on:focus
-      on:keydown
-      on:keypress
-      on:keyup
-      on:mouseover
-      on:mouseenter
-      on:mouseleave
-      on:paste
-      use:setType
+			on:blur
+			on:change
+			on:click
+			on:focus
+			on:keydown
+			on:keypress
+			on:keyup
+			on:mouseover
+			on:mouseenter
+			on:mouseleave
+			on:paste
+			use:setType
 			class={classNames(
 				noBorderInputClass,
 				{
@@ -68,18 +68,18 @@
 		<input
 			{...$$restProps}
 			bind:value
-      on:blur
-      on:change
-      on:click
-      on:focus
-      on:keydown
-      on:keypress
-      on:keyup
-      on:mouseover
-      on:mouseenter
-      on:mouseleave
-      on:paste
-      use:setType
+			on:blur
+			on:change
+			on:click
+			on:focus
+			on:keydown
+			on:keypress
+			on:keyup
+			on:mouseover
+			on:mouseenter
+			on:mouseleave
+			on:paste
+			use:setType
 			class={classNames(
 				inputClass,
 				{
