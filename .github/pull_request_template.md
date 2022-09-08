@@ -47,5 +47,21 @@ git checkout <your_branch_name>
 git rebase main
 ```
 
+You may have some merge conficts. Resolve these merge conficts and add/continue:
+
+```sh
+git add . // or git add <conflicted_files>
+git rebase --continue
+```
+
+If you are feeling something wrong then abort it:
+
+```sh
+git rebase --abort
+```
+
+It’s a good idea to rebase from time to
+time, so you aren’t left too far behind the parent branch.
+
 ## ℹ Additional Information
 <!-- Any additional information like breaking changes, dependencies added, screenshots, comparisons between new and old behavior, etc. -->
