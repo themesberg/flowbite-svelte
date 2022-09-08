@@ -24,7 +24,7 @@ Closes # <!-- Issue # here -->
 - [ ] All the tests have passed
 - [ ] My pull request is based on the latest commit (not the npm version).
 
-If your branch is behind the upstream master, I may have difficulties to merge the request. Please fetch the latest version of the main branch:
+If your branch is behind the upstream main, I may have difficulties to merge the request. Please fetch the latest version of the main branch:
 
 ```sh
 git checkout your-branch
@@ -36,6 +36,15 @@ or
 ```sh
 git checkout your-branch
 git pull --rebase upstream main
+```
+
+or
+
+```sh
+git checkout main
+git pull origin main
+git checkout <your_branch_name>
+git rebase main
 ```
 
 ## ℹ Additional Information
