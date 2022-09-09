@@ -26,6 +26,8 @@ Closes # <!-- Issue # here -->
 
 If your branch is behind the upstream main, I may have difficulties to merge the request. Please fetch the latest version of the main branch:
 
+<!--
+
 ```sh
 git checkout your-branch
 git pull upstream main
@@ -62,6 +64,7 @@ git rebase --abort
 
 It’s a good idea to rebase from time to
 time, so you aren’t left too far behind the parent branch.
+-->
 
 ## ℹ Additional Information
 <!-- Any additional information like breaking changes, dependencies added, screenshots, comparisons between new and old behavior, etc. -->
