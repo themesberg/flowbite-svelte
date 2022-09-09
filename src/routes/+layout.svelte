@@ -22,6 +22,10 @@
     experimental
   } from './moduleItems/+server.js';
 
+  import { fade } from 'svelte/transition';
+
+  export let data;
+
   let asideClass =
     'absolute w-auto bg-white pt-8 shadow-lg z-40 h-screen px-4 overflow-scroll dark:bg-gray-900';
 
@@ -127,13 +131,18 @@
     </Nav>
   </Side>
 
-  <main class="flex mx-auto pt-12 pb:12 xl:pb-24 lg:pb-16 lg:pl-60 ">
-    <DarkMode btnClass={darkmodebtn} />
-    <div class="w-full px-4 sm:px-8">
-      <slot />
-    </div>
-    <Toc />
-  </main>
+  {#key data.currentRoute}
+    <main
+      in:fade={{ duration: 150, delay: 150 }}
+      out:fade={{ duration: 150 }}
+      class="flex mx-auto pt-12 pb:12 xl:pb-24 lg:pb-16 lg:pl-60 ">
+      <DarkMode btnClass={darkmodebtn} />
+      <div class="w-full px-4 sm:px-8">
+        <slot />
+      </div>
+      <Toc />
+    </main>
+  {/key}
 </div>
 <div class="mx-auto mb-4 pt-4 lg:pl-60">
   <Footer footerType="custom" customClass="py-6 px-16 bg-white dark:bg-gray-900">
