@@ -118,12 +118,6 @@
         <SidebarList {href} {name} {rel} {sideBarListClass} />
       {/each}
     </Nav>
-    <Nav {navClass} navDivClass={navDivClasslast}>
-      <h3 class={h3Category}>Experimental</h3>
-      {#each experimental as { href, name, rel }}
-        <SidebarList {href} {name} {rel} {sideBarListClass} />
-      {/each}
-    </Nav>
   </Side>
 
   <main class="flex mx-auto pt-12 pb:12 xl:pb-24 lg:pb-16 lg:pl-60 ">

@@ -7,7 +7,7 @@
   export let hidden: boolean = true;
   export let position: 'fixed' | 'absolute' = 'fixed';
   export let leftOffset: string = 'inset-y-0 left-0';
-  export let rightOffset: string = 'inset-y-0right-0';
+  export let rightOffset: string = 'inset-y-0 right-0';
   export let topOffset: string = 'inset-x-0 top-0';
   export let bottomOffset: string = 'inset-x-0 bottom-0';
   export let width: string = 'w-80';
