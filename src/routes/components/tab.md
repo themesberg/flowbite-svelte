@@ -864,6 +864,12 @@ You can add other components to the `TabContentItem` component. Here we are addi
 </TabWrapper>
 ```
 
+<Htwo label="Custom style" />
+
+For TabHead component, set `tabStyle='custom'`, and your style in `customUlClass='your-css'`, and `customDivClass='your-css'`.
+
+For TabHeadItem component, set `tabStyle='custom'`, and your style in `customActiveClass='your-css'`, and `customInActiveClass='your-css'`.
+
 <Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types 
