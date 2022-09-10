@@ -1,6 +1,6 @@
 <script lang="ts">
   import { quartInOut } from 'svelte/easing';
-  import Toc from './Toc/+page.svelte';
+
   import '../app.css';
   import {
     DarkMode,
@@ -125,7 +125,6 @@
     <div class="w-full px-4 sm:px-8">
       <slot />
     </div>
-    <Toc />
   </main>
 </div>
 <div class="mx-auto mb-4 pt-4 lg:pl-60">
