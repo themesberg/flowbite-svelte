@@ -1,6 +1,7 @@
 <script lang="ts">
+  import { quartInOut } from 'svelte/easing';
+  import Toc from './Toc/+page.svelte';
   import '../app.css';
-
   import {
     DarkMode,
     Footer,
@@ -21,10 +22,6 @@
     extend,
     experimental
   } from './moduleItems/+server.js';
-
-  import { fade } from 'svelte/transition';
-
-  export let data;
 
   let asideClass =
     'absolute w-auto bg-white pt-8 shadow-lg z-40 h-screen px-4 overflow-scroll dark:bg-gray-900';
@@ -60,8 +57,6 @@
     'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 fixed right-4 top-2 z-50';
   let sideBarListClass = 'mb-4 px-0 xl:px-4 text-base';
   let h3Category = 'text-base pb-4 uppercase font-semibold';
-  import { quartInOut } from 'svelte/easing';
-  import Toc from './Toc/+page.svelte';
   let transitionParams = {
     duration: 500,
     delay: 100,
@@ -131,18 +126,13 @@
     </Nav>
   </Side>
 
-  {#key data.currentRoute}
-    <main
-      in:fade={{ duration: 150, delay: 150 }}
-      out:fade={{ duration: 150 }}
-      class="flex mx-auto pt-12 pb:12 xl:pb-24 lg:pb-16 lg:pl-60 ">
-      <DarkMode btnClass={darkmodebtn} />
-      <div class="w-full px-4 sm:px-8">
-        <slot />
-      </div>
-      <Toc />
-    </main>
-  {/key}
+  <main class="flex mx-auto pt-12 pb:12 xl:pb-24 lg:pb-16 lg:pl-60 ">
+    <DarkMode btnClass={darkmodebtn} />
+    <div class="w-full px-4 sm:px-8">
+      <slot />
+    </div>
+    <Toc />
+  </main>
 </div>
 <div class="mx-auto mb-4 pt-4 lg:pl-60">
   <Footer footerType="custom" customClass="py-6 px-16 bg-white dark:bg-gray-900">
