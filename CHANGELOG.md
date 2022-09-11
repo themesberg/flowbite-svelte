@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.17](https://github.com/themesberg/flowbite-svelte/compare/v0.26.16...v0.26.17) (2022-09-11)
+
+
+### Features
+
+* add active to SidebarItem component and an example in the page ([af80c2b](https://github.com/themesberg/flowbite-svelte/commit/af80c2b7c1d81e711bba0faca959e6501b31257c))
+* add md files in components folder ([8d7e05a](https://github.com/themesberg/flowbite-svelte/commit/8d7e05a0098437ac7ddd3f9122a2c23f481e54cd))
+
+
+### Bug Fixes
+
+* Drawer placement right ([4fe9283](https://github.com/themesberg/flowbite-svelte/commit/4fe928380f4bb95c59e311e7ccc3a8ae49fda89d))
+* remove Datepicker from index ([f08230c](https://github.com/themesberg/flowbite-svelte/commit/f08230c84d29f172f1a30a6194e2694eb65f3e3e))
+* remove Toc from layout since it needs to be updated ([2ea41a0](https://github.com/themesberg/flowbite-svelte/commit/2ea41a0c82bb8a7f583a001c1c5f598ac5855102))
+
 ### [0.26.16](https://github.com/themesberg/flowbite-svelte/compare/v0.26.15...v0.26.16) (2022-09-06)
 
 
