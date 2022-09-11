@@ -304,7 +304,7 @@ Use this sidebar example to create multi-level menu items by using the dSidebarD
 
 <Htwo label="Active item" />
 
-Use the following example to show the active item.
+Use the following example to show the active item. Use the `activeClass` prop to change the style.
 
 <ExampleDiv>
 <script>
