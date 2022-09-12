@@ -39,7 +39,7 @@ title: Sidebar
   };
 
   let spanClass = 'flex-1 ml-3 whitespace-nowrap';
-  const activeUrl = $page.url.pathname
+  $: activeUrl = $page.url.pathname
 
 </script>
 
@@ -307,11 +307,6 @@ Use this sidebar example to create multi-level menu items by using the dSidebarD
 Use the following example to show the active item. Use the `activeClass` prop to change the style.
 
 <ExampleDiv>
-<script>
-  import { page } from '$app/stores'; 
-  const activeUrl = $page.url.pathname
-</script>
-
 <Sidebar>
   <SidebarWrapper>
     <SidebarGroup>
@@ -324,11 +319,15 @@ Use the following example to show the active item. Use the `activeClass` prop to
 
 ```svelte
 <script>
-  // example for SvelteKit
-  // for Sveltejs use onMount and window.location.href
+  // example 1 for SvelteKit
   import { page } from '$app/stores'; 
-
-  const activeUrl = $page.url.pathname
+  $: activeUrl = $page.url.pathname
+  // example 2
+  // $: activeUrl = $page.url.pathname + $page.url.hash
+  // example 3
+  // const pageorigin = $page.url.origin
+  // const pagehref = $page.url.href
+  // $: activeUrl = pagehref.replace(pageorigin, '')
 </script>
 
 <Sidebar>
