@@ -41,7 +41,6 @@
     'w-full z-50 px-6 bg-white h-14 pt-2 text-gray-600 border-b-2 dark:bg-gray-800 dark:text-white dark:border-b-1';
   let siteName = 'Flowbite Svelte';
   let navClass = 'py-0 px-4 text-base bg-white dark:bg-gray-900 dark:text-white';
-  let navDivClasslast = 'pb-24';
   let siteClass = ' w-full pt-0.5';
   let spanClass =
     'pl-2 self-center text-md sm:text-lg font-semibold text-gray-900 whitespace-nowrap dark:text-white';
@@ -115,6 +114,12 @@
     <Nav {navClass} class="pb-2">
       <h3 class={h3Category}>Utilities</h3>
       {#each utilities as { href, name, rel }}
+        <SidebarList {href} {name} {rel} {sideBarListClass} />
+      {/each}
+    </Nav>
+    <Nav {navClass} class="pb-24">
+      <h3 class={h3Category}>Experimental</h3>
+      {#each experimental as { href, name, rel }}
         <SidebarList {href} {name} {rel} {sideBarListClass} />
       {/each}
     </Nav>

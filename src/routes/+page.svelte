@@ -95,6 +95,7 @@
   <CardBlock />
   <CarouselBlock />
   <CheckboxBlock />
+  <DatepickerBlock />
   <DrawerBlock />
   <DropdownBlock />
   <FileinputBlock />

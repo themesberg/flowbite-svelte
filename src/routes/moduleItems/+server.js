@@ -45,7 +45,7 @@ export const forms = [
 	{ href: '/forms/checkbox', name: 'Checkbox' },
 	{ href: '/forms/file-input', name: 'File input' },
 	{ href: '/forms/floating-label', name: 'Floating label' },
-	{ href: '/forms/input-field', name: 'Input', rel:'external' },
+	{ href: '/forms/input-field', name: 'Input', rel: 'external' },
 	{ href: '/forms/radio', name: 'Radio' },
 	{ href: '/forms/range', name: 'Range' },
 	{ href: '/forms/search-input', name: 'Search' },
@@ -72,7 +72,7 @@ export const utilities = [
 ]
 
 export const experimental = [
-	{ href: '/datepicker', name: 'Datepicker' }
+	{ href: '/datepicker', rel: 'external', name: 'Datepicker' }
 ]
 
 export const topMenus = [
