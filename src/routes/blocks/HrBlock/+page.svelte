@@ -1,10 +1,10 @@
 <a
-  href="/components/video"
+  href="/typography/hr/"
   class="h-64 bg-white rounded-lg border border-gray-100 hover:border-white dark:border-gray-700 dark:hover:border-gray-600 hover:shadow-lg dark:hover:shadow-lg-light dark:bg-gray-900"
   ><div
     class="bg-gray-50 dark:bg-gray-700 rounded-t-md py-2.5 px-5 flex justify-between items-center border-b border-gray-200 dark:border-gray-700">
-    <span class="text-lg font-medium text-gray-500 dark:text-gray-400">Video</span><span
-      class="text-gray-900 dark:text-white"
+    <span class="text-lg font-medium text-gray-500 dark:text-gray-400">Horizontal line (HR)</span
+    ><span class="text-gray-900 dark:text-white"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -24,23 +24,23 @@
       <span
         style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"
         ><img
-          alt="Video"
-          src="/images/components/video.svg"
+          alt="Horizontal line (HR)"
+          src="/images/components/hr.svg"
           decoding="async"
           data-nimg="fill"
-          style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
-          sizes="100vw"
-          srcset="/images/components/video.svg 640w, /images/components/video.svg 750w, /images/components/video.svg 828w, /images/components/video.svg 1080w, /images/components/video.svg 1200w, /images/components/video.svg 1920w, /images/components/video.svg 2048w, /images/components/video.svg 3840w" /><noscript /></span>
+          style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;" /><noscript /></span>
     </div>
     <div class="hidden relative h-4/6 dark:block w-64">
       <span
         style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"
         ><img
-          alt="Video"
-          src="/images/components/video-dark.svg"
+          alt="Horizontal line (HR)"
+          src="/images/components/hr-dark.svg"
           decoding="async"
           data-nimg="fill"
           class="w-64"
-          style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;" /><noscript /></span>
+          style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
+          sizes="100vw"
+          srcset="/images/components/hr-dark.svg 640w, /images/components/hr-dark.svg 750w, /images/components/hr-dark.svg 828w, /images/components/hr-dark.svg 1080w, /images/components/hr-dark.svg 1200w, /images/components/hr-dark.svg 1920w, /images/components/hr-dark.svg 2048w, /images/components/hr-dark.svg 3840w" /><noscript /></span>
     </div>
   </div></a>

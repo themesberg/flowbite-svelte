@@ -7,6 +7,7 @@
     AlertBlock,
     AvatarBlock,
     BadgeBlock,
+    BlockquoteBlock,
     BreadcrumbBlock,
     ButtonBlock,
     ButtongroupBlock,
@@ -20,13 +21,19 @@
     FloatingLabelBlock,
     FooterBlock,
     FormBlock,
+    HeadingBlock,
+    HrBlock,
+    ImageBlock,
     InputfieldBlock,
     KbdBlock,
+    LinkBlock,
+    ListBlock,
     ListgroupBlock,
     MegamenuBlock,
     ModalBlock,
     NavbarBlock,
     PaginationBlock,
+    ParagraphBlock,
     PopoverBlock,
     ProgressbarBlock,
     RadioBlock,
@@ -40,6 +47,7 @@
     TabBlock,
     TableBlock,
     TextareaBlock,
+    TextBlock,
     TimelineBlock,
     ToastBlock,
     ToggleBlock,
@@ -90,6 +98,7 @@
   <AvatarBlock />
   <BadgeBlock />
   <BreadcrumbBlock />
+  <BlockquoteBlock />
   <ButtonBlock />
   <ButtongroupBlock />
   <CardBlock />
@@ -102,13 +111,19 @@
   <FloatingLabelBlock />
   <FooterBlock />
   <FormBlock rel="external" />
+  <HeadingBlock />
+  <HrBlock />
+  <ImageBlock />
   <InputfieldBlock />
   <KbdBlock />
+  <LinkBlock />
+  <ListBlock />
   <ListgroupBlock />
   <MegamenuBlock />
   <ModalBlock />
   <NavbarBlock />
   <PaginationBlock />
+  <ParagraphBlock />
   <PopoverBlock />
   <ProgressbarBlock />
   <RadioBlock />
@@ -122,6 +137,7 @@
   <TabBlock />
   <TableBlock />
   <TextareaBlock />
+  <TextBlock />
   <TimelineBlock />
   <ToastBlock />
   <ToggleBlock />
