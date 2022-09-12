@@ -48,7 +48,7 @@ title: Sidebar
   <BreadcrumbItem>{dir}</BreadcrumbItem>
   <BreadcrumbItem>{title}</BreadcrumbItem>
 </Breadcrumb>
-
+{activeUrl}
 <Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <CompoDescription>Use the sidebar component to show a list of menu items and multi-level dropdown items on either side of the page to navigate on your website</CompoDescription>
