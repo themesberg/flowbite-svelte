@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Popper from '$lib/utils/Popper.svelte';
+	import Popper from '../utils/Popper.svelte';
 
 	export let title: string = '';
 	export let defaultClass: string = 'py-2 px-3';

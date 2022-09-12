@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Frame from '$lib/utils/Frame.svelte';
+	import Frame from '../utils/Frame.svelte';
 	import classNames from 'classnames';
 
 	export let navClass: string = 'px-2 sm:px-4 py-2.5';

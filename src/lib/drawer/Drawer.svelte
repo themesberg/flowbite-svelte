@@ -2,7 +2,7 @@
   import classNames from 'classnames';
   import type { drawerTransitionParamTypes, drawerTransitionTypes } from '../types';
   import { fly, slide, blur, fade } from 'svelte/transition';
-  import { clickOutside } from '$lib/utils/clickOutside';
+  import { clickOutside } from '../utils/clickOutside';
 
   export let hidden: boolean = true;
   export let position: 'fixed' | 'absolute' = 'fixed';

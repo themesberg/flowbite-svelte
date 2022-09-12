@@ -1,9 +1,9 @@
 <script lang="ts">
   import { setContext } from 'svelte';
   import classNames from 'classnames';
-  import type { ListGroupItemType } from '$lib/types';
+  import type { ListGroupItemType } from '../types';
   import ListgroupItem from './ListgroupItem.svelte';
-  import Frame from '$lib/utils/Frame.svelte';
+  import Frame from '../utils/Frame.svelte';
 
   export let items: ListGroupItemType[] = [];
   export let active: boolean = false;

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { NavbarType } from '../types';
-	import { clickOutside } from '$lib/utils/clickOutside';
+	import { clickOutside } from '../utils/clickOutside';
 
 	export let liButtonClass: string = 'flex items-center justify-between w-full';
 	export let name: string;

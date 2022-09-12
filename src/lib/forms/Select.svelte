@@ -1,6 +1,6 @@
 <script lang="ts">
   import classNames from 'classnames';
-  import type { SelectOptionType } from '$lib/types';
+  import type { SelectOptionType } from '../types';
 
   export let items: SelectOptionType[] = [];
   export let value: string;
