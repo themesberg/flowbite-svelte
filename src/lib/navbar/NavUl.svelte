@@ -2,7 +2,7 @@
 	import classNames from 'classnames';
 	import { slide } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
-	import Frame from '$lib/utils/Frame.svelte';
+	import Frame from '../utils/Frame.svelte';
 
 	export let divClass: string = 'w-full md:block md:w-auto';
 	export let ulClass: string =

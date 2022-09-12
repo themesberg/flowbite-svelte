@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Popper from '$lib/utils/Popper.svelte';
+	import Popper from '../utils/Popper.svelte';
 	import classNames from 'classnames';
 
 	export let color: string = 'custom';

@@ -3,7 +3,7 @@
 
 	import AvatarPlaceholder from './Placeholder.svelte';
 	import Dot from './Dot.svelte';
-	import type { DotType } from '$lib/types';
+	import type { DotType } from '../types';
 
 	export let src: string = '';
 	export let href: string = '#';
