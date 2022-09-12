@@ -41,6 +41,10 @@ title: Sidebar
   let spanClass = 'flex-1 ml-3 whitespace-nowrap';
   $: activeUrl = $page.url.pathname
 
+  $: containPath = ()=> {
+    return true
+    }
+
 </script>
 
 <Breadcrumb class="pb-8">
@@ -335,6 +339,50 @@ Use the following example to show the active item. Use the `activeClass` prop to
     <SidebarGroup>
       <SidebarItem label="Dashboard" href='/dashboard' active={activeUrl === '/dashboard'} />
       <SidebarItem label="Sidebar" href='/component/sidebar' active={activeUrl === '/components/sidebar'} />
+    </SidebarGroup>
+  </SidebarWrapper>
+</Sidebar>
+```
+
+<ExampleDiv>
+  <Sidebar>
+    <SidebarWrapper>
+      <SidebarGroup>
+        <SidebarItem label="Dashboard" active={activeUrl === '/dashboard'} />
+        <SidebarDropdownWrapper label="E-commerce" isOpen={containPath}>
+          <SidebarDropdownItem label="Products" href='/components/products' active={activeUrl === '/components/products'} />
+          <SidebarDropdownItem label="Sidebar" href='/components/sidebar' active={activeUrl === '/components/sidebar'}/>
+        </SidebarDropdownWrapper>
+        <SidebarDropdownWrapper label="Items">
+          <SidebarDropdownItem label="Item 1" href='/components/item1' active={activeUrl === '/components/item'} />
+          <SidebarDropdownItem label="Item 2" href='/components/item2' active={activeUrl === '/components/billing'} />
+        </SidebarDropdownWrapper>
+      </SidebarGroup>
+    </SidebarWrapper>
+  </Sidebar>
+</ExampleDiv>
+
+```html
+<script>
+...
+  $: containPath = ()=>{
+    // add your logic here
+    true
+  }
+</script>
+
+<Sidebar>
+  <SidebarWrapper>
+    <SidebarGroup>
+      <SidebarItem label="Dashboard" active={activeUrl === '/dashboard'} />
+      <SidebarDropdownWrapper label="E-commerce" isOpen={containPath}>
+        <SidebarDropdownItem label="Products" href='/components/products' active={activeUrl === '/components/products'} />
+        <SidebarDropdownItem label="Sidebar" href='/components/sidebar' active={activeUrl === '/components/sidebar'}/>
+      </SidebarDropdownWrapper>
+      <SidebarDropdownWrapper label="Items">
+        <SidebarDropdownItem label="Item 1" href='/components/item1' active={activeUrl === '/components/item'} />
+        <SidebarDropdownItem label="Item 2" href='/components/item2' active={activeUrl === '/components/billing'} />
+      </SidebarDropdownWrapper>
     </SidebarGroup>
   </SidebarWrapper>
 </Sidebar>

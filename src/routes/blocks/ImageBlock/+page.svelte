@@ -24,7 +24,7 @@
       <span
         style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"
         ><img
-          alt="Image"
+          alt="img block component"
           src="/images/components/image.svg"
           decoding="async"
           data-nimg="fill"
@@ -34,7 +34,7 @@
       <span
         style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"
         ><img
-          alt="Image"
+          alt="img block component"
           src="/images/components/image-dark.svg"
           decoding="async"
           data-nimg="fill"
