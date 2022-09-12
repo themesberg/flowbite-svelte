@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.18](https://github.com/themesberg/flowbite-svelte/compare/v0.26.17...v0.26.18) (2022-09-12)
+
+
+### Bug Fixes
+
+* [#281](https://github.com/themesberg/flowbite-svelte/issues/281) ([5f79a5e](https://github.com/themesberg/flowbite-svelte/commit/5f79a5e27e23f568ae8e82d3ee974eea93eaccab))
+* use relative paths instead of $lib alias inside of lib ([96e9d6b](https://github.com/themesberg/flowbite-svelte/commit/96e9d6bacb81761a26b0e43215c53ae24deffc73))
+
 ### [0.26.17](https://github.com/themesberg/flowbite-svelte/compare/v0.26.16...v0.26.17) (2022-09-11)
 
 
