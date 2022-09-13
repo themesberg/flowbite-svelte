@@ -1,7 +1,7 @@
 <script lang="ts">
 	import classNames from 'classnames';
-	import type { LinkType } from '$lib/types';
-	import Popper from '$lib/utils/Popper.svelte';
+	import type { LinkType } from '../types';
+	import Popper from '../utils/Popper.svelte';
 
 	export let items: LinkTypeLike[] = [];
 	export let full: boolean = false;

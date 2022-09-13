@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ReviewType } from '$lib/types';
+	import type { ReviewType } from '../types';
 	import classNames from 'classnames';
 	export let review: ReviewType;
 	export let articleClass: string = 'md:gap-8 md:grid md:grid-cols-3';

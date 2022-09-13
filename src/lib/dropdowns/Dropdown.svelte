@@ -1,8 +1,8 @@
 <script lang="ts">
 	import classNames from 'classnames';
-	import Button from '$lib/buttons/Button.svelte';
-	import Popper from '$lib/utils/Popper.svelte';
-	import Chevron from '$lib/utils/Chevron.svelte';
+	import Button from '../buttons/Button.svelte';
+	import Popper from '../utils/Popper.svelte';
+	import Chevron from '../utils/Chevron.svelte';
 	import type { Placement } from '@popperjs/core';
 
 	export let label: string = '';

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import classNames from 'classnames';
 	import { getContext } from 'svelte';
-	import Wrapper from '$lib/utils/Wrapper.svelte';
+	import Wrapper from '../utils/Wrapper.svelte';
 
 	const background = getContext('background');
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Frame from '$lib/utils/Frame.svelte';
+  import Frame from '../utils/Frame.svelte';
   import classNames from 'classnames';
   import type { Colors } from '../types';
   import CloseButton from '../utils/CloseButton.svelte';

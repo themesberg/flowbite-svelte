@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Frame from '$lib/utils/Frame.svelte';
+	import Frame from '../utils/Frame.svelte';
 	import { createEventDispatcher } from 'svelte';
 	import CloseButton from '../utils/CloseButton.svelte';
 	import focusTrap from '../utils/focusTrap';

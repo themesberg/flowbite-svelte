@@ -1,6 +1,6 @@
 <script lang="ts">
 	import classNames from 'classnames';
-	import Frame from '$lib/utils/Frame.svelte';
+	import Frame from '../utils/Frame.svelte';
 
 	export let href: string = undefined;
 	export let horizontal: boolean = false;

@@ -2,7 +2,7 @@
   import classNames from 'classnames';
   import { createEventDispatcher } from 'svelte';
   import CloseButton from '../utils/CloseButton.svelte';
-  import Frame from '$lib/utils/Frame.svelte';
+  import Frame from '../utils/Frame.svelte';
 
   const dispatch = createEventDispatcher();
 

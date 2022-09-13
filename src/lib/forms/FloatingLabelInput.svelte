@@ -1,6 +1,6 @@
 <script lang="ts">
 	import classNames from 'classnames';
-	import generateId from '$lib/utils/generateId.js';
+	import generateId from '../utils/generateId.js';
 	import type { InputType } from '../types';
 
 	export let id: string = generateId();

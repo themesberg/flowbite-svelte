@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ToolbarButton from '$lib/toolbar/ToolbarButton.svelte';
+	import ToolbarButton from '../toolbar/ToolbarButton.svelte';
 	import classNames from 'classnames';
 	import Menu from './Menu.svelte';
 
