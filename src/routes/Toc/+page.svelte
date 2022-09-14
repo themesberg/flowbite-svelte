@@ -21,6 +21,7 @@
   }
 </script>
 
+{#if headings.length}
 <div class="hidden flex-none pl-8 mr-8 w-56 xl:text-sm xl:block text-gray-500 dark:text-gray-400">
   <div class="flex flex-col justify-between overflow-y-auto sticky max-h-(screen-18) pt-10 pb-6 top-12">
     <div class="mb-8">
@@ -38,3 +39,4 @@
     </div>
   </div>
 </div>
+{/if}
