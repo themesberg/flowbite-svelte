@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.20](https://github.com/themesberg/flowbite-svelte/compare/v0.26.18...v0.26.20) (2022-09-15)
+
+
+### Features
+
+* datepicker update. It needs rel=external for the link from sidebar menu and index page ([6fed169](https://github.com/themesberg/flowbite-svelte/commit/6fed169402be79c0e0eba9a93766be5f0587ef41))
+
+
+### Bug Fixes
+
+* git reset --hard 344845b4 and update getting-started ([a941ed8](https://github.com/themesberg/flowbite-svelte/commit/a941ed8169872a39bd37e809db718f09156fbbc2))
+* homepage ([dedf355](https://github.com/themesberg/flowbite-svelte/commit/dedf355835cf8b60aeb68a94b0e47a2034bea358))
+* mousenter ([c3ee1cc](https://github.com/themesberg/flowbite-svelte/commit/c3ee1cc24867be96860faa32e322b6fe7c41592a))
+* sidebar activeUrl example ([4387644](https://github.com/themesberg/flowbite-svelte/commit/43876441726e70eb582c20778a6231ed03f963d7))
+* spacing ([6f6e99c](https://github.com/themesberg/flowbite-svelte/commit/6f6e99cec7209a70f9e09b362714f37525c45a53))
+* toc issues ([13a459e](https://github.com/themesberg/flowbite-svelte/commit/13a459ec6cc3c8768698c5525012f2b53ae94b5c))
+* update bug_report.yml ([221f224](https://github.com/themesberg/flowbite-svelte/commit/221f224920c69fb281c8b4fd2844a22fbe657c72))
+* update bug_report.yml ([c527971](https://github.com/themesberg/flowbite-svelte/commit/c52797111863fd3e52e7c3dae9473e22cd84923a))
+* update bug_report.yml by adding REPL template link ([3c8140d](https://github.com/themesberg/flowbite-svelte/commit/3c8140dffdedb3a41ee0ea9b546da92866fceefb))
+
 ### [0.26.19](https://github.com/themesberg/flowbite-svelte/compare/v0.26.18...v0.26.19) (2022-09-15)
 
 
