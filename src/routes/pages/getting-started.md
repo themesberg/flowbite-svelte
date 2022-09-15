@@ -39,7 +39,7 @@ cd myapp
 npm install
 ```
 
-<p>Install Tailwind CSS:</p>
+<h3 class='text-xl w-full dark:text-white py-4'>Install Tailwind CSS</h3>
 
 ```bash
 npx svelte-add@latest tailwindcss
@@ -52,13 +52,14 @@ npm i
 npm run dev
 ```
 
-<p>Install flowbite, flowbite-svelte, and other dependencies:</p>
+<h3 class='text-xl w-full dark:text-white py-4'>Install dependencies</h3>
 
 ```sh
 npm i -D flowbite flowbite-svelte @floating-ui/dom classnames @popperjs/core
 ```
 
-<p>Update tailwind.config.cjs:</p>
+<h3 class='text-xl w-full dark:text-white py-4'>Update tailwind.config.cjs</h3>
+
 
 ```js
 const config = {
