@@ -1,6 +1,6 @@
 <script lang="ts">
   import { quartInOut } from 'svelte/easing';
-
+  import Toc from './Toc/+page.svelte';
   import '../app.css';
   import {
     DarkMode,
@@ -47,8 +47,7 @@
 
   let topli =
     'block py-2 pr-4 pl-3 text-gray-700 md:border-0 md:p-0 dark:text-gray-300  dark:hover:bg-gray-700 text-lg z-50  dark:bg-gray-800 dark:border-0 hover:bg-gray-100 bg-white';
-  let topMenuDiv =
-    'flex flex-wrap justify-end items-center mx-auto dark:bg-gray-800 h-8 pr-8 pt-1 sm:pr-12';
+  let topMenuDiv = 'flex flex-wrap justify-end items-center mx-auto dark:bg-gray-800 h-8 pr-8 pt-1 sm:pr-12';
   let topul =
     'flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium pt-1 dark:bg-gray-800 bg-white';
 
@@ -130,6 +129,9 @@
     <div class="w-full px-4 sm:px-8">
       <slot />
     </div>
+    <div class="text-sm text-gray-500 dark:text-gray-400">
+      <Toc />
+    </div>
   </main>
 </div>
 <div class="mx-auto mb-4 pt-4 lg:pl-60">
@@ -144,18 +146,14 @@
       </div>
       <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
         <div>
-          <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-            Resources
-          </h2>
+          <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
           <FooterLinkGroup>
             <FooterLink liClass="mb-4" href="https://flowbite.com/">Flowbite</FooterLink>
             <FooterLink liClass="mb-4" href="https://tailwindcss.com/">Tailwind CSS</FooterLink>
           </FooterLinkGroup>
         </div>
         <div>
-          <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
-            Follow us
-          </h2>
+          <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Follow us</h2>
           <FooterLinkGroup>
             <FooterLink liClass="mb-4" href="https://github.com/themesberg/flowbite-svelte"
               >GitHub</FooterLink>
@@ -165,9 +163,7 @@
         <div>
           <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Legal</h2>
           <FooterLinkGroup>
-            <FooterLink
-              liClass="mb-4"
-              href="https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE"
+            <FooterLink liClass="mb-4" href="https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE"
               >License</FooterLink>
           </FooterLinkGroup>
         </div>
