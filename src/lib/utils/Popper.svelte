@@ -133,7 +133,7 @@
 		tabIndex={activeContent ? -1 : undefined}
 		on:focusin={activeContent ? showHandler : undefined}
 		on:focusout={activeContent ? hideHandler : undefined}
-		on:mouseenter={showHandler}
+		on:mouseenter={activeContent && !clickable ? showHandler : undefined}
 		on:mouseleave={activeContent && !clickable ? hideHandler : undefined}
 		{...$$restProps}
 		class={classNames('z-10', $$props.class)}>
