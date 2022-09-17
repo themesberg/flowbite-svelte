@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.21](https://github.com/themesberg/flowbite-svelte/compare/v0.26.20...v0.26.21) (2022-09-17)
+
+
+### Bug Fixes
+
+* add npm and node to packages.josn engines for vercel test ([52e61fa](https://github.com/themesberg/flowbite-svelte/commit/52e61faf5152817af07adbf7a4947b90f61ef7fb))
+* commit after reset ([c3ee849](https://github.com/themesberg/flowbite-svelte/commit/c3ee8494fffac749a1e32cbeba1cf722ba6cb578))
+* copy from flowbite-svelte-new ([5a400fc](https://github.com/themesberg/flowbite-svelte/commit/5a400fce508c53e57eec6f5e40ba5c468ef79481))
+* remove layout and page content ([92609e5](https://github.com/themesberg/flowbite-svelte/commit/92609e5a8dd85b22daaf12dda526331184bb4e74))
+* update tsconfig.json ([ff4b3da](https://github.com/themesberg/flowbite-svelte/commit/ff4b3dacb420558c0beb627a75d9668e8fad88f9))
+
 ### [0.26.20](https://github.com/themesberg/flowbite-svelte/compare/v0.26.18...v0.26.20) (2022-09-15)
 
 
