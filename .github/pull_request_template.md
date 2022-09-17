@@ -24,46 +24,31 @@ Closes # <!-- Issue # here -->
 - [ ] All the tests have passed
 - [ ] My pull request is based on the latest commit (not the npm version).
 
-If your branch is behind the upstream main, I may have difficulties to merge the request. Please fetch the latest version of the main branch:
 
 <!--
 
-```sh
-git checkout your-branch
-git pull upstream main
-```
-
-or
-
-```sh
-git checkout your-branch
-git pull --rebase upstream main
-```
-
-or
+Sync fork from GitHub dropdown and update the branch. Or using the command line:
 
 ```sh
 git checkout main
-git pull origin main
-git checkout <your_branch_name>
-git rebase main
+git fetch upstream // I'm assuming you set the upstream
+git merge upstream/main
 ```
 
-You may have some merge conficts. Resolve these merge conficts and add/continue:
+Then change to your branch:
 
 ```sh
-git add . // or git add <conflicted_files>
-git rebase --continue
+git checkout my-new-feature
+git merge main
 ```
 
-If you are feeling something wrong then abort it:
+If you may need to resolve merge conficts if your local branch had unique commits. 
 
-```sh
-git rebase --abort
-```
+Now you are ready to submit your PR.
 
-It’s a good idea to rebase from time to
+It’s a good idea to sync from time to
 time, so you aren’t left too far behind the parent branch.
+
 -->
 
 ## ℹ Additional Information
