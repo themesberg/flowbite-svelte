@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.22](https://github.com/themesberg/flowbite-svelte/compare/v0.26.21...v0.26.22) (2022-09-17)
+
+
+### Bug Fixes
+
+* add createprops, scripts gen:props and package ([0fa07af](https://github.com/themesberg/flowbite-svelte/commit/0fa07af6a55819cf1d72d2f14ded5c400d7386db))
+
 ### [0.26.21](https://github.com/themesberg/flowbite-svelte/compare/v0.26.20...v0.26.21) (2022-09-17)
 
 
