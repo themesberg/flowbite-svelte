@@ -5,7 +5,7 @@ title: Getting Started
 ---
 <script>
   import { Htwo, ExampleDiv } from '../utils'
-  import { A, P, Breadcrumb, BreadcrumbItem, Alert, Heading } from '$lib'
+  import { A, P, List, Li, Breadcrumb, BreadcrumbItem, Alert, Heading } from '$lib'
   
 </script>
 
@@ -21,7 +21,7 @@ title: Getting Started
 
 <Htwo label="Installing from scratch" />
 
-<h3 class='text-xl w-full dark:text-white py-4'>SvelteKit or Svelte</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>SvelteKit</h3>
 
 <p>You can install SvelteKit or Svelte to start your app. For SvelteKit:</p>
 
@@ -31,7 +31,9 @@ cd my-app
 npm install
 ```
 
-<p>OR if you want to get started with Svelte:</p>
+<h3 class='text-xl w-full dark:text-white py-4'>Svelte</h3>
+
+<p>If you want to get started with Svelte:</p>
 
 ```bash
 npm create vite@latest myapp -- --template svelte
@@ -39,7 +41,7 @@ cd myapp
 npm install
 ```
 
-<h3 class='text-xl w-full dark:text-white py-4'>Install Tailwind CSS</h3>
+<Htwo label="Install Tailwind CSS"/>
 
 ```bash
 npx svelte-add@latest tailwindcss
@@ -52,13 +54,13 @@ npm i
 npm run dev
 ```
 
-<h3 class='text-xl w-full dark:text-white py-4'>Install dependencies</h3>
+<Htwo label="Install dependencies" />
 
 ```sh
 npm i -D flowbite flowbite-svelte @floating-ui/dom classnames @popperjs/core
 ```
 
-<h3 class='text-xl w-full dark:text-white py-4'>Update tailwind.config.cjs</h3>
+<Htwo label="Update tailwind.config.cjs"/>
 
 
 ```js
@@ -104,3 +106,12 @@ If you see the following image, then your setting is complete.
 	</Alert>
 </div>
 </ExampleDiv>
+
+<Htwo label="Starters" />
+
+You can use one of starter repo for a quick start.
+
+<List tag='ul' class='space-y-1 my-4'>
+<Li><A href='https://github.com/shinokada/flowbite-svelte-starter'>Flowbite-SvelteKit starter</A></Li>
+<Li><A href='https://github.com/ZekyTheWolf/LIST-Boilerplate'>Laravel, Inertia, Svelte, Typescript with Flowbite starter</A></Li>
+</List>
