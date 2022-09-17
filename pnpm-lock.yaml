@@ -10,6 +10,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.27.0
   autoprefixer: ^10.4.7
   classnames: ^2.3.2
+  createprops: ^0.4.9
   eslint: ^8.16.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-svelte3: ^4.0.0
@@ -43,6 +44,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.37.0_22c5fnooleyfkzrkkgdmel5kmi
   '@typescript-eslint/parser': 5.37.0_irgkl5vooow2ydyo6aokmferha
   autoprefixer: 10.4.11_postcss@8.4.16
+  createprops: 0.4.9
   eslint: 8.23.1
   eslint-config-prettier: 8.5.0_eslint@8.23.1
   eslint-plugin-svelte3: 4.0.0_rhh4tpcyg7zwtq6pdnkzw5gxma
@@ -717,6 +719,10 @@ packages:
   /cookie/0.5.0:
     resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
     engines: {node: '>= 0.6'}
+    dev: true
+
+  /createprops/0.4.9:
+    resolution: {integrity: sha512-jr701jvWkZhNQWwYnbuD+NGSeH6KpioMHuzFAtTcovE1akq9zyW2UC4f6Q8odKgoZ3AE3HM0YjxaqoWD5YtjPA==}
     dev: true
 
   /cross-spawn/7.0.3:

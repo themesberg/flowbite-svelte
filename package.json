@@ -13,7 +13,9 @@
 	"license": "MIT",
 	"scripts": {
 		"dev": "vite dev",
+		"gen:props": "node ./node_modules/createprops/createprops.js",
 		"build": "vite build",
+		"package": "svelte-package",
 		"preview": "vite preview",
 		"test": "playwright test",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -29,6 +31,7 @@
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
 		"@typescript-eslint/parser": "^5.27.0",
 		"autoprefixer": "^10.4.7",
+		"createprops": "^0.4.9",
 		"eslint": "^8.16.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^4.0.0",
