@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.23](https://github.com/themesberg/flowbite-svelte/compare/v0.26.22...v0.26.23) (2022-09-18)
+
+
+### Bug Fixes
+
+* **DropdownItem:** remove redundant part after else ([4182d5c](https://github.com/themesberg/flowbite-svelte/commit/4182d5c970b3a683b47e228f4881585f4ca77d3b))
+
 ### [0.26.22](https://github.com/themesberg/flowbite-svelte/compare/v0.26.21...v0.26.22) (2022-09-17)
 
 
