@@ -36,6 +36,7 @@
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"mdsvex": "^0.10.6",
+		"mdsvexamples": "^0.3.2",
 		"postcss": "^8.4.14",
 		"postcss-load-config": "^4.0.1",
 		"prettier": "^2.6.2",
