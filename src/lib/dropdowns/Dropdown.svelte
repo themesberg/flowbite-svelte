@@ -15,7 +15,7 @@
 	export let color: string = 'dropdown';
 
 	let popoverClass;
-	$: popoverClass = classNames('outline-none', $$props.class);
+	$: popoverClass = classNames('outline-none overflow-hidden', $$props.class);
 </script>
 
 {#if label}
