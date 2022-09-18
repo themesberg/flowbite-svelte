@@ -12,11 +12,13 @@
 		auto: 'border-gray-200 bg-white text-gray-900 dark:bg-gray-700 dark:text-white dark:border-gray-600 '
 	};
 
-	let toolTipClass;
-	$: toolTipClass = classNames(tipClass, colors[style], $$props.class);
+	let toolTipClass: string;
+	$: toolTipClass = classNames("tooltip", tipClass, colors[style], $$props.class);
 </script>
 
 <Popper
+	data-tooltip
+	activeContent
 	rounded
 	border
 	shadow
