@@ -112,5 +112,5 @@ You can use one of starter repo for a quick start.
 
 <List tag='ul' class='space-y-1 my-4'>
 <Li><A href='https://github.com/shinokada/flowbite-svelte-starter'>Flowbite-SvelteKit starter</A></Li>
-<Li><A href='https://github.com/ZekyTheWolf/LIST-Boilerplate'>Laravel, Inertia, Svelte, Typescript with Flowbite starter</A></Li>
+<Li><A href='https://github.com/ZekyTheWolf/LIST-Starter'>Laravel, Inertia, Svelte, Typescript with Flowbite starter</A></Li>
 </List>
