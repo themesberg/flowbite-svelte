@@ -8,7 +8,8 @@ dir: Components
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Badge, Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   import componentProps from '../props/Alert.json'
-  
+  import frameProps from '../props/Frame.json'
+
   // Props table
   let items = componentProps.props
   let propHeader = ['Name', 'Type', 'Default']
@@ -168,23 +169,23 @@ Use the following alert components with a border accent as an alternative style.
 <script>
   import {Alert} from "flowbite-svelte";
 </script>
-<Alert accent rounded="{false}">
+<Alert accent>
   <svg slot="icon" aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
   <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
 </Alert>
-<Alert color="red" accent rounded="{false}">
+<Alert color="red" accent>
   <svg slot="icon" aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
   <span class="font-medium">Danger alert!</span> Change a few things up and try submitting again.
 </Alert>
-<Alert color="green" accent rounded="{false}">
+<Alert color="green" accent>
   <svg slot="icon" aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
   <span class="font-medium">Success alert!</span> Change a few things up and try submitting again.
 </Alert>
-<Alert color="yellow" accent rounded="{false}">
+<Alert color="yellow" accent>
   <svg slot="icon" aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
   <span class="font-medium">Warning alert!</span> Change a few things up and try submitting again.
 </Alert>
-<Alert color="dark" accent rounded="{false}">
+<Alert color="dark" accent>
   <svg slot="icon" aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
   <span class="font-medium">Dark alert!</span> Change a few things up and try submitting again.
 </Alert>
@@ -248,26 +249,31 @@ Use `color='none'` to disable coloring. Then use `class` to add your custom colo
 
 <Htwo label="Events" />
 
-Use the `handleAlert` event with `dismissable` prop.
+Use the `close` event with `dismissable` prop.
 
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
   import {Alert} from "flowbite-svelte";
-  const handleAlert = ()=>{
-    alert('Clicked handleAlert.')
+  const closeAlert = ()=>{
+    alert('Clicked closeAlert.')
   }
 </script>
 
-<Alert dismissable on:handleAlert={handleAlert}>Close me</Alert>
+<Alert dismissable on:close={closeAlert}>Close me</Alert>
 ```
 
 <Htwo label="Props" />
 
-The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.
+The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
 <TableDefaultRow {items} rowState='hover' />
+</TableProp>
+
+The component inherits the following props, type, and default values from `Frame`. See <a href="/pages/types">types page</a> for type information.
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+<TableDefaultRow items={frameProps.props} rowState='hover' />
 </TableProp>
 
 <Htwo label="Slots" />
