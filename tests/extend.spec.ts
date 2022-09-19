@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test';
 // Icons
 test('Icon page should have h1', async ({ page }) => {
 	await page.goto('/extend/icons');
-	expect(await page.textContent('h1')).toBe('Guidance for using external icon libraries');
+	expect(await page.textContent('h1')).toBe('External icon libraries');
 });
 
 // flowbite-svelte-starter
