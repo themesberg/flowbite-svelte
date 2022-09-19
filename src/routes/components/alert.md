@@ -6,9 +6,9 @@ dir: Components
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Alert, Breadcrumb, BreadcrumbItem, Button, Badge, Heading, P, A } from 'flowbite-svelte'
-
+  import { Badge, Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   import componentProps from '../props/Alert.json'
+  
   // Props table
   let items = componentProps.props
   let propHeader = ['Name', 'Type', 'Default']
@@ -17,10 +17,6 @@ dir: Components
   // slots
   let slotHeader = ['Name', 'Description']
   let slotItems = [['default', 'The first slot.'],['extra','A slot after the default slot.']]
-
-  const handleAlert = ()=>{
-    alert('Clicked handleAlert.')
-  }
 </script>
 
 <Breadcrumb class="pb-8">
@@ -161,7 +157,7 @@ Use the following alert elements that are also dismissable.
   <Alert color="dark" dismissable>
     <svg slot="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" /></svg>
     A simple info alert with an <a href="/" class="font-semibold underline hover:text-gray-800 dark:hover:text-white">example link</a>. Give it a click if you like.
-  </Alert>
+</Alert>
 ```
 
 <Htwo label="Border accent" />
@@ -234,12 +230,9 @@ Use `color='none'` to disable coloring. Then use `class` to add your custom colo
 
 Use the `handleAlert` event with `dismissable` prop.
 
-<ExampleDiv>
-<Alert dismissable on:handleAlert={handleAlert}>Close me</Alert>
-</ExampleDiv>
-
-```html
+```svelte example class="flex flex-col gap-4" hideScript
 <script>
+  import {Alert} from "flowbite-svelte";
   const handleAlert = ()=>{
     alert('Clicked handleAlert.')
   }

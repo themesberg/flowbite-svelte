@@ -13,9 +13,7 @@ title: CloseButton
 		TableProp,
 		TableDefaultRow
 	} from '../utils';
-	import { Breadcrumb, BreadcrumbItem, CloseButton, Label, Checkbox, Heading, A } from '$lib';
-	export let visible = true;
-
+	import { Breadcrumb, BreadcrumbItem, Heading, A } from '$lib';
 	import componentProps from '../props/CloseButton.json';
 	// Props table
 	let items = componentProps.props;
@@ -44,24 +42,12 @@ The CloseButton components are used throughout the library and you can use it fo
 
 Use `CloseButton` component to close a component.
 
-<ExampleDiv>
-	{#if visible}
-		<div
-			id="banner"
-			tabindex="-1"
-			class="flex z-50 gap-8 justify-between items-start py-3 px-4 w-full bg-gray-50 border border-b border-gray-200 sm:items-center dark:border-gray-700 lg:py-4 dark:bg-gray-800"
-		>
-			<p class="text-sm font-light text-gray-500 dark:text-gray-400">
-				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem, ipsa culpa ea laudantium
-				earum quis? Neque unde aliquam enim, distinctio repellendus delectus? Illo numquam ex fugit
-				dolor esse, cumque nesciunt?
-			</p>
-			<CloseButton on:click={() => (visible = false)} />
-		</div>
-	{/if}
-</ExampleDiv>
+```svelte example
+<script>
+	import { CloseButton } from 'flowbite-svelte'
+	export let visible = true;
+</script>
 
-```html
 {#if visible}
 	<div
 		id="banner"

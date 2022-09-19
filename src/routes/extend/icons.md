@@ -1,7 +1,7 @@
 ---
 layout: componentLayout
 dir: Extend
-title: Guidance for using external icon libraries
+title: External icon libraries
 ---
 
 <script>

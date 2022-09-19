@@ -6,7 +6,7 @@ title: Skeleton
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { CardPlaceholder, ImagePlaceholder, ListPlaceholder, Skeleton, TestimonialPlaceholder, TextPlaceholder, VideoPlaceholder, WidgetPlaceholder, Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
+  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   
 
   import componentProps from '../props/ListPlaceholder.json'
@@ -53,90 +53,89 @@ Use the skeleton component to indicate a loading status with placeholder element
 
 ```html
 <script>
-	import { CardPlaceholder, ImagePlaceholder, ListPlaceholder, Skeleton, TestimonialPlaceholder, TextPlaceholder, VideoPlaceholder, WidgetPlaceholder } from 'flowbite-svelte'
+  import { CardPlaceholder, ImagePlaceholder, ListPlaceholder, Skeleton, TestimonialPlaceholder, TextPlaceholder, VideoPlaceholder, WidgetPlaceholder } from 'flowbite-svelte'
 </script>
 ```
 
 <Htwo label="Default skeleton" />
 
-<ExampleDiv>
-<Skeleton />
-</ExampleDiv>
+```svelte example
+<script>
+  import { Skeleton } from 'flowbite-svelte'
+</script>
 
-```html
 <Skeleton />
 ```
 
 <Htwo label="Image placeholder " />
 
-<ExampleDiv>
-<ImagePlaceholder />
-</ExampleDiv>
+```svelte example
+<script>
+  import { ImagePlaceholder } from 'flowbite-svelte'
+</script>
 
-```html
 <ImagePlaceholder />
 ```
 
 <Htwo label="Video placeholder" />
 
-<ExampleDiv>
-<VideoPlaceholder />
-</ExampleDiv>
+```svelte example
+<script>
+  import { VideoPlaceholder } from 'flowbite-svelte'
+</script>
 
-```html
 <VideoPlaceholder />
 ```
 
 <Htwo label="Text placeholder" />
 
-<ExampleDiv>
-<TextPlaceholder />
-</ExampleDiv>
+```svelte example
+<script>
+  import { TextPlaceholder } from 'flowbite-svelte'
+</script>
 
-```html
 <TextPlaceholder />
 ```
 
 <Htwo label="Card placeholder" />
 
-<ExampleDiv>
-<CardPlaceholder />
-</ExampleDiv>
+```svelte example
+<script>
+  import { CardPlaceholder } from 'flowbite-svelte'
+</script>
 
-```html
 <CardPlaceholder />
 ```
 
 <Htwo label="Widget placeholder" />
 
-<ExampleDiv>
-<WidgetPlaceholder />
-</ExampleDiv>
+```svelte example
+<script>
+  import { WidgetPlaceholder } from 'flowbite-svelte'
+</script>
 
-```html
 <WidgetPlaceholder />
 ```
 
 <Htwo label="List placeholder" />
 
-<ExampleDiv>
-<ListPlaceholder />
-</ExampleDiv>
+```svelte example
+<script>
+  import { ListPlaceholder } from 'flowbite-svelte'
+</script>
 
-```html
 <ListPlaceholder />
 ```
 
 <Htwo label="Testimonial placeholder" />
 
-<ExampleDiv>
-<TestimonialPlaceholder />
-</ExampleDiv>
+```svelte example
+<script>
+  import { TestimonialPlaceholder } from 'flowbite-svelte'
+</script>
 
-```html
 <TestimonialPlaceholder />
 ```
-
 
 <Htwo label="Props" />
 

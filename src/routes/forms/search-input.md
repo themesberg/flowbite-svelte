@@ -6,9 +6,8 @@ title: Search
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Search, SimpleSearch, VoiceSearch, Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
+  import { Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
   
-
   import searchComponentProps from '../props/Search.json'
   import simpleSearchComponentProps from '../props/SimpleSearch.json'
   import voiceSearchcomponentProps from '../props/VoiceSearch.json'
@@ -20,10 +19,6 @@ title: Search
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
-
-  function handleVoiceBtn() {
-    alert('You clicked voice button');
-  }
 </script>
 
 <Breadcrumb class="pb-8">
@@ -54,11 +49,11 @@ You will also find more advanced search components on this page including dropdo
 
 <Htwo label="Search bar example" />
 
-<ExampleDiv>
-<Search />
-</ExampleDiv>
+```svelte example hideScript
+<script>
+  import { Search } from 'flowbite-svelte'
+</script>
 
-```html
 <Search />
 ```
 
@@ -66,13 +61,9 @@ You will also find more advanced search components on this page including dropdo
 
 Get started with this example if you would like to enable voice search for your website and users.
 
-<ExampleDiv>
-<VoiceSearch on:handleVoiceBtn={handleVoiceBtn}/>
-</ExampleDiv>
-
-```html
+```svelte example
 <script>
-  ...
+  import { VoiceSearch } from 'flowbite-svelte'
   function handleVoiceBtn() {
     alert('You clicked voice button');
   }

@@ -6,26 +6,16 @@ title: Button
 
 <script>
   import {Htwo,ExampleDiv,GitHubSource,CompoDescription,TableProp, TableDefaultRow} from '../utils'
-  import { Button, Spinner, Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
-  import { goto }from '$app/navigation';
-  
+  import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
   import componentProps from '../props/Button.json'
   let slotHeader = ['Name', 'Description']
-
   let slotItems = [['default', 'For a button label.']]
-
-  const btn1 = ()=>{
-    alert('You clicked btn1.')
-  }
-  const btn2 = ()=>{
-    alert ('You clicked btn2.')
-  }
 
   // Props table
   let items = componentProps.props
   let propHeader = ['Name', 'Type', 'Default']
- let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
+  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
 </script>
 
@@ -53,7 +43,7 @@ Import a button component in the script tag.
 
 ```html
 <script>
-	import { Button } from 'flowbite-svelte';
+  import { Button } from 'flowbite-svelte';
 </script>
 ```
 
@@ -61,18 +51,11 @@ Import a button component in the script tag.
 
 Use these default button styles with multiple colors to indicate an action or link within your website. The default `type` is set to `button`. You can chage it by using the `type` prop.
 
-<ExampleDiv class="flex flex-wrap gap-2">
-<Button>Default</Button>
-<Button color="alternative">Alternative</Button>
-<Button color="dark">Dark</Button>
-<Button color="light">Light</Button>
-<Button color="green">Green</Button>
-<Button color="red">Red</Button>
-<Button color="yellow">Yellow</Button>
-<Button color="purple">Purple</Button>
-</ExampleDiv>
+```svelte example class="flex flex-wrap gap-2" hideScript
+<script>
+  import { Button } from 'flowbite-svelte';
+</script>
 
-```html
 <Button>Default</Button>
 <Button color="alternative">Alternative</Button>
 <Button color="dark">Dark</Button>
@@ -87,11 +70,10 @@ Use these default button styles with multiple colors to indicate an action or li
 
 You can add a link to a Button component:
 
-<ExampleDiv>
-<Button href="/">Home</Button>
-</ExampleDiv>
-
-```html
+```svelte example class="flex flex-wrap gap-2" hideScript
+<script>
+  import { Button } from 'flowbite-svelte';
+</script>
 <Button href="/">Home</Button>
 ```
 
@@ -100,44 +82,28 @@ You can add a link to a Button component:
 
 The button pills can be used as an alternative style by using fully rounded edges.
 
-<ExampleDiv class="flex flex-wrap gap-2">
-  <Button pill={true}>Default</Button>
-  <Button color="alternative" pill={true}>Alternative</Button>
-  <Button color="dark" pill={true}>Dark</Button>
-  <Button color="light" pill={true}>Light</Button>
-  <Button color="green" pill={true}>Green</Button>
-  <Button color="red" pill={true}>Red</Button>
-  <Button color="yellow" pill={true}>Yellow</Button>
-  <Button color="purple" pill={true}>Purple</Button>
-</ExampleDiv>
-
-```html
-<Button pill="{true}">Default</Button>
-<Button color="alternative" pill="{true}">Alternative</Button>
-<Button color="dark" pill="{true}">Dark</Button>
-<Button color="light" pill="{true}">Light</Button>
-<Button color="green" pill="{true}">Green</Button>
-<Button color="red" pill="{true}">Red</Button>
-<Button color="yellow" pill="{true}">Yellow</Button>
-<Button color="purple" pill="{true}">Purple</Button>
+```svelte example class="flex flex-wrap gap-2" hideScript
+<script>
+  import { Button } from 'flowbite-svelte';
+</script>
+<Button pill={true}>Default</Button>
+<Button color="alternative" pill={true}>Alternative</Button>
+<Button color="dark" pill={true}>Dark</Button>
+<Button color="light" pill={true}>Light</Button>
+<Button color="green" pill={true}>Green</Button>
+<Button color="red" pill={true}>Red</Button>
+<Button color="yellow" pill={true}>Yellow</Button>
+<Button color="purple" pill={true}>Purple</Button>
 ```
 
 <Htwo label="Gradient monochrome" />
 
 These beautifully colored buttons built with the gradient color stops utility classes from Tailwind CSS can be used as a creative alternative to the default button styles.
 
-<ExampleDiv class="flex flex-wrap gap-2">
-  <Button gradient color="blue">Blue</Button>
-  <Button gradient color="green">Green</Button>
-  <Button gradient color="cyan">Cyan</Button>
-  <Button gradient color="teal">Teal</Button>
-  <Button gradient color="lime">Lime</Button>
-  <Button gradient color="red">Red</Button>
-  <Button gradient color="pink">Pink</Button>
-  <Button gradient color="purple">Purple</Button>
-</ExampleDiv>
-
-```html
+```svelte example class="flex flex-wrap gap-2" hideScript
+<script>
+  import { Button } from 'flowbite-svelte';
+</script>
 <Button gradient color="blue">Blue</Button>
 <Button gradient color="green">Green</Button>
 <Button gradient color="cyan">Cyan</Button>
@@ -152,17 +118,10 @@ These beautifully colored buttons built with the gradient color stops utility cl
 
 These buttons use a style that includes two contrasted colors creating an impressive mesh gradient effect.
 
-<ExampleDiv class="flex flex-wrap items-center gap-2">
-  <Button gradient color="purpleToBlue">Purple to Blue</Button>
-  <Button gradient color="cyanToBlue">Cyan to Blue</Button>
-  <Button gradient color="greenToBlue">Green to Blue</Button>
-  <Button gradient color="purpleToPink">Purple to Pink</Button>
-  <Button gradient color="pinkToOrange">Pink to Orange</Button>
-  <Button gradient color="tealToLime">Teal to Lime</Button>
-  <Button gradient color="redToYellow">Red to Yellow</Button>
-</ExampleDiv>
-
-```html
+```svelte example class="flex flex-wrap gap-2" hideScript
+<script>
+  import { Button } from 'flowbite-svelte';
+</script>
 <Button gradient color="purpleToBlue">Purple to Blue</Button>
 <Button gradient color="cyanToBlue">Cyan to Blue</Button>
 <Button gradient color="greenToBlue">Green to Blue</Button>
@@ -176,17 +135,10 @@ These buttons use a style that includes two contrasted colors creating an impres
 
 This is a special button style that incorporates a gradient color for the outline that can be used as a secondary style to the fully colored gradient buttons.
 
-<ExampleDiv class="flex flex-wrap items-center gap-2">
-  <Button outline gradient color="purpleToBlue">Purple to Blue</Button>
-  <Button outline gradient color="cyanToBlue">Cyan to Blue</Button>
-  <Button outline gradient color="greenToBlue">Green to Blue</Button>
-  <Button outline gradient color="purpleToPink">Purple to Pink</Button>
-  <Button outline gradient color="pinkToOrange">Pink to Orange</Button>
-  <Button outline gradient color="tealToLime">Teal to Lime</Button>
-  <Button outline gradient color="redToYellow">Red to Yellow</Button>
-</ExampleDiv>
-
-```html
+```svelte example class="flex flex-wrap gap-2" hideScript
+<script>
+  import { Button } from 'flowbite-svelte';
+</script>
 <Button outline gradient color="purpleToBlue">Purple to Blue</Button>
 <Button outline gradient color="cyanToBlue">Cyan to Blue</Button>
 <Button outline gradient color="greenToBlue">Green to Blue</Button>
@@ -200,18 +152,10 @@ This is a special button style that incorporates a gradient color for the outlin
 
 These beautiful button elements with color shadows can be used since the release of Tailwind v3.0.
 
-<ExampleDiv class="flex flex-wrap items-center gap-2">
-  <Button shadow="blue" gradient color="blue">Blue</Button>
-  <Button shadow="green" gradient color="green">Green</Button>
-  <Button shadow="cyan" gradient color="cyan">Cyan</Button>
-  <Button shadow="teal" gradient color="teal">Teal</Button>
-  <Button shadow="lime" gradient color="lime">Lime</Button>
-  <Button shadow="red" gradient color="red">Red</Button>
-  <Button shadow="pink" gradient color="pink">Pink</Button>
-  <Button shadow="purple" gradient color="purple">Purple</Button>
-</ExampleDiv>
-
-```html
+```svelte example class="flex flex-wrap gap-2" hideScript
+<script>
+  import { Button } from 'flowbite-svelte';
+</script>
 <Button shadow="blue" gradient color="blue">Blue</Button>
 <Button shadow="green" gradient color="green">Green</Button>
 <Button shadow="cyan" gradient color="cyan">Cyan</Button>
@@ -226,7 +170,10 @@ These beautiful button elements with color shadows can be used since the release
 
 Use the following button styles to show the colors only for the border of the element.
 
-<ExampleDiv>
+```svelte example class="flex flex-wrap gap-2" hideScript
+<script>
+  import { Button } from 'flowbite-svelte';
+</script>
 <div class="flex flex-wrap gap-2">
   <Button outline>Default</Button>
   <Button outline color="dark">Dark</Button>
@@ -235,32 +182,16 @@ Use the following button styles to show the colors only for the border of the el
   <Button outline color="yellow">Yellow</Button>
   <Button outline color="purple">Purple</Button>
 </div>
-</ExampleDiv>
-
-```html
-<div class="flex flex-wrap gap-2">
-	<Button outline>Default</Button>
-	<Button outline color="dark">Dark</Button>
-	<Button outline color="green">Green</Button>
-	<Button outline color="red">Red</Button>
-	<Button outline color="yellow">Yellow</Button>
-	<Button outline color="purple">Purple</Button>
-</div>
 ```
 
 <Htwo label="Button sizes" />
 
 Use these examples if you want to use smaller or larger buttons.
 
-<ExampleDiv class="flex flex-wrap items-center gap-2">
-  <Button size="xs">Extra small</Button>
-  <Button size="sm">Small</Button>
-  <Button size="md">Base</Button>
-  <Button size="lg">Large</Button>
-  <Button size="xl">Extra large</Button>
-</ExampleDiv>
-
-```html
+```svelte example class="gap-2" hideScript
+<script>
+  import { Button } from 'flowbite-svelte';
+</script>
 <Button size="xs">Extra small</Button>
 <Button size="sm">Small</Button>
 <Button size="md">Base</Button>
@@ -272,16 +203,10 @@ Use these examples if you want to use smaller or larger buttons.
 
 Use the following examples to add a SVG icon inside the button either on the left or right side.
 
-<ExampleDiv class="flex flex-wrap items-center gap-2">
-<Button>
-  <svg aria-hidden="true" class="mr-2 -ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg> Buy Now
-</Button>
-<Button>
-  Choose Plan <svg aria-hidden="true" class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-</Button>
-</ExampleDiv>
-
-```html
+```svelte example class="flex flex-wrap gap-2" hideScript
+<script>
+  import { Button } from 'flowbite-svelte';
+</script>
 <Button>
   <svg aria-hidden="true" class="mr-2 -ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg> Buy Now
 </Button>
@@ -294,24 +219,15 @@ Use the following examples to add a SVG icon inside the button either on the lef
 
 This example can be used to show a notification count or helper text inside a button using the badge element.
 
-<ExampleDiv class="flex flex-wrap items-center gap-2">
+```svelte example class="flex flex-wrap gap-2" hideScript
+<script>
+  import { Button } from 'flowbite-svelte';
+</script>
 <Button>
   Messages
   <span class="inline-flex items-center justify-center w-4 h-4 ml-2 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full">
     2
   </span>
-  <!-- Badge color="blue" rounded class="w-4 h-4 ml-2 font-semibold">2</Badge -->
-</Button>
-</ExampleDiv>
-
-```html
-<Button>
-	Messages
-	<span
-		class="inline-flex items-center justify-center w-4 h-4 ml-2 text-xs font-semibold text-blue-800 bg-blue-200 rounded-full"
-	>
-		2
-	</span>
 </Button>
 ```
 
@@ -319,40 +235,26 @@ This example can be used to show a notification count or helper text inside a bu
 
 Sometimes you need a button to indicate an action using only an icon.
 
-<ExampleDiv>
-  <div class="flex flex-wrap items-center gap-2">
-    <Button class="!p-2"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></Button>
-    <Button pill={true} class="!p-2"><svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></Button>
-    <Button outline={true} class="!p-2" size="lg"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></Button>
-    <Button pill={true} outline={true} class="!p-2" size="xl"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></Button>
-  </div>
-</ExampleDiv>
-
-```html
+```svelte example class="flex flex-wrap gap-2" hideScript
+<script>
+  import { Button } from 'flowbite-svelte';
+</script>
 <div class="flex flex-wrap items-center gap-2">
-    <Button class="!p-2"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></Button>
-    <Button pill={true} class="!p-2"><svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></Button>
-    <Button outline={true} class="!p-2" size="lg"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></Button>
-    <Button pill={true} outline={true} class="!p-2" size="xl"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></Button>
-  </div>
+  <Button class="!p-2"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></Button>
+  <Button pill={true} class="!p-2"><svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></Button>
+  <Button outline={true} class="!p-2" size="lg"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></Button>
+  <Button pill={true} outline={true} class="!p-2" size="xl"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></Button>
+</div>
 ```
 
 <Htwo label="Loader" />
 
 Use the spinner components from Flowbite-Svelte to indicate a loader animation inside buttons.
 
-<ExampleDiv>
-<div class="flex flex-wrap items-center gap-2">
-  <Button>
-    <Spinner class="mr-3" size="4" color="white" />Loading ...
-  </Button>
-  <Button color="alternative">
-    <Spinner class="mr-3" size="4" />Loading ...
-  </Button>
-</div>
-</ExampleDiv>
-
-```html
+```svelte example class="flex flex-wrap gap-2"
+<script>
+  import { Button, Spinner } from 'flowbite-svelte';
+</script>
 <Button>
   <Spinner class="mr-3" size="4" color="white" />Loading ...
 </Button>
@@ -365,37 +267,29 @@ Use the spinner components from Flowbite-Svelte to indicate a loader animation i
 
 You can add any additional button attributes. The following example shows adding the `disabled` attribute.
 
-<ExampleDiv>
+```svelte example class="flex flex-wrap gap-2" hideScript
+<script>
+  import { Button } from 'flowbite-svelte';
+</script>
 <Button disabled >Disabled</Button>
-</ExampleDiv>
-
-```html
-<Button disabled>Button disabled</Button>
 ```
 
 <Htwo label="Events" />
 
 You can use on:click or any standard on:* to listen to the event.
 
-<ExampleDiv class="flex flex-wrap items-center gap-2">
+```svelte example class="flex flex-wrap gap-2"
+<script>
+  import { Button } from 'flowbite-svelte';
+  const btn1 = () => {
+    alert('You clicked btn1.');
+  };
+  const btn2 = () => {
+    alert('You clicked btn2.');
+  };
+</script>
 <Button on:click={btn1}>Button 1</Button>
 <Button on:click={btn2}>Button 2</Button>
-</ExampleDiv>
-
-```html
-<script>
-	import { Button } from 'flowbite-svelte';
-	import { goto } from '$app/navigation';
-	const btn1 = () => {
-		alert('You clicked btn1.');
-	};
-	const btn2 = () => {
-		alert('You clicked btn2.');
-	};
-</script>
-
-<Button on:click="{btn1}">Button 1</Button>
-<Button on:click="{btn2}">Button 2</Button>
 ```
 
 <Htwo label="Props" />

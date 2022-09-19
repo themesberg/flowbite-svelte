@@ -38,6 +38,7 @@ export const components = [
 	{ href: '/components/timeline', name: 'Timeline' },
 	{ href: '/components/toast', name: 'Toast' },
 	{ href: '/components/tooltip', name: 'Tooltip' },
+	{ href: '/components/typography', name: 'Typography' },
 	{ href: '/components/video', name: 'Video' }
 ]
 

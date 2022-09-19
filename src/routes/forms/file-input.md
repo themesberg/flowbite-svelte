@@ -6,7 +6,7 @@ title: File Input
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Label, Fileupload, Helper, Dropzone, Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
+  import { Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
   
   import componentProps from '../props/Fileupload.json'
   import componentProps2 from '../props/Dropzone.json'
@@ -16,12 +16,6 @@ title: File Input
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
-  let fileuploadprops = {
-    id : 'user_avatar'
-  }
-  let fileuploadprops2 = {
-    id : 'user_avatar2',
-  }
 </script>
 
 <Breadcrumb class="pb-8">
@@ -44,79 +38,72 @@ The file input component can be used to upload one or more files from the device
 
 ```html
 <script>
-import { Fileupload } from 'flowbite-svelte'
+  import { Fileupload } from 'flowbite-svelte'
 </script>
 ```
 
 <Htwo label="File upload example" />
 
-<ExampleDiv>
-<Label>Upload file</Label>
-<Fileupload {...fileuploadprops} />
-</ExampleDiv>
-
-```html
+```svelte example
 <script>
-let fileuploadprops = {
-  id : 'user_avatar'
-}
+  import { Fileupload, Label } from 'flowbite-svelte'
+  let fileuploadprops = {
+    id : 'user_avatar'
+  }
 </script>
 
-<Label>Upload file</Label>
+<Label class="pb-2">Upload file</Label>
 <Fileupload {...fileuploadprops} />
 ```
 
 <Htwo label="Helper text" />
 
-<ExampleDiv>
-<Label>Upload file</Label>
-<Fileupload {...fileuploadprops2} />
+```svelte example
+<script>
+  import { Fileupload, Label, Helper } from 'flowbite-svelte'
+  let fileuploadprops = {
+    id : 'user_avatar'
+  }
+</script>
+
+<Label class="pb-2">Upload file</Label>
+<Fileupload {...fileuploadprops} />
 <Helper>SVG, PNG, JPG or GIF (MAX. 800x400px).</Helper>
-</ExampleDiv>
+```
 
 <Htwo label='Multiple files' />
 
-<ExampleDiv>
-<Label for='multiple_files' >Upload multiple files</Label>
-<Fileupload id='multiple_files' multiple/>
-</ExampleDiv>
+```svelte example
+<script>
+  import { Fileupload, Label } from 'flowbite-svelte'
+</script>
 
-```html
-<Label for='multiple_files' >Upload multiple files</Label>
+<Label class="pb-2" for='multiple_files' >Upload multiple files</Label>
 <Fileupload id='multiple_files' multiple/>
 ```
 
 <Htwo label='Sizes' />
 
-<ExampleDiv>
-<Label for='small_size' >Small file input</Label>
-<Fileupload id="small_size" size='xs' />
-<Label for='default_size' >Default size</Label>
-<Fileupload id="default_size" />
-<Label for='larg_size' >Large file input</Label>
-<Fileupload id="larg_size" size='lg' />
-</ExampleDiv>
+```svelte example
+<script>
+  import { Fileupload, Label } from 'flowbite-svelte'
+</script>
 
-```html
-<Label for='small_size' >Small file input</Label>
+<Label class="pb-2" for='small_size' >Small file input</Label>
 <Fileupload id="small_size" size='xs' />
-<Label for='default_size' >Default size</Label>
+<Label class="pb-2" for='default_size' >Default size</Label>
 <Fileupload id="default_size" />
-<Label for='larg_size' >Large file input</Label>
+<Label class="pb-2" for='larg_size' >Large file input</Label>
 <Fileupload id="larg_size" size='lg' />
 ```
 
 <Htwo label="Dropzone" />
 
-<ExampleDiv>
-<Dropzone id='dropzone'>
-  <svg aria-hidden="true" class="mb-3 w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
-  <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-  <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
-</Dropzone>
-</ExampleDiv>
+```svelte example
+<script>
+  import { Dropzone } from 'flowbite-svelte'
+</script>
 
-```html
 <Dropzone id='dropzone'>
   <svg aria-hidden="true" class="mb-3 w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
   <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>

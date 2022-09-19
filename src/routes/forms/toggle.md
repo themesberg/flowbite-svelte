@@ -45,32 +45,24 @@ The toggle component can be used to receive a simple “yes” or “no” type 
 
 Get started with the default toggle component example as a checkbox element to receive a true or false selection from the user.
 
-<ExampleDiv class="flex flex-col gap-2">
-  <Toggle>Toggle me</Toggle>
-  <Toggle checked={true}>Checked toggle</Toggle>
-  <Toggle disabled>Disabled toggle</Toggle>
-  <Toggle checked disabled>Disabled checked</Toggle>
-</ExampleDiv>
+```svelte example class="flex flex-col gap-2" hideScript
+<script>
+  import { Toggle } from 'flowbite-svelte'
+</script>
 
-```html
 <Toggle>Toggle me</Toggle>
-<Toggle checked>Checked toggle</Toggle>
+<Toggle checked={true}>Checked toggle</Toggle>
 <Toggle disabled>Disabled toggle</Toggle>
 <Toggle checked disabled>Disabled checked</Toggle>
 ```
 
 <Htwo label="Colors" />
 
-<ExampleDiv class="flex justify-between">
-  <Toggle color="red" checked>Red</Toggle>
-  <Toggle color="green" checked>Green</Toggle>
-  <Toggle color="purple" checked>Purple</Toggle>
-  <Toggle color="yellow" checked>Yellow</Toggle>
-  <Toggle color="teal" checked>Teal</Toggle>
-  <Toggle color="orange" checked>Orange</Toggle>
-</ExampleDiv>
+```svelte example class="flex justify-between" hideScript
+<script>
+  import { Toggle } from 'flowbite-svelte'
+</script>
 
-```html
 <Toggle color="red" checked>Red</Toggle>
 <Toggle color="green" checked>Green</Toggle>
 <Toggle color="purple" checked>Purple</Toggle>
@@ -81,13 +73,11 @@ Get started with the default toggle component example as a checkbox element to r
 
 <Htwo label="Sizes" />
 
-<ExampleDiv class="flex flex-col gap-2">
-  <Toggle size="small">Small toggle</Toggle>
-  <Toggle size="default" checked>Default toggle</Toggle>
-  <Toggle size="large" checked>Large toggle</Toggle>
-</ExampleDiv>
+```svelte example class="flex flex-col gap-2" hideScript
+<script>
+  import { Toggle } from 'flowbite-svelte'
+</script>
 
-```html
 <Toggle size="small">Small toggle</Toggle>
 <Toggle size="default" checked>Default toggle</Toggle>
 <Toggle size="large" checked>Large toggle</Toggle>
