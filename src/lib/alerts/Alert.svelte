@@ -39,12 +39,13 @@
 </script>
 
 <Frame {color} {rounded} {...$$restProps} class={divClass} role="alert">
-  <div class="flex items-center whitespace-pre-wrap">
+  <div class="flex items-center">
     {#if $$slots.icon}
       <slot name="icon" />
     {/if}
-
-    <slot />
+    <div class:ml-3={$$slots.icon}>
+      <slot />
+    </div>
 
     {#if dismissable}
       <CloseButton
