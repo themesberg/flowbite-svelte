@@ -6,7 +6,7 @@ title: Video
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Video, Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
+  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
 
   import componentProps from '../props/Video.json'
   // Props table
@@ -24,15 +24,23 @@ title: Video
 
 <Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
+<Htwo label="Setup" />
+
+```html
+<script>
+  import { Video } from 'flowbite-svelte';
+</script>
+```
+
 <Htwo label="Video player" />
 
 Use this example to create a native browser video player and apply the w-full utility class from Tailwind CSS to span the full width of the parent container.
 
-<ExampleDiv>
-<Video src='/videos/flowbite.mp4' controls trackSrc='flowbite.mp4' />
-</ExampleDiv>
+```svelte example hideScript
+<script>
+  import { Video } from 'flowbite-svelte'
+</script>
 
-```html
 <Video src='/videos/flowbite.mp4' controls trackSrc='flowbite.mp4' />
 ```
 
@@ -40,11 +48,11 @@ Use this example to create a native browser video player and apply the w-full ut
 
 Use the autoplay attribute on the video component to automatically start the video when the page has been loaded.
 
-<ExampleDiv>
-<Video src='/videos/flowbite.mp4' autoplay controls trackSrc='flowbite.mp4' />
-</ExampleDiv>
+```svelte example hideScript
+<script>
+  import { Video } from 'flowbite-svelte'
+</script>
 
-```html
 <Video src='/videos/flowbite.mp4' autoplay controls trackSrc='flowbite.mp4' />
 ```
 
@@ -52,11 +60,11 @@ Use the autoplay attribute on the video component to automatically start the vid
 
 Use the muted attribute together with the autoplay option to start the video while the sound is muted.
 
-<ExampleDiv>
-<Video src='/videos/flowbite.mp4' autoplay muted controls trackSrc='flowbite.mp4' />
-</ExampleDiv>
+```svelte example hideScript
+<script>
+  import { Video } from 'flowbite-svelte'
+</script>
 
-```html
 <Video src='/videos/flowbite.mp4' autoplay muted controls trackSrc='flowbite.mp4' />
 ```
 
@@ -68,11 +76,11 @@ Set the width and height of the video component using the `w-{size}` and `h-{siz
 
 Use the `w-{size}` class to set the height of the video player.
 
-<ExampleDiv>
-<Video src='/videos/flowbite.mp4' controls class='w-96' trackSrc='flowbite.mp4' />
-</ExampleDiv>
+```svelte example hideScript
+<script>
+  import { Video } from 'flowbite-svelte'
+</script>
 
-```html
 <Video src='/videos/flowbite.mp4' controls class='w-96' trackSrc='flowbite.mp4' />
 ```
 
@@ -80,11 +88,11 @@ Use the `w-{size}` class to set the height of the video player.
 
 Use the `h-{size}` class to set the height of the video player.
 
-<ExampleDiv>
-<Video src='/videos/flowbite.mp4' controls class='h-80' trackSrc='flowbite.mp4' />
-</ExampleDiv>
+```svelte example hideScript
+<script>
+  import { Video } from 'flowbite-svelte'
+</script>
 
-```html
 <Video src='/videos/flowbite.mp4' controls class='h-80' trackSrc='flowbite.mp4' />
 ```
 
@@ -93,11 +101,11 @@ Use the `h-{size}` class to set the height of the video player.
 
 Use the following example to make the video responsive across all devices and viewports.
 
-<ExampleDiv>
-<Video src='/videos/flowbite.mp4' controls class='w-full max-w-full h-auto' trackSrc='flowbite.mp4' />
-</ExampleDiv>
+```svelte example hideScript
+<script>
+  import { Video } from 'flowbite-svelte'
+</script>
 
-```html
 <Video src='/videos/flowbite.mp4' controls class='w-full max-w-full h-auto' trackSrc='flowbite.mp4' />
 ```
 
@@ -106,14 +114,13 @@ Use the following example to make the video responsive across all devices and vi
 
 Customize the video player appearance using the utility classes from Tailwind CSS such as `rounded-{size}` or border to set rounded corners and border.
 
-<ExampleDiv>
-<Video src='/videos/flowbite.mp4' controls class='w-full max-w-full h-auto rounded-lg border border-gray-200 dark:border-gray-700' trackSrc='flowbite.mp4' />
-</ExampleDiv>
+```svelte example hideScript
+<script>
+  import { Video } from 'flowbite-svelte'
+</script>
 
-```html
 <Video src='/videos/flowbite.mp4' controls class='w-full max-w-full h-auto rounded-lg border border-gray-200 dark:border-gray-700' trackSrc='flowbite.mp4' />
 ```
-
 
 <Htwo label="Props" />
 

@@ -6,9 +6,8 @@ title: Range
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Label, Range, Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
+  import { Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
   
-
   import componentProps from '../props/Range.json'
   let items = componentProps.props
   let propHeader = ['Name', 'Type', 'Default']
@@ -16,7 +15,7 @@ title: Range
  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
   let minmaxValue=5
-  let stepValue=2.5
+  
 </script>
 
 <Breadcrumb class="pb-8">
@@ -45,27 +44,22 @@ The range component can be used as an input field to get a number from the user 
 
 <Htwo label="Range slider example" />
 
-<ExampleDiv>
+```svelte example
+<script>
+  import { Range, Label } from 'flowbite-svelte'
+</script>
+
 <Label>Default range</Label>
 <Range id="range1" />
-</ExampleDiv>
-
-```html
-<script>
-  import { Range } from 'flowbite-svelte'
-</script>
-<Label>Default range</Label>
-<Range id="range1"/>
 ```
 
 <Htwo label="Disabled state" />
 
-<ExampleDiv>
-<Label>Default range</Label>
-<Range id="range-disabled" disabled/>
-</ExampleDiv>
+```svelte example hideScript
+<script>
+  import { Range, Label } from 'flowbite-svelte'
+</script>
 
-```html
 <Label>Default range</Label>
 <Range id="range-disabled" disabled/>
 ```
@@ -76,13 +70,12 @@ Use bind:value to bind the range input value as seen the the following examples.
 
 <Htwo label="Min and max" />
 
-<ExampleDiv>
-<Label>Min-max range</Label>
-<Range id="range-minmax" min="0" max="10" bind:value={minmaxValue}/>
-<p>Value: {minmaxValue}</p>
-</ExampleDiv>
+```svelte example
+<script>
+  import { Range, Label } from 'flowbite-svelte'
+  let minmaxValue=5
+</script>
 
-```html
 <Label>Min-max range</Label>
 <Range id="range-minmax" min="0" max="10" bind:value={minmaxValue}/>
 <p>Value: {minmaxValue}</p>
@@ -90,13 +83,12 @@ Use bind:value to bind the range input value as seen the the following examples.
 
 <Htwo label="Steps" />
 
-<ExampleDiv>
-<Label>Range steps</Label>
-<Range id="range-steps" min="0" max="5" bind:value={stepValue} step="0.5"/>
-<p>Value: {stepValue}</p>
-</ExampleDiv>
+```svelte example
+<script>
+  import { Range, Label } from 'flowbite-svelte'
+  let stepValue=2.5
+</script>
 
-```html
 <Label>Range steps</Label>
 <Range id="range-steps" min="0" max="5" bind:value={stepValue} step="0.5"/>
 <p>Value: {stepValue}</p>
@@ -104,16 +96,11 @@ Use bind:value to bind the range input value as seen the the following examples.
 
 <Htwo label="Sizes" />
 
-<ExampleDiv class="space-y-6">
-<Label>Small range</Label>
-<Range id="small-range" size="sm" />
-<Label>Default range</Label>
-<Range id="default-range" size="md"/>
-<Label>Large range</Label>
-<Range id="large-range" size="lg" />
-</ExampleDiv>
+```svelte example class="space-y-6" hideScript
+<script>
+  import { Range, Label } from 'flowbite-svelte'
+</script>
 
-```html
 <Label>Small range</Label>
 <Range id="small-range" size="sm" />
 <Label>Default range</Label>
@@ -129,7 +116,6 @@ Since we added `$$restProps` to input field, you can contain the props which are
 <Htwo label="Props" />
 
 The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
-
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />

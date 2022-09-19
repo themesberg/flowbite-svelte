@@ -6,9 +6,7 @@ title: Carousel
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Carousel, CarouselTransition, Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
-   import { quartInOut, sineInOut, bounceInOut, quintOut } from 'svelte/easing';
-  import { images } from './imageData/+server.js';
+  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   import componentProps from '../props/Carousel.json'
   import componentProps2 from '../props/CarouselTransition.json'
   // Props table
@@ -17,22 +15,7 @@ title: Carousel
 	let propHeader = ['Name', 'Type', 'Default']
 	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
-
-  let showThumbs=false
-  let showIndicators=false
-  let showCaptions=false
-  let slideControls=false
-  let iconSize =20
-  let iconClass = 'text-white dark:text-red-500';
-
-  let hidden = true;
-  const handleMouseover = ()=>{
-    hidden = false
-  }
-  const handleMouseout = ()=>{
-    hidden = true
-  }
+  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 </script>
 
 <Breadcrumb class="pb-8">
@@ -57,21 +40,8 @@ The carousel component can be used to cycle through a set of elements using cust
 ```html
 <script>
   import { Carousel, CarouselTransition } from 'flowbite-svelte'
-</script>
-```
-
-<Htwo label="Default Carousel" />
-
-<ExampleDiv>
-  <div class="max-w-4xl">
-    <Carousel {images} />
-  </div>
-</ExampleDiv>
-
-```html
-<script>
-  ...
-  const images = [
+  // ./imageData/+server.js has the followint
+  export const images = [
   {
     id: 0,
     name: "Cosmic timetraveler",
@@ -122,6 +92,15 @@ The carousel component can be used to cycle through a set of elements using cust
   },
 ];
 </script>
+```
+
+<Htwo label="Default Carousel" />
+
+```svelte example
+<script>
+  import { Carousel } from 'flowbite-svelte'
+  import { images } from './imageData/+server.js';
+</script>
 
 <div class="max-w-4xl">
   <Carousel {images} />
@@ -132,20 +111,16 @@ The carousel component can be used to cycle through a set of elements using cust
 
 <p>Use `loop` prop to loop the carousel. Use `duration=number` to set the interval</p>
 
-<ExampleDiv>
-	<div class="max-w-4xl">
-		<Carousel {images} loop {showCaptions} {showThumbs} duration="3000"/>
-	</div>
-</ExampleDiv>
-
-```html
+```svelte example
 <script>
+  import { Carousel } from 'flowbite-svelte'
+  import { images } from './imageData/+server.js';
   let showThumbs=false
   let showCaptions=false
 </script>
 
 <div class="max-w-4xl">
-  <Carousel {images} loop {showCaptions} {showThumbs} duration="3000" />
+  <Carousel {images} loop {showCaptions} {showThumbs} duration="3000"/>
 </div>
 ```
 
@@ -153,15 +128,11 @@ The carousel component can be used to cycle through a set of elements using cust
 
 <p>The `showThumbs` is set to `true`. Set it to `false` to hide it.</p>
 
-<ExampleDiv>
-  <div class="max-w-4xl">
-    <Carousel {images} {showThumbs}/>
-  </div>
-</ExampleDiv>
-
-```html
+```svelte example
 <script>
-    let showThumbs=false
+  import { Carousel } from 'flowbite-svelte'
+  import { images } from './imageData/+server.js';
+  let showThumbs=false
 </script>
 
 <div class="max-w-4xl">
@@ -173,14 +144,10 @@ The carousel component can be used to cycle through a set of elements using cust
 
 <p>To hide the caption, set `showCaptions` to `false`.</p>
 
-<ExampleDiv>
-  <div class="max-w-4xl">
-    <Carousel {images} {showThumbs} {showCaptions}/>
-  </div>
-</ExampleDiv>
-
-```html
+```svelte example
 <script>
+  import { Carousel } from 'flowbite-svelte'
+  import { images } from './imageData/+server.js';
   let showThumbs=false
   let showCaptions=false
 </script>
@@ -194,14 +161,10 @@ The carousel component can be used to cycle through a set of elements using cust
 
 <p>To hide the indicators, set `showIndicators` to `false`.</p>
 
-<ExampleDiv>
-  <div class="max-w-4xl">
-    <Carousel {images} {showThumbs} {showCaptions} {showIndicators}/>
-  </div>
-</ExampleDiv>
-
-```html
+```svelte example
 <script>
+  import { Carousel } from 'flowbite-svelte'
+  import { images } from './imageData/+server.js';
   let showThumbs=false
   let showCaptions=false
   let showIndicators=false
@@ -216,14 +179,10 @@ The carousel component can be used to cycle through a set of elements using cust
 
 <p>To hide the slide controllers, set `slideControls` to `false`.</p>
 
-<ExampleDiv>
-  <div class="max-w-4xl">
-    <Carousel {images} {showThumbs} {showCaptions} {slideControls}/>
-  </div>
-</ExampleDiv>
-
-```html
+```svelte example
 <script>
+  import { Carousel } from 'flowbite-svelte'
+  import { images } from './imageData/+server.js';
   let showThumbs=false
   let showCaptions=false
   let slideControls=false
@@ -256,19 +215,14 @@ The carousel component can be used to cycle through a set of elements using cust
 
 <Htwo label="Carousel transition" />
 
-<ExampleDiv>
-  <div class="max-w-4xl">
-    <CarouselTransition {images} transitionType="fade" transitionParams="{{delay: 300, duration: 500}}"/>
-  </div>
-</ExampleDiv>
-
-```html
+```svelte example
 <script>
-  import { CarouselTransition } from 'flowbite-svelte';
+  import { CarouselTransition } from 'flowbite-svelte'
+  import { images } from './imageData/+server.js';
 </script>
 
 <div class="max-w-4xl">
-  <CarouselTransition {images} transitionType="slide" transitionParams="{{delay: 300, duration: 500}}"/>
+  <CarouselTransition {images} transitionType="fade" transitionParams="{{delay: 300, duration: 500}}"/>
 </div>
 ```
 
@@ -276,51 +230,39 @@ The carousel component can be used to cycle through a set of elements using cust
 
 <p>Use `loop` prop to loop the carousel. Use `duration=number` to set the interval</p>
 
-<ExampleDiv>
-	<div class="max-w-4xl">
-		<CarouselTransition {images} loop transitionType="fade" transitionParams="{{ duration: 1000 }}" {showCaptions} {showThumbs} duration="5000" />
-	</div>
-</ExampleDiv>
-
-```html
+```svelte example
 <script>
-  let showThumbs=false
-  let showCaptions=false
+  import { CarouselTransition } from 'flowbite-svelte'
+  import { images } from './imageData/+server.js';
 </script>
 
 <div class="max-w-4xl">
-  <CarouselTransition {images} loop transitionType="fade" transitionParams="{{ duration: 1000 }}" {showCaptions} {showThumbs} duration="5000" />
+  <CarouselTransition {images} loop transitionType="fade" transitionParams="{{ duration: 1000 }}" showCaptions={false} showThumbs={false} duration="5000" />
 </div>
 ```
 
 <Htwo label="Fly example" />
 
-<ExampleDiv>
-  <div class="max-w-4xl">
-    <CarouselTransition {images} transitionType="fly" transitionParams="{{delay: 250, duration: 300, x: 100}}" />
-  </div>
-</ExampleDiv>
-
-```html
-<CarouselTransition {images} transitionType="fly" transitionParams="{{delay: 250, duration: 300, x: 100}}" />
+```svelte example
+<script>
+  import { CarouselTransition } from 'flowbite-svelte'
+  import { images } from './imageData/+server.js';
+</script>
+<div class="max-w-4xl">
+  <CarouselTransition {images} transitionType="fly" transitionParams="{{delay: 250, duration: 300, x: 100}}" showCaptions={false} showThumbs={false} />
+</div>
 ```
 
 <Htwo label="Slide example" />
 
-<ExampleDiv>
-  <div class="max-w-4xl">
-    <CarouselTransition {images} transitionType="slide" transitionParams="{{duration: 1500, easing: bounceInOut}}"/>
-  </div>
-</ExampleDiv>
-
-```html
+```svelte example
 <script>
-  import { CarouselTransition } from 'flowbite-svelte';
+  import { CarouselTransition } from 'flowbite-svelte'
+  import { images } from './imageData/+server.js';
   import { bounceInOut } from 'svelte/easing';
 </script>
-
 <div class="max-w-4xl">
-  <CarouselTransition {images} transitionType="slide" transitionParams="{{duration: 1500, easing: bounceInOut}}"/>
+  <CarouselTransition {images} transitionType="slide" transitionParams="{{duration: 1500, easing: bounceInOut}}" showCaptions={false} showThumbs={false}/>
 </div>
 ```
 

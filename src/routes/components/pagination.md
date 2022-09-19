@@ -5,57 +5,22 @@ title: Pagination
 ---
 
 <script lang="ts">
-	import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-	import { Pagination, Previous, Next, TableData, Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
+  import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
   ;
-	
-	import componentProps1 from '../props/Pagination.json'
+  
+  import componentProps1 from '../props/Pagination.json'
   import componentProps2 from '../props/Previous.json'
-	import componentProps3 from '../props/Next.json'
+  import componentProps3 from '../props/Next.json'
   import componentProps4 from '../props/TableData.json'
   let items1 = componentProps1.props
   let items2 = componentProps2.props
-	let items3 = componentProps3.props
+  let items3 = componentProps3.props
   let items4 = componentProps4.props
-	let propHeader = ['Name', 'Type', 'Default']
-	
-	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
-
-	let pages = [
-		{
-			pageNum: 1,
-			href: '/'
-		},
-		{
-			pageNum: 2,
-			href: '/'
-		},
-		{
-			pageNum: 3,
-			href: '/'
-		},
-		{
-			pageNum: 4,
-			href: '/'
-		},
-		{
-			pageNum: 5,
-			href: '/'
-		}
-	];
-	const previous = () => {
-		alert('Previous btn clicked. Make a call to your server to fetch data.');
-	};
-	const next = () => {
-		alert('Next btn clicked. Make a call to your server to fetch data.');
-	};
-  let helper = {
-    start: 1,
-    end: 10,
-    total: 100
-  }
-
+  let propHeader = ['Name', 'Type', 'Default']
+  
+  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
+  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 </script>
 
 <Breadcrumb class="pb-8">
@@ -88,41 +53,37 @@ The pagination component can be used to navigate across a series of content and 
 
 Use the following list of pagination items to indicate a series of content for your website.
 
-<ExampleDiv class="flex justify-center">
-  <Pagination {pages} on:previous={previous} on:next={next} />
-</ExampleDiv>
-
-```html
-<script lang="ts">
-	import { Pagination } from 'flowbite-svelte';
-	let pages = [
-		{
-			pageNum: 1,
-			href: '/'
-		},
-		{
-			pageNum: 2,
-			href: '/'
-		},
-		{
-			pageNum: 3,
-			href: '/'
-		},
-		{
-			pageNum: 4,
-			href: '/'
-		},
-		{
-			pageNum: 5,
-			href: '/'
-		}
-	];
-	const previous = () => {
-		alert('Previous btn clicked. Make a call to your server to fetch data.');
-	};
-	const next = () => {
-		alert('Next btn clicked. Make a call to your server to fetch data.');
-	};
+```svelte example class="flex justify-center"
+<script>
+  import { Pagination } from 'flowbite-svelte'
+  let pages = [
+    {
+      pageNum: 1,
+      href: '/'
+    },
+    {
+      pageNum: 2,
+      href: '/'
+    },
+    {
+      pageNum: 3,
+      href: '/'
+    },
+    {
+      pageNum: 4,
+      href: '/'
+    },
+    {
+      pageNum: 5,
+      href: '/'
+    }
+  ];
+  const previous = () => {
+    alert('Previous btn clicked. Make a call to your server to fetch data.');
+  };
+  const next = () => {
+    alert('Next btn clicked. Make a call to your server to fetch data.');
+  };
 </script>
 
 <Pagination {pages} on:previous={previous} on:next={next} />
@@ -132,11 +93,39 @@ Use the following list of pagination items to indicate a series of content for y
 
 The following pagination component example shows how you can use SVG icons instead of text to show the previous and next pages.
 
-<ExampleDiv class="flex justify-center">
-  <Pagination {pages} on:previous={previous} on:next={next} icon />
-</ExampleDiv>
+```svelte example class="flex justify-center"
+<script>
+  import { Pagination } from 'flowbite-svelte'
+  let pages = [
+    {
+      pageNum: 1,
+      href: '/'
+    },
+    {
+      pageNum: 2,
+      href: '/'
+    },
+    {
+      pageNum: 3,
+      href: '/'
+    },
+    {
+      pageNum: 4,
+      href: '/'
+    },
+    {
+      pageNum: 5,
+      href: '/'
+    }
+  ];
+  const previous = () => {
+    alert('Previous btn clicked. Make a call to your server to fetch data.');
+  };
+  const next = () => {
+    alert('Next btn clicked. Make a call to your server to fetch data.');
+  };
+</script>
 
-```html
 <Pagination {pages} on:previous={previous} on:next={next} icon />
 ```
 
@@ -144,14 +133,15 @@ The following pagination component example shows how you can use SVG icons inste
 
 Use the following markup to show simple previous and next elements.
 
-<ExampleDiv class="flex justify-center">
-  <Previous on:previous={previous} />
-  <Next on:next={next} />
-</ExampleDiv>
-
-```html
+```svelte example class="flex justify-center"
 <script>
-  import { Previous, Next } from 'flowbite-svelte';
+  import { Pagination, Next, Previous } from 'flowbite-svelte'
+  const previous = () => {
+    alert('Previous btn clicked. Make a call to your server to fetch data.');
+  };
+  const next = () => {
+    alert('Next btn clicked. Make a call to your server to fetch data.');
+  };
 </script>
 
 <Previous on:previous={previous} />
@@ -162,12 +152,18 @@ Use the following markup to show simple previous and next elements.
 
 Use the following code to show simple previous and next elements with icons.
 
-<ExampleDiv class="flex justify-center">
-  <Previous on:previous={previous} icon />
-  <Next on:next={next} icon />
-</ExampleDiv>
 
-```html
+```svelte example class="flex justify-center"
+<script>
+  import { Pagination, Next, Previous } from 'flowbite-svelte'
+  const previous = () => {
+    alert('Previous btn clicked. Make a call to your server to fetch data.');
+  };
+  const next = () => {
+    alert('Next btn clicked. Make a call to your server to fetch data.');
+  };
+</script>
+
 <Previous on:previous={previous} icon />
 <Next on:next={next} icon />
 ```
@@ -176,11 +172,17 @@ Use the following code to show simple previous and next elements with icons.
 
 You can use the following markup to show the number of data shown inside a table element and also the previous and next action buttons.
 
-<ExampleDiv class="flex justify-center">
-<TableData on:next={next} on:previous={previous} />
-</ExampleDiv>
+```svelte example class="flex justify-center"
+<script>
+  import { TableData } from 'flowbite-svelte'
+  const previous = () => {
+    alert('Previous btn clicked. Make a call to your server to fetch data.');
+  };
+  const next = () => {
+    alert('Next btn clicked. Make a call to your server to fetch data.');
+  };
+</script>
 
-```html
 <TableData on:next={next} on:previous={previous} />
 ```
 
@@ -188,17 +190,20 @@ You can use the following markup to show the number of data shown inside a table
 
 You can use the following code to show the number of data shown inside a table element and also the previous and next action buttons coupled with icons.
 
-<ExampleDiv class="flex justify-center">
-<TableData on:next={next} on:previous={previous} {helper}/>
-</ExampleDiv>
-
-```html
+```svelte example class="flex justify-center"
 <script>
-    let helper = {
+  import { TableData } from 'flowbite-svelte'
+  let helper = {
     start: 1,
     end: 10,
     total: 100
   }
+  const previous = () => {
+    alert('Previous btn clicked. Make a call to your server to fetch data.');
+  };
+  const next = () => {
+    alert('Next btn clicked. Make a call to your server to fetch data.');
+  };
 </script>
 
 <TableData on:next={next} on:previous={previous} {helper}/>
@@ -252,7 +257,7 @@ You can use the following code to show the number of data shown inside a table e
 <Htwo label="References" />
 
 <P>
-	<A href="https://flowbite.com/docs/components/pagination/" target="_blank" class="link"
-		>Flowbite Pagination</A
-	>
+  <A href="https://flowbite.com/docs/components/pagination/" target="_blank" class="link"
+    >Flowbite Pagination</A
+  >
 </P>
