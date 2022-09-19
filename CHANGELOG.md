@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.24](https://github.com/themesberg/flowbite-svelte/compare/v0.26.23...v0.26.24) (2022-09-19)
+
+
+### Features
+
+* mdsvexamples ([fc542a0](https://github.com/themesberg/flowbite-svelte/commit/fc542a0b6d09067fa62ae92ed44cb08408c19ad0))
+* wrapper added ([024b8e6](https://github.com/themesberg/flowbite-svelte/commit/024b8e6a8db1e4961b1d26df67728cc0fb8b3025))
+
 ### [0.26.23](https://github.com/themesberg/flowbite-svelte/compare/v0.26.22...v0.26.23) (2022-09-18)
 
 
