@@ -355,6 +355,8 @@ For casual chatting with others using the library:
 
 ## Tests
 
+**Please use node v16.xx.x.**
+
 Run:
 
 ```sh
