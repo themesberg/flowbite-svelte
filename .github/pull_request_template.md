@@ -5,10 +5,10 @@ Please make sure that the pull request is limited to one type (docs, feature, et
 -->
 
 <!-- If this pull request closes an issue, please mention the issue number below -->
-Closes # <!-- Issue # here -->
+Closes #<!-- Issue # here -->
 
 ## 📑 Description
-<!-- Add a brief description of the pr -->
+<!-- Add a brief description of the PR -->
 
 <!-- You can also choose to add a list of changes and if they have been completed or not by using the markdown to-do list syntax
 - [ ] Not Completed
@@ -16,7 +16,7 @@ Closes # <!-- Issue # here -->
 -->
 
 ## ✅ Checks
-<!-- Make sure your pr passes the tests and do check the following fields as needed - -->
+<!-- Make sure your PR passes the tests and do check the following fields as needed - -->
 
 - [ ] My pull request adheres to the code style of this project
 - [ ] My code requires changes to the documentation
@@ -27,7 +27,19 @@ Closes # <!-- Issue # here -->
 
 <!--
 
-Sync fork from GitHub dropdown and update the branch. Or using the command line:
+Sync fork from GitHub dropdown and update your local branch. 
+
+```sh
+git pull origin main
+git checkout your-branch
+git rebase main
+npm run test
+git push
+```
+
+Then create a PR from your GitHub repo.
+
+Or if you are using the command line:
 
 ```sh
 git checkout main
