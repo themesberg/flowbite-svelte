@@ -61,7 +61,7 @@
     dropdown: 'text-gray-500 dark:text-gray-400',
     navbar: 'text-gray-700 dark:text-gray-200',
     navbarUl: 'text-gray-700 dark:text-gray-400',
-    from: 'text-gray-900 dark:text-white',
+    form: 'text-gray-900 dark:text-white',
     none: ''
   };
 
