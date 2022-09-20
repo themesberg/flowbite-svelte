@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.26](https://github.com/themesberg/flowbite-svelte/compare/v0.26.25...v0.26.26) (2022-09-20)
+
+
+### Features
+
+* add $$slots.arrowdown and arrowup for user icons ([3fa53de](https://github.com/themesberg/flowbite-svelte/commit/3fa53de11239fe93e2ae9e28e5bdf3ee3ccc1f69))
+* add ChevronUp to SidebarDropdownWrapper ([032d540](https://github.com/themesberg/flowbite-svelte/commit/032d540b347ab30ddcdcddff8c0963290ce0c904))
+
+
+### Bug Fixes
+
+* alert more tweaks ([444b340](https://github.com/themesberg/flowbite-svelte/commit/444b340f3a211f02572675b94624da4ae5d90c63))
+* alert tweaks ([0c93b3c](https://github.com/themesberg/flowbite-svelte/commit/0c93b3c27d8911cd4709f78c554f68e524cc06d4))
+
 ### [0.26.25](https://github.com/themesberg/flowbite-svelte/compare/v0.26.24...v0.26.25) (2022-09-19)
 
 
