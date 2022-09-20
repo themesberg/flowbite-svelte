@@ -1,1 +1,1 @@
-{"props":[["color","| 'gray'     | 'blue'     | 'red'     | 'green'     | 'yellow'     | 'indigo'     | 'purple'     | 'pink'     | 'dark'     | 'custom' ","'blue'"],["dismissable","boolean ","false"],["rounded","boolean ","true"],["accent","boolean ","false"]]}
+{"props":[["dismissable","boolean ","false"],["accent","boolean ","false"]]}

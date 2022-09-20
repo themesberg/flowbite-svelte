@@ -9,6 +9,9 @@ title: Popover
 
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   import componentProps from '../props/Popover.json'
+  import frameProps from '../props/Frame.json'
+  import popperProps from '../props/Popper.json'
+
   let props = componentProps.props
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
@@ -167,7 +170,7 @@ Use this example to trigger a popover component with detailed information and an
         <a href="/" class="flex items-center font-medium text-blue-600 dark:text-blue-500 dark:hover:text-blue-600 hover:text-blue-700">Read more <svg class="ml-1 w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></a>
       </div>
     </div>
-    <img src="/images/image-1.jpeg" class="col-span-2 h-full rounded-r-lg" alt="Italy map" />
+    <img src="/images/italy.png" class="col-span-2 h-full rounded-r-lg" alt="Italy map" />
   </div>
 </Popover>
 ```
@@ -230,7 +233,7 @@ Dynamically show the password strength progress when creating a new password pos
   import { Popover, Label, Input, Checkbox, Button } from 'flowbite-svelte'
 </script>
 
-<form on:submit|preventDefault>
+<form on:submit|preventDefault class="mb-8">
   <div class="mb-6">
     <Label for="email" class="mb-2">Your email</Label>
     <Input type="email" id="email" placeholder="name@flowbite.com" required="" />
@@ -271,16 +274,18 @@ Upper &amp; lower case letters
 
 Set the position of the popover component relative to the trigger element by using the `placement={top|right|bottom|left}` data attribute and its values.
 
-```svelte example class="flex gap-4"
+```svelte example class="flex gap-4 flex-col justify-center items-center h-96"
 <script>
   import { Popover, Button } from 'flowbite-svelte'
   let placement;
 </script>
 
-<Button id="placement-left" on:mouseenter={()=> placement="left"}>Left popover</Button>
 <Button id="placement-top" on:mouseenter={()=> placement="top"}>Top popover</Button>
-<Button id="placement-bottom" on:mouseenter={()=> placement="bottom"}>Bottom popover</Button>
+<div class="space-x-4">
+<Button id="placement-left" on:mouseenter={()=> placement="left"}>Left popover</Button>
 <Button id="placement-right" on:mouseenter={()=> placement="right"}>Right popover</Button>
+</div>
+<Button id="placement-bottom" on:mouseenter={()=> placement="bottom"}>Bottom popover</Button>
 <Popover triggeredBy="[id^='placement-']" {placement} class="w-64 text-sm font-light " title="Popover left">
     And here's some amazing content. It's very engaging. Right?
 </Popover>
@@ -288,7 +293,7 @@ Set the position of the popover component relative to the trigger element by usi
 
 <Htwo label="Triggering" />
 
-```svelte example
+```svelte example class="flex h-44 items-end justify-center gap-4"
 <script>
   import { Popover, Button } from 'flowbite-svelte'
 </script>
@@ -361,16 +366,24 @@ You can also disable the popover arrow by setting `arrow` attribute to `false`.
 
 <p>The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.</p>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Modal</h3>
-
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={props} rowState='hover' />
+</TableProp>
+
+The component inherits the following props, type, and default values from `Popper`. See <a href="/pages/types">types page</a> for type information.
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={popperProps.props} rowState='hover' />
+</TableProp>
+
+The component inherits the following props, type, and default values from `Frame`. See <a href="/pages/types">types page</a> for type information.
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={frameProps.props} rowState='hover' />
 </TableProp>
 
 <Htwo label="References" />
 
 <P>
-  <A href="https://flowbite.com/docs/components/popover/" target="_blank" class="link"
-    >Flowbite Popover</A
-  >
+  <A href="https://flowbite.com/docs/components/popover/" target="_blank" class="link">Flowbite Popover</A>
 </P>
