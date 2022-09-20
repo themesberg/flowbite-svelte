@@ -1,7 +1,8 @@
 ---
 layout: typographyLayout
+title: Svelte Horizontal Line (HR) - Flowbite
+breadcrumb_title: HR
 dir: Typography
-title: Horizontal Line (HR)
 ---
 
 <script>
@@ -17,7 +18,7 @@ title: Horizontal Line (HR)
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{title}</BreadcrumbItem>
+  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
 </Breadcrumb>
 
 <Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>

@@ -1,7 +1,8 @@
 ---
 layout: formLayout
+title: Svelte Radio - Flowbite
+breadcrumb_title: Radio
 dir: Forms
-title: Radio
 ---
 
 <script>
@@ -22,7 +23,7 @@ title: Radio
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{title}</BreadcrumbItem>
+  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
 </Breadcrumb>
 
 <Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>

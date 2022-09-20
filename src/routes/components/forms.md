@@ -1,7 +1,8 @@
 ---
 layout: formLayout
+title: Svelte Forms - Flowbite
+breadcrumb_title: Forms
 dir: Components
-title: Forms
 ---
 
 <script>
@@ -37,7 +38,7 @@ title: Forms
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{title}</BreadcrumbItem>
+  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
 </Breadcrumb>
 
 <Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>

@@ -22,7 +22,7 @@
     </span></Alert>
 </div>
 
-<h1 class="text-3xl w-full dark:text-white pb-4">Datepicker</h1>
+<h1 class="text-3xl w-full dark:text-white pb-4">Svelte Datepicker - Flowbite</h1>
 
 <CompoDescription
   >Start receiving date and time data from your users using this free datepicker element based on

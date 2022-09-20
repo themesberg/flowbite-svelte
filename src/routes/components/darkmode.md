@@ -1,7 +1,8 @@
 ---
 layout: componentLayout
+title: Svelte Dark Mode - Flowbite
+breadcrumb_title: Dark mode
 dir: Components
-title: 'Dark mode'
 ---
 
 <script>
@@ -20,7 +21,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{title}</BreadcrumbItem>
+  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
 </Breadcrumb>
 
 <Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>

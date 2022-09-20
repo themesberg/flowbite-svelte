@@ -1,7 +1,8 @@
 ---
 layout: componentLayout
+title: Svelte Button Group - Flowbite
+breadcrumb_title: Button group
 dir: Components
-title: Button Group
 ---
 
 <script>
@@ -23,7 +24,7 @@ title: Button Group
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{title}</BreadcrumbItem>
+  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
 </Breadcrumb>
 
 <Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>

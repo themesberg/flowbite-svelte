@@ -1,6 +1,7 @@
 ---
 layout: componentLayout
-title: Badge
+title: Svelte Badge - Flowbite
+breadcrumb_title: Badge
 dir: Components
 ---
 
@@ -20,7 +21,7 @@ dir: Components
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{title}</BreadcrumbItem>
+  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
 </Breadcrumb>
 
 <Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>

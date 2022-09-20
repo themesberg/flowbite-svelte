@@ -1,7 +1,8 @@
 ---
 layout: componentLayout
+title: Svelte Timeline - Flowbite
+breadcrumb_title: Timeline
 dir: Components
-title: Timeline
 ---
 
 <script lang="ts">
@@ -34,7 +35,7 @@ title: Timeline
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{title}</BreadcrumbItem>
+  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
 </Breadcrumb>
 
 <Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
