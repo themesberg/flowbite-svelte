@@ -8,45 +8,45 @@ import { expect, test } from '@playwright/test';
 // Typography
 test('Typography page should have h1', async ({ page }) => {
 	await page.goto('/components/typography');
-	expect(await page.textContent('h1')).toBe('Typography');
+	expect(await page.textContent('h1')).toBe('Svelte Typography - Flowbite');
 });
 
 test('Blockquote page should have h1', async ({ page }) => {
 	await page.goto('/typography/blockquote');
-	expect(await page.textContent('h1')).toBe('Blockquote');
+	expect(await page.textContent('h1')).toBe('Svelte Blockquote - Flowbite');
 });
 
 test('Headings page should have h1', async ({ page }) => {
 	await page.goto('/typography/heading');
-	expect(await page.textContent('h1')).toBe('Heading');
+	expect(await page.textContent('h1')).toBe('Svelte Heading - Flowbite');
 });
 
 test('HR page should have h1', async ({ page }) => {
 	await page.goto('/typography/hr');
-	expect(await page.textContent('h1')).toBe('Horizontal Line (HR)');
+	expect(await page.textContent('h1')).toBe('Svelte Horizontal Line (HR) - Flowbite');
 });
 
 test('Images page should have h1', async ({ page }) => {
 	await page.goto('/typography/image');
-	expect(await page.textContent('h1')).toBe('Image');
+	expect(await page.textContent('h1')).toBe('Svelte Images - Flowbite');
 });
 
 test('Links page should have h1', async ({ page }) => {
 	await page.goto('/typography/link');
-	expect(await page.textContent('h1')).toBe('Link');
+	expect(await page.textContent('h1')).toBe('Svelte Links - Flowbite');
 });
 
 test('Lists page should have h1', async ({ page }) => {
 	await page.goto('/typography/list');
-	expect(await page.textContent('h1')).toBe('List');
+	expect(await page.textContent('h1')).toBe('Svelte Lists - Flowbite');
 });
 
 test('Paragraphs page should have h1', async ({ page }) => {
 	await page.goto('/typography/paragraph');
-	expect(await page.textContent('h1')).toBe('Paragraph');
+	expect(await page.textContent('h1')).toBe('Svelte Paragraph - Flowbite');
 });
 
 test('Text page should have h1', async ({ page }) => {
 	await page.goto('/typography/text');
-	expect(await page.textContent('h1')).toBe('Text');
+	expect(await page.textContent('h1')).toBe('Svelte Text - Flowbite');
 });
