@@ -27,7 +27,13 @@
     <slot name="icon" />
     <span class={spanClass} sidebar-toggle-item>{label}</span>
     {#if isOpen}
-      <ChevronUp />
+      {#if $$slots.arrowup}
+        <slot name="arrowup" />
+      {:else}
+        <ChevronUp />
+      {/if}
+    {:else if $$slots.arrowdown}
+      <slot name="arrowdown" />
     {:else}
       <ChevronDown />
     {/if}
