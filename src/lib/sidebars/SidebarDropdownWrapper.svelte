@@ -3,6 +3,7 @@
   import { slide } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
   import ChevronDown from '../utils/ChevronDown.svelte';
+  import ChevronUp from '../utils/ChevronUp.svelte';
 
   export let btnClass: string =
     'flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700';
@@ -25,7 +26,11 @@
     aria-controls="sidebar-dropdown">
     <slot name="icon" />
     <span class={spanClass} sidebar-toggle-item>{label}</span>
-    <ChevronDown />
+    {#if isOpen}
+      <ChevronUp />
+    {:else}
+      <ChevronDown />
+    {/if}
   </button>
   {#if isOpen}
     <ul
