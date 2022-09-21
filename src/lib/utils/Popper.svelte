@@ -136,7 +136,7 @@
 		on:mouseenter={activeContent && !clickable ? showHandler : undefined}
 		on:mouseleave={activeContent && !clickable ? hideHandler : undefined}
 		{...$$restProps}
-		class={classNames('z-10', $$props.class)}>
+		class={classNames('z-10 outline-none', $$props.class)}>
 		<slot />
 		{#if arrow}<div data-popper-arrow class="tooltip-arrow"/>{/if}
 	</Frame>

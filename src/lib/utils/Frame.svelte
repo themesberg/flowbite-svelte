@@ -58,7 +58,7 @@
     light: 'text-gray-700 dark:text-gray-300',
     dark: 'text-gray-700 dark:text-gray-300',
     default: 'text-gray-500 dark:text-gray-400',
-    dropdown: 'text-gray-500 dark:text-gray-400',
+    dropdown: 'text-gray-700 dark:text-gray-200',
     navbar: 'text-gray-700 dark:text-gray-200',
     navbarUl: 'text-gray-700 dark:text-gray-400',
     form: 'text-gray-900 dark:text-white',
@@ -93,7 +93,7 @@
   $: divClass = classNames(
     bgColors[color],
     textColors[color],
-    rounded && 'rounded-lg ',
+    rounded && (color === 'dropdown' ? 'rounded' : 'rounded-lg'),
     border && 'border',
     borderColors[color],
     shadow && 'shadow-md',
