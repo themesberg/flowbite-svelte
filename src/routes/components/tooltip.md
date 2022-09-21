@@ -126,11 +126,12 @@ When you want to add custom styles, use `style="custom"`, `tipClass`, and `color
 <Button id="custom">Custom style</Button>
 <Tooltip
   triggeredBy="#custom"
-  placement="auto"
+  placement="right"
   style="custom"
   tipClass=""
-  class="p-24 text-lg font-medium text-white"
-  color='green'
+  class="p-4 text-lg font-medium"
+  customColor='bg-purple-500 text-gray-100'
+  arrow={false}
 >
   Tooltip content
 </Tooltip>
