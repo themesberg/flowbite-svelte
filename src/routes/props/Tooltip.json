@@ -1,1 +1,1 @@
-{"props":[["color","string ","'custom'"],["style","'dark' | 'light' | 'auto' | 'custom' ","'auto'"],["tipClass","string ","'py-2 px-3 text-sm font-medium'"]]}
+{"props":[["customColor","string ","''"],["style","'dark' | 'light' | 'auto' | 'custom' ","'auto'"],["tipClass","string ","'py-2 px-3 text-sm font-medium'"]]}

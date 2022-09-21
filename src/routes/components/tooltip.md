@@ -129,8 +129,8 @@ When you want to add custom styles, use `style="custom"`, `tipClass`, and `color
   placement="right"
   style="custom"
   tipClass=""
-  class="p-4 text-lg font-medium text-white"
-  color='green'
+  class="p-4 text-lg font-medium"
+  customColor='bg-purple-500 text-gray-100'
   arrow={false}
 >
   Tooltip content
