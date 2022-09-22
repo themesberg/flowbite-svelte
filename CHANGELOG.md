@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.29](https://github.com/themesberg/flowbite-svelte/compare/v0.26.28...v0.26.29) (2022-09-22)
+
+
+### Features
+
+* dropdown new version ([f17dbff](https://github.com/themesberg/flowbite-svelte/commit/f17dbff9139a80d0629913315fd4e594e99c9f40))
+
+
+### Bug Fixes
+
+* DropdownItem as li only when childe of ul ([add2f16](https://github.com/themesberg/flowbite-svelte/commit/add2f166883df2c237197f3327ad331dd0a1617d))
+* navbar in mobile view width ([7f283f3](https://github.com/themesberg/flowbite-svelte/commit/7f283f363ff5fc70430db83bddde3af24e94aa9a))
+
 ### [0.26.28](https://github.com/themesberg/flowbite-svelte/compare/v0.26.27...v0.26.28) (2022-09-20)
 
 ### [0.26.27](https://github.com/themesberg/flowbite-svelte/compare/v0.26.26...v0.26.27) (2022-09-20)
