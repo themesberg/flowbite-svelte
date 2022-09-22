@@ -2,7 +2,7 @@
 	import Frame from '../utils/Frame.svelte';
 	import classNames from 'classnames';
 
-	export let navClass: string = 'px-2 sm:px-4 py-2.5';
+	export let navClass: string = 'px-2 sm:px-4 py-2.5 w-full';
 	export let navDivClass: string = 'mx-auto flex flex-wrap justify-between items-center ';
 	export let fluid: boolean = true;
 	export let color: string = 'navbar';
