@@ -38,16 +38,27 @@
     getPlacementClasses().map((c) => node.classList.add(c));
     _open && createBackdrop(node);
 
+    function preventScroll(e: Event) {
+      if (e.target === node) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    }
     return {
       update(_open: boolean) {
         allPlacementClasses.map((c) => node.classList.remove(c));
         getPlacementClasses().map((c) => node.classList.add(c));
 
         _open ? createBackdrop(node) : destroyBackdrop(node);
+        _open
+          ? node.addEventListener('wheel', preventScroll, { passive: false })
+          : node.removeEventListener('wheel', preventScroll);
       },
 
       destroy() {
         destroyBackdrop(node);
+        node.removeEventListener('wheel', preventScroll);
       }
     };
   };
@@ -60,10 +71,11 @@
     if (!backdropEl) {
       backdropEl = document.createElement('div');
       backdropEl.classList.add(...backdropClasses.split(' '));
+      backdropEl.style.overscrollBehavior = 'contain';
 
       const body = document.body;
       body.append(backdropEl);
-      body.style.overflow = 'hidden';
+      //   body.style.overflow = 'hidden';
 
       document.addEventListener('keydown', handleEscape, true);
     }
@@ -73,7 +85,7 @@
 
   const destroyBackdrop = (node: HTMLElement) => {
     const body = document.body;
-    body.style.overflow = 'auto';
+    // body.style.overflow = 'auto';
 
     if (backdropEl) backdropEl.remove();
     backdropEl = undefined;
@@ -161,7 +173,7 @@
         <CloseButton name="Close modal" class="absolute top-3 right-2.5" on:click={hide} />
       {/if}
       <!-- Modal body -->
-      <div class="p-6 space-y-6 flex-1 overflow-y-auto">
+      <div class="p-6 space-y-6 flex-1 overflow-y-auto overscroll-contain" tabindex="0">
         <slot />
       </div>
       <!-- Modal footer -->
