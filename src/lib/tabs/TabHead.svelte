@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let tabStyle: 'default' | 'full' | 'icon' | 'pill' | 'underline' | 'custom';
+  export let tabStyle: 'default' | 'full' | 'icon' | 'pill' | 'underline' | 'custom' = 'default';
   export let customDivClass: string = '';
   export let customUlClass: string = '';
   type classOptions = {

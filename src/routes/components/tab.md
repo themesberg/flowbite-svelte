@@ -88,12 +88,12 @@ Use the following default tabs component example to show a list of links that th
 	};
 </script>
 
-<TabWrapper class="mb-4" let:tabStyle>
-	<TabHead {tabStyle}>
-		<TabHeadItem id={1} {tabStyle} {activeTabValue} on:click={handleClick(1)}>Profile</TabHeadItem>
-		<TabHeadItem id={2} {tabStyle} {activeTabValue} on:click={handleClick(2)}>Dashboard</TabHeadItem>
-		<TabHeadItem id={3} {tabStyle} {activeTabValue} on:click={handleClick(3)}>Settings</TabHeadItem>
-		<TabHeadItem id={4} {tabStyle} {activeTabValue} on:click={handleClick(4)}>Users</TabHeadItem>
+<TabWrapper class="mb-4">
+	<TabHead>
+		<TabHeadItem id={1} {activeTabValue} on:click={handleClick(1)}>Profile</TabHeadItem>
+		<TabHeadItem id={2} {activeTabValue} on:click={handleClick(2)}>Dashboard</TabHeadItem>
+		<TabHeadItem id={3} {activeTabValue} on:click={handleClick(3)}>Settings</TabHeadItem>
+		<TabHeadItem id={4} {activeTabValue} on:click={handleClick(4)}>Users</TabHeadItem>
 	</TabHead>
 	<TabContentItem id={1} {activeTabValue}>
 		<p class="text-sm text-gray-500 dark:text-gray-400">
