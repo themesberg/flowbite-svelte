@@ -1,30 +1,34 @@
 <script lang="ts">
-	import classNames from 'classnames';
-	export let liClass: string =
-		'block font-medium cursor-pointer py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600';
-	export let color: string = 'default';
-	export let href: string = undefined;
+  import Wrapper from '$lib/utils/Wrapper.svelte';
+  import classNames from 'classnames';
 
-	const colors = {
-		default: 'text-gray-700 dark:text-gray-200 dark:hover:text-white',
-		red: 'text-red-600 dark:text-red-500'
-	};
+  export let defaultClass: string =
+    'font-medium py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600';
+  export let href: string | undefined = undefined;
+
+  let liClass: string;
+  $: liClass = classNames(defaultClass, href ? 'block' : 'w-full text-left', $$props.class);
+
+  let wrap: boolean = true;
+  function init(node: HTMLElement) {
+    wrap = node.parentElement?.tagName === 'UL';
+  }
 </script>
 
-<li>
-	<svelte:element
-		this={href ? 'a' : 'div'}
-		{href}
-		{...$$restProps}
-		class={classNames(liClass, colors[color] ?? colors.default, $$props.class)}
-		on:click
-		on:change
-		on:keydown
-		on:keyup
-		on:focus
-		on:blur
-		on:mouseenter
-		on:mouseleave>
-		<slot />
-	</svelte:element>
-</li>
+<Wrapper tag="li" show={wrap} use={init}>
+  <svelte:element
+    this={href ? 'a' : 'button'}
+    {href}
+    {...$$restProps}
+    class={liClass}
+    on:click
+    on:change
+    on:keydown
+    on:keyup
+    on:focus
+    on:blur
+    on:mouseenter
+    on:mouseleave>
+    <slot />
+  </svelte:element>
+</Wrapper>
