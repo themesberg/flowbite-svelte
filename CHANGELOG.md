@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.30](https://github.com/themesberg/flowbite-svelte/compare/v0.26.29...v0.26.30) (2022-09-22)
+
+
+### Bug Fixes
+
+* add classOptions type to classes object ([2d7131b](https://github.com/themesberg/flowbite-svelte/commit/2d7131b25a5f6766c2cadc2b2034cc3cf68b9528))
+* remove bind: from TabWrapper bind:activeTabValue ([0269b3a](https://github.com/themesberg/flowbite-svelte/commit/0269b3ac4daf31cebec6f215983bfb4e99a118e3))
+* remove tabId from TabWrapper component ([5f46d23](https://github.com/themesberg/flowbite-svelte/commit/5f46d238ff1c81c1c66c1542565aa589f97cf530))
+* update icon class in TabHeadItem for Tabs with icons ([e94b344](https://github.com/themesberg/flowbite-svelte/commit/e94b3449826e84146b877e00e458885e08606ec5))
+
 ### [0.26.29](https://github.com/themesberg/flowbite-svelte/compare/v0.26.28...v0.26.29) (2022-09-22)
 
 
