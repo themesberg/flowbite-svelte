@@ -19,7 +19,6 @@
 
 <Popper
   data-tooltip
-  activeContent
   rounded
   border
   shadow

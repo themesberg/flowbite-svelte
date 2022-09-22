@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Wrapper from '$lib/utils/Wrapper.svelte';
   import classNames from 'classnames';
 
   export let defaultClass: string =
@@ -7,9 +8,14 @@
 
   let liClass: string;
   $: liClass = classNames(defaultClass, href ? 'block' : 'w-full text-left', $$props.class);
+
+  let wrap: boolean = true;
+  function init(node: HTMLElement) {
+    wrap = node.parentElement?.tagName === 'UL';
+  }
 </script>
 
-<li>
+<Wrapper tag="li" show={wrap} use={init}>
   <svelte:element
     this={href ? 'a' : 'button'}
     {href}
@@ -25,4 +31,4 @@
     on:mouseleave>
     <slot />
   </svelte:element>
-</li>
+</Wrapper>
