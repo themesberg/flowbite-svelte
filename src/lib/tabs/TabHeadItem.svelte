@@ -57,8 +57,7 @@
     class={classNames(activeTabValue === id ? activeClasses[tabStyle] : inactiveClasses[tabStyle])}
     id="{id}-tabhead"
     type="button"
-    role="tab"
-    {...$$restProps}>
+    role="tab">
     <slot />
   </button>
 </li>
