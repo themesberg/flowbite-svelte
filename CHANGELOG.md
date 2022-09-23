@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.26.31](https://github.com/themesberg/flowbite-svelte/compare/v0.26.30...v0.26.31) (2022-09-23)
+
+
+### Bug Fixes
+
+* add default style to TabHeadItem and TabHead and removed {tabStyle} from default example in tab page ([a9025c4](https://github.com/themesberg/flowbite-svelte/commit/a9025c432d57fe6896ab20249d711ff7739c9f1c))
+* add events to IconInput and on:input to Input components ([6668918](https://github.com/themesberg/flowbite-svelte/commit/66689185cd6cdf94ab66e1ff05ba33fbcaf6be0f))
+* remove activeTabvalue from TabWrapper and let:tabId vrom tab page examples ([ee1b444](https://github.com/themesberg/flowbite-svelte/commit/ee1b444cd552de4cd0c13e4356159ce44a864024))
+
 ### [0.26.30](https://github.com/themesberg/flowbite-svelte/compare/v0.26.29...v0.26.30) (2022-09-22)
 
 

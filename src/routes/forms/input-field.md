@@ -264,7 +264,7 @@ The component has the following props, type, and default values. See <a href="/p
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events: DropdownItem" />
+<Htwo label="Forwarded Events: Input, Iconinput" />
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:blur</Badge>
@@ -278,4 +278,5 @@ The component has the following props, type, and default values. See <a href="/p
 <Badge large={true}>on:mouseleave</Badge>
 <Badge large={true}>on:mouseover</Badge>
 <Badge large={true}>on:paste</Badge>
+<Badge large={true}>on:input</Badge>
 </div>

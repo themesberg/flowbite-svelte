@@ -1,7 +1,7 @@
 <script lang="ts">
   import classNames from 'classnames';
   export let id: number;
-  export let tabStyle: string;
+  export let tabStyle: 'default' | 'full' | 'icon' | 'pill' | 'underline' | 'custom' = 'default';
   export let activeTabValue: number;
   export let customActiveClass: string = '';
   export let customInActiveClass: string = '';

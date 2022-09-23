@@ -88,12 +88,12 @@ Use the following default tabs component example to show a list of links that th
 	};
 </script>
 
-<TabWrapper class="mb-4" activeTabValue let:tabStyle let:tabId>
-	<TabHead {tabStyle}>
-		<TabHeadItem id={1} {tabStyle} {activeTabValue} on:click={handleClick(1)}>Profile</TabHeadItem>
-		<TabHeadItem id={2} {tabStyle} {activeTabValue} on:click={handleClick(2)}>Dashboard</TabHeadItem>
-		<TabHeadItem id={3} {tabStyle} {activeTabValue} on:click={handleClick(3)}>Settings</TabHeadItem>
-		<TabHeadItem id={4} {tabStyle} {activeTabValue} on:click={handleClick(4)}>Users</TabHeadItem>
+<TabWrapper class="mb-4">
+	<TabHead>
+		<TabHeadItem id={1} {activeTabValue} on:click={handleClick(1)}>Profile</TabHeadItem>
+		<TabHeadItem id={2} {activeTabValue} on:click={handleClick(2)}>Dashboard</TabHeadItem>
+		<TabHeadItem id={3} {activeTabValue} on:click={handleClick(3)}>Settings</TabHeadItem>
+		<TabHeadItem id={4} {activeTabValue} on:click={handleClick(4)}>Users</TabHeadItem>
 	</TabHead>
 	<TabContentItem id={1} {activeTabValue}>
 		<p class="text-sm text-gray-500 dark:text-gray-400">
@@ -138,9 +138,8 @@ Use this alternative tabs component style with an underline instead of a backgro
 <TabWrapper
 	tabStyle="underline"
 	class="mb-4"
-	activeTabValue={activeTabValue2}
 	let:tabStyle
-	let:tabId>
+	>
 	<TabHead {tabStyle}>
 		<TabHeadItem id={1} {tabStyle} activeTabValue={activeTabValue2} on:click={handleClick2(1)}
 			>Profile</TabHeadItem>
@@ -195,9 +194,8 @@ Use icon components for a simple syntax. See <a href="/icons">Icons</a> for more
 <TabWrapper
 	tabStyle="icon"
 	class="mb-4"
-	activeTabValue={activeTabValue3}
 	let:tabStyle
-	let:tabId>
+	>
 	<TabHead {tabStyle}>
 		<TabHeadItem id={1} {tabStyle} activeTabValue={activeTabValue3} on:click={handleClick3(1)}
 			><svg
@@ -289,9 +287,8 @@ If you want to use pills as a style for the tabs component use `tabStyle="pill"`
 <TabWrapper
 	tabStyle="pill"
 	class="mb-4"
-	activeTabValue={activeTabValue4}
 	let:tabStyle
-	let:tabId>
+	>
 	<TabHead {tabStyle}>
 		<TabHeadItem id={1} {tabStyle} activeTabValue={activeTabValue4} on:click={handleClick4(1)}
 			>Profile</TabHeadItem>
@@ -345,9 +342,8 @@ If you want to show the tabs on the full width relative to the parent element us
 <TabWrapper
 	tabStyle="full"
 	class="mb-4"
-	activeTabValue={activeTabValue5}
 	let:tabStyle
-	let:tabId>
+	>
 	<TabHead {tabStyle}>
 		<TabHeadItem id={1} {tabStyle} activeTabValue={activeTabValue5} on:click={handleClick5(1)}
 			>Profile</TabHeadItem>
@@ -398,7 +394,7 @@ To disable a tab, add `disabled` to a `TabHeadItem`.
 	};
 </script>
 
-<TabWrapper class="mb-4" activeTabValue={activeTabValue6} let:tabStyle let:tabId>
+<TabWrapper class="mb-4" let:tabStyle >
 	<TabHead {tabStyle}>
 		<TabHeadItem id={1} {tabStyle} activeTabValue={activeTabValue6} on:click={handleClick6(1)}
 			>Profile</TabHeadItem>
@@ -457,7 +453,7 @@ You can add other components to the `TabContentItem` component. Here we are addi
 	};
 </script>
 
-<TabWrapper class="mb-4" activeTabValue={activeTabValue7} let:tabStyle let:tabId>
+<TabWrapper class="mb-4" let:tabStyle >
 	<TabHead {tabStyle}>
 		<TabHeadItem id={1} {tabStyle} activeTabValue={activeTabValue7} on:click={handleClick7(1)}
 			>Profile</TabHeadItem>
