@@ -1,4 +1,5 @@
 <script lang="ts">
+  import classNames from 'classnames';
   import Frame from '../utils/Frame.svelte';
   import { createEventDispatcher } from 'svelte';
   import CloseButton from '../utils/CloseButton.svelte';
@@ -28,49 +29,43 @@
     return false;
   }
 
-  function blockkeys(node: HTMLElement) {
-    function preventScroll2(e: KeyboardEvent) {
-      if (node.contains(e.target)) return true;
+  function contentInit(node: HTMLElement) {
+    function keydownHandler(e: KeyboardEvent) {
+      if (open && e.key === 'Escape') return hide();
 
+      const target: Node = e.target as Node;
+      if (node.contains(target)) return true;
       if (e.key === 'ArrowDown' || e.key === 'ArrowUp') return blockEvent(e);
+
+      return true;
     }
 
-    document.addEventListener('keydown', preventScroll2, { passive: false });
+    document.addEventListener('keydown', keydownHandler, { passive: false });
+
     node.focus();
 
     return {
       destroy() {
-        document.removeEventListener('keydown', preventScroll2);
+        document.removeEventListener('keydown', keydownHandler);
       }
     };
   }
 
   function init(node: HTMLElement) {
     function preventScroll(e: Event) {
-      if (e.target === node) {
-        blockEvent(e);
-        return;
-      }
+      if (e.target === node) return blockEvent(e);
     }
 
     node.addEventListener('wheel', preventScroll, { passive: false });
-    node.addEventListener('keydown', handleEscape, true);
-
     dispatch('show', node);
 
     return {
       destroy() {
         node.removeEventListener('wheel', preventScroll);
-        node.removeEventListener('keydown', handleEscape, true);
-
         dispatch('hide', node);
       }
     };
   }
-
-  const handleEscape = (e: KeyboardEvent) => {
-    if (open && e.key === 'Escape') open = false;
-  };
 
   const getPlacementClasses = () => {
     switch (placement) {
@@ -111,7 +106,7 @@
     xl: 'max-w-7xl'
   };
 
-  const onButtonsClick = (e: Event) => {
+  const onAutoClose = (e: MouseEvent) => {
     const target: Element = e.target as Element;
     if (autoclose && target?.tagName === 'BUTTON') open = !open;
   };
@@ -119,23 +114,29 @@
   const hide = () => {
     open = false;
   };
+
+  let mainClass: string;
+  $: mainClass = classNames(
+    'flex overflow-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full',
+    backdropClasses,
+    getPlacementClasses().join(' '),
+    $$props.class
+  );
 </script>
 
 <!-- Main modal -->
 {#if open}
   <div
     tabindex="-1"
-    class="flex overflow-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full {backdropClasses} {getPlacementClasses().join(
-      ' '
-    )}"
+    class={mainClass}
     aria-modal="true"
     role="dialog"
     use:init
-    use:focusTrap={open}
-    on:click={onButtonsClick}>
-    <div class="flex p-4 w-full {sizes[size]} h-full md:h-auto ">
+    use:focusTrap
+    on:click={autoclose ? onAutoClose : null}>
+    <div class="flex p-4 w-full {sizes[size]} h-full md:h-auto max-h-screen">
       <!-- Modal content -->
-      <Frame rounded shadow class="relative flex flex-col max-h-screen">
+      <Frame rounded shadow class="relative flex flex-col w-full h-full md:h-auto">
         <!-- Modal header -->
         {#if $$slots.header || title}
           <div
@@ -154,7 +155,7 @@
         <div
           class="p-6 space-y-6 flex-1 overflow-y-auto overscroll-contain"
           tabindex="0"
-          use:blockkeys>
+          use:contentInit>
           <slot />
         </div>
         <!-- Modal footer -->
