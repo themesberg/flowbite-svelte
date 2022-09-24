@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.27.0](https://github.com/themesberg/flowbite-svelte/compare/v0.26.31...v0.27.0) (2022-09-24)
+
+
+### Features
+
+* add server hooks to redirect component pages and add redirect.spec test ([9e2cb72](https://github.com/themesberg/flowbite-svelte/commit/9e2cb72653cb2de16f77c30d73bd69a69bd73bd5))
+
+
+### Bug Fixes
+
+* add other dir ([dc5e73f](https://github.com/themesberg/flowbite-svelte/commit/dc5e73feaa44c3fc7f020967f2e342b08bafccdf))
+* add redirect to all other directories ([6ca9ce0](https://github.com/themesberg/flowbite-svelte/commit/6ca9ce0c38c2a417fc1bcd88520e609a0e1b2b0e))
+
 ### [0.26.31](https://github.com/themesberg/flowbite-svelte/compare/v0.26.30...v0.26.31) (2022-09-23)
 
 
