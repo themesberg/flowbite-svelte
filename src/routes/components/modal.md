@@ -59,7 +59,7 @@ Opening and closeing the modal will trigger the `show` and `hide` events.
 
 <Button on:click={() => defaultModal = true}>Default modal</Button>
 <Modal title="Terms of Service" bind:open={defaultModal}>
-  <p class="text-base leading-relaxed text1-gray-500 dark:text1-gray-400">
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
     With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
   </p>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
@@ -85,7 +85,7 @@ Notice lack of the `footer` slot.
 </script>
 
 <Button on:click={() => popupModal = true}>Pop-up modal</Button>
-<Modal bind:open={popupModal}>
+<Modal bind:open={popupModal} size="xs">
   <div class="text-center">
       <svg aria-hidden="true" class="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
       <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this product?</h3>
@@ -219,26 +219,26 @@ You can use five different modal sizing options starting from extra small to ext
 <script>
   import { Button, Modal } from 'flowbite-svelte'
   let placement;
-  let placementModal = false;
+  let open = false;
 
-  const setPlacement = (value) => () => {
-    placement = value;
-    placementModal = !placementModal
+  const setPlacement = (ev) => {
+    placement = ev.target.textContent; // text in the button
+    open = !open
   };
 </script>
 
 <div class="inline-grid grid-cols-3 grid-rows-3 gap-4">
-  <Button on:click={setPlacement('top-left')}>top-left</Button>
-  <Button on:click={setPlacement('top-center')}>top-center</Button>
-  <Button on:click={setPlacement('top-right')}>top-right</Button>
-  <Button on:click={setPlacement('center-left')}>center-left</Button>
-  <Button on:click={setPlacement('center')}>center</Button>
-  <Button on:click={setPlacement('center-right')}>center-right</Button>
-  <Button on:click={setPlacement('bottom-left')}>bottom-left</Button>
-  <Button on:click={setPlacement('bottom-center')}>bottom-center</Button>
-  <Button on:click={setPlacement('bottom-right')}>bottom-right</Button>
+  <Button on:click={setPlacement}>top-left</Button>
+  <Button on:click={setPlacement}>top-center</Button>
+  <Button on:click={setPlacement}>top-right</Button>
+  <Button on:click={setPlacement}>center-left</Button>
+  <Button on:click={setPlacement}>center</Button>
+  <Button on:click={setPlacement}>center-right</Button>
+  <Button on:click={setPlacement}>bottom-left</Button>
+  <Button on:click={setPlacement}>bottom-center</Button>
+  <Button on:click={setPlacement}>bottom-right</Button>
 </div>
-<Modal title="Terms of Service" bind:open={placementModal} {placement}>
+<Modal title="Terms of Service" bind:open {placement}>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
     With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
   </p>
@@ -247,6 +247,65 @@ You can use five different modal sizing options starting from extra small to ext
   </p>
   <svelte:fragment slot='footer'>
     <Button>I accept</Button>
+    <Button color="alternative">Decline</Button>
+  </svelte:fragment>
+</Modal>
+```
+
+<Htwo label="Scrolling behaviour" />
+
+```svelte example
+<script>
+  import { Button, Modal } from 'flowbite-svelte'
+  let defaultModal = false;
+</script>
+
+<Button on:click={() => defaultModal = true}>Scrolling modal</Button>
+<Modal title="Terms of Service" bind:open={defaultModal}>
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+    With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+  </p>
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+  </p>
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+    With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+  </p>
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+  </p>
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+    With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+  </p>
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+  </p>
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+    With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+  </p>
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+  </p>
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+    With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+  </p>
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+  </p>
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+    With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+  </p>
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+  </p>
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+    With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+  </p>
+  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+    The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+  </p>
+  <svelte:fragment slot='footer'>
+    <Button on:click={() => alert('Handle "success"')}>I accept</Button>
     <Button color="alternative">Decline</Button>
   </svelte:fragment>
 </Modal>
