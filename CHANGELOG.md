@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.27.1](https://github.com/themesberg/flowbite-svelte/compare/v0.27.0...v0.27.1) (2022-09-24)
+
+
+### Features
+
+* modal block background scroll ([f3eb627](https://github.com/themesberg/flowbite-svelte/commit/f3eb62732dc899d6f1483d9f86a5c644c8d2edd2))
+* modal internal scrolling ([7ca08ea](https://github.com/themesberg/flowbite-svelte/commit/7ca08ea939e0116241c564738ec237bd501ca32c))
+
+
+### Bug Fixes
+
+* placement and padding ([169c749](https://github.com/themesberg/flowbite-svelte/commit/169c749004d16d9b7c1aef46448608beefd3caf7))
+
 ## [0.27.0](https://github.com/themesberg/flowbite-svelte/compare/v0.26.31...v0.27.0) (2022-09-24)
 
 
