@@ -4,10 +4,11 @@
   import { createEventDispatcher } from 'svelte';
   import CloseButton from '../utils/CloseButton.svelte';
   import focusTrap from '../utils/focusTrap';
+  import type { Size } from '$lib/types';
 
   export let open: boolean = false;
   export let title: string = '';
-  export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
+  export let size: Size = 'md';
   export let placement:
     | 'top-left'
     | 'top-center'
@@ -19,10 +20,11 @@
     | 'bottom-center'
     | 'bottom-right' = 'center';
   export let autoclose: boolean = true;
+  export let permanent: boolean = false;
   export let backdropClasses: string = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
 
   const dispatch = createEventDispatcher();
-  $: dispatch(open ? 'open' : 'close');
+  $: dispatch(open ? 'open' : 'hide');
 
   function grabFocus(node: HTMLElement) {
     node.focus();
@@ -105,7 +107,7 @@
   }
 
   function handleKeys(e: KeyboardEvent) {
-    if (e.key === 'Escape') return hide();
+    if (e.key === 'Escape' && !permanent) return hide();
     return isArrowKey(e, true, true) ? e.preventDefault() : true;
   }
 </script>
@@ -132,9 +134,9 @@
                 {title}
               </h3>
             </slot>
-            <CloseButton name="Close modal" on:click={hide} class="hidden" />
+            {#if !permanent}<CloseButton name="Close modal" on:click={hide} />{/if}
           </div>
-        {:else}
+        {:else if !permanent}
           <CloseButton name="Close modal" class="absolute top-3 right-2.5" on:click={hide} />
         {/if}
         <!-- Modal body -->
