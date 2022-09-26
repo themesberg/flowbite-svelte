@@ -21,6 +21,9 @@ pre {
 	main  p {
 		@apply text-gray-900 dark:text-white;
 	}
+	main a {
+		@apply text-blue-600 dark:text-blue-500 hover:underline;
+	}
 	.related-components,
 	.references {
 		@apply w-full flex flex-wrap;
