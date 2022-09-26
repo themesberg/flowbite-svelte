@@ -8,26 +8,26 @@
   export let color: Colors = 'blue';
   export let simple: boolean = false;
   // Absolute position
-  export let position: 'tl' | 'tr' | 'bl' | 'br' = undefined; // default not set
-  export let visible = true;
+  export let position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none' = 'none'; // default not set
+  export let open = true;
   export let divClass: string = 'w-full max-w-xs p-4';
 
-  $: classDiv = classNames(
-    divClass,
-    {
-      'absolute top-5 left-5': position == 'tl',
-      'absolute top-5 right-5': position == 'tr',
-      'absolute bottom-5 left-5': position == 'bl',
-      'absolute bottom-5 right-5': position == 'br'
-    },
-    $$props.class
-  );
+  const positions = {
+    'top-left': 'absolute top-5 left-5',
+    'top-right': 'absolute top-5 right-5',
+    'bottom-left': 'absolute bottom-5 left-5',
+    'bottom-right': 'absolute bottom-5 right-5',
+    none: ''
+  };
 
-  let iconClass;
+  let classDiv: string;
+  $: classDiv = classNames(divClass, positions[position], $$props.class);
+
+  let iconClass: string;
   $: iconClass = classNames('inline-flex items-center justify-center flex-shrink-0 w-8 h-8 mr-3');
 </script>
 
-{#if visible}
+{#if open}
   <Frame rounded border transition={fade} {...$$restProps} class={classDiv} role="alert">
     <div class="flex {$$slots.extra ? 'items-start' : 'items-center'}">
       {#if $$slots.icon}
@@ -39,7 +39,7 @@
         <slot name="extra" />
       </div>
       {#if !simple}
-        <CloseButton on:click={() => (visible = false)} />
+        <CloseButton on:click={() => (open = false)} />
       {/if}
     </div>
   </Frame>
