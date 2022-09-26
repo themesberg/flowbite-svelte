@@ -1,1 +1,1 @@
-{"props":[["color","Colors ","'blue'"],["simple","boolean ","false"],["   visible ","boolean"," true"],["divClass","string ","'w-full max-w-xs p-4'"]]}
+{"props":[["color","Colors ","'blue'"],["simple","boolean ","false"],["   open ","boolean"," true"],["divClass","string ","'w-full max-w-xs p-4'"]]}
