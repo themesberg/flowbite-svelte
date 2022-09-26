@@ -29,5 +29,5 @@ title: About Flowbite-Svelte
 </p>
 
 
-<p class="dark:text-white w-full text-lg py-2">This website uses Flowbite-Svelte components except the <a class="text-blue-700" href="https://github.com/shinokada/svelte-sidebar" target="_blank">sidebar menu</a>.</p>
+<p class="dark:text-white w-full text-lg py-2">This website uses Flowbite-Svelte components except the <A class="text-blue-700" href="https://github.com/shinokada/svelte-sidebar" target="_blank">sidebar menu</A>.</p>
 

@@ -7,7 +7,7 @@ dir: Forms
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Heading, Breadcrumb, BreadcrumbItem, Badge } from '$lib'
+  import { Heading, Breadcrumb, BreadcrumbItem, Badge, A } from '$lib'
 
   import componentProps from '../props/Textarea.json'
   let items = componentProps.props
@@ -137,7 +137,7 @@ If you want to build a chatroom component you will usually want to use a textare
 
 <Htwo label="Props" />
 
-The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
+The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
 
 <TableProp header={propHeader} {divClass} {theadClass}>

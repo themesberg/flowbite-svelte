@@ -365,19 +365,19 @@ You can also disable the popover arrow by setting `arrow` attribute to `false`.
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.</p>
+<p>The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.</p>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={props} rowState='hover' />
 </TableProp>
 
-The component inherits the following props, type, and default values from `Popper`. See <a href="/pages/types">types page</a> for type information.
+The component inherits the following props, type, and default values from `Popper`. See <A href="/pages/types">types page</A> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={popperProps.props} rowState='hover' />
 </TableProp>
 
-The component inherits the following props, type, and default values from `Frame`. See <a href="/pages/types">types page</a> for type information.
+The component inherits the following props, type, and default values from `Frame`. See <A href="/pages/types">types page</A> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={frameProps.props} rowState='hover' />

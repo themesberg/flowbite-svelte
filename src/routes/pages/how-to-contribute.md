@@ -89,7 +89,7 @@ npm run gen:props
 
 <Htwo label="Conventional commit" />
 
-<p>When making a commit, we recommend using <a class="text-blue-700" href="https://www.conventionalcommits.org/en/v1.0.0/">the Conventional commits</a>.</p>
+<p>When making a commit, we recommend using <A class="text-blue-700" href="https://www.conventionalcommits.org/en/v1.0.0/">the Conventional commits</A>.</p>
 
 <p class='w-full'>Some examples are:</p>
 

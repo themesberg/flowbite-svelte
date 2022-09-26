@@ -265,13 +265,13 @@ Use the `close` event with `dismissable` prop.
 
 <Htwo label="Props" />
 
-The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
+The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
 <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-The component inherits the following props, type, and default values from `Frame`. See <a href="/pages/types">types page</a> for type information.
+The component inherits the following props, type, and default values from `Frame`. See <A href="/pages/types">types page</A> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
 <TableDefaultRow items={frameProps.props} rowState='hover' />
