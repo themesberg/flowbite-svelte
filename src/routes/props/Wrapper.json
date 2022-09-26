@@ -1,1 +1,1 @@
-{"props":[["show"," boolean",""]]}
+{"props":[["tag","string ","'div'"],["   show"," boolean",""],["use","Action ","() => {}"]]}

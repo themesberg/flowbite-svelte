@@ -1,1 +1,1 @@
-{"props":[["divClass","string ","'w-full'"],["tabStyle","'default' | 'full' | 'icon' | 'pill' | 'underline' | 'custom' ","'default'"],[" activeTabValue"," number",""]]}
+{"props":[["divClass","string ","'w-full'"],["tabStyle","'default' | 'full' | 'icon' | 'pill' | 'underline' | 'custom' ","'default'"]]}
