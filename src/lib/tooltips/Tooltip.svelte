@@ -14,7 +14,6 @@
 
   let toolTipClass: string;
   $: {
-    $$restProps.color || (style = 'custom');
     if ($$restProps.color) style = 'custom';
     else $$restProps.color = 'none';
     toolTipClass = classNames('tooltip', defaultClass, styles[style], $$props.class);

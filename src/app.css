@@ -22,8 +22,8 @@ pre {
 	main p {
 		@apply text-gray-900 dark:text-white;
 	}
-
-	.related-components,
+  
+  .related-components,
 	.references {
 		@apply w-full flex flex-wrap;
 	}
