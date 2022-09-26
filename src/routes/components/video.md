@@ -125,8 +125,8 @@ Customize the video player appearance using the utility classes from Tailwind CS
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+<p>The component has the following props, type, and default values. See <A href="/pages/types">types 
+ page</A> for type information.</p>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />

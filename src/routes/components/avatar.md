@@ -211,8 +211,8 @@ Select size from  xs | sm | md | lg | xl.
 
 <Htwo label="Props" />
 
-The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.
+The component has the following props, type, and default values. See <A href="/pages/types">types 
+ page</A> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
 <TableDefaultRow {items} rowState='hover' />

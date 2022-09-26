@@ -369,8 +369,8 @@ Use this component to show the review content from a user alongside the avatar, 
 
 <Htwo label="Props" />
 
-The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.
+The component has the following props, type, and default values. See <A href="/pages/types">types 
+ page</A> for type information.
 
 <h3 class='text-xl w-full dark:text-white py-4'>Rating</h3>
 

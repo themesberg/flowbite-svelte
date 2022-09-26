@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.27.3](https://github.com/themesberg/flowbite-svelte/compare/v0.27.2...v0.27.3) (2022-09-26)
+
+
+### Bug Fixes
+
+* change a to A component ([33a8015](https://github.com/themesberg/flowbite-svelte/commit/33a8015ae3e7b3969359bcd67ba47bb53c7f7dad))
+* correction in using style and color ([7ebbc5f](https://github.com/themesberg/flowbite-svelte/commit/7ebbc5fcac75fea0f9c19c51b6ea5dc8dfb241c8))
+* remove workflows/release-please.yml ([30a3682](https://github.com/themesberg/flowbite-svelte/commit/30a3682d3652e779e5e4325edbf7b66ad02a8428))
+* style for links ([040ff2e](https://github.com/themesberg/flowbite-svelte/commit/040ff2ea183d21836e8f3e5dddb5879cf9324a69))
+
 ### [0.27.2](https://github.com/themesberg/flowbite-svelte/compare/v0.27.1...v0.27.2) (2022-09-26)
 
 
