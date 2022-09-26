@@ -91,7 +91,7 @@ export interface CheckboxType {
 	helper?: string;
 }
 
-export type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink';
+export type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink' | 'white'| 'custom';
 
 export type CrumbType = {
 	label: string;
@@ -174,6 +174,10 @@ export type InputType = 'color' | 'date' | 'datetime-local' | 'email' | 'file' |
 export interface InteractiveTabType {
 	name: string;
 	id: number;
+	active?: boolean,
+	disabled?: boolean,
+	icon?: typeof SvelteComponent,
+	iconSize?: number,
 	content: string | typeof SvelteComponent;
 }
 
@@ -210,10 +214,30 @@ export interface PageType {
 	href: string;
 }
 
+export declare const xs = 'xs'
+export declare const sm = 'sm'
+export declare const md = 'md'
+export declare const lg = 'lg'
+export declare const xl = 'xl'
+export declare type Size = typeof xs | typeof sm | typeof md | typeof lg | typeof xl;
+
 export interface PillTabType {
 	name: string;
 	selected: boolean;
 	href: string;
+}
+
+export type ReviewType = {
+	name: string;
+	imgSrc: string;
+	imgAlt: string;
+	address: string | undefined;
+	reviewDate: string | undefined;
+	title: string;
+	rating: number;
+	item1: string | undefined;
+	item2: string | undefined;
+	item3: string | undefined;
 }
 
 export type SelectOptionType = {
@@ -268,6 +292,12 @@ export interface TabType {
 	href: string;
 	rel?: string;
 }
+
+export interface TableDataHelperType {
+	start: number;
+	end: number;
+	total: number
+} 
 
 export type Textsize = 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl';
 
