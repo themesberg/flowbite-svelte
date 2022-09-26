@@ -124,14 +124,12 @@
     </Nav>
   </Side>
 
+  <DarkMode btnClass={darkmodebtn} />
   <main class="flex mx-auto pt-12 pb:12 xl:pb-24 lg:pb-16 lg:pl-60 ">
-    <DarkMode btnClass={darkmodebtn} />
     <div class="w-full px-4 sm:px-8">
       <slot />
     </div>
-    <div class="text-sm text-gray-500 dark:text-gray-400">
-      <Toc />
-    </div>
+    <Toc />
   </main>
 </div>
 <div class="mx-auto mb-4 pt-4 lg:pl-60">
