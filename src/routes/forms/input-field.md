@@ -8,7 +8,7 @@ dir: Forms
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../utils'
   import { onMount } from 'svelte';
-  import { Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
+  import { Breadcrumb, BreadcrumbItem, Badge, Heading, A } from '$lib'
 
   import componentProps1 from '../props/Input.json'
   let items1 = componentProps1.props
@@ -249,8 +249,8 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
 
 <Htwo label="Props" />
 
-The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.
+The component has the following props, type, and default values. See <A href="/pages/types">types 
+ page</A> for type information.
 
 <h3 class='text-xl w-full dark:text-white py-4'>Input</h3>
 

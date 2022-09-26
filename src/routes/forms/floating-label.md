@@ -7,7 +7,7 @@ dir: Forms
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
+  import { Breadcrumb, BreadcrumbItem, Badge, Heading, A } from '$lib'
   
   import componentProps from '../props/FloatingLabelInput.json'
    import componentProps2 from '../props/Helper.json'
@@ -154,8 +154,8 @@ Add a helper text in addition to the label if you want to show more information 
 
 <Htwo label="Props" />
 
-The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.
+The component has the following props, type, and default values. See <A href="/pages/types">types 
+ page</A> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />

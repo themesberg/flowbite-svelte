@@ -9,6 +9,7 @@ dir: Components
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   import componentProps from '../props/Tooltip.json'
+  import frameProps from '../props/Frame.json'
   // Props table
   let items = componentProps.props
   let propHeader = ['Name', 'Type', 'Default']
@@ -116,21 +117,28 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 
 <Htwo label="Custom style" />
 
-When you want to add custom styles, use `style="custom"`, `tipClass`, and `color` to modify the style.
+Various color palettes can be set for a tooltip by using the `color` property from the underlying `Frame` component.
+(Setting `color` prop sets the `style` to `custom` implicitly.)
 
-```svelte example class="flex items-center h-64"
+When you want to add a fully custom styles, use `style="custom"`, `defaultClass`, and `class` to modify the style.
+
+```svelte example class="flex items-center h-64 gap-2"
 <script>
   import { Tooltip, Button } from 'flowbite-svelte';
 </script>
 
-<Button id="custom">Custom style</Button>
+<Button>Green tooltip</Button>
+<Tooltip  color="green">Tooltip content</Tooltip>
+
+<Button>Yellow tooltip</Button>
+<Tooltip  color="yellow">Tooltip content</Tooltip>
+
+<Button>Custom style</Button>
 <Tooltip
-  triggeredBy="#custom"
   placement="right"
   style="custom"
-  tipClass=""
-  class="p-4 text-lg font-medium"
-  customColor='bg-purple-500 text-gray-100'
+  defaultClass=""
+  class="p-4 text-lg font-medium bg-purple-500 text-gray-100"
   arrow={false}
 >
   Tooltip content
@@ -139,11 +147,17 @@ When you want to add custom styles, use `style="custom"`, `tipClass`, and `color
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+The component has the following props, type, and default values. See <A href="/pages/types">types 
+ page</A> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow {items} rowState='hover' />
+</TableProp>
+
+The component inherits the following props, type, and default values from `Frame`. See [types page](/pages/types) for type information.
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={frameProps.props} rowState='hover' />
 </TableProp>
 
 <Htwo label="References" />

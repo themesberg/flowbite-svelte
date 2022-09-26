@@ -7,7 +7,7 @@ dir: Components
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading } from '$lib'
+  import { Breadcrumb, BreadcrumbItem, Heading, A } from '$lib'
   import componentProps from '../props/Input.json'
   import componentProps2 from '../props/Label.json'
   import componentProps3 from '../props/Helper.json'
@@ -244,8 +244,8 @@ Get started with the default example of a select input component to get a single
 
 <Htwo label="Props" />
 
-The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.
+The component has the following props, type, and default values. See <A href="/pages/types">types 
+ page</A> for type information.
 
 <h3 class='text-xl w-full dark:text-white py-4'>Input</h3>
 
