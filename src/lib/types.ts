@@ -194,6 +194,13 @@ export interface PageType {
 	href: string;
 }
 
+export declare const xs = 'xs'
+export declare const sm = 'sm'
+export declare const md = 'md'
+export declare const lg = 'lg'
+export declare const xl = 'xl'
+export declare type Size = typeof xs | typeof sm | typeof md | typeof lg | typeof xl;
+
 export interface PillTabType {
 	name: string;
 	selected: boolean;

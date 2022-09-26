@@ -4,10 +4,11 @@
   import { createEventDispatcher } from 'svelte';
   import CloseButton from '../utils/CloseButton.svelte';
   import focusTrap from '../utils/focusTrap';
+  import type { Size } from '$lib/types';
 
   export let open: boolean = false;
   export let title: string = '';
-  export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
+  export let size: Size = 'md';
   export let placement:
     | 'top-left'
     | 'top-center'
@@ -19,52 +20,14 @@
     | 'bottom-center'
     | 'bottom-right' = 'center';
   export let autoclose: boolean = true;
+  export let permanent: boolean = false;
   export let backdropClasses: string = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
 
   const dispatch = createEventDispatcher();
+  $: dispatch(open ? 'open' : 'hide');
 
-  function blockEvent(e: Event) {
-    e.preventDefault();
-    e.stopPropagation();
-    return false;
-  }
-
-  function contentInit(node: HTMLElement) {
-    function keydownHandler(e: KeyboardEvent) {
-      if (open && e.key === 'Escape') return hide();
-
-      const target: Node = e.target as Node;
-      if (node.contains(target)) return true;
-      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') return blockEvent(e);
-
-      return true;
-    }
-
-    document.addEventListener('keydown', keydownHandler, { passive: false });
-
+  function grabFocus(node: HTMLElement) {
     node.focus();
-
-    return {
-      destroy() {
-        document.removeEventListener('keydown', keydownHandler);
-      }
-    };
-  }
-
-  function init(node: HTMLElement) {
-    function preventScroll(e: Event) {
-      if (e.target === node) return blockEvent(e);
-    }
-
-    node.addEventListener('wheel', preventScroll, { passive: false });
-    dispatch('show', node);
-
-    return {
-      destroy() {
-        node.removeEventListener('wheel', preventScroll);
-        dispatch('hide', node);
-      }
-    };
   }
 
   const getPlacementClasses = () => {
@@ -108,7 +71,7 @@
 
   const onAutoClose = (e: MouseEvent) => {
     const target: Element = e.target as Element;
-    if (autoclose && target?.tagName === 'BUTTON') open = !open;
+    if (autoclose && target?.tagName === 'BUTTON') open = false;
   };
 
   const hide = () => {
@@ -119,19 +82,45 @@
   $: mainClass = classNames(
     'flex overflow-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full',
     backdropClasses,
-    getPlacementClasses().join(' '),
+    ...getPlacementClasses(),
     $$props.class
   );
+
+  const isScrollable = (e: HTMLElement): boolean[] => [
+    e.scrollWidth > e.clientWidth && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowX) >= 0,
+    e.scrollHeight > e.clientHeight && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowY) >= 0
+  ];
+
+  const isArrowKey = (e: KeyboardEvent, x: boolean, y: boolean) =>
+    (x && ['ArrowLeft', 'ArrowRight'].includes(e.key)) || (y && ['ArrowDown', 'ArrowUp'].includes(e.key));
+
+  function preventWheelDefault(e: Event) {
+    // @ts-ignore
+    const [x, y] = isScrollable(this);
+    return x || y || e.preventDefault();
+  }
+
+  function stopArrowsPropagation(e: KeyboardEvent) {
+    // @ts-ignore
+    const [x, y] = isScrollable(this);
+    if (isArrowKey(e, x, y)) e.stopPropagation();
+  }
+
+  function handleKeys(e: KeyboardEvent) {
+    if (e.key === 'Escape' && !permanent) return hide();
+    return isArrowKey(e, true, true) ? e.preventDefault() : true;
+  }
 </script>
 
-<!-- Main modal -->
 {#if open}
   <div
     tabindex="-1"
     class={mainClass}
     aria-modal="true"
     role="dialog"
-    use:init
+    on:keydown={handleKeys}
+    on:wheel|preventDefault
+    use:grabFocus
     use:focusTrap
     on:click={autoclose ? onAutoClose : null}>
     <div class="flex p-4 w-full {sizes[size]} h-full md:h-auto max-h-screen">
@@ -139,23 +128,22 @@
       <Frame rounded shadow class="relative flex flex-col w-full h-full md:h-auto">
         <!-- Modal header -->
         {#if $$slots.header || title}
-          <div
-            class="flex justify-between items-center p-4 rounded-t border-b dark:border-gray-600">
+          <div class="flex justify-between items-center p-4 rounded-t border-b dark:border-gray-600">
             <slot name="header">
               <h3 class="text-xl font-semibold text-gray-900 dark:text-white p-0">
                 {title}
               </h3>
             </slot>
-            <CloseButton name="Close modal" on:click={hide} />
+            {#if !permanent}<CloseButton name="Close modal" on:click={hide} />{/if}
           </div>
-        {:else}
+        {:else if !permanent}
           <CloseButton name="Close modal" class="absolute top-3 right-2.5" on:click={hide} />
         {/if}
         <!-- Modal body -->
         <div
           class="p-6 space-y-6 flex-1 overflow-y-auto overscroll-contain"
-          tabindex="0"
-          use:contentInit>
+          on:keydown={stopArrowsPropagation}
+          on:wheel|stopPropagation={preventWheelDefault}>
           <slot />
         </div>
         <!-- Modal footer -->
