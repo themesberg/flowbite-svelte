@@ -93,10 +93,6 @@ export interface CheckboxType {
 
 export type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink' | 'white'| 'custom';
 
-export type CrumbType = {
-	label: string;
-	href: string;
-};
 
 export interface DotType {
 	top?: boolean;

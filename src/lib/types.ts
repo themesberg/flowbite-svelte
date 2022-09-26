@@ -71,12 +71,7 @@ export interface CheckboxType {
 	helper?: string;
 }
 
-export type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink' | 'white'| 'custom';
-
-export type CrumbType = {
-	label: string;
-	href: string;
-};
+export type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink' | 'white' | 'custom';
 
 export interface DotType {
 	top?: boolean;
@@ -116,7 +111,7 @@ export interface DropdownType {
 	divider?: boolean;
 }
 
-export type FormColorType = 'blue'|'red'|'green'|'purple'|'teal'|'yellow'|'orange'
+export type FormColorType = 'blue' | 'red' | 'green' | 'purple' | 'teal' | 'yellow' | 'orange'
 
 export type Gradientduotones = 'purple2blue' | 'cyan2blue' | 'green2blue' | 'purple2pink' | 'pink2orange' | 'teal2lime' | 'red2yellow';
 
@@ -149,7 +144,7 @@ export type ImgType = {
 	alt?: string;
 };
 
-export type InputType = 'color' | 'date' | 'datetime-local' | 'email' | 'file' | 'hidden' | 'image' | 'month' | 'number' | 'password' |  'reset' | 'submit' | 'tel' | 'text' | 'time' | 'url' | 'week';
+export type InputType = 'color' | 'date' | 'datetime-local' | 'email' | 'file' | 'hidden' | 'image' | 'month' | 'number' | 'password' | 'reset' | 'submit' | 'tel' | 'text' | 'time' | 'url' | 'week';
 
 export interface InteractiveTabType {
 	name: string;
@@ -277,7 +272,7 @@ export interface TableDataHelperType {
 	start: number;
 	end: number;
 	total: number
-} 
+}
 
 export type Textsize = 'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl' | 'text-3xl' | 'text-4xl';
 
@@ -310,7 +305,7 @@ export interface TimelineItemHorizontalType {
 	text?: HTMLElement | string;
 }
 
-export type ToggleColorType = 'blue'|'red'|'green'|'purple'|'yellow'|'teal'|'orange';
+export type ToggleColorType = 'blue' | 'red' | 'green' | 'purple' | 'yellow' | 'teal' | 'orange';
 
 export interface TransitionParamTypes {
 	delay?: number;
