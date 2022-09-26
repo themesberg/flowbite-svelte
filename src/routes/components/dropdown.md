@@ -644,8 +644,8 @@ Therefore you can catch standard events on it like `on:click`.
 
 <Htwo label="Props" />
 
-<p>The component has the following props, type, and default values. See <a href="/pages/types">types 
- page</a> for type information.</p>
+<p>The component has the following props, type, and default values. See <A href="/pages/types">types 
+ page</A> for type information.</p>
 
 <h3 class='text-xl w-full dark:text-white py-4'>Dropdown</h3>
 

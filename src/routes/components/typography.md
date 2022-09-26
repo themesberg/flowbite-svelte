@@ -7,7 +7,7 @@ dir: Components
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading } from '$lib';
+  import { Breadcrumb, BreadcrumbItem, Heading, A } from '$lib';
 </script>
 
 <Breadcrumb class="pb-8">

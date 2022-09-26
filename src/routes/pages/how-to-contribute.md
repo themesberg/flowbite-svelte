@@ -6,7 +6,7 @@ title: How to Contribute
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
-  import { Breadcrumb, BreadcrumbItem, Heading } from '$lib'
+  import { Breadcrumb, BreadcrumbItem, Heading, A } from '$lib'
   
 </script>
 

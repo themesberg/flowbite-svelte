@@ -7,7 +7,7 @@ dir: Forms
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
+  import { Breadcrumb, BreadcrumbItem, Badge, Heading, A } from '$lib'
   
   import searchComponentProps from '../props/Search.json'
   import simpleSearchComponentProps from '../props/SimpleSearch.json'

@@ -7,7 +7,7 @@ dir: Forms
 
 <script>
 import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-import { Breadcrumb, BreadcrumbItem, Badge, Heading } from '$lib'
+import { Breadcrumb, BreadcrumbItem, Badge, Heading, A } from '$lib'
 
 import componentProps from '../props/Select.json'
 let items = componentProps.props
