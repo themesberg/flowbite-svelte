@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.27.4](https://github.com/themesberg/flowbite-svelte/compare/v0.27.3...v0.27.4) (2022-09-26)
+
+
+### Features
+
+* toast fine tune ([f3ee6f3](https://github.com/themesberg/flowbite-svelte/commit/f3ee6f382aa3a004a8efdbed75f215b9dfe59b4e))
+
+
+### Bug Fixes
+
+* app.css restored ([e40bc80](https://github.com/themesberg/flowbite-svelte/commit/e40bc80cace759b434bc889c1d143533de032345))
+* change a to A component ([dc92c3f](https://github.com/themesberg/flowbite-svelte/commit/dc92c3f699986f6679805350f3a88effc0e2a0c8))
+* remove type CrumbType ([4269359](https://github.com/themesberg/flowbite-svelte/commit/4269359c1bddb37fea064cab4dc31b3ea30772ee))
+* toc stickiness ([#330](https://github.com/themesberg/flowbite-svelte/issues/330)) ([21a0409](https://github.com/themesberg/flowbite-svelte/commit/21a0409bd34323b2858f43952ef6de45982b262d))
+* update props and types page ([#331](https://github.com/themesberg/flowbite-svelte/issues/331)) ([0be5900](https://github.com/themesberg/flowbite-svelte/commit/0be59006c6bf79df210838b21a17d3dfd18213ac))
+
 ### [0.27.3](https://github.com/themesberg/flowbite-svelte/compare/v0.27.2...v0.27.3) (2022-09-26)
 
 
