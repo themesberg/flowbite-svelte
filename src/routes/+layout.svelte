@@ -12,17 +12,10 @@
     FooterLinkGroup
   } from '$lib';
   import { Side, Nav, SidebarList } from 'svelte-sidebar-menu';
-  import {
-    forms,
-    components,
-    svelteflows,
-    topMenus,
-    typography,
-    utilities,
-    extend,
-    experimental
-  } from './moduleItems/+server.js';
+  import { topMenus, experimental } from './moduleItems/+server.js';
 
+  /** @type {import('./$types').PageData} */
+  export let data;
   let asideClass =
     'absolute w-auto bg-white pt-8 shadow-lg z-40 h-screen px-4 overflow-scroll dark:bg-gray-900';
 
@@ -47,7 +40,8 @@
 
   let topli =
     'block py-2 pr-4 pl-3 text-gray-700 md:border-0 md:p-0 dark:text-gray-300  dark:hover:bg-gray-700 text-lg z-50  dark:bg-gray-800 dark:border-0 hover:bg-gray-100 bg-white';
-  let topMenuDiv = 'flex flex-wrap justify-end items-center mx-auto dark:bg-gray-800 h-8 pr-8 pt-1 sm:pr-12';
+  let topMenuDiv =
+    'flex flex-wrap justify-end items-center mx-auto dark:bg-gray-800 h-8 pr-8 pt-1 sm:pr-12';
   let topul =
     'flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium pt-1 dark:bg-gray-800 bg-white';
 
@@ -82,38 +76,42 @@
     {childLi}
     {hamburgerClass}>
     <Nav {navClass} class="pb-2">
-      {#each svelteflows as { href, name, rel }}
-        <SidebarList {href} {name} {sideBarListClass} />
+      {#each data.pages as { meta, path }}
+        <SidebarList href={`/pages${path}`} name={meta.title} {sideBarListClass} />
       {/each}
     </Nav>
     <Nav {navClass} {navDivClass}>
       <h3 class={h3Category}>Components</h3>
-      {#each components as { href, name, rel }}
-        <SidebarList {href} {name} {sideBarListClass} />
+      {#each data.components as { meta, path }}
+        <SidebarList href={`/components${path}`} name={meta.breadcrumb_title} {sideBarListClass} />
       {/each}
     </Nav>
     <Nav {navClass} class="pb-2">
       <h3 class={h3Category}>Forms</h3>
-      {#each forms as { href, name, rel }}
-        <SidebarList {href} {name} {rel} {sideBarListClass} />
+      {#each data.forms as { meta, path }}
+        <SidebarList href={`/forms${path}`} name={meta.breadcrumb_title} {sideBarListClass} />
       {/each}
     </Nav>
     <Nav {navClass} class="pb-2">
       <h3 class={h3Category}>Typography</h3>
-      {#each typography as { href, name, rel }}
-        <SidebarList {href} {name} {rel} {sideBarListClass} />
+      {#each data.typography as { meta, path }}
+        <SidebarList href={`/typography${path}`} name={meta.breadcrumb_title} {sideBarListClass} />
       {/each}
     </Nav>
     <Nav {navClass} class="pb-2">
       <h3 class={h3Category}>Extend</h3>
-      {#each extend as { href, name, rel }}
-        <SidebarList {href} {name} {sideBarListClass} />
+      {#each data.extend as { meta, path }}
+        <SidebarList href={`/extend${path}`} name={meta.breadcrumb_title} {sideBarListClass} />
       {/each}
+      <SidebarList
+        href="https://flowbite-svelte-blocks.vercel.app/"
+        name="Blocks"
+        {sideBarListClass} />
     </Nav>
     <Nav {navClass} class="pb-2">
       <h3 class={h3Category}>Utilities</h3>
-      {#each utilities as { href, name, rel }}
-        <SidebarList {href} {name} {rel} {sideBarListClass} />
+      {#each data.utils as { meta, path }}
+        <SidebarList href={`/utilities${path}`} name={meta.breadcrumb_title} {sideBarListClass} />
       {/each}
     </Nav>
     <Nav {navClass} class="pb-24">
@@ -144,14 +142,18 @@
       </div>
       <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
         <div>
-          <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+          <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+            Resources
+          </h2>
           <FooterLinkGroup>
             <FooterLink liClass="mb-4" href="https://flowbite.com/">Flowbite</FooterLink>
             <FooterLink liClass="mb-4" href="https://tailwindcss.com/">Tailwind CSS</FooterLink>
           </FooterLinkGroup>
         </div>
         <div>
-          <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Follow us</h2>
+          <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
+            Follow us
+          </h2>
           <FooterLinkGroup>
             <FooterLink liClass="mb-4" href="https://github.com/themesberg/flowbite-svelte"
               >GitHub</FooterLink>
@@ -161,7 +163,9 @@
         <div>
           <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Legal</h2>
           <FooterLinkGroup>
-            <FooterLink liClass="mb-4" href="https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE"
+            <FooterLink
+              liClass="mb-4"
+              href="https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE"
               >License</FooterLink>
           </FooterLinkGroup>
         </div>
