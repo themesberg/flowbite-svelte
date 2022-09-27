@@ -1,19 +1,19 @@
 ---
 layout: pageLayout
 dir: Extend
+breadcrumb_title: Starter
 title: Flowbite-Svelte Starter
 ---
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
   import { Breadcrumb, BreadcrumbItem, Heading, A } from '$lib'
-  
 </script>
 
 <Breadcrumb class="pb-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{title}</BreadcrumbItem>
+  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
 </Breadcrumb>
 
 <Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>

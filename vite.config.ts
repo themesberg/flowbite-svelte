@@ -5,6 +5,10 @@ import examples from 'mdsvexamples/vite';
 
 const config: UserConfig = {
 	plugins: [sveltekit(), examples],
+	server: {
+		port: 8080,
+		strictPort: false
+	},
 	resolve: {
 		alias: {
 			'flowbite-svelte': path.resolve(process.cwd(), './src/lib/index.ts')

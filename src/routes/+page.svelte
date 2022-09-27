@@ -2,59 +2,7 @@
   import { Button } from '$lib';
   import { goto } from '$app/navigation';
   import { Responsive } from 'svelte-sidebar-menu';
-  import {
-    AccordionBlock,
-    AlertBlock,
-    AvatarBlock,
-    BadgeBlock,
-    BlockquoteBlock,
-    BreadcrumbBlock,
-    ButtonBlock,
-    ButtongroupBlock,
-    CardBlock,
-    CarouselBlock,
-    CheckboxBlock,
-    DatepickerBlock,
-    DrawerBlock,
-    DropdownBlock,
-    FileinputBlock,
-    FloatingLabelBlock,
-    FooterBlock,
-    FormBlock,
-    HeadingBlock,
-    HrBlock,
-    ImageBlock,
-    InputfieldBlock,
-    KbdBlock,
-    LinkBlock,
-    ListBlock,
-    ListgroupBlock,
-    MegamenuBlock,
-    ModalBlock,
-    NavbarBlock,
-    PaginationBlock,
-    ParagraphBlock,
-    PopoverBlock,
-    ProgressbarBlock,
-    RadioBlock,
-    RangeBlock,
-    RatingBlock,
-    SearchinputBlock,
-    SelectBlock,
-    SidebarBlock,
-    SkeletonBlock,
-    SpinnerBlock,
-    TabBlock,
-    TableBlock,
-    TextareaBlock,
-    TextBlock,
-    TimelineBlock,
-    ToastBlock,
-    ToggleBlock,
-    TooltipBlock,
-    TypographyBlock,
-    VideoBlock
-  } from './blocks/+server.ts';
+  import * as Block from './blocks/+server';
 
   const handleClick = () => {
     goto('/pages/getting-started');
@@ -93,55 +41,55 @@
 </div>
 
 <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
-  <AccordionBlock />
-  <AlertBlock />
-  <AvatarBlock />
-  <BadgeBlock />
-  <BreadcrumbBlock />
-  <BlockquoteBlock />
-  <ButtonBlock />
-  <ButtongroupBlock />
-  <CardBlock />
-  <CarouselBlock />
-  <CheckboxBlock />
-  <DatepickerBlock />
-  <DrawerBlock />
-  <DropdownBlock />
-  <FileinputBlock />
-  <FloatingLabelBlock />
-  <FooterBlock />
-  <FormBlock rel="external" />
-  <HeadingBlock />
-  <HrBlock />
-  <ImageBlock />
-  <InputfieldBlock />
-  <KbdBlock />
-  <LinkBlock />
-  <ListBlock />
-  <ListgroupBlock />
-  <MegamenuBlock />
-  <ModalBlock />
-  <NavbarBlock />
-  <PaginationBlock />
-  <ParagraphBlock />
-  <PopoverBlock />
-  <ProgressbarBlock />
-  <RadioBlock />
-  <RangeBlock />
-  <RatingBlock />
-  <SearchinputBlock />
-  <SelectBlock />
-  <SidebarBlock />
-  <SkeletonBlock />
-  <SpinnerBlock />
-  <TabBlock />
-  <TableBlock />
-  <TextareaBlock />
-  <TextBlock />
-  <TimelineBlock />
-  <ToastBlock />
-  <ToggleBlock />
-  <TooltipBlock />
-  <TypographyBlock />
-  <VideoBlock />
+  <Block.AccordionBlock />
+  <Block.AlertBlock />
+  <Block.AvatarBlock />
+  <Block.BadgeBlock />
+  <Block.BreadcrumbBlock />
+  <Block.BlockquoteBlock />
+  <Block.ButtonBlock />
+  <Block.ButtongroupBlock />
+  <Block.CardBlock />
+  <Block.CarouselBlock />
+  <Block.CheckboxBlock />
+  <Block.DatepickerBlock />
+  <Block.DrawerBlock />
+  <Block.DropdownBlock />
+  <Block.FileinputBlock />
+  <Block.FloatingLabelBlock />
+  <Block.FooterBlock />
+  <Block.FormBlock rel="external" />
+  <Block.HeadingBlock />
+  <Block.HrBlock />
+  <Block.ImageBlock />
+  <Block.InputfieldBlock />
+  <Block.KbdBlock />
+  <Block.LinkBlock />
+  <Block.ListBlock />
+  <Block.ListgroupBlock />
+  <Block.MegamenuBlock />
+  <Block.ModalBlock />
+  <Block.NavbarBlock />
+  <Block.PaginationBlock />
+  <Block.ParagraphBlock />
+  <Block.PopoverBlock />
+  <Block.ProgressbarBlock />
+  <Block.RadioBlock />
+  <Block.RangeBlock />
+  <Block.RatingBlock />
+  <Block.SearchinputBlock />
+  <Block.SelectBlock />
+  <Block.SidebarBlock />
+  <Block.SkeletonBlock />
+  <Block.SpinnerBlock />
+  <Block.TabBlock />
+  <Block.TableBlock />
+  <Block.TextareaBlock />
+  <Block.TextBlock />
+  <Block.TimelineBlock />
+  <Block.ToastBlock />
+  <Block.ToggleBlock />
+  <Block.TooltipBlock />
+  <Block.TypographyBlock />
+  <Block.VideoBlock />
 </div>
