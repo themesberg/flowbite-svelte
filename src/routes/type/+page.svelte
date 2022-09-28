@@ -17,5 +17,5 @@
 <Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
 <ExampleDiv tag="pre" class="dark:text-white">
-  {data.types}
+  {data.types.content}
 </ExampleDiv>

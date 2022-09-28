@@ -89,10 +89,22 @@ export const fetchMarkdownPosts = async () => {
   return { components: allComponents, extend: allExtends, forms: allForms, pages: allPages, typography: allTypographys, utils: allUtils }
 }
 
-import fs from 'fs/promises'
+// import fs from 'fs/promises'
 
 export const fetchTypes = async () => {
-  const typesFile = await fs.readFile('./src/lib/types.ts')
+  const typesFiles = import.meta.glob('/src/lib/*.ts', { as: 'raw' })
+  const iterableTypesFiles = Object.entries(typesFiles)
 
-  return { types: typesFile.toString() }
+  const allTypes = await Promise.all(
+    iterableTypesFiles.map(async ([path, resolver]) => {
+      const content = await resolver()
+      const filePath = path.slice(9, -3)
+      return {
+        content,
+        path: filePath,
+      }
+    })
+  )
+  //  there are only two ts files and the second one is types.ts
+  return { types: allTypes[1] }
 }
