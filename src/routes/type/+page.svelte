@@ -1,6 +1,6 @@
 <script lang="ts">
   import { ExampleDiv } from '../utils';
-  import { Breadcrumb, BreadcrumbItem, Heading, A } from '$lib';
+  import { Breadcrumb, BreadcrumbItem, Heading } from '$lib';
   import type { PageData } from './$types';
   export let data: PageData;
   let dir = 'Pages';
