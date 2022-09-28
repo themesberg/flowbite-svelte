@@ -13,9 +13,8 @@
   } from '$lib';
   import { Side, Nav, SidebarList } from 'svelte-sidebar-menu';
   import { topMenus, experimental } from './moduleItems/+server.js';
-
-  /** @type {import('./$types').PageData} */
-  export let data;
+  import type { PageData } from './$types';
+  export let data: PageData;
   let asideClass =
     'absolute w-auto bg-white pt-8 shadow-lg z-40 h-screen px-4 overflow-scroll dark:bg-gray-900';
 
@@ -79,6 +78,7 @@
       {#each data.pages as { meta, path }}
         <SidebarList href={`/pages${path}`} name={meta.title} {sideBarListClass} />
       {/each}
+      <SidebarList href="/type" name="Types" {sideBarListClass} />
     </Nav>
     <Nav {navClass} {navDivClass}>
       <h3 class={h3Category}>Components</h3>
