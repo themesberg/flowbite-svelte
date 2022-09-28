@@ -26,6 +26,6 @@ test('License page should have h1', async ({ page }) => {
 });
 
 test('Type list page should have h1', async ({ page }) => {
-	await page.goto('/pages/types');
+	await page.goto('/type');
 	expect(await page.textContent('h1')).toBe('Types');
 });

@@ -88,3 +88,11 @@ export const fetchMarkdownPosts = async () => {
 
   return { components: allComponents, extend: allExtends, forms: allForms, pages: allPages, typography: allTypographys, utils: allUtils }
 }
+
+import fs from 'fs/promises'
+
+export const fetchTypes = async () => {
+  const typesFile = await fs.readFile('./src/lib/types.ts')
+
+  return { types: typesFile.toString() }
+}
