@@ -11,7 +11,6 @@ dir: Components
   import componentProps from '../props/Input.json'
   import componentProps2 from '../props/Label.json'
   import componentProps3 from '../props/Helper.json'
-  import componentProps4 from '../props/Iconinput.json'
   import componentProps5 from '../props/Fileupload.json'
   import componentProps6 from '../props/Textarea.json'
   import componentProps7 from '../props/Select.json'
@@ -22,7 +21,6 @@ dir: Components
   let items = componentProps.props
   let items2 = componentProps2.props
   let items3 = componentProps3.props
-  let items4 = componentProps4.props
   let items5 = componentProps5.props
   let items6 = componentProps6.props
   let items7 = componentProps7.props
@@ -99,18 +97,18 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
 
 <Htwo label="Input element with icon" />
 
-With the Iconinput component, you can add <a href="https://flowbite-svelte.vercel.app/icons/heroicons" class="text-blue-700 dark:text-blue-500 hover:underline">Heroicons</a> or <a href="https://svelte-svg-icons.vercel.app/" class="text-blue-700 dark:text-blue-500 hover:underline">other icon sets</a>. Use iconClass to modify the icon color.
+With the Input component, you can add <a href="https://flowbite-svelte.vercel.app/icons/heroicons" class="text-blue-700 dark:text-blue-500 hover:underline">Heroicons</a> or <a href="https://svelte-svg-icons.vercel.app/" class="text-blue-700 dark:text-blue-500 hover:underline">other icon sets</a>.
 
 ```svelte example
 <script>
-  import { Label, Iconinput } from 'flowbite-svelte'
+  import { Label, Input } from 'flowbite-svelte'
 </script>
 
 <div class="mb-6">
   <Label for="input-group-1" class="block mb-2">Your Email</Label>
-  <Iconinput noBorder id="email" type="email" iconClass="h-4 w-4 mr-2 dark:text-green-500" placeholder="name@flowbite.com">
-  <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
-  </Iconinput>
+  <Input id="email" type="email" placeholder="name@flowbite.com">
+  <svg slot="left" aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+  </Input>
 </div>
 ```
 
@@ -118,14 +116,17 @@ With the Iconinput component, you can add <a href="https://flowbite-svelte.verce
 
 ```svelte example
 <script>
-  import { Label, Iconinput } from 'flowbite-svelte'
+  import { Label, Input, InputAddon, ButtonGroup } from 'flowbite-svelte'
 </script>
 
 <div class="mb-6">
   <Label for="website-admin" class="block mb-2">Username</Label>
-  <Iconinput id="website-admin" placeholder="elonmusk" label="Border" iconClass="h-4 w-4 mr-2 dark:text-red-500">
-  <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
-  </Iconinput>
+  <ButtonGroup class="w-full">
+    <InputAddon>
+    <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+    </InputAddon>
+    <Input id="website-admin" placeholder="elonmusk" />
+  </ButtonGroup>
 </div>
 ```
 
@@ -263,12 +264,6 @@ The component has the following props, type, and default values. See <A href="/p
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items3} rowState='hover' />
-</TableProp>
-
-<h3 class='text-xl w-full dark:text-white py-4'>Iconinput</h3>
-
-<TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>Fileupload</h3>

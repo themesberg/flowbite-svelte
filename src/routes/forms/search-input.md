@@ -10,13 +10,9 @@ dir: Forms
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, A } from '$lib'
   
   import searchComponentProps from '../props/Search.json'
-  import simpleSearchComponentProps from '../props/SimpleSearch.json'
-  import voiceSearchcomponentProps from '../props/VoiceSearch.json'
-
+  
   let searchItems = searchComponentProps.props
-  let simpleSearchItems = simpleSearchComponentProps.props
-  let voiceSearchItems = voiceSearchcomponentProps.props
-
+  
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -44,7 +40,7 @@ You will also find more advanced search components on this page including dropdo
 
 ```html
 <script>
-  import { Search, SimpleSearch, VoiceSearch } from 'flowbite-svelte'
+  import { Search } from 'flowbite-svelte'
 </script>
 ```
 
@@ -52,7 +48,7 @@ You will also find more advanced search components on this page including dropdo
 
 ```svelte example hideScript class="flex flex-col gap-4"
 <script>
-  import { Search, Button, SimpleSearch } from 'flowbite-svelte'
+  import { Search, Button } from 'flowbite-svelte'
 </script>
 
 <Search >
@@ -118,19 +114,7 @@ The component has the following props, type, and default values. See <A href="/p
   <TableDefaultRow items={searchItems} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Simple Search</h3>
-
-<TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={simpleSearchItems} rowState='hover' />
-</TableProp>
-
-<h3 class='text-xl w-full dark:text-white py-4'>Voice Search</h3>
-
-<TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={voiceSearchItems} rowState='hover' />
-</TableProp>
-
-<Htwo label="Forwarded Events: Search, SimpleSearch" />
+<Htwo label="Forwarded Events: Search" />
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:blur</Badge>

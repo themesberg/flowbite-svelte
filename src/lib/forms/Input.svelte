@@ -64,8 +64,8 @@
     const _color = color === 'base' && background ? 'tinted' : color;
     inputClass = classNames(
       defaultClass,
-      $$slots.startIcon && startIconPadding[_size],
-      $$slots.endIcon && endIconPadding[_size],
+      $$slots.left && startIconPadding[_size],
+      $$slots.right && endIconPadding[_size],
       ringClasses[color],
       colorClasses[_color],
       borderClasses[_color],
@@ -79,11 +79,11 @@
   }
 </script>
 
-<Wrapper class="relative w-full" show={$$slots.startIcon || $$slots.endIcon}>
-  {#if $$slots.startIcon}
+<Wrapper class="relative w-full" show={$$slots.left || $$slots.right}>
+  {#if $$slots.left}
     <div
       class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none text-gray-500 dark:text-gray-400">
-      <slot name="startIcon" />
+      <slot name="left" />
     </div>
   {/if}
   <input
@@ -103,9 +103,9 @@
     on:input
     use:setType={type}
     class={inputClass} />
-  {#if $$slots.endIcon}
-    <div class="flex absolute inset-y-0 right-0 items-center pr-2.5 text-gray-500 dark:text-gray-400">
-      <slot name="endIcon" />
+  {#if $$slots.right}
+    <div class="flex absolute inset-y-0 right-0 items-center pr-3 text-gray-500 dark:text-gray-400">
+      <slot name="right" />
     </div>
   {/if}
 </Wrapper>
