@@ -54,8 +54,8 @@
   };
 
   const textSizes = { sm: 'sm:text-xs', md: 'text-sm', lg: 'sm:text-base' };
-  const startIconPadding = { sm: 'pl-9', md: 'pl-10', lg: 'pl-11' };
-  const endIconPadding = { sm: 'pr-9', md: 'pr-10', lg: 'pr-11' };
+  const leftPadding = { sm: 'pl-9', md: 'pl-10', lg: 'pl-11' };
+  const rightPadding = { sm: 'pr-9', md: 'pr-10', lg: 'pr-11' };
   const inputPadding = { sm: 'p-2', md: 'p-2.5', lg: 'p-4' };
 
   $: _size = size || clampSize(group?.size) || 'md';
@@ -64,8 +64,8 @@
     const _color = color === 'base' && background ? 'tinted' : color;
     inputClass = classNames(
       defaultClass,
-      $$slots.left && startIconPadding[_size],
-      $$slots.right && endIconPadding[_size],
+      $$slots.left && leftPadding[_size],
+      $$slots.right && rightPadding[_size],
       ringClasses[color],
       colorClasses[_color],
       borderClasses[_color],

@@ -190,38 +190,35 @@ Use this example to show a list of checkbox items inside a dropdown menu.
 
 ```svelte example hideScript class="flex justify-center items-start h-96"
 <script>
-  import { Dropdown, SimpleSearch, DropdownItem, Checkbox } from 'flowbite-svelte'
+  import { Dropdown, DropdownItem, Checkbox, Button, Chevron, Search } from 'flowbite-svelte'
 </script>
 
-<Dropdown label="Project users" class="w-60">
-  <svelte:fragment slot="content">
-    <div class="p-3">
-      <SimpleSearch btnClass="hidden" tinted/>
-    </div>
-    <ul class="overflow-y-auto px-3 pb-3 space-y-1 h-48">
-      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted>Jese Leos</Checkbox>
-      </DropdownItem>
-      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted>Robert Gouth</Checkbox>
-      </DropdownItem>
-      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted checked>Bonnie Green</Checkbox>
-      </DropdownItem>
-      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted>Joseph Mcfall</Checkbox>
-      </DropdownItem>
-      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted>Leslie Livingston</Checkbox>
-      </DropdownItem>
-      <DropdownItem class="rounded" liClass="p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
-        <Checkbox tinted>Roberta Casas</Checkbox>
-      </DropdownItem>
-    </ul>
-   <a href="/" class="flex items-center p-3 text-sm font-medium text-red-600 bg-gray-50 border-t border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-1"><path stroke-linecap="round" stroke-linejoin="round" d="M22 10.5h-6m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" /></svg>Delete user
-      </a>
-  </svelte:fragment>
+<Button><Chevron>Project users</Chevron></Button>
+<Dropdown class="overflow-y-auto px-3 pb-3 text-sm h-44">
+  <div slot="header" class="p-3">
+    <Search size="md"/>
+  </div>
+  <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+    <Checkbox>Robert Gouth</Checkbox>
+  </li>
+  <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+    <Checkbox>Jese Leos</Checkbox>
+  </li>
+  <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+    <Checkbox checked>Bonnie Green</Checkbox>
+  </li>
+  <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+    <Checkbox>Jese Leos</Checkbox>
+  </li>
+  <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+    <Checkbox>Robert Gouth</Checkbox>
+  </li>
+  <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+    <Checkbox>Bonnie Green</Checkbox>
+  </li>
+  <a slot="footer" href="/" class="flex items-center p-3 -mb-1 text-sm font-medium text-red-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-1"><path stroke-linecap="round" stroke-linejoin="round" d="M22 10.5h-6m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" /></svg>Delete user
+  </a>
 </Dropdown>
 ```
 

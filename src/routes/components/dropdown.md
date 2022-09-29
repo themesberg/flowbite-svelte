@@ -406,13 +406,13 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
 
 ```svelte example class="flex justify-center items-start h-96"
 <script>
-  import { Button, Dropdown, DropdownItem, Chevron, Checkbox, SimpleSearch } from 'flowbite-svelte'
+  import { Button, Dropdown, DropdownItem, Chevron, Checkbox, Search } from 'flowbite-svelte'
 </script>
 
 <Button><Chevron>Project users</Chevron></Button>
 <Dropdown class="overflow-y-auto px-3 pb-3 text-sm h-44">
   <div slot="header" class="p-3">
-    <SimpleSearch btnClass="hidden"/>
+    <Search size="md"/>
   </div>
   <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Checkbox>Robert Gouth</Checkbox>
