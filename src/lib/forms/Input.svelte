@@ -1,13 +1,20 @@
+<script context="module" lang="ts">
+  import type { Size } from '$lib/types';
+  export function clampSize(s: Size) {
+    return s && s === 'xs' ? 'sm' : s === 'xl' ? 'lg' : s;
+  }
+</script>
+
 <script lang="ts">
   import Wrapper from '$lib/utils/Wrapper.svelte';
   import classNames from 'classnames';
   import { getContext, setContext } from 'svelte';
-  import type { InputType, Size } from '../types';
+  import type { InputType } from '../types';
 
   export let type: InputType = 'text';
   export let value: string = '';
-  export let size: 'sm' | 'md' | 'lg' = 'md';
-  export let defaultClass: string = 'block w-full border disabled:cursor-not-allowed disabled:opacity-50';
+  export let size: 'sm' | 'md' | 'lg' | undefined = undefined;
+  export let defaultClass: string = 'block w-full disabled:cursor-not-allowed disabled:opacity-50';
   export let color: 'base' | 'green' | 'red' = 'base';
 
   const borderClasses = {
@@ -34,78 +41,71 @@
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
 
-  setContext('group', true);
+  let group: { size: Size } = getContext('group');
 
   // you need to this to avoid 2-way binding
-  const setType = (node: HTMLInputElement) => {
-    node.type = type;
+  const setType = (node: HTMLInputElement, _type: string) => {
+    node.type = _type;
+    return {
+      update(_type: string) {
+        node.type = _type;
+      }
+    };
   };
 
   const textSizes = { sm: 'sm:text-xs', md: 'text-sm', lg: 'sm:text-base' };
-  const iconPadding = { sm: 'pl-9', md: 'pl-10', lg: 'pl-11' };
+  const startIconPadding = { sm: 'pl-9', md: 'pl-10', lg: 'pl-11' };
+  const endIconPadding = { sm: 'pr-9', md: 'pr-10', lg: 'pr-11' };
   const inputPadding = { sm: 'p-2', md: 'p-2.5', lg: 'p-4' };
-  const prefixPadding = { sm: 'px-2', md: 'px-3', lg: 'px-4' };
 
+  $: _size = size || clampSize(group?.size) || 'md';
   let inputClass: string;
   $: {
     const _color = color === 'base' && background ? 'tinted' : color;
     inputClass = classNames(
       defaultClass,
-      $$slots.icon && iconPadding[size],
+      $$slots.startIcon && startIconPadding[_size],
+      $$slots.endIcon && endIconPadding[_size],
       ringClasses[color],
       colorClasses[_color],
       borderClasses[_color],
-      inputPadding[size],
-      textSizes[size],
-      $$slots.prefix || 'rounded-l-lg',
-      $$slots.suffix || 'rounded-r-lg',
+      inputPadding[_size],
+      textSizes[_size],
+      group || 'rounded-lg',
+      group && 'first:rounded-l-lg last:rounded-r-lg',
+      group && 'border-l-0 first:border-l last:border-r',
       $$props.class
     );
   }
-
-  $: prefixClass = classNames(
-    textSizes[size],
-    prefixPadding[size],
-    background ? borderClasses['tinted'] : borderClasses['base'],
-    'text-gray-500 bg-gray-200',
-    background ? 'dark:bg-gray-500 dark:text-gray-300' : 'dark:bg-gray-600 dark:text-gray-400',
-    'inline-flex items-center rounded-l-md border border-r-0'
-  );
 </script>
 
-<Wrapper class="w-full flex" show={$$slots.prefix || $$slots.suffix}>
-  {#if $$slots.prefix}
-    <div class={prefixClass}>
-      <slot name="prefix" />
+<Wrapper class="relative w-full" show={$$slots.startIcon || $$slots.endIcon}>
+  {#if $$slots.startIcon}
+    <div
+      class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none text-gray-500 dark:text-gray-400">
+      <slot name="startIcon" />
     </div>
   {/if}
-
-  <Wrapper class="relative w-full" show={$$slots.icon}>
-    {#if $$slots.icon}
-      <div
-        class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none text-gray-500 dark:text-gray-400">
-        <slot name="icon" />
-      </div>
-    {/if}
-    <input
-      {...$$restProps}
-      bind:value
-      on:blur
-      on:change
-      on:click
-      on:focus
-      on:keydown
-      on:keypress
-      on:keyup
-      on:mouseover
-      on:mouseenter
-      on:mouseleave
-      on:paste
-      on:input
-      use:setType
-      class={inputClass} />
-  </Wrapper>
-  {#if $$slots.suffix}
-    <slot name="suffix" />
+  <input
+    {...$$restProps}
+    bind:value
+    on:blur
+    on:change
+    on:click
+    on:focus
+    on:keydown
+    on:keypress
+    on:keyup
+    on:mouseover
+    on:mouseenter
+    on:mouseleave
+    on:paste
+    on:input
+    use:setType={type}
+    class={inputClass} />
+  {#if $$slots.endIcon}
+    <div class="flex absolute inset-y-0 right-0 items-center pr-2.5 text-gray-500 dark:text-gray-400">
+      <slot name="endIcon" />
+    </div>
   {/if}
 </Wrapper>

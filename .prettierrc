@@ -2,7 +2,7 @@
 	"useTabs": false,
 	"singleQuote": true,
 	"trailingComma": "none",
-	"printWidth": 100,
+	"printWidth": 109,
 	"embeddedLanguageFormatting": "auto",
 	"bracketSameLine": true
 }

@@ -1,31 +1,50 @@
 <script lang="ts">
+  import type { Size } from '$lib/types';
   import classNames from 'classnames';
-  import { getContext, setContext } from 'svelte';
-  export let size: 'sm' | 'md' | 'lg' = 'md';
+  import { getContext } from 'svelte';
+  import { clampSize } from '$lib/forms/Input.svelte';
+
+  export let size: 'sm' | 'md' | 'lg' | undefined = undefined;
 
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
 
+  let group: { size: Size } = getContext('group');
+
   const borderClasses = {
     base: 'border-gray-300 dark:border-gray-600',
-    tinted: 'border-gray-300 dark:border-gray-500',
-    green: 'border-green-500 dark:border-green-400',
-    red: 'border-red-500 dark:border-red-400'
+    tinted: 'border-gray-300 dark:border-gray-500'
+  };
+
+  const darkBgClasses = {
+    base: 'dark:bg-gray-600 dark:text-gray-400',
+    tinted: 'dark:bg-gray-500 dark:text-gray-300'
+  };
+
+  const divider = {
+    base: 'dark:border-r-gray-700 dark:last:border-r-gray-600',
+    tinted: 'dark:border-r-gray-600 dark:last:border-r-gray-500'
   };
 
   const textSizes = { sm: 'sm:text-xs', md: 'text-sm', lg: 'sm:text-base' };
   const prefixPadding = { sm: 'px-2', md: 'px-3', lg: 'px-4' };
 
-  $: prefixClass = classNames(
-    textSizes[size],
-    prefixPadding[size],
+  // size: explicit, inherited, default
+  $: _size = size || clampSize(group?.size) || 'md';
+
+  $: divClass = classNames(
+    textSizes[_size],
+    prefixPadding[_size],
     background ? borderClasses['tinted'] : borderClasses['base'],
     'text-gray-500 bg-gray-200',
-    background ? 'dark:bg-gray-500 dark:text-gray-300' : 'dark:bg-gray-600 dark:text-gray-400',
-    'inline-flex items-center rounded-l-md border border-r-0'
+    background ? darkBgClasses.tinted : darkBgClasses.base,
+    background ? divider.tinted : divider.base,
+    'inline-flex items-center border-t border-b first:border-l border-r',
+    'first:rounded-l-lg last:rounded-r-lg',
+    $$props.class
   );
 </script>
 
-<div class={prefixClass}>
+<div {...$$restProps} class={divClass}>
   <slot />
 </div>
