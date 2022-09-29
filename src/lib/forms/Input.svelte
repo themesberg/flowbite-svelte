@@ -1,58 +1,111 @@
 <script lang="ts">
+  import Wrapper from '$lib/utils/Wrapper.svelte';
   import classNames from 'classnames';
-  import { getContext } from 'svelte';
-  import type { InputType } from '../types';
+  import { getContext, setContext } from 'svelte';
+  import type { InputType, Size } from '../types';
 
   export let type: InputType = 'text';
   export let value: string = '';
   export let size: 'sm' | 'md' | 'lg' = 'md';
-  export let inputClass: string =
-    'block w-full border disabled:cursor-not-allowed disabled:opacity-50 rounded-lg';
+  export let defaultClass: string = 'block w-full border disabled:cursor-not-allowed disabled:opacity-50';
   export let color: 'base' | 'green' | 'red' = 'base';
 
-  const colorClasses = {
-    base: 'bg-gray-50 border-gray-300 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500',
+  const borderClasses = {
+    base: 'border-gray-300 dark:border-gray-600',
+    tinted: 'border-gray-300 dark:border-gray-500',
+    green: 'border-green-500 dark:border-green-400',
+    red: 'border-red-500 dark:border-red-400'
+  };
+
+  const ringClasses = {
+    base: 'focus:border-blue-500 focus:ring-blue-500 dark:focus:border-blue-500 dark:focus:ring-blue-500',
     green:
-      'border-green-500 bg-green-50 text-green-900 placeholder-green-700 focus:border-green-500 focus:ring-green-500 dark:border-green-400 dark:bg-green-100 dark:focus:border-green-500 dark:focus:ring-green-500',
-    red: 'border-red-500 bg-red-50 text-red-900 placeholder-red-700 focus:border-red-500 focus:ring-red-500 dark:border-red-400 dark:bg-red-100 dark:focus:border-red-500 dark:focus:ring-red-500'
+      'focus:ring-green-500 focus:border-green-500 dark:focus:border-green-500 dark:focus:ring-green-500',
+    red: 'focus:ring-red-500 focus:border-red-500 dark:focus:ring-red-500 dark:focus:border-red-500'
+  };
+
+  const colorClasses = {
+    base: 'bg-gray-50 text-gray-900 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400',
+    tinted: 'bg-gray-50 text-gray-900 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400',
+    green: 'bg-green-50 text-green-900 placeholder-green-700 dark:bg-gray-700',
+    red: 'bg-red-50 text-red-900 placeholder-red-700 dark:bg-gray-700'
   };
 
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
 
+  setContext('group', true);
+
   // you need to this to avoid 2-way binding
-  const setType = (node) => {
+  const setType = (node: HTMLInputElement) => {
     node.type = type;
   };
+
+  const textSizes = { sm: 'sm:text-xs', md: 'text-sm', lg: 'sm:text-base' };
+  const iconPadding = { sm: 'pl-9', md: 'pl-10', lg: 'pl-11' };
+  const inputPadding = { sm: 'p-2', md: 'p-2.5', lg: 'p-4' };
+  const prefixPadding = { sm: 'px-2', md: 'px-3', lg: 'px-4' };
+
+  let inputClass: string;
+  $: {
+    const _color = color === 'base' && background ? 'tinted' : color;
+    inputClass = classNames(
+      defaultClass,
+      $$slots.icon && iconPadding[size],
+      ringClasses[color],
+      colorClasses[_color],
+      borderClasses[_color],
+      inputPadding[size],
+      textSizes[size],
+      $$slots.prefix || 'rounded-l-lg',
+      $$slots.suffix || 'rounded-r-lg',
+      $$props.class
+    );
+  }
+
+  $: prefixClass = classNames(
+    textSizes[size],
+    prefixPadding[size],
+    background ? borderClasses['tinted'] : borderClasses['base'],
+    'text-gray-500 bg-gray-200',
+    background ? 'dark:bg-gray-500 dark:text-gray-300' : 'dark:bg-gray-600 dark:text-gray-400',
+    'inline-flex items-center rounded-l-md border border-r-0'
+  );
 </script>
 
-<input
-  {...$$restProps}
-  bind:value
-  on:blur
-  on:change
-  on:click
-  on:focus
-  on:keydown
-  on:keypress
-  on:keyup
-  on:mouseover
-  on:mouseenter
-  on:mouseleave
-  on:paste
-  on:input
-  use:setType
-  class={classNames(
-    inputClass,
-    colorClasses[color],
-    color === 'base' &&
-      (background
-        ? 'dark:bg-gray-600 dark:border-gray-500'
-        : 'dark:bg-gray-700 dark:border-gray-600'),
-    {
-      'p-2 sm:text-xs': size === 'sm',
-      'p-2.5 text-sm': size === 'md',
-      'sm:text-md p-4': size === 'lg'
-    },
-    $$props.class
-  )} />
+<Wrapper class="w-full flex" show={$$slots.prefix || $$slots.suffix}>
+  {#if $$slots.prefix}
+    <div class={prefixClass}>
+      <slot name="prefix" />
+    </div>
+  {/if}
+
+  <Wrapper class="relative w-full" show={$$slots.icon}>
+    {#if $$slots.icon}
+      <div
+        class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none text-gray-500 dark:text-gray-400">
+        <slot name="icon" />
+      </div>
+    {/if}
+    <input
+      {...$$restProps}
+      bind:value
+      on:blur
+      on:change
+      on:click
+      on:focus
+      on:keydown
+      on:keypress
+      on:keyup
+      on:mouseover
+      on:mouseenter
+      on:mouseleave
+      on:paste
+      on:input
+      use:setType
+      class={inputClass} />
+  </Wrapper>
+  {#if $$slots.suffix}
+    <slot name="suffix" />
+  {/if}
+</Wrapper>
