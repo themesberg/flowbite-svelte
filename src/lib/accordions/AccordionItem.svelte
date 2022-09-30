@@ -7,16 +7,24 @@
   import { slide } from 'svelte/transition';
 
   export let open: boolean = false;
-  export let color: boolean = false;
+  export let activeClasses: string | undefined = undefined;
+  export let inactiveClasses: string | undefined = undefined;
 
   export let btnClass: string =
     'flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl';
 
+  interface AccordionCtxType {
+    flush: boolean;
+    activeClasses: string;
+    inactiveClasses: string;
+    selected: Writable<object>;
+  }
+
+  const ctx = (getContext('ctx') as AccordionCtxType) ?? {};
+
   // single selection
   const self = {};
-  const selected = (getContext('selected') as Writable<any>) ?? writable();
-
-  const flush = getContext('flush');
+  const selected = ctx.selected ?? writable();
 
   onMount(() => {
     if (open) $selected = self;
@@ -24,37 +32,15 @@
     return selected.subscribe((x) => (open = x === self));
   });
 
-  const handleToggle = (e: Event) => selected.set(open ? null : self);
-
-  const hoverColors = {
-    default: 'hover:bg-gray-100 dark:hover:bg-gray-800',
-    blue: 'hover:bg-blue-100 dark:hover:bg-gray-800',
-    flush: ''
-  };
-
-  const textColors = {
-    default: 'text-gray-500 dark:text-gray-400',
-    blue: 'text-blue-500 dark:text-blue-700',
-    flush: 'text-gray-500 dark:text-gray-400'
-  };
-
-  const colors = {
-    default: 'focus:ring-gray-200 dark:focus:ring-gray-800',
-    blue: 'focus:ring-blue-200 dark:focus:ring-blue-800 bg-blue-200 dark:bg-gray-900',
-    flush: ''
-  };
+  const handleToggle = (e: Event) => selected.set(open ? {} : self);
 
   let buttonClass: string;
-  $: {
-    const _color = flush ? 'flush' : color ? 'blue' : 'default';
-    buttonClass = classNames(
-      btnClass,
-      flush ? 'py-5' : 'focus:ring-4 p-5',
-      hoverColors[_color],
-      open ? textColors[_color] : textColors.default,
-      open ? colors[_color] : colors.default
-    );
-  }
+  $: buttonClass = classNames(
+    btnClass,
+    ctx.flush ? 'py-5' : 'p-5',
+    open && (ctx.flush ? 'text-gray-900 dark:text-white' : activeClasses || ctx.activeClasses),
+    !open && (ctx.flush ? 'text-gray-500 dark:text-gray-400' : inactiveClasses || ctx.inactiveClasses)
+  );
 </script>
 
 <h2 aria-expanded={open} class="group">
@@ -69,7 +55,7 @@
 </h2>
 {#if open}
   <div transition:slide={{ duration: 500 }}>
-    <div class={flush ? 'py-5' : 'p-5'}>
+    <div class={ctx.flush ? 'py-5' : 'p-5'}>
       <slot name="body" />
     </div>
   </div>
