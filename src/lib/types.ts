@@ -24,39 +24,11 @@ export interface AuthFieldType {
 
 export type AuthFunctionType = () => Promise<void>;
 
-export interface AvatarType {
-	src?: string;
-	alt?: string;
-	size?: number;
-	border?: boolean;
-	round?: boolean;
-	header?: string;
-	text?: string;
-}
-
-export interface ButtonGroupType {
-	name: string;
-	href?: string;
-	rel?: string;
-	icon?: typeof SvelteComponent;
-	iconSize?: number;
-	iconClass?: string;
-}
-
 export type ButtonType = 'button' | 'submit' | 'reset';
 
 export type Buttontypes = 'blue' | 'blue-outline' | 'dark' | 'dark-outline' | 'light' | 'green' | 'green-outline' | 'red' | 'red-outline' | 'yellow' | 'yellow-outline' | 'purple' | 'purple-outline';
 
 export type Buttonshadows = 'blue' | 'green' | 'cyan' | 'teal' | 'lime' | 'red' | 'pink' | 'purple';
-
-export type CardButtonType = {
-	textSize?: Textsize;
-	name: string;
-	type?: Buttontypes;
-	href?: string;
-	rel?: string;
-	rounded?: boolean;
-};
 
 export type CarouselIconType = {
 	next: typeof SvelteComponent;
@@ -102,8 +74,6 @@ export type drawerTransitionTypes =
 	| 'in:blur'
 	| 'out:blur'
 	| undefined;
-
-export type DropdownColorType = 'blue' | 'blue-outline' | 'dark' | 'dark-outline' | 'light' | 'green' | 'green-outline' | 'red' | 'red-outline' | 'yellow' | 'yellow-outline' | 'purple' | 'purple-outline';
 
 export interface DropdownType {
 	name: string;
@@ -194,7 +164,9 @@ export declare const sm = 'sm'
 export declare const md = 'md'
 export declare const lg = 'lg'
 export declare const xl = 'xl'
-export declare type Size = typeof xs | typeof sm | typeof md | typeof lg | typeof xl;
+export declare type SizeType = typeof xs | typeof sm | typeof md | typeof lg | typeof xl;
+
+export declare type FormSizeType =  typeof sm | typeof md | typeof lg ;
 
 export interface PillTabType {
 	name: string;

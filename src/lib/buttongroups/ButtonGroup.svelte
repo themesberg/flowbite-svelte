@@ -1,9 +1,9 @@
 <script lang="ts">
   import { setContext } from 'svelte';
   import classNames from 'classnames';
-  import type { Size } from '$lib/types';
+  import type { SizeType } from '$lib/types';
 
-  export let size: Size = 'md';
+  export let size: SizeType = 'md';
   export let divClass: string = 'inline-flex rounded-lg shadow-sm';
 
   setContext('group', { size });
