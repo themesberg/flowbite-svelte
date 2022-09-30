@@ -1,86 +1,76 @@
 <script lang="ts">
-	import classNames from 'classnames';
-	import { slide } from 'svelte/transition';
+  import ChevronDown from '$lib/utils/ChevronDown.svelte';
+  import ChevronUp from '$lib/utils/ChevronUp.svelte';
+  import classNames from 'classnames';
+  import { getContext, onMount } from 'svelte';
+  import { writable, type Writable } from 'svelte/store';
+  import { slide } from 'svelte/transition';
 
-	export let flush: boolean = false;
-	export let id: string = '';
-	export let slotClass: string = 'border-gray-200 dark:border-gray-700';
-	let classSlot: string = classNames(slotClass, flush ? 'py-5 border-b' : 'p-5 border border-t-0');
-	export let isOpen: boolean = false;
-	export let color: boolean = false;
+  export let open: boolean = false;
+  export let color: boolean = false;
 
-	export let btnClass: string =
-		'flex items-center justify-between w-full font-medium text-left text-gray-500 border-gray-200 dark:border-gray-700 dark:text-gray-400';
-	let classBtn: string = classNames(
-		btnClass,
-		flush
-			? 'py-5 border-b'
-			: 'focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 p-5 border hover:bg-gray-100 dark:hover:bg-gray-800'
-	);
-	export let colorClass: string =
-		'focus:ring-blue-200 dark:focus:ring-blue-800 hover:bg-blue-100 text-blue-500 bg-blue-200 text-blue-700';
+  export let btnClass: string =
+    'flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl';
 
-	const handleToggle = (id: string) => {
-		isOpen = !isOpen;
-	};
+  // single selection
+  const self = {};
+  const selected = (getContext('selected') as Writable<any>) ?? writable();
 
-	let buttonClass: string;
+  const flush = getContext('flush');
 
-	$: if (color && isOpen) {
-		buttonClass = classBtn + colorClass;
-	} else {
-		buttonClass = classBtn;
-	}
+  onMount(() => {
+    if (open) $selected = self;
+    // this will trigger unsubscribe on destroy
+    return selected.subscribe((x) => (open = x === self));
+  });
+
+  const handleToggle = (e: Event) => selected.set(open ? null : self);
+
+  const hoverColors = {
+    default: 'hover:bg-gray-100 dark:hover:bg-gray-800',
+    blue: 'hover:bg-blue-100 dark:hover:bg-gray-800',
+    flush: ''
+  };
+
+  const textColors = {
+    default: 'text-gray-500 dark:text-gray-400',
+    blue: 'text-blue-500 dark:text-blue-700',
+    flush: 'text-gray-500 dark:text-gray-400'
+  };
+
+  const colors = {
+    default: 'focus:ring-gray-200 dark:focus:ring-gray-800',
+    blue: 'focus:ring-blue-200 dark:focus:ring-blue-800 bg-blue-200 dark:bg-gray-900',
+    flush: ''
+  };
+
+  let buttonClass: string;
+  $: {
+    const _color = flush ? 'flush' : color ? 'blue' : 'default';
+    buttonClass = classNames(
+      btnClass,
+      flush ? 'py-5' : 'focus:ring-4 p-5',
+      hoverColors[_color],
+      open ? textColors[_color] : textColors.default,
+      open ? colors[_color] : colors.default
+    );
+  }
 </script>
 
-<h2 aria-expanded={isOpen}>
-	<button
-		on:click={() => handleToggle(id)}
-		type="button"
-		class:rounded-t-xl={id === '1'}
-		class:border-t-0={id !== '1'}
-		class={classNames(buttonClass, $$props.class)}
-	>
-		<slot name="header" />
-		{#if isOpen}
-			{#if $$slots.arrowup}
-				<slot name="arrowup" />
-			{:else}
-				<svg
-					data-accordion-icon
-					class="w-6 h-6 rotate-180 shrink-0"
-					fill="currentColor"
-					viewBox="0 0 20 20"
-					xmlns="http://www.w3.org/2000/svg"
-					><path
-						fill-rule="evenodd"
-						d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-						clip-rule="evenodd"
-					/></svg
-				>
-			{/if}
-		{:else if $$slots.arrowdown}
-			<slot name="arrowdown" />
-		{:else}
-			<svg
-				data-accordion-icon
-				class="w-6 h-6 shrink-0"
-				fill="currentColor"
-				viewBox="0 0 20 20"
-				xmlns="http://www.w3.org/2000/svg"
-				><path
-					fill-rule="evenodd"
-					d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-					clip-rule="evenodd"
-				/></svg
-			>
-		{/if}
-	</button>
+<h2 aria-expanded={open} class="group">
+  <button on:click={handleToggle} type="button" class={classNames(buttonClass, $$props.class)}>
+    <slot name="header" />
+    {#if open}
+      <slot name="arrowup"><ChevronUp /></slot>
+    {:else}
+      <slot name="arrowdown"><ChevronDown /></slot>
+    {/if}
+  </button>
 </h2>
-{#if isOpen}
-	<div transition:slide={{ duration: 500 }}>
-		<div class={classSlot}>
-			<slot name="body" />
-		</div>
-	</div>
+{#if open}
+  <div transition:slide={{ duration: 500 }}>
+    <div class={flush ? 'py-5' : 'p-5'}>
+      <slot name="body" />
+    </div>
+  </div>
 {/if}

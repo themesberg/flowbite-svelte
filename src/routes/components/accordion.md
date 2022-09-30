@@ -44,7 +44,7 @@ A popular use case would be the “Frequently Asked Questions” section of a we
 
 ```html
 <script>
-  import { AccordionItem } from 'flowbite-svelte'
+  import { AccordionItem, Accordion } from 'flowbite-svelte'
 </script>
 ```
 
@@ -54,8 +54,9 @@ Use id=1,2,3,.. to add top and bottom border.
 
 ```svelte example hideScript
 <script>
-  import {AccordionItem} from 'flowbite-svelte'
+  import {AccordionItem, Accordion} from 'flowbite-svelte'
 </script>
+<Accordion>
   <AccordionItem id="1">
     <h2 slot="header">My Header 1</h2>
     <div slot="body">
@@ -109,35 +110,38 @@ Use id=1,2,3,.. to add top and bottom border.
       </ul>
     </div>
   </AccordionItem>
+</Accordion>
 ```
 
 <Htwo label="Always open" />
 
-Use the `isOpen` prop to make an item open on mount.
+Use the `open` prop to make an item open on mount.
 
 ```svelte example hideScript
 <script>
-  import {AccordionItem} from 'flowbite-svelte'
+  import {AccordionItem, Accordion} from 'flowbite-svelte'
 </script>
 
-<AccordionItem id="1" isOpen>
-  <h2 slot="header">Header 2-1</h2>
-  <div slot="body">
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-      necessitatibus sint explicabo ...
-    </p>
-  </div>
-</AccordionItem>
-<AccordionItem id="2">
-  <h2 slot="header">Header 2-2</h2>
-  <div slot="body">
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-      necessitatibus sint explicabo ...
-    </p>
-  </div>
-</AccordionItem>
+<Accordion>
+  <AccordionItem id="1" open>
+    <h2 slot="header">Header 2-1</h2>
+    <div slot="body">
+      <p class="mb-2 text-gray-500 dark:text-gray-400">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+        necessitatibus sint explicabo ...
+      </p>
+    </div>
+  </AccordionItem>
+  <AccordionItem id="2">
+    <h2 slot="header">Header 2-2</h2>
+    <div slot="body">
+      <p class="mb-2 text-gray-500 dark:text-gray-400">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+        necessitatibus sint explicabo ...
+      </p>
+    </div>
+  </AccordionItem>
+</Accordion>
 ```
 
 <Htwo label="Color option" />
@@ -146,27 +150,29 @@ Use the `color` prop to add color.
 
 ```svelte example hideScript
 <script>
-  import {AccordionItem} from 'flowbite-svelte'
+  import {AccordionItem, Accordion} from 'flowbite-svelte'
 </script>
 
-<AccordionItem id="1" color>
-  <h2 slot="header">Header 2-1</h2>
-  <div slot="body">
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-      necessitatibus sint explicabo ...
-    </p>
-  </div>
-</AccordionItem>
-<AccordionItem id="2" color>
-  <h2 slot="header">Header 2-2</h2>
-  <div slot="body">
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-      necessitatibus sint explicabo ...
-    </p>
-  </div>
-</AccordionItem>
+<Accordion>
+  <AccordionItem id="1" color>
+    <h2 slot="header">Header 2-1</h2>
+    <div slot="body">
+      <p class="mb-2 text-gray-500 dark:text-gray-400">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+        necessitatibus sint explicabo ...
+      </p>
+    </div>
+  </AccordionItem>
+  <AccordionItem id="2" color>
+    <h2 slot="header">Header 2-2</h2>
+    <div slot="body">
+      <p class="mb-2 text-gray-500 dark:text-gray-400">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+        necessitatibus sint explicabo ...
+      </p>
+    </div>
+  </AccordionItem>
+</Accordion>
 ```
 
 <Htwo label="Flush accordion" />
@@ -175,27 +181,29 @@ Use `flush` prop to remove the rounded borders.
 
 ```svelte example hideScript
 <script>
-  import {AccordionItem} from 'flowbite-svelte'
+  import {AccordionItem, Accordion} from 'flowbite-svelte'
 </script>
 
-<AccordionItem flush id="1" >
-  <h2 slot="header">Header 2-1</h2>
-  <div slot="body">
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-      necessitatibus sint explicabo ...
-    </p>
-  </div>
-</AccordionItem>
-<AccordionItem flush id="2">
-  <h2 slot="header">Header 2-2</h2>
-  <div slot="body">
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
-      necessitatibus sint explicabo ...
-    </p>
-  </div>
-</AccordionItem>
+<Accordion flush>
+  <AccordionItem id="1" >
+    <h2 slot="header">Header 2-1</h2>
+    <div slot="body">
+      <p class="mb-2 text-gray-500 dark:text-gray-400">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+        necessitatibus sint explicabo ...
+      </p>
+    </div>
+  </AccordionItem>
+  <AccordionItem id="2">
+    <h2 slot="header">Header 2-2</h2>
+    <div slot="body">
+      <p class="mb-2 text-gray-500 dark:text-gray-400">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab
+        necessitatibus sint explicabo ...
+      </p>
+    </div>
+  </AccordionItem>
+</Accordion>
 ```
 
 <Htwo label="Arrow style" />
@@ -204,159 +212,89 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
 
 ```svelte example hideScript
 <script>
-  import {AccordionItem} from 'flowbite-svelte'
+  import {AccordionItem, Accordion} from 'flowbite-svelte'
 </script>
 
-<AccordionItem id="1">
-  <h2 slot="header">Header 2-1</h2>
-  <div slot="arrowup">
-    <svg
-      class="w-6 h-6 shrink-0 rotate-180"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      ><path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"
-      /></svg
-    >
-  </div>
-  <div slot="arrowdown">
-    <svg
-      class="w-6 h-6 shrink-0"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      ><path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"
-      /></svg
-    >
-  </div>
-  <div slot="body">
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
-      explicabo ...
-    </p>
-  </div>
-</AccordionItem>
-<AccordionItem id="2">
-  <h2 slot="header">Header 2-2</h2>
-  <div slot="arrowup">
-    <svg
-      class="w-6 h-6 shrink-0 rotate-180"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      ><path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"
-      /></svg
-    >
-  </div>
-  <div slot="arrowdown">
-    <svg
-      class="w-6 h-6 shrink-0"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      ><path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"
-      /></svg
-    >
-  </div>
-  <div slot="body">
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
-      explicabo ...
-    </p>
-  </div>
-</AccordionItem>
+<Accordion>
+  <AccordionItem id="1">
+    <h2 slot="header">Header 2-1</h2>
+    <div slot="arrowup">
+      <svg class="w-6 h-6 shrink-0 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0  18z"/></svg>
+    </div>
+    <div slot="arrowdown">
+      <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"/></svg>
+    </div>
+    <div slot="body">
+      <p class="mb-2 text-gray-500 dark:text-gray-400">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
+        explicabo ...
+      </p>
+    </div>
+  </AccordionItem>
+  <AccordionItem id="2">
+    <h2 slot="header">Header 2-2</h2>
+    <div slot="arrowup">
+      <svg class="w-6 h-6 shrink-0 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0  18z"/></svg>
+    </div>
+    <div slot="arrowdown">
+      <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"/></svg>
+    </div>
+    <div slot="body">
+      <p class="mb-2 text-gray-500 dark:text-gray-400">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
+        explicabo ...
+      </p>
+    </div>
+  </AccordionItem>
+</Accordion>
 ```
 
 <Htwo label="Icon Accordion" />
 
 ```svelte example hideScript
 <script>
-  import {AccordionItem} from 'flowbite-svelte'
+  import {AccordionItem, Accordion} from 'flowbite-svelte'
 </script>
 
-<AccordionItem id="1">
-  <h2 slot="header" class="text-base p-0 m-0">
-    <span class="flex"
-      ><span class="mr-2">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="w-6 h-6"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"
-          />
-        </svg>
-      </span> My Header 1</span
-    >
-  </h2>
-  <div slot="body">
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
-      explicabo...
-    </p>
-    <p class="text-gray-500 dark:text-gray-400">
-      Check out this guide to learn how to <a
-        href="/"
-        target="_blank"
-        class="text-blue-600 dark:text-blue-500 hover:underline">get started</a
-      > and start developing websites even faster with components on top of Tailwind CSS.
-    </p>
-  </div>
-</AccordionItem>
-<AccordionItem id="2">
-  <h2 slot="header" class="text-base m-0 p-0">
-    <span class="flex "
-      ><span class="mr-2">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="w-6 h-6"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"
-          />
-        </svg>
-      </span> My Header 2</span
-    >
-  </h2>
-  <div slot="body">
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
-      explicabo...
-    </p>
-  </div>
-</AccordionItem>
+<Accordion>
+  <AccordionItem id="1">
+    <h2 slot="header" class="text-base p-0 m-0">
+      <span class="flex"
+        ><span class="mr-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></svg>
+        </span> My Header 1</span
+      >
+    </h2>
+    <div slot="body">
+      <p class="mb-2 text-gray-500 dark:text-gray-400">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
+        explicabo...
+      </p>
+      <p class="text-gray-500 dark:text-gray-400">
+        Check out this guide to learn how to <a
+          href="/"
+          target="_blank"
+          class="text-blue-600 dark:text-blue-500 hover:underline">get started</a
+        > and start developing websites even faster with components on top of Tailwind CSS.
+      </p>
+    </div>
+  </AccordionItem>
+  <AccordionItem id="2">
+    <h2 slot="header" class="text-base m-0 p-0">
+      <span class="flex "
+        ><span class="mr-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
+        </span> My Header 2</span
+      >
+    </h2>
+    <div slot="body">
+      <p class="mb-2 text-gray-500 dark:text-gray-400">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
+        explicabo...
+      </p>
+    </div>
+  </AccordionItem>
+</Accordion>
 ```
 
 <Htwo label="Props" />
