@@ -78,7 +78,6 @@
       {#each data.pages as { meta, path }}
         <SidebarList href={`/pages${path}`} name={meta.title} {sideBarListClass} />
       {/each}
-      <SidebarList href="/type" name="Types" {sideBarListClass} />
     </Nav>
     <Nav {navClass} {navDivClass}>
       <h3 class={h3Category}>Components</h3>
