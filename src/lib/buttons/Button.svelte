@@ -45,8 +45,6 @@
     | 'purple'
     | null = null;
 
-  const background = getContext('background');
-
   const colorClasses = {
     blue: 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800',
     dark: 'text-white bg-gray-800 hover:bg-gray-900 focus:ring-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700',
@@ -147,12 +145,12 @@
           : 'inline-flex items-center justify-center ' + sizeClasses[size],
         gradient ? gradientClasses[color] : outline ? outlineClasses[color] : colorClasses[color],
         color === 'alternative' &&
-          (background
+          (group
             ? 'dark:bg-gray-700 dark:text-white dark:border-gray-700 dark:hover:border-gray-600 dark:hover:bg-gray-600'
             : 'dark:bg-transparent dark:border-gray-800 dark:hover:border-gray-700'),
         outline &&
           color === 'dark' &&
-          (background
+          (group
             ? 'dark:text-white dark:border-white'
             : 'dark:text-gray-400 dark:border-gray-700'),
         hasBorder() && group && 'border-l-0 first:border-l',
