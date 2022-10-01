@@ -12,7 +12,7 @@
   import type { InputType } from '../types';
 
   export let type: InputType = 'text';
-  export let value: string = '';
+  export let value: string | number = '';
   export let size: FormSizeType | undefined = undefined;
   export let defaultClass: string = 'block w-full disabled:cursor-not-allowed disabled:opacity-50';
   export let color: 'base' | 'green' | 'red' = 'base';
@@ -78,12 +78,12 @@
     );
   }
   let floatClass =
-    'flex absolute inset-y-0 left-0 items-center pointer-events-none text-gray-500 dark:text-gray-400';
+    'flex absolute inset-y-0 items-center pointer-events-none text-gray-500 dark:text-gray-400';
 </script>
 
 <Wrapper class="relative w-full" show={$$slots.left || $$slots.right}>
   {#if $$slots.left}
-    <div class="{floatClass} pl-3"><slot name="left" /></div>
+    <div class="{floatClass} left-0 pl-2.5"><slot name="left" /></div>
   {/if}
   <input
     {...$$restProps}
@@ -103,6 +103,6 @@
     use:setType={type}
     class={inputClass} />
   {#if $$slots.right}
-    <div class="{floatClass} pr-3"><slot name="right" /></div>
+    <div class="{floatClass} right-0 pr-2.5"><slot name="right" /></div>
   {/if}
 </Wrapper>
