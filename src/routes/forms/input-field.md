@@ -319,6 +319,27 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
 </form>
 ```
 
+<Htwo label="Advanced usage" />
+
+```svelte example class="space-y-4"
+<script>
+  import {Input} from 'flowbite-svelte';
+	let a = 1;
+	let b = 1;
+</script>
+
+<Input bind:value={a} type=number >
+  <div slot="left">@</div>
+</Input>
+<p>{typeof a} {a}</p>
+
+<Input let:props>
+  <div slot="left">#</div>
+	<input type="number" {...props} bind:value={b}/>
+</Input>
+<p>{typeof b} {b}</p>
+```
+
 <Htwo label="Props" />
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
