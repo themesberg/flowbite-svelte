@@ -3,24 +3,18 @@
   import ChevronUp from '$lib/utils/ChevronUp.svelte';
   import classNames from 'classnames';
   import { getContext, onMount } from 'svelte';
-  import { writable, type Writable } from 'svelte/store';
+  import { writable } from 'svelte/store';
   import { slide } from 'svelte/transition';
+  import type { AccordionCtxType } from './Accordion.svelte';
 
   export let open: boolean = false;
   export let activeClasses: string | undefined = undefined;
   export let inactiveClasses: string | undefined = undefined;
 
-  export let btnClass: string =
+  export let defaultClass: string =
     'flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl';
 
-  interface AccordionCtxType {
-    flush: boolean;
-    activeClasses: string;
-    inactiveClasses: string;
-    selected: Writable<object>;
-  }
-
-  const ctx = (getContext('ctx') as AccordionCtxType) ?? {};
+  const ctx = getContext<AccordionCtxType>('ctx') ?? {};
 
   // single selection
   const self = {};
@@ -36,15 +30,16 @@
 
   let buttonClass: string;
   $: buttonClass = classNames(
-    btnClass,
+    defaultClass,
     ctx.flush ? 'py-5' : 'p-5',
     open && (ctx.flush ? 'text-gray-900 dark:text-white' : activeClasses || ctx.activeClasses),
-    !open && (ctx.flush ? 'text-gray-500 dark:text-gray-400' : inactiveClasses || ctx.inactiveClasses)
+    !open && (ctx.flush ? 'text-gray-500 dark:text-gray-400' : inactiveClasses || ctx.inactiveClasses),
+    $$props.class
   );
 </script>
 
 <h2 aria-expanded={open} class="group">
-  <button on:click={handleToggle} type="button" class={classNames(buttonClass, $$props.class)}>
+  <button on:click={handleToggle} type="button" class={buttonClass}>
     <slot name="header" />
     {#if open}
       <slot name="arrowup"><ChevronUp /></slot>
@@ -56,7 +51,7 @@
 {#if open}
   <div transition:slide={{ duration: 500 }}>
     <div class={ctx.flush ? 'py-5' : 'p-5'}>
-      <slot name="body" />
+      <slot />
     </div>
   </div>
 {/if}

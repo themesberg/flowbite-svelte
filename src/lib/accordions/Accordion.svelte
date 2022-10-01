@@ -1,8 +1,18 @@
+<script context="module" lang="ts">
+  import { writable, type Writable } from 'svelte/store';
+
+  export interface AccordionCtxType {
+    flush: boolean;
+    activeClasses: string;
+    inactiveClasses: string;
+    selected?: Writable<object>;
+  }
+</script>
+
 <script lang="ts">
   import Frame from '$lib/utils/Frame.svelte';
   import classNames from 'classnames';
   import { setContext } from 'svelte';
-  import { writable, type Writable } from 'svelte/store';
 
   export let single: boolean = true;
   export let flush: boolean = false;
@@ -12,13 +22,6 @@
     'text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800';
   export let defaultClass: string = 'text-gray-500 dark:text-gray-400';
 
-  interface AccordionCtxType {
-    flush: boolean;
-    activeClasses: string;
-    inactiveClasses: string;
-    selected?: Writable<object>;
-  }
-
   const ctx: AccordionCtxType = {
     flush,
     activeClasses,
@@ -26,7 +29,7 @@
     selected: single ? writable() : undefined
   };
 
-  setContext('ctx', ctx);
+  setContext<AccordionCtxType>('ctx', ctx);
 
   let frameClass = classNames(
     defaultClass,
