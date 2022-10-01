@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
-  import type { Size } from '$lib/types';
-  export function clampSize(s: Size) {
+  import type { SizeType, FormSizeType } from '$lib/types';
+  export function clampSize(s: SizeType) {
     return s && s === 'xs' ? 'sm' : s === 'xl' ? 'lg' : s;
   }
 </script>
@@ -8,12 +8,12 @@
 <script lang="ts">
   import Wrapper from '$lib/utils/Wrapper.svelte';
   import classNames from 'classnames';
-  import { getContext, setContext } from 'svelte';
+  import { getContext } from 'svelte';
   import type { InputType } from '../types';
 
   export let type: InputType = 'text';
   export let value: string = '';
-  export let size: 'sm' | 'md' | 'lg' | undefined = undefined;
+  export let size: FormSizeType | undefined = undefined;
   export let defaultClass: string = 'block w-full disabled:cursor-not-allowed disabled:opacity-50';
   export let color: 'base' | 'green' | 'red' = 'base';
 
@@ -41,7 +41,7 @@
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
 
-  let group: { size: Size } = getContext('group');
+  let group: { size: SizeType } = getContext('group');
 
   // you need to this to avoid 2-way binding
   const setType = (node: HTMLInputElement, _type: string) => {
@@ -77,14 +77,13 @@
       $$props.class
     );
   }
+  let floatClass =
+    'flex absolute inset-y-0 left-0 items-center pointer-events-none text-gray-500 dark:text-gray-400';
 </script>
 
 <Wrapper class="relative w-full" show={$$slots.left || $$slots.right}>
   {#if $$slots.left}
-    <div
-      class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none text-gray-500 dark:text-gray-400">
-      <slot name="left" />
-    </div>
+    <div class="{floatClass} pl-3"><slot name="left" /></div>
   {/if}
   <input
     {...$$restProps}
@@ -104,8 +103,6 @@
     use:setType={type}
     class={inputClass} />
   {#if $$slots.right}
-    <div class="flex absolute inset-y-0 right-0 items-center pr-3 text-gray-500 dark:text-gray-400">
-      <slot name="right" />
-    </div>
+    <div class="{floatClass} pr-3"><slot name="right" /></div>
   {/if}
 </Wrapper>

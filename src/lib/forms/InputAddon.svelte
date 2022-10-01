@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Size } from '$lib/types';
+  import type { SizeType } from '$lib/types';
   import classNames from 'classnames';
   import { getContext } from 'svelte';
   import { clampSize } from '$lib/forms/Input.svelte';
@@ -9,7 +9,7 @@
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
 
-  let group: { size: Size } = getContext('group');
+  let group: { size: SizeType } = getContext('group');
 
   const borderClasses = {
     base: 'border-gray-300 dark:border-gray-600',

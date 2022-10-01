@@ -1,7 +1,8 @@
 <script lang="ts">
+  import type { FormSizeType } from '$lib/types';
   import Wrapper from '$lib/utils/Wrapper.svelte';
   import Input from './Input.svelte';
-  export let size: 'sm' | 'md' | 'lg' = 'lg';
+  export let size: FormSizeType = 'lg';
   export let placeholder: string = 'Search';
 
   const sizes = {
