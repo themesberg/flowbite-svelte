@@ -8,13 +8,9 @@ dir: Components
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib';
-
-  import accordionProps from '../props/Accordion.json'
-  import accordionItemProps from '../props/AccordionItem.json'
-
-// Props 
-  let items = accordionProps.props
-  let items2 = accordionItemProps.props
+  // Props 
+  import {props as accordionProps} from '../props/Accordion.json'
+  import {props as accordionItemProps} from '../props/AccordionItem.json'
 	let propHeader = ['Name', 'Type', 'Default']
   let slotHeader = ['Name', 'Description']
   // Slots
@@ -234,13 +230,13 @@ The component has the following props, type, and default values. See <A href="/p
 <h3 class='text-xl w-full dark:text-white py-4'>Accordion</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow {items} rowState='hover' />
+  <TableDefaultRow items={accordionProps} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>AccordionItem</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={items2} rowState='hover' />
+  <TableDefaultRow items={accordionItemProps} rowState='hover' />
 </TableProp>
 
 <Htwo label="Slots" />

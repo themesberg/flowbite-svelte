@@ -9,20 +9,12 @@ dir: Typography
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../utils'
   import { A, Heading, Breadcrumb, BreadcrumbItem } from '$lib';
   
-  import componentProps1 from '../props/Heading.json'
-  import componentProps2 from '../props/P.json'
-  import componentProps3 from '../props/A.json'
-  import componentProps4 from '../props/Mark.json'
-  import componentProps5 from '../props/Secondary.json'
-
-  let items1 = componentProps1.props
-  let items2 = componentProps2.props
-  let items3 = componentProps3.props
-  let items4 = componentProps4.props
-  let items5 = componentProps5.props
-  
+  import { props as items1 } from '../props/Heading.json'
+  import { props as items2 } from '../props/P.json'
+  import { props as items3 } from '../props/A.json'
+  import { props as items4 } from '../props/Mark.json'
+  import { props as items5 } from '../props/Secondary.json'
   let propHeader = ['Name', 'Type', 'Default']
-
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 </script>

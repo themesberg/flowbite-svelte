@@ -8,25 +8,15 @@ dir: Components
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Breadcrumb, BreadcrumbItem, Heading, A } from '$lib'
-  import componentProps from '../props/Input.json'
-  import componentProps2 from '../props/Label.json'
-  import componentProps3 from '../props/Helper.json'
-  import componentProps5 from '../props/Fileupload.json'
-  import componentProps6 from '../props/Textarea.json'
-  import componentProps7 from '../props/Select.json'
-  import componentProps8 from '../props/Checkbox.json'
-  import componentProps9 from '../props/Radio.json'
-  import componentProps10 from '../props/Toggle.json'
-
-  let items = componentProps.props
-  let items2 = componentProps2.props
-  let items3 = componentProps3.props
-  let items5 = componentProps5.props
-  let items6 = componentProps6.props
-  let items7 = componentProps7.props
-  let items8 = componentProps8.props
-  let items9 = componentProps9.props
-  let items10 = componentProps10.props
+  import { props as items } from '../props/Input.json'
+  import { props as items2 } from '../props/Label.json'
+  import { props as items3 } from '../props/Helper.json'
+  import { props as items5 } from '../props/Fileupload.json'
+  import { props as items6 } from '../props/Textarea.json'
+  import { props as items7 } from '../props/Select.json'
+  import { props as items8 } from '../props/Checkbox.json'
+  import { props as items9 } from '../props/Radio.json'
+  import { props as items10 } from '../props/Toggle.json'
 
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'

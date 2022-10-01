@@ -8,16 +8,14 @@ dir: Components
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
-  import componentProps from '../props/Card.json'
   // Props table
-  let items = componentProps.props
+  import { props as cardProps } from '../props/Card.json'
 	let propHeader = ['Name', 'Type', 'Default']
+	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
+  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
   // Slots
   let slotHeader = ['Name', 'Description']
   let slotItems = [['default', 'For a button label.']]
-
-	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 </script>
 
 <Breadcrumb class="pb-8">
@@ -420,7 +418,7 @@ The component has the following props, type, and default values. See <A href="/p
 <h3 class='text-xl w-full dark:text-white py-4'>Card</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow {items} rowState='hover' />
+  <TableDefaultRow items={cardProps} rowState='hover' />
 </TableProp>
 
 <Htwo label="Slots" />

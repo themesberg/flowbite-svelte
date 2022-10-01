@@ -8,17 +8,11 @@ dir: Components
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
-
-  import componentProps from '../props/ButtonGroup.json'
-
   // Props table
-  let items = componentProps.props
+  import { props as buttonGroupProps} from '../props/ButtonGroup.json'
   let propHeader = ['Name', 'Type', 'Default']
-
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
-
-
 </script>
 
 <Breadcrumb class="pb-8">
@@ -203,7 +197,7 @@ The component has the following props, type, and default values. See <A href="/p
 <h3 class='text-xl w-full dark:text-white py-4'>ButtonGroup</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow {items} rowState='hover' />
+  <TableDefaultRow items={buttonGroupProps} rowState='hover' />
 </TableProp>
 
 <Htwo label="Forwarded Events" />

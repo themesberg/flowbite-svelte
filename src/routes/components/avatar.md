@@ -8,12 +8,9 @@ dir: Components
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
-
-  import alertProp from '../props/Avatar.json'
   // Props table
-  export let items = alertProp.props
+  import { props as avatarProps } from '../props/Avatar.json'
 	let propHeader = ['Name', 'Type', 'Default']
-
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 
@@ -215,7 +212,7 @@ The component has the following props, type, and default values. See <A href="/p
  page</A> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-<TableDefaultRow {items} rowState='hover' />
+<TableDefaultRow items={avatarProps} rowState='hover' />
 </TableProp>
 
 <Htwo label="References" />

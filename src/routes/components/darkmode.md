@@ -8,12 +8,9 @@ dir: Components
 <script>
   import {Htwo,TableProp, TableDefaultRow} from '../utils'
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
-  
-  import componentProps from '../props/DarkMode.json'
   // Props table
-  let items = componentProps.props
+  import { props as items} from '../props/DarkMode.json'
 	let propHeader = ['Name', 'Type', 'Default']
-	
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
 let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 </script>
@@ -53,9 +50,6 @@ const config = {
   darkMode: 'class',
 };
 ```
-
-<Htwo label="Props" />
-
 
 <p>The component has the following props, type, and default values:</p>
 

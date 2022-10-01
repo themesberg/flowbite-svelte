@@ -8,11 +8,7 @@ dir: Forms
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, A } from '$lib'
-  
-  import searchComponentProps from '../props/Search.json'
-  
-  let searchItems = searchComponentProps.props
-  
+  import { props as searchItems } from '../props/Search.json'  
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'

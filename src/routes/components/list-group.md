@@ -9,10 +9,9 @@ dir: Components
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
 
-  import componentProps from '../props/Listgroup.json'
+  import {props as componentProps} from '../props/Listgroup.json'
   // Props table
   let propHeader = ['Name', 'Type', 'Default']
-
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 </script>
@@ -160,7 +159,7 @@ Delete user
  page</A> for type information.</p>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={componentProps.props} rowState='hover' />
+  <TableDefaultRow items={componentProps} rowState='hover' />
 </TableProp>
 
 <Htwo label="Forwarded Events" />

@@ -8,17 +8,12 @@ dir: Components
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Badge, Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib';
-  import componentProps from '../props/Navbar.json'
-  import componentProps2 from '../props/NavBrand.json'
-  import componentProps3 from '../props/NavLi.json'
-  import componentProps4 from '../props/NavUl.json'
   // Props table
-  let items = componentProps.props
-  let items2 = componentProps2.props
-  let items3 = componentProps3.props
-  let items4 = componentProps4.props
+  import { props as items } from '../props/Navbar.json'
+  import { props as items2 } from '../props/NavBrand.json'
+  import { props as items3 } from '../props/NavLi.json'
+  import { props as items4 } from '../props/NavUl.json'
   let propHeader = ['Name', 'Type', 'Default']
-  
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 </script>

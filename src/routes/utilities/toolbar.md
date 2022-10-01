@@ -8,12 +8,8 @@ dir: Utilities
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../utils'
   import { Toolbar, ToolbarButton, ToolbarGroup, Avatar, Button, Textarea, Breadcrumb, BreadcrumbItem, Heading, A } from '$lib'
-  
-  import componentProps1 from '../props/Toolbar.json'
-  import componentProps2 from '../props/ToolbarButton.json'
-  // Props table
-  let items1 = componentProps1.props
-  let items2 = componentProps2.props
+  import { props as items1 } from '../props/Toolbar.json'
+  import { props as items2 } from '../props/ToolbarButton.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'

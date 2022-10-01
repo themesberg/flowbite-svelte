@@ -8,11 +8,9 @@ dir: Components
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Badge, Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
-  import componentProps from '../props/Alert.json'
-  import frameProps from '../props/Frame.json'
-
   // Props table
-  let items = componentProps.props
+  import { props as frameProps} from '../props/Frame.json'
+  import { props as alertProps } from '../props/Alert.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -265,16 +263,20 @@ Use the `close` event with `dismissable` prop.
 
 <Htwo label="Props" />
 
+<h3 class='text-xl w-full dark:text-white py-4'>Alert</h3>
+
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-<TableDefaultRow {items} rowState='hover' />
+<TableDefaultRow items={alertProps} rowState='hover' />
 </TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>Frame</h3>
 
 The component inherits the following props, type, and default values from `Frame`. See <A href="/pages/types">types page</A> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-<TableDefaultRow items={frameProps.props} rowState='hover' />
+<TableDefaultRow items={frameProps} rowState='hover' />
 </TableProp>
 
 <Htwo label="Slots" />

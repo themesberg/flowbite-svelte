@@ -8,20 +8,11 @@ dir: Components
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
-  
-
-  import componentProps from '../props/ListPlaceholder.json'
-  import componentProps2 from '../props/Skeleton.json'
-  import componentProps3 from '../props/TestimonialPlaceholder.json'
-  import componentProps4 from '../props/TextPlaceholder.json'
-  import componentProps5 from '../props/WidgetPlaceholder.json'
-
-  let items = componentProps.props
-  let items2 = componentProps2.props
-  let items3 = componentProps3.props
-  let items4 = componentProps4.props
-  let items5 = componentProps5.props
-
+  import { props as items }  from '../props/ListPlaceholder.json'
+  import { props as items2 }  from '../props/Skeleton.json'
+  import { props as items3 }  from '../props/TestimonialPlaceholder.json'
+  import { props as items4 }  from '../props/TextPlaceholder.json'
+  import { props as items5 }  from '../props/WidgetPlaceholder.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'

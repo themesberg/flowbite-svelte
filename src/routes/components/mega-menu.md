@@ -9,11 +9,9 @@ dir: Components
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../utils'
   import { Breadcrumb, BreadcrumbItem, UserCircle, Heading, P, A } from '$lib'
 
-  import componentProps from '../props/MegaMenu.json'
+  import { props as items} from '../props/MegaMenu.json'
   // Props table
-  let items = componentProps.props
   let propHeader = ['Name', 'Type', 'Default']
-
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 </script>

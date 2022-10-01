@@ -2,9 +2,7 @@
   import { Htwo, ExampleDiv, CompoDescription, TableProp, TableDefaultRow } from '../utils';
   import 'prism-themes/themes/prism-holi-theme.css';
   import { Datepicker, Breadcrumb, BreadcrumbItem, Alert } from '$lib';
-  import componentProps from '../props/Datepicker.json';
-  let items = componentProps.props;
-
+  import { props as items } from '../props/Datepicker.json';
   let propHeader = ['Name', 'Type', 'Default'];
   let divClass = 'w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4';
   let theadClass = 'text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white';
@@ -25,8 +23,8 @@
 <h1 class="text-3xl w-full dark:text-white pb-4">Svelte Datepicker - Flowbite</h1>
 
 <CompoDescription
-  >Start receiving date and time data from your users using this free datepicker element based on
-  Tailwind utility-classes and vanilla JavaScript</CompoDescription>
+  >Start receiving date and time data from your users using this free datepicker element based on Tailwind
+  utility-classes and vanilla JavaScript</CompoDescription>
 
 <Htwo label="Setup" />
 
@@ -40,8 +38,8 @@
 <h3 class="dark:text-white">Use rel="external"</h3>
 
 <p class="dark:text-white">
-  This component is importing Flowbite datepicker javascript in the svelte:head section. When you
-  are linking to a page using this component, use rel="external".
+  This component is importing Flowbite datepicker javascript in the svelte:head section. When you are linking
+  to a page using this component, use rel="external".
 </p>
 
 <pre class="language-html"><code class="language-html">
@@ -52,8 +50,8 @@
 <Htwo label="Datepicker example" />
 
 <p class="dark:text-white">
-  Use the following example of an input element to create a datepicker component. All you need to do
-  is to add the datepicker data attribute to any input element.
+  Use the following example of an input element to create a datepicker component. All you need to do is to
+  add the datepicker data attribute to any input element.
 </p>
 
 <ExampleDiv>
@@ -102,8 +100,8 @@
 <Htwo label="Action buttons" />
 
 <p class="dark:text-white">
-  By adding the <code>datepickerButtons</code> prop you will enable the today and clear buttons with
-  the following features:
+  By adding the <code>datepickerButtons</code> prop you will enable the today and clear buttons with the following
+  features:
 </p>
 
 <ul class="dark:text-white">
