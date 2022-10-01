@@ -9,11 +9,9 @@ dir: Components
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   
-  import componentProps from '../props/Badge.json'
+  import { props as badgeProps } from '../props/Badge.json'
   // Props table
-  let items = componentProps.props
   let propHeader = ['Name', 'Type', 'Default']
-
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 </script>
@@ -176,7 +174,7 @@ The component has the following props, type, and default values. See <A href="/p
  page</A> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow {items} rowState='hover' />
+  <TableDefaultRow items={badgeProps} rowState='hover' />
 </TableProp>
 
 <Htwo label="References" />

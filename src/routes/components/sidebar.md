@@ -10,24 +10,14 @@ dir: Components
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
   
-  import componentProps from '../props/Sidebar.json'
-  import componentProps2 from '../props/SidebarBrand.json'
-  import componentProps3 from '../props/SidebarCta.json'
-  import componentProps4 from '../props/SidebarDropdownItem.json'
-  import componentProps5 from '../props/SidebarDropdownWrapper.json'
-  import componentProps6 from '../props/SidebarGroup.json'
-  import componentProps7 from '../props/SidebarItem.json'
-  import componentProps8 from '../props/SidebarWrapper.json'
-  // Props table
-  let items = componentProps.props
-  let items2 = componentProps2.props
-  let items3 = componentProps3.props
-  let items4 = componentProps4.props
-  let items5 = componentProps5.props
-  let items6 = componentProps6.props
-  let items7 = componentProps7.props
-  let items8 = componentProps8.props
-
+  import { props as items } from '../props/Sidebar.json'
+  import { props as items2 }  from '../props/SidebarBrand.json'
+  import { props as items3 }  from '../props/SidebarCta.json'
+  import { props as items4 }  from '../props/SidebarDropdownItem.json'
+  import { props as items5 }  from '../props/SidebarDropdownWrapper.json'
+  import { props as items6 }  from '../props/SidebarGroup.json'
+  import { props as items7 }  from '../props/SidebarItem.json'
+  import { props as items8 }  from '../props/SidebarWrapper.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'

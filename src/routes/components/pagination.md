@@ -10,16 +10,11 @@ dir: Components
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
   ;
   
-  import componentProps1 from '../props/Pagination.json'
-  import componentProps2 from '../props/Previous.json'
-  import componentProps3 from '../props/Next.json'
-  import componentProps4 from '../props/TableData.json'
-  let items1 = componentProps1.props
-  let items2 = componentProps2.props
-  let items3 = componentProps3.props
-  let items4 = componentProps4.props
+  import { props as items1 } from '../props/Pagination.json'
+  import { props as items2 } from '../props/Previous.json'
+  import { props as items3 } from '../props/Next.json'
+  import { props as items4 } from '../props/TableData.json'
   let propHeader = ['Name', 'Type', 'Default']
-  
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 </script>

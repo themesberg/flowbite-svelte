@@ -8,13 +8,9 @@ dir: Forms
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, A } from '$lib'
-  import componentProps from '../props/Radio.json'
-  import componentProps2 from '../props/Label.json'
-  import componentProps3 from '../props/Helper.json'
-  let items = componentProps.props
-  let items2 = componentProps2.props
-  let items3 = componentProps3.props
-
+  import { props as items } from '../props/Radio.json'
+  import { props as items2 } from '../props/Label.json'
+  import { props as items3 } from '../props/Helper.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'

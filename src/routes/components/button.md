@@ -8,15 +8,14 @@ dir: Components
 <script>
   import {Htwo,ExampleDiv,GitHubSource,CompoDescription,TableProp, TableDefaultRow} from '../utils'
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
-  import componentProps from '../props/Button.json'
-  let slotHeader = ['Name', 'Description']
-  let slotItems = [['default', 'For a button label.']]
-
   // Props table
-  let items = componentProps.props
+  import { props as buttonProps } from '../props/Button.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  // slots
+  let slotHeader = ['Name', 'Description']
+  let slotItems = [['default', 'For a button label.']]
 
 </script>
 
@@ -299,7 +298,7 @@ The component has the following props, type, and default values. See <A href="/p
  page</A> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-<TableDefaultRow {items} rowState='hover' />
+<TableDefaultRow items={buttonProps} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>Custom CSS</h3>

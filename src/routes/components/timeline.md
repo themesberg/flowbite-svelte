@@ -9,24 +9,15 @@ dir: Components
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Breadcrumb, BreadcrumbItem, Button, Heading, P, A } from '$lib'
   
-  import componentProps1 from '../props/Timeline.json'
-  import componentProps2 from '../props/TimelineItem.json'
-  import componentProps3 from '../props/TimelineItemVertical.json'
-  import componentProps4 from '../props/TimelineHorizontal.json'
-  import componentProps5 from '../props/TimelineItemHorizontal.json'
-  import componentProps6 from '../props/Activity.json'
-  import componentProps7 from '../props/ActivityItem.json'
-  import componentProps8 from '../props/Group.json'
-  import componentProps9 from '../props/GroupItem.json'
-  let items1 = componentProps1.props
-  let items2 = componentProps2.props
-  let items3 = componentProps3.props
-  let items4 = componentProps4.props
-  let items5 = componentProps5.props
-  let items6 = componentProps6.props
-  let items7 = componentProps7.props
-  let items8 = componentProps8.props
-  let items9 = componentProps9.props
+  import { props as items1 }  from '../props/Timeline.json'
+  import { props as items2 }  from '../props/TimelineItem.json'
+  import { props as items3 }  from '../props/TimelineItemVertical.json'
+  import { props as items4 }  from '../props/TimelineHorizontal.json'
+  import { props as items5 }  from '../props/TimelineItemHorizontal.json'
+  import { props as items6 }  from '../props/Activity.json'
+  import { props as items7 }  from '../props/ActivityItem.json'
+  import { props as items8 }  from '../props/Group.json'
+  import { props as items9 }  from '../props/GroupItem.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'

@@ -8,10 +8,7 @@ dir: Typography
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { A, Heading, Breadcrumb, BreadcrumbItem } from '$lib'
-  import componentProps from '../props/Img.json'
-
-  // Props table
-  let items1 = componentProps.props
+  import { props as items1 } from '../props/Img.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'

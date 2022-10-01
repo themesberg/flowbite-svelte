@@ -9,11 +9,8 @@ dir: Forms
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { onMount } from 'svelte';
   import { Toggle, Breadcrumb, BreadcrumbItem, Badge, Heading, A } from '$lib'
-
-  import componentProps from '../props/Toggle.json'
-  let items = componentProps.props
+  import { props as items } from '../props/Toggle.json'
   let propHeader = ['Name', 'Type', 'Default']
-
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 </script>

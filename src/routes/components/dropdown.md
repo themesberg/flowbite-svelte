@@ -8,25 +8,19 @@ dir: Component
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A  } from '$lib'
-  import componentProps from '../props/Dropdown.json'
-  import componentProps2 from '../props/DropdownDivider.json'
-  import componentProps3 from '../props/DropdownHeader.json'
-  import componentProps4 from '../props/DropdownItem.json'
   // Props table
-  export let propItems = componentProps.props
-  export let propItems2 = componentProps2.props
-  export let propItems3 = componentProps3.props
-  export let propItems4 = componentProps4.props
-
+  import { props as propItems} from '../props/Dropdown.json'
+  import { props as propItems2} from '../props/DropdownDivider.json'
+  import { props as propItems3} from '../props/DropdownHeader.json'
+  import { props as propItems4} from '../props/DropdownItem.json'
   let propHeader = ['Name', 'Type', 'Default']
   let slotHeader = ['Name', 'Description']
-
+  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
+  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  // slot
   let slotItems = [['header', 'Dropdown fixed top element.'],['footer','Dropdown fixed bottom element.']]
   let slotDropdownHeader = [['default', 'Dropdown header content.']]
   let slotDropdownItem = [['default', 'Dropdown item content.']]
-
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 </script>
 
 <Breadcrumb class="pb-8">

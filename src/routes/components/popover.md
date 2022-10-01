@@ -9,11 +9,9 @@ dir: Components
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../utils'
 
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
-  import componentProps from '../props/Popover.json'
-  import frameProps from '../props/Frame.json'
-  import popperProps from '../props/Popper.json'
-
-  let props = componentProps.props
+  import { props as items } from '../props/Popover.json'
+  import { props as items2 } from '../props/Popper.json'
+  import { props as items3 } from '../props/Frame.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -365,22 +363,28 @@ You can also disable the popover arrow by setting `arrow` attribute to `false`.
 
 <Htwo label="Props" />
 
+<h3 class='text-xl w-full dark:text-white py-4'>Popover</h3>
+
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.</p>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={props} rowState='hover' />
+  <TableDefaultRow {items} rowState='hover' />
 </TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>Popper</h3>
 
 The component inherits the following props, type, and default values from `Popper`. See <A href="/pages/types">types page</A> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={popperProps.props} rowState='hover' />
+  <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>Frame</h3>
 
 The component inherits the following props, type, and default values from `Frame`. See <A href="/pages/types">types page</A> for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={frameProps.props} rowState='hover' />
+  <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
 <Htwo label="References" />
