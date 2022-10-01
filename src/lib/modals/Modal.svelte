@@ -4,11 +4,11 @@
   import { createEventDispatcher } from 'svelte';
   import CloseButton from '../utils/CloseButton.svelte';
   import focusTrap from '../utils/focusTrap';
-  import type { Size } from '$lib/types';
+  import type { SizeType } from '$lib/types';
 
   export let open: boolean = false;
   export let title: string = '';
-  export let size: Size = 'md';
+  export let size: SizeType = 'md';
   export let placement:
     | 'top-left'
     | 'top-center'
