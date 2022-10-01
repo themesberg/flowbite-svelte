@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.27.5](https://github.com/themesberg/flowbite-svelte/compare/v0.27.4...v0.27.5) (2022-10-01)
+
+
+### Features
+
+* add fetchMarkdownPosts in utils/index ([#333](https://github.com/themesberg/flowbite-svelte/issues/333)) ([b604c0c](https://github.com/themesberg/flowbite-svelte/commit/b604c0c31c99b743817d814b3b043c42ccfaf14c))
+
+
+### Bug Fixes
+
+* accordion slots + docs ([#349](https://github.com/themesberg/flowbite-svelte/issues/349)) ([78a2542](https://github.com/themesberg/flowbite-svelte/commit/78a25427e31f61ba86ce825d9127515326448afa))
+* props using vite named import ([#347](https://github.com/themesberg/flowbite-svelte/issues/347)) ([7072e03](https://github.com/themesberg/flowbite-svelte/commit/7072e03b7ec8bac2e3d74d53f87c54dab772e159))
+* use vite to import a file as text ([#342](https://github.com/themesberg/flowbite-svelte/issues/342)) ([07ac592](https://github.com/themesberg/flowbite-svelte/commit/07ac592b0a06cda8afd71d918145693a0834b4f3))
+
 ### [0.27.4](https://github.com/themesberg/flowbite-svelte/compare/v0.27.3...v0.27.4) (2022-09-26)
 
 
