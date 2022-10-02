@@ -1,10 +1,9 @@
 <script lang="ts">
-  export let btnClass =
+  export let btnClass: string =
     'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 fixed left-0 top-8 z-50';
-  let dark = false;
   const toggleTheme = () => {
-    dark = window.document.documentElement.classList.toggle('dark');
-    localStorage.setItem('color-theme', dark ? 'dark' : 'light');
+    const isDark = window.document.documentElement.classList.toggle('dark');
+    localStorage.setItem('color-theme', isDark ? 'dark' : 'light');
   };
 </script>
 
