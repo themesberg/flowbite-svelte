@@ -1,18 +1,17 @@
 //
-// Focus trap copied from https://uxdesign.cc/how-to-trap-focus-inside-modal-to-make-it-ada-compliant-6a50f9a70700
+// Taken from github.com/carbon-design-system/carbon/packages/react/src/internal/keyboard/navigation.js
 //
 
 // add all the elements inside modal which you want to make focusable
-const focusableElements =
-  'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
-
-function getFocusable(node) {
-  const focusableContent = node.querySelectorAll(focusableElements);
-  return [focusableContent[0], focusableContent[focusableContent.length - 1]];
-}
+const selectorTabbable = `
+  a[href], area[href], input:not([disabled]):not([tabindex='-1']),
+  button:not([disabled]):not([tabindex='-1']),select:not([disabled]):not([tabindex='-1']),
+  textarea:not([disabled]):not([tabindex='-1']),
+  iframe, object, embed, *[tabindex]:not([tabindex='-1']):not([disabled]), *[contenteditable=true]
+`;
 
 export default function focusTrap(node) {
-  let firstFocusableElement, lastFocusableElement; // first and last element to be focused inside modal
+  const tabbable = Array.from(node.querySelectorAll(selectorTabbable));
 
   function handleFocusTrap(e) {
     let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
@@ -21,23 +20,15 @@ export default function focusTrap(node) {
       return;
     }
 
-    if (e.shiftKey) {
-      // if shift key pressed for shift + tab combination
-      if (document.activeElement === firstFocusableElement) {
-        lastFocusableElement.focus(); // add focus for the last focusable element
-        e.preventDefault();
-      }
-    } else {
-      // if tab key is pressed
-      if (document.activeElement === lastFocusableElement) {
-        // if focused has reached to last focusable element then focus first focusable element after pressing tab
-        firstFocusableElement.focus(); // add focus for the first focusable element
-        e.preventDefault();
-      }
-    }
+    let index = tabbable.indexOf(document.activeElement);
+    if (index === -1 && e.shiftKey) index = 0;
+    index += tabbable.length + (e.shiftKey ? -1 : 1);
+    index %= tabbable.length;
+    tabbable[index].focus();
+
+    e.preventDefault();
   }
 
-  [firstFocusableElement, lastFocusableElement] = getFocusable(node);
   document.addEventListener('keydown', handleFocusTrap, true);
 
   return {
