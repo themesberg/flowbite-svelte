@@ -85,9 +85,7 @@
   {#if $$slots.left}
     <div class="{floatClass} left-0 pl-2.5"><slot name="left" /></div>
   {/if}
-  {#if $$slots.default}
-    <slot props={{ ...$$restProps, class: inputClass }} />
-  {:else}
+  <slot props={{ ...$$restProps, class: inputClass }}>
     <input
       {...$$restProps}
       bind:value
@@ -105,7 +103,7 @@
       on:input
       use:setType={type}
       class={inputClass} />
-  {/if}
+  </slot>
   {#if $$slots.right}
     <div class="{floatClass} right-0 pr-2.5"><slot name="right" /></div>
   {/if}
