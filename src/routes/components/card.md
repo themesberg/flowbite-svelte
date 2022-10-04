@@ -274,7 +274,7 @@ Use this card example if you want to show a list of data:
       name: "Michael Gough", email: "email@windster.com", value: "$67"
     },
   ];
-</script>>
+</script>
 <Card padding="xl">
   <div class="flex justify-between items-center mb-4">
       <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Latest Customers</h5>
