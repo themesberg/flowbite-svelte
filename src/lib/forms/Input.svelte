@@ -85,23 +85,25 @@
   {#if $$slots.left}
     <div class="{floatClass} left-0 pl-2.5"><slot name="left" /></div>
   {/if}
-  <input
-    {...$$restProps}
-    bind:value
-    on:blur
-    on:change
-    on:click
-    on:focus
-    on:keydown
-    on:keypress
-    on:keyup
-    on:mouseover
-    on:mouseenter
-    on:mouseleave
-    on:paste
-    on:input
-    use:setType={type}
-    class={inputClass} />
+  <slot props={{ ...$$restProps, class: inputClass }}>
+    <input
+      {...$$restProps}
+      bind:value
+      on:blur
+      on:change
+      on:click
+      on:focus
+      on:keydown
+      on:keypress
+      on:keyup
+      on:mouseover
+      on:mouseenter
+      on:mouseleave
+      on:paste
+      on:input
+      use:setType={type}
+      class={inputClass} />
+  </slot>
   {#if $$slots.right}
     <div class="{floatClass} right-0 pr-2.5"><slot name="right" /></div>
   {/if}

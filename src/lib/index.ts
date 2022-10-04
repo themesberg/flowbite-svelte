@@ -61,6 +61,7 @@ export { default as Iconinput } from './forms/Iconinput.svelte';
 export { default as Input } from './forms/Input.svelte';
 export { default as InputAddon } from './forms/InputAddon.svelte';
 export { default as Label } from './forms/Label.svelte';
+export { default as NumberInput } from './forms/NumberInput.svelte';
 export { default as RadioInline } from './forms/RadioInline.svelte';
 export { default as Radio } from './forms/Radio.svelte';
 export { default as Range } from './forms/Range.svelte';

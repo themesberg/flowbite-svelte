@@ -303,6 +303,25 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
 </Label>
 ```
 
+<Htwo label="Number input" />
+
+By default the `Input` component binds the `value` as `string`. If you need a variable bound as `number` you need to use a specialised version of `Input` called `NumberInput`.
+
+```svelte example
+<script>
+  import { NumberInput, Label } from 'flowbite-svelte';
+  let value = 5;
+</script>
+
+<Label class="space-y-2 mb-4">
+  <span>Your Email</span>
+  <NumberInput bind:value />
+</Label>
+
+<p>Value: {value}</p>
+<p>Type of value: {typeof value}</p>
+```
+
 <Htwo label="Search input" />
 
 ```svelte example hideScript
@@ -317,6 +336,23 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
   <Button slot="right" size="sm" type="submit">Search</Button>
   </Input>
 </form>
+```
+
+<Htwo label="Advanced usage" />
+
+If you need a full control over `input` HTML element while still re-using the Flowbite formating, you can put the `input` element as a default slot. The example below is in fact the implementation of the above mentioned `NumberInput`.
+
+```svelte example class="space-y-4"
+<script>
+  import { Input } from 'flowbite-svelte';
+  let value = 5;
+</script>
+
+
+<Input let:props>
+  <div slot="left">#</div>
+  <input type="number" {...props} bind:value/>
+</Input>
 ```
 
 <Htwo label="Props" />
