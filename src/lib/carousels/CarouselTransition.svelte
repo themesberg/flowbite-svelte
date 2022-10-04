@@ -45,7 +45,7 @@
 	// Slide
 	// export let slideClass: string = 'hidden';
 
-	let imageShowingIndex: number = 1;
+	let imageShowingIndex: number = 0;
 	// $: image = images[imageShowingIndex];
 
 	const nextSlide = () => {
