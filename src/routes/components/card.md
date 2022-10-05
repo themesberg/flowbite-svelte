@@ -217,22 +217,24 @@ Use this card for your e-commerce websites and show information about the produc
 <script>
   import { Card, Button, Rating, Badge } from "flowbite-svelte";
 </script>
-<Card padding="sm">
+<Card padding="none">
 	<a href="/">
-		<img class="p-3" src="/images/product-1.webp" alt="product 1" />
+		<img class="p-8 rounded-t-lg" src="/images/product-1.webp" alt="product 1" />
 	</a>
-	<a href="/">
-		<h3 class='text-xl font-semibold tracking-tight text-gray-900 dark:text-white'>
-			Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
-		</h3>
-	</a>
-  <Rating rating=4>
-    <Badge slot="text">4</Badge>
-  </Rating>
-	<div class="flex justify-between items-center">
-		<span class="text-3xl font-bold text-gray-900 dark:text-white">$543</span>
-		<Button href="/">Buy now</Button>
-	</div>
+  <div class="px-5 pb-5">
+    <a href="/">
+      <h5 class='text-xl font-semibold tracking-tight text-gray-900 dark:text-white'>
+        Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
+      </h5>
+    </a>
+    <Rating rating="4" size="18" class="mt-2.5 mb-5">
+      <Badge slot="text" class="ml-3">4</Badge>
+    </Rating>
+    <div class="flex justify-between items-center">
+      <span class="text-3xl font-bold text-gray-900 dark:text-white">$543</span>
+      <Button href="/">Buy now</Button>
+    </div>
+  </div>
 </Card>
 ```
 
