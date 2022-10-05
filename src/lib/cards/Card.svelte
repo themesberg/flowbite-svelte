@@ -12,9 +12,9 @@
 
   const paddings = {
     none: 'p-0',
-    sm: 'p-2 sm:p-4',
-    md: 'p-2.5 sm:p-5',
-    lg: 'p-3 sm:p-6',
+    sm: 'p-4 sm:p-6 md:p-8',
+    md: 'p-4 sm:p-5',
+    lg: 'p-4 sm:p-6',
     xl: 'p-4 sm:p-8'
   };
 
