@@ -75,38 +75,32 @@ Use the following default tabs component example to show a list of links that th
 ```svelte example
 <script>
 	import { TabWrapper, TabHead, TabHeadItem, TabContentItem } from 'flowbite-svelte';
-	let activeTabValue = 1;
-	const handleClick = (tabValue) => () => {
-		activeTabValue = tabValue;
-	};
 </script>
 
 <TabWrapper class="mb-4">
-	<TabHead>
-		<TabHeadItem id={1} {activeTabValue} on:click={handleClick(1)}>Profile</TabHeadItem>
-		<TabHeadItem id={2} {activeTabValue} on:click={handleClick(2)}>Dashboard</TabHeadItem>
-		<TabHeadItem id={3} {activeTabValue} on:click={handleClick(3)}>Settings</TabHeadItem>
-		<TabHeadItem id={4} {activeTabValue} on:click={handleClick(4)}>Users</TabHeadItem>
-	</TabHead>
-	<TabContentItem id={1} {activeTabValue}>
+	<TabContentItem>
+		<TabHeadItem slot="header">Profile</TabHeadItem>
 		<p class="text-sm text-gray-500 dark:text-gray-400">
 			Tab 1-1: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 			incididunt ut labore et dolore magna aliqua.
 		</p>
 	</TabContentItem>
-	<TabContentItem id={2} {activeTabValue}>
+	<TabContentItem>
+		<TabHeadItem slot="header">Settings</TabHeadItem>
 		<p class="text-sm text-gray-500 dark:text-gray-400">
 			Tab 1-2: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 			incididunt ut labore et dolore magna aliqua.
 		</p>
 	</TabContentItem>
-	<TabContentItem id={3} {activeTabValue}>
+	<TabContentItem>
+		<TabHeadItem slot="header">Users</TabHeadItem>
 		<p class="text-sm text-gray-500 dark:text-gray-400">
 			Tab 1-3: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 			incididunt ut labore et dolore magna aliqua.
 		</p>
 	</TabContentItem>
-	<TabContentItem id={4} {activeTabValue}>
+	<TabContentItem>
+		<TabHeadItem slot="header">Dashboard</TabHeadItem>
 		<p class="text-sm text-gray-500 dark:text-gray-400">
 			Tab 1-4: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 			incididunt ut labore et dolore magna aliqua.
