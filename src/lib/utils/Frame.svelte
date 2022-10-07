@@ -121,7 +121,7 @@
   this={tag}
   use:use={options}
   bind:this={node}
-  transition:transitionFunc={params}
+  transition:transitionFunc|local={params}
   {...$$restProps}
   class={divClass}
   on:mouseenter
