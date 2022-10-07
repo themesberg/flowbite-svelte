@@ -7,7 +7,15 @@
   export let selected: boolean = false;
 </script>
 
-<img class="opacity-40" class:active={selected} id={id.toString()} src={thumbImg} alt={altTag} title="Image from {titleLink}" on:click width="{thumbWidth}%" />
+<img
+  class="opacity-40"
+  class:active={selected}
+  id={id.toString()}
+  src={thumbImg}
+  alt={altTag}
+  title="Image from {titleLink}"
+  on:click
+  width="{thumbWidth}%" />
 
 <style>
   .active {
