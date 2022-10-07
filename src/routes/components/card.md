@@ -217,22 +217,24 @@ Use this card for your e-commerce websites and show information about the produc
 <script>
   import { Card, Button, Rating, Badge } from "flowbite-svelte";
 </script>
-<Card padding="sm">
+<Card padding="none">
 	<a href="/">
-		<img class="p-3" src="/images/product-1.webp" alt="product 1" />
+		<img class="p-8 rounded-t-lg" src="/images/product-1.webp" alt="product 1" />
 	</a>
-	<a href="/">
-		<h3 class='text-xl font-semibold tracking-tight text-gray-900 dark:text-white'>
-			Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
-		</h3>
-	</a>
-  <Rating rating=4>
-    <Badge slot="text">4</Badge>
-  </Rating>
-	<div class="flex justify-between items-center">
-		<span class="text-3xl font-bold text-gray-900 dark:text-white">$543</span>
-		<Button href="/">Buy now</Button>
-	</div>
+  <div class="px-5 pb-5">
+    <a href="/">
+      <h5 class='text-xl font-semibold tracking-tight text-gray-900 dark:text-white'>
+        Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
+      </h5>
+    </a>
+    <Rating rating="4" size="18" class="mt-2.5 mb-5">
+      <Badge slot="text" class="ml-3">4</Badge>
+    </Rating>
+    <div class="flex justify-between items-center">
+      <span class="text-3xl font-bold text-gray-900 dark:text-white">$543</span>
+      <Button href="/">Buy now</Button>
+    </div>
+  </div>
 </Card>
 ```
 
@@ -274,8 +276,8 @@ Use this card example if you want to show a list of data:
       name: "Michael Gough", email: "email@windster.com", value: "$67"
     },
   ];
-</script>>
-<Card padding="xl">
+</script>
+<Card padding="xl" size="md">
   <div class="flex justify-between items-center mb-4">
       <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Latest Customers</h5>
       <a href="/" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
@@ -284,12 +286,16 @@ Use this card example if you want to show a list of data:
   </div>
   <Listgroup items={list} let:item class="border-0 dark:!bg-transparent">
     <div class="flex items-center space-x-4">
-      <Avatar src={item.img.src} alt={item.img.alt}/>
-      <div class="flex-1 space-y-1 font-medium dark:text-white">
-        <div>{item.name}</div>
-        <div class="text-sm text-gray-500 dark:text-gray-400">{item.email}</div>
+      <Avatar src={item.img.src} alt={item.img.alt} class="flex-shrink-0"/>
+      <div class="flex-1 min-w-0">
+        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+          {item.name}
+        </p>
+        <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+          {item.email}
+        </p>
       </div>
-      <div class="inline-flex items-center text-xl font-semibold text-gray-900 dark:text-white">
+      <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
           {item.value}
       </div>
     </div>
