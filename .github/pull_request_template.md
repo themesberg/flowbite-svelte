@@ -25,7 +25,6 @@ Closes #<!-- Issue # here -->
 - [ ] All the tests have passed
 - [ ] My pull request is based on the latest commit (not the npm version).
 
-
 <!--
 
 Sync fork from GitHub dropdown and update your local branch. 

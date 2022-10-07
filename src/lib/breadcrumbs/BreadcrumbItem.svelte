@@ -8,7 +8,7 @@
     'inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white';
 </script>
 
-<li class="inline-flex items-center" {...$$props}>
+<li class="inline-flex items-center" {...$$restProps}>
   {#if home}
     <a class={homeClass} {href}>
       {#if $$slots.icon}
