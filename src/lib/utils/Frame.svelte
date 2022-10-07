@@ -10,7 +10,23 @@
   $: setContext('color', color);
 
   export let tag: string = 'div';
-  export let color: string = 'default';
+  export let color:
+    | 'gray'
+    | 'red'
+    | 'yellow'
+    | 'green'
+    | 'indigo'
+    | 'default'
+    | 'purple'
+    | 'pink'
+    | 'blue'
+    | 'light'
+    | 'dark'
+    | 'dropdown'
+    | 'navbar'
+    | 'navbarUl'
+    | 'form'
+    | 'none' = 'default';
   export let rounded: boolean = false;
   export let border: boolean = false;
   export let shadow: boolean = false;
