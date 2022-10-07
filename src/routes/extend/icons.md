@@ -124,12 +124,12 @@ Here are some examples using Svelte-Heros-v2.
 
 <AccordionItem id="1">
 	<h2 slot="header">Header 2-1</h2>
-	<div slot="arrowup">
+	<span slot="arrowup">
 		<ArrowUpCircle />
-	</div>
-	<div slot="arrowdown">
+	</span>
+	<span slot="arrowdown">
 		<ArrowDownCircle />
-	</div>
+	</span>
 	<div slot="body">
 		<p class="mb-2 text-gray-500 dark:text-gray-400">
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
@@ -139,12 +139,12 @@ Here are some examples using Svelte-Heros-v2.
 </AccordionItem>
 <AccordionItem id="2">
 	<h2 slot="header">Header 2-2</h2>
-	<div slot="arrowup">
+	<span slot="arrowup">
 		<ArrowUpCircle />
-	</div>
-	<div slot="arrowdown">
+	</span>
+	<span slot="arrowdown">
 		<ArrowDownCircle />
-	</div>
+	</span>
 	<div slot="body">
 		<p class="mb-2 text-gray-500 dark:text-gray-400">
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
