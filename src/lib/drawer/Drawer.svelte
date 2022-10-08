@@ -3,7 +3,7 @@
   import type { drawerTransitionParamTypes, drawerTransitionTypes } from '../types';
   import { fly, slide, blur, fade } from 'svelte/transition';
   import { clickOutside } from '../utils/clickOutside';
-
+  export let activateClickOutside: boolean = true;
   export let hidden: boolean = true;
   export let position: 'fixed' | 'absolute' = 'fixed';
   export let leftOffset: string = 'inset-y-0 left-0';
@@ -43,7 +43,6 @@
 
   const handleDrawer = () => {
     hidden = !hidden;
-    console.log('clicked');
   };
 
   let backdropDivClass = classNames(
@@ -54,18 +53,31 @@
 </script>
 
 {#if !hidden}
-  {#if backdrop}
+  {#if backdrop && activateClickOutside}
     <div class={backdropDivClass} on:click={() => !hidden && handleDrawer()} />
   {/if}
-  <div
-    use:clickOutside={() => !hidden && handleDrawer()}
-    {id}
-    {...$$restProps}
-    class={classNames(divClass, width, position, placements[placement], $$props.class)}
-    transition:multiple={transitionParams}
-    tabindex="-1"
-    aria-controls={id}
-    aria-labelledby={id}>
-    <slot {hidden} />
-  </div>
+  {#if activateClickOutside}
+    <div
+      use:clickOutside={() => !hidden && handleDrawer()}
+      {id}
+      {...$$restProps}
+      class={classNames(divClass, width, position, placements[placement], $$props.class)}
+      transition:multiple={transitionParams}
+      tabindex="-1"
+      aria-controls={id}
+      aria-labelledby={id}>
+      <slot {hidden} />
+    </div>
+  {:else}
+    <div
+      {id}
+      {...$$restProps}
+      class={classNames(divClass, width, position, placements[placement], $$props.class)}
+      transition:multiple={transitionParams}
+      tabindex="-1"
+      aria-controls={id}
+      aria-labelledby={id}>
+      <slot {hidden} />
+    </div>
+  {/if}
 {/if}
