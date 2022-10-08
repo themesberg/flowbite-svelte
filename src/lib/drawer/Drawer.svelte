@@ -43,7 +43,6 @@
 
   const handleDrawer = () => {
     hidden = !hidden;
-    console.log('clicked');
   };
 
   let backdropDivClass = classNames(
@@ -54,7 +53,7 @@
 </script>
 
 {#if !hidden}
-  {#if backdrop}
+  {#if backdrop && activateClickOutside}
     <div class={backdropDivClass} on:click={() => !hidden && handleDrawer()} />
   {/if}
   {#if activateClickOutside}
