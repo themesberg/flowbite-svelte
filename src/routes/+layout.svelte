@@ -9,7 +9,16 @@
     FooterCopyright,
     FooterIcon,
     FooterLink,
-    FooterLinkGroup
+    FooterLinkGroup,
+    Sidebar,
+    SidebarGroup,
+    SidebarItem,
+    SidebarWrapper,
+    Navbar,
+    NavBrand,
+    NavLi,
+    NavUl,
+    NavHamburger
   } from '$lib';
   import { Side, Nav, SidebarList } from 'svelte-sidebar-menu';
   import { topMenus, experimental } from './moduleItems/+server.js';
@@ -39,8 +48,7 @@
 
   let topli =
     'block py-2 pr-4 pl-3 text-gray-700 md:border-0 md:p-0 dark:text-gray-300  dark:hover:bg-gray-700 text-lg z-50  dark:bg-gray-800 dark:border-0 hover:bg-gray-100 bg-white';
-  let topMenuDiv =
-    'flex flex-wrap justify-end items-center mx-auto dark:bg-gray-800 h-8 pr-8 pt-1 sm:pr-12';
+  let topMenuDiv = 'flex flex-wrap justify-end items-center mx-auto dark:bg-gray-800 h-8 pr-8 pt-1 sm:pr-12';
   let topul =
     'flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium pt-1 dark:bg-gray-800 bg-white';
 
@@ -56,73 +64,69 @@
   };
 </script>
 
-<div class="px-4 mx-auto w-full max-w-full">
-  <Side
-    {siteName}
-    {siteClass}
-    {transitionParams}
-    {topMenus}
-    {headerClass}
-    {asideClass}
-    {logo}
-    {logoClass}
-    {alt}
-    {activeChildLi}
-    {spanClass}
-    {topli}
-    {topMenuDiv}
-    {topul}
-    {childLi}
-    {hamburgerClass}>
-    <Nav {navClass} class="pb-2">
-      {#each data.pages as { meta, path }}
-        <SidebarList href={`/pages${path}`} name={meta.title} {sideBarListClass} />
-      {/each}
-    </Nav>
-    <Nav {navClass} {navDivClass}>
-      <h3 class={h3Category}>Components</h3>
-      {#each data.components as { meta, path }}
-        <SidebarList href={`/components${path}`} name={meta.breadcrumb_title} {sideBarListClass} />
-      {/each}
-    </Nav>
-    <Nav {navClass} class="pb-2">
-      <h3 class={h3Category}>Forms</h3>
-      {#each data.forms as { meta, path }}
-        <SidebarList href={`/forms${path}`} name={meta.breadcrumb_title} {sideBarListClass} />
-      {/each}
-    </Nav>
-    <Nav {navClass} class="pb-2">
-      <h3 class={h3Category}>Typography</h3>
-      {#each data.typography as { meta, path }}
-        <SidebarList href={`/typography${path}`} name={meta.breadcrumb_title} {sideBarListClass} />
-      {/each}
-    </Nav>
-    <Nav {navClass} class="pb-2">
-      <h3 class={h3Category}>Extend</h3>
-      {#each data.extend as { meta, path }}
-        <SidebarList href={`/extend${path}`} name={meta.breadcrumb_title} {sideBarListClass} />
-      {/each}
-      <SidebarList
-        href="https://flowbite-svelte-blocks.vercel.app/"
-        name="Blocks"
-        {sideBarListClass} />
-    </Nav>
-    <Nav {navClass} class="pb-2">
-      <h3 class={h3Category}>Utilities</h3>
-      {#each data.utils as { meta, path }}
-        <SidebarList href={`/utilities${path}`} name={meta.breadcrumb_title} {sideBarListClass} />
-      {/each}
-    </Nav>
-    <Nav {navClass} class="pb-24">
-      <h3 class={h3Category}>Experimental</h3>
-      {#each experimental as { href, name, rel }}
-        <SidebarList {href} {name} {rel} {sideBarListClass} />
-      {/each}
-    </Nav>
-  </Side>
-
+<div class="flex px-4 mx-auto w-full max-w-full">
+  <Sidebar class="w-1/6">
+    <SidebarWrapper>
+      <SidebarGroup>
+        <SidebarItem label="Home" href="/" />
+        <SidebarItem label="About" href="/pages/about" {spanClass} />
+        <SidebarItem label="Getting Started" href="/pages/getting-started" {spanClass} />
+        <SidebarItem label="Types" href="/pages/types" {spanClass} />
+      </SidebarGroup>
+      <SidebarGroup>
+        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
+        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
+        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
+        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
+        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
+        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
+        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
+        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
+        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
+        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
+        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
+        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
+        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
+        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
+        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
+        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
+        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
+        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
+        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
+        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
+        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
+        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
+        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
+        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
+        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
+        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
+        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
+        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
+        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
+        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
+        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
+        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
+        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
+        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
+        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
+        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
+        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
+        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
+        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
+        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
+        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
+        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
+        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
+        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
+        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
+        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
+        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
+        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
+      </SidebarGroup>
+    </SidebarWrapper>
+  </Sidebar>
   <DarkMode btnClass={darkmodebtn} />
-  <main class="flex mx-auto pt-12 pb:12 xl:pb-24 lg:pb-16 lg:pl-60 ">
+  <main class="w-5/6 px-8">
     <div class="w-full px-4 sm:px-8">
       <slot />
     </div>
@@ -141,18 +145,14 @@
       </div>
       <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
         <div>
-          <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-            Resources
-          </h2>
+          <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
           <FooterLinkGroup>
             <FooterLink liClass="mb-4" href="https://flowbite.com/">Flowbite</FooterLink>
             <FooterLink liClass="mb-4" href="https://tailwindcss.com/">Tailwind CSS</FooterLink>
           </FooterLinkGroup>
         </div>
         <div>
-          <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
-            Follow us
-          </h2>
+          <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Follow us</h2>
           <FooterLinkGroup>
             <FooterLink liClass="mb-4" href="https://github.com/themesberg/flowbite-svelte"
               >GitHub</FooterLink>
@@ -162,9 +162,7 @@
         <div>
           <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Legal</h2>
           <FooterLinkGroup>
-            <FooterLink
-              liClass="mb-4"
-              href="https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE"
+            <FooterLink liClass="mb-4" href="https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE"
               >License</FooterLink>
           </FooterLinkGroup>
         </div>
