@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { quartInOut } from 'svelte/easing';
+  import { writable } from 'svelte/store';
   import Toc from './Toc/+page.svelte';
   import '../app.css';
   import {
@@ -18,122 +18,124 @@
     NavBrand,
     NavLi,
     NavUl,
-    NavHamburger
+    NavHamburger,
+    Drawer
   } from '$lib';
-  import { Side, Nav, SidebarList } from 'svelte-sidebar-menu';
-  import { topMenus, experimental } from './moduleItems/+server.js';
-  import type { PageData } from './$types';
-  export let data: PageData;
-  let asideClass =
-    'absolute w-auto bg-white pt-8 shadow-lg z-40 h-screen px-4 overflow-scroll dark:bg-gray-900';
+  import { sineIn } from 'svelte/easing';
+  let transitionParams = {
+    x: -320,
+    duration: 200,
+    easing: sineIn
+  };
 
-  // Nav
-  let navDivClass = 'pb-4';
-  // Navbar
+  import type { PageData } from './$types';
+  import { onMount } from 'svelte';
+  export let data: PageData;
+  export let breakPoint: number = 1024;
+  let width: number;
+  let backdrop: boolean = false;
+  let activateClickOutside = true;
+  // const drawerHidden = writable(true);
+  let drawerHidden: boolean = false;
+  $: if (width >= breakPoint) {
+    // drawerHidden.update((n) => (n = false));
+    drawerHidden = false;
+    // console.log('store 11: ', $drawerHidden);
+    activateClickOutside = false;
+  } else {
+    drawerHidden = true;
+    // drawerHidden.update((n) => (n = true));
+    // console.log('store 12: ', $drawerHidden);
+    activateClickOutside = true;
+  }
+  onMount(() => {
+    if (width >= breakPoint) {
+      // drawerHidden.update((n) => (n = false));
+      drawerHidden = false;
+      activateClickOutside = false;
+    } else {
+      // drawerHidden.update((n) => (n = true));
+      drawerHidden = true;
+      activateClickOutside = true;
+    }
+  });
+  const toggleSide = () => {
+    // drawerHidden.update((n) => (n = !n));
+    drawerHidden = !drawerHidden;
+  };
+  const toggleDrawer = () => {
+    // drawerHidden.update((n) => (n = false));
+    drawerHidden = false;
+  };
+
   let logo = '/images/flowbite-svelte-icon-logo.svg';
-  let logoClass = 'w-8 ml-0 sm:ml-4 sm:mr-2';
-  let alt = 'Flowbite Svelte';
-  let hamburgerClass =
-    'text-gray-300 hover:text-blue-500 cursor-pointer mr-4 border-none focus:outline-none lg:hidden';
-  let activeChildLi = 'block py-2 px-4 text-lg text-gray-700 hover:bg-gray-100 dark:text-white';
-  let childLi =
-    'block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 md:border-0 md:p-0 text-base dark:text-white';
-  let headerClass =
-    'w-full z-50 px-6 bg-white h-14 pt-2 text-gray-600 border-b-2 dark:bg-gray-800 dark:text-white dark:border-b-1';
-  let siteName = 'Flowbite Svelte';
-  let navClass = 'py-0 px-4 text-base bg-white dark:bg-gray-900 dark:text-white';
-  let siteClass = ' w-full pt-0.5';
   let spanClass =
     'pl-2 self-center text-md sm:text-lg font-semibold text-gray-900 whitespace-nowrap dark:text-white';
-
-  let topli =
-    'block py-2 pr-4 pl-3 text-gray-700 md:border-0 md:p-0 dark:text-gray-300  dark:hover:bg-gray-700 text-lg z-50  dark:bg-gray-800 dark:border-0 hover:bg-gray-100 bg-white';
-  let topMenuDiv = 'flex flex-wrap justify-end items-center mx-auto dark:bg-gray-800 h-8 pr-8 pt-1 sm:pr-12';
-  let topul =
-    'flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium pt-1 dark:bg-gray-800 bg-white';
-
   let darkmodebtn =
-    'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 fixed right-4 top-2 z-50';
-  let sideBarListClass = 'mb-4 px-0 xl:px-4 text-base';
-  let h3Category = 'text-base pb-4 uppercase font-semibold';
-  let transitionParams = {
-    duration: 500,
-    delay: 100,
-    easing: quartInOut,
-    x: -200
-  };
+    'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 fixed right-2 top-12  md:top-4 md:right-2 z-50';
+  let divClass = 'w-full md:block md:w-auto pr-8';
+  let ulClass = 'flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-lg md:font-medium';
 </script>
 
+<svelte:window bind:innerWidth={width} />
+
+<Navbar navClass="px-2 sm:px-4 py-1 fixed w-full z-20 top-0 left-0 border-b" let:hidden let:toggle>
+  <NavHamburger on:click={toggleDrawer} btnClass="ml-3 lg:hidden" />
+  <NavBrand href="/">
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite-Svelte Logo" />
+    <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+      Flowbite-Svelte
+    </span>
+  </NavBrand>
+  <NavHamburger on:click={toggle} />
+  <NavUl {hidden} {divClass} {ulClass}>
+    <NavLi href="/">Home</NavLi>
+    <NavLi href="/pages/about">About</NavLi>
+    <NavLi href="https://github.com/themesberg/flowbite-svelte">GitHub</NavLi>
+  </NavUl>
+</Navbar>
+
 <div class="flex px-4 mx-auto w-full max-w-full">
-  <Sidebar class="w-1/6">
-    <SidebarWrapper>
-      <SidebarGroup>
-        <SidebarItem label="Home" href="/" />
-        <SidebarItem label="About" href="/pages/about" {spanClass} />
-        <SidebarItem label="Getting Started" href="/pages/getting-started" {spanClass} />
-        <SidebarItem label="Types" href="/pages/types" {spanClass} />
-      </SidebarGroup>
-      <SidebarGroup>
-        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
-        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
-        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
-        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
-        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
-        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
-        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
-        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
-        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
-        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
-        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
-        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
-        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
-        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
-        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
-        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
-        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
-        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
-        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
-        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
-        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
-        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
-        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
-        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
-        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
-        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
-        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
-        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
-        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
-        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
-        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
-        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
-        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
-        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
-        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
-        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
-        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
-        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
-        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
-        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
-        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
-        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
-        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
-        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
-        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
-        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
-        <SidebarItem label="Accordion" href="/components/accordion" {spanClass} />
-        <SidebarItem label="Alert" href="/components/alert" {spanClass} />
-      </SidebarGroup>
-    </SidebarWrapper>
-  </Sidebar>
+  <Drawer
+    transitionType="fly"
+    {backdrop}
+    {transitionParams}
+    bind:hidden={drawerHidden}
+    bind:activateClickOutside
+    leftOffset="top-16 h-screen left-0"
+    id="sidebar"
+    width="w-64">
+    <Sidebar asideClass="w-40">
+      <SidebarWrapper>
+        <SidebarGroup>
+          {#each data.pages as { meta, path }}
+            <SidebarItem label={meta.title} href={`/pages${path}`} {spanClass} on:click={toggleSide} />
+          {/each}
+          <div class="flex items-center">
+            <h5
+              id="drawer-navigation-label-3"
+              class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
+              Components
+            </h5>
+          </div>
+          {#each data.components as { meta, path }}
+            <SidebarItem
+              label={meta.breadcrumb_title}
+              href={`/components${path}`}
+              {spanClass}
+              on:click={toggleSide} />
+          {/each}
+        </SidebarGroup>
+      </SidebarWrapper>
+    </Sidebar>
+  </Drawer>
   <DarkMode btnClass={darkmodebtn} />
-  <main class="w-5/6 px-8">
-    <div class="w-full px-4 sm:px-8">
-      <slot />
-    </div>
+  <main class="lg:ml-64">
+    <slot />
     <Toc />
   </main>
 </div>
-<div class="mx-auto mb-4 pt-4 lg:pl-60">
+<div class="mx-auto mb-4 pt-4 lg:pl-52">
   <Footer footerType="custom" customClass="py-6 px-16 bg-white dark:bg-gray-900">
     <div class="md:flex md:justify-between">
       <div class="mb-6 md:mb-0">
