@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { writable } from 'svelte/store';
+  import { experimental } from './moduleItems/+server.js';
   import Toc from './Toc/+page.svelte';
   import '../app.css';
   import {
@@ -102,9 +102,10 @@
   {transitionParams}
   bind:hidden={drawerHidden}
   bind:activateClickOutside
-  leftOffset="lg:top-16 h-screen lg:left-0 overflow-scroll"
+  leftOffset="lg:top-16 h-screen lg:left-0"
   id="sidebar"
-  width="w-64">
+  width="w-64"
+  class="overflow-scroll pb-32">
   <div class="flex items-center">
     <CloseButton on:click={() => (drawerHidden = true)} class="mb-4 dark:text-white lg:hidden" />
   </div>
@@ -118,7 +119,7 @@
           <h5
             id="drawer-navigation-label-3"
             class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
-            Components
+            COMPONENTS
           </h5>
         </div>
         {#each data.components as { meta, path }}
@@ -127,6 +128,72 @@
             href={`/components${path}`}
             {spanClass}
             on:click={toggleSide} />
+        {/each}
+        <div class="flex items-center">
+          <h5
+            id="drawer-navigation-label-3"
+            class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
+            FORMS
+          </h5>
+        </div>
+        {#each data.forms as { meta, path }}
+          <SidebarItem
+            label={meta.breadcrumb_title}
+            href={`/forms${path}`}
+            {spanClass}
+            on:click={toggleSide} />
+        {/each}
+        <div class="flex items-center">
+          <h5
+            id="drawer-navigation-label-3"
+            class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
+            TYPTOGRAPHY
+          </h5>
+        </div>
+        {#each data.typography as { meta, path }}
+          <SidebarItem
+            label={meta.breadcrumb_title}
+            href={`/typography${path}`}
+            {spanClass}
+            on:click={toggleSide} />
+        {/each}
+        <div class="flex items-center">
+          <h5
+            id="drawer-navigation-label-3"
+            class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
+            EXTEND
+          </h5>
+        </div>
+        {#each data.extend as { meta, path }}
+          <SidebarItem
+            label={meta.breadcrumb_title}
+            href={`/extend${path}`}
+            {spanClass}
+            on:click={toggleSide} />
+        {/each}
+        <div class="flex items-center">
+          <h5
+            id="drawer-navigation-label-3"
+            class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
+            UTILS
+          </h5>
+        </div>
+        {#each data.utils as { meta, path }}
+          <SidebarItem
+            label={meta.breadcrumb_title}
+            href={`/utilities${path}`}
+            {spanClass}
+            on:click={toggleSide} />
+        {/each}
+        <div class="flex items-center">
+          <h5
+            id="drawer-navigation-label-3"
+            class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
+            EXPERIMENTAL
+          </h5>
+        </div>
+        {#each experimental as { href, name, rel }}
+          <SidebarItem label={name} {href} {spanClass} on:click={toggleSide} />
         {/each}
       </SidebarGroup>
     </SidebarWrapper>
