@@ -19,7 +19,8 @@
     NavLi,
     NavUl,
     NavHamburger,
-    Drawer
+    Drawer,
+    CloseButton
   } from '$lib';
   import { sineIn } from 'svelte/easing';
   let transitionParams = {
@@ -60,8 +61,9 @@
     }
   });
   const toggleSide = () => {
-    // drawerHidden.update((n) => (n = !n));
-    drawerHidden = !drawerHidden;
+    if (width < breakPoint) {
+      drawerHidden = !drawerHidden;
+    }
   };
   const toggleDrawer = () => {
     // drawerHidden.update((n) => (n = false));
@@ -79,7 +81,7 @@
 
 <svelte:window bind:innerWidth={width} />
 
-<Navbar navClass="px-2 sm:px-4 py-1 fixed w-full z-20 top-0 left-0 border-b" let:hidden let:toggle>
+<Navbar navClass="px-2 py-0.5 fixed w-full z-20 top-0 left-0 border-b" let:hidden let:toggle>
   <NavHamburger on:click={toggleDrawer} btnClass="ml-3 lg:hidden" />
   <NavBrand href="/">
     <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite-Svelte Logo" />
@@ -94,46 +96,49 @@
     <NavLi href="https://github.com/themesberg/flowbite-svelte">GitHub</NavLi>
   </NavUl>
 </Navbar>
+<Drawer
+  transitionType="fly"
+  {backdrop}
+  {transitionParams}
+  bind:hidden={drawerHidden}
+  bind:activateClickOutside
+  leftOffset="lg:top-16 h-screen lg:left-0 overflow-scroll"
+  id="sidebar"
+  width="w-64">
+  <div class="flex items-center">
+    <CloseButton on:click={() => (drawerHidden = true)} class="mb-4 dark:text-white lg:hidden" />
+  </div>
+  <Sidebar asideClass="w-40">
+    <SidebarWrapper>
+      <SidebarGroup>
+        {#each data.pages as { meta, path }}
+          <SidebarItem label={meta.title} href={`/pages${path}`} {spanClass} on:click={toggleSide} />
+        {/each}
+        <div class="flex items-center">
+          <h5
+            id="drawer-navigation-label-3"
+            class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
+            Components
+          </h5>
+        </div>
+        {#each data.components as { meta, path }}
+          <SidebarItem
+            label={meta.breadcrumb_title}
+            href={`/components${path}`}
+            {spanClass}
+            on:click={toggleSide} />
+        {/each}
+      </SidebarGroup>
+    </SidebarWrapper>
+  </Sidebar>
+</Drawer>
+<DarkMode btnClass={darkmodebtn} />
 
 <div class="flex px-4 mx-auto w-full max-w-full">
-  <Drawer
-    transitionType="fly"
-    {backdrop}
-    {transitionParams}
-    bind:hidden={drawerHidden}
-    bind:activateClickOutside
-    leftOffset="top-16 h-screen left-0"
-    id="sidebar"
-    width="w-64">
-    <Sidebar asideClass="w-40">
-      <SidebarWrapper>
-        <SidebarGroup>
-          {#each data.pages as { meta, path }}
-            <SidebarItem label={meta.title} href={`/pages${path}`} {spanClass} on:click={toggleSide} />
-          {/each}
-          <div class="flex items-center">
-            <h5
-              id="drawer-navigation-label-3"
-              class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
-              Components
-            </h5>
-          </div>
-          {#each data.components as { meta, path }}
-            <SidebarItem
-              label={meta.breadcrumb_title}
-              href={`/components${path}`}
-              {spanClass}
-              on:click={toggleSide} />
-          {/each}
-        </SidebarGroup>
-      </SidebarWrapper>
-    </Sidebar>
-  </Drawer>
-  <DarkMode btnClass={darkmodebtn} />
-  <main class="lg:ml-64">
+  <main class="lg:ml-72 mx-auto">
     <slot />
-    <Toc />
   </main>
+  <Toc />
 </div>
 <div class="mx-auto mb-4 pt-4 lg:pl-52">
   <Footer footerType="custom" customClass="py-6 px-16 bg-white dark:bg-gray-900">
