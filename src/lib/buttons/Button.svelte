@@ -9,8 +9,8 @@
   export let outline: boolean = false;
   export let gradient: boolean = false;
   export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = group ? 'sm' : 'md';
-  export let href: string = undefined;
-  export let btnClass: string = undefined;
+  export let href: string | undefined = undefined;
+  export let btnClass: string | undefined = undefined;
   export let type: ButtonType = 'button';
 
   export let color:
@@ -34,16 +34,7 @@
     | 'tealToLime'
     | 'redToYellow' = group ? (outline ? 'dark' : 'alternative') : 'blue';
 
-  export let shadow:
-    | 'blue'
-    | 'green'
-    | 'cyan'
-    | 'teal'
-    | 'lime'
-    | 'red'
-    | 'pink'
-    | 'purple'
-    | null = null;
+  export let shadow: 'blue' | 'green' | 'cyan' | 'teal' | 'lime' | 'red' | 'pink' | 'purple' | null = null;
 
   const colorClasses = {
     blue: 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800',
@@ -55,8 +46,7 @@
     green:
       'text-white bg-green-700 hover:bg-green-800 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800',
     red: 'text-white bg-red-700 hover:bg-red-800 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900',
-    yellow:
-      'text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300 dark:focus:ring-yellow-900',
+    yellow: 'text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-yellow-300 dark:focus:ring-yellow-900',
     purple:
       'text-white bg-purple-700 hover:bg-purple-800 focus:ring-purple-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900'
   };
@@ -140,9 +130,7 @@
         group ? 'focus:ring-2' : 'focus:ring-4',
         group && 'focus:z-10',
         !group || color === 'alternative' || (outline && color === 'dark') || 'focus:outline-none',
-        outline && gradient
-          ? 'p-0.5'
-          : 'inline-flex items-center justify-center ' + sizeClasses[size],
+        outline && gradient ? 'p-0.5' : 'inline-flex items-center justify-center ' + sizeClasses[size],
         gradient ? gradientClasses[color] : outline ? outlineClasses[color] : colorClasses[color],
         color === 'alternative' &&
           (group
@@ -150,9 +138,7 @@
             : 'dark:bg-transparent dark:border-gray-800 dark:hover:border-gray-700'),
         outline &&
           color === 'dark' &&
-          (group
-            ? 'dark:text-white dark:border-white'
-            : 'dark:text-gray-400 dark:border-gray-700'),
+          (group ? 'dark:text-white dark:border-white' : 'dark:text-gray-400 dark:border-gray-700'),
         hasBorder() && group && 'border-l-0 first:border-l',
         rounded(false),
         shadow && coloredShadowClasses[shadow],

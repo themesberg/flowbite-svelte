@@ -11,7 +11,7 @@ title: How to Contribute
   
 </script>
 
-<Breadcrumb class="pb-8">
+<Breadcrumb class="pt-16 py-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>{dir}</BreadcrumbItem>
   <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
@@ -131,11 +131,7 @@ npx playwright test tests/typography.spec.ts
 
 <Htwo label="A11y Test" />
 
-<p class='w-full'>I'm in a process of finding the best A11y testing method at the moment. For now, please install [@axe-core/cli](https://www.npmjs.com/package/@axe-core/cli) to test pages relating to your change.</p>
-
-```sh
-npm install @axe-core/cli -g
-```
+<p class='w-full'>Please test a page with [Nu Html Checker](https://validator.unl.edu/) relating to your change.</p>
 
 <p class='w-full'>Test a page.</p>
 

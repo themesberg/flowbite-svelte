@@ -15,7 +15,7 @@ dir: Components
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 </script>
 
-<Breadcrumb class="pb-8">
+<Breadcrumb class="pt-16 py-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>{dir}</BreadcrumbItem>
   <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
@@ -617,6 +617,48 @@ Use `leftOffset|rightOffset|topOffset|bottomOffset` prop to change the position 
           clip-rule="evenodd" /></svg
       ></Button>
   </div>
+</Drawer>
+```
+
+<Htwo label='Disabling outside click'/>
+
+As the default, the drawer closes when you click the outside of the drawer.
+However sometimes you don't want that. Set `activateClickOutside` to false to disable it.
+
+
+```svelte example
+<script>
+  import { Drawer, Button, CloseButton } from 'flowbite-svelte';
+  import { sineIn } from 'svelte/easing';
+  let hidden10 = true; 
+  let activateClickOutside = false
+  let transitionParams = {
+    x: -320,
+    duration: 200,
+    easing: sineIn
+  };
+</script>
+
+<div class="text-center">
+  <Button on:click={() => (hidden10 = false)}>Show drawer</Button>
+</div>
+
+<Drawer {activateClickOutside} transitionType="fly" {transitionParams} bind:hidden={hidden10} id='sidebar10'>
+<div class='flex items-center'>
+  <h5
+    id="drawer-label"
+    class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
+    <svg class="w-5 h-5 mr-2" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>Info
+  </h5>
+  <CloseButton on:click={() => (hidden10 = true)} class='mb-4 dark:text-white'/>
+</div>
+  <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
+    Supercharge your hiring by taking advantage of our <a
+      href="/"
+      class="text-blue-600 underline dark:text-blue-500 hover:no-underline">limited-time sale</a> for
+    Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design
+    job board.
+  </p>
 </Drawer>
 ```
 

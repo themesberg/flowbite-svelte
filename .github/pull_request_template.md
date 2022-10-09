@@ -21,9 +21,9 @@ Closes #<!-- Issue # here -->
 - [ ] My pull request adheres to the code style of this project
 - [ ] My code requires changes to the documentation
 - [ ] I have updated the documentation as required
+- [ ] I have checked the page with https://validator.unl.edu/
 - [ ] All the tests have passed
 - [ ] My pull request is based on the latest commit (not the npm version).
-
 
 <!--
 

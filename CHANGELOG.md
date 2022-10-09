@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.27.6](https://github.com/themesberg/flowbite-svelte/compare/v0.27.5...v0.27.6) (2022-10-09)
+
+
+### Bug Fixes
+
+* card padding-x in mobile view ([#358](https://github.com/themesberg/flowbite-svelte/issues/358)) ([639457f](https://github.com/themesberg/flowbite-svelte/commit/639457f5efc54f38fda9288aa9cf017c2d0f883d))
+* color flicker when changing theme using DarkMode ([#353](https://github.com/themesberg/flowbite-svelte/issues/353)) ([7e1daf1](https://github.com/themesberg/flowbite-svelte/commit/7e1daf14b1b91b0f3c0dac55c38e28fee42c4878))
+* improved focustrap ([#354](https://github.com/themesberg/flowbite-svelte/issues/354)) ([fb17cd3](https://github.com/themesberg/flowbite-svelte/commit/fb17cd357e748df4b1d95060bcbecf7b406d3f03))
+* input icons ([#350](https://github.com/themesberg/flowbite-svelte/issues/350)) ([7b72712](https://github.com/themesberg/flowbite-svelte/commit/7b727121b3b730eb552200c1de36f3cdc45f7977))
+* input number workaround ([#351](https://github.com/themesberg/flowbite-svelte/issues/351)) ([e4cb012](https://github.com/themesberg/flowbite-svelte/commit/e4cb01221c3b4334a2c860aa32ccee06df2fe41d))
+* remove // [@ts-ignore](https://github.com/ts-ignore) ([ea82a2b](https://github.com/themesberg/flowbite-svelte/commit/ea82a2bc22085bad26967a82d078d8ab86b2477d))
+* remove package-lock, pnpm-lock and node_modules and reinstall ([a8985ea](https://github.com/themesberg/flowbite-svelte/commit/a8985ea2fdb7c18eb23e61dd163e65da98a53ae4))
+* remove svelte-sidebar-menu ([2820488](https://github.com/themesberg/flowbite-svelte/commit/28204885bbefcb826e073a1e6b7127a0b488b752))
+* ts types for Popper ([#362](https://github.com/themesberg/flowbite-svelte/issues/362)) ([4a22230](https://github.com/themesberg/flowbite-svelte/commit/4a22230d66d780cb2d5c189266f97c87c251b70a))
+
 ### [0.27.5](https://github.com/themesberg/flowbite-svelte/compare/v0.27.4...v0.27.5) (2022-10-01)
 
 
