@@ -1,15 +1,12 @@
 <script>
   import { Button } from '$lib';
   import { goto } from '$app/navigation';
-  import { Responsive } from 'svelte-sidebar-menu';
   import * as Block from './blocks/+server';
 
   const handleClick = () => {
     goto('/pages/getting-started');
   };
 </script>
-
-<Responsive />
 
 <div class="relative bg-white overflow-hidden mt-24 lg:mb-8 mx-auto dark:bg-gray-900 2xl:px-8">
   <div class="max-w-full mx-auto ">

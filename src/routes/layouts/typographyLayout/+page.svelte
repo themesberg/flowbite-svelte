@@ -1,10 +1,8 @@
 <script>
   import Htwo from '../../utils/Htwo.svelte';
   import 'prism-themes/themes/prism-holi-theme.css';
-  import { Responsive } from 'svelte-sidebar-menu';
 </script>
 
-<Responsive />
 <div class="max-w-3xl 2xl:max-w-4xl mx-auto mt-8">
   <div class="container flex flex-wrap mx-auto">
     <slot />
@@ -44,8 +42,7 @@
           >Typography</a>
       </p>
       <p>
-        <a href="https://flowbite.com/docs/typography/headings/" target="_blank" class="link"
-          >Headings</a>
+        <a href="https://flowbite.com/docs/typography/headings/" target="_blank" class="link">Headings</a>
       </p>
       <p>
         <a href="https://flowbite.com/docs/typography/paragraphs/" target="_blank" class="link"
@@ -56,8 +53,7 @@
           >Blockquote</a>
       </p>
       <p>
-        <a href="https://flowbite.com/docs/typography/images/" target="_blank" class="link"
-          >Images</a>
+        <a href="https://flowbite.com/docs/typography/images/" target="_blank" class="link">Images</a>
       </p>
       <p>
         <a href="https://flowbite.com/docs/typography/lists/" target="_blank" class="link">Lists</a>
