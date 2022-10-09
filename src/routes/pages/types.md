@@ -12,7 +12,7 @@ title: Types
   import TypeList from '../../lib/types.ts?raw'
 </script>
 
-<Breadcrumb class="pb-8">
+<Breadcrumb class="pt-16 py-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>{dir}</BreadcrumbItem>
   <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
