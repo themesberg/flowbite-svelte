@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { page } from '$app/stores';
   import { experimental } from './moduleItems/+server.js';
   import Toc from './Toc/+page.svelte';
   import '../app.css';
@@ -69,11 +70,12 @@
     // drawerHidden.update((n) => (n = false));
     drawerHidden = false;
   };
+  $: activeUrl = $page.url.pathname;
 
   let logo = '/images/flowbite-svelte-icon-logo.svg';
   let spanClass = 'pl-2 self-center text-md text-gray-900 whitespace-nowrap dark:text-white';
   let darkmodebtn =
-    'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 fixed right-2 top-12  md:top-4 md:right-2 z-50';
+    'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 fixed right-2 top-12  md:top-3 md:right-2 z-50';
   let divClass = 'w-full md:block md:w-auto pr-8';
   let ulClass = 'flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-lg md:font-medium';
 </script>
@@ -113,7 +115,12 @@
       <SidebarWrapper>
         <SidebarGroup>
           {#each data.pages as { meta, path }}
-            <SidebarItem label={meta.title} href={`/pages${path}`} {spanClass} on:click={toggleSide} />
+            <SidebarItem
+              label={meta.title}
+              href={`/pages${path}`}
+              {spanClass}
+              on:click={toggleSide}
+              active={activeUrl === `/pages${path}`} />
           {/each}
         </SidebarGroup>
         <SidebarGroup class="pt-4">
@@ -129,7 +136,8 @@
               label={meta.breadcrumb_title}
               href={`/components${path}`}
               {spanClass}
-              on:click={toggleSide} />
+              on:click={toggleSide}
+              active={activeUrl === `/components${path}`} />
           {/each}
         </SidebarGroup>
         <SidebarGroup class="pt-4">
@@ -145,7 +153,8 @@
               label={meta.breadcrumb_title}
               href={`/forms${path}`}
               {spanClass}
-              on:click={toggleSide} />
+              on:click={toggleSide}
+              active={activeUrl === `/forms${path}`} />
           {/each}
         </SidebarGroup>
         <SidebarGroup class="pt-4">
@@ -161,7 +170,8 @@
               label={meta.breadcrumb_title}
               href={`/typography${path}`}
               {spanClass}
-              on:click={toggleSide} />
+              on:click={toggleSide}
+              active={activeUrl === `/typography${path}`} />
           {/each}
         </SidebarGroup>
         <SidebarGroup class="pt-4">
@@ -177,7 +187,8 @@
               label={meta.breadcrumb_title}
               href={`/extend${path}`}
               {spanClass}
-              on:click={toggleSide} />
+              on:click={toggleSide}
+              active={activeUrl === `/extend${path}`} />
           {/each}
         </SidebarGroup>
         <SidebarGroup class="pt-4">
@@ -193,7 +204,8 @@
               label={meta.breadcrumb_title}
               href={`/utilities${path}`}
               {spanClass}
-              on:click={toggleSide} />
+              on:click={toggleSide}
+              active={activeUrl === `/utilities${path}`} />
           {/each}
         </SidebarGroup>
         <SidebarGroup class="pt-4">
@@ -205,7 +217,12 @@
             </h5>
           </div>
           {#each experimental as { href, name, rel }}
-            <SidebarItem label={name} {href} {spanClass} on:click={toggleSide} />
+            <SidebarItem
+              label={name}
+              {href}
+              {spanClass}
+              on:click={toggleSide}
+              active={activeUrl === `${href}`} />
           {/each}
         </SidebarGroup>
       </SidebarWrapper>
