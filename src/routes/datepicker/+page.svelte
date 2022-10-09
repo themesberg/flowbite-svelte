@@ -8,10 +8,12 @@
   let theadClass = 'text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white';
 </script>
 
-<Breadcrumb class="pt-8">
+<Breadcrumb class="pt-20 py-8">
   <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
   <BreadcrumbItem>Datepicker</BreadcrumbItem>
 </Breadcrumb>
+
+<h1 class="text-3xl w-full dark:text-white pb-4">Svelte Datepicker - Flowbite</h1>
 
 <div class="p-8">
   <Alert color="red">
@@ -19,8 +21,6 @@
       >⚠️ Datepicker component is experimental and only works with SvelteKit.
     </span></Alert>
 </div>
-
-<h1 class="text-3xl w-full dark:text-white pb-4">Svelte Datepicker - Flowbite</h1>
 
 <CompoDescription
   >Start receiving date and time data from your users using this free datepicker element based on Tailwind
