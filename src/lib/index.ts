@@ -150,8 +150,8 @@ export { default as TableSearch } from './tables/TableSearch.svelte';
 // Tabs
 export { default as TabHead } from './tabs/TabHead.svelte'
 export { default as TabHeadItem } from './tabs/TabHeadItem.svelte'
-export { default as TabContentItem } from './tabs/TabContentItem.svelte'
-export { default as TabWrapper } from './tabs/TabWrapper.svelte'
+export { default as TabItem } from './tabs/TabItem.svelte'
+export { default as Tabs } from './tabs/Tabs.svelte'
 
 // Timeline
 export { default as Group } from './timelines/Group.svelte';
