@@ -14,7 +14,7 @@
   import classNames from 'classnames';
   import { setContext } from 'svelte';
 
-  export let single: boolean = true;
+  export let multiple: boolean = false;
   export let flush: boolean = false;
   export let activeClasses: string =
     'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800';
@@ -26,7 +26,7 @@
     flush,
     activeClasses,
     inactiveClasses,
-    selected: single ? writable() : undefined
+    selected: multiple ? undefined : writable()
   };
 
   setContext<AccordionCtxType>('ctx', ctx);

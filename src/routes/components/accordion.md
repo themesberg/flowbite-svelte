@@ -50,7 +50,9 @@ A popular use case would be the “Frequently Asked Questions” section of a we
 
 <Htwo label="Default accordion" />
 
-Use the `single={true}` (default value) to collapse every other child element when expanding a single one.
+Accordion uses the single selection mode by default i.e. it collapses every other child element when expanding a one.
+
+To prevent that behavior set `multiple` property to `true`.
 
 ```svelte example hideScript
 <script>
@@ -196,6 +198,39 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
       <span> My Header 2</span>
     </span>
     <p class="mb-2 text-gray-500 dark:text-gray-400"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sintexplicabo...</p>
+  </AccordionItem>
+</Accordion>
+```
+
+<Htwo label="Multiple mode" />
+
+Example how to use the `multiple` option together with expand all behavior.
+
+```svelte example class="space-y-4"
+<script>
+  import {AccordionItem, Accordion, Button} from 'flowbite-svelte'
+  const items = Array(3);
+ 
+  const open_all = () => items.forEach((_,i)=> items[i] = true)
+  const close_all= () => items.forEach((_,i)=> items[i] = false)
+</script>
+<Button on:click={open_all}>Open all</Button>
+<Button on:click={close_all}>Close all</Button>
+<Accordion multiple>
+  <AccordionItem bind:open={items[0]}>
+    <span slot="header">My Header 1</span>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+    <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/" target="_blank" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
+  </AccordionItem>
+  <AccordionItem bind:open={items[1]}>
+    <div slot="header">My Header 2</div>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
+  </AccordionItem>
+  <AccordionItem bind:open={items[2]}>
+    <div slot="header">My Header 3</div>
+    <p>Something more</p>
   </AccordionItem>
 </Accordion>
 ```
