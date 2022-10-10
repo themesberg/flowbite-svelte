@@ -148,8 +148,6 @@ export { default as TableHeadCell } from './tables/TableHeadCell.svelte'
 export { default as TableSearch } from './tables/TableSearch.svelte';
 
 // Tabs
-export { default as TabHead } from './tabs/TabHead.svelte'
-export { default as TabHeadItem } from './tabs/TabHeadItem.svelte'
 export { default as TabItem } from './tabs/TabItem.svelte'
 export { default as Tabs } from './tabs/Tabs.svelte'
 
