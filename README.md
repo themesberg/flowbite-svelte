@@ -447,3 +447,5 @@ Please read [How to contribute](https://github.com/themesberg/flowbite-svelte/bl
 ## Changelog
 
 [Changelog](https://github.com/themesberg/flowbite-svelte/blob/main/CHANGELOG.md)
+
+Thank you.
