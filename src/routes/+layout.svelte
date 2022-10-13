@@ -33,30 +33,23 @@
   import type { PageData } from './$types';
   import { onMount } from 'svelte';
   export let data: PageData;
-  export let breakPoint: number = 1024;
+  let breakPoint: number = 1024;
   let width: number;
   let backdrop: boolean = false;
   let activateClickOutside = true;
-  // const drawerHidden = writable(true);
   let drawerHidden: boolean = false;
   $: if (width >= breakPoint) {
-    // drawerHidden.update((n) => (n = false));
     drawerHidden = false;
-    // console.log('store 11: ', $drawerHidden);
     activateClickOutside = false;
   } else {
     drawerHidden = true;
-    // drawerHidden.update((n) => (n = true));
-    // console.log('store 12: ', $drawerHidden);
     activateClickOutside = true;
   }
   onMount(() => {
     if (width >= breakPoint) {
-      // drawerHidden.update((n) => (n = false));
       drawerHidden = false;
       activateClickOutside = false;
     } else {
-      // drawerHidden.update((n) => (n = true));
       drawerHidden = true;
       activateClickOutside = true;
     }
@@ -67,7 +60,6 @@
     }
   };
   const toggleDrawer = () => {
-    // drawerHidden.update((n) => (n = false));
     drawerHidden = false;
   };
   $: activeUrl = $page.url.pathname;
