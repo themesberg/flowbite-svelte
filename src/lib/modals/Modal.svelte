@@ -26,7 +26,16 @@
   const dispatch = createEventDispatcher();
   $: dispatch(open ? 'open' : 'hide');
 
-  function grabFocus(node: HTMLElement) {
+  function prepareFocus(node: HTMLElement) {
+    const walker = document.createTreeWalker(node, NodeFilter.SHOW_ELEMENT);
+    let n: Node | null;
+    while ((n = walker.nextNode())) {
+      if (n instanceof HTMLElement) {
+        const el = n as HTMLElement;
+        const [x, y] = isScrollable(el);
+        if (x || y) el.tabIndex = 0;
+      }
+    }
     node.focus();
   }
 
@@ -91,24 +100,14 @@
     e.scrollHeight > e.clientHeight && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowY) >= 0
   ];
 
-  const isArrowKey = (e: KeyboardEvent, x: boolean, y: boolean) =>
-    (x && ['ArrowLeft', 'ArrowRight'].includes(e.key)) || (y && ['ArrowDown', 'ArrowUp'].includes(e.key));
-
   function preventWheelDefault(e: Event) {
     // @ts-ignore
     const [x, y] = isScrollable(this);
     return x || y || e.preventDefault();
   }
 
-  function stopArrowsPropagation(e: KeyboardEvent) {
-    // @ts-ignore
-    const [x, y] = isScrollable(this);
-    if (isArrowKey(e, x, y)) e.stopPropagation();
-  }
-
   function handleKeys(e: KeyboardEvent) {
     if (e.key === 'Escape' && !permanent) return hide();
-    return isArrowKey(e, true, true) ? e.preventDefault() : true;
   }
 </script>
 
@@ -118,9 +117,9 @@
     class={mainClass}
     aria-modal="true"
     role="dialog"
-    on:keydown={handleKeys}
+    on:keydown|preventDefault={handleKeys}
     on:wheel|preventDefault
-    use:grabFocus
+    use:prepareFocus
     use:focusTrap
     on:click={autoclose ? onAutoClose : null}>
     <div class="flex p-4 w-full {sizes[size]} h-full md:h-auto max-h-screen">
@@ -141,8 +140,9 @@
         {/if}
         <!-- Modal body -->
         <div
+          id="modal"
           class="p-6 space-y-6 flex-1 overflow-y-auto overscroll-contain"
-          on:keydown={stopArrowsPropagation}
+          on:keydown|stopPropagation={handleKeys}
           on:wheel|stopPropagation={preventWheelDefault}>
           <slot />
         </div>
