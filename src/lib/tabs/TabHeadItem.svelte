@@ -6,9 +6,16 @@
   export let customActiveClass: string = '';
   export let customInActiveClass: string = '';
   export let customLiClass: string = '';
+  import { getContext } from 'svelte';
+  import type { TabCtxType } from './Tabs.svelte';
+
   type classOptions = {
     [key: string]: string;
   };
+
+  const ctx = getContext<TabCtxType>('ctx') ?? {};
+  tabStyle = ctx.style;
+
   const activeClasses: classOptions = {
     default:
       'inline-block py-4 px-4 text-sm font-medium text-center text-blue-600 bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-blue-500',

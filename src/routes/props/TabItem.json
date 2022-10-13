@@ -1,0 +1,1 @@
+{"props":[["open","boolean ","false"],["title","string ","'Tab title'"],["activeClasses","string | undefined ","undefined"],["inactiveClasses","string | undefined ","undefined"],["defaultClass","string ","'inline-block text-sm font-medium text-center disabled:cursor-not-allowed'"]]}
