@@ -20,8 +20,12 @@
   const self = {};
   const selected = ctx.selected ?? writable();
 
+  let _open: boolean = open;
+  open = false;
+
   onMount(() => {
-    if (open) $selected = self;
+    if (_open) $selected = self;
+
     // this will trigger unsubscribe on destroy
     return selected.subscribe((x) => (open = x === self));
   });
