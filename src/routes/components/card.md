@@ -10,6 +10,7 @@ dir: Components
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   // Props table
   import { props as cardProps } from '../props/Card.json'
+  import { props as frameProps } from '../props/Frame.json'
 	let propHeader = ['Name', 'Type', 'Default']
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -425,6 +426,12 @@ The component has the following props, type, and default values. See <A href="/p
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={cardProps} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>Frame</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={frameProps} rowState='hover' />
 </TableProp>
 
 <Htwo label="Slots" />

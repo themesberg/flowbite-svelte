@@ -48,7 +48,7 @@
   );
 </script>
 
-<Frame tag={href ? 'a' : 'div'} rounded shadow border {href} class={cardClass}>
+<Frame tag={href ? 'a' : 'div'} rounded shadow border {href} {...$$restProps} class={cardClass}>
   {#if img}
     <img class={imgClass} src={img} alt="" />
     <div class={innerPdding}>
