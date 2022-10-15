@@ -15,6 +15,7 @@
     SidebarGroup,
     SidebarItem,
     SidebarWrapper,
+    SidebarDropdownWrapper,
     Navbar,
     NavBrand,
     NavLi,
@@ -63,6 +64,10 @@
     drawerHidden = false;
   };
   $: activeUrl = $page.url.pathname;
+  $: containPath = () => {
+    // add your logic here
+    false;
+  };
 
   let logo = '/images/flowbite-svelte-icon-logo.svg';
   let spanClass = 'pl-2 self-center text-md text-gray-900 whitespace-nowrap dark:text-white';
@@ -116,106 +121,76 @@
           {/each}
         </SidebarGroup>
         <SidebarGroup class="pt-4">
-          <div class="flex items-center">
-            <h5
-              id="drawer-navigation-label-3"
-              class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
-              COMPONENTS
-            </h5>
-          </div>
-          {#each data.components as { meta, path }}
-            <SidebarItem
-              label={meta.breadcrumb_title}
-              href={`/components${path}`}
-              {spanClass}
-              on:click={toggleSide}
-              active={activeUrl === `/components${path}`} />
-          {/each}
+          <SidebarDropdownWrapper label="COMPONENTS" isOpen={activeUrl.includes('components')}>
+            {#each data.components as { meta, path }}
+              <SidebarItem
+                label={meta.breadcrumb_title}
+                href={`/components${path}`}
+                {spanClass}
+                on:click={toggleSide}
+                active={activeUrl === `/components${path}`} />
+            {/each}
+          </SidebarDropdownWrapper>
         </SidebarGroup>
         <SidebarGroup class="pt-4">
-          <div class="flex items-center">
-            <h5
-              id="drawer-navigation-label-3"
-              class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
-              FORMS
-            </h5>
-          </div>
-          {#each data.forms as { meta, path }}
-            <SidebarItem
-              label={meta.breadcrumb_title}
-              href={`/forms${path}`}
-              {spanClass}
-              on:click={toggleSide}
-              active={activeUrl === `/forms${path}`} />
-          {/each}
+          <SidebarDropdownWrapper label="FORMS" isOpen={activeUrl.includes('forms')}>
+            {#each data.forms as { meta, path }}
+              <SidebarItem
+                label={meta.breadcrumb_title}
+                href={`/forms${path}`}
+                {spanClass}
+                on:click={toggleSide}
+                active={activeUrl === `/forms${path}`} />
+            {/each}
+          </SidebarDropdownWrapper>
         </SidebarGroup>
         <SidebarGroup class="pt-4">
-          <div class="flex items-center">
-            <h5
-              id="drawer-navigation-label-3"
-              class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
-              TYPTOGRAPHY
-            </h5>
-          </div>
-          {#each data.typography as { meta, path }}
-            <SidebarItem
-              label={meta.breadcrumb_title}
-              href={`/typography${path}`}
-              {spanClass}
-              on:click={toggleSide}
-              active={activeUrl === `/typography${path}`} />
-          {/each}
+          <SidebarDropdownWrapper label="TYPTOGRAPHY" isOpen={activeUrl.includes('typography')}>
+            {#each data.typography as { meta, path }}
+              <SidebarItem
+                label={meta.breadcrumb_title}
+                href={`/typography${path}`}
+                {spanClass}
+                on:click={toggleSide}
+                active={activeUrl === `/typography${path}`} />
+            {/each}
+          </SidebarDropdownWrapper>
         </SidebarGroup>
         <SidebarGroup class="pt-4">
-          <div class="flex items-center">
-            <h5
-              id="drawer-navigation-label-3"
-              class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
-              EXTEND
-            </h5>
-          </div>
-          {#each data.extend as { meta, path }}
-            <SidebarItem
-              label={meta.breadcrumb_title}
-              href={`/extend${path}`}
-              {spanClass}
-              on:click={toggleSide}
-              active={activeUrl === `/extend${path}`} />
-          {/each}
+          <SidebarDropdownWrapper label="EXTEND" isOpen={activeUrl.includes('extend')}>
+            {#each data.extend as { meta, path }}
+              <SidebarItem
+                label={meta.breadcrumb_title}
+                href={`/extend${path}`}
+                {spanClass}
+                on:click={toggleSide}
+                active={activeUrl === `/extend${path}`} />
+            {/each}
+          </SidebarDropdownWrapper>
         </SidebarGroup>
         <SidebarGroup class="pt-4">
-          <div class="flex items-center">
-            <h5
-              id="drawer-navigation-label-3"
-              class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
-              UTILS
-            </h5>
-          </div>
-          {#each data.utils as { meta, path }}
-            <SidebarItem
-              label={meta.breadcrumb_title}
-              href={`/utilities${path}`}
-              {spanClass}
-              on:click={toggleSide}
-              active={activeUrl === `/utilities${path}`} />
-          {/each}
+          <SidebarDropdownWrapper label="UTILS" isOpen={activeUrl.includes('utilities')}>
+            {#each data.utils as { meta, path }}
+              <SidebarItem
+                label={meta.breadcrumb_title}
+                href={`/utilities${path}`}
+                {spanClass}
+                on:click={toggleSide}
+                active={activeUrl === `/utilities${path}`} />
+            {/each}
+          </SidebarDropdownWrapper>
         </SidebarGroup>
         <SidebarGroup class="pt-4">
-          <div class="flex items-center">
-            <h5
-              id="drawer-navigation-label-3"
-              class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
-              EXPERIMENTAL
-            </h5>
-          </div>
-          {#each experimental as { href, name, rel }}
-            <SidebarItem
-              label={name}
-              {href}
-              {spanClass}
-              on:click={toggleSide}
-              active={activeUrl === `${href}`} />
-          {/each}
+          <SidebarDropdownWrapper label="EXPERIMENTAL" isOpen={activeUrl.includes('datepicker')}>
+            {#each experimental as { href, name, rel }}
+              <SidebarItem
+                label={name}
+                {href}
+                {spanClass}
+                on:click={toggleSide}
+                active={activeUrl === `${href}`} />
+            {/each}
+          </SidebarDropdownWrapper>
         </SidebarGroup>
       </SidebarWrapper>
     </Sidebar>
