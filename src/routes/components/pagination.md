@@ -253,7 +253,7 @@ You can use the following code to show the number of data shown inside a table e
 <Htwo label="References" />
 
 <P>
-  <A href="https://flowbite.com/docs/components/pagination/" target="_blank" class="link"
+  <A href="https://flowbite.com/docs/components/pagination/" target="_blank" rel="noreferrer" class="link"
     >Flowbite Pagination</A
   >
 </P>

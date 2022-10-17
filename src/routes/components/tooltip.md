@@ -165,6 +165,6 @@ The component inherits the following props, type, and default values from `Frame
 <Htwo label="References" />
 
 <P>
-  <A href="https://flowbite.com/docs/components/tooltips/" target="_blank" class="link"
+  <A href="https://flowbite.com/docs/components/tooltips/" target="_blank" rel="noreferrer" class="link"
     >Flowbite Tooltip</A>
 </P>

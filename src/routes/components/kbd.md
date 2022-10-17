@@ -274,7 +274,7 @@ This example can be used to denote function keys inside the KBD component.
 <Htwo label="References" />
 
 <P>
-  <A href="https://flowbite.com/docs/components/kbd/" target="_blank" class="link"
+  <A href="https://flowbite.com/docs/components/kbd/" target="_blank" rel="noreferrer" class="link"
     >Tailwind CSS KBD (Keyboard)</A
   >
 </P>

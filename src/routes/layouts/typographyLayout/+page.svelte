@@ -38,34 +38,52 @@
     <Htwo label="Flowbite References" />
     <div class="references">
       <p>
-        <a href="https://flowbite.com/docs/components/typography/" target="_blank" class="link"
-          >Typography</a>
+        <a
+          href="https://flowbite.com/docs/components/typography/"
+          target="_blank"
+          rel="noreferrer"
+          class="link">Typography</a>
       </p>
       <p>
-        <a href="https://flowbite.com/docs/typography/headings/" target="_blank" class="link">Headings</a>
+        <a
+          href="https://flowbite.com/docs/typography/headings/"
+          target="_blank"
+          rel="noreferrer"
+          class="link">Headings</a>
       </p>
       <p>
-        <a href="https://flowbite.com/docs/typography/paragraphs/" target="_blank" class="link"
-          >Paragraphs</a>
+        <a
+          href="https://flowbite.com/docs/typography/paragraphs/"
+          target="_blank"
+          rel="noreferrer"
+          class="link">Paragraphs</a>
       </p>
       <p>
-        <a href="https://flowbite.com/docs/typography/blockquote/" target="_blank" class="link"
-          >Blockquote</a>
+        <a
+          href="https://flowbite.com/docs/typography/blockquote/"
+          target="_blank"
+          rel="noreferrer"
+          class="link">Blockquote</a>
       </p>
       <p>
-        <a href="https://flowbite.com/docs/typography/images/" target="_blank" class="link">Images</a>
+        <a href="https://flowbite.com/docs/typography/images/" target="_blank" rel="noreferrer" class="link"
+          >Images</a>
       </p>
       <p>
-        <a href="https://flowbite.com/docs/typography/lists/" target="_blank" class="link">Lists</a>
+        <a href="https://flowbite.com/docs/typography/lists/" target="_blank" rel="noreferrer" class="link"
+          >Lists</a>
       </p>
       <p>
-        <a href="https://flowbite.com/docs/typography/links/" target="_blank" class="link">Links</a>
+        <a href="https://flowbite.com/docs/typography/links/" target="_blank" rel="noreferrer" class="link"
+          >Links</a>
       </p>
       <p>
-        <a href="https://flowbite.com/docs/typography/text/" target="_blank" class="link">Text</a>
+        <a href="https://flowbite.com/docs/typography/text/" target="_blank" rel="noreferrer" class="link"
+          >Text</a>
       </p>
       <p>
-        <a href="https://flowbite.com/docs/typography/hr/" target="_blank" class="link">HR</a>
+        <a href="https://flowbite.com/docs/typography/hr/" target="_blank" rel="noreferrer" class="link"
+          >HR</a>
       </p>
     </div>
   </div>

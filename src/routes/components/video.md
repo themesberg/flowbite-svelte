@@ -132,6 +132,6 @@ Customize the video player appearance using the utility classes from Tailwind CS
 <Htwo label="References" />
 
 <P>
-  <A href="https://flowbite.com/docs/components/video/" target="_blank" class="link"
+  <A href="https://flowbite.com/docs/components/video/" target="_blank" rel="noreferrer" class="link"
     >Flowbite Tooltip</A>
 </P>

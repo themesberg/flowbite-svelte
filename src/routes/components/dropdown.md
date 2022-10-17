@@ -701,7 +701,7 @@ Therefore you can catch standard events on it like `on:click`.
 <Htwo label="References" />
 
 <P>
-  <A href="https://flowbite.com/docs/components/dropdowns/" target="_blank" class="link"
+  <A href="https://flowbite.com/docs/components/dropdowns/" target="_blank" rel="noreferrer" class="link"
     >Flowbite Dropdown</A
   >
 </P>

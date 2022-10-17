@@ -182,7 +182,7 @@ Delete user
 <Htwo label="References" />
 
 <P>
-  <A href="https://flowbite.com/docs/components/list-group/" target="_blank" class="link"
+  <A href="https://flowbite.com/docs/components/list-group/" target="_blank" rel="noreferrer" class="link"
     >Flowbite List Group</A
   >
 </P>

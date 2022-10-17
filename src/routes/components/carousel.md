@@ -288,7 +288,7 @@ The carousel component can be used to cycle through a set of elements using cust
 <Htwo label="References" />
 
 <P>
-  <A href="https://flowbite.com/docs/components/carousel/" target="_blank" class="link"
+  <A href="https://flowbite.com/docs/components/carousel/" target="_blank" rel="noreferrer" class="link"
     >Flowbite carousel</A
   >
 </P>

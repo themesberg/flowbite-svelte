@@ -42,7 +42,8 @@
     <Htwo label="References" />
     <div class="references">
       <p>
-        <a href="https://flowbite.com/docs/components/forms/" target="_blank" class="link">Flowbite Forms</a>
+        <a href="https://flowbite.com/docs/components/forms/" target="_blank" rel="noreferrer" class="link"
+          >Flowbite Forms</a>
       </p>
     </div>
   </div>

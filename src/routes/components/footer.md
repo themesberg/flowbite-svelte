@@ -296,7 +296,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 <Htwo label="References" />
 
 <P>
-  <A href="https://flowbite.com/docs/components/footer/" target="_blank" class="link"
+  <A href="https://flowbite.com/docs/components/footer/" target="_blank" rel="noreferrer" class="link"
     >Flowbite Footer</A
   >
 </P>
