@@ -7,6 +7,7 @@
   export let selected: boolean = false;
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <img
   class="opacity-40"
   class:active={selected}
