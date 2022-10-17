@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.27.7](https://github.com/themesberg/flowbite-svelte/compare/v0.27.6...v0.27.7) (2022-10-17)
+
+
+### Bug Fixes
+
+* [#376](https://github.com/themesberg/flowbite-svelte/issues/376) ([#378](https://github.com/themesberg/flowbite-svelte/issues/378)) ([8b4c2e3](https://github.com/themesberg/flowbite-svelte/commit/8b4c2e3200c73448aa34f921738e8ea8d10ee538))
+* card - restProps ([#373](https://github.com/themesberg/flowbite-svelte/issues/373)) ([a7331fc](https://github.com/themesberg/flowbite-svelte/commit/a7331fcd5915e6142a99859113776ce74a72529a))
+* flitering ([#370](https://github.com/themesberg/flowbite-svelte/issues/370)) ([e8ac071](https://github.com/themesberg/flowbite-svelte/commit/e8ac07134518a373949da3fadc4f63c656fe2d59))
+* modal arrow keys ([#369](https://github.com/themesberg/flowbite-svelte/issues/369)) ([2a8bc1c](https://github.com/themesberg/flowbite-svelte/commit/2a8bc1c156c66a3dc0569312343b6f6b65a051ea))
+* remove |local from Frame componentso that toast transitions work ([6da412c](https://github.com/themesberg/flowbite-svelte/commit/6da412c0665f27a6f9dd33bbf89758c4a924d239))
+
 ### [0.27.6](https://github.com/themesberg/flowbite-svelte/compare/v0.27.5...v0.27.6) (2022-10-09)
 
 
