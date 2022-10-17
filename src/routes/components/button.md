@@ -325,7 +325,7 @@ Use `btnClass` to overwrite Button class.
 <Htwo label="References" />
 
 <P>
-  <A href="https://flowbite.com/docs/components/buttons/" target="_blank" class="link"
+  <A href="https://flowbite.com/docs/components/buttons/" target="_blank" rel="noreferrer" class="link"
     >Flowbite Buttons</A
   >
 </P>

@@ -21,11 +21,17 @@ title: How to Contribute
 
 <p class='w-full'>Here are some guidelines we'd like you to follow before submitting a PR.</p>
 
+<Htwo label="Create a fork" />
+
+<p>Create a fork from <a href="https://github.com/themesberg/flowbite-svelte">Flowbite-Svelte</a> to your repository first.</p>
+
 <Htwo label="Please use pnpm to install a fork" />
 
 <p>The repo uses `pnpm`, so using `pnpm` is desirable when you fork and install dependencies to avoid unseen problems.</p>
 
-<Htwo label="Frontend pages" />
+<p>When there is a change in package.json, remove pnpm-lock.yml and node_modules directory and run `pnpm i`.</p>
+
+<Htwo label="Tailwind CSS" />
 
 <p class='w-full'><a class="text-blue-700" href="https://tailwindcss.com/docs/content-configuration#dynamic-class-names">Tailwind warns</a> that you don't construct class names dynamically. Instead of this:</p>
 

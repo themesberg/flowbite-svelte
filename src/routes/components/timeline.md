@@ -354,7 +354,7 @@ Use this component to group multiple data entries inside a single date and show 
 <Htwo label="References" />
 
 <P>
-  <A href="https://flowbite.com/docs/components/timeline/" target="_blank" class="link"
+  <A href="https://flowbite.com/docs/components/timeline/" target="_blank" rel="noreferrer" class="link"
     >Flowbite timeline</A
   >
 </P>

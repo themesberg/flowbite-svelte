@@ -71,7 +71,7 @@ let btnClass="Add your class here"
 
 <Htwo label="How to change Dark mode color" />
 
-<p><a href="https://chir.ag/projects/name-that-color/" target="_blank">Find the name of the color from hex color code.</a></p>
+<p><a href="https://chir.ag/projects/name-that-color/" target="_blank" rel="noreferrer">Find the name of the color from hex color code.</a></p>
 
 <p>Update tailwind.config.cjs:</p>
 
@@ -107,7 +107,7 @@ let btnClass="Add your class here"
 <Htwo label="References" />
 
 <P>
-  <A href="https://flowbite.com/docs/customize/dark-mode/" target="_blank" class="link"
+  <A href="https://flowbite.com/docs/customize/dark-mode/" target="_blank" rel="noreferrer" class="link"
     >Flowbite Dark mode</A
   >
 </P>

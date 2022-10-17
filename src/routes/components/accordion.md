@@ -62,7 +62,7 @@ To prevent that behavior set `multiple` property to `true`.
   <AccordionItem>
     <span slot="header">My Header 1</span>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-    <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/" target="_blank" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
+    <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
   </AccordionItem>
   <AccordionItem>
     <span slot="header">My Header 2</span>
@@ -70,8 +70,8 @@ To prevent that behavior set `multiple` property to `true`.
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
     <ul class="list-disc pl-5 dark:text-gray-400 text-gray-500">
-      <li><a href="/" target="_blank" class="text-blue-600 dark:text-blue-500 hover:underline" >Lorem ipsum</a></li>
-      <li><a href="https://tailwindui.com/" rel="nofollow" target="_blank" class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
+      <li><a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline" >Lorem ipsum</a></li>
+      <li><a href="https://tailwindui.com/" rel="noreferrer" target="_blank"  class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
     </ul>
   </AccordionItem>
 </Accordion>
@@ -190,7 +190,7 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
       <span> My Header 1</span>
     </span>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo...</p>
-    <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/" target="_blank" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start  websites even faster with components on top of Tailwind CSS.</p>
+    <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start  websites even faster with components on top of Tailwind CSS.</p>
   </AccordionItem>
   <AccordionItem>
     <span slot="header" class="text-base flex gap-2">
@@ -220,7 +220,7 @@ Example how to use the `multiple` option together with expand all behavior.
   <AccordionItem bind:open={items[0]}>
     <span slot="header">My Header 1</span>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-    <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/" target="_blank" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
+    <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
   </AccordionItem>
   <AccordionItem bind:open={items[1]}>
     <div slot="header">My Header 2</div>
@@ -267,4 +267,4 @@ The component has the following props, type, and default values. See <A href="/p
 
 <Htwo label="References" />
 
-<P><A href="https://flowbite.com/docs/components/accordion/" target="_blank" class="link">Flowbite Accordion</A></P>
+<P><A href="https://flowbite.com/docs/components/accordion/" target="_blank" rel="noreferrer" class="link">Flowbite Accordion</A></P>

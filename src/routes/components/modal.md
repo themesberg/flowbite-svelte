@@ -324,6 +324,6 @@ You can use five different modal sizing options starting from extra small to ext
 <Htwo label="References" />
 
 <P>
-  <A href="https://flowbite.com/docs/components/modal/" target="_blank" class="link"
+  <A href="https://flowbite.com/docs/components/modal/" target="_blank" rel="noreferrer" class="link"
     >Flowbite Modal</A>
 </P>

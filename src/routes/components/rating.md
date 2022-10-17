@@ -398,7 +398,7 @@ The component has the following props, type, and default values. See <A href="/p
 <Htwo label="References" />
 
 <P>
-  <A href="https://flowbite.com/docs/components/rating/" target="_blank" class="link"
+  <A href="https://flowbite.com/docs/components/rating/" target="_blank" rel="noreferrer" class="link"
     >Flowbite Rating</A
   >
 </P>

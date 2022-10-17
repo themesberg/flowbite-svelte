@@ -19,7 +19,7 @@ title: External icon libraries
 
 <Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
-Instead of using SVG icons, using an icon library simplifies the code. You can uses <A href="https://www.npmjs.com/package/svelte-heros-v2" target="_blank">Svelte-Heros-v2</A> and <A href="https://svelte-svg-icons.vercel.app/" target="_blank">other icon sets</A> for Flowbite-Svelte.
+Instead of using SVG icons, using an icon library simplifies the code. You can uses <A href="https://www.npmjs.com/package/svelte-heros-v2" target="_blank" rel="noreferrer">Svelte-Heros-v2</A> and <A href="https://svelte-svg-icons.vercel.app/" target="_blank" rel="noreferrer">other icon sets</A> for Flowbite-Svelte.
 
 Svelte-Heros-v2 icons allow you to change the icon color, size, and other props.
 

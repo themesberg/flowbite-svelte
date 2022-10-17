@@ -276,7 +276,7 @@ This example can be used to also show a CTA with a backdround image inside the d
 <Htwo label="References" />
 
 <P>
-  <A href="https://flowbite.com/docs/components/mega-menu/" target="_blank" class="link"
+  <A href="https://flowbite.com/docs/components/mega-menu/" target="_blank" rel="noreferrer" class="link"
     >Flowbite Mega Menu</A
   >
 </P>

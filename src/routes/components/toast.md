@@ -178,7 +178,7 @@ You can use any <A href="/icons">icon components.</A>
 
 <Htwo label="Transitions" />
 
-You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" target="_blank" >Svelte/easing</A>.
+You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" target="_blank" rel="noreferrer" >Svelte/easing</A>.
 
 ```svelte example
 <script>
@@ -370,7 +370,7 @@ The component has the following props, type, and default values. See <A href="/p
 <Htwo label="References" />
 
 <P>
-  <A href="https://flowbite.com/docs/components/toast/" target="_blank" class="link"
+  <A href="https://flowbite.com/docs/components/toast/" target="_blank" rel="noreferrer" class="link"
     >Flowbite Toast</A
   >
 </P>
