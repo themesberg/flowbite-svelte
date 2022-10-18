@@ -1,1 +1,1 @@
-{"props":[["size","'small' | 'default' | 'large' ","'default'"],["group","string[] ","[]"],["value","string ","''"],["checked","boolean ","undefined"]]}
+{"props":[["size","'small' | 'default' | 'large' ","'default'"],["group","string[] ","[]"],["value","string ","''"],["checked","boolean ","false"]]}
