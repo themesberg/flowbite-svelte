@@ -5,6 +5,34 @@ breadcrumb_title: Close button
 dir: Utilities
 ---
 
+
+<MetaTags
+  title={breadcrumb_title}
+  titleTemplate="%s | Flowbite-Svelte"
+  description={title}
+  openGraph={{
+    title: `${title}`,
+    description: `${title}`,
+    images: [
+      {
+        url: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
+        width: 800,
+        height: 600,
+        alt: `${title}`
+      }
+    ],
+    site_name: 'Flowbite-Svelte'
+  }}
+  twitter={{
+    handle: '@shinokada',
+    cardType: 'summary_large_image',
+    title: `${title}`,
+    description: `${title}`,
+    image: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
+    imageAlt: `${title}`
+  }}
+/>
+
 <script>
 	import {
 		Htwo,
@@ -14,6 +42,7 @@ dir: Utilities
 		TableProp,
 		TableDefaultRow
 	} from '../utils';
+	import { MetaTags } from 'svelte-meta-tags';
 	import { Breadcrumb, BreadcrumbItem, Heading, A } from '$lib';
 	import { props as items } from '../props/CloseButton.json';
 	let propHeader = ['Name', 'Type', 'Default'];

@@ -7,6 +7,7 @@ dir: Component
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
+import { MetaTags } from 'svelte-meta-tags';
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A  } from '$lib'
   // Props table
   import { props as propItems} from '../props/Dropdown.json'

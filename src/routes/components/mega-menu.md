@@ -5,8 +5,37 @@ breadcrumb_title: Mega menu
 dir: Components
 ---
 
+
+<MetaTags
+  title={breadcrumb_title}
+  titleTemplate="%s | Flowbite-Svelte"
+  description={title}
+  openGraph={{
+    title: `${title}`,
+    description: `${title}`,
+    images: [
+      {
+        url: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
+        width: 800,
+        height: 600,
+        alt: `${title}`
+      }
+    ],
+    site_name: 'Flowbite-Svelte'
+  }}
+  twitter={{
+    handle: '@shinokada',
+    cardType: 'summary_large_image',
+    title: `${title}`,
+    description: `${title}`,
+    image: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
+    imageAlt: `${title}`
+  }}
+/>
+
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../utils'
+  import { MetaTags } from 'svelte-meta-tags';
   import { Breadcrumb, BreadcrumbItem, UserCircle, Heading, P, A } from '$lib'
 
   import { props as items} from '../props/MegaMenu.json'
@@ -252,7 +281,7 @@ This example can be used to also show a CTA with a backdround image inside the d
     <NavLi><Chevron aligned>Mega menu</Chevron></NavLi>
     <MegaMenu full items={menu} let:item>
       <a href={item.href} class="hover:underline hover:text-blue-600 dark:hover:text-blue-500">{item.name}</a>
-      <a slot="extra" href="/" class="block mt-4 p-4 text-left bg-local bg-gray-500 bg-center bg-no-repeat bg-cover rounded-lg bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken" style="background-image: url(/images/nature-1.jpeg)">
+      <a slot="extra" href="/" class="block mt-4 p-4 text-left bg-local bg-gray-500 bg-center bg-no-repeat bg-cover rounded-lg bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken" style="background-image: url(/images/nature-1.webp)">
           <p class="mb-5 max-w-xl text-sm p-0 font-extrabold tracking-tight leading-tight text-white">Preview the new Flowbite dashboard navigation.</p>
           <Button>Get started</Button>
       </a>

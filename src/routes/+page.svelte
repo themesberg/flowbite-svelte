@@ -2,11 +2,40 @@
   import { Button } from '$lib';
   import { goto } from '$app/navigation';
   import * as Block from './blocks/+server';
-
+  import { MetaTags } from 'svelte-meta-tags';
   const handleClick = () => {
     goto('/pages/getting-started');
   };
+  let title = 'Flowbite-Svelte';
+  let description =
+    'Flowbite-Svelte is a Tailwind and Flowbite powered UI components for Svelte and SvelteKit.';
+  let default_title = 'Svelte UI Components';
 </script>
+
+<MetaTags
+  {title}
+  {description}
+  openGraph={{
+    title: `${title}`,
+    description: `${description}`,
+    images: [
+      {
+        url: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${default_title}`,
+        width: 800,
+        height: 600,
+        alt: `${title}`
+      }
+    ],
+    site_name: 'Flowbite-Svelte'
+  }}
+  twitter={{
+    handle: '@shinokada',
+    cardType: 'summary_large_image',
+    title: `${title}`,
+    description: `${description}`,
+    image: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${default_title}`,
+    imageAlt: `${title} logo`
+  }} />
 
 <div class="relative bg-white overflow-hidden mt-24 lg:mb-8 mx-auto dark:bg-gray-900 2xl:px-8">
   <div class="max-w-full mx-auto ">

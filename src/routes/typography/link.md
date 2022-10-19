@@ -5,8 +5,37 @@ breadcrumb_title: Links
 dir: Typography
 ---
 
+
+<MetaTags
+  title={breadcrumb_title}
+  titleTemplate="%s | Flowbite-Svelte"
+  description={title}
+  openGraph={{
+    title: `${title}`,
+    description: `${title}`,
+    images: [
+      {
+        url: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
+        width: 800,
+        height: 600,
+        alt: `${title}`
+      }
+    ],
+    site_name: 'Flowbite-Svelte'
+  }}
+  twitter={{
+    handle: '@shinokada',
+    cardType: 'summary_large_image',
+    title: `${title}`,
+    description: `${title}`,
+    image: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
+    imageAlt: `${title}`
+  }}
+/>
+
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
+import { MetaTags } from 'svelte-meta-tags';
   import {  A, Heading, Breadcrumb, BreadcrumbItem } from '$lib'
   import { props as items1 } from '../props/A.json'
   let propHeader = ['Name', 'Type', 'Default']
@@ -135,7 +164,7 @@ This example can be used to set a hyperlink on an image inside a card component.
   import { Card, Button } from 'flowbite-svelte';
 </script>
 
-<Card img="/images/image-1.jpeg" href="/cards">
+<Card img="/images/image-1.webp" href="/cards">
   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
   <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
     Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.

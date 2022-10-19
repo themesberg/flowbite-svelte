@@ -5,8 +5,37 @@ breadcrumb_title: Navbar
 dir: Components
 ---
 
+
+<MetaTags
+  title={breadcrumb_title}
+  titleTemplate="%s | Flowbite-Svelte"
+  description={title}
+  openGraph={{
+    title: `${title}`,
+    description: `${title}`,
+    images: [
+      {
+        url: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
+        width: 800,
+        height: 600,
+        alt: `${title}`
+      }
+    ],
+    site_name: 'Flowbite-Svelte'
+  }}
+  twitter={{
+    handle: '@shinokada',
+    cardType: 'summary_large_image',
+    title: `${title}`,
+    description: `${title}`,
+    image: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
+    imageAlt: `${title}`
+  }}
+/>
+
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
+import { MetaTags } from 'svelte-meta-tags';
   import { Badge, Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib';
   // Props table
   import { props as items } from '../props/Navbar.json'

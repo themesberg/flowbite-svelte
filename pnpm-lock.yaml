@@ -24,6 +24,7 @@ specifiers:
   prism-themes: ^1.9.0
   svelte: ^3.44.0
   svelte-check: ^2.7.1
+  svelte-meta-tags: ^2.6.3
   svelte-preprocess: ^4.10.7
   svelte2tsx: ^0.5.18
   tailwindcss: ^3.1.5
@@ -57,6 +58,7 @@ devDependencies:
   prism-themes: 1.9.0
   svelte: 3.52.0
   svelte-check: 2.9.2_xyvwwpusdp7eiuesisaivc7wmm
+  svelte-meta-tags: 2.6.3_typescript@4.8.4
   svelte-preprocess: 4.10.7_4n3z2octtzg5pdokl7pjruqnki
   svelte2tsx: 0.5.20_besnmoibwkhwtentvwuriss7pa
   tailwindcss: 3.1.8_postcss@8.4.18
@@ -2108,6 +2110,14 @@ packages:
       rimraf: 2.7.1
     dev: true
 
+  /schema-dts/1.1.0_typescript@4.8.4:
+    resolution: {integrity: sha512-vdmbs/5ycj4zyKpZIDqTcy+IZi4s7c38RVAYuDmRi7zgxUT8wRWPMLzg0jr7FjdVunYu9yZ00F3+XcZTTFcTOQ==}
+    peerDependencies:
+      typescript: '>=4.1.0'
+    dependencies:
+      typescript: 4.8.4
+    dev: true
+
   /semver/6.3.0:
     resolution: {integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==}
     hasBin: true
@@ -2269,6 +2279,14 @@ packages:
       svelte: '>=3.19.0'
     dependencies:
       svelte: 3.52.0
+    dev: true
+
+  /svelte-meta-tags/2.6.3_typescript@4.8.4:
+    resolution: {integrity: sha512-VEc6t8ka6t4ntnfDhkdKR+/Gj/51aeRXsFOJG/0xPXCUqhtY4Px93VqKp5vMNzNzVsKZIacX8maT2AbpjZX1BQ==}
+    dependencies:
+      schema-dts: 1.1.0_typescript@4.8.4
+    transitivePeerDependencies:
+      - typescript
     dev: true
 
   /svelte-preprocess/4.10.7_4n3z2octtzg5pdokl7pjruqnki:

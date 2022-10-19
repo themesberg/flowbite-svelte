@@ -5,8 +5,37 @@ breadcrumb_title: Cards
 dir: Components
 ---
 
+
+<MetaTags
+  title={breadcrumb_title}
+  titleTemplate="%s | Flowbite-Svelte"
+  description={title}
+  openGraph={{
+    title: `${title}`,
+    description: `${title}`,
+    images: [
+      {
+        url: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
+        width: 800,
+        height: 600,
+        alt: `${title}`
+      }
+    ],
+    site_name: 'Flowbite-Svelte'
+  }}
+  twitter={{
+    handle: '@shinokada',
+    cardType: 'summary_large_image',
+    title: `${title}`,
+    description: `${title}`,
+    image: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
+    imageAlt: `${title}`
+  }}
+/>
+
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
+import { MetaTags } from 'svelte-meta-tags';
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   // Props table
   import { props as cardProps } from '../props/Card.json'
@@ -114,7 +143,7 @@ You can use the following example of a card element with an image for blog posts
   let vCard = false;
 </script>
 <div>
-  <Card img="/images/image-1.jpeg" reverse={vCard}>
+  <Card img="/images/image-1.webp" reverse={vCard}>
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
       Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
@@ -137,7 +166,7 @@ If you want to spice up your cards you can use the following card which has its 
   let hCard = false;
 </script>
 <div>
-  <Card img="/images/image-1.jpeg" href="/" horizontal reverse={hCard}>
+  <Card img="/images/image-1.webp" href="/" horizontal reverse={hCard}>
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
       Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.

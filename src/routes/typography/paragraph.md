@@ -5,6 +5,34 @@ breadcrumb_title: Paragraph
 dir: Typography
 ---
 
+
+<MetaTags
+  title={breadcrumb_title}
+  titleTemplate="%s | Flowbite-Svelte"
+  description={title}
+  openGraph={{
+    title: `${title}`,
+    description: `${title}`,
+    images: [
+      {
+        url: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
+        width: 800,
+        height: 600,
+        alt: `${title}`
+      }
+    ],
+    site_name: 'Flowbite-Svelte'
+  }}
+  twitter={{
+    handle: '@shinokada',
+    cardType: 'summary_large_image',
+    title: `${title}`,
+    description: `${title}`,
+    image: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
+    imageAlt: `${title}`
+  }}
+/>
+
 <script>
   import {
     Htwo,
@@ -14,6 +42,7 @@ dir: Typography
     TableProp,
     TableDefaultRow
   } from '../utils';
+  import { MetaTags } from 'svelte-meta-tags';
   import {  A, Heading, Breadcrumb, BreadcrumbItem } from '$lib';
   import { props as items1 } from '../props/P.json'
   import { props as items2 } from '../props/Layout.json'
@@ -214,7 +243,7 @@ Get started with this example to show a popover with extra information inside pa
           ></A>
       </div>
     </div>
-    <img src="/images/image-1.jpeg" class="col-span-2 h-full rounded-r-lg" alt="Italy map" />
+    <img src="/images/image-1.webp" class="col-span-2 h-full rounded-r-lg" alt="Italy map" />
   </div>
 </Popover>
 ```
