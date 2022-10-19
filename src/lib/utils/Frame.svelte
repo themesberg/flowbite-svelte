@@ -100,10 +100,6 @@
     none: ''
   };
 
-  // have a custom transition function that returns the desired transition
-  let transitionFunc: TransitionFunc;
-  $: transitionFunc = transition ?? (() => ({}));
-
   let divClass: string;
 
   $: divClass = classNames(
@@ -117,16 +113,31 @@
   );
 </script>
 
-<svelte:element
-  this={tag}
-  use:use={options}
-  bind:this={node}
-  transition:transitionFunc={params}
-  {...$$restProps}
-  class={divClass}
-  on:mouseenter
-  on:mouseleave
-  on:focusin
-  on:focusout>
-  <slot />
-</svelte:element>
+{#if transition}
+  <svelte:element
+    this={tag}
+    use:use={options}
+    bind:this={node}
+    transition:transition={params}
+    {...$$restProps}
+    class={divClass}
+    on:mouseenter
+    on:mouseleave
+    on:focusin
+    on:focusout>
+    <slot />
+  </svelte:element>
+{:else}
+  <svelte:element
+    this={tag}
+    use:use={options}
+    bind:this={node}
+    {...$$restProps}
+    class={divClass}
+    on:mouseenter
+    on:mouseleave
+    on:focusin
+    on:focusout>
+    <slot />
+  </svelte:element>
+{/if}
