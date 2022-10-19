@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.27.9](https://github.com/themesberg/flowbite-svelte/compare/v0.27.8...v0.27.9) (2022-10-19)
+
+
+### Bug Fixes
+
+* [#379](https://github.com/themesberg/flowbite-svelte/issues/379) ([#380](https://github.com/themesberg/flowbite-svelte/issues/380)) ([0019915](https://github.com/themesberg/flowbite-svelte/commit/001991546e3e7376a02c17481784c5a5636d6ed7))
+* optional Frame transition' ([#385](https://github.com/themesberg/flowbite-svelte/issues/385)) ([e7fc8db](https://github.com/themesberg/flowbite-svelte/commit/e7fc8db0f920e3bd907ce9fcf1c532885da193af))
+* restProps for NumberInput ([#382](https://github.com/themesberg/flowbite-svelte/issues/382)) ([d1acb7f](https://github.com/themesberg/flowbite-svelte/commit/d1acb7f1b22a69acfc0f1ab6d2859c2a7d8a082c))
+
 ### [0.27.8](https://github.com/themesberg/flowbite-svelte/compare/v0.27.7...v0.27.8) (2022-10-17)
 
 ### [0.27.7](https://github.com/themesberg/flowbite-svelte/compare/v0.27.6...v0.27.7) (2022-10-17)
