@@ -5,10 +5,38 @@ breadcrumb_title: Lists
 dir: Typography
 ---
 
+
+<MetaTags
+  title={breadcrumb_title}
+  titleTemplate="%s | Flowbite-Svelte"
+  description={title}
+  openGraph={{
+    title: `${title}`,
+    description: `${title}`,
+    images: [
+      {
+        url: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
+        width: 800,
+        height: 600,
+        alt: `${title}`
+      }
+    ],
+    site_name: 'Flowbite-Svelte'
+  }}
+  twitter={{
+    handle: '@shinokada',
+    cardType: 'summary_large_image',
+    title: `${title}`,
+    description: `${title}`,
+    image: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
+    imageAlt: `${title}`
+  }}
+/>
+
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../utils'
   import { A, Heading, Breadcrumb, BreadcrumbItem } from '$lib'
-
+  import { MetaTags } from 'svelte-meta-tags';
   import { props as items1 } from '../props/List.json'
   import { props as items2 } from '../props/Li.json'
   import { props as items3 } from '../props/Span.json'
@@ -388,7 +416,7 @@ This example can be used to show more details for each list item such as the use
       <div class="flex-shrink-0">
         <img
           class="w-8 h-8 rounded-full"
-          src="/images/profile-picture-4.jpg"
+          src="/images/profile-picture-4.webp"
           alt="Thomas profile" />
       </div>
       <div class="flex-1 min-w-0">
@@ -405,7 +433,7 @@ This example can be used to show more details for each list item such as the use
       <div class="flex-shrink-0">
         <img
           class="w-8 h-8 rounded-full"
-          src="/images/profile-picture-5.jpg"
+          src="/images/profile-picture-5.webp"
           alt="Lana profile" />
       </div>
       <div class="flex-1 min-w-0">

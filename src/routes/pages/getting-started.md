@@ -1,11 +1,40 @@
 ---
 layout: pageLayout
-dir: Pages
 breadcrumb_title: Getting Started
 title: Getting Started
+dir: Pages
 ---
+
+
+<MetaTags
+  title={breadcrumb_title}
+  titleTemplate="%s | Flowbite-Svelte"
+  description={title}
+  openGraph={{
+    title: `${title}`,
+    description: `${title}`,
+    images: [
+      {
+        url: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
+        width: 800,
+        height: 600,
+        alt: `${title}`
+      }
+    ],
+    site_name: 'Flowbite-Svelte'
+  }}
+  twitter={{
+    handle: '@shinokada',
+    cardType: 'summary_large_image',
+    title: `${title}`,
+    description: `${title}`,
+    image: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
+    imageAlt: `${title}`
+  }}
+/>
 <script>
   import { Htwo, ExampleDiv } from '../utils'
+  import { MetaTags } from 'svelte-meta-tags';
   import { A, P, List, Li, Breadcrumb, BreadcrumbItem, Alert, Heading } from '$lib'
   
 </script>

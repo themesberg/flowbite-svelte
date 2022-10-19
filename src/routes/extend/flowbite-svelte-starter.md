@@ -1,12 +1,41 @@
 ---
 layout: pageLayout
-dir: Extend
 breadcrumb_title: Starter
 title: Flowbite-Svelte Starter
+dir: Extend
 ---
+
+
+<MetaTags
+  title={breadcrumb_title}
+  titleTemplate="%s | Flowbite-Svelte"
+  description={title}
+  openGraph={{
+    title: `${title}`,
+    description: `${title}`,
+    images: [
+      {
+        url: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
+        width: 800,
+        height: 600,
+        alt: `${title}`
+      }
+    ],
+    site_name: 'Flowbite-Svelte'
+  }}
+  twitter={{
+    handle: '@shinokada',
+    cardType: 'summary_large_image',
+    title: `${title}`,
+    description: `${title}`,
+    image: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
+    imageAlt: `${title}`
+  }}
+/>
 
 <script>
   import Htwo from '../utils/Htwo.svelte'
+  import { MetaTags } from 'svelte-meta-tags';
   import { Breadcrumb, BreadcrumbItem, Heading, A } from '$lib'
 </script>
 
