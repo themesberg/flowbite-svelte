@@ -55,6 +55,8 @@
 {#if !hidden}
   {#if backdrop && activateClickOutside}
     <div role="presentation" class={backdropDivClass} on:click={() => !hidden && handleDrawer()} />
+  {:else if backdrop && !activateClickOutside}
+    <div role="presentation" class={backdropDivClass} />
   {/if}
   {#if activateClickOutside}
     <div
