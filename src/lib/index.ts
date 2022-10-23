@@ -98,9 +98,7 @@ export { default as NavUl } from './navbar/NavUl.svelte';
 
 // Pagination
 export { default as Pagination } from './paginations/Pagination.svelte';
-export { default as Previous } from './paginations/Previous.svelte';
-export { default as Next } from './paginations/Next.svelte';
-export { default as TableData } from './paginations/TableData.svelte';
+export { default as PaginationItem } from './paginations/PaginationItem.svelte';
 
 // Popover
 export { default as Popover } from './popover/Popover.svelte'

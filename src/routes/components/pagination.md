@@ -40,9 +40,7 @@ import { MetaTags } from 'svelte-meta-tags';
   ;
   
   import { props as items1 } from '../props/Pagination.json'
-  import { props as items2 } from '../props/Previous.json'
-  import { props as items3 } from '../props/Next.json'
-  import { props as items4 } from '../props/TableData.json'
+  import { props as items2 } from '../props/PaginationItem.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -60,8 +58,7 @@ import { MetaTags } from 'svelte-meta-tags';
 
 <ExampleDiv>
 <GitHubSource href="pagination/Pagination.svelte">Pagination</GitHubSource>
-<GitHubSource href="pagination/Previous.svelte">Previous</GitHubSource>
-<GitHubSource href="pagination/Next.svelte">Next</GitHubSource>
+<GitHubSource href="pagination/PaginationItem.svelte">Previous</GitHubSource>
 </ExampleDiv>
 
 The pagination component can be used to navigate across a series of content and data sets for various pages such as blog posts, products, and more. You can use multiple variants of this component with or without icons and even for paginating table data entries.
@@ -70,7 +67,7 @@ The pagination component can be used to navigate across a series of content and 
 
 ```html
 <script>
-  import { Pagination, Previous, Next } from 'flowbite-svelte'
+  import { Pagination, PaginationItem } from 'flowbite-svelte'
 </script>
 ```
 
@@ -78,30 +75,15 @@ The pagination component can be used to navigate across a series of content and 
 
 Use the following list of pagination items to indicate a series of content for your website.
 
-```svelte example class="flex justify-center"
+```svelte example class="flex justify-center flex-col gap-4"
 <script>
   import { Pagination } from 'flowbite-svelte'
   let pages = [
-    {
-      pageNum: 1,
-      href: '/'
-    },
-    {
-      pageNum: 2,
-      href: '/'
-    },
-    {
-      pageNum: 3,
-      href: '/'
-    },
-    {
-      pageNum: 4,
-      href: '/'
-    },
-    {
-      pageNum: 5,
-      href: '/'
-    }
+    { name: 1, href: '/'},
+    { name: 2, href: '/'},
+    { name: 3, href: '/'},
+    { name: 4, href: '/'},
+    { name: 5, href: '/'}
   ];
   const previous = () => {
     alert('Previous btn clicked. Make a call to your server to fetch data.');
@@ -120,28 +102,13 @@ The following pagination component example shows how you can use SVG icons inste
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Pagination } from 'flowbite-svelte'
+  import { Pagination, ChevronLeft, ChevronRight } from 'flowbite-svelte'
   let pages = [
-    {
-      pageNum: 1,
-      href: '/'
-    },
-    {
-      pageNum: 2,
-      href: '/'
-    },
-    {
-      pageNum: 3,
-      href: '/'
-    },
-    {
-      pageNum: 4,
-      href: '/'
-    },
-    {
-      pageNum: 5,
-      href: '/'
-    }
+    { name: 1, href: '/' },
+    { name: 2, href: '/' },
+    { name: 3, href: '/' },
+    { name: 4, href: '/' },
+    { name: 5, href: '/' }
   ];
   const previous = () => {
     alert('Previous btn clicked. Make a call to your server to fetch data.');
@@ -151,7 +118,16 @@ The following pagination component example shows how you can use SVG icons inste
   };
 </script>
 
-<Pagination {pages} on:previous={previous} on:next={next} icon />
+<Pagination {pages} on:previous={previous} on:next={next} icon>
+  <svelte:fragment slot="prev">
+    <span class="sr-only">Previous</span>
+    <ChevronLeft class="w-5 h-5"/>
+  </svelte:fragment>
+  <svelte:fragment slot="next">
+    <span class="sr-only">Next</span>
+    <ChevronRight class="w-5 h-5"/>
+  </svelte:fragment>
+</Pagination>
 ```
 
 <Htwo label="Previous and next" />
@@ -160,7 +136,7 @@ Use the following markup to show simple previous and next elements.
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Pagination, Next, Previous } from 'flowbite-svelte'
+  import { Pagination, PaginationItem } from 'flowbite-svelte'
   const previous = () => {
     alert('Previous btn clicked. Make a call to your server to fetch data.');
   };
@@ -169,8 +145,10 @@ Use the following markup to show simple previous and next elements.
   };
 </script>
 
-<Previous on:previous={previous} />
-<Next on:next={next} />
+<div class="flex space-x-3">
+  <PaginationItem on:click={previous}>Previous</PaginationItem>
+  <PaginationItem on:click={next}>Next</PaginationItem>
+</div>
 ```
 
 <Htwo label="Previous and next with icons" />
@@ -180,7 +158,7 @@ Use the following code to show simple previous and next elements with icons.
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Pagination, Next, Previous } from 'flowbite-svelte'
+  import { Pagination, PaginationItem } from 'flowbite-svelte'
   const previous = () => {
     alert('Previous btn clicked. Make a call to your server to fetch data.');
   };
@@ -189,17 +167,28 @@ Use the following code to show simple previous and next elements with icons.
   };
 </script>
 
-<Previous on:previous={previous} icon />
-<Next on:next={next} icon />
+<div class="flex space-x-3">
+  <PaginationItem class="flex items-center" on:click={previous}>
+    <svg class="mr-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"/></svg>
+    Previous
+  </PaginationItem>
+  <PaginationItem class="flex items-center" on:click={next}>
+    Next
+    <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+  </PaginationItem>
+</div>
 ```
 
 <Htwo label="Table data pagination" />
 
 You can use the following markup to show the number of data shown inside a table element and also the previous and next action buttons.
 
-```svelte example class="flex justify-center"
+```svelte example 
 <script>
-  import { TableData } from 'flowbite-svelte'
+  import { Pagination, PaginationItem } from 'flowbite-svelte'
+
+  let helper = {start: 1, end: 10, total: 100}
+
   const previous = () => {
     alert('Previous btn clicked. Make a call to your server to fetch data.');
   };
@@ -208,21 +197,29 @@ You can use the following markup to show the number of data shown inside a table
   };
 </script>
 
-<TableData on:next={next} on:previous={previous} />
+<div class="flex flex-col items-center justify-center">
+  <div class="text-sm text-gray-700 dark:text-gray-400">
+    Showing <span class="font-semibold text-gray-900 dark:text-white">{helper.start}</span> to
+    <span class="font-semibold text-gray-900 dark:text-white">{helper.end}</span>
+    of <span class="font-semibold text-gray-900 dark:text-white">{helper.total}</span> Entries
+  </div>
+
+  <Pagination table>
+    <span slot="prev">Prev</span>
+  </Pagination>
+</div>
 ```
 
 <Htwo label="Table data pagination with icons" />
 
 You can use the following code to show the number of data shown inside a table element and also the previous and next action buttons coupled with icons.
 
-```svelte example class="flex justify-center"
+```svelte example
 <script>
-  import { TableData } from 'flowbite-svelte'
-  let helper = {
-    start: 1,
-    end: 10,
-    total: 100
-  }
+  import { Pagination } from 'flowbite-svelte'
+
+  let helper = {start: 1, end: 10, total: 100}
+
   const previous = () => {
     alert('Previous btn clicked. Make a call to your server to fetch data.');
   };
@@ -231,7 +228,24 @@ You can use the following code to show the number of data shown inside a table e
   };
 </script>
 
-<TableData on:next={next} on:previous={previous} {helper}/>
+<div class="flex flex-col items-center justify-center">
+  <div class="text-sm text-gray-700 dark:text-gray-400">
+    Showing <span class="font-semibold text-gray-900 dark:text-white">{helper.start}</span> to
+    <span class="font-semibold text-gray-900 dark:text-white">{helper.end}</span>
+    of <span class="font-semibold text-gray-900 dark:text-white">{helper.total}</span> Entries
+  </div>
+
+  <Pagination table>
+    <div slot="prev" class="flex items-center gap-2">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"/></svg>
+      Prev
+    </div>
+    <div slot="next" class="flex items-center gap-2">
+      Next
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+    </div>
+  </Pagination>
+</div>
 ```
 
 <Htwo label="Props" />
@@ -245,27 +259,15 @@ You can use the following code to show the number of data shown inside a table e
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Previous</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>PaginationItem</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Next</h3>
-
-<TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={items3} rowState='hover' />
-</TableProp>
-
-<h3 class='text-xl w-full dark:text-white py-4'>TableData</h3>
-
-<TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={items4} rowState='hover' />
-</TableProp>
-
 <Htwo label="Forwarded Events" />
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">Next, Pagination, Previous, TableData</Heading>
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">Pagination, PaginationItem</Heading>
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:blur</Badge>
