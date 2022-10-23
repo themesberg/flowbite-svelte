@@ -121,7 +121,7 @@ Use the following example of a responsive table component to show multiple rows 
 
 <Htwo label="Striped rows" />
 
-Set the `stiped` prop to `true` to alternate background colors of every second tabel row.
+Set the `striped` prop to `true` to alternate background colors of every second tabel row.
 
 ```svelte example
 <script>
