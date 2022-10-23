@@ -60,6 +60,7 @@
     navbar: 'bg-white dark:bg-gray-900',
     navbarUl: 'bg-gray-50 dark:bg-gray-800',
     form: 'bg-gray-50 dark:bg-gray-700',
+    primary: 'bg-primary-100 dark:bg-primary-200 ',
     none: ''
   };
   const textColors = {
@@ -78,6 +79,7 @@
     navbar: 'text-gray-700 dark:text-gray-200',
     navbarUl: 'text-gray-700 dark:text-gray-400',
     form: 'text-gray-900 dark:text-white',
+    primary: 'text-primary-700 dark:text-primary-800',
     none: ''
   };
 
@@ -97,6 +99,7 @@
     navbar: 'border-gray-100 dark:border-gray-700',
     navbarUl: 'border-gray-100 dark:border-gray-700',
     form: 'border-gray-300 dark:border-gray-700',
+    primary: 'border-primary-500 dark:bg-primary-200 ',
     none: ''
   };
 
