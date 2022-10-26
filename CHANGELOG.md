@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.27.11](https://github.com/themesberg/flowbite-svelte/compare/v0.27.10...v0.27.11) (2022-10-26)
+
+
+### Features
+
+* pagination ([#395](https://github.com/themesberg/flowbite-svelte/issues/395)) ([4792988](https://github.com/themesberg/flowbite-svelte/commit/479298855936bdc0e917788bbe1e00d8f62cbbe2))
+
+
+### Bug Fixes
+
+* add default value to opacity and space of paragraph element ([16f0729](https://github.com/themesberg/flowbite-svelte/commit/16f07295a2d23a3860ace75fab345c0d3452181b))
+* merge conflict ([fa3c5d8](https://github.com/themesberg/flowbite-svelte/commit/fa3c5d8d205bc7211334f19c0ec6ec7c57fdd754))
+* props update ([4c109c8](https://github.com/themesberg/flowbite-svelte/commit/4c109c84913bfe09ac8d4d6a7dd2265a0243eefa))
+* set the default values of space and color of paragraph element to undefined ([0d54908](https://github.com/themesberg/flowbite-svelte/commit/0d549081235b1691017c0d3ae802fe71b48c4016))
+
 ### [0.27.10](https://github.com/themesberg/flowbite-svelte/compare/v0.27.9...v0.27.10) (2022-10-21)
 
 
