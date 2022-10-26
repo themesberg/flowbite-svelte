@@ -9,7 +9,7 @@
   export let firstupper: boolean = false;
   export let upperClass: string =
     'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:mr-3 first-letter:float-left';
-  export let opacity: number;
+  export let opacity: number | undefined = undefined;
   export let whitespace: 'normal' | 'nowrap' | 'pre' | 'preline' | 'prewrap' = 'normal';
   export let size:
     | 'xs'
@@ -25,7 +25,7 @@
     | '7xl'
     | '8xl'
     | '9xl' = 'base';
-  export let space: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest';
+  export let space: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest' | undefined = undefined;
   export let weight:
     | 'thin'
     | 'extralight'
