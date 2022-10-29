@@ -9,7 +9,12 @@ dir: Components
   title={breadcrumb_title}
   titleTemplate="%s | Flowbite-Svelte"
   description={title}
-  openGraph={{
+  facebook={{
+  appId: '453670756870545'
+}}
+openGraph={{
+  type: 'website',
+  url:`https://flowbite-svelte.com/${breadcrumb_title.toLowerCase().replaceAll(' ', '-')}`,
     title: `${title}`,
     description: `${title}`,
     images: [
