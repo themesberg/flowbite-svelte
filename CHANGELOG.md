@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.27.12](https://github.com/themesberg/flowbite-svelte/compare/v0.27.11...v0.27.12) (2022-10-29)
+
+
+### Bug Fixes
+
+* meta tag by adding type, url, and appId ([#399](https://github.com/themesberg/flowbite-svelte/issues/399)) ([6f9f423](https://github.com/themesberg/flowbite-svelte/commit/6f9f423b294bbc54bdae152f659e029e5e8a1f76))
+* update meta images width and height ([#400](https://github.com/themesberg/flowbite-svelte/issues/400)) ([f97c01a](https://github.com/themesberg/flowbite-svelte/commit/f97c01a361714daca951c16fa7a2293988abd983))
+
 ### [0.27.11](https://github.com/themesberg/flowbite-svelte/compare/v0.27.10...v0.27.11) (2022-10-26)
 
 
