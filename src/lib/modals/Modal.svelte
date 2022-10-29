@@ -22,6 +22,23 @@
   export let autoclose: boolean = true;
   export let permanent: boolean = false;
   export let backdropClasses: string = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
+  export let color:
+    | 'gray'
+    | 'red'
+    | 'yellow'
+    | 'green'
+    | 'indigo'
+    | 'default'
+    | 'purple'
+    | 'pink'
+    | 'blue'
+    | 'light'
+    | 'dark'
+    | 'dropdown'
+    | 'navbar'
+    | 'navbarUl'
+    | 'form'
+    | 'none' = 'default';
 
   const dispatch = createEventDispatcher();
   $: dispatch(open ? 'open' : 'hide');
@@ -124,7 +141,7 @@
     on:click={autoclose ? onAutoClose : null}>
     <div class="flex p-4 w-full {sizes[size]} h-full md:h-auto max-h-screen">
       <!-- Modal content -->
-      <Frame rounded shadow class="relative flex flex-col w-full h-full md:h-auto">
+      <Frame rounded shadow {color} class="relative flex flex-col w-full h-full md:h-auto">
         <!-- Modal header -->
         {#if $$slots.header || title}
           <div class="flex justify-between items-center p-4 rounded-t border-b dark:border-gray-600">
