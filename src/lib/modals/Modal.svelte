@@ -124,7 +124,7 @@
     on:click={autoclose ? onAutoClose : null}>
     <div class="flex p-4 w-full {sizes[size]} h-full md:h-auto max-h-screen">
       <!-- Modal content -->
-      <Frame rounded shadow class="relative flex flex-col w-full h-full md:h-auto">
+      <Frame {...$$restProps} rounded shadow class="relative flex flex-col w-full h-full md:h-auto">
         <!-- Modal header -->
         {#if $$slots.header || title}
           <div class="flex justify-between items-center p-4 rounded-t border-b dark:border-gray-600">
