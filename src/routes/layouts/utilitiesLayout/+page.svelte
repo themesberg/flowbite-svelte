@@ -10,7 +10,7 @@
     <Htwo label="Related components" />
     <div class="related-components">
       <p>
-        <a href="/utilities/closebutton" class="link">CloseButton</a>
+        <a href="/utilities/close-button" class="link">CloseButton</a>
       </p>
       <p>
         <a href="/utilities/label" class="link">Label</a>

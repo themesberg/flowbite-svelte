@@ -15,7 +15,12 @@
 <MetaTags
   {title}
   {description}
+  facebook={{
+    appId: '453670756870545'
+  }}
   openGraph={{
+    type: 'website',
+    url: `https://flowbite-svelte.com/`,
     title: `${title}`,
     description: `${description}`,
     images: [
