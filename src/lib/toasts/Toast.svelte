@@ -4,8 +4,23 @@
   import type { Colors } from '../types';
   import CloseButton from '../utils/CloseButton.svelte';
   import { fade } from 'svelte/transition';
-
-  export let color: Colors = 'blue';
+  export let color:
+    | 'gray'
+    | 'red'
+    | 'yellow'
+    | 'green'
+    | 'indigo'
+    | 'default'
+    | 'purple'
+    | 'pink'
+    | 'blue'
+    | 'light'
+    | 'dark'
+    | 'dropdown'
+    | 'navbar'
+    | 'navbarUl'
+    | 'form'
+    | 'none' = 'blue';
   export let simple: boolean = false;
   export let position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none' = 'none'; // default not set
   export let open = true;

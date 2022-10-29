@@ -14,7 +14,7 @@
   $: groupClass = classNames('divide-y divide-gray-200 dark:divide-gray-600', $$props.class);
 </script>
 
-<Frame tag={active ? 'div' : 'ul'} rounded border class={groupClass}>
+<Frame tag={active ? 'div' : 'ul'} {...$$restProps} rounded border class={groupClass}>
   {#each items as item, index}
     <ListgroupItem {active} {...item} {index} on:click><slot {item} {index} /></ListgroupItem>
   {:else}
