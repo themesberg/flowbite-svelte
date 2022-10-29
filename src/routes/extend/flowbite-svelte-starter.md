@@ -15,7 +15,7 @@ dir: Extend
 }}
 openGraph={{
   type: 'website',
-  url:`https://flowbite-svelte.com/${breadcrumb_title.toLowerCase().replaceAll(' ', '-')}`,
+  url:`https://flowbite-svelte.com/${dir.toLowerCase()}/${breadcrumb_title.toLowerCase().replaceAll(' ', '-')}`,
     title: `${title}`,
     description: `${title}`,
     images: [
