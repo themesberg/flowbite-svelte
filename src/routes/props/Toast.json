@@ -1,1 +1,1 @@
-{"props":[["color","Colors ","'blue'"],["simple","boolean ","false"],["   open ","boolean"," true"],["divClass","string ","'w-full max-w-xs p-4'"]]}
+{"props":[["color","| 'gray'     | 'red'     | 'yellow'     | 'green'     | 'indigo'     | 'default'     | 'purple'     | 'pink'     | 'blue'     | 'light'     | 'dark'     | 'dropdown'     | 'navbar'     | 'navbarUl'     | 'form'     | 'none' ","'blue'"],["simple","boolean ","false"],["   open ","boolean"," true"],["divClass","string ","'w-full max-w-xs p-4'"]]}
