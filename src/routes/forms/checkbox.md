@@ -3,44 +3,14 @@ layout: formLayout
 title: Svelte Checkbox - Flowbite
 breadcrumb_title: Checkbox
 dir: Forms
+description: Get started with the checkbox component to allow the user to select one or more options in the form of a square box available in multiple sizes and colors
 ---
 
-
-<MetaTags
-  title={breadcrumb_title}
-  titleTemplate="%s | Flowbite-Svelte"
-  description={title}
-  facebook={{
-  appId: '453670756870545'
-}}
-openGraph={{
-  type: 'website',
-  url:`https://flowbite-svelte.com/${dir.toLowerCase()}/${breadcrumb_title.toLowerCase().replaceAll(' ', '-')}`,
-    title: `${title}`,
-    description: `${title}`,
-    images: [
-      {
-        url: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
-        width: 1200,
-        height: 630,
-        alt: `${title}`
-      }
-    ],
-    site_name: 'Flowbite-Svelte'
-  }}
-  twitter={{
-    handle: '@shinokada',
-    cardType: 'summary_large_image',
-    title: `${title}`,
-    description: `${title}`,
-    image: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
-    imageAlt: `${title}`
-  }}
-/>
+<MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-import { MetaTags } from 'svelte-meta-tags';
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, A } from '$lib'
   import { props as items } from '../props/Radio.json'
   import { props as items2 } from '../props/Label.json'
@@ -57,6 +27,8 @@ import { MetaTags } from 'svelte-meta-tags';
 </Breadcrumb>
 
 <Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
+
+<CompoDescription>{description}</CompoDescription>
 
 The checkbox component can be used to receive one or more selected options from the user in the form of a square box available in multiple styles, sizes, colors, and variants coded with the utility classes from Tailwind CSS and with support for dark mode.
 

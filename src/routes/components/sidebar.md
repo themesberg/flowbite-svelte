@@ -3,45 +3,15 @@ layout: componentLayout
 title: Svelte Sidebar - Flowbite
 breadcrumb_title: Sidebar
 dir: Components
+description: Use the sidebar component to show a list of menu items and multi-level dropdown items on either side of the page to navigate on your website
 ---
 
-
-<MetaTags
-  title={breadcrumb_title}
-  titleTemplate="%s | Flowbite-Svelte"
-  description={title}
-  facebook={{
-  appId: '453670756870545'
-}}
-openGraph={{
-  type: 'website',
-  url:`https://flowbite-svelte.com/${dir.toLowerCase()}/${breadcrumb_title.toLowerCase().replaceAll(' ', '-')}`,
-    title: `${title}`,
-    description: `${title}`,
-    images: [
-      {
-        url: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
-        width: 1200,
-        height: 630,
-        alt: `${title}`
-      }
-    ],
-    site_name: 'Flowbite-Svelte'
-  }}
-  twitter={{
-    handle: '@shinokada',
-    cardType: 'summary_large_image',
-    title: `${title}`,
-    description: `${title}`,
-    image: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
-    imageAlt: `${title}`
-  }}
-/>
+<MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
   import { page } from '$app/stores';
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-import { MetaTags } from 'svelte-meta-tags';
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
   
   import { props as items } from '../props/Sidebar.json'
@@ -65,7 +35,7 @@ import { MetaTags } from 'svelte-meta-tags';
 
 <Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
-<CompoDescription>Use the sidebar component to show a list of menu items and multi-level dropdown items on either side of the page to navigate on your website</CompoDescription>
+<CompoDescription>{description}</CompoDescription>
 
 <ExampleDiv>
 <GitHubSource href="sidebars/Sidebar.svelte">Sidebar</GitHubSource>

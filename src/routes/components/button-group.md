@@ -3,44 +3,13 @@ layout: componentLayout
 title: Svelte Button Group - Flowbite
 breadcrumb_title: Button group
 dir: Components
+description: Button groups are a Tailwind CSS powered set of buttons sticked together in a horizontal line
 ---
 
-
-<MetaTags
-  title={breadcrumb_title}
-  titleTemplate="%s | Flowbite-Svelte"
-  description={title}
-  facebook={{
-  appId: '453670756870545'
-}}
-openGraph={{
-  type: 'website',
-  url:`https://flowbite-svelte.com/${dir.toLowerCase()}/${breadcrumb_title.toLowerCase().replaceAll(' ', '-')}`,
-    title: `${title}`,
-    description: `${title}`,
-    images: [
-      {
-        url: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
-        width: 1200,
-        height: 630,
-        alt: `${title}`
-      }
-    ],
-    site_name: 'Flowbite-Svelte'
-  }}
-  twitter={{
-    handle: '@shinokada',
-    cardType: 'summary_large_image',
-    title: `${title}`,
-    description: `${title}`,
-    image: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
-    imageAlt: `${title}`
-  }}
-/>
+<MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-import { MetaTags } from 'svelte-meta-tags';
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils'
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
   // Props table
   import { props as buttonGroupProps} from '../props/ButtonGroup.json'
@@ -57,7 +26,7 @@ import { MetaTags } from 'svelte-meta-tags';
 
 <Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
-<CompoDescription>Button groups are a Tailwind CSS powered set of buttons sticked together in a horizontal line</CompoDescription>
+<CompoDescription>{description}</CompoDescription>
 
 <ExampleDiv>
 <GitHubSource href="buttongroups/ButtonGroup.svelte">ButtonGroup</GitHubSource>

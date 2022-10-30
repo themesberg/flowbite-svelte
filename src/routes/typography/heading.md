@@ -3,45 +3,15 @@ layout: typographyLayout
 title: Svelte Heading - Flowbite
 breadcrumb_title: Heading
 dir: Typography
+description: The heading component defines six levels of title elements from H1 to H6 that are used as titles and subtitles on a web page based on multiple styles and layouts
 ---
 
-
-<MetaTags
-  title={breadcrumb_title}
-  titleTemplate="%s | Flowbite-Svelte"
-  description={title}
-  facebook={{
-  appId: '453670756870545'
-}}
-openGraph={{
-  type: 'website',
-  url:`https://flowbite-svelte.com/${dir.toLowerCase()}/${breadcrumb_title.toLowerCase().replaceAll(' ', '-')}`,
-    title: `${title}`,
-    description: `${title}`,
-    images: [
-      {
-        url: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
-        width: 1200,
-        height: 630,
-        alt: `${title}`
-      }
-    ],
-    site_name: 'Flowbite-Svelte'
-  }}
-  twitter={{
-    handle: '@shinokada',
-    cardType: 'summary_large_image',
-    title: `${title}`,
-    description: `${title}`,
-    image: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
-    imageAlt: `${title}`
-  }}
-/>
+<MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow } from '../utils'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow , MetaTag } from '../utils'
   import { A, Heading, Breadcrumb, BreadcrumbItem } from '$lib';
-  import { MetaTags } from 'svelte-meta-tags';
+  
   import { props as items1 } from '../props/Heading.json'
   import { props as items2 } from '../props/P.json'
   import { props as items3 } from '../props/A.json'
@@ -60,7 +30,7 @@ openGraph={{
 
 <Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
-<CompoDescription>The heading component defines six levels of title elements from H1 to H6 that are used as titles and subtitles on a web page based on multiple styles and layouts</CompoDescription>
+<CompoDescription>{description}</CompoDescription>
 
 <ExampleDiv>
   <GitHubSource href="typography/Heading.svelte">Heading</GitHubSource>

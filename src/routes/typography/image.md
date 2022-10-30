@@ -3,44 +3,14 @@ layout: typographyLayout
 title: Svelte Images - Flowbite
 breadcrumb_title: Images
 dir: Typography
+description: The image component can be used to embed images inside the web page in articles and sections based on multiple styles, sizes, layouts and hover animations
 ---
 
-
-<MetaTags
-  title={breadcrumb_title}
-  titleTemplate="%s | Flowbite-Svelte"
-  description={title}
-  facebook={{
-  appId: '453670756870545'
-}}
-openGraph={{
-  type: 'website',
-  url:`https://flowbite-svelte.com/${dir.toLowerCase()}/${breadcrumb_title.toLowerCase().replaceAll(' ', '-')}`,
-    title: `${title}`,
-    description: `${title}`,
-    images: [
-      {
-        url: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
-        width: 1200,
-        height: 630,
-        alt: `${title}`
-      }
-    ],
-    site_name: 'Flowbite-Svelte'
-  }}
-  twitter={{
-    handle: '@shinokada',
-    cardType: 'summary_large_image',
-    title: `${title}`,
-    description: `${title}`,
-    image: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
-    imageAlt: `${title}`
-  }}
-/>
+<MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-import { MetaTags } from 'svelte-meta-tags';
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  
   import { A, Heading, Breadcrumb, BreadcrumbItem } from '$lib'
   import { props as items1 } from '../props/Img.json'
   let propHeader = ['Name', 'Type', 'Default']
@@ -56,7 +26,7 @@ import { MetaTags } from 'svelte-meta-tags';
 
 <Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
-<CompoDescription>The image component can be used to embed images inside the web page in articles and sections based on multiple styles, sizes, layouts and hover animations</CompoDescription>
+<CompoDescription>{description}</CompoDescription>
 
 <ExampleDiv>
 <GitHubSource href="buttongroups/Img.svelte">Img</GitHubSource>

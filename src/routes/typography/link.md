@@ -3,44 +3,14 @@ layout: typographyLayout
 title: Svelte Links - Flowbite
 breadcrumb_title: Links
 dir: Typography
+description: The link component can be used to set hyperlinks from one page to another or to an external website when clicking on an inline text item, button, or card
 ---
 
-
-<MetaTags
-  title={breadcrumb_title}
-  titleTemplate="%s | Flowbite-Svelte"
-  description={title}
-  facebook={{
-  appId: '453670756870545'
-}}
-openGraph={{
-  type: 'website',
-  url:`https://flowbite-svelte.com/${dir.toLowerCase()}/${breadcrumb_title.toLowerCase().replaceAll(' ', '-')}`,
-    title: `${title}`,
-    description: `${title}`,
-    images: [
-      {
-        url: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
-        width: 1200,
-        height: 630,
-        alt: `${title}`
-      }
-    ],
-    site_name: 'Flowbite-Svelte'
-  }}
-  twitter={{
-    handle: '@shinokada',
-    cardType: 'summary_large_image',
-    title: `${title}`,
-    description: `${title}`,
-    image: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
-    imageAlt: `${title}`
-  }}
-/>
+<MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-import { MetaTags } from 'svelte-meta-tags';
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  
   import {  A, Heading, Breadcrumb, BreadcrumbItem } from '$lib'
   import { props as items1 } from '../props/A.json'
   let propHeader = ['Name', 'Type', 'Default']
@@ -56,7 +26,7 @@ import { MetaTags } from 'svelte-meta-tags';
 
 <Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
-<CompoDescription>The link component can be used to set hyperlinks from one page to another or to an external website when clicking on an inline text item, button, or card</CompoDescription>
+<CompoDescription>{description}</CompoDescription>
 
 <ExampleDiv>
 <GitHubSource href="buttongroups/A.svelte">A</GitHubSource>

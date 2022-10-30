@@ -3,39 +3,10 @@ layout: utilitiesLayout
 title: Colors 
 breadcrumb_title: Colors
 dir: Utilities
+description: Choose your primary color in tailwind.config.cjs file
 ---
 
-<MetaTags
-  title={breadcrumb_title}
-  titleTemplate="%s | Flowbite-Svelte"
-  description={title}
-  facebook={{
-  appId: '453670756870545'
-}}
-openGraph={{
-  type: 'website',
-  url:`https://flowbite-svelte.com/${dir.toLowerCase()}/${breadcrumb_title.toLowerCase().replaceAll(' ', '-')}`,
-    title: `${title}`,
-    description: `${title}`,
-    images: [
-      {
-        url: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
-        width: 1200,
-        height: 630,
-        alt: `${title}`
-      }
-    ],
-    site_name: 'Flowbite-Svelte'
-  }}
-  twitter={{
-    handle: '@shinokada',
-    cardType: 'summary_large_image',
-    title: `${title}`,
-    description: `${title}`,
-    image: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
-    imageAlt: `${title}`
-  }}
-/>
+<MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
 	import {
@@ -45,8 +16,8 @@ openGraph={{
 		CompoDescription,
 		TableProp,
 		TableDefaultRow
-	} from '../utils';
-	import { MetaTags } from 'svelte-meta-tags';
+	, MetaTag } from '../utils';
+	
 	import { Breadcrumb, BreadcrumbItem, Heading, A, Img, P } from '$lib';
 </script>
 
@@ -58,9 +29,7 @@ openGraph={{
 
 <Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
-<CompoDescription>
-Choose your primary color in tailwind.config.cjs file.
-</CompoDescription>
+<CompoDescription>{description}</CompoDescription>
 
 <Htwo label="Primary color in tailwind.config.cjs" />
 
