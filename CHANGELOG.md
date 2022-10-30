@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.27.13](https://github.com/themesberg/flowbite-svelte/compare/v0.27.12...v0.27.13) (2022-10-30)
+
+
+### Features
+
+* add target and {...$$restProps} to all footer components ([#405](https://github.com/themesberg/flowbite-svelte/issues/405)) ([c045aa7](https://github.com/themesberg/flowbite-svelte/commit/c045aa76dc209471f278eb98f0ec566c61e957f2))
+
 ### [0.27.12](https://github.com/themesberg/flowbite-svelte/compare/v0.27.11...v0.27.12) (2022-10-29)
 
 
