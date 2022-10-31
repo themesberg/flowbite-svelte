@@ -3,11 +3,12 @@ layout: componentLayout
 title: Svelte Dropdown - Flowbite
 breadcrumb_title: Dropdown
 dir: Component
+description: Get started with the dropdown component to show a list of menu items when clicking on the trigger element based on multiple layouts, styles, and placements
 ---
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow} from '../utils'
-import { MetaTags } from 'svelte-meta-tags';
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A  } from '$lib'
   // Props table
   import { props as propItems} from '../props/Dropdown.json'
@@ -32,7 +33,7 @@ import { MetaTags } from 'svelte-meta-tags';
 
 <Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
-<CompoDescription>Get started with the dropdown component to show a list of menu items when clicking on the trigger element based on multiple layouts, styles, and placements</CompoDescription>
+<CompoDescription>{description}</CompoDescription>
 
 <ExampleDiv>
 <GitHubSource href="dropdowns/Dropdown.svelte">Dropdown</GitHubSource>

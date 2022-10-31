@@ -1,5 +1,5 @@
 <script>
-  import { Htwo, ExampleDiv, CompoDescription, TableProp, TableDefaultRow } from '../utils';
+  import { Htwo, ExampleDiv, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils';
   import 'prism-themes/themes/prism-holi-theme.css';
   import { Datepicker, Breadcrumb, BreadcrumbItem, Alert } from '$lib';
   import { props as items } from '../props/Datepicker.json';

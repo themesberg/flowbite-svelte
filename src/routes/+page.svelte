@@ -2,7 +2,8 @@
   import { Button } from '$lib';
   import { goto } from '$app/navigation';
   import * as Block from './blocks/+server';
-  import { MetaTags } from 'svelte-meta-tags';
+  import { MetaTag } from './utils';
+
   const handleClick = () => {
     goto('/pages/getting-started');
   };
@@ -12,7 +13,7 @@
   let default_title = 'Svelte UI Components';
 </script>
 
-<MetaTags
+<MetaTag
   {title}
   {description}
   facebook={{
