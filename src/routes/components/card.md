@@ -1,7 +1,7 @@
 ---
 layout: componentLayout
 title: Svelte Cards - Flowbite
-breadcrumb_title: Cards
+breadcrumb_title: Card
 dir: Components
 description: Get started with a large variety of Tailwind CSS card examples for your web project
 ---
