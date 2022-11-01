@@ -255,6 +255,33 @@ You can use five different modal sizing options starting from extra small to ext
 </Modal>
 ```
 
+<Htwo label="Colors" />
+
+```svelte example
+<script>
+  import { Button, Modal, P } from 'flowbite-svelte'
+  let open = false;
+  let color;
+</script>
+
+<Button on:click={() => {color="primary"; open = true}}>Primary modal</Button>
+<Button on:click={() => {color="red"; open = true}}>Red modal</Button>
+<Button on:click={() => {color="green"; open = true}}>Green modal</Button>
+<Button on:click={() => {color="blue"; open = true}}>Blue modal</Button>
+<Button on:click={() => {color="yellow"; open = true}}>Yellow modal</Button>
+<Modal title="Terms of Service" bind:open {color}>
+  <div class="text-base leading-relaxed">
+    With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+  </div>
+  <svelte:fragment slot='footer'>
+    <Button on:click={() => alert('Handle "success"')} {color}>I accept</Button>
+    <Button color="alternative">Decline</Button>
+  </svelte:fragment>
+</Modal>
+
+```
+
+
 <Htwo label="Scrolling behaviour" />
 
 ```svelte example

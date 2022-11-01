@@ -91,9 +91,11 @@
   $: mainClass = classNames(
     'flex overflow-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full',
     backdropClasses,
-    ...getPlacementClasses(),
-    $$props.class
+    ...getPlacementClasses()
   );
+
+  let frameClass: string;
+  $: frameClass = classNames('relative flex flex-col w-full h-full md:h-auto', $$props.class);
 
   const isScrollable = (e: HTMLElement): boolean[] => [
     e.scrollWidth > e.clientWidth && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowX) >= 0,
@@ -124,19 +126,24 @@
     on:click={autoclose ? onAutoClose : null}>
     <div class="flex p-4 w-full {sizes[size]} h-full md:h-auto max-h-screen">
       <!-- Modal content -->
-      <Frame {...$$restProps} rounded shadow class="relative flex flex-col w-full h-full md:h-auto">
+      <Frame rounded shadow {...$$restProps} class={frameClass}>
         <!-- Modal header -->
         {#if $$slots.header || title}
-          <div class="flex justify-between items-center p-4 rounded-t border-b dark:border-gray-600">
+          <Frame color={$$restProps.color} class="flex justify-between items-center p-4 rounded-t border-b">
             <slot name="header">
-              <h3 class="text-xl font-semibold text-gray-900 dark:text-white p-0">
+              <h3
+                class="text-xl font-semibold {$$restProps.color ? '' : 'text-gray-900 dark:text-white'} p-0">
                 {title}
               </h3>
             </slot>
-            {#if !permanent}<CloseButton name="Close modal" on:click={hide} />{/if}
-          </div>
+            {#if !permanent}<CloseButton name="Close modal" on:click={hide} color={$$restProps.color} />{/if}
+          </Frame>
         {:else if !permanent}
-          <CloseButton name="Close modal" class="absolute top-3 right-2.5" on:click={hide} />
+          <CloseButton
+            name="Close modal"
+            class="absolute top-3 right-2.5"
+            on:click={hide}
+            color={$$restProps.color} />
         {/if}
         <!-- Modal body -->
         <div
@@ -148,10 +155,9 @@
         </div>
         <!-- Modal footer -->
         {#if $$slots.footer}
-          <div
-            class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+          <Frame color={$$restProps.color} class="flex items-center p-6 space-x-2 rounded-b border-t">
             <slot name="footer" />
-          </div>
+          </Frame>
         {/if}
       </Frame>
     </div>
