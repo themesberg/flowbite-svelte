@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.27.14](https://github.com/themesberg/flowbite-svelte/compare/v0.27.13...v0.27.14) (2022-11-01)
+
+
+### Bug Fixes
+
+* card breadcrumb_title ([1ac4820](https://github.com/themesberg/flowbite-svelte/commit/1ac4820ac2553a3c812fced3b9d627e56a9d5ec2))
+* create MetaTag component ([#406](https://github.com/themesberg/flowbite-svelte/issues/406)) ([4d09e4a](https://github.com/themesberg/flowbite-svelte/commit/4d09e4acd14e04a07b3c01408de1be718b4eef1e))
+
 ### [0.27.13](https://github.com/themesberg/flowbite-svelte/compare/v0.27.12...v0.27.13) (2022-10-30)
 
 
