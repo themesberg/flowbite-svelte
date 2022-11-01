@@ -16,6 +16,7 @@
   <Input
     on:blur
     on:change
+    on:input
     on:click
     on:focus
     on:keydown
