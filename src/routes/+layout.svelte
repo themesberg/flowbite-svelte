@@ -145,7 +145,7 @@
           </SidebarDropdownWrapper>
         </SidebarGroup>
         <SidebarGroup class="pt-4">
-          <SidebarDropdownWrapper label="TYPTOGRAPHY" isOpen={activeUrl.includes('typography')}>
+          <SidebarDropdownWrapper label="TYPOGRAPHY" isOpen={activeUrl.includes('typography')}>
             {#each data.typography as { meta, path }}
               <SidebarItem
                 label={meta.breadcrumb_title}
