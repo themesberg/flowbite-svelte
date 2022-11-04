@@ -268,10 +268,6 @@ The carousel component can be used to cycle through a set of elements using cust
 </div>
 ```
 
-<Htwo label="Custom slide controllers" />
-
-<p>You can add custom slide controllers using <a href="/icons/heroicons">Svelte-Heros icons</a>. Change the size using the `iconSize` prop and style with the `iconClass` prop. Please read <a href="/carousels/default#Custom_slide_controllers">Carousel default for more details</a>.</p>
-
 <Htwo label="Props" />
 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
