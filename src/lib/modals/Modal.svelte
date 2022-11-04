@@ -19,7 +19,7 @@
     | 'bottom-left'
     | 'bottom-center'
     | 'bottom-right' = 'center';
-  export let autoclose: boolean = true;
+  export let autoclose: boolean = false;
   export let permanent: boolean = false;
   export let backdropClasses: string = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
 
