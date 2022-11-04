@@ -241,6 +241,30 @@ Example how to use the `multiple` option together with expand all behavior.
 </Accordion>
 ```
 
+<Htwo label="Custom transitions" />
+
+The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#run-time-svelte-transition-slide">slide</A>. Use the `transitionType` and `transitionParams` props to make custom transitions.
+
+```svelte example hideScript
+<script>
+  import {AccordionItem, Accordion} from 'flowbite-svelte'
+</script>
+<Accordion>
+  <AccordionItem>
+    <span slot="header">My Header 1</span>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+  </AccordionItem>
+  <AccordionItem transitionParams="{{ duration: 250 }}">
+    <span slot="header">My Header 2</span>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+  </AccordionItem>
+  <AccordionItem transitionType="fly" transitionParams="{{ y: 100, duration: 500 }}">
+    <span slot="header">My Header 3</span>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+  </AccordionItem>
+</Accordion>
+```
+
 <Htwo label="Props" />
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
