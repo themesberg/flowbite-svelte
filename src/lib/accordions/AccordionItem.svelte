@@ -4,7 +4,8 @@
   import classNames from 'classnames';
   import { getContext, onMount } from 'svelte';
   import { writable } from 'svelte/store';
-  import { slide } from 'svelte/transition';
+  import { fade, blur, fly, slide } from 'svelte/transition';
+  import type { TransitionTypes, TransitionParamTypes } from '../types';
   import type { AccordionCtxType } from './Accordion.svelte';
 
   export let open: boolean = false;
@@ -13,6 +14,23 @@
 
   export let defaultClass: string =
     'flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl';
+
+  export let transitionType: TransitionTypes = 'slide';
+  export let transitionParams: TransitionParamTypes = {};
+
+  // make a custom transition function that returns the desired transition
+  const multiple = (node: HTMLElement, params: any) => {
+    switch (transitionType) {
+      case 'slide':
+        return slide(node, params);
+      case 'blur':
+        return blur(node, params);
+      case 'fly':
+        return fly(node, params);
+      case 'fade':
+        return fade(node, params);
+    }
+  };
 
   const ctx = getContext<AccordionCtxType>('ctx') ?? {};
 
@@ -53,7 +71,7 @@
   </button>
 </h2>
 {#if open}
-  <div transition:slide={{ duration: 500 }}>
+  <div transition:multiple={transitionParams}>
     <div class={ctx.flush ? 'py-5' : 'p-5'}>
       <slot />
     </div>
