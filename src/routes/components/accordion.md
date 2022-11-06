@@ -254,11 +254,11 @@ The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#r
     <span slot="header">My Header 1</span>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
-  <AccordionItem transitionParams="{{ duration: 250 }}">
+  <AccordionItem transitionParams="{{ duration: 2000 }}">
     <span slot="header">My Header 2</span>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
-  <AccordionItem transitionType="fly" transitionParams="{{ y: 100, duration: 500 }}">
+  <AccordionItem transitionType="fade" transitionParams="{{ duration: 1000 }}">
     <span slot="header">My Header 3</span>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
