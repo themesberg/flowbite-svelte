@@ -42,7 +42,7 @@
   export let custom: boolean = false;
   export let inline: boolean = false;
   export let group: number | string = '';
-  export let value: string = '';
+  export let value: number | string = '';
 
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
