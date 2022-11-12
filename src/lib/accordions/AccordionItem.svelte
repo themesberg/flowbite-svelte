@@ -21,14 +21,14 @@
   // make a custom transition function that returns the desired transition
   const multiple = (node: HTMLElement, params: any) => {
     switch (transitionType) {
-      case 'slide':
-        return slide(node, params);
       case 'blur':
         return blur(node, params);
       case 'fly':
         return fly(node, params);
       case 'fade':
         return fade(node, params);
+      default:
+        return slide(node, params);
     }
   };
 
