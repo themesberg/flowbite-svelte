@@ -27,10 +27,10 @@
         return slide(node, params);
       case 'blur':
         return blur(node, params);
-      case 'fly':
-        return fly(node, params);
       case 'fade':
         return fade(node, params);
+      default:
+        return fly(node, params);
     }
   }
 

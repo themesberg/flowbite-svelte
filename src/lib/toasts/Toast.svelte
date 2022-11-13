@@ -22,8 +22,8 @@
     | 'form'
     | 'none' = 'blue';
   export let simple: boolean = false;
-  export let position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none' = 'none'; // default not set
-  export let open = true;
+  export let position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none' = 'none';
+  export let open: boolean = true;
   export let divClass: string = 'w-full max-w-xs p-4';
 
   const positions = {
