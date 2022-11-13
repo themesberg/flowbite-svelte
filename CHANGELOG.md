@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.27.15](https://github.com/themesberg/flowbite-svelte/compare/v0.27.14...v0.27.15) (2022-11-13)
+
+
+### Features
+
+* make AccordionItem transitions customizable ([0b49c35](https://github.com/themesberg/flowbite-svelte/commit/0b49c35a803b4ba3523c4d11845460c1958f9167))
+
+
+### Bug Fixes
+
+* autoclose=false (default) ([#417](https://github.com/themesberg/flowbite-svelte/issues/417)) ([32c1782](https://github.com/themesberg/flowbite-svelte/commit/32c1782ee8c8aae7b2b9c4e1d7bafe3adf1e467a))
+* change from fly to fade and a longer duration for Accordion custom transitions ([3d105f4](https://github.com/themesberg/flowbite-svelte/commit/3d105f4783dec6f3c42677a6aa151aac4e334f72))
+* radio.md - dropdown ([#425](https://github.com/themesberg/flowbite-svelte/issues/425)) ([12d2d03](https://github.com/themesberg/flowbite-svelte/commit/12d2d03098a3647040280b20474d657e8f8dca2b))
+* search on:input ([#408](https://github.com/themesberg/flowbite-svelte/issues/408)) ([4c1e514](https://github.com/themesberg/flowbite-svelte/commit/4c1e514297aaf786535d6411ba4a53e8037e0f90))
+* transition func must return TransitionConfig ([18bffdb](https://github.com/themesberg/flowbite-svelte/commit/18bffdb6829267bb78b33e2f247d707575504ee9))
+
 ### [0.27.14](https://github.com/themesberg/flowbite-svelte/compare/v0.27.13...v0.27.14) (2022-11-01)
 
 
