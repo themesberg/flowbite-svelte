@@ -21,7 +21,8 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"publish": "standard-version && git push --follow-tags origin main && npm run package && cd package && npm publish && cd .."
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.25.0",
