@@ -306,6 +306,25 @@ Use this example of an advanced layout of checkbox elements where the label pare
 </div>
 ```
 
+<Htwo label="Group variable" />
+
+```svelte example
+<script>
+  import { Button, Checkbox } from 'flowbite-svelte'
+
+  let group = [2,3];
+</script>
+
+<div class="flex gap-2">
+  <Checkbox bind:group value={1}>One</Checkbox>
+  <Checkbox bind:group value={2}>Two</Checkbox>
+  <Checkbox bind:group value={3}>Three</Checkbox>
+</div>
+<div class="my-2 border border-gray-200 dark:border-gray-700 rounded-lg p-2 w-44">Group: {group}</div>
+<Button on:click={()=> group.length = 0}>Clear</Button>
+
+```
+
 <Htwo label="Props" />
 
 The component has the following props, type, and default values. See <a href="/pages/types">types
