@@ -133,6 +133,10 @@ export { default as TextPlaceholder } from './skeleton/TextPlaceholder.svelte';
 export { default as VideoPlaceholder } from './skeleton/VideoPlaceholder.svelte';
 export { default as WidgetPlaceholder } from './skeleton/WidgetPlaceholder.svelte';
 
+// Speed dial
+export { default as SpeedDial } from './speed-dial/SpeedDial.svelte';
+export { default as SpeedDialButton } from './speed-dial/SpeedDialButton.svelte';
+
 // Spin
 export { default as Spinner } from './spinners/Spinner.svelte';
 
