@@ -13,6 +13,7 @@
   import Button from '$lib/buttons/Button.svelte';
   import Popper from '$lib/utils/Popper.svelte';
   import { setContext } from 'svelte';
+  import generateId from '$lib/utils/generateId';
 
   export let defaultClass: string = 'fixed right-6 bottom-6';
   export let placement: Placement = 'top';
@@ -20,6 +21,7 @@
   export let tooltip: Placement | 'none' = 'left';
   export let trigger: 'hover' | 'click' = 'hover';
   export let textOutside: boolean = false;
+  export let id: string = generateId();
 
   setContext<SpeedCtxType>('speed-dial', { pill, tooltip, textOutside });
 
@@ -34,13 +36,7 @@
 </script>
 
 <div class={divClass}>
-  <Button
-    {pill}
-    name="Open actions menu"
-    aria-controls="speed-dial-menu-default"
-    aria-expanded="false"
-    color="blue"
-    class="!p-3">
+  <Button {pill} name="Open actions menu" aria-controls={id} aria-expanded="false" color="blue" class="!p-3">
     <slot name="icon">
       <svg
         aria-hidden="true"
@@ -57,7 +53,7 @@
     </slot>
     <span class="sr-only">Open actions menu</span>
   </Button>
-  <Popper {trigger} arrow={false} color="none" activeContent {placement} class={poperClass}>
+  <Popper {id} {trigger} arrow={false} color="none" activeContent {placement} class={poperClass}>
     <slot />
   </Popper>
 </div>
