@@ -79,9 +79,14 @@
 	};
 
 	// you need to this to avoid 2-way binding
-	function setType(node) {
-		node.type = type;
-	}
+	function setType(node: HTMLInputElement, _type: string) {
+		node.type = _type;
+		return {
+			update(_type: string) {
+				node.type = _type;
+			}
+		};
+	};
 </script>
 
 <div class={divClasses[style]}>
@@ -100,7 +105,7 @@
 		on:mouseleave
 		on:mouseover
 		on:paste
-		use:setType
+		use:setType={type}
 		placeholder=" "
 		class={classNames(
 			inputClasses[style],

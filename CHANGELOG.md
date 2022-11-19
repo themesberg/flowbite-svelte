@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.27.17](https://github.com/themesberg/flowbite-svelte/compare/v0.27.16...v0.27.17) (2022-11-18)
+
+
+### Features
+
+* add SpeedDial component ([a959c5e](https://github.com/themesberg/flowbite-svelte/commit/a959c5edd96e56145453f0558f19be7f7a7fa8b5))
+
+
+### Bug Fixes
+
+* checkbox group ([#427](https://github.com/themesberg/flowbite-svelte/issues/427)) ([58c6660](https://github.com/themesberg/flowbite-svelte/commit/58c66600abcb943c730dbd64e6e4ca920bc06f8e))
+
 ### [0.27.16](https://github.com/themesberg/flowbite-svelte/compare/v0.27.15...v0.27.16) (2022-11-14)
 
 ### [0.27.15](https://github.com/themesberg/flowbite-svelte/compare/v0.27.14...v0.27.15) (2022-11-13)

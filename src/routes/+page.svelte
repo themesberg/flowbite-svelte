@@ -112,6 +112,7 @@
   <Block.SelectBlock />
   <Block.SidebarBlock />
   <Block.SkeletonBlock />
+  <Block.SpeedDial />
   <Block.SpinnerBlock />
   <Block.TabBlock />
   <Block.TableBlock />
