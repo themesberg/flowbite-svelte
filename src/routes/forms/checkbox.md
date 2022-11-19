@@ -92,7 +92,7 @@ If you need separate control over the label and the checkbox you can use the ver
       <TableBodyCell><Label for="checkbox2">Disabled checkbox</Label></TableBodyCell>
     </TableBodyRow>
     <TableBodyRow class="divide-x dark:divide-gray-700">
-      <TableBodyCell><Checkbox id="checkbox1" /></TableBodyCell>
+      <TableBodyCell><Checkbox id="checkbox1" checked/></TableBodyCell>
       <TableBodyCell><Checkbox id="checkbox2" disabled/></TableBodyCell>
     </TableBodyRow>
   </TableBody>

@@ -18,7 +18,7 @@
 
   // react on external group changes
   function init(_: HTMLElement, _group: string[]) {
-    checked = _group.includes(value);
+    checked = checked || _group.includes(value);
     return {
       update(_group: string[]) {
         checked = _group.includes(value);
