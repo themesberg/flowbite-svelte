@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.28.0](https://github.com/themesberg/flowbite-svelte/compare/v0.27.17...v0.28.0) (2022-11-20)
+
+
+### Features
+
+* enhance DarkMode ([#437](https://github.com/themesberg/flowbite-svelte/issues/437)) ([9afd3e1](https://github.com/themesberg/flowbite-svelte/commit/9afd3e11bec5bc4416537d7d371f970dd414a394))
+
+
+### Bug Fixes
+
+* checkbox initial checked ([#434](https://github.com/themesberg/flowbite-svelte/issues/434)) ([43663cf](https://github.com/themesberg/flowbite-svelte/commit/43663cf165f249c7e3fa7e7dc8ccfaccc7e467a6))
+* floatinginput type changes ([#436](https://github.com/themesberg/flowbite-svelte/issues/436)) ([5af9ecf](https://github.com/themesberg/flowbite-svelte/commit/5af9ecf598800e4cbcf27e413ba0b63d82926219))
+* og:image and twitter:image to replace spaces with - ([#441](https://github.com/themesberg/flowbite-svelte/issues/441)) ([25ad6d0](https://github.com/themesberg/flowbite-svelte/commit/25ad6d09816e1df3a5a8ddd9a901186d2a36f4ee))
+
 ### [0.27.17](https://github.com/themesberg/flowbite-svelte/compare/v0.27.16...v0.27.17) (2022-11-18)
 
 
