@@ -4,9 +4,8 @@
   export let description: string = '';
   export let title: string = '';
   // title = title.replaceAll(' ', '-');
-  let imgsrc = `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title.replaceAll(
-    ' ',
-    '-'
+  let imgsrc = `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${encodeURIComponent(
+    breadcrumb_title
   )}`;
   export let dir: string = '';
   let dirstring = dir.toLowerCase();
