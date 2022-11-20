@@ -9,18 +9,20 @@
   export let custom: boolean = false;
   export let inline: boolean = false;
 
-  export let group: string[] = [];
-  export let value: string = '';
-  export let checked: boolean = false;
+  export let group: (string | number)[] = [];
+  export let value: string | number = '';
+  export let checked: boolean | undefined = undefined;
 
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
 
   // react on external group changes
-  function init(_: HTMLElement, _group: string[]) {
-    checked = checked || _group.includes(value);
+  function init(_: HTMLElement, _group: (string | number)[]) {
+    if (checked === undefined) checked = _group.includes(value);
+    onChange();
+
     return {
-      update(_group: string[]) {
+      update(_group: (string | number)[]) {
         checked = _group.includes(value);
       }
     };

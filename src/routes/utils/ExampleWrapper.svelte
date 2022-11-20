@@ -4,13 +4,16 @@
     'rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6';
 
   // the source of the example, if you want it
-  //   export let src;
+  export let src: any = undefined;
 
   // all meta tags of the code block
-  export let meta;
+  export let meta: any = undefined;
+
+  // suppress vite-plugin-svelte warning about unused props
+  $: src, meta;
 
   function hack(node: HTMLElement) {
-    node.parentElement.classList.add('w-full');
+    node.parentElement?.classList.add('w-full');
   }
 </script>
 

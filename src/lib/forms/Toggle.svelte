@@ -4,9 +4,9 @@
   import Checkbox from './Checkbox.svelte';
 
   export let size: 'small' | 'default' | 'large' = 'default';
-  export let group: string[] = [];
-  export let value: string = '';
-  export let checked: boolean = false;
+  export let group: (string | number)[] = [];
+  export let value: string | number = '';
+  export let checked: boolean | undefined = undefined;
 
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
