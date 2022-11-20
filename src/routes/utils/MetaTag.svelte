@@ -3,6 +3,11 @@
   export let breadcrumb_title: string = '';
   export let description: string = '';
   export let title: string = '';
+  // title = title.replaceAll(' ', '-');
+  let imgsrc = `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title.replaceAll(
+    ' ',
+    '-'
+  )}`;
   export let dir: string = '';
   let dirstring = dir.toLowerCase();
   let breadcrumb = breadcrumb_title.toLowerCase().replaceAll(' ', '-');
@@ -22,7 +27,7 @@
     description: `${description}`,
     images: [
       {
-        url: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
+        url: imgsrc,
         width: 1200,
         height: 630,
         alt: `${title}`
@@ -35,6 +40,6 @@
     cardType: 'summary_large_image',
     title: `${title}`,
     description: `${description}`,
-    image: `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${breadcrumb_title}`,
+    image: imgsrc,
     imageAlt: `${title}`
   }} />
