@@ -21,7 +21,9 @@
     yellow: 'peer-focus:ring-yellow-300 dark:peer-focus:ring-yellow-800 peer-checked:bg-yellow-400',
     teal: 'peer-focus:ring-teal-300 dark:peer-focus:ring-teal-800 peer-checked:bg-teal-600',
     orange: 'peer-focus:ring-orange-300 dark:peer-focus:ring-orange-800 peer-checked:bg-orange-500',
-    blue: 'peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 peer-checked:bg-blue-600'
+    blue: 'peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 peer-checked:bg-blue-600',
+    black: 'peer-focus:ring-gray-400 dark:peer-focus:ring-gray-800 peer-checked:bg-black',
+    dark: 'peer-focus:ring-gray-800 dark:peer-focus:ring-gray-700 dark:peer-checked:bg-gray-800 peer-checked:bg-gray-800'
   };
 
   const sizes = {

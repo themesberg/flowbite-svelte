@@ -10,7 +10,7 @@ description: Use the toggle component to switch between a binary state of true o
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  
+
   import { onMount } from 'svelte';
   import { Toggle, Breadcrumb, BreadcrumbItem, Badge, Heading, A } from '$lib'
   import { props as items } from '../props/Toggle.json'
@@ -60,7 +60,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 <Htwo label="Colors" />
 
-```svelte example class="flex justify-between" hideScript
+```svelte example class="flex flex-col gap-2" hideScript
 <script>
   import { Toggle } from 'flowbite-svelte'
 </script>
@@ -71,6 +71,8 @@ Get started with the default toggle component example as a checkbox element to r
 <Toggle color="yellow" checked>Yellow</Toggle>
 <Toggle color="teal" checked>Teal</Toggle>
 <Toggle color="orange" checked>Orange</Toggle>
+<Toggle color="black" checked>Black</Toggle>
+<Toggle color="dark" checked>Dark</Toggle>
 ```
 
 <Htwo label="Sizes" />
