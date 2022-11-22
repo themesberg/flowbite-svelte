@@ -2,7 +2,7 @@
 	"name": "flowbite-svelte",
 	"version": "0.28.0",
 	"description": "Flowbite components for Svelte",
-	"main": "index.js",
+	"main": "package/index.js",
 	"author": {
 		"name": "Shinichi Okada",
 		"email": "connect@codewithshin.com",
@@ -17,12 +17,13 @@
 		"build": "vite build",
 		"package": "svelte-package",
 		"preview": "vite preview",
+		"prepare": "pnpm run package",
 		"test": "playwright test",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
-		"publish": "standard-version && git push --follow-tags origin main && npm run package && cd package && npm publish && cd .."
+		"publish": "standard-version && git push --follow-tags origin main && pnpm run package && cd package && pnpm publish && cd .."
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.27.1",
