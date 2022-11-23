@@ -186,6 +186,7 @@
               <SidebarItem
                 label={name}
                 {href}
+                {rel}
                 {spanClass}
                 on:click={toggleSide}
                 active={activeUrl === `${href}`} />
