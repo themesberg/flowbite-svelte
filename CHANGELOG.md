@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.28.1](https://github.com/themesberg/flowbite-svelte/compare/v0.28.0...v0.28.1) (2022-11-23)
+
+
+### Bug Fixes
+
+* toggle initial checked ([#442](https://github.com/themesberg/flowbite-svelte/issues/442)) ([7b0b0b0](https://github.com/themesberg/flowbite-svelte/commit/7b0b0b0cfd0b40e6688af0a2a748453b16a4fd5a))
+* use encodeURIComponent for MetaTag component to encode spaces ([671a865](https://github.com/themesberg/flowbite-svelte/commit/671a8656eb7f5fff6f8c84ea6146f78b5fb8f0b0))
+
 ## [0.28.0](https://github.com/themesberg/flowbite-svelte/compare/v0.27.17...v0.28.0) (2022-11-20)
 
 
