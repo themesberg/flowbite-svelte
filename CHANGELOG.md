@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.28.2](https://github.com/themesberg/flowbite-svelte/compare/v0.28.1...v0.28.2) (2022-11-28)
+
+
+### Bug Fixes
+
+* add rel external to sidebar menu datepicker ([d9693e8](https://github.com/themesberg/flowbite-svelte/commit/d9693e88528e27b408f4380f40e4a18c79aa169c))
+* double scrollbar in docs ([#447](https://github.com/themesberg/flowbite-svelte/issues/447)) ([75efab3](https://github.com/themesberg/flowbite-svelte/commit/75efab37b6057469a35ec592c659438c3cf8047c))
+* show the top of page after navigation ([b3be37b](https://github.com/themesberg/flowbite-svelte/commit/b3be37b761a8a656413e1b34da73c6a251ab4010))
+
 ### [0.28.1](https://github.com/themesberg/flowbite-svelte/compare/v0.28.0...v0.28.1) (2022-11-23)
 
 
