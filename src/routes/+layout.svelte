@@ -1,51 +1,41 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+  import { sineIn } from 'svelte/easing';
+  import { afterNavigate } from '$app/navigation';
   import { page } from '$app/stores';
-  import { experimental } from './moduleItems/+server.js';
-  import Toc from './Toc/+page.svelte';
-  import '../app.css';
+  import type { PageData } from './$types';
   import {
+    CloseButton,
     DarkMode,
+    Drawer,
     Footer,
     FooterBrand,
     FooterCopyright,
     FooterIcon,
     FooterLink,
     FooterLinkGroup,
-    Sidebar,
-    SidebarGroup,
-    SidebarItem,
-    SidebarWrapper,
-    SidebarDropdownWrapper,
     Navbar,
     NavBrand,
+    NavHamburger,
     NavLi,
     NavUl,
-    NavHamburger,
-    Drawer,
-    CloseButton
+    Sidebar,
+    SidebarDropdownWrapper,
+    SidebarGroup,
+    SidebarItem,
+    SidebarWrapper
   } from '$lib';
-  import { sineIn } from 'svelte/easing';
-  let transitionParams = {
-    x: -320,
-    duration: 200,
-    easing: sineIn
-  };
+  import { experimental } from './moduleItems/+server.js';
+  import Toc from './Toc/+page.svelte';
+  import '../app.css';
 
-  import type { PageData } from './$types';
-  import { onMount } from 'svelte';
   export let data: PageData;
-  let breakPoint: number = 1024;
+
   let width: number;
-  let backdrop: boolean = false;
-  let activateClickOutside = true;
+  let breakPoint: number = 1024;
   let drawerHidden: boolean = false;
-  $: if (width >= breakPoint) {
-    drawerHidden = false;
-    activateClickOutside = false;
-  } else {
-    drawerHidden = true;
-    activateClickOutside = true;
-  }
+  let activateClickOutside: boolean = true;
+
   onMount(() => {
     if (width >= breakPoint) {
       drawerHidden = false;
@@ -55,15 +45,34 @@
       activateClickOutside = true;
     }
   });
+
+  $: if (width >= breakPoint) {
+    drawerHidden = false;
+    activateClickOutside = false;
+  } else {
+    drawerHidden = true;
+    activateClickOutside = true;
+  }
+
+  const toggleDrawer = () => {
+    drawerHidden = false;
+  };
+
   const toggleSide = () => {
     if (width < breakPoint) {
       drawerHidden = !drawerHidden;
     }
   };
-  const toggleDrawer = () => {
-    drawerHidden = false;
-  };
+
+  let main: HTMLElement;
+
+  afterNavigate(() => {
+    // this fixes https://github.com/themesberg/flowbite-svelte/issues/364
+    main.scrollIntoView();
+  });
+
   $: activeUrl = $page.url.pathname;
+
   $: containPath = () => {
     // add your logic here
     false;
@@ -74,6 +83,12 @@
   let darkModeClass = 'text-lg';
   let divClass = 'w-full md:block md:w-auto pr-8 order-1 md:order-none';
   let ulClass = 'flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-lg md:font-medium';
+  let backdrop: boolean = false;
+  let transitionParams = {
+    x: -320,
+    duration: 200,
+    easing: sineIn
+  };
 </script>
 
 <svelte:window bind:innerWidth={width} />
@@ -82,7 +97,7 @@
   <Navbar navClass="px-2 py-0.5 fixed w-full mx-auto z-20 top-0 left-0 border-b" let:hidden let:toggle>
     <NavHamburger on:click={toggleDrawer} btnClass="ml-3 lg:hidden" />
     <NavBrand href="/">
-      <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite-Svelte Logo" />
+      <img src={logo} class="mr-3 h-6 sm:h-9" alt="Flowbite-Svelte Logo" />
       <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
         Flowbite-Svelte
       </span>
@@ -198,7 +213,7 @@
   </Drawer>
 
   <div class="flex px-4 mx-auto w-full">
-    <main class="lg:ml-72 w-full mx-auto">
+    <main bind:this={main} class="lg:ml-72 w-full mx-auto">
       <slot />
     </main>
     <Toc />
