@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.28.3](https://github.com/themesberg/flowbite-svelte/compare/v0.28.2...v0.28.3) (2022-11-28)
+
+
+### Features
+
+* make tr and td clickable ([#452](https://github.com/themesberg/flowbite-svelte/issues/452)) ([3bc7f9e](https://github.com/themesberg/flowbite-svelte/commit/3bc7f9e227e3bfe70b0c184eae132abafd071760))
+
 ### [0.28.2](https://github.com/themesberg/flowbite-svelte/compare/v0.28.1...v0.28.2) (2022-11-28)
 
 
