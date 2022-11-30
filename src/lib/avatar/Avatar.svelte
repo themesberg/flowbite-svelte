@@ -6,7 +6,7 @@
   import type { DotType } from '../types';
 
   export let src: string = '';
-  export let href: string = '#';
+  export let href: string | undefined = undefined;
 
   export let rounded: boolean = false;
   export let border: boolean = false;
