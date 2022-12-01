@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.28.4](https://github.com/themesberg/flowbite-svelte/compare/v0.28.3...v0.28.4) (2022-12-01)
+
+
+### Bug Fixes
+
+* avatar default href ([#462](https://github.com/themesberg/flowbite-svelte/issues/462)) ([1ad8999](https://github.com/themesberg/flowbite-svelte/commit/1ad899993ae3cf1f18e975766549718dc65ed50b))
+
 ### [0.28.3](https://github.com/themesberg/flowbite-svelte/compare/v0.28.2...v0.28.3) (2022-11-28)
 
 
