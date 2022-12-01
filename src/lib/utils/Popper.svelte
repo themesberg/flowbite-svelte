@@ -143,6 +143,6 @@
     {...$$restProps}
     class={classNames('z-10 outline-none', $$props.class)}>
     <slot />
-    {#if arrow}<div data-popper-arrow class="tooltip-arrow border dark:border-gray-100" />{/if}
+    {#if arrow}<div data-popper-arrow class="tooltip-arrow" />{/if}
   </Frame>
 {/if}
