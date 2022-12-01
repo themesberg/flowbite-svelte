@@ -94,7 +94,8 @@
 
   const outlineClasses = {
     blue: 'text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-blue-300 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800',
-    light: "text-gray-500 hover:text-gray-900 bg-white border border-gray-200 dark:border-gray-600 dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-400",
+    light:
+      'text-gray-500 hover:text-gray-900 bg-white border border-gray-200 dark:border-gray-600 dark:hover:text-white dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-400',
     dark: 'text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:bg-gray-900 focus:text-white focus:ring-gray-300 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800',
     green:
       'text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-green-300 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800',
@@ -126,14 +127,14 @@
 
   const hasBorder = () => outline || color === 'alternative' || color === 'light';
 
-  let buttonClass;
+  let buttonClass: string;
   $: buttonClass = btnClass
     ? btnClass
     : classNames(
         'text-center font-medium',
         group ? 'focus:ring-2' : 'focus:ring-4',
         group && 'focus:z-10',
-        !group || color === 'alternative' || (outline && color === 'dark') || 'focus:outline-none',
+        group || 'focus:outline-none',
         outline && gradient ? 'p-0.5' : 'inline-flex items-center justify-center ' + sizeClasses[size],
         gradient ? gradientClasses[color] : outline ? outlineClasses[color] : colorClasses[color],
         color === 'alternative' &&
@@ -150,7 +151,7 @@
         $$props.class
       );
 
-  let gradientOutlineClass;
+  let gradientOutlineClass: string;
   $: gradientOutlineClass = classNames(
     'inline-flex items-center justify-center',
     sizeClasses[size],
