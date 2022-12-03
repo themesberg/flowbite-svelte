@@ -122,7 +122,7 @@
     };
   });
   function optional(pred: boolean, func: (ev: Event) => void) {
-    return pred && func;
+    return (pred && func) || null;
   }
 </script>
 
