@@ -19,12 +19,12 @@
     'focus:z-40 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:focus:ring-gray-500 dark:focus:text-white';
   let hoverClass = 'hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-600 dark:hover:text-white';
 
-  let state: string;
+  let state: 'disabled' | 'current' | 'normal';
   $: state = disabled ? 'disabled' : current ? 'current' : 'normal';
 
   let itemClass: string;
   $: itemClass = classNames(
-    'py-2 px-0 sm:px-4 w-full text-sm font-medium',
+    'py-2 px-4 w-full text-sm font-medium',
     'first:rounded-t-lg last:rounded-b-lg',
     states[state],
     active && state === 'disabled' && 'cursor-not-allowed',
