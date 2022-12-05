@@ -14,7 +14,7 @@
 
 <MetaTags
   title={breadcrumb_title}
-  titleTemplate="%s | Flowbite-Svelte"
+  titleTemplate="%s Flowbite-Svelte"
   {description}
   facebook={{
     appId: '453670756870545'
