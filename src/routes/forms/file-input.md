@@ -48,13 +48,14 @@ The file input component can be used to upload one or more files from the device
 ```svelte example
 <script>
   import { Fileupload, Label } from 'flowbite-svelte'
-  let fileuploadprops = {
-    id : 'user_avatar'
-  }
+  let value;
 </script>
 
-<Label class="pb-2">Upload file</Label>
-<Fileupload {...fileuploadprops} />
+<Label class="space-y-2 mb-2">
+  <span>Upload file</span>
+  <Fileupload bind:value/>
+</Label>
+<Label>File: {value }</Label>
 ```
 
 <Htwo label="Helper text" />
@@ -62,25 +63,34 @@ The file input component can be used to upload one or more files from the device
 ```svelte example
 <script>
   import { Fileupload, Label, Helper } from 'flowbite-svelte'
-  let fileuploadprops = {
-    id : 'user_avatar'
-  }
 </script>
 
-<Label class="pb-2">Upload file</Label>
-<Fileupload {...fileuploadprops} />
+<Label for="with_helper" class="pb-2">Upload file</Label>
+<Fileupload id="with_helper" class="mb-2" />
 <Helper>SVG, PNG, JPG or GIF (MAX. 800x400px).</Helper>
 ```
 
+
 <Htwo label='Multiple files' />
+
+When the user selected multiple files, the `value` represents the first file in the list of files they selected. The other files can be identified using the `files` property.
 
 ```svelte example
 <script>
-  import { Fileupload, Label } from 'flowbite-svelte'
+  import { Fileupload, Label, Listgroup, ListgroupItem } from 'flowbite-svelte'
+  let files;  // FileList type
 </script>
 
 <Label class="pb-2" for='multiple_files' >Upload multiple files</Label>
-<Fileupload id='multiple_files' multiple/>
+<Fileupload id='multiple_files' multiple bind:files />
+<Listgroup items={files} let:item class="mt-2">
+  {#if item}
+    {item.name} 
+  {:else}
+    <ListgroupItem>No files</ListgroupItem>
+  {/if}
+</Listgroup>
+
 ```
 
 <Htwo label='Sizes' />
@@ -91,10 +101,10 @@ The file input component can be used to upload one or more files from the device
 </script>
 
 <Label class="pb-2" for='small_size' >Small file input</Label>
-<Fileupload id="small_size" size='xs' />
-<Label class="pb-2" for='default_size' >Default size</Label>
+<Fileupload id="small_size" size='sm' />
+<Label class="py-2" for='default_size' >Default size</Label>
 <Fileupload id="default_size" />
-<Label class="pb-2" for='larg_size' >Large file input</Label>
+<Label class="py-2" for='larg_size' >Large file input</Label>
 <Fileupload id="larg_size" size='lg' />
 ```
 
