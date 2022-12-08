@@ -13,7 +13,7 @@ export { default as Badge } from './badges/Badge.svelte';
 
 // Breadcrumbs
 export { default as Breadcrumb } from './breadcrumbs/Breadcrumb.svelte';
-export { default as BreadcrumbItem } from './breadcrumbs/BreadcrumbItem.svelte'
+export { default as BreadcrumbItem } from './breadcrumbs/BreadcrumbItem.svelte';
 
 // Buttons
 export { default as Button } from './buttons/Button.svelte';
@@ -38,18 +38,18 @@ export { default as Datepicker } from './datepicker/Datepicker.svelte';
 export { default as Drawer } from './drawer/Drawer.svelte';
 
 // Dropdown
-export { default as Dropdown } from './dropdowns/Dropdown.svelte'
+export { default as Dropdown } from './dropdowns/Dropdown.svelte';
 export { default as DropdownDivider } from './dropdowns/DropdownDivider.svelte';
 export { default as DropdownHeader } from './dropdowns/DropdownHeader.svelte';
 export { default as DropdownItem } from './dropdowns/DropdownItem.svelte';
 
 // Footers
-export { default as Footer } from './footer/Footer.svelte'
-export { default as FooterBrand } from './footer/FooterBrand.svelte'
-export { default as FooterCopyright } from './footer/FooterCopyright.svelte'
-export { default as FooterIcon } from './footer/FooterIcon.svelte'
-export { default as FooterLink } from './footer/FooterLink.svelte'
-export { default as FooterLinkGroup } from './footer/FooterLinkGroup.svelte'
+export { default as Footer } from './footer/Footer.svelte';
+export { default as FooterBrand } from './footer/FooterBrand.svelte';
+export { default as FooterCopyright } from './footer/FooterCopyright.svelte';
+export { default as FooterIcon } from './footer/FooterIcon.svelte';
+export { default as FooterLink } from './footer/FooterLink.svelte';
+export { default as FooterLinkGroup } from './footer/FooterLinkGroup.svelte';
 
 // Forms
 export { default as Checkbox } from './forms/Checkbox.svelte';
@@ -57,7 +57,6 @@ export { default as Dropzone } from './forms/Dropzone.svelte';
 export { default as Fileupload } from './forms/Fileupload.svelte';
 export { default as FloatingLabelInput } from './forms/FloatingLabelInput.svelte';
 export { default as Helper } from './forms/Helper.svelte';
-export { default as Iconinput } from './forms/Iconinput.svelte';
 export { default as Input } from './forms/Input.svelte';
 export { default as InputAddon } from './forms/InputAddon.svelte';
 export { default as Label } from './forms/Label.svelte';
@@ -101,7 +100,7 @@ export { default as Pagination } from './paginations/Pagination.svelte';
 export { default as PaginationItem } from './paginations/PaginationItem.svelte';
 
 // Popover
-export { default as Popover } from './popover/Popover.svelte'
+export { default as Popover } from './popover/Popover.svelte';
 
 // Progressbar
 export { default as Progressbar } from './progressbars/Progressbar.svelte';
@@ -111,7 +110,7 @@ export { default as Rating } from './ratings/Rating.svelte';
 export { default as AdvancedRating } from './ratings/AdvancedRating.svelte';
 export { default as ScoreRating } from './ratings/ScoreRating.svelte';
 export { default as RatingComment } from './ratings/RatingComment.svelte';
-export { default as Review } from './ratings/Review.svelte'
+export { default as Review } from './ratings/Review.svelte';
 
 // Sidebar
 export { default as Sidebar } from './sidebars/Sidebar.svelte';
@@ -142,16 +141,16 @@ export { default as Spinner } from './spinners/Spinner.svelte';
 
 // Tables
 export { default as Table } from './tables/Table.svelte';
-export { default as TableBody } from './tables/TableBody.svelte'
-export { default as TableBodyCell } from './tables/TableBodyCell.svelte'
-export { default as TableBodyRow } from './tables/TableBodyRow.svelte'
-export { default as TableHead } from './tables/TableHead.svelte'
-export { default as TableHeadCell } from './tables/TableHeadCell.svelte'
+export { default as TableBody } from './tables/TableBody.svelte';
+export { default as TableBodyCell } from './tables/TableBodyCell.svelte';
+export { default as TableBodyRow } from './tables/TableBodyRow.svelte';
+export { default as TableHead } from './tables/TableHead.svelte';
+export { default as TableHeadCell } from './tables/TableHeadCell.svelte';
 export { default as TableSearch } from './tables/TableSearch.svelte';
 
 // Tabs
-export { default as TabItem } from './tabs/TabItem.svelte'
-export { default as Tabs } from './tabs/Tabs.svelte'
+export { default as TabItem } from './tabs/TabItem.svelte';
+export { default as Tabs } from './tabs/Tabs.svelte';
 
 // Timeline
 export { default as Group } from './timelines/Group.svelte';
@@ -180,15 +179,15 @@ export { default as A } from './typography/A.svelte';
 export { default as Blockquote } from './typography/Blockquote.svelte';
 export { default as DescriptionList } from './typography/DescriptionList.svelte';
 export { default as Heading } from './typography/Heading.svelte';
-export { default as Hr } from './typography/Hr.svelte'
-export { default as Img } from './typography/Img.svelte'
-export { default as Layout } from './typography/Layout.svelte'
+export { default as Hr } from './typography/Hr.svelte';
+export { default as Img } from './typography/Img.svelte';
+export { default as Layout } from './typography/Layout.svelte';
 export { default as Li } from './typography/Li.svelte';
 export { default as Mark } from './typography/Mark.svelte';
 export { default as List } from './typography/List.svelte';
 export { default as P } from './typography/P.svelte';
-export { default as Secondary } from './typography/Secondary.svelte'
-export { default as Span } from './typography/Span.svelte'
+export { default as Secondary } from './typography/Secondary.svelte';
+export { default as Span } from './typography/Span.svelte';
 
 // utils
 export { default as CloseButton } from './utils/CloseButton.svelte';
@@ -201,4 +200,4 @@ export { default as InformationCircle } from './utils/InformationCircle.svelte';
 export { default as UserCircle } from './utils/UserCircle.svelte';
 
 // video
-export { default as Video } from './video/Video.svelte'
+export { default as Video } from './video/Video.svelte';
