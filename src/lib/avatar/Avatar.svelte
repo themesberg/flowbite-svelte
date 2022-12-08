@@ -47,7 +47,7 @@
       <slot />
     </svelte:element>
   {:else}
-    <svelte:element this={href ? 'a' : 'div'} {...$$restProps} class={avatarClass}>
+    <svelte:element this={href ? 'a' : 'div'} {href} {...$$restProps} class={avatarClass}>
       <AvatarPlaceholder {rounded} />
     </svelte:element>
   {/if}
