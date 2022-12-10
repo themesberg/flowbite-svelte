@@ -21,6 +21,7 @@
 		"test:unit": "vitest",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
+		"package": "svelte-package",
 		"gen:props": "node ./node_modules/createprops/createprops.js",
 		"publish": "standard-version && git push --follow-tags origin main && npm run package && cd package && npm publish && cd .."
 	},
