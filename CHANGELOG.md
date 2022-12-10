@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.28.5](https://github.com/themesberg/flowbite-svelte/compare/v0.28.4...v0.28.5) (2022-12-10)
+
+
+### Bug Fixes
+
+* add eventhandler to label (mouse, drag, etc.) ([#433](https://github.com/themesberg/flowbite-svelte/issues/433)) ([6e4d9d1](https://github.com/themesberg/flowbite-svelte/commit/6e4d9d158c27ebb13f9a964d4bbfea17bba068cc))
+* avatar placholder missing href ([#475](https://github.com/themesberg/flowbite-svelte/issues/475)) ([6ad52e6](https://github.com/themesberg/flowbite-svelte/commit/6ad52e6c121599758a5c6bf4079bdffcd3199421))
+* bind:files for fileinput ([#474](https://github.com/themesberg/flowbite-svelte/issues/474)) ([585ba09](https://github.com/themesberg/flowbite-svelte/commit/585ba09f210bcb6b11a43ef005b742e999890dbf))
+* list group item padding ([#469](https://github.com/themesberg/flowbite-svelte/issues/469)) ([d945978](https://github.com/themesberg/flowbite-svelte/commit/d945978f38e82953c1ddd703b2fd7c9086768ffa))
+* removal of iconinput ([#476](https://github.com/themesberg/flowbite-svelte/issues/476)) ([2da0912](https://github.com/themesberg/flowbite-svelte/commit/2da0912b15199d6dbbcedae0db672b0a7d61a9fd))
+* remove a pipe from MetaTags titleTemplate ([6ad56c0](https://github.com/themesberg/flowbite-svelte/commit/6ad56c0a4c918b7322f102c6043ab34e549f026f))
+* sveltekit, vite, and other dependencies update ([#482](https://github.com/themesberg/flowbite-svelte/issues/482)) ([231e4da](https://github.com/themesberg/flowbite-svelte/commit/231e4daddc7095446a42f82f35f224ca9b9e209f))
+* ts errors ([#464](https://github.com/themesberg/flowbite-svelte/issues/464)) ([ca723d4](https://github.com/themesberg/flowbite-svelte/commit/ca723d489e1861f6f702da90f9645139979261df))
+
 ### [0.28.4](https://github.com/themesberg/flowbite-svelte/compare/v0.28.3...v0.28.4) (2022-12-01)
 
 
