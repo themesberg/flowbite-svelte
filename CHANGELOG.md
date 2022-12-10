@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.28.10](https://github.com/themesberg/flowbite-svelte/compare/v0.28.9...v0.28.10) (2022-12-10)
+
+
+### Bug Fixes
+
+* package.json scripts update ([b3467ba](https://github.com/themesberg/flowbite-svelte/commit/b3467ba3f16c46f4801642dbf15cf07ad7b9618d))
+* vite.config.ts update ([72f8a25](https://github.com/themesberg/flowbite-svelte/commit/72f8a251221ce78a4452c8ead17ce2abb35cbb00))
+
 ### [0.28.9](https://github.com/themesberg/flowbite-svelte/compare/v0.28.8...v0.28.9) (2022-12-10)
 
 
