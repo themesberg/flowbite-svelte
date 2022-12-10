@@ -23,7 +23,7 @@
 		"format": "prettier --plugin-search-dir . --write .",
 		"package": "svelte-package",
 		"gen:props": "node ./node_modules/createprops/createprops.js",
-		"publish": "standard-version && git push --follow-tags origin main && npm run package && npm publish ./package"
+		"package:publish": "standard-version && git push --follow-tags origin main && npm run package && npm publish ./package"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
