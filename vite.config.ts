@@ -3,8 +3,12 @@ import type { UserConfig } from 'vite';
 import path from 'path';
 import examples from 'mdsvexamples/vite';
 
-const config: UserConfig = {
+/** @type {import('vite').UserConfig} */
+const config = {
 	plugins: [sveltekit(), examples],
+	test: {
+		include: ['src/**/*.{test,spec}.{js,ts}']
+	},
 	server: {
 		port: 8080,
 		strictPort: false
