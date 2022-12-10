@@ -1,7 +1,6 @@
 <script lang="ts">
   import Frame from '../utils/Frame.svelte';
   import classNames from 'classnames';
-  import type { Colors } from '../types';
   import CloseButton from '../utils/CloseButton.svelte';
   import { fade } from 'svelte/transition';
   export let color:
