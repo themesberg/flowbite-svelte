@@ -1,5 +1,4 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import type { UserConfig } from 'vite';
 import path from 'path';
 import examples from 'mdsvexamples/vite';
 
