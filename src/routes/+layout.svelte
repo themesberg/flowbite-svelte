@@ -73,11 +73,6 @@
 
   $: activeUrl = $page.url.pathname;
 
-  $: containPath = () => {
-    // add your logic here
-    false;
-  };
-
   let logo = '/images/flowbite-svelte-icon-logo.svg';
   let spanClass = 'pl-2 self-center text-md text-gray-900 whitespace-nowrap dark:text-white';
   let darkModeClass = 'text-lg';
