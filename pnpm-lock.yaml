@@ -4,7 +4,7 @@ specifiers:
   '@playwright/test': ^1.28.1
   '@popperjs/core': ^2.11.6
   '@sveltejs/adapter-vercel': next
-  '@sveltejs/kit': next
+  '@sveltejs/kit': ^1.0.1
   '@sveltejs/package': 1.0.0-next.3
   '@typescript-eslint/eslint-plugin': ^5.46.0
   '@typescript-eslint/parser': ^5.46.0
@@ -39,8 +39,8 @@ dependencies:
 
 devDependencies:
   '@playwright/test': 1.28.1
-  '@sveltejs/adapter-vercel': 1.0.0-next.85
-  '@sveltejs/kit': 1.0.0-next.581_svelte@3.54.0+vite@4.0.0
+  '@sveltejs/adapter-vercel': 1.0.0-next.88_@sveltejs+kit@1.0.1
+  '@sveltejs/kit': 1.0.1_svelte@3.54.0+vite@4.0.0
   '@sveltejs/package': 1.0.0-next.3_vjccw6zkwqrmxudvmy4reaayx4
   '@typescript-eslint/eslint-plugin': 5.46.0_5mle7isnkfgjmrghnnczirv6iy
   '@typescript-eslint/parser': 5.46.0_ha6vam6werchizxrnqvarmz2zu
@@ -383,9 +383,12 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@sveltejs/adapter-vercel/1.0.0-next.85:
-    resolution: {integrity: sha512-vTR/PcJaYI3DQmYtrY49VfBmLC1kqXn7tKXj9tzUaiuKZ/r625P7cvm4pBoEbyTYmNwlW71hObqtkESUIMIZOg==}
+  /@sveltejs/adapter-vercel/1.0.0-next.88_@sveltejs+kit@1.0.1:
+    resolution: {integrity: sha512-X2DewfrqALRORli1WsMszFt04Rdh5CBJbNYH+lZ5Kn7Yq6cFa6XDE5kBIbi/Z43ib0qLlWvuys03DJGbjfokDg==}
+    peerDependencies:
+      '@sveltejs/kit': ^1.0.0-next.587
     dependencies:
+      '@sveltejs/kit': 1.0.1_svelte@3.54.0+vite@4.0.0
       '@vercel/nft': 0.22.5
       esbuild: 0.16.3
     transitivePeerDependencies:
@@ -393,9 +396,9 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.581_svelte@3.54.0+vite@4.0.0:
-    resolution: {integrity: sha512-BIBJpx4q+MOa1fFuGNhRTIm8wygl8cK6b+Ei/iaG4F1GfqbZkVclrh4p9lGobSXtuXzCBLabe88mvHQ1cd5ZqA==}
-    engines: {node: '>=16.14'}
+  /@sveltejs/kit/1.0.1_svelte@3.54.0+vite@4.0.0:
+    resolution: {integrity: sha512-C41aCaDjA7xoUdsrc/lSdU1059UdLPIRE1vEIRRynzpMujNgp82bTMHkDosb6vykH6LrLf3tT2w2/5NYQhKYGQ==}
+    engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
     peerDependencies:
