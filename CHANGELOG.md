@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.28.12](https://github.com/themesberg/flowbite-svelte/compare/v0.28.11...v0.28.12) (2022-12-18)
+
+
+### Bug Fixes
+
+* npm run check fixes ([#484](https://github.com/themesberg/flowbite-svelte/issues/484)) ([be4f0f6](https://github.com/themesberg/flowbite-svelte/commit/be4f0f6270b93296d8e2cd3eab60ef77fc621261))
+
 ### [0.28.11](https://github.com/themesberg/flowbite-svelte/compare/v0.28.10...v0.28.11) (2022-12-10)
 
 
