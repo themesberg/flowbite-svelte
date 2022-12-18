@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.29.0](https://github.com/themesberg/flowbite-svelte/compare/v0.28.12...v0.29.0) (2022-12-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* update sveltekit 1.0.1
+
+### Features
+
+* update sveltekit 1.0.1 ([9b812c8](https://github.com/themesberg/flowbite-svelte/commit/9b812c861b25ef338574e91c95de3a1c0219f3b5))
+
 ### [0.28.12](https://github.com/themesberg/flowbite-svelte/compare/v0.28.11...v0.28.12) (2022-12-18)
 
 
