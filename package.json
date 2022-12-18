@@ -13,7 +13,7 @@
 	"license": "MIT",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build",
+		"build": "svelte-kit sync && svelte-package",
 		"preview": "vite preview",
 		"test": "playwright test",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -21,9 +21,8 @@
 		"test:unit": "vitest",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
-		"package": "svelte-package",
 		"gen:props": "node ./node_modules/createprops/createprops.js",
-		"package:publish": "standard-version && git push --follow-tags origin main && npm run package && npm publish ./package"
+		"package:publish": "standard-version && git push --follow-tags origin main && npm run build && npm publish ./package"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
