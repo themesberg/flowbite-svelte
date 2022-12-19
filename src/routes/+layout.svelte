@@ -28,14 +28,11 @@
   import { experimental } from './moduleItems/+server.js';
   import Toc from './Toc/+page.svelte';
   import '../app.css';
-
   export let data: PageData;
-
   let width: number;
   let breakPoint: number = 1024;
   let drawerHidden: boolean = false;
   let activateClickOutside: boolean = true;
-
   onMount(() => {
     if (width >= breakPoint) {
       drawerHidden = false;
@@ -45,7 +42,6 @@
       activateClickOutside = true;
     }
   });
-
   $: if (width >= breakPoint) {
     drawerHidden = false;
     activateClickOutside = false;
@@ -53,26 +49,20 @@
     drawerHidden = true;
     activateClickOutside = true;
   }
-
   const toggleDrawer = () => {
     drawerHidden = false;
   };
-
   const toggleSide = () => {
     if (width < breakPoint) {
       drawerHidden = !drawerHidden;
     }
   };
-
   let main: HTMLElement;
-
   afterNavigate(() => {
     // this fixes https://github.com/themesberg/flowbite-svelte/issues/364
     main.scrollIntoView();
   });
-
   $: activeUrl = $page.url.pathname;
-
   let logo = '/images/flowbite-svelte-icon-logo.svg';
   let spanClass = 'pl-2 self-center text-md text-gray-900 whitespace-nowrap dark:text-white';
   let darkModeClass = 'text-lg';
