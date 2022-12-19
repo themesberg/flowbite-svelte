@@ -6,8 +6,6 @@
   export let aClass: string = 'inline-flex items-center hover:underline';
 </script>
 
-<a
-on:click
-{...$$restProps} {href} class={classNames(aClass, color, $$props.class)}>
+<a {...$$restProps} {href} class={classNames(aClass, color, $$props.class)}>
   <slot />
 </a>
