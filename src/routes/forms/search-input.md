@@ -29,7 +29,7 @@ description: Use the search input component as a text field to allow users to en
 <CompoDescription>{description}</CompoDescription>
 
 <ExampleDiv>
-<GitHubSource href="forms/Range.svelte">Range</GitHubSource>
+<GitHubSource href="forms/Search.svelte">Search</GitHubSource>
 </ExampleDiv>
 
 The search input component can be used to let your users search through your website using string queries and it comes in multiple styles, variants, and sizes built with the utility classes from Tailwind CSS.
