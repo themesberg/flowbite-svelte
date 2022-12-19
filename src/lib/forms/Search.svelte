@@ -4,6 +4,7 @@
   import Input from './Input.svelte';
   export let size: FormSizeType = 'lg';
   export let placeholder: string = 'Search';
+  export let value: string | number = '';
 
   const sizes = {
     sm: 'w-3.5 h-3.5',
@@ -14,6 +15,7 @@
 
 <Wrapper class="relative w-full" show={$$slots.default}>
   <Input
+    bind:value
     on:blur
     on:change
     on:input

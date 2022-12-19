@@ -24,6 +24,7 @@
   {href}
   class={defaultClass}
   on:blur
+  on:change
   on:click
   on:focus
   on:keydown

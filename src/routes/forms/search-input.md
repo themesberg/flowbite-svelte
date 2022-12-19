@@ -101,7 +101,37 @@ Get started with this example if you would like to enable voice search for your 
 <Htwo label="Events" />
 
 ```js
-on:submit
+on:blur
+on:change
+on:input
+on:click
+on:focus
+on:keydown
+on:keypress
+on:keyup
+on:mouseenter
+on:mouseleave
+on:mouseover
+on:paste
+```
+
+<Htwo label="Example" />
+
+```svelte example class="space-y-4"
+<script>
+  import { Search, Button } from '$lib';
+  let value = '';
+
+  const submitted = () => {
+    alert(`You are searching: ${value}`);
+  };
+</script>
+
+<form id="example-form" on:submit={submitted}>
+  <Search bind:value />
+  <p>You are seaching: {value}</p>
+  <Button type="submit">Submit</Button>
+</form>
 ```
 
 <Htwo label="Props" />
