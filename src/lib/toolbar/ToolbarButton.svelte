@@ -4,7 +4,8 @@
 
   const background = getContext('background');
 
-  export let color: string = 'default';
+  export let color: 'default' | 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' =
+    'default';
   export let name: string | undefined = undefined;
   export let ariaLabel: string | undefined = undefined;
   export let size: 'xs' | 'sm' | 'md' = 'md';

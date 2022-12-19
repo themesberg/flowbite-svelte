@@ -1,12 +1,11 @@
 <script lang="ts">
   import classNames from 'classnames';
-  import type { Colors } from '../types';
 
   export let progress: string = '45';
   export let size: string = 'h-2.5';
   export let labelInside: boolean = false;
   export let labelOutside: string = '';
-  export let color: Colors = 'blue';
+  export let color: 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo' = 'blue';
   export let labelInsideClass: string =
     'text-blue-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
 
