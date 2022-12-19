@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.29.1](https://github.com/themesberg/flowbite-svelte/compare/v0.29.0...v0.29.1) (2022-12-19)
+
+
+### Bug Fixes
+
+* add esbuild@0.16.8 and update other dependencies ([f32d1be](https://github.com/themesberg/flowbite-svelte/commit/f32d1beea8b402652242fdeaf1007885e74c12cd))
+* change svelte-kit sync && svelte-package to vite build ([cd7cd5e](https://github.com/themesberg/flowbite-svelte/commit/cd7cd5e971ba4f6c547984daf3a5f37656343b28))
+
 ## [0.29.0](https://github.com/themesberg/flowbite-svelte/compare/v0.28.12...v0.29.0) (2022-12-18)
 
 
