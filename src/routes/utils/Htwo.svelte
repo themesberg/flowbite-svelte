@@ -1,5 +1,5 @@
-<script>
-  export let label;
+<script lang="ts">
+  export let label: string;
   let modifiedLabel = label.replace(/\s/g, '_');
   let hidden = true;
   const handleMouseover = () => {

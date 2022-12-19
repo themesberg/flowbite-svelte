@@ -1,1 +1,1 @@
-{"props":[["color","string ","'default'"],["name","string ","undefined"],["ariaLabel","string ","undefined"],["size","'xs' | 'sm' | 'md' ","'md'"]]}
+{"props":[["color","string ","'default'"],["name","string | undefined ","undefined"],["ariaLabel","string | undefined ","undefined"],["size","'xs' | 'sm' | 'md' ","'md'"]]}

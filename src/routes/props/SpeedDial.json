@@ -1,1 +1,1 @@
-{"props":[["defaultClass","string ","'fixed right-6 bottom-6'"],["placement","Placement ","'top'"],["pill","boolean ","true"],["tooltip","Placement | 'none' ","'left'"],["trigger","'hover' | 'click' ","'hover'"],["textOutside","boolean ","false"]]}
+{"props":[["defaultClass","string ","'fixed right-6 bottom-6'"],["placement","Placement ","'top'"],["pill","boolean ","true"],["tooltip","Placement | 'none' ","'left'"],["trigger","'hover' | 'click' ","'hover'"],["textOutside","boolean ","false"],["id","string ","generateId()"]]}

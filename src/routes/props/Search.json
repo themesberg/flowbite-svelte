@@ -1,1 +1,1 @@
-{"props":[["size","FormSizeType ","'lg'"],["placeholder","string ","'Search'"]]}
+{"props":[["size","FormSizeType ","'lg'"],["placeholder","string ","'Search'"],["value","string | number ","''"]]}
