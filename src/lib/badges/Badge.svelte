@@ -3,7 +3,7 @@
   import type { Colors } from '../types';
   import CloseButton from '../utils/CloseButton.svelte';
 
-  export let color: Colors = 'blue';
+  export let color: 'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' = 'blue';
   export let large: boolean = false;
   export let href: string | undefined = undefined;
   export let rounded: boolean = false;

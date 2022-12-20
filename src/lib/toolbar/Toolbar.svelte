@@ -6,7 +6,8 @@
   const separators = writable(false);
   setContext('toolbar', separators);
 
-  export let color: string = 'dark';
+  export let color: 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'dark' =
+    'dark';
   export let embedded: boolean = false;
 
   const bgColors = {

@@ -23,7 +23,7 @@
     xl: ['left-24', 'left-32']
   };
 
-  let dotClass;
+  let dotClass: string;
   $: dotClass = classNames(
     'absolute rounded-full border-white dark:border-gray-800 border-2',
     sizes[size],

@@ -30,8 +30,7 @@ description: Use the Tailwind CSS pagination element to indicate a series of con
 <CompoDescription>{description}</CompoDescription>
 
 <ExampleDiv>
-<GitHubSource href="pagination/Pagination.svelte">Pagination</GitHubSource>
-<GitHubSource href="pagination/PaginationItem.svelte">Previous</GitHubSource>
+<GitHubSource href="paginations/Pagination.svelte">Pagination</GitHubSource>
 </ExampleDiv>
 
 The pagination component can be used to navigate across a series of content and data sets for various pages such as blog posts, products, and more. You can use multiple variants of this component with or without icons and even for paginating table data entries.
@@ -48,7 +47,7 @@ The pagination component can be used to navigate across a series of content and 
 
 Use the following list of pagination items to indicate a series of content for your website.
 
-```svelte example class="flex justify-center flex-col gap-4"
+```svelte example class="flex justify-center"
 <script>
   import { Pagination } from 'flowbite-svelte'
   let pages = [
@@ -219,6 +218,27 @@ You can use the following code to show the number of data shown inside a table e
     </div>
   </Pagination>
 </div>
+```
+
+<Htwo label="Event example" />
+
+```svelte example class="flex justify-center"
+<script lang="ts">
+  import { Pagination } from 'flowbite-svelte';
+
+  let pages = [{ name: 1}, { name: 2 }, { name: 3 }, { name: 4 }, { name: 5 }];
+  const previous = () => {
+    alert('Previous btn clicked. Make a call to your server to fetch data.');
+  };
+  const next = () => {
+    alert('Next btn clicked. Make a call to your server to fetch data.');
+  };
+  const handleClick = () => {
+    alert('Page clicked');
+  };
+</script>
+
+<Pagination {pages} on:previous={previous} on:next={next} on:click={handleClick} />
 ```
 
 <Htwo label="Props" />

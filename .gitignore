@@ -10,5 +10,5 @@ node_modules
 .vercel
 .vscode/
 
-/src/routes/tests
+/src/routes/compotests
 /src/routes/typechecktests

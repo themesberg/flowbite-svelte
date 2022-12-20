@@ -21,7 +21,7 @@
     lg: 'text-base py-3 px-4'
   };
 
-  let selectClass;
+  let selectClass: string;
   $: selectClass = classNames(
     common,
     underline ? underlineClass : defaultClass,

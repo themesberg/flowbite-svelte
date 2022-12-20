@@ -30,7 +30,18 @@
     </li>
     {#each pages as { name, href }}
       <li>
-        <PaginationItem {href}>{name}</PaginationItem>
+        <PaginationItem
+          on:blur
+          on:change
+          on:click
+          on:focus
+          on:keydown
+          on:keypress
+          on:keyup
+          on:mouseenter
+          on:mouseleave
+          on:mouseover
+          {href}>{name}</PaginationItem>
       </li>
     {/each}
     <li>
