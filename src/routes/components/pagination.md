@@ -47,7 +47,7 @@ The pagination component can be used to navigate across a series of content and 
 
 Use the following list of pagination items to indicate a series of content for your website.
 
-```svelte example class="flex justify-center flex-col gap-4"
+```svelte example class="flex justify-center"
 <script>
   import { Pagination } from 'flowbite-svelte'
   let pages = [
@@ -222,7 +222,7 @@ You can use the following code to show the number of data shown inside a table e
 
 <Htwo label="Event example" />
 
-```svelte example
+```svelte example class="flex justify-center"
 <script lang="ts">
   import { Pagination } from 'flowbite-svelte';
 
