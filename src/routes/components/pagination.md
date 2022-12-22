@@ -49,7 +49,7 @@ Use the following list of pagination items to indicate a series of content for y
   import { page } from '$app/stores';
   import { Pagination } from 'flowbite-svelte'
   
-  $: activePage = $page.url.searchParams.get('page')
+  $: activeUrl = $page.url.searchParams.get('page')
   let pages = [
     { name: 1, href: '/components/pagination?page=1'},
     { name: 2, href: '/components/pagination?page=2'},
@@ -64,14 +64,13 @@ Use the following list of pagination items to indicate a series of content for y
       let queryString = splitUrl.slice(1).join('?');
       const hrefParams = new URLSearchParams(queryString);
       let hrefValue = hrefParams.get('page');
-      if ( hrefValue === activePage){
+      if ( hrefValue === activeUrl){
         page.active=true
       }else{
         page.active=false
       }
     })
       pages=pages
-
   }
 
   const previous = () => {
@@ -94,7 +93,7 @@ The following pagination component example shows how you can use SVG icons inste
   import { page } from '$app/stores';
   import { Pagination, ChevronLeft, ChevronRight } from 'flowbite-svelte'
 
-  $: activePage = $page.url.searchParams.get('page')
+  $: activeUrl = $page.url.searchParams.get('page')
   let pages = [
     { name: 6, href: '/components/pagination?page=6'},
     { name: 7, href: '/components/pagination?page=7'},
@@ -109,7 +108,7 @@ The following pagination component example shows how you can use SVG icons inste
       let queryString = splitUrl.slice(1).join('?');
       const hrefParams = new URLSearchParams(queryString);
       let hrefValue = hrefParams.get('page');
-      if ( hrefValue === activePage){
+      if ( hrefValue === activeUrl){
         page.active=true
       }else{
         page.active=false
