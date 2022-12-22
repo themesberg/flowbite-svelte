@@ -8,10 +8,7 @@ description: Use the Tailwind CSS pagination element to indicate a series of con
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 <script lang="ts">
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
-  ;
-  
   import { props as items1 } from '../props/Pagination.json'
   import { props as items2 } from '../props/PaginationItem.json'
   let propHeader = ['Name', 'Type', 'Default']
@@ -49,14 +46,32 @@ Use the following list of pagination items to indicate a series of content for y
 
 ```svelte example class="flex justify-center"
 <script>
+  import { page } from '$app/stores';
   import { Pagination } from 'flowbite-svelte'
+  
+  $: activePage = $page.url.searchParams.get('page')
   let pages = [
-    { name: 1, href: '/'},
-    { name: 2, href: '/'},
-    { name: 3, href: '/'},
-    { name: 4, href: '/'},
-    { name: 5, href: '/'}
+    { name: 1, href: '/components/pagination?page=1'},
+    { name: 2, href: '/components/pagination?page=2'},
+    { name: 3, href: '/components/pagination?page=3'},
+    { name: 4, href: '/components/pagination?page=4'},
+    { name: 5, href: '/components/pagination?page=5'}
   ];
+  
+  $:{ pages.forEach((page)=>{
+    let splitUrl = page.href.split('?');
+    let queryString = splitUrl.slice(1).join('?');
+    const hrefParams = new URLSearchParams(queryString);
+    let hrefValue = hrefParams.get('page');
+    if ( hrefValue === activePage){
+      page.active=true
+    }else{
+      page.active=false
+    }
+  })
+    pages=pages
+  }
+
   const previous = () => {
     alert('Previous btn clicked. Make a call to your server to fetch data.');
   };
@@ -74,14 +89,28 @@ The following pagination component example shows how you can use SVG icons inste
 
 ```svelte example class="flex justify-center"
 <script>
+  import { page } from '$app/stores';
   import { Pagination, ChevronLeft, ChevronRight } from 'flowbite-svelte'
-  let pages = [
-    { name: 1, href: '/' },
-    { name: 2, href: '/' },
-    { name: 3, href: '/' },
-    { name: 4, href: '/' },
-    { name: 5, href: '/' }
+  let activePage = $page.url.searchParams.get('page')
+  console.log('activePage: ', activePage)
+  const pages = [
+    { name: 1, href: '/components/pagination?page=1'},
+    { name: 2, href: '/components/pagination?page=2'},
+    { name: 3, href: '/components/pagination?page=3'},
+    { name: 4, href: '/components/pagination?page=4'},
+    { name: 5, href: '/components/pagination?page=5'}
   ];
+  
+  pages.forEach((page)=>{
+    let splitUrl = page.href.split('?');
+    let queryString = splitUrl.slice(1).join('?');
+    const hrefParams = new URLSearchParams(queryString);
+    let hrefValue = hrefParams.get('page');
+    if ( hrefValue === activePage){
+      page.active=true
+    }
+  })
+
   const previous = () => {
     alert('Previous btn clicked. Make a call to your server to fetch data.');
   };
@@ -90,7 +119,7 @@ The following pagination component example shows how you can use SVG icons inste
   };
 </script>
 
-<Pagination {pages} on:previous={previous} on:next={next} icon>
+<Pagination {pages} on:previous={previous} on:next={next} icon  >
   <svelte:fragment slot="prev">
     <span class="sr-only">Previous</span>
     <ChevronLeft class="w-5 h-5"/>

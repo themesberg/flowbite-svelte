@@ -7,6 +7,7 @@
   export let pages: LinkType[] = [];
   export let ulClass: string = 'inline-flex -space-x-px items-center';
   export let table: boolean = false;
+  export let active: boolean = false;
 
   const dispatch = createEventDispatcher();
 
@@ -28,9 +29,10 @@
         <slot name="prev">Previous</slot>
       </PaginationItem>
     </li>
-    {#each pages as { name, href }}
+    {#each pages as { name, href, active }}
       <li>
         <PaginationItem
+          {active}
           on:blur
           on:change
           on:click

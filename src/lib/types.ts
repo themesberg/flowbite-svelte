@@ -133,6 +133,7 @@ export interface LinkType {
 	name: number;
 	href?: string;
 	rel?: string;
+	active?: boolean;
 }
 
 export interface ListCardType {
