@@ -1,1 +1,1 @@
-{"props":[["href","string | undefined ","undefined"]]}
+{"props":[["href","string | undefined ","undefined"],["active","boolean ","false"],["activeClass","string ","''"],["normalClass","string ","''"]]}
