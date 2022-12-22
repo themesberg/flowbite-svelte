@@ -58,18 +58,19 @@ Use the following list of pagination items to indicate a series of content for y
     { name: 5, href: '/components/pagination?page=5'}
   ];
   
-  $:{ pages.forEach((page)=>{
-    let splitUrl = page.href.split('?');
-    let queryString = splitUrl.slice(1).join('?');
-    const hrefParams = new URLSearchParams(queryString);
-    let hrefValue = hrefParams.get('page');
-    if ( hrefValue === activePage){
-      page.active=true
-    }else{
-      page.active=false
-    }
-  })
-    pages=pages
+  $:{ 
+      pages.forEach((page)=>{
+      let splitUrl = page.href.split('?');
+      let queryString = splitUrl.slice(1).join('?');
+      const hrefParams = new URLSearchParams(queryString);
+      let hrefValue = hrefParams.get('page');
+      if ( hrefValue === activePage){
+        page.active=true
+      }else{
+        page.active=false
+      }
+    })
+      pages=pages
   }
 
   const previous = () => {
@@ -91,25 +92,29 @@ The following pagination component example shows how you can use SVG icons inste
 <script>
   import { page } from '$app/stores';
   import { Pagination, ChevronLeft, ChevronRight } from 'flowbite-svelte'
-  let activePage = $page.url.searchParams.get('page')
-  console.log('activePage: ', activePage)
-  const pages = [
-    { name: 1, href: '/components/pagination?page=1'},
-    { name: 2, href: '/components/pagination?page=2'},
-    { name: 3, href: '/components/pagination?page=3'},
-    { name: 4, href: '/components/pagination?page=4'},
-    { name: 5, href: '/components/pagination?page=5'}
+  $: activePage = $page.url.searchParams.get('page')
+  let pages = [
+    { name: 6, href: '/components/pagination?page=6'},
+    { name: 7, href: '/components/pagination?page=7'},
+    { name: 8, href: '/components/pagination?page=8'},
+    { name: 9, href: '/components/pagination?page=9'},
+    { name: 10, href: '/components/pagination?page=10'}
   ];
   
-  pages.forEach((page)=>{
-    let splitUrl = page.href.split('?');
-    let queryString = splitUrl.slice(1).join('?');
-    const hrefParams = new URLSearchParams(queryString);
-    let hrefValue = hrefParams.get('page');
-    if ( hrefValue === activePage){
-      page.active=true
-    }
-  })
+  $:{
+    pages.forEach((page)=>{
+      let splitUrl = page.href.split('?');
+      let queryString = splitUrl.slice(1).join('?');
+      const hrefParams = new URLSearchParams(queryString);
+      let hrefValue = hrefParams.get('page');
+      if ( hrefValue === activePage){
+        page.active=true
+      }else{
+        page.active=false
+      }
+    })
+    pages=pages
+  }
 
   const previous = () => {
     alert('Previous btn clicked. Make a call to your server to fetch data.');
