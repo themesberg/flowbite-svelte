@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.29.4](https://github.com/themesberg/flowbite-svelte/compare/v0.29.3...v0.29.4) (2022-12-22)
+
+
+### Features
+
+* add pagination examples ([#503](https://github.com/themesberg/flowbite-svelte/issues/503)) ([93e48e3](https://github.com/themesberg/flowbite-svelte/commit/93e48e354a731216213e4ba38bf12e462880d58a))
+
 ### [0.29.3](https://github.com/themesberg/flowbite-svelte/compare/v0.29.2...v0.29.3) (2022-12-20)
 
 ### [0.29.2](https://github.com/themesberg/flowbite-svelte/compare/v0.29.1...v0.29.2) (2022-12-19)
