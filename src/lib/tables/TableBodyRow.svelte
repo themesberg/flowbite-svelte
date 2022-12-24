@@ -44,6 +44,6 @@
   );
 </script>
 
-<tr {...$$restProps} class={trClassfinal} on:click>
+<tr {...$$restProps} class={trClassfinal} on:click on:contextmenu>
   <slot />
 </tr>

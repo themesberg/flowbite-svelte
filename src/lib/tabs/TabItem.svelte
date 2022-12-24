@@ -42,6 +42,7 @@
     on:click={() => (open = true)}
     on:blur
     on:click
+    on:contextmenu
     on:focus
     on:keydown
     on:keypress

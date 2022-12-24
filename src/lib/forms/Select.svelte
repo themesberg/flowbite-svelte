@@ -31,7 +31,7 @@
   );
 </script>
 
-<select {...$$restProps} bind:value class={selectClass} on:change on:input>
+<select {...$$restProps} bind:value class={selectClass} on:change on:contextmenu on:input>
   <option disabled selected value="">{placeholder}</option>
 
   {#each items as { value, name }}
