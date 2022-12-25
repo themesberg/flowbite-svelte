@@ -92,6 +92,7 @@
       on:blur
       on:change
       on:click
+      on:contextmenu
       on:focus
       on:keydown
       on:keypress
