@@ -23,8 +23,7 @@
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
 		"gen:props": "node ./node_modules/createprops/createprops.js",
-		"package:publish": "standard-version && git push --follow-tags origin main && npm run build:package && npm publish ./package",
-		"gen:onevent": "node ./pickupwordswithon.js"
+		"package:publish": "standard-version && git push --follow-tags origin main && npm run build:package && npm publish ./package"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
