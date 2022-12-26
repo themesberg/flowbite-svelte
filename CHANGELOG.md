@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.29.6](https://github.com/themesberg/flowbite-svelte/compare/v0.29.5...v0.29.6) (2022-12-26)
+
+
+### Features
+
+* add on:contextmenu ([#506](https://github.com/themesberg/flowbite-svelte/issues/506)) ([75ad596](https://github.com/themesberg/flowbite-svelte/commit/75ad59695188e36e0af52487e041c15a7b6fd845))
+
+
+### Bug Fixes
+
+* pagination for darkmode ([#507](https://github.com/themesberg/flowbite-svelte/issues/507)) ([9175627](https://github.com/themesberg/flowbite-svelte/commit/917562790bc05a1a0679c11266ee7d23531c865f))
+
 ### [0.29.5](https://github.com/themesberg/flowbite-svelte/compare/v0.29.4...v0.29.5) (2022-12-22)
 
 ### [0.29.4](https://github.com/themesberg/flowbite-svelte/compare/v0.29.3...v0.29.4) (2022-12-22)
