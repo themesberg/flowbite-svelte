@@ -28,7 +28,9 @@
 <nav aria-label="Page navigation">
   <ul class={classNames(ulClass, table && 'divide-x divide-gray-700', $$props.class)}>
     <li>
-      <PaginationItem on:click={previous} class={table ? 'rounded-l' : 'rounded-l-lg'}>
+      <PaginationItem
+        on:click={previous}
+        class={classNames(normalClass, table ? 'rounded-l' : 'rounded-l-lg')}>
         <slot name="prev">Previous</slot>
       </PaginationItem>
     </li>
@@ -52,7 +54,7 @@
       </li>
     {/each}
     <li>
-      <PaginationItem on:click={next} class={table ? 'rounded-r' : 'rounded-r-lg'}>
+      <PaginationItem on:click={next} class={classNames(normalClass, table ? 'rounded-r' : 'rounded-r-lg')}>
         <slot name="next">Next</slot>
       </PaginationItem>
     </li>
