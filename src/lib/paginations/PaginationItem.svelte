@@ -5,7 +5,8 @@
   export let href: string | undefined = undefined;
   export let active: boolean = false;
   export let activeClass: string = '';
-  export let normalClass: string = '';
+  export let normalClass: string =
+    'text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white';
 
   const group = getContext('group');
   const table = getContext('table');
