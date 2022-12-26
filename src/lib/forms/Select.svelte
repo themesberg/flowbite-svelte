@@ -3,7 +3,7 @@
   import type { SelectOptionType } from '../types';
 
   export let items: SelectOptionType[] = [];
-  export let value: string;
+  export let value: string | number;
   export let placeholder: string = 'Choose option ...';
   export let underline: boolean = false;
   export let size: 'sm' | 'md' | 'lg' = 'md';

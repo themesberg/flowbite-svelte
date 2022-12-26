@@ -184,8 +184,8 @@ export type ReviewType = {
 }
 
 export type SelectOptionType = {
-	name: string;
-	value: string;
+	name: string | number;
+	value: string | number;
 };
 
 export type SidebarType = {
