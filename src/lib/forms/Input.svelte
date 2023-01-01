@@ -77,13 +77,12 @@
       $$props.class
     );
   }
-  let floatClass =
-    'flex absolute inset-y-0 items-center pointer-events-none text-gray-500 dark:text-gray-400';
+  let floatClass = 'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400';
 </script>
 
 <Wrapper class="relative w-full" show={$$slots.left || $$slots.right}>
   {#if $$slots.left}
-    <div class="{floatClass} left-0 pl-2.5"><slot name="left" /></div>
+    <div class="{floatClass} left-0 pl-2.5 pointer-events-none"><slot name="left" /></div>
   {/if}
   <slot props={{ ...$$restProps, class: inputClass }}>
     <input
