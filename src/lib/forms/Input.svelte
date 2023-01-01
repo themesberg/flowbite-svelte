@@ -34,8 +34,9 @@
   const colorClasses = {
     base: 'bg-gray-50 text-gray-900 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400',
     tinted: 'bg-gray-50 text-gray-900 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400',
-    green: 'bg-green-50 text-green-900 placeholder-green-700 dark:placeholder-green-500 dark:bg-gray-700',
-    red: 'bg-red-50 text-red-900 placeholder-red-700 dark:placeholder-red-500 dark:bg-gray-700'
+    green:
+      'bg-green-50 text-green-900 placeholder-green-700 dark:text-green-400 dark:placeholder-green-500 dark:bg-gray-700',
+    red: 'bg-red-50 text-red-900 placeholder-red-700 dark:text-red-500 dark:placeholder-red-500 dark:bg-gray-700'
   };
 
   // tinted if put in component having its own background
