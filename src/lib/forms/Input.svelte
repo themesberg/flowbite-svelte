@@ -34,8 +34,8 @@
   const colorClasses = {
     base: 'bg-gray-50 text-gray-900 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400',
     tinted: 'bg-gray-50 text-gray-900 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400',
-    green: 'bg-green-50 text-green-900 placeholder-green-700 dark:bg-gray-700',
-    red: 'bg-red-50 text-red-900 placeholder-red-700 dark:bg-gray-700'
+    green: 'bg-green-50 text-green-900 placeholder-green-700 dark:placeholder-green-500 dark:bg-gray-700',
+    red: 'bg-red-50 text-red-900 placeholder-red-700 dark:placeholder-red-500 dark:bg-gray-700'
   };
 
   // tinted if put in component having its own background
@@ -77,13 +77,12 @@
       $$props.class
     );
   }
-  let floatClass =
-    'flex absolute inset-y-0 items-center pointer-events-none text-gray-500 dark:text-gray-400';
+  let floatClass = 'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400';
 </script>
 
 <Wrapper class="relative w-full" show={$$slots.left || $$slots.right}>
   {#if $$slots.left}
-    <div class="{floatClass} left-0 pl-2.5"><slot name="left" /></div>
+    <div class="{floatClass} left-0 pl-2.5 pointer-events-none"><slot name="left" /></div>
   {/if}
   <slot props={{ ...$$restProps, class: inputClass }}>
     <input
