@@ -2,7 +2,7 @@
   import classNames from 'classnames';
   import type { SelectOptionType } from '../types';
 
-  export let items: SelectOptionType[] = [];
+  export let items: SelectOptionType[] | 'slot' = [];
   export let value: string | number;
   export let placeholder: string = 'Choose option ...';
   export let underline: boolean = false;
@@ -32,9 +32,13 @@
 </script>
 
 <select {...$$restProps} bind:value class={selectClass} on:change on:contextmenu on:input>
-  <option disabled selected value="">{placeholder}</option>
+  {#if items === 'slot'}
+    <slot />
+  {:else}
+    <option disabled selected value="">{placeholder}</option>
 
-  {#each items as { value, name }}
-    <option {value}>{name}</option>
-  {/each}
+    {#each items as { value, name }}
+      <option {value}>{name}</option>
+    {/each}
+  {/if}
 </select>
