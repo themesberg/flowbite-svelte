@@ -6,6 +6,7 @@
   export let href: string = '';
   export let by: string = '';
   export let target: string | undefined = undefined;
+  export let copyrightMessage: string = 'All Rights Reserved.';
 </script>
 
 <span class={classNames(spanClass, $$props.class)}>
@@ -17,5 +18,5 @@
   {:else}
     <span class="ml-1">{by}</span>
   {/if}
-  . All Rights Reserved.
+  . {copyrightMessage}
 </span>
