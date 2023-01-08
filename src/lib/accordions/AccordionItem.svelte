@@ -48,7 +48,7 @@
     return selected.subscribe((x) => (open = x === self));
   });
 
-  const handleToggle = (e: Event) => selected.set(open ? {} : self);
+  const handleToggle = (_: Event) => selected.set(open ? {} : self);
 
   let buttonClass: string;
   $: buttonClass = classNames(

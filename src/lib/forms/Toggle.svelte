@@ -2,6 +2,7 @@
   import { getContext } from 'svelte';
   import classNames from 'classnames';
   import Checkbox from './Checkbox.svelte';
+  import type { FormColorType } from '../types';
 
   export let size: 'small' | 'default' | 'large' = 'default';
   export let group: (string | number)[] = [];
@@ -34,7 +35,7 @@
   $: divClass = classNames(
     common,
     background ? 'dark:bg-gray-600 dark:border-gray-500' : 'dark:bg-gray-700 dark:border-gray-600',
-    colors[$$restProps.color ?? 'blue'],
+    colors[($$restProps.color as FormColorType) ?? 'blue'],
     sizes[size],
     'relative'
   );

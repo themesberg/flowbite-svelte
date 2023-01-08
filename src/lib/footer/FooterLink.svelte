@@ -1,5 +1,4 @@
 <script lang="ts">
-  import A from '$lib/typography/A.svelte';
   import classNames from 'classnames';
   export let liClass: string = 'mr-4 last:mr-0 md:mr-6';
   export let aClass: string = 'hover:underline';

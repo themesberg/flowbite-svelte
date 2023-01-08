@@ -130,7 +130,7 @@ export interface ListGroupItemType {
 }
 
 export interface LinkType {
-	name: number;
+	name: string;
 	href?: string;
 	rel?: string;
 	active?: boolean;

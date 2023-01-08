@@ -14,13 +14,12 @@ export let placement: string;
 // 		| 'bottom-center'
 // 		| 'bottom-right'='center';
 
-export const init = (node, _open) => {
+export const init = (node: HTMLElement, _open: boolean) => {
   getPlacementClasses().map((c) => node.classList.add(c));
   _open && createBackdrop(node);
-  console.log('init clicked')
 
   return {
-    update(_open) {
+    update(_open: boolean) {
       allPlacementClasses.map((c) => node.classList.remove(c));
       getPlacementClasses().map((c) => node.classList.add(c));
 
@@ -64,12 +63,12 @@ const getPlacementClasses = () => {
   }
 };
 
-const createBackdrop = (node) => {
+const createBackdrop = (node: Node) => {
   if (!backdropEl) {
     backdropEl = document.createElement('div');
     backdropEl.classList.add(...backdropClasses.split(' '));
 
-    const body = document.querySelector('body');
+    const body = document.body;
     body.append(backdropEl);
     body.style.overflow = 'hidden';
 
@@ -79,8 +78,8 @@ const createBackdrop = (node) => {
   dispatch('show', node);
 };
 
-const destroyBackdrop = (node) => {
-  const body = document.querySelector('body');
+const destroyBackdrop = (node: Node) => {
+  const body = document.body;
   body.style.overflow = 'auto';
 
   if (backdropEl) backdropEl.remove();
@@ -91,9 +90,9 @@ const destroyBackdrop = (node) => {
   dispatch('hide', node);
 };
 
-let backdropEl: HTMLElement;
+let backdropEl: HTMLElement | undefined;
 
-const handleEscape = (e) => {
+const handleEscape = (e: KeyboardEvent) => {
   if (open && e.key === 'Escape') open = false;
 };
 

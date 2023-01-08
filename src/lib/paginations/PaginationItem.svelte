@@ -1,6 +1,6 @@
 <script lang="ts">
   import classNames from 'classnames';
-  import { getContext, onMount } from 'svelte';
+  import { getContext } from 'svelte';
 
   export let href: string | undefined = undefined;
   export let active: boolean = false;
