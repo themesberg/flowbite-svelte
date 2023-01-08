@@ -1,6 +1,5 @@
 <script lang="ts">
   import classNames from 'classnames';
-  import type { Colors } from '../types';
   import CloseButton from '../utils/CloseButton.svelte';
 
   export let color: 'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' = 'blue';
