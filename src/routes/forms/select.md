@@ -57,8 +57,9 @@ Get started with the default example of a select input component to get a single
   ]
 </script>
 
-<Label for="countries">Select an option</Label>
-<Select id="countries"  class="mt-2" items={countries} bind:value={selected} />
+<Label>Select an option
+  <Select class="mt-2" items={countries} bind:value={selected} />
+</Label>
 ```
 
 <Htwo label="Disabled state" />
@@ -179,7 +180,7 @@ Get started with the small, default, and large sizes for the select component fr
 
 <Htwo label="Custom options" />
 
-Set `items` to `"slot"` and put options inside this component if you want to use more flexible and controllable options.
+If you want custom options, put them directly inside the component and leave the `items` prop unset. Furthermore, if the default placeholder is not what you want, set the `placeholder` prop to `""`.
 
 ```svelte example
 <script>
@@ -193,7 +194,7 @@ Set `items` to `"slot"` and put options inside this component if you want to use
 </script>
 
 <Label for="countries">Select an option</Label>
-<Select id="countries" class="mt-2" items="slot" bind:value={selected}>
+<Select id="countries" class="mt-2" bind:value={selected} placeholder="">
   <option selected value="all">All</option>
 
   {#each countries as {value, name}}
