@@ -32,9 +32,13 @@
 </script>
 
 <select {...$$restProps} bind:value class={selectClass} on:change on:contextmenu on:input>
-  <option disabled selected value="">{placeholder}</option>
+  {#if placeholder}
+    <option disabled selected value="">{placeholder}</option>
+  {/if}
 
   {#each items as { value, name }}
     <option {value}>{name}</option>
+  {:else}
+    <slot />
   {/each}
 </select>

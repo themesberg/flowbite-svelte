@@ -38,7 +38,7 @@ The select input component can be used to gather information from users based on
 
 ```html
 <script>
-  import { Select } from 'flowbite-svelte'
+  import { Select } from 'flowbite-svelte';
 </script>
 ```
 
@@ -48,7 +48,7 @@ Get started with the default example of a select input component to get a single
 
 ```svelte example
 <script>
-  import { Select, Label } from 'flowbite-svelte'
+  import { Select, Label } from 'flowbite-svelte';
   let selected;
   let countries = [
     {value:"us", name: "United States"},
@@ -68,7 +68,7 @@ Apply the disable state to the select component to disallow the selection of new
 
 ```svelte example
 <script>
-  import { Select, Label } from 'flowbite-svelte'
+  import { Select, Label } from 'flowbite-svelte';
   let countries = [
     {value:"us", name: "United States"},
     {value:"ca", name: "Canada"},
@@ -86,7 +86,7 @@ Use the underline style for the select component as an alternative appearance.
 
 ```svelte example
 <script>
-  import { Select, Label } from 'flowbite-svelte'
+  import { Select, Label } from 'flowbite-svelte';
   let countries = [
     {value:"us", name: "United States"},
     {value:"ca", name: "Canada"},
@@ -104,7 +104,7 @@ Use this example if you want to create a multi-level dropdown and select compone
 
 ```svelte example
 <script>
-  import { Select, Dropdown, DropdownItem, ChevronDown } from 'flowbite-svelte'
+  import { Select, Dropdown, DropdownItem, ChevronDown } from 'flowbite-svelte';
   let countries = [
     {value:"us", name: "United States"},
     {value:"ca", name: "Canada"},
@@ -155,7 +155,7 @@ Get started with the small, default, and large sizes for the select component fr
 
 ```svelte example
 <script>
-  import { Select, Label } from 'flowbite-svelte'
+  import { Select, Label } from 'flowbite-svelte';
   let countries = [
     {value:"us", name: "United States"},
     {value:"ca", name: "Canada"},
@@ -176,6 +176,31 @@ Get started with the small, default, and large sizes for the select component fr
 <Select id="select-md" underline size="md" items={countries} class="mb-6"/>
 <Label for="select-lg" class="sr-only">Underline large select</Label>
 <Select id="select-lg" underline size="lg" items={countries} class="mb-6"/>
+```
+
+<Htwo label="Custom options" />
+
+If you want custom options, put them directly inside the component and leave the `items` prop unset. Furthermore, if the default placeholder is not what you want, set the `placeholder` prop to `""`.
+
+```svelte example
+<script>
+  import { Select, Label } from 'flowbite-svelte';
+  let selected;
+  let countries = [
+    {value:"us", name: "United States"},
+    {value:"ca", name: "Canada"},
+    {value:"fr", name: "France"},
+  ]
+</script>
+
+<Label for="countries">Select an option</Label>
+<Select id="countries" class="mt-2" bind:value={selected} placeholder="">
+  <option selected value="all">All</option>
+
+  {#each countries as {value, name}}
+    <option {value}>{name}</option>
+  {/each}
+</Select>
 ```
 
 <Htwo label="Props" />
