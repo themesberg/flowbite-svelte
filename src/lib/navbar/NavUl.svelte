@@ -1,6 +1,6 @@
 <script lang="ts">
   import classNames from 'classnames';
-  import { slide } from 'svelte/transition';
+  import { slide, type SlideParams } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
   import Frame from '../utils/Frame.svelte';
 
@@ -8,6 +8,7 @@
   export let ulClass: string =
     'flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium';
   export let hidden: boolean = true;
+  export let slideParams: SlideParams = { delay: 250, duration: 500, easing: quintOut };
 
   let _divClass: string;
   $: _divClass = classNames(divClass, $$props.class);
@@ -21,7 +22,7 @@
 </script>
 
 {#if !hidden}
-  <div {...$$restProps} class={_divClass} transition:slide={{ delay: 250, duration: 500, easing: quintOut }}>
+  <div {...$$restProps} class={_divClass} transition:slide={slideParams}>
     <Frame tag="ul" border rounded color="navbarUl" class={_ulClass}>
       <slot />
     </Frame>
