@@ -89,13 +89,13 @@
 
   let mainClass: string;
   $: mainClass = classNames(
-    'flex overflow-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full',
+    'flex overflow-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-full',
     backdropClasses,
     ...getPlacementClasses()
   );
 
   let frameClass: string;
-  $: frameClass = classNames('relative flex flex-col w-full h-full md:h-auto', $$props.class);
+  $: frameClass = classNames('relative flex flex-col w-full h-auto', $$props.class);
 
   const isScrollable = (e: HTMLElement): boolean[] => [
     e.scrollWidth > e.clientWidth && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowX) >= 0,
@@ -124,7 +124,7 @@
     use:prepareFocus
     use:focusTrap
     on:click={autoclose ? onAutoClose : null}>
-    <div class="flex p-4 w-full {sizes[size]} h-full md:h-auto max-h-screen">
+    <div class="flex p-4 w-full {sizes[size]} max-h-full h-auto">
       <!-- Modal content -->
       <Frame rounded shadow {...$$restProps} class={frameClass}>
         <!-- Modal header -->
