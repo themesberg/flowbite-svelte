@@ -109,7 +109,7 @@ Use this modal example with form input element to receive information from your 
 </script>
 
 <Button on:click={() => formModal = true}>Form modal</Button>
-<Modal bind:open={formModal} size="xs" autoclose={false}>
+<Modal bind:open={formModal} size="xs" autoclose={false} class="w-96">
   <form class="flex flex-col space-y-6" action="#">
     <h3 class="text-xl font-medium text-gray-900 dark:text-white p-0">Sign in to our platform</h3>
     <Label class="space-y-2">
