@@ -57,9 +57,8 @@ Get started with the default example of a select input component to get a single
   ]
 </script>
 
-<Label>Select an option
-  <Select class="mt-2" items={countries} bind:value={selected} />
-</Label>
+<Label for="countries">Select an option</Label>
+<Select id="countries" class="mt-2" items={countries} bind:value={selected} />
 ```
 
 <Htwo label="Disabled state" />
