@@ -336,6 +336,55 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
 </TableSearch>
 ```
 
+<Htwo label="Table head" />
+
+By default, the `<TableHead>` component will create a single `<tr>` element without any preset attributes and properties for you, and the slot of this component is implicitly required to be permitted contents of the `<tr>` element. If you want to get more controllability of the table head rows, e.g., customize the style or use multiple head rows, set the value of `defaultRow` prop to `false`, and the slot of this component is then implicitly required to be zero or more `<tr>` elements.
+
+```svelte example
+<script>
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from 'flowbite-svelte';
+</script>
+
+<Table>
+  <TableHead defaultRow={false}>
+    <tr>
+      <TableHeadCell colspan="2">Product</TableHeadCell>
+      <TableHeadCell colspan="3">Info</TableHeadCell>
+    </tr>
+    <tr>
+      <TableHeadCell>Brand</TableHeadCell>
+      <TableHeadCell>Product name</TableHeadCell>
+      <TableHeadCell>Color</TableHeadCell>
+      <TableHeadCell>Category</TableHeadCell>
+      <TableHeadCell>Price</TableHeadCell>
+    </tr>
+  </TableHead>
+  <TableBody class="divide-y">
+    <TableBodyRow>
+      <TableBodyCell>Apple</TableBodyCell>
+      <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
+      <TableBodyCell>Sliver</TableBodyCell>
+      <TableBodyCell>Laptop</TableBodyCell>
+      <TableBodyCell>$2999</TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>Microsoft</TableBodyCell>
+      <TableBodyCell>Microsoft Surface Pro</TableBodyCell>
+      <TableBodyCell>White</TableBodyCell>
+      <TableBodyCell>Laptop PC</TableBodyCell>
+      <TableBodyCell>$1999</TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>Apple</TableBodyCell>
+      <TableBodyCell>Magic Mouse 2</TableBodyCell>
+      <TableBodyCell>Black</TableBodyCell>
+      <TableBodyCell>Accessories</TableBodyCell>
+      <TableBodyCell>$99</TableBodyCell>
+    </TableBodyRow>
+  </TableBody>
+</Table>
+```
+
 <Htwo label="Table foot" />
 
 Use this example where the <tfoot> HTML element can be used in conjunction with the head and caption of the table component.

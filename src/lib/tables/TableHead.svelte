@@ -3,6 +3,7 @@
   import { getContext } from 'svelte';
 
   export let theadClass: string = 'text-xs uppercase';
+  export let defaultRow: boolean = true;
 
   let color: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom';
   color = getContext('color');
@@ -43,7 +44,11 @@
 </script>
 
 <thead {...$$restProps} class={theadClassfinal}>
-  <tr>
+  {#if defaultRow}
+    <tr>
+      <slot />
+    </tr>
+  {:else}
     <slot />
-  </tr>
+  {/if}
 </thead>
