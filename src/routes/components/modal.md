@@ -48,7 +48,7 @@ Get started with multiple sizes, colors, and styles built with the utility class
 <Htwo label="Default modal" />
 
 Modal visibility (open/close) is controlled by the `open` property. You can bind it to a variable that other element (usually button) will toggle.
-You can also use the `open=true` attribute to show open the modal by default. Opening and closeing the modal will trigger the `show` and `hide` events.
+You can also use the `open=true` attribute to show open the modal by default. Opening and closing the modal will trigger the `show` and `hide` events.
 
 <p class="p-2"/>
 

@@ -123,7 +123,7 @@
     tabindex="-1"
     aria-modal="true"
     role="dialog">
-    <div class="relative {sizes[size]} max-h-full md:h-auto flex">
+    <div class="relative {sizes[size]} max-h-full flex">
       <!-- Modal content -->
       <Frame rounded shadow {...$$restProps} class={frameClass}>
         <!-- Modal header -->
