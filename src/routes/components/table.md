@@ -338,7 +338,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
 
 <Htwo label="Table foot" />
 
-Use this example where the <tfoot> HTML element can be used in conjunction with the head and caption of the table component.
+Use this example where the `<tfoot>` HTML element can be used in conjunction with the head and caption of the table component.
 
 ```svelte example
 <script>
