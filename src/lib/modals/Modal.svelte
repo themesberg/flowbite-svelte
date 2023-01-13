@@ -80,15 +80,16 @@
 
   const onAutoClose = (e: MouseEvent) => {
     const target: Element = e.target as Element;
-    if (autoclose && target?.tagName === 'BUTTON') open = false;
+    if (autoclose && target?.tagName === 'BUTTON') hide(e);
   };
 
-  const hide = () => {
+  const hide = (e: Event) => {
+    e.preventDefault();
     open = false;
   };
 
   let frameClass: string;
-  $: frameClass = classNames('relative flex flex-col', $$props.class);
+  $: frameClass = classNames('relative flex flex-col mx-auto', $$props.class);
 
   const isScrollable = (e: HTMLElement): boolean[] => [
     e.scrollWidth > e.clientWidth && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowX) >= 0,
@@ -102,7 +103,7 @@
   }
 
   function handleKeys(e: KeyboardEvent) {
-    if (e.key === 'Escape' && !permanent) return hide();
+    if (e.key === 'Escape' && !permanent) return hide(e);
   }
 </script>
 
@@ -111,7 +112,7 @@
   <div class={classNames('fixed inset-0 z-40', backdropClasses)} />
   <!-- dialog -->
   <div
-    on:keydown|preventDefault={handleKeys}
+    on:keydown={handleKeys}
     on:wheel|preventDefault
     use:prepareFocus
     use:focusTrap
@@ -123,7 +124,7 @@
     tabindex="-1"
     aria-modal="true"
     role="dialog">
-    <div class="relative {sizes[size]} max-h-full flex">
+    <div class="flex relative {sizes[size]} w-full max-h-full">
       <!-- Modal content -->
       <Frame rounded shadow {...$$restProps} class={frameClass}>
         <!-- Modal header -->
