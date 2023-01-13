@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.29.10](https://github.com/themesberg/flowbite-svelte/compare/v0.29.9...v0.29.10) (2023-01-13)
+
+
+### Features
+
+* add on:input to textarea ([#518](https://github.com/themesberg/flowbite-svelte/issues/518)) ([318ffbf](https://github.com/themesberg/flowbite-svelte/commit/318ffbf676366fcc7bd08c538270800d90ce5189))
+* make Select receive custom options ([#514](https://github.com/themesberg/flowbite-svelte/issues/514)) ([a58b410](https://github.com/themesberg/flowbite-svelte/commit/a58b410a3ffce29432907457baeae8c20977ef42))
+
+
+### Bug Fixes
+
+* [#530](https://github.com/themesberg/flowbite-svelte/issues/530) ([16c6650](https://github.com/themesberg/flowbite-svelte/commit/16c66504d42a378705a120fae5a6ca147a776bd4))
+* export slide params ([#516](https://github.com/themesberg/flowbite-svelte/issues/516)) ([c8dd81d](https://github.com/themesberg/flowbite-svelte/commit/c8dd81d5493b908a903648104f0371ac143c1167))
+* modal layout ([#526](https://github.com/themesberg/flowbite-svelte/issues/526)) ([6b25019](https://github.com/themesberg/flowbite-svelte/commit/6b250190f25feefe21191b3d8cab709fe28c6908))
+* npm run check corrections ([#517](https://github.com/themesberg/flowbite-svelte/issues/517)) ([f1f89e3](https://github.com/themesberg/flowbite-svelte/commit/f1f89e30221fd3bb63fed174fe825a46f780d1c7))
+
 ### [0.29.9](https://github.com/themesberg/flowbite-svelte/compare/v0.29.8...v0.29.9) (2023-01-01)
 
 
