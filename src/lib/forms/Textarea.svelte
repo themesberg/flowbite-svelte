@@ -59,6 +59,7 @@
       on:click
       on:contextmenu
       on:focus
+      on:input
       on:keydown
       on:keypress
       on:keyup

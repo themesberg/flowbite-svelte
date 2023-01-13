@@ -10,7 +10,7 @@ description: Use the textarea component as a multi-line text field input and use
 
 <script>
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  
+
   import { Heading, Breadcrumb, BreadcrumbItem, Badge, A } from '$lib'
   import { props as items } from '../props/Textarea.json'
   let propHeader = ['Name', 'Type', 'Default']
@@ -38,7 +38,7 @@ The textarea component is a multi-line text field input that can be used to rece
 
 ```html
 <script>
-  import { Textarea } from 'flowbite-svelte' 
+  import { Textarea } from 'flowbite-svelte';
 </script>
 ```
 
@@ -48,7 +48,7 @@ Get started with the default example of a textarea component below.
 
 ```svelte example
 <script>
-  import { Textarea, Label } from 'flowbite-svelte' 
+  import { Textarea, Label } from 'flowbite-svelte'
 </script>
 
 <Label for="textarea-id" class="mb-2">Your message</Label>
@@ -61,7 +61,7 @@ If you want to add other actions as buttons alongside your textarea component, s
 
 ```svelte example
 <script>
-  import { Textarea, Toolbar, ToolbarGroup, ToolbarButton, Button } from 'flowbite-svelte' 
+  import { Textarea, Toolbar, ToolbarGroup, ToolbarButton, Button } from 'flowbite-svelte'
 </script>
 
 <form>
@@ -83,13 +83,14 @@ If you want to add other actions as buttons alongside your textarea component, s
   <Button>Publish post</Button>
 </form>
 ```
+
 <Htwo label="Comment box" />
 
 Most often the textarea component is used as the main text field input element in comment sections. Use this example to also apply a helper text and buttons below the textarea itself.
 
 ```svelte example class="space-y-4"
 <script>
-  import { Textarea, Toolbar, ToolbarGroup, ToolbarButton, Button } from 'flowbite-svelte' 
+  import { Textarea, Toolbar, ToolbarGroup, ToolbarButton, Button } from 'flowbite-svelte'
 </script>
 
 <form>
@@ -113,7 +114,7 @@ If you want to build a chatroom component you will usually want to use a textare
 
 ```svelte example class="space-y-4"
 <script>
-  import { Textarea, Alert, CloseButton } from 'flowbite-svelte' 
+  import { Textarea, Alert, CloseButton } from 'flowbite-svelte'
 </script>
 
 <form>
@@ -140,9 +141,8 @@ If you want to build a chatroom component you will usually want to use a textare
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow {items} rowState='hover' />
+<TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
 <Htwo label="Forwarded Events" />
@@ -152,6 +152,7 @@ The component has the following props, type, and default values. See <A href="/p
 <Badge large={true}>on:change</Badge>
 <Badge large={true}>on:click</Badge>
 <Badge large={true}>on:focus</Badge>
+<Badge large={true}>on:input</Badge>
 <Badge large={true}>on:keydown</Badge>
 <Badge large={true}>on:keypress</Badge>
 <Badge large={true}>on:keyup</Badge>
