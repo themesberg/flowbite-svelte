@@ -48,7 +48,7 @@ Get started with multiple sizes, colors, and styles built with the utility class
 <Htwo label="Default modal" />
 
 Modal visibility (open/close) is controlled by the `open` property. You can bind it to a variable that other element (usually button) will toggle.
-You can also use the `open=true` attribute to show open the modal by default. Opening and closeing the modal will trigger the `show` and `hide` events.
+You can also use the `open=true` attribute to show open the modal by default. Opening and closing the modal will trigger the `show` and `hide` events.
 
 <p class="p-2"/>
 
@@ -109,7 +109,7 @@ Use this modal example with form input element to receive information from your 
 </script>
 
 <Button on:click={() => formModal = true}>Form modal</Button>
-<Modal bind:open={formModal} size="xs" autoclose={false}>
+<Modal bind:open={formModal} size="xs" autoclose={false} class="w-full">
   <form class="flex flex-col space-y-6" action="#">
     <h3 class="text-xl font-medium text-gray-900 dark:text-white p-0">Sign in to our platform</h3>
     <Label class="space-y-2">
@@ -189,18 +189,20 @@ Use this web3 modal component to show crypto wallet connection options like Meta
 
 You can use five different modal sizing options starting from extra small to extra large, but keep in mind that the width of these modals will remain the same when browsing on smaller devices.
 
-```svelte example  class="space-x-4"
+```svelte example
 <script>
   import { Button, Modal } from 'flowbite-svelte'
   let sizesModal = false
   let size;
 </script>
 
-<Button size="xs" on:click={()=> {size = 'xs'; sizesModal = true} }>xs</Button>
-<Button size="sm" on:click={()=> {size = 'sm'; sizesModal = true} }>sm</Button>
-<Button size="md" on:click={()=> {size = 'md'; sizesModal = true} }>md</Button>
-<Button size="lg" on:click={()=> {size = 'lg'; sizesModal = true} }>lg</Button>
-<Button size="xl" on:click={()=> {size = 'xl'; sizesModal = true} }>xl</Button>
+<div class="space-x-4">
+  <Button size="xs" on:click={()=> {size = 'xs'; sizesModal = true} }>xs</Button>
+  <Button size="sm" on:click={()=> {size = 'sm'; sizesModal = true} }>sm</Button>
+  <Button size="md" on:click={()=> {size = 'md'; sizesModal = true} }>md</Button>
+  <Button size="lg" on:click={()=> {size = 'lg'; sizesModal = true} }>lg</Button>
+  <Button size="xl" on:click={()=> {size = 'xl'; sizesModal = true} }>xl</Button>
+</div>
 
 <Modal title="Terms of Service" bind:open={sizesModal} {size} autoclose>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">

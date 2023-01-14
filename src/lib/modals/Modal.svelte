@@ -80,22 +80,16 @@
 
   const onAutoClose = (e: MouseEvent) => {
     const target: Element = e.target as Element;
-    if (autoclose && target?.tagName === 'BUTTON') open = false;
+    if (autoclose && target?.tagName === 'BUTTON') hide(e);
   };
 
-  const hide = () => {
+  const hide = (e: Event) => {
+    e.preventDefault();
     open = false;
   };
 
-  let mainClass: string;
-  $: mainClass = classNames(
-    'flex overflow-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full',
-    backdropClasses,
-    ...getPlacementClasses()
-  );
-
   let frameClass: string;
-  $: frameClass = classNames('relative flex flex-col w-full h-full md:h-auto', $$props.class);
+  $: frameClass = classNames('relative flex flex-col mx-auto', $$props.class);
 
   const isScrollable = (e: HTMLElement): boolean[] => [
     e.scrollWidth > e.clientWidth && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowX) >= 0,
@@ -109,22 +103,28 @@
   }
 
   function handleKeys(e: KeyboardEvent) {
-    if (e.key === 'Escape' && !permanent) return hide();
+    if (e.key === 'Escape' && !permanent) return hide(e);
   }
 </script>
 
 {#if open}
+  <!-- backdrop -->
+  <div class={classNames('fixed inset-0 z-40', backdropClasses)} />
+  <!-- dialog -->
   <div
-    tabindex="-1"
-    class={mainClass}
-    aria-modal="true"
-    role="dialog"
-    on:keydown|preventDefault={handleKeys}
+    on:keydown={handleKeys}
     on:wheel|preventDefault
     use:prepareFocus
     use:focusTrap
-    on:click={autoclose ? onAutoClose : null}>
-    <div class="flex p-4 w-full {sizes[size]} h-full md:h-auto max-h-screen">
+    on:click={autoclose ? onAutoClose : null}
+    class={classNames(
+      'fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex',
+      ...getPlacementClasses()
+    )}
+    tabindex="-1"
+    aria-modal="true"
+    role="dialog">
+    <div class="flex relative {sizes[size]} w-full max-h-full">
       <!-- Modal content -->
       <Frame rounded shadow {...$$restProps} class={frameClass}>
         <!-- Modal header -->
