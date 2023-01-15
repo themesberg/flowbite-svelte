@@ -86,20 +86,20 @@ Use the `large` prop to create a large variant of the badges.
 
 <Htwo label="Bordered badge" />
 
-Use the `bordered` prop to add a border accent to the badge component.
+Use the `border` prop to add a border accent to the badge component.
 
 ```svelte example class="flex gap-2" hideScript
 <script>
 	import { Badge } from 'flowbite-svelte';
 </script>
-<Badge bordered>Default</Badge>
-<Badge bordered color="dark">Dark</Badge>
-<Badge bordered color="red">Red</Badge>
-<Badge bordered color="green">Green</Badge>
-<Badge bordered color="yellow">Yellow</Badge>
-<Badge bordered color="indigo">Indigo</Badge>
-<Badge bordered color="purple">Purple</Badge>
-<Badge bordered color="pink">Pink</Badge>
+<Badge border>Default</Badge>
+<Badge border color="dark">Dark</Badge>
+<Badge border color="red">Red</Badge>
+<Badge border color="green">Green</Badge>
+<Badge border color="yellow">Yellow</Badge>
+<Badge border color="indigo">Indigo</Badge>
+<Badge border color="purple">Purple</Badge>
+<Badge border color="pink">Pink</Badge>
 ```
 
 <Htwo label="Pills badge" />
@@ -129,9 +129,9 @@ You can also use badges as anchor elements to link to another page.
 	import { Badge } from 'flowbite-svelte';
 </script>
 <Badge href="/">Badge link</Badge>
-<Badge href="/" large={true}>Badge link</Badge>
-<Badge href="/" bordered={true}>Badge link</Badge>
-<Badge href="/" rounded={true}>Badge link</Badge>
+<Badge href="/" large>Badge link</Badge>
+<Badge href="/" border>Badge link</Badge>
+<Badge href="/" rounded>Badge link</Badge>
 ```
 
 <Htwo label="Badges with icon" />
@@ -142,11 +142,11 @@ You can also use SVG icons inside the badge elements.
 <script>
 	import { Badge } from 'flowbite-svelte';
 </script>
-<Badge color="dark" bordered={true}>
+<Badge color="dark" border>
   <svg aria-hidden="true" class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
   3 days ago
 </Badge>
-<Badge bordered={true}>
+<Badge border>
   <svg aria-hidden="true" class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
   2 minutes ago
 </Badge>
@@ -262,14 +262,32 @@ Use the `dimissable` prop to dismiss the current badge.
 	import { Badge } from 'flowbite-svelte';
 </script>
 
-<Badge dismissable>Default</Badge>
-<Badge dismissable color="dark">Dark</Badge>
-<Badge dismissable color="red">Red</Badge>
-<Badge dismissable color="green">Green</Badge>
-<Badge dismissable color="yellow">Yellow</Badge>
-<Badge dismissable color="indigo">Indigo</Badge>
-<Badge dismissable color="purple">Purple</Badge>
-<Badge dismissable color="pink">Pink</Badge>
+<Badge dismissable large class="!px-2 !py-1">Default</Badge>
+<Badge dismissable large color="dark" class="!px-2 !py-1">Dark</Badge>
+<Badge dismissable large color="red" class="!px-2 !py-1">Red</Badge>
+<Badge dismissable large color="green" class="!px-2 !py-1">Green</Badge>
+<Badge dismissable large color="yellow" class="!px-2 !py-1">Yellow</Badge>
+<Badge dismissable large color="indigo" class="!px-2 !py-1">Indigo</Badge>
+<Badge dismissable large color="purple" class="!px-2 !py-1">Purple</Badge>
+<Badge dismissable large color="pink" class="!px-2 !py-1">Pink</Badge>
+```
+
+Use the `closeBtn` slot to add your desired button. Don't forget to use the slot prop `handleHide` to dismiss your badge.
+
+```svelte example class="gap-4" hideScript
+<script>
+	import { Badge } from 'flowbite-svelte';
+</script>
+
+<Badge dismissable>
+  Default
+  <svelte:fragment slot="closeBtn" let:handleHide>
+    <button on:click={handleHide} type="button" class="inline-flex items-center p-0.5 ml-2 text-sm bg-transparent rounded-sm text-blue-400 hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300" aria-label="Remove">
+      <svg aria-hidden="true" class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+      <span class="sr-only">Remove badge</span>
+    </button>
+  </svelte:fragment>
+</Badge>
 ```
 
 <Htwo label="Props" />
