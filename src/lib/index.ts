@@ -73,7 +73,6 @@ export { default as VoiceSearch } from './forms/VoiceSearch.svelte';
 
 // Indicator
 export { default as Indicator } from './indicators/Indicator.svelte';
-export { default as Dot } from './avatar/Dot.svelte';
 
 // Kbd
 export { default as Kbd } from './kbd/Kbd.svelte';
