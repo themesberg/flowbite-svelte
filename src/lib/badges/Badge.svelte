@@ -110,8 +110,8 @@
     setTimeout(() => {
       hidden = true;
     }, 300);
-    dispatch('close', {
-			message: 'The badge has been closed.'
+    dispatch('dismiss', {
+			message: 'The badge has been dismissed.'
 		});
   };
 </script>

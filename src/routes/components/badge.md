@@ -290,6 +290,20 @@ Use the `closeBtn` slot to add your desired button. Don't forget to use the slot
 </Badge>
 ```
 
+A `dismiss` event will be dispatched after the dismissal, listen to it if needed.
+
+```svelte example class="gap-4"
+<script>
+	import { Badge } from 'flowbite-svelte';
+
+  function handleDismiss(event) {
+		alert(event.detail.message);
+	}
+</script>
+
+<Badge dismissable large on:dismiss={handleDismiss}>Default</Badge>
+```
+
 <Htwo label="Props" />
 
 The component has the following props, type, and default values. See <A href="/pages/types">types 
