@@ -111,7 +111,7 @@
       hidden = true;
     }, 300);
     dispatch('dismiss', {
-			message: 'The badge has been dismissed.'
+			message: 'The badge will be dismissed.'
 		});
   };
 </script>
