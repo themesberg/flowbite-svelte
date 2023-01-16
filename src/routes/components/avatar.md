@@ -123,12 +123,16 @@ Use a dot element relative to the avatar component as an indicator for the user 
 
 ```svelte example class="flex gap-4" hideScript
 <script>
-  import {Avatar} from 'flowbite-svelte'
+  import {Avatar, Indicator} from 'flowbite-svelte'
 </script>
-<Avatar src="/images/profile-picture-3.webp" dot={{top:true, color:"bg-red-400"}}/>
-<Avatar src="/images/profile-picture-3.webp" dot={{top:true, color:"bg-red-400"}} rounded />
-<Avatar src="/images/profile-picture-3.webp" dot={{color:"bg-green-400"}}/>
-<Avatar src="/images/profile-picture-3.webp" dot={{color:"bg-green-400"}} rounded/>
+<Avatar src="/images/profile-picture-3.webp" dot={{color:"red"}}/>
+<Avatar src="/images/profile-picture-3.webp" dot={{placement: "top-right", color:"red"}} rounded />
+<Avatar src="/images/profile-picture-5.webp" dot={{placement: "bottom-right", color:"green"}} />
+<Avatar src="/images/profile-picture-5.webp" dot={{placement: "bottom-right"}} rounded />
+
+
+<Avatar dot={{}}/>
+
 ```
 
 <Htwo label="Stacked" />
@@ -149,7 +153,7 @@ Use this example if you want to stack a group of users by overlapping the avatar
 <Avatar src="/images/profile-picture-1.webp" stacked />
 <Avatar src="/images/profile-picture-2.webp" stacked />
 <Avatar src="/images/profile-picture-3.webp" stacked />
-<Avatar stacked href="/" class="bg-gray-700 text-white hover:bg-gray-600">+99</Avatar>
+<Avatar stacked href="/" class="bg-gray-700 text-white hover:bg-gray-600 text-sm">+99</Avatar>
 </div>
 ```
 
@@ -179,7 +183,7 @@ Use this example if you want to show a dropdown menu when clicking on the avatar
   import {Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider} from 'flowbite-svelte'
 </script>
 
-  <Avatar id="user-drop" src="/images/profile-picture-3.webp" dot={{color:'bg-green-400'}} />
+  <Avatar id="user-drop" src="/images/profile-picture-3.webp" dot={{color:'green'}} />
   <Dropdown triggeredBy="#user-drop">
     <DropdownHeader>
       <span class="block text-sm"> Bonnie Green </span>

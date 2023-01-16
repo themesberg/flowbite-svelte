@@ -2,8 +2,7 @@
   import classNames from 'classnames';
 
   import AvatarPlaceholder from './Placeholder.svelte';
-  import Dot from './Dot.svelte';
-  import type { DotType } from '../types';
+  import Indicator from '$lib/indicators/Indicator.svelte';
 
   export let src: string = '';
   export let href: string | undefined = undefined;
@@ -12,9 +11,12 @@
   export let border: boolean = false;
   export let stacked: boolean = false;
 
-  export let dot: DotType = { top: false, color: 'bg-gray-300 dark:bg-gray-500' };
+  export let dot: object | undefined = undefined;
   export let alt: string = '';
   export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
+
+  $: dot = dot && { placement: 'top-right', color: 'gray', size: 'lg', ...dot };
+  $: dot && console.log(dot);
 
   const sizes = {
     xs: 'w-6 h-6',
@@ -35,20 +37,21 @@
   );
 </script>
 
-<Dot show={$$props.dot} {rounded} {...dot} {size} class={sizes[size]}>
-  {#if src}
-    <img {alt} {src} {...$$restProps} class={avatarClass} />
-  {:else if $$slots.default}
-    <svelte:element
-      this={href ? 'a' : 'div'}
-      {href}
-      {...$$restProps}
-      class="flex justify-center items-center text-xs font-medium {avatarClass}">
-      <slot />
-    </svelte:element>
-  {:else}
-    <svelte:element this={href ? 'a' : 'div'} {href} {...$$restProps} class={avatarClass}>
-      <AvatarPlaceholder {rounded} />
-    </svelte:element>
-  {/if}
-</Dot>
+{#if !src || !!href || $$slots.default || dot}
+  <svelte:element
+    this={href ? 'a' : 'div'}
+    {href}
+    {...$$restProps}
+    class="relative flex justify-center items-center {avatarClass}">
+    {#if src}
+      <img {alt} {src} class={rounded ? 'rounded' : 'rounded-full'} />
+    {:else}
+      <slot><AvatarPlaceholder {rounded} /></slot>
+    {/if}
+    {#if dot}
+      <Indicator border offset={rounded} {...dot} />
+    {/if}
+  </svelte:element>
+{:else}
+  <img {alt} {src} {...$$restProps} class={avatarClass} />
+{/if}
