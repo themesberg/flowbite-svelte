@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.29.11](https://github.com/themesberg/flowbite-svelte/compare/v0.29.10...v0.29.11) (2023-01-16)
+
+
+### Features
+
+* indicator comp ([#532](https://github.com/themesberg/flowbite-svelte/issues/532)) ([57ce4fc](https://github.com/themesberg/flowbite-svelte/commit/57ce4fcdce3965921c0f6edf71f6ae42c2d42b40))
+* make <TableHead> slot more flexible ([#527](https://github.com/themesberg/flowbite-svelte/issues/527)) ([33803f2](https://github.com/themesberg/flowbite-svelte/commit/33803f23ce90f9425417f6417c70bc6928337bbe))
+
+
+### Bug Fixes
+
+* update badge component's style and doc ([#531](https://github.com/themesberg/flowbite-svelte/issues/531)) ([ce9af8c](https://github.com/themesberg/flowbite-svelte/commit/ce9af8cff8f6979f625b00fd165aa2ffadc41604))
+
 ### [0.29.10](https://github.com/themesberg/flowbite-svelte/compare/v0.29.9...v0.29.10) (2023-01-13)
 
 
