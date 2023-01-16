@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { createEventDispatcher } from 'svelte';
   import classNames from 'classnames';
   import CloseButton from '../utils/CloseButton.svelte';
 
@@ -51,17 +52,20 @@
     pink: 'hover:bg-pink-200'
   };
 
-  const baseClass: string = 'font-medium inline-flex items-center justify-center';
+  const baseClass: string = 'font-medium inline-flex items-center justify-center px-2.5 py-0.5';
+
+  let transition = false;
 
   let badgeClass: string;
   $: badgeClass = classNames(
     baseClass,
-    large ? 'text-sm px-2 py-1' : 'text-xs px-2.5 py-0.5',
+    large ? 'text-sm' : 'text-xs',
     border ? `border ${borderedColors[color]}` : colors[color],
     href && hoverColors[color],
     rounded ? 'rounded-full' : 'rounded',
     index && 'absolute font-bold border-2 border-white dark:border-gray-900',
     index && (large ? 'w-7 h-7 -top-3 -right-3' : 'w-6 h-6 -top-2 -right-2'),
+    transition && 'transition-opacity duration-300 ease-out opacity-0',
     $$props.class
   );
 
@@ -98,18 +102,21 @@
     closeBtnColors[color]
   );
 
-  let transition = false;
   let hidden = false;
-  
+  const dispatch = createEventDispatcher();
+
   const handleHide = () => {
     transition = true;
     setTimeout(() => {
       hidden = true;
     }, 300);
+    dispatch('close', {
+			message: 'The badge has been closed.'
+		});
   };
 </script>
 
-<svelte:element this={href ? 'a' : 'span'} {href} {...$$restProps} class={badgeClass} class:transition-opacity={transition} class:duration-300={transition} class:ease-out={transition} class:opacity-0={transition} class:hidden>
+<svelte:element this={href ? 'a' : 'span'} {href} {...$$restProps} class={badgeClass} class:hidden>
   <slot />
   {#if dismissable}
     <slot name="closeBtn" {handleHide}>
