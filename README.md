@@ -412,6 +412,28 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
         </a>
     </td>
   </tr>
+  <tr>
+    <td width="33.3333%">Speed Dial</td>
+    <td width="33.3333%">Stepper(TBA)</td>
+    <td width="33.3333%">Indicators</td>
+  </tr>
+  <tr>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/components/speed-dial/">
+            <img alt="Tailwind CSS Speed Dial" src="https://flowbite.s3.amazonaws.com/github/dial.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="#">
+            <img alt="Tailwind CSS Stepper" src="https://flowbite.s3.amazonaws.com/github/stepper.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite.com/components/indicators/">
+            <img alt="Tailwind CSS Indicators" src="https://flowbite.s3.amazonaws.com/github/indicators.jpg">
+        </a>
+    </td>
+  </tr>
 </table>
 
 ## Community

@@ -93,6 +93,7 @@
   <Block.HeadingBlock />
   <Block.HrBlock />
   <Block.ImageBlock />
+  <Block.IndicatorBlock />
   <Block.InputfieldBlock />
   <Block.KbdBlock />
   <Block.LinkBlock />
