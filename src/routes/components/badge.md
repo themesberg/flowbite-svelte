@@ -262,14 +262,14 @@ Use the `dimissable` prop to dismiss the current badge.
 	import { Badge } from 'flowbite-svelte';
 </script>
 
-<Badge dismissable large class="!px-2 !py-1">Default</Badge>
-<Badge dismissable large color="dark" class="!px-2 !py-1">Dark</Badge>
-<Badge dismissable large color="red" class="!px-2 !py-1">Red</Badge>
-<Badge dismissable large color="green" class="!px-2 !py-1">Green</Badge>
-<Badge dismissable large color="yellow" class="!px-2 !py-1">Yellow</Badge>
-<Badge dismissable large color="indigo" class="!px-2 !py-1">Indigo</Badge>
-<Badge dismissable large color="purple" class="!px-2 !py-1">Purple</Badge>
-<Badge dismissable large color="pink" class="!px-2 !py-1">Pink</Badge>
+<Badge dismissable large>Default</Badge>
+<Badge dismissable large color="dark">Dark</Badge>
+<Badge dismissable large color="red">Red</Badge>
+<Badge dismissable large color="green">Green</Badge>
+<Badge dismissable large color="yellow">Yellow</Badge>
+<Badge dismissable large color="indigo">Indigo</Badge>
+<Badge dismissable large color="purple">Purple</Badge>
+<Badge dismissable large color="pink">Pink</Badge>
 ```
 
 Use the `closeBtn` slot to add your desired button. Don't forget to use the slot prop `handleHide` to dismiss your badge.

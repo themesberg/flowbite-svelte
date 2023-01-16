@@ -9,7 +9,6 @@
   export let rounded: boolean = false;
   export let index: boolean = false;
   export let dismissable: boolean = false;
-  export let closeBtnSize: 'xs' | 'sm' | 'md' = 'sm';
 
   const colors = {
     blue: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300',
@@ -52,12 +51,12 @@
     pink: 'hover:bg-pink-200'
   };
 
-  const baseClass: string = 'font-medium inline-flex items-center justify-center px-2.5 py-0.5';
+  const baseClass: string = 'font-medium inline-flex items-center justify-center';
 
   let badgeClass: string;
   $: badgeClass = classNames(
     baseClass,
-    large ? 'text-sm' : 'text-xs',
+    large ? 'text-sm px-2 py-1' : 'text-xs px-2.5 py-0.5',
     border ? `border ${borderedColors[color]}` : colors[color],
     href && hoverColors[color],
     rounded ? 'rounded-full' : 'rounded',
@@ -68,15 +67,29 @@
 
   const closeBtnBaseClass: string = 'inline-flex items-center !p-0.5 !m-0 !ml-2 text-sm bg-transparent rounded-sm focus:!ring-0';
 
+  // uncomment the following lines to completely overwrite <CloseButton>'s color palette
+  // in case <CloseButton>'s color palette is changed in the future
+  // const closeBtnColors = {
+  //   blue: '!text-blue-400 hover:!bg-blue-200 hover:!text-blue-900 dark:hover:!bg-blue-800 dark:hover:!text-blue-300',
+  //   dark: '!text-gray-400 hover:!bg-gray-200 hover:!text-gray-900 dark:hover:!bg-gray-600 dark:hover:!text-gray-300',
+  //   red: '!text-red-400 hover:!bg-red-200 hover:!text-red-900 dark:hover:!bg-red-800 dark:hover:!text-red-300',
+  //   green: '!text-green-400 hover:!bg-green-200 hover:!text-green-900 dark:hover:!bg-green-800 dark:hover:!text-green-300',
+  //   yellow: '!text-yellow-400 hover:!bg-yellow-200 hover:!text-yellow-900 dark:hover:!bg-yellow-800 dark:hover:!text-yellow-300',
+  //   indigo: '!text-indigo-400 hover:!bg-indigo-200 hover:!text-indigo-900 dark:hover:!bg-indigo-800 dark:hover:!text-indigo-300',
+  //   purple: '!text-purple-400 hover:!bg-purple-200 hover:!text-purple-900 dark:hover:!bg-purple-800 dark:hover:!text-purple-300',
+  //   pink: '!text-pink-400 hover:!bg-pink-200 hover:!text-pink-900 dark:hover:!bg-pink-800 dark:hover:!text-pink-300'
+  // };
+
+  // only overwrite necessary colors (<CloseButton> v0.29.10)
   const closeBtnColors = {
-    blue: 'text-blue-400 hover:bg-blue-200 hover:text-blue-900 dark:hover:!bg-blue-800 dark:hover:text-blue-300',
-    dark: 'text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:!bg-gray-600 dark:hover:text-gray-300',
-    red: 'text-red-400 hover:bg-red-200 hover:text-red-900 dark:hover:!bg-red-800 dark:hover:text-red-300',
-    green: 'text-green-400 hover:bg-green-200 hover:text-green-900 dark:hover:!bg-green-800 dark:hover:text-green-300',
-    yellow: 'text-yellow-400 hover:bg-yellow-200 hover:text-yellow-900 dark:hover:!bg-yellow-800 dark:hover:text-yellow-300',
-    indigo: 'text-indigo-400 hover:bg-indigo-200 hover:text-indigo-900 dark:hover:!bg-indigo-800 dark:hover:text-indigo-300',
-    purple: 'text-purple-400 hover:bg-purple-200 hover:text-purple-900 dark:hover:!bg-purple-800 dark:hover:text-purple-300',
-    pink: 'text-pink-400 hover:bg-pink-200 hover:text-pink-900 dark:hover:!bg-pink-800 dark:hover:text-pink-300'
+    blue: 'text-blue-400 hover:text-blue-900 dark:hover:!bg-blue-800 dark:hover:text-blue-300',
+    dark: 'text-gray-400 hover:!text-gray-400 hover:!bg-gray-200 dark:hover:!text-gray-300',
+    red: 'text-red-400 hover:text-red-900 dark:hover:!bg-red-800 dark:hover:text-red-300',
+    green: 'text-green-400 hover:text-green-900 dark:hover:!bg-green-800 dark:hover:text-green-300',
+    yellow: 'text-yellow-400 hover:text-yellow-900 dark:hover:!bg-yellow-800 dark:hover:text-yellow-300',
+    indigo: 'text-indigo-400 hover:text-indigo-900 dark:hover:!bg-indigo-800 dark:hover:text-indigo-300',
+    purple: 'text-purple-400 hover:text-purple-900 dark:hover:!bg-purple-800 dark:hover:text-purple-300',
+    pink: 'text-pink-400 hover:text-pink-900 dark:hover:!bg-pink-800 dark:hover:text-pink-300'
   };
 
   let closeBtnClass: string;
@@ -100,7 +113,7 @@
   <slot />
   {#if dismissable}
     <slot name="closeBtn" {handleHide}>
-      <CloseButton name="Remove badge" size={closeBtnSize} on:click={handleHide} class={closeBtnClass} />
+      <CloseButton {color} on:click={handleHide} size={large ? 'sm' : 'xs'} name="Remove badge" class={closeBtnClass} />
     </slot>
   {/if}
 </svelte:element>
