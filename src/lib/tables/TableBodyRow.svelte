@@ -2,16 +2,19 @@
   import classNames from 'classnames';
   import { getContext } from 'svelte';
 
-  export let trClass: string = 'bg-white';
+  export let color: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom' =
+    getContext('color');
+
   const colors = {
-    default: 'dark:border-gray-700 dark:bg-gray-800',
-    blue: 'bg-blue-500 border-b border-blue-400',
-    green: 'bg-green-500 border-b border-green-400',
-    red: 'bg-red-500 border-b border-red-400',
-    yellow: 'bg-yellow-500 border-b border-yellow-400',
-    purple: 'bg-purple-500 border-b border-purple-400',
+    default: 'bg-white dark:bg-gray-800 dark:border-gray-700',
+    blue: 'bg-blue-500 border-blue-400',
+    green: 'bg-green-500 border-green-400',
+    red: 'bg-red-500 border-red-400',
+    yellow: 'bg-yellow-500 border-yellow-400',
+    purple: 'bg-purple-500 border-purple-400',
     custom: ''
   };
+
   const hoverColors = {
     default: 'hover:bg-gray-50 dark:hover:bg-gray-600',
     blue: 'hover:bg-blue-400',
@@ -32,11 +35,9 @@
     custom: ''
   };
 
-  let color: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom' = 'default';
-  color = getContext('color');
-  let trClassfinal: string;
-  $: trClassfinal = classNames(
-    getContext('noborder') ? 'bg-white dark:bg-gray-800' : trClass,
+  let trClass: string;
+  $: trClass = classNames(
+    !getContext('noborder') && 'border-b last:border-b-0',
     colors[color],
     getContext('hoverable') && hoverColors[color],
     getContext('striped') && stripColors[color],
@@ -44,6 +45,6 @@
   );
 </script>
 
-<tr {...$$restProps} class={trClassfinal} on:click on:contextmenu>
+<tr {...$$restProps} class={trClass} on:click on:contextmenu>
   <slot />
 </tr>

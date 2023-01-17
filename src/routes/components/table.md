@@ -403,17 +403,17 @@ Use this example where the `<tfoot>` HTML element can be used in conjunction wit
     <TableHeadCell>Price</TableHeadCell>
   </TableHead>
   <TableBody>
-    <TableBodyRow noborder>
+    <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
       <TableBodyCell>1</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
     </TableBodyRow>
-    <TableBodyRow noborder>
+    <TableBodyRow>
       <TableBodyCell>Microsoft Surface Pro</TableBodyCell>
       <TableBodyCell>1</TableBodyCell>
       <TableBodyCell>$1999</TableBodyCell>
     </TableBodyRow>
-    <TableBodyRow noborder>
+    <TableBodyRow>
       <TableBodyCell>Magic Mouse 2</TableBodyCell>
       <TableBodyCell>1</TableBodyCell>
       <TableBodyCell>$99</TableBodyCell>
@@ -512,19 +512,19 @@ Use this example of a table component without any border between the table cells
     <TableHeadCell>Price</TableHeadCell>
   </TableHead>
   <TableBody>
-    <TableBodyRow noborder>
+    <TableBodyRow>
       <TableBodyCell>Apple MacBook Pro 17"</TableBodyCell>
       <TableBodyCell>Sliver</TableBodyCell>
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
     </TableBodyRow>
-    <TableBodyRow noborder>
+    <TableBodyRow>
       <TableBodyCell>Microsoft Surface Pro</TableBodyCell>
       <TableBodyCell>White</TableBodyCell>
       <TableBodyCell>Laptop PC</TableBodyCell>
       <TableBodyCell>$1999</TableBodyCell>
     </TableBodyRow>
-    <TableBodyRow noborder>
+    <TableBodyRow>
       <TableBodyCell>Magic Mouse 2</TableBodyCell>
       <TableBodyCell>Black</TableBodyCell>
       <TableBodyCell>Accessories</TableBodyCell>
