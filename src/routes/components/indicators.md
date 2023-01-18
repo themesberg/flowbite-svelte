@@ -110,6 +110,7 @@ Use this example to show a status indicator for the currently logged in user by 
 </script>
 
 <Avatar src="/images/profile-picture-5.webp" dot={{color:"green", size: "lg", placement:"top-right"}} />
+<Avatar src="/images/profile-picture-5.webp" dot={{color:"red", size: "lg", placement:"top-right"}} />
 
 ```
 
@@ -264,7 +265,7 @@ Use these examples to position the indicator component anywhere relative to the 
 </script>
 
 <div class="w-56 h-56 relative bg-gray-100 borer border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700" >
-    <Indicator placement="top-left" color="gray">1</Indicator>
+    <Indicator placement="top-left" color="gray"/>
     <Indicator placement="top-center" color="dark"/>
     <Indicator placement="top-right" color="blue"/>
     <Indicator placement="center-left" color="green"/>
