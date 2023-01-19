@@ -142,6 +142,9 @@ export { default as SpeedDialButton } from './speed-dial/SpeedDialButton.svelte'
 // Spin
 export { default as Spinner } from './spinners/Spinner.svelte';
 
+// Steps
+export { default as StepIndicator } from './steps/StepIndicator.svelte';
+
 // Tables
 export { default as Table } from './tables/Table.svelte';
 export { default as TableBody } from './tables/TableBody.svelte';
