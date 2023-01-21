@@ -11,9 +11,9 @@ const selectorTabbable = `
 `;
 
 export default function focusTrap(node) {
-  const tabbable = Array.from(node.querySelectorAll(selectorTabbable));
-
   function handleFocusTrap(e) {
+    const tabbable = Array.from(node.querySelectorAll(selectorTabbable)).filter(n => n.offsetParent !== null);
+
     let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
 
     if (!isTabPressed) {
