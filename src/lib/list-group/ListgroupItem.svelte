@@ -58,6 +58,7 @@
   </a>
 {:else}
   <button
+    type="button"
     class="inline-flex relative items-center text-left {itemClass}"
     {disabled}
     on:click={() => dispatch('click', $$props)}
