@@ -144,10 +144,10 @@ test('Spinner page should have h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Svelte Spinner - Flowbite');
 });
 
-// Step indicator
+// Indicators
 test('Step indicator page should have h1', async ({ page }) => {
-	await page.goto('/components/step-indicator');
-	expect(await page.textContent('h1')).toBe('Svelte Step Indicator - Flowbite');
+	await page.goto('/components/indicators');
+	expect(await page.textContent('h1')).toBe('Svelte Indicators - Flowbite');
 });
 
 // Tables

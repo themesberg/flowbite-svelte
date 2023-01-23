@@ -2,7 +2,7 @@
 layout: componentLayout
 title: Svelte Indicators - Flowbite
 breadcrumb_title: Indicators
-dir: Components
+dir: Extend
 description: Use the indicator component to show a number count, account status, or as a loading label positioned relative to the parent component coded with Tailwind CSS
 ---
 

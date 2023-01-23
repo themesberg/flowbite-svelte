@@ -1,6 +1,6 @@
 ---
 layout: componentLayout
-title: Svelte Step Indicator - Flowbite
+title: Svelte Step Indicator
 breadcrumb_title: Step Indicator
 dir: Components
 description: Use the step indicator component to show the progress of a process.
