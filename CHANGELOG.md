@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.29.12](https://github.com/themesberg/flowbite-svelte/compare/v0.29.11...v0.29.12) (2023-01-23)
+
+
+### Features
+
+* add step indicator component ([#545](https://github.com/themesberg/flowbite-svelte/issues/545)) ([549ad61](https://github.com/themesberg/flowbite-svelte/commit/549ad616adc829b5482da20abf9f4ef3e78aa44b))
+
+
+### Bug Fixes
+
+* add indcator to index ([#535](https://github.com/themesberg/flowbite-svelte/issues/535)) ([f6fcef6](https://github.com/themesberg/flowbite-svelte/commit/f6fcef63638a5edcf4c3f8d2b965789d5ad85be1))
+* add two missing colors for <Table> ([#537](https://github.com/themesberg/flowbite-svelte/issues/537)) ([ac558fb](https://github.com/themesberg/flowbite-svelte/commit/ac558fb267d3aaa87773ca23b5104e4c231443ba))
+* few minor tweaks ([#541](https://github.com/themesberg/flowbite-svelte/issues/541)) ([2289e4d](https://github.com/themesberg/flowbite-svelte/commit/2289e4d1f83f272db5c092cd09469147a4878ff8))
+* ListgroupItem button type ([#549](https://github.com/themesberg/flowbite-svelte/issues/549)) ([6b74d73](https://github.com/themesberg/flowbite-svelte/commit/6b74d738efc887b46fe0fc0eea473e617aa386ca))
+* move step indicator to extend ([000dec3](https://github.com/themesberg/flowbite-svelte/commit/000dec3688b5d9535a21a36207de42ca26336f1b))
+* TableBodyRow color and border ([#539](https://github.com/themesberg/flowbite-svelte/issues/539)) ([d52920f](https://github.com/themesberg/flowbite-svelte/commit/d52920fe869183639788607475b148c80fe283fa))
+
 ### [0.29.11](https://github.com/themesberg/flowbite-svelte/compare/v0.29.10...v0.29.11) (2023-01-16)
 
 
