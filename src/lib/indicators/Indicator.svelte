@@ -95,9 +95,6 @@
     placement && offset && offsets[placement],
     $$props.class
   );
-
-  let divClass: string;
-  $: divClass = classNames('relative flex-shrink-0');
 </script>
 
 <div class={dotClass}><slot /></div>
