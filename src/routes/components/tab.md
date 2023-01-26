@@ -64,7 +64,7 @@ The last tab in that example shows not only how to show a disabled tab, but how 
   <TabItem open title="Profile">
     <p class="text-sm text-gray-500 dark:text-gray-400"><b>Profile:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </TabItem>
-  <TabItem ttile="Settings">
+  <TabItem title="Settings">
     <p class="text-sm text-gray-500 dark:text-gray-400"><b>Settings:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </TabItem>
   <TabItem title="Users">
