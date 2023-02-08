@@ -79,7 +79,7 @@ Use this example of a second-level H2 heading as the main subtitle for each sect
   import {  Heading, P, A } from 'flowbite-svelte'
 </script>
 
-<Heading tag="h2" customeSize="text-4xl font-extrabold ">Payments tool for companies</Heading>
+<Heading tag="h2" customSize="text-4xl font-extrabold ">Payments tool for companies</Heading>
 <P class="my-4 text-gray-500">Start developing with an open-source library of over 450+ UI components, sections, and pages built with the utility classes from Tailwind CSS and designed in Figma.</P>
 <P class="mb-4">Deliver great service experiences fast - without the complexity of traditional ITSM solutions. Accelerate critical development work, eliminate toil, and deploy changes with ease.</P>
 <A>Read more 
