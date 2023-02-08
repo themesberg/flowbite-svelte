@@ -30,7 +30,7 @@
 </script>
 
 <Frame tag="nav" {color} {...$$restProps} class={classNames(navClass, $$props.class)}>
-  <div class={classNames(navDivClass, fluid && 'container')}>
+  <div class={classNames(navDivClass, fluid || 'container')}>
     <slot {hidden} {toggle} />
   </div>
 </Frame>
