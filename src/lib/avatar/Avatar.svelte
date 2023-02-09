@@ -16,7 +16,6 @@
   export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
 
   $: dot = dot && { placement: 'top-right', color: 'gray', size: 'lg', ...dot };
-  $: dot && console.log(dot);
 
   const sizes = {
     xs: 'w-6 h-6',
