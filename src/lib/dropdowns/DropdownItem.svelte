@@ -19,6 +19,7 @@
   <svelte:element
     this={href ? 'a' : 'button'}
     {href}
+    type={href ? undefined : 'button'}
     {...$$restProps}
     class={liClass}
     on:click
