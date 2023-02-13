@@ -24,10 +24,10 @@ specifiers:
   prettier-plugin-svelte: ^2.9.0
   prism-themes: ^1.9.0
   svelte: ^3.55.1
-  svelte-check: ^2.10.3
+  svelte-check: ^3.0.3
   svelte-meta-tags: ^2.6.5
   svelte-preprocess: ^4.10.7
-  svelte2tsx: ^0.5.23
+  svelte2tsx: ^0.6.1
   tailwindcss: ^3.2.6
   tslib: ^2.5.0
   typescript: ^4.9.5
@@ -60,10 +60,10 @@ devDependencies:
   prettier-plugin-svelte: 2.9.0_jrsxveqmsx2uadbqiuq74wlc4u
   prism-themes: 1.9.0
   svelte: 3.55.1
-  svelte-check: 2.10.3_gqx7lw3sljhsd4bstor5m2aa2u
+  svelte-check: 3.0.3_gqx7lw3sljhsd4bstor5m2aa2u
   svelte-meta-tags: 2.6.5_4x7phaipmicbaooxtnresslofa
   svelte-preprocess: 4.10.7_b25a55hc532q56kmuqlrolam2i
-  svelte2tsx: 0.5.23_4x7phaipmicbaooxtnresslofa
+  svelte2tsx: 0.6.1_4x7phaipmicbaooxtnresslofa
   tailwindcss: 3.2.6_postcss@8.4.21
   tslib: 2.5.0
   typescript: 4.9.5
@@ -2449,6 +2449,16 @@ packages:
       sourcemap-codec: 1.4.8
     dev: true
 
+  /sorcery/0.11.0:
+    resolution: {integrity: sha512-J69LQ22xrQB1cIFJhPfgtLuI6BpWRiWu1Y3vSsIwK/eAScqJxd/+CJlUuHQRdX2C9NGFamq+KqNywGgaThwfHw==}
+    hasBin: true
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.4.14
+      buffer-crc32: 0.2.13
+      minimist: 1.2.8
+      sander: 0.5.1
+    dev: true
+
   /source-map-js/1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
@@ -2526,11 +2536,11 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte-check/2.10.3_gqx7lw3sljhsd4bstor5m2aa2u:
-    resolution: {integrity: sha512-Nt1aWHTOKFReBpmJ1vPug0aGysqPwJh2seM1OvICfM2oeyaA62mOiy5EvkXhltGfhCcIQcq2LoE0l1CwcWPjlw==}
+  /svelte-check/3.0.3_gqx7lw3sljhsd4bstor5m2aa2u:
+    resolution: {integrity: sha512-ByBFXo3bfHRGIsYEasHkdMhLkNleVfszX/Ns1oip58tPJlKdo5Ssr8kgVIuo5oq00hss8AIcdesuy0Xt0BcTvg==}
     hasBin: true
     peerDependencies:
-      svelte: ^3.24.0
+      svelte: ^3.55.0
     dependencies:
       '@jridgewell/trace-mapping': 0.3.17
       chokidar: 3.5.3
@@ -2539,13 +2549,12 @@ packages:
       picocolors: 1.0.0
       sade: 1.8.1
       svelte: 3.55.1
-      svelte-preprocess: 4.10.7_b25a55hc532q56kmuqlrolam2i
+      svelte-preprocess: 5.0.1_b25a55hc532q56kmuqlrolam2i
       typescript: 4.9.5
     transitivePeerDependencies:
       - '@babel/core'
       - coffeescript
       - less
-      - node-sass
       - postcss
       - postcss-load-config
       - pug
@@ -2627,6 +2636,56 @@ packages:
       typescript: 4.9.5
     dev: true
 
+  /svelte-preprocess/5.0.1_b25a55hc532q56kmuqlrolam2i:
+    resolution: {integrity: sha512-0HXyhCoc9rsW4zGOgtInylC6qj259E1hpFnJMJWTf+aIfeqh4O/QHT31KT2hvPEqQfdjmqBR/kO2JDkkciBLrQ==}
+    engines: {node: '>= 14.10.0'}
+    requiresBuild: true
+    peerDependencies:
+      '@babel/core': ^7.10.2
+      coffeescript: ^2.5.1
+      less: ^3.11.3 || ^4.0.0
+      postcss: ^7 || ^8
+      postcss-load-config: ^2.1.0 || ^3.0.0 || ^4.0.0
+      pug: ^3.0.0
+      sass: ^1.26.8
+      stylus: ^0.55.0
+      sugarss: ^2.0.0 || ^3.0.0 || ^4.0.0
+      svelte: ^3.23.0
+      typescript: ^3.9.5 || ^4.0.0
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      coffeescript:
+        optional: true
+      less:
+        optional: true
+      postcss:
+        optional: true
+      postcss-load-config:
+        optional: true
+      pug:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@types/pug': 2.0.6
+      '@types/sass': 1.43.1
+      detect-indent: 6.1.0
+      magic-string: 0.27.0
+      postcss: 8.4.21
+      postcss-load-config: 4.0.1_postcss@8.4.21
+      sorcery: 0.11.0
+      strip-indent: 3.0.0
+      svelte: 3.55.1
+      typescript: 4.9.5
+    dev: true
+
   /svelte/3.55.1:
     resolution: {integrity: sha512-S+87/P0Ve67HxKkEV23iCdAh/SX1xiSfjF1HOglno/YTbSTW7RniICMCofWGdJJbdjw3S+0PfFb1JtGfTXE0oQ==}
     engines: {node: '>= 8'}
@@ -2637,6 +2696,18 @@ packages:
     peerDependencies:
       svelte: ^3.24
       typescript: ^4.1.2
+    dependencies:
+      dedent-js: 1.0.1
+      pascal-case: 3.1.2
+      svelte: 3.55.1
+      typescript: 4.9.5
+    dev: true
+
+  /svelte2tsx/0.6.1_4x7phaipmicbaooxtnresslofa:
+    resolution: {integrity: sha512-O/1+5UyChfmhp1/GUv8b8iveTrn6eZwHxEXc+rw7LMKRidr9KHk5w/EiliLjDUwHa2VA6CoEty+CQylROVU4Sw==}
+    peerDependencies:
+      svelte: ^3.55
+      typescript: ^4.9.4
     dependencies:
       dedent-js: 1.0.1
       pascal-case: 3.1.2
