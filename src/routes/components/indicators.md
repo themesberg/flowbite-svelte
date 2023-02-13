@@ -123,7 +123,7 @@ This example can be used to add an indicator inside of a badge component.
   import { Indicator, Avatar, Badge } from 'flowbite-svelte'
 </script>
 
-<ul role="list" class="max-w-sm divide-y divide-gray-200 dark:divide-gray-700 w-full">
+<ul class="max-w-sm divide-y divide-gray-200 dark:divide-gray-700 w-full">
     <li class="py-3 sm:py-4">
         <div class="flex items-center space-x-3">
                 <Avatar src="/images/profile-picture-5.webp"  alt="Neil image" />
