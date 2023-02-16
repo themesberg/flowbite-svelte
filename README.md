@@ -1,10 +1,14 @@
-# FLOWBITE-SVELTE
+# FLOWBITE-SVELTE 
 
+[![Open in Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https:///pr.new/themesberg/flowbite-svelte)
+
+<p align="center">
 [![npm version](https://badgen.net/npm/v/flowbite-svelte)](https://www.npmjs.com/package/flowbite-svelte)
 [![npm downloads](https://badgen.net/npm/dw/flowbite-svelte)](https://www.npmjs.com/package/flowbite-svelte)
 [![npm downloads](https://badgen.net/npm/dt/flowbite-svelte)](https://www.npmjs.com/package/flowbite-svelte)
 [![license](https://badgen.net/npm/license/flowbite-svelte)](https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE)
 [![Discord](https://img.shields.io/discord/902911619032576090?color=%237289da&label=Discord)](https://discord.com/invite/4eeurUVvTy)
+</p>
 
 **⚠️ Flowbite-Svelte is currently in early development and APIs and packages are likely to change quite often.**
 
