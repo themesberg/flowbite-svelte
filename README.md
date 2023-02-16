@@ -25,7 +25,7 @@
 
 ## Flowbite-Svelte-Starter
 
-You can use [Flowbite-Svelte Starter](https://github.com/shinokada/flowbite-svelte-starter) for a quick start.
+You can use [Flowbite Svelte Starter](https://github.com/shinokada/flowbite-svelte-starter) for a quick start.
 
 ## Installation
 

@@ -1,7 +1,7 @@
 ---
 layout: pageLayout
-breadcrumb_title: Flowbite-Svelte Starter
-title: Flowbite-Svelte Starter
+breadcrumb_title: Flowbite Svelte Starter
+title: Flowbite Svelte Starter
 dir: Extend
 description: Flowbite-Svete-Starter provides all necessary components to get started quickly 
 ---

@@ -23,11 +23,11 @@ description: Flowbite-Svete-Blocks provides all necessary components to get star
 
 <CompoDescription>{description}</CompoDescription>
 
-<Htwo label="Demo" />
-
-<p class="dark:text-white" >
-<a class="text-blue-700" href="https://github.com/shinokada/flowbite-svelte-blocks">GitHub Repo: Flowbite-Svelte-Blocks</a> and <a class="text-blue-700" href="https://shinokada.github.io/flowbite-svelte-blocks/">Docs</a>
-</p>
+<ul class="dark:text-white" >
+<li>
+<a class="text-blue-700 text-md" href="https://github.com/shinokada/flowbite-svelte-blocks">GitHub Repo: Flowbite-Svelte-Blocks</a></li>
+<li><a class="text-blue-700 text-md" href="https://shinokada.github.io/flowbite-svelte-blocks/">Docs</a></li>
+</ul>
 
 
 <Htwo label="Installation" />
