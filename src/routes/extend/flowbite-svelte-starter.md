@@ -1,7 +1,7 @@
 ---
 layout: pageLayout
-breadcrumb_title: Flowbite-Svelte Starter
-title: Flowbite-Svelte Starter
+breadcrumb_title: Flowbite Svelte Starter
+title: Flowbite Svelte Starter
 dir: Extend
 description: Flowbite-Svete-Starter provides all necessary components to get started quickly 
 ---
@@ -25,7 +25,7 @@ description: Flowbite-Svete-Starter provides all necessary components to get sta
 
 <Htwo label="Demo" />
 
-<p class="dark:text-white" ><a class="text-blue-700" href="https://flowbite-svelte-starter.vercel.app/">Flowbite-Svelte-Starter Demo</a></p>
+<p class="dark:text-white" ><a class="text-blue-700" href="https://github.com/shinokada/flowbite-svelte-starter">Flowbite-Svelte-Starter</a></p>
 
 <Htwo label="Features" />
 
@@ -53,24 +53,9 @@ pnpm i // or npm i
 pnpm run dev // or npm run dev
 ```
 
-<Htwo label="Other examples/themes" />
-
-<Htwo label="Svelte-Sidebar-Example" />
-
-If you want to see [a svelte-sidebar demo](https://flowbite-svelte-starter.vercel.app/):
-
-```sh
-git checkout svelte-sidebar-example
-```
-
 <Htwo label="Jaco example" />
 
 ```sh
 git checkout jaco
 ```
 
-<Htwo label="Plain" />
-
-```sh
-git checkout plain
-```
