@@ -23,13 +23,7 @@ description: Flowbite-Svelte How to contribute page
 
 <p class='w-full'>Here are some guidelines we'd like you to follow before submitting a PR.</p>
 
-<Htwo label="Quickest way" />
-
-[![Open in Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https:///pr.new/themesberg/flowbite-svelte)
-
-The above link will open a browser IDE and you can create a PR. It is a PWA, so you can download it as well. You can learn more about [Codeflow](https://developer.stackblitz.com/codeflow/what-is-codeflow).
-
-<Htwo label="Conventional method" />
+<Htwo label="Create a fork" />
 
 <p>Create a fork from <a href="https://github.com/themesberg/flowbite-svelte">Flowbite-Svelte</a> to your repository first.</p>
 
