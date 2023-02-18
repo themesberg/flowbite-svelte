@@ -13,10 +13,10 @@
   &copy; {year}
   {#if href}
     <a {...$$restProps} {href} {target} class={aClass}>
-      {by}
+      {by}.
     </a>
   {:else}
-    <span class="ml-1">{by}</span>
+    <span class="ml-1">{by}.</span>
   {/if}
-  . {copyrightMessage}
+  {copyrightMessage}
 </span>
