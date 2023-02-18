@@ -440,15 +440,10 @@ Use the menu icon trigger element on components such as cards as an alternative 
 
 ```svelte example class="flex justify-center items-start gap-4 h-60"
 <script>
-  import { Button, Dropdown, DropdownItem, ToolbarButton, DropdownDivider } from 'flowbite-svelte'
+  import { Button, Dropdown, DropdownItem, ToolbarButton, MenuButton, DropdownDivider } from 'flowbite-svelte'
 </script>
-
-<ToolbarButton class="dots-menu text-gray-900 bg-white dark:text-white dark:bg-gray-800">
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" /></svg>
-</ToolbarButton>
-<ToolbarButton class="dots-menu text-gray-900 bg-white dark:text-white dark:bg-gray-800">
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" /></svg>
-</ToolbarButton>
+<MenuButton class="dots-menu" />
+<MenuButton class="dots-menu" vertical />
 <Dropdown triggeredBy=".dots-menu">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>

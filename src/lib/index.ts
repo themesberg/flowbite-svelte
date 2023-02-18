@@ -203,6 +203,7 @@ export { default as ChevronRight } from './utils/ChevronRight.svelte';
 export { default as ChevronUp } from './utils/ChevronUp.svelte';
 export { default as Chevron } from './utils/Chevron.svelte';
 export { default as InformationCircle } from './utils/InformationCircle.svelte';
+export { default as MenuButton } from './utils/MenuButton.svelte';
 export { default as UserCircle } from './utils/UserCircle.svelte';
 
 // video
