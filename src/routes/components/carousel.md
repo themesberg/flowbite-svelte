@@ -42,7 +42,7 @@ The carousel component can be used to cycle through a set of elements using cust
 ```html
 <script>
   import { Carousel, CarouselTransition } from 'flowbite-svelte'
-  // ./imageData/+server.js has the followint
+  // ./imageData/+server.js has the following
   export const images = [
   {
     id: 0,
