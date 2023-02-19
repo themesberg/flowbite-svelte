@@ -19,9 +19,21 @@
 
 [Visualize this repo's codebase](https://mango-dune-07a8b7110.1.azurestaticapps.net/?repo=themesberg%2Fflowbite-svelte)
 
-## Flowbite-Svelte-Starter
+## Flowbite Svelte Starters
 
-You can use [Flowbite Svelte Starter](https://github.com/shinokada/flowbite-svelte-starter) for a quick start.
+You can find all the starters in the Starters directory.
+
+- [Flowbite SvelteKit starter]()
+- [Svelte starter]()
+- [Svelte TS starter]()
+
+## Flowbite Svelte Examples
+
+You can find all the examples in the Examples directory.
+
+- [Flowbite SvelteKit responsive sidebar layout]()
+
+
 
 ## Installation
 

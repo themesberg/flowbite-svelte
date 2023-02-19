@@ -1,9 +1,9 @@
 ---
 layout: pageLayout
-breadcrumb_title: Other starters
-title: Other starters
+breadcrumb_title: Examples
+title: Flowbite Examples
 dir: Extend
-description: Other starters
+description: Flowbite Svete Examples 
 ---
 
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
@@ -23,5 +23,9 @@ description: Other starters
 
 <CompoDescription>{description}</CompoDescription>
 
-<Htwo label="List of starters" />
+<Htwo label="Starters" />
 
+<Heading class="mb-2" tag="h3" customSize="text-2xl">Flowbite SvelteKit responsive sidebar layout</Heading>
+
+<p class="dark:text-white hover:text-blue-900 dark:hover:text-blue-500  w-full"><a href="https://github.com/themesberg/flowbite-svelte/examples/flowbite-sveltekit-responsive-sidebar-layout/">Repo</a></p>
+<p class="dark:text-white hover:text-blue-900 dark:hover:text-blue-500 w-full"><a href="">Demo</a></p>
