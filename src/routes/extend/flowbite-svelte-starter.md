@@ -1,9 +1,9 @@
 ---
 layout: pageLayout
-breadcrumb_title: Flowbite Svelte Starter
-title: Flowbite Svelte Starter
+breadcrumb_title: Flowbite Svelte Starters
+title: Flowbite Svelte Starters
 dir: Extend
-description: Flowbite-Svete-Starter provides all necessary components to get started quickly 
+description: Flowbite Svete Starters provide all necessary components to get started quickly 
 ---
 
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
@@ -23,39 +23,21 @@ description: Flowbite-Svete-Starter provides all necessary components to get sta
 
 <CompoDescription>{description}</CompoDescription>
 
-<Htwo label="Demo" />
+<Htwo label="Starters" />
 
-<p class="dark:text-white" ><a class="text-blue-700" href="https://github.com/shinokada/flowbite-svelte-starter">Flowbite-Svelte-Starter</a></p>
+<Heading class="mb-2" tag="h3" customSize="text-xl">Flowbite Svelte starter</Heading>
 
-<Htwo label="Features" />
+<p class="dark:text-white hover:text-blue-900 dark:hover:text-blue-500 w-full"><a href="https://github.com/themesberg/flowbite-svelte/starters/flowbite-svelte-starter/">Repo</a></p>
+<p class="dark:text-white hover:text-blue-900 dark:hover:text-blue-500 w-full"><a href="">Demo</a></p>
 
-<ul class="dark:text-white">
-<li>Svelte</li>
-<li>SvelteKit</li>
-<li>Tailwind CSS</li>
-<li>Flowbite</li>
-<li>Flowbite-Svelte</li>
-<li>Flowbite-Svelte-Blocks</li>
-<li>ESlint</li>
-<li>Typescript</li>
-<li>Playwright</li>
-<li>Prettier</li>
-<li>Svelte-heros(Heroicons)</li>
-<li>Darkmode activated</li>
-</ul>
+<Heading class="mb-2" tag="h3" customSize="text-xl mt-2">Svelte starter</Heading>
 
-<Htwo label="Installation" />
+<p class="dark:text-white hover:text-blue-900 dark:hover:text-blue-500 w-full"><a href="https://github.com/themesberg/flowbite-svelte/starters/svelte-starter/">Repo</a></p>
+<p class="dark:text-white hover:text-blue-900 dark:hover:text-blue-500 w-full"><a href="">Demo</a></p>
 
-```sh
-npx degit shinokada/flowbite-svelte-starter my-demo
-cd my-demo
-pnpm i // or npm i
-pnpm run dev // or npm run dev
-```
 
-<Htwo label="Jaco example" />
+<Heading class="mb-2" tag="h3" customSize="text-xl mt-2">Svelte TS starter</Heading>
 
-```sh
-git checkout jaco
-```
+<p class="dark:text-white hover:text-blue-900 dark:hover:text-blue-500 w-full"><a href="https://github.com/themesberg/flowbite-svelte/starters/svelte-ts-starter/">Repo</a></p>
+<p class="dark:text-white hover:text-blue-900 dark:hover:text-blue-500 w-full"><a href="">Demo</a></p>
 
