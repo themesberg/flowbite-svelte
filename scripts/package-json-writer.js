@@ -6,7 +6,7 @@ The output directory defaults to "./dist", but can be changed by updating the
 If any errors occur during this process, the script will log an error message to the console.
 
 Add the following to package.json scripts section
-"write-package-json": "node ./scripts/package-json-writer.js",
+"write-package-json": "node ./scripts/package-json-writer.js"
 */
 
 import fs from 'fs';
