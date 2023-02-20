@@ -28,4 +28,4 @@ description: Flowbite Svete Examples
 <Heading class="mb-2" tag="h3" customSize="text-2xl">Flowbite SvelteKit responsive sidebar layout</Heading>
 
 <p class="dark:text-white hover:text-blue-900 dark:hover:text-blue-500  w-full"><a href="https://github.com/themesberg/flowbite-svelte/examples/flowbite-sveltekit-responsive-sidebar-layout/">Repo</a></p>
-<p class="dark:text-white hover:text-blue-900 dark:hover:text-blue-500 w-full"><a href="">Demo</a></p>
+<p class="dark:text-white hover:text-blue-900 dark:hover:text-blue-500 w-full"><a href="/">Demo</a></p>
