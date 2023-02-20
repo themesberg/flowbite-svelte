@@ -18,5 +18,5 @@
   {:else}
     <span class="ml-1">{by}</span>
   {/if}
-  . {copyrightMessage}
+  {copyrightMessage}
 </span>
