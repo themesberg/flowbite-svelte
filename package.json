@@ -13,7 +13,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "vite build && npm run package",
     "preview": "vite preview",
     "test": "playwright test",
     "package": "svelte-kit sync && svelte-package && publint",
@@ -42,7 +42,7 @@
     "@typescript-eslint/parser": "^5.52.0",
     "autoprefixer": "^10.4.13",
     "createprops": "^0.4.9",
-    "esbuild": "0.16.8",
+    "esbuild": "0.17.9",
     "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-svelte3": "^4.0.0",
@@ -57,13 +57,13 @@
     "svelte": "^3.55.1",
     "svelte-check": "^3.0.3",
     "svelte-meta-tags": "^2.6.5",
-    "svelte-preprocess": "^4.10.7",
+    "svelte-preprocess": "^5.0.1",
     "svelte2tsx": "^0.6.1",
     "tailwindcss": "^3.2.7",
     "tslib": "^2.5.0",
     "typescript": "^4.9.5",
     "vite": "^4.1.2",
-    "vitest": "^0.25.8"
+    "vitest": "^0.28.5"
   },
   "type": "module",
   "keywords": [
