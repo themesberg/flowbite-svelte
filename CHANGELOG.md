@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.30.4](https://github.com/themesberg/flowbite-svelte/compare/v0.30.3...v0.30.4) (2023-02-20)
+
+
+### Bug Fixes
+
+* add types ./dist/index.d.ts to package.json ([7a88a7c](https://github.com/themesberg/flowbite-svelte/commit/7a88a7c052bf65c0944b4f16fb7e622f217711d5))
+
 ### [0.30.3](https://github.com/themesberg/flowbite-svelte/compare/v0.30.2...v0.30.3) (2023-02-20)
 
 
