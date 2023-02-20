@@ -126,6 +126,7 @@
     "dist"
   ],
   "svelte": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "contributors": [
     "Zoltán Szőgyényi <zoltan@themesberg.com>",
     "Robert Tanislav <robert@themesberg.com>",
