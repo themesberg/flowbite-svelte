@@ -24,7 +24,8 @@
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
     "format": "prettier --plugin-search-dir . --write .",
     "write-package-json": "node ./scripts/package-json-writer.js",
-    "package:publish": "standard-version && git push --follow-tags origin main && npm run package && npm run write-package-json && npm publish"
+    "package:publish": "standard-version && git push --follow-tags origin main && npm run package && npm run write-package-json && npm publish",
+		"gen:props": "node ./node_modules/createprops/createprops.js",
 	},
 	"peerDependencies": {
 		"@popperjs/core": "^2.11.6",
