@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.30.3](https://github.com/themesberg/flowbite-svelte/compare/v0.30.2...v0.30.3) (2023-02-20)
+
+
+### Bug Fixes
+
+* remove main: index.js ([879d810](https://github.com/themesberg/flowbite-svelte/commit/879d8108c34f563e19ae4cd9b89eb95391083235))
+* update from index.ts to index.js in vite.config.ts ([a7978dd](https://github.com/themesberg/flowbite-svelte/commit/a7978dd854ded3238aa522b5ee47ebc2f0865cf9))
+
 ### [0.30.2](https://github.com/themesberg/flowbite-svelte/compare/v0.30.1...v0.30.2) (2023-02-20)
 
 
