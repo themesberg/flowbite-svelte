@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.30.0](https://github.com/themesberg/flowbite-svelte/compare/v0.29.13...v0.30.0) (2023-02-20)
+
+
+### Features
+
+* add Codeflow link ([#572](https://github.com/themesberg/flowbite-svelte/issues/572)) ([c76b265](https://github.com/themesberg/flowbite-svelte/commit/c76b265aded62df0553d9a579f8b0ee6f756c528))
+* sveltekit update to 1.5.6 ([#571](https://github.com/themesberg/flowbite-svelte/issues/571)) ([c24c639](https://github.com/themesberg/flowbite-svelte/commit/c24c63950471f831bc4fdec37e9aa767f6f64c96))
+
+
+### Bug Fixes
+
+* fluid setting for Navbar ([#563](https://github.com/themesberg/flowbite-svelte/issues/563)) ([4311bbb](https://github.com/themesberg/flowbite-svelte/commit/4311bbba0bd590d66b388f6c0f8e688b1bd85a1c))
+* FooterCopyright remove space after {by} ([#578](https://github.com/themesberg/flowbite-svelte/issues/578)) ([da7a681](https://github.com/themesberg/flowbite-svelte/commit/da7a681a828b1eeab9bebedcf60ad24d55a5e7f6))
+* package.json format ([675928b](https://github.com/themesberg/flowbite-svelte/commit/675928beda860ef099cd6cc72f2acef2e0159b07))
+* remove log message in Avatar Dot ([#567](https://github.com/themesberg/flowbite-svelte/issues/567)) ([1c808c7](https://github.com/themesberg/flowbite-svelte/commit/1c808c7e21c72b7bda604852fe8e75eebcb6992a))
+
 ### [0.29.13](https://github.com/themesberg/flowbite-svelte/compare/v0.29.12...v0.29.13) (2023-01-31)
 
 ### [0.29.12](https://github.com/themesberg/flowbite-svelte/compare/v0.29.11...v0.29.12) (2023-01-23)
