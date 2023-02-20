@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.30.1](https://github.com/themesberg/flowbite-svelte/compare/v0.30.0...v0.30.1) (2023-02-20)
+
+
+### Bug Fixes
+
+* reinstall dependencies ([0876852](https://github.com/themesberg/flowbite-svelte/commit/08768528dd8df368052503e6ebe4a4e68fd348d3))
+* reinstall dependencies ([8ee47f8](https://github.com/themesberg/flowbite-svelte/commit/8ee47f8466e44091c9b91995ad70ebf67dca0f29))
+
 ## [0.30.0](https://github.com/themesberg/flowbite-svelte/compare/v0.29.13...v0.30.0) (2023-02-20)
 
 
