@@ -1,22 +1,22 @@
 {
-	"name": "flowbite-svelte",
-	"version": "0.29.13",
-	"description": "Flowbite components for Svelte",
-	"main": "index.js",
-	"author": {
-		"name": "Shinichi Okada",
-		"email": "connect@codewithshin.com",
-		"url": "https://blog.codewithshin.com"
-	},
-	"bugs": "https://github.com/themesberg/flowbite-svelte/issues",
-	"homepage": "https://flowbite-svelte.com/",
-	"license": "MIT",
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"test": "playwright test",
-		"package": "svelte-kit sync && svelte-package && publint",
+  "name": "flowbite-svelte",
+  "version": "0.29.13",
+  "description": "Flowbite components for Svelte",
+  "main": "index.js",
+  "author": {
+    "name": "Shinichi Okada",
+    "email": "connect@codewithshin.com",
+    "url": "https://blog.codewithshin.com"
+  },
+  "bugs": "https://github.com/themesberg/flowbite-svelte/issues",
+  "homepage": "https://flowbite-svelte.com/",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "playwright test",
+    "package": "svelte-kit sync && svelte-package && publint",
     "prepublishOnly": "npm run package && publint",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -25,113 +25,113 @@
     "format": "prettier --plugin-search-dir . --write .",
     "write-package-json": "node ./scripts/package-json-writer.js",
     "package:publish": "standard-version && git push --follow-tags origin main && npm run package && npm run write-package-json && npm publish",
-		"gen:props": "node ./node_modules/createprops/createprops.js"
-	},
-	"peerDependencies": {
-		"@popperjs/core": "^2.11.6",
-		"classnames": "^2.3.2",
-		"flowbite": "^1.6.3",
-		"svelte": "^3.55.1"
-	},
-	"devDependencies": {
-		"@playwright/test": "^1.30.0",
-		"@sveltejs/adapter-vercel": "^2.0.4",
-		"@sveltejs/kit": "^1.7.2",
-		"@sveltejs/package": "2.0.1",
-		"@typescript-eslint/eslint-plugin": "^5.52.0",
-		"@typescript-eslint/parser": "^5.52.0",
-		"autoprefixer": "^10.4.13",
-		"createprops": "^0.4.9",
-		"esbuild": "0.16.8",
-		"eslint": "^8.34.0",
-		"eslint-config-prettier": "^8.6.0",
-		"eslint-plugin-svelte3": "^4.0.0",
-		"mdsvex": "^0.10.6",
-		"mdsvexamples": "^0.3.3",
-		"postcss": "^8.4.21",
-		"postcss-load-config": "^4.0.1",
-		"prettier": "^2.8.4",
-		"prettier-plugin-svelte": "^2.9.0",
-		"prism-themes": "^1.9.0",
-		"publint": "^0.1.9",
-		"svelte": "^3.55.1",
-		"svelte-check": "^3.0.3",
-		"svelte-meta-tags": "^2.6.5",
-		"svelte-preprocess": "^4.10.7",
-		"svelte2tsx": "^0.6.1",
-		"tailwindcss": "^3.2.7",
-		"tslib": "^2.5.0",
-		"typescript": "^4.9.5",
-		"vite": "^4.1.2",
-		"vitest": "^0.25.8"
-	},
-	"type": "module",
-	"keywords": [
-		"svelte",
-		"sveltekit",
-		"tailwindcss",
-		"flowbite",
-		"ui",
-		"accordion",
-		"alert",
-		"avatar",
-		"badge",
-		"breadcrumb",
-		"button-group",
-		"button",
-		"card",
-		"carousel",
-		"darkmode",
-		"dropdown",
-		"footer",
-		"forms",
-		"kbd",
-		"list group",
-		"mega menu",
-		"modal",
-		"navbar",
-		"pagination",
-		"progressbar",
-		"rating",
-		"sidebar",
-		"skeleton",
-		"spinner",
-		"table",
-		"tab",
-		"timeline",
-		"toast",
-		"tooltip",
-		"typography",
-		"video"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/themesberg/flowbite-svelte"
-	},
-	"dependencies": {
-		"@popperjs/core": "^2.11.6",
-		"classnames": "^2.3.2",
-		"flowbite": "^1.6.3"
-	},
-	"engines": {
-		"npm": ">=7.0.0",
-		"node": ">=16.0.0"
-	},
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"svelte": "./dist/index.js"
-		}
-	},
-	"files": [
-		"dist"
-	],
-	"svelte": "./dist/index.js",
-	"contributors": [
-		"Zoltán Szőgyényi <zoltan@themesberg.com>",
-		"Robert Tanislav <robert@themesberg.com>",
-		"Victor Cordos <victor@themesberg.com>",
-		"Shinichi Okada <okada.shin@gmail.com>",
-		"Jakub Jagielka <jjagielka@gmail.com>"
-	]
+    "gen:props": "node ./node_modules/createprops/createprops.js"
+  },
+  "peerDependencies": {
+    "@popperjs/core": "^2.11.6",
+    "classnames": "^2.3.2",
+    "flowbite": "^1.6.3",
+    "svelte": "^3.55.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.30.0",
+    "@sveltejs/adapter-vercel": "^2.0.4",
+    "@sveltejs/kit": "^1.7.2",
+    "@sveltejs/package": "2.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "autoprefixer": "^10.4.13",
+    "createprops": "^0.4.9",
+    "esbuild": "0.16.8",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-svelte3": "^4.0.0",
+    "mdsvex": "^0.10.6",
+    "mdsvexamples": "^0.3.3",
+    "postcss": "^8.4.21",
+    "postcss-load-config": "^4.0.1",
+    "prettier": "^2.8.4",
+    "prettier-plugin-svelte": "^2.9.0",
+    "prism-themes": "^1.9.0",
+    "publint": "^0.1.9",
+    "svelte": "^3.55.1",
+    "svelte-check": "^3.0.3",
+    "svelte-meta-tags": "^2.6.5",
+    "svelte-preprocess": "^4.10.7",
+    "svelte2tsx": "^0.6.1",
+    "tailwindcss": "^3.2.7",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.5",
+    "vite": "^4.1.2",
+    "vitest": "^0.25.8"
+  },
+  "type": "module",
+  "keywords": [
+    "svelte",
+    "sveltekit",
+    "tailwindcss",
+    "flowbite",
+    "ui",
+    "accordion",
+    "alert",
+    "avatar",
+    "badge",
+    "breadcrumb",
+    "button-group",
+    "button",
+    "card",
+    "carousel",
+    "darkmode",
+    "dropdown",
+    "footer",
+    "forms",
+    "kbd",
+    "list group",
+    "mega menu",
+    "modal",
+    "navbar",
+    "pagination",
+    "progressbar",
+    "rating",
+    "sidebar",
+    "skeleton",
+    "spinner",
+    "table",
+    "tab",
+    "timeline",
+    "toast",
+    "tooltip",
+    "typography",
+    "video"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/themesberg/flowbite-svelte"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "classnames": "^2.3.2",
+    "flowbite": "^1.6.3"
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=16.0.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "svelte": "./dist/index.js",
+  "contributors": [
+    "Zoltán Szőgyényi <zoltan@themesberg.com>",
+    "Robert Tanislav <robert@themesberg.com>",
+    "Victor Cordos <victor@themesberg.com>",
+    "Shinichi Okada <okada.shin@gmail.com>",
+    "Jakub Jagielka <jjagielka@gmail.com>"
+  ]
 }
