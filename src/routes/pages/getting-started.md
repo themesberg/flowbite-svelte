@@ -60,7 +60,7 @@ npm run dev
 <Htwo label="Install dependencies" />
 
 ```sh
-npm i -D flowbite flowbite-svelte classnames @popperjs/core
+npm i flowbite flowbite-svelte classnames @popperjs/core
 ```
 
 <Htwo label="Update tailwind.config.cjs"/>
