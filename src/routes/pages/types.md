@@ -12,7 +12,7 @@ description: Flowbite-Svelte Types page
   import { Htwo, ExampleDiv , MetaTag } from '../utils'
   import { A, P, List, Li, Breadcrumb, BreadcrumbItem, Alert, Heading } from '$lib'
   // Load assets as strings
-  import TypeList from '../../lib/types.ts?raw'
+  import TypeList from '../../lib/types.js?raw'
 </script>
 
 <Breadcrumb class="pt-16 py-8">
