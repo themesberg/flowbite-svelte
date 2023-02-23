@@ -1,14 +1,11 @@
 <script lang="ts">
   import { getContext } from 'svelte';
   import classNames from 'classnames';
-  import { createEventDispatcher } from 'svelte';
 
   export let active: boolean = getContext('active');
   export let current: boolean = false;
   export let disabled: boolean = false;
   export let href: string = '';
-
-  let dispatch = createEventDispatcher();
 
   const states = {
     current: 'text-white bg-blue-700 dark:text-white dark:bg-gray-800',
@@ -42,7 +39,6 @@
   <a
     {href}
     class="block {itemClass}"
-    on:click={() => dispatch('click', $$props)}
     aria-current={current}
     on:blur
     on:change
@@ -61,7 +57,6 @@
     type="button"
     class="inline-flex relative items-center text-left {itemClass}"
     {disabled}
-    on:click={() => dispatch('click', $$props)}
     on:blur
     on:change
     on:click
