@@ -9,6 +9,13 @@
   export let img: string | undefined = undefined;
   export let padding: 'none' | 'sm' | 'md' | 'lg' | 'xl' = 'lg';
   export let size: SizeType = 'sm';
+  export let imgSettings:
+    | undefined
+    | {
+        url: string;
+        size: SizeType;
+        position: 'top' | 'bottom' | 'left' | 'right';
+      } = undefined;
 
   const paddings = {
     none: 'p-0',
@@ -26,6 +33,30 @@
     xl: 'max-w-screen-xl'
   };
 
+  const imgPositions = {
+    top: 'object-top',
+    right: 'object-right',
+    left: 'object-left',
+    bottom: 'object-bottom'
+  };
+  const imgSizes = (horizontal: boolean, size: SizeType) => {
+    return horizontal
+      ? {
+          xs: '!w-24',
+          sm: '!w-32',
+          md: '!w-40',
+          lg: '!w-64',
+          xl: '!w-80'
+        }[size]
+      : {
+          xs: 'h-24',
+          sm: 'h-32',
+          md: 'h-40',
+          lg: 'h-64',
+          xl: 'h-80'
+        }[size];
+  };
+
   let innerPdding: string;
   $: innerPdding = paddings[padding];
 
@@ -40,17 +71,29 @@
     $$props.class
   );
 
+  const imgPosition = imgSettings ? imgPositions[imgSettings.position] : '';
+  const imgSize = imgSettings ? imgSizes(horizontal, imgSettings.size) : '';
+  const imgFit = imgSettings ? 'object-cover' : '';
+
   let imgClass: string;
   $: imgClass = classNames(
     reverse ? 'rounded-b-lg' : 'rounded-t-lg',
     horizontal && 'object-cover w-full h-96 md:h-auto md:w-48 md:rounded-none',
-    horizontal && (reverse ? 'md:rounded-r-lg' : 'md:rounded-l-lg')
+    horizontal && (reverse ? 'md:rounded-r-lg' : 'md:rounded-l-lg'),
+    imgSize,
+    imgPosition,
+    imgFit
   );
 </script>
 
 <Frame tag={href ? 'a' : 'div'} rounded shadow border {href} {...$$restProps} class={cardClass}>
   {#if img}
     <img class={imgClass} src={img} alt="" />
+    <div class={innerPdding}>
+      <slot />
+    </div>
+  {:else if imgSettings}
+    <img class={imgClass} src={imgSettings.url} alt="" />
     <div class={innerPdding}>
       <slot />
     </div>
