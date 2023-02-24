@@ -157,10 +157,7 @@ You can use the following example of a card element with an image for blog posts
 </script>
 
 <div>
-  <Card
-    img="/images/image-1.webp"
-    imgSettings={{ url: '/images/image-1.webp', size: 'md', position: 'top' }}
-    reverse={vCard}>
+  <Card img={{ url: '/images/image-1.webp', size: 'lg', position: 'top', fit: 'cover' }} reverse={vCard}>
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
       Noteworthy technology acquisitions 2021
     </h5>
@@ -197,8 +194,7 @@ If you want to spice up your cards you can use the following card which has its 
 
 <div>
   <Card
-    img="/images/image-1.webp"
-    imgSettings={{ url: '/images/image-1.webp', size: 'md', position: 'top' }}
+    img={{ url: '/images/image-1.webp', size: 'lg', position: 'top', fit: 'cover' }}
     href="/"
     horizontal
     reverse={hCard}>
