@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.30.5](https://github.com/themesberg/flowbite-svelte/compare/v0.30.4...v0.30.5) (2023-02-27)
+
+
+### Features
+
+* add transition to SidebarDropdownWrapper ([#590](https://github.com/themesberg/flowbite-svelte/issues/590)) ([36f4971](https://github.com/themesberg/flowbite-svelte/commit/36f49711aece1535e78804d785a841d11f8e0459))
+
 ### [0.30.4](https://github.com/themesberg/flowbite-svelte/compare/v0.30.3...v0.30.4) (2023-02-20)
 
 
