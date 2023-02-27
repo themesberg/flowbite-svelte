@@ -507,6 +507,46 @@ Show the logo of your brand and link back to the homepage from the top part of t
 </Sidebar>
 ```
 
+<Htwo label="Transition" />
+
+You can add own transition by setting `transitionType` and `transitionParams`. 
+
+```svelte example
+<script>
+  import { page } from '$app/stores';
+  import { sineIn } from 'svelte/easing';
+  import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownWrapper, SidebarDropdownItem } from 'flowbite-svelte';
+  let spanClass = 'flex-1 ml-3 whitespace-nowrap';
+  $: activeUrl = $page.url.pathname
+  $: containPath = ()=>{
+    // add your logic here
+    true
+  }
+  let transitionParams = {
+    x: -320,
+    duration: 200,
+    easing: sineIn
+  };
+</script>
+
+<Sidebar>
+  <SidebarWrapper>
+    <SidebarGroup>
+      <SidebarItem label="Dashboard" active={activeUrl === '/dashboard'} />
+      <SidebarDropdownWrapper label="E-commerce" isOpen={containPath} transitionType="fly" {transitionParams}>
+        <SidebarDropdownItem label="Products" href='/components/products' active={activeUrl === '/components/products'} />
+        <SidebarDropdownItem label="Sidebar" href='/components/sidebar' active={activeUrl === '/components/sidebar'}/>
+      </SidebarDropdownWrapper>
+      <SidebarDropdownWrapper label="Items" transitionType="fly" {transitionParams}>
+        <SidebarDropdownItem label="Item 1" href='/components/item1' active={activeUrl === '/components/item'} />
+        <SidebarDropdownItem label="Item 2" href='/components/item2' active={activeUrl === '/components/billing'} />
+      </SidebarDropdownWrapper>
+    </SidebarGroup>
+  </SidebarWrapper>
+</Sidebar>
+```
+
+
 <Htwo label="Props" />
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
