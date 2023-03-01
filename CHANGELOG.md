@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.30.6](https://github.com/themesberg/flowbite-svelte/compare/v0.30.5...v0.30.6) (2023-03-01)
+
+
+### Bug Fixes
+
+* li classes cascaded from ul ([#593](https://github.com/themesberg/flowbite-svelte/issues/593)) ([90a4c74](https://github.com/themesberg/flowbite-svelte/commit/90a4c74fa8e9a95b652f67525fbaee67f40d6f0b))
+
 ### [0.30.5](https://github.com/themesberg/flowbite-svelte/compare/v0.30.4...v0.30.5) (2023-02-27)
 
 

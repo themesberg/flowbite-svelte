@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "0.30.5",
+  "version": "0.30.6",
   "description": "Flowbite components for Svelte",
   "author": {
     "name": "Shinichi Okada",
@@ -170,6 +170,6 @@
     "Tyler Miller <tyler.rw.miller@protonmail.com>",
     "Zoltán Szőgyényi <zoltan@themesberg.com>",
     "ciril.tr <ciroman@gmail.com>",
-    "jakobsturm <jakob@sturm.li>"    
+    "jakobsturm <jakob@sturm.li>"
   ]
 }
