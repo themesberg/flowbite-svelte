@@ -8,7 +8,7 @@
   export let activeClass: string | undefined = undefined;
   export let nonActiveClass: string | undefined = undefined;
 
-  const context = getContext<NavbarLiType>('navbar');
+  const context = getContext<NavbarLiType>('navbar') ?? {};
 
   let liClass: string;
   $: liClass = classNames(
