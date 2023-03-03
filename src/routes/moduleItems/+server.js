@@ -11,3 +11,8 @@ export const topMenus = [
 		name: 'GitHub'
 	}
 ];
+
+export const examplePages = [
+  { id: '1', href:'snapshot', name:'Snapshot'},
+	{ id: '2', href:'sidebar-layout', name:'Responsive layout'}
+]

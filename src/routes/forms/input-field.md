@@ -58,7 +58,7 @@ Use this example as a generic form element which includes multiple input fields 
   <div class="grid gap-6 mb-6 md:grid-cols-2">
     <div>
       <Label for="first_name" class="mb-2">First name</Label>
-      <Input type="text" id="first_name" placeholder="John" required />
+      <Input type="text" id="first_name" placeholder="John" required  />
     </div>
     <div>
       <Label for="last_name" class="mb-2">Last name</Label>

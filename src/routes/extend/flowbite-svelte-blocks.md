@@ -10,7 +10,7 @@ description: Flowbite-Svete-Blocks provides all necessary components to get star
 
 <script>
   import { CompoDescription, Htwo, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, A } from '$lib'
+  import { Breadcrumb, BreadcrumbItem, Heading, A, List, Li, Img} from '$lib'
 </script>
 
 <Breadcrumb class="pt-16 py-8">
@@ -23,12 +23,11 @@ description: Flowbite-Svete-Blocks provides all necessary components to get star
 
 <CompoDescription>{description}</CompoDescription>
 
-<ul class="dark:text-white" >
-<li>
-<a class="text-blue-700 text-md" href="https://github.com/shinokada/flowbite-svelte-blocks">GitHub Repo: Flowbite-Svelte-Blocks</a></li>
-<li><a class="text-blue-700 text-md" href="https://shinokada.github.io/flowbite-svelte-blocks/">Docs</a></li>
-</ul>
-
+<List tag="ul" class="space-y-1 my-4">
+  <Li><A href="https://github.com/shinokada/flowbite-svelte-blocks">GitHub Repo</A></Li>
+  <Li><A href="https://shinokada.github.io/flowbite-svelte-blocks/">Docs</A></Li>
+  <Li><A href="https://flowbite-svelte-blocks.vercel.app/">Demo</A></Li>
+</List>
 
 <Htwo label="Installation" />
 
@@ -37,3 +36,5 @@ After installing Flowbite-Svelte, run the following to install Flowbite-Svelte-B
 ```sh
 npm i -D shinokada/flowbite-svelte-blocks
 ```
+
+<Img src="/images/flowbite-svelte-blocks-optimized.png" alt="Flowbite Svelte Blocks" />
