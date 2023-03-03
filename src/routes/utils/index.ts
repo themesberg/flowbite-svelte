@@ -13,6 +13,7 @@ export const fetchMarkdownPosts = async () => {
   const utilFiles = import.meta.glob('/src/routes/utilities/*.md')
   const pageFiles = import.meta.glob('/src/routes/pages/*.md')
   const extendFiles = import.meta.glob('/src/routes/extend/*.md')
+  const exampleFiles = import.meta.glob('/src/routes/examples/*.svelte')
   // returns an array of files
   const iterableComponentFiles = Object.entries(componentFiles)
   const iterableFormFiles = Object.entries(formFiles)
@@ -20,6 +21,7 @@ export const fetchMarkdownPosts = async () => {
   const iterableUtilFiles = Object.entries(utilFiles)
   const iterablePageFiles = Object.entries(pageFiles)
   const iterableExtendFiles = Object.entries(extendFiles)
+  const iterableExampleFiles = Object.entries(exampleFiles)
 
   const allComponents = await Promise.all(
     iterableComponentFiles.map(async ([path, resolver]) => {
@@ -87,5 +89,17 @@ export const fetchMarkdownPosts = async () => {
     })
   )
 
-  return { components: allComponents, extend: allExtends, forms: allForms, pages: allPages, typography: allTypographys, utils: allUtils}
+  // Example pages
+  const allExamples = await Promise.all(
+    iterableExampleFiles.map(async ([path, resolver]) => {
+      const { metadata } = await resolver()
+      const filePath = path.slice(20, -7)
+      return {
+        meta: metadata,
+        path: filePath,
+      }
+    })
+  )
+
+  return { components: allComponents, extend: allExtends, forms: allForms, pages: allPages, typography: allTypographys, utils: allUtils, examples: allExamples}
 }

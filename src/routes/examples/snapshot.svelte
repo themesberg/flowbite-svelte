@@ -1,3 +1,12 @@
+<!-- Frontmatter goes here -->
+<script context="module">
+  export const metadata = {
+    title: 'Svelte Snapshot',
+    dir: 'Examples',
+    description: 'Svelte Snapshot with Flowbite Svete',
+    breadcrumb_title: 'Svelte Snapshot'
+  }
+</script>
 
 <script lang="ts">
   import { MetaTag } from '../utils'

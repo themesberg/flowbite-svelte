@@ -3,12 +3,12 @@
 export async function load({ params }) {
   const post = await import(`../${params.slug}.svelte`);
 
-  // const { title, dir } = post;
+  const { title, dir } = post;
   const content = post.default;
 
   return {
     content,
-    // title,
-    // dir
+    title,
+    dir
   };
 }

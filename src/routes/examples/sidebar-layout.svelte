@@ -1,14 +1,18 @@
----
-layout: pageLayout
-
-description: Flowbite Svete Responsive sidebar layout
----
+<!-- Frontmatter goes here -->
+<script context="module">
+  export const metadata = {
+    title: 'Responsive Sidebar Layout',
+    dir: 'Examples',
+    description: 'Flowbite Svete Responsive sidebar layout',
+    breadcrumb_title: 'Sidebar Layout'
+  }
+</script>
 
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
   import { CompoDescription, Htwo, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, A } from '$lib'
+  import { Breadcrumb, BreadcrumbItem, Heading, A, List, Li, Img } from '$lib'
   const breadcrumb_title = 'Responsive Sidebar Layout'
   const title = 'Responsive Sidebar Layout'
   const dir = 'Examples'
@@ -25,9 +29,11 @@ description: Flowbite Svete Responsive sidebar layout
 
 <CompoDescription>{description}</CompoDescription>
 
-<Htwo label="Starters" />
+<Htwo label="Repo & Demo" />
 
-<Heading class="mb-2" tag="h3" customSize="text-2xl">Flowbite SvelteKit responsive sidebar layout</Heading>
+<List tag="ul" class="space-y-1 my-4">
+  <Li><A href="https://github.com/shinokada/flowbite-sveltekit-responsive-sidebar-layout">GitHub Repo</A></Li>
+  <Li><A href="https://sveltekit-sidebar-layout.vercel.app/">Demo</A></Li>
+</List>
 
-<p class="dark:text-white hover:text-blue-900 dark:hover:text-blue-500  w-full"><a href="https://github.com/themesberg/flowbite-svelte/examples/flowbite-sveltekit-responsive-sidebar-layout/">Repo</a></p>
-<p class="dark:text-white hover:text-blue-900 dark:hover:text-blue-500 w-full"><a href="/">Demo</a></p>
+<Img src="/images/sveltekit-sidebar-layout-optimized.png" alt='sveltekit sidebar layout' />

@@ -159,13 +159,13 @@
         </SidebarGroup>
         <SidebarGroup class="pt-4">
           <SidebarDropdownWrapper label="EXAMPLES" isOpen={activeUrl.includes('examples')}>
-            {#each examplePages as page}
+            {#each data.examples as { meta, path }}
               <SidebarItem
-                label={page.name}
-                href={`/examples/${page.href}`}
+                label={meta.breadcrumb_title}
+                href={`/examples${path}`}
                 {spanClass}
                 on:click={toggleSide}
-                active={activeUrl === `/examples/${page.href}`} />
+                active={activeUrl === `/examples${path}`} />
             {/each}
           </SidebarDropdownWrapper>
         </SidebarGroup>
