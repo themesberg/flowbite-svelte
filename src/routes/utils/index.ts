@@ -87,5 +87,5 @@ export const fetchMarkdownPosts = async () => {
     })
   )
 
-  return { components: allComponents, extend: allExtends, forms: allForms, pages: allPages, typography: allTypographys, utils: allUtils }
+  return { components: allComponents, extend: allExtends, forms: allForms, pages: allPages, typography: allTypographys, utils: allUtils}
 }

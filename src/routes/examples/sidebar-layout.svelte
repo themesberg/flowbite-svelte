@@ -1,9 +1,7 @@
 ---
 layout: pageLayout
-breadcrumb_title: Examples
-title: Flowbite Examples
-dir: Extend
-description: Flowbite Svete Examples 
+
+description: Flowbite Svete Responsive sidebar layout
 ---
 
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
@@ -11,6 +9,10 @@ description: Flowbite Svete Examples
 <script>
   import { CompoDescription, Htwo, MetaTag } from '../utils'
   import { Breadcrumb, BreadcrumbItem, Heading, A } from '$lib'
+  const breadcrumb_title = 'Responsive Sidebar Layout'
+  const title = 'Responsive Sidebar Layout'
+  const dir = 'Examples'
+  const description = 'Flowbite Svete Responsive sidebar layout'
 </script>
 
 <Breadcrumb class="pt-16 py-8">

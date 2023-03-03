@@ -4,6 +4,7 @@
   import { afterNavigate } from '$app/navigation';
   import { page } from '$app/stores';
   import type { PageData } from './$types';
+  import { examplePages } from './moduleItems/+server.js'
   import {
     CloseButton,
     DarkMode,
@@ -153,6 +154,18 @@
                 {spanClass}
                 on:click={toggleSide}
                 active={activeUrl === `/typography${path}`} />
+            {/each}
+          </SidebarDropdownWrapper>
+        </SidebarGroup>
+        <SidebarGroup class="pt-4">
+          <SidebarDropdownWrapper label="EXAMPLES" isOpen={activeUrl.includes('examples')}>
+            {#each examplePages as page}
+              <SidebarItem
+                label={page.name}
+                href={`/examples/${page.href}`}
+                {spanClass}
+                on:click={toggleSide}
+                active={activeUrl === `/examples/${page.href}`} />
             {/each}
           </SidebarDropdownWrapper>
         </SidebarGroup>
