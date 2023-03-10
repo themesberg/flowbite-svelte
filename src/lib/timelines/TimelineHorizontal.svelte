@@ -1,7 +1,7 @@
 <script lang="ts">
-	export let olClass: string = 'items-center sm:flex';
+  export let olClass: string = 'sm:flex';
 </script>
 
 <ol class={olClass}>
-	<slot />
+  <slot />
 </ol>
