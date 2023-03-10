@@ -11,14 +11,17 @@
 <script lang="ts">
   import { MetaTag } from '../../utils'
   import type { Snapshot } from "../$types"; 
-  import { Input, Label, A, Breadcrumb, BreadcrumbItem, Heading, P } from '$lib'
+  import { Input, Label, Button, Checkbox, A, Breadcrumb, BreadcrumbItem, Heading, P } from '$lib'
   const dir ='Examples'
   const breadcrumb_title = 'Svelte Snapshot'
   const title = 'Svelte Snapshot'
 
   let formData = {
       first_name:'',
-      last_name: ''
+      last_name: '',
+      company: '',
+      website:'',
+      email: ''
     }
   export const snapshot: Snapshot = { 
     capture: () => formData, 
@@ -49,5 +52,18 @@
       <Label for="last_name" class="mb-2">Last name</Label>
       <Input type="text" id="last_name" placeholder="Doe" required bind:value={formData.last_name} />
     </div>
+    <div>
+      <Label for="company" class="mb-2">Company</Label>
+      <Input type="text" id="company" placeholder="Flowbite" required bind:value={formData.company} />
+    </div>
+    <div>
+      <Label for="website" class="mb-2">Website URL</Label>
+      <Input type="url" id="website" placeholder="flowbite.com" bind:value={formData.website} />
+    </div>
+  </div>
+  <div class="mb-6">
+    <Label for="email" class="mb-2">Email address</Label>
+    <Input type="email" id="email" placeholder="john.doe@company.com" required bind:value={formData.email} />
+  </div>
 </form>
 
