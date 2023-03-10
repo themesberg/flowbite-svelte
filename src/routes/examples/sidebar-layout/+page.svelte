@@ -11,7 +11,7 @@
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { CompoDescription, Htwo, MetaTag } from '../utils'
+  import { CompoDescription, Htwo, MetaTag } from '../../utils'
   import { Breadcrumb, BreadcrumbItem, Heading, A, List, Li, Img } from '$lib'
   const breadcrumb_title = 'Responsive Sidebar Layout'
   const title = 'Responsive Sidebar Layout'
