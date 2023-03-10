@@ -60,8 +60,8 @@
   );
 </script>
 
-<h2 aria-expanded={open} class="group">
-  <button on:click={handleToggle} type="button" class={buttonClass}>
+<h2 class="group">
+  <button on:click={handleToggle} type="button" class={buttonClass} aria-expanded={open}>
     <slot name="header" />
     {#if open}
       <slot name="arrowup"><ChevronUp /></slot>
