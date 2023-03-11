@@ -11,6 +11,9 @@ export { default as Avatar } from './avatar/Avatar.svelte';
 // Badges
 export { default as Badge } from './badges/Badge.svelte';
 
+// Banner
+export { default as Banner } from './banner/Banner.svelte'
+
 // Breadcrumbs
 export { default as Breadcrumb } from './breadcrumbs/Breadcrumb.svelte';
 export { default as BreadcrumbItem } from './breadcrumbs/BreadcrumbItem.svelte';
