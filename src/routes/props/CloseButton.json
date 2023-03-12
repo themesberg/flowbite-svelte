@@ -1,1 +1,1 @@
-{"props":[["color","| 'dark'     | 'gray'     | 'red'     | 'yellow'     | 'green'     | 'indigo'     | 'purple'     | 'pink'     | 'blue'     | 'default' ","'default'"],["name","string ","'Close'"],["size","'xs' | 'sm' | 'md' ","'md'"]]}
+{"props":[["name","string ","'Close'"]]}
