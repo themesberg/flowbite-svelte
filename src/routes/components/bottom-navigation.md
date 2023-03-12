@@ -14,7 +14,10 @@ description: Use the bottom navigation bar component to allow users to navigate 
   
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   // Props table
-  import { props as avatarProps } from '../props/Banner.json'
+  import { props as bottomNavProps } from '../props/BottomNav.json'
+  import { props as bottomNavHeaderProps } from '../props/BottomNavHeader.json'
+  import { props as bottomNavHeaderItemProps } from '../props/BottomNavHeaderItem.json'
+  import { props as bottomNavItemProps } from '../props/BottomNavItem.json'
 	let propHeader = ['Name', 'Type', 'Default']
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -281,57 +284,89 @@ This example can be used to position a bottom navigation bar inside of a card el
 
 You can even use the other bottom navbar examples to exchange the default one presented here.
 
-```svelte example class="flex flex-col relative" hideScript
+```svelte example class="flex justify-center"
 <script>
-  import { BottomNav, BottomNavItem, Tooltip, Skeleton, ImagePlaceholder } from "flowbite-svelte"
+  import { BottomNav, BottomNavItem, Card, Listgroup, Avatar } from "flowbite-svelte"
+  let list = [
+    { img: { src: "/images/profile-picture-1.webp", alt: "Neil Sims",},
+      comment: 'New message from <span class="font-medium text-gray-900 dark:text-white">Jese Leos</span>: "Hey, what\'s up? All set for the presentation?"',
+      message: "a few moments ago"
+    },
+    { img: { src: "/images/profile-picture-2.webp", alt: "Bonnie Green" },
+      comment: 'Joseph McFall and <span class="font-medium text-gray-900 dark:text-white">5 others</span> started following you.',
+      message: "10 minutes ago"
+    },
+    { img: { src: "/images/profile-picture-3.webp", alt: "Leslie Livingston" },
+      comment: 'Bonnie Green and <span class="font-medium text-gray-900 dark:text-white">141 others</span> love your story. See it and view more stories.',
+      message: "23 minutes ago"
+    },
+    { img: { src: "/images/profile-picture-4.webp", alt: "Robert Brown" },
+      comment: 'Leslie Livingston mentioned you in a comment: <span class="font-medium text-blue-600 dark:text-blue-500 hover:underline">@bonnie.green</span> what do you say?',
+      message: "23 minutes ago"
+    },
+    { img: { src: "/images/profile-picture-5.webp", alt: "Michael Gough" },
+      comment: "Robert Brown</span> posted a new video: Glassmorphism - learn how to implement the new design trend.",
+      message: "23 minutes ago"
+    },
+  ];
 </script>
 
-<Skeleton class="py-4"/>
-<ImagePlaceholder class="pb-20"/>
-
-
-```
-
-<Htwo label="Online meeting control bar" />
-
-Use this component to show a list of options for online video meetings by showing a list of options such as muting the microphone, hiding the camera, adjusting the volume and more.
-
-```svelte example class="flex flex-col relative" hideScript
-<script>
-  import { BottomNav, BottomNavItem, Tooltip, Skeleton, ImagePlaceholder } from "flowbite-svelte"
-</script>
-
-<Skeleton class="py-4"/>
-<ImagePlaceholder class="pb-20"/>
-
-
-```
-
-<Htwo label="Video player bar" />
-
-Use this component to show control buttons for a video or audio that is playing in the browser to control the volume, navigate between videos, pause or start the video, and more.
-
-```svelte example class="flex flex-col relative" hideScript
-<script>
-  import { BottomNav, BottomNavItem, Tooltip, Skeleton, ImagePlaceholder } from "flowbite-svelte"
-</script>
-
-<Skeleton class="py-4"/>
-<ImagePlaceholder class="pb-20"/>
-
-
+<Card padding="none" class="relative overflow-y-scroll bg-white border border-gray-100 rounded-lg dark:bg-gray-700 dark:border-gray-600 h-96">
+  <Listgroup items={list} let:item class="border-0 dark:!bg-transparent">
+    <a href="/" class="flex items-center justify-center w-full px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">
+      <Avatar src={item.img.src} alt={item.img.alt} class="flex-shrink-0"/>
+        <div>
+          <p class="text-sm text-gray-500 dark:text-gray-400">{@html item.comment}</p>
+          <span class="text-xs text-blue-600 dark:text-blue-500">{@html item.message}</span>
+      </div>
+    </a>
+  </Listgroup>
+  <BottomNav position="sticky" navType="card" innerDiv="grid-cols-3 pt-2 pb-4">
+    <BottomNavItem btnName="Latest" id="card-latest">
+        <svg class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path clip-rule="evenodd" fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"></path>
+        </svg>
+    </BottomNavItem>
+    <BottomNavItem btnName="Following" id="card-following">
+      <svg class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+      </svg>
+    </BottomNavItem>
+    <BottomNavItem btnName="Favorites" id="card-favorites">
+      <svg class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+      </svg>
+    </BottomNavItem>
+  </BottomNav>
+</Card>
 ```
 
 <Htwo label="Props" />
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-If you want to custom CSS, use `bannerType="custom"` and add your CSS to `outerDiv` and `innerDiv`. 
-
-Use the slot name `header` to insert your elements before the inner div.
+<h3 class='text-xl w-full dark:text-white py-4'>BottomNav</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-<TableDefaultRow items={avatarProps} rowState='hover' />
+<TableDefaultRow items={bottomNavProps} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>BottomNavHeader</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+<TableDefaultRow items={bottomNavHeaderProps} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>BottomNavHeaderItem</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+<TableDefaultRow items={bottomNavHeaderItemProps} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>BottomNavItem</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+<TableDefaultRow items={bottomNavItemProps} rowState='hover' />
 </TableProp>
 
 <Htwo label="References" />

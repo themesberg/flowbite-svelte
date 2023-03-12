@@ -29,7 +29,7 @@
     group: '',
     card: '',
     meeting: 'flex items-center justify-center mx-auto',
-    video: '',
+    video: 'flex items-center w-full',
     custom: ''
   }
 

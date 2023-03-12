@@ -14,7 +14,7 @@
     application: '',
     pagination:'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
     group: 'inline-flex flex-col items-center justify-center p-4 hover:bg-gray-50 dark:hover:bg-gray-800 group',
-    card: '',
+    card: 'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
     meeting: '',
     video: '',
     custom: ''
@@ -26,7 +26,7 @@
     application: 'sr-only',
     pagination:'sr-only',
     group: 'sr-only',
-    card: '',
+    card: 'text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500',
     meeting: '',
     video: '',
     custom: ''

@@ -1,0 +1,1 @@
+{"props":[["btnName","string ","''"],["appBtnPosition","'left'|'middle'|'right'|'custom' ","'custom'   export let btnDefault: string = ''"],["spanDefault","string","''"]]}

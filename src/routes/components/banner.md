@@ -14,7 +14,7 @@ description: Use the banner component to show marketing messages and CTA buttons
   
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   // Props table
-  import { props as avatarProps } from '../props/Banner.json'
+  import { props as bannerProps } from '../props/Banner.json'
 	let propHeader = ['Name', 'Type', 'Default']
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -175,7 +175,7 @@ If you want to custom CSS, use `bannerType="custom"` and add your CSS to `outerD
 Use the slot name `header` to insert your elements before the inner div.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-<TableDefaultRow items={avatarProps} rowState='hover' />
+<TableDefaultRow items={bannerProps} rowState='hover' />
 </TableProp>
 
 <Htwo label="References" />
