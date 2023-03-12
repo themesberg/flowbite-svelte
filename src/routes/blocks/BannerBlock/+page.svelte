@@ -1,10 +1,10 @@
 <a
-  href="/components/progress"
+  href="/components/banner/"
   {...$$restProps}
   class="h-64 bg-white rounded-lg border border-gray-100 hover:border-white dark:border-gray-700 dark:hover:border-gray-600 hover:shadow-lg dark:hover:shadow-lg-light dark:bg-gray-900"
   ><div
     class="bg-gray-50 dark:bg-gray-700 rounded-t-md py-2.5 px-5 flex justify-between items-center border-b border-gray-200 dark:border-gray-700">
-    <span class="text-base font-medium text-gray-900 dark:text-white">Progress bar</span><span
+    <span class="text-base font-medium text-gray-900 dark:text-white">Sticky Banner</span><span
       class="text-gray-500 dark:text-gray-400"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
@@ -21,27 +21,27 @@
       ></span>
   </div>
   <div class="flex justify-center items-center h-52">
-    <div class="relative h-4/6 dark:hidden w-48">
+    <div class="relative h-4/6 dark:hidden w-64">
       <span
         style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"
         ><img
-          alt="Progress bar"
-          src="/images/components/progress.svg"
+          alt="Sticky Banner"
+          src="/images/components/banner.svg"
           decoding="async"
           data-nimg="fill"
+          style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;" /><noscript /></span>
+    </div>
+    <div class="hidden relative h-4/6 dark:block w-64">
+      <span
+        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"
+        ><img
+          alt="Sticky Banner"
+          src="/images/components/banner-dark.svg"
+          decoding="async"
+          data-nimg="fill"
+          class="w-64"
           style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;"
           sizes="100vw"
-          srcset="/images/components/progress.svg 640w, /images/components/progress.svg 750w, /images/components/progress.svg 828w, /images/components/progress.svg 1080w, /images/components/progress.svg 1200w, /images/components/progress.svg 1920w, /images/components/progress.svg 2048w, /images/components/progress.svg 3840w" /><noscript /></span>
-    </div>
-    <div class="hidden relative h-4/6 dark:block w-48">
-      <span
-        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"
-        ><img
-          alt="Progress bar"
-          src="/images/components/progress-dark.svg"
-          decoding="async"
-          data-nimg="fill"
-          class="w-48"
-          style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;" /><noscript /></span>
+          srcset="/images/components/banner-dark.svg 640w, /images/components/banner-dark.svg 750w, /images/components/banner-dark.svg 828w, /images/components/banner-dark.svg 1080w, /images/components/banner-dark.svg 1200w, /images/components/banner-dark.svg 1920w, /images/components/banner-dark.svg 2048w, /images/components/banner-dark.svg 3840w" /><noscript /></span>
     </div>
   </div></a>
