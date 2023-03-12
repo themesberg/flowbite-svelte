@@ -284,3 +284,15 @@ export interface TransitionParamTypes {
 }
 
 export type TransitionTypes = 'fade' | 'fly' | 'slide' | 'blur' | 'in:fly' | 'out:fly' | 'in:slide' | 'out:slide' | 'in:fade' | 'out:fade' | 'in:blur' | 'out:blur';
+
+export interface ButtonClassesTypes {
+	default?: string;
+	border?: string;
+	application?: string;
+	pagination?: string;
+	group?: string;
+	card?: string;
+	meeting?: string;
+	video?: string;
+	custom?: string;
+}

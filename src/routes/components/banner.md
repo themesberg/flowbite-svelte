@@ -31,7 +31,7 @@ description: Use the banner component to show marketing messages and CTA buttons
 <CompoDescription>{description}</CompoDescription>
 
 <ExampleDiv>
-<GitHubSource href="avatar/Avatar.svelte">Avatar</GitHubSource>
+<GitHubSource href="banner/Banner.svelte">Banner</GitHubSource>
 </ExampleDiv>
 
 Get started with the sticky banner component coded with Tailwind CSS and Flowbite to show marketing, informational and CTA messages to your website visitors fixed to the top or bottom part of the page as the user scroll down the main content area.
