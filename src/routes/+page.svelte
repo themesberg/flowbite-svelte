@@ -4,9 +4,9 @@
   import * as Block from './blocks/+server';
   import { MetaTags } from 'svelte-meta-tags';
 
-  let title = 'Flowbite Svelte';
+  let title = 'Flowbite Svelte - UI Component Library';
   let description =
-    'Flowbite Svelte is a Tailwind CSS and Flowbite powered UI component library for Svelte and SvelteKit.';
+    'Flowbite Svelte is a free and open-source Tailwind CSS and Flowbite powered UI component library for Svelte and SvelteKit.';
   let default_title = 'Svelte UI Components';
 </script>
 
