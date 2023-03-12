@@ -216,13 +216,99 @@
   </Drawer>
 
   <div class="flex px-4 mx-auto w-full">
-    <main bind:this={main} class="lg:ml-72 w-full mx-auto">
+    <main bind:this={main} class="w-full mx-auto">
       <slot />
     </main>
     <Toc />
   </div>
-  <div class="mx-auto mb-4 pt-4 lg:pl-64">
-    <Footer footerType="custom" customClass="py-6 px-16 bg-white dark:bg-gray-900">
+
+  <footer class="py-12 bg-gray-50 xl:pt-24 dark:bg-gray-800 lg:mt-24 mt-12">
+    <div class="w-full px-4 mx-auto max-w-8xl">
+        <div class="grid gap-12 xl:grid-cols-6 xl:gap-24">
+            <div class="col-span-2">
+                <a href="/" class="flex mb-5">
+                    <img src={logo} class="h-8 mr-3" alt="Flowbite Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                </a>
+                <p class="max-w-lg mb-3 text-gray-600 dark:text-gray-400">Flowbite Svelte is a library of free and open-source UI components based on Tailwind CSS and the core Flowbite Library.</p>
+                <p class="max-w-lg text-gray-600 dark:text-gray-400">Code and docs licensed <a href="https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE" class="text-primary-600 dark:text-primary-500 hover:underline" rel="nofollow">MIT</a>.</p>
+            </div>
+            <div>
+                <h3 class="mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white">Resources</h3>
+                <ul>
+                    <li class="mb-4">
+                        <a href="/pages/getting-started"
+                            class="font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Documentation</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="https://tailwindcss.com"
+                            class="font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Tailwind CSS</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="https://github.com/shinokada/flowbite-svelte-blocks"
+                            class="font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Flowbite Blocks</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="https://flowbite.com/figma/"
+                            class="font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Figma Design</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white">Help and support</h3>
+                <ul>
+                    <li class="mb-4">
+                        <a href="https://github.com/themesberg/flowbite-svelte/discussions" rel="noreferrer nofollow"
+                            class="font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Github discussions</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="https://discord.gg/4eeurUVvTy" rel="noreferrer nofollow"
+                            class="font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Discord Server</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white">Follow us</h3>
+                <ul>
+                    <li class="mb-4">
+                        <a href="https://discord.gg/4eeurUVvTy" rel="noreferrer nofollow"
+                            class="font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Discord</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="https://github.com/themesberg/flowbite-svelte"
+                            class="font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Github</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white">Legal</h3>
+                <ul>
+                    <li class="mb-4">
+                        <a href="/pages/license" class="font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">License (EULA)</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="https://flowbite.com/privacy-policy/"
+                            class="font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Privacy Policy</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="https://flowbite.com/terms-and-conditions/"
+                            class="font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Terms & Conditions</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="https://flowbite.com/brand/"
+                            class="font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Brand guideline</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr class="my-8 border-gray-200 dark:border-gray-700 lg:my-12" />
+        <span class="block text-center text-gray-600 dark:text-gray-400 font-">© 2019-2023 <a href="/">Flowbite™</a> is a registered trademark. All Rights Reserved.
+        </span>
+    </div>
+</footer>
+
+  <!-- <div class="mx-auto mb-4 pt-4 max-w-8xl w-full">
+    <Footer footerType="custom" customClass="py-6 px-4 bg-white dark:bg-gray-900">
       <div class="md:flex md:justify-between">
         <div class="mb-6 md:mb-0">
           <FooterBrand
@@ -273,5 +359,5 @@
         </div>
       </div>
     </Footer>
-  </div>
+  </div> -->
 </div>
