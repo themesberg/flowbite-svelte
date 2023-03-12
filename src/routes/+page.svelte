@@ -77,6 +77,7 @@
   <Block.AvatarBlock />
   <Block.BadgeBlock />
   <Block.BannerBlock />
+  <Block.BottomNavBlock />
   <Block.BreadcrumbBlock />
   <Block.BlockquoteBlock />
   <Block.ButtonBlock />

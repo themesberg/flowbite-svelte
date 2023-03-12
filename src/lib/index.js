@@ -12,7 +12,13 @@ export { default as Avatar } from './avatar/Avatar.svelte';
 export { default as Badge } from './badges/Badge.svelte';
 
 // Banner
-export { default as Banner } from './banner/Banner.svelte'
+export { default as Banner } from './banner/Banner.svelte';
+
+// Bottom navigation
+export { default as BottomNav } from './bottom-nav/BottomNav.svelte';
+export { default as BottomNavItem } from './bottom-nav/BottomNavItem.svelte';
+export { default as BottomNavHeader } from './bottom-nav/BottomNavHeader.svelte';
+export { default as BottomNavHeaderItem } from './bottom-nav/BottomNavHeaderItem.svelte'
 
 // Breadcrumbs
 export { default as Breadcrumb } from './breadcrumbs/Breadcrumb.svelte';

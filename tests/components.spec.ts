@@ -30,6 +30,12 @@ test('Banner page should have h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Svelte Sticky Banner - Flowbite');
 });
 
+// Bottom navigation
+test('Bottom navigation should have h1', async ({ page }) => {
+	await page.goto('/components/bottom-navigation');
+	expect(await page.textContent('h1')).toBe('Svelte Bottom Navigation - Flowbite');
+});
+
 // Breadcrumbs
 test('Breadcrumb page should have h1', async ({ page }) => {
 	await page.goto('/components/breadcrumb');
