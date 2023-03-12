@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.30.7](https://github.com/themesberg/flowbite-svelte/compare/v0.30.6...v0.30.7) (2023-03-12)
+
+
+### Features
+
+* add svelte snapshot example ([#598](https://github.com/themesberg/flowbite-svelte/issues/598)) ([35da46d](https://github.com/themesberg/flowbite-svelte/commit/35da46d847b333308bcd21ff89834a7a1ded783e))
+
+
+### Bug Fixes
+
+* add carbon ([#602](https://github.com/themesberg/flowbite-svelte/issues/602)) ([0ed5ebc](https://github.com/themesberg/flowbite-svelte/commit/0ed5ebc1b3bf94749f833ee5a3aa14e0802b89bd))
+* event forwarding for numberinput ([#596](https://github.com/themesberg/flowbite-svelte/issues/596)) ([5d67a83](https://github.com/themesberg/flowbite-svelte/commit/5d67a833aa6ff769b85ca79c52b29de56690a2aa))
+* incorrect aria-expanded in <h2> ([#604](https://github.com/themesberg/flowbite-svelte/issues/604)) ([f562e91](https://github.com/themesberg/flowbite-svelte/commit/f562e91e42fae6e76c5d042e6b19b34f7c0d7692))
+* inline script in <DarkMode> ([#610](https://github.com/themesberg/flowbite-svelte/issues/610)) ([7ac48ba](https://github.com/themesberg/flowbite-svelte/commit/7ac48ba643f87b92ad51a6b540b14741bc6fd229))
+* navbar-li undefined ([#595](https://github.com/themesberg/flowbite-svelte/issues/595)) ([ab5d080](https://github.com/themesberg/flowbite-svelte/commit/ab5d080c7f214b81a748a812bd487d8d22af8895))
+* snapshot page ([#603](https://github.com/themesberg/flowbite-svelte/issues/603)) ([f9ecfed](https://github.com/themesberg/flowbite-svelte/commit/f9ecfedbc834530f5abab79f3d3b06e2c2c811a4))
+* snapshot page update 2 ([#605](https://github.com/themesberg/flowbite-svelte/issues/605)) ([e7b36e6](https://github.com/themesberg/flowbite-svelte/commit/e7b36e6ad579bfe642747f6ce2624d129397e49a))
+
 ### [0.30.6](https://github.com/themesberg/flowbite-svelte/compare/v0.30.5...v0.30.6) (2023-03-01)
 
 
