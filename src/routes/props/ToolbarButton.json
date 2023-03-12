@@ -1,1 +1,1 @@
-{"props":[["color","'default' | 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' ","'default'"],["name","string | undefined ","undefined"],["ariaLabel","string | undefined ","undefined"],["size","'xs' | 'sm' | 'md' ","'md'"]]}
+{"props":[["color","| 'dark'     | 'default'     | 'gray'     | 'red'     | 'yellow'     | 'green'     | 'indigo'     | 'purple'     | 'pink'     | 'blue' ","'default'"],["name","string | undefined ","undefined"],["ariaLabel","string | undefined ","undefined"],["size","'xs' | 'sm' | 'md' ","'md'"]]}

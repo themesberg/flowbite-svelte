@@ -24,6 +24,12 @@ test('Badges page should have h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Svelte Badge - Flowbite');
 });
 
+// Banner
+test('Banner page should have h1', async ({ page }) => {
+	await page.goto('/components/banner');
+	expect(await page.textContent('h1')).toBe('Svelte Sticky Banner - Flowbite');
+});
+
 // Breadcrumbs
 test('Breadcrumb page should have h1', async ({ page }) => {
 	await page.goto('/components/breadcrumb');

@@ -14,12 +14,10 @@ description: Use the banner component to show marketing messages and CTA buttons
   
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   // Props table
-  import { props as avatarProps } from '../props/Avatar.json'
+  import { props as avatarProps } from '../props/Banner.json'
 	let propHeader = ['Name', 'Type', 'Default']
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
-
-  let name;
 </script>
 
 <Breadcrumb class="pt-16 py-8">
@@ -42,199 +40,139 @@ Explore the following examples based on various styles, sizes, and positionings 
 
 <Htwo label="Setup" />
 
-Import `Avatar`.
-If you are using the user dropdown, import `Dropdown`, `DropdownHeader`, `DropdownItem`, `DropdownDivider`.
-If you are using tooltip for avatar import `Tooltip`.
-
 ```svelte
 <script>
-  import { Banner, Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider, Tooltip } from "flowbite-svelte"
+  import { Banner } from "flowbite-svelte"
 </script>
 ```
 
 <Htwo label="Default sticky banner" />
 
-Use this example to create a circle and rounded avatar on an image element.
+Use this free example to show a text message for announcement with a CTA link, an icon element and a close button to dismiss the banner.
 
-```svelte example class="flex flex-col h-64" hideScript 
+```svelte example class="flex flex-col relative" hideScript 
 <script>
-  import { Banner } from "flowbite-svelte"
+  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte"
 </script>
-<div class="relative">
-  <div id="sticky-banner" tabindex="-1" class="top-0 z-50 flex justify-between w-full p-4 border-b border-gray-200 bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
-    <div class="flex items-center mx-auto">
-      <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
-        <span class="inline-flex p-1 mr-3 bg-gray-200 rounded-full dark:bg-gray-600">
-          <span class="sr-only">Light bulb</span>
-        </span>
-        <span>New brand identity has been launched for the <a href="https://flowbite.com" class="inline font-medium text-blue-600 underline dark:text-blue-500 underline-offset-2 decoration-600 dark:decoration-500 decoration-solid hover:no-underline">Flowbite Library</a></span>
-      </p>
-    </div>
-  </div>
-</div>
 
-```
+<Skeleton class="py-4"/>
+<ImagePlaceholder class="py-4"/>
 
-<Htwo label="Bordered" />
-
-You can apply a border around the avatar component.
-
-If you can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify ring color.
-
-```svelte example class="flex gap-4 relative h-64" hideScript
-<script>
-  import { Banner } from "flowbite-svelte"
-</script>
-  <Banner fixed={false}>
-    <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
-      <span class="inline-flex p-1 mr-3 bg-gray-200 rounded-full dark:bg-gray-600">
+<Banner id="default-banner" position="absolute">
+  <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
+    <span class="inline-flex p-1 mr-3 bg-gray-200 rounded-full dark:bg-gray-600">
+        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"></path>
+        </svg>
         <span class="sr-only">Light bulb</span>
+    </span>
+    <span>New brand identity has been launched for the <a href="https://flowbite.com" class="inline font-medium text-blue-600 underline dark:text-blue-500 underline-offset-2 decoration-600 dark:decoration-500 decoration-solid hover:no-underline">Flowbite Library</a></span>
+  </p>
+</Banner>
+```
+
+<Htwo label="Bottom banner position" />
+
+This example can be used to position the sticky banner to the bottom side of the page instead of the top side.
+
+```svelte example class="flex flex-col relative" hideScript
+<script>
+  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte"
+</script>
+
+<Skeleton class="py-4"/>
+<ImagePlaceholder class="py-4"/>
+
+<Banner id="bottom-banner" position="absolute" bannerType="bottom">
+  <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
+      <span class="inline-flex p-1 mr-3 bg-gray-200 rounded-full dark:bg-gray-600">
+          <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path clip-rule="evenodd" fill-rule="evenodd" d="M5 2a2 2 0 00-2 2v14l3.5-2 3.5 2 3.5-2 3.5 2V4a2 2 0 00-2-2H5zm2.5 3a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm6.207.293a1 1 0 00-1.414 0l-6 6a1 1 0 101.414 1.414l6-6a1 1 0 000-1.414zM12.5 10a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"></path>
+          </svg>
+          <span class="sr-only">Discount coupon</span>
       </span>
-      <span>New hello identity has been launched for the <a href="https://flowbite.com" class="inline font-medium text-blue-600 underline dark:text-blue-500 underline-offset-2 decoration-600 dark:decoration-500 decoration-solid hover:no-underline">Flowbite Library</a></span>
-    </p>
-  </Banner>
+      <span>Get 5% commision per sale <a href="https://flowbite.com" class="flex items-center ml-0 text-sm font-medium text-blue-600 md:ml-1 md:inline-flex dark:text-blue-500 hover:underline">Become a partner <svg aria-hidden="true" class="w-4 h-4 ml-1 text-blue-600 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillrule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" cliprule="evenodd"></path></svg></a></span>
+  </p>
+</Banner>
 ```
 
-<Htwo label="Placeholder" />
+<Htwo label="Marketing CTA banner" />
 
-When there is no custom image available a placehoder is displayed.
+Use this free example to show a text message for announcement with a CTA link. 
 
-```svelte example class="flex gap-4" hideScript
+```svelte example class="flex flex-col relative" hideScript
 <script>
-  import {Avatar} from 'flowbite-svelte'
+  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte"
 </script>
-<Avatar />
-<Avatar rounded />
-<Avatar border />
-<Avatar rounded border />
+
+<Skeleton class="py-4"/>
+<ImagePlaceholder class="py-4"/>
+
+<Banner id="cta-banner" position="absolute" bannerType="cta">
+  <a href="https://flowbite.com/" class="flex items-center mb-2 border-gray-200 md:pr-4 md:mr-4 md:border-r md:mb-0 dark:border-gray-600">
+      <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 mr-2" alt="Flowbite Logo">
+      <span class="self-center text-lg font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+  </a>
+  <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
+    Build websites even faster with components on top of Tailwind CSS
+  </p>
+</Banner>
 ```
 
-<Htwo label="Placeholder initials" />
+<Htwo label="Newsletter sign-up banner " />
 
-This example can be used to show the initials of the user’s first and last name as a placeholder when no profile picture is available.
+This example can be used to encourage your website visitors to sign up to your email newsletter by showing an inline form inside the sticky banner on the top side of your page.
 
-```svelte example class="flex flex-col gap-4" hideScript
+```svelte example class="flex flex-col relative" hideScript
 <script>
-  import {Avatar} from 'flowbite-svelte'
+  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte"
 </script>
-  <Avatar>JL</Avatar>
+
+<Skeleton class="py-4"/>
+<ImagePlaceholder class="py-4"/>
+
+<Banner id="signup-banner" position="absolute" bannerType="signup">
+  <form action="/" class="flex flex-col items-center w-full md:flex-row">
+    <label for="email" class="flex-shrink-0 mb-2 mr-auto text-sm font-medium text-gray-500 md:mb-0 md:mr-4 dark:text-gray-400 md:m-0">Sign up for our newsletter</label>
+    <input type="email" id="email" placeholder="Enter your email" class="bg-white border border-gray-300 text-gray-900 md:w-64 mb-2 md:mb-0 md:mr-4 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Subscribe</button>
+</form>
+</Banner>
 ```
 
-<Htwo label="Avatar tooltip" />
+<Htwo label="Informational banner" />
 
-Use this example to show a tooltip when hovering over the avatar.
+This example can be used to share important information with your website visitors by showing a heading and a paragraph inside the sticky banner and two CTA buttons with links.
 
-```svelte example class="flex gap-4"
+```svelte example class="flex flex-col relative" hideScript
 <script>
-  import {Avatar, Tooltip} from 'flowbite-svelte'
-</script>
-  <Avatar data-name="Jese Leos" rounded src="/images/profile-picture-1.webp"/>
-  <Avatar data-name="Robert Gouth" rounded src="/images/profile-picture-2.webp"/>
-  <Avatar data-name="Bonnie Green" rounded src="/images/profile-picture-3.webp"/>
-  <Tooltip triggeredBy="[data-name]" on:show={e => name = e.target.dataset.name}>{name}</Tooltip>
-```
-
-<Htwo label="Dot indicator" />
-
-Use a dot element relative to the avatar component as an indicator for the user (eg. online or offline status).
-
-```svelte example class="flex gap-4" hideScript
-<script>
-  import {Avatar, Indicator} from 'flowbite-svelte'
-</script>
-<Avatar src="/images/profile-picture-3.webp" dot={{color:"red"}}/>
-<Avatar src="/images/profile-picture-3.webp" dot={{placement: "top-right", color:"red"}} rounded />
-<Avatar src="/images/profile-picture-5.webp" dot={{placement: "bottom-right", color:"green"}} />
-<Avatar src="/images/profile-picture-5.webp" dot={{placement: "bottom-right"}} rounded />
-
-
-<Avatar dot={{}}/>
-
-```
-
-<Htwo label="Stacked" />
-
-Use this example if you want to stack a group of users by overlapping the avatar components.
-
-```svelte example class="flex flex-col gap-4" hideScript
-<script>
-  import {Avatar} from 'flowbite-svelte'
-</script>
-<div class="flex mb-5">
-<Avatar src="/images/profile-picture-1.webp" stacked/>
-<Avatar src="/images/profile-picture-2.webp" stacked />
-<Avatar src="/images/profile-picture-3.webp" stacked />
-<Avatar stacked />
-</div>
-<div class="flex">
-<Avatar src="/images/profile-picture-1.webp" stacked />
-<Avatar src="/images/profile-picture-2.webp" stacked />
-<Avatar src="/images/profile-picture-3.webp" stacked />
-<Avatar stacked href="/" class="bg-gray-700 text-white hover:bg-gray-600 text-sm">+99</Avatar>
-</div>
-```
-
-<Htwo label="Avatar text" />
-
-This example can be used if you want to show additional information in the form of text elements such as the user’s name and join date.
-
-```svelte example class="flex flex-col gap-4" hideScript
-<script>
-  import {Avatar} from 'flowbite-svelte'
-</script>
-<div class="flex items-center space-x-4">
-    <Avatar src="/images/profile-picture-1.webp" rounded/>
-    <div class="space-y-1 font-medium dark:text-white">
-        <div>Jese Leos</div>
-        <div class="text-sm text-gray-500 dark:text-gray-400">Joined in August 2014</div>
-    </div>
-</div>
-```
-
-<Htwo label="User dropdown" />
-
-Use this example if you want to show a dropdown menu when clicking on the avatar component.
-
-```svelte example class="flex justify-center h-96"
-<script>
-  import {Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider} from 'flowbite-svelte'
+  import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte"
 </script>
 
-  <Avatar id="user-drop" src="/images/profile-picture-3.webp" dot={{color:'green'}} />
-  <Dropdown triggeredBy="#user-drop">
-    <DropdownHeader>
-      <span class="block text-sm"> Bonnie Green </span>
-      <span class="block truncate text-sm font-medium"> name@flowbite.com </span>
-    </DropdownHeader>
-    <DropdownItem>Dashboard</DropdownItem>
-    <DropdownItem>Settings</DropdownItem>
-    <DropdownItem>Earnings</DropdownItem>
-    <DropdownDivider />
-    <DropdownItem>Sign out</DropdownItem>
-  </Dropdown>
-```
+<Skeleton class="py-4"/>
+<ImagePlaceholder class="py-4"/>
 
-<Htwo label="Sizes" />
-
-Select size from  xs | sm | md | lg | xl.
-
-```svelte example class="flex flex-col gap-4" hideScript
-<script>
-  import {Avatar} from 'flowbite-svelte'
-</script>
-<div class=" flex flex-wrap justify-center space-x-4">
-  <Avatar src="/images/profile-picture-3.webp" rounded size="xs" />
-  <Avatar src="/images/profile-picture-3.webp" rounded size="sm" />
-  <Avatar src="/images/profile-picture-3.webp" rounded size="md" />
-  <Avatar src="/images/profile-picture-3.webp" rounded size="lg" />
-  <Avatar src="/images/profile-picture-3.webp" rounded size="xl" />
-</div>
+<Banner id="info-banner" position="absolute" bannerType="info">
+  <div slot="header" class="mb-4 md:mb-0 md:mr-4">
+    <h2 class="mb-1 text-base font-semibold text-gray-900 dark:text-white">Integration is the key</h2>
+    <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">You can integrate Flowbite with many tools.</p>
+  </div>
+  <a href="/" class="inline-flex items-center px-3 py-2 mr-3 text-xs font-medium text-gray-900 bg-white border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"><svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"></path></svg> 
+  Learn more
+  </a>
+  <a href="/" class="inline-flex px-3 py-2 mr-2 text-xs font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+    Get started <svg class="h-4 w-4 ml-1.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path clip-rule="evenodd" fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"></path></svg>
+  </a>
+</Banner>
 ```
 
 <Htwo label="Props" />
 
-The component has the following props, type, and default values. See <A href="/pages/types">types 
- page</A> for type information.
+The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
+
+If you want to custom CSS, use `bannerType="custom"` and add your CSS to `outerDiv` and `innerDiv`. 
+
+Use the slot name `header` to insert your elements before the inner div.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
 <TableDefaultRow items={avatarProps} rowState='hover' />
@@ -243,7 +181,7 @@ The component has the following props, type, and default values. See <A href="/p
 <Htwo label="References" />
 
 <P>
-  <A href="https://flowbite.com/docs/components/avatar/" target="_blank" rel="noreferrer" class="link">
-  Flowbite Avatar
+  <A href="https://flowbite.com/docs/components/banner/" target="_blank" rel="noreferrer" class="link">
+  Flowbite Banner
   </A>
 </P>

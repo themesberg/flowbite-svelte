@@ -1,15 +1,13 @@
 <script lang="ts">
-  import { createEventDispatcher } from 'svelte';
   import classNames from 'classnames';
   import CloseButton from '../utils/CloseButton.svelte';
-  export let id: string = 'sticky-banner' ;
+  export let id: string = 'sticky-banner';
+  export let position: 'static'|'fixed'|'absolute'|'relative'|'sticky'='sticky';
   export let dismissable: boolean = true;
-  export let bannerType: 'default'|'bottom'|'cta'|'signup'|'info' |'custom'='default';
-  export let fixed: boolean = true;
+  export let bannerType: 'default'|'bottom'|'cta'|'signup'|'info'|'custom'='default';
+  export let divDefault: string = 'z-50 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600';
+  export let insideDiv: string ='flex';
 
-  const dispatch = createEventDispatcher();
-  
-  export let divDefault: string = 'z-50 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600'
   const divClasses = {
     default: 'top-0 left-0 w-full border-b border-gray-200 bg-gray-50',
     bottom: 'bottom-0 left-0 w-full border-t border-gray-200 bg-gray-50',
@@ -18,7 +16,7 @@
     info:'top-0 left-0 flex-col w-full border-b border-gray-200 md:flex-row bg-gray-50',
     custom: ''
   }
-  export let insideDiv: string ='flex'
+
   const insideDivClasses = {
     default: 'items-center mx-auto',
     bottom: 'items-center mx-auto',
@@ -29,39 +27,43 @@
   }
 
   $: divClass = classNames(
-    fixed && 'fixed',
+    position,
     divDefault,
-    divClasses[bannerType]
+    divClasses[bannerType],
+    $$props.outerDiv
   )
   $: div2Class = classNames(
     insideDiv,
-    insideDivClasses[bannerType]
+    insideDivClasses[bannerType],
+    $$props.innerDiv
   )
-  let hidden = false;
-  const handleHide = () => {
-    hidden = !hidden;
-    dispatch('close'); // preffered name
+  let show = true;
+  $: handleHide = () => {
+    show = !show;
   };
 </script>
 
-<div {id} tabindex="-1" class={divClass}>
-  <div class={div2Class}>
-      <slot />
+{#if show}
+  <div {id} tabindex="-1" class={divClass} {...$$restProps} >
+    <slot name="header" />
+    <div class={div2Class}>
+        <slot />
+    </div>
+    {#if dismissable}
+    <div class="flex items-center">
+      <CloseButton
+        class="-mx-1.5 -my-1.5"
+        color={$$restProps.color}
+        on:click={handleHide}
+        on:click
+        on:change
+        on:keydown
+        on:keyup
+        on:focus
+        on:blur
+        on:mouseenter
+        on:mouseleave />
+    </div>
+    {/if}
   </div>
-  {#if dismissable}
-  <div class="flex items-center">
-    <CloseButton
-      class="-mx-1.5 -my-1.5"
-      color={$$restProps.color}
-      on:click={handleHide}
-      on:click
-      on:change
-      on:keydown
-      on:keyup
-      on:focus
-      on:blur
-      on:mouseenter
-      on:mouseleave />
-  </div>
-  {/if}
-</div>
+{/if}
