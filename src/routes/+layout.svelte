@@ -80,17 +80,18 @@
 <svelte:window bind:innerWidth={width} />
 
 <div class="mx-auto">
-  <Navbar navClass="px-2 py-0.5 fixed w-full mx-auto z-20 top-0 left-0 border-b" let:hidden let:toggle>
+  <Navbar navClass="px-2 py-0.5 fixed w-full mx-auto z-20 top-0 left-0 border-b" navDivClass="max-w-8xl w-full mx-auto flex flex-wrap justify-between items-center" let:hidden let:toggle>
     <NavHamburger on:click={toggleDrawer} btnClass="ml-3 lg:hidden" />
     <NavBrand href="/">
       <img src={logo} class="mr-3 h-6 sm:h-9" alt="Flowbite-Svelte Logo" />
       <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-        Flowbite-Svelte
+        Flowbite Svelte
       </span>
     </NavBrand>
     <NavHamburger on:click={toggle} />
     <NavUl {hidden} {divClass} {ulClass}>
       <NavLi href="/">Home</NavLi>
+      <NavLi href="/pages/getting-started">Quickstart</NavLi>
       <NavLi href="/pages/about">About</NavLi>
       <NavLi href="https://github.com/themesberg/flowbite-svelte">GitHub</NavLi>
     </NavUl>
