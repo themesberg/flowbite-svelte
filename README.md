@@ -23,15 +23,15 @@
 
 You can find all the starters in the Starters directory.
 
-- [Flowbite SvelteKit starter]()
-- [Svelte starter]()
-- [Svelte TS starter]()
+- [Flowbite SvelteKit starter](https://github.com/shinokada/flowbite-svelte-starter)
+- [Svelte starter](https://github.com/shinokada/svelte-starter)
+- [Svelte TS starter](https://github.com/shinokada/svelte-ts-starter)
 
 ## Flowbite Svelte Examples
 
 You can find all the examples in the Examples directory.
 
-- [Flowbite SvelteKit responsive sidebar layout]()
+- [Flowbite SvelteKit responsive sidebar layout](https://github.com/themesberg/flowbite-svelte/tree/main/examples/flowbite-sveltekit-responsive-sidebar-layout)
 
 
 
@@ -441,8 +441,30 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite.com/components/indicators/">
+        <a href="https://flowbite-svelte.com/components/indicators/">
             <img alt="Tailwind CSS Indicators" src="https://flowbite.s3.amazonaws.com/github/indicators.jpg">
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="33.3333%">Bottom Navigation</td>
+    <td width="33.3333%">Sticky Banner</td>
+    <td width="33.3333%">Gallery (Masonry)</td>
+  </tr>
+  <tr>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/components/bottom-navigation/">
+            <img alt="Tailwind CSS Bottom Navigation Bar" src="https://flowbite.s3.amazonaws.com/github/bottom-bar.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/components/banner/">
+            <img alt="Tailwind CSS Bottom Sticky Banner" src="https://flowbite.s3.amazonaws.com/github/banner.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/components/gallery/">
+            <img alt="Tailwind CSS Image Gallery (Masonry)" src="https://flowbite.s3.amazonaws.com/github/gallery.jpg">
         </a>
     </td>
   </tr>
