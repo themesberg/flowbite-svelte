@@ -6,19 +6,19 @@ const packageJsonPath = './package.json';
 
 const componentNames = fs.readdirSync(distDir);
 const componentExports = {};
-console.log('componentNames: ', componentNames)
+
 for (const componentName of componentNames) {
   const componentDir = path.join(distDir, componentName);
   if (!fs.existsSync(componentDir) || !fs.lstatSync(componentDir).isDirectory()) {
     continue;
   }
   const componentFiles = fs.readdirSync(componentDir);
-  // console.log('componentFiles: ', componentFiles)
+
   const svelteFiles = componentFiles.filter((file) => file.endsWith('.svelte'));
 
   for (const svelteFile of svelteFiles) {
     const dtsFile = `${svelteFile}.d.ts`;
-    const exportKey = `./${componentName}/${svelteFile}`;
+    const exportKey = `./${svelteFile}`;
 
     componentExports[exportKey] = {
       types: `./dist/${componentName}/${dtsFile}`,

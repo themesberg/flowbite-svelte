@@ -118,595 +118,611 @@
     "node": ">=16.0.0"
   },
   "exports": {
-    "./accordions/Accordion.svelte": {
+    "./Accordion.svelte": {
       "types": "./dist/accordions/Accordion.svelte.d.ts",
       "svelte": "./dist/accordions/Accordion.svelte"
     },
-    "./accordions/AccordionItem.svelte": {
+    "./AccordionItem.svelte": {
       "types": "./dist/accordions/AccordionItem.svelte.d.ts",
       "svelte": "./dist/accordions/AccordionItem.svelte"
     },
-    "./alerts/Alert.svelte": {
+    "./Alert.svelte": {
       "types": "./dist/alerts/Alert.svelte.d.ts",
       "svelte": "./dist/alerts/Alert.svelte"
     },
-    "./avatar/Avatar.svelte": {
+    "./Avatar.svelte": {
       "types": "./dist/avatar/Avatar.svelte.d.ts",
       "svelte": "./dist/avatar/Avatar.svelte"
     },
-    "./avatar/Placeholder.svelte": {
+    "./Placeholder.svelte": {
       "types": "./dist/avatar/Placeholder.svelte.d.ts",
       "svelte": "./dist/avatar/Placeholder.svelte"
     },
-    "./badges/Badge.svelte": {
+    "./Badge.svelte": {
       "types": "./dist/badges/Badge.svelte.d.ts",
       "svelte": "./dist/badges/Badge.svelte"
     },
-    "./breadcrumbs/Breadcrumb.svelte": {
+    "./Banner.svelte": {
+      "types": "./dist/banner/Banner.svelte.d.ts",
+      "svelte": "./dist/banner/Banner.svelte"
+    },
+    "./BottomNav.svelte": {
+      "types": "./dist/bottom-nav/BottomNav.svelte.d.ts",
+      "svelte": "./dist/bottom-nav/BottomNav.svelte"
+    },
+    "./BottomNavHeader.svelte": {
+      "types": "./dist/bottom-nav/BottomNavHeader.svelte.d.ts",
+      "svelte": "./dist/bottom-nav/BottomNavHeader.svelte"
+    },
+    "./BottomNavHeaderItem.svelte": {
+      "types": "./dist/bottom-nav/BottomNavHeaderItem.svelte.d.ts",
+      "svelte": "./dist/bottom-nav/BottomNavHeaderItem.svelte"
+    },
+    "./BottomNavItem.svelte": {
+      "types": "./dist/bottom-nav/BottomNavItem.svelte.d.ts",
+      "svelte": "./dist/bottom-nav/BottomNavItem.svelte"
+    },
+    "./Breadcrumb.svelte": {
       "types": "./dist/breadcrumbs/Breadcrumb.svelte.d.ts",
       "svelte": "./dist/breadcrumbs/Breadcrumb.svelte"
     },
-    "./breadcrumbs/BreadcrumbItem.svelte": {
+    "./BreadcrumbItem.svelte": {
       "types": "./dist/breadcrumbs/BreadcrumbItem.svelte.d.ts",
       "svelte": "./dist/breadcrumbs/BreadcrumbItem.svelte"
     },
-    "./buttongroups/ButtonGroup.svelte": {
+    "./ButtonGroup.svelte": {
       "types": "./dist/buttongroups/ButtonGroup.svelte.d.ts",
       "svelte": "./dist/buttongroups/ButtonGroup.svelte"
     },
-    "./buttons/Button.svelte": {
+    "./Button.svelte": {
       "types": "./dist/buttons/Button.svelte.d.ts",
       "svelte": "./dist/buttons/Button.svelte"
     },
-    "./cards/Card.svelte": {
+    "./Card.svelte": {
       "types": "./dist/cards/Card.svelte.d.ts",
       "svelte": "./dist/cards/Card.svelte"
     },
-    "./carousels/Caption.svelte": {
+    "./Caption.svelte": {
       "types": "./dist/carousels/Caption.svelte.d.ts",
       "svelte": "./dist/carousels/Caption.svelte"
     },
-    "./carousels/Carousel.svelte": {
+    "./Carousel.svelte": {
       "types": "./dist/carousels/Carousel.svelte.d.ts",
       "svelte": "./dist/carousels/Carousel.svelte"
     },
-    "./carousels/CarouselTransition.svelte": {
+    "./CarouselTransition.svelte": {
       "types": "./dist/carousels/CarouselTransition.svelte.d.ts",
       "svelte": "./dist/carousels/CarouselTransition.svelte"
     },
-    "./carousels/Indicator.svelte": {
-      "types": "./dist/carousels/Indicator.svelte.d.ts",
-      "svelte": "./dist/carousels/Indicator.svelte"
-    },
-    "./carousels/Slide.svelte": {
-      "types": "./dist/carousels/Slide.svelte.d.ts",
-      "svelte": "./dist/carousels/Slide.svelte"
-    },
-    "./carousels/Thumbnail.svelte": {
-      "types": "./dist/carousels/Thumbnail.svelte.d.ts",
-      "svelte": "./dist/carousels/Thumbnail.svelte"
-    },
-    "./darkmode/DarkMode.svelte": {
-      "types": "./dist/darkmode/DarkMode.svelte.d.ts",
-      "svelte": "./dist/darkmode/DarkMode.svelte"
-    },
-    "./datepicker/Calender.svelte": {
-      "types": "./dist/datepicker/Calender.svelte.d.ts",
-      "svelte": "./dist/datepicker/Calender.svelte"
-    },
-    "./datepicker/Datepicker.svelte": {
-      "types": "./dist/datepicker/Datepicker.svelte.d.ts",
-      "svelte": "./dist/datepicker/Datepicker.svelte"
-    },
-    "./drawer/Drawer.svelte": {
-      "types": "./dist/drawer/Drawer.svelte.d.ts",
-      "svelte": "./dist/drawer/Drawer.svelte"
-    },
-    "./dropdowns/Dropdown.svelte": {
-      "types": "./dist/dropdowns/Dropdown.svelte.d.ts",
-      "svelte": "./dist/dropdowns/Dropdown.svelte"
-    },
-    "./dropdowns/DropdownDivider.svelte": {
-      "types": "./dist/dropdowns/DropdownDivider.svelte.d.ts",
-      "svelte": "./dist/dropdowns/DropdownDivider.svelte"
-    },
-    "./dropdowns/DropdownHeader.svelte": {
-      "types": "./dist/dropdowns/DropdownHeader.svelte.d.ts",
-      "svelte": "./dist/dropdowns/DropdownHeader.svelte"
-    },
-    "./dropdowns/DropdownItem.svelte": {
-      "types": "./dist/dropdowns/DropdownItem.svelte.d.ts",
-      "svelte": "./dist/dropdowns/DropdownItem.svelte"
-    },
-    "./footer/Footer.svelte": {
-      "types": "./dist/footer/Footer.svelte.d.ts",
-      "svelte": "./dist/footer/Footer.svelte"
-    },
-    "./footer/FooterBrand.svelte": {
-      "types": "./dist/footer/FooterBrand.svelte.d.ts",
-      "svelte": "./dist/footer/FooterBrand.svelte"
-    },
-    "./footer/FooterCopyright.svelte": {
-      "types": "./dist/footer/FooterCopyright.svelte.d.ts",
-      "svelte": "./dist/footer/FooterCopyright.svelte"
-    },
-    "./footer/FooterIcon.svelte": {
-      "types": "./dist/footer/FooterIcon.svelte.d.ts",
-      "svelte": "./dist/footer/FooterIcon.svelte"
-    },
-    "./footer/FooterLink.svelte": {
-      "types": "./dist/footer/FooterLink.svelte.d.ts",
-      "svelte": "./dist/footer/FooterLink.svelte"
-    },
-    "./footer/FooterLinkGroup.svelte": {
-      "types": "./dist/footer/FooterLinkGroup.svelte.d.ts",
-      "svelte": "./dist/footer/FooterLinkGroup.svelte"
-    },
-    "./forms/Checkbox.svelte": {
-      "types": "./dist/forms/Checkbox.svelte.d.ts",
-      "svelte": "./dist/forms/Checkbox.svelte"
-    },
-    "./forms/Dropzone.svelte": {
-      "types": "./dist/forms/Dropzone.svelte.d.ts",
-      "svelte": "./dist/forms/Dropzone.svelte"
-    },
-    "./forms/Fileupload.svelte": {
-      "types": "./dist/forms/Fileupload.svelte.d.ts",
-      "svelte": "./dist/forms/Fileupload.svelte"
-    },
-    "./forms/FloatingLabelInput.svelte": {
-      "types": "./dist/forms/FloatingLabelInput.svelte.d.ts",
-      "svelte": "./dist/forms/FloatingLabelInput.svelte"
-    },
-    "./forms/Helper.svelte": {
-      "types": "./dist/forms/Helper.svelte.d.ts",
-      "svelte": "./dist/forms/Helper.svelte"
-    },
-    "./forms/Input.svelte": {
-      "types": "./dist/forms/Input.svelte.d.ts",
-      "svelte": "./dist/forms/Input.svelte"
-    },
-    "./forms/InputAddon.svelte": {
-      "types": "./dist/forms/InputAddon.svelte.d.ts",
-      "svelte": "./dist/forms/InputAddon.svelte"
-    },
-    "./forms/Label.svelte": {
-      "types": "./dist/forms/Label.svelte.d.ts",
-      "svelte": "./dist/forms/Label.svelte"
-    },
-    "./forms/NumberInput.svelte": {
-      "types": "./dist/forms/NumberInput.svelte.d.ts",
-      "svelte": "./dist/forms/NumberInput.svelte"
-    },
-    "./forms/Radio.svelte": {
-      "types": "./dist/forms/Radio.svelte.d.ts",
-      "svelte": "./dist/forms/Radio.svelte"
-    },
-    "./forms/RadioInline.svelte": {
-      "types": "./dist/forms/RadioInline.svelte.d.ts",
-      "svelte": "./dist/forms/RadioInline.svelte"
-    },
-    "./forms/Range.svelte": {
-      "types": "./dist/forms/Range.svelte.d.ts",
-      "svelte": "./dist/forms/Range.svelte"
-    },
-    "./forms/Search.svelte": {
-      "types": "./dist/forms/Search.svelte.d.ts",
-      "svelte": "./dist/forms/Search.svelte"
-    },
-    "./forms/Select.svelte": {
-      "types": "./dist/forms/Select.svelte.d.ts",
-      "svelte": "./dist/forms/Select.svelte"
-    },
-    "./forms/SimpleSearch.svelte": {
-      "types": "./dist/forms/SimpleSearch.svelte.d.ts",
-      "svelte": "./dist/forms/SimpleSearch.svelte"
-    },
-    "./forms/Textarea.svelte": {
-      "types": "./dist/forms/Textarea.svelte.d.ts",
-      "svelte": "./dist/forms/Textarea.svelte"
-    },
-    "./forms/Toggle.svelte": {
-      "types": "./dist/forms/Toggle.svelte.d.ts",
-      "svelte": "./dist/forms/Toggle.svelte"
-    },
-    "./forms/VoiceSearch.svelte": {
-      "types": "./dist/forms/VoiceSearch.svelte.d.ts",
-      "svelte": "./dist/forms/VoiceSearch.svelte"
-    },
-    "./indicators/Indicator.svelte": {
+    "./Indicator.svelte": {
       "types": "./dist/indicators/Indicator.svelte.d.ts",
       "svelte": "./dist/indicators/Indicator.svelte"
     },
-    "./kbd/ArrowKeyDown.svelte": {
+    "./Slide.svelte": {
+      "types": "./dist/carousels/Slide.svelte.d.ts",
+      "svelte": "./dist/carousels/Slide.svelte"
+    },
+    "./Thumbnail.svelte": {
+      "types": "./dist/carousels/Thumbnail.svelte.d.ts",
+      "svelte": "./dist/carousels/Thumbnail.svelte"
+    },
+    "./DarkMode.svelte": {
+      "types": "./dist/darkmode/DarkMode.svelte.d.ts",
+      "svelte": "./dist/darkmode/DarkMode.svelte"
+    },
+    "./Calender.svelte": {
+      "types": "./dist/datepicker/Calender.svelte.d.ts",
+      "svelte": "./dist/datepicker/Calender.svelte"
+    },
+    "./Datepicker.svelte": {
+      "types": "./dist/datepicker/Datepicker.svelte.d.ts",
+      "svelte": "./dist/datepicker/Datepicker.svelte"
+    },
+    "./Drawer.svelte": {
+      "types": "./dist/drawer/Drawer.svelte.d.ts",
+      "svelte": "./dist/drawer/Drawer.svelte"
+    },
+    "./Dropdown.svelte": {
+      "types": "./dist/dropdowns/Dropdown.svelte.d.ts",
+      "svelte": "./dist/dropdowns/Dropdown.svelte"
+    },
+    "./DropdownDivider.svelte": {
+      "types": "./dist/dropdowns/DropdownDivider.svelte.d.ts",
+      "svelte": "./dist/dropdowns/DropdownDivider.svelte"
+    },
+    "./DropdownHeader.svelte": {
+      "types": "./dist/dropdowns/DropdownHeader.svelte.d.ts",
+      "svelte": "./dist/dropdowns/DropdownHeader.svelte"
+    },
+    "./DropdownItem.svelte": {
+      "types": "./dist/dropdowns/DropdownItem.svelte.d.ts",
+      "svelte": "./dist/dropdowns/DropdownItem.svelte"
+    },
+    "./Footer.svelte": {
+      "types": "./dist/footer/Footer.svelte.d.ts",
+      "svelte": "./dist/footer/Footer.svelte"
+    },
+    "./FooterBrand.svelte": {
+      "types": "./dist/footer/FooterBrand.svelte.d.ts",
+      "svelte": "./dist/footer/FooterBrand.svelte"
+    },
+    "./FooterCopyright.svelte": {
+      "types": "./dist/footer/FooterCopyright.svelte.d.ts",
+      "svelte": "./dist/footer/FooterCopyright.svelte"
+    },
+    "./FooterIcon.svelte": {
+      "types": "./dist/footer/FooterIcon.svelte.d.ts",
+      "svelte": "./dist/footer/FooterIcon.svelte"
+    },
+    "./FooterLink.svelte": {
+      "types": "./dist/footer/FooterLink.svelte.d.ts",
+      "svelte": "./dist/footer/FooterLink.svelte"
+    },
+    "./FooterLinkGroup.svelte": {
+      "types": "./dist/footer/FooterLinkGroup.svelte.d.ts",
+      "svelte": "./dist/footer/FooterLinkGroup.svelte"
+    },
+    "./Checkbox.svelte": {
+      "types": "./dist/forms/Checkbox.svelte.d.ts",
+      "svelte": "./dist/forms/Checkbox.svelte"
+    },
+    "./Dropzone.svelte": {
+      "types": "./dist/forms/Dropzone.svelte.d.ts",
+      "svelte": "./dist/forms/Dropzone.svelte"
+    },
+    "./Fileupload.svelte": {
+      "types": "./dist/forms/Fileupload.svelte.d.ts",
+      "svelte": "./dist/forms/Fileupload.svelte"
+    },
+    "./FloatingLabelInput.svelte": {
+      "types": "./dist/forms/FloatingLabelInput.svelte.d.ts",
+      "svelte": "./dist/forms/FloatingLabelInput.svelte"
+    },
+    "./Helper.svelte": {
+      "types": "./dist/forms/Helper.svelte.d.ts",
+      "svelte": "./dist/forms/Helper.svelte"
+    },
+    "./Input.svelte": {
+      "types": "./dist/forms/Input.svelte.d.ts",
+      "svelte": "./dist/forms/Input.svelte"
+    },
+    "./InputAddon.svelte": {
+      "types": "./dist/forms/InputAddon.svelte.d.ts",
+      "svelte": "./dist/forms/InputAddon.svelte"
+    },
+    "./Label.svelte": {
+      "types": "./dist/forms/Label.svelte.d.ts",
+      "svelte": "./dist/forms/Label.svelte"
+    },
+    "./NumberInput.svelte": {
+      "types": "./dist/forms/NumberInput.svelte.d.ts",
+      "svelte": "./dist/forms/NumberInput.svelte"
+    },
+    "./Radio.svelte": {
+      "types": "./dist/forms/Radio.svelte.d.ts",
+      "svelte": "./dist/forms/Radio.svelte"
+    },
+    "./RadioInline.svelte": {
+      "types": "./dist/forms/RadioInline.svelte.d.ts",
+      "svelte": "./dist/forms/RadioInline.svelte"
+    },
+    "./Range.svelte": {
+      "types": "./dist/forms/Range.svelte.d.ts",
+      "svelte": "./dist/forms/Range.svelte"
+    },
+    "./Search.svelte": {
+      "types": "./dist/forms/Search.svelte.d.ts",
+      "svelte": "./dist/forms/Search.svelte"
+    },
+    "./Select.svelte": {
+      "types": "./dist/forms/Select.svelte.d.ts",
+      "svelte": "./dist/forms/Select.svelte"
+    },
+    "./SimpleSearch.svelte": {
+      "types": "./dist/forms/SimpleSearch.svelte.d.ts",
+      "svelte": "./dist/forms/SimpleSearch.svelte"
+    },
+    "./Textarea.svelte": {
+      "types": "./dist/forms/Textarea.svelte.d.ts",
+      "svelte": "./dist/forms/Textarea.svelte"
+    },
+    "./Toggle.svelte": {
+      "types": "./dist/forms/Toggle.svelte.d.ts",
+      "svelte": "./dist/forms/Toggle.svelte"
+    },
+    "./VoiceSearch.svelte": {
+      "types": "./dist/forms/VoiceSearch.svelte.d.ts",
+      "svelte": "./dist/forms/VoiceSearch.svelte"
+    },
+    "./ArrowKeyDown.svelte": {
       "types": "./dist/kbd/ArrowKeyDown.svelte.d.ts",
       "svelte": "./dist/kbd/ArrowKeyDown.svelte"
     },
-    "./kbd/ArrowKeyLeft.svelte": {
+    "./ArrowKeyLeft.svelte": {
       "types": "./dist/kbd/ArrowKeyLeft.svelte.d.ts",
       "svelte": "./dist/kbd/ArrowKeyLeft.svelte"
     },
-    "./kbd/ArrowKeyRight.svelte": {
+    "./ArrowKeyRight.svelte": {
       "types": "./dist/kbd/ArrowKeyRight.svelte.d.ts",
       "svelte": "./dist/kbd/ArrowKeyRight.svelte"
     },
-    "./kbd/ArrowKeyUp.svelte": {
+    "./ArrowKeyUp.svelte": {
       "types": "./dist/kbd/ArrowKeyUp.svelte.d.ts",
       "svelte": "./dist/kbd/ArrowKeyUp.svelte"
     },
-    "./kbd/Kbd.svelte": {
+    "./Kbd.svelte": {
       "types": "./dist/kbd/Kbd.svelte.d.ts",
       "svelte": "./dist/kbd/Kbd.svelte"
     },
-    "./list-group/Listgroup.svelte": {
+    "./Listgroup.svelte": {
       "types": "./dist/list-group/Listgroup.svelte.d.ts",
       "svelte": "./dist/list-group/Listgroup.svelte"
     },
-    "./list-group/ListgroupItem.svelte": {
+    "./ListgroupItem.svelte": {
       "types": "./dist/list-group/ListgroupItem.svelte.d.ts",
       "svelte": "./dist/list-group/ListgroupItem.svelte"
     },
-    "./megamenu/MegaMenu.svelte": {
+    "./MegaMenu.svelte": {
       "types": "./dist/megamenu/MegaMenu.svelte.d.ts",
       "svelte": "./dist/megamenu/MegaMenu.svelte"
     },
-    "./modals/Modal.svelte": {
+    "./Modal.svelte": {
       "types": "./dist/modals/Modal.svelte.d.ts",
       "svelte": "./dist/modals/Modal.svelte"
     },
-    "./navbar/Menu.svelte": {
+    "./Menu.svelte": {
       "types": "./dist/navbar/Menu.svelte.d.ts",
       "svelte": "./dist/navbar/Menu.svelte"
     },
-    "./navbar/NavBrand.svelte": {
+    "./NavBrand.svelte": {
       "types": "./dist/navbar/NavBrand.svelte.d.ts",
       "svelte": "./dist/navbar/NavBrand.svelte"
     },
-    "./navbar/NavDropdown.svelte": {
+    "./NavDropdown.svelte": {
       "types": "./dist/navbar/NavDropdown.svelte.d.ts",
       "svelte": "./dist/navbar/NavDropdown.svelte"
     },
-    "./navbar/NavHamburger.svelte": {
+    "./NavHamburger.svelte": {
       "types": "./dist/navbar/NavHamburger.svelte.d.ts",
       "svelte": "./dist/navbar/NavHamburger.svelte"
     },
-    "./navbar/NavLi.svelte": {
+    "./NavLi.svelte": {
       "types": "./dist/navbar/NavLi.svelte.d.ts",
       "svelte": "./dist/navbar/NavLi.svelte"
     },
-    "./navbar/NavUl.svelte": {
+    "./NavUl.svelte": {
       "types": "./dist/navbar/NavUl.svelte.d.ts",
       "svelte": "./dist/navbar/NavUl.svelte"
     },
-    "./navbar/Navbar.svelte": {
+    "./Navbar.svelte": {
       "types": "./dist/navbar/Navbar.svelte.d.ts",
       "svelte": "./dist/navbar/Navbar.svelte"
     },
-    "./paginations/Pagination.svelte": {
+    "./Pagination.svelte": {
       "types": "./dist/paginations/Pagination.svelte.d.ts",
       "svelte": "./dist/paginations/Pagination.svelte"
     },
-    "./paginations/PaginationItem.svelte": {
+    "./PaginationItem.svelte": {
       "types": "./dist/paginations/PaginationItem.svelte.d.ts",
       "svelte": "./dist/paginations/PaginationItem.svelte"
     },
-    "./popover/Popover.svelte": {
+    "./Popover.svelte": {
       "types": "./dist/popover/Popover.svelte.d.ts",
       "svelte": "./dist/popover/Popover.svelte"
     },
-    "./progressbars/Progressbar.svelte": {
+    "./Progressbar.svelte": {
       "types": "./dist/progressbars/Progressbar.svelte.d.ts",
       "svelte": "./dist/progressbars/Progressbar.svelte"
     },
-    "./ratings/AdvancedRating.svelte": {
+    "./AdvancedRating.svelte": {
       "types": "./dist/ratings/AdvancedRating.svelte.d.ts",
       "svelte": "./dist/ratings/AdvancedRating.svelte"
     },
-    "./ratings/Rating.svelte": {
+    "./Rating.svelte": {
       "types": "./dist/ratings/Rating.svelte.d.ts",
       "svelte": "./dist/ratings/Rating.svelte"
     },
-    "./ratings/RatingComment.svelte": {
+    "./RatingComment.svelte": {
       "types": "./dist/ratings/RatingComment.svelte.d.ts",
       "svelte": "./dist/ratings/RatingComment.svelte"
     },
-    "./ratings/Review.svelte": {
+    "./Review.svelte": {
       "types": "./dist/ratings/Review.svelte.d.ts",
       "svelte": "./dist/ratings/Review.svelte"
     },
-    "./ratings/ScoreRating.svelte": {
+    "./ScoreRating.svelte": {
       "types": "./dist/ratings/ScoreRating.svelte.d.ts",
       "svelte": "./dist/ratings/ScoreRating.svelte"
     },
-    "./ratings/Star.svelte": {
+    "./Star.svelte": {
       "types": "./dist/ratings/Star.svelte.d.ts",
       "svelte": "./dist/ratings/Star.svelte"
     },
-    "./sidebars/Sidebar.svelte": {
+    "./Sidebar.svelte": {
       "types": "./dist/sidebars/Sidebar.svelte.d.ts",
       "svelte": "./dist/sidebars/Sidebar.svelte"
     },
-    "./sidebars/SidebarBrand.svelte": {
+    "./SidebarBrand.svelte": {
       "types": "./dist/sidebars/SidebarBrand.svelte.d.ts",
       "svelte": "./dist/sidebars/SidebarBrand.svelte"
     },
-    "./sidebars/SidebarCta.svelte": {
+    "./SidebarCta.svelte": {
       "types": "./dist/sidebars/SidebarCta.svelte.d.ts",
       "svelte": "./dist/sidebars/SidebarCta.svelte"
     },
-    "./sidebars/SidebarDropdownItem.svelte": {
+    "./SidebarDropdownItem.svelte": {
       "types": "./dist/sidebars/SidebarDropdownItem.svelte.d.ts",
       "svelte": "./dist/sidebars/SidebarDropdownItem.svelte"
     },
-    "./sidebars/SidebarDropdownWrapper.svelte": {
+    "./SidebarDropdownWrapper.svelte": {
       "types": "./dist/sidebars/SidebarDropdownWrapper.svelte.d.ts",
       "svelte": "./dist/sidebars/SidebarDropdownWrapper.svelte"
     },
-    "./sidebars/SidebarGroup.svelte": {
+    "./SidebarGroup.svelte": {
       "types": "./dist/sidebars/SidebarGroup.svelte.d.ts",
       "svelte": "./dist/sidebars/SidebarGroup.svelte"
     },
-    "./sidebars/SidebarItem.svelte": {
+    "./SidebarItem.svelte": {
       "types": "./dist/sidebars/SidebarItem.svelte.d.ts",
       "svelte": "./dist/sidebars/SidebarItem.svelte"
     },
-    "./sidebars/SidebarWrapper.svelte": {
+    "./SidebarWrapper.svelte": {
       "types": "./dist/sidebars/SidebarWrapper.svelte.d.ts",
       "svelte": "./dist/sidebars/SidebarWrapper.svelte"
     },
-    "./skeleton/CardPlaceholder.svelte": {
+    "./CardPlaceholder.svelte": {
       "types": "./dist/skeleton/CardPlaceholder.svelte.d.ts",
       "svelte": "./dist/skeleton/CardPlaceholder.svelte"
     },
-    "./skeleton/ImagePlaceholder.svelte": {
+    "./ImagePlaceholder.svelte": {
       "types": "./dist/skeleton/ImagePlaceholder.svelte.d.ts",
       "svelte": "./dist/skeleton/ImagePlaceholder.svelte"
     },
-    "./skeleton/ListPlaceholder.svelte": {
+    "./ListPlaceholder.svelte": {
       "types": "./dist/skeleton/ListPlaceholder.svelte.d.ts",
       "svelte": "./dist/skeleton/ListPlaceholder.svelte"
     },
-    "./skeleton/Skeleton.svelte": {
+    "./Skeleton.svelte": {
       "types": "./dist/skeleton/Skeleton.svelte.d.ts",
       "svelte": "./dist/skeleton/Skeleton.svelte"
     },
-    "./skeleton/TestimonialPlaceholder.svelte": {
+    "./TestimonialPlaceholder.svelte": {
       "types": "./dist/skeleton/TestimonialPlaceholder.svelte.d.ts",
       "svelte": "./dist/skeleton/TestimonialPlaceholder.svelte"
     },
-    "./skeleton/TextPlaceholder.svelte": {
+    "./TextPlaceholder.svelte": {
       "types": "./dist/skeleton/TextPlaceholder.svelte.d.ts",
       "svelte": "./dist/skeleton/TextPlaceholder.svelte"
     },
-    "./skeleton/VideoPlaceholder.svelte": {
+    "./VideoPlaceholder.svelte": {
       "types": "./dist/skeleton/VideoPlaceholder.svelte.d.ts",
       "svelte": "./dist/skeleton/VideoPlaceholder.svelte"
     },
-    "./skeleton/WidgetPlaceholder.svelte": {
+    "./WidgetPlaceholder.svelte": {
       "types": "./dist/skeleton/WidgetPlaceholder.svelte.d.ts",
       "svelte": "./dist/skeleton/WidgetPlaceholder.svelte"
     },
-    "./speed-dial/SpeedDial.svelte": {
+    "./SpeedDial.svelte": {
       "types": "./dist/speed-dial/SpeedDial.svelte.d.ts",
       "svelte": "./dist/speed-dial/SpeedDial.svelte"
     },
-    "./speed-dial/SpeedDialButton.svelte": {
+    "./SpeedDialButton.svelte": {
       "types": "./dist/speed-dial/SpeedDialButton.svelte.d.ts",
       "svelte": "./dist/speed-dial/SpeedDialButton.svelte"
     },
-    "./spinners/Spinner.svelte": {
+    "./Spinner.svelte": {
       "types": "./dist/spinners/Spinner.svelte.d.ts",
       "svelte": "./dist/spinners/Spinner.svelte"
     },
-    "./steps/StepIndicator.svelte": {
+    "./StepIndicator.svelte": {
       "types": "./dist/steps/StepIndicator.svelte.d.ts",
       "svelte": "./dist/steps/StepIndicator.svelte"
     },
-    "./tables/Table.svelte": {
+    "./Table.svelte": {
       "types": "./dist/tables/Table.svelte.d.ts",
       "svelte": "./dist/tables/Table.svelte"
     },
-    "./tables/TableBody.svelte": {
+    "./TableBody.svelte": {
       "types": "./dist/tables/TableBody.svelte.d.ts",
       "svelte": "./dist/tables/TableBody.svelte"
     },
-    "./tables/TableBodyCell.svelte": {
+    "./TableBodyCell.svelte": {
       "types": "./dist/tables/TableBodyCell.svelte.d.ts",
       "svelte": "./dist/tables/TableBodyCell.svelte"
     },
-    "./tables/TableBodyRow.svelte": {
+    "./TableBodyRow.svelte": {
       "types": "./dist/tables/TableBodyRow.svelte.d.ts",
       "svelte": "./dist/tables/TableBodyRow.svelte"
     },
-    "./tables/TableHead.svelte": {
+    "./TableHead.svelte": {
       "types": "./dist/tables/TableHead.svelte.d.ts",
       "svelte": "./dist/tables/TableHead.svelte"
     },
-    "./tables/TableHeadCell.svelte": {
+    "./TableHeadCell.svelte": {
       "types": "./dist/tables/TableHeadCell.svelte.d.ts",
       "svelte": "./dist/tables/TableHeadCell.svelte"
     },
-    "./tables/TableSearch.svelte": {
+    "./TableSearch.svelte": {
       "types": "./dist/tables/TableSearch.svelte.d.ts",
       "svelte": "./dist/tables/TableSearch.svelte"
     },
-    "./tabs/TabHead.svelte": {
+    "./TabHead.svelte": {
       "types": "./dist/tabs/TabHead.svelte.d.ts",
       "svelte": "./dist/tabs/TabHead.svelte"
     },
-    "./tabs/TabHeadItem.svelte": {
+    "./TabHeadItem.svelte": {
       "types": "./dist/tabs/TabHeadItem.svelte.d.ts",
       "svelte": "./dist/tabs/TabHeadItem.svelte"
     },
-    "./tabs/TabItem.svelte": {
+    "./TabItem.svelte": {
       "types": "./dist/tabs/TabItem.svelte.d.ts",
       "svelte": "./dist/tabs/TabItem.svelte"
     },
-    "./tabs/Tabs.svelte": {
+    "./Tabs.svelte": {
       "types": "./dist/tabs/Tabs.svelte.d.ts",
       "svelte": "./dist/tabs/Tabs.svelte"
     },
-    "./timelines/Activity.svelte": {
+    "./Activity.svelte": {
       "types": "./dist/timelines/Activity.svelte.d.ts",
       "svelte": "./dist/timelines/Activity.svelte"
     },
-    "./timelines/ActivityItem.svelte": {
+    "./ActivityItem.svelte": {
       "types": "./dist/timelines/ActivityItem.svelte.d.ts",
       "svelte": "./dist/timelines/ActivityItem.svelte"
     },
-    "./timelines/Group.svelte": {
+    "./Group.svelte": {
       "types": "./dist/timelines/Group.svelte.d.ts",
       "svelte": "./dist/timelines/Group.svelte"
     },
-    "./timelines/GroupItem.svelte": {
+    "./GroupItem.svelte": {
       "types": "./dist/timelines/GroupItem.svelte.d.ts",
       "svelte": "./dist/timelines/GroupItem.svelte"
     },
-    "./timelines/Timeline.svelte": {
+    "./Timeline.svelte": {
       "types": "./dist/timelines/Timeline.svelte.d.ts",
       "svelte": "./dist/timelines/Timeline.svelte"
     },
-    "./timelines/TimelineHorizontal.svelte": {
+    "./TimelineHorizontal.svelte": {
       "types": "./dist/timelines/TimelineHorizontal.svelte.d.ts",
       "svelte": "./dist/timelines/TimelineHorizontal.svelte"
     },
-    "./timelines/TimelineItem.svelte": {
+    "./TimelineItem.svelte": {
       "types": "./dist/timelines/TimelineItem.svelte.d.ts",
       "svelte": "./dist/timelines/TimelineItem.svelte"
     },
-    "./timelines/TimelineItemHorizontal.svelte": {
+    "./TimelineItemHorizontal.svelte": {
       "types": "./dist/timelines/TimelineItemHorizontal.svelte.d.ts",
       "svelte": "./dist/timelines/TimelineItemHorizontal.svelte"
     },
-    "./timelines/TimelineItemVertical.svelte": {
+    "./TimelineItemVertical.svelte": {
       "types": "./dist/timelines/TimelineItemVertical.svelte.d.ts",
       "svelte": "./dist/timelines/TimelineItemVertical.svelte"
     },
-    "./toasts/Toast.svelte": {
+    "./Toast.svelte": {
       "types": "./dist/toasts/Toast.svelte.d.ts",
       "svelte": "./dist/toasts/Toast.svelte"
     },
-    "./toolbar/Toolbar.svelte": {
+    "./Toolbar.svelte": {
       "types": "./dist/toolbar/Toolbar.svelte.d.ts",
       "svelte": "./dist/toolbar/Toolbar.svelte"
     },
-    "./toolbar/ToolbarButton.svelte": {
+    "./ToolbarButton.svelte": {
       "types": "./dist/toolbar/ToolbarButton.svelte.d.ts",
       "svelte": "./dist/toolbar/ToolbarButton.svelte"
     },
-    "./toolbar/ToolbarGroup.svelte": {
+    "./ToolbarGroup.svelte": {
       "types": "./dist/toolbar/ToolbarGroup.svelte.d.ts",
       "svelte": "./dist/toolbar/ToolbarGroup.svelte"
     },
-    "./tooltips/Tooltip.svelte": {
+    "./Tooltip.svelte": {
       "types": "./dist/tooltips/Tooltip.svelte.d.ts",
       "svelte": "./dist/tooltips/Tooltip.svelte"
     },
-    "./typography/A.svelte": {
+    "./A.svelte": {
       "types": "./dist/typography/A.svelte.d.ts",
       "svelte": "./dist/typography/A.svelte"
     },
-    "./typography/Blockquote.svelte": {
+    "./Blockquote.svelte": {
       "types": "./dist/typography/Blockquote.svelte.d.ts",
       "svelte": "./dist/typography/Blockquote.svelte"
     },
-    "./typography/DescriptionList.svelte": {
+    "./DescriptionList.svelte": {
       "types": "./dist/typography/DescriptionList.svelte.d.ts",
       "svelte": "./dist/typography/DescriptionList.svelte"
     },
-    "./typography/Heading.svelte": {
+    "./Heading.svelte": {
       "types": "./dist/typography/Heading.svelte.d.ts",
       "svelte": "./dist/typography/Heading.svelte"
     },
-    "./typography/Hr.svelte": {
+    "./Hr.svelte": {
       "types": "./dist/typography/Hr.svelte.d.ts",
       "svelte": "./dist/typography/Hr.svelte"
     },
-    "./typography/Img.svelte": {
+    "./Img.svelte": {
       "types": "./dist/typography/Img.svelte.d.ts",
       "svelte": "./dist/typography/Img.svelte"
     },
-    "./typography/Layout.svelte": {
+    "./Layout.svelte": {
       "types": "./dist/typography/Layout.svelte.d.ts",
       "svelte": "./dist/typography/Layout.svelte"
     },
-    "./typography/Li.svelte": {
+    "./Li.svelte": {
       "types": "./dist/typography/Li.svelte.d.ts",
       "svelte": "./dist/typography/Li.svelte"
     },
-    "./typography/List.svelte": {
+    "./List.svelte": {
       "types": "./dist/typography/List.svelte.d.ts",
       "svelte": "./dist/typography/List.svelte"
     },
-    "./typography/Mark.svelte": {
+    "./Mark.svelte": {
       "types": "./dist/typography/Mark.svelte.d.ts",
       "svelte": "./dist/typography/Mark.svelte"
     },
-    "./typography/P.svelte": {
+    "./P.svelte": {
       "types": "./dist/typography/P.svelte.d.ts",
       "svelte": "./dist/typography/P.svelte"
     },
-    "./typography/Secondary.svelte": {
+    "./Secondary.svelte": {
       "types": "./dist/typography/Secondary.svelte.d.ts",
       "svelte": "./dist/typography/Secondary.svelte"
     },
-    "./typography/Span.svelte": {
+    "./Span.svelte": {
       "types": "./dist/typography/Span.svelte.d.ts",
       "svelte": "./dist/typography/Span.svelte"
     },
-    "./typography/Ul.svelte": {
+    "./Ul.svelte": {
       "types": "./dist/typography/Ul.svelte.d.ts",
       "svelte": "./dist/typography/Ul.svelte"
     },
-    "./utils/Chevron.svelte": {
+    "./Chevron.svelte": {
       "types": "./dist/utils/Chevron.svelte.d.ts",
       "svelte": "./dist/utils/Chevron.svelte"
     },
-    "./utils/ChevronDown.svelte": {
+    "./ChevronDown.svelte": {
       "types": "./dist/utils/ChevronDown.svelte.d.ts",
       "svelte": "./dist/utils/ChevronDown.svelte"
     },
-    "./utils/ChevronLeft.svelte": {
+    "./ChevronLeft.svelte": {
       "types": "./dist/utils/ChevronLeft.svelte.d.ts",
       "svelte": "./dist/utils/ChevronLeft.svelte"
     },
-    "./utils/ChevronRight.svelte": {
+    "./ChevronRight.svelte": {
       "types": "./dist/utils/ChevronRight.svelte.d.ts",
       "svelte": "./dist/utils/ChevronRight.svelte"
     },
-    "./utils/ChevronUp.svelte": {
+    "./ChevronUp.svelte": {
       "types": "./dist/utils/ChevronUp.svelte.d.ts",
       "svelte": "./dist/utils/ChevronUp.svelte"
     },
-    "./utils/CloseButton.svelte": {
+    "./CloseButton.svelte": {
       "types": "./dist/utils/CloseButton.svelte.d.ts",
       "svelte": "./dist/utils/CloseButton.svelte"
     },
-    "./utils/Frame.svelte": {
+    "./Frame.svelte": {
       "types": "./dist/utils/Frame.svelte.d.ts",
       "svelte": "./dist/utils/Frame.svelte"
     },
-    "./utils/InformationCircle.svelte": {
+    "./InformationCircle.svelte": {
       "types": "./dist/utils/InformationCircle.svelte.d.ts",
       "svelte": "./dist/utils/InformationCircle.svelte"
     },
-    "./utils/MenuButton.svelte": {
+    "./MenuButton.svelte": {
       "types": "./dist/utils/MenuButton.svelte.d.ts",
       "svelte": "./dist/utils/MenuButton.svelte"
     },
-    "./utils/Popper.svelte": {
+    "./Popper.svelte": {
       "types": "./dist/utils/Popper.svelte.d.ts",
       "svelte": "./dist/utils/Popper.svelte"
     },
-    "./utils/UserCircle.svelte": {
+    "./UserCircle.svelte": {
       "types": "./dist/utils/UserCircle.svelte.d.ts",
       "svelte": "./dist/utils/UserCircle.svelte"
     },
-    "./utils/Wrapper.svelte": {
+    "./Wrapper.svelte": {
       "types": "./dist/utils/Wrapper.svelte.d.ts",
       "svelte": "./dist/utils/Wrapper.svelte"
     },
-    "./video/Video.svelte": {
+    "./Video.svelte": {
       "types": "./dist/video/Video.svelte.d.ts",
       "svelte": "./dist/video/Video.svelte"
     },
