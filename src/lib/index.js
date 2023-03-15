@@ -80,6 +80,10 @@ export { default as Textarea } from './forms/Textarea.svelte';
 export { default as Toggle } from './forms/Toggle.svelte';
 export { default as VoiceSearch } from './forms/VoiceSearch.svelte';
 
+// Gallery
+export { default as Gallery } from './gallery/Gallery.svelte'
+export { default as GalleryItem } from './gallery/GalleryItem.svelte'
+
 // Indicator
 export { default as Indicator } from './indicators/Indicator.svelte';
 
