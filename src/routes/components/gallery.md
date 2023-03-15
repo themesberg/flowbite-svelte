@@ -337,13 +337,13 @@ This example uses the [carousel slider](https://flowbite-svelte.com/components/c
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<h3 class='text-xl w-full dark:text-white py-4'>Card</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Gallery</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={galleryProps} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Frame</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>GalleryItem</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={galleryItemProps} rowState='hover' />
