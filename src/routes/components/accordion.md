@@ -38,8 +38,8 @@ description: Use the accordion component to show hidden information based on the
 <CompoDescription>{description}</CompoDescription>
 
 <ExampleDiv>
-<GitHubSource href="accordion/Accordion.svelte">Accordion</GitHubSource>
-<GitHubSource href="accordion/AccordionItem.svelte">AccordionItem</GitHubSource>
+<GitHubSource href="accordions/Accordion.svelte">Accordion</GitHubSource>
+<GitHubSource href="accordions/AccordionItem.svelte">AccordionItem</GitHubSource>
 </ExampleDiv>
 
 The accordion component is a collection of vertically collapsing header and body elements that can be used to show and hide information based on the Tailwind CSS utility classes and JavaScript from Flowbite.

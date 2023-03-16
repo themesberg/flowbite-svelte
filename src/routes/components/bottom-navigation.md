@@ -35,6 +35,9 @@ description: Use the bottom navigation bar component to allow users to navigate 
 
 <ExampleDiv>
 <GitHubSource href="bottom-nav/BottomNav.svelte">BottomNav</GitHubSource>
+<GitHubSource href="bottom-nav/BottomNavHeader.svelte">BottomNavHeader</GitHubSource>
+<GitHubSource href="bottom-nav/BottomNavHeaderItem.svelte">BottomNavHeaderItem</GitHubSource>
+<GitHubSource href="bottom-nav/BottomNavItem.svelte">BottomNavItem</GitHubSource>
 </ExampleDiv>
 
 The bottom bar component can be used to allow menu items and certain control actions to be performed by the user through the usage of a fixed bar positioning to the bottom side of your page.

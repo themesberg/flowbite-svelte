@@ -33,6 +33,9 @@ description: Use the carousel component to slide through multiple elements and i
 <ExampleDiv>
 <GitHubSource href="carousels/Carousel.svelte">Carousel</GitHubSource>
 <GitHubSource href="carousels/CarouselTransition.svelte">CarouselTransition</GitHubSource>
+<GitHubSource href="carousels/Indicator.svelte">Indicator</GitHubSource>
+<GitHubSource href="carousels/Slide.svelte">Slide</GitHubSource>
+<GitHubSource href="carousels/Thumbnail.svelte">Thumbnail</GitHubSource>
 </ExampleDiv>
 
 The carousel component can be used to cycle through a set of elements using custom options, controls, and indicators.
