@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.33.1](https://github.com/themesberg/flowbite-svelte/compare/v0.32.1...v0.33.1) (2023-03-16)
+
+
+### Features
+
+* add gallery components and page ([#618](https://github.com/themesberg/flowbite-svelte/issues/618)) ([8c3b1f3](https://github.com/themesberg/flowbite-svelte/commit/8c3b1f3ff37eb8da4616001d7a3a510a6848cb76))
+
 ### [0.32.1](https://github.com/themesberg/flowbite-svelte/compare/v0.31.1...v0.32.1) (2023-03-12)
 
 ### [0.31.1](https://github.com/themesberg/flowbite-svelte/compare/v0.30.7...v0.31.1) (2023-03-12)
