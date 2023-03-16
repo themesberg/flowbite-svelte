@@ -436,13 +436,35 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
         </a>
     </td>
     <td width="33.3333%">
-        <a href="#">
+        <a href="https://flowbite-svelte.com/">
             <img alt="Tailwind CSS Stepper" src="https://flowbite.s3.amazonaws.com/github/stepper.jpg">
         </a>
     </td>
     <td width="33.3333%">
         <a href="https://flowbite.com/components/indicators/">
             <img alt="Tailwind CSS Indicators" src="https://flowbite.s3.amazonaws.com/github/indicators.jpg">
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="33.3333%">Bottom Navigation</td>
+    <td width="33.3333%">Sticky Banner</td>
+    <td width="33.3333%">Gallery (Masonry)</td>
+  </tr>
+  <tr>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/components/bottom-navigation/">
+            <img alt="Tailwind CSS Bottom Navigation Bar" src="https://flowbite.s3.amazonaws.com/github/bottom-bar.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/components/banner/">
+            <img alt="Tailwind CSS Bottom Sticky Banner" src="https://flowbite.s3.amazonaws.com/github/banner.jpg">
+        </a>
+    </td>
+    <td width="33.3333%">
+        <a href="https://flowbite-svelte.com/components/gallery/">
+            <img alt="Tailwind CSS Image Gallery (Masonry)" src="https://flowbite.s3.amazonaws.com/github/gallery.jpg">
         </a>
     </td>
   </tr>
