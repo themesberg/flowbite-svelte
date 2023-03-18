@@ -20,12 +20,12 @@ description: Flowbite-Svelte Faster Compiling Speed
 
 <Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
-<P class='mb-8'>If you need only a few components in your Svelte app, import them directly. This can optimize compilation speed and improve performance by reducing the amount of code processed during compilation.</P>
+<P class='mb-8'>If your Svelte app only requires a few components, it's recommended that you import them directly. Doing so can help optimize compilation speed and improve performance by reducing the amount of code that needs to be processed during compilation. Since version 0.34.1, it's now possible to import individual components.</P>
 
 
 ```html
 <script>
-  import Alert from 'flowbite-svelte/Alert.svelt'
+  import Alert from 'flowbite-svelte/Alert.svelte'
 <script>
 
 <div class="p-8">
@@ -35,5 +35,48 @@ description: Flowbite-Svelte Faster Compiling Speed
 </div>
 ```
 
+<Htwo label="Requirements" />
 
+If you are a TypeScript user, install typescript version 5.0.0 or above.
+
+As of March 2023, the typescript@beta version is now available:
+
+```sh
+pnpm i -D typescript@beta
+```
+
+To avoid any complaints from the editor, add node16 or nodenext to moduleResolution in your tsconfig.json file.
+
+```json
+{
+  //...
+  "compilerOptions": {
+    // ...
+    "moduleResolution": "nodenext"
+  }
+}
+```
+
+
+<Htwo label="Speed comparisons" />
+
+Using `import Alert from 'flowbite-svelte/Alert.svelte'`.
+
+| files | time | avg |
+|--|--|--|
+| 1 | 3.3ms | 3.3ms |
+| 2 | 9.0ms | 4.5ms |
+| 7 | 20.7ms | 3.0ms |
+| 7 | 60.6ms | 8.7ms |
+| 7 | 20.4ms | 2.9ms |
+
+Compare to the following examples using `import { Alert} from 'flowbite-svelte'`
+
+| files | time | avg |
+|--|--|--|
+| 151 | 1.10s | 7.3ms |
+| 154 | 0.40s | 2.6ms |
+| 151 | 1.04s | 6.9ms |
+| 151 | 1.32s | 8.8ms |
+| 154 | 0.24s | 1.6ms |
 
