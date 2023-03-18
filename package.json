@@ -318,10 +318,6 @@
       "types": "./dist/forms/Select.svelte.d.ts",
       "svelte": "./dist/forms/Select.svelte"
     },
-    "./SimpleSearch.svelte": {
-      "types": "./dist/forms/SimpleSearch.svelte.d.ts",
-      "svelte": "./dist/forms/SimpleSearch.svelte"
-    },
     "./Textarea.svelte": {
       "types": "./dist/forms/Textarea.svelte.d.ts",
       "svelte": "./dist/forms/Textarea.svelte"
