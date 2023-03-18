@@ -91,7 +91,8 @@
   <Block.FileinputBlock />
   <Block.FloatingLabelBlock />
   <Block.FooterBlock />
-  <Block.FormBlock rel="external" />
+  <Block.FormBlock />
+  <Block.GalleryBlock />
   <Block.HeadingBlock />
   <Block.HrBlock />
   <Block.ImageBlock />

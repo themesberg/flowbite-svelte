@@ -2,7 +2,9 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+
 ### [0.32.2](https://github.com/themesberg/flowbite-svelte/compare/v0.30.6...v0.32.2) (2023-03-14)
+
 
 
 ### Features
@@ -22,6 +24,14 @@ All notable changes to this project will be documented in this file. See [standa
 * snapshot page ([#603](https://github.com/themesberg/flowbite-svelte/issues/603)) ([f9ecfed](https://github.com/themesberg/flowbite-svelte/commit/f9ecfedbc834530f5abab79f3d3b06e2c2c811a4))
 * snapshot page update 2 ([#605](https://github.com/themesberg/flowbite-svelte/issues/605)) ([e7b36e6](https://github.com/themesberg/flowbite-svelte/commit/e7b36e6ad579bfe642747f6ce2624d129397e49a))
 
+  
+### [0.33.1](https://github.com/themesberg/flowbite-svelte/compare/v0.32.1...v0.33.1) (2023-03-16)
+  
+### Bug Fixes
+
+* add gallery components and page ([#618](https://github.com/themesberg/flowbite-svelte/issues/618)) ([8c3b1f3](https://github.com/themesberg/flowbite-svelte/commit/8c3b1f3ff37eb8da4616001d7a3a510a6848cb76))
+  
+  
 ### [0.32.1](https://github.com/themesberg/flowbite-svelte/compare/v0.31.1...v0.32.1) (2023-03-12)
 
 ### [0.31.1](https://github.com/themesberg/flowbite-svelte/compare/v0.30.7...v0.31.1) (2023-03-12)
