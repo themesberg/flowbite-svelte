@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.34.1](https://github.com/themesberg/flowbite-svelte/compare/v0.33.1...v0.34.1) (2023-03-18)
+
+
+### Bug Fixes
+
+* GitHubSource change tree to blob ([69f0e15](https://github.com/themesberg/flowbite-svelte/commit/69f0e15b7dcafa8018e23ee33c8c7e2bb2e8ebd6))
+* GitHubSource links ([8d4e976](https://github.com/themesberg/flowbite-svelte/commit/8d4e9760255daf81546dca91d0abb0843a1a2a5c))
+* package.json format ([f836a5c](https://github.com/themesberg/flowbite-svelte/commit/f836a5c733cc57240040aa9821732056ccbcee24))
 
 ### [0.32.2](https://github.com/themesberg/flowbite-svelte/compare/v0.30.6...v0.32.2) (2023-03-14)
 
