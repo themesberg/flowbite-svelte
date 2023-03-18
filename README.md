@@ -23,15 +23,15 @@
 
 You can find all the starters in the Starters directory.
 
-- [Flowbite SvelteKit starter]()
-- [Svelte starter]()
-- [Svelte TS starter]()
+- [Flowbite SvelteKit starter](https://github.com/shinokada/flowbite-svelte-starter)
+- [Svelte starter](https://github.com/shinokada/svelte-starter)
+- [Svelte TS starter](https://github.com/shinokada/svelte-ts-starter)
 
 ## Flowbite Svelte Examples
 
 You can find all the examples in the Examples directory.
 
-- [Flowbite SvelteKit responsive sidebar layout]()
+- [Flowbite SvelteKit responsive sidebar layout](https://github.com/themesberg/flowbite-svelte/tree/main/examples/flowbite-sveltekit-responsive-sidebar-layout)
 
 
 
@@ -441,7 +441,7 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite.com/components/indicators/">
+        <a href="https://flowbite-svelte.com/components/indicators/">
             <img alt="Tailwind CSS Indicators" src="https://flowbite.s3.amazonaws.com/github/indicators.jpg">
         </a>
     </td>
