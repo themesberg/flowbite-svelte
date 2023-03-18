@@ -4,11 +4,12 @@
   import type { ButtonType } from '../types';
 
   const group = getContext('group');
+  let size = getContext('size');
 
   export let pill: boolean = false;
   export let outline: boolean = false;
   export let gradient: boolean = false;
-  export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = group ? 'sm' : 'md';
+  // size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' ='sm';
   export let href: string | undefined = undefined;
   export let btnClass: string | undefined = undefined;
   export let type: ButtonType = 'button';
@@ -36,7 +37,10 @@
     | 'redToYellow' = group ? (outline ? 'dark' : 'alternative') : 'blue';
 
   export let shadow: 'blue' | 'green' | 'cyan' | 'teal' | 'lime' | 'red' | 'pink' | 'purple' | null = null;
-
+  
+  if (!size ) {
+    size = group ? 'sm' : 'md';
+  }
   const colorClasses = {
     blue: 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800',
     dark: 'text-white bg-gray-800 hover:bg-gray-900 focus:ring-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700',
