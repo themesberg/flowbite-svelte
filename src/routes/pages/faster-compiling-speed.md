@@ -9,7 +9,7 @@ description: Flowbite-Svelte Faster Compiling Speed
 
 <script>
   import { Htwo, ExampleDiv , MetaTag } from '../utils'
-  import { A, P, List, Li, Breadcrumb, BreadcrumbItem, Alert, Heading } from '$lib'
+  import { A, P, List, Li, Breadcrumb, BreadcrumbItem, Alert, Heading, Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from '$lib'
 </script>
 
 <Breadcrumb class="pt-16 py-8">
@@ -60,23 +60,64 @@ To avoid any complaints from the editor, add node16 or nodenext to moduleResolut
 
 <Htwo label="Speed comparisons" />
 
-Using `import Alert from 'flowbite-svelte/Alert.svelte'`.
+<Table class="my-8">
+  <TableHead>
+    <TableHeadCell>Files</TableHeadCell>
+    <TableHeadCell>Time</TableHeadCell>
+    <TableHeadCell>Avg</TableHeadCell>
+  </TableHead>
+  <TableBody class="divide-y">
+    <TableBodyRow>
+      <TableBodyCell>1</TableBodyCell>
+      <TableBodyCell>3.3ms</TableBodyCell>
+      <TableBodyCell>3.3ms</TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>2</TableBodyCell>
+      <TableBodyCell>9.0ms</TableBodyCell>
+      <TableBodyCell>4.5ms</TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>7</TableBodyCell>
+      <TableBodyCell>20.7ms</TableBodyCell>
+      <TableBodyCell>3.0ms</TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>7</TableBodyCell>
+      <TableBodyCell>60.6ms</TableBodyCell>
+      <TableBodyCell>8.7ms</TableBodyCell>
+    </TableBodyRow>
+  </TableBody>
+</Table>
 
-| files | time | avg |
-|--|--|--|
-| 1 | 3.3ms | 3.3ms |
-| 2 | 9.0ms | 4.5ms |
-| 7 | 20.7ms | 3.0ms |
-| 7 | 60.6ms | 8.7ms |
-| 7 | 20.4ms | 2.9ms |
+<P>The above table shows examples from using `import Alert from 'flowbite-svelte/Alert.svelte'`. Compare these numbers to the following table where using normal import.</P>
 
-Compare to the following examples using `import { Alert} from 'flowbite-svelte'`
-
-| files | time | avg |
-|--|--|--|
-| 151 | 1.10s | 7.3ms |
-| 154 | 0.40s | 2.6ms |
-| 151 | 1.04s | 6.9ms |
-| 151 | 1.32s | 8.8ms |
-| 154 | 0.24s | 1.6ms |
-
+<Table class="my-8">
+  <TableHead>
+    <TableHeadCell>Files</TableHeadCell>
+    <TableHeadCell>Time</TableHeadCell>
+    <TableHeadCell>Avg</TableHeadCell>
+  </TableHead>
+  <TableBody class="divide-y">
+    <TableBodyRow>
+      <TableBodyCell>151</TableBodyCell>
+      <TableBodyCell>1.10s</TableBodyCell>
+      <TableBodyCell>7.3ms</TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>154</TableBodyCell>
+      <TableBodyCell>0.40s</TableBodyCell>
+      <TableBodyCell>2.6ms</TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>151</TableBodyCell>
+      <TableBodyCell>1.04s</TableBodyCell>
+      <TableBodyCell>6.9ms</TableBodyCell>
+    </TableBodyRow>
+    <TableBodyRow>
+      <TableBodyCell>154</TableBodyCell>
+      <TableBodyCell>1.32s</TableBodyCell>
+      <TableBodyCell>8.8ms</TableBodyCell>
+    </TableBodyRow>
+  </TableBody>
+</Table>
