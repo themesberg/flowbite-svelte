@@ -52,7 +52,7 @@ Import a badge component in the script tag.
 
 Use the following badge elements to indicate counts or labels inside or outside components.
 
-```svelte example class="flex gap-2" hideScript
+```svelte example class="flex flex-wrap gap-2" hideScript
 <script>
 	import { Badge } from 'flowbite-svelte';
 </script>
@@ -70,7 +70,7 @@ Use the following badge elements to indicate counts or labels inside or outside 
 
 Use the `large` prop to create a large variant of the badges.
 
-```svelte example class="flex gap-2" hideScript
+```svelte example class="flex flex-wrap gap-2" hideScript
 <script>
 	import { Badge } from 'flowbite-svelte';
 </script>
@@ -88,7 +88,7 @@ Use the `large` prop to create a large variant of the badges.
 
 Use the `border` prop to add a border accent to the badge component.
 
-```svelte example class="flex gap-2" hideScript
+```svelte example class="flex flex-wrap gap-2" hideScript
 <script>
 	import { Badge } from 'flowbite-svelte';
 </script>
@@ -106,7 +106,7 @@ Use the `border` prop to add a border accent to the badge component.
 
 Use the `rounded` prop to make the corners even more rounded like pills for the badge component.
 
-```svelte example class="flex gap-2" hideScript
+```svelte example class="flex flex-wrap gap-2" hideScript
 <script>
 	import { Badge } from 'flowbite-svelte';
 </script>
@@ -124,7 +124,7 @@ Use the `rounded` prop to make the corners even more rounded like pills for the 
 
 You can also use badges as anchor elements to link to another page.
 
-```svelte example class="flex gap-2" hideScript
+```svelte example class="flex flex-wrap gap-2" hideScript
 <script>
 	import { Badge } from 'flowbite-svelte';
 </script>
@@ -138,7 +138,7 @@ You can also use badges as anchor elements to link to another page.
 
 You can also use SVG icons inside the badge elements.
 
-```svelte example class="flex gap-2" hideScript
+```svelte example class="flex flex-wrap gap-2" hideScript
 <script>
 	import { Badge } from 'flowbite-svelte';
 </script>
@@ -156,7 +156,7 @@ You can also use SVG icons inside the badge elements.
 
 You can also use the badge elements as index. Remember to add the `relative` class to parent element.
 
-```svelte example class="flex gap-4" 
+```svelte example class="flex flex-wrap gap-4" 
 <script>
 	import { Badge, Button } from 'flowbite-svelte';
 </script>
@@ -214,7 +214,7 @@ You can also use the badge elements as index. Remember to add the `relative` cla
 
 Use this example to add a badge inside a button component for a count indicator.
 
-```svelte example class="flex gap-4"
+```svelte example class="flex flex-wrap gap-4"
 <script>
 	import { Badge, Button } from 'flowbite-svelte';
 </script>
@@ -257,7 +257,7 @@ Alternatively you can also use badges which indicate only a SVG icon.
 
 Use the `dimissable` prop to dismiss the current badge.
 
-```svelte example class="gap-4" hideScript
+```svelte example class="flex flex-wrap gap-4" hideScript
 <script>
 	import { Badge } from 'flowbite-svelte';
 </script>

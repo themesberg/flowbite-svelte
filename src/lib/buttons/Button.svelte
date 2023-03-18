@@ -4,11 +4,12 @@
   import type { ButtonType } from '../types';
 
   const group = getContext('group');
+  const size = getContext('size');
 
   export let pill: boolean = false;
   export let outline: boolean = false;
   export let gradient: boolean = false;
-  export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = group ? 'sm' : 'md';
+  // size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' ='sm';
   export let href: string | undefined = undefined;
   export let btnClass: string | undefined = undefined;
   export let type: ButtonType = 'button';

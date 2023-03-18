@@ -59,36 +59,36 @@ Use the following code to stack together buttons into a single group.
 
 <Htwo label="More examples" />
 
-```svelte example hideScript
+```svelte example hideScript class="flex flex-col flex-wrap gap-4"
 <script>
   import { ButtonGroup, Button } from 'flowbite-svelte';
 </script>
-<div class="grid grid-cols-2 gap-4 w-fit text-gray-900 dark:text-gray-100">
-  <div>Pills</div>
+<div class="text-gray-900 dark:text-gray-100">
+  <div class="py-4">Pills</div>
   <ButtonGroup class="space-x-px">
     <Button pill color="purple">Proflie</Button>
     <Button pill color="purple">Settings</Button>
     <Button pill color="purple">Messages</Button>
   </ButtonGroup>
-  <div>Standard buttons</div>
+  <div class="py-4">Standard buttons</div>
   <ButtonGroup>
     <Button color="red">Proflie</Button>
     <Button color="green">Settings</Button>
     <Button color="yellow">Messages</Button>
   </ButtonGroup>
-  <div>Outline</div>
+  <div class="py-4">Outline</div>
   <ButtonGroup>
     <Button outline color="red">Proflie</Button>
     <Button outline color="green">Settings</Button>
     <Button outline color="yellow">Messages</Button>
   </ButtonGroup>
-  <div>Gradient with shadows</div>
+  <div class="py-4">Gradient with shadows</div>
   <ButtonGroup>
     <Button gradient shadow="green" color="green">Proflie</Button>
     <Button gradient shadow="pink" color="pink">Settings</Button>
     <Button gradient shadow="teal" color="teal">Messages</Button>
   </ButtonGroup>
-  <div>Dualtone gradient</div>
+  <div class="py-4">Dualtone gradient</div>
   <ButtonGroup class="space-x-px">
     <Button gradient color="purpleToBlue">Profile</Button>
     <Button gradient color="cyanToBlue">Settings</Button>
