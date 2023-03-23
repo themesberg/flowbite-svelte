@@ -92,6 +92,7 @@
     <NavUl {hidden} {divClass} {ulClass}>
       <NavLi href="/">Home</NavLi>
       <NavLi href="/pages/about">About</NavLi>
+      <NavLi href="https://flowbite-svelte-blocks.vercel.app/">Blocks</NavLi>
       <NavLi href="https://github.com/themesberg/flowbite-svelte">GitHub</NavLi>
     </NavUl>
     <DarkMode class={darkModeClass} />
