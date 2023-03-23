@@ -67,7 +67,7 @@
 
 <svelte:window bind:innerWidth={width} />
 
-<Navbar let:hidden let:toggle>
+<Navbar let:hidden let:toggle let:collapse>
 	<NavHamburger on:click={toggleDrawer} btnClass="ml-3 lg:hidden" />
 	<NavBrand href="/" class="lg:ml-64">
 		<Cog />
@@ -77,9 +77,9 @@
 	</NavBrand>
 	<NavHamburger on:click={toggle} />
 	<NavUl {hidden} {divClass} {ulClass}>
-		<NavLi href="/">Home</NavLi>
-		<NavLi href="/pages/about">About</NavLi>
-		<NavLi href="https://github.com/shinokada/flowbite-sveltekit-responsive-sidebar-layout"
+		<NavLi href="/" on:click={collapse} >Home</NavLi>
+		<NavLi href="/pages/about" on:click={collapse} >About</NavLi>
+		<NavLi href="https://github.com/shinokada/flowbite-sveltekit-responsive-sidebar-layout" on:click={collapse}
 			>GitHub</NavLi
 		>
 	</NavUl>
