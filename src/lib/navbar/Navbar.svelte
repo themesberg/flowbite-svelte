@@ -27,10 +27,13 @@
   let toggle = () => {
     hidden = !hidden;
   };
+  let collapse = () => {
+    hidden = true;
+  };
 </script>
 
 <Frame tag="nav" {color} {...$$restProps} class={classNames(navClass, $$props.class)}>
   <div class={classNames(navDivClass, fluid || 'container')}>
-    <slot {hidden} {toggle} />
+    <slot {hidden} {toggle} {collapse} />
   </div>
 </Frame>
