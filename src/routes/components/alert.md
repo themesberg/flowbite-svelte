@@ -23,7 +23,7 @@ description: Show contextual information to your users using alert elements base
   let slotItems = [['default', 'The first slot.'],['extra','A slot after the default slot.']]
 </script>
 
-<Breadcrumb class="pt-16 py-8">
+<Breadcrumb class="pt-28 py-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>{dir}</BreadcrumbItem>
   <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>

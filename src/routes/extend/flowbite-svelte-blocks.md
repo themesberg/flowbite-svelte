@@ -13,7 +13,7 @@ description: Flowbite-Svete-Blocks provides all necessary components to get star
   import { Breadcrumb, BreadcrumbItem, Heading, A, List, Li, Img} from '$lib'
 </script>
 
-<Breadcrumb class="pt-16 py-8">
+<Breadcrumb class="pt-28 py-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>{dir}</BreadcrumbItem>
   <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
