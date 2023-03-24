@@ -80,7 +80,8 @@
 <svelte:window bind:innerWidth={width} />
 
 <div class="mx-auto">
-  <Navbar navClass="px-2 py-0.5 fixed w-full mx-auto z-20 top-0 left-0 border-b" let:hidden let:toggle>
+  <div id="banner" tabindex="-1" class="sticky top-0 z-50 flex justify-center w-full px-4 py-3 border border-b border-gray-200 bg-gray-50 dark:border-gray-600 lg:py-4 dark:bg-gray-700"><div class="items-center md:flex"><p class="text-sm font-medium text-gray-900 md:my-0 dark:text-white"><span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 hidden md:inline">New</span>We have launched Flowbite Svelte Blocks!<a class="inline-flex items-center ml-2 text-sm font-medium text-blue-600 md:ml-2 dark:text-blue-500 hover:underline" href="https://flowbite-svelte-blocks.vercel.app/" target='_blank' rel='noreferrer'>Check it out<svg class="w-4 h-4 ml-1 text-blue-600 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></a></p></div></div>
+  <Navbar navClass="px-2 py-2 fixed w-full mx-auto z-20 top-11 left-0 border-b" let:hidden let:toggle>
     <NavHamburger on:click={toggleDrawer} btnClass="ml-3 lg:hidden" />
     <NavBrand href="/">
       <img src={logo} class="mr-3 h-6 sm:h-9" alt="Flowbite-Svelte Logo" />
@@ -103,15 +104,17 @@
     {transitionParams}
     bind:hidden={drawerHidden}
     bind:activateClickOutside
-    leftOffset="lg:top-16 h-screen lg:left-0"
+    leftOffset="lg:top-32 h-screen lg:left-0"
     id="sidebar"
     width="w-64"
-    class="overflow-scroll pb-32">
+    class="overflow-scroll pb-24"
+    divClass='overflow-y-auto z-50 p-4 bg-white dark:bg-gray-900'>
     <div class="flex items-center">
       <CloseButton on:click={() => (drawerHidden = true)} class="mb-4 dark:text-white lg:hidden" />
     </div>
     <Sidebar asideClass="w-54">
-      <SidebarWrapper>
+      <SidebarWrapper 
+      divClass='overflow-y-auto py-4 px-3 bg-white rounded dark:bg-gray-900'>
         <SidebarGroup>
           {#each data.pages as { meta, path }}
             <SidebarItem

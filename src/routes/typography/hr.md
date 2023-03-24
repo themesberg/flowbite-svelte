@@ -18,7 +18,7 @@ description: Create a horizontal line using the `Hr` component to separate conte
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 </script>
 
-<Breadcrumb class="pt-16 py-8">
+<Breadcrumb class="pt-28 py-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>{dir}</BreadcrumbItem>
   <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>

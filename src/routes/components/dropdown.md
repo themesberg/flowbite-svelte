@@ -25,7 +25,7 @@ description: Get started with the dropdown component to show a list of menu item
   let slotDropdownItem = [['default', 'Dropdown item content.']]
 </script>
 
-<Breadcrumb class="pt-16 py-8">
+<Breadcrumb class="pt-28 py-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>{dir}</BreadcrumbItem>
   <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>

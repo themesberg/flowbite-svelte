@@ -22,7 +22,7 @@ description: Use the avatar component to show a visual representation of a user 
   let name;
 </script>
 
-<Breadcrumb class="pt-16 py-8">
+<Breadcrumb class="pt-28 py-8">
   <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
   <BreadcrumbItem>{dir}</BreadcrumbItem>
   <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>

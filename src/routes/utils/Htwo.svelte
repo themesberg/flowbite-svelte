@@ -11,7 +11,7 @@
 </script>
 
 <h2
-  class="htwo group text-2xl w-full font-semibold dark:text-white mt-8 mb-4 scroll-mt-20"
+  class="htwo group text-2xl w-full font-semibold dark:text-white mt-8 mb-4 scroll-mt-32"
   on:mouseover={handleMouseover}
   on:focus
   on:mouseout={handleMouseout}
