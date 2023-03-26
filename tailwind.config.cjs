@@ -3,11 +3,6 @@ const config = {
 		"./src/**/*.{html,js,svelte,ts,md}",
 		"./node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}",
 	],
-
-	theme: {
-		extend: {},
-	},
-
 	plugins: [
 		require('flowbite/plugin')
 	],
