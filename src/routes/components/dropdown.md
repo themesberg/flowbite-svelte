@@ -442,8 +442,8 @@ Use the menu icon trigger element on components such as cards as an alternative 
 <script>
   import { Button, Dropdown, DropdownItem, ToolbarButton, MenuButton, DropdownDivider } from 'flowbite-svelte'
 </script>
-<MenuButton class="dots-menu" />
-<MenuButton class="dots-menu" vertical />
+<MenuButton class="dots-menu dark:text-white" />
+<MenuButton class="dots-menu dark:text-white" vertical />
 <Dropdown triggeredBy=".dots-menu">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
@@ -508,7 +508,7 @@ This example can be used to show a list of menu items and options when a user is
   import { Button, Dropdown, DropdownItem, Avatar, DropdownHeader, DropdownDivider } from 'flowbite-svelte'
 </script>
 
-<Avatar class="acs" src="/images/profile-picture-3.webp" dot={{color:'bg-green-400'}} />
+<Avatar class="acs" src="/images/profile-picture-3.webp" dot={{color:'green'}} />
 <Dropdown triggeredBy=".acs">
   <div slot="header" class="px-4 py-2">
     <span class="block text-sm text-gray-900 dark:text-white"> Bonnie Green </span>
