@@ -35,6 +35,10 @@ description: Use the KBD component as an inline element to denote textual user i
 <CompoDescription>{description}</CompoDescription>
 
 <ExampleDiv>
+<GitHubSource href="kbd/ArrowKeyDown.svelte">ArrowKeyDown</GitHubSource>
+<GitHubSource href="kbd/ArrowKeyLeft.svelte">ArrowKeyLeft</GitHubSource>
+<GitHubSource href="kbd/ArrowKeyRight.svelte">ArrowKeyRight</GitHubSource>
+<GitHubSource href="kbd/ArrowKeyUp.svelte">ArrowKeyUp</GitHubSource>
 <GitHubSource href="kbd/Kbd.svelte">Kbd</GitHubSource>
 </ExampleDiv>
 

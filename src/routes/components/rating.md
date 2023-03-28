@@ -18,6 +18,7 @@ description: Use the rating component to show reviews and testimonials from your
   import { props as items3 } from '../props/ScoreRating.json'
   import { props as items4 } from '../props/RatingComment.json'
   import { props as items5 } from '../props/Review.json'
+  import { props as items6 } from '../props/Star.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -34,9 +35,12 @@ description: Use the rating component to show reviews and testimonials from your
 <CompoDescription>{description}</CompoDescription>
 
 <ExampleDiv>
-<GitHubSource href="ratings/Rating.svelte">Rating</GitHubSource>
 <GitHubSource href="ratings/AdvancedRating.svelte">AdvancedRating</GitHubSource>
+<GitHubSource href="ratings/Rating.svelte">Rating</GitHubSource>
+<GitHubSource href="ratings/RatingComment.svelte">RatingComment</GitHubSource>
+<GitHubSource href="ratings/Review.svelte">Review</GitHubSource>
 <GitHubSource href="ratings/ScoreRating.svelte">ScoreRating</GitHubSource>
+<GitHubSource href="ratings/Star.svelte">Star</GitHubSource>
 </ExampleDiv>
 
 Get started with the rating component to show an aggregate of reviews and scores in the forms of stars or numbers.
@@ -397,6 +401,12 @@ The component has the following props, type, and default values. See <A href="/p
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items5} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>Star</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
 
 <Htwo label="References" />

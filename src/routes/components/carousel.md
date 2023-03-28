@@ -15,6 +15,11 @@ description: Use the carousel component to slide through multiple elements and i
   // Props table
   import { props as items } from '../props/Carousel.json'
   import { props as items2 } from '../props/CarouselTransition.json'
+  import { props as items3 } from '../props/Caption.json'
+  import { props as items4 } from '../props/Indicator.json'
+  import { props as items5 } from '../props/Slide.json'
+  import { props as items6 } from '../props/Thumbnail.json'
+  
 	let propHeader = ['Name', 'Type', 'Default']
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -31,6 +36,7 @@ description: Use the carousel component to slide through multiple elements and i
 <CompoDescription>{description}</CompoDescription>
 
 <ExampleDiv>
+<GitHubSource href="carousels/Caption.svelte">Caption</GitHubSource>
 <GitHubSource href="carousels/Carousel.svelte">Carousel</GitHubSource>
 <GitHubSource href="carousels/CarouselTransition.svelte">CarouselTransition</GitHubSource>
 <GitHubSource href="carousels/Indicator.svelte">Indicator</GitHubSource>
@@ -286,6 +292,30 @@ The carousel component can be used to cycle through a set of elements using cust
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>Caption</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items3} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>Indicator</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items4} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>Slide</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items5} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>Thumbnail</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
 
 <Htwo label="References" />

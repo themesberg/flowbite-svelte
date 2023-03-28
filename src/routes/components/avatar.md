@@ -15,6 +15,7 @@ description: Use the avatar component to show a visual representation of a user 
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   // Props table
   import { props as avatarProps } from '../props/Avatar.json'
+  import { props as placehoderProps } from '../props/Placeholder.json'
 	let propHeader = ['Name', 'Type', 'Default']
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -219,8 +220,16 @@ Select size from  xs | sm | md | lg | xl.
 The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.
 
+<h3 class='text-xl w-full dark:text-white py-4'>Avatar</h3>
+
 <TableProp header={propHeader} {divClass} {theadClass}>
 <TableDefaultRow items={avatarProps} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>Placehoder</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={placehoderProps} rowState='hover' />
 </TableProp>
 
 <Htwo label="References" />

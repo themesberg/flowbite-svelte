@@ -12,11 +12,13 @@ description: Use the table component to show text, images, links, and other elem
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow , MetaTag } from '../utils'
   
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
-  import { props as items }  from '../props/Table.json'
-  import { props as items2 }  from '../props/TableBodyCell.json'
-  import { props as items3 }  from '../props/TableBodyRow.json'
-  import { props as items4 }  from '../props/TableSearch.json'
+  import { props as items1 }  from '../props/Table.json'
+  import { props as items2 }  from '../props/TableBody.json'
+  import { props as items3 }  from '../props/TableBodyCell.json'
+  import { props as items4 }  from '../props/TableBodyRow.json'
   import { props as items5 }  from '../props/TableHead.json'
+  import { props as items6 }  from '../props/TableHeadCell.json'
+  import { props as items7 }  from '../props/TableSearch.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -862,22 +864,22 @@ The component has the following props, type, and default values. See <A href="/p
 <h3 class='text-xl w-full dark:text-white py-4'>Table</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow {items} rowState='hover' />
+  <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TableBodyCell</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>TableBody</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TableBodyRow</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>TableBodyCell</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TableSearch</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>TableBodyRow</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items4} rowState='hover' />
@@ -887,6 +889,18 @@ The component has the following props, type, and default values. See <A href="/p
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items5} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>TableHeadCell</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items6} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>TableSearch</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items7} rowState='hover' />
 </TableProp>
 
 <Htwo label="References" />

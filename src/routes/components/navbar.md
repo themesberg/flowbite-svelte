@@ -17,6 +17,9 @@ description: The navbar component can be used to show a list of navigation links
   import { props as items2 } from '../props/NavBrand.json'
   import { props as items3 } from '../props/NavLi.json'
   import { props as items4 } from '../props/NavUl.json'
+  import { props as items5 } from '../props/NavHamburger.json'
+  import { props as items6 } from '../props/Menu.json'
+  import { props as items7 } from '../props/NavDropdown.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -310,6 +313,18 @@ Use this example to show a solid background for the navbar component instead of 
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
+<h3 class='text-xl w-full dark:text-white py-4'>NavDropdown</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items7} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>NavHamburger</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items5} rowState='hover' />
+</TableProp>
+
 <h3 class='text-xl w-full dark:text-white py-4'>NavLi</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
@@ -320,6 +335,12 @@ Use this example to show a solid background for the navbar component instead of 
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items4} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>Menu</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
 
 <Htwo label="Forwarded Events" />

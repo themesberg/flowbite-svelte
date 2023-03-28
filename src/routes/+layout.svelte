@@ -201,7 +201,7 @@
             {/each}
           </SidebarDropdownWrapper>
         </SidebarGroup>
-        <SidebarGroup class="pt-4">
+        <SidebarGroup class="pt-4 pb-32">
           <SidebarDropdownWrapper label="EXPERIMENTAL" isOpen={activeUrl.includes('datepicker')}>
             {#each experimental as { href, name, rel }}
               <SidebarItem

@@ -15,6 +15,7 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
   import { Toolbar, ToolbarButton, ToolbarGroup, Avatar, Button, Textarea, Breadcrumb, BreadcrumbItem, Heading, A } from '$lib'
   import { props as items1 } from '../props/Toolbar.json'
   import { props as items2 } from '../props/ToolbarButton.json'
+  import { props as items3 } from '../props/ToolbarGroup.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -183,4 +184,10 @@ for type information.
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
+</TableProp>
+
+<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">ToolbarGroup</Heading>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>

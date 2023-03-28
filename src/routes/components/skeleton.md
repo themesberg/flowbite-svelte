@@ -12,11 +12,14 @@ description: The skeleton component can be used as an alternative loading indica
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils'
   
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
-  import { props as items }  from '../props/ListPlaceholder.json'
-  import { props as items2 }  from '../props/Skeleton.json'
-  import { props as items3 }  from '../props/TestimonialPlaceholder.json'
-  import { props as items4 }  from '../props/TextPlaceholder.json'
-  import { props as items5 }  from '../props/WidgetPlaceholder.json'
+  import { props as items1 }  from '../props/CardPlaceHolder.json'
+  import { props as items2 }  from '../props/ImagePlaceholder.json'
+  import { props as items3 }  from '../props/ListPlaceholder.json'
+  import { props as items4 }  from '../props/Skeleton.json'
+  import { props as items5 }  from '../props/TestimonialPlaceholder.json'
+  import { props as items6 }  from '../props/TextPlaceholder.json'
+  import { props as items7 }  from '../props/VideoPlaceholder.json'
+  import { props as items8 }  from '../props/WidgetPlaceholder.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -137,34 +140,52 @@ Use the skeleton component to indicate a loading status with placeholder element
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<h3 class='text-xl w-full dark:text-white py-4'>ListPlaceholder</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>CardPlaceholder</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow {items} rowState='hover' />
+  <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Skeleton</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>ImagePlaceholder</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TestimonialPlaceholder</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>ListPlaceholder</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TextPlaceholder</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Skeleton</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>WidgetPlaceholder</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>TestimonialPlaceholder</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items5} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>TextPlaceholder</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items6} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>VideoPlaceholder</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items7} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>WidgetPlaceholder</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items8} rowState='hover' />
 </TableProp>
 
 <Htwo label="References" />

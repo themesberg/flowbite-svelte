@@ -13,7 +13,8 @@ description: Use the list group component to display a series of items, buttons 
   
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
 
-  import {props as componentProps} from '../props/Listgroup.json'
+  import { props as items1 } from '../props/Listgroup.json'
+  import { props as items2 } from '../props/ListgroupItem.json'
   // Props table
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
@@ -162,8 +163,16 @@ Delete user
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
 
+<h3 class='text-xl w-full dark:text-white py-4'>Listgroup</h3>
+
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={componentProps} rowState='hover' />
+  <TableDefaultRow items={items1} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>ListgroupItem</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
 <Htwo label="Forwarded Events" />

@@ -13,6 +13,7 @@ description: The speed dial component can be used as a quick way to show a list 
   
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'  
   import { props as items1 } from '../props/SpeedDial.json'
+  import { props as items2 } from '../props/SpeedDialButton.json'
 
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
@@ -30,7 +31,8 @@ description: The speed dial component can be used as a quick way to show a list 
 <CompoDescription>{description}</CompoDescription>
 
 <ExampleDiv>
-<GitHubSource href="speed-dial/SpeedDial.svelte">Modal</GitHubSource>
+<GitHubSource href="speed-dial/SpeedDial.svelte">SpeedDial</GitHubSource>
+<GitHubSource href="speed-dial/SpeedDialButton.svelte">SpeedDialButton</GitHubSource>
 </ExampleDiv>
 
 Get started with the speed dial component to show a list of buttons or menu items positioned relative to the body in either corner as a quick way to allow certains actions to be made by your users.
@@ -370,10 +372,16 @@ The default trigger type is hover for each speed dial component.
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Speed Dial</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>SpeedDial</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items1} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>SpeedDialButton</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
 <Htwo label="References" />

@@ -8,10 +8,11 @@ description: Use these responsive tabs components to create a secondary navigati
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 <script lang="ts">
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
-  import { props as items }  from '../props/Tabs.json'
-  import { props as items4 }  from '../props/TabItem.json'
+  import { props as items1 }  from '../props/TabHead.json'
+  import { props as items2 }  from '../props/TabHeadItem.json'
+  import { props as items3 }  from '../props/TabItem.json'
+  import { props as items4 }  from '../props/Tabs.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -28,8 +29,10 @@ description: Use these responsive tabs components to create a secondary navigati
 <CompoDescription>{description}</CompoDescription>
 
 <ExampleDiv>
-<GitHubSource href="tabs/Tabs.svelte">Tabs</GitHubSource>
+<GitHubSource href="tabs/TabHead.svelte">TabHead</GitHubSource>
+<GitHubSource href="tabs/TabHeadItem.svelte">TabHeadItem</GitHubSource>
 <GitHubSource href="tabs/TabItem.svelte">TabItem</GitHubSource>
+<GitHubSource href="tabs/Tabs.svelte">Tabs</GitHubSource>
 </ExampleDiv>
 
 The tabs component can be used either as an extra navigational hierarchy complementing the main navbar or you can also use it to change content inside a container just below the tabs using the data attributes from Flowbite.
@@ -271,13 +274,25 @@ To get a custom look and feel for the `Tabs` component, do not set `style` prop,
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Tabs</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>TabHead</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow {items} rowState='hover' />
+  <TableDefaultRow items={items1} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>TabHeadItem</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>TabItem</h3>
+
+<TableProp header={propHeader} {divClass} {theadClass}>
+  <TableDefaultRow items={items3} rowState='hover' />
+</TableProp>
+
+<h3 class='text-xl w-full dark:text-white py-4'>Tabs</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
   <TableDefaultRow items={items4} rowState='hover' />
