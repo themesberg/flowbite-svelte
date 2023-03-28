@@ -73,7 +73,7 @@ If list is active and data items contain `href` field entries are presented as `
 <script>
   import { Listgroup } from 'flowbite-svelte'
   let links = [
-    { name: "Accordions", href: "/accordions", current: true },
+    { name: "Accordions", href: "/accordion", current: true },
     { name: "Alerts", href: "/alerts" },
     { name: "Badges", href: "/badges"  },
     { name: "Breadcrumbs", href: "/breadcrumbs" },

@@ -1,6 +1,6 @@
 // Accordion
-export { default as Accordion } from './accordions/Accordion.svelte';
-export { default as AccordionItem } from './accordions/AccordionItem.svelte';
+export { default as Accordion } from './accordion/Accordion.svelte';
+export { default as AccordionItem } from './accordion/AccordionItem.svelte';
 
 // Alerts
 export { default as Alert } from './alerts/Alert.svelte';

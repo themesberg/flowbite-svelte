@@ -12,7 +12,7 @@ description: Use the accordion component to show hidden information based on the
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils'
   
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib';
-  
+
   // Props 
   import {props as accordionProps} from '../props/Accordion.json'
   import {props as accordionItemProps} from '../props/AccordionItem.json'
@@ -38,8 +38,8 @@ description: Use the accordion component to show hidden information based on the
 <CompoDescription>{description}</CompoDescription>
 
 <ExampleDiv>
-<GitHubSource href="accordions/Accordion.svelte">Accordion</GitHubSource>
-<GitHubSource href="accordions/AccordionItem.svelte">AccordionItem</GitHubSource>
+<GitHubSource href="accordion/Accordion.svelte">Accordion</GitHubSource>
+<GitHubSource href="accordion/AccordionItem.svelte">AccordionItem</GitHubSource>
 </ExampleDiv>
 
 The accordion component is a collection of vertically collapsing header and body elements that can be used to show and hide information based on the Tailwind CSS utility classes and JavaScript from Flowbite.

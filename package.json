@@ -119,12 +119,12 @@
   },
   "exports": {
     "./Accordion.svelte": {
-      "types": "./dist/accordions/Accordion.svelte.d.ts",
-      "svelte": "./dist/accordions/Accordion.svelte"
+      "types": "./dist/accordion/Accordion.svelte.d.ts",
+      "svelte": "./dist/accordion/Accordion.svelte"
     },
     "./AccordionItem.svelte": {
-      "types": "./dist/accordions/AccordionItem.svelte.d.ts",
-      "svelte": "./dist/accordions/AccordionItem.svelte"
+      "types": "./dist/accordion/AccordionItem.svelte.d.ts",
+      "svelte": "./dist/accordion/AccordionItem.svelte"
     },
     "./Alert.svelte": {
       "types": "./dist/alerts/Alert.svelte.d.ts",
