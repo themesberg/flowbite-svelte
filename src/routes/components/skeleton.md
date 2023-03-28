@@ -12,7 +12,7 @@ description: The skeleton component can be used as an alternative loading indica
   import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils'
   
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
-  import { props as items1 }  from '../props/CardPlaceHolder.json'
+  import { props as items1 }  from '../props/CardPlaceholder.json'
   import { props as items2 }  from '../props/ImagePlaceholder.json'
   import { props as items3 }  from '../props/ListPlaceholder.json'
   import { props as items4 }  from '../props/Skeleton.json'
