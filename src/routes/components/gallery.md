@@ -21,22 +21,11 @@ description: Use the image gallery component based on a masonry grid layout usin
   // Slots
   let slotHeader = ['Name', 'Description']
   let slotItems = [['default', 'For a button label.']]
+  // lib files
+  const libFiles = import.meta.glob('../../lib/gallery/*.svelte')
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
-
-<ExampleDiv>
-<GitHubSource href="gallery/Gallery.svelte">Gallery</GitHubSource>
-<GitHubSource href="gallery/GalleryItem.svelte">GalleryItem</GitHubSource>
-</ExampleDiv>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 The gallery component can be used to show multiple images inside a masonry grid layout styles with the utility-first classes from Tailwind CSS to show a collection of pictures to your users based on various layouts, styles, sizes, and colors.
 

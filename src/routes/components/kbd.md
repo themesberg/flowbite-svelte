@@ -22,25 +22,11 @@ description: Use the KBD component as an inline element to denote textual user i
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  // lib files
+  const libFiles = import.meta.glob('../../lib/kbd/*.svelte')
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
-
-<ExampleDiv>
-<GitHubSource href="kbd/ArrowKeyDown.svelte">ArrowKeyDown</GitHubSource>
-<GitHubSource href="kbd/ArrowKeyLeft.svelte">ArrowKeyLeft</GitHubSource>
-<GitHubSource href="kbd/ArrowKeyRight.svelte">ArrowKeyRight</GitHubSource>
-<GitHubSource href="kbd/ArrowKeyUp.svelte">ArrowKeyUp</GitHubSource>
-<GitHubSource href="kbd/Kbd.svelte">Kbd</GitHubSource>
-</ExampleDiv>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 The KBD (Keyboard) component can be used to indicate a textual user input from the keyboard inside other elements such as in text, tables, cards, and more.
 

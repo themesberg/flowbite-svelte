@@ -23,24 +23,11 @@ description: Get started with the dropdown component to show a list of menu item
   let slotItems = [['header', 'Dropdown fixed top element.'],['footer','Dropdown fixed bottom element.']]
   let slotDropdownHeader = [['default', 'Dropdown header content.']]
   let slotDropdownItem = [['default', 'Dropdown item content.']]
+  // lib files
+  const libFiles = import.meta.glob('../../lib/dropdowns/*.svelte')
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
-
-<ExampleDiv>
-<GitHubSource href="dropdowns/Dropdown.svelte">Dropdown</GitHubSource>
-<GitHubSource href="dropdowns/DropdownItem.svelte">DropdownItem</GitHubSource>
-<GitHubSource href="dropdowns/DropdownDivider.svelte">DropdownDivider</GitHubSource>
-<GitHubSource href="dropdowns/DropdownHeader.svelte">DropdownHeader</GitHubSource>
-</ExampleDiv>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 The dropdown component can be used to show a list of menu items when clicking on an element such as a button and hiding it when clicking outside of the triggering element.
 

@@ -25,28 +25,11 @@ description: Use the sidebar component to show a list of menu items and multi-le
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  // lib files
+  const libFiles = import.meta.glob('../../lib/sidebars/*.svelte')
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
-
-<ExampleDiv>
-<GitHubSource href="sidebars/Sidebar.svelte">Sidebar</GitHubSource>
-<GitHubSource href="sidebars/SidebarBrand.svelte">SidebarBrand</GitHubSource>
-<GitHubSource href="sidebars/SidebarCta.svelte">SidebarCta</GitHubSource>
-<GitHubSource href="sidebars/SidebarDropdownItem.svelte">SidebarDropdownItem</GitHubSource>
-<GitHubSource href="sidebars/SidebarDropdownWrapper.svelte">SidebarDropdownWrapper</GitHubSource>
-<GitHubSource href="sidebars/SidebarGroup.svelte">SidebarGroup</GitHubSource>
-<GitHubSource href="sidebars/SidebarItem.svelte">SidebarItem</GitHubSource>
-<GitHubSource href="sidebars/SidebarWrapper.svelte">SidebarWrapper</GitHubSource>
-</ExampleDiv>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 The sidebar component can be used as a complementary element relative to the navbar shown on either the left or right side of the page used for the navigation on your web application, including menu items, multi-level dropdown items, call to actions elements, and more.
 

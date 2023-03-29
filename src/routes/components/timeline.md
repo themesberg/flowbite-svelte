@@ -21,29 +21,11 @@ description: Get started with the responsive timeline component to show data in 
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  // lib files
+  const libFiles = import.meta.glob('../../lib/timeline/*.svelte')
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
-
-<ExampleDiv>
-<GitHubSource href="timeline/Activity.svelte">Activity</GitHubSource>
-<GitHubSource href="timeline/ActivityItem.svelte">ActivityItem</GitHubSource>
-<GitHubSource href="timeline/Group.svelte">Group</GitHubSource>
-<GitHubSource href="timeline/GroupItem.svelte">GroupItem</GitHubSource>
-<GitHubSource href="timeline/Timeline.svelte">Timeline</GitHubSource>
-<GitHubSource href="timeline/TimelineHorizontal.svelte">TimelineHorizontal</GitHubSource>
-<GitHubSource href="timeline/TimelineItem.svelte">TimelineItem</GitHubSource>
-<GitHubSource href="timeline/TimelineItemHorizontal.svelte">TimelineItemHorizontal</GitHubSource>
-<GitHubSource href="timeline/TimelineItemVertical.svelte">TimelineItemVertical</GitHubSource>
-</ExampleDiv>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 The timeline component can be used to show series of data in a chronological order for use cases such as activity feeds, user actions, application updates, and more.
 

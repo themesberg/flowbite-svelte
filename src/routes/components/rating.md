@@ -22,26 +22,11 @@ description: Use the rating component to show reviews and testimonials from your
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  // lib files
+  const libFiles = import.meta.glob('../../lib/ratings/*.svelte')
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
-
-<ExampleDiv>
-<GitHubSource href="ratings/AdvancedRating.svelte">AdvancedRating</GitHubSource>
-<GitHubSource href="ratings/Rating.svelte">Rating</GitHubSource>
-<GitHubSource href="ratings/RatingComment.svelte">RatingComment</GitHubSource>
-<GitHubSource href="ratings/Review.svelte">Review</GitHubSource>
-<GitHubSource href="ratings/ScoreRating.svelte">ScoreRating</GitHubSource>
-<GitHubSource href="ratings/Star.svelte">Star</GitHubSource>
-</ExampleDiv>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 Get started with the rating component to show an aggregate of reviews and scores in the forms of stars or numbers.
 
