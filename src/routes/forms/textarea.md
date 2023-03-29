@@ -9,7 +9,7 @@ description: Use the textarea component as a multi-line text field input and use
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
 
   import { Heading, Breadcrumb, BreadcrumbItem, Badge, A } from '$lib'
   import { props as items } from '../props/Textarea.json'

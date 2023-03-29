@@ -9,20 +9,14 @@ description: Use the typography and the utility classes from Tailwind CSS to sty
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   
   import { Breadcrumb, BreadcrumbItem, Heading, A } from '$lib';
+  // lib files
+  const libFiles = import.meta.glob('../../lib/typography/*.svelte')
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 The typography for FlowBite is completely based on the utility classes from Tailwind CSS.
 

@@ -9,7 +9,7 @@ description: Use the list group component to display a series of items, buttons 
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
 
@@ -19,22 +19,11 @@ description: Use the list group component to display a series of items, buttons 
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  // lib files
+  const libFiles = import.meta.glob('../../lib/list-group/*.svelte')
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
-
-<ExampleDiv>
-<GitHubSource href="list-group/Listgroup.svelte">Listgroup</GitHubSource>
-<GitHubSource href="list-group/ListgroupItem.svelte">ListgroupItem</GitHubSource>
-</ExampleDiv>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 The list group component can be used to display a series of elements, buttons or links inside a single card component similar to a sidebar.
 
@@ -73,7 +62,7 @@ If list is active and data items contain `href` field entries are presented as `
 <script>
   import { Listgroup } from 'flowbite-svelte'
   let links = [
-    { name: "Accordions", href: "/accordions", current: true },
+    { name: "Accordions", href: "/accordion", current: true },
     { name: "Alerts", href: "/alerts" },
     { name: "Badges", href: "/badges"  },
     { name: "Breadcrumbs", href: "/breadcrumbs" },

@@ -9,7 +9,7 @@ description: Use the table component to show text, images, links, and other elem
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow , MetaTag } from '../utils'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
   
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   import { props as items1 }  from '../props/Table.json'
@@ -22,27 +22,11 @@ description: Use the table component to show text, images, links, and other elem
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  // lib files
+  const libFiles = import.meta.glob('../../lib/tables/*.svelte')
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
-
-<ExampleDiv>
-<GitHubSource href="tables/Table.svelte">Table</GitHubSource>
-<GitHubSource href="tables/TableBody.svelte">TableBody</GitHubSource>
-<GitHubSource href="tables/TableBodyCell.svelte">TableBodyCell</GitHubSource>
-<GitHubSource href="tables/TableBodyRow.svelte">TableBodyRow</GitHubSource>
-<GitHubSource href="tables/TableHead.svelte">TableHead</GitHubSource>
-<GitHubSource href="tables/TableHeadCell.svelte">TableHeadCell</GitHubSource>
-<GitHubSource href="tables/TableSearch.svelte">TableSearch</GitHubSource>
-</ExampleDiv>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 The table component represents a set of structured elements made up of rows and columns as table cells that can be used to show data sets to your website users.
 

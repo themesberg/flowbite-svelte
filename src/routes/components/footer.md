@@ -9,7 +9,7 @@ description: Use the footer section at the bottom of every page to show valuable
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import {Htwo,ExampleDiv, GitHubSource,CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import {Htwo,ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   // Props table
@@ -22,26 +22,11 @@ description: Use the footer section at the bottom of every page to show valuable
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  // lib files
+  const libFiles = import.meta.glob('../../lib/footer/*.svelte')
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
-
-<ExampleDiv>
-<GitHubSource href="footer/Footer.svelte">Footer</GitHubSource>
-<GitHubSource href="footer/FooterBrand.svelte">FooterBrand</GitHubSource>
-<GitHubSource href="footer/FooterCopyright.svelte">FooterCopyright</GitHubSource>
-<GitHubSource href="footer/FooterIcon.svelte">FooterIcon</GitHubSource>
-<GitHubSource href="footer/FooterLink.svelte">FooterLink</GitHubSource>
-<GitHubSource href="footer/FooterLinkGroup.svelte">FooterLinkGroup</GitHubSource>
-</ExampleDiv>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 The footer is one of the most underestimated sections of a website being located at the very bottom of every page, however, it can be used as a way to try to convince users to stay on your website if they haven’t found the information they’ve been looking for inside the main content area.
 

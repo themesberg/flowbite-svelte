@@ -9,7 +9,7 @@ description: Get started with a large variety of Tailwind CSS card examples for 
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   // Props table
@@ -21,21 +21,11 @@ description: Get started with a large variety of Tailwind CSS card examples for 
   // Slots
   let slotHeader = ['Name', 'Description']
   let slotItems = [['default', 'For a button label.']]
+  // lib files
+  const libFiles = import.meta.glob('../../lib/cards/*.svelte')
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
-
-<ExampleDiv>
-<GitHubSource href="cards/Card.svelte">Card</GitHubSource>
-</ExampleDiv>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 Use these responsive card components to show data entries and information to your users in multiple forms and contexts such as for your blog, application, user profiles, and more.
 

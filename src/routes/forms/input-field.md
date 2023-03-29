@@ -9,7 +9,7 @@ description: Get started with a collection of input fields built with Tailwind C
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow , MetaTag } from '../utils'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
   
   import { onMount } from 'svelte';
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, A } from '$lib'

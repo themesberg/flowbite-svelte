@@ -10,7 +10,7 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow , MetaTag } from '../utils'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
   
   import { Toolbar, ToolbarButton, ToolbarGroup, Avatar, Button, Textarea, Breadcrumb, BreadcrumbItem, Heading, A } from '$lib'
   import { props as items1 } from '../props/Toolbar.json'

@@ -9,7 +9,7 @@ description: The blockquote component can be used to quote text content from an 
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow , MetaTag } from '../utils'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
   
   import { P, Heading, A, Breadcrumb, BreadcrumbItem } from '$lib'; 
   import { props as items1 } from '../props/Blockquote.json'

@@ -7,7 +7,7 @@ description: Get started with the responsive timeline component to show data in 
 ---
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 <script lang="ts">
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   import { Breadcrumb, BreadcrumbItem, Button, Heading, P, A } from '$lib'
   import { props as items1 }  from '../props/Timeline.json'
   import { props as items2 }  from '../props/TimelineItem.json'
@@ -21,29 +21,11 @@ description: Get started with the responsive timeline component to show data in 
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  // lib files
+  const libFiles = import.meta.glob('../../lib/timeline/*.svelte')
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
-
-<ExampleDiv>
-<GitHubSource href="timelines/Activity.svelte">Activity</GitHubSource>
-<GitHubSource href="timelines/ActivityItem.svelte">ActivityItem</GitHubSource>
-<GitHubSource href="timelines/Group.svelte">Group</GitHubSource>
-<GitHubSource href="timelines/GroupItem.svelte">GroupItem</GitHubSource>
-<GitHubSource href="timelines/Timeline.svelte">Timeline</GitHubSource>
-<GitHubSource href="timelines/TimelineHorizontal.svelte">TimelineHorizontal</GitHubSource>
-<GitHubSource href="timelines/TimelineItem.svelte">TimelineItem</GitHubSource>
-<GitHubSource href="timelines/TimelineItemHorizontal.svelte">TimelineItemHorizontal</GitHubSource>
-<GitHubSource href="timelines/TimelineItemVertical.svelte">TimelineItemVertical</GitHubSource>
-</ExampleDiv>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 The timeline component can be used to show series of data in a chronological order for use cases such as activity feeds, user actions, application updates, and more.
 
