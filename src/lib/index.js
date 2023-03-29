@@ -171,15 +171,15 @@ export { default as TabItem } from './tabs/TabItem.svelte';
 export { default as Tabs } from './tabs/Tabs.svelte';
 
 // Timeline
-export { default as Group } from './timelines/Group.svelte';
-export { default as GroupItem } from './timelines/GroupItem.svelte';
-export { default as Activity } from './timelines/Activity.svelte';
-export { default as ActivityItem } from './timelines/ActivityItem.svelte';
-export { default as Timeline } from './timelines/Timeline.svelte';
-export { default as TimelineItem } from './timelines/TimelineItem.svelte';
-export { default as TimelineHorizontal } from './timelines/TimelineHorizontal.svelte';
-export { default as TimelineItemHorizontal } from './timelines/TimelineItemHorizontal.svelte';
-export { default as TimelineItemVertical } from './timelines/TimelineItemVertical.svelte';
+export { default as Group } from './timeline/Group.svelte';
+export { default as GroupItem } from './timeline/GroupItem.svelte';
+export { default as Activity } from './timeline/Activity.svelte';
+export { default as ActivityItem } from './timeline/ActivityItem.svelte';
+export { default as Timeline } from './timeline/Timeline.svelte';
+export { default as TimelineItem } from './timeline/TimelineItem.svelte';
+export { default as TimelineHorizontal } from './timeline/TimelineHorizontal.svelte';
+export { default as TimelineItemHorizontal } from './timeline/TimelineItemHorizontal.svelte';
+export { default as TimelineItemVertical } from './timeline/TimelineItemVertical.svelte';
 
 // Toast
 export { default as Toast } from './toasts/Toast.svelte';

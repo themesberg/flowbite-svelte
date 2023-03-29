@@ -9,7 +9,7 @@ description: The link component can be used to set hyperlinks from one page to a
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   
   import {  A, Heading, Breadcrumb, BreadcrumbItem } from '$lib'
   import { props as items1 } from '../props/A.json'

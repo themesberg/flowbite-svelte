@@ -9,25 +9,19 @@ description: Learn how to configure and build a dark mode switcher for Flowbite 
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import {Htwo,TableProp, TableDefaultRow, CompoDescription , MetaTag } from '../utils'
+  import {Htwo,TableProp, TableDefaultRow, CompoDescription, PageHeadSection, MetaTag } from '../utils'
   
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   // Props table
   import { props as items} from '../props/DarkMode.json'
 	let propHeader = ['Name', 'Type', 'Default']
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'  
+  // lib files
+  const libFiles = import.meta.glob('../../lib/darkmode/*.svelte')
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 <p>In Flowbite-Svelte, the `class` strategy is used to support toggling dark mode manually, so you should explictly configure it in Talwind CSS:</p>
 

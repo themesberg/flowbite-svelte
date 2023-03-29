@@ -9,38 +9,23 @@ description: Use the accordion component to show hidden information based on the
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib';
-
+  import { Htwo, ExampleDiv, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'; 
   // Props 
   import {props as accordionProps} from '../props/Accordion.json'
   import {props as accordionItemProps} from '../props/AccordionItem.json'
 	let propHeader = ['Name', 'Type', 'Default']
   let slotHeader = ['Name', 'Description']
+  // lib files
+  const libFiles = import.meta.glob('../../lib/accordion/*.svelte')
   // Slots
   let slotItems = [['default', 'Place for AccordionItems']]
   let slotItems2 = [['default','Item body slot'],['header', 'Item header slot'],['arrowup', 'Icon to close an accordion item'],['arrowdown','Icon to open an accordion item']]
-
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 </script>
 
-
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
-
-<ExampleDiv>
-<GitHubSource href="accordion/Accordion.svelte">Accordion</GitHubSource>
-<GitHubSource href="accordion/AccordionItem.svelte">AccordionItem</GitHubSource>
-</ExampleDiv>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 The accordion component is a collection of vertically collapsing header and body elements that can be used to show and hide information based on the Tailwind CSS utility classes and JavaScript from Flowbite.
 

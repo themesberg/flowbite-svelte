@@ -9,7 +9,7 @@ description: Use the toggle component to switch between a binary state of true o
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   
   import { onMount } from 'svelte';
   import { Toggle, Breadcrumb, BreadcrumbItem, Badge, Heading, A } from '$lib'

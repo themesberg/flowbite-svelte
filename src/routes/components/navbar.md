@@ -9,7 +9,7 @@ description: The navbar component can be used to show a list of navigation links
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   
   import { Badge, Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib';
   // Props table

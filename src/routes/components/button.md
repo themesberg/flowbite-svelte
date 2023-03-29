@@ -9,7 +9,7 @@ description: Use the button component inside forms, as links, social login, paym
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import {Htwo,ExampleDiv,GitHubSource,CompoDescription,TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import {Htwo, ExampleDiv, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
   // Props table
@@ -20,22 +20,11 @@ description: Use the button component inside forms, as links, social login, paym
   // slots
   let slotHeader = ['Name', 'Description']
   let slotItems = [['default', 'For a button label.']]
-
+  // lib files
+  const libFiles = import.meta.glob('../../lib/buttons/*.svelte')
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
-
-<ExampleDiv>
-<GitHubSource href="buttons/Button.svelte">Button</GitHubSource>
-</ExampleDiv>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 The button component is probably the most widely used element in any user interface or website as it can be used to launch an action but also to link to other pages.
 

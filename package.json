@@ -567,40 +567,40 @@
       "svelte": "./dist/tabs/Tabs.svelte"
     },
     "./Activity.svelte": {
-      "types": "./dist/timelines/Activity.svelte.d.ts",
-      "svelte": "./dist/timelines/Activity.svelte"
+      "types": "./dist/timeline/Activity.svelte.d.ts",
+      "svelte": "./dist/timeline/Activity.svelte"
     },
     "./ActivityItem.svelte": {
-      "types": "./dist/timelines/ActivityItem.svelte.d.ts",
-      "svelte": "./dist/timelines/ActivityItem.svelte"
+      "types": "./dist/timeline/ActivityItem.svelte.d.ts",
+      "svelte": "./dist/timeline/ActivityItem.svelte"
     },
     "./Group.svelte": {
-      "types": "./dist/timelines/Group.svelte.d.ts",
-      "svelte": "./dist/timelines/Group.svelte"
+      "types": "./dist/timeline/Group.svelte.d.ts",
+      "svelte": "./dist/timeline/Group.svelte"
     },
     "./GroupItem.svelte": {
-      "types": "./dist/timelines/GroupItem.svelte.d.ts",
-      "svelte": "./dist/timelines/GroupItem.svelte"
+      "types": "./dist/timeline/GroupItem.svelte.d.ts",
+      "svelte": "./dist/timeline/GroupItem.svelte"
     },
     "./Timeline.svelte": {
-      "types": "./dist/timelines/Timeline.svelte.d.ts",
-      "svelte": "./dist/timelines/Timeline.svelte"
+      "types": "./dist/timeline/Timeline.svelte.d.ts",
+      "svelte": "./dist/timeline/Timeline.svelte"
     },
     "./TimelineHorizontal.svelte": {
-      "types": "./dist/timelines/TimelineHorizontal.svelte.d.ts",
-      "svelte": "./dist/timelines/TimelineHorizontal.svelte"
+      "types": "./dist/timeline/TimelineHorizontal.svelte.d.ts",
+      "svelte": "./dist/timeline/TimelineHorizontal.svelte"
     },
     "./TimelineItem.svelte": {
-      "types": "./dist/timelines/TimelineItem.svelte.d.ts",
-      "svelte": "./dist/timelines/TimelineItem.svelte"
+      "types": "./dist/timeline/TimelineItem.svelte.d.ts",
+      "svelte": "./dist/timeline/TimelineItem.svelte"
     },
     "./TimelineItemHorizontal.svelte": {
-      "types": "./dist/timelines/TimelineItemHorizontal.svelte.d.ts",
-      "svelte": "./dist/timelines/TimelineItemHorizontal.svelte"
+      "types": "./dist/timeline/TimelineItemHorizontal.svelte.d.ts",
+      "svelte": "./dist/timeline/TimelineItemHorizontal.svelte"
     },
     "./TimelineItemVertical.svelte": {
-      "types": "./dist/timelines/TimelineItemVertical.svelte.d.ts",
-      "svelte": "./dist/timelines/TimelineItemVertical.svelte"
+      "types": "./dist/timeline/TimelineItemVertical.svelte.d.ts",
+      "svelte": "./dist/timeline/TimelineItemVertical.svelte"
     },
     "./Toast.svelte": {
       "types": "./dist/toasts/Toast.svelte.d.ts",

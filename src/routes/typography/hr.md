@@ -9,7 +9,7 @@ description: Create a horizontal line using the `Hr` component to separate conte
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow , MetaTag } from '../utils'
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
   
   import { A, Heading, Breadcrumb, BreadcrumbItem } from '$lib';
   import { props as items1 } from '../props/Hr.json'
