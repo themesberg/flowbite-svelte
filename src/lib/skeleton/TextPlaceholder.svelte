@@ -23,27 +23,27 @@
 		<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24" />
 		<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full" />
 	</div>
-	<div class="flex items-center w-full space-x-2 w-11/12">
+	<div class="flex items-center space-x-2 w-11/12">
 		<div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full" />
 		<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full" />
 		<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24" />
 	</div>
-	<div class="flex items-center w-full space-x-2 w-9/12">
+	<div class="flex items-center space-x-2 w-9/12">
 		<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full" />
 		<div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-80" />
 		<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full" />
 	</div>
-	<div class="flex items-center w-full space-x-2 w-11/12">
+	<div class="flex items-center space-x-2 w-11/12">
 		<div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full" />
 		<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full" />
 		<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24" />
 	</div>
-	<div class="flex items-center w-full space-x-2 w-10/12">
+	<div class="flex items-center space-x-2 w-10/12">
 		<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-32" />
 		<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24" />
 		<div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full" />
 	</div>
-	<div class="flex items-center w-full space-x-2 w-8/12">
+	<div class="flex items-center space-x-2 w-8/12">
 		<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full" />
 		<div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-80" />
 		<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full" />
