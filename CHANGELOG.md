@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.34.3](https://github.com/themesberg/flowbite-svelte/compare/v0.34.2...v0.34.3) (2023-03-30)
+
+
+### Bug Fixes
+
+* dropdown page ([d3d4827](https://github.com/themesberg/flowbite-svelte/commit/d3d48276e27cc18300de1b1cc2a26ce05de733d8))
+* dropdown page add dark:text-white to MenuButton and change to color:green for Avatar ([900feca](https://github.com/themesberg/flowbite-svelte/commit/900feca1d8f4e617821c6a4ccf3687839a302cf0))
+* remove duplicate theme from tailwind.config ([5d0ebe5](https://github.com/themesberg/flowbite-svelte/commit/5d0ebe5ab587e489498bba825527d613cddb2eaf))
+* TextPlaceHolder remove w-full ([e3ec175](https://github.com/themesberg/flowbite-svelte/commit/e3ec175bc3ec366a5e027feb5e21721fdd223243))
+* top navbar margin top ([d9c83b4](https://github.com/themesberg/flowbite-svelte/commit/d9c83b46bcd0c67d176ad60b0cbd3089a62471ab))
+* typo CardPlaceholder ([71bea4d](https://github.com/themesberg/flowbite-svelte/commit/71bea4d98b5046d866aa2ded2e00cc30e4b44b61))
+* update props table and github links ([0a184d1](https://github.com/themesberg/flowbite-svelte/commit/0a184d11469729e2697ea91117ad487e2b6e3741))
+* update skeleton components ([b1ffbc7](https://github.com/themesberg/flowbite-svelte/commit/b1ffbc789536f0e6be4bcca3e4083466c62fe85e))
+
 ### [0.34.2](https://github.com/themesberg/flowbite-svelte/compare/v0.34.1...v0.34.2) (2023-03-21)
 
 
