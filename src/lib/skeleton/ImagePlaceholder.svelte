@@ -2,16 +2,16 @@
 	import classNames from 'classnames';
 	export let divClass: string =
 		'space-y-8 animate-pulse md:space-y-0 md:space-x-8 md:flex md:items-center';
-	export let size: string = '48';
+	export let imgHeight: string = '48';
 </script>
 
 <div role="status" class={classNames(divClass, $$props.class)}>
 	<div
-		class="flex justify-center items-center w-full h-48 bg-gray-300 rounded sm:w-96 dark:bg-gray-700"
+		class="flex justify-center items-center w-full h-{imgHeight} bg-gray-300 rounded sm:w-96 dark:bg-gray-700"
 	>
 		<svg
-			width={size}
-			height={size}
+			width=48
+			height=48
 			class="text-gray-200"
 			xmlns="http://www.w3.org/2000/svg"
 			aria-hidden="true"
@@ -23,12 +23,13 @@
 		>
 	</div>
 	<div class="w-full">
-		<div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4" />
-		<div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5" />
-		<div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5" />
-		<div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[440px] mb-2.5" />
-		<div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[460px] mb-2.5" />
-		<div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px]" />
+	<div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-1/2 mb-4" />
+	<div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 w-9/12 mb-2.5" />
+	<div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5" />
+	<div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5" />
+	<div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 w-10/12 mb-2.5" />
+	<div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 w-11/12 mb-2.5" />
+	<div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 w-9/12" />
 	</div>
 	<span class="sr-only">Loading...</span>
 </div>

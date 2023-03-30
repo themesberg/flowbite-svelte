@@ -46,7 +46,11 @@ Use the skeleton component to indicate a loading status with placeholder element
   import { Skeleton } from 'flowbite-svelte'
 </script>
 
-<Skeleton />
+  <Skeleton size="sm" class="my-8" />
+  <Skeleton size="md" class="my-8" />
+  <Skeleton size="lg" class="my-8" />
+  <Skeleton size="xl" class="my-8" />
+  <Skeleton size="xxl" class="mt-8 mb-2.5" />
 ```
 
 <Htwo label="Image placeholder " />
@@ -57,6 +61,7 @@ Use the skeleton component to indicate a loading status with placeholder element
 </script>
 
 <ImagePlaceholder />
+<ImagePlaceholder imgHeight={60} class='mt-8'/>
 ```
 
 <Htwo label="Video placeholder" />
@@ -67,6 +72,10 @@ Use the skeleton component to indicate a loading status with placeholder element
 </script>
 
 <VideoPlaceholder />
+<VideoPlaceholder size='md' class='mt-8'/>
+<VideoPlaceholder size='lg' class='mt-8'/>
+<VideoPlaceholder size='xl' class='mt-8'/>
+<VideoPlaceholder size='xxl' class='mt-8'/>
 ```
 
 <Htwo label="Text placeholder" />
@@ -77,6 +86,10 @@ Use the skeleton component to indicate a loading status with placeholder element
 </script>
 
 <TextPlaceholder />
+<TextPlaceholder size='md' class='mt-8'/>
+<TextPlaceholder size='lg' class='mt-8'/>
+<TextPlaceholder size='xl' class='mt-8'/>
+<TextPlaceholder size='xxl' class='mt-8'/>
 ```
 
 <Htwo label="Card placeholder" />
@@ -87,6 +100,10 @@ Use the skeleton component to indicate a loading status with placeholder element
 </script>
 
 <CardPlaceholder />
+<CardPlaceholder size='md' class='mt-8'/>
+<CardPlaceholder size='lg' class='mt-8'/>
+<CardPlaceholder size='xl' class='mt-8'/>
+<CardPlaceholder size='xxl' class='mt-8'/>
 ```
 
 <Htwo label="Widget placeholder" />

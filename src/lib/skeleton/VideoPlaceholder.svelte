@@ -1,14 +1,27 @@
 <script lang="ts">
+	interface Sizes {
+    [key: string]: string;
+  }
+
+  const sizes: Sizes = {
+    sm: 'max-w-sm',
+    md: 'max-w-md',
+    lg: 'max-w-lg',
+    xl: 'max-w-xl',
+		xxl: 'max-w-2xl'
+  };
+
 	import classNames from 'classnames';
 	export let divClass: string =
-		'flex justify-center items-center max-w-sm h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700';
-	export let size: string = '48';
+		'flex justify-center items-center h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700';
+  export let size: keyof Sizes = 'sm';
+	$: outDivclass = classNames(sizes[size], divClass, $$props.class)
 </script>
 
-<div role="status" class={classNames(divClass, $$props.class)}>
+<div role="status" class={outDivclass}>
 	<svg
-		width={size}
-		height={size}
+		width=48
+		height=48
 		class="text-gray-200 dark:text-gray-600"
 		xmlns="http://www.w3.org/2000/svg"
 		aria-hidden="true"
