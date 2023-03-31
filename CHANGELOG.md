@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.34.4](https://github.com/themesberg/flowbite-svelte/compare/v0.34.3...v0.34.4) (2023-03-31)
+
+
+### Features
+
+* add color, gradient, shadow, and outline props to speed-dial ([#636](https://github.com/themesberg/flowbite-svelte/issues/636)) ([563a7ee](https://github.com/themesberg/flowbite-svelte/commit/563a7eecdf69301da232aa7ccd6734e49dc87f4c))
+
+
+### Bug Fixes
+
+* update props ([cb92b47](https://github.com/themesberg/flowbite-svelte/commit/cb92b47bd79f8833aea263d106675881a6fcd456))
+
 ### [0.34.3](https://github.com/themesberg/flowbite-svelte/compare/v0.34.2...v0.34.3) (2023-03-30)
 
 
