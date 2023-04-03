@@ -9,7 +9,7 @@ description: Button groups are a Tailwind CSS powered set of buttons sticked tog
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
   // Props table
   import { props as buttonGroupProps} from '../props/ButtonGroup.json'

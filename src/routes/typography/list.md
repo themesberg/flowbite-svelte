@@ -9,9 +9,8 @@ description: Use the list component to show an unordered or ordered list of item
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
+  import { Htwo, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
   import { A, Heading, Breadcrumb, BreadcrumbItem } from '$lib'
-  
   import { props as items1 } from '../props/List.json'
   import { props as items2 } from '../props/Li.json'
   import { props as items3 } from '../props/Span.json'
@@ -19,22 +18,15 @@ description: Use the list component to show an unordered or ordered list of item
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  // lib files
+  const libFilesArray = [
+    import.meta.glob("../../lib/typography/Li.svelte"),
+    import.meta.glob("../../lib/typography/Ul.svelte"),
+  ];
+const libFiles = { ...libFilesArray[0], ...libFilesArray[1] };
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
-
-<ExampleDiv>
-<GitHubSource href="buttongroups/P.svelte">Li</GitHubSource>
-<GitHubSource href="buttongroups/A.svelte">Ul</GitHubSource>
-</ExampleDiv>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 Get started with a collection of list components built with Tailwind CSS for ordered and unordered lists with bullets, numbers, or icons and other styles and layouts to show a list of items inside an article or throughout your web page.
 

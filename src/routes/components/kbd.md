@@ -9,10 +9,8 @@ description: Use the KBD component as an inline element to denote textual user i
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  
+  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
-  
   import { props as items} from '../props/Kbd.json'
   import { props as items2} from '../props/ArrowKeyDown.json'
   import { props as items3} from '../props/ArrowKeyLeft.json'

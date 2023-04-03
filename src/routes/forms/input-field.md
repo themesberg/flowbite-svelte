@@ -9,29 +9,18 @@ description: Get started with a collection of input fields built with Tailwind C
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
-  
+  import { Htwo, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
   import { onMount } from 'svelte';
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, A } from '$lib'
   import { props as items1 } from '../props/Input.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  // lib files
+  const libFiles = import.meta.glob('../../lib/forms/Input.svelte')
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
-
-<ExampleDiv>
-<GitHubSource href="forms/Input.svelte">Input</GitHubSource>
-</ExampleDiv>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 The input field is an important part of the form element that can be used to create interactive controls to accept data from the user based on multiple input types, such as text, email, number, password, URL, phone number, and more.
 

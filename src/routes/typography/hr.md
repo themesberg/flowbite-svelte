@@ -9,28 +9,17 @@ description: Create a horizontal line using the `Hr` component to separate conte
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
-  
+  import { Htwo, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
   import { A, Heading, Breadcrumb, BreadcrumbItem } from '$lib';
   import { props as items1 } from '../props/Hr.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  // lib files
+  const libFiles = import.meta.glob('../../lib/typography/Hr.svelte')
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
-
-<ExampleDiv>
-  <GitHubSource href="typography/Hr.svelte">Hr</GitHubSource>
-</ExampleDiv>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 The `Hr` component can be used to separate content using a horizontal line by adding space between elements based on multiple styles, variants, and layouts.
 

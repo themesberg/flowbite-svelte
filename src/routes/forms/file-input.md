@@ -9,29 +9,18 @@ description: Get started with the file input component to let the user to upload
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  
+  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, A } from '$lib'
   import { props as items } from '../props/Fileupload.json'
   import { props as items2 } from '../props/Dropzone.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  // lib files
+  const libFiles = import.meta.glob('../../lib/forms/Fileupload.svelte')
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
-
-<ExampleDiv>
-<GitHubSource href="forms/Fileupload.svelte">Fileupload</GitHubSource>
-</ExampleDiv>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 The file input component can be used to upload one or more files from the device storage of the user available in multiple sizes, styles, variants and support for dark mode.
 

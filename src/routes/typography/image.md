@@ -9,28 +9,17 @@ description: The image component can be used to embed images inside the web page
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  
+  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   import { A, Heading, Breadcrumb, BreadcrumbItem } from '$lib'
   import { props as items1 } from '../props/Img.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  // lib files
+  const libFiles = import.meta.glob('../../lib/typography/Img.svelte')
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
-
-<ExampleDiv>
-<GitHubSource href="buttongroups/Img.svelte">Img</GitHubSource>
-</ExampleDiv>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 Get started with a collection of responsive image components coded with the utility classes from Tailwind CSS that you can use inside articles, cards, sections, and other components based on multiple styles, sizes, layouts, and hover animations.
 

@@ -108,7 +108,7 @@
     id="sidebar"
     width="w-64"
     class="overflow-scroll pb-24"
-    divClass='overflow-y-auto z-50 p-4 bg-white dark:bg-gray-900'>
+    divClass='overflow-y-auto z-30 p-4 bg-white dark:bg-gray-900'>
     <div class="flex items-center">
       <CloseButton on:click={() => (drawerHidden = true)} class="mb-4 dark:text-white lg:hidden" />
     </div>

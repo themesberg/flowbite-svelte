@@ -9,8 +9,7 @@ description: Learn how to configure and build a dark mode switcher for Flowbite 
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import {Htwo,TableProp, TableDefaultRow, CompoDescription, PageHeadSection, MetaTag } from '../utils'
-  
+  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   // Props table
   import { props as items} from '../props/DarkMode.json'

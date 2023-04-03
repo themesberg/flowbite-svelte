@@ -10,8 +10,7 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
-  
+  import { Htwo, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
   import { Toolbar, ToolbarButton, ToolbarGroup, Avatar, Button, Textarea, Breadcrumb, BreadcrumbItem, Heading, A } from '$lib'
   import { props as items1 } from '../props/Toolbar.json'
   import { props as items2 } from '../props/ToolbarButton.json'
@@ -19,25 +18,11 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
-  
+  // lib files
+  const libFiles = import.meta.glob('../../lib/toolbar/*.svelte')
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
-
-<ExampleDiv>
-<GitHubSource href="toolbar/Toolbar.svelte">Toolbar</GitHubSource>
-<GitHubSource href="toolbar/ToolbarButton.svelte">ToolbarButton</GitHubSource>
-<GitHubSource href="toolbar/ToolbarGroup.svelte">ToolbarGroup</GitHubSource>
-</ExampleDiv>
-
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 <Htwo label="Setup" />
 
