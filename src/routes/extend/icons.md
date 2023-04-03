@@ -10,7 +10,6 @@ description: Use Svelte SVG icon families to write less code
 
 <script>
   import { Htwo , MetaTag } from '../utils'
-  
   import { Breadcrumb, BreadcrumbItem, P, A, List, Li, Heading } from '$lib'
 	import CheckCircle from './CheckCircle.svelte'
 </script>

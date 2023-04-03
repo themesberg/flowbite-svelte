@@ -9,8 +9,7 @@ description: Show the location of the current page in a hierarchical structure u
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, PageHeadSection, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  
+  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   import { props as breadcrumbProps } from '../props/Breadcrumb.json'
   import { props as breadcrumbItemProps } from '../props/BreadcrumbItem.json'

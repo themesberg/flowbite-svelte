@@ -9,7 +9,7 @@ description: Use the Tailwind CSS form and input elements such as checkboxes, ra
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Htwo, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   
   import { Breadcrumb, BreadcrumbItem, Heading, A } from '$lib'
   import { props as items } from '../props/Input.json'

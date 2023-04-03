@@ -10,10 +10,8 @@ description: Use the sidebar component to show a list of menu items and multi-le
 
 <script>
   import { page } from '$app/stores';
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  
+  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
-  
   import { props as items } from '../props/Sidebar.json'
   import { props as items2 }  from '../props/SidebarBrand.json'
   import { props as items3 }  from '../props/SidebarCta.json'

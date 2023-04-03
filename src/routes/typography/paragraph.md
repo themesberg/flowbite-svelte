@@ -10,37 +10,22 @@ description: Use the paragraph component to create multiple blocks of text separ
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import {
-    Htwo,
-    ExampleDiv,
-    GitHubSource,
-    CompoDescription,
-    TableProp,
-    TableDefaultRow
-  , MetaTag } from '../utils';
-  
+  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils';
   import {  A, Heading, Breadcrumb, BreadcrumbItem } from '$lib';
   import { props as items1 } from '../props/P.json'
   import { props as items2 } from '../props/Layout.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  // lib files
+  const libFilesArray = [
+    import.meta.glob("../../lib/typography/P.svelte"),
+    import.meta.glob("../../lib/typography/Layout.svelte"),
+  ];
+  const libFiles = { ...libFilesArray[0], ...libFilesArray[1] };
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
-
-<ExampleDiv>
-  <GitHubSource href="buttongroups/P.svelte">P</GitHubSource>
-  <GitHubSource href="buttongroups/Layout.svelte">Layout</GitHubSource>
-</ExampleDiv>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 The paragraph element is one of the most commonly used HTML tags on a document page because it is
 used to write longer blocks of text separated by a blank line and can massively improve the on-page

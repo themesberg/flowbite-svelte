@@ -9,8 +9,7 @@ description: The Drawer component can be used as a hidden off-canvas sidebar for
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  
+  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   import {  Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib';
   // Props table
   import { props as items} from '../props/Drawer.json'
@@ -22,10 +21,6 @@ description: The Drawer component can be used as a hidden off-canvas sidebar for
 </script>
 
 <PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
-
-<ExampleDiv>
-<GitHubSource href="drawer/Drawer.svelte">Drawer</GitHubSource>
-</ExampleDiv>
 
 Use the Drawer component (or “off-canvas”) to show a fixed element relative to the document page from any side for navigation, contact forms, informational purposes or other user actions.
 

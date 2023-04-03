@@ -7,7 +7,7 @@ description: Get started with the responsive timeline component to show data in 
 ---
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 <script lang="ts">
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   import { Breadcrumb, BreadcrumbItem, Button, Heading, P, A } from '$lib'
   import { props as items1 }  from '../props/Timeline.json'
   import { props as items2 }  from '../props/TimelineItem.json'

@@ -9,16 +9,8 @@ description: Choose your primary color in tailwind.config.cjs file
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-	import {
-		Htwo,
-		ExampleDiv,
-		GitHubSource,
-		CompoDescription,
-		TableProp,
-		TableDefaultRow
-	, MetaTag } from '../utils';
-	
-	import { Breadcrumb, BreadcrumbItem, Heading, A, Img, P } from '$lib';
+  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils';
+  import { Breadcrumb, BreadcrumbItem, Heading, A, Img, P } from '$lib';
 </script>
 
 <Breadcrumb class="pt-28 py-8">
