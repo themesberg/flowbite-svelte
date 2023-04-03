@@ -98,6 +98,7 @@
 		on:change
 		on:click
 		on:focus
+		on:input
 		on:keydown
 		on:keypress
 		on:keyup
