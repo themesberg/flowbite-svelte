@@ -9,8 +9,7 @@ description: The speed dial component can be used as a quick way to show a list 
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  
+  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'  
   import { props as items1 } from '../props/SpeedDial.json'
   import { props as items2 } from '../props/SpeedDialButton.json'

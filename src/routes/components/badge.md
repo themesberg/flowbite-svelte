@@ -9,10 +9,8 @@ description: Use Tailwind CSS badges as elements to show counts or labels separa
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  
+  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
-  
   import { props as badgeProps } from '../props/Badge.json'
   // Props table
   let propHeader = ['Name', 'Type', 'Default']

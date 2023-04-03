@@ -9,7 +9,7 @@ description: Show contextual information to your users using alert elements base
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   
   import { Badge, Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   // Props table

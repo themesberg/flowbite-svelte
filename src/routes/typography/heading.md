@@ -9,7 +9,7 @@ description: The heading component defines six levels of title elements from H1 
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
+  import { Htwo, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
   import { A, Heading, Breadcrumb, BreadcrumbItem } from '$lib';
   
   import { props as items1 } from '../props/Heading.json'
@@ -20,25 +20,11 @@ description: The heading component defines six levels of title elements from H1 
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+  // lib files
+  const libFiles = import.meta.glob('../../lib/typography/Heading.svelte')
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
-
-<ExampleDiv>
-  <GitHubSource href="typography/Heading.svelte">Heading</GitHubSource>
-  <GitHubSource href="typography/P.svelte">P</GitHubSource>
-  <GitHubSource href="typography/A.svelte">A</GitHubSource>
-  <GitHubSource href="typography/Mark.svelte">Mark</GitHubSource>
-  <GitHubSource href="typography/Secondary.svelte">Secondary</GitHubSource>
-</ExampleDiv>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 Get started with the heading component to define titles and subtitles on a web page and also improve the on-page SEO metrics of your website by targeting high-traffic keywords on Google.
 

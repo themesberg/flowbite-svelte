@@ -7,7 +7,7 @@ description: Use these responsive tabs components to create a secondary navigati
 ---
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 <script lang="ts">
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
   import { props as items1 }  from '../props/TabHead.json'
   import { props as items2 }  from '../props/TabHeadItem.json'

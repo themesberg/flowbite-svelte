@@ -9,10 +9,8 @@ description: Use the mega menu component as a full-width dropdown inside the nav
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
-  
+  import { Htwo, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
   import { Breadcrumb, BreadcrumbItem, UserCircle, Heading, P, A } from '$lib'
-
   import { props as items} from '../props/MegaMenu.json'
   // Props table
   let propHeader = ['Name', 'Type', 'Default']

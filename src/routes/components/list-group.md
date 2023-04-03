@@ -9,10 +9,8 @@ description: Use the list group component to display a series of items, buttons 
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  
+  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
-
   import { props as items1 } from '../props/Listgroup.json'
   import { props as items2 } from '../props/ListgroupItem.json'
   // Props table
