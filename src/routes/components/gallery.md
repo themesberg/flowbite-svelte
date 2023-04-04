@@ -36,74 +36,40 @@ Import `Gallery` and `GalleryItem` in the script tag.
 
 ```html
 <script>
-  import { Gallery, GalleryItem } from "flowbite-svelte";
+  import { Gallery, GalleryItem } from 'flowbite-svelte';
 </script>
 ```
 
 <Htwo label="Default gallery" />
 
-Use this component to show a collection of images inside a gallery with three pictures on a row.
+Use this component to show a collection of images inside a gallery.
+
+Number of rows in the gallery is set by passing the `grid-col-{n}` Tailwind class (including the reactive prefix).
+Spacing between images is set by `gap-{n}` class. If you don't set them it behaves like `grid-col-1` and `gap: inherit`.
+
+Example below show a gallery with three pictures on a row.
 
 ```svelte example class="flex flex-wrap gap-2"
 <script>
   import { Gallery, GalleryItem } from "flowbite-svelte";
   const images = [
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg',
-      alt: 'erbology'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg',
-      alt: 'shoes'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg',
-      alt: 'small bag'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg',
-      alt: 'plants'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg',
-      alt: 'watch'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg',
-      alt: 'shoe'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg',
-      alt: 'cream'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-7.jpg',
-      alt: 'small bag'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-8.jpg',
-      alt: 'lamp'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-9.jpg',
-      alt: 'toiletbag'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg',
-      alt: 'playstation'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg',
-      alt: 'bag'
-    }
+    {alt: 'erbology', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg'},
+    {alt: 'shoes', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg'},
+    {alt: 'small bag', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg'},
+    {alt: 'plants', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg'},
+    {alt: 'watch', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg'},
+    {alt: 'shoe', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg'},
+    {alt: 'cream', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg'},
+    {alt: 'small bag', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-7.jpg'},
+    {alt: 'lamp', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-8.jpg'},
+    {alt: 'toiletbag', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-9.jpg'},
+    {alt: 'playstation', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg'},
+    {alt: 'bag', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg'}
   ]
 
 </script>
-<Gallery>
-  {#each images as {src, alt}}
-    <GalleryItem {src} {alt} />
-  {/each}
-</Gallery>
+
+<Gallery items={images} class="gap-4 grid-cols-2 md:grid-cols-3" />
 ```
 
 <Htwo label="Masonry grid" />
@@ -114,131 +80,58 @@ This example can be used to show the images inside a masongry grid layouts with 
 <script>
   import { Gallery, GalleryItem } from "flowbite-svelte";
   const images1 = [
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg',
-      alt: 'erbology'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg',
-      alt: 'shoes'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg',
-      alt: 'small bag'
-    },
+    {alt: 'erbology', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg'},
+    {alt: 'shoes', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg'},
+    {alt: 'small bag', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg'},
   ]
-   const images2 = [ 
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg',
-      alt: 'plants'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg',
-      alt: 'watch'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg',
-      alt: 'shoe'
-    },
+   const images2 = [
+    {alt: 'plants', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg'},
+    {alt: 'watch', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg'},
+    {alt: 'shoe', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg'},
    ]
    const images3 = [
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg',
-      alt: 'cream'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg',
-      alt: 'small bag'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg',
-      alt: 'lamp'
-    },
+    {alt: 'cream', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg'},
+    {alt: 'small bag', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg'},
+    {alt: 'lamp', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg'},
    ]
    const images4 = [
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg',
-      alt: 'toiletbag'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg',
-      alt: 'playstation'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg',
-      alt: 'bag'
-    }
+    {alt: 'toiletbag', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg'},
+    {alt: 'playstation', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg'},
+    {alt: 'bag', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg'}
   ]
 
 </script>
-<Gallery colClass="grid-cols-2 md:grid-cols-4">
-  <div class="grid gap-4">
-  {#each images1 as {src, alt}}
-    <GalleryItem {src} {alt} />
-  {/each}
-  </div>
-    <div class="grid gap-4">
-  {#each images2 as {src, alt}}
-    <GalleryItem {src} {alt} />
-  {/each}
-  </div>
-  <div class="grid gap-4">
-  {#each images3 as {src, alt}}
-    <GalleryItem {src} {alt} />
-  {/each}
-  </div>
-    <div class="grid gap-4">
-  {#each images4 as {src, alt}}
-    <GalleryItem {src} {alt} />
-  {/each}
-  </div>
+
+<Gallery class="gap-4 grid-cols-2 md:grid-cols-4">
+  <Gallery items={images1} />
+  <Gallery items={images2} />
+  <Gallery items={images3} />
+  <Gallery items={images4} />
 </Gallery>
 ```
 
-<Htwo label="Featured image" />
+<Htwo label="Feaured image" />
 
 This example can be used to feature the most important image and show a row of five pictures below.
 
 ```svelte example class="flex flex-wrap gap-2"
 <script>
   import { Gallery, GalleryItem } from "flowbite-svelte";
-  const image1 = {
-    src: 'https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg',
-    alt: 'erbology'
-  }
+  const image1 = {alt: 'erbology', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg'}
   const images2 = [
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg',
-      alt: 'shoes'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg',
-      alt: 'small bag'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg',
-      alt: 'plants'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg',
-      alt: 'watch'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg',
-      alt: 'shoe'
-    },
+    {alt: 'shoes', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg'},
+    {alt: 'small bag', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg'},
+    {alt: 'plants', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg'},
+    {alt: 'watch', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg'},
+    {alt: 'shoe', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg'},
   ]
 
 </script>
 
-<div class="grid gap-4">
+<Gallery class="gap-4">
   <GalleryItem src={image1.src} alt={image1.alt} />
-<Gallery colClass="grid-cols-5">
-  {#each images2 as {src, alt}}
-    <GalleryItem {src} {alt} />
-  {/each}
+  <Gallery class="gap-4 grid-cols-5" items={images2} />
 </Gallery>
-</div>
 ```
 
 <Htwo label="Quad gallery" />
@@ -250,30 +143,14 @@ Use this example to show four larger images with two items on a row.
   import { Gallery, GalleryItem } from "flowbite-svelte";
 
   const images = [
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg',
-      alt: 'shoes'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg',
-      alt: 'small bag'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg',
-      alt: 'plants'
-    },
-    {
-      src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg',
-      alt: 'watch'
-    }
+    {alt: 'shoes', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg'},
+    {alt: 'small bag', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg'},
+    {alt: 'plants', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg'},
+    {alt: 'watch', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg'}
   ]
 </script>
 
-<Gallery colClass="grid-cols-2" outerDivClass="grid gap-2">
-  {#each images as {src, alt}}
-    <GalleryItem {src} {alt} />
-  {/each}
-</Gallery>
+<Gallery class="gap-2 grid-cols-2" items={images} />
 ```
 
 <Htwo label="Gallery with slider" />
@@ -320,7 +197,6 @@ This example uses the [carousel slider](https://flowbite-svelte.com/components/c
 </div>
 ```
 
-
 <Htwo label="Props" />
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
@@ -328,13 +204,13 @@ The component has the following props, type, and default values. See <A href="/p
 <h3 class='text-xl w-full dark:text-white py-4'>Gallery</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={galleryProps} rowState='hover' />
+<TableDefaultRow items={galleryProps} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>GalleryItem</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={galleryItemProps} rowState='hover' />
+<TableDefaultRow items={galleryItemProps} rowState='hover' />
 </TableProp>
 
 <Htwo label="References" />
