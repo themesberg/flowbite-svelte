@@ -9,8 +9,6 @@ description: Use these responsive tabs components to create a secondary navigati
 <script lang="ts">
   import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
-  import { props as items1 }  from '../props/TabHead.json'
-  import { props as items2 }  from '../props/TabHeadItem.json'
   import { props as items3 }  from '../props/TabItem.json'
   import { props as items4 }  from '../props/Tabs.json'
   let propHeader = ['Name', 'Type', 'Default']
@@ -260,18 +258,6 @@ To get a custom look and feel for the `Tabs` component, do not set `style` prop,
 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
-
-<h3 class='text-xl w-full dark:text-white py-4'>TabHead</h3>
-
-<TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={items1} rowState='hover' />
-</TableProp>
-
-<h3 class='text-xl w-full dark:text-white py-4'>TabHeadItem</h3>
-
-<TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>TabItem</h3>
 
