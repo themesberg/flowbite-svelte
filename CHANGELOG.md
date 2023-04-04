@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.34.5](https://github.com/themesberg/flowbite-svelte/compare/v0.34.4...v0.34.5) (2023-04-04)
+
+
+### Bug Fixes
+
+* clean up & remove ExampleDiv, GitHubSource, and CompoDescription ([#639](https://github.com/themesberg/flowbite-svelte/issues/639)) ([113df27](https://github.com/themesberg/flowbite-svelte/commit/113df2716cde7f0c3e0c7aa904bafdc3ece15cd1))
+* forward input event ([#627](https://github.com/themesberg/flowbite-svelte/issues/627)) ([22d20db](https://github.com/themesberg/flowbite-svelte/commit/22d20dbb6845e5ed0d7188e304c406a5c8cb8758))
+* remove unused components and update props ([#642](https://github.com/themesberg/flowbite-svelte/issues/642)) ([e6a4fb5](https://github.com/themesberg/flowbite-svelte/commit/e6a4fb5c63888e1aa90229414d5814e9a3c5fe27))
+* sidebar z-10 to z-30 for front page ([79b5adc](https://github.com/themesberg/flowbite-svelte/commit/79b5adc075633b2fb4904f7b907b0d8e50dc28a3))
+* sidebar z-50 to z-10 for modals ([4b76f75](https://github.com/themesberg/flowbite-svelte/commit/4b76f75650bb5670117c4959cb6b622f639242db))
+
 ### [0.34.4](https://github.com/themesberg/flowbite-svelte/compare/v0.34.3...v0.34.4) (2023-03-31)
 
 
