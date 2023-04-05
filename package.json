@@ -334,10 +334,6 @@
       "types": "./dist/gallery/Gallery.svelte.d.ts",
       "svelte": "./dist/gallery/Gallery.svelte"
     },
-    "./GalleryItem.svelte": {
-      "types": "./dist/gallery/GalleryItem.svelte.d.ts",
-      "svelte": "./dist/gallery/GalleryItem.svelte"
-    },
     "./ArrowKeyDown.svelte": {
       "types": "./dist/kbd/ArrowKeyDown.svelte.d.ts",
       "svelte": "./dist/kbd/ArrowKeyDown.svelte"
