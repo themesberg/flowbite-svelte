@@ -128,7 +128,7 @@ This example can be used to feature the most important image and show a row of f
 </script>
 
 <Gallery class="gap-4">
-  <img src={image1.src} class="h-auto max-w-full rounded-lg" />
+  <img src={image1.src} alt={image1.alt} class="h-auto max-w-full rounded-lg" />
   <Gallery class="grid-cols-5" items={images2} />
 </Gallery>
 ```
