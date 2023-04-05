@@ -43,8 +43,8 @@ Import `Gallery` in the script tag.
 
 Use this component to show a collection of images inside a gallery.
 
-Number of rows in the gallery is set by passing the `grid-col-{n}` Tailwind class (including the reactive prefix).
-Spacing between images is set by `gap-{n}` class. If you don't set them it behaves like `grid-col-1` and `gap: inherit`.
+Number of rows in the gallery is set by passing the `grid-cols-{n}` Tailwind class (including the reactive prefix).
+Spacing between images is set by `gap-{n}` class. If you don't set them it behaves like `grid-cols-1` and `gap: inherit`.
 
 Example below show a gallery with three pictures on a row.
 
