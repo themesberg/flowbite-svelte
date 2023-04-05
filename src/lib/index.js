@@ -18,7 +18,7 @@ export { default as Banner } from './banner/Banner.svelte';
 export { default as BottomNav } from './bottom-nav/BottomNav.svelte';
 export { default as BottomNavItem } from './bottom-nav/BottomNavItem.svelte';
 export { default as BottomNavHeader } from './bottom-nav/BottomNavHeader.svelte';
-export { default as BottomNavHeaderItem } from './bottom-nav/BottomNavHeaderItem.svelte'
+export { default as BottomNavHeaderItem } from './bottom-nav/BottomNavHeaderItem.svelte';
 
 // Breadcrumbs
 export { default as Breadcrumb } from './breadcrumbs/Breadcrumb.svelte';
@@ -80,8 +80,7 @@ export { default as Toggle } from './forms/Toggle.svelte';
 export { default as VoiceSearch } from './forms/VoiceSearch.svelte';
 
 // Gallery
-export { default as Gallery } from './gallery/Gallery.svelte'
-export { default as GalleryItem } from './gallery/GalleryItem.svelte'
+export { default as Gallery } from './gallery/Gallery.svelte';
 
 // Indicator
 export { default as Indicator } from './indicators/Indicator.svelte';

@@ -13,7 +13,6 @@ description: Use the image gallery component based on a masonry grid layout usin
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   // Props table
   import { props as galleryProps } from '../props/Gallery.json'
-  import { props as galleryItemProps } from '../props/GalleryItem.json'
 	let propHeader = ['Name', 'Type', 'Default']
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -32,11 +31,11 @@ This component is recommended for usage within marketing UI interfaces and websi
 
 <Htwo label="Set up" />
 
-Import `Gallery` and `GalleryItem` in the script tag.
+Import `Gallery` in the script tag.
 
 ```html
 <script>
-  import { Gallery, GalleryItem } from 'flowbite-svelte';
+  import { Gallery } from 'flowbite-svelte';
 </script>
 ```
 
@@ -51,7 +50,7 @@ Example below show a gallery with three pictures on a row.
 
 ```svelte example class="flex flex-wrap gap-2"
 <script>
-  import { Gallery, GalleryItem } from "flowbite-svelte";
+  import { Gallery } from "flowbite-svelte";
   const images = [
     {alt: 'erbology', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg'},
     {alt: 'shoes', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg'},
@@ -78,7 +77,7 @@ This example can be used to show the images inside a masongry grid layouts with 
 
 ```svelte example class="flex flex-wrap gap-2"
 <script>
-  import { Gallery, GalleryItem } from "flowbite-svelte";
+  import { Gallery } from "flowbite-svelte";
   const images1 = [
     {alt: 'erbology', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg'},
     {alt: 'shoes', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg'},
@@ -110,13 +109,13 @@ This example can be used to show the images inside a masongry grid layouts with 
 </Gallery>
 ```
 
-<Htwo label="Feaured image" />
+<Htwo label="Featured image" />
 
 This example can be used to feature the most important image and show a row of five pictures below.
 
 ```svelte example class="flex flex-wrap gap-2"
 <script>
-  import { Gallery, GalleryItem } from "flowbite-svelte";
+  import { Gallery } from "flowbite-svelte";
   const image1 = {alt: 'erbology', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg'}
   const images2 = [
     {alt: 'shoes', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg'},
@@ -129,8 +128,8 @@ This example can be used to feature the most important image and show a row of f
 </script>
 
 <Gallery class="gap-4">
-  <GalleryItem src={image1.src} alt={image1.alt} />
-  <Gallery class="gap-4 grid-cols-5" items={images2} />
+  <img src={image1.src} class="h-auto max-w-full rounded-lg" />
+  <Gallery class="grid-cols-5" items={images2} />
 </Gallery>
 ```
 
@@ -140,7 +139,7 @@ Use this example to show four larger images with two items on a row.
 
 ```svelte example class="flex flex-wrap gap-2"
 <script>
-  import { Gallery, GalleryItem } from "flowbite-svelte";
+  import { Gallery } from "flowbite-svelte";
 
   const images = [
     {alt: 'shoes', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg'},
@@ -164,37 +163,76 @@ This example uses the [carousel slider](https://flowbite-svelte.com/components/c
   let showCaptions=false
   let showIndicators=false
   const images = [
-    {
-      id: 0,
-      imgurl: '/images/carousel/cosmic-timetraveler-pYyOZ8q7AII-unsplash.webp',
-      attribution: 'shoes'
-    },
-    {
-      id: 1,
-      imgurl: '/images/carousel/cristina-gottardi-CSpjU6hYo_0-unsplash.webp',
-      attribution: 'small bag'
-    },
-    {
-      id: 2,
-      imgurl: '/images/carousel/johannes-plenio-RwHv7LgeC7s-unsplash.webp',
-      attribution: 'plants'
-    },
-    {
-      id: 3,
-      imgurl: '/images/carousel/jonatan-pie-3l3RwQdHRHg-unsplash.webp',
-      attribution: 'watch'
-    },
-    {
-      id: 4,
-      imgurl: '/images/carousel/mark-harpur-K2s_YE031CA-unsplash.webp',
-      attribution: 'watch'
-    }
+    {id: 0, attribution: 'shoes', imgurl: '/images/carousel/cosmic-timetraveler-pYyOZ8q7AII-unsplash.webp'},
+    {id: 1, attribution: 'small bag', imgurl: '/images/carousel/cristina-gottardi-CSpjU6hYo_0-unsplash.webp'},
+    {id: 2, attribution: 'plants', imgurl: '/images/carousel/johannes-plenio-RwHv7LgeC7s-unsplash.webp'},
+    {id: 3, attribution: 'watch', imgurl: '/images/carousel/jonatan-pie-3l3RwQdHRHg-unsplash.webp'},
+    {id: 4, attribution: 'watch', imgurl: '/images/carousel/mark-harpur-K2s_YE031CA-unsplash.webp'}
   ]
 </script>
 
 <div class="max-w-4xl">
   <CarouselTransition {images} loop {showThumbs} {showCaptions} {showIndicators} transitionType="fly" transitionParams="{{delay: 250, duration: 300, x: 100}}"/>
 </div>
+```
+
+<Htwo label="Gallery with tag filters" />
+
+Use this example to show a list of tags and filter the images below based on the activately selected tag.
+
+
+```svelte example class="flex flex-wrap gap-2" hideScript
+
+<script>
+  import { Gallery, Button } from "flowbite-svelte";
+  const images = [
+    {alt: 'erbology', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg'},
+    {alt: 'shoes', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg'},
+    {alt: 'small bag', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg'},
+    {alt: 'plants', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg'},
+    {alt: 'watch', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg'},
+    {alt: 'shoe', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg'},
+    {alt: 'cream', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg'},
+    {alt: 'small bag', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-7.jpg'},
+    {alt: 'lamp', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-8.jpg'},
+    {alt: 'toiletbag', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-9.jpg'},
+    {alt: 'playstation', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg'},
+    {alt: 'bag', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg'}
+  ]
+</script>
+
+<div class="flex items-center justify-center py-4 md:py-8 flex-wrap gap-3 mb-3 mx-auto">
+    <Button pill size="xl" outline>All categories</Button>
+    <Button pill size="xl" color="alternative">Shoes</Button>
+    <Button pill size="xl" color="alternative">Bags</Button>
+    <Button pill size="xl" color="alternative">Electronics</Button>
+    <Button pill size="xl" color="alternative">Gaming</Button>
+</div>
+
+<Gallery items={images} class="gap-4 grid-cols-2 md:grid-cols-3" />
+```
+
+<Htwo label="Custom image rendering" />
+
+This example shows how to get a complete control over the gallery images look and feel.
+
+```svelte example class="flex flex-wrap gap-2" hideScript
+<script>
+  import { Gallery } from "flowbite-svelte";
+  const images = [
+    {alt: 'shoes', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg'},
+    {alt: 'small bag', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg'},
+    {alt: 'plants', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg'},
+    {alt: 'watch', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg'},
+    {alt: 'shoe', src: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg'},
+  ]
+</script>
+
+<Gallery class="gap-4 grid-cols-3" items={images} let:item>
+  <div class="ring-4  ring-red-600 dark:ring-red-400 p-1">
+    <img src={item.src} alt={item.alt} class="h-auto max-w-full" />
+  </div>
+</Gallery>
 ```
 
 <Htwo label="Props" />
@@ -207,11 +245,6 @@ The component has the following props, type, and default values. See <A href="/p
 <TableDefaultRow items={galleryProps} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>GalleryItem</h3>
-
-<TableProp header={propHeader} {divClass} {theadClass}>
-<TableDefaultRow items={galleryItemProps} rowState='hover' />
-</TableProp>
 
 <Htwo label="References" />
 

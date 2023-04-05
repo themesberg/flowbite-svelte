@@ -1,7 +1,6 @@
 <script lang="ts">
   import type { ImgType } from '$lib/types';
   import classNames from 'classnames';
-  import GalleryItem from './GalleryItem.svelte';
 
   export let items: ImgType[] = [];
 
@@ -13,8 +12,10 @@
 </script>
 
 <div {...$$restProps} class={divClass} use:init>
-  {#each items as { src, alt }}
-    <GalleryItem {src} {alt} />
+  {#each items as item}
+    <slot {item}>
+      <div><img src={item.src} alt={item.alt} class='h-auto max-w-full rounded-lg' /></div>
+    </slot>  
   {:else}
     <slot />
   {/each}
