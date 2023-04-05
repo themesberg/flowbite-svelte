@@ -29,3 +29,8 @@ test('Type list page should have h1', async ({ page }) => {
 	await page.goto('/pages/types');
 	expect(await page.textContent('h1')).toBe('Types');
 });
+
+test('Faster Compiling Speed page should have h1', async ({ page }) => {
+	await page.goto('/pages/faster-compiling-speed');
+	expect(await page.textContent('h1')).toBe('Faster Compiling Speed');
+});
