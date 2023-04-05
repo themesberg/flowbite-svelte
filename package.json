@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "0.34.5",
+  "version": "0.34.6",
   "description": "Flowbite components for Svelte",
   "author": {
     "name": "Shinichi Okada",
@@ -549,14 +549,6 @@
     "./TableSearch.svelte": {
       "types": "./dist/tables/TableSearch.svelte.d.ts",
       "svelte": "./dist/tables/TableSearch.svelte"
-    },
-    "./TabHead.svelte": {
-      "types": "./dist/tabs/TabHead.svelte.d.ts",
-      "svelte": "./dist/tabs/TabHead.svelte"
-    },
-    "./TabHeadItem.svelte": {
-      "types": "./dist/tabs/TabHeadItem.svelte.d.ts",
-      "svelte": "./dist/tabs/TabHeadItem.svelte"
     },
     "./TabItem.svelte": {
       "types": "./dist/tabs/TabItem.svelte.d.ts",
