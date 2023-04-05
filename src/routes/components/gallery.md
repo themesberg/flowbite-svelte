@@ -212,6 +212,23 @@ Use this example to show a list of tags and filter the images below based on the
 <Gallery items={images} class="gap-4 grid-cols-2 md:grid-cols-3" />
 ```
 
+<Htwo label="Heterogeneous gallery" />
+             
+Gallery items don't have to be all the same but then you need to list them manually - don't set the `items` property.
+
+```svelte example class="flex flex-wrap gap-2" hideScript
+<script>
+  import { Gallery } from "flowbite-svelte";
+</script>
+
+<Gallery class="gap-4 grid-cols-2">
+  <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="shoas" class="h-auto max-w- rounded-lg" />
+  <div class="h-auto max-w- rounded-lg flex items-center justify-center text-6xl font-extrabold bg-red-300" >Sale</div>
+  <div class="h-auto max-w- rounded-lg flex items-center justify-center text-6xl font-extrabold bg-blue-300" >Sale</div>
+  <img alt="plants" src='https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg' class="h-auto max-w- rounded-lg" />
+</Gallery>
+```
+
 <Htwo label="Custom image rendering" />
 
 This example shows how to get a complete control over the gallery images look and feel.
@@ -229,7 +246,7 @@ This example shows how to get a complete control over the gallery images look an
 </script>
 
 <Gallery class="gap-4 grid-cols-3" items={images} let:item>
-  <div class="ring-4  ring-red-600 dark:ring-red-400 p-1">
+  <div class="ring-4 ring-red-600 dark:ring-red-400 p-1">
     <img src={item.src} alt={item.alt} class="h-auto max-w-full" />
   </div>
 </Gallery>
