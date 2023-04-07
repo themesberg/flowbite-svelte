@@ -1,5 +1,5 @@
 ---
-layout: formLayout
+layout: componentLayout
 title: Svelte Checkbox - Flowbite
 breadcrumb_title: Checkbox
 dir: Forms

@@ -65,7 +65,7 @@
   });
   $: activeUrl = $page.url.pathname;
   let logo = '/images/flowbite-svelte-icon-logo.svg';
-  let spanClass = 'pl-2 self-center text-md text-gray-900 whitespace-nowrap dark:text-white';
+  let spanClass = 'self-center text-sm text-gray-900 whitespace-nowrap dark:text-white';
   let darkModeClass = 'text-lg';
   let divClass = 'w-full md:block md:w-auto pr-8 order-1 md:order-none';
   let ulClass = 'flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-lg md:font-medium';
@@ -98,132 +98,133 @@
     </NavUl>
     <DarkMode class={darkModeClass} />
   </Navbar>
-  <Drawer
-    transitionType="fly"
-    {backdrop}
-    {transitionParams}
-    bind:hidden={drawerHidden}
-    bind:activateClickOutside
-    leftOffset="lg:top-32 h-screen lg:left-0"
-    id="sidebar"
-    width="w-64"
-    class="overflow-scroll pb-24"
-    divClass='overflow-y-auto z-30 p-4 bg-white dark:bg-gray-900'>
-    <div class="flex items-center">
-      <CloseButton on:click={() => (drawerHidden = true)} class="mb-4 dark:text-white lg:hidden" />
-    </div>
-    <Sidebar asideClass="w-54">
-      <SidebarWrapper 
-      divClass='overflow-y-auto py-4 px-3 bg-white rounded dark:bg-gray-900'>
-        <SidebarGroup>
-          {#each data.pages as { meta, path }}
-            <SidebarItem
-              label={meta.title}
-              href={`/pages${path}`}
-              {spanClass}
-              on:click={toggleSide}
-              active={activeUrl === `/pages${path}`} />
-          {/each}
-        </SidebarGroup>
-        <SidebarGroup class="pt-4">
-          <SidebarDropdownWrapper label="COMPONENTS" isOpen={activeUrl.includes('components')}>
-            {#each data.components as { meta, path }}
-              <SidebarItem
-                label={meta.breadcrumb_title}
-                href={`/components${path}`}
-                {spanClass}
-                on:click={toggleSide}
-                active={activeUrl === `/components${path}`} />
-            {/each}
-          </SidebarDropdownWrapper>
-        </SidebarGroup>
-        <SidebarGroup class="pt-4">
-          <SidebarDropdownWrapper label="FORMS" isOpen={activeUrl.includes('forms')}>
-            {#each data.forms as { meta, path }}
-              <SidebarItem
-                label={meta.breadcrumb_title}
-                href={`/forms${path}`}
-                {spanClass}
-                on:click={toggleSide}
-                active={activeUrl === `/forms${path}`} />
-            {/each}
-          </SidebarDropdownWrapper>
-        </SidebarGroup>
-        <SidebarGroup class="pt-4">
-          <SidebarDropdownWrapper label="TYPOGRAPHY" isOpen={activeUrl.includes('typography')}>
-            {#each data.typography as { meta, path }}
-              <SidebarItem
-                label={meta.breadcrumb_title}
-                href={`/typography${path}`}
-                {spanClass}
-                on:click={toggleSide}
-                active={activeUrl === `/typography${path}`} />
-            {/each}
-          </SidebarDropdownWrapper>
-        </SidebarGroup>
-        <SidebarGroup class="pt-4">
-          <SidebarDropdownWrapper label="EXAMPLES" isOpen={activeUrl.includes('examples')}>
-            <SidebarItem
-              label='Sidebar layout'
-              href={'/examples/sidebar-layout'}
-              {spanClass}
-              on:click={toggleSide}
-              active={activeUrl === '/examples/sidebar-layout'} />
-            <SidebarItem
-              label='Snapshot'
-              href={'/examples/snapshot'}
-              {spanClass}
-              on:click={toggleSide}
-              active={activeUrl === '/examples/snapshot'} />
-          </SidebarDropdownWrapper>
-        </SidebarGroup>
-        <SidebarGroup class="pt-4">
-          <SidebarDropdownWrapper label="EXTEND" isOpen={activeUrl.includes('extend')}>
-            {#each data.extend as { meta, path }}
-              <SidebarItem
-                label={meta.breadcrumb_title}
-                href={`/extend${path}`}
-                {spanClass}
-                on:click={toggleSide}
-                active={activeUrl === `/extend${path}`} />
-            {/each}
-          </SidebarDropdownWrapper>
-        </SidebarGroup>
-        <SidebarGroup class="pt-4">
-          <SidebarDropdownWrapper label="UTILS" isOpen={activeUrl.includes('utilities')}>
-            {#each data.utils as { meta, path }}
-              <SidebarItem
-                label={meta.breadcrumb_title}
-                href={`/utilities${path}`}
-                {spanClass}
-                on:click={toggleSide}
-                active={activeUrl === `/utilities${path}`} />
-            {/each}
-          </SidebarDropdownWrapper>
-        </SidebarGroup>
-        <SidebarGroup class="pt-4 pb-32">
-          <SidebarDropdownWrapper label="EXPERIMENTAL" isOpen={activeUrl.includes('datepicker')}>
-            {#each experimental as { href, name, rel }}
-              <SidebarItem
-                label={name}
-                {href}
-                {rel}
-                {spanClass}
-                on:click={toggleSide}
-                active={activeUrl === `${href}`} />
-            {/each}
-          </SidebarDropdownWrapper>
-        </SidebarGroup>
+
+  
+  <div class="container flex px-4 mx-auto w-full relative">
+    <Sidebar asideClass="w-54 mt-12">
+      <SidebarWrapper divClass='h-screen overflow-y-auto py-4 px-3 bg-white rounded dark:bg-gray-900 pb-32 sticky top-24'>
+        <ul class="sticky">
+          <li class="mt-8">
+            <h5 class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">Getting started</h5>
+            <SidebarGroup ulClass="">
+              {#each data.pages as { meta, path }}
+                <SidebarItem
+                  label={meta.title}
+                  href={`/pages${path}`}
+                  {spanClass}
+                  on:click={toggleSide}
+                  active={activeUrl === `/pages${path}`} />
+              {/each}
+            </SidebarGroup>    
+            </li>
+          
+            <li class="mt-8">
+              <h5 class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">Components</h5>
+              <SidebarGroup ulClass="">
+                  {#each data.components as { meta, path }}
+                    <SidebarItem
+                      label={meta.breadcrumb_title}
+                      href={`/components${path}`}
+                      {spanClass}
+                      on:click={toggleSide}
+                      active={activeUrl === `/components${path}`} />
+                  {/each}
+                </SidebarGroup>
+            </li>
+            <li class="mt-8">
+              <h5 class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">Froms</h5>
+              <SidebarGroup ulClass="">
+                  {#each data.forms as { meta, path }}
+                    <SidebarItem
+                      label={meta.breadcrumb_title}
+                      href={`/forms${path}`}
+                      {spanClass}
+                      on:click={toggleSide}
+                      active={activeUrl === `/forms${path}`} />
+                  {/each}
+              </SidebarGroup>
+            </li>
+            <li class="mt-8">
+              <h5 class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">Typography</h5>
+              <SidebarGroup ulClass="">
+                {#each data.typography as { meta, path }}
+                  <SidebarItem
+                    label={meta.breadcrumb_title}
+                    href={`/typography${path}`}
+                    {spanClass}
+                    on:click={toggleSide}
+                    active={activeUrl === `/typography${path}`} />
+                {/each}
+              </SidebarGroup>
+            </li>
+            <li class="mt-8">
+              <h5 class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">Examples</h5>
+              <SidebarGroup ulClass="">
+                <SidebarItem
+                  label='Sidebar layout'
+                  href={'/examples/sidebar-layout'}
+                  {spanClass}
+                  on:click={toggleSide}
+                  active={activeUrl === '/examples/sidebar-layout'} />
+                <SidebarItem
+                  label='Snapshot'
+                  href={'/examples/snapshot'}
+                  {spanClass}
+                  on:click={toggleSide}
+                  active={activeUrl === '/examples/snapshot'} />
+              </SidebarGroup>
+            </li>
+            <li class="mt-8">
+              <h5 class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">Extend</h5>
+              <SidebarGroup ulClass="">
+                  {#each data.extend as { meta, path }}
+                    <SidebarItem
+                      label={meta.breadcrumb_title}
+                      href={`/extend${path}`}
+                      {spanClass}
+                      on:click={toggleSide}
+                      active={activeUrl === `/extend${path}`} />
+                  {/each}
+              </SidebarGroup>
+            </li>
+            <li class="mt-8">
+              <h5 class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">Utils</h5>
+              <SidebarGroup ulClass="">
+                  {#each data.utils as { meta, path }}
+                    <SidebarItem
+                      label={meta.breadcrumb_title}
+                      href={`/utilities${path}`}
+                      {spanClass}
+                      on:click={toggleSide}
+                      active={activeUrl === `/utilities${path}`} />
+                  {/each}
+              </SidebarGroup>
+            </li>
+            <li class="mt-8">
+              <h5 class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">Experimental</h5>
+              <SidebarGroup ulClass="">
+                  {#each experimental as { href, name, rel }}
+                    <SidebarItem
+                      label={name}
+                      {href}
+                      {rel}
+                      {spanClass}
+                      on:click={toggleSide}
+                      active={activeUrl === `${href}`} />
+                  {/each}
+              </SidebarGroup>
+            </li>
+          </ul>
       </SidebarWrapper>
     </Sidebar>
-  </Drawer>
 
-  <div class="flex px-4 mx-auto w-full">
-    <main bind:this={main} class="lg:ml-72 w-full mx-auto">
+    <main bind:this={main} class="flex-auto w-full min-w-0 lg:static lg:max-h-full lg:overflow-visible">
       <slot />
     </main>
     <Toc />
   </div>
+
+
   <div class="mx-auto mb-4 pt-4 lg:pl-64">
     <Footer footerType="custom" customClass="py-6 px-16 bg-white dark:bg-gray-900">
       <div class="md:flex md:justify-between">

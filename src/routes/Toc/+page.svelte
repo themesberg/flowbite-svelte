@@ -24,7 +24,7 @@
 </script>
 
 {#if headings.length}
-  <div class="hidden flex-none w-56 xl:text-sm xl:block text-gray-500 dark:text-gray-400">
+  <div class="hidden flex-none w-64 xl:text-sm xl:block text-gray-500 dark:text-gray-400">
     <div class="flex flex-col justify-between overflow-y-auto max-h-screen pt-16 pb-16 px-8 top-20 sticky">
       <h5
         class="mb-3 text-sm font-semibold tracking-wide text-gray-900 uppercase dark:text-white lg:text-xs">

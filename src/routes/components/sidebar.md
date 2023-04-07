@@ -33,9 +33,10 @@ The sidebar component can be used as a complementary element relative to the nav
 
 ## Setup
 
-```html
+```svelte
 <script>
-  import { Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper } from 'flowbite-svelte';
+  import { Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, 
+           SidebarGroup, SidebarItem, SidebarWrapper } from 'flowbite-svelte';
 </script>
 ```
 
