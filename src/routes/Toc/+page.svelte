@@ -17,7 +17,8 @@
   function toc() {
     if (typeof document === `undefined`) return; // for SSR
     headings = [...document.querySelectorAll<HTMLElement>(headingSelector)].map((x: HTMLElement) => {
-      return { href: '#' + x.id, name: x.innerText };
+      if(!x.childNodes[2]) console.log(x)
+      return { href: '#' + x.childNodes[2].id, name: x?.childNodes[0]?.nodeValue ??"" };
     });
   }
 </script>

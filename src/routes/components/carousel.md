@@ -9,8 +9,8 @@ description: Use the carousel component to slide through multiple elements and i
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { P, A } from '$lib'
   // Props table
   import { props as items } from '../props/Carousel.json'
   import { props as items2 } from '../props/CarouselTransition.json'
@@ -30,7 +30,7 @@ description: Use the carousel component to slide through multiple elements and i
 
 The carousel component can be used to cycle through a set of elements using custom options, controls, and indicators.
 
-<Htwo label="Setup" />
+## Setup
 
 ```html
 <script>
@@ -89,7 +89,7 @@ The carousel component can be used to cycle through a set of elements using cust
 </script>
 ```
 
-<Htwo label="Default Carousel" />
+## Default Carousel
 
 ```svelte example
 <script>
@@ -102,7 +102,7 @@ The carousel component can be used to cycle through a set of elements using cust
 </div>
 ```
 
-<Htwo label="Loop" />
+## Loop
 
 <p>Use `loop` prop to loop the carousel. Use `duration=number` to set the interval</p>
 
@@ -119,7 +119,7 @@ The carousel component can be used to cycle through a set of elements using cust
 </div>
 ```
 
-<Htwo label="Without thumbnails"/>
+## Without thumbnails
 
 <p>The `showThumbs` is set to `true`. Set it to `false` to hide it.</p>
 
@@ -135,7 +135,7 @@ The carousel component can be used to cycle through a set of elements using cust
 </div>
 ```
 
-<Htwo label="Without caption" />
+## Without caption
 
 <p>To hide the caption, set `showCaptions` to `false`.</p>
 
@@ -152,7 +152,7 @@ The carousel component can be used to cycle through a set of elements using cust
 </div>
 ```
 
-<Htwo label="Without indicators" />
+## Without indicators
 
 <p>To hide the indicators, set `showIndicators` to `false`.</p>
 
@@ -170,7 +170,7 @@ The carousel component can be used to cycle through a set of elements using cust
 </div>
 ```
 
-<Htwo label="Without slide controllers" />
+## Without slide controllers
 
 <p>To hide the slide controllers, set `slideControls` to `false`.</p>
 
@@ -188,7 +188,7 @@ The carousel component can be used to cycle through a set of elements using cust
 </div>
 ```
 
-<Htwo label="Custom slide controllers" />
+## Custom slide controllers
 
 <p>You can add custom slide controllers using <a href="/icons/heroicons">Svelte-Heros icons</a>. Change the size using the `iconSize` prop and style with the `iconClass` prop.</p>
 
@@ -208,7 +208,7 @@ The carousel component can be used to cycle through a set of elements using cust
 </div>
 ```
 
-<Htwo label="Carousel transition" />
+## Carousel transition
 
 ```svelte example
 <script>
@@ -221,7 +221,7 @@ The carousel component can be used to cycle through a set of elements using cust
 </div>
 ```
 
-<Htwo label="Loop" />
+## Loop
 
 <p>Use `loop` prop to loop the carousel. Use `duration=number` to set the interval</p>
 
@@ -236,7 +236,7 @@ The carousel component can be used to cycle through a set of elements using cust
 </div>
 ```
 
-<Htwo label="Fly example" />
+## Fly example
 
 ```svelte example
 <script>
@@ -248,7 +248,7 @@ The carousel component can be used to cycle through a set of elements using cust
 </div>
 ```
 
-<Htwo label="Slide example" />
+## Slide example
 
 ```svelte example
 <script>
@@ -261,7 +261,7 @@ The carousel component can be used to cycle through a set of elements using cust
 </div>
 ```
 
-<Htwo label="Props" />
+## Props
 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
@@ -302,7 +302,7 @@ The carousel component can be used to cycle through a set of elements using cust
   <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/carousel/" target="_blank" rel="noreferrer" class="link"

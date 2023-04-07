@@ -9,8 +9,8 @@ description: The Drawer component can be used as a hidden off-canvas sidebar for
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import {  Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib';
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Heading, P, A } from '$lib';
   // Props table
   import { props as items} from '../props/Drawer.json'
   let propHeader = ['Name', 'Type', 'Default']
@@ -24,7 +24,7 @@ description: The Drawer component can be used as a hidden off-canvas sidebar for
 
 Use the Drawer component (or “off-canvas”) to show a fixed element relative to the document page from any side for navigation, contact forms, informational purposes or other user actions.
 
-<Htwo label="Set up" />
+## Set up
 
 ```html
 <script>
@@ -33,7 +33,7 @@ Use the Drawer component (or “off-canvas”) to show a fixed element relative 
 </script>
 ```
 
-<Htwo label="Default drawer" />
+## Default drawer
 
 To initiate the drawer component you need to set the `let hidden=true`, `width` props to the drawer component itself.
 
@@ -78,7 +78,7 @@ For accessibility you should also set the `id` prop to the element. This will ad
 </Drawer>
 ```
 
-<Htwo label="Drawer navigation" />
+## Drawer navigation
 
 Use this example to show a navigational sidebar inside the drawer component.
 
@@ -159,7 +159,7 @@ Use this example to show a navigational sidebar inside the drawer component.
 </Drawer>
 ```
 
-<Htwo label='Contact form' />
+## Contact form
 
 Use this example to show a contact form inside the drawer component.
 
@@ -208,7 +208,7 @@ Use this example to show a contact form inside the drawer component.
 </Drawer>
 ```
 
-<Htwo label='Form elements' />
+## Form elements
 
 Use this example if you want to add form elements inside the drawer component including datepickers.
 
@@ -263,7 +263,7 @@ Use this example if you want to add form elements inside the drawer component in
 </Drawer>
 ```
 
-<Htwo label="Placement" />
+## Placement
 
 Use the placement prop to position the drawer component either on the top, right, bottom, or left side of the document page. This can be done using the `placement='left|right|top|bottom'` where the default value is “left”.
 
@@ -448,7 +448,7 @@ Use this example to show the drawer on the bottom side of the page.
 </Drawer>
 ```
 
-<Htwo label="Backdrop" />
+## Backdrop
 
 The backdrop element can be used to dim out the background elements when the drawer is visible and also automatically hide the component when clicking outside of it.
 
@@ -543,7 +543,7 @@ Use the `backdrop={false}` prop to disable the backdrop element when the drawer 
 </Drawer>
 ```
 
-<Htwo label='Position'/>
+## Position
 
 Use `leftOffset|rightOffset|topOffset|bottomOffset` prop to change the position of the drawer.
 
@@ -613,7 +613,7 @@ Use `leftOffset|rightOffset|topOffset|bottomOffset` prop to change the position 
 </Drawer>
 ```
 
-<Htwo label='Disabling outside click and backdrop'/>
+## Disabling outside click and backdrop
 
 As the default, the drawer closes when you click the outside of the drawer.
 However sometimes you don't want that. Set `activateClickOutside` to false to disable it.
@@ -656,7 +656,7 @@ However sometimes you don't want that. Set `activateClickOutside` to false to di
 </Drawer>
 ```
 
-<Htwo label="Disabling only outside click" />
+## Disabling only outside click
 
 ```svelte example
 <script>
@@ -698,7 +698,7 @@ However sometimes you don't want that. Set `activateClickOutside` to false to di
 </Drawer>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.
@@ -707,7 +707,7 @@ The component has the following props, type, and default values. See <A href="/p
 <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/drawer/" target="_blank" rel="noreferrer" class="link"

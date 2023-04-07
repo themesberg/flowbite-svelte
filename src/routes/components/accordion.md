@@ -9,8 +9,8 @@ description: Use the accordion component to show hidden information based on the
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'; 
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { P, A } from '$lib'; 
   // Props 
   import {props as accordionProps} from '../props/Accordion.json'
   import {props as accordionItemProps} from '../props/AccordionItem.json'
@@ -31,7 +31,7 @@ The accordion component is a collection of vertically collapsing header and body
 
 A popular use case would be the “Frequently Asked Questions” section of a website or page when you can show questions and answers for each child element.
 
-<Htwo label="Setup" />
+## Setup
 
 ```html
 <script>
@@ -39,7 +39,7 @@ A popular use case would be the “Frequently Asked Questions” section of a we
 </script>
 ```
 
-<Htwo label="Default accordion" />
+## Default accordion
 
 Accordion uses the single selection mode by default i.e. it collapses every other child element when expanding a one.
 
@@ -68,7 +68,7 @@ To prevent that behavior set `multiple` property to `true`.
 </Accordion>
 ```
 
-<Htwo label="Always open" />
+## Always open
 
 Use the `open` prop to make an item open on mount.
 
@@ -89,7 +89,7 @@ Use the `open` prop to make an item open on mount.
 </Accordion>
 ```
 
-<Htwo label="Color option" />
+## Color option
 
 You can control the look and feel of `AccordionItems` by overwriting the `acctiveClasses` and `inactiveClasses` properties. You can define them in `Accordion` so that they will apply to all children or set them individually on each `AccordionItem`.
 
@@ -113,7 +113,7 @@ You can control the look and feel of `AccordionItems` by overwriting the `acctiv
 </Accordion>
 ```
 
-<Htwo label="Flush accordion" />
+## Flush accordion
 
 Use `flush` prop to remove the rounded borders.
 
@@ -134,7 +134,7 @@ Use `flush` prop to remove the rounded borders.
 </Accordion>
 ```
 
-<Htwo label="Arrow style" />
+## Arrow style
 
 Use the `arrowup` and `arrowdown` slots to set up and down icons.
 
@@ -167,7 +167,7 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
 </Accordion>
 ```
 
-<Htwo label="Icon Accordion" />
+## Icon Accordion
 
 ```svelte example hideScript
 <script>
@@ -193,7 +193,7 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
 </Accordion>
 ```
 
-<Htwo label="Multiple mode" />
+## Multiple mode
 
 Example how to use the `multiple` option together with expand all behavior.
 
@@ -226,7 +226,7 @@ Example how to use the `multiple` option together with expand all behavior.
 </Accordion>
 ```
 
-<Htwo label="Custom transitions" />
+## Custom transitions
 
 The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#run-time-svelte-transition-slide">slide</A>. Use the `transitionType` and `transitionParams` props to make custom transitions.
 
@@ -250,7 +250,7 @@ The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#r
 </Accordion>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
@@ -266,7 +266,7 @@ The component has the following props, type, and default values. See <A href="/p
   <TableDefaultRow items={accordionItemProps} rowState='hover' />
 </TableProp>
 
-<Htwo label="Slots" />
+## Slots
 
 <h3 class='text-xl w-full dark:text-white py-4'>Accordion</h3>
 
@@ -280,6 +280,6 @@ The component has the following props, type, and default values. See <A href="/p
   <TableDefaultRow items={slotItems2} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P><A href="https://flowbite.com/docs/components/accordion/" target="_blank" rel="noreferrer" class="link">Flowbite Accordion</A></P>

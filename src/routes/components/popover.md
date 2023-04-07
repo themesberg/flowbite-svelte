@@ -9,8 +9,8 @@ description: Use the popover component to show detailed information inside a pop
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
+  import { P, A } from '$lib'
   import { props as items } from '../props/Popover.json'
   import { props as items2 } from '../props/Popper.json'
   import { props as items3 } from '../props/Frame.json'
@@ -27,7 +27,7 @@ Get started with the popover component to show any type of content inside a pop-
 
 Make sure that you have the Flowbite JavaScript included in your project to enable the popover interactivity by following the quickstart guide.
 
-<Htwo label="Setup" />
+## Setup
 
 ```html
 <script>
@@ -35,7 +35,7 @@ Make sure that you have the Flowbite JavaScript included in your project to enab
 </script>
 ```
 
-<Htwo label="Default popover" />
+## Default popover
 
 ```svelte example class="flex h-44 items-end justify-center"
 <script>
@@ -48,7 +48,7 @@ Make sure that you have the Flowbite JavaScript included in your project to enab
 </Popover>
 ```
 
-<Htwo label="User profile" />
+## User profile
 
 Use this example to show more information about a user profile when hovering over the trigger component.
 
@@ -89,7 +89,7 @@ Use this example to show more information about a user profile when hovering ove
 </Popover>
 ```
 
-<Htwo label="Company profile" />
+## Company profile
 
 This example can be used to show more information about a company profile.
 
@@ -142,7 +142,7 @@ This example can be used to show more information about a company profile.
 </Popover>
 ```
 
-<Htwo label="Image popover" />
+## Image popover
 
 Use this example to trigger a popover component with detailed information and an image when hovering over a portion of highlighted text inspired by Wikipedia and other large news outlets.
 
@@ -166,7 +166,7 @@ Use this example to trigger a popover component with detailed information and an
 </Popover>
 ```
 
-<Htwo label="Description popover" />
+## Description popover
 
 Show helpful information inside a popover when hovering over a question mark button.
 
@@ -191,7 +191,7 @@ Show helpful information inside a popover when hovering over a question mark but
 </Popover>
 ```
 
-<Htwo label="Progress popover" />
+## Progress popover
 
 Show a progress bar with details inside a popover when hovering over a settings button.
 
@@ -215,7 +215,7 @@ Show a progress bar with details inside a popover when hovering over a settings 
 </Popover>
 ```
 
-<Htwo label="Password strength" />
+## Password strength
 
 Dynamically show the password strength progress when creating a new password positioned relative to the input element.
 
@@ -261,7 +261,7 @@ Upper &amp; lower case letters
 </Popover>
 ```
 
-<Htwo label="Placement" />
+## Placement
 
 Set the position of the popover component relative to the trigger element by using the `placement={top|right|bottom|left}` data attribute and its values.
 
@@ -282,7 +282,7 @@ Set the position of the popover component relative to the trigger element by usi
 </Popover>
 ```
 
-<Htwo label="Triggering" />
+## Triggering
 
 ```svelte example class="flex h-44 items-end justify-center gap-4"
 <script>
@@ -299,7 +299,7 @@ Set the position of the popover component relative to the trigger element by usi
 </Popover>
 ```
 
-<Htwo label="Offset" />
+## Offset
 
 Increase or decrease the default offset by adding the `offset` attribute where the value is an integer.
 
@@ -314,7 +314,7 @@ Increase or decrease the default offset by adding the `offset` attribute where t
 </Popover>
 ```
 
-<Htwo label="Animation" />
+## Animation
 
 Customize the animation of the popover component by using the transition functions from Svelte.
 
@@ -338,7 +338,7 @@ Customize the animation of the popover component by using the transition functio
 </Popover>
 ```
 
-<Htwo label="Disable arrow" />
+## Disable arrow
 
 You can also disable the popover arrow by setting `arrow` attribute to `false`.
 
@@ -353,7 +353,7 @@ You can also disable the popover arrow by setting `arrow` attribute to `false`.
 </Popover>
 ```
 
-<Htwo label="Props" />
+## Props
 
 <h3 class='text-xl w-full dark:text-white py-4'>Popover</h3>
 
@@ -379,7 +379,7 @@ The component inherits the following props, type, and default values from `Frame
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/popover/" target="_blank" rel="noreferrer" class="link">Flowbite Popover</A>

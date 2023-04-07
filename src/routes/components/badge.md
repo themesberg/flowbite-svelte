@@ -9,8 +9,8 @@ description: Use Tailwind CSS badges as elements to show counts or labels separa
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { P, A } from '$lib'
   import { props as badgeProps } from '../props/Badge.json'
   // Props table
   let propHeader = ['Name', 'Type', 'Default']
@@ -26,7 +26,7 @@ The badge component can be used to complement other elements such as buttons or 
 
 Alternatively, badges can also be used as standalone elements that link to a certain page.
 
-<Htwo label="Setup" />
+## Setup
 
 Import a badge component in the script tag.
 
@@ -36,7 +36,7 @@ Import a badge component in the script tag.
 </script>
 ```
 
-<Htwo label="Default badge" />
+## Default badge
 
 Use the following badge elements to indicate counts or labels inside or outside components.
 
@@ -54,7 +54,7 @@ Use the following badge elements to indicate counts or labels inside or outside 
 <Badge color="pink">Pink</Badge>
 ```
 
-<Htwo label="Large badges" />
+## Large badges
 
 Use the `large` prop to create a large variant of the badges.
 
@@ -72,7 +72,7 @@ Use the `large` prop to create a large variant of the badges.
 <Badge large color="pink">Pink</Badge>
 ```
 
-<Htwo label="Bordered badge" />
+## Bordered badge
 
 Use the `border` prop to add a border accent to the badge component.
 
@@ -90,7 +90,7 @@ Use the `border` prop to add a border accent to the badge component.
 <Badge border color="pink">Pink</Badge>
 ```
 
-<Htwo label="Pills badge" />
+## Pills badge
 
 Use the `rounded` prop to make the corners even more rounded like pills for the badge component.
 
@@ -108,7 +108,7 @@ Use the `rounded` prop to make the corners even more rounded like pills for the 
 <Badge rounded color="pink">Pink</Badge>
 ```
 
-<Htwo label="Badges as links" />
+## Badges as links
 
 You can also use badges as anchor elements to link to another page.
 
@@ -122,7 +122,7 @@ You can also use badges as anchor elements to link to another page.
 <Badge href="/" rounded>Badge link</Badge>
 ```
 
-<Htwo label="Badges with icon" />
+## Badges with icon
 
 You can also use SVG icons inside the badge elements.
 
@@ -140,7 +140,7 @@ You can also use SVG icons inside the badge elements.
 </Badge>
 ```
 
-<Htwo label="Notification badge" />
+## Notification badge
 
 You can also use the badge elements as index. Remember to add the `relative` class to parent element.
 
@@ -198,7 +198,7 @@ You can also use the badge elements as index. Remember to add the `relative` cla
 </Button>
 ```
 
-<Htwo label="Button with badge" />
+## Button with badge
 
 Use this example to add a badge inside a button component for a count indicator.
 
@@ -215,7 +215,7 @@ Use this example to add a badge inside a button component for a count indicator.
 </Button>
 ```
 
-<Htwo label="Badge with icon only" />
+## Badge with icon only
 
 Alternatively you can also use badges which indicate only a SVG icon.
 
@@ -241,7 +241,7 @@ Alternatively you can also use badges which indicate only a SVG icon.
 </Badge>
 ```
 
-<Htwo label="Dismissable badges" />
+## Dismissable badges
 
 Use the `dimissable` prop to dismiss the current badge.
 
@@ -292,7 +292,7 @@ A `dismiss` event will be dispatched during the dismissal, listen to it if neede
 <Badge dismissable large on:dismiss={handleDismiss}>Default</Badge>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.
@@ -301,7 +301,7 @@ The component has the following props, type, and default values. See <A href="/p
   <TableDefaultRow items={badgeProps} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 		
 <P>
   <A href="https://flowbite.com/docs/components/badge/" target="_blank" rel="noreferrer" class="link"

@@ -9,8 +9,8 @@ description: Use the rating component to show reviews and testimonials from your
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { P, A } from '$lib'
   // Props table
   import { props as items } from '../props/Rating.json'
   import { props as items2 } from '../props/AdvancedRating.json'
@@ -31,7 +31,7 @@ Get started with the rating component to show an aggregate of reviews and scores
 
 You can find multiple examples on this page including different styles, sizes, and variants of the rating component and other associated elements such as a comment or card.
 
-<Htwo label="Setup" />
+## Setup
 
 Let's import all necessary components in the script tag. We import a heart, thumb-up, and smiley icons, but you can use any icons as you like.
 
@@ -41,7 +41,7 @@ Let's import all necessary components in the script tag. We import a heart, thum
 </script>
 ```
 
-<Htwo label="Default rating" />
+## Default rating
 
 The default rating icon is a star. Set the total and rating props.
 
@@ -54,7 +54,7 @@ The default rating icon is a star. Set the total and rating props.
 <Rating total={5} rating={4.66} />
 ```
 
-<Htwo label="Ceil prop" />
+## Ceil prop
 
 The default rounding for the rate is `floor`, but by adding the `ceil` prop, you can round it up.
 
@@ -66,7 +66,7 @@ The default rounding for the rate is `floor`, but by adding the `ceil` prop, you
 <Rating total={5} rating={4.66} ceil />
 ```
 
-<Htwo label="Rating with text" />
+## Rating with text
 
 If you also want to show a text near the stars you can use the `text` slot to add any text.
 
@@ -80,7 +80,7 @@ If you also want to show a text near the stars you can use the `text` slot to ad
 </Rating>
 ```
 
-<Htwo label="Rating count" />
+## Rating count
 
 Aggregate more results by using this example to show the amount of reviews and the average score.
 
@@ -99,7 +99,7 @@ Aggregate more results by using this example to show the amount of reviews and t
 </Rating>
 ```
 
-<Htwo label="Icon size and color" />
+## Icon size and color
 
 Use the `ratingUp` and `ratingDown` slots to add icons of your choice.
 
@@ -152,7 +152,7 @@ The default icon size is `24`. Set the `class` in a icon component to change col
 </Rating>
 ```
 
-<Htwo label="AdvancedRating component" />
+## AdvancedRating component
 
 Set the `total`,` rating`, and `ratings` prop for AdvancedRation component. Use the `rating` slot for Rating component with the `total` and `rating` props. Use the `globalText` slot for additional information.
 
@@ -179,7 +179,7 @@ Set the `total`,` rating`, and `ratings` prop for AdvancedRation component. Use 
 </AdvancedRating>
 ```
 
-<Htwo label="Different icon" />
+## Different icon
 
 As we describe in the Rating component, you can change an icon in the `ratingUp` and `ratingDown` in the Rating component.
 
@@ -212,7 +212,7 @@ As we describe in the Rating component, you can change an icon in the `ratingUp`
 </AdvancedRating>
 ```
 
-<Htwo label="Score rating" />
+## Score rating
 
 ```svelte example hideScript
 <script>
@@ -244,7 +244,7 @@ As we describe in the Rating component, you can change an icon in the `ratingUp`
 />
 ```
 
-<Htwo label="Rating comment" />
+## Rating comment
 
 Use this component to show a single rating comment and its score alongside other components such as the user profile avatar, name, post date, and more.
 
@@ -288,7 +288,7 @@ Use this component to show a single rating comment and its score alongside other
 </RatingComment>
 ```
 
-<Htwo label="Review content" />
+## Review content
 
 Use this component to show the review content from a user alongside the avatar, location, details, and the score inside a card element.
 
@@ -352,7 +352,7 @@ Use this component to show the review content from a user alongside the avatar, 
 </Review>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.
@@ -393,7 +393,7 @@ The component has the following props, type, and default values. See <A href="/p
   <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/rating/" target="_blank" rel="noreferrer" class="link"

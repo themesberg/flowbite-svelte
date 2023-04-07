@@ -7,8 +7,8 @@ description: Use these responsive tabs components to create a secondary navigati
 ---
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 <script lang="ts">
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Badge, P, A } from '$lib'
   import { props as items3 }  from '../props/TabItem.json'
   import { props as items4 }  from '../props/Tabs.json'
   let propHeader = ['Name', 'Type', 'Default']
@@ -22,7 +22,7 @@ description: Use these responsive tabs components to create a secondary navigati
 
 The tabs component can be used either as an extra navigational hierarchy complementing the main navbar or you can also use it to change content inside a container just below the tabs using the data attributes from Flowbite.
 
-<Htwo label="Setup" />
+## Setup
 
 ```html
 <script>
@@ -31,7 +31,7 @@ The tabs component can be used either as an extra navigational hierarchy complem
 ```
 
 
-<Htwo label="Default tabs" />
+## Default tabs
 
 Use the following default tabs component example to show a dynamic content in your webpage.
 
@@ -68,7 +68,7 @@ The last tab in that example shows not only how to show a disabled tab, but how 
 </Tabs>
 ```
 
-<Htwo label="Tabs with underline" />
+## Tabs with underline
 
 You can control the style of tabs component by settings the `activeClasses` and `inactiveClasses` on the `TabItem` elements. See the `Custom style` section below for more details.
 
@@ -105,7 +105,7 @@ Use the `style="underline"` to achive this alternative tabs component style with
 </Tabs>
 ```
 
-<Htwo label="Tabs with icons" />
+## Tabs with icons
 
 This is an example of the tabs component where you can also use a SVG powered icon to complement the text within the navigational tabs. 
 Use icon components for a simple syntax. See <a href="/icons">Icons</a> for more details.
@@ -147,7 +147,7 @@ Use icon components for a simple syntax. See <a href="/icons">Icons</a> for more
 </Tabs>
 ```
 
-<Htwo label="Pills tabs" />
+## Pills tabs
 
 If you want to use pills as a style for the tabs component use `style="pill"`.
 
@@ -176,7 +176,7 @@ If you want to use pills as a style for the tabs component use `style="pill"`.
 </Tabs>
 ```
 
-<Htwo label="Full width tabs" />
+## Full width tabs
 
 If you want to show the tabs on the full width relative to the parent element use `tabStype="full"` prop.
 
@@ -205,7 +205,7 @@ If you want to show the tabs on the full width relative to the parent element us
 </Tabs>
 ```
 
-<Htwo label="Components in tab contents" />
+## Components in tab contents
 
 You can add other components to the `TabItem` component. Here we are adding a timeline component in the tab 1:
 
@@ -250,11 +250,11 @@ You can add other components to the `TabItem` component. Here we are adding a ti
 </Tabs>
 ```
 
-<Htwo label="Custom style" />
+## Custom style
 
 To get a custom look and feel for the `Tabs` component, do not set `style` prop, but set `activeClasses` and `inactiveClasses` properties either on the `Tabs` component or on the individual `TabItem` components.
 
-<Htwo label="Props" />
+## Props
 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
@@ -271,7 +271,7 @@ To get a custom look and feel for the `Tabs` component, do not set `style` prop,
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events: TabItem" />
+## Forwarded Events: TabItem
 
 <div class="flex flex-wrap gap-2">
 <Badge large>on:blur</Badge>
@@ -285,7 +285,7 @@ To get a custom look and feel for the `Tabs` component, do not set `style` prop,
 <Badge large>on:mouseover</Badge>
 </div>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/tabs/" target="_blank" rel="noreferrer" class="link"

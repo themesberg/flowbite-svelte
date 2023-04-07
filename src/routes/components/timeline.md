@@ -7,8 +7,8 @@ description: Get started with the responsive timeline component to show data in 
 ---
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 <script lang="ts">
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Button, Heading, P, A } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Button, P, A } from '$lib'
   import { props as items1 }  from '../props/Timeline.json'
   import { props as items2 }  from '../props/TimelineItem.json'
   import { props as items3 }  from '../props/TimelineItemVertical.json'
@@ -29,7 +29,7 @@ description: Get started with the responsive timeline component to show data in 
 
 The timeline component can be used to show series of data in a chronological order for use cases such as activity feeds, user actions, application updates, and more.
 
-<Htwo label="Setup" />
+## Setup
 
 ```html
 <script>
@@ -37,7 +37,7 @@ The timeline component can be used to show series of data in a chronological ord
 </script>
 ```
 
-<Htwo label="Default timeline" />
+## Default timeline
 
 ```svelte example
 <script>
@@ -77,7 +77,7 @@ The timeline component can be used to show series of data in a chronological ord
 </Timeline>
 ```
 
-<Htwo label="Vertical Timeline" />
+## Vertical Timeline
 
 Use this vertical timeline component with icons and badges to show a more advanced set of data.
 
@@ -153,7 +153,7 @@ Use this vertical timeline component with icons and badges to show a more advanc
 </Timeline>
 ```
 
-<Htwo label="Horizontal Timeline" />
+## Horizontal Timeline
 
 Use this horizontally aligned timeline component to show a series of data in a chronological order.
 
@@ -205,7 +205,7 @@ Use this horizontally aligned timeline component to show a series of data in a c
 </Timeline>
 ```
 
-<Htwo label="Activity Log" />
+## Activity Log
 
 This component can be used to show the timline of a user’s activity history inside your application by using an avatar, datetime, description, and links to specific pages.
 
@@ -241,7 +241,7 @@ This component can be used to show the timline of a user’s activity history in
 </Activity>
 ```
 
-<Htwo label="Grouped timeline" />
+## Grouped timeline
 
 Use this component to group multiple data entries inside a single date and show elements like the avatar, title, description, tag and link to a relevant page.
 
@@ -275,7 +275,7 @@ Use this component to group multiple data entries inside a single date and show 
 </Group>
 ```
 
-<Htwo label="Props" />
+## Props
 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
@@ -334,7 +334,7 @@ Use this component to group multiple data entries inside a single date and show 
   <TableDefaultRow items={items9} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/timeline/" target="_blank" rel="noreferrer" class="link"

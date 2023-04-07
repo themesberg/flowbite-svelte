@@ -10,8 +10,8 @@ description: Use the sidebar component to show a list of menu items and multi-le
 
 <script>
   import { page } from '$app/stores';
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Badge, Heading, P, A } from '$lib'
   import { props as items } from '../props/Sidebar.json'
   import { props as items2 }  from '../props/SidebarBrand.json'
   import { props as items3 }  from '../props/SidebarCta.json'
@@ -31,7 +31,7 @@ description: Use the sidebar component to show a list of menu items and multi-le
 
 The sidebar component can be used as a complementary element relative to the navbar shown on either the left or right side of the page used for the navigation on your web application, including menu items, multi-level dropdown items, call to actions elements, and more.
 
-<Htwo label="Setup" />
+## Setup
 
 ```html
 <script>
@@ -39,7 +39,7 @@ The sidebar component can be used as a complementary element relative to the nav
 </script>
 ```
 
-<Htwo label="Default sidebar" />
+## Default sidebar
 
 Use this example to show a responsive list of menu items inside the sidebar with icons and labels.
 
@@ -101,7 +101,7 @@ Use this example to show a responsive list of menu items inside the sidebar with
 </Sidebar>
 ```
 
-<Htwo label="Multi-level dropdown" />
+## Multi-level dropdown
 
 Use this sidebar example to create multi-level menu items by using the dSidebarDropdownWrapper and SidebarDropdownItem components.
 
@@ -205,7 +205,7 @@ You can change the icons using `arrowup` and `arrowdown` slots.
 </Sidebar>
 ```
 
-<Htwo label="Active item" />
+## Active item
 
 Use the following example to show the active item. Use the `activeClass` prop to change the style.
 
@@ -256,7 +256,7 @@ Use the following example to show the active item. Use the `activeClass` prop to
 </Sidebar>
 ```
 
-<Htwo label="Content separator" />
+## Content separator
 
 Separate the content inside the sidebar component by applying a border separator to the SidebarGroup component.
 
@@ -338,7 +338,7 @@ Separate the content inside the sidebar component by applying a border separator
 </Sidebar>
 ```
 
-<Htwo label="CTA button" />
+## CTA button
 
 Use this example to add a CTA button inside the sidebar component and encourage your users to visit the dedicated page.
 
@@ -420,7 +420,7 @@ Use this example to add a CTA button inside the sidebar component and encourage 
 </Sidebar>
 ```
 
-<Htwo label="Logo branding" />
+## Logo branding
 
 Show the logo of your brand and link back to the homepage from the top part of the sidebar.
 
@@ -488,7 +488,7 @@ Show the logo of your brand and link back to the homepage from the top part of t
 </Sidebar>
 ```
 
-<Htwo label="Transition" />
+## Transition
 
 You can add own transition by setting `transitionType` and `transitionParams`. 
 
@@ -528,7 +528,7 @@ You can add own transition by setting `transitionType` and `transitionParams`.
 ```
 
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
@@ -580,7 +580,7 @@ The component has the following props, type, and default values. See <A href="/p
   <TableDefaultRow items={items8} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events" />
+## Forwarded Events
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">SidebarDropdownItem, SidebarItem</Heading>
 
@@ -596,7 +596,7 @@ The component has the following props, type, and default values. See <A href="/p
 <Badge large={true}>on:mouseover</Badge>
 </div>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/sidebar/" target="_blank" rel="noreferrer" class="link"

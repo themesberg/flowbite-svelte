@@ -9,8 +9,8 @@ description: Use the indicator component to show a number count, account status,
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import {Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
+  import {PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { P, A } from '$lib'
   // Props table
   import { props as items } from '../props/Indicator.json'
   let propHeader = ['Name', 'Type', 'Default']
@@ -24,7 +24,7 @@ description: Use the indicator component to show a number count, account status,
 
 The indicator component can be used as a small element positioned absolutely relative to another component such as a button or card and show a number count, account status (red for offline, green for online) and other useful information.
 
-<Htwo label="Setup" />
+## Setup
 
 ```html
 <script>
@@ -33,7 +33,7 @@ The indicator component can be used as a small element positioned absolutely rel
 ```
 
 
-<Htwo label="Default indicator" />
+## Default indicator
 
 Use this example to create a simple indicator with mulitple colors and position it anywhere on the website.
 
@@ -53,7 +53,7 @@ Use this example to create a simple indicator with mulitple colors and position 
 <Indicator color="teal"/>
 ```
 
-<Htwo label="Legend indicator" />
+## Legend indicator
 
 This example can be used as a legend indicator for charts to also add a text next to the bullet point.
 
@@ -68,7 +68,7 @@ This example can be used as a legend indicator for charts to also add a text nex
 <span class="flex items-center"><Indicator size="sm" color="teal" class="mr-1.5"/>Revenue</span>
 ```
 
-<Htwo label="Indicator count" />
+## Indicator count
 
 This example can be used to show a number count inside the indicator and position it relative to a button component.
 
@@ -87,7 +87,7 @@ This example can be used to show a number count inside the indicator and positio
   </Button>
 ```
 
-<Htwo label="Status indicator" />
+## Status indicator
 
 Use this example to show a status indicator for the currently logged in user by showing red for offline and green for online.
 
@@ -103,7 +103,7 @@ Use this example to show a status indicator for the currently logged in user by 
 
 ```
 
-<Htwo label="Badge indicator" />
+## Badge indicator
 
 This example can be used to add an indicator inside of a badge component.
 
@@ -142,7 +142,7 @@ This example can be used to add an indicator inside of a badge component.
 </ul>
 ```
 
-<Htwo label="Stepper indicator" />
+## Stepper indicator
 
 You can also use the indicators inside of a stepper component when completing a form element.
 
@@ -244,7 +244,7 @@ You can also use the indicators inside of a stepper component when completing a 
 </ol>
 ```
 
-<Htwo label="Indicator position" />
+## Indicator position
 
 Use these examples to position the indicator component anywhere relative to the parent element.
 
@@ -266,7 +266,7 @@ Use these examples to position the indicator component anywhere relative to the 
 </div>
 ```
 
-<Htwo label="Props" />
+## Props
 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
@@ -277,7 +277,7 @@ Use these examples to position the indicator component anywhere relative to the 
   <TableDefaultRow items={items} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/inidicators/" target="_blank" rel="noreferrer" class="link"

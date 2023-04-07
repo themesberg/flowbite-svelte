@@ -9,8 +9,8 @@ description: Use the footer section at the bottom of every page to show valuable
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { P, A } from '$lib'
   // Props table
   import { props as items } from '../props/Footer.json'
   import { props as items2 } from '../props/FooterBrand.json'
@@ -29,7 +29,7 @@ description: Use the footer section at the bottom of every page to show valuable
 
 The footer is one of the most underestimated sections of a website being located at the very bottom of every page, however, it can be used as a way to try to convince users to stay on your website if they haven’t found the information they’ve been looking for inside the main content area.
 
-<Htwo label="Setup" />
+## Setup
 
 ```html
 <script>
@@ -37,7 +37,7 @@ The footer is one of the most underestimated sections of a website being located
 </script>
 ```
 
-<Htwo label="Default footer" />
+## Default footer
 
 <p>Use this footer component to show a copyright notice and some helpful website links.</p>
 
@@ -57,7 +57,7 @@ The footer is one of the most underestimated sections of a website being located
 </Footer>
 ```
 
-<Htwo label="Footer with logo" />
+## Footer with logo
 
 <p>Use this component to show your brand’s logo, a few website links and the copyright notice on a second row.</p>
 
@@ -86,7 +86,7 @@ The footer is one of the most underestimated sections of a website being located
 </Footer>
 ```
 
-<Htwo label="Social media icons" />
+## Social media icons
 
 <p>This footer component can be used to show your brand’s logo, multiple rows of website links, a copyright notice and social media profile icons including Twitter, Facebook, Instagram, and more.</p>
 
@@ -150,7 +150,7 @@ The footer is one of the most underestimated sections of a website being located
 </Footer>
 ```
 
-<Htwo label="Sitemap links" />
+## Sitemap links
 
 <p>If you have a website with many pages you can use this footer component to show a sitemap spanning the entire width of a row followed below by a copyright notice and social media icons.</p>
 
@@ -213,7 +213,7 @@ The footer is one of the most underestimated sections of a website being located
 </Footer>
 ```
 
-<Htwo label="Sticky footer " />
+## Sticky footer 
 
 Use this example to set create a sticky footer by using a fixed position to the bottom of the document page as the user scrolls up or down the main content area.
 
@@ -240,7 +240,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 </Footer>
 ````
 
-<Htwo label="Props" />
+## Props
 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
@@ -281,7 +281,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
   <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/footer/" target="_blank" rel="noreferrer" class="link"

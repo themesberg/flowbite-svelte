@@ -9,8 +9,8 @@ description: The navbar component can be used to show a list of navigation links
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Badge, Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib';
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Badge, Heading, P, A } from '$lib';
   // Props table
   import { props as items } from '../props/Navbar.json'
   import { props as items2 } from '../props/NavBrand.json'
@@ -30,7 +30,7 @@ description: The navbar component can be used to show a list of navigation links
 
 Get started with the responsive navbar component from Flowbite to quickly set up a navigation menu for your website and set up the logo, list of pages, CTA button, search input, user profile options with a dropdown, and more.
 
-<Htwo label="Setup" />
+## Setup
 
 ```html
 <script>
@@ -38,7 +38,7 @@ Get started with the responsive navbar component from Flowbite to quickly set up
 </script>
 ```
 
-<Htwo label="Default navbar" />
+## Default navbar
 
 Use this example of a navigation bar built with the utility classes from Tailwind CSS to enable users to navigate across the pages of your website.
 
@@ -69,7 +69,7 @@ Use this example of a navigation bar built with the utility classes from Tailwin
 </Navbar>
 ```
 
-<Htwo label="Navbar with dropdown" />
+## Navbar with dropdown
 
 This example can be used to show a secondary dropdown menu when clicking on one of the navigation links.
 
@@ -107,7 +107,7 @@ This example can be used to show a secondary dropdown menu when clicking on one 
 </Navbar>
 ```
 
-<Htwo label="Navbar with search" />
+## Navbar with search
 
 Use this example of a navbar element to also show a search input element that you can integrate for a site-wide search.
 
@@ -147,7 +147,7 @@ Use this example of a navbar element to also show a search input element that yo
 </Navbar>
 ```
 
-<Htwo label="Navbar with CTA button" />
+## Navbar with CTA button
 
 Use the following navbar element to show a call to action button alongside the logo and page links.
 
@@ -181,7 +181,7 @@ Use the following navbar element to show a call to action button alongside the l
 </Navbar>
 ```
 
-<Htwo label="Sticky navbar" />
+## Sticky navbar
 
 Use this example to keep the navbar positioned fixed to the top side as you scroll down the document page.
 
@@ -217,7 +217,7 @@ Use this example to keep the navbar positioned fixed to the top side as you scro
 </div>
 ```
 
-<Htwo label="User menu dropdown" />
+## User menu dropdown
 
 Use this example to create a navigation bar with a user profile or button to toggle a dropdown menu.
 
@@ -256,7 +256,7 @@ Use this example to create a navigation bar with a user profile or button to tog
 </Navbar>
 ```
 
-<Htwo label="Solid background" />
+## Solid background
 
 Use this example to show a solid background for the navbar component instead of being transparent.
 
@@ -281,7 +281,7 @@ Use this example to show a solid background for the navbar component instead of 
 </Navbar>
 ```
 
-<Htwo label="Props" />
+## Props
 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
@@ -328,7 +328,7 @@ Use this example to show a solid background for the navbar component instead of 
   <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events" />
+## Forwarded Events
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">NavLi</Heading>
 
@@ -346,7 +346,7 @@ Use this example to show a solid background for the navbar component instead of 
 </div>
 
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/navbar/" target="_blank" rel="noreferrer" class="link"

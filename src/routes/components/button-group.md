@@ -9,8 +9,8 @@ description: Button groups are a Tailwind CSS powered set of buttons sticked tog
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Badge, P, A } from '$lib'
   // Props table
   import { props as buttonGroupProps} from '../props/ButtonGroup.json'
   let propHeader = ['Name', 'Type', 'Default']
@@ -24,7 +24,7 @@ description: Button groups are a Tailwind CSS powered set of buttons sticked tog
 
 The button group component from Flowbite-Svelte can be used to stack together multiple buttons and links inside a single element.
 
-<Htwo label="Setup" />
+## Setup
 
 ```html
 <script>
@@ -32,7 +32,7 @@ The button group component from Flowbite-Svelte can be used to stack together mu
 </script>
 ```
 
-<Htwo label="Default" />
+## Default
 
 Use the following code to stack together buttons into a single group.
 
@@ -47,7 +47,7 @@ Use the following code to stack together buttons into a single group.
 </ButtonGroup>
 ```
 
-<Htwo label="More examples" />
+## More examples
 
 ```svelte example hideScript class="flex flex-col flex-wrap gap-4"
 <script>
@@ -87,7 +87,7 @@ Use the following code to stack together buttons into a single group.
 </div>
 ```
 
-<Htwo label="Button group as links" />
+## Button group as links
 
 You can also use the button group component as links.
 
@@ -102,7 +102,7 @@ You can also use the button group component as links.
 </ButtonGroup>
 ```
 
-<Htwo label="Group buttons with icons" />
+## Group buttons with icons
 
 You can also use SVG icons inside the grouped buttons.
 
@@ -126,7 +126,7 @@ You can also use SVG icons inside the grouped buttons.
 </ButtonGroup>
 ```
 
-<Htwo label="Outline" />
+## Outline
 
 Group a series of buttons together on a single line or stack them in a vertical column.
 
@@ -141,7 +141,7 @@ Group a series of buttons together on a single line or stack them in a vertical 
 </ButtonGroup>
 ```
 
-<Htwo label="Outline with icon" />
+## Outline with icon
 
 Group a series of buttons together on a single line or stack them in a vertical column.
 
@@ -165,7 +165,7 @@ Group a series of buttons together on a single line or stack them in a vertical 
 </ButtonGroup>
 ```
 
-<Htwo label="Events" />
+## Events
 
 You can add the `on:click` event to the `Button` component.
 
@@ -183,7 +183,7 @@ You can add the `on:click` event to the `Button` component.
 </ButtonGroup>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
@@ -193,7 +193,7 @@ The component has the following props, type, and default values. See <A href="/p
   <TableDefaultRow items={buttonGroupProps} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events" />
+## Forwarded Events
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:click</Badge>
@@ -206,7 +206,7 @@ The component has the following props, type, and default values. See <A href="/p
 <Badge large={true}>on:mouseleave</Badge>
 </div>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/button-group/" target="_blank" rel="noreferrer" class="link"

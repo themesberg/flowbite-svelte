@@ -10,8 +10,8 @@ description: Use the bottom navigation bar component to allow users to navigate 
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { P, A } from '$lib'
   // Props table
   import { props as bottomNavProps } from '../props/BottomNav.json'
   import { props as bottomNavHeaderProps } from '../props/BottomNavHeader.json'
@@ -30,7 +30,7 @@ The bottom bar component can be used to allow menu items and certain control act
 
 Check out multiple examples of the bottom navigation component based on various styles, controls, sizes, content and leverage the utility classes from Tailwind CSS to integrate into your own project.
 
-<Htwo label="Setup" />
+## Setup
 
 ```svelte
 <script>
@@ -38,7 +38,7 @@ Check out multiple examples of the bottom navigation component based on various 
 </script>
 ```
 
-<Htwo label="Default bottom navigation" />
+## Default bottom navigation
 
 Use the default bottom navigation bar example to show a list of menu items as buttons to allow the user to navigate through your website based on a fixed position. You can also use anchor tags instead of buttons.
 
@@ -75,7 +75,7 @@ Use the default bottom navigation bar example to show a list of menu items as bu
 </BottomNav>
 ```
 
-<Htwo label="Menu items with border" />
+## Menu items with border
 
 This example can be used to show a border between the menu items inside the bottom navbar.
 
@@ -112,7 +112,7 @@ This example can be used to show a border between the menu items inside the bott
 </BottomNav>
 ```
 
-<Htwo label="Application bar example" />
+## Application bar example
 
 Use this example to show a CTA button in the center of the navigation component to create new items.
 
@@ -161,7 +161,7 @@ Use this example to show a CTA button in the center of the navigation component 
 </BottomNav>
 ```
 
-<Htwo label="Example with pagination" />
+## Example with pagination
 
 This example be used to paginate multiple pages on a single view alongside other menu items.
 
@@ -218,7 +218,7 @@ This example be used to paginate multiple pages on a single view alongside other
 </BottomNav>
 ```
 
-<Htwo label="Button group bottom bar" />
+## Button group bottom bar
 
 
 ```svelte example class="flex flex-col relative" hideScript
@@ -267,7 +267,7 @@ This example be used to paginate multiple pages on a single view alongside other
 </BottomNav>
 ```
 
-<Htwo label="Card with bottom bar" />
+## Card with bottom bar
 
 This example can be used to position a bottom navigation bar inside of a card element with scroll enabled on the Y axis to allow changing the content inside of the card, enable certain actions or show a list of menu items.
 
@@ -330,7 +330,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 </Card>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
@@ -358,7 +358,7 @@ The component has the following props, type, and default values. See <A href="/p
 <TableDefaultRow items={bottomNavItemProps} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/banner/" target="_blank" rel="noreferrer" class="link">

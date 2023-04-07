@@ -9,8 +9,8 @@ description: Get started with a large variety of Tailwind CSS card examples for 
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { P, A } from '$lib'
   // Props table
   import { props as cardProps } from '../props/Card.json'
   import { props as frameProps } from '../props/Frame.json'
@@ -28,7 +28,7 @@ description: Get started with a large variety of Tailwind CSS card examples for 
 
 Use these responsive card components to show data entries and information to your users in multiple forms and contexts such as for your blog, application, user profiles, and more.
 
-<Htwo label="Set up" />
+## Set up
 
 Import Card in the script tag.
 
@@ -38,7 +38,7 @@ Import Card in the script tag.
 </script>
 ```
 
-<Htwo label="Default card" />
+## Default card
 
 Use the following simple card component with a title and description.
 Notice the `href` prop set, as that card is one big `<a/>` element.
@@ -55,7 +55,7 @@ Notice the `href` prop set, as that card is one big `<a/>` element.
 </Card>
 ```
 
-<Htwo label="Card with action button" />
+## Card with action button
 
 Use the following example of a card element if you also want to have an action button.
 
@@ -74,7 +74,7 @@ Use the following example of a card element if you also want to have an action b
 </Card>
 ```
 
-<Htwo label="Card with link" />
+## Card with link
 
 This example can be used to show a CTA as a link instead of a button inside the card.
 
@@ -95,7 +95,7 @@ This example can be used to show a CTA as a link instead of a button inside the 
 </Card>
 ```
 
-<Htwo label="Card with image" />
+## Card with image
 
 User <code>reverse={true}</code> to reverse the position of an image.
 
@@ -120,7 +120,7 @@ You can use the following example of a card element with an image for blog posts
 </div>
 ```
 
-<Htwo label="Horizontal card" />
+## Horizontal card
 
 If you want to spice up your cards you can use the following card which has its child elements aligned horizontally.
 
@@ -140,7 +140,7 @@ If you want to spice up your cards you can use the following card which has its 
 </div>
 ```
 
-<Htwo label="User profile card" />
+## User profile card
 
 Use this user profile card example if you want to show a dropdown menu and buttons to enable multiple actions from your user.
 
@@ -169,7 +169,7 @@ Use this user profile card example if you want to show a dropdown menu and butto
 </Card>
 ```
 
-<Htwo label="Card with form inputs" />
+## Card with form inputs
 
 Use this card example where you can add form input elements that can be used for authentication actions or any other context where you need to receive information from your users.
 
@@ -201,7 +201,7 @@ Use this card example where you can add form input elements that can be used for
 ```
 
 
-<Htwo label="E-commerce card" />
+## E-commerce card
 
 Use this card for your e-commerce websites and show information about the products and enable actions such as adding a review and adding the product to the cart.
 
@@ -230,7 +230,7 @@ Use this card for your e-commerce websites and show information about the produc
 </Card>
 ```
 
-<Htwo label="Call to action card" />
+## Call to action card
 
 Use this CTA card example to encourage your users to visit a certain page such as downloading the iOS or Android application for your project.
 
@@ -250,7 +250,7 @@ Use this CTA card example to encourage your users to visit a certain page such a
 </Card>
 ```
 
-<Htwo label="Card with list" />
+## Card with list
 
 Use this card example if you want to show a list of data:
 
@@ -295,7 +295,7 @@ Use this card example if you want to show a list of data:
 </Card>
 ```
 
-<Htwo label="Pricing card" />
+## Pricing card
 
 Show detailed information to potential customers about your product’s pricing plan, list of features, and a purchase button.
 
@@ -345,7 +345,7 @@ Show detailed information to potential customers about your product’s pricing 
 </Card>
 ```
 
-<Htwo label="Testimonial card" />
+## Testimonial card
 
 Use this example to split cards into multiple sections such as for testimonials or reviews.
 
@@ -409,7 +409,7 @@ Use this example to split cards into multiple sections such as for testimonials 
 </Card>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
@@ -425,7 +425,7 @@ The component has the following props, type, and default values. See <A href="/p
   <TableDefaultRow items={frameProps} rowState='hover' />
 </TableProp>
 
-<Htwo label="Slots" />
+## Slots
 
 <h3 class='text-xl w-full dark:text-white py-4'>Card</h3>
 
@@ -433,7 +433,7 @@ The component has the following props, type, and default values. See <A href="/p
   <TableDefaultRow items={slotItems} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/card/" target="_blank" rel="noreferrer" class="link"

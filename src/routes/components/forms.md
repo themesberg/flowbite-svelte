@@ -9,9 +9,9 @@ description: Use the Tailwind CSS form and input elements such as checkboxes, ra
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   
-  import { Breadcrumb, BreadcrumbItem, Heading, A } from '$lib'
+  import { A, Heading } from '$lib'
   import { props as items } from '../props/Input.json'
   import { props as items2 } from '../props/Label.json'
   import { props as items3 } from '../props/Helper.json'
@@ -27,19 +27,11 @@ description: Use the Tailwind CSS form and input elements such as checkboxes, ra
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description}/>
 
 The Input component allows you to change the input size, add disabled, helper text, and floating label.
 
-<Htwo label="Input Sizes" />
+## Input Sizes
 
 User the size prop to change the input size. Choose one from 'sm:text-md' | 'text-sm' | 'sm:text-xs'. The default size is text-sm.
 
@@ -62,7 +54,7 @@ User the size prop to change the input size. Choose one from 'sm:text-md' | 'tex
 </div>
 ```
 
-<Htwo label="Disabled" />
+## Disabled
 
 Get started with this example if you want to apply the disabled state to an input field. Add the disabled to change the input to disabled.
 
@@ -75,7 +67,7 @@ Get started with this example if you want to apply the disabled state to an inpu
 <Input id="disabled-input-2" class="mb-6" disabled readonly value="Disabled readonly input" />
 ```
 
-<Htwo label="Helper text" />
+## Helper text
 
 Use the helper prop to add your helper text. You can use HTML in the helper text.
 
@@ -89,7 +81,7 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
 <Helper class='text-sm mt-2'>We’ll never share your details. Read our <a href="/" class="font-medium text-blue-600 hover:underline dark:text-blue-500">Privacy Policy</a>.</Helper>
 ```
 
-<Htwo label="Input element with icon" />
+## Input element with icon
 
 With the Input component, you can add <a href="https://flowbite-svelte.vercel.app/icons/heroicons" class="text-blue-700 dark:text-blue-500 hover:underline">Heroicons</a> or <a href="https://svelte-svg-icons.vercel.app/" class="text-blue-700 dark:text-blue-500 hover:underline">other icon sets</a>.
 
@@ -106,7 +98,7 @@ With the Input component, you can add <a href="https://flowbite-svelte.vercel.ap
 </div>
 ```
 
-<Htwo label="Input element with addon" />
+## Input element with addon
 
 ```svelte example
 <script>
@@ -124,7 +116,7 @@ With the Input component, you can add <a href="https://flowbite-svelte.vercel.ap
 </div>
 ```
 
-<Htwo label="Form validation" />
+## Form validation
 
 Use the following example to apply validation styles for success and error messages.
 
@@ -145,7 +137,7 @@ Use the following example to apply validation styles for success and error messa
 </div>
 ```
 
-<Htwo label="Textarea" />
+## Textarea
 
 ```svelte example
 <script>
@@ -162,7 +154,7 @@ Use the following example to apply validation styles for success and error messa
 <Textarea {...textareaprops} />
 ```
 
-<Htwo label="Select input" />
+## Select input
 
 Get started with the default example of a select input component to get a single option selection.
 
@@ -183,7 +175,7 @@ Get started with the default example of a select input component to get a single
 </Label>
 ```
 
-<Htwo label="Checkbox" />
+## Checkbox
 
 ```svelte example class="flex flex-col gap-4"
 <script>
@@ -194,7 +186,7 @@ Get started with the default example of a select input component to get a single
 <Checkbox checked >Checked state</Checkbox>
 ```
 
-<Htwo label="Radio buttons" />
+## Radio buttons
 
 ```svelte example class="flex flex-col gap-4"
 <script>
@@ -205,7 +197,7 @@ Get started with the default example of a select input component to get a single
 <Radio name="example" checked={true}>Checked state</Radio>
 ```
 
-<Htwo label="File upload" />
+## File upload
 
 ```svelte example
 <script>
@@ -224,7 +216,7 @@ Get started with the default example of a select input component to get a single
 <Fileupload {...fileuploadprops} />
 ```
 
-<Htwo label="Toggle Switch" />
+## Toggle Switch
 
 ```svelte example class="flex flex-col gap-2"
 <script>
@@ -237,7 +229,7 @@ Get started with the default example of a select input component to get a single
 <Toggle checked disabled>Disabled checked</Toggle>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.

@@ -9,8 +9,8 @@ description: The skeleton component can be used as an alternative loading indica
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { P, A } from '$lib'
   import { props as items1 }  from '../props/CardPlaceholder.json'
   import { props as items2 }  from '../props/ImagePlaceholder.json'
   import { props as items3 }  from '../props/ListPlaceholder.json'
@@ -28,9 +28,9 @@ description: The skeleton component can be used as an alternative loading indica
 
 <PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
-Use the skeleton component to indicate a loading status with placeholder elements that look very similar to the type of content that is being loaded such as paragraphs, heading, images, videos, and more.
+Use the skeleton component to indicate a loading status with placeholder elements that look very similar to the type of content that is being loaded such as paragraphs, images, videos, and more.
 
-<Htwo label="Setup" />
+## Setup
 
 ```html
 <script>
@@ -38,7 +38,7 @@ Use the skeleton component to indicate a loading status with placeholder element
 </script>
 ```
 
-<Htwo label="Default skeleton" />
+## Default skeleton
 
 ```svelte example
 <script>
@@ -52,7 +52,7 @@ Use the skeleton component to indicate a loading status with placeholder element
   <Skeleton size="xxl" class="mt-8 mb-2.5" />
 ```
 
-<Htwo label="Image placeholder " />
+## Image placeholder 
 
 ```svelte example
 <script>
@@ -63,7 +63,7 @@ Use the skeleton component to indicate a loading status with placeholder element
 <ImagePlaceholder imgHeight={60} class='mt-8'/>
 ```
 
-<Htwo label="Video placeholder" />
+## Video placeholder
 
 ```svelte example
 <script>
@@ -77,7 +77,7 @@ Use the skeleton component to indicate a loading status with placeholder element
 <VideoPlaceholder size='xxl' class='mt-8'/>
 ```
 
-<Htwo label="Text placeholder" />
+## Text placeholder
 
 ```svelte example
 <script>
@@ -91,7 +91,7 @@ Use the skeleton component to indicate a loading status with placeholder element
 <TextPlaceholder size='xxl' class='mt-8'/>
 ```
 
-<Htwo label="Card placeholder" />
+## Card placeholder
 
 ```svelte example
 <script>
@@ -105,7 +105,7 @@ Use the skeleton component to indicate a loading status with placeholder element
 <CardPlaceholder size='xxl' class='mt-8'/>
 ```
 
-<Htwo label="Widget placeholder" />
+## Widget placeholder
 
 ```svelte example
 <script>
@@ -115,7 +115,7 @@ Use the skeleton component to indicate a loading status with placeholder element
 <WidgetPlaceholder />
 ```
 
-<Htwo label="List placeholder" />
+## List placeholder
 
 ```svelte example
 <script>
@@ -125,7 +125,7 @@ Use the skeleton component to indicate a loading status with placeholder element
 <ListPlaceholder />
 ```
 
-<Htwo label="Testimonial placeholder" />
+## Testimonial placeholder
 
 ```svelte example
 <script>
@@ -135,7 +135,7 @@ Use the skeleton component to indicate a loading status with placeholder element
 <TestimonialPlaceholder />
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
@@ -187,7 +187,7 @@ The component has the following props, type, and default values. See <A href="/p
   <TableDefaultRow items={items8} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/skeleton/" target="_blank" rel="noreferrer" class="link"

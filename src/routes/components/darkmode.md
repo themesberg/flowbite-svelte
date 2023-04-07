@@ -9,8 +9,8 @@ description: Learn how to configure and build a dark mode switcher for Flowbite 
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { P, A } from '$lib'
   // Props table
   import { props as items} from '../props/DarkMode.json'
 	let propHeader = ['Name', 'Type', 'Default']
@@ -52,7 +52,7 @@ const config = {
 <DarkMode />
 ```
 
-<Htwo label="Switcher style" />
+## Switcher style
 
 <p>Use the `btnClass` prop to overwrite the default classes:</p>
 
@@ -76,7 +76,7 @@ const config = {
 <DarkMode class="text-2xl" />
 ```
 
-<Htwo label="Mode icon" />
+## Mode icon
 
 <p>Use the `lightIcon` and `darkIcon` slots to change icons:</p>
 
@@ -95,7 +95,7 @@ const config = {
 </DarkMode>
 ```
 
-<Htwo label="Props" />
+## Props
 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
@@ -104,7 +104,7 @@ const config = {
 <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/customize/dark-mode/" target="_blank" rel="noreferrer" class="link"

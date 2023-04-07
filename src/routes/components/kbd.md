@@ -9,8 +9,8 @@ description: Use the KBD component as an inline element to denote textual user i
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { P, A } from '$lib'
   import { props as items} from '../props/Kbd.json'
   import { props as items2} from '../props/ArrowKeyDown.json'
   import { props as items3} from '../props/ArrowKeyLeft.json'
@@ -28,7 +28,7 @@ description: Use the KBD component as an inline element to denote textual user i
 
 The KBD (Keyboard) component can be used to indicate a textual user input from the keyboard inside other elements such as in text, tables, cards, and more.
 
-<Htwo label="Setup" />
+## Setup
 
 ```html
 <script>
@@ -36,7 +36,7 @@ The KBD (Keyboard) component can be used to indicate a textual user input from t
 </script>
 ```
 
-<Htwo label="Default KBD" />
+## Default KBD
 
 Here’s a list of KBD components that you can use inside any other element.
 
@@ -54,7 +54,7 @@ Here’s a list of KBD components that you can use inside any other element.
 <Kbd class='px-2 py-1.5'>Enter</Kbd>
 ```
 
-<Htwo label="KBD inside text" />
+## KBD inside text
 
 Use this example by nesting an inline KBD component inside a paragraph.
 
@@ -68,7 +68,7 @@ Please press <Kbd class="px-2 py-1.5">Ctrl</Kbd> + <Kbd class="px-2 py-1.5">Shif
 </p>
 ```
 
-<Htwo label="KBD inside table" />
+## KBD inside table
 
 The KBD component can also be used inside table components to denote what type of key can be pressed for certain descriptions.
 
@@ -120,7 +120,7 @@ The KBD component can also be used inside table components to denote what type o
 </Table>
 ```
 
-<Htwo label='Arrow keys' />
+## Arrow keys
 
 Use this example to show arrow keys inside the KBD styled element.
 
@@ -147,7 +147,7 @@ Use this example to show arrow keys inside the KBD styled element.
 </Kbd>
 ```
 
-<Htwo label='Letter keys' />
+## Letter keys
 
 Use this example if you need to show a key from the latin alphabet
 
@@ -184,7 +184,7 @@ Use this example if you need to show a key from the latin alphabet
 <Kbd class="px-2 py-1.5">M</Kbd>
 ```
 
-<Htwo label='Number keys' />
+## Number keys
 
 Use this example to show a key inside a KBD component from the english numeral system.
 
@@ -205,7 +205,7 @@ Use this example to show a key inside a KBD component from the english numeral s
 <Kbd class="px-2 py-1.5">0</Kbd>
 ```
 
-<Htwo label='Function keys' />
+## Function keys
 
 This example can be used to denote function keys inside the KBD component.
 
@@ -228,7 +228,7 @@ This example can be used to denote function keys inside the KBD component.
 <Kbd class="px-2 py-1.5">F12</Kbd>
 ```
 
-<Htwo label="Props" />
+## Props
 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
@@ -263,7 +263,7 @@ This example can be used to denote function keys inside the KBD component.
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/kbd/" target="_blank" rel="noreferrer" class="link"

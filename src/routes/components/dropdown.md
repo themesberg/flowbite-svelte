@@ -7,8 +7,8 @@ description: Get started with the dropdown component to show a list of menu item
 ---
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A  } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Badge, P, A  } from '$lib'
   // Props table
   import { props as propItems} from '../props/Dropdown.json'
   import { props as propItems2} from '../props/DropdownDivider.json'
@@ -30,7 +30,7 @@ description: Get started with the dropdown component to show a list of menu item
 
 The dropdown component can be used to show a list of menu items when clicking on an element such as a button and hiding it when clicking outside of the triggering element.
 
-<Htwo label="Setup" />
+## Setup
 
 ```html
 <script>
@@ -38,7 +38,7 @@ The dropdown component can be used to show a list of menu items when clicking on
 </script>
 ```
 
-<Htwo label="Examples" />
+## Examples
 
 If you want to show a dropdown menu when clicking on an element add the `Dropdown` and `DropdownItem` components.
 
@@ -56,7 +56,7 @@ If you want to show a dropdown menu when clicking on an element add the `Dropdow
 </Dropdown>
 ```
 
-<Htwo label="Dropdown divider" />
+## Dropdown divider
 
 You can use the `DropdownDivider` component to add separate elements inside the dropdown menu.
 Note that you have a natural divider between main content of the `Dropdown` and its header and footer.
@@ -75,7 +75,7 @@ Note that you have a natural divider between main content of the `Dropdown` and 
 </Dropdown>
 ```
 
-<Htwo label="Dropdown header" />
+## Dropdown header
 
 Use this example to show extra information outside of the list of menu items inside the dropdown.
 
@@ -97,7 +97,7 @@ Use this example to show extra information outside of the list of menu items ins
 </Dropdown>
 ```
 
-<Htwo label="Multi-level dropdown" />
+## Multi-level dropdown
 
 Use this example to enable multi-level dropdown menus by adding stacked elements inside of each other.
 
@@ -120,7 +120,7 @@ Use this example to enable multi-level dropdown menus by adding stacked elements
 </Dropdown>
 ```
 
-<Htwo label="Programatic open/close" />
+## Programatic open/close
 
 When you want to control your dropdown open status via javascript code you can bind to `open` property.
 
@@ -144,7 +144,7 @@ When you want to control your dropdown open status via javascript code you can b
 </Dropdown>
 ```
 
-<Htwo label="Dropdown with checkbox" />
+## Dropdown with checkbox
 
 Add multiple checkbox elements inside your dropdown menu to enable more advanced input interaction.
 
@@ -167,7 +167,7 @@ Add multiple checkbox elements inside your dropdown menu to enable more advanced
 </Dropdown>
 ```
 
-<Htwo label="Checkbox: Background hover" />
+## Checkbox: Background hover
 
 Use this example to update the background color of a menu item when using a list of checkbox elements.
 
@@ -190,7 +190,7 @@ Use this example to update the background color of a menu item when using a list
 </Dropdown>
 ```
 
-<Htwo label="Checkbox: Helper text" />
+## Checkbox: Helper text
 
 Add an extra helper text to each checkbox element inside the dropdown menu list with this example.
 
@@ -216,7 +216,7 @@ Add an extra helper text to each checkbox element inside the dropdown menu list 
 </Dropdown>
 ```
 
-<Htwo label="Dropdown with radio" />
+## Dropdown with radio
 
 Add multiple radio elements inside your dropdown menu to enable more advanced input interaction.
 
@@ -240,7 +240,7 @@ Add multiple radio elements inside your dropdown menu to enable more advanced in
 </Dropdown>
 ```
 
-<Htwo label="Radio: Background hover" />
+## Radio: Background hover
 
 Use this example to update the background color of a menu item when using a list of radio elements.
 
@@ -264,7 +264,7 @@ Use this example to update the background color of a menu item when using a list
 </Dropdown>
 ```
 
-<Htwo label="Radio: Helper text" />
+## Radio: Helper text
 
 Add an extra helper text to each radio element inside the dropdown menu list with this example.
 
@@ -291,7 +291,7 @@ Add an extra helper text to each radio element inside the dropdown menu list wit
 </Dropdown>
 ```
 
-<Htwo label="Dropdown with toggle switch" />
+## Dropdown with toggle switch
 
 Show a list of toggle switch elements inside the dropdown menu to enable a yes or no type of choice.
 
@@ -315,7 +315,7 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 </Dropdown>
 ```
 
-<Htwo label="Dropdown navbar" />
+## Dropdown navbar
 
 <p>You can also use the dropdown element inside a navigation bar and add a second level of navigation hierarchy, but make sure to use Navbar components.</p>
 
@@ -347,7 +347,7 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 </Navbar>
 ```
 
-<Htwo label="Dropdown with scrolling" />
+## Dropdown with scrolling
 
 This example can be used when you want to show a long list of items that won’t affect the height of the dropdown menu by enabling a scrolling behaviour.
 
@@ -382,7 +382,7 @@ This example can be used when you want to show a long list of items that won’t
 </Dropdown>
 ```
 
-<Htwo label="Dropdown with search" />
+## Dropdown with search
 
 Use this example if you want to add a search bar inside the dropdown menu to be able to filter through a long list of menu items with scrolling behaviour.
 
@@ -420,7 +420,7 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
 </Dropdown>
 ```
 
-<Htwo label="Menu icon" />
+## Menu icon
 
 Use the menu icon trigger element on components such as cards as an alternative element to the button.
 
@@ -438,7 +438,7 @@ Use the menu icon trigger element on components such as cards as an alternative 
 </Dropdown>
 ```
 
-<Htwo label="Notification bell" />
+## Notification bell
 
 Use this example to show a list of notifications inside your application by providing more detailed information such as the user avatar, content and time of notification triggered by a notification bell icon.
 
@@ -454,7 +454,7 @@ Use this example to show a list of notifications inside your application by prov
   </div>
 </div>
 <Dropdown triggeredBy="#bell" class="w-full max-w-sm rounded divide-y divide-gray-100 shadow dark:bg-gray-800 dark:divide-gray-700">
-  <div slot="header" class="text-center py-2 font-bold text-center">Notifications</div>
+  <div slot="header" class="text-center py-2 font-bold">Notifications</div>
   <DropdownItem class="flex space-x-4">
     <Avatar src="/images/profile-picture-1.webp" dot={{color:'bg-gray-300'}} rounded />
     <div class="pl-3 w-full">
@@ -485,7 +485,7 @@ Use this example to show a list of notifications inside your application by prov
 </Dropdown>
 ```
 
-<Htwo label="User avatar" />
+## User avatar
 
 This example can be used to show a list of menu items and options when a user is logged into your application.
 
@@ -507,7 +507,7 @@ This example can be used to show a list of menu items and options when a user is
 </Dropdown>
 ```
 
-<Htwo label="Avatar with name" />
+## Avatar with name
 
 Use this example to also show the name or email of the user next to the avatar for the dropdown menu.
 
@@ -532,7 +532,7 @@ Use this example to also show the name or email of the user next to the avatar f
 </Dropdown>
 ```
 
-<Htwo label="Sizes" />
+## Sizes
 
 <p>The dropdown menus work with buttons of all sizes including smaller or larger ones.</p>
 
@@ -551,7 +551,7 @@ Use this example to also show the name or email of the user next to the avatar f
 <Button class="sizes" size="lg"><Chevron>Large dropdown</Chevron></Button>
 ```
 
-<Htwo label="Placement" />
+## Placement
 
 You can also use the `placement={top|right|bottom|left}` options to choose the placement of the dropdown menu. By default the positioning is set to the bottom side of the button.
 
@@ -579,7 +579,7 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
 </div>
 ```
 
-<Htwo label="Double placement"/>
+## Double placement
 
 ```svelte example class="flex justify-center items-center gap-2 h-96"
 <script>
@@ -597,7 +597,7 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
 </Dropdown>
 ```
 
-<Htwo label="Events" />
+## Events
 
 `DropdownItem` renders to link or button wrapped with `<li/>` element depending whether you supplied the `href` property.
 Therefore you can catch standard events on it like `on:click`.
@@ -619,7 +619,7 @@ Therefore you can catch standard events on it like `on:click`.
 </Dropdown>
 ```
 
-<Htwo label="Props" />
+## Props
 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
@@ -648,7 +648,7 @@ Therefore you can catch standard events on it like `on:click`.
   <TableDefaultRow items={propItems4} rowState='hover' />
 </TableProp>
 
-<Htwo label="Slots" />
+## Slots
 
 <h3 class='text-xl w-full dark:text-white py-4'>Dropdown</h3>
 
@@ -668,7 +668,7 @@ Therefore you can catch standard events on it like `on:click`.
   <TableDefaultRow items={slotDropdownItem} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events: DropdownItem" />
+## Forwarded Events: DropdownItem
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:blur</Badge>
@@ -681,7 +681,7 @@ Therefore you can catch standard events on it like `on:click`.
 <Badge large={true}>on:mouseleave</Badge>
 </div>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/dropdowns/" target="_blank" rel="noreferrer" class="link"

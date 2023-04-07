@@ -1,5 +1,11 @@
+<script context="module">
+  import h2 from "./h2.svelte";
+  export { h2 };
+</script>
+
 <script>
-  // import 'prism-themes/themes/prism-holi-theme.css';
+  // calm down the warrnings "<Page> was created with unknown prop ..."
+  $: $$props;
 </script>
 
 <div class="max-w-3xl 2xl:max-w-4xl mx-auto mt-8">

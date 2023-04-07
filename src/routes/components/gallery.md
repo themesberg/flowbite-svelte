@@ -9,8 +9,8 @@ description: Use the image gallery component based on a masonry grid layout usin
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { P, A } from '$lib'
   // Props table
   import { props as galleryProps } from '../props/Gallery.json'
 	let propHeader = ['Name', 'Type', 'Default']
@@ -29,7 +29,7 @@ The gallery component can be used to show multiple images inside a masonry grid 
 
 This component is recommended for usage within marketing UI interfaces and website sections when you want to show pictures of your team members, office pictures, or even case study images.
 
-<Htwo label="Set up" />
+## Set up
 
 Import `Gallery` in the script tag.
 
@@ -39,7 +39,7 @@ Import `Gallery` in the script tag.
 </script>
 ```
 
-<Htwo label="Default gallery" />
+## Default gallery
 
 Use this component to show a collection of images inside a gallery.
 
@@ -71,7 +71,7 @@ Example below show a gallery with three pictures on a row.
 <Gallery items={images} class="gap-4 grid-cols-2 md:grid-cols-3" />
 ```
 
-<Htwo label="Masonry grid" />
+## Masonry grid
 
 This example can be used to show the images inside a masongry grid layouts with four columns.
 
@@ -109,7 +109,7 @@ This example can be used to show the images inside a masongry grid layouts with 
 </Gallery>
 ```
 
-<Htwo label="Featured image" />
+## Featured image
 
 This example can be used to feature the most important image and show a row of five pictures below.
 
@@ -133,7 +133,7 @@ This example can be used to feature the most important image and show a row of f
 </Gallery>
 ```
 
-<Htwo label="Quad gallery" />
+## Quad gallery
 
 Use this example to show four larger images with two items on a row.
 
@@ -152,7 +152,7 @@ Use this example to show four larger images with two items on a row.
 <Gallery class="gap-2 grid-cols-2" items={images} />
 ```
 
-<Htwo label="Gallery with slider" />
+## Gallery with slider
 
 This example uses the [carousel slider](https://flowbite-svelte.com/components/carousel) functionality to show multiple images inside a slider gallery.
 
@@ -176,7 +176,7 @@ This example uses the [carousel slider](https://flowbite-svelte.com/components/c
 </div>
 ```
 
-<Htwo label="Gallery with tag filters" />
+## Gallery with tag filters
 
 Use this example to show a list of tags and filter the images below based on the activately selected tag.
 
@@ -212,7 +212,7 @@ Use this example to show a list of tags and filter the images below based on the
 <Gallery items={images} class="gap-4 grid-cols-2 md:grid-cols-3" />
 ```
 
-<Htwo label="Heterogeneous gallery" />
+## Heterogeneous gallery
              
 Gallery items don't have to be all the same but then you need to list them manually - don't set the `items` property.
 
@@ -229,7 +229,7 @@ Gallery items don't have to be all the same but then you need to list them manua
 </Gallery>
 ```
 
-<Htwo label="Custom image rendering" />
+## Custom image rendering
 
 This example shows how to get a complete control over the gallery images look and feel.
 
@@ -252,7 +252,7 @@ This example shows how to get a complete control over the gallery images look an
 </Gallery>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
@@ -263,7 +263,7 @@ The component has the following props, type, and default values. See <A href="/p
 </TableProp>
 
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/gallery/" target="_blank" rel="noreferrer" class="link"

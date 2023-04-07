@@ -9,8 +9,8 @@ description: Use the list group component to display a series of items, buttons 
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Badge, Heading, P, A } from '$lib'
   import { props as items1 } from '../props/Listgroup.json'
   import { props as items2 } from '../props/ListgroupItem.json'
   // Props table
@@ -25,7 +25,7 @@ description: Use the list group component to display a series of items, buttons 
 
 The list group component can be used to display a series of elements, buttons or links inside a single card component similar to a sidebar.
 
-<Htwo label="Setup" />
+## Setup
 
 ```html
 <script>
@@ -33,7 +33,7 @@ The list group component can be used to display a series of elements, buttons or
 </script>
 ```
 
-<Htwo label="Default list group" />
+## Default list group
 
 Here’s an example of a list group that you can use right away.
 
@@ -48,7 +48,7 @@ Here’s an example of a list group that you can use right away.
 </Listgroup>
 ```
 
-<Htwo label="List group with links" />
+## List group with links
 
 You can also display a series of links inside the list group element. Notice how items provide the `href` field.
 
@@ -72,7 +72,7 @@ If list is active and data items contain `href` field entries are presented as `
 </Listgroup>
 ```
 
-<Htwo label="List group with buttons" />
+## List group with buttons
 
 It is also possible to display a list of button element inside the list group component. The following example includes an active and disabled item as well.
 
@@ -96,7 +96,7 @@ If list is active and data items do not contain `href` field entries are present
 </Listgroup>
 ```
 
-<Htwo label="List group with icons" />
+## List group with icons
 
 Use the following example to create a list of buttons as a menu together with SVG icons.
 
@@ -117,7 +117,7 @@ Use the following example to create a list of buttons as a menu together with SV
 </Listgroup>
 ```
 
-<Htwo label="Advanced" />
+## Advanced
 
 When non standard usage is needed you can omit the `items` props and add elements directly to the list.
 Usage of hidden so far `ListgroupItem` helps you with proper layout.
@@ -145,7 +145,7 @@ Delete user
 </Listgroup>
 ```
 
-<Htwo label="Props" />
+## Props
 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
@@ -162,7 +162,7 @@ Delete user
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events" />
+## Forwarded Events
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">ListgroupItem</Heading>
 
@@ -179,7 +179,7 @@ Delete user
 <Badge large={true}>on:mouseover</Badge>
 </div>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/list-group/" target="_blank" rel="noreferrer" class="link"

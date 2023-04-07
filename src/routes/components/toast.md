@@ -9,8 +9,8 @@ description: Push notifications to your users using the toast component and choo
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { P, A } from '$lib'
   import { props as items }  from '../props/Toast.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
@@ -23,7 +23,7 @@ description: Push notifications to your users using the toast component and choo
 
 The toast component can be used to enhance your website’s interactivity by pushing notifications to your visitors. You can choose from multiple styles, colors, sizes, and positions and even dismiss the component.
 
-<Htwo label="Setup" />
+## Setup
 
 ```html
 <script>
@@ -31,7 +31,7 @@ The toast component can be used to enhance your website’s interactivity by pus
 </script>
 ```
 
-<Htwo label="Default toast" />
+## Default toast
 
 Use this simple toast component with an icon, message, and dismissable close button to show alert messages to your website visitors.
 
@@ -50,7 +50,7 @@ Use this simple toast component with an icon, message, and dismissable close but
 </Toast>
 ```
 
-<Htwo label="Simple toast" />
+## Simple toast
 
 This component can be used to show simple messages and notifications without the use of a close button.
 
@@ -67,7 +67,7 @@ This component can be used to show simple messages and notifications without the
 </Toast>
 ```
 
-<Htwo label="Colors" />
+## Colors
 
 Use these contextual toast components to show success, danger, or warning alert messages to your users.
 
@@ -99,7 +99,7 @@ Use these contextual toast components to show success, danger, or warning alert 
 </Toast>
 ```
 
-<Htwo label="Icons" />
+## Icons
 
 For the right positioning of the icon use: <span class="font-mono italic">slot="icon"</span>.
 
@@ -135,7 +135,7 @@ You can use any <A href="/icons">icon components.</A>
 </Toast>
 ```
 
-<Htwo label="Autohide example" />
+## Autohide example
 
 ```svelte example
 <script>
@@ -169,7 +169,7 @@ You can use any <A href="/icons">icon components.</A>
 </div>
 ```
 
-<Htwo label="Transitions" />
+## Transitions
 
 You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" target="_blank" rel="noreferrer" >Svelte/easing</A>.
 
@@ -245,7 +245,7 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 </Toast>
 ```
 
-<Htwo label="Undo button" />
+## Undo button
 
 Use this toast component to also show an “undo” button to reverse the action of the user.
 
@@ -262,7 +262,7 @@ Use this toast component to also show an “undo” button to reverse the action
 </Toast>
 ```
 
-<Htwo label="Extra content" />
+## Extra content
 
 Use the `slot="extra` to add some more arbitrary content in the toast.
 
@@ -335,7 +335,7 @@ Use this interactive toast component to encourage users to make a certain action
 </Toast>
 ```
 
-<Htwo label="Positioning" />
+## Positioning
 
 Use the position property to position these toast components relative to the main content wrapper element from your document.
 
@@ -352,7 +352,7 @@ Use the position property to position these toast components relative to the mai
 </div>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
@@ -360,7 +360,7 @@ The component has the following props, type, and default values. See <A href="/p
 <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/toast/" target="_blank" rel="noreferrer" class="link"

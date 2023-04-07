@@ -9,8 +9,8 @@ description: Use the progress bar component to show the completion rate of a dat
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { P, A } from '$lib'
   import { props as items } from '../props/Progressbar.json'
   // Props table
   let propHeader = ['Name', 'Type', 'Default']
@@ -24,7 +24,7 @@ description: Use the progress bar component to show the completion rate of a dat
 
 The progress bar component can be used as an indicator to show the completion rate of data sets or it can be used as an animated loader component. There are multiple sizes, colors, and styles available.
 
-<Htwo label="Setup" />
+## Setup
 
 Import the `Progressbar` component in a script tag.
 
@@ -34,7 +34,7 @@ Import the `Progressbar` component in a script tag.
 </script>
 ```
 
-<Htwo label="Default progress bar" />
+## Default progress bar
 
 Use the following example of a progress bar element to show a completion rate of 45% by using an inline style and the utility classes from Tailwind CSS.
 
@@ -46,7 +46,7 @@ Use the following example of a progress bar element to show a completion rate of
 <Progressbar progress="50" />
 ```
 
-<Htwo label="Sizes" />
+## Sizes
 
 Use the `size` prop to change the size of a progress bar.
 
@@ -76,7 +76,7 @@ Use the `size` prop to change the size of a progress bar.
 </div>
 ```
 
-<Htwo label="With label inside" />
+## With label inside
 
 Use the `labelInside` prop to add the progress in a progress bar.
 
@@ -89,7 +89,7 @@ Use the `labelInside` prop to add the progress in a progress bar.
 <Progressbar progress="50" size="h-4" labelInside />
 ```
 
-<Htwo label="With label outside" />
+## With label outside
 
 Use the `labelOutside` prop to add the progress outside of a progress bar.
 
@@ -102,7 +102,7 @@ Use the `labelOutside` prop to add the progress outside of a progress bar.
 <Progressbar progress="50" labelOutside="Flowbite-Svelte" />
 ```
 
-<Htwo label="Colors" />
+## Colors
 
 Use the `color` prop to change the color of a progress bar.
 
@@ -148,7 +148,7 @@ Use the `color` prop to change the color of a progress bar.
 </div>
 ```
 
-<Htwo label='Custom style' />
+## Custom style
 
 Use `labelInsideClass` prop to style your progressbar.
 
@@ -185,7 +185,7 @@ Use `labelInsideClass` prop to style your progressbar.
   labelOutside="Size h-6" />
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
@@ -193,7 +193,7 @@ The component has the following props, type, and default values. See <A href="/p
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/progress/" target="_blank" rel="noreferrer" class="link"

@@ -21,6 +21,8 @@
 
 <CompoDescription>{description}</CompoDescription>
 
+{#if libFiles}
 <ExampleDiv>
   <GitHubSourceList {libFiles} />
 </ExampleDiv>
+{/if}

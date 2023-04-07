@@ -10,9 +10,9 @@ description: Use the avatar component to show a visual representation of a user 
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
+  import { P, A } from '$lib'
   // Props table
   import { props as avatarProps } from '../props/Avatar.json'
   import { props as placehoderProps } from '../props/Placeholder.json'
@@ -28,7 +28,7 @@ description: Use the avatar component to show a visual representation of a user 
 
 The avatar component can be used as a visual identifier for a user profile on your website and you can use the examples from Flowbite to modify the styles and sizes of these components using the utility classes from Tailwind CSS.
 
-<Htwo label="Setup" />
+## Setup
 
 Import `Avatar`.
 If you are using the user dropdown, import `Dropdown`, `DropdownHeader`, `DropdownItem`, `DropdownDivider`.
@@ -40,7 +40,7 @@ If you are using tooltip for avatar import `Tooltip`.
 </script>
 ```
 
-<Htwo label="Default avatar" />
+## Default avatar
 
 Use this example to create a circle and rounded avatar on an image element.
 
@@ -54,7 +54,7 @@ Use this example to create a circle and rounded avatar on an image element.
 </div>
 ```
 
-<Htwo label="Bordered" />
+## Bordered
 
 You can apply a border around the avatar component.
 
@@ -68,7 +68,7 @@ If you can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify ri
 <Avatar src="/images/profile-picture-2.webp" border class="ring-red-400 dark:ring-red-300"/>
 ```
 
-<Htwo label="Placeholder" />
+## Placeholder
 
 When there is no custom image available a placehoder is displayed.
 
@@ -82,7 +82,7 @@ When there is no custom image available a placehoder is displayed.
 <Avatar rounded border />
 ```
 
-<Htwo label="Placeholder initials" />
+## Placeholder initials
 
 This example can be used to show the initials of the user’s first and last name as a placeholder when no profile picture is available.
 
@@ -93,7 +93,7 @@ This example can be used to show the initials of the user’s first and last nam
   <Avatar>JL</Avatar>
 ```
 
-<Htwo label="Avatar tooltip" />
+## Avatar tooltip
 
 Use this example to show a tooltip when hovering over the avatar.
 
@@ -107,7 +107,7 @@ Use this example to show a tooltip when hovering over the avatar.
   <Tooltip triggeredBy="[data-name]" on:show={e => name = e.target.dataset.name}>{name}</Tooltip>
 ```
 
-<Htwo label="Dot indicator" />
+## Dot indicator
 
 Use a dot element relative to the avatar component as an indicator for the user (eg. online or offline status).
 
@@ -125,7 +125,7 @@ Use a dot element relative to the avatar component as an indicator for the user 
 
 ```
 
-<Htwo label="Stacked" />
+## Stacked
 
 Use this example if you want to stack a group of users by overlapping the avatar components.
 
@@ -147,7 +147,7 @@ Use this example if you want to stack a group of users by overlapping the avatar
 </div>
 ```
 
-<Htwo label="Avatar text" />
+## Avatar text
 
 This example can be used if you want to show additional information in the form of text elements such as the user’s name and join date.
 
@@ -164,7 +164,7 @@ This example can be used if you want to show additional information in the form 
 </div>
 ```
 
-<Htwo label="User dropdown" />
+## User dropdown
 
 Use this example if you want to show a dropdown menu when clicking on the avatar component.
 
@@ -187,7 +187,7 @@ Use this example if you want to show a dropdown menu when clicking on the avatar
   </Dropdown>
 ```
 
-<Htwo label="Sizes" />
+## Sizes
 
 Select size from  xs | sm | md | lg | xl.
 
@@ -204,7 +204,7 @@ Select size from  xs | sm | md | lg | xl.
 </div>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.
@@ -221,7 +221,7 @@ The component has the following props, type, and default values. See <A href="/p
   <TableDefaultRow items={placehoderProps} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/avatar/" target="_blank" rel="noreferrer" class="link">

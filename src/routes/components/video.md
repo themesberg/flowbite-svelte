@@ -9,8 +9,8 @@ description: Use the video component to configure an embedded video player using
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Heading, P, A } from '$lib'
   import { props as items } from '../props/Video.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
@@ -21,7 +21,7 @@ description: Use the video component to configure an embedded video player using
 
 <PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
-<Htwo label="Setup" />
+## Setup
 
 ```html
 <script>
@@ -29,7 +29,7 @@ description: Use the video component to configure an embedded video player using
 </script>
 ```
 
-<Htwo label="Video player" />
+## Video player
 
 Use this example to create a native browser video player and apply the w-full utility class from Tailwind CSS to span the full width of the parent container.
 
@@ -41,7 +41,7 @@ Use this example to create a native browser video player and apply the w-full ut
 <Video src='/videos/flowbite.mp4' controls trackSrc='flowbite.mp4' />
 ```
 
-<Htwo label="Autoplay" />
+## Autoplay
 
 Use the autoplay attribute on the video component to automatically start the video when the page has been loaded.
 
@@ -53,7 +53,7 @@ Use the autoplay attribute on the video component to automatically start the vid
 <Video src='/videos/flowbite.mp4' autoplay controls trackSrc='flowbite.mp4' />
 ```
 
-<Htwo label="Muted" />
+## Muted
 
 Use the muted attribute together with the autoplay option to start the video while the sound is muted.
 
@@ -65,7 +65,7 @@ Use the muted attribute together with the autoplay option to start the video whi
 <Video src='/videos/flowbite.mp4' autoplay muted controls trackSrc='flowbite.mp4' />
 ```
 
-<Htwo label="Sizes" />
+## Sizes
 
 Set the width and height of the video component using the `w-{size}` and `h-{size}` classes.
 
@@ -119,7 +119,7 @@ Customize the video player appearance using the utility classes from Tailwind CS
 <Video src='/videos/flowbite.mp4' controls class='w-full max-w-full h-auto rounded-lg border border-gray-200 dark:border-gray-700' trackSrc='flowbite.mp4' />
 ```
 
-<Htwo label="Props" />
+## Props
 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
@@ -128,7 +128,7 @@ Customize the video player appearance using the utility classes from Tailwind CS
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/video/" target="_blank" rel="noreferrer" class="link"
