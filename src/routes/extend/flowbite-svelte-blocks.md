@@ -3,31 +3,23 @@ layout: pageLayout
 breadcrumb_title: Flowbite Svelte Blocks
 title: Flowbite Svelte Blocks
 dir: Extend
-description: Flowbite-Svete-Blocks provides all necessary components to get started quickly 
+description: Flowbite-Svete-Blocks provides all necessary components to get started quickly
 ---
 
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { CompoDescription, Htwo, MetaTag } from '../utils'
+  import { PageHeadSection, Htwo, MetaTag } from '../utils'
   import { Breadcrumb, BreadcrumbItem, Heading, A, List, Li, Img} from '$lib'
+  const libFiles ={
+  "GitHub Repo": "https://github.com/shinokada/flowbite-svelte-blocks",
+  Docs: "https://shinokada.github.io/flowbite-svelte-blocks/",
+  Demo: "https://flowbite-svelte-blocks.vercel.app/"
+  }
+
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
-
-<List tag="ul" class="space-y-1 my-4">
-  <Li><A href="https://github.com/shinokada/flowbite-svelte-blocks">GitHub Repo</A></Li>
-  <Li><A href="https://shinokada.github.io/flowbite-svelte-blocks/">Docs</A></Li>
-  <Li><A href="https://flowbite-svelte-blocks.vercel.app/">Demo</A></Li>
-</List>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 <Htwo label="Installation" />
 

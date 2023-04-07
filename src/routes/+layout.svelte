@@ -85,7 +85,7 @@
     <NavHamburger on:click={toggleDrawer} btnClass="ml-3 lg:hidden" />
     <NavBrand href="/">
       <img src={logo} class="mr-3 h-6 sm:h-9" alt="Flowbite-Svelte Logo" />
-      <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+      <span class="self-center whitespace-nowrap text-xl font-semibold text-gray-600 dark:text-white">
         Flowbite-Svelte
       </span>
     </NavBrand>

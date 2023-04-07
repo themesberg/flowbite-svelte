@@ -3,25 +3,17 @@ layout: pageLayout
 breadcrumb_title: Flowbite Svelte Starters
 title: Flowbite Svelte Starters
 dir: Extend
-description: Flowbite Svete Starters provide all necessary components to get started quickly 
+description: Flowbite Svete Starters provide all necessary components to get started quickly
 ---
 
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { CompoDescription, Htwo, MetaTag } from '../utils'
+  import { Htwo, MetaTag, PageHeadSection } from '../utils'
   import { Breadcrumb, BreadcrumbItem, Heading, A, List, Li } from '$lib'
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} />
 
 <Heading class="mb-2" tag="h2" customSize="text-xl">Flowbite Svelte starter</Heading>
 
@@ -36,7 +28,6 @@ description: Flowbite Svete Starters provide all necessary components to get sta
   <Li><A href="https://github.com/themesberg/flowbite-svelte/tree/main/starters/svelte-starter">GitHub Repo</A></Li>
   <Li><A href="https://shinokada.github.io/svelte-starter/">Demo</A></Li>
 </List>
-
 
 <Heading class="mb-2" tag="h2" customSize="text-xl mt-2">Svelte TS starter</Heading>
 

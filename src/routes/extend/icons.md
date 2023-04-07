@@ -9,18 +9,12 @@ description: Use Svelte SVG icon families to write less code
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo , MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, P, A, List, Li, Heading } from '$lib'
+  import { Htwo , MetaTag, PageHeadSection } from '../utils'
+  import {  Breadcrumb, BreadcrumbItem, P, A, List, Li, Heading } from '$lib'
 	import CheckCircle from './CheckCircle.svelte'
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} />
 
 Instead of using SVG icons, using an icon library simplifies the code. You can uses <A href="https://www.npmjs.com/package/svelte-heros-v2" target="_blank" rel="noreferrer">Svelte-Heros-v2</A> and <A href="https://svelte-svg-icons.vercel.app/" target="_blank" rel="noreferrer">other icon sets</A> for Flowbite-Svelte.
 
@@ -38,38 +32,34 @@ If you want to change the color with Tailwind CSS, add it in the class prop. To 
 
 Use `dark:` to specify the dark mode color for icons.
 
-
 ```html
 <script>
-import {
-  AdjustmentsVertical,
-  Bell,
-  Briefcase,
-  Ticket,
-  ChartBarSquare,
-  Camera,
-  ChevronLeft,
-} from "svelte-heros-v2";
+  import {
+    AdjustmentsVertical,
+    Bell,
+    Briefcase,
+    Ticket,
+    ChartBarSquare,
+    Camera,
+    ChevronLeft
+  } from 'svelte-heros-v2';
 </script>
 
 <AdjustmentsVertical size="30" class="text-blue-700 dark:text-red-700" />
 <Bell size="30" class="text-red-700 dark:text-green-700" />
-<Briefcase  size="30" class="text-green-700 dark:text-indigo-700" />
+<Briefcase size="30" class="text-green-700 dark:text-indigo-700" />
 <ChartBarSquare size="30" class="text-purple-700 dark:text-pink-700" />
 <Ticket size="30" class="text-pink-700 dark:text-indigo-700" />
 <Camera size="30" class="text-indigo-700 dark:text-gray-100" />
-<ChevronLeft
-  size="30" class="text-yellow-700 dark:text-white"
-/>
+<ChevronLeft size="30" class="text-yellow-700 dark:text-white" />
 ```
 
 You can change icon colors with HEX color code by using the `color` prop.
 
-
 ```html
-<AdjustmentsVertical size="30"  color="#ff0000" />
-<Bell   color="#10ff00" />
-<Briefcase  size="30" color="#001dff" />
+<AdjustmentsVertical size="30" color="#ff0000" />
+<Bell color="#10ff00" />
+<Briefcase size="30" color="#001dff" />
 ```
 
 <Htwo label="Aria label" />
@@ -90,11 +80,11 @@ You can pass other attibutes as well.
 
 <Htwo label="Import all" />
 
-Use import * as Icon from `svelte-heros-v2`.
+Use import \* as Icon from `svelte-heros-v2`.
 
 ```html
 <script>
-	import * as Icon from 'svelte-heros-v2';
+  import * as Icon from 'svelte-heros-v2';
 </script>
 
 <Icon.Cog />
@@ -121,39 +111,37 @@ Here are some examples using Svelte-Heros-v2.
 
 ```html
 <script>
-	import { AccordionItem } from 'flowbite-svelte';
-	import { ArrowDownCircle, ArrowUpCircle } from 'svelte-heros-v2';
+  import { AccordionItem } from 'flowbite-svelte';
+  import { ArrowDownCircle, ArrowUpCircle } from 'svelte-heros-v2';
 </script>
 
 <AccordionItem id="1">
-	<h2 slot="header">Header 2-1</h2>
-	<span slot="arrowup">
-		<ArrowUpCircle />
-	</span>
-	<span slot="arrowdown">
-		<ArrowDownCircle />
-	</span>
-	<div slot="body">
-		<p class="mb-2 text-gray-500 dark:text-gray-400">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
-			explicabo ...
-		</p>
-	</div>
+  <h2 slot="header">Header 2-1</h2>
+  <span slot="arrowup">
+    <ArrowUpCircle />
+  </span>
+  <span slot="arrowdown">
+    <ArrowDownCircle />
+  </span>
+  <div slot="body">
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
+    </p>
+  </div>
 </AccordionItem>
 <AccordionItem id="2">
-	<h2 slot="header">Header 2-2</h2>
-	<span slot="arrowup">
-		<ArrowUpCircle />
-	</span>
-	<span slot="arrowdown">
-		<ArrowDownCircle />
-	</span>
-	<div slot="body">
-		<p class="mb-2 text-gray-500 dark:text-gray-400">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint
-			explicabo ...
-		</p>
-	</div>
+  <h2 slot="header">Header 2-2</h2>
+  <span slot="arrowup">
+    <ArrowUpCircle />
+  </span>
+  <span slot="arrowdown">
+    <ArrowDownCircle />
+  </span>
+  <div slot="body">
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
+    </p>
+  </div>
 </AccordionItem>
 ```
 
@@ -161,39 +149,39 @@ Here are some examples using Svelte-Heros-v2.
 
 ```html
 <script>
-	import { Alert } from 'flowbite-svelte';
-	import { InformationCircle } from 'svelte-heros-v2';
+  import { Alert } from 'flowbite-svelte';
+  import { InformationCircle } from 'svelte-heros-v2';
 </script>
 
 <Alert class="mb-2">
-	<svelte:fragment slot="icon">
-		<InformationCircle class="text-blue-700 flex-shrink-0 w-5 h-5 mr-3" />
-	</svelte:fragment>
-	<span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
+  <svelte:fragment slot="icon">
+    <InformationCircle class="text-blue-700 flex-shrink-0 w-5 h-5 mr-3" />
+  </svelte:fragment>
+  <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
 </Alert>
 <Alert color="red" class="mb-2">
-	<svelte:fragment slot="icon">
-		<InformationCircle class="text-red-700 flex-shrink-0 w-5 h-5 mr-3" />
-	</svelte:fragment>
-	<span class="font-medium">Danger alert!</span> Change a few things up and try submitting again.
+  <svelte:fragment slot="icon">
+    <InformationCircle class="text-red-700 flex-shrink-0 w-5 h-5 mr-3" />
+  </svelte:fragment>
+  <span class="font-medium">Danger alert!</span> Change a few things up and try submitting again.
 </Alert>
 <Alert color="green" class="mb-2">
-	<svelte:fragment slot="icon">
-		<InformationCircle class="text-green-700 flex-shrink-0 w-5 h-5 mr-3" />
-	</svelte:fragment>
-	<span class="font-medium">Success alert!</span> Change a few things up and try submitting again.
+  <svelte:fragment slot="icon">
+    <InformationCircle class="text-green-700 flex-shrink-0 w-5 h-5 mr-3" />
+  </svelte:fragment>
+  <span class="font-medium">Success alert!</span> Change a few things up and try submitting again.
 </Alert>
 <Alert color="yellow" class="mb-2">
-	<svelte:fragment slot="icon">
-		<InformationCircle class="text-yellow-700 flex-shrink-0 w-5 h-5 mr-3" />
-	</svelte:fragment>
-	<span class="font-medium">Warning alert!</span> Change a few things up and try submitting again.
+  <svelte:fragment slot="icon">
+    <InformationCircle class="text-yellow-700 flex-shrink-0 w-5 h-5 mr-3" />
+  </svelte:fragment>
+  <span class="font-medium">Warning alert!</span> Change a few things up and try submitting again.
 </Alert>
 <Alert color="gray" class="mb-2">
-	<svelte:fragment slot="icon">
-		<InformationCircle class="text-gray-500 flex-shrink-0 w-5 h-5 mr-3" />
-	</svelte:fragment>
-	<span class="font-medium">Dark alert!</span> Change a few things up and try submitting again.
+  <svelte:fragment slot="icon">
+    <InformationCircle class="text-gray-500 flex-shrink-0 w-5 h-5 mr-3" />
+  </svelte:fragment>
+  <span class="font-medium">Dark alert!</span> Change a few things up and try submitting again.
 </Alert>
 ```
 
@@ -205,23 +193,22 @@ Here are some examples using Svelte-Heros-v2.
   import { Home, ChevronDoubleRight } from 'svelte-heros-v2';
 </script>
 
-<Breadcrumb
-  aria-label="Solid background breadcrumb example"
-  class="bg-gray-50 py-3 px-5 dark:bg-gray-900">
+<Breadcrumb aria-label="Solid background breadcrumb example" class="bg-gray-50 py-3 px-5 dark:bg-gray-900">
   <BreadcrumbItem href="/" home>
-    <svelte:fragment slot="icon">
-      <Home />
-    </svelte:fragment>Home</BreadcrumbItem>
+    <svelte:fragment slot="icon"> <Home /> </svelte:fragment>Home</BreadcrumbItem
+  >
   <BreadcrumbItem href="/">
     <svelte:fragment slot="icon">
       <ChevronDoubleRight />
     </svelte:fragment>
-    Projects</BreadcrumbItem>
+    Projects</BreadcrumbItem
+  >
   <BreadcrumbItem>
     <svelte:fragment slot="icon">
       <ChevronDoubleRight />
     </svelte:fragment>
-    Flowbite Svelte</BreadcrumbItem>
+    Flowbite Svelte</BreadcrumbItem
+  >
 </Breadcrumb>
 ```
 
@@ -237,7 +224,6 @@ Here are some examples using Svelte-Heros-v2.
 <Li icon><CheckCircle /><A href="https://hero2-with-flowbite-svelte.vercel.app/toast">Toast</A></Li>
 <Li icon><CheckCircle /><A href="https://hero2-with-flowbite-svelte.vercel.app/toolbar">Toolbar</A></Li>
 </List>
-
 
 <Htwo label="Alternatives" />
 
@@ -266,4 +252,3 @@ Here are some examples using Svelte-Heros-v2.
 <Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-twitter-emoji">Svelte-Twitter-Emoji</A></Li>
 <Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-weather">Svelte-Weather</A></Li>
 </List>
-
