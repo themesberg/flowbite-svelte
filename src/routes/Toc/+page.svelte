@@ -32,7 +32,7 @@
       <nav id="TableOfContents" class="mb-8">
         <ul>
           {#each headings as { href, name }}
-            <li><a {href} class="block py-1">{name}</a></li>
+            <li><a {href} class="block">{name}</a></li>
           {/each}
         </ul>
       </nav>

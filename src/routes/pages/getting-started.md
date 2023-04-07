@@ -24,9 +24,9 @@ description: Flowbite-Svelte Getting Started page
 
 <Htwo label="Installing from scratch" />
 
-<h3 class='text-xl w-full dark:text-white py-4'>SvelteKit</h3>
+<h3>SvelteKit</h3>
 
-<p>You can install SvelteKit or Svelte to start your app. For SvelteKit:</p>
+You can install SvelteKit or Svelte to start your app. For SvelteKit:
 
 ```bash
 npm create svelte@latest my-app
@@ -34,9 +34,9 @@ cd my-app
 npm install
 ```
 
-<h3 class='text-xl w-full dark:text-white py-4'>Svelte</h3>
+<h3>Svelte</h3>
 
-<p>If you want to get started with Svelte:</p>
+If you want to get started with Svelte:
 
 ```bash
 npm create vite@latest myapp -- --template svelte
@@ -51,7 +51,7 @@ npx svelte-add@latest tailwindcss
 npm i
 ```
 
-<p>Run it:</p>
+Run it:
 
 ```bash
 npm run dev
@@ -85,7 +85,7 @@ const config = {
 module.exports = config;
 ```
 
-<p>Now you are ready to go! Add the following to `src/routes/+page.svelte`.</p>
+Now you are ready to go! Add the following to `src/routes/+page.svelte`.
 
 ```html
 <script>

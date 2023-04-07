@@ -23,6 +23,7 @@ description: Flowbite-Svelte Types page
 
 <Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
 
-<ExampleDiv tag="pre" class="dark:text-white">
+<ExampleDiv tag="pre" class="text-gray-900 dark:text-white whitespace-pre-wrap">
 {TypeList}
 </ExampleDiv>
+
