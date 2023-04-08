@@ -41,7 +41,7 @@ Import a button component in the script tag.
 
 <Htwo label="Default button" />
 
-Use these default button styles with multiple colors to indicate an action or link within your website. The default `type` is set to `button`. You can chage it by using the `type` prop.
+Use these default button styles with multiple colors to indicate an action or link within your website. The default `type` is set to `button`. You can change it by using the `type` prop.
 
 ```svelte example class="flex flex-wrap gap-2" hideScript
 <script>

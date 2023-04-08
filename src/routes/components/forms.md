@@ -136,12 +136,12 @@ Use the following example to apply validation styles for success and error messa
 <div class="mb-6">
   <Label for='success' color='green' class='block mb-2'>Your name</Label>
   <Input id='success' color='green' placeholder="Success input" />
-  <Helper class='mt-2' color='green'><span class="font-medium">Well done!</span> Some success messsage.</Helper>
+  <Helper class='mt-2' color='green'><span class="font-medium">Well done!</span> Some success message.</Helper>
 </div>
 <div class="mb-6">
   <Label for='error' color='red' class='block mb-2'>Your name</Label>
   <Input id='success' color='red' placeholder="Success input" />
-  <Helper class='mt-2' color='red'><span class="font-medium">Well done!</span> Some success messsage.</Helper>
+  <Helper class='mt-2' color='red'><span class="font-medium">Well done!</span> Some success message.</Helper>
 </div>
 ```
 

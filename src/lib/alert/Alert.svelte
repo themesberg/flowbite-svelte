@@ -13,7 +13,7 @@
 
   const handleHide = () => {
     hidden = !hidden;
-    dispatch('close'); // preffered name
+    dispatch('close'); // preferred name
   };
 
   let divClass: string;

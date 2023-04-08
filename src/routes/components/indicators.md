@@ -35,7 +35,7 @@ The indicator component can be used as a small element positioned absolutely rel
 
 <Htwo label="Default indicator" />
 
-Use this example to create a simple indicator with mulitple colors and position it anywhere on the website.
+Use this example to create a simple indicator with multiple colors and position it anywhere on the website.
 
 ```svelte example class="flex gap-2"
 <script>

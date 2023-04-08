@@ -9,9 +9,9 @@
   color = getContext('color');
   let noborder: boolean = getContext('noborder');
   let striped: boolean = getContext('striped');
-  let defatultBgColor = noborder || striped ? '' : 'bg-gray-50 dark:bg-gray-700';
+  let defaultBgColor = noborder || striped ? '' : 'bg-gray-50 dark:bg-gray-700';
   const bgColors = {
-    default: defatultBgColor,
+    default: defaultBgColor,
     blue: 'bg-blue-600',
     green: 'bg-green-600',
     red: 'bg-red-600',

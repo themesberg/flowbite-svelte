@@ -57,7 +57,7 @@ This example can be used to set a hyperlink on a button component.
 <Button href="/">Read more</Button>
 ```
 
-<Htwo label="Pagagraph" />
+<Htwo label="Paragraph" />
 
 Use this example to set a link inside a paragraph with an underline style.
 
