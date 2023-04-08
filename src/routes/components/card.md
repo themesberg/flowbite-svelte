@@ -32,7 +32,7 @@ Use these responsive card components to show data entries and information to you
 
 Import Card in the script tag.
 
-```html
+```svelte example hideOutput
 <script>
   import { Card } from "flowbite-svelte";
 </script>

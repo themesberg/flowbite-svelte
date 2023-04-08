@@ -32,7 +32,7 @@ Use the skeleton component to indicate a loading status with placeholder element
 
 ## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { CardPlaceholder, ImagePlaceholder, ListPlaceholder, Skeleton, TestimonialPlaceholder, TextPlaceholder, VideoPlaceholder, WidgetPlaceholder } from 'flowbite-svelte'
 </script>

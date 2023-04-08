@@ -29,7 +29,7 @@ Explore the following examples based on various styles, sizes, and positionings 
 
 ## Setup
 
-```svelte
+```svelte example hideOutput
 <script>
   import { Banner } from "flowbite-svelte"
 </script>

@@ -33,7 +33,7 @@ Flowbite-Svelte provides a large variety of styles and sizes for the button comp
 
 Import a button component in the script tag.
 
-```html
+```svelte example hideOutput
 <script>
   import { Button } from 'flowbite-svelte';
 </script>

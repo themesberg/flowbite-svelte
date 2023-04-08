@@ -24,7 +24,7 @@ The pagination component can be used to navigate across a series of content and 
 
 ## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Pagination, PaginationItem } from 'flowbite-svelte'
 </script>

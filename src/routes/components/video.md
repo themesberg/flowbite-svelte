@@ -23,7 +23,7 @@ description: Use the video component to configure an embedded video player using
 
 ## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Video } from 'flowbite-svelte';
 </script>

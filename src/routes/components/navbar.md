@@ -32,7 +32,7 @@ Get started with the responsive navbar component from Flowbite to quickly set up
 
 ## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte'
 </script>

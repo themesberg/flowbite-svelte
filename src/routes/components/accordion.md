@@ -33,7 +33,7 @@ A popular use case would be the “Frequently Asked Questions” section of a we
 
 ## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { AccordionItem, Accordion } from 'flowbite-svelte'
 </script>

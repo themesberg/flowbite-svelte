@@ -24,7 +24,7 @@ The tabs component can be used either as an extra navigational hierarchy complem
 
 ## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Tabs, TabItem } from 'flowbite-svelte';
 </script>

@@ -26,7 +26,7 @@ The mega menu component is a full-width dropdown that can be triggered by clicki
 
 ## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { MegaMenu } from 'flowbite-svelte'
 </script>

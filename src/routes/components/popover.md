@@ -29,7 +29,7 @@ Make sure that you have the Flowbite JavaScript included in your project to enab
 
 ## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Popover } from 'flowbite-svelte'
 </script>

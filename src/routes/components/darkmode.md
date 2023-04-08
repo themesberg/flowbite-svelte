@@ -24,7 +24,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <p>In Flowbite-Svelte, the `class` strategy is used to support toggling dark mode manually, so you should explictly configure it in Talwind CSS:</p>
 
-```js
+```js example 
 // tailwind.config.cjs
 const config = {
   darkMode: 'class'
@@ -34,7 +34,7 @@ const config = {
 
 <p>Then you can use `dark:` prefixed classes to configure the styles applied when dark mode is enabled. For example, if you want to change the body background color from `bg-white` when dark mode is disabled to `bg-gray-800` when dark mode is enabled:</p>
 
-```html
+```svelte example hideOutput
 <!-- src/app.html -->
 <body class="bg-white dark:bg-gray-800">
   <div>%svelte.body%</div>

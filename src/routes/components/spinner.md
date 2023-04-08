@@ -25,7 +25,7 @@ The spinner component can be used as a loading indicator which comes in multiple
 
 ## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Spinner } from 'flowbite-svelte';
 </script>

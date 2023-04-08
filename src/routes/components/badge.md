@@ -30,7 +30,7 @@ Alternatively, badges can also be used as standalone elements that link to a cer
 
 Import a badge component in the script tag.
 
-```html
+```svelte example hideOutput
 <script>
 	import { Badge } from 'flowbite-svelte';
 </script>

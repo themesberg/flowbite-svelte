@@ -34,7 +34,7 @@ Get started with multiple variants and styles of these table components.
 
 ## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox, TableSearch } from 'flowbite-svelte';
 </script>

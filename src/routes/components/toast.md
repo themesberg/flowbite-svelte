@@ -25,7 +25,7 @@ The toast component can be used to enhance your website’s interactivity by pus
 
 ## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Toast } from 'flowbite-svelte';
 </script>

@@ -26,7 +26,7 @@ Use the Drawer component (or “off-canvas”) to show a fixed element relative 
 
 ## Set up
 
-```html
+```svelte example hideOutput
 <script>
   import { Drawer, Button, CloseButton } from 'flowbite-svelte';
   import { sineIn } from 'svelte/easing';

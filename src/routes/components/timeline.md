@@ -31,7 +31,7 @@ The timeline component can be used to show series of data in a chronological ord
 
 ## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Timeline, TimelineItem, TimelineItemVertical, TimelineItemHorizontal, TimelineHorizontal, Activity, ActivityItem, Group, GroupItem } from 'flowbite-svelte';
 </script>

@@ -33,7 +33,7 @@ This component is recommended for usage within marketing UI interfaces and websi
 
 Import `Gallery` in the script tag.
 
-```html
+```svelte example hideOutput
 <script>
   import { Gallery } from 'flowbite-svelte';
 </script>

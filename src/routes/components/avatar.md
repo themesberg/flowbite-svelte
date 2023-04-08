@@ -34,7 +34,7 @@ Import `Avatar`.
 If you are using the user dropdown, import `Dropdown`, `DropdownHeader`, `DropdownItem`, `DropdownDivider`.
 If you are using tooltip for avatar import `Tooltip`.
 
-```svelte
+```svelte example hideOutput
 <script>
   import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider, Tooltip } from "flowbite-svelte"
 </script>

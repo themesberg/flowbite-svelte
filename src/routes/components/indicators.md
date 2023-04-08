@@ -26,7 +26,7 @@ The indicator component can be used as a small element positioned absolutely rel
 
 ## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Indicator } from "flowbite-svelte"
 </script>

@@ -26,7 +26,7 @@ Flowbite-Svelte allows you to show extra information when hovering or focusing o
 
 ## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Tooltip } from 'flowbite-svelte';
 </script>

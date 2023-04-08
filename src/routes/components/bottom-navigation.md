@@ -32,7 +32,7 @@ Check out multiple examples of the bottom navigation component based on various 
 
 ## Setup
 
-```svelte
+```svelte example hideOutput
 <script>
   import { BottomNav, BottomNavItem } from "flowbite-svelte"
 </script>

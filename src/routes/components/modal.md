@@ -29,7 +29,7 @@ Get started with multiple sizes, colors, and styles built with the utility class
 
 ## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Modal } from 'flowbite-svelte'
 </script>

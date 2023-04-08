@@ -26,7 +26,7 @@ The button group component from Flowbite-Svelte can be used to stack together mu
 
 ## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { ButtonGroup, Button } from 'flowbite-svelte';
 </script>

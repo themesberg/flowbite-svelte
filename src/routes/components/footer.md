@@ -31,7 +31,7 @@ The footer is one of the most underestimated sections of a website being located
 
 ## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup } from "flowbite-svelte"
 </script>

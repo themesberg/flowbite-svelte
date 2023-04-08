@@ -30,7 +30,7 @@ The KBD (Keyboard) component can be used to indicate a textual user input from t
 
 ## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Kbd } from 'flowbite-svelte'
 </script>

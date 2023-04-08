@@ -32,7 +32,7 @@ The dropdown component can be used to show a list of menu items when clicking on
 
 ## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Dropdown, DropdownItem, DropdownDivider, DropdownHeader } from 'flowbite-svelte'
 </script>
