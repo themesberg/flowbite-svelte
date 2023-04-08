@@ -33,7 +33,7 @@ The alert component can be used to provide information to your users such as suc
 
 Import Alert and set variables in the script tag.
 
-```html
+```svelte example hideOutput
 <script>
   import { Alert } from 'flowbite-svelte';
 </script>
