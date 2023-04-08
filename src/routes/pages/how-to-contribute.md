@@ -1,5 +1,5 @@
 ---
-layout: pageLayout
+layout: componentLayout
 breadcrumb_title: How to Contribute
 title: How to Contribute
 dir: Pages
@@ -9,49 +9,43 @@ description: Flowbite-Svelte How to contribute page
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, A } from '$lib'
+  import { PageHeadSection, MetaTag } from '../utils'
+  import { A } from '$lib'
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} />
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
+Here are some guidelines we'd like you to follow before submitting a PR.
 
-<p class='w-full'>Here are some guidelines we'd like you to follow before submitting a PR.</p>
+## Create a fork
 
-<Htwo label="Create a fork" />
+Create a fork from <a href="https://github.com/themesberg/flowbite-svelte">Flowbite-Svelte</a> to your repository first.
 
-<p>Create a fork from <a href="https://github.com/themesberg/flowbite-svelte">Flowbite-Svelte</a> to your repository first.</p>
+## Please use pnpm to install a fork
 
-<Htwo label="Please use pnpm to install a fork" />
+The repo uses `pnpm`, so using `pnpm` is desirable when you fork and install dependencies to avoid unseen problems.
 
-<p>The repo uses `pnpm`, so using `pnpm` is desirable when you fork and install dependencies to avoid unseen problems.</p>
+When there is a change in `package.json`, remove `pnpm-lock.yml` and `node_modules` directory and run `pnpm i`.
 
-<p>When there is a change in package.json, remove pnpm-lock.yml and node_modules directory and run `pnpm i`.</p>
+## Tailwind CSS
 
-<Htwo label="Tailwind CSS" />
-
-<p class='w-full'><a class="text-blue-700" href="https://tailwindcss.com/docs/content-configuration#dynamic-class-names">Tailwind warns</a> that you don't construct class names dynamically. Instead of this:</p>
+<a class="text-blue-700" href="https://tailwindcss.com/docs/content-configuration#dynamic-class-names">Tailwind warns</a> that you don't construct class names dynamically. Instead of this:
 
 ```html
 <div class="text-{{ error ? 'red' : 'green' }}-600"></div>
 ```
 
-<p class='w-full'>Always use complete class names:</p>
+Always use complete class names:
 
 ```html
 <div class="{{ error ? 'text-red-600' : 'text-green-600' }}"></div>
 ```
 
-<Htwo label="Types and Props" />
+## Types and Props
 
-<p class='w-full'>Add a type to `export`ed variables. When we generate props files, it will automatically pick up types from your file. If you don't add a type, it will break.</p>
+Add a type to `export`ed variables. When we generate props files, it will automatically pick up types from your file. If you don't add a type, it will break.
 
-<p class='w-full'>Use `lib/types file for nested objects.</p>
+Use `lib/types file for nested objects.
 
 ```js
 // these work
@@ -84,23 +78,23 @@ export interface CommentType {
 export let comment: CommentType;
 ```
 
-<p class='w-full'>See more details in the [createprops' README](https://github.com/shinokada/createprops) file.</p>
+See more details in the [createprops' README](https://github.com/shinokada/createprops) file.
 
-<p class='w-full'>Please run the following to update prop files.</p>
+Please run the following to update prop files.
 
 ```sh
 npm run gen:props
 ```
 
-<p class='w-full'>This script will update/generate files in `src/routes/props`.</p>
+This script will update/generate files in `src/routes/props`.
 
-<p class='w-full'>Again avoid type inference for `export`ed variables.</p>
+Again avoid type inference for `export`ed variables.
 
-<Htwo label="Conventional commit" />
+## Conventional commit
 
-<p>When making a commit, we recommend using <A class="text-blue-700" href="https://www.conventionalcommits.org/en/v1.0.0/">the Conventional commits</A>.</p>
+When making a commit, we recommend using <A class="text-blue-700" href="https://www.conventionalcommits.org/en/v1.0.0/">the Conventional commits</A>.
 
-<p class='w-full'>Some examples are:</p>
+Some examples are:
 
 ```sh
 feat: add rating component
@@ -111,21 +105,21 @@ style: update home page
 test: add modal test
 ```
 
-<p class='w-full'>Use `!` for a minor bump.</p>
+Use `!` for a minor bump.
 
 ```sh
 feat!: add drawer compoent and page
 ```
 
-<p class='w-full'>When you have a breaking change:</p>
+When you have a breaking change:
 
 ```
 git commit -a "feat: change btnClass name to bClass" -m "BREAKING CHANGE: change the Button component attributes"
 ```
 
-<Htwo label="Playwright Test" />
+## Playwright Test
 
-<p class='w-full'>Before submitting a PR, please run a test:</p>
+Before submitting a PR, please run a test:
 
 ```sh
 npm run test
@@ -137,11 +131,11 @@ If you want to run an single test file, `tests/typography.spec.ts`:
 npx playwright test tests/typography.spec.ts
 ```
 
-<Htwo label="A11y Test" />
+## A11y Test
 
-<p class='w-full'>Please test a page with [Nu Html Checker](https://validator.unl.edu/) relating to your change.</p>
+Please test a page with [Nu Html Checker](https://validator.unl.edu/) relating to your change.
 
-<p class='w-full'>Test a page.</p>
+Test a page.
 
 ```sh
 axe http://localhost:3000/dropdowns/image

@@ -1,5 +1,5 @@
 ---
-layout: pageLayout
+layout: componentLayout
 breadcrumb_title: License
 title: License
 dir: Pages
@@ -9,23 +9,17 @@ description: Flowbite-Svelte License page
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, A } from '$lib'
+  import { PageHeadSection, MetaTag } from '../utils'
+  import { A } from '$lib'
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} />
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<Htwo label="MIT License" />
+## MIT License
 
 <h3>Copyright (c) 2022 Flowbite-Svelte</h3>
 
-
+<pre>
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -43,3 +37,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+</pre>
