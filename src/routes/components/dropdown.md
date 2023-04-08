@@ -120,7 +120,7 @@ Use this example to enable multi-level dropdown menus by adding stacked elements
 </Dropdown>
 ```
 
-<Htwo label="Programatic open/close" />
+<Htwo label="Programmatic open/close" />
 
 When you want to control your dropdown open status via javascript code you can bind to `open` property.
 

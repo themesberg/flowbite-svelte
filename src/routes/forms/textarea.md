@@ -21,7 +21,7 @@ description: Use the textarea component as a multi-line text field input and use
 
 <PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
-The textarea component is a multi-line text field input that can be used to receive longer chuncks of text from the user in the form of a comment box, description field, and more.
+The textarea component is a multi-line text field input that can be used to receive longer chunks of text from the user in the form of a comment box, description field, and more.
 
 <Htwo label="Setup" />
 

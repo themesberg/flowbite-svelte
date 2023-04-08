@@ -22,7 +22,7 @@ let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dar
 
 <PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
-<p>In Flowbite-Svelte, the `class` strategy is used to support toggling dark mode manually, so you should explictly configure it in Talwind CSS:</p>
+<p>In Flowbite-Svelte, the `class` strategy is used to support toggling dark mode manually, so you should explicitly configure it in Talwind CSS:</p>
 
 ```js
 // tailwind.config.cjs

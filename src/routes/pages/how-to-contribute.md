@@ -114,7 +114,7 @@ test: add modal test
 <p class='w-full'>Use `!` for a minor bump.</p>
 
 ```sh
-feat!: add drawer compoent and page
+feat!: add drawer component and page
 ```
 
 <p class='w-full'>When you have a breaking change:</p>

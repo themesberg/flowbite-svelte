@@ -28,7 +28,7 @@
   let triggerEls: HTMLElement[] = [];
   let popper: Instance;
 
-  let _blocked: boolean = false; // managment of the race condition between focusin and click events
+  let _blocked: boolean = false; // management of the race condition between focusin and click events
   const block = () => ((_blocked = true), setTimeout(() => (_blocked = false), 250));
 
   const showHandler = (ev: Event) => {

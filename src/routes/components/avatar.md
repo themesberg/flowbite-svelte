@@ -15,7 +15,7 @@ description: Use the avatar component to show a visual representation of a user 
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   // Props table
   import { props as avatarProps } from '../props/Avatar.json'
-  import { props as placehoderProps } from '../props/Placeholder.json'
+  import { props as placeholderProps } from '../props/Placeholder.json'
 	let propHeader = ['Name', 'Type', 'Default']
 	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
   let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
@@ -70,7 +70,7 @@ If you can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify ri
 
 <Htwo label="Placeholder" />
 
-When there is no custom image available a placehoder is displayed.
+When there is no custom image available a placeholder is displayed.
 
 ```svelte example class="flex gap-4" hideScript
 <script>
@@ -215,10 +215,10 @@ The component has the following props, type, and default values. See <A href="/p
 <TableDefaultRow items={avatarProps} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Placehoder</h3>
+<h3 class='text-xl w-full dark:text-white py-4'>Placeholder</h3>
 
 <TableProp header={propHeader} {divClass} {theadClass}>
-  <TableDefaultRow items={placehoderProps} rowState='hover' />
+  <TableDefaultRow items={placeholderProps} rowState='hover' />
 </TableProp>
 
 <Htwo label="References" />
