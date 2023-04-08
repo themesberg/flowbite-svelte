@@ -10,7 +10,7 @@ description: Use Svelte SVG icon families to write less code
 
 <script>
   import { Htwo , MetaTag, PageHeadSection } from '../utils'
-  import {  Breadcrumb, BreadcrumbItem, P, A, List, Li, Heading } from '$lib'
+  import {  P, A, List, Li, Heading } from '$lib'
 	import CheckCircle from './CheckCircle.svelte'
 </script>
 
@@ -20,19 +20,19 @@ Instead of using SVG icons, using an icon library simplifies the code. You can u
 
 Svelte-Heros-v2 icons allow you to change the icon color, size, and other props.
 
-<Htwo label="Installation" />
+## Installation
 
 ```sh
 npm i -D svelte-heros-v2
 ```
 
-<Htwo label="Color and size" />
+## Color and size
 
 If you want to change the color with Tailwind CSS, add it in the class prop. To change the icon size use the `size` prop or use class like, `class="h-24 w-24"`.
 
 Use `dark:` to specify the dark mode color for icons.
 
-```html
+```js
 <script>
   import {
     AdjustmentsVertical,
@@ -62,7 +62,7 @@ You can change icon colors with HEX color code by using the `color` prop.
 <Briefcase size="30" color="#001dff" />
 ```
 
-<Htwo label="Aria label" />
+## Aria label
 
 Use the `aria-label` prop to change `aria-label` attribute. All icons have aria-label. For example, `Adjustments` has `aria-label="adjustments"`.
 
@@ -70,7 +70,7 @@ Use the `aria-label` prop to change `aria-label` attribute. All icons have aria-
 <AdjustmentsVertical aria-label="adjustments icon" />>
 ```
 
-<Htwo label="Passing down other attributes" />
+## Passing down other attributes
 
 You can pass other attibutes as well.
 
@@ -78,7 +78,7 @@ You can pass other attibutes as well.
 <AdjustmentsVertical tabindex="0" />
 ```
 
-<Htwo label="Import all" />
+## Import all
 
 Use import \* as Icon from `svelte-heros-v2`.
 
@@ -103,7 +103,7 @@ Use import \* as Icon from `svelte-heros-v2`.
 <Icon.Users class="text-pink-700" />
 ```
 
-<Htwo label="Examples" />
+## Examples
 
 Here are some examples using Svelte-Heros-v2.
 
@@ -212,7 +212,7 @@ Here are some examples using Svelte-Heros-v2.
 </Breadcrumb>
 ```
 
-<Htwo label="More examples" />
+## More examples
 
 <List list='none'>
 <Li icon>
@@ -225,7 +225,7 @@ Here are some examples using Svelte-Heros-v2.
 <Li icon><CheckCircle /><A href="https://hero2-with-flowbite-svelte.vercel.app/toolbar">Toolbar</A></Li>
 </List>
 
-<Htwo label="Alternatives" />
+## Alternatives
 
 <P class='w-full mb-4'>These icon sets have the same functionalities mentioned above.</P>
 

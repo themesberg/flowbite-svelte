@@ -1,5 +1,5 @@
 ---
-layout: utilitiesLayout
+layout: componentLayout
 title: Colors 
 breadcrumb_title: Colors
 dir: Utilities
@@ -9,21 +9,14 @@ description: Choose your primary color in tailwind.config.cjs file
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv, GitHubSource, CompoDescription, TableProp, TableDefaultRow, MetaTag } from '../utils';
+  import { ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils';
   import { Breadcrumb, BreadcrumbItem, Heading, A, Img, P } from '$lib';
+  let libFiles = {}
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
-
-<Htwo label="Primary color in tailwind.config.cjs" />
+## Primary color in tailwind.config.cjs
 
 There are 22 colors defined in the <A href="https://github.com/themesberg/flowbite-svelte/blob/main/tailwind.config.cjs">tailwind.config.cjs</A>.
 
@@ -33,13 +26,13 @@ For this demo, the primary color is set to `rose`:
 
 <div class="w-full overflow-auto py-4">
 
-```cjs
+```js example hideOutput
 primary: { "50": "#fff1f2", "100": "#ffe4e6", "200": "#fecdd3", "300": "#fda4af", "400": "#fb7185", "500": "#f43f5e", "600": "#e11d48", "700": "#be123c", "800": "#9f1239", "900": "#881337" }
 ```
 
 </div>
 
-<Htwo label="Examples" />
+## Examples
 
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>

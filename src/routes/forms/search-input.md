@@ -1,5 +1,5 @@
 ---
-layout: formLayout
+layout: componentLayout
 title: Svelte Search Input - Flowbite
 breadcrumb_title: Search input
 dir: Forms
@@ -9,8 +9,8 @@ description: Use the search input component as a text field to allow users to en
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Badge, Heading, A } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Badge, A } from '$lib'
   import { props as searchItems } from '../props/Search.json'  
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
@@ -25,15 +25,15 @@ The search input component can be used to let your users search through your web
 
 You will also find more advanced search components on this page including dropdown category selections, search buttons positioned inside the input field, voice search fields and more.
 
-<Htwo label="Setup" />
+## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Search } from 'flowbite-svelte'
 </script>
 ```
 
-<Htwo label="Search bar example" />
+## Search bar example
 
 ```svelte example hideScript class="flex flex-col gap-4"
 <script>
@@ -45,7 +45,7 @@ You will also find more advanced search components on this page including dropdo
 </Search>
 ```
 
-<Htwo label="Simple search input" />
+## Simple search input
 
 Use the simplest form of a search input component with an icon and a search button next to the text field.
 
@@ -62,7 +62,7 @@ Use the simplest form of a search input component with an icon and a search butt
 </form>
 ```
 
-<Htwo label="Voice Search" />
+## Voice Search
 
 Get started with this example if you would like to enable voice search for your website and users.
 
@@ -87,7 +87,7 @@ Get started with this example if you would like to enable voice search for your 
 </form>
 ```
 
-<Htwo label="Events" />
+## Events
 
 ```js
 on:blur
@@ -104,7 +104,7 @@ on:mouseover
 on:paste
 ```
 
-<Htwo label="Example" />
+## Example
 
 ```svelte example class="space-y-4"
 <script>
@@ -123,7 +123,7 @@ on:paste
 </form>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
@@ -133,7 +133,7 @@ The component has the following props, type, and default values. See <A href="/p
   <TableDefaultRow items={searchItems} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events: Search" />
+## Forwarded Events: Search
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:blur</Badge>

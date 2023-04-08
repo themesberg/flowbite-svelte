@@ -1,5 +1,5 @@
 ---
-layout: formLayout
+layout: componentLayout
 title: Svelte Range - Flowbite
 breadcrumb_title: Range
 dir: Forms
@@ -9,8 +9,8 @@ description: Get started with the range component to receive a number from the u
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Badge, Heading, A } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Badge, A } from '$lib'
   import { props as items } from '../props/Range.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
@@ -24,15 +24,15 @@ description: Get started with the range component to receive a number from the u
 
 The range component can be used as an input field to get a number from the user based on your custom selection (ie. from 1 to 100) by using a sliding animation.
 
-<Htwo label="Setup" />
+## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Range } from 'flowbite-svelte'
 </script>
 ```
 
-<Htwo label="Range slider example" />
+## Range slider example
 
 ```svelte example
 <script>
@@ -43,7 +43,7 @@ The range component can be used as an input field to get a number from the user 
 <Range id="range1" />
 ```
 
-<Htwo label="Disabled state" />
+## Disabled state
 
 ```svelte example hideScript
 <script>
@@ -54,11 +54,11 @@ The range component can be used as an input field to get a number from the user 
 <Range id="range-disabled" disabled/>
 ```
 
-<Htwo label="Binding value" />
+## Binding value
 
 Use bind:value to bind the range input value as seen the the following examples.
 
-<Htwo label="Min and max" />
+## Min and max
 
 ```svelte example
 <script>
@@ -71,7 +71,7 @@ Use bind:value to bind the range input value as seen the the following examples.
 <p>Value: {minmaxValue}</p>
 ```
 
-<Htwo label="Steps" />
+## Steps
 
 ```svelte example
 <script>
@@ -84,7 +84,7 @@ Use bind:value to bind the range input value as seen the the following examples.
 <p>Value: {stepValue}</p>
 ```
 
-<Htwo label="Sizes" />
+## Sizes
 
 ```svelte example class="space-y-6" hideScript
 <script>
@@ -99,11 +99,11 @@ Use bind:value to bind the range input value as seen the the following examples.
 <Range id="large-range" size="lg" />
 ```
 
-<Htwo label="Unknown attributes" />
+## Unknown attributes
 
 Since we added `$$restProps` to input field, you can contain the props which are not declared with export. It will pass down other unknown attributes to an element in a component.
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
@@ -111,7 +111,7 @@ The component has the following props, type, and default values. See <A href="/p
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events" />
+## Forwarded Events
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:change</Badge>

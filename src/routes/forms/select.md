@@ -1,5 +1,5 @@
 ---
-layout: formLayout
+layout: componentLayout
 title: Svelte Select - Flowbite
 breadcrumb_title: Select
 dir: Forms
@@ -9,8 +9,8 @@ description: Get started with the select component to allow the user to choose f
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-import { Breadcrumb, BreadcrumbItem, Badge, Heading, A } from '$lib'
+import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+import { Badge, A } from '$lib'
 import { props as items } from '../props/Select.json'
 let propHeader = ['Name', 'Type', 'Default']
 let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
@@ -23,15 +23,15 @@ const libFiles = import.meta.glob('../../lib/forms/Select.svelte')
 
 The select input component can be used to gather information from users based on multiple options in the form of a dropdown list and by browsing this page you will find multiple options, styles, sizes, and variants built with the utility classes from Tailwind CSS also available in dark mode.
 
-<Htwo label="Setup" />
+## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Select } from 'flowbite-svelte';
 </script>
 ```
 
-<Htwo label="Select input example" />
+## Select input example
 
 Get started with the default example of a select input component to get a single option selection.
 
@@ -51,7 +51,7 @@ Get started with the default example of a select input component to get a single
 </Label>
 ```
 
-<Htwo label="Disabled state" />
+## Disabled state
 
 Apply the disable state to the select component to disallow the selection of new options.
 
@@ -69,7 +69,7 @@ Apply the disable state to the select component to disallow the selection of new
 <Select id="select-disabled" disabled items={countries} placeholder="You can't select anything..." />
 ```
 
-<Htwo label="Underline select" />
+## Underline select
 
 Use the underline style for the select component as an alternative appearance.
 
@@ -87,7 +87,7 @@ Use the underline style for the select component as an alternative appearance.
 <Select id="select-underline" underline class="mt-2" items={countries} />
 ```
 
-<Htwo label="Select with dropdown" />
+## Select with dropdown
 
 Use this example if you want to create a multi-level dropdown and select component combination.
 
@@ -138,7 +138,7 @@ Use this example if you want to create a multi-level dropdown and select compone
 </div>
 ```
 
-<Htwo label="Sizes" />
+## Sizes
 
 Get started with the small, default, and large sizes for the select component from the example below.
 
@@ -167,7 +167,7 @@ Get started with the small, default, and large sizes for the select component fr
 <Select id="select-lg" underline size="lg" items={countries} class="mb-6"/>
 ```
 
-<Htwo label="Custom options" />
+## Custom options
 
 If you want custom options, put them directly inside the component and leave the `items` prop unset. Furthermore, if the default placeholder is not what you want, set the `placeholder` prop to `""`.
 
@@ -192,7 +192,7 @@ If you want custom options, put them directly inside the component and leave the
 </Select>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
@@ -200,7 +200,7 @@ The component has the following props, type, and default values. See <A href="/p
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events" />
+## Forwarded Events
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:change</Badge>

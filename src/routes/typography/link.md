@@ -1,5 +1,5 @@
 ---
-layout: typographyLayout
+layout: componentLayout
 title: Svelte Links - Flowbite
 breadcrumb_title: Links
 dir: Typography
@@ -9,8 +9,8 @@ description: The link component can be used to set hyperlinks from one page to a
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import {  A, Heading, Breadcrumb, BreadcrumbItem } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import {  A,  } from '$lib'
   import { props as items1 } from '../props/A.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
@@ -25,7 +25,7 @@ Get started with the link component to enable hyperlinks across pages and extern
 
 Hyperlinks are a great way to reduce bounce rate of the current page and encourage visitors to browse your website and become a returning user.
 
-<Htwo label="Setup" />
+## Setup
 
 ```html
 <script>
@@ -33,7 +33,7 @@ Hyperlinks are a great way to reduce bounce rate of the current page and encoura
 </script>
 ```
 
-<Htwo label="Default link" />
+## Default link
 
 Use this example to set default styles to an inline link element.
 
@@ -45,7 +45,7 @@ Use this example to set default styles to an inline link element.
 <A class="font-medium hover:underline">Read more</A>
 ```
 
-<Htwo label="Button" />
+## Button
 
 This example can be used to set a hyperlink on a button component.
 
@@ -57,7 +57,7 @@ This example can be used to set a hyperlink on a button component.
 <Button href="/">Read more</Button>
 ```
 
-<Htwo label="Pagagraph" />
+## Pagagraph
 
 Use this example to set a link inside a paragraph with an underline style.
 
@@ -69,7 +69,7 @@ Use this example to set a link inside a paragraph with an underline style.
 <P>The free updates that will be provided is based on the <A href="/" class="underline hover:no-underline">roadmap</A> that we have laid out for this project. It is also possible that we will provide extra updates outside of the roadmap as well.</P>
 ```
 
-<Htwo label="Icon link" />
+## Icon link
 
 This example can be used to set a custom SVG icon inside the hyperlink element.
 
@@ -86,7 +86,7 @@ This example can be used to set a custom SVG icon inside the hyperlink element.
 </P>
 ```
 
-<Htwo label="CTA link" />
+## CTA link
 
 Use this example to set a hyperlink on a CTA element with text and a custom icon.
 
@@ -102,7 +102,7 @@ Use this example to set a hyperlink on a CTA element with text and a custom icon
 </A>
 ```
 
-<Htwo label="Card link" />
+## Card link
 
 Use this example to set a hyperlink on a card component.
 
@@ -119,7 +119,7 @@ Use this example to set a hyperlink on a card component.
 </Card>
 ```
 
-<Htwo label="Image link" />
+## Image link
 
 This example can be used to set a hyperlink on an image inside a card component.
 
@@ -139,7 +139,7 @@ This example can be used to set a hyperlink on an image inside a card component.
 </Card>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 

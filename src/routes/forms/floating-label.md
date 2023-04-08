@@ -1,5 +1,5 @@
 ---
-layout: formLayout
+layout: componentLayout
 title: Svelte Floating Label - Flowbite
 breadcrumb_title: Floating label
 dir: Forms
@@ -9,8 +9,8 @@ description: Use the floating label style for the input field elements to replic
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Badge, Heading, A } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Badge, A } from '$lib'
   import { props as items } from '../props/FloatingLabelInput.json'
   import { props as items2 } from '../props/Helper.json'
   let propHeader = ['Name', 'Type', 'Default']
@@ -26,15 +26,15 @@ The floating label style was first pioneered by Google in its infamous Material 
 
 On this page you will find a three different input field styles including a standard, outlined, and filled style including validation styles and sizes coded with Tailwind CSS and supported for dark mode.
 
-<Htwo label="Setup" />
+## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { FloatingLabelInput, Helper } from 'flowbite-svelte';
 </script>
 ```
 
-<Htwo label="Floating label examples" />
+## Floating label examples
 
 Get started with the following three styles for the floating label component and use the label tag as a visual placeholder using the peer-placeholder-shown and peer-focus utility classes from Tailwind CSS.
 
@@ -50,7 +50,7 @@ Get started with the following three styles for the floating label component and
 </div>
 ```
 
-<Htwo label="Disabled state" />
+## Disabled state
 
 Apply the disabled attribute to the input fields to disallow the user from changing the content.
 
@@ -66,7 +66,7 @@ Apply the disabled attribute to the input fields to disallow the user from chang
 </div>
 ```
 
-<Htwo label="Validation" />
+## Validation
 
 Use the following examples of input validation for the success and error messages by applying the validation text below the input field and using the green or red color classes from Tailwind CSS.
 
@@ -107,7 +107,7 @@ Use the following examples of input validation for the success and error message
 </div>
 ```
 
-<Htwo label="Sizes" />
+## Sizes
 
 Use the small and default sizes of the floating label input fields from the following example.
 
@@ -128,7 +128,7 @@ Use the small and default sizes of the floating label input fields from the foll
 </div>
 ```
 
-<Htwo label="Helper text" />
+## Helper text
 
 Add a helper text in addition to the label if you want to show more information below the input field.
 
@@ -141,7 +141,7 @@ Add a helper text in addition to the label if you want to show more information 
 <Helper class="pt-2">Remember, contributions to this topic should follow our <a href="/" class="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a>.</Helper>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.
@@ -156,7 +156,7 @@ The component has the following props, type, and default values. See <A href="/p
 <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events" />
+## Forwarded Events
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:blur</Badge>

@@ -1,5 +1,5 @@
 ---
-layout: pageLayout
+layout: componentLayout
 breadcrumb_title: Flowbite Svelte Blocks
 title: Flowbite Svelte Blocks
 dir: Extend
@@ -9,8 +9,8 @@ description: Flowbite-Svete-Blocks provides all necessary components to get star
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { PageHeadSection, Htwo, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, A, List, Li, Img} from '$lib'
+  import { PageHeadSection, MetaTag } from '../utils'
+  import { A, List, Li, Img} from '$lib'
   const libFiles ={
   "GitHub Repo": "https://github.com/shinokada/flowbite-svelte-blocks",
   Docs: "https://shinokada.github.io/flowbite-svelte-blocks/",
@@ -21,7 +21,7 @@ description: Flowbite-Svete-Blocks provides all necessary components to get star
 
 <PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
-<Htwo label="Installation" />
+## Installation
 
 After installing Flowbite-Svelte, run the following to install Flowbite-Svelte-Blocks:
 

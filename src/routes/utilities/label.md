@@ -1,5 +1,5 @@
 ---
-layout: utilitiesLayout
+layout: componentLayout
 title: Svelte Label - Flowbite
 breadcrumb_title: Label
 dir: Utilities
@@ -10,7 +10,7 @@ description: The Label components are used throughout the library and you can us
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils';
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils';
   import { Breadcrumb, BreadcrumbItem, Heading, A } from '$lib';
   import { props as items } from '../props/Label.json';
   let propHeader = ['Name', 'Type', 'Default'];
@@ -22,7 +22,7 @@ description: The Label components are used throughout the library and you can us
 
 <PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
-<Htwo label="Label" />
+## Label
 
 Use the `Label` component when you need to add a label.
 
@@ -36,7 +36,7 @@ Use the `Label` component when you need to add a label.
 </Label>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. 
 See <A class="hover:underline" href="/pages/types">the types page</A>

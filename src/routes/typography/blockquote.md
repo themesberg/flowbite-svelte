@@ -1,5 +1,5 @@
 ---
-layout: typographyLayout
+layout: componentLayout
 title: Svelte Blockquote - Flowbite
 breadcrumb_title: Blockquote
 dir: Typography
@@ -9,8 +9,8 @@ description: The blockquote component can be used to quote text content from an 
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
-  import { P, Heading, A, Breadcrumb, BreadcrumbItem } from '$lib'; 
+  import { PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
+  import { P, A, Heading } from '$lib'; 
   import { props as items1 } from '../props/Blockquote.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
@@ -23,7 +23,7 @@ description: The blockquote component can be used to quote text content from an 
 
 Get started with Blockquote component when quoting external sources such as quotes inside an article, user reviews, and testimonials based on multiple examples of layouts, styles, and contexts.
 
-<Htwo label="Default blockquote" />
+## Default blockquote
 
 Use this example to quote an external source inside a blockquote element.
 
@@ -37,7 +37,7 @@ Use this example to quote an external source inside a blockquote element.
 </Blockquote>
 ```
 
-<Htwo label="Solid background" />
+## Solid background
 
 This example can be used as an alternative style to the default one by applying a solid background color.
 
@@ -53,7 +53,7 @@ This example can be used as an alternative style to the default one by applying 
 <P color='text-gray-500 dark:text-gray-400'>First of all you need to understand how Flowbite works. This library is not another framework. Rather, it is a set of components based on Tailwind CSS that you can just copy-paste from the documentation.</P>
 ```
 
-<Htwo label="Blockquote icon" />
+## Blockquote icon
 
 Use this example to show an icon above the blockquote text content.
 
@@ -68,7 +68,7 @@ Use this example to show an icon above the blockquote text content.
 </Blockquote>
 ```
 
-<Htwo label="Paragraph context" />
+## Paragraph context
 
 Use this example to show a blockquote component between multiple paragraph elements.
 
@@ -87,7 +87,7 @@ Use this example to show a blockquote component between multiple paragraph eleme
 <P class="mb-3" color="text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
 ```
 
-<Htwo label="User testimonial" />
+## User testimonial
 
 This example can be used for user testimonials by mentioning the author and occupation of the author.
 
@@ -111,7 +111,7 @@ This example can be used for user testimonials by mentioning the author and occu
 </figure>
 ```
 
-<Htwo label="User Review" />
+## User Review
 
 Use this example to show a user review with rating stars and the name and occupation of the author.
 
@@ -137,7 +137,7 @@ Use this example to show a user review with rating stars and the name and occupa
 </figure>
 ```
 
-<Htwo label="Alignment" />
+## Alignment
 
 Choose from the following examples the blockquote text alignment from starting from left, center to right based on the utility classes from Tailwind CSS.
 
@@ -184,7 +184,7 @@ Use the `alignment="right"` prop to align the blockquote text content to the rig
 </Blockquote>
 ```
 
-<Htwo label="Sizes" />
+## Sizes
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Small</Heading>
 
@@ -228,7 +228,7 @@ The `size="2xl"` prop can be used to set a large size for the blockquote compone
 </Blockquote>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 

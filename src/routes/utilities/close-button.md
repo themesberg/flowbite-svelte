@@ -1,5 +1,5 @@
 ---
-layout: utilitiesLayout
+layout: componentLayout
 title: Svelte Close Button - Flowbite
 breadcrumb_title: Close button
 dir: Utilities
@@ -9,7 +9,7 @@ description: The CloseButton components are used throughout the library and you 
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-	import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils';
+	import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils';
 	import { Breadcrumb, BreadcrumbItem, Heading, A } from '$lib';
 	import { props as items } from '../props/CloseButton.json';
 	let propHeader = ['Name', 'Type', 'Default'];
@@ -21,7 +21,7 @@ description: The CloseButton components are used throughout the library and you 
 
 <PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
-<Htwo label="CloseButton" />
+## CloseButton
 
 Use `CloseButton` component to close a component.
 
@@ -47,7 +47,7 @@ Use `CloseButton` component to close a component.
 {/if}
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. 
 See <A class="hover:underline" href="/pages/types">the types page</A>

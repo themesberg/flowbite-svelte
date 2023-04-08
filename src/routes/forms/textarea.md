@@ -1,5 +1,5 @@
 ---
-layout: formLayout
+layout: componentLayout
 title: Svelte Textarea - Flowbite
 breadcrumb_title: Textarea
 dir: Forms
@@ -9,8 +9,8 @@ description: Use the textarea component as a multi-line text field input and use
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Heading, Breadcrumb, BreadcrumbItem, Badge, A } from '$lib'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { Badge, A } from '$lib'
   import { props as items } from '../props/Textarea.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
@@ -23,15 +23,15 @@ description: Use the textarea component as a multi-line text field input and use
 
 The textarea component is a multi-line text field input that can be used to receive longer chuncks of text from the user in the form of a comment box, description field, and more.
 
-<Htwo label="Setup" />
+## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Textarea } from 'flowbite-svelte';
 </script>
 ```
 
-<Htwo label="Textarea example" />
+## Textarea example
 
 Get started with the default example of a textarea component below.
 
@@ -44,7 +44,7 @@ Get started with the default example of a textarea component below.
 <Textarea id="textarea-id" placeholder="Your message" rows="4" name="message"/>
 ```
 
-<Htwo label="WYSIWYG Editor" />
+## WYSIWYG Editor
 
 If you want to add other actions as buttons alongside your textarea component, such as with a WYSIWYG editor, then you can use the example below.
 
@@ -73,7 +73,7 @@ If you want to add other actions as buttons alongside your textarea component, s
 </form>
 ```
 
-<Htwo label="Comment box" />
+## Comment box
 
 Most often the textarea component is used as the main text field input element in comment sections. Use this example to also apply a helper text and buttons below the textarea itself.
 
@@ -97,7 +97,7 @@ Most often the textarea component is used as the main text field input element i
 <p class="ml-auto text-xs text-gray-500 dark:text-gray-400">Remember, contributions to this topic should follow our <a href="/" class="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a>.</p>
 ```
 
-<Htwo label="Chatroom input" />
+## Chatroom input
 
 If you want to build a chatroom component you will usually want to use a textarea element to allow users to write multi-line chunks of text.
 
@@ -128,7 +128,7 @@ If you want to build a chatroom component you will usually want to use a textare
 </form>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
@@ -136,7 +136,7 @@ The component has the following props, type, and default values. See <A href="/p
 <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events" />
+## Forwarded Events
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:blur</Badge>

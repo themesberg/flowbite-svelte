@@ -1,5 +1,5 @@
 ---
-layout: formLayout
+layout: componentLayout
 title: Svelte Toggle (Switch) - Flowbite
 breadcrumb_title: Toggle
 dir: Forms
@@ -9,9 +9,9 @@ description: Use the toggle component to switch between a binary state of true o
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
   import { onMount } from 'svelte';
-  import { Toggle, Breadcrumb, BreadcrumbItem, Badge, Heading, A } from '$lib'
+  import { Toggle, Badge, A } from '$lib'
   import { props as items } from '../props/Toggle.json'
   let propHeader = ['Name', 'Type', 'Default']
   let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
@@ -24,15 +24,15 @@ description: Use the toggle component to switch between a binary state of true o
 
 The toggle component can be used to receive a simple “yes” or “no” type of answer from the user by choosing a single option from two options available in multiple sizes, styles, and colors coded with the utility classes from Tailwind CSS and with dark mode support.
 
-<Htwo label="Setup" />
+## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Toggle } from 'flowbite-svelte'
 </script>
 ```
 
-<Htwo label="Toggle examples" />
+## Toggle examples
 
 Get started with the default toggle component example as a checkbox element to receive a true or false selection from the user.
 
@@ -47,7 +47,7 @@ Get started with the default toggle component example as a checkbox element to r
 <Toggle checked disabled>Disabled checked</Toggle>
 ```
 
-<Htwo label="Colors" />
+## Colors
 
 ```svelte example class="flex justify-between" hideScript
 <script>
@@ -62,7 +62,7 @@ Get started with the default toggle component example as a checkbox element to r
 <Toggle color="orange" checked>Orange</Toggle>
 ```
 
-<Htwo label="Sizes" />
+## Sizes
 
 ```svelte example class="flex flex-col gap-2" hideScript
 <script>
@@ -74,7 +74,7 @@ Get started with the default toggle component example as a checkbox element to r
 <Toggle size="large" checked>Large toggle</Toggle>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
@@ -84,7 +84,7 @@ The component has the following props, type, and default values. See <A href="/p
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events" />
+## Forwarded Events
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:change</Badge>

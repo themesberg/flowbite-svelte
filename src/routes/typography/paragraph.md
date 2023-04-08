@@ -1,5 +1,5 @@
 ---
-layout: typographyLayout
+layout: componentLayout
 title: Svelte Paragraph - Flowbite
 breadcrumb_title: Paragraph
 dir: Typography
@@ -10,8 +10,8 @@ description: Use the paragraph component to create multiple blocks of text separ
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils';
-  import {  A, Heading, Breadcrumb, BreadcrumbItem } from '$lib';
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils';
+  import {  A, Heading } from '$lib';
   import { props as items1 } from '../props/P.json'
   import { props as items2 } from '../props/Layout.json'
   let propHeader = ['Name', 'Type', 'Default']
@@ -32,7 +32,7 @@ used to write longer blocks of text separated by a blank line and can massively 
 SEO of the page when used correctly. Get started with a collection of paragraph components based on
 multiple styles, layouts, colors and sizes to use for your website.
 
-<Htwo label="Default paragraph" />
+## Default paragraph
 
 Use this example of a paragraph element to use inside article content or a landing page.
 
@@ -53,7 +53,7 @@ Use this example of a paragraph element to use inside article content or a landi
 </P>
 ```
 
-<Htwo label="Leading paragraph" />
+## Leading paragraph
 
 The leading text can be used as the first paragraph inside an article content page.
 
@@ -73,7 +73,7 @@ The leading text can be used as the first paragraph inside an article content pa
 </P>
 ```
 
-<Htwo label="First letter" />
+## First letter
 
 Use `firstupper` prop to highlight the first letter of the paragraph, often used in e-books and PDF
 documents.
@@ -95,7 +95,7 @@ documents.
 </P>
 ```
 
-<Htwo label="Paragraph link" />
+## Paragraph link
 
 This example can be used to add a custom styled link element inside the paragraph.
 
@@ -112,7 +112,7 @@ This example can be used to add a custom styled link element inside the paragrap
 </P>
 ```
 
-<Htwo label="Paragraph bold" />
+## Paragraph bold
 
 Use this example to highlight a piece of text inside the paragraph by using a bolder font weight.
 
@@ -129,7 +129,7 @@ Use this example to highlight a piece of text inside the paragraph by using a bo
 </P>
 ```
 
-<Htwo label="Paragraph underline" />
+## Paragraph underline
 
 This example can be used to underline a certain part of the text inside the paragraph.
 
@@ -146,7 +146,7 @@ This example can be used to underline a certain part of the text inside the para
 </P>
 ```
 
-<Htwo label="Paragraph italic" />
+## Paragraph italic
 
 Use this example to make the font style of the text inside the paragraph italic.
 
@@ -163,7 +163,7 @@ Use this example to make the font style of the text inside the paragraph italic.
 </P>
 ```
 
-<Htwo label="Paragraph popover" />
+## Paragraph popover
 
 Get started with this example to show a popover with extra information inside paragraph elements.
 
@@ -206,7 +206,7 @@ Get started with this example to show a popover with extra information inside pa
 </Popover>
 ```
 
-<Htwo label="Layout" />
+## Layout
 
 Get started with examples of layouts for the paragraph component to separate content into multiple
 rows and columns.
@@ -346,7 +346,7 @@ Use this example to separate paragraphs into two uneven columns.
 </P>
 ```
 
-<Htwo label="Text alignment" />
+## Text alignment
 
 Align the paragraph component to the left (default), center or right side of the document page using
 the `text-left|center|right` utility class from Tailwind CSS.
@@ -400,7 +400,7 @@ Use the `align="right"` prop to align the paragraph text the right side of the p
 </P>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
