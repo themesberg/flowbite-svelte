@@ -10,7 +10,7 @@ description: The CloseButton components are used throughout the library and you 
 
 <script>
 	import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils';
-	import { Breadcrumb, BreadcrumbItem, Heading, A } from '$lib';
+	import { A } from '$lib';
 	import { props as items } from '../props/CloseButton.json';
 	let propHeader = ['Name', 'Type', 'Default'];
 	let divClass = 'w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4';

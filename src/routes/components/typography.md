@@ -1,5 +1,5 @@
 ---
-layout: typographyLayout
+layout: componentLayout
 title: Svelte Typography - Flowbite
 breadcrumb_title: Typography
 dir: Components

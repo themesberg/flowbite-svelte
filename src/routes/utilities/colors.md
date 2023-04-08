@@ -9,12 +9,11 @@ description: Choose your primary color in tailwind.config.cjs file
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { ExampleDiv, GitHubSource, CompoDescription, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils';
-  import { Breadcrumb, BreadcrumbItem, Heading, A, Img, P } from '$lib';
-  let libFiles = {}
+  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils';
+  import { A, Img, P } from '$lib';
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<PageHeadSection {dir} {breadcrumb_title} {title} {description} />
 
 ## Primary color in tailwind.config.cjs
 

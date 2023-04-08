@@ -11,7 +11,7 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 
 <script>
   import { PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
-  import { Toolbar, ToolbarButton, ToolbarGroup, Avatar, Button, Textarea, Breadcrumb, BreadcrumbItem, Heading, A } from '$lib'
+  import { Toolbar, ToolbarButton, ToolbarGroup, Avatar, Button, Textarea, Heading, A } from '$lib'
   import { props as items1 } from '../props/Toolbar.json'
   import { props as items2 } from '../props/ToolbarButton.json'
   import { props as items3 } from '../props/ToolbarGroup.json'
@@ -26,7 +26,7 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 
 ## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Toolbar, ToolbarButton, ToolbarGroup } from 'flowbite-svelte';
 </script>

@@ -44,7 +44,7 @@ Use this example to create a default unordered list of items.
 
 ```svelte example
 <script>
-  import { Li, List } from 'flowbite-svelte';
+  import { Li, List, Heading } from 'flowbite-svelte';
 </script>
 
 <Heading tag="h2" customSize="text-lg font-semibold" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white"
@@ -62,7 +62,7 @@ This example can be used to apply custom icons instead of the default bullets fo
 
 ```svelte example
 <script>
-  import { List, Li } from 'flowbite-svelte';
+  import { List, Li, Heading } from 'flowbite-svelte';
 </script>
 
 <Heading tag="h2"  customSize="text-lg font-semibold" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white"
@@ -150,7 +150,7 @@ Use the `list="none"` prop to disable the list style bullets or numbers.
 
 ```svelte example
 <script>
-  import { List, Li } from 'flowbite-svelte';
+  import { List, Li, Heading } from 'flowbite-svelte';
 </script>
 
 <Heading tag="h2"  customSize="text-lg font-semibold" class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white"
@@ -168,7 +168,7 @@ Use the `tag="ol"` prop to create an ordered list of items with numbers.
 
 ```svelte example
 <script>
-  import { List, Li, Span } from 'flowbite-svelte';
+  import { List, Li, Span, Heading } from 'flowbite-svelte';
 </script>
 
 <Heading tag="h2" customSize="text-lg font-semibold" class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white"

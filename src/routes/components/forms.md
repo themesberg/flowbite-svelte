@@ -1,5 +1,5 @@
 ---
-layout: formLayout
+layout: componentLayout
 title: Svelte Forms - Flowbite
 breadcrumb_title: Forms
 dir: Components
