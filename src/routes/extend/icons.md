@@ -9,8 +9,8 @@ description: Use Svelte SVG icon families to write less code
 <MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo , MetaTag, PageHeadSection } from '../utils'
-  import {  P, A, List, Li, Heading } from '$lib'
+  import { MetaTag, PageHeadSection } from '../utils'
+  import { P, A, List, Li } from '$lib'
 	import CheckCircle from './CheckCircle.svelte'
 </script>
 
@@ -74,6 +74,7 @@ Use the `aria-label` prop to change `aria-label` attribute. All icons have aria-
 
 You can pass other attibutes as well.
 
+
 ```html
 <AdjustmentsVertical tabindex="0" />
 ```
@@ -107,7 +108,7 @@ Use import \* as Icon from `svelte-heros-v2`.
 
 Here are some examples using Svelte-Heros-v2.
 
-<Heading tag="h3" customSize="text-xl font-semibold" class='my-4'><A href="https://hero2-with-flowbite-svelte.vercel.app/accordion" textSize="text-2xl">Accordion</A></Heading>
+### <A href="https://hero2-with-flowbite-svelte.vercel.app/accordion" textSize="text-2xl">Accordion</A>
 
 ```html
 <script>
@@ -145,7 +146,7 @@ Here are some examples using Svelte-Heros-v2.
 </AccordionItem>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class='my-4'><A href="https://hero2-with-flowbite-svelte.vercel.app/alert" textSize="text-2xl">Alert</A></Heading>
+### <A href="https://hero2-with-flowbite-svelte.vercel.app/alert">Alert</A>
 
 ```html
 <script>
@@ -185,7 +186,8 @@ Here are some examples using Svelte-Heros-v2.
 </Alert>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class='my-4'><A href="https://hero2-with-flowbite-svelte.vercel.app/breadcrumb" textSize="text-2xl">Breadcrumb</A></Heading>
+### <A href="https://hero2-with-flowbite-svelte.vercel.app/breadcrumb">Breadcrumb</A>
+
 
 ```html
 <script>
@@ -227,7 +229,7 @@ Here are some examples using Svelte-Heros-v2.
 
 ## Alternatives
 
-<P class='w-full mb-4'>These icon sets have the same functionalities mentioned above.</P>
+These icon sets have the same functionalities mentioned above.
 
 <List tag='ul' class='space-y-1' list='none'>
 <Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-awesome-icons">Svelte-Awesome-Icons</A></Li>

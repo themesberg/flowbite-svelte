@@ -26,7 +26,7 @@
     SidebarItem,
     SidebarWrapper
   } from '$lib';
-  import { experimental } from './moduleItems/+server.js';
+  
   import Toc from './Toc/+page.svelte';
   import '../app.css';
   export let data: PageData;
@@ -203,15 +203,14 @@
             <li class="mt-8">
               <h5 class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">Experimental</h5>
               <SidebarGroup ulClass="">
-                  {#each experimental as { href, name, rel }}
+                  {#each data.experimental as { meta, path }}
                     <SidebarItem
-                      label={name}
-                      {href}
-                      {rel}
-                      {spanClass}
-                      on:click={toggleSide}
-                      active={activeUrl === `${href}`} />
-                  {/each}
+                    label={meta.breadcrumb_title}
+                    href={`/experimental${path}`}
+                    {spanClass}
+                    on:click={toggleSide}
+                    active={activeUrl === `/experimental${path}`} />
+                {/each}
               </SidebarGroup>
             </li>
           </ul>
