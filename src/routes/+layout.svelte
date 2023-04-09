@@ -23,7 +23,6 @@
   } from '$lib';
 
   import '../app.css';
-  import Toc from './Toc/+page.svelte';
 
   export let data: PageData;
 
@@ -33,10 +32,9 @@
     drawerHidden = !drawerHidden;
   };
 
-  let main: HTMLElement;
   afterNavigate(() => {
     // this fixes https://github.com/themesberg/flowbite-svelte/issues/364
-    main.scrollTo({ top: 0 });
+    document.getElementById('svelte')?.scrollTo({ top: 0 });
     drawerHidden = true;
   });
 
@@ -268,11 +266,8 @@
       hidden={drawerHidden}
       on:click={toggleDrawer}
       on:keydown={toggleDrawer} />
-    <main bind:this={main} class="flex-auto w-full min-w-0 lg:static lg:max-h-full lg:overflow-visible">
-      <div class="flex w-full">
-        <slot />
-        <Toc />
-      </div>
+    <main class="flex-auto w-full min-w-0 lg:static lg:max-h-full lg:overflow-visible">
+      <slot />
     </main>
   </div>
 </div>

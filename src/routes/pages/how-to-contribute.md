@@ -14,7 +14,7 @@ Here are some guidelines we'd like you to follow before submitting a PR.
 
 ## Create a fork
 
-Create a fork from <a href="https://github.com/themesberg/flowbite-svelte">Flowbite-Svelte</a> to your repository first.
+Create a fork from [Flowbite-Svelte]("https://github.com/themesberg/flowbite-svelte") to your repository first.
 
 ## Please use pnpm to install a fork
 
@@ -24,7 +24,7 @@ When there is a change in `package.json`, remove `pnpm-lock.yml` and `node_modul
 
 ## Tailwind CSS
 
-<a class="text-blue-700" href="https://tailwindcss.com/docs/content-configuration#dynamic-class-names">Tailwind warns</a> that you don't construct class names dynamically. Instead of this:
+[Tailwind warns]("https://tailwindcss.com/docs/content-configuration#dynamic-class-names") that you don't construct class names dynamically. Instead of this:
 
 ```html
 <div class="text-{{ error ? 'red' : 'green' }}-600"></div>

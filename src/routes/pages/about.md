@@ -16,7 +16,7 @@ Svelte is a modern and growing front-end compiler. Developers build boilerplate-
 
 ## Flowbite Svelte
 
-<A class="text-blue-700" href="/">Flowbite-Svelte</A> is an official Flowbite component library for Svelte. All interactivities are handled by Svelte.
+[Flowbite-Svelte]("/") is an official Flowbite component library for Svelte. All interactivities are handled by Svelte.
 
 This website uses Flowbite-Svelte components except the <A class="text-blue-700" href="https://github.com/shinokada/svelte-sidebar" target="_blank" rel="noreferrer">sidebar menu</A>.
 
