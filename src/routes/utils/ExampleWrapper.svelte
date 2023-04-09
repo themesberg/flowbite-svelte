@@ -110,12 +110,12 @@
         </div>
       </div>
       <div class="relative">
-        <div class:overflow-hidden={!expand} class:max-h-72={!expand} tabindex="-1" use:checkOverflow>
+        <div class="overflow-hidden" class:max-h-72={!expand} tabindex="-1" use:checkOverflow>
           <div class="highlight">
             <pre bind:this={code} class="language-svelte !-mt-2"><slot name="code" /></pre>
           </div>
         </div>
-        {#if showExpandButton}
+        {#if showExpandButton && !expand}
           <button
             on:click={() => (expand = !expand)}
             data-expand-code=""
