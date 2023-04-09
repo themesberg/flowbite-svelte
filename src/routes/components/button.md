@@ -6,16 +6,12 @@ dir: Components
 description: Use the button component inside forms, as links, social login, payment options with support for multiple styles, colors, sizes, gradients, and shadows
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
   import { Badge, P, A } from '$lib'
-  // Props table
+
   import { props as buttonProps } from '../props/Button.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // slots
   let slotHeader = ['Name', 'Description']
   let slotItems = [['default', 'For a button label.']]
@@ -23,7 +19,7 @@ description: Use the button component inside forms, as links, social login, paym
   const libFiles = import.meta.glob('../../lib/buttons/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The button component is probably the most widely used element in any user interface or website as it can be used to launch an action but also to link to other pages.
 
@@ -68,7 +64,6 @@ You can add a link to a Button component:
 </script>
 <Button href="/">Home</Button>
 ```
-
 
 ## Button pills
 
@@ -289,7 +284,7 @@ You can use on:click or any standard on:* to listen to the event.
 The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
 <TableDefaultRow items={buttonProps} rowState='hover' />
 </TableProp>
 
@@ -299,7 +294,7 @@ Use `btnClass` to overwrite Button class.
 
 ## Slots
 
-<TableProp header={slotHeader} {divClass} {theadClass}>
+<TableProp header={slotHeader}>
   <TableDefaultRow items={slotItems} rowState='hover' />
 </TableProp>
 

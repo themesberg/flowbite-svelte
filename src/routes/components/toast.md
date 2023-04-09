@@ -6,20 +6,16 @@ dir: Components
 description: Push notifications to your users using the toast component and choose from multiple sizes, colors, styles, and positions
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
   import { P, A } from '$lib'
   import { props as items }  from '../props/Toast.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/toasts/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The toast component can be used to enhance your website’s interactivity by pushing notifications to your visitors. You can choose from multiple styles, colors, sizes, and positions and even dismiss the component.
 
@@ -34,7 +30,6 @@ The toast component can be used to enhance your website’s interactivity by pus
 ## Default toast
 
 Use this simple toast component with an icon, message, and dismissable close button to show alert messages to your website visitors.
-
 
 ```svelte example class="flex justify-center" hideScript
 <script>
@@ -141,7 +136,7 @@ You can use any <A href="/icons">icon components.</A>
 <script>
   import { Toast, Button } from 'flowbite-svelte';
   import { slide } from 'svelte/transition';
-  
+
   let show = true;
   let counter = 6;
 
@@ -356,7 +351,7 @@ Use the position property to position these toast components relative to the mai
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
 <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
@@ -367,4 +362,3 @@ The component has the following props, type, and default values. See <A href="/p
     >Flowbite Toast</A
   >
 </P>
-    

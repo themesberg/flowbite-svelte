@@ -6,20 +6,16 @@ dir: Components
 description: Use the spinner component as a loader indicator in your projects when fetching data based on an animated SVG
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
   import { P, A } from '$lib'
   import { props as items }  from '../props/Spinner.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/spinners/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The spinner component can be used as a loading indicator which comes in multiple colors, sizes, and styles separately or inside elements such as buttons to improve the user experience whenever data is being fetched from your server.
 
@@ -114,7 +110,7 @@ The spinner component can also be used inside elements such as buttons when subm
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 

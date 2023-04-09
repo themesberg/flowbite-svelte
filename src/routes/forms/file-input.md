@@ -6,21 +6,17 @@ dir: Forms
 description: Get started with the file input component to let the user to upload one or more files from their device storage based on multiple styles and sizes
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow } from '../utils'
   import { Badge, A } from '$lib'
   import { props as items } from '../props/Fileupload.json'
   import { props as items2 } from '../props/Dropzone.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/forms/Fileupload.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The file input component can be used to upload one or more files from the device storage of the user available in multiple sizes, styles, variants and support for dark mode.
 
@@ -58,7 +54,6 @@ The file input component can be used to upload one or more files from the device
 <Fileupload id="with_helper" class="mb-2" />
 <Helper>SVG, PNG, JPG or GIF (MAX. 800x400px).</Helper>
 ```
-
 
 ## Multiple files
 
@@ -117,16 +112,15 @@ The component has the following props, type, and default values. See <A href="/p
 
 <h3 class='text-xl w-full dark:text-white py-4'>Fileupload</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>Dropzone</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
-
 
 ## Forwarded Events: Fileupload
 

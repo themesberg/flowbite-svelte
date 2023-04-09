@@ -6,21 +6,17 @@ dir: Components
 description: Button groups are a Tailwind CSS powered set of buttons sticked together in a horizontal line
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
   import { Badge, P, A } from '$lib'
-  // Props table
+
   import { props as buttonGroupProps} from '../props/ButtonGroup.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/buttongroups/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The button group component from Flowbite-Svelte can be used to stack together multiple buttons and links inside a single element.
 
@@ -189,7 +185,7 @@ The component has the following props, type, and default values. See <A href="/p
 
 <h3 class='text-xl w-full dark:text-white py-4'>ButtonGroup</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={buttonGroupProps} rowState='hover' />
 </TableProp>
 

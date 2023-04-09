@@ -6,11 +6,9 @@ dir: Components
 description: Use the sidebar component to show a list of menu items and multi-level dropdown items on either side of the page to navigate on your website
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
   import { page } from '$app/stores';
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
   import { Badge, Heading, P, A } from '$lib'
   import { props as items } from '../props/Sidebar.json'
   import { props as items2 }  from '../props/SidebarBrand.json'
@@ -20,14 +18,12 @@ description: Use the sidebar component to show a list of menu items and multi-le
   import { props as items6 }  from '../props/SidebarGroup.json'
   import { props as items7 }  from '../props/SidebarItem.json'
   import { props as items8 }  from '../props/SidebarWrapper.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/sidebars/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The sidebar component can be used as a complementary element relative to the navbar shown on either the left or right side of the page used for the navigation on your web application, including menu items, multi-level dropdown items, call to actions elements, and more.
 
@@ -171,7 +167,6 @@ Use this sidebar example to create multi-level menu items by using the dSidebarD
 ```
 
 You can change the icons using `arrowup` and `arrowdown` slots.
-
 
 ```svelte example
 <script>
@@ -425,7 +420,6 @@ Use this example to add a CTA button inside the sidebar component and encourage 
 
 Show the logo of your brand and link back to the homepage from the top part of the sidebar.
 
-
 ```svelte example
 <script>
   import { Sidebar, SidebarWrapper, SidebarBrand, SidebarItem, SidebarGroup } from 'flowbite-svelte'
@@ -528,56 +522,55 @@ You can add own transition by setting `transitionType` and `transitionParams`.
 </Sidebar>
 ```
 
-
 ## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
 <h3 class='text-xl w-full dark:text-white py-4'>Sidebar</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>SidebarBrand</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>SidebarCta</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>SidebarDropdownItem</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>SidebarDropdownWrapper</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>SidebarGroup</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>SidebarItem</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items7} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>SidebarWrapper</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items8} rowState='hover' />
 </TableProp>
 

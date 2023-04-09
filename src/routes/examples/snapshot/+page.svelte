@@ -17,7 +17,7 @@
   const breadcrumb_title = 'Svelte Snapshot';
   const title = 'Svelte Snapshot';
   const description = 'Svelte Snapshot with Flowbite Svete';
-  const libFiles = {};
+  
   let formData = {
     first_name: '',
     last_name: '',
@@ -35,8 +35,8 @@
 
 <div class="max-w-3xl 2xl:max-w-4xl mx-auto mt-8">
   <div class="container mx-auto" id="mainContent">
-    <PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles} />
-
+    <PageHeadSection {dir} {breadcrumb_title} {title} {description} />
+    
     <P
       >Imagine a scenario where a user has filled out a form, but before submitting it, clicks on a link and
       then hits the back button on their browser. In such cases, the values they entered in the form will

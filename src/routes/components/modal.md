@@ -6,22 +6,16 @@ dir: Components
 description: Use the modal component to show interactive dialogs and notifications to your website users available in multiple sizes, colors, and styles
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
   import { P, A } from '$lib'  
   import { props as items1 } from '../props/Modal.json'
 
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
   // lib files
   const libFiles = import.meta.glob('../../lib/modals/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
-
+<GitHubSourceList {libFiles} />
 
 The modal component can be used as an interactive dialog on top of the main content area of the website to show notifications and gather information using form elements from your website users.
 
@@ -273,7 +267,6 @@ You can use five different modal sizing options starting from extra small to ext
 
 ```
 
-
 ## Scrolling behaviour
 
 ```svelte example
@@ -340,7 +333,7 @@ You can use five different modal sizing options starting from extra small to ext
 
 <h3 class='text-xl w-full dark:text-white py-4'>Modal</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 

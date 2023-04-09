@@ -6,21 +6,17 @@ dir: Components
 description: The Drawer component can be used as a hidden off-canvas sidebar for navigation and to show other information based on multiple styles and placements
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
   import { Heading, P, A } from '$lib';
-  // Props table
+
   import { props as items} from '../props/Drawer.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/drawer/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 Use the Drawer component (or “off-canvas”) to show a fixed element relative to the document page from any side for navigation, contact forms, informational purposes or other user actions.
 
@@ -422,7 +418,7 @@ Use this example to show the drawer on the bottom side of the page.
     easing: sineIn
   };
 </script>
-  
+
 <div class="text-center">
   <Button on:click={() => (hidden8 = false)}>Show drawer</Button>
 </div>
@@ -457,7 +453,6 @@ Use the `backdrop="false|true"` prop where you can disable or enable the backdro
 <Heading tag="h3" customSize="text-xl font-semibold" class='my-4'>Enabled (default)</Heading>
 
 Use this example to enable the backdrop element by default.
-
 
 ```svelte example
 <script>
@@ -618,7 +613,6 @@ Use `leftOffset|rightOffset|topOffset|bottomOffset` prop to change the position 
 As the default, the drawer closes when you click the outside of the drawer.
 However sometimes you don't want that. Set `activateClickOutside` to false to disable it.
 
-
 ```svelte example
 <script>
   import { Drawer, Button, CloseButton } from 'flowbite-svelte';
@@ -703,7 +697,7 @@ However sometimes you don't want that. Set `activateClickOutside` to false to di
 The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
 <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 

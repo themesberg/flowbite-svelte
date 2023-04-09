@@ -6,22 +6,17 @@ dir: Components
 description: Use the banner component to show marketing messages and CTA buttons at the top or bottom side of your website based on the utility classes from Tailwind CSS
 ---
 
-
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow } from '../utils'
   import { P, A } from '$lib'
-  // Props table
+
   import { props as bannerProps } from '../props/Banner.json'
-	let propHeader = ['Name', 'Type', 'Default']
-	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/banner/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 Get started with the sticky banner component coded with Tailwind CSS and Flowbite to show marketing, informational and CTA messages to your website visitors fixed to the top or bottom part of the page as the user scroll down the main content area.
 
@@ -163,7 +158,7 @@ If you want to custom CSS, use `bannerType="custom"` and add your CSS to `outerD
 
 Use the slot name `header` to insert your elements before the inner div.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
 <TableDefaultRow items={bannerProps} rowState='hover' />
 </TableProp>
 

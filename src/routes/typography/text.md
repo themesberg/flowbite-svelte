@@ -6,16 +6,12 @@ dir: Typography
 description: Learn how to customize text-related styles and properties such as font size, font style, text decoration, font weight and more
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow} from '../utils'
   import { A, Heading } from '$lib'
   import { props as items1 } from '../props/P.json'
   import { props as items2 } from '../props/Span.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFilesArray = [
     import.meta.glob("../../lib/typography/P.svelte"),
@@ -24,7 +20,7 @@ description: Learn how to customize text-related styles and properties such as f
   const libFiles = { ...libFilesArray[0], ...libFilesArray[1] };
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 Get started with a collection of text customization examples to learn how to update the size, font weight, style, decoration and spacing of inline text elements.
 
@@ -348,12 +344,12 @@ The component has the following props, type, and default values. See <A href="/p
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">P</Heading>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Span</Heading>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>

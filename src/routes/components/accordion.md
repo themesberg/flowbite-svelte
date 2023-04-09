@@ -6,26 +6,23 @@ dir: Components
 description: Use the accordion component to show hidden information based on the collapse and expand state of the child elements using data attribute options
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
   import { P, A } from '$lib'; 
   // Props 
   import {props as accordionProps} from '../props/Accordion.json'
   import {props as accordionItemProps} from '../props/AccordionItem.json'
-	let propHeader = ['Name', 'Type', 'Default']
+
   let slotHeader = ['Name', 'Description']
   // lib files
   const libFiles = import.meta.glob('../../lib/accordion/*.svelte')
   // Slots
   let slotItems = [['default', 'Place for AccordionItems']]
   let slotItems2 = [['default','Item body slot'],['header', 'Item header slot'],['arrowup', 'Icon to close an accordion item'],['arrowdown','Icon to open an accordion item']]
-	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The accordion component is a collection of vertically collapsing header and body elements that can be used to show and hide information based on the Tailwind CSS utility classes and JavaScript from Flowbite.
 
@@ -92,7 +89,6 @@ Use the `open` prop to make an item open on mount.
 ## Color option
 
 You can control the look and feel of `AccordionItems` by overwriting the `acctiveClasses` and `inactiveClasses` properties. You can define them in `Accordion` so that they will apply to all children or set them individually on each `AccordionItem`.
-
 
 ```svelte example hideScript
 <script>
@@ -201,7 +197,7 @@ Example how to use the `multiple` option together with expand all behavior.
 <script>
   import {AccordionItem, Accordion, Button} from 'flowbite-svelte'
   const items = Array(3);
- 
+
   const open_all = () => items.forEach((_,i)=> items[i] = true)
   const close_all= () => items.forEach((_,i)=> items[i] = false)
 </script>
@@ -256,13 +252,13 @@ The component has the following props, type, and default values. See <A href="/p
 
 <h3 class='text-xl w-full dark:text-white py-4'>Accordion</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={accordionProps} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>AccordionItem</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={accordionItemProps} rowState='hover' />
 </TableProp>
 
@@ -270,13 +266,13 @@ The component has the following props, type, and default values. See <A href="/p
 
 <h3 class='text-xl w-full dark:text-white py-4'>Accordion</h3>
 
-<TableProp header={slotHeader} {divClass} {theadClass}>
+<TableProp header={slotHeader}>
   <TableDefaultRow items={slotItems} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>AccordionItem</h3>
 
-<TableProp header={slotHeader} {divClass} {theadClass}>
+<TableProp header={slotHeader}>
   <TableDefaultRow items={slotItems2} rowState='hover' />
 </TableProp>
 

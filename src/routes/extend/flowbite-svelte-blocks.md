@@ -6,10 +6,7 @@ dir: Extend
 description: Flowbite-Svete-Blocks provides all necessary components to get started quickly
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, MetaTag } from '../utils'
   import { A, List, Li, Img} from '$lib'
   const libFiles ={
   "GitHub Repo": "https://github.com/shinokada/flowbite-svelte-blocks",
@@ -18,8 +15,6 @@ description: Flowbite-Svete-Blocks provides all necessary components to get star
   }
 
 </script>
-
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 ## Installation
 

@@ -6,21 +6,15 @@ dir: Components
 description: Use the step indicator component to show the progress of a process.
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import {  TableProp, TableDefaultRow,  } from '../utils'
   import { P, A } from '$lib'
   import { props as items } from '../props/StepIndicator.json'
-  // Props table
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
+
   // lib files
   const libFiles = import.meta.glob('../../lib/steps/*.svelte')
 </script>
-
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
 
 The Step Indicator component is a simple component to show the progress of a process. It can be used to show the progress of a multi-step form or a multi-step process.
 
@@ -194,6 +188,6 @@ Use the `color` prop to change the color of a step indicator.
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>

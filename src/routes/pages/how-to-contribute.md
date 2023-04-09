@@ -6,14 +6,9 @@ dir: Pages
 description: Flowbite-Svelte How to contribute page
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, MetaTag } from '../utils'
   import { A } from '$lib'
 </script>
-
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} />
 
 Here are some guidelines we'd like you to follow before submitting a PR.
 

@@ -6,20 +6,16 @@ dir: Forms
 description: Use the search input component as a text field to allow users to enter search queries and receive relevant page results available in multiple styles and sizes
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow } from '../utils'
   import { Badge, A } from '$lib'
   import { props as searchItems } from '../props/Search.json'  
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/forms/Search.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The search input component can be used to let your users search through your website using string queries and it comes in multiple styles, variants, and sizes built with the utility classes from Tailwind CSS.
 
@@ -129,7 +125,7 @@ The component has the following props, type, and default values. See <A href="/p
 
 <h3 class='text-xl w-full dark:text-white py-4'>Search</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={searchItems} rowState='hover' />
 </TableProp>
 

@@ -6,15 +6,10 @@ dir: Extend
 description: Use Svelte SVG icon families to write less code
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { MetaTag, PageHeadSection } from '../utils'
   import { P, A, List, Li } from '$lib'
 	import CheckCircle from './CheckCircle.svelte'
 </script>
-
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} />
 
 Instead of using SVG icons, using an icon library simplifies the code. You can uses <A href="https://www.npmjs.com/package/svelte-heros-v2" target="_blank" rel="noreferrer">Svelte-Heros-v2</A> and <A href="https://svelte-svg-icons.vercel.app/" target="_blank" rel="noreferrer">other icon sets</A> for Flowbite-Svelte.
 
@@ -73,7 +68,6 @@ Use the `aria-label` prop to change `aria-label` attribute. All icons have aria-
 ## Passing down other attributes
 
 You can pass other attibutes as well.
-
 
 ```html
 <AdjustmentsVertical tabindex="0" />
@@ -187,7 +181,6 @@ Here are some examples using Svelte-Heros-v2.
 ```
 
 ### <A href="https://hero2-with-flowbite-svelte.vercel.app/breadcrumb">Breadcrumb</A>
-
 
 ```html
 <script>

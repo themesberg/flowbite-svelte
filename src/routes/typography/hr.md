@@ -6,20 +6,16 @@ dir: Typography
 description: Create a horizontal line using the `Hr` component to separate content such as paragraphs, blockquotes, and other elements
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
-  import { A,  } from '$lib';
+  import { GitHubSourceList, TableProp, TableDefaultRow } from '../utils'
+  import { A} from '$lib';
   import { props as items1 } from '../props/Hr.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/typography/Hr.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The `Hr` component can be used to separate content using a horizontal line by adding space between elements based on multiple styles, variants, and layouts.
 
@@ -135,6 +131,6 @@ This example can be used to separate content with a HR tag as a shape instead of
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>

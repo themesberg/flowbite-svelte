@@ -6,14 +6,9 @@ dir: Extend
 description: Flowbite Svete Starters provide all necessary components to get started quickly
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { MetaTag, PageHeadSection } from '../utils'
   import { A, List, Li } from '$lib'
 </script>
-
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} />
 
 ## Flowbite Svelte starter
 

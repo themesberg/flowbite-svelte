@@ -6,16 +6,14 @@ dir: Components
 description: Use the typography and the utility classes from Tailwind CSS to style text with FlowBite
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
   import { A } from '$lib';
   // lib files
   const libFiles = import.meta.glob('../../lib/typography/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The typography for FlowBite is completely based on the utility classes from Tailwind CSS.
 

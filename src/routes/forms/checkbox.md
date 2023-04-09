@@ -6,22 +6,18 @@ dir: Forms
 description: Get started with the checkbox component to allow the user to select one or more options in the form of a square box available in multiple sizes and colors
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow } from '../utils'
   import { Badge, A } from '$lib'
   import { props as items } from '../props/Radio.json'
   import { props as items2 } from '../props/Label.json'
   import { props as items3 } from '../props/Helper.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/forms/Checkbox.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The checkbox component can be used to receive one or more selected options from the user in the form of a square box available in multiple styles, sizes, colors, and variants.
 
@@ -321,13 +317,13 @@ All attributes of the `input` element like: name, id, autofocus, etc, can be set
 
 <h3 class='text-xl w-full dark:text-white py-4'>Checkbox</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
 <TableDefaultRow items={items} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>Helper</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
 <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 

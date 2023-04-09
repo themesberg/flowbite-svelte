@@ -6,21 +6,17 @@ dir: Components
 description: Use Tailwind CSS badges as elements to show counts or labels separately or inside other components
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
   import { P, A } from '$lib'
   import { props as badgeProps } from '../props/Badge.json'
-  // Props table
-  let propHeader = ['Name', 'Type', 'Default']
-	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
+
   // lib files
   const libFiles = import.meta.glob('../../lib/badges/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The badge component can be used to complement other elements such as buttons or text elements as a label or to show the count of a given data, such as the number of comments for an article or how much time has passed by since a comment has been made.
 
@@ -297,14 +293,13 @@ A `dismiss` event will be dispatched during the dismissal, listen to it if neede
 The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={badgeProps} rowState='hover' />
 </TableProp>
 
 ## References
-		
+
 <P>
   <A href="https://flowbite.com/docs/components/badge/" target="_blank" rel="noreferrer" class="link"
     >Flowbite Badge</A>
 </P>
-		

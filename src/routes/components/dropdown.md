@@ -7,17 +7,16 @@ description: Get started with the dropdown component to show a list of menu item
 ---
 
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
   import { Badge, P, A  } from '$lib'
-  // Props table
+
   import { props as propItems} from '../props/Dropdown.json'
   import { props as propItems2} from '../props/DropdownDivider.json'
   import { props as propItems3} from '../props/DropdownHeader.json'
   import { props as propItems4} from '../props/DropdownItem.json'
-  let propHeader = ['Name', 'Type', 'Default']
+
   let slotHeader = ['Name', 'Description']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // slot
   let slotItems = [['header', 'Dropdown fixed top element.'],['footer','Dropdown fixed bottom element.']]
   let slotDropdownHeader = [['default', 'Dropdown header content.']]
@@ -26,7 +25,7 @@ description: Get started with the dropdown component to show a list of menu item
   const libFiles = import.meta.glob('../../lib/dropdowns/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The dropdown component can be used to show a list of menu items when clicking on an element such as a button and hiding it when clicking outside of the triggering element.
 
@@ -626,25 +625,25 @@ Therefore you can catch standard events on it like `on:click`.
 
 <h3 class='text-xl w-full dark:text-white py-4'>Dropdown</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={propItems} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>DropdownDivider</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={propItems2} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>DropdownHeader</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={propItems3} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>DropdownItem</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={propItems4} rowState='hover' />
 </TableProp>
 
@@ -652,19 +651,19 @@ Therefore you can catch standard events on it like `on:click`.
 
 <h3 class='text-xl w-full dark:text-white py-4'>Dropdown</h3>
 
-<TableProp header={slotHeader} {divClass} {theadClass}>
+<TableProp header={slotHeader}>
   <TableDefaultRow items={slotItems} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>DropdownDivider</h3>
 
-<TableProp header={slotHeader} {divClass} {theadClass}>
+<TableProp header={slotHeader}>
   <TableDefaultRow items={slotDropdownHeader} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>DropdownItem</h3>
 
-<TableProp header={slotHeader} {divClass} {theadClass}>
+<TableProp header={slotHeader}>
   <TableDefaultRow items={slotDropdownItem} rowState='hover' />
 </TableProp>
 
@@ -688,4 +687,3 @@ Therefore you can catch standard events on it like `on:click`.
     >Flowbite Dropdown</A
   >
 </P>
-  

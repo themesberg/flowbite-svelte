@@ -4,12 +4,24 @@
 </script>
 
 <script>
-  // calm down the warrnings "<Page> was created with unknown prop ..."
-  $: $$props;
+  import { PageHeadSection, MetaTag } from "../../utils";
+
+  export let /** @type {string} */ title;
+  export let /** @type {string} */ breadcrumb_title;
+  export let /** @type {string} */ dir;
+  export let /** @type {string} */ description ;
+  export let /** @type {string} */ layout = "";
+
+  // calm down `unused export property` warrning
+  layout;
 </script>
 
+<MetaTag {breadcrumb_title} {title} {dir} {description}/>
+
+
 <div class="max-w-3xl 2xl:max-w-4xl mx-auto">
-  <div id="mainContent" class="container mx-auto">
+  <PageHeadSection {dir} {breadcrumb_title} {title} {description} />
+  <div id="mainContent">
     <slot />
   </div>
 </div>

@@ -6,14 +6,10 @@ dir: Utilities
 description: Choose your primary color in tailwind.config.cjs file
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils';
+  import { TableProp, TableDefaultRow } from '../utils';
   import { A, Img, P } from '$lib';
 </script>
-
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} />
 
 ## Primary color in tailwind.config.cjs
 

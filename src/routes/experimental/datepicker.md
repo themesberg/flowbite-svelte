@@ -6,26 +6,20 @@ dir: Experimental
 description: Start receiving date and time data from your users using this free datepicker element based on Tailwind utility-classes and vanilla JavaScript.
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <svelte:head>
   <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css" />
   <script src="https://unpkg.com/flowbite@1.5.1/dist/datepicker.js"></script>
 </svelte:head>
 
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow } from '../utils'
   import { P, A, Alert } from '$lib'
   import { props as items } from '../props/Datepicker.json'
-  // Props table
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
   // lib files
   const libFiles = import.meta.glob('../../lib/datepicker/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 Date picker component
 
@@ -43,19 +37,15 @@ Date picker component
 </script>
 ```
 
+### Use rel="external"
 
-### Use rel=external
-
-This component is importing Flowbite datepicker javascript in the svelte:head section. When you are
-linking to a page using this component, use `rel=external`.
-
+This component is importing Flowbite datepicker javascript in the `svelte:head` section. When you are
+linking to a page using this component, use `rel="external"`.
 
 ## Datepicker example
 
 Use the following example of an input element to create a datepicker component. All you need to do is
 to add the datepicker data attribute to any input element.
-
-
 
 ```svelte example hideOutput
 <script>
@@ -63,7 +53,6 @@ to add the datepicker data attribute to any input element.
 </script>
 <Datepicker />
 ```
-
 
 ## Name and other attributes
 
@@ -82,7 +71,6 @@ Use the `range` prop and the following markup to initialize two datepickers as a
 
 The range picker has input name of `start` and `end`.
 
-
 ```svelte example hideOutput
 <script>
     import { Datepicker } from "flowbite-svelte";
@@ -95,7 +83,6 @@ The range picker has input name of `start` and `end`.
 By adding the `datepickerButtons` prop you will enable the today and clear buttons with the following features:
 - Clicking on the today button will browse back to the current day/month/year
 - Clicking on the clear button will reset all selections
-
 
 ```svelte example hideOutput
 <script>
@@ -127,7 +114,6 @@ prop. You can even combine right with bottom or left with top.
 <Datepicker datepickerOrientation="bottom right" />
 ```
 
-
 ## Title
 
 You can also add a title to the datepicker by using the `datepicker-title="title"` prop.
@@ -139,13 +125,10 @@ You can also add a title to the datepicker by using the `datepicker-title="title
 <Datepicker datepickerTitle="My Vacation" />
 ```
 
-
 ## Props
-
 
 The component has the following props, type, and default values. See <a href="/pages/types">types page</a> for type information.
 
-
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
     <TableDefaultRow {items} rowState="hover" />
 </TableProp>

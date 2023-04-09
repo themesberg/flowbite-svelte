@@ -6,16 +6,12 @@ dir: Components
 description: Use the image gallery component based on a masonry grid layout using flex and grid classes from Tailwind CSS to show multiple pictures based on various styles
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
   import { P, A } from '$lib'
-  // Props table
+
   import { props as galleryProps } from '../props/Gallery.json'
-	let propHeader = ['Name', 'Type', 'Default']
-	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // Slots
   let slotHeader = ['Name', 'Description']
   let slotItems = [['default', 'For a button label.']]
@@ -23,7 +19,7 @@ description: Use the image gallery component based on a masonry grid layout usin
   const libFiles = import.meta.glob('../../lib/gallery/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The gallery component can be used to show multiple images inside a masonry grid layout styles with the utility-first classes from Tailwind CSS to show a collection of pictures to your users based on various layouts, styles, sizes, and colors.
 
@@ -180,7 +176,6 @@ This example uses the [carousel slider](https://flowbite-svelte.com/components/c
 
 Use this example to show a list of tags and filter the images below based on the activately selected tag.
 
-
 ```svelte example class="flex flex-wrap gap-2" hideScript
 
 <script>
@@ -213,7 +208,7 @@ Use this example to show a list of tags and filter the images below based on the
 ```
 
 ## Heterogeneous gallery
-             
+
 Gallery items don't have to be all the same but then you need to list them manually - don't set the `items` property.
 
 ```svelte example class="flex flex-wrap gap-2" hideScript
@@ -258,10 +253,9 @@ The component has the following props, type, and default values. See <A href="/p
 
 <h3 class='text-xl w-full dark:text-white py-4'>Gallery</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
 <TableDefaultRow items={galleryProps} rowState='hover' />
 </TableProp>
-
 
 ## References
 

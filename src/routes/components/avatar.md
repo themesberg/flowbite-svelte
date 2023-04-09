@@ -6,25 +6,20 @@ dir: Components
 description: Use the avatar component to show a visual representation of a user profile using an image element or SVG object based on multiple styles and sizes
 ---
 
-
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
+
   import { P, A } from '$lib'
-  // Props table
+
   import { props as avatarProps } from '../props/Avatar.json'
   import { props as placehoderProps } from '../props/Placeholder.json'
-	let propHeader = ['Name', 'Type', 'Default']
-	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/avatar/*.svelte')
   let name;
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The avatar component can be used as a visual identifier for a user profile on your website and you can use the examples from Flowbite to modify the styles and sizes of these components using the utility classes from Tailwind CSS.
 
@@ -120,7 +115,6 @@ Use a dot element relative to the avatar component as an indicator for the user 
 <Avatar src="/images/profile-picture-5.webp" dot={{placement: "bottom-right", color:"green"}} />
 <Avatar src="/images/profile-picture-5.webp" dot={{placement: "bottom-right"}} rounded />
 
-
 <Avatar dot={{}}/>
 
 ```
@@ -211,13 +205,13 @@ The component has the following props, type, and default values. See <A href="/p
 
 <h3 class='text-xl w-full dark:text-white py-4'>Avatar</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
 <TableDefaultRow items={avatarProps} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>Placehoder</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={placehoderProps} rowState='hover' />
 </TableProp>
 

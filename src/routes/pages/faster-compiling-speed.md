@@ -5,17 +5,12 @@ title: Faster Compiling Speed
 dir: Pages
 description: Flowbite-Svelte Faster Compiling Speed
 ---
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { ExampleDiv , MetaTag, PageHeadSection } from '../utils'
   import { A, P, List, Li, Alert, Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from '$lib'
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} />
-
 If your Svelte app only requires a few components, it's recommended that you import them directly. Doing so can help optimize compilation speed and improve performance by reducing the amount of code that needs to be processed during compilation. Since version 0.34.1, it's now possible to import individual components.
-
 
 ```svelte example 
 <script>
@@ -52,7 +47,6 @@ To avoid any complaints from the editor, add node16 or nodenext to moduleResolut
   }
 }
 ```
-
 
 ## Speed comparisons
 

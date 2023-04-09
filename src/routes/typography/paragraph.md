@@ -7,16 +7,12 @@ description: Use the paragraph component to create multiple blocks of text separ
   content based on multiple layouts and styles
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils';
+  import { GitHubSourceList, TableProp, TableDefaultRow} from '../utils';
   import {  A, Heading } from '$lib';
   import { props as items1 } from '../props/P.json'
   import { props as items2 } from '../props/Layout.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFilesArray = [
     import.meta.glob("../../lib/typography/P.svelte"),
@@ -25,7 +21,7 @@ description: Use the paragraph component to create multiple blocks of text separ
   const libFiles = { ...libFilesArray[0], ...libFilesArray[1] };
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The paragraph element is one of the most commonly used HTML tags on a document page because it is
 used to write longer blocks of text separated by a blank line and can massively improve the on-page
@@ -406,13 +402,13 @@ The component has the following props, type, and default values. See <A href="/p
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">P</Heading>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Layout</Heading>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 

@@ -6,22 +6,18 @@ dir: Components
 description: Use the popover component to show detailed information inside a pop-up box relative to the element that is being clicked or hovered based on multiple styles
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow , } from '../utils'
   import { P, A } from '$lib'
   import { props as items } from '../props/Popover.json'
   import { props as items2 } from '../props/Popper.json'
   import { props as items3 } from '../props/Frame.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/popover/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 Get started with the popover component to show any type of content inside a pop-up box when hovering or clicking over a trigger element. There are multiple examples that you can choose from, such as showing more information about a user profile, company profile, password strength, and more.
 
@@ -359,7 +355,7 @@ You can also disable the popover arrow by setting `arrow` attribute to `false`.
 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.</p>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
@@ -367,7 +363,7 @@ You can also disable the popover arrow by setting `arrow` attribute to `false`.
 
 The component inherits the following props, type, and default values from `Popper`. See <A href="/pages/types">types page</A> for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
@@ -375,7 +371,7 @@ The component inherits the following props, type, and default values from `Poppe
 
 The component inherits the following props, type, and default values from `Frame`. See <A href="/pages/types">types page</A> for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 

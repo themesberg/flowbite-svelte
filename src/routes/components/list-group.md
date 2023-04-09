@@ -6,22 +6,18 @@ dir: Components
 description: Use the list group component to display a series of items, buttons or links inside a single element
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
   import { Badge, Heading, P, A } from '$lib'
   import { props as items1 } from '../props/Listgroup.json'
   import { props as items2 } from '../props/ListgroupItem.json'
-  // Props table
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
+
   // lib files
   const libFiles = import.meta.glob('../../lib/list-group/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The list group component can be used to display a series of elements, buttons or links inside a single card component similar to a sidebar.
 
@@ -152,13 +148,13 @@ Delete user
 
 <h3 class='text-xl w-full dark:text-white py-4'>Listgroup</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>ListgroupItem</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 

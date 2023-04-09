@@ -5,20 +5,18 @@ breadcrumb_title: Tabs
 dir: Components
 description: Use these responsive tabs components to create a secondary navigational hierarchy for your website or toggle content inside a container
 ---
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
+
 <script lang="ts">
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
   import { Badge, P, A } from '$lib'
   import { props as items3 }  from '../props/TabItem.json'
   import { props as items4 }  from '../props/Tabs.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/tabs/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The tabs component can be used either as an extra navigational hierarchy complementing the main navbar or you can also use it to change content inside a container just below the tabs using the data attributes from Flowbite.
 
@@ -29,7 +27,6 @@ The tabs component can be used either as an extra navigational hierarchy complem
   import { Tabs, TabItem } from 'flowbite-svelte';
 </script>
 ```
-
 
 ## Default tabs
 
@@ -261,13 +258,13 @@ To get a custom look and feel for the `Tabs` component, do not set `style` prop,
 
 <h3 class='text-xl w-full dark:text-white py-4'>TabItem</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>Tabs</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 

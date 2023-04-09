@@ -6,20 +6,16 @@ dir: Forms
 description: Get started with the select component to allow the user to choose from one or more options from a dropdown list based on multiple styles, sizes, and variants
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+import { GitHubSourceList, TableProp, TableDefaultRow } from '../utils'
 import { Badge, A } from '$lib'
 import { props as items } from '../props/Select.json'
-let propHeader = ['Name', 'Type', 'Default']
-let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
 // lib files
 const libFiles = import.meta.glob('../../lib/forms/Select.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The select input component can be used to gather information from users based on multiple options in the form of a dropdown list and by browsing this page you will find multiple options, styles, sizes, and variants built with the utility classes from Tailwind CSS also available in dark mode.
 
@@ -196,7 +192,7 @@ If you want custom options, put them directly inside the component and leave the
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 

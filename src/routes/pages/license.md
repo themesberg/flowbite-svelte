@@ -6,14 +6,9 @@ dir: Pages
 description: Flowbite-Svelte License page
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, MetaTag } from '../utils'
   import { A } from '$lib'
 </script>
-
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} />
 
 ## MIT License
 

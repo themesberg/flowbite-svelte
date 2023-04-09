@@ -6,21 +6,17 @@ dir: Components
 description: Use the progress bar component to show the completion rate of a data indicator or use it as a loader element
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
   import { P, A } from '$lib'
   import { props as items } from '../props/Progressbar.json'
-  // Props table
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
+
   // lib files
   const libFiles = import.meta.glob('../../lib/progressbars/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The progress bar component can be used as an indicator to show the completion rate of data sets or it can be used as an animated loader component. There are multiple sizes, colors, and styles available.
 
@@ -80,7 +76,6 @@ Use the `size` prop to change the size of a progress bar.
 
 Use the `labelInside` prop to add the progress in a progress bar.
 
-
 ```svelte example hideScript
 <script>
   import { Progressbar } from 'flowbite-svelte'
@@ -93,7 +88,6 @@ Use the `labelInside` prop to add the progress in a progress bar.
 
 Use the `labelOutside` prop to add the progress outside of a progress bar.
 
-
 ```svelte example hideScript
 <script>
   import { Progressbar } from 'flowbite-svelte'
@@ -105,7 +99,6 @@ Use the `labelOutside` prop to add the progress outside of a progress bar.
 ## Colors
 
 Use the `color` prop to change the color of a progress bar.
-
 
 ```svelte example hideScript
 <script>
@@ -152,7 +145,6 @@ Use the `color` prop to change the color of a progress bar.
 
 Use `labelInsideClass` prop to style your progressbar.
 
-
 ```svelte example hideScript
 <script>
   import { Progressbar } from 'flowbite-svelte'
@@ -189,7 +181,7 @@ Use `labelInsideClass` prop to style your progressbar.
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 

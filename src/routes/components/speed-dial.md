@@ -6,22 +6,17 @@ dir: Components
 description: The speed dial component can be used as a quick way to show a list of action buttons to a user when hovering or clicking on the main trigger element.
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
   import { P, A } from '$lib'  
   import { props as items1 } from '../props/SpeedDial.json'
   import { props as items2 } from '../props/SpeedDialButton.json'
 
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
   // lib files
   const libFiles = import.meta.glob('../../lib/speed-dial/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 Get started with the speed dial component to show a list of buttons or menu items positioned relative to the body in either corner as a quick way to allow certains actions to be made by your users.
 
@@ -35,12 +30,10 @@ To initialize a speed dial component you need to wrap the trigger element and th
 notice `defaultClass="absolute right-6 left-6` at every example.
 </div>
 
-
 ```svelte example class="relative h-96"
 <script>
   import { SpeedDial, SpeedDialButton } from 'flowbite-svelte'
 </script>
-
 
 <SpeedDial defaultClass="absolute right-6 bottom-6">
     <SpeedDialButton name="Share">
@@ -203,7 +196,6 @@ Use this example to make the trigger button’s style square instead of a full c
   import { SpeedDial, SpeedDialButton } from 'flowbite-svelte'
 </script>
 
-
 <SpeedDial defaultClass="absolute right-6 bottom-6" pill={false}>
     <SpeedDialButton name="Share">
         <svg aria-hidden="true" class="w-6 h-6 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"></path></svg>
@@ -359,7 +351,6 @@ This example can be used to show a list of menu items instead of buttons when ac
 
 This example can be used to show an alternative style when showing a list of menu items.
 
-
 ```svelte example class="relative h-96"
 <script>
   import { SpeedDial, Listgroup, ListgroupItem } from 'flowbite-svelte'
@@ -498,13 +489,13 @@ The default trigger type is hover for each speed dial component.
 
 <h3 class='text-xl w-full dark:text-white py-4'>SpeedDial</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
 <h3 class='text-xl w-full dark:text-white py-4'>SpeedDialButton</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 

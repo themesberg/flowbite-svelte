@@ -1,9 +1,12 @@
 <script lang="ts">
   export let pClass = 'text-gray-700 dark:text-white mb-1';
-  export let libFiles = '';
+  export let libFiles = {};
   const paths = Object.keys(libFiles);
+
+  export let dClass = 'rounded-xl w-full my-4 mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6'
 </script>
 
+<div class={dClass}>
 {#each paths as path}
 <p class={pClass}>
   <svg class="w-5 h-5 inline" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"
@@ -17,6 +20,7 @@
     rel="noreferrer"
     class="hover:underline hover:text-blue-500">
     <slot />
-    {path.split("/").pop().split(".")[0]}: View Source Code</a>
+    {path.split("/").pop()?.split(".").shift()}: View Source Code</a>
 </p>
 {/each}
+</div>

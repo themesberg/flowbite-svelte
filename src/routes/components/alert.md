@@ -6,18 +6,14 @@ dir: Components
 description: Show contextual information to your users using alert elements based on Tailwind CSS
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
+
   import { Badge, P, A } from '$lib'
-  // Props table
+
   import { props as frameProps} from '../props/Frame.json'
   import { props as alertProps } from '../props/Alert.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/alert/*.svelte')
   // slots
@@ -25,7 +21,7 @@ description: Show contextual information to your users using alert elements base
   let slotItems = [['default', 'The first slot.'],['extra','A slot after the default slot.']]
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The alert component can be used to provide information to your users such as success or error messages, but also highlighted information complementing the normal flow of paragraphs and headers on a page. Flowbite also includes dismissable alerts which can be hidden by the users by clicking on the close icon.
 
@@ -98,7 +94,6 @@ You can also include a descriptive icon to complement the message inside the ale
   <span class="font-medium">Dark alert!</span> Change a few things up and try submitting again.
 </Alert>
 ```
-
 
 ## Bordered alerts
 
@@ -309,7 +304,7 @@ Use the `close` event with `dismissable` prop.
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
 <TableDefaultRow items={alertProps} rowState='hover' />
 </TableProp>
 
@@ -317,13 +312,13 @@ The component has the following props, type, and default values. See <A href="/p
 
 The component inherits the following props, type, and default values from `Frame`. See <A href="/pages/types">types page</A> for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
 <TableDefaultRow items={frameProps} rowState='hover' />
 </TableProp>
 
 ## Slots
 
-<TableProp header={slotHeader} {divClass} {theadClass}>
+<TableProp header={slotHeader}>
   <TableDefaultRow items={slotItems} rowState='hover' />
 </TableProp>
 

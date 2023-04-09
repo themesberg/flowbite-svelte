@@ -6,21 +6,17 @@ dir: Extend
 description: Use the indicator component to show a number count, account status, or as a loading label positioned relative to the parent component coded with Tailwind CSS
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import {PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
+  import {GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
   import { P, A } from '$lib'
-  // Props table
+
   import { props as items } from '../props/Indicator.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/indicators/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The indicator component can be used as a small element positioned absolutely relative to another component such as a button or card and show a number count, account status (red for offline, green for online) and other useful information.
 
@@ -31,7 +27,6 @@ The indicator component can be used as a small element positioned absolutely rel
   import { Indicator } from "flowbite-svelte"
 </script>
 ```
-
 
 ## Default indicator
 
@@ -150,7 +145,6 @@ You can also use the indicators inside of a stepper component when completing a 
 <script>
   import { Indicator } from 'flowbite-svelte'
 </script>
-
 
 <ol class="flex items-center">
     <li class="relative w-full mb-6">
@@ -273,7 +267,7 @@ Use these examples to position the indicator component anywhere relative to the 
 
 <h3 class='text-xl w-full dark:text-white py-4'>Indicator</h3>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items} rowState='hover' />
 </TableProp>
 

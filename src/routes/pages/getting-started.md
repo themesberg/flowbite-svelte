@@ -5,15 +5,10 @@ title: Getting Started
 dir: Pages
 description: Flowbite-Svelte Getting Started page
 ---
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { MetaTag, PageHeadSection } from '../utils'
   import { A, P, List, Li } from '$lib'
 </script>
-
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} />
-
 
 You can install Flowbite-Svelte by using the <A href='/extend/flowbite-svelte-starter'>Flowbite-Svelte-Start</A> or from scratch.
 
@@ -95,7 +90,6 @@ Now you are ready to go! Add the following to `src/routes/+page.svelte` and if y
 	</Alert>
 </div>
 ```
-
 
 ## Starters
 

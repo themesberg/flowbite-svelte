@@ -9,9 +9,8 @@
 </script>
 
 <script>
-  import { MetaTag } from '../../utils';
+  import { GitHubSourceList, MetaTag, PageHeadSection } from '../../utils';
   import { Img } from '$lib';
-  import PageHeadSection from '../../utils/PageHeadSection.svelte';
   const breadcrumb_title = 'Responsive Sidebar Layout';
   const title = 'Responsive Sidebar Layout';
   const dir = 'Examples';
@@ -25,8 +24,8 @@
 <MetaTag {breadcrumb_title} {title} {dir} {description} />
 <div class="max-w-3xl 2xl:max-w-4xl mx-auto mt-8">
   <div class="container mx-auto" id="mainContent">
-    <PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles} />
-
+    <PageHeadSection {dir} {breadcrumb_title} {title} {description} />
+    <GitHubSourceList {libFiles} />
     <Img src="/images/sveltekit-sidebar-layout-optimized.png" alt="sveltekit sidebar layout" />
   </div>
 </div>

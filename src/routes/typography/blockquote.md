@@ -6,20 +6,16 @@ dir: Typography
 description: The blockquote component can be used to quote text content from an external source that can be used for testimonials, reviews, and quotes inside an article
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow } from '../utils'
   import { P, A, Heading } from '$lib'; 
   import { props as items1 } from '../props/Blockquote.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/typography/Blockquote.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 Get started with Blockquote component when quoting external sources such as quotes inside an article, user reviews, and testimonials based on multiple examples of layouts, styles, and contexts.
 
@@ -141,7 +137,6 @@ Use this example to show a user review with rating stars and the name and occupa
 
 Choose from the following examples the blockquote text alignment from starting from left, center to right based on the utility classes from Tailwind CSS.
 
-
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Left</Heading>
 
 The default alignment of the blockquote text content is the left side of the document.
@@ -232,6 +227,6 @@ The `size="2xl"` prop can be used to set a large size for the blockquote compone
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>

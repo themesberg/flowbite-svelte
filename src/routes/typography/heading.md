@@ -6,25 +6,21 @@ dir: Typography
 description: The heading component defines six levels of title elements from H1 to H6 that are used as titles and subtitles on a web page based on multiple styles and layouts
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow } from '../utils'
   import { A, Heading, Breadcrumb, BreadcrumbItem } from '$lib';
-  
+
   import { props as items1 } from '../props/Heading.json'
   import { props as items2 } from '../props/P.json'
   import { props as items3 } from '../props/A.json'
   import { props as items4 } from '../props/Mark.json'
   import { props as items5 } from '../props/Secondary.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/typography/Heading.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 Get started with the heading component to define titles and subtitles on a web page and also improve the on-page SEO metrics of your website by targeting high-traffic keywords on Google.
 
@@ -77,7 +73,6 @@ Use this example of a second-level H2 heading as the main subtitle for each sect
 
 Use this example to highlight a certain portion of the heading text with a different color.
 
-
 ```svelte example
 <script>
   import {  Heading, P, Span } from 'flowbite-svelte'
@@ -90,7 +85,6 @@ Use this example to highlight a certain portion of the heading text with a diffe
 ## Heading mark
 
 This example can be used to mark one part of the heading text with a solid background for highlighting.
-
 
 ```svelte example
 <script>
@@ -105,7 +99,6 @@ This example can be used to mark one part of the heading text with a solid backg
 
 Use this example to highlight a portion of the heading text by using a gradient style.
 
-
 ```svelte example
 <script>
   import {  Heading, P, Span } from 'flowbite-svelte'
@@ -119,7 +112,6 @@ Use this example to highlight a portion of the heading text by using a gradient 
 
 Get started with this example to underline an important part of the heading component using the `underline` prop in the `Span` component.
 
-
 ```svelte example
 <script>
   import {  Heading, P, Span } from 'flowbite-svelte'
@@ -132,7 +124,6 @@ Get started with this example to underline an important part of the heading comp
 ## Breadcrumb context
 
 Get started with this example to position a breadcrumb component above the heading component.
-
 
 ```svelte example
 <script>
@@ -151,7 +142,6 @@ Get started with this example to position a breadcrumb component above the headi
 
 Use this example to show a badge component inside the heading text element as a secondary indicator.
 
-
 ```svelte example
 <script>
   import {  Heading, Badge } from 'flowbite-svelte'
@@ -163,7 +153,6 @@ Use this example to show a badge component inside the heading text element as a 
 ## Secondary text
 
 This example can be used to add a secondary text inside the main heading component.
-
 
 ```svelte example
 <script>
@@ -180,7 +169,6 @@ The heading component has six levels of importance starting from H1 which has to
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Heading one (H1)</Heading>
 
 Use the `tag="h1"` as the most important text element to indicate the title of your web page.
-
 
 ```svelte example
 <script>
@@ -256,30 +244,30 @@ The component has the following props, type, and default values. See <A href="/p
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Heading</Heading>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">P</Heading>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">A</Heading>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Mark</Heading>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Secondary</Heading>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
