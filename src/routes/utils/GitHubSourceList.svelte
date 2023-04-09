@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let pClass = 'text-gray-700 dark:text-white mb-1';
+  export let pClass = 'text-gray-500 dark:text-gray-400 mb-1';
   export let libFiles = {};
   const paths = Object.keys(libFiles);
 
