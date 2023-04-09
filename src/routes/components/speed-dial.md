@@ -8,7 +8,7 @@ description: The speed dial component can be used as a quick way to show a list 
 
 <script>
   import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
-  import { P, A } from '$lib'  
+  import { P, A, Alert } from '$lib'  
   import { props as items1 } from '../props/SpeedDial.json'
   import { props as items2 } from '../props/SpeedDialButton.json'
 
@@ -24,11 +24,11 @@ Get started with the speed dial component to show a list of buttons or menu item
 
 To initialize a speed dial component you need to wrap the trigger element and the list of items inside an element and use the data-dial-init data attribute on it.
 
-<div class="border border-gray-200 dark:border-gray-700 my-2 p-4 w-full" >
+<Alert>
 
-**Note!** Default class for speed dial is `fixed right-6 bottom-6`. However for the sake of the examples below `fixed` must be changed to `absolute`, therefore you can
-notice `defaultClass="absolute right-6 left-6` at every example.
-</div>
+**Note!** Default class for speed dial is `fixed right-6 bottom-6`. However for the sake of the examples below `fixed` must be changed to `absolute`, therefore you can notice `defaultClass="absolute right-6 left-6"` at every example.
+
+</Alert>
 
 ```svelte example class="relative h-96"
 <script>

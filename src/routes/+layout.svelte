@@ -23,6 +23,13 @@
   } from '$lib';
 
   import '../app.css';
+  import Tooltip from '$lib/tooltips/Tooltip.svelte';
+  import ToolbarButton from '$lib/toolbar/ToolbarButton.svelte';
+  import GitHub from './utils/icons/GitHub.svelte';
+  import GitHubSource from './utils/GitHubSource.svelte';
+  import ToolbarLink from './utils/ToolbarLink.svelte';
+  import Discord from './utils/icons/Discord.svelte';
+  import YouTube from './utils/icons/YouTube.svelte';
 
   export let data: PageData;
 
@@ -96,10 +103,19 @@
       <NavLi class="mb-3 lg:px-2 xl:px-2 lg:mb-0" href="/pages/about">About</NavLi>
       <NavLi class="mb-3 lg:px-2 xl:px-2 lg:mb-0" href="https://flowbite-svelte-blocks.vercel.app/"
         >Blocks</NavLi>
-      <NavLi class="mb-3 lg:px-2 xl:px-2 lg:mb-0" href="https://github.com/themesberg/flowbite-svelte"
-        >GitHub</NavLi>
     </NavUl>
+
+    <ToolbarLink name="View on GitHub" href="https://github.com/themesberg/flowbite-svelte"
+      ><GitHub /></ToolbarLink>
+    <ToolbarLink name="Join community on Discord" href="https://discord.gg/4eeurUVvTy"
+      ><Discord /></ToolbarLink>
+    <ToolbarLink
+      name="Subscribe to YouTube channel"
+      href="https://www.youtube.com/channel/UC_Ms4V2kYDsh7F_CSsHyQ6A">
+      <YouTube />
+    </ToolbarLink>
     <DarkMode class={darkModeClass} />
+    <Tooltip class="dark:bg-gray-900">Toggle dark mode</Tooltip>
   </Navbar>
 </header>
 
