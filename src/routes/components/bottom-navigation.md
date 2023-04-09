@@ -328,25 +328,25 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<h3 class='text-xl w-full dark:text-white py-4'>BottomNav</h3>
+### BottomNav
 
 <TableProp>
 <TableDefaultRow items={bottomNavProps} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>BottomNavHeader</h3>
+### BottomNavHeader
 
 <TableProp>
 <TableDefaultRow items={bottomNavHeaderProps} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>BottomNavHeaderItem</h3>
+### BottomNavHeaderItem
 
 <TableProp>
 <TableDefaultRow items={bottomNavHeaderItemProps} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>BottomNavItem</h3>
+### BottomNavItem
 
 <TableProp>
 <TableDefaultRow items={bottomNavItemProps} rowState='hover' />

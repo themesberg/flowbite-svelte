@@ -203,13 +203,13 @@ Select size from  xs | sm | md | lg | xl.
 The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.
 
-<h3 class='text-xl w-full dark:text-white py-4'>Avatar</h3>
+### Avatar
 
 <TableProp>
 <TableDefaultRow items={avatarProps} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Placehoder</h3>
+### Placehoder
 
 <TableProp>
   <TableDefaultRow items={placehoderProps} rowState='hover' />

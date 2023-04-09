@@ -1,6 +1,7 @@
 <script context="module">
   import h2 from './h2.svelte';
-  export { h2 };
+  import h3 from './h3.svelte';
+  export { h2, h3 };
 </script>
 
 <script>

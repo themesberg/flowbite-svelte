@@ -135,49 +135,49 @@ Use the skeleton component to indicate a loading status with placeholder element
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<h3 class='text-xl w-full dark:text-white py-4'>CardPlaceholder</h3>
+### CardPlaceholder
 
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>ImagePlaceholder</h3>
+### ImagePlaceholder
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>ListPlaceholder</h3>
+### ListPlaceholder
 
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Skeleton</h3>
+### Skeleton
 
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TestimonialPlaceholder</h3>
+### TestimonialPlaceholder
 
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TextPlaceholder</h3>
+### TextPlaceholder
 
 <TableProp>
   <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>VideoPlaceholder</h3>
+### VideoPlaceholder
 
 <TableProp>
   <TableDefaultRow items={items7} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>WidgetPlaceholder</h3>
+### WidgetPlaceholder
 
 <TableProp>
   <TableDefaultRow items={items8} rowState='hover' />

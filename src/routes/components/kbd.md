@@ -228,31 +228,31 @@ This example can be used to denote function keys inside the KBD component.
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Kbd</h3>
+### Kbd
 
 <TableProp>
   <TableDefaultRow items={items} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>ArrowKeyDown</h3>
+### ArrowKeyDown
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>ArrowKeyLeft</h3>
+### ArrowKeyLeft
 
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>ArrowKeyRight</h3>
+### ArrowKeyRight
 
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>ArrowKeyUp</h3>
+### ArrowKeyUp
 
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />

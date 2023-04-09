@@ -195,7 +195,7 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 </Toast>
 ```
 
-<h3 class='text-xl w-full dark:text-white py-4'>Blur examples</h3>
+### Blur examples
 
 ```svelte example
 <script>
@@ -217,7 +217,7 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 </Toast>
 ```
 
-<h3 class='text-xl w-full dark:text-white py-4'>Fly examples</h3>
+### Fly examples
 
 ```svelte example
 <script>
@@ -261,7 +261,7 @@ Use this toast component to also show an “undo” button to reverse the action
 
 Use the `slot="extra` to add some more arbitrary content in the toast.
 
-<h3 class='text-xl w-full dark:text-white py-4'>Toast message</h3>
+### Toast message
 
 This component can be used to show messages and a CTA button when receiveing chat messages, comment notifications, and other use cases.
 
@@ -282,7 +282,7 @@ This component can be used to show messages and a CTA button when receiveing cha
 </Toast>
 ```
 
-<h3 class='text-xl w-full dark:text-white py-4'>Push notification</h3>
+### Push notification
 
 This component can be used to show notifications for an action from another user such as posting a comment, receiving a like, being tagged. You can show an avatar, icon, message, and the time of the notification.
 
@@ -304,7 +304,7 @@ This component can be used to show notifications for an action from another user
 </Toast>
 ```
 
-<h3 class='text-xl w-full dark:text-white py-4'>Interactive toast</h3>
+### Interactive toast
 
 Use this interactive toast component to encourage users to make a certain action such as updating to the latest software version. You can set an icon, message, and two CTA buttons.
 

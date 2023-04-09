@@ -371,7 +371,7 @@ If you need a full control over `input` HTML element while still re-using the Fl
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<h3 class='text-xl w-full dark:text-white py-4'>Input</h3>
+### Input
 
 <TableProp>
 <TableDefaultRow items={items1} rowState='hover' />

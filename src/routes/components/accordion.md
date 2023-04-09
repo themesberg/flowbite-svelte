@@ -250,13 +250,13 @@ The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#r
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<h3 class='text-xl w-full dark:text-white py-4'>Accordion</h3>
+### Accordion
 
 <TableProp>
   <TableDefaultRow items={accordionProps} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>AccordionItem</h3>
+### AccordionItem
 
 <TableProp>
   <TableDefaultRow items={accordionItemProps} rowState='hover' />
@@ -264,13 +264,13 @@ The component has the following props, type, and default values. See <A href="/p
 
 ## Slots
 
-<h3 class='text-xl w-full dark:text-white py-4'>Accordion</h3>
+### Accordion
 
 <TableProp header={slotHeader}>
   <TableDefaultRow items={slotItems} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>AccordionItem</h3>
+### AccordionItem
 
 <TableProp header={slotHeader}>
   <TableDefaultRow items={slotItems2} rowState='hover' />

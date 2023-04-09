@@ -265,37 +265,37 @@ The carousel component can be used to cycle through a set of elements using cust
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Carousel</h3>
+### Carousel
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>CarouselTransition</h3>
+### CarouselTransition
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Caption</h3>
+### Caption
 
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Indicator</h3>
+### Indicator
 
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Slide</h3>
+### Slide
 
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Thumbnail</h3>
+### Thumbnail
 
 <TableProp>
   <TableDefaultRow items={items6} rowState='hover' />

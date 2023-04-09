@@ -110,13 +110,13 @@ When the user selected multiple files, the `value` represents the first file in 
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<h3 class='text-xl w-full dark:text-white py-4'>Fileupload</h3>
+### Fileupload
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Dropzone</h3>
+### Dropzone
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />

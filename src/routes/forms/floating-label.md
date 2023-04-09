@@ -146,7 +146,7 @@ The component has the following props, type, and default values. See <A href="/p
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Helper</h3>
+### Helper
 
 <TableProp>
 <TableDefaultRow items={items2} rowState='hover' />

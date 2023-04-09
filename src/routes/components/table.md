@@ -839,43 +839,43 @@ Use this example to apply a different color to every second row inside the table
 The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.
 
-<h3 class='text-xl w-full dark:text-white py-4'>Table</h3>
+### Table
 
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TableBody</h3>
+### TableBody
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TableBodyCell</h3>
+### TableBodyCell
 
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TableBodyRow</h3>
+### TableBodyRow
 
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TableHead</h3>
+### TableHead
 
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TableHeadCell</h3>
+### TableHeadCell
 
 <TableProp>
   <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TableSearch</h3>
+### TableSearch
 
 <TableProp>
   <TableDefaultRow items={items7} rowState='hover' />

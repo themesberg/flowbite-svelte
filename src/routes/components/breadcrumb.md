@@ -97,13 +97,13 @@ Use the `icon` slot to change icons.
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<h3 class='text-xl w-full dark:text-white py-4'>Breadcrumb</h3>
+### Breadcrumb
 
 <TableProp>
   <TableDefaultRow items={breadcrumbProps} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>BreadcrumbItem</h3>
+### BreadcrumbItem
 
 <TableProp>
   <TableDefaultRow items={breadcrumbItemProps} rowState='hover' />

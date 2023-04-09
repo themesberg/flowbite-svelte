@@ -124,7 +124,7 @@ Usage of hidden so far `ListgroupItem` helps you with proper layout.
 </script>
 
 <Listgroup active class="w-48">
-    <h3 class="text-center bg-red-500 text-white font-bold rounded-t-lg">User list</h3>
+    ### User list
     <ListgroupItem class="text-base font-semibold gap-2">
       <Avatar src="/images/profile-picture-1.webp" size="xs"/>Jese Leos
     </ListgroupItem>
@@ -146,13 +146,13 @@ Delete user
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Listgroup</h3>
+### Listgroup
 
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>ListgroupItem</h3>
+### ListgroupItem
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />

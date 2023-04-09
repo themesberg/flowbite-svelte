@@ -98,7 +98,7 @@ Aggregate more results by using this example to show the amount of reviews and t
 
 Use the `ratingUp` and `ratingDown` slots to add icons of your choice.
 
-<h3 class='text-xl w-full dark:text-white py-4'>Size and color</h3>
+### Size and color
 
 The default icon size is `24`. Set the `class` in a icon component to change colors.
 
@@ -352,37 +352,37 @@ Use this component to show the review content from a user alongside the avatar, 
 The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.
 
-<h3 class='text-xl w-full dark:text-white py-4'>Rating</h3>
+### Rating
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>AdvancedRating</h3>
+### AdvancedRating
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>ScoreRating</h3>
+### ScoreRating
 
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>RatingComment</h3>
+### RatingComment
 
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Review</h3>
+### Review
 
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Star</h3>
+### Star
 
 <TableProp>
   <TableDefaultRow items={items6} rowState='hover' />

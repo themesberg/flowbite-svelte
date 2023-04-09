@@ -278,55 +278,55 @@ Use this component to group multiple data entries inside a single date and show 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Timeline</h3>
+### Timeline
 
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TimelineItem</h3>
+### TimelineItem
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TimelineItemVertical</h3>
+### TimelineItemVertical
 
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TimelineHorizontal</h3>
+### TimelineHorizontal
 
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TimelineItemHorizontal</h3>
+### TimelineItemHorizontal
 
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Activity</h3>
+### Activity
 
 <TableProp>
   <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>ActivityItem</h3>
+### ActivityItem
 
 <TableProp>
   <TableDefaultRow items={items7} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Group</h3>
+### Group
 
 <TableProp>
   <TableDefaultRow items={items8} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>GroupItem</h3>
+### GroupItem
 
 <TableProp>
   <TableDefaultRow items={items9} rowState='hover' />

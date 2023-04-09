@@ -487,13 +487,13 @@ The default trigger type is hover for each speed dial component.
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
 
-<h3 class='text-xl w-full dark:text-white py-4'>SpeedDial</h3>
+### SpeedDial
 
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>SpeedDialButton</h3>
+### SpeedDialButton
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />

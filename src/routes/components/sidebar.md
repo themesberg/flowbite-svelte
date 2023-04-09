@@ -526,49 +526,49 @@ You can add own transition by setting `transitionType` and `transitionParams`.
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<h3 class='text-xl w-full dark:text-white py-4'>Sidebar</h3>
+### Sidebar
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>SidebarBrand</h3>
+### SidebarBrand
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>SidebarCta</h3>
+### SidebarCta
 
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>SidebarDropdownItem</h3>
+### SidebarDropdownItem
 
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>SidebarDropdownWrapper</h3>
+### SidebarDropdownWrapper
 
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>SidebarGroup</h3>
+### SidebarGroup
 
 <TableProp>
   <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>SidebarItem</h3>
+### SidebarItem
 
 <TableProp>
   <TableDefaultRow items={items7} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>SidebarWrapper</h3>
+### SidebarWrapper
 
 <TableProp>
   <TableDefaultRow items={items8} rowState='hover' />

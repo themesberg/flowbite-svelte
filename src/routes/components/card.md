@@ -175,7 +175,7 @@ Use this card example where you can add form input elements that can be used for
 </script>
 <Card>
 	<form class="flex flex-col space-y-6" action="/">
-		<h3 class="text-xl font-medium text-gray-900 dark:text-white p-0">Sign in to our platform</h3>
+		### Sign in to our platform
 		<Label class="space-y-2">
 			<span>Email</span>
 			<Input type="email" name="email" placeholder="name@company.com" required />
@@ -351,7 +351,7 @@ Use this example to split cards into multiple sections such as for testimonials 
 <Card padding="none" size="xl" class="grid md:grid-cols-2">
   <figure class="flex flex-col justify-center items-center p-8 text-center bg-white rounded-t-lg border-b border-gray-200 md:rounded-t-none md:rounded-tl-lg md:border-r dark:bg-gray-800 dark:border-gray-700">
   <blockquote class="mx-auto mb-4 max-w-2xl text-gray-500 dark:text-gray-400">
-    <h3 class="p-0 text-lg font-semibold text-gray-900 dark:text-white">Very easy this was to integrate</h3>
+    ### Very easy this was to integrate
     <p class="my-4 font-light">If you care for your time, I hands down would go with this."</p>
   </blockquote>
   <figcaption class="flex justify-center items-center space-x-3">
@@ -364,7 +364,7 @@ Use this example to split cards into multiple sections such as for testimonials 
   </figure>
   <figure class="flex flex-col justify-center items-center p-8 text-center bg-white rounded-tr-lg border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
     <blockquote class="mx-auto mb-4 max-w-2xl text-gray-500 dark:text-gray-400">
-      <h3 class="p-0 text-lg font-semibold text-gray-900 dark:text-white">Solid foundation for any project</h3>
+      ### Solid foundation for any project
     <p class="my-4 font-light">Designing with Figma components that can be easily translated to the utility classes of Tailwind CSS is a huge timesaver!"</p>
     </blockquote>
     <figcaption class="flex justify-center items-center space-x-3">
@@ -377,7 +377,7 @@ Use this example to split cards into multiple sections such as for testimonials 
   </figure>
   <figure class="flex flex-col justify-center items-center p-8 text-center bg-white rounded-bl-lg border-b border-gray-200 md:border-b-0 md:border-r dark:bg-gray-800 dark:border-gray-700">
     <blockquote class="mx-auto mb-4 max-w-2xl text-gray-500 dark:text-gray-400">
-      <h3 class="p-0 text-lg font-semibold text-gray-900 dark:text-white">Mindblowing workflow</h3>
+      ### Mindblowing workflow
       <p class="my-4 font-light">Aesthetically, the well designed components are beautiful and will undoubtedly level up your next application."</p>
     </blockquote>
     <figcaption class="flex justify-center items-center space-x-3">
@@ -390,7 +390,7 @@ Use this example to split cards into multiple sections such as for testimonials 
   </figure>
   <figure class="flex flex-col justify-center items-center p-8 text-center bg-white rounded-b-lg border-gray-200 md:rounded-br-lg dark:bg-gray-800 dark:border-gray-700">
     <blockquote class="mx-auto mb-4 max-w-2xl text-gray-500 dark:text-gray-400">
-      <h3 class="p-0 text-lg font-semibold text-gray-900 dark:text-white">Efficient Collaborating</h3>
+      ### Efficient Collaborating
       <p class="my-4 font-light">You have many examples that can be used to create a fast prototype for your team."</p>
     </blockquote>
     <figcaption class="flex justify-center items-center space-x-3">
@@ -408,13 +408,13 @@ Use this example to split cards into multiple sections such as for testimonials 
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<h3 class='text-xl w-full dark:text-white py-4'>Card</h3>
+### Card
 
 <TableProp>
   <TableDefaultRow items={cardProps} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Frame</h3>
+### Frame
 
 <TableProp>
   <TableDefaultRow items={frameProps} rowState='hover' />
@@ -422,7 +422,7 @@ The component has the following props, type, and default values. See <A href="/p
 
 ## Slots
 
-<h3 class='text-xl w-full dark:text-white py-4'>Card</h3>
+### Card
 
 <TableProp header={slotHeader}>
   <TableDefaultRow items={slotItems} rowState='hover' />

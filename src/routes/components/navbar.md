@@ -282,43 +282,43 @@ Use this example to show a solid background for the navbar component instead of 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Navbar</h3>
+### Navbar
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>NavBrand</h3>
+### NavBrand
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>NavDropdown</h3>
+### NavDropdown
 
 <TableProp>
   <TableDefaultRow items={items7} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>NavHamburger</h3>
+### NavHamburger
 
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>NavLi</h3>
+### NavLi
 
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>NavUl</h3>
+### NavUl
 
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Menu</h3>
+### Menu
 
 <TableProp>
   <TableDefaultRow items={items6} rowState='hover' />

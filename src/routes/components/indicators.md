@@ -155,7 +155,7 @@ You can also use the indicators inside of a stepper component when completing a 
             <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
         </div>
         <div class="mt-3">
-            <h3 class="font-medium text-gray-900 dark:text-white">Step 1</h3>
+            ### Step 1
         </div>
     </li>
     <li class="relative w-full mb-6">
@@ -166,7 +166,7 @@ You can also use the indicators inside of a stepper component when completing a 
             <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
         </div>
         <div class="mt-3">
-            <h3 class="font-medium text-gray-900 dark:text-white">Step 2</h3>
+            ### Step 2
         </div>
     </li>
     <li class="relative w-full mb-6">
@@ -177,7 +177,7 @@ You can also use the indicators inside of a stepper component when completing a 
             <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
         </div>
         <div class="mt-3">
-            <h3 class="font-medium text-gray-900 dark:text-white">Step 2</h3>
+            ### Step 2
         </div>
     </li>
     <li class="relative w-full mb-6">
@@ -187,7 +187,7 @@ You can also use the indicators inside of a stepper component when completing a 
             </Indicator>
         </div>
         <div class="mt-3">
-            <h3 class="font-medium text-gray-900 dark:text-white">Step 3</h3>
+            ### Step 3
         </div>
     </li>
 </ol>
@@ -200,7 +200,7 @@ You can also use the indicators inside of a stepper component when completing a 
             <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
         </div>
         <div class="mt-3">
-            <h3 class="font-medium text-gray-900 dark:text-white">Step 1</h3>
+            ### Step 1
         </div>
     </li>
     <li class="relative w-full mb-6">
@@ -211,7 +211,7 @@ You can also use the indicators inside of a stepper component when completing a 
             <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
         </div>
         <div class="mt-3">
-            <h3 class="font-medium text-gray-900 dark:text-white">Step 2</h3>
+            ### Step 2
         </div>
     </li>
     <li class="relative w-full mb-6">
@@ -222,7 +222,7 @@ You can also use the indicators inside of a stepper component when completing a 
             <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
         </div>
         <div class="mt-3">
-            <h3 class="font-medium text-gray-900 dark:text-white">Step 2</h3>
+            ### Step 2
         </div>
     </li>
     <li class="relative w-full mb-6">
@@ -232,7 +232,7 @@ You can also use the indicators inside of a stepper component when completing a 
             </Indicator>
         </div>
         <div class="mt-3">
-            <h3 class="font-medium text-gray-900 dark:text-white">Step 3</h3>
+            ### Step 3
         </div>
     </li>
 </ol>
@@ -265,7 +265,7 @@ Use these examples to position the indicator component anywhere relative to the 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Indicator</h3>
+### Indicator
 
 <TableProp>
   <TableDefaultRow items={items} rowState='hover' />

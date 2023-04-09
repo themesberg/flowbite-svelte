@@ -300,7 +300,7 @@ Use the `close` event with `dismissable` prop.
 
 ## Props
 
-<h3 class='text-xl w-full dark:text-white py-4'>Alert</h3>
+### Alert
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
@@ -308,7 +308,7 @@ The component has the following props, type, and default values. See <A href="/p
 <TableDefaultRow items={alertProps} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Frame</h3>
+### Frame
 
 The component inherits the following props, type, and default values from `Frame`. See <A href="/pages/types">types page</A> for type information.
 

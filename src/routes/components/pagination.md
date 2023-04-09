@@ -268,13 +268,13 @@ You can use the following code to show the number of data shown inside a table e
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Pagination</h3>
+### Pagination
 
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>PaginationItem</h3>
+### PaginationItem
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />

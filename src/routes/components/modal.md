@@ -75,7 +75,7 @@ Notice lack of the `footer` slot.
 <Modal bind:open={popupModal} size="xs" autoclose>
   <div class="text-center">
       <svg aria-hidden="true" class="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-      <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this product?</h3>
+      ### Are you sure you want to delete this product?
       <Button color="red" class="mr-2">Yes, I'm sure</Button>
       <Button color='alternative'>No, cancel</Button>
   </div>
@@ -95,7 +95,7 @@ Use this modal example with form input element to receive information from your 
 <Button on:click={() => formModal = true}>Form modal</Button>
 <Modal bind:open={formModal} size="xs" autoclose={false} class="w-full">
   <form class="flex flex-col space-y-6" action="#">
-    <h3 class="text-xl font-medium text-gray-900 dark:text-white p-0">Sign in to our platform</h3>
+    ### Sign in to our platform
     <Label class="space-y-2">
       <span>Email</span>
       <Input type="email" name="email" placeholder="name@company.com" required />
@@ -331,7 +331,7 @@ You can use five different modal sizing options starting from extra small to ext
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Modal</h3>
+### Modal
 
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />

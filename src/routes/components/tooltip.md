@@ -134,7 +134,7 @@ When you want to add a fully custom styles, use `style="custom"`, `defaultClass`
 
 ## Props
 
-<h3 class='text-xl w-full dark:text-white py-4'>Tooltip</h3>
+### Tooltip
 
 The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.
@@ -143,7 +143,7 @@ The component has the following props, type, and default values. See <A href="/p
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Frame</h3>
+### Frame
 
 The component inherits the following props, type, and default values from `Frame`. See [types page](/pages/types) for type information.
 

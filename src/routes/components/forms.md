@@ -227,55 +227,55 @@ Get started with the default example of a select input component to get a single
 The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.
 
-<h3 class='text-xl w-full dark:text-white py-4'>Input</h3>
+### Input
 
 <TableProp>
   <TableDefaultRow items={items} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Label</h3>
+### Label
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Helper</h3>
+### Helper
 
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Fileupload</h3>
+### Fileupload
 
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Textarea</h3>
+### Textarea
 
 <TableProp>
   <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Select</h3>
+### Select
 
 <TableProp>
   <TableDefaultRow items={items7} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Checkbox</h3>
+### Checkbox
 
 <TableProp>
   <TableDefaultRow items={items8} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Radio</h3>
+### Radio
 
 <TableProp>
   <TableDefaultRow items={items9} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Toggle</h3>
+### Toggle
 
 <TableProp>
   <TableDefaultRow items={items10} rowState='hover' />

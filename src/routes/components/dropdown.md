@@ -166,7 +166,7 @@ Add multiple checkbox elements inside your dropdown menu to enable more advanced
 </Dropdown>
 ```
 
-## Checkbox: Background hover
+### Background hover
 
 Use this example to update the background color of a menu item when using a list of checkbox elements.
 
@@ -189,7 +189,7 @@ Use this example to update the background color of a menu item when using a list
 </Dropdown>
 ```
 
-## Checkbox: Helper text
+### Helper text
 
 Add an extra helper text to each checkbox element inside the dropdown menu list with this example.
 
@@ -239,7 +239,7 @@ Add multiple radio elements inside your dropdown menu to enable more advanced in
 </Dropdown>
 ```
 
-## Radio: Background hover
+### Background hover
 
 Use this example to update the background color of a menu item when using a list of radio elements.
 
@@ -263,7 +263,7 @@ Use this example to update the background color of a menu item when using a list
 </Dropdown>
 ```
 
-## Radio: Helper text
+### Helper text
 
 Add an extra helper text to each radio element inside the dropdown menu list with this example.
 
@@ -623,25 +623,25 @@ Therefore you can catch standard events on it like `on:click`.
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Dropdown</h3>
+### Dropdown
 
 <TableProp>
   <TableDefaultRow items={propItems} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>DropdownDivider</h3>
+### DropdownDivider
 
 <TableProp>
   <TableDefaultRow items={propItems2} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>DropdownHeader</h3>
+### DropdownHeader
 
 <TableProp>
   <TableDefaultRow items={propItems3} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>DropdownItem</h3>
+### DropdownItem
 
 <TableProp>
   <TableDefaultRow items={propItems4} rowState='hover' />
@@ -649,19 +649,19 @@ Therefore you can catch standard events on it like `on:click`.
 
 ## Slots
 
-<h3 class='text-xl w-full dark:text-white py-4'>Dropdown</h3>
+### Dropdown
 
 <TableProp header={slotHeader}>
   <TableDefaultRow items={slotItems} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>DropdownDivider</h3>
+### DropdownDivider
 
 <TableProp header={slotHeader}>
   <TableDefaultRow items={slotDropdownHeader} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>DropdownItem</h3>
+### DropdownItem
 
 <TableProp header={slotHeader}>
   <TableDefaultRow items={slotDropdownItem} rowState='hover' />
