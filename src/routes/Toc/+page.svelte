@@ -1,25 +1,23 @@
 <script lang="ts">
-  import type { LinkType } from '$lib/types';
   /*  
-    Inspired by 'svelte-toc'
-    Simplified version of Table of Contents.
+  Inspired by 'svelte-toc'
+  Simplified version of Table of Contents.
   */
+  import type { LinkType } from '$lib/types';
   import { onMount } from 'svelte';
 
-  export let headingSelector = `#mainContent > :where(h2, h3)`;
+  export let extract: (x: HTMLElement) => LinkType = (x: HTMLElement) => ({ name: x.textContent ?? '' });
+
+  export let headingSelector;
+
   let headings: LinkType[] = [];
 
   onMount(() => {
     const observer: MutationObserver = new MutationObserver(toc);
     observer.observe(document.body, { childList: true, subtree: true });
+
     return () => observer.disconnect();
   });
-
-  function extract(x: HTMLElement) {
-    if (x.firstElementChild)
-      return { rel: x.tagName, href: '#' + x.firstElementChild?.id, name: x?.firstChild?.nodeValue ?? '' };
-    return { rel: '', href: '', name: '' };
-  }
 
   function indent(name: string | undefined) {
     return name === 'H2' ? '' : 'pl-3';
@@ -27,9 +25,10 @@
 
   function toc() {
     if (typeof document === `undefined`) return; // for SSR
+
     headings = [...document.querySelectorAll<HTMLElement>(headingSelector)]
       .map(extract)
-      .filter((x) => x.href);
+      .filter((x) => x.name);
   }
 </script>
 

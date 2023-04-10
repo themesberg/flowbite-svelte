@@ -1,12 +1,14 @@
 <script context="module">
   import h2 from './h2.svelte';
   import h3 from './h3.svelte';
-  export { h2, h3 };
+  import code from './code.svelte';
+  export { h2, h3, code };
 </script>
 
 <script>
   import { PageHeadSection, MetaTag } from '../../utils';
   import Toc from '../../Toc/+page.svelte';
+  import { extract } from './Anchor.svelte';
 
   export let /** @type {string} */ title;
   export let /** @type {string} */ breadcrumb_title;
@@ -27,7 +29,7 @@
       <slot />
     </div>
   </div>
-  <Toc />
+  <Toc {extract} headingSelector="#mainContent > :where(h2, h3)" />
 </div>
 
 <aside class="fixed z-50 hidden right-5 bottom-5 sm:block">
