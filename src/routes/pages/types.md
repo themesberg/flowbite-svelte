@@ -7,9 +7,8 @@ description: Flowbite-Svelte Types page
 ---
 
 <script>
-  import Prism from 'prismjs/prism';
+  import Prism from 'prismjs';
   import 'prism-svelte';
-  //import "prismjs/themes/prism-tomorrow.css";
   import "prismjs/components/prism-typescript";
   // Load assets as strings
   import TypeList from '../../lib/types.js?raw';
