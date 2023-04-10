@@ -7,13 +7,15 @@ description: Flowbite-Svelte Types page
 ---
 
 <script>
-  import { ExampleDiv } from '../utils'
-  import { A, P, List, Li, Alert  } from '$lib'
+  import Prism from 'prismjs/prism';
+  import 'prism-svelte';
+  //import "prismjs/themes/prism-tomorrow.css";
+  import "prismjs/components/prism-typescript";
   // Load assets as strings
-  import TypeList from '../../lib/types.js?raw'
+  import TypeList from '../../lib/types.js?raw';
+  
+  const highlighted = Prism.highlight(TypeList, Prism.languages.typescript, 'typescript');
 </script>
 
-<ExampleDiv tag="pre" class="text-gray-900 dark:text-white whitespace-pre-wrap">
-{TypeList}
-</ExampleDiv>
+<pre><code>{@html highlighted}</code></pre>
 
