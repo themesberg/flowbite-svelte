@@ -9,6 +9,7 @@ export { default as TableDefaultRow } from './TableDefaultRow.svelte';
 export { default as TableProp } from './TableProp.svelte';
 
 const filePath = (path: string) => '/' + path.split('/').pop()?.split('.').shift();
+const fileDir = (path: string) => '/' + path.split('/').slice(0, -1).pop();
 
 export const fetchMarkdownPosts = async () => {
   const componentFiles = import.meta.glob('/src/routes/components/*.md');
@@ -17,7 +18,7 @@ export const fetchMarkdownPosts = async () => {
   const utilFiles = import.meta.glob('/src/routes/utilities/*.md');
   const pageFiles = import.meta.glob('/src/routes/pages/*.md');
   const extendFiles = import.meta.glob('/src/routes/extend/*.md');
-  const exampleFiles = import.meta.glob('/src/routes/examples/*.svelte');
+  const exampleFiles = import.meta.glob('/src/routes/examples/*/*.svelte');
   const experimentalFiles = import.meta.glob('/src/routes/experimental/*.md');
   // returns an array of files
   const iterableComponentFiles = Object.entries(componentFiles);
@@ -95,7 +96,7 @@ export const fetchMarkdownPosts = async () => {
       const { metadata } = await resolver();
       return {
         meta: metadata,
-        path: filePath(path)
+        path: fileDir(path)
       };
     })
   );
@@ -112,13 +113,13 @@ export const fetchMarkdownPosts = async () => {
   );
 
   return {
+    'getting started': allPages,
     components: allComponents,
-    extend: allExtends,
     forms: allForms,
-    pages: allPages,
     typography: allTypographys,
-    utils: allUtils,
     examples: allExamples,
+    extend: allExtends,
+    utilities: allUtils,
     experimental: allExperimental
   };
 };

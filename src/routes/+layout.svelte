@@ -130,148 +130,27 @@
         <nav
           class="pt-16 px-1 pl-3 lg:pl-0 lg:pt-2 font-normal text-base lg:text-sm pb-10 lg:pb-20 sticky?lg:h-(screen-18)">
           <ul class="list-unstyled">
-            <li class="mt-8">
-              <h5
-                class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">
-                Getting started
-              </h5>
-              <SidebarGroup ulClass="py-1 list-unstyled fw-normal small">
-                {#each data.pages as { meta, path }}
-                  <SidebarItem
-                    label={meta.title}
-                    href={`/pages${path}`}
-                    {spanClass}
-                    {aClass}
-                    activeClass={aClass}
-                    active={activeUrl === `/pages${path}`} />
-                {/each}
-              </SidebarGroup>
-            </li>
-
-            <li class="mt-8">
-              <h5
-                class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">
-                Components
-              </h5>
-              <SidebarGroup ulClass="">
-                {#each data.components as { meta, path }}
-                  <SidebarItem
-                    label={meta.breadcrumb_title}
-                    href={`/components${path}`}
-                    {spanClass}
-                    {aClass}
-                    activeClass={aClass}
-                    active={activeUrl === `/components${path}`} />
-                {/each}
-              </SidebarGroup>
-            </li>
-            <li class="mt-8">
-              <h5
-                class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">
-                Froms
-              </h5>
-              <SidebarGroup ulClass="">
-                {#each data.forms as { meta, path }}
-                  <SidebarItem
-                    label={meta.breadcrumb_title}
-                    href={`/forms${path}`}
-                    {spanClass}
-                    {aClass}
-                    activeClass={aClass}
-                    active={activeUrl === `/forms${path}`} />
-                {/each}
-              </SidebarGroup>
-            </li>
-            <li class="mt-8">
-              <h5
-                class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">
-                Typography
-              </h5>
-              <SidebarGroup ulClass="">
-                {#each data.typography as { meta, path }}
-                  <SidebarItem
-                    label={meta.breadcrumb_title}
-                    href={`/typography${path}`}
-                    {spanClass}
-                    {aClass}
-                    activeClass={aClass}
-                    active={activeUrl === `/typography${path}`} />
-                {/each}
-              </SidebarGroup>
-            </li>
-            <li class="mt-8">
-              <h5
-                class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">
-                Examples
-              </h5>
-              <SidebarGroup ulClass="">
-                <SidebarItem
-                  label="Sidebar layout"
-                  href={'/examples/sidebar-layout'}
-                  {spanClass}
-                  {aClass}
-                  activeClass={aClass}
-                  active={activeUrl === '/examples/sidebar-layout'} />
-                <SidebarItem
-                  label="Snapshot"
-                  href={'/examples/snapshot'}
-                  {spanClass}
-                  {aClass}
-                  activeClass={aClass}
-                  active={activeUrl === '/examples/snapshot'} />
-              </SidebarGroup>
-            </li>
-            <li class="mt-8">
-              <h5
-                class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">
-                Extend
-              </h5>
-              <SidebarGroup ulClass="">
-                {#each data.extend as { meta, path }}
-                  <SidebarItem
-                    label={meta.breadcrumb_title}
-                    href={`/extend${path}`}
-                    {spanClass}
-                    {aClass}
-                    activeClass={aClass}
-                    active={activeUrl === `/extend${path}`} />
-                {/each}
-              </SidebarGroup>
-            </li>
-            <li class="mt-8">
-              <h5
-                class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">
-                Utils
-              </h5>
-              <SidebarGroup ulClass="">
-                {#each data.utils as { meta, path }}
-                  <SidebarItem
-                    label={meta.breadcrumb_title}
-                    href={`/utilities${path}`}
-                    {spanClass}
-                    {aClass}
-                    activeClass={aClass}
-                    active={activeUrl === `/utilities${path}`} />
-                {/each}
-              </SidebarGroup>
-            </li>
-            <li class="mt-8">
-              <h5
-                class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">
-                Experimental
-              </h5>
-              <SidebarGroup ulClass="">
-                {#each data.experimental as { meta, path }}
-                  <SidebarItem
-                    label={meta.breadcrumb_title}
-                    href={`/experimental${path}`}
-                    {spanClass}
-                    {aClass}
-                    activeClass={aClass}
-                    active={activeUrl === `/experimental${path}`} />
-                {/each}
-              </SidebarGroup>
-            </li>
+            {#each Object.entries(data) as [key, values]}
+              <li class="mt-8">
+                <h5
+                  class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">
+                  {key}
+                </h5>
+                <SidebarGroup ulClass="py-1 list-unstyled fw-normal small">
+                  {#each values as { meta, path }}
+                    {#if meta}
+                      <SidebarItem
+                        label={meta.breadcrumb_title}
+                        href={`/${key}${path}`}
+                        {spanClass}
+                        {aClass}
+                        activeClass={aClass}
+                        active={activeUrl === `/pages${path}`} />
+                    {/if}
+                  {/each}
+                </SidebarGroup>
+              </li>
+            {/each}
           </ul>
         </nav>
       </SidebarWrapper>
