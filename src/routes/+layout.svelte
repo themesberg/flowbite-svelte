@@ -169,42 +169,42 @@
   </div>
 </div>
 
-<div class="mx-auto mb-4 pt-4 max-w-8xl">
-  <Footer footerType="custom" customClass="py-6 bg-white dark:bg-gray-900">
-    <div class="md:flex md:justify-between">
-      <div class="mb-6 md:mb-0">
+<Footer footerType="custom" customClass="py-12 xl:pt-24 bg-gray-50 dark:bg-gray-800">
+  <div class="w-full mx-auto px-4 max-w-8xl">
+    <div class="grid gap-12 xl:grid-cols-6 xl:gap-24">
+      <div class="col-span-2">
         <FooterBrand
           href="https://flowbite-svelte.com"
           src={logo}
           alt="Flowbite-Svelte Logo"
           name="Flowbite-Svelte" />
       </div>
-      <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-        <div>
-          <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
-          <FooterLinkGroup>
-            <FooterLink liClass="mb-4" href="https://flowbite.com/">Flowbite</FooterLink>
-            <FooterLink liClass="mb-4" href="https://tailwindcss.com/">Tailwind CSS</FooterLink>
-          </FooterLinkGroup>
-        </div>
-        <div>
-          <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Follow us</h2>
-          <FooterLinkGroup>
-            <FooterLink liClass="mb-4" href="https://github.com/themesberg/flowbite-svelte"
-              >GitHub</FooterLink>
-            <FooterLink liClass="mb-4" href="https://discord.gg/4eeurUVvTy">Discord</FooterLink>
-          </FooterLinkGroup>
-        </div>
-        <div>
-          <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Legal</h2>
-          <FooterLinkGroup>
-            <FooterLink liClass="mb-4" href="https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE"
-              >License</FooterLink>
-          </FooterLinkGroup>
-        </div>
+
+      <div>
+        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+        <FooterLinkGroup>
+          <FooterLink liClass="mb-4" href="https://flowbite.com/">Flowbite</FooterLink>
+          <FooterLink liClass="mb-4" href="https://tailwindcss.com/">Tailwind CSS</FooterLink>
+        </FooterLinkGroup>
+      </div>
+      <div>
+        <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Follow us</h2>
+        <FooterLinkGroup>
+          <FooterLink liClass="mb-4" href="https://github.com/themesberg/flowbite-svelte">GitHub</FooterLink>
+          <FooterLink liClass="mb-4" href="https://discord.gg/4eeurUVvTy">Discord</FooterLink>
+        </FooterLinkGroup>
+      </div>
+      <div>
+        <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Legal</h2>
+        <FooterLinkGroup>
+          <FooterLink liClass="mb-4" href="https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE"
+            >License</FooterLink>
+        </FooterLinkGroup>
       </div>
     </div>
+
     <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+
     <div class="sm:flex sm:items-center sm:justify-between">
       <FooterCopyright href="/" by="Flowbite™" />
       <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
@@ -219,5 +219,5 @@
         </FooterIcon>
       </div>
     </div>
-  </Footer>
-</div>
+  </div>
+</Footer>
