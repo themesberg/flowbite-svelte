@@ -152,7 +152,7 @@ Use this example to trigger a popover component with detailed information and an
   <div class="grid grid-cols-5">
     <div class="col-span-3 p-3">
       <div class="space-y-2">
-        ### About Italy
+        <h3 class="font-semibold text-gray-900 dark:text-white">About Italy<h3>
         <p class="text-gray-500 dark:text-gray-500">Italy is located in the middle of the Mediterranean Sea, in Southern Europe it is also considered part of Western Europe. A unitary parliamentary republic with Rome as its capital and largest city.</p>
         <a href="/" class="flex items-center font-medium text-blue-600 dark:text-blue-500 dark:hover:text-blue-600 hover:text-blue-700">Read more <svg class="ml-1 w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></a>
       </div>
@@ -178,9 +178,9 @@ Show helpful information inside a popover when hovering over a question mark but
 </div>
 <Popover triggeredBy="#b3" class="w-72 text-sm font-light text-gray-500 bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400" placement="bottom-start">
   <div class="p-3 space-y-2">
-      ### Activity growth - Incremental
+      <h3 class="font-semibold text-gray-900 dark:text-white">Activity growth - Incremental</h3>
       Report helps navigate cumulative growth of community activities. Ideally, the chart should have a growing trend.
-      ### Calculation
+      <h3 class="font-semibold text-gray-900 dark:text-white">Calculation</h3>
       For each date bucket, the all-time volume of activities is calculated. This means that activities in period n contain all activities up to period n.
       <a href="/" class="flex items-center font-medium text-blue-600 dark:text-blue-500 dark:hover:text-blue-600 hover:text-blue-700">Read more <ChevronRight size="12" /></a>
   </div>
@@ -199,7 +199,7 @@ Show a progress bar with details inside a popover when hovering over a settings 
 <Button id="progress"><svg class="mr-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z"></path><path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z"></path><path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z"></path></svg> Storage status</Button>
 <Popover triggeredBy="#progress" class="text-sm w-64 font-light">
   <div class="space-y-2">
-    ### Available storage
+    <h3 class="font-semibold text-gray-900 dark:text-white">Available storage</h3>
     <p class="text-gray-500 dark:text-gray-400">This server has <span class="font-semibold text-gray-900 dark:text-white">30</span> of <span class="font-semibold text-gray-900 dark:text-white">150 GB</span> of block storage remaining.</p>
     <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
         <div class="bg-red-600 h-2.5 rounded-full" style="width: 85%"></div>
@@ -233,7 +233,7 @@ Dynamically show the password strength progress when creating a new password pos
   <Button type="submit">Submit</Button>
 </form>
 <Popover class="text-sm" triggeredBy="#password" placement="bottom">
-  ### Must have at least 6 characters
+  <h3 class="font-semibold text-gray-900 dark:text-white">Must have at least 6 characters</h3>
   <div class="grid grid-cols-4 gap-2">
       <div class="h-1 bg-orange-300 dark:bg-orange-400"></div>
       <div class="h-1 bg-orange-300 dark:bg-orange-400"></div>
