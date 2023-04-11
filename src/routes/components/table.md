@@ -76,7 +76,7 @@ Use the following example of a responsive table component to show multiple rows 
 
 ## Striped rows
 
-Set the `striped` prop to `true` to alternate background colors of every second tabel row.
+Set the `striped` prop to `true` to alternate background colors of every second table row.
 
 ```svelte example
 <script>
@@ -570,7 +570,7 @@ Use this example to enable horizontal scrolling if the content inside the table 
     <TableHeadCell>Product name</TableHeadCell>
     <TableHeadCell>Color</TableHeadCell>
     <TableHeadCell>Category</TableHeadCell>
-    <TableHeadCell>ACCESORIES</TableHeadCell>
+    <TableHeadCell>ACCESSORIES</TableHeadCell>
     <TableHeadCell>AVAILABLE</TableHeadCell>
     <TableHeadCell>Price</TableHeadCell>
     <TableHeadCell>WEIGHT</TableHeadCell>
@@ -643,7 +643,7 @@ Use this example to enable horizontal scrolling if the content inside the table 
 
 ## Table colors
 
-Use one of colors from blue, green, red, yellow, purple for the `color` prop. The default color is gray. You can reset all color by useing the `color="custom"`.
+Use one of colors from blue, green, red, yellow, purple for the `color` prop. The default color is gray. You can reset all color by using the `color="custom"`.
 
 ```svelte example
 <script>

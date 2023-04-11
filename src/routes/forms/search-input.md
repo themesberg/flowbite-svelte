@@ -114,7 +114,7 @@ on:paste
 
 <form id="example-form" on:submit={submitted}>
   <Search bind:value />
-  <p>You are seaching: {value}</p>
+  <p>You are searching: {value}</p>
   <Button type="submit">Submit</Button>
 </form>
 ```

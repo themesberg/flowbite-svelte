@@ -263,7 +263,7 @@ Use the `slot="extra` to add some more arbitrary content in the toast.
 
 ### Toast message
 
-This component can be used to show messages and a CTA button when receiveing chat messages, comment notifications, and other use cases.
+This component can be used to show messages and a CTA button when receiving chat messages, comment notifications, and other use cases.
 
 ```svelte example
 <script>
@@ -297,7 +297,7 @@ This component can be used to show notifications for an action from another user
     <Avatar src='/images/profile-picture-3.webp'/>
     <div class="ml-3">
       <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Bonnie Green</h4>
-      <div class="text-sm font-normal">commmented on your photo</div>
+      <div class="text-sm font-normal">commented on your photo</div>
       <span class="text-xs font-medium text-blue-600 dark:text-blue-500">a few seconds ago</span>
     </div>
   </div>

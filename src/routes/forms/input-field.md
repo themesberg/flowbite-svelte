@@ -136,7 +136,7 @@ Use the following example to apply validation styles for success and error messa
   <Label for="success" color="green" class="block mb-2">Your name</Label>
   <Input id="success" color="green" placeholder="Success input" />
   <Helper class="mt-2" color="green"
-    ><span class="font-medium">Well done!</span> Some success messsage.</Helper>
+    ><span class="font-medium">Well done!</span> Some success message.</Helper>
 </div>
 <div class="mb-6">
   <Label for="error" color="red" class="block mb-2">Your name</Label>
@@ -210,7 +210,7 @@ This example can be used to add a descriptive icon or additional text inside the
 </div>
 
 <div class="pt-8">
-  <Label for="input-addon" class="mb-2">Groupped with button</Label>
+  <Label for="input-addon" class="mb-2">Grouped with button</Label>
   <ButtonGroup class="w-full">
     <InputAddon>@</InputAddon>
     <Input id="input-addon" type="email" placeholder="elonmusk" />
@@ -353,7 +353,7 @@ Use this example to show a dropdown menu right next to the input field.
 
 ## Advanced usage
 
-If you need a full control over `input` HTML element while still re-using the Flowbite formating, you can put the `input` element as a default slot. The example below is in fact the implementation of the above mentioned `NumberInput`.
+If you need a full control over `input` HTML element while still re-using the Flowbite formatting, you can put the `input` element as a default slot. The example below is in fact the implementation of the above mentioned `NumberInput`.
 
 ```svelte example class="space-y-4"
 <script>

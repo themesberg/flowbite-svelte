@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.34.8](https://github.com/themesberg/flowbite-svelte/compare/v0.34.7...v0.34.8) (2023-04-11)
+
+
+### Bug Fixes
+
+* add main: index.js to package.json ([ce82350](https://github.com/themesberg/flowbite-svelte/commit/ce823503b9ef21abf5d751ae7f3606e26db3d2c7))
+
 ### [0.34.7](https://github.com/themesberg/flowbite-svelte/compare/v0.34.6...v0.34.7) (2023-04-05)
 
 

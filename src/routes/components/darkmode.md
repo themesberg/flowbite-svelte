@@ -18,7 +18,7 @@ description: Learn how to configure and build a dark mode switcher for Flowbite 
 
 <GitHubSourceList {libFiles} />
 
-<p>In Flowbite-Svelte, the `class` strategy is used to support toggling dark mode manually, so you should explictly configure it in Talwind CSS:</p>
+<p>In Flowbite-Svelte, the `class` strategy is used to support toggling dark mode manually, so you should explicitly configure it in Talwind CSS:</p>
 
 ```js example 
 // tailwind.config.cjs

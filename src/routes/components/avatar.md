@@ -65,7 +65,7 @@ If you can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify ri
 
 ## Placeholder
 
-When there is no custom image available a placehoder is displayed.
+When there is no custom image available a placeholder is displayed.
 
 ```svelte example class="flex gap-4" hideScript
 <script>

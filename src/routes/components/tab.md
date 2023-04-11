@@ -75,7 +75,7 @@ However tabs component comes with several pre-defined styles that are accessible
 
 <p class="my-2"/>
 
-Use the `style="underline"` to achive this alternative tabs component style with an underline instead of a background when hovering and being active on a certain page.
+Use the `style="underline"` to achieve this alternative tabs component style with an underline instead of a background when hovering and being active on a certain page.
 
 ```svelte example
 <script>

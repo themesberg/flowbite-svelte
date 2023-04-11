@@ -67,7 +67,7 @@ Use the `aria-label` prop to change `aria-label` attribute. All icons have aria-
 
 ## Passing down other attributes
 
-You can pass other attibutes as well.
+You can pass other attributes as well.
 
 ```html
 <AdjustmentsVertical tabindex="0" />

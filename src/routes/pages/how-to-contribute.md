@@ -103,7 +103,7 @@ test: add modal test
 Use `!` for a minor bump.
 
 ```sh
-feat!: add drawer compoent and page
+feat!: add drawer component and page
 ```
 
 When you have a breaking change:
