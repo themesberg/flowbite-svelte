@@ -43,7 +43,7 @@
     imageAlt: `${title} logo`
   }} />
 
-<div class="relative bg-white overflow-hidden mt-24 lg:mb-8 mx-auto dark:bg-gray-900 2xl:px-8 pt-10">
+<div class="relative bg-white overflow-hidden mt-4 lg:mb-8 mx-auto dark:bg-gray-900 2xl:px-8 p-4">
   <div class="max-w-full mx-auto ">
     <div class="relative z-10 xl:pb-8 bg-transparent lg:max-w-2xl lg:w-full">
       <div class="my-auto mx-auto max-w-7xl xl:pl-8 xl:pt-8">
