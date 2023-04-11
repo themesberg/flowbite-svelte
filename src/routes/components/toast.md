@@ -6,35 +6,30 @@ dir: Components
 description: Push notifications to your users using the toast component and choose from multiple sizes, colors, styles, and positions
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
+  import { P, A } from '$lib'
   import { props as items }  from '../props/Toast.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/toasts/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The toast component can be used to enhance your website’s interactivity by pushing notifications to your visitors. You can choose from multiple styles, colors, sizes, and positions and even dismiss the component.
 
-<Htwo label="Setup" />
+## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Toast } from 'flowbite-svelte';
 </script>
 ```
 
-<Htwo label="Default toast" />
+## Default toast
 
 Use this simple toast component with an icon, message, and dismissable close button to show alert messages to your website visitors.
-
 
 ```svelte example class="flex justify-center" hideScript
 <script>
@@ -50,7 +45,7 @@ Use this simple toast component with an icon, message, and dismissable close but
 </Toast>
 ```
 
-<Htwo label="Simple toast" />
+## Simple toast
 
 This component can be used to show simple messages and notifications without the use of a close button.
 
@@ -67,7 +62,7 @@ This component can be used to show simple messages and notifications without the
 </Toast>
 ```
 
-<Htwo label="Colors" />
+## Colors
 
 Use these contextual toast components to show success, danger, or warning alert messages to your users.
 
@@ -99,7 +94,7 @@ Use these contextual toast components to show success, danger, or warning alert 
 </Toast>
 ```
 
-<Htwo label="Icons" />
+## Icons
 
 For the right positioning of the icon use: <span class="font-mono italic">slot="icon"</span>.
 
@@ -135,13 +130,13 @@ You can use any <A href="/icons">icon components.</A>
 </Toast>
 ```
 
-<Htwo label="Autohide example" />
+## Autohide example
 
 ```svelte example
 <script>
   import { Toast, Button } from 'flowbite-svelte';
   import { slide } from 'svelte/transition';
-  
+
   let show = true;
   let counter = 6;
 
@@ -169,7 +164,7 @@ You can use any <A href="/icons">icon components.</A>
 </div>
 ```
 
-<Htwo label="Transitions" />
+## Transitions
 
 You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" target="_blank" rel="noreferrer" >Svelte/easing</A>.
 
@@ -200,7 +195,7 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 </Toast>
 ```
 
-<h3 class='text-xl w-full dark:text-white py-4'>Blur examples</h3>
+### Blur examples
 
 ```svelte example
 <script>
@@ -222,7 +217,7 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 </Toast>
 ```
 
-<h3 class='text-xl w-full dark:text-white py-4'>Fly examples</h3>
+### Fly examples
 
 ```svelte example
 <script>
@@ -245,7 +240,7 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 </Toast>
 ```
 
-<Htwo label="Undo button" />
+## Undo button
 
 Use this toast component to also show an “undo” button to reverse the action of the user.
 
@@ -262,11 +257,11 @@ Use this toast component to also show an “undo” button to reverse the action
 </Toast>
 ```
 
-<Htwo label="Extra content" />
+## Extra content
 
 Use the `slot="extra` to add some more arbitrary content in the toast.
 
-<h3 class='text-xl w-full dark:text-white py-4'>Toast message</h3>
+### Toast message
 
 This component can be used to show messages and a CTA button when receiving chat messages, comment notifications, and other use cases.
 
@@ -287,7 +282,7 @@ This component can be used to show messages and a CTA button when receiving chat
 </Toast>
 ```
 
-<h3 class='text-xl w-full dark:text-white py-4'>Push notification</h3>
+### Push notification
 
 This component can be used to show notifications for an action from another user such as posting a comment, receiving a like, being tagged. You can show an avatar, icon, message, and the time of the notification.
 
@@ -309,7 +304,7 @@ This component can be used to show notifications for an action from another user
 </Toast>
 ```
 
-<h3 class='text-xl w-full dark:text-white py-4'>Interactive toast</h3>
+### Interactive toast
 
 Use this interactive toast component to encourage users to make a certain action such as updating to the latest software version. You can set an icon, message, and two CTA buttons.
 
@@ -335,7 +330,7 @@ Use this interactive toast component to encourage users to make a certain action
 </Toast>
 ```
 
-<Htwo label="Positioning" />
+## Positioning
 
 Use the position property to position these toast components relative to the main content wrapper element from your document.
 
@@ -352,19 +347,18 @@ Use the position property to position these toast components relative to the mai
 </div>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
 <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/toast/" target="_blank" rel="noreferrer" class="link"
     >Flowbite Toast</A
   >
 </P>
-    

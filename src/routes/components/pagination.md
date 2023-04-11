@@ -5,32 +5,30 @@ breadcrumb_title: Pagination
 dir: Components
 description: Use the Tailwind CSS pagination element to indicate a series of content across various pages
 ---
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
+
 <script lang="ts">
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
+  import { Badge, Heading, P, A } from '$lib'
   import { props as items1 } from '../props/Pagination.json'
   import { props as items2 } from '../props/PaginationItem.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/paginations/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The pagination component can be used to navigate across a series of content and data sets for various pages such as blog posts, products, and more. You can use multiple variants of this component with or without icons and even for paginating table data entries.
 
-<Htwo label="Setup" />
+## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Pagination, PaginationItem } from 'flowbite-svelte'
 </script>
 ```
 
-<Htwo label="Default pagination" />
+## Default pagination
 
 Use the following list of pagination items to indicate a series of content for your website.
 
@@ -38,7 +36,7 @@ Use the following list of pagination items to indicate a series of content for y
 <script>
   import { page } from '$app/stores';
   import { Pagination } from 'flowbite-svelte'
-  
+
   $: activeUrl = $page.url.searchParams.get('page')
   let pages = [
     { name: 1, href: '/components/pagination?page=1'},
@@ -47,7 +45,7 @@ Use the following list of pagination items to indicate a series of content for y
     { name: 4, href: '/components/pagination?page=4'},
     { name: 5, href: '/components/pagination?page=5'}
   ];
-  
+
   $:{ 
       pages.forEach((page)=>{
       let splitUrl = page.href.split('?');
@@ -74,7 +72,7 @@ Use the following list of pagination items to indicate a series of content for y
 <Pagination {pages} on:previous={previous} on:next={next} />
 ```
 
-<Htwo label="Pagination with icons" />
+## Pagination with icons
 
 The following pagination component example shows how you can use SVG icons instead of text to show the previous and next pages.
 
@@ -91,7 +89,7 @@ The following pagination component example shows how you can use SVG icons inste
     { name: 9, href: '/components/pagination?page=9'},
     { name: 10, href: '/components/pagination?page=10'}
   ];
-  
+
   $:{
     pages.forEach((page)=>{
       let splitUrl = page.href.split('?');
@@ -127,7 +125,7 @@ The following pagination component example shows how you can use SVG icons inste
 </Pagination>
 ```
 
-<Htwo label="Previous and next" />
+## Previous and next
 
 Use the following markup to show simple previous and next elements.
 
@@ -148,10 +146,9 @@ Use the following markup to show simple previous and next elements.
 </div>
 ```
 
-<Htwo label="Previous and next with icons" />
+## Previous and next with icons
 
 Use the following code to show simple previous and next elements with icons.
-
 
 ```svelte example class="flex justify-center"
 <script>
@@ -176,7 +173,7 @@ Use the following code to show simple previous and next elements with icons.
 </div>
 ```
 
-<Htwo label="Table data pagination" />
+## Table data pagination
 
 You can use the following markup to show the number of data shown inside a table element and also the previous and next action buttons.
 
@@ -207,7 +204,7 @@ You can use the following markup to show the number of data shown inside a table
 </div>
 ```
 
-<Htwo label="Table data pagination with icons" />
+## Table data pagination with icons
 
 You can use the following code to show the number of data shown inside a table element and also the previous and next action buttons coupled with icons.
 
@@ -245,7 +242,7 @@ You can use the following code to show the number of data shown inside a table e
 </div>
 ```
 
-<Htwo label="Event example" />
+## Event example
 
 ```svelte example class="flex justify-center"
 <script lang="ts">
@@ -266,24 +263,24 @@ You can use the following code to show the number of data shown inside a table e
 <Pagination {pages} on:previous={previous} on:next={next} on:click={handleClick} />
 ```
 
-<Htwo label="Props" />
+## Props
 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Pagination</h3>
+### Pagination
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>PaginationItem</h3>
+### PaginationItem
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events" />
+## Forwarded Events
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">Pagination, PaginationItem</Heading>
 
@@ -299,7 +296,7 @@ You can use the following code to show the number of data shown inside a table e
 <Badge large={true}>on:mouseover</Badge>
 </div>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/pagination/" target="_blank" rel="noreferrer" class="link"

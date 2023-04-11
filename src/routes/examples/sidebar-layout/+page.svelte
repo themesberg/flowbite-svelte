@@ -5,35 +5,27 @@
     dir: 'Examples',
     description: 'Flowbite Svete Responsive sidebar layout',
     breadcrumb_title: 'Sidebar Layout'
-  }
+  };
 </script>
-
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { CompoDescription, Htwo, MetaTag } from '../../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, A, List, Li, Img } from '$lib'
-  const breadcrumb_title = 'Responsive Sidebar Layout'
-  const title = 'Responsive Sidebar Layout'
-  const dir = 'Examples'
-  const description = 'Flowbite Svete Responsive sidebar layout'
+  import { GitHubSourceList, MetaTag, PageHeadSection } from '../../utils';
+  import { Img } from '$lib';
+  const breadcrumb_title = 'Responsive Sidebar Layout';
+  const title = 'Responsive Sidebar Layout';
+  const dir = 'Examples';
+  const description = 'Flowbite Svete Responsive sidebar layout';
+  const libFiles = {
+    'GitHub Repo': 'https://github.com/shinokada/flowbite-sveltekit-responsive-sidebar-layout',
+    Demo: 'https://sveltekit-sidebar-layout.vercel.app/'
+  };
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
-
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<CompoDescription>{description}</CompoDescription>
-
-<Htwo label="Repo & Demo" />
-
-<List tag="ul" class="space-y-1 my-4">
-  <Li><A href="https://github.com/shinokada/flowbite-sveltekit-responsive-sidebar-layout">GitHub Repo</A></Li>
-  <Li><A href="https://sveltekit-sidebar-layout.vercel.app/">Demo</A></Li>
-</List>
-
-<Img src="/images/sveltekit-sidebar-layout-optimized.png" alt='sveltekit sidebar layout' />
+<MetaTag {breadcrumb_title} {title} {dir} {description} />
+<div class="max-w-3xl 2xl:max-w-4xl mx-auto mt-8">
+  <div class="container mx-auto" id="mainContent">
+    <PageHeadSection {dir} {breadcrumb_title} {title} {description} />
+    <GitHubSourceList {libFiles} />
+    <Img src="/images/sveltekit-sidebar-layout-optimized.png" alt="sveltekit sidebar layout" />
+  </div>
+</div>

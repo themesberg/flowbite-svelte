@@ -6,33 +6,29 @@ dir: Components
 description: Use the mega menu component as a full-width dropdown inside the navbar to show a list of menu items based on multiple sizes, variants, and styles
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, UserCircle, Heading, P, A } from '$lib'
+  import { GitHubSourceList, TableProp, TableDefaultRow , } from '../utils'
+  import { UserCircle, P, A } from '$lib'
   import { props as items} from '../props/MegaMenu.json'
-  // Props table
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
+
   // lib files
   const libFiles = import.meta.glob('../../lib/megamenu/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The mega menu component is a full-width dropdown that can be triggered by clicking on the menu item and it shows a list of links that you can use to navigate through the pages on a website.
 
-<Htwo label="Setup" />
+## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { MegaMenu } from 'flowbite-svelte'
 </script>
 ```
 
-<Htwo label="Default mega menu" />
+## Default mega menu
 
 Use this example to show a list of links aligned on three columns inside the mega menu dropdown.
 
@@ -73,7 +69,7 @@ Use this example to show a list of links aligned on three columns inside the meg
 </Navbar>
 ```
 
-<Htwo label="Mega menu with icons" />
+## Mega menu with icons
 
 This example of a mega menu dropdown can be used to also show an icon near the text of the link.
 
@@ -117,7 +113,7 @@ This example of a mega menu dropdown can be used to also show an icon near the t
 </Navbar>
 ```
 
-<Htwo label="Full width dropdown" />
+## Full width dropdown
 
 Use this example to show a mega menu dropdown that spans the entire width of the document page.
 
@@ -161,7 +157,7 @@ Use this example to show a mega menu dropdown that spans the entire width of the
 </Navbar>
 ```
 
-<Htwo label="Full width with CTA" />
+## Full width with CTA
 
 This example can be used to also show a CTA button or link next to the menu items inside the dropdown.
 
@@ -211,7 +207,7 @@ This example can be used to also show a CTA button or link next to the menu item
 </Navbar>
 ```
 
-<Htwo label="Full width with image" />
+## Full width with image
 
 This example can be used to also show a CTA with a backdround image inside the dropdown next to the other menu items and links.
 
@@ -256,16 +252,16 @@ This example can be used to also show a CTA with a backdround image inside the d
 </Navbar>
 ```
 
-<Htwo label="Props" />
+## Props
 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/mega-menu/" target="_blank" rel="noreferrer" class="link"

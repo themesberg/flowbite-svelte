@@ -1,38 +1,34 @@
 ---
-layout: formLayout
+layout: componentLayout
 title: Svelte File Input - Flowbite
 breadcrumb_title: File input
 dir: Forms
 description: Get started with the file input component to let the user to upload one or more files from their device storage based on multiple styles and sizes
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Badge, Heading, A } from '$lib'
+  import { GitHubSourceList, TableProp, TableDefaultRow } from '../utils'
+  import { Badge, A } from '$lib'
   import { props as items } from '../props/Fileupload.json'
   import { props as items2 } from '../props/Dropzone.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/forms/Fileupload.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The file input component can be used to upload one or more files from the device storage of the user available in multiple sizes, styles, variants and support for dark mode.
 
-<Htwo label="Setup" />
+## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Fileupload } from 'flowbite-svelte'
 </script>
 ```
 
-<Htwo label="File upload example" />
+## File upload example
 
 ```svelte example
 <script>
@@ -47,7 +43,7 @@ The file input component can be used to upload one or more files from the device
 <Label>File: {value }</Label>
 ```
 
-<Htwo label="Helper text" />
+## Helper text
 
 ```svelte example
 <script>
@@ -59,8 +55,7 @@ The file input component can be used to upload one or more files from the device
 <Helper>SVG, PNG, JPG or GIF (MAX. 800x400px).</Helper>
 ```
 
-
-<Htwo label='Multiple files' />
+## Multiple files
 
 When the user selected multiple files, the `value` represents the first file in the list of files they selected. The other files can be identified using the `files` property.
 
@@ -82,7 +77,7 @@ When the user selected multiple files, the `value` represents the first file in 
 
 ```
 
-<Htwo label='Sizes' />
+## Sizes
 
 ```svelte example
 <script>
@@ -97,7 +92,7 @@ When the user selected multiple files, the `value` represents the first file in 
 <Fileupload id="larg_size" size='lg' />
 ```
 
-<Htwo label="Dropzone" />
+## Dropzone
 
 ```svelte example
 <script>
@@ -111,24 +106,23 @@ When the user selected multiple files, the `value` represents the first file in 
 </Dropzone>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<h3 class='text-xl w-full dark:text-white py-4'>Fileupload</h3>
+### Fileupload
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Dropzone</h3>
+### Dropzone
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-
-<Htwo label="Forwarded Events: Fileupload" />
+## Forwarded Events: Fileupload
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:blur</Badge>
@@ -144,7 +138,7 @@ The component has the following props, type, and default values. See <A href="/p
 <Badge large={true}>on:paste</Badge>
 </div>
 
-<Htwo label="Forwarded Events: Dropzone" />
+## Forwarded Events: Dropzone
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:click</Badge>

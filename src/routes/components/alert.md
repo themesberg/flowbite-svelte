@@ -6,18 +6,14 @@ dir: Components
 description: Show contextual information to your users using alert elements based on Tailwind CSS
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  
-  import { Badge, Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
-  // Props table
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
+
+  import { Badge, P, A } from '$lib'
+
   import { props as frameProps} from '../props/Frame.json'
   import { props as alertProps } from '../props/Alert.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/alert/*.svelte')
   // slots
@@ -25,21 +21,21 @@ description: Show contextual information to your users using alert elements base
   let slotItems = [['default', 'The first slot.'],['extra','A slot after the default slot.']]
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The alert component can be used to provide information to your users such as success or error messages, but also highlighted information complementing the normal flow of paragraphs and headers on a page. Flowbite also includes dismissable alerts which can be hidden by the users by clicking on the close icon.
 
-<Htwo label="Set up" />
+## Set up
 
 Import Alert and set variables in the script tag.
 
-```html
+```svelte example hideOutput
 <script>
   import { Alert } from 'flowbite-svelte';
 </script>
 ```
 
-<Htwo label="Default alert" />
+## Default alert
 
 Use the following examples of alert components to show messages as feedback to your users.
 
@@ -64,7 +60,7 @@ Use the following examples of alert components to show messages as feedback to y
 </Alert>
 ```
 
-<Htwo label="Alerts with icon" />
+## Alerts with icon
 
 You can also include a descriptive icon to complement the message inside the alert component with the following example.
 
@@ -99,8 +95,7 @@ You can also include a descriptive icon to complement the message inside the ale
 </Alert>
 ```
 
-
-<Htwo label="Bordered alerts" />
+## Bordered alerts
 
 Use this example to add a border accent to the alert component instead of just a plain background.
 
@@ -135,7 +130,7 @@ Use this example to add a border accent to the alert component instead of just a
 </Alert>
 ```
 
-<Htwo label="Alerts with list" />
+## Alerts with list
 
 Use this example to show a list and a description inside an alert component.
 
@@ -167,7 +162,7 @@ Use this example to show a list and a description inside an alert component.
 </Alert>
 ```
 
-<Htwo label="Dismissable alerts" />
+## Dismissable alerts
 
 Use the following alert elements that are also dismissable.
 
@@ -202,7 +197,7 @@ Use the following alert elements that are also dismissable.
 </Alert>
 ```
 
-<Htwo label="Border accent" />
+## Border accent
 
 Use the following alert components with a border accent as an alternative style.
 
@@ -232,7 +227,7 @@ Use the following alert components with a border accent as an alternative style.
 </Alert>
 ```
 
-<Htwo label="Additional content" />
+## Additional content
 
 The following alert components can be used if you wish to disclose more information inside the element.
 
@@ -275,7 +270,7 @@ The following alert components can be used if you wish to disclose more informat
 </Alert>
 ```
 
-<Htwo label="Custom color" />
+## Custom color
 
 Use `color='none'` to disable coloring. Then use `class` to add your custom colors classes.
 
@@ -288,7 +283,7 @@ Use `color='none'` to disable coloring. Then use `class` to add your custom colo
 </Alert>
 ```
 
-<Htwo label="Events" />
+## Events
 
 Use the `close` event with `dismissable` prop.
 
@@ -303,31 +298,31 @@ Use the `close` event with `dismissable` prop.
 <Alert dismissable on:close={closeAlert}>Close me</Alert>
 ```
 
-<Htwo label="Props" />
+## Props
 
-<h3 class='text-xl w-full dark:text-white py-4'>Alert</h3>
+### Alert
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
 <TableDefaultRow items={alertProps} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Frame</h3>
+### Frame
 
 The component inherits the following props, type, and default values from `Frame`. See <A href="/pages/types">types page</A> for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
 <TableDefaultRow items={frameProps} rowState='hover' />
 </TableProp>
 
-<Htwo label="Slots" />
+## Slots
 
-<TableProp header={slotHeader} {divClass} {theadClass}>
+<TableProp header={slotHeader}>
   <TableDefaultRow items={slotItems} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events" />
+## Forwarded Events
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:blur</Badge>
@@ -340,7 +335,7 @@ The component inherits the following props, type, and default values from `Frame
 <Badge large={true}>on:mouseleave</Badge>
 </div>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/alerts/" target="_blank" rel="noreferrer" class="link">

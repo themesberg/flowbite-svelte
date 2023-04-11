@@ -1,23 +1,19 @@
 ---
-layout: typographyLayout
+layout: componentLayout
 title: Svelte Lists - Flowbite
 breadcrumb_title: Lists
 dir: Typography
 description: Use the list component to show an unordered or ordered list of items based on multiple styles, layouts, and variants built with Tailwind CSS and Flowbite
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
-  import { A, Heading, Breadcrumb, BreadcrumbItem } from '$lib'
+  import { GitHubSourceList, TableProp, TableDefaultRow } from '../utils'
+  import { A, Heading } from '$lib'
   import { props as items1 } from '../props/List.json'
   import { props as items2 } from '../props/Li.json'
   import { props as items3 } from '../props/Span.json'
   import { props as items4 } from '../props/DescriptionList.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFilesArray = [
     import.meta.glob("../../lib/typography/Li.svelte"),
@@ -26,11 +22,11 @@ description: Use the list component to show an unordered or ordered list of item
 const libFiles = { ...libFilesArray[0], ...libFilesArray[1] };
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 Get started with a collection of list components built with Tailwind CSS for ordered and unordered lists with bullets, numbers, or icons and other styles and layouts to show a list of items inside an article or throughout your web page.
 
-<Htwo label="Setup" />
+## Setup
 
 ```html
 <script>
@@ -38,13 +34,13 @@ Get started with a collection of list components built with Tailwind CSS for ord
 </script>
 ```
 
-<Htwo label="Unordored list" />
+## Unordored list
 
 Use this example to create a default unordered list of items. 
 
 ```svelte example
 <script>
-  import { Li, Heading, List } from 'flowbite-svelte';
+  import { Li, List, Heading } from 'flowbite-svelte';
 </script>
 
 <Heading tag="h2" customSize="text-lg font-semibold" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white"
@@ -56,13 +52,13 @@ Use this example to create a default unordered list of items.
 </List>
 ```
 
-<Htwo label="icons" />
+## icons
 
 This example can be used to apply custom icons instead of the default bullets for the list items.
 
 ```svelte example
 <script>
-  import { Heading, List, Li } from 'flowbite-svelte';
+  import { List, Li, Heading } from 'flowbite-svelte';
 </script>
 
 <Heading tag="h2"  customSize="text-lg font-semibold" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white"
@@ -107,7 +103,7 @@ This example can be used to apply custom icons instead of the default bullets fo
 </List>
 ```
 
-<Htwo label="Nested" />
+## Nested
 
 Use this example to nested another list of items inside the parent list element.
 
@@ -144,13 +140,13 @@ Use this example to nested another list of items inside the parent list element.
 </List>
 ```
 
-<Htwo label="Unstyled" />
+## Unstyled
 
 Use the `list="none"` prop to disable the list style bullets or numbers.
 
 ```svelte example
 <script>
-  import { Heading, List, Li } from 'flowbite-svelte';
+  import { List, Li, Heading } from 'flowbite-svelte';
 </script>
 
 <Heading tag="h2"  customSize="text-lg font-semibold" class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white"
@@ -162,13 +158,13 @@ Use the `list="none"` prop to disable the list style bullets or numbers.
 </List>
 ```
 
-<Htwo label="Ordered list" />
+## Ordered list
 
 Use the `tag="ol"` prop to create an ordered list of items with numbers.
 
 ```svelte example
 <script>
-  import { Heading, List, Li, Span } from 'flowbite-svelte';
+  import { List, Li, Span, Heading } from 'flowbite-svelte';
 </script>
 
 <Heading tag="h2" customSize="text-lg font-semibold" class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white"
@@ -180,7 +176,7 @@ Use the `tag="ol"` prop to create an ordered list of items with numbers.
 </List>
 ```
 
-<Htwo label="Nested" />
+## Nested
 
 This example can be used to nest multiple lists into each other.
 
@@ -217,7 +213,7 @@ This example can be used to nest multiple lists into each other.
 </List>
 ```
 
-<Htwo label="Description List" />
+## Description List
 
 Create a description list by using the `tag="dl"` prop and set the term and name with the following example.
 
@@ -242,7 +238,7 @@ Create a description list by using the `tag="dl"` prop and set the term and name
 </List>
 ```
 
-<Htwo label="List with icon" />
+## List with icon
 
 Use this example to create a list of items with custom SVG icons instead of the default bullets.
 
@@ -315,7 +311,7 @@ Use this example to create a list of items with custom SVG icons instead of the 
 </List>
 ```
 
-<Htwo label="Advanced layout" />
+## Advanced layout
 
 This example can be used to show more details for each list item such as the user’s name, email and profile picture.
 
@@ -413,7 +409,7 @@ This example can be used to show more details for each list item such as the use
 </List>
 ```
 
-<Htwo label="Horizontal List" />
+## Horizontal List
 
 Use this example to create a horizontally aligned list of items.
 
@@ -450,30 +446,30 @@ Use this example to create a horizontally aligned list of items.
 </List>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">List</Heading>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Li</Heading>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Span</Heading>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">DescriptionList</Heading>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>

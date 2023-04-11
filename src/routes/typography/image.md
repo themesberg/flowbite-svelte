@@ -1,29 +1,25 @@
 ---
-layout: typographyLayout
+layout: componentLayout
 title: Svelte Images - Flowbite
 breadcrumb_title: Images
 dir: Typography
 description: The image component can be used to embed images inside the web page in articles and sections based on multiple styles, sizes, layouts and hover animations
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { A, Heading, Breadcrumb, BreadcrumbItem } from '$lib'
+  import { GitHubSourceList, TableProp, TableDefaultRow} from '../utils'
+  import { A, Heading } from '$lib'
   import { props as items1 } from '../props/Img.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/typography/Img.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 Get started with a collection of responsive image components coded with the utility classes from Tailwind CSS that you can use inside articles, cards, sections, and other components based on multiple styles, sizes, layouts, and hover animations.
 
-<Htwo label="Setup" />
+## Setup
 
 ```html
 <script>
@@ -31,7 +27,7 @@ Get started with a collection of responsive image components coded with the util
 </script>
 ```
 
-<Htwo label="Default image" />
+## Default image
 
 Use this example to show the a responsive image that won’t grow beyond the maximum original width.
 
@@ -43,7 +39,7 @@ Use this example to show the a responsive image that won’t grow beyond the max
 <Img src="/images/examples/image-1@2x.jpg" alt="sample 1"/>
 ```
 
-<Htwo label="Image caption" />
+## Image caption
 
 This example can be used to add a caption for the image often used inside articles.
 
@@ -55,7 +51,7 @@ This example can be used to add a caption for the image often used inside articl
 <Img src="/images/examples/image-1@2x.jpg" alt="sample 1" caption="Image caption" />
 ```
 
-<Htwo label="Rounded corners" />
+## Rounded corners
 
 Apply rounded corners to the image by using the specific utility classes from Tailwind CSS.
 
@@ -83,7 +79,7 @@ Use this example to mask the image inside a circle using the rounded-full utilit
 <Img src="/images/examples/image-4@2x.jpg" alt="sample 1" size="w-96" imgClass="h-96" class="rounded-full" />
 ```
 
-<Htwo label="Image shadow" />
+## Image shadow
 
 This example can be used to show a shadow effect for the image using the shadow-size utility class.
 
@@ -95,7 +91,7 @@ This example can be used to show a shadow effect for the image using the shadow-
 <Img src="/images/examples/image-2@2x.jpg" alt="sample 1" size="max-w-xl"  class="shadow-xl dark:shadow-gray-800" />
 ```
 
-<Htwo label="Retina-ready" />
+## Retina-ready
 
 Use the srcset attribute to set Retina-ready images with double resolution.
 
@@ -107,7 +103,7 @@ Use the srcset attribute to set Retina-ready images with double resolution.
 <Img srcset="/images/examples/image-1.jpg 1x, /images/examples/image-1@2x.jpg 2x" alt="sample 1" size="w-full max-w-xl" class="rounded-lg"/>
 ```
 
-<Htwo label="Image card" />
+## Image card
 
 Use this example to make the image a card item with a link and a short text description.
 
@@ -119,7 +115,7 @@ Use this example to make the image a card item with a link and a short text desc
 <Img src="/images/examples/content-gallery-3.png" alt="sample 1" class="rounded-lg" figClass="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0" captionClass="absolute bottom-6 px-4 text-lg text-white" caption="Do you want to get notified when a new component is added to Flowbite?" />
 ```
 
-<Htwo label="Image effects" />
+## Image effects
 
 Use image effects such as grayscale or blur to change the appearances of the image when being hovered.
 
@@ -147,7 +143,7 @@ Apply a blur by using the blur-size utility class from Tailwind CSS to an image 
 <Img src="/images/examples/content-gallery-3.png" size="max-w-lg" alt="My gallery" class="rounded-lg transition-all duration-300 blur-sm hover:blur-none" />
 ```
 
-<Htwo label="Alignment" />
+## Alignment
 
 Align the image component to the left, center or right side of the document page using margin styles.
 
@@ -187,7 +183,7 @@ Use the `ml-auto` class to align the image to the right side of the page.
 <Img src="/images/examples/image-1@2x.jpg" size="max-w-lg" alignment="ml-auto" alt="sample 1"/>
 ```
 
-<Htwo label="Sizes" />
+## Sizes
 
 Set the size of the image using the w-size and h-size or max-w-size utility classes from Tailwind CSS to set the width and height of the element.
 
@@ -239,10 +235,10 @@ Use the max-w-full class to set the full width of the image as long as it doesn�
 <Img src="/images/examples/image-1@2x.jpg" size="max-w-full" alt="sample 1"/>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>

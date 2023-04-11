@@ -6,11 +6,9 @@ dir: Components
 description: Use the table component to show text, images, links, and other elements inside a structured set of data made up of rows and columns of table cells
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
+  import { GitHubSourceList, TableProp, TableDefaultRow , } from '../utils'
+  import { P, A } from '$lib'
   import { props as items1 }  from '../props/Table.json'
   import { props as items2 }  from '../props/TableBody.json'
   import { props as items3 }  from '../props/TableBodyCell.json'
@@ -18,29 +16,26 @@ description: Use the table component to show text, images, links, and other elem
   import { props as items5 }  from '../props/TableHead.json'
   import { props as items6 }  from '../props/TableHeadCell.json'
   import { props as items7 }  from '../props/TableSearch.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/tables/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The table component represents a set of structured elements made up of rows and columns as table cells that can be used to show data sets to your website users.
 
 Get started with multiple variants and styles of these table components.
 
+## Setup
 
-<Htwo label="Setup" />
-
-```html
+```svelte example hideOutput
 <script>
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Checkbox, TableSearch } from 'flowbite-svelte';
 </script>
 ```
 
-<Htwo label="Default table" />
+## Default table
 
 Use the following example of a responsive table component to show multiple rows and columns of text data.
 
@@ -79,7 +74,7 @@ Use the following example of a responsive table component to show multiple rows 
 </Table>
 ```
 
-<Htwo label="Striped rows" />
+## Striped rows
 
 Set the `striped` prop to `true` to alternate background colors of every second table row.
 
@@ -158,7 +153,7 @@ Set the `striped` prop to `true` to alternate background colors of every second 
 </Table>
 ```
 
-<Htwo label="Hover state" />
+## Hover state
 
 Set `hoverable` to `true` to change the background color of a data row when hovering over the element with the cursor.
 
@@ -215,7 +210,7 @@ Set `hoverable` to `true` to change the background color of a data row when hove
 </Table>
 ```
 
-<Htwo label="Checkbox" />
+## Checkbox
 
 Checkboxes can be used inside table data rows to select multiple data sets and apply a bulk action.
 
@@ -284,7 +279,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
 </Table>
 ```
 
-<Htwo label="Search input" />
+## Search input
 
 ```svelte example
 <script>
@@ -321,7 +316,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
 </TableSearch>
 ```
 
-<Htwo label="Table head" />
+## Table head
 
 By default, the `<TableHead>` component will create a single `<tr>` element without any preset attributes and properties for you, and the slot of this component is implicitly required to be permitted contents of the `<tr>` element. If you want to get more controllability of the table head rows, e.g., customize the style or use multiple head rows, set the value of `defaultRow` prop to `false`, and the slot of this component is then implicitly required to be zero or more `<tr>` elements.
 
@@ -370,7 +365,7 @@ By default, the `<TableHead>` component will create a single `<tr>` element with
 </Table>
 ```
 
-<Htwo label="Table foot" />
+## Table foot
 
 Use this example where the `<tfoot>` HTML element can be used in conjunction with the head and caption of the table component.
 
@@ -414,7 +409,7 @@ Use this example where the `<tfoot>` HTML element can be used in conjunction wit
 </Table>
 ```
 
-<Htwo label="Table caption" />
+## Table caption
 
 Improve accessibility by using a caption inside the table as a heading to better describe what the table is about for screen readers.
 
@@ -480,7 +475,7 @@ Improve accessibility by using a caption inside the table as a heading to better
 </Table>
 ```
 
-<Htwo label="Without border" />
+## Without border
 
 Use this example of a table component without any border between the table cells.
 
@@ -519,7 +514,7 @@ Use this example of a table component without any border between the table cells
 </Table>
 ```
 
-<Htwo label="Table with shadow" />
+## Table with shadow
 
 Use this example to apply a shadow border to the table component.
 
@@ -558,7 +553,7 @@ Use this example to apply a shadow border to the table component.
 </Table>
 ```
 
-<Htwo label="Overflow scrolling" />
+## Overflow scrolling
 
 Use this example to enable horizontal scrolling if the content inside the table overflows that maximum width.
 
@@ -646,7 +641,7 @@ Use this example to enable horizontal scrolling if the content inside the table 
 </Table>
 ```
 
-<Htwo label="Table colors" />
+## Table colors
 
 Use one of colors from blue, green, red, yellow, purple for the `color` prop. The default color is gray. You can reset all color by using the `color="custom"`.
 
@@ -760,7 +755,7 @@ Use one of colors from blue, green, red, yellow, purple for the `color` prop. Th
 </Table>
 ```
 
-<Htwo label="Striped rows color" />
+## Striped rows color
 
 Use this example to apply a different color to every second row inside the table.
 
@@ -839,54 +834,54 @@ Use this example to apply a different color to every second row inside the table
 </Table>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.
 
-<h3 class='text-xl w-full dark:text-white py-4'>Table</h3>
+### Table
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TableBody</h3>
+### TableBody
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TableBodyCell</h3>
+### TableBodyCell
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TableBodyRow</h3>
+### TableBodyRow
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TableHead</h3>
+### TableHead
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TableHeadCell</h3>
+### TableHeadCell
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TableSearch</h3>
+### TableSearch
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items7} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/tables/" target="_blank" rel="noreferrer" class="link"

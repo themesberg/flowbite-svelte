@@ -6,34 +6,29 @@ dir: Extend
 description: Use the indicator component to show a number count, account status, or as a loading label positioned relative to the parent component coded with Tailwind CSS
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import {Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
-  // Props table
+  import {GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
+  import { P, A } from '$lib'
+
   import { props as items } from '../props/Indicator.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/indicators/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The indicator component can be used as a small element positioned absolutely relative to another component such as a button or card and show a number count, account status (red for offline, green for online) and other useful information.
 
-<Htwo label="Setup" />
+## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Indicator } from "flowbite-svelte"
 </script>
 ```
 
-
-<Htwo label="Default indicator" />
+## Default indicator
 
 Use this example to create a simple indicator with multiple colors and position it anywhere on the website.
 
@@ -53,7 +48,7 @@ Use this example to create a simple indicator with multiple colors and position 
 <Indicator color="teal"/>
 ```
 
-<Htwo label="Legend indicator" />
+## Legend indicator
 
 This example can be used as a legend indicator for charts to also add a text next to the bullet point.
 
@@ -68,7 +63,7 @@ This example can be used as a legend indicator for charts to also add a text nex
 <span class="flex items-center"><Indicator size="sm" color="teal" class="mr-1.5"/>Revenue</span>
 ```
 
-<Htwo label="Indicator count" />
+## Indicator count
 
 This example can be used to show a number count inside the indicator and position it relative to a button component.
 
@@ -87,7 +82,7 @@ This example can be used to show a number count inside the indicator and positio
   </Button>
 ```
 
-<Htwo label="Status indicator" />
+## Status indicator
 
 Use this example to show a status indicator for the currently logged in user by showing red for offline and green for online.
 
@@ -103,7 +98,7 @@ Use this example to show a status indicator for the currently logged in user by 
 
 ```
 
-<Htwo label="Badge indicator" />
+## Badge indicator
 
 This example can be used to add an indicator inside of a badge component.
 
@@ -142,7 +137,7 @@ This example can be used to add an indicator inside of a badge component.
 </ul>
 ```
 
-<Htwo label="Stepper indicator" />
+## Stepper indicator
 
 You can also use the indicators inside of a stepper component when completing a form element.
 
@@ -150,7 +145,6 @@ You can also use the indicators inside of a stepper component when completing a 
 <script>
   import { Indicator } from 'flowbite-svelte'
 </script>
-
 
 <ol class="flex items-center">
     <li class="relative w-full mb-6">
@@ -161,7 +155,7 @@ You can also use the indicators inside of a stepper component when completing a 
             <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
         </div>
         <div class="mt-3">
-            <h3 class="font-medium text-gray-900 dark:text-white">Step 1</h3>
+            ### Step 1
         </div>
     </li>
     <li class="relative w-full mb-6">
@@ -172,7 +166,7 @@ You can also use the indicators inside of a stepper component when completing a 
             <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
         </div>
         <div class="mt-3">
-            <h3 class="font-medium text-gray-900 dark:text-white">Step 2</h3>
+            ### Step 2
         </div>
     </li>
     <li class="relative w-full mb-6">
@@ -183,7 +177,7 @@ You can also use the indicators inside of a stepper component when completing a 
             <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
         </div>
         <div class="mt-3">
-            <h3 class="font-medium text-gray-900 dark:text-white">Step 2</h3>
+            ### Step 2
         </div>
     </li>
     <li class="relative w-full mb-6">
@@ -193,7 +187,7 @@ You can also use the indicators inside of a stepper component when completing a 
             </Indicator>
         </div>
         <div class="mt-3">
-            <h3 class="font-medium text-gray-900 dark:text-white">Step 3</h3>
+            ### Step 3
         </div>
     </li>
 </ol>
@@ -206,7 +200,7 @@ You can also use the indicators inside of a stepper component when completing a 
             <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
         </div>
         <div class="mt-3">
-            <h3 class="font-medium text-gray-900 dark:text-white">Step 1</h3>
+            ### Step 1
         </div>
     </li>
     <li class="relative w-full mb-6">
@@ -217,7 +211,7 @@ You can also use the indicators inside of a stepper component when completing a 
             <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
         </div>
         <div class="mt-3">
-            <h3 class="font-medium text-gray-900 dark:text-white">Step 2</h3>
+            ### Step 2
         </div>
     </li>
     <li class="relative w-full mb-6">
@@ -228,7 +222,7 @@ You can also use the indicators inside of a stepper component when completing a 
             <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
         </div>
         <div class="mt-3">
-            <h3 class="font-medium text-gray-900 dark:text-white">Step 2</h3>
+            ### Step 2
         </div>
     </li>
     <li class="relative w-full mb-6">
@@ -238,13 +232,13 @@ You can also use the indicators inside of a stepper component when completing a 
             </Indicator>
         </div>
         <div class="mt-3">
-            <h3 class="font-medium text-gray-900 dark:text-white">Step 3</h3>
+            ### Step 3
         </div>
     </li>
 </ol>
 ```
 
-<Htwo label="Indicator position" />
+## Indicator position
 
 Use these examples to position the indicator component anywhere relative to the parent element.
 
@@ -266,18 +260,18 @@ Use these examples to position the indicator component anywhere relative to the 
 </div>
 ```
 
-<Htwo label="Props" />
+## Props
 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Indicator</h3>
+### Indicator
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/inidicators/" target="_blank" rel="noreferrer" class="link"

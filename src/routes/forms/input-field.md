@@ -1,40 +1,36 @@
 ---
-layout: formLayout
+layout: componentLayout
 title: Svelte Input Fields - Flowbite
 breadcrumb_title: Input fields
 dir: Forms
 description: Get started with a collection of input fields built with Tailwind CSS to start accepting data from the user based on multiple sizes, variants, and input types
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow  } from '../utils'
   import { onMount } from 'svelte';
-  import { Breadcrumb, BreadcrumbItem, Badge, Heading, A } from '$lib'
+  import { Badge, A } from '$lib'
   import { props as items1 } from '../props/Input.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/forms/Input.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The input field is an important part of the form element that can be used to create interactive controls to accept data from the user based on multiple input types, such as text, email, number, password, URL, phone number, and more.
 
 On this page you will find all of the input types based on multiple variants, styles, colors, and sizes built with the utility classes from Tailwind CSS and components from Flowbite.
 
-<Htwo label="Setup" />
+## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Input, Label, Helper } from 'flowbite-svelte';
 </script>
 ```
 
-<Htwo label="Input fields" />
+## Input fields
 
 Use this example as a generic form element which includes multiple input fields types such as text, email, password, number, URL, and phone number and use the grid layout to add multiple columns and rows.
 
@@ -87,7 +83,7 @@ Use this example as a generic form element which includes multiple input fields 
 </form>
 ```
 
-<Htwo label="Input sizes" />
+## Input sizes
 
 Use the following examples to apply a small, default or large size for the input fields.
 
@@ -114,7 +110,7 @@ User the size prop to change the input size. Choose one from 'sm:text-md' | 'tex
 </Label>
 ```
 
-<Htwo label="Disabled state" />
+## Disabled state
 
 Get started with this example if you want to apply the disabled state to an input field. Add the disabled to change the input to disabled.
 
@@ -127,7 +123,7 @@ Get started with this example if you want to apply the disabled state to an inpu
 <Input class="mb-6" disabled readonly value="Disabled readonly input" />
 ```
 
-<Htwo label="Validation" />
+## Validation
 
 Use the following example to apply validation styles for success and error messages.
 
@@ -149,7 +145,7 @@ Use the following example to apply validation styles for success and error messa
 </div>
 ```
 
-<Htwo label="Input with icon" />
+## Input with icon
 
 ```svelte example hideScript class="space-y-6"
 <script>
@@ -179,7 +175,7 @@ Use the following example to apply validation styles for success and error messa
 </Label>
 ```
 
-<Htwo label="Input group" />
+## Input group
 
 This example can be used to add a descriptive icon or additional text inside the input field.
 
@@ -237,7 +233,7 @@ This example can be used to add a descriptive icon or additional text inside the
 </div>
 ```
 
-<Htwo label="Icon click handler" />
+## Icon click handler
 
 This example shows how to add `on:click` event handler to the icon in `Input`. By clicking an icon, it toggles icon and `type`:
 
@@ -278,7 +274,7 @@ This example shows how to add `on:click` event handler to the icon in `Input`. B
 </div>
 ```
 
-<Htwo label="Helper text" />
+## Helper text
 
 Use the helper prop to add your helper text. You can use HTML in the helper text.
 
@@ -294,7 +290,7 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
 </Label>
 ```
 
-<Htwo label="Number input" />
+## Number input
 
 By default the `Input` component binds the `value` as `string`. If you need a variable bound as `number` you need to use a specialised version of `Input` called `NumberInput`.
 
@@ -313,7 +309,7 @@ By default the `Input` component binds the `value` as `string`. If you need a va
 <p>Type of value: {typeof value}</p>
 ```
 
-<Htwo label="Search input" />
+## Search input
 
 ```svelte example hideScript
 <script>
@@ -329,7 +325,7 @@ By default the `Input` component binds the `value` as `string`. If you need a va
 </form>
 ```
 
-<Htwo label="Dropdown" />
+## Dropdown
 
 Use this example to show a dropdown menu right next to the input field.
 
@@ -355,7 +351,7 @@ Use this example to show a dropdown menu right next to the input field.
 </ButtonGroup>
 ```
 
-<Htwo label="Advanced usage" />
+## Advanced usage
 
 If you need a full control over `input` HTML element while still re-using the Flowbite formatting, you can put the `input` element as a default slot. The example below is in fact the implementation of the above mentioned `NumberInput`.
 
@@ -371,17 +367,17 @@ If you need a full control over `input` HTML element while still re-using the Fl
 </Input>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<h3 class='text-xl w-full dark:text-white py-4'>Input</h3>
+### Input
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
 <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events: Input" />
+## Forwarded Events: Input
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:blur</Badge>

@@ -1,39 +1,35 @@
 ---
-layout: formLayout
+layout: componentLayout
 title: Svelte Radio - Flowbite
 breadcrumb_title: Radio
 dir: Forms
 description: Get started with the radio component to let the user choose a single option from multiple options in the form of a circle based on multiple styles and colors
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Badge, Heading, A } from '$lib'
+  import { GitHubSourceList, TableProp, TableDefaultRow } from '../utils'
+  import { Badge, A } from '$lib'
   import { props as items } from '../props/Radio.json'
   import { props as items2 } from '../props/Label.json'
   import { props as items3 } from '../props/Helper.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/forms/Radio.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The radio component can be used to allow the user to choose a single option from one or more available options coded with the utility classes from Tailwind CSS and available in multiple styles, variants, and colors and support dark mode.
 
-<Htwo label="Setup" />
+## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Radio } from 'flowbite-svelte'
 </script>
 ```
 
-<Htwo label="Radio examples" />
+## Radio examples
 
 Use the default example of a radio component with the checked and unchecked state.
 
@@ -46,7 +42,7 @@ Use the default example of a radio component with the checked and unchecked stat
 <Radio name="example">Checked state</Radio>
 ```
 
-<Htwo label="Disabled state" />
+## Disabled state
 
 Apply the `disabled` attribute to the radio component to disallow the selection for the user.
 
@@ -61,7 +57,7 @@ This example can be used for the disabled state of the radio component by applyi
 <Radio name="disabled-state" disabled>Disabled checked</Radio>
 ```
 
-<Htwo label="Alternative syntax" />
+## Alternative syntax
 
 If you need separate control over the label and the radio you can use the verbose syntax, but then you need to take care about aligning manually.
 
@@ -92,7 +88,7 @@ If you need separate control over the label and the radio you can use the verbos
 </Label>
 ```
 
-<Htwo label="Radio with a link" />
+## Radio with a link
 
 Use this example if you want to add an anchor link inside the label of the radio component.
 
@@ -104,7 +100,7 @@ Use this example if you want to add an anchor link inside the label of the radio
 <Radio name="with-link">I agree with the <a href="/" class="text-blue-600 dark:text-blue-500 hover:underline ml-1">terms and conditions</a>.</Radio>
 ```
 
-<Htwo label="Helper text" />
+## Helper text
 
 Get started with this example if you want to add a secondary helper text for the radio component.
 
@@ -117,7 +113,7 @@ Get started with this example if you want to add a secondary helper text for the
 <Helper id="helper-checkbox-text" class="pl-6">For orders shipped from $25 in books or $29 in other categories</Helper>
 ```
 
-<Htwo label="Bordered" />
+## Bordered
 
 Use this example of a radio inside a card element to enable a larger area of clicking activation.
 
@@ -136,7 +132,7 @@ Use this example of a radio inside a card element to enable a larger area of cli
 </div>
 ```
 
-<Htwo label="Radio list group" />
+## Radio list group
 
 Use this example to show a list of radio items grouped inside a card.
 
@@ -155,7 +151,7 @@ Use this example to show a list of radio items grouped inside a card.
 </ul>
 ```
 
-<Htwo label="Horizontal list group" />
+## Horizontal list group
 
 Use this example to show a list of radio items inside a card horizontally.
 
@@ -173,7 +169,7 @@ Use this example to show a list of radio items inside a card horizontally.
 </ul>
 ```
 
-<Htwo label="Radio in dropdown" />
+## Radio in dropdown
 
 Here’s an example of a list group that you can use right away.
 
@@ -200,7 +196,7 @@ Here’s an example of a list group that you can use right away.
 </Dropdown>
 ```
 
-<Htwo label="Inline layout" />
+## Inline layout
 
 You can align the radio elements horizontally by using a wrapper tag and applying the flex class.
 
@@ -232,7 +228,7 @@ You can use the property `inline` as the alternative.
 <Radio group={inline2} inline value="fourth" class="mr-2" disabled>Inline disabled</Radio>
 ```
 
-<Htwo label="Colors" />
+## Colors
 
 ```svelte example
 <script>
@@ -251,7 +247,7 @@ You can use the property `inline` as the alternative.
 </div>
 ```
 
-<Htwo label="Advanced layout" />
+## Advanced layout
 
 Use this example of an advanced layout of radio elements where the label parent element can be styled when the radio is checked.
 
@@ -283,26 +279,26 @@ Use this example of an advanced layout of radio elements where the label parent 
 </div>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <a href="/pages/types">types
 page</a> for type information.
 
 All attributes of the `input` element like: name, id, autofocus, etc, can be set directly as component props.
 
-<h3 class='text-xl w-full dark:text-white py-4'>Radio</h3>
+### Radio
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
 <TableDefaultRow items={items} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Helper</h3>
+### Helper
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
 <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events" />
+## Forwarded Events
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:blur</Badge>

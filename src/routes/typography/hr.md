@@ -1,29 +1,25 @@
 ---
-layout: typographyLayout
+layout: componentLayout
 title: Svelte Horizontal Line (HR) - Flowbite
 breadcrumb_title: HR
 dir: Typography
 description: Create a horizontal line using the `Hr` component to separate content such as paragraphs, blockquotes, and other elements
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
-  import { A, Heading, Breadcrumb, BreadcrumbItem } from '$lib';
+  import { GitHubSourceList, TableProp, TableDefaultRow } from '../utils'
+  import { A} from '$lib';
   import { props as items1 } from '../props/Hr.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/typography/Hr.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The `Hr` component can be used to separate content using a horizontal line by adding space between elements based on multiple styles, variants, and layouts.
 
-<Htwo label="Setup" />
+## Setup
 
 ```html
 <script>
@@ -31,7 +27,7 @@ The `Hr` component can be used to separate content using a horizontal line by ad
 </script>
 ```
 
-<Htwo label="Default HR" />
+## Default HR
 
 ```svelte example
 <script>
@@ -43,7 +39,7 @@ The `Hr` component can be used to separate content using a horizontal line by ad
 <P>Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
 ```
 
-<Htwo label="Trimmed" />
+## Trimmed
 
 Use this example to show a shorter version of the horizontal line.
 
@@ -57,7 +53,7 @@ Use this example to show a shorter version of the horizontal line.
 <P>Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
 ```
 
-<Htwo label="Icon HR" />
+## Icon HR
 
 This example can be used to set a custom SVG icon in the middle of the HR element.
 
@@ -92,7 +88,7 @@ This example can be used to set a custom SVG icon in the middle of the HR elemen
 </div>
 ```
 
-<Htwo label="HR with text" />
+## HR with text
 
 Use this example to add a text in the middle of the HR component.
 
@@ -117,7 +113,7 @@ Use this example to add a text in the middle of the HR component.
 </div>
 ```
 
-<Htwo label="HR shape" />
+## HR shape
 
 This example can be used to separate content with a HR tag as a shape instead of a line.
 
@@ -131,10 +127,10 @@ This example can be used to separate content with a HR tag as a shape instead of
 <Blockquote alignment="center"><p>"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p></Blockquote>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>

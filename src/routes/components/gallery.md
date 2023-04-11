@@ -6,16 +6,12 @@ dir: Components
 description: Use the image gallery component based on a masonry grid layout using flex and grid classes from Tailwind CSS to show multiple pictures based on various styles
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
-  // Props table
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
+  import { P, A } from '$lib'
+
   import { props as galleryProps } from '../props/Gallery.json'
-	let propHeader = ['Name', 'Type', 'Default']
-	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // Slots
   let slotHeader = ['Name', 'Description']
   let slotItems = [['default', 'For a button label.']]
@@ -23,28 +19,28 @@ description: Use the image gallery component based on a masonry grid layout usin
   const libFiles = import.meta.glob('../../lib/gallery/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The gallery component can be used to show multiple images inside a masonry grid layout styles with the utility-first classes from Tailwind CSS to show a collection of pictures to your users based on various layouts, styles, sizes, and colors.
 
 This component is recommended for usage within marketing UI interfaces and website sections when you want to show pictures of your team members, office pictures, or even case study images.
 
-<Htwo label="Set up" />
+## Set up
 
 Import `Gallery` in the script tag.
 
-```html
+```svelte example hideOutput
 <script>
   import { Gallery } from 'flowbite-svelte';
 </script>
 ```
 
-<Htwo label="Default gallery" />
+## Default gallery
 
 Use this component to show a collection of images inside a gallery.
 
 Number of rows in the gallery is set by passing the `grid-cols-{n}` Tailwind class (including the reactive prefix).
-Spacing between images is set by `gap-{n}` class. If you don't set them it behaves like `grid-cols-1` and `gap: inherit`.
+Spacing between images is set by `gap-{n}` class. If you don't set them it behaves like `grid-cols-1` and `gap:inherit`.
 
 Example below show a gallery with three pictures on a row.
 
@@ -71,7 +67,7 @@ Example below show a gallery with three pictures on a row.
 <Gallery items={images} class="gap-4 grid-cols-2 md:grid-cols-3" />
 ```
 
-<Htwo label="Masonry grid" />
+## Masonry grid
 
 This example can be used to show the images inside a masongry grid layouts with four columns.
 
@@ -109,7 +105,7 @@ This example can be used to show the images inside a masongry grid layouts with 
 </Gallery>
 ```
 
-<Htwo label="Featured image" />
+## Featured image
 
 This example can be used to feature the most important image and show a row of five pictures below.
 
@@ -133,7 +129,7 @@ This example can be used to feature the most important image and show a row of f
 </Gallery>
 ```
 
-<Htwo label="Quad gallery" />
+## Quad gallery
 
 Use this example to show four larger images with two items on a row.
 
@@ -152,7 +148,7 @@ Use this example to show four larger images with two items on a row.
 <Gallery class="gap-2 grid-cols-2" items={images} />
 ```
 
-<Htwo label="Gallery with slider" />
+## Gallery with slider
 
 This example uses the [carousel slider](https://flowbite-svelte.com/components/carousel) functionality to show multiple images inside a slider gallery.
 
@@ -176,10 +172,9 @@ This example uses the [carousel slider](https://flowbite-svelte.com/components/c
 </div>
 ```
 
-<Htwo label="Gallery with tag filters" />
+## Gallery with tag filters
 
 Use this example to show a list of tags and filter the images below based on the activately selected tag.
-
 
 ```svelte example class="flex flex-wrap gap-2" hideScript
 
@@ -212,8 +207,8 @@ Use this example to show a list of tags and filter the images below based on the
 <Gallery items={images} class="gap-4 grid-cols-2 md:grid-cols-3" />
 ```
 
-<Htwo label="Heterogeneous gallery" />
-             
+## Heterogeneous gallery
+
 Gallery items don't have to be all the same but then you need to list them manually - don't set the `items` property.
 
 ```svelte example class="flex flex-wrap gap-2" hideScript
@@ -229,7 +224,7 @@ Gallery items don't have to be all the same but then you need to list them manua
 </Gallery>
 ```
 
-<Htwo label="Custom image rendering" />
+## Custom image rendering
 
 This example shows how to get a complete control over the gallery images look and feel.
 
@@ -252,18 +247,17 @@ This example shows how to get a complete control over the gallery images look an
 </Gallery>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<h3 class='text-xl w-full dark:text-white py-4'>Gallery</h3>
+### Gallery
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
 <TableDefaultRow items={galleryProps} rowState='hover' />
 </TableProp>
 
-
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/gallery/" target="_blank" rel="noreferrer" class="link"

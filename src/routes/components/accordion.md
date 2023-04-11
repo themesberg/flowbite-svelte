@@ -6,40 +6,37 @@ dir: Components
 description: Use the accordion component to show hidden information based on the collapse and expand state of the child elements using data attribute options
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'; 
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
+  import { P, A } from '$lib'; 
   // Props 
   import {props as accordionProps} from '../props/Accordion.json'
   import {props as accordionItemProps} from '../props/AccordionItem.json'
-	let propHeader = ['Name', 'Type', 'Default']
+
   let slotHeader = ['Name', 'Description']
   // lib files
   const libFiles = import.meta.glob('../../lib/accordion/*.svelte')
   // Slots
   let slotItems = [['default', 'Place for AccordionItems']]
   let slotItems2 = [['default','Item body slot'],['header', 'Item header slot'],['arrowup', 'Icon to close an accordion item'],['arrowdown','Icon to open an accordion item']]
-	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The accordion component is a collection of vertically collapsing header and body elements that can be used to show and hide information based on the Tailwind CSS utility classes and JavaScript from Flowbite.
 
 A popular use case would be the “Frequently Asked Questions” section of a website or page when you can show questions and answers for each child element.
 
-<Htwo label="Setup" />
+## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { AccordionItem, Accordion } from 'flowbite-svelte'
 </script>
 ```
 
-<Htwo label="Default accordion" />
+## Default accordion
 
 Accordion uses the single selection mode by default i.e. it collapses every other child element when expanding a one.
 
@@ -68,7 +65,7 @@ To prevent that behavior set `multiple` property to `true`.
 </Accordion>
 ```
 
-<Htwo label="Always open" />
+## Always open
 
 Use the `open` prop to make an item open on mount.
 
@@ -89,10 +86,9 @@ Use the `open` prop to make an item open on mount.
 </Accordion>
 ```
 
-<Htwo label="Color option" />
+## Color option
 
 You can control the look and feel of `AccordionItems` by overwriting the `acctiveClasses` and `inactiveClasses` properties. You can define them in `Accordion` so that they will apply to all children or set them individually on each `AccordionItem`.
-
 
 ```svelte example hideScript
 <script>
@@ -113,7 +109,7 @@ You can control the look and feel of `AccordionItems` by overwriting the `acctiv
 </Accordion>
 ```
 
-<Htwo label="Flush accordion" />
+## Flush accordion
 
 Use `flush` prop to remove the rounded borders.
 
@@ -134,7 +130,7 @@ Use `flush` prop to remove the rounded borders.
 </Accordion>
 ```
 
-<Htwo label="Arrow style" />
+## Arrow style
 
 Use the `arrowup` and `arrowdown` slots to set up and down icons.
 
@@ -167,7 +163,7 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
 </Accordion>
 ```
 
-<Htwo label="Icon Accordion" />
+## Icon Accordion
 
 ```svelte example hideScript
 <script>
@@ -193,7 +189,7 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
 </Accordion>
 ```
 
-<Htwo label="Multiple mode" />
+## Multiple mode
 
 Example how to use the `multiple` option together with expand all behavior.
 
@@ -201,7 +197,7 @@ Example how to use the `multiple` option together with expand all behavior.
 <script>
   import {AccordionItem, Accordion, Button} from 'flowbite-svelte'
   const items = Array(3);
- 
+
   const open_all = () => items.forEach((_,i)=> items[i] = true)
   const close_all= () => items.forEach((_,i)=> items[i] = false)
 </script>
@@ -226,7 +222,7 @@ Example how to use the `multiple` option together with expand all behavior.
 </Accordion>
 ```
 
-<Htwo label="Custom transitions" />
+## Custom transitions
 
 The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#run-time-svelte-transition-slide">slide</A>. Use the `transitionType` and `transitionParams` props to make custom transitions.
 
@@ -250,36 +246,36 @@ The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#r
 </Accordion>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<h3 class='text-xl w-full dark:text-white py-4'>Accordion</h3>
+### Accordion
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={accordionProps} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>AccordionItem</h3>
+### AccordionItem
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={accordionItemProps} rowState='hover' />
 </TableProp>
 
-<Htwo label="Slots" />
+## Slots
 
-<h3 class='text-xl w-full dark:text-white py-4'>Accordion</h3>
+### Accordion
 
-<TableProp header={slotHeader} {divClass} {theadClass}>
+<TableProp header={slotHeader}>
   <TableDefaultRow items={slotItems} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>AccordionItem</h3>
+### AccordionItem
 
-<TableProp header={slotHeader} {divClass} {theadClass}>
+<TableProp header={slotHeader}>
   <TableDefaultRow items={slotItems2} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P><A href="https://flowbite.com/docs/components/accordion/" target="_blank" rel="noreferrer" class="link">Flowbite Accordion</A></P>

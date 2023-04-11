@@ -1,21 +1,17 @@
 ---
-layout: typographyLayout
+layout: componentLayout
 title: Svelte Text - Flowbite
 breadcrumb_title: Text
 dir: Typography
 description: Learn how to customize text-related styles and properties such as font size, font style, text decoration, font weight and more
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { A, Heading, Breadcrumb, BreadcrumbItem } from '$lib'
+  import { GitHubSourceList, TableProp, TableDefaultRow} from '../utils'
+  import { A, Heading } from '$lib'
   import { props as items1 } from '../props/P.json'
   import { props as items2 } from '../props/Span.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFilesArray = [
     import.meta.glob("../../lib/typography/P.svelte"),
@@ -24,11 +20,11 @@ description: Learn how to customize text-related styles and properties such as f
   const libFiles = { ...libFilesArray[0], ...libFilesArray[1] };
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 Get started with a collection of text customization examples to learn how to update the size, font weight, style, decoration and spacing of inline text elements.
 
-<Htwo label="Font size" />
+## Font size
 
 Use this example to set the font size of inline text elements using the `size` prop.
 
@@ -52,7 +48,7 @@ Use this example to set the font size of inline text elements using the `size` p
 <P size="9xl">Aa</P>
 ```
 
-<Htwo label="Font weight" />
+## Font weight
 
 This example can be used to the font weight of an inline text element using the `weight` prop.
 
@@ -72,7 +68,7 @@ This example can be used to the font weight of an inline text element using the 
 <P size="4xl" weight="black">Aa</P>
 ```
 
-<Htwo label="Text color" />
+## Text color
 
 Use the `color` prop to set the color of the inline text.
 
@@ -88,7 +84,7 @@ Use the `color` prop to set the color of the inline text.
 <P color="text-teal-700 dark:text-teal-500">This text is in the teal color.</P>
 ```
 
-<Htwo label="Letter spacing" />
+## Letter spacing
 
 Increase or decrease the spacing between letters using the `space` prop.
 
@@ -105,7 +101,7 @@ Increase or decrease the spacing between letters using the `space` prop.
 <P space="widest">Flowbite app will help you improve yourself by analysing your everyday life.</P>
 ```
 
-<Htwo label="Text decoration" />
+## Text decoration
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Underline</Heading>
 
@@ -143,7 +139,7 @@ Force uppercase characters for a given portion of text using the uppercase class
 <P>The crypto <Span class='uppercase'>identity</Span> primitive.</P>
 ```
 
-<Htwo label="Font style" />
+## Font style
 
 Set italic or non italic styles with the props.
 
@@ -171,7 +167,7 @@ Text elements by default are non-italic.
 <P>The crypto identity primitive.</P>
 ```
 
-<Htwo label="Line Height" />
+## Line Height
 
 Set the height between lines using the `height` prop.
 
@@ -212,7 +208,7 @@ Use the `height="loose"` prop to set a large amount of space between text lines.
 <P size="3xl" height="loose" class="max-w-lg" weight="semibold">The Al-powered app will help you improve yourself by analysing your everyday life.</P>
 ```
 
-<Htwo label="Text Align" />
+## Text Align
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Left</Heading>
 
@@ -266,7 +262,7 @@ semantic set of web pages, sections and over 400+ components crafted with the ut
 from Tailwind CSS and based on the Flowbite component library</P>
 ```
 
-<Htwo label="Whitespace" />
+## Whitespace
 
 Configure the whitespace behaviour of inline text elements using the `whitespace` prop.
 
@@ -315,7 +311,7 @@ Use the `whitespace="preline'` prop to add whitespace exactly how it has been se
 </P>
 ```
 
-<Htwo label="Text Decoration Style" />
+## Text Decoration Style
 
 Update the text decoration style using the `underline` and `decorationClass` props.
 
@@ -327,7 +323,7 @@ Update the text decoration style using the `underline` and `decorationClass` pro
 <P>Track work across the enterprise through an open, collaborative platform. <Span underline>Link issues across Jira</Span> and ingest data from other <Span underline decorationClass="decoration-blue-500 decoration-double">software development</Span> tools, so your IT support and operations teams have richer contextual information to rapidly respond to <Span underline decorationClass="decoration-green-500 decoration-dotted">requests</Span>, <Span underline decorationClass="decoration-4 decoration-red-500 decoration-dashed">incidents</Span>, and <Span underline decorationClass="decoration-sky-500 decoration-wavy">changes</Span>.</P>
 ```
 
-<Htwo label="Opacity" />
+## Opacity
 
 Use the `opacity` and `color` props to set the opacity of inline text elements.
 
@@ -342,18 +338,18 @@ Use the `opacity` and `color` props to set the opacity of inline text elements.
 <P size='xl' opacity={25} color="text-blue-600 dark:text-blue-500">Flowbite app will help you improve yourself by analysing your everyday life.</P>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">P</Heading>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Span</Heading>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>

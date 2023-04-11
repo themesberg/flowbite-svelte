@@ -6,36 +6,31 @@ dir: Components
 description: Use the banner component to show marketing messages and CTA buttons at the top or bottom side of your website based on the utility classes from Tailwind CSS
 ---
 
-
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
-  // Props table
+  import { GitHubSourceList, TableProp, TableDefaultRow } from '../utils'
+  import { P, A } from '$lib'
+
   import { props as bannerProps } from '../props/Banner.json'
-	let propHeader = ['Name', 'Type', 'Default']
-	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/banner/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 Get started with the sticky banner component coded with Tailwind CSS and Flowbite to show marketing, informational and CTA messages to your website visitors fixed to the top or bottom part of the page as the user scroll down the main content area.
 
 Explore the following examples based on various styles, sizes, and positionings to leverage the sticky banner component and increase marketing conversions with a responsive element supporting dark mode.
 
-<Htwo label="Setup" />
+## Setup
 
-```svelte
+```svelte example hideOutput
 <script>
   import { Banner } from "flowbite-svelte"
 </script>
 ```
 
-<Htwo label="Default sticky banner" />
+## Default sticky banner
 
 Use this free example to show a text message for announcement with a CTA link, an icon element and a close button to dismiss the banner.
 
@@ -60,7 +55,7 @@ Use this free example to show a text message for announcement with a CTA link, a
 </Banner>
 ```
 
-<Htwo label="Bottom banner position" />
+## Bottom banner position
 
 This example can be used to position the sticky banner to the bottom side of the page instead of the top side.
 
@@ -85,7 +80,7 @@ This example can be used to position the sticky banner to the bottom side of the
 </Banner>
 ```
 
-<Htwo label="Marketing CTA banner" />
+## Marketing CTA banner
 
 Use this free example to show a text message for announcement with a CTA link. 
 
@@ -108,7 +103,7 @@ Use this free example to show a text message for announcement with a CTA link.
 </Banner>
 ```
 
-<Htwo label="Newsletter sign-up banner " />
+## Newsletter sign-up banner 
 
 This example can be used to encourage your website visitors to sign up to your email newsletter by showing an inline form inside the sticky banner on the top side of your page.
 
@@ -129,7 +124,7 @@ This example can be used to encourage your website visitors to sign up to your e
 </Banner>
 ```
 
-<Htwo label="Informational banner" />
+## Informational banner
 
 This example can be used to share important information with your website visitors by showing a heading and a paragraph inside the sticky banner and two CTA buttons with links.
 
@@ -155,7 +150,7 @@ This example can be used to share important information with your website visito
 </Banner>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
@@ -163,11 +158,11 @@ If you want to custom CSS, use `bannerType="custom"` and add your CSS to `outerD
 
 Use the slot name `header` to insert your elements before the inner div.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
 <TableDefaultRow items={bannerProps} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/banner/" target="_blank" rel="noreferrer" class="link">

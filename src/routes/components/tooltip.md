@@ -6,33 +6,29 @@ dir: Components
 description: Use the following Tailwind CSS powered tooltips to show extra content when hovering or focusing on an element
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
+  import { P, A } from '$lib'
   import { props as items } from '../props/Tooltip.json'
   import { props as items2 } from '../props/Frame.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/tooltips/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 Flowbite-Svelte allows you to show extra information when hovering or focusing over an element in multiple positions, styles, and animations.
 
-<Htwo label="Setup" />
+## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Tooltip } from 'flowbite-svelte';
 </script>
 ```
 
-<Htwo label="Default tooltip example" />
+## Default tooltip example
 
 To get started with using tooltips all you need to do is set `triggeredBy` attribute of the tooltip component to any CSS query targeting trigger element(s). In the following example you can see the tooltip that will be trigger by the `tooltip-default` element to be shown when hovered or focused.
 
@@ -45,7 +41,7 @@ To get started with using tooltips all you need to do is set `triggeredBy` attri
 <Tooltip>Tooltip content</Tooltip>
 ```
 
-<Htwo label="Tooltip styles" />
+## Tooltip styles
 
 You can use choose between dark and light version styles for the tooltip component by changing the utility classes from Tailwind CSS and by applying the `style={light|dark}` data attribute.
 
@@ -61,7 +57,7 @@ You can use choose between dark and light version styles for the tooltip compone
 <Tooltip {style} triggeredBy="[id^='style-']" on:show={ev => style = ev.target.id.split('-')[1]}>Tooltip content</Tooltip>
 ```
 
-<Htwo label="Placement" />
+## Placement
 
 The positioning of the tooltip element relative to the triggering element (eg. button, link) can be set using the `placement={top|right|bottom|left}` attribute.
 
@@ -82,7 +78,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 </Tooltip>
 ```
 
-<Htwo label="Triggering" />
+## Triggering
 
 ```svelte example class="flex items-end gap-2 h-32"
 <script>
@@ -95,7 +91,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 <Tooltip trigger="click" triggeredBy="#click">Click tooltip content</Tooltip>
 ```
 
-<Htwo label="Disable arrow" />
+## Disable arrow
 
 ```svelte example class="flex items-end gap-2 h-32"
 <script>
@@ -106,7 +102,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 <Tooltip arrow={false} triggeredBy='#disable-arrow'>Tooltip content</Tooltip>
 ```
 
-<Htwo label="Custom style" />
+## Custom style
 
 Various color palettes can be set for a tooltip by using the `color` property from the underlying `Frame` component.
 (Setting `color` prop sets the `style` to `custom` implicitly.)
@@ -136,26 +132,26 @@ When you want to add a fully custom styles, use `style="custom"`, `defaultClass`
 </Tooltip>
 ```
 
-<Htwo label="Props" />
+## Props
 
-<h3 class='text-xl w-full dark:text-white py-4'>Tooltip</h3>
+### Tooltip
 
 The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Frame</h3>
+### Frame
 
 The component inherits the following props, type, and default values from `Frame`. See [types page](/pages/types) for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/tooltips/" target="_blank" rel="noreferrer" class="link"

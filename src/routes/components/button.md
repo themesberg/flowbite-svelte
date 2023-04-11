@@ -6,16 +6,12 @@ dir: Components
 description: Use the button component inside forms, as links, social login, payment options with support for multiple styles, colors, sizes, gradients, and shadows
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
-  // Props table
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
+  import { Badge, P, A } from '$lib'
+
   import { props as buttonProps } from '../props/Button.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // slots
   let slotHeader = ['Name', 'Description']
   let slotItems = [['default', 'For a button label.']]
@@ -23,23 +19,23 @@ description: Use the button component inside forms, as links, social login, paym
   const libFiles = import.meta.glob('../../lib/buttons/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The button component is probably the most widely used element in any user interface or website as it can be used to launch an action but also to link to other pages.
 
 Flowbite-Svelte provides a large variety of styles and sizes for the button component including outlined buttons, multiple colors, sizes, buttons with icons, and more.
 
-<Htwo label="Setup" />
+## Setup
 
 Import a button component in the script tag.
 
-```html
+```svelte example hideOutput
 <script>
   import { Button } from 'flowbite-svelte';
 </script>
 ```
 
-<Htwo label="Default button" />
+## Default button
 
 Use these default button styles with multiple colors to indicate an action or link within your website. The default `type` is set to `button`. You can change it by using the `type` prop.
 
@@ -58,7 +54,7 @@ Use these default button styles with multiple colors to indicate an action or li
 <Button color="purple">Purple</Button>
 ```
 
-<Htwo label="Button with link" />
+## Button with link
 
 You can add a link to a Button component:
 
@@ -69,8 +65,7 @@ You can add a link to a Button component:
 <Button href="/">Home</Button>
 ```
 
-
-<Htwo label="Button pills" />
+## Button pills
 
 The button pills can be used as an alternative style by using fully rounded edges.
 
@@ -88,7 +83,7 @@ The button pills can be used as an alternative style by using fully rounded edge
 <Button color="purple" pill={true}>Purple</Button>
 ```
 
-<Htwo label="Gradient monochrome" />
+## Gradient monochrome
 
 These beautifully colored buttons built with the gradient color stops utility classes from Tailwind CSS can be used as a creative alternative to the default button styles.
 
@@ -106,7 +101,7 @@ These beautifully colored buttons built with the gradient color stops utility cl
 <Button gradient color="purple">Purple</Button>
 ```
 
-<Htwo label="Gradient duotone" />
+## Gradient duotone
 
 These buttons use a style that includes two contrasted colors creating an impressive mesh gradient effect.
 
@@ -123,7 +118,7 @@ These buttons use a style that includes two contrasted colors creating an impres
 <Button gradient color="redToYellow">Red to Yellow</Button>
 ```
 
-<Htwo label="Gradient outline" />
+## Gradient outline
 
 This is a special button style that incorporates a gradient color for the outline that can be used as a secondary style to the fully colored gradient buttons.
 
@@ -140,7 +135,7 @@ This is a special button style that incorporates a gradient color for the outlin
 <Button outline gradient color="redToYellow">Red to Yellow</Button>
 ```
 
-<Htwo label="Colored shadows" />
+## Colored shadows
 
 These beautiful button elements with color shadows can be used since the release of Tailwind v3.0.
 
@@ -158,7 +153,7 @@ These beautiful button elements with color shadows can be used since the release
 <Button shadow="purple" gradient color="purple">Purple</Button>
 ```
 
-<Htwo label="Outline buttons" />
+## Outline buttons
 
 Use the following button styles to show the colors only for the border of the element.
 
@@ -176,7 +171,7 @@ Use the following button styles to show the colors only for the border of the el
 </div>
 ```
 
-<Htwo label="Button sizes" />
+## Button sizes
 
 Use these examples if you want to use smaller or larger buttons.
 
@@ -191,7 +186,7 @@ Use these examples if you want to use smaller or larger buttons.
 <Button size="xl">Extra large</Button>
 ```
 
-<Htwo label="Buttons with icon" />
+## Buttons with icon
 
 Use the following examples to add a SVG icon inside the button either on the left or right side.
 
@@ -207,7 +202,7 @@ Use the following examples to add a SVG icon inside the button either on the lef
 </Button>
 ```
 
-<Htwo label="Button with label" />
+## Button with label
 
 This example can be used to show a notification count or helper text inside a button using the badge element.
 
@@ -223,7 +218,7 @@ This example can be used to show a notification count or helper text inside a bu
 </Button>
 ```
 
-<Htwo label="Icon buttons" />
+## Icon buttons
 
 Sometimes you need a button to indicate an action using only an icon.
 
@@ -239,7 +234,7 @@ Sometimes you need a button to indicate an action using only an icon.
 </div>
 ```
 
-<Htwo label="Loader" />
+## Loader
 
 Use the spinner components from Flowbite-Svelte to indicate a loader animation inside buttons.
 
@@ -255,7 +250,7 @@ Use the spinner components from Flowbite-Svelte to indicate a loader animation i
 </Button>
 ```
 
-<Htwo label="Disabled" />
+## Disabled
 
 You can add any additional button attributes. The following example shows adding the `disabled` attribute.
 
@@ -266,7 +261,7 @@ You can add any additional button attributes. The following example shows adding
 <Button disabled >Disabled</Button>
 ```
 
-<Htwo label="Events" />
+## Events
 
 You can use on:click or any standard on:* to listen to the event.
 
@@ -284,26 +279,26 @@ You can use on:click or any standard on:* to listen to the event.
 <Button on:click={btn2}>Button 2</Button>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
 <TableDefaultRow items={buttonProps} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Custom CSS</h3>
+### Custom CSS
 
 Use `btnClass` to overwrite Button class.
 
-<Htwo label="Slots" />
+## Slots
 
-<TableProp header={slotHeader} {divClass} {theadClass}>
+<TableProp header={slotHeader}>
   <TableDefaultRow items={slotItems} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events" />
+## Forwarded Events
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:change</Badge>
@@ -314,7 +309,7 @@ Use `btnClass` to overwrite Button class.
 <Badge large={true}>on:mouseleave</Badge>
 </div>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/buttons/" target="_blank" rel="noreferrer" class="link"

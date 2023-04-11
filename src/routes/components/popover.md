@@ -6,36 +6,32 @@ dir: Components
 description: Use the popover component to show detailed information inside a pop-up box relative to the element that is being clicked or hovered based on multiple styles
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow , MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
+  import { GitHubSourceList, TableProp, TableDefaultRow , } from '../utils'
+  import { P, A } from '$lib'
   import { props as items } from '../props/Popover.json'
   import { props as items2 } from '../props/Popper.json'
   import { props as items3 } from '../props/Frame.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/popover/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 Get started with the popover component to show any type of content inside a pop-up box when hovering or clicking over a trigger element. There are multiple examples that you can choose from, such as showing more information about a user profile, company profile, password strength, and more.
 
 Make sure that you have the Flowbite JavaScript included in your project to enable the popover interactivity by following the quickstart guide.
 
-<Htwo label="Setup" />
+## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Popover } from 'flowbite-svelte'
 </script>
 ```
 
-<Htwo label="Default popover" />
+## Default popover
 
 ```svelte example class="flex h-44 items-end justify-center"
 <script>
@@ -48,7 +44,7 @@ Make sure that you have the Flowbite JavaScript included in your project to enab
 </Popover>
 ```
 
-<Htwo label="User profile" />
+## User profile
 
 Use this example to show more information about a user profile when hovering over the trigger component.
 
@@ -89,7 +85,7 @@ Use this example to show more information about a user profile when hovering ove
 </Popover>
 ```
 
-<Htwo label="Company profile" />
+## Company profile
 
 This example can be used to show more information about a company profile.
 
@@ -142,7 +138,7 @@ This example can be used to show more information about a company profile.
 </Popover>
 ```
 
-<Htwo label="Image popover" />
+## Image popover
 
 Use this example to trigger a popover component with detailed information and an image when hovering over a portion of highlighted text inspired by Wikipedia and other large news outlets.
 
@@ -156,7 +152,7 @@ Use this example to trigger a popover component with detailed information and an
   <div class="grid grid-cols-5">
     <div class="col-span-3 p-3">
       <div class="space-y-2">
-        <h3 class="font-semibold text-gray-900 dark:text-white">About Italy</h3>
+        ### About Italy
         <p class="text-gray-500 dark:text-gray-500">Italy is located in the middle of the Mediterranean Sea, in Southern Europe it is also considered part of Western Europe. A unitary parliamentary republic with Rome as its capital and largest city.</p>
         <a href="/" class="flex items-center font-medium text-blue-600 dark:text-blue-500 dark:hover:text-blue-600 hover:text-blue-700">Read more <svg class="ml-1 w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></a>
       </div>
@@ -166,7 +162,7 @@ Use this example to trigger a popover component with detailed information and an
 </Popover>
 ```
 
-<Htwo label="Description popover" />
+## Description popover
 
 Show helpful information inside a popover when hovering over a question mark button.
 
@@ -182,16 +178,16 @@ Show helpful information inside a popover when hovering over a question mark but
 </div>
 <Popover triggeredBy="#b3" class="w-72 text-sm font-light text-gray-500 bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400" placement="bottom-start">
   <div class="p-3 space-y-2">
-      <h3 class="font-semibold text-gray-900 dark:text-white">Activity growth - Incremental</h3>
+      ### Activity growth - Incremental
       Report helps navigate cumulative growth of community activities. Ideally, the chart should have a growing trend.
-      <h3 class="font-semibold text-gray-900 dark:text-white">Calculation</h3>
+      ### Calculation
       For each date bucket, the all-time volume of activities is calculated. This means that activities in period n contain all activities up to period n.
       <a href="/" class="flex items-center font-medium text-blue-600 dark:text-blue-500 dark:hover:text-blue-600 hover:text-blue-700">Read more <ChevronRight size="12" /></a>
   </div>
 </Popover>
 ```
 
-<Htwo label="Progress popover" />
+## Progress popover
 
 Show a progress bar with details inside a popover when hovering over a settings button.
 
@@ -203,7 +199,7 @@ Show a progress bar with details inside a popover when hovering over a settings 
 <Button id="progress"><svg class="mr-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z"></path><path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z"></path><path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z"></path></svg> Storage status</Button>
 <Popover triggeredBy="#progress" class="text-sm w-64 font-light">
   <div class="space-y-2">
-    <h3 class="font-semibold text-gray-900 dark:text-white">Available storage</h3>
+    ### Available storage
     <p class="text-gray-500 dark:text-gray-400">This server has <span class="font-semibold text-gray-900 dark:text-white">30</span> of <span class="font-semibold text-gray-900 dark:text-white">150 GB</span> of block storage remaining.</p>
     <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
         <div class="bg-red-600 h-2.5 rounded-full" style="width: 85%"></div>
@@ -215,7 +211,7 @@ Show a progress bar with details inside a popover when hovering over a settings 
 </Popover>
 ```
 
-<Htwo label="Password strength" />
+## Password strength
 
 Dynamically show the password strength progress when creating a new password positioned relative to the input element.
 
@@ -237,7 +233,7 @@ Dynamically show the password strength progress when creating a new password pos
   <Button type="submit">Submit</Button>
 </form>
 <Popover class="text-sm" triggeredBy="#password" placement="bottom">
-  <h3 class="font-semibold text-gray-900 dark:text-white">Must have at least 6 characters</h3>
+  ### Must have at least 6 characters
   <div class="grid grid-cols-4 gap-2">
       <div class="h-1 bg-orange-300 dark:bg-orange-400"></div>
       <div class="h-1 bg-orange-300 dark:bg-orange-400"></div>
@@ -261,7 +257,7 @@ Upper &amp; lower case letters
 </Popover>
 ```
 
-<Htwo label="Placement" />
+## Placement
 
 Set the position of the popover component relative to the trigger element by using the `placement={top|right|bottom|left}` data attribute and its values.
 
@@ -282,7 +278,7 @@ Set the position of the popover component relative to the trigger element by usi
 </Popover>
 ```
 
-<Htwo label="Triggering" />
+## Triggering
 
 ```svelte example class="flex h-44 items-end justify-center gap-4"
 <script>
@@ -299,7 +295,7 @@ Set the position of the popover component relative to the trigger element by usi
 </Popover>
 ```
 
-<Htwo label="Offset" />
+## Offset
 
 Increase or decrease the default offset by adding the `offset` attribute where the value is an integer.
 
@@ -314,7 +310,7 @@ Increase or decrease the default offset by adding the `offset` attribute where t
 </Popover>
 ```
 
-<Htwo label="Animation" />
+## Animation
 
 Customize the animation of the popover component by using the transition functions from Svelte.
 
@@ -338,7 +334,7 @@ Customize the animation of the popover component by using the transition functio
 </Popover>
 ```
 
-<Htwo label="Disable arrow" />
+## Disable arrow
 
 You can also disable the popover arrow by setting `arrow` attribute to `false`.
 
@@ -353,33 +349,33 @@ You can also disable the popover arrow by setting `arrow` attribute to `false`.
 </Popover>
 ```
 
-<Htwo label="Props" />
+## Props
 
-<h3 class='text-xl w-full dark:text-white py-4'>Popover</h3>
+### Popover
 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.</p>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Popper</h3>
+### Popper
 
 The component inherits the following props, type, and default values from `Popper`. See <A href="/pages/types">types page</A> for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Frame</h3>
+### Frame
 
 The component inherits the following props, type, and default values from `Frame`. See <A href="/pages/types">types page</A> for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/popover/" target="_blank" rel="noreferrer" class="link">Flowbite Popover</A>

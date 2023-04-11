@@ -1,39 +1,35 @@
 ---
-layout: formLayout
+layout: componentLayout
 title: Svelte Checkbox - Flowbite
 breadcrumb_title: Checkbox
 dir: Forms
 description: Get started with the checkbox component to allow the user to select one or more options in the form of a square box available in multiple sizes and colors
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Badge, Heading, A } from '$lib'
+  import { GitHubSourceList, TableProp, TableDefaultRow } from '../utils'
+  import { Badge, A } from '$lib'
   import { props as items } from '../props/Radio.json'
   import { props as items2 } from '../props/Label.json'
   import { props as items3 } from '../props/Helper.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/forms/Checkbox.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The checkbox component can be used to receive one or more selected options from the user in the form of a square box available in multiple styles, sizes, colors, and variants.
 
-<Htwo label="Setup" />
+## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Checkbox } from 'flowbite-svelte'
 </script>
 ```
 
-<Htwo label="Checkbox examples" />
+## Checkbox examples
 
 Use this default example of a checbkox element in a checked and unchecked state.
 
@@ -46,7 +42,7 @@ Use this default example of a checbkox element in a checked and unchecked state.
 <Checkbox checked>Checked state</Checkbox>
 ```
 
-<Htwo label="Disabled state" />
+## Disabled state
 
 This example can be used for the disabled state of the checkbox component by applying the disabled attribute to the input element.
 
@@ -59,7 +55,7 @@ This example can be used for the disabled state of the checkbox component by app
 <Checkbox disabled checked>Disabled checked</Checkbox>
 ```
 
-<Htwo label="Alternative syntax" />
+## Alternative syntax
 
 If you need separate control over the label and the checkbox you can use the verbose syntax, but then you need to take care about aligning manually.
 
@@ -90,7 +86,7 @@ If you need separate control over the label and the checkbox you can use the ver
 </Label>
 ```
 
-<Htwo label="Checkbox with a link" />
+## Checkbox with a link
 
 Use this example if you want to add an anchor link inside the label of the checkbox component.
 
@@ -105,7 +101,7 @@ Use this example if you want to add an anchor link inside the label of the check
 </Checkbox>
 ```
 
-<Htwo label="Helper text" />
+## Helper text
 
 Get started with this example if you want to add a secondary helper text for the checkbox component.
 
@@ -118,7 +114,7 @@ Get started with this example if you want to add a secondary helper text for the
 <Helper id="helper-checkbox-text" class="pl-6">For orders shipped from $25 in books or $29 in other categories</Helper>
 ```
 
-<Htwo label="Bordered" />
+## Bordered
 
 Use this example of a checkbox inside a card element to enable a larger area of clicking activation.
 
@@ -135,7 +131,7 @@ Use this example of a checkbox inside a card element to enable a larger area of 
 </div>
 ```
 
-<Htwo label="Checkbox list group" />
+## Checkbox list group
 
 Use this example to show a list of checkbox items grouped inside a card.
 
@@ -155,7 +151,7 @@ Use this example to show a list of checkbox items grouped inside a card.
 </ul>
 ```
 
-<Htwo label="Horizontal list group" />
+## Horizontal list group
 
 Use this example to show a list of checkbox items inside a card horizontally.
 
@@ -173,7 +169,7 @@ Use this example to show a list of checkbox items inside a card horizontally.
 </ul>
 ```
 
-<Htwo label="Checkbox dropdown" />
+## Checkbox dropdown
 
 Use this example to show a list of checkbox items inside a dropdown menu.
 
@@ -211,7 +207,7 @@ Use this example to show a list of checkbox items inside a dropdown menu.
 </Dropdown>
 ```
 
-<Htwo label="Inline layout" />
+## Inline layout
 
 You can align the checkbox elements horizontally by using a wrapper tag and applying the flex class.
 
@@ -241,7 +237,7 @@ You can use the property `inline` as the alternative.
 <Checkbox inline class="mr-2" disabled>Inline disabled</Checkbox>
 ```
 
-<Htwo label="Colors" />
+## Colors
 
 ```svelte example hideScript
 <script>
@@ -258,7 +254,7 @@ You can use the property `inline` as the alternative.
 </div>
 ```
 
-<Htwo label="Advanced layout" />
+## Advanced layout
 
 Use this example of an advanced layout of checkbox elements where the label parent element can be styled when the checkbox is checked.
 
@@ -293,7 +289,7 @@ Use this example of an advanced layout of checkbox elements where the label pare
 </div>
 ```
 
-<Htwo label="Group variable" />
+## Group variable
 
 ```svelte example
 <script>
@@ -312,26 +308,26 @@ Use this example of an advanced layout of checkbox elements where the label pare
 
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <a href="/pages/types">types
 page</a> for type information.
 
 All attributes of the `input` element like: name, id, autofocus, etc, can be set directly as component props.
 
-<h3 class='text-xl w-full dark:text-white py-4'>Checkbox</h3>
+### Checkbox
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
 <TableDefaultRow items={items} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Helper</h3>
+### Helper
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
 <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events" />
+## Forwarded Events
 
 <div class="flex flex-wrap gap-2">
 <Badge large={true}>on:click</Badge>

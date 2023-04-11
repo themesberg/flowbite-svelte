@@ -1,32 +1,23 @@
 ---
-layout: pageLayout
+layout: componentLayout
 breadcrumb_title: Faster Compiling Speed
 title: Faster Compiling Speed
 dir: Pages
 description: Flowbite-Svelte Faster Compiling Speed
 ---
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv , MetaTag } from '../utils'
-  import { A, P, List, Li, Breadcrumb, BreadcrumbItem, Alert, Heading, Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from '$lib'
+  import { A, P, List, Li, Alert, Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from '$lib'
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
+If your Svelte app only requires a few components, it's recommended that you import them directly. Doing so can help optimize compilation speed and improve performance by reducing the amount of code that needs to be processed during compilation. Since version 0.34.1, it's now possible to import individual components.
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
-
-<P class='mb-8'>If your Svelte app only requires a few components, it's recommended that you import them directly. Doing so can help optimize compilation speed and improve performance by reducing the amount of code that needs to be processed during compilation. Since version 0.34.1, it's now possible to import individual components.</P>
-
-
-```html
+```svelte example 
 <script>
-  import Alert from 'flowbite-svelte/Alert.svelte'
-<script>
+  // import Alert from 'flowbite-svelte/Alert.svelte'
+  // TODO: correct that so the above works
+  import { Alert } from 'flowbite-svelte'
+</script>
 
 <div class="p-8">
   <Alert>
@@ -35,7 +26,7 @@ description: Flowbite-Svelte Faster Compiling Speed
 </div>
 ```
 
-<Htwo label="Requirements" />
+## Requirements
 
 If you are a TypeScript user, install typescript version 5.0.0 or above.
 
@@ -57,8 +48,7 @@ To avoid any complaints from the editor, add node16 or nodenext to moduleResolut
 }
 ```
 
-
-<Htwo label="Speed comparisons" />
+## Speed comparisons
 
 <Table class="my-8">
   <TableHead>
@@ -90,7 +80,7 @@ To avoid any complaints from the editor, add node16 or nodenext to moduleResolut
   </TableBody>
 </Table>
 
-<P>The above table shows examples from using `import Alert from 'flowbite-svelte/Alert.svelte'`. Compare these numbers to the following table where using normal import.</P>
+The above table shows examples from using `import Alert from 'flowbite-svelte/Alert.svelte'`. Compare these numbers to the following table where using normal import.
 
 <Table class="my-8">
   <TableHead>

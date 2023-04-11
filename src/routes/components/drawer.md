@@ -6,34 +6,30 @@ dir: Components
 description: The Drawer component can be used as a hidden off-canvas sidebar for navigation and to show other information based on multiple styles and placements
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import {  Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib';
-  // Props table
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
+  import { Heading, P, A } from '$lib';
+
   import { props as items} from '../props/Drawer.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/drawer/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 Use the Drawer component (or “off-canvas”) to show a fixed element relative to the document page from any side for navigation, contact forms, informational purposes or other user actions.
 
-<Htwo label="Set up" />
+## Set up
 
-```html
+```svelte example hideOutput
 <script>
   import { Drawer, Button, CloseButton } from 'flowbite-svelte';
   import { sineIn } from 'svelte/easing';
 </script>
 ```
 
-<Htwo label="Default drawer" />
+## Default drawer
 
 To initiate the drawer component you need to set the `let hidden=true`, `width` props to the drawer component itself.
 
@@ -78,7 +74,7 @@ For accessibility you should also set the `id` prop to the element. This will ad
 </Drawer>
 ```
 
-<Htwo label="Drawer navigation" />
+## Drawer navigation
 
 Use this example to show a navigational sidebar inside the drawer component.
 
@@ -159,7 +155,7 @@ Use this example to show a navigational sidebar inside the drawer component.
 </Drawer>
 ```
 
-<Htwo label='Contact form' />
+## Contact form
 
 Use this example to show a contact form inside the drawer component.
 
@@ -208,7 +204,7 @@ Use this example to show a contact form inside the drawer component.
 </Drawer>
 ```
 
-<Htwo label='Form elements' />
+## Form elements
 
 Use this example if you want to add form elements inside the drawer component including datepickers.
 
@@ -263,7 +259,7 @@ Use this example if you want to add form elements inside the drawer component in
 </Drawer>
 ```
 
-<Htwo label="Placement" />
+## Placement
 
 Use the placement prop to position the drawer component either on the top, right, bottom, or left side of the document page. This can be done using the `placement='left|right|top|bottom'` where the default value is “left”.
 
@@ -422,7 +418,7 @@ Use this example to show the drawer on the bottom side of the page.
     easing: sineIn
   };
 </script>
-  
+
 <div class="text-center">
   <Button on:click={() => (hidden8 = false)}>Show drawer</Button>
 </div>
@@ -448,7 +444,7 @@ Use this example to show the drawer on the bottom side of the page.
 </Drawer>
 ```
 
-<Htwo label="Backdrop" />
+## Backdrop
 
 The backdrop element can be used to dim out the background elements when the drawer is visible and also automatically hide the component when clicking outside of it.
 
@@ -457,7 +453,6 @@ Use the `backdrop="false|true"` prop where you can disable or enable the backdro
 <Heading tag="h3" customSize="text-xl font-semibold" class='my-4'>Enabled (default)</Heading>
 
 Use this example to enable the backdrop element by default.
-
 
 ```svelte example
 <script>
@@ -543,7 +538,7 @@ Use the `backdrop={false}` prop to disable the backdrop element when the drawer 
 </Drawer>
 ```
 
-<Htwo label='Position'/>
+## Position
 
 Use `leftOffset|rightOffset|topOffset|bottomOffset` prop to change the position of the drawer.
 
@@ -613,11 +608,10 @@ Use `leftOffset|rightOffset|topOffset|bottomOffset` prop to change the position 
 </Drawer>
 ```
 
-<Htwo label='Disabling outside click and backdrop'/>
+## Disabling outside click and backdrop
 
 As the default, the drawer closes when you click the outside of the drawer.
 However sometimes you don't want that. Set `activateClickOutside` to false to disable it.
-
 
 ```svelte example
 <script>
@@ -656,7 +650,7 @@ However sometimes you don't want that. Set `activateClickOutside` to false to di
 </Drawer>
 ```
 
-<Htwo label="Disabling only outside click" />
+## Disabling only outside click
 
 ```svelte example
 <script>
@@ -698,16 +692,16 @@ However sometimes you don't want that. Set `activateClickOutside` to false to di
 </Drawer>
 ```
 
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
 <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/drawer/" target="_blank" rel="noreferrer" class="link"

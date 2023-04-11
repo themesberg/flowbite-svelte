@@ -6,34 +6,30 @@ dir: Components
 description: Use the list group component to display a series of items, buttons or links inside a single element
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
+  import { Badge, Heading, P, A } from '$lib'
   import { props as items1 } from '../props/Listgroup.json'
   import { props as items2 } from '../props/ListgroupItem.json'
-  // Props table
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
+
   // lib files
   const libFiles = import.meta.glob('../../lib/list-group/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The list group component can be used to display a series of elements, buttons or links inside a single card component similar to a sidebar.
 
-<Htwo label="Setup" />
+## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Listgroup, ListgroupItem } from 'flowbite-svelte'
 </script>
 ```
 
-<Htwo label="Default list group" />
+## Default list group
 
 Here’s an example of a list group that you can use right away.
 
@@ -48,7 +44,7 @@ Here’s an example of a list group that you can use right away.
 </Listgroup>
 ```
 
-<Htwo label="List group with links" />
+## List group with links
 
 You can also display a series of links inside the list group element. Notice how items provide the `href` field.
 
@@ -72,7 +68,7 @@ If list is active and data items contain `href` field entries are presented as `
 </Listgroup>
 ```
 
-<Htwo label="List group with buttons" />
+## List group with buttons
 
 It is also possible to display a list of button element inside the list group component. The following example includes an active and disabled item as well.
 
@@ -96,7 +92,7 @@ If list is active and data items do not contain `href` field entries are present
 </Listgroup>
 ```
 
-<Htwo label="List group with icons" />
+## List group with icons
 
 Use the following example to create a list of buttons as a menu together with SVG icons.
 
@@ -117,7 +113,7 @@ Use the following example to create a list of buttons as a menu together with SV
 </Listgroup>
 ```
 
-<Htwo label="Advanced" />
+## Advanced
 
 When non standard usage is needed you can omit the `items` props and add elements directly to the list.
 Usage of hidden so far `ListgroupItem` helps you with proper layout.
@@ -128,7 +124,7 @@ Usage of hidden so far `ListgroupItem` helps you with proper layout.
 </script>
 
 <Listgroup active class="w-48">
-    <h3 class="text-center bg-red-500 text-white font-bold rounded-t-lg">User list</h3>
+    ### User list
     <ListgroupItem class="text-base font-semibold gap-2">
       <Avatar src="/images/profile-picture-1.webp" size="xs"/>Jese Leos
     </ListgroupItem>
@@ -145,24 +141,24 @@ Delete user
 </Listgroup>
 ```
 
-<Htwo label="Props" />
+## Props
 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Listgroup</h3>
+### Listgroup
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>ListgroupItem</h3>
+### ListgroupItem
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events" />
+## Forwarded Events
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">ListgroupItem</Heading>
 
@@ -179,7 +175,7 @@ Delete user
 <Badge large={true}>on:mouseover</Badge>
 </div>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/list-group/" target="_blank" rel="noreferrer" class="link"

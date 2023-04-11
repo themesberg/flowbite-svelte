@@ -6,12 +6,10 @@ dir: Components
 description: Use the sidebar component to show a list of menu items and multi-level dropdown items on either side of the page to navigate on your website
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
   import { page } from '$app/stores';
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Badge, Heading, P, A } from '$lib'
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
+  import { Badge, Heading, P, A } from '$lib'
   import { props as items } from '../props/Sidebar.json'
   import { props as items2 }  from '../props/SidebarBrand.json'
   import { props as items3 }  from '../props/SidebarCta.json'
@@ -20,26 +18,25 @@ description: Use the sidebar component to show a list of menu items and multi-le
   import { props as items6 }  from '../props/SidebarGroup.json'
   import { props as items7 }  from '../props/SidebarItem.json'
   import { props as items8 }  from '../props/SidebarWrapper.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/sidebars/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The sidebar component can be used as a complementary element relative to the navbar shown on either the left or right side of the page used for the navigation on your web application, including menu items, multi-level dropdown items, call to actions elements, and more.
 
-<Htwo label="Setup" />
+## Setup
 
-```html
+```svelte example hideOutput
 <script>
-  import { Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper } from 'flowbite-svelte';
+  import { Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, 
+           SidebarGroup, SidebarItem, SidebarWrapper } from 'flowbite-svelte';
 </script>
 ```
 
-<Htwo label="Default sidebar" />
+## Default sidebar
 
 Use this example to show a responsive list of menu items inside the sidebar with icons and labels.
 
@@ -101,7 +98,7 @@ Use this example to show a responsive list of menu items inside the sidebar with
 </Sidebar>
 ```
 
-<Htwo label="Multi-level dropdown" />
+## Multi-level dropdown
 
 Use this sidebar example to create multi-level menu items by using the dSidebarDropdownWrapper and SidebarDropdownItem components.
 
@@ -171,7 +168,6 @@ Use this sidebar example to create multi-level menu items by using the dSidebarD
 
 You can change the icons using `arrowup` and `arrowdown` slots.
 
-
 ```svelte example
 <script>
   import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownItem, SidebarDropdownWrapper } from 'flowbite-svelte';
@@ -205,7 +201,7 @@ You can change the icons using `arrowup` and `arrowdown` slots.
 </Sidebar>
 ```
 
-<Htwo label="Active item" />
+## Active item
 
 Use the following example to show the active item. Use the `activeClass` prop to change the style.
 
@@ -256,7 +252,7 @@ Use the following example to show the active item. Use the `activeClass` prop to
 </Sidebar>
 ```
 
-<Htwo label="Content separator" />
+## Content separator
 
 Separate the content inside the sidebar component by applying a border separator to the SidebarGroup component.
 
@@ -338,7 +334,7 @@ Separate the content inside the sidebar component by applying a border separator
 </Sidebar>
 ```
 
-<Htwo label="CTA button" />
+## CTA button
 
 Use this example to add a CTA button inside the sidebar component and encourage your users to visit the dedicated page.
 
@@ -420,10 +416,9 @@ Use this example to add a CTA button inside the sidebar component and encourage 
 </Sidebar>
 ```
 
-<Htwo label="Logo branding" />
+## Logo branding
 
 Show the logo of your brand and link back to the homepage from the top part of the sidebar.
-
 
 ```svelte example
 <script>
@@ -488,7 +483,7 @@ Show the logo of your brand and link back to the homepage from the top part of t
 </Sidebar>
 ```
 
-<Htwo label="Transition" />
+## Transition
 
 You can add own transition by setting `transitionType` and `transitionParams`. 
 
@@ -527,60 +522,59 @@ You can add own transition by setting `transitionType` and `transitionParams`.
 </Sidebar>
 ```
 
-
-<Htwo label="Props" />
+## Props
 
 The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
 
-<h3 class='text-xl w-full dark:text-white py-4'>Sidebar</h3>
+### Sidebar
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>SidebarBrand</h3>
+### SidebarBrand
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>SidebarCta</h3>
+### SidebarCta
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>SidebarDropdownItem</h3>
+### SidebarDropdownItem
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>SidebarDropdownWrapper</h3>
+### SidebarDropdownWrapper
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>SidebarGroup</h3>
+### SidebarGroup
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>SidebarItem</h3>
+### SidebarItem
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items7} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>SidebarWrapper</h3>
+### SidebarWrapper
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items8} rowState='hover' />
 </TableProp>
 
-<Htwo label="Forwarded Events" />
+## Forwarded Events
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">SidebarDropdownItem, SidebarItem</Heading>
 
@@ -596,7 +590,7 @@ The component has the following props, type, and default values. See <A href="/p
 <Badge large={true}>on:mouseover</Badge>
 </div>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/sidebar/" target="_blank" rel="noreferrer" class="link"

@@ -6,25 +6,21 @@ dir: Components
 description: Learn how to configure and build a dark mode switcher for Flowbite using Tailwind CSS and start developing with the components from the library
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
-  // Props table
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
+  import { P, A } from '$lib'
+
   import { props as items} from '../props/DarkMode.json'
-	let propHeader = ['Name', 'Type', 'Default']
-	let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'  
+
   // lib files
   const libFiles = import.meta.glob('../../lib/darkmode/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 <p>In Flowbite-Svelte, the `class` strategy is used to support toggling dark mode manually, so you should explicitly configure it in Talwind CSS:</p>
 
-```js
+```js example 
 // tailwind.config.cjs
 const config = {
   darkMode: 'class'
@@ -34,7 +30,7 @@ const config = {
 
 <p>Then you can use `dark:` prefixed classes to configure the styles applied when dark mode is enabled. For example, if you want to change the body background color from `bg-white` when dark mode is disabled to `bg-gray-800` when dark mode is enabled:</p>
 
-```html
+```svelte example hideOutput
 <!-- src/app.html -->
 <body class="bg-white dark:bg-gray-800">
   <div>%svelte.body%</div>
@@ -52,7 +48,7 @@ const config = {
 <DarkMode />
 ```
 
-<Htwo label="Switcher style" />
+## Switcher style
 
 <p>Use the `btnClass` prop to overwrite the default classes:</p>
 
@@ -76,7 +72,7 @@ const config = {
 <DarkMode class="text-2xl" />
 ```
 
-<Htwo label="Mode icon" />
+## Mode icon
 
 <p>Use the `lightIcon` and `darkIcon` slots to change icons:</p>
 
@@ -95,16 +91,16 @@ const config = {
 </DarkMode>
 ```
 
-<Htwo label="Props" />
+## Props
 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
 <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/customize/dark-mode/" target="_blank" rel="noreferrer" class="link"

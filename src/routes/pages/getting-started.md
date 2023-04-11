@@ -1,42 +1,32 @@
 ---
-layout: pageLayout
+layout: componentLayout
 breadcrumb_title: Getting Started
 title: Getting Started
 dir: Pages
 description: Flowbite-Svelte Getting Started page
 ---
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
 
 <script>
-  import { Htwo, ExampleDiv , MetaTag } from '../utils'
-  import { A, P, List, Li, Breadcrumb, BreadcrumbItem, Alert, Heading } from '$lib'
+  import { A, P, List, Li } from '$lib'
 </script>
 
-<Breadcrumb class="pt-28 py-8">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
-  <BreadcrumbItem>{dir}</BreadcrumbItem>
-  <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
-</Breadcrumb>
+You can install Flowbite-Svelte by using the <A href='/extend/flowbite-svelte-starter'>Flowbite-Svelte-Start</A> or from scratch.
 
-<Heading class="mb-2" tag="h1" customSize="text-3xl">{title}</Heading>
+## Installing from scratch
 
-<P class='mb-8'>You can install Flowbite-Svelte by using the <A href='/extend/flowbite-svelte-starter'>Flowbite-Svelte-Start</A> or from scratch.</P>
+### SvelteKit
 
-<Htwo label="Installing from scratch" />
+You can install SvelteKit or Svelte to start your app. For SvelteKit:
 
-<h3 class='text-xl w-full dark:text-white py-4'>SvelteKit</h3>
-
-<p>You can install SvelteKit or Svelte to start your app. For SvelteKit:</p>
-
-```bash
+```bash example
 npm create svelte@latest my-app
 cd my-app
 npm install
 ```
 
-<h3 class='text-xl w-full dark:text-white py-4'>Svelte</h3>
+### Svelte
 
-<p>If you want to get started with Svelte:</p>
+If you want to get started with Svelte:
 
 ```bash
 npm create vite@latest myapp -- --template svelte
@@ -44,26 +34,26 @@ cd myapp
 npm install
 ```
 
-<Htwo label="Install Tailwind CSS"/>
+## Install Tailwind CSS
 
 ```bash
 npx svelte-add@latest tailwindcss
 npm i
 ```
 
-<p>Run it:</p>
+Run it:
 
 ```bash
 npm run dev
 ```
 
-<Htwo label="Install dependencies" />
+## Install dependencies
 
 ```sh
 npm i flowbite flowbite-svelte classnames @popperjs/core
 ```
 
-<Htwo label="Update tailwind.config.cjs"/>
+## Update tailwind.config.cjs
 
 ```js
 const config = {
@@ -85,9 +75,11 @@ const config = {
 module.exports = config;
 ```
 
-<p>Now you are ready to go! Add the following to `src/routes/+page.svelte`.</p>
+<div class="h-8" />    
 
-```html
+Now you are ready to go! Add the following to `src/routes/+page.svelte` and if you see the following image, then your setting is complete.
+
+```svelte example 
 <script>
 	import { Alert } from 'flowbite-svelte';
 </script>
@@ -99,17 +91,7 @@ module.exports = config;
 </div>
 ```
 
-If you see the following image, then your setting is complete.
-
-<ExampleDiv>
-<div class="p-8">
-	<Alert>
-		<span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
-	</Alert>
-</div>
-</ExampleDiv>
-
-<Htwo label="Starters" />
+## Starters
 
 You can use one of starter repo for a quick start.
 

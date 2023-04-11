@@ -6,36 +6,30 @@ dir: Components
 description: Use the modal component to show interactive dialogs and notifications to your website users available in multiple sizes, colors, and styles
 ---
 
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
-
 <script>
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'  
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
+  import { P, A } from '$lib'  
   import { props as items1 } from '../props/Modal.json'
 
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
   // lib files
   const libFiles = import.meta.glob('../../lib/modals/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
-
+<GitHubSourceList {libFiles} />
 
 The modal component can be used as an interactive dialog on top of the main content area of the website to show notifications and gather information using form elements from your website users.
 
 Get started with multiple sizes, colors, and styles built with the utility classes from Tailwind CSS and the components from Flowbite.
 
-<Htwo label="Setup" />
+## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Modal } from 'flowbite-svelte'
 </script>
 ```
 
-<Htwo label="Default modal" />
+## Default modal
 
 Modal visibility (open/close) is controlled by the `open` property. You can bind it to a variable that other element (usually button) will toggle.
 You can also use the `open=true` attribute to show open the modal by default. Opening and closing the modal will trigger the `show` and `hide` events.
@@ -65,7 +59,7 @@ An option of automatic closing of the modal can be enabled by setting the `autoc
 </Modal>
 ```
 
-<Htwo label="Pop-up modal" />
+## Pop-up modal
 
 You can use this modal example to show a pop-up decision dialog to your users especially when deleting an item and making sure if the user really wants to do that by double confirming.
 
@@ -81,14 +75,14 @@ Notice lack of the `footer` slot.
 <Modal bind:open={popupModal} size="xs" autoclose>
   <div class="text-center">
       <svg aria-hidden="true" class="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-      <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this product?</h3>
+      ### Are you sure you want to delete this product?
       <Button color="red" class="mr-2">Yes, I'm sure</Button>
       <Button color='alternative'>No, cancel</Button>
   </div>
 </Modal>
 ```
 
-<Htwo label="Form element" />
+## Form element
 
 Use this modal example with form input element to receive information from your users with the advantage of not having to link to another page but keeping the user on the currently active page. A great example would be a login or a register form.
 
@@ -101,7 +95,7 @@ Use this modal example with form input element to receive information from your 
 <Button on:click={() => formModal = true}>Form modal</Button>
 <Modal bind:open={formModal} size="xs" autoclose={false} class="w-full">
   <form class="flex flex-col space-y-6" action="#">
-    <h3 class="text-xl font-medium text-gray-900 dark:text-white p-0">Sign in to our platform</h3>
+    ### Sign in to our platform
     <Label class="space-y-2">
       <span>Email</span>
       <Input type="email" name="email" placeholder="name@company.com" required />
@@ -122,7 +116,7 @@ Use this modal example with form input element to receive information from your 
 </Modal>
 ```
 
-<Htwo label="Crypto wallet" />
+## Crypto wallet
 
 Use this web3 modal component to show crypto wallet connection options like MetaMask or WalletConnect when building a website based on NFT authentication and collectibles.
 
@@ -175,7 +169,7 @@ Use this web3 modal component to show crypto wallet connection options like Meta
 </Modal>
 ```
 
-<Htwo label="Sizes" />
+## Sizes
 
 You can use five different modal sizing options starting from extra small to extra large, but keep in mind that the width of these modals will remain the same when browsing on smaller devices.
 
@@ -208,7 +202,7 @@ You can use five different modal sizing options starting from extra small to ext
 </Modal>
 ```
 
-<Htwo label="Placement" />
+## Placement
 
 ```svelte example
 <script>
@@ -247,7 +241,7 @@ You can use five different modal sizing options starting from extra small to ext
 </Modal>
 ```
 
-<Htwo label="Colors" />
+## Colors
 
 ```svelte example
 <script>
@@ -273,8 +267,7 @@ You can use five different modal sizing options starting from extra small to ext
 
 ```
 
-
-<Htwo label="Scrolling behaviour" />
+## Scrolling behaviour
 
 ```svelte example
 <script>
@@ -333,18 +326,18 @@ You can use five different modal sizing options starting from extra small to ext
 </Modal>
 ```
 
-<Htwo label="Props" />
+## Props
 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Modal</h3>
+### Modal
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/modal/" target="_blank" rel="noreferrer" class="link"

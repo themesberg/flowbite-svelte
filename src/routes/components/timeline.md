@@ -5,10 +5,10 @@ breadcrumb_title: Timeline
 dir: Components
 description: Get started with the responsive timeline component to show data in a chronological order with support for multiple styles, sizes, and variants
 ---
-<MetaTag {breadcrumb_title} {title} {dir} {description}/>
+
 <script lang="ts">
-  import { Htwo, PageHeadSection, TableProp, TableDefaultRow, MetaTag } from '../utils'
-  import { Breadcrumb, BreadcrumbItem, Button, Heading, P, A } from '$lib'
+  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
+  import { Button, P, A } from '$lib'
   import { props as items1 }  from '../props/Timeline.json'
   import { props as items2 }  from '../props/TimelineItem.json'
   import { props as items3 }  from '../props/TimelineItemVertical.json'
@@ -18,26 +18,24 @@ description: Get started with the responsive timeline component to show data in 
   import { props as items7 }  from '../props/ActivityItem.json'
   import { props as items8 }  from '../props/Group.json'
   import { props as items9 }  from '../props/GroupItem.json'
-  let propHeader = ['Name', 'Type', 'Default']
-  let divClass='w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4'
-  let theadClass ='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white'
+
   // lib files
   const libFiles = import.meta.glob('../../lib/timeline/*.svelte')
 </script>
 
-<PageHeadSection {dir} {breadcrumb_title} {title} {description} {libFiles}/>
+<GitHubSourceList {libFiles} />
 
 The timeline component can be used to show series of data in a chronological order for use cases such as activity feeds, user actions, application updates, and more.
 
-<Htwo label="Setup" />
+## Setup
 
-```html
+```svelte example hideOutput
 <script>
   import { Timeline, TimelineItem, TimelineItemVertical, TimelineItemHorizontal, TimelineHorizontal, Activity, ActivityItem, Group, GroupItem } from 'flowbite-svelte';
 </script>
 ```
 
-<Htwo label="Default timeline" />
+## Default timeline
 
 ```svelte example
 <script>
@@ -77,7 +75,7 @@ The timeline component can be used to show series of data in a chronological ord
 </Timeline>
 ```
 
-<Htwo label="Vertical Timeline" />
+## Vertical Timeline
 
 Use this vertical timeline component with icons and badges to show a more advanced set of data.
 
@@ -153,7 +151,7 @@ Use this vertical timeline component with icons and badges to show a more advanc
 </Timeline>
 ```
 
-<Htwo label="Horizontal Timeline" />
+## Horizontal Timeline
 
 Use this horizontally aligned timeline component to show a series of data in a chronological order.
 
@@ -205,7 +203,7 @@ Use this horizontally aligned timeline component to show a series of data in a c
 </Timeline>
 ```
 
-<Htwo label="Activity Log" />
+## Activity Log
 
 This component can be used to show the timline of a user’s activity history inside your application by using an avatar, datetime, description, and links to specific pages.
 
@@ -241,7 +239,7 @@ This component can be used to show the timline of a user’s activity history in
 </Activity>
 ```
 
-<Htwo label="Grouped timeline" />
+## Grouped timeline
 
 Use this component to group multiple data entries inside a single date and show elements like the avatar, title, description, tag and link to a relevant page.
 
@@ -275,66 +273,66 @@ Use this component to group multiple data entries inside a single date and show 
 </Group>
 ```
 
-<Htwo label="Props" />
+## Props
 
 <p>The component has the following props, type, and default values. See <A href="/pages/types">types 
  page</A> for type information.</p>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Timeline</h3>
+### Timeline
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TimelineItem</h3>
+### TimelineItem
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TimelineItemVertical</h3>
+### TimelineItemVertical
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TimelineHorizontal</h3>
+### TimelineHorizontal
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>TimelineItemHorizontal</h3>
+### TimelineItemHorizontal
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Activity</h3>
+### Activity
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>ActivityItem</h3>
+### ActivityItem
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items7} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>Group</h3>
+### Group
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items8} rowState='hover' />
 </TableProp>
 
-<h3 class='text-xl w-full dark:text-white py-4'>GroupItem</h3>
+### GroupItem
 
-<TableProp header={propHeader} {divClass} {theadClass}>
+<TableProp>
   <TableDefaultRow items={items9} rowState='hover' />
 </TableProp>
 
-<Htwo label="References" />
+## References
 
 <P>
   <A href="https://flowbite.com/docs/components/timeline/" target="_blank" rel="noreferrer" class="link"
