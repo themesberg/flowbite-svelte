@@ -7,10 +7,12 @@ description: Use the toggle component to switch between a binary state of true o
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../utils'
   import { onMount } from 'svelte';
   import { Toggle, Badge, A } from '$lib'
   import { props as items } from '../props/Toggle.json'
+
+  const events = ["on:change","on:click"];
 
   // lib files
   const libFiles = import.meta.glob('../../lib/forms/Toggle.svelte')
@@ -82,7 +84,4 @@ The component has the following props, type, and default values. See <A href="/p
 
 ## Forwarded Events
 
-<div class="flex flex-wrap gap-2">
-<Badge large={true}>on:change</Badge>
-<Badge large={true}>on:click</Badge>
-</div>
+<DocBadgeList items={events} />

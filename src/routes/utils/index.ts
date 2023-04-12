@@ -4,7 +4,6 @@ export { default as DocBadgeList } from './DocBadgeList.svelte';
 export { default as ExampleDiv } from './ExampleDiv.svelte';
 export { default as GitHubSource } from './GitHubSource.svelte';
 export { default as GitHubSourceList } from './GitHubSourceList.svelte';
-export { default as Htwo } from './Htwo.svelte';
 export { default as PageHeadSection } from './PageHeadSection.svelte';
 export { default as MetaTag } from './MetaTag.svelte';
 export { default as TableDefaultRow } from './TableDefaultRow.svelte';

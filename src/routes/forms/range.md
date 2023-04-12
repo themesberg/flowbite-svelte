@@ -7,9 +7,11 @@ description: Get started with the range component to receive a number from the u
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../utils'
   import { Badge, A } from '$lib'
   import { props as items } from '../props/Range.json'
+
+  const events = ["on:change","on:click","on:keydown","on:keypress","on:keyup"];
 
   let minmaxValue=5
   // lib files
@@ -109,10 +111,5 @@ The component has the following props, type, and default values. See <A href="/p
 
 ## Forwarded Events
 
-<div class="flex flex-wrap gap-2">
-<Badge large={true}>on:change</Badge>
-<Badge large={true}>on:click</Badge>
-<Badge large={true}>on:keydown</Badge>
-<Badge large={true}>on:keypress</Badge>
-<Badge large={true}>on:keyup</Badge>
-</div>
+<DocBadgeList items={events} />
+

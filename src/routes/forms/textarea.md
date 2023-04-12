@@ -7,10 +7,11 @@ description: Use the textarea component as a multi-line text field input and use
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../utils'
   import { Badge, A } from '$lib'
   import { props as items } from '../props/Textarea.json'
 
+  const events = ["on:blur","on:change","on:click","on:focus","on:input","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover","on:paste"];
   // lib files
   const libFiles = import.meta.glob('../../lib/forms/Textarea.svelte')
 </script>
@@ -134,17 +135,5 @@ The component has the following props, type, and default values. See <A href="/p
 
 ## Forwarded Events
 
-<div class="flex flex-wrap gap-2">
-<Badge large={true}>on:blur</Badge>
-<Badge large={true}>on:change</Badge>
-<Badge large={true}>on:click</Badge>
-<Badge large={true}>on:focus</Badge>
-<Badge large={true}>on:input</Badge>
-<Badge large={true}>on:keydown</Badge>
-<Badge large={true}>on:keypress</Badge>
-<Badge large={true}>on:keyup</Badge>
-<Badge large={true}>on:mouseenter</Badge>
-<Badge large={true}>on:mouseleave</Badge>
-<Badge large={true}>on:mouseover</Badge>
-<Badge large={true}>on:paste</Badge>
-</div>
+<DocBadgeList items={events} />
+
