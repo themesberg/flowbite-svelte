@@ -7,13 +7,14 @@ description: Show contextual information to your users using alert elements base
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../utils'
 
   import { Badge, P, A } from '$lib'
 
   import { props as frameProps} from '../props/Frame.json'
   import { props as alertProps } from '../props/Alert.json'
 
+  const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keyup","on:mouseenter","on:mouseleave"];
   // lib files
   const libFiles = import.meta.glob('../../lib/alert/*.svelte')
   // slots
@@ -324,16 +325,8 @@ The component inherits the following props, type, and default values from `Frame
 
 ## Forwarded Events
 
-<div class="flex flex-wrap gap-2">
-<Badge large={true}>on:blur</Badge>
-<Badge large={true}>on:change</Badge>
-<Badge large={true}>on:click</Badge>
-<Badge large={true}>on:focus</Badge>
-<Badge large={true}>on:keydown</Badge>
-<Badge large={true}>on:keyup</Badge>
-<Badge large={true}>on:mouseenter</Badge>
-<Badge large={true}>on:mouseleave</Badge>
-</div>
+<DocBadgeList items={events} />
+
 
 ## References
 

@@ -7,11 +7,12 @@ description: Use these responsive tabs components to create a secondary navigati
 ---
 
 <script lang="ts">
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../utils'
   import { Badge, P, A } from '$lib'
   import { props as items3 }  from '../props/TabItem.json'
   import { props as items4 }  from '../props/Tabs.json'
 
+  const events = ["on:blur","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover"];
   // lib files
   const libFiles = import.meta.glob('../../lib/tabs/*.svelte')
 </script>
@@ -270,17 +271,8 @@ To get a custom look and feel for the `Tabs` component, do not set `style` prop,
 
 ## Forwarded Events: TabItem
 
-<div class="flex flex-wrap gap-2">
-<Badge large>on:blur</Badge>
-<Badge large>on:click</Badge>
-<Badge large>on:focus</Badge>
-<Badge large>on:keydown</Badge>
-<Badge large>on:keypress</Badge>
-<Badge large>on:keyup</Badge>
-<Badge large>on:mouseenter</Badge>
-<Badge large>on:mouseleave</Badge>
-<Badge large>on:mouseover</Badge>
-</div>
+<DocBadgeList items={events} />
+
 
 ## References
 

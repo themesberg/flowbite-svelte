@@ -30,6 +30,7 @@
   import ToolbarLink from './utils/ToolbarLink.svelte';
   import Discord from './utils/icons/Discord.svelte';
   import YouTube from './utils/icons/YouTube.svelte';
+  import DocBadge from './utils/DocBadge.svelte';
 
   export let data: PageData;
 
@@ -50,7 +51,6 @@
   let spanClass = '';
   let aClass =
     'py-2 transition-colors duration-200 relative flex items-center flex-wrap font-medium hover:text-gray-900 text-gray-500 dark:text-gray-400 dark:hover:text-white ';
-  let darkModeClass = 'text-lg';
   let divClass = 'w-full ml-auto md:block md:w-auto order-1 md:order-none';
   let ulClass =
     'flex flex-col p-3 mt-4 md:flex-row md:mt-0 text-sm font-medium text-gray-900 dark:text-gray-300';
@@ -64,16 +64,14 @@
     class="z-50 flex justify-center w-full px-4 py-3 border border-b border-gray-200 bg-gray-50 dark:border-gray-600 lg:py-4 dark:bg-gray-700">
     <div class="items-center md:flex">
       <p class="text-sm font-medium text-gray-900 md:my-0 dark:text-white">
-        <span
-          class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 hidden md:inline"
-          >New</span
-        >We have launched Flowbite Svelte Blocks!<a
-          class="inline-flex items-center ml-2 text-sm font-medium text-blue-600 md:ml-2 dark:text-blue-500 hover:underline"
+        <DocBadge border>New</DocBadge>
+        We have launched Flowbite Svelte Blocks!<a
+          class="inline-flex items-center ml-2 text-sm font-medium text-primary-700 md:ml-2 dark:text-primary-700 hover:underline"
           href="https://flowbite-svelte-blocks.vercel.app/"
           target="_blank"
           rel="noreferrer"
           >Check it out<svg
-            class="w-4 h-4 ml-1 text-blue-600 dark:text-blue-500"
+            class="w-4 h-4 ml-1 text-primary-700 dark:text-primary-700"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -98,23 +96,33 @@
       </span>
     </NavBrand>
     <NavHamburger on:click={toggle} />
-    <NavUl {hidden} {divClass} {ulClass}>
+    <NavUl
+      {hidden}
+      {divClass}
+      {ulClass}
+      nonActiveClass="'text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 dark:text-gray-400 md:dark:hover:text-primary-700 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent';">
       <NavLi class="mb-3 lg:px-2 xl:px-2 lg:mb-0" href="/">Home</NavLi>
       <NavLi class="mb-3 lg:px-2 xl:px-2 lg:mb-0" href="/pages/about">About</NavLi>
       <NavLi class="mb-3 lg:px-2 xl:px-2 lg:mb-0" href="https://flowbite-svelte-blocks.vercel.app/"
         >Blocks</NavLi>
     </NavUl>
 
-    <ToolbarLink name="View on GitHub" href="https://github.com/themesberg/flowbite-svelte"
-      ><GitHub /></ToolbarLink>
-    <ToolbarLink name="Join community on Discord" href="https://discord.gg/4eeurUVvTy"
-      ><Discord /></ToolbarLink>
     <ToolbarLink
+      class="hidden sm:inline-block"
+      name="View on GitHub"
+      href="https://github.com/themesberg/flowbite-svelte">
+      <GitHub /></ToolbarLink>
+    <ToolbarLink
+      class="hidden sm:inline-block"
+      name="Join community on Discord"
+      href="https://discord.gg/4eeurUVvTy"><Discord /></ToolbarLink>
+    <ToolbarLink
+      class="hidden sm:inline-block"
       name="Subscribe to YouTube channel"
       href="https://www.youtube.com/channel/UC_Ms4V2kYDsh7F_CSsHyQ6A">
       <YouTube />
     </ToolbarLink>
-    <DarkMode class={darkModeClass} />
+    <DarkMode class="hidden sm:inline-block" />
     <Tooltip class="dark:bg-gray-900">Toggle dark mode</Tooltip>
   </Navbar>
 </header>

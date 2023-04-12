@@ -7,11 +7,12 @@ description: Use the Tailwind CSS pagination element to indicate a series of con
 ---
 
 <script lang="ts">
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../utils'
   import { Badge, Heading, P, A } from '$lib'
   import { props as items1 } from '../props/Pagination.json'
   import { props as items2 } from '../props/PaginationItem.json'
 
+  const events = ["on:blur","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover"];
   // lib files
   const libFiles = import.meta.glob('../../lib/paginations/*.svelte')
 </script>
@@ -284,17 +285,8 @@ You can use the following code to show the number of data shown inside a table e
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">Pagination, PaginationItem</Heading>
 
-<div class="flex flex-wrap gap-2">
-<Badge large={true}>on:blur</Badge>
-<Badge large={true}>on:click</Badge>
-<Badge large={true}>on:focus</Badge>
-<Badge large={true}>on:keydown</Badge>
-<Badge large={true}>on:keypress</Badge>
-<Badge large={true}>on:keyup</Badge>
-<Badge large={true}>on:mouseenter</Badge>
-<Badge large={true}>on:mouseleave</Badge>
-<Badge large={true}>on:mouseover</Badge>
-</div>
+<DocBadgeList items={events} />
+
 
 ## References
 

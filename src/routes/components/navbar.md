@@ -7,7 +7,7 @@ description: The navbar component can be used to show a list of navigation links
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../utils'
   import { Badge, Heading, P, A } from '$lib';
 
   import { props as items } from '../props/Navbar.json'
@@ -18,6 +18,7 @@ description: The navbar component can be used to show a list of navigation links
   import { props as items6 } from '../props/Menu.json'
   import { props as items7 } from '../props/NavDropdown.json'
 
+  const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover"];
   // lib files
   const libFiles = import.meta.glob('../../lib/navbar/*.svelte')
 </script>
@@ -326,20 +327,10 @@ Use this example to show a solid background for the navbar component instead of 
 
 ## Forwarded Events
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">NavLi</Heading>
+### NavLi
 
-<div class="flex flex-wrap gap-2">
-<Badge large={true}>on:blur</Badge>
-<Badge large={true}>on:change</Badge>
-<Badge large={true}>on:click</Badge>
-<Badge large={true}>on:focus</Badge>
-<Badge large={true}>on:keydown</Badge>
-<Badge large={true}>on:keypress</Badge>
-<Badge large={true}>on:keyup</Badge>
-<Badge large={true}>on:mouseenter</Badge>
-<Badge large={true}>on:mouseleave</Badge>
-<Badge large={true}>on:mouseover</Badge>
-</div>
+<DocBadgeList items={events} />
+
 
 ## References
 

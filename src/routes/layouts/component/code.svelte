@@ -1,1 +1,1 @@
-<code class="text-red-500 dark:text-red-400"><slot /></code>
+<code class="text-primary-700 dark:text-primary-700"><slot /></code>

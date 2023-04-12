@@ -6,9 +6,12 @@
   import type { LinkType } from '$lib/types';
   import { onMount } from 'svelte';
 
+  const aClass =
+    "border-l border-white duration-200 hover:text-gray-900 transition-none dark:hover:text-white hover:border-gray-300 after:content-['#'] after:text-primary-700 dark:after:text-primary-700 dark:border-gray-900 dark:hover:border-gray-700 after:ml-2 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-100";
+
   export let extract: (x: HTMLElement) => LinkType = (x: HTMLElement) => ({ name: x.textContent ?? '' });
 
-  export let headingSelector;
+  export let headingSelector: string;
 
   let headings: LinkType[] = [];
 
@@ -20,7 +23,7 @@
   });
 
   function indent(name: string | undefined) {
-    return name === 'H2' ? '' : 'pl-3';
+    return name === 'H2' ? 'pl-2.5' : 'pl-6';
   }
 
   function toc() {
@@ -40,10 +43,12 @@
           class="pl-2.5 mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase dark:text-white lg:text-xs">
           On this page
         </h4>
-        <nav id="TableOfContents">
-          <ul>
+        <nav>
+          <ul class="overflow-x-hidden font-medium text-gray-500 dark:text-gray-400">
             {#each headings as { rel, href, name }}
-              <li class={indent(rel)}><a {href} class="block">{name}</a></li>
+              <li class="py-2">
+                <a {href} class="{indent(rel)} {aClass}">{name}</a>
+              </li>
             {/each}
           </ul>
         </nav>

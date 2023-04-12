@@ -8,7 +8,7 @@ description: Use the sidebar component to show a list of menu items and multi-le
 
 <script>
   import { page } from '$app/stores';
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../utils'
   import { Badge, Heading, P, A } from '$lib'
   import { props as items } from '../props/Sidebar.json'
   import { props as items2 }  from '../props/SidebarBrand.json'
@@ -19,6 +19,7 @@ description: Use the sidebar component to show a list of menu items and multi-le
   import { props as items7 }  from '../props/SidebarItem.json'
   import { props as items8 }  from '../props/SidebarWrapper.json'
 
+  const events = ["on:blur","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover"];
   // lib files
   const libFiles = import.meta.glob('../../lib/sidebars/*.svelte')
 </script>
@@ -578,17 +579,8 @@ The component has the following props, type, and default values. See <A href="/p
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">SidebarDropdownItem, SidebarItem</Heading>
 
-<div class="flex flex-wrap gap-2">
-<Badge large={true}>on:blur</Badge>
-<Badge large={true}>on:click</Badge>
-<Badge large={true}>on:focus</Badge>
-<Badge large={true}>on:keydown</Badge>
-<Badge large={true}>on:keypress</Badge>
-<Badge large={true}>on:keyup</Badge>
-<Badge large={true}>on:mouseenter</Badge>
-<Badge large={true}>on:mouseleave</Badge>
-<Badge large={true}>on:mouseover</Badge>
-</div>
+<DocBadgeList items={events} />
+
 
 ## References
 

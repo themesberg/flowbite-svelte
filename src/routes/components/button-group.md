@@ -7,11 +7,12 @@ description: Button groups are a Tailwind CSS powered set of buttons sticked tog
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../utils'
   import { Badge, P, A } from '$lib'
 
   import { props as buttonGroupProps} from '../props/ButtonGroup.json'
 
+  const events = ["on:click","on:change","on:keydown","on:keyup","on:focus","on:blur","on:mouseenter","on:mouseleave"];
   // lib files
   const libFiles = import.meta.glob('../../lib/buttongroups/*.svelte')
 </script>
@@ -191,16 +192,8 @@ The component has the following props, type, and default values. See <A href="/p
 
 ## Forwarded Events
 
-<div class="flex flex-wrap gap-2">
-<Badge large={true}>on:click</Badge>
-<Badge large={true}>on:change</Badge>
-<Badge large={true}>on:keydown</Badge>
-<Badge large={true}>on:keyup</Badge>
-<Badge large={true}>on:focus</Badge>
-<Badge large={true}>on:blur</Badge>
-<Badge large={true}>on:mouseenter</Badge>
-<Badge large={true}>on:mouseleave</Badge>
-</div>
+<DocBadgeList items={events} />
+
 
 ## References
 

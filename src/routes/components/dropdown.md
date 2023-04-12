@@ -7,7 +7,7 @@ description: Get started with the dropdown component to show a list of menu item
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../utils'
   import { Badge, P, A  } from '$lib'
 
   import { props as propItems} from '../props/Dropdown.json'
@@ -15,12 +15,13 @@ description: Get started with the dropdown component to show a list of menu item
   import { props as propItems3} from '../props/DropdownHeader.json'
   import { props as propItems4} from '../props/DropdownItem.json'
 
-  let slotHeader = ['Name', 'Description']
-
   // slot
+  let slotHeader = ['Name', 'Description']
   let slotItems = [['header', 'Dropdown fixed top element.'],['footer','Dropdown fixed bottom element.']]
   let slotDropdownHeader = [['default', 'Dropdown header content.']]
   let slotDropdownItem = [['default', 'Dropdown item content.']]
+
+  const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keyup","on:mouseenter","on:mouseleave"];
   // lib files
   const libFiles = import.meta.glob('../../lib/dropdowns/*.svelte')
 </script>
@@ -669,16 +670,7 @@ Therefore you can catch standard events on it like `on:click`.
 
 ## Forwarded Events: DropdownItem
 
-<div class="flex flex-wrap gap-2">
-<Badge large={true}>on:blur</Badge>
-<Badge large={true}>on:change</Badge>
-<Badge large={true}>on:click</Badge>
-<Badge large={true}>on:focus</Badge>
-<Badge large={true}>on:keydown</Badge>
-<Badge large={true}>on:keyup</Badge>
-<Badge large={true}>on:mouseenter</Badge>
-<Badge large={true}>on:mouseleave</Badge>
-</div>
+<DocBadgeList items={events} />
 
 ## References
 

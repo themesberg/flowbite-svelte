@@ -20,68 +20,42 @@
 	}
 }
 
-#TableOfContents > ul {
-	@apply overflow-x-hidden font-medium text-gray-500 dark:text-gray-400;
-}
-
-#TableOfContents > ul > li {
-	@apply py-2;
-}
-
-#TableOfContents > ul > li > a {
-	@apply block pl-2.5 font-medium border-l border-white duration-200 hover:text-gray-900 transition-none dark:hover:text-white hover:border-gray-300 after:content-['#'] after:text-blue-700 dark:after:text-blue-500 dark:border-gray-900 dark:hover:border-gray-700 after:ml-2 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-100;
-}
-
-#TableOfContents > ul > li > ul > li > a {
-	@apply pl-6 border-l border-white duration-200 hover:text-gray-900 transition-none dark:hover:text-white hover:border-gray-300 after:content-['#'] after:text-blue-700 dark:after:text-blue-500 dark:border-gray-900 dark:hover:border-gray-700 after:ml-2 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-100;
-}
-
-#TableOfContents > ul > li > ul {
-	@apply pt-2;
-}
-
-#TableOfContents > ul > li > ul > li {
-	@apply py-2;
-}
-
-#TableOfContents > ul > li > ul > li:last-of-type {
-	@apply pb-0;
-}
-
 .highlight {
 	@apply overflow-hidden;
 }
 
 #mainContent > h2 {
-	@apply mt-8 mb-4 text-2xl font-semibold dark:text-white;
+	@apply mt-8 mb-4 text-2xl font-bold text-gray-900 dark:text-white;
 }
 
 #mainContent > h3,
 #mainContent > h4 {
-	@apply mt-8 mb-4 text-xl font-semibold dark:text-white;
+	@apply mt-8 mb-4 text-xl font-bold text-gray-900 dark:text-white;
 }
 
 #mainContent > p {
-	@apply mb-4 text-base font-normal text-gray-600 dark:text-gray-400;
+	@apply mb-4 text-base font-normal /*text-gray-600 dark:text-gray-400*/;
 }
 
 #mainContent > p > a,
 #mainContent > ul > li > a,
 #mainContent > ol > li > a {
-	@apply font-medium text-gray-700 underline dark:text-gray-300 decoration-1 underline-offset-2 decoration-blue-600 dark:decoration-blue-500;
+	@apply font-medium text-gray-900 underline dark:text-white decoration-1 underline-offset-2 decoration-primary-700 dark:decoration-primary-700;
 }
 
 #mainContent > p > a:hover,
 #mainContent > ul > li > a:hover,
 #mainContent > ol > li > a:hover {
-	@apply text-gray-900 decoration-2 dark:text-white;
+	@apply /*text-gray-900*/ decoration-2 dark:text-white;
 }
 
+/*
 #mainContent > p > code,
 #mainContent > ul > li > code,
 #mainContent > ol > li > code {
 	@apply px-1 font-mono text-sm text-blue-600 break-all dark:text-blue-400;
 }
+*/
 
 #mainContent > ul {
 	list-style: disc;
