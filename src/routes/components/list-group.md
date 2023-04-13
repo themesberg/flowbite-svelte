@@ -124,7 +124,7 @@ Usage of hidden so far `ListgroupItem` helps you with proper layout.
 </script>
 
 <Listgroup active class="w-48">
-    ### User list
+    <h3 class="text-xl font-medium text-gray-900 dark:text-white">User list</h3>
     <ListgroupItem class="text-base font-semibold gap-2">
       <Avatar src="/images/profile-picture-1.webp" size="xs"/>Jese Leos
     </ListgroupItem>

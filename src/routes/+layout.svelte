@@ -24,9 +24,7 @@
 
   import '../app.css';
   import Tooltip from '$lib/tooltips/Tooltip.svelte';
-  import ToolbarButton from '$lib/toolbar/ToolbarButton.svelte';
   import GitHub from './utils/icons/GitHub.svelte';
-  import GitHubSource from './utils/GitHubSource.svelte';
   import ToolbarLink from './utils/ToolbarLink.svelte';
   import Discord from './utils/icons/Discord.svelte';
   import YouTube from './utils/icons/YouTube.svelte';
@@ -54,6 +52,10 @@
   let divClass = 'w-full ml-auto md:block md:w-auto order-1 md:order-none';
   let ulClass =
     'flex flex-col p-3 mt-4 md:flex-row md:mt-0 text-sm font-medium text-gray-900 dark:text-gray-300';
+
+  const names_mapping: Record<string, string> = {
+    pages: 'Getting Started'
+  };
 </script>
 
 <header
@@ -130,148 +132,27 @@
         <nav
           class="pt-16 px-1 pl-3 lg:pl-0 lg:pt-2 font-normal text-base lg:text-sm pb-10 lg:pb-20 sticky?lg:h-(screen-18)">
           <ul class="list-unstyled">
-            <li class="mt-8">
-              <h5
-                class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">
-                Getting started
-              </h5>
-              <SidebarGroup ulClass="py-1 list-unstyled fw-normal small">
-                {#each data.pages as { meta, path }}
-                  <SidebarItem
-                    label={meta.title}
-                    href={`/pages${path}`}
-                    {spanClass}
-                    {aClass}
-                    activeClass={aClass}
-                    active={activeUrl === `/pages${path}`} />
-                {/each}
-              </SidebarGroup>
-            </li>
-
-            <li class="mt-8">
-              <h5
-                class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">
-                Components
-              </h5>
-              <SidebarGroup ulClass="">
-                {#each data.components as { meta, path }}
-                  <SidebarItem
-                    label={meta.breadcrumb_title}
-                    href={`/components${path}`}
-                    {spanClass}
-                    {aClass}
-                    activeClass={aClass}
-                    active={activeUrl === `/components${path}`} />
-                {/each}
-              </SidebarGroup>
-            </li>
-            <li class="mt-8">
-              <h5
-                class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">
-                Froms
-              </h5>
-              <SidebarGroup ulClass="">
-                {#each data.forms as { meta, path }}
-                  <SidebarItem
-                    label={meta.breadcrumb_title}
-                    href={`/forms${path}`}
-                    {spanClass}
-                    {aClass}
-                    activeClass={aClass}
-                    active={activeUrl === `/forms${path}`} />
-                {/each}
-              </SidebarGroup>
-            </li>
-            <li class="mt-8">
-              <h5
-                class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">
-                Typography
-              </h5>
-              <SidebarGroup ulClass="">
-                {#each data.typography as { meta, path }}
-                  <SidebarItem
-                    label={meta.breadcrumb_title}
-                    href={`/typography${path}`}
-                    {spanClass}
-                    {aClass}
-                    activeClass={aClass}
-                    active={activeUrl === `/typography${path}`} />
-                {/each}
-              </SidebarGroup>
-            </li>
-            <li class="mt-8">
-              <h5
-                class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">
-                Examples
-              </h5>
-              <SidebarGroup ulClass="">
-                <SidebarItem
-                  label="Sidebar layout"
-                  href={'/examples/sidebar-layout'}
-                  {spanClass}
-                  {aClass}
-                  activeClass={aClass}
-                  active={activeUrl === '/examples/sidebar-layout'} />
-                <SidebarItem
-                  label="Snapshot"
-                  href={'/examples/snapshot'}
-                  {spanClass}
-                  {aClass}
-                  activeClass={aClass}
-                  active={activeUrl === '/examples/snapshot'} />
-              </SidebarGroup>
-            </li>
-            <li class="mt-8">
-              <h5
-                class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">
-                Extend
-              </h5>
-              <SidebarGroup ulClass="">
-                {#each data.extend as { meta, path }}
-                  <SidebarItem
-                    label={meta.breadcrumb_title}
-                    href={`/extend${path}`}
-                    {spanClass}
-                    {aClass}
-                    activeClass={aClass}
-                    active={activeUrl === `/extend${path}`} />
-                {/each}
-              </SidebarGroup>
-            </li>
-            <li class="mt-8">
-              <h5
-                class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">
-                Utils
-              </h5>
-              <SidebarGroup ulClass="">
-                {#each data.utils as { meta, path }}
-                  <SidebarItem
-                    label={meta.breadcrumb_title}
-                    href={`/utilities${path}`}
-                    {spanClass}
-                    {aClass}
-                    activeClass={aClass}
-                    active={activeUrl === `/utilities${path}`} />
-                {/each}
-              </SidebarGroup>
-            </li>
-            <li class="mt-8">
-              <h5
-                class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">
-                Experimental
-              </h5>
-              <SidebarGroup ulClass="">
-                {#each data.experimental as { meta, path }}
-                  <SidebarItem
-                    label={meta.breadcrumb_title}
-                    href={`/experimental${path}`}
-                    {spanClass}
-                    {aClass}
-                    activeClass={aClass}
-                    active={activeUrl === `/experimental${path}`} />
-                {/each}
-              </SidebarGroup>
-            </li>
+            {#each Object.entries(data) as [key, values]}
+              <li class="mt-8">
+                <h5
+                  class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">
+                  {names_mapping[key] ?? key}
+                </h5>
+                <SidebarGroup ulClass="py-1 list-unstyled fw-normal small">
+                  {#each values as { meta, path }}
+                    {#if meta}
+                      <SidebarItem
+                        label={meta.breadcrumb_title}
+                        href={`/${key}${path}`}
+                        {spanClass}
+                        {aClass}
+                        activeClass={aClass}
+                        active={activeUrl === `/pages${path}`} />
+                    {/if}
+                  {/each}
+                </SidebarGroup>
+              </li>
+            {/each}
           </ul>
         </nav>
       </SidebarWrapper>
@@ -288,42 +169,42 @@
   </div>
 </div>
 
-<div class="mx-auto mb-4 pt-4 lg:pl-64">
-  <Footer footerType="custom" customClass="py-6 px-16 bg-white dark:bg-gray-900">
-    <div class="md:flex md:justify-between">
-      <div class="mb-6 md:mb-0">
+<Footer footerType="custom" customClass="py-12 xl:pt-24 bg-gray-50 dark:bg-gray-800">
+  <div class="w-full mx-auto px-4 max-w-8xl">
+    <div class="grid gap-12 xl:grid-cols-6 xl:gap-24">
+      <div class="col-span-2">
         <FooterBrand
           href="https://flowbite-svelte.com"
           src={logo}
           alt="Flowbite-Svelte Logo"
           name="Flowbite-Svelte" />
       </div>
-      <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-        <div>
-          <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
-          <FooterLinkGroup>
-            <FooterLink liClass="mb-4" href="https://flowbite.com/">Flowbite</FooterLink>
-            <FooterLink liClass="mb-4" href="https://tailwindcss.com/">Tailwind CSS</FooterLink>
-          </FooterLinkGroup>
-        </div>
-        <div>
-          <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Follow us</h2>
-          <FooterLinkGroup>
-            <FooterLink liClass="mb-4" href="https://github.com/themesberg/flowbite-svelte"
-              >GitHub</FooterLink>
-            <FooterLink liClass="mb-4" href="https://discord.gg/4eeurUVvTy">Discord</FooterLink>
-          </FooterLinkGroup>
-        </div>
-        <div>
-          <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Legal</h2>
-          <FooterLinkGroup>
-            <FooterLink liClass="mb-4" href="https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE"
-              >License</FooterLink>
-          </FooterLinkGroup>
-        </div>
+
+      <div>
+        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+        <FooterLinkGroup>
+          <FooterLink liClass="mb-4" href="https://flowbite.com/">Flowbite</FooterLink>
+          <FooterLink liClass="mb-4" href="https://tailwindcss.com/">Tailwind CSS</FooterLink>
+        </FooterLinkGroup>
+      </div>
+      <div>
+        <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Follow us</h2>
+        <FooterLinkGroup>
+          <FooterLink liClass="mb-4" href="https://github.com/themesberg/flowbite-svelte">GitHub</FooterLink>
+          <FooterLink liClass="mb-4" href="https://discord.gg/4eeurUVvTy">Discord</FooterLink>
+        </FooterLinkGroup>
+      </div>
+      <div>
+        <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Legal</h2>
+        <FooterLinkGroup>
+          <FooterLink liClass="mb-4" href="https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE"
+            >License</FooterLink>
+        </FooterLinkGroup>
       </div>
     </div>
+
     <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+
     <div class="sm:flex sm:items-center sm:justify-between">
       <FooterCopyright href="/" by="Flowbite™" />
       <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
@@ -338,5 +219,5 @@
         </FooterIcon>
       </div>
     </div>
-  </Footer>
-</div>
+  </div>
+</Footer>
