@@ -668,7 +668,9 @@ Therefore you can catch standard events on it like `on:click`.
   <TableDefaultRow items={slotDropdownItem} rowState='hover' />
 </TableProp>
 
-## Forwarded Events: DropdownItem
+## Forwarded Events
+
+### DropdownItem
 
 <DocBadgeList items={events} />
 

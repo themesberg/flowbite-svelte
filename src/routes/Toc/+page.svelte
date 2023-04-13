@@ -35,8 +35,8 @@
   }
 </script>
 
-{#if headings.length}
-  <div class="flex-none hidden w-64 pl-8 mr-8 xl:text-sm xl:block">
+<div class="flex-none hidden w-64 pl-8 xl:text-sm xl:block right-0">
+  {#if headings.length}
     <div class="flex overflow-y-auto sticky top-28 flex-col justify-between pt-10 pb-6 h-[calc(100vh-5rem)]">
       <div class="mb-8">
         <h4
@@ -54,5 +54,5 @@
         </nav>
       </div>
     </div>
-  </div>
-{/if}
+  {/if}
+</div>

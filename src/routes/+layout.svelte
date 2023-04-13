@@ -85,7 +85,8 @@
   </div>
   <Navbar
     color="default"
-    navClass="flex items-center justify-between w-full px-3 py-3 mx-auto max-w-8xl lg:px-4"
+    fluid
+    navClass="flex items-center justify-between w-full px-3 py-3 mx-auto lg:px-4"
     let:hidden
     let:toggle>
     <NavHamburger on:click={toggleDrawer} btnClass="ml-3 lg:hidden" />
@@ -122,16 +123,16 @@
       href="https://www.youtube.com/channel/UC_Ms4V2kYDsh7F_CSsHyQ6A">
       <YouTube />
     </ToolbarLink>
-    <DarkMode class="hidden sm:inline-block" />
+    <DarkMode size="lg" class="hidden sm:inline-block" />
     <Tooltip class="dark:bg-gray-900">Toggle dark mode</Tooltip>
   </Navbar>
 </header>
 
-<div class="w-full px-4 mx-auto max-w-8xl">
+<div class="w-full px-4">
   <div class="lg:flex">
     <Sidebar
       class={drawerHidden && 'hidden'}
-      asideClass="fixed inset-0 z-20 flex-none h-full w-72 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-48 lg:block">
+      asideClass="fixed inset-0 z-20 flex-none h-full w-72 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-64 lg:block">
       <h4 id="sidebar-label" class="sr-only">Browse docs</h4>
       <SidebarWrapper
         divClass="overflow-y-auto z-20 h-full bg-white scrolling-touch max-w-2xs lg:h-[calc(100vh-3rem)] lg:block lg:sticky top:24 lg:top-28 dark:bg-gray-900 lg:mr-0">
@@ -296,7 +297,7 @@
   </div>
 </div>
 
-<div class="mx-auto mb-4 pt-4 lg:pl-64">
+<div class="mx-auto mb-4 pt-4 lg:pl-64 hidden">
   <Footer footerType="custom" customClass="py-6 px-16 bg-white dark:bg-gray-900">
     <div class="md:flex md:justify-between">
       <div class="mb-6 md:mb-0">
