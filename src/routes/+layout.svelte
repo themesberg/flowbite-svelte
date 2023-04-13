@@ -135,10 +135,10 @@
     <div hidden={$page.route.id === '/'}>
       <Sidebar
         class={(drawerHidden && 'hidden') || 'hidden'}
-        asideClass="fixed inset-0 z-20 flex-none h-full w-72 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-64 lg:block">
+        asideClass="fixed inset-0 z-20 flex-none h-full w-72 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-64 lg:block lg:sticky top-24 lg:top-28">
         <h4 id="sidebar-label" class="sr-only">Browse docs</h4>
         <SidebarWrapper
-          divClass="overflow-y-auto z-20 h-full bg-white scrolling-touch max-w-2xs lg:h-[calc(100vh-3rem)] lg:block lg:sticky top:24 lg:top-28 dark:bg-gray-900 lg:mr-0">
+          divClass="overflow-y-auto z-20 h-full bg-white scrolling-touch max-w-2xs lg:h-[calc(100vh-3rem)] lg:block dark:bg-gray-900 lg:mr-0">
           <nav
             class="pt-16 px-1 pl-3 lg:pl-0 lg:pt-2 font-normal text-base lg:text-sm pb-10 lg:pb-20 sticky?lg:h-(screen-18)">
             <ul class="list-unstyled">

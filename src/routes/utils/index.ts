@@ -14,7 +14,7 @@ const filePath = (path: string) => '/' + path.split('/').pop()?.split('.').shift
 const fileDir = (path: string) => '/' + path.split('/').slice(0, -1).pop();
 
 export const fetchMarkdownPosts = async () => {
-  const componentFiles = import.meta.glob('/src/routes/components/*.md');
+  const componentFiles = import.meta.glob('/src/routes/docs/components/*.md');
   const formFiles = import.meta.glob('/src/routes/forms/*.md');
   const typographyFiles = import.meta.glob('/src/routes/typography/*.md');
   const utilFiles = import.meta.glob('/src/routes/utilities/*.md');
