@@ -7,7 +7,7 @@
 
 <script>
   import { PageHeadSection, MetaTag } from '../../utils';
-  import Toc from '../../Toc/+page.svelte';
+  import Toc from '../../utils/Toc.svelte';
   import { extract } from './Anchor.svelte';
   import Footer from '../../utils/Footer.svelte';
 

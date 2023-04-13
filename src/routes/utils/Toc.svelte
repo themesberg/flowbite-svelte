@@ -1,8 +1,8 @@
 <script lang="ts">
   /*  
-  Inspired by 'svelte-toc'
-  Simplified version of Table of Contents.
-  */
+    Inspired by 'svelte-toc'
+    Simplified version of Table of Contents.
+    */
   import type { LinkType } from '$lib/types';
   import { onMount } from 'svelte';
 
