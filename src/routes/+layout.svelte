@@ -153,7 +153,7 @@
                       {#if meta}
                         <SidebarItem
                           label={meta.breadcrumb_title}
-                          href={`/${key}${path}`}
+                          href={`/docs/${key}${path}`}
                           {spanClass}
                           {aClass}
                           activeClass={aClass}

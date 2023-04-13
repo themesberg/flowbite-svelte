@@ -7,14 +7,14 @@ description: Get started with the select component to allow the user to choose f
 ---
 
 <script>
-import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../utils'
+import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
 import { Badge, A } from '$lib'
-import { props as items } from '../props/Select.json'
+import { props as items } from '../../props/Select.json'
 
 const events = ["on:change","on:input"];
 
 // lib files
-const libFiles = import.meta.glob('../../lib/forms/Select.svelte')
+const libFiles = import.meta.glob('$lib/forms/Select.svelte')
 </script>
 
 <GitHubSourceList {libFiles} />

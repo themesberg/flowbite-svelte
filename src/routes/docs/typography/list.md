@@ -7,17 +7,17 @@ description: Use the list component to show an unordered or ordered list of item
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow } from '../../utils'
   import { A, Heading } from '$lib'
-  import { props as items1 } from '../props/List.json'
-  import { props as items2 } from '../props/Li.json'
-  import { props as items3 } from '../props/Span.json'
-  import { props as items4 } from '../props/DescriptionList.json'
+  import { props as items1 } from '../../props/List.json'
+  import { props as items2 } from '../../props/Li.json'
+  import { props as items3 } from '../../props/Span.json'
+  import { props as items4 } from '../../props/DescriptionList.json'
 
   // lib files
   const libFilesArray = [
-    import.meta.glob("../../lib/typography/Li.svelte"),
-    import.meta.glob("../../lib/typography/Ul.svelte"),
+    import.meta.glob("$lib/typography/Li.svelte"),
+    import.meta.glob("$lib/typography/Ul.svelte"),
   ];
 const libFiles = { ...libFilesArray[0], ...libFilesArray[1] };
 </script>

@@ -7,12 +7,12 @@ description: The blockquote component can be used to quote text content from an 
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow } from '../../utils'
   import { P, A, Heading } from '$lib'; 
-  import { props as items1 } from '../props/Blockquote.json'
+  import { props as items1 } from '../../props/Blockquote.json'
 
   // lib files
-  const libFiles = import.meta.glob('../../lib/typography/Blockquote.svelte')
+  const libFiles = import.meta.glob('$lib/typography/Blockquote.svelte')
 </script>
 
 <GitHubSourceList {libFiles} />

@@ -7,13 +7,13 @@ description: Use the textarea component as a multi-line text field input and use
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
-  import { props as items } from '../props/Textarea.json'
+  import { props as items } from '../../props/Textarea.json'
 
   const events = ["on:blur","on:change","on:click","on:focus","on:input","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover","on:paste"];
   // lib files
-  const libFiles = import.meta.glob('../../lib/forms/Textarea.svelte')
+  const libFiles = import.meta.glob('$lib/forms/Textarea.svelte')
 </script>
 
 <GitHubSourceList {libFiles} />

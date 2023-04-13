@@ -7,12 +7,12 @@ description: The link component can be used to set hyperlinks from one page to a
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow} from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow} from '../../utils'
   import {  A} from '$lib'
-  import { props as items1 } from '../props/A.json'
+  import { props as items1 } from '../../props/A.json'
 
   // lib files
-  const libFiles = import.meta.glob('../../lib/typography/A.svelte')
+  const libFiles = import.meta.glob('$lib/typography/A.svelte')
 </script>
 
 <GitHubSourceList {libFiles} />

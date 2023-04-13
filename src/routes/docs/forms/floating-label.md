@@ -7,14 +7,14 @@ description: Use the floating label style for the input field elements to replic
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
-  import { props as items } from '../props/FloatingLabelInput.json'
-  import { props as items2 } from '../props/Helper.json'
+  import { props as items } from '../../props/FloatingLabelInput.json'
+  import { props as items2 } from '../../props/Helper.json'
 
   const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover","on:paste"];
   // lib files
-  const libFiles = import.meta.glob('../../lib/forms/FloatingLabelInput.svelte')
+  const libFiles = import.meta.glob('$lib/forms/FloatingLabelInput.svelte')
 </script>
 
 <GitHubSourceList {libFiles} />

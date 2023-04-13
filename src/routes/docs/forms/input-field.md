@@ -7,15 +7,15 @@ description: Get started with a collection of input fields built with Tailwind C
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList  } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList  } from '../../utils'
   import { onMount } from 'svelte';
   import { Badge, A } from '$lib'
-  import { props as items1 } from '../props/Input.json'
+  import { props as items1 } from '../../props/Input.json'
 
   const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover","on:paste","on:input"];
 
   // lib files
-  const libFiles = import.meta.glob('../../lib/forms/Input.svelte')
+  const libFiles = import.meta.glob('$lib/forms/Input.svelte')
 </script>
 
 <GitHubSourceList {libFiles} />

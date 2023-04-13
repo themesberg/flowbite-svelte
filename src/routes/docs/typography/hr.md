@@ -7,12 +7,12 @@ description: Create a horizontal line using the `Hr` component to separate conte
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow } from '../../utils'
   import { A} from '$lib';
-  import { props as items1 } from '../props/Hr.json'
+  import { props as items1 } from '../../props/Hr.json'
 
   // lib files
-  const libFiles = import.meta.glob('../../lib/typography/Hr.svelte')
+  const libFiles = import.meta.glob('$lib/typography/Hr.svelte')
 </script>
 
 <GitHubSourceList {libFiles} />

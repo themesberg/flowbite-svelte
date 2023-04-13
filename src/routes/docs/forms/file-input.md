@@ -7,15 +7,15 @@ description: Get started with the file input component to let the user to upload
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
-  import { props as items } from '../props/Fileupload.json'
-  import { props as items2 } from '../props/Dropzone.json'
+  import { props as items } from '../../props/Fileupload.json'
+  import { props as items2 } from '../../props/Dropzone.json'
 
   const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover","on:paste"];
   const events2 = ["on:click","on:change","on:focus","on:blur","on:mouseenter","on:mouseleave","on:mouseover"];
   // lib files
-  const libFiles = import.meta.glob('../../lib/forms/Fileupload.svelte')
+  const libFiles = import.meta.glob('$lib/forms/Fileupload.svelte')
 </script>
 
 <GitHubSourceList {libFiles} />

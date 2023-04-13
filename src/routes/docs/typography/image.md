@@ -7,12 +7,12 @@ description: The image component can be used to embed images inside the web page
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow} from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow} from '../../utils'
   import { A, Heading } from '$lib'
-  import { props as items1 } from '../props/Img.json'
+  import { props as items1 } from '../../props/Img.json'
 
   // lib files
-  const libFiles = import.meta.glob('../../lib/typography/Img.svelte')
+  const libFiles = import.meta.glob('$lib/typography/Img.svelte')
 </script>
 
 <GitHubSourceList {libFiles} />

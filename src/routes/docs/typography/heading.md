@@ -7,17 +7,17 @@ description: The heading component defines six levels of title elements from H1 
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow } from '../../utils'
   import { A, Heading, Breadcrumb, BreadcrumbItem } from '$lib';
 
-  import { props as items1 } from '../props/Heading.json'
-  import { props as items2 } from '../props/P.json'
-  import { props as items3 } from '../props/A.json'
-  import { props as items4 } from '../props/Mark.json'
-  import { props as items5 } from '../props/Secondary.json'
+  import { props as items1 } from '../../props/Heading.json'
+  import { props as items2 } from '../../props/P.json'
+  import { props as items3 } from '../../props/A.json'
+  import { props as items4 } from '../../props/Mark.json'
+  import { props as items5 } from '../../props/Secondary.json'
 
   // lib files
-  const libFiles = import.meta.glob('../../lib/typography/Heading.svelte')
+  const libFiles = import.meta.glob('$lib/typography/Heading.svelte')
 </script>
 
 <GitHubSourceList {libFiles} />

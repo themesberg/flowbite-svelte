@@ -7,15 +7,15 @@ description: Get started with the range component to receive a number from the u
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
-  import { props as items } from '../props/Range.json'
+  import { props as items } from '../../props/Range.json'
 
   const events = ["on:change","on:click","on:keydown","on:keypress","on:keyup"];
 
   let minmaxValue=5
   // lib files
-  const libFiles = import.meta.glob('../../lib/forms/Range.svelte')
+  const libFiles = import.meta.glob('$lib/forms/Range.svelte')
 </script>
 
 <GitHubSourceList {libFiles} />

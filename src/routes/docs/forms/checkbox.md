@@ -7,15 +7,15 @@ description: Get started with the checkbox component to allow the user to select
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
-  import { props as items } from '../props/Radio.json'
-  import { props as items2 } from '../props/Label.json'
-  import { props as items3 } from '../props/Helper.json'
+  import { props as items } from '../../props/Radio.json'
+  import { props as items2 } from '../../props/Label.json'
+  import { props as items3 } from '../../props/Helper.json'
 
   const events = ["on:click","on:change","on:keydown","on:keyup","on:mouseenter","on:mouseleave","on:paste"];
   // lib files
-  const libFiles = import.meta.glob('../../lib/forms/Checkbox.svelte')
+  const libFiles = import.meta.glob('$lib/forms/Checkbox.svelte')
 </script>
 
 <GitHubSourceList {libFiles} />

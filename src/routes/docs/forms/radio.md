@@ -7,15 +7,15 @@ description: Get started with the radio component to let the user choose a singl
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
-  import { props as items } from '../props/Radio.json'
-  import { props as items2 } from '../props/Label.json'
-  import { props as items3 } from '../props/Helper.json'
+  import { props as items } from '../../props/Radio.json'
+  import { props as items2 } from '../../props/Label.json'
+  import { props as items3 } from '../../props/Helper.json'
 
   const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover","on:paste"];
   // lib files
-  const libFiles = import.meta.glob('../../lib/forms/Radio.svelte')
+  const libFiles = import.meta.glob('$lib/forms/Radio.svelte')
 </script>
 
 <GitHubSourceList {libFiles} />

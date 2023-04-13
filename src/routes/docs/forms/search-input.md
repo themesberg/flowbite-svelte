@@ -7,13 +7,13 @@ description: Use the search input component as a text field to allow users to en
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
-  import { props as searchItems } from '../props/Search.json'  
+  import { props as searchItems } from '../../props/Search.json'  
 
   const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover","on:paste"];
   // lib files
-  const libFiles = import.meta.glob('../../lib/forms/Search.svelte')
+  const libFiles = import.meta.glob('$lib/forms/Search.svelte')
 </script>
 
 <GitHubSourceList {libFiles} />
