@@ -9,6 +9,7 @@ export const handle = async ({ event, resolve }) => {
   const utilFiles = import.meta.glob('/src/routes/docs/utilities/*.md');
   const pageFiles = import.meta.glob('/src/routes/docs/pages/*.md');
   const extendFiles = import.meta.glob('/src/routes/docs/extend/*.md');
+  const experimentalFiles = import.meta.glob('/src/routes/docs/experimental/*.md');
   // returns an array of files
   const iterableComponentFiles = Object.entries(componentFiles);
   const iterableFormFiles = Object.entries(formFiles);
@@ -16,6 +17,8 @@ export const handle = async ({ event, resolve }) => {
   const iterableUtilFiles = Object.entries(utilFiles);
   const iterablePageFiles = Object.entries(pageFiles);
   const iterableExtendFiles = Object.entries(extendFiles);
+  const iterableExperimentalFiles = Object.entries(experimentalFiles);
+
   // returns an array of paths, /accordion from /src/routes/components/accordion.md
   const allComponents = await Promise.all(
     iterableComponentFiles.map(async ([path]) => {
@@ -52,6 +55,12 @@ export const handle = async ({ event, resolve }) => {
       return filePath(path);
     })
   );
+  // returns an array of paths, /icons from /src/routes/extend/icons.md
+  const allExperimental = await Promise.all(
+    iterableExperimentalFiles.map(async ([path]) => {
+      return filePath(path);
+    })
+  );
 
   // check if pathname is included itn allComponents
   if (allComponents.includes(event.url.pathname)) {
@@ -65,6 +74,8 @@ export const handle = async ({ event, resolve }) => {
     return Response.redirect(`${event.url.origin}/docs/pages${event.url.pathname}`, 301);
   } else if (allExtends.includes(event.url.pathname)) {
     return Response.redirect(`${event.url.origin}/docs/extend${event.url.pathname}`, 301);
+  } else if (allExperimental.includes(event.url.pathname)) {
+    return Response.redirect(`${event.url.origin}/docs/experimental${event.url.pathname}`, 301);
   } else if (allUtils.includes(event.url.pathname)) {
     return Response.redirect(`${event.url.origin}/docs/utilities${event.url.pathname}`, 301);
   }
