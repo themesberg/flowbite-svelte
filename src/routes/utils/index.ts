@@ -17,11 +17,11 @@ export const fetchMarkdownPosts = async () => {
   const componentFiles = import.meta.glob('/src/routes/docs/components/*.md');
   const formFiles = import.meta.glob('/src/routes/docs/forms/*.md');
   const typographyFiles = import.meta.glob('/src/routes/docs/typography/*.md');
-  const utilFiles = import.meta.glob('/src/routes/utilities/*.md');
+  const utilFiles = import.meta.glob('/src/routes/docs/utilities/*.md');
   const pageFiles = import.meta.glob('/src/routes/docs/pages/*.md');
-  const extendFiles = import.meta.glob('/src/routes/extend/*.md');
-  const exampleFiles = import.meta.glob('/src/routes/examples/*/*.svelte');
-  const experimentalFiles = import.meta.glob('/src/routes/experimental/*.md');
+  const extendFiles = import.meta.glob('/src/routes/docs/extend/*.md');
+  const exampleFiles = import.meta.glob('/src/routes/docs/examples/*/*.svelte');
+  const experimentalFiles = import.meta.glob('/src/routes/docs/experimental/*.md');
   // returns an array of files
   const iterableComponentFiles = Object.entries(componentFiles);
   const iterableFormFiles = Object.entries(formFiles);

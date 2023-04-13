@@ -9,15 +9,15 @@
 </script>
 
 <script lang="ts">
-  import { MetaTag, PageHeadSection } from '../../utils';
+  import { MetaTag, PageHeadSection } from '../../../utils';
 
-  import { Input, Label, A, P } from '$lib';
+  import { Input, Label, A } from '$lib';
   import type { Snapshot } from './$types';
   const dir = 'Examples';
   const breadcrumb_title = 'Svelte Snapshot';
   const title = 'Svelte Snapshot';
   const description = 'Svelte Snapshot with Flowbite Svete';
-  
+
   let formData = {
     first_name: '',
     last_name: '',
@@ -36,17 +36,18 @@
 <div class="max-w-3xl 2xl:max-w-4xl mx-auto mt-8">
   <div class="container mx-auto" id="mainContent">
     <PageHeadSection {dir} {breadcrumb_title} {title} {description} />
-    
-    <P
-      >Imagine a scenario where a user has filled out a form, but before submitting it, clicks on a link and
+
+    <p>
+      Imagine a scenario where a user has filled out a form, but before submitting it, clicks on a link and
       then hits the back button on their browser. In such cases, the values they entered in the form will
       vanish into thin air. However, if it's important to retain this input, you can create a snapshot of the
       DOM state, which can be reinstated when the user returns to the previous page.
-    </P>
-    <P
-      >You can achieve this by using <A href="https://kit.svelte.dev/docs/snapshots">SvelteKit snapshots</A>,
+    </p>
+    <p>
+      You can achieve this by using <A href="https://kit.svelte.dev/docs/snapshots">SvelteKit snapshots</A>,
       which enable you to preserve the state of the form input even if the user navigates away from the page
-      and then returns or refreshes the page.</P>
+      and then returns or refreshes the page.
+    </p>
 
     <form class="p-16">
       <div class="grid gap-6 mb-6 md:grid-cols-2">

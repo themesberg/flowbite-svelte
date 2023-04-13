@@ -7,13 +7,13 @@ description: Use the step indicator component to show the progress of a process.
 ---
 
 <script>
-  import {  TableProp, TableDefaultRow,  } from '../utils'
+  import {  TableProp, TableDefaultRow,  } from '../../utils'
   import { P, A } from '$lib'
-  import { props as items } from '../props/StepIndicator.json'
+  import { props as items } from '../../props/StepIndicator.json'
 
 
   // lib files
-  const libFiles = import.meta.glob('../../lib/steps/*.svelte')
+  const libFiles = import.meta.glob('$lib/steps/*.svelte')
 </script>
 
 The Step Indicator component is a simple component to show the progress of a process. It can be used to show the progress of a multi-step form or a multi-step process.

@@ -7,14 +7,14 @@ description: The CloseButton components are used throughout the library and you 
 ---
 
 <script>
-	import { TableProp, TableDefaultRow, GitHubSourceList } from '../utils';
+	import { TableProp, TableDefaultRow, GitHubSourceList } from '../../utils';
 	import { A } from '$lib';
-	import { props as items } from '../props/CloseButton.json';
+	import { props as items } from '../../props/CloseButton.json';
 
 	let divClass = 'w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4';
 	let theadClass = 'text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white';
   // lib files
-  const libFiles = import.meta.glob('../../lib/utils/CloseButton.svelte')
+  const libFiles = import.meta.glob('$lib/utils/CloseButton.svelte')
 </script>
 
 <GitHubSourceList {libFiles} />

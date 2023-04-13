@@ -7,7 +7,7 @@ description: Choose your primary color in tailwind.config.cjs file
 ---
 
 <script>
-  import { TableProp, TableDefaultRow } from '../utils';
+  import { TableProp, TableDefaultRow } from '../../utils';
   import { A, Img, P } from '$lib';
 </script>
 

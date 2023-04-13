@@ -7,14 +7,14 @@ description: The Label components are used throughout the library and you can us
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, GitHubSourceList } from '../utils';
+  import { TableProp, TableDefaultRow, GitHubSourceList } from '../../utils';
   import { A } from '$lib';
-  import { props as items } from '../props/Label.json';
+  import { props as items } from '../../props/Label.json';
 
   let divClass = 'w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4';
   let theadClass = 'text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white';
   // lib files
-  const libFiles = import.meta.glob('../../lib/forms/Label.svelte')
+  const libFiles = import.meta.glob('$lib/forms/Label.svelte')
 </script>
 
 <GitHubSourceList {libFiles} />

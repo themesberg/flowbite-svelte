@@ -9,7 +9,7 @@
 </script>
 
 <script>
-  import { GitHubSourceList, MetaTag, PageHeadSection } from '../../utils';
+  import { GitHubSourceList, MetaTag, PageHeadSection } from '../../../utils';
   import { Img } from '$lib';
   const breadcrumb_title = 'Responsive Sidebar Layout';
   const title = 'Responsive Sidebar Layout';

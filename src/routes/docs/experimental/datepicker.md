@@ -12,11 +12,11 @@ description: Start receiving date and time data from your users using this free 
 </svelte:head>
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow } from '../utils'
+  import { GitHubSourceList, TableProp, TableDefaultRow } from '../../utils'
   import { P, A, Alert } from '$lib'
-  import { props as items } from '../props/Datepicker.json'
+  import { props as items } from '../../props/Datepicker.json'
   // lib files
-  const libFiles = import.meta.glob('../../lib/datepicker/*.svelte')
+  const libFiles = import.meta.glob('$lib/datepicker/*.svelte')
 </script>
 
 <GitHubSourceList {libFiles} />
