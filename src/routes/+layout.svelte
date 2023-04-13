@@ -178,17 +178,10 @@
   </div>
 </div>
 
-<<<<<<< HEAD
-<div class="mx-auto mb-4 pt-4 lg:pl-64 hidden">
-  <Footer footerType="custom" customClass="py-6 px-16 bg-white dark:bg-gray-900">
-    <div class="md:flex md:justify-between">
-      <div class="mb-6 md:mb-0">
-=======
 <Footer footerType="custom" customClass="py-12 xl:pt-24 bg-gray-50 dark:bg-gray-800">
   <div class="w-full mx-auto px-4 max-w-8xl">
     <div class="grid gap-12 xl:grid-cols-6 xl:gap-24">
       <div class="col-span-2">
->>>>>>> main
         <FooterBrand
           href="https://flowbite-svelte.com"
           src={logo}
