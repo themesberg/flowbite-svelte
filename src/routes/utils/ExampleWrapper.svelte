@@ -1,8 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import classNames from 'classnames';
-
+  import Button from '$lib/buttons/Button.svelte';
   import ExampleDarkMode from './ExampleDarkMode.svelte';
+  import GitHub from './icons/GitHub.svelte';
 
   export let divClass = 'w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-2 sm:p-6';
 
@@ -54,7 +55,13 @@
     <div
       class="w-full p-4 border border-gray-200 bg-gray-50 rounded-t-xl dark:border-gray-600 dark:bg-gray-700">
       <div class="grid grid-cols-2">
-        <span class="inline-flex items-center text-gray-800 dark:text-white">Example</span>
+        <Button
+          size="xs"
+          color="alternative"
+          class="dark:!bg-gray-900 w-fit"
+          href="https://github.com/themesberg/flowbite-svelte">
+          <GitHub size="sm" />&nbsp; Edit on GitHub
+        </Button>
         <div class="ml-auto">
           <ExampleDarkMode on:click={() => (dark = !dark)} />
         </div>
