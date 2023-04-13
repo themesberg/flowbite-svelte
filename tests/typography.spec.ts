@@ -7,7 +7,7 @@ import { expect, test } from '@playwright/test';
 
 // Typography
 test('Typography page should have h1', async ({ page }) => {
-  await page.goto('/docs/components/docs/typography');
+  await page.goto('/docs/components/typography');
   expect(await page.textContent('h1')).toBe('Svelte Typography - Flowbite');
 });
 
