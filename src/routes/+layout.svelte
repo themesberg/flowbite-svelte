@@ -132,101 +132,53 @@
 
 <div class="w-full px-4">
   <div class="lg:flex">
-    <Sidebar
-      class={drawerHidden && 'hidden'}
-      asideClass="fixed inset-0 z-20 flex-none h-full w-72 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-64 lg:block">
-      <h4 id="sidebar-label" class="sr-only">Browse docs</h4>
-      <SidebarWrapper
-        divClass="overflow-y-auto z-20 h-full bg-white scrolling-touch max-w-2xs lg:h-[calc(100vh-3rem)] lg:block lg:sticky top:24 lg:top-28 dark:bg-gray-900 lg:mr-0">
-        <nav
-          class="pt-16 px-1 pl-3 lg:pl-0 lg:pt-2 font-normal text-base lg:text-sm pb-10 lg:pb-20 sticky?lg:h-(screen-18)">
-          <ul class="list-unstyled">
-            {#each Object.entries(data) as [key, values]}
-              <li class="mt-8">
-                <h5
-                  class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">
-                  {names_mapping[key] ?? key}
-                </h5>
-                <SidebarGroup ulClass="py-1 list-unstyled fw-normal small">
-                  {#each values as { meta, path }}
-                    {#if meta}
-                      <SidebarItem
-                        label={meta.breadcrumb_title}
-                        href={`/${key}${path}`}
-                        {spanClass}
-                        {aClass}
-                        activeClass={aClass}
-                        active={activeUrl === `/pages${path}`} />
-                    {/if}
-                  {/each}
-                </SidebarGroup>
-              </li>
-            {/each}
-          </ul>
-        </nav>
-      </SidebarWrapper>
-    </Sidebar>
+    <div hidden={$page.route.id === '/'}>
+      <Sidebar
+        class={(drawerHidden && 'hidden') || 'hidden'}
+        asideClass="fixed inset-0 z-20 flex-none h-full w-72 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-64 lg:block">
+        <h4 id="sidebar-label" class="sr-only">Browse docs</h4>
+        <SidebarWrapper
+          divClass="overflow-y-auto z-20 h-full bg-white scrolling-touch max-w-2xs lg:h-[calc(100vh-3rem)] lg:block lg:sticky top:24 lg:top-28 dark:bg-gray-900 lg:mr-0">
+          <nav
+            class="pt-16 px-1 pl-3 lg:pl-0 lg:pt-2 font-normal text-base lg:text-sm pb-10 lg:pb-20 sticky?lg:h-(screen-18)">
+            <ul class="list-unstyled">
+              {#each Object.entries(data) as [key, values]}
+                <li class="mt-8">
+                  <h5
+                    class="mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase lg:text-xs dark:text-white">
+                    {names_mapping[key] ?? key}
+                  </h5>
+                  <SidebarGroup ulClass="py-1 list-unstyled fw-normal small">
+                    {#each values as { meta, path }}
+                      {#if meta}
+                        <SidebarItem
+                          label={meta.breadcrumb_title}
+                          href={`/${key}${path}`}
+                          {spanClass}
+                          {aClass}
+                          activeClass={aClass}
+                          active={activeUrl === `/pages${path}`} />
+                      {/if}
+                    {/each}
+                  </SidebarGroup>
+                </li>
+              {/each}
+            </ul>
+          </nav>
+        </SidebarWrapper>
+      </Sidebar>
+    </div>
     <div
       class="fixed inset-0 z-10 bg-gray-900/50 dark:bg-gray-900/60"
       id="sidebarBackdrop"
       hidden={drawerHidden}
       on:click={toggleDrawer}
       on:keydown={toggleDrawer} />
-    <main class="flex-auto w-full min-w-0 lg:static lg:max-h-full lg:overflow-visible">
+    <main
+      class="flex-auto {$page.route.id === '/'
+        ? 'mx-auto max-w-8xl'
+        : 'w-full'} min-w-0 lg:static lg:max-h-full lg:overflow-visible">
       <slot />
     </main>
   </div>
 </div>
-
-<Footer footerType="custom" customClass="py-12 xl:pt-24 bg-gray-50 dark:bg-gray-800">
-  <div class="w-full mx-auto px-4 max-w-8xl">
-    <div class="grid gap-12 xl:grid-cols-6 xl:gap-24">
-      <div class="col-span-2">
-        <FooterBrand
-          href="https://flowbite-svelte.com"
-          src={logo}
-          alt="Flowbite-Svelte Logo"
-          name="Flowbite-Svelte" />
-      </div>
-
-      <div>
-        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
-        <FooterLinkGroup>
-          <FooterLink liClass="mb-4" href="https://flowbite.com/">Flowbite</FooterLink>
-          <FooterLink liClass="mb-4" href="https://tailwindcss.com/">Tailwind CSS</FooterLink>
-        </FooterLinkGroup>
-      </div>
-      <div>
-        <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Follow us</h2>
-        <FooterLinkGroup>
-          <FooterLink liClass="mb-4" href="https://github.com/themesberg/flowbite-svelte">GitHub</FooterLink>
-          <FooterLink liClass="mb-4" href="https://discord.gg/4eeurUVvTy">Discord</FooterLink>
-        </FooterLinkGroup>
-      </div>
-      <div>
-        <h2 class="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">Legal</h2>
-        <FooterLinkGroup>
-          <FooterLink liClass="mb-4" href="https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE"
-            >License</FooterLink>
-        </FooterLinkGroup>
-      </div>
-    </div>
-
-    <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-
-    <div class="sm:flex sm:items-center sm:justify-between">
-      <FooterCopyright href="/" by="Flowbite™" />
-      <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-        <FooterIcon
-          href="https://github.com/themesberg/flowbite-svelte"
-          class="text-gray-400 hover:text-gray-900">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"
-            ><path
-              fill-rule="evenodd"
-              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-              clip-rule="evenodd" /></svg>
-        </FooterIcon>
-      </div>
-    </div>
-  </div>
-</Footer>
