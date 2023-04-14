@@ -20,7 +20,7 @@ export const fetchMarkdownPosts = async () => {
   const utilFiles = import.meta.glob('/src/routes/docs/utilities/*.md');
   const pageFiles = import.meta.glob('/src/routes/docs/pages/*.md');
   const extendFiles = import.meta.glob('/src/routes/docs/extend/*.md');
-  const exampleFiles = import.meta.glob('/src/routes/docs/examples/*/*.svelte');
+  const exampleFiles = import.meta.glob('/src/routes/docs/examples/*.md');
   const experimentalFiles = import.meta.glob('/src/routes/docs/experimental/*.md');
   // returns an array of files
   const iterableComponentFiles = Object.entries(componentFiles);
@@ -98,7 +98,7 @@ export const fetchMarkdownPosts = async () => {
       const { metadata } = await resolver();
       return {
         meta: metadata,
-        path: fileDir(path)
+        path: filePath(path)
       };
     })
   );

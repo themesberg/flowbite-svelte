@@ -1,6 +1,5 @@
 <script lang="ts">
   import { Button } from '$lib';
-  // import * as Block from './blocks/+server';
   import { MetaTags } from 'svelte-meta-tags';
   import Footer from './utils/Footer.svelte';
   import type { PageData } from './$types';
@@ -9,7 +8,7 @@
   export let data: PageData;
 
   let components = [...data.forms, ...data.components, ...data.typography, ...data.experimental].sort(
-    (a, b) => a.meta.breadcrumb_title.localeCompare(b.meta.breadcrumb_title)
+    (a, b) => a.meta.component_title.localeCompare(b.meta.component_title)
   );
   let title = 'Flowbite-Svelte';
   let description =
@@ -76,8 +75,8 @@
 </div>
 
 <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 mb-10">
-  {#each components as { path, meta: { dir, breadcrumb_title } }}
-    <CompoCard name={breadcrumb_title} {dir} {path} />
+  {#each components as { path, meta: { dir, component_title } }}
+    <CompoCard name={component_title} {dir} {path} />
   {/each}
 </div>
 

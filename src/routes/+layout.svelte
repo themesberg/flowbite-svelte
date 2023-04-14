@@ -56,7 +56,6 @@
   const names_mapping: Record<string, string> = {
     pages: 'Getting Started'
   };
-  console.log($page.route.id === '/');
 </script>
 
 <header
@@ -141,8 +140,7 @@
         <h4 id="sidebar-label" class="sr-only">Browse docs</h4>
         <SidebarWrapper
           divClass="overflow-y-auto z-20 h-full p-4 bg-white scrolling-touch max-w-2xs lg:h-[calc(100vh-8rem)] lg:block dark:bg-gray-900 lg:mr-0">
-          <nav
-            class="font-normal text-base lg:text-sm">
+          <nav class="font-normal text-base lg:text-sm">
             <ul class="list-unstyled">
               {#each Object.entries(data) as [key, values]}
                 <li class="mt-8">
