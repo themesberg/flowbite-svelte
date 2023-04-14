@@ -16,15 +16,18 @@
       <FooterBrand
         href="https://flowbite-svelte.com"
         src={logo}
-        alt="Flowbite-Svelte Logo"
-        name="Flowbite-Svelte" />
+        alt="Flowbite Svelte Logo"
+        name="Flowbite Svelte" />
+        <p class="max-w-sm mb-3 text-gray-600 dark:text-gray-400 mt-4">Flowbite Svelte is an open-source UI component library built with Svelte components and Tailwind CSS that can help you build websites faster.</p>
+        <p class="max-w-sm mb-3 text-gray-600 dark:text-gray-400">Code licensed <a href="https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE" class="text-primary-600 hover:underline">MIT</a>, docs <a href="https://creativecommons.org/licenses/by/3.0/" class="text-primary-600 hover:underline">CC BY 3.0</a>.</p>
     </div>
     <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-      <div>
+      <div> 
         <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
         <FooterLinkGroup>
           <FooterLink liClass="mb-4" href="https://flowbite.com/">Flowbite</FooterLink>
           <FooterLink liClass="mb-4" href="https://tailwindcss.com/">Tailwind CSS</FooterLink>
+          <FooterLink liClass="mb-4" href="https://flowbite.com/figma/">Figma Design</FooterLink>
         </FooterLinkGroup>
       </div>
       <div>
@@ -39,12 +42,14 @@
         <FooterLinkGroup>
           <FooterLink liClass="mb-4" href="https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE"
             >License</FooterLink>
+          <FooterLink liClass="mb-4" href="https://flowbite.com/brand/"
+            >Brand usage</FooterLink>
         </FooterLinkGroup>
       </div>
     </div>
   </div>
   <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
   <div class="sm:flex sm:items-center sm:justify-center">
-    <FooterCopyright href="/" by="Flowbite™" />
+    <FooterCopyright href="/" by="Flowbite™" copyrightMessage="is a registered trademark. All Rights Reserved." />
   </div>
 </Footer>
