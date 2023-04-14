@@ -58,9 +58,9 @@
         <Button
           size="xs"
           color="alternative"
-          class="dark:!bg-gray-900 w-fit"
+          class="dark:!bg-gray-900 w-fit hover:text-primary-600"
           href="https://github.com/themesberg/flowbite-svelte">
-          <GitHub size="sm" />&nbsp; Edit on GitHub
+          <GitHub size="sm"  />&nbsp; Edit on GitHub
         </Button>
         <div class="ml-auto">
           <ExampleDarkMode on:click={() => (dark = !dark)} />
@@ -99,7 +99,7 @@
               data-tooltip-placement="bottom"
               type="button"
               data-copy-state="copy"
-              class="flex items-center px-3 py-2 text-xs font-medium text-gray-600 bg-gray-100 border-l border-gray-200 dark:border-gray-600 dark:text-gray-400 dark:bg-gray-800 hover:text-blue-700 dark:hover:text-white copy-to-clipboard-button">
+              class="flex items-center px-3 py-2 text-xs font-medium text-gray-600 bg-gray-100 border-l border-gray-200 dark:border-gray-600 dark:text-gray-400 dark:bg-gray-800 hover:text-primary-700 dark:hover:text-white copy-to-clipboard-button">
               <svg
                 class="w-4 h-4 mr-2"
                 fill="none"
@@ -127,7 +127,7 @@
             on:click={() => (expand = !expand)}
             data-expand-code=""
             type="button"
-            class="absolute bottom-0 left-0 py-2.5 px-5 w-full text-sm font-medium text-gray-900 bg-gray-100 border-t border-gray-200 hover:bg-gray-100 hover:text-blue-700 dark:bg-gray-700 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+            class="absolute bottom-0 left-0 py-2.5 px-5 w-full text-sm font-medium text-gray-900 bg-gray-100 border-t border-gray-200 hover:bg-gray-100 hover:text-primary-700 dark:bg-gray-700 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
             >Expand code</button>
         {/if}
       </div>
