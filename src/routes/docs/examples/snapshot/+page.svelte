@@ -1,10 +1,10 @@
 <!-- Frontmatter goes here -->
 <script context="module">
   export const metadata = {
-    title: 'Svelte Snapshot',
+    title: 'Svelte Snapshot - Flowbite',
     dir: 'Examples',
     description: 'Svelte Snapshot with Flowbite Svete',
-    breadcrumb_title: 'Svelte Svelte Snapshot',
+    breadcrumb_title: 'Svelte Snapshot',
     component_title: 'Snapshot'
   };
 </script>
