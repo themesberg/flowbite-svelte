@@ -56,6 +56,7 @@
   const names_mapping: Record<string, string> = {
     pages: 'Getting Started'
   };
+  console.log($page.route.id === '/');
 </script>
 
 <header
@@ -63,7 +64,7 @@
   <div
     id="banner"
     tabindex="-1"
-    class="z-50 flex justify-center w-full px-4 py-3 border border-b border-gray-200 bg-gray-50 dark:border-gray-600 lg:py-4 dark:bg-gray-700">
+    class="z-50 flex justify-center w-full px-4 py-3 border border-b border-gray-200 bg-gray-50 dark:border-gray-600 md:py-4 dark:bg-gray-700">
     <div class="items-center md:flex">
       <p class="text-sm font-medium text-gray-900 md:my-0 dark:text-white">
         <DocBadge border>New</DocBadge>
@@ -88,10 +89,11 @@
   <Navbar
     color="default"
     fluid
-    navClass="flex items-center justify-between w-full px-3 py-3 mx-auto lg:px-4"
+    navClass="flex items-center justify-between w-full px-3 py-3 mx-auto"
     let:hidden
     let:toggle>
-    <NavHamburger on:click={toggleDrawer} btnClass="ml-3 lg:hidden" />
+    <span hidden={$page.route.id === '/'}
+      ><NavHamburger on:click={toggleDrawer} btnClass="ml-3 lg:hidden" /></span>
     <NavBrand href="/">
       <img src={logo} class="mr-3 h-6 sm:h-9" alt="Flowbite-Svelte Logo" />
       <span class="self-center whitespace-nowrap text-xl font-semibold text-gray-600 dark:text-white">
@@ -103,10 +105,10 @@
       {hidden}
       {divClass}
       {ulClass}
-      nonActiveClass="'text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 dark:text-gray-400 md:dark:hover:text-primary-700 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent';">
-      <NavLi class="mb-3 lg:px-2 xl:px-2 lg:mb-0" href="/">Home</NavLi>
-      <NavLi class="mb-3 lg:px-2 xl:px-2 lg:mb-0" href="/pages/about">About</NavLi>
-      <NavLi class="mb-3 lg:px-2 xl:px-2 lg:mb-0" href="https://flowbite-svelte-blocks.vercel.app/"
+      nonActiveClass="text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 dark:text-gray-400 md:dark:hover:text-primary-700 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+      <NavLi class="mb-3 md:px-2 xl:px-2 md:mb-0" href="/">Home</NavLi>
+      <NavLi class="mb-3 md:px-2 xl:px-2 md:mb-0" href="/pages/about">About</NavLi>
+      <NavLi class="mb-3 md:px-2 xl:px-2 md:mb-0" href="https://flowbite-svelte-blocks.vercel.app/"
         >Blocks</NavLi>
     </NavUl>
 
@@ -134,7 +136,7 @@
   <div class="lg:flex">
     <div hidden={$page.route.id === '/'}>
       <Sidebar
-        class={(drawerHidden && 'hidden') || 'hidden'}
+        class={drawerHidden && 'hidden'}
         asideClass="fixed inset-0 z-20 flex-none h-full w-72 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-64 lg:block lg:sticky top-24 lg:top-28">
         <h4 id="sidebar-label" class="sr-only">Browse docs</h4>
         <SidebarWrapper
