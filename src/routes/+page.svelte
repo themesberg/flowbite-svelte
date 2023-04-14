@@ -1,13 +1,16 @@
-<script>
+<script lang="ts">
   import { Button } from '$lib';
-  import { goto } from '$app/navigation';
-  import * as Block from './blocks/+server';
+  // import * as Block from './blocks/+server';
   import { MetaTags } from 'svelte-meta-tags';
   import Footer from './utils/Footer.svelte';
+  import type { PageData } from './$types';
+  import CompoCard from './utils/CompoCard.svelte';
 
-  const handleClick = () => {
-    goto('/pages/getting-started');
-  };
+  export let data: PageData;
+
+  let components = [...data.forms, ...data.components, ...data.typography, ...data.experimental].sort(
+    (a, b) => a.meta.breadcrumb_title.localeCompare(b.meta.breadcrumb_title)
+  );
   let title = 'Flowbite-Svelte';
   let description =
     'Flowbite-Svelte is a Tailwind and Flowbite powered UI components for Svelte and SvelteKit.';
@@ -60,7 +63,7 @@
           </p>
           <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
             <div class="mt-3 sm:mt-0 sm:ml-3">
-              <Button size="lg" on:click={handleClick} color="primary">Getting started</Button>
+              <Button size="lg" href="'/pages/getting-started'" color="primary">Getting started</Button>
             </div>
           </div>
         </div>
@@ -72,63 +75,10 @@
   </div>
 </div>
 
-<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
-  <Block.AccordionBlock />
-  <Block.AlertBlock />
-  <Block.AvatarBlock />
-  <Block.BadgeBlock />
-  <Block.BannerBlock />
-  <Block.BottomNavBlock />
-  <Block.BreadcrumbBlock />
-  <Block.BlockquoteBlock />
-  <Block.ButtonBlock />
-  <Block.ButtongroupBlock />
-  <Block.CardBlock />
-  <Block.CarouselBlock />
-  <Block.CheckboxBlock />
-  <Block.DatepickerBlock />
-  <Block.DrawerBlock />
-  <Block.DropdownBlock />
-  <Block.FileinputBlock />
-  <Block.FloatingLabelBlock />
-  <Block.FooterBlock />
-  <Block.FormBlock />
-  <Block.GalleryBlock />
-  <Block.HeadingBlock />
-  <Block.HrBlock />
-  <Block.ImageBlock />
-  <Block.IndicatorBlock />
-  <Block.InputfieldBlock />
-  <Block.KbdBlock />
-  <Block.LinkBlock />
-  <Block.ListBlock />
-  <Block.ListgroupBlock />
-  <Block.MegamenuBlock />
-  <Block.ModalBlock />
-  <Block.NavbarBlock />
-  <Block.PaginationBlock />
-  <Block.ParagraphBlock />
-  <Block.PopoverBlock />
-  <Block.ProgressbarBlock />
-  <Block.RadioBlock />
-  <Block.RangeBlock />
-  <Block.RatingBlock />
-  <Block.SearchinputBlock />
-  <Block.SelectBlock />
-  <Block.SidebarBlock />
-  <Block.SkeletonBlock />
-  <Block.SpeedDial />
-  <Block.SpinnerBlock />
-  <Block.TabBlock />
-  <Block.TableBlock />
-  <Block.TextareaBlock />
-  <Block.TextBlock />
-  <Block.TimelineBlock />
-  <Block.ToastBlock />
-  <Block.ToggleBlock />
-  <Block.TooltipBlock />
-  <Block.TypographyBlock />
-  <Block.VideoBlock />
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 mb-10">
+  {#each components as { path, meta: { dir, breadcrumb_title } }}
+    <CompoCard name={breadcrumb_title} {dir} {path} />
+  {/each}
 </div>
 
 <Footer />
