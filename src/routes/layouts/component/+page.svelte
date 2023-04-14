@@ -24,7 +24,7 @@
 <MetaTag {breadcrumb_title} {title} {dir} {description} />
 
 <div class="flex w-full">
-  <div class="flex-auto max-w-4xl mx-auto min-w-0 pt-6 lg:px-8 lg:pt-8 pb:12 xl:pb-24 lg:pb-16">
+  <div class="flex-auto max-w-4xl mx-auto px-4 min-w-0 pt-6 lg:px-8 lg:pt-8 pb:12 xl:pb-24 lg:pb-16">
     <PageHeadSection {dir} {breadcrumb_title} {title} {description} />
     <div id="mainContent">
       <slot />
