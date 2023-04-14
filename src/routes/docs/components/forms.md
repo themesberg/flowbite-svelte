@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Forms - Flowbite
-breadcrumb_title: Forms
+breadcrumb_title: Svelte Forms
+component_title: Forms
 dir: Components
 description: Use the Tailwind CSS form and input elements such as checkboxes, radios, textarea, text inputs to collect information from users with Flowbite
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, } from '../../utils'
 
   import { A, Heading } from '$lib'
   import { props as items } from '../../props/Input.json'

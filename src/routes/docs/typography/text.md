@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Text - Flowbite
-breadcrumb_title: Text
+breadcrumb_title: Svelte Text
+component_title: Text
 dir: Typography
 description: Learn how to customize text-related styles and properties such as font size, font style, text decoration, font weight and more
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow} from '../../utils'
+  import { TableProp, TableDefaultRow} from '../../utils'
   import { A, Heading } from '$lib'
   import { props as items1 } from '../../props/P.json'
   import { props as items2 } from '../../props/Span.json'
@@ -20,7 +21,7 @@ description: Learn how to customize text-related styles and properties such as f
   const libFiles = { ...libFilesArray[0], ...libFilesArray[1] };
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 Get started with a collection of text customization examples to learn how to update the size, font weight, style, decoration and spacing of inline text elements.
 

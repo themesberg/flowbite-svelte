@@ -1,7 +1,8 @@
 ---
 layout: componentLayout
 title: Svelte Label - Flowbite
-breadcrumb_title: Label
+breadcrumb_title: Svelte Label
+component_title: Label
 dir: Utilities
 description: The Label components are used throughout the library and you can use it for your app as well
 ---
@@ -17,7 +18,7 @@ description: The Label components are used throughout the library and you can us
   const libFiles = import.meta.glob('$lib/forms/Label.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 ## Label
 

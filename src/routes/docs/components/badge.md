@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Badge - Flowbite
-breadcrumb_title: Badge
+breadcrumb_title: Svelte Badge
+component_title: Badge
 dir: Components
 description: Use Tailwind CSS badges as elements to show counts or labels separately or inside other components
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, } from '../../utils'
   import { P, A } from '$lib'
   import { props as badgeProps } from '../../props/Badge.json'
 
@@ -16,7 +17,7 @@ description: Use Tailwind CSS badges as elements to show counts or labels separa
   const libFiles = import.meta.glob('$lib/badges/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The badge component can be used to complement other elements such as buttons or text elements as a label or to show the count of a given data, such as the number of comments for an article or how much time has passed by since a comment has been made.
 

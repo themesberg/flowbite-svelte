@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Images - Flowbite
-breadcrumb_title: Images
+breadcrumb_title: Svelte Images
+component_title: Image
 dir: Typography
 description: The image component can be used to embed images inside the web page in articles and sections based on multiple styles, sizes, layouts and hover animations
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow} from '../../utils'
+  import { TableProp, TableDefaultRow} from '../../utils'
   import { A, Heading } from '$lib'
   import { props as items1 } from '../../props/Img.json'
 
@@ -15,7 +16,7 @@ description: The image component can be used to embed images inside the web page
   const libFiles = import.meta.glob('$lib/typography/Img.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 Get started with a collection of responsive image components coded with the utility classes from Tailwind CSS that you can use inside articles, cards, sections, and other components based on multiple styles, sizes, layouts, and hover animations.
 

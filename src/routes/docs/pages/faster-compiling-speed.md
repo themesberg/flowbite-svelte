@@ -2,8 +2,9 @@
 layout: componentLayout
 breadcrumb_title: Faster Compiling Speed
 title: Faster Compiling Speed
+component_title: Compile Speed
 dir: Pages
-description: Flowbite-Svelte Faster Compiling Speed
+description: Flowbite Svelte Faster Compiling Speed
 ---
 
 <script>

@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Textarea - Flowbite
-breadcrumb_title: Textarea
+breadcrumb_title: Svelte Textarea
+component_title: Textarea
 dir: Forms
 description: Use the textarea component as a multi-line text field input and use it inside form elements available in multiple sizes, styles, and variants
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
   import { props as items } from '../../props/Textarea.json'
 
@@ -16,7 +17,7 @@ description: Use the textarea component as a multi-line text field input and use
   const libFiles = import.meta.glob('$lib/forms/Textarea.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The textarea component is a multi-line text field input that can be used to receive longer chunks of text from the user in the form of a comment box, description field, and more.
 

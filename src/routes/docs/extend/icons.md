@@ -2,6 +2,7 @@
 layout: componentLayout
 breadcrumb_title: Icons
 title: External icon libraries
+component_title: Icon libraries
 dir: Extend
 description: Use Svelte SVG icon families to write less code
 ---

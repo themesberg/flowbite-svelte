@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Rating - Flowbite
-breadcrumb_title: Rating
+breadcrumb_title: Svelte Rating
+component_title: Rating
 dir: Components
 description: Use the rating component to show reviews and testimonials from your users using stars and scores based on multiple styles and sizes
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, } from '../../utils'
   import { P, A } from '$lib'
 
   import { props as items } from '../../props/Rating.json'
@@ -21,7 +22,7 @@ description: Use the rating component to show reviews and testimonials from your
   const libFiles = import.meta.glob('$lib/ratings/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 Get started with the rating component to show an aggregate of reviews and scores in the forms of stars or numbers.
 

@@ -1,9 +1,10 @@
 ---
 layout: componentLayout
-breadcrumb_title: Getting Started
-title: Getting Started
+breadcrumb_title: Getting Started - Flowbite Svelte
+title: Getting Started - Flowbite Svelte
+component_title: Quickstart
 dir: Pages
-description: Flowbite-Svelte Getting Started page
+description: How to get started with Flowbite Svelte
 ---
 
 <script>

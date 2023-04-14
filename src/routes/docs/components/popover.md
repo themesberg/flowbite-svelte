@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Popover - Flowbite
-breadcrumb_title: Popover
+breadcrumb_title: Svelte Popover
+component_title: Popover
 dir: Components
 description: Use the popover component to show detailed information inside a pop-up box relative to the element that is being clicked or hovered based on multiple styles
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow , } from '../../utils'
+  import { TableProp, TableDefaultRow , } from '../../utils'
   import { P, A } from '$lib'
   import { props as items } from '../../props/Popover.json'
   import { props as items2 } from '../../props/Popper.json'
@@ -17,7 +18,7 @@ description: Use the popover component to show detailed information inside a pop
   const libFiles = import.meta.glob('$lib/popover/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 Get started with the popover component to show any type of content inside a pop-up box when hovering or clicking over a trigger element. There are multiple examples that you can choose from, such as showing more information about a user profile, company profile, password strength, and more.
 

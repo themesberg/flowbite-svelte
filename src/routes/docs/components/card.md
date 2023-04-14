@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Cards - Flowbite
-breadcrumb_title: Card
+breadcrumb_title: Svelte Card
+component_title: Cards
 dir: Components
 description: Get started with a large variety of Tailwind CSS card examples for your web project
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, } from '../../utils'
   import { P, A } from '$lib'
 
   import { props as cardProps } from '../../props/Card.json'
@@ -20,7 +21,7 @@ description: Get started with a large variety of Tailwind CSS card examples for 
   const libFiles = import.meta.glob('$lib/cards/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 Use these responsive card components to show data entries and information to your users in multiple forms and contexts such as for your blog, application, user profiles, and more.
 

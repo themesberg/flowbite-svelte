@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Skeleton - Flowbite
-breadcrumb_title: Skeleton
+breadcrumb_title: Svelte Skeleton
+component_title: Skeleton
 dir: Components
 description: The skeleton component can be used as an alternative loading indicator to the spinner by mimicking the content that will be loaded such as text, images, or video
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, } from '../../utils'
   import { P, A } from '$lib'
   import { props as items1 }  from '../../props/CardPlaceholder.json'
   import { props as items2 }  from '../../props/ImagePlaceholder.json'
@@ -22,7 +23,7 @@ description: The skeleton component can be used as an alternative loading indica
   const libFiles = import.meta.glob('$lib/skeleton/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 Use the skeleton component to indicate a loading status with placeholder elements that look very similar to the type of content that is being loaded such as paragraphs, images, videos, and more.
 

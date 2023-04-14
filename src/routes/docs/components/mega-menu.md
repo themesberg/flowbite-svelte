@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Mega Menu - Flowbite
-breadcrumb_title: Mega menu
+breadcrumb_title: Svelte Mega Menu
+component_title: Mega menu
 dir: Components
 description: Use the mega menu component as a full-width dropdown inside the navbar to show a list of menu items based on multiple sizes, variants, and styles
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow , } from '../../utils'
+  import { TableProp, TableDefaultRow , } from '../../utils'
   import { UserCircle, P, A } from '$lib'
   import { props as items} from '../../props/MegaMenu.json'
 
@@ -16,7 +17,7 @@ description: Use the mega menu component as a full-width dropdown inside the nav
   const libFiles = import.meta.glob('$lib/megamenu/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The mega menu component is a full-width dropdown that can be triggered by clicking on the menu item and it shows a list of links that you can use to navigate through the pages on a website.
 

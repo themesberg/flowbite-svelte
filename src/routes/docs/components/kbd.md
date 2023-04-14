@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte KBD (Keyboard) - Flowbite
-breadcrumb_title: KBD
+breadcrumb_title: Svelte KBD (Keyboard)
+component_title: KBD
 dir: Components
 description: Use the KBD component as an inline element to denote textual user input from the keyboard inside paragraphs, tables, and other components
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, } from '../../utils'
   import { P, A } from '$lib'
   import { props as items} from '../../props/Kbd.json'
   import { props as items2} from '../../props/ArrowKeyDown.json'
@@ -19,7 +20,7 @@ description: Use the KBD component as an inline element to denote textual user i
   const libFiles = import.meta.glob('$lib/kbd/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The KBD (Keyboard) component can be used to indicate a textual user input from the keyboard inside other elements such as in text, tables, cards, and more.
 

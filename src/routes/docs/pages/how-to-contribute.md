@@ -1,9 +1,10 @@
 ---
 layout: componentLayout
-breadcrumb_title: How to Contribute
-title: How to Contribute
+breadcrumb_title: How to Contribute - Flowbite Svelte
+title: How to Contribute - Flowbite Svelte
+component_title: Contributing
 dir: Pages
-description: Flowbite-Svelte How to contribute page
+description: Learn how you can start contributing to the open-source Flowbite Svelte UI component library
 ---
 
 <script>

@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Tooltip - Flowbite
-breadcrumb_title: Tooltip
+breadcrumb_title: Svelte Tooltip
+component_title: Tooltip
 dir: Components
 description: Use the following Tailwind CSS powered tooltips to show extra content when hovering or focusing on an element
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, } from '../../utils'
   import { P, A } from '$lib'
   import { props as items } from '../../props/Tooltip.json'
   import { props as items2 } from '../../props/Frame.json'
@@ -16,7 +17,7 @@ description: Use the following Tailwind CSS powered tooltips to show extra conte
   const libFiles = import.meta.glob('$lib/tooltips/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 Flowbite-Svelte allows you to show extra information when hovering or focusing over an element in multiple positions, styles, and animations.
 

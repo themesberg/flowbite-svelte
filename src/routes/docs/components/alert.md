@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Alert - Flowbite
-breadcrumb_title: Alert
+breadcrumb_title: Svelte Alert
+component_title: Alert
 dir: Components
 description: Show contextual information to your users using alert elements based on Tailwind CSS
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
 
   import { Badge, P, A } from '$lib'
 
@@ -22,7 +23,7 @@ description: Show contextual information to your users using alert elements base
   let slotItems = [['default', 'The first slot.'],['extra','A slot after the default slot.']]
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The alert component can be used to provide information to your users such as success or error messages, but also highlighted information complementing the normal flow of paragraphs and headers on a page. Flowbite also includes dismissable alerts which can be hidden by the users by clicking on the close icon.
 

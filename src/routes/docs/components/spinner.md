@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Spinner - Flowbite
-breadcrumb_title: Spinner
+breadcrumb_title: Svelte Spinner (Loader)
+component_title: Spinner
 dir: Components
 description: Use the spinner component as a loader indicator in your projects when fetching data based on an animated SVG
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, } from '../../utils'
   import { P, A } from '$lib'
   import { props as items }  from '../../props/Spinner.json'
 
@@ -15,7 +16,7 @@ description: Use the spinner component as a loader indicator in your projects wh
   const libFiles = import.meta.glob('$lib/spinners/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The spinner component can be used as a loading indicator which comes in multiple colors, sizes, and styles separately or inside elements such as buttons to improve the user experience whenever data is being fetched from your server.
 

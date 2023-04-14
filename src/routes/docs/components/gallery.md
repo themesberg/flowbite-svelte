@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Gallery (Mansonry) - Flowbite
-breadcrumb_title: Gallery
+breadcrumb_title: Svelte Gallery (Masonry)
+component_title: Gallery
 dir: Components
 description: Use the image gallery component based on a masonry grid layout using flex and grid classes from Tailwind CSS to show multiple pictures based on various styles
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, } from '../../utils'
   import { P, A } from '$lib'
 
   import { props as galleryProps } from '../../props/Gallery.json'
@@ -19,7 +20,7 @@ description: Use the image gallery component based on a masonry grid layout usin
   const libFiles = import.meta.glob('$lib/gallery/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The gallery component can be used to show multiple images inside a masonry grid layout styles with the utility-first classes from Tailwind CSS to show a collection of pictures to your users based on various layouts, styles, sizes, and colors.
 

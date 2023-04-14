@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Button Group - Flowbite
-breadcrumb_title: Button group
+breadcrumb_title: Svelte Button Group
+component_title: Button group
 dir: Components
 description: Button groups are a Tailwind CSS powered set of buttons sticked together in a horizontal line
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, P, A } from '$lib'
 
   import { props as buttonGroupProps} from '../../props/ButtonGroup.json'
@@ -17,7 +18,7 @@ description: Button groups are a Tailwind CSS powered set of buttons sticked tog
   const libFiles = import.meta.glob('$lib/buttongroups/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The button group component from Flowbite-Svelte can be used to stack together multiple buttons and links inside a single element.
 

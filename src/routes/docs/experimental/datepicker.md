@@ -1,7 +1,8 @@
 ---
 layout: componentLayout
-title: Datepicker - Flowbite
-breadcrumb_title: Datepicker
+title: Svelte Datepicker - Flowbite
+breadcrumb_title: Svelte Datepicker
+component_title: Datepicker
 dir: Experimental
 description: Start receiving date and time data from your users using this free datepicker element based on Tailwind utility-classes and vanilla JavaScript.
 ---
@@ -12,14 +13,14 @@ description: Start receiving date and time data from your users using this free 
 </svelte:head>
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow } from '../../utils'
+  import { TableProp, TableDefaultRow } from '../../utils'
   import { P, A, Alert } from '$lib'
   import { props as items } from '../../props/Datepicker.json'
   // lib files
   const libFiles = import.meta.glob('$lib/datepicker/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 Date picker component
 

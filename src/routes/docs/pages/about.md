@@ -1,9 +1,10 @@
 ---
 layout: componentLayout
 breadcrumb_title: About
-title: About Flowbite-Svelte
+title: About Flowbite Svelte
+component_title: About
 dir: Pages
-description: Flowbite-Svelte About page
+description: Flowbite Svelte About page
 ---
 
 <script>

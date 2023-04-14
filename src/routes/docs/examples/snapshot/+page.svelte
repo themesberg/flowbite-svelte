@@ -4,7 +4,8 @@
     title: 'Svelte Snapshot',
     dir: 'Examples',
     description: 'Svelte Snapshot with Flowbite Svete',
-    breadcrumb_title: 'Svelte Snapshot'
+    breadcrumb_title: 'Svelte Svelte Snapshot',
+    component_title: 'Snapshot'
   };
 </script>
 

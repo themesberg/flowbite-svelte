@@ -1,7 +1,8 @@
 ---
 layout: componentLayout
 title: Svelte Close Button - Flowbite
-breadcrumb_title: Close button
+breadcrumb_title: Svelte Close Button
+component_title: Close button
 dir: Utilities
 description: The CloseButton components are used throughout the library and you can use it for your app as well
 ---
@@ -17,7 +18,7 @@ description: The CloseButton components are used throughout the library and you 
   const libFiles = import.meta.glob('$lib/utils/CloseButton.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 ## CloseButton
 

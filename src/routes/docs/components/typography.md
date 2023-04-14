@@ -1,19 +1,20 @@
 ---
 layout: componentLayout
 title: Svelte Typography - Flowbite
-breadcrumb_title: Typography
+breadcrumb_title: Svelte Typography
+component_title: Typography
 dir: Components
 description: Use the typography and the utility classes from Tailwind CSS to style text with FlowBite
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, } from '../../utils'
   import { A } from '$lib';
   // lib files
   const libFiles = import.meta.glob('$lib/typography/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The typography for FlowBite is completely based on the utility classes from Tailwind CSS.
 

@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Bottom Navigation - Flowbite
-breadcrumb_title: Bottom Navigation
+breadcrumb_title: Svelte Bottom Navigation
+component_title: Bottom Navigation
 dir: Components
 description: Use the bottom navigation bar component to allow users to navigate through your website or create a control bar using a menu that is positioned at the bottom of the page
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, } from '../../utils'
   import { P, A } from '$lib'
 
   import { props as bottomNavProps } from '../../props/BottomNav.json'
@@ -19,7 +20,7 @@ description: Use the bottom navigation bar component to allow users to navigate 
   const libFiles = import.meta.glob('$lib/bottom-nav/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The bottom bar component can be used to allow menu items and certain control actions to be performed by the user through the usage of a fixed bar positioning to the bottom side of your page.
 

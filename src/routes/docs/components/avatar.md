@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Avatar - Flowbite
-breadcrumb_title: Avatar
+breadcrumb_title: Svelte Avatar
+component_title: Avatar
 dir: Components
 description: Use the avatar component to show a visual representation of a user profile using an image element or SVG object based on multiple styles and sizes
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, } from '../../utils'
 
   import { P, A } from '$lib'
 
@@ -19,7 +20,7 @@ description: Use the avatar component to show a visual representation of a user 
   let name;
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The avatar component can be used as a visual identifier for a user profile on your website and you can use the examples from Flowbite to modify the styles and sizes of these components using the utility classes from Tailwind CSS.
 

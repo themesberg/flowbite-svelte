@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Links - Flowbite
-breadcrumb_title: Links
+breadcrumb_title: Svelte Links
+component_title: Link
 dir: Typography
 description: The link component can be used to set hyperlinks from one page to another or to an external website when clicking on an inline text item, button, or card
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow} from '../../utils'
+  import { TableProp, TableDefaultRow} from '../../utils'
   import {  A} from '$lib'
   import { props as items1 } from '../../props/A.json'
 
@@ -15,7 +16,7 @@ description: The link component can be used to set hyperlinks from one page to a
   const libFiles = import.meta.glob('$lib/typography/A.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 Get started with the link component to enable hyperlinks across pages and external websites applied to elements such as inline text, buttons, cards, inside paragraphs, and more.
 

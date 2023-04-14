@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Lists - Flowbite
-breadcrumb_title: Lists
+breadcrumb_title: Svelte Lists
+component_title: List
 dir: Typography
 description: Use the list component to show an unordered or ordered list of items based on multiple styles, layouts, and variants built with Tailwind CSS and Flowbite
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow } from '../../utils'
+  import { TableProp, TableDefaultRow } from '../../utils'
   import { A, Heading } from '$lib'
   import { props as items1 } from '../../props/List.json'
   import { props as items2 } from '../../props/Li.json'
@@ -22,7 +23,7 @@ description: Use the list component to show an unordered or ordered list of item
 const libFiles = { ...libFilesArray[0], ...libFilesArray[1] };
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 Get started with a collection of list components built with Tailwind CSS for ordered and unordered lists with bullets, numbers, or icons and other styles and layouts to show a list of items inside an article or throughout your web page.
 

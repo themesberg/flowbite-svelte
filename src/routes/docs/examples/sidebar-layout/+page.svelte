@@ -4,12 +4,13 @@
     title: 'Responsive Sidebar Layout',
     dir: 'Examples',
     description: 'Flowbite Svete Responsive sidebar layout',
-    breadcrumb_title: 'Sidebar Layout'
+    breadcrumb_title: 'Svelte Sidebar Layout',
+    component_title: 'Sidebar Layout'
   };
 </script>
 
 <script>
-  import { GitHubSourceList, MetaTag, PageHeadSection } from '../../../utils';
+  import { MetaTag, PageHeadSection } from '../../../utils';
   import { Img } from '$lib';
   const breadcrumb_title = 'Responsive Sidebar Layout';
   const title = 'Responsive Sidebar Layout';
@@ -25,7 +26,7 @@
 <div class="max-w-3xl 2xl:max-w-4xl mx-auto mt-8">
   <div class="container mx-auto" id="mainContent">
     <PageHeadSection {dir} {breadcrumb_title} {title} {description} />
-    <GitHubSourceList {libFiles} />
+    
     <Img src="/images/sveltekit-sidebar-layout-optimized.png" alt="sveltekit sidebar layout" />
   </div>
 </div>

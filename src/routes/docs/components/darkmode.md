@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Dark Mode - Flowbite
-breadcrumb_title: Dark mode
+breadcrumb_title: Svelte Dark mode
+component_title: Dark mode
 dir: Components
 description: Learn how to configure and build a dark mode switcher for Flowbite using Tailwind CSS and start developing with the components from the library
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, } from '../../utils'
   import { P, A } from '$lib'
 
   import { props as items} from '../../props/DarkMode.json'
@@ -16,7 +17,7 @@ description: Learn how to configure and build a dark mode switcher for Flowbite 
   const libFiles = import.meta.glob('$lib/darkmode/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 <p>In Flowbite-Svelte, the `class` strategy is used to support toggling dark mode manually, so you should explicitly configure it in Talwind CSS:</p>
 

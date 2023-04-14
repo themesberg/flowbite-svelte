@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Sticky Banner - Flowbite
-breadcrumb_title: Sticky Banner
+breadcrumb_title: Svelte Sticky Banner
+component_title: Banner
 dir: Components
 description: Use the banner component to show marketing messages and CTA buttons at the top or bottom side of your website based on the utility classes from Tailwind CSS
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow } from '../../utils'
+  import { TableProp, TableDefaultRow } from '../../utils'
   import { P, A } from '$lib'
 
   import { props as bannerProps } from '../../props/Banner.json'
@@ -16,7 +17,7 @@ description: Use the banner component to show marketing messages and CTA buttons
   const libFiles = import.meta.glob('$lib/banner/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 Get started with the sticky banner component coded with Tailwind CSS and Flowbite to show marketing, informational and CTA messages to your website visitors fixed to the top or bottom part of the page as the user scroll down the main content area.
 

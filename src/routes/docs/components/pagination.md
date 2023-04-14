@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Pagination - Flowbite
-breadcrumb_title: Pagination
+breadcrumb_title: Svelte Pagination
+component_title: Pagination
 dir: Components
 description: Use the Tailwind CSS pagination element to indicate a series of content across various pages
 ---
 
 <script lang="ts">
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, Heading, P, A } from '$lib'
   import { props as items1 } from '../../props/Pagination.json'
   import { props as items2 } from '../../props/PaginationItem.json'
@@ -17,7 +18,7 @@ description: Use the Tailwind CSS pagination element to indicate a series of con
   const libFiles = import.meta.glob('$lib/paginations/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The pagination component can be used to navigate across a series of content and data sets for various pages such as blog posts, products, and more. You can use multiple variants of this component with or without icons and even for paginating table data entries.
 

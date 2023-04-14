@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Tabs - Flowbite
-breadcrumb_title: Tabs
+breadcrumb_title: Svelte Tabs
+component_title: Tabs
 dir: Components
 description: Use these responsive tabs components to create a secondary navigational hierarchy for your website or toggle content inside a container
 ---
 
 <script lang="ts">
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, P, A } from '$lib'
   import { props as items3 }  from '../../props/TabItem.json'
   import { props as items4 }  from '../../props/Tabs.json'
@@ -17,7 +18,7 @@ description: Use these responsive tabs components to create a secondary navigati
   const libFiles = import.meta.glob('$lib/tabs/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The tabs component can be used either as an extra navigational hierarchy complementing the main navbar or you can also use it to change content inside a container just below the tabs using the data attributes from Flowbite.
 

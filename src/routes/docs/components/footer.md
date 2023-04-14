@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Footer - Flowbite
-breadcrumb_title: Footer
+breadcrumb_title: Svelte Footer
+component_title: Footer
 dir: Components
 description: Use the footer section at the bottom of every page to show valuable information to your users, such as sitemap links, a copyright notice, and a logo
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, } from '../../utils'
   import { P, A } from '$lib'
 
   import { props as items } from '../../props/Footer.json'
@@ -21,7 +22,7 @@ description: Use the footer section at the bottom of every page to show valuable
   const libFiles = import.meta.glob('$lib/footer/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The footer is one of the most underestimated sections of a website being located at the very bottom of every page, however, it can be used as a way to try to convince users to stay on your website if they haven’t found the information they’ve been looking for inside the main content area.
 

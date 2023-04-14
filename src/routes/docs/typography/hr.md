@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Horizontal Line (HR) - Flowbite
-breadcrumb_title: HR
+breadcrumb_title: Svelte HR
+component_title: HR
 dir: Typography
 description: Create a horizontal line using the `Hr` component to separate content such as paragraphs, blockquotes, and other elements
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow } from '../../utils'
+  import { TableProp, TableDefaultRow } from '../../utils'
   import { A} from '$lib';
   import { props as items1 } from '../../props/Hr.json'
 
@@ -15,7 +16,7 @@ description: Create a horizontal line using the `Hr` component to separate conte
   const libFiles = import.meta.glob('$lib/typography/Hr.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The `Hr` component can be used to separate content using a horizontal line by adding space between elements based on multiple styles, variants, and layouts.
 

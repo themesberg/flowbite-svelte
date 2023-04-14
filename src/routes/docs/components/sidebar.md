@@ -1,14 +1,15 @@
 ---
 layout: componentLayout
 title: Svelte Sidebar - Flowbite
-breadcrumb_title: Sidebar
+breadcrumb_title: Svelte Sidebar
+component_title: Sidebar
 dir: Components
 description: Use the sidebar component to show a list of menu items and multi-level dropdown items on either side of the page to navigate on your website
 ---
 
 <script>
   import { page } from '$app/stores';
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, Heading, P, A } from '$lib'
   import { props as items } from '../../props/Sidebar.json'
   import { props as items2 }  from '../../props/SidebarBrand.json'
@@ -24,7 +25,7 @@ description: Use the sidebar component to show a list of menu items and multi-le
   const libFiles = import.meta.glob('$lib/sidebars/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The sidebar component can be used as a complementary element relative to the navbar shown on either the left or right side of the page used for the navigation on your web application, including menu items, multi-level dropdown items, call to actions elements, and more.
 

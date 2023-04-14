@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Toggle (Switch) - Flowbite
-breadcrumb_title: Toggle
+breadcrumb_title: Svelte Toggle (Switch)
+component_title: Toggle
 dir: Forms
 description: Use the toggle component to switch between a binary state of true or false using a single click available in multiple sizes, variants, and colors
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { onMount } from 'svelte';
   import { Toggle, Badge, A } from '$lib'
   import { props as items } from '../../props/Toggle.json'
@@ -18,7 +19,7 @@ description: Use the toggle component to switch between a binary state of true o
   const libFiles = import.meta.glob('$lib/forms/Toggle.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The toggle component can be used to receive a simple “yes” or “no” type of answer from the user by choosing a single option from two options available in multiple sizes, styles, and colors coded with the utility classes from Tailwind CSS and with dark mode support.
 

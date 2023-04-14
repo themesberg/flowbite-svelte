@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Speed Dial - Flowbite
-breadcrumb_title: Speed Dial
+breadcrumb_title: Svelte Speed Dial
+component_title: Speed Dial
 dir: Components
 description: The speed dial component can be used as a quick way to show a list of action buttons to a user when hovering or clicking on the main trigger element.
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, } from '../../utils'
   import { P, A, Alert } from '$lib'  
   import { props as items1 } from '../../props/SpeedDial.json'
   import { props as items2 } from '../../props/SpeedDialButton.json'
@@ -16,7 +17,7 @@ description: The speed dial component can be used as a quick way to show a list 
   const libFiles = import.meta.glob('$lib/speed-dial/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 Get started with the speed dial component to show a list of buttons or menu items positioned relative to the body in either corner as a quick way to allow certains actions to be made by your users.
 

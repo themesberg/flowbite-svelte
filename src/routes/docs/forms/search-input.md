@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Search Input - Flowbite
-breadcrumb_title: Search input
+breadcrumb_title: Svelte Search Input
+component_title: Search Input
 dir: Forms
 description: Use the search input component as a text field to allow users to enter search queries and receive relevant page results available in multiple styles and sizes
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
   import { props as searchItems } from '../../props/Search.json'  
 
@@ -16,7 +17,7 @@ description: Use the search input component as a text field to allow users to en
   const libFiles = import.meta.glob('$lib/forms/Search.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The search input component can be used to let your users search through your website using string queries and it comes in multiple styles, variants, and sizes built with the utility classes from Tailwind CSS.
 

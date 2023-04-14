@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Dropdown - Flowbite
-breadcrumb_title: Dropdown
+breadcrumb_title: Svelte Dropdown
+component_title: Dropdown
 dir: Components
 description: Get started with the dropdown component to show a list of menu items when clicking on the trigger element based on multiple layouts, styles, and placements
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, P, A  } from '$lib'
 
   import { props as propItems} from '../../props/Dropdown.json'
@@ -26,7 +27,7 @@ description: Get started with the dropdown component to show a list of menu item
   const libFiles = import.meta.glob('$lib/dropdowns/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The dropdown component can be used to show a list of menu items when clicking on an element such as a button and hiding it when clicking outside of the triggering element.
 

@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Progress Bar - Flowbite
-breadcrumb_title: Progress bar
+breadcrumb_title: Svelte Progress bar
+component_title: Progress
 dir: Components
 description: Use the progress bar component to show the completion rate of a data indicator or use it as a loader element
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, } from '../../utils'
   import { P, A } from '$lib'
   import { props as items } from '../../props/Progressbar.json'
 
@@ -16,7 +17,7 @@ description: Use the progress bar component to show the completion rate of a dat
   const libFiles = import.meta.glob('$lib/progressbars/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The progress bar component can be used as an indicator to show the completion rate of data sets or it can be used as an animated loader component. There are multiple sizes, colors, and styles available.
 

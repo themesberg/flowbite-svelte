@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Drawer (Off-canvas) - Flowbite
-breadcrumb_title: Drawer
+breadcrumb_title: Svelte Drawer
+component_title: Drawer
 dir: Components
 description: The Drawer component can be used as a hidden off-canvas sidebar for navigation and to show other information based on multiple styles and placements
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, } from '../../utils'
   import { Heading, P, A } from '$lib';
 
   import { props as items} from '../../props/Drawer.json'
@@ -16,7 +17,7 @@ description: The Drawer component can be used as a hidden off-canvas sidebar for
   const libFiles = import.meta.glob('$lib/drawer/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 Use the Drawer component (or “off-canvas”) to show a fixed element relative to the document page from any side for navigation, contact forms, informational purposes or other user actions.
 

@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Accordion - Flowbite
-breadcrumb_title: Accordion
+breadcrumb_title: Svelte Accordion
+component_title: Accordion
 dir: Components
 description: Use the accordion component to show hidden information based on the collapse and expand state of the child elements using data attribute options
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, } from '../../utils'
   import { P, A } from '$lib'; 
   // Props 
   import {props as accordionProps} from '../../props/Accordion.json'
@@ -22,7 +23,7 @@ description: Use the accordion component to show hidden information based on the
 
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The accordion component is a collection of vertically collapsing header and body elements that can be used to show and hide information based on the Tailwind CSS utility classes and JavaScript from Flowbite.
 

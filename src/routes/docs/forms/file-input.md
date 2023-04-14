@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte File Input - Flowbite
-breadcrumb_title: File input
+breadcrumb_title: Svelte File Input
+component_title: File input
 dir: Forms
 description: Get started with the file input component to let the user to upload one or more files from their device storage based on multiple styles and sizes
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
   import { props as items } from '../../props/Fileupload.json'
   import { props as items2 } from '../../props/Dropzone.json'
@@ -18,7 +19,7 @@ description: Get started with the file input component to let the user to upload
   const libFiles = import.meta.glob('$lib/forms/Fileupload.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The file input component can be used to upload one or more files from the device storage of the user available in multiple sizes, styles, variants and support for dark mode.
 

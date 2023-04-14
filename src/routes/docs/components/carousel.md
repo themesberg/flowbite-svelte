@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Carousel - Flowbite
-breadcrumb_title: Carousel
+breadcrumb_title: Svelte Carousel
+component_title: Carousel
 dir: Components
 description: Use the carousel component to slide through multiple elements and images using custom controls, indicators, intervals, and options
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, } from '../../utils'
   import { P, A } from '$lib'
 
   import { props as items } from '../../props/Carousel.json'
@@ -21,7 +22,7 @@ description: Use the carousel component to slide through multiple elements and i
   const libFiles = import.meta.glob('$lib/carousels/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The carousel component can be used to cycle through a set of elements using custom options, controls, and indicators.
 

@@ -1,7 +1,8 @@
 ---
 layout: componentLayout
 title: Svelte Toolbar - Flowbite
-breadcrumb_title: Toolbar
+breadcrumb_title: Svelte Toolbar
+component_title: Toolbar
 dir: Utilities
 description: Use the following Tailwind CSS powered toolbars to show groups of tool buttons
 ---
@@ -17,7 +18,7 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
   const libFiles = import.meta.glob('$lib/toolbar/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 ## Setup
 

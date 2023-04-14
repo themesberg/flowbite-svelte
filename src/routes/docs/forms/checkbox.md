@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Checkbox - Flowbite
-breadcrumb_title: Checkbox
+breadcrumb_title: Svelte Checkbox
+component_title: Checkbox
 dir: Forms
 description: Get started with the checkbox component to allow the user to select one or more options in the form of a square box available in multiple sizes and colors
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
   import { props as items } from '../../props/Radio.json'
   import { props as items2 } from '../../props/Label.json'
@@ -18,7 +19,7 @@ description: Get started with the checkbox component to allow the user to select
   const libFiles = import.meta.glob('$lib/forms/Checkbox.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The checkbox component can be used to receive one or more selected options from the user in the form of a square box available in multiple styles, sizes, colors, and variants.
 

@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Buttons - Flowbite
-breadcrumb_title: Buttons
+breadcrumb_title: Svelte Buttons
+component_title: Buttons
 dir: Components
 description: Use the button component inside forms, as links, social login, payment options with support for multiple styles, colors, sizes, gradients, and shadows
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, P, A } from '$lib'
 
   import { props as buttonProps } from '../../props/Button.json'
@@ -20,7 +21,7 @@ description: Use the button component inside forms, as links, social login, paym
   const libFiles = import.meta.glob('$lib/buttons/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The button component is probably the most widely used element in any user interface or website as it can be used to launch an action but also to link to other pages.
 

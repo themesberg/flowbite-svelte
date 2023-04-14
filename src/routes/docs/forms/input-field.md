@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Input Fields - Flowbite
-breadcrumb_title: Input fields
+breadcrumb_title: Svelte Input Fields
+component_title: Input Field
 dir: Forms
 description: Get started with a collection of input fields built with Tailwind CSS to start accepting data from the user based on multiple sizes, variants, and input types
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList  } from '../../utils'
+  import { TableProp, TableDefaultRow, DocBadgeList  } from '../../utils'
   import { onMount } from 'svelte';
   import { Badge, A } from '$lib'
   import { props as items1 } from '../../props/Input.json'
@@ -18,7 +19,7 @@ description: Get started with a collection of input fields built with Tailwind C
   const libFiles = import.meta.glob('$lib/forms/Input.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The input field is an important part of the form element that can be used to create interactive controls to accept data from the user based on multiple input types, such as text, email, number, password, URL, phone number, and more.
 

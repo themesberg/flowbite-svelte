@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Radio - Flowbite
-breadcrumb_title: Radio
+breadcrumb_title: Svelte Radio
+component_title: Radio
 dir: Forms
 description: Get started with the radio component to let the user choose a single option from multiple options in the form of a circle based on multiple styles and colors
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
   import { props as items } from '../../props/Radio.json'
   import { props as items2 } from '../../props/Label.json'
@@ -18,7 +19,7 @@ description: Get started with the radio component to let the user choose a singl
   const libFiles = import.meta.glob('$lib/forms/Radio.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The radio component can be used to allow the user to choose a single option from one or more available options coded with the utility classes from Tailwind CSS and available in multiple styles, variants, and colors and support dark mode.
 

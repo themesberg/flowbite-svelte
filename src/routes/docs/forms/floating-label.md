@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Floating Label - Flowbite
-breadcrumb_title: Floating label
+breadcrumb_title: Svelte Floating Label
+component_title: Floating Label
 dir: Forms
 description: Use the floating label style for the input field elements to replicate the Material UI design system from Google and choose from multiple styles and sizes
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
   import { props as items } from '../../props/FloatingLabelInput.json'
   import { props as items2 } from '../../props/Helper.json'
@@ -17,7 +18,7 @@ description: Use the floating label style for the input field elements to replic
   const libFiles = import.meta.glob('$lib/forms/FloatingLabelInput.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The floating label style was first pioneered by Google in its infamous Material UI design system and it’s basically a label tag which floats just above the input field when it is being focused or already has content inside.
 

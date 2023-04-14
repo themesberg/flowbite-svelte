@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Indicators - Flowbite
-breadcrumb_title: Indicators
+breadcrumb_title: Svelte Indicators
+component_title: Indicators
 dir: Extend
 description: Use the indicator component to show a number count, account status, or as a loading label positioned relative to the parent component coded with Tailwind CSS
 ---
 
 <script>
-  import {GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import {TableProp, TableDefaultRow, } from '../../utils'
   import { P, A } from '$lib'
 
   import { props as items } from '../../props/Indicator.json'
@@ -16,7 +17,7 @@ description: Use the indicator component to show a number count, account status,
   const libFiles = import.meta.glob('$lib/indicators/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The indicator component can be used as a small element positioned absolutely relative to another component such as a button or card and show a number count, account status (red for offline, green for online) and other useful information.
 

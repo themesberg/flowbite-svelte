@@ -1,7 +1,8 @@
 ---
 layout: componentLayout
 title: Colors 
-breadcrumb_title: Colors
+breadcrumb_title: Svelte Colors
+component_title: Colors
 dir: Utilities
 description: Choose your primary color in tailwind.config.cjs file
 ---

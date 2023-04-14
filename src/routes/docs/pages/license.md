@@ -2,8 +2,9 @@
 layout: componentLayout
 breadcrumb_title: License
 title: License
+component_title: License
 dir: Pages
-description: Flowbite-Svelte License page
+description: Learn more about the licensing right of the Flowbite Svelte UI component library
 ---
 
 <script>
@@ -12,7 +13,7 @@ description: Flowbite-Svelte License page
 
 ## MIT License
 
-<h3>Copyright (c) 2022 Flowbite-Svelte</h3>
+<h3>Copyright (c) 2022 Flowbite Svelte</h3>
 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
-title: Svelte Range - Flowbite
-breadcrumb_title: Range
+title: Svelte Range Slider - Flowbite
+breadcrumb_title: Svelte Range Slider
+component_title: Range
 dir: Forms
 description: Get started with the range component to receive a number from the user anywhere from 1 to 100 by sliding form control horizontally based on multiple options
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
   import { props as items } from '../../props/Range.json'
 
@@ -18,7 +19,7 @@ description: Get started with the range component to receive a number from the u
   const libFiles = import.meta.glob('$lib/forms/Range.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The range component can be used as an input field to get a number from the user based on your custom selection (ie. from 1 to 100) by using a sliding animation.
 

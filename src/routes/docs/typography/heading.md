@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Heading - Flowbite
-breadcrumb_title: Heading
+breadcrumb_title: Svelte Heading
+component_title: Heading
 dir: Typography
 description: The heading component defines six levels of title elements from H1 to H6 that are used as titles and subtitles on a web page based on multiple styles and layouts
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow } from '../../utils'
+  import { TableProp, TableDefaultRow } from '../../utils'
   import { A, Heading, Breadcrumb, BreadcrumbItem } from '$lib';
 
   import { props as items1 } from '../../props/Heading.json'
@@ -20,7 +21,7 @@ description: The heading component defines six levels of title elements from H1 
   const libFiles = import.meta.glob('$lib/typography/Heading.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 Get started with the heading component to define titles and subtitles on a web page and also improve the on-page SEO metrics of your website by targeting high-traffic keywords on Google.
 

@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Timeline - Flowbite
-breadcrumb_title: Timeline
+breadcrumb_title: Svelte Timeline
+component_title: Timeline
 dir: Components
 description: Get started with the responsive timeline component to show data in a chronological order with support for multiple styles, sizes, and variants
 ---
 
 <script lang="ts">
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, } from '../../utils'
   import { Button, P, A } from '$lib'
   import { props as items1 }  from '../../props/Timeline.json'
   import { props as items2 }  from '../../props/TimelineItem.json'
@@ -23,7 +24,7 @@ description: Get started with the responsive timeline component to show data in 
   const libFiles = import.meta.glob('$lib/timeline/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The timeline component can be used to show series of data in a chronological order for use cases such as activity feeds, user actions, application updates, and more.
 

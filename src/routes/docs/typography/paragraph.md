@@ -1,14 +1,15 @@
 ---
 layout: componentLayout
 title: Svelte Paragraph - Flowbite
-breadcrumb_title: Paragraph
+breadcrumb_title: Svelte Paragraph
+component_title: Paragraph
 dir: Typography
 description: Use the paragraph component to create multiple blocks of text separated by blank lines and write
   content based on multiple layouts and styles
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow} from '../../utils';
+  import { TableProp, TableDefaultRow} from '../../utils';
   import {  A, Heading } from '$lib';
   import { props as items1 } from '../../props/P.json'
   import { props as items2 } from '../../props/Layout.json'
@@ -21,7 +22,7 @@ description: Use the paragraph component to create multiple blocks of text separ
   const libFiles = { ...libFilesArray[0], ...libFilesArray[1] };
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The paragraph element is one of the most commonly used HTML tags on a document page because it is
 used to write longer blocks of text separated by a blank line and can massively improve the on-page

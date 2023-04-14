@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Video - Flowbite
-breadcrumb_title: Video
+breadcrumb_title: Svelte Video
+component_title: Video
 dir: Components
 description: Use the video component to configure an embedded video player using native HTML 5 functionality based on the utility classes from Tailwind CSS
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, } from '../../utils'
   import { Heading, P, A } from '$lib'
   import { props as items } from '../../props/Video.json'
 
@@ -15,7 +16,7 @@ description: Use the video component to configure an embedded video player using
   const libFiles = import.meta.glob('$lib/video/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 ## Setup
 

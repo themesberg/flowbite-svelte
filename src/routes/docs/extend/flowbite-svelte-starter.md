@@ -2,6 +2,7 @@
 layout: componentLayout
 breadcrumb_title: Flowbite Svelte Starters
 title: Flowbite Svelte Starters
+component_title: Starter Kit
 dir: Extend
 description: Flowbite Svete Starters provide all necessary components to get started quickly
 ---

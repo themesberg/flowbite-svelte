@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Modal - Flowbite
-breadcrumb_title: Modal
+breadcrumb_title: Svelte Modal
+component_title: Modal
 dir: Components
 description: Use the modal component to show interactive dialogs and notifications to your website users available in multiple sizes, colors, and styles
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, } from '../../utils'
   import { P, A } from '$lib'  
   import { props as items1 } from '../../props/Modal.json'
 
@@ -15,7 +16,7 @@ description: Use the modal component to show interactive dialogs and notificatio
   const libFiles = import.meta.glob('$lib/modals/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The modal component can be used as an interactive dialog on top of the main content area of the website to show notifications and gather information using form elements from your website users.
 

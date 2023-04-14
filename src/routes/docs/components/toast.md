@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Toasts - Flowbite
-breadcrumb_title: Toast
+breadcrumb_title: Svelte Toast Notification
+component_title: Toast
 dir: Components
 description: Push notifications to your users using the toast component and choose from multiple sizes, colors, styles, and positions
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, } from '../../utils'
   import { P, A } from '$lib'
   import { props as items }  from '../../props/Toast.json'
 
@@ -15,7 +16,7 @@ description: Push notifications to your users using the toast component and choo
   const libFiles = import.meta.glob('$lib/toasts/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The toast component can be used to enhance your website’s interactivity by pushing notifications to your visitors. You can choose from multiple styles, colors, sizes, and positions and even dismiss the component.
 

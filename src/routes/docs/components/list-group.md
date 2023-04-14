@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte List Group - Flowbite
-breadcrumb_title: List group
+breadcrumb_title: Svelte List Group
+component_title: List Group
 dir: Components
 description: Use the list group component to display a series of items, buttons or links inside a single element
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, Heading, P, A } from '$lib'
   import { props as items1 } from '../../props/Listgroup.json'
   import { props as items2 } from '../../props/ListgroupItem.json'
@@ -17,7 +18,7 @@ description: Use the list group component to display a series of items, buttons 
   const libFiles = import.meta.glob('$lib/list-group/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The list group component can be used to display a series of elements, buttons or links inside a single card component similar to a sidebar.
 

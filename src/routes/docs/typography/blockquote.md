@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Blockquote - Flowbite
-breadcrumb_title: Blockquote
+breadcrumb_title: Svelte Blockquote
+component_title: Blockquote
 dir: Typography
 description: The blockquote component can be used to quote text content from an external source that can be used for testimonials, reviews, and quotes inside an article
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow } from '../../utils'
+  import { TableProp, TableDefaultRow } from '../../utils'
   import { P, A, Heading } from '$lib'; 
   import { props as items1 } from '../../props/Blockquote.json'
 
@@ -15,7 +16,7 @@ description: The blockquote component can be used to quote text content from an 
   const libFiles = import.meta.glob('$lib/typography/Blockquote.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 Get started with Blockquote component when quoting external sources such as quotes inside an article, user reviews, and testimonials based on multiple examples of layouts, styles, and contexts.
 

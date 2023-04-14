@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Breadcrumb - Flowbite
-breadcrumb_title: Breadcrumb
+breadcrumb_title: Svelte Breadcrumb
+component_title: Breadcrumb
 dir: Components
 description: Show the location of the current page in a hierarchical structure using the breadcrumb components
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, } from '../../utils'
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   import { props as breadcrumbProps } from '../../props/Breadcrumb.json'
   import { props as breadcrumbItemProps } from '../../props/BreadcrumbItem.json'
@@ -16,7 +17,7 @@ description: Show the location of the current page in a hierarchical structure u
   const libFiles = import.meta.glob('$lib/breadcrumbs/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The breadcrumb component is an important part of any website or application that can be used to show the current location of a page in a hierarchical structure of pages.
 

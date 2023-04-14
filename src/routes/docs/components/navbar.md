@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Navbar - Flowbite
-breadcrumb_title: Navbar
+breadcrumb_title: Svelte Navbar
+component_title: Navbar
 dir: Components
 description: The navbar component can be used to show a list of navigation links positioned on the top side of your page based on multiple layouts, sizes, and dropdowns
 ---
 
 <script>
-  import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, Heading, P, A } from '$lib';
 
   import { props as items } from '../../props/Navbar.json'
@@ -23,7 +24,7 @@ description: The navbar component can be used to show a list of navigation links
   const libFiles = import.meta.glob('$lib/navbar/*.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 Get started with the responsive navbar component from Flowbite to quickly set up a navigation menu for your website and set up the logo, list of pages, CTA button, search input, user profile options with a dropdown, and more.
 

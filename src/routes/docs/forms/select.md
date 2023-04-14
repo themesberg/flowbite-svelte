@@ -1,13 +1,14 @@
 ---
 layout: componentLayout
 title: Svelte Select - Flowbite
-breadcrumb_title: Select
+breadcrumb_title: Svelte Select
+component_title: Select
 dir: Forms
 description: Get started with the select component to allow the user to choose from one or more options from a dropdown list based on multiple styles, sizes, and variants
 ---
 
 <script>
-import { GitHubSourceList, TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
 import { Badge, A } from '$lib'
 import { props as items } from '../../props/Select.json'
 
@@ -17,7 +18,7 @@ const events = ["on:change","on:input"];
 const libFiles = import.meta.glob('$lib/forms/Select.svelte')
 </script>
 
-<GitHubSourceList {libFiles} />
+
 
 The select input component can be used to gather information from users based on multiple options in the form of a dropdown list and by browsing this page you will find multiple options, styles, sizes, and variants built with the utility classes from Tailwind CSS also available in dark mode.
 
