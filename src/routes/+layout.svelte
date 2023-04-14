@@ -48,7 +48,7 @@
   let logo = '/images/flowbite-svelte-icon-logo.svg';
   let spanClass = '';
   let aClass =
-    'py-2 transition-colors duration-200 relative flex items-center flex-wrap font-medium hover:text-gray-900 text-gray-500 dark:text-gray-400 dark:hover:text-white ';
+    'py-2 transition-colors duration-200 relative flex items-center flex-wrap font-medium hover:text-gray-900 hover:cursor-pointer text-gray-500 dark:text-gray-400 dark:hover:text-white ';
   let divClass = 'w-full ml-auto md:block md:w-auto order-1 md:order-none';
   let ulClass =
     'flex flex-col p-3 mt-4 md:flex-row md:mt-0 text-sm font-medium text-gray-900 dark:text-gray-300';
@@ -66,8 +66,8 @@
     tabindex="-1"
     class="z-50 flex justify-center w-full px-4 py-3 border border-b border-gray-200 bg-gray-50 dark:border-gray-600 md:py-4 dark:bg-gray-700">
     <div class="items-center md:flex">
-      <p class="text-sm font-medium text-gray-900 md:my-0 dark:text-white">
-        <DocBadge border>New</DocBadge>
+      <p class="text-sm font-medium text-gray-900 md:my-0 dark:text-white items-center flex">
+        <DocBadge border class="mr-3">New</DocBadge>
         We have launched Flowbite Svelte Blocks!<a
           class="inline-flex items-center ml-2 text-sm font-medium text-primary-700 md:ml-2 dark:text-primary-700 hover:underline"
           href="https://flowbite-svelte-blocks.vercel.app/"
@@ -89,15 +89,15 @@
   <Navbar
     color="default"
     fluid
-    navClass="flex items-center justify-between w-full px-3 py-3 mx-auto"
+    navClass="flex items-center justify-between w-full z-40 px-3 py-3 mx-auto"
     let:hidden
     let:toggle>
     <span hidden={$page.route.id === '/'}
       ><NavHamburger on:click={toggleDrawer} btnClass="ml-3 lg:hidden" /></span>
     <NavBrand href="/">
-      <img src={logo} class="mr-3 h-6 sm:h-9" alt="Flowbite-Svelte Logo" />
-      <span class="self-center whitespace-nowrap text-xl font-semibold text-gray-600 dark:text-white">
-        Flowbite-Svelte
+      <img src={logo} class="mr-3 h-8" alt="Flowbite Svelte Logo" />
+      <span class="self-center whitespace-nowrap text-2xl font-semibold text-gray-900 dark:text-white">
+        Flowbite Svelte
       </span>
     </NavBrand>
     <NavHamburger on:click={toggle} />
@@ -132,17 +132,17 @@
   </Navbar>
 </header>
 
-<div class="w-full px-4">
+<div>
   <div class="lg:flex">
     <div hidden={$page.route.id === '/'}>
       <Sidebar
         class={drawerHidden && 'hidden'}
-        asideClass="fixed inset-0 z-20 flex-none h-full w-72 lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-64 lg:block lg:sticky top-24 lg:top-28">
+        asideClass="fixed inset-0 z-20 flex-none h-full w-72 lg:static lg:h-auto border-r border-gray-200 dark:border-gray-600 lg:overflow-y-visible lg:pt-0 lg:w-64 lg:block lg:sticky top-24 lg:top-28">
         <h4 id="sidebar-label" class="sr-only">Browse docs</h4>
         <SidebarWrapper
-          divClass="overflow-y-auto z-20 h-full bg-white scrolling-touch max-w-2xs lg:h-[calc(100vh-3rem)] lg:block dark:bg-gray-900 lg:mr-0">
+          divClass="overflow-y-auto z-20 h-full p-4 bg-white scrolling-touch max-w-2xs lg:h-[calc(100vh-8rem)] lg:block dark:bg-gray-900 lg:mr-0">
           <nav
-            class="pt-16 px-1 pl-3 lg:pl-0 lg:pt-2 font-normal text-base lg:text-sm pb-10 lg:pb-20 sticky?lg:h-(screen-18)">
+            class="font-normal text-base lg:text-sm">
             <ul class="list-unstyled">
               {#each Object.entries(data) as [key, values]}
                 <li class="mt-8">
@@ -154,7 +154,7 @@
                     {#each values as { meta, path }}
                       {#if meta}
                         <SidebarItem
-                          label={meta.breadcrumb_title}
+                          label={meta.component_title}
                           href={`/docs/${key}${path}`}
                           {spanClass}
                           {aClass}
