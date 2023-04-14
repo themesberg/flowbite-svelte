@@ -8,9 +8,9 @@
   const handleClick = () => {
     goto('/pages/getting-started');
   };
-  let title = 'Flowbite-Svelte';
+  let title = 'Flowbite Svelte';
   let description =
-    'Flowbite-Svelte is a Tailwind and Flowbite powered UI components for Svelte and SvelteKit.';
+    'Flowbite Svelte is an open-source UI component library built with Svelte components, Tailwind CSS utility classes and based on the Flowbite design system and components.';
   let default_title = 'Svelte UI Components';
 </script>
 
@@ -33,7 +33,7 @@
         alt: `${title}`
       }
     ],
-    site_name: 'Flowbite-Svelte'
+    site_name: 'Flowbite Svelte'
   }}
   twitter={{
     handle: '@shinokada',
