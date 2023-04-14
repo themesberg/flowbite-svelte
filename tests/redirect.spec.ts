@@ -63,7 +63,7 @@ test('Dark mode page should have h1', async ({ page }) => {
 // Datepicker
 test('Datepicker page should have h1', async ({ page }) => {
   await page.goto('/datepicker');
-  expect(await page.textContent('h1')).toBe('Datepicker - Flowbite');
+  expect(await page.textContent('h1')).toBe('Svelte Datepicker - Flowbite');
 });
 
 // Dropdown

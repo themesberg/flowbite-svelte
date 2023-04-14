@@ -38,7 +38,7 @@ test('Radio page should have h1', async ({ page }) => {
 
 test('Range page should have h1', async ({ page }) => {
   await page.goto('/docs/forms/range');
-  expect(await page.textContent('h1')).toBe('Svelte Range - Flowbite');
+  expect(await page.textContent('h1')).toBe('Svelte Range Slider - Flowbite');
 });
 
 test('Search page should have h1', async ({ page }) => {

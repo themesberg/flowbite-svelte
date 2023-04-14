@@ -7,17 +7,17 @@ test('index page should have h1', async ({ page }) => {
 
 test('About page should have h1', async ({ page }) => {
   await page.goto('/docs/pages/about');
-  expect(await page.textContent('h1')).toBe('About Flowbite-Svelte');
+  expect(await page.textContent('h1')).toBe('About Flowbite Svelte');
 });
 
 test('Getting Started page should have h1', async ({ page }) => {
   await page.goto('/docs/pages/getting-started');
-  expect(await page.textContent('h1')).toBe('Getting Started');
+  expect(await page.textContent('h1')).toBe('Getting Started - Flowbite Svelte');
 });
 
 test('How to contribute page should have h1', async ({ page }) => {
   await page.goto('/docs/pages/how-to-contribute');
-  expect(await page.textContent('h1')).toBe('How to Contribute');
+  expect(await page.textContent('h1')).toBe('How to Contribute - Flowbite Svelte');
 });
 
 test('License page should have h1', async ({ page }) => {
