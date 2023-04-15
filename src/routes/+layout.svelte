@@ -73,8 +73,8 @@
       {hidden}
       {divClass}
       {ulClass}
-      nonActiveClass="text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 dark:text-gray-400 md:dark:hover:text-primary-700 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-      activeClass="text-white bg-primary-700 md:bg-transparent md:text-primary-700 md:dark:text-white dark:bg-primary-600 md:dark:bg-transparent cursor-default">
+      nonActiveClass="text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 dark:text-gray-400 md:dark:text-white md:dark:hover:text-primary-700 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+      activeClass="text-white bg-primary-700 md:bg-transparent md:text-primary-700 md:dark:text-primary-700 dark:bg-primary-600 md:dark:bg-transparent cursor-default">
       <NavLi class="mb-3 md:px-2 xl:px-2 md:mb-0" active={activeUrl === '/'} href="/">Home</NavLi>
       <NavLi
         class="mb-3 md:px-2 xl:px-2 md:mb-0"

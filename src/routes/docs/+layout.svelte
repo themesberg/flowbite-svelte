@@ -54,7 +54,7 @@
             btnClass="flex items-center justify-between w-full !leading-5 my-4 text-sm font-semibold tracking-wide uppercase lg:text-xs"
             spanClass=""
             class={dropdowns[key]
-              ? 'text-primary-700 dark:bg-primary-700'
+              ? 'text-primary-700 dark:text-primary-700'
               : 'text-gray-900 dark:text-white'}>
             <ChevronRight size="16" slot="arrowdown" />
             <ChevronDown size="16" slot="arrowup" />
