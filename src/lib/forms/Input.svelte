@@ -57,7 +57,7 @@
   const textSizes = { sm: 'sm:text-xs', md: 'text-sm', lg: 'sm:text-base' };
   const leftPadding = { sm: 'pl-9', md: 'pl-10', lg: 'pl-11' };
   const rightPadding = { sm: 'pr-9', md: 'pr-10', lg: 'pr-11' };
-  const inputPadding = { sm: 'p-2', md: 'p-2.5', lg: 'p-4' };
+  const inputPadding = { sm: 'p-2', md: 'p-2.5', lg: 'p-3' };
 
   $: _size = size || clampSize(group?.size) || 'md';
   let inputClass: string;
