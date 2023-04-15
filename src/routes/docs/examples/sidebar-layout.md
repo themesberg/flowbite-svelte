@@ -4,7 +4,7 @@ title: Responsive Sidebar Layout
 dir: Examples
 description: Flowbite Svete Responsive sidebar layout
 breadcrumb_title: Svelte Sidebar Layout
-component_title: Sidebar Layou
+component_title: Sidebar Layout
 ---
 
 <script>

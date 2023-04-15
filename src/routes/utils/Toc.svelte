@@ -37,7 +37,7 @@
 
 <div class="flex-none hidden w-64 pl-8 xl:text-sm xl:block right-0">
   {#if headings.length}
-    <div class="flex overflow-y-auto sticky top-28 flex-col justify-between pt-10 pb-6 h-[calc(100vh-5rem)]">
+    <div class="flex overflow-y-auto sticky top-32 flex-col justify-between pt-4 pb-6 h-[calc(100vh-5rem)]">
       <div class="mb-8">
         <h4
           class="pl-2.5 mb-2 text-sm font-semibold tracking-wide text-gray-900 uppercase dark:text-white lg:text-xs">
