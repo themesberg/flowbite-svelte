@@ -19,7 +19,7 @@
   $: popoverClass = classNames('divide-y divide-gray-100 dark:divide-gray-600', frameClass);
 </script>
 
-<Popper activeContent {...$$restProps} class={popoverClass} on:show bind:open>
+<Popper activeContent {...$$restProps} class={popoverClass} on:show bind:open aria-expanded="true">
   {#if $$slots.header}
     <div class="py-1 overflow-hidden rounded-t">
       <slot name="header" />
@@ -29,7 +29,7 @@
     <slot />
   </ul>
   {#if $$slots.footer}
-    <div class="py-1  overflow-hidden rounded-b">
+    <div class="py-1 overflow-hidden rounded-b">
       <slot name="footer" />
     </div>
   {/if}

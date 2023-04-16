@@ -51,13 +51,14 @@
     on:mouseleave
     on:mouseover
     role="tab"
+    aria-label={title}
     {...$$restProps}
     class={buttonClass}>
     <slot name="title">{title}</slot>
   </button>
 
   {#if open}
-    <div class="hidden tab_content_placeholder">
+    <div role="tabpanel" class="hidden tab_content_placeholder">
       <div use:init>
         <slot />
       </div>
