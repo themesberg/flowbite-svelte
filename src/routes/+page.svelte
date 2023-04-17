@@ -39,7 +39,8 @@
     imageAlt: `${title} logo`
   }} />
 
-<main class="flex-auto mx-auto max-w-8xl min-w-0 lg:static lg:max-h-full lg:overflow-visible divide-y">
+<main
+  class="flex-auto mx-auto max-w-8xl min-w-0 lg:static lg:max-h-full lg:overflow-visible divide-y divide-gray-700">
   <!-- hero -->
   <div class="overflow-hidden flex flex-col pt-6 sm:pt-8 lg:pt-16 pb-6 sm:pb-8 lg:pb-24 px-4 lg:px-20">
     <div class="flex flex-col gap-20">
@@ -107,7 +108,7 @@
     </div>
   </div>
   <div class="w-full px-4 lg:px-20 space-y-12">
-    <div class="flex flex-col items-center pt-6 sm:pt-8 xl:pt-24 gap-0 sm:gap-4">
+    <div class="flex flex-col items-center pt-6 sm:pt-8 lg:pt-24 gap-0 sm:gap-4">
       <h2 class="tracking-tight font-extrabold text-3xl lg:text-4xl text-gray-900 dark:text-white">
         Svelte components
       </h2>
