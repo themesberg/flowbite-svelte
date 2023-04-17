@@ -39,8 +39,7 @@
     imageAlt: `${title} logo`
   }} />
 
-<main
-  class="flex-auto mx-auto max-w-8xl min-w-0 lg:static lg:max-h-full lg:overflow-visible border divide-y">
+<main class="flex-auto mx-auto max-w-8xl min-w-0 lg:static lg:max-h-full lg:overflow-visible divide-y">
   <!-- hero -->
   <div class="overflow-hidden flex flex-col pt-6 sm:pt-8 lg:pt-16 pb-6 sm:pb-8 lg:pb-24 px-4 lg:px-20">
     <div class="flex flex-col gap-20">
@@ -56,7 +55,7 @@
               handled by Svelte.
             </p>
             <div class="mt-4 md:mt-5 sm:flex justify-center sm:justify-start">
-              <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 items-center max-w-lg pr-4">
+              <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 items-center max-w-lg">
                 <Input size="lg" placeholder="npm i flowbite flowbite-svelte" readonly>
                   <svg
                     slot="right"

@@ -40,7 +40,7 @@
 
 <Sidebar
   class={$drawerHidden && 'hidden'}
-  asideClass="fixed inset-0 z-20 flex-none h-full w-64 pt-32 lg:static lg:h-auto border-r border-gray-200 dark:border-gray-600 lg:overflow-y-visible lg:pt-0 lg:block">
+  asideClass="fixed inset-0 z-20 flex-none h-full w-64 pt-16 lg:static lg:h-auto border-r border-gray-200 dark:border-gray-600 lg:overflow-y-visible lg:pt-0 lg:block">
   <h4 id="sidebar-label" class="sr-only">Browse docs</h4>
   <SidebarWrapper
     divClass="overflow-y-auto z-20 px-4 h-full bg-white scrolling-touch max-w-2xs lg:h-[calc(100vh-8rem)] lg:block dark:bg-gray-900 lg:mr-0 lg:sticky top-32">

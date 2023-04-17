@@ -29,31 +29,6 @@
 
 <header
   class="sticky top-0 z-40 flex-none w-full mx-auto bg-white border-b border-gray-200 dark:border-gray-600 dark:bg-gray-800">
-  <div
-    id="banner"
-    tabindex="-1"
-    class="z-50 flex justify-center w-full px-4 py-3 border border-b border-gray-200 bg-gray-50 dark:border-gray-600 md:py-4 dark:bg-gray-700">
-    <div class="items-center md:flex">
-      <p class="text-sm font-medium text-gray-900 md:my-0 dark:text-white items-center flex">
-        <DocBadge border class="mr-3">New</DocBadge>
-        We have launched Flowbite Svelte Blocks!<a
-          class="inline-flex items-center ml-2 text-sm font-medium text-primary-700 md:ml-2 dark:text-primary-700 hover:underline"
-          href="https://flowbite-svelte-blocks.vercel.app/"
-          target="_blank"
-          rel="noreferrer"
-          >Check it out<svg
-            class="w-4 h-4 ml-1 text-primary-700 dark:text-primary-700"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-            ><path
-              fill-rule="evenodd"
-              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-              clip-rule="evenodd" /></svg
-          ></a>
-      </p>
-    </div>
-  </div>
   <Navbar
     color="default"
     fluid
@@ -68,7 +43,7 @@
         Flowbite Svelte
       </span>
     </NavBrand>
-    <NavHamburger on:click={toggle} />
+    <NavHamburger on:click={toggle} btnClass="ml-3 invisible sm:visible md:hidden" />
     <NavUl
       {hidden}
       {divClass}
