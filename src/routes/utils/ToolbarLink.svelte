@@ -9,4 +9,4 @@
 <ToolbarButton {name} size="lg" target="_blank" rel="noreferrer" {...$$restProps}>
   <slot />
 </ToolbarButton>
-<Tooltip class="dark:bg-gray-900">{name}</Tooltip>
+<Tooltip class="dark:bg-gray-900" placement="bottom">{name}</Tooltip>

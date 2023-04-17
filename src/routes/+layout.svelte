@@ -12,12 +12,13 @@
   import DocBadge from './utils/DocBadge.svelte';
   import { writable, type Writable } from 'svelte/store';
   import { setContext } from 'svelte';
+  import ChevronDown from '$lib/utils/ChevronDown.svelte';
 
   $: activeUrl = $page.url.pathname;
   let logo = '/images/flowbite-svelte-icon-logo.svg';
-  let divClass = 'w-full ml-auto md:block md:w-auto order-1 md:order-none';
+  let divClass = 'w-full ml-auto lg:block lg:w-auto order-1 lg:order-none';
   let ulClass =
-    'flex flex-col p-3 mt-4 md:flex-row md:mt-0 text-sm font-medium text-gray-900 dark:text-gray-300';
+    'flex flex-col p-3 mt-4 lg:flex-row md:mt-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-4';
 
   const drawerHiddenStore: Writable<boolean> = writable<boolean>(true);
   setContext('drawer', drawerHiddenStore);
@@ -32,18 +33,19 @@
   <Navbar
     color="default"
     fluid
-    navClass="flex items-center justify-between w-full z-40 px-3 py-3 mx-auto"
+    navClass="flex items-center justify-between w-full z-40 px-3 py-3 mx-auto md:px-6 lg:px-20"
     let:hidden
     let:toggle>
-    <span hidden={$page.route.id === '/'}
-      ><NavHamburger on:click={toggleDrawer} btnClass="ml-3 lg:hidden" /></span>
+    <span hidden={$page.route.id === '/'}>
+      <NavHamburger on:click={toggleDrawer} btnClass="ml-3 lg:hidden" />
+    </span>
     <NavBrand href="/">
       <img src={logo} class="mr-3 h-8" alt="Flowbite Svelte Logo" />
       <span class="self-center whitespace-nowrap text-2xl font-semibold text-gray-900 dark:text-white">
         Flowbite Svelte
       </span>
     </NavBrand>
-    <NavHamburger on:click={toggle} btnClass="ml-3 invisible sm:visible md:hidden" />
+
     <NavUl
       {hidden}
       {divClass}
@@ -59,23 +61,28 @@
         >Blocks</NavLi>
     </NavUl>
 
-    <ToolbarLink
-      class="hidden sm:inline-block"
-      name="View on GitHub"
-      href="https://github.com/themesberg/flowbite-svelte">
-      <GitHub /></ToolbarLink>
-    <ToolbarLink
-      class="hidden sm:inline-block"
-      name="Join community on Discord"
-      href="https://discord.gg/4eeurUVvTy"><Discord /></ToolbarLink>
-    <ToolbarLink
-      class="hidden sm:inline-block"
-      name="Subscribe to YouTube channel"
-      href="https://www.youtube.com/channel/UC_Ms4V2kYDsh7F_CSsHyQ6A">
-      <YouTube />
-    </ToolbarLink>
-    <DarkMode size="lg" class="hidden sm:inline-block" />
-    <Tooltip class="dark:bg-gray-900">Toggle dark mode</Tooltip>
+    <div class="flex items-center ml-auto">
+      <ToolbarLink
+        class="hidden sm:inline-block"
+        name="View on GitHub"
+        href="https://github.com/themesberg/flowbite-svelte">
+        <GitHub /></ToolbarLink>
+      <ToolbarLink
+        class="hidden sm:inline-block"
+        name="Join community on Discord"
+        href="https://discord.gg/4eeurUVvTy"><Discord /></ToolbarLink>
+      <ToolbarLink
+        class="hidden sm:inline-block"
+        name="Subscribe to YouTube channel"
+        href="https://www.youtube.com/channel/UC_Ms4V2kYDsh7F_CSsHyQ6A">
+        <YouTube />
+      </ToolbarLink>
+      <DarkMode size="lg" class="hidden sm:inline-block" />
+      <Tooltip class="dark:bg-gray-900" placement="bottom-end">Toggle dark mode</Tooltip>
+    </div>
+    <DocBadge large class="gap-1 ml-4 lg:ml-6 px-3">v5.3.1 <ChevronDown class="w-4 h-4" /></DocBadge>
+
+    <NavHamburger on:click={toggle} btnClass="ml-3 invisible sm:visible lg:hidden" />
   </Navbar>
 </header>
 
