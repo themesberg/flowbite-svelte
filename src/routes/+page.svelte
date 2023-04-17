@@ -6,6 +6,7 @@
   import CompoCard from './utils/CompoCard.svelte';
   import Input from '$lib/forms/Input.svelte';
   import Hero from './Hero.svelte';
+  import Featured from './utils/landing/Featured.svelte';
 
   export let data: PageData;
 
@@ -44,8 +45,9 @@
   class="flex-auto mx-auto max-w-8xl min-w-0 lg:static lg:max-h-full lg:overflow-visible divide-y dark:divide-gray-700">
   <!-- hero -->
   <Hero />
-  <div class="w-full px-4 lg:px-20 space-y-12">
-    <div class="flex flex-col items-center pt-6 sm:pt-8 lg:pt-24 gap-0 sm:gap-4">
+  <Featured />
+  <div class="w-full px-4 lg:px-20 space-y-8 lg:space-y-12">
+    <div class="flex flex-col items-center pt-6 sm:pt-8 lg:pt-24 gap-4 sm:gap-4">
       <h2 class="tracking-tight font-extrabold text-3xl lg:text-4xl text-gray-900 dark:text-white">
         Svelte components
       </h2>
@@ -54,6 +56,7 @@
           >over 56 open-source</span> UI components and interactive elements built with Svelte and Flowbite.
       </p>
     </div>
+
     <div class="grid grid-cols-1 gap-4 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-10">
       {#each components as { path, meta: { dir, component_title } }}
         <CompoCard name={component_title} {dir} {path} />

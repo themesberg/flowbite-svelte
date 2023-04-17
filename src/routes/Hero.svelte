@@ -3,16 +3,21 @@
   import Input from '$lib/forms/Input.svelte';
   import Tooltip from '$lib/tooltips/Tooltip.svelte';
 
+  const text_copied = 'Copied!';
+  const text_not_copied = 'Copy to clipboard';
+
   let placeholder: string = 'npm i flowbite flowbite-svelte';
-  let tooltip_text: string = 'Copy to clipboard';
+  let tooltip_text: string = text_not_copied;
   let open: boolean | undefined = undefined;
 
   function set_tooltip(copied: boolean) {
-    tooltip_text = copied ? 'Copied!' : 'Copy to clipboard';
+    tooltip_text = copied ? text_copied : text_not_copied;
     open = copied || undefined;
   }
 
   const copyToClipboard = async (e: MouseEvent) => {
+    if (tooltip_text === text_copied) return;
+
     const REG_HEX = /&#x([a-fA-F0-9]+);/g;
     const decodedText = placeholder.replace(REG_HEX, function (_match, group1) {
       const num = parseInt(group1, 16);
@@ -46,28 +51,46 @@
             <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 items-center max-w-lg">
               <Input size="lg" {placeholder} readonly class="!text-sm">
                 <div slot="right" class="flex items-center pl-32">
-                  <button on:click={copyToClipboard} class="hover:text-primary-700">
-                    <svg
-                      width="14"
-                      height="18"
-                      viewBox="0 0 14 18"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M4.49984 3.16667H2.83317C2.39114 3.16667 1.96722 3.34226 1.65466 3.65482C1.3421 3.96738 1.1665 4.39131 1.1665 4.83333V14.8333C1.1665 15.2754 1.3421 15.6993 1.65466 16.0118C1.96722 16.3244 2.39114 16.5 2.83317 16.5H11.1665C11.6085 16.5 12.0325 16.3244 12.345 16.0118C12.6576 15.6993 12.8332 15.2754 12.8332 14.8333V4.83333C12.8332 4.39131 12.6576 3.96738 12.345 3.65482C12.0325 3.34226 11.6085 3.16667 11.1665 3.16667H9.49984M4.49984 3.16667C4.49984 3.60869 4.67543 4.03262 4.98799 4.34518C5.30055 4.65774 5.72448 4.83333 6.1665 4.83333H7.83317C8.2752 4.83333 8.69912 4.65774 9.01168 4.34518C9.32424 4.03262 9.49984 3.60869 9.49984 3.16667M4.49984 3.16667C4.49984 2.72464 4.67543 2.30072 4.98799 1.98816C5.30055 1.67559 5.72448 1.5 6.1665 1.5H7.83317C8.2752 1.5 8.69912 1.67559 9.01168 1.98816C9.32424 2.30072 9.49984 2.72464 9.49984 3.16667"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    </svg>
+                  <button on:click={copyToClipboard} class="hover:text-primary-700 py-2 px-1">
+                    {#if tooltip_text == text_not_copied}
+                      <svg
+                        width="14"
+                        height="18"
+                        viewBox="0 0 14 18"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M4.49984 3.16667H2.83317C2.39114 3.16667 1.96722 3.34226 1.65466 3.65482C1.3421 3.96738 1.1665 4.39131 1.1665 4.83333V14.8333C1.1665 15.2754 1.3421 15.6993 1.65466 16.0118C1.96722 16.3244 2.39114 16.5 2.83317 16.5H11.1665C11.6085 16.5 12.0325 16.3244 12.345 16.0118C12.6576 15.6993 12.8332 15.2754 12.8332 14.8333V4.83333C12.8332 4.39131 12.6576 3.96738 12.345 3.65482C12.0325 3.34226 11.6085 3.16667 11.1665 3.16667H9.49984M4.49984 3.16667C4.49984 3.60869 4.67543 4.03262 4.98799 4.34518C5.30055 4.65774 5.72448 4.83333 6.1665 4.83333H7.83317C8.2752 4.83333 8.69912 4.65774 9.01168 4.34518C9.32424 4.03262 9.49984 3.60869 9.49984 3.16667M4.49984 3.16667C4.49984 2.72464 4.67543 2.30072 4.98799 1.98816C5.30055 1.67559 5.72448 1.5 6.1665 1.5H7.83317C8.2752 1.5 8.69912 1.67559 9.01168 1.98816C9.32424 2.30072 9.49984 2.72464 9.49984 3.16667"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round" />
+                      </svg>
+                    {:else}
+                      <svg
+                        width="14"
+                        height="10"
+                        viewBox="0 0 14 10"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M4.99992 8.29289L4.64637 7.93934L1.35697 4.64995C1.26295 4.56044 1.13776 4.51096 1.00786 4.51209C0.876764 4.51323 0.751358 4.56582 0.658654 4.65852C0.56595 4.75122 0.513365 4.87663 0.512226 5.00773C0.511097 5.13763 0.560568 5.26282 0.650079 5.35684L4.64642 9.35318C4.64644 9.3532 4.64645 9.35322 4.64647 9.35323C4.74023 9.44693 4.86736 9.49957 4.99992 9.49957C5.13248 9.49957 5.25961 9.44693 5.35337 9.35323L4.99992 8.29289ZM4.99992 8.29289L5.35347 7.93934L12.6464 0.646393C12.6464 0.646376 12.6465 0.646358 12.6465 0.64634C12.7402 0.552638 12.8674 0.5 12.9999 0.5C13.1325 0.5 13.2597 0.552658 13.3534 0.646393C13.4471 0.740146 13.4997 0.867253 13.4997 0.999786C13.4997 1.13234 13.4471 1.25947 13.3534 1.35323C13.3533 1.35325 13.3533 1.35327 13.3533 1.35329L5.35342 9.35318L4.99992 8.29289Z"
+                          stroke="#EB4F27" />
+                      </svg>
+                    {/if}
                   </button>
 
                   <Tooltip bind:open on:show={show}>{tooltip_text}</Tooltip>
                 </div>
               </Input>
 
-              <Button size="lg" class="gap-2 w-full md:w-56" href="'/pages/getting-started'" color="primary"
-                >Get started <svg
+              <Button
+                size="lg"
+                class="gap-2 w-full md:w-fit whitespace-nowrap"
+                href="'/pages/getting-started'"
+                color="primary">
+                Get started
+                <svg
                   width="16"
                   height="11"
                   viewBox="0 0 16 11"

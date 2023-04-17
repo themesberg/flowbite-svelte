@@ -215,7 +215,8 @@ pre[class*="language-"] {
 }
 
 .token.function {
-	color: #dad085;
+	/* color: #dad085; */
+	@apply text-slate-600 dark:text-slate-400;
 }
 
 .token.regex {
