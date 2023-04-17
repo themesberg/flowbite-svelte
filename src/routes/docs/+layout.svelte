@@ -40,19 +40,19 @@
 
 <Sidebar
   class={$drawerHidden && 'hidden'}
-  asideClass="fixed inset-0 z-20 flex-none h-full w-64 pt-16 lg:static lg:h-auto border-r border-gray-200 dark:border-gray-600 lg:overflow-y-visible lg:pt-0 lg:block">
+  asideClass="fixed inset-0 z-20 flex-none h-full w-64 lg:static lg:h-auto border-r border-gray-200 dark:border-gray-600 lg:overflow-y-visible lg:pt-0 lg:block">
   <h4 id="sidebar-label" class="sr-only">Browse docs</h4>
   <SidebarWrapper
-    divClass="overflow-y-auto z-20 px-4 h-full bg-white scrolling-touch max-w-2xs lg:h-[calc(100vh-8rem)] lg:block dark:bg-gray-900 lg:mr-0 lg:sticky top-32">
+    divClass="overflow-y-auto z-20 px-4 pt-20 h-full bg-white scrolling-touch max-w-2xs lg:h-[calc(100vh-8rem)] lg:block dark:bg-gray-900 lg:mr-0 lg:sticky top-20">
     <nav class="font-normal text-base lg:text-sm">
       <SidebarGroup ulClass="list-unstyled fw-normal small mb-4">
         {#each Object.entries(data) as [key, values], groupIndex (key)}
           <SidebarDropdownWrapper
             bind:isOpen={dropdowns[key]}
             label={names_mapping[key] ?? key}
-            ulClass="space-y-4"
+            ulClass="space-y-2.5"
             btnClass="flex items-center justify-between w-full !leading-5 my-4 text-sm font-semibold tracking-wide uppercase lg:text-xs"
-            spanClass=""
+            spanClass="text-sm font-semibold"
             class={dropdowns[key]
               ? 'text-primary-700 dark:text-primary-700'
               : 'text-gray-900 dark:text-white'}>

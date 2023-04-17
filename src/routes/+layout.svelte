@@ -82,7 +82,7 @@
     </div>
     <DocBadge large class="gap-1 ml-4 lg:ml-6 px-3">v5.3.1 <ChevronDown class="w-4 h-4" /></DocBadge>
 
-    <NavHamburger on:click={toggle} btnClass="ml-3 invisible sm:visible lg:hidden" />
+    <NavHamburger on:click={toggle} btnClass="ml-3 hidden sm:visible lg:hidden" />
   </Navbar>
 </header>
 
