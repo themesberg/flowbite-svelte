@@ -39,23 +39,24 @@
     imageAlt: `${title} logo`
   }} />
 
-<main class="flex-auto mx-auto max-w-8xl min-w-0 lg:static lg:max-h-full lg:overflow-visible border">
+<main
+  class="flex-auto mx-auto max-w-8xl min-w-0 lg:static lg:max-h-full lg:overflow-visible border divide-y">
   <!-- hero -->
-  <div class="overflow-hidden flex flex-col pt-16 pb-24 px-4 lg:px-20">
+  <div class="overflow-hidden flex flex-col pt-6 sm:pt-8 lg:pt-16 pb-6 sm:pb-8 lg:pb-24 px-4 lg:px-20">
     <div class="flex flex-col gap-20">
       <div class="flex items-center justify-end gap-16">
         <div class="flex flex-col justify-start gap-10">
-          <div class="flex flex-col gap-5 text-left">
-            <h1 class="text-4xl lg:text-6xl font-extrabold text-gray-900 dark:text-white">
+          <div class="flex flex-col gap-4 lg:gap-6 text-left">
+            <h1 class="text-4xl lg:text-6xl leading-none font-extrabold text-gray-900 dark:text-white">
               <span class="block xl:inline">Speed up your web development with</span>
               <span class="block text-primary-700 dark:text-primary-700 xl:inline">Flowbite Svelte</span>
             </h1>
-            <p class="mt-3 text-lg lg:text-base">
+            <p class="text-lg lg:text-xl leading-normal">
               Flowbite Svelte is an official Flowbite component library for Svelte. All interactivities are
               handled by Svelte.
             </p>
-            <div class="mt-5 sm:mt-8 sm:flex sm:justify-center md:justify-start">
-              <div class="mt-3 sm:mt-0 flex flex-col md:flex-row gap-4 md:gap-8 items-center max-w-lg pr-4">
+            <div class="mt-4 md:mt-5 sm:flex justify-center sm:justify-start">
+              <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 items-center max-w-lg pr-4">
                 <Input size="lg" placeholder="npm i flowbite flowbite-svelte" readonly>
                   <svg
                     slot="right"
@@ -107,7 +108,7 @@
     </div>
   </div>
   <div class="w-full px-4 lg:px-20 space-y-12">
-    <div class="flex flex-col items-center p-0 gap-4">
+    <div class="flex flex-col items-center pt-6 sm:pt-8 xl:pt-24 gap-0 sm:gap-4">
       <h2 class="tracking-tight font-extrabold text-3xl lg:text-4xl text-gray-900 dark:text-white">
         Svelte components
       </h2>
@@ -116,7 +117,7 @@
           >over 56 open-source</span> UI components and interactive elements built with Svelte and Flowbite.
       </p>
     </div>
-    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-10">
+    <div class="grid grid-cols-1 gap-4 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-10">
       {#each components as { path, meta: { dir, component_title } }}
         <CompoCard name={component_title} {dir} {path} />
       {/each}

@@ -1,4 +1,6 @@
 <script lang="ts">
+  import Card from '$lib/cards/Card.svelte';
+
   export let name: string;
   export let dir: string;
   export let path: string;
@@ -7,11 +9,8 @@
   dir = dir.toLowerCase();
 </script>
 
-<a
-  href="/docs/{dir}{path}/"
-  {...$$restProps}
-  class="h-64 bg-white rounded-lg border border-gray-100 hover:border-white dark:border-gray-700 dark:hover:border-gray-600 hover:shadow-lg dark:hover:shadow-lg-light dark:bg-gray-900"
-  ><div
+<Card href="/docs/{dir}{path}/" padding="none" {...$$restProps}>
+  <div
     class="bg-gray-50 dark:bg-gray-700 rounded-t-md py-2.5 px-5 flex justify-between items-center border-b border-gray-200 dark:border-gray-700">
     <span class="text-base font-medium text-gray-900 dark:text-white">{name}</span><span
       class="text-gray-500 dark:text-gray-400"
@@ -53,4 +52,5 @@
           class="w-56"
           style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;" /><noscript /></span>
     </div>
-  </div></a>
+  </div>
+</Card>
