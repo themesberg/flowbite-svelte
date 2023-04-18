@@ -33,7 +33,7 @@
   <Navbar
     color="default"
     fluid
-    navClass="flex items-center justify-between w-full z-40 px-3 py-3 mx-auto md:px-6 lg:px-20"
+    navClass="flex items-center justify-between w-full z-40 mx-auto py-3 px-4"
     let:hidden
     let:toggle>
     <span hidden={$page.route.id === '/'}>
@@ -55,8 +55,16 @@
       <NavLi class="mb-3 md:px-2 xl:px-2 md:mb-0" active={activeUrl === '/'} href="/">Home</NavLi>
       <NavLi
         class="mb-3 md:px-2 xl:px-2 md:mb-0"
-        active={activeUrl.startsWith('/docs')}
-        href="/docs/pages/getting-started">Docs</NavLi>
+        active={activeUrl.startsWith('/docs/pages/about')}
+        href="/docs/pages/about">Docs</NavLi>
+      <NavLi
+        class="mb-3 md:px-2 xl:px-2 md:mb-0"
+        active={activeUrl.startsWith('/docs/pages/getting-started')}
+        href="/docs/pages/getting-started">Quickstart</NavLi>
+      <NavLi
+        class="mb-3 md:px-2 xl:px-2 md:mb-0"
+        active={activeUrl.startsWith('/figma')}
+        href="https://flowbite.com/figma/">Figma</NavLi>
       <NavLi class="mb-3 md:px-2 xl:px-2 md:mb-0" href="https://flowbite-svelte-blocks.vercel.app/"
         >Blocks</NavLi>
     </NavUl>
