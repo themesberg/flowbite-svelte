@@ -6,8 +6,8 @@ test('index page should have h1', async ({ page }) => {
 });
 
 test('About page should have h1', async ({ page }) => {
-  await page.goto('/docs/pages/about');
-  expect(await page.textContent('h1')).toBe('About Flowbite Svelte');
+  await page.goto('/docs/pages/introduction');
+  expect(await page.textContent('h1')).toBe('Flowbite Svelte Component Library');
 });
 
 test('Getting Started page should have h1', async ({ page }) => {
