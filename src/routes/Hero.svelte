@@ -48,8 +48,8 @@
             handled by Svelte.
           </p>
           <div class="mt-4 md:mt-5 sm:flex justify-center sm:justify-start">
-            <div class="flex flex-col mx-auto sm:flex-row sm:mx-0 gap-4 sm:gap-8 items-center max-w-lg">
-              <Input size="lg" {placeholder} readonly class="!text-sm">
+            <div class="flex flex-col mx-auto sm:flex-row sm:mx-0 gap-4 sm:gap-6 items-center max-w-2xl">
+              <Input size="lg" {placeholder} readonly class="!text-sm min-w-[255px]">
                 <div slot="right" class="flex items-center pl-32">
                   <button on:click={copyToClipboard} class="hover:text-primary-700 py-2 px-1">
                     {#if tooltip_text == text_not_copied}
