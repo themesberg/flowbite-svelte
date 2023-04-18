@@ -9,8 +9,11 @@ export { default as TableDefaultRow } from './TableDefaultRow.svelte';
 export { default as TableProp } from './TableProp.svelte';
 export { default as Toc } from './Toc.svelte';
 
-const filePath = (path: string) => '/' + path.split('/').pop()?.split('.').shift();
+const basename = (path: string) => path.split('/').pop()?.split('.').shift() ?? '';
+const filePath = (path: string) => '/' + basename(path);
 const fileDir = (path: string) => '/' + path.split('/').slice(0, -1).pop();
+const sortByList = (order: string[]) => (a, b) =>
+  [a[0], b[0]].map((x) => order.indexOf(basename(x))).reduce((x, y) => (x < 0 ? 1 : y < 0 ? -1 : x - y));
 
 export const fetchMarkdownPosts = async () => {
   const componentFiles = import.meta.glob('/src/routes/docs/components/*.md');
@@ -70,9 +73,18 @@ export const fetchMarkdownPosts = async () => {
       };
     })
   );
+
   // returns an array of paths, /introduction from /src/routes/pages/introduction.md
+  const pageOrder: string[] = [
+    'introduction',
+    'getting-started',
+    'faster-compiling-speed',
+    'how-to-contribute',
+    'license',
+    'types'
+  ];
   const allPages = await Promise.all(
-    iterablePageFiles.map(async ([path, resolver]) => {
+    iterablePageFiles.sort(sortByList(pageOrder)).map(async ([path, resolver]) => {
       const { metadata } = await resolver();
       return {
         meta: metadata,
