@@ -71,7 +71,7 @@ export const fetchMarkdownPosts = async () => {
       };
     })
   );
-  // returns an array of paths, /about from /src/routes/pages/about.md
+  // returns an array of paths, /introduction from /src/routes/pages/introduction.md
   const allPages = await Promise.all(
     iterablePageFiles.map(async ([path, resolver]) => {
       const { metadata } = await resolver();

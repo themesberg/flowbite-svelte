@@ -19,7 +19,7 @@
         <a href="/pages/types" class="link">Type list</a>
       </p>
       <p>
-        <a href="/pages/about" class="link">About</a>
+        <a href="/pages/introduction" class="link">Introduction</a>
       </p>
       <p>
         <a href="/pages/how-to-contribute" class="link">How to contribute</a>

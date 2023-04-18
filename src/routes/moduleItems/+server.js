@@ -1,6 +1,6 @@
 export const topMenus = [
   { id: '1', href: '/', name: 'Home' },
-  { id: '2', href: '/pages/about', name: 'About' },
+  { id: '2', href: '/pages/introduction', name: 'Introduction' },
   {
     id: '3',
     href: 'https://github.com/themesberg/flowbite-svelte',

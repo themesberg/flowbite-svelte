@@ -1,10 +1,10 @@
 ---
 layout: componentLayout
-breadcrumb_title: About
-title: About Flowbite Svelte
-component_title: About
+breadcrumb_title: Svelte UI Component Library
+title: Flowbite Svelte Component Library
+component_title: Introduction
 dir: Pages
-description: Flowbite Svelte About page
+description: Learn more about the open-source Flowbite Svelte UI component library and get started building modern web applications using interactive UI components based on Tailwind CSS
 ---
 
 <script>

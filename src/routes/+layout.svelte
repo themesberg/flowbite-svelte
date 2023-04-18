@@ -55,8 +55,8 @@
       <NavLi class="mb-3 md:px-2 xl:px-2 md:mb-0" active={activeUrl === '/'} href="/">Home</NavLi>
       <NavLi
         class="mb-3 md:px-2 xl:px-2 md:mb-0"
-        active={activeUrl.startsWith('/docs/pages/about')}
-        href="/docs/pages/about">Docs</NavLi>
+        active={activeUrl.startsWith('/docs/pages/introduction')}
+        href="/docs/pages/introduction">Docs</NavLi>
       <NavLi
         class="mb-3 md:px-2 xl:px-2 md:mb-0"
         active={activeUrl.startsWith('/docs/pages/getting-started')}
