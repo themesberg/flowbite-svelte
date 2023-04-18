@@ -8,6 +8,7 @@
   import SidebarDropdownWrapper from '$lib/sidebars/SidebarDropdownWrapper.svelte';
   import ChevronRight from '$lib/utils/ChevronRight.svelte';
   import ChevronDown from '$lib/utils/ChevronDown.svelte';
+
   export let data: PageData;
 
   const drawerHidden: Writable<boolean> = getContext('drawer');
@@ -34,7 +35,7 @@
   let activeClass =
     'relative flex items-center flex-wrap font-medium cursor-default text-primary-700 dark:text-primary-700';
 
-  let dropdowns = Object.fromEntries(Object.keys(data).map((x) => [x, false]));
+  let dropdowns = Object.fromEntries(Object.keys(data.posts).map((x) => [x, false]));
 </script>
 
 <Sidebar
@@ -45,7 +46,7 @@
     divClass="overflow-y-auto z-20 px-4 pt-20 lg:pt-0 h-full bg-white scrolling-touch max-w-2xs lg:h-[calc(100vh-8rem)] lg:block dark:bg-gray-900 lg:mr-0 lg:sticky top-20">
     <nav class="font-normal text-base lg:text-sm">
       <SidebarGroup ulClass="list-unstyled fw-normal small mb-4">
-        {#each Object.entries(data) as [key, values], groupIndex (key)}
+        {#each Object.entries(data.posts) as [key, values], groupIndex (key)}
           <SidebarDropdownWrapper
             bind:isOpen={dropdowns[key]}
             label={names_mapping[key] ?? key}

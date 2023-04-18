@@ -5,6 +5,7 @@
   import Featured from './landing/Featured.svelte';
   import Hero from './landing/Hero.svelte';
   import Footer from './utils/Footer.svelte';
+  import Contributors from './landing/Contributors.svelte';
 
   export let data: PageData;
 
@@ -41,5 +42,6 @@
   <Hero />
   <Featured />
   <Components {data} />
+  <Contributors {data} />
   <Footer />
 </main>

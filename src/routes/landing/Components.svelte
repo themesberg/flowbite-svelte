@@ -4,9 +4,12 @@
   import CompoCard from '../utils/CompoCard.svelte';
 
   export let data: PageData;
-  let components = [...data.forms, ...data.components, ...data.typography, ...data.experimental].sort(
-    (a, b) => a.meta.component_title.localeCompare(b.meta.component_title)
-  );
+  let components = [
+    ...data.posts.forms,
+    ...data.posts.components,
+    ...data.posts.typography,
+    ...data.posts.experimental
+  ].sort((a, b) => a.meta.component_title.localeCompare(b.meta.component_title));
 </script>
 
 <div class="w-full px-4 lg:px-20 space-y-8 lg:space-y-12">
