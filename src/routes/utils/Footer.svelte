@@ -8,7 +8,7 @@
   let logo = '/images/flowbite-svelte-icon-logo.svg';
 </script>
 
-<Footer footerType="custom" customClass="bg-white dark:bg-gray-900">
+<Footer footerType="custom" customClass="bg-white dark:bg-gray-900 p-4">
   <div class="flex flex-col py-6">
     <div class="flex flex-col lg:flex-row items-start md:justify-between gap-8">
       <div class="mb-6 md:mb-0 w-full max-w-sm">
@@ -36,7 +36,8 @@
         <div>
           <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
           <FooterLinkGroup>
-            <FooterLink liClass="mb-4" href="https://github.com/themesberg/flowbite-svelte">GitHub</FooterLink>
+            <FooterLink liClass="mb-4" href="https://github.com/themesberg/flowbite-svelte"
+              >GitHub</FooterLink>
             <FooterLink liClass="mb-4" href="https://flowbite.com/">Flowbite</FooterLink>
             <FooterLink liClass="mb-4" href="https://tailwindcss.com/">Tailwind CSS</FooterLink>
             <FooterLink liClass="mb-4" href="https://flowbite.com/figma/">Figma Design</FooterLink>
@@ -48,7 +49,8 @@
           </h2>
           <FooterLinkGroup>
             <FooterLink liClass="mb-4" href="https://discord.gg/4eeurUVvTy">Discord Community</FooterLink>
-            <FooterLink liClass="mb-4" href="https://github.com/themesberg/flowbite-svelte/discussions">GitHub Discussions</FooterLink>
+            <FooterLink liClass="mb-4" href="https://github.com/themesberg/flowbite-svelte/discussions"
+              >GitHub Discussions</FooterLink>
           </FooterLinkGroup>
         </div>
         <div>
