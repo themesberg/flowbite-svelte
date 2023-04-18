@@ -51,7 +51,7 @@
             bind:isOpen={dropdowns[key]}
             label={names_mapping[key] ?? key}
             ulClass="space-y-2.5"
-            btnClass="flex items-center justify-between w-full my-4 text-sm font-semibold tracking-wide uppercase"
+            btnClass="flex items-center justify-between w-full my-4 text-sm font-semibold tracking-wide uppercase hover:text-primary-700"
             spanClass=""
             class={dropdowns[key]
               ? 'text-primary-700 dark:text-primary-700'
