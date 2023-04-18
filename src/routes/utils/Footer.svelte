@@ -8,7 +8,7 @@
   let logo = '/images/flowbite-svelte-icon-logo.svg';
 </script>
 
-<Footer footerType="custom" customClass="bg-white dark:bg-gray-900 p-4">
+<Footer footerType="custom" customClass="bg-white dark:bg-gray-900 p-4 lg:p-8">
   <div class="flex flex-col py-6">
     <div class="flex flex-col lg:flex-row items-start md:justify-between gap-8">
       <div class="mb-6 md:mb-0 w-full max-w-sm">

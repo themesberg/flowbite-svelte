@@ -27,7 +27,7 @@
       </p>
     </div>
     <!-- avatars -->
-    <div class="flex flex-col gap-3 max-w-5xl">
+    <div class="flex flex-col gap-3 max-w-5xl px-4 lg:px-8">
       <div class="flex flex-wrap items-center justify-center gap-3">
         {#each data?.contributors || [] as contributor}
           <Avatar
