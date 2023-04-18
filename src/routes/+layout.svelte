@@ -37,7 +37,7 @@
     let:hidden
     let:toggle>
     <span hidden={$page.route.id === '/'}>
-      <NavHamburger on:click={toggleDrawer} btnClass="ml-3 lg:hidden" />
+      <NavHamburger on:click={toggleDrawer} btnClass="mr-3 lg:hidden" />
     </span>
     <NavBrand href="/">
       <img src={logo} class="mr-3 h-8" alt="Flowbite Svelte Logo" />
