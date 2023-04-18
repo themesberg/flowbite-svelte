@@ -201,7 +201,7 @@ pre[class*="language-"] {
 }
 
 .token.url {
-	@apply text-blue-600 dark:text-blue-500;
+	@apply text-primary-600 dark:text-primary-500;
 }
 
 .language-css .token.string,
@@ -211,7 +211,7 @@ pre[class*="language-"] {
 
 .token.atrule,
 .token.attr-value {
-	@apply text-blue-600 dark:text-blue-500;
+	@apply text-primary-600 dark:text-primary-500;
 }
 
 .token.function {
@@ -238,11 +238,11 @@ pre[class*="language-"] {
 
 code.language-bash,
 pre.language-bash {
-	@apply text-blue-600 dark:text-blue-400;
+	@apply text-primary-600 dark:text-primary-400;
 }
 
 code.language-javascript {
-	@apply text-blue-600 dark:text-blue-400;
+	@apply text-primary-600 dark:text-primary-400;
 }
 
 code.language-javascript .token.function{
@@ -278,8 +278,11 @@ code.language-javascript .token {
 code.language-html .token.tag{
 	@apply text-fuchsia-700 dark:text-fuchsia-400;
 }
+code.language-html .token.attr-name {
+	@apply text-gray-600 dark:text-gray-400;
+}
 code.language-html .token.attr-value{
-	@apply text-blue-600 dark:text-blue-400;
+	@apply text-primary-600 dark:text-primary-400;
 }
 code.language-html .token.punctuation{
 	@apply text-gray-400 dark:text-gray-500;
@@ -288,6 +291,23 @@ code.language-html .token.attr-name{
 	@apply text-green-600 dark:text-green-400;
 }
 code.language-html .token.comment{
+	@apply text-gray-400 dark:text-gray-500;
+}
+
+/* language svelte */
+pre.language-svelte .token.tag{
+	@apply text-gray-700 dark:text-gray-400;
+}
+pre.language-svelte .token.attr-value{
+	@apply text-blue-600 dark:text-blue-500;
+}
+pre.language-svelte .token.punctuation{
+	@apply text-gray-400 dark:text-gray-500;
+}
+pre.language-svelte .token.attr-name{
+	@apply text-primary-600 dark:text-primary-500;
+}
+pre.language-svelte .token.comment{
 	@apply text-gray-400 dark:text-gray-500;
 }
 
@@ -394,11 +414,11 @@ code.language-html .token.comment{
 }
 
 .DocSearch-Hits mark {
-	@apply text-blue-600 dark:text-white decoration-2 underline-offset-2 decoration-blue-600 dark:decoration-white;
+	@apply text-primary-600 dark:text-white decoration-2 underline-offset-2 decoration-primary-600 dark:decoration-white;
 }
 
 .DocSearch-Hit[aria-selected=true] a {
-	@apply bg-blue-700 dark:bg-blue-600;
+	@apply bg-primary-700 dark:bg-primary-600;
 }
 
 .DocSearch-Hit-source {
@@ -446,7 +466,7 @@ code.language-html .token.comment{
 }
 
 .DocSearch-Hit a {
-	@apply bg-gray-50 rounded-lg shadow-none dark:bg-gray-600 dark:hover:bg-blue-600;
+	@apply bg-gray-50 rounded-lg shadow-none dark:bg-gray-600 dark:hover:bg-primary-600;
 }
 
 .DocSearch-Hit[aria-selected=true] .DocSearch-Hit-Select-Icon,
