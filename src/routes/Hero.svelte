@@ -87,7 +87,7 @@
               <Button
                 size="lg"
                 class="gap-2 w-full md:w-fit whitespace-nowrap"
-                href="'/pages/getting-started'"
+                href="'/docs/pages/getting-started'"
                 color="primary">
                 Get started
                 <svg

@@ -57,7 +57,7 @@
       </p>
     </div>
 
-    <div class="grid grid-cols-1 gap-4 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-10">
+    <div class="grid grid-cols-1 gap-4 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 pb-10">
       {#each components as { path, meta: { dir, component_title } }}
         <CompoCard name={component_title} {dir} {path} />
       {/each}
