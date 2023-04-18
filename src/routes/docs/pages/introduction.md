@@ -4,7 +4,7 @@ breadcrumb_title: Svelte UI Component Library
 title: Flowbite Svelte Component Library
 component_title: Introduction
 dir: Pages
-description: Learn more about the open-source Flowbite Svelte UI component library and get started building modern web applications using interactive UI components based on Tailwind CSS
+description: Learn more about the free and open-source Flowbite Svelte UI components and start building modern web applications using native Svelte components based on Tailwind CSS
 ---
 
 <script>
