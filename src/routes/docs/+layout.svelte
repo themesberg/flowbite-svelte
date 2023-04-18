@@ -8,7 +8,6 @@
   import SidebarDropdownWrapper from '$lib/sidebars/SidebarDropdownWrapper.svelte';
   import ChevronRight from '$lib/utils/ChevronRight.svelte';
   import ChevronDown from '$lib/utils/ChevronDown.svelte';
-  import { arrow } from '@popperjs/core';
   export let data: PageData;
 
   const drawerHidden: Writable<boolean> = getContext('drawer');

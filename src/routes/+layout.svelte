@@ -1,18 +1,16 @@
 <script lang="ts">
   import { page } from '$app/stores';
-
   import { DarkMode, Navbar, NavBrand, NavHamburger, NavLi, NavUl } from '$lib';
-
-  import '../app.css';
   import Tooltip from '$lib/tooltips/Tooltip.svelte';
-  import GitHub from './utils/icons/GitHub.svelte';
-  import ToolbarLink from './utils/ToolbarLink.svelte';
-  import Discord from './utils/icons/Discord.svelte';
-  import YouTube from './utils/icons/YouTube.svelte';
-  import DocBadge from './utils/DocBadge.svelte';
-  import { writable, type Writable } from 'svelte/store';
-  import { setContext } from 'svelte';
   import ChevronDown from '$lib/utils/ChevronDown.svelte';
+  import { setContext } from 'svelte';
+  import { writable, type Writable } from 'svelte/store';
+  import '../app.css';
+  import DocBadge from './utils/DocBadge.svelte';
+  import Discord from './utils/icons/Discord.svelte';
+  import GitHub from './utils/icons/GitHub.svelte';
+  import YouTube from './utils/icons/YouTube.svelte';
+  import ToolbarLink from './utils/ToolbarLink.svelte';
 
   $: activeUrl = $page.url.pathname;
   let logo = '/images/flowbite-svelte-icon-logo.svg';

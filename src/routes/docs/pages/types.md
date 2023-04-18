@@ -3,6 +3,7 @@ layout: componentLayout
 breadcrumb_title: Types
 title: Types
 dir: Pages
+component_title: Typescript Types
 description: Flowbite-Svelte Types page
 ---
 
@@ -15,8 +16,6 @@ description: Flowbite-Svelte Types page
 
   // Load assets as strings
   import TypeList from '../../../lib/types.js?raw';
-  
 </script>
 
 <pre><code>{@html TypeList}</code></pre>
-
