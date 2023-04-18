@@ -91,8 +91,10 @@
       <DarkMode size="lg" class="hidden sm:inline-block" />
       <Tooltip class="dark:bg-gray-900" placement="bottom-end">Toggle dark mode</Tooltip>
     </div>
-    <DocBadge large class="gap-1 ml-4 lg:ml-6 px-3">
-      {version} <ChevronDown class="w-4 h-4" variation="solid" /></DocBadge>
+    <a href="https://www.npmjs.com/package/flowbite-svelte">
+      <DocBadge large class="gap-1 ml-4 lg:ml-6 px-3">
+        {version} <!-- ChevronDown class="w-4 h-4" variation="solid" / --></DocBadge>
+    </a>
 
     <NavHamburger on:click={toggle} btnClass="ml-3 hidden sm:visible lg:hidden" />
   </Navbar>
