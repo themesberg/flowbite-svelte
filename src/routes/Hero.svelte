@@ -36,7 +36,7 @@
 
 <div class="overflow-hidden flex flex-col pt-6 sm:pt-8 lg:pt-16 pb-6 sm:pb-8 lg:pb-24 px-4 lg:px-20">
   <div class="flex flex-col gap-20">
-    <div class="flex items-center1 justify-end gap-16">
+    <div class="flex items-center justify-end gap-16">
       <div class="flex flex-col justify-start gap-10">
         <div class="flex flex-col gap-4 lg:gap-6 text-left">
           <h1 class="text-4xl lg:text-6xl leading-none font-extrabold text-gray-900 dark:text-white">
@@ -48,10 +48,10 @@
             handled by Svelte.
           </p>
           <div class="mt-4 md:mt-5 sm:flex justify-center sm:justify-start">
-            <div class="flex flex-col mx-auto sm:flex-row sm:mx-0 gap-4 sm:gap-6 items-center max-w-2xl">
-              <Input size="lg" {placeholder} readonly class="!text-sm min-w-[255px]">
+            <div class="flex flex-row mx-0 gap-4 sm:gap-6 items-center max-w-2xl">
+              <Input size="lg" {placeholder} readonly class="!text-sm md:min-w-[255px]">
                 <div slot="right" class="flex items-center pl-32">
-                  <button on:click={copyToClipboard} class="hover:text-primary-700 py-2 px-1">
+                  <button on:click={copyToClipboard} class="hover:text-primary-700 b py-2 px-1">
                     {#if tooltip_text == text_not_copied}
                       <svg
                         width="14"
@@ -86,7 +86,7 @@
 
               <Button
                 size="lg"
-                class="gap-2 w-full md:w-fit whitespace-nowrap"
+                class="gap-2 w-full md:w-fit whitespace-nowrap hover:bg-primary-800"
                 href="'/docs/pages/getting-started'"
                 color="primary">
                 Get started
