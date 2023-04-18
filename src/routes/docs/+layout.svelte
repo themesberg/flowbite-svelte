@@ -56,8 +56,8 @@
             class={dropdowns[key]
               ? 'text-primary-700 dark:text-primary-700'
               : 'text-gray-900 dark:text-white'}>
-            <ChevronRight size="16" slot="arrowdown" />
-            <ChevronDown size="16" slot="arrowup" />
+            <ChevronRight size="24" slot="arrowdown" variation="solid" />
+            <ChevronDown size="24" slot="arrowup" variation="solid" />
             {#each values as { meta, path }}
               {#if meta}
                 <SidebarItem
