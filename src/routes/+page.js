@@ -1,4 +1,4 @@
-/** @type {import('./$types').LayoutLoad} */
+/** @type {import('./$types').PageLoad} */
 export const load = async ({ fetch }) => {
   try {
     const response = await fetch('/api/posts');

@@ -11,6 +11,11 @@
   import GitHub from './utils/icons/GitHub.svelte';
   import YouTube from './utils/icons/YouTube.svelte';
   import ToolbarLink from './utils/ToolbarLink.svelte';
+  import type { LayoutData } from './$types';
+
+  export let data: LayoutData;
+
+  let version = data.package.version ?? 'N/A';
 
   $: activeUrl = $page.url.pathname;
   let logo = '/images/flowbite-svelte-icon-logo.svg';
@@ -86,7 +91,8 @@
       <DarkMode size="lg" class="hidden sm:inline-block" />
       <Tooltip class="dark:bg-gray-900" placement="bottom-end">Toggle dark mode</Tooltip>
     </div>
-    <DocBadge large class="gap-1 ml-4 lg:ml-6 px-3">v5.3.1 <ChevronDown class="w-4 h-4" /></DocBadge>
+    <DocBadge large class="gap-1 ml-4 lg:ml-6 px-3">
+      {version} <ChevronDown class="w-4 h-4" variation="solid" /></DocBadge>
 
     <NavHamburger on:click={toggle} btnClass="ml-3 hidden sm:visible lg:hidden" />
   </Navbar>
