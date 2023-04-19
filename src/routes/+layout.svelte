@@ -91,7 +91,7 @@
         href="https://www.youtube.com/channel/UC_Ms4V2kYDsh7F_CSsHyQ6A">
         <YouTube />
       </ToolbarLink>
-      <DarkMode size="lg" class="hidden sm:inline-block" />
+      <DarkMode size="lg" class="inline-block" />
       <Tooltip class="dark:bg-gray-900" placement="bottom-end">Toggle dark mode</Tooltip>
     </div>
     <a href="https://www.npmjs.com/package/flowbite-svelte">
