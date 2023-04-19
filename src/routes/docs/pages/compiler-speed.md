@@ -1,10 +1,10 @@
 ---
 layout: componentLayout
-breadcrumb_title: Faster Compiling Speed
-title: Faster Compiling Speed
-component_title: Compile Speed
+breadcrumb_title: Svelte Compiler Speed - Flowbite
+title: Svelte Compiler Speed - Flowbite
+component_title: Compiler Speed
 dir: Pages
-description: Flowbite Svelte Faster Compiling Speed
+description: Learn how you can manage and improve the Svelte compilation speed when using the Flowbite Svelte library by checking out this tutorial
 ---
 
 <script>
