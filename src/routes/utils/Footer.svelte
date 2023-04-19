@@ -55,7 +55,7 @@
           >.
         </p>
       </div>
-      <div class="flex flex-col sm:flex-row gap-8 w-full justify-between items-start">
+      <div class="flex flex-col sm:flex-row {isHomePage ? 'gap-16' : 'gap-8'}  w-full justify-end items-start">
         {#each Object.entries(footer_links) as [column, links]}
           <div>
             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{column}</h2>
