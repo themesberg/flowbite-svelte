@@ -39,7 +39,7 @@
   <Navbar
     color="default"
     fluid
-    navClass="flex items-center justify-between w-full z-40 mx-auto py-3 px-4 {isHomePage
+    navClass="flex items-center justify-between w-full mx-auto py-3 px-4 {isHomePage
       ? 'max-w-8xl lg:px-20 px-4'
       : ''}"
     let:hidden
