@@ -96,7 +96,7 @@
     </div>
     <a href="https://www.npmjs.com/package/flowbite-svelte">
       <DocBadge large class="gap-1 ml-4 lg:ml-6 px-3">
-        {version} <!-- ChevronDown class="w-4 h-4" variation="solid" / --></DocBadge>
+        v{version} <!-- ChevronDown class="w-4 h-4" variation="solid" / --></DocBadge>
     </a>
 
     <NavHamburger on:click={toggle} btnClass="ml-3 hidden sm:visible lg:hidden" />
