@@ -1,11 +1,13 @@
 ---
 layout: componentLayout
-breadcrumb_title: Types
-title: Types
+breadcrumb_title: typescript
+title: Svelte TypeScript Types - Flowbite
 dir: Pages
 component_title: Typescript Types
-description: Flowbite-Svelte Types page
+description: Learn more about the value types and class interfaces that you can use and extend with Flowbite coupled with Svelte by leveraging the features of TypeScript
 ---
+
+The following excerpt shows you the full list of TypeScript types and interfaces that are being used with the Flowbite Svelte library that you can leverage when building user interfaces and make your code more reliable and scalable.
 
 <script>
   // TODO: Does not build on the server - need to work on it
