@@ -15,6 +15,9 @@
 
   export let data: LayoutData;
 
+  let isHomePage: boolean;
+  $: isHomePage = $page.route.id === '/';
+
   let version = data.package.version ?? 'N/A';
 
   $: activeUrl = $page.url.pathname;
@@ -36,7 +39,7 @@
   <Navbar
     color="default"
     fluid
-    navClass="flex items-center justify-between w-full z-40 mx-auto py-3 px-4"
+    navClass="flex items-center justify-between w-full z-40 mx-auto py-3 px-4 {isHomePage ? 'max-w-8xl lg:px-20 px-4' : ''}"
     let:hidden
     let:toggle>
     <span hidden={$page.route.id === '/'}>
