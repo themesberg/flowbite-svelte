@@ -69,6 +69,10 @@
         href="/docs/pages/getting-started">Quickstart</NavLi>
       <NavLi
         class="mb-3 md:px-2 xl:px-2 md:mb-0"
+        active={activeUrl.startsWith('/docs/components/accordion')}
+        href="/docs/components/accordion">Components</NavLi>
+      <NavLi
+        class="mb-3 md:px-2 xl:px-2 md:mb-0"
         active={activeUrl.startsWith('/figma')}
         href="https://flowbite.com/figma/">Figma</NavLi>
       <NavLi class="mb-3 md:px-2 xl:px-2 md:mb-0" href="https://flowbite-svelte-blocks.vercel.app/"
