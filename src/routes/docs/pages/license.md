@@ -1,10 +1,10 @@
 ---
 layout: componentLayout
-breadcrumb_title: License
-title: License
+breadcrumb_title: License - Flowbite Svelte
+title: License - Flowbite Svelte
 component_title: License
 dir: Pages
-description: Learn more about the licensing right of the Flowbite Svelte UI component library
+description: Learn more about the open-source licensing rights of the Flowbite Svelte UI component library
 ---
 
 <script>
