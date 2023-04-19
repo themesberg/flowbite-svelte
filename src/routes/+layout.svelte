@@ -24,7 +24,7 @@
   let logo = '/images/flowbite-svelte-icon-logo.svg';
   let divClass = 'w-full ml-auto lg:block lg:w-auto order-1 lg:order-none';
   let ulClass =
-    'flex flex-col p-3 mt-4 lg:flex-row md:mt-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-4';
+    'flex flex-col p-3 mt-4 lg:flex-row lg:mt-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-1 lg:gap-4';
 
   const drawerHiddenStore: Writable<boolean> = writable<boolean>(true);
   setContext('drawer', drawerHiddenStore);
@@ -39,7 +39,9 @@
   <Navbar
     color="default"
     fluid
-    navClass="flex items-center justify-between w-full z-40 mx-auto py-3 px-4 {isHomePage ? 'max-w-8xl lg:px-20 px-4' : ''}"
+    navClass="flex items-center justify-between w-full z-40 mx-auto py-3 px-4 {isHomePage
+      ? 'max-w-8xl lg:px-20 px-4'
+      : ''}"
     let:hidden
     let:toggle>
     <span hidden={$page.route.id === '/'}>
@@ -56,27 +58,26 @@
       {hidden}
       {divClass}
       {ulClass}
-      nonActiveClass="text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 dark:text-gray-400 md:dark:text-white md:dark:hover:text-primary-700 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-      activeClass="text-white bg-primary-700 md:bg-transparent md:text-primary-700 md:dark:text-primary-700 dark:bg-primary-600 md:dark:bg-transparent cursor-default">
-      <NavLi class="mb-3 md:px-2 xl:px-2 md:mb-0" active={activeUrl === '/'} href="/">Home</NavLi>
+      nonActiveClass="md:!pl-3 md:!py-2 text-gray-700 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 dark:text-gray-400 lg:dark:text-white lg:dark:hover:text-primary-700 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent"
+      activeClass="md:!pl-3 md:!py-2 text-white bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:dark:text-primary-700 dark:bg-primary-600 lg:dark:bg-transparent cursor-default">
+      <NavLi class="lg:px-2 lg:mb-0" active={activeUrl === '/'} href="/">Home</NavLi>
       <NavLi
-        class="mb-3 md:px-2 xl:px-2 md:mb-0"
+        class="lg:px-2 lg:mb-0"
         active={activeUrl.startsWith('/docs/pages/introduction')}
         href="/docs/pages/introduction">Docs</NavLi>
       <NavLi
-        class="mb-3 md:px-2 xl:px-2 md:mb-0"
+        class="lg:px-2 lg:mb-0"
         active={activeUrl.startsWith('/docs/pages/quickstart')}
         href="/docs/pages/quickstart">Quickstart</NavLi>
       <NavLi
-        class="mb-3 md:px-2 xl:px-2 md:mb-0"
+        class="lg:px-2 lg:mb-0"
         active={activeUrl.startsWith('/docs/components/accordion')}
         href="/docs/components/accordion">Components</NavLi>
       <NavLi
-        class="mb-3 md:px-2 xl:px-2 md:mb-0"
+        class="lg:px-2 lg:mb-0"
         active={activeUrl.startsWith('/figma')}
         href="https://flowbite.com/figma/">Figma</NavLi>
-      <NavLi class="mb-3 md:px-2 xl:px-2 md:mb-0" href="https://flowbite-svelte-blocks.vercel.app/"
-        >Blocks</NavLi>
+      <NavLi class="lg:px-2 lg:mb-0" href="https://flowbite-svelte-blocks.vercel.app/">Blocks</NavLi>
     </NavUl>
 
     <div class="flex items-center ml-auto">
@@ -98,12 +99,12 @@
       <DarkMode size="lg" class="inline-block dark:hover:text-white hover:text-gray-900" />
       <Tooltip class="dark:bg-gray-900" placement="bottom-end">Toggle dark mode</Tooltip>
     </div>
-    <a href="https://www.npmjs.com/package/flowbite-svelte">
+    <a href="https://www.npmjs.com/package/flowbite-svelte" class="hidden sm:block">
       <DocBadge large class="gap-1 ml-4 lg:ml-6 px-3">
         v{version} <!-- ChevronDown class="w-4 h-4" variation="solid" / --></DocBadge>
     </a>
 
-    <NavHamburger on:click={toggle} btnClass="ml-3 hidden sm:visible lg:hidden" />
+    <NavHamburger on:click={toggle} btnClass="ml-3 lg:hidden" />
   </Navbar>
 </header>
 
