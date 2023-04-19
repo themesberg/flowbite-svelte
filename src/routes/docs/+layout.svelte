@@ -1,16 +1,16 @@
 <script lang="ts">
-  import type { PageData } from '../$types';
   import { afterNavigate } from '$app/navigation';
-  import { page } from '$app/stores';
   import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from '$lib';
+  import SidebarDropdownWrapper from '$lib/sidebars/SidebarDropdownWrapper.svelte';
+  import ChevronDown from '$lib/utils/ChevronDown.svelte';
+  import ChevronRight from '$lib/utils/ChevronRight.svelte';
   import { getContext } from 'svelte';
   import type { Writable } from 'svelte/store';
-  import SidebarDropdownWrapper from '$lib/sidebars/SidebarDropdownWrapper.svelte';
-  import ChevronRight from '$lib/utils/ChevronRight.svelte';
-  import ChevronDown from '$lib/utils/ChevronDown.svelte';
+  import type { PageData } from '../$types';
 
   export let data: PageData;
 
+  const posts: Record<string, any[]> = data.posts;
   const drawerHidden: Writable<boolean> = getContext('drawer');
 
   const closeDrawer = () => {
@@ -21,13 +21,21 @@
     pages: 'Getting Started'
   };
 
-  afterNavigate(() => {
+  const fileDir = (path: string) => path.split('/').slice(0, -1).pop() ?? '';
+
+  let activeUrl: string;
+
+  afterNavigate((navigation) => {
     // this fixes https://github.com/themesberg/flowbite-svelte/issues/364
     document.getElementById('svelte')?.scrollTo({ top: 0 });
     closeDrawer();
-  });
 
-  $: activeUrl = $page.url.pathname;
+    activeUrl = navigation.to?.url.pathname ?? '';
+
+    const key = fileDir(activeUrl);
+    for (const k in dropdowns) dropdowns[k] = false;
+    dropdowns[key] = true;
+  });
 
   let spanClass = '';
   let aClass =
@@ -35,7 +43,7 @@
   let activeClass =
     'relative flex items-center flex-wrap font-medium cursor-default text-primary-700 dark:text-primary-700';
 
-  let dropdowns = Object.fromEntries(Object.keys(data.posts).map((x) => [x, false]));
+  let dropdowns = Object.fromEntries(Object.keys(posts).map((x) => [x, false]));
 </script>
 
 <Sidebar
@@ -46,7 +54,7 @@
     divClass="overflow-y-auto z-20 px-4 pt-20 lg:pt-0 h-full bg-white scrolling-touch max-w-2xs lg:h-[calc(100vh-8rem)] lg:block dark:bg-gray-900 lg:mr-0 lg:sticky top-20">
     <nav class="font-normal text-base lg:text-sm">
       <SidebarGroup ulClass="list-unstyled fw-normal small mb-4">
-        {#each Object.entries(data.posts) as [key, values], groupIndex (key)}
+        {#each Object.entries(posts) as [key, values] (key)}
           <SidebarDropdownWrapper
             bind:isOpen={dropdowns[key]}
             label={names_mapping[key] ?? key}
@@ -59,14 +67,15 @@
             <ChevronRight size="24" slot="arrowdown" variation="solid" />
             <ChevronDown size="24" slot="arrowup" variation="solid" />
             {#each values as { meta, path }}
+              {@const href = `/docs/${key}${path}`}
               {#if meta}
                 <SidebarItem
                   label={meta.component_title}
-                  href={`/docs/${key}${path}`}
+                  {href}
                   {spanClass}
                   {aClass}
                   {activeClass}
-                  active={activeUrl === `/docs/${key}${path}`} />
+                  active={activeUrl === href} />
               {/if}
             {/each}
           </SidebarDropdownWrapper>
