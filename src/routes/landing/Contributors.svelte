@@ -30,10 +30,12 @@
     <div class="flex flex-col gap-3 max-w-5xl px-4 lg:px-8">
       <div class="flex flex-wrap items-center justify-center gap-3">
         {#each data?.contributors || [] as contributor}
-          <Avatar
+          <a href={contributor.html_url} rel="nofollow noreferrer" target="_blank">
+            <Avatar
             data-name={contributor.login}
             src={contributor.avatar_url}
             class="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16" />
+          </a>
         {/each}
       </div>
       <Tooltip triggeredBy="[data-name]" on:show={(e) => (name = e?.target?.dataset.name)}>{name}</Tooltip>
