@@ -77,11 +77,11 @@ export const fetchMarkdownPosts = async () => {
   // returns an array of paths, /introduction from /src/routes/pages/introduction.md
   const pageOrder: string[] = [
     'introduction',
-    'getting-started',
-    'faster-compiling-speed',
+    'quickstart',
+    'typescript',
+    'compiler-speed',
     'how-to-contribute',
     'license',
-    'types'
   ];
   const allPages = await Promise.all(
     iterablePageFiles.sort(sortByList(pageOrder)).map(async ([path, resolver]) => {
