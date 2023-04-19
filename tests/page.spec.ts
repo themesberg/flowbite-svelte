@@ -11,7 +11,7 @@ test('About page should have h1', async ({ page }) => {
 });
 
 test('Getting Started page should have h1', async ({ page }) => {
-  await page.goto('/docs/pages/getting-started');
+  await page.goto('/docs/pages/quickstart');
   expect(await page.textContent('h1')).toBe('Quickstart - Flowbite Svelte');
 });
 
@@ -26,7 +26,7 @@ test('License page should have h1', async ({ page }) => {
 });
 
 test('Type list page should have h1', async ({ page }) => {
-  await page.goto('/docs/pages/types');
+  await page.goto('/docs/pages/typescript');
   expect(await page.textContent('h1')).toBe('Svelte TypeScript Types - Flowbite');
 });
 
