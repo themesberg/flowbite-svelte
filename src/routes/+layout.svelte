@@ -81,21 +81,21 @@
 
     <div class="flex items-center ml-auto">
       <ToolbarLink
-        class="hidden sm:inline-block"
+        class="hidden sm:inline-block dark:hover:text-white hover:text-gray-900"
         name="View on GitHub"
         href="https://github.com/themesberg/flowbite-svelte">
         <GitHub /></ToolbarLink>
       <ToolbarLink
-        class="hidden sm:inline-block"
+        class="hidden sm:inline-block dark:hover:text-white hover:text-gray-900"
         name="Join community on Discord"
         href="https://discord.gg/4eeurUVvTy"><Discord /></ToolbarLink>
       <ToolbarLink
-        class="hidden sm:inline-block"
+        class="hidden sm:inline-block dark:hover:text-white hover:text-gray-900"
         name="Subscribe to YouTube channel"
         href="https://www.youtube.com/channel/UC_Ms4V2kYDsh7F_CSsHyQ6A">
         <YouTube />
       </ToolbarLink>
-      <DarkMode size="lg" class="inline-block" />
+      <DarkMode size="lg" class="inline-block dark:hover:text-white hover:text-gray-900" />
       <Tooltip class="dark:bg-gray-900" placement="bottom-end">Toggle dark mode</Tooltip>
     </div>
     <a href="https://www.npmjs.com/package/flowbite-svelte">
