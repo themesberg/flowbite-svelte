@@ -53,7 +53,7 @@
           <p>Become a member of a community of developers supporting Flowbite.</p>
         </div>
         <a
-          class="flex gap-2 items-center text-primary-700 text-base font-medium whitespace-nowrap"
+          class="flex gap-2 items-center text-primary-700 text-base font-medium whitespace-nowrap hover:underline"
           href="http://github.com/themesberg/flowbite-svelte">
           See our repository <ChevronRight variation="solid" />
         </a>
