@@ -1,9 +1,9 @@
 ---
 layout: componentLayout
-breadcrumb_title: typescript
+breadcrumb_title: Svelte Typescript
 title: Svelte TypeScript Types - Flowbite
 dir: Pages
-component_title: Typescript Types
+component_title: Typescript
 description: Learn more about the value types and class interfaces that you can use and extend with Flowbite coupled with Svelte by leveraging the features of TypeScript
 ---
 
