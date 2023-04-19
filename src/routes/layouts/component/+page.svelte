@@ -13,12 +13,14 @@
 
   export let /** @type {string} */ title;
   export let /** @type {string} */ breadcrumb_title;
+  export let /** @type {string} */ component_title = '';
   export let /** @type {string} */ dir;
   export let /** @type {string} */ description;
   export let /** @type {string} */ layout = '';
 
   // calm down `unused export property` warrning
   layout;
+  component_title;
 </script>
 
 <MetaTag {breadcrumb_title} {title} {dir} {description} />

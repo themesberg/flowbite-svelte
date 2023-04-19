@@ -27,7 +27,7 @@ cd my-app
 npm install
 ```
 
-#### Using Svelte
+### Using Svelte
 
 If you want to get started with Svelte:
 

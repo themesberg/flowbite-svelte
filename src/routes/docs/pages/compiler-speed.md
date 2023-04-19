@@ -8,7 +8,7 @@ description: Learn how you can manage and improve the Svelte compilation speed w
 ---
 
 <script>
-  import { A, P, List, Li, Alert, Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from '$lib'
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from '$lib'
 </script>
 
 If your Svelte app only requires a few components, it's recommended that you import them directly. Doing so can help optimize compilation speed and improve performance by reducing the amount of code that needs to be processed during compilation. Since version 0.34.1, it's now possible to import individual components.
@@ -57,7 +57,7 @@ To avoid any complaints from the editor, add node16 or nodenext to moduleResolut
     <TableHeadCell>Time</TableHeadCell>
     <TableHeadCell>Avg</TableHeadCell>
   </TableHead>
-  <TableBody class="divide-y">
+  <TableBody>
     <TableBodyRow>
       <TableBodyCell>1</TableBodyCell>
       <TableBodyCell>3.3ms</TableBodyCell>
@@ -89,7 +89,7 @@ The above table shows examples from using `import Alert from 'flowbite-svelte/Al
     <TableHeadCell>Time</TableHeadCell>
     <TableHeadCell>Avg</TableHeadCell>
   </TableHead>
-  <TableBody class="divide-y">
+  <TableBody>
     <TableBodyRow>
       <TableBodyCell>151</TableBodyCell>
       <TableBodyCell>1.10s</TableBodyCell>

@@ -7,17 +7,13 @@ dir: Pages
 description: Learn how you can start contributing to the open-source Flowbite Svelte UI component library
 ---
 
-<script>
-  import { A } from '$lib'
-</script>
-
 Here are some guidelines we'd like you to follow before submitting a PR.
 
 ## Create a fork
 
 Create a fork from [Flowbite-Svelte]("https://github.com/themesberg/flowbite-svelte") to your repository first.
 
-## Please use pnpm to install a fork
+## Please use pnpm to install
 
 The repo uses `pnpm`, so using `pnpm` is desirable when you fork and install dependencies to avoid unseen problems.
 
@@ -88,7 +84,7 @@ Again avoid type inference for `export`ed variables.
 
 ## Conventional commit
 
-When making a commit, we recommend using <A class="text-blue-700" href="https://www.conventionalcommits.org/en/v1.0.0/">the Conventional commits</A>.
+When making a commit, we recommend using [the Conventional commits]("https://www.conventionalcommits.org/en/v1.0.0/").
 
 Some examples are:
 

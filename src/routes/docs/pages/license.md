@@ -7,13 +7,9 @@ dir: Pages
 description: Learn more about the open-source licensing rights of the Flowbite Svelte UI component library
 ---
 
-<script>
-  import { A } from '$lib'
-</script>
-
 ## MIT License
 
-<h3>Copyright (c) 2022 Flowbite Svelte</h3>
+#### Copyright (c) 2022 Flowbite Svelte
 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

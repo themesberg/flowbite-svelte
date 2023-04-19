@@ -7,7 +7,7 @@
   import { onMount } from 'svelte';
 
   const aClass =
-    "border-l border-white duration-200 hover:text-gray-900 transition-none dark:hover:text-white hover:border-gray-300 after:content-['#'] after:text-primary-700 dark:after:text-primary-700 dark:border-gray-900 dark:hover:border-gray-700 after:ml-2 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-100";
+    "inline-block border-l border-white duration-200 hover:text-gray-900 transition-none dark:hover:text-white hover:border-gray-300 after:content-['#'] after:text-primary-700 dark:after:text-primary-700 dark:border-gray-900 dark:hover:border-gray-700 after:ml-2 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-100";
 
   export let extract: (x: HTMLElement) => LinkType = (x: HTMLElement) => ({ name: x.textContent ?? '' });
 
@@ -15,12 +15,16 @@
 
   let headings: LinkType[] = [];
 
-  onMount(() => {
+  function init(_: any) {
     const observer: MutationObserver = new MutationObserver(toc);
     observer.observe(document.body, { childList: true, subtree: true });
 
-    return () => observer.disconnect();
-  });
+    return {
+      destroy() {
+        observer.disconnect();
+      }
+    };
+  }
 
   function indent(name: string | undefined) {
     return name === 'H2' ? 'pl-2.5' : 'pl-6';
@@ -35,7 +39,7 @@
   }
 </script>
 
-<div class="flex-none hidden w-64 pl-8 xl:text-sm xl:block right-0">
+<div class="flex-none hidden w-64 pl-8 xl:text-sm xl:block right-0" use:init>
   {#if headings.length}
     <div class="flex overflow-y-auto sticky top-20 flex-col justify-between pb-6 h-[calc(100vh-5rem)]">
       <div class="mb-8">

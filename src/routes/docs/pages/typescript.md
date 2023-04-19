@@ -7,6 +7,8 @@ component_title: Typescript
 description: Learn more about the value types and class interfaces that you can use and extend with Flowbite coupled with Svelte by leveraging the features of TypeScript
 ---
 
+## Typescript types
+
 The following excerpt shows you the full list of TypeScript types and interfaces that are being used with the Flowbite Svelte library that you can leverage when building user interfaces and make your code more reliable and scalable.
 
 <script>

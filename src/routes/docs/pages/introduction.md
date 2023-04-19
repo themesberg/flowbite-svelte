@@ -7,9 +7,6 @@ dir: Pages
 description: Learn more about the free and open-source Flowbite Svelte UI components and start building modern web applications using native Svelte components based on Tailwind CSS
 ---
 
-<script>
-  import { A } from '$lib'
-</script>
 
 [Flowbite Svelte](https://github.com/themesberg/flowbite-svelte) is a free and open-source UI component library based on the core Flowbite components and built with native Svelte components and interactivity handling.
 
@@ -29,7 +26,7 @@ cd my-app
 npm install
 ```
 
-#### Using Svelte
+### Using Svelte
 
 If you want to get started with Svelte:
 
@@ -110,7 +107,7 @@ Flowbite Svelte has a rich collection of commonly used components coded with Sve
 
 Flowbite Svelte is a free and open-source UI component library built with Svelte native components and based on the Flowbite ecosystem and contributions are more than welcome.
 
-Check out <A href='/docs/pages/how-to-contribute'>contributing guide</A> to learn how you can be a part of the open-source community.
+Check out [contributing guide]('/docs/pages/how-to-contribute') to learn how you can be a part of the open-source community.
 
 ## License
 
