@@ -17,10 +17,10 @@
     <!-- heading -->
 
     <div class="flex flex-col gap-4 items-center justify-center max-w-2xl">
-      <h1
+      <h2
         class="tracking-tight text-center text-3xl lg:text-4xl font-extrabold text-gray-900 dark:text-white">
         Community contributors
-      </h1>
+    </h2>
       <p class="text-lg font-normal text-center">
         Explore the whole collection of open-source web components and elements built with the utility
         classes from Tailwind
