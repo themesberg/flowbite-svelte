@@ -37,7 +37,7 @@ You can find all the examples in the Examples directory.
 
 ## Installation
 
-- [Getting started](https://flowbite-svelte.com/pages/getting-started)
+- [Getting started](https://flowbite-svelte.com/pages/quickstart)
 - [Introduction](https://flowbite-svelte.com/pages/introduction)
 - [Types](https://flowbite-svelte.com/pages/types)
 - [How to contribute](https://flowbite-svelte.com/pages/how-to-contribute)

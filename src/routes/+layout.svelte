@@ -65,8 +65,8 @@
         href="/docs/pages/introduction">Docs</NavLi>
       <NavLi
         class="mb-3 md:px-2 xl:px-2 md:mb-0"
-        active={activeUrl.startsWith('/docs/pages/getting-started')}
-        href="/docs/pages/getting-started">Quickstart</NavLi>
+        active={activeUrl.startsWith('/docs/pages/quickstart')}
+        href="/docs/pages/quickstart">Quickstart</NavLi>
       <NavLi
         class="mb-3 md:px-2 xl:px-2 md:mb-0"
         active={activeUrl.startsWith('/docs/components/accordion')}
