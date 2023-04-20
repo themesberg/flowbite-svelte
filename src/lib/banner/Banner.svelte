@@ -5,7 +5,7 @@
   export let position: 'static'|'fixed'|'absolute'|'relative'|'sticky'='sticky';
   export let dismissable: boolean = true;
   export let bannerType: 'default'|'bottom'|'cta'|'signup'|'info'|'custom'='default';
-  export let divDefault: string = 'z-50 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600';
+  export let divDefault: string = 'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600';
   export let insideDiv: string ='flex';
 
   const divClasses = {

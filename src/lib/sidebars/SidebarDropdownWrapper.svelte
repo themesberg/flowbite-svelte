@@ -16,17 +16,17 @@
 
   // make a custom transition function that returns the desired transition
   const multiple = (node: HTMLElement, params: any) => {
-  switch (transitionType) {
-    case 'blur':
-      return blur(node, params);
-    case 'fly':
-      return fly(node, params);
-    case 'fade':
-      return fade(node, params);
-    default:
-      return slide(node, params);
-  }
-};
+    switch (transitionType) {
+      case 'blur':
+        return blur(node, params);
+      case 'fly':
+        return fly(node, params);
+      case 'fade':
+        return fade(node, params);
+      default:
+        return slide(node, params);
+    }
+  };
 
   export let isOpen = false;
   const handleDropdown = () => {
@@ -56,10 +56,7 @@
     {/if}
   </button>
   {#if isOpen}
-    <ul
-      id="dropdown"
-      class={ulClass}
-      transition:multiple|local={transitionParams}>
+    <ul class={ulClass} transition:multiple|local={transitionParams}>
       <slot />
     </ul>
   {/if}

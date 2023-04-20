@@ -4,6 +4,8 @@
   import Button from '$lib/buttons/Button.svelte';
   import ExampleDarkMode from './ExampleDarkMode.svelte';
   import GitHub from './icons/GitHub.svelte';
+  import Check from './icons/Check.svelte';
+  import Tooltip from '$lib/tooltips/Tooltip.svelte';
 
   export let divClass = 'w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-2 sm:p-6';
 
@@ -36,18 +38,23 @@
 
     await window.navigator.clipboard.writeText(decodedText);
 
-    (e?.target as HTMLButtonElement)?.blur();
-  };
+    const button: HTMLButtonElement | null = e?.target as HTMLButtonElement;
+    button?.blur();
 
-  function hack(node: HTMLElement) {
-    node.parentElement?.classList.add('w-full');
-  }
+    const lastChild = button?.lastChild;
+    if (lastChild) {
+      lastChild.textContent = 'Copied';
+      setTimeout(() => (lastChild.textContent = 'Copy'), 3000);
+    }
+  };
 
   function checkOverflow(el: HTMLElement) {
     const isOverflowingY = el.clientHeight < el.scrollHeight;
     showExpandButton = isOverflowingY;
     el.firstElementChild?.classList.add('-mb-8');
   }
+
+  let copy_text = 'Copy';
 </script>
 
 <div class="mt-8 code-example">
@@ -58,7 +65,7 @@
         <Button
           size="xs"
           color="alternative"
-          class="dark:!bg-gray-900 w-fit"
+          class="dark:!bg-gray-900 w-fit hover:text-primary-600"
           href="https://github.com/themesberg/flowbite-svelte">
           <GitHub size="sm" />&nbsp; Edit on GitHub
         </Button>
@@ -96,10 +103,8 @@
           {#if browserSupport}
             <button
               on:click={(e) => copyToClipboard(e)}
-              data-tooltip-placement="bottom"
               type="button"
-              data-copy-state="copy"
-              class="flex items-center px-3 py-2 text-xs font-medium text-gray-600 bg-gray-100 border-l border-gray-200 dark:border-gray-600 dark:text-gray-400 dark:bg-gray-800 hover:text-blue-700 dark:hover:text-white copy-to-clipboard-button">
+              class="flex items-center px-3 py-2 text-xs font-medium text-gray-600 bg-gray-100 border-l border-gray-200 dark:border-gray-600 dark:text-gray-400 dark:bg-gray-800 hover:text-primary-700 dark:hover:text-white copy-to-clipboard-button">
               <svg
                 class="w-4 h-4 mr-2"
                 fill="none"
@@ -111,8 +116,9 @@
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
-              <span class="copy-text">Copy</span>
+              {copy_text}
             </button>
+            <Tooltip placement="bottom-end">Copy to clipboard.</Tooltip>
           {/if}
         </div>
       </div>
@@ -127,7 +133,7 @@
             on:click={() => (expand = !expand)}
             data-expand-code=""
             type="button"
-            class="absolute bottom-0 left-0 py-2.5 px-5 w-full text-sm font-medium text-gray-900 bg-gray-100 border-t border-gray-200 hover:bg-gray-100 hover:text-blue-700 dark:bg-gray-700 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+            class="absolute bottom-0 left-0 py-2.5 px-5 w-full text-sm font-medium text-gray-900 bg-gray-100 border-t border-gray-200 hover:bg-gray-100 hover:text-primary-700 dark:bg-gray-700 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
             >Expand code</button>
         {/if}
       </div>

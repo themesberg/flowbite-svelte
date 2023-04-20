@@ -18,7 +18,7 @@
     href="https://github.com/themesberg/flowbite-svelte/blob/main/src/lib{((rootDir) => path.split(rootDir)[1])(path.split('/').slice(0, -2).join('/'))}"
     target="_blank"
     rel="noreferrer"
-    class="hover:underline hover:text-blue-500">
+    class="hover:underline hover:text-primary-500">
     <slot />
     {path.split("/").pop()?.split(".").shift()}: View Source Code</a>
 </p>

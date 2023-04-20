@@ -1,25 +1,29 @@
 export { default as CompoDescription } from './CompoDescription.svelte';
-export { default as ExampleDiv } from './ExampleDiv.svelte';
+export { default as DocBadge } from './DocBadge.svelte';
+export { default as DocBadgeList } from './DocBadgeList.svelte';
 export { default as GitHubSource } from './GitHubSource.svelte';
 export { default as GitHubSourceList } from './GitHubSourceList.svelte';
-export { default as Htwo } from './Htwo.svelte';
 export { default as PageHeadSection } from './PageHeadSection.svelte';
 export { default as MetaTag } from './MetaTag.svelte';
 export { default as TableDefaultRow } from './TableDefaultRow.svelte';
 export { default as TableProp } from './TableProp.svelte';
+export { default as Toc } from './Toc.svelte';
 
-const filePath = (path: string) => '/' + path.split('/').pop()?.split('.').shift();
+const basename = (path: string) => path.split('/').pop()?.split('.').shift() ?? '';
+const filePath = (path: string) => '/' + basename(path);
 const fileDir = (path: string) => '/' + path.split('/').slice(0, -1).pop();
+const sortByList = (order: string[]) => (a, b) =>
+  [a[0], b[0]].map((x) => order.indexOf(basename(x))).reduce((x, y) => (x < 0 ? 1 : y < 0 ? -1 : x - y));
 
 export const fetchMarkdownPosts = async () => {
-  const componentFiles = import.meta.glob('/src/routes/components/*.md');
-  const formFiles = import.meta.glob('/src/routes/forms/*.md');
-  const typographyFiles = import.meta.glob('/src/routes/typography/*.md');
-  const utilFiles = import.meta.glob('/src/routes/utilities/*.md');
-  const pageFiles = import.meta.glob('/src/routes/pages/*.md');
-  const extendFiles = import.meta.glob('/src/routes/extend/*.md');
-  const exampleFiles = import.meta.glob('/src/routes/examples/*/*.svelte');
-  const experimentalFiles = import.meta.glob('/src/routes/experimental/*.md');
+  const componentFiles = import.meta.glob('/src/routes/docs/components/*.md');
+  const formFiles = import.meta.glob('/src/routes/docs/forms/*.md');
+  const typographyFiles = import.meta.glob('/src/routes/docs/typography/*.md');
+  const utilFiles = import.meta.glob('/src/routes/docs/utilities/*.md');
+  const pageFiles = import.meta.glob('/src/routes/docs/pages/*.md');
+  const extendFiles = import.meta.glob('/src/routes/docs/extend/*.md');
+  const exampleFiles = import.meta.glob('/src/routes/docs/examples/*.md');
+  const experimentalFiles = import.meta.glob('/src/routes/docs/experimental/*.md');
   // returns an array of files
   const iterableComponentFiles = Object.entries(componentFiles);
   const iterableFormFiles = Object.entries(formFiles);
@@ -69,9 +73,18 @@ export const fetchMarkdownPosts = async () => {
       };
     })
   );
-  // returns an array of paths, /about from /src/routes/pages/about.md
+
+  // returns an array of paths, /introduction from /src/routes/pages/introduction.md
+  const pageOrder: string[] = [
+    'introduction',
+    'quickstart',
+    'typescript',
+    'compiler-speed',
+    'how-to-contribute',
+    'license',
+  ];
   const allPages = await Promise.all(
-    iterablePageFiles.map(async ([path, resolver]) => {
+    iterablePageFiles.sort(sortByList(pageOrder)).map(async ([path, resolver]) => {
       const { metadata } = await resolver();
       return {
         meta: metadata,
@@ -96,7 +109,7 @@ export const fetchMarkdownPosts = async () => {
       const { metadata } = await resolver();
       return {
         meta: metadata,
-        path: fileDir(path)
+        path: filePath(path)
       };
     })
   );
