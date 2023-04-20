@@ -61,8 +61,9 @@ export const handle = async ({ event, resolve }) => {
       return filePath(path);
     })
   );
-
   // check if pathname is included itn allComponents
+
+  // if (allComponents.includes(filePath(event.url.pathname)) && !event.url.pathname.startsWith('/docs')) {
   if (allComponents.includes(event.url.pathname)) {
     // redirect
     return Response.redirect(`${event.url.origin}/docs/components${event.url.pathname}`, 301);
@@ -78,6 +79,28 @@ export const handle = async ({ event, resolve }) => {
     return Response.redirect(`${event.url.origin}/docs/experimental${event.url.pathname}`, 301);
   } else if (allUtils.includes(event.url.pathname)) {
     return Response.redirect(`${event.url.origin}/docs/utilities${event.url.pathname}`, 301);
+  }
+  // redirect
+  else if (allComponents.includes(filePath(event.url.pathname)) && !event.url.pathname.startsWith('/docs')) {
+    return Response.redirect(`${event.url.origin}/docs${event.url.pathname}`, 301);
+  } else if (allForms.includes(filePath(event.url.pathname)) && !event.url.pathname.startsWith('/docs')) {
+    return Response.redirect(`${event.url.origin}/docs${event.url.pathname}`, 301);
+  } else if (
+    allTypographys.includes(filePath(event.url.pathname)) &&
+    !event.url.pathname.startsWith('/docs')
+  ) {
+    return Response.redirect(`${event.url.origin}/docs${event.url.pathname}`, 301);
+  } else if (allPages.includes(filePath(event.url.pathname)) && !event.url.pathname.startsWith('/docs')) {
+    return Response.redirect(`${event.url.origin}/docs${event.url.pathname}`, 301);
+  } else if (allExtends.includes(filePath(event.url.pathname)) && !event.url.pathname.startsWith('/docs')) {
+    return Response.redirect(`${event.url.origin}/docs${event.url.pathname}`, 301);
+  } else if (
+    allExperimental.includes(filePath(event.url.pathname)) &&
+    !event.url.pathname.startsWith('/docs')
+  ) {
+    return Response.redirect(`${event.url.origin}/docs${event.url.pathname}`, 301);
+  } else if (allUtils.includes(filePath(event.url.pathname)) && !event.url.pathname.startsWith('/docs')) {
+    return Response.redirect(`${event.url.origin}/docs${event.url.pathname}`, 301);
   }
 
   return await resolve(event);
