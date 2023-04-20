@@ -22,8 +22,7 @@
         Community contributors
     </h2>
       <p class="text-lg font-normal text-center">
-        Explore the whole collection of open-source web components and elements built with the utility
-        classes from Tailwind
+        Join the open-source community by contributing to the Flowbite Svelte Library and become one of the highlighted members
       </p>
     </div>
     <!-- avatars -->
@@ -52,7 +51,7 @@
           <h3 class="tracking-tight text-xl font-bold text-left text-gray-900 dark:text-white">
             Join the community
           </h3>
-          <p>Become a member of a community of developers supporting Flowbite.</p>
+          <p>Become a member of a community of developers supporting by Flowbite</p>
         </div>
         <a
           class="flex gap-2 items-center text-primary-700 text-base font-medium whitespace-nowrap hover:underline"
