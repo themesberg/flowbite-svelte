@@ -25,7 +25,7 @@
   let logo = '/images/flowbite-svelte-icon-logo.svg';
   let divClass = 'w-full ml-auto lg:block lg:w-auto order-1 lg:order-none';
   let ulClass =
-    'flex flex-col py-3 mt-4 lg:flex-row lg:mt-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-4';
+    'flex flex-col py-3 my-4 lg:flex-row lg:my-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-4';
 
   const drawerHiddenStore: Writable<boolean> = writable<boolean>(true);
   setContext('drawer', drawerHiddenStore);
@@ -40,7 +40,7 @@
   <Navbar
     color="default"
     fluid
-    navClass="flex items-center justify-between w-full mx-auto py-3 px-4 {isHomePage
+    navClass="flex items-center justify-between w-full mx-auto py-1.5 px-4 {isHomePage
       ? 'max-w-8xl lg:px-20 px-4'
       : ''}"
     let:hidden
