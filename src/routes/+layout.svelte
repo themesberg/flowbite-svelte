@@ -101,7 +101,7 @@
       <Tooltip class="dark:bg-gray-900" placement="bottom-end">Toggle dark mode</Tooltip>
     </div>
     <a href="https://www.npmjs.com/package/flowbite-svelte" class="hidden sm:block">
-      <DocBadge large class="ml-2 xl:ml-6">
+      <DocBadge large class="ml-2 xl:ml-6 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-800 dark:hover:text-white">
         v{version} <!-- ChevronDown class="w-4 h-4" variation="solid" / --></DocBadge>
     </a>
 
