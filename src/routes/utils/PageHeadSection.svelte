@@ -11,7 +11,7 @@
   breadcrumb_title;
 </script>
 
-<div class="pb-4 mb-8 border-b border-gray-200 dark:border-gray-800">
+<div class="pb-8">
   <!-- Breadcrumb class="pb-8">
     <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
     <BreadcrumbItem>{dir}</BreadcrumbItem>
