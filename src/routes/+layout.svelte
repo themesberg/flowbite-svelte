@@ -46,7 +46,7 @@
     let:hidden
     let:toggle>
     <span hidden={$page.route.id === '/'}>
-      <NavSidebarHamburger on:click={toggleDrawer} btnClass="mr-3 lg:hidden" />
+      <NavSidebarHamburger on:click={toggleDrawer} btnClass="mr-3 m-0 mr-3 lg:hidden" />
     </span>
     <NavBrand href="/">
       <img src={logo} class="mr-3 h-8" alt="Flowbite Svelte Logo" />
@@ -108,7 +108,7 @@
         v{version} <!-- ChevronDown class="w-4 h-4" variation="solid" / --></DocBadge>
     </a>
 
-    <NavHamburger on:click={toggle} btnClass="ml-3 lg:hidden" />
+    <NavHamburger on:click={toggle} btnClass="ml-3 m-0 lg:hidden {isHomePage ? '' : 'hidden'}" />
   </Navbar>
 </header>
 
