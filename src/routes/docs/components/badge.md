@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Badge
 component_title: Badge
 dir: Components
 description: Use Tailwind CSS badges as elements to show counts or labels separately or inside other components
+thumnailSize: w-28
 ---
 
 <script>

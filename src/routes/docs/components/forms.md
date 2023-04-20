@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Forms
 component_title: Forms
 dir: Components
 description: Use the Tailwind CSS form and input elements such as checkboxes, radios, textarea, text inputs to collect information from users with Flowbite
+thumnailSize: w-40
 ---
 
 <script>

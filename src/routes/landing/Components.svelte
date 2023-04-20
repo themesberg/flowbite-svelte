@@ -1,5 +1,7 @@
 <script lang="ts">
   import type { PageData } from '../$types';
+  import Button from '$lib/buttons/Button.svelte';
+  import ArrowRight from '../utils/icons/ArrowRight.svelte';
 
   import CompoCard from '../utils/CompoCard.svelte';
 
@@ -10,10 +12,11 @@
     ...data.posts.typography,
     ...data.posts.experimental
   ].sort((a, b) => a.meta.component_title.localeCompare(b.meta.component_title));
+
 </script>
 
-<div class="w-full px-4 lg:px-20 space-y-8 lg:space-y-12">
-  <div class="flex flex-col items-center pt-6 sm:pt-8 lg:pt-24 gap-4 sm:gap-4">
+<div class="w-full px-4 lg:px-20">
+  <div class="flex flex-col items-center pt-6 sm:pt-8 lg:pt-24 gap-4 sm:gap-4 lg:mb-12 mb-8">
     <h2 class="tracking-tight font-extrabold text-3xl lg:text-4xl text-gray-900 dark:text-white">
       Svelte UI components
     </h2>
@@ -24,8 +27,19 @@
   </div>
 
   <div class="grid grid-cols-1 gap-4 sm:gap-8 sm:grid-cols-2 xl:grid-cols-3 pb-10">
-    {#each components as { path, meta: { dir, component_title } }}
-      <CompoCard name={component_title} {dir} {path} />
+    {#each components as { path, meta: { dir, component_title, thumnailSize } }}
+      <CompoCard name={component_title} {thumnailSize} {dir} {path} />
     {/each}
   </div>
+
+  <div class="w-full flex justify-center lg:mb-12 mb-8">
+    <Button
+      size="md"
+      class="whitespace-nowrap hover:text-primary-600 focus:text-primary-600"
+      href="/docs/pages/introduction"
+      color="alternative">
+      View all components
+    </Button>
+  </div>
+
 </div>

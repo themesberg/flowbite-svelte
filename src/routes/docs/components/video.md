@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Video
 component_title: Video
 dir: Components
 description: Use the video component to configure an embedded video player using native HTML 5 functionality based on the utility classes from Tailwind CSS
+thumnailSize: w-64
 ---
 
 <script>

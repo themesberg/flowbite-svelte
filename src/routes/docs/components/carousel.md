@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Carousel
 component_title: Carousel
 dir: Components
 description: Use the carousel component to slide through multiple elements and images using custom controls, indicators, intervals, and options
+thumnailSize: w-48
 ---
 
 <script>

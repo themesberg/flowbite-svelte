@@ -4,7 +4,8 @@ title: Svelte Typography - Flowbite
 breadcrumb_title: Svelte Typography
 component_title: Typography
 dir: Components
-description: Use the typography and the utility classes from Tailwind CSS to style text with FlowBite
+description: Use the typography and the utility classes from Tailwind CSS to style text with Flowbite
+thumnailSize: w-36
 ---
 
 <script>

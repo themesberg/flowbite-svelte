@@ -4,6 +4,7 @@
   export let name: string;
   export let dir: string;
   export let path: string;
+  export let thumnailSize: string;
 
   path = path.toLowerCase();
   dir = dir.toLowerCase();
@@ -29,7 +30,7 @@
       ></span>
   </div>
   <div class="flex justify-center items-center h-52">
-    <div class="relative h-4/6 dark:hidden w-56">
+    <div class="relative dark:hidden h-5/6 {thumnailSize ? thumnailSize : 'w-56'}">
       <span
         style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"
         ><img
@@ -41,7 +42,7 @@
           sizes="100vw"
           srcset="/images/{dir}{path}.svg 640w, /images/{dir}{path}.svg 750w, /images/{dir}{path}.svg 828w, /images/{dir}{path}.svg 1080w, /images/{dir}{path}.svg 1200w, /images/{dir}{path}.svg 1920w, /images/{dir}{path}.svg 2048w, /images/{dir}{path}.svg 3840w" /><noscript /></span>
     </div>
-    <div class="hidden relative h-4/6 dark:block w-56">
+    <div class="hidden relative dark:block h-5/6 {thumnailSize ? thumnailSize : 'w-56'}">
       <span
         style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"
         ><img
@@ -49,7 +50,6 @@
           src="/images/{dir}{path}-dark.svg"
           decoding="async"
           data-nimg="fill"
-          class="w-56"
           style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain;" /><noscript /></span>
     </div>
   </div>

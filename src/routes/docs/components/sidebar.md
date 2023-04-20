@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Sidebar
 component_title: Sidebar
 dir: Components
 description: Use the sidebar component to show a list of menu items and multi-level dropdown items on either side of the page to navigate on your website
+thumnailSize: w-72
 ---
 
 <script>

@@ -5,6 +5,7 @@ breadcrumb_title: Svelte List Group
 component_title: List Group
 dir: Components
 description: Use the list group component to display a series of items, buttons or links inside a single element
+thumnailSize: w-36
 ---
 
 <script>

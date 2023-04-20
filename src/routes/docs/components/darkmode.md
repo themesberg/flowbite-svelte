@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Dark mode
 component_title: Dark mode
 dir: Components
 description: Learn how to configure and build a dark mode switcher for Flowbite using Tailwind CSS and start developing with the components from the library
+thumnailSize: w-24
 ---
 
 <script>

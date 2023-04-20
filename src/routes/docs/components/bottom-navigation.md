@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Bottom Navigation
 component_title: Bottom Navigation
 dir: Components
 description: Use the bottom navigation bar component to allow users to navigate through your website or create a control bar using a menu that is positioned at the bottom of the page
+thumnailSize: w-64
 ---
 
 <script>

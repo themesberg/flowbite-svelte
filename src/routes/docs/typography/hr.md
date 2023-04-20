@@ -5,6 +5,7 @@ breadcrumb_title: Svelte HR
 component_title: HR
 dir: Typography
 description: Create a horizontal line using the `Hr` component to separate content such as paragraphs, blockquotes, and other elements
+thumnailSize: w-64
 ---
 
 <script>

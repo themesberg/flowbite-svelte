@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Modal
 component_title: Modal
 dir: Components
 description: Use the modal component to show interactive dialogs and notifications to your website users available in multiple sizes, colors, and styles
+thumnailSize: w-48
 ---
 
 <script>

@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Blockquote
 component_title: Blockquote
 dir: Typography
 description: The blockquote component can be used to quote text content from an external source that can be used for testimonials, reviews, and quotes inside an article
+thumnailSize: w-64
 ---
 
 <script>

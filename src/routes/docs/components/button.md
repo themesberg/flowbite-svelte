@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Buttons
 component_title: Buttons
 dir: Components
 description: Use the button component inside forms, as links, social login, payment options with support for multiple styles, colors, sizes, gradients, and shadows
+thumnailSize: w-24
 ---
 
 <script>

@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Progress bar
 component_title: Progress
 dir: Components
 description: Use the progress bar component to show the completion rate of a data indicator or use it as a loader element
+thumnailSize: w-48
 ---
 
 <script>

@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Spinner (Loader)
 component_title: Spinner
 dir: Components
 description: Use the spinner component as a loader indicator in your projects when fetching data based on an animated SVG
+thumnailSize: w-48
 ---
 
 <script>

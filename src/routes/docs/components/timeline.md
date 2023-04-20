@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Timeline
 component_title: Timeline
 dir: Components
 description: Get started with the responsive timeline component to show data in a chronological order with support for multiple styles, sizes, and variants
+thumbnailSize: w-64
 ---
 
 <script lang="ts">

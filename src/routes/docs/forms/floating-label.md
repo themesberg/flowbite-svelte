@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Floating Label
 component_title: Floating Label
 dir: Forms
 description: Use the floating label style for the input field elements to replicate the Material UI design system from Google and choose from multiple styles and sizes
+thumnailSize: w-40
 ---
 
 <script>

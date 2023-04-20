@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Card
 component_title: Cards
 dir: Components
 description: Get started with a large variety of Tailwind CSS card examples for your web project
+thumnailSize: w-36
 ---
 
 <script>

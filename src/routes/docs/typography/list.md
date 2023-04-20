@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Lists
 component_title: List
 dir: Typography
 description: Use the list component to show an unordered or ordered list of items based on multiple styles, layouts, and variants built with Tailwind CSS and Flowbite
+thumnailSize: w-64
 ---
 
 <script>

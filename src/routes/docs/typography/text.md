@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Text
 component_title: Text
 dir: Typography
 description: Learn how to customize text-related styles and properties such as font size, font style, text decoration, font weight and more
+thumnailSize: w-64
 ---
 
 <script>

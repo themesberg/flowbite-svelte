@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Tables
 component_title: Table
 dir: Components
 description: Use the table component to show text, images, links, and other elements inside a structured set of data made up of rows and columns of table cells
+thumnailSize: w-48
 ---
 
 <script>

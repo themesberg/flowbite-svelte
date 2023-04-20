@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Skeleton
 component_title: Skeleton
 dir: Components
 description: The skeleton component can be used as an alternative loading indicator to the spinner by mimicking the content that will be loaded such as text, images, or video
+thumnailSize: w-40
 ---
 
 <script>

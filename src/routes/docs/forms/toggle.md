@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Toggle (Switch)
 component_title: Toggle
 dir: Forms
 description: Use the toggle component to switch between a binary state of true or false using a single click available in multiple sizes, variants, and colors
+thumbnailSize: w-72
 ---
 
 <script>

@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Pagination
 component_title: Pagination
 dir: Components
 description: Use the Tailwind CSS pagination element to indicate a series of content across various pages
+thumnailSize: w-48
 ---
 
 <script lang="ts">

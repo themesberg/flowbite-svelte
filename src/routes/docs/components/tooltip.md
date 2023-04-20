@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Tooltip
 component_title: Tooltip
 dir: Components
 description: Use the following Tailwind CSS powered tooltips to show extra content when hovering or focusing on an element
+thumnailSize: w-24
 ---
 
 <script>

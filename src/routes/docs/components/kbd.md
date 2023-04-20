@@ -5,6 +5,7 @@ breadcrumb_title: Svelte KBD (Keyboard)
 component_title: KBD
 dir: Components
 description: Use the KBD component as an inline element to denote textual user input from the keyboard inside paragraphs, tables, and other components
+thumnailSize: w-40
 ---
 
 <script>

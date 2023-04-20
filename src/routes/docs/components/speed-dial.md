@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Speed Dial
 component_title: Speed Dial
 dir: Components
 description: The speed dial component can be used as a quick way to show a list of action buttons to a user when hovering or clicking on the main trigger element.
+thumnailSize: w-64
 ---
 
 <script>

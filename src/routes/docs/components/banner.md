@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Sticky Banner
 component_title: Banner
 dir: Components
 description: Use the banner component to show marketing messages and CTA buttons at the top or bottom side of your website based on the utility classes from Tailwind CSS
+thumnailSize: w-64
 ---
 
 <script>

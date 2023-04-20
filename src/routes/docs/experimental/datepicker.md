@@ -4,7 +4,8 @@ title: Svelte Datepicker - Flowbite
 breadcrumb_title: Svelte Datepicker
 component_title: Datepicker
 dir: Experimental
-description: Start receiving date and time data from your users using this free datepicker element based on Tailwind utility-classes and vanilla JavaScript.
+description: Start receiving date and time data from your users using this free datepicker element based on Tailwind utility-classes and vanilla JavaScript
+thumnailSize: w-28
 ---
 
 

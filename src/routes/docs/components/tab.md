@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Tabs
 component_title: Tabs
 dir: Components
 description: Use these responsive tabs components to create a secondary navigational hierarchy for your website or toggle content inside a container
+thumnailSize: w-64
 ---
 
 <script lang="ts">

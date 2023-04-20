@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Gallery (Masonry)
 component_title: Gallery
 dir: Components
 description: Use the image gallery component based on a masonry grid layout using flex and grid classes from Tailwind CSS to show multiple pictures based on various styles
+thumnailSize: w-64
 ---
 
 <script>

@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Images
 component_title: Image
 dir: Typography
 description: The image component can be used to embed images inside the web page in articles and sections based on multiple styles, sizes, layouts and hover animations
+thumnailSize: w-64
 ---
 
 <script>

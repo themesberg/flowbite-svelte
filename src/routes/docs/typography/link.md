@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Links
 component_title: Link
 dir: Typography
 description: The link component can be used to set hyperlinks from one page to another or to an external website when clicking on an inline text item, button, or card
+thumnailSize: w-64
 ---
 
 <script>

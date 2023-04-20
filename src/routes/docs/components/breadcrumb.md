@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Breadcrumb
 component_title: Breadcrumb
 dir: Components
 description: Show the location of the current page in a hierarchical structure using the breadcrumb components
+thumnailSize: w-64
 ---
 
 <script>

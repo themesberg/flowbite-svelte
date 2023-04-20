@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Toast Notification
 component_title: Toast
 dir: Components
 description: Push notifications to your users using the toast component and choose from multiple sizes, colors, styles, and positions
+thumnailSize: w-64
 ---
 
 <script>

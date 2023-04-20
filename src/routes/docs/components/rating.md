@@ -5,6 +5,7 @@ breadcrumb_title: Svelte Rating
 component_title: Rating
 dir: Components
 description: Use the rating component to show reviews and testimonials from your users using stars and scores based on multiple styles and sizes
+thumnailSize: w-64
 ---
 
 <script>
