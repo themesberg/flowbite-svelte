@@ -12,7 +12,7 @@
   import YouTube from './utils/icons/YouTube.svelte';
   import ToolbarLink from './utils/ToolbarLink.svelte';
   import type { LayoutData } from './$types';
-    import NavSidebarHamburger from '$lib/navbar/NavSidebarHamburger.svelte';
+  import NavSidebarHamburger from '$lib/navbar/NavSidebarHamburger.svelte';
 
   export let data: LayoutData;
 
@@ -59,6 +59,7 @@
       {hidden}
       {divClass}
       {ulClass}
+      on:click={() => setTimeout(toggle, 1)}
       nonActiveClass="md:!pl-3 md:!py-2 lg:!pl-0 text-gray-700 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 dark:text-gray-400 lg:dark:text-white lg:dark:hover:text-primary-700 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent"
       activeClass="md:!pl-3 md:!py-2 lg:!pl-0 text-white bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:dark:text-primary-700 dark:bg-primary-600 lg:dark:bg-transparent cursor-default">
       <NavLi class="lg:px-2 lg:mb-0" active={activeUrl === '/'} href="/">Home</NavLi>
@@ -101,7 +102,9 @@
       <Tooltip class="dark:bg-gray-900" placement="bottom-end">Toggle dark mode</Tooltip>
     </div>
     <a href="https://www.npmjs.com/package/flowbite-svelte" class="hidden sm:block">
-      <DocBadge large class="ml-2 xl:ml-6 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-800 dark:hover:text-white">
+      <DocBadge
+        large
+        class="ml-2 xl:ml-6 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-800 dark:hover:text-white">
         v{version} <!-- ChevronDown class="w-4 h-4" variation="solid" / --></DocBadge>
     </a>
 
