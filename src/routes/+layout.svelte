@@ -24,7 +24,7 @@
   let logo = '/images/flowbite-svelte-icon-logo.svg';
   let divClass = 'w-full ml-auto lg:block lg:w-auto order-1 lg:order-none';
   let ulClass =
-    'flex flex-col p-3 mt-4 lg:flex-row lg:mt-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-1 lg:gap-4';
+    'flex flex-col py-3 mt-4 lg:flex-row lg:mt-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-1 lg:gap-0 xl:gap-4';
 
   const drawerHiddenStore: Writable<boolean> = writable<boolean>(true);
   setContext('drawer', drawerHiddenStore);
@@ -100,7 +100,7 @@
       <Tooltip class="dark:bg-gray-900" placement="bottom-end">Toggle dark mode</Tooltip>
     </div>
     <a href="https://www.npmjs.com/package/flowbite-svelte" class="hidden sm:block">
-      <DocBadge large class="gap-1 ml-4 lg:ml-6 px-3">
+      <DocBadge large class="gap-1 ml-4 xl:ml-6 px-3">
         v{version} <!-- ChevronDown class="w-4 h-4" variation="solid" / --></DocBadge>
     </a>
 
