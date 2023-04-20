@@ -1,10 +1,10 @@
 ---
 layout: componentLayout
-title: Colors 
-breadcrumb_title: Svelte Colors
+title: Svelte Colors - Flowbite 
+breadcrumb_title: Svelte Colors - Flowbite
 component_title: Colors
 dir: Utilities
-description: Choose your primary color in tailwind.config.cjs file
+description: Customize your project and the color of the components from Flowbite Svelte by editing the Tailwind configuration file from the root folder
 ---
 
 <script>

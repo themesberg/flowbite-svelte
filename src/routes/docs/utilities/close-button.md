@@ -1,10 +1,10 @@
 ---
 layout: componentLayout
 title: Svelte Close Button - Flowbite
-breadcrumb_title: Svelte Close Button
+breadcrumb_title: Svelte Close Button - Flowbite
 component_title: Close button
 dir: Utilities
-description: The CloseButton components are used throughout the library and you can use it for your app as well
+description: Get started with the CloseButton components to hide a target element using Svelte interactivity
 ---
 
 <script>
