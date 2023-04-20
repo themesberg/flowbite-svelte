@@ -19,7 +19,7 @@
     </h2>
     <p class="text-lg font-normal text-gray-500 dark:text-gray-400 max-w-3xl mx-auto text-center">
       Explore the whole collection of <span class="font-medium text-gray-900 dark:text-white"
-        >over 56 open-source</span> UI components and interactive elements built with Svelte and Flowbite.
+        >over {components.length} open-source</span> UI components and interactive elements built with Svelte and Flowbite.
     </p>
   </div>
 
