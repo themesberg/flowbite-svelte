@@ -97,7 +97,7 @@ Flowbite Svelte leverages the utility classes from the popular [Tailwind CSS](Ta
 
 [Flowbite](https://flowbite.com) is also available in other frameworks such as vanilla JS with HTML, React, Vue, Angular, and even integration possibilities with back-end frameworks such as Laravel, Django, Flask, and Phoenix.
 
-Check out the main [Flowbite](https://github.com/themesberg/flowbite) library to explore other libraries too as well as the [Figma design system](https://flowbite.com/figma/).
+Check out the main [GitHub repository](https://github.com/themesberg/flowbite) to explore other libraries too as well as the [Figma design system](https://flowbite.com/figma/).
 
 ## UI Components
 
