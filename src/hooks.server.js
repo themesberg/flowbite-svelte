@@ -6,6 +6,7 @@ export const handle = async ({ event, resolve }) => {
   const componentFiles = import.meta.glob('/src/routes/docs/components/*.md');
   const formFiles = import.meta.glob('/src/routes/docs/forms/*.md');
   const typographyFiles = import.meta.glob('/src/routes/docs/typography/*.md');
+  const exampleFiles = import.meta.glob('/src/routes/docs/examples/*.md');
   const utilFiles = import.meta.glob('/src/routes/docs/utilities/*.md');
   const pageFiles = import.meta.glob('/src/routes/docs/pages/*.md');
   const extendFiles = import.meta.glob('/src/routes/docs/extend/*.md');
@@ -14,6 +15,7 @@ export const handle = async ({ event, resolve }) => {
   const iterableComponentFiles = Object.entries(componentFiles);
   const iterableFormFiles = Object.entries(formFiles);
   const iterableTypographyFiles = Object.entries(typographyFiles);
+  const iterableExampleFiles = Object.entries(exampleFiles);
   const iterableUtilFiles = Object.entries(utilFiles);
   const iterablePageFiles = Object.entries(pageFiles);
   const iterableExtendFiles = Object.entries(extendFiles);
@@ -34,6 +36,12 @@ export const handle = async ({ event, resolve }) => {
   // returns an array of paths, /hr from /src/routes/typography/hr.md
   const allTypographys = await Promise.all(
     iterableTypographyFiles.map(async ([path]) => {
+      return filePath(path);
+    })
+  );
+  // returns an array of paths, /hr from /src/routes/typography/hr.md
+  const allExamples = await Promise.all(
+    iterableExampleFiles.map(async ([path]) => {
       return filePath(path);
     })
   );
@@ -71,6 +79,8 @@ export const handle = async ({ event, resolve }) => {
     return Response.redirect(`${event.url.origin}/docs/forms${event.url.pathname}`, 301);
   } else if (allTypographys.includes(event.url.pathname)) {
     return Response.redirect(`${event.url.origin}/docs/typography${event.url.pathname}`, 301);
+  } else if (allExamples.includes(event.url.pathname)) {
+    return Response.redirect(`${event.url.origin}/docs/examples${event.url.pathname}`, 301);
   } else if (allPages.includes(event.url.pathname)) {
     return Response.redirect(`${event.url.origin}/docs/pages${event.url.pathname}`, 301);
   } else if (allExtends.includes(event.url.pathname)) {
@@ -90,7 +100,13 @@ export const handle = async ({ event, resolve }) => {
     !event.url.pathname.startsWith('/docs')
   ) {
     return Response.redirect(`${event.url.origin}/docs${event.url.pathname}`, 301);
-  } else if (allPages.includes(filePath(event.url.pathname)) && !event.url.pathname.startsWith('/docs')) {
+  } else if (
+    allExamples.includes(filePath(event.url.pathname)) &&
+    !event.url.pathname.startsWith('/docs')
+  ) {
+    return Response.redirect(`${event.url.origin}/docs${event.url.pathname}`, 301);
+  }
+   else if (allPages.includes(filePath(event.url.pathname)) && !event.url.pathname.startsWith('/docs')) {
     return Response.redirect(`${event.url.origin}/docs${event.url.pathname}`, 301);
   } else if (allExtends.includes(filePath(event.url.pathname)) && !event.url.pathname.startsWith('/docs')) {
     return Response.redirect(`${event.url.origin}/docs${event.url.pathname}`, 301);
