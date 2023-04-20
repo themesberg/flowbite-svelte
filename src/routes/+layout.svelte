@@ -12,6 +12,7 @@
   import YouTube from './utils/icons/YouTube.svelte';
   import ToolbarLink from './utils/ToolbarLink.svelte';
   import type { LayoutData } from './$types';
+    import NavSidebarHamburger from '$lib/navbar/NavSidebarHamburger.svelte';
 
   export let data: LayoutData;
 
@@ -24,7 +25,7 @@
   let logo = '/images/flowbite-svelte-icon-logo.svg';
   let divClass = 'w-full ml-auto lg:block lg:w-auto order-1 lg:order-none';
   let ulClass =
-    'flex flex-col py-3 mt-4 lg:flex-row lg:mt-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-1 lg:gap-0 xl:gap-4';
+    'flex flex-col py-3 mt-4 lg:flex-row lg:mt-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-4';
 
   const drawerHiddenStore: Writable<boolean> = writable<boolean>(true);
   setContext('drawer', drawerHiddenStore);
@@ -45,7 +46,7 @@
     let:hidden
     let:toggle>
     <span hidden={$page.route.id === '/'}>
-      <NavHamburger on:click={toggleDrawer} btnClass="mr-3 lg:hidden" />
+      <NavSidebarHamburger on:click={toggleDrawer} btnClass="mr-3 lg:hidden" />
     </span>
     <NavBrand href="/">
       <img src={logo} class="mr-3 h-8" alt="Flowbite Svelte Logo" />
@@ -87,11 +88,11 @@
         href="https://github.com/themesberg/flowbite-svelte">
         <GitHub /></ToolbarLink>
       <ToolbarLink
-        class="hidden sm:inline-block dark:hover:text-white hover:text-gray-900"
+        class="hidden xl:inline-block dark:hover:text-white hover:text-gray-900"
         name="Join community on Discord"
         href="https://discord.gg/4eeurUVvTy"><Discord /></ToolbarLink>
       <ToolbarLink
-        class="hidden sm:inline-block dark:hover:text-white hover:text-gray-900"
+        class="hidden xl:inline-block dark:hover:text-white hover:text-gray-900"
         name="Subscribe to YouTube channel"
         href="https://www.youtube.com/channel/UC_Ms4V2kYDsh7F_CSsHyQ6A">
         <YouTube />
