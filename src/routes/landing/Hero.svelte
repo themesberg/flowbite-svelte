@@ -22,7 +22,7 @@
               <CopyCliboardInput />
               <Button
                 size="lg"
-                class="gap-2 w-full md:w-fit whitespace-nowrap hover:bg-primary-800"
+                class="gap-2 max-w-sm md:w-fit whitespace-nowrap hover:bg-primary-800"
                 href="/docs/pages/quickstart"
                 color="primary">
                 Get started <ArrowRight />
