@@ -37,11 +37,11 @@ You can find all the examples in the Examples directory.
 
 ## Installation
 
-- [Getting started](https://flowbite-svelte.com/pages/quickstart)
-- [Introduction](https://flowbite-svelte.com/pages/introduction)
-- [Types](https://flowbite-svelte.com/pages/types)
-- [How to contribute](https://flowbite-svelte.com/pages/how-to-contribute)
-- [License](https://flowbite-svelte.com/pages/license)
+- [Getting started](https://flowbite-svelte.com/docs/pages/quickstart)
+- [Introduction](https://flowbite-svelte.com/docs/pages/introduction)
+- [Types](https://flowbite-svelte.com/docs/pages/typescript)
+- [How to contribute](https://flowbite-svelte.com/docs/pages/how-to-contribute)
+- [License](https://flowbite-svelte.com/docs/pages/license)
 
 ## Documentation
 
