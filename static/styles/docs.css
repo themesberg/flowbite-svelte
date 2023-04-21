@@ -442,7 +442,7 @@ pre.language-svelte .token.comment{
 }
 
 .DocSearch-Input {
-	@apply text-sm text-gray-500 shadow-none dark:text-white focus:shadow-none focus:ring-0 dark:bg-gray-700;
+	@apply text-sm text-gray-500 shadow-none dark:text-white focus:shadow-none dark:bg-gray-700 focus:!outline-none focus:!ring-0;
 }
 
 .DocSearch-LoadingIndicator svg, .DocSearch-MagnifierLabel svg {
@@ -498,7 +498,7 @@ pre.language-svelte .token.comment{
 }
 
 .DocSearch-Logo svg {
-	@apply dark:text-gray-400;
+	@apply dark:!text-gray-400;
 }
 
 .DocSearch-Reset {
