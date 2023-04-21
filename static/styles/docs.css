@@ -386,7 +386,7 @@ pre.language-svelte .token.comment{
 /* Search */
 
 .DocSearch-Button {
-	@apply hidden p-2 m-0 w-52 h-auto bg-gray-50 rounded-lg border border-gray-300 border-solid shadow-none md:flex hover:bg-gray-100 xl:w-64 hover:shadow-none focus:shadow-none dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600;
+	@apply hidden p-2 m-0 w-52 h-auto !bg-gray-50 rounded-lg border border-gray-300 border-solid shadow-none md:flex hover:!bg-gray-100 xl:w-64 hover:shadow-none focus:shadow-none dark:!bg-gray-700 dark:hover:!bg-gray-600 dark:!border-gray-600;
 }
 
 .DocSearch-Button-Placeholder {
