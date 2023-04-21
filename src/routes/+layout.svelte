@@ -56,7 +56,9 @@
       </span>
     </NavBrand>
 
-    <AlgoliaSearch />    
+    {#if !isHomePage}
+      <AlgoliaSearch />
+    {/if}
 
     <NavUl
       {hidden}
