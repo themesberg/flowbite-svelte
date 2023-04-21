@@ -11,7 +11,7 @@ Here are some guidelines we'd like you to follow before submitting a PR.
 
 ## Create a fork
 
-Create a fork from [Flowbite-Svelte]("https://github.com/themesberg/flowbite-svelte") to your repository first.
+Create a fork from [Flowbite-Svelte](https://github.com/themesberg/flowbite-svelte) to your repository first.
 
 ## Please use pnpm to install
 
@@ -35,7 +35,7 @@ Always use complete class names:
 
 ## Types and Props
 
-Add a type to `export`ed variables. When we generate props files, it will automatically pick up types from your file. If you don't add a type, it will break.
+Add a type to `export`-ed variables. When we generate props files, it will automatically pick up types from your file. If you don't add a type, it will break.
 
 Use `lib/types file for nested objects.
 
@@ -84,7 +84,7 @@ Again avoid type inference for `export`ed variables.
 
 ## Conventional commit
 
-When making a commit, we recommend using [the Conventional commits]("https://www.conventionalcommits.org/en/v1.0.0/").
+When making a commit, we recommend using [the Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
 Some examples are:
 
