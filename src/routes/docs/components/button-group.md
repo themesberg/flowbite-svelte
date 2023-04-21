@@ -183,7 +183,7 @@ You can add the `on:click` event to the `Button` component.
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
+The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types page</A> for type information.
 
 ### ButtonGroup
 

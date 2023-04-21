@@ -695,7 +695,7 @@ However sometimes you don't want that. Set `activateClickOutside` to false to di
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/pages/types">types 
+The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
  page</A> for type information.
 
 <TableProp>

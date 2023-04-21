@@ -193,7 +193,7 @@ If you want custom options, put them directly inside the component and leave the
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
+The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types page</A> for type information.
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />

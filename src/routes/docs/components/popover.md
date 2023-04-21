@@ -354,7 +354,7 @@ You can also disable the popover arrow by setting `arrow` attribute to `false`.
 
 ### Popover
 
-<p>The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.</p>
+<p>The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types page</A> for type information.</p>
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />
@@ -362,7 +362,7 @@ You can also disable the popover arrow by setting `arrow` attribute to `false`.
 
 ### Popper
 
-The component inherits the following props, type, and default values from `Popper`. See <A href="/pages/types">types page</A> for type information.
+The component inherits the following props, type, and default values from `Popper`. See <A href="/docs/pages/typescript">types page</A> for type information.
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
@@ -370,7 +370,7 @@ The component inherits the following props, type, and default values from `Poppe
 
 ### Frame
 
-The component inherits the following props, type, and default values from `Frame`. See <A href="/pages/types">types page</A> for type information.
+The component inherits the following props, type, and default values from `Frame`. See <A href="/docs/pages/typescript">types page</A> for type information.
 
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />

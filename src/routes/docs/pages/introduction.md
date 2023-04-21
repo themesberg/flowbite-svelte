@@ -91,7 +91,7 @@ Svelte is a modern and growing front-end compiler. Developers build boilerplate-
 
 ## Tailwind CSS
 
-Flowbite Svelte leverages the utility classes from the popular [Tailwind CSS](Tailwind CSS) framework allowing greater customization capabilities directly from a component level in Svelte.
+Flowbite Svelte leverages the utility classes from the popular [Tailwind CSS](https://tailwindcss.com) framework allowing greater customization capabilities directly from a component level in Svelte.
 
 ## Flowbite Ecosystem
 
@@ -107,7 +107,7 @@ Flowbite Svelte has a rich collection of commonly used components coded with Sve
 
 Flowbite Svelte is a free and open-source UI component library built with Svelte native components and based on the Flowbite ecosystem and contributions are more than welcome.
 
-Check out [contributing guide]('/docs/pages/how-to-contribute') to learn how you can be a part of the open-source community.
+Check out [contributing guide](/docs/pages/how-to-contribute) to learn how you can be a part of the open-source community.
 
 ## License
 

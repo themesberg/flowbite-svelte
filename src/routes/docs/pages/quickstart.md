@@ -11,7 +11,7 @@ description: Learn how to get started with the free and open-source Flowbite Sve
   import { A, P, List, Li } from '$lib'
 </script>
 
-You can install Flowbite Svelte by using the <A href='/extend/flowbite-svelte-starter'>flowbite-svelte-start</A> or from scratch.
+You can install Flowbite Svelte by using the <A href='/docs/extend/flowbite-svelte-starter'>flowbite-svelte-start</A> or from scratch.
 
 ## Getting started
 
