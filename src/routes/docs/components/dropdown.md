@@ -623,7 +623,7 @@ Therefore you can catch standard events on it like `on:click`.
 
 ## Props
 
-<p>The component has the following props, type, and default values. See <A href="/pages/types">types 
+<p>The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
  page</A> for type information.</p>
 
 ### Dropdown

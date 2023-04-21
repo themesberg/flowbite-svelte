@@ -202,7 +202,7 @@ Select size from  xs | sm | md | lg | xl.
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/pages/types">types 
+The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
  page</A> for type information.
 
 ### Avatar

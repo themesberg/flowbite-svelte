@@ -152,7 +152,7 @@ Most often the textarea component is used as the main text field input element i
 ## Props
 
 The component has the following props, type, and default values. 
-See <A class="hover:underline" href="/pages/types">the types page</A>
+See <A class="hover:underline" href="/docs/pages/typescript">the types page</A>
 for type information.
 
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Toolbar</Heading>
