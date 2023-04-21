@@ -4,13 +4,16 @@
 
     if (browser) {
         // Algolia docsearch
-        docsearch({
-            container: '#docsearch',
-            appId: 'JWUQIZ9PGE',
-            indexName: 'flowbite-svelte',
-            apiKey: 'db6396bd138ab613540d2a2bc07f958d',
-            placeholder: 'Search documentation',
-        });
+        const setupDocSearch = async () => {
+            docsearch({
+                container: '#docsearch',
+                appId: 'JWUQIZ9PGE',
+                indexName: 'flowbite-svelte',
+                apiKey: 'db6396bd138ab613540d2a2bc07f958d',
+                placeholder: 'Search documentation',
+            });
+        }
+        setupDocSearch();
     }
     
 
