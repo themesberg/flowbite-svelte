@@ -21,7 +21,7 @@ When there is a change in `package.json`, remove `pnpm-lock.yml` and `node_modul
 
 ## Tailwind CSS
 
-[Tailwind warns]("https://tailwindcss.com/docs/content-configuration#dynamic-class-names") that you don't construct class names dynamically. Instead of this:
+[Tailwind warns](https://tailwindcss.com/docs/content-configuration#dynamic-class-names) that you don't construct class names dynamically. Instead of this:
 
 ```html
 <div class="text-{{ error ? 'red' : 'green' }}-600"></div>
