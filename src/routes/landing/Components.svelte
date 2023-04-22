@@ -1,8 +1,6 @@
 <script lang="ts">
   import type { PageData } from '../$types';
   import Button from '$lib/buttons/Button.svelte';
-  import ArrowRight from '../utils/icons/ArrowRight.svelte';
-
   import CompoCard from '../utils/CompoCard.svelte';
 
   export let data: PageData;

@@ -5,8 +5,6 @@
 	export let theadClass: string =
 		'text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400';
 	export let thClass: string = 'px-6 py-3';
-
-
 </script>
 
 <div class={divClass}>
