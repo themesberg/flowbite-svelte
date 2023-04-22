@@ -7,6 +7,7 @@
   import Footer from './utils/Footer.svelte';
   import Contributors from './landing/Contributors.svelte';
   import DesignFigma from './landing/DesignFigma.svelte';
+  import GetStarted from './landing/GetStarted.svelte';
 
   export let data: PageData;
 
