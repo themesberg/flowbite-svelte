@@ -119,7 +119,7 @@ Customize the video player appearance using the utility classes from Tailwind CS
 
 ## Props
 
-<p>The component has the following props, type, and default values. See <A href="/pages/types">types 
+<p>The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
  page</A> for type information.</p>
 
 <TableProp>

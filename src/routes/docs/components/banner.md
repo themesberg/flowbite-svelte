@@ -154,7 +154,7 @@ This example can be used to share important information with your website visito
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
+The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types page</A> for type information.
 
 If you want to custom CSS, use `bannerType="custom"` and add your CSS to `outerDiv` and `innerDiv`. 
 

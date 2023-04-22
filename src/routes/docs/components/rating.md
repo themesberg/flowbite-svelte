@@ -351,7 +351,7 @@ Use this component to show the review content from a user alongside the avatar, 
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/pages/types">types 
+The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
  page</A> for type information.
 
 ### Rating

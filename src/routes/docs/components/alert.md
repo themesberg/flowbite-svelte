@@ -304,7 +304,7 @@ Use the `close` event with `dismissable` prop.
 
 ### Alert
 
-The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
+The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types page</A> for type information.
 
 <TableProp>
 <TableDefaultRow items={alertProps} rowState='hover' />
@@ -312,7 +312,7 @@ The component has the following props, type, and default values. See <A href="/p
 
 ### Frame
 
-The component inherits the following props, type, and default values from `Frame`. See <A href="/pages/types">types page</A> for type information.
+The component inherits the following props, type, and default values from `Frame`. See <A href="/docs/pages/typescript">types page</A> for type information.
 
 <TableProp>
 <TableDefaultRow items={frameProps} rowState='hover' />

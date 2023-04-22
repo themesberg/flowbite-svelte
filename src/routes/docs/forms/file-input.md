@@ -112,7 +112,7 @@ When the user selected multiple files, the `value` represents the first file in 
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
+The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types page</A> for type information.
 
 ### Fileupload
 

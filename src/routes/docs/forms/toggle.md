@@ -76,7 +76,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
+The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types page</A> for type information.
 
 ### Toggle
 

@@ -89,7 +89,7 @@ Use the `open` prop to make an item open on mount.
 
 ## Color option
 
-You can control the look and feel of `AccordionItems` by overwriting the `acctiveClasses` and `inactiveClasses` properties. You can define them in `Accordion` so that they will apply to all children or set them individually on each `AccordionItem`.
+You can control the look and feel of `AccordionItems` by overwriting the `activeClasses` and `inactiveClasses` properties. You can define them in `Accordion` so that they will apply to all children or set them individually on each `AccordionItem`.
 
 ```svelte example hideScript
 <script>
@@ -249,7 +249,7 @@ The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#r
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
+The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types page</A> for type information.
 
 ### Accordion
 

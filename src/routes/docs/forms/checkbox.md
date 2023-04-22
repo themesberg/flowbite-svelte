@@ -313,7 +313,7 @@ Use this example of an advanced layout of checkbox elements where the label pare
 
 ## Props
 
-The component has the following props, type, and default values. See <a href="/pages/types">types
+The component has the following props, type, and default values. See <a href="/docs/pages/typescript">types
 page</a> for type information.
 
 All attributes of the `input` element like: name, id, autofocus, etc, can be set directly as component props.

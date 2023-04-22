@@ -49,7 +49,7 @@ Use `CloseButton` component to close a component.
 ## Props
 
 The component has the following props, type, and default values. 
-See <A class="hover:underline" href="/pages/types">the types page</A>
+See <A class="hover:underline" href="/docs/pages/typescript">the types page</A>
 for type information.
 
 <TableProp>

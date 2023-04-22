@@ -3,7 +3,7 @@ layout: componentLayout
 title: Svelte Step Indicator
 breadcrumb_title: Step Indicator
 component_title: Step Indicator
-dir: Components
+dir: Extend
 description: Use the step indicator component to show the progress of a process.
 ---
 
@@ -187,7 +187,7 @@ Use the `color` prop to change the color of a step indicator.
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/pages/types">types page</A> for type information.
+The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types page</A> for type information.
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />

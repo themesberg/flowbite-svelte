@@ -1,16 +1,23 @@
 <script context="module">
+  import code from './code.svelte';
   import h2 from './h2.svelte';
   import h3 from './h3.svelte';
-  import code from './code.svelte';
   export { h2, h3, code };
 </script>
 
 <script>
-  import { PageHeadSection, MetaTag } from '../../utils';
+  import MetaTag from '../../utils/MetaTag.svelte';
+  import PageHeadSection from '../../utils/PageHeadSection.svelte';
+  import Footer from '../../utils/Footer.svelte';
   import Toc from '../../utils/Toc.svelte';
   import { extract } from './Anchor.svelte';
+<<<<<<< HEAD
   import Footer from '../../utils/Footer.svelte';
   import Newsletter from '../../utils/Newsletter.svelte';
+=======
+
+  import Paging from '../../utils/Paging.svelte';
+>>>>>>> main
 
   export let /** @type {string} */ title;
   export let /** @type {string} */ breadcrumb_title;
@@ -32,6 +39,7 @@
     <PageHeadSection {dir} {breadcrumb_title} {title} {description} />
     <div id="mainContent" class="py-8">
       <slot />
+      <Paging />
     </div>
     <Newsletter />
     <Footer />

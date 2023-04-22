@@ -284,7 +284,7 @@ You can use on:click or any standard on:* to listen to the event.
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/pages/types">types 
+The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
  page</A> for type information.
 
 <TableProp>
