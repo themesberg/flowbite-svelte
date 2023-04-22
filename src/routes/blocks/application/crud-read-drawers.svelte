@@ -33,7 +33,7 @@
 <ExampleDiv>
   <Section classSection="h-96">
     <div class="text-center">
-      <Button on:click={() => (hidden1 = false)}>Read product</Button>
+      <Button on:click={() => (hidden1 = false)} color='primary'>Read product</Button>
     </div>
 
     <Drawer transitionType="fly" {transitionParams} bind:hidden={hidden1} id="sidebar1">
@@ -77,7 +77,7 @@
           >
           Edit
         </Button>
-        <Button class="w-full" color="red">
+        <Button class="w-full" color="primary">
           <svg
             aria-hidden="true"
             class="w-5 h-5 mr-1.5 -ml-1"

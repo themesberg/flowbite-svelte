@@ -36,7 +36,7 @@
 <ExampleDiv>
   <Section sectionClass="h-96">
     <div class="text-center pt-8">
-      <Button on:click={() => (hidden = false)}>Update user</Button>
+      <Button on:click={() => (hidden = false)} color="primary">Update user</Button>
     </div>
     <Drawer transitionType="fly" {transitionParams} bind:hidden id="sidebar4">
       <div class="flex items-center">
@@ -68,7 +68,7 @@
 
         <div class="bottom-0 left-0 flex justify-center w-full pb-4 space-x-4 md:px-4 md:absolute">
           <Button type="submit" class="w-full">Update user</Button>
-          <Button class="w-full" outline color="red" on:click={handleCancel}>
+          <Button class="w-full" outline color="primary" on:click={handleCancel}>
             <svg
               aria-hidden="true"
               class="w-5 h-5 mr-1.5 -ml-1"

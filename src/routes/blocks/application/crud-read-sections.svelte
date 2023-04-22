@@ -67,7 +67,7 @@
         >
         Edit
       </Button>
-      <Button color="red">
+      <Button color="primary">
         <svg
           aria-hidden="true"
           class="w-5 h-5 mr-1.5 -ml-1"

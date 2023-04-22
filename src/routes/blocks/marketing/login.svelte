@@ -29,7 +29,7 @@
       <svelte:fragment slot="top">
         <img
           class="w-8 h-8 mr-2"
-          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
+          src="/images/flowbite-svelte-icon-logo.svg"
           alt="logo"
         />
         Flowbite
@@ -51,7 +51,7 @@
               >Forgot password?</a
             >
           </div>
-          <Button type="submit" class="w-full1">Sign in</Button>
+          <Button type="submit" class="w-full1" color='primary'>Sign in</Button>
           <p class="text-sm font-light text-gray-500 dark:text-gray-400">
             Don’t have an account yet? <a
               href="/"

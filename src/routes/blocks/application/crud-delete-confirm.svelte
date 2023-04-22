@@ -33,7 +33,7 @@
 <ExampleDiv>
   <Section classSection="h-96">
     <div class="flex justify-center m-5">
-      <Button on:click={() => (defaultModal = true)}>Default modal</Button>
+      <Button on:click={() => (defaultModal = true)} color='primary'>Default modal</Button>
     </div>
     <Modal title="" bind:open={defaultModal} autoclose size="sm" class="w-full">
       <svg
@@ -53,7 +53,7 @@
       </p>
       <div class="flex justify-center items-center space-x-4">
         <Button color="light" on:click={handleCancel}>No, cancel</Button>
-        <Button color="red" on:click={handleDelete}>Yes, I'm sure</Button>
+        <Button color='primary' on:click={handleDelete}>Yes, I'm sure</Button>
       </div>
     </Modal>
   </Section>

@@ -34,7 +34,7 @@
         with features like Groups, Watch and Marketplace.
       </p>
       <div class="flex flex-wrap items-center gap-4">
-        <Button href="/" color="red" size="lg">Get started</Button>
+        <Button href="/" color="primary" size="lg">Get started</Button>
         <Button href="/" color="light" size="lg"
           ><VideoCamera class="mr-2" size="20" variation="solid" />
           View more

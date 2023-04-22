@@ -44,7 +44,7 @@
     <div class="mx-auto max-w-screen-xl text-center">
       <FooterBrand
         href="https://flowbite.com"
-        src="https://flowbite.com/docs/images/logo.svg"
+        src="/images/flowbite-svelte-icon-logo.svg"
         alt="Flowbite Logo"
         name="Flowbite"
         aClass="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white"
@@ -94,7 +94,7 @@
       <div class="col-span-2">
         <FooterBrand
           href="https://flowbite.com"
-          src="https://flowbite.com/docs/images/logo.svg"
+          src="/images/flowbite-svelte-icon-logo.svg"
           alt="Flowbite Logo"
           name="Flowbite"
           aClass="flex mb-6"

@@ -50,7 +50,7 @@
       class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4"
     >
       <a href="/">
-        <Button size="lg" color="red">
+        <Button size="lg" color="primary">
           Learn more <ArrowRight size="18" class="ml-2" />
         </Button>
       </a>
@@ -106,7 +106,7 @@
           simplify their payment stack.
         </svelte:fragment>
         <a href="/"
-          ><Button size="xl" color="red" class="inline-flex items-center justify-center mr-3"
+          ><Button size="xl" color="primary" class="inline-flex items-center justify-center mr-3"
             >Get started<ArrowRight size="18" class="ml-2 -mr-1" /></Button
           >
         </a>

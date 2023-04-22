@@ -44,7 +44,7 @@
 <ExampleDiv>
   <Section name="crudcreatedrawer">
     <div class="text-center pt-8">
-      <Button on:click={() => (hidden = false)}>Create product</Button>
+      <Button on:click={() => (hidden = false)} color='primary'>Create product</Button>
     </div>
     <Drawer transitionType="fly" {transitionParams} bind:hidden id="sidebar4">
       <div class="flex items-center">
@@ -85,7 +85,7 @@
           />
         </div>
         <div class="bottom-0 left-0 flex justify-center w-full pb-4 space-x-4 md:px-4 md:absolute">
-          <Button type="submit" class="w-full">Add product</Button>
+          <Button type="submit" class="w-full" color='primary'>Add product</Button>
           <Button class="w-full" color="light" on:click={handleCancel}>
             <svg
               aria-hidden="true"

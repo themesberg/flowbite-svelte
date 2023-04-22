@@ -27,7 +27,7 @@
 <ExampleDiv>
   <Section classSection="h-96">
     <div class="flex justify-center m-5">
-      <Button on:click={() => (defaultModal = true)}>Show read modal</Button>
+      <Button on:click={() => (defaultModal = true)} color="primary">Show read modal</Button>
     </div>
     <Modal title="" bind:open={defaultModal} autoclose size="sm">
       <div class="flex justify-between mb-4 rounded-t sm:mb-5">
@@ -67,7 +67,7 @@
           </Button>
           <Button color="light">Preview</Button>
         </div>
-        <Button color="red">
+        <Button color="primary">
           <svg
             aria-hidden="true"
             class="w-5 h-5 mr-1.5 -ml-1"

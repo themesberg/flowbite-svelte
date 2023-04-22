@@ -38,7 +38,7 @@
       >
       <div class="items-center space-y-4 sm:space-x-4 sm:flex sm:space-y-0">
         <Button outline color="dark">Cancel</Button>
-        <Button color="red">Confirm</Button>
+        <Button color="primary">Confirm</Button>
       </div>
     </div>
   </Popup>

@@ -47,7 +47,7 @@
 <ExampleDiv>
   <Section classSection="h-96">
     <div class="flex justify-center m-5">
-      <Button on:click={() => (defaultModal = true)}>Update Product</Button>
+      <Button on:click={() => (defaultModal = true)} color="primary">Update Product</Button>
     </div>
     <Modal title="Add Product" bind:open={defaultModal} autoclose class="min-w-full">
       <form>

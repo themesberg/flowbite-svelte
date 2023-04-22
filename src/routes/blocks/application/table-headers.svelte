@@ -37,7 +37,7 @@
   <Section name="tableheader" sectionClass="bg-gray-50 dark:bg-gray-900 h-80 flex pt-8">
     <TableHeader headerType="search">
       <Search slot="search" size="md" />
-      <Button>
+      <Button color="primary">
         <svg
           class="h-3.5 w-3.5 mr-2"
           fill="currentColor"
@@ -110,7 +110,7 @@
           Manage all your existing users or add a new one
         </p>
       </div>
-      <Button>
+      <Button color="primary">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-3.5 w-3.5 mr-2 -ml-1"

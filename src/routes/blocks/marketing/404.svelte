@@ -34,7 +34,7 @@
         <p class="mb-4 text-lg font-light text-gray-500 dark:text-gray-400">
           Sorry, we can't find that page. You'll find lots to explore on the home page.
         </p>
-        <Button href="/" size="lg" color="red">Back to Homepage</Button>
+        <Button href="/" size="lg" color="primary">Back to Homepage</Button>
       </svelte:fragment>
     </Page404>
   </Section>

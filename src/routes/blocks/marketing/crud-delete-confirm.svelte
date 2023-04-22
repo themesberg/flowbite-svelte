@@ -43,7 +43,7 @@
     <P align="center">Are you sure you want to delete this item?</P>
     <div class="flex justify-center items-center space-x-4">
       <Button color="light">No, cancel</Button>
-      <Button color="red" type="submit">Yes, I'm sure</Button>
+      <Button color="primary" type="submit">Yes, I'm sure</Button>
     </div>
   </Modal>
 </ExampleDiv>

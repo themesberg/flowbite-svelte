@@ -53,7 +53,7 @@
             label="Your message"
           />
         </div>
-        <Button>Send message</Button>
+        <Button color='primary'>Send message</Button>
       </form>
     </Contact>
   </Section>

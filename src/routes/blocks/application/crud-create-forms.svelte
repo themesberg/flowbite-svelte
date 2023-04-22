@@ -69,7 +69,7 @@
             required
           />
         </div>
-        <Button type="submit" class="w-32">Add product</Button>
+        <Button type="submit" class="w-32" color='primary'>Add product</Button>
       </div>
     </form>
   </Section>

@@ -36,7 +36,7 @@
 <ExampleDiv>
   <Section classSection="h-96">
     <div class="flex justify-center m-5">
-      <Button on:click={() => (defaultModal = true)}>Create product</Button>
+      <Button on:click={() => (defaultModal = true)} color='primary'>Create product</Button>
     </div>
     <Modal title="Add Product" bind:open={defaultModal} autoclose class="min-w-full">
       <form on:submit={handleSubmit}>
@@ -69,7 +69,7 @@
               required
             />
           </div>
-          <Button type="submit" class="w-52">
+          <Button type="submit" class="w-52" color='primary'>
             <svg
               class="mr-1 -ml-1 w-6 h-6"
               fill="currentColor"

@@ -42,7 +42,6 @@ export { default as Page500section } from './marketing/Page500section.svelte';
 export { default as Popupsection } from './marketing/Popupsection.svelte';
 export { default as Portfoliosection } from './marketing/Portfoliosection.svelte';
 export { default as Pricingsection } from './marketing/Pricing.svelte';
-export { default as ProjectPortfolioSection } from './marketing/ProjectPortfolioSection.svelte';
 export { default as RegisterFormsection } from './marketing/RegisterFormsection.svelte';
 export { default as ResetPasswordFormsection } from './marketing/ResetPasswordFormsection.svelte';
 export { default as Schedulesection } from './marketing/Schedulesection.svelte';

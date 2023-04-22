@@ -26,7 +26,7 @@
 <ExampleDiv>
   <Section name="forgotpassword">
     <ForgotPasswordHeader
-      src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
+      src="/images/flowbite-svelte-icon-logo.svg"
       alt="logo"
       href="/"
     >
@@ -58,7 +58,7 @@
             >
           </div>
         </div>
-        <Button type="submit" color="red">Reset password</Button>
+        <Button type="submit" color="primary">Reset password</Button>
       </form>
     </ForgotPassword>
   </Section>

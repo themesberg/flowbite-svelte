@@ -29,7 +29,7 @@
       <svelte:fragment slot="top">
         <img
           class="w-8 h-8 mr-2"
-          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
+          src="/images/flowbite-svelte-icon-logo.svg"
           alt="logo"
         />
         Flowbite
@@ -59,7 +59,7 @@
               ></Checkbox
             >
           </div>
-          <Button type="submit" class="w-full1">Create an account</Button>
+          <Button type="submit" class="w-full1" color='primary'>Create an account</Button>
           <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
             Already have an account? <a
               href="/"
