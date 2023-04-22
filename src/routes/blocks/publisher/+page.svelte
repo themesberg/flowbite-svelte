@@ -1,6 +1,6 @@
 <script>
   import { SectionHeader, MetaTag } from '../utils';
-  import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
+  import { Breadcrumb, BreadcrumbItem } from '$lib';
   import { BlogTemplatesection, CommentSection, RelatedArticle } from '../sections';
   import RelatedArticles from './related-articles.svelte';
   const title = 'Publisher UI - Flowbite Svelte Blocks';

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Section, Register } from '$lib';
   import { ExampleDiv, SectionHeader, SectionBlock, MetaTag } from '../utils';
-  import { Button, Checkbox, Label, Input } from 'flowbite-svelte';
+  import { Button, Checkbox, Label, Input } from '$lib';
   const breadcrumb_title = 'Login Forms';
   const title = 'Login';
   const dir = 'marketing';
@@ -18,7 +18,7 @@
   {description}
 />
 
-<SectionBlock title="Default login page">
+<SectionBlock {title}>
   This example includes a form with an email and password input accompanied by the logo and other
   helper texts and links to other authentication pages.
 </SectionBlock>

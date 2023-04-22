@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Section } from '$lib';
   import { ExampleDiv, SectionHeader, SectionBlock, MetaTag } from '../utils';
-  import { Drawer, Button, CloseButton, Label, Input, Textarea, Select } from 'flowbite-svelte';
+  import { Drawer, Button, CloseButton, Label, Input, Textarea, Select } from '$lib';
   import { sineIn } from 'svelte/easing';
   let hidden = true;
   let transitionParams = {
@@ -36,7 +36,7 @@
   {description}
 />
 
-<SectionBlock title="Default drawer">
+<SectionBlock {title}>
   Use this free example of a drawer component to show a list of input field items to create a data
   entry inside your dashboard application.
 </SectionBlock>

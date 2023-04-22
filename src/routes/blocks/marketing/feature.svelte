@@ -25,7 +25,7 @@
   {description}
 />
 
-<SectionBlock title="Default feature list">
+<SectionBlock {title}>
   Get started with this default example of feature items based on a grid layout where you can show
   up to three items on a row featuring an icon, title and description.
 </SectionBlock>

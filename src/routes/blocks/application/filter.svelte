@@ -17,7 +17,7 @@
   {description}
 />
 
-<SectionBlock title="Default dropdown filter">
+<SectionBlock {title}>
   Use this free example of a filter component to allow your users to select which categories to
   filter in the search results using checkbox components.
 </SectionBlock>

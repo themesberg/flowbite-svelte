@@ -17,7 +17,7 @@
   {description}
 />
 
-<SectionBlock title="Cookie banner">
+<SectionBlock {title}>
   This banner positioned at the bottom of the page can be used as an example to quickly ask for
   permission to store third-party cookies and collect personal information from your website
   visitors.

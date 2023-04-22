@@ -16,7 +16,7 @@
     FooterLinkGroup,
     FooterLink,
     FooterBrand
-  } from 'flowbite-svelte';
+  } from '$lib';
   import {
     ArrowRight,
     PresentationChartLine,

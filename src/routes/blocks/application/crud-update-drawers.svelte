@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Section } from '$lib';
   import { ExampleDiv, SectionHeader, SectionBlock, MetaTag } from '../utils';
-  import { Label, Input, Button, Drawer, CloseButton } from 'flowbite-svelte';
+  import { Label, Input, Button, Drawer, CloseButton } from '$lib';
   const breadcrumb_title = 'Update Drawers (CRUD)';
   const title = 'Crud Update Drawers';
   const dir = 'application';
@@ -28,7 +28,7 @@
   {description}
 />
 
-<SectionBlock title="Default drawer">
+<SectionBlock {title}>
   Use this free and responsive example of a drawer component to update an existing data set
   featuring text input fields, select boxes, and textareas.
 </SectionBlock>

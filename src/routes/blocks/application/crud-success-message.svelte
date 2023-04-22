@@ -17,7 +17,7 @@
   {description}
 />
 
-<SectionBlock title="Default success message">
+<SectionBlock {title}>
   Use this free example of a success message component inside a modal to share feedback with your
   user when an action has been completed.
 </SectionBlock>

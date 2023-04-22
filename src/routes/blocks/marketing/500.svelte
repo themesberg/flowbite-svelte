@@ -17,7 +17,7 @@
   {description}
 />
 
-<SectionBlock title="Default 500 page">
+<SectionBlock {title}>
   Use this example of a page to show when an internal server error has happened and a 500 status
   code has to be shown.
 </SectionBlock>

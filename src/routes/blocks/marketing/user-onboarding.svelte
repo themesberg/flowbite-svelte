@@ -17,7 +17,7 @@
   {description}
 />
 
-<SectionBlock title="Choose account type">
+<SectionBlock {title}>
   Use this example as the first step of the user onboarding process to ask what type of account
   would your user like to create (ie. business or individual).
 </SectionBlock>

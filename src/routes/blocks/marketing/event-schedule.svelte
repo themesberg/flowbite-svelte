@@ -54,7 +54,7 @@
   {description}
 />
 
-<SectionBlock title="Default event schedule">
+<SectionBlock {title}>
   Use this free example to show a list of workshops for an event using a timeline component and
   featuring the time and title of the presentation.
 </SectionBlock>

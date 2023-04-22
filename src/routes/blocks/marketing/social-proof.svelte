@@ -17,7 +17,7 @@
   {description}
 />
 
-<SectionBlock title="Default example">
+<SectionBlock {title}>
   Use this example of statistical numbers that you can use to showcase the adoption rate of your
   product by the community.
 </SectionBlock>

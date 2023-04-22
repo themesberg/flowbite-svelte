@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Section } from '$lib';
   import { ExampleDiv, SectionHeader, SectionBlock, MetaTag } from '../utils';
-  import { Label, Input, Button, Select, Textarea } from 'flowbite-svelte';
+  import { Label, Input, Button, Select, Textarea } from '$lib';
   const breadcrumb_title = 'Create Forms (CRUD)';
   const title = 'Crud Create Forms';
   const dir = 'application';
@@ -27,7 +27,7 @@
   {description}
 />
 
-<SectionBlock title="Default form">
+<SectionBlock {title}>
   Use this free example of a form based on the CRUD layouts where you can create a new data entry
   inside your dashboard.
 </SectionBlock>

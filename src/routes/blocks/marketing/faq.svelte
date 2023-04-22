@@ -17,7 +17,7 @@
   {description}
 />
 
-<SectionBlock title="Default example">
+<SectionBlock {title}>
   Use this simple example of a FAQ section to show a list of questions and answers based on two
   columns and a question mark icon.
 </SectionBlock>

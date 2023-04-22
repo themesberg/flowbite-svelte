@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Section, Cta } from '$lib';
-  import { Button } from 'flowbite-svelte';
+  import { Button } from '$lib';
   import { VideoCamera } from 'svelte-heros';
   import { ExampleDiv, SectionHeader, SectionBlock, MetaTag } from '../utils';
   const breadcrumb_title = 'CTA Sections';
@@ -19,7 +19,7 @@
   {description}
 />
 
-<SectionBlock title="Default CTA section">
+<SectionBlock {title}>
   Use this example to show a simple heading, paragraph, and a couple of CTA buttons to encourage
   users to take action.
 </SectionBlock>

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Section, ForgotPassword, ForgotPasswordHeader } from '$lib';
   import { ExampleDiv, SectionHeader, SectionBlock, MetaTag } from '../utils';
-  import { Label, Input, Button, Checkbox } from 'flowbite-svelte';
+  import { Label, Input, Button, Checkbox } from '$lib';
   const breadcrumb_title = 'Account Recovery Form';
   const title = 'Account Recovery';
   const dir = 'marketing';
@@ -18,7 +18,7 @@
   {description}
 />
 
-<SectionBlock title="Default forgot password page">
+<SectionBlock {title}>
   Use this example for users who forgot their password and send a recovery email to their address
   featuring the logo, email input, and submit button.
 </SectionBlock>

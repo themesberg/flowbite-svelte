@@ -17,7 +17,7 @@
   {description}
 />
 
-<SectionBlock title="Default table footer with pagination">
+<SectionBlock {title}>
   Use this free example to add a footer section to a table component to show a pagination component
   and indicate the number of data items being showed on one page.
 </SectionBlock>

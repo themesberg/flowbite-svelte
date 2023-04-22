@@ -11,7 +11,7 @@
     Chevron,
     DropdownDivider,
     Checkbox
-  } from 'flowbite-svelte';
+  } from '$lib';
   const breadcrumb_title = 'Table Headers';
   const title = 'Table Headers';
   const dir = 'application';
@@ -28,7 +28,7 @@
   {description}
 />
 
-<SectionBlock title="Default table header">
+<SectionBlock {title}>
   Use this free example of a header component that you can position on top of a header to add a
   search functionality, a CRUD button, table options and filtering results.
 </SectionBlock>

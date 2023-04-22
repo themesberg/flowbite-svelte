@@ -1,6 +1,6 @@
 <script>
   import { SectionHeader, MetaTag } from '../utils';
-  import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
+  import { Breadcrumb, BreadcrumbItem } from '$lib';
   import {
     AccountRecoverysection,
     Bannersection,

@@ -1,6 +1,5 @@
 <script>
   import { SectionHeader, MetaTag } from '../utils';
-  import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
   import {
     AdvancedTable,
     CrudCreateDrawer,
@@ -22,9 +21,9 @@
     SideNavigation,
     TableFooter,
     TableHeader
-  } from '../sections';
+  } from '../sections/index';
   const title = 'Application UI - Flowbite Svelte Blocks';
-  const breadcrumb_title = 'Application UI';
+  const breadcrumb_title = '';
   const description =
     'Get started with a collection of free and premium Tailwind CSS UI components for admin dashboard layouts, sidebars, charts, widgets, kanban boards, and more.';
   const dir = 'application';

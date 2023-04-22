@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Section } from '$lib';
   import { ExampleDiv, SectionHeader, SectionBlock, MetaTag } from '../utils';
-  import { Button, Heading, P } from 'flowbite-svelte';
+  import { Button, Heading, P } from '$lib';
   const breadcrumb_title = 'Read Sections (CRUD)';
   const title = 'Crud Read Sections';
   const dir = 'application';

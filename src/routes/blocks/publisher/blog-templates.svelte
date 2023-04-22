@@ -17,7 +17,7 @@
   {description}
 />
 
-<SectionBlock title="Default blog template">
+<SectionBlock {title}>
   Use this free blog template to show the content of an article using the Flowbite Typography plugin
   including the author, post date, and a comments section.
 </SectionBlock>

@@ -43,7 +43,7 @@
   {description}
 />
 
-<SectionBlock title="Default event schedule">
+<SectionBlock {title}>
   Use this example to show a list of company clients and case study previews inside a website
   section featuring the client, title of the project, a description and CTA button.
 </SectionBlock>

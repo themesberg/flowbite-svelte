@@ -17,7 +17,7 @@
   {description}
 />
 
-<SectionBlock title="Default faceted search drawer">
+<SectionBlock {title}>
   Use this free example of a drawer component to show a list of checkbox, radio and input field
   elements to filter search results.
 </SectionBlock>

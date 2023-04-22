@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Popup } from '$lib';
   import { ExampleDiv, SectionHeader, SectionBlock, MetaTag } from '../utils';
-  import { Button } from 'flowbite-svelte';
+  import { Button } from '$lib';
   const breadcrumb_title = 'Popups';
   const title = 'Popup';
   const dir = 'marketing';
@@ -18,7 +18,7 @@
   {description}
 />
 
-<SectionBlock title="Default popup">
+<SectionBlock {title}>
   Use this example of a popup element to show a simple yes or no type of dialog to your website
   visitor based on the Modal component from Flowbite.
 </SectionBlock>

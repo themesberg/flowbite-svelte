@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Tooltip from '$lib';
+  import Tooltip from '../../tooltips/Tooltip.svelte';
   export let href: string = '';
   export let tooltip: string = '';
   export let aClass: string =

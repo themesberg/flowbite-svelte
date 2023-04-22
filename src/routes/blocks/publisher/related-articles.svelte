@@ -17,7 +17,7 @@
   {description}
 />
 
-<SectionBlock title="Default related articles">
+<SectionBlock {title}>
   Use this example to show a list of related articles after the main content of a blog post to
   engage users and decrease the bounce rate.
 </SectionBlock>

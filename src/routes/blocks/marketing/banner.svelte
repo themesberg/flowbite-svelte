@@ -1,7 +1,7 @@
-<script lang="ts">
-  import { Banner } from '$lib';
+<script lang="ts">BannerBlock
+  import { BannerBlock } from '$lib';
   import { ExampleDiv, SectionHeader, SectionBlock, MetaTag } from '../utils';
-  import { CloseButton } from 'flowbite-svelte';
+  import { CloseButton } from '$lib';
 
   export let visible = true;
   const breadcrumb_title = 'Banner';
@@ -20,14 +20,14 @@
   {description}
 />
 
-<SectionBlock title="Default banner">
+<SectionBlock {title}>
   Use this example of a dismissable banner component to show extra information relative to the main
   content area of the page based on a sticky positition.
 </SectionBlock>
 
 <ExampleDiv>
   {#if visible}
-    <Banner>
+    <BannerBlock>
       <p class="text-sm font-light text-gray-500 dark:text-gray-400">
         Supercharge your hiring by taking advantage of our <a
           class="font-medium underline text-primary-600 dark:text-primary-500 hover:no-underline"
@@ -39,6 +39,6 @@
         on:click={() => (visible = false)}
         class="text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white"
       />
-    </Banner>
+    </BannerBlock>
   {/if}
 </ExampleDiv>

@@ -18,7 +18,7 @@
   {description}
 />
 
-<SectionBlock title="Heading with description">
+<SectionBlock {title}>
   Use this example to show a heading with a paragraph and a CTA link anywhere on your page relative
   to other sections.
 </SectionBlock>

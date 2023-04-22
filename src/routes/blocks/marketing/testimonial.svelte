@@ -17,7 +17,7 @@
   {description}
 />
 
-<SectionBlock title="Blockquote example">
+<SectionBlock {title}>
   Use this simple example of a testimonial based on a blockquote element and show the text, customer
   avatar, name, and occupation.
 </SectionBlock>

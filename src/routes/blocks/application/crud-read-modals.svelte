@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Section } from '$lib';
   import { ExampleDiv, SectionHeader, SectionBlock, MetaTag } from '../utils';
-  import { Button, Modal } from 'flowbite-svelte';
+  import { Button, Modal } from '$lib';
   const breadcrumb_title = 'Read Modals (CRUD)';
   const title = 'Crud Read Modals';
   const dir = 'application';
@@ -19,7 +19,7 @@
   {description}
 />
 
-<SectionBlock title="Default modal">
+<SectionBlock {title}>
   Use this free modal component to show a list of data entries from the database based on the CRUD
   layout system.
 </SectionBlock>

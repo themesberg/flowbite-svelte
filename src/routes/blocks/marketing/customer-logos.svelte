@@ -28,7 +28,7 @@
   {description}
 />
 
-<SectionBlock title="Default example">
+<SectionBlock {title}>
   Use this example to show a list of logos of the companies that have used your product or worked
   with to provide strong social proof to your website visitors.
 </SectionBlock>

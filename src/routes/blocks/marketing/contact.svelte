@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Section, Contact } from '$lib';
   import { ExampleDiv, SectionHeader, SectionBlock, MetaTag } from '../utils';
-  import { Label, Input, Textarea, Button } from 'flowbite-svelte';
+  import { Label, Input, Textarea, Button } from '$lib';
   const breadcrumb_title = 'Contact Form';
   const title = 'Contact';
   const dir = 'marketing';
@@ -18,7 +18,7 @@
   {description}
 />
 
-<SectionBlock title="Default contact form">
+<SectionBlock {title}>
   Use this example of a contact form coded with Tailwind CSS including the email, subject, and
   message that can be delivered by clicking on the form submission button.
 </SectionBlock>

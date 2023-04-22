@@ -1,6 +1,6 @@
 <a
   class="h-64 bg-white border border-gray-100 rounded-lg cursor-pointer md:h-80 hover:border-white dark:border-gray-700 dark:hover:border-gray-600 hover:shadow-lg dark:hover:shadow-lg-light dark:bg-gray-900"
-  href="blocks/application/table-headers/"
+  href="/blocks/application/table-headers/"
   ><article
     class="bg-gray-50 dark:bg-gray-700 rounded-t-md py-2.5 px-5 flex justify-between items-center border-b border-gray-200 dark:border-gray-700"
   >

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Section } from '$lib';
   import { ExampleDiv, SectionHeader, SectionBlock, MetaTag } from '../utils';
-  import { Modal, Button, Input, Label, Select, Textarea } from 'flowbite-svelte'
+  import { Modal, Button, Input, Label, Select, Textarea } from '$lib'
   const breadcrumb_title = 'Update Modals (CRUD)';
   const title = 'Crud Success Message';
   const dir = 'application';
@@ -38,7 +38,7 @@
   {description}
 />
 
-<SectionBlock title="Default modal">
+<SectionBlock {title}>
   Use this free example of a modal component to update an existing data entry inside the database
   featuring text field inputs, selects, and a textarea.
 </SectionBlock>

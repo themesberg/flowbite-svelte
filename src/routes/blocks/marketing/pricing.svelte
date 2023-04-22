@@ -8,7 +8,7 @@
     PricingItem
   } from '$lib';
   import { ExampleDiv, SectionHeader, SectionBlock, MetaTag } from '../utils';
-  import { Button } from 'flowbite-svelte';
+  import { Button } from '$lib';
   const breadcrumb_title = 'Pricing Tables';
   const title = 'Pricing';
   const dir = 'marketing';
@@ -25,7 +25,7 @@
   {description}
 />
 
-<SectionBlock title="Default pricing table">
+<SectionBlock {title}>
   Use this example of three pricing cards showcasing the pricing plan title, description, feature
   list, and CTA button.
 </SectionBlock>

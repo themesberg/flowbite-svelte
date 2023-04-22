@@ -17,7 +17,7 @@
   {description}
 />
 
-<SectionBlock title="Default table">
+<SectionBlock {title}>
   Use this free example of a table component with a search bar, filter dropdown, and a dataset of
   rows and columns to show complex data in your application.
 </SectionBlock>

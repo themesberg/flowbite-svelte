@@ -17,7 +17,7 @@
   {description}
 />
 
-<SectionBlock title="Default navbar">
+<SectionBlock {title}>
   Use this navigation bar inside a dashboard interface to show a side nav toggle, logo, search bar,
   button CTA, notifications, app center, and user avatar dropdown.
 </SectionBlock>

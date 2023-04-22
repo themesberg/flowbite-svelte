@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
+  import { Breadcrumb, BreadcrumbItem } from '$lib';
   export let home: string = 'Blocks';
   export let category: 'application' | 'marketing' | 'publisher' = 'application';
   export let title: string = '';
@@ -16,9 +16,11 @@
     >
       <div class="col-span-2 mb-2 lg:mb-0">
         <Breadcrumb navClass="flex mb-3">
-          <BreadcrumbItem href="/" home>{home}</BreadcrumbItem>
-          <BreadcrumbItem href="/{category}">{capitalized} UI</BreadcrumbItem>
+          <BreadcrumbItem href="/blocks" home>{home}</BreadcrumbItem>
+          <BreadcrumbItem href="/blocks/{category}">{capitalized} UI</BreadcrumbItem>
+          {#if breadcrumb_title}
           <BreadcrumbItem>{breadcrumb_title}</BreadcrumbItem>
+          {/if}
         </Breadcrumb>
         <h1
           class="inline-block mb-2 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white"

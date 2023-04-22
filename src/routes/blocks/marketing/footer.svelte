@@ -17,7 +17,7 @@
     FooterLink,
     FooterCopyright,
     FooterIcon
-  } from 'flowbite-svelte';
+  } from '$lib';
   const breadcrumb_title = 'Footer Sections';
   const title = 'Footer';
   const dir = 'marketing';
@@ -34,7 +34,7 @@
   {description}
 />
 
-<SectionBlock title="Default footer section">
+<SectionBlock {title}>
   Use this example of a footer section to show the logo of your brand, a description, links, and the
   copyright notice.
 </SectionBlock>

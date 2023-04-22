@@ -61,7 +61,7 @@
   {description}
 />
 
-<SectionBlock title="Team member cards">
+<SectionBlock {title}>
   Use this example to show information about your team members such as the name, occupation,
   picture, and social media accounts inside a card component.
 </SectionBlock>

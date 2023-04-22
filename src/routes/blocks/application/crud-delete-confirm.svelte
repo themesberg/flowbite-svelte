@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Section } from '$lib';
   import { ExampleDiv, SectionHeader, SectionBlock, MetaTag } from '../utils';
-  import { Button, Modal } from 'flowbite-svelte';
+  import { Button, Modal } from '$lib';
   const breadcrumb_title = 'Delete Confirm (CRUD)';
   const title = 'Crud Delete Confirm';
   const dir = 'application';
@@ -25,7 +25,7 @@
   {description}
 />
 
-<SectionBlock title="Default delete confirmation modal">
+<SectionBlock {title}>
   Use this free example of a modal component coded with Tailwind CSS to confirm with the user before
   deleting an item from the database.
 </SectionBlock>

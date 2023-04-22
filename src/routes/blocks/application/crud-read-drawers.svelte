@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Section } from '$lib';
   import { ExampleDiv, SectionHeader, SectionBlock, MetaTag } from '../utils';
-  import { Button, Drawer, CloseButton } from 'flowbite-svelte';
+  import { Button, Drawer, CloseButton } from '$lib';
   const breadcrumb_title = 'Read Drawers (CRUD)';
   const title = 'Crud Read Drawers';
   const dir = 'application';
@@ -25,7 +25,7 @@
   {description}
 />
 
-<SectionBlock title="Default drawer">
+<SectionBlock {title}>
   Use this free drawer component to show details of a basic data entry from your database and show
   CRUD action buttons for editing and deleting.
 </SectionBlock>

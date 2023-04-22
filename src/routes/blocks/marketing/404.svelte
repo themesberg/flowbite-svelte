@@ -1,7 +1,7 @@
 <script>
   import { Section, Page404 } from '$lib';
   import { ExampleDiv, SectionHeader, SectionBlock, MetaTag } from '../utils';
-  import { Button } from 'flowbite-svelte';
+  import { Button } from '$lib';
   const title = '404';
   const breadcrumb_title = '404 Pages';
   const description =
@@ -18,7 +18,7 @@
   {description}
 />
 
-<SectionBlock title="Default 404 page">
+<SectionBlock {title}>
   Use this free example of a 404 "not found" page coded with Tailwind CSS and Flowbite when a user
   visits a page that doesn't exist with a button back to the homepage.
 </SectionBlock>

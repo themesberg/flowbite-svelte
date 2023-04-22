@@ -12,7 +12,7 @@
     SidebarDropdownWrapper,
     Dropdown,
     DropdownItem
-  } from 'flowbite-svelte';
+  } from '$lib';
 
   let spanClass = 'flex-1 ml-3 whitespace-nowrap';
   $: activeUrl = $page.url.pathname;

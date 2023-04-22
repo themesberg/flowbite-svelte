@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Section, Register } from '$lib';
   import { ExampleDiv, SectionHeader, SectionBlock, MetaTag } from '../utils';
-  import { Button, Checkbox, Label, Input } from 'flowbite-svelte';
+  import { Button, Checkbox, Label, Input } from '$lib';
   const breadcrumb_title = 'Reset Password Forms';
   const title = 'Reset password';
   const dir = 'marketing';
@@ -18,7 +18,7 @@
   {description}
 />
 
-<SectionBlock title="Default reset password page">
+<SectionBlock {title}>
   Use this example with an email input and two password input fields to let the user change their
   password after receiving the account recovery email.
 </SectionBlock>

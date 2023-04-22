@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Section } from '$lib';
   import { ExampleDiv, SectionHeader, SectionBlock, MetaTag } from '../utils';
-  import { Label, Input, Button, Modal, Textarea, Select } from 'flowbite-svelte';
+  import { Label, Input, Button, Modal, Textarea, Select } from '$lib';
   const breadcrumb_title = 'Create Modals (CRUD)';
   const title = 'Crud Create Modals';
   const dir = 'application';
@@ -28,7 +28,7 @@
   {description}
 />
 
-<SectionBlock title="Default modal">
+<SectionBlock {title}>
   Use this free example to show a modal component with a form inside when creating a new instance of
   a product inside your application.</SectionBlock
 >

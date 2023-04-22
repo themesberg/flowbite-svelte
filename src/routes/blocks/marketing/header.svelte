@@ -1,5 +1,5 @@
 <script>
-  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, Button } from 'flowbite-svelte';
+  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, Button } from '$lib';
   import { ExampleDiv, SectionHeader, SectionBlock, MetaTag } from '../utils';
 
   let navClass = 'bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800';
@@ -20,7 +20,7 @@
   {description}
 />
 
-<SectionBlock title="Default header navigation">
+<SectionBlock {title}>
   Use this example of a responsive navigation bar for your website by showing multiple menu items, a
   few CTA buttons, and a hamburger icon to toggle the mobile view.
 </SectionBlock>

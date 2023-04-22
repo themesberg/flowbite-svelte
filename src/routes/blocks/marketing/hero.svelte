@@ -1,6 +1,6 @@
 <script>
   import { Section, News, HeroHeader, HeroBody } from '$lib';
-  import { Button } from 'flowbite-svelte';
+  import { Button } from '$lib';
   import { ArrowRight, VideoCamera } from 'svelte-heros';
   import {
     Youtube,
@@ -27,7 +27,7 @@
   {description}
 />
 
-<SectionBlock title="Default hero section">
+<SectionBlock {title}>
   Use this default example with an announcement badge, heading, CTA buttons, and customer logos to
   showcase what your website offers.
 </SectionBlock>

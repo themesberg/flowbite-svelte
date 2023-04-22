@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Section, Newsletter } from '$lib';
   import { ExampleDiv, SectionHeader, SectionBlock, MetaTag } from '../utils';
-  import { Input, Button } from 'flowbite-svelte';
+  import { Input, Button } from '$lib';
   import { Envelope } from 'svelte-heros';
   const breadcrumb_title = 'Newsletter Sections';
   const title = 'Newsletter';
@@ -19,7 +19,7 @@
   {description}
 />
 
-<SectionBlock title="Default newsletter">
+<SectionBlock {title}>
   Use this example as a website section to allow website visitors to sign up for your newsletter
   program featuring an input field and privacy notice.
 </SectionBlock>

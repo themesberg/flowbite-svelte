@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Section } from '$lib';
   import { ExampleDiv, SectionHeader, SectionBlock, MetaTag } from '../utils';
-  import { Footer, FooterCopyright, FooterLinkGroup, FooterLink, Tooltip } from 'flowbite-svelte';
+  import { Footer, FooterCopyright, FooterLinkGroup, FooterLink, Tooltip } from '$lib';
   const breadcrumb_title = 'Dashboard Footers';
   const title = 'Dashboard Footer';
   const dir = 'application';

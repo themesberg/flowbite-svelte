@@ -17,7 +17,7 @@
   {description}
 />
 
-<SectionBlock title="Default faceted search modal">
+<SectionBlock {title}>
   Use this free example to show a list of checkbox components inside a modal to filter results by
   categories inside your application.
 </SectionBlock>

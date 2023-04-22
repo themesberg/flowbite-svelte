@@ -26,7 +26,7 @@
   {description}
 />
 
-<SectionBlock title="Default blog card">
+<SectionBlock {title}>
   Use this example to show a preview of a blog post including the title, description, category,
   author, publication date, and CTA link.
 </SectionBlock>

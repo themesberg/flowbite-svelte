@@ -17,7 +17,7 @@
   {description}
 />
 
-<SectionBlock title="Default form">
+<SectionBlock {title}>
   Use this free example of a CRUD form layout to update existing data sets featuring text fields
   inputs, select boxes, and more.
 </SectionBlock>

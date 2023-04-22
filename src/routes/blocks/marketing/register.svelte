@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Section, Register } from '$lib';
   import { ExampleDiv, SectionHeader, SectionBlock, MetaTag } from '../utils';
-  import { Button, Checkbox, Label, Input } from 'flowbite-svelte';
+  import { Button, Checkbox, Label, Input } from '$lib';
   const breadcrumb_title = 'Register Forms';
   const title = 'Register';
   const dir = 'marketing';
@@ -18,7 +18,7 @@
   {description}
 />
 
-<SectionBlock title="Default register page">
+<SectionBlock {title}>
   This example can be used to allow users to create an account on your website using their email
   address and password and also a checkbox with the terms and conditions as a requirement.
 </SectionBlock>
