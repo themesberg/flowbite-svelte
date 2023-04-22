@@ -6,6 +6,7 @@
   import Hero from './landing/Hero.svelte';
   import Footer from './utils/Footer.svelte';
   import Contributors from './landing/Contributors.svelte';
+  import DesignFigma from './landing/DesignFigma.svelte';
 
   export let data: PageData;
 
@@ -42,6 +43,7 @@
   <Hero />
   <Featured />
   <Components {data} />
+  <DesignFigma />
   <Contributors {data} />
   <Footer />
 </main>
