@@ -78,9 +78,6 @@ devDependencies:
   svelte-check:
     specifier: ^3.0.4
     version: 3.0.4(postcss-load-config@4.0.1)(postcss@8.4.21)(svelte@3.55.1)
-  svelte-heros:
-    specifier: ^3.1.0
-    version: 3.1.0(svelte@3.55.1)
   svelte-meta-tags:
     specifier: ^2.6.5
     version: 2.6.5(svelte@3.55.1)(typescript@4.9.5)
@@ -2847,14 +2844,6 @@ packages:
       - sass
       - stylus
       - sugarss
-    dev: true
-
-  /svelte-heros@3.1.0(svelte@3.55.1):
-    resolution: {integrity: sha512-SW5GPH/hDsuzNcdHVfpqbED37XvAl1k4Ksvec3fyPwkb30NtvO/GYjeaUHcDHrT/DjXhsVsoJJSnzJ1CEhx3ww==}
-    peerDependencies:
-      svelte: ^3.54.0
-    dependencies:
-      svelte: 3.55.1
     dev: true
 
   /svelte-hmr@0.15.1(svelte@3.55.1):
