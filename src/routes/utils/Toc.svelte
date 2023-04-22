@@ -4,7 +4,6 @@
     Simplified version of Table of Contents.
     */
   import type { LinkType } from '$lib/types';
-  import { onMount } from 'svelte';
 
   const aClass =
     "inline-block border-l border-white duration-200 hover:text-gray-900 transition-none dark:hover:text-white hover:border-gray-300 after:content-['#'] after:text-primary-700 dark:after:text-primary-700 dark:border-gray-900 dark:hover:border-gray-700 after:ml-2 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-100";

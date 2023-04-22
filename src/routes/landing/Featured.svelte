@@ -19,13 +19,13 @@
     <div class="mx-auto text-base tracking-tight lg:hidden mb-4">Featured in:</div>
     <div class="flex flex-wrap items-center gap-8 justify-center lg:hidden">
       {#each Object.entries(features) as [href, comp]}
-        <!-- a {href} --><svelte:component this={comp} small /><!-- /a -->
+        <!-- a {href} --><svelte:component this={comp} /><!-- /a -->
       {/each}
     </div>
     <div class="items-center gap-8 justify-center self-stretch py-2 hidden lg:flex flex-wrap">
       <div class="text-base tracking-tight">Featured in:</div>
       {#each Object.entries(features) as [href, comp]}
-        <!-- a {href} --><svelte:component this={comp} small /><!-- /a -->
+        <!-- a {href} --><svelte:component this={comp} /><!-- /a -->
       {/each}
     </div>
   </div>
