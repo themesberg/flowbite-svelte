@@ -45,5 +45,6 @@
   <Components {data} />
   <DesignFigma />
   <Contributors {data} />
+  <GetStarted />
   <Footer />
 </main>

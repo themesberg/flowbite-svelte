@@ -70,7 +70,7 @@
           <GitHub size="sm" />&nbsp; Edit on GitHub
         </Button>
         <div class="ml-auto">
-          <ExampleDarkMode on:click={() => (dark = !dark)} />
+          <ExampleDarkMode on:click={() => (dark = !dark)} {dark} />
         </div>
       </div>
     </div>
