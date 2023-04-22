@@ -36,7 +36,7 @@
     <Button
       size="md"
       class="whitespace-nowrap hover:text-primary-600 focus:text-primary-600"
-      href="/docs/pages/introduction"
+      href="/docs/components/accordion"
       color="alternative">
       View all components
     </Button>
