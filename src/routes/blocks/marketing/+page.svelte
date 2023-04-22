@@ -21,8 +21,8 @@
     Page404section,
     Page500section,
     Popupsection,
+    Portfoliosection,
     Pricingsection,
-    ProjectPortfolioSection,
     RegisterFormsection,
     ResetPasswordFormsection,
     Schedulesection,
@@ -64,8 +64,8 @@
       <Page404section />
       <Page500section />
       <Popupsection />
+      <Portfoliosection />
       <Pricingsection />
-      <ProjectPortfolioSection />
       <RegisterFormsection />
       <ResetPasswordFormsection />
       <Schedulesection />
