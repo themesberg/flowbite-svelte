@@ -1,3 +1,6 @@
+// blocks
+export * from './blocks/index.js'
+
 // Accordion
 export { default as Accordion } from './accordion/Accordion.svelte';
 export { default as AccordionItem } from './accordion/AccordionItem.svelte';

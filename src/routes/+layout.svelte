@@ -79,7 +79,7 @@
         class="lg:px-2 lg:mb-0"
         active={activeUrl.startsWith('/figma')}
         href="https://flowbite.com/figma/">Figma</NavLi>
-      <NavLi class="lg:px-2 lg:mb-0" href="https://flowbite-svelte-blocks.vercel.app/">Blocks</NavLi>
+      <NavLi class="lg:px-2 lg:mb-0" href="/blocks">Blocks</NavLi>
     </NavUl>
 
     <div class="flex items-center ml-auto">
