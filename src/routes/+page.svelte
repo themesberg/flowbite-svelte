@@ -8,6 +8,7 @@
   import Contributors from './landing/Contributors.svelte';
   import DesignFigma from './landing/DesignFigma.svelte';
   import GetStarted from './landing/GetStarted.svelte';
+  import CTA from './landing/CTA.svelte';
 
   export let data: PageData;
 
@@ -44,6 +45,7 @@
   <Hero />
   <Featured />
   <Components {data} />
+  <CTA />
   <DesignFigma />
   <Contributors {data} />
   <GetStarted />
