@@ -13,8 +13,7 @@
           Get started
         </h3>
         <p class="max-w-2xl text-lg text-center">
-          Stay up to date with the roadmap progress, announcements and exclusive discounts feel free to sign
-          up with your email.
+          Explore our Svelte UI components – easily create clean, accessible web designs. Begin your journey and enhance your projects today.
         </p>
       </div>
       <div class="mt-4 md:mt-5 sm:flex justify-center sm:justify-start1 w-full">
