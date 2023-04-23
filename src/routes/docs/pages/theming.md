@@ -43,7 +43,7 @@ Use `color="custom"` and add necessary colors to `customColor`, `customBorderedC
 <script>
 	import { Badge } from 'flowbite-svelte';
 </script>
-<Badge color='custom' customColor='bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-300'>Custom color</Badge>
+<Badge color='custom' customColor='bg-tealfs-100 text-tealfs-800 dark:bg-tealfs-900 dark:text-tealfs-300'>Custom color</Badge>
 ```
 
 ## Breadcrumb
