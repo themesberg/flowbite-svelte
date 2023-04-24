@@ -12,6 +12,7 @@
   import ToolbarLink from './utils/ToolbarLink.svelte';
   import type { LayoutData } from './$types';
   import NavSidebarHamburger from '$lib/navbar/NavSidebarHamburger.svelte';
+  import AlgoliaSearch from './utils/AlgoliaSearch.svelte';
 
   export let data: LayoutData;
 
@@ -53,6 +54,10 @@
         Flowbite Svelte
       </span>
     </NavBrand>
+
+    {#if !isHomePage}
+      <AlgoliaSearch />
+    {/if}
 
     <NavUl
       {hidden}
