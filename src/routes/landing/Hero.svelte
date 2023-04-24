@@ -4,7 +4,7 @@
   import ArrowRight from '../utils/icons/ArrowRight.svelte';
 </script>
 
-<div class="overflow-hidden flex flex-col pt-6 sm:pt-8 lg:pt-16 pb-6 sm:pb-8 lg:pb-24 px-4 lg:px-20">
+<section class="overflow-hidden mx-auto max-w-8xl flex flex-col pt-6 sm:pt-8 lg:pt-16 pb-6 sm:pb-8 lg:pb-24 px-4 lg:px-20">
   <div class="flex flex-col gap-20">
     <div class="flex items-center gap-10">
       <div class="flex flex-col justify-start gap-10">
@@ -42,4 +42,4 @@
       </div>
     </div>
   </div>
-</div>
+</section>
