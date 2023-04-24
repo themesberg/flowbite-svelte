@@ -13,7 +13,7 @@
 
 </script>
 
-<div class="w-full px-4 lg:px-20">
+<section class="w-full px-4 lg:px-20 mx-auto max-w-8xl">
   <div class="flex flex-col items-center pt-6 sm:pt-8 lg:pt-24 gap-4 sm:gap-4 lg:mb-12 mb-8">
     <h2 class="tracking-tight font-extrabold text-3xl lg:text-4xl text-gray-900 dark:text-white">
       Svelte UI components
@@ -40,4 +40,4 @@
     </Button>
   </div>
 
-</div>
+</section>
