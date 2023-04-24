@@ -8,7 +8,7 @@
   let dark = name + '-dark.' + suffix;
 </script>
 
-<div class="flex px-4 py-6 lg:py-6 lg:gap-16 self-stretch {reversed ? 'flex-row-reverse' : 'flex-row'}">
+<div class="flex py-6 lg:py-6 lg:gap-16 self-stretch {reversed ? 'flex-row-reverse' : 'flex-row'}">
   <div
     class="flex-grow min-h-full bg-no-repeat {contain
       ? 'bg-contain'
