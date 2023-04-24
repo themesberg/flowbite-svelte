@@ -40,7 +40,7 @@
   }} />
 
 <main
-  class="flex-auto mx-auto max-w-8xl min-w-0 lg:static lg:max-h-full lg:overflow-visible divide-y dark:divide-gray-700">
+  class="flex-auto min-w-0 lg:static lg:max-h-full lg:overflow-visible divide-y dark:divide-gray-700">
   <Hero />
   <Featured />
   <Components {data} />

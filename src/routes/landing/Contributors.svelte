@@ -11,16 +11,15 @@
 </script>
 
 <!-- Team -->
-<div class="flex flex-col px-4 py-24 items-center">
+<section class="flex flex-col px-4 py-24 items-center">
   <!-- containter -->
   <div class="flex flex-col gap-12 items-center w-full max-w-7xl">
     <!-- heading -->
-
     <div class="flex flex-col gap-4 items-center justify-center max-w-2xl">
       <h2
         class="tracking-tight text-center text-3xl lg:text-4xl font-extrabold text-gray-900 dark:text-white">
         Community contributors
-    </h2>
+      </h2>
       <p class="text-lg font-normal text-center">
         Join the open-source community by contributing to the Flowbite Svelte Library and become one of the highlighted members
       </p>
@@ -61,4 +60,4 @@
       </div>
     </div>
   </div>
-</div>
+</section>
