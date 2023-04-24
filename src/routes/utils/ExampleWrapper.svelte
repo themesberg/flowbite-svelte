@@ -49,7 +49,7 @@
       if (section) {
         const pathname = new URL(node.baseURI).pathname;
         path = new URL(pathname.slice(1) + '.md', gitHub);
-        path.hash = section.id.replaceAll('_', '-').toLowerCase();
+        path.hash = section.id.replaceAll('_', '-').replaceAll('/', '').toLowerCase();
       }
     }
   }
