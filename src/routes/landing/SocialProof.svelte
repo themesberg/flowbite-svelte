@@ -16,9 +16,9 @@
   }
 </script>
 
-<section class="flex flex-col items-center bg-gray-50 dark:bg-gray-800">
-  <div class="mx-auto max-w-8xl">
-    <div class="flex flex-col md:flex-row gap-4 md:gap-20 mx-auto max-w-8xl">
+<section class="bg-gray-50 dark:bg-gray-800">
+  <div class="mx-auto max-w-8xl px-4 lg:px-20 py-4 lg:py-20">
+    <div class="flex flex-col lg:flex-row gap-4 lg:gap-20">
       <div class="flex flex-col items-start justify-center gap-3 md:gap-5 w-full">
         <div class="flex flex-col items-start justify-center gap-6 w-full">
           <div class="flex flex-col items-start py-2">
@@ -46,8 +46,9 @@
           </div>
         </div>
       </div>
-      <div class="border flex flex-col items-start gap-6 md:gap-3 w-full">
-        <div class="flex flex-row items-start lg:justify-end gap-2 md:gap-12 lg:gap-2 self-stretch">
+      <div class="flex flex-col items-start gap-6 md:gap-3 w-full">
+        <div
+          class="flex flex-row items-start md:justify-between md:pr-16 lg:pr-0 lg:justify-end gap-2 md:gap-2 lg:gap-2 self-stretch">
           <div
             class="flex flex-col items-start gap-4 md:gap-6 text-gray-400 w-full max-w-[272px] lg:py-6 lg:px-8">
             <GitHub />
@@ -65,7 +66,8 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-row items-start lg:justify-end gap-2 md:gap-12 lg:gap-2 self-stretch">
+        <div
+          class="flex flex-row items-start md:justify-between md:pr-16 lg:pr-0 lg:justify-end gap-2 md:gap-12 lg:gap-2 self-stretch">
           <div
             class="flex flex-col items-start gap-4 md:gap-6 text-gray-400 w-full max-w-[272px] lg:py-6 lg:px-8">
             <Figma />
