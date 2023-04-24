@@ -113,7 +113,7 @@
   <!-- dialog -->
   <div
     on:keydown={handleKeys}
-    on:wheel|preventDefault
+    on:wheel|preventDefault|nonpassive
     use:prepareFocus
     use:focusTrap
     on:click={autoclose ? onAutoClose : null}

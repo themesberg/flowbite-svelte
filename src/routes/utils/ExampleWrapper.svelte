@@ -1,11 +1,12 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
   import classNames from 'classnames';
   import Button from '$lib/buttons/Button.svelte';
   import ExampleDarkMode from './ExampleDarkMode.svelte';
   import GitHub from './icons/GitHub.svelte';
   import Tooltip from '$lib/tooltips/Tooltip.svelte';
-
+  import { page } from '$app/stores';
+  import type { PageData } from '../$types';
+  import { identity } from 'svelte/internal';
   export let divClass = 'w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-2 sm:p-6';
 
   // the source of the example, if you want it
@@ -14,8 +15,15 @@
   // all meta tags of the code block
   export let meta: any = undefined;
 
-  let browserSupport: boolean;
+  let browserSupport: boolean = false;
   let code: HTMLElement;
+
+  let data: PageData = $page.data;
+
+  // https://github.com/themesberg/flowbite-svelte/blob/main/src/routes/docs/components/accordion.md#always-open
+  const gitHub = new URL('https://github.com/themesberg/flowbite-svelte/blob/main/src/routes/');
+
+  let path: URL;
 
   // suppress vite-plugin-svelte warning about unused props
   $: src, meta;
@@ -24,9 +32,20 @@
   let expand: boolean = false;
   let dark: boolean = false;
 
-  onMount(() => {
+  function init(node: HTMLElement) {
     browserSupport = !!window?.navigator?.clipboard;
-  });
+    // find closes previous section anchor
+    const section = [...document.querySelectorAll('#mainContent > :where(h2, h3) > [id]')]
+      .map((x: Element) => ({ id: x.id, top: x.parentElement?.offsetTop ?? Infinity }))
+      .filter((x) => x.top < node.offsetTop)
+      .slice(-1)
+      .shift();
+    if (section) {
+      const pathname = new URL(node.baseURI).pathname;
+      path = new URL(pathname.slice(1) + '.md', gitHub);
+      path.hash = section.id.replace('_', '-').toLowerCase();
+    }
+  }
 
   const copyToClipboard = async (e: MouseEvent) => {
     const REG_HEX = /&#x([a-fA-F0-9]+);/g;
@@ -56,21 +75,25 @@
   let copy_text = 'Copy';
 </script>
 
-<div class="mt-8 code-example">
+<div class="mt-8 code-example" use:init>
   {#if !meta.hideOutput}
     <div
       class="w-full p-4 border border-gray-200 bg-gray-50 rounded-t-xl dark:border-gray-600 dark:bg-gray-700">
       <div class="grid grid-cols-2">
-        <Button
-          size="xs"
-          color="alternative"
-          class="dark:!bg-gray-900 w-fit hover:text-primary-600"
-          href="https://github.com/themesberg/flowbite-svelte">
-          <GitHub size="sm" />&nbsp; Edit on GitHub
-        </Button>
-        <div class="ml-auto">
-          <ExampleDarkMode on:click={() => (dark = !dark)} {dark} />
-        </div>
+        {#if path}
+          <Button
+            size="xs"
+            color="alternative"
+            class="dark:!bg-gray-900 w-fit hover:text-primary-600 gap-2"
+            href={'' + path}
+            target="_blank"
+            rel="noreferrer">
+            <GitHub size="sm" />Edit on GitHub
+          </Button>
+          <div class="ml-auto">
+            <ExampleDarkMode on:click={() => (dark = !dark)} {dark} />
+          </div>
+        {/if}
       </div>
     </div>
 
