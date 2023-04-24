@@ -34,16 +34,23 @@
 
   function init(node: HTMLElement) {
     browserSupport = !!window?.navigator?.clipboard;
-    // find closes previous section anchor
-    const section = [...document.querySelectorAll('#mainContent > :where(h2, h3) > [id]')]
-      .map((x: Element) => ({ id: x.id, top: x.parentElement?.offsetTop ?? Infinity }))
-      .filter((x) => x.top < node.offsetTop)
-      .slice(-1)
-      .shift();
-    if (section) {
-      const pathname = new URL(node.baseURI).pathname;
-      path = new URL(pathname.slice(1) + '.md', gitHub);
-      path.hash = section.id.replace('_', '-').toLowerCase();
+  }
+
+  let node: HTMLElement;
+  $: {
+    if (node) {
+      // find closes previous section anchor
+      const section = [...document.querySelectorAll('#mainContent > :where(h2, h3) > [id]')]
+        .map((x: Element) => ({ id: x.id, top: x.parentElement?.offsetTop ?? Infinity }))
+        .filter((x) => x.top < node.offsetTop)
+        .slice(-1)
+        .shift();
+
+      if (section) {
+        const pathname = new URL(node.baseURI).pathname;
+        path = new URL(pathname.slice(1) + '.md', gitHub);
+        path.hash = section.id.replaceAll('_', '-').replaceAll('/', '').toLowerCase();
+      }
     }
   }
 
@@ -75,7 +82,7 @@
   let copy_text = 'Copy';
 </script>
 
-<div class="mt-8 code-example" use:init>
+<div class="mt-8 code-example" bind:this={node} use:init>
   {#if !meta.hideOutput}
     <div
       class="w-full p-4 border border-gray-200 bg-gray-50 rounded-t-xl dark:border-gray-600 dark:bg-gray-700">
