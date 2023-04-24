@@ -21,7 +21,9 @@ export const handle = async ({ event, resolve }) => {
   const pathname = event.url.pathname;
 
   if (pathname !== '/' && !dirsToSkip.some((x) => pathname.startsWith(x))) {
-    const [dir, file] = pathname.split('/').slice(-2);
+    const parts = pathname.split('/'),
+      file = parts.pop(),
+      dir = parts.slice(1).join('/');
 
     // needs to check redirections
     for (const [key, value] of allFiles) {

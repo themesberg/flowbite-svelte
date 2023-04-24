@@ -1,8 +1,6 @@
 <script lang="ts">
   import type { PageData } from '../$types';
   import Button from '$lib/buttons/Button.svelte';
-  import ArrowRight from '../utils/icons/ArrowRight.svelte';
-
   import CompoCard from '../utils/CompoCard.svelte';
 
   export let data: PageData;
@@ -36,7 +34,7 @@
     <Button
       size="md"
       class="whitespace-nowrap hover:text-primary-600 focus:text-primary-600"
-      href="/docs/pages/introduction"
+      href="/docs/components/accordion"
       color="alternative">
       View all components
     </Button>

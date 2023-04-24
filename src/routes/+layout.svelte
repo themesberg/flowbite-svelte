@@ -2,7 +2,6 @@
   import { page } from '$app/stores';
   import { DarkMode, Navbar, NavBrand, NavHamburger, NavLi, NavUl } from '$lib';
   import Tooltip from '$lib/tooltips/Tooltip.svelte';
-  import ChevronDown from '$lib/utils/ChevronDown.svelte';
   import { setContext } from 'svelte';
   import { writable, type Writable } from 'svelte/store';
   import '../app.css';
@@ -110,7 +109,8 @@
       <DocBadge
         large
         class="ml-2 xl:ml-6 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-800 dark:hover:text-white">
-        v{version} <!-- ChevronDown class="w-4 h-4" variation="solid" / --></DocBadge>
+        v{version} 
+      </DocBadge>
     </a>
 
     <NavHamburger on:click={toggle} btnClass="ml-3 m-0 lg:hidden {isHomePage ? '' : 'hidden'}" />

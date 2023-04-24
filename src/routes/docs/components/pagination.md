@@ -268,7 +268,7 @@ You can use the following code to show the number of data shown inside a table e
 
 ## Props
 
-<p>The component has the following props, type, and default values. See <A href="/pages/types">types 
+<p>The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
  page</A> for type information.</p>
 
 ### Pagination

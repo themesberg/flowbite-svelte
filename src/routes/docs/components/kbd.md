@@ -227,7 +227,7 @@ This example can be used to denote function keys inside the KBD component.
 
 ## Props
 
-<p>The component has the following props, type, and default values. See <A href="/pages/types">types 
+<p>The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
  page</A> for type information.</p>
 
 ### Kbd

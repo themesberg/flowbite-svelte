@@ -838,7 +838,7 @@ Use this example to apply a different color to every second row inside the table
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/pages/types">types 
+The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
  page</A> for type information.
 
 ### Table

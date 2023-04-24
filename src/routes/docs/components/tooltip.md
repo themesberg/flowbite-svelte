@@ -138,7 +138,7 @@ When you want to add a fully custom styles, use `style="custom"`, `defaultClass`
 
 ### Tooltip
 
-The component has the following props, type, and default values. See <A href="/pages/types">types 
+The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
  page</A> for type information.
 
 <TableProp>
@@ -147,7 +147,7 @@ The component has the following props, type, and default values. See <A href="/p
 
 ### Frame
 
-The component inherits the following props, type, and default values from `Frame`. See [types page](/pages/types) for type information.
+The component inherits the following props, type, and default values from `Frame`. See [types page](/docs/pages/typescript) for type information.
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />

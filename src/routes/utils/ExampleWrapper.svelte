@@ -4,7 +4,6 @@
   import Button from '$lib/buttons/Button.svelte';
   import ExampleDarkMode from './ExampleDarkMode.svelte';
   import GitHub from './icons/GitHub.svelte';
-  import Check from './icons/Check.svelte';
   import Tooltip from '$lib/tooltips/Tooltip.svelte';
 
   export let divClass = 'w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-2 sm:p-6';
@@ -70,7 +69,7 @@
           <GitHub size="sm" />&nbsp; Edit on GitHub
         </Button>
         <div class="ml-auto">
-          <ExampleDarkMode on:click={() => (dark = !dark)} />
+          <ExampleDarkMode on:click={() => (dark = !dark)} {dark} />
         </div>
       </div>
     </div>

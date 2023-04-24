@@ -142,7 +142,7 @@ Add a helper text in addition to the label if you want to show more information 
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/pages/types">types 
+The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
  page</A> for type information.
 
 <TableProp>
