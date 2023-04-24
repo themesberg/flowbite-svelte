@@ -47,9 +47,9 @@
           <Community />
         </div>
         <div class="flex flex-col w-full">
-          <h3 class="tracking-tight text-xl font-bold text-left text-gray-900 dark:text-white">
+          <h2 class="tracking-tight text-xl font-bold text-left text-gray-900 dark:text-white">
             Join the community
-          </h3>
+          </h2>
           <p>Become a member of a community of developers supporting by Flowbite</p>
         </div>
         <a
