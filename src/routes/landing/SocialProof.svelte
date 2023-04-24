@@ -16,9 +16,8 @@
   }
 </script>
 
-<section class="overflow-hidden flex flex-col">
-  <div
-    class="border max-w-8xl mx-auto flex flex-col pt-6 sm:pt-8 lg:pt-16 pb-6 sm:pb-8 lg:pb-24 px-4 lg:px-20">
+<section class="flex flex-col items-center bg-gray-50 dark:bg-gray-800">
+  <div class="mx-auto max-w-8xl">
     <div class="flex flex-col md:flex-row gap-4 md:gap-20 mx-auto max-w-8xl">
       <div class="flex flex-col items-start justify-center gap-3 md:gap-5 w-full">
         <div class="flex flex-col items-start justify-center gap-6 w-full">
