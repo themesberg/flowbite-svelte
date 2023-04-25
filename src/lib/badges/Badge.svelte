@@ -3,7 +3,7 @@
   import classNames from 'classnames';
   import CloseButton from '../utils/CloseButton.svelte';
 
-  export let color: 'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'none' =
+  export let color: 'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'custom' | 'none' =
     'blue';
   export let large: boolean = false;
   export let border: boolean = false;
@@ -11,6 +11,10 @@
   export let rounded: boolean = false;
   export let index: boolean = false;
   export let dismissable: boolean = false;
+  export let customColor: string = '';
+  export let customBorderedColor: string = '';
+  export let customHoverColor: string = '';
+  export let customCloseBtnColor: string = '';
 
   const colors = {
     blue: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300',
@@ -21,6 +25,7 @@
     indigo: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300',
     purple: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300',
     pink: 'bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-300',
+    custom: customColor,
     ['!blue']: 'bg-blue-500 text-blue-100',
     ['!dark']: 'bg-gray-500 text-gray-100',
     ['!red']: 'bg-red-500 text-white',
@@ -41,6 +46,7 @@
     indigo: 'bg-indigo-100 text-indigo-800 dark:bg-gray-700 dark:text-indigo-400 border-indigo-400',
     purple: 'bg-purple-100 text-purple-800 dark:bg-gray-700 dark:text-purple-400 border-purple-400',
     pink: 'bg-pink-100 text-pink-800 dark:bg-gray-700 dark:text-pink-400 border-pink-400',
+    custom: customBorderedColor,
     none: ''
   };
 
@@ -53,6 +59,7 @@
     indigo: 'hover:bg-indigo-200',
     purple: 'hover:bg-purple-200',
     pink: 'hover:bg-pink-200',
+    custom: customHoverColor,
     none: ''
   };
 
@@ -99,6 +106,7 @@
     indigo: 'text-indigo-400 hover:text-indigo-900 dark:hover:!bg-indigo-800 dark:hover:text-indigo-300',
     purple: 'text-purple-400 hover:text-purple-900 dark:hover:!bg-purple-800 dark:hover:text-purple-300',
     pink: 'text-pink-400 hover:text-pink-900 dark:hover:!bg-pink-800 dark:hover:text-pink-300',
+    custom: customCloseBtnColor,
     none: ''
   };
 
