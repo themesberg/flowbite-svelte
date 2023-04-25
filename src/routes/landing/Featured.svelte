@@ -4,6 +4,7 @@
   import YouTubeFull from '../utils/icons/YouTubeFull.svelte';
   import Hunt from '../utils/icons/Hunt.svelte';
   import Combinator from '../utils/icons/Combinator.svelte';
+  import Section from './utils/Section.svelte';
 
   const features = {
     '#reddit': Reddit,
@@ -14,8 +15,8 @@
   };
 </script>
 
-<div class="py-6 mx-auto max-w-8xl px-4 lg:px-20">
-  <div class="flex flex-col px-4 gap-2">
+<Section>
+  <div class="flex flex-col gap-2">
     <div class="mx-auto text-base tracking-tight lg:hidden mb-4">Featured in:</div>
     <div class="flex flex-wrap items-center gap-8 justify-center lg:hidden">
       {#each Object.entries(features) as [href, comp]}
@@ -29,4 +30,4 @@
       {/each}
     </div>
   </div>
-</div>
+</Section>
