@@ -32,7 +32,7 @@
 <Footer footerType="custom" customClass="bg-white dark:bg-gray-900">
   <div class="flex flex-col py-6 lg:py-12 mx-auto max-w-8xl">
     <div class="flex flex-col lg:flex-row items-start md:justify-between gap-8 {isHomePage ? 'px-4 lg:px-20' : ''}">
-      <div class="mb-6 md:mb-0 w-full max-w-sm">
+      <div class="w-full max-w-sm">
         <FooterBrand
           href="https://flowbite-svelte.com"
           src={logo}
@@ -54,7 +54,7 @@
           >.
         </p>
       </div>
-      <div class="flex flex-col md:flex-row items-start {isHomePage ? 'gap-16 lg:justify-end' : 'gap-8'}  w-full">
+      <div class="flex flex-col md:flex-row items-start {isHomePage ? 'gap-4 md:gap-16 lg:justify-end' : 'gap-8'}  w-full">
         {#each Object.entries(footer_links) as [column, links]}
           <div>
             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{column}</h2>
