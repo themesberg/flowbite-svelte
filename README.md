@@ -474,7 +474,7 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
 
 If you need help or just want to discuss about the library join the community on Github:
 
-⌨️ [Discuss about Flowbite on GitHub](https://github.com/themesberg/flowbite/discussions)
+⌨️ [Discuss about Flowbite on GitHub](https://github.com/themesberg/flowbite-svelte/discussions)
 
 For casual chatting with others using the library:
 
