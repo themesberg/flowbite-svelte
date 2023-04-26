@@ -86,7 +86,7 @@
           Improved readability for users with light sensitivity
         </Li>
       </List>
-      <a href="/docs/components/darkmode" class="flex items-center gap-4 text-primary-600 font-medium"
+      <a href="/docs/components/darkmode" class="flex items-center gap-4 text-primary-600 hover:underline font-medium"
         >Learn more how to integrate dark mode <ArrowRight /></a>
     </Row>
 
