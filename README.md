@@ -6,16 +6,16 @@
 [![license](https://badgen.net/npm/license/flowbite-svelte)](https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE)
 [![Discord](https://img.shields.io/discord/902911619032576090?color=%237289da&label=Discord)](https://discord.com/invite/4eeurUVvTy)
 
-**⚠️ Flowbite-Svelte is currently in early development and APIs and packages are likely to change quite often.**
+**⚠️ Flowbite Svelte is currently in early development and APIs and packages are likely to change quite often.**
 
 <p>
     <a href="https://flowbite-svelte.com" >
-      <img alt="Flowbite-Svelte CSS components" width="350" src="https://raw.githubusercontent.com/themesberg/flowbite-svelte/main/static/images/flowbite-svelte.png">
+      <img alt="Flowbite Svelte UI components" width="350" src="https://raw.githubusercontent.com/themesberg/flowbite-svelte/main/static/images/flowbite-svelte.png">
     </a><br>
-    Build websites even faster with components on top of Tailwind CSS
+    Build websites even faster with Svelte components on top of Tailwind CSS
 </p>
 
-[Flowbite-Svelte](https://flowbite-svelte.com/) is an official Flowbite component library for Svelte. All interactivities are handled by Svelte.
+[Flowbite Svelte](https://flowbite-svelte.com/) is an official Flowbite UI component library for Svelte. All interactivities are handled by Svelte.
 
 [Visualize this repo's codebase](https://mango-dune-07a8b7110.1.azurestaticapps.net/?repo=themesberg%2Fflowbite-svelte)
 
@@ -32,8 +32,6 @@ You can find all the starters in the Starters directory.
 You can find all the examples in the Examples directory.
 
 - [Flowbite SvelteKit responsive sidebar layout](https://github.com/themesberg/flowbite-svelte/tree/main/examples/flowbite-sveltekit-responsive-sidebar-layout)
-
-
 
 ## Installation
 
@@ -57,18 +55,18 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/alert/">
-            <img alt="Tailwind CSS Alerts" src="https://flowbite.s3.amazonaws.com/github/alerts.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/alert">
+            <img alt="Svelte Alerts" src="https://flowbite.s3.amazonaws.com/github/svelte/alerts.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/badge/">
-            <img alt="Tailwind CSS Badge" src="https://flowbite.s3.amazonaws.com/github/badge.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/badge">
+            <img alt="Svelte Badge" src="https://flowbite.s3.amazonaws.com/github/svelte/badge.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/breadcrumb/">
-            <img alt="Tailwind CSS Breadcrumbs" src="https://flowbite.s3.amazonaws.com/github/breadcrumbs.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/breadcrumb">
+            <img alt="Svelte Breadcrumbs" src="https://flowbite.s3.amazonaws.com/github/svelte/breadcrumbs.jpg">
         </a>
     </td>
   </tr>
@@ -79,18 +77,18 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/button/">
-            <img alt="Tailwind CSS Buttons" src="https://flowbite.s3.amazonaws.com/github/buttons.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/button">
+            <img alt="Svelte Buttons" src="https://flowbite.s3.amazonaws.com/github/svelte/buttons.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/button-group/">
-            <img alt="Tailwind CSS Button Group" src="https://flowbite.s3.amazonaws.com/github/button-group.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/button-group">
+            <img alt="Svelte Button Group" src="https://flowbite.s3.amazonaws.com/github/svelte/button-group.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/card/">
-            <img alt="Tailwind CSS Cards" src="https://flowbite.s3.amazonaws.com/github/cards.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/card">
+            <img alt="Svelte Cards" src="https://flowbite.s3.amazonaws.com/github/svelte/cards.jpg">
         </a>
     </td>
   </tr>
@@ -101,18 +99,18 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/dropdown/">
-            <img alt="Tailwind CSS Dropdown" src="https://flowbite.s3.amazonaws.com/github/dropdown.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/dropdown">
+            <img alt="Svelte Dropdown" src="https://flowbite.s3.amazonaws.com/github/svelte/dropdown.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/forms/">
-            <img alt="Tailwind CSS Forms" src="https://flowbite.s3.amazonaws.com/github/forms.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/forms">
+            <img alt="Svelte Forms" src="https://flowbite.s3.amazonaws.com/github/svelte/forms.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/list-group/">
-            <img alt="Tailwind CSS List group" src="https://flowbite.s3.amazonaws.com/github/list-group.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/list-group">
+            <img alt="Svelte List group" src="https://flowbite.s3.amazonaws.com/github/svelte/list-group.jpg">
         </a>
     </td>
   </tr>
@@ -123,18 +121,18 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/typography/">
-            <img alt="Tailwind CSS Typography" src="https://flowbite.s3.amazonaws.com/github/typography.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/typography">
+            <img alt="Svelte Typography" src="https://flowbite.s3.amazonaws.com/github/svelte/typography.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/modal/">
-            <img alt="Tailwind CSS Modal" src="https://flowbite.s3.amazonaws.com/github/modal.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/modal">
+            <img alt="Svelte Modal" src="https://flowbite.s3.amazonaws.com/github/svelte/modal.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/tab/">
-            <img alt="Tailwind CSS Tabs" src="https://flowbite.s3.amazonaws.com/github/tabs.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/tab">
+            <img alt="Svelte Tabs" src="https://flowbite.s3.amazonaws.com/github/svelte/tabs.jpg">
         </a>
     </td>
   </tr>
@@ -145,18 +143,18 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/navbar/">
-            <img alt="Tailwind CSS Navbar" src="https://flowbite.s3.amazonaws.com/github/navbar.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/navbar">
+            <img alt="Svelte Navbar" src="https://flowbite.s3.amazonaws.com/github/svelte/navbar.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/pagination/">
-            <img alt="Tailwind CSS Pagination" src="https://flowbite.s3.amazonaws.com/github/pagination.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/pagination">
+            <img alt="Svelte Pagination" src="https://flowbite.s3.amazonaws.com/github/svelte/pagination.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/timeline/">
-            <img alt="Tailwind CSS Timeline" src="https://flowbite.s3.amazonaws.com/github/timeline.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/timeline">
+            <img alt="Svelte Timeline" src="https://flowbite.s3.amazonaws.com/github/svelte/timeline.jpg">
         </a>
     </td>
   </tr>
@@ -167,18 +165,18 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/progress/">
-            <img alt="Tailwind CSS Progress Bar" src="https://flowbite.s3.amazonaws.com/github/progress.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/progress">
+            <img alt="Svelte Progress Bar" src="https://flowbite.s3.amazonaws.com/github/svelte/progress.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/table/">
-            <img alt="Tailwind CSS Tables" src="https://flowbite.s3.amazonaws.com/github/tables.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/table">
+            <img alt="Svelte Tables" src="https://flowbite.s3.amazonaws.com/github/svelte/table.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/toast/">
-            <img alt="Tailwind CSS Toast" src="https://flowbite.s3.amazonaws.com/github/toast.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/toast">
+            <img alt="Svelte Toast" src="https://flowbite.s3.amazonaws.com/github/svelte/toast.jpg">
         </a>
     </td>
   </tr>
@@ -189,18 +187,18 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/tooltip/">
-            <img alt="Tailwind CSS Tooltips" src="https://flowbite.s3.amazonaws.com/github/tooltips.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/tooltip">
+            <img alt="Svelte Tooltips" src="https://flowbite.s3.amazonaws.com/github/svelte/tooltips.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/plugins/datepicker/">
-            <img alt="Tailwind CSS Datepicker" src="https://flowbite.s3.amazonaws.com/github/datepicker.jpg">
+        <a href="https://flowbite-svelte.com/docs/experimental/datepicker">
+            <img alt="Svelte Datepicker" src="https://flowbite.s3.amazonaws.com/github/svelte/datepicker.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/spinner/">
-            <img alt="Tailwind CSS Spinner" src="https://flowbite.s3.amazonaws.com/github/spinner.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/spinner">
+            <img alt="Svelte Spinner" src="https://flowbite.s3.amazonaws.com/github/svelte/spinner.jpg">
         </a>
     </td>
   </tr>
@@ -211,18 +209,18 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/footer/">
-            <img alt="Tailwind CSS Footer" src="https://flowbite.s3.amazonaws.com/github/footer.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/footer">
+            <img alt="Svelte Footer" src="https://flowbite.s3.amazonaws.com/github/svelte/footer.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/accordion/">
-            <img alt="Tailwind CSS Accordion" src="https://flowbite.s3.amazonaws.com/github/accordion.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/accordion">
+            <img alt="Svelte Accordion" src="https://flowbite.s3.amazonaws.com/github/svelte/accordion.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/sidebar/">
-            <img alt="Tailwind CSS Sidebar" src="https://flowbite.s3.amazonaws.com/github/sidebar.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/sidebar">
+            <img alt="Svelte Sidebar" src="https://flowbite.s3.amazonaws.com/github/svelte/sidebar.jpg">
         </a>
     </td>
   </tr>
@@ -233,18 +231,18 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/carousel/">
-            <img alt="Tailwind CSS Carousel" src="https://flowbite.s3.amazonaws.com/github/carousel.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/carousel">
+            <img alt="Svelte Carousel" src="https://flowbite.s3.amazonaws.com/github/svelte/carousel.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/avatar/">
-            <img alt="Tailwind CSS Avatar" src="https://flowbite.s3.amazonaws.com/github/avatar.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/avatar">
+            <img alt="Svelte Avatar" src="https://flowbite.s3.amazonaws.com/github/svelte/avatar.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/rating/">
-            <img alt="Tailwind CSS Rating" src="https://flowbite.s3.amazonaws.com/github/rating.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/rating">
+            <img alt="Svelte Rating" src="https://flowbite.s3.amazonaws.com/github/svelte/rating.jpg">
         </a>
     </td>
   </tr>
@@ -255,18 +253,18 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/forms/input-field/">
-            <img alt="Tailwind CSS Input Field" src="https://flowbite.s3.amazonaws.com/github/input-field.jpg">
+        <a href="https://flowbite-svelte.com/docs/forms/input-field">
+            <img alt="Svelte Input Field" src="https://flowbite.s3.amazonaws.com/github/svelte/input-field.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/forms/file-input/">
-            <img alt="Tailwind CSS File Input" src="https://flowbite.s3.amazonaws.com/github/file-input.jpg">
+        <a href="https://flowbite-svelte.com/docs/forms/file-input">
+            <img alt="Svelte File Input" src="https://flowbite.s3.amazonaws.com/github/svelte/file-input.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/forms/search-input/">
-            <img alt="Tailwind CSS Search Input" src="https://flowbite.s3.amazonaws.com/github/search-input.jpg">
+        <a href="https://flowbite-svelte.com/docs/forms/search-input">
+            <img alt="Svelte Search Input" src="https://flowbite.s3.amazonaws.com/github/svelte/search-input.jpg">
         </a>
     </td>
   </tr>
@@ -277,18 +275,18 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/forms/select/">
-            <img alt="Tailwind CSS Select" src="https://flowbite.s3.amazonaws.com/github/select.jpg">
+        <a href="https://flowbite-svelte.com/docs/forms/select">
+            <img alt="Svelte Select" src="https://flowbite.s3.amazonaws.com/github/svelte/select.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/forms/textarea/">
-            <img alt="Tailwind CSS Textarea" src="https://flowbite.s3.amazonaws.com/github/textarea.jpg">
+        <a href="https://flowbite-svelte.com/docs/forms/textarea">
+            <img alt="Svelte Textarea" src="https://flowbite.s3.amazonaws.com/github/svelte/textarea.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/forms/checkbox/">
-            <img alt="Tailwind CSS Checkbox" src="https://flowbite.s3.amazonaws.com/github/checkbox.jpg">
+        <a href="https://flowbite-svelte.com/docs/forms/checkbox">
+            <img alt="Svelte Checkbox" src="https://flowbite.s3.amazonaws.com/github/svelte/checkbox.jpg">
         </a>
     </td>
   </tr>
@@ -299,18 +297,18 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/forms/radio/">
-            <img alt="Tailwind CSS Radio" src="https://flowbite.s3.amazonaws.com/github/radio.jpg">
+        <a href="https://flowbite-svelte.com/docs/forms/radio">
+            <img alt="Svelte Radio" src="https://flowbite.s3.amazonaws.com/github/svelte/radio.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/forms/toggle/">
-            <img alt="Tailwind CSS Toggle" src="https://flowbite.s3.amazonaws.com/github/toggle.jpg">
+        <a href="https://flowbite-svelte.com/docs/forms/toggle">
+            <img alt="Svelte Toggle" src="https://flowbite.s3.amazonaws.com/github/svelte/toggle.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/forms/range/">
-            <img alt="Tailwind CSS Range Slider" src="https://flowbite.s3.amazonaws.com/github/range-slider.jpg">
+        <a href="https://flowbite-svelte.com/docs/forms/range">
+            <img alt="Svelte Range Slider" src="https://flowbite.s3.amazonaws.com/github/svelte/range-slider.jpg">
         </a>
     </td>
   </tr>
@@ -321,18 +319,18 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/forms/floating-label/">
-            <img alt="Tailwind CSS Floating Label" src="https://flowbite.s3.amazonaws.com/github/floating-label.jpg">
+        <a href="https://flowbite-svelte.com/docs/forms/floating-label">
+            <img alt="Svelte Floating Label" src="https://flowbite.s3.amazonaws.com/github/svelte/floating-label.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/mega-menu/">
-            <img alt="Tailwind CSS Mega Menu" src="https://flowbite.s3.amazonaws.com/github/mega-menu.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/mega-menu">
+            <img alt="Svelte Mega Menu" src="https://flowbite.s3.amazonaws.com/github/svelte/mega-menu.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/skeleton/">
-            <img alt="Tailwind CSS Skeleton" src="https://flowbite.s3.amazonaws.com/github/skeleton.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/skeleton">
+            <img alt="Svelte Skeleton" src="https://flowbite.s3.amazonaws.com/github/svelte/skeleton.jpg">
         </a>
     </td>
   </tr>
@@ -343,18 +341,18 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/kbd/">
-            <img alt="Tailwind CSS KBD (Keyboard)" src="https://flowbite.s3.amazonaws.com/github/kbd.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/kbd">
+            <img alt="Svelte KBD (Keyboard)" src="https://flowbite.s3.amazonaws.com/github/svelte/kbd.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/drawer/">
-            <img alt="Tailwind CSS Drawer (offcanvas)" src="https://flowbite.s3.amazonaws.com/github/drawer.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/drawer">
+            <img alt="Svelte Drawer (offcanvas)" src="https://flowbite.s3.amazonaws.com/github/svelte/drawer.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/popover/">
-            <img alt="Tailwind CSS Popover" src="https://flowbite.s3.amazonaws.com/github/popover.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/popover">
+            <img alt="Svelte Popover" src="https://flowbite.s3.amazonaws.com/github/svelte/popover.jpg">
         </a>
     </td>
   </tr>
@@ -365,18 +363,18 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/video/">
-            <img alt="Tailwind CSS Video" src="https://flowbite.s3.amazonaws.com/github/video.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/video">
+            <img alt="Svelte Video" src="https://flowbite.s3.amazonaws.com/github/svelte/video.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/typography/heading/">
-            <img alt="Tailwind CSS Heading" src="https://flowbite.s3.amazonaws.com/github/heading.jpg">
+        <a href="https://flowbite-svelte.com/typography/heading">
+            <img alt="Svelte Heading" src="https://flowbite.s3.amazonaws.com/github/svelte/heading.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/typography/paragraph/">
-            <img alt="Tailwind CSS Paragraph" src="https://flowbite.s3.amazonaws.com/github/paragraph.jpg">
+        <a href="https://flowbite-svelte.com/typography/paragraph">
+            <img alt="Svelte Paragraph" src="https://flowbite.s3.amazonaws.com/github/svelte/paragraph.jpg">
         </a>
     </td>
   </tr>
@@ -387,18 +385,18 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/typography/blockquote/">
-            <img alt="Tailwind CSS Blockquote" src="https://flowbite.s3.amazonaws.com/github/blockquote.jpg">
+        <a href="https://flowbite-svelte.com/typography/blockquote">
+            <img alt="Svelte Blockquote" src="https://flowbite.s3.amazonaws.com/github/svelte/blockquote.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/typography/image/">
-            <img alt="Tailwind CSS Image" src="https://flowbite.s3.amazonaws.com/github/image.jpg">
+        <a href="https://flowbite-svelte.com/typography/image">
+            <img alt="Svelte Image" src="https://flowbite.s3.amazonaws.com/github/svelte/image.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/typography/list/">
-            <img alt="Tailwind CSS List" src="https://flowbite.s3.amazonaws.com/github/list.jpg">
+        <a href="https://flowbite-svelte.com/typography/list">
+            <img alt="Svelte List" src="https://flowbite.s3.amazonaws.com/github/svelte/list.jpg">
         </a>
     </td>
   </tr>
@@ -409,18 +407,18 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/typography/link/">
-            <img alt="Tailwind CSS Link" src="https://flowbite.s3.amazonaws.com/github/link.jpg">
+        <a href="https://flowbite-svelte.com/typography/link">
+            <img alt="Svelte Link" src="https://flowbite.s3.amazonaws.com/github/svelte/link.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/typography/text/">
-            <img alt="Tailwind CSS Text" src="https://flowbite.s3.amazonaws.com/github/text.jpg">
+        <a href="https://flowbite-svelte.com/typography/text">
+            <img alt="Svelte Text" src="https://flowbite.s3.amazonaws.com/github/svelte/text.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/typography/hr/">
-            <img alt="Tailwind CSS HR" src="https://flowbite.s3.amazonaws.com/github/hr.jpg">
+        <a href="https://flowbite-svelte.com/typography/hr">
+            <img alt="Svelte HR" src="https://flowbite.s3.amazonaws.com/github/svelte/hr.jpg">
         </a>
     </td>
   </tr>
@@ -431,18 +429,18 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/speed-dial/">
-            <img alt="Tailwind CSS Speed Dial" src="https://flowbite.s3.amazonaws.com/github/dial.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/speed-dial">
+            <img alt="Svelte Speed Dial" src="https://flowbite.s3.amazonaws.com/github/svelte/dial.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/">
-            <img alt="Tailwind CSS Stepper" src="https://flowbite.s3.amazonaws.com/github/stepper.jpg">
+        <a href="https://flowbite-svelte.com">
+            <img alt="Svelte Stepper" src="https://flowbite.s3.amazonaws.com/github/svelte/stepper.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/indicators/">
-            <img alt="Tailwind CSS Indicators" src="https://flowbite.s3.amazonaws.com/github/indicators.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/indicators">
+            <img alt="Svelte Indicators" src="https://flowbite.s3.amazonaws.com/github/svelte/indicators.jpg">
         </a>
     </td>
   </tr>
@@ -453,18 +451,18 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/bottom-navigation/">
-            <img alt="Tailwind CSS Bottom Navigation Bar" src="https://flowbite.s3.amazonaws.com/github/bottom-bar.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/bottom-navigation">
+            <img alt="Svelte Bottom Navigation Bar" src="https://flowbite.s3.amazonaws.com/github/svelte/bottom-bar.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/banner/">
-            <img alt="Tailwind CSS Bottom Sticky Banner" src="https://flowbite.s3.amazonaws.com/github/banner.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/banner">
+            <img alt="Svelte Bottom Sticky Banner" src="https://flowbite.s3.amazonaws.com/github/svelte/banner.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/gallery/">
-            <img alt="Tailwind CSS Image Gallery (Masonry)" src="https://flowbite.s3.amazonaws.com/github/gallery.jpg">
+        <a href="https://flowbite-svelte.com/docs/components/gallery">
+            <img alt="Svelte Image Gallery (Masonry)" src="https://flowbite.s3.amazonaws.com/github/svelte/gallery.jpg">
         </a>
     </td>
   </tr>
@@ -474,7 +472,7 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
 
 If you need help or just want to discuss about the library join the community on Github:
 
-⌨️ [Discuss about Flowbite on GitHub](https://github.com/themesberg/flowbite/discussions)
+⌨️ [Discuss about Flowbite on GitHub](https://github.com/themesberg/flowbite-svelte/discussions)
 
 For casual chatting with others using the library:
 
@@ -500,12 +498,16 @@ This will pull all props from components and replace files in `/src/routes/props
 
 ## Contribute
 
-Please read [How to contribute](https://github.com/themesberg/flowbite-svelte/blob/main/CONTRIBUTING.md).
+Please read [how to contribute](https://github.com/themesberg/flowbite-svelte/blob/main/CONTRIBUTING.md) if you'd like to be part of the Flowbite community of contributors.
 
 ## Changelog
 
-[Changelog](https://github.com/themesberg/flowbite-svelte/blob/main/CHANGELOG.md)
+View the full [changelog](https://github.com/themesberg/flowbite-svelte/blob/main/CHANGELOG.md) on this page.
 
 ## SvelteKit version
 
 1.0.1
+
+## License
+
+Flowbite Svelte is open-source under the [MIT License](https://flowbite-svelte.com/docs/pages/license).

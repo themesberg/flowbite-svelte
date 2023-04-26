@@ -4,16 +4,16 @@
   import ChevronRight from '$lib/utils/ChevronRight.svelte';
   import Community from '../utils/icons/Community.svelte';
   import type { PageData } from '../$types';
+  import Section from './utils/Section.svelte';
 
   export let data: PageData;
 
   let name: string;
 </script>
 
-<!-- Team -->
-<section class="flex flex-col px-4 py-24 items-center">
+<Section class="lg:py-24">
   <!-- containter -->
-  <div class="flex flex-col gap-12 items-center w-full max-w-7xl">
+  <div class="flex flex-col gap-12 items-center w-full max-w-7xl mx-auto">
     <!-- heading -->
     <div class="flex flex-col gap-4 items-center justify-center max-w-2xl">
       <h2
@@ -21,7 +21,8 @@
         Community contributors
       </h2>
       <p class="text-lg font-normal text-center">
-        Join the open-source community by contributing to the Flowbite Svelte Library and become one of the highlighted members
+        Join the open-source community by contributing to the Flowbite Svelte Library and become one of the
+        highlighted members
       </p>
     </div>
     <!-- avatars -->
@@ -31,9 +32,9 @@
           {#each data?.contributors || [] as contributor}
             <a href={contributor.html_url} rel="nofollow noreferrer" target="_blank">
               <Avatar
-              data-name={contributor.login}
-              src={contributor.avatar_url}
-              class="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16" />
+                data-name={contributor.login}
+                src={contributor.avatar_url}
+                class="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16" />
             </a>
           {/each}
         {/if}
@@ -60,4 +61,4 @@
       </div>
     </div>
   </div>
-</section>
+</Section>

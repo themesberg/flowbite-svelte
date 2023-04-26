@@ -31,10 +31,10 @@ If your Svelte app only requires a few components, it's recommended that you imp
 
 If you are a TypeScript user, install typescript version 5.0.0 or above.
 
-As of March 2023, the typescript@beta version is now available:
+As of April 2023, the typescript version 5 is available:
 
 ```sh
-pnpm i -D typescript@beta
+pnpm i -D typescript@latest
 ```
 
 To avoid any complaints from the editor, add node16 or nodenext to moduleResolution in your tsconfig.json file.

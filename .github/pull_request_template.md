@@ -10,10 +10,11 @@ Closes #<!-- Issue # here -->
 ## 📑 Description
 <!-- Add a brief description of the PR -->
 
-<!-- You can also choose to add a list of changes and if they have been completed or not by using the markdown to-do list syntax
-- [ ] Not Completed
-- [x] Completed
--->
+## Status
+
+- [x] Not Completed
+- [ ] Completed
+
 
 ## ✅ Checks
 <!-- Make sure your PR passes the tests and do check the following fields as needed - -->
