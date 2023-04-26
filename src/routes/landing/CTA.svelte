@@ -96,29 +96,15 @@
       <div class="flex flex-col items-start gap-4 self-stretch">
         <H2>Works with Tailwind CSS</H2>
         <p class="text-lg text-gray-500 dark:text-gray-400">
-          <A href="/">Flowbite Budget</A> is a mobile app that helps users easily track their expenses and create
-          a budget.
+          Flowbite Svelte uses the Tailwind CSS utility classes under the hood which means it will be easy to customize the appearance and specifications of the UI components directly from the HTML code.
         </p>
         <p class="text-lg text-gray-500 dark:text-gray-400">
-          With a user-friendly interface, the app allows users to quickly input their income and expenses,
-          and then automatically categorizes them for easy tracking.
+          <A href="https://tailwindcss.com">Tailwind CSS</A> is a popular and open-source utility-first CSS framework that you can use to speed up the development of your front-end projects.
+        </p>
+        <p class="text-lg text-gray-500 dark:text-gray-400">
+          Flowbite Svelte is also based on the core <A href="https://flowbite.com">Flowbite</A> UI component library the also features interactive UI components like dropdowns, modals, navbars, and more.
         </p>
       </div>
 
-      <div class="flex flex-col items-start pt-8 self-stretch">
-        <List tag="ul" class="mb-8 space-y-4 font-medium text-gray-900 dark:text-white" list="none" ulClass=''>
-          {#each features as feature}
-            <Li icon class="gap-2">
-              <Check class="w-5 h-5 p-1 rounded-full bg-primary-100 dark:bg-gray-700 text-primary-700" />
-              {feature}
-            </Li>
-          {/each}
-        </List>
-
-        <div class="flex flex-row gap-4">
-          <Button color="primary" class="gap-4">Start building <ArrowRight /></Button>
-          <Button color="light" class="w-32 dark:!text-gray-400">Get demo</Button>
-        </div>
-      </div>
     </Row>
   </Section>

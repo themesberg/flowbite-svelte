@@ -12,7 +12,7 @@
     <div
       class:min-h-full={h_full}
       class:h-96={!h_full}
-      class="flex-grow bg-no-repeat {contain? 'bg-contain': 'bg-cover'} shadow-md rounded-lg {image}" />
+      class="flex-grow bg-no-repeat {contain? 'bg-contain': 'bg-cover'} rounded-lg {image}" />
   </div>
   <div
     class:divide-y={divide}
