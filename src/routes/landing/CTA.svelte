@@ -60,14 +60,12 @@
         </div>
       </div>
       <div class="flex flex-col items-start py-4 gap-4 self-stretch">
-        <H2>Dark mode itegration</H2>
+        <H2>Dark mode integration</H2>
         <p class="text-lg text-gray-500 dark:text-gray-400 mb-2">
-          Dark mode is a popular feature that is being offered by many applications, operating systems, and
-          websites in recent years.
+          Flowbite Svelte supports <A href="/docs/components/darkmode">dark mode</A> and can be easily integrated into your project by following the official documentation based on Svelte.
         </p>
         <p class="text-lg text-gray-500 dark:text-gray-400">
-          It changes the color scheme of the user interface from a light background with dark text to a dark
-          background with light text, providing a new and sleek look that many users find appealing.
+          Enabling dark mode will allow users to either select the preferred method (light or dark) or automatically switch based on the operating system settings.
         </p>
       </div>
       <List
@@ -77,15 +75,15 @@
         list="none">
         <Li icon class="gap-2">
           <Check class="w-5 h-5 p-1 rounded-full bg-primary-100 dark:bg-gray-700 text-primary-700" />
-          Reduced eye strain
+          Increased accessibility based on room brightness
         </Li>
         <Li icon class="gap-2">
           <Check class="w-5 h-5 p-1 rounded-full bg-primary-100 dark:bg-gray-700 text-primary-700" />
-          Better visibility in low light conditions
+          Better visibility for users with low vision
         </Li>
         <Li icon class="gap-2">
           <Check class="w-5 h-5 p-1 rounded-full bg-primary-100 dark:bg-gray-700 text-primary-700" />
-          Accessibility
+          Improved readability for users with light sensitivity
         </Li>
       </List>
       <a href="/docs/components/darkmode" class="flex items-center gap-4 text-primary-600 font-medium"
