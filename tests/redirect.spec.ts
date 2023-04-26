@@ -173,4 +173,3 @@ test('Tooltip page should have h1', async ({ page }) => {
   await page.goto('/tooltip');
   expect(await page.textContent('h1')).toBe('Svelte Tooltip - Flowbite');
 });
-

@@ -14,7 +14,7 @@
 
 <MetaTags
   title={breadcrumb_title}
-  titleTemplate="%s Flowbite-Svelte"
+  titleTemplate="%s - Flowbite"
   {description}
   facebook={{
     appId: '453670756870545'
@@ -32,7 +32,7 @@
         alt: `${title}`
       }
     ],
-    site_name: 'Flowbite-Svelte'
+    site_name: 'Flowbite Svelte'
   }}
   twitter={{
     handle: '@shinokada',

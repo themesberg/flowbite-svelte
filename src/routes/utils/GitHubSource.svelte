@@ -13,6 +13,6 @@
     href="https://github.com/themesberg/flowbite-svelte/blob/main/src/lib/{href}"
     target="_blank"
     rel="noreferrer"
-    class="hover:underline hover:text-blue-500">
+    class="hover:underline hover:text-primary-500">
     <slot />: View Source Code</a>
 </p>

@@ -12,16 +12,17 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
 		rel="stylesheet">
-	<link rel="stylesheet" href="/styles/docs.css">
-
+	
 	<!-- Fathom - beautiful, simple website analytics -->
 	<script src="https://cdn.usefathom.com/script.js" data-site="DDUWRXWI" defer></script>
 	<!-- / Fathom -->
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@alpha" />
 	%sveltekit.head%
 </head>
 
-<body data-sveltekit-preload-data class="bg-white dark:bg-gray-900">
-	<div id="svelte" class="max-h-screen overflow-auto relative">%sveltekit.body%</div>
+<body data-sveltekit-preload-data class="bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 antialiased">
+	<div id="svelte" class="max-h-screen overflow-auto relative w-full">%sveltekit.body%</div>
 </body>
 
 </html>

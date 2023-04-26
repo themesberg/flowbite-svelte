@@ -1,15 +1,28 @@
 <script lang="ts">
+	interface Sizes {
+    [key: string]: string;
+  }
+
+  const sizes: Sizes = {
+    sm: 'max-w-sm',
+    md: 'max-w-md',
+    lg: 'max-w-lg',
+    xl: 'max-w-xl',
+		xxl: 'max-w-2xl'
+  };
+
 	import classNames from 'classnames';
 	export let divClass: string =
-		'p-4 max-w-sm rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700';
-	export let size: string = '48';
+		'p-4 rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700';
+	export let size: keyof Sizes = 'sm';
+	$: outDivclass = classNames(sizes[size], divClass, $$props.class)
 </script>
 
-<div role="status" class={classNames(divClass, $$props.class)}>
+<div role="status" class={outDivclass}>
 	<div class="flex justify-center items-center mb-4 h-48 bg-gray-300 rounded dark:bg-gray-700">
 		<svg
-			width={size}
-			height={size}
+			width=48
+			height=48
 			class="text-gray-200 dark:text-gray-600"
 			xmlns="http://www.w3.org/2000/svg"
 			aria-hidden="true"
@@ -20,7 +33,7 @@
 			/></svg
 		>
 	</div>
-	<div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4" />
+	<div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-1/2 mb-4" />
 	<div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5" />
 	<div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5" />
 	<div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700" />

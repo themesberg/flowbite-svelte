@@ -1,1 +1,1 @@
-{"props":[["divClass","string ","'max-w-sm animate-pulse'"]]}
+{"props":[["divClass","string ","'animate-pulse'"],["size","keyof Sizes ","'sm'"]]}

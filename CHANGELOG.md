@@ -2,6 +2,66 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.34.9](https://github.com/themesberg/flowbite-svelte/compare/v0.34.8...v0.34.9) (2023-04-11)
+
+### [0.34.8](https://github.com/themesberg/flowbite-svelte/compare/v0.34.7...v0.34.8) (2023-04-11)
+
+
+### Bug Fixes
+
+* add main: index.js to package.json ([ce82350](https://github.com/themesberg/flowbite-svelte/commit/ce823503b9ef21abf5d751ae7f3606e26db3d2c7))
+
+### [0.34.7](https://github.com/themesberg/flowbite-svelte/compare/v0.34.6...v0.34.7) (2023-04-05)
+
+
+### Bug Fixes
+
+* typo in docs ([#645](https://github.com/themesberg/flowbite-svelte/issues/645)) ([d010eef](https://github.com/themesberg/flowbite-svelte/commit/d010eef360a32460eff383e585cd14cd31ee3bfa))
+
+### [0.34.6](https://github.com/themesberg/flowbite-svelte/compare/v0.34.5...v0.34.6) (2023-04-05)
+
+
+### Bug Fixes
+
+* remove TabHead and TabHeadItem ([c255797](https://github.com/themesberg/flowbite-svelte/commit/c25579742f17a822f8f2a2c325da2c7c98c375cc))
+
+### [0.34.5](https://github.com/themesberg/flowbite-svelte/compare/v0.34.4...v0.34.5) (2023-04-04)
+
+
+### Bug Fixes
+
+* clean up & remove ExampleDiv, GitHubSource, and CompoDescription ([#639](https://github.com/themesberg/flowbite-svelte/issues/639)) ([113df27](https://github.com/themesberg/flowbite-svelte/commit/113df2716cde7f0c3e0c7aa904bafdc3ece15cd1))
+* forward input event ([#627](https://github.com/themesberg/flowbite-svelte/issues/627)) ([22d20db](https://github.com/themesberg/flowbite-svelte/commit/22d20dbb6845e5ed0d7188e304c406a5c8cb8758))
+* remove unused components and update props ([#642](https://github.com/themesberg/flowbite-svelte/issues/642)) ([e6a4fb5](https://github.com/themesberg/flowbite-svelte/commit/e6a4fb5c63888e1aa90229414d5814e9a3c5fe27))
+* sidebar z-10 to z-30 for front page ([79b5adc](https://github.com/themesberg/flowbite-svelte/commit/79b5adc075633b2fb4904f7b907b0d8e50dc28a3))
+* sidebar z-50 to z-10 for modals ([4b76f75](https://github.com/themesberg/flowbite-svelte/commit/4b76f75650bb5670117c4959cb6b622f639242db))
+
+### [0.34.4](https://github.com/themesberg/flowbite-svelte/compare/v0.34.3...v0.34.4) (2023-03-31)
+
+
+### Features
+
+* add color, gradient, shadow, and outline props to speed-dial ([#636](https://github.com/themesberg/flowbite-svelte/issues/636)) ([563a7ee](https://github.com/themesberg/flowbite-svelte/commit/563a7eecdf69301da232aa7ccd6734e49dc87f4c))
+
+
+### Bug Fixes
+
+* update props ([cb92b47](https://github.com/themesberg/flowbite-svelte/commit/cb92b47bd79f8833aea263d106675881a6fcd456))
+
+### [0.34.3](https://github.com/themesberg/flowbite-svelte/compare/v0.34.2...v0.34.3) (2023-03-30)
+
+
+### Bug Fixes
+
+* dropdown page ([d3d4827](https://github.com/themesberg/flowbite-svelte/commit/d3d48276e27cc18300de1b1cc2a26ce05de733d8))
+* dropdown page add dark:text-white to MenuButton and change to color:green for Avatar ([900feca](https://github.com/themesberg/flowbite-svelte/commit/900feca1d8f4e617821c6a4ccf3687839a302cf0))
+* remove duplicate theme from tailwind.config ([5d0ebe5](https://github.com/themesberg/flowbite-svelte/commit/5d0ebe5ab587e489498bba825527d613cddb2eaf))
+* TextPlaceHolder remove w-full ([e3ec175](https://github.com/themesberg/flowbite-svelte/commit/e3ec175bc3ec366a5e027feb5e21721fdd223243))
+* top navbar margin top ([d9c83b4](https://github.com/themesberg/flowbite-svelte/commit/d9c83b46bcd0c67d176ad60b0cbd3089a62471ab))
+* typo CardPlaceholder ([71bea4d](https://github.com/themesberg/flowbite-svelte/commit/71bea4d98b5046d866aa2ded2e00cc30e4b44b61))
+* update props table and github links ([0a184d1](https://github.com/themesberg/flowbite-svelte/commit/0a184d11469729e2697ea91117ad487e2b6e3741))
+* update skeleton components ([b1ffbc7](https://github.com/themesberg/flowbite-svelte/commit/b1ffbc789536f0e6be4bcca3e4083466c62fe85e))
+
 ### [0.34.2](https://github.com/themesberg/flowbite-svelte/compare/v0.34.1...v0.34.2) (2023-03-21)
 
 

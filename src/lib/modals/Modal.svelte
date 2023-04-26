@@ -113,7 +113,7 @@
   <!-- dialog -->
   <div
     on:keydown={handleKeys}
-    on:wheel|preventDefault
+    on:wheel|preventDefault|nonpassive
     use:prepareFocus
     use:focusTrap
     on:click={autoclose ? onAutoClose : null}
@@ -150,7 +150,7 @@
           id="modal"
           class="p-6 space-y-6 flex-1 overflow-y-auto overscroll-contain"
           on:keydown|stopPropagation={handleKeys}
-          on:wheel|stopPropagation={preventWheelDefault}>
+          on:wheel|stopPropagation|passive>
           <slot />
         </div>
         <!-- Modal footer -->

@@ -1,1 +1,1 @@
-{"props":[["divClass","string ","'flex justify-center items-center max-w-sm h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700'"],["size","string ","'48'"]]}
+{"props":[["divClass","string ","'flex justify-center items-center h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700'"],["size","keyof Sizes ","'sm'"]]}

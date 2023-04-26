@@ -1,13 +1,11 @@
+@import "../static/styles/docs.css";
+@import "../node_modules/flowbite/dist/flowbite.css";
+
 /* Write your global styles here, in PostCSS syntax */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-pre {
-	background-color: rgb(242, 242, 242);
-	white-space: pre-wrap;
-	width: 100%;
-}
 
 @layer base {
 	html {
@@ -18,10 +16,6 @@ pre {
 		tab-size: 4;
 	}
 
-	/* Do not change these. Changing this affect components as well */
-	main p {
-		@apply text-gray-900 dark:text-white;
-	}
   
   .related-components,
 	.references {
@@ -33,9 +27,8 @@ pre {
 		@apply w-full md:w-1/2 lg:w-1/3;
 	}
 
-	main p>code,
-	main ul>li>code,
-	main ol>li>code {
-		@apply px-1 font-mono text-sm text-blue-600 break-all dark:text-blue-400 whitespace-nowrap;
+	#mainContent > pre {
+		@apply text-sm rounded-xl overflow-auto w-full my-4 mx-auto bg-gradient-to-r text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-2 sm:p-6;
 	}
 }
+

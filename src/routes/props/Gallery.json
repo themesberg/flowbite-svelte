@@ -1,1 +1,1 @@
-{"props":[["outerDivClass","string ","'grid gap-4'"],["colClass","string ","'grid-cols-2 md:grid-cols-3'"]]}
+{"props":[["items","ImgType[] ","[]"]]}

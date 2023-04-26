@@ -1,6 +1,6 @@
 // Accordion
-export { default as Accordion } from './accordions/Accordion.svelte';
-export { default as AccordionItem } from './accordions/AccordionItem.svelte';
+export { default as Accordion } from './accordion/Accordion.svelte';
+export { default as AccordionItem } from './accordion/AccordionItem.svelte';
 
 // Alerts
 export { default as Alert } from './alerts/Alert.svelte';
@@ -18,7 +18,7 @@ export { default as Banner } from './banner/Banner.svelte';
 export { default as BottomNav } from './bottom-nav/BottomNav.svelte';
 export { default as BottomNavItem } from './bottom-nav/BottomNavItem.svelte';
 export { default as BottomNavHeader } from './bottom-nav/BottomNavHeader.svelte';
-export { default as BottomNavHeaderItem } from './bottom-nav/BottomNavHeaderItem.svelte'
+export { default as BottomNavHeaderItem } from './bottom-nav/BottomNavHeaderItem.svelte';
 
 // Breadcrumbs
 export { default as Breadcrumb } from './breadcrumbs/Breadcrumb.svelte';
@@ -80,8 +80,7 @@ export { default as Toggle } from './forms/Toggle.svelte';
 export { default as VoiceSearch } from './forms/VoiceSearch.svelte';
 
 // Gallery
-export { default as Gallery } from './gallery/Gallery.svelte'
-export { default as GalleryItem } from './gallery/GalleryItem.svelte'
+export { default as Gallery } from './gallery/Gallery.svelte';
 
 // Indicator
 export { default as Indicator } from './indicators/Indicator.svelte';
@@ -171,15 +170,15 @@ export { default as TabItem } from './tabs/TabItem.svelte';
 export { default as Tabs } from './tabs/Tabs.svelte';
 
 // Timeline
-export { default as Group } from './timelines/Group.svelte';
-export { default as GroupItem } from './timelines/GroupItem.svelte';
-export { default as Activity } from './timelines/Activity.svelte';
-export { default as ActivityItem } from './timelines/ActivityItem.svelte';
-export { default as Timeline } from './timelines/Timeline.svelte';
-export { default as TimelineItem } from './timelines/TimelineItem.svelte';
-export { default as TimelineHorizontal } from './timelines/TimelineHorizontal.svelte';
-export { default as TimelineItemHorizontal } from './timelines/TimelineItemHorizontal.svelte';
-export { default as TimelineItemVertical } from './timelines/TimelineItemVertical.svelte';
+export { default as Group } from './timeline/Group.svelte';
+export { default as GroupItem } from './timeline/GroupItem.svelte';
+export { default as Activity } from './timeline/Activity.svelte';
+export { default as ActivityItem } from './timeline/ActivityItem.svelte';
+export { default as Timeline } from './timeline/Timeline.svelte';
+export { default as TimelineItem } from './timeline/TimelineItem.svelte';
+export { default as TimelineHorizontal } from './timeline/TimelineHorizontal.svelte';
+export { default as TimelineItemHorizontal } from './timeline/TimelineItemHorizontal.svelte';
+export { default as TimelineItemVertical } from './timeline/TimelineItemVertical.svelte';
 
 // Toast
 export { default as Toast } from './toasts/Toast.svelte';

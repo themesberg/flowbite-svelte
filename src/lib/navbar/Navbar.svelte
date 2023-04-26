@@ -33,7 +33,9 @@
 </script>
 
 <Frame tag="nav" {color} {...$$restProps} class={classNames(navClass, $$props.class)}>
-  <div class={classNames(navDivClass, fluid || 'container')}>
+
+  <div class={classNames(navDivClass, (fluid && 'w-full') || 'container')}>
     <slot {hidden} {toggle} {collapse} />
+
   </div>
 </Frame>
