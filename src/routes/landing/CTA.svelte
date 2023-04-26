@@ -11,25 +11,23 @@
   import Moon from '../utils/icons/Moon.svelte';
     import Section from './utils/Section.svelte';
   const features = [
-    'Dynamic reports and dashboards',
-    'Templates for everyone',
-    'Development workflow',
-    'Limitless business automation',
-    'Knowledge management'
+    'Huge collection of UI components',
+    'Open-source under the MIT License',
+    'Interactivity handled by Svelte',
+    'Utility classes based on Tailwind CSS',
+    'Based on the Flowbite ecosystem and design'
   ];
 </script>
 
 <Section class="lg:py-24">
     <Row image="bg-[url('/images/code-example.png')] dark:bg-[url('/images/code-example-dark.png')]" divide h_full>
       <div class="flex flex-col items-start gap-3 sm:gap-4 self-stretch">
-        <H2>UI components in Svelte</H2>
+        <H2>Svelte UI components</H2>
         <p class="text-lg text-gray-500 dark:text-gray-400">
-          <A href="/">Flowbite Budget</A> is a mobile app that helps users easily track their expenses and create
-          a budget.
+          <A href="/docs/pages/introduction">Flowbite Svelte</A> is a free and open-source UI component library built using Svelte based on Flowbite and Tailwind CSS.
         </p>
         <p class="text-lg text-gray-500 dark:text-gray-400">
-          With a user-friendly interface, the app allows users to quickly input their income and expenses,
-          and then automatically categorizes them for easy tracking.
+          By installing the package via NPM you will be able to build modern looking web applications fast by leveraging Svelte, Tailwind CSS and Flowbite using ready-made UI components like dropdowns, navbars, modals, and more.
         </p>
       </div>
 
@@ -44,8 +42,8 @@
         </List>
 
         <div class="flex flex-row gap-4">
-          <Button color="primary" class="gap-4">Start building <ArrowRight /></Button>
-          <Button color="light" class="w-32 dark:!text-gray-400">Get demo</Button>
+          <Button href="/docs/pages/introduction" color="primary" class="gap-4">Start building <ArrowRight /></Button>
+          <Button href="https://github.com/themesberg/flowbite-svelte" color="light" class="w-auto dark:!text-gray-400">View on GitHub</Button>
         </div>
       </div>
     </Row>
