@@ -13,7 +13,7 @@
 
   let github = data.github?.stargazers_count ?? 0;
   let npm = data.npm?.downloads ?? 0;
-  let figma = 13000;
+  let figma = 5400;
   let discord = 657;
 
   function format(x: number) {
@@ -53,41 +53,41 @@
     <div class="flex flex-col items-start gap-6 md:gap-3 w-full">
       <div
         class="flex flex-row items-start md:justify-between md:pr-16 lg:pr-0 lg:justify-end gap-2 md:gap-2 lg:gap-2 self-stretch">
-        <div
-          class="flex flex-col items-start gap-4 md:gap-6 text-gray-400 w-full max-w-[272px] lg:py-6 lg:px-8">
+        <a href="https://github.com/themesberg/flowbite-svelte"
+          class="flex flex-col items-start gap-4 text-gray-400 w-full max-w-[272px] lg:py-6 lg:px-8 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg">
           <GitHub />
           <div class="flex flex-col items-start gap-2">
             <p class="leading-tight text-2xl font-bold text-gray-900 dark:text-white">{format(github)}</p>
-            <p class="text-sm md:text-base text-gray-500">Stars on Github</p>
+            <p class="text-sm md:text-base text-gray-500 dark:text-gray-400">Stars on Github</p>
           </div>
-        </div>
-        <div
-          class="flex flex-col items-start gap-4 md:gap-6 text-gray-400 w-full max-w-[272px] lg:py-6 lg:px-8">
+        </a>
+        <a href="https://npmjs.com/package/flowbite-svelte"
+          class="flex flex-col items-start gap-4 text-gray-400 w-full max-w-[272px] lg:py-6 lg:px-8 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg">
           <Npm />
-          <div class="flex flex-col items-start gap-2">
+          <div class="flex flex-col mt-1 items-start gap-2">
             <p class="leading-tight text-2xl font-bold text-gray-900 dark:text-white">{format(npm)}</p>
-            <p class="text-sm md:text-base text-gray-500">Downloads on NPM</p>
+            <p class="text-sm md:text-base text-gray-500 dark:text-gray-400">Downloads on NPM</p>
           </div>
-        </div>
+        </a>
       </div>
       <div
         class="flex flex-row items-start md:justify-between md:pr-16 lg:pr-0 lg:justify-end gap-2 md:gap-12 lg:gap-2 self-stretch">
-        <div
-          class="flex flex-col items-start gap-4 md:gap-6 text-gray-400 w-full max-w-[272px] lg:py-6 lg:px-8">
+        <a href="https://www.figma.com/community/file/1179442320711977498/Flowbite-Design-System"
+          class="flex flex-col items-start gap-4 text-gray-400 w-full max-w-[272px] lg:py-6 lg:px-8 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg">
           <Figma />
           <div class="flex flex-col items-start gap-2">
             <p class="leading-tight text-2xl font-bold text-gray-900 dark:text-white">{format(figma)}</p>
-            <p class="text-sm md:text-base text-gray-500">Figma duplicates</p>
+            <p class="text-sm md:text-base text-gray-500 dark:text-gray-400">Figma duplicates</p>
           </div>
-        </div>
-        <div
-          class="flex flex-col items-start gap-4 md:gap-6 text-gray-400 w-full max-w-[272px] lg:py-6 lg:px-8">
+        </a>
+        <a href="https://discord.gg/4eeurUVvTy" rel="nofollow"
+          class="flex flex-col items-start gap-4 text-gray-400 w-full max-w-[272px] lg:py-6 lg:px-8 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg">
           <Discord />
           <div class="flex flex-col items-start gap-2">
             <p class="leading-tight text-2xl font-bold text-gray-900 dark:text-white">{format(discord)}</p>
-            <p class="text-sm md:text-base text-gray-500">Discord members online</p>
+            <p class="text-sm md:text-base text-gray-500 dark:text-gray-400">Discord members online</p>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
