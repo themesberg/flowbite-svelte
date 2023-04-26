@@ -9,6 +9,7 @@
   import Row from './Row.svelte';
   import Sun from '../utils/icons/Sun.svelte';
   import Moon from '../utils/icons/Moon.svelte';
+    import Section from './utils/Section.svelte';
   const features = [
     'Dynamic reports and dashboards',
     'Templates for everyone',
@@ -18,9 +19,8 @@
   ];
 </script>
 
-<section class="flex flex-col items-center bg-gray-50 dark:bg-gray-800">
-  <div class="mx-auto max-w-8xl px-4 lg:px-20 lg:py-16 gap-0 lg:gap-20">
-    <Row image="bg-[url('/images/code-example.png')] dark:bg-[url('/images/code-example-dark.png')]" divide>
+<Section class="lg:py-24">
+    <Row image="bg-[url('/images/code-example.png')] dark:bg-[url('/images/code-example-dark.png')]" divide h_full>
       <div class="flex flex-col items-start gap-3 sm:gap-4 self-stretch">
         <H2>UI components in Svelte</H2>
         <p class="text-lg text-gray-500 dark:text-gray-400">
@@ -34,7 +34,7 @@
       </div>
 
       <div class="flex flex-col items-start pt-8 self-stretch">
-        <List tag="ul" class="mb-6 lg:mb-8 space-y-4 font-medium text-gray-900 dark:text-white" list="none">
+        <List tag="ul" class="mb-6 lg:mb-8 space-y-4 font-medium text-gray-900 dark:text-white" list="none" ulClass=''>
           {#each features as feature}
             <Li icon class="gap-2">
               <Check class="w-5 h-5 p-1 rounded-full bg-primary-100 dark:bg-gray-700 text-primary-700" />
@@ -50,7 +50,7 @@
       </div>
     </Row>
 
-    <Row image="bg-[url('/images/graphs.png')] dark:bg-[url('/images/graphs-dark.png')]" reversed contain1>
+    <Row image="bg-[url('/images/graphs.png')] dark:bg-[url('/images/graphs-dark.png')]" reversed contain>
       <div class="text-red-500 flex flex-row gap-8">
         <div class="flex flex-col items-center gap-2 font-medium text-gray-900 dark:text-white">
           <Sun class="w-12 h-12  bg-primary-700 p-2 rounded-lg text-white" />
@@ -74,6 +74,7 @@
       </div>
       <List
         tag="ul"
+        ulClass=''
         class="space-y-4 self-stretch font-medium text-gray-900 dark:text-white border-t dark:border-gray-700 pt-8"
         list="none">
         <Li icon class="gap-2">
@@ -109,7 +110,7 @@
       </div>
 
       <div class="flex flex-col items-start pt-8 self-stretch">
-        <List tag="ul" class="mb-8 space-y-4 font-medium text-gray-900 dark:text-white" list="none">
+        <List tag="ul" class="mb-8 space-y-4 font-medium text-gray-900 dark:text-white" list="none" ulClass=''>
           {#each features as feature}
             <Li icon class="gap-2">
               <Check class="w-5 h-5 p-1 rounded-full bg-primary-100 dark:bg-gray-700 text-primary-700" />
@@ -124,5 +125,4 @@
         </div>
       </div>
     </Row>
-  </div>
-</section>
+  </Section>

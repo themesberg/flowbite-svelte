@@ -3,20 +3,20 @@
   export let reversed: boolean = false;
   export let divide: boolean = false;
   export let contain: boolean = false;
+  export let h_full: boolean = false;
 
-  const [name, suffix] = image.split('.');
-  let dark = name + '-dark.' + suffix;
 </script>
 
 <div class="flex py-6 lg:py-6 lg:gap-16 self-stretch {reversed ? 'flex-row-reverse' : 'flex-row'}">
+  <div class="hidden lg:flex w-1/2 items-center">
+    <div
+      class:min-h-full={h_full}
+      class:h-96={!h_full}
+      class="flex-grow bg-no-repeat {contain? 'bg-contain': 'bg-cover'} shadow-md rounded-lg {image}" />
+  </div>
   <div
-    class="flex-grow min-h-full bg-no-repeat {contain
-      ? 'bg-contain'
-      : 'bg-cover'} shadow-md rounded-lg w-1/2 hidden lg:flex {image}" />
-  <div
-    class="flex flex-col items-start gap-4 lg:gap-8 flex-grow w-1/2 {divide
-      ? 'divide-y dark:divide-gray-700'
-      : ''}">
+    class:divide-y={divide}
+    class="flex flex-col items-start gap-4 lg:gap-8 flex-grow w-1/2 dark:divide-gray-700">
     <slot />
   </div>
 </div>
