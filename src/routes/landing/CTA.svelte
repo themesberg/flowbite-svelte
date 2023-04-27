@@ -66,14 +66,14 @@
 
   <Row image="bg-[url('/images/graphs.png')] dark:bg-[url('/images/graphs-dark.png')]" reversed contain>
     <div class="text-red-500 flex flex-row gap-8">
-      <div class="flex flex-col items-center gap-2 font-medium text-gray-400 dark:text-white">
-        <DarkMode size="lg" class="hidden dark:block bg-primary-700 !text-white hover:!bg-primary-900" />
-        <Sun class="dark:hidden w-11 h-11  bg-gray-100 dark:bg-gray-700 p-2 rounded-lg text-gray-500 dark:text-white" />
+      <div class="flex flex-col items-center gap-2 font-medium text-gray-900 dark:text-gray-400">
+        <DarkMode size="lg" class="hidden dark:block dark:bg-gray-700" />
+        <Sun class="dark:hidden w-11 h-11 p-2 rounded-lg bg-primary-700 dark:bg-gray-700  text-white" />
         Light
       </div>
-      <div class="flex flex-col items-center gap-2 font-medium text-gray-900 dark:text-gray-400">
-        <Moon class="hidden dark:block w-11 h-11  bg-gray-100 dark:bg-gray-700 p-2 rounded-lg" />
-        <DarkMode size="lg" class="dark:hidden bg-primary-700 !text-white hover:!bg-primary-900" />
+      <div class="flex flex-col items-center gap-2 font-medium text-gray-400 dark:text-white">
+        <Moon class="hidden dark:block w-11 h-11 p-2 rounded-lg bg-primary-700" />
+        <DarkMode size="lg" class="dark:hidden bg-gray-100 dark:bg-gray-700 hover:bg-gray-200" />
         Dark
       </div>
     </div>
