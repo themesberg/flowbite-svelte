@@ -16,9 +16,6 @@ thumnailSize: w-64
   import { props as bottomNavHeaderProps } from '../../props/BottomNavHeader.json'
   import { props as bottomNavHeaderItemProps } from '../../props/BottomNavHeaderItem.json'
   import { props as bottomNavItemProps } from '../../props/BottomNavItem.json'
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/bottom-nav/*.svelte')
 </script>
 
 

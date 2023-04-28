@@ -12,9 +12,6 @@ thumnailSize: w-64
   import { TableProp, TableDefaultRow} from '../../utils'
   import { A, Heading } from '$lib'
   import { props as items1 } from '../../props/Img.json'
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/typography/Img.svelte')
 </script>
 
 

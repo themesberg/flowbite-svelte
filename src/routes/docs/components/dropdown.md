@@ -11,7 +11,6 @@ thumnailSize: w-28
 <script>
   import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, P, A  } from '$lib'
-
   import { props as propItems} from '../../props/Dropdown.json'
   import { props as propItems2} from '../../props/DropdownDivider.json'
   import { props as propItems3} from '../../props/DropdownHeader.json'
@@ -24,8 +23,6 @@ thumnailSize: w-28
   let slotDropdownItem = [['default', 'Dropdown item content.']]
 
   const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keyup","on:mouseenter","on:mouseleave"];
-  // lib files
-  const libFiles = import.meta.glob('$lib/dropdowns/*.svelte')
 </script>
 
 

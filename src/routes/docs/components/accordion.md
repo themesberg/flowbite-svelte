@@ -15,8 +15,7 @@ description: Use the accordion component to show hidden information based on the
   import {props as accordionItemProps} from '../../props/AccordionItem.json'
 
   let slotHeader = ['Name', 'Description']
-  // lib files
-  const libFiles = import.meta.glob('$lib/accordion/*.svelte')
+  
   // Slots
   let slotItems = [['default', 'Place for AccordionItems']]
   let slotItems2 = [['default','Item body slot'],['header', 'Item header slot'],['arrowup', 'Icon to close an accordion item'],['arrowdown','Icon to open an accordion item']]

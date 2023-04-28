@@ -15,8 +15,6 @@ thumnailSize: w-36
   import { props as items2 } from '../../props/ListgroupItem.json'
 
   const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover"];
-  // lib files
-  const libFiles = import.meta.glob('$lib/list-group/*.svelte')
 </script>
 
 

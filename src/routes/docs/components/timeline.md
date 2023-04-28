@@ -20,9 +20,6 @@ thumbnailSize: w-64
   import { props as items7 }  from '../../props/ActivityItem.json'
   import { props as items8 }  from '../../props/Group.json'
   import { props as items9 }  from '../../props/GroupItem.json'
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/timeline/*.svelte')
 </script>
 
 

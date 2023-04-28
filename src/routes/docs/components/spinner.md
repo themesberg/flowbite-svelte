@@ -12,9 +12,6 @@ thumnailSize: w-48
   import { TableProp, TableDefaultRow, } from '../../utils'
   import { P, A } from '$lib'
   import { props as items }  from '../../props/Spinner.json'
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/spinners/*.svelte')
 </script>
 
 

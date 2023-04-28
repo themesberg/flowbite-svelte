@@ -15,8 +15,6 @@ thumnailSize: w-64
   import { props as items4 }  from '../../props/Tabs.json'
 
   const events = ["on:blur","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover"];
-  // lib files
-  const libFiles = import.meta.glob('$lib/tabs/*.svelte')
 </script>
 
 

@@ -16,8 +16,7 @@ description: Show contextual information to your users using alert elements base
   import { props as alertProps } from '../../props/Alert.json'
 
   const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keyup","on:mouseenter","on:mouseleave"];
-  // lib files
-  const libFiles = import.meta.glob('$lib/alert/*.svelte')
+
   // slots
   let slotHeader = ['Name', 'Description']
   let slotItems = [['default', 'The first slot.'],['extra','A slot after the default slot.']]

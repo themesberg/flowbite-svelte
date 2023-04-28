@@ -10,11 +10,7 @@ description: The Drawer component can be used as a hidden off-canvas sidebar for
 <script>
   import { TableProp, TableDefaultRow, } from '../../utils'
   import { Heading, P, A } from '$lib';
-
   import { props as items} from '../../props/Drawer.json'
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/drawer/*.svelte')
 </script>
 
 

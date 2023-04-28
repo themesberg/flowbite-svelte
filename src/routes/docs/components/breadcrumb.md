@@ -13,9 +13,6 @@ thumnailSize: w-64
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   import { props as breadcrumbProps } from '../../props/Breadcrumb.json'
   import { props as breadcrumbItemProps } from '../../props/BreadcrumbItem.json'
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/breadcrumbs/*.svelte')
 </script>
 
 

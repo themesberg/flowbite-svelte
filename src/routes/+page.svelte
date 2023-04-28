@@ -9,6 +9,7 @@
   import DesignFigma from './landing/DesignFigma.svelte';
   import GetStarted from './landing/GetStarted.svelte';
   import SocialProof from './landing/SocialProof.svelte';
+  import CTA from './landing/CTA.svelte';
 
   export let data: PageData;
 
@@ -40,11 +41,11 @@
     imageAlt: `${title} logo`
   }} />
 
-<main
-  class="flex-auto min-w-0 lg:static lg:max-h-full lg:overflow-visible divide-y dark:divide-gray-700">
+<main class="flex-auto min-w-0 lg:static lg:max-h-full lg:overflow-visible divide-y dark:divide-gray-700">
   <Hero />
   <Featured />
   <Components {data} />
+  <CTA />
   <SocialProof />
   <DesignFigma />
   <Contributors {data} />

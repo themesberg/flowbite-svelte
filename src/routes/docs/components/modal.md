@@ -12,9 +12,6 @@ thumnailSize: w-48
   import { TableProp, TableDefaultRow, } from '../../utils'
   import { P, A } from '$lib'  
   import { props as items1 } from '../../props/Modal.json'
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/modals/*.svelte')
 </script>
 
 

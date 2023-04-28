@@ -12,10 +12,6 @@ thumnailSize: w-28
   import { TableProp, TableDefaultRow, } from '../../utils'
   import { P, A } from '$lib'
   import { props as badgeProps } from '../../props/Badge.json'
-
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/badges/*.svelte')
 </script>
 
 

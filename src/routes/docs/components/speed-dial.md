@@ -13,9 +13,6 @@ thumnailSize: w-64
   import { P, A, Alert } from '$lib'  
   import { props as items1 } from '../../props/SpeedDial.json'
   import { props as items2 } from '../../props/SpeedDialButton.json'
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/speed-dial/*.svelte')
 </script>
 
 

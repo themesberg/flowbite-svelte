@@ -5,7 +5,7 @@ Here are some guidelines we'd like you to follow before submitting a PR.
 
 ## Frontend pages
 
-<p><a href="https://tailwindcss.com/docs/content-configuration#dynamic-class-names">Tailwind warns</a> that you don't construct class names dynamically. In stead of this:</p>
+<p><a href="https://tailwindcss.com/docs/content-configuration#dynamic-class-names">Tailwind warns</a> that you don't construct class names dynamically. Instead of this:</p>
 
 ```html
 <div class="text-{{ error ? 'red' : 'green' }}-600"></div>
@@ -39,7 +39,7 @@ Please don't send a large amount of changes at once. It takes time to go through
 
 ## Conventional commit
 
-<p>When make a commit, we recommend using <a href="https://www.conventionalcommits.org/en/v1.0.0/">the Coventional commits</a>.</p>
+<p>When making a commit, we recommend using <a href="https://www.conventionalcommits.org/en/v1.0.0/">the Conventional commits</a>.</p>
 
 Some examples are:
 

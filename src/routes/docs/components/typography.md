@@ -11,10 +11,7 @@ thumnailSize: w-36
 <script>
   import { TableProp, TableDefaultRow, } from '../../utils'
   import { A } from '$lib';
-  // lib files
-  const libFiles = import.meta.glob('$lib/typography/*.svelte')
 </script>
-
 
 
 The typography for FlowBite is completely based on the utility classes from Tailwind CSS.

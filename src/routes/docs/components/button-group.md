@@ -10,12 +10,9 @@ description: Button groups are a Tailwind CSS powered set of buttons sticked tog
 <script>
   import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, P, A } from '$lib'
-
   import { props as buttonGroupProps} from '../../props/ButtonGroup.json'
 
   const events = ["on:click","on:change","on:keydown","on:keyup","on:focus","on:blur","on:mouseenter","on:mouseleave"];
-  // lib files
-  const libFiles = import.meta.glob('$lib/buttongroups/*.svelte')
 </script>
 
 

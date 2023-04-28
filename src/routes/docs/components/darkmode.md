@@ -11,11 +11,7 @@ thumnailSize: w-24
 <script>
   import { TableProp, TableDefaultRow, } from '../../utils'
   import { P, A } from '$lib'
-
   import { props as items} from '../../props/DarkMode.json'
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/darkmode/*.svelte')
 </script>
 
 

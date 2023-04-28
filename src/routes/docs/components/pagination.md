@@ -15,8 +15,6 @@ thumnailSize: w-48
   import { props as items2 } from '../../props/PaginationItem.json'
 
   const events = ["on:blur","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover"];
-  // lib files
-  const libFiles = import.meta.glob('$lib/paginations/*.svelte')
 </script>
 
 
