@@ -5,7 +5,7 @@ Here are some guidelines we'd like you to follow before submitting a PR.
 
 ## Frontend pages
 
-<p><a href="https://tailwindcss.com/docs/content-configuration#dynamic-class-names">Tailwind warns</a> that you don't construct class names dynamically. In stead of this:</p>
+<p><a href="https://tailwindcss.com/docs/content-configuration#dynamic-class-names">Tailwind warns</a> that you don't construct class names dynamically. Instead of this:</p>
 
 ```html
 <div class="text-{{ error ? 'red' : 'green' }}-600"></div>
