@@ -13,14 +13,7 @@ thumnailSize: w-28
   import { TableProp, TableDefaultRow } from '../../utils'
   import { Alert } from '$lib'
   import { props as items } from '../../props/Datepicker.json'
-  // lib files
-  const libFiles = import.meta.glob('$lib/datepicker/*.svelte')
 </script>
-
-<!--svelte:head>
-  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css" />
-  <script src="https://unpkg.com/flowbite@1.5.1/dist/datepicker.js"></script>
-</svelte:head-->
 
 
 Date picker component

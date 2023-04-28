@@ -16,8 +16,6 @@ thumnailSize: w-64
   import { props as avatarProps } from '../../props/Avatar.json'
   import { props as placehoderProps } from '../../props/Placeholder.json'
 
-  // lib files
-  const libFiles = import.meta.glob('$lib/avatar/*.svelte')
   let name;
 </script>
 

@@ -17,9 +17,6 @@ description: Use the footer section at the bottom of every page to show valuable
   import { props as items4 } from '../../props/FooterIcon.json'
   import { props as items5 } from '../../props/FooterLink.json'
   import { props as items6 } from '../../props/FooterLinkGroup.json'
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/footer/*.svelte')
 </script>
 
 

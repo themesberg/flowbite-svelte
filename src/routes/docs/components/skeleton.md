@@ -19,9 +19,6 @@ thumnailSize: w-40
   import { props as items6 }  from '../../props/TextPlaceholder.json'
   import { props as items7 }  from '../../props/VideoPlaceholder.json'
   import { props as items8 }  from '../../props/WidgetPlaceholder.json'
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/skeleton/*.svelte')
 </script>
 
 

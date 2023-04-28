@@ -15,9 +15,6 @@ thumbnailSize: w-72
   import { props as items } from '../../props/Toggle.json'
 
   const events = ["on:change","on:click"];
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/forms/Toggle.svelte')
 </script>
 
 

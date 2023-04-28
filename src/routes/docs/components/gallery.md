@@ -17,8 +17,6 @@ thumnailSize: w-64
   // Slots
   let slotHeader = ['Name', 'Description']
   let slotItems = [['default', 'For a button label.']]
-  // lib files
-  const libFiles = import.meta.glob('$lib/gallery/*.svelte')
 </script>
 
 

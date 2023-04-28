@@ -11,15 +11,12 @@ thumnailSize: w-24
 <script>
   import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, P, A } from '$lib'
-
   import { props as buttonProps } from '../../props/Button.json'
 
   const events = ["on:change","on:click","on:keydown","on:keyup","on:mouseenter","on:mouseleave"];
   // slots
   let slotHeader = ['Name', 'Description']
   let slotItems = [['default', 'For a button label.']]
-  // lib files
-  const libFiles = import.meta.glob('$lib/buttons/*.svelte')
 </script>
 
 

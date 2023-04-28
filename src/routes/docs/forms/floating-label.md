@@ -15,8 +15,6 @@ thumnailSize: w-40
   import { props as items2 } from '../../props/Helper.json'
 
   const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover","on:paste"];
-  // lib files
-  const libFiles = import.meta.glob('$lib/forms/FloatingLabelInput.svelte')
 </script>
 
 

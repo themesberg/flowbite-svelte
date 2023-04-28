@@ -12,9 +12,6 @@ thumnailSize: w-64
   import { TableProp, TableDefaultRow, } from '../../utils'
   import { Heading, P, A } from '$lib'
   import { props as items } from '../../props/Video.json'
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/video/*.svelte')
 </script>
 
 

@@ -18,9 +18,6 @@ thumnailSize: w-48
   import { props as items5 }  from '../../props/TableHead.json'
   import { props as items6 }  from '../../props/TableHeadCell.json'
   import { props as items7 }  from '../../props/TableSearch.json'
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/tables/*.svelte')
 </script>
 
 

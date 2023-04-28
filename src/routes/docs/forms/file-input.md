@@ -16,8 +16,6 @@ thumnailSize: w-48
 
   const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover","on:paste"];
   const events2 = ["on:click","on:change","on:focus","on:blur","on:mouseenter","on:mouseleave","on:mouseover"];
-  // lib files
-  const libFiles = import.meta.glob('$lib/forms/Fileupload.svelte')
 </script>
 
 

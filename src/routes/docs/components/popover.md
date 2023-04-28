@@ -13,9 +13,6 @@ description: Use the popover component to show detailed information inside a pop
   import { props as items } from '../../props/Popover.json'
   import { props as items2 } from '../../props/Popper.json'
   import { props as items3 } from '../../props/Frame.json'
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/popover/*.svelte')
 </script>
 
 

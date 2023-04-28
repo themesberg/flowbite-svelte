@@ -16,8 +16,6 @@ thumnailSize: w-72
   import { props as items3 } from '../../props/Helper.json'
 
   const events = ["on:click","on:change","on:keydown","on:keyup","on:mouseenter","on:mouseleave","on:paste"];
-  // lib files
-  const libFiles = import.meta.glob('$lib/forms/Checkbox.svelte')
 </script>
 
 

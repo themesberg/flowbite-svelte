@@ -20,8 +20,6 @@ description: The navbar component can be used to show a list of navigation links
   import { props as items7 } from '../../props/NavDropdown.json'
 
   const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover"];
-  // lib files
-  const libFiles = import.meta.glob('$lib/navbar/*.svelte')
 </script>
 
 

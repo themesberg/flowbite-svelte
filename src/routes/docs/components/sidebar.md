@@ -22,8 +22,6 @@ thumnailSize: w-72
   import { props as items8 }  from '../../props/SidebarWrapper.json'
 
   const events = ["on:blur","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover"];
-  // lib files
-  const libFiles = import.meta.glob('$lib/sidebars/*.svelte')
 </script>
 
 

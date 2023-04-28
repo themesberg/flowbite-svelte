@@ -13,9 +13,6 @@ thumnailSize: w-24
   import { P, A } from '$lib'
   import { props as items } from '../../props/Tooltip.json'
   import { props as items2 } from '../../props/Frame.json'
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/tooltips/*.svelte')
 </script>
 
 
