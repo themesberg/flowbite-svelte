@@ -14,7 +14,7 @@
   let github = data.github?.stargazers_count ?? 0;
   let npm = data.npm?.downloads ?? 0;
   let figma = 5400;
-  let discord = 657;
+  let discord = data.discord?.approximate_presence_count ?? 0;
 
   function format(x: number) {
     return x.toLocaleString('en', { notation: 'standard' });
@@ -23,7 +23,7 @@
 
 <Section>
   <div class="flex flex-col lg:flex-row gap-4 lg:gap-20">
-    <div class="flex flex-col items-start justify-center gap-3 md:gap-5 w-full">
+    <div class="flex flex-col items-start justify-center gap-3 md:gap-5 w-full lg:mb-0 mb-4">
       <div class="flex flex-col items-start justify-center gap-6 w-full">
         <div class="flex flex-col items-start py-2">
           <Quote />
@@ -41,11 +41,11 @@
           </p>
         </div>
         <div class="flex flex-row items-center gap-3.5 self-stretch">
-          <Avatar size="xs" />
+          <Avatar src="/images/eugene.jpg" size="xs" />
           <div class="flex items-center gap-3">
-            <span class="leading-tight font-semibold text-gray-900 dark:text-white">Micheal Gough</span>
+            <span class="leading-tight font-semibold text-gray-900 dark:text-white">Eugene Fedorenko</span>
             <span class="leading-tight font-semibold text-gray-900 dark:text-white">/</span>
-            <span class="leading-tight font-normal text-sm">CEO at Google</span>
+            <span class="leading-tight font-normal text-sm">Lead designer at Wildbit</span>
           </div>
         </div>
       </div>
@@ -72,7 +72,7 @@
       </div>
       <div
         class="flex flex-row items-start md:justify-between md:pr-16 lg:pr-0 lg:justify-end gap-2 md:gap-12 lg:gap-2 self-stretch">
-        <a href="https://www.figma.com/community/file/1179442320711977498/Flowbite-Design-System"
+        <a href="https://www.figma.com/community/file/1179442320711977498"
           class="flex flex-col items-start gap-4 text-gray-400 w-full max-w-[272px] lg:py-6 lg:px-8 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg">
           <Figma />
           <div class="flex flex-col items-start gap-2">

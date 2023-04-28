@@ -11,8 +11,9 @@ export const load = async ({ fetch }) => {
     const npm = await fetch(
       `https://api.npmjs.org/downloads/point/2020-01-01:${today}/flowbite-svelte`
     ).then(json);
+    const discord = await fetch('https://discord.com/api/v9/invites/4eeurUVvTy?with_counts=true&with_expiration=true').then(json);
 
-    return { posts, contributors, github, npm };
+    return { posts, contributors, github, npm, discord };
   } catch (error) {
     console.error(`Error in load function for /: ${error}`);
   }
