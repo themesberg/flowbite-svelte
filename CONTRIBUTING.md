@@ -39,7 +39,7 @@ Please don't send a large amount of changes at once. It takes time to go through
 
 ## Conventional commit
 
-<p>When make a commit, we recommend using <a href="https://www.conventionalcommits.org/en/v1.0.0/">the Coventional commits</a>.</p>
+<p>When make a commit, we recommend using <a href="https://www.conventionalcommits.org/en/v1.0.0/">the Conventional commits</a>.</p>
 
 Some examples are:
 
