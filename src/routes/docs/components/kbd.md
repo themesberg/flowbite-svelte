@@ -16,9 +16,6 @@ thumnailSize: w-40
   import { props as items3} from '../../props/ArrowKeyLeft.json'
   import { props as items4} from '../../props/ArrowKeyRight.json'
   import { props as items5} from '../../props/ArrowKeyUp.json'
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/kbd/*.svelte')
 </script>
 
 

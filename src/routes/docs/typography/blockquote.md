@@ -12,9 +12,6 @@ thumnailSize: w-64
   import { TableProp, TableDefaultRow } from '../../utils'
   import { P, A, Heading } from '$lib'; 
   import { props as items1 } from '../../props/Blockquote.json'
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/typography/Blockquote.svelte')
 </script>
 
 

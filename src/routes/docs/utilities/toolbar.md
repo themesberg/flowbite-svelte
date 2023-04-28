@@ -13,9 +13,6 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
   import { props as items1 } from '../../props/Toolbar.json'
   import { props as items2 } from '../../props/ToolbarButton.json'
   import { props as items3 } from '../../props/ToolbarGroup.json'
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/toolbar/*.svelte')
 </script>
 
 

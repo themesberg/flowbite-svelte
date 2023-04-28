@@ -18,8 +18,6 @@ thumnailSize: w-36
   // Slots
   let slotHeader = ['Name', 'Description']
   let slotItems = [['default', 'For a button label.']]
-  // lib files
-  const libFiles = import.meta.glob('$lib/cards/*.svelte')
 </script>
 
 

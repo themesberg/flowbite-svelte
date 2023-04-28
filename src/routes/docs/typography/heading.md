@@ -17,9 +17,6 @@ thumnailSize: w-72
   import { props as items3 } from '../../props/A.json'
   import { props as items4 } from '../../props/Mark.json'
   import { props as items5 } from '../../props/Secondary.json'
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/typography/Heading.svelte')
 </script>
 
 

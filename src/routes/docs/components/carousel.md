@@ -11,16 +11,12 @@ thumnailSize: w-48
 <script>
   import { TableProp, TableDefaultRow, } from '../../utils'
   import { P, A } from '$lib'
-
   import { props as items } from '../../props/Carousel.json'
   import { props as items2 } from '../../props/CarouselTransition.json'
   import { props as items3 } from '../../props/Caption.json'
   import { props as items4 } from '../../props/Indicator.json'
   import { props as items5 } from '../../props/Slide.json'
   import { props as items6 } from '../../props/Thumbnail.json'
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/carousels/*.svelte')
 </script>
 
 

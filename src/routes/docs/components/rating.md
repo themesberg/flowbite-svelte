@@ -18,9 +18,6 @@ thumnailSize: w-64
   import { props as items4 } from '../../props/RatingComment.json'
   import { props as items5 } from '../../props/Review.json'
   import { props as items6 } from '../../props/Star.json'
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/ratings/*.svelte')
 </script>
 
 

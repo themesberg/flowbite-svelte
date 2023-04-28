@@ -13,9 +13,6 @@ thumnailSize: w-64
   import { P, A } from '$lib'
 
   import { props as items } from '../../props/Indicator.json'
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/indicators/*.svelte')
 </script>
 
 

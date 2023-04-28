@@ -11,10 +11,6 @@ description: Use the mega menu component as a full-width dropdown inside the nav
   import { TableProp, TableDefaultRow , } from '../../utils'
   import { UserCircle, P, A } from '$lib'
   import { props as items} from '../../props/MegaMenu.json'
-
-
-  // lib files
-  const libFiles = import.meta.glob('$lib/megamenu/*.svelte')
 </script>
 
 

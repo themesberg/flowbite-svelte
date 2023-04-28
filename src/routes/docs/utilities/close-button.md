@@ -14,8 +14,6 @@ description: Get started with the CloseButton components to hide a target elemen
 
 	let divClass = 'w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4';
 	let theadClass = 'text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white';
-  // lib files
-  const libFiles = import.meta.glob('$lib/utils/CloseButton.svelte')
 </script>
 
 

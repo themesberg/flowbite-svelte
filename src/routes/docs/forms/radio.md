@@ -16,8 +16,6 @@ thumnailSize: w-72
   import { props as items3 } from '../../props/Helper.json'
 
   const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover","on:paste"];
-  // lib files
-  const libFiles = import.meta.glob('$lib/forms/Radio.svelte')
 </script>
 
 

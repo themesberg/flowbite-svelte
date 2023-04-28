@@ -15,8 +15,6 @@ description: Get started with the range component to receive a number from the u
   const events = ["on:change","on:click","on:keydown","on:keypress","on:keyup"];
 
   let minmaxValue=5
-  // lib files
-  const libFiles = import.meta.glob('$lib/forms/Range.svelte')
 </script>
 
 
