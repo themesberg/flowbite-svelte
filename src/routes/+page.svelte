@@ -8,6 +8,7 @@
   import Contributors from './landing/Contributors.svelte';
   import DesignFigma from './landing/DesignFigma.svelte';
   import GetStarted from './landing/GetStarted.svelte';
+  import SocialProof from './landing/SocialProof.svelte';
   import CTA from './landing/CTA.svelte';
 
   export let data: PageData;
@@ -45,6 +46,7 @@
   <Featured />
   <Components {data} />
   <CTA />
+  <SocialProof />
   <DesignFigma />
   <Contributors {data} />
   <GetStarted />
