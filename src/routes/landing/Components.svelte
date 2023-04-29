@@ -30,9 +30,14 @@
   </div>
 
   <div class="grid grid-cols-1 gap-4 sm:gap-8 sm:grid-cols-2 xl:grid-cols-3">
-    {#each expanded ? components : components.slice(0, INIT_COUNT) as { path, meta: { dir, component_title, thumnailSize } }}
+    {#each components.slice(0, INIT_COUNT) as { path, meta: { dir, component_title, thumnailSize } } (dir + path)}
       <CompoCard name={component_title} {thumnailSize} {dir} {path} />
     {/each}
+    {#if expanded}
+      {#each components.slice(INIT_COUNT) as { path, meta: { dir, component_title, thumnailSize } } (dir + path)}
+        <CompoCard name={component_title} {thumnailSize} {dir} {path} />
+      {/each}
+    {/if}
   </div>
 
   {#if !expanded}
