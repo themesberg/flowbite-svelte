@@ -1,16 +1,16 @@
 <script>
   import Button from '$lib/buttons/Button.svelte';
+  import DarkMode from '$lib/darkmode/DarkMode.svelte';
   import Li from '$lib/typography/Li.svelte';
   import List from '$lib/typography/List.svelte';
   import ArrowRight from '../utils/icons/ArrowRight.svelte';
   import Check from '../utils/icons/Check.svelte';
-  import A from './A.svelte';
-  import H2 from './H2.svelte';
-  import Row from './Row.svelte';
-  import Sun from '../utils/icons/Sun.svelte';
   import Moon from '../utils/icons/Moon.svelte';
+  import Sun from '../utils/icons/Sun.svelte';
+  import A from './utils/A.svelte';
+  import H2 from './utils/H2.svelte';
+  import Row from './utils/Row.svelte';
   import Section from './utils/Section.svelte';
-  import DarkMode from '$lib/darkmode/DarkMode.svelte';
 
   const features = [
     'Huge collection of UI components',
@@ -21,7 +21,7 @@
   ];
 </script>
 
-<Section class="lg:py-24">
+<Section class="lg:py-24" tinted>
   <Row
     image="bg-[url('/images/code-example.png')] dark:bg-[url('/images/code-example-dark.png')]"
     divide
