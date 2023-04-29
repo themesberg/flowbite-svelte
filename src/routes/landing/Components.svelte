@@ -1,16 +1,20 @@
 <script lang="ts">
-  import type { PageData } from '../$types';
   import Button from '$lib/buttons/Button.svelte';
+  import type { PageData } from '../$types';
   import CompoCard from '../utils/CompoCard.svelte';
   import Section from './utils/Section.svelte';
 
   export let data: PageData;
+
   let components = [
     ...data.posts.forms,
     ...data.posts.components,
     ...data.posts.typography,
     ...data.posts.experimental
   ].sort((a, b) => a.meta.component_title.localeCompare(b.meta.component_title));
+
+  const INIT_COUNT = 18;
+  let expanded: boolean = false;
 </script>
 
 <Section class="flex flex-col gap-8 sm:gap-12 lg:pt-24">
@@ -26,18 +30,25 @@
   </div>
 
   <div class="grid grid-cols-1 gap-4 sm:gap-8 sm:grid-cols-2 xl:grid-cols-3">
-    {#each components as { path, meta: { dir, component_title, thumnailSize } }}
+    {#each components.slice(0, INIT_COUNT) as { path, meta: { dir, component_title, thumnailSize } } (dir + path)}
       <CompoCard name={component_title} {thumnailSize} {dir} {path} />
     {/each}
+    {#if expanded}
+      {#each components.slice(INIT_COUNT) as { path, meta: { dir, component_title, thumnailSize } } (dir + path)}
+        <CompoCard name={component_title} {thumnailSize} {dir} {path} />
+      {/each}
+    {/if}
   </div>
 
-  <div class="w-full flex justify-center mb-4">
-    <Button
-      size="md"
-      class="whitespace-nowrap hover:text-primary-600 focus:text-primary-600"
-      href="/docs/components/accordion"
-      color="alternative">
-      View all components
-    </Button>
-  </div>
+  {#if !expanded}
+    <div class="w-full flex justify-center mb-4">
+      <Button
+        size="md"
+        class="whitespace-nowrap hover:text-primary-600 focus:text-primary-600"
+        color="alternative"
+        on:click={() => (expanded = true)}>
+        View all components
+      </Button>
+    </div>
+  {/if}
 </Section>
