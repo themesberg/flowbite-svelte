@@ -15,7 +15,6 @@ const config = {
     }),
     mdsvex(mdsvexConfig)
   ],
-
   kit: {
     adapter: adapter({ runtime: 'edge' })
   }

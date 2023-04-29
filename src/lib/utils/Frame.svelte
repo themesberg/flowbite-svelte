@@ -1,51 +1,10 @@
-<script lang="ts">
-  import classNames from 'classnames';
-  import { setContext } from 'svelte';
+<script lang="ts" context="module">
+  import type { Config } from '../types';
+  import config from './configInt';
+  // const modules = import.meta.glob('../../config.js', { eager: true, import: 'default' }),
+  //   config: Config = (Object.values(modules)[0] ?? { frame: {} }) as Config;
 
-  import { noop } from 'svelte/internal';
-  import type { Action } from 'svelte/action';
-  import type { TransitionConfig } from 'svelte/transition';
-
-  setContext('background', true);
-  $: setContext('color', color);
-
-  export let tag: string = 'div';
-  export let color:
-    | 'gray'
-    | 'red'
-    | 'yellow'
-    | 'green'
-    | 'indigo'
-    | 'default'
-    | 'purple'
-    | 'pink'
-    | 'blue'
-    | 'light'
-    | 'dark'
-    | 'dropdown'
-    | 'navbar'
-    | 'navbarUl'
-    | 'form'
-    | 'none' = 'default';
-  export let rounded: boolean = false;
-  export let border: boolean = false;
-  export let shadow: boolean = false;
-
-  type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
-
-  // Export a prop through which you can set a desired svelte transition
-  export let transition: TransitionFunc | undefined = undefined;
-  // Pass in extra transition params
-  export let params: object = {};
-
-  // For components development
-  export let node: HTMLElement | undefined = undefined;
-  export let use: Action = noop;
-  export let options = {};
-
-
-  // your script goes here
-  const bgColors = {
+  export const bgColors = {
     gray: 'bg-gray-50 dark:bg-gray-800',
     red: 'bg-red-50 dark:bg-gray-800',
     yellow: 'bg-yellow-50 dark:bg-gray-800 ',
@@ -62,9 +21,42 @@
     navbarUl: 'bg-gray-50 dark:bg-gray-800',
     form: 'bg-gray-50 dark:bg-gray-700',
     primary: 'bg-primary-50 dark:bg-gray-800 ',
-    none: ''
+    none: '',
+    ...config.frame?.bgColor
   };
-   
+
+  type FrameBgColor = keyof typeof bgColors;
+</script>
+
+<script lang="ts">
+  import classNames from 'classnames';
+  import { setContext } from 'svelte';
+
+  import { noop } from 'svelte/internal';
+  import type { Action } from 'svelte/action';
+  import type { TransitionConfig } from 'svelte/transition';
+
+  setContext('background', true);
+  $: setContext('color', color);
+
+  export let tag: string = 'div';
+  export let color: FrameBgColor = 'default';
+  export let rounded: boolean = false;
+  export let border: boolean = false;
+  export let shadow: boolean = false;
+
+  type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
+
+  // Export a prop through which you can set a desired svelte transition
+  export let transition: TransitionFunc | undefined = undefined;
+  // Pass in extra transition params
+  export let params: object = {};
+
+  // For components development
+  export let node: HTMLElement | undefined = undefined;
+  export let use: Action = noop;
+  export let options = {};
+
   const textColors = {
     gray: 'text-gray-800 dark:text-gray-300',
     red: 'text-red-800 dark:text-red-400',
@@ -82,7 +74,8 @@
     navbarUl: 'text-gray-700 dark:text-gray-400',
     form: 'text-gray-900 dark:text-white',
     primary: 'text-primary-800 dark:text-primary-400',
-    none: ''
+    none: '',
+    ...config.frame?.textColor
   };
 
   const borderColors = {
@@ -102,11 +95,11 @@
     navbarUl: 'border-gray-100 dark:border-gray-700',
     form: 'border-gray-300 dark:border-gray-700',
     primary: 'border-primary-500 dark:bg-primary-200 ',
-    none: ''
+    none: '',
+    ...config.frame?.borderColor
   };
 
   let divClass: string;
-
   $: divClass = classNames(
     bgColors[color],
     textColors[color],
