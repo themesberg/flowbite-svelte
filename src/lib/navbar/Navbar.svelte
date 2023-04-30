@@ -1,6 +1,10 @@
 <script lang="ts">
-  import Frame from '../utils/Frame.svelte';
   import classNames from 'classnames';
+  import type { ComponentProps } from 'svelte';
+  import Frame from '../utils/Frame.svelte';
+
+  // propagate props type from underying Frame
+  interface $$Props extends ComponentProps<Frame> {}
 
   export let navClass: string = 'px-2 sm:px-4 py-2.5 w-full';
   export let navDivClass: string = 'mx-auto flex flex-wrap justify-between items-center ';

@@ -1,7 +1,11 @@
 <script lang="ts">
   import type { SizeType } from '$lib/types';
   import classNames from 'classnames';
+  import type { ComponentProps } from 'svelte';
   import Frame from '../utils/Frame.svelte';
+
+  // propagate props type from underying Frame
+  interface $$Props extends ComponentProps<Frame> {}
 
   export let href: string | undefined = undefined;
   export let horizontal: boolean = false;

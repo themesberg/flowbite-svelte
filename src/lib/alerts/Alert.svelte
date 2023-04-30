@@ -1,8 +1,12 @@
 <script lang="ts">
   import classNames from 'classnames';
+  import type { ComponentProps } from 'svelte';
   import { createEventDispatcher } from 'svelte';
   import CloseButton from '../utils/CloseButton.svelte';
   import Frame from '../utils/Frame.svelte';
+
+  // propagate props type from underying Frame
+  interface $$Props extends ComponentProps<Frame> {}
 
   const dispatch = createEventDispatcher();
 
@@ -17,12 +21,7 @@
   };
 
   let divClass: string;
-  $: divClass = classNames(
-    'p-4 text-sm',
-    accent && 'border-t-4 ',
-    hidden && 'hidden',
-    $$props.class
-  );
+  $: divClass = classNames('p-4 text-sm', accent && 'border-t-4 ', hidden && 'hidden', $$props.class);
 
   $: {
     // set default values

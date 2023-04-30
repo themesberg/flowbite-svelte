@@ -1,6 +1,11 @@
 <script lang="ts">
-  import Popper from '../utils/Popper.svelte';
+  import type Frame from '$lib/utils/Frame.svelte';
   import classNames from 'classnames';
+  import type { ComponentProps } from 'svelte';
+  import Popper from '../utils/Popper.svelte';
+
+  // propagate props type from underying Frame
+  interface $$Props extends ComponentProps<Frame> {}
 
   export let style: 'dark' | 'light' | 'auto' | 'custom' = 'dark';
   export let defaultClass: string = 'py-2 px-3 text-sm font-medium';

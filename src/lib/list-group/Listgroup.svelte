@@ -1,9 +1,13 @@
 <script lang="ts">
-  import { setContext } from 'svelte';
   import classNames from 'classnames';
+  import type { ComponentProps } from 'svelte';
+  import { setContext } from 'svelte';
   import type { ListGroupItemType } from '../types';
-  import ListgroupItem from './ListgroupItem.svelte';
   import Frame from '../utils/Frame.svelte';
+  import ListgroupItem from './ListgroupItem.svelte';
+
+  // propagate props type from underying Frame
+  interface $$Props extends ComponentProps<Frame> {}
 
   export let items: ListGroupItemType[] = [];
   export let active: boolean = false;

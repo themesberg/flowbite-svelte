@@ -1,8 +1,13 @@
 <script lang="ts">
-  import Frame from '../utils/Frame.svelte';
   import classNames from 'classnames';
-  import CloseButton from '../utils/CloseButton.svelte';
+  import type { ComponentProps } from 'svelte';
   import { fade } from 'svelte/transition';
+  import CloseButton from '../utils/CloseButton.svelte';
+  import Frame from '../utils/Frame.svelte';
+
+  // propagate props type from underying Frame
+  interface $$Props extends ComponentProps<Frame> {}
+
   export let color:
     | 'gray'
     | 'red'

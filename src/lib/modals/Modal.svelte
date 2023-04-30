@@ -1,10 +1,14 @@
 <script lang="ts">
+  import type { SizeType } from '$lib/types';
   import classNames from 'classnames';
-  import Frame from '../utils/Frame.svelte';
+  import type { ComponentProps } from 'svelte';
   import { createEventDispatcher } from 'svelte';
   import CloseButton from '../utils/CloseButton.svelte';
+  import Frame from '../utils/Frame.svelte';
   import focusTrap from '../utils/focusTrap';
-  import type { SizeType } from '$lib/types';
+
+  // propagate props type from underying Frame
+  interface $$Props extends ComponentProps<Frame> {}
 
   export let open: boolean = false;
   export let title: string = '';
