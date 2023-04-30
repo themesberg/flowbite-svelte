@@ -1,34 +1,5 @@
-<script lang="ts" context="module">
-  import type { Config } from '../types';
-  import config from './configInt';
-  // const modules = import.meta.glob('../../config.js', { eager: true, import: 'default' }),
-  //   config: Config = (Object.values(modules)[0] ?? { frame: {} }) as Config;
-
-  export const bgColors = {
-    gray: 'bg-gray-50 dark:bg-gray-800',
-    red: 'bg-red-50 dark:bg-gray-800',
-    yellow: 'bg-yellow-50 dark:bg-gray-800 ',
-    green: 'bg-green-50 dark:bg-gray-800 ',
-    indigo: 'bg-indigo-50 dark:bg-gray-800 ',
-    purple: 'bg-purple-50 dark:bg-gray-800 ',
-    pink: 'bg-pink-50 dark:bg-gray-800 ',
-    blue: 'bg-blue-50 dark:bg-gray-800 ',
-    light: 'bg-gray-50 dark:bg-gray-700',
-    dark: 'bg-gray-50 dark:bg-gray-800',
-    default: 'bg-white dark:bg-gray-800',
-    dropdown: 'bg-white dark:bg-gray-700',
-    navbar: 'bg-white dark:bg-gray-900',
-    navbarUl: 'bg-gray-50 dark:bg-gray-800',
-    form: 'bg-gray-50 dark:bg-gray-700',
-    primary: 'bg-primary-50 dark:bg-gray-800 ',
-    none: '',
-    ...config.frame?.bgColor
-  };
-
-  type FrameBgColor = keyof typeof bgColors;
-</script>
-
 <script lang="ts">
+  import config from '../../config';
   import classNames from 'classnames';
   import { setContext } from 'svelte';
 
@@ -57,6 +28,29 @@
   export let use: Action = noop;
   export let options = {};
 
+  const bgColors = {
+    gray: 'bg-gray-50 dark:bg-gray-800',
+    red: 'bg-red-50 dark:bg-gray-800',
+    yellow: 'bg-yellow-50 dark:bg-gray-800 ',
+    green: 'bg-green-50 dark:bg-gray-800 ',
+    indigo: 'bg-indigo-50 dark:bg-gray-800 ',
+    purple: 'bg-purple-50 dark:bg-gray-800 ',
+    pink: 'bg-pink-50 dark:bg-gray-800 ',
+    blue: 'bg-blue-50 dark:bg-gray-800 ',
+    light: 'bg-gray-50 dark:bg-gray-700',
+    dark: 'bg-gray-50 dark:bg-gray-800',
+    default: 'bg-white dark:bg-gray-800',
+    dropdown: 'bg-white dark:bg-gray-700',
+    navbar: 'bg-white dark:bg-gray-900',
+    navbarUl: 'bg-gray-50 dark:bg-gray-800',
+    form: 'bg-gray-50 dark:bg-gray-700',
+    primary: 'bg-primary-50 dark:bg-gray-800 ',
+    none: '',
+    ...config.frame.bgColors
+  };
+
+  type FrameBgColor = keyof typeof bgColors;
+
   const textColors = {
     gray: 'text-gray-800 dark:text-gray-300',
     red: 'text-red-800 dark:text-red-400',
@@ -75,7 +69,7 @@
     form: 'text-gray-900 dark:text-white',
     primary: 'text-primary-800 dark:text-primary-400',
     none: '',
-    ...config.frame?.textColor
+    ...config.frame?.textColors
   };
 
   const borderColors = {
@@ -96,7 +90,7 @@
     form: 'border-gray-300 dark:border-gray-700',
     primary: 'border-primary-500 dark:bg-primary-200 ',
     none: '',
-    ...config.frame?.borderColor
+    ...config.frame?.borderColors
   };
 
   let divClass: string;

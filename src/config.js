@@ -1,12 +1,12 @@
 export default {
   frame: {
-    textColor: {
+    textColors: {
       info: 'text-yellow-300'
     },
-    bgColor: {
+    bgColors: {
       info: 'bg-green-200'
     },
-    borderColor: {
+    borderColors: {
       info: 'border-blue-500'
     }
   }
