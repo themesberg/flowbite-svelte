@@ -17,7 +17,11 @@
   };
 
   let divClass: string;
-  $: divClass = classNames('p-4 text-sm', accent && 'border-t-4 ', hidden && 'hidden', $$props.class);
+  $: divClass = classNames(
+    'p-4 text-sm',
+    accent && 'border-t-4 ',
+    hidden && 'hidden',
+    $$props.class);
 
   $: {
     // set default values

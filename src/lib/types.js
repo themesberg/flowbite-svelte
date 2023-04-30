@@ -40,14 +40,6 @@ export interface CheckboxType {
 
 export type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink' | 'white' | 'custom';
 
-export interface Config {
-    frame?: {
-      textColor?: Record<string, string>;
-      bgColor?: Record<string, string>;
-      borderColor?: Record<string, string>;
-    };
-  }
-  
 export interface DotType {
 	top?: boolean;
 	color?: string;
