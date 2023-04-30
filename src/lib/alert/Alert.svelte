@@ -21,7 +21,8 @@
     'p-4 text-sm',
     accent && 'border-t-4 ',
     hidden && 'hidden',
-    $$props.class);
+    $$props.class
+  );
 
   $: {
     // set default values
