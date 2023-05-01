@@ -52,7 +52,7 @@ This example can be used to set a hyperlink on a button component.
 <Button href="/">Read more</Button>
 ```
 
-## Pagagraph
+## Paragraph
 
 Use this example to set a link inside a paragraph with an underline style.
 
