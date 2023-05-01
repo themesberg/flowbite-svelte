@@ -6,29 +6,22 @@
   import Frame from '../utils/Frame.svelte';
 
   // propagate props type from underying Frame
-  interface $$Props extends ComponentProps<Frame> {}
+  interface $$Props extends ComponentProps<Frame> {
+    simple?: boolean;
+    position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none';
+    open?: boolean;
+    divClass?: string;
+  }
 
-  export let color:
-    | 'gray'
-    | 'red'
-    | 'yellow'
-    | 'green'
-    | 'indigo'
-    | 'default'
-    | 'purple'
-    | 'pink'
-    | 'blue'
-    | 'light'
-    | 'dark'
-    | 'dropdown'
-    | 'navbar'
-    | 'navbarUl'
-    | 'form'
-    | 'none' = 'blue';
   export let simple: boolean = false;
   export let position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none' = 'none';
   export let open: boolean = true;
   export let divClass: string = 'w-full max-w-xs p-4';
+
+  $: {
+    // set default Frame value
+    $$restProps.color = $$restProps.color ?? 'blue';
+  }
 
   const positions = {
     'top-left': 'absolute top-5 left-5',
@@ -49,7 +42,7 @@
   <Frame rounded border transition={fade} {...$$restProps} class={classDiv} role="alert">
     <div class="flex {$$slots.extra ? 'items-start' : 'items-center'}">
       {#if $$slots.icon}
-        <Frame {color} rounded class={iconClass}><slot name="icon" /></Frame>
+        <Frame color={$$restProps.color} rounded class={iconClass}><slot name="icon" /></Frame>
       {/if}
 
       <div class="text-sm font-normal w-full">

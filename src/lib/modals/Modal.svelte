@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { SizeType } from '$lib/types';
+  import type { SizeType, Placement } from '$lib/types';
   import classNames from 'classnames';
   import type { ComponentProps } from 'svelte';
   import { createEventDispatcher } from 'svelte';
@@ -7,22 +7,21 @@
   import Frame from '../utils/Frame.svelte';
   import focusTrap from '../utils/focusTrap';
 
-  // propagate props type from underying Frame
-  interface $$Props extends ComponentProps<Frame> {}
+  // propagate props type from underlying Frame
+  interface $$Props extends ComponentProps<Frame> {
+    open?: boolean;
+    title?: string;
+    size?: SizeType;
+    placement?: Placement;
+    autoclose?: boolean;
+    permanent?: boolean;
+    backdropClasses?: string;
+  }
 
   export let open: boolean = false;
   export let title: string = '';
   export let size: SizeType = 'md';
-  export let placement:
-    | 'top-left'
-    | 'top-center'
-    | 'top-right'
-    | 'center-left'
-    | 'center'
-    | 'center-right'
-    | 'bottom-left'
-    | 'bottom-center'
-    | 'bottom-right' = 'center';
+  export let placement: Placement = 'center';
   export let autoclose: boolean = false;
   export let permanent: boolean = false;
   export let backdropClasses: string = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80';

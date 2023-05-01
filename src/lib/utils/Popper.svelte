@@ -5,6 +5,23 @@
   import type { Placement, Instance } from '@popperjs/core';
   import createEventDispatcher from './createEventDispatcher';
   import Frame from './Frame.svelte';
+  import type { ComponentProps } from 'svelte';
+
+  // propagate props type from underlying Frame
+  interface $$Props extends ComponentProps<Frame> {
+    activeContent?: boolean;
+    arrow?: boolean;
+    offset?: number;
+    placement?: Placement;
+    trigger?: 'hover' | 'click';
+    triggeredBy?: string;
+    strategy?: 'absolute' | 'fixed';
+    open?: boolean;
+    yOnly?: boolean;
+    class?: string;
+    'data-tooltip'?: boolean;
+    'data-popover'?: boolean;
+  }
 
   export let activeContent: boolean = false;
   export let arrow: boolean = true;

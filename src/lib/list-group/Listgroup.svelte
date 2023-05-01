@@ -6,8 +6,11 @@
   import Frame from '../utils/Frame.svelte';
   import ListgroupItem from './ListgroupItem.svelte';
 
-  // propagate props type from underying Frame
-  interface $$Props extends ComponentProps<Frame> {}
+  // propagate props type from underlying Frame
+  interface $$Props extends ComponentProps<Frame> {
+    items?: ListGroupItemType[];
+    active?: boolean;
+  }
 
   export let items: ListGroupItemType[] = [];
   export let active: boolean = false;

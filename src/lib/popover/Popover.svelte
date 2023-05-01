@@ -3,8 +3,11 @@
   import Popper from '../utils/Popper.svelte';
   import type { ComponentProps } from 'svelte';
 
-  // propagate props type from underying Frame
-  interface $$Props extends ComponentProps<Frame> {}
+  // propagate props type from underlying Frame
+  interface $$Props extends ComponentProps<Frame> {
+    title?: string;
+    defaultClass?: string;
+  }
 
   export let title: string = '';
   export let defaultClass: string = 'py-2 px-3';

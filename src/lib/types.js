@@ -170,6 +170,8 @@ export interface PillTabType {
 	href: string;
 }
 
+export type Placement = 'top-left'| 'top-center'| 'top-right'| 'center-left'| 'center'| 'center-right'| 'bottom-left'| 'bottom-center'| 'bottom-right';
+
 export type ReviewType = {
 	name: string;
 	imgSrc: string;

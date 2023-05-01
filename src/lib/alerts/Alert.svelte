@@ -5,8 +5,11 @@
   import CloseButton from '../utils/CloseButton.svelte';
   import Frame from '../utils/Frame.svelte';
 
-  // propagate props type from underying Frame
-  interface $$Props extends ComponentProps<Frame> {}
+  // propagate props type from underlying Frame
+  interface $$Props extends ComponentProps<Frame> {
+    dismissable?: boolean;
+    accent?: boolean;
+  }
 
   const dispatch = createEventDispatcher();
 
