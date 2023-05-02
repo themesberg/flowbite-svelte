@@ -1,1 +1,0 @@
-{"props":[["   id"," number",""],["tabStyle","'default' | 'full' | 'icon' | 'pill' | 'underline' | 'custom' ","'default'"],["   activeTabValue"," number",""],["customActiveClass","string ","''"],["customInActiveClass","string ","''"],["customLiClass","string ","''"]]}

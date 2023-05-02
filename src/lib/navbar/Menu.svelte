@@ -2,6 +2,8 @@
 	export let size = '24';
 	export let color = 'currentColor';
 	export let variation: 'solid' | 'outline' = 'outline';
+	export let ariaLabel = 'bars 3';
+	
 	let viewBox: string;
 	let svgpath: string;
 	let svgoutline = `<path stroke="${color}" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path> `;
@@ -19,7 +21,6 @@
 			svgpath = svgoutline;
 			viewBox = '0 0 24 24';
 	}
-	export let ariaLabel = 'bars 3';
 </script>
 
 <svg
