@@ -392,6 +392,10 @@
       "types": "./dist/navbar/NavLi.svelte.d.ts",
       "svelte": "./dist/navbar/NavLi.svelte"
     },
+    "./NavSidebarHamburger.svelte": {
+      "types": "./dist/navbar/NavSidebarHamburger.svelte.d.ts",
+      "svelte": "./dist/navbar/NavSidebarHamburger.svelte"
+    },
     "./NavUl.svelte": {
       "types": "./dist/navbar/NavUl.svelte.d.ts",
       "svelte": "./dist/navbar/NavUl.svelte"
@@ -399,6 +403,10 @@
     "./Navbar.svelte": {
       "types": "./dist/navbar/Navbar.svelte.d.ts",
       "svelte": "./dist/navbar/Navbar.svelte"
+    },
+    "./SidebarMenu.svelte": {
+      "types": "./dist/navbar/SidebarMenu.svelte.d.ts",
+      "svelte": "./dist/navbar/SidebarMenu.svelte"
     },
     "./Pagination.svelte": {
       "types": "./dist/paginations/Pagination.svelte.d.ts",
