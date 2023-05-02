@@ -17,6 +17,7 @@
   export let position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none' = 'none';
   export let open: boolean = true;
   export let divClass: string = 'w-full max-w-xs p-4';
+  export let defaultIconClass: string = 'inline-flex items-center justify-center flex-shrink-0 w-8 h-8 mr-3';
 
   $: {
     // set default Frame value
@@ -35,7 +36,7 @@
   $: classDiv = classNames(divClass, positions[position], $$props.class);
 
   let iconClass: string;
-  $: iconClass = classNames('inline-flex items-center justify-center flex-shrink-0 w-8 h-8 mr-3');
+  $: iconClass = classNames(defaultIconClass);
 </script>
 
 {#if open}

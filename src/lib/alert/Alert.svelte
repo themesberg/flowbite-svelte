@@ -6,6 +6,7 @@
 
   const dispatch = createEventDispatcher();
 
+  export let divDefault: string = 'p-4 text-sm';
   export let dismissable: boolean = false;
   export let accent: boolean = false;
 
@@ -18,7 +19,7 @@
 
   let divClass: string;
   $: divClass = classNames(
-    'p-4 text-sm',
+    divDefault,
     accent && 'border-t-4 ',
     hidden && 'hidden',
     $$props.class

@@ -25,6 +25,7 @@
   export let autoclose: boolean = false;
   export let permanent: boolean = false;
   export let backdropClasses: string = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
+  export let defaultClass: string = 'relative flex flex-col mx-auto';
 
   const dispatch = createEventDispatcher();
   $: dispatch(open ? 'open' : 'hide');
@@ -92,7 +93,7 @@
   };
 
   let frameClass: string;
-  $: frameClass = classNames('relative flex flex-col mx-auto', $$props.class);
+  $: frameClass = classNames(defaultClass, $$props.class);
 
   const isScrollable = (e: HTMLElement): boolean[] => [
     e.scrollWidth > e.clientWidth && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowX) >= 0,
