@@ -6,6 +6,7 @@
 
   const dispatch = createEventDispatcher();
 
+  export let divDefault: string = 'p-4 text-sm';
   export let dismissable: boolean = false;
   export let accent: boolean = false;
 

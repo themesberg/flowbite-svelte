@@ -26,7 +26,7 @@
     "write-package-json": "node ./scripts/package-json-writer.js",
     "add-exports": "node ./scripts/add-exports-to-package-json.js",
     "package:publish": "standard-version && git push --follow-tags origin main && npm run package && npm run add-exports && npm run write-package-json && npm publish",
-    "gen:props": "node ./node_modules/createprops/createprops.js"
+    "gen:props": "createprops"
   },
   "peerDependencies": {
     "@popperjs/core": "^2.11.6",
@@ -42,7 +42,7 @@
     "@typescript-eslint/eslint-plugin": "^5.59.1",
     "@typescript-eslint/parser": "^5.59.1",
     "autoprefixer": "^10.4.14",
-    "createprops": "^0.4.9",
+    "createprops": "^0.5.3",
     "esbuild": "0.17.18",
     "eslint": "^8.39.0",
     "eslint-config-prettier": "^8.8.0",
