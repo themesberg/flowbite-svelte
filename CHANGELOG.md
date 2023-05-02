@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.34.10](https://github.com/themesberg/flowbite-svelte/compare/v0.34.9...v0.34.10) (2023-05-02)
+
+
+### Features
+
+* GetStarted element ([#681](https://github.com/themesberg/flowbite-svelte/issues/681)) ([cd381b7](https://github.com/themesberg/flowbite-svelte/commit/cd381b75c4589582eba7b5d4e945ca78f2884ec6))
+* home page cta ([#689](https://github.com/themesberg/flowbite-svelte/issues/689)) ([76d7eb5](https://github.com/themesberg/flowbite-svelte/commit/76d7eb5454fb04c3e7d2a6e048dc46e870050902))
+* newsletter form ([#674](https://github.com/themesberg/flowbite-svelte/issues/674)) ([89df011](https://github.com/themesberg/flowbite-svelte/commit/89df011c684bf8829b3f15c38fec4b727d62303d))
+* prev/next buttons ([#675](https://github.com/themesberg/flowbite-svelte/issues/675)) ([590e423](https://github.com/themesberg/flowbite-svelte/commit/590e423396a9d42ad56593f9131b2107ad1ec2fe))
+* slightly shorter version of redirection hooks ([#673](https://github.com/themesberg/flowbite-svelte/issues/673)) ([635e1e3](https://github.com/themesberg/flowbite-svelte/commit/635e1e38e2ac83d82982ff048d2a2f230c483389))
+* social proof ([#686](https://github.com/themesberg/flowbite-svelte/issues/686)) ([4567ee2](https://github.com/themesberg/flowbite-svelte/commit/4567ee2209263eb1aed2ddd712b8de651e044641))
+* trim number of components ([#709](https://github.com/themesberg/flowbite-svelte/issues/709)) ([8723242](https://github.com/themesberg/flowbite-svelte/commit/87232427dc255cda4a11dc2fef5228c124cfc4ee))
+
+
+### Bug Fixes
+
+* add GetStarted ([d1c0424](https://github.com/themesberg/flowbite-svelte/commit/d1c042470ff943884c77ccd4917eac399f9ba072))
+* CTA should have tinted background ([#708](https://github.com/themesberg/flowbite-svelte/issues/708)) ([ecb5c4c](https://github.com/themesberg/flowbite-svelte/commit/ecb5c4c12db278fccb8c02b84298ba2ef90b18df))
+* dark-mode in examples ([#683](https://github.com/themesberg/flowbite-svelte/issues/683)) ([cde56c4](https://github.com/themesberg/flowbite-svelte/commit/cde56c44a9b20e806655f427fff32990db03f0f3))
+* dependencies update ([#685](https://github.com/themesberg/flowbite-svelte/issues/685)) ([f017a73](https://github.com/themesberg/flowbite-svelte/commit/f017a738fc38633e8b95ea135b8438b7f67f8554))
+* initial refresh fix ([#693](https://github.com/themesberg/flowbite-svelte/issues/693)) ([7479934](https://github.com/themesberg/flowbite-svelte/commit/7479934dc83bdbe0197fac7c0dbe7d817bf1d6e5))
+* links in DesignFigma ([22a40ea](https://github.com/themesberg/flowbite-svelte/commit/22a40ea13e202bb7a9b21ba2d94c53f2468649ba))
+* lock file ([b24ac8d](https://github.com/themesberg/flowbite-svelte/commit/b24ac8d52ab7a87c2d52a0e189988dc949f2f5d5))
+* lock file ([6144fd3](https://github.com/themesberg/flowbite-svelte/commit/6144fd3da66eeec36ab663938cf59dce0b3a156d))
+* props and update them ([#715](https://github.com/themesberg/flowbite-svelte/issues/715)) ([3f952b4](https://github.com/themesberg/flowbite-svelte/commit/3f952b41852f5a2b7662e4718a10bab225e060a6))
+
 ### [0.34.9](https://github.com/themesberg/flowbite-svelte/compare/v0.34.8...v0.34.9) (2023-04-11)
 
 ### [0.34.8](https://github.com/themesberg/flowbite-svelte/compare/v0.34.7...v0.34.8) (2023-04-11)
