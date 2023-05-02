@@ -19,7 +19,7 @@
 
   let divClass: string;
   $: divClass = classNames(
-    'p-4 text-sm',
+    divDefault,
     accent && 'border-t-4 ',
     hidden && 'hidden',
     $$props.class
