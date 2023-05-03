@@ -11,12 +11,14 @@
   export let open: boolean = false;
   export let activeClasses: string | undefined = undefined;
   export let inactiveClasses: string | undefined = undefined;
-
   export let defaultClass: string =
     'flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl';
-
   export let transitionType: TransitionTypes = 'slide';
   export let transitionParams: TransitionParamTypes = {};
+  export let paddingFlush: string = 'py-5';
+  export let paddingDefault: string = 'p-5';
+  export let textFlushOpen: string = 'text-gray-900 dark:text-white';
+  export let textFulshDefault: string = 'text-gray-500 dark:text-gray-400';
 
   // make a custom transition function that returns the desired transition
   const multiple = (node: HTMLElement, params: any) => {
@@ -53,9 +55,9 @@
   let buttonClass: string;
   $: buttonClass = classNames(
     defaultClass,
-    ctx.flush ? 'py-5' : 'p-5',
-    open && (ctx.flush ? 'text-gray-900 dark:text-white' : activeClasses || ctx.activeClasses),
-    !open && (ctx.flush ? 'text-gray-500 dark:text-gray-400' : inactiveClasses || ctx.inactiveClasses),
+    ctx.flush ? paddingFlush : paddingDefault,
+    open && (ctx.flush ? textFlushOpen : activeClasses || ctx.activeClasses),
+    !open && (ctx.flush ? textFulshDefault : inactiveClasses || ctx.inactiveClasses),
     $$props.class
   );
 </script>
@@ -72,7 +74,7 @@
 </h2>
 {#if open}
   <div transition:multiple|local={transitionParams}>
-    <div class={ctx.flush ? 'py-5' : 'p-5'}>
+    <div class={ctx.flush ? paddingFlush : paddingDefault}>
       <slot />
     </div>
   </div>

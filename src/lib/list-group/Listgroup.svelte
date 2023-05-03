@@ -7,11 +7,12 @@
 
   export let items: ListGroupItemType[] = [];
   export let active: boolean = false;
+  export let defaultClass: string = 'divide-y divide-gray-200 dark:divide-gray-600';
 
   $: setContext('active', active);
 
   let groupClass: string;
-  $: groupClass = classNames('divide-y divide-gray-200 dark:divide-gray-600', $$props.class);
+  $: groupClass = classNames(defaultClass, $$props.class);
 </script>
 
 <Frame tag={active ? 'div' : 'ul'} {...$$restProps} rounded border class={groupClass}>

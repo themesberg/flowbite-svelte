@@ -76,19 +76,6 @@
   const closeBtnBaseClass: string =
     'inline-flex items-center !p-0.5 !m-0 !ml-2 text-sm bg-transparent rounded-sm focus:!ring-0';
 
-  // uncomment the following lines to completely overwrite <CloseButton>'s color palette
-  // in case <CloseButton>'s color palette is changed in the future
-  // const closeBtnColors = {
-  //   blue: '!text-blue-400 hover:!bg-blue-200 hover:!text-blue-900 dark:hover:!bg-blue-800 dark:hover:!text-blue-300',
-  //   dark: '!text-gray-400 hover:!bg-gray-200 hover:!text-gray-900 dark:hover:!bg-gray-600 dark:hover:!text-gray-300',
-  //   red: '!text-red-400 hover:!bg-red-200 hover:!text-red-900 dark:hover:!bg-red-800 dark:hover:!text-red-300',
-  //   green: '!text-green-400 hover:!bg-green-200 hover:!text-green-900 dark:hover:!bg-green-800 dark:hover:!text-green-300',
-  //   yellow: '!text-yellow-400 hover:!bg-yellow-200 hover:!text-yellow-900 dark:hover:!bg-yellow-800 dark:hover:!text-yellow-300',
-  //   indigo: '!text-indigo-400 hover:!bg-indigo-200 hover:!text-indigo-900 dark:hover:!bg-indigo-800 dark:hover:!text-indigo-300',
-  //   purple: '!text-purple-400 hover:!bg-purple-200 hover:!text-purple-900 dark:hover:!bg-purple-800 dark:hover:!text-purple-300',
-  //   pink: '!text-pink-400 hover:!bg-pink-200 hover:!text-pink-900 dark:hover:!bg-pink-800 dark:hover:!text-pink-300'
-  // };
-
   // only overwrite necessary colors (<CloseButton> v0.29.10)
   const closeBtnColors = {
     blue: 'text-blue-400 hover:text-blue-900 dark:hover:!bg-blue-800 dark:hover:text-blue-300',

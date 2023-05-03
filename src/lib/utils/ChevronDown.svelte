@@ -2,6 +2,7 @@
 	export let size = '20';
 	export let color = 'currentColor';
 	export let variation: 'solid' | 'outline' = 'outline';
+	export let ariaLabel = 'chevron down';
 	let viewBox: string;
 	let svgpath: string;
 	let svgoutline = `<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" stroke="${color}"></path>`;
@@ -19,7 +20,6 @@
 			svgpath = svgoutline;
 			viewBox = '0 0 20 20';
 	}
-	export let ariaLabel = 'chevron down';
 </script>
 
 <svg

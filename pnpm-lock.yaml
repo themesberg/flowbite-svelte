@@ -37,8 +37,8 @@ devDependencies:
     specifier: ^10.4.14
     version: 10.4.14(postcss@8.4.23)
   createprops:
-    specifier: ^0.4.9
-    version: 0.4.9
+    specifier: ^0.5.3
+    version: 0.5.3
   esbuild:
     specifier: 0.17.18
     version: 0.17.18
@@ -1449,8 +1449,9 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
-  /createprops@0.4.9:
-    resolution: {integrity: sha512-jr701jvWkZhNQWwYnbuD+NGSeH6KpioMHuzFAtTcovE1akq9zyW2UC4f6Q8odKgoZ3AE3HM0YjxaqoWD5YtjPA==}
+  /createprops@0.5.3:
+    resolution: {integrity: sha512-JHfTvGFMupc+yDWojYUvyPu/Ysxox9inyIxZ6i9qdo5cZBNtHw45VyuJ7bHB2Gh0cxcTd0foGB8PhsTOEaobGA==}
+    hasBin: true
     dev: true
 
   /cross-spawn@7.0.3:
