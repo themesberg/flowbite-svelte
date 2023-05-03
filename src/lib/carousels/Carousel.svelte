@@ -3,6 +3,8 @@
   import Thumbnail from './Thumbnail.svelte';
   import Caption from './Caption.svelte';
   import Indicator from './Indicator.svelte';
+  import classNames from 'classnames';
+  import Timeline from '$lib/timeline/Timeline.svelte';
 
   export let showIndicators: boolean = true;
   export let showCaptions: boolean = true;
@@ -49,10 +51,94 @@
       nextSlide();
     }, duration);
   }
+
+  type ActiveDragGesture = {
+    start: number;
+    position: number;
+    width: number;
+    timestamp: number;
+  };
+
+  let activeDragGesture: ActiveDragGesture | undefined;
+
+  let carouselDiv: HTMLDivElement;
+  let percentOffset: number = 0;
+
+  const getPositionFromEvent = (evt: MouseEvent | TouchEvent) => {
+    const mousePos = (evt as MouseEvent)?.clientX;
+    if (mousePos) return mousePos;
+
+    let touchEvt = evt as TouchEvent;
+    if (/^touch/.test(touchEvt?.type)) {
+      return touchEvt.touches[0].clientX;
+    }
+  };
+
+  const onDragStart = (evt: MouseEvent | TouchEvent) => {
+    evt.preventDefault();
+    const start = getPositionFromEvent(evt);
+    const width = carouselDiv.getBoundingClientRect().width;
+    if (start === undefined || width === undefined) return;
+    activeDragGesture = {
+      start,
+      position: start,
+      width,
+      timestamp: Date.now()
+    };
+  };
+
+  $: onDragMove =
+    activeDragGesture === undefined
+      ? undefined
+      : (evt: MouseEvent | TouchEvent) => {
+          const position = getPositionFromEvent(evt);
+          if (!activeDragGesture || position === undefined) return;
+          const { start, width } = activeDragGesture;
+          percentOffset = Math.min(100, Math.max(-100, ((position - start) / width) * 100));
+          activeDragGesture.position = position;
+        };
+
+  $: onDragStop =
+    activeDragGesture === undefined
+      ? undefined
+      : (evt: MouseEvent | TouchEvent) => {
+          // These might be exposed one day, keep them safely tucked away as constants.
+          const SWIPE_MAX_DURATION = 250;
+          const SWIPE_MIN_DISTANCE = 30;
+          const DRAG_MIN_PERCENT = 50;
+
+          if (activeDragGesture) {
+            const { timestamp, position, start } = activeDragGesture;
+            const duration = Date.now() - timestamp;
+            const distance = position - start;
+            console.log(duration, distance);
+            if (Math.abs(distance) >= SWIPE_MIN_DISTANCE && duration <= SWIPE_MAX_DURATION && duration > 0) {
+              if (distance > 0) nextSlide();
+              else prevSlide();
+            } else if (percentOffset > DRAG_MIN_PERCENT) nextSlide();
+            else if (percentOffset < -DRAG_MIN_PERCENT) prevSlide();
+          }
+          percentOffset = 0;
+          activeDragGesture = undefined;
+        };
 </script>
 
-<div id="default-carousel" class="relative">
-  <div class={divClass}>
+<!-- The move listeners go here, so things keep working if the touch strays out of the element. -->
+<svelte:document
+  on:mousemove={onDragMove}
+  on:mouseup={onDragStop}
+  on:touchmove={onDragMove}
+  on:touchend={onDragStop} />
+
+<div
+  bind:this={carouselDiv}
+  id="default-carousel"
+  class="relative"
+  on:mousedown={onDragStart}
+  on:touchstart={onDragStart}>
+  <div
+    style={`transform: translateX(${percentOffset}%)`}
+    class={classNames(divClass, { 'transition-transform': activeDragGesture === undefined })}>
     <Slide image={image.imgurl} altTag={image.name} attr={image.attribution} {slideClass} />
   </div>
   {#if showIndicators}
