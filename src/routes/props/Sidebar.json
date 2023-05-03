@@ -1,1 +1,1 @@
-{"props":[["asideClass","string ","'w-64'"]]}
+{"props":[["import classNames from 'classnames'; asideClass","string ","'w-64'"]]}

@@ -12,8 +12,7 @@
   export let bottomOffset: string = 'inset-x-0 bottom-0';
   export let width: string = 'w-80';
   export let backdrop: boolean = true;
-  export let bgColor: string = 'bg-gray-900';
-  export let bgOpacity: string = 'bg-opacity-75';
+  export let bgColor: string = 'bg-gray-900/75';
   export let placement: 'left' | 'right' | 'top' | 'bottom' = 'left';
   export let id: string = 'drawer-example';
   export let divClass: string = 'overflow-y-auto z-50 p-4 bg-white dark:bg-gray-800';
@@ -48,7 +47,6 @@
   let backdropDivClass = classNames(
     'fixed top-0 left-0 z-50 w-full h-full',
     backdrop && bgColor,
-    backdrop && bgOpacity
   );
 </script>
 

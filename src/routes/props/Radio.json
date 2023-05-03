@@ -1,1 +1,1 @@
-{"props":[["color","FormColorType ","'blue'"],["custom","boolean ","false"],["inline","boolean ","false"],["group","number | string ","''"],["value","number | string ","''"]]}
+{"props":[["color","FormColorType ","'blue'"],["custom","boolean ","false"],["inline","boolean ","false"],["group","number | string ","''"],["value","number | string ","'';    let background: boolean = getContext('background')"]]}

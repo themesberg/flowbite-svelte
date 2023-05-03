@@ -157,7 +157,7 @@
     sizeClasses[size],
     rounded(true),
     'bg-white text-gray-900 dark:bg-gray-900 dark:text-white', // this is limitation - no transparency
-    'transition-all duration-75 ease-in group-hover:bg-opacity-0 group-hover:text-inherit'
+    'transition-all duration-75 ease-in group-hover:bg-transparent group-hover:text-inherit'
   );
 </script>
 

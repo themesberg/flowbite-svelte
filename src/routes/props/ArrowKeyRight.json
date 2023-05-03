@@ -1,1 +1,1 @@
-{"props":[["svgClass","string ","'w-4 h-4'"]]}
+{"props":[["import classNames from 'classnames'; svgClass","string ","'w-4 h-4'"]]}

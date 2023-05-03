@@ -1,1 +1,1 @@
-{"props":[["divClass","string ","'flex items-center'"],["size","string ","'24'"],["total","number ","5"],["rating","number ","4"],["ceil","boolean ","false"],["count","boolean ","false"]]}
+{"props":[["divClass","string ","'flex items-center';   export let size: string = '24'"],["total","number ","5"],["rating","number ","4"],["ceil","boolean ","false"],["count","boolean ","false"]]}

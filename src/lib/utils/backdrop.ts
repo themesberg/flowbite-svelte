@@ -1,7 +1,7 @@
 import { createEventDispatcher } from 'svelte';
 export let open = false;
 
-const backdropClasses = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40';
+const backdropClasses = 'bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 z-40';
 export let placement: string;
 // const placement:
 // 		| 'top-left'
