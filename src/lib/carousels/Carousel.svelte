@@ -4,7 +4,6 @@
   import Caption from './Caption.svelte';
   import Indicator from './Indicator.svelte';
   import classNames from 'classnames';
-  import Timeline from '$lib/timeline/Timeline.svelte';
 
   export let showIndicators: boolean = true;
   export let showCaptions: boolean = true;
@@ -111,7 +110,7 @@
             const { timestamp, position, start } = activeDragGesture;
             const duration = Date.now() - timestamp;
             const distance = position - start;
-            console.log(duration, distance);
+
             if (Math.abs(distance) >= SWIPE_MIN_DISTANCE && duration <= SWIPE_MAX_DURATION && duration > 0) {
               if (distance > 0) nextSlide();
               else prevSlide();
