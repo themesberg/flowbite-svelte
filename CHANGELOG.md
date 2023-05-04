@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.34.11](https://github.com/themesberg/flowbite-svelte/compare/v0.34.10...v0.34.11) (2023-05-04)
+
+
+### Bug Fixes
+
+* duplicated lines in app.postcss ([1eb255a](https://github.com/themesberg/flowbite-svelte/commit/1eb255a30f57213eaa7c8d3e14cb7ac704c25f82))
+* remove package-lock.json and add package-lock.json to .gitignore ([b1f0fc4](https://github.com/themesberg/flowbite-svelte/commit/b1f0fc4c8d093668676b27fd845d1f89c2812a52))
+
 ### [0.34.10](https://github.com/themesberg/flowbite-svelte/compare/v0.34.9...v0.34.10) (2023-05-02)
 
 
