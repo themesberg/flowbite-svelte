@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.34.12](https://github.com/themesberg/flowbite-svelte/compare/v0.34.11...v0.34.12) (2023-05-04)
+
+
+### Bug Fixes
+
+* add event forwarding to Frame component in Card component.  ([6ce4b6b](https://github.com/themesberg/flowbite-svelte/commit/6ce4b6b12f099a0a9600b9be34ed02ac6557ebf2))
+
 ### [0.34.11](https://github.com/themesberg/flowbite-svelte/compare/v0.34.10...v0.34.11) (2023-05-04)
 
 
