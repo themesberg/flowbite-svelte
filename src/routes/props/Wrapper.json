@@ -1,1 +1,1 @@
-{"props":[["tag","string ","'div'"],["   show"," boolean",""],["use","Action ","() => {}"]]}
+{"props":[["import type { Action } from 'svelte/action';    tag","string ","'div'"],["   show"," boolean",""],["use","Action ","() => {}"]]}

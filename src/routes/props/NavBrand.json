@@ -1,1 +1,1 @@
-{"props":[["href","string ","''"]]}
+{"props":[["href","string ","''; </script>  <a {href} {...$$restProps} class={classNames('flex items-center', $$props.class)}> <slot /> </a>"]]}

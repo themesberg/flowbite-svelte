@@ -1,1 +1,1 @@
-{"props":[["btnClass","string ","'ml-3 md:hidden'"]]}
+{"props":[["import SidebarMenu from './SidebarMenu.svelte';  btnClass","string ","'ml-3 md:hidden'"]]}
