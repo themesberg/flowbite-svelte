@@ -126,6 +126,7 @@
     transition:transition={params}
     {...$$restProps}
     class={divClass}
+    on:click
     on:mouseenter
     on:mouseleave
     on:focusin
@@ -139,6 +140,7 @@
     bind:this={node}
     {...$$restProps}
     class={divClass}
+    on:click
     on:mouseenter
     on:mouseleave
     on:focusin

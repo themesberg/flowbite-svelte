@@ -59,7 +59,7 @@
   );
 </script>
 
-<Frame tag={href ? 'a' : 'div'} rounded shadow border {href} {...$$restProps} class={cardClass}>
+<Frame tag={href ? 'a' : 'div'} rounded shadow border on:click on:focusin on:focusout on:mouseenter on:mouseleave {href} {...$$restProps} class={cardClass}>
   {#if img}
     <img class={imgClass} src={img} alt="" />
     <div class={innerPdding}>
