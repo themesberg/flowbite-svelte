@@ -1,26 +1,16 @@
 import type { SvelteComponent } from 'svelte';
 
-export interface ActivityType {
-	title: HTMLElement | string;
-	date: Date | string;
-	src: string;
-	alt: string;
-	text?: HTMLElement | string;
-}
-
 export type ButtonType = 'button' | 'submit' | 'reset';
 
 export type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink' | 'white' | 'custom';
 
-export interface drawerTransitionParamTypes {
-	amount?: number;
-	delay?: number;
-	duration?: number;
-	easing?: (t: number) => number;
-	opacity?: number;
-	x?: number;
-	y?: number;
-}
+
+export type ImgType = {
+	src: string;
+	alt?: string;
+};
+
+export type InputType = 'color' | 'date' | 'datetime-local' | 'email' | 'file' | 'hidden' | 'image' | 'month' | 'number' | 'password' | 'reset' | 'submit' | 'tel' | 'text' | 'time' | 'url' | 'week' | 'search';
 
 export type drawerTransitionTypes =
 	| 'fade'
@@ -39,43 +29,6 @@ export type drawerTransitionTypes =
 
 export type FormColorType = 'blue' | 'red' | 'green' | 'purple' | 'teal' | 'yellow' | 'orange'
 
-export interface GroupTimelineType {
-	title: string | HTMLElement;
-	src: string;
-	alt: string;
-	href?: string;
-	isPrivate?: boolean;
-	comment?: string | HTMLElement;
-}
-
-export type ImgType = {
-	src: string;
-	alt?: string;
-};
-
-export type InputType = 'color' | 'date' | 'datetime-local' | 'email' | 'file' | 'hidden' | 'image' | 'month' | 'number' | 'password' | 'reset' | 'submit' | 'tel' | 'text' | 'time' | 'url' | 'week' | 'search';
-
-
-export interface ListGroupItemType {
-	current?: boolean;
-	disabled?: boolean;
-	href?: string;
-	[propName: string]: any;
-}
-
-export interface LinkType {
-	name: string;
-	href?: string;
-	rel?: string;
-	active?: boolean;
-}
-
-export interface NavbarType {
-	name: string;
-	href: string;
-	rel?: string;
-	child?: NavbarType[];
-}
 
 export declare const xs = 'xs'
 export declare const sm = 'sm'
@@ -103,6 +56,56 @@ export type SelectOptionType = {
 	name: string | number;
 	value: string | number;
 };
+
+export type TransitionTypes = 'fade' | 'fly' | 'slide' | 'blur' | 'in:fly' | 'out:fly' | 'in:slide' | 'out:slide' | 'in:fade' | 'out:fade' | 'in:blur' | 'out:blur';
+
+export interface ActivityType {
+	title: HTMLElement | string;
+	date: Date | string;
+	src: string;
+	alt: string;
+	text?: HTMLElement | string;
+}
+
+export interface drawerTransitionParamTypes {
+	amount?: number;
+	delay?: number;
+	duration?: number;
+	easing?: (t: number) => number;
+	opacity?: number;
+	x?: number;
+	y?: number;
+}
+
+export interface GroupTimelineType {
+	title: string | HTMLElement;
+	src: string;
+	alt: string;
+	href?: string;
+	isPrivate?: boolean;
+	comment?: string | HTMLElement;
+}
+
+export interface ListGroupItemType {
+	current?: boolean;
+	disabled?: boolean;
+	href?: string;
+	[propName: string]: any;
+}
+
+export interface LinkType {
+	name: string;
+	href?: string;
+	rel?: string;
+	active?: boolean;
+}
+
+export interface NavbarType {
+	name: string;
+	href: string;
+	rel?: string;
+	child?: NavbarType[];
+}
 
 export interface SiteType {
 	name: string;
@@ -138,7 +141,6 @@ export interface TransitionParamTypes {
 	tick?: (t: number, u: number) => void;
 }
 
-export type TransitionTypes = 'fade' | 'fly' | 'slide' | 'blur' | 'in:fly' | 'out:fly' | 'in:slide' | 'out:slide' | 'in:fade' | 'out:fade' | 'in:blur' | 'out:blur';
 
 export interface ButtonClassesTypes {
 	default?: string;
