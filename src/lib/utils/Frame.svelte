@@ -5,11 +5,12 @@
   import { noop } from 'svelte/internal';
   import type { Action } from 'svelte/action';
   import type { TransitionConfig } from 'svelte/transition';
+  import type { HTMLAnchorAttributes } from 'svelte/elements';
 
   type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
   type FrameColor = keyof typeof bgColors;
 
-  interface $$Props extends Partial<HTMLAnchorElement> {
+  interface $$Props extends HTMLAnchorAttributes {
     tag?: string;
     color?: FrameColor;
     rounded?: boolean;
