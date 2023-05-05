@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { SizeType } from '$lib/types';
   import classNames from 'classnames';
+  import type { ComponentProps } from 'svelte';
   import Frame from '../utils/Frame.svelte';
 
   export let href: string | undefined = undefined;
@@ -9,6 +10,15 @@
   export let img: string | undefined = undefined;
   export let padding: 'none' | 'sm' | 'md' | 'lg' | 'xl' = 'lg';
   export let size: SizeType = 'sm';
+
+  // propagate props type from underlying Frame
+  interface $$Props extends ComponentProps<Frame> {
+    horizontal?: boolean;
+    reverse?: boolean;
+    img?: string;
+    padding?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
+    size?: SizeType;
+  }
 
   const paddings = {
     none: 'p-0',
@@ -48,7 +58,19 @@
   );
 </script>
 
-<Frame tag={href ? 'a' : 'div'} rounded shadow border on:click on:focusin on:focusout on:mouseenter on:mouseleave {href} {...$$restProps} class={cardClass}>
+<Frame
+  tag={href ? 'a' : 'div'}
+  rounded
+  shadow
+  border
+  on:click
+  on:focusin
+  on:focusout
+  on:mouseenter
+  on:mouseleave
+  {href}
+  {...$$restProps}
+  class={cardClass}>
   {#if img}
     <img class={imgClass} src={img} alt="" />
     <div class={innerPdding}>
