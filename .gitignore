@@ -13,3 +13,5 @@ node_modules
 
 /src/routes/compotests
 /src/routes/typechecktests
+
+package-lock.json
