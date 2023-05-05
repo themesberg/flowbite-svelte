@@ -1,11 +1,18 @@
 <script lang="ts">
+  import type { ComponentProps } from 'svelte';
   import Popper from '../utils/Popper.svelte';
   import classNames from 'classnames';
 
-  export let style: 'dark' | 'light' | 'auto' | 'custom' = 'dark';
+  // propagate props type from underlying Frame
+  interface $$Props extends ComponentProps<Popper> {
+    type?: 'dark' | 'light' | 'auto' | 'custom';
+    defaultClass?: string;
+  }
+
+  export let type: 'dark' | 'light' | 'auto' | 'custom' = 'dark';
   export let defaultClass: string = 'py-2 px-3 text-sm font-medium';
 
-  const styles = {
+  const types = {
     dark: 'bg-gray-900 text-white dark:bg-gray-700',
     light: 'border border-gray-200 bg-white text-gray-900',
     auto: ' bg-white text-gray-900 dark:bg-gray-700 dark:text-white border border-gray-200 dark:border-0',
@@ -14,9 +21,9 @@
 
   let toolTipClass: string;
   $: {
-    if ($$restProps.color) style = 'custom';
+    if ($$restProps.color) type = 'custom';
     else $$restProps.color = 'none';
-    toolTipClass = classNames('tooltip', defaultClass, styles[style], $$props.class);
+    toolTipClass = classNames('tooltip', defaultClass, types[type], $$props.class);
   }
 </script>
 

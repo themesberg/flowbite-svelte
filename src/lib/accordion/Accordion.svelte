@@ -12,7 +12,15 @@
 <script lang="ts">
   import Frame from '$lib/utils/Frame.svelte';
   import classNames from 'classnames';
-  import { setContext } from 'svelte';
+  import { setContext, type ComponentProps } from 'svelte';
+
+  interface $$Props extends ComponentProps<Frame> {
+    multiple: boolean;
+    flush: boolean;
+    activeClasses: string;
+    inactiveClasses: string;
+    defaultClass: string;
+  }
 
   export let multiple: boolean = false;
   export let flush: boolean = false;
@@ -40,6 +48,6 @@
   );
 </script>
 
-<Frame class={frameClass} color="none" border={!flush}>
+<Frame {...$$restProps} class={frameClass} color="none" border={!flush}>
   <slot />
 </Frame>

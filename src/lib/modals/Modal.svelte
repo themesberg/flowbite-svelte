@@ -1,10 +1,30 @@
 <script lang="ts">
   import classNames from 'classnames';
   import Frame from '../utils/Frame.svelte';
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher, type ComponentProps } from 'svelte';
   import CloseButton from '../utils/CloseButton.svelte';
   import focusTrap from '../utils/focusTrap';
   import type { SizeType } from '$lib/types';
+
+  // propagate props type from underlying Frame
+  interface $$Props extends ComponentProps<Frame> {
+    open?: boolean;
+    title?: string;
+    size?: SizeType;
+    placement?:
+      | 'top-left'
+      | 'top-center'
+      | 'top-right'
+      | 'center-left'
+      | 'center'
+      | 'center-right'
+      | 'bottom-left'
+      | 'bottom-center'
+      | 'bottom-right';
+    autoclose?: boolean;
+    permanent?: boolean;
+    backdropClasses?: string;
+  }
 
   export let open: boolean = false;
   export let title: string = '';

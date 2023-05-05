@@ -6,32 +6,31 @@
   import type { Action } from 'svelte/action';
   import type { TransitionConfig } from 'svelte/transition';
 
+  type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
+  type FrameColor = keyof typeof bgColors;
+
+  interface $$Props extends Partial<HTMLAnchorElement> {
+    tag?: string;
+    color?: FrameColor;
+    rounded?: boolean;
+    border?: boolean;
+    shadow?: boolean;
+    transition?: TransitionFunc | undefined;
+    params?: object;
+    node?: HTMLElement | undefined;
+    use?: Action;
+    options?: object;
+    class?: string;
+  }
+
   setContext('background', true);
   $: setContext('color', color);
 
   export let tag: string = 'div';
-  export let color:
-    | 'gray'
-    | 'red'
-    | 'yellow'
-    | 'green'
-    | 'indigo'
-    | 'default'
-    | 'purple'
-    | 'pink'
-    | 'blue'
-    | 'light'
-    | 'dark'
-    | 'dropdown'
-    | 'navbar'
-    | 'navbarUl'
-    | 'form'
-    | 'none' = 'default';
+  export let color: FrameColor = 'default';
   export let rounded: boolean = false;
   export let border: boolean = false;
   export let shadow: boolean = false;
-
-  type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
   // Export a prop through which you can set a desired svelte transition
   export let transition: TransitionFunc | undefined = undefined;
@@ -40,9 +39,9 @@
 
   // For components development
   export let node: HTMLElement | undefined = undefined;
+  // Action function and its params
   export let use: Action = noop;
   export let options = {};
-
 
   // your script goes here
   const bgColors = {
@@ -64,7 +63,7 @@
     primary: 'bg-primary-50 dark:bg-gray-800 ',
     none: ''
   };
-   
+
   const textColors = {
     gray: 'text-gray-800 dark:text-gray-300',
     red: 'text-red-800 dark:text-red-400',

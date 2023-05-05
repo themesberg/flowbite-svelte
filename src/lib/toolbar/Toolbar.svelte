@@ -1,8 +1,13 @@
 <script lang="ts">
-  import { setContext } from 'svelte';
+  import { setContext, type ComponentProps } from 'svelte';
   import { writable } from 'svelte/store';
   import classNames from 'classnames';
   import Frame from '$lib/utils/Frame.svelte';
+
+  interface $$Props extends ComponentProps<Frame> {
+    color: 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'dark' | 'none';
+    embedded: boolean;
+  }
 
   const separators = writable(false);
   setContext('toolbar', separators);
@@ -18,6 +23,7 @@
     | 'blue'
     | 'dark'
     | 'none' = 'dark';
+
   export let embedded: boolean = false;
 
   let divClass: string;
@@ -40,7 +46,7 @@
   $: separatorsClass = classNames($separators && 'sm:divide-x', divideColors[color]);
 </script>
 
-<Frame class={divClass} color={embedded ? 'none' : color} rounded={!embedded}>
+<Frame {...$$restProps} class={divClass} color={embedded ? 'none' : color} rounded={!embedded}>
   <div class="flex flex-wrap items-center {separatorsClass}">
     <slot />
   </div>

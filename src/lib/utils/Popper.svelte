@@ -1,10 +1,25 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { onMount, type ComponentProps } from 'svelte';
   import { createPopper, type Rect } from '@popperjs/core';
   import classNames from 'classnames';
   import type { Placement, Instance } from '@popperjs/core';
   import createEventDispatcher from './createEventDispatcher';
   import Frame from './Frame.svelte';
+
+  // propagate props type from underlying Frame
+  interface $$Props extends ComponentProps<Frame> {
+    activeContent?: boolean;
+    arrow?: boolean;
+    offset?: number;
+    placement?: Placement;
+    trigger?: 'hover' | 'click';
+    triggeredBy?: string;
+    strategy?: 'absolute' | 'fixed';
+    open?: boolean;
+    yOnly?: boolean;
+    'data-tooltip'?: boolean;
+    'data-popover'?: boolean;
+  }
 
   export let activeContent: boolean = false;
   export let arrow: boolean = true;
