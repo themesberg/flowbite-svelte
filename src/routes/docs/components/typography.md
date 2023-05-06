@@ -13,7 +13,6 @@ thumnailSize: w-36
   import { A } from '$lib';
 </script>
 
-
 The typography for FlowBite is completely based on the utility classes from Tailwind CSS.
 
 We have listed some of the commonly used typography classes that we use throughout the FlowBite UI, however, you can also check out all of the utility classes on the <a class="link" href="https://tailwindcss.com/docs/font-family">Tailwind CSS documentation</a> directly.
@@ -38,7 +37,7 @@ Use the following text-size utility classes from Tailwind to set the font size f
 <p class="text-9xl dark:text-white">FlowBite</p>
 ```
 
-## Font Weight 
+## Font Weight
 
 Use the following font-weight utility classes to set the font weight for any text element.
 
@@ -72,24 +71,28 @@ Use the following leading-type utility classes to set the line height for any te
 Use the following code to create list items with ordered and unordered lists.
 
 ```svelte example
-.list-disc
-  <ul class="list-disc dark:text-gray-400">
-    <li>Design</li>
-    <li>Develop</li>
-    <li>Test</li>
-  </ul>
-.list-decimal
-  <ol class="list-decimal dark:text-gray-400">
-    <li>Design</li>
-    <li>Develop</li>
-    <li>Test</li>
-  </ol>
-.list-default
-  <ul class="dark:text-gray-400">
-    <li>Design</li>
-    <li>Develop</li>
-    <li>Test</li>
-  </ul>
+<script>
+  import { List, Li, Heading } from 'flowbite-svelte';
+</script>
+
+<Heading tag="h5">List disc</Heading>
+<List list="disc">
+  <Li>Design</Li>
+  <Li>Develop</Li>
+  <Li>Test</Li>
+</List>
+<Heading tag="h5">List decimal</Heading>
+<List list="decimal">
+  <Li>Design</Li>
+  <Li>Develop</Li>
+  <Li>Test</Li>
+</List>
+<Heading tag="h5">List none</Heading>
+<List list="none">
+  <Li>Design</Li>
+  <Li>Develop</Li>
+  <Li>Test</Li>
+</List>
 ```
 
 ## List position
@@ -97,18 +100,22 @@ Use the following code to create list items with ordered and unordered lists.
 Use the list-inside and list-outside classes to set the list item position inside a list component.
 
 ```svelte example
-.list-inside
-  <ul class="list-disc list-inside dark:text-gray-400">
-    <li>Design</li>
-    <li>Develop</li>
-    <li>Test</li>
-  </ul>
-.list-outside
-  <ul class="list-disc list-outside dark:text-gray-400">
-    <li>Design</li>
-    <li>Develop</li>
-    <li>Test</li>
-  </ul>
+<script>
+  import { List, Li, Heading } from 'flowbite-svelte';
+</script>
+
+<Heading tag="h5">List inside</Heading>
+<List position="inside">
+  <Li>Design</Li>
+  <Li>Develop</Li>
+  <Li>Test</Li>
+</List>
+<Heading tag="h5">List outside</Heading>
+<List position="outside">
+  <Li>Design</Li>
+  <Li>Develop</Li>
+  <Li>Test</Li>
+</List>
 ```
 
 ## Text Decoration
@@ -119,4 +126,3 @@ You can use the following classes to set the text decoration for any inline text
 <p class="underline dark:text-gray-400">please read our terms and services</p>
 <p class="line-through dark:text-gray-400">please read our terms and services</p>
 ```
-
