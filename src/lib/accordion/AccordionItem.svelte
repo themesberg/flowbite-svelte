@@ -12,7 +12,7 @@
   export let activeClasses: string | undefined = undefined;
   export let inactiveClasses: string | undefined = undefined;
   export let defaultClass: string =
-    'flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl';
+    'flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl border-gray-200 dark:border-gray-700';
   export let transitionType: TransitionTypes = 'slide';
   export let transitionParams: TransitionParamTypes = {};
   export let paddingFlush: string = 'py-5';
@@ -55,6 +55,8 @@
   let buttonClass: string;
   $: buttonClass = classNames(
     defaultClass,
+    ctx.flush || 'border-l border-r group-first:border-t',
+    'border-b',
     ctx.flush ? paddingFlush : paddingDefault,
     open && (ctx.flush ? textFlushOpen : activeClasses || ctx.activeClasses),
     !open && (ctx.flush ? textFulshDefault : inactiveClasses || ctx.inactiveClasses),
@@ -74,7 +76,7 @@
 </h2>
 {#if open}
   <div transition:multiple|local={transitionParams}>
-    <div class={ctx.flush ? paddingFlush : paddingDefault}>
+    <div class="{ctx.flush ? paddingFlush : paddingDefault} {ctx.flush ? '' : 'border-l border-r'} border-b">
       <slot />
     </div>
   </div>

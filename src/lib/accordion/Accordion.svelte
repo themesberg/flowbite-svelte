@@ -41,13 +41,13 @@
 
   let frameClass = classNames(
     defaultClass,
-    'divide-y divide-gray-200 dark:divide-gray-700',
-    'border-gray-200 dark:border-gray-700',
-    'rounded-t-xl',
+    // 'divide-y divide-gray-200 dark:divide-gray-700',
+    // 'border-l border-r border-gray-200 dark:border-gray-700',
+    // 'rounded-t-xl',
     $$props.class
   );
 </script>
 
-<Frame {...$$restProps} class={frameClass} color="none" border={!flush}>
+<Frame {...$$restProps} class={frameClass} color="none">
   <slot />
 </Frame>
