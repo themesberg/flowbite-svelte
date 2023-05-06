@@ -1,3 +1,5 @@
+import type Mdsvex from '*.md';
+
 export { default as CompoDescription } from './CompoDescription.svelte';
 export { default as DocBadge } from './DocBadge.svelte';
 export { default as DocBadgeList } from './DocBadgeList.svelte';
@@ -12,18 +14,18 @@ export { default as Toc } from './Toc.svelte';
 const basename = (path: string) => path.split('/').pop()?.split('.').shift() ?? '';
 const filePath = (path: string) => '/' + basename(path);
 const fileDir = (path: string) => '/' + path.split('/').slice(0, -1).pop();
-const sortByList = (order: string[]) => (a, b) =>
+const sortByList = (order: string[]) => (a: [string, any], b: [string, any]) =>
   [a[0], b[0]].map((x) => order.indexOf(basename(x))).reduce((x, y) => (x < 0 ? 1 : y < 0 ? -1 : x - y));
 
 export const fetchMarkdownPosts = async () => {
-  const componentFiles = import.meta.glob('/src/routes/docs/components/*.md');
-  const formFiles = import.meta.glob('/src/routes/docs/forms/*.md');
-  const typographyFiles = import.meta.glob('/src/routes/docs/typography/*.md');
-  const utilFiles = import.meta.glob('/src/routes/docs/utilities/*.md');
-  const pageFiles = import.meta.glob('/src/routes/docs/pages/*.md');
-  const extendFiles = import.meta.glob('/src/routes/docs/extend/*.md');
-  const exampleFiles = import.meta.glob('/src/routes/docs/examples/*.md');
-  const experimentalFiles = import.meta.glob('/src/routes/docs/experimental/*.md');
+  const componentFiles = import.meta.glob<Mdsvex>('/src/routes/docs/components/*.md');
+  const formFiles = import.meta.glob<Mdsvex>('/src/routes/docs/forms/*.md');
+  const typographyFiles = import.meta.glob<Mdsvex>('/src/routes/docs/typography/*.md');
+  const utilFiles = import.meta.glob<Mdsvex>('/src/routes/docs/utilities/*.md');
+  const pageFiles = import.meta.glob<Mdsvex>('/src/routes/docs/pages/*.md');
+  const extendFiles = import.meta.glob<Mdsvex>('/src/routes/docs/extend/*.md');
+  const exampleFiles = import.meta.glob<Mdsvex>('/src/routes/docs/examples/*.md');
+  const experimentalFiles = import.meta.glob<Mdsvex>('/src/routes/docs/experimental/*.md');
   // returns an array of files
   const iterableComponentFiles = Object.entries(componentFiles);
   const iterableFormFiles = Object.entries(formFiles);
@@ -81,7 +83,7 @@ export const fetchMarkdownPosts = async () => {
     'typescript',
     'compiler-speed',
     'how-to-contribute',
-    'license',
+    'license'
   ];
   const allPages = await Promise.all(
     iterablePageFiles.sort(sortByList(pageOrder)).map(async ([path, resolver]) => {
