@@ -672,10 +672,6 @@
       "types": "./dist/typography/Span.svelte.d.ts",
       "svelte": "./dist/typography/Span.svelte"
     },
-    "./Ul.svelte": {
-      "types": "./dist/typography/Ul.svelte.d.ts",
-      "svelte": "./dist/typography/Ul.svelte"
-    },
     "./Chevron.svelte": {
       "types": "./dist/utils/Chevron.svelte.d.ts",
       "svelte": "./dist/utils/Chevron.svelte"
