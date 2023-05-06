@@ -150,7 +150,7 @@
     use={init}
     options={triggerEl}
     role="tooltip"
-    tabIndex={activeContent ? -1 : undefined}
+    tabindex={activeContent ? -1 : undefined}
     on:focusin={optional(activeContent, showHandler)}
     on:focusout={optional(activeContent, hideHandler)}
     on:mouseenter={optional(activeContent && !clickable, showHandler)}

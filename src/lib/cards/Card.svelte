@@ -4,7 +4,7 @@
   import type { ComponentProps } from 'svelte';
   import Frame from '../utils/Frame.svelte';
 
-  export let href: string | undefined = undefined;
+  export let href: string | null | undefined = undefined;
   export let horizontal: boolean = false;
   export let reverse: boolean = false;
   export let img: string | undefined = undefined;
