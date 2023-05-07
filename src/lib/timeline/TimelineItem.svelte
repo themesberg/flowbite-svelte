@@ -12,7 +12,8 @@
 		vertical: 'mb-10 ml-6',
 		horizontal: 'relative mb-6 sm:mb-0',
 		activity: 'mb-10 ml-6',
-		group: ''
+		group: '',
+		custom:''
 	};
 
 	const divClasses = {
