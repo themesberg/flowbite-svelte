@@ -11,10 +11,10 @@
 
   let data: PageData = $page.data;
 
-  let github = data.github?.stargazers_count ?? 0;
-  let npm = data.npm?.downloads ?? 0;
+  let github = data.github?.['stargazers_count'] ?? 0;
+  let npm = data.npm?.['downloads'] ?? 0;
   let figma = 5400;
-  let discord = data.discord?.approximate_presence_count ?? 0;
+  let discord = data.discord?.['approximate_presence_count'] ?? 0;
 
   function format(x: number) {
     return x.toLocaleString('en', { notation: 'standard' });
@@ -53,7 +53,8 @@
     <div class="flex flex-col items-start gap-6 md:gap-3 w-full">
       <div
         class="flex flex-row items-start md:justify-between md:pr-16 lg:pr-0 lg:justify-end gap-2 md:gap-2 lg:gap-2 self-stretch">
-        <a href="https://github.com/themesberg/flowbite-svelte"
+        <a
+          href="https://github.com/themesberg/flowbite-svelte"
           class="flex flex-col items-start gap-4 text-gray-400 w-full max-w-[272px] lg:py-6 lg:px-8 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg">
           <GitHub />
           <div class="flex flex-col items-start gap-2">
@@ -61,7 +62,8 @@
             <p class="text-sm md:text-base text-gray-500 dark:text-gray-400">Stars on Github</p>
           </div>
         </a>
-        <a href="https://npmjs.com/package/flowbite-svelte"
+        <a
+          href="https://npmjs.com/package/flowbite-svelte"
           class="flex flex-col items-start gap-4 text-gray-400 w-full max-w-[272px] lg:py-6 lg:px-8 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg">
           <Npm />
           <div class="flex flex-col mt-1 items-start gap-2">
@@ -72,7 +74,8 @@
       </div>
       <div
         class="flex flex-row items-start md:justify-between md:pr-16 lg:pr-0 lg:justify-end gap-2 md:gap-12 lg:gap-2 self-stretch">
-        <a href="https://www.figma.com/community/file/1179442320711977498"
+        <a
+          href="https://www.figma.com/community/file/1179442320711977498"
           class="flex flex-col items-start gap-4 text-gray-400 w-full max-w-[272px] lg:py-6 lg:px-8 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg">
           <Figma />
           <div class="flex flex-col items-start gap-2">
@@ -80,7 +83,9 @@
             <p class="text-sm md:text-base text-gray-500 dark:text-gray-400">Figma duplicates</p>
           </div>
         </a>
-        <a href="https://discord.gg/4eeurUVvTy" rel="nofollow"
+        <a
+          href="https://discord.gg/4eeurUVvTy"
+          rel="nofollow"
           class="flex flex-col items-start gap-4 text-gray-400 w-full max-w-[272px] lg:py-6 lg:px-8 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg">
           <Discord />
           <div class="flex flex-col items-start gap-2">

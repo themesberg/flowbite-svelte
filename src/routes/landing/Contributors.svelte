@@ -9,6 +9,11 @@
   export let data: PageData;
 
   let name: string;
+  function on_show(e: CustomEvent<any>) {
+    if (e?.target instanceof HTMLElement) {
+      name = e?.target?.dataset.name ?? '';
+    }
+  }
 </script>
 
 <Section class="lg:py-24">
@@ -39,7 +44,7 @@
           {/each}
         {/if}
       </div>
-      <Tooltip triggeredBy="[data-name]" on:show={(e) => (name = e?.target?.dataset.name)}>{name}</Tooltip>
+      <Tooltip triggeredBy="[data-name]" on:show={on_show}>{name}</Tooltip>
     </div>
     <div class="flex flex-row items-center justify-between w-full max-w-5xl lg:px-4">
       <div

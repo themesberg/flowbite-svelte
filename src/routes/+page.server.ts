@@ -1,4 +1,4 @@
-const json = (r) => r.json();
+const json = (r: Response) => r.json();
 
 /** @type {import('./$types').PageServerLoad} */
 export const load = async ({ fetch }) => {
@@ -11,7 +11,9 @@ export const load = async ({ fetch }) => {
     const npm = await fetch(
       `https://api.npmjs.org/downloads/point/2020-01-01:${today}/flowbite-svelte`
     ).then(json);
-    const discord = await fetch('https://discord.com/api/v9/invites/4eeurUVvTy?with_counts=true&with_expiration=true').then(json);
+    const discord = await fetch(
+      'https://discord.com/api/v9/invites/4eeurUVvTy?with_counts=true&with_expiration=true'
+    ).then(json);
 
     return { posts, contributors, github, npm, discord };
   } catch (error) {
