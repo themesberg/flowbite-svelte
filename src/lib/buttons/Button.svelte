@@ -36,7 +36,7 @@
     | 'redToYellow' = group ? (outline ? 'dark' : 'alternative') : 'blue';
 
   export let shadow: 'blue' | 'green' | 'cyan' | 'teal' | 'lime' | 'red' | 'pink' | 'purple' | null = null;
-  
+
   const colorClasses = {
     blue: 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800',
     dark: 'text-white bg-gray-800 hover:bg-gray-900 focus:ring-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700',
@@ -157,7 +157,7 @@
     sizeClasses[size],
     rounded(true),
     'bg-white text-gray-900 dark:bg-gray-900 dark:text-white', // this is limitation - no transparency
-    'transition-all duration-75 ease-in group-hover:bg-opacity-0 group-hover:text-inherit'
+    'transition-all duration-75 ease-in hover:bg-opacity-0 hover:text-inherit'
   );
 </script>
 
