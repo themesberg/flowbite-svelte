@@ -18,7 +18,7 @@
   export let paddingFlush: string = 'py-5';
   export let paddingDefault: string = 'p-5';
   export let textFlushOpen: string = 'text-gray-900 dark:text-white';
-  export let textFulshDefault: string = 'text-gray-500 dark:text-gray-400';
+  export let textFlushDefault: string = 'text-gray-500 dark:text-gray-400';
 
   // make a custom transition function that returns the desired transition
   const multiple = (node: HTMLElement, params: any) => {
@@ -59,7 +59,7 @@
     'border-b',
     ctx.flush ? paddingFlush : paddingDefault,
     open && (ctx.flush ? textFlushOpen : activeClasses || ctx.activeClasses),
-    !open && (ctx.flush ? textFulshDefault : inactiveClasses || ctx.inactiveClasses),
+    !open && (ctx.flush ? textFlushDefault : inactiveClasses || ctx.inactiveClasses),
     $$props.class
   );
 </script>
