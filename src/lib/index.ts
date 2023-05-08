@@ -26,6 +26,7 @@ export { default as BreadcrumbItem } from './breadcrumbs/BreadcrumbItem.svelte';
 
 // Buttons
 export { default as Button } from './buttons/Button.svelte';
+export { default as GradientButton } from './buttons/GradientButton.svelte';
 
 // Buttongroups
 export { default as ButtonGroup } from './buttongroups/ButtonGroup.svelte';

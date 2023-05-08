@@ -48,6 +48,7 @@ Use these default button styles with multiple colors to indicate an action or li
 <Button color="alternative">Alternative</Button>
 <Button color="dark">Dark</Button>
 <Button color="light">Light</Button>
+<Button color="blue">Blue</Button>
 <Button color="green">Green</Button>
 <Button color="red">Red</Button>
 <Button color="yellow">Yellow</Button>
@@ -73,14 +74,15 @@ The button pills can be used as an alternative style by using fully rounded edge
 <script>
   import { Button } from 'flowbite-svelte';
 </script>
-<Button pill={true}>Default</Button>
-<Button color="alternative" pill={true}>Alternative</Button>
-<Button color="dark" pill={true}>Dark</Button>
-<Button color="light" pill={true}>Light</Button>
-<Button color="green" pill={true}>Green</Button>
-<Button color="red" pill={true}>Red</Button>
-<Button color="yellow" pill={true}>Yellow</Button>
-<Button color="purple" pill={true}>Purple</Button>
+<Button pill>Default</Button>
+<Button color="alternative" pill>Alternative</Button>
+<Button color="dark" pill>Dark</Button>
+<Button color="light" pill>Light</Button>
+<Button color="blue" pill>Blue</Button>
+<Button color="green" pill>Green</Button>
+<Button color="red" pill>Red</Button>
+<Button color="yellow" pill>Yellow</Button>
+<Button color="purple" pill>Purple</Button>
 ```
 
 ## Gradient monochrome
@@ -90,15 +92,27 @@ These beautifully colored buttons built with the gradient color stops utility cl
 ```svelte example class="flex flex-wrap gap-2" hideScript
 <script>
   import { Button } from 'flowbite-svelte';
+  const gradients = {
+    blue: 'text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-blue-300 dark:focus:ring-blue-800 ',
+    green:
+      'text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-green-300 dark:focus:ring-green-800',
+    cyan: 'text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-cyan-300 dark:focus:ring-cyan-800',
+    teal: 'text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-teal-300 dark:focus:ring-teal-800',
+    lime: 'text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-lime-300 dark:focus:ring-lime-800',
+    red: 'text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-red-300 dark:focus:ring-red-800',
+    pink: 'text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-pink-300 dark:focus:ring-pink-800',
+    purple:
+      'text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-purple-300 dark:focus:ring-purple-800',
+  }
 </script>
-<Button gradient color="blue">Blue</Button>
-<Button gradient color="green">Green</Button>
-<Button gradient color="cyan">Cyan</Button>
-<Button gradient color="teal">Teal</Button>
-<Button gradient color="lime">Lime</Button>
-<Button gradient color="red">Red</Button>
-<Button gradient color="pink">Pink</Button>
-<Button gradient color="purple">Purple</Button>
+<Button color='none' class={gradients.blue}>Blue</Button>
+<Button color='none' class={gradients.green}>Green</Button>
+<Button color='none' class={gradients.cyan}>Cyan</Button>
+<Button color='none' class={gradients.teal}>Teal</Button>
+<Button color='none' class={gradients.lime}>Lime</Button>
+<Button color='none' class={gradients.red}>Red</Button>
+<Button color='none' class={gradients.pink}>Pink</Button>
+<Button color='none' class={gradients.purple}>Purple</Button>
 ```
 
 ## Gradient duotone
@@ -107,15 +121,15 @@ These buttons use a style that includes two contrasted colors creating an impres
 
 ```svelte example class="flex flex-wrap gap-2" hideScript
 <script>
-  import { Button } from 'flowbite-svelte';
+  import { Button, GradientButton } from 'flowbite-svelte';
 </script>
-<Button gradient color="purpleToBlue">Purple to Blue</Button>
-<Button gradient color="cyanToBlue">Cyan to Blue</Button>
-<Button gradient color="greenToBlue">Green to Blue</Button>
-<Button gradient color="purpleToPink">Purple to Pink</Button>
-<Button gradient color="pinkToOrange">Pink to Orange</Button>
-<Button gradient color="tealToLime">Teal to Lime</Button>
-<Button gradient color="redToYellow">Red to Yellow</Button>
+<GradientButton color="purpleToBlue">Purple to Blue</GradientButton>
+<GradientButton color="cyanToBlue">Cyan to Blue</GradientButton>
+<GradientButton color="greenToBlue">Green to Blue</GradientButton>
+<GradientButton color="purpleToPink">Purple to Pink</GradientButton>
+<GradientButton color="pinkToOrange">Pink to Orange</GradientButton>
+<GradientButton color="tealToLime">Teal to Lime</GradientButton>
+<GradientButton color="redToYellow">Red to Yellow</GradientButton>
 ```
 
 ## Gradient outline
@@ -124,15 +138,15 @@ This is a special button style that incorporates a gradient color for the outlin
 
 ```svelte example class="flex flex-wrap gap-2" hideScript
 <script>
-  import { Button } from 'flowbite-svelte';
+  import { GradientButton } from 'flowbite-svelte';
 </script>
-<Button outline gradient color="purpleToBlue">Purple to Blue</Button>
-<Button outline gradient color="cyanToBlue">Cyan to Blue</Button>
-<Button outline gradient color="greenToBlue">Green to Blue</Button>
-<Button outline gradient color="purpleToPink">Purple to Pink</Button>
-<Button outline gradient color="pinkToOrange">Pink to Orange</Button>
-<Button outline gradient color="tealToLime">Teal to Lime</Button>
-<Button outline gradient color="redToYellow">Red to Yellow</Button>
+<GradientButton outline color="purpleToBlue">Purple to Blue</GradientButton>
+<GradientButton outline color="cyanToBlue">Cyan to Blue</GradientButton>
+<GradientButton outline color="greenToBlue">Green to Blue</GradientButton>
+<GradientButton outline color="purpleToPink">Purple to Pink</GradientButton>
+<GradientButton outline color="pinkToOrange">Pink to Orange</GradientButton>
+<GradientButton outline color="tealToLime">Teal to Lime</GradientButton>
+<GradientButton outline pill color="redToYellow">Red to Yellow</GradientButton>
 ```
 
 ## Colored shadows
@@ -141,16 +155,16 @@ These beautiful button elements with color shadows can be used since the release
 
 ```svelte example class="flex flex-wrap gap-2" hideScript
 <script>
-  import { Button } from 'flowbite-svelte';
+  import { GradientButton } from 'flowbite-svelte';
 </script>
-<Button shadow="blue" gradient color="blue">Blue</Button>
-<Button shadow="green" gradient color="green">Green</Button>
-<Button shadow="cyan" gradient color="cyan">Cyan</Button>
-<Button shadow="teal" gradient color="teal">Teal</Button>
-<Button shadow="lime" gradient color="lime">Lime</Button>
-<Button shadow="red" gradient color="red">Red</Button>
-<Button shadow="pink" gradient color="pink">Pink</Button>
-<Button shadow="purple" gradient color="purple">Purple</Button>
+<GradientButton shadow="blue" color="blue">Blue</GradientButton>
+<GradientButton shadow="green" color="green">Green</GradientButton>
+<GradientButton shadow="cyan" color="cyan">Cyan</GradientButton>
+<GradientButton shadow="teal" color="teal">Teal</GradientButton>
+<GradientButton shadow="lime" color="lime">Lime</GradientButton>
+<GradientButton shadow="red" color="red">Red</GradientButton>
+<GradientButton shadow="pink" color="pink">Pink</GradientButton>
+<GradientButton shadow="purple" color="purple">Purple</GradientButton>
 ```
 
 ## Outline buttons
