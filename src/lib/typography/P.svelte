@@ -1,6 +1,6 @@
 <script lang="ts">
   import classNames from 'classnames';
-
+  import type { PsizeType, PweightType } from '../types';
   export let color: string = 'text-gray-900 dark:text-white';
   export let height: 'normal' | 'relaxed' | 'loose' = 'normal';
   export let align: 'left' | 'center' | 'right' = 'left';
@@ -11,31 +11,9 @@
     'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:mr-3 first-letter:float-left';
   export let opacity: number | undefined = undefined;
   export let whitespace: 'normal' | 'nowrap' | 'pre' | 'preline' | 'prewrap' = 'normal';
-  export let size:
-    | 'xs'
-    | 'sm'
-    | 'base'
-    | 'lg'
-    | 'xl'
-    | '2xl'
-    | '3xl'
-    | '4xl'
-    | '5xl'
-    | '6xl'
-    | '7xl'
-    | '8xl'
-    | '9xl' = 'base';
+  export let size: PsizeType = 'base';
   export let space: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest' | undefined = undefined;
-  export let weight:
-    | 'thin'
-    | 'extralight'
-    | 'light'
-    | 'normal'
-    | 'medium'
-    | 'semibold'
-    | 'bold'
-    | 'extrabold'
-    | 'black' = 'normal';
+  export let weight: PweightType = 'normal';
 
   const sizes = {
     xs: 'text-xs',

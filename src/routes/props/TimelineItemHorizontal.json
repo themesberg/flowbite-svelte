@@ -1,1 +1,1 @@
-{"props":[["title"," string",""],[" date"," string",""],[" href"," string",""],[" text"," string",""],[" linkname"," string",""],[" icon"," string",""]]}
+{"props":[["title: string;","string",""],["date: string;","string",""],["href: string;","string",""],["text: string;","string",""],["linkname: string;","string",""],["icon: string;","string",""]]}

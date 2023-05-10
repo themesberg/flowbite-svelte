@@ -15,3 +15,5 @@ node_modules
 /src/routes/typechecktests
 
 package-lock.json
+yarn.lock
+
