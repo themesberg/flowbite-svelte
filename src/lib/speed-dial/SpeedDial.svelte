@@ -17,6 +17,7 @@
   import generateId from '$lib/utils/generateId';
 
   export let defaultClass: string = 'fixed right-6 bottom-6';
+  export let popperDefaultClass: string = 'flex items-center mb-4 gap-2';
   export let placement: Placement = 'top';
   export let pill: boolean = true;
   export let tooltip: Placement | 'none' = 'left';
@@ -36,7 +37,7 @@
 
   let poperClass: string;
   $: poperClass = classNames(
-    'flex items-center mb-4 gap-2',
+    popperDefaultClass,
     ['top', 'bottom'].includes(placement) && 'flex-col'
   );
 </script>
