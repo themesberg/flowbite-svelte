@@ -1,1 +1,1 @@
-{"props":[["color:","string",""],["rounded","boolean","false"],["size","'xs' | 'sm' | 'md' | 'lg' | 'xl'","'md'"],["border","boolean","false"],["placement:","string",""],["offset","boolean","true"]]}
+{"props":[["color","IndicatorColorType","'gray'"],["rounded","boolean","false"],["size","'xs' | 'sm' | 'md' | 'lg' | 'xl'","'md'"],["border","boolean","false"],["placement","IndicatorPlacementType","undefined"],["offset","boolean","true"]]}
