@@ -2,7 +2,7 @@ import type { SvelteComponent } from 'svelte';
 
 export type ButtonType = 'button' | 'submit' | 'reset';
 
-export type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink' | 'white' | 'custom';
+export type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink' | 'white' | 'custom' | 'primary' | 'secondary';
 
 
 export type ImgType = {
@@ -27,14 +27,14 @@ export type drawerTransitionTypes =
 	| 'out:blur'
 	| undefined;
 
-export type FormColorType = 'blue' | 'red' | 'green' | 'purple' | 'teal' | 'yellow' | 'orange'
+export type FormColorType = 'blue' | 'red' | 'green' | 'purple' | 'teal' | 'yellow' | 'orange' | 'primary' | 'secondary';
 
 
-export declare const xs = 'xs'
-export declare const sm = 'sm'
-export declare const md = 'md'
-export declare const lg = 'lg'
-export declare const xl = 'xl'
+export declare const xs = 'xs';
+export declare const sm = 'sm';
+export declare const md = 'md';
+export declare const lg = 'lg';
+export declare const xl = 'xl';
 export declare type SizeType = typeof xs | typeof sm | typeof md | typeof lg | typeof xl;
 
 export declare type FormSizeType = typeof sm | typeof md | typeof lg;
