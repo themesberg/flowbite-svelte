@@ -5,7 +5,8 @@
   import CloseButton from '../utils/CloseButton.svelte';
   import focusTrap from '../utils/focusTrap';
   import type { SizeType } from '$lib/types';
-
+  import type { ModalPlacementType } from '../types';
+  
   // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Frame> {
     open?: boolean;
@@ -29,16 +30,7 @@
   export let open: boolean = false;
   export let title: string = '';
   export let size: SizeType = 'md';
-  export let placement:
-    | 'top-left'
-    | 'top-center'
-    | 'top-right'
-    | 'center-left'
-    | 'center'
-    | 'center-right'
-    | 'bottom-left'
-    | 'bottom-center'
-    | 'bottom-right' = 'center';
+  export let placement: ModalPlacementType = 'center';
   export let autoclose: boolean = false;
   export let permanent: boolean = false;
   export let backdropClasses: string = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80';

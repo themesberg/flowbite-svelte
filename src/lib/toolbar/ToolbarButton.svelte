@@ -1,20 +1,11 @@
 <script lang="ts">
+  import type { ToolbarButtonType } from '../types';
   import { getContext } from 'svelte';
   import classNames from 'classnames';
 
   const background = getContext('background');
 
-  export let color:
-    | 'dark'
-    | 'default'
-    | 'gray'
-    | 'red'
-    | 'yellow'
-    | 'green'
-    | 'indigo'
-    | 'purple'
-    | 'pink'
-    | 'blue' = 'default';
+  export let color: ToolbarButtonType = 'default';
   export let name: string | undefined = undefined;
   export let ariaLabel: string | undefined = undefined;
   export let size: 'xs' | 'sm' | 'md' | 'lg' = 'md';

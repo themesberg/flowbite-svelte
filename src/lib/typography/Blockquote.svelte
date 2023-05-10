@@ -1,5 +1,6 @@
 <script lang="ts">
   import classNames from 'classnames';
+  import type { BlockQuoteType } from '../types';
 
   export let border: boolean = false;
   export let italic: boolean = true;
@@ -8,25 +9,12 @@
   export let bg: boolean = false;
   export let baseClass: string = 'font-semibold text-gray-900 dark:text-white';
   export let alignment: 'left' | 'center' | 'right' = 'left';
+  export let size: BlockQuoteType = 'lg';
   let alignmentClasses = {
     left: 'text-left',
     center: 'text-center',
     right: 'text-right'
   };
-  export let size:
-    | 'xs'
-    | 'sm'
-    | 'base'
-    | 'lg'
-    | 'xl'
-    | '2xl'
-    | '3xl'
-    | '4xl'
-    | '5xl'
-    | '6xl'
-    | '7xl'
-    | '8xl'
-    | '9xl' = 'lg';
   const sizes = {
     xs: 'text-xs',
     sm: 'text-sm',

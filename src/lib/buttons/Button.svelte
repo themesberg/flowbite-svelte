@@ -1,7 +1,7 @@
 <script lang="ts">
   import classNames from 'classnames';
   import { getContext } from 'svelte';
-  import type { ButtonType } from '../types';
+  import type { ButtonType, ButtonColorType } from '../types';
 
   const group = getContext('group');
 
@@ -12,28 +12,7 @@
   export let href: string | undefined = undefined;
   export let btnClass: string | undefined = undefined;
   export let type: ButtonType = 'button';
-
-  export let color:
-    | 'alternative'
-    | 'blue'
-    | 'cyan'
-    | 'dark'
-    | 'light'
-    | 'lime'
-    | 'green'
-    | 'pink'
-    | 'primary'
-    | 'red'
-    | 'teal'
-    | 'yellow'
-    | 'purple'
-    | 'purpleToBlue'
-    | 'cyanToBlue'
-    | 'greenToBlue'
-    | 'purpleToPink'
-    | 'pinkToOrange'
-    | 'tealToLime'
-    | 'redToYellow' = group ? (outline ? 'dark' : 'alternative') : 'primary';
+  export let color: ButtonColorType = group ? (outline ? 'dark' : 'alternative') : 'primary';
 
   export let shadow: 'blue' | 'green' | 'cyan' | 'teal' | 'lime' | 'red' | 'pink' | 'purple' | null = null;
 

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import type { ToolbarColorType } from '../types';
   import { setContext, type ComponentProps } from 'svelte';
   import { writable } from 'svelte/store';
   import classNames from 'classnames';
@@ -12,18 +13,7 @@
   const separators = writable(false);
   setContext('toolbar', separators);
 
-  export let color:
-    | 'gray'
-    | 'red'
-    | 'yellow'
-    | 'green'
-    | 'indigo'
-    | 'purple'
-    | 'pink'
-    | 'blue'
-    | 'dark'
-    | 'none' = 'dark';
-
+  export let color: ToolbarColorType = 'dark';
   export let embedded: boolean = false;
 
   let divClass: string;

@@ -1,22 +1,14 @@
 <script lang="ts">
   import classNames from 'classnames';
   import { setContext } from 'svelte';
-
+  import type { TableColorType } from '../types';
+  
   export let divClass: string = 'relative overflow-x-auto';
   export let striped: boolean = false;
   export let hoverable: boolean = false;
   export let noborder: boolean = false;
   export let shadow: boolean = false;
-  export let color:
-    | 'blue'
-    | 'green'
-    | 'red'
-    | 'yellow'
-    | 'purple'
-    | 'indigo'
-    | 'pink'
-    | 'default'
-    | 'custom' = 'default';
+  export let color: TableColorType = 'default';
 
   const colors = {
     default: 'text-gray-500 dark:text-gray-400',

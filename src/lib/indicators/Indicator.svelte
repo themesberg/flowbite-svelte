@@ -1,31 +1,12 @@
 <script lang="ts">
   import classNames from 'classnames';
+  import type { IndicatorColorType, IndicatorPlacementType } from '../types';
 
-  export let color:
-    | 'gray'
-    | 'dark'
-    | 'blue'
-    | 'green'
-    | 'red'
-    | 'purple'
-    | 'indigo'
-    | 'yellow'
-    | 'teal'
-    | 'none' = 'gray';
+  export let color: IndicatorColorType = 'gray';
   export let rounded: boolean = false;
   export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
   export let border: boolean = false;
-  export let placement:
-    | 'top-left'
-    | 'top-center'
-    | 'top-right'
-    | 'center-left'
-    | 'center'
-    | 'center-right'
-    | 'bottom-left'
-    | 'bottom-center'
-    | 'bottom-right'
-    | undefined = undefined;
+  export let placement: IndicatorPlacementType = undefined;
   export let offset: boolean = true;
 
   const colors = {
