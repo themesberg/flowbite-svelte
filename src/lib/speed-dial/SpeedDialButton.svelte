@@ -8,7 +8,7 @@
 
   export let btnDefaultClass:string = 'w-[52px] h-[52px] shadow-sm !p-2';
   export let name: string = '';
-  export let tooltip: Placement | 'none';
+  export let tooltip: Placement | 'none' = 'left';
   export let pill: boolean | undefined = undefined;
   export let textOutside: boolean | undefined = undefined;
   export let textOutsideClass: string = 'block absolute -left-14 top-1/2 mb-px text-sm font-medium -translate-y-1/2';
