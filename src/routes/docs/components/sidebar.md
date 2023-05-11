@@ -80,7 +80,7 @@ Use this example to show a responsive list of menu items inside the sidebar with
           >
         </svelte:fragment>
       </SidebarItem>
-      <SidebarItem label="Sidebar" href='/component/sidebar' active={activeUrl === '/components/sidebar'}>
+      <SidebarItem label="Sidebar" href='/docs/components/sidebar' active={activeUrl === '/docs/components/sidebar'}>
         <svelte:fragment slot="icon">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>
         </svelte:fragment>
@@ -219,7 +219,7 @@ Use the following example to show the active item. Use the `activeClass` prop to
   <SidebarWrapper>
     <SidebarGroup>
       <SidebarItem label="Dashboard" href='/dashboard' active={activeUrl === '/dashboard'} />
-      <SidebarItem label="Sidebar" href='/component/sidebar' active={activeUrl === '/components/sidebar'} />
+      <SidebarItem label="Sidebar" href='/docs/component/sidebar' active={activeUrl === '/docs/components/sidebar'} />
     </SidebarGroup>
   </SidebarWrapper>
 </Sidebar>
@@ -243,7 +243,7 @@ Use the following example to show the active item. Use the `activeClass` prop to
       <SidebarItem label="Dashboard" active={activeUrl === '/dashboard'} />
       <SidebarDropdownWrapper label="E-commerce" isOpen={containPath}>
         <SidebarDropdownItem label="Products" href='/components/products' active={activeUrl === '/components/products'} />
-        <SidebarDropdownItem label="Sidebar" href='/components/sidebar' active={activeUrl === '/components/sidebar'}/>
+        <SidebarDropdownItem label="Sidebar" href='/docs/components/sidebar' active={activeUrl === '/docs/components/sidebar'}/>
       </SidebarDropdownWrapper>
       <SidebarDropdownWrapper label="Items">
         <SidebarDropdownItem label="Item 1" href='/components/item1' active={activeUrl === '/components/item'} />
@@ -513,7 +513,7 @@ You can add own transition by setting `transitionType` and `transitionParams`.
       <SidebarItem label="Dashboard" active={activeUrl === '/dashboard'} />
       <SidebarDropdownWrapper label="E-commerce" isOpen={containPath} transitionType="fly" {transitionParams}>
         <SidebarDropdownItem label="Products" href='/components/products' active={activeUrl === '/components/products'} />
-        <SidebarDropdownItem label="Sidebar" href='/components/sidebar' active={activeUrl === '/components/sidebar'}/>
+        <SidebarDropdownItem label="Sidebar" href='/docs/components/sidebar' active={activeUrl === '/docs/components/sidebar'}/>
       </SidebarDropdownWrapper>
       <SidebarDropdownWrapper label="Items" transitionType="fly" {transitionParams}>
         <SidebarDropdownItem label="Item 1" href='/components/item1' active={activeUrl === '/components/item'} />
