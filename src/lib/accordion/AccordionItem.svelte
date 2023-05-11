@@ -19,6 +19,9 @@
   export let paddingDefault: string = 'p-5';
   export let textFlushOpen: string = 'text-gray-900 dark:text-white';
   export let textFlushDefault: string = 'text-gray-500 dark:text-gray-400';
+  export let borderClass: string = 'border-l border-r group-first:border-t';
+  export let borderOpenClass: string = 'border-l border-r';
+  export let borderBottomClass: string = 'border-b';
 
   // make a custom transition function that returns the desired transition
   const multiple = (node: HTMLElement, params: any) => {
@@ -55,8 +58,8 @@
   let buttonClass: string;
   $: buttonClass = classNames(
     defaultClass,
-    ctx.flush || 'border-l border-r group-first:border-t',
-    'border-b',
+    ctx.flush || borderClass,
+    borderBottomClass,
     ctx.flush ? paddingFlush : paddingDefault,
     open && (ctx.flush ? textFlushOpen : activeClasses || ctx.activeClasses),
     !open && (ctx.flush ? textFlushDefault : inactiveClasses || ctx.inactiveClasses),
@@ -76,7 +79,7 @@
 </h2>
 {#if open}
   <div transition:multiple|local={transitionParams}>
-    <div class="{ctx.flush ? paddingFlush : paddingDefault} {ctx.flush ? '' : 'border-l border-r'} border-b">
+    <div class="{ctx.flush ? paddingFlush : paddingDefault} {ctx.flush ? '' : borderOpenClass} {borderBottomClass}">
       <slot />
     </div>
   </div>
