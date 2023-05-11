@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.35.1](https://github.com/themesberg/flowbite-svelte/compare/v0.34.12...v0.35.1) (2023-05-11)
+
+
+### Features
+
+* typescript types for frame subclasses ([#731](https://github.com/themesberg/flowbite-svelte/issues/731)) ([6dd9877](https://github.com/themesberg/flowbite-svelte/commit/6dd9877a7b667e895c02b79e86a2c3ce88eb608c))
+
+
+### Bug Fixes
+
+* accordion gap ([#735](https://github.com/themesberg/flowbite-svelte/issues/735)) ([431b532](https://github.com/themesberg/flowbite-svelte/commit/431b5323a49530c6791579d71dae30312c46cb8e))
+* add primary to button and starUpClass and starDownClass to rating ([#745](https://github.com/themesberg/flowbite-svelte/issues/745)) ([da09182](https://github.com/themesberg/flowbite-svelte/commit/da091824d218f04bf4127f43c51a056abf0855fc))
+* add svelte inspector and update dependencies ([aa530f4](https://github.com/themesberg/flowbite-svelte/commit/aa530f4f8c33493a949bf0c52c279c06042a1897))
+* few more to 'npm run check' ([#738](https://github.com/themesberg/flowbite-svelte/issues/738)) ([ae33d4a](https://github.com/themesberg/flowbite-svelte/commit/ae33d4ab5d0cdc6649295e3f3fe1ae0063fe86d3))
+* hover on gradient outline button ([#742](https://github.com/themesberg/flowbite-svelte/issues/742)) ([6d7da15](https://github.com/themesberg/flowbite-svelte/commit/6d7da15de9d5a3f9e2b85a05944d148967019bcf))
+* input component value type to any ([#730](https://github.com/themesberg/flowbite-svelte/issues/730)) ([048caa0](https://github.com/themesberg/flowbite-svelte/commit/048caa0ddd2418e3feff4963f0540b269eb7cb27))
+* more ts check corrections ([#740](https://github.com/themesberg/flowbite-svelte/issues/740)) ([f95f1d4](https://github.com/themesberg/flowbite-svelte/commit/f95f1d44da76fbaa9d49fec1a52c000e5509617c))
+* removed duplicated folder "alert" ([#734](https://github.com/themesberg/flowbite-svelte/issues/734)) ([4c8f32a](https://github.com/themesberg/flowbite-svelte/commit/4c8f32aad85593bd9a2666ec0d22c77e41463291))
+* sidebar activeUrl update by adding docs/ ([#754](https://github.com/themesberg/flowbite-svelte/issues/754)) ([467b060](https://github.com/themesberg/flowbite-svelte/commit/467b060f2da047d11d227db0f4bfe86fb848b749))
+* typescript declarations for import.meta.glob ([#736](https://github.com/themesberg/flowbite-svelte/issues/736)) ([ef10a06](https://github.com/themesberg/flowbite-svelte/commit/ef10a06785c38504d7b7dd75fccae245c6fa2188))
+* Typo in AccordionItem.svelte ([#741](https://github.com/themesberg/flowbite-svelte/issues/741)) ([149c3b7](https://github.com/themesberg/flowbite-svelte/commit/149c3b7d2ae10d56ce430df386a7a220a59167b2))
+* update props ([#749](https://github.com/themesberg/flowbite-svelte/issues/749)) ([445c07e](https://github.com/themesberg/flowbite-svelte/commit/445c07ebadf2432bc6c005a7e78ac7660f6abf40))
+* update workflows playwright version ([faafd96](https://github.com/themesberg/flowbite-svelte/commit/faafd96286140631447f1d88d24b0b3e477181e5))
+
 ### [0.34.12](https://github.com/themesberg/flowbite-svelte/compare/v0.34.11...v0.34.12) (2023-05-04)
 
 
