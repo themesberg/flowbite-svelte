@@ -7,8 +7,8 @@
   const dispatch = createEventDispatcher();
 
   interface $$Props extends ComponentProps<Frame> {
-    dismissable: boolean;
-    accent: boolean;
+    dismissable?: boolean;
+    accent?: boolean;
   }
 
   export let dismissable: boolean = false;
