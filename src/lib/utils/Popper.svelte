@@ -17,8 +17,6 @@
     strategy?: 'absolute' | 'fixed';
     open?: boolean;
     yOnly?: boolean;
-    'data-tooltip'?: boolean;
-    'data-popover'?: boolean;
   }
 
   export let activeContent: boolean = false;
@@ -139,6 +137,21 @@
   function optional(pred: boolean, func: (ev: Event) => void) {
     return (pred && func) || null;
   }
+
+  let placement_primary: string;
+  $: placement_primary = placement.split('-')[0];
+
+  let arrowClass: string = 'bottom';
+  $: arrowClass = classNames(
+    'absolute w-[9px] h-[9px] rotate-45 inset-0 m-auto bg-inherit',
+    $$props.border && placement_primary === 'top' && 'border-b border-r',
+    $$props.border && placement_primary === 'bottom' && 'border-t border-l',
+    $$props.border && placement_primary === 'left' && 'border-t border-r',
+    $$props.border && placement_primary === 'right' && 'border-b border-l'
+  );
+
+  let arrowOffset: string = '-4px';
+  $: arrowOffset = $$props.border ? '-5px' : '-4px';
 </script>
 
 {#if !triggerEl}
@@ -158,6 +171,12 @@
     {...$$restProps}
     class={classNames('z-10 outline-none', $$props.class)}>
     <slot />
-    {#if arrow}<div data-popper-arrow class="tooltip-arrow" />{/if}
+    {#if arrow}<div
+        class={arrowClass}
+        style:margin-left={placement_primary === 'right' ? arrowOffset : undefined}
+        style:margin-right={placement_primary === 'left' ? arrowOffset : undefined}
+        style:margin-top={placement_primary === 'bottom' ? arrowOffset : undefined}
+        style:margin-bottom={placement_primary === 'top' ? arrowOffset : undefined} />
+    {/if}
   </Frame>
 {/if}

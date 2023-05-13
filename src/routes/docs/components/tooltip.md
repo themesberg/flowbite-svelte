@@ -47,13 +47,13 @@ You can use choose between dark and light version styles for the tooltip compone
 ```svelte example class="flex items-end gap-2 h-32"
 <script>
   import { Tooltip, Button } from 'flowbite-svelte';
-  let style = 'dark';
+  let type = 'dark';
 </script>
 
-<Button id="style-light">Light tooltip</Button>
-<Button id="style-auto">Default tooltip</Button>
-<Button id="style-dark">Dark tooltip</Button>
-<Tooltip {style} triggeredBy="[id^='style-']" on:show={ev => style = ev.target.id.split('-')[1]}>Tooltip content</Tooltip>
+<Button id="type-light">Light tooltip</Button>
+<Button id="type-auto">Default tooltip</Button>
+<Button id="type-dark">Dark tooltip</Button>
+<Tooltip {type} triggeredBy="[id^='type-']" on:show={ev => type = ev.target.id.split('-')[1]}>Tooltip content</Tooltip>
 ```
 
 ## Placement
