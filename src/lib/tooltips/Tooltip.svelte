@@ -11,7 +11,6 @@
 
   export let type: 'dark' | 'light' | 'auto' | 'custom' = 'dark';
   export let defaultClass: string = 'py-2 px-3 text-sm font-medium';
-  export let placement: 'left' | 'right' | 'top' | 'bottom' = 'top'
 
   const types = {
     dark: 'bg-gray-900 text-white dark:bg-gray-700',
@@ -28,6 +27,6 @@
   }
 </script>
 
-<Popper data-tooltip rounded shadow {...$$restProps} class={toolTipClass} {placement} on:show>
+<Popper rounded shadow {...$$restProps} class={toolTipClass} on:show>
   <slot />
 </Popper>
