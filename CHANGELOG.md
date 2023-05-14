@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.35.3](https://github.com/themesberg/flowbite-svelte/compare/v0.35.2...v0.35.3) (2023-05-14)
+
+
+### Features
+
+* add events to tableheadcell and tablebodycell components ([#761](https://github.com/themesberg/flowbite-svelte/issues/761)) ([cb056aa](https://github.com/themesberg/flowbite-svelte/commit/cb056aaeaa01044241ad6fa7e700256b28cb5834))
+
 ### [0.35.2](https://github.com/themesberg/flowbite-svelte/compare/v0.35.1...v0.35.2) (2023-05-13)
 
 
