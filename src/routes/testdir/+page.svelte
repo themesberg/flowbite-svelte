@@ -1,49 +1,61 @@
 <script>
-  import { Input, Label, Button, Checkbox, A, Breadcrumb, BreadcrumbItem, Heading, P } from '$lib'
-  let formData = {
-      first_name:'',
-      last_name: '',
-      company: '',
-      website:'',
-      email: '',
+  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from 'flowbite-svelte';
+  import { writable } from 'svelte/store';
+
+  let items = [
+    { id: 1, maker: 'Toyota', type: 'ABC', make: 2017 },
+    { id: 2, maker: 'Ford', type: 'CDE', make: 2018 },
+    { id: 3, maker: 'Volvo', type: 'FGH', make: 2019 },
+    { id: 4, maker: 'Saab', type: 'IJK', make: 2020 }
+  ];
+
+  const sortKey = writable('id'); // default sort key
+  const sortDirection = writable(1); // default sort direction (ascending)
+  const sortItems = writable(items.slice()); // make a copy of the items array
+
+  // Define a function to sort the items
+  const sortTable = (key) => {
+    // If the same key is clicked, reverse the sort direction
+    if ($sortKey === key) {
+      sortDirection.update(val => -val);
+    } else {
+      sortKey.set(key);
+      sortDirection.set(1);
     }
-  export const snapshot = { 
-    capture: () => formData, 
-    restore: (value) => (formData = value)
   };
+
+  $: {
+    const key = $sortKey;
+    const direction = $sortDirection;
+    const sorted = [...$sortItems].sort((a, b) => {
+      const aVal = a[key];
+      const bVal = b[key];
+      if (aVal < bVal) {
+        return -direction;
+      } else if (aVal > bVal) {
+        return direction;
+      }
+      return 0;
+    });
+    sortItems.set(sorted);
+  }
 </script>
 
-<form class="p-16">
-  <div class="grid gap-6 mb-6 md:grid-cols-2">
-    <div>
-      <Label for="first_name" class="mb-2">First name</Label>
-      <Input type="text" id="first_name" placeholder="John" required bind:value={formData.first_name} />
-    </div>
-    <div>
-      <Label for="last_name" class="mb-2">Last name</Label>
-      <Input type="text" id="last_name" placeholder="Doe" required bind:value={formData.last_name} />
-    </div>
-    <div>
-      <Label for="company" class="mb-2">Company</Label>
-      <Input type="text" id="company" placeholder="Flowbite" required bind:value={formData.company} />
-    </div>
-    <div>
-      <Label for="website" class="mb-2">Website URL</Label>
-      <Input type="url" id="website" placeholder="flowbite.com" bind:value={formData.website} />
-    </div>
-  </div>
-  <div class="mb-6">
-    <Label for="email" class="mb-2">Email address</Label>
-    <Input type="email" id="email" placeholder="john.doe@company.com" required bind:value={formData.email} />
-  </div>
-  <div class="mb-6">
-    <Label for="password" class="mb-2">Password</Label>
-    <Input type="password" id="password" placeholder="•••••••••" />
-  </div>
-  <div class="mb-6">
-    <Label for="confirm_password" class="mb-2">Confirm password</Label>
-    <Input type="password" id="confirm_password" placeholder="•••••••••" />
-  </div>
-  <Checkbox class="mb-6 space-x-1" required>I agree with the <A href="/">terms and conditions</A>.</Checkbox>
-  <Button type="submit">Submit</Button>
-</form>
+<Table hoverable={true}>
+  <TableHead>
+    <TableHeadCell on:click={() => sortTable('id')}>ID</TableHeadCell>
+    <TableHeadCell on:click={() => sortTable('maker')}>Maker</TableHeadCell>
+    <TableHeadCell on:click={() => sortTable('type')}>Type</TableHeadCell>
+    <TableHeadCell on:click={() => sortTable('make')}>Make</TableHeadCell>
+  </TableHead>
+  <TableBody class="divide-y">
+    {#each $sortItems as item}
+      <TableBodyRow>
+        <TableBodyCell>{item.id}</TableBodyCell>
+        <TableBodyCell>{item.maker}</TableBodyCell>
+        <TableBodyCell>{item.type}</TableBodyCell>
+        <TableBodyCell>{item.make}</TableBodyCell>
+      </TableBodyRow>
+    {/each}
+  </TableBody>
+</Table>
