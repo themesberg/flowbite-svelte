@@ -44,6 +44,40 @@ Use this simple toast component with an icon, message, and dismissable close but
 </Toast>
 ```
 
+## Colors
+
+Use the `level` prop to show success, danger, or warning alert messages to your users.
+
+```svelte example hideScript
+<script>
+  import { Toast } from 'flowbite-svelte';
+</script>
+
+<Toast level="success" class="mb-4">
+  <svelte:fragment slot="icon">
+    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+    <span class="sr-only">Check icon</span>
+  </svelte:fragment>
+  Item moved successfully.
+</Toast>
+
+<Toast level="danger" class="mb-4">
+  <svelte:fragment slot="icon">
+    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+    <span class="sr-only">Error icon</span>
+  </svelte:fragment>
+  Item has been deleted.
+</Toast>
+
+<Toast level="warning">
+  <svelte:fragment slot="icon">
+    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+    <span class="sr-only">Warning icon</span>
+  </svelte:fragment>
+  Improve password difficulty.
+</Toast>
+```
+
 ## Simple toast
 
 This component can be used to show simple messages and notifications without the use of a close button.
@@ -61,43 +95,11 @@ This component can be used to show simple messages and notifications without the
 </Toast>
 ```
 
-## Colors
-
-Use these contextual toast components to show success, danger, or warning alert messages to your users.
-
-```svelte example hideScript
-<script>
-  import { Toast } from 'flowbite-svelte';
-</script>
-
-<Toast color="green" class="mb-2">
-  <svelte:fragment slot="icon">
-    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-    <span class="sr-only">Check icon</span>
-  </svelte:fragment>
-    Item moved successfully.
-</Toast>
-<Toast color="red" class="mb-2">
-  <svelte:fragment slot="icon">
-    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-    <span class="sr-only">Error icon</span>
-  </svelte:fragment>
-  Color set to green.
-</Toast>
-<Toast color="pink">
-  <svelte:fragment slot="icon">
-    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
-    <span class="sr-only">Warning icon</span>
-    </svelte:fragment>
-  Improve password difficulty.
-</Toast>
-```
-
 ## Icons
 
 For the right positioning of the icon use: <span class="font-mono italic">slot="icon"</span>.
 
-Icons are wrapped with blue background by default. Set the color name property to change it. Note, that if you want no color at all set property to empty string.
+Both the color and the background color of the icon are controlled by the `level` prop, and they are set to blue by default (i.e., `text-blue-500 bg-blue-100 dark:bg-blue-800 dark:text-blue-200`). Set the `level` prop to `none` and use the `extraIconClass` prop to customize your desired styles.
 
 You can use any <A href="/icons">icon components.</A>
 
@@ -106,24 +108,27 @@ You can use any <A href="/icons">icon components.</A>
   import { Toast } from 'flowbite-svelte';
 </script>
 
-<Toast class="mb-2">
+<Toast class="mb-4">
   <svelte:fragment slot="icon">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>
   </svelte:fragment>
   Default color is blue.
 </Toast>
-<Toast color="green" class="mb-2">
+
+<Toast level="success" class="mb-4">
   <svelte:fragment slot="icon">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>
   </svelte:fragment>
-  Color set to green.
+  Use the prop to change the color.
 </Toast>
-<Toast  color="" class="mb-2">
+
+<Toast level="none" extraIconClass="text-purple-500 bg-purple-100 dark:bg-purple-800 dark:text-purple-200" class="mb-4">
   <svelte:fragment slot="icon">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>
   </svelte:fragment>
-  No color set.
+  Customize the color.
 </Toast>
+
 <Toast>
   No icon at all.
 </Toast>

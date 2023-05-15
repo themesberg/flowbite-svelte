@@ -8,21 +8,22 @@
   // propagate props type from underying Frame
   interface $$Props extends ComponentProps<Frame> {
     simple?: boolean;
+    level?: 'default' | 'success' | 'danger' | 'warning';
     position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none';
     open?: boolean;
     divClass?: string;
+    defaultIconClass?: string;
+    extraIconClass?: string;
   }
 
   export let simple: boolean = false;
+  export let level: 'default' | 'success' | 'danger' | 'warning' | 'none' = 'default';
   export let position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none' = 'none';
   export let open: boolean = true;
-  export let divClass: string = 'w-full max-w-xs p-4';
+  export let divClass: string =
+    'w-full max-w-xs p-4 text-gray-500 bg-white shadow dark:text-gray-400 dark:bg-gray-800';
   export let defaultIconClass: string = 'inline-flex items-center justify-center flex-shrink-0 w-8 h-8 mr-3';
-
-  $: {
-    // override default Frame value
-    $$restProps.color = $$restProps.color ?? 'blue';
-  }
+  export let extraIconClass: string = '';
 
   const positions = {
     'top-left': 'absolute top-5 left-5',
@@ -32,27 +33,41 @@
     none: ''
   };
 
-  let classDiv: string;
-  $: classDiv = classNames(divClass, positions[position], $$props.class);
+  let finalDivClass: string;
+  $: finalDivClass = classNames(
+    'flex',
+    $$slots.extra ? 'items-start' : 'items-center',
+    simple && 'space-x space-x-4 divide-x divide-gray-200 dark:divide-gray-700',
+    divClass,
+    positions[position],
+    $$props.class
+  );
+
+  const levelColors = {
+    default: 'text-blue-500 bg-blue-100 dark:bg-blue-800 dark:text-blue-200',
+    success: 'text-green-500 bg-green-100 dark:bg-green-800 dark:text-green-200',
+    danger: 'text-red-500 bg-red-100 dark:bg-red-800 dark:text-red-200',
+    warning: 'text-orange-500 bg-orange-100 dark:bg-orange-700 dark:text-orange-200',
+    none: ''
+  };
 
   let iconClass: string;
-  $: iconClass = classNames(defaultIconClass);
+  $: iconClass = classNames(defaultIconClass, levelColors[level], extraIconClass);
 </script>
 
 {#if open}
-  <Frame rounded border transition={fade} {...$$restProps} class={classDiv} role="alert">
-    <div class="flex {$$slots.extra ? 'items-start' : 'items-center'}">
-      {#if $$slots.icon}
-        <Frame rounded class={iconClass}><slot name="icon" /></Frame>
-      {/if}
+  <Frame rounded transition={fade} color="none" {...$$restProps} class={finalDivClass} role="alert">
+    {#if $$slots.icon}
+      <Frame rounded color="none" class={iconClass}><slot name="icon" /></Frame>
+    {/if}
 
-      <div class="text-sm font-normal w-full">
-        <slot />
-        <slot name="extra" />
-      </div>
-      {#if !simple}
-        <CloseButton on:click={() => (open = false)} />
-      {/if}
+    <div class="text-sm font-normal w-full">
+      <slot />
+      <slot name="extra" />
     </div>
+
+    {#if !simple}
+      <CloseButton on:click={() => (open = false)} />
+    {/if}
   </Frame>
 {/if}
