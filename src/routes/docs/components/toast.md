@@ -14,8 +14,6 @@ thumnailSize: w-64
   import { props as items }  from '../../props/Toast.json'
 </script>
 
-
-
 The toast component can be used to enhance your website’s interactivity by pushing notifications to your visitors. You can choose from multiple styles, colors, sizes, and positions and even dismiss the component.
 
 ## Setup
@@ -37,8 +35,7 @@ Use this simple toast component with an icon, message, and dismissable close but
 
 <Toast>
   <svelte:fragment slot="icon">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
-    </svg>
+    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"></path></svg>
   </svelte:fragment>
   Dismissable user notification.
 </Toast>
@@ -48,7 +45,7 @@ Use this simple toast component with an icon, message, and dismissable close but
 
 Use the `level` prop to show success, danger, or warning alert messages to your users.
 
-```svelte example hideScript
+```svelte example class="flex flex-col items-center" hideScript
 <script>
   import { Toast } from 'flowbite-svelte';
 </script>
@@ -89,7 +86,7 @@ This component can be used to show simple messages and notifications without the
 
 <Toast simple={true}>
   <svelte:fragment slot="icon">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+    <svg aria-hidden="true" class="w-5 h-5 text-blue-600 dark:text-blue-500" focusable="false" data-prefix="fas" data-icon="paper-plane" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M511.6 36.86l-64 415.1c-1.5 9.734-7.375 18.22-15.97 23.05c-4.844 2.719-10.27 4.097-15.68 4.097c-4.188 0-8.319-.8154-12.29-2.472l-122.6-51.1l-50.86 76.29C226.3 508.5 219.8 512 212.8 512C201.3 512 192 502.7 192 491.2v-96.18c0-7.115 2.372-14.03 6.742-19.64L416 96l-293.7 264.3L19.69 317.5C8.438 312.8 .8125 302.2 .0625 289.1s5.469-23.72 16.06-29.77l448-255.1c10.69-6.109 23.88-5.547 34 1.406S513.5 24.72 511.6 36.86z"></path></svg>
   </svelte:fragment>
   New message arrived.
 </Toast>
@@ -103,7 +100,7 @@ Both the color and the background color of the icon are controlled by the `level
 
 You can use any <A href="/icons">icon components.</A>
 
-```svelte example hideScript
+```svelte example class="flex flex-col items-center" hideScript
 <script>
   import { Toast } from 'flowbite-svelte';
 </script>
@@ -136,7 +133,7 @@ You can use any <A href="/icons">icon components.</A>
 
 ## Autohide example
 
-```svelte example
+```svelte example class="flex justify-center"
 <script>
   import { Toast, Button } from 'flowbite-svelte';
   import { slide } from 'svelte/transition';
@@ -172,25 +169,27 @@ You can use any <A href="/icons">icon components.</A>
 
 You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" target="_blank" rel="noreferrer" >Svelte/easing</A>.
 
-```svelte example
+```svelte example class="flex flex-col items-center"
 <script>
   import { Toast } from 'flowbite-svelte';
   import { slide } from 'svelte/transition';
   import { quintOut, elasticOut } from 'svelte/easing';
 </script>
 
-<Toast transition={slide} class="my-2">
+<Toast transition={slide} class="mb-4">
   <svelte:fragment slot="icon">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
     </svelte:fragment>
   Transition type: slide
 </Toast>
-<Toast transition={slide} params="{{delay: 250, duration: 300, easing: quintOut}}" class="my-2">
+
+<Toast transition={slide} params="{{delay: 250, duration: 300, easing: quintOut}}" class="mb-4">
   <svelte:fragment slot="icon">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
   </svelte:fragment>
   Transition type: slide, delay: 250, duration: 300, easing: quintOut
 </Toast>
+
 <Toast transition={slide} params="{{delay: 250, duration: 2000, easing: elasticOut}}">
   <svelte:fragment slot="icon">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
@@ -201,18 +200,19 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 
 ### Blur examples
 
-```svelte example
+```svelte example class="flex flex-col items-center"
 <script>
   import { Toast } from 'flowbite-svelte';
   import { blur } from 'svelte/transition';
 </script>
 
-<Toast transition={blur} color='purple' params="{{amount: 10}}" class="my-2">
+<Toast transition={blur} color='purple' params="{{amount: 10}}" class="mb-4">
   <svelte:fragment slot="icon">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
   </svelte:fragment>
   Transition type: blur, amount: 10
 </Toast>
+
 <Toast transition={blur} color='purple' params="{{amount: 50, delay: 1000}}">
   <svelte:fragment slot="icon">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
@@ -223,13 +223,13 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 
 ### Fly examples
 
-```svelte example
+```svelte example class="flex flex-col items-center"
 <script>
   import { Toast } from 'flowbite-svelte';
   import { fly } from 'svelte/transition';
 </script>
 
-<Toast transition={fly} params="{{x: 200}}" color="green" class="mb-2">
+<Toast transition={fly} params="{{x: 200}}" color="green" class="mb-4">
   <svelte:fragment slot="icon">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>
   </svelte:fragment>
@@ -248,7 +248,7 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 
 Use this toast component to also show an “undo” button to reverse the action of the user.
 
-```svelte example hideScript
+```svelte example class="flex justify-center" hideScript
 <script>
   import { Toast } from 'flowbite-svelte';
 </script>
@@ -269,7 +269,7 @@ Use the `slot="extra` to add some more arbitrary content in the toast.
 
 This component can be used to show messages and a CTA button when receiving chat messages, comment notifications, and other use cases.
 
-```svelte example
+```svelte example class="flex justify-center"
 <script>
   import { Toast, Avatar, Button } from 'flowbite-svelte';
 </script>
@@ -290,7 +290,7 @@ This component can be used to show messages and a CTA button when receiving chat
 
 This component can be used to show notifications for an action from another user such as posting a comment, receiving a like, being tagged. You can show an avatar, icon, message, and the time of the notification.
 
-```svelte example
+```svelte example class="flex justify-center"
 <script>
   import { Toast, Avatar } from 'flowbite-svelte';
 </script>
@@ -314,7 +314,7 @@ Use this interactive toast component to encourage users to make a certain action
 
 <p class="italic">This is an example with the icon and extra content at the same time.</p>
 
-```svelte example
+```svelte example class="flex justify-center"
 <script>
   import { Toast, Button } from 'flowbite-svelte';
 </script>
