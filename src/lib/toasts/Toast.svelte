@@ -14,6 +14,7 @@
     divClass?: string;
     defaultIconClass?: string;
     extraIconClass?: string;
+    contentClass?: string;
   }
 
   export let simple: boolean = false;
@@ -22,8 +23,9 @@
   export let open: boolean = true;
   export let divClass: string =
     'w-full max-w-xs p-4 text-gray-500 bg-white shadow dark:text-gray-400 dark:bg-gray-800';
-  export let defaultIconClass: string = 'inline-flex items-center justify-center flex-shrink-0 w-8 h-8 mr-3';
+  export let defaultIconClass: string = 'inline-flex items-center justify-center flex-shrink-0 w-8 h-8';
   export let extraIconClass: string = '';
+  export let contentClass: string = 'text-sm font-normal w-full';
 
   const positions = {
     'top-left': 'absolute top-5 left-5',
@@ -53,15 +55,23 @@
 
   let iconClass: string;
   $: iconClass = classNames(defaultIconClass, levelColors[level], extraIconClass);
+
+  $: finalContentClass = classNames($$slots.icon && (simple ? 'pl-4' : 'ml-3'), contentClass);
 </script>
 
 {#if open}
   <Frame rounded transition={fade} color="none" {...$$restProps} class={finalDivClass} role="alert">
     {#if $$slots.icon}
-      <Frame rounded color="none" class={iconClass}><slot name="icon" /></Frame>
+      {#if simple}
+        <slot name="icon" />
+      {:else}
+        <Frame rounded color="none" class={iconClass}>
+          <slot name="icon" />
+        </Frame>
+      {/if}
     {/if}
 
-    <div class="text-sm font-normal w-full">
+    <div class={finalContentClass}>
       <slot />
       <slot name="extra" />
     </div>
