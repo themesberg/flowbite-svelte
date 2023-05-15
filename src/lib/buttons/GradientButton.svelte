@@ -3,11 +3,11 @@
   import Button from './Button.svelte';
   import { getContext } from 'svelte';
 
+  type ButtonColor = keyof typeof gradientClasses;
+
   const group = getContext('group');
 
-  export let pill: boolean = false;
-  export let outline: boolean = false;
-  export let color: keyof typeof gradientClasses = 'blue';
+  export let color: ButtonColor = 'blue';
 
   const gradientClasses = {
     blue: 'text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-blue-300 dark:focus:ring-blue-800 ',
@@ -36,19 +36,28 @@
       'text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-red-100 dark:focus:ring-red-400'
   };
 
-  const rounded = () =>
-    group
-      ? pill
-        ? 'first:rounded-l-full last:rounded-r-full'
-        : 'first:rounded-l-lg last:rounded-r-lg'
-      : pill
-      ? 'rounded-full'
-      : 'rounded-lg';
+  const coloredShadowClasses = {
+    blue: 'shadow-blue-500/50 dark:shadow-blue-800/80',
+    green: 'shadow-green-500/50 dark:shadow-green-800/80',
+    cyan: 'shadow-cyan-500/50 dark:shadow-cyan-800/80',
+    teal: 'shadow-teal-500/50 dark:shadow-teal-800/80 ',
+    lime: 'shadow-lime-500/50 dark:shadow-lime-800/80',
+    red: 'shadow-red-500/50 dark:shadow-red-800/80 ',
+    pink: 'shadow-pink-500/50 dark:shadow-pink-800/80',
+    purple: 'shadow-purple-500/50 dark:shadow-purple-800/80',
+    purpleToBlue: 'shadow-blue-300 dark:shadow-blue-800',
+    cyanToBlue: 'shadow-cyan-300 dark:shadow-cyan-800',
+    greenToBlue: 'shadow-green-200 dark:shadow-green-800',
+    purpleToPink: 'shadow-purple-200 dark:shadow-purple-800',
+    pinkToOrange: 'shadow-pink-200 dark:shadow-pink-800',
+    tealToLime: 'shadow-lime-200 dark:shadow-teal-700',
+    redToYellow: 'shadow-red-100 dark:shadow-red-400'
+  };
 
   let gradientOutlineClass: string;
   $: gradientOutlineClass = classNames(
     'inline-flex items-center justify-center w-full  !border-0',
-    pill || '!rounded-md',
+    $$restProps.pill || '!rounded-md',
     'bg-white !text-gray-900 dark:bg-gray-900 dark:!text-white', // this is limitation - no transparency
     'hover:bg-transparent hover:!text-inherit',
     'transition-all duration-75 ease-in group-hover:!bg-opacity-0 group-hover:!text-inherit'
@@ -58,24 +67,25 @@
   $: divClass = classNames(
     'p-0.5',
     gradientClasses[color],
+    $$restProps.shadow && coloredShadowClasses[color],
     group
-      ? pill
+      ? $$restProps.pill
         ? 'first:rounded-l-full last:rounded-r-full'
         : 'first:rounded-l-lg last:rounded-r-lg'
-      : pill
+      : $$restProps.pill
       ? 'rounded-full'
       : 'rounded-lg',
     $$props.class
   );
 </script>
 
-{#if outline}
+{#if $$restProps.outline}
   <div class={divClass}>
     <!-- Trick to prentend outline without using border
 	    This has a limitation of no supporting transparency as
 	    is set to bg-white dark:bg-gray-900 -->
-    <Button {...$$restProps} {pill} color="none" class={gradientOutlineClass}><slot /></Button>
+    <Button {...$$restProps} color="none" class={gradientOutlineClass}><slot /></Button>
   </div>
 {:else}
-  <Button {...$$restProps} {pill} color="none" class={gradientClasses[color]}><slot /></Button>
+  <Button {...$$restProps} color="none" class={divClass}><slot /></Button>
 {/if}
