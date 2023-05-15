@@ -25,7 +25,7 @@
     'w-full max-w-xs p-4 text-gray-500 bg-white shadow dark:text-gray-400 dark:bg-gray-800';
   export let defaultIconClass: string = 'inline-flex items-center justify-center flex-shrink-0 w-8 h-8';
   export let extraIconClass: string = '';
-  export let contentClass: string = 'text-sm font-normal w-full';
+  export let contentClass: string = 'text-sm font-normal';
 
   const positions = {
     'top-left': 'absolute top-5 left-5',
@@ -77,7 +77,7 @@
     </div>
 
     {#if !simple}
-      <CloseButton on:click={() => (open = false)} />
+      <CloseButton class="-mx-1.5 -my-1.5" on:click={() => (open = false)} />
     {/if}
   </Frame>
 {/if}
