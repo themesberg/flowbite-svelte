@@ -77,7 +77,9 @@
     </div>
 
     {#if !simple}
-      <CloseButton class="-mx-1.5 -my-1.5" on:click={() => (open = false)} />
+      <CloseButton
+        class="-mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 focus:!ring-gray-300 hover:bg-gray-100 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+        on:click={() => (open = false)} />
     {/if}
   </Frame>
 {/if}
