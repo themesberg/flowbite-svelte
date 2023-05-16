@@ -15,11 +15,11 @@
   import { setContext, type ComponentProps } from 'svelte';
 
   interface $$Props extends ComponentProps<Frame> {
-    multiple: boolean;
-    flush: boolean;
-    activeClasses: string;
-    inactiveClasses: string;
-    defaultClass: string;
+    multiple?: boolean;
+    flush?: boolean;
+    activeClasses?: string;
+    inactiveClasses?: string;
+    defaultClass?: string;
   }
 
   export let multiple: boolean = false;
