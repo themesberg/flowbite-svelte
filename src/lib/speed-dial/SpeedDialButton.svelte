@@ -6,22 +6,16 @@
   import { getContext } from 'svelte';
   import type { SpeedCtxType } from './SpeedDial.svelte';
 
-  export let btnDefaultClass:string = 'w-[52px] h-[52px] shadow-sm !p-2';
-  export let name: string = '';
-  export let tooltip: Placement | 'none' = 'left';
-  export let pill: boolean | undefined = undefined;
-  export let textOutside: boolean | undefined = undefined;
-  export let textOutsideClass: string = 'block absolute -left-14 top-1/2 mb-px text-sm font-medium -translate-y-1/2';
-  export let textDefaultClass: string = 'block mb-px text-xs font-medium';
-
   const context = getContext<SpeedCtxType>('speed-dial');
 
-  $: {
-    // set defaults
-    pill = pill ?? context?.pill ?? true;
-    tooltip = tooltip ?? context?.tooltip ?? 'left';
-    textOutside = textOutside ?? context?.textOutside ?? false;
-  }
+  export let btnDefaultClass: string = 'w-[52px] h-[52px] shadow-sm !p-2';
+  export let name: string = '';
+  export let tooltip: Placement | 'none' = context.tooltip;
+  export let pill: boolean = context.pill;
+  export let textOutside: boolean = context.textOutside;
+  export let textOutsideClass: string =
+    'block absolute -left-14 top-1/2 mb-px text-sm font-medium -translate-y-1/2';
+  export let textDefaultClass: string = 'block mb-px text-xs font-medium';
 
   let btnClass: string;
   $: btnClass = classNames(
@@ -37,9 +31,9 @@
   {#if tooltip !== 'none'}
     <span class="sr-only">{name}</span>
   {:else if textOutside}
-    <span class="{textOutsideClass}">{name}</span>
+    <span class={textOutsideClass}>{name}</span>
   {:else}
-    <span class="{textDefaultClass}">{name}</span>
+    <span class={textDefaultClass}>{name}</span>
   {/if}
 </Button>
 
