@@ -126,6 +126,9 @@ export { default as AdvancedRating } from './ratings/AdvancedRating.svelte';
 export { default as ScoreRating } from './ratings/ScoreRating.svelte';
 export { default as RatingComment } from './ratings/RatingComment.svelte';
 export { default as Review } from './ratings/Review.svelte';
+export { default as Star } from './ratings/Star.svelte';
+export { default as Heart } from './ratings/Heart.svelte';
+export { default as Thumbup } from './ratings/Thumbup.svelte';
 
 // Sidebar
 export { default as Sidebar } from './sidebars/Sidebar.svelte';

@@ -38,26 +38,37 @@ Let's import all necessary components in the script tag. We import a heart, thum
 
 ## Default rating
 
-The default rating icon is a star. Set the total and rating props.
+The default rating icon is a star. Set the total and rating props. The `id` prop is required. Use a unique name.
 
 ```svelte example hideScript
 <script>
   import { Rating } from 'flowbite-svelte'
 </script>
 
-<Rating total={5} rating={4.66} />
+<Rating id="example-1" total={5} size={50} rating={4.66} />
+<Rating id="example-2" total={5} size={50} rating={1.4} />
 ```
 
-## Ceil prop
+## Stars
 
-The default rounding for the rate is `floor`, but by adding the `ceil` prop, you can round it up.
+You can use the Star component with the `id` and `fillPercent` props.
 
-```svelte example hideScript
+```svelte example
 <script>
-  import { Rating } from 'flowbite-svelte'
+  import { Star } from 'flowbite-svelte'
 </script>
 
-<Rating total={5} rating={4.66} ceil />
+<Star size={50} id="0" fillPercent={0}/>
+<Star size={50} id="10" fillPercent={10}/>
+<Star size={50} id="20" fillPercent={20}/>
+<Star size={50} id="30" fillPercent={30}/>
+<Star size={50} id="40" fillPercent={40}/>
+<Star size={50} id="50" fillPercent={50}/>
+<Star size={50} id="60" fillPercent={60}/>
+<Star size={50} id="70" fillPercent={70}/>
+<Star size={50} id="80" fillPercent={80}/>
+<Star size={50} id="90" fillPercent={90}/>
+<Star size={50} id="100" fillPercent={100}/>
 ```
 
 ## Rating with text
@@ -69,8 +80,8 @@ If you also want to show a text near the stars you can use the `text` slot to ad
   import { Rating } from 'flowbite-svelte'
 </script>
 
-<Rating total={5} rating={3.21}>
-  <p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.21 out of 5</p>
+<Rating id="example-3" total={5} rating={3.4}>
+  <p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.4 out of 5</p>
 </Rating>
 ```
 
@@ -83,7 +94,7 @@ Aggregate more results by using this example to show the amount of reviews and t
   import { Rating } from 'flowbite-svelte'
 </script>
 
-<Rating count rating={4.95} >
+<Rating count rating={4.95} id="example-4">
   <span class="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400" />
   <a
     href="/"
@@ -95,56 +106,29 @@ Aggregate more results by using this example to show the amount of reviews and t
 
 ## Icon size and color
 
-Use the `ratingUp` and `ratingDown` slots to add icons of your choice.
+
 
 ### Size and color
 
-The default icon size is `24`. Set the `class` in a icon component to change colors.
+The default icon size is `24`. Import your icon and set it in a icon props.
 
 ```svelte example hideScript
 <script>
-  import { Rating } from 'flowbite-svelte'
+  import { Rating, Heart } from 'flowbite-svelte'
 </script>
 
-<Rating total={5} rating={3.21}>
-  <span slot="ratingUp">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-red-700 dark:text-red-500"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
-  </span>
-  <span slot="ratingDown">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-300 dark:text-gray-500"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
-  </span>
-</Rating>
+<Rating total={5} rating={3.3} id="example-5" icon={Heart}/>
+ 
 ```
 
 ```svelte example hideScript
 <script>
-  import { Rating } from 'flowbite-svelte'
+  import { Rating, Thumbup } from 'flowbite-svelte'
 </script>
 
-<Rating total={5} rating={4.7}>
-  <span slot="ratingUp">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-purple-500 dark:text-purple-700"><path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" /></svg>
-  </span>
-  <span slot="ratingDown">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-300 dark:text-gray-500"><path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" /></svg>
-  </span>
-</Rating>
+<Rating total={5} rating={2.7} id="example-5b" icon={Thumbup}/>
 ```
 
-```svelte example hideScript
-<script>
-  import { Rating } from 'flowbite-svelte'
-</script>
-
-<Rating total={5} rating={2.4}>
-  <span slot="ratingUp">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-yellow-300 dark:text-yellow-200"><path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z" /></svg>
-  </span>
-  <span slot="ratingDown">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-300 dark:text-gray-500"><path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z" /></svg>
-  </span>
-</Rating>
-```
 
 ## AdvancedRating component
 
@@ -165,8 +149,8 @@ Set the `total`,` rating`, and `ratings` prop for AdvancedRation component. Use 
   ]}
 >
   <span slot="rating">
-    <Rating total={5} rating={3.21}>
-      <p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.21 out of 5</p>
+    <Rating total={5} rating={3.72} id="example-8">
+      <p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.72 out of 5</p>
     </Rating>
   </span>
   <p slot="globalText" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">1,745 global ratings</p>
@@ -175,11 +159,11 @@ Set the `total`,` rating`, and `ratings` prop for AdvancedRation component. Use 
 
 ## Different icon
 
-As we describe in the Rating component, you can change an icon in the `ratingUp` and `ratingDown` in the Rating component.
+As we describe in the Rating component, you can change an icon in the Rating component.
 
 ```svelte example hideScript
 <script>
-  import { AdvancedRating, Rating } from 'flowbite-svelte'
+  import { AdvancedRating, Rating, Thumbup } from 'flowbite-svelte'
 </script>
 
 <AdvancedRating
@@ -192,14 +176,8 @@ As we describe in the Rating component, you can change an icon in the `ratingUp`
   ]}
 >
   <span slot="rating">
-    <Rating total={5} rating={3.21} ceil>
-      <span slot="ratingUp">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-yellow-300 dark:text-yellow-200"><path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z" /></svg>
-      </span>
-      <span slot="ratingDown">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-300 dark:text-gray-500"><path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z" /></svg>
-      </span>
-      <p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.21 out of 5</p>
+    <Rating total={5} rating={3.8} icon={Thumbup} id="example-9">
+      <p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.8 out of 5</p>
     </Rating>
   </span>
   <p slot="globalText" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">1,745 global ratings</p>

@@ -1,1 +1,1 @@
-{"props":[["type","'dark' | 'light' | 'auto' | 'custom'","'dark'"],["defaultClass","string","'py-2 px-3 text-sm font-medium'"],["placement","'left' | 'right' | 'top' | 'bottom'","'top'"]]}
+{"props":[["type","'dark' | 'light' | 'auto' | 'custom'","'dark'"],["defaultClass","string","'py-2 px-3 text-sm font-medium'"]]}
