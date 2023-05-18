@@ -8,7 +8,7 @@
   export let size: number = 24;
   export let total: number = 5;
   export let rating: number = 4;
-  export let partialId: string = 'partialStar'
+  export let partialId: string = 'partialStar' + generateId();
   export let icon: ComponentType = Star
   export let count: boolean = false;
 
@@ -32,7 +32,7 @@
       <svelte:component this={icon} {size} fillPercent={100} id="{fullStarId}"/>
     {/each}
     {#if percentRating }
-      <svelte:component this={icon}  {size} fillPercent={percentRating} {partialId}/>
+      <svelte:component this={icon}  {size} fillPercent={percentRating} id={partialId}/>
     {/if}
     {#each Array(grayStars) as star}
       <svelte:component this={icon}  {size} fillPercent={0} id="{grayStarId}"/>

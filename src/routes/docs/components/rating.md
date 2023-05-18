@@ -45,8 +45,8 @@ The default rating icon is a star. Set the total and rating props. The `id` prop
   import { Rating } from 'flowbite-svelte'
 </script>
 
-<Rating id="example-1" total={5} size={50} rating={4.66} />
-<Rating id="example-2" total={5} size={50} rating={1.4} />
+<Rating id="example-1" total={5} size={50} rating={1.4} />
+<Rating id="example-1b" total={5} size={50} rating={4.66} />
 ```
 
 ## Stars
@@ -106,8 +106,6 @@ Aggregate more results by using this example to show the amount of reviews and t
 
 ## Icon size and color
 
-
-
 ### Size and color
 
 The default icon size is `24`. Import your icon and set it in a icon props.
@@ -118,7 +116,7 @@ The default icon size is `24`. Import your icon and set it in a icon props.
 </script>
 
 <Rating total={5} rating={3.3} id="example-5" icon={Heart}/>
- 
+<Rating total={10} rating={7.6} id="example-5b" icon={Heart}/>
 ```
 
 ```svelte example hideScript
@@ -126,7 +124,8 @@ The default icon size is `24`. Import your icon and set it in a icon props.
   import { Rating, Thumbup } from 'flowbite-svelte'
 </script>
 
-<Rating total={5} rating={2.7} id="example-5b" icon={Thumbup}/>
+<Rating total={5} rating={4.7} id="example-5c" icon={Thumbup}/>
+<Rating total={10} rating={8.2} id="example-5d" icon={Thumbup}/>
 ```
 
 
