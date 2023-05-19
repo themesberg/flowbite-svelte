@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.36.2](https://github.com/themesberg/flowbite-svelte/compare/v0.35.4...v0.36.2) (2023-05-19)
+
+
+### Features
+
+* add initialTheme to DarkMode component ([#776](https://github.com/themesberg/flowbite-svelte/issues/776)) ([5110499](https://github.com/themesberg/flowbite-svelte/commit/51104993239b410305e956b1af2204b4e3d37d66))
+* devicemockup ([#778](https://github.com/themesberg/flowbite-svelte/issues/778)) ([fec1f4c](https://github.com/themesberg/flowbite-svelte/commit/fec1f4caa5da33259766312dda95a7fdaeb291eb))
+
+
+### Bug Fixes
+
+* rating component update ([#773](https://github.com/themesberg/flowbite-svelte/issues/773)) ([f031395](https://github.com/themesberg/flowbite-svelte/commit/f031395353208a1bade6148dbafd11c9c1632afc))
+
 ### [0.36.1](https://github.com/themesberg/flowbite-svelte/compare/v0.35.4...v0.36.1) (2023-05-19)
 
 
