@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.36.1](https://github.com/themesberg/flowbite-svelte/compare/v0.35.4...v0.36.1) (2023-05-19)
+
 ### [0.35.4](https://github.com/themesberg/flowbite-svelte/compare/v0.35.3...v0.35.4) (2023-05-18)
 
 
