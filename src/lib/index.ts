@@ -44,6 +44,9 @@ export { default as DarkMode } from './darkmode/DarkMode.svelte';
 // Datepicker
 export { default as Datepicker } from './datepicker/Datepicker.svelte';
 
+// DeviceMockup
+export { default as DeviceMockup } from './device-mockup/DeviceMockup.svelte';
+
 // Drawer
 export { default as Drawer } from './drawer/Drawer.svelte';
 
