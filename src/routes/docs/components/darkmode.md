@@ -47,11 +47,8 @@ Finally, use the dark mode component to display a switcher (that is a button) fo
 
 ## Initial theme
 
-Use `initialTheme='dark'` to set the initial theme to the dark mode. The default mode is `light`.
+Use `<DarkMode initialTheme='dark' />` to set the initial theme to the dark mode. The default mode is `light`.
 
-```
-<DarkMode initialTheme='dark' />
-```
 
 ## Switcher style
 
