@@ -84,5 +84,15 @@
     <Button {...$$restProps} color="none" class={gradientOutlineClass}><slot /></Button>
   </div>
 {:else}
-  <Button {...$$restProps} color="none" class={divClass}><slot /></Button>
+  <Button 
+  {...$$restProps} 
+  color="none" 
+  class={divClass}
+  on:click
+  on:change
+  on:keydown
+  on:keyup
+  on:mouseenter
+  on:mouseleave
+  ><slot /></Button>
 {/if}

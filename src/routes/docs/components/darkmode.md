@@ -15,8 +15,7 @@ thumnailSize: w-24
 </script>
 
 
-
-<p>In Flowbite-Svelte, the `class` strategy is used to support toggling dark mode manually, so you should explicitly configure it in Talwind CSS:</p>
+In Flowbite-Svelte, the `class` strategy is used to support toggling dark mode manually, so you should explicitly configure it in Talwind CSS:
 
 ```js example 
 // tailwind.config.cjs
@@ -26,7 +25,7 @@ const config = {
 };
 ```
 
-<p>Then you can use `dark:` prefixed classes to configure the styles applied when dark mode is enabled. For example, if you want to change the body background color from `bg-white` when dark mode is disabled to `bg-gray-800` when dark mode is enabled:</p>
+Then you can use `dark:` prefixed classes to configure the styles applied when dark mode is enabled. For example, if you want to change the body background color from `bg-white` when dark mode is disabled to `bg-gray-800` when dark mode is enabled:
 
 ```svelte example hideOutput
 <!-- src/app.html -->
@@ -35,7 +34,7 @@ const config = {
 </body>
 ```
 
-<p>Finally, use the dark mode component to display a switcher (that is a button) for users to toggle dark mode manually. The best place to put this component is in the root layout:</p>
+Finally, use the dark mode component to display a switcher (that is a button) for users to toggle dark mode manually. The best place to put this component is in the root layout:
 
 ```svelte example
 <!-- src/routes/+layout.svelte -->
@@ -46,9 +45,14 @@ const config = {
 <DarkMode />
 ```
 
+## Initial theme
+
+Use `<DarkMode initialTheme='dark' />` to set the initial theme to the dark mode. The default mode is `light`.
+
+
 ## Switcher style
 
-<p>Use the `btnClass` prop to overwrite the default classes:</p>
+Use the `btnClass` prop to overwrite the default classes:
 
 ```svelte example
 <script>
@@ -60,7 +64,7 @@ const config = {
 <DarkMode {btnClass} />
 ```
 
-<p>Or just use `class` attribute to append classes to the default classes:</p>
+Or just use `class` attribute to append classes to the default classes:
 
 ```svelte example
 <script>
@@ -72,7 +76,7 @@ const config = {
 
 ## Mode icon
 
-<p>Use the `lightIcon` and `darkIcon` slots to change icons:</p>
+Use the `lightIcon` and `darkIcon` slots to change icons:
 
 ```svelte example
 <script>
@@ -91,8 +95,8 @@ const config = {
 
 ## Props
 
-<p>The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
- page</A> for type information.</p>
+The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
+ page</A> for type information.
 
 <TableProp>
 <TableDefaultRow {items} rowState='hover' />
