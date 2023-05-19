@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "0.35.4",
+  "version": "0.36.0",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -179,6 +179,10 @@
     "./Button.svelte": {
       "types": "./dist/buttons/Button.svelte.d.ts",
       "svelte": "./dist/buttons/Button.svelte"
+    },
+    "./GradientButton.svelte": {
+      "types": "./dist/buttons/GradientButton.svelte.d.ts",
+      "svelte": "./dist/buttons/GradientButton.svelte"
     },
     "./Card.svelte": {
       "types": "./dist/cards/Card.svelte.d.ts",
@@ -428,6 +432,10 @@
       "types": "./dist/ratings/AdvancedRating.svelte.d.ts",
       "svelte": "./dist/ratings/AdvancedRating.svelte"
     },
+    "./Heart.svelte": {
+      "types": "./dist/ratings/Heart.svelte.d.ts",
+      "svelte": "./dist/ratings/Heart.svelte"
+    },
     "./Rating.svelte": {
       "types": "./dist/ratings/Rating.svelte.d.ts",
       "svelte": "./dist/ratings/Rating.svelte"
@@ -447,6 +455,10 @@
     "./Star.svelte": {
       "types": "./dist/ratings/Star.svelte.d.ts",
       "svelte": "./dist/ratings/Star.svelte"
+    },
+    "./Thumbup.svelte": {
+      "types": "./dist/ratings/Thumbup.svelte.d.ts",
+      "svelte": "./dist/ratings/Thumbup.svelte"
     },
     "./Sidebar.svelte": {
       "types": "./dist/sidebars/Sidebar.svelte.d.ts",
