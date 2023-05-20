@@ -6,9 +6,10 @@
   import focusTrap from '../utils/focusTrap';
   import type { SizeType } from '$lib/types';
   import type { ModalPlacementType } from '../types';
-  
+
   // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Frame> {
+    modalId?: string | undefined;
     open?: boolean;
     title?: string;
     size?: SizeType;
@@ -25,8 +26,10 @@
     autoclose?: boolean;
     permanent?: boolean;
     backdropClasses?: string;
+    defaultClass?: string;
   }
 
+  export let modalId: string | undefined = undefined;
   export let open: boolean = false;
   export let title: string = '';
   export let size: SizeType = 'md';
@@ -125,6 +128,7 @@
   <div class={classNames('fixed inset-0 z-40', backdropClasses)} />
   <!-- dialog -->
   <div
+    id={modalId}
     on:keydown={handleKeys}
     on:wheel|preventDefault|nonpassive
     use:prepareFocus
@@ -160,7 +164,6 @@
         {/if}
         <!-- Modal body -->
         <div
-          id="modal"
           class="p-6 space-y-6 flex-1 overflow-y-auto overscroll-contain"
           on:keydown|stopPropagation={handleKeys}
           on:wheel|stopPropagation|passive>

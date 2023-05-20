@@ -14,8 +14,6 @@ thumnailSize: w-48
   import { props as items1 } from '../../props/Modal.json'
 </script>
 
-
-
 The modal component can be used as an interactive dialog on top of the main content area of the website to show notifications and gather information using form elements from your website users.
 
 Get started with multiple sizes, colors, and styles built with the utility classes from Tailwind CSS and the components from Flowbite.
@@ -37,14 +35,15 @@ You can also use the `open=true` attribute to show open the modal by default. Op
 
 An option of automatic closing of the modal can be enabled by setting the `autoclose` property. Any `<button>` element put in the modal will close it on click.
 
-```svelte example
+```svelte example class="flex justify-center"
 <script>
   import { Button, Modal } from 'flowbite-svelte'
   let defaultModal = false;
 </script>
 
 <Button on:click={() => defaultModal = true}>Default modal</Button>
-<Modal title="Terms of Service" bind:open={defaultModal} autoclose>
+
+<Modal modalId="defaultModal" title="Terms of Service" bind:open={defaultModal} autoclose>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
     With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
   </p>
@@ -64,14 +63,15 @@ You can use this modal example to show a pop-up decision dialog to your users es
 
 Notice lack of the `footer` slot.
 
-```svelte example
+```svelte example class="flex justify-center"
 <script>
   import { Button, Modal } from 'flowbite-svelte'
   let popupModal = false;
 </script>
 
 <Button on:click={() => popupModal = true}>Pop-up modal</Button>
-<Modal bind:open={popupModal} size="xs" autoclose>
+
+<Modal modalId="popup-modal" bind:open={popupModal} size="xs" autoclose>
   <div class="text-center">
       <svg aria-hidden="true" class="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
       <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this product?</h3>
@@ -85,14 +85,15 @@ Notice lack of the `footer` slot.
 
 Use this modal example with form input element to receive information from your users with the advantage of not having to link to another page but keeping the user on the currently active page. A great example would be a login or a register form.
 
-```svelte example
+```svelte example class="flex justify-center"
 <script>
   import { Button, Modal, Label, Input, Checkbox } from 'flowbite-svelte'
   let formModal = false;
 </script>
 
 <Button on:click={() => formModal = true}>Form modal</Button>
-<Modal bind:open={formModal} size="xs" autoclose={false} class="w-full">
+
+<Modal modalId="authentication-modal" bind:open={formModal} size="xs" autoclose={false} class="w-full">
   <form class="flex flex-col space-y-6" action="#">
     <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h3>
     <Label class="space-y-2">
@@ -119,14 +120,15 @@ Use this modal example with form input element to receive information from your 
 
 Use this web3 modal component to show crypto wallet connection options like MetaMask or WalletConnect when building a website based on NFT authentication and collectibles.
 
-```svelte example
+```svelte example class="flex justify-center"
 <script>
   import { Button, Modal, Label, Input, Checkbox } from 'flowbite-svelte'
   let walletModal = false;
 </script>
 
 <Button on:click={() => walletModal = true}>Crypto wallet modal</Button>
-<Modal title="Connect wallet"  bind:open={walletModal} size="xs" padding="xs">
+
+<Modal modalId="crypto-modal" title="Connect wallet"  bind:open={walletModal} size="xs" padding="xs">
   <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Connect with one of our available wallet providers or create a new one.</p>
   <ul class="my-4 space-y-3">
     <li>
@@ -172,22 +174,23 @@ Use this web3 modal component to show crypto wallet connection options like Meta
 
 You can use five different modal sizing options starting from extra small to extra large, but keep in mind that the width of these modals will remain the same when browsing on smaller devices.
 
-```svelte example
+```svelte example class="flex justify-center"
 <script>
   import { Button, Modal } from 'flowbite-svelte'
-  let sizesModal = false
+  let modalId;
+  let sizesModal = false;
   let size;
 </script>
 
-<div class="space-x-4">
-  <Button size="xs" on:click={()=> {size = 'xs'; sizesModal = true} }>xs</Button>
-  <Button size="sm" on:click={()=> {size = 'sm'; sizesModal = true} }>sm</Button>
-  <Button size="md" on:click={()=> {size = 'md'; sizesModal = true} }>md</Button>
-  <Button size="lg" on:click={()=> {size = 'lg'; sizesModal = true} }>lg</Button>
-  <Button size="xl" on:click={()=> {size = 'xl'; sizesModal = true} }>xl</Button>
+<div class="block space-y-4 md:space-y-0 md:space-x-4">
+  <Button size="xs" on:click={()=> {modalId='extrasmall-modal'; size = 'xs'; sizesModal = true}}>xs</Button>
+  <Button size="sm" on:click={()=> {modalId='small-modal'; size = 'sm'; sizesModal = true}}>sm</Button>
+  <Button size="md" on:click={()=> {modalId='medium-modal'; size = 'md'; sizesModal = true}}>md</Button>
+  <Button size="lg" on:click={()=> {modalId='large-modal'; size = 'lg'; sizesModal = true}}>lg</Button>
+  <Button size="xl" on:click={()=> {modalId='extralarge-modal'; size = 'xl'; sizesModal = true}}>xl</Button>
 </div>
 
-<Modal title="Terms of Service" bind:open={sizesModal} {size} autoclose>
+<Modal {modalId} title="Terms of Service" bind:open={sizesModal} {size} autoclose>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
     With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
   </p>
@@ -203,14 +206,16 @@ You can use five different modal sizing options starting from extra small to ext
 
 ## Placement
 
-```svelte example
+```svelte example class="flex justify-center"
 <script>
   import { Button, Modal } from 'flowbite-svelte'
+  let modalId;
   let placement;
   let open = false;
 
   const setPlacement = (ev) => {
     placement = ev.target.textContent; // text in the button
+    modalId = `${placement}-modal`;
     open = !open
   };
 </script>
@@ -226,7 +231,8 @@ You can use five different modal sizing options starting from extra small to ext
   <Button on:click={setPlacement}>bottom-center</Button>
   <Button on:click={setPlacement}>bottom-right</Button>
 </div>
-<Modal title="Terms of Service" bind:open {placement} autoclose>
+
+<Modal {modalId} title="Terms of Service" bind:open {placement} autoclose>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
     With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
   </p>
@@ -242,19 +248,23 @@ You can use five different modal sizing options starting from extra small to ext
 
 ## Colors
 
-```svelte example
+```svelte example class="flex justify-center"
 <script>
   import { Button, Modal, P } from 'flowbite-svelte'
+  let modalId;
   let open = false;
   let color;
 </script>
 
-<Button on:click={() => {color="primary"; open = true}}>Primary modal</Button>
-<Button on:click={() => {color="red"; open = true}}>Red modal</Button>
-<Button on:click={() => {color="green"; open = true}}>Green modal</Button>
-<Button on:click={() => {color="blue"; open = true}}>Blue modal</Button>
-<Button on:click={() => {color="yellow"; open = true}}>Yellow modal</Button>
-<Modal title="Terms of Service" bind:open {color} autoclose>
+<div class="block space-y-4 md:space-y-0 md:space-x-4">
+  <Button on:click={() => {modalId="primary-modal"; color="primary"; open = true}}>Primary modal</Button>
+  <Button on:click={() => {modalId="red-modal"; color="red"; open = true}}>Red modal</Button>
+  <Button on:click={() => {modalId="green-modal"; color="green"; open = true}}>Green modal</Button>
+  <Button on:click={() => {modalId="blue-modal"; color="blue"; open = true}}>Blue modal</Button>
+  <Button on:click={() => {modalId="yellow-modal"; color="yellow"; open = true}}>Yellow modal</Button>
+</div>
+
+<Modal {modalId} title="Terms of Service" bind:open {color} autoclose>
   <div class="text-base leading-relaxed">
     With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
   </div>
@@ -263,19 +273,19 @@ You can use five different modal sizing options starting from extra small to ext
     <Button color="alternative">Decline</Button>
   </svelte:fragment>
 </Modal>
-
 ```
 
 ## Scrolling behaviour
 
-```svelte example
+```svelte example class="flex justify-center"
 <script>
   import { Button, Modal } from 'flowbite-svelte'
   let defaultModal = false;
 </script>
 
 <Button on:click={() => defaultModal = true} autoclose>Scrolling modal</Button>
-<Modal title="Terms of Service" bind:open={defaultModal}>
+
+<Modal modalId="scrollable-modal" title="Terms of Service" bind:open={defaultModal}>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
     With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
   </p>
