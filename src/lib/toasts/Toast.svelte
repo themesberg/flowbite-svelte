@@ -8,7 +8,6 @@
   // propagate props type from underying Frame
   interface $$Props extends ComponentProps<Frame> {
     simple?: boolean;
-    level?: 'default' | 'success' | 'danger' | 'warning' | 'none';
     color?: 'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'none';
     position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none';
     open?: boolean;
@@ -19,8 +18,7 @@
   }
 
   export let simple: boolean = false;
-  export let level: 'default' | 'success' | 'danger' | 'warning' | 'none' = 'default';
-  export let color: 'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'none' = 'none';
+  export let color: 'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'none' = 'blue';
   export let position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none' = 'none';
   export let open: boolean = true;
   export let divClass: string =
@@ -47,30 +45,19 @@
     $$props.class
   );
 
-  const levelColors = {
-    default: 'text-blue-500 bg-blue-100 dark:bg-blue-800 dark:text-blue-200',
-    success: 'text-green-500 bg-green-100 dark:bg-green-800 dark:text-green-200',
-    danger: 'text-red-500 bg-red-100 dark:bg-red-800 dark:text-red-200',
-    warning: 'text-orange-500 bg-orange-100 dark:bg-orange-700 dark:text-orange-200',
-    none: ''
-  };
-
-  const flowbiteColors = {
+  const colorPalette = {
     gray: 'text-gray-500 bg-gray-100 dark:bg-gray-800 dark:text-gray-200',
     red: 'text-red-500 bg-red-100 dark:bg-red-800 dark:text-red-200',
     yellow: 'text-yellow-500 bg-yellow-100 dark:bg-yellow-800 dark:text-yellow-200',
     green: 'text-green-500 bg-green-100 dark:bg-green-800 dark:text-green-200',
     blue: 'text-blue-500 bg-blue-100 dark:bg-blue-800 dark:text-blue-200',
     indigo: 'text-indigo-500 bg-indigo-100 dark:bg-indigo-800 dark:text-indigo-200',
-    purple: 'text-purple-500 bg-purple-100 dark:bg-purple-800 dark:text-purple-200'
+    purple: 'text-purple-500 bg-purple-100 dark:bg-purple-800 dark:text-purple-200',
+    orange: 'text-orange-500 bg-orange-100 dark:bg-orange-700 dark:text-orange-200'
   };
 
   let iconClass: string;
-  $: iconClass = classNames(
-    defaultIconClass,
-    color !== 'none' ? flowbiteColors[color] : levelColors[level],
-    extraIconClass
-  );
+  $: iconClass = classNames(defaultIconClass, color !== 'none' && colorPalette[color], extraIconClass);
 
   $: finalContentClass = classNames($$slots.icon && (simple ? 'pl-4' : 'ml-3'), contentClass);
 
