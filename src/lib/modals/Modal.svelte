@@ -30,7 +30,6 @@
     outsideclose?: boolean;
   }
 
-  export let modalId: string | undefined = undefined;
   export let open: boolean = false;
   export let title: string = '';
   export let size: SizeType = 'md';
