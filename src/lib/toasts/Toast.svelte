@@ -8,7 +8,7 @@
   // propagate props type from underying Frame
   interface $$Props extends ComponentProps<Frame> {
     simple?: boolean;
-    color?: 'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'none';
+    color?: 'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'orange' | 'none';
     position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none';
     open?: boolean;
     divClass?: string;
@@ -18,7 +18,8 @@
   }
 
   export let simple: boolean = false;
-  export let color: 'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'none' = 'blue';
+  export let color: 'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'orange' | 'none' =
+    'blue';
   export let position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none' = 'none';
   export let open: boolean = true;
   export let divClass: string =
@@ -53,11 +54,12 @@
     blue: 'text-blue-500 bg-blue-100 dark:bg-blue-800 dark:text-blue-200',
     indigo: 'text-indigo-500 bg-indigo-100 dark:bg-indigo-800 dark:text-indigo-200',
     purple: 'text-purple-500 bg-purple-100 dark:bg-purple-800 dark:text-purple-200',
-    orange: 'text-orange-500 bg-orange-100 dark:bg-orange-700 dark:text-orange-200'
+    orange: 'text-orange-500 bg-orange-100 dark:bg-orange-700 dark:text-orange-200',
+    none: ''
   };
 
   let iconClass: string;
-  $: iconClass = classNames(defaultIconClass, color !== 'none' && colorPalette[color], extraIconClass);
+  $: iconClass = classNames(defaultIconClass, colorPalette[color], extraIconClass);
 
   $: finalContentClass = classNames($$slots.icon && (simple ? 'pl-4' : 'ml-3'), contentClass);
 

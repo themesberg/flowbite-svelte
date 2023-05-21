@@ -62,6 +62,7 @@
     navbarUl: 'bg-gray-50 dark:bg-gray-800',
     form: 'bg-gray-50 dark:bg-gray-700',
     primary: 'bg-primary-50 dark:bg-gray-800 ',
+    orange: 'bg-orange-50 dark:bg-orange-800',
     none: ''
   };
 
@@ -82,6 +83,7 @@
     navbarUl: 'text-gray-700 dark:text-gray-400',
     form: 'text-gray-900 dark:text-white',
     primary: 'text-primary-800 dark:text-primary-400',
+    orange: 'text-orange-800 dark:text-orange-400',
     none: ''
   };
 
@@ -102,6 +104,7 @@
     navbarUl: 'border-gray-100 dark:border-gray-700',
     form: 'border-gray-300 dark:border-gray-700',
     primary: 'border-primary-500 dark:bg-primary-200 ',
+    orange: 'border-orange-300 dark:bg-orange-800',
     none: ''
   };
 
