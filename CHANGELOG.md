@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.36.4](https://github.com/themesberg/flowbite-svelte/compare/v0.36.3...v0.36.4) (2023-05-21)
+
+
+### Bug Fixes
+
+* revert package:publish ([515e9f4](https://github.com/themesberg/flowbite-svelte/commit/515e9f416f44754aa4794e2baca3ac3401b59100))
+
 ### [0.36.3](https://github.com/themesberg/flowbite-svelte/compare/v0.36.2...v0.36.3) (2023-05-21)
 
 
