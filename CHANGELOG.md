@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.36.3](https://github.com/themesberg/flowbite-svelte/compare/v0.36.2...v0.36.3) (2023-05-21)
+
+
+### Features
+
+* add mockups in package.json ([cfc32d5](https://github.com/themesberg/flowbite-svelte/commit/cfc32d5bb7822fda5c6170285a9f31bd907842df))
+* darkmode fix for refreshing a browser ([#784](https://github.com/themesberg/flowbite-svelte/issues/784)) ([aac2187](https://github.com/themesberg/flowbite-svelte/commit/aac218711967ba63ee139ef7f5370dd43993c709))
+* dependencies update ([b1866b8](https://github.com/themesberg/flowbite-svelte/commit/b1866b8dc5ecc55cc0c343d663537439664cf7a8))
+
+
+### Bug Fixes
+
+* add device-mockups svg images ([#779](https://github.com/themesberg/flowbite-svelte/issues/779)) ([5ce3506](https://github.com/themesberg/flowbite-svelte/commit/5ce3506374e2cf1b19cf2d13faf28c742355fcb3))
+* add modalId prop for Modal ([b2f8187](https://github.com/themesberg/flowbite-svelte/commit/b2f81872f7b5d5fdf1cc6d33be06b66b197027c3))
+* playwright v1.34.0 in workflow ([e12c5ff](https://github.com/themesberg/flowbite-svelte/commit/e12c5ff81f0af3b74b6424fb63845649d80ac8cb))
+* remove debris from the last PR ([902a172](https://github.com/themesberg/flowbite-svelte/commit/902a1722ea11375df3d7670c0bd25ddc7fec504a))
+* update package:publish script ([8ec3669](https://github.com/themesberg/flowbite-svelte/commit/8ec36699099e0672263f4c44fecd07e3d8ec6313))
+
 ### [0.36.2](https://github.com/themesberg/flowbite-svelte/compare/v0.35.4...v0.36.2) (2023-05-19)
 
 
