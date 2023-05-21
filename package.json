@@ -180,6 +180,10 @@
       "types": "./dist/buttons/Button.svelte.d.ts",
       "svelte": "./dist/buttons/Button.svelte"
     },
+    "./GradientButton.svelte": {
+      "types": "./dist/buttons/GradientButton.svelte.d.ts",
+      "svelte": "./dist/buttons/GradientButton.svelte"
+    },
     "./Card.svelte": {
       "types": "./dist/cards/Card.svelte.d.ts",
       "svelte": "./dist/cards/Card.svelte"
@@ -219,6 +223,30 @@
     "./Datepicker.svelte": {
       "types": "./dist/datepicker/Datepicker.svelte.d.ts",
       "svelte": "./dist/datepicker/Datepicker.svelte"
+    },
+    "./Android.svelte": {
+      "types": "./dist/device-mockup/Android.svelte.d.ts",
+      "svelte": "./dist/device-mockup/Android.svelte"
+    },
+    "./Default.svelte": {
+      "types": "./dist/device-mockup/Default.svelte.d.ts",
+      "svelte": "./dist/device-mockup/Default.svelte"
+    },
+    "./DeviceMockup.svelte": {
+      "types": "./dist/device-mockup/DeviceMockup.svelte.d.ts",
+      "svelte": "./dist/device-mockup/DeviceMockup.svelte"
+    },
+    "./Ios.svelte": {
+      "types": "./dist/device-mockup/Ios.svelte.d.ts",
+      "svelte": "./dist/device-mockup/Ios.svelte"
+    },
+    "./SmartWatch.svelte": {
+      "types": "./dist/device-mockup/SmartWatch.svelte.d.ts",
+      "svelte": "./dist/device-mockup/SmartWatch.svelte"
+    },
+    "./Tablet.svelte": {
+      "types": "./dist/device-mockup/Tablet.svelte.d.ts",
+      "svelte": "./dist/device-mockup/Tablet.svelte"
     },
     "./Drawer.svelte": {
       "types": "./dist/drawer/Drawer.svelte.d.ts",
@@ -428,6 +456,10 @@
       "types": "./dist/ratings/AdvancedRating.svelte.d.ts",
       "svelte": "./dist/ratings/AdvancedRating.svelte"
     },
+    "./Heart.svelte": {
+      "types": "./dist/ratings/Heart.svelte.d.ts",
+      "svelte": "./dist/ratings/Heart.svelte"
+    },
     "./Rating.svelte": {
       "types": "./dist/ratings/Rating.svelte.d.ts",
       "svelte": "./dist/ratings/Rating.svelte"
@@ -447,6 +479,10 @@
     "./Star.svelte": {
       "types": "./dist/ratings/Star.svelte.d.ts",
       "svelte": "./dist/ratings/Star.svelte"
+    },
+    "./Thumbup.svelte": {
+      "types": "./dist/ratings/Thumbup.svelte.d.ts",
+      "svelte": "./dist/ratings/Thumbup.svelte"
     },
     "./Sidebar.svelte": {
       "types": "./dist/sidebars/Sidebar.svelte.d.ts",
