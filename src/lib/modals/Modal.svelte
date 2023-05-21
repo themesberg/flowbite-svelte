@@ -9,7 +9,7 @@
 
   // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Frame> {
-    modalId?: string | undefined;
+    id?: string;
     open?: boolean;
     title?: string;
     size?: SizeType;
@@ -27,6 +27,7 @@
     permanent?: boolean;
     backdropClasses?: string;
     defaultClass?: string;
+    outsideclose?: boolean;
   }
 
   export let modalId: string | undefined = undefined;
@@ -38,6 +39,8 @@
   export let permanent: boolean = false;
   export let backdropClasses: string = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
   export let defaultClass: string = 'relative flex flex-col mx-auto';
+  export let outsideclose: boolean = false;
+  export let id: string ="modal"
 
   const dispatch = createEventDispatcher();
   $: dispatch(open ? 'open' : 'hide');
@@ -104,6 +107,16 @@
     open = false;
   };
 
+  function isHTMLElement(value: any): value is HTMLElement {
+    return value instanceof HTMLElement;
+  }
+
+  const hidebyOutside = (e: Event) => {
+    if (isHTMLElement(e.target) && e.target.id === 'outerModal') {
+      open = false;
+    }
+  };
+
   let frameClass: string;
   $: frameClass = classNames(defaultClass, $$props.class);
 
@@ -112,28 +125,24 @@
     e.scrollHeight > e.clientHeight && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowY) >= 0
   ];
 
-  function preventWheelDefault(e: Event) {
-    // @ts-ignore
-    const [x, y] = isScrollable(this);
-    return x || y || e.preventDefault();
-  }
-
   function handleKeys(e: KeyboardEvent) {
     if (e.key === 'Escape' && !permanent) return hide(e);
   }
 </script>
+
 
 {#if open}
   <!-- backdrop -->
   <div class={classNames('fixed inset-0 z-40', backdropClasses)} />
   <!-- dialog -->
   <div
-    id={modalId}
+    id='outerModal'
     on:keydown={handleKeys}
     on:wheel|preventDefault|nonpassive
     use:prepareFocus
     use:focusTrap
     on:click={autoclose ? onAutoClose : null}
+    on:click={outsideclose? hidebyOutside: null}
     class={classNames(
       'fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex',
       ...getPlacementClasses()
@@ -141,7 +150,7 @@
     tabindex="-1"
     aria-modal="true"
     role="dialog">
-    <div class="flex relative {sizes[size]} w-full max-h-full">
+    <div class="flex relative {sizes[size]} w-full max-h-full" {id} >
       <!-- Modal content -->
       <Frame rounded shadow {...$$restProps} class={frameClass}>
         <!-- Modal header -->
