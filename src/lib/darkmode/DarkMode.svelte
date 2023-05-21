@@ -4,6 +4,7 @@
 
   // declare initialTheme as a prop with a default value of 'light'
   export let initialTheme: string = 'light';
+
   export let btnClass: string =
     'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5';
 
@@ -18,6 +19,9 @@
   let toggleTheme: () => void;
 
   onMount(() => {
+    if(localStorage.getItem('color-theme')){
+      initialTheme = localStorage.getItem('color-theme') || 'light'
+    }
     localStorage.getItem('color-theme') === initialTheme ||
     (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
       ? window.document.documentElement.classList.add(initialTheme)
