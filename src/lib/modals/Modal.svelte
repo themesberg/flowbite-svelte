@@ -39,7 +39,6 @@
   export let backdropClasses: string = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
   export let defaultClass: string = 'relative flex flex-col mx-auto';
   export let outsideclose: boolean = false;
-  export let id: string ="modal"
 
   const dispatch = createEventDispatcher();
   $: dispatch(open ? 'open' : 'hide');
@@ -149,7 +148,7 @@
     tabindex="-1"
     aria-modal="true"
     role="dialog">
-    <div class="flex relative {sizes[size]} w-full max-h-full" {id} >
+    <div class="flex relative {sizes[size]} w-full max-h-full" >
       <!-- Modal content -->
       <Frame rounded shadow {...$$restProps} class={frameClass}>
         <!-- Modal header -->
