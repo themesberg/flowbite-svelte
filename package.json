@@ -15,7 +15,7 @@
     "dev": "vite dev",
     "build": "vite build && npm run package",
     "preview": "vite preview",
-    "test": "npm run add-exports && npm run write-package-json && playwright test",
+    "test": "playwright test",
     "package": "svelte-kit sync && svelte-package && publint",
     "prepublishOnly": "npm run add-exports && npm run write-package-json && npm run package && publint",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
