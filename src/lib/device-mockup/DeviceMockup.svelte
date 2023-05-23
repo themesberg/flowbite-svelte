@@ -3,7 +3,7 @@
   import Ios from './Ios.svelte';
   import Android from './Android.svelte';
   import Tablet from './Tablet.svelte';
-  import SmartWatch from './Smartwatch.svelte';
+  import Smartwatch from './Smartwatch.svelte';
 
   export let device: 'default' | 'ios' | 'android' | 'tablet' | 'laptop' | 'desktop' | 'smartwatch' =
     'default';
@@ -139,7 +139,7 @@
   <div class={desktopBotUnder} />
 {:else if device === 'smartwatch'}
   <div class={smartTop}>
-    <SmartWatch {smartRightTop} {smartRightBot} />
+    <Smartwatch {smartRightTop} {smartRightBot} />
     <div class={smartwatchInner}>
       <slot />
     </div>
