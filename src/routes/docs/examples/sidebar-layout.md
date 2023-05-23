@@ -17,4 +17,3 @@ component_title: Sidebar Layout
 </List>
 
 <Img src="/images/sveltekit-sidebar-layout-optimized.png" alt="sveltekit sidebar layout" />
-

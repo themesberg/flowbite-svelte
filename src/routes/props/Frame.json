@@ -1,1 +1,14 @@
-{"props":[["tag","string","'div'"],["color","FrameColor","'default'"],["rounded","boolean","false"],["border","boolean","false"],["shadow","boolean","false"],["transition","TransitionFunc | undefined","undefined"],["params","object","{}"],["node","HTMLElement | undefined","undefined"],["use","Action","noop"],["options","string","{}"]]}
+{
+  "props": [
+    ["tag", "string", "'div'"],
+    ["color", "FrameColor", "'default'"],
+    ["rounded", "boolean", "false"],
+    ["border", "boolean", "false"],
+    ["shadow", "boolean", "false"],
+    ["transition", "TransitionFunc | undefined", "undefined"],
+    ["params", "object", "{}"],
+    ["node", "HTMLElement | undefined", "undefined"],
+    ["use", "Action", "noop"],
+    ["options", "string", "{}"]
+  ]
+}

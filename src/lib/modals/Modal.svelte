@@ -128,19 +128,18 @@
   }
 </script>
 
-
 {#if open}
   <!-- backdrop -->
   <div class={classNames('fixed inset-0 z-40', backdropClasses)} />
   <!-- dialog -->
   <div
-    id='outerModal'
+    id="outerModal"
     on:keydown={handleKeys}
     on:wheel|preventDefault|nonpassive
     use:prepareFocus
     use:focusTrap
     on:click={autoclose ? onAutoClose : null}
-    on:click={outsideclose? hidebyOutside: null}
+    on:click={outsideclose ? hidebyOutside : null}
     class={classNames(
       'fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex',
       ...getPlacementClasses()
@@ -148,7 +147,7 @@
     tabindex="-1"
     aria-modal="true"
     role="dialog">
-    <div class="flex relative {sizes[size]} w-full max-h-full" >
+    <div class="flex relative {sizes[size]} w-full max-h-full">
       <!-- Modal content -->
       <Frame rounded shadow {...$$restProps} class={frameClass}>
         <!-- Modal header -->

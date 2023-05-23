@@ -1,1 +1,15 @@
-{"props":[["color","'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'none'","'blue'"],["large","boolean","false"],["border","boolean","false"],["href","string | undefined","undefined"],["rounded","boolean","false"],["index","boolean","false"],["dismissable","boolean","false"]]}
+{
+  "props": [
+    [
+      "color",
+      "'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'none'",
+      "'blue'"
+    ],
+    ["large", "boolean", "false"],
+    ["border", "boolean", "false"],
+    ["href", "string | undefined", "undefined"],
+    ["rounded", "boolean", "false"],
+    ["index", "boolean", "false"],
+    ["dismissable", "boolean", "false"]
+  ]
+}

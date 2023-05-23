@@ -21,15 +21,22 @@ thumnailSize: w-40
   import { props as items8 }  from '../../props/WidgetPlaceholder.json'
 </script>
 
-
-
 Use the skeleton component to indicate a loading status with placeholder elements that look very similar to the type of content that is being loaded such as paragraphs, images, videos, and more.
 
 ## Setup
 
 ```svelte example hideOutput
 <script>
-  import { CardPlaceholder, ImagePlaceholder, ListPlaceholder, Skeleton, TestimonialPlaceholder, TextPlaceholder, VideoPlaceholder, WidgetPlaceholder } from 'flowbite-svelte'
+  import {
+    CardPlaceholder,
+    ImagePlaceholder,
+    ListPlaceholder,
+    Skeleton,
+    TestimonialPlaceholder,
+    TextPlaceholder,
+    VideoPlaceholder,
+    WidgetPlaceholder
+  } from 'flowbite-svelte';
 </script>
 ```
 
@@ -37,74 +44,74 @@ Use the skeleton component to indicate a loading status with placeholder element
 
 ```svelte example
 <script>
-  import { Skeleton } from 'flowbite-svelte'
+  import { Skeleton } from 'flowbite-svelte';
 </script>
 
-  <Skeleton size="sm" class="my-8" />
-  <Skeleton size="md" class="my-8" />
-  <Skeleton size="lg" class="my-8" />
-  <Skeleton size="xl" class="my-8" />
-  <Skeleton size="xxl" class="mt-8 mb-2.5" />
+<Skeleton size="sm" class="my-8" />
+<Skeleton size="md" class="my-8" />
+<Skeleton size="lg" class="my-8" />
+<Skeleton size="xl" class="my-8" />
+<Skeleton size="xxl" class="mt-8 mb-2.5" />
 ```
 
-## Image placeholder 
+## Image placeholder
 
 ```svelte example
 <script>
-  import { ImagePlaceholder } from 'flowbite-svelte'
+  import { ImagePlaceholder } from 'flowbite-svelte';
 </script>
 
 <ImagePlaceholder />
-<ImagePlaceholder imgHeight={60} class='mt-8'/>
+<ImagePlaceholder imgHeight={60} class="mt-8" />
 ```
 
 ## Video placeholder
 
 ```svelte example
 <script>
-  import { VideoPlaceholder } from 'flowbite-svelte'
+  import { VideoPlaceholder } from 'flowbite-svelte';
 </script>
 
 <VideoPlaceholder />
-<VideoPlaceholder size='md' class='mt-8'/>
-<VideoPlaceholder size='lg' class='mt-8'/>
-<VideoPlaceholder size='xl' class='mt-8'/>
-<VideoPlaceholder size='xxl' class='mt-8'/>
+<VideoPlaceholder size="md" class="mt-8" />
+<VideoPlaceholder size="lg" class="mt-8" />
+<VideoPlaceholder size="xl" class="mt-8" />
+<VideoPlaceholder size="xxl" class="mt-8" />
 ```
 
 ## Text placeholder
 
 ```svelte example
 <script>
-  import { TextPlaceholder } from 'flowbite-svelte'
+  import { TextPlaceholder } from 'flowbite-svelte';
 </script>
 
 <TextPlaceholder />
-<TextPlaceholder size='md' class='mt-8'/>
-<TextPlaceholder size='lg' class='mt-8'/>
-<TextPlaceholder size='xl' class='mt-8'/>
-<TextPlaceholder size='xxl' class='mt-8'/>
+<TextPlaceholder size="md" class="mt-8" />
+<TextPlaceholder size="lg" class="mt-8" />
+<TextPlaceholder size="xl" class="mt-8" />
+<TextPlaceholder size="xxl" class="mt-8" />
 ```
 
 ## Card placeholder
 
 ```svelte example
 <script>
-  import { CardPlaceholder } from 'flowbite-svelte'
+  import { CardPlaceholder } from 'flowbite-svelte';
 </script>
 
 <CardPlaceholder />
-<CardPlaceholder size='md' class='mt-8'/>
-<CardPlaceholder size='lg' class='mt-8'/>
-<CardPlaceholder size='xl' class='mt-8'/>
-<CardPlaceholder size='xxl' class='mt-8'/>
+<CardPlaceholder size="md" class="mt-8" />
+<CardPlaceholder size="lg" class="mt-8" />
+<CardPlaceholder size="xl" class="mt-8" />
+<CardPlaceholder size="xxl" class="mt-8" />
 ```
 
 ## Widget placeholder
 
 ```svelte example
 <script>
-  import { WidgetPlaceholder } from 'flowbite-svelte'
+  import { WidgetPlaceholder } from 'flowbite-svelte';
 </script>
 
 <WidgetPlaceholder />
@@ -114,7 +121,7 @@ Use the skeleton component to indicate a loading status with placeholder element
 
 ```svelte example
 <script>
-  import { ListPlaceholder } from 'flowbite-svelte'
+  import { ListPlaceholder } from 'flowbite-svelte';
 </script>
 
 <ListPlaceholder />
@@ -124,7 +131,7 @@ Use the skeleton component to indicate a loading status with placeholder element
 
 ```svelte example
 <script>
-  import { TestimonialPlaceholder } from 'flowbite-svelte'
+  import { TestimonialPlaceholder } from 'flowbite-svelte';
 </script>
 
 <TestimonialPlaceholder />

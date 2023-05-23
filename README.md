@@ -1,4 +1,4 @@
-# FLOWBITE-SVELTE 
+# FLOWBITE-SVELTE
 
 [![npm version](https://badgen.net/npm/v/flowbite-svelte)](https://www.npmjs.com/package/flowbite-svelte)
 [![npm downloads](https://badgen.net/npm/dw/flowbite-svelte)](https://www.npmjs.com/package/flowbite-svelte)

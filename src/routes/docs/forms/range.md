@@ -17,15 +17,13 @@ description: Get started with the range component to receive a number from the u
   let minmaxValue=5
 </script>
 
-
-
 The range component can be used as an input field to get a number from the user based on your custom selection (ie. from 1 to 100) by using a sliding animation.
 
 ## Setup
 
 ```svelte example hideOutput
 <script>
-  import { Range } from 'flowbite-svelte'
+  import { Range } from 'flowbite-svelte';
 </script>
 ```
 
@@ -33,7 +31,7 @@ The range component can be used as an input field to get a number from the user 
 
 ```svelte example
 <script>
-  import { Range, Label } from 'flowbite-svelte'
+  import { Range, Label } from 'flowbite-svelte';
 </script>
 
 <Label>Default range</Label>
@@ -44,11 +42,11 @@ The range component can be used as an input field to get a number from the user 
 
 ```svelte example hideScript
 <script>
-  import { Range, Label } from 'flowbite-svelte'
+  import { Range, Label } from 'flowbite-svelte';
 </script>
 
 <Label>Default range</Label>
-<Range id="range-disabled" disabled/>
+<Range id="range-disabled" disabled />
 ```
 
 ## Binding value
@@ -59,12 +57,12 @@ Use bind:value to bind the range input value as seen the the following examples.
 
 ```svelte example
 <script>
-  import { Range, Label } from 'flowbite-svelte'
-  let minmaxValue=5
+  import { Range, Label } from 'flowbite-svelte';
+  let minmaxValue = 5;
 </script>
 
 <Label>Min-max range</Label>
-<Range id="range-minmax" min="0" max="10" bind:value={minmaxValue}/>
+<Range id="range-minmax" min="0" max="10" bind:value={minmaxValue} />
 <p>Value: {minmaxValue}</p>
 ```
 
@@ -72,12 +70,12 @@ Use bind:value to bind the range input value as seen the the following examples.
 
 ```svelte example
 <script>
-  import { Range, Label } from 'flowbite-svelte'
-  let stepValue=2.5
+  import { Range, Label } from 'flowbite-svelte';
+  let stepValue = 2.5;
 </script>
 
 <Label>Range steps</Label>
-<Range id="range-steps" min="0" max="5" bind:value={stepValue} step="0.5"/>
+<Range id="range-steps" min="0" max="5" bind:value={stepValue} step="0.5" />
 <p>Value: {stepValue}</p>
 ```
 
@@ -85,13 +83,13 @@ Use bind:value to bind the range input value as seen the the following examples.
 
 ```svelte example class="space-y-6" hideScript
 <script>
-  import { Range, Label } from 'flowbite-svelte'
+  import { Range, Label } from 'flowbite-svelte';
 </script>
 
 <Label>Small range</Label>
 <Range id="small-range" size="sm" />
 <Label>Default range</Label>
-<Range id="default-range" size="md"/>
+<Range id="default-range" size="md" />
 <Label>Large range</Label>
 <Range id="large-range" size="lg" />
 ```
@@ -111,4 +109,3 @@ The component has the following props, type, and default values. See <A href="/d
 ## Forwarded Events
 
 <DocBadgeList items={events} />
-

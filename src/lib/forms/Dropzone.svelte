@@ -30,5 +30,13 @@
   on:dragover
   on:drop>
   <slot />
-  <input {...$$restProps} bind:value bind:files bind:this={input} type="file" class="hidden" on:change on:click />
+  <input
+    {...$$restProps}
+    bind:value
+    bind:files
+    bind:this={input}
+    type="file"
+    class="hidden"
+    on:change
+    on:click />
 </label>

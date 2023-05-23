@@ -16,15 +16,16 @@
   );
 </script>
 
-<td {...$$restProps} class={tdClassfinal} 
-on:click
-on:focus
-on:keydown
-on:keypress
-on:keyup
-on:mouseenter
-on:mouseleave
-on:mouseover
->
+<td
+  {...$$restProps}
+  class={tdClassfinal}
+  on:click
+  on:focus
+  on:keydown
+  on:keypress
+  on:keyup
+  on:mouseenter
+  on:mouseleave
+  on:mouseover>
   <slot />
 </td>

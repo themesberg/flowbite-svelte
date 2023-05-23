@@ -4,7 +4,6 @@
   let open = false;
 </script>
 
-
 <Button color="alternative" on:click={() => (open = !open)}>Default modal</Button>
 
 <Modal id="small" title="Terms of Service" autoclose outsideclose bind:open>

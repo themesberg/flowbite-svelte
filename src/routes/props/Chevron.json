@@ -1,1 +1,6 @@
-{"props":[["placement","Placement","'bottom'"],["aligned","boolean","false"]]}
+{
+  "props": [
+    ["placement", "Placement", "'bottom'"],
+    ["aligned", "boolean", "false"]
+  ]
+}

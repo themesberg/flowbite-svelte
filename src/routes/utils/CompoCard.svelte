@@ -10,7 +10,11 @@
   dir = dir.toLowerCase();
 </script>
 
-<Card href="/docs/{dir}{path}/" padding="none" {...$$restProps} class="!max-w-none shadow-none hover:shadow-lg dark:hover:bg-gray-900 dark:hover:shadow-lg-light">
+<Card
+  href="/docs/{dir}{path}/"
+  padding="none"
+  {...$$restProps}
+  class="!max-w-none shadow-none hover:shadow-lg dark:hover:bg-gray-900 dark:hover:shadow-lg-light">
   <div
     class="bg-gray-50 dark:bg-gray-700 rounded-t-md py-2.5 px-5 flex justify-between items-center border-b border-gray-200 dark:border-gray-700">
     <span class="text-base font-medium text-gray-900 dark:text-white">{name}</span><span

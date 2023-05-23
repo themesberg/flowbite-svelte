@@ -1,7 +1,7 @@
 <script lang="ts">
   import Button from '../buttons/Button.svelte';
   import Star from './Star.svelte';
-  import Rating from './Rating.svelte'
+  import Rating from './Rating.svelte';
   // default is floor
   export let ceil: boolean = false;
   export let helpfullink: string = '';
@@ -40,7 +40,9 @@
   </div>
   <div class="flex items-center mb-1">
     <Rating total={comment.total} rating={comment.rating}>
-      <p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">{comment.rating} out of {comment.total}</p>
+      <p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">
+        {comment.rating} out of {comment.total}
+      </p>
     </Rating>
     {#if comment.heading}
       <h3 class="ml-2 text-sm font-semibold text-gray-900 dark:text-white">

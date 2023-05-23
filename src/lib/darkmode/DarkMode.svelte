@@ -19,8 +19,8 @@
   let toggleTheme: () => void;
 
   onMount(() => {
-    if(localStorage.getItem('color-theme')){
-      initialTheme = localStorage.getItem('color-theme') || 'light'
+    if (localStorage.getItem('color-theme')) {
+      initialTheme = localStorage.getItem('color-theme') || 'light';
     }
     localStorage.getItem('color-theme') === initialTheme ||
     (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)

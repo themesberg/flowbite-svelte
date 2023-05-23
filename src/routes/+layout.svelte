@@ -109,7 +109,7 @@
       <DocBadge
         large
         class="ml-2 xl:ml-6 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-800 dark:hover:text-white">
-        v{version} 
+        v{version}
       </DocBadge>
     </a>
 
