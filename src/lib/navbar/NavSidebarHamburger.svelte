@@ -1,11 +1,11 @@
 <script lang="ts">
-	import ToolbarButton from '../toolbar/ToolbarButton.svelte';
-	import classNames from 'classnames';
-	import SidebarMenu from './SidebarMenu.svelte';
+  import ToolbarButton from '../toolbar/ToolbarButton.svelte';
+  import classNames from 'classnames';
+  import SidebarMenu from './SidebarMenu.svelte';
 
-	export let btnClass: string = 'ml-3 md:hidden';
+  export let btnClass: string = 'ml-3 md:hidden';
 </script>
 
 <ToolbarButton name="Open main menu" on:click {...$$restProps} class={classNames(btnClass, $$props.class)}>
-	<SidebarMenu class="h-6 w-6 shrink-0" variation="solid" />
+  <SidebarMenu class="h-6 w-6 shrink-0" variation="solid" />
 </ToolbarButton>

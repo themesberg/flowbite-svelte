@@ -2,7 +2,7 @@
   import classNames from 'classnames';
   import { setContext } from 'svelte';
   import type { TableColorType } from '../types';
-  
+
   export let divClass: string = 'relative overflow-x-auto';
   export let striped: boolean = false;
   export let hoverable: boolean = false;

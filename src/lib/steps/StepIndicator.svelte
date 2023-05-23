@@ -39,11 +39,7 @@
     {#each steps as step, i}
       {#if i === currentStep - 1}
         <div class="relative w-full h-full">
-          <div
-            class={classNames(
-              'relative w-full h-full rounded-sm',
-              currentStepColors[color]
-            )} />
+          <div class={classNames('relative w-full h-full rounded-sm', currentStepColors[color])} />
           {#if glow}
             <div
               class={classNames(

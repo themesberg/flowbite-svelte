@@ -6,8 +6,7 @@
   export let size: SizeType = 'md';
   export let divClass: string = 'inline-flex rounded-lg shadow-sm';
 
-  setContext('group', {size} );
-
+  setContext('group', { size });
 </script>
 
 <div {...$$restProps} class={classNames(divClass, $$props.class)} role="group">

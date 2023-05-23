@@ -2,7 +2,6 @@
 
 [![](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/shinokada)
 
-
 This Svelte TS starter template provides a foundation for developing with Svelte and Vite, including preconfigured support for Typescript, TailwindCSS, Flowbite-Svelte, and Svelte-Spa-Router. Additionally, it includes a sample implementation of fetching data from a backend API, making it easy to integrate with your own server-side infrastructure.
 
 - Vite

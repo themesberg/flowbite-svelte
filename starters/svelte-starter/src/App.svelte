@@ -1,8 +1,8 @@
 <script>
-  import Router, { link } from "svelte-spa-router";
-  import { routes } from "./routes.js";
-  import { onMount } from "svelte";
-  import { DarkMode } from "flowbite-svelte";
+  import Router, { link } from 'svelte-spa-router';
+  import { routes } from './routes.js';
+  import { onMount } from 'svelte';
+  import { DarkMode } from 'flowbite-svelte';
   let data;
   if (import.meta.env.VITE_API_ENDPOINT) {
     async function fetchData() {

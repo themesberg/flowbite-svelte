@@ -1,1 +1,12 @@
-{"props":[["pill","boolean","false"],["outline","boolean","false"],["size","'xs' | 'sm' | 'md' | 'lg' | 'xl'","group ? 'sm' : 'md'"],["href","string | undefined","undefined"],["btnClass","string | undefined","undefined"],["type","ButtonType","'button'"],["color","ButtonColor","group ? (outline ? 'dark' : 'alternative') : 'primary'"],["shadow","boolean","false"]]}
+{
+  "props": [
+    ["pill", "boolean", "false"],
+    ["outline", "boolean", "false"],
+    ["size", "'xs' | 'sm' | 'md' | 'lg' | 'xl'", "group ? 'sm' : 'md'"],
+    ["href", "string | undefined", "undefined"],
+    ["btnClass", "string | undefined", "undefined"],
+    ["type", "ButtonType", "'button'"],
+    ["color", "ButtonColor", "group ? (outline ? 'dark' : 'alternative') : 'primary'"],
+    ["shadow", "boolean", "false"]
+  ]
+}

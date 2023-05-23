@@ -17,15 +17,13 @@ thumbnailSize: w-72
   const events = ["on:change","on:click"];
 </script>
 
-
-
 The toggle component can be used to receive a simple “yes” or “no” type of answer from the user by choosing a single option from two options available in multiple sizes, styles, and colors coded with the utility classes from Tailwind CSS and with dark mode support.
 
 ## Setup
 
 ```svelte example hideOutput
 <script>
-  import { Toggle } from 'flowbite-svelte'
+  import { Toggle } from 'flowbite-svelte';
 </script>
 ```
 
@@ -35,7 +33,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 ```svelte example class="flex flex-col gap-2" hideScript
 <script>
-  import { Toggle } from 'flowbite-svelte'
+  import { Toggle } from 'flowbite-svelte';
 </script>
 
 <Toggle>Toggle me</Toggle>
@@ -48,7 +46,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 ```svelte example class="flex justify-between" hideScript
 <script>
-  import { Toggle } from 'flowbite-svelte'
+  import { Toggle } from 'flowbite-svelte';
 </script>
 
 <Toggle color="red" checked>Red</Toggle>
@@ -63,7 +61,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 ```svelte example class="flex flex-col gap-2" hideScript
 <script>
-  import { Toggle } from 'flowbite-svelte'
+  import { Toggle } from 'flowbite-svelte';
 </script>
 
 <Toggle size="small">Small toggle</Toggle>

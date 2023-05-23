@@ -14,15 +14,13 @@ thumnailSize: w-64
   import { props as items1 } from '../../props/Hr.json'
 </script>
 
-
-
 The `Hr` component can be used to separate content using a horizontal line by adding space between elements based on multiple styles, variants, and layouts.
 
 ## Setup
 
 ```html
 <script>
-  import { Hr } from 'flowbite-svelte'
+  import { Hr } from 'flowbite-svelte';
 </script>
 ```
 
@@ -30,12 +28,18 @@ The `Hr` component can be used to separate content using a horizontal line by ad
 
 ```svelte example
 <script>
-  import { Hr, P } from 'flowbite-svelte'
+  import { Hr, P } from 'flowbite-svelte';
 </script>
 
-<P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
+<P
+  >Track work across the enterprise through an open, collaborative platform. Link issues across Jira and
+  ingest data from other software development tools, so your IT support and operations teams have richer
+  contextual information to rapidly respond to requests, incidents, and changes.</P>
 <Hr class="my-8" height="h-px" />
-<P>Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
+<P
+  >Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate
+  critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for
+  every change.</P>
 ```
 
 ## Trimmed
@@ -44,12 +48,18 @@ Use this example to show a shorter version of the horizontal line.
 
 ```svelte example
 <script>
-  import { Hr, P } from 'flowbite-svelte'
+  import { Hr, P } from 'flowbite-svelte';
 </script>
 
-<P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
-<Hr class="my-4 mx-auto md:my-10" width="w-48" height="h-1"/>
-<P>Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
+<P
+  >Track work across the enterprise through an open, collaborative platform. Link issues across Jira and
+  ingest data from other software development tools, so your IT support and operations teams have richer
+  contextual information to rapidly respond to requests, incidents, and changes.</P>
+<Hr class="my-4 mx-auto md:my-10" width="w-48" height="h-1" />
+<P
+  >Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate
+  critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for
+  every change.</P>
 ```
 
 ## Icon HR
@@ -58,15 +68,14 @@ This example can be used to set a custom SVG icon in the middle of the HR elemen
 
 ```svelte example
 <script>
-  import { Hr, P } from 'flowbite-svelte'
+  import { Hr, P } from 'flowbite-svelte';
 </script>
 
 <div class="text-center">
   <P>
-  Track work across the enterprise through an open, collaborative platform. Link issues across
-    Jira and ingest data from other software development tools, so your IT support and operations
-    teams have richer contextual information to rapidly respond to requests, incidents, and
-    changes.
+    Track work across the enterprise through an open, collaborative platform. Link issues across Jira and
+    ingest data from other software development tools, so your IT support and operations teams have richer
+    contextual information to rapidly respond to requests, incidents, and changes.
   </P>
   <Hr class="my-8" width="w-64" height="h-1" icon>
     <svg
@@ -80,10 +89,10 @@ This example can be used to set a custom SVG icon in the middle of the HR elemen
         fill="currentColor" /></svg>
   </Hr>
   <P>
-  Deliver great service experiences fast - without the complexity of traditional ITSM
-    solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease,
-    with a complete audit trail for every change.
-    </P>
+    Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate
+    critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for
+    every change.
+  </P>
 </div>
 ```
 
@@ -93,21 +102,20 @@ Use this example to add a text in the middle of the HR component.
 
 ```svelte example
 <script>
-  import { Hr, P } from 'flowbite-svelte'
+  import { Hr, P } from 'flowbite-svelte';
 </script>
 
 <div class="text-center">
   <P>
-    Track work across the enterprise through an open, collaborative platform. Link issues across
-    Jira and ingest data from other software development tools, so your IT support and operations
-    teams have richer contextual information to rapidly respond to requests, incidents, and
-    changes.
+    Track work across the enterprise through an open, collaborative platform. Link issues across Jira and
+    ingest data from other software development tools, so your IT support and operations teams have richer
+    contextual information to rapidly respond to requests, incidents, and changes.
   </P>
   <Hr class="my-8" width="w-64">or</Hr>
   <P>
-    Deliver great service experiences fast - without the complexity of traditional ITSM
-    solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease,
-    with a complete audit trail for every change.
+    Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate
+    critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for
+    every change.
   </P>
 </div>
 ```
@@ -118,12 +126,19 @@ This example can be used to separate content with a HR tag as a shape instead of
 
 ```svelte example
 <script>
-  import { Hr, P, Blockquote } from 'flowbite-svelte'
+  import { Hr, P, Blockquote } from 'flowbite-svelte';
 </script>
 
-<P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
-<Hr class="my-8 mx-auto" width="w-8" height="h-8"/>
-<Blockquote alignment="center"><p>"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p></Blockquote>
+<P
+  >Track work across the enterprise through an open, collaborative platform. Link issues across Jira and
+  ingest data from other software development tools, so your IT support and operations teams have richer
+  contextual information to rapidly respond to requests, incidents, and changes.</P>
+<Hr class="my-8 mx-auto" width="w-8" height="h-8" />
+<Blockquote alignment="center"
+  ><p>
+    "Flowbite is just awesome. It contains tons of predesigned components and pages starting from login
+    screen to complex dashboard. Perfect choice for your next SaaS application."
+  </p></Blockquote>
 ```
 
 ## Props

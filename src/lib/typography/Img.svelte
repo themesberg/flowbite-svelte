@@ -15,11 +15,7 @@
 
 {#if caption}
   <figure class={figClass}>
-    <img
-      class={classNames(imgClass, size, alignment, effect, $$props.class)}
-      {src}
-      {srcset}
-      {alt} />
+    <img class={classNames(imgClass, size, alignment, effect, $$props.class)} {src} {srcset} {alt} />
     <figcaption class={captionClass}>{@html caption}</figcaption>
   </figure>
 {:else}

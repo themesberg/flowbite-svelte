@@ -29,7 +29,7 @@
     <slot />
   </ul>
   {#if $$slots.footer}
-    <div class="py-1  overflow-hidden rounded-b">
+    <div class="py-1 overflow-hidden rounded-b">
       <slot name="footer" />
     </div>
   {/if}

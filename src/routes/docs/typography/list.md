@@ -431,7 +431,6 @@ The component has the following props, type, and default values. See [types page
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-
 ### DescriptionList
 
 <TableProp>

@@ -1,6 +1,6 @@
 <script>
-  import { ForgotPassword } from "flowbite-svelte-admin-dashboard";
-  import { Label, Input } from "flowbite-svelte";
+  import { ForgotPassword } from 'flowbite-svelte-admin-dashboard';
+  import { Label, Input } from 'flowbite-svelte';
   const onSubmit = (e) => {
     const formData = new FormData(e.target);
 
@@ -16,12 +16,6 @@
 <ForgotPassword on:submit={onSubmit}>
   <div>
     <Label for="email" class="mb-2">Your email</Label>
-    <Input
-      type="email"
-      name="email"
-      id="email"
-      placeholder="name@company.com"
-      required
-    />
+    <Input type="email" name="email" id="email" placeholder="name@company.com" required />
   </div>
 </ForgotPassword>

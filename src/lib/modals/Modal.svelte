@@ -97,22 +97,13 @@
 
   const onAutoClose = (e: MouseEvent) => {
     const target: Element = e.target as Element;
-    if (autoclose && target?.tagName === 'BUTTON') hide(e);
+    if (autoclose && target?.tagName === 'BUTTON') hide(e); // close on any button click
+    if (outsideclose && target === e.currentTarget) hide(e); // close on click outside
   };
 
   const hide = (e: Event) => {
     e.preventDefault();
     open = false;
-  };
-
-  function isHTMLElement(value: any): value is HTMLElement {
-    return value instanceof HTMLElement;
-  }
-
-  const hidebyOutside = (e: Event) => {
-    if (isHTMLElement(e.target) && e.target.id === 'outerModal') {
-      open = false;
-    }
   };
 
   let frameClass: string;
@@ -128,19 +119,16 @@
   }
 </script>
 
-
 {#if open}
   <!-- backdrop -->
   <div class={classNames('fixed inset-0 z-40', backdropClasses)} />
   <!-- dialog -->
   <div
-    id='outerModal'
     on:keydown={handleKeys}
     on:wheel|preventDefault|nonpassive
     use:prepareFocus
     use:focusTrap
     on:click={autoclose ? onAutoClose : null}
-    on:click={outsideclose? hidebyOutside: null}
     class={classNames(
       'fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex',
       ...getPlacementClasses()
@@ -148,7 +136,7 @@
     tabindex="-1"
     aria-modal="true"
     role="dialog">
-    <div class="flex relative {sizes[size]} w-full max-h-full" >
+    <div class="flex relative {sizes[size]} w-full max-h-full">
       <!-- Modal content -->
       <Frame rounded shadow {...$$restProps} class={frameClass}>
         <!-- Modal header -->

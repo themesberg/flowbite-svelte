@@ -1,6 +1,6 @@
 <script>
-  import { link } from "svelte-spa-router";
-  import urlSlug from "url-slug";
+  import { link } from 'svelte-spa-router';
+  import urlSlug from 'url-slug';
   export let title, description, image, publishDate;
 </script>
 

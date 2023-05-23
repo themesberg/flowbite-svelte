@@ -68,22 +68,28 @@ In the provided code below, you can customize the primary color by modifying the
 
 ```js
 const config = {
-  content: [
-    "./src/**/*.{html,js,svelte,ts}",
-    "./node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}",
-  ],
+  content: ['./src/**/*.{html,js,svelte,ts}', './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'],
 
-  plugins: [
-    require('flowbite/plugin')
-  ],
+  plugins: [require('flowbite/plugin')],
 
   darkMode: 'class',
-  
+
   theme: {
     extend: {
       colors: {
         // flowbite-svelte
-         primary: {50:'#ebf5ff',100: '#fff1ee',200:'#ffe4de',300:'#ffd5cc',400:'#ffbcad',500:'#fe795d',600:'#ef562f',700:'#eb4f27',800:'#d3330a',900:'#d3330a'}
+        primary: {
+          50: '#ebf5ff',
+          100: '#fff1ee',
+          200: '#ffe4de',
+          300: '#ffd5cc',
+          400: '#ffbcad',
+          500: '#fe795d',
+          600: '#ef562f',
+          700: '#eb4f27',
+          800: '#d3330a',
+          900: '#d3330a'
+        }
 
         // pink
         // primary: {"50":"#fdf2f8","100":"#fce7f3","200":"#fbcfe8","300":"#f9a8d4","400":"#f472b6","500":"#ec4899","600":"#db2777","700":"#be185d","800":"#9d174d","900":"#831843"}
@@ -157,19 +163,19 @@ module.exports = config;
 
 That's it! Now you should be able to work with the Flowbite Svelte library and import components such as the navbar, dropdown, modal, and more.
 
-<div class="h-8" />    
+<div class="h-8" />
 
 Now you are ready to go! Add the following to `src/routes/+page.svelte` and if you see the following image, then your setting is complete.
 
-```svelte example 
+```svelte example
 <script>
-	import { Alert } from 'flowbite-svelte';
+  import { Alert } from 'flowbite-svelte';
 </script>
 
 <div class="p-8">
-	<Alert>
-		<span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
-	</Alert>
+  <Alert>
+    <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
+  </Alert>
 </div>
 ```
 

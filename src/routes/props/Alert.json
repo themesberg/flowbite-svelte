@@ -1,1 +1,6 @@
-{"props":[["dismissable","boolean","false"],["accent","boolean","false"]]}
+{
+  "props": [
+    ["dismissable", "boolean", "false"],
+    ["accent", "boolean", "false"]
+  ]
+}
