@@ -1,10 +1,12 @@
 <script lang="ts">
+  import generateId from '$lib/utils/generateId';
+
   export let fillPercent: number = 100;
   export let fillColor: string = '#F5CA14';
   export let strokeColor: string = '#F5CA14';
   export let size: number = 24;
   export let ariaLabel: string = 'star';
-  export let id: string = 'star';
+  export let id: string = generateId();
 </script>
 
 <svg
