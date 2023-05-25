@@ -128,7 +128,7 @@
     on:wheel|preventDefault|nonpassive
     use:prepareFocus
     use:focusTrap
-    on:click={autoclose ? onAutoClose : null}
+    on:click={onAutoClose}
     class={classNames(
       'fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex',
       ...getPlacementClasses()
