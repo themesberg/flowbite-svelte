@@ -6,6 +6,10 @@
   export let appBtnPosition: 'left' | 'middle' | 'right' | 'custom' = 'custom';
   export let btnDefault: string = '';
   export let spanDefault: string = '';
+  export let btnCustom: string = '';
+  export let spanCustom: string = '';
+  export let appCustom: string = '';
+
   const navType:
     | 'default'
     | 'border'
@@ -30,7 +34,7 @@
     card: 'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
     meeting: '',
     video: '',
-    custom: ''
+    custom: btnCustom
   };
 
   const spanClasses: ButtonClassesTypes = {
@@ -44,7 +48,7 @@
     card: 'text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500',
     meeting: '',
     video: '',
-    custom: ''
+    custom: spanCustom
   };
 
   const appBtnClasses = {
@@ -53,16 +57,16 @@
       'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
     right:
       'inline-flex flex-col items-center justify-center px-5 rounded-r-full hover:bg-gray-50 dark:hover:bg-gray-800 group',
-    custom: ''
+    custom: appCustom
   };
   $: btnClass = classNames(btnDefault, btnClasses[navType], appBtnClasses[appBtnPosition], $$props.btnClass);
   $: spanClass = classNames(spanDefault, spanClasses[navType], $$props.spanClass);
 </script>
 
 <button
+  {...$$restProps}
   class={btnClass}
   aria-label={btnName}
-  {...$$restProps}
   on:click
   on:change
   on:keydown
