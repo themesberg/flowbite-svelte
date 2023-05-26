@@ -3,6 +3,7 @@
   import classNames from 'classnames';
 
   export let items: ImgType[] = [];
+  export let imgClass: string = 'h-auto max-w-full rounded-lg';
 
   $: divClass = classNames('grid', $$props.class);
 
@@ -14,7 +15,7 @@
 <div {...$$restProps} class={divClass} use:init>
   {#each items as item}
     <slot {item}>
-      <div><img src={item.src} alt={item.alt} class="h-auto max-w-full rounded-lg" /></div>
+      <div><img src={item.src} alt={item.alt} class="{imgClass}" /></div>
     </slot>
   {:else}
     <slot />
