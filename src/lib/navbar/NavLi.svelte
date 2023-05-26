@@ -18,6 +18,15 @@
   );
 </script>
 
+<!--
+  @component
+  @prop href: string = '';
+  @prop active: boolean = false;
+  @prop activeClass: string | undefined = undefined;
+  @prop nonActiveClass: string | undefined = undefined;
+  
+-->
+
 <li>
   <svelte:element
     this={href ? 'a' : 'div'}
