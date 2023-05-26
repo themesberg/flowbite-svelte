@@ -10,7 +10,7 @@
   export let inline: boolean = false;
 
   export let group: (string | number)[] = [];
-  export let value: string | number = '';
+  export let value: string | number = 'on';
   export let checked: boolean | undefined = undefined;
 
   // tinted if put in component having its own background
