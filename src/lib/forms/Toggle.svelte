@@ -4,10 +4,11 @@
   import Checkbox from './Checkbox.svelte';
   import type { FormColorType } from '../types';
 
-  export let size: 'small' | 'default' | 'large' = 'default';
+  export let size: 'small' | 'default' | 'large' | 'custom' = 'default';
   export let group: (string | number)[] = [];
   export let value: string | number = '';
   export let checked: boolean | undefined = undefined;
+  export let customSize: string = '';
 
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
@@ -28,7 +29,8 @@
   const sizes = {
     small: 'w-9 h-5 after:top-[2px] after:left-[2px] after:h-4 after:w-4',
     default: 'w-11 h-6 after:top-0.5 after:left-[2px] after:h-5 after:w-5',
-    large: 'w-14 h-7 after:top-0.5 after:left-[4px]  after:h-6 after:w-6'
+    large: 'w-14 h-7 after:top-0.5 after:left-[4px]  after:h-6 after:w-6',
+    custom: customSize
   };
 
   let divClass: string;

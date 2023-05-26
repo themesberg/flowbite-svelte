@@ -4,11 +4,10 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.36.5](https://github.com/themesberg/flowbite-svelte/compare/v0.36.4...v0.36.5) (2023-05-23)
 
-
 ### Bug Fixes
 
-* move @docsearch/js to devDependencies ([168a79f](https://github.com/themesberg/flowbite-svelte/commit/168a79fce52050b437fbde32c95bf17329616b21))
-* typo and update bug_report.yml ([#787](https://github.com/themesberg/flowbite-svelte/issues/787)) ([4ee8a92](https://github.com/themesberg/flowbite-svelte/commit/4ee8a92c5809ea9047141eae7d3aa62b2b8879f4))
+- move @docsearch/js to devDependencies ([168a79f](https://github.com/themesberg/flowbite-svelte/commit/168a79fce52050b437fbde32c95bf17329616b21))
+- typo and update bug_report.yml ([#787](https://github.com/themesberg/flowbite-svelte/issues/787)) ([4ee8a92](https://github.com/themesberg/flowbite-svelte/commit/4ee8a92c5809ea9047141eae7d3aa62b2b8879f4))
 
 ### [0.36.4](https://github.com/themesberg/flowbite-svelte/compare/v0.36.3...v0.36.4) (2023-05-21)
 
