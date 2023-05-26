@@ -62,7 +62,7 @@ Get started with the default toggle component example as a checkbox element to r
 ```svelte example class="flex flex-col gap-2" hideScript
 <script>
   import { Toggle } from 'flowbite-svelte';
-  const customSize = 'w-16 h-10 after:top-1 after:left-[4px]  after:h-8 after:w-8'
+  const customSize = 'w-16 h-10 after:top-1 after:left-[4px]  after:h-8 after:w-8';
 </script>
 
 <Toggle size="small">Small toggle</Toggle>
