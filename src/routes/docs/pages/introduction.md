@@ -6,7 +6,6 @@ component_title: Introduction
 dir: Pages
 description: Learn more about the free and open-source Flowbite Svelte UI components and start building modern web applications using native Svelte components based on Tailwind CSS
 ---
-
 [Flowbite Svelte](https://github.com/themesberg/flowbite-svelte) is a free and open-source UI component library based on the core Flowbite components and built with native Svelte components and interactivity handling.
 
 This library features hundreds of interactive elements such as navbars, dropdowns, modals, and sidebars all handled by Svelte and based on the utility classes from Tailwind CSS.
@@ -66,9 +65,14 @@ In the provided code below, you can customize the primary color by modifying the
 
 ```js
 const config = {
-  content: ['./src/**/*.{html,js,svelte,ts}', './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'],
+  content: [
+    "./src/**/*.{html,js,svelte,ts}",
+    "./node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}",
+  ],
 
-  plugins: [require('flowbite/plugin')],
+  plugins: [
+    require('flowbite/plugin')
+  ],
 
   darkMode: 'class',
 
@@ -76,18 +80,7 @@ const config = {
     extend: {
       colors: {
         // flowbite-svelte
-        primary: {
-          50: '#ebf5ff',
-          100: '#fff1ee',
-          200: '#ffe4de',
-          300: '#ffd5cc',
-          400: '#ffbcad',
-          500: '#fe795d',
-          600: '#ef562f',
-          700: '#eb4f27',
-          800: '#d3330a',
-          900: '#d3330a'
-        }
+         primary: {50:'#ebf5ff',100: '#fff1ee',200:'#ffe4de',300:'#ffd5cc',400:'#ffbcad',500:'#fe795d',600:'#ef562f',700:'#eb4f27',800:'#d3330a',900:'#d3330a'}
 
         // pink
         // primary: {"50":"#fdf2f8","100":"#fce7f3","200":"#fbcfe8","300":"#f9a8d4","400":"#f472b6","500":"#ec4899","600":"#db2777","700":"#be185d","800":"#9d174d","900":"#831843"}
@@ -188,3 +181,4 @@ Check out [contributing guide](/docs/pages/how-to-contribute) to learn how you c
 ## License
 
 Flowbite Svelte is a free and open-source UI component library licensed under the [MIT License](https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE).
+

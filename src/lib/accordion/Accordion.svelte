@@ -48,6 +48,15 @@
   );
 </script>
 
+<!--
+  @component
+  @prop multiple: boolean = false;
+  @prop flush: boolean = false;
+  export let activeClasses: string =  'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white @prop-4 focus:ring-gray-200 dark:focus:ring-gray-800';
+  export let inactiveClasses: string = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 @prop:bg-gray-800';
+  @prop defaultClass: string = 'text-gray-500 dark:text-gray-400';
+-->
+
 <Frame {...$$restProps} class={frameClass} color="none">
   <slot />
 </Frame>

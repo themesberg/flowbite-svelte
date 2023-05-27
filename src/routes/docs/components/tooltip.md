@@ -51,8 +51,7 @@ You can use choose between dark and light version styles for the tooltip compone
 <Button id="type-light">Light tooltip</Button>
 <Button id="type-auto">Default tooltip</Button>
 <Button id="type-dark">Dark tooltip</Button>
-<Tooltip {type} triggeredBy="[id^='type-']" on:show={(ev) => (type = ev.target.id.split('-')[1])}
-  >Tooltip content</Tooltip>
+<Tooltip {type} triggeredBy="[id^='type-']" on:show={ev => type = ev.target.id.split('-')[1]}>Tooltip content</Tooltip>
 ```
 
 ## Placement
@@ -71,10 +70,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 <Button id="placement-top">Tooltip top</Button>
 <Button id="placement-bottom">Tooltip bottom</Button>
 <Button id="placement-right">Tooltip right</Button>
-<Tooltip
-  triggeredBy="[id^='placement-']"
-  {placement}
-  on:show={(e) => ([, placement] = e.target.id.split('-'))}>
+<Tooltip triggeredBy="[id^='placement-']" {placement} on:show={(e)=> [, placement] = e.target.id.split('-')}>
   Tooltip content - {placement}
 </Tooltip>
 ```
@@ -100,7 +96,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 </script>
 
 <Button id="disable-arrow">Default tooltip</Button>
-<Tooltip arrow={false} triggeredBy="#disable-arrow">Tooltip content</Tooltip>
+<Tooltip arrow={false} triggeredBy='#disable-arrow'>Tooltip content</Tooltip>
 ```
 
 ## Custom style
@@ -116,10 +112,10 @@ When you want to add a fully custom styles, use `style="custom"`, `defaultClass`
 </script>
 
 <Button>Green tooltip</Button>
-<Tooltip color="green">Tooltip content</Tooltip>
+<Tooltip  color="green">Tooltip content</Tooltip>
 
 <Button>Yellow tooltip</Button>
-<Tooltip color="yellow">Tooltip content</Tooltip>
+<Tooltip  color="yellow">Tooltip content</Tooltip>
 
 <Button>Custom style</Button>
 <Tooltip
@@ -127,7 +123,8 @@ When you want to add a fully custom styles, use `style="custom"`, `defaultClass`
   style="custom"
   defaultClass=""
   class="p-4 text-lg font-medium bg-purple-500 text-gray-100"
-  arrow={false}>
+  arrow={false}
+>
   Tooltip content
 </Tooltip>
 ```
@@ -136,8 +133,8 @@ When you want to add a fully custom styles, use `style="custom"`, `defaultClass`
 
 ### Tooltip
 
-The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types
-page</A> for type information.
+The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
+ page</A> for type information.
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />

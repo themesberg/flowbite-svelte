@@ -1,11 +1,8 @@
 {
   "props": [
-    [
-      "color",
-      "'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink' | 'purple' | 'white' | undefined",
-      "'blue'"
-    ],
+    ["color", "string", ""],
     ["bg", "string", "'text-gray-300'"],
+    ["customColor", "string", "''"],
     ["size", "string", "'8'"],
     ["currentFill", "string", "'currentFill'"],
     ["currentColor", "string", "'currentColor'"]

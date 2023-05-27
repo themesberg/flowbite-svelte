@@ -1,15 +1,18 @@
 <script>
-  import { Button, Modal } from '$lib';
-
-  let open = false;
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from '$lib';
 </script>
 
-<Button color="alternative" on:click={() => (open = !open)}>Default modal</Button>
-
-<Modal id="small" title="Terms of Service" autoclose outsideclose bind:open>
-  <p>Are you John Doe?</p>
-  <svelte:fragment slot="footer">
-    <Button color="dark" on:click={() => alert('Handle "success"')}>I accept</Button>
-    <Button color="alternative">Decline</Button>
-  </svelte:fragment>
-</Modal>
+<Navbar let:hidden let:toggle>
+  <NavBrand href="/">
+    <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+    <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white"> Flowbite </span>
+  </NavBrand>
+  <NavHamburger on:click={toggle} />
+  <NavUl {hidden}>
+    <NavLi href="/" active={true}>Home</NavLi>
+    <NavLi href="/about">About</NavLi>
+    <NavLi href="/services">Services</NavLi>
+    <NavLi href="/pricing">Pricing</NavLi>
+    <NavLi href="/contact">Contact</NavLi>
+  </NavUl>
+</Navbar>

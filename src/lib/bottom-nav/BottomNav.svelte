@@ -15,6 +15,8 @@
 
   export let outerDefault: string = 'w-full z-50 border-gray-200 dark:bg-gray-700 dark:border-gray-600';
   export let innerDefault: string = 'grid h-full max-w-lg mx-auto';
+  export let outerCustom: string = '';
+  export let innerCustom: string = '';
 
   setContext('navType', navType);
 
@@ -27,7 +29,7 @@
     card: 'bottom-0 left-0 h-16 bg-white border-t',
     meeting: 'bottom-0 left-0 grid h-16 grid-cols-1 px-8 bg-white border-t md:grid-cols-3',
     video: 'bottom-0 left-0 grid h-24 grid-cols-1 px-8 bg-white border-t md:grid-cols-3',
-    custom: ''
+    custom: outerCustom
   };
 
   const innerDivClasses = {
@@ -39,14 +41,14 @@
     card: '',
     meeting: 'flex items-center justify-center mx-auto',
     video: 'flex items-center w-full',
-    custom: ''
+    custom: innerCustom
   };
 
   $: outerClass = classNames(position, outerDefault, outerDivClasses[navType], $$props.outerDiv);
   $: innerClass = classNames(innerDefault, innerDivClasses[navType], $$props.innerDiv);
 </script>
 
-<div class={outerClass} {...$$restProps}>
+<div {...$$restProps} class={outerClass}>
   <slot name="header" />
   <div class={innerClass}>
     <slot />
