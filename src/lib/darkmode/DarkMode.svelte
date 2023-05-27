@@ -34,6 +34,16 @@
   });
 </script>
 
+<!--
+  @component
+  @see https://flowbite-svelte.com/docs/components/
+  
+  @example
+  ```
+
+  ```
+-->
+
 <button
   on:click={toggleTheme}
   aria-label="Dark mode"

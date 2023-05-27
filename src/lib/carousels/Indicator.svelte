@@ -4,6 +4,16 @@
   export let indicatorClass: string = '';
 </script>
 
+<!--
+  @component
+  @see https://flowbite-svelte.com/docs/components/
+  
+  @example
+  ```
+
+  ```
+-->
+
 <button type="button" class={indicatorClass} class:active={selected} aria-label={name} on:click />
 
 <style>

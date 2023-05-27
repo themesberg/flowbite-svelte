@@ -76,6 +76,16 @@
   );
 </script>
 
+<!--
+  @component
+  @see https://flowbite-svelte.com/docs/components/button
+  
+  @example
+  ```
+
+  ```
+-->
+
 {#if $$props.outline}
   <div class={divClass}>
     <!-- Trick to prentend outline without using border

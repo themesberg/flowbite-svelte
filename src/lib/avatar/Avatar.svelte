@@ -6,11 +6,9 @@
 
   export let src: string = '';
   export let href: string | undefined = undefined;
-
   export let rounded: boolean = false;
   export let border: boolean = false;
   export let stacked: boolean = false;
-
   export let dot: object | undefined = undefined;
   export let alt: string = '';
   export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
@@ -36,6 +34,7 @@
   );
 </script>
 
+
 {#if !src || !!href || $$slots.default || dot}
   <svelte:element
     this={href ? 'a' : 'div'}
@@ -54,3 +53,29 @@
 {:else}
   <img {alt} {src} {...$$restProps} class={avatarClass} />
 {/if}
+
+<!--
+  @component
+  @see https://flowbite-svelte.com/docs/components/avatar
+
+  @prop src: string = '';
+  @prop href: string | undefined = undefined;
+  @prop rounded: boolean = false;
+  @prop border: boolean = false;
+  @prop stacked: boolean = false;
+  @prop dot: object | undefined = undefined;
+  @prop alt: string = '';
+  @prop size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
+  
+  @example
+  ```
+  <script>
+    import { Avatar } from "flowbite-svelte"
+  </script>
+
+  <div class="flex space-x-4">
+    <Avatar src="/images/profile-picture-2.webp"/>
+    <Avatar src="/images/profile-picture-2.webp" rounded/>
+  </div>
+  ```
+-->

@@ -58,6 +58,16 @@
   );
 </script>
 
+<!--
+  @component
+  @see https://flowbite-svelte.com/docs/components/
+  
+  @example
+  ```
+
+  ```
+-->
+
 <Frame
   tag={href ? 'a' : 'div'}
   rounded

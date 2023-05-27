@@ -8,6 +8,16 @@
     'inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white';
 </script>
 
+<!--
+  @component
+  @see https://flowbite-svelte.com/docs/components/breadcrumb
+  @prop home: boolean = false;
+  @prop href: string | undefined = undefined;
+  @prop linkClass: string = 'ml-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white';
+  @prop spanClass: string = 'ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400';
+  @prop homeClass: string = 'inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white';
+-->  
+
 <li class="inline-flex items-center" {...$$restProps}>
   {#if home}
     <a class={homeClass} {href}>

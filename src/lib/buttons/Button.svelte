@@ -13,7 +13,6 @@
   export let href: string | undefined = undefined;
   export let btnClass: string | undefined = undefined;
   export let type: ButtonType = 'button';
-
   export let color: ButtonColor = group ? (outline ? 'dark' : 'alternative') : 'primary';
   export let shadow: boolean = false;
 
@@ -115,6 +114,23 @@
         $$props.class
       );
 </script>
+
+<!--
+  @component
+  @see https://flowbite-svelte.com/docs/components/button
+  @prop pill: boolean = false;
+  @prop outline: boolean = false;
+  @prop size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = group ? 'sm' : 'md';
+  @prop href: string | undefined = undefined;
+  @prop btnClass: string | undefined = undefined;
+  @prop type: ButtonType = 'button';
+  @prop color: ButtonColor = group ? (outline ? 'dark' : 'alternative') : 'primary';
+  @prop shadow: boolean = false;
+  @example
+  ```
+
+  ```
+-->
 
 <svelte:element
   this={href ? 'a' : 'button'}

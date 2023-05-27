@@ -37,6 +37,7 @@
 
 <!--
   @component
+  @see https://flowbite-svelte.com/docs/components/navbar
   @prop divClass: string = 'w-full md:block md:w-auto';
   @prop ulClass: string = 'flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium';
   @prop hidden: boolean = true;
@@ -60,6 +61,8 @@
     </NavUl>
   </Navbar>
   ```
+
+
 -->
 
 {#if !hidden}

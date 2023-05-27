@@ -2,6 +2,7 @@
   import { getContext } from 'svelte';
   import type { ButtonClassesTypes } from '../types';
   import classNames from 'classnames';
+
   export let btnName: string = '';
   export let appBtnPosition: 'left' | 'middle' | 'right' | 'custom' = 'custom';
   export let btnDefault: string = '';
@@ -62,6 +63,18 @@
   $: btnClass = classNames(btnDefault, btnClasses[navType], appBtnClasses[appBtnPosition], $$props.btnClass);
   $: spanClass = classNames(spanDefault, spanClasses[navType], $$props.spanClass);
 </script>
+
+<!--
+  @component
+  @see https://flowbite-svelte.com/docs/components/bottom-navigation
+  @prop btnName: string = '';
+  @prop appBtnPosition: 'left' | 'middle' | 'right' | 'custom' = 'custom';
+  @prop btnDefault: string = '';
+  @prop spanDefault: string = '';
+  @prop btnCustom: string = '';
+  @prop spanCustom: string = '';
+  @prop appCustom: string = '';
+-->
 
 <button
   {...$$restProps}

@@ -17,6 +17,16 @@
   };
 </script>
 
+<!--
+  @component
+  @see https://flowbite-svelte.com/docs/components/
+  
+  @example
+  ```
+
+  ```
+-->
+
 <svelte:head>
   <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css" />
   <script src="https://unpkg.com/flowbite@1.5.1/dist/datepicker.js"></script>

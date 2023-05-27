@@ -4,15 +4,15 @@
   import CloseButton from '../utils/CloseButton.svelte';
   import Frame from '../utils/Frame.svelte';
 
+  export let dismissable: boolean = false;
+  export let accent: boolean = false;
+
   const dispatch = createEventDispatcher();
 
   interface $$Props extends ComponentProps<Frame> {
     dismissable?: boolean;
     accent?: boolean;
   }
-
-  export let dismissable: boolean = false;
-  export let accent: boolean = false;
 
   let hidden = false;
 
@@ -57,3 +57,34 @@
   </div>
   <slot name="extra" />
 </Frame>
+
+<!--
+  @component
+  @see https://flowbite-svelte.com/docs/components/alert
+
+  @prop dismissable: boolean = false;
+  @prop accent: boolean = false;
+  @event
+  - on:click
+  - on:change
+  - on:keydown
+  - on:keyup
+  - on:focus
+  - on:blur
+  - on:mouseenter
+  - on:mouseleave 
+
+  @example
+  ```
+  <script>
+  import {Alert} from "flowbite-svelte";
+  </script>
+
+  <Alert>
+    <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
+  </Alert>
+  <Alert color="red">
+    <span class="font-medium">Danger alert!</span> Change a few things up and try submitting again.
+  </Alert>
+  ```
+-->

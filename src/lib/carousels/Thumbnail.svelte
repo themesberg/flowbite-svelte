@@ -7,6 +7,16 @@
   export let selected: boolean = false;
 </script>
 
+<!--
+  @component
+  @see https://flowbite-svelte.com/docs/components/
+  
+  @example
+  ```
+
+  ```
+-->
+
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <img
   class="opacity-40"

@@ -71,6 +71,16 @@
   }
 </script>
 
+<!--
+  @component
+  @see https://flowbite-svelte.com/docs/components/
+  
+  @example
+  ```
+
+  ```
+-->
+
 <div id="default-carousel" class="relative">
   <div class={divClass}>
     {#each images as { id, imgurl, name, attribution }}

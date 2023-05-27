@@ -1,13 +1,37 @@
 <script lang="ts">
-  export let defaultTop: string =
-    'h-[32px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[72px] rounded-l-lg';
-  export let defaultLeftTop: string =
-    'h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[124px] rounded-l-lg';
-  export let defaultLeftBot: string =
-    'h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg';
-  export let defaultRight: string =
-    'h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg';
+  export let defaultTop: string;
+  export let defaultLeftTop: string;
+  export let defaultLeftBot: string;
+  export let defaultRight: string;
 </script>
+
+<!--
+  @component
+  @see https://flowbite-svelte.com/docs/components/device-mockups
+
+  @prop defaultTop: string;
+  @prop defaultLeftTop: string;
+  @prop defaultLeftBot: string;
+  @prop defaultRight: string;
+
+  @example
+  ```
+  <script>
+    import { DeviceMockup } from 'flowbite-svelte';
+  </script>
+
+  <DeviceMockup>
+    <img
+      src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-light.png"
+      class="dark:hidden w-[272px] h-[572px]"
+      alt="default example 1" />
+    <img
+      src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-dark.png"
+      class="hidden dark:block w-[272px] h-[572px]"
+      alt="default example 2" />
+  </DeviceMockup>
+  ```
+-->
 
 <div class={defaultTop} />
 <div class={defaultLeftTop} />
