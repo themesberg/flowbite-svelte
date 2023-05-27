@@ -42,12 +42,49 @@
   @component
   ## Features
   [Go to Dropdown](https://flowbite-svelte.com/docs/components/dropdown)
-
+  - Setup
+  - Examples
+  - Dropdown divider
+  - Dropdown header
+  - Multi-level dropdown
+  - Programatic open/close
+  - Dropdown with checkbox
+  - Background hover
+  - Helper text
+  - Dropdown with radio
+  - Background hover
+  - Helper text
+  - Dropdown with toggle switch
+  - Dropdown navbar
+  - Dropdown with scrolling
+  - Dropdown with search
+  - Menu icon
+  - Notification bell
+  - User avatar
+  - Avatar with name
+  - Sizes
+  - Placement
+  - Double placement
+  - Events
+  ## Props
   @prop open: boolean = false;
   @prop frameClass: string = '';
   @prop headerClass: string = 'py-1 overflow-hidden rounded-t';
   @prop ulClass: string = 'py-1 w-44';
   @prop footerClass: string = 'py-1 overflow-hidden rounded-b';
-
+  ## Example
+  ```
+  <script>
+    import { Button, Dropdown, DropdownItem, Chevron } from 'flowbite-svelte'
+  </script>
+  
+  <Button><Chevron>Dropdown button</Chevron></Button>
+  <Dropdown >
+    <DropdownItem>Dashboard</DropdownItem>
+    <DropdownItem>Settings</DropdownItem>
+    <DropdownItem>Earnings</DropdownItem>
+    <DropdownItem>Sign out</DropdownItem>
+  </Dropdown>
+  ```
 
 -->

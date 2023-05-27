@@ -27,3 +27,13 @@
   on:keydown
   on:keypress
   on:keyup />
+
+
+<!--
+  @component
+  ## Feature
+  [Go to ](https://flowbite-svelte.com/docs/components/)
+
+  ## Props
+  
+-->

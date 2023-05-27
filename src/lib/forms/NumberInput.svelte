@@ -23,3 +23,12 @@
     on:paste
     on:input />
 </Input>
+
+<!--
+  @component
+  ## Feature
+  [Go to ](https://flowbite-svelte.com/docs/components/)
+
+  ## Props
+  
+-->

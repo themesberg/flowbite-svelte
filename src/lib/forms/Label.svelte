@@ -29,3 +29,12 @@
 {:else}
   <slot />
 {/if}
+
+<!--
+  @component
+  ## Feature
+  [Go to ](https://flowbite-svelte.com/docs/components/)
+
+  ## Props
+  
+-->

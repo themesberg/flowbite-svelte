@@ -11,3 +11,14 @@
     <slot />
   </a>
 </li>
+
+<!--
+  @component
+  ## Feature
+  [Go to Footer](https://flowbite-svelte.com/docs/components/footer)
+  ## Props
+  @prop liClass: string = 'mr-4 last:mr-0 md:mr-6';
+  @prop aClass: string = 'hover:underline';
+  @prop href: string = '';
+  @prop target: string | undefined = undefined;
+-->

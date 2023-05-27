@@ -169,12 +169,19 @@
 <!--
   @component
   ## Features
-  [Go to ](https://flowbite-svelte.com/docs/components/device-mockups
-  
+  [Go to Device Mockups](https://flowbite-svelte.com/docs/components/device-mockups)
+  - Setup
+  - Default mockup
+  - iPhone 12 mockup (iOS)
+  - Google Pixel mockup (Android)
+  - Tablet mockup
+  - Laptop mockup
+  - Desktop mockup
+  - Smartwatch mockup
+  ## Props
   @prop device: 'default' | 'ios' | 'android' | 'tablet' | 'laptop' | 'desktop' | 'smartwatch' =
     'default';
-
-  // android
+  ### Android
   @prop androidDiv: string =
     'relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-xl h-[600px] w-[300px] shadow-xl';
   @prop androidSlot: string =
@@ -189,8 +196,7 @@
     'h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg';
   @prop androidRight: string =
     'h-[64px] w-[3px] bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg';
-
-  // default
+  ### Default
   @prop defaultDiv: string =
     'relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px]';
   @prop defaultSlot: string =
@@ -203,8 +209,7 @@
     'h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg';
   @prop defaultRight: string =
     'h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg';
-  
-  // desktop
+  ### Desktop
   @prop desktopInner: string = 'rounded-xl overflow-hidden h-[140px] md:h-[262px]';
   @prop desktopBot: string =
     'relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl h-[24px] max-w-[301px] md:h-[42px] md:max-w-[512px]';
@@ -213,8 +218,7 @@
   @prop destopDiv: string =
     'relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[16px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]';
   @prop desktopSlot: string = 'rounded-xl overflow-hidden h-[140px] md:h-[262px]';
-
-  // ios
+  ### ios
   @prop iosDiv: string =
     'relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-xl';
   @prop iosSlot: string =
@@ -227,8 +231,7 @@
     'h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg';
   @prop iosRight: string =
     'h-[64px] w-[3px] bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg';
-
-  // laptop    
+  ### Laptop    
   @prop laptopDiv: string =
     'relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]';
   @prop laptopSlot: string =
@@ -239,8 +242,7 @@
     'relative mx-auto bg-gray-900 dark:bg-gray-700 rounded-b-xl rounded-t-sm h-[17px] max-w-[351px] md:h-[21px] md:max-w-[597px]';
   @prop laptopBotCen: string =
     'absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[56px] h-[5px] md:w-[96px] md:h-[8px] bg-gray-800';
-
-  // smartwatch
+  ### Smartwatch
   @prop smartwatchDiv: string =
     'relative mx-auto bg-gray-800 dark:bg-gray-700 rounded-t-[2.5rem] h-[63px] max-w-[133px]';
   @prop smartwatchSlot: string = 'rounded-[2rem] overflow-hidden h-[193px] w-[188px]';
@@ -253,8 +255,7 @@
   @prop smartBot: string =
     'relative mx-auto bg-gray-800 dark:bg-gray-700 rounded-b-[2.5rem] h-[63px] max-w-[133px]';
   @prop smartwatchInner: string = 'rounded-[2rem] overflow-hidden h-[193px] w-[188px]';
-
-  // tablet
+  ### Tablet
   @prop tabletDiv: string =
     'relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[454px] max-w-[341px] md:h-[682px] md:max-w-[512px]';
   @prop tabletSlot: string =
@@ -267,7 +268,6 @@
     'h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg';
   @prop tabletRight: string =
     'h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg';
-
   ## Example 
   ```
   <script>

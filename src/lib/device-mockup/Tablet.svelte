@@ -14,13 +14,12 @@
 <!--
   @component
   ## Features
-  [Go to ](https://flowbite-svelte.com/docs/components/device-mockups
-  
+  [Go to Device Mockups](https://flowbite-svelte.com/docs/components/device-mockups)
+  ## Props
   @prop tabletLeftTop: string;
   @prop tabletLeftMid: string;
   @prop tabletLeftBot: string;
   @prop tabletRight: string;
-
   ## Example
   ```
   <script>

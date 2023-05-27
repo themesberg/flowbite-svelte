@@ -42,3 +42,12 @@
     <slot />
   {/each}
 </select>
+
+<!--
+  @component
+  ## Feature
+  [Go to ](https://flowbite-svelte.com/docs/components/)
+
+  ## Props
+  
+-->

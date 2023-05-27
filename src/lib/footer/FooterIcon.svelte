@@ -13,3 +13,14 @@
 {:else}
   <slot />
 {/if}
+
+<!--
+  @component
+  ## Feature
+  [Go to Footer](https://flowbite-svelte.com/docs/components/footer)
+  ## Props
+  @prop href: string = '';
+  @prop ariaLabel: string = '';
+  @prop aClass: string = 'text-gray-500 hover:text-gray-900 dark:hover:text-white';
+  @prop target: string | undefined = undefined;
+-->

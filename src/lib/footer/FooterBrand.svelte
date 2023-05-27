@@ -19,3 +19,18 @@
 {:else}
   <img {...$$restProps} {src} class={imgClass} {alt} />
 {/if}
+
+<!--
+  @component
+  ## Feature
+  [Go to Footer](https://flowbite-svelte.com/docs/components/footer)
+  ## Props
+  @prop aClass: string = 'flex items-center';
+  @prop spanClass: string = 'self-center text-2xl font-semibold whitespace-nowrap dark:text-white';
+  @prop imgClass: string = 'mr-3 h-8';
+  @prop href: string = '';
+  @prop src: string = '';
+  @prop alt: string = '';
+  @prop name: string = '';
+  @prop target: string | undefined = undefined;
+-->

@@ -109,3 +109,12 @@
     <div class="{floatClass} right-0 pr-2.5"><slot name="right" /></div>
   {/if}
 </Wrapper>
+
+<!--
+  @component
+  ## Feature
+  [Go to ](https://flowbite-svelte.com/docs/components/)
+
+  ## Props
+  
+-->

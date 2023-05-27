@@ -10,11 +10,10 @@
 <!--
   @component
   ## Features
-  [Go to ](https://flowbite-svelte.com/docs/components/device-mockups
-  
+  [Go to Device Mockups](https://flowbite-svelte.com/docs/components/device-mockups)
+  ## Props
   @prop smartRightTop: string;
   @prop smartRightBot: string;
-
   ## Example
   ```
   <script>

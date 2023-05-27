@@ -76,3 +76,12 @@
     </div>
   {/if}
 </Wrapper>
+
+<!--
+  @component
+  ## Feature
+  [Go to ](https://flowbite-svelte.com/docs/components/)
+
+  ## Props
+  
+-->

@@ -47,3 +47,12 @@
   <span class={divClass} />
   <slot />
 </Checkbox>
+
+<!--
+  @component
+  ## Feature
+  [Go to ](https://flowbite-svelte.com/docs/components/)
+
+  ## Props
+  
+-->

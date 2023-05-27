@@ -48,3 +48,12 @@
 <div {...$$restProps} class={divClass}>
   <slot />
 </div>
+
+<!--
+  @component
+  ## Feature
+  [Go to ](https://flowbite-svelte.com/docs/components/)
+
+  ## Props
+  
+-->

@@ -67,3 +67,13 @@
     {...$$restProps}
     class={inputClass(custom, color, false, background, $$slots.default || $$props.class)} /><slot />
 </Label>
+
+
+<!--
+  @component
+  ## Feature
+  [Go to ](https://flowbite-svelte.com/docs/components/)
+
+  ## Props
+  
+-->

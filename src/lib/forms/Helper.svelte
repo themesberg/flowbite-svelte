@@ -13,3 +13,12 @@
 <p {...$$restProps} class={classNames(helperClass, colorClasses[color], $$props.class)}>
   <slot />
 </p>
+
+<!--
+  @component
+  ## Feature
+  [Go to ](https://flowbite-svelte.com/docs/components/)
+
+  ## Props
+  
+-->

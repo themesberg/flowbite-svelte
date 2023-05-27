@@ -32,3 +32,22 @@
     <slot />
   </svelte:element>
 </Wrapper>
+
+
+<!--
+  @component
+  ## Features
+  [Go to Dropdown](https://flowbite-svelte.com/docs/components/dropdown)
+  ## Props
+  @prop defaultClass: string = 'font-medium py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600';
+  @prop href: string | undefined = undefined;
+  ## Event
+  - on:click
+  - on:change
+  - on:keydown
+  - on:keyup
+  - on:focus
+  - on:blur
+  - on:mouseenter
+  - on:mouseleave
+-->  
