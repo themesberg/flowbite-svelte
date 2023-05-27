@@ -64,18 +64,6 @@
   $: spanClass = classNames(spanDefault, spanClasses[navType], $$props.spanClass);
 </script>
 
-<!--
-  @component
-  @see https://flowbite-svelte.com/docs/components/bottom-navigation
-  @prop btnName: string = '';
-  @prop appBtnPosition: 'left' | 'middle' | 'right' | 'custom' = 'custom';
-  @prop btnDefault: string = '';
-  @prop spanDefault: string = '';
-  @prop btnCustom: string = '';
-  @prop spanCustom: string = '';
-  @prop appCustom: string = '';
--->
-
 <button
   {...$$restProps}
   class={btnClass}
@@ -91,3 +79,28 @@
   <slot />
   <span class={spanClass}>{btnName}</span>
 </button>
+
+
+<!--
+  @component
+  @see https://flowbite-svelte.com/docs/components/bottom-navigation
+
+  @prop btnName: string = '';
+  @prop appBtnPosition: 'left' | 'middle' | 'right' | 'custom' = 'custom';
+  @prop btnDefault: string = '';
+  @prop spanDefault: string = '';
+  @prop btnCustom: string = '';
+  @prop spanCustom: string = '';
+  @prop appCustom: string = '';
+
+  @event
+  - on:click
+  - on:change
+  - on:keydown
+  - on:keyup
+  - on:focus
+  - on:blur
+  - on:mouseenter
+  - on:mouseleave
+
+-->

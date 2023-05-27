@@ -5,6 +5,12 @@
   export let iosRight: string;
 </script>
 
+<div class={iosTop} />
+<div class={iosLeftTop} />
+<div class={iosLeftBot} />
+<div class={iosRight} />
+
+
 <!--
   @component
   @see https://flowbite-svelte.com/docs/components/device-mockups
@@ -32,8 +38,3 @@
   </DeviceMockup>
   ```
 -->
-
-<div class={iosTop} />
-<div class={iosLeftTop} />
-<div class={iosLeftBot} />
-<div class={iosRight} />

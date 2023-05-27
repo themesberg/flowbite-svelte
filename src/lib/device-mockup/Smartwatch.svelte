@@ -1,7 +1,11 @@
 <script lang="ts">
   export let smartRightTop: string;
   export let smartRightBot: string;
-  </script>
+</script>
+
+<div class={smartRightTop} />
+<div class={smartRightBot} />
+
 
 <!--
   @component
@@ -28,6 +32,3 @@
   </DeviceMockup>
   ```
 -->
-
-<div class={smartRightTop} />
-<div class={smartRightBot} />

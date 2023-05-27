@@ -17,16 +17,6 @@
   };
 </script>
 
-<!--
-  @component
-  @see https://flowbite-svelte.com/docs/components/
-  
-  @example
-  ```
-
-  ```
--->
-
 <svelte:head>
   <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css" />
   <script src="https://unpkg.com/flowbite@1.5.1/dist/datepicker.js"></script>
@@ -80,3 +70,17 @@
     <slot />
   </div>
 {/if}
+
+<!--
+  @component
+  @see https://flowbite-svelte.com/docs/experimental/datepicker
+  
+  @prop range: boolean = false;
+  @prop datepickerButtons: boolean = false;
+  @prop datepickerFormat: string = 'mm/dd/yyyy';
+  @prop datepickerOrientation: string = 'bottom';
+  @prop datepickerTitle: string = 'Flowbite datepicker';
+  @prop attribute: string = '';
+  @prop inputClass: string = 'bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
+
+-->

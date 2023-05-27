@@ -6,6 +6,13 @@
   export let androidRight: string;
 </script>
 
+<div class={androidTop} />
+<div class={androidLeftTop} />
+<div class={androidLeftMid} />
+<div class={androidLeftBot} />
+<div class={androidRight} />
+
+
 <!--
   @component
   @see https://flowbite-svelte.com/docs/components/device-mockups
@@ -34,9 +41,3 @@
   </DeviceMockup>
   ```
 -->
-
-<div class={androidTop} />
-<div class={androidLeftTop} />
-<div class={androidLeftMid} />
-<div class={androidLeftBot} />
-<div class={androidRight} />

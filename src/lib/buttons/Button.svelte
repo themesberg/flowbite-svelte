@@ -115,23 +115,6 @@
       );
 </script>
 
-<!--
-  @component
-  @see https://flowbite-svelte.com/docs/components/button
-  @prop pill: boolean = false;
-  @prop outline: boolean = false;
-  @prop size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = group ? 'sm' : 'md';
-  @prop href: string | undefined = undefined;
-  @prop btnClass: string | undefined = undefined;
-  @prop type: ButtonType = 'button';
-  @prop color: ButtonColor = group ? (outline ? 'dark' : 'alternative') : 'primary';
-  @prop shadow: boolean = false;
-  @example
-  ```
-
-  ```
--->
-
 <svelte:element
   this={href ? 'a' : 'button'}
   type={href ? undefined : type}
@@ -146,3 +129,36 @@
   on:mouseleave>
   <slot />
 </svelte:element>
+
+
+<!--
+  @component
+  @see https://flowbite-svelte.com/docs/components/button
+  @prop pill: boolean = false;
+  @prop outline: boolean = false;
+  @prop size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = group ? 'sm' : 'md';
+  @prop href: string | undefined = undefined;
+  @prop btnClass: string | undefined = undefined;
+  @prop type: ButtonType = 'button';
+  @prop color: ButtonColor = group ? (outline ? 'dark' : 'alternative') : 'primary';
+  @prop shadow: boolean = false;
+
+  @event
+  - on:click
+  - on:change
+  - on:keydown
+  - on:keyup
+  - on:mouseenter
+  - on:mouseleave
+  @example
+  ```
+  <script>
+    import { Button } from 'flowbite-svelte';
+  </script>
+
+  <Button>Default</Button>
+  <Button color="alternative">Alternative</Button>
+  <Button color="dark">Dark</Button>
+  <Button color="light">Light</Button>  
+  ```
+-->

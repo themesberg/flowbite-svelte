@@ -71,16 +71,6 @@
   }
 </script>
 
-<!--
-  @component
-  @see https://flowbite-svelte.com/docs/components/
-  
-  @example
-  ```
-
-  ```
--->
-
 <div id="default-carousel" class="relative">
   <div class={divClass}>
     {#each images as { id, imgurl, name, attribution }}
@@ -175,3 +165,41 @@
     {/each}
   </div>
 {/if}
+
+
+<!--
+  @component
+  @see https://flowbite-svelte.com/docs/components/carousel
+
+  @prop showIndicators: boolean = true;
+  @prop showCaptions: boolean = true;
+  @prop showThumbs: boolean = true;
+  @prop images: any[];
+  @prop slideControls: boolean = true;
+  @prop transitionType: TransitionTypes = 'fade';
+  @prop transitionParams: TransitionParamTypes = {};
+  @prop loop: boolean = false;
+  @prop duration: number = 2000;
+
+  // Carousel
+  @prop divClass: string = 'overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96';
+  @prop indicatorDivClass: string = 'flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2';
+
+  // Caption
+  @prop captionClass: string = 'h-10 bg-gray-300 dark:bg-gray-700 dark:text-white p-2 my-2 text-center';
+
+  // Indicator
+  @prop indicatorClass: string = 'w-3 h-3 rounded-full bg-gray-100 hover:bg-gray-300 opacity-60';
+  
+  @example
+  ```
+  <script>
+    import { CarouselTransition } from 'flowbite-svelte'
+    import { images } from './imageData/+server.js';
+  </script>
+
+  <div class="max-w-4xl">
+    <CarouselTransition {images} transitionType="fade" transitionParams="{{delay: 300, duration: 500}}"/>
+  </div>
+  ```
+-->

@@ -5,16 +5,16 @@
   export let slideClass: string = '';
 </script>
 
-<!--
-  @component
-  @see https://flowbite-svelte.com/docs/components/
-  
-  @example
-  ```
-
-  ```
--->
-
 <div class={slideClass}>
   <img src={image} alt={altTag} title={attr} />
 </div>
+
+<!--
+  @component
+  @see https://flowbite-svelte.com/docs/components/carousel
+  
+  @prop image: string = '';
+  @prop altTag: string = '';
+  @prop attr: string = '';
+  @prop slideClass: string = '';
+-->

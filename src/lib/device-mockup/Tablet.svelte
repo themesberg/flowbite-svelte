@@ -5,6 +5,12 @@
   export let tabletRight: string;
 </script>
 
+<div class={tabletLeftTop} />
+<div class={tabletLeftMid} />
+<div class={tabletLeftBot} />
+<div class={tabletRight} />
+
+
 <!--
   @component
   @see https://flowbite-svelte.com/docs/components/device-mockups
@@ -32,8 +38,3 @@
   </DeviceMockup>
   ```
 -->
-
-<div class={tabletLeftTop} />
-<div class={tabletLeftMid} />
-<div class={tabletLeftBot} />
-<div class={tabletRight} />

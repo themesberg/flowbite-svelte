@@ -58,16 +58,6 @@
   );
 </script>
 
-<!--
-  @component
-  @see https://flowbite-svelte.com/docs/components/
-  
-  @example
-  ```
-
-  ```
--->
-
 <Frame
   tag={href ? 'a' : 'div'}
   rounded
@@ -90,3 +80,35 @@
     <slot />
   {/if}
 </Frame>
+
+<!--
+  @component
+  @see https://flowbite-svelte.com/docs/components/card
+  
+  @prop href: string | null | undefined = undefined;
+  @prop horizontal: boolean = false;
+  @prop reverse: boolean = false;
+  @prop img: string | undefined = undefined;
+  @prop padding: 'none' | 'sm' | 'md' | 'lg' | 'xl' = 'lg';
+  @prop size: SizeType = 'sm';
+
+  @event
+  - on:click
+  - on:focusin
+  - on:focusout
+  - on:mouseenter
+  - on:mouseleave
+  @example
+  ```
+  <script>
+    import { Card } from "flowbite-svelte";
+  </script>
+
+  <Card href="/cards">
+  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2023</h5>
+  <p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">
+    Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+  </p>
+</Card>
+  ```
+-->

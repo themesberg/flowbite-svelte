@@ -3,16 +3,16 @@
   export let captionClass: string = '';
 </script>
 
-<!--
-  @component
-  @see https://flowbite-svelte.com/docs/components/
-  
-  @example
-  ```
-
-  ```
--->
-
 <div class={captionClass}>
   <p id="caption" class="text-gray-900 dark:text-white">{caption}</p>
 </div>
+
+
+<!--
+  @component
+  @see https://flowbite-svelte.com/docs/components/carousel
+  
+  @prop caption: string = '';
+  @prop captionClass: string = '';
+  
+-->

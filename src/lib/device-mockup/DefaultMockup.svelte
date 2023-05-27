@@ -5,6 +5,12 @@
   export let defaultRight: string;
 </script>
 
+<div class={defaultTop} />
+<div class={defaultLeftTop} />
+<div class={defaultLeftBot} />
+<div class={defaultRight} />
+
+
 <!--
   @component
   @see https://flowbite-svelte.com/docs/components/device-mockups
@@ -32,8 +38,3 @@
   </DeviceMockup>
   ```
 -->
-
-<div class={defaultTop} />
-<div class={defaultLeftTop} />
-<div class={defaultLeftBot} />
-<div class={defaultRight} />

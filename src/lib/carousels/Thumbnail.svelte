@@ -7,16 +7,6 @@
   export let selected: boolean = false;
 </script>
 
-<!--
-  @component
-  @see https://flowbite-svelte.com/docs/components/
-  
-  @example
-  ```
-
-  ```
--->
-
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <img
   class="opacity-40"
@@ -33,3 +23,16 @@
     opacity: 1;
   }
 </style>
+
+<!--
+  @component
+  @see https://flowbite-svelte.com/docs/components/carousel
+  
+  @prop thumbImg: string = '';
+  @prop altTag: string = '';
+  @prop titleLink: string = '';
+  @prop id: number;
+  @prop thumbWidth: number;
+  @prop selected: boolean = false;
+
+-->

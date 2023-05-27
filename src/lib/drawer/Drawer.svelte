@@ -3,6 +3,7 @@
   import type { drawerTransitionParamTypes, drawerTransitionTypes } from '../types';
   import { fly, slide, blur, fade } from 'svelte/transition';
   import { clickOutside } from '../utils/clickOutside';
+
   export let activateClickOutside: boolean = true;
   export let hidden: boolean = true;
   export let position: 'fixed' | 'absolute' = 'fixed';
@@ -17,7 +18,6 @@
   export let placement: 'left' | 'right' | 'top' | 'bottom' = 'left';
   export let id: string = 'drawer-example';
   export let divClass: string = 'overflow-y-auto z-50 p-4 bg-white dark:bg-gray-800';
-
   export let transitionParams: drawerTransitionParamTypes = {};
   export let transitionType: drawerTransitionTypes = 'fly';
 
@@ -83,3 +83,26 @@
     </div>
   {/if}
 {/if}
+
+<!--
+  @component
+  @see https://flowbite-svelte.com/docs/components/drawer
+
+  @prop activateClickOutside: boolean = true;
+  @prop hidden: boolean = true;
+  @prop position: 'fixed' | 'absolute' = 'fixed';
+  @prop leftOffset: string = 'inset-y-0 left-0';
+  @prop rightOffset: string = 'inset-y-0 right-0';
+  @prop topOffset: string = 'inset-x-0 top-0';
+  @prop bottomOffset: string = 'inset-x-0 bottom-0';
+  @prop width: string = 'w-80';
+  @prop backdrop: boolean = true;
+  @prop bgColor: string = 'bg-gray-900';
+  @prop bgOpacity: string = 'bg-opacity-75';
+  @prop placement: 'left' | 'right' | 'top' | 'bottom' = 'left';
+  @prop id: string = 'drawer-example';
+  @prop divClass: string = 'overflow-y-auto z-50 p-4 bg-white dark:bg-gray-800';
+  @prop transitionParams: drawerTransitionParamTypes = {};
+  @prop transitionType: drawerTransitionTypes = 'fly';
+  
+-->

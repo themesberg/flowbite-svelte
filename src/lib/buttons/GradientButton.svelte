@@ -76,16 +76,6 @@
   );
 </script>
 
-<!--
-  @component
-  @see https://flowbite-svelte.com/docs/components/button
-  
-  @example
-  ```
-
-  ```
--->
-
 {#if $$props.outline}
   <div class={divClass}>
     <!-- Trick to prentend outline without using border
@@ -105,3 +95,31 @@
     on:mouseenter
     on:mouseleave><slot /></Button>
 {/if}
+
+
+<!--
+  @component
+  @see https://flowbite-svelte.com/docs/components/button
+    
+  @prop color: keyof typeof gradientClasses = 'blue';
+  @prop shadow: boolean = false;
+
+  @event
+  - on:click
+  - on:change
+  - on:keydown
+  - on:keyup
+  - on:mouseenter
+  - on:mouseleave
+
+  @example
+  ```
+  <script>
+    import { GradientButton } from 'flowbite-svelte';
+  </script>
+  
+  <GradientButton color="blue">Blue</GradientButton>
+  <GradientButton color="green">Green</GradientButton>
+  <GradientButton color="cyan">Cyan</GradientButton>
+  ```
+-->
