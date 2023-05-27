@@ -99,20 +99,18 @@
 
 <!--
   @component
-  @see https://flowbite-svelte.com/docs/components/button
-    
+  ## Features
+  [Go to Button](https://flowbite-svelte.com/docs/components/button)
   @prop color: keyof typeof gradientClasses = 'blue';
   @prop shadow: boolean = false;
-
-  @event
+  ## Event
   - on:click
   - on:change
   - on:keydown
   - on:keyup
   - on:mouseenter
   - on:mouseleave
-
-  @example
+  ## Example
   ```
   <script>
     import { GradientButton } from 'flowbite-svelte';

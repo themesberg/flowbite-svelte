@@ -64,16 +64,22 @@
 
 <!--
   @component
-  @see https://flowbite-svelte.com/docs/components/banner
-
+  ## Features
+  [Go to Banner](https://flowbite-svelte.com/docs/components/banner)
+  - Setup
+  - Default sticky banner
+  - Bottom banner position
+  - Marketing CTA banner
+  - Newsletter sign-up banner
+  - Informational banner
+  ## Props
   @prop id: string = 'sticky-banner';
   @prop position: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky' = 'sticky';
   @prop dismissable: boolean = true;
   @prop bannerType: 'default' | 'bottom' | 'cta' | 'signup' | 'info' | 'custom' = 'default';
   @prop divDefault: string = 'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600';
   @prop insideDiv: string = 'flex';
-
-  @event
+  ## Event
   - on:click
   - on:change
   - on:keydown
@@ -82,8 +88,7 @@
   - on:blur
   - on:mouseenter
   - on:mouseleave
-
-  @example
+  ## Example
   ```
   <script>
     import { Banner } from "flowbite-svelte"

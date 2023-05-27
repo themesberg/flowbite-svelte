@@ -60,16 +60,22 @@
 
 <!--
   @component
-  @see https://flowbite-svelte.com/docs/components/bottom-navigation
-  
+  ## Features
+  [Go to Bottom Navigation](https://flowbite-svelte.com/docs/components/bottom-navigation)
+  - Default bottom navigation
+  - Menu items with border
+  - Application bar example
+  - Example with pagination
+  - Button group bottom bar
+  - Card with bottom bar
+  ## Props
   @prop position: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky' = 'fixed';
   @prop navType:| 'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video' | 'custom' = 'default';
   @prop outerDefault: string = 'w-full z-50 border-gray-200 dark:bg-gray-700 dark:border-gray-600';
   @prop innerDefault: string = 'grid h-full max-w-lg mx-auto';
   @prop outerCustom: string = '';
   @prop innerCustom: string = '';
-  
-  @example
+  ## Example
   ```
   <script>
     import { BottomNav, BottomNavItem } from "flowbite-svelte"

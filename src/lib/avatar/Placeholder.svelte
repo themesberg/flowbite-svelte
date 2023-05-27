@@ -13,6 +13,7 @@
 
 <!--
   @component
-  @see https://flowbite-svelte.com/docs/components/avatar
+  ## Features
+  [Go to Avatar](https://flowbite-svelte.com/docs/components/avatar)
   @prop rounded: boolean = false;
 -->

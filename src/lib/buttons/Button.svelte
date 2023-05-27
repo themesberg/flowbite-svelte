@@ -133,7 +133,24 @@
 
 <!--
   @component
-  @see https://flowbite-svelte.com/docs/components/button
+  ## Features
+  [Go to Button](https://flowbite-svelte.com/docs/components/button)
+  - Setup
+  - Default button
+  - Button with link
+  - Button pills
+  - Gradient monochrome
+  - Gradient duotone
+  - Gradient outline
+  - Colored shadows
+  - Outline buttons
+  - Button sizes
+  - Buttons with icon
+  - Button with label
+  - Icon buttons
+  - Loader
+  - Disabled  
+  ## Props
   @prop pill: boolean = false;
   @prop outline: boolean = false;
   @prop size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = group ? 'sm' : 'md';
@@ -142,15 +159,14 @@
   @prop type: ButtonType = 'button';
   @prop color: ButtonColor = group ? (outline ? 'dark' : 'alternative') : 'primary';
   @prop shadow: boolean = false;
-
-  @event
+  ## Event
   - on:click
   - on:change
   - on:keydown
   - on:keyup
   - on:mouseenter
   - on:mouseleave
-  @example
+  ## Example
   ```
   <script>
     import { Button } from 'flowbite-svelte';

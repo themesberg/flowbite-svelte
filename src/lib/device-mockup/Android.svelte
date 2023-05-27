@@ -15,15 +15,16 @@
 
 <!--
   @component
-  @see https://flowbite-svelte.com/docs/components/device-mockups
-  
+  ## Features
+  [Go to Mockups](https://flowbite-svelte.com/docs/components/device-mockups)
+  ## Props
   @prop androidTop: string;
   @prop androidLeftTop: string;
   @prop androidLeftMid: string;
   @prop androidLeftBot: string;
   @prop androidRight: string;
 
-  @example
+  ## Example
   ```
   <script>
     import { DeviceMockup } from 'flowbite-svelte';

@@ -86,7 +86,8 @@
 
 <!--
   @component
-  @see https://flowbite-svelte.com/docs/components/drawer
+  ## Features
+  [Go to ](https://flowbite-svelte.com/docs/components/drawer
 
   @prop activateClickOutside: boolean = true;
   @prop hidden: boolean = true;

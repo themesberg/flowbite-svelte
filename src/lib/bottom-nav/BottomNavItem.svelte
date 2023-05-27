@@ -83,8 +83,9 @@
 
 <!--
   @component
-  @see https://flowbite-svelte.com/docs/components/bottom-navigation
-
+  ## Features
+  [Go to Bottom Navigation](https://flowbite-svelte.com/docs/components/bottom-navigation)
+  ## Props
   @prop btnName: string = '';
   @prop appBtnPosition: 'left' | 'middle' | 'right' | 'custom' = 'custom';
   @prop btnDefault: string = '';
@@ -92,8 +93,7 @@
   @prop btnCustom: string = '';
   @prop spanCustom: string = '';
   @prop appCustom: string = '';
-
-  @event
+  ## event
   - on:click
   - on:change
   - on:keydown

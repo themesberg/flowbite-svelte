@@ -9,12 +9,13 @@
 
 <!--
   @component
-  @see https://flowbite-svelte.com/docs/components/device-mockups
+  ## Features
+  [Go to ](https://flowbite-svelte.com/docs/components/device-mockups
   
   @prop smartRightTop: string;
   @prop smartRightBot: string;
 
-  @example
+  ## Example
   ```
   <script>
     import { DeviceMockup } from 'flowbite-svelte';

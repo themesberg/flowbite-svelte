@@ -168,7 +168,8 @@
 
 <!--
   @component
-  @see https://flowbite-svelte.com/docs/components/device-mockups
+  ## Features
+  [Go to ](https://flowbite-svelte.com/docs/components/device-mockups
   
   @prop device: 'default' | 'ios' | 'android' | 'tablet' | 'laptop' | 'desktop' | 'smartwatch' =
     'default';
@@ -267,7 +268,7 @@
   @prop tabletRight: string =
     'h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg';
 
-  @example 
+  ## Example 
   ```
   <script>
     import { DeviceMockup } from 'flowbite-svelte';

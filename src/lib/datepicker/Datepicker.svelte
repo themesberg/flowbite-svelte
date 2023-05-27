@@ -73,8 +73,10 @@
 
 <!--
   @component
-  @see https://flowbite-svelte.com/docs/experimental/datepicker
-  
+  **EXPERIMENTAL**
+  ## Features
+  [Go to Datepicker](https://flowbite-svelte.com/docs/experimental/datepicker)
+  ## Props
   @prop range: boolean = false;
   @prop datepickerButtons: boolean = false;
   @prop datepickerFormat: string = 'mm/dd/yyyy';

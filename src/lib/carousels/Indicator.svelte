@@ -14,8 +14,9 @@
 
 <!--
   @component
-  @see https://flowbite-svelte.com/docs/components/carousel
-  
+  ## Features
+  [Go to Carousel](https://flowbite-svelte.com/docs/components/carousel)
+  ## Props
   @prop name: string = '';
   @prop selected: boolean = false;
   @prop indicatorClass: string = '';

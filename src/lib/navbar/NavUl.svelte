@@ -37,14 +37,15 @@
 
 <!--
   @component
-  @see https://flowbite-svelte.com/docs/components/navbar
+  ## Features
+  [Go to ](https://flowbite-svelte.com/docs/components/navbar
   @prop divClass: string = 'w-full md:block md:w-auto';
   @prop ulClass: string = 'flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium';
   @prop hidden: boolean = true;
   @prop slideParams: SlideParams = { delay: 250, duration: 500, easing: quintOut };
   @prop activeClass: string = 'text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent';
   @prop nonActiveClass: string = 'text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent';
-  @example
+  ## Example
   ```
   <Navbar let:hidden let:toggle>
     <NavBrand href="/">

@@ -13,14 +13,15 @@
 
 <!--
   @component
-  @see https://flowbite-svelte.com/docs/components/device-mockups
+  ## Features
+  [Go to ](https://flowbite-svelte.com/docs/components/device-mockups
 
   @prop defaultTop: string;
   @prop defaultLeftTop: string;
   @prop defaultLeftBot: string;
   @prop defaultRight: string;
 
-  @example
+  ## Example
   ```
   <script>
     import { DeviceMockup } from 'flowbite-svelte';

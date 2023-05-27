@@ -60,11 +60,20 @@
 
 <!--
   @component
-  @see https://flowbite-svelte.com/docs/components/alert
-
+  ## Features
+  [Go to Alert](https://flowbite-svelte.com/docs/components/alert)
+  - Default alert
+  - Alerts with icon
+  - Bordered alerts
+  - Alerts with list
+  - Dismissable alerts
+  - Border accent
+  - Additional content
+  - Custom color
+  ## Props
   @prop dismissable: boolean = false;
   @prop accent: boolean = false;
-  @event
+  ## Event
   - on:click
   - on:change
   - on:keydown
@@ -74,7 +83,7 @@
   - on:mouseenter
   - on:mouseleave 
 
-  @example
+  ## Example
   ```
   <script>
   import {Alert} from "flowbite-svelte";
