@@ -1,7 +1,5 @@
 <script>
-
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from '$lib';
-
 </script>
 
 <Navbar let:hidden let:toggle>

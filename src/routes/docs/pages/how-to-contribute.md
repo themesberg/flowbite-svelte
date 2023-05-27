@@ -66,7 +66,7 @@ export interface CommentType {
   };
 };
 
-// then
+// then 
 export let comment: CommentType;
 ```
 

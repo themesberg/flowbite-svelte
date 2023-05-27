@@ -1,7 +1,17 @@
 <script lang="ts">
   import classNames from 'classnames';
 
-  export let color: 'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink' | 'purple' | 'white' | 'custom' | undefined = 'blue';
+  export let color:
+    | 'blue'
+    | 'gray'
+    | 'green'
+    | 'red'
+    | 'yellow'
+    | 'pink'
+    | 'purple'
+    | 'white'
+    | 'custom'
+    | undefined = 'blue';
   export let bg: string = 'text-gray-300';
   export let customColor: string = '';
   export let size: string = '8';

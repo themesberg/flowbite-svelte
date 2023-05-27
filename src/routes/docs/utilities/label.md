@@ -22,7 +22,7 @@ Use the `Label` component when you need to add a label.
 
 ```svelte example
 <script>
-  import { Label, Checkbox } from 'flowbite-svelte';
+  import { Label, Checkbox } from 'flowbite-svelte'
 </script>
 
 <Label color="red" class="mt-4 flex items-center font-bold italic">
@@ -32,7 +32,7 @@ Use the `Label` component when you need to add a label.
 
 ## Props
 
-The component has the following props, type, and default values.
+The component has the following props, type, and default values. 
 See <A class="hover:underline" href="/docs/pages/typescript">the types page</A>
 for type information.
 

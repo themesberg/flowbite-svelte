@@ -48,7 +48,7 @@
   $: innerClass = classNames(innerDefault, innerDivClasses[navType], $$props.innerDiv);
 </script>
 
-<div {...$$restProps} class={outerClass} >
+<div {...$$restProps} class={outerClass}>
   <slot name="header" />
   <div class={innerClass}>
     <slot />

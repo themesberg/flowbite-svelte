@@ -13,7 +13,8 @@
 
   const components = Object.values(data.posts)
     .flatMap(identity)
-    .filter((x) => x.meta.dir === data.dir)
+    // .filter((x) => x.meta.dir === data.dir)
+    .filter((x) => x.meta && x.meta.dir === data.dir)
     .map(({ path, meta }) => ({ path, name: meta.component_title }));
 
   const index = components.findIndex((x) => x.path === '/' + slug);
