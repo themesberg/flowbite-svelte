@@ -4,7 +4,7 @@
     ["custom", "boolean", "false"],
     ["inline", "boolean", "false"],
     ["group", "(string | number)[]", "[]"],
-    ["value", "string | number", "''"],
+    ["value", "string | number", "'on'"],
     ["checked", "boolean | undefined", "undefined"]
   ]
 }
