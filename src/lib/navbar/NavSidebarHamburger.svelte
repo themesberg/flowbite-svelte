@@ -10,7 +10,6 @@
   <SidebarMenu class="h-6 w-6 shrink-0" variation="solid" />
 </ToolbarButton>
 
-
 <!--
   @component
   [Go to Navbar](https://flowbite-svelte.com/docs/components/navbar)

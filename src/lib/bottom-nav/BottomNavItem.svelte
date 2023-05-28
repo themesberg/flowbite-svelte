@@ -80,7 +80,6 @@
   <span class={spanClass}>{btnName}</span>
 </button>
 
-
 <!--
   @component
   ## Features

@@ -39,16 +39,12 @@
 
   setContext<AccordionCtxType>('ctx', ctx);
 
-  let frameClass = classNames(
-    defaultClass,
-    $$props.class
-  );
+  let frameClass = classNames(defaultClass, $$props.class);
 </script>
 
 <Frame {...$$restProps} class={frameClass} color="none">
   <slot />
 </Frame>
-
 
 <!--
   @component

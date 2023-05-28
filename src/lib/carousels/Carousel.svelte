@@ -51,7 +51,6 @@
   }
 </script>
 
-
 <div id="default-carousel" class="relative">
   <div class={divClass}>
     <Slide image={image.imgurl} altTag={image.name} attr={image.attribution} {slideClass} />
@@ -139,7 +138,6 @@
     {/each}
   </div>
 {/if}
-
 
 <!--
   @component

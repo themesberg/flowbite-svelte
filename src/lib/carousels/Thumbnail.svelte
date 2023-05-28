@@ -18,12 +18,6 @@
   on:click
   width="{thumbWidth}%" />
 
-<style>
-  .active {
-    opacity: 1;
-  }
-</style>
-
 <!--
   @component
   ## Features
@@ -37,3 +31,9 @@
   @prop selected: boolean = false;
 
 -->
+
+<style>
+  .active {
+    opacity: 1;
+  }
+</style>

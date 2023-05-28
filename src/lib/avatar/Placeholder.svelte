@@ -2,7 +2,6 @@
   export let rounded: boolean = false;
 </script>
 
-
 <svg
   class="text-gray-400 bg-gray-100 dark:bg-gray-600 {rounded ? 'rounded' : 'rounded-full'}"
   fill="currentColor"

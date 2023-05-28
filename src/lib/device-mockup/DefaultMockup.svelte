@@ -10,7 +10,6 @@
 <div class={defaultLeftBot} />
 <div class={defaultRight} />
 
-
 <!--
   @component
   ## Features

@@ -33,7 +33,6 @@
   </svelte:element>
 </Wrapper>
 
-
 <!--
   @component
   ## Features
@@ -50,4 +49,4 @@
   - on:blur
   - on:mouseenter
   - on:mouseleave
--->  
+-->

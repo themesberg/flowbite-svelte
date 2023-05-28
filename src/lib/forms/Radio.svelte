@@ -70,7 +70,6 @@
     class={inputClass(custom, color, false, background, $$slots.default || $$props.class)} /><slot />
 </Label>
 
-
 <!--
   @component
   ## Feature

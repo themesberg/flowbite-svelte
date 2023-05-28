@@ -7,7 +7,6 @@
   <p id="caption" class="text-gray-900 dark:text-white">{caption}</p>
 </div>
 
-
 <!--
   @component
   ## Features

@@ -37,7 +37,7 @@
     'h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg';
   export let defaultRight: string =
     'h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg';
-  
+
   // desktop
   export let desktopInner: string = 'rounded-xl overflow-hidden h-[140px] md:h-[262px]';
   export let desktopBot: string =
@@ -62,7 +62,7 @@
   export let iosRight: string =
     'h-[64px] w-[3px] bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg';
 
-  // laptop    
+  // laptop
   export let laptopDiv: string =
     'relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]';
   export let laptopSlot: string =

@@ -6,12 +6,6 @@
 
 <button type="button" class={indicatorClass} class:active={selected} aria-label={name} on:click />
 
-<style>
-  .active {
-    opacity: 1;
-  }
-</style>
-
 <!--
   @component
   ## Features
@@ -22,3 +16,9 @@
   @prop indicatorClass: string = '';
 
 -->
+
+<style>
+  .active {
+    opacity: 1;
+  }
+</style>

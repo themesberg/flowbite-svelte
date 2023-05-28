@@ -34,7 +34,6 @@
   );
 </script>
 
-
 {#if !src || !!href || $$slots.default || dot}
   <svelte:element
     this={href ? 'a' : 'div'}

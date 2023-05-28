@@ -18,7 +18,6 @@
   );
 </script>
 
-
 <li>
   <svelte:element
     this={href ? 'a' : 'div'}

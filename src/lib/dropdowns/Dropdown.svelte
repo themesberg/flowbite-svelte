@@ -24,15 +24,15 @@
 
 <Popper activeContent {...$$restProps} class={popoverClass} on:show bind:open>
   {#if $$slots.header}
-    <div class="{headerClass}">
+    <div class={headerClass}>
       <slot name="header" />
     </div>
   {/if}
-  <ul class={$$props.class ?? {ulClass}}>
+  <ul class={$$props.class ?? { ulClass }}>
     <slot />
   </ul>
   {#if $$slots.footer}
-    <div class="{footerClass}">
+    <div class={footerClass}>
       <slot name="footer" />
     </div>
   {/if}

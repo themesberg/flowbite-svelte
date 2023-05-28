@@ -49,7 +49,6 @@
   </div>
 {/if}
 
-
 <!--
   @component
   ## Features

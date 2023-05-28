@@ -6,7 +6,6 @@
 <div class={smartRightTop} />
 <div class={smartRightBot} />
 
-
 <!--
   @component
   ## Features

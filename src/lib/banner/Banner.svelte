@@ -35,7 +35,6 @@
   };
 </script>
 
-
 {#if show}
   <div {id} tabindex="-1" class={divClass} {...$$restProps}>
     <slot name="header" />
@@ -60,7 +59,6 @@
     {/if}
   </div>
 {/if}
-
 
 <!--
   @component

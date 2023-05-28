@@ -12,7 +12,6 @@
 <div class={androidLeftBot} />
 <div class={androidRight} />
 
-
 <!--
   @component
   ## Features

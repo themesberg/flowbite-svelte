@@ -130,7 +130,6 @@
   <slot />
 </svelte:element>
 
-
 <!--
   @component
   ## Features
