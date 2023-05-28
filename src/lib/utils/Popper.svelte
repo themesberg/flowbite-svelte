@@ -88,7 +88,8 @@
           }
         },
         { name: 'eventListeners', enabled: open },
-        { name: 'flip', enabled: false }
+        { name: 'flip', enabled: false },
+        { name: 'arrow', enabled: true }
       ]
     });
     return {
@@ -138,47 +139,17 @@
     return (pred && func) || null;
   }
 
-  let placement_primary: string, placement_secondary: string;
-  $: [placement_primary, placement_secondary] = placement.split('-', 2);
-
-  function position() {
-    switch(placement_primary) {
-      case 'top':
-      case 'bottom':
-        switch(placement_secondary) {
-          case 'start':
-            return 'start-3'
-          case 'end':
-            return 'end-3'
-          default:
-            return 'inset-x-0'
-        }
-      case 'left':
-      case 'right':
-        switch(placement_secondary) {
-            case 'start':
-              return 'top-3'
-            case 'end':
-              return 'bottom-3'
-            default:
-              return 'inset-y-0'
-          }
-    }
-  }
-
+  let position: string;
+  $: position = placement.split('-', 1)[0];
 
   let arrowClass: string = 'bottom';
   $: arrowClass = classNames(
-    'absolute w-[9px] h-[9px] rotate-45 m-auto bg-inherit',
-    $$props.border && placement_primary === 'top' && 'border-b border-r',
-    $$props.border && placement_primary === 'bottom' && 'border-t border-l',
-    $$props.border && placement_primary === 'left' && 'border-t border-r',
-    $$props.border && placement_primary === 'right' && 'border-b border-l',
-    position()
+    'absolute w-[9px] h-[9px] rotate-45 bg-inherit',
+    position === 'top' && ($$props.border? 'border-b border-r -bottom-[5px]': '-bottom-[4px]'),
+    position === 'bottom' && ($$props.border? 'border-t border-l -top-[5px]': '-top-[4px]'),
+    position === 'left' && ($$props.border? 'border-t border-r -right-[5px]': '-right-[4px]'),
+    position === 'right' && ($$props.border? 'border-b border-l -left-[5px]': '-left-[4px]'),
   );
-
-  let arrowOffset: string = '-4px';
-  $: arrowOffset = $$props.border ? '-5px' : '-4px';
 </script>
 
 {#if !triggerEl}
@@ -196,20 +167,13 @@
     on:mouseenter={optional(activeContent && !clickable, showHandler)}
     on:mouseleave={optional(activeContent && !clickable, hideHandler)}
     {...$$restProps}
-    class={classNames('z-10 outline-none', $$props.class)}>
+    class={classNames('outline-none', $$props.class)}>
     <slot />
-    {#if arrow}<div
-        class={arrowClass} 
-        style:left={placement_primary === 'right' ? arrowOffset : undefined}
-        style:right={placement_primary === 'left' ? arrowOffset : undefined}
-        style:top={placement_primary === 'bottom' ? arrowOffset : undefined}
-        style:bottom={placement_primary === 'top' ? arrowOffset : undefined} />
-    {/if}
+    {#if arrow}<div data-popper-arrow class={arrowClass} />{/if}
   </Frame>
 {/if}
-
-<!--
-        
+      
+<!--        
   @component
   ## Props
   @prop activeContent: boolean = false;
