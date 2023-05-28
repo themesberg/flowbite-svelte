@@ -5,12 +5,13 @@
   export let size: string = 'h-2.5';
   export let labelInside: boolean = false;
   export let labelOutside: string = '';
-  export let color: 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo' = 'blue';
+  export let color: 'primary'| 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo' = 'primary';
   export let labelInsideClass: string =
     'text-blue-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
 
   // let barColor: string;
   const barColors = {
+    primary: 'bg-primary-600',
     blue: 'bg-blue-600',
     gray: 'bg-gray-600 dark:bg-gray-300',
     red: 'bg-red-600 dark:bg-red-500',
