@@ -35,10 +35,26 @@
   );
 </script>
 
+{#if !hidden}
+  <div {...$$restProps} class={_divClass} transition:slide={slideParams} on:click>
+    <Frame tag="ul" border rounded color="navbarUl" class={_ulClass}>
+      <slot />
+    </Frame>
+  </div>
+{:else}
+  <div {...$$restProps} class={_divClass} {hidden}>
+    <ul class={_ulClass}>
+      <slot />
+    </ul>
+  </div>
+{/if}
+
+
 <!--
   @component
   ## Features
-  [Go to ](https://flowbite-svelte.com/docs/components/navbar
+  [Go to Navbar](https://flowbite-svelte.com/docs/components/navbar)
+  ## Props
   @prop divClass: string = 'w-full md:block md:w-auto';
   @prop ulClass: string = 'flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium';
   @prop hidden: boolean = true;
@@ -62,20 +78,4 @@
     </NavUl>
   </Navbar>
   ```
-
-
 -->
-
-{#if !hidden}
-  <div {...$$restProps} class={_divClass} transition:slide={slideParams} on:click>
-    <Frame tag="ul" border rounded color="navbarUl" class={_ulClass}>
-      <slot />
-    </Frame>
-  </div>
-{:else}
-  <div {...$$restProps} class={_divClass} {hidden}>
-    <ul class={_ulClass}>
-      <slot />
-    </ul>
-  </div>
-{/if}
