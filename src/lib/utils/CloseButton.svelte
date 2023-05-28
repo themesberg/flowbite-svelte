@@ -13,3 +13,11 @@
       clip-rule="evenodd" />
   </svg>
 </ToolbarButton>
+
+<!--
+  @component
+  ## Props
+  @prop name: string = 'Close';
+  ## Event
+  - on:click
+-->

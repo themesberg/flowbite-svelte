@@ -180,3 +180,17 @@
     {/if}
   </Frame>
 {/if}
+
+<!--
+  @component
+  ## Props
+  @prop activeContent: boolean = false;
+  @prop arrow: boolean = true;
+  @prop offset: number = 8;
+  @prop placement: Placement = 'top';
+  @prop trigger: 'hover' | 'click' = 'hover';
+  @prop triggeredBy: string | undefined = undefined;
+  @prop strategy: 'absolute' | 'fixed' = 'absolute';
+  @prop open: boolean = false;
+  @prop yOnly: boolean = false;
+-->
