@@ -50,3 +50,25 @@
   </div>
   <span class="sr-only">Loading...</span>
 </div>
+
+<!--
+  @component
+  ## Features
+  [Go to Skeleton](https://flowbite-svelte.com/docs/components/skeleton)
+  ## Props
+  @prop divClass: string = 'space-y-2.5 animate-pulse';
+  @prop size: keyof Sizes = 'sm';  
+  ## Example
+  ```
+  <script>
+    import { TextPlaceholder } from 'flowbite-svelte'
+  </script>
+
+  <TextPlaceholder />
+  <TextPlaceholder size='md' class='mt-8'/>
+  <TextPlaceholder size='lg' class='mt-8'/>
+  <TextPlaceholder size='xl' class='mt-8'/>
+  <TextPlaceholder size='xxl' class='mt-8'/>
+  ```
+-->
+
