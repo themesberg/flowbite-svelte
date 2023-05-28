@@ -25,7 +25,6 @@
   }
 
   setContext('background', true);
-  $: setContext('color', color);
 
   export let tag: string = 'div';
   export let color: FrameColor = 'default';
@@ -43,6 +42,9 @@
   // Action function and its params
   export let use: Action = noop;
   export let options = {};
+
+  $: color = color ?? 'default'; // for cases when undefined
+  $: setContext('color', color);
 
   // your script goes here
   const bgColors = {
