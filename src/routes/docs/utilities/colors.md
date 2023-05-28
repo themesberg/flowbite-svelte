@@ -46,7 +46,7 @@ primary: { "50": "#fff1f2", "100": "#ffe4e6", "200": "#fecdd3", "300": "#fda4af"
 <Navbar let:hidden let:toggle color="primary">
   <NavBrand href="/">
     <img
-      src="https://flowbite.com/docs/images/logo.svg"
+      src="/images/flowbite-svelte-icon-logo.svg"
       class="mr-3 h-6 sm:h-9"
       alt="Flowbite Logo"
     />

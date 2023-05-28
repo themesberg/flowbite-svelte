@@ -90,7 +90,7 @@ Use this free example to show a text message for announcement with a CTA link.
 
 <Banner id="cta-banner" position="absolute" bannerType="cta">
   <a href="https://flowbite.com/" class="flex items-center mb-2 border-gray-200 md:pr-4 md:mr-4 md:border-r md:mb-0 dark:border-gray-600">
-      <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 mr-2" alt="Flowbite Logo">
+      <img src="/images/flowbite-svelte-icon-logo.svg" class="h-6 mr-2" alt="Flowbite Logo">
       <span class="self-center text-lg font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
   </a>
   <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">

@@ -95,7 +95,7 @@ This example can be used to show more information about a company profile.
   <div class="flex">
     <div class="mr-3 shrink-0">
       <a href="/" class="block p-2 bg-gray-100 rounded-lg dark:bg-gray-700">
-        <img class="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/logo.svg" alt="Flowbite logo">
+        <img class="w-8 h-8 rounded-full" src="/images/flowbite-svelte-icon-logo.svg" alt="Flowbite logo">
       </a>
     </div>
     <div>
