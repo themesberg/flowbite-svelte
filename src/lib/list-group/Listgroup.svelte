@@ -7,11 +7,11 @@
 
   // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Frame> {
-    items?: ListGroupItemType[];
+    items?: ListGroupItemType[]|string[];
     active?: boolean;
   }
 
-  export let items: ListGroupItemType[] = [];
+  export let items: ListGroupItemType[]|string[]  = [];
   export let active: boolean = false;
   export let defaultClass: string = 'divide-y divide-gray-200 dark:divide-gray-600';
 
@@ -21,11 +21,16 @@
   $: groupClass = classNames(defaultClass, $$props.class);
 </script>
 
+
 <Frame tag={active ? 'div' : 'ul'} {...$$restProps} rounded border class={groupClass}>
   {#each items as item, index}
-    <ListgroupItem {active} {...item} {index} on:click><slot {item} {index} /></ListgroupItem>
+    {#if typeof item === 'object'}
+      <ListgroupItem {active} {...item} {index} on:click><slot {item} {index} /></ListgroupItem>
+    {:else}
+      <ListgroupItem {active} {index} on:click><slot {item} {index} /></ListgroupItem>
+    {/if}
   {:else}
-    <slot />
+    <slot item={items[0]}/>
   {/each}
 </Frame>
 
