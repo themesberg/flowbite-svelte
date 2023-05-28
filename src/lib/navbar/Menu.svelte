@@ -36,3 +36,13 @@
   on:click>
   {@html svgpath}
 </svg>
+
+<!--
+  @component
+  [Go to Navbar](https://flowbite-svelte.com/docs/components/navbar)
+  ## Props
+  @prop size = '24';
+  @prop color = 'currentColor';
+  @prop variation: 'solid' | 'outline' = 'outline';
+  @prop ariaLabel = 'bars 3';
+-->

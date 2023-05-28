@@ -4,6 +4,9 @@
 
   export let open: boolean = false;
   export let frameClass: string = '';
+  export let headerClass: string = 'py-1 overflow-hidden rounded-t';
+  export let ulClass: string = 'py-1 w-44';
+  export let footerClass: string = 'py-1 overflow-hidden rounded-b';
 
   $: {
     // set default values
@@ -21,16 +24,67 @@
 
 <Popper activeContent {...$$restProps} class={popoverClass} on:show bind:open>
   {#if $$slots.header}
-    <div class="py-1 overflow-hidden rounded-t">
+    <div class={headerClass}>
       <slot name="header" />
     </div>
   {/if}
-  <ul class={$$props.class ?? 'py-1 w-44'}>
+  <ul class={$$props.class ?? { ulClass }}>
     <slot />
   </ul>
   {#if $$slots.footer}
-    <div class="py-1 overflow-hidden rounded-b">
+    <div class={footerClass}>
       <slot name="footer" />
     </div>
   {/if}
 </Popper>
+
+<!--
+  @component
+  ## Features
+  [Go to Dropdown](https://flowbite-svelte.com/docs/components/dropdown)
+  - Setup
+  - Examples
+  - Dropdown divider
+  - Dropdown header
+  - Multi-level dropdown
+  - Programatic open/close
+  - Dropdown with checkbox
+  - Background hover
+  - Helper text
+  - Dropdown with radio
+  - Background hover
+  - Helper text
+  - Dropdown with toggle switch
+  - Dropdown navbar
+  - Dropdown with scrolling
+  - Dropdown with search
+  - Menu icon
+  - Notification bell
+  - User avatar
+  - Avatar with name
+  - Sizes
+  - Placement
+  - Double placement
+  - Events
+  ## Props
+  @prop open: boolean = false;
+  @prop frameClass: string = '';
+  @prop headerClass: string = 'py-1 overflow-hidden rounded-t';
+  @prop ulClass: string = 'py-1 w-44';
+  @prop footerClass: string = 'py-1 overflow-hidden rounded-b';
+  ## Example
+  ```
+  <script>
+    import { Button, Dropdown, DropdownItem, Chevron } from 'flowbite-svelte'
+  </script>
+  
+  <Button><Chevron>Dropdown button</Chevron></Button>
+  <Dropdown >
+    <DropdownItem>Dashboard</DropdownItem>
+    <DropdownItem>Settings</DropdownItem>
+    <DropdownItem>Earnings</DropdownItem>
+    <DropdownItem>Sign out</DropdownItem>
+  </Dropdown>
+  ```
+
+-->

@@ -7,6 +7,7 @@
   export let striped: boolean = false;
   export let hoverable: boolean = false;
   export let placeholder: string = 'Search';
+  export let customColor: string = '';
   export let color: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom' = 'default';
 
   const colors = {
@@ -16,7 +17,7 @@
     red: 'text-red-100 dark:text-red-100',
     yellow: 'text-yellow-100 dark:text-yellow-100',
     purple: 'text-purple-100 dark:text-purple-100',
-    custom: ''
+    custom: customColor
   };
 
   $: setContext('striped', striped);
@@ -51,3 +52,17 @@
     <slot />
   </table>
 </div>
+
+<!--
+  @component
+  ## Features
+  [Go to Table](https://flowbite-svelte.com/docs/components/table)
+  ## Props
+  @prop divClass: string = 'relative overflow-x-auto shadow-md sm:rounded-lg';
+  @prop inputValue: string = '';
+  @prop striped: boolean = false;
+  @prop hoverable: boolean = false;
+  @prop placeholder: string = 'Search';
+  @prop customColor: string = '';
+  @prop color: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom' = 'default';
+-->

@@ -119,3 +119,36 @@
     </slot>
   {/if}
 </svelte:element>
+
+<!--
+  @component
+  ## Features
+  [Go to Badge](https://flowbite-svelte.com/docs/components/badge)
+  - Default badge
+  - Large badges
+  - Bordered badge
+  - Pills badge
+  - Badges as links
+  - Badges with icon
+  - Notification badge
+  - Button with badge
+  - Badge with icon only
+  - Dismissable badges
+  ## Props
+  @prop color: 'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'none' = 'blue';
+  @prop large: boolean = false;
+  @prop border: boolean = false;
+  @prop href: string | undefined = undefined;
+  @prop rounded: boolean = false;
+  @prop index: boolean = false;
+  @prop dismissable: boolean = false;
+  ## Example
+  ```
+  <script>
+    import { Badge } from 'flowbite-svelte';
+  </script>
+  
+  <Badge>Default</Badge>
+  <Badge color="dark">Dark</Badge>
+  ```
+-->

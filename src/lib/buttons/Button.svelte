@@ -13,7 +13,6 @@
   export let href: string | undefined = undefined;
   export let btnClass: string | undefined = undefined;
   export let type: ButtonType = 'button';
-
   export let color: ButtonColor = group ? (outline ? 'dark' : 'alternative') : 'primary';
   export let shadow: boolean = false;
 
@@ -130,3 +129,51 @@
   on:mouseleave>
   <slot />
 </svelte:element>
+
+<!--
+  @component
+  ## Features
+  [Go to Button](https://flowbite-svelte.com/docs/components/button)
+  - Setup
+  - Default button
+  - Button with link
+  - Button pills
+  - Gradient monochrome
+  - Gradient duotone
+  - Gradient outline
+  - Colored shadows
+  - Outline buttons
+  - Button sizes
+  - Buttons with icon
+  - Button with label
+  - Icon buttons
+  - Loader
+  - Disabled  
+  ## Props
+  @prop pill: boolean = false;
+  @prop outline: boolean = false;
+  @prop size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = group ? 'sm' : 'md';
+  @prop href: string | undefined = undefined;
+  @prop btnClass: string | undefined = undefined;
+  @prop type: ButtonType = 'button';
+  @prop color: ButtonColor = group ? (outline ? 'dark' : 'alternative') : 'primary';
+  @prop shadow: boolean = false;
+  ## Event
+  - on:click
+  - on:change
+  - on:keydown
+  - on:keyup
+  - on:mouseenter
+  - on:mouseleave
+  ## Example
+  ```
+  <script>
+    import { Button } from 'flowbite-svelte';
+  </script>
+
+  <Button>Default</Button>
+  <Button color="alternative">Alternative</Button>
+  <Button color="dark">Dark</Button>
+  <Button color="light">Light</Button>  
+  ```
+-->

@@ -60,3 +60,44 @@
     {/each}
   </div>
 </div>
+
+<!--
+  @component
+  ## Features
+  [Go to Rating](https://flowbite-svelte.com/docs/components/rating)
+  ## Props
+  @prop ratings: { label: string; rating: number }[] = [];
+  @prop ratings2: { label: string; rating: number }[] = [];
+  @prop headerLabel: {
+    desc1: string;
+    desc2: string;
+    desc3: string;
+    link: { label: string; url: string };
+  };
+  @prop desc1Class: string =
+    'bg-blue-100 w-8 text-blue-800 text-sm font-semibold inline-flex items-center p-1.5 rounded dark:bg-blue-200 dark:text-blue-800';
+  @prop desc2Class: string = 'ml-2 w-24 font-medium text-gray-900 dark:text-white';
+  @prop desc3spanClass: string = 'mx-2 w-1 h-1 bg-gray-900 rounded-full dark:bg-gray-500';
+  @prop desc3pClass: string = 'text-sm  w-24 font-medium text-gray-500 dark:text-gray-400';
+  ## Example
+  ```
+  <script>
+    import { ScoreRating } from 'flowbite-svelte';
+  </script>
+
+  <ScoreRating
+    {headerLabel}
+    ratings={[
+      { label: 'Staff', rating: 8.8 },
+      { label: 'Comfort', rating: 8.9 },
+      { label: 'Free WiFi', rating: 8.8 },
+      { label: 'Facilities', rating: 5.4 }
+    ]}
+    ratings2={[
+      { label: 'Value for money', rating: 8.9 },
+      { label: 'Cleanliness', rating: 7.0 },
+      { label: 'Location', rating: 8.0 }
+    ]}
+  />
+  ```
+-->

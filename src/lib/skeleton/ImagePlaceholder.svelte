@@ -29,3 +29,21 @@
   </div>
   <span class="sr-only">Loading...</span>
 </div>
+
+<!--
+  @component
+  ## Features
+  [Go to Skeleton Image Placeholder](https://flowbite-svelte.com/docs/components/skeleton#Image_placeholder)
+  ## Props
+  @prop divClass: string = 'space-y-8 animate-pulse md:space-y-0 md:space-x-8 md:flex md:items-center';
+  @prop imgHeight: string = '48';
+  ## Example
+  ```
+  <script>
+    import { ImagePlaceholder } from 'flowbite-svelte'
+  </script>
+
+  <ImagePlaceholder />
+  <ImagePlaceholder imgHeight={60} class='mt-8'/>
+  ```
+-->

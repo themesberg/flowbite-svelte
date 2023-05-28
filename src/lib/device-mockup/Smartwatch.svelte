@@ -1,9 +1,33 @@
 <script lang="ts">
-  export let smartRightTop: string =
-    'h-[41px] w-[6px] bg-gray-800 dark:bg-gray-800 absolute -right-[16px] top-[40px] rounded-r-lg';
-  export let smartRightBot: string =
-    'h-[32px] w-[6px] bg-gray-800 dark:bg-gray-800 absolute -right-[16px] top-[88px] rounded-r-lg';
+  export let smartRightTop: string;
+  export let smartRightBot: string;
 </script>
 
 <div class={smartRightTop} />
 <div class={smartRightBot} />
+
+<!--
+  @component
+  ## Features
+  [Go to Device Mockups](https://flowbite-svelte.com/docs/components/device-mockups)
+  ## Props
+  @prop smartRightTop: string;
+  @prop smartRightBot: string;
+  ## Example
+  ```
+  <script>
+    import { DeviceMockup } from 'flowbite-svelte';
+  </script>
+
+  <DeviceMockup device="smartwatch">
+    <img
+      src="https://flowbite.s3.amazonaws.com/docs/device-mockups/watch-screen-image.png"
+      class="dark:hidden h-[193px] w-[188px"
+      alt="smartwatch example 1" />
+    <img
+      src="https://flowbite.s3.amazonaws.com/docs/device-mockups/watch-screen-image-dark.png"
+      class="hidden dark:block h-[193px] w-[188px]"
+      alt="smartwatch example 2" />
+  </DeviceMockup>
+  ```
+-->

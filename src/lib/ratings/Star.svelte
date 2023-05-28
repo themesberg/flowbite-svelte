@@ -38,3 +38,27 @@
     141.489, 197.361, 165.000, 185.000" />
   </g>
 </svg>
+
+<!--
+  @component
+  ## Features
+  [Go to Rating](https://flowbite-svelte.com/docs/components/rating)
+  ## Props
+  @prop fillPercent: number = 100;
+  @prop fillColor: string = '#F5CA14';
+  @prop strokeColor: string = '#F5CA14';
+  @prop size: number = 24;
+  @prop ariaLabel: string = 'star';
+  @prop id: string = generateId();
+  ## Event
+  - on:click
+  ## Example
+  ```
+  <script>
+    import { Rating } from 'flowbite-svelte';
+  </script>
+
+  <Rating id="example-1" total={5} size={50} rating={1.4} />
+  <Rating id="example-1b" total={5} size={50} rating={4.66} />
+  ```
+-->

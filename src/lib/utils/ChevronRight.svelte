@@ -36,3 +36,13 @@
   on:click>
   {@html svgpath}
 </svg>
+
+<!--
+  @component
+  ## Props
+  @prop color = 'currentColor';
+  @prop variation: 'solid' | 'outline' = 'outline';
+  @prop ariaLabel = 'chevron right';
+  ## Event
+  - on:click
+-->

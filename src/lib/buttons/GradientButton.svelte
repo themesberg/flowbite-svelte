@@ -95,3 +95,28 @@
     on:mouseenter
     on:mouseleave><slot /></Button>
 {/if}
+
+<!--
+  @component
+  ## Features
+  [Go to Button](https://flowbite-svelte.com/docs/components/button)
+  @prop color: keyof typeof gradientClasses = 'blue';
+  @prop shadow: boolean = false;
+  ## Event
+  - on:click
+  - on:change
+  - on:keydown
+  - on:keyup
+  - on:mouseenter
+  - on:mouseleave
+  ## Example
+  ```
+  <script>
+    import { GradientButton } from 'flowbite-svelte';
+  </script>
+  
+  <GradientButton color="blue">Blue</GradientButton>
+  <GradientButton color="green">Green</GradientButton>
+  <GradientButton color="cyan">Cyan</GradientButton>
+  ```
+-->

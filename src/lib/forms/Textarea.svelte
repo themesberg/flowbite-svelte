@@ -76,3 +76,39 @@
     </div>
   {/if}
 </Wrapper>
+
+<!--
+  @component
+  ## Feature
+  [Go to Textarea](https://flowbite-svelte.com/docs/forms/textarea)
+  - Setup
+  - Textarea example
+  - WYSIWYG Editor
+  - Comment box
+  - Chatroom input
+  ## Props
+  @prop value: string = '';
+  ## Event
+  - on:blur
+  - on:change
+  - on:click
+  - on:contextmenu
+  - on:focus
+  - on:input
+  - on:keydown
+  - on:keypress
+  - on:keyup
+  - on:mouseenter
+  - on:mouseleave
+  - on:mouseover
+  - on:paste
+  ## Example
+  ```
+  <script>
+    import { Textarea, Label } from 'flowbite-svelte'
+  </script>
+
+  <Label for="textarea-id" class="mb-2">Your message</Label>
+  <Textarea id="textarea-id" placeholder="Your message" rows="4" name="message"/>
+  ```
+-->

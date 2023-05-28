@@ -148,3 +148,24 @@
     <slot />
   </svelte:element>
 {/if}
+
+<!--
+  @component
+  ## Props
+  @prop tag: string = 'div';
+  @prop color: FrameColor = 'default';
+  @prop rounded: boolean = false;
+  @prop border: boolean = false;
+  @prop shadow: boolean = false;
+  @prop transition: TransitionFunc | undefined = undefined;
+  @prop params: object = {};
+  @prop node: HTMLElement | undefined = undefined;
+  @prop use: Action = noop;
+  @prop options = {};  
+  ## Event
+  - on:click
+  - on:mouseenter
+  - on:mouseleave
+  - on:focusin
+  - on:focusout
+-->

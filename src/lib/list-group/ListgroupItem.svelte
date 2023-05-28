@@ -71,3 +71,25 @@
     <slot item={$$props} />
   </button>
 {/if}
+
+<!--
+  @component
+  ## Features
+  [Go to List Group](https://flowbite-svelte.com/docs/components/list-group)
+  ## Props
+  @prop active: boolean = getContext('active');
+  @prop current: boolean = false;
+  @prop disabled: boolean = false;
+  @prop href: string = '';
+  ## Event
+  - on:blur
+  - on:change
+  - on:click
+  - on:focus
+  - on:keydown
+  - on:keypress
+  - on:keyup
+  - on:mouseenter
+  - on:mouseleave
+  - on:mouseover
+-->

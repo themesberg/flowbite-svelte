@@ -22,3 +22,19 @@
   </div>
   <span class="sr-only">Loading...</span>
 </div>
+
+<!--
+  @component
+  ## Features
+  [Go to Skeleton Testimonial Placeholder](https://flowbite-svelte.com/docs/components/skeleton#Testimonial_placeholder)
+  ## Props
+  @prop divClass: string = 'animate-pulse';
+  ## Example
+  ```
+  <script>
+    import { TestimonialPlaceholder } from 'flowbite-svelte'
+  </script>
+
+  <TestimonialPlaceholder />
+  ```
+-->
