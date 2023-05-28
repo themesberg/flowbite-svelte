@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.37.1](https://github.com/themesberg/flowbite-svelte/compare/v0.36.5...v0.37.1) (2023-05-28)
+
+
+### Features
+
+* documenting components ([#801](https://github.com/themesberg/flowbite-svelte/issues/801)) ([80daafb](https://github.com/themesberg/flowbite-svelte/commit/80daafb221f49410d861d6efe5652b977faba513))
+
+
+### Bug Fixes
+
+* generate a unique id for each star so fill can be different ([#793](https://github.com/themesberg/flowbite-svelte/issues/793)) ([cf59ed2](https://github.com/themesberg/flowbite-svelte/commit/cf59ed251bbbf17b3172decd5b74535499cef452))
+* modal update ([#791](https://github.com/themesberg/flowbite-svelte/issues/791)) ([2bd095f](https://github.com/themesberg/flowbite-svelte/commit/2bd095f1f197783f0c4161bda3c22ebd6008859a))
+
 ### [0.36.5](https://github.com/themesberg/flowbite-svelte/compare/v0.36.4...v0.36.5) (2023-05-23)
 
 ### Bug Fixes
