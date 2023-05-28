@@ -9,7 +9,6 @@
 
   // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Frame> {
-    id?: string;
     open?: boolean;
     title?: string;
     size?: SizeType;
@@ -107,7 +106,7 @@
   };
 
   let frameClass: string;
-  $: frameClass = classNames(defaultClass, $$props.class);
+  $: frameClass = classNames(defaultClass, 'w-full', $$props.class);
 
   const isScrollable = (e: HTMLElement): boolean[] => [
     e.scrollWidth > e.clientWidth && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowX) >= 0,
