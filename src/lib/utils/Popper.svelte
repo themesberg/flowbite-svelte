@@ -138,16 +138,43 @@
     return (pred && func) || null;
   }
 
-  let placement_primary: string;
-  $: placement_primary = placement.split('-')[0];
+  let placement_primary: string, placement_secondary: string;
+  $: [placement_primary, placement_secondary] = placement.split('-', 2);
+
+  function position() {
+    switch(placement_primary) {
+      case 'top':
+      case 'bottom':
+        switch(placement_secondary) {
+          case 'start':
+            return 'start-3'
+          case 'end':
+            return 'end-3'
+          default:
+            return 'inset-x-0'
+        }
+      case 'left':
+      case 'right':
+        switch(placement_secondary) {
+            case 'start':
+              return 'top-3'
+            case 'end':
+              return 'bottom-3'
+            default:
+              return 'inset-y-0'
+          }
+    }
+  }
+
 
   let arrowClass: string = 'bottom';
   $: arrowClass = classNames(
-    'absolute w-[9px] h-[9px] rotate-45 inset-0 m-auto bg-inherit',
+    'absolute w-[9px] h-[9px] rotate-45 m-auto bg-inherit',
     $$props.border && placement_primary === 'top' && 'border-b border-r',
     $$props.border && placement_primary === 'bottom' && 'border-t border-l',
     $$props.border && placement_primary === 'left' && 'border-t border-r',
-    $$props.border && placement_primary === 'right' && 'border-b border-l'
+    $$props.border && placement_primary === 'right' && 'border-b border-l',
+    position()
   );
 
   let arrowOffset: string = '-4px';
@@ -172,16 +199,17 @@
     class={classNames('z-10 outline-none', $$props.class)}>
     <slot />
     {#if arrow}<div
-        class={arrowClass}
-        style:margin-left={placement_primary === 'right' ? arrowOffset : undefined}
-        style:margin-right={placement_primary === 'left' ? arrowOffset : undefined}
-        style:margin-top={placement_primary === 'bottom' ? arrowOffset : undefined}
-        style:margin-bottom={placement_primary === 'top' ? arrowOffset : undefined} />
+        class={arrowClass} 
+        style:left={placement_primary === 'right' ? arrowOffset : undefined}
+        style:right={placement_primary === 'left' ? arrowOffset : undefined}
+        style:top={placement_primary === 'bottom' ? arrowOffset : undefined}
+        style:bottom={placement_primary === 'top' ? arrowOffset : undefined} />
     {/if}
   </Frame>
 {/if}
 
 <!--
+        
   @component
   ## Props
   @prop activeContent: boolean = false;
@@ -194,3 +222,4 @@
   @prop open: boolean = false;
   @prop yOnly: boolean = false;
 -->
+
