@@ -28,3 +28,24 @@
     <slot />
   {/each}
 </Frame>
+
+<!--
+  @component
+  ## Features
+  [Go to List Group](https://flowbite-svelte.com/docs/components/list-group)
+  ## Props
+  @prop items: ListGroupItemType[] = [];
+  @prop active: boolean = false;
+  @prop defaultClass: string = 'divide-y divide-gray-200 dark:divide-gray-600';
+  ## Example
+  ```
+  <script>
+    import { Listgroup } from 'flowbite-svelte'
+    let simpleList = ["Profile", "Settings", "Messages", "Download"]
+  </script>
+
+  <Listgroup items={simpleList} let:item class="w-48">
+    {item}
+  </Listgroup>
+  ```
+-->
