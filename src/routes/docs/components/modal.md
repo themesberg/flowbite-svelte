@@ -42,7 +42,7 @@ An option of automatic closing of the modal can be enabled by setting the `autoc
 </script>
 
 <Button on:click={() => defaultModal = true}>Default modal</Button>
-<Modal id="default-modal" title="Terms of Service" bind:open={defaultModal} autoclose>
+<Modal title="Terms of Service" bind:open={defaultModal} autoclose>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
     With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
   </p>
@@ -68,7 +68,7 @@ You can use the `outsideclose` prop to allow the user to close the modal by clic
 
 <Button on:click={() => clickOutsideModal = true}>Default modal</Button>
 
-<Modal id="closebyoutside" title="Terms of Service" bind:open={clickOutsideModal} autoclose outsideclose>
+<Modal title="Terms of Service" bind:open={clickOutsideModal} autoclose outsideclose>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
     With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
   </p>
@@ -96,7 +96,7 @@ Notice lack of the `footer` slot.
 
 <Button on:click={() => popupModal = true}>Pop-up modal</Button>
 
-<Modal id="popup-modal" bind:open={popupModal} size="xs" autoclose>
+<Modal bind:open={popupModal} size="xs" autoclose>
   <div class="text-center">
     <svg aria-hidden="true" class="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
     <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this product?</h3>
@@ -118,7 +118,7 @@ Use this modal example with form input element to receive information from your 
 
 <Button on:click={() => formModal = true}>Form modal</Button>
 
-<Modal id="form-modal" bind:open={formModal} size="xs" autoclose={false} class="w-full">
+<Modal bind:open={formModal} size="xs" autoclose={false} class="w-full">
   <form class="flex flex-col space-y-6" action="#">
     <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h3>
     <Label class="space-y-2">
@@ -153,7 +153,7 @@ Use this web3 modal component to show crypto wallet connection options like Meta
 
 <Button on:click={() => walletModal = true}>Crypto wallet modal</Button>
 
-<Modal id="crypto-modal" title="Connect wallet"  bind:open={walletModal} size="xs" padding="xs">
+<Modal title="Connect wallet"  bind:open={walletModal} size="xs" padding="xs">
   <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Connect with one of our available wallet providers or create a new one.</p>
   <ul class="my-4 space-y-3">
     <li>
@@ -276,19 +276,18 @@ You can use five different modal sizing options starting from extra small to ext
 ```svelte example class="flex justify-center"
 <script>
   import { Button, Modal, P } from 'flowbite-svelte'
-  let id;
   let open = false;
   let color;
 </script>
 <div class="block space-y-4 md:space-y-0 md:space-x-4">
-  <Button on:click={() => {id="primary-modal"; color="primary"; open = true}}>Primary modal</Button>
-  <Button color="red" on:click={() => {id="red-modal"; color="red"; open = true}}>Red modal</Button>
-  <Button color="green" on:click={() => {id="green-modal"; color="green"; open = true}}>Green modal</Button>
-  <Button color="blue" on:click={() => {id="blue-modal"; color="blue"; open = true}}>Blue modal</Button>
-  <Button color="yellow" on:click={() => {id="yellow-modal"; color="yellow"; open = true}}>Yellow modal</Button>
+  <Button on:click={() => {color="primary"; open = true}}>Primary modal</Button>
+  <Button color="red" on:click={() => {color="red"; open = true}}>Red modal</Button>
+  <Button color="green" on:click={() => {color="green"; open = true}}>Green modal</Button>
+  <Button color="blue" on:click={() => {color="blue"; open = true}}>Blue modal</Button>
+  <Button color="yellow" on:click={() => {color="yellow"; open = true}}>Yellow modal</Button>
 </div>
 
-<Modal {id} title="Terms of Service" bind:open {color} autoclose>
+<Modal title="Terms of Service" bind:open {color} autoclose>
 
   <div class="text-base leading-relaxed">
     With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
@@ -310,7 +309,7 @@ You can use five different modal sizing options starting from extra small to ext
 
 <Button on:click={() => scrollingModal = true} autoclose>Scrolling modal</Button>
 
-<Modal id="scrolling-modal" title="Terms of Service" bind:open={scrollingModal}>
+<Modal title="Terms of Service" bind:open={scrollingModal}>
   <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
     With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
   </p>
