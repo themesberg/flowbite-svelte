@@ -108,4 +108,13 @@
   - on:mouseleave
   - on:paste
   - on:change
+  ## Example
+  ```
+  <script>
+    import { Checkbox } from 'flowbite-svelte'
+  </script>
+  
+  <Checkbox>Default checkbox</Checkbox>
+  <Checkbox checked>Checked state</Checkbox>
+  ```
 -->

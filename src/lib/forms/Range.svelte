@@ -32,8 +32,22 @@
 <!--
   @component
   ## Feature
-  [Go to ](https://flowbite-svelte.com/docs/components/)
-
+  [Go to Range](https://flowbite-svelte.com/docs/forms/range)
+  - Setup
+  - Range slider example
+  - Disabled state
+  - Binding value
+  - Min and max
+  - Steps
+  - Sizes
+  - Unknown attributes
   ## Props
-  
+  @prop value: number;
+  @prop size: 'sm' | 'md' | 'lg' = 'md';
+  ## Event
+  - on:change
+  - on:click
+  - on:keydown
+  - on:keypress
+  - on:keyup
 -->

@@ -17,8 +17,14 @@
 <!--
   @component
   ## Feature
-  [Go to ](https://flowbite-svelte.com/docs/components/)
-
+  [Go to Forms](https://flowbite-svelte.com/docs/components/forms)
   ## Props
-  
+  @prop helperClass: string = 'text-xs font-normal text-gray-500 dark:text-gray-300';
+  @prop color: 'gray' | 'green' | 'red' | 'disabled' = 'gray';
+  ## Example
+  ```
+    <Helper class="mt-2" color="green">
+      <span class="font-medium">Well done!</span> Some success message.
+    </Helper>
+  ```
 -->
