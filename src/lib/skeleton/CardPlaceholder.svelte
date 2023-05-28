@@ -54,7 +54,6 @@
   <span class="sr-only">Loading...</span>
 </div>
 
-
 <!--
   @component
   ## Features
@@ -76,4 +75,3 @@
   <CardPlaceholder size='xxl' class='mt-8'/>
   ```
 -->
-

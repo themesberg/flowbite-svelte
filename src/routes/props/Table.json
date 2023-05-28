@@ -5,6 +5,7 @@
     ["hoverable", "boolean", "false"],
     ["noborder", "boolean", "false"],
     ["shadow", "boolean", "false"],
-    ["color", "TableColorType", "'default'"]
+    ["color", "TableColorType", "'default'"],
+    ["customeColor", "string", "''"]
   ]
 }

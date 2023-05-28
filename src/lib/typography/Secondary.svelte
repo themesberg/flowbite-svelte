@@ -36,4 +36,3 @@
   <Heading tag="h1" customSize="text-5xl font-extrabold">Flowbite <Secondary class="ml-2">This is secondary text</Secondary></Heading>
   ```
 -->
-

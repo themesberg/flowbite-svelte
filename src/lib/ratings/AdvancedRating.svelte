@@ -24,7 +24,6 @@
   </div>
 {/each}
 
-
 <!--
   @component
   ## Features

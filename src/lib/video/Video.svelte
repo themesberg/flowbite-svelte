@@ -8,7 +8,6 @@
   export let label: string = 'english_captions';
 
   let videoClass = classNames($$props.class);
-
 </script>
 
 <video {...$$restProps} class={videoClass}>
@@ -34,4 +33,3 @@
   @prop srclang: string = 'en';
   @prop label: string = 'english_captions';
 -->
-

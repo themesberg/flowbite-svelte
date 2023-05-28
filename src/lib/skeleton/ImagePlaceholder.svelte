@@ -47,4 +47,3 @@
   <ImagePlaceholder imgHeight={60} class='mt-8'/>
   ```
 -->
-

@@ -37,7 +37,6 @@
   {/if}
 </div>
 
-
 <!--
   @component
   ## Features
