@@ -5,7 +5,7 @@
   import Label from './Label.svelte';
 
   // properties forwarding
-  export let color: FormColorType = 'blue';
+  export let color: FormColorType = 'primary';
   export let custom: boolean = false;
   export let inline: boolean = false;
   export let group: (string | number)[] = [];
@@ -90,7 +90,7 @@
   - Advanced layout
   - Group variable
   ## Props
-  @prop color: FormColorType = 'blue';
+  @prop color: FormColorType = 'primary';
   @prop custom: boolean = false;
   @prop inline: boolean = false;
   @prop group: (string | number)[] = [];
