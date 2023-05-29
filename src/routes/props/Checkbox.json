@@ -1,6 +1,6 @@
 {
   "props": [
-    ["color", "FormColorType", "'blue'"],
+    ["color", "FormColorType", "'primary'"],
     ["custom", "boolean", "false"],
     ["inline", "boolean", "false"],
     ["group", "(string | number)[]", "[]"],
