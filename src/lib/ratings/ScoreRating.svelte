@@ -12,7 +12,8 @@
   export let desc2Class: string = 'ml-2 w-24 font-medium text-gray-900 dark:text-white';
   export let desc3spanClass: string = 'mx-2 w-1 h-1 bg-gray-900 rounded-full dark:bg-gray-500';
   export let desc3pClass: string = 'text-sm  w-24 font-medium text-gray-500 dark:text-gray-400';
-  export let linkClass: string = 'ml-auto w-32 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500';
+  export let linkClass: string =
+    'ml-auto w-32 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500';
   export let barColor: string = 'bg-primary-600 h-2.5 rounded dark:bg-primary-500';
 </script>
 
@@ -28,10 +29,7 @@
     <p class={desc3pClass}>{headerLabel.desc3}</p>
   {/if}
   {#if headerLabel.link}
-    <a
-      href={headerLabel.link.url}
-      class="{linkClass}"
-      >{headerLabel.link.label}</a>
+    <a href={headerLabel.link.url} class={linkClass}>{headerLabel.link.label}</a>
   {/if}
 </div>
 <div class="gap-8 sm:grid sm:grid-cols-2">
@@ -41,7 +39,7 @@
         <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">{label}</dt>
         <dd class="flex items-center mb-3">
           <div class="w-full bg-gray-200 rounded h-2.5 dark:bg-gray-700 mr-2">
-            <div class="{barColor}" style="width: {rating * 10}%" />
+            <div class={barColor} style="width: {rating * 10}%" />
           </div>
           <span class="text-sm font-medium text-gray-500 dark:text-gray-400">{rating}</span>
         </dd>
@@ -54,7 +52,7 @@
         <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">{label}</dt>
         <dd class="flex items-center mb-3">
           <div class="w-full bg-gray-200 rounded h-2.5 dark:bg-gray-700 mr-2">
-            <div class="{barColor}" style="width: {rating * 10}%" />
+            <div class={barColor} style="width: {rating * 10}%" />
           </div>
           <span class="text-sm font-medium text-gray-500 dark:text-gray-400">{rating}</span>
         </dd>

@@ -21,11 +21,12 @@
   export let inactiveClasses: string =
     'p-4 text-gray-500 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-300';
 
-    // styles
-    const styledActiveClasses = {
+  // styles
+  const styledActiveClasses = {
     full: 'p-4 w-full group-first:rounded-l-lg group-last:rounded-r-lg text-gray-900 bg-gray-100 focus:ring-4 focus:ring-primary-300 focus:outline-none dark:bg-gray-700 dark:text-white',
     pill: 'py-3 px-4 text-white bg-primary-600 rounded-lg',
-    underline: 'p-4 text-primary-600 border-b-2 border-primary-600 dark:text-primary-500 dark:border-primary-500',
+    underline:
+      'p-4 text-primary-600 border-b-2 border-primary-600 dark:text-primary-500 dark:border-primary-500',
     none: ''
   };
 
@@ -42,7 +43,6 @@
     inactiveClasses: styledInactiveClasses[style] || inactiveClasses,
     selected: writable<HTMLElement>()
   };
-
 
   $: divider = ['full', 'pill'].includes(style) ? false : divider;
 

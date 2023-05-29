@@ -7,7 +7,7 @@
     [
       "activeClasses",
       "string",
-      "'p-4 text-blue-600 bg-gray-100 rounded-t-lg dark:bg-gray-800 dark:text-blue-500'"
+      "'p-4 text-primary-600 bg-gray-100 rounded-t-lg dark:bg-gray-800 dark:text-primary-500'"
     ],
     [
       "inactiveClasses",

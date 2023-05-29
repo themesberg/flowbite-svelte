@@ -5,7 +5,7 @@
   export let date: string = '';
   export let customDiv: string = '';
   export let customTimeClass: string = '';
-  export let customLiClass: string ='';
+  export let customLiClass: string = '';
   export let svgClass: string = 'w-3 h-3 text-primary-600 dark:text-primary-400';
 
   let order: 'default' | 'vertical' | 'horizontal' | 'activity' | 'group' | 'custom' = 'default';
@@ -66,7 +66,7 @@
     {:else}
       <svg
         aria-hidden="true"
-        class="{svgClass}"
+        class={svgClass}
         fill="currentColor"
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +91,7 @@
     {:else}
       <svg
         aria-hidden="true"
-        class="{svgClass}"
+        class={svgClass}
         fill="currentColor"
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +116,7 @@
     {:else}
       <svg
         aria-hidden="true"
-        class="{svgClass}"
+        class={svgClass}
         fill="currentColor"
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"
