@@ -5,6 +5,9 @@
   export let date: string = '';
   export let customDiv: string = '';
   export let customTimeClass: string = '';
+  export let customLiClass: string = '';
+  export let svgClass: string = 'w-3 h-3 text-primary-600 dark:text-primary-400';
+
   let order: 'default' | 'vertical' | 'horizontal' | 'activity' | 'group' | 'custom' = 'default';
   order = getContext('order');
   const liClasses = {
@@ -13,17 +16,17 @@
     horizontal: 'relative mb-6 sm:mb-0',
     activity: 'mb-10 ml-6',
     group: '',
-    custom: ''
+    custom: customLiClass
   };
 
   const divClasses = {
     default:
       'absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700',
     vertical:
-      'flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900',
+      'flex absolute -left-3 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-primary-900',
     horizontal: 'flex items-center',
     activity:
-      'flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900',
+      'flex absolute -left-3 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-primary-900',
     group: 'p-5 mb-4 bg-gray-50 rounded-lg border border-gray-100 dark:bg-gray-800 dark:border-gray-700',
     custom: customDiv
   };
@@ -63,7 +66,7 @@
     {:else}
       <svg
         aria-hidden="true"
-        class="w-3 h-3 text-blue-600 dark:text-blue-400"
+        class={svgClass}
         fill="currentColor"
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +91,7 @@
     {:else}
       <svg
         aria-hidden="true"
-        class="w-3 h-3 text-blue-600 dark:text-blue-400"
+        class={svgClass}
         fill="currentColor"
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +116,7 @@
     {:else}
       <svg
         aria-hidden="true"
-        class="w-3 h-3 text-blue-600 dark:text-blue-400"
+        class={svgClass}
         fill="currentColor"
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"
@@ -149,6 +152,8 @@
   @prop date: string = '';
   @prop customDiv: string = '';
   @prop customTimeClass: string = '';
+  @prop customLiClass: string ='';
+  @prop svgCl
   ## Example
   ```
   <script>

@@ -62,7 +62,7 @@ The footer is one of the most underestimated sections of a website being located
   <div class="sm:flex sm:items-center sm:justify-between">
     <FooterBrand
       href="https://flowbite.com"
-      src="https://flowbite.com/docs/images/logo.svg"
+      src="/images/flowbite-svelte-icon-logo.svg"
       alt="Flowbite Logo"
       name="Flowbite"
     />
@@ -92,7 +92,7 @@ The footer is one of the most underestimated sections of a website being located
     <div class="mb-6 md:mb-0">
       <FooterBrand
         href="https://flowbite.com"
-        src="https://flowbite.com/docs/images/logo.svg"
+        src="/images/flowbite-svelte-icon-logo.svg"
         alt="Flowbite Logo"
         name="Flowbite"
       />

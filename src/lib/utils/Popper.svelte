@@ -145,10 +145,10 @@
   let arrowClass: string = 'bottom';
   $: arrowClass = classNames(
     'absolute w-[9px] h-[9px] rotate-45 bg-inherit',
-    position === 'top' && ($$props.border? 'border-b border-r -bottom-[5px]': '-bottom-[4px]'),
-    position === 'bottom' && ($$props.border? 'border-t border-l -top-[5px]': '-top-[4px]'),
-    position === 'left' && ($$props.border? 'border-t border-r -right-[5px]': '-right-[4px]'),
-    position === 'right' && ($$props.border? 'border-b border-l -left-[5px]': '-left-[4px]'),
+    position === 'top' && ($$props.border ? 'border-b border-r -bottom-[5px]' : '-bottom-[4px]'),
+    position === 'bottom' && ($$props.border ? 'border-t border-l -top-[5px]' : '-top-[4px]'),
+    position === 'left' && ($$props.border ? 'border-t border-r -right-[5px]' : '-right-[4px]'),
+    position === 'right' && ($$props.border ? 'border-b border-l -left-[5px]' : '-left-[4px]')
   );
 </script>
 
@@ -172,7 +172,7 @@
     {#if arrow}<div data-popper-arrow class={arrowClass} />{/if}
   </Frame>
 {/if}
-      
+
 <!--        
   @component
   ## Props
@@ -186,4 +186,3 @@
   @prop open: boolean = false;
   @prop yOnly: boolean = false;
 -->
-

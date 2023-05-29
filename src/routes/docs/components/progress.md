@@ -107,8 +107,8 @@ Use the `color` prop to change the color of a progress bar.
 </div>
 
 <div class="my-4">
-<div class="mb-1 text-base font-medium text-blue-700 dark:text-blue-500">Blue/Default</div>
-  <Progressbar progress="50" />
+<div class="mb-1 text-base font-medium text-blue-700 dark:text-blue-500">Blue</div>
+  <Progressbar progress="50" color="blue"/>
 </div>
 
 <div class="my-4">

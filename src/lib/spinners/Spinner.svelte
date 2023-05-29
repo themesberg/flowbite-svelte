@@ -2,6 +2,7 @@
   import classNames from 'classnames';
 
   export let color:
+    | 'primary'
     | 'blue'
     | 'gray'
     | 'green'
@@ -11,7 +12,7 @@
     | 'purple'
     | 'white'
     | 'custom'
-    | undefined = 'blue';
+    | undefined = 'primary';
   export let bg: string = 'text-gray-300';
   export let customColor: string = '';
   export let size: string = '8';
@@ -26,6 +27,7 @@
   }
 
   const fillColorClasses = {
+    primary: 'fill-primary-600',
     blue: 'fill-blue-600',
     gray: 'fill-gray-600 dark:fill-gray-300',
     green: 'fill-green-500',
@@ -71,7 +73,7 @@
   - Alignment
   - Buttons
   ## Props
-  @prop color: | 'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink'| 'purple' | 'white' | 'custom' | undefined = 'blue';
+  @prop color: | 'primary' | 'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink'| 'purple' | 'white' | 'custom' | undefined = 'primary';
   @prop bg: string = 'text-gray-300';
   @prop customColor: string = '';
   @prop size: string = '8';

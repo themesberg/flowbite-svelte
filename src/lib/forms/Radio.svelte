@@ -40,7 +40,7 @@
   import type { FormColorType } from '../types';
   import Label from './Label.svelte';
 
-  export let color: FormColorType = 'blue';
+  export let color: FormColorType = 'primary';
   export let custom: boolean = false;
   export let inline: boolean = false;
   export let group: number | string = '';
@@ -88,7 +88,7 @@
   - Colors
   - Advanced layout
   ## Props
-  @prop color: FormColorType = 'blue';
+  @prop color: FormColorType = 'primary';
   @prop custom: boolean = false;
   @prop inline: boolean = false;
   @prop group: number | string = '';
