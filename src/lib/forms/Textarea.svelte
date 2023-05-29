@@ -6,6 +6,8 @@
   const background = getContext('background');
 
   export let value: string = '';
+  export let wrappedClass: string = 'block w-full text-sm border-0 px-0 bg-inherit dark:bg-inherit focus:outline-none focus:ring-0';
+  export let unWrappedClass: string = 'p-2.5 text-sm focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500';
 
   let wrapped: boolean;
   $: wrapped = $$slots.header || $$slots.footer;
@@ -22,16 +24,11 @@
   let textareaClass: string;
   $: textareaClass = wrapped
     ? classNames(
-        'block w-full',
-        'text-sm',
-        'border-0 px-0',
-        'bg-inherit dark:bg-inherit',
-        'focus:outline-none focus:ring-0'
+        wrappedClass
       )
     : classNames(
         wrapperClass,
-        'p-2.5 text-sm',
-        'focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500'
+        unWrappedClass
       );
 
   const headerClass = (header: boolean) =>
@@ -88,6 +85,8 @@
   - Chatroom input
   ## Props
   @prop value: string = '';
+  @prop wrappedClass: string = 'block w-full text-sm border-0 px-0 bg-inherit dark:bg-inherit focus:outline-none focus:ring-0';
+  @prop unWrappedClass: string = 'p-2.5 text-sm focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500';
   ## Event
   - on:blur
   - on:change
