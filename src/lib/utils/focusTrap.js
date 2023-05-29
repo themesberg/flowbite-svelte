@@ -12,8 +12,6 @@ const selectorTabbable = `
 
 /** @type {import('svelte/action').Action} */
 export default function focusTrap(node) {
-  const tabbable = Array.from(node.querySelectorAll(selectorTabbable));
-
   /** @type {(e:KeyboardEvent)=>void} */
   function handleFocusTrap(e) {
     let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
@@ -21,6 +19,8 @@ export default function focusTrap(node) {
     if (!isTabPressed) {
       return;
     }
+
+    const tabbable = Array.from(node.querySelectorAll(selectorTabbable));
 
     let index = tabbable.indexOf(document.activeElement ?? node);
     if (index === -1 && e.shiftKey) index = 0;

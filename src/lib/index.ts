@@ -89,6 +89,9 @@ export { default as Gallery } from './gallery/Gallery.svelte';
 // Indicator
 export { default as Indicator } from './indicators/Indicator.svelte';
 
+// Jumbotron
+export { default as Jumbotron } from './jumbotron/Jumbotron.svelte';
+
 // Kbd
 export { default as Kbd } from './kbd/Kbd.svelte';
 export { default as ArrowKeyDown } from './kbd/ArrowKeyDown.svelte';
@@ -220,6 +223,7 @@ export { default as ChevronLeft } from './utils/ChevronLeft.svelte';
 export { default as ChevronRight } from './utils/ChevronRight.svelte';
 export { default as ChevronUp } from './utils/ChevronUp.svelte';
 export { default as Chevron } from './utils/Chevron.svelte';
+export { default as FlexRow } from './utils/FlexRow.svelte';
 export { default as InformationCircle } from './utils/InformationCircle.svelte';
 export { default as MenuButton } from './utils/MenuButton.svelte';
 export { default as UserCircle } from './utils/UserCircle.svelte';
