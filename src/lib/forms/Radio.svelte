@@ -88,7 +88,7 @@
   - Colors
   - Advanced layout
   ## Props
-  @prop color: FormColorType = 'blue';
+  @prop color: FormColorType = 'primary';
   @prop custom: boolean = false;
   @prop inline: boolean = false;
   @prop group: number | string = '';

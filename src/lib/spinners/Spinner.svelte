@@ -73,7 +73,7 @@
   - Alignment
   - Buttons
   ## Props
-  @prop color: | 'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink'| 'purple' | 'white' | 'custom' | undefined = 'blue';
+  @prop color: | 'primary' | 'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink'| 'purple' | 'white' | 'custom' | undefined = 'primary';
   @prop bg: string = 'text-gray-300';
   @prop customColor: string = '';
   @prop size: string = '8';
