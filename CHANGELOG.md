@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.37.2](https://github.com/themesberg/flowbite-svelte/compare/v0.37.1...v0.37.2) (2023-05-29)
+
+
+### Features
+
+* add primary to Checkbox ([b6063c6](https://github.com/themesberg/flowbite-svelte/commit/b6063c6925bd036676061d80a8c9ed78efda6f5c))
+
+
+### Bug Fixes
+
+* [#534](https://github.com/themesberg/flowbite-svelte/issues/534) list group typing ([#805](https://github.com/themesberg/flowbite-svelte/issues/805)) ([95861f4](https://github.com/themesberg/flowbite-svelte/commit/95861f4f046c5c6b4127dd5f5120581346531831))
+* [#781](https://github.com/themesberg/flowbite-svelte/issues/781) tooltip arrow ([#804](https://github.com/themesberg/flowbite-svelte/issues/804)) ([2bd8938](https://github.com/themesberg/flowbite-svelte/commit/2bd8938d6b864f9294ee897c1ce6edc4b8ec08ab))
+* issue [#790](https://github.com/themesberg/flowbite-svelte/issues/790) ([#802](https://github.com/themesberg/flowbite-svelte/issues/802)) ([9c79555](https://github.com/themesberg/flowbite-svelte/commit/9c7955578463904c1e066d7f04cd676a1e856e01))
+* issue 786 ([#803](https://github.com/themesberg/flowbite-svelte/issues/803)) ([3e348ba](https://github.com/themesberg/flowbite-svelte/commit/3e348badc30779c8da222c3ee361afe5b14d6e95))
+
 ### [0.37.1](https://github.com/themesberg/flowbite-svelte/compare/v0.36.5...v0.37.1) (2023-05-28)
 
 
