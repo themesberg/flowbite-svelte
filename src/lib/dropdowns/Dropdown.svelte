@@ -28,7 +28,7 @@
       <slot name="header" />
     </div>
   {/if}
-  <ul class={$$props.class ?? { ulClass }}>
+  <ul class={$$props.class ?? ulClass}>
     <slot />
   </ul>
   {#if $$slots.footer}
