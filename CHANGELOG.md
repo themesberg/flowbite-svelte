@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.37.3](https://github.com/themesberg/flowbite-svelte/compare/v0.37.2...v0.37.3) (2023-06-01)
+
+
+### Bug Fixes
+
+* +layout.server ([#808](https://github.com/themesberg/flowbite-svelte/issues/808)) ([cf1e551](https://github.com/themesberg/flowbite-svelte/commit/cf1e551690de641ec493933581ac1fc36e124d1d))
+* darkmode flicker ([#811](https://github.com/themesberg/flowbite-svelte/issues/811)) ([94b1f6b](https://github.com/themesberg/flowbite-svelte/commit/94b1f6bd9fb7341a9b3791633daf2217e2c3017d))
+* issue783 ([#809](https://github.com/themesberg/flowbite-svelte/issues/809)) ([112bd25](https://github.com/themesberg/flowbite-svelte/commit/112bd25f7903da72332159fdc5edf6aad1e7536d))
+* issue812 ([#814](https://github.com/themesberg/flowbite-svelte/issues/814)) ([c74c026](https://github.com/themesberg/flowbite-svelte/commit/c74c026e7bfd8d3a6f5ed0fe39de2a42b0e6c9b2))
+* remove peerDependencies ([#810](https://github.com/themesberg/flowbite-svelte/issues/810)) ([e940033](https://github.com/themesberg/flowbite-svelte/commit/e94003300ff016ffe565a167e45714b9091ce495))
+
 ### [0.37.2](https://github.com/themesberg/flowbite-svelte/compare/v0.37.1...v0.37.2) (2023-05-29)
 
 
