@@ -61,6 +61,9 @@
     "vite": "^4.3.8",
     "vitest": "^0.31.1"
   },
+  "peerDependencies": {
+    "svelte": "^3.55.1 || ^4.0.0"
+  },  
   "type": "module",
   "keywords": [
     "svelte",
