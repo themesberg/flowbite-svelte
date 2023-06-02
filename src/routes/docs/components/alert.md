@@ -324,6 +324,7 @@ The component inherits the following props, type, and default values from `Frame
 ## Forwarded Events
 
 <DocBadgeList items={events} />
+
 ## References
 
 <P>
