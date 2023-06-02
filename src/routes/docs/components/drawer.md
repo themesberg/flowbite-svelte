@@ -58,7 +58,7 @@ For accessibility you should also set the `id` prop to the element. This will ad
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a
       href="/"
-      class="text-blue-600 underline dark:text-blue-500 hover:no-underline">limited-time sale</a> for
+      class="text-primary-600 underline dark:text-primary-500 hover:no-underline">limited-time sale</a> for
     Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design
     job board.
   </p>
@@ -125,7 +125,7 @@ Use this example to show a navigational sidebar inside the drawer component.
           </svelte:fragment>
           <svelte:fragment slot="subtext">
             <span
-              class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200"
+              class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"
               >3</span>
           </svelte:fragment>
         </SidebarItem>
@@ -191,10 +191,10 @@ Use this example to show a contact form inside the drawer component.
       <Button type="submit" class='w-full'>Send message</Button>
    </form>
    <P class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-      <A href='/' class="hover:underline">info@company.com</A>
+      <A href='/' class="text-primary-600 hover:underline dark:text-primary-500">info@company.com</A>
    </P>
    <P class="text-sm text-gray-500 dark:text-gray-400">
-      <A href='/' class="hover:underline">212-456-7890</A>
+      <A href='/' class="text-primary-600 hover:underline dark:text-primary-500">212-456-7890</A>
    </P>
 </Drawer>
 ```
@@ -240,7 +240,7 @@ Use this example if you want to add form elements inside the drawer component in
       <div class="relative">
         <Input noBorder id="search" placeholder="Add guest email" class="p-3">
         </Input>
-        <Button textSize="text-sm" class="absolute inline-flex items-center px-3 py-1 text-sm font-medium text-white bg-blue-700 rounded-lg right-2 bottom-2 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="submit"><svg class="w-4 h-4 mr-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"></path></svg>Add</Button>
+        <Button textSize="text-sm" class="absolute inline-flex items-center px-3 py-1 text-sm font-medium text-white bg-primary-700 rounded-lg right-2 bottom-2 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" type="submit"><svg class="w-4 h-4 mr-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"></path></svg>Add</Button>
       </div>
     </div>
       <div class="flex mb-4 -space-x-4">
@@ -289,7 +289,7 @@ Use the placement prop to position the drawer component either on the top, right
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a
       href="/"
-      class="text-blue-600 underline dark:text-blue-500 hover:no-underline">limited-time sale</a> for
+      class="text-primary-600 underline dark:text-primary-500 hover:no-underline">limited-time sale</a> for
     Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design
     job board.
   </p>
@@ -335,7 +335,7 @@ Set the `transitionParams` variable to new variables.
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a
       href="/"
-      class="text-blue-600 underline dark:text-blue-500 hover:no-underline">limited-time sale</a> for
+      class="text-primary-600 underline dark:text-primary-500 hover:no-underline">limited-time sale</a> for
     Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design
     job board.
   </p>
@@ -388,7 +388,7 @@ Use this example to show the drawer on the top side of the page.
     </div>
   <p class="max-w-lg mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <A
-      href="/" >limited-time sale</A> for
+      href="/" class="text-primary-600 underline dark:text-primary-500 hover:no-underline" >limited-time sale</A> for
     Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design
     job board.
   </p>
@@ -430,7 +430,7 @@ Use this example to show the drawer on the bottom side of the page.
   <p class="max-w-lg mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a
       href="/"
-      class="text-blue-600 underline dark:text-blue-500 hover:no-underline">limited-time sale</a> for
+      class="text-primary-600 underline dark:text-primary-500 hover:no-underline">limited-time sale</a> for
     Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design
     job board.
   </p>
@@ -478,7 +478,7 @@ Use this example to enable the backdrop element by default.
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a
       href="/"
-      class="text-blue-600 underline dark:text-blue-500 hover:no-underline">limited-time sale</a> for
+      class="text-primary-600 underline dark:text-primary-500 hover:no-underline">limited-time sale</a> for
     Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design
     job board.
   </p>
@@ -522,7 +522,7 @@ Use the `backdrop={false}` prop to disable the backdrop element when the drawer 
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a
       href="/"
-      class="text-blue-600 underline dark:text-blue-500 hover:no-underline">limited-time sale</a> for
+      class="text-primary-600 underline dark:text-primary-500 hover:no-underline">limited-time sale</a> for
     Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design
     job board.
   </p>
@@ -581,7 +581,7 @@ Use `leftOffset|rightOffset|topOffset|bottomOffset` prop to change the position 
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a
       href="/"
-      class="text-blue-600 underline dark:text-blue-500 hover:no-underline">limited-time sale</a> for
+      class="text-primary-600 underline dark:text-primary-500 hover:no-underline">limited-time sale</a> for
     Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design
     job board.
   </p>
@@ -638,7 +638,7 @@ However sometimes you don't want that. Set `activateClickOutside` to false to di
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a
       href="/"
-      class="text-blue-600 underline dark:text-blue-500 hover:no-underline">limited-time sale</a> for
+      class="text-primary-600 underline dark:text-primary-500 hover:no-underline">limited-time sale</a> for
     Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design
     job board.
   </p>
@@ -676,7 +676,7 @@ However sometimes you don't want that. Set `activateClickOutside` to false to di
   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
     Supercharge your hiring by taking advantage of our <a
       href="/"
-      class="text-blue-600 underline dark:text-blue-500 hover:no-underline">limited-time sale</a> for
+      class="text-primary-600 underline dark:text-primary-500 hover:no-underline">limited-time sale</a> for
     Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design
     job board.
   </p>
