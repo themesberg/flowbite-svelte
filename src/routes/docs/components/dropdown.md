@@ -373,7 +373,7 @@ This example can be used when you want to show a long list of items that won’t
   <DropdownItem class="flex items-center text-base font-semibold gap-2">
     <Avatar src="/images/profile-picture-3.webp" size="xs"/>Leslie Livingston
   </DropdownItem>
-  <a slot="footer" href="/" class="flex items-center px-3 py-2 -mb-1 text-sm font-medium text-blue-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-blue-500 hover:underline">
+  <a slot="footer" href="/" class="flex items-center px-3 py-2 -mb-1 text-sm font-medium text-primary-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-primary-500 hover:underline">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 mr-1"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" /></svg>Add new user
   </a>
 </Dropdown>
@@ -456,21 +456,21 @@ Use this example to show a list of notifications inside your application by prov
     <Avatar src="/images/profile-picture-1.webp" dot={{color:'bg-gray-300'}} rounded />
     <div class="pl-3 w-full">
         <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400">New message from <span class="font-semibold text-gray-900 dark:text-white">Jese Leos</span>: "Hey, what's up? All set for the presentation?"</div>
-        <div class="text-xs text-blue-600 dark:text-blue-500">a few moments ago</div>
+        <div class="text-xs text-primary-600 dark:text-primary-500">a few moments ago</div>
     </div>
   </DropdownItem>
   <DropdownItem class="flex space-x-4">
     <Avatar src="/images/profile-picture-2.webp" dot={{color:'bg-red-400'}} rounded />
     <div class="pl-3 w-full">
         <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400"><span class="font-semibold text-gray-900 dark:text-white">Joseph Mcfall</span> and <span class="font-medium text-gray-900 dark:text-white">5 others</span> started following you.</div>
-        <div class="text-xs text-blue-600 dark:text-blue-500">10 minutes ago</div>
+        <div class="text-xs text-primary-600 dark:text-primary-500">10 minutes ago</div>
     </div>
   </DropdownItem>
   <DropdownItem class="flex space-x-4">
     <Avatar src="/images/profile-picture-3.webp" dot={{color:'bg-green-400'}} rounded />
     <div class="pl-3 w-full">
         <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400"><span class="font-semibold text-gray-900 dark:text-white">Bonnie Green</span> and <span class="font-medium text-gray-900 dark:text-white">141 others</span> love your story. See it and view more stories.</div>
-        <div class="text-xs text-blue-600 dark:text-blue-500">44 minutes ago</div>
+        <div class="text-xs text-primary-600 dark:text-primary-500">44 minutes ago</div>
     </div>
   </DropdownItem>
   <a slot="footer" href="/" class="block py-2 -my-1 text-sm font-medium text-center text-gray-900 bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white">
