@@ -164,8 +164,7 @@ Use this example if you want to show a dropdown menu when clicking on the avatar
 <script>
   import {Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider} from 'flowbite-svelte'
 </script>
-
-  <Avatar id="user-drop" src="/images/profile-picture-3.webp" dot={{color:'green'}} />
+  <Avatar id="user-drop" src="/images/profile-picture-3.webp" class="cursor-pointer" dot={{color:'green'}} />
   <Dropdown triggeredBy="#user-drop">
     <DropdownHeader>
       <span class="block text-sm"> Bonnie Green </span>
