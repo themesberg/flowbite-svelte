@@ -1,61 +1,55 @@
 <script>
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from 'flowbite-svelte';
-  import { writable } from 'svelte/store';
-
-  let items = [
-    { id: 1, maker: 'Toyota', type: 'ABC', make: 2017 },
-    { id: 2, maker: 'Ford', type: 'CDE', make: 2018 },
-    { id: 3, maker: 'Volvo', type: 'FGH', make: 2019 },
-    { id: 4, maker: 'Saab', type: 'IJK', make: 2020 }
-  ];
-
-  const sortKey = writable('id'); // default sort key
-  const sortDirection = writable(1); // default sort direction (ascending)
-  const sortItems = writable(items.slice()); // make a copy of the items array
-
-  // Define a function to sort the items
-  const sortTable = (key) => {
-    // If the same key is clicked, reverse the sort direction
-    if ($sortKey === key) {
-      sortDirection.update(val => -val);
-    } else {
-      sortKey.set(key);
-      sortDirection.set(1);
-    }
-  };
-
-  $: {
-    const key = $sortKey;
-    const direction = $sortDirection;
-    const sorted = [...$sortItems].sort((a, b) => {
-      const aVal = a[key];
-      const bVal = b[key];
-      if (aVal < bVal) {
-        return -direction;
-      } else if (aVal > bVal) {
-        return direction;
-      }
-      return 0;
-    });
-    sortItems.set(sorted);
-  }
+  import { BottomNav, BottomNavItem } from '$lib';
 </script>
 
-<Table hoverable={true}>
-  <TableHead>
-    <TableHeadCell on:click={() => sortTable('id')}>ID</TableHeadCell>
-    <TableHeadCell on:click={() => sortTable('maker')}>Maker</TableHeadCell>
-    <TableHeadCell on:click={() => sortTable('type')}>Type</TableHeadCell>
-    <TableHeadCell on:click={() => sortTable('make')}>Make</TableHeadCell>
-  </TableHead>
-  <TableBody class="divide-y">
-    {#each $sortItems as item}
-      <TableBodyRow>
-        <TableBodyCell>{item.id}</TableBodyCell>
-        <TableBodyCell>{item.maker}</TableBodyCell>
-        <TableBodyCell>{item.type}</TableBodyCell>
-        <TableBodyCell>{item.make}</TableBodyCell>
-      </TableBodyRow>
-    {/each}
-  </TableBody>
-</Table>
+<BottomNav position="absolute" innerDiv="grid-cols-4">
+  <BottomNavItem btnName="Home">
+    <svg
+      class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true">
+      <path
+        d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+    </svg>
+  </BottomNavItem>
+  <BottomNavItem btnName="Wallet">
+    <svg
+      class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true">
+      <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" />
+      <path
+        clip-rule="evenodd"
+        fill-rule="evenodd"
+        d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" />
+    </svg>
+  </BottomNavItem>
+  <BottomNavItem btnName="Settings">
+    <svg
+      class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true">
+      <path
+        d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z" />
+    </svg>
+  </BottomNavItem>
+  <BottomNavItem btnName="Profile">
+    <svg
+      class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true">
+      <path
+        clip-rule="evenodd"
+        fill-rule="evenodd"
+        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" />
+    </svg>
+  </BottomNavItem>
+</BottomNav>

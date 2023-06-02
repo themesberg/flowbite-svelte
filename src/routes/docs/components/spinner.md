@@ -14,8 +14,6 @@ thumnailSize: w-48
   import { props as items }  from '../../props/Spinner.json'
 </script>
 
-
-
 The spinner component can be used as a loading indicator which comes in multiple colors, sizes, and styles separately or inside elements such as buttons to improve the user experience whenever data is being fetched from your server.
 
 ## Setup

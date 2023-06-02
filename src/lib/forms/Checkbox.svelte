@@ -5,12 +5,11 @@
   import Label from './Label.svelte';
 
   // properties forwarding
-  export let color: FormColorType = 'blue';
+  export let color: FormColorType = 'primary';
   export let custom: boolean = false;
   export let inline: boolean = false;
-
   export let group: (string | number)[] = [];
-  export let value: string | number = '';
+  export let value: string | number = 'on';
   export let checked: boolean | undefined = undefined;
 
   // tinted if put in component having its own background
@@ -71,3 +70,51 @@
     {...$$restProps}
     class={inputClass(custom, color, true, background, $$slots.default || $$props.class)} /><slot />
 </Label>
+
+<!--
+  @component
+  ## Feature
+  [Go to Checkbox](https://flowbite-svelte.com/docs/forms/checkbox)
+  - Setup
+  - Checkbox examples
+  - Disabled state
+  - Alternative syntax
+  - Checkbox with a link
+  - Helper text
+  - Bordered
+  - Checkbox list group
+  - Horizontal list group
+  - Checkbox dropdown
+  - Inline layout
+  - Colors
+  - Advanced layout
+  - Group variable
+  ## Props
+  @prop color: FormColorType = 'primary';
+  @prop custom: boolean = false;
+  @prop inline: boolean = false;
+  @prop group: (string | number)[] = [];
+  @prop value: string | number = 'on';
+  @prop checked: boolean | undefined = undefined;
+  ## Event
+  - on:keyup
+  - on:keydown
+  - on:keypress
+  - on:focus
+  - on:blur
+  - on:click
+  - on:mouseover
+  - on:mouseenter
+  - on:mouseleave
+  - on:paste
+  - on:change
+  ## Example
+  ```
+  <script>
+    import { Checkbox } from 'flowbite-svelte'
+  </script>
+  
+  <Checkbox>Default checkbox</Checkbox>
+  <Checkbox checked>Checked state</Checkbox>
+  ```
+-->

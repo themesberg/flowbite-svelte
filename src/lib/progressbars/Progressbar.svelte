@@ -5,12 +5,14 @@
   export let size: string = 'h-2.5';
   export let labelInside: boolean = false;
   export let labelOutside: string = '';
-  export let color: 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo' = 'blue';
+  export let color: 'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo' =
+    'primary';
   export let labelInsideClass: string =
     'text-blue-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
 
   // let barColor: string;
   const barColors = {
+    primary: 'bg-primary-600',
     blue: 'bg-blue-600',
     gray: 'bg-gray-600 dark:bg-gray-300',
     red: 'bg-red-600 dark:bg-red-500',
@@ -36,3 +38,24 @@
     <div class={classNames(barColors[color], size, 'rounded-full')} style="width: {progress}%" />
   {/if}
 </div>
+
+<!--
+  @component
+  ## Features
+  [Go to Progress Bar](https://flowbite-svelte.com/docs/components/progress)
+  ## Props
+  @prop progress: string = '45';
+  @prop size: string = 'h-2.5';
+  @prop labelInside: boolean = false;
+  @prop labelOutside: string = '';
+  @prop color: 'primary'| 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo' = 'primary';
+  @prop labelInsideClass: string = 'text-blue-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
+  ## Example
+  ```
+  <script>
+    import { Progressbar } from 'flowbite-svelte'
+  </script>
+
+  <Progressbar progress="50" />
+  ```
+-->

@@ -15,8 +15,6 @@ thumnailSize: w-64
   import { props as items2 } from '../../props/SpeedDialButton.json'
 </script>
 
-
-
 Get started with the speed dial component to show a list of buttons or menu items positioned relative to the body in either corner as a quick way to allow certains actions to be made by your users.
 
 ## Default speed dial

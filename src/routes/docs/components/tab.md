@@ -17,8 +17,6 @@ thumnailSize: w-64
   const events = ["on:blur","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover"];
 </script>
 
-
-
 The tabs component can be used either as an extra navigational hierarchy complementing the main navbar or you can also use it to change content inside a container just below the tabs using the data attributes from Flowbite.
 
 ## Setup
@@ -272,8 +270,6 @@ To get a custom look and feel for the `Tabs` component, do not set `style` prop,
 ## Forwarded Events: TabItem
 
 <DocBadgeList items={events} />
-
-
 ## References
 
 <P>

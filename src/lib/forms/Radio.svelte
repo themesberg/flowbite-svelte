@@ -3,6 +3,8 @@
   import classNames from 'classnames';
 
   const colorClasses: Record<FormColorType, string> = {
+    primary: 'text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600',
+    secondary: 'text-secondary-600 focus:ring-secondary-500 dark:focus:ring-secondary-600',
     red: 'text-red-600 focus:ring-red-500 dark:focus:ring-red-600',
     green: 'text-green-600 focus:ring-green-500 dark:focus:ring-green-600',
     purple: 'text-purple-600 focus:ring-purple-500 dark:focus:ring-purple-600',
@@ -38,7 +40,7 @@
   import type { FormColorType } from '../types';
   import Label from './Label.svelte';
 
-  export let color: FormColorType = 'blue';
+  export let color: FormColorType = 'primary';
   export let custom: boolean = false;
   export let inline: boolean = false;
   export let group: number | string = '';
@@ -67,3 +69,49 @@
     {...$$restProps}
     class={inputClass(custom, color, false, background, $$slots.default || $$props.class)} /><slot />
 </Label>
+
+<!--
+  @component
+  ## Feature
+  [Go to Radio](https://flowbite-svelte.com/docs/forms/radio)
+  - Setup
+  - Radio examples
+  - Disabled state
+  - Alternative syntax
+  - Radio with a link
+  - Helper text
+  - Bordered
+  - Radio list group
+  - Horizontal list group
+  - Radio in dropdown
+  - Inline layout
+  - Colors
+  - Advanced layout
+  ## Props
+  @prop color: FormColorType = 'primary';
+  @prop custom: boolean = false;
+  @prop inline: boolean = false;
+  @prop group: number | string = '';
+  @prop value: number | string = '';
+  ## Event
+  - on:blur
+  - on:change
+  - on:click
+  - on:focus
+  - on:keydown
+  - on:keypress
+  - on:keyup
+  - on:mouseenter
+  - on:mouseleave
+  - on:mouseover
+  - on:paste
+  ## Example
+  ```
+  <script>
+    import { Radio } from 'flowbite-svelte'
+  </script>
+
+  <Radio name="example">Default radio</Radio>
+  <Radio name="example">Checked state</Radio>
+  ```
+-->

@@ -19,8 +19,6 @@ description: Use the footer section at the bottom of every page to show valuable
   import { props as items6 } from '../../props/FooterLinkGroup.json'
 </script>
 
-
-
 The footer is one of the most underestimated sections of a website being located at the very bottom of every page, however, it can be used as a way to try to convince users to stay on your website if they haven’t found the information they’ve been looking for inside the main content area.
 
 ## Setup
@@ -64,7 +62,7 @@ The footer is one of the most underestimated sections of a website being located
   <div class="sm:flex sm:items-center sm:justify-between">
     <FooterBrand
       href="https://flowbite.com"
-      src="https://flowbite.com/docs/images/logo.svg"
+      src="/images/flowbite-svelte-icon-logo.svg"
       alt="Flowbite Logo"
       name="Flowbite"
     />
@@ -94,7 +92,7 @@ The footer is one of the most underestimated sections of a website being located
     <div class="mb-6 md:mb-0">
       <FooterBrand
         href="https://flowbite.com"
-        src="https://flowbite.com/docs/images/logo.svg"
+        src="/images/flowbite-svelte-icon-logo.svg"
         alt="Flowbite Logo"
         name="Flowbite"
       />

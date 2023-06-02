@@ -17,8 +17,6 @@ thumnailSize: w-36
   const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover"];
 </script>
 
-
-
 The list group component can be used to display a series of elements, buttons or links inside a single card component similar to a sidebar.
 
 ## Setup
@@ -124,7 +122,7 @@ Usage of hidden so far `ListgroupItem` helps you with proper layout.
 </script>
 
 <Listgroup active class="w-48">
-    <h3 class="text-xl font-medium text-gray-900 dark:text-white">User list</h3>
+    <h3 class="p-1 text-center text-xl font-medium text-gray-900 dark:text-white">User list</h3>
     <ListgroupItem class="text-base font-semibold gap-2">
       <Avatar src="/images/profile-picture-1.webp" size="xs"/>Jese Leos
     </ListgroupItem>
@@ -163,8 +161,6 @@ Delete user
 ### ListgroupItem
 
 <DocBadgeList items={events} />
-
-
 ## References
 
 <P>

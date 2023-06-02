@@ -25,7 +25,6 @@
   }
 
   setContext('background', true);
-  $: setContext('color', color);
 
   export let tag: string = 'div';
   export let color: FrameColor = 'default';
@@ -43,6 +42,9 @@
   // Action function and its params
   export let use: Action = noop;
   export let options = {};
+
+  $: color = color ?? 'default'; // for cases when undefined
+  $: setContext('color', color);
 
   // your script goes here
   const bgColors = {
@@ -151,3 +153,24 @@
     <slot />
   </svelte:element>
 {/if}
+
+<!--
+  @component
+  ## Props
+  @prop tag: string = 'div';
+  @prop color: FrameColor = 'default';
+  @prop rounded: boolean = false;
+  @prop border: boolean = false;
+  @prop shadow: boolean = false;
+  @prop transition: TransitionFunc | undefined = undefined;
+  @prop params: object = {};
+  @prop node: HTMLElement | undefined = undefined;
+  @prop use: Action = noop;
+  @prop options = {};  
+  ## Event
+  - on:click
+  - on:mouseenter
+  - on:mouseleave
+  - on:focusin
+  - on:focusout
+-->

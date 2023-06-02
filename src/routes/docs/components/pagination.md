@@ -17,8 +17,6 @@ thumnailSize: w-48
   const events = ["on:blur","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover"];
 </script>
 
-
-
 The pagination component can be used to navigate across a series of content and data sets for various pages such as blog posts, products, and more. You can use multiple variants of this component with or without icons and even for paginating table data entries.
 
 ## Setup
@@ -286,8 +284,6 @@ You can use the following code to show the number of data shown inside a table e
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">Pagination, PaginationItem</Heading>
 
 <DocBadgeList items={events} />
-
-
 ## References
 
 <P>

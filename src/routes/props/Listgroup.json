@@ -1,1 +1,7 @@
-{"props":[["items","ListGroupItemType[]","[]"],["active","boolean","false"],["defaultClass","string","'divide-y divide-gray-200 dark:divide-gray-600'"]]}
+{
+  "props": [
+    ["items", "ListGroupItemType[] | string[]", "[]"],
+    ["active", "boolean", "false"],
+    ["defaultClass", "string", "'divide-y divide-gray-200 dark:divide-gray-600'"]
+  ]
+}

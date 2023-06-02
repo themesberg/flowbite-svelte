@@ -18,8 +18,6 @@ thumnailSize: w-40
   import { props as items5} from '../../props/ArrowKeyUp.json'
 </script>
 
-
-
 The KBD (Keyboard) component can be used to indicate a textual user input from the keyboard inside other elements such as in text, tables, cards, and more.
 
 ## Setup

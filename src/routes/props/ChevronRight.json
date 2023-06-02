@@ -1,1 +1,8 @@
-{"props":[["size","string","'20'"],["color","string","'currentColor'"],["variation","'solid' | 'outline'","'outline'"],["ariaLabel","string","'chevron right'"]]}
+{
+  "props": [
+    ["size", "string", "'20'"],
+    ["color", "string", "'currentColor'"],
+    ["variation", "'solid' | 'outline'", "'outline'"],
+    ["ariaLabel", "string", "'chevron right'"]
+  ]
+}

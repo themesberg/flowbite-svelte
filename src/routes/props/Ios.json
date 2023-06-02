@@ -1,0 +1,8 @@
+{
+  "props": [
+    ["iosTop", "string", ""],
+    ["iosLeftTop", "string", ""],
+    ["iosLeftBot", "string", ""],
+    ["iosRight", "string", ""]
+  ]
+}

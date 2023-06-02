@@ -14,8 +14,6 @@ thumnailSize: w-64
   import { props as items1 } from '../../props/A.json'
 </script>
 
-
-
 Get started with the link component to enable hyperlinks across pages and external websites applied to elements such as inline text, buttons, cards, inside paragraphs, and more.
 
 Hyperlinks are a great way to reduce bounce rate of the current page and encourage visitors to browse your website and become a returning user.

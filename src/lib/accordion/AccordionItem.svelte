@@ -22,6 +22,7 @@
   export let borderClass: string = 'border-l border-r group-first:border-t';
   export let borderOpenClass: string = 'border-l border-r';
   export let borderBottomClass: string = 'border-b';
+  export let borderSharedClass: string = 'border-gray-200 dark:border-gray-700';
 
   // make a custom transition function that returns the desired transition
   const multiple = (node: HTMLElement, params: any) => {
@@ -60,6 +61,7 @@
     defaultClass,
     ctx.flush || borderClass,
     borderBottomClass,
+    borderSharedClass,
     ctx.flush ? paddingFlush : paddingDefault,
     open && (ctx.flush ? textFlushOpen : activeClasses || ctx.activeClasses),
     !open && (ctx.flush ? textFlushDefault : inactiveClasses || ctx.inactiveClasses),
@@ -79,8 +81,40 @@
 </h2>
 {#if open}
   <div transition:multiple|local={transitionParams}>
-    <div class="{ctx.flush ? paddingFlush : paddingDefault} {ctx.flush ? '' : borderOpenClass} {borderBottomClass}">
+    <div
+      class="{ctx.flush ? paddingFlush : paddingDefault} {ctx.flush
+        ? ''
+        : borderOpenClass} {borderBottomClass} {borderSharedClass}">
       <slot />
     </div>
   </div>
 {/if}
+
+<!--
+  @component
+  ## Features
+  [Go to Accordion page](https://flowbite-svelte.com/docs/components/accordion)
+  - Default bottom navigation
+  - Menu items with border
+  - Application bar example
+  - Example with pagination
+  - Button group bottom bar
+  - Card with bottom bar
+
+  ## Props
+  @prop open: boolean = false;
+  @prop activeClasses: string | undefined = undefined;
+  @prop inactiveClasses: string | undefined = undefined;
+  @prop defaultClass: string = 'flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl border-gray-200 dark:border-gray-700';
+  @prop transitionType: TransitionTypes = 'slide';
+  @prop transitionParams: TransitionParamTypes = {};
+  @prop paddingFlush: string = 'py-5';
+  @prop paddingDefault: string = 'p-5';
+  @prop textFlushOpen: string = 'text-gray-900 dark:text-white';
+  @prop textFlushDefault: string = 'text-gray-500 dark:text-gray-400';
+  @prop borderClass: string = 'border-l border-r group-first:border-t';
+  @prop borderOpenClass: string = 'border-l border-r';
+  @prop borderBottomClass: string = 'border-b';
+  @prop borderSharedClass: string = 'border-gray-200 dark:border-gray-700';
+
+-->

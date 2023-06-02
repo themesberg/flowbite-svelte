@@ -15,8 +15,6 @@ description: Use the popover component to show detailed information inside a pop
   import { props as items3 } from '../../props/Frame.json'
 </script>
 
-
-
 Get started with the popover component to show any type of content inside a pop-up box when hovering or clicking over a trigger element. There are multiple examples that you can choose from, such as showing more information about a user profile, company profile, password strength, and more.
 
 Make sure that you have the Flowbite JavaScript included in your project to enable the popover interactivity by following the quickstart guide.
@@ -97,7 +95,7 @@ This example can be used to show more information about a company profile.
   <div class="flex">
     <div class="mr-3 shrink-0">
       <a href="/" class="block p-2 bg-gray-100 rounded-lg dark:bg-gray-700">
-        <img class="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/logo.svg" alt="Flowbite logo">
+        <img class="w-8 h-8 rounded-full" src="/images/flowbite-svelte-icon-logo.svg" alt="Flowbite logo">
       </a>
     </div>
     <div>

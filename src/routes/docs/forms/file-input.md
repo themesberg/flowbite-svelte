@@ -18,8 +18,6 @@ thumnailSize: w-48
   const events2 = ["on:click","on:change","on:focus","on:blur","on:mouseenter","on:mouseleave","on:mouseover"];
 </script>
 
-
-
 The file input component can be used to upload one or more files from the device storage of the user available in multiple sizes, styles, variants and support for dark mode.
 
 ## Setup
@@ -127,8 +125,6 @@ The component has the following props, type, and default values. See <A href="/d
 ## Forwarded Events: Fileupload
 
 <DocBadgeList items={events} />
-
-
 ## Forwarded Events: Dropzone
 
 <DocBadgeList items={events2} />

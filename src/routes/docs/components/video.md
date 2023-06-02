@@ -14,8 +14,6 @@ thumnailSize: w-64
   import { props as items } from '../../props/Video.json'
 </script>
 
-
-
 ## Setup
 
 ```svelte example hideOutput

@@ -13,8 +13,6 @@ description: The Drawer component can be used as a hidden off-canvas sidebar for
   import { props as items} from '../../props/Drawer.json'
 </script>
 
-
-
 Use the Drawer component (or “off-canvas”) to show a fixed element relative to the document page from any side for navigation, contact forms, informational purposes or other user actions.
 
 ## Set up

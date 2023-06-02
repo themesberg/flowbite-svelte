@@ -20,8 +20,6 @@ thumnailSize: w-48
   import { props as items7 }  from '../../props/TableSearch.json'
 </script>
 
-
-
 The table component represents a set of structured elements made up of rows and columns as table cells that can be used to show data sets to your website users.
 
 Get started with multiple variants and styles of these table components.

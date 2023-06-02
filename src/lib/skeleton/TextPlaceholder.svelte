@@ -1,5 +1,5 @@
 <script lang="ts">
-	interface Sizes {
+  interface Sizes {
     [key: string]: string;
   }
 
@@ -8,45 +8,66 @@
     md: 'max-w-md',
     lg: 'max-w-lg',
     xl: 'max-w-xl',
-		xxl: 'max-w-2xl'
+    xxl: 'max-w-2xl'
   };
 
-	import classNames from 'classnames';
-	export let divClass: string = 'space-y-2.5 animate-pulse';
-	export let size: keyof Sizes = 'sm';
-	$: outDivclass = classNames(sizes[size], divClass, $$props.class)
+  import classNames from 'classnames';
+  export let divClass: string = 'space-y-2.5 animate-pulse';
+  export let size: keyof Sizes = 'sm';
+  $: outDivclass = classNames(sizes[size], divClass, $$props.class);
 </script>
 
 <div role="status" class={outDivclass}>
-	<div class="flex items-center space-x-2 w-full">
-		<div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-32" />
-		<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24" />
-		<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full" />
-	</div>
-	<div class="flex items-center space-x-2 w-11/12">
-		<div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full" />
-		<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full" />
-		<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24" />
-	</div>
-	<div class="flex items-center space-x-2 w-9/12">
-		<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full" />
-		<div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-80" />
-		<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full" />
-	</div>
-	<div class="flex items-center space-x-2 w-11/12">
-		<div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full" />
-		<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full" />
-		<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24" />
-	</div>
-	<div class="flex items-center space-x-2 w-10/12">
-		<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-32" />
-		<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24" />
-		<div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full" />
-	</div>
-	<div class="flex items-center space-x-2 w-8/12">
-		<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full" />
-		<div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-80" />
-		<div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full" />
-	</div>
-	<span class="sr-only">Loading...</span>
+  <div class="flex items-center space-x-2 w-full">
+    <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-32" />
+    <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24" />
+    <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full" />
+  </div>
+  <div class="flex items-center space-x-2 w-11/12">
+    <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full" />
+    <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full" />
+    <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24" />
+  </div>
+  <div class="flex items-center space-x-2 w-9/12">
+    <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full" />
+    <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-80" />
+    <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full" />
+  </div>
+  <div class="flex items-center space-x-2 w-11/12">
+    <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full" />
+    <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full" />
+    <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24" />
+  </div>
+  <div class="flex items-center space-x-2 w-10/12">
+    <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-32" />
+    <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24" />
+    <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full" />
+  </div>
+  <div class="flex items-center space-x-2 w-8/12">
+    <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full" />
+    <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-80" />
+    <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full" />
+  </div>
+  <span class="sr-only">Loading...</span>
 </div>
+
+<!--
+  @component
+  ## Features
+  [Go to Skeleton](https://flowbite-svelte.com/docs/components/skeleton)
+  ## Props
+  @prop divClass: string = 'space-y-2.5 animate-pulse';
+  @prop size: keyof Sizes = 'sm';  
+  ## Example
+  ```
+  <script>
+    import { TextPlaceholder } from 'flowbite-svelte'
+  </script>
+
+  <TextPlaceholder />
+  <TextPlaceholder size='md' class='mt-8'/>
+  <TextPlaceholder size='lg' class='mt-8'/>
+  <TextPlaceholder size='xl' class='mt-8'/>
+  <TextPlaceholder size='xxl' class='mt-8'/>
+  ```
+-->

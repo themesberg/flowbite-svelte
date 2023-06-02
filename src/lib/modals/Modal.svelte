@@ -6,7 +6,7 @@
   import focusTrap from '../utils/focusTrap';
   import type { SizeType } from '$lib/types';
   import type { ModalPlacementType } from '../types';
-  
+
   // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Frame> {
     open?: boolean;
@@ -25,6 +25,8 @@
     autoclose?: boolean;
     permanent?: boolean;
     backdropClasses?: string;
+    defaultClass?: string;
+    outsideclose?: boolean;
   }
 
   export let open: boolean = false;
@@ -35,6 +37,7 @@
   export let permanent: boolean = false;
   export let backdropClasses: string = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
   export let defaultClass: string = 'relative flex flex-col mx-auto';
+  export let outsideclose: boolean = false;
 
   const dispatch = createEventDispatcher();
   $: dispatch(open ? 'open' : 'hide');
@@ -93,7 +96,8 @@
 
   const onAutoClose = (e: MouseEvent) => {
     const target: Element = e.target as Element;
-    if (autoclose && target?.tagName === 'BUTTON') hide(e);
+    if (autoclose && target?.tagName === 'BUTTON') hide(e); // close on any button click
+    if (outsideclose && target === e.currentTarget) hide(e); // close on click outside
   };
 
   const hide = (e: Event) => {
@@ -102,18 +106,12 @@
   };
 
   let frameClass: string;
-  $: frameClass = classNames(defaultClass, $$props.class);
+  $: frameClass = classNames(defaultClass, 'w-full', $$props.class);
 
   const isScrollable = (e: HTMLElement): boolean[] => [
     e.scrollWidth > e.clientWidth && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowX) >= 0,
     e.scrollHeight > e.clientHeight && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowY) >= 0
   ];
-
-  function preventWheelDefault(e: Event) {
-    // @ts-ignore
-    const [x, y] = isScrollable(this);
-    return x || y || e.preventDefault();
-  }
 
   function handleKeys(e: KeyboardEvent) {
     if (e.key === 'Escape' && !permanent) return hide(e);
@@ -129,7 +127,7 @@
     on:wheel|preventDefault|nonpassive
     use:prepareFocus
     use:focusTrap
-    on:click={autoclose ? onAutoClose : null}
+    on:click={onAutoClose}
     class={classNames(
       'fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex',
       ...getPlacementClasses()
@@ -160,7 +158,6 @@
         {/if}
         <!-- Modal body -->
         <div
-          id="modal"
           class="p-6 space-y-6 flex-1 overflow-y-auto overscroll-contain"
           on:keydown|stopPropagation={handleKeys}
           on:wheel|stopPropagation|passive>
@@ -176,3 +173,50 @@
     </div>
   </div>
 {/if}
+
+<!--
+  @component
+  ## Features
+  [Go to Modal](https://flowbite-svelte.com/docs/components/modal)
+  - Setup
+  - Default modal
+  - Closing by clicking outside
+  - Pop-up modal
+  - Form element
+  - Crypto wallet
+  - Sizes
+  - Placement
+  - Colors
+  - Scrolling behaviour
+  ## Props
+  @prop open: boolean = false;
+  @prop title: string = '';
+  @prop size: SizeType = 'md';
+  @prop placement: ModalPlacementType = 'center';
+  @prop autoclose: boolean = false;
+  @prop permanent: boolean = false;
+  @prop backdropClasses: string = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
+  @prop defaultClass: string = 'relative flex flex-col mx-auto';
+  @prop outsideclose: boolean = false; 
+  ## Example
+  ```
+  <script>
+    import { Button, Modal } from 'flowbite-svelte'
+    let defaultModal = false;
+  </script>
+
+  <Button on:click={() => defaultModal = true}>Default modal</Button>
+  <Modal id="default-modal" title="Terms of Service" bind:open={defaultModal} autoclose>
+    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+      With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+    </p>
+    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+      The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+    </p>
+    <svelte:fragment slot='footer'>
+      <Button on:click={() => alert('Handle "success"')}>I accept</Button>
+      <Button color="alternative">Decline</Button>
+    </svelte:fragment>
+  </Modal>
+  ``` 
+-->

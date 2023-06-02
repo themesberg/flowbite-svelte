@@ -1,1 +1,6 @@
-{"props":[["color","ToolbarColorType","'dark'"],["embedded","boolean","false"]]}
+{
+  "props": [
+    ["color", "ToolbarColorType", "'dark'"],
+    ["embedded", "boolean", "false"]
+  ]
+}

@@ -15,8 +15,6 @@ thumnailSize: w-24
   import { props as items2 } from '../../props/Frame.json'
 </script>
 
-
-
 Flowbite-Svelte allows you to show extra information when hovering or focusing over an element in multiple positions, styles, and animations.
 
 ## Setup

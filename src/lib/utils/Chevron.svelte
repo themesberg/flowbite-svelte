@@ -30,3 +30,10 @@
     <svelte:component this={icon} class="h-4 w-4 ml-2" />
   {/if}
 </Wrapper>
+
+<!--
+  @component
+  ## Props  
+  @prop placement: Placement = 'bottom';
+  @prop aligned: boolean = false;
+-->

@@ -26,6 +26,7 @@ export { default as BreadcrumbItem } from './breadcrumbs/BreadcrumbItem.svelte';
 
 // Buttons
 export { default as Button } from './buttons/Button.svelte';
+export { default as GradientButton } from './buttons/GradientButton.svelte';
 
 // Buttongroups
 export { default as ButtonGroup } from './buttongroups/ButtonGroup.svelte';
@@ -42,6 +43,9 @@ export { default as DarkMode } from './darkmode/DarkMode.svelte';
 
 // Datepicker
 export { default as Datepicker } from './datepicker/Datepicker.svelte';
+
+// DeviceMockup
+export { default as DeviceMockup } from './device-mockup/DeviceMockup.svelte';
 
 // Drawer
 export { default as Drawer } from './drawer/Drawer.svelte';
@@ -125,6 +129,9 @@ export { default as AdvancedRating } from './ratings/AdvancedRating.svelte';
 export { default as ScoreRating } from './ratings/ScoreRating.svelte';
 export { default as RatingComment } from './ratings/RatingComment.svelte';
 export { default as Review } from './ratings/Review.svelte';
+export { default as Star } from './ratings/Star.svelte';
+export { default as Heart } from './ratings/Heart.svelte';
+export { default as Thumbup } from './ratings/Thumbup.svelte';
 
 // Sidebar
 export { default as Sidebar } from './sidebars/Sidebar.svelte';

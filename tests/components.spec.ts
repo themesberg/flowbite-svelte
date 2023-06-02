@@ -78,6 +78,12 @@ test('Datepicker page should have h1', async ({ page }) => {
   expect(await page.textContent('h1')).toBe('Svelte Datepicker - Flowbite');
 });
 
+// DeviceMockup
+test('DeviceMockup page should have h1', async ({ page }) => {
+  await page.goto('/docs/components/device-mockups');
+  expect(await page.textContent('h1')).toBe('Svelte Device Mockups - Flowbite');
+});
+
 // Dropdown
 test('Dropdown page should have h1', async ({ page }) => {
   await page.goto('/docs/components/dropdown');

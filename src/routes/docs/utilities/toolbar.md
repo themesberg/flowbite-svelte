@@ -15,8 +15,6 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
   import { props as items3 } from '../../props/ToolbarGroup.json'
 </script>
 
-
-
 ## Setup
 
 ```svelte example hideOutput

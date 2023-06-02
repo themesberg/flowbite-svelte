@@ -1,8 +1,8 @@
 {
-	"useTabs": false,
-	"singleQuote": true,
-	"trailingComma": "none",
-	"printWidth": 109,
-	"embeddedLanguageFormatting": "auto",
-	"bracketSameLine": true
+  "useTabs": false,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "printWidth": 109,
+  "embeddedLanguageFormatting": "auto",
+  "bracketSameLine": true
 }

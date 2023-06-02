@@ -22,7 +22,7 @@ for (const componentName of componentNames) {
 
     componentExports[exportKey] = {
       types: `./dist/${componentName}/${dtsFile}`,
-      svelte: `./dist/${componentName}/${svelteFile}`,
+      svelte: `./dist/${componentName}/${svelteFile}`
     };
   }
 }
@@ -31,7 +31,7 @@ const indexDtsPath = path.join(distDir, 'index.d.ts');
 if (fs.existsSync(indexDtsPath) && fs.lstatSync(indexDtsPath).isFile()) {
   componentExports['.'] = {
     types: './dist/index.d.ts',
-    svelte: './dist/index.js',
+    svelte: './dist/index.js'
   };
 }
 

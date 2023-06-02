@@ -1,0 +1,8 @@
+{
+  "props": [
+    ["tabletLeftTop", "string", ""],
+    ["tabletLeftMid", "string", ""],
+    ["tabletLeftBot", "string", ""],
+    ["tabletRight", "string", ""]
+  ]
+}

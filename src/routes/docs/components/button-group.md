@@ -15,8 +15,6 @@ description: Button groups are a Tailwind CSS powered set of buttons sticked tog
   const events = ["on:click","on:change","on:keydown","on:keyup","on:focus","on:blur","on:mouseenter","on:mouseleave"];
 </script>
 
-
-
 The button group component from Flowbite-Svelte can be used to stack together multiple buttons and links inside a single element.
 
 ## Setup
@@ -191,8 +189,6 @@ The component has the following props, type, and default values. See <A href="/d
 ## Forwarded Events
 
 <DocBadgeList items={events} />
-
-
 ## References
 
 <P>

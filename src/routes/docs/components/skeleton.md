@@ -21,8 +21,6 @@ thumnailSize: w-40
   import { props as items8 }  from '../../props/WidgetPlaceholder.json'
 </script>
 
-
-
 Use the skeleton component to indicate a loading status with placeholder elements that look very similar to the type of content that is being loaded such as paragraphs, images, videos, and more.
 
 ## Setup

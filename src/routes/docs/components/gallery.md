@@ -19,8 +19,6 @@ thumnailSize: w-64
   let slotItems = [['default', 'For a button label.']]
 </script>
 
-
-
 The gallery component can be used to show multiple images inside a masonry grid layout styles with the utility-first classes from Tailwind CSS to show a collection of pictures to your users based on various layouts, styles, sizes, and colors.
 
 This component is recommended for usage within marketing UI interfaces and website sections when you want to show pictures of your team members, office pictures, or even case study images.

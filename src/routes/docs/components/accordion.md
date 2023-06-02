@@ -22,8 +22,6 @@ description: Use the accordion component to show hidden information based on the
 
 </script>
 
-
-
 The accordion component is a collection of vertically collapsing header and body elements that can be used to show and hide information based on the Tailwind CSS utility classes and JavaScript from Flowbite.
 
 A popular use case would be the “Frequently Asked Questions” section of a website or page when you can show questions and answers for each child element.

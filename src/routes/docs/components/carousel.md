@@ -19,8 +19,6 @@ thumnailSize: w-48
   import { props as items6 } from '../../props/Thumbnail.json'
 </script>
 
-
-
 The carousel component can be used to cycle through a set of elements using custom options, controls, and indicators.
 
 ## Setup

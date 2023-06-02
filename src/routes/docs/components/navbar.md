@@ -22,8 +22,6 @@ description: The navbar component can be used to show a list of navigation links
   const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover"];
 </script>
 
-
-
 Get started with the responsive navbar component from Flowbite to quickly set up a navigation menu for your website and set up the logo, list of pages, CTA button, search input, user profile options with a dropdown, and more.
 
 ## Setup
@@ -46,7 +44,7 @@ Use this example of a navigation bar built with the utility classes from Tailwin
 <Navbar let:hidden let:toggle>
   <NavBrand href="/">
     <img
-      src="https://flowbite.com/docs/images/logo.svg"
+      src="/images/flowbite-svelte-icon-logo.svg"
       class="mr-3 h-6 sm:h-9"
       alt="Flowbite Logo"
     />
@@ -77,7 +75,7 @@ This example can be used to show a secondary dropdown menu when clicking on one 
 <Navbar let:hidden let:toggle>
   <NavBrand href="/">
     <img
-      src="https://flowbite.com/docs/images/logo.svg"
+      src="/images/flowbite-svelte-icon-logo.svg"
       class="mr-3 h-6 sm:h-9"
       alt="Flowbite Logo"
     />
@@ -115,7 +113,7 @@ Use this example of a navbar element to also show a search input element that yo
 <Navbar let:hidden let:toggle>
   <NavBrand href="/">
     <img
-      src="https://flowbite.com/docs/images/logo.svg"
+      src="/images/flowbite-svelte-icon-logo.svg"
       class="mr-3 h-6 sm:h-9"
       alt="Flowbite Logo"
     />
@@ -155,7 +153,7 @@ Use the following navbar element to show a call to action button alongside the l
 <Navbar let:hidden let:toggle>
   <NavBrand href="/">
     <img
-      src="https://flowbite.com/docs/images/logo.svg"
+      src="/images/flowbite-svelte-icon-logo.svg"
       class="mr-3 h-6 sm:h-9"
       alt="Flowbite Logo"
     />
@@ -193,7 +191,7 @@ Use this example to keep the navbar positioned fixed to the top side as you scro
     let:toggle
   >
     <NavBrand href="/">
-      <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
+      <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
       <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
     </NavBrand>
     <NavHamburger on:click={toggle} />
@@ -224,7 +222,7 @@ Use this example to create a navigation bar with a user profile or button to tog
 
 <Navbar let:hidden let:toggle>
   <NavBrand href="/">
-    <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
     <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
   </NavBrand>
   <div class="flex items-center md:order-2">
@@ -263,7 +261,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 <Navbar let:hidden let:toggle rounded color="form">
   <NavBrand href="/">
-    <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
     <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
   </NavBrand>
   <NavHamburger on:click={toggle} />
@@ -329,8 +327,6 @@ Use this example to show a solid background for the navbar component instead of 
 ### NavLi
 
 <DocBadgeList items={events} />
-
-
 ## References
 
 <P>

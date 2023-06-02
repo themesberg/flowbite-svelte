@@ -16,8 +16,6 @@ description: Get started with the CloseButton components to hide a target elemen
 	let theadClass = 'text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white';
 </script>
 
-
-
 ## CloseButton
 
 Use `CloseButton` component to close a component.

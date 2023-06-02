@@ -16,8 +16,6 @@ description: The Label components are used throughout the library and you can us
   let theadClass = 'text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white';
 </script>
 
-
-
 ## Label
 
 Use the `Label` component when you need to add a label.

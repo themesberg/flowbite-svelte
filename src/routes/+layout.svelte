@@ -10,16 +10,13 @@
   import GitHub from './utils/icons/GitHub.svelte';
   import YouTube from './utils/icons/YouTube.svelte';
   import ToolbarLink from './utils/ToolbarLink.svelte';
-  import type { LayoutData } from './$types';
   import NavSidebarHamburger from '$lib/navbar/NavSidebarHamburger.svelte';
   import AlgoliaSearch from './utils/AlgoliaSearch.svelte';
-
-  export let data: LayoutData;
 
   let isHomePage: boolean;
   $: isHomePage = $page.route.id === '/';
 
-  let version = data.package.version ?? 'N/A';
+  let version = import.meta.env.VITE_APP_VERSION;
 
   $: activeUrl = $page.url.pathname;
   let logo = '/images/flowbite-svelte-icon-logo.svg';
@@ -109,7 +106,7 @@
       <DocBadge
         large
         class="ml-2 xl:ml-6 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-800 dark:hover:text-white">
-        v{version} 
+        v{version}
       </DocBadge>
     </a>
 

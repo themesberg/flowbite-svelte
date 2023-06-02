@@ -15,8 +15,6 @@ description: Use the textarea component as a multi-line text field input and use
   const events = ["on:blur","on:change","on:click","on:focus","on:input","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover","on:paste"];
 </script>
 
-
-
 The textarea component is a multi-line text field input that can be used to receive longer chunks of text from the user in the form of a comment box, description field, and more.
 
 ## Setup

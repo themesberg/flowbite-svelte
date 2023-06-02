@@ -6,6 +6,10 @@
   const background = getContext('background');
 
   export let value: string = '';
+  export let wrappedClass: string =
+    'block w-full text-sm border-0 px-0 bg-inherit dark:bg-inherit focus:outline-none focus:ring-0';
+  export let unWrappedClass: string =
+    'p-2.5 text-sm focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500';
 
   let wrapped: boolean;
   $: wrapped = $$slots.header || $$slots.footer;
@@ -20,19 +24,7 @@
   );
 
   let textareaClass: string;
-  $: textareaClass = wrapped
-    ? classNames(
-        'block w-full',
-        'text-sm',
-        'border-0 px-0',
-        'bg-inherit dark:bg-inherit',
-        'focus:outline-none focus:ring-0'
-      )
-    : classNames(
-        wrapperClass,
-        'p-2.5 text-sm',
-        'focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-500 dark:focus:border-blue-500'
-      );
+  $: textareaClass = wrapped ? classNames(wrappedClass) : classNames(wrapperClass, unWrappedClass);
 
   const headerClass = (header: boolean) =>
     classNames(header ? 'border-b' : 'border-t', 'py-2 px-3 border-gray-200 dark:border-gray-600');
@@ -76,3 +68,41 @@
     </div>
   {/if}
 </Wrapper>
+
+<!--
+  @component
+  ## Feature
+  [Go to Textarea](https://flowbite-svelte.com/docs/forms/textarea)
+  - Setup
+  - Textarea example
+  - WYSIWYG Editor
+  - Comment box
+  - Chatroom input
+  ## Props
+  @prop value: string = '';
+  @prop wrappedClass: string = 'block w-full text-sm border-0 px-0 bg-inherit dark:bg-inherit focus:outline-none focus:ring-0';
+  @prop unWrappedClass: string = 'p-2.5 text-sm focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500';
+  ## Event
+  - on:blur
+  - on:change
+  - on:click
+  - on:contextmenu
+  - on:focus
+  - on:input
+  - on:keydown
+  - on:keypress
+  - on:keyup
+  - on:mouseenter
+  - on:mouseleave
+  - on:mouseover
+  - on:paste
+  ## Example
+  ```
+  <script>
+    import { Textarea, Label } from 'flowbite-svelte'
+  </script>
+
+  <Label for="textarea-id" class="mb-2">Your message</Label>
+  <Textarea id="textarea-id" placeholder="Your message" rows="4" name="message"/>
+  ```
+-->

@@ -20,8 +20,6 @@ thumnailSize: w-36
   let slotItems = [['default', 'For a button label.']]
 </script>
 
-
-
 Use these responsive card components to show data entries and information to your users in multiple forms and contexts such as for your blog, application, user profiles, and more.
 
 ## Set up

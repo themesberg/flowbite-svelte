@@ -17,8 +17,6 @@ description: Get started with the range component to receive a number from the u
   let minmaxValue=5
 </script>
 
-
-
 The range component can be used as an input field to get a number from the user based on your custom selection (ie. from 1 to 100) by using a sliding animation.
 
 ## Setup

@@ -1,0 +1,6 @@
+{
+  "props": [
+    ["smartRightTop", "string", ""],
+    ["smartRightBot", "string", ""]
+  ]
+}

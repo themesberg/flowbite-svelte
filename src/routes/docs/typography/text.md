@@ -22,8 +22,6 @@ thumnailSize: w-64
   const libFiles = { ...libFilesArray[0], ...libFilesArray[1] };
 </script>
 
-
-
 Get started with a collection of text customization examples to learn how to update the size, font weight, style, decoration and spacing of inline text elements.
 
 ## Font size

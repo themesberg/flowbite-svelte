@@ -15,8 +15,6 @@ thumnailSize: w-64
   import { props as items } from '../../props/Indicator.json'
 </script>
 
-
-
 The indicator component can be used as a small element positioned absolutely relative to another component such as a button or card and show a number count, account status (red for offline, green for online) and other useful information.
 
 ## Setup

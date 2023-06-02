@@ -18,8 +18,6 @@ thumnailSize: w-72
   const events = ["on:click","on:change","on:keydown","on:keyup","on:mouseenter","on:mouseleave","on:paste"];
 </script>
 
-
-
 The checkbox component can be used to receive one or more selected options from the user in the form of a square box available in multiple styles, sizes, colors, and variants.
 
 ## Setup
@@ -329,6 +327,4 @@ All attributes of the `input` element like: name, id, autofocus, etc, can be set
 </TableProp>
 
 ## Forwarded Events
-
-
 <DocBadgeList items={events} />

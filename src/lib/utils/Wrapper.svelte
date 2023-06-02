@@ -11,3 +11,11 @@
 {:else}
   <slot />
 {/if}
+
+<!--
+  @component
+  ## Props
+  @prop tag: string = 'div';
+  @prop show: boolean;
+  @prop use: Action = () => {};
+-->

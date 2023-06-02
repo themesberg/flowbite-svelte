@@ -18,6 +18,20 @@
   on:click
   width="{thumbWidth}%" />
 
+<!--
+  @component
+  ## Features
+  [Go to Carousel](https://flowbite-svelte.com/docs/components/carousel)
+  ## Props
+  @prop thumbImg: string = '';
+  @prop altTag: string = '';
+  @prop titleLink: string = '';
+  @prop id: number;
+  @prop thumbWidth: number;
+  @prop selected: boolean = false;
+
+-->
+
 <style>
   .active {
     opacity: 1;

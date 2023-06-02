@@ -1,6 +1,7 @@
 <script lang="ts">
   import Button from '../buttons/Button.svelte';
   import Star from './Star.svelte';
+  import Rating from './Rating.svelte';
   // default is floor
   export let ceil: boolean = false;
   export let helpfullink: string = '';
@@ -38,16 +39,11 @@
     </div>
   </div>
   <div class="flex items-center mb-1">
-    {#each Array(roundedRating) as _}
-      <slot name="ratingUp">
-        <Star variation="solid" size="24" class="text-yellow-300 dark:text-yellow-200" />
-      </slot>
-    {/each}
-    {#each Array(grayStars) as _}
-      <slot name="ratingDown">
-        <Star size="24" class="px-0.5 text-gray-300 dark:text-gray-500" />
-      </slot>
-    {/each}
+    <Rating total={comment.total} rating={comment.rating}>
+      <p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">
+        {comment.rating} out of {comment.total}
+      </p>
+    </Rating>
     {#if comment.heading}
       <h3 class="ml-2 text-sm font-semibold text-gray-900 dark:text-white">
         {comment.heading}
@@ -79,3 +75,50 @@
     {/if}
   </aside>
 </article>
+
+<!--
+  @component
+  ## Features
+  [Go to Rating](https://flowbite-svelte.com/docs/components/rating)
+  ## Props
+  @prop ceil: boolean = false;
+  @prop helpfullink: string = '';
+  @prop abuselink: string = '';
+  @prop comment: {
+    id: string;
+    user: {
+      name: string;
+      img: {
+        src: string;
+        alt: string;
+      };
+      joined: string;
+    };
+    total: number;
+    rating: number;
+    heading: string;
+    address: string;
+    datetime: string;
+  };
+  ## Example
+  ```
+  <script>
+    import { RatingComment } from 'flowbite-svelte';
+  </script>
+
+  <RatingComment {comment} helpfullink="/" abuselink="/">
+    <p class="mb-2 font-light text-gray-500 dark:text-gray-400">
+      This is my third Invicta Pro Diver. They are just fantastic value.
+    </p>
+    <p class="mb-3 font-light text-gray-500 dark:text-gray-400">
+      It is obviously not the same build quality as those very expensive watches.
+    </p>
+    <a
+      href="/"
+      class="block mb-5 text-sm font-medium text-blue-600 hover:underline dark:text-blue-500"
+      >Read more</a
+    >
+    <svelte:fragment slot="evaluation">19 people found this helpful</svelte:fragment>
+  </RatingComment>
+  ```
+-->

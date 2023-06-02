@@ -14,8 +14,6 @@ thumnailSize: w-64
   import { props as items1 } from '../../props/Hr.json'
 </script>
 
-
-
 The `Hr` component can be used to separate content using a horizontal line by adding space between elements based on multiple styles, variants, and layouts.
 
 ## Setup

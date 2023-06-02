@@ -22,3 +22,12 @@
     {/if}
   </svg>
 </ToolbarButton>
+
+<!--
+  @component
+  ## Props
+  @prop name: string | undefined = undefined;
+  @prop vertical: boolean = false;
+  ## Event
+  - on:click
+-->

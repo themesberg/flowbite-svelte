@@ -1,1 +1,10 @@
-{"props":[["color","'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink' | 'purple' | 'white' | undefined","'blue'"],["bg","string","'text-gray-300'"],["size","string","'8'"],["currentFill","string","'currentFill'"],["currentColor","string","'currentColor'"]]}
+{
+  "props": [
+    ["color", "string", ""],
+    ["bg", "string", "'text-gray-300'"],
+    ["customColor", "string", "''"],
+    ["size", "string", "'8'"],
+    ["currentFill", "string", "'currentFill'"],
+    ["currentColor", "string", "'currentColor'"]
+  ]
+}

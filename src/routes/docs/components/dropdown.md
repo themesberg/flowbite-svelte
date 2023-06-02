@@ -25,8 +25,6 @@ thumnailSize: w-28
   const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keyup","on:mouseenter","on:mouseleave"];
 </script>
 
-
-
 The dropdown component can be used to show a list of menu items when clicking on an element such as a button and hiding it when clicking outside of the triggering element.
 
 ## Setup
@@ -326,7 +324,7 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 
 <Navbar let:hidden let:toggle>
   <NavBrand href="/">
-    <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
     <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
   </NavBrand>
   <NavHamburger on:click={toggle} />

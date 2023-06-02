@@ -16,15 +16,33 @@
   );
 </script>
 
-<td {...$$restProps} class={tdClassfinal} 
-on:click
-on:focus
-on:keydown
-on:keypress
-on:keyup
-on:mouseenter
-on:mouseleave
-on:mouseover
->
+<td
+  {...$$restProps}
+  class={tdClassfinal}
+  on:click
+  on:focus
+  on:keydown
+  on:keypress
+  on:keyup
+  on:mouseenter
+  on:mouseleave
+  on:mouseover>
   <slot />
 </td>
+
+<!--
+  @component
+  ## Features
+  [Go to Table](https://flowbite-svelte.com/docs/components/table)
+  ## Props
+  @prop tdClass: string = 'px-6 py-4 whitespace-nowrap font-medium ';
+  ## Event
+  - on:click
+  - on:focus
+  - on:keydown
+  - on:keypress
+  - on:keyup
+  - on:mouseenter
+  - on:mouseleave
+  - on:mouseover
+-->

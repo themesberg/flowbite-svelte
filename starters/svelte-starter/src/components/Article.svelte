@@ -1,10 +1,10 @@
 <script>
-  import urlSlug from "url-slug";
-  import { pop } from "svelte-spa-router";
-  import { Button } from "flowbite-svelte";
-  import { format } from "timeago.js";
-  import { blogs } from "../data.js";
-  import NotFound from "../components/NotFound.svelte";
+  import urlSlug from 'url-slug';
+  import { pop } from 'svelte-spa-router';
+  import { Button } from 'flowbite-svelte';
+  import { format } from 'timeago.js';
+  import { blogs } from '../data.js';
+  import NotFound from '../components/NotFound.svelte';
   export let params = {};
   let article;
   blogs.forEach((blog, index) => {

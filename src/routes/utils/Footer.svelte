@@ -31,7 +31,10 @@
 
 <Footer footerType="custom" customClass="bg-white dark:bg-gray-900">
   <div class="flex flex-col py-6 lg:py-12 mx-auto max-w-8xl">
-    <div class="flex flex-col lg:flex-row items-start md:justify-between gap-8 {isHomePage ? 'px-4 lg:px-20' : ''}">
+    <div
+      class="flex flex-col lg:flex-row items-start md:justify-between gap-8 {isHomePage
+        ? 'px-4 lg:px-20'
+        : ''}">
       <div class="w-full max-w-sm">
         <FooterBrand
           href="https://flowbite-svelte.com"
@@ -48,13 +51,17 @@
           <a
             href="https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE"
             class="text-primary-600 hover:underline">
-            MIT</a>, docs
+            MIT</a
+          >, docs
           <a href="https://creativecommons.org/licenses/by/3.0/" class="text-primary-600 hover:underline"
             >CC BY 3.0</a
           >.
         </p>
       </div>
-      <div class="flex flex-col md:flex-row items-start {isHomePage ? 'gap-4 md:gap-16 lg:justify-end' : 'gap-8'}  w-full">
+      <div
+        class="flex flex-col md:flex-row items-start {isHomePage
+          ? 'gap-4 md:gap-16 lg:justify-end'
+          : 'gap-8'}  w-full">
         {#each Object.entries(footer_links) as [column, links]}
           <div>
             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{column}</h2>

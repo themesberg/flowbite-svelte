@@ -14,8 +14,6 @@ thumnailSize: w-48
   import { props as items } from '../../props/Progressbar.json'
 </script>
 
-
-
 The progress bar component can be used as an indicator to show the completion rate of data sets or it can be used as an animated loader component. There are multiple sizes, colors, and styles available.
 
 ## Setup
@@ -109,8 +107,8 @@ Use the `color` prop to change the color of a progress bar.
 </div>
 
 <div class="my-4">
-<div class="mb-1 text-base font-medium text-blue-700 dark:text-blue-500">Blue/Default</div>
-  <Progressbar progress="50" />
+<div class="mb-1 text-base font-medium text-blue-700 dark:text-blue-500">Blue</div>
+  <Progressbar progress="50" color="blue"/>
 </div>
 
 <div class="my-4">

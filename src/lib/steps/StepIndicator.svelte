@@ -3,13 +3,27 @@
 
   export let steps: string[] = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];
   export let currentStep = 1;
-
   export let size: string = 'h-2.5';
-  export let color: 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' = 'blue';
+  export let color:
+    | 'primary'
+    | 'secondary'
+    | 'gray'
+    | 'red'
+    | 'yellow'
+    | 'green'
+    | 'indigo'
+    | 'purple'
+    | 'pink'
+    | 'blue'
+    | 'custom' = 'primary';
   export let glow: boolean = false;
   export let hideLabel: boolean = false;
+  export let completedCustom: string = '';
+  export let currentCustom: string = '';
 
   const completedStepColors = {
+    primary: 'bg-primary-500 dark:bg-primary-900',
+    secondary: 'bg-secondary-500 dark:bg-secondary-900',
     gray: 'bg-gray-400 dark:bg-gray-500',
     red: 'bg-red-600 dark:bg-red-900',
     yellow: 'bg-yellow-400 dark:bg-yellow-600',
@@ -17,9 +31,12 @@
     indigo: 'bg-indigo-500 dark:bg-indigo-900',
     purple: 'bg-purple-500 dark:bg-purple-900',
     pink: 'bg-pink-500 dark:bg-pink-900',
-    blue: 'bg-blue-500 dark:bg-blue-900'
+    blue: 'bg-blue-500 dark:bg-blue-900',
+    custom: completedCustom
   };
   const currentStepColors = {
+    primary: 'bg-primary-800 dark:bg-primary-400',
+    secondary: 'bg-secondary-800 dark:bg-secondary-400',
     gray: 'bg-gray-700 dark:bg-gray-200',
     red: 'bg-red-900 dark:bg-red-500',
     yellow: 'bg-yellow-600 dark:bg-yellow-400',
@@ -27,7 +44,8 @@
     indigo: 'bg-indigo-800 dark:bg-indigo-400',
     purple: 'bg-purple-800 dark:bg-purple-400',
     pink: 'bg-pink-800 dark:bg-pink-400',
-    blue: 'bg-blue-800 dark:bg-blue-400'
+    blue: 'bg-blue-800 dark:bg-blue-400',
+    custom: currentCustom
   };
 </script>
 
@@ -39,11 +57,7 @@
     {#each steps as step, i}
       {#if i === currentStep - 1}
         <div class="relative w-full h-full">
-          <div
-            class={classNames(
-              'relative w-full h-full rounded-sm',
-              currentStepColors[color]
-            )} />
+          <div class={classNames('relative w-full h-full rounded-sm', currentStepColors[color])} />
           {#if glow}
             <div
               class={classNames(
@@ -60,3 +74,40 @@
     {/each}
   </div>
 </div>
+
+<!--
+  @component
+  ## Features
+  [Go to Step Indicator](https://flowbite-svelte.com/docs/extend/step-indicator)
+  - Setup
+  - Default step indicator
+  - Glow
+  - Hide label
+  - Sizes
+  - Colors
+  ## Props
+  @prop steps: string[] = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];
+  @prop currentStep = 1;
+  @prop size: string = 'h-2.5';
+  @prop color: 'primary'| 'secondary' |'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'custom' = 'primary';
+  @prop glow: boolean = false;
+  @prop hideLabel: boolean = false;
+  @prop completedCustom: string = '';
+  @prop currentCustom: string = '';
+  ## Example
+  ```
+  <script>
+    import { StepIndicator } from 'flowbite-svelte'
+    let currentStep = 2;
+    let steps = [
+      'Step 1',
+      'Step 2',
+      'Step 3',
+      'Step 4',
+      'Step 5'
+    ]
+  </script>
+
+  <StepIndicator {currentStep} {steps}/>
+  ```
+-->

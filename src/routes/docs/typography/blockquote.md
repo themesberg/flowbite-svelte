@@ -14,8 +14,6 @@ thumnailSize: w-64
   import { props as items1 } from '../../props/Blockquote.json'
 </script>
 
-
-
 Get started with Blockquote component when quoting external sources such as quotes inside an article, user reviews, and testimonials based on multiple examples of layouts, styles, and contexts.
 
 ## Default blockquote
