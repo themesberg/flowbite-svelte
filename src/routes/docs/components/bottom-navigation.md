@@ -294,7 +294,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 <Card padding="none" class="relative overflow-y-scroll bg-white border border-gray-100 rounded-lg dark:bg-gray-700 dark:border-gray-600 h-96">
   <Listgroup items={list} let:item class="border-0 dark:!bg-transparent">
     <a href="/" class="flex items-center justify-center w-full px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">
-      <Avatar src={item.img.src} alt={item.img.alt} class="flex-shrink-0"/>
+      <Avatar src={item.img.src} alt={item.img.alt} class="flex-shrink-0 mr-3"/>
         <div>
           <p class="text-sm text-gray-500 dark:text-gray-400">{@html item.comment}</p>
           <span class="text-xs text-primary-600 dark:text-primary-500">{@html item.message}</span>
