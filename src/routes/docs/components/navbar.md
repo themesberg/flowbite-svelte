@@ -327,6 +327,7 @@ Use this example to show a solid background for the navbar component instead of 
 ### NavLi
 
 <DocBadgeList items={events} />
+
 ## References
 
 <P>

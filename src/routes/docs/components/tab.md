@@ -270,6 +270,7 @@ To get a custom look and feel for the `Tabs` component, do not set `style` prop,
 ## Forwarded Events: TabItem
 
 <DocBadgeList items={events} />
+
 ## References
 
 <P>

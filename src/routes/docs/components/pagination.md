@@ -284,6 +284,7 @@ You can use the following code to show the number of data shown inside a table e
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">Pagination, PaginationItem</Heading>
 
 <DocBadgeList items={events} />
+
 ## References
 
 <P>

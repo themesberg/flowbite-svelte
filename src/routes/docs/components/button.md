@@ -301,6 +301,7 @@ Use `btnClass` to overwrite Button class.
 ## Forwarded Events
 
 <DocBadgeList items={events} />
+
 ## References
 
 <P>
