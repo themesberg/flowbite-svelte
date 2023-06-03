@@ -5,7 +5,7 @@
 
   const background = getContext('background');
 
-  export let value: string = '';
+  export let value: any = undefined;
   export let wrappedClass: string =
     'block w-full text-sm border-0 px-0 bg-inherit dark:bg-inherit focus:outline-none focus:ring-0';
   export let unWrappedClass: string =
