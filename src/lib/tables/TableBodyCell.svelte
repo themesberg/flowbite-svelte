@@ -16,19 +16,15 @@
   );
 </script>
 
-<td
+<svelte:element
+  this={$$props.onclick  ? 'button' : 'td'}
   {...$$restProps}
   class={tdClassfinal}
   on:click
-  on:focus
-  on:keydown
-  on:keypress
-  on:keyup
-  on:mouseenter
-  on:mouseleave
-  on:mouseover>
+  role={$$props.onclick ? "button" : undefined}
+>
   <slot />
-</td>
+</svelte:element>
 
 <!--
   @component
