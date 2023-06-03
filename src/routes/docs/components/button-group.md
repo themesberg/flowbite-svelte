@@ -44,7 +44,7 @@ Use the following code to stack together buttons into a single group.
 
 ```svelte example hideScript class="flex flex-col flex-wrap gap-4"
 <script>
-  import { ButtonGroup, Button } from 'flowbite-svelte';
+  import { ButtonGroup, Button, GradientButton } from 'flowbite-svelte';
 </script>
 <div class="text-gray-900 dark:text-gray-100">
   <div class="py-4">Pills</div>
@@ -67,15 +67,15 @@ Use the following code to stack together buttons into a single group.
   </ButtonGroup>
   <div class="py-4">Gradient with shadows</div>
   <ButtonGroup>
-    <Button gradient shadow="green" color="green">Profile</Button>
-    <Button gradient shadow="pink" color="pink">Settings</Button>
-    <Button gradient shadow="teal" color="teal">Messages</Button>
+    <GradientButton shadow="green" color="green">Profile</GradientButton>
+    <GradientButton shadow="pink" color="pink">Settings</GradientButton>
+    <GradientButton shadow="teal" color="teal">Messages</GradientButton>
   </ButtonGroup>
   <div class="py-4">Dualtone gradient</div>
   <ButtonGroup class="space-x-px">
-    <Button gradient color="purpleToBlue">Profile</Button>
-    <Button gradient color="cyanToBlue">Settings</Button>
-    <Button gradient color="greenToBlue">Messages</Button>
+    <GradientButton color="purpleToBlue">Profile</GradientButton>
+    <GradientButton color="cyanToBlue">Settings</GradientButton>
+    <GradientButton color="greenToBlue">Messages</GradientButton>
   </ButtonGroup>
 </div>
 ```
