@@ -2,6 +2,6 @@
   "props": [
     ["size", "FormSizeType", "'lg'"],
     ["placeholder", "string", "'Search'"],
-    ["value", "string | number", "''"]
+    ["value", "any", "undefined"]
   ]
 }

@@ -5,6 +5,7 @@
     ["strokeColor", "string", "'#00b500'"],
     ["size", "number", "24"],
     ["ariaLabel", "string", "'thumbup'"],
-    ["id", "string", "'thumbup'"]
+    ["id", "string", "'thumbup'"],
+    ["role", "string", "'img'"]
   ]
 }

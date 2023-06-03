@@ -3,6 +3,7 @@
     ["size", "string", "'24'"],
     ["color", "string", "'currentColor'"],
     ["variation", "'solid' | 'outline'", "'outline'"],
-    ["ariaLabel", "string", "'information circle'"]
+    ["ariaLabel", "string", "'information circle'"],
+    ["role", "string", "'img'"]
   ]
 }

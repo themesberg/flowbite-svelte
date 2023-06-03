@@ -1,6 +1,5 @@
 {
   "props": [
-    ["initialTheme", "string", "'light'"],
     [
       "btnClass",
       "string",

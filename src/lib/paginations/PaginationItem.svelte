@@ -23,6 +23,7 @@
   );
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <svelte:element
   this={href ? 'a' : 'button'}
   {href}

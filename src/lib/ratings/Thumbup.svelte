@@ -5,6 +5,7 @@
   export let size: number = 24;
   export let ariaLabel: string = 'thumbup';
   export let id: string = 'thumbup';
+  export let role = 'img';
 </script>
 
 <svg
@@ -14,6 +15,7 @@
   {...$$restProps}
   aria-label={ariaLabel}
   viewBox="0 0 24 24"
+  {role}
   stroke-width="1.5"
   stroke="currentColor"
   fill="none"

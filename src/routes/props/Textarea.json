@@ -1,6 +1,6 @@
 {
   "props": [
-    ["value", "string", "''"],
+    ["value", "any", "undefined"],
     [
       "wrappedClass",
       "string",
