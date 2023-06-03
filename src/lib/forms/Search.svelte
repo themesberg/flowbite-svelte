@@ -5,7 +5,7 @@
 
   export let size: FormSizeType = 'lg';
   export let placeholder: string = 'Search';
-  export let value: string | number = '';
+  export let value: any = undefined;
 
   const sizes = {
     sm: 'w-3.5 h-3.5',

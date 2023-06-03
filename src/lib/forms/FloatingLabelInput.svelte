@@ -8,7 +8,7 @@
   export let type: InputType = 'text';
   export let size: 'small' | 'default' = 'default';
   export let color: 'base' | 'green' | 'red' = 'base';
-  export let value: string = '';
+  export let value: any = undefined;
   export let label: string = '';
 
   const divClasses = {
