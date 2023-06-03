@@ -124,7 +124,6 @@
   <!-- dialog -->
   <div
     on:keydown={handleKeys}
-    role="dialog"
     on:wheel|preventDefault|nonpassive
     use:prepareFocus
     use:focusTrap

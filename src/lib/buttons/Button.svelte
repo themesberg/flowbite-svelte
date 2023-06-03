@@ -128,7 +128,6 @@
   on:keyup
   on:mouseenter
   on:mouseleave
-  role={href ? undefined : "button"}
   >
   <slot />
 </svelte:element>
