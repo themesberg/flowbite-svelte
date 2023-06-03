@@ -115,6 +115,7 @@
       );
 </script>
 
+<!-- You don’t need to add the link role because it’s already semantically implied by the anchor tag therefore using undefined -->
 <svelte:element
   this={href ? 'a' : 'button'}
   type={href ? undefined : type}
@@ -126,7 +127,9 @@
   on:keydown
   on:keyup
   on:mouseenter
-  on:mouseleave>
+  on:mouseleave
+  role={href ? undefined : "button"}
+  >
   <slot />
 </svelte:element>
 
