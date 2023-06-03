@@ -115,7 +115,7 @@
       );
 </script>
 
-<!-- You don’t need to add the link role because it’s already semantically implied by the anchor tag therefore using undefined -->
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <svelte:element
   this={href ? 'a' : 'button'}
   type={href ? undefined : type}
