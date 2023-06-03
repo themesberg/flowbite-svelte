@@ -62,7 +62,6 @@
   };
 
   const goToSlide = (number: number) => (imageShowingIndex = number);
-  let thumbWidth = 100 / images.length;
 
   if (loop) {
     setInterval(() => {
@@ -155,7 +154,6 @@
   <div class="flex flex-row justify-center bg-gray-100">
     {#each images as { id, imgurl, name, attribution }}
       <Thumbnail
-        {thumbWidth}
         thumbImg={imgurl}
         altTag={name}
         titleLink={attribution}
