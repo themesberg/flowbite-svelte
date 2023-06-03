@@ -25,6 +25,8 @@
 
 <svg
   xmlns="http://www.w3.org/2000/svg"
+  role="button"
+  tabindex="0"
   width={size}
   height={size}
   class={$$props.class}
