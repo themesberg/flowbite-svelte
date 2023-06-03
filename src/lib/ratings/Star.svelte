@@ -7,6 +7,7 @@
   export let size: number = 24;
   export let ariaLabel: string = 'star';
   export let id: string = generateId();
+  export let role = 'img';
 </script>
 
 <svg
@@ -16,6 +17,7 @@
   {...$$restProps}
   aria-label={ariaLabel}
   viewBox="100 100 120 120"
+  {role}
   on:click>
   <defs>
     <linearGradient {id}>

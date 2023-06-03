@@ -3,6 +3,7 @@
   export let color = 'currentColor';
   export let variation: 'solid' | 'outline' = 'outline';
   export let ariaLabel = 'user circle';
+  export let role = 'img';
 
   let viewBox: string;
   let svgpath: string;
@@ -32,6 +33,7 @@
   aria-label={ariaLabel}
   fill="none"
   {viewBox}
+  {role}
   stroke-width="2"
   on:click>
   {@html svgpath}
