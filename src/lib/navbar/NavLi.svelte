@@ -21,7 +21,7 @@
 <li>
   <svelte:element
     this={href ? 'a' : 'div'}
-    role={href ? undefined : "link"}
+    role={href ? undefined : 'link'}
     {href}
     {...$$restProps}
     on:blur

@@ -4,7 +4,7 @@
     ["altTag", "string", "''"],
     ["titleLink", "string", "''"],
     ["id", "number", ""],
-    ["thumbWidth", "number", ""],
+    ["thumbWidth", "number", "100"],
     ["selected", "boolean", "false"]
   ]
 }

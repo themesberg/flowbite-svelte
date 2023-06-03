@@ -127,8 +127,7 @@
   on:keydown
   on:keyup
   on:mouseenter
-  on:mouseleave
-  >
+  on:mouseleave>
   <slot />
 </svelte:element>
 

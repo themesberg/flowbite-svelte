@@ -17,12 +17,11 @@
 </script>
 
 <svelte:element
-  this={$$props.onclick  ? 'button' : 'td'}
+  this={$$props.onclick ? 'button' : 'td'}
   {...$$restProps}
   class={tdClassfinal}
   on:click
-  role={$$props.onclick ? "button" : undefined}
->
+  role={$$props.onclick ? 'button' : undefined}>
   <slot />
 </svelte:element>
 

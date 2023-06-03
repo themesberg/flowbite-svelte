@@ -1,7 +1,7 @@
 {
   "props": [
     ["type", "InputType", "'text'"],
-    ["value", "any", "''"],
+    ["value", "any", "undefined"],
     ["size", "FormSizeType | undefined", "undefined"],
     ["defaultClass", "string", "'block w-full disabled:cursor-not-allowed disabled:opacity-50'"],
     ["color", "'base' | 'green' | 'red'", "'base'"]

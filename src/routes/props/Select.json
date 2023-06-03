@@ -1,7 +1,7 @@
 {
   "props": [
     ["items", "SelectOptionType[]", "[]"],
-    ["value", "string | number", ""],
+    ["value", "any", "undefined"],
     ["placeholder", "string", "'Choose option ...'"],
     ["underline", "boolean", "false"],
     ["size", "'sm' | 'md' | 'lg'", "'md'"],

@@ -15,8 +15,9 @@
     }
   }
 </script>
+
 <button
-class={classNames(defaultClass, $$props.class)}
+  class={classNames(defaultClass, $$props.class)}
   on:keydown={keydown}
   on:focus
   on:blur
@@ -28,17 +29,16 @@ class={classNames(defaultClass, $$props.class)}
   on:dragover
   on:drop>
   <label tabIndex="0">
-  <slot />
-  <input
-  {...$$restProps}
-  bind:value
-  bind:files
-  bind:this={input}
-  on:change
-  on:click
-  type="file"
-  class="hidden"
- />
+    <slot />
+    <input
+      {...$$restProps}
+      bind:value
+      bind:files
+      bind:this={input}
+      on:change
+      on:click
+      type="file"
+      class="hidden" />
   </label>
 </button>
 

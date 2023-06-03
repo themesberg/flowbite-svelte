@@ -5,6 +5,7 @@
     ["strokeColor", "string", "'#F5CA14'"],
     ["size", "number", "24"],
     ["ariaLabel", "string", "'star'"],
-    ["id", "string", "generateId()"]
+    ["id", "string", "generateId()"],
+    ["role", "string", "'img'"]
   ]
 }
