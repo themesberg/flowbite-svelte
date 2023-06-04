@@ -1,6 +1,10 @@
 {
   "props": [
     ["dismissable", "boolean", "false"],
-    ["accent", "boolean", "false"]
+    ["accent", "boolean", "false"],
+    ["contentPosClass", "string", "'flex items-center'"],
+    ["closeBtnClass", "string", "'-mx-1.5 -my-1.5'"],
+    ["borderTopClass", "string", "'border-t-4'"],
+    ["defaultTextClass", "string", "'p-4 text-sm'"]
   ]
 }

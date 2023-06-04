@@ -6,6 +6,10 @@
 
   export let dismissable: boolean = false;
   export let accent: boolean = false;
+  export let contentPosClass: string = 'flex items-center';
+  export let closeBtnClass: string = '-mx-1.5 -my-1.5';
+  export let borderTopClass: string = 'border-t-4';
+  export let defaultTextClass: string = 'p-4 text-sm';
 
   const dispatch = createEventDispatcher();
 
@@ -22,7 +26,7 @@
   };
 
   let divClass: string;
-  $: divClass = classNames('p-4 text-sm', accent && 'border-t-4 ', hidden && 'hidden', $$props.class);
+  $: divClass = classNames(defaultTextClass, accent && borderTopClass, hidden && 'hidden', $$props.class);
 
   $: {
     // set default values
@@ -32,7 +36,7 @@
 </script>
 
 <Frame {...$$restProps} class={divClass} role="alert">
-  <div class="flex items-center">
+  <div class={contentPosClass}>
     {#if $$slots.icon}
       <slot name="icon" />
     {/if}
@@ -42,7 +46,7 @@
 
     {#if dismissable}
       <CloseButton
-        class="-mx-1.5 -my-1.5"
+        class={closeBtnClass}
         color={$$restProps.color}
         on:click={handleHide}
         on:click
