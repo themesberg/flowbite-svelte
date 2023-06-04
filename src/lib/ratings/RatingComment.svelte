@@ -68,7 +68,7 @@
         {#if abuselink}
           <a
             href={abuselink}
-            class="pl-4 text-sm font-medium text-blue-600 hover:underline dark:text-blue-500"
+            class="pl-4 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
             >Report abuse</a>
         {/if}
       </div>
@@ -115,7 +115,7 @@
     </p>
     <a
       href="/"
-      class="block mb-5 text-sm font-medium text-blue-600 hover:underline dark:text-blue-500"
+      class="block mb-5 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
       >Read more</a
     >
     <svelte:fragment slot="evaluation">19 people found this helpful</svelte:fragment>
