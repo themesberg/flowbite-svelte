@@ -36,6 +36,7 @@ Use this example to create a simple indicator with multiple colors and position 
 
 <Indicator color="gray"/>
 <Indicator color="dark"/>
+<Indicator color="orange"/>
 <Indicator color="blue"/>
 <Indicator color="green"/>
 <Indicator color="red"/>
@@ -54,7 +55,7 @@ This example can be used as a legend indicator for charts to also add a text nex
   import { Indicator } from 'flowbite-svelte'
 </script>
 
-<span class="flex items-center"><Indicator size="sm" color="blue" class="mr-1.5"/>Visitors</span>
+<span class="flex items-center"><Indicator size="sm" color="orange" class="mr-1.5"/>Visitors</span>
 <span class="flex items-center"><Indicator size="sm" color="purple" class="mr-1.5"/>Sessions</span>
 <span class="flex items-center"><Indicator size="sm" color="indigo" class="mr-1.5"/>Customers</span>
 <span class="flex items-center"><Indicator size="sm" color="teal" class="mr-1.5"/>Revenue</span>
@@ -146,8 +147,8 @@ You can also use the indicators inside of a stepper component when completing a 
 <ol class="flex items-center">
     <li class="relative w-full mb-6">
         <div class="flex items-center">
-            <Indicator size="xl" color="none" class="bg-blue-200 dark:bg-blue-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
-                <svg aria-hidden="true" class="w-4 h-4 text-blue-600 dark:text-blue-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            <Indicator size="xl" color="none" class="bg-primary-200 dark:bg-primary-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
+                <svg aria-hidden="true" class="w-4 h-4 text-primary-600 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
             </Indicator>
             <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
         </div>
@@ -157,8 +158,8 @@ You can also use the indicators inside of a stepper component when completing a 
     </li>
     <li class="relative w-full mb-6">
         <div class="flex items-center">
-            <Indicator size="xl" color="none" class="bg-blue-200 dark:bg-blue-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
-                <svg aria-hidden="true" class="w-4 h-4 text-blue-600 dark:text-blue-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            <Indicator size="xl" color="none" class="bg-primary-200 dark:bg-primary-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
+                <svg aria-hidden="true" class="w-4 h-4 text-primary-600 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
             </Indicator>
             <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
         </div>
@@ -168,8 +169,8 @@ You can also use the indicators inside of a stepper component when completing a 
     </li>
     <li class="relative w-full mb-6">
         <div class="flex items-center">
-            <Indicator size="xl" color="none" class="bg-blue-200 dark:bg-blue-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
-                <svg aria-hidden="true" class="w-4 h-4 text-blue-600 dark:text-blue-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            <Indicator size="xl" color="none" class="bg-primary-200 dark:bg-primary-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
+                <svg aria-hidden="true" class="w-4 h-4 text-primary-600 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
             </Indicator>
             <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
         </div>
@@ -191,8 +192,8 @@ You can also use the indicators inside of a stepper component when completing a 
 <ol class="flex items-center">
     <li class="relative w-full mb-6">
         <div class="flex items-center">
-            <Indicator size="xl" color="none" class="bg-blue-200 dark:bg-blue-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
-                <Indicator color="blue"/>
+            <Indicator size="xl" color="none" class="bg-primary-200 dark:bg-primary-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
+                <Indicator color="orange"/>
             </Indicator>
             <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
         </div>
@@ -202,8 +203,8 @@ You can also use the indicators inside of a stepper component when completing a 
     </li>
     <li class="relative w-full mb-6">
         <div class="flex items-center">
-            <Indicator size="xl" color="none" class="bg-blue-200 dark:bg-blue-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
-                <Indicator color="blue"/>
+            <Indicator size="xl" color="none" class="bg-primary-200 dark:bg-primary-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
+                <Indicator color="orange"/>
             </Indicator>
             <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
         </div>
@@ -213,8 +214,8 @@ You can also use the indicators inside of a stepper component when completing a 
     </li>
     <li class="relative w-full mb-6">
         <div class="flex items-center">
-            <Indicator size="xl" color="none" class="bg-blue-200 dark:bg-blue-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
-                <Indicator color="blue"/>
+            <Indicator size="xl" color="none" class="bg-primary-200 dark:bg-primary-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
+                <Indicator color="orange"/>
             </Indicator>
             <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
         </div>
@@ -247,7 +248,7 @@ Use these examples to position the indicator component anywhere relative to the 
 <div class="w-56 h-56 relative bg-gray-100 borer border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700" >
     <Indicator placement="top-left" color="gray"/>
     <Indicator placement="top-center" color="dark"/>
-    <Indicator placement="top-right" color="blue"/>
+    <Indicator placement="top-right" color="orange"/>
     <Indicator placement="center-left" color="green"/>
     <Indicator placement="center" color="red"/>
     <Indicator placement="center-right" color="purple"/>
