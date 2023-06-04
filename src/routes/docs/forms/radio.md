@@ -300,3 +300,7 @@ All attributes of the `input` element like: name, id, autofocus, etc, can be set
 ## Forwarded Events
 
 <DocBadgeList items={events} />
+
+## References
+
+- [Flowbite Radio](https://flowbite.com/docs/forms/radio/)

@@ -150,7 +150,4 @@ The component inherits the following props, type, and default values from `Frame
 
 ## References
 
-<P>
-  <A href="https://flowbite.com/docs/components/tooltips/" class="link"
-    >Flowbite Tooltip</A>
-</P>
+- [Flowbite Tooltip](https://flowbite.com/docs/components/tooltips/)

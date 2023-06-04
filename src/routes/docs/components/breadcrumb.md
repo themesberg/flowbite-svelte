@@ -108,8 +108,4 @@ The component has the following props, type, and default values. See <A href="/d
 
 ## References
 
-<P>
-  <A href="https://flowbite.com/docs/components/breadcrumb/" class="link"
-    >Flowbite Breadcrumb</A
-  >
-</P>
+- [Flowbite Breadcrumb](https://flowbite.com/docs/components/breadcrumb/)

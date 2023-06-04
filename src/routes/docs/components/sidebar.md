@@ -582,8 +582,4 @@ The component has the following props, type, and default values. See <A href="/d
 
 ## References
 
-<P>
-  <A href="https://flowbite.com/docs/components/sidebar/" class="link"
-    >Flowbite Sidebar</A
-  >
-</P>
+- [Flowbite Sidebar](https://flowbite.com/docs/components/sidebar/)

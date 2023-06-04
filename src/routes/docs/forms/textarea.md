@@ -134,3 +134,6 @@ The component has the following props, type, and default values. See <A href="/d
 
 <DocBadgeList items={events} />
 
+## References
+
+- [Flowbite Textarea](https://flowbite.com/docs/forms/textarea/)

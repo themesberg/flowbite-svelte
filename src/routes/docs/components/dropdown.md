@@ -673,8 +673,4 @@ Therefore you can catch standard events on it like `on:click`.
 
 ## References
 
-<P>
-  <A href="https://flowbite.com/docs/components/dropdowns/" class="link"
-    >Flowbite Dropdown</A
-  >
-</P>
+- [Flowbite Dropdown](https://flowbite.com/docs/components/drawer/)

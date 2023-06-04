@@ -373,6 +373,4 @@ The component inherits the following props, type, and default values from `Frame
 
 ## References
 
-<P>
-  <A href="https://flowbite.com/docs/components/popover/" class="link">Flowbite Popover</A>
-</P>
+- [Flowbite Popover](https://flowbite.com/docs/components/popover/)

@@ -154,3 +154,7 @@ The component has the following props, type, and default values. See <A href="/d
 ## Forwarded Events
 
 <DocBadgeList items={events} />
+
+## References
+
+- [Flowbite Floating Label](https://flowbite.com/docs/forms/floating-label/)

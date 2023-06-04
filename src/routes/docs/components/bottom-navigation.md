@@ -351,8 +351,4 @@ The component has the following props, type, and default values. See <A href="/d
 
 ## References
 
-<P>
-  <A href="https://flowbite.com/docs/components/banner/" class="link">
-  Flowbite Banner
-  </A>
-</P>
+- [Flowbite Bottom Navigation](https://flowbite.com/docs/components/bottom-navigation/)

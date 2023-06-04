@@ -327,8 +327,4 @@ The component inherits the following props, type, and default values from `Frame
 
 ## References
 
-<P>
-  <A href="https://flowbite.com/docs/components/alerts/" class="link">
-  Flowbite Alerts
-  </A>
-</P>
+- [Flowbite Alerts](https://flowbite.com/docs/components/alerts/)

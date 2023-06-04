@@ -287,8 +287,4 @@ You can use the following code to show the number of data shown inside a table e
 
 ## References
 
-<P>
-  <A href="https://flowbite.com/docs/components/pagination/" class="link"
-    >Flowbite Pagination</A
-  >
-</P>
+- [Flowbite Pagination](https://flowbite.com/docs/components/pagination/)

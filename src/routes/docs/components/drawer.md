@@ -698,8 +698,4 @@ The component has the following props, type, and default values. See <A href="/d
 
 ## References
 
-<P>
-  <A href="https://flowbite.com/docs/components/drawer/" class="link"
-    >Flowbite drawer</A
-  >
-</P>
+- [Flowbite Drawer](https://flowbite.com/docs/components/drawer/)

@@ -285,10 +285,4 @@ The component has the following props, type, and default values. See <A href="/d
 
 ## References
 
-## References
-
-<P>
-  <A href="https://flowbite.com/docs/components/forms/" class="link"
-    >Flowbite Forms</A
-  >
-</P>
+- [Flowbite Forms](https://flowbite.com/docs/components/forms/)

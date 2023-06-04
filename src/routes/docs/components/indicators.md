@@ -271,7 +271,4 @@ Use these examples to position the indicator component anywhere relative to the 
 
 ## References
 
-<P>
-  <A href="https://flowbite.com/docs/components/inidicators/" class="link"
-    >Flowbite Indicator</A>
-</P>
+- [Flowbite Indicators](https://flowbite.com/docs/components/indicators/)

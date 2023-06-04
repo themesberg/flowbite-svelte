@@ -330,8 +330,4 @@ Use this example to show a solid background for the navbar component instead of 
 
 ## References
 
-<P>
-  <A href="https://flowbite.com/docs/components/navbar/" class="link"
-    >Flowbite Navbar</A
-  >
-</P>
+- [Flowbite Navbar](https://flowbite.com/docs/components/navbar/)

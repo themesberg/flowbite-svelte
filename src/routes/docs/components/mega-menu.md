@@ -258,8 +258,4 @@ This example can be used to also show a CTA with a backdround image inside the d
 
 ## References
 
-<P>
-  <A href="https://flowbite.com/docs/components/mega-menu/" class="link"
-    >Flowbite Mega Menu</A
-  >
-</P>
+- [Flowbite Mega Menu](https://flowbite.com/docs/components/list-group/)
