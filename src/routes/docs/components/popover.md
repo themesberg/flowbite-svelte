@@ -62,7 +62,7 @@ Use this example to show more information about a user profile when hovering ove
     <div class="mb-3 text-sm font-normal">
       <a href="/" class="hover:underline">@jeseleos</a>
     </div>
-    <div class="mb-4 text-sm font-light">Open-source contributor. Building <a href="/" class="text-blue-600 dark:text-blue-500 hover:underline">flowbite.com</a>.</div>
+    <div class="mb-4 text-sm font-light">Open-source contributor. Building <a href="/" class="text-primary-600 dark:text-primary-500 hover:underline">flowbite.com</a>.</div>
     <ul class="flex text-sm font-light">
       <li class="mr-2">
           <a href="/" class="hover:underline">
@@ -107,7 +107,7 @@ This example can be used to show more information about a company profile.
       <ul class="text-sm font-light">
         <li class="flex items-center mb-2">
             <svg class="w-4 h-4 mr-1 font-semibold text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.766 3.556h3.936c-.093-1.414-.377-2.649-.766-3.556-.24-.56-.5-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.971 5c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9h-1.946zm-2.003 2H8.032c.093 1.414.377 2.649.766 3.556.24.56.5.948.737 1.182.233.23.389.262.465.262.076 0 .232-.032.465-.262.238-.234.498-.623.737-1.182.389-.907.673-2.142.766-3.556zm1.166 4.118c.454-1.147.748-2.572.837-4.118h1.946a6.004 6.004 0 01-2.783 4.118zm-6.268 0C6.412 13.97 6.118 12.546 6.03 11H4.083a6.004 6.004 0 002.783 4.118z" clip-rule="evenodd"></path></svg>
-            <a href="/" class="text-blue-600 dark:text-blue-500 hover:underline">https://flowbite.com/</a>
+            <a href="/" class="text-primary-600 dark:text-primary-500 hover:underline">https://flowbite.com/</a>
         </li>
         <li class="flex items-start mb-2">
             <svg class="mr-1 w-6 font-semibold text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
@@ -143,14 +143,14 @@ Use this example to trigger a popover component with detailed information and an
   import { Popover } from 'flowbite-svelte'
 </script>
 
-<p class="font-light text-gray-500 dark:text-gray-400">Due to its central geographic location in Southern Europe, <a href="/" class="text-blue-600 underline dark:text-blue-500 hover:no-underline" id="popover-image">Italy</a> has historically been home to myriad peoples and cultures. In addition to the various ancient peoples dispersed throughout what is now modern-day Italy, the most predominant being the Indo-European Italic peoples who gave the peninsula its name, beginning from the classical era, Phoenicians and Carthaginians founded colonies mostly in insular Italy</p>
+<p class="font-light text-gray-500 dark:text-gray-400">Due to its central geographic location in Southern Europe, <a href="/" class="text-primary-600 underline dark:text-primary-500 hover:no-underline" id="popover-image">Italy</a> has historically been home to myriad peoples and cultures. In addition to the various ancient peoples dispersed throughout what is now modern-day Italy, the most predominant being the Indo-European Italic peoples who gave the peninsula its name, beginning from the classical era, Phoenicians and Carthaginians founded colonies mostly in insular Italy</p>
 <Popover triggeredBy="#popover-image" class="w-96 text-sm font-light" defaultClass="">
   <div class="grid grid-cols-5">
     <div class="col-span-3 p-3">
       <div class="space-y-2">
         <h3 class="font-semibold text-gray-900 dark:text-white">About Italy<h3>
         <p class="text-gray-500 dark:text-gray-500">Italy is located in the middle of the Mediterranean Sea, in Southern Europe it is also considered part of Western Europe. A unitary parliamentary republic with Rome as its capital and largest city.</p>
-        <a href="/" class="flex items-center font-medium text-blue-600 dark:text-blue-500 dark:hover:text-blue-600 hover:text-blue-700">Read more <svg class="ml-1 w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></a>
+        <a href="/" class="flex items-center font-medium text-primary-600 dark:text-primary-500 dark:hover:text-primary-600 hover:text-primary-700">Read more <svg class="ml-1 w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></a>
       </div>
     </div>
     <img src="/images/italy.png" class="col-span-2 h-full rounded-r-lg" alt="Italy map" />
@@ -178,7 +178,7 @@ Show helpful information inside a popover when hovering over a question mark but
       Report helps navigate cumulative growth of community activities. Ideally, the chart should have a growing trend.
       <h3 class="font-semibold text-gray-900 dark:text-white">Calculation</h3>
       For each date bucket, the all-time volume of activities is calculated. This means that activities in period n contain all activities up to period n.
-      <a href="/" class="flex items-center font-medium text-blue-600 dark:text-blue-500 dark:hover:text-blue-600 hover:text-blue-700">Read more <ChevronRight size="12" /></a>
+      <a href="/" class="flex items-center font-medium text-primary-600 dark:text-primary-500 dark:hover:text-primary-600 hover:text-primary-700">Read more <ChevronRight size="12" /></a>
   </div>
 </Popover>
 ```
@@ -200,7 +200,7 @@ Show a progress bar with details inside a popover when hovering over a settings 
     <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
         <div class="bg-red-600 h-2.5 rounded-full" style="width: 85%"></div>
     </div>
-    <a href="/" class="flex items-center font-medium text-blue-600 dark:text-blue-500 dark:hover:text-blue-600 hover:text-blue-700">
+    <a href="/" class="flex items-center font-medium text-primary-600 dark:text-primary-500 dark:hover:text-primary-600 hover:text-primary-700">
       Upgrade now <ChevronRight size="12" variation="solid"/>
     </a>
   </div>
