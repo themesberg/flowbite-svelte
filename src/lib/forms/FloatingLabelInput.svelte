@@ -66,13 +66,13 @@
   };
 
   const inputColorClasses = {
-    base: 'border-gray-300 dark:border-gray-600 dark:focus:border-blue-500 focus:border-blue-600',
+    base: 'border-gray-300 dark:border-gray-600 dark:focus:border-primary-500 focus:border-primary-600',
     green: 'border-green-600 dark:border-green-500 dark:focus:border-green-500 focus:border-green-600',
     red: 'border-red-600 dark:border-red-500 dark:focus:border-red-500  focus:border-red-600'
   };
 
   const labelColorClasses = {
-    base: 'text-gray-500 dark:text-gray-400 peer-focus:text-blue-600 peer-focus:dark:text-blue-500',
+    base: 'text-gray-500 dark:text-gray-400 peer-focus:text-primary-600 peer-focus:dark:text-primary-500',
     green: 'text-green-600 dark:text-green-500',
     red: 'text-red-600 dark:text-red-500'
   };
