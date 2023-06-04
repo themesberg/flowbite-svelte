@@ -96,7 +96,7 @@ Use this example if you want to add an anchor link inside the label of the radio
   import { Radio } from 'flowbite-svelte'
 </script>
 
-<Radio name="with-link">I agree with the <a href="/" class="text-blue-600 dark:text-blue-500 hover:underline ml-1">terms and conditions</a>.</Radio>
+<Radio name="with-link">I agree with the <a href="/" class="text-primary-600 dark:text-primary-500 hover:underline ml-1">terms and conditions</a>.</Radio>
 ```
 
 ## Helper text
@@ -258,7 +258,7 @@ Use this example of an advanced layout of radio elements where the label parent 
 <p class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Choose technology:</p>
 <div class="grid gap-6 w-full md:grid-cols-2">
   <Radio name="custom" custom>
-    <div class="inline-flex justify-between items-center p-5 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <div class="inline-flex justify-between items-center p-5 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-primary-500 peer-checked:border-primary-600 peer-checked:text-primary-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
       <div>
         <div class="w-full text-lg font-semibold">0-50 MB</div>
         <div class="w-full">Good for small websites</div>
@@ -267,7 +267,7 @@ Use this example of an advanced layout of radio elements where the label parent 
     </div>
   </Radio>
   <Radio name="custom" custom>
-    <div for="hosting-big" class="inline-flex justify-between items-center p-5 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <div for="hosting-big" class="inline-flex justify-between items-center p-5 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-primary-500 peer-checked:border-primary-600 peer-checked:text-primary-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
         <div class="block">
           <div class="w-full text-lg font-semibold">500-1000 MB</div>
           <div class="w-full">Good for large websites</div>
