@@ -131,11 +131,11 @@ Use this modal example with form input element to receive information from your 
     </Label>
     <div class="flex items-start">
         <Checkbox>Remember me</Checkbox>
-        <a href="/" class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500">Lost password?</a>
+        <a href="/" class="ml-auto text-sm text-primary-700 hover:underline dark:text-primary-500">Lost password?</a>
     </div>
     <Button type="submit" class="w-full1">Login to your account</Button>
       <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-        Not registered? <a href="/" class="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
+        Not registered? <a href="/" class="text-primary-700 hover:underline dark:text-primary-500">Create account</a>
       </div>
   </form>
 </Modal>
