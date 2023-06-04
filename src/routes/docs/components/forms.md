@@ -11,7 +11,7 @@ thumnailSize: w-40
 <script>
   import { TableProp, TableDefaultRow, } from '../../utils'
 
-  import { A, Heading } from '$lib'
+  import { P, A, Heading } from '$lib'
   import { props as items } from '../../props/Input.json'
   import { props as items2 } from '../../props/Label.json'
   import { props as items3 } from '../../props/Helper.json'
