@@ -161,7 +161,7 @@ Use the slot name `header` to insert your elements before the inner div.
 ## References
 
 <P>
-  <A href="https://flowbite.com/docs/components/banner/" target="_blank" rel="noreferrer" class="link">
+  <A href="https://flowbite.com/docs/components/banner/" class="link">
   Flowbite Banner
   </A>
 </P>

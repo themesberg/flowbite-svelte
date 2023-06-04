@@ -274,6 +274,6 @@ To get a custom look and feel for the `Tabs` component, do not set `style` prop,
 ## References
 
 <P>
-  <A href="https://flowbite.com/docs/components/tabs/" target="_blank" rel="noreferrer" class="link"
+  <A href="https://flowbite.com/docs/components/tabs/" class="link"
     >Flowbite Tabs</A>
 </P>

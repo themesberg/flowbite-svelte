@@ -300,7 +300,7 @@ The carousel component can be used to cycle through a set of elements using cust
 ## References
 
 <P>
-  <A href="https://flowbite.com/docs/components/carousel/" target="_blank" rel="noreferrer" class="link"
+  <A href="https://flowbite.com/docs/components/carousel/" class="link"
     >Flowbite carousel</A
   >
 </P>

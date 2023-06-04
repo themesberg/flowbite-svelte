@@ -373,6 +373,6 @@ You can use five different modal sizing options starting from extra small to ext
 ## References
 
 <P>
-  <A href="https://flowbite.com/docs/components/modal/" target="_blank" rel="noreferrer" class="link"
+  <A href="https://flowbite.com/docs/components/modal/" class="link"
     >Flowbite Modal</A>
 </P>

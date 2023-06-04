@@ -276,4 +276,4 @@ The component has the following props, type, and default values. See <A href="/d
 
 ## References
 
-<P><A href="https://flowbite.com/docs/components/accordion/" target="_blank" rel="noreferrer" class="link">Flowbite Accordion</A></P>
+<P><A href="https://flowbite.com/docs/components/accordion/" class="link">Flowbite Accordion</A></P>

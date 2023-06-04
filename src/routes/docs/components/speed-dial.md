@@ -499,6 +499,6 @@ The default trigger type is hover for each speed dial component.
 ## References
 
 <P>
-  <A href="https://flowbite.com/docs/components/speed-dial/" target="_blank" rel="noreferrer" class="link"
+  <A href="https://flowbite.com/docs/components/speed-dial/" class="link"
     >Flowbite Speed Dial</A>
 </P>

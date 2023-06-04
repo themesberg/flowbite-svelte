@@ -955,7 +955,7 @@ The component has the following props, type, and default values. See <A href="/d
 ## References
 
 <P>
-  <A href="https://flowbite.com/docs/components/tables/" target="_blank" rel="noreferrer" class="link"
+  <A href="https://flowbite.com/docs/components/tables/" class="link"
     >Flowbite Tables</A
   >
 </P>
