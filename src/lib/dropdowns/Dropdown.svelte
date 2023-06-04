@@ -4,9 +4,9 @@
 
   export let open: boolean = false;
   export let frameClass: string = '';
-  export let headerClass: string = 'py-1 overflow-hidden rounded-t';
+  export let headerClass: string = 'py-1 overflow-hidden rounded-t-lg';
   export let ulClass: string = 'py-1 w-44';
-  export let footerClass: string = 'py-1 overflow-hidden rounded-b';
+  export let footerClass: string = 'py-1 overflow-hidden rounded-b-lg';
 
   $: {
     // set default values
@@ -19,7 +19,7 @@
   }
 
   let popoverClass: string;
-  $: popoverClass = classNames('divide-y divide-gray-100 dark:divide-gray-600', frameClass);
+  $: popoverClass = classNames('divide-y divide-gray-100 dark:divide-gray-600 rounded-lg', frameClass);
 </script>
 
 <Popper activeContent {...$$restProps} class={popoverClass} on:show bind:open>
@@ -69,9 +69,9 @@
   ## Props
   @prop open: boolean = false;
   @prop frameClass: string = '';
-  @prop headerClass: string = 'py-1 overflow-hidden rounded-t';
+  @prop headerClass: string = 'py-1 overflow-hidden rounded-t-lg';
   @prop ulClass: string = 'py-1 w-44';
-  @prop footerClass: string = 'py-1 overflow-hidden rounded-b';
+  @prop footerClass: string = 'py-1 overflow-hidden rounded-b-lg';
   ## Example
   ```
   <script>
