@@ -12,7 +12,7 @@
   import type { InputType } from '../types';
 
   export let type: InputType = 'text';
-  export let value: any = '';
+  export let value: any = undefined;
   export let size: FormSizeType | undefined = undefined;
   export let defaultClass: string = 'block w-full disabled:cursor-not-allowed disabled:opacity-50';
   export let color: 'base' | 'green' | 'red' = 'base';

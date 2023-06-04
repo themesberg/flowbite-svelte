@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.37.4](https://github.com/themesberg/flowbite-svelte/compare/v0.37.3...v0.37.4) (2023-06-03)
+
+
+### Features
+
+* add || ^4.0.0 to peerDependencies ([1211eb8](https://github.com/themesberg/flowbite-svelte/commit/1211eb83cc7f54570363300f744c16bd41962460))
+* add button to Thumbnail and move the on:click event listener to button ([c9119c7](https://github.com/themesberg/flowbite-svelte/commit/c9119c7bcf772215b63f546761f28f6fd2a271ef))
+* add role to ChevronLeft ([0fc996e](https://github.com/themesberg/flowbite-svelte/commit/0fc996e9414471366fc7d18315434b6e4778aa85))
+* add role to DropdownItem ([663ee33](https://github.com/themesberg/flowbite-svelte/commit/663ee3369b69fd7557963da10be2a8dac1ae2aed))
+* add role to Menu compo ([7a76025](https://github.com/themesberg/flowbite-svelte/commit/7a760257a43fb0e0638f00531813fdb84f0f36db))
+* add role to Modal ([ea79fff](https://github.com/themesberg/flowbite-svelte/commit/ea79fffea37ea32681a42afeb1dd500207953335))
+* add role to NavUl and NavLi ([08732dd](https://github.com/themesberg/flowbite-svelte/commit/08732dda1247ce68f2218a9e742ecc6e54f28f68))
+* add role to Star, Button, Heart, Thumbup, ChevronDown, CehvronRight, ChevronUp, InformationCirlc, and UserCircle components ([82337b2](https://github.com/themesberg/flowbite-svelte/commit/82337b2aac57730046a08a42f4272b8b82c22552))
+* add role to TableBodyCell and change td to svelte:element ([67de66c](https://github.com/themesberg/flowbite-svelte/commit/67de66c010567cccb4a4e9781ab71c23e9b72021))
+* update Dropzone and docs ([2467d22](https://github.com/themesberg/flowbite-svelte/commit/2467d222b7c172a8985ad6c8b6d683564ec07dc5))
+
+
+### Bug Fixes
+
+* [#774](https://github.com/themesberg/flowbite-svelte/issues/774) ([#822](https://github.com/themesberg/flowbite-svelte/issues/822)) ([b1bca6b](https://github.com/themesberg/flowbite-svelte/commit/b1bca6b6483bf9e345ef3a60fa5f9d545ee77527))
+* [#818](https://github.com/themesberg/flowbite-svelte/issues/818) ([#821](https://github.com/themesberg/flowbite-svelte/issues/821)) ([4050456](https://github.com/themesberg/flowbite-svelte/commit/4050456f270abb335b96b5cf65a0ea7eed200fdd))
+* add auto-install-peers=true to .npmrc ([fd439d0](https://github.com/themesberg/flowbite-svelte/commit/fd439d0613ec2a39e747936cf1bd9f557e2cb093))
+* add svelte-ignore a11y-click-events ([b021c83](https://github.com/themesberg/flowbite-svelte/commit/b021c839282c9f1ab7f25418de1e1cedeb9ef433))
+* add svelte-ignore a11y-click-events to Button compo ([1c960ee](https://github.com/themesberg/flowbite-svelte/commit/1c960ee7bbbdf4750bc784e5dd10117b85f54156))
+* github workflow comment out pnpm cache ([5284b8c](https://github.com/themesberg/flowbite-svelte/commit/5284b8c3c1b43b7f7d28f0800dc2cddcc0ff9d9c))
+* Modal and Button compo ([5f3128a](https://github.com/themesberg/flowbite-svelte/commit/5f3128aaf26f7383ec32135411ea1607a566d114))
+* reinstall after removing lock file ([45ef63c](https://github.com/themesberg/flowbite-svelte/commit/45ef63cc25129c62c6b78477a563a111d1745f32))
+
 ### [0.37.3](https://github.com/themesberg/flowbite-svelte/compare/v0.37.2...v0.37.3) (2023-06-01)
 
 

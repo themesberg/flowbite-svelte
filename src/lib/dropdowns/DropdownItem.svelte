@@ -28,7 +28,8 @@
     on:focus
     on:blur
     on:mouseenter
-    on:mouseleave>
+    on:mouseleave
+    role={href ? undefined : 'button'}>
     <slot />
   </svelte:element>
 </Wrapper>

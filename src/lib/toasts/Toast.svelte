@@ -18,15 +18,24 @@
   }
 
   export let simple: boolean = false;
-  export let color: 'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'orange' | 'none' =
-    'blue';
+  export let color:
+    | 'primary'
+    | 'gray'
+    | 'red'
+    | 'yellow'
+    | 'green'
+    | 'blue'
+    | 'indigo'
+    | 'purple'
+    | 'orange'
+    | 'none' = 'primary';
   export let position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none' = 'none';
   export let open: boolean = true;
   export let divClass: string =
-    'w-full max-w-xs p-4 text-gray-500 bg-white shadow dark:text-gray-400 dark:bg-gray-800';
-  export let defaultIconClass: string = 'inline-flex items-center justify-center flex-shrink-0 w-8 h-8';
-  export let extraIconClass: string = '';
-  export let contentClass: string = 'text-sm font-normal';
+    'w-full max-w-xs p-4 text-gray-500 bg-white shadow dark:text-gray-400 dark:bg-gray-800 gap-3';
+  export let defaultIconClass: string = 'w-8 h-8';
+  export let contentClass: string = 'w-full text-sm font-normal';
+  export let align: boolean = true;
 
   const positions = {
     'top-left': 'absolute top-5 left-5',
@@ -39,15 +48,15 @@
   let finalDivClass: string;
   $: finalDivClass = classNames(
     'flex',
-    $$slots.extra ? 'items-start' : 'items-center',
-    simple && 'space-x space-x-4 divide-x divide-gray-200 dark:divide-gray-700',
+    align ? 'items-center' : 'items-start',
     divClass,
     positions[position],
     $$props.class
   );
 
-  const colorPalette = {
-    gray: 'text-gray-500 bg-gray-100 dark:bg-gray-800 dark:text-gray-200',
+  const colors = {
+    primary: 'text-primary-500 bg-primary-100 dark:bg-primary-800 dark:text-primary-200',
+    gray: 'text-gray-500 bg-gray-100 dark:bg-gray-700 dark:text-gray-200',
     red: 'text-red-500 bg-red-100 dark:bg-red-800 dark:text-red-200',
     yellow: 'text-yellow-500 bg-yellow-100 dark:bg-yellow-800 dark:text-yellow-200',
     green: 'text-green-500 bg-green-100 dark:bg-green-800 dark:text-green-200',
@@ -59,29 +68,26 @@
   };
 
   let iconClass: string;
-  $: iconClass = classNames(defaultIconClass, colorPalette[color], extraIconClass);
-
-  $: finalContentClass = classNames($$slots.icon && (simple ? 'pl-4' : 'ml-3'), contentClass);
+  $: iconClass = classNames(
+    'inline-flex items-center justify-center shrink-0',
+    colors[color],
+    defaultIconClass
+  );
 
   const clsBtnExtraClass =
-    '-mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 focus:!ring-gray-300 hover:bg-gray-100 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700';
+    '-mx-1.5 -my-1.5 text-gray-400 hover:text-gray-900 focus:!ring-gray-300 hover:bg-gray-100 dark:text-gray-500 dark:hover:text-white dark:hover:bg-gray-700';
 </script>
 
 {#if open}
   <Frame rounded transition={fade} color="none" {...$$restProps} class={finalDivClass} role="alert">
     {#if $$slots.icon}
-      {#if simple}
+      <Frame rounded color="none" class={iconClass}>
         <slot name="icon" />
-      {:else}
-        <Frame rounded color="none" class={iconClass}>
-          <slot name="icon" />
-        </Frame>
-      {/if}
+      </Frame>
     {/if}
 
-    <div class={finalContentClass}>
+    <div class={contentClass}>
       <slot />
-      <slot name="extra" />
     </div>
 
     {#if !simple}
@@ -104,7 +110,7 @@
   - Blur examples
   - Fly examples
   - Undo button
-  - Extra content
+  - Advanced examples
   - Toast message
   - Push notification
   - Interactive toast

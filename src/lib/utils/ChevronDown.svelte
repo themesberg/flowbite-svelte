@@ -3,6 +3,8 @@
   export let color = 'currentColor';
   export let variation: 'solid' | 'outline' = 'outline';
   export let ariaLabel = 'chevron down';
+  export let role = 'img';
+
   let viewBox: string;
   let svgpath: string;
   let svgoutline = `<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" stroke="${color}"></path>`;
@@ -31,6 +33,7 @@
   aria-label={ariaLabel}
   fill="none"
   {viewBox}
+  {role}
   stroke-width="2"
   on:click>
   {@html svgpath}

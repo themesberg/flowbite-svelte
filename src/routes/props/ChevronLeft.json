@@ -3,6 +3,7 @@
     ["size", "string", "'20'"],
     ["color", "string", "'currentColor'"],
     ["variation", "'solid' | 'outline'", "'outline'"],
-    ["ariaLabel", "string", "'chevron left'"]
+    ["ariaLabel", "string", "'chevron left'"],
+    ["role", "string", "'img'"]
   ]
 }

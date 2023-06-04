@@ -3,20 +3,21 @@
   export let altTag: string = '';
   export let titleLink: string = '';
   export let id: number;
-  export let thumbWidth: number;
+  export let thumbWidth: number = 100;
   export let selected: boolean = false;
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<img
-  class="opacity-40"
-  class:active={selected}
-  id={id.toString()}
-  src={thumbImg}
-  alt={altTag}
-  title="Image from {titleLink}"
-  on:click
-  width="{thumbWidth}%" />
+<button on:click aria-label="Click to view image">
+  <img
+    class="opacity-40"
+    class:active={selected}
+    id={id.toString()}
+    src={thumbImg}
+    alt={altTag}
+    title="Image from {titleLink}"
+    width="{thumbWidth}%" />
+</button>
 
 <!--
   @component

@@ -5,7 +5,7 @@
     ["type", "InputType", "'text'"],
     ["size", "'small' | 'default'", "'default'"],
     ["color", "'base' | 'green' | 'red'", "'base'"],
-    ["value", "string", "''"],
+    ["value", "any", "undefined"],
     ["label", "string", "''"]
   ]
 }
