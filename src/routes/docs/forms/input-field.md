@@ -76,7 +76,7 @@ Use this example as a generic form element which includes multiple input fields 
     <Label for="confirm_password" class="mb-2">Confirm password</Label>
     <Input type="password" id="confirm_password" placeholder="•••••••••" required />
   </div>
-  <Checkbox class="mb-6 space-x-1" required>I agree with the <A href="/">terms and conditions</A>.</Checkbox>
+  <Checkbox class="mb-6 space-x-1" required>I agree with the <A href="/" class="text-primary-700 dark:text-primary-600 hover:underline">terms and conditions</A>.</Checkbox>
   <Button type="submit">Submit</Button>
 </form>
 ```
@@ -212,7 +212,7 @@ This example can be used to add a descriptive icon or additional text inside the
   <ButtonGroup class="w-full">
     <InputAddon>@</InputAddon>
     <Input id="input-addon" type="email" placeholder="elonmusk" />
-    <Button color="blue">Search</Button>
+    <Button color="primary">Search</Button>
   </ButtonGroup>
 </div>
 
@@ -220,12 +220,12 @@ This example can be used to add a descriptive icon or additional text inside the
   <Label for="input-addon" class="mb-2">Crazy example</Label>
   <ButtonGroup class="w-full">
     <InputAddon><Checkbox /></InputAddon>
-    <Button color="blue">Search</Button>
+    <Button color="primary">Search</Button>
     <InputAddon>http://</InputAddon>
     <Input id="input-addon" type="email" placeholder="elonmusk" />
     <InputAddon>@</InputAddon>
     <InputAddon><Checkbox /></InputAddon>
-    <Button color="red">Send</Button>
+    <Button color="blue">Send</Button>
     <InputAddon>kg</InputAddon>
   </ButtonGroup>
 </div>
@@ -284,7 +284,7 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
 <Label class="block space-y-2">
   <span>Your email</span>
   <Input label="Email" id="email" name="email" required placeholder="name@flowbite.com" />
-  <Helper class="text-sm">We’ll never share your details. Read our <a href="/" class="font-medium text-blue-600 hover:underline dark:text-blue-500">Privacy Policy</a>.</Helper>
+  <Helper class="text-sm">We’ll never share your details. Read our <a href="/" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Privacy Policy</a>.</Helper>
 </Label>
 ```
 
@@ -343,7 +343,7 @@ Use this example to show a dropdown menu right next to the input field.
     <DropdownItem>Finance</DropdownItem>
   </Dropdown>
   <Input placeholder="Search" />
-  <Button color="blue" class="!p-2.5" type="submit">
+  <Button color="primary" class="!p-2.5" type="submit">
     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
   </Button>
 </ButtonGroup>
