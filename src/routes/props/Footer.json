@@ -1,6 +1,14 @@
 {
   "props": [
     ["customClass", "string", "''"],
-    ["footerType", "'custom' | 'sitemap' | 'default' | 'logo' | 'socialmedia'", "'default'"]
+    ["footerType", "'custom' | 'sitemap' | 'default' | 'logo' | 'socialmedia'", "'default'"],
+    ["sitemapClass", "string", "'bg-gray-800'"],
+    ["socialmediaClass", "string", "'p-4 bg-white sm:p-6 dark:bg-gray-800'"],
+    ["logoClass", "string", "'p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-800'"],
+    [
+      "defaultFooterClass",
+      "string",
+      "'p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800'"
+    ]
   ]
 }

@@ -5,6 +5,8 @@
     ["dismissable", "boolean", "true"],
     ["bannerType", "'default' | 'bottom' | 'cta' | 'signup' | 'info' | 'custom'", "'default'"],
     ["divDefault", "string", "'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600'"],
-    ["insideDiv", "string", "'flex'"]
+    ["insideDiv", "string", "'flex'"],
+    ["closeBtnClass", "string", "'flex items-center'"],
+    ["closeBtnMargins", "string", "'-mx-1.5 -my-1.5'"]
   ]
 }

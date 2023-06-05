@@ -15,6 +15,7 @@
     'hover:bg-gray-100 hover:text-primary-700 dark:hover:bg-gray-600 dark:hover:text-white';
   export let itemDefaultClass: string =
     'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg';
+  export let btnCntClass: string = 'inline-flex relative items-center text-left';
 
   const states = {
     current: currentClass,
@@ -60,7 +61,7 @@
 {:else}
   <button
     type="button"
-    class="inline-flex relative items-center text-left {itemClass}"
+    class="{btnCntClass} {itemClass}"
     {disabled}
     on:blur
     on:change

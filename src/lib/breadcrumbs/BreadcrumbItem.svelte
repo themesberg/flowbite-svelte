@@ -6,9 +6,10 @@
   export let spanClass: string = 'ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400';
   export let homeClass: string =
     'inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white';
+  export let itemsDefaultPos: string = 'inline-flex items-center';
 </script>
 
-<li class="inline-flex items-center" {...$$restProps}>
+<li class={itemsDefaultPos} {...$$restProps}>
   {#if home}
     <a class={homeClass} {href}>
       {#if $$slots.icon}

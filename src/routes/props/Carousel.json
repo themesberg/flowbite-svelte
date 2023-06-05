@@ -11,6 +11,22 @@
     ["indicatorDivClass", "string", "'flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2'"],
     ["captionClass", "string", "'h-10 bg-gray-300 dark:bg-gray-700 dark:text-white p-2 my-2 text-center'"],
     ["indicatorClass", "string", "'w-3 h-3 rounded-full bg-gray-100 hover:bg-gray-300 opacity-60'"],
-    ["slideClass", "string", "''"]
+    ["slideClass", "string", "''"],
+    [
+      "sliderLeftBtnClass",
+      "string",
+      "'flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none'"
+    ],
+    [
+      "sliderRightBtnClass",
+      "string",
+      "'flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none'"
+    ],
+    [
+      "sliderArrowClass",
+      "string",
+      "'inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none'"
+    ],
+    ["thumbnailDefaultClass", "string", "'flex flex-row justify-center bg-gray-100'"]
   ]
 }

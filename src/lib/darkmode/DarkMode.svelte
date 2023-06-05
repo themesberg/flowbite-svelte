@@ -4,6 +4,8 @@
   export let btnClass: string =
     'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5';
   export let size: 'sm' | 'md' | 'lg' = 'md';
+  export let darkBtnHideClass: string = 'hidden dark:block';
+  export let lightBtnHideClass: string = 'block dark:hidden';
 
   const sizes = {
     sm: 'w-4 h-4',
@@ -32,7 +34,7 @@
   type="button"
   {...$$restProps}
   class={classNames(btnClass, $$props.class)}>
-  <span class="hidden dark:block">
+  <span class={darkBtnHideClass}>
     <slot name="lightIcon">
       <svg class={sizes[size]} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -43,7 +45,7 @@
       </svg>
     </slot>
   </span>
-  <span class="block dark:hidden">
+  <span class={lightBtnHideClass}>
     <slot name="darkIcon">
       <svg class={sizes[size]} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
         <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />

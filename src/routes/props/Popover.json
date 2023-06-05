@@ -1,6 +1,12 @@
 {
   "props": [
     ["title", "string", "''"],
-    ["defaultClass", "string", "'py-2 px-3'"]
+    ["defaultClass", "string", "'py-2 px-3'"],
+    [
+      "titleCntClass",
+      "string",
+      "'py-2 px-3 bg-gray-100 rounded-t-lg border-b border-gray-200 dark:border-gray-600 dark:bg-gray-700'"
+    ],
+    ["titleTextClass", "string", "'font-semibold text-gray-900 dark:text-white'"]
   ]
 }

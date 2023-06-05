@@ -5,12 +5,13 @@
   export let id: number;
   export let thumbWidth: number = 100;
   export let selected: boolean = false;
+  export let thumbImgOpacity: string = 'opacity-40';
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <button on:click aria-label="Click to view image">
   <img
-    class="opacity-40"
+    class={thumbImgOpacity}
     class:active={selected}
     id={id.toString()}
     src={thumbImg}

@@ -1,6 +1,7 @@
 {
   "props": [
     ["caption", "string", "''"],
-    ["captionClass", "string", "''"]
+    ["captionClass", "string", "''"],
+    ["captionTextClass", "string", "'text-gray-900 dark:text-white'"]
   ]
 }

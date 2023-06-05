@@ -3,17 +3,21 @@
   export let customClass: string = '';
   export let footerType: 'custom' | 'sitemap' | 'default' | 'logo' | 'socialmedia' = 'default';
   // using classNames dynamic class names, https://github.com/JedWatson/classnames#dynamic-class-names-with-es2015
+  export let sitemapClass: string = 'bg-gray-800';
+  export let socialmediaClass: string = 'p-4 bg-white sm:p-6 dark:bg-gray-800';
+  export let logoClass: string = 'p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-800';
+  export let defaultFooterClass: string =
+    'p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800';
 </script>
 
 <footer
   {...$$restProps}
   class={classNames(
     {
-      'bg-gray-800': footerType === 'sitemap',
-      'p-4 bg-white sm:p-6 dark:bg-gray-800': footerType === 'socialmedia',
-      'p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-800': footerType === 'logo',
-      'p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800':
-        footerType === 'default',
+      [`${sitemapClass}`]: footerType === 'sitemap',
+      [`${socialmediaClass}`]: footerType === 'socialmedia',
+      [`${logoClass}`]: footerType === 'logo',
+      [`${defaultFooterClass}`]: footerType === 'default',
       [`${customClass}`]: footerType === 'custom'
     },
     $$props.class

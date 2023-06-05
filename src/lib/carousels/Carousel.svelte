@@ -21,6 +21,15 @@
   export let indicatorClass: string = 'w-3 h-3 rounded-full bg-gray-100 hover:bg-gray-300 opacity-60';
   // Slide
   export let slideClass: string = '';
+  // Slider Button
+  export let sliderLeftBtnClass: string =
+    'flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none';
+  export let sliderRightBtnClass: string =
+    'flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none';
+  export let sliderArrowClass: string =
+    'inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none';
+  // Thumbnail
+  export let thumbnailDefaultClass: string = 'flex flex-row justify-center bg-gray-100';
 
   let imageShowingIndex: number = 0;
   $: image = images[imageShowingIndex];
@@ -68,13 +77,8 @@
   {/if}
   {#if slideControls}
     <!-- Slider controls -->
-    <button
-      on:click={prevSlide}
-      type="button"
-      class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
-      data-carousel-prev>
-      <span
-        class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+    <button on:click={prevSlide} type="button" class={sliderLeftBtnClass} data-carousel-prev>
+      <span class={sliderArrowClass}>
         {#if $$slots.previous}
           <slot name="previous" />
         {:else}
@@ -94,13 +98,8 @@
         <span class="hidden">Previous</span>
       </span>
     </button>
-    <button
-      on:click={nextSlide}
-      type="button"
-      class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
-      data-carousel-next>
-      <span
-        class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+    <button on:click={nextSlide} type="button" class={sliderRightBtnClass} data-carousel-next>
+      <span class={sliderArrowClass}>
         {#if $$slots.next}
           <slot name="next" />
         {:else}
@@ -124,7 +123,7 @@
 {/if}
 
 {#if showThumbs}
-  <div class="flex flex-row justify-center bg-gray-100">
+  <div class={thumbnailDefaultClass}>
     {#each images as { id, imgurl, name, attribution }}
       <Thumbnail
         thumbImg={imgurl}

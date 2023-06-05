@@ -8,6 +8,8 @@
   export let bannerType: 'default' | 'bottom' | 'cta' | 'signup' | 'info' | 'custom' = 'default';
   export let divDefault: string = 'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600';
   export let insideDiv: string = 'flex';
+  export let closeBtnClass: string = 'flex items-center';
+  export let closeBtnMargins: string = '-mx-1.5 -my-1.5';
 
   const divClasses = {
     default: 'top-0 left-0 w-full border-b border-gray-200 bg-gray-50',
@@ -42,9 +44,9 @@
       <slot />
     </div>
     {#if dismissable}
-      <div class="flex items-center">
+      <div class={closeBtnClass}>
         <CloseButton
-          class="-mx-1.5 -my-1.5"
+          class={closeBtnMargins}
           color={$$restProps.color}
           on:click={handleHide}
           on:click

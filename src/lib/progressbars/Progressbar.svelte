@@ -9,6 +9,11 @@
     'primary';
   export let labelInsideClass: string =
     'text-blue-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
+  export let labelCntClass: string = 'flex justify-between mb-1';
+  export let labelOutsideClass: string = 'text-base font-medium text-blue-700 dark:text-white';
+  export let progressLabelClass: string = 'text-sm font-medium text-blue-700 dark:text-white';
+  export let progressBgClass: string = 'w-full bg-gray-200 rounded-full dark:bg-gray-700';
+  export let progressRoundClass: string = 'rounded-full';
 
   // let barColor: string;
   const barColors = {
@@ -24,18 +29,18 @@
 </script>
 
 {#if labelOutside}
-  <div {...$$restProps} class={classNames('flex justify-between mb-1', $$props.class)}>
-    <span class="text-base font-medium text-blue-700 dark:text-white">{labelOutside}</span>
-    <span class="text-sm font-medium text-blue-700 dark:text-white">{progress}%</span>
+  <div {...$$restProps} class={classNames(labelCntClass, $$props.class)}>
+    <span class={labelOutsideClass}>{labelOutside}</span>
+    <span class={progressLabelClass}>{progress}%</span>
   </div>
 {/if}
-<div class={classNames('w-full bg-gray-200 rounded-full dark:bg-gray-700', size, $$props.class)}>
+<div class={classNames(progressBgClass, size, $$props.class)}>
   {#if labelInside}
     <div class={classNames(labelInsideClass, barColors[color])} style="width: {progress}%">
       {progress}%
     </div>
   {:else}
-    <div class={classNames(barColors[color], size, 'rounded-full')} style="width: {progress}%" />
+    <div class={classNames(barColors[color], size, progressRoundClass)} style="width: {progress}%" />
   {/if}
 </div>
 

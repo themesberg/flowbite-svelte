@@ -12,6 +12,7 @@
   export let dot: object | undefined = undefined;
   export let alt: string = '';
   export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
+  export let avatarCntClass: string = 'relative flex justify-center items-center';
 
   $: dot = dot && { placement: 'top-right', color: 'gray', size: 'lg', ...dot };
 
@@ -35,11 +36,7 @@
 </script>
 
 {#if !src || !!href || $$slots.default || dot}
-  <svelte:element
-    this={href ? 'a' : 'div'}
-    {href}
-    {...$$restProps}
-    class="relative flex justify-center items-center {avatarClass}">
+  <svelte:element this={href ? 'a' : 'div'} {href} {...$$restProps} class="{avatarCntClass} {avatarClass}">
     {#if src}
       <img {alt} {src} class={rounded ? 'rounded' : 'rounded-full'} />
     {:else}

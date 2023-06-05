@@ -2,6 +2,12 @@
   "props": [
     ["items", "LinkTypeLike[]", "[]"],
     ["full", "boolean", "false"],
-    ["open", "boolean", "false"]
+    ["open", "boolean", "false"],
+    [
+      "megaMenuDefaultClass",
+      "string",
+      "'flex flex-col md:flex-row p-4 max-w-screen-md justify-center mx-auto'"
+    ],
+    ["megaMenuFullClass", "string", "'md:w-1/3 mt-4 md:mt-0'"]
   ]
 }
