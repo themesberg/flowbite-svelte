@@ -4,7 +4,7 @@
   import CloseButton from '../utils/CloseButton.svelte';
 
   export let color: 'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'none' =
-    'blue';
+    'primary';
   export let large: boolean = false;
   export let border: boolean = false;
   export let href: string | undefined = undefined;
@@ -13,6 +13,7 @@
   export let dismissable: boolean = false;
 
   const colors = {
+    primary: 'bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-300',
     blue: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300',
     dark: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300',
     red: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300',
@@ -33,6 +34,7 @@
   };
 
   const borderedColors = {
+    primary: 'bg-primary-100 text-primary-800 dark:bg-gray-700 dark:text-primary-400 border-primary-400',
     blue: 'bg-blue-100 text-blue-800 dark:bg-gray-700 dark:text-blue-400 border-blue-400',
     dark: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-400 border-gray-500',
     red: 'bg-red-100 text-red-800 dark:bg-gray-700 dark:text-red-400 border-red-400',
@@ -45,6 +47,7 @@
   };
 
   const hoverColors = {
+    primary: 'hover:bg-primary-200',
     blue: 'hover:bg-blue-200',
     dark: 'hover:bg-gray-200',
     red: 'hover:bg-red-200',
@@ -78,6 +81,8 @@
 
   // only overwrite necessary colors (<CloseButton> v0.29.10)
   const closeBtnColors = {
+    primary:
+      'text-primary-400 hover:text-primary-900 dark:hover:!bg-primary-800 dark:hover:text-primary-300',
     blue: 'text-blue-400 hover:text-blue-900 dark:hover:!bg-blue-800 dark:hover:text-blue-300',
     dark: 'text-gray-400 hover:!text-gray-400 hover:!bg-gray-200 dark:hover:!text-gray-300',
     red: 'text-red-400 hover:text-red-900 dark:hover:!bg-red-800 dark:hover:text-red-300',

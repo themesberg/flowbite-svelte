@@ -11,7 +11,7 @@ thumnailSize: w-40
 <script>
   import { TableProp, TableDefaultRow, } from '../../utils'
 
-  import { A, Heading } from '$lib'
+  import { P, A, Heading } from '$lib'
   import { props as items } from '../../props/Input.json'
   import { props as items2 } from '../../props/Label.json'
   import { props as items3 } from '../../props/Helper.json'
@@ -73,12 +73,12 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
 
 <Label class='block mb-2' >Your email</Label>
 <Input label="Email" id="email" name="email" required placeholder="name@flowbite.com"/>
-<Helper class='text-sm mt-2'>We’ll never share your details. Read our <a href="/" class="font-medium text-blue-600 hover:underline dark:text-blue-500">Privacy Policy</a>.</Helper>
+<Helper class='text-sm mt-2'>We’ll never share your details. Read our <a href="/" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Privacy Policy</a>.</Helper>
 ```
 
 ## Input element with icon
 
-With the Input component, you can add <a href="https://flowbite-svelte.vercel.app/icons/heroicons" class="text-blue-700 dark:text-blue-500 hover:underline">Heroicons</a> or <a href="https://svelte-svg-icons.vercel.app/" class="text-blue-700 dark:text-blue-500 hover:underline">other icon sets</a>.
+With the Input component, you can add <a href="https://flowbite-svelte.vercel.app/icons/heroicons" class="text-primary-700 dark:text-primary-500 hover:underline">Heroicons</a> or <a href="https://svelte-svg-icons.vercel.app/" class="text-primary-700 dark:text-primary-500 hover:underline">other icon sets</a>.
 
 ```svelte example
 <script>
@@ -283,3 +283,6 @@ The component has the following props, type, and default values. See <A href="/d
   <TableDefaultRow items={items10} rowState='hover' />
 </TableProp>
 
+## References
+
+- [Flowbite Forms](https://flowbite.com/docs/components/forms/)

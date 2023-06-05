@@ -240,7 +240,7 @@ The following alert components can be used if you wish to disclose more informat
   <div slot="extra">
     <div class="mt-2 mb-4 text-sm">More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</div>
     <div class="flex gap-2">
-      <Button size="xs"><svg aria-hidden="true" class="-ml-0.5 mr-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg>View more</Button>
+      <Button size="xs" color="blue"><svg aria-hidden="true" class="-ml-0.5 mr-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg>View more</Button>
       <Button size="xs" outline color="blue" class="dark:!text-blue-800">Go to Home</Button>
     </div>
   </div>
@@ -277,7 +277,7 @@ Use `color='none'` to disable coloring. Then use `class` to add your custom colo
 <script>
   import {Alert} from "flowbite-svelte";
 </script>
-<Alert color='none' class='bg-sky-500 text-pink-700'>
+<Alert color='none' class='bg-sky-500 text-white'>
   Your content
 </Alert>
 ```
@@ -324,10 +324,7 @@ The component inherits the following props, type, and default values from `Frame
 ## Forwarded Events
 
 <DocBadgeList items={events} />
+
 ## References
 
-<P>
-  <A href="https://flowbite.com/docs/components/alerts/" target="_blank" rel="noreferrer" class="link">
-  Flowbite Alerts
-  </A>
-</P>
+- [Flowbite Alerts](https://flowbite.com/docs/components/alerts/)

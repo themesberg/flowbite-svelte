@@ -327,10 +327,7 @@ Use this example to show a solid background for the navbar component instead of 
 ### NavLi
 
 <DocBadgeList items={events} />
+
 ## References
 
-<P>
-  <A href="https://flowbite.com/docs/components/navbar/" target="_blank" rel="noreferrer" class="link"
-    >Flowbite Navbar</A
-  >
-</P>
+- [Flowbite Navbar](https://flowbite.com/docs/components/navbar/)

@@ -301,10 +301,7 @@ Use `btnClass` to overwrite Button class.
 ## Forwarded Events
 
 <DocBadgeList items={events} />
+
 ## References
 
-<P>
-  <A href="https://flowbite.com/docs/components/buttons/" target="_blank" rel="noreferrer" class="link"
-    >Flowbite Buttons</A
-  >
-</P>
+- [Flowbite Buttons](https://flowbite.com/docs/components/buttons/)

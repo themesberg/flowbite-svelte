@@ -110,3 +110,6 @@ The component has the following props, type, and default values. See <A href="/d
 
 <DocBadgeList items={events} />
 
+## References
+
+- [Flowbite Range Slider](https://flowbite.com/docs/forms/range/)
