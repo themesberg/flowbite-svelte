@@ -13,7 +13,7 @@ thumnailSize: w-24
   import { Badge, P, A } from '$lib'
   import { props as buttonProps } from '../../props/Button.json'
 
-  const events = ["on:change","on:click","on:keydown","on:keyup","on:mouseenter","on:mouseleave"];
+  const events = ["on:change","on:click","on:keydown","on:keyup","on:mouseenter","on:mouseleave","on:touchstart","on:touchend","on:touchcancel"];
   // slots
   let slotHeader = ['Name', 'Description']
   let slotItems = [['default', 'For a button label.']]
