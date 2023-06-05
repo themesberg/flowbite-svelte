@@ -81,7 +81,8 @@
 
   // only overwrite necessary colors (<CloseButton> v0.29.10)
   const closeBtnColors = {
-    primary: 'text-primary-400 hover:text-primary-900 dark:hover:!bg-primary-800 dark:hover:text-primary-300',
+    primary:
+      'text-primary-400 hover:text-primary-900 dark:hover:!bg-primary-800 dark:hover:text-primary-300',
     blue: 'text-blue-400 hover:text-blue-900 dark:hover:!bg-blue-800 dark:hover:text-blue-300',
     dark: 'text-gray-400 hover:!text-gray-400 hover:!bg-gray-200 dark:hover:!text-gray-300',
     red: 'text-red-400 hover:text-red-900 dark:hover:!bg-red-800 dark:hover:text-red-300',
