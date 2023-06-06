@@ -92,6 +92,9 @@
     on:change
     on:keydown
     on:keyup
+    on:touchstart
+    on:touchend
+    on:touchcancel
     on:mouseenter
     on:mouseleave><slot /></Button>
 {/if}
@@ -107,6 +110,9 @@
   - on:change
   - on:keydown
   - on:keyup
+  - on:touchstart
+  - on:touchend
+  - on:touchcancel
   - on:mouseenter
   - on:mouseleave
   ## Example
