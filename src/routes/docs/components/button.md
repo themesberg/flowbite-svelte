@@ -272,11 +272,11 @@ You can use on:click or any standard on:* to listen to the event.
     alert('You clicked btn1.');
   };
   const btn2 = () => {
-    alert('You clicked btn2.');
+    alert('You touched btn2.');
   };
 </script>
 <Button on:click={btn1}>Button 1</Button>
-<Button on:click={btn2}>Button 2</Button>
+<Button on:touchstart={btn2}>Button 2</Button>
 ```
 
 ## Props
