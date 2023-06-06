@@ -30,6 +30,8 @@
     'inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none';
   // Thumbnail
   export let thumbnailDefaultClass: string = 'flex flex-row justify-center bg-gray-100';
+  // Svg
+  export let svgClass: string = 'w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-300';
 
   let imageShowingIndex: number = 0;
   $: image = images[imageShowingIndex];
@@ -84,7 +86,7 @@
         {:else}
           <svg
             aria-hidden="true"
-            class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-300"
+            class={svgClass}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -105,7 +107,7 @@
         {:else}
           <svg
             aria-hidden="true"
-            class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-300"
+            class={svgClass}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
