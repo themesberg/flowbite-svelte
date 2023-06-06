@@ -18,7 +18,7 @@
       <div><img src={item.src} alt={item.alt} class={imgClass} /></div>
     </slot>
   {:else}
-    <slot />
+    <slot  item={items[0]} />
   {/each}
 </div>
 
