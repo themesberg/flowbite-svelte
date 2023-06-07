@@ -31,7 +31,7 @@ The multiSelect component can be used to gather information from users based on 
 
 Get started with the default toggle component example as a checkbox element to receive a true or false selection from the user.
 
-```svelte example class="h-80"
+```svelte example hideScript class="h-80"
 <script>
   import MultiSelect from '../../../lib/forms/MultiSelect.svelte';
 
