@@ -5,50 +5,53 @@
   import Frame from '../utils/Frame.svelte';
 
   export let dismissable: boolean = false;
-  export let accent: boolean = false;
-  export let contentPosClass: string = 'flex items-center';
-  export let closeBtnClass: string = '-mx-1.5 -my-1.5';
-  export let borderTopClass: string = 'border-t-4';
-  export let defaultTextClass: string = 'p-4 text-sm';
+  export let defaultClass: string = 'p-4 gap-3 text-sm';
 
   const dispatch = createEventDispatcher();
 
   interface $$Props extends ComponentProps<Frame> {
     dismissable?: boolean;
-    accent?: boolean;
   }
 
   let hidden = false;
 
-  const handleHide = () => {
+  const close = () => {
     hidden = !hidden;
     dispatch('close'); // preferred name
   };
 
   let divClass: string;
-  $: divClass = classNames(defaultTextClass, accent && borderTopClass, hidden && 'hidden', $$props.class);
+  $: divClass = classNames(
+    defaultClass,
+    ($$slots.icon || dismissable) && 'flex items-center',
+    hidden && 'hidden',
+    $$props.class
+  );
 
   $: {
     // set default values
-    $$restProps.color = $$restProps.color ?? 'blue';
-    $$restProps.rounded = $$restProps.rounded ?? !accent;
+    $$restProps.color = $$restProps.color ?? 'primary';
+    $$restProps.rounded = $$restProps.rounded ?? true;
   }
 </script>
 
 <Frame {...$$restProps} class={divClass} role="alert">
-  <div class={contentPosClass}>
-    {#if $$slots.icon}
-      <slot name="icon" />
-    {/if}
-    <div class:ml-3={$$slots.icon}>
-      <slot />
-    </div>
+  {#if $$slots.icon}
+    <slot name="icon" />
+  {/if}
 
-    {#if dismissable}
+  {#if $$slots.icon || dismissable}
+    <div><slot /></div>
+  {:else}
+    <slot />
+  {/if}
+
+  {#if dismissable}
+    <slot name="close-button" {close}>
       <CloseButton
-        class={closeBtnClass}
+        class="'-mx-1.5 -my-1.5'"
         color={$$restProps.color}
-        on:click={handleHide}
+        on:click={close}
         on:click
         on:change
         on:keydown
@@ -57,9 +60,8 @@
         on:blur
         on:mouseenter
         on:mouseleave />
-    {/if}
-  </div>
-  <slot name="extra" />
+    </slot>
+  {/if}
 </Frame>
 
 <!--
