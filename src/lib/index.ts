@@ -106,6 +106,9 @@ export { default as Modal } from './modals/Modal.svelte';
 // MegaMenu
 export { default as MegaMenu } from './megamenu/MegaMenu.svelte';
 
+// MultiSelect
+export { default as MultiSelect } from './forms/MultiSelect.svelte';
+
 // Navbar
 export { default as Navbar } from './navbar/Navbar.svelte';
 export { default as NavBrand } from './navbar/NavBrand.svelte';
