@@ -3,6 +3,7 @@
   import { createEventDispatcher, type ComponentProps } from 'svelte';
   import CloseButton from '../utils/CloseButton.svelte';
   import Frame from '../utils/Frame.svelte';
+  import { fade } from 'svelte/transition';
 
   export let dismissable: boolean = false;
   export let defaultClass: string = 'p-4 gap-3 text-sm';
@@ -13,10 +14,10 @@
     dismissable?: boolean;
   }
 
-  let hidden = false;
+  let open = true;
 
   const close = () => {
-    hidden = !hidden;
+    open = false;
     dispatch('close'); // preferred name
   };
 
@@ -24,7 +25,6 @@
   $: divClass = classNames(
     defaultClass,
     ($$slots.icon || dismissable) && 'flex items-center',
-    hidden && 'hidden',
     $$props.class
   );
 
@@ -32,37 +32,40 @@
     // set default values
     $$restProps.color = $$restProps.color ?? 'primary';
     $$restProps.rounded = $$restProps.rounded ?? true;
+    if (dismissable) $$restProps.transition = $$restProps.transition ?? fade;
   }
 </script>
 
-<Frame {...$$restProps} class={divClass} role="alert">
-  {#if $$slots.icon}
-    <slot name="icon" />
-  {/if}
+{#if open}
+  <Frame {...$$restProps} class={divClass} role="alert">
+    {#if $$slots.icon}
+      <slot name="icon" />
+    {/if}
 
-  {#if $$slots.icon || dismissable}
-    <div><slot /></div>
-  {:else}
-    <slot />
-  {/if}
+    {#if $$slots.icon || dismissable}
+      <div><slot /></div>
+    {:else}
+      <slot />
+    {/if}
 
-  {#if dismissable}
-    <slot name="close-button" {close}>
-      <CloseButton
-        class="'-mx-1.5 -my-1.5'"
-        color={$$restProps.color}
-        on:click={close}
-        on:click
-        on:change
-        on:keydown
-        on:keyup
-        on:focus
-        on:blur
-        on:mouseenter
-        on:mouseleave />
-    </slot>
-  {/if}
-</Frame>
+    {#if dismissable}
+      <slot name="close-button" {close}>
+        <CloseButton
+          class="'-mx-1.5 -my-1.5'"
+          color={$$restProps.color}
+          on:click={close}
+          on:click
+          on:change
+          on:keydown
+          on:keyup
+          on:focus
+          on:blur
+          on:mouseenter
+          on:mouseleave />
+      </slot>
+    {/if}
+  </Frame>
+{/if}
 
 <!--
   @component
