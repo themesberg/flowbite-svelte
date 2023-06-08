@@ -29,15 +29,7 @@ If your Svelte app only requires a few components, it's recommended that you imp
 
 ## Requirements
 
-If you are a TypeScript user, install typescript version 5.0.0 or above.
-
-As of April 2023, the typescript version 5 is available:
-
-```sh
-pnpm i -D typescript@latest
-```
-
-To avoid any complaints from the editor, add node16 or nodenext to moduleResolution in your tsconfig.json file.
+To avoid any complaints from the editor, add **node16** or **nodenext** to ``moduleResolution`` in your `.svelte-kit/tsconfig.json` file.
 
 ```json
 {
@@ -47,6 +39,14 @@ To avoid any complaints from the editor, add node16 or nodenext to moduleResolut
     "moduleResolution": "nodenext"
   }
 }
+```
+
+*If you are a TypeScript user*, install typescript version 5.0.0 or above.
+
+As of April 2023, the typescript version 5 is available:
+
+```sh
+pnpm i -D typescript@latest
 ```
 
 ## Speed comparisons
