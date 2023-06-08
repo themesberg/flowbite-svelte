@@ -164,9 +164,14 @@ Use this example to show a list and a description inside an alert component.
 
 Use the following alert elements that are also dismissable.
 
-```svelte example class="flex flex-col gap-4" hideScript
+As `Alert` inhertits from the `Frame` component you can attach the `transition` and `params` props to control the dissimal animation. By default `fade` svelte function is used. See the example below.
+
+You can use `slot="close"` to override the default close button. That slot exposes `close` function that makes the alert dismissed when triggered. See the last example.
+
+```svelte example class="flex flex-col gap-4"
 <script>
-  import {Alert, Button, CloseButton} from "flowbite-svelte";
+  import { Alert, Button } from "flowbite-svelte";
+  import { fly } from 'svelte/transition';
 </script>
 <Alert dismissable>
     <svg slot="icon" aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
@@ -184,13 +189,13 @@ Use the following alert elements that are also dismissable.
     <svg slot="icon" aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
     A simple info alert with an <a href="/" class="font-semibold underline hover:text-green-800 dark:hover:text-green-900">example link</a>. Give it a click if you like.
   </Alert>
-  <Alert color="yellow" dismissable>
+  <Alert color="yellow" dismissable transition={fly} params={{x: 200}}>
     <svg slot="icon" aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-    A simple info alert with an <a href="/" class="font-semibold underline hover:text-yellow-800 dark:hover:text-yellow-900">example link</a>. Give it a click if you like.
+    An alert with non default animation - fly away.
   </Alert>
   <Alert color="dark" dismissable>
     <svg slot="icon" aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-    A simple info alert with an <a href="/" class="font-semibold underline hover:text-gray-800 dark:hover:text-white">example link</a>. Give it a click if you like.
+    An alert with the custom dismissal button.
     <Button slot="close-button" size="xs" let:close on:click={close} class="ml-auto">Dissmiss</Button>
 </Alert>
 ```
