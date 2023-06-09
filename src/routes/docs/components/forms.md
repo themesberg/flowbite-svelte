@@ -21,6 +21,7 @@ thumnailSize: w-40
   import { props as items8 } from '../../props/Checkbox.json'
   import { props as items9 } from '../../props/Radio.json'
   import { props as items10 } from '../../props/Toggle.json'
+  import { props as items11 } from '../../props/MultiSelect.json'
 
 </script>
 
@@ -170,6 +171,25 @@ Get started with the default example of a select input component to get a single
 </Label>
 ```
 
+## MultiSelect
+
+```svelte example hideScript class="h-80"
+<script>
+  import MultiSelect from '../../../lib/forms/MultiSelect.svelte';
+
+  let selected = [];
+  let countries = [
+    {value:"us", name: "United States"},
+    {value:"ca", name: "Canada"},
+    {value:"fr", name: "France"},
+    {value:"jp", name: "Japan"},
+    {value:"en", name: "England"},
+  ]
+</script>
+
+<MultiSelect items={countries} bind:value={selected} />
+```
+
 ## Checkbox
 
 ```svelte example class="flex flex-col gap-4"
@@ -263,6 +283,12 @@ The component has the following props, type, and default values. See <A href="/d
 
 <TableProp>
   <TableDefaultRow items={items7} rowState='hover' />
+</TableProp>
+
+### MultiSelect
+
+<TableProp>
+  <TableDefaultRow items={items11} rowState='hover' />
 </TableProp>
 
 ### Checkbox
