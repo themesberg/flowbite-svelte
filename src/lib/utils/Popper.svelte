@@ -74,6 +74,7 @@
   };
 
   function init(node: HTMLElement, _triggerEl: HTMLElement) {
+    const arrowEl = arrow ? node.lastElementChild : undefined;
     popper = createPopper(_triggerEl, node, {
       placement,
       strategy,
@@ -89,7 +90,7 @@
         },
         { name: 'eventListeners', enabled: open },
         { name: 'flip', enabled: false },
-        { name: 'arrow', enabled: true }
+        { name: 'arrow', enabled: arrow, options: { element: arrowEl, padding: 10 } }
       ]
     });
     return {
@@ -139,16 +140,16 @@
     return (pred && func) || null;
   }
 
-  let position: string;
+  let position: string = 'bottom';
   $: position = placement.split('-', 1)[0];
 
-  let arrowClass: string = 'bottom';
+  let arrowClass: string;
   $: arrowClass = classNames(
-    'absolute w-[9px] h-[9px] rotate-45 bg-inherit',
-    position === 'top' && ($$props.border ? 'border-b border-r -bottom-[5px]' : '-bottom-[4px]'),
-    position === 'bottom' && ($$props.border ? 'border-t border-l -top-[5px]' : '-top-[4px]'),
-    position === 'left' && ($$props.border ? 'border-t border-r -right-[5px]' : '-right-[4px]'),
-    position === 'right' && ($$props.border ? 'border-b border-l -left-[5px]' : '-left-[4px]')
+    'after:w-[9px] after:h-[9px] after:rotate-45 bg-inherit after:bg-inherit invisible after:visible after:block border-inherit after:border-inherit',
+    position === 'top' && ($$props.border ? 'after:border-b after:border-r -bottom-[5px]' : '-bottom-[4px]'),
+    position === 'bottom' && ($$props.border ? 'after:border-t after:border-l -top-[5px]' : '-top-[4px]'),
+    position === 'left' && ($$props.border ? 'after:border-t after:border-r -right-[5px]' : '-right-[4px]'),
+    position === 'right' && ($$props.border ? 'after:border-b after:border-l -left-[5px]' : '-left-[4px]')
   );
 </script>
 
@@ -169,11 +170,11 @@
     {...$$restProps}
     class={classNames('outline-none', $$props.class)}>
     <slot />
-    {#if arrow}<div data-popper-arrow class={arrowClass} />{/if}
+    {#if arrow}<div class={arrowClass} />{/if}
   </Frame>
 {/if}
 
-<!--        
+<!--
   @component
   ## Props
   @prop activeContent: boolean = false;
