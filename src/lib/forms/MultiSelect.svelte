@@ -3,8 +3,23 @@
 
   export let items: SelectOptionType[] = [];
   export let value: SelectOptionType[] = [];
+  export let highlighted: boolean = false;
 
   let show: boolean = false;
+
+  // Container
+  const multiSelectClass: string =
+    'relative !min-h-[55px] p-2 text-gray-900 bg-gray-50 border border-gray-300 flex items-center rounded-lg gap-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:border-2 dark:focus:border-2 focus:border-primary-500 focus:ring-primary-500 dark:focus:border-primary-500 dark:focus:ring-primary-500';
+  // Pills Button
+  const multiSelectBtn: string =
+    'flex items-center gap-1 rounded-lg border overflow-hidden border-gray-300 dark:border-gray-500';
+  // Dropdown
+  const multiSelectDropdown: string =
+    'absolute h-32 border border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:text-white left-0 top-[calc(100%+1rem)] rounded-lg bg-gray-50 cursor-pointer overflow-y-scroll w-full';
+  // Items
+  const itemsClass: string = 'p-1 pl-2 pr-2 hover:bg-gray-100 dark:hover:bg-gray-600';
+  // Selected items
+  const itemsSelectClass: string = 'bg-primary-500 text-white hover:bg-primary-600';
 
   const selectOption = (select: SelectOptionType) => {
     if (value.includes(select)) {
@@ -27,23 +42,18 @@
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div
-  on:click={() => (show = !show)}
-  on:blur={() => (show = !show)}
-  tabindex="-1"
-  class="relative !min-h-[55px] text-gray-900 bg-gray-50 border border-gray-300 flex items-center rounded-lg gap-2 p-2 dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:border-2 dark:focus:border-2 focus:border-primary-500 focus:ring-primary-500 dark:focus:border-primary-500 dark:focus:ring-primary-500'">
+<div on:click={() => (show = !show)} on:blur={() => (show = !show)} tabindex="-1" class={multiSelectClass}>
   <span class="flex gap-2 flex-wrap">
     {#if value.length}
       {#each value as select, index}
-        <button
-          class="flex items-center gap-1 p-1 rounded-lg border border-gray-300 dark:border-gray-500 hover:border-primary-500 hover:bg-primary-500 hover:bg-opacity-20 dark:hover:border-primary-500">
-          {select.name}
+        <button class={multiSelectBtn}>
+          <span class="p-[1px] ml-[1.5px]">{select.name}</span>
           <svg
             on:click={(e) => {
               e.stopPropagation();
               clearThisOption(select);
             }}
-            class="w-4 h-4"
+            class="w-4 h-full pr-[1.5px] hover:bg-primary-500"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -88,8 +98,7 @@
   </div>
 
   {#if show}
-    <div
-      class="absolute h-32 border border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:text-white left-0 top-[calc(100%+1rem)] rounded-lg bg-gray-50 cursor-pointer overflow-y-scroll w-full">
+    <div class={multiSelectDropdown}>
       {#each items as item, index}
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <div
@@ -97,7 +106,7 @@
             e.stopPropagation();
             selectOption(item);
           }}
-          class="p-1 pl-2 pr-2 hover:bg-gray-100 dark:hover:bg-gray-600">
+          class="{itemsClass} {(value.includes(item) && highlighted)? itemsSelectClass : ''}">
           {item.name}
         </div>
       {/each}

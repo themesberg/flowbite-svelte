@@ -27,7 +27,7 @@ The multiSelect component can be used to gather information from users based on 
 </script>
 ```
 
-## Toggle examples
+## Basic example
 
 Get started with the default toggle component example as a checkbox element to receive a true or false selection from the user.
 
@@ -46,4 +46,23 @@ Get started with the default toggle component example as a checkbox element to r
 </script>
 
 <MultiSelect items={countries} bind:value={selected} />
+```
+
+## Highlighted
+
+```svelte example hideScript class="h-80"
+<script>
+  import MultiSelect from '../../../lib/forms/MultiSelect.svelte';
+
+  let selected = [];
+  let countries = [
+    {value:"us", name: "United States"},
+    {value:"ca", name: "Canada"},
+    {value:"fr", name: "France"},
+    {value:"jp", name: "Japan"},
+    {value:"en", name: "England"},
+  ]
+</script>
+
+<MultiSelect items={countries} bind:value={selected} highlighted />
 ```
