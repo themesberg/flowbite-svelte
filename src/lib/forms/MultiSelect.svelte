@@ -43,7 +43,11 @@
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div on:click={() => (show = !show)} on:blur={() => (show = !show)} tabindex="-1" class="{multiSelectClass} {defaultClass}">
+<div
+  on:click={() => (show = !show)}
+  on:blur={() => (show = !show)}
+  tabindex="-1"
+  class="{multiSelectClass} {defaultClass}">
   <span class="flex gap-2 flex-wrap">
     {#if value.length}
       {#each value as select, index}
