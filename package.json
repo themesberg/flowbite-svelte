@@ -321,6 +321,10 @@
       "types": "./dist/forms/Label.svelte.d.ts",
       "svelte": "./dist/forms/Label.svelte"
     },
+    "./MultiSelect.svelte": {
+      "types": "./dist/forms/MultiSelect.svelte.d.ts",
+      "svelte": "./dist/forms/MultiSelect.svelte"
+    },
     "./NumberInput.svelte": {
       "types": "./dist/forms/NumberInput.svelte.d.ts",
       "svelte": "./dist/forms/NumberInput.svelte"
