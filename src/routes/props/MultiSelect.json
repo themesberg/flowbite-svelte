@@ -1,0 +1,7 @@
+{
+  "props": [
+    ["items", "SelectOptionType[]", "[]"],
+    ["value", "SelectOptionType[]", "[]"],
+    ["highlighted", "boolean", "false"]
+  ]
+}

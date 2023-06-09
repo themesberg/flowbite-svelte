@@ -106,7 +106,7 @@
             e.stopPropagation();
             selectOption(item);
           }}
-          class="{itemsClass} {(value.includes(item) && highlighted)? itemsSelectClass : ''}">
+          class="{itemsClass} {value.includes(item) && highlighted ? itemsSelectClass : ''}">
           {item.name}
         </div>
       {/each}
