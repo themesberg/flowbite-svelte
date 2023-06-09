@@ -73,6 +73,7 @@ export { default as Helper } from './forms/Helper.svelte';
 export { default as Input } from './forms/Input.svelte';
 export { default as InputAddon } from './forms/InputAddon.svelte';
 export { default as Label } from './forms/Label.svelte';
+export { default as MultiSelect } from './forms/MultiSelect.svelte';
 export { default as NumberInput } from './forms/NumberInput.svelte';
 export { default as RadioInline } from './forms/RadioInline.svelte';
 export { default as Radio } from './forms/Radio.svelte';

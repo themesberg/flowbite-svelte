@@ -189,6 +189,54 @@ If you want custom options, put them directly inside the component and leave the
 </Select>
 ```
 
+## MultiSelect
+
+```svelte example hideOutput
+<script>
+  import { MultiSelect } from 'flowbite-svelte'
+</script>
+```
+
+## Basic example
+
+Get started with the default toggle component example as a checkbox element to receive a true or false selection from the user.
+
+```svelte example hideScript class="h-80"
+<script>
+  import MultiSelect from '../../../lib/forms/MultiSelect.svelte';
+
+  let selected = [];
+  let countries = [
+    {value:"us", name: "United States"},
+    {value:"ca", name: "Canada"},
+    {value:"fr", name: "France"},
+    {value:"jp", name: "Japan"},
+    {value:"en", name: "England"},
+  ]
+</script>
+
+<MultiSelect items={countries} bind:value={selected} />
+```
+
+## Highlighted
+
+```svelte example hideScript class="h-80"
+<script>
+  import MultiSelect from '../../../lib/forms/MultiSelect.svelte';
+
+  let selected = [];
+  let countries = [
+    {value:"us", name: "United States"},
+    {value:"ca", name: "Canada"},
+    {value:"fr", name: "France"},
+    {value:"jp", name: "Japan"},
+    {value:"en", name: "England"},
+  ]
+</script>
+
+<MultiSelect items={countries} bind:value={selected} highlighted />
+```
+
 ## Props
 
 The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types page</A> for type information.
