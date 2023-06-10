@@ -1,0 +1,7 @@
+{
+  "props": [
+    ["speed", "number", "1"],
+    ["hoverSpeed", "number", "1"],
+    ["shadow", "boolean", "false"]
+  ]
+}
