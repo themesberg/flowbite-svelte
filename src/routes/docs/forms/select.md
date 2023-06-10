@@ -189,7 +189,9 @@ If you want custom options, put them directly inside the component and leave the
 </Select>
 ```
 
-## MultiSelect
+## Multi Select
+
+Use this example to select multiple values from a select box and add tags inside the component.
 
 ```svelte example hideOutput
 <script>
