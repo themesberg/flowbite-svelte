@@ -26,12 +26,28 @@ thumnailSize: w-36
 ```
 
 ## Simple Maquee
+
 ```svelte  example hideScript
 <script>
   import { Marquee } from 'flowbite-svelte'
 </script>
 
-<Marquee>
+<Marquee speed={1}>
+    <img class="w-32 h-32" src="https://flowbite-svelte.com/images/flowbite-svelte-icon-logo.svg" />
+    <img class="w-32 h-32" src="https://www.flowbite-react.com/favicon.svg" />
+    <img class="w-32 h-32" src="https://flowbite-vue.com/assets/logo.svg" />
+    <img class="w-32 h-32" src="https://flowbite.com/docs/images/logo.svg" />
+</Marquee>
+```
+
+## Hover speed
+
+```svelte  example hideScript
+<script>
+  import { Marquee } from 'flowbite-svelte'
+</script>
+
+<Marquee speed={1} hoverSpeed={0.5}>
     <img class="w-32 h-32" src="https://flowbite-svelte.com/images/flowbite-svelte-icon-logo.svg" />
     <img class="w-32 h-32" src="https://www.flowbite-react.com/favicon.svg" />
     <img class="w-32 h-32" src="https://flowbite-vue.com/assets/logo.svg" />

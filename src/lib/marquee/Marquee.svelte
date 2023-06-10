@@ -1,22 +1,26 @@
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte';
 
+  export let speed: number = 1;
+  export let hoverSpeed: number = 1;
+
   let offset: number = 0;
   let isHovering: boolean = false;
-  let marqWidth: HTMLElement;
+  let marquee: HTMLElement;
+  let intervalId: NodeJS.Timer;
 
   onMount(() => {
-    const interval = setInterval(() => {
-      if (Math.abs(offset) >= marqWidth.offsetWidth) {
+    intervalId = setInterval(() => {
+      if (Math.abs(offset) >= marquee.offsetWidth) {
         offset = 0;
       } else {
-        if (isHovering) offset -= 0.5;
-        else offset -= 1;
+        if (isHovering) offset -= hoverSpeed;
+        else offset -= speed;
       }
     }, 5);
-
-    onDestroy(() => interval);
   });
+
+  onDestroy(() => intervalId);
 </script>
 
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
@@ -24,37 +28,35 @@
   class="relative flex overflow-x-hidden w-[100%]"
   on:mouseover={() => (isHovering = true)}
   on:mouseleave={() => (isHovering = false)}>
-  <div 
-    class="flex justify-around items-center min-w-[100%]" 
-    style="transform: {`translateX(${offset}px)`}" 
-    bind:this={marqWidth}
-  >
+  <div
+    class="flex justify-around items-center min-w-[100%]"
+    style="transform: {`translateX(${offset}px)`}"
+    bind:this={marquee}>
     <slot />
   </div>
   <div 
-    class="flex justify-around items-center min-w-[100%]" 
+    class="flex justify-around items-center min-w-[100%]"
     style="transform: {`translateX(${offset}px)`}"
   >
     <slot />
   </div>
 </div>
 
-<style>
-  /* .marquee-container {
-    display: flex;
-    overflow-x: hidden;
-    flex-direction: row;
-    position: relative;
-  } */
+<!--
+  @component
+  ## Feature
+  [Go to Mega Menu](https://flowbite-svelte.com/docs/components/maquee)
+  ## Example
+  ```
+  <script>
+    import { Marquee } from 'flowbite-svelte'
+  </script>
 
-  /* .marquee {
-    border: 1px solid;
-    flex: 0 0 auto;
-    min-width: 100%;
-    z-index: 1;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 50px;
-  } */
-</style>
+  <Marquee speed={1}>
+    <img class="w-32 h-32" src="https://flowbite-svelte.com/images/flowbite-svelte-icon-logo.svg" />
+    <img class="w-32 h-32" src="https://www.flowbite-react.com/favicon.svg" />
+    <img class="w-32 h-32" src="https://flowbite-vue.com/assets/logo.svg" />
+    <img class="w-32 h-32" src="https://flowbite.com/docs/images/logo.svg" />
+  </Marquee>
+  ```
+-->
