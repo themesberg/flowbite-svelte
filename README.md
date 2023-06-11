@@ -31,7 +31,7 @@ You can find all the starters in the Starters directory.
 
 You can find all the examples in the Examples directory.
 
-- [Flowbite SvelteKit responsive sidebar layout](https://github.com/themesberg/flowbite-svelte/tree/main/examples/flowbite-sveltekit-responsive-sidebar-layout)
+- [Flowbite SvelteKit responsive sidebar layout](https://github.com/shinokada/flowbite-sveltekit-responsive-sidebar-layout)
 
 ## Installation
 
