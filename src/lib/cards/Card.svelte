@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { SizeType } from '$lib/types';
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import type { ComponentProps } from 'svelte';
   import Frame from '../utils/Frame.svelte';
 
@@ -40,7 +40,7 @@
   $: innerPdding = paddings[padding];
 
   let cardClass: string;
-  $: cardClass = classNames(
+  $: cardClass = twMerge(
     'flex',
     sizes[size],
     reverse ? 'flex-col-reverse' : 'flex-col',
@@ -51,7 +51,7 @@
   );
 
   let imgClass: string;
-  $: imgClass = classNames(
+  $: imgClass = twMerge(
     reverse ? 'rounded-b-lg' : 'rounded-t-lg',
     horizontal && 'object-cover w-full h-96 md:h-auto md:w-48 md:rounded-none',
     horizontal && (reverse ? 'md:rounded-r-lg' : 'md:rounded-l-lg')

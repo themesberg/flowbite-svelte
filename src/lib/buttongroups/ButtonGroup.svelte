@@ -1,6 +1,6 @@
 <script lang="ts">
   import { setContext } from 'svelte';
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import type { SizeType } from '$lib/types';
 
   export let size: SizeType = 'md';
@@ -9,7 +9,7 @@
   setContext('group', { size });
 </script>
 
-<div {...$$restProps} class={classNames(divClass, $$props.class)} role="group">
+<div {...$$restProps} class={twMerge(divClass, $$props.class)} role="group">
   <slot />
 </div>
 

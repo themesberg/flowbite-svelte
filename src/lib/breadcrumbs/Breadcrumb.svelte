@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
 
   export let solid: boolean = false;
   export let navClass: string = 'flex';
@@ -9,8 +9,8 @@
   let classNav: string = solid ? solidClass : navClass;
 </script>
 
-<nav aria-label="Breadcrumb" {...$$restProps} class={classNames(classNav, $$props.class)}>
-  <ol class={classNames(olClass, $$props.classOl)}>
+<nav aria-label="Breadcrumb" {...$$restProps} class={twMerge(classNav, $$props.class)}>
+  <ol class={twMerge(olClass, $$props.classOl)}>
     <slot />
   </ol>
 </nav>
