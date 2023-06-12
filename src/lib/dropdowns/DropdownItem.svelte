@@ -1,12 +1,12 @@
 <script lang="ts">
   import Wrapper from '$lib/utils/Wrapper.svelte';
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
 
   export let defaultClass: string = 'font-medium py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600';
   export let href: string | undefined = undefined;
 
   let liClass: string;
-  $: liClass = classNames(defaultClass, href ? 'block' : 'w-full text-left', $$props.class);
+  $: liClass = twMerge(defaultClass, href ? 'block' : 'w-full text-left', $$props.class);
 
   let wrap: boolean = true;
   function init(node: HTMLElement) {

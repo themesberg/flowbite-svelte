@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import Popper from '$lib/utils/Popper.svelte';
 
   export let open: boolean = false;
@@ -19,7 +19,7 @@
   }
 
   let popoverClass: string;
-  $: popoverClass = classNames('divide-y divide-gray-100 dark:divide-gray-600', frameClass);
+  $: popoverClass = twMerge('divide-y divide-gray-100 dark:divide-gray-600', frameClass);
 </script>
 
 <Popper activeContent {...$$restProps} class={popoverClass} on:show bind:open>

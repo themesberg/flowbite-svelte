@@ -1,13 +1,13 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
+
   export let customClass: string = '';
   export let footerType: 'custom' | 'sitemap' | 'default' | 'logo' | 'socialmedia' = 'default';
-  // using classNames dynamic class names, https://github.com/JedWatson/classnames#dynamic-class-names-with-es2015
 </script>
 
 <footer
   {...$$restProps}
-  class={classNames(
+  class={twMerge([
     {
       'bg-gray-800': footerType === 'sitemap',
       'p-4 bg-white sm:p-6 dark:bg-gray-800': footerType === 'socialmedia',
@@ -17,7 +17,7 @@
       [`${customClass}`]: footerType === 'custom'
     },
     $$props.class
-  )}>
+  ])}>
   <slot />
 </footer>
 

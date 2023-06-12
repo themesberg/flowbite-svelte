@@ -2,10 +2,11 @@
   import { twMerge } from 'tailwind-merge'
   import { getContext } from 'svelte';
   import type { ButtonType } from '../types';
+  import type { SizeType } from '$lib/types';
 
   type ButtonColor = keyof typeof colorClasses;
 
-  const group = getContext('group');
+  const group: SizeType = getContext('group');
 
   export let pill: boolean = false;
   export let outline: boolean = false;
