@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import type { PsizeType, PweightType } from '../types';
 
   export let color: string = 'text-gray-900 dark:text-white';
@@ -77,7 +77,7 @@
     .map((element) => element + '/' + String(opacity))
     .join(' ');
 
-  let classP = classNames(
+  let classP = twMerge(
     size && sizes[size],
     (opacity && colorAndopacity) || (color && color),
     height && heights[height],

@@ -2,7 +2,7 @@
   import { getContext } from 'svelte';
   import type { TabCtxType } from './Tabs.svelte';
   import { writable } from 'svelte/store';
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
 
   export let open: boolean = false;
   export let title: string = 'Tab title';
@@ -28,7 +28,7 @@
   }
 
   let buttonClass: string;
-  $: buttonClass = classNames(
+  $: buttonClass = twMerge(
     defaultClass,
     open ? activeClasses ?? ctx.activeClasses : inactiveClasses ?? ctx.inactiveClasses,
     open && 'active'
@@ -36,7 +36,7 @@
   );
 </script>
 
-<li class={classNames('group', $$props.class)} role="presentation">
+<li class={twMerge('group', $$props.class)} role="presentation">
   <button
     type="button"
     on:click={() => (open = true)}

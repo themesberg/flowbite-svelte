@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
 
   export let tag: 'ul' | 'ol' | 'dl' = 'ul';
   export let list: 'disc' | 'none' | 'decimal' | undefined = undefined;
@@ -16,7 +16,7 @@
     outside: 'list-outside'
   };
 
-  let classList = classNames(
+  let classList = twMerge(
     lists[list ?? (tag === 'ul' ? 'disc' : 'ol' ? 'decimal' : 'none')],
     positions[position],
     $$props.class

@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { ToolbarButtonType } from '../types';
   import { getContext } from 'svelte';
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
 
   const background = getContext('background');
 
@@ -32,7 +32,7 @@
   };
 
   let buttonClass: string;
-  $: buttonClass = classNames(
+  $: buttonClass = twMerge(
     'focus:outline-none whitespace-normal',
     sizing[size],
     colors[color],

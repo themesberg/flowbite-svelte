@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { ComponentProps } from 'svelte';
   import Popper from '../utils/Popper.svelte';
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
 
   // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Popper> {
@@ -23,7 +23,7 @@
   $: {
     if ($$restProps.color) type = 'custom';
     else $$restProps.color = 'none';
-    toolTipClass = classNames('tooltip', defaultClass, types[type], $$props.class);
+    toolTipClass = twMerge('tooltip', defaultClass, types[type], $$props.class);
   }
 </script>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twJoin } from 'tailwind-merge'
   import { getContext } from 'svelte';
   export let title: string = '';
   export let date: string = '';
@@ -40,7 +40,7 @@
     custom: customTimeClass
   };
 
-  const h3Class = classNames(
+  const h3Class = twJoin(
     order === 'vertical'
       ? 'flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white'
       : 'text-lg font-semibold text-gray-900 dark:text-white'

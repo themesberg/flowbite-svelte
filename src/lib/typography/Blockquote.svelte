@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import type { BlockQuoteType } from '../types';
 
   export let border: boolean = false;
@@ -34,7 +34,7 @@
 
 <blockquote
   {...$$restProps}
-  class={classNames(
+  class={twMerge(
     baseClass,
     alignmentClasses[alignment],
     sizes[size],

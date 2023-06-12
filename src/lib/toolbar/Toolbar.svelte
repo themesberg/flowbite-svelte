@@ -2,7 +2,7 @@
   import type { ToolbarColorType } from '../types';
   import { setContext, type ComponentProps } from 'svelte';
   import { writable } from 'svelte/store';
-  import classNames from 'classnames';
+  import { twMerge, twJoin } from 'tailwind-merge'
   import Frame from '$lib/utils/Frame.svelte';
 
   interface $$Props extends ComponentProps<Frame> {
@@ -17,7 +17,7 @@
   export let embedded: boolean = false;
 
   let divClass: string;
-  $: divClass = classNames('flex justify-between items-center', embedded || 'p-2', $$props.class);
+  $: divClass = twMerge('flex justify-between items-center', embedded || 'p-2', $$props.class);
 
   const divideColors = {
     gray: 'divide-gray-400 dark:divide-gray-700',
@@ -33,7 +33,7 @@
   };
 
   let separatorsClass: string;
-  $: separatorsClass = classNames($separators && 'sm:divide-x', divideColors[color]);
+  $: separatorsClass = twJoin($separators && 'sm:divide-x', divideColors[color]);
 </script>
 
 <Frame {...$$restProps} class={divClass} color={embedded ? 'none' : color} rounded={!embedded}>

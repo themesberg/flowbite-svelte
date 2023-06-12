@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount, type ComponentProps } from 'svelte';
   import { createPopper, type Rect } from '@popperjs/core';
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import type { Placement, Instance } from '@popperjs/core';
   import createEventDispatcher from './createEventDispatcher';
   import Frame from './Frame.svelte';
@@ -143,7 +143,7 @@
   $: position = placement.split('-', 1)[0];
 
   let arrowClass: string = 'bottom';
-  $: arrowClass = classNames(
+  $: arrowClass = twMerge(
     'absolute w-[9px] h-[9px] rotate-45 bg-inherit',
     position === 'top' && ($$props.border ? 'border-b border-r -bottom-[5px]' : '-bottom-[4px]'),
     position === 'bottom' && ($$props.border ? 'border-t border-l -top-[5px]' : '-top-[4px]'),
@@ -167,7 +167,7 @@
     on:mouseenter={optional(activeContent && !clickable, showHandler)}
     on:mouseleave={optional(activeContent && !clickable, hideHandler)}
     {...$$restProps}
-    class={classNames('outline-none', $$props.class)}>
+    class={twMerge('outline-none', $$props.class)}>
     <slot />
     {#if arrow}<div data-popper-arrow class={arrowClass} />{/if}
   </Frame>

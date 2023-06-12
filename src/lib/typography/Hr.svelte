@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
 
   export let icon: boolean = false;
   export let width: string = 'w-full';
@@ -11,9 +11,9 @@
     'absolute left-1/2 px-3 font-medium text-gray-900 bg-white -translate-x-1/2 dark:text-white ';
   export let middleBgColor: string = 'dark:bg-gray-900';
 
-  let horizontalClass: string = classNames(hrClass, width, height, $$props.class);
-  let classDiv = classNames(divClass, $$slots && 'relative', $$props.classDiv);
-  let middleClass = classNames(middleBgColor, icon ? iconDivClass : textSpanClass);
+  let horizontalClass: string = twMerge(hrClass, width, height, $$props.class);
+  let classDiv = twMerge(divClass, $$slots && 'relative', $$props.classDiv);
+  let middleClass = twMerge(middleBgColor, icon ? iconDivClass : textSpanClass);
 </script>
 
 {#if $$slots}
