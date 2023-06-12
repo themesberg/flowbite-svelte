@@ -7,7 +7,7 @@
   export let dismissable: boolean = false;
   export let accent: boolean = false;
   export let contentPosClass: string = 'flex items-center';
-  export let closeBtnClass: string = '-mx-1.5 -my-1.5';
+  export let closeBtnClass: string = '';
   export let borderTopClass: string = 'border-t-4';
   export let defaultTextClass: string = 'p-4 text-sm';
 
@@ -46,8 +46,8 @@
 
     {#if dismissable}
       <CloseButton
-        class={closeBtnClass}
         color={$$restProps.color}
+        class={closeBtnClass}
         on:click={handleHide}
         on:click
         on:change

@@ -64,7 +64,7 @@
 
   let divClass: string;
   $: divClass = twMerge(
-    'p-0.5',
+    $$props.outline &&  'p-0.5',
     gradientClasses[color],
     shadow && 'shadow-lg',
     shadow && coloredShadowClasses[color],

@@ -1,23 +1,32 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+import { twMerge } from 'tailwind-merge';
 
-  export let customClass: string = '';
-  export let footerType: 'custom' | 'sitemap' | 'default' | 'logo' | 'socialmedia' = 'default';
+export let footerType: 'sitemap' | 'default' | 'logo' | 'socialmedia' = 'default';
+let styles = '';
+
+switch (footerType) {
+  case 'sitemap':
+    styles = 'bg-gray-800';
+    break;
+  case 'socialmedia':
+    styles = 'p-4 bg-white sm:p-6 dark:bg-gray-800';
+    break;
+  case 'logo':
+    styles = 'p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-800';
+    break;
+  case 'default':
+    styles = 'p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800';
+    break;
+}
+
+let footerClass = twMerge([styles, $$props.class]);
+
+
+  console.log(footerClass)
 </script>
-
 <footer
   {...$$restProps}
-  class={twMerge([
-    {
-      'bg-gray-800': footerType === 'sitemap',
-      'p-4 bg-white sm:p-6 dark:bg-gray-800': footerType === 'socialmedia',
-      'p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-800': footerType === 'logo',
-      'p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800':
-        footerType === 'default',
-      [`${customClass}`]: footerType === 'custom'
-    },
-    $$props.class
-  ])}>
+  class={footerClass}>
   <slot />
 </footer>
 
