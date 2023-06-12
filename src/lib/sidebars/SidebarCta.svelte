@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
 
   export let divWrapperClass: string = 'p-4 mt-6 bg-blue-50 rounded-lg dark:bg-blue-900';
   export let divClass: string = 'flex items-center mb-3';
@@ -8,7 +8,7 @@
   export let label: string = '';
 </script>
 
-<div {...$$restProps} id="dropdown-cta" class={classNames(divWrapperClass, $$props.class)} role="alert">
+<div {...$$restProps} id="dropdown-cta" class={twMerge(divWrapperClass, $$props.class)} role="alert">
   <div class={divClass}>
     <span class={spanClass}>{label}</span>
     {#if $$slots.icon}

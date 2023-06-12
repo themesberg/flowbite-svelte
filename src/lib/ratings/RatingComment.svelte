@@ -1,6 +1,5 @@
 <script lang="ts">
   import Button from '../buttons/Button.svelte';
-  import Star from './Star.svelte';
   import Rating from './Rating.svelte';
   // default is floor
   export let ceil: boolean = false;

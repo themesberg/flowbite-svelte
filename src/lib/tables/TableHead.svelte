@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import { getContext } from 'svelte';
 
   export let theadClass: string = 'text-xs uppercase';
@@ -34,7 +34,7 @@
     ? ''
     : `border-${color}-400`;
 
-  $: theadClassfinal = classNames(
+  $: theadClassfinal = twMerge(
     theadClass,
     textColor,
     striped && borderColors,

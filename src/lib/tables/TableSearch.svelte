@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import { setContext } from 'svelte';
 
   export let divClass: string = 'relative overflow-x-auto shadow-md sm:rounded-lg';
@@ -48,7 +48,7 @@
         {placeholder} />
     </div>
   </div>
-  <table {...$$restProps} class={classNames('w-full text-left text-sm', colors[color], $$props.class)}>
+  <table {...$$restProps} class={twMerge('w-full text-left text-sm', colors[color], $$props.class)}>
     <slot />
   </table>
 </div>

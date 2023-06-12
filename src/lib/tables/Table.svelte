@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge, twJoin } from 'tailwind-merge'
   import { setContext } from 'svelte';
   import type { TableColorType } from '../types';
 
@@ -29,8 +29,8 @@
   $: setContext('color', color);
 </script>
 
-<div class={classNames(divClass, shadow && 'shadow-md sm:rounded-lg')}>
-  <table {...$$restProps} class={classNames('w-full text-left text-sm', colors[color], $$props.class)}>
+<div class={twJoin(divClass, shadow && 'shadow-md sm:rounded-lg')}>
+  <table {...$$restProps} class={twMerge('w-full text-left text-sm', colors[color], $$props.class)}>
     <slot />
   </table>
 </div>

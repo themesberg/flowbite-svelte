@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import { fade, blur, fly, slide } from 'svelte/transition';
   // import { quintOut } from 'svelte/easing';
   import ChevronDown from '../utils/ChevronDown.svelte';
@@ -39,7 +39,7 @@
     {...$$restProps}
     on:click={() => handleDropdown()}
     type="button"
-    class={classNames(btnClass, $$props.class)}
+    class={twMerge(btnClass, $$props.class)}
     aria-controls="sidebar-dropdown">
     <slot name="icon" />
     <span class={spanClass}>{label}</span>
