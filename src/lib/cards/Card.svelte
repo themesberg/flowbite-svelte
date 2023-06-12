@@ -36,8 +36,8 @@
     xl: 'max-w-screen-xl'
   };
 
-  let innerPdding: string;
-  $: innerPdding = paddings[padding];
+  let inneraPdding: string;
+  $: innerPadding = paddings[padding];
 
   let cardClass: string;
   $: cardClass = classNames(
@@ -46,7 +46,7 @@
     reverse ? 'flex-col-reverse' : 'flex-col',
     horizontal && (reverse ? 'md:flex-row-reverse md:max-w-xl' : 'md:flex-row md:max-w-xl'),
     href && 'hover:bg-gray-100 dark:hover:bg-gray-700',
-    !img && innerPdding,
+    !img && innerPadding,
     $$props.class
   );
 
@@ -73,7 +73,7 @@
   class={cardClass}>
   {#if img}
     <img class={imgClass} src={img} alt="" />
-    <div class={innerPdding}>
+    <div class={innerPadding}>
       <slot />
     </div>
   {:else}
