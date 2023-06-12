@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import type { LinkType } from '../types';
   import Popper from '../utils/Popper.svelte';
 
@@ -12,10 +12,10 @@
   }
 
   let wrapperClass: string;
-  $: wrapperClass = classNames(full && 'border-y w-full', $$props.class);
+  $: wrapperClass = twMerge(full && 'border-y w-full', $$props.class);
 
   let ulClass: string;
-  $: ulClass = classNames(
+  $: ulClass = twMerge(
     'grid grid-flow-row gap-y-4 md:gap-x-0 auto-col-max auto-row-max',
     full && $$slots.extra ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-3',
     'text-sm font-medium',

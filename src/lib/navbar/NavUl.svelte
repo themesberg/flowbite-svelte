@@ -6,7 +6,7 @@
 </script>
 
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import { slide, type SlideParams } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
   import Frame from '../utils/Frame.svelte';
@@ -25,10 +25,10 @@
   setContext<NavbarLiType>('navbar', { activeClass, nonActiveClass });
 
   let _divClass: string;
-  $: _divClass = classNames(divClass, $$props.class);
+  $: _divClass = twMerge(divClass, $$props.class);
 
   let _ulClass: string;
-  $: _ulClass = classNames(
+  $: _ulClass = twMerge(
     ulClass,
     // 'divide-y md:divide-y-0 divide-gray-100 dark:divide-gray-700',
     $$props.class

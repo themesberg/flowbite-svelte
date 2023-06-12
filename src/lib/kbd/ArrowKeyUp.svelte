@@ -1,11 +1,11 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   export let svgClass: string = 'w-4 h-4';
 </script>
 
 <svg
   {...$$restProps}
-  class={classNames(svgClass, $$props.class)}
+  class={twMerge(svgClass, $$props.class)}
   aria-hidden="true"
   fill="currentColor"
   xmlns="http://www.w3.org/2000/svg"

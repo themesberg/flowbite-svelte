@@ -1,6 +1,6 @@
 <script lang="ts">
   import { getContext } from 'svelte';
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
 
   export let active: boolean = getContext('active');
   export let current: boolean = false;
@@ -26,7 +26,7 @@
   $: state = disabled ? 'disabled' : current ? 'current' : 'normal';
 
   let itemClass: string;
-  $: itemClass = classNames(
+  $: itemClass = twMerge(
     itemDefaultClass,
     states[state],
     active && state === 'disabled' && 'cursor-not-allowed',

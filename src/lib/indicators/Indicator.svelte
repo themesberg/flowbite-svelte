@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import type { IndicatorColorType, IndicatorPlacementType } from '../types';
 
   export let color: IndicatorColorType = 'gray';
@@ -65,7 +65,7 @@
   };
 
   let dotClass: string;
-  $: dotClass = classNames(
+  $: dotClass = twMerge(
     'flex-shrink-0',
     rounded ? 'rounded' : 'rounded-full',
     border && 'border-2 border-white dark:border-gray-800',

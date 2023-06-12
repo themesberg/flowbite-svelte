@@ -1,9 +1,9 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   export let href: string = '';
 </script>
 
-<a {href} {...$$restProps} class={classNames('flex items-center', $$props.class)}>
+<a {href} {...$$restProps} class={twMerge('flex items-center', $$props.class)}>
   <slot />
 </a>
 

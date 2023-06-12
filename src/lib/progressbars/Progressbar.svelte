@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge, twJoin } from 'tailwind-merge'
 
   export let progress: string = '45';
   export let size: string = 'h-2.5';
@@ -24,18 +24,18 @@
 </script>
 
 {#if labelOutside}
-  <div {...$$restProps} class={classNames('flex justify-between mb-1', $$props.class)}>
+  <div {...$$restProps} class={twMerge('flex justify-between mb-1', $$props.class)}>
     <span class="text-base font-medium text-blue-700 dark:text-white">{labelOutside}</span>
     <span class="text-sm font-medium text-blue-700 dark:text-white">{progress}%</span>
   </div>
 {/if}
-<div class={classNames('w-full bg-gray-200 rounded-full dark:bg-gray-700', size, $$props.class)}>
+<div class={twMerge('w-full bg-gray-200 rounded-full dark:bg-gray-700', size, $$props.class)}>
   {#if labelInside}
-    <div class={classNames(labelInsideClass, barColors[color])} style="width: {progress}%">
+    <div class={twJoin(labelInsideClass, barColors[color])} style="width: {progress}%">
       {progress}%
     </div>
   {:else}
-    <div class={classNames(barColors[color], size, 'rounded-full')} style="width: {progress}%" />
+    <div class={twJoin(barColors[color], size, 'rounded-full')} style="width: {progress}%" />
   {/if}
 </div>
 
