@@ -114,7 +114,7 @@ Get started with this example to underline an important part of the heading comp
   import {  Heading, P, Span } from 'flowbite-svelte'
 </script>
 
-<Heading tag="h1" class="mb-4">We invest in the <Span underline underDecoration="decoration-8 decoration-blue-400 dark:decoration-blue-600">world’s potential</Span></Heading>
+<Heading tag="h1" class="mb-4">We invest in the <Span underline decorationClass="decoration-8 decoration-blue-400 dark:decoration-blue-600">world’s potential</Span></Heading>
 <P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
 ```
 
