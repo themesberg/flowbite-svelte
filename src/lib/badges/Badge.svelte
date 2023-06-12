@@ -1,6 +1,6 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
-  import classNames from 'classnames';
+  import { twMerge, twJoin } from 'tailwind-merge'
   import CloseButton from '../utils/CloseButton.svelte';
 
   export let color: 'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'none' =
@@ -61,7 +61,7 @@
   let transition = false;
 
   let badgeClass: string;
-  $: badgeClass = classNames(
+  $: badgeClass = twMerge(
     baseClass,
     large ? 'text-sm' : 'text-xs',
     border ? `border ${borderedColors[color]}` : colors[color],
@@ -90,7 +90,7 @@
   };
 
   let closeBtnClass: string;
-  $: closeBtnClass = classNames(closeBtnBaseClass, closeBtnColors[color]);
+  $: closeBtnClass = twJoin(closeBtnBaseClass, closeBtnColors[color]);
 
   let hidden = false;
   const dispatch = createEventDispatcher();

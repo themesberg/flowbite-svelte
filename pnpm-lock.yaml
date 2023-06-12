@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -94,6 +94,9 @@ devDependencies:
   svelte2tsx:
     specifier: ^0.6.15
     version: 0.6.15(svelte@3.59.1)(typescript@5.0.4)
+  tailwind-merge:
+    specifier: ^1.13.1
+    version: 1.13.1
   tailwindcss:
     specifier: ^3.3.2
     version: 3.3.2
@@ -2865,6 +2868,10 @@ packages:
   /svelte@3.59.1:
     resolution: {integrity: sha512-pKj8fEBmqf6mq3/NfrB9SLtcJcUvjYSWyePlfCqN9gujLB25RitWK8PvFzlwim6hD/We35KbPlRteuA6rnPGcQ==}
     engines: {node: '>= 8'}
+    dev: true
+
+  /tailwind-merge@1.13.1:
+    resolution: {integrity: sha512-tRtRN22TDokGi2TuYSvuHQuuW6BJ/zlUEG+iYpAQ9i66msc/0eU/+HPccbPnNNH0mCPp0Ob8thaC8Uy9CxHitQ==}
     dev: true
 
   /tailwindcss@3.3.2:

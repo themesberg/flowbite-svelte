@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import { setContext } from 'svelte';
 
   import { noop } from 'svelte/internal';
@@ -112,7 +112,7 @@
 
   let divClass: string;
 
-  $: divClass = classNames(
+  $: divClass = twMerge(
     bgColors[color],
     textColors[color],
     rounded && (color === 'dropdown' ? 'rounded' : 'rounded-lg'),

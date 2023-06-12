@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import { createEventDispatcher, type ComponentProps } from 'svelte';
   import CloseButton from '../utils/CloseButton.svelte';
   import Frame from '../utils/Frame.svelte';
@@ -26,7 +26,7 @@
   };
 
   let divClass: string;
-  $: divClass = classNames(defaultTextClass, accent && borderTopClass, hidden && 'hidden', $$props.class);
+  $: divClass = twMerge(defaultTextClass, accent && borderTopClass, hidden && 'hidden', $$props.class);
 
   $: {
     // set default values
