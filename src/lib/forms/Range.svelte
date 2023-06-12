@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
 
   export let value: number;
   export let size: 'sm' | 'md' | 'lg' = 'md';
@@ -10,7 +10,7 @@
     lg: 'h-3 range-lg'
   };
   let inputClass: string;
-  $: inputClass = classNames(
+  $: inputClass = twMerge(
     'w-full bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700',
     sizes[size] ?? sizes.md,
     $$props.class

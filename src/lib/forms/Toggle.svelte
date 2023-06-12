@@ -1,6 +1,6 @@
 <script lang="ts">
   import { getContext } from 'svelte';
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import Checkbox from './Checkbox.svelte';
   import type { FormColorType } from '../types';
 
@@ -37,7 +37,7 @@
   };
 
   let divClass: string;
-  $: divClass = classNames(
+  $: divClass = twMerge(
     common,
     background ? 'dark:bg-gray-600 dark:border-gray-500' : 'dark:bg-gray-700 dark:border-gray-600',
     colors[($$restProps.color as FormColorType) ?? 'primary'],

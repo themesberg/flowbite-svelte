@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import type { SelectOptionType } from '../types';
 
   export let items: SelectOptionType[] = [];
@@ -22,7 +22,7 @@
   };
 
   let selectClass: string;
-  $: selectClass = classNames(
+  $: selectClass = twMerge(
     common,
     underline ? underlineClass : defaultClass,
     sizes[size],

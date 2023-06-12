@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   export let href: string = '';
   export let ariaLabel: string = '';
   export let aClass: string = 'text-gray-500 hover:text-gray-900 dark:hover:text-white';
@@ -7,7 +7,7 @@
 </script>
 
 {#if href}
-  <a {...$$restProps} {href} {target} aria-label={ariaLabel} class={classNames(aClass, $$props.class)}>
+  <a {...$$restProps} {href} {target} aria-label={ariaLabel} class={twMerge(aClass, $$props.class)}>
     <slot />
   </a>
 {:else}

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
 
   export let color: 'gray' | 'green' | 'red' | 'disabled' = 'gray';
   export let defaultClass: string = 'text-sm font-medium block';
@@ -20,7 +20,7 @@
     color = control?.disabled ? 'disabled' : color;
   }
 
-  $: labelClass = classNames(defaultClass, colorClasses[color], $$props.class);
+  $: labelClass = twMerge(defaultClass, colorClasses[color], $$props.class);
 </script>
 
 {#if show}

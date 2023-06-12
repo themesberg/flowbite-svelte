@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import { getContext } from 'svelte';
   import Wrapper from '../utils/Wrapper.svelte';
 
@@ -15,7 +15,7 @@
   $: wrapped = $$slots.header || $$slots.footer;
 
   let wrapperClass: string;
-  $: wrapperClass = classNames(
+  $: wrapperClass = twMerge(
     'w-full rounded-lg',
     background ? 'bg-white dark:bg-gray-800' : 'bg-gray-50 dark:bg-gray-700',
     'text-gray-900 dark:placeholder-gray-400 dark:text-white ',
@@ -24,16 +24,16 @@
   );
 
   let textareaClass: string;
-  $: textareaClass = wrapped ? classNames(wrappedClass) : classNames(wrapperClass, unWrappedClass);
+  $: textareaClass = wrapped ? wrappedClass : twMerge(wrapperClass, unWrappedClass);
 
   const headerClass = (header: boolean) =>
-    classNames(header ? 'border-b' : 'border-t', 'py-2 px-3 border-gray-200 dark:border-gray-600');
+  twMerge(header ? 'border-b' : 'border-t', 'py-2 px-3 border-gray-200 dark:border-gray-600');
 
   let innerWrapperClass: string;
-  $: innerWrapperClass = classNames(
+  $: innerWrapperClass = twMerge(
     'py-2 px-4 bg-white dark:bg-gray-800',
-    $$slots.footer || 'rounded-b-lg',
-    $$slots.header || 'rounded-t-lg'
+    $$slots.footer ? 'rounded-b-lg' : '',
+    $$slots.header ? 'rounded-t-lg' : ''
   );
 </script>
 

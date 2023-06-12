@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { SizeType } from '$lib/types';
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import { getContext } from 'svelte';
   import { clampSize } from '$lib/forms/Input.svelte';
 
@@ -32,7 +32,7 @@
   // size: explicit, inherited, default
   $: _size = size || clampSize(group?.size) || 'md';
 
-  $: divClass = classNames(
+  $: divClass = twMerge(
     textSizes[_size],
     prefixPadding[_size],
     background ? borderClasses['tinted'] : borderClasses['base'],
