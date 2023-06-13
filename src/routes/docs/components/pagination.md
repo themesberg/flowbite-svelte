@@ -284,10 +284,7 @@ You can use the following code to show the number of data shown inside a table e
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">Pagination, PaginationItem</Heading>
 
 <DocBadgeList items={events} />
+
 ## References
 
-<P>
-  <A href="https://flowbite.com/docs/components/pagination/" target="_blank" rel="noreferrer" class="link"
-    >Flowbite Pagination</A
-  >
-</P>
+- [Flowbite Pagination](https://flowbite.com/docs/components/pagination/)

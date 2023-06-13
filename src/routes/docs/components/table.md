@@ -97,7 +97,7 @@ Set the `striped` prop to `true` to alternate background colors of every second 
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500">
+        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
           Edit
         </a>
       </TableBodyCell>
@@ -108,7 +108,7 @@ Set the `striped` prop to `true` to alternate background colors of every second 
       <TableBodyCell>Laptop PC</TableBodyCell>
       <TableBodyCell>$1999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500">
+        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
           Edit
         </a>
       </TableBodyCell>
@@ -119,7 +119,7 @@ Set the `striped` prop to `true` to alternate background colors of every second 
       <TableBodyCell>Accessories</TableBodyCell>
       <TableBodyCell>$99</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500">
+        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
           Edit
         </a>
       </TableBodyCell>
@@ -130,7 +130,7 @@ Set the `striped` prop to `true` to alternate background colors of every second 
       <TableBodyCell>Phone</TableBodyCell>
       <TableBodyCell>$799</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500">
+        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
           Edit
         </a>
       </TableBodyCell>
@@ -141,7 +141,7 @@ Set the `striped` prop to `true` to alternate background colors of every second 
       <TableBodyCell>Wearables</TableBodyCell>
       <TableBodyCell>$999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500">
+        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
           Edit
         </a>
       </TableBodyCell>
@@ -176,7 +176,7 @@ Set `hoverable` to `true` to change the background color of a data row when hove
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500">
+        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
           Edit
         </a>
       </TableBodyCell>
@@ -187,7 +187,7 @@ Set `hoverable` to `true` to change the background color of a data row when hove
       <TableBodyCell>Laptop PC</TableBodyCell>
       <TableBodyCell>$1999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500">
+        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
           Edit
         </a>
       </TableBodyCell>
@@ -198,7 +198,7 @@ Set `hoverable` to `true` to change the background color of a data row when hove
       <TableBodyCell>Accessories</TableBodyCell>
       <TableBodyCell>$99</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500">
+        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
           Edit
         </a>
       </TableBodyCell>
@@ -239,7 +239,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500">
+        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
           Edit
         </a>
       </TableBodyCell>
@@ -253,7 +253,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
       <TableBodyCell>Laptop PC</TableBodyCell>
       <TableBodyCell>$1999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500">
+        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
           Edit
         </a>
       </TableBodyCell>
@@ -267,7 +267,7 @@ Checkboxes can be used inside table data rows to select multiple data sets and a
       <TableBodyCell>Accessories</TableBodyCell>
       <TableBodyCell>$99</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500">
+        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
           Edit
         </a>
       </TableBodyCell>
@@ -515,7 +515,7 @@ Improve accessibility by using a caption inside the table as a heading to better
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500">
+        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
           Edit
         </a>
       </TableBodyCell>
@@ -526,7 +526,7 @@ Improve accessibility by using a caption inside the table as a heading to better
       <TableBodyCell>Laptop PC</TableBodyCell>
       <TableBodyCell>$1999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500">
+        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
           Edit
         </a>
       </TableBodyCell>
@@ -537,7 +537,7 @@ Improve accessibility by using a caption inside the table as a heading to better
       <TableBodyCell>Accessories</TableBodyCell>
       <TableBodyCell>$99</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500">
+        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
           Edit
         </a>
       </TableBodyCell>
@@ -660,7 +660,7 @@ Use this example to enable horizontal scrolling if the content inside the table 
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>3.0 lb.</TableBodyCell>
       <TableBodyCell
-        ><a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500">
+        ><a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
           Edit
         </a>
         <a href="/tables" class="font-medium text-red-600 hover:underline dark:text-red-500">
@@ -680,7 +680,7 @@ Use this example to enable horizontal scrolling if the content inside the table 
       <TableBodyCell>$1999</TableBodyCell>
       <TableBodyCell>1.0 lb.</TableBodyCell>
       <TableBodyCell
-        ><a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500">
+        ><a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
           Edit
         </a>
         <a href="/tables" class="font-medium text-red-600 hover:underline dark:text-red-500">
@@ -700,7 +700,7 @@ Use this example to enable horizontal scrolling if the content inside the table 
       <TableBodyCell>$99</TableBodyCell>
       <TableBodyCell>0.2 lb.</TableBodyCell>
       <TableBodyCell
-        ><a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500">
+        ><a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
           Edit
         </a>
         <a href="/tables" class="font-medium text-red-600 hover:underline dark:text-red-500">
@@ -852,7 +852,7 @@ Use this example to apply a different color to every second row inside the table
       <TableBodyCell>Laptop</TableBodyCell>
       <TableBodyCell>$2999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500">
+        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
           Edit
         </a>
       </TableBodyCell>
@@ -863,7 +863,7 @@ Use this example to apply a different color to every second row inside the table
       <TableBodyCell>Laptop PC</TableBodyCell>
       <TableBodyCell>$1999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500">
+        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
           Edit
         </a>
       </TableBodyCell>
@@ -874,7 +874,7 @@ Use this example to apply a different color to every second row inside the table
       <TableBodyCell>Accessories</TableBodyCell>
       <TableBodyCell>$99</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500">
+        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
           Edit
         </a>
       </TableBodyCell>
@@ -885,7 +885,7 @@ Use this example to apply a different color to every second row inside the table
       <TableBodyCell>Phone</TableBodyCell>
       <TableBodyCell>$799</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500">
+        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
           Edit
         </a>
       </TableBodyCell>
@@ -896,7 +896,7 @@ Use this example to apply a different color to every second row inside the table
       <TableBodyCell>Wearables</TableBodyCell>
       <TableBodyCell>$999</TableBodyCell>
       <TableBodyCell>
-        <a href="/tables" class="font-medium text-blue-600 hover:underline dark:text-blue-500">
+        <a href="/tables" class="font-medium text-primary-600 hover:underline dark:text-primary-500">
           Edit
         </a>
       </TableBodyCell>
@@ -954,8 +954,4 @@ The component has the following props, type, and default values. See <A href="/d
 
 ## References
 
-<P>
-  <A href="https://flowbite.com/docs/components/tables/" target="_blank" rel="noreferrer" class="link"
-    >Flowbite Tables</A
-  >
-</P>
+- [Flowbite Tables](https://flowbite.com/docs/components/tables/)

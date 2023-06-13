@@ -47,7 +47,7 @@
           </svelte:fragment>
           <svelte:fragment slot="subtext">
             <span
-              class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200"
+              class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"
               >3</span
             >
           </svelte:fragment>

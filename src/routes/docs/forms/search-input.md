@@ -130,3 +130,7 @@ The component has the following props, type, and default values. See <A href="/d
 ## Forwarded Events: Search
 
 <DocBadgeList items={events} />
+
+## References
+
+- [Flowbite Search Input](https://flowbite.com/docs/forms/search-input/)

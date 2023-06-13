@@ -8,7 +8,7 @@
   export let color: 'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo' =
     'primary';
   export let labelInsideClass: string =
-    'text-blue-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
+    'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
 
   // let barColor: string;
   const barColors = {
@@ -24,6 +24,7 @@
 </script>
 
 {#if labelOutside}
+
   <div {...$$restProps} class={twMerge('flex justify-between mb-1', $$props.class)}>
     <span class="text-base font-medium text-blue-700 dark:text-white">{labelOutside}</span>
     <span class="text-sm font-medium text-blue-700 dark:text-white">{progress}%</span>
@@ -49,7 +50,7 @@
   @prop labelInside: boolean = false;
   @prop labelOutside: string = '';
   @prop color: 'primary'| 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo' = 'primary';
-  @prop labelInsideClass: string = 'text-blue-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
+  @prop labelInsideClass: string = 'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
   ## Example
   ```
   <script>

@@ -3,7 +3,7 @@
     [
       "color",
       "'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'none'",
-      "'blue'"
+      "'primary'"
     ],
     ["large", "boolean", "false"],
     ["border", "boolean", "false"],

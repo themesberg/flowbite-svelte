@@ -149,3 +149,7 @@ The component has the following props, type, and default values. See <A href="/d
 
 <DocBadgeList items={events2} />
 
+## References
+
+- [Flowbite File Input](https://flowbite.com/docs/forms/file-input/)
+

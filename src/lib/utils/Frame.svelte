@@ -105,8 +105,8 @@
     navbar: 'border-gray-100 dark:border-gray-700',
     navbarUl: 'border-gray-100 dark:border-gray-700',
     form: 'border-gray-300 dark:border-gray-700',
-    primary: 'border-primary-500 dark:bg-primary-200 ',
-    orange: 'border-orange-300 dark:bg-orange-800',
+    primary: 'border-primary-500 dark:border-primary-200 ',
+    orange: 'border-orange-300 dark:border-orange-800',
     none: ''
   };
 

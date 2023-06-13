@@ -270,9 +270,7 @@ To get a custom look and feel for the `Tabs` component, do not set `style` prop,
 ## Forwarded Events: TabItem
 
 <DocBadgeList items={events} />
+
 ## References
 
-<P>
-  <A href="https://flowbite.com/docs/components/tabs/" target="_blank" rel="noreferrer" class="link"
-    >Flowbite Tabs</A>
-</P>
+- [Flowbite Tabs](https://flowbite.com/docs/components/tabs/)

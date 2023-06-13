@@ -13,7 +13,7 @@ thumnailSize: w-24
   import { Badge, P, A } from '$lib'
   import { props as buttonProps } from '../../props/Button.json'
 
-  const events = ["on:change","on:click","on:keydown","on:keyup","on:mouseenter","on:mouseleave"];
+  const events = ["on:change","on:click","on:keydown","on:keyup","on:mouseenter","on:mouseleave","on:touchstart","on:touchend","on:touchcancel"];
   // slots
   let slotHeader = ['Name', 'Description']
   let slotItems = [['default', 'For a button label.']]
@@ -272,11 +272,11 @@ You can use on:click or any standard on:* to listen to the event.
     alert('You clicked btn1.');
   };
   const btn2 = () => {
-    alert('You clicked btn2.');
+    alert('You touched btn2.');
   };
 </script>
 <Button on:click={btn1}>Button 1</Button>
-<Button on:click={btn2}>Button 2</Button>
+<Button on:touchstart={btn2}>Button 2</Button>
 ```
 
 ## Props
@@ -301,10 +301,7 @@ Use `btnClass` to overwrite Button class.
 ## Forwarded Events
 
 <DocBadgeList items={events} />
+
 ## References
 
-<P>
-  <A href="https://flowbite.com/docs/components/buttons/" target="_blank" rel="noreferrer" class="link"
-    >Flowbite Buttons</A
-  >
-</P>
+- [Flowbite Buttons](https://flowbite.com/docs/components/buttons/)

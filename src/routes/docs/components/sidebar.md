@@ -73,7 +73,7 @@ Use this example to show a responsive list of menu items inside the sidebar with
         </svelte:fragment>
         <svelte:fragment slot="subtext">
           <span
-            class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200"
+            class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"
             >3</span
           >
         </svelte:fragment>
@@ -141,7 +141,7 @@ Use this sidebar example to create multi-level menu items by using the dSidebarD
         </svelte:fragment>
         <svelte:fragment slot="subtext">
           <span
-            class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200"
+            class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"
             >3</span
           >
         </svelte:fragment>
@@ -287,7 +287,7 @@ Separate the content inside the sidebar component by applying a border separator
         </svelte:fragment>
         <svelte:fragment slot="subtext">
           <span
-            class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200"
+            class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"
             >3</span
           >
         </svelte:fragment>
@@ -370,7 +370,7 @@ Use this example to add a CTA button inside the sidebar component and encourage 
         </svelte:fragment>
         <svelte:fragment slot="subtext">
           <span
-            class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200"
+            class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"
             >3</span
           >
         </svelte:fragment>
@@ -394,7 +394,7 @@ Use this example to add a CTA button inside the sidebar component and encourage 
         <svelte:fragment slot="icon">
           <button
             type="button"
-            class="ml-auto -mx-1.5 -my-1.5 bg-blue-50 text-blue-900 rounded-lg focus:ring-2 focus:ring-blue-400 p-1 hover:bg-blue-200 inline-flex h-6 w-6 dark:bg-blue-900 dark:text-blue-400 dark:hover:bg-blue-800"
+            class="ml-auto -mx-1.5 -my-1.5 bg-primary-50 text-primary-900 rounded-lg focus:ring-2 focus:ring-primary-400 p-1 hover:bg-primary-200 inline-flex h-6 w-6 dark:bg-primary-900 dark:text-primary-400 dark:hover:bg-primary-800"
             data-collapse-toggle="dropdown-cta"
             aria-label="Close"
           >
@@ -402,12 +402,12 @@ Use this example to add a CTA button inside the sidebar component and encourage 
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
           </button>
         </svelte:fragment>
-        <p class="mb-3 text-sm text-blue-900 dark:text-blue-400">
+        <p class="mb-3 text-sm text-primary-900 dark:text-primary-400">
           Preview the new Flowbite dashboard navigation! You can turn the new navigation off for a
           limited time in your profile.
         </p>
         <a
-          class="text-sm text-blue-900 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+          class="text-sm text-primary-900 underline hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300"
           href="/">Turn new navigation off</a
         >
       </SidebarCta>
@@ -458,7 +458,7 @@ Show the logo of your brand and link back to the homepage from the top part of t
         </svelte:fragment>
         <svelte:fragment slot="subtext">
           <span
-            class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-blue-600 bg-blue-200 rounded-full dark:bg-blue-900 dark:text-blue-200"
+            class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"
             >3</span
           >
         </svelte:fragment>
@@ -579,10 +579,7 @@ The component has the following props, type, and default values. See <A href="/d
 <Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">SidebarDropdownItem, SidebarItem</Heading>
 
 <DocBadgeList items={events} />
+
 ## References
 
-<P>
-  <A href="https://flowbite.com/docs/components/sidebar/" target="_blank" rel="noreferrer" class="link"
-    >Flowbite Sidebar</A
-  >
-</P>
+- [Flowbite Sidebar](https://flowbite.com/docs/components/sidebar/)

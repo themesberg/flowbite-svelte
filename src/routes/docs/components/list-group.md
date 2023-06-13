@@ -161,10 +161,7 @@ Delete user
 ### ListgroupItem
 
 <DocBadgeList items={events} />
+
 ## References
 
-<P>
-  <A href="https://flowbite.com/docs/components/list-group/" target="_blank" rel="noreferrer" class="link"
-    >Flowbite List Group</A
-  >
-</P>
+- [Flowbite List Group](https://flowbite.com/docs/components/list-group/)

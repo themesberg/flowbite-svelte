@@ -100,8 +100,4 @@ The component has the following props, type, and default values. See <A href="/d
 
 ## References
 
-<P>
-  <A href="https://flowbite.com/docs/customize/dark-mode/" target="_blank" rel="noreferrer" class="link"
-    >Flowbite Dark mode</A
-  >
-</P>
+- [Flowbite Dark Mode](https://flowbite.com/docs/customize/dark-mode/)

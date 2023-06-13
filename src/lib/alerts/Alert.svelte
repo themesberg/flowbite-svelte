@@ -3,6 +3,7 @@
   import { createEventDispatcher, type ComponentProps } from 'svelte';
   import CloseButton from '../utils/CloseButton.svelte';
   import Frame from '../utils/Frame.svelte';
+  import { fade } from 'svelte/transition';
 
   export let dismissable: boolean = false;
   export let accent: boolean = false;
@@ -11,38 +12,43 @@
   export let borderTopClass: string = 'border-t-4';
   export let defaultTextClass: string = 'p-4 text-sm';
 
+
   const dispatch = createEventDispatcher();
 
   interface $$Props extends ComponentProps<Frame> {
     dismissable?: boolean;
-    accent?: boolean;
   }
 
-  let hidden = false;
+  let open = true;
 
-  const handleHide = () => {
-    hidden = !hidden;
+  const close = () => {
+    open = false;
     dispatch('close'); // preferred name
   };
 
   let divClass: string;
+
   $: divClass = twMerge(defaultTextClass, accent && borderTopClass, hidden && 'hidden', $$props.class);
 
   $: {
     // set default values
-    $$restProps.color = $$restProps.color ?? 'blue';
-    $$restProps.rounded = $$restProps.rounded ?? !accent;
+    $$restProps.color = $$restProps.color ?? 'primary';
+    $$restProps.rounded = $$restProps.rounded ?? true;
+    if (dismissable) $$restProps.transition = $$restProps.transition ?? fade;
   }
 </script>
 
-<Frame {...$$restProps} class={divClass} role="alert">
-  <div class={contentPosClass}>
+{#if open}
+  <Frame {...$$restProps} class={divClass} role="alert">
     {#if $$slots.icon}
       <slot name="icon" />
     {/if}
-    <div class:ml-3={$$slots.icon}>
+
+    {#if $$slots.icon || dismissable}
+      <div><slot /></div>
+    {:else}
       <slot />
-    </div>
+    {/if}
 
     {#if dismissable}
       <CloseButton
@@ -58,9 +64,8 @@
         on:mouseenter
         on:mouseleave />
     {/if}
-  </div>
-  <slot name="extra" />
-</Frame>
+  </Frame>
+{/if}
 
 <!--
   @component

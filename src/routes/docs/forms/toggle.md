@@ -84,3 +84,7 @@ The component has the following props, type, and default values. See <A href="/d
 ## Forwarded Events
 
 <DocBadgeList items={events} />
+
+## References
+
+- [Flowbite Switch (Toggle)](https://flowbite.com/docs/forms/toggle/)

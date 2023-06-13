@@ -13,6 +13,7 @@
     gray: 'bg-gray-200',
     dark: 'bg-gray-900 dark:bg-gray-700',
     blue: 'bg-blue-600',
+    orange: 'bg-orange-600',
     green: 'bg-green-500',
     red: 'bg-red-500',
     purple: 'bg-purple-500',

@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.37.5](https://github.com/themesberg/flowbite-svelte/compare/v0.37.4...v0.37.5) (2023-06-09)
+
+
+### Features
+
+* **config:** fix default bg-primary-50 color ([7d89f57](https://github.com/themesberg/flowbite-svelte/commit/7d89f572b934f3da843bca3f4f162939c1bb2768))
+* **input:** update blue to primary color focus ([f155ec5](https://github.com/themesberg/flowbite-svelte/commit/f155ec588fc52e30383368b2700dbb28be3bbb6d))
+
+
+### Bug Fixes
+
+* [#836](https://github.com/themesberg/flowbite-svelte/issues/836) ([c727c98](https://github.com/themesberg/flowbite-svelte/commit/c727c982cff9c28251a052b2bda1fee496fd62a6))
+
 ### [0.37.4](https://github.com/themesberg/flowbite-svelte/compare/v0.37.3...v0.37.4) (2023-06-03)
 
 

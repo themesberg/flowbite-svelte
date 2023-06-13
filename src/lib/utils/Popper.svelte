@@ -74,6 +74,7 @@
   };
 
   function init(node: HTMLElement, _triggerEl: HTMLElement) {
+    const arrowEl = arrow ? node.lastElementChild : undefined;
     popper = createPopper(_triggerEl, node, {
       placement,
       strategy,
@@ -89,7 +90,7 @@
         },
         { name: 'eventListeners', enabled: open },
         { name: 'flip', enabled: false },
-        { name: 'arrow', enabled: true }
+        { name: 'arrow', enabled: arrow, options: { element: arrowEl, padding: 10 } }
       ]
     });
     return {
@@ -139,7 +140,7 @@
     return (pred && func) || null;
   }
 
-  let position: string;
+  let position: string = 'bottom';
   $: position = placement.split('-', 1)[0];
 
   let arrowClass: string = 'bottom';
@@ -169,11 +170,11 @@
     {...$$restProps}
     class={twMerge('outline-none', $$props.class)}>
     <slot />
-    {#if arrow}<div data-popper-arrow class={arrowClass} />{/if}
+    {#if arrow}<div class={arrowClass} />{/if}
   </Frame>
 {/if}
 
-<!--        
+<!--
   @component
   ## Props
   @prop activeContent: boolean = false;

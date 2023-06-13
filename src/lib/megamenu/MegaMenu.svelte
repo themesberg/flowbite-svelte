@@ -36,7 +36,7 @@
   class={wrapperClass}
   on:show
   bind:open>
-  <div class="flex flex-col md:flex-row p-4 max-w-screen-md justify-center mx-auto">
+  <div class="flex flex-col md:flex-row p-4 max-w-screen-md justify-center mx-auto mt-2">
     <ul class={ulClass}>
       {#each items as item, index}
         <li>

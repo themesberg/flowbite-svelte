@@ -154,7 +154,7 @@
       <div class="relative">
         <div class="overflow-hidden" class:max-h-72={!expand} tabindex="-1" use:checkOverflow>
           <div class="highlight">
-            <pre bind:this={code} class="language-svelte !-mt-2"><slot name="code" /></pre>
+            <pre bind:this={code} class="language-svelte !-mt-2 !rounded-none"><slot name="code" /></pre>
           </div>
         </div>
         {#if showExpandButton && !expand}
