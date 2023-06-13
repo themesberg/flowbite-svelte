@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount, type ComponentProps } from 'svelte';
   import { createPopper, type Rect } from '@popperjs/core';
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import type { Placement, Instance } from '@popperjs/core';
   import createEventDispatcher from './createEventDispatcher';
   import Frame from './Frame.svelte';
@@ -143,13 +143,13 @@
   let position: string = 'bottom';
   $: position = placement.split('-', 1)[0];
 
-  let arrowClass: string;
-  $: arrowClass = classNames(
-    'after:w-[9px] after:h-[9px] after:rotate-45 bg-inherit after:bg-inherit invisible after:visible after:block border-inherit after:border-inherit',
-    position === 'top' && ($$props.border ? 'after:border-b after:border-r -bottom-[5px]' : '-bottom-[4px]'),
-    position === 'bottom' && ($$props.border ? 'after:border-t after:border-l -top-[5px]' : '-top-[4px]'),
-    position === 'left' && ($$props.border ? 'after:border-t after:border-r -right-[5px]' : '-right-[4px]'),
-    position === 'right' && ($$props.border ? 'after:border-b after:border-l -left-[5px]' : '-left-[4px]')
+  let arrowClass: string = 'bottom';
+  $: arrowClass = twMerge(
+    'absolute w-[9px] h-[9px] rotate-45 bg-inherit',
+    position === 'top' && ($$props.border ? 'border-b border-r -bottom-[5px]' : '-bottom-[4px]'),
+    position === 'bottom' && ($$props.border ? 'border-t border-l -top-[5px]' : '-top-[4px]'),
+    position === 'left' && ($$props.border ? 'border-t border-r -right-[5px]' : '-right-[4px]'),
+    position === 'right' && ($$props.border ? 'border-b border-l -left-[5px]' : '-left-[4px]')
   );
 </script>
 
@@ -168,7 +168,7 @@
     on:mouseenter={optional(activeContent && !clickable, showHandler)}
     on:mouseleave={optional(activeContent && !clickable, hideHandler)}
     {...$$restProps}
-    class={classNames('outline-none', $$props.class)}>
+    class={twMerge('outline-none', $$props.class)}>
     <slot />
     {#if arrow}<div class={arrowClass} />{/if}
   </Frame>

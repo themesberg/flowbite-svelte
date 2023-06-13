@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
 
   export let caption: string | undefined = undefined;
   export let src: string | undefined = undefined;
@@ -15,13 +15,13 @@
 
 {#if caption}
   <figure class={figClass}>
-    <img class={classNames(imgClass, size, alignment, effect, $$props.class)} {src} {srcset} {alt} />
+    <img class={twMerge(imgClass, size, alignment, effect, $$props.class)} {src} {srcset} {alt} />
     <figcaption class={captionClass}>{@html caption}</figcaption>
   </figure>
 {:else}
   <img
     {...$$restProps}
-    class={classNames(imgClass, size, alignment, effect, $$props.class)}
+    class={twMerge(imgClass, size, alignment, effect, $$props.class)}
     {src}
     {srcset}
     {alt} />

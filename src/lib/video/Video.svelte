@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
 
   export let src: string;
   export let type: string = 'video/mp4';
@@ -7,7 +7,7 @@
   export let srclang: string = 'en';
   export let label: string = 'english_captions';
 
-  let videoClass = classNames($$props.class);
+  let videoClass = twMerge($$props.class);
 </script>
 
 <video {...$$restProps} class={videoClass}>

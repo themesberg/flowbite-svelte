@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   export let spanClass: string = 'block text-sm text-gray-500 sm:text-center dark:text-gray-400';
   export let aClass: string = 'hover:underline';
   export let year: number = new Date().getFullYear();
@@ -9,7 +9,7 @@
   export let copyrightMessage: string = 'All Rights Reserved.';
 </script>
 
-<span class={classNames(spanClass, $$props.class)}>
+<span class={twMerge(spanClass, $$props.class)}>
   &copy; {year}
   {#if href}
     <a {...$$restProps} {href} {target} class={aClass}>

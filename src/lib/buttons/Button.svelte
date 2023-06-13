@@ -1,11 +1,12 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import { getContext } from 'svelte';
   import type { ButtonType } from '../types';
+  import type { SizeType } from '$lib/types';
 
   type ButtonColor = keyof typeof colorClasses;
 
-  const group = getContext('group');
+  const group: SizeType = getContext('group');
 
   export let pill: boolean = false;
   export let outline: boolean = false;
@@ -89,7 +90,7 @@
   let buttonClass: string;
   $: buttonClass = btnClass
     ? btnClass
-    : classNames(
+    : twMerge(
         'text-center font-medium',
         group ? 'focus:ring-2' : 'focus:ring-4',
         group && 'focus:z-10',

@@ -11,7 +11,7 @@
 
 <script lang="ts">
   import Frame from '$lib/utils/Frame.svelte';
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import { setContext, type ComponentProps } from 'svelte';
 
   interface $$Props extends ComponentProps<Frame> {
@@ -39,7 +39,7 @@
 
   setContext<AccordionCtxType>('ctx', ctx);
 
-  let frameClass = classNames(defaultClass, $$props.class);
+  let frameClass = twMerge(defaultClass, $$props.class);
 </script>
 
 <Frame {...$$restProps} class={frameClass} color="none">

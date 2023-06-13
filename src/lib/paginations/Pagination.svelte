@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge, twJoin } from 'tailwind-merge'
   import { createEventDispatcher, setContext } from 'svelte';
   import type { LinkType } from '../types';
   import PaginationItem from './PaginationItem.svelte';
@@ -26,11 +26,11 @@
 </script>
 
 <nav aria-label="Page navigation">
-  <ul class={classNames(ulClass, table && 'divide-x divide-gray-700', $$props.class)}>
+  <ul class={twMerge(ulClass, table && 'divide-x divide-gray-700', $$props.class)}>
     <li>
       <PaginationItem
         on:click={previous}
-        class={classNames(normalClass, table ? 'rounded-l' : 'rounded-l-lg')}>
+        class={twJoin(normalClass, table ? 'rounded-l' : 'rounded-l-lg')}>
         <slot name="prev">Previous</slot>
       </PaginationItem>
     </li>
@@ -54,7 +54,7 @@
       </li>
     {/each}
     <li>
-      <PaginationItem on:click={next} class={classNames(normalClass, table ? 'rounded-r' : 'rounded-r-lg')}>
+      <PaginationItem on:click={next} class={twJoin(normalClass, table ? 'rounded-r' : 'rounded-r-lg')}>
         <slot name="next">Next</slot>
       </PaginationItem>
     </li>

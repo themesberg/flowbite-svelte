@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import CloseButton from '../utils/CloseButton.svelte';
 
   export let id: string = 'sticky-banner';
@@ -27,8 +27,8 @@
     custom: ''
   };
 
-  $: divClass = classNames(position, divDefault, divClasses[bannerType], $$props.outerDiv);
-  $: div2Class = classNames(insideDiv, insideDivClasses[bannerType], $$props.innerDiv);
+  $: divClass = twMerge(position, divDefault, divClasses[bannerType], $$props.outerDiv);
+  $: div2Class = twMerge(insideDiv, insideDivClasses[bannerType], $$props.innerDiv);
   let show = true;
   $: handleHide = () => {
     show = !show;

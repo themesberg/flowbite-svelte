@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import type { drawerTransitionParamTypes, drawerTransitionTypes } from '../types';
   import { fly, slide, blur, fade } from 'svelte/transition';
   import { clickOutside } from '../utils/clickOutside';
@@ -45,7 +45,7 @@
     hidden = !hidden;
   };
 
-  let backdropDivClass = classNames(
+  let backdropDivClass = twMerge(
     'fixed top-0 left-0 z-50 w-full h-full',
     backdrop && bgColor,
     backdrop && bgOpacity
@@ -63,7 +63,7 @@
       use:clickOutside={() => !hidden && handleDrawer()}
       {id}
       {...$$restProps}
-      class={classNames(divClass, width, position, placements[placement], $$props.class)}
+      class={twMerge(divClass, width, position, placements[placement], $$props.class)}
       transition:multiple={transitionParams}
       tabindex="-1"
       aria-controls={id}
@@ -74,7 +74,7 @@
     <div
       {id}
       {...$$restProps}
-      class={classNames(divClass, width, position, placements[placement], $$props.class)}
+      class={twMerge(divClass, width, position, placements[placement], $$props.class)}
       transition:multiple={transitionParams}
       tabindex="-1"
       aria-controls={id}

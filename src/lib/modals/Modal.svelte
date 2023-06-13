@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import Frame from '../utils/Frame.svelte';
   import { createEventDispatcher, type ComponentProps } from 'svelte';
   import CloseButton from '../utils/CloseButton.svelte';
@@ -106,7 +106,7 @@
   };
 
   let frameClass: string;
-  $: frameClass = classNames(defaultClass, 'w-full', $$props.class);
+  $: frameClass = twMerge(defaultClass, 'w-full', $$props.class);
 
   const isScrollable = (e: HTMLElement): boolean[] => [
     e.scrollWidth > e.clientWidth && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowX) >= 0,
@@ -120,7 +120,7 @@
 
 {#if open}
   <!-- backdrop -->
-  <div class={classNames('fixed inset-0 z-40', backdropClasses)} />
+  <div class={twMerge('fixed inset-0 z-40', backdropClasses)} />
   <!-- dialog -->
   <div
     on:keydown={handleKeys}
@@ -128,7 +128,7 @@
     use:prepareFocus
     use:focusTrap
     on:click={onAutoClose}
-    class={classNames(
+    class={twMerge(
       'fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex',
       ...getPlacementClasses()
     )}

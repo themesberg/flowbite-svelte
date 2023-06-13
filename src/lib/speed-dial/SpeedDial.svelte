@@ -9,7 +9,7 @@
 </script>
 
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import Button from '$lib/buttons/Button.svelte';
   import Popper from '$lib/utils/Popper.svelte';
   import { setContext } from 'svelte';
@@ -30,10 +30,10 @@
   setContext<SpeedCtxType>('speed-dial', { pill, tooltip, textOutside });
 
   let divClass: string;
-  $: divClass = classNames(defaultClass, 'group', $$props.class);
+  $: divClass = twMerge(defaultClass, 'group', $$props.class);
 
   let poperClass: string;
-  $: poperClass = classNames(popperDefaultClass, ['top', 'bottom'].includes(placement) && 'flex-col');
+  $: poperClass = twMerge(popperDefaultClass, ['top', 'bottom'].includes(placement) && 'flex-col');
 
   let open: boolean = false;
 </script>

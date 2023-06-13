@@ -327,7 +327,7 @@ By default the `Input` component binds the `value` as `string`. If you need a va
 
 Use this example to show a dropdown menu right next to the input field.
 
-```svelte example
+```svelte example class="h-64"
 <script>
   import { Input, InputAddon, ButtonGroup, Button, Chevron, Dropdown, DropdownItem } from 'flowbite-svelte';
 </script>

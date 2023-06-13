@@ -1,11 +1,11 @@
 <script lang="ts">
   import type { ImgType } from '$lib/types';
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
 
   export let items: ImgType[] = [];
   export let imgClass: string = 'h-auto max-w-full rounded-lg';
 
-  $: divClass = classNames('grid', $$props.class);
+  $: divClass = twMerge('grid', $$props.class);
 
   function init(node: HTMLElement) {
     if (getComputedStyle(node).gap === 'normal') node.style.gap = 'inherit';

@@ -7,7 +7,7 @@
 
 <script lang="ts">
   import Wrapper from '$lib/utils/Wrapper.svelte';
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import { getContext } from 'svelte';
   import type { InputType } from '../types';
 
@@ -63,20 +63,18 @@
   let inputClass: string;
   $: {
     const _color = color === 'base' && background ? 'tinted' : color;
-    inputClass = classNames(
+    inputClass = twMerge([
       defaultClass,
-      $$slots.left && leftPadding[_size],
-      $$slots.right && rightPadding[_size],
+      ($$slots.left && leftPadding[_size] || $$slots.right && rightPadding[_size]) || inputPadding[_size],
       ringClasses[color],
       colorClasses[_color],
       borderClasses[_color],
-      inputPadding[_size],
       textSizes[_size],
       group || 'rounded-lg',
       group && 'first:rounded-l-lg last:rounded-r-lg',
       group && 'border-l-0 first:border-l last:border-r',
       $$props.class
-    );
+  ]);
   }
   let floatClass = 'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400';
 </script>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   export let helperClass: string = 'text-xs font-normal text-gray-500 dark:text-gray-300';
   export let color: 'gray' | 'green' | 'red' | 'disabled' = 'gray';
   const colorClasses = {
@@ -10,7 +10,7 @@
   };
 </script>
 
-<p {...$$restProps} class={classNames(helperClass, colorClasses[color], $$props.class)}>
+<p {...$$restProps} class={twMerge(helperClass, colorClasses[color], $$props.class)}>
   <slot />
 </p>
 

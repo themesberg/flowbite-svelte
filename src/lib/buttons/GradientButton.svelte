@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import Button from './Button.svelte';
   import { getContext } from 'svelte';
 
@@ -54,7 +54,7 @@
   };
 
   let gradientOutlineClass: string;
-  $: gradientOutlineClass = classNames(
+  $: gradientOutlineClass = twMerge(
     'inline-flex items-center justify-center w-full  !border-0',
     $$props.pill || '!rounded-md',
     'bg-white !text-gray-900 dark:bg-gray-900 dark:!text-white', // this is limitation - no transparency
@@ -63,8 +63,8 @@
   );
 
   let divClass: string;
-  $: divClass = classNames(
-    'p-0.5',
+  $: divClass = twMerge(
+    $$props.outline &&  'p-0.5',
     gradientClasses[color],
     shadow && 'shadow-lg',
     shadow && coloredShadowClasses[color],

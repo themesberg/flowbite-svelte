@@ -1,11 +1,11 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import ToolbarButton from '$lib/toolbar/ToolbarButton.svelte';
 
   export let name: string = 'Close';
 </script>
 
-<ToolbarButton on:click {name} {...$$restProps} class={classNames('ml-auto', $$props.class)} let:svgSize>
+<ToolbarButton on:click {name} {...$$restProps} class={twMerge('ml-auto', $$props.class)} let:svgSize>
   <svg class={svgSize} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
     <path
       fill-rule="evenodd"

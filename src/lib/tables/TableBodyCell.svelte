@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import { getContext } from 'svelte';
 
   export let tdClass: string = 'px-6 py-4 whitespace-nowrap font-medium ';
@@ -7,7 +7,7 @@
   let color = 'default';
   color = getContext('color');
   let tdClassfinal: string;
-  $: tdClassfinal = classNames(
+  $: tdClassfinal = twMerge(
     tdClass,
     color === 'default'
       ? 'text-gray-900 dark:text-white'

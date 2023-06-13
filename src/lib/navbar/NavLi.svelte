@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import { getContext } from 'svelte';
   import type { NavbarLiType } from './NavUl.svelte';
 
@@ -11,7 +11,7 @@
   const context = getContext<NavbarLiType>('navbar') ?? {};
 
   let liClass: string;
-  $: liClass = classNames(
+  $: liClass = twMerge(
     'block py-2 pr-4 pl-3 md:p-0 rounded md:border-0',
     active ? activeClass ?? context.activeClass : nonActiveClass ?? context.nonActiveClass,
     $$props.class

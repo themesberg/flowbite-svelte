@@ -9,7 +9,7 @@
 </script>
 
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import { setContext } from 'svelte';
 
   export let style: 'full' | 'pill' | 'underline' | 'none' = 'none';
@@ -56,7 +56,7 @@
     return { destroy };
   }
 
-  $: ulClass = classNames(defaultClass, style === 'underline' && '-mb-px', $$props.class);
+  $: ulClass = twMerge(defaultClass, style === 'underline' && '-mb-px', $$props.class);
 </script>
 
 <ul class={ulClass}>

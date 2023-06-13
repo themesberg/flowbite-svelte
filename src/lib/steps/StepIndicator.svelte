@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge, twJoin } from 'tailwind-merge'
 
   export let steps: string[] = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];
   export let currentStep = 1;
@@ -49,27 +49,27 @@
   };
 </script>
 
-<div {...$$restProps} class={classNames('space-y-2 dark:text-white', $$props.class)}>
+<div {...$$restProps} class={twMerge('space-y-2 dark:text-white', $$props.class)}>
   {#if !hideLabel}
     <h3 class="text-base font-semibold">{steps[currentStep - 1]}</h3>
   {/if}
-  <div class={classNames('flex justify-between gap-2 w-full', size)}>
+  <div class={twJoin('flex justify-between gap-2 w-full', size)}>
     {#each steps as step, i}
       {#if i === currentStep - 1}
         <div class="relative w-full h-full">
-          <div class={classNames('relative w-full h-full rounded-sm', currentStepColors[color])} />
+          <div class={twJoin('relative w-full h-full rounded-sm', currentStepColors[color])} />
           {#if glow}
             <div
-              class={classNames(
+              class={twJoin(
                 'absolute -inset-1 rounded-sm blur opacity-30 dark:opacity-25',
                 currentStepColors[color]
               )} />
           {/if}
         </div>
       {:else if i < currentStep - 1}
-        <div class={classNames('w-full h-full rounded-sm', completedStepColors[color])} />
+        <div class={twJoin('w-full h-full rounded-sm', completedStepColors[color])} />
       {:else}
-        <div class={classNames('w-full h-full rounded-sm bg-gray-200 dark:bg-gray-700')} />
+        <div class='w-full h-full rounded-sm bg-gray-200 dark:bg-gray-700' />
       {/if}
     {/each}
   </div>

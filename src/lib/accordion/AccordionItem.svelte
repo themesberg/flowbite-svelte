@@ -1,7 +1,7 @@
 <script lang="ts">
   import ChevronDown from '$lib/utils/ChevronDown.svelte';
   import ChevronUp from '$lib/utils/ChevronUp.svelte';
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import { getContext, onMount } from 'svelte';
   import { writable } from 'svelte/store';
   import { fade, blur, fly, slide } from 'svelte/transition';
@@ -57,7 +57,7 @@
   const handleToggle = (_: Event) => selected.set(open ? {} : self);
 
   let buttonClass: string;
-  $: buttonClass = classNames(
+  $: buttonClass = twMerge(
     defaultClass,
     ctx.flush || borderClass,
     borderBottomClass,

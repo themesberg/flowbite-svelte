@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import { getContext } from 'svelte';
 
   export let color: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom' =
@@ -36,13 +36,13 @@
   };
 
   let trClass: string;
-  $: trClass = classNames(
+  $: trClass = twMerge([
     !getContext('noborder') && 'border-b last:border-b-0',
     colors[color],
     getContext('hoverable') && hoverColors[color],
     getContext('striped') && stripColors[color],
     $$props.class
-  );
+  ]);
 </script>
 
 <tr {...$$restProps} class={trClass} on:click on:contextmenu>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
 
   export let value: string = '';
   export let files: FileList | undefined = undefined;
@@ -17,7 +17,7 @@
 </script>
 
 <button
-  class={classNames(defaultClass, $$props.class)}
+  class={twMerge(defaultClass, $$props.class)}
   on:keydown={keydown}
   on:focus
   on:blur

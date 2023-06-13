@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import { getContext } from 'svelte';
 
   export let href: string | undefined = undefined;
@@ -12,7 +12,7 @@
   const table = getContext('table');
 
   let defaultClass: string;
-  $: defaultClass = classNames(
+  $: defaultClass = twMerge([
     'block py-2',
     group ? 'px-3' : 'px-4',
     'text-sm font-medium',
@@ -20,7 +20,7 @@
     group || (table ? 'rounded' : 'rounded-lg'),
     active ? activeClass : normalClass,
     $$props.class
-  );
+    ]);
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->

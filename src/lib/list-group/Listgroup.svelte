@@ -1,6 +1,6 @@
 <script lang="ts">
   import { setContext, type ComponentProps } from 'svelte';
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import type { ListGroupItemType } from '../types';
   import ListgroupItem from './ListgroupItem.svelte';
   import Frame from '../utils/Frame.svelte';
@@ -18,7 +18,7 @@
   $: setContext('active', active);
 
   let groupClass: string;
-  $: groupClass = classNames(defaultClass, $$props.class);
+  $: groupClass = twMerge(defaultClass, $$props.class);
 </script>
 
 <Frame tag={active ? 'div' : 'ul'} {...$$restProps} rounded border class={groupClass}>

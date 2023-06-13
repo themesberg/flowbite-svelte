@@ -9,7 +9,7 @@
 </script>
 
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
 
   export let tag: string;
 
@@ -20,7 +20,7 @@
     slug = content.replace(/\s/g, '_');
   }
 
-  $: elemClass = classNames('relative group', $$props.class);
+  $: elemClass = twMerge('relative group', $$props.class);
 </script>
 
 <svelte:element this={tag} {...$$restProps} class={elemClass} use:init>

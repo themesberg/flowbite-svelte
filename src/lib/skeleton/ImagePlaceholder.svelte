@@ -1,10 +1,10 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   export let divClass: string = 'space-y-8 animate-pulse md:space-y-0 md:space-x-8 md:flex md:items-center';
   export let imgHeight: string = '48';
 </script>
 
-<div role="status" class={classNames(divClass, $$props.class)}>
+<div role="status" class={twMerge(divClass, $$props.class)}>
   <div
     class="flex justify-center items-center w-full h-{imgHeight} bg-gray-300 rounded sm:w-96 dark:bg-gray-700">
     <svg

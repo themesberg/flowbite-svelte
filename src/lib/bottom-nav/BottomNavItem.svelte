@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getContext } from 'svelte';
   import type { ButtonClassesTypes } from '../types';
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
 
   export let btnName: string = '';
   export let appBtnPosition: 'left' | 'middle' | 'right' | 'custom' = 'custom';
@@ -60,8 +60,8 @@
       'inline-flex flex-col items-center justify-center px-5 rounded-r-full hover:bg-gray-50 dark:hover:bg-gray-800 group',
     custom: appCustom
   };
-  $: btnClass = classNames(btnDefault, btnClasses[navType], appBtnClasses[appBtnPosition], $$props.btnClass);
-  $: spanClass = classNames(spanDefault, spanClasses[navType], $$props.spanClass);
+  $: btnClass = twMerge(btnDefault, btnClasses[navType], appBtnClasses[appBtnPosition], $$props.btnClass);
+  $: spanClass = twMerge(spanDefault, spanClasses[navType], $$props.spanClass);
 </script>
 
 <button

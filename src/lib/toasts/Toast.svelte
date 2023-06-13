@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { ComponentProps } from 'svelte';
   import Frame from '../utils/Frame.svelte';
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import CloseButton from '../utils/CloseButton.svelte';
   import { fade } from 'svelte/transition';
 
@@ -46,7 +46,7 @@
   };
 
   let finalDivClass: string;
-  $: finalDivClass = classNames(
+  $: finalDivClass = twMerge(
     'flex',
     align ? 'items-center' : 'items-start',
     divClass,
@@ -68,7 +68,7 @@
   };
 
   let iconClass: string;
-  $: iconClass = classNames(
+  $: iconClass = twMerge(
     'inline-flex items-center justify-center shrink-0',
     colors[color],
     defaultIconClass

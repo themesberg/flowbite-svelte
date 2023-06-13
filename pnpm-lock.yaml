@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -8,9 +8,6 @@ dependencies:
   '@popperjs/core':
     specifier: ^2.11.8
     version: 2.11.8
-  classnames:
-    specifier: ^2.3.2
-    version: 2.3.2
   flowbite:
     specifier: ^1.6.5
     version: 1.6.5
@@ -94,6 +91,9 @@ devDependencies:
   svelte2tsx:
     specifier: ^0.6.15
     version: 0.6.15(svelte@3.59.1)(typescript@5.0.4)
+  tailwind-merge:
+    specifier: ^1.13.1
+    version: 1.13.1
   tailwindcss:
     specifier: ^3.3.2
     version: 3.3.2
@@ -1224,10 +1224,6 @@ packages:
     resolution: {integrity: sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==}
     engines: {node: '>=10'}
     dev: true
-
-  /classnames@2.3.2:
-    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
-    dev: false
 
   /color-convert@2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
@@ -2865,6 +2861,10 @@ packages:
   /svelte@3.59.1:
     resolution: {integrity: sha512-pKj8fEBmqf6mq3/NfrB9SLtcJcUvjYSWyePlfCqN9gujLB25RitWK8PvFzlwim6hD/We35KbPlRteuA6rnPGcQ==}
     engines: {node: '>= 8'}
+    dev: true
+
+  /tailwind-merge@1.13.1:
+    resolution: {integrity: sha512-tRtRN22TDokGi2TuYSvuHQuuW6BJ/zlUEG+iYpAQ9i66msc/0eU/+HPccbPnNNH0mCPp0Ob8thaC8Uy9CxHitQ==}
     dev: true
 
   /tailwindcss@3.3.2:

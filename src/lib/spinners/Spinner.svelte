@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
 
   export let color:
     | 'primary'
@@ -44,7 +44,7 @@
 
 <svg
   role="status"
-  class={classNames(
+  class={twMerge(
     'inline -mt-px animate-spin dark:text-gray-600',
     iconsize,
     bg,

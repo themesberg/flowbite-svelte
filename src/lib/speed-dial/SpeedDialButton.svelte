@@ -2,7 +2,7 @@
   import Button from '$lib/buttons/Button.svelte';
   import Tooltip from '$lib/tooltips/Tooltip.svelte';
   import type { Placement } from '@popperjs/core';
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import { getContext } from 'svelte';
   import type { SpeedCtxType } from './SpeedDial.svelte';
 
@@ -18,7 +18,7 @@
   export let textDefaultClass: string = 'block mb-px text-xs font-medium';
 
   let btnClass: string;
-  $: btnClass = classNames(
+  $: btnClass = twMerge(
     btnDefaultClass,
     tooltip === 'none' && 'flex-col',
     textOutside && 'relative',

@@ -1,6 +1,6 @@
 <script lang="ts">
   import Star from './Star.svelte';
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   import generateId from '../utils/generateId.js';
   import type { ComponentType } from 'svelte';
 
@@ -22,7 +22,7 @@
   // console.log(fullStars, grayStars, rateDiffence, percentRating)
 </script>
 
-<div class={classNames(divClass, $$props.class)}>
+<div class={twMerge(divClass, $$props.class)}>
   {#if count}
     <svelte:component this={icon} fillPercent={100} {size} />
     <p class="ml-2 text-sm font-bold text-gray-900 dark:text-white">{rating}</p>

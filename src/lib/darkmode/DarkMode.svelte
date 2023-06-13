@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
 
   export let btnClass: string =
     'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5';
@@ -31,7 +31,7 @@
   aria-label="Dark mode"
   type="button"
   {...$$restProps}
-  class={classNames(btnClass, $$props.class)}>
+  class={twMerge(btnClass, $$props.class)}>
   <span class="hidden dark:block">
     <slot name="lightIcon">
       <svg class={sizes[size]} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">

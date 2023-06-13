@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twJoin } from 'tailwind-merge'
   import Button from '$lib/buttons/Button.svelte';
   import ExampleDarkMode from './ExampleDarkMode.svelte';
   import GitHub from './icons/GitHub.svelte';
@@ -109,7 +109,7 @@
         class="flex p-0 bg-white border-gray-200 bg-gradient-to-r code-preview dark:bg-gray-900 border-x dark:border-gray-600"
         class:dark>
         <div class="w-full code-responsive-wrapper">
-          <div class={classNames(divClass, meta.class)}>
+          <div class={twJoin(divClass, meta.class)}>
             <slot name="example" />
           </div>
         </div>

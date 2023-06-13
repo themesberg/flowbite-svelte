@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { ReviewType } from '../types';
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
 
   export let review: ReviewType;
   export let articleClass: string = 'md:gap-8 md:grid md:grid-cols-3';
@@ -10,10 +10,10 @@
   export let liClass: string = 'flex items-center';
 </script>
 
-<article class={classNames(articleClass, $$props.classArticle)}>
+<article class={twMerge(articleClass, $$props.classArticle)}>
   <div>
-    <div class={classNames(divClass, $$props.classDiv)}>
-      <img class={classNames(imgClass, $$props.classImg)} src={review.imgSrc} alt={review.imgAlt} />
+    <div class={twMerge(divClass, $$props.classDiv)}>
+      <img class={twMerge(imgClass, $$props.classImg)} src={review.imgSrc} alt={review.imgAlt} />
       <div class="space-y-1 font-medium dark:text-white">
         <p>{review.name}</p>
         {#if review.address}
@@ -24,19 +24,19 @@
       </div>
     </div>
     {#if $$slots.item1 || $$slots.item2 || $$slots.item3}
-      <ul class={classNames(ulClass, $$props.classUl)}>
+      <ul class={twMerge(ulClass, $$props.classUl)}>
         {#if $$slots.item1}
-          <li class={classNames(liClass, $$props.classLi)}>
+          <li class={twMerge(liClass, $$props.classLi)}>
             <slot name="item1" />
           </li>
         {/if}
         {#if $$slots.item2}
-          <li class={classNames(liClass, $$props.classLi)}>
+          <li class={twMerge(liClass, $$props.classLi)}>
             <slot name="item2" />
           </li>
         {/if}
         {#if $$slots.item3}
-          <li class={classNames(liClass, $$props.classLi)}>
+          <li class={twMerge(liClass, $$props.classLi)}>
             <slot name="item3" />
           </li>
         {/if}

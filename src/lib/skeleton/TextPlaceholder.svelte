@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twMerge } from 'tailwind-merge'
   interface Sizes {
     [key: string]: string;
   }
@@ -11,10 +12,9 @@
     xxl: 'max-w-2xl'
   };
 
-  import classNames from 'classnames';
   export let divClass: string = 'space-y-2.5 animate-pulse';
   export let size: keyof Sizes = 'sm';
-  $: outDivclass = classNames(sizes[size], divClass, $$props.class);
+  $: outDivclass = twMerge(sizes[size], divClass, $$props.class);
 </script>
 
 <div role="status" class={outDivclass}>

@@ -1,6 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
-
+  import { twMerge } from 'tailwind-merge'
   import AvatarPlaceholder from './Placeholder.svelte';
   import Indicator from '$lib/indicators/Indicator.svelte';
 
@@ -24,7 +23,7 @@
   };
 
   let avatarClass: string;
-  $: avatarClass = classNames(
+  $: avatarClass = twMerge(
     rounded ? 'rounded' : 'rounded-full',
     border && 'p-1 ring-2 ring-gray-300 dark:ring-gray-500',
     sizes[size],

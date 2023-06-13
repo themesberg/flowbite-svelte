@@ -1,9 +1,9 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge'
   export let asideClass: string = 'w-64';
 </script>
 
-<aside {...$$restProps} class={classNames(asideClass, $$props.class)} aria-label="Sidebar">
+<aside {...$$restProps} class={twMerge(asideClass, $$props.class)} aria-label="Sidebar">
   <slot />
 </aside>
 
