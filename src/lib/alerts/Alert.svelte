@@ -6,12 +6,7 @@
   import { fade } from 'svelte/transition';
 
   export let dismissable: boolean = false;
-  export let accent: boolean = false;
-  export let contentPosClass: string = 'flex items-center';
-  export let closeBtnClass: string = '';
-  export let borderTopClass: string = 'border-t-4';
-  export let defaultTextClass: string = 'p-4 text-sm';
-
+  export let defaultClass: string = 'p-4 gap-3 text-sm';
 
   const dispatch = createEventDispatcher();
 
@@ -27,8 +22,11 @@
   };
 
   let divClass: string;
-
-  $: divClass = twMerge(defaultTextClass, accent && borderTopClass, hidden && 'hidden', $$props.class);
+  $: divClass = twMerge(
+    defaultClass,
+    ($$slots.icon || dismissable) && 'flex items-center',
+    $$props.class
+  );
 
   $: {
     // set default values
@@ -51,18 +49,20 @@
     {/if}
 
     {#if dismissable}
-      <CloseButton
-        color={$$restProps.color}
-        class={closeBtnClass}
-        on:click={handleHide}
-        on:click
-        on:change
-        on:keydown
-        on:keyup
-        on:focus
-        on:blur
-        on:mouseenter
-        on:mouseleave />
+      <slot name="close-button" {close}>
+        <CloseButton
+          class="'-mx-1.5 -my-1.5'"
+          color={$$restProps.color}
+          on:click={close}
+          on:click
+          on:change
+          on:keydown
+          on:keyup
+          on:focus
+          on:blur
+          on:mouseenter
+          on:mouseleave />
+      </slot>
     {/if}
   </Frame>
 {/if}
