@@ -110,7 +110,6 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
-    "classnames": "^2.3.2",
     "flowbite": "^1.6.5"
   },
   "engines": {
