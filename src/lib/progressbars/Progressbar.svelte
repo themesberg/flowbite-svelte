@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge, twJoin } from 'tailwind-merge'
+  import { twMerge, twJoin } from 'tailwind-merge';
 
   export let progress: string = '45';
   export let size: string = 'h-2.5';
@@ -24,7 +24,6 @@
 </script>
 
 {#if labelOutside}
-
   <div {...$$restProps} class={twMerge('flex justify-between mb-1', $$props.class)}>
     <span class="text-base font-medium text-blue-700 dark:text-white">{labelOutside}</span>
     <span class="text-sm font-medium text-blue-700 dark:text-white">{progress}%</span>

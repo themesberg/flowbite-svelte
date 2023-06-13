@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount, type ComponentProps } from 'svelte';
   import { createPopper, type Rect } from '@popperjs/core';
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import type { Placement, Instance } from '@popperjs/core';
   import createEventDispatcher from './createEventDispatcher';
   import Frame from './Frame.svelte';

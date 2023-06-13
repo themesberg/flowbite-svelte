@@ -5,6 +5,7 @@
     ["inline", "boolean", "false"],
     ["group", "(string | number)[]", "[]"],
     ["value", "string | number", "'on'"],
-    ["checked", "boolean | undefined", "undefined"]
+    ["checked", "boolean | undefined", "undefined"],
+    ["spacing", "string", "'mr-2'"]
   ]
 }

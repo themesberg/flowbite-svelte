@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { ToolbarButtonType } from '../types';
   import { getContext } from 'svelte';
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
 
   const background = getContext('background');
 

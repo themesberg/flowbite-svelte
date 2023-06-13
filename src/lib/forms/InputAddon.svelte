@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { SizeType } from '$lib/types';
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
   import { clampSize } from '$lib/forms/Input.svelte';
 

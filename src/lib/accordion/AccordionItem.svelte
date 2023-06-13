@@ -1,7 +1,7 @@
 <script lang="ts">
   import ChevronDown from '$lib/utils/ChevronDown.svelte';
   import ChevronUp from '$lib/utils/ChevronUp.svelte';
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import { getContext, onMount } from 'svelte';
   import { writable } from 'svelte/store';
   import { fade, blur, fly, slide } from 'svelte/transition';

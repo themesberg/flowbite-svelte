@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import { fade, blur, fly, slide } from 'svelte/transition';
   // import { quintOut } from 'svelte/easing';
   import ChevronDown from '../utils/ChevronDown.svelte';

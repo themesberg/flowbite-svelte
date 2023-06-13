@@ -1,6 +1,6 @@
 <script lang="ts">
   import ToolbarButton from '../toolbar/ToolbarButton.svelte';
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import SidebarMenu from './SidebarMenu.svelte';
 
   export let btnClass: string = 'ml-3 md:hidden';

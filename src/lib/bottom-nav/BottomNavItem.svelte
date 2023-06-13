@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getContext } from 'svelte';
   import type { ButtonClassesTypes } from '../types';
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
 
   export let btnName: string = '';
   export let appBtnPosition: 'left' | 'middle' | 'right' | 'custom' = 'custom';

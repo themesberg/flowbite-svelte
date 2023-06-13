@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
 
   export let color: string = 'text-white dark:bg-blue-500';
   export let bgColor: string = 'bg-blue-600';

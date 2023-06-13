@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
 
   export let color: 'gray' | 'green' | 'red' | 'disabled' = 'gray';
   export let defaultClass: string = 'text-sm font-medium block';

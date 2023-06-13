@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import type { PsizeType, PweightType } from '../types';
 
   export let color: string = 'text-gray-900 dark:text-white';
