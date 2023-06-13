@@ -11,13 +11,10 @@
     | 'group'
     | 'card'
     | 'meeting'
-    | 'video'
-    | 'custom' = 'default';
+    | 'video' = 'default';
 
-  export let outerDefault: string = 'w-full z-50 border-gray-200 dark:bg-gray-700 dark:border-gray-600';
-  export let innerDefault: string = 'grid h-full max-w-lg mx-auto';
-  export let outerCustom: string = '';
-  export let innerCustom: string = '';
+  export let outerClass: string = 'w-full z-50 border-gray-200 dark:bg-gray-700 dark:border-gray-600';
+  export let innerClass: string = 'grid h-full max-w-lg mx-auto';
 
   setContext('navType', navType);
 
@@ -29,8 +26,7 @@
     group: 'bottom-0 -translate-x-1/2 bg-white border-t left-1/2',
     card: 'bottom-0 left-0 h-16 bg-white border-t',
     meeting: 'bottom-0 left-0 grid h-16 grid-cols-1 px-8 bg-white border-t md:grid-cols-3',
-    video: 'bottom-0 left-0 grid h-24 grid-cols-1 px-8 bg-white border-t md:grid-cols-3',
-    custom: outerCustom
+    video: 'bottom-0 left-0 grid h-24 grid-cols-1 px-8 bg-white border-t md:grid-cols-3'
   };
 
   const innerDivClasses = {
@@ -41,17 +37,16 @@
     group: '',
     card: '',
     meeting: 'flex items-center justify-center mx-auto',
-    video: 'flex items-center w-full',
-    custom: innerCustom
+    video: 'flex items-center w-full'
   };
 
-  $: outerClass = twMerge(position, outerDefault, outerDivClasses[navType], $$props.outerDiv);
-  $: innerClass = twMerge(innerDefault, innerDivClasses[navType], $$props.innerDiv);
+  $: outerCls = twMerge(position, outerClass, outerDivClasses[navType], $$props.classOuter);
+  $: innerCls = twMerge(innerClass, innerDivClasses[navType], $$props.classInner);
 </script>
 
-<div {...$$restProps} class={outerClass}>
+<div {...$$restProps} class={outerCls}>
   <slot name="header" />
-  <div class={innerClass}>
+  <div class={innerCls}>
     <slot />
   </div>
 </div>

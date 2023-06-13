@@ -327,6 +327,9 @@ The component has the following props, type, and default values. See <A href="/d
 
 ### BottomNav
 
+- Use the `classOuter` attribute to overwrite a class in the `outerClass` tag.
+- Use the `classInner` attribute to overwrite a class in the `innerClass` tag.
+
 <TableProp>
 <TableDefaultRow items={bottomNavProps} rowState='hover' />
 </TableProp>
