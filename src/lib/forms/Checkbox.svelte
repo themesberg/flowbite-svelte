@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twMerge } from 'tailwind-merge'
   import { getContext } from 'svelte';
   import type { FormColorType } from '../types';
   import { labelClass, inputClass } from './Radio.svelte';
@@ -11,6 +12,7 @@
   export let group: (string | number)[] = [];
   export let value: string | number = 'on';
   export let checked: boolean | undefined = undefined;
+  export let spacing: string = 'mr-2';
 
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
@@ -68,7 +70,9 @@
     on:change
     {value}
     {...$$restProps}
-    class={inputClass(custom, color, true, background, $$slots.default || $$props.class)} /><slot />
+    class={twMerge(
+      spacing,
+      inputClass(custom, color, true, background, $$slots.default || $$props.class))} /><slot />
 </Label>
 
 <!--
