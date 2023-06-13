@@ -152,7 +152,17 @@ const config = {
 module.exports = config;
 ```
 
-That's it! Now you should be able to work with the Flowbite Svelte library and import components such as the navbar, dropdown, modal, and more.
+Now you should be able to work with the Flowbite Svelte library and import components such as the navbar, dropdown, modal, and more.
+
+## How to overwrite component class
+
+You can overwrite the class of most components by adding class props. For example, if a component has `p-5` and you add `class="p-4"`, it will overwrite and the output will be `p-4`.
+
+```html
+<ComponentName class="your-class-here" />
+```
+
+Thanks to tailwind-merge, you can efficiently merge Tailwind CSS classes without style conflicts. One of its features is that the last conflicting class wins. Please read more details about [Merging behavior](https://github.com/dcastil/tailwind-merge/blob/v1.13.1/docs/features.md)
 
 ## Svelte
 
