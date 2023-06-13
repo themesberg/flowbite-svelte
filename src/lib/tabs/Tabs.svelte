@@ -9,7 +9,7 @@
 </script>
 
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import { setContext } from 'svelte';
 
   export let style: 'full' | 'pill' | 'underline' | 'none' = 'none';

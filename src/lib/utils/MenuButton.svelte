@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import ToolbarButton from '$lib/toolbar/ToolbarButton.svelte';
 
   export let name: string | undefined = undefined;

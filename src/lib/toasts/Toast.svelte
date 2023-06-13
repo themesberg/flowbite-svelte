@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { ComponentProps } from 'svelte';
   import Frame from '../utils/Frame.svelte';
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import CloseButton from '../utils/CloseButton.svelte';
   import { fade } from 'svelte/transition';
 

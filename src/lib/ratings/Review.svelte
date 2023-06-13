@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { ReviewType } from '../types';
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
 
   export let review: ReviewType;
   export let articleClass: string = 'md:gap-8 md:grid md:grid-cols-3';

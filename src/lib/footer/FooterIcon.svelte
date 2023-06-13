@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   export let href: string = '';
   export let ariaLabel: string = '';
   export let aClass: string = 'text-gray-500 hover:text-gray-900 dark:hover:text-white';

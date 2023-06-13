@@ -2,7 +2,7 @@
   import type { ToolbarColorType } from '../types';
   import { setContext, type ComponentProps } from 'svelte';
   import { writable } from 'svelte/store';
-  import { twMerge, twJoin } from 'tailwind-merge'
+  import { twMerge, twJoin } from 'tailwind-merge';
   import Frame from '$lib/utils/Frame.svelte';
 
   interface $$Props extends ComponentProps<Frame> {

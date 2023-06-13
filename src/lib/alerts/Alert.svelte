@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import { createEventDispatcher, type ComponentProps } from 'svelte';
   import CloseButton from '../utils/CloseButton.svelte';
   import Frame from '../utils/Frame.svelte';
@@ -22,11 +22,7 @@
   };
 
   let divClass: string;
-  $: divClass = twMerge(
-    defaultClass,
-    ($$slots.icon || dismissable) && 'flex items-center',
-    $$props.class
-  );
+  $: divClass = twMerge(defaultClass, ($$slots.icon || dismissable) && 'flex items-center', $$props.class);
 
   $: {
     // set default values

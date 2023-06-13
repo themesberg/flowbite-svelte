@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twJoin } from 'tailwind-merge'
+  import { twJoin } from 'tailwind-merge';
   import { getContext } from 'svelte';
   export let title: string = '';
   export let date: string = '';

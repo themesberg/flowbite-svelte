@@ -1,6 +1,6 @@
 <script lang="ts">
   import { setContext } from 'svelte';
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
 
   export let position: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky' = 'fixed';
   export let navType:

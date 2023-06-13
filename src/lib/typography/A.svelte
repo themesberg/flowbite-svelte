@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
 
   export let href: string = '#';
   export let color: string = 'text-primary-600 dark:text-primary-500';

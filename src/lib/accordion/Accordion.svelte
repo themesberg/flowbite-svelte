@@ -11,7 +11,7 @@
 
 <script lang="ts">
   import Frame from '$lib/utils/Frame.svelte';
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import { setContext, type ComponentProps } from 'svelte';
 
   interface $$Props extends ComponentProps<Frame> {

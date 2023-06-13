@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
 
   export let tag: 'dt' | 'dd';
   export let dtClass: string = 'text-gray-500 md:text-lg dark:text-gray-400';

@@ -2,7 +2,7 @@
   import { getContext } from 'svelte';
   import type { TabCtxType } from './Tabs.svelte';
   import { writable } from 'svelte/store';
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
 
   export let open: boolean = false;
   export let title: string = 'Tab title';

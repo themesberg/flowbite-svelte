@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
 
   export let href: string | undefined = undefined;
@@ -20,7 +20,7 @@
     group || (table ? 'rounded' : 'rounded-lg'),
     active ? activeClass : normalClass,
     $$props.class
-    ]);
+  ]);
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->

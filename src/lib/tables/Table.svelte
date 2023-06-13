@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge, twJoin } from 'tailwind-merge'
+  import { twMerge, twJoin } from 'tailwind-merge';
   import { setContext } from 'svelte';
   import type { TableColorType } from '../types';
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
   import Wrapper from '../utils/Wrapper.svelte';
 
@@ -27,7 +27,7 @@
   $: textareaClass = wrapped ? wrappedClass : twMerge(wrapperClass, unWrappedClass);
 
   const headerClass = (header: boolean) =>
-  twMerge(header ? 'border-b' : 'border-t', 'py-2 px-3 border-gray-200 dark:border-gray-600');
+    twMerge(header ? 'border-b' : 'border-t', 'py-2 px-3 border-gray-200 dark:border-gray-600');
 
   let innerWrapperClass: string;
   $: innerWrapperClass = twMerge(

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge, twJoin } from 'tailwind-merge'
+  import { twMerge, twJoin } from 'tailwind-merge';
 
   export let steps: string[] = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];
   export let currentStep = 1;
@@ -69,7 +69,7 @@
       {:else if i < currentStep - 1}
         <div class={twJoin('w-full h-full rounded-sm', completedStepColors[color])} />
       {:else}
-        <div class='w-full h-full rounded-sm bg-gray-200 dark:bg-gray-700' />
+        <div class="w-full h-full rounded-sm bg-gray-200 dark:bg-gray-700" />
       {/if}
     {/each}
   </div>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import CloseButton from '../utils/CloseButton.svelte';
 
   export let id: string = 'sticky-banner';

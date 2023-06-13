@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
 
   export let tag: 'ul' | 'ol' | 'dl' = 'ul';
   export let list: 'disc' | 'none' | 'decimal' | undefined = undefined;

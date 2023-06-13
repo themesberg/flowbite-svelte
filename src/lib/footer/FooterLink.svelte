@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   export let liClass: string = 'mr-4 last:mr-0 md:mr-6';
   export let aClass: string = 'hover:underline';
   export let href: string = '';

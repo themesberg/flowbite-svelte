@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   export let ulClass: string = 'text-gray-600 dark:text-gray-400';
 </script>
 

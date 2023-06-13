@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import generateId from '../utils/generateId.js';
   import type { InputType } from '../types';
 
@@ -107,12 +107,7 @@
     on:paste
     use:setType={type}
     placeholder=" "
-    class={twMerge(
-      inputClasses[style],
-      inputColorClasses[color],
-      inputSizes[style][size],
-      $$props.class
-    )} />
+    class={twMerge(inputClasses[style], inputColorClasses[color], inputSizes[style][size], $$props.class)} />
 
   <label
     for={id}

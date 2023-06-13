@@ -1,6 +1,6 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
-  import { twMerge, twJoin } from 'tailwind-merge'
+  import { twMerge, twJoin } from 'tailwind-merge';
   import CloseButton from '../utils/CloseButton.svelte';
 
   export let color: 'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'none' =
