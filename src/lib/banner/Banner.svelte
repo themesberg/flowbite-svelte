@@ -6,8 +6,8 @@
   export let position: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky' = 'sticky';
   export let dismissable: boolean = true;
   export let bannerType: 'default' | 'bottom' | 'cta' | 'signup' | 'info' = 'default';
-  export let divDefault: string = 'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600';
-  export let insideDiv: string = 'flex';
+  export let divClass: string = 'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600';
+  export let innerClass: string = 'flex';
 
   const divClasses = {
     default: 'top-0 left-0 w-full border-b border-gray-200 bg-gray-50',
@@ -25,8 +25,8 @@
     info: 'items-center flex-shrink-0'
   };
 
-  $: divClass = twMerge(position, divDefault, divClasses[bannerType], $$props.outerDiv);
-  $: div2Class = twMerge(insideDiv, insideDivClasses[bannerType], $$props.innerDiv);
+  $: divClass = twMerge(position, divClass, divClasses[bannerType], $$props.classDiv);
+  $: div2Class = twMerge(innerClass, insideDivClasses[bannerType], $$props.classInner);
   let show = true;
   $: handleHide = () => {
     show = !show;
@@ -73,7 +73,7 @@
   @prop position: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky' = 'sticky';
   @prop dismissable: boolean = true;
   @prop bannerType: 'default' | 'bottom' | 'cta' | 'signup' | 'info' = 'default';
-  @prop divDefault: string = 'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600';
+  @prop divClass: string = 'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600';
   @prop insideDiv: string = 'flex';
   ## Event
   - on:click
