@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.38.2](https://github.com/themesberg/flowbite-svelte/compare/v0.38.1...v0.38.2) (2023-06-14)
+
+
+### Features
+
+* add additional classes where components has more than one twMerge ([77769cc](https://github.com/themesberg/flowbite-svelte/commit/77769cc2dc67ffc61997c62e8f1107f4d2bc1bab))
+
 ### [0.38.1](https://github.com/themesberg/flowbite-svelte/compare/v0.34.9...v0.38.1) (2023-06-13)
 
 
