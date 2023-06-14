@@ -268,11 +268,17 @@ The component has the following props, type, and default values. See [types page
 
 ### Pagination
 
+- Use the `class` prop to overwrite the `ul` tag class.
+- Use the `classNormal` prop to overwrite `normalClass`.
+- Use the `classActive` prop to overwrite `activeClass`.
+
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
 ### PaginationItem
+
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />

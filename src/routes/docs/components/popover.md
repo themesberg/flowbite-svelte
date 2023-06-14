@@ -357,7 +357,9 @@ You can also disable the popover arrow by setting `arrow` attribute to `false`.
 
 ### Popper
 
-The component inherits the following props, type, and default values from `Popper`. See <A href="/docs/pages/typescript">types page</A> for type information.
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
+
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />

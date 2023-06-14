@@ -12,7 +12,6 @@
     $$props.class
   );
 
-  console.log(footerClass);
 </script>
 
 <footer {...$$restProps} class={footerClass}>

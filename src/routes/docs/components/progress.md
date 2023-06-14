@@ -177,6 +177,9 @@ Use `labelInsideClass` prop to style your progressbar.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
+- Use the `class` prop to overwrite the `div` class.
+- Use the `classLabelOutside` prop to overwrite the outside `div` class.
+
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>

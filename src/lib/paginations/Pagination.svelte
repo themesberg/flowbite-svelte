@@ -12,6 +12,9 @@
   export let ulClass: string = 'inline-flex -space-x-px items-center';
   export let table: boolean = false;
 
+  let normalCls: string = twMerge(normalClass, $$props.classNormal)
+  let activeCls: string = twMerge(activeClass, $$props.classActive)
+
   const dispatch = createEventDispatcher();
 
   setContext('group', true);
@@ -28,7 +31,7 @@
 <nav aria-label="Page navigation">
   <ul class={twMerge(ulClass, table && 'divide-x divide-gray-700', $$props.class)}>
     <li>
-      <PaginationItem on:click={previous} class={twJoin(normalClass, table ? 'rounded-l' : 'rounded-l-lg')}>
+      <PaginationItem on:click={previous} class={twJoin(normalCls, table ? 'rounded-l' : 'rounded-l-lg')}>
         <slot name="prev">Previous</slot>
       </PaginationItem>
     </li>
@@ -46,13 +49,13 @@
           on:mouseenter
           on:mouseleave
           on:mouseover
-          {activeClass}
-          {normalClass}
+          {activeCls}
+          {normalCls}
           {href}>{name}</PaginationItem>
       </li>
     {/each}
     <li>
-      <PaginationItem on:click={next} class={twJoin(normalClass, table ? 'rounded-r' : 'rounded-r-lg')}>
+      <PaginationItem on:click={next} class={twJoin(normalCls, table ? 'rounded-r' : 'rounded-r-lg')}>
         <slot name="next">Next</slot>
       </PaginationItem>
     </li>

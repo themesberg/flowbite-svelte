@@ -9,6 +9,7 @@
     'primary';
   export let labelInsideClass: string =
     'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
+  export let divClass: string = 'w-full bg-gray-200 rounded-full dark:bg-gray-700';
 
   // let barColor: string;
   const barColors = {
@@ -24,12 +25,12 @@
 </script>
 
 {#if labelOutside}
-  <div {...$$restProps} class={twMerge('flex justify-between mb-1', $$props.class)}>
+  <div {...$$restProps} class={twMerge('flex justify-between mb-1', $$props.classLabelOutside)}>
     <span class="text-base font-medium text-blue-700 dark:text-white">{labelOutside}</span>
     <span class="text-sm font-medium text-blue-700 dark:text-white">{progress}%</span>
   </div>
 {/if}
-<div class={twMerge('w-full bg-gray-200 rounded-full dark:bg-gray-700', size, $$props.class)}>
+<div class={twMerge(divClass, size, $$props.class)}>
   {#if labelInside}
     <div class={twJoin(labelInsideClass, barColors[color])} style="width: {progress}%">
       {progress}%
