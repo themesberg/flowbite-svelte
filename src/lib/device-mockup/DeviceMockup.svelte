@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twJoin, twMerge } from 'tailwind-merge';
   import DefaultMockup from './DefaultMockup.svelte';
   import Ios from './Ios.svelte';
   import Android from './Android.svelte';
@@ -102,43 +103,113 @@
   export let tabletRight: string =
     'h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg';
 
+  // android
+  let androidDivCls: string = twMerge(androidDiv, $$props.classAndroidDiv);
+  let androidSlotCls: string = twMerge(androidSlot, $$props.classAndroidSlot);
+  let androidTopCls: string = twMerge(androidTop, $$props.classAndroidTop);
+  let androidLeftTopCls: string = twMerge(androidLeftTop, $$props.classAndroidLeftTop);
+  let androidLeftMidCls: string = twMerge(androidLeftMid, $$props.classAndroidLeftMid);
+  let androidLeftBotCls: string = twMerge(androidLeftBot, $$props.classAndroidLeftBot);
+  let androidRightCls: string = twMerge(androidRight, $$props.classAndroidRight);
+
+  //default
+  let defaultDivCls: string = twMerge(defaultDiv, $$props.classDefaultDiv);
+  let defaultSlotCls: string = twMerge(defaultSlot, $$props.classDefaultSlot);
+  let defaultTopCls: string = twMerge(defaultTop, $$props.classDefaultTop);
+  let defaultLeftTopCls: string = twMerge(defaultLeftTop, $$props.classDefaultLeftTop);
+  let defaultLeftBotCls: string = twMerge(defaultLeftBot, $$props.classDefaultLeftBot);
+  let defaultRightCls: string = twMerge(defaultRight, $$props.classDefaultRight);
+
+  // desktop
+  let desktopInnerCls: string = twMerge(desktopInner, $$props.classDesktopInner);
+  let desktopBotCls: string = twMerge(desktopBot, $$props.classDesktopBot);
+  let desktopBotUnderCls: string = twMerge(desktopBotUnder, $$props.classDesktopBotUnder);
+  let destopDivCls: string = twMerge(destopDiv, $$props.classDestopDiv);
+  let desktopSlotCls: string = twMerge(desktopSlot, $$props.classDesktopSlot);
+
+  // ios
+  let iosDivCls: string = twMerge(iosDiv, $$props.classIosDiv);
+  let iosSlotCls: string = twMerge(iosSlot, $$props.classIosSlot);
+  let iosTopCls: string = twMerge(iosTop, $$props.classIosTop);
+  let iosLeftTopCls: string = twMerge(iosLeftTop, $$props.classIosLeftTop);
+  let iosLeftBotCls: string = twMerge(iosLeftBot, $$props.classIosLeftBot);
+  let iosRightCls: string = twMerge(iosRight, $$props.classIosRight);
+
+  // laptop
+  let laptopDivCls: string = twMerge(laptopDiv, $$props.classLaptopDiv);
+  let laptopSlotCls: string = twMerge(laptopSlot, $$props.classLaptopSlot);
+  let laptopInnerCls: string = twMerge(laptopInner, $$props.classLaptopInner);
+  let laptopBotCls: string = twMerge(laptopBot, $$props.classLaptopBot);
+  let laptopBotCenCls: string = twMerge(laptopBotCen, $$props.classLaptopBotCen);
+
+  // smartwatch
+  let smartwatchDivCls: string = twMerge(smartwatchDiv, $$props.classSmartwatchDiv);
+  let smartwatchSlotCls: string = twMerge(smartwatchSlot, $$props.classSmartwatchSlot);
+  let smartRightTopCls: string = twMerge(smartRightTop, $$props.classSmartRightTop);
+  let smartRightBotCls: string = twMerge(smartRightBot, $$props.classSmartRightBot);
+  let smartTopCls: string = twMerge(smartTop, $$props.classSmartTop);
+  let smartBotCls: string = twMerge(smartBot, $$props.classSmartBot);
+  let smartwatchInnerCls: string = twMerge(smartwatchInner, $$props.classSmartwatchInner);
+
+  // tablet
+
+  let tabletDivCls: string = twMerge(tabletDiv, $$props.classTabletDiv);
+  let tabletSlotCls: string = twMerge(tabletSlot, $$props.classTabletSlot);
+  let tabletLeftTopCls: string = twMerge(tabletLeftTop, $$props.classTabletLeftTop);
+  let tabletLeftMidCls: string = twMerge(tabletLeftMid, $$props.classTabletLeftMid);
+  let tabletLeftBotCls: string = twMerge(tabletLeftBot, $$props.classTabletLeftBot);
+  let tabletRightCls: string = twMerge(tabletRight, $$props.classTabletRight);
+
   const divClasses = {
-    default: defaultDiv,
-    ios: iosDiv,
-    android: androidDiv,
-    tablet: tabletDiv,
-    laptop: laptopDiv,
-    desktop: destopDiv,
-    smartwatch: smartwatchDiv
+    default: defaultDivCls,
+    ios: iosDivCls,
+    android: androidDivCls,
+    tablet: tabletDivCls,
+    laptop: laptopDivCls,
+    desktop: destopDivCls,
+    smartwatch: smartwatchDivCls
   };
 
   const slotClasses = {
-    default: defaultSlot,
-    ios: iosSlot,
-    android: androidSlot,
-    tablet: tabletSlot,
-    laptop: laptopSlot,
-    desktop: desktopSlot,
-    smartwatch: smartwatchSlot
+    default: defaultSlotCls,
+    ios: iosSlotCls,
+    android: androidSlotCls,
+    tablet: tabletSlotCls,
+    laptop: laptopSlotCls,
+    desktop: desktopSlotCls,
+    smartwatch: smartwatchSlotCls
   };
 </script>
 
 <div class={divClasses[device]}>
   {#if device === 'default'}
-    <DefaultMockup {defaultTop} {defaultLeftTop} {defaultLeftBot} {defaultRight} />
+    <DefaultMockup
+      defaultTop={defaultTopCls}
+      defaultLeftTop={defaultLeftTopCls}
+      defaultLeftBot={defaultLeftBotCls}
+      defaultRight={defaultRightCls} />
   {:else if device === 'ios'}
-    <Ios {iosTop} {iosLeftTop} {iosLeftBot} {iosRight} />
+    <Ios iosTop={iosTopCls} iosLeftTop={iosLeftTopCls} iosLeftBot={iosLeftBotCls} iosRight={iosRightCls} />
   {:else if device === 'android'}
-    <Android {androidTop} {androidLeftTop} {androidLeftMid} {androidLeftBot} {androidRight} />
+    <Android
+      androidTop={androidTopCls}
+      androidLeftTop={androidLeftTopCls}
+      androidLeftMid={androidLeftMidCls}
+      androidLeftBot={androidLeftBotCls}
+      androidRight={androidRightCls} />
   {:else if device === 'tablet'}
-    <Tablet {tabletLeftTop} {tabletLeftMid} {tabletLeftBot} {tabletRight} />
+    <Tablet
+      tabletLeftTop={tabletLeftTopCls}
+      tabletLeftMid={tabletLeftMidCls}
+      tabletLeftBot={tabletLeftBotCls}
+      tabletRight={tabletRightCls} />
   {/if}
   {#if device === 'laptop'}
-    <div class={laptopInner}>
+    <div class={laptopInnerCls}>
       <slot />
     </div>
   {:else if device === 'desktop'}
-    <div class={desktopInner}>
+    <div class={desktopInnerCls}>
       <slot />
     </div>
   {:else if device === 'smartwatch'}
@@ -150,20 +221,20 @@
   {/if}
 </div>
 {#if device === 'laptop'}
-  <div class={laptopBot}>
-    <div class={laptopBotCen} />
+  <div class={laptopBotCls}>
+    <div class={laptopBotCenCls} />
   </div>
 {:else if device === 'desktop'}
-  <div class={desktopBot} />
-  <div class={desktopBotUnder} />
+  <div class={desktopBotCls} />
+  <div class={desktopBotUnderCls} />
 {:else if device === 'smartwatch'}
-  <div class={smartTop}>
-    <Smartwatch {smartRightTop} {smartRightBot} />
-    <div class={smartwatchInner}>
+  <div class={smartTopCls}>
+    <Smartwatch smartRightTop={smartRightTopCls} smartRightBot={smartRightBotCls} />
+    <div class={smartwatchInnerCls}>
       <slot />
     </div>
   </div>
-  <div class={smartBot} />
+  <div class={smartBotCls} />
 {/if}
 
 <!--
