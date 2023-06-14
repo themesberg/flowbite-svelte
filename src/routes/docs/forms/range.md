@@ -102,6 +102,8 @@ Since we added `$$restProps` to input field, you can contain the props which are
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
+Use the `class` props to overwrite the default class.
+
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>

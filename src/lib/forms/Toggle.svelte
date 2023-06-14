@@ -42,11 +42,12 @@
     background ? 'dark:bg-gray-600 dark:border-gray-500' : 'dark:bg-gray-700 dark:border-gray-600',
     colors[($$restProps.color as FormColorType) ?? 'primary'],
     sizes[size],
-    'relative'
+    'relative',
+    $$props.class
   );
 </script>
 
-<Checkbox custom {...$$restProps} class={$$props.class} {value} bind:checked bind:group on:click on:change>
+<Checkbox custom {...$$restProps} class={$$props.classCheckbox} {value} bind:checked bind:group on:click on:change>
   <span class={divClass} />
   <slot />
 </Checkbox>

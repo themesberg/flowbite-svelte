@@ -27,7 +27,7 @@
     underline ? underlineClass : defaultClass,
     sizes[size],
     underline && '!px-0',
-    $$restProps.class
+    $$props.class
   );
 </script>
 

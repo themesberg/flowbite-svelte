@@ -123,6 +123,8 @@ The component has the following props, type, and default values. See [types page
 
 ### Search
 
+- Use the `class` props to overwrite the `Input` tag.
+
 <TableProp>
   <TableDefaultRow items={searchItems} rowState='hover' />
 </TableProp>

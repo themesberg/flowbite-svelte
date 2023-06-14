@@ -241,6 +241,8 @@ Get started with the default toggle component example as a checkbox element to r
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
+Use the `class` props to overwrite the select tag.
+
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
