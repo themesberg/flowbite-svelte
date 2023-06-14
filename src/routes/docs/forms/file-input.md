@@ -132,11 +132,15 @@ The component has the following props, type, and default values. See [types page
 
 ### Fileupload
 
+- Use the `class` props to overwrite the default class.
+
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
 ### Dropzone
+
+- Use the `class` props to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />

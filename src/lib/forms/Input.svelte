@@ -16,6 +16,7 @@
   export let size: FormSizeType | undefined = undefined;
   export let defaultClass: string = 'block w-full disabled:cursor-not-allowed disabled:opacity-50';
   export let color: 'base' | 'green' | 'red' = 'base';
+  export let floatClass: string = 'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400';
 
   const borderClasses = {
     base: 'border-gray-300 dark:border-gray-600',
@@ -76,12 +77,12 @@
       $$props.class
     ]);
   }
-  let floatClass = 'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400';
+
 </script>
 
 <Wrapper class="relative w-full" show={$$slots.left || $$slots.right}>
   {#if $$slots.left}
-    <div class="{floatClass} left-0 pl-2.5 pointer-events-none"><slot name="left" /></div>
+    <div class="{twMerge(floatClass, $$props.classLeft)} left-0 pl-2.5 pointer-events-none"><slot name="left" /></div>
   {/if}
   <slot props={{ ...$$restProps, class: inputClass }}>
     <input
@@ -104,7 +105,7 @@
       class={inputClass} />
   </slot>
   {#if $$slots.right}
-    <div class="{floatClass} right-0 pr-2.5"><slot name="right" /></div>
+    <div class="{twMerge(floatClass, $$props.classRight)} right-0 pr-2.5"><slot name="right" /></div>
   {/if}
 </Wrapper>
 

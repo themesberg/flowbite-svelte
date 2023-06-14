@@ -189,6 +189,25 @@ This component can be used to showcase applications built for smartwatches.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
+### DeviceMockup
+
+<TableProp>
+  <TableDefaultRow items={DeviceMockup} rowState='hover' />
+</TableProp>
+
+### DefaultMockup
+
+- Use the `classDefaultDiv` props to overwrite `defaultDiv`.
+- Use the `classDefaultSlot` props to overwrite `defaultSlot`.
+- Use the `classDefaultTop` props to overwrite `defaultTop`.
+- Use the `classDefaultLeftTop` props to overwrite `defaultLeftTop`.
+- Use the `classDefaultLeftBot` props to overwrite `defaultLeftBot`.
+- Use the `classDefaultRight` props to overwrite `defaultRight`.
+
+<TableProp>
+  <TableDefaultRow items={DefaultMockup} rowState='hover' />
+</TableProp>
+
 ### Android
 
 - Use the `classAndroidDiv` props to overwrite `androidDiv`.
@@ -199,14 +218,9 @@ The component has the following props, type, and default values. See [types page
 - Use the `classAndroidLeftBot` props to overwrite `androidLeftBot`.
 - Use the `classAndroidRight` props to overwrite `androidRight`.
 
-### Default
-
-- Use the `classDefaultDiv` props to overwrite `defaultDiv`.
-- Use the `classDefaultSlot` props to overwrite `defaultSlot`.
-- Use the `classDefaultTop` props to overwrite `defaultTop`.
-- Use the `classDefaultLeftTop` props to overwrite `defaultLeftTop`.
-- Use the `classDefaultLeftBot` props to overwrite `defaultLeftBot`.
-- Use the `classDefaultRight` props to overwrite `defaultRight`.
+<TableProp>
+  <TableDefaultRow items={Android} rowState='hover' />
+</TableProp>
 
 ### Desktop
 
@@ -216,7 +230,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `classDestopDiv` props to overwrite `destopDiv`.
 - Use the `classDesktopSlot` props to overwrite `desktopSlot`.
 
-### ios
+### Ios
 
 - Use the `classIosDiv` props to overwrite `iosDiv`.
 - Use the `classIosSlot` props to overwrite `iosSlot`.
@@ -225,69 +239,41 @@ The component has the following props, type, and default values. See [types page
 - Use the `classIosLeftBot` props to overwrite `iosLeftBot`.
 - Use the `classIosRight` props to overwrite `iosRight`.
 
-### Laptop
-
-
-- Use the `classAndroidDiv` props to overwrite `androidDiv`.
-- Use the `classAndroidDiv` props to overwrite `androidDiv`.
-- Use the `classAndroidDiv` props to overwrite `androidDiv`.
-- Use the `classAndroidDiv` props to overwrite `androidDiv`.
-- Use the `classAndroidDiv` props to overwrite `androidDiv`.
-- Use the `classAndroidDiv` props to overwrite `androidDiv`.
-
-### Smartwatch
-- Use the `classAndroidDiv` props to overwrite `androidDiv`.
-- Use the `classAndroidDiv` props to overwrite `androidDiv`.
-- Use the `classAndroidDiv` props to overwrite `androidDiv`.
-- Use the `classAndroidDiv` props to overwrite `androidDiv`.
-- Use the `classAndroidDiv` props to overwrite `androidDiv`.
-- Use the `classAndroidDiv` props to overwrite `androidDiv`.
-
-### Tablet
-- Use the `classAndroidDiv` props to overwrite `androidDiv`.
-- Use the `classAndroidDiv` props to overwrite `androidDiv`.
-- Use the `classAndroidDiv` props to overwrite `androidDiv`.
-- Use the `classAndroidDiv` props to overwrite `androidDiv`.
-- Use the `classAndroidDiv` props to overwrite `androidDiv`.
-- Use the `classAndroidDiv` props to overwrite `androidDiv`.
-
-
-
-
-
-
-
-### DeviceMockup
-
-<TableProp>
-  <TableDefaultRow items={DeviceMockup} rowState='hover' />
-</TableProp>
-
-### DefaultMockup
-
-<TableProp>
-  <TableDefaultRow items={DefaultMockup} rowState='hover' />
-</TableProp>
-
-### Android
-
-<TableProp>
-  <TableDefaultRow items={Android} rowState='hover' />
-</TableProp>
-
-### Ios
-
 <TableProp>
   <TableDefaultRow items={Ios} rowState='hover' />
 </TableProp>
 
+### Laptop
+
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+
+
 ### Smartwatch
+
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
 
 <TableProp>
   <TableDefaultRow items={Smartwatch} rowState='hover' />
 </TableProp>
 
 ### Tablet
+
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
 
 <TableProp>
   <TableDefaultRow items={Tablet} rowState='hover' />

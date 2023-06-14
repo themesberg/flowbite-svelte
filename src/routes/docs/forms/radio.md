@@ -280,8 +280,7 @@ Use this example of an advanced layout of radio elements where the label parent 
 
 ## Props
 
-The component has the following props, type, and default values. See <a href="/docs/pages/typescript">types
-page</a> for type information.
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 All attributes of the `input` element like: name, id, autofocus, etc, can be set directly as component props.
 

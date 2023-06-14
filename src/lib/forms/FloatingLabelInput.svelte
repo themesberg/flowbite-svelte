@@ -88,7 +88,7 @@
   }
 </script>
 
-<div class={divClasses[style]}>
+<div class={twMerge(divClasses[style], $$props.classDiv)}>
   <input
     {id}
     {...$$restProps}
@@ -107,7 +107,7 @@
     on:paste
     use:setType={type}
     placeholder=" "
-    class={twMerge(inputClasses[style], inputColorClasses[color], inputSizes[style][size], $$props.class)} />
+    class={twMerge(inputClasses[style], inputColorClasses[color], inputSizes[style][size], $$props.classInput)} />
 
   <label
     for={id}
@@ -115,7 +115,7 @@
       labelClasses[style],
       labelColorClasses[color],
       labelSizes[style][size],
-      $$props.labelClass
+      $$props.classLabel
     )}>
     {label}
   </label>

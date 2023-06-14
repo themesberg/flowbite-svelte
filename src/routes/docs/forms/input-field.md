@@ -11,7 +11,8 @@ description: Get started with a collection of input fields built with Tailwind C
   import { TableProp, TableDefaultRow, DocBadgeList  } from '../../utils'
   import { onMount } from 'svelte';
   import { Badge, A } from '$lib'
-  import { props as items1 } from '../../props/Input.json'
+  import { props as input } from '../../props/Input.json'
+  import { props as inputAddon } from '../../props/InputAddon.json'
 
   const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover","on:paste","on:input"];
 </script>
@@ -371,9 +372,21 @@ The component has the following props, type, and default values. See [types page
 
 ### Input
 
+- Use the `class` props to overwrite the input class.
+- Use the `classRight` and/or `classLeft` props to osvewrite the `floatClass`.
+
 <TableProp>
-<TableDefaultRow items={items1} rowState='hover' />
+<TableDefaultRow items={input} rowState='hover' />
 </TableProp>
+
+### InputAddon
+
+- Use the `class` props to overwrite the input class.
+
+<TableProp>
+<TableDefaultRow items={inputAddon} rowState='hover' />
+</TableProp>
+
 
 ## Forwarded Events: Input
 
