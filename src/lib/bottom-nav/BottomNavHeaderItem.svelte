@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twMerge } from 'tailwind-merge';
   export let itemName: string = '';
   export let active: boolean = false;
   export let defaultClass: string =
@@ -9,7 +10,7 @@
   $: btnClass = active ? activeClass : defaultClass;
 </script>
 
-<button class={btnClass} {...$$restProps}>
+<button class={twMerge(btnClass, $$props.class)} {...$$restProps}>
   {itemName}
 </button>
 

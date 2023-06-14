@@ -64,8 +64,8 @@
   ## Props
   @prop position: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky' = 'fixed';
   @prop navType:| 'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video' | 'custom' = 'default';
-  @prop outerDefault: string = 'w-full z-50 border-gray-200 dark:bg-gray-700 dark:border-gray-600';
-  @prop innerDefault: string = 'grid h-full max-w-lg mx-auto';
+  @prop outerClass: string = 'w-full z-50 border-gray-200 dark:bg-gray-700 dark:border-gray-600';
+  @prop innerClass: string = 'grid h-full max-w-lg mx-auto';
   @prop outerCustom: string = '';
   @prop innerCustom: string = '';
   ## Example

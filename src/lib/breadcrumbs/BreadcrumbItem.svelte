@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
+  import { twMerge } from 'tailwind-merge';
   export let home: boolean = false;
   export let href: string | undefined = undefined;
   export let linkClass: string =
@@ -9,7 +9,7 @@
     'inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white';
 </script>
 
-<li class="{twMerge('inline-flex items-center', $$props.class)}" {...$$restProps}>
+<li class={twMerge('inline-flex items-center', $$props.class)} {...$$restProps}>
   {#if home}
     <a class={twMerge(homeClass, $$props.classHome)} {href}>
       {#if $$slots.icon}
