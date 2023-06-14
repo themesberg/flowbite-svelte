@@ -8,16 +8,20 @@
   export let alt: string = '';
   export let name: string = '';
   export let target: string | undefined = undefined;
+
+  let aCls: string = twMerge(aClass, $$props.classA)
+  let spanCls: string = twMerge(spanClass, $$props.classSpan)
+  let imgCls: string = twMerge(imgClass, $$props.classImg)
 </script>
 
 {#if href}
-  <a {...$$restProps} {href} {target} class={twMerge(aClass, $$props.class)}>
-    <img {src} class={imgClass} {alt} />
-    <span class={spanClass}>{name}</span>
+  <a {...$$restProps} {href} {target} class={aCls}>
+    <img {src} class={imgCls} {alt} />
+    <span class={spanCls}>{name}</span>
     <slot />
   </a>
 {:else}
-  <img {...$$restProps} {src} class={imgClass} {alt} />
+  <img {...$$restProps} {src} class={imgCls} {alt} />
 {/if}
 
 <!--

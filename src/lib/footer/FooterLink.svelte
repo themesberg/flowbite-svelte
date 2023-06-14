@@ -4,10 +4,13 @@
   export let aClass: string = 'hover:underline';
   export let href: string = '';
   export let target: string | undefined = undefined;
+
+  let liCls: string = twMerge(liClass, $$props.classLi)
+  let aCls: string = twMerge(aClass, $$props.classA)
 </script>
 
-<li class={twMerge(liClass, $$props.class)}>
-  <a {...$$restProps} {href} class={aClass} {target}>
+<li class={liCls}>
+  <a {...$$restProps} {href} class={aCls} {target}>
     <slot />
   </a>
 </li>

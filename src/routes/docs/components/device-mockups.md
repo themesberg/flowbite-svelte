@@ -189,6 +189,74 @@ This component can be used to showcase applications built for smartwatches.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
+### Android
+
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidSlot` props to overwrite `androidSlot`.
+- Use the `classAndroidTop` props to overwrite `androidTop`.
+- Use the `classAndroidLeftTop` props to overwrite `androidLeftTop`.
+- Use the `classAndroidLeftMid` props to overwrite `androidLeftMid`.
+- Use the `classAndroidLeftBot` props to overwrite `androidLeftBot`.
+- Use the `classAndroidRight` props to overwrite `androidRight`.
+
+### Default
+
+- Use the `classDefaultDiv` props to overwrite `defaultDiv`.
+- Use the `classDefaultSlot` props to overwrite `defaultSlot`.
+- Use the `classDefaultTop` props to overwrite `defaultTop`.
+- Use the `classDefaultLeftTop` props to overwrite `defaultLeftTop`.
+- Use the `classDefaultLeftBot` props to overwrite `defaultLeftBot`.
+- Use the `classDefaultRight` props to overwrite `defaultRight`.
+
+### Desktop
+
+- Use the `classDesktopInner` props to overwrite `desktopInner`.
+- Use the `classDesktopBot` props to overwrite `desktopBot`.
+- Use the `classDesktopBotUnder` props to overwrite `desktopBotUnder`.
+- Use the `classDestopDiv` props to overwrite `destopDiv`.
+- Use the `classDesktopSlot` props to overwrite `desktopSlot`.
+
+### ios
+
+- Use the `classIosDiv` props to overwrite `iosDiv`.
+- Use the `classIosSlot` props to overwrite `iosSlot`.
+- Use the `classIosTop` props to overwrite `iosTop`.
+- Use the `classIosLeftTop` props to overwrite `iosLeftTop`.
+- Use the `classIosLeftBot` props to overwrite `iosLeftBot`.
+- Use the `classIosRight` props to overwrite `iosRight`.
+
+### Laptop
+
+
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+
+### Smartwatch
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+
+### Tablet
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+- Use the `classAndroidDiv` props to overwrite `androidDiv`.
+
+
+
+
+
+
+
 ### DeviceMockup
 
 <TableProp>

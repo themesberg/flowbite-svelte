@@ -7,12 +7,15 @@
   export let by: string = '';
   export let target: string | undefined = undefined;
   export let copyrightMessage: string = 'All Rights Reserved.';
+
+  let spanCls: string = twMerge(spanClass, $$props.classSpan)
+  let aCls: string = twMerge(aClass, $$props.classA)
 </script>
 
-<span class={twMerge(spanClass, $$props.class)}>
+<span class={spanCls}>
   &copy; {year}
   {#if href}
-    <a {...$$restProps} {href} {target} class={aClass}>
+    <a {...$$restProps} {href} {target} class={aCls}>
       {by}
     </a>
   {:else}
