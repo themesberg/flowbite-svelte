@@ -5,7 +5,7 @@
   export let id: string = 'sticky-banner';
   export let position: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky' = 'sticky';
   export let dismissable: boolean = true;
-  export let bannerType: 'default' | 'bottom' | 'cta' | 'signup' | 'info' | 'custom' = 'default';
+  export let bannerType: 'default' | 'bottom' | 'cta' | 'signup' | 'info' = 'default';
   export let divDefault: string = 'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600';
   export let insideDiv: string = 'flex';
 
@@ -14,8 +14,7 @@
     bottom: 'bottom-0 left-0 w-full border-t border-gray-200 bg-gray-50',
     cta: 'flex-col md:flex-row  w-[calc(100%-2rem)] -translate-x-1/2 bg-white border border-gray-100 rounded-lg shadow-sm lg:max-w-7xl left-1/2 top-6',
     signup: 'top-0 left-0 w-full border-b border-gray-200 bg-gray-50',
-    info: 'top-0 left-0 flex-col w-full border-b border-gray-200 md:flex-row bg-gray-50',
-    custom: ''
+    info: 'top-0 left-0 flex-col w-full border-b border-gray-200 md:flex-row bg-gray-50'
   };
 
   const insideDivClasses = {
@@ -23,8 +22,7 @@
     bottom: 'items-center mx-auto',
     cta: 'flex-col items-start mb-3 mr-4 md:items-center md:flex-row md:mb-0',
     signup: 'items-center flex-shrink-0 w-full mx-auto sm:w-auto',
-    info: 'items-center flex-shrink-0',
-    custom: ''
+    info: 'items-center flex-shrink-0'
   };
 
   $: divClass = twMerge(position, divDefault, divClasses[bannerType], $$props.outerDiv);
@@ -74,7 +72,7 @@
   @prop id: string = 'sticky-banner';
   @prop position: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky' = 'sticky';
   @prop dismissable: boolean = true;
-  @prop bannerType: 'default' | 'bottom' | 'cta' | 'signup' | 'info' | 'custom' = 'default';
+  @prop bannerType: 'default' | 'bottom' | 'cta' | 'signup' | 'info' = 'default';
   @prop divDefault: string = 'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600';
   @prop insideDiv: string = 'flex';
   ## Event
