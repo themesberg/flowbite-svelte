@@ -12,8 +12,8 @@
   export let ulClass: string = 'inline-flex -space-x-px items-center';
   export let table: boolean = false;
 
-  let normalCls: string = twMerge(normalClass, $$props.classNormal)
-  let activeCls: string = twMerge(activeClass, $$props.classActive)
+  let normalCls: string = twMerge(normalClass, $$props.classNormal);
+  let activeCls: string = twMerge(activeClass, $$props.classActive);
 
   const dispatch = createEventDispatcher();
 

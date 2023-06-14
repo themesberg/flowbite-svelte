@@ -151,7 +151,6 @@
     position === 'left' && ($$props.border ? 'after:border-t after:border-r -right-[5px]' : '-right-[4px]'),
     position === 'right' && ($$props.border ? 'after:border-b after:border-l -left-[5px]' : '-left-[4px]')
   );
-
 </script>
 
 {#if !triggerEl}
