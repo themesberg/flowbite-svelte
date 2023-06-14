@@ -1,6 +1,6 @@
 <script lang="ts">
   import { getContext } from 'svelte';
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import Checkbox from './Checkbox.svelte';
   import type { FormColorType } from '../types';
 

@@ -1,5 +1,6 @@
 {
   "props": [
+    ["spacing", "string", "'mr-2'"],
     ["color", "FormColorType", "'primary'"],
     ["custom", "boolean", "false"],
     ["inline", "boolean", "false"],

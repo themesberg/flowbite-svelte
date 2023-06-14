@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import type { LinkType } from '../types';
   import Popper from '../utils/Popper.svelte';
 

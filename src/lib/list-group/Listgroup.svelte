@@ -1,6 +1,6 @@
 <script lang="ts">
   import { setContext, type ComponentProps } from 'svelte';
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import type { ListGroupItemType } from '../types';
   import ListgroupItem from './ListgroupItem.svelte';
   import Frame from '../utils/Frame.svelte';

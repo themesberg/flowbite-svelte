@@ -9,7 +9,7 @@
 </script>
 
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import Button from '$lib/buttons/Button.svelte';
   import Popper from '$lib/utils/Popper.svelte';
   import { setContext } from 'svelte';

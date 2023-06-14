@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import type { IndicatorColorType, IndicatorPlacementType } from '../types';
 
   export let color: IndicatorColorType = 'gray';

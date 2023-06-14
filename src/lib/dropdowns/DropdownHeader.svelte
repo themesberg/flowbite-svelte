@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import DropdownDivider from './DropdownDivider.svelte';
   export let divClass: string = 'py-2 px-4 text-gray-700 dark:text-white';
   export let divider: boolean = true;

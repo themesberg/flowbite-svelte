@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import Button from './Button.svelte';
   import { getContext } from 'svelte';
 
@@ -64,7 +64,7 @@
 
   let divClass: string;
   $: divClass = twMerge(
-    $$props.outline &&  'p-0.5',
+    $$props.outline && 'p-0.5',
     gradientClasses[color],
     shadow && 'shadow-lg',
     shadow && coloredShadowClasses[color],

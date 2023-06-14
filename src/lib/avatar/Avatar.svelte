@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import AvatarPlaceholder from './Placeholder.svelte';
   import Indicator from '$lib/indicators/Indicator.svelte';
 

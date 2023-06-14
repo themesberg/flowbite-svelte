@@ -1,6 +1,6 @@
 <script lang="ts">
   import Star from './Star.svelte';
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import generateId from '../utils/generateId.js';
   import type { ComponentType } from 'svelte';
 

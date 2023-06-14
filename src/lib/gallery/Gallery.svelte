@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { ImgType } from '$lib/types';
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
 
   export let items: ImgType[] = [];
   export let imgClass: string = 'h-auto max-w-full rounded-lg';

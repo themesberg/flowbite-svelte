@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { SizeType } from '$lib/types';
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import type { ComponentProps } from 'svelte';
   import Frame from '../utils/Frame.svelte';
 

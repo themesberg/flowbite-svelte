@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
   import type { FormColorType } from '../types';
   import { labelClass, inputClass } from './Radio.svelte';
@@ -72,7 +72,8 @@
     {...$$restProps}
     class={twMerge(
       spacing,
-      inputClass(custom, color, true, background, $$slots.default || $$props.class))} /><slot />
+      inputClass(custom, color, true, background, $$slots.default || $$props.class)
+    )} /><slot />
 </Label>
 
 <!--

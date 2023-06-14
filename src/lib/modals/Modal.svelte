@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import Frame from '../utils/Frame.svelte';
   import { createEventDispatcher, type ComponentProps } from 'svelte';
   import CloseButton from '../utils/CloseButton.svelte';

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   interface Sizes {
     [key: string]: string;
   }
@@ -11,7 +11,6 @@
     xl: 'max-w-xl',
     xxl: 'max-w-2xl'
   };
-
 
   export let divClass: string =
     'p-4 rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700';

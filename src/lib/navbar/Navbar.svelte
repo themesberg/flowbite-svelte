@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { ComponentProps } from 'svelte';
   import Frame from '../utils/Frame.svelte';
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
 
   // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Frame> {

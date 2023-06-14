@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import { setContext } from 'svelte';
 
   export let divClass: string = 'relative overflow-x-auto shadow-md sm:rounded-lg';

@@ -2,7 +2,7 @@
   import Button from '$lib/buttons/Button.svelte';
   import Tooltip from '$lib/tooltips/Tooltip.svelte';
   import type { Placement } from '@popperjs/core';
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
   import type { SpeedCtxType } from './SpeedDial.svelte';
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
 
   export let caption: string | undefined = undefined;
   export let src: string | undefined = undefined;

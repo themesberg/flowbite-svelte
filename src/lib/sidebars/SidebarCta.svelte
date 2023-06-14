@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge'
+  import { twMerge } from 'tailwind-merge';
 
   export let divWrapperClass: string = 'p-4 mt-6 bg-primary-50 rounded-lg dark:bg-primary-900';
   export let divClass: string = 'flex items-center mb-3';
