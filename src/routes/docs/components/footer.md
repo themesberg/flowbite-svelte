@@ -234,8 +234,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 ## Props
 
-<p>The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
- page</A> for type information.</p>
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 ### Footer
 
