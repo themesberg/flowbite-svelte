@@ -19,7 +19,8 @@
     'grid grid-flow-row gap-y-4 md:gap-x-0 auto-col-max auto-row-max',
     full && $$slots.extra ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-3',
     'text-sm font-medium',
-    full && $$slots.extra && 'md:w-2/3'
+    full && $$slots.extra && 'md:w-2/3',
+    $$props.classUl
   );
 </script>
 

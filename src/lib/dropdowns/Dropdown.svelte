@@ -7,9 +7,9 @@
   export let ulClass: string = 'py-1 w-44';
   export let footerClass: string = 'py-1 overflow-hidden rounded-b-lg';
 
-  let headerCls: string = twMerge(headerClass, $$props.classHeader)
-  let ulCls: string = twMerge(ulClass, $$props.classUl)
-  let footerCls: string = twMerge(footerClass, $$props.classFooter)
+  let headerCls: string = twMerge(headerClass, $$props.classHeader);
+  let ulCls: string = twMerge(ulClass, $$props.classUl);
+  let footerCls: string = twMerge(footerClass, $$props.classFooter);
 
   $: {
     // set default values

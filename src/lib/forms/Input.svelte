@@ -77,12 +77,13 @@
       $$props.class
     ]);
   }
-
 </script>
 
 <Wrapper class="relative w-full" show={$$slots.left || $$slots.right}>
   {#if $$slots.left}
-    <div class="{twMerge(floatClass, $$props.classLeft)} left-0 pl-2.5 pointer-events-none"><slot name="left" /></div>
+    <div class="{twMerge(floatClass, $$props.classLeft)} left-0 pl-2.5 pointer-events-none">
+      <slot name="left" />
+    </div>
   {/if}
   <slot props={{ ...$$restProps, class: inputClass }}>
     <input

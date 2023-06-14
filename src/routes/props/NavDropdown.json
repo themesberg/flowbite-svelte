@@ -1,6 +1,6 @@
 {
   "props": [
-    ["liButtonClass", "string", "'flex items-center justify-between w-full'"],
+    ["liBtnClass", "string", "'flex items-center justify-between w-full'"],
     ["name", "string", ""],
     ["child", "NavbarType[]", "[]"],
     ["dropdownDiv", "string", "''"],

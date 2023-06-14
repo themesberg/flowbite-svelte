@@ -107,7 +107,12 @@
     on:paste
     use:setType={type}
     placeholder=" "
-    class={twMerge(inputClasses[style], inputColorClasses[color], inputSizes[style][size], $$props.classInput)} />
+    class={twMerge(
+      inputClasses[style],
+      inputColorClasses[color],
+      inputSizes[style][size],
+      $$props.classInput
+    )} />
 
   <label
     for={id}

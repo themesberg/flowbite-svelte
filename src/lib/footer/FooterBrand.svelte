@@ -9,9 +9,9 @@
   export let name: string = '';
   export let target: string | undefined = undefined;
 
-  let aCls: string = twMerge(aClass, $$props.classA)
-  let spanCls: string = twMerge(spanClass, $$props.classSpan)
-  let imgCls: string = twMerge(imgClass, $$props.classImg)
+  let aCls: string = twMerge(aClass, $$props.classA);
+  let spanCls: string = twMerge(spanClass, $$props.classSpan);
+  let imgCls: string = twMerge(imgClass, $$props.classImg);
 </script>
 
 {#if href}

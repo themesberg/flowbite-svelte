@@ -8,8 +8,8 @@
   export let target: string | undefined = undefined;
   export let copyrightMessage: string = 'All Rights Reserved.';
 
-  let spanCls: string = twMerge(spanClass, $$props.classSpan)
-  let aCls: string = twMerge(aClass, $$props.classA)
+  let spanCls: string = twMerge(spanClass, $$props.classSpan);
+  let aCls: string = twMerge(aClass, $$props.classA);
 </script>
 
 <span class={spanCls}>

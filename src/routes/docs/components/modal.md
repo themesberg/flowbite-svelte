@@ -365,6 +365,9 @@ The component has the following props, type, and default values. See [types page
 
 ### Modal
 
+- Use the `class` prop to overwrite the default class.
+- Use the `classBackdrop` to overwrite the backdrop class.
+
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>

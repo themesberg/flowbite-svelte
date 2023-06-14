@@ -5,8 +5,8 @@
   export let href: string = '';
   export let target: string | undefined = undefined;
 
-  let liCls: string = twMerge(liClass, $$props.classLi)
-  let aCls: string = twMerge(aClass, $$props.classA)
+  let liCls: string = twMerge(liClass, $$props.classLi);
+  let aCls: string = twMerge(aClass, $$props.classA);
 </script>
 
 <li class={liCls}>

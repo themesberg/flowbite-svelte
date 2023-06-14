@@ -23,10 +23,11 @@
   let toggle = () => {
     hidden = !hidden;
   };
+  let navDivCls: string = twMerge(navDivClass, $$props.classNav);
 </script>
 
 <Frame tag="nav" {...$$restProps} class={twMerge(navClass, $$props.class)}>
-  <div class={twMerge(navDivClass, (fluid && 'w-full') || 'container')}>
+  <div class={twMerge(navDivCls, (fluid && 'w-full') || 'container')}>
     <slot {hidden} {toggle} />
   </div>
 </Frame>
