@@ -226,11 +226,15 @@ The component has the following props, type, and default values. See [types page
 
 ### Kbd
 
+- Use the `class` prop to overwrite the default class.
+
 <TableProp>
   <TableDefaultRow items={items} rowState='hover' />
 </TableProp>
 
 ### ArrowKeyDown
+
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
@@ -238,17 +242,23 @@ The component has the following props, type, and default values. See [types page
 
 ### ArrowKeyLeft
 
+- Use the `class` prop to overwrite the default class.
+
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
 ### ArrowKeyRight
 
+- Use the `class` prop to overwrite the default class.
+
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
 ### ArrowKeyUp
+
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />

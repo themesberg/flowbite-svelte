@@ -145,11 +145,15 @@ The component has the following props, type, and default values. See [types page
 
 ### Listgroup
 
+- Use the `class` prop to overwrite the default class.
+
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
 ### ListgroupItem
+
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
