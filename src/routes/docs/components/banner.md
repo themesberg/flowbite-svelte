@@ -150,8 +150,8 @@ This example can be used to share important information with your website visito
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-- Use the `classDiv` attribute to overwrite `divClass`.
-- Use the `classInner` attribute to overwrite `innerClass`.
+- Use the `classDiv` props to overwrite `divClass`.
+- Use the `classInner` props to overwrite `innerClass`.
 
 <TableProp>
 <TableDefaultRow items={bannerProps} rowState='hover' />

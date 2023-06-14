@@ -96,8 +96,8 @@ The component has the following props, type, and default values. See <A href="/d
 
 ### Breadcrumb
 
-- Use the `class` attribute to overwrite a class in the `nav` tag
-- Use the `classOl` attribute to overwrite a class in the `ol` tag.
+- Use the `class` props to overwrite a class in the `nav` tag
+- Use the `classOl` props to overwrite a class in the `ol` tag.
 
 <TableProp>
   <TableDefaultRow items={breadcrumbProps} rowState='hover' />
@@ -105,10 +105,10 @@ The component has the following props, type, and default values. See <A href="/d
 
 ### BreadcrumbItem
 
-- Use the `class` attribute to overwrite a class in the `li` tag
-- Use the `classHome` attribute to overwrite `homeClass`.
-- Use the `classLink` attribute to overwrite `linkClass`.
-- Use the `classSpan` attribute to overwrite `spanClass`.
+- Use the `class` props to overwrite a class in the `li` tag
+- Use the `classHome` props to overwrite `homeClass`.
+- Use the `classLink` props to overwrite `linkClass`.
+- Use the `classSpan` props to overwrite `spanClass`.
 
 <TableProp>
   <TableDefaultRow items={breadcrumbItemProps} rowState='hover' />

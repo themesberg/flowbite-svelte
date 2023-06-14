@@ -263,6 +263,11 @@ The carousel component can be used to cycle through a set of elements using cust
 
 ### Carousel
 
+- Use the `classDiv` props to overwrite `divClass`.
+- Use the `classIndicatorDiv` props to overwrite `indicatorDivCls`.
+- Use the `classCaption` props to overwrite `captionClass`.
+- Use the `classIndicator` props to overwrite `indicatorClass`.
+
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
