@@ -222,7 +222,7 @@ Example how to use the `multiple` option together with expand all behavior.
 
 ## Custom transitions
 
-The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#run-time-svelte-transition-slide">slide</A>. Use the `transitionType` and `transitionParams` props to make custom transitions.
+The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#run-time-svelte-transition-slide">slide</A>. Use the `transitionType` and `transitionParams` prop to make custom transitions.
 
 ```svelte example hideScript
 <script>

@@ -142,9 +142,9 @@ The component has the following props, type, and default values. See [types page
 
 ### FloatingLabelInput
 
-- Use the `classDiv` props to overwrite the div class.
-- Use the `classInput` props to overwrite the input class.
-- Use the `classLabel` props to overwrite the label class.
+- Use the `classDiv` prop to overwrite the div class.
+- Use the `classInput` prop to overwrite the input class.
+- Use the `classLabel` prop to overwrite the label class.
 
 
 <TableProp>
@@ -153,7 +153,7 @@ The component has the following props, type, and default values. See [types page
 
 ### Helper
 
-- Use the `class` props to overwrite the deault class.
+- Use the `class` prop to overwrite the deault class.
 
 <TableProp>
 <TableDefaultRow items={items2} rowState='hover' />

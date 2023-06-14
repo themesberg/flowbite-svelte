@@ -313,7 +313,7 @@ The component has the following props, type, and default values. See [types page
 
 All attributes of the `input` element like: name, id, autofocus, etc, can be set directly as component props.
 
-Use the `class` props to overwrite the default class.
+Use the `class` prop to overwrite the default class.
 
 ### Checkbox
 

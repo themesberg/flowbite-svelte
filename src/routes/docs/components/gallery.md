@@ -251,6 +251,9 @@ The component has the following props, type, and default values. See [types page
 
 ### Gallery
 
+- Use the `class` prop to overwrite the `div` tag.
+- Use the `classImg` prop to overwrite `imgClass`.
+
 <TableProp>
 <TableDefaultRow items={galleryProps} rowState='hover' />
 </TableProp>

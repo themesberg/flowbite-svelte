@@ -126,7 +126,7 @@ If you want to build a chatroom component you will usually want to use a textare
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-Use the `class` props to overwrite the `textarea` tag.
+Use the `class` prop to overwrite the `textarea` tag.
 
 <TableProp>
 <TableDefaultRow {items} rowState='hover' />

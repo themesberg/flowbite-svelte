@@ -325,7 +325,7 @@ Update the text decoration style using the `underline` and `decorationClass` pro
 
 ## Opacity
 
-Use the `opacity` and `color` props to set the opacity of inline text elements.
+Use the `opacity` and `color` prop to set the opacity of inline text elements.
 
 ```svelte example hideScript
 <script>

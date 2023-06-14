@@ -34,7 +34,7 @@ Use the `Label` component when you need to add a label.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-- Use the `class` props to overwrite the default class.
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow {items} rowState="hover" />

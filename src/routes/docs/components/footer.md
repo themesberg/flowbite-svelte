@@ -238,7 +238,7 @@ The component has the following props, type, and default values. See [types page
 
 ### Footer
 
-- Use the `class` props to overwrite the default class.
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />
@@ -246,9 +246,9 @@ The component has the following props, type, and default values. See [types page
 
 ### FooterBrand
 
-- Use the `classA` props to overwrite `aClass`.
-- Use the `classSpan` props to overwrite `spanClass`.
-- Use the `classImg` props to overwrite `imgClass`.
+- Use the `classA` prop to overwrite `aClass`.
+- Use the `classSpan` prop to overwrite `spanClass`.
+- Use the `classImg` prop to overwrite `imgClass`.
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
@@ -265,7 +265,7 @@ The component has the following props, type, and default values. See [types page
 
 ### FooterIcon
 
-- Use the `class` props to overwrite the default class.
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
@@ -273,8 +273,8 @@ The component has the following props, type, and default values. See [types page
 
 ### FooterLink
 
-- Use the `classLi` props to overwrite `liClass`.
-- Use the `classA` props to overwrite `aClass`.
+- Use the `classLi` prop to overwrite `liClass`.
+- Use the `classA` prop to overwrite `aClass`.
 
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
@@ -282,7 +282,7 @@ The component has the following props, type, and default values. See [types page
 
 ### FooterLinkGroup
 
-- Use the `class` props to overwrite the default class.
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow items={items6} rowState='hover' />

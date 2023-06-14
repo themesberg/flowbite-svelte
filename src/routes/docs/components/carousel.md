@@ -262,10 +262,10 @@ The component has the following props, type, and default values. See [types page
 
 ### Carousel
 
-- Use the `classDiv` props to overwrite `divClass`.
-- Use the `classIndicatorDiv` props to overwrite `indicatorDivCls`.
-- Use the `classCaption` props to overwrite `captionClass`.
-- Use the `classIndicator` props to overwrite `indicatorClass`.
+- Use the `classDiv` prop to overwrite `divClass`.
+- Use the `classIndicatorDiv` prop to overwrite `indicatorDivCls`.
+- Use the `classCaption` prop to overwrite `captionClass`.
+- Use the `classIndicator` prop to overwrite `indicatorClass`.
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />

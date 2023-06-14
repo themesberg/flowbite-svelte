@@ -327,8 +327,8 @@ The component has the following props, type, and default values. See [types page
 
 ### BottomNav
 
-- Use the `classOuter` props to overwrite `outerClass`.
-- Use the `classInner` props to overwrite `innerClass`.
+- Use the `classOuter` prop to overwrite `outerClass`.
+- Use the `classInner` prop to overwrite `innerClass`.
 
 <TableProp>
 <TableDefaultRow items={bottomNavProps} rowState='hover' />
@@ -336,8 +336,8 @@ The component has the following props, type, and default values. See [types page
 
 ### BottomNavHeader
 
-- Use the `classOuter` props to overwrite `outerClass`.
-- Use the `classInner` props to overwrite `innerClass`.
+- Use the `classOuter` prop to overwrite `outerClass`.
+- Use the `classInner` prop to overwrite `innerClass`.
 
 <TableProp>
 <TableDefaultRow items={bottomNavHeaderProps} rowState='hover' />
@@ -345,7 +345,7 @@ The component has the following props, type, and default values. See [types page
 
 ### BottomNavHeaderItem
 
-- Use the `class` props to overwrite `defaultClass` or `activeClass`.
+- Use the `class` prop to overwrite `defaultClass` or `activeClass`.
 
 <TableProp>
 <TableDefaultRow items={bottomNavHeaderItemProps} rowState='hover' />
