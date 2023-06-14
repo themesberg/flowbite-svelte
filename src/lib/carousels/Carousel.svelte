@@ -17,7 +17,7 @@
 
   // Carousel
   export let divClass: string = 'overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96';
-  let divCls:string = twMerge(divClass, $$props.classDiv);
+  let divCls: string = twMerge(divClass, $$props.classDiv);
   export let indicatorDivClass: string = 'flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2';
   let indicatorDivCls: string = twMerge(indicatorDivClass, $$props.classIndicatorDiv);
   // Caption

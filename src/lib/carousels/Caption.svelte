@@ -5,7 +5,7 @@
 </script>
 
 <div class={captionClass}>
-  <p id="caption" class="{pClass}">{caption}</p>
+  <p id="caption" class={pClass}>{caption}</p>
 </div>
 
 <!--
