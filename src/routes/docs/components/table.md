@@ -911,6 +911,8 @@ The component has the following props, type, and default values. See [types page
 
 ### Table
 
+- Use the `class` prop to overwrite the `table` tag class.
+
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
@@ -923,11 +925,15 @@ The component has the following props, type, and default values. See [types page
 
 ### TableBodyCell
 
+- Use the `class` prop to overwrite `tdClass`.
+
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
 ### TableBodyRow
+
+- Use the `class` prop to overwrite the `tr` tag class.
 
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
@@ -935,17 +941,23 @@ The component has the following props, type, and default values. See [types page
 
 ### TableHead
 
+- Use the `class` prop to overwrite the `thead` tag class.
+
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
 ### TableHeadCell
 
+- Use the `class` prop to overwrite the `th` tag class.
+
 <TableProp>
   <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
 
 ### TableSearch
+
+- Use the `class` prop to overwrite the `table` tag class.
 
 <TableProp>
   <TableDefaultRow items={items7} rowState='hover' />

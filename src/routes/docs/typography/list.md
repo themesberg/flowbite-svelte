@@ -421,16 +421,23 @@ The component has the following props, type, and default values. See [types page
 
 ### List
 
+- Use the `class` prop to overwrite the default class.
+
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
 ### Li
 
+- Use the `class` prop to overwrite the default class.
+
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
+
 ### DescriptionList
+
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />

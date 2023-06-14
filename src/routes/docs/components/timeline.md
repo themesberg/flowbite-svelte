@@ -13,13 +13,13 @@ thumbnailSize: w-64
   import { Button, P, A } from '$lib'
   import { props as items1 }  from '../../props/Timeline.json'
   import { props as items2 }  from '../../props/TimelineItem.json'
-  import { props as items3 }  from '../../props/TimelineItemVertical.json'
   import { props as items4 }  from '../../props/TimelineHorizontal.json'
-  import { props as items5 }  from '../../props/TimelineItemHorizontal.json'
   import { props as items6 }  from '../../props/Activity.json'
   import { props as items7 }  from '../../props/ActivityItem.json'
   import { props as items8 }  from '../../props/Group.json'
   import { props as items9 }  from '../../props/GroupItem.json'
+  import { props as timelineItemVerticalProp }  from '../../props/TimelineItemVertical.json'
+  import { props as timelineItemHorizontalProp }  from '../../props/TimelineItemHorizontal.json'
 </script>
 
 The timeline component can be used to show series of data in a chronological order for use cases such as activity feeds, user actions, application updates, and more.
@@ -286,22 +286,10 @@ The component has the following props, type, and default values. See [types page
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-### TimelineItemVertical
-
-<TableProp>
-  <TableDefaultRow items={items3} rowState='hover' />
-</TableProp>
-
 ### TimelineHorizontal
 
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
-</TableProp>
-
-### TimelineItemHorizontal
-
-<TableProp>
-  <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
 ### Activity
@@ -326,6 +314,18 @@ The component has the following props, type, and default values. See [types page
 
 <TableProp>
   <TableDefaultRow items={items9} rowState='hover' />
+</TableProp>
+
+### TimelineItemVertical
+
+<TableProp>
+  <TableDefaultRow items={timelineItemVerticalProp} rowState='hover' />
+</TableProp>
+
+### TimelineItemHorizonal
+
+<TableProp>
+  <TableDefaultRow items={timelineItemHorizontalProp} rowState='hover' />
 </TableProp>
 
 ## References

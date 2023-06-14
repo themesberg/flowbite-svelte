@@ -256,11 +256,15 @@ The component has the following props, type, and default values. See [types page
 
 ### TabItem
 
+- Use the `class` prop to overwrite the `li` tag class.
+
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
 ### Tabs
+
+- Use the `class` prop to overwrite `defaultClass`.
 
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />

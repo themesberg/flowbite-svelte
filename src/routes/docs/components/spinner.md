@@ -107,6 +107,8 @@ The spinner component can also be used inside elements such as buttons when subm
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
+- Use the `class` prop to overwrite the default class.
+
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>

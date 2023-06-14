@@ -286,7 +286,7 @@ The component has the following props, type, and default values. See [types page
 
 ## Forwarded Events
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">Pagination, PaginationItem</Heading>
+### Pagination, PaginationItem
 
 <DocBadgeList items={events} />
 

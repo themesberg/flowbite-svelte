@@ -592,7 +592,7 @@ The component has the following props, type, and default values. See [types page
 
 ## Forwarded Events
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">SidebarDropdownItem, SidebarItem</Heading>
+### SidebarDropdownItem, SidebarItem
 
 <DocBadgeList items={events} />
 

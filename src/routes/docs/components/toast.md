@@ -344,6 +344,8 @@ Use the position property to position these toast components relative to the mai
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
+- Use the `class` prop to overwrite `divClass`.
+
 <TableProp>
 <TableDefaultRow {items} rowState='hover' />
 </TableProp>

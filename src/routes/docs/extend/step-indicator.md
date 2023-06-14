@@ -185,6 +185,8 @@ Use the `color` prop to change the color of a step indicator.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
+- Use the `class` prop to overwrite the default class.
+
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>

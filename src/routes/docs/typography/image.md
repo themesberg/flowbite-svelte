@@ -236,6 +236,8 @@ Use the max-w-full class to set the full width of the image as long as it doesnâ
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
+- Use the `class` prop to overwrite the `img` tag class.
+
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>

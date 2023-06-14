@@ -485,11 +485,15 @@ The component has the following props, type, and default values. See [types page
 
 ### SpeedDial
 
+- Use the `class` prop to overwrite `defaultClass`.
+
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
 ### SpeedDialButton
+
+- Use the `class` prop to overwrite `btnDefaultClass`.
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />

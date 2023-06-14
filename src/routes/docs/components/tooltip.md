@@ -143,6 +143,8 @@ The component has the following props, type, and default values. See [types page
 
 The component inherits the following props, type, and default values from `Frame`. See [types page](/docs/pages/typescript) for type information.
 
+- Use the `class` prop to overwrite the default class.
+
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>

@@ -62,7 +62,7 @@ Use the muted attribute together with the autoplay option to start the video whi
 
 Set the width and height of the video component using the `w-{size}` and `h-{size}` classes.
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Width</Heading>
+### Width
 
 Use the `w-{size}` class to set the height of the video player.
 
@@ -74,7 +74,7 @@ Use the `w-{size}` class to set the height of the video player.
 <Video src='/videos/flowbite.mp4' controls class='w-96' trackSrc='flowbite.mp4' />
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Height</Heading>
+### Height
 
 Use the `h-{size}` class to set the height of the video player.
 
@@ -86,8 +86,7 @@ Use the `h-{size}` class to set the height of the video player.
 <Video src='/videos/flowbite.mp4' controls class='h-80' trackSrc='flowbite.mp4' />
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Responsive
-</Heading>
+### Responsive
 
 Use the following example to make the video responsive across all devices and viewports.
 
@@ -99,8 +98,7 @@ Use the following example to make the video responsive across all devices and vi
 <Video src='/videos/flowbite.mp4' controls class='w-full max-w-full h-auto' trackSrc='flowbite.mp4' />
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Custom styles
-</Heading>
+### Custom styles
 
 Customize the video player appearance using the utility classes from Tailwind CSS such as `rounded-{size}` or border to set rounded corners and border.
 

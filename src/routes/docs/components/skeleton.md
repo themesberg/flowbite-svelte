@@ -134,11 +134,15 @@ The component has the following props, type, and default values. See [types page
 
 ### CardPlaceholder
 
+- Use the `class` prop to overwrite `divClass`.
+
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
 ### ImagePlaceholder
+
+- Use the `class` prop to overwrite `divClass`.
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
@@ -146,11 +150,15 @@ The component has the following props, type, and default values. See [types page
 
 ### ListPlaceholder
 
+- Use the `class` prop to overwrite `divClass`.
+
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
 ### Skeleton
+
+- Use the `class` prop to overwrite `divClass`.
 
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
@@ -158,11 +166,15 @@ The component has the following props, type, and default values. See [types page
 
 ### TestimonialPlaceholder
 
+- Use the `class` prop to overwrite `divClass`.
+
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
 ### TextPlaceholder
+
+- Use the `class` prop to overwrite `divClass`.
 
 <TableProp>
   <TableDefaultRow items={items6} rowState='hover' />
@@ -170,11 +182,15 @@ The component has the following props, type, and default values. See [types page
 
 ### VideoPlaceholder
 
+- Use the `class` prop to overwrite `divClass`.
+
 <TableProp>
   <TableDefaultRow items={items7} rowState='hover' />
 </TableProp>
 
 ### WidgetPlaceholder
+
+- Use the `class` prop to overwrite `divClass`.
 
 <TableProp>
   <TableDefaultRow items={items8} rowState='hover' />
