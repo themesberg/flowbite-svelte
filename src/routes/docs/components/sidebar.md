@@ -528,11 +528,15 @@ The component has the following props, type, and default values. See [types page
 
 ### Sidebar
 
+- Use the `class` prop to overwrite the default class.
+
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
 ### SidebarBrand
+
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
@@ -540,11 +544,15 @@ The component has the following props, type, and default values. See [types page
 
 ### SidebarCta
 
+- Use the `class` prop to overwrite the default class.
+
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
 </TableProp>
 
 ### SidebarDropdownItem
+
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
@@ -552,11 +560,15 @@ The component has the following props, type, and default values. See [types page
 
 ### SidebarDropdownWrapper
 
+- Use the `class` prop to overwrite the default class.
+
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
 ### SidebarGroup
+
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow items={items6} rowState='hover' />
@@ -564,11 +576,15 @@ The component has the following props, type, and default values. See [types page
 
 ### SidebarItem
 
+- Use the `class` prop to overwrite the default class.
+
 <TableProp>
   <TableDefaultRow items={items7} rowState='hover' />
 </TableProp>
 
 ### SidebarWrapper
+
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow items={items8} rowState='hover' />
