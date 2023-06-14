@@ -1,10 +1,21 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
-  import { twMerge, twJoin } from 'tailwind-merge'
+  import { twMerge, twJoin } from 'tailwind-merge';
   import CloseButton from '../utils/CloseButton.svelte';
+  import { fade } from 'svelte/transition';
+  import Frame from '$lib/utils/Frame.svelte';
 
-  export let color: 'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'none' =
-    'primary';
+  export let color:
+    | 'primary'
+    | 'blue'
+    | 'dark'
+    | 'red'
+    | 'green'
+    | 'yellow'
+    | 'indigo'
+    | 'purple'
+    | 'pink'
+    | 'none' = 'primary';
   export let large: boolean = false;
   export let border: boolean = false;
   export let href: string | undefined = undefined;
@@ -61,8 +72,6 @@
 
   const baseClass: string = 'font-medium inline-flex items-center justify-center px-2.5 py-0.5';
 
-  let transition = false;
-
   let badgeClass: string;
   $: badgeClass = twMerge(
     baseClass,
@@ -72,19 +81,17 @@
     rounded ? 'rounded-full' : 'rounded',
     index && 'absolute font-bold border-2 border-white dark:border-gray-900',
     index && (large ? 'w-7 h-7 -top-3 -right-3' : 'w-6 h-6 -top-2 -right-2'),
-    transition && 'transition-opacity duration-300 ease-out opacity-0',
     $$props.class
   );
 
-  const closeBtnBaseClass: string =
-    'inline-flex items-center !p-0.5 !m-0 !ml-2 text-sm bg-transparent rounded-sm focus:!ring-0';
+  const closeBtnBaseClass: string = 'ml-1.5 -mr-1.5';
 
   // only overwrite necessary colors (<CloseButton> v0.29.10)
   const closeBtnColors = {
     primary:
       'text-primary-400 hover:text-primary-900 dark:hover:!bg-primary-800 dark:hover:text-primary-300',
     blue: 'text-blue-400 hover:text-blue-900 dark:hover:!bg-blue-800 dark:hover:text-blue-300',
-    dark: 'text-gray-400 hover:!text-gray-400 hover:!bg-gray-200 dark:hover:!text-gray-300',
+    dark: 'text-gray-400 hover:!text-gray-400 hover:!bg-gray-600 dark:hover:!text-gray-300',
     red: 'text-red-400 hover:text-red-900 dark:hover:!bg-red-800 dark:hover:text-red-300',
     green: 'text-green-400 hover:text-green-900 dark:hover:!bg-green-800 dark:hover:text-green-300',
     yellow: 'text-yellow-400 hover:text-yellow-900 dark:hover:!bg-yellow-800 dark:hover:text-yellow-300',
@@ -97,33 +104,35 @@
   let closeBtnClass: string;
   $: closeBtnClass = twJoin(closeBtnBaseClass, closeBtnColors[color]);
 
-  let hidden = false;
+  $: {
+    if (dismissable) $$restProps.transition = $$restProps.transition ?? fade;
+  }
+
+  let open = true;
   const dispatch = createEventDispatcher();
 
-  const handleHide = () => {
-    transition = true;
-    setTimeout(() => {
-      hidden = true;
-    }, 300);
-    dispatch('dismiss', {
-      message: 'The badge will be dismissed.'
-    });
+  const close = (e: MouseEvent) => {
+    e.stopPropagation();
+    open = false;
+    dispatch('dismiss');
   };
 </script>
 
-<svelte:element this={href ? 'a' : 'span'} {href} {...$$restProps} class={badgeClass} class:hidden>
-  <slot />
-  {#if dismissable}
-    <slot name="closeBtn" {handleHide}>
-      <CloseButton
-        {color}
-        on:click={handleHide}
-        size={large ? 'sm' : 'xs'}
-        name="Remove badge"
-        class={closeBtnClass} />
-    </slot>
-  {/if}
-</svelte:element>
+{#if open}
+  <Frame {href} {...$$restProps} class={badgeClass}>
+    <slot />
+    {#if dismissable}
+      <slot name="close-button" {close}>
+        <CloseButton
+          color="none"
+          on:click={close}
+          size={large ? 'sm' : 'xs'}
+          name="Remove badge"
+          class={closeBtnClass} />
+      </slot>
+    {/if}
+  </Frame>
+{/if}
 
 <!--
   @component
