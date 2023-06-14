@@ -206,7 +206,7 @@ Get started with this example to show a popover with extra information inside pa
 Get started with examples of layouts for the paragraph component to separate content into multiple
 rows and columns.
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">One column</Heading>
+### One column
 
 Use this example to show multiple paragraphs on a single line.
 
@@ -227,7 +227,7 @@ Use this example to show multiple paragraphs on a single line.
 </P>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Two columns even</Heading>
+### Two columns even
 
 Use this example to separate paragraphs into two columns for better readability.
 
@@ -261,7 +261,7 @@ Use this example to separate paragraphs into two columns for better readability.
 </P>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Three columns even</Heading>
+### Three columns even
 
 This example can be used to separate paragraphs into three separate columns.
 
@@ -300,7 +300,7 @@ This example can be used to separate paragraphs into three separate columns.
 </P>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Two columns uneven</Heading>
+### Two columns uneven
 
 Use this example to separate paragraphs into two uneven columns.
 
@@ -346,7 +346,7 @@ Use this example to separate paragraphs into two uneven columns.
 Align the paragraph component to the left (default), center or right side of the document page using
 the `text-left|center|right` utility class from Tailwind CSS.
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Left</Heading>
+### Left
 
 The default alignment of the paragraph is to the left side and you can use the `align="left"` prop
 to align it manually.
@@ -363,7 +363,7 @@ to align it manually.
 </P>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Center</Heading>
+### Center
 
 Use the `align="center"` prop to align the paragraph text to the center.
 
@@ -379,7 +379,7 @@ Use the `align="center"` prop to align the paragraph text to the center.
 </P>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Right</Heading>
+### Right
 
 Use the `align="right"` prop to align the paragraph text the right side of the page.
 
@@ -397,15 +397,15 @@ Use the `align="right"` prop to align the paragraph text the right side of the p
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types page</A> for type information.
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">P</Heading>
+### P
 
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Layout</Heading>
+### Layout
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />

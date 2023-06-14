@@ -1,11 +1,6 @@
 {
   "props": [
     ["btnName", "string", "''"],
-    ["appBtnPosition", "'left' | 'middle' | 'right' | 'custom'", "'custom'"],
-    ["btnDefault", "string", "''"],
-    ["spanDefault", "string", "''"],
-    ["btnCustom", "string", "''"],
-    ["spanCustom", "string", "''"],
-    ["appCustom", "string", "''"]
+    ["appBtnPosition", "'left' | 'middle' | 'right'", "'middle'"]
   ]
 }

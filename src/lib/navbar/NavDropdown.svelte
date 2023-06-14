@@ -1,8 +1,9 @@
 <script lang="ts">
+  import { twMerge } from 'tailwind-merge';
   import type { NavbarType } from '../types';
   import { clickOutside } from '../utils/clickOutside';
 
-  export let liButtonClass: string = 'flex items-center justify-between w-full';
+  export let liBtnClass: string = 'flex items-center justify-between w-full';
   export let name: string;
   export let child: NavbarType[] = [];
   export let dropdownDiv: string = '';
@@ -21,8 +22,8 @@
     'flex justify-center py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700';
 </script>
 
-<li use:clickOutside={() => !hidden && handleDropdown()} class={liClass}>
-  <button on:click={() => handleDropdown()} class={liButtonClass}
+<li use:clickOutside={() => !hidden && handleDropdown()} class={twMerge(liClass, $$props.classLi)}>
+  <button on:click={() => handleDropdown()} class={twMerge(liBtnClass, $$props.classBtn)}
     >{name}
     <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
       ><path
@@ -62,7 +63,7 @@
   @component
   [Go to Navbar](https://flowbite-svelte.com/docs/components/navbar)
   ## Props
-  @prop liButtonClass: string = 'flex items-center justify-between w-full';
+  @prop liBtnClass: string = 'flex items-center justify-between w-full';
   @prop name: string;
   @prop child: NavbarType[] = [];
   @prop dropdownDiv: string = '';

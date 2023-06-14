@@ -3,10 +3,13 @@
   import Popper from '$lib/utils/Popper.svelte';
 
   export let open: boolean = false;
-  export let frameClass: string = '';
   export let headerClass: string = 'py-1 overflow-hidden rounded-t-lg';
   export let ulClass: string = 'py-1 w-44';
   export let footerClass: string = 'py-1 overflow-hidden rounded-b-lg';
+
+  let headerCls: string = twMerge(headerClass, $$props.classHeader);
+  let ulCls: string = twMerge(ulClass, $$props.classUl);
+  let footerCls: string = twMerge(footerClass, $$props.classFooter);
 
   $: {
     // set default values
@@ -20,20 +23,20 @@
 
   let popoverClass: string;
 
-  $: popoverClass = twMerge('divide-y divide-gray-100 dark:divide-gray-600', frameClass);
+  $: popoverClass = twMerge('divide-y divide-gray-100 dark:divide-gray-600', $$props.class);
 </script>
 
 <Popper activeContent {...$$restProps} class={popoverClass} on:show bind:open>
   {#if $$slots.header}
-    <div class={headerClass}>
+    <div class={headerCls}>
       <slot name="header" />
     </div>
   {/if}
-  <ul class={$$props.class ?? ulClass}>
+  <ul class={$$props.class ?? ulCls}>
     <slot />
   </ul>
   {#if $$slots.footer}
-    <div class={footerClass}>
+    <div class={footerCls}>
       <slot name="footer" />
     </div>
   {/if}
@@ -69,7 +72,6 @@
   - Events
   ## Props
   @prop open: boolean = false;
-  @prop frameClass: string = '';
   @prop headerClass: string = 'py-1 overflow-hidden rounded-t-lg';
   @prop ulClass: string = 'py-1 w-44';
   @prop footerClass: string = 'py-1 overflow-hidden rounded-b-lg';

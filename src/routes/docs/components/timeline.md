@@ -13,13 +13,13 @@ thumbnailSize: w-64
   import { Button, P, A } from '$lib'
   import { props as items1 }  from '../../props/Timeline.json'
   import { props as items2 }  from '../../props/TimelineItem.json'
-  import { props as items3 }  from '../../props/TimelineItemVertical.json'
   import { props as items4 }  from '../../props/TimelineHorizontal.json'
-  import { props as items5 }  from '../../props/TimelineItemHorizontal.json'
   import { props as items6 }  from '../../props/Activity.json'
   import { props as items7 }  from '../../props/ActivityItem.json'
   import { props as items8 }  from '../../props/Group.json'
   import { props as items9 }  from '../../props/GroupItem.json'
+  import { props as timelineItemVerticalProp }  from '../../props/TimelineItemVertical.json'
+  import { props as timelineItemHorizontalProp }  from '../../props/TimelineItemHorizontal.json'
 </script>
 
 The timeline component can be used to show series of data in a chronological order for use cases such as activity feeds, user actions, application updates, and more.
@@ -272,8 +272,7 @@ Use this component to group multiple data entries inside a single date and show 
 
 ## Props
 
-<p>The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
- page</A> for type information.</p>
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 ### Timeline
 
@@ -287,22 +286,10 @@ Use this component to group multiple data entries inside a single date and show 
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-### TimelineItemVertical
-
-<TableProp>
-  <TableDefaultRow items={items3} rowState='hover' />
-</TableProp>
-
 ### TimelineHorizontal
 
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
-</TableProp>
-
-### TimelineItemHorizontal
-
-<TableProp>
-  <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
 ### Activity
@@ -327,6 +314,18 @@ Use this component to group multiple data entries inside a single date and show 
 
 <TableProp>
   <TableDefaultRow items={items9} rowState='hover' />
+</TableProp>
+
+### TimelineItemVertical
+
+<TableProp>
+  <TableDefaultRow items={timelineItemVerticalProp} rowState='hover' />
+</TableProp>
+
+### TimelineItemHorizonal
+
+<TableProp>
+  <TableDefaultRow items={timelineItemHorizontalProp} rowState='hover' />
 </TableProp>
 
 ## References

@@ -73,9 +73,12 @@ Get started with the default toggle component example as a checkbox element to r
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types page</A> for type information.
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 ### Toggle
+
+- Use the `class` prop to overwrite the `span` tag.
+- Use the `classCheckbox` to overwrite the `Checkbox` component.
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />

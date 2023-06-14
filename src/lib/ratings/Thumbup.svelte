@@ -11,8 +11,8 @@
 <svg
   width={size}
   height={size}
-  class={$$props.class}
   {...$$restProps}
+  class={$$props.class}
   aria-label={ariaLabel}
   viewBox="0 0 24 24"
   {role}

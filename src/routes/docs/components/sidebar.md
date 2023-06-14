@@ -524,9 +524,11 @@ You can add own transition by setting `transitionType` and `transitionParams`.
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types page</A> for type information.
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 ### Sidebar
+
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />
@@ -534,11 +536,15 @@ The component has the following props, type, and default values. See <A href="/d
 
 ### SidebarBrand
 
+- Use the `class` prop to overwrite the default class.
+
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
 ### SidebarCta
+
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
@@ -546,11 +552,15 @@ The component has the following props, type, and default values. See <A href="/d
 
 ### SidebarDropdownItem
 
+- Use the `class` prop to overwrite the default class.
+
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
 ### SidebarDropdownWrapper
+
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
@@ -558,11 +568,15 @@ The component has the following props, type, and default values. See <A href="/d
 
 ### SidebarGroup
 
+- Use the `class` prop to overwrite the default class.
+
 <TableProp>
   <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
 
 ### SidebarItem
+
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow items={items7} rowState='hover' />
@@ -570,13 +584,15 @@ The component has the following props, type, and default values. See <A href="/d
 
 ### SidebarWrapper
 
+- Use the `class` prop to overwrite the default class.
+
 <TableProp>
   <TableDefaultRow items={items8} rowState='hover' />
 </TableProp>
 
 ## Forwarded Events
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">SidebarDropdownItem, SidebarItem</Heading>
+### SidebarDropdownItem, SidebarItem
 
 <DocBadgeList items={events} />
 

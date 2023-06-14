@@ -92,15 +92,23 @@ Use the `icon` slot to change icons.
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types page</A> for type information.
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 ### Breadcrumb
+
+- Use the `class` prop to overwrite a class in the `nav` tag
+- Use the `classOl` prop to overwrite a class in the `ol` tag.
 
 <TableProp>
   <TableDefaultRow items={breadcrumbProps} rowState='hover' />
 </TableProp>
 
 ### BreadcrumbItem
+
+- Use the `class` prop to overwrite a class in the `li` tag
+- Use the `classHome` prop to overwrite `homeClass`.
+- Use the `classLink` prop to overwrite `linkClass`.
+- Use the `classSpan` prop to overwrite `spanClass`.
 
 <TableProp>
   <TableDefaultRow items={breadcrumbItemProps} rowState='hover' />

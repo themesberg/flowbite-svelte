@@ -18,6 +18,8 @@ thumnailSize: w-64
   import { props as items4 } from '../../props/RatingComment.json'
   import { props as items5 } from '../../props/Review.json'
   import { props as items6 } from '../../props/Star.json'
+  import { props as thumbupProp } from '../../props/Thumbup.json'
+  import { props as heartProp } from '../../props/Heart.json'
 </script>
 
 Get started with the rating component to show an aggregate of reviews and scores in the forms of stars or numbers.
@@ -321,10 +323,11 @@ Use this component to show the review content from a user alongside the avatar, 
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
- page</A> for type information.
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 ### Rating
+
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />
@@ -334,6 +337,14 @@ The component has the following props, type, and default values. See <A href="/d
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
+</TableProp>
+
+### Heart
+
+- Use the `class` prop to overwrite the default class.
+
+<TableProp>
+  <TableDefaultRow items={heartProp} rowState='hover' />
 </TableProp>
 
 ### ScoreRating
@@ -350,14 +361,30 @@ The component has the following props, type, and default values. See <A href="/d
 
 ### Review
 
+- Use the `classArticle` to overwrite `articleClass`.
+- Use the `classDiv` to overwrite `divClass`.
+- Use the `classImg` to overwrite `imgClass`.
+- Use the `classUl` to overwrite `ulClass`.
+- Use the `classLi` to overwrite `liClass`.
+
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
 ### Star
 
+- Use the `class` prop to overwrite the default class.
+
 <TableProp>
   <TableDefaultRow items={items6} rowState='hover' />
+</TableProp>
+
+### Thumbup
+
+- Use the `class` prop to overwrite the default class.
+
+<TableProp>
+  <TableDefaultRow items={thumbupProp} rowState='hover' />
 </TableProp>
 
 ## References

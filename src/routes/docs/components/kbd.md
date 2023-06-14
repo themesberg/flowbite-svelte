@@ -222,10 +222,11 @@ This example can be used to denote function keys inside the KBD component.
 
 ## Props
 
-<p>The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
- page</A> for type information.</p>
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 ### Kbd
+
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow items={items} rowState='hover' />
@@ -233,11 +234,15 @@ This example can be used to denote function keys inside the KBD component.
 
 ### ArrowKeyDown
 
+- Use the `class` prop to overwrite the default class.
+
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
 ### ArrowKeyLeft
+
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
@@ -245,11 +250,15 @@ This example can be used to denote function keys inside the KBD component.
 
 ### ArrowKeyRight
 
+- Use the `class` prop to overwrite the default class.
+
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
 ### ArrowKeyUp
+
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />

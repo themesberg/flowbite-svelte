@@ -18,6 +18,7 @@ description: The navbar component can be used to show a list of navigation links
   import { props as items5 } from '../../props/NavHamburger.json'
   import { props as items6 } from '../../props/Menu.json'
   import { props as items7 } from '../../props/NavDropdown.json'
+  import { props as SidebarMenuProp } from '../../props/SidebarMenu.json'
 
   const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover"];
 </script>
@@ -277,10 +278,12 @@ Use this example to show a solid background for the navbar component instead of 
 
 ## Props
 
-<p>The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
- page</A> for type information.</p>
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 ### Navbar
+
+- Use the `class` prop to overwrite the class.
+- Use the `classNav` prop to overwrite the inner div class.
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />
@@ -288,11 +291,16 @@ Use this example to show a solid background for the navbar component instead of 
 
 ### NavBrand
 
+- Use the `class` prop to overwrite the class.
+
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
 ### NavDropdown
+
+- Use the `classLi` prop to overwrite the `li` tag class.
+- Use the `classBtn` prop to overwrite `liBtnClass`.
 
 <TableProp>
   <TableDefaultRow items={items7} rowState='hover' />
@@ -300,11 +308,16 @@ Use this example to show a solid background for the navbar component instead of 
 
 ### NavHamburger
 
+- Use the `class` prop to overwrite `btnClass`.
+- Use the `classMenu` prop to overwrite `menuClass`.
+
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
 ### NavLi
+
+- Use the `class` prop to overwrite the `li` tag.
 
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
@@ -312,15 +325,31 @@ Use this example to show a solid background for the navbar component instead of 
 
 ### NavUl
 
+- Use the `class` prop to overwrite the `div` tag.
+- Use the `classUl` prop to overwrite the `ul` tag.
+
+
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
 ### Menu
 
+- Use the `class` prop to overwrite the class.
+
 <TableProp>
   <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
+
+### SidebarMenu
+
+- Use the `class` prop to overwrite the outer class.
+- Use the `classSideMenu` to overwrite the inner class.
+
+<TableProp>
+  <TableDefaultRow items={SidebarMenuProp} rowState='hover' />
+</TableProp>
+
 
 ## Forwarded Events
 

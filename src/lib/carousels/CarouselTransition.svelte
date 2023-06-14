@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twMerge } from 'tailwind-merge';
   import { fade, blur, fly, slide } from 'svelte/transition';
   import type { TransitionTypes, TransitionParamTypes } from '../types';
   import Slide from './Slide.svelte';
@@ -15,17 +16,19 @@
   export let transitionParams: TransitionParamTypes = {};
   export let loop: boolean = false;
   export let duration: number = 2000;
+  export let thumbClass: string = 'opacity-40';
 
   // Carousel
   export let divClass: string = 'overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96';
+  let divCls: string = twMerge(divClass, $$props.classDiv);
   export let indicatorDivClass: string = 'flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2';
-
+  let indicatorDivCls: string = twMerge(indicatorDivClass, $$props.classIndicatorDiv);
   // Caption
   export let captionClass: string = 'h-10 bg-gray-300 dark:bg-gray-700 dark:text-white p-2 my-2 text-center';
-
+  let captionCls: string = twMerge(captionClass, $$props.classCaption);
   // Indicator
   export let indicatorClass: string = 'w-3 h-3 rounded-full bg-gray-100 hover:bg-gray-300 opacity-60';
-
+  let indicatorCls: string = twMerge(indicatorClass, $$props.classIndicator);
   // have a custom transition function that returns the desired transition
   const multiple = (node: HTMLElement, params: any) => {
     switch (transitionType) {
@@ -71,7 +74,7 @@
 </script>
 
 <div id="default-carousel" class="relative">
-  <div class={divClass}>
+  <div class={divCls}>
     {#each images as { id, imgurl, name, attribution }}
       {#if imageShowingIndex === id}
         <div transition:multiple={transitionParams}>
@@ -83,13 +86,13 @@
 
   {#if showIndicators}
     <!-- Slider indicators -->
-    <div class={indicatorDivClass}>
+    <div class={indicatorDivCls}>
       {#each images as { id, imgurl, name, attribution }}
         <Indicator
           {name}
           selected={imageShowingIndex === id}
           on:click={() => goToSlide(id)}
-          {indicatorClass} />
+          indicatorClass={indicatorCls} />
       {/each}
     </div>
   {/if}
@@ -147,13 +150,14 @@
 </div>
 
 {#if showCaptions}
-  <Caption caption={images[imageShowingIndex].name} {captionClass} />
+  <Caption caption={images[imageShowingIndex].name} captionClass={captionCls} />
 {/if}
 
 {#if showThumbs}
   <div class="flex flex-row justify-center bg-gray-100">
     {#each images as { id, imgurl, name, attribution }}
       <Thumbnail
+        {thumbClass}
         thumbImg={imgurl}
         altTag={name}
         titleLink={attribution}
@@ -190,6 +194,7 @@
   @prop transitionParams: TransitionParamTypes = {};
   @prop loop: boolean = false;
   @prop duration: number = 2000;
+  @prop thumbClass: string = 'opacity-40';
   ### Carousel
   @prop divClass: string = 'overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96';
   @prop indicatorDivClass: string = 'flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2';

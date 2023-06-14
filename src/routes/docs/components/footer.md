@@ -234,10 +234,11 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 ## Props
 
-<p>The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
- page</A> for type information.</p>
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 ### Footer
+
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />
@@ -245,11 +246,18 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 ### FooterBrand
 
+- Use the `classA` prop to overwrite `aClass`.
+- Use the `classSpan` prop to overwrite `spanClass`.
+- Use the `classImg` prop to overwrite `imgClass`.
+
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
 ### FooterCopyright
+
+- Use `classSpan` to overwrite `classSpan`.
+- Use `classA` to overwrite `aClass`.
 
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
@@ -257,17 +265,24 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 ### FooterIcon
 
+- Use the `class` prop to overwrite the default class.
+
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
 ### FooterLink
 
+- Use the `classLi` prop to overwrite `liClass`.
+- Use the `classA` prop to overwrite `aClass`.
+
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
 </TableProp>
 
 ### FooterLinkGroup
+
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow items={items6} rowState='hover' />

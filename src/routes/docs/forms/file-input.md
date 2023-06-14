@@ -128,15 +128,19 @@ When the user selected multiple files, the `value` represents the first file in 
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types page</A> for type information.
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 ### Fileupload
+
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
 ### Dropzone
+
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />

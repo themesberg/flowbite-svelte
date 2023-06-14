@@ -5,6 +5,7 @@
     ["titleLink", "string", "''"],
     ["id", "number", ""],
     ["thumbWidth", "number", "100"],
-    ["selected", "boolean", "false"]
+    ["selected", "boolean", "false"],
+    ["thumbClass", "string", "''"]
   ]
 }

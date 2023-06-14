@@ -247,9 +247,12 @@ This example shows how to get a complete control over the gallery images look an
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types page</A> for type information.
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 ### Gallery
+
+- Use the `class` prop to overwrite the `div` tag.
+- Use the `classImg` prop to overwrite `imgClass`.
 
 <TableProp>
 <TableDefaultRow items={galleryProps} rowState='hover' />
