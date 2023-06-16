@@ -353,6 +353,9 @@ The component has the following props, type, and default values. See [types page
 
 ### BottomNavItem
 
+- Use the `btnClass` prop to overwrite the `button` tag class.
+- Use the `spanClass` prop to overwrite the `span` tag class.
+
 <TableProp>
 <TableDefaultRow items={bottomNavItemProps} rowState='hover' />
 </TableProp>

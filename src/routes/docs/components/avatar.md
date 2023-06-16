@@ -201,11 +201,15 @@ The component has the following props, type, and default values. See [types page
 
 ### Avatar
 
+- Use the `class` to overwrite the default class.
+
 <TableProp>
 <TableDefaultRow items={avatarProps} rowState='hover' />
 </TableProp>
 
 ### Placehoder
+
+- Use the `class` to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow items={placehoderProps} rowState='hover' />

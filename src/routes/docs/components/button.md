@@ -12,11 +12,12 @@ thumnailSize: w-24
   import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
   import { Badge, P, A } from '$lib'
   import { props as buttonProps } from '../../props/Button.json'
+  import { props as gradientButtonProps } from '../../props/GradientButton.json'
 
   const events = ["on:change","on:click","on:keydown","on:keyup","on:mouseenter","on:mouseleave","on:touchstart","on:touchend","on:touchcancel"];
   // slots
   let slotHeader = ['Name', 'Description']
-  let slotItems = [['default', 'For a button label.']]
+  let slotItems = [['default', 'Button/GradientButton']]
 </script>
 
 The button component is probably the most widely used element in any user interface or website as it can be used to launch an action but also to link to other pages.
@@ -283,13 +284,21 @@ You can use on:click or any standard on:* to listen to the event.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
+### Button
+
+- Use the `class` prop to overwrite `button` tag class.
+
 <TableProp>
 <TableDefaultRow items={buttonProps} rowState='hover' />
 </TableProp>
 
-### Custom CSS
+### GradientButton
 
-Use `btnClass` to overwrite Button class.
+- Use the `class` prop to overwrite `button` tag class.
+
+<TableProp>
+<TableDefaultRow items={gradientButtonProps} rowState='hover' />
+</TableProp>
 
 ## Slots
 

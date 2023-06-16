@@ -3,8 +3,7 @@
   import { twMerge, twJoin } from 'tailwind-merge';
   import CloseButton from '../utils/CloseButton.svelte';
 
-  export let color: 'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'none' =
-    'primary';
+  export let color: 'primary' |'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'none' = 'primary';
   export let large: boolean = false;
   export let border: boolean = false;
   export let href: string | undefined = undefined;

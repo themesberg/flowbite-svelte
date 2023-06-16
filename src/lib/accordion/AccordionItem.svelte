@@ -57,7 +57,7 @@
   const handleToggle = (_: Event) => selected.set(open ? {} : self);
 
   let buttonClass: string;
-  $: buttonClass = twMerge(
+  $: buttonClass = twMerge([
     defaultClass,
     ctx.flush || borderClass,
     borderBottomClass,
@@ -66,7 +66,7 @@
     open && (ctx.flush ? textFlushOpen : activeClasses || ctx.activeClasses),
     !open && (ctx.flush ? textFlushDefault : inactiveClasses || ctx.inactiveClasses),
     $$props.class
-  );
+  ]);
 </script>
 
 <h2 class="group">
