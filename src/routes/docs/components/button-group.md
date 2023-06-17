@@ -29,7 +29,7 @@ The button group component from Flowbite-Svelte can be used to stack together mu
 
 Use the following code to stack together buttons into a single group.
 
-```svelte example hideScript
+```svelte example class="flex justify-center" hideScript
 <script>
   import { ButtonGroup, Button } from 'flowbite-svelte';
 </script>
@@ -84,7 +84,7 @@ Use the following code to stack together buttons into a single group.
 
 You can also use the button group component as links.
 
-```svelte example hideScript
+```svelte example class="flex justify-center" hideScript
 <script>
   import { ButtonGroup, Button } from 'flowbite-svelte';
 </script>
@@ -99,7 +99,7 @@ You can also use the button group component as links.
 
 You can also use SVG icons inside the grouped buttons.
 
-```svelte example hideScript
+```svelte example class="flex justify-center" hideScript
 <script>
   import { ButtonGroup, Button } from 'flowbite-svelte';
 </script>
@@ -123,7 +123,7 @@ You can also use SVG icons inside the grouped buttons.
 
 Group a series of buttons together on a single line or stack them in a vertical column.
 
-```svelte example hideScript
+```svelte example class="flex justify-center" hideScript
 <script>
   import { ButtonGroup, Button } from 'flowbite-svelte';
 </script>
@@ -138,7 +138,7 @@ Group a series of buttons together on a single line or stack them in a vertical 
 
 Group a series of buttons together on a single line or stack them in a vertical column.
 
-```svelte example hideScript
+```svelte example class="flex justify-center" hideScript
 <script>
   import { ButtonGroup, Button } from 'flowbite-svelte';
 </script>
@@ -162,7 +162,7 @@ Group a series of buttons together on a single line or stack them in a vertical 
 
 You can add the `on:click` event to the `Button` component.
 
-```svelte example
+```svelte example class="flex justify-center"
 <script>
   import { ButtonGroup, Button } from 'flowbite-svelte';
   	const handleClick = ()=> {
