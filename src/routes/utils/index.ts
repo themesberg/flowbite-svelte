@@ -80,7 +80,8 @@ export const fetchMarkdownPosts = async () => {
   const pageOrder: string[] = [
     'introduction',
     'quickstart',
-    'how-to-overwrite-css-style',
+    'colors',
+    'customization',
     'typescript',
     'compiler-speed',
     'how-to-contribute',
