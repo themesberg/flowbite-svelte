@@ -7,7 +7,7 @@
 
   let viewBox: string;
   let svgpath: string;
-  let svgoutline = `<path clip-rule="evenodd" fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" stroke="${color}"></path>`;
+  let svgoutline = `<path clip-rule="evenodd" fill-rule="evenodd" d="M4.5 15.75L12 8.25L19.5 15.75" stroke="${color}"></path>`;
   let svgsolid = `<path clip-rule="evenodd" fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" fill="${color}"></path>`;
   $: switch (variation) {
     case 'outline':
