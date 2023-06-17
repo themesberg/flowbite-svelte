@@ -12,7 +12,6 @@
   export let outline: boolean = false;
   export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = group ? 'sm' : 'md';
   export let href: string | undefined = undefined;
-  export let btnClass: string | undefined = undefined;
   export let type: ButtonType = 'button';
   export let color: ButtonColor = group ? (outline ? 'dark' : 'alternative') : 'primary';
   export let shadow: boolean = false;
@@ -88,9 +87,7 @@
   const hasBorder = () => outline || color === 'alternative' || color === 'light';
 
   let buttonClass: string;
-  $: buttonClass = btnClass
-    ? btnClass
-    : twMerge(
+  $: buttonClass = twMerge(
         'text-center font-medium',
         group ? 'focus:ring-2' : 'focus:ring-4',
         group && 'focus:z-10',
