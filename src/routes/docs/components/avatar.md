@@ -37,7 +37,7 @@ If you are using tooltip for avatar import `Tooltip`.
 
 Use this example to create a circle and rounded avatar on an image element.
 
-```svelte example class="flex flex-col gap-4" hideScript
+```svelte example class="flex justify-center gap-4" hideScript
 <script>
   import {Avatar} from 'flowbite-svelte'
 </script>
@@ -53,7 +53,7 @@ You can apply a border around the avatar component.
 
 If you can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify ring color.
 
-```svelte example class="flex gap-4" hideScript
+```svelte example class="flex justify-center gap-4" hideScript
 <script>
   import {Avatar} from 'flowbite-svelte'
 </script>
@@ -65,7 +65,7 @@ If you can use the `ring-&#123;color&#125;` class from Tailwind CSS to modify ri
 
 When there is no custom image available a placeholder is displayed.
 
-```svelte example class="flex gap-4" hideScript
+```svelte example class="flex justify-center gap-4" hideScript
 <script>
   import {Avatar} from 'flowbite-svelte'
 </script>
@@ -79,7 +79,7 @@ When there is no custom image available a placeholder is displayed.
 
 This example can be used to show the initials of the user’s first and last name as a placeholder when no profile picture is available.
 
-```svelte example class="flex flex-col gap-4" hideScript
+```svelte example class="flex justify-center gap-4" hideScript
 <script>
   import {Avatar} from 'flowbite-svelte'
 </script>
@@ -90,7 +90,7 @@ This example can be used to show the initials of the user’s first and last nam
 
 Use this example to show a tooltip when hovering over the avatar.
 
-```svelte example class="flex gap-4"
+```svelte example class="flex justify-center gap-4"
 <script>
   import {Avatar, Tooltip} from 'flowbite-svelte'
 </script>
@@ -104,7 +104,7 @@ Use this example to show a tooltip when hovering over the avatar.
 
 Use a dot element relative to the avatar component as an indicator for the user (eg. online or offline status).
 
-```svelte example class="flex gap-4" hideScript
+```svelte example class="flex justify-center gap-4" hideScript
 <script>
   import {Avatar, Indicator} from 'flowbite-svelte'
 </script>
@@ -121,7 +121,7 @@ Use a dot element relative to the avatar component as an indicator for the user 
 
 Use this example if you want to stack a group of users by overlapping the avatar components.
 
-```svelte example class="flex flex-col gap-4" hideScript
+```svelte example class="flex flex-col justify-center gap-4" hideScript
 <script>
   import {Avatar} from 'flowbite-svelte'
 </script>
@@ -143,7 +143,7 @@ Use this example if you want to stack a group of users by overlapping the avatar
 
 This example can be used if you want to show additional information in the form of text elements such as the user’s name and join date.
 
-```svelte example class="flex flex-col gap-4" hideScript
+```svelte example class="flex justify-center gap-4" hideScript
 <script>
   import {Avatar} from 'flowbite-svelte'
 </script>
