@@ -1,3 +1,9 @@
+<script lang="ts" context="module">
+  export type BottomNavLiType = {
+    activeClass: string;
+  };
+</script>
+
 <script lang="ts">
   import { setContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
@@ -15,8 +21,10 @@
 
   export let outerClass: string = 'w-full z-50 border-gray-200 dark:bg-gray-700 dark:border-gray-600';
   export let innerClass: string = 'grid h-full max-w-lg mx-auto';
+  export let activeClass: string = 'text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900'
 
   setContext('navType', navType);
+  setContext<BottomNavLiType>('bottomNavType', {activeClass});
 
   const outerDivClasses = {
     default: 'bottom-0 left-0 h-16 bg-white border-t',

@@ -1,10 +1,13 @@
 <script lang="ts">
   import { getContext } from 'svelte';
   import type { ButtonClassesTypes } from '../types';
+  import type { BottomNavLiType } from './BottomNav.svelte'
   import { twMerge } from 'tailwind-merge';
 
   export let btnName: string = '';
   export let appBtnPosition: 'left' | 'middle' | 'right' = 'middle';
+  export let activeClass: string | undefined = undefined;
+  export let active: boolean = false;
 
   const navType:
     | 'default'
@@ -15,6 +18,8 @@
     | 'card'
     | 'meeting'
     | 'video' = getContext('navType');
+
+  const context = getContext<BottomNavLiType>('bottomNavType') ?? {};
 
   const btnClasses: ButtonClassesTypes = {
     default:
@@ -51,8 +56,19 @@
     right:
       'inline-flex flex-col items-center justify-center px-5 rounded-r-full hover:bg-gray-50 dark:hover:bg-gray-800 group'
   };
-  $: btnClass = twMerge(btnClasses[navType], appBtnClasses[appBtnPosition], $$props.btnClass);
-  $: spanClass = twMerge(spanClasses[navType], $$props.spanClass);
+  let btnClass: string;
+  $: btnClass = twMerge(
+    btnClasses[navType], 
+    appBtnClasses[appBtnPosition], 
+    active && (activeClass ?? context.activeClass),
+    $$props.btnClass
+    );
+  let spanClass: string;
+  $: spanClass = twMerge(
+    spanClasses[navType], 
+    active && (activeClass ?? context.activeClass),
+    $$props.spanClass
+    );
 </script>
 
 <button
