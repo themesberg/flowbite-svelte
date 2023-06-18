@@ -410,10 +410,6 @@
       "types": "./dist/navbar/NavBrand.svelte.d.ts",
       "svelte": "./dist/navbar/NavBrand.svelte"
     },
-    "./NavDropdown.svelte": {
-      "types": "./dist/navbar/NavDropdown.svelte.d.ts",
-      "svelte": "./dist/navbar/NavDropdown.svelte"
-    },
     "./NavHamburger.svelte": {
       "types": "./dist/navbar/NavHamburger.svelte.d.ts",
       "svelte": "./dist/navbar/NavHamburger.svelte"

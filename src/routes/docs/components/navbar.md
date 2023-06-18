@@ -17,7 +17,6 @@ description: The navbar component can be used to show a list of navigation links
   import { props as items4 } from '../../props/NavUl.json'
   import { props as items5 } from '../../props/NavHamburger.json'
   import { props as items6 } from '../../props/Menu.json'
-  import { props as items7 } from '../../props/NavDropdown.json'
   import { props as sidebarMenuProp } from '../../props/SidebarMenu.json'
 
   const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover"];
@@ -295,15 +294,6 @@ The component has the following props, type, and default values. See [types page
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
-
-### NavDropdown
-
-- Use the `classLi` prop to overwrite the `li` tag class.
-- Use the `classBtn` prop to overwrite `liBtnClass`.
-
-<TableProp>
-  <TableDefaultRow items={items7} rowState='hover' />
 </TableProp>
 
 ### NavHamburger

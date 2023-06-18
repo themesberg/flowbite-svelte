@@ -27,8 +27,8 @@
   export let classActive: string | undefined = undefined;
   export let classInactive: string | undefined = undefined;
 
-  let activeCls = twMerge(activeClass, classActive)
-  let inactiveCls = twMerge(inactiveClass, classInactive)
+  let activeCls = twMerge(activeClass, classActive);
+  let inactiveCls = twMerge(inactiveClass, classInactive);
 
   // make a custom transition function that returns the desired transition
   const multiple = (node: HTMLElement, params: any) => {

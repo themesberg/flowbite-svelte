@@ -2,7 +2,7 @@
   "props": [
     [
       "color",
-      "'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'none'",
+      "'primary' |'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'none'",
       "'primary'"
     ],
     ["large", "boolean", "false"],

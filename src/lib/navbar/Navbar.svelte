@@ -24,7 +24,6 @@
   let toggle = () => {
     hidden = !hidden;
   };
-  
 </script>
 
 <Frame tag="nav" {...$$restProps} class={twMerge(navClass, $$props.class)}>
