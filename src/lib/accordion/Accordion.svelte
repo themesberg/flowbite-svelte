@@ -3,9 +3,11 @@
 
   export interface AccordionCtxType {
     flush: boolean;
-    activeCls: string;
-    inactiveCls: string;
+    activeClass: string;
+    inactiveClass: string;
     selected?: Writable<object>;
+    classActive?: string;
+    classInactive?: string;
   }
 </script>
 
@@ -17,9 +19,11 @@
   interface $$Props extends ComponentProps<Frame> {
     multiple?: boolean;
     flush?: boolean;
-    activeCls?: string;
-    inactiveCls?: string;
+    activeClass?: string;
+    inactiveClass?: string;
     defaultClass?: string;
+    classActive?: string;
+    classInactive?: string;
   }
 
   export let multiple: boolean = false;
@@ -29,12 +33,11 @@
   export let inactiveClass: string =
     'text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800';
   export let defaultClass: string = 'text-gray-500 dark:text-gray-400';
-  let activeCls: string = twMerge(activeClass, $$props.classActive)
-  let inactiveCls: string = twMerge(inactiveClass, $$props.classInactive)
+
   const ctx: AccordionCtxType = {
     flush,
-    activeCls,
-    inactiveCls,
+    activeClass: twMerge(activeClass, $$props.classActive),
+    inactiveClass: twMerge(inactiveClass, $$props.classInactive),
     selected: multiple ? undefined : writable()
   };
 

@@ -8,6 +8,7 @@
     navClass?: string;
     navDivClass?: string;
     fluid?: boolean;
+    classNavDiv?: string;
   }
 
   export let navClass: string = 'px-2 sm:px-4 py-2.5 w-full';
@@ -23,11 +24,11 @@
   let toggle = () => {
     hidden = !hidden;
   };
-  let navDivCls: string = twMerge(navDivClass, $$props.classNav);
+  
 </script>
 
 <Frame tag="nav" {...$$restProps} class={twMerge(navClass, $$props.class)}>
-  <div class={twMerge(navDivCls, (fluid && 'w-full') || 'container')}>
+  <div class={twMerge(navDivClass, $$props.classNavDiv, (fluid && 'w-full') || 'container')}>
     <slot {hidden} {toggle} />
   </div>
 </Frame>
