@@ -1,10 +1,6 @@
 {
   "props": [
-    [
-      "color",
-      "'primary' |'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'none'",
-      "'primary'"
-    ],
+    ["color", "string", ""],
     ["large", "boolean", "false"],
     ["border", "boolean", "false"],
     ["href", "string | undefined", "undefined"],

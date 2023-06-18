@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getContext } from 'svelte';
   import type { ButtonClassesTypes } from '../types';
-  import type { BottomNavLiType } from './BottomNav.svelte'
+  import type { BottomNavLiType } from './BottomNav.svelte';
   import { twMerge } from 'tailwind-merge';
 
   export let btnName: string = '';
@@ -58,17 +58,17 @@
   };
   let btnClass: string;
   $: btnClass = twMerge(
-    btnClasses[navType], 
-    appBtnClasses[appBtnPosition], 
+    btnClasses[navType],
+    appBtnClasses[appBtnPosition],
     active && (activeClass ?? context.activeClass),
     $$props.btnClass
-    );
+  );
   let spanClass: string;
   $: spanClass = twMerge(
-    spanClasses[navType], 
+    spanClasses[navType],
     active && (activeClass ?? context.activeClass),
     $$props.spanClass
-    );
+  );
 </script>
 
 <button
