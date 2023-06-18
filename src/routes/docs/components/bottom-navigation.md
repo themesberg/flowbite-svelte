@@ -323,7 +323,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 ## Active class
 
-Use the following example to add active class.
+Use the following example to add active class. You can overwrite `activeClass` by using the `classActive` prop.
 
 ```svelte example class="flex flex-col relative"
 <script>
@@ -337,7 +337,7 @@ Use the following example to add active class.
 <Skeleton class="py-4"/>
 <ImagePlaceholder class="pb-20"/>
 
-<BottomNav position="absolute" classInner="grid-cols-4">
+<BottomNav position="absolute" classInner="grid-cols-4" classActive="font-bold text-blue-700 dark:text-blue-500">
   <BottomNavItem btnName="Home" active={activeUrl === '/'}>
     <svg class="{activeUrl === '/' ? svgActiveClass : svgClass}" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
@@ -370,6 +370,7 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `classOuter` prop to overwrite `outerClass`.
 - Use the `classInner` prop to overwrite `innerClass`.
+- Use the `classActive` prop to overwrite `activeClass`.
 
 <TableProp>
 <TableDefaultRow items={bottomNavProps} rowState='hover' />
