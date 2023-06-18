@@ -181,7 +181,7 @@
   };
 </script>
 
-<div class={divClasses[device]}>
+<div class={twMerge(divClasses[device], $$props.class)}>
   {#if device === 'default'}
     <DefaultMockup
       defaultTop={defaultTopCls}

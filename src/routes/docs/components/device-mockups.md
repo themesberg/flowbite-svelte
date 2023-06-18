@@ -191,6 +191,8 @@ The component has the following props, type, and default values. See [types page
 
 ### DeviceMockup
 
+- Use the `class` prop to overwrite the outer div class.
+
 <TableProp>
   <TableDefaultRow items={DeviceMockup} rowState='hover' />
 </TableProp>
