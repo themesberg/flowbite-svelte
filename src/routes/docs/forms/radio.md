@@ -286,11 +286,16 @@ All attributes of the `input` element like: name, id, autofocus, etc, can be set
 
 ### Radio
 
+- Use the `classLabel` prop to overwrite the `label` tag class.
+- Use `class` prop to overwrite the `input` tag class.
+
 <TableProp>
 <TableDefaultRow items={items} rowState='hover' />
 </TableProp>
 
 ### Helper
+
+- Use the `class` prop to overwrite the `p` tag class.
 
 <TableProp>
 <TableDefaultRow items={items3} rowState='hover' />

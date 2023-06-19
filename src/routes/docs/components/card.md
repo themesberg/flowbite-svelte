@@ -408,7 +408,7 @@ The component has the following props, type, and default values. See [types page
 
 ### Card
 
-- Use the `class` to overwrite the default class.
+- The Card component uses the Frame component. Use the `class` property to overwrite the default Frame class. The Frame component tag can be either an anchor tag or a div tag depending on the value of the href prop.
 
 <TableProp>
   <TableDefaultRow items={cardProps} rowState='hover' />
