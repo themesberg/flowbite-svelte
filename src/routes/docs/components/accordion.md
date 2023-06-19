@@ -251,6 +251,8 @@ The component has the following props, type, and default values. See [types page
 ### Accordion
 
 - Use the `class` to overwrite `defaultClass`.
+- Use the `classActive` to overwrite `activeClass`.
+- Use the `classInactive` to overwrite `inactiveClass`.
 
 <TableProp>
   <TableDefaultRow items={accordionProps} rowState='hover' />
