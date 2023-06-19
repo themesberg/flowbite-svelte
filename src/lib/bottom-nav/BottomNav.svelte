@@ -24,7 +24,7 @@
   export let activeClass: string =
     'text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900';
 
-  let activeCls = twMerge(activeClass, $$props.classActive)
+  let activeCls = twMerge(activeClass, $$props.classActive);
   setContext('navType', navType);
   setContext<BottomNavLiType>('bottomNavType', { activeClass: activeCls });
   const outerDivClasses = {
