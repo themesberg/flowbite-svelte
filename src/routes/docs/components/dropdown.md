@@ -632,7 +632,7 @@ The component has the following props, type, and default values. See [types page
 
 ### DropdownDivider
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite `divClass`.
 
 <TableProp>
   <TableDefaultRow items={propItems2} rowState='hover' />
@@ -640,7 +640,7 @@ The component has the following props, type, and default values. See [types page
 
 ### DropdownHeader
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite `divClass`.
 
 <TableProp>
   <TableDefaultRow items={propItems3} rowState='hover' />
@@ -648,7 +648,7 @@ The component has the following props, type, and default values. See [types page
 
 ### DropdownItem
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite `defaultClass`.
 
 <TableProp>
   <TableDefaultRow items={propItems4} rowState='hover' />

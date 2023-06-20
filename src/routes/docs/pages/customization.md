@@ -1,7 +1,7 @@
 ---
 layout: componentLayout
-breadcrumb_title: Svelte Customization- Flowbite
-title: Svelte Customization - Flowbite
+breadcrumb_title: Customization- Flowbite Svelte 
+title: Customization - Flowbite Svelte
 component_title: Customization
 dir: Pages
 description: Learn how you can overwrite the default style with you own CSS

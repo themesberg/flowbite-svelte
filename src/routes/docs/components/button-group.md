@@ -182,7 +182,7 @@ The component has the following props, type, and default values. See [types page
 
 ### ButtonGroup
 
-- Use the `class` to overwrite the default class.
+- Use the `class` to overwrite `divClass`.
 
 <TableProp>
   <TableDefaultRow items={buttonGroupProps} rowState='hover' />

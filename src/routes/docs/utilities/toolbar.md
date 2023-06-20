@@ -150,7 +150,7 @@ The component has the following props, type, and default values. See [types page
 
 ### Toolbar
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite the `div` tag class.
 
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
@@ -158,13 +158,15 @@ The component has the following props, type, and default values. See [types page
 
 ### ToolbarButton
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite the `button` tag class.
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
 ### ToolbarGroup
+
+- Use the `class` prop to overwrite `divClass`.
 
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />

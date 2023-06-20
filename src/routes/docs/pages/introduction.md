@@ -1,6 +1,6 @@
 ---
 layout: componentLayout
-breadcrumb_title: Svelte UI Components - Flowbite
+breadcrumb_title: Svelte UI Components - Flowbite Svelte 
 title: Flowbite Svelte - UI Component Library
 component_title: Introduction
 dir: Pages

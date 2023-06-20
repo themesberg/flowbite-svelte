@@ -691,7 +691,7 @@ However sometimes you don't want that. Set `activateClickOutside` to false to di
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-- Use the `class` to overwrite the `div` tag class.
+- Use the `class` to overwrite `divClass`.
 
 <TableProp>
 <TableDefaultRow {items} rowState='hover' />
