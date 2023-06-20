@@ -68,3 +68,39 @@ You can test this by switching to dark mode and observing the background color c
 
 We hope these instructions help you confidently customize component classes. Feel free to reach out if you have any further questions!
 
+## Global customization
+
+To customize the Flowbite-Svelte component globally, follow these steps:
+
+Start by creating your own component based on Flowbite-Svelte.
+
+Create a new file for your button component in the lib directory:
+
+```
+// src/lib/MyButton.svelte
+<script>
+  import { Button } from 'flowbite-svelte'
+</script>
+
+<Button color="green" pill class="p-8">
+  <slot />
+</Button>
+```
+
+Once you have created your button component, you can use it in your project.
+
+In your project, import your custom button component:
+
+```
+<script>
+  import MyButton from "$lib/MyButton.svelte"
+</script>
+```
+
+Now you can use the custom button component in your project by adding the following code:
+
+```
+<MyButton>My New Button</MyButton>
+```
+
+With these steps, you can now customize and use your own button component globally based on Flowbite-Svelte. Feel free to modify the styles and properties of the component according to your requirements.
