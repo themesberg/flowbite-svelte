@@ -327,7 +327,7 @@ The component has the following props, type, and default values. See [types page
 
 ### Rating
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite `divClass`.
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />
@@ -335,13 +335,19 @@ The component has the following props, type, and default values. See [types page
 
 ### AdvancedRating
 
+- Use the `classDiv` prop to overwrite `divClass`.
+- Use the `classLabel` prop to overwrite `labelClass`.
+- Use the `classRatingDiv` prop to overwrite `ratingDivClass`.
+- Use the `classRating` prop to overwrite `ratingClass`.
+- Use the `classRightLabel` prop to overwrite `rightLabelClass`.
+
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
 ### Heart
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite the `svg` tag class.
 
 <TableProp>
   <TableDefaultRow items={heartProp} rowState='hover' />
@@ -373,7 +379,7 @@ The component has the following props, type, and default values. See [types page
 
 ### Star
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite the `svg` tag class.
 
 <TableProp>
   <TableDefaultRow items={items6} rowState='hover' />
@@ -381,7 +387,7 @@ The component has the following props, type, and default values. See [types page
 
 ### Thumbup
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite the `svg` tag class.
 
 <TableProp>
   <TableDefaultRow items={thumbupProp} rowState='hover' />

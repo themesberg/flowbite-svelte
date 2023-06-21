@@ -264,7 +264,7 @@ The component has the following props, type, and default values. See [types page
 
 ### Indicator
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite the `div` tag class.
 
 <TableProp>
   <TableDefaultRow items={items} rowState='hover' />

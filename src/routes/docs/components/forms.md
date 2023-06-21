@@ -248,6 +248,8 @@ Get started with the default example of a select input component to get a single
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
+To learn how to overwrite classes, please refer to the individual component pages.
+
 ### Input
 
 <TableProp>
