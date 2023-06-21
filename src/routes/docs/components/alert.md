@@ -296,7 +296,7 @@ Use the `close` event with `dismissable` prop.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-- Use the `class` to overwrite `defaultClass`.
+- Use the `class` prop to overwrite  `defaultClass`.
 
 <TableProp>
 <TableDefaultRow items={alertProps} rowState='hover' />

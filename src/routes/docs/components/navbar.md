@@ -290,7 +290,7 @@ The component has the following props, type, and default values. See [types page
 
 ### NavBrand
 
-- Use the `class` prop to overwrite the class.
+- Use the `class` prop to overwrite the `a` tag class.
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
@@ -325,7 +325,7 @@ The component has the following props, type, and default values. See [types page
 
 ### Menu
 
-- Use the `class` prop to overwrite the class.
+- Use the `class` prop to overwrite the `svg` tag class.
 
 <TableProp>
   <TableDefaultRow items={items6} rowState='hover' />
@@ -334,7 +334,7 @@ The component has the following props, type, and default values. See [types page
 ### SidebarMenu
 
 - Use the `class` prop to overwrite the outer class.
-- Use the `classSideMenu` to overwrite the inner class.
+- Use the `classSideMenu` prop to overwrite  the inner class.
 
 <TableProp>
   <TableDefaultRow items={sidebarMenuProp} rowState='hover' />

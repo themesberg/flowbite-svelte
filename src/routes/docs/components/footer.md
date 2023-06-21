@@ -256,8 +256,8 @@ The component has the following props, type, and default values. See [types page
 
 ### FooterCopyright
 
-- Use `classSpan` to overwrite `classSpan`.
-- Use `classA` to overwrite `aClass`.
+- Use `classSpan` prop to overwrite  `classSpan`.
+- Use `classA` prop to overwrite  `aClass`.
 
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />

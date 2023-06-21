@@ -528,7 +528,7 @@ The component has the following props, type, and default values. See [types page
 
 ### Sidebar
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite `asideClass`.
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />
@@ -536,7 +536,7 @@ The component has the following props, type, and default values. See [types page
 
 ### SidebarBrand
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite `aClass`.
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
@@ -552,7 +552,7 @@ The component has the following props, type, and default values. See [types page
 
 ### SidebarDropdownItem
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite `divWrapperClass`.
 
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
@@ -560,7 +560,7 @@ The component has the following props, type, and default values. See [types page
 
 ### SidebarDropdownWrapper
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite `btnClass`.
 
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
@@ -568,7 +568,7 @@ The component has the following props, type, and default values. See [types page
 
 ### SidebarGroup
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite `ulClass`.
 
 <TableProp>
   <TableDefaultRow items={items6} rowState='hover' />
@@ -576,7 +576,7 @@ The component has the following props, type, and default values. See [types page
 
 ### SidebarItem
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite the `a` tag class.
 
 <TableProp>
   <TableDefaultRow items={items7} rowState='hover' />
@@ -584,7 +584,7 @@ The component has the following props, type, and default values. See [types page
 
 ### SidebarWrapper
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite `divClass`.
 
 <TableProp>
   <TableDefaultRow items={items8} rowState='hover' />

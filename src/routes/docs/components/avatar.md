@@ -201,8 +201,8 @@ The component has the following props, type, and default values. See [types page
 
 ### Avatar
 
-- Use the `class` to overwrite the default class.
-- Use the `classPlaceholder` to overwrite the placeholder class.
+- Use the `class` prop to overwrite  the default class.
+- Use the `classPlaceholder` prop to overwrite  the placeholder class.
 
 <TableProp>
 <TableDefaultRow items={avatarProps} rowState='hover' />

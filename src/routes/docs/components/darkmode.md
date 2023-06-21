@@ -93,7 +93,7 @@ Use the `lightIcon` and `darkIcon` slots to change icons:
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-- Use the `class` to overwrite `btnClass`.
+- Use the `class` prop to overwrite  `btnClass`.
 
 <TableProp>
 <TableDefaultRow {items} rowState='hover' />

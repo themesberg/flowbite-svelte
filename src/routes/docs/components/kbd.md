@@ -226,7 +226,7 @@ The component has the following props, type, and default values. See [types page
 
 ### Kbd
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite `kbdClass`.
 
 <TableProp>
   <TableDefaultRow items={items} rowState='hover' />
@@ -234,7 +234,7 @@ The component has the following props, type, and default values. See [types page
 
 ### ArrowKeyDown
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite `svgClass`.
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
@@ -242,7 +242,7 @@ The component has the following props, type, and default values. See [types page
 
 ### ArrowKeyLeft
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite `svgClass`.
 
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
@@ -250,7 +250,7 @@ The component has the following props, type, and default values. See [types page
 
 ### ArrowKeyRight
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite `svgClass`.
 
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
@@ -258,7 +258,7 @@ The component has the following props, type, and default values. See [types page
 
 ### ArrowKeyUp
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite `svgClass`.
 
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
