@@ -3,31 +3,20 @@
   export let title: string;
   export let date: string;
   export let liClass: string = 'mb-10 ml-6';
-  export let spanClass: string = 'flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900';
+  export let spanClass: string =
+    'flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900';
   export let h3Class: string = 'flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white';
-  export let timeClass: string = 'block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500';
+  export let timeClass: string =
+    'block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500';
 
-  let liCls: string = twMerge(
-    liClass,
-    $$props.classLi
-  )
-  let spanCls: string = twMerge(
-    spanClass,
-    $$props.classSpan
-  )
-  let h3Cls: string = twMerge(
-    h3Class,
-    $$props.classH3
-  )
-  let timeCls: string = twMerge(
-    timeClass,
-    $$props.classTime
-  )
+  let liCls: string = twMerge(liClass, $$props.classLi);
+  let spanCls: string = twMerge(spanClass, $$props.classSpan);
+  let h3Cls: string = twMerge(h3Class, $$props.classH3);
+  let timeCls: string = twMerge(timeClass, $$props.classTime);
 </script>
 
-<li class="{liCls}">
-  <span
-    class="{spanCls}">
+<li class={liCls}>
+  <span class={spanCls}>
     {#if $$slots.icon}
       <slot name="icon" />
     {:else}
@@ -45,10 +34,10 @@
     {/if}
   </span>
 
-  <h3 class="{h3Cls}">
+  <h3 class={h3Cls}>
     {title}
   </h3>
-  <time class="{timeCls}">{date}</time>
+  <time class={timeCls}>{date}</time>
   <slot />
 </li>
 

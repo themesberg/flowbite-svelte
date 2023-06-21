@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from "tailwind-merge";
+  import { twMerge } from 'tailwind-merge';
   export let ratings: { label: string; rating: number }[] = [];
   export let divClass: string = 'flex items-center mt-4';
   export let labelClass: string = 'text-sm font-medium text-gray-600 dark:text-gray-500';
@@ -8,26 +8,11 @@
   export let rightLabelClass: string = 'text-sm font-medium text-gray-600 dark:text-gray-500';
   export let unit: string = '%';
 
-  let divCls: string = twMerge(
-    divClass,
-    $$props.classDiv
-  )
-  let labelCls: string = twMerge(
-    labelClass,
-    $$props.classLabel
-  )
-  let ratingDivCls: string = twMerge(
-    ratingDivClass,
-    $$props.classRatingDiv
-  )
-  let ratingCls: string = twMerge(
-    ratingClass,
-    $$props.classRating
-  )
-  let rightLabelCls: string = twMerge(
-    rightLabelClass,
-    $$props.classRightLabel
-  )
+  let divCls: string = twMerge(divClass, $$props.classDiv);
+  let labelCls: string = twMerge(labelClass, $$props.classLabel);
+  let ratingDivCls: string = twMerge(ratingDivClass, $$props.classRatingDiv);
+  let ratingCls: string = twMerge(ratingClass, $$props.classRating);
+  let rightLabelCls: string = twMerge(rightLabelClass, $$props.classRightLabel);
 </script>
 
 {#if $$slots.rating}

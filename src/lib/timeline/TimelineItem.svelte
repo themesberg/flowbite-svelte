@@ -34,18 +34,9 @@
     group: 'text-lg font-semibold text-gray-900 dark:text-white'
   };
 
-  let liCls: string = twMerge(
-    liClasses[order], 
-    $$props.classLi
-  )
-  let divCls: string = twMerge(
-    divClasses[order],
-    $$props.classDiv
-  )
-  let timeCls: string = twMerge(
-    timeClasses[order],
-    $$props.classTime
-  )
+  let liCls: string = twMerge(liClasses[order], $$props.classLi);
+  let divCls: string = twMerge(divClasses[order], $$props.classDiv);
+  let timeCls: string = twMerge(timeClasses[order], $$props.classTime);
   const h3Cls = twMerge(
     order === 'vertical'
       ? 'flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white'

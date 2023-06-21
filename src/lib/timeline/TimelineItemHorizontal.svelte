@@ -1,49 +1,33 @@
 <script lang="ts">
   // import type { TimelineItemHorizontalType } from '../types';
   // export let timelineItems: TimelineItemHorizontalType[];
-  import { twMerge } from "tailwind-merge";
+  import { twMerge } from 'tailwind-merge';
   export let title: string;
   export let date: string;
   export let href: string;
   export let text: string;
   export let liClass: string = 'relative mb-6 sm:mb-0';
-  export let divClass: string = 'flex z-10 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0';
+  export let divClass: string =
+    'flex z-10 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0';
   export let h3Class: string = 'text-lg font-semibold text-gray-900 dark:text-white';
-  export let timeClass: string = 'block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500';
+  export let timeClass: string =
+    'block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500';
   export let pClass: string = 'text-base font-normal text-gray-500 dark:text-gray-400';
-  export let aClass: string = 'inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700';
+  export let aClass: string =
+    'inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700';
   export let linkname: string;
   export let icon: string;
-  let liCls: string = twMerge(
-    liClass,
-    $$props.classLi
-  )
-  let divCls: string = twMerge(
-    divClass,
-    $$props.classDiv
-  )
-  let h3Cls: string = twMerge(
-    h3Class,
-    $$props.classH3
-  )
-  let timeCls: string = twMerge(
-    timeClass,
-    $$props.classTime
-  )
-  let pCls: string = twMerge(
-    pClass,
-    $$props.classP
-  )
-  let aCls: string = twMerge(
-    aClass,
-    $$props.classA
-  )
+  let liCls: string = twMerge(liClass, $$props.classLi);
+  let divCls: string = twMerge(divClass, $$props.classDiv);
+  let h3Cls: string = twMerge(h3Class, $$props.classH3);
+  let timeCls: string = twMerge(timeClass, $$props.classTime);
+  let pCls: string = twMerge(pClass, $$props.classP);
+  let aCls: string = twMerge(aClass, $$props.classA);
 </script>
 
-<li class="{liCls}">
+<li class={liCls}>
   <div class="flex items-center">
-    <div
-      class="{divCls}">
+    <div class={divCls}>
       {#if icon}
         {@html icon}
       {:else}
@@ -61,16 +45,14 @@
     <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
   </div>
   <div class="mt-3 sm:pr-8">
-    <h3 class="{h3Cls}">{title}</h3>
-    <time class="{timeCls}">{date}</time>
-    <p class="{pCls}">
+    <h3 class={h3Cls}>{title}</h3>
+    <time class={timeCls}>{date}</time>
+    <p class={pCls}>
       {text}
     </p>
   </div>
   {#if href}
-    <a
-      {href}
-      class="{aCls}"
+    <a {href} class={aCls}
       >{linkname}
       <svg class="ml-2 w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
         ><path
