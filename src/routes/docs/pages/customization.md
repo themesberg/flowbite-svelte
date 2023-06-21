@@ -97,10 +97,10 @@ In your project, import your custom button component:
 </script>
 ```
 
-Now you can use the custom button component in your project by adding the following code:
+Use the custom button component in your project by adding the following code:
 
 ```
 <MyButton>My New Button</MyButton>
 ```
 
-With these steps, you can now customize and use your own button component globally based on Flowbite-Svelte. Feel free to modify the styles and properties of the component according to your requirements.
+With these steps, you can customize and use your own button component globally based on Flowbite-Svelte. Feel free to modify the styles and properties of the component according to your requirements.

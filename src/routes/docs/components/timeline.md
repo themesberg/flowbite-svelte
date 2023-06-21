@@ -276,11 +276,17 @@ The component has the following props, type, and default values. See [types page
 
 ### Timeline
 
+- Use the `class` prop to overwrite the `ol` tag class.
+
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
 ### TimelineItem
+
+- Use the `classLi` prop to overwrite the `li` tag class.
+- Use the `classDiv` prop to overwrite the `div` tag class.
+- Use the `classTime` prop to overwrite the `time` tag class.
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
@@ -288,11 +294,19 @@ The component has the following props, type, and default values. See [types page
 
 ### TimelineHorizontal
 
+- Use the `liClass` prop to overwrite `classLi`.
+- Use the `divClass` prop to overwrite `classDiv`.
+- Use the `timeClass` prop to overwrite `classTime`.
+- Use the `pClass` prop to overwrite `classP`.
+- Use the `aClass` prop to overwrite `classA`.
+
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
 ### Activity
+
+- Use the `class` prop to overwrite `olClass`.
 
 <TableProp>
   <TableDefaultRow items={items6} rowState='hover' />
@@ -300,11 +314,24 @@ The component has the following props, type, and default values. See [types page
 
 ### ActivityItem
 
+- Use the `classLi` to overwrite `liClass`.
+- Use the `classSpan` to overwrite `spanClass`.
+- Use the `classImg` to overwrite `imgClass`.
+- Use the `classOuterDiv` to overwrite `outerDivClass`.
+- Use the `classInnerDiv` to overwrite `innerDivClass`.
+- Use the `classTime` to overwrite `timeClass`.
+- Use the `classTitle` to overwrite `titleClass`.
+- Use the `classText` to overwrite `textClass`.
+
 <TableProp>
   <TableDefaultRow items={items7} rowState='hover' />
 </TableProp>
 
 ### Group
+
+- Use the `classDiv` prop to overwrite `divClass`.
+- Use the `classTime` prop to overwrite `timeClass`.
+- Use the `classOl` prop to overwrite `olClass`.
 
 <TableProp>
   <TableDefaultRow items={items8} rowState='hover' />
@@ -312,17 +339,30 @@ The component has the following props, type, and default values. See [types page
 
 ### GroupItem
 
+- Use the `classA` prop to overwrite `aClass`.
+- Use the `classImg` prop to overwrite `imgClass`.
+- Use the `classDiv` prop to overwrite `divClass`.
+- Use the `classTitle` prop to overwrite `titleClass`.
+- Use the `classSpan` prop to overwrite `spanClass`.
+
 <TableProp>
   <TableDefaultRow items={items9} rowState='hover' />
 </TableProp>
 
 ### TimelineItemVertical
 
+- Use the `classLi` prop to overwrite `liClass`.
+- Use the `classSpan` prop to overwrite `spanClass`.
+- Use the `classH3` prop to overwrite `h3Class`.
+- Use the `classTime` prop to overwrite `timeClass`.
+
 <TableProp>
   <TableDefaultRow items={timelineItemVerticalProp} rowState='hover' />
 </TableProp>
 
 ### TimelineItemHorizonal
+
+- Use the `class` prop to overwrite the `ol` tag class.
 
 <TableProp>
   <TableDefaultRow items={timelineItemHorizontalProp} rowState='hover' />
