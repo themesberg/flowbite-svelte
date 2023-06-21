@@ -288,7 +288,7 @@ A `dismiss` event will be dispatched during the dismissal, listen to it if neede
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-- Use the `class` to overwrite the default class.
+- Use the `class` prop to overwrite  the default class.
 
 <TableProp>
   <TableDefaultRow items={badgeProps} rowState='hover' />

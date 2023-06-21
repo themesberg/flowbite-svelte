@@ -334,7 +334,7 @@ The component has the following props, type, and default values. See [types page
 ### SidebarMenu
 
 - Use the `class` prop to overwrite the outer class.
-- Use the `classSideMenu` to overwrite the inner class.
+- Use the `classSideMenu` prop to overwrite  the inner class.
 
 <TableProp>
   <TableDefaultRow items={sidebarMenuProp} rowState='hover' />

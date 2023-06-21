@@ -314,14 +314,14 @@ The component has the following props, type, and default values. See [types page
 
 ### ActivityItem
 
-- Use the `classLi` to overwrite `liClass`.
-- Use the `classSpan` to overwrite `spanClass`.
-- Use the `classImg` to overwrite `imgClass`.
-- Use the `classOuterDiv` to overwrite `outerDivClass`.
-- Use the `classInnerDiv` to overwrite `innerDivClass`.
-- Use the `classTime` to overwrite `timeClass`.
-- Use the `classTitle` to overwrite `titleClass`.
-- Use the `classText` to overwrite `textClass`.
+- Use the `classLi` prop to overwrite  `liClass`.
+- Use the `classSpan` prop to overwrite  `spanClass`.
+- Use the `classImg` prop to overwrite  `imgClass`.
+- Use the `classOuterDiv` prop to overwrite  `outerDivClass`.
+- Use the `classInnerDiv` prop to overwrite  `innerDivClass`.
+- Use the `classTime` prop to overwrite  `timeClass`.
+- Use the `classTitle` prop to overwrite  `titleClass`.
+- Use the `classText` prop to overwrite  `textClass`.
 
 <TableProp>
   <TableDefaultRow items={items7} rowState='hover' />

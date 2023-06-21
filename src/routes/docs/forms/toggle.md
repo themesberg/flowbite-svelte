@@ -78,7 +78,7 @@ The component has the following props, type, and default values. See [types page
 ### Toggle
 
 - Use the `class` prop to overwrite the `span` tag.
-- Use the `classCheckbox` to overwrite the `Checkbox` component.
+- Use the `classCheckbox` prop to overwrite  the `Checkbox` component.
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />

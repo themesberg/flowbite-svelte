@@ -367,11 +367,11 @@ The component has the following props, type, and default values. See [types page
 
 ### Review
 
-- Use the `classArticle` to overwrite `articleClass`.
-- Use the `classDiv` to overwrite `divClass`.
-- Use the `classImg` to overwrite `imgClass`.
-- Use the `classUl` to overwrite `ulClass`.
-- Use the `classLi` to overwrite `liClass`.
+- Use the `classArticle` prop to overwrite  `articleClass`.
+- Use the `classDiv` prop to overwrite  `divClass`.
+- Use the `classImg` prop to overwrite  `imgClass`.
+- Use the `classUl` prop to overwrite  `ulClass`.
+- Use the `classLi` prop to overwrite  `liClass`.
 
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
