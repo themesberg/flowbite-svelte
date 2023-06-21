@@ -1,7 +1,7 @@
 <script lang="ts">
+  import { twMerge } from 'tailwind-merge';
   import { setContext } from 'svelte';
-  export let customClass: string = '';
-  export let order: 'default' | 'vertical' | 'horizontal' | 'activity' | 'group' | 'custom' = 'default';
+  export let order: 'default' | 'vertical' | 'horizontal' | 'activity' | 'group' = 'default';
 
   setContext('order', order);
   let olClasses = {
@@ -9,12 +9,11 @@
     horizontal: 'sm:flex',
     activity: 'relative border-l border-gray-200 dark:border-gray-700',
     vertical: 'relative border-l border-gray-200 dark:border-gray-700',
-    default: 'relative border-l border-gray-200 dark:border-gray-700',
-    custom: customClass
+    default: 'relative border-l border-gray-200 dark:border-gray-700'
   };
 </script>
 
-<ol class={olClasses[order]}>
+<ol class={twMerge(olClasses[order], $$props.class)}>
   <slot />
 </ol>
 
