@@ -241,7 +241,7 @@ The component has the following props, type, and default values. See [types page
 
 ### Heading
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite the heading class.
 
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
@@ -249,7 +249,7 @@ The component has the following props, type, and default values. See [types page
 
 ### P
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite the `p` tag class.
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
@@ -257,7 +257,7 @@ The component has the following props, type, and default values. See [types page
 
 ### A
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite the `a` tag class.
 
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
@@ -265,7 +265,7 @@ The component has the following props, type, and default values. See [types page
 
 ### Mark
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite the `mark` tag class.
 
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
@@ -273,7 +273,7 @@ The component has the following props, type, and default values. See [types page
 
 ### Secondary
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite the `small` tag class.
 
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
