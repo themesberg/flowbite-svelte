@@ -224,7 +224,7 @@ The `size="2xl"` prop can be used to set a large size for the blockquote compone
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-- Use the `class` prop to overwrite the default class.
+- Use the `class` prop to overwrite the `blockquote` tag class.
 
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
