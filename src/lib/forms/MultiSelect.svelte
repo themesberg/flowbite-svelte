@@ -2,10 +2,11 @@
   import type { SelectOptionType } from '../types';
 
   export let items: SelectOptionType[] = [];
-  export let value: SelectOptionType[] = [];
   export let highlighted: boolean = false;
   export let defaultClass: string = '';
+  export let value: (string | number)[] = [];
 
+  let selectItems: SelectOptionType[] = [];
   let show: boolean = false;
 
   // Container
@@ -23,21 +24,27 @@
   const itemsSelectClass: string = 'bg-primary-500 text-white hover:bg-primary-600';
 
   const selectOption = (select: SelectOptionType) => {
-    if (value.includes(select)) {
+    if (selectItems.includes(select)) {
       // todo
     } else {
-      value.push(select);
+      selectItems.push(select);
+      value.push(select.value);
+      selectItems = selectItems;
       value = value;
     }
   };
 
   const clearAll = () => {
+    selectItems = [];
     value = [];
   };
 
   const clearThisOption = (select: SelectOptionType) => {
-    if (value.includes(select)) {
-      value = value.filter((o) => o !== select);
+    if (selectItems.includes(select)) {
+      selectItems = selectItems.filter((o) => o !== select);
+    }
+    if (value.includes(select.value)) {
+      value = value.filter((o) => o !== select.value);
     }
   };
 </script>
@@ -49,8 +56,8 @@
   tabindex="-1"
   class="{multiSelectClass} {defaultClass}">
   <span class="flex gap-2 flex-wrap">
-    {#if value.length}
-      {#each value as select, index}
+    {#if selectItems.length}
+      {#each selectItems as select, index}
         <button class={multiSelectBtn}>
           <span class="p-[1px] ml-[1.5px]">{select.name}</span>
           <svg
@@ -111,7 +118,7 @@
             e.stopPropagation();
             selectOption(item);
           }}
-          class="{itemsClass} {value.includes(item) && highlighted ? itemsSelectClass : ''}">
+          class="{itemsClass} {selectItems.includes(item) && highlighted ? itemsSelectClass : ''}">
           {item.name}
         </div>
       {/each}
