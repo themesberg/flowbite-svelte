@@ -45,7 +45,12 @@ Finally, use the dark mode component to display a switcher (that is a button) fo
 
 ## Initial theme
 
-Use `<DarkMode initialTheme='dark' />` to set the initial theme to the dark mode. The default mode is `light`.
+Use `class="dark"` to set the initial theme to the dark mode. The default mode is `light`.
+
+```
+<html class="dark" lang="en">
+```
+
 ## Switcher style
 
 Use the `btnClass` prop to overwrite the default classes:
