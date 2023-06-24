@@ -50,7 +50,7 @@
     "prettier-plugin-svelte": "^2.10.1",
     "prism-themes": "^1.9.0",
     "publint": "^0.1.12",
-    "svelte": "^3.59.1",
+    "svelte": "^4.0.0",
     "svelte-check": "^3.4.3",
     "svelte-meta-tags": "^2.8.0",
     "svelte-preprocess": "^5.0.4",
