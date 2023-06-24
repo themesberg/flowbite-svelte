@@ -45,7 +45,6 @@
     "mdsvex": "^0.10.6",
     "mdsvexamples": "^0.3.3",
     "postcss": "^8.4.24",
-    "postcss-import": "^15.1.0",
     "postcss-load-config": "^4.0.1",
     "prettier": "^2.8.8",
     "prettier-plugin-svelte": "^2.10.1",
