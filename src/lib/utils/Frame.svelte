@@ -19,7 +19,7 @@
     transition?: TransitionFunc | undefined;
     params?: object;
     node?: HTMLElement | undefined;
-    use?: Action;
+    use?: Action<HTMLElement, any>;
     options?: object;
     class?: string;
   }
@@ -40,7 +40,7 @@
   // For components development
   export let node: HTMLElement | undefined = undefined;
   // Action function and its params
-  export let use: Action = noop;
+  export let use: Action<HTMLElement, any> = noop;
   export let options = {};
 
   $: color = color ?? 'default'; // for cases when undefined
@@ -128,7 +128,7 @@
     this={tag}
     use:use={options}
     bind:this={node}
-    transition:transition={params}
+    transition:transition|global={params}
     {...$$restProps}
     class={divClass}
     on:click

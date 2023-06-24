@@ -10,7 +10,7 @@ const selectorTabbable = `
   iframe, object, embed, *[tabindex]:not([tabindex='-1']):not([disabled]), *[contenteditable=true]
 `;
 
-/** @type {import('svelte/action').Action} */
+/** @type {import('svelte/action').Action<HTMLElement, any>} */
 export default function focusTrap(node) {
   /** @type {(e:KeyboardEvent)=>void} */
   function handleFocusTrap(e) {

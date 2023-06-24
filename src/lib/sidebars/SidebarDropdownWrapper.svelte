@@ -56,7 +56,7 @@
     {/if}
   </button>
   {#if isOpen}
-    <ul class={ulClass} transition:multiple|local={transitionParams}>
+    <ul class={ulClass} transition:multiple={transitionParams}>
       <slot />
     </ul>
   {/if}
