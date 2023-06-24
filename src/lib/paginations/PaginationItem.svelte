@@ -37,7 +37,8 @@
   on:keyup
   on:mouseenter
   on:mouseleave
-  on:mouseover>
+  on:mouseover
+  role={href ? 'button' : undefined}>
   <slot />
 </svelte:element>
 
