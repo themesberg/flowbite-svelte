@@ -53,6 +53,7 @@
 <div
   on:click={() => (show = !show)}
   on:blur={() => (show = !show)}
+  role="listbox"
   tabindex="-1"
   class="{multiSelectClass} {defaultClass}">
   <span class="flex gap-2 flex-wrap">
