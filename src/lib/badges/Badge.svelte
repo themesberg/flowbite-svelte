@@ -7,6 +7,7 @@
 
   interface $$Props extends Omit<ComponentProps<Frame>, 'color'> {
     color?: 'primary' | 'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'none';
+    large?: boolean;
     dismissable?: boolean;
   }
 

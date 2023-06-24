@@ -27,7 +27,7 @@
     blue: 'text-blue-500 focus:ring-blue-400 hover:bg-blue-200 dark:hover:bg-blue-800 dark:hover:text-blue-300',
     primary:
       'text-primary-500 focus:ring-primary-400 hover:bg-primary-200 dark:hover:bg-primary-800 dark:hover:text-primary-300',
-    default: 'focus:ring-gray-400 '
+    default: 'focus:ring-gray-400'
   };
 
   const sizing = {

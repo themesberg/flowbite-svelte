@@ -1,48 +1,66 @@
 <script lang="ts">
   import Badge from '$lib/badges/Badge.svelte';
-  import Dropdown from '$lib/dropdowns/Dropdown.svelte';
-  import { twMerge } from 'tailwind-merge';
-  import type { SelectOptionType } from '../types';
+  import { twJoin, twMerge } from 'tailwind-merge';
+  import type { FormSizeType, SelectOptionType } from '../types';
+  import ChevronDown from '$lib/utils/ChevronDown.svelte';
+  import CloseButton from '$lib/utils/CloseButton.svelte';
+  import { createEventDispatcher } from 'svelte';
+
+  const dispatch = createEventDispatcher();
 
   export let items: SelectOptionType[] = [];
-  export let highlighted: boolean = false;
-  export let defaultClass: string = '';
   export let value: (string | number)[] = [];
+  export let size: FormSizeType = 'md';
+  export let dropdownClass: string = '';
 
   let selectItems: SelectOptionType[] = [];
   let show: boolean = false;
 
+  const sizes = {
+    sm: 'px-2 py-1',
+    md: 'px-3 py-2',
+    lg: 'px-4 py-3'
+  };
+
   // Container
-  const multiSelectClass: string =
-    'relative p-3 border border-gray-300 flex items-center rounded-lg gap-2 dark:border-gray-600 focus:border-2 dark:focus:border-2 focus:border-primary-500 focus:ring-primary-500 dark:focus:border-primary-500 dark:focus:ring-primary-500';
+  const multiSelectClass: string = `relative border border-gray-300 flex items-center rounded-lg gap-2 dark:border-gray-600 focus-within:ring-1 focus-within:border-primary-500 ring-primary-500 dark:focus-within:border-primary-500 dark:ring-primary-500`;
+
   // Dropdown
-  const multiSelectDropdown: string =
-    'absolute p-4 flex flex-col gap-1 h1-32 border border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:text-white left-0 top-[calc(100%+1rem)] rounded-lg cursor-pointer overflow-y-scroll1 w-full';
+  let multiSelectDropdown: string;
+  $: multiSelectDropdown = twMerge(
+    'absolute p-3 flex flex-col gap-1 max-h-64 border border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:text-white left-0 top-[calc(100%+1rem)] rounded-lg cursor-pointer overflow-y-scroll w-full',
+    dropdownClass
+  );
+
   // Items
   const itemsClass: string =
     'py-2 px-3 rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-600';
   // Selected items
-  const itemsSelectClass: string = 'bg-primary-500 text-white dark:text-white hover:bg-primary-600';
+  const itemsSelectClass: string = 'bg-gray-100 text-bg-gray-900 dark:text-white dark:bg-gray-600';
 
   const selectOption = (select: SelectOptionType) => {
     if (selectItems.includes(select)) {
-      // todo
+      clearThisOption(select);
     } else {
       selectItems.push(select);
       value.push(select.value);
       selectItems = selectItems;
       value = value;
+      dispatch('selected', selectItems);
     }
   };
 
-  const clearAll = () => {
+  const clearAll = (e: MouseEvent) => {
+    e.stopPropagation();
     selectItems = [];
     value = [];
+    dispatch('selected', selectItems);
   };
 
   const clearThisOption = (select: SelectOptionType) => {
     if (selectItems.includes(select)) {
       selectItems = selectItems.filter((o) => o !== select);
+      dispatch('selected', selectItems);
     }
     if (value.includes(select.value)) {
       value = value.filter((o) => o !== select.value);
@@ -53,45 +71,30 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div
   on:click={() => (show = !show)}
-  on:blur={() => (show = false)}
+  on:focusout={() => (show = false)}
   tabindex="-1"
-  class="{multiSelectClass} {defaultClass}">
+  class={twJoin(multiSelectClass, sizes[size], $$props.class)}>
   <span class="flex gap-2 flex-wrap">
-    {#if value.length}
-      {#each value as select (select.name)}
-        <Badge
-          color="dark"
-          dismissable
-          params={{ duration: 100 }}
-          on:dismiss={(e) => clearThisOption(select)}>{select.name}</Badge>
+    {#if selectItems.length}
+      {#each selectItems as item (item.name)}
+        <slot {item} clear={() => clearThisOption(item)}>
+          <Badge
+            color="dark"
+            large={size === 'lg'}
+            dismissable
+            params={{ duration: 100 }}
+            on:dismiss={() => clearThisOption(item)}>
+            {item.name}
+          </Badge>
+        </slot>
       {/each}
     {/if}
   </span>
   <div class="flex ml-auto gap-2">
-    <button on:click|stopPropagation={clearAll}>
-      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
-        ><path
-          fill-rule="evenodd"
-          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-          clip-rule="evenodd" /></svg>
-    </button>
+    <CloseButton on:click={clearAll} color="none" class="p-0 focus:ring-gray-400" />
     <div class="w-[1px] bg-gray-300 dark:bg-gray-600" />
-    <button>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        class="h-4 w-4 mb-1 mr-1 cursor-pointer"
-        aria-label="chevron down"
-        fill="none"
-        viewBox="0 0 20 20"
-        role="img"
-        stroke-width="2"
-        ><path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M19 9l-7 7-7-7"
-          stroke="currentColor" /></svg>
+    <button tabindex="-1">
+      <ChevronDown class="h-4 w-4 mb-1 mr-1 cursor-pointer" />
     </button>
   </div>
 
@@ -101,7 +104,7 @@
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <div
           on:click|stopPropagation={(e) => selectOption(item)}
-          class={twMerge(itemsClass, value.includes(item) && highlighted ? itemsSelectClass : '')}>
+          class={twMerge(itemsClass, selectItems.includes(item) && itemsSelectClass)}>
           {item.name}
         </div>
       {/each}
