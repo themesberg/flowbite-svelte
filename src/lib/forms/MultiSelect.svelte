@@ -117,9 +117,7 @@
       {#each items as item, index}
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <div
-          role="option"
-          tabindex="-1"
-          aria-selected={selectItems.includes(item)}
+          role="presentation"
           on:click={(e) => {
             e.stopPropagation();
             selectOption(item);
