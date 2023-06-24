@@ -141,16 +141,19 @@ Delete user
 
 ## Props
 
-<p>The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
- page</A> for type information.</p>
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 ### Listgroup
+
+- Use the `class` prop to overwrite `defaultClass`.
 
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
 ### ListgroupItem
+
+- Use the `class` prop to overwrite the `li` tag class.
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />

@@ -222,7 +222,7 @@ Example how to use the `multiple` option together with expand all behavior.
 
 ## Custom transitions
 
-The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#run-time-svelte-transition-slide">slide</A>. Use the `transitionType` and `transitionParams` props to make custom transitions.
+The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#run-time-svelte-transition-slide">slide</A>. Use the `transitionType` and `transitionParams` prop to make custom transitions.
 
 ```svelte example hideScript
 <script>
@@ -246,15 +246,21 @@ The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#r
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types page</A> for type information.
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 ### Accordion
+
+- Use the `class` prop to overwrite `defaultClass`.
+- Use the `classActive` prop to overwrite `activeClass`.
+- Use the `classInactive` prop to overwrite `inactiveClass`.
 
 <TableProp>
   <TableDefaultRow items={accordionProps} rowState='hover' />
 </TableProp>
 
 ### AccordionItem
+
+- Use the `class` prop to overwrite `defaultClass`.
 
 <TableProp>
   <TableDefaultRow items={accordionItemProps} rowState='hover' />

@@ -6,7 +6,7 @@
   export let aClass: string = 'inline-flex items-center hover:underline';
 </script>
 
-<a {...$$restProps} {href} class={twMerge(aClass, color, $$props.class)}>
+<a {...$$restProps} {href} class={twMerge(aClass, color, $$props.class)} on:click>
   <slot />
 </a>
 

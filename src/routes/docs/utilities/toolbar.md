@@ -146,23 +146,27 @@ Most often the textarea component is used as the main text field input element i
 
 ## Props
 
-The component has the following props, type, and default values. 
-See <A class="hover:underline" href="/docs/pages/typescript">the types page</A>
-for type information.
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Toolbar</Heading>
+### Toolbar
+
+- Use the `class` prop to overwrite the `div` tag class.
 
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">ToolbarButton</Heading>
+### ToolbarButton
+
+- Use the `class` prop to overwrite the `button` tag class.
 
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">ToolbarGroup</Heading>
+### ToolbarGroup
+
+- Use the `class` prop to overwrite `divClass`.
 
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />

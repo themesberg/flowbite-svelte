@@ -15,7 +15,7 @@
 <div {...$$restProps} class={divClass} use:init>
   {#each items as item}
     <slot {item}>
-      <div><img src={item.src} alt={item.alt} class={imgClass} /></div>
+      <div><img src={item.src} alt={item.alt} class={twMerge(imgClass, $$props.classImg)} /></div>
     </slot>
   {:else}
     <slot item={items[0]} />

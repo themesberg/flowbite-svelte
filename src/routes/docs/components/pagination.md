@@ -264,10 +264,13 @@ You can use the following code to show the number of data shown inside a table e
 
 ## Props
 
-<p>The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
- page</A> for type information.</p>
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 ### Pagination
+
+- Use the `class` prop to overwrite the `ul` tag class.
+- Use the `classNormal` prop to overwrite `normalClass`.
+- Use the `classActive` prop to overwrite `activeClass`.
 
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
@@ -275,13 +278,15 @@ You can use the following code to show the number of data shown inside a table e
 
 ### PaginationItem
 
+- Use the `class` prop to overwrite the default class.
+
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
 ## Forwarded Events
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4">Pagination, PaginationItem</Heading>
+### Pagination, PaginationItem
 
 <DocBadgeList items={events} />
 

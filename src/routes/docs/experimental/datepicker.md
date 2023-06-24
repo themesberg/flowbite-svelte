@@ -118,7 +118,7 @@ You can also add a title to the datepicker by using the `datepicker-title="title
 
 ## Props
 
-The component has the following props, type, and default values. See <a href="/docs/pages/typescript">types page</a> for type information.
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 <TableProp>
     <TableDefaultRow {items} rowState="hover" />

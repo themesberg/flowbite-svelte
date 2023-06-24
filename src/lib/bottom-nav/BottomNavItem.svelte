@@ -1,15 +1,13 @@
 <script lang="ts">
   import { getContext } from 'svelte';
   import type { ButtonClassesTypes } from '../types';
+  import type { BottomNavLiType } from './BottomNav.svelte';
   import { twMerge } from 'tailwind-merge';
 
   export let btnName: string = '';
-  export let appBtnPosition: 'left' | 'middle' | 'right' | 'custom' = 'custom';
-  export let btnDefault: string = '';
-  export let spanDefault: string = '';
-  export let btnCustom: string = '';
-  export let spanCustom: string = '';
-  export let appCustom: string = '';
+  export let appBtnPosition: 'left' | 'middle' | 'right' = 'middle';
+  export let activeClass: string | undefined = undefined;
+  export let active: boolean = false;
 
   const navType:
     | 'default'
@@ -19,8 +17,9 @@
     | 'group'
     | 'card'
     | 'meeting'
-    | 'video'
-    | 'custom' = getContext('navType');
+    | 'video' = getContext('navType');
+
+  const context = getContext<BottomNavLiType>('bottomNavType') ?? {};
 
   const btnClasses: ButtonClassesTypes = {
     default:
@@ -34,8 +33,7 @@
       'inline-flex flex-col items-center justify-center p-4 hover:bg-gray-50 dark:hover:bg-gray-800 group',
     card: 'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
     meeting: '',
-    video: '',
-    custom: btnCustom
+    video: ''
   };
 
   const spanClasses: ButtonClassesTypes = {
@@ -48,8 +46,7 @@
     group: 'sr-only',
     card: 'text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500',
     meeting: '',
-    video: '',
-    custom: spanCustom
+    video: ''
   };
 
   const appBtnClasses = {
@@ -57,11 +54,21 @@
     middle:
       'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
     right:
-      'inline-flex flex-col items-center justify-center px-5 rounded-r-full hover:bg-gray-50 dark:hover:bg-gray-800 group',
-    custom: appCustom
+      'inline-flex flex-col items-center justify-center px-5 rounded-r-full hover:bg-gray-50 dark:hover:bg-gray-800 group'
   };
-  $: btnClass = twMerge(btnDefault, btnClasses[navType], appBtnClasses[appBtnPosition], $$props.btnClass);
-  $: spanClass = twMerge(spanDefault, spanClasses[navType], $$props.spanClass);
+  let btnClass: string;
+  $: btnClass = twMerge(
+    btnClasses[navType],
+    appBtnClasses[appBtnPosition],
+    active && (activeClass ?? context.activeClass),
+    $$props.btnClass
+  );
+  let spanClass: string;
+  $: spanClass = twMerge(
+    spanClasses[navType],
+    active && (activeClass ?? context.activeClass),
+    $$props.spanClass
+  );
 </script>
 
 <button

@@ -12,7 +12,6 @@
   export let outline: boolean = false;
   export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = group ? 'sm' : 'md';
   export let href: string | undefined = undefined;
-  export let btnClass: string | undefined = undefined;
   export let type: ButtonType = 'button';
   export let color: ButtonColor = group ? (outline ? 'dark' : 'alternative') : 'primary';
   export let shadow: boolean = false;
@@ -88,32 +87,30 @@
   const hasBorder = () => outline || color === 'alternative' || color === 'light';
 
   let buttonClass: string;
-  $: buttonClass = btnClass
-    ? btnClass
-    : twMerge(
-        'text-center font-medium',
-        group ? 'focus:ring-2' : 'focus:ring-4',
-        group && 'focus:z-10',
-        group || 'focus:outline-none',
-        'inline-flex items-center justify-center ' + sizeClasses[size],
-        outline ? outlineClasses[color] : colorClasses[color],
-        color === 'alternative' &&
-          (group
-            ? 'dark:bg-gray-700 dark:text-white dark:border-gray-700 dark:hover:border-gray-600 dark:hover:bg-gray-600'
-            : 'dark:bg-transparent dark:border-gray-600 dark:hover:border-gray-700'),
-        outline &&
-          color === 'dark' &&
-          (group ? 'dark:text-white dark:border-white' : 'dark:text-gray-400 dark:border-gray-700'),
-        coloredFocusClasses[color],
-        hasBorder() && group && 'border-l-0 first:border-l',
-        group
-          ? (pill && 'first:rounded-l-full last:rounded-r-full') || 'first:rounded-l-lg last:rounded-r-lg'
-          : (pill && 'rounded-full') || 'rounded-lg',
-        shadow && 'shadow-lg',
-        shadow && coloredShadowClasses[color],
-        $$props.disabled && 'cursor-not-allowed opacity-50',
-        $$props.class
-      );
+  $: buttonClass = twMerge(
+    'text-center font-medium',
+    group ? 'focus:ring-2' : 'focus:ring-4',
+    group && 'focus:z-10',
+    group || 'focus:outline-none',
+    'inline-flex items-center justify-center ' + sizeClasses[size],
+    outline ? outlineClasses[color] : colorClasses[color],
+    color === 'alternative' &&
+      (group
+        ? 'dark:bg-gray-700 dark:text-white dark:border-gray-700 dark:hover:border-gray-600 dark:hover:bg-gray-600'
+        : 'dark:bg-transparent dark:border-gray-600 dark:hover:border-gray-700'),
+    outline &&
+      color === 'dark' &&
+      (group ? 'dark:text-white dark:border-white' : 'dark:text-gray-400 dark:border-gray-700'),
+    coloredFocusClasses[color],
+    hasBorder() && group && 'border-l-0 first:border-l',
+    group
+      ? (pill && 'first:rounded-l-full last:rounded-r-full') || 'first:rounded-l-lg last:rounded-r-lg'
+      : (pill && 'rounded-full') || 'rounded-lg',
+    shadow && 'shadow-lg',
+    shadow && coloredShadowClasses[color],
+    $$props.disabled && 'cursor-not-allowed opacity-50',
+    $$props.class
+  );
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->

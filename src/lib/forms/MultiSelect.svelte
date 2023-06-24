@@ -5,10 +5,11 @@
   import type { SelectOptionType } from '../types';
 
   export let items: SelectOptionType[] = [];
-  export let value: SelectOptionType[] = [];
   export let highlighted: boolean = false;
   export let defaultClass: string = '';
+  export let value: (string | number)[] = [];
 
+  let selectItems: SelectOptionType[] = [];
   let show: boolean = false;
 
   // Container
@@ -24,21 +25,27 @@
   const itemsSelectClass: string = 'bg-primary-500 text-white dark:text-white hover:bg-primary-600';
 
   const selectOption = (select: SelectOptionType) => {
-    if (value.includes(select)) {
+    if (selectItems.includes(select)) {
       // todo
     } else {
-      value.push(select);
+      selectItems.push(select);
+      value.push(select.value);
+      selectItems = selectItems;
       value = value;
     }
   };
 
   const clearAll = () => {
+    selectItems = [];
     value = [];
   };
 
   const clearThisOption = (select: SelectOptionType) => {
-    if (value.includes(select)) {
-      value = value.filter((o) => o !== select);
+    if (selectItems.includes(select)) {
+      selectItems = selectItems.filter((o) => o !== select);
+    }
+    if (value.includes(select.value)) {
+      value = value.filter((o) => o !== select.value);
     }
   };
 </script>

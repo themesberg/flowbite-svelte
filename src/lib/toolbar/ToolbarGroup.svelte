@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { twMerge } from 'tailwind-merge';
   import type { Writable } from 'svelte/store';
   import { getContext } from 'svelte';
   export let divClass: string = 'flex items-center space-x-1 sm:pr-4 sm:pl-4 first:sm:pl-0 last:sm:pr-0';
@@ -7,7 +8,7 @@
   if (options) $options = true;
 </script>
 
-<div class={divClass}>
+<div class={twMerge(divClass, $$props.class)}>
   <slot />
 </div>
 

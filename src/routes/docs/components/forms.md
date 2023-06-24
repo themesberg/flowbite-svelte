@@ -246,8 +246,9 @@ Get started with the default example of a select input component to get a single
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
- page</A> for type information.
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
+
+To learn how to overwrite classes, please refer to the individual component pages.
 
 ### Input
 

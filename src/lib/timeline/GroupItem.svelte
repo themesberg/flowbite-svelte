@@ -1,20 +1,34 @@
 <script lang="ts">
+  import { twMerge } from 'tailwind-merge';
   import type { GroupTimelineType } from '../types';
+
   export let timelines: GroupTimelineType[];
+  export let aClass: string = 'block items-center p-3 sm:flex hover:bg-gray-100 dark:hover:bg-gray-700';
+  export let imgClass: string = 'mr-3 mb-3 w-12 h-12 rounded-full sm:mb-0';
+  export let divClass: string = 'text-gray-600 dark:text-gray-400';
+  export let titleClass: string = 'text-base font-normal';
+  export let spanClass: string =
+    'inline-flex items-center text-xs font-normal text-gray-500 dark:text-gray-400';
+
+  let aCls: string = twMerge(aClass, $$props.classA);
+  let imgCls: string = twMerge(imgClass, $$props.classImg);
+  let divCls: string = twMerge(divClass, $$props.classDiv);
+  let titleCls: string = twMerge(titleClass, $$props.classTitle);
+  let spanCls: string = twMerge(spanClass, $$props.classSpan);
 </script>
 
 {#each timelines as { title, src, alt, isPrivate, href, comment }}
   <li>
-    <a {href} class="block items-center p-3 sm:flex hover:bg-gray-100 dark:hover:bg-gray-700">
-      <img class="mr-3 mb-3 w-12 h-12 rounded-full sm:mb-0" {src} {alt} />
-      <div class="text-gray-600 dark:text-gray-400">
-        <div class="text-base font-normal">
+    <a {href} class={aCls}>
+      <img class={imgCls} {src} {alt} />
+      <div class={divCls}>
+        <div class={titleCls}>
           {@html title}
         </div>
         {#if comment}
           <div class="text-sm font-normal">{comment}</div>
         {/if}
-        <span class="inline-flex items-center text-xs font-normal text-gray-500 dark:text-gray-400">
+        <span class={spanCls}>
           {#if isPrivate}
             <svg
               class="mr-1 w-3 h-3"
@@ -57,6 +71,12 @@
   - Grouped timeline
   ## Props
   @prop timelines: GroupTimelineType[];
+  @prop aClass: string
+  @prop imgClass: string;
+  @prop divClass: string;
+  @prop titleClass: string;
+  @prop spanClass: string;
+
   ## Example
   ```
   <script>

@@ -9,8 +9,8 @@
   import type { AccordionCtxType } from './Accordion.svelte';
 
   export let open: boolean = false;
-  export let activeClasses: string | undefined = undefined;
-  export let inactiveClasses: string | undefined = undefined;
+  export let activeClass: string | undefined = undefined;
+  export let inactiveClass: string | undefined = undefined;
   export let defaultClass: string =
     'flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl border-gray-200 dark:border-gray-700';
   export let transitionType: TransitionTypes = 'slide';
@@ -23,6 +23,12 @@
   export let borderOpenClass: string = 'border-l border-r';
   export let borderBottomClass: string = 'border-b';
   export let borderSharedClass: string = 'border-gray-200 dark:border-gray-700';
+
+  export let classActive: string | undefined = undefined;
+  export let classInactive: string | undefined = undefined;
+
+  let activeCls = twMerge(activeClass, classActive);
+  let inactiveCls = twMerge(inactiveClass, classInactive);
 
   // make a custom transition function that returns the desired transition
   const multiple = (node: HTMLElement, params: any) => {
@@ -57,16 +63,16 @@
   const handleToggle = (_: Event) => selected.set(open ? {} : self);
 
   let buttonClass: string;
-  $: buttonClass = twMerge(
+  $: buttonClass = twMerge([
     defaultClass,
     ctx.flush || borderClass,
     borderBottomClass,
     borderSharedClass,
     ctx.flush ? paddingFlush : paddingDefault,
-    open && (ctx.flush ? textFlushOpen : activeClasses || ctx.activeClasses),
-    !open && (ctx.flush ? textFlushDefault : inactiveClasses || ctx.inactiveClasses),
+    open && (ctx.flush ? textFlushOpen : activeCls || ctx.activeClass),
+    !open && (ctx.flush ? textFlushDefault : inactiveCls || ctx.inactiveClass),
     $$props.class
-  );
+  ]);
 </script>
 
 <h2 class="group">
@@ -103,8 +109,8 @@
 
   ## Props
   @prop open: boolean = false;
-  @prop activeClasses: string | undefined = undefined;
-  @prop inactiveClasses: string | undefined = undefined;
+  @prop activeClass: string | undefined = undefined;
+  @prop inactiveClass: string | undefined = undefined;
   @prop defaultClass: string = 'flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl border-gray-200 dark:border-gray-700';
   @prop transitionType: TransitionTypes = 'slide';
   @prop transitionParams: TransitionParamTypes = {};

@@ -6,7 +6,7 @@
     ["placement", "ModalPlacementType", "'center'"],
     ["autoclose", "boolean", "false"],
     ["permanent", "boolean", "false"],
-    ["backdropClasses", "string", "'bg-gray-900 bg-opacity-50 dark:bg-opacity-80'"],
+    ["backdropClass", "string", "'bg-gray-900 bg-opacity-50 dark:bg-opacity-80'"],
     ["defaultClass", "string", "'relative flex flex-col mx-auto'"],
     ["outsideclose", "boolean", "false"]
   ]

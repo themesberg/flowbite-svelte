@@ -258,10 +258,14 @@ The carousel component can be used to cycle through a set of elements using cust
 
 ## Props
 
-<p>The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
- page</A> for type information.</p>
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 ### Carousel
+
+- Use the `classDiv` prop to overwrite `divClass`.
+- Use the `classIndicatorDiv` prop to overwrite `indicatorDivCls`.
+- Use the `classCaption` prop to overwrite `captionClass`.
+- Use the `classIndicator` prop to overwrite `indicatorClass`.
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />

@@ -1,5 +1,6 @@
 {
   "props": [
+    ["id", "string", "'default-carousel'"],
     ["showIndicators", "boolean", "true"],
     ["showCaptions", "boolean", "true"],
     ["showThumbs", "boolean", "true"],
@@ -7,6 +8,7 @@
     ["slideControls", "boolean", "true"],
     ["loop", "boolean", "false"],
     ["duration", "number", "2000"],
+    ["thumbClass", "string", "'opacity-40'"],
     ["divClass", "string", "'overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96'"],
     ["indicatorDivClass", "string", "'flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2'"],
     ["captionClass", "string", "'h-10 bg-gray-300 dark:bg-gray-700 dark:text-white p-2 my-2 text-center'"],

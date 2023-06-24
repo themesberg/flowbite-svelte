@@ -103,7 +103,7 @@ Increase or decrease the spacing between letters using the `space` prop.
 
 ## Text decoration
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Underline</Heading>
+### Underline
 
 Update the text decoration style using the `underline` and `decorationClass` props.
 
@@ -115,7 +115,7 @@ Update the text decoration style using the `underline` and `decorationClass` pro
 <P>Track work across the enterprise through an open, collaborative platform. <Span underline>Link issues across Jira</Span> and ingest data from other <Span underline decorationClass="decoration-blue-500 decoration-double">software development</Span> tools, so your IT support and operations teams have richer contextual information to rapidly respond to <Span underline decorationClass="decoration-green-500 decoration-dotted">requests</Span>, <Span underline decorationClass="decoration-4 decoration-red-500 decoration-dashed">incidents</Span>, and <Span underline decorationClass="decoration-sky-500 decoration-wavy">changes</Span>.</P>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Line through</Heading>
+### Line through
 
 Set a strikethrough line on a text element using the `line-through` class.
 
@@ -127,7 +127,7 @@ Set a strikethrough line on a text element using the `line-through` class.
 <Span class="line-through">$109</Span><Span class='ml-3'>$79</Span>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Uppercase</Heading>
+### Uppercase
 
 Force uppercase characters for a given portion of text using the uppercase class.
 
@@ -143,7 +143,7 @@ Force uppercase characters for a given portion of text using the uppercase class
 
 Set italic or non italic styles with the props.
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Italic</Heading>
+### Italic
 
 Use the `italic` prop to set italic font style to a text element.
 
@@ -155,7 +155,7 @@ Use the `italic` prop to set italic font style to a text element.
 <P italic>The crypto identity primitive.</P>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Normal</Heading>
+### Normal
 
 Text elements by default are non-italic.
 
@@ -171,7 +171,7 @@ Text elements by default are non-italic.
 
 Set the height between lines using the `height` prop.
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Leading normal</Heading>
+### Leading normal
 
 Use the `height="normal"` (default) prop to set default line height.
 
@@ -184,7 +184,7 @@ Use the `height="normal"` (default) prop to set default line height.
   >The Al-powered app will help you improve yourself by analysing your everyday life.</P>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Leading relaxed</Heading>
+### Leading relaxed
 
 Use the `height="relaxed"` prop to increase the space between lines.
 
@@ -196,7 +196,7 @@ Use the `height="relaxed"` prop to increase the space between lines.
 <P size="3xl" height="relaxed" class="max-w-lg" weight="semibold">The Al-powered app will help you improve yourself by analysing your everyday life.</P>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Leading loose</Heading>
+### Leading loose
 
 Use the `height="loose"` prop to set a large amount of space between text lines.
 
@@ -210,7 +210,7 @@ Use the `height="loose"` prop to set a large amount of space between text lines.
 
 ## Text Align
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Left</Heading>
+### Left
 
 ```svelte example hideScript
 <script>
@@ -222,7 +222,7 @@ semantic set of web pages, sections and over 400+ components crafted with the ut
 from Tailwind CSS and based on the Flowbite component library</P>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Center</Heading>
+### Center
 
 ```svelte example hideScript
 <script>
@@ -234,7 +234,7 @@ semantic set of web pages, sections and over 400+ components crafted with the ut
 from Tailwind CSS and based on the Flowbite component library</P>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Right</Heading>
+### Right
 
 Use the `align="right"` prop to align the text element to the right side of the page.
 
@@ -248,7 +248,7 @@ semantic set of web pages, sections and over 400+ components crafted with the ut
 from Tailwind CSS and based on the Flowbite component library</P>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Text justify</Heading>
+### Text justify
 
 Use the `justify` prop to justify the text content.
 
@@ -266,7 +266,7 @@ from Tailwind CSS and based on the Flowbite component library</P>
 
 Configure the whitespace behaviour of inline text elements using the `whitespace` prop.
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Normal</Heading>
+### Normal
 
 Use the `whitespace="normal"` prop to set the default whitespace behaviour.
 
@@ -279,7 +279,7 @@ Use the `whitespace="normal"` prop to set the default whitespace behaviour.
 This is some text. This is some text. This is some text. This is some text.</P>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Nowrap</Heading>
+### Nowrap
 
 Use the `whitespace="nowrap"` prop to prevent text being added to a new line when the full width has been reached.
 
@@ -294,7 +294,7 @@ Use the `whitespace="nowrap"` prop to prevent text being added to a new line whe
 </P>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Pre line</Heading>
+### Pre line
 
 Use the `whitespace="preline'` prop to add whitespace exactly how it has been set from the source code.
 
@@ -325,7 +325,7 @@ Update the text decoration style using the `underline` and `decorationClass` pro
 
 ## Opacity
 
-Use the `opacity` and `color` props to set the opacity of inline text elements.
+Use the `opacity` and `color` prop to set the opacity of inline text elements.
 
 ```svelte example hideScript
 <script>
@@ -340,15 +340,17 @@ Use the `opacity` and `color` props to set the opacity of inline text elements.
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types page</A> for type information.
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">P</Heading>
+### P
 
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
 </TableProp>
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Span</Heading>
+### Span
+
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />

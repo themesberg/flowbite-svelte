@@ -54,6 +54,10 @@
 
     {#if !isHomePage}
       <AlgoliaSearch />
+    {:else}
+      <div id="home">
+        <AlgoliaSearch />
+      </div>
     {/if}
 
     <NavUl

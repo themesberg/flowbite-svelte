@@ -11,7 +11,8 @@ description: Get started with a collection of input fields built with Tailwind C
   import { TableProp, TableDefaultRow, DocBadgeList  } from '../../utils'
   import { onMount } from 'svelte';
   import { Badge, A } from '$lib'
-  import { props as items1 } from '../../props/Input.json'
+  import { props as input } from '../../props/Input.json'
+  import { props as inputAddon } from '../../props/InputAddon.json'
 
   const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover","on:paste","on:input"];
 </script>
@@ -367,13 +368,25 @@ If you need a full control over `input` HTML element while still re-using the Fl
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types page</A> for type information.
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 ### Input
 
+- Use the `class` prop to overwrite the `input` tag class.
+- Use the `classRight` and/or `classLeft` prop to osvewrite the `floatClass`.
+
 <TableProp>
-<TableDefaultRow items={items1} rowState='hover' />
+<TableDefaultRow items={input} rowState='hover' />
 </TableProp>
+
+### InputAddon
+
+- Use the `class` prop to overwrite the `input` tag class.
+
+<TableProp>
+<TableDefaultRow items={inputAddon} rowState='hover' />
+</TableProp>
+
 
 ## Forwarded Events: Input
 

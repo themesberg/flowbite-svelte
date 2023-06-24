@@ -1,7 +1,6 @@
 {
   "props": [
     ["open", "boolean", "false"],
-    ["frameClass", "string", "''"],
     ["headerClass", "string", "'py-1 overflow-hidden rounded-t-lg'"],
     ["ulClass", "string", "'py-1 w-44'"],
     ["footerClass", "string", "'py-1 overflow-hidden rounded-b-lg'"]

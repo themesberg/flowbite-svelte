@@ -148,15 +148,18 @@ This example can be used to share important information with your website visito
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types page</A> for type information.
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-If you want to custom CSS, use `bannerType="custom"` and add your CSS to `outerDiv` and `innerDiv`. 
-
-Use the slot name `header` to insert your elements before the inner div.
+- Use the `classDiv` prop to overwrite `divClass`.
+- Use the `classInner` prop to overwrite `innerClass`.
 
 <TableProp>
 <TableDefaultRow items={bannerProps} rowState='hover' />
 </TableProp>
+
+## Slot
+
+Use the slot name `header` to insert your elements before the inner div.
 
 ## References
 

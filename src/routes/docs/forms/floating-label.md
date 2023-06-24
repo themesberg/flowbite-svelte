@@ -138,14 +138,22 @@ Add a helper text in addition to the label if you want to show more information 
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
- page</A> for type information.
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
+
+### FloatingLabelInput
+
+- Use the `classDiv` prop to overwrite the div class.
+- Use the `classInput` prop to overwrite the input class.
+- Use the `classLabel` prop to overwrite the label class.
+
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
 ### Helper
+
+- Use the `class` prop to overwrite the `p` tag class.
 
 <TableProp>
 <TableDefaultRow items={items2} rowState='hover' />

@@ -134,7 +134,7 @@ Use this example to show a user review with rating stars and the name and occupa
 
 Choose from the following examples the blockquote text alignment from starting from left, center to right based on the utility classes from Tailwind CSS.
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Left</Heading>
+### Left
 
 The default alignment of the blockquote text content is the left side of the document.
 
@@ -148,7 +148,7 @@ The default alignment of the blockquote text content is the left side of the doc
 </Blockquote>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Center</Heading>
+### Center
 
 Use the `alignment="center"` prop to align the text content inside the blockquote to the center.
 
@@ -162,7 +162,7 @@ Use the `alignment="center"` prop to align the text content inside the blockquot
 </Blockquote>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Right</Heading>
+### Right
 
 Use the `alignment="right"` prop to align the blockquote text content to the right side of the page.
 
@@ -178,7 +178,7 @@ Use the `alignment="right"` prop to align the blockquote text content to the rig
 
 ## Sizes
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Small</Heading>
+### Small
 
 Use the `size="lg"` prop to apply the small size for the blockquote component. You can use any size from `xs` to `9xl`. See more details in the Prop section below.
 
@@ -192,7 +192,7 @@ Use the `size="lg"` prop to apply the small size for the blockquote component. Y
 </Blockquote>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Medium</Heading>
+### Medium
 
 Use the `size="xl"` to set the default size for the blockquote element.
 
@@ -206,7 +206,7 @@ Use the `size="xl"` to set the default size for the blockquote element.
 </Blockquote>
 ```
 
-<Heading tag="h3" customSize="text-xl font-semibold" class="mb-4 mt-8">Large</Heading>
+### Large
 
 The `size="2xl"` prop can be used to set a large size for the blockquote component.
 
@@ -222,7 +222,9 @@ The `size="2xl"` prop can be used to set a large size for the blockquote compone
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types page</A> for type information.
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
+
+- Use the `class` prop to overwrite the `blockquote` tag class.
 
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />

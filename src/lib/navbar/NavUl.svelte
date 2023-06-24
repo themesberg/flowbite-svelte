@@ -31,7 +31,7 @@
   $: _ulClass = twMerge(
     ulClass,
     // 'divide-y md:divide-y-0 divide-gray-100 dark:divide-gray-700',
-    $$props.class
+    $$props.classUl
   );
 </script>
 

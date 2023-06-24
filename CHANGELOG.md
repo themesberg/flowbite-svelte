@@ -2,6 +2,55 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.38.5](https://github.com/themesberg/flowbite-svelte/compare/v0.38.4...v0.38.5) (2023-06-21)
+
+
+### Features
+
+* add twMerge to timeline components ([e993e72](https://github.com/themesberg/flowbite-svelte/commit/e993e72c1524bbd4c64e61d48cd3307a8a833ec4))
+
+### [0.38.4](https://github.com/themesberg/flowbite-svelte/compare/v0.38.3...v0.38.4) (2023-06-20)
+
+### [0.38.3](https://github.com/themesberg/flowbite-svelte/compare/v0.37.5...v0.38.3) (2023-06-19)
+
+
+### Features
+
+* add active class to BottomNav and BottomNavItem ([0d5d9e3](https://github.com/themesberg/flowbite-svelte/commit/0d5d9e3ff42d312105f5209ec4d91771bb8e40d7))
+* add additional classes where components has more than one twMerge ([77769cc](https://github.com/themesberg/flowbite-svelte/commit/77769cc2dc67ffc61997c62e8f1107f4d2bc1bab))
+* add classActive to BottomNav ([06bf5dc](https://github.com/themesberg/flowbite-svelte/commit/06bf5dc2d284c475c81ae6a379831aaeb42c028d))
+* add classPlaceholder to avatar component ([d4bc2d7](https://github.com/themesberg/flowbite-svelte/commit/d4bc2d70c87e879fa188831eb524a45ca2d43ab1))
+* add on:click to A component ([0828612](https://github.com/themesberg/flowbite-svelte/commit/08286129bfc70d0bbe52df01c431ae3fb9f2ea13))
+* add search on home page ([3cba1fd](https://github.com/themesberg/flowbite-svelte/commit/3cba1fd3d61d934c78046841551bcb7b702b8597))
+* replace all components classnames to twMerge ([6d0ec87](https://github.com/themesberg/flowbite-svelte/commit/6d0ec8703bff2af91be1e656eb1f71b6f42ea920))
+* replace classnames to twMerge and twJoin ([342ae23](https://github.com/themesberg/flowbite-svelte/commit/342ae231b3552fc11f44b0fa9c9bc968d7193672))
+* replace classnames to twMerge and twJoin upto Card ([6ab1278](https://github.com/themesberg/flowbite-svelte/commit/6ab1278cf9e5c45e7be2b2a532f0f469116aa3d3))
+* replace classnames to twMerge and twJoin upto Footer ([799fd01](https://github.com/themesberg/flowbite-svelte/commit/799fd011c3246a220492ca59c84716b935e6aea1))
+* replace classnames to twMerge upto Progressbar ([a2ba25b](https://github.com/themesberg/flowbite-svelte/commit/a2ba25b566a0049025f8f6f7c5f7046e0b8dfdae))
+* replace classnames to twMerge upto TableSearch ([1307d58](https://github.com/themesberg/flowbite-svelte/commit/1307d589f82e7c20079640cbe90bc29e0c33e57b))
+* replace classnames to twMerge upto Toggle ([57890a6](https://github.com/themesberg/flowbite-svelte/commit/57890a66018c884940f981f5da78f9068e5c1833))
+* update docs and remove classnames from package.json ([9ef819b](https://github.com/themesberg/flowbite-svelte/commit/9ef819b24e2188c39d40d84ea60778ea42815a8a))
+
+
+### Bug Fixes
+
+* add "tailwind-merge": "^1.13.1" to dependencies ([9b5757e](https://github.com/themesberg/flowbite-svelte/commit/9b5757e25c12b0394f08aa5476e21312d858c6c7))
+* add height to Input-field dropdown demo ([b43f8fc](https://github.com/themesberg/flowbite-svelte/commit/b43f8fcaa1142035c92251d845590d0f682db59b))
+* Alert, GradientButton and Footer ([ccd2954](https://github.com/themesberg/flowbite-svelte/commit/ccd2954c444681e50a8b065ce25f2d3b484f7faa))
+* Checkbox spacing ([9f989d7](https://github.com/themesberg/flowbite-svelte/commit/9f989d7c0f59cacab8673d05e0abe27cc5906d42))
+* chevronup thickness ([dc9016b](https://github.com/themesberg/flowbite-svelte/commit/dc9016bfce4a9e664a1bf6fa79a747764b35f911))
+* DeviceMockup class ([94064d0](https://github.com/themesberg/flowbite-svelte/commit/94064d0c28766118db639e5d61181dff58e6756d))
+* Input and Radio components ([fd49114](https://github.com/themesberg/flowbite-svelte/commit/fd49114e343c3a66c7ef257ba41d5354b99707d1))
+* remove NavDropdown ([5c77f68](https://github.com/themesberg/flowbite-svelte/commit/5c77f68c097498a8ecbe10eaf5c8a8e3c1d2b187))
+* update Alert and workflows playwright version ([670516d](https://github.com/themesberg/flowbite-svelte/commit/670516da7f979153e2d4c1b72313f8f2ac0f3bfa))
+
+### [0.38.2](https://github.com/themesberg/flowbite-svelte/compare/v0.38.1...v0.38.2) (2023-06-14)
+
+
+### Features
+
+* add additional classes where components has more than one twMerge ([77769cc](https://github.com/themesberg/flowbite-svelte/commit/77769cc2dc67ffc61997c62e8f1107f4d2bc1bab))
+
 ### [0.38.1](https://github.com/themesberg/flowbite-svelte/compare/v0.34.9...v0.38.1) (2023-06-13)
 
 

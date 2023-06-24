@@ -24,7 +24,7 @@
       | 'bottom-right';
     autoclose?: boolean;
     permanent?: boolean;
-    backdropClasses?: string;
+    backdropClass?: string;
     defaultClass?: string;
     outsideclose?: boolean;
   }
@@ -35,7 +35,7 @@
   export let placement: ModalPlacementType = 'center';
   export let autoclose: boolean = false;
   export let permanent: boolean = false;
-  export let backdropClasses: string = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
+  export let backdropClass: string = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
   export let defaultClass: string = 'relative flex flex-col mx-auto';
   export let outsideclose: boolean = false;
 
@@ -113,6 +113,8 @@
     e.scrollHeight > e.clientHeight && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowY) >= 0
   ];
 
+  let backdropCls: string = twMerge(backdropClass, $$props.classBackdrop);
+
   function handleKeys(e: KeyboardEvent) {
     if (e.key === 'Escape' && !permanent) return hide(e);
   }
@@ -120,7 +122,7 @@
 
 {#if open}
   <!-- backdrop -->
-  <div class={twMerge('fixed inset-0 z-40', backdropClasses)} />
+  <div class={twMerge('fixed inset-0 z-40', backdropCls)} />
   <!-- dialog -->
   <div
     on:keydown={handleKeys}
@@ -196,7 +198,7 @@
   @prop placement: ModalPlacementType = 'center';
   @prop autoclose: boolean = false;
   @prop permanent: boolean = false;
-  @prop backdropClasses: string = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
+  @prop backdropClass: string = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
   @prop defaultClass: string = 'relative flex flex-col mx-auto';
   @prop outsideclose: boolean = false; 
   ## Example

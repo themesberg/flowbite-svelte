@@ -45,7 +45,12 @@ Finally, use the dark mode component to display a switcher (that is a button) fo
 
 ## Initial theme
 
-Use `<DarkMode initialTheme='dark' />` to set the initial theme to the dark mode. The default mode is `light`.
+Use `class="dark"` to set the initial theme to the dark mode. The default mode is `light`.
+
+```
+<html class="dark" lang="en">
+```
+
 ## Switcher style
 
 Use the `btnClass` prop to overwrite the default classes:
@@ -91,8 +96,9 @@ Use the `lightIcon` and `darkIcon` slots to change icons:
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
- page</A> for type information.
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
+
+- Use the `class` prop to overwrite  `btnClass`.
 
 <TableProp>
 <TableDefaultRow {items} rowState='hover' />

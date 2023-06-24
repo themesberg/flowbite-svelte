@@ -130,9 +130,11 @@ Use the skeleton component to indicate a loading status with placeholder element
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types page</A> for type information.
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 ### CardPlaceholder
+
+- Use the `class` prop to overwrite `divClass`.
 
 <TableProp>
   <TableDefaultRow items={items1} rowState='hover' />
@@ -140,11 +142,15 @@ The component has the following props, type, and default values. See <A href="/d
 
 ### ImagePlaceholder
 
+- Use the `class` prop to overwrite `divClass`.
+
 <TableProp>
   <TableDefaultRow items={items2} rowState='hover' />
 </TableProp>
 
 ### ListPlaceholder
+
+- Use the `class` prop to overwrite `divClass`.
 
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />
@@ -152,11 +158,15 @@ The component has the following props, type, and default values. See <A href="/d
 
 ### Skeleton
 
+- Use the `class` prop to overwrite `divClass`.
+
 <TableProp>
   <TableDefaultRow items={items4} rowState='hover' />
 </TableProp>
 
 ### TestimonialPlaceholder
+
+- Use the `class` prop to overwrite `divClass`.
 
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />
@@ -164,17 +174,23 @@ The component has the following props, type, and default values. See <A href="/d
 
 ### TextPlaceholder
 
+- Use the `class` prop to overwrite `divClass`.
+
 <TableProp>
   <TableDefaultRow items={items6} rowState='hover' />
 </TableProp>
 
 ### VideoPlaceholder
 
+- Use the `class` prop to overwrite `divClass`.
+
 <TableProp>
   <TableDefaultRow items={items7} rowState='hover' />
 </TableProp>
 
 ### WidgetPlaceholder
+
+- Use the `class` prop to overwrite `divClass`.
 
 <TableProp>
   <TableDefaultRow items={items8} rowState='hover' />

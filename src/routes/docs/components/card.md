@@ -404,9 +404,11 @@ Use this example to split cards into multiple sections such as for testimonials 
 
 ## Props
 
-The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types page</A> for type information.
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 ### Card
+
+- The Card component uses the Frame component. Use the `class` property to overwrite the default Frame class. The Frame component tag can be either an anchor tag or a div tag depending on the value of the href prop.
 
 <TableProp>
   <TableDefaultRow items={cardProps} rowState='hover' />

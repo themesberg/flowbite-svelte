@@ -618,10 +618,13 @@ Therefore you can catch standard events on it like `on:click`.
 
 ## Props
 
-<p>The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types 
- page</A> for type information.</p>
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 ### Dropdown
+
+- Use the `classHeader` prop to overwrite `headerClass`.
+- Use the `classUl` prop to overwrite `ulClass`.
+- Use the `classFooter` prop to overwrite `footerClass`.
 
 <TableProp>
   <TableDefaultRow items={propItems} rowState='hover' />
@@ -629,17 +632,23 @@ Therefore you can catch standard events on it like `on:click`.
 
 ### DropdownDivider
 
+- Use the `class` prop to overwrite `divClass`.
+
 <TableProp>
   <TableDefaultRow items={propItems2} rowState='hover' />
 </TableProp>
 
 ### DropdownHeader
 
+- Use the `class` prop to overwrite `divClass`.
+
 <TableProp>
   <TableDefaultRow items={propItems3} rowState='hover' />
 </TableProp>
 
 ### DropdownItem
+
+- Use the `class` prop to overwrite `defaultClass`.
 
 <TableProp>
   <TableDefaultRow items={propItems4} rowState='hover' />
