@@ -134,59 +134,29 @@ You can also use SVG icons inside the badge elements.
 
 ## Notification badge
 
-You can also use the badge elements as index. Remember to add the `relative` class to parent element.
+To achive the functionality of the notification badge, use the sibling [`Indicator`](/docs/components/indicators) component. Remember to add the `relative` class to parent element.
 
-```svelte example class="flex flex-wrap gap-4" 
+```svelte example class="flex flex-wrap gap-4"
 <script>
-	import { Badge, Button } from 'flowbite-svelte';
+	import { Badge, Button, Indicator} from 'flowbite-svelte';
 </script>
 
 <Button class="relative" size='sm'>
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
   <span class="sr-only">Notifications</span>
-  <Badge rounded index color="!blue">20</Badge>
+  <Indicator color="blue" border size="xl" placement="top-right" class="text-xs font-bold">18</Indicator>
 </Button>
 
 <Button class="relative" size='sm'>
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
   <span class="sr-only">Notifications</span>
-  <Badge rounded index color="!dark">20</Badge>
+  <Indicator color="red" border size="xl" placement="top-right" class="text-xs font-bold">20</Indicator>
 </Button>
 
 <Button class="relative" size='sm'>
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
   <span class="sr-only">Notifications</span>
-  <Badge rounded index color="!red">20</Badge>
-</Button>
-
-<Button class="relative" size='sm'>
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
-  <span class="sr-only">Notifications</span>
-  <Badge rounded index color="!green">20</Badge>
-</Button>
-
-<Button class="relative" size='sm'>
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
-  <span class="sr-only">Notifications</span>
-  <Badge rounded index color="!yellow">20</Badge>
-</Button>
-
-<Button class="relative" size='sm'>
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
-  <span class="sr-only">Notifications</span>
-  <Badge rounded index color="!indigo">20</Badge>
-</Button>
-
-<Button class="relative" size='sm'>
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
-  <span class="sr-only">Notifications</span>
-  <Badge rounded index color="!purple">20</Badge>
-</Button>
-
-<Button class="relative" size='sm'>
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
-  <span class="sr-only">Notifications</span>
-  <Badge rounded index color="!pink">20</Badge>
+  <Indicator color="dark" border size="xl" placement="bottom-right" class="text-xs font-bold">20</Indicator>
 </Button>
 ```
 
@@ -201,7 +171,7 @@ Use this example to add a badge inside a button component for a count indicator.
 
 <Button>
   Messages
-  <Badge rounded class="w-4 h-4 ml-2 !p-0 !font-semibold text-blue-800 bg-blue-200 dark:text-blue-800 dark:bg-blue-200">
+  <Badge rounded class="w-4 h-4 ml-2 p-0 font-semibold text-primary-800 bg-white dark:text-primary-800 dark:bg-white">
     2
   </Badge>
 </Button>
@@ -252,7 +222,7 @@ Use the `dimissable` prop to dismiss the current badge.
 <Badge dismissable large color="pink">Pink</Badge>
 ```
 
-Use the `closeBtn` slot to add your desired button. Don't forget to use the slot prop `handleHide` to dismiss your badge.
+Use the `close-button` slot to add your desired button. Don't forget to use the slot prop `close` to dismiss your badge.
 
 ```svelte example class="gap-4" hideScript
 <script>
@@ -261,12 +231,10 @@ Use the `closeBtn` slot to add your desired button. Don't forget to use the slot
 
 <Badge dismissable>
   Default
-  <svelte:fragment slot="closeBtn" let:handleHide>
-    <button on:click={handleHide} type="button" class="inline-flex items-center p-0.5 ml-2 text-sm bg-transparent rounded-sm text-blue-400 hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300" aria-label="Remove">
-      <svg aria-hidden="true" class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-      <span class="sr-only">Remove badge</span>
-    </button>
-  </svelte:fragment>
+  <button slot="close-button" let:close on:click={close} type="button" class="inline-flex items-center rounded-full p-0.5 my-0.5 ml-1.5 -mr-1.5 text-sm bg-primary-500 dark:bg-primary-400 text-white dark:text-primary-800 hover:bg-primary-900 hover:text-white dark:hover:bg-red-900 dark:hover:text-yellow-300" aria-label="Remove">
+    <svg aria-hidden="true" class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+    <span class="sr-only">Remove badge</span>
+  </button>
 </Badge>
 ```
 
@@ -277,7 +245,7 @@ A `dismiss` event will be dispatched during the dismissal, listen to it if neede
 	import { Badge } from 'flowbite-svelte';
 
   function handleDismiss(event) {
-		alert(event.detail.message);
+		alert('Badge dismissed');
 	}
 </script>
 

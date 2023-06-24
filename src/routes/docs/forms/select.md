@@ -197,13 +197,13 @@ If you want custom options, put them directly inside the component and leave the
 </script>
 ```
 
-## Basic example
+### Basic example
 
 Get started with the default toggle component example as a checkbox element to receive a true or false selection from the user.
 
 ```svelte example hideScript class="h-80"
 <script>
-  import MultiSelect from '../../../lib/forms/MultiSelect.svelte';
+  import { MultiSelect } from 'flowbite-svelte';
 
   let selected = [];
   let countries = [
@@ -215,26 +215,34 @@ Get started with the default toggle component example as a checkbox element to r
   ]
 </script>
 
-<MultiSelect items={countries} bind:value={selected} />
+<MultiSelect items={countries} bind:value={selected} size='lg' />
 ```
 
-## Highlighted
+### Customization
 
-```svelte example hideScript class="h-80"
+To customize the look and feel use the `slot` to insert inner [`Badge`](/docs/components/badge) component.
+
+Remember to connect the `clear` slot's prop to trigger option removal.
+
+```svelte example class="h-96"
 <script>
-  import MultiSelect from '../../../lib/forms/MultiSelect.svelte';
+  import { MultiSelect, Badge } from 'flowbite-svelte';
 
   let selected = [];
   let countries = [
-    {value:"us", name: "United States"},
-    {value:"ca", name: "Canada"},
-    {value:"fr", name: "France"},
-    {value:"jp", name: "Japan"},
-    {value:"en", name: "England"},
+    {value:"us", name: "United States", color: 'indigo'},
+    {value:"ca", name: "Canada", color: 'green'},
+    {value:"fr", name: "France", color: 'blue'},
+    {value:"jp", name: "Japan", color: 'red'},
+    {value:"en", name: "England", color: 'yellow'},
   ]
 </script>
 
-<MultiSelect items={countries} bind:value={selected} highlighted />
+<MultiSelect items={countries} bind:value={selected} let:item let:clear>
+  <Badge color={item.color} dismissable params={{ duration: 100 }} on:dismiss={clear}>
+    {item.name}
+  </Badge>
+</MultiSelect>
 ```
 
 ## Props
