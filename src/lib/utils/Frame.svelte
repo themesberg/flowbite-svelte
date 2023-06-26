@@ -27,7 +27,7 @@
 
   setContext('background', true);
 
-  export let tag: string = 'div';
+  export let tag: string = $$restProps.href ? 'a' : 'div';
   export let color: FrameColor = 'default';
   export let rounded: boolean = false;
   export let border: boolean = false;
@@ -118,7 +118,7 @@
   $: divClass = twMerge(
     bgColors[color],
     textColors[color],
-    rounded && (color === 'dropdown' ? 'rounded' : 'rounded-lg'),
+    rounded && 'rounded-lg',
     border && 'border',
     borderColors[color],
     shadow && 'shadow-md',
