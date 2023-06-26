@@ -131,7 +131,7 @@
     this={tag}
     use:use={options}
     bind:this={node}
-    transition:transition|global={params}
+    transition:transition={params}
     {...$$restProps}
     class={divClass}
     on:click

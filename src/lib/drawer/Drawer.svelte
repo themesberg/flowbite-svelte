@@ -64,7 +64,7 @@
       {id}
       {...$$restProps}
       class={twMerge(divClass, width, position, placements[placement], $$props.class)}
-      transition:multiple|global={transitionParams}
+      transition:multiple={transitionParams}
       tabindex="-1"
       aria-controls={id}
       aria-labelledby={id}>
@@ -75,7 +75,7 @@
       {id}
       {...$$restProps}
       class={twMerge(divClass, width, position, placements[placement], $$props.class)}
-      transition:multiple|global={transitionParams}
+      transition:multiple={transitionParams}
       tabindex="-1"
       aria-controls={id}
       aria-labelledby={id}>

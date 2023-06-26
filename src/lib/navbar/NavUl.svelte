@@ -36,7 +36,7 @@
 </script>
 
 {#if !hidden}
-  <div {...$$restProps} class={_divClass} transition:slide|global={slideParams} on:click role="button" tabindex="0">
+  <div {...$$restProps} class={_divClass} transition:slide={slideParams} on:click role="button" tabindex="0">
     <Frame tag="ul" border rounded color="navbarUl" class={_ulClass}>
       <slot />
     </Frame>
