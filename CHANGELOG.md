@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.39.1](https://github.com/themesberg/flowbite-svelte/compare/v0.38.5...v0.39.1) (2023-06-28)
+
+
+### Features
+
+* run svelte-migrate ([d4d7c48](https://github.com/themesberg/flowbite-svelte/commit/d4d7c48fbf7fab165e6cc491d52085ab5503ebbb))
+* upgrade deps ([5a61709](https://github.com/themesberg/flowbite-svelte/commit/5a61709c7d748af7e9f5dcc73e4c49b30c5a9e44))
+
+
+### Bug Fixes
+
+* add button role if it is a link ([e481587](https://github.com/themesberg/flowbite-svelte/commit/e481587edfb3236aae6f76a285ebe51bfc6ae260))
+* add button role if pag item is link ([0192784](https://github.com/themesberg/flowbite-svelte/commit/019278438c84d594c8b7d352a340a38bb49f4934))
+* add button role to multiselect svg ([13cf560](https://github.com/themesberg/flowbite-svelte/commit/13cf560cf49f138b4e375563fd6522cacba23899))
+* add ignore to modal ([cedf9f1](https://github.com/themesberg/flowbite-svelte/commit/cedf9f18c60dc0f8db03b56e6c456a0121367f41))
+* add listbox role to multiselect ([66ed95e](https://github.com/themesberg/flowbite-svelte/commit/66ed95e96bb5526b7b0a6840fa92ed9b51de1850))
+* add option role with aria-selected ([d4d5561](https://github.com/themesberg/flowbite-svelte/commit/d4d556192d7c9baada02fb42fb2734afd1eed7f7))
+* add role prop to frame ([53c816f](https://github.com/themesberg/flowbite-svelte/commit/53c816f4136a3efde1d5ea80f7908994a0e621c8))
+* add role to drawer ([d40f812](https://github.com/themesberg/flowbite-svelte/commit/d40f8127265fc397bef0b8868c3771f4d47a2230))
+* add role to sidebar menu svg ([1c3fd48](https://github.com/themesberg/flowbite-svelte/commit/1c3fd4843391581874a3852989cfe20219c8636f))
+* change option role for multiselect ([601945f](https://github.com/themesberg/flowbite-svelte/commit/601945f3772e565eb0d099ac38495f6fb40d7afc))
+* move transitions to local ([f060cba](https://github.com/themesberg/flowbite-svelte/commit/f060cba164501e0810934b88e8f4e22a784eeca6))
+* ts item type in megamenu ([c0ee437](https://github.com/themesberg/flowbite-svelte/commit/c0ee437ba3f04142e276f09e9f7301800828301f))
+* typo ([c9f71f2](https://github.com/themesberg/flowbite-svelte/commit/c9f71f294bfaeea90b50d503b99b49b344ba8921))
+* update deps ([d204667](https://github.com/themesberg/flowbite-svelte/commit/d20466715709bd4817277bb6eeaed8f1cb0c4002))
+
 ### [0.38.5](https://github.com/themesberg/flowbite-svelte/compare/v0.38.4...v0.38.5) (2023-06-21)
 
 
