@@ -1,6 +1,6 @@
 {
   "props": [
-    ["tag", "string", "'div'"],
+    ["tag", "string", "$$restProps.href ? 'a' : 'div'"],
     ["color", "FrameColor", "'default'"],
     ["rounded", "boolean", "false"],
     ["border", "boolean", "false"],
@@ -8,7 +8,8 @@
     ["transition", "TransitionFunc | undefined", "undefined"],
     ["params", "object", "{}"],
     ["node", "HTMLElement | undefined", "undefined"],
-    ["use", "Action", "noop"],
-    ["options", "string", "{}"]
+    ["use", "Action<HTMLElement, any>", "noop"],
+    ["options", "string", "{}"],
+    ["role", "string | undefined", "undefined"]
   ]
 }

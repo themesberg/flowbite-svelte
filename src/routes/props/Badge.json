@@ -2,10 +2,6 @@
   "props": [
     ["color", "string", ""],
     ["large", "boolean", "false"],
-    ["border", "boolean", "false"],
-    ["href", "string | undefined", "undefined"],
-    ["rounded", "boolean", "false"],
-    ["index", "boolean", "false"],
     ["dismissable", "boolean", "false"]
   ]
 }

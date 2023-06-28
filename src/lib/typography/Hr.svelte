@@ -11,11 +11,7 @@
 
   let horizontalCls: string = twMerge(hrClass, $$props.classHr);
   let divCls = twMerge(divClass, $$slots && 'relative', $$props.classDiv);
-  let innerDivCls = twMerge(
-    innerDivClass, 
-    icon ? iconDivClass : textSpanClass,
-    $$props.classInnerDiv
-  );
+  let innerDivCls = twMerge(innerDivClass, icon ? iconDivClass : textSpanClass, $$props.classInnerDiv);
 </script>
 
 {#if $$slots}
