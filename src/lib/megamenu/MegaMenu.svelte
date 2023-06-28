@@ -45,7 +45,7 @@
           <slot {item} {index} />
         </li>
       {:else}
-        <slot />
+        <slot item={items[0]} />
       {/each}
     </ul>
     {#if full && $$slots.extra}<div class="md:w-1/3 mt-4 md:mt-0"><slot name="extra" /></div>{/if}
