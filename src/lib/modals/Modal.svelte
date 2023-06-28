@@ -124,6 +124,7 @@
   <!-- backdrop -->
   <div class={twMerge('fixed inset-0 z-40', backdropCls)} />
   <!-- dialog -->
+  <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
   <div
     on:keydown={handleKeys}
     on:wheel|preventDefault|nonpassive

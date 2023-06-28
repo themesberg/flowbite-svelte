@@ -298,7 +298,7 @@ export interface SiteType {
 export interface TimelineItemVerticalType {
   date: Date | string;
   title: string;
-  icon?: typeof SvelteComponent;
+  icon?: typeof SvelteComponent<any>;
   iconSize?: number;
   iconClass?: string;
   href?: string;
@@ -309,7 +309,7 @@ export interface TimelineItemVerticalType {
 export interface TimelineItemHorizontalType {
   date: Date | string;
   title: string;
-  icon?: typeof SvelteComponent;
+  icon?: typeof SvelteComponent<any>;
   iconSize?: number;
   iconClass?: string;
   text?: HTMLElement | string;

@@ -113,7 +113,6 @@
   );
 </script>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
 <svelte:element
   this={href ? 'a' : 'button'}
   type={href ? undefined : type}
@@ -128,7 +127,8 @@
   on:touchend
   on:touchcancel
   on:mouseenter
-  on:mouseleave>
+  on:mouseleave
+  role={href ? 'button' : undefined}>
   <slot />
 </svelte:element>
 

@@ -73,6 +73,7 @@
   on:click={() => (show = !show)}
   on:focusout={() => (show = false)}
   tabindex="-1"
+  role="listbox"
   class={twJoin(multiSelectClass, sizes[size], $$props.class)}>
   <span class="flex gap-2 flex-wrap">
     {#if selectItems.length}
@@ -104,6 +105,7 @@
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <div
           on:click|stopPropagation={(e) => selectOption(item)}
+          role="presentation"
           class={twMerge(itemsClass, selectItems.includes(item) && itemsSelectClass)}>
           {item.name}
         </div>

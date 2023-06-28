@@ -19,9 +19,10 @@
     transition?: TransitionFunc | undefined;
     params?: object;
     node?: HTMLElement | undefined;
-    use?: Action;
+    use?: Action<HTMLElement, any>;
     options?: object;
     class?: string;
+    role?: string;
   }
 
   setContext('background', true);
@@ -40,8 +41,10 @@
   // For components development
   export let node: HTMLElement | undefined = undefined;
   // Action function and its params
-  export let use: Action = noop;
+  export let use: Action<HTMLElement, any> = noop;
   export let options = {};
+
+  export let role: string | undefined = undefined;
 
   $: color = color ?? 'default'; // for cases when undefined
   $: setContext('color', color);
@@ -135,7 +138,8 @@
     on:mouseenter
     on:mouseleave
     on:focusin
-    on:focusout>
+    on:focusout
+    {role}>
     <slot />
   </svelte:element>
 {:else}
@@ -149,7 +153,8 @@
     on:mouseenter
     on:mouseleave
     on:focusin
-    on:focusout>
+    on:focusout
+    {role}>
     <slot />
   </svelte:element>
 {/if}

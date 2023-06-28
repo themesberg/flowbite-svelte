@@ -86,7 +86,7 @@
   </button>
 </h2>
 {#if open}
-  <div transition:multiple|local={transitionParams}>
+  <div transition:multiple={transitionParams}>
     <div
       class="{ctx.flush ? paddingFlush : paddingDefault} {ctx.flush
         ? ''

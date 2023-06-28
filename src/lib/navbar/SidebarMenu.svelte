@@ -32,7 +32,9 @@
   fill="none"
   {viewBox}
   stroke-width="2"
-  on:click>
+  on:click
+  role="button"
+  tabindex="-1">
   {@html svgpath}
 </svg>
 
