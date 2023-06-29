@@ -373,7 +373,7 @@ The component has the following props, type, and default values. See [types page
 ### Input
 
 - Use the `class` prop to overwrite the `input` tag class.
-- Use the `classRight` and/or `classLeft` prop to osvewrite the `floatClass`.
+- Use the `classRight` and/or `classLeft` prop to overwrite the `floatClass`.
 
 <TableProp>
 <TableDefaultRow items={input} rowState='hover' />
