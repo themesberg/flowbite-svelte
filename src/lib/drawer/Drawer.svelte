@@ -50,6 +50,10 @@
     backdrop && bgColor,
     backdrop && bgOpacity
   );
+
+  function clickOutsideWrapper(node: HTMLElement, callback: () => void) {
+    return activateClickOutside ? clickOutside(node, callback) : undefined;
+  }
 </script>
 
 {#if !hidden}
@@ -58,30 +62,18 @@
   {:else if backdrop && !activateClickOutside}
     <div role="presentation" class={backdropDivClass} />
   {/if}
-  {#if activateClickOutside}
-    <div
-      use:clickOutside={() => !hidden && handleDrawer()}
-      {id}
-      {...$$restProps}
-      class={twMerge(divClass, width, position, placements[placement], $$props.class)}
-      transition:multiple={transitionParams}
-      tabindex="-1"
-      aria-controls={id}
-      aria-labelledby={id}>
-      <slot {hidden} />
-    </div>
-  {:else}
-    <div
-      {id}
-      {...$$restProps}
-      class={twMerge(divClass, width, position, placements[placement], $$props.class)}
-      transition:multiple={transitionParams}
-      tabindex="-1"
-      aria-controls={id}
-      aria-labelledby={id}>
-      <slot {hidden} />
-    </div>
-  {/if}
+
+  <div
+    use:clickOutsideWrapper={() => !hidden && handleDrawer()}
+    {id}
+    {...$$restProps}
+    class={twMerge(divClass, width, position, placements[placement], $$props.class)}
+    transition:multiple={transitionParams}
+    tabindex="-1"
+    aria-controls={id}
+    aria-labelledby={id}>
+    <slot {hidden} />
+  </div>
 {/if}
 
 <!--
