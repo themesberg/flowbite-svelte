@@ -137,7 +137,7 @@
     };
   });
   function optional(pred: boolean, func: (ev: Event) => void) {
-    return (pred && func) || null;
+    return pred ? func : () => undefined;
   }
 
   let position: string = 'bottom';

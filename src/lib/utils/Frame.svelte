@@ -6,7 +6,8 @@
   import type { TransitionConfig } from 'svelte/transition';
   import type { HTMLAnchorAttributes } from 'svelte/elements';
 
-  const noop = () => ({});
+  const null_transition = () => ({ duration: 0 });
+  const noop = () => {};
 
   type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
   type FrameColor = keyof typeof bgColors;
@@ -35,7 +36,7 @@
   export let shadow: boolean = false;
 
   // Export a prop through which you can set a desired svelte transition
-  export let transition: TransitionFunc = noop;
+  export let transition: TransitionFunc = null_transition;
   // Pass in extra transition params
   export let params: object = {};
 
