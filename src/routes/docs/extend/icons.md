@@ -1,10 +1,10 @@
 ---
 layout: componentLayout
 breadcrumb_title: Icons
-title: External icon libraries
-component_title: Icon libraries
+title: Svelte Icons - Flowbite
+component_title: Svelte Icons
 dir: Extend
-description: Use Svelte SVG icon families to write less code
+description: Get started with a collection of over 430+ open-source icons built for Svelte and Flowbite and a collection of other external icon libraries to build beautiful websites
 ---
 
 <script>
@@ -12,239 +12,209 @@ description: Use Svelte SVG icon families to write less code
 	import CheckCircle from './CheckCircle.svelte'
 </script>
 
-Instead of using SVG icons, using an icon library simplifies the code. You can uses <A href="https://www.npmjs.com/package/svelte-heros-v2" target="_blank" rel="noreferrer">Svelte-Heros-v2</A> and <A href="https://svelte-svg-icons.vercel.app/" target="_blank" rel="noreferrer">other icon sets</A> for Flowbite-Svelte.
+Instead of using generic SVG icons, you can start using a custom Svelte icon library such as the open-source collection of Flowbite Icons that includes over 430+ outline and solid styles and is already available to import as Svelte components inside your project.
 
-Svelte-Heros-v2 icons allow you to change the icon color, size, and other props.
+Check out the official [Flowbite Icons](https://flowbite.com/icons/) page and interface and learn how to install [Flowbite Svelte Icons](https://github.com/themesberg/flowbite-svelte-icons) inside your project by following the steps from this guide.
 
 ## Installation
 
+To install the Flowbite Icons package in Svelte you need to set it up with NPM in your `package.json` file:
+
 ```sh
-npm i -D svelte-heros-v2
+npm i -D flowbite-svelte-icons
 ```
 
-## Color and size
+## Usage example
 
-If you want to change the color with Tailwind CSS, add it in the class prop. To change the icon size use the `size` prop or use class like, `class="h-24 w-24"`.
+Inside a Svelte file import any of the icons like this:
 
-Use `dark:` to specify the dark mode color for icons.
-
-```js
+```html
 <script>
-  import {
-    AdjustmentsVertical,
-    Bell,
-    Briefcase,
-    Ticket,
-    ChartBarSquare,
-    Camera,
-    ChevronLeft
-  } from 'svelte-heros-v2';
+  import { AddressCardSolid } from 'flowbite-svelte-icons';
 </script>
 
-<AdjustmentsVertical size="30" class="text-blue-700 dark:text-red-700" />
-<Bell size="30" class="text-red-700 dark:text-green-700" />
-<Briefcase size="30" class="text-green-700 dark:text-indigo-700" />
-<ChartBarSquare size="30" class="text-purple-700 dark:text-pink-700" />
-<Ticket size="30" class="text-pink-700 dark:text-indigo-700" />
-<Camera size="30" class="text-indigo-700 dark:text-gray-100" />
-<ChevronLeft size="30" class="text-yellow-700 dark:text-white" />
+<AddressCardSolid />
 ```
 
-You can change icon colors with HEX color code by using the `color` prop.
+## Faster compiling
+
+You should only import the icons that you want to use in order to improve the performance and compilation time of your project in Svelte.
 
 ```html
-<AdjustmentsVertical size="30" color="#ff0000" />
-<Bell color="#10ff00" />
-<Briefcase size="30" color="#001dff" />
+<script>
+  import AddressCardSolid from 'flowbite-svelte-icons/AddressCardSolid.svelte';
+</script>
+
+<AddressCardSolid />
 ```
 
-## Aria label
+Use TypeScript version 5.0 or earlier if you want to use types.
 
-Use the `aria-label` prop to change `aria-label` attribute. All icons have aria-label. For example, `Adjustments` has `aria-label="adjustments"`.
+```sh
+pnpm i -D typescript@latest
+```
+
+Make sure that you add `node16` or `nodenext` to the `moduleResolution` value from your TypeScript (`tsconfig.json`) file:
+
+```json
+{
+  //...
+  "compilerOptions": {
+    // ...
+    "moduleResolution": "nodenext"
+  }
+}
+```
+
+## Props
+
+Check out the list of properties that you can use to customize and update the icons from Flowbite Svelte.
+
+### Outline
+
+Here's a list of properties for all outline styled icons:
+
+- size: string = '20';
+- role: string = 'img';
+- svgClass: string = 'text-gray-800 dark:text-white';
+- strokeLinecap: 'round' | 'inherit' | 'butt' | 'square' | null | undefined = 'round';
+- strokeLinejoin: 'round' | 'inherit' | 'miter' | 'bevel' | null | undefined = 'round';
+- strokeWidth = '2';
+- ariaLabel = 'icon file name';
+
+### Solid
+
+This is a list of props and settings for the solid styled icons:
+
+- size: string = '20';
+- role: string = 'img';
+- svgClass: string = 'text-gray-800 dark:text-white';
+- ariaLabel = 'icon file name';
+
+## IDE support
+
+If you are using an LSP-compatible editor, such as VSCode, Atom, Sublime Text, or Neovim, hovering over a component name will display a documentation link, features, props, events, and an example.
+
+## Size
+
+Use the `size` prop to change the size of icons.
 
 ```html
-<AdjustmentsVertical aria-label="adjustments icon" />>
+<AddressCardSolid size="40" /> 
 ```
+
+
+## Tailwind CSS suport
+
+Use the `class` prop to change size, colors and add additional css.
+
+Here's an example of adding custom Tailwind CSS classes to an imported icon:
+
+```html
+<AddressCardSolid class="h-24 w-24 text-blue-700 mr-4" />
+```
+
+## Dark mode
+
+If you want to support dark mode for the icons you need to use the `dark` variant classes from Tailwind CSS.
+
+Here's an example of making the icon red in dark mode:
+
+```html
+<AddressCardSolid class="text-blue-700 dark:text-red-500" />
+```
+
+## aria-label
+
+All of the icons support `aria-label` for accessibilty - for example `BxAbacus` has `aria-label="bx abacus"`.
+
+Use `ariaLabel` prop to modify the `aria-label` value.
+
+```html
+<AddressCardSolid ariaLabel="address card solid" />
+```
+
+## Unfocusable icon
+
+If you want to make an icon unfocusable, add `tabindex="-1"`.
+
+```html
+<AddressCardSolid tabindex="-1" />
+```
+
+## Events
+
+All of the icons from this library have the following events that you can use for programming:
+
+- on:click
+- on:keydown
+- on:keyup
+- on:focus
+- on:blur
+- on:mouseenter
+- on:mouseleave
+- on:mouseover
+- on:mouseout
 
 ## Passing down other attributes
 
-You can pass other attributes as well.
+Here's an example of how you can pass an attribute:
 
 ```html
-<AdjustmentsVertical tabindex="0" />
+<AddressCardSolid tabindex="0" />
+```
+
+## Using svelte:component
+
+Here's an example how you can use `svelte:component` with Flowbite Icons in Svelte:
+
+```html
+<script>
+  import { AddressCardSolid } from 'flowbite-svelte-icons';
+</script>
+
+<svelte:component this="{AddressCardSolid}" />
+```
+
+## Using onMount
+
+Here's an example of how you can create the icon using `onMount` from Svelte:
+
+```html
+<script>
+  import { AddressCardSolid } from 'flowbite-svelte-icons';
+  import { onMount } from 'svelte';
+  const props = {
+    size: '50',
+    color: '#ff0000'
+  };
+  onMount(() => {
+    const icon = new AddressCardSolid({ target: document.body, props });
+  });
+</script>
 ```
 
 ## Import all
 
-Use import \* as Icon from `svelte-heros-v2`.
+If you want to import all of the icons from the Flowbite Svelte library here's an example how you can do that:
 
 ```html
 <script>
-  import * as Icon from 'svelte-heros-v2';
+  import * as Icon from 'flowbite-svelte-icons';
 </script>
 
-<Icon.Cog />
-<Icon.Calendar />
+<Icon.AddressCardSolid />
 
 <h1>Size</h1>
-
-<Icon.CircleStack size="30" />
-<Icon.Funnel size="40" />
-
-<h1>CSS HEX color</h1>
-<Icon.Bookmark color="#c61515" size="40" />
+<Icon.AddressCardSolid size="30" />
 
 <h1>Tailwind CSS</h1>
-<Icon.ShoppingCart class="text-blue-500" />
-<Icon.Users class="text-pink-700" />
+<Icon.AddressCardSolid class="text-blue-500" />
 ```
 
-## Examples
-
-Here are some examples using Svelte-Heros-v2.
-
-### <A href="https://hero2-with-flowbite-svelte.vercel.app/accordion" textSize="text-2xl">Accordion</A>
-
-```html
-<script>
-  import { AccordionItem } from 'flowbite-svelte';
-  import { ArrowDownCircle, ArrowUpCircle } from 'svelte-heros-v2';
-</script>
-
-<AccordionItem id="1">
-  <h2 slot="header">Header 2-1</h2>
-  <span slot="arrowup">
-    <ArrowUpCircle />
-  </span>
-  <span slot="arrowdown">
-    <ArrowDownCircle />
-  </span>
-  <div slot="body">
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
-    </p>
-  </div>
-</AccordionItem>
-<AccordionItem id="2">
-  <h2 slot="header">Header 2-2</h2>
-  <span slot="arrowup">
-    <ArrowUpCircle />
-  </span>
-  <span slot="arrowdown">
-    <ArrowDownCircle />
-  </span>
-  <div slot="body">
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
-    </p>
-  </div>
-</AccordionItem>
-```
-
-### <A href="https://hero2-with-flowbite-svelte.vercel.app/alert">Alert</A>
-
-```html
-<script>
-  import { Alert } from 'flowbite-svelte';
-  import { InformationCircle } from 'svelte-heros-v2';
-</script>
-
-<Alert class="mb-2">
-  <svelte:fragment slot="icon">
-    <InformationCircle class="text-blue-700 flex-shrink-0 w-5 h-5 mr-3" />
-  </svelte:fragment>
-  <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
-</Alert>
-<Alert color="red" class="mb-2">
-  <svelte:fragment slot="icon">
-    <InformationCircle class="text-red-700 flex-shrink-0 w-5 h-5 mr-3" />
-  </svelte:fragment>
-  <span class="font-medium">Danger alert!</span> Change a few things up and try submitting again.
-</Alert>
-<Alert color="green" class="mb-2">
-  <svelte:fragment slot="icon">
-    <InformationCircle class="text-green-700 flex-shrink-0 w-5 h-5 mr-3" />
-  </svelte:fragment>
-  <span class="font-medium">Success alert!</span> Change a few things up and try submitting again.
-</Alert>
-<Alert color="yellow" class="mb-2">
-  <svelte:fragment slot="icon">
-    <InformationCircle class="text-yellow-700 flex-shrink-0 w-5 h-5 mr-3" />
-  </svelte:fragment>
-  <span class="font-medium">Warning alert!</span> Change a few things up and try submitting again.
-</Alert>
-<Alert color="gray" class="mb-2">
-  <svelte:fragment slot="icon">
-    <InformationCircle class="text-gray-500 flex-shrink-0 w-5 h-5 mr-3" />
-  </svelte:fragment>
-  <span class="font-medium">Dark alert!</span> Change a few things up and try submitting again.
-</Alert>
-```
-
-### <A href="https://hero2-with-flowbite-svelte.vercel.app/breadcrumb">Breadcrumb</A>
-
-```html
-<script>
-  import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
-  import { Home, ChevronDoubleRight } from 'svelte-heros-v2';
-</script>
-
-<Breadcrumb aria-label="Solid background breadcrumb example" class="bg-gray-50 py-3 px-5 dark:bg-gray-900">
-  <BreadcrumbItem href="/" home>
-    <svelte:fragment slot="icon"> <Home /> </svelte:fragment>Home</BreadcrumbItem
-  >
-  <BreadcrumbItem href="/">
-    <svelte:fragment slot="icon">
-      <ChevronDoubleRight />
-    </svelte:fragment>
-    Projects</BreadcrumbItem
-  >
-  <BreadcrumbItem>
-    <svelte:fragment slot="icon">
-      <ChevronDoubleRight />
-    </svelte:fragment>
-    Flowbite Svelte</BreadcrumbItem
-  >
-</Breadcrumb>
-```
-
-## More examples
-
-<List list='none'>
-<Li icon>
-<CheckCircle />
-<A href="https://hero2-with-flowbite-svelte.vercel.app/carousel">Carousel</A></Li>
-<Li icon><CheckCircle /><A href="https://hero2-with-flowbite-svelte.vercel.app/hr">HR</A></Li>
-<Li icon><CheckCircle /><A href="https://hero2-with-flowbite-svelte.vercel.app/link">Link</A></Li>
-<Li icon><CheckCircle /><A href="https://hero2-with-flowbite-svelte.vercel.app/textarea">Textarea</A></Li>
-<Li icon><CheckCircle /><A href="https://hero2-with-flowbite-svelte.vercel.app/toast">Toast</A></Li>
-<Li icon><CheckCircle /><A href="https://hero2-with-flowbite-svelte.vercel.app/toolbar">Toolbar</A></Li>
-</List>
-
-## Alternatives
+## Resources
 
 These icon sets have the same functionalities mentioned above.
 
-<List tag='ul' class='space-y-1' list='none'>
-<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-awesome-icons">Svelte-Awesome-Icons</A></Li>
-<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-bootstrap-svg-icons">Svelte-Bootstrap-svg-Icons</A></Li>
-<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-circle-flags">Svelte-Circle-Flags</A></Li>
-<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-cryptocurrency-icons">Svelte-Cryptocurrency-Icons</A></Li>
-<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-feathers">Svelte-Feathers</A></Li>
-<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-flag-icons">Svelte-Flag-Icons</A></Li>
-<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-flags">Svelte-Flags</A></Li>
-<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-file-icons">Svelte-File-Icons</A></Li>
-<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-google-materialdesign-icons">Svelte-Google-Materialdesign-Icons</A></Li>
-<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-heros">Svelte-Heros v1</A></Li>
-<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-ionicons">Svelte-Ionicons</A></Li>
-<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-lucide">Svelte-Lucide</A></Li>
-<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-materialdesign-icons">Svelte-Materialdesign-Icons</A></Li>
-<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-oct">Svelte-Oct</A></Li>
-<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-radix">Svelte-Radix</A></Li>
-<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-remix">Svelte-Remix</A></Li>
-<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-simples">Svlete-simples</A></Li>
-<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-tabler">Svelte-Tabler</A></Li>
-<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-teenyicons">Svelte-Teenyicons</A></Li>
-<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-twitter-emoji">Svelte-Twitter-Emoji</A></Li>
-<Li icon><CheckCircle /><A href="https://www.npmjs.com/package/svelte-weather">Svelte-Weather</A></Li>
-</List>
+- [Flowbite Icons](https://flowbite.com/icons/) and [Flowbite Icons in Svelte](https://github.com/themesberg/flowbite-svelte-icons)
+- [Svelte Icon Sets](https://svelte-svg-icons.vercel.app/)
