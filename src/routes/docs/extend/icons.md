@@ -1,10 +1,10 @@
 ---
 layout: componentLayout
 breadcrumb_title: Icons
-title: External icon libraries
-component_title: Icon libraries
+title: Svelte Icons - Flowbite
+component_title: Svelte Icons
 dir: Extend
-description: Use Svelte SVG icon families to write less code
+description: Get started with a collection of over 430+ open-source icons built for Svelte and Flowbite and a collection of other external icon libraries to build beautiful websites
 ---
 
 <script>
