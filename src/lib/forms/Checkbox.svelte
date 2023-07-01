@@ -51,7 +51,7 @@
   }
 </script>
 
-<Label class={labelClass(inline, $$props.classLabel)} show={!!$$slots.default}>
+<Label class={labelClass(inline, $$props.class)} show={$$slots.default}>
   <input
     use:init={group}
     type="checkbox"

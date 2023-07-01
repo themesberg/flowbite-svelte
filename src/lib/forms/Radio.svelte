@@ -51,7 +51,7 @@
   let background: boolean = getContext('background');
 </script>
 
-<Label class={labelClass(inline, $$props.classLabel)} show={$$slots.default}>
+<Label class={labelClass(inline, $$props.class)} show={$$slots.default}>
   <input
     type="radio"
     bind:group
