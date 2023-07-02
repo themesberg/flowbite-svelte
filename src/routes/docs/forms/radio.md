@@ -123,10 +123,10 @@ Use this example of a radio inside a card element to enable a larger area of cli
 
 <div class="grid grid-cols-2 gap-6">
   <div class="rounded border border-gray-200 dark:border-gray-700">
-    <Radio name="bordered" classLabel="w-full p-4">Default radio</Radio>
+    <Radio name="bordered" class="w-full p-4">Default radio</Radio>
   </div>
   <div class="rounded border border-gray-200 dark:border-gray-700">
-    <Radio name="bordered" classLabel="w-full p-4">Checked state</Radio>
+    <Radio name="bordered" class="w-full p-4">Checked state</Radio>
   </div>
 </div>
 ```
@@ -143,10 +143,10 @@ Use this example to show a list of radio items grouped inside a card.
 
 <p class="mb-4 font-semibold text-gray-900 dark:text-white">Technology <span class="capitalize">{technology}</span></p>
 <ul class="w-48 bg-white rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-600 divide-y divide-gray-200 dark:divide-gray-600">
-    <li><Radio classLabel="p-3" bind:group={technology} value="svelte">Svelte</Radio></li>
-    <li><Radio classLabel="p-3" bind:group={technology} value="vue js">Vue JS</Radio></li>
-    <li><Radio classLabel="p-3" bind:group={technology} value="react">React</Radio></li>
-    <li><Radio classLabel="p-3" bind:group={technology} value="angular">Angular</Radio></li>
+    <li><Radio class="p-3" bind:group={technology} value="svelte">Svelte</Radio></li>
+    <li><Radio class="p-3" bind:group={technology} value="vue js">Vue JS</Radio></li>
+    <li><Radio class="p-3" bind:group={technology} value="react">React</Radio></li>
+    <li><Radio class="p-3" bind:group={technology} value="angular">Angular</Radio></li>
 </ul>
 ```
 
@@ -161,10 +161,10 @@ Use this example to show a list of radio items inside a card horizontally.
 
 <p class="mb-4 font-semibold text-gray-900 dark:text-white">Identification</p>
 <ul class="items-center w-full rounded-lg border border-gray-200 sm:flex dark:bg-gray-800 dark:border-gray-600 divide-x divide-gray-200 dark:divide-gray-600">
-  <li class="w-full"><Radio name="hor-list" classLabel="p-3">Svelte</Radio></li>
-  <li class="w-full"><Radio name="hor-list" classLabel="p-3">Vue JS</Radio></li>
-  <li class="w-full"><Radio name="hor-list" classLabel="p-3">React</Radio></li>
-  <li class="w-full"><Radio name="hor-list" classLabel="p-3">Angular</Radio></li>
+  <li class="w-full"><Radio name="hor-list" class="p-3">Svelte</Radio></li>
+  <li class="w-full"><Radio name="hor-list" class="p-3">Vue JS</Radio></li>
+  <li class="w-full"><Radio name="hor-list" class="p-3">React</Radio></li>
+  <li class="w-full"><Radio name="hor-list" class="p-3">Angular</Radio></li>
 </ul>
 ```
 
@@ -288,8 +288,7 @@ All attributes of the `input` element like: name, id, autofocus, etc, can be set
 
 ### Radio
 
-- Use the `classLabel` prop to overwrite the `label` tag class.
-- Use `class` prop to overwrite the `input` tag class.
+- Use the `class` prop to overwrite the `label` and `input` tag class.
 
 <TableProp>
 <TableDefaultRow items={items} rowState='hover' />

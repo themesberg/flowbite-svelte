@@ -317,8 +317,7 @@ Use the `class` prop to overwrite the default class.
 
 ### Checkbox
 
-- Use the `classLabel` prop to overwrite the `label` tag class.
-- Use `class` prop to overwrite the `input` tag class.
+- Use the `class` prop to overwrite the `label` and `input` tag class.
 
 <TableProp>
 <TableDefaultRow items={items} rowState='hover' />
