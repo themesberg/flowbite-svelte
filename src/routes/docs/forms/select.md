@@ -234,11 +234,7 @@ Get started with the default toggle component example as a checkbox element to r
   let selected = ["us", "fr"];
 </script>
 
-<MultiSelect items={countries} bind:value={selected} let:item let:clear>
-  <Badge color={item.color} dismissable params={{ duration: 100 }} on:dismiss={clear}>
-    {item.name}
-  </Badge>
-</MultiSelect>
+<MultiSelect items={countries} bind:value={selected} />
 ```
 
 ### Customization
