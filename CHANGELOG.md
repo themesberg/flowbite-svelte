@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.39.2](https://github.com/themesberg/flowbite-svelte/compare/v0.39.1...v0.39.2) (2023-07-03)
+
+
+### Features
+
+* **docs:** improve docs components ([#889](https://github.com/themesberg/flowbite-svelte/issues/889)) ([0b82e2f](https://github.com/themesberg/flowbite-svelte/commit/0b82e2f1f08f047969a7f1b7c06b3982b3abca03))
+
+
+### Bug Fixes
+
+* $$props.class ([#890](https://github.com/themesberg/flowbite-svelte/issues/890)) ([8d90322](https://github.com/themesberg/flowbite-svelte/commit/8d90322eb0fbddfb626f9f3b89c53afcf5bacfc7))
+* add shrink-0 to prevent toggle UI from shrinking on small screen sizes ([#885](https://github.com/themesberg/flowbite-svelte/issues/885)) ([81c65bd](https://github.com/themesberg/flowbite-svelte/commit/81c65bde22a3f12ad3980658a9e919c6fd92898d))
+* **multi-select:** pre-select values fix ([#892](https://github.com/themesberg/flowbite-svelte/issues/892)) ([e399248](https://github.com/themesberg/flowbite-svelte/commit/e399248dc4503f37b281535acbfa965f3f88ecec))
+* transitions in drawer ([#881](https://github.com/themesberg/flowbite-svelte/issues/881)) ([90319b3](https://github.com/themesberg/flowbite-svelte/commit/90319b3d5237ca896c5ea971f77c776d678ebb05))
+* transitions in frame ([#883](https://github.com/themesberg/flowbite-svelte/issues/883)) ([079ca87](https://github.com/themesberg/flowbite-svelte/commit/079ca8795814e7c3b482cfb27ddfec5fd23fc683))
+
 ### [0.39.1](https://github.com/themesberg/flowbite-svelte/compare/v0.38.5...v0.39.1) (2023-06-28)
 
 
