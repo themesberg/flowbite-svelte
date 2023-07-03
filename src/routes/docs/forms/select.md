@@ -218,6 +218,29 @@ Get started with the default toggle component example as a checkbox element to r
 <MultiSelect items={countries} bind:value={selected} size='lg' />
 ```
 
+### Pre-select values
+
+```svelte example class="h-96"
+<script>
+  import { MultiSelect, Badge } from 'flowbite-svelte';
+
+  let countries = [
+    {value:"us", name: "United States", color: 'indigo'},
+    {value:"ca", name: "Canada", color: 'green'},
+    {value:"fr", name: "France", color: 'blue'},
+    {value:"jp", name: "Japan", color: 'red'},
+    {value:"en", name: "England", color: 'yellow'},
+  ]
+  let selected = ["us", "fr"];
+</script>
+
+<MultiSelect items={countries} bind:value={selected} let:item let:clear>
+  <Badge color={item.color} dismissable params={{ duration: 100 }} on:dismiss={clear}>
+    {item.name}
+  </Badge>
+</MultiSelect>
+```
+
 ### Customization
 
 To customize the look and feel use the `slot` to insert inner [`Badge`](/docs/components/badge) component.

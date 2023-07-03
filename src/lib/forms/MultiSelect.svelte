@@ -5,6 +5,7 @@
   import ChevronDown from '$lib/utils/ChevronDown.svelte';
   import CloseButton from '$lib/utils/CloseButton.svelte';
   import { createEventDispatcher } from 'svelte';
+  import { onMount } from 'svelte';
 
   const dispatch = createEventDispatcher();
 
@@ -37,6 +38,16 @@
     'py-2 px-3 rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-600';
   // Selected items
   const itemsSelectClass: string = 'bg-gray-100 text-bg-gray-900 dark:text-white dark:bg-gray-600';
+
+  onMount(() => {
+    if (value.length) {
+      items.map((item) => {
+        if (value.includes(item.value)) {
+          selectItems.push(item);
+        }
+      });
+    }
+  });
 
   const selectOption = (select: SelectOptionType) => {
     if (selectItems.includes(select)) {
