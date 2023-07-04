@@ -11,14 +11,12 @@
     'text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white';
   export let ulClass: string = 'inline-flex -space-x-px items-center';
   export let table: boolean = false;
-
-  let normalCls: string = twMerge(normalClass, $$props.classNormal);
-  let activeCls: string = twMerge(activeClass, $$props.classActive);
+  export let large: boolean = false;
 
   const dispatch = createEventDispatcher();
 
-  setContext('group', true);
-  setContext('table', table);
+  setContext<boolean>('group', true);
+  setContext<boolean>('table', table);
 
   const previous = () => {
     dispatch('previous');
@@ -29,16 +27,20 @@
 </script>
 
 <nav aria-label="Page navigation">
-  <ul class={twMerge(ulClass, table && 'divide-x divide-gray-700', $$props.class)}>
+  <ul class={twMerge(ulClass, table && 'divide-x dark divide-gray-700 dark:divide-gray-700', $$props.class)}>
     <li>
-      <PaginationItem on:click={previous} class={twJoin(normalCls, table ? 'rounded-l' : 'rounded-l-lg')}>
+      <PaginationItem {large} on:click={previous} {normalClass} class={table ? 'rounded-l' : 'rounded-l-lg'}>
         <slot name="prev">Previous</slot>
       </PaginationItem>
     </li>
     {#each pages as { name, href, active }}
       <li>
         <PaginationItem
+          {large}
           {active}
+          {activeClass}
+          {normalClass}
+          {href}
           on:blur
           on:change
           on:click
@@ -48,14 +50,11 @@
           on:keyup
           on:mouseenter
           on:mouseleave
-          on:mouseover
-          {activeCls}
-          {normalCls}
-          {href}>{name}</PaginationItem>
+          on:mouseover>{name}</PaginationItem>
       </li>
     {/each}
     <li>
-      <PaginationItem on:click={next} class={twJoin(normalCls, table ? 'rounded-r' : 'rounded-r-lg')}>
+      <PaginationItem {large} on:click={next} {normalClass} class={table ? 'rounded-r' : 'rounded-r-lg'}>
         <slot name="next">Next</slot>
       </PaginationItem>
     </li>
