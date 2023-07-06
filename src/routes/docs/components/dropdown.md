@@ -350,7 +350,7 @@ This example can be used when you want to show a long list of items that won’t
 
 ```svelte example class="flex justify-center items-start h-80"
 <script>
-  import { Button, Dropdown, DropdownItem, Chevron, Avatar } from 'flowbite-svelte'
+  import { Button, Dropdown, DropdownItem, Chevron, Avatar } from 'flowbite-svelte';
 </script>
 
 <Button><Chevron>Project users</Chevron></Button>
@@ -374,7 +374,7 @@ This example can be used when you want to show a long list of items that won’t
     <Avatar src="/images/profile-picture-3.webp" size="xs"/>Leslie Livingston
   </DropdownItem>
   <a slot="footer" href="/" class="flex items-center px-3 py-2 -mb-1 text-sm font-medium text-primary-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-primary-500 hover:underline">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 mr-1"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" /></svg>Add new user
+      <Chevron />Add new user
   </a>
 </Dropdown>
 ```
@@ -385,7 +385,8 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
 
 ```svelte example class="flex justify-center items-start h-96"
 <script>
-  import { Button, Dropdown, DropdownItem, Chevron, Checkbox, Search } from 'flowbite-svelte'
+  import { Button, Dropdown, DropdownItem, Chevron, Checkbox, Search } from 'flowbite-svelte';
+  import { UserRemoveSolid } from 'flowbite-svelte-icons';
 </script>
 
 <Button><Chevron>Project users</Chevron></Button>
@@ -412,7 +413,7 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
     <Checkbox>Bonnie Green</Checkbox>
   </li>
   <a slot="footer" href="/" class="flex items-center p-3 -mb-1 text-sm font-medium text-red-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-1"><path stroke-linecap="round" stroke-linejoin="round" d="M22 10.5h-6m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" /></svg>Delete user
+      <UserRemoveSolid class="w-4 h-4 mr-2 text-primary-700 dark:text-primary-700"/>Delete user
   </a>
 </Dropdown>
 ```
@@ -441,11 +442,12 @@ Use this example to show a list of notifications inside your application by prov
 
 ```svelte example class="flex justify-center items-start h-96"
 <script>
-  import { Button, Dropdown, DropdownItem, DropdownHeader, Avatar } from 'flowbite-svelte'
+  import { Button, Dropdown, DropdownItem, DropdownHeader, Avatar } from 'flowbite-svelte';
+  import { BellSolid, EyeSolid } from 'flowbite-svelte-icons';
 </script>
 
 <div id="bell" class="inline-flex items-center text-sm font-medium text-center text-gray-500 hover:text-gray-900 focus:outline-none dark:hover:text-white dark:text-gray-400">
-  <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path></svg>
+  <BellSolid class="w-5 h-5kj" />
   <div class="flex relative">
     <div class="inline-flex relative -top-2 right-3 w-3 h-3 bg-red-500 rounded-full border-2 border-white dark:border-gray-900"></div>
   </div>
@@ -475,7 +477,7 @@ Use this example to show a list of notifications inside your application by prov
   </DropdownItem>
   <a slot="footer" href="/" class="block py-2 -my-1 text-sm font-medium text-center text-gray-900 bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white">
     <div class="inline-flex items-center">
-      <svg class="mr-2 w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg>
+      <EyeSolid class="mr-2 w-4 h-4 text-gray-500 dark:text-gray-400" />
         View all
     </div>
   </a>
