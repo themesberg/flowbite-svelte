@@ -227,13 +227,13 @@ Sometimes you need a button to indicate an action using only an icon.
 ```svelte example class="flex flex-wrap gap-2" hideScript
 <script>
   import { Button } from 'flowbite-svelte';
-  import { ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { ArrowRightOutline, ShoppingCartSolid } from 'flowbite-svelte-icons';
 </script>
 <div class="flex flex-wrap items-center gap-2">
   <Button class="!p-2"><ArrowRightOutline class="w-5 h-5 text-white" /></Button>
   <Button pill={true} class="!p-2"><ArrowRightOutline class="w-5 h-5 text-white" /></Button>
-  <Button outline={true} class="!p-2" size="lg"><ArrowRightOutline class="w-5 h-5 text-primary-700" /></Button>
-  <Button pill={true} outline={true} class="!p-2" size="xl"><ArrowRightOutline class="w-5 h-5 text-primary-700" /></Button>
+  <Button outline={true} class="!p-2" size="lg"><ShoppingCartSolid class="w-5 h-5 text-primary-700" /></Button>
+  <Button pill={true} outline={true} class="!p-2" size="xl"><ShoppingCartSolid class="w-5 h-5 text-primary-700" /></Button>
 </div>
 ```
 

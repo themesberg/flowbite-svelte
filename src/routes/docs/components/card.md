@@ -37,7 +37,7 @@ Import Card in the script tag.
 Use the following simple card component with a title and description.
 Notice the `href` prop set, as that card is one big `<a/>` element.
 
-```svelte example class="flex flex-wrap gap-2" hideScript
+```svelte example class="flex justify-center flex-wrap gap-2" hideScript
 <script>
   import { Card } from "flowbite-svelte";
 </script>
@@ -53,9 +53,10 @@ Notice the `href` prop set, as that card is one big `<a/>` element.
 
 Use the following example of a card element if you also want to have an action button.
 
-```svelte example class="flex flex-wrap gap-2"
+```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
   import { Card, Button } from "flowbite-svelte";
+  import { ArrowRightOutline } from "flowbite-svelte-icons";
 </script>
 <Card>
   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
@@ -63,7 +64,7 @@ Use the following example of a card element if you also want to have an action b
     Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
   </p>
   <Button class="w-fit">
-    Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ml-2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+    Read more <ArrowRightOutline class="w-3.5 h-3.5 ml-2 text-white"/>
   </Button>
 </Card>
 ```
@@ -72,19 +73,20 @@ Use the following example of a card element if you also want to have an action b
 
 This example can be used to show a CTA as a link instead of a button inside the card.
 
-```svelte example class="flex flex-wrap gap-2" hideScript
+```svelte example class="flex justify-center flex-wrap gap-2" hideScript
 <script>
   import { Card } from "flowbite-svelte";
+  import { GiftBoxSolid, ArrowUpRightFromSquareOutline } from "flowbite-svelte-icons"
 </script>
 <Card>
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 mb-2text-gray-500 dark:text-gray-400 "><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>
+  <GiftBoxSolid class="w-7 h-7 mb-3 text-gray-500 dark:text-gray-400"/>
   <a href="/">
       <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Need a help in Claim?</h5>
   </a>
   <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
   <a href="/" class="inline-flex items-center text-primary-600 hover:underline">
       See our guideline
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ml-2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+      <ArrowUpRightFromSquareOutline class="w-3 h-3 ml-2.5"/>
   </a> 
 </Card>
 ```
@@ -95,9 +97,10 @@ User <code>reverse={true}</code> to reverse the position of an image.
 
 You can use the following example of a card element with an image for blog posts, user cards, and many more.
 
-```svelte example class="flex flex-wrap gap-2"
+```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
   import { Card, Button, Toggle } from "flowbite-svelte";
+  import { ArrowRightOutline } from "flowbite-svelte-icons";
   let vCard = false;
 </script>
 <div>
@@ -107,7 +110,7 @@ You can use the following example of a card element with an image for blog posts
       Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
     </p>
     <Button>
-      Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ml-2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+      Read more <ArrowRightOutline class="w-3.5 h-3.5 ml-2 text-white"/>
     </Button>
   </Card>
   <Toggle bind:checked={vCard} class="mt-4 italic dark:text-gray-500">Reverse</Toggle>
@@ -118,7 +121,7 @@ You can use the following example of a card element with an image for blog posts
 
 If you want to spice up your cards you can use the following card which has its child elements aligned horizontally.
 
-```svelte example class="flex flex-wrap gap-2"
+```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
   import { Card, Button, Toggle } from "flowbite-svelte";
   let hCard = false;
@@ -138,7 +141,7 @@ If you want to spice up your cards you can use the following card which has its 
 
 Use this user profile card example if you want to show a dropdown menu and buttons to enable multiple actions from your user.
 
-```svelte example class="flex flex-wrap gap-2"
+```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
   import { Card, MenuButton, Dropdown, DropdownItem, Avatar, Button } from "flowbite-svelte";
 </script>
@@ -167,7 +170,7 @@ Use this user profile card example if you want to show a dropdown menu and butto
 
 Use this card example where you can add form input elements that can be used for authentication actions or any other context where you need to receive information from your users.
 
-```svelte example
+```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
   import { Card, Button, Label, Input, Checkbox } from "flowbite-svelte";
 </script>
@@ -198,7 +201,7 @@ Use this card example where you can add form input elements that can be used for
 
 Use this card for your e-commerce websites and show information about the products and enable actions such as adding a review and adding the product to the cart.
 
-```svelte example
+```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
   import { Card, Button, Rating, Badge } from "flowbite-svelte";
 </script>
@@ -227,7 +230,7 @@ Use this card for your e-commerce websites and show information about the produc
 
 Use this CTA card example to encourage your users to visit a certain page such as downloading the iOS or Android application for your project.
 
-```svelte example
+```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
   import { Card, Button } from "flowbite-svelte";
 </script>
@@ -247,7 +250,7 @@ Use this CTA card example to encourage your users to visit a certain page such a
 
 Use this card example if you want to show a list of data:
 
-```svelte example
+```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
   import { Card, Listgroup, Avatar } from "flowbite-svelte";
    let list = [
@@ -292,9 +295,10 @@ Use this card example if you want to show a list of data:
 
 Show detailed information to potential customers about your product’s pricing plan, list of features, and a purchase button.
 
-```svelte example
+```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
   import { Card, Button } from "flowbite-svelte";
+  import { CheckCircleSolid } from "flowbite-svelte-icons";
 </script>
 <Card padding="xl">
   <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Standard plan</h5>
@@ -306,32 +310,32 @@ Show detailed information to potential customers about your product’s pricing 
   <!-- List -->
   <ul class="my-7 space-y-4">
       <li class="flex space-x-2">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary-600 dark:text-primary-500"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-          <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">2 team members</span>
+        <CheckCircleSolid class="flex-shrink-0 w-4 h-4 text-primary-600 dark:text-primary-500" />
+        <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">2 team members</span>
       </li>
       <li class="flex space-x-2">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary-600 dark:text-primary-500"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-          <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">20GB Cloud storage</span>
+        <CheckCircleSolid class="flex-shrink-0 w-4 h-4 text-primary-600 dark:text-primary-500" />
+        <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">20GB Cloud storage</span>
       </li>
       <li class="flex space-x-2">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary-600 dark:text-primary-500"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-          <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">Integration help</span>
+        <CheckCircleSolid class="flex-shrink-0 w-4 h-4 text-primary-600 dark:text-primary-500" />
+        <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">Integration help</span>
       </li>
       <li class="flex space-x-2 line-through decoration-gray-500">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary-600 dark:text-primary-500"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-          <span class="text-base font-normal leading-tight text-gray-500">Sketch Files</span>
+        <CheckCircleSolid class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" />
+        <span class="text-base font-normal leading-tight text-gray-500">Sketch Files</span>
       </li>
       <li class="flex space-x-2 line-through decoration-gray-500">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary-600 dark:text-primary-500"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-          <span class="text-base font-normal leading-tight text-gray-500">API Access</span>
+        <CheckCircleSolid class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" />
+        <span class="text-base font-normal leading-tight text-gray-500">API Access</span>
       </li>
       <li class="flex space-x-2 line-through decoration-gray-500">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary-600 dark:text-primary-500"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-          <span class="text-base font-normal leading-tight text-gray-500">Complete documentation</span>
+        <CheckCircleSolid class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" />
+        <span class="text-base font-normal leading-tight text-gray-500">Complete documentation</span>
       </li>
       <li class="flex space-x-2 line-through decoration-gray-500">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary-600 dark:text-primary-500"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-          <span class="text-base font-normal leading-tight text-gray-500">24×7 phone & email support</span>
+        <CheckCircleSolid class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" />
+        <span class="text-base font-normal leading-tight text-gray-500">24×7 phone & email support</span>
       </li>
   </ul>
   <Button class="w-full">Choose plan</Button>
@@ -342,7 +346,7 @@ Show detailed information to potential customers about your product’s pricing 
 
 Use this example to split cards into multiple sections such as for testimonials or reviews.
 
-```svelte example hideScript
+```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
   import { Card } from "flowbite-svelte";
 </script>
