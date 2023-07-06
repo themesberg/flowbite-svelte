@@ -30,9 +30,10 @@ Explore the following examples based on various styles, sizes, and positionings 
 
 Use this free example to show a text message for announcement with a CTA link, an icon element and a close button to dismiss the banner.
 
-```svelte example class="flex flex-col relative" hideScript 
+```svelte example class="flex flex-col relative"  
 <script>
   import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte"
+  import { BullhornSolid } from "flowbite-svelte-icons"
 </script>
 
 <Skeleton class="py-4"/>
@@ -41,9 +42,7 @@ Use this free example to show a text message for announcement with a CTA link, a
 <Banner id="default-banner" position="absolute">
   <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
     <span class="inline-flex p-1 mr-3 bg-gray-200 rounded-full dark:bg-gray-600">
-        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"></path>
-        </svg>
+        <BullhornSolid size="14" class="text-gray-500 dark:text-gray-400" />
         <span class="sr-only">Light bulb</span>
     </span>
     <span>New brand identity has been launched for the <a href="https://flowbite.com" class="inline font-medium text-primary-600 underline dark:text-primary-500 underline-offset-2 decoration-600 dark:decoration-500 decoration-solid hover:no-underline">Flowbite Library</a></span>
@@ -55,9 +54,10 @@ Use this free example to show a text message for announcement with a CTA link, a
 
 This example can be used to position the sticky banner to the bottom side of the page instead of the top side.
 
-```svelte example class="flex flex-col relative" hideScript
+```svelte example class="flex flex-col relative" 
 <script>
   import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte"
+  import { SalePercentSolid, ArrowRightSolid } from "flowbite-svelte-icons"
 </script>
 
 <Skeleton class="py-4"/>
@@ -66,12 +66,10 @@ This example can be used to position the sticky banner to the bottom side of the
 <Banner id="bottom-banner" position="absolute" bannerType="bottom">
   <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
       <span class="inline-flex p-1 mr-3 bg-gray-200 rounded-full dark:bg-gray-600">
-          <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path clip-rule="evenodd" fill-rule="evenodd" d="M5 2a2 2 0 00-2 2v14l3.5-2 3.5 2 3.5-2 3.5 2V4a2 2 0 00-2-2H5zm2.5 3a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm6.207.293a1 1 0 00-1.414 0l-6 6a1 1 0 101.414 1.414l6-6a1 1 0 000-1.414zM12.5 10a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"></path>
-          </svg>
+          <SalePercentSolid size="14" class="text-gray-500 dark:text-gray-400" />
           <span class="sr-only">Discount coupon</span>
       </span>
-      <span>Get 5% commission per sale <a href="https://flowbite.com" class="flex items-center ml-0 text-sm font-medium text-primary-600 md:ml-1 md:inline-flex dark:text-primary-500 hover:underline">Become a partner <svg aria-hidden="true" class="w-4 h-4 ml-1 text-primary-600 dark:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillrule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" cliprule="evenodd"></path></svg></a></span>
+      <span>Get 5% commission per sale <a href="https://flowbite.com" class="flex items-center ml-0 text-sm font-medium text-primary-600 md:ml-1 md:inline-flex dark:text-primary-500 hover:underline">Become a partner <ArrowRightSolid size="14" class="ml-1 text-primary-600 dark:text-primary-500"/></a></span>
   </p>
 </Banner>
 ```
@@ -80,7 +78,7 @@ This example can be used to position the sticky banner to the bottom side of the
 
 Use this free example to show a text message for announcement with a CTA link. 
 
-```svelte example class="flex flex-col relative" hideScript
+```svelte example class="flex flex-col relative" 
 <script>
   import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte"
 </script>
@@ -103,7 +101,7 @@ Use this free example to show a text message for announcement with a CTA link.
 
 This example can be used to encourage your website visitors to sign up to your email newsletter by showing an inline form inside the sticky banner on the top side of your page.
 
-```svelte example class="flex flex-col relative" hideScript
+```svelte example class="flex flex-col relative" 
 <script>
   import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte"
 </script>
@@ -124,9 +122,10 @@ This example can be used to encourage your website visitors to sign up to your e
 
 This example can be used to share important information with your website visitors by showing a heading and a paragraph inside the sticky banner and two CTA buttons with links.
 
-```svelte example class="flex flex-col relative" hideScript
+```svelte example class="flex flex-col relative" 
 <script>
   import { Banner, Skeleton, ImagePlaceholder } from "flowbite-svelte"
+  import { OpenBookSolid, ArrowRightSolid } from "flowbite-svelte-icons"
 </script>
 
 <Skeleton class="py-4"/>
@@ -137,11 +136,11 @@ This example can be used to share important information with your website visito
     <h2 class="mb-1 text-base font-semibold text-gray-900 dark:text-white">Integration is the key</h2>
     <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">You can integrate Flowbite with many tools.</p>
   </div>
-  <a href="/" class="inline-flex items-center px-3 py-2 mr-3 text-xs font-medium text-gray-900 bg-white border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"><svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"></path></svg> 
+  <a href="/" class="inline-flex items-center px-3 py-2 mr-3 text-xs font-medium text-gray-900 bg-white border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"><OpenBookSolid size="14" class=" mr-1.5"/> 
   Learn more
   </a>
   <a href="/" class="inline-flex px-3 py-2 mr-2 text-xs font-medium text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
-    Get started <svg class="h-4 w-4 ml-1.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path clip-rule="evenodd" fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"></path></svg>
+    Get started <ArrowRightSolid size="14" class="ml-1.5 text-gray-200 hover:bg-gray-200 " />
   </a>
 </Banner>
 ```
