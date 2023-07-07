@@ -2,8 +2,6 @@
   import { afterNavigate } from '$app/navigation';
   import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from '$lib';
   import SidebarDropdownWrapper from '$lib/sidebars/SidebarDropdownWrapper.svelte';
-  import ChevronDown from '$lib/utils/ChevronDown.svelte';
-  import ChevronRight from '$lib/utils/ChevronRight.svelte';
   import { getContext } from 'svelte';
   import type { Writable } from 'svelte/store';
   import type { PageData } from '../$types';
@@ -64,8 +62,12 @@
             class={dropdowns[key]
               ? 'text-primary-700 dark:text-primary-700'
               : 'text-gray-900 dark:text-white'}>
-            <ChevronRight size="24" slot="arrowdown" variation="solid" />
-            <ChevronDown size="24" slot="arrowup" variation="solid" />
+            <svg slot="arrowdown"  class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+            </svg>
+            <svg slot="arrowup" class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+            </svg>
             {#each values as { meta, path }}
               {@const href = `/docs/${key}${path}`}
               {#if meta}
