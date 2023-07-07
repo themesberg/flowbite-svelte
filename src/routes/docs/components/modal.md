@@ -149,11 +149,11 @@ Use this web3 modal component to show crypto wallet connection options like Meta
 ```svelte example class="flex justify-center"
 <script>
   import { Button, Modal, Label, Input, Checkbox } from 'flowbite-svelte';
-  import MetaMask from '$lib/utils/MetaMask.svelte';
-  import CoinbaseWallet from '$lib/utils/CoinbaseWallet.svelte';
-  import OperaWallet from '$lib/utils/OperaWallet.svelte';
-  import Fortmatic from '$lib/utils/Fortmatic.svelte';
-  import WalletConnect from '$lib/utils/WalletConnect.svelte';
+  import MetaMask from '../../utils/icons/MetaMask.svelte';
+  import CoinbaseWallet from '../../utils/icons/CoinbaseWallet.svelte';
+  import OperaWallet from '../../utils/icons/OperaWallet.svelte';
+  import Fortmatic from '../../utils/icons/Fortmatic.svelte';
+  import WalletConnect from '../../utils/icons/WalletConnect.svelte';
   import { QuestionCircleOutline } from 'flowbite-svelte-icons';
   let walletModal = false;
 </script>
