@@ -27,7 +27,9 @@
   on:dragenter
   on:dragleave
   on:dragover
-  on:drop>
+  on:drop
+  type="button"
+  >
   <label tabIndex="0">
     <slot />
     <input
