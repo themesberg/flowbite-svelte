@@ -87,7 +87,8 @@ This example can be used to show more information about a company profile.
 
 ```svelte example class="flex h-96 items-end justify-center"
 <script>
-  import { Popover, Button, Avatar } from 'flowbite-svelte'
+  import { Popover, Button, Avatar } from 'flowbite-svelte';
+  import { GlobeOutline, HeartSolid, ThumbsUpSolid, DotsHorizontalOutline } from 'flowbite-svelte-icons';
 </script>
 
 <Button class="-mb-4">Company profile</Button>
@@ -106,11 +107,11 @@ This example can be used to show more information about a company profile.
       <p class="mb-4 text-sm font-light">Open-source library of Tailwind CSS components and Figma design system.</p>
       <ul class="text-sm font-light">
         <li class="flex items-center mb-2">
-            <svg class="w-4 h-4 mr-1 font-semibold text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.766 3.556h3.936c-.093-1.414-.377-2.649-.766-3.556-.24-.56-.5-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.971 5c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9h-1.946zm-2.003 2H8.032c.093 1.414.377 2.649.766 3.556.24.56.5.948.737 1.182.233.23.389.262.465.262.076 0 .232-.032.465-.262.238-.234.498-.623.737-1.182.389-.907.673-2.142.766-3.556zm1.166 4.118c.454-1.147.748-2.572.837-4.118h1.946a6.004 6.004 0 01-2.783 4.118zm-6.268 0C6.412 13.97 6.118 12.546 6.03 11H4.083a6.004 6.004 0 002.783 4.118z" clip-rule="evenodd"></path></svg>
+            <GlobeOutline class="w-3.5 h-3.5 mr-2" />
             <a href="/" class="text-primary-600 dark:text-primary-500 hover:underline">https://flowbite.com/</a>
         </li>
         <li class="flex items-start mb-2">
-            <svg class="mr-1 w-6 font-semibold text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
+            <HeartSolid class="w-5 h-5 mr-2" />
             <span>4,567,346 people like this including 5 of your friends</span>
         </li>
       </ul>
@@ -122,11 +123,11 @@ This example can be used to show more information about a company profile.
       </div>
       <div class="flex">
         <Button color="alternative" class="mr-2 w-full">
-          <svg class="mr-2 w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
+          <ThumbsUpSolid class="mr-2" />
           Like page
         </Button>
         <Button color="alternative">
-          <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+          <DotsHorizontalOutline class="w-3.5 h-3.5" />
         </Button>
       </div>
     </div>
@@ -140,7 +141,8 @@ Use this example to trigger a popover component with detailed information and an
 
 ```svelte example class="flex h-96 items-end"
 <script>
-  import { Popover } from 'flowbite-svelte'
+  import { Popover } from 'flowbite-svelte';
+  import { ChevronRightOutline } from 'flowbite-svelte-icons';
 </script>
 
 <p class="font-light text-gray-500 dark:text-gray-400">Due to its central geographic location in Southern Europe, <a href="/" class="text-primary-600 underline dark:text-primary-500 hover:no-underline" id="popover-image">Italy</a> has historically been home to myriad peoples and cultures. In addition to the various ancient peoples dispersed throughout what is now modern-day Italy, the most predominant being the Indo-European Italic peoples who gave the peninsula its name, beginning from the classical era, Phoenicians and Carthaginians founded colonies mostly in insular Italy</p>
@@ -150,7 +152,7 @@ Use this example to trigger a popover component with detailed information and an
       <div class="space-y-2">
         <h3 class="font-semibold text-gray-900 dark:text-white">About Italy<h3>
         <p class="text-gray-500 dark:text-gray-500">Italy is located in the middle of the Mediterranean Sea, in Southern Europe it is also considered part of Western Europe. A unitary parliamentary republic with Rome as its capital and largest city.</p>
-        <a href="/" class="flex items-center font-medium text-primary-600 dark:text-primary-500 dark:hover:text-primary-600 hover:text-primary-700">Read more <svg class="ml-1 w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></a>
+        <a href="/" class="flex items-center font-medium text-primary-600 dark:text-primary-500 dark:hover:text-primary-600 hover:text-primary-700">Read more <ChevronRightOutline class="w-2 h-2 ml-1.5 text-primary-600 dark:text-primary-500" /></a>
       </div>
     </div>
     <img src="/images/italy.png" class="col-span-2 h-full rounded-r-lg" alt="Italy map" />
@@ -164,12 +166,13 @@ Show helpful information inside a popover when hovering over a question mark but
 
 ```svelte example class="h-96"
 <script>
-  import { Popover, ChevronRight } from 'flowbite-svelte'
+  import { Popover } from 'flowbite-svelte';
+  import { QuestionCircleSolid, ChevronRightOutline } from 'flowbite-svelte-icons';
 </script>
 
 <div class="flex items-center text-sm font-light text-gray-500 dark:text-gray-400">This is just some informational text
   <button id="b3">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 ml-1"><path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 01-.988-1.129c1.454-1.272 3.776-1.272 5.23 0 1.513 1.324 1.513 3.518 0 4.842a3.75 3.75 0 01-.837.552c-.676.328-1.028.774-1.028 1.152v.75a.75.75 0 01-1.5 0v-.75c0-1.279 1.06-2.107 1.875-2.502.182-.088.351-.199.503-.331.83-.727.83-1.857 0-2.584zM12 18a.75.75 0 100-1.5.75.75 0 000 1.5z" clip-rule="evenodd" /></svg>
+  <QuestionCircleSolid class="w-4 h-4 ml-1.5" />
   <span class="sr-only">Show information</span></button>
 </div>
 <Popover triggeredBy="#b3" class="w-72 text-sm font-light text-gray-500 bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400" placement="bottom-start">
@@ -178,7 +181,7 @@ Show helpful information inside a popover when hovering over a question mark but
       Report helps navigate cumulative growth of community activities. Ideally, the chart should have a growing trend.
       <h3 class="font-semibold text-gray-900 dark:text-white">Calculation</h3>
       For each date bucket, the all-time volume of activities is calculated. This means that activities in period n contain all activities up to period n.
-      <a href="/" class="flex items-center font-medium text-primary-600 dark:text-primary-500 dark:hover:text-primary-600 hover:text-primary-700">Read more <ChevronRight size="12" /></a>
+      <a href="/" class="flex items-center font-medium text-primary-600 dark:text-primary-500 dark:hover:text-primary-600 hover:text-primary-700">Read more <ChevronRightOutline class="w-2 h-2 ml-1.5 text-primary-600 dark:text-primary-500" /></a>
   </div>
 </Popover>
 ```
@@ -189,10 +192,11 @@ Show a progress bar with details inside a popover when hovering over a settings 
 
 ```svelte example class="h-60 flex justify-center items-end"
 <script>
-  import { Popover, ChevronRight, Button } from 'flowbite-svelte'
+  import { Popover, ChevronRight, Button } from 'flowbite-svelte';
+  import { DatabaseSolid } from 'flowbite-svelte-icons';
 </script>
 
-<Button id="progress"><svg class="mr-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z"></path><path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z"></path><path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z"></path></svg> Storage status</Button>
+<Button id="progress"><DatabaseSolid class="mr-2 w-4 h-4 text-white dark:text-white" /> Storage status</Button>
 <Popover triggeredBy="#progress" class="text-sm w-64 font-light">
   <div class="space-y-2">
     <h3 class="font-semibold text-gray-900 dark:text-white">Available storage</h3>
@@ -213,7 +217,8 @@ Dynamically show the password strength progress when creating a new password pos
 
 ```svelte example
 <script>
-  import { Popover, Label, Input, Checkbox, Button } from 'flowbite-svelte'
+  import { Popover, Label, Input, Checkbox, Button } from 'flowbite-svelte';
+  import { CheckOutline, CloseOutline } from 'flowbite-svelte-icons';
 </script>
 
 <form on:submit|preventDefault class="mb-8">
@@ -238,17 +243,17 @@ Dynamically show the password strength progress when creating a new password pos
   </div>
   <p class="py-2">It’s better to have:</p>
   <ul>
-      <li class="flex items-center mb-1">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-2 w-4 h-4 text-green-400 dark:text-green-500"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-Upper &amp; lower case letters 
-      </li>
-      <li class="flex items-center mb-1">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-2 w-4 h-4 text-gray-300 dark:text-gray-400"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-          A symbol (#$&amp;) 
-      </li>
-      <li class="flex items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-2 w-4 h-4 text-gray-300 dark:text-gray-400"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>A longer password (min. 12 chars.)
-      </li>
+    <li class="flex items-center mb-1">
+      <CheckOutline class="mr-2 w-4 h-4 text-green-400 dark:text-green-500" />
+      Upper &amp; lower case letters 
+    </li>
+    <li class="flex items-center mb-1">
+      <CheckOutline class="mr-2 w-4 h-4 text-green-400 dark:text-green-500" />
+        A symbol (#$&amp;) 
+    </li>
+    <li class="flex items-center">
+        <CloseOutline class="mr-2 w-4 h-4 text-gray-300 dark:text-gray-400" />A longer password (min. 12 chars.)
+    </li>
   </ul>
 </Popover>
 ```
