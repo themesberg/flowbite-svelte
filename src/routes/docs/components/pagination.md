@@ -79,7 +79,8 @@ The following pagination component example shows how you can use SVG icons inste
 ```svelte example class="flex flex-col justify-center items-center gap-3"
 <script>
   import { page } from '$app/stores';
-  import { Pagination, ChevronLeft, ChevronRight } from 'flowbite-svelte'
+  import { Pagination } from 'flowbite-svelte';
+  import { ChevronLeftOutline, ChevronRightOutline } from 'flowbite-svelte-icons';
 
   $: activeUrl = $page.url.searchParams.get('page')
   let pages = [
@@ -116,22 +117,22 @@ The following pagination component example shows how you can use SVG icons inste
 <Pagination {pages} on:previous={previous} on:next={next} icon  >
   <svelte:fragment slot="prev">
     <span class="sr-only">Previous</span>
-    <ChevronLeft class="w-5 h-5"/>
+    <ChevronLeftOutline class="w-2.5 h-2.5"/>
   </svelte:fragment>
   <svelte:fragment slot="next">
     <span class="sr-only">Next</span>
-    <ChevronRight class="w-5 h-5"/>
+    <ChevronRightOutline class="w-2.5 h-2.5"/>
   </svelte:fragment>
 </Pagination>
 
 <Pagination {pages} large on:previous={previous} on:next={next} icon  >
   <svelte:fragment slot="prev">
     <span class="sr-only">Previous</span>
-    <ChevronLeft class="w-5 h-5"/>
+    <ChevronLeftOutline class="w-3 h-3"/>
   </svelte:fragment>
   <svelte:fragment slot="next">
     <span class="sr-only">Next</span>
-    <ChevronRight class="w-5 h-5"/>
+    <ChevronRightOutline class="w-3 h-3"/>
   </svelte:fragment>
 </Pagination>
 
@@ -168,7 +169,8 @@ Use the following code to show simple previous and next elements with icons.
 
 ```svelte example class="flex flex-col justify-center items-center gap-3"
 <script>
-  import { Pagination, PaginationItem } from 'flowbite-svelte'
+  import { Pagination, PaginationItem } from 'flowbite-svelte';
+  import { ArrowLeftSolid, ArrowRightSolid} from 'flowbite-svelte-icons';
   const previous = () => {
     alert('Previous btn clicked. Make a call to your server to fetch data.');
   };
@@ -179,22 +181,22 @@ Use the following code to show simple previous and next elements with icons.
 
 <div class="flex space-x-3">
   <PaginationItem class="flex items-center" on:click={previous}>
-    <svg class="mr-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"/></svg>
+    <ArrowLeftSolid class="mr-2 w-3.5 h-3.5" />
     Previous
   </PaginationItem>
   <PaginationItem class="flex items-center" on:click={next}>
     Next
-    <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+    <ArrowRightSolid class="ml-2 w-3.5 h-3.5" />
   </PaginationItem>
 </div>
 <div class="flex space-x-3">
   <PaginationItem large class="flex items-center" on:click={previous}>
-    <svg class="mr-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"/></svg>
+    <ArrowLeftSolid class="mr-2 w-5 h-5" />
     Previous
   </PaginationItem>
   <PaginationItem large class="flex items-center" on:click={next}>
     Next
-    <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+    <ArrowRightSolid class="ml-2 w-5 h-5" />
   </PaginationItem>
 </div>
 ```
@@ -247,8 +249,8 @@ You can use the following code to show the number of data shown inside a table e
 
 ```svelte example class="flex flex-col justify-center items-center gap-3"
 <script>
-  import { Pagination } from 'flowbite-svelte'
-
+  import { Pagination } from 'flowbite-svelte';
+  import { ArrowLeftOutline, ArrowRightOutline } from 'flowbite-svelte-icons';
   let helper = {start: 1, end: 10, total: 100}
 
   const previous = () => {
@@ -267,13 +269,13 @@ You can use the following code to show the number of data shown inside a table e
   </div>
 
   <Pagination table>
-    <div slot="prev" class="flex items-center gap-2">
-      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"/></svg>
+    <div slot="prev" class="flex items-center gap-2 text-white bg-gray-800">
+      <ArrowLeftOutline class="w-3.5 h-3.5 mr-2" />
       Prev
     </div>
-    <div slot="next" class="flex items-center gap-2">
+    <div slot="next" class="flex items-center gap-2 text-white bg-gray-800">
       Next
-      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+      <ArrowRightOutline class="w-3.5 h-3.5 ml-2" />
     </div>
   </Pagination>
 </div>
@@ -285,13 +287,13 @@ You can use the following code to show the number of data shown inside a table e
   </div>
 
   <Pagination table large>
-    <div slot="prev" class="flex items-center gap-2">
-      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"/></svg>
+    <div slot="prev" class="flex items-center gap-2 text-white bg-gray-800">
+      <ArrowLeftOutline class="w-3.5 h-3.5 mr-2" />
       Prev
     </div>
-    <div slot="next" class="flex items-center gap-2">
+    <div slot="next" class="flex items-center gap-2 text-white bg-gray-800">
       Next
-      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+      <ArrowRightOutline class="w-3.5 h-3.5 mr-2" />
     </div>
   </Pagination>
 </div>
