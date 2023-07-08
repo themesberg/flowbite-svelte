@@ -174,10 +174,11 @@ Use this example to show a list of checkbox items inside a dropdown menu.
 
 ```svelte example hideScript class="flex justify-center items-start h-96"
 <script>
-  import { Dropdown, DropdownItem, Checkbox, Button, Chevron, Search } from 'flowbite-svelte'
+  import { Dropdown, DropdownItem, Checkbox, Button, Search } from 'flowbite-svelte';
+  import { ChevronDownOutline } from 'flowbite-svelte-icons';
 </script>
 
-<Button><Chevron>Project users</Chevron></Button>
+<Button>Project users<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
 <Dropdown class="overflow-y-auto px-3 pb-3 text-sm h-44">
   <div slot="header" class="p-3">
     <Search size="md"/>

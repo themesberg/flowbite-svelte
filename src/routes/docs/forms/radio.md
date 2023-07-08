@@ -174,11 +174,12 @@ Here’s an example of a list group that you can use right away.
 
 ```svelte example hideScript class="flex justify-center items-start h-80"
 <script>
-  import { Radio, Dropdown, Button, Chevron, Helper } from 'flowbite-svelte'
+  import { Radio, Dropdown, Button, Helper } from 'flowbite-svelte';
+  import { ChevronDownOutline } from 'flowbite-svelte-icons';
   let group3=2;
 </script>
 
-<Button><Chevron>Dropdown radio</Chevron></Button>
+<Button>Dropdown radio<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
 <Dropdown class="w-60">
   <ul class="p-2">
     <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">

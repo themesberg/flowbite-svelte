@@ -27,9 +27,10 @@ The mega menu component is a full-width dropdown that can be triggered by clicki
 
 Use this example to show a list of links aligned on three columns inside the mega menu dropdown.
 
-```svelte example class="h-80 md:h-64"
+```svelte example class="h-80"
 <script>
-  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, Chevron, MegaMenu } from 'flowbite-svelte'
+  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from 'flowbite-svelte';
+  import { ChevronDownOutline } from 'flowbite-svelte-icons';
   let menu = [
     {name: 'About us', href: '/about'},
     {name: 'Blog', href: '/blog'},
@@ -53,7 +54,7 @@ Use this example to show a list of links aligned on three columns inside the meg
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
     <NavLi href="/">Home</NavLi>
-    <NavLi class="cursor-pointer"><Chevron aligned>Mega menu</Chevron></NavLi>
+    <NavLi class="cursor-pointer">Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
     <MegaMenu items={menu} let:item>
       <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
     </MegaMenu>
@@ -68,9 +69,10 @@ Use this example to show a list of links aligned on three columns inside the meg
 
 This example of a mega menu dropdown can be used to also show an icon near the text of the link.
 
-```svelte example class="h-80 md:h-60"
+```svelte example class="h-80 md:h-80"
 <script>
-  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, Chevron, MegaMenu, UserCircle } from 'flowbite-svelte'
+  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, Chevron, MegaMenu, UserCircle } from 'flowbite-svelte';
+  import { ChevronDownOutline } from 'flowbite-svelte-icons';
   let menu = [
     {name: 'About us', href: '/about', icon: UserCircle},
     {name: 'Blog', href: '/blog', icon: UserCircle},
@@ -94,7 +96,7 @@ This example of a mega menu dropdown can be used to also show an icon near the t
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
     <NavLi href="/">Home</NavLi>
-    <NavLi class="cursor-pointer"><Chevron aligned>Mega menu</Chevron></NavLi>
+    <NavLi class="cursor-pointer">Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
     <MegaMenu items={menu} let:item>
         <a href={item.href} class="flex items-center hover:text-primary-600 dark:hover:text-primary-500">
           <span class="sr-only">{item.name}</span>
@@ -114,7 +116,8 @@ Use this example to show a mega menu dropdown that spans the entire width of the
 
 ```svelte example class="h-96 relative"
 <script>
-  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, Chevron, MegaMenu } from 'flowbite-svelte'
+  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, Chevron, MegaMenu } from 'flowbite-svelte';
+  import { ChevronDownOutline } from 'flowbite-svelte-icons';
   let menu2 = [
     {name: 'Online Stores', help: "Connect with third-party tools that you're already using."},
     {name: 'Segmentation', help: "Connect with third-party tools that you're already using."},
@@ -138,7 +141,7 @@ Use this example to show a mega menu dropdown that spans the entire width of the
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
       <NavLi href="/">Home</NavLi>
-      <NavLi class="cursor-pointer"><Chevron aligned>Mega menu</Chevron></NavLi>
+      <NavLi class="cursor-pointer">Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
       <MegaMenu full items={menu2} let:item>
         <a href="/" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 h-full">
           <div class="font-semibold dark:text-white">{item.name}</div>
@@ -156,10 +159,10 @@ Use this example to show a mega menu dropdown that spans the entire width of the
 
 This example can be used to also show a CTA button or link next to the menu items inside the dropdown.
 
-```svelte example class="h-80 relative"
+```svelte example class="h-96 relative"
 <script>
   import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, Chevron, MegaMenu } from 'flowbite-svelte';
-  import { ArrowRightOutline } from "flowbite-svelte-icons";
+  import { ArrowRightOutline, ChevronDownOutline } from "flowbite-svelte-icons";
   let menu = [
     {name: 'About us', href: '/about'},
     {name: 'Blog', href: '/blog'},
@@ -183,7 +186,7 @@ This example can be used to also show a CTA button or link next to the menu item
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
     <NavLi href="/">Home</NavLi>
-    <NavLi class="cursor-pointer"><Chevron aligned>Mega menu</Chevron></NavLi>
+    <NavLi class="cursor-pointer">Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
     <MegaMenu full items={menu} let:item>
       <a href={item.href} class="hover:underline hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
       <div slot="extra" class="">
@@ -207,9 +210,10 @@ This example can be used to also show a CTA button or link next to the menu item
 
 This example can be used to also show a CTA with a backdround image inside the dropdown next to the other menu items and links.
 
-```svelte example class="h-80 relative"
+```svelte example class="h-96 relative"
 <script>
-  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, Chevron, MegaMenu, Button } from 'flowbite-svelte'
+  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, Chevron, MegaMenu, Button } from 'flowbite-svelte';
+  import { ChevronDownOutline } from 'flowbite-svelte-icons';
   let menu = [
     {name: 'About us', href: '/about'},
     {name: 'Blog', href: '/blog'},
@@ -233,7 +237,7 @@ This example can be used to also show a CTA with a backdround image inside the d
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
     <NavLi href="/">Home</NavLi>
-    <NavLi class="cursor-pointer"><Chevron aligned>Mega menu</Chevron></NavLi>
+    <NavLi class="cursor-pointer">Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
     <MegaMenu full items={menu} let:item>
       <a href={item.href} class="hover:underline hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
       <a slot="extra" href="/" class="block mt-4 p-4 text-left bg-local bg-gray-500 bg-center bg-no-repeat bg-cover rounded-lg bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken" style="background-image: url(/images/nature-1.webp)">
