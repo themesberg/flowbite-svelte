@@ -42,8 +42,7 @@
     background ? 'dark:bg-gray-600 dark:border-gray-500' : 'dark:bg-gray-700 dark:border-gray-600',
     colors[($$restProps.color as FormColorType) ?? 'primary'],
     sizes[size],
-    'relative',
-    $$props.class
+    'relative'
   );
 </script>
 
