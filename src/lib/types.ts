@@ -58,19 +58,7 @@ export type ImgType = {
   alt?: string;
 };
 
-export type IndicatorColorType =
-  | 'gray'
-  | 'dark'
-  | 'blue'
-  | 'green'
-  | 'red'
-  | 'purple'
-  | 'indigo'
-  | 'yellow'
-  | 'teal'
-  | 'none';
-
-export type IndicatorPlacementType =
+export type PlacementType =
   | 'top-left'
   | 'top-center'
   | 'top-right'
@@ -79,8 +67,7 @@ export type IndicatorPlacementType =
   | 'center-right'
   | 'bottom-left'
   | 'bottom-center'
-  | 'bottom-right'
-  | undefined;
+  | 'bottom-right';
 
 export type InputType =
   | 'color'
