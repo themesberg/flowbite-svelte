@@ -599,7 +599,7 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
 ```svelte example class="flex justify-center items-center gap-2 h-96"
 <script>
   import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
-  import { ChevronDownOutline, ChevronUpOutline, ChevronRightOutline, ChevronLeftOutline } from 'flowbite-svelte-icons';
+  import { ChevronDownOutline, ChevronUpOutline } from 'flowbite-svelte-icons';
   let placement='left'
 </script>
 
