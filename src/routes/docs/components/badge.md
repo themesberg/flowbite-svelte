@@ -150,13 +150,13 @@ To achive the functionality of the notification badge, use the sibling [`Indicat
 </Button>
 
 <Button class="relative" size='sm'>
-  <EnvelopeSolid class="text-white dark:text-white" size="24"/>
+  <EnvelopeSolid class="text-white dark:text-white" />
   <span class="sr-only">Notifications</span>
   <Indicator color="red" border size="xl" placement="top-right" class="text-xs font-bold">20</Indicator>
 </Button>
 
 <Button class="relative" size='sm'>
-  <EnvelopeSolid class="text-white dark:text-white" size="24"/>
+  <EnvelopeSolid class="text-white dark:text-white" />
   <span class="sr-only">Notifications</span>
   <Indicator color="dark" border size="xl" placement="bottom-right" class="text-xs font-bold">20</Indicator>
 </Button>
@@ -189,11 +189,11 @@ Alternatively you can also use badges which indicate only a SVG icon.
   import { CheckOutline } from 'flowbite-svelte-icons';
 </script>
 <Badge color="dark" rounded large class="!p-1 !font-semibold">
-  <CheckOutline size="12"/>
+  <CheckOutline class="h-3 w-3"/>
   <span class="sr-only">Icon description</span>
 </Badge>
 <Badge rounded large class="!p-1 !font-semibold">
-  <CheckOutline size="12" class="text-primary-800 dark:text-primary-400" />
+  <CheckOutline class="h-3 w-3 text-primary-800 dark:text-primary-400" />
   <span class="sr-only">Icon description</span>
 </Badge>
 ```
@@ -228,7 +228,7 @@ Use the `close-button` slot to add your desired button. Don't forget to use the 
 <Badge dismissable>
   Default
   <button slot="close-button" let:close on:click={close} type="button" class="inline-flex items-center rounded-full p-0.5 my-0.5 ml-1.5 -mr-1.5 text-sm bg-primary-500 dark:bg-primary-400 text-white dark:text-primary-800 hover:bg-primary-900 hover:text-white dark:hover:bg-red-900 dark:hover:text-yellow-300" aria-label="Remove">
-    <CloseCircleSolid class="text-white" size="20" />
+    <CloseCircleSolid class="h-4 w-4" />
     <span class="sr-only">Remove badge</span>
   </button>
 </Badge>

@@ -135,27 +135,27 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
 ```svelte example 
 <script>
   import {AccordionItem, Accordion} from 'flowbite-svelte'
-  import { AngleDownSolid, AngleUpSolid } from 'flowbite-svelte-icons'
+  import { ChervonDoubleDownSolid, ChervonDoubleUpSolid } from 'flowbite-svelte-icons'
 </script>
 
 <Accordion>
   <AccordionItem>
     <span slot="header">Header 2-1</span>
     <div slot="arrowup">
-      <AngleUpSolid size="12" class="shrink-0 -mr-0.5" />
+      <ChervonDoubleUpSolid class="h-3 w-3 shrink-0 -mr-0.5" />
     </div>
     <span slot="arrowdown">
-      <AngleDownSolid size="12" class="shrink-0 -mr-0.5" />
+      <ChervonDoubleDownSolid class="h-3 w-3 shrink-0 -mr-0.5" />
     </span>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
   <AccordionItem>
     <span slot="header">Header 2-2</span>
         <div slot="arrowup">
-      <AngleUpSolid size="12" class="shrink-0 -mr-0.5" />
+      <ChervonDoubleUpSolid class="h-3 w-3 shrink-0 -mr-0.5" />
     </div>
     <span slot="arrowdown">
-      <AngleDownSolid size="12" class="shrink-0 -mr-0.5" />
+      <ChervonDoubleDownSolid class="h-3 w-3 shrink-0 -mr-0.5" />
     </span>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>

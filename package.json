@@ -42,7 +42,7 @@
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-svelte": "^2.32.2",
-    "flowbite-svelte-icons": "^0.1.2",
+    "flowbite-svelte-icons": "^0.2.1",
     "mdsvex": "^0.11.0",
     "mdsvexamples": "^0.3.3",
     "postcss": "^8.4.24",
