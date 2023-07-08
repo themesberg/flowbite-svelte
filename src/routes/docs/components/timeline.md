@@ -37,6 +37,7 @@ The timeline component can be used to show series of data in a chronological ord
 ```svelte example
 <script>
   import { Timeline, TimelineItem, Button } from 'flowbite-svelte';
+  import { ArrowRightOutline } from 'flowbite-svelte-icons';
 </script>
 
 <Timeline>
@@ -46,16 +47,7 @@ The timeline component can be used to show series of data in a chronological ord
       and pre-order E-commerce & Marketing pages.
     </p>
     <Button color="alternative"
-      >Learn more<svg
-        class="ml-2 w-3 h-3"
-        fill="currentColor"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-        ><path
-          fill-rule="evenodd"
-          d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-          clip-rule="evenodd" /></svg
-      ></Button>
+      >Learn more<ArrowRightOutline class="ml-2 w-3 h-3"/></Button>
   </TimelineItem>
   <TimelineItem title="Application UI code in Tailwind CSS" date="March 2022">
     <p class="text-base font-normal text-gray-500 dark:text-gray-400">
@@ -79,6 +71,7 @@ Use this vertical timeline component with icons and badges to show a more advanc
 ```svelte example
 <script>
   import { Timeline, TimelineItem } from 'flowbite-svelte';
+  import { CalendarWeekSolid } from 'flowbite-svelte-icons';
 </script>
 
 <Timeline order="vertical">
@@ -86,16 +79,7 @@ Use this vertical timeline component with icons and badges to show a more advanc
     <svelte:fragment slot="icon">
       <span
         class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-primary-900">
-        <svg
-          aria-hidden="true"
-          class="w-3 h-3 text-primary-600 dark:text-primary-400"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-          ><path
-            fill-rule="evenodd"
-            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-            clip-rule="evenodd" /></svg>
+        <CalendarWeekSolid class="w-3 h-3 text-primary-600 dark:text-primary-400" />
       </span>
     </svelte:fragment>
     <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
@@ -107,16 +91,7 @@ Use this vertical timeline component with icons and badges to show a more advanc
     <svelte:fragment slot="icon">
       <span
         class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-primary-900">
-        <svg
-          aria-hidden="true"
-          class="w-3 h-3 text-primary-600 dark:text-primary-400"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-          ><path
-            fill-rule="evenodd"
-            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-            clip-rule="evenodd" /></svg>
+        <CalendarWeekSolid class="w-3 h-3 text-primary-600 dark:text-primary-400" />
       </span>
     </svelte:fragment>
     <p class="text-base font-normal text-gray-500 dark:text-gray-400">
@@ -128,16 +103,7 @@ Use this vertical timeline component with icons and badges to show a more advanc
     <svelte:fragment slot="icon">
       <span
         class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-primary-900">
-        <svg
-          aria-hidden="true"
-          class="w-3 h-3 text-primary-600 dark:text-primary-400"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-          ><path
-            fill-rule="evenodd"
-            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-            clip-rule="evenodd" /></svg>
+        <CalendarWeekSolid class="w-3 h-3 text-primary-600 dark:text-primary-400" />
       </span>
     </svelte:fragment>
     <p class="text-base font-normal text-gray-500 dark:text-gray-400">
@@ -155,6 +121,7 @@ Use this horizontally aligned timeline component to show a series of data in a c
 ```svelte example
 <script>
   import { Timeline, TimelineItem } from 'flowbite-svelte';
+  import { CalendarWeekSolid } from 'flowbite-svelte-icons';
 </script>
 
 <Timeline order="horizontal">
@@ -162,7 +129,7 @@ Use this horizontally aligned timeline component to show a series of data in a c
     <svelte:fragment slot="icon">
         <div class="flex items-center">
           <div class="flex z-10 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0">
-              <svg aria-hidden="true" class="w-3 h-3 text-primary-600 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+              <CalendarWeekSolid class="w-3 h-3 text-primary-600 dark:text-primary-400" />
           </div>
           <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
       </div>
@@ -175,7 +142,7 @@ Use this horizontally aligned timeline component to show a series of data in a c
     <svelte:fragment slot="icon">
         <div class="flex items-center">
           <div class="flex z-10 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0">
-              <svg aria-hidden="true" class="w-3 h-3 text-primary-600 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+              <CalendarWeekSolid class="w-3 h-3 text-primary-600 dark:text-primary-400" />
           </div>
           <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
       </div>
@@ -188,7 +155,7 @@ Use this horizontally aligned timeline component to show a series of data in a c
     <svelte:fragment slot="icon">
         <div class="flex items-center">
           <div class="flex z-10 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0">
-              <svg aria-hidden="true" class="w-3 h-3 text-primary-600 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+              <CalendarWeekSolid class="w-3 h-3 text-primary-600 dark:text-primary-400" />
           </div>
           <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
       </div>
