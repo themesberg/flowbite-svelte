@@ -69,7 +69,8 @@ This example can be used to show a secondary dropdown menu when clicking on one 
 
 ```svelte example class="h-80"
 <script>
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Dropdown, DropdownItem, Chevron, DropdownDivider } from 'flowbite-svelte'
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Dropdown, DropdownItem, DropdownDivider } from 'flowbite-svelte';
+  import { ChevronDownOutline } from 'flowbite-svelte-icons';
 </script>
 
 <Navbar let:hidden let:toggle>
@@ -86,7 +87,7 @@ This example can be used to show a secondary dropdown menu when clicking on one 
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
     <NavLi href="/" active={true}>Home</NavLi>
-    <NavLi id="nav-menu1" class="cursor-pointer"><Chevron aligned>Dropdown</Chevron></NavLi>
+    <NavLi id="nav-menu1" class="cursor-pointer">Dropdown<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
     <NavLi href="/services">Services</NavLi>
     <NavLi href="/pricing">Pricing</NavLi>
     <NavLi href="/contact">Contact</NavLi>
