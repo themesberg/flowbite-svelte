@@ -74,11 +74,10 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
 
 <Label class="block mb-2">Your email</Label>
 <Input label="Email" id="email" name="email" required placeholder="name@flowbite.com" />
-<Helper class="text-sm mt-2"
-  >We’ll never share your details. Read our <a
-    href="/"
-    class="font-medium text-primary-600 hover:underline dark:text-primary-500">Privacy Policy</a
-  >.</Helper>
+<Helper class="text-sm mt-2">
+  We’ll never share your details. Read our <a href="/" class="font-medium text-primary-600 hover:underline dark:text-primary-500"> Privacy Policy </a>
+  .
+</Helper>
 ```
 
 ## Input element with icon
@@ -130,13 +129,18 @@ Use the following example to apply validation styles for success and error messa
 <div class="mb-6">
   <Label for="success" color="green" class="block mb-2">Your name</Label>
   <Input id="success" color="green" placeholder="Success input" />
-  <Helper class="mt-2" color="green"
-    ><span class="font-medium">Well done!</span> Some success message.</Helper>
+  <Helper class="mt-2" color="green">
+    <span class="font-medium">Well done!</span>
+    Some success message.
+  </Helper>
 </div>
 <div class="mb-6">
   <Label for="error" color="red" class="block mb-2">Your name</Label>
   <Input id="success" color="red" placeholder="Success input" />
-  <Helper class="mt-2" color="red"><span class="font-medium">Well done!</span> Some success message.</Helper>
+  <Helper class="mt-2" color="red">
+    <span class="font-medium">Well done!</span>
+    Some success message.
+  </Helper>
 </div>
 ```
 
@@ -173,8 +177,8 @@ Get started with the default example of a select input component to get a single
   ];
 </script>
 
-<Label
-  >Select an option
+<Label>
+  Select an option
   <Select class="mt-2" items={countries} bind:value={selected} />
 </Label>
 ```

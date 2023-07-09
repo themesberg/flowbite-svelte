@@ -54,8 +54,9 @@ Use this example to show a list of links aligned on three columns inside the meg
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
     <NavLi href="/">Home</NavLi>
-    <NavLi class="cursor-pointer"
-      >Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
+    <NavLi class="cursor-pointer">
+      Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" />
+    </NavLi>
     <MegaMenu items={menu} let:item>
       <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
     </MegaMenu>
@@ -97,8 +98,9 @@ This example of a mega menu dropdown can be used to also show an icon near the t
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
     <NavLi href="/">Home</NavLi>
-    <NavLi class="cursor-pointer"
-      >Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
+    <NavLi class="cursor-pointer">
+      Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" />
+    </NavLi>
     <MegaMenu items={menu} let:item>
       <a href={item.href} class="flex items-center hover:text-primary-600 dark:hover:text-primary-500">
         <span class="sr-only">{item.name}</span>
@@ -143,8 +145,9 @@ Use this example to show a mega menu dropdown that spans the entire width of the
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
     <NavLi href="/">Home</NavLi>
-    <NavLi class="cursor-pointer"
-      >Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
+    <NavLi class="cursor-pointer">
+      Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" />
+    </NavLi>
     <MegaMenu full items={menu2} let:item>
       <a href="/" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 h-full">
         <div class="font-semibold dark:text-white">{item.name}</div>
@@ -189,23 +192,20 @@ This example can be used to also show a CTA button or link next to the menu item
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
     <NavLi href="/">Home</NavLi>
-    <NavLi class="cursor-pointer"
-      >Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
+    <NavLi class="cursor-pointer">
+      Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" />
+    </NavLi>
     <MegaMenu full items={menu} let:item>
-      <a href={item.href} class="hover:underline hover:text-primary-600 dark:hover:text-primary-500"
-        >{item.name}</a>
+      <a href={item.href} class="hover:underline hover:text-primary-600 dark:hover:text-primary-500">
+        {item.name}
+      </a>
       <div slot="extra" class="">
         <h2 class="mt-4 mb-2 font-semibold text-gray-900 dark:text-white">Our brands</h2>
-        <p class="mb-2 p-0 text-sm font-light text-gray-500 dark:text-gray-300">
-          At Flowbite, we have a portfolio of brands that cater to a variety of preferences.
-        </p>
-        <a
-          href="/"
-          class="inline-flex items-center text-sm font-medium text-primary-600 hover:underline hover:text-primary-600 dark:text-primary-500 dark:hover:text-primary-700">
+        <p class="mb-2 p-0 text-sm font-light text-gray-500 dark:text-gray-300">At Flowbite, we have a portfolio of brands that cater to a variety of preferences.</p>
+        <a href="/" class="inline-flex items-center text-sm font-medium text-primary-600 hover:underline hover:text-primary-600 dark:text-primary-500 dark:hover:text-primary-700">
           Explore our brands
-          <span class="sr-only">Explore our brands </span>
-          <ArrowRightOutline
-            class="w-3.5 h-3.5 ml-2 text-primary-600  hover:text-primary-600 dark:text-primary-500 dark:hover:text-primary-700" />
+          <span class="sr-only">Explore our brands</span>
+          <ArrowRightOutline class="w-3.5 h-3.5 ml-2 text-primary-600  hover:text-primary-600 dark:text-primary-500 dark:hover:text-primary-700" />
         </a>
       </div>
     </MegaMenu>
@@ -247,19 +247,15 @@ This example can be used to also show a CTA with a backdround image inside the d
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
     <NavLi href="/">Home</NavLi>
-    <NavLi class="cursor-pointer"
-      >Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
+    <NavLi class="cursor-pointer">
+      Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" />
+    </NavLi>
     <MegaMenu full items={menu} let:item>
-      <a href={item.href} class="hover:underline hover:text-primary-600 dark:hover:text-primary-500"
-        >{item.name}</a>
-      <a
-        slot="extra"
-        href="/"
-        class="block mt-4 p-4 text-left bg-local bg-gray-500 bg-center bg-no-repeat bg-cover rounded-lg bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken"
-        style="background-image: url(/images/nature-1.webp)">
-        <p class="mb-5 max-w-xl text-sm p-0 font-extrabold tracking-tight leading-tight text-white">
-          Preview the new Flowbite dashboard navigation.
-        </p>
+      <a href={item.href} class="hover:underline hover:text-primary-600 dark:hover:text-primary-500">
+        {item.name}
+      </a>
+      <a slot="extra" href="/" class="block mt-4 p-4 text-left bg-local bg-gray-500 bg-center bg-no-repeat bg-cover rounded-lg bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken" style="background-image: url(/images/nature-1.webp)">
+        <p class="mb-5 max-w-xl text-sm p-0 font-extrabold tracking-tight leading-tight text-white">Preview the new Flowbite dashboard navigation.</p>
         <Button>Get started</Button>
       </a>
     </MegaMenu>

@@ -77,10 +77,9 @@ Use this example as a generic form element which includes multiple input fields 
     <Label for="confirm_password" class="mb-2">Confirm password</Label>
     <Input type="password" id="confirm_password" placeholder="•••••••••" required />
   </div>
-  <Checkbox class="mb-6 space-x-1" required
-    >I agree with the <A href="/" class="text-primary-700 dark:text-primary-600 hover:underline"
-      >terms and conditions</A
-    >.</Checkbox>
+  <Checkbox class="mb-6 space-x-1" required>
+    I agree with the <A href="/" class="text-primary-700 dark:text-primary-600 hover:underline">terms and conditions</A>.
+  </Checkbox>
   <Button type="submit">Submit</Button>
 </form>
 ```
@@ -137,13 +136,18 @@ Use the following example to apply validation styles for success and error messa
 <div class="mb-6">
   <Label for="success" color="green" class="block mb-2">Your name</Label>
   <Input id="success" color="green" placeholder="Success input" />
-  <Helper class="mt-2" color="green"
-    ><span class="font-medium">Well done!</span> Some success message.</Helper>
+  <Helper class="mt-2" color="green">
+    <span class="font-medium">Well done!</span>
+    Some success message.
+  </Helper>
 </div>
 <div class="mb-6">
   <Label for="error" color="red" class="block mb-2">Your name</Label>
   <Input id="success" color="red" placeholder="Success input" />
-  <Helper class="mt-2" color="red"><span class="font-medium">Oh, snapp!</span> Some error message.</Helper>
+  <Helper class="mt-2" color="red">
+    <span class="font-medium">Oh, snapp!</span>
+    Some error message.
+  </Helper>
 </div>
 ```
 
@@ -290,11 +294,10 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
 <Label class="block space-y-2">
   <span>Your email</span>
   <Input label="Email" id="email" name="email" required placeholder="name@flowbite.com" />
-  <Helper class="text-sm"
-    >We’ll never share your details. Read our <a
-      href="/"
-      class="font-medium text-primary-600 hover:underline dark:text-primary-500">Privacy Policy</a
-    >.</Helper>
+  <Helper class="text-sm">
+    We’ll never share your details. Read our <a href="/" class="font-medium text-primary-600 hover:underline dark:text-primary-500"> Privacy Policy </a>
+    .
+  </Helper>
 </Label>
 ```
 
@@ -345,9 +348,7 @@ Use this example to show a dropdown menu right next to the input field.
 </script>
 
 <ButtonGroup class="w-full">
-  <Button
-    color="none"
-    class="flex-shrink-0 text-gray-900 bg-gray-100 border border-gray-300 dark:border-gray-700 dark:text-white hover:bg-gray-200 focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+  <Button color="none" class="flex-shrink-0 text-gray-900 bg-gray-100 border border-gray-300 dark:border-gray-700 dark:text-white hover:bg-gray-200 focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
     All categories<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" />
   </Button>
   <Dropdown>

@@ -203,14 +203,7 @@ The carousel component can be used to cycle through a set of elements using cust
 </script>
 
 <div class="max-w-4xl">
-  <CarouselTransition
-    {images}
-    loop
-    transitionType="fade"
-    transitionParams={{ duration: 1000 }}
-    showCaptions={false}
-    showThumbs={false}
-    duration="5000" />
+  <CarouselTransition {images} loop transitionType="fade" transitionParams={{ duration: 1000 }} showCaptions={false} showThumbs={false} duration="5000" />
 </div>
 ```
 
@@ -223,12 +216,7 @@ The carousel component can be used to cycle through a set of elements using cust
 </script>
 
 <div class="max-w-4xl">
-  <CarouselTransition
-    {images}
-    transitionType="fly"
-    transitionParams={{ delay: 250, duration: 300, x: 100 }}
-    showCaptions={false}
-    showThumbs={false} />
+  <CarouselTransition {images} transitionType="fly" transitionParams={{ delay: 250, duration: 300, x: 100 }} showCaptions={false} showThumbs={false} />
 </div>
 ```
 
@@ -242,12 +230,7 @@ The carousel component can be used to cycle through a set of elements using cust
 </script>
 
 <div class="max-w-4xl">
-  <CarouselTransition
-    {images}
-    transitionType="slide"
-    transitionParams={{ duration: 1500, easing: bounceInOut }}
-    showCaptions={false}
-    showThumbs={false} />
+  <CarouselTransition {images} transitionType="slide" transitionParams={{ duration: 1500, easing: bounceInOut }} showCaptions={false} showThumbs={false} />
 </div>
 ```
 

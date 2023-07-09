@@ -5,6 +5,7 @@
   import { getContext } from 'svelte';
   import type { Writable } from 'svelte/store';
   import type { PageData } from '../$types';
+  import { ChevronDownOutline, ChevronUpOutline } from 'flowbite-svelte-icons';
 
   export let data: PageData;
 
@@ -36,70 +37,25 @@
   });
 
   let spanClass = '';
-  let aClass =
-    'transition-colors duration-200 relative flex items-center flex-wrap font-medium hover:text-gray-900 hover:cursor-pointer text-gray-500 dark:text-gray-400 dark:hover:text-white';
-  let activeClass =
-    'relative flex items-center flex-wrap font-medium cursor-default text-primary-700 dark:text-primary-700';
+  let aClass = 'transition-colors duration-200 relative flex items-center flex-wrap font-medium hover:text-gray-900 hover:cursor-pointer text-gray-500 dark:text-gray-400 dark:hover:text-white';
+  let activeClass = 'relative flex items-center flex-wrap font-medium cursor-default text-primary-700 dark:text-primary-700';
 
   let dropdowns = Object.fromEntries(Object.keys(posts).map((x) => [x, false]));
 </script>
 
-<Sidebar
-  class={$drawerHidden && 'hidden'}
-  asideClass="fixed inset-0 z-30 flex-none h-full w-64 lg:static lg:h-auto border-r border-gray-200 dark:border-gray-600 lg:overflow-y-visible lg:pt-0 lg:block">
+<Sidebar class={$drawerHidden && 'hidden'} asideClass="fixed inset-0 z-30 flex-none h-full w-64 lg:static lg:h-auto border-r border-gray-200 dark:border-gray-600 lg:overflow-y-visible lg:pt-0 lg:block">
   <h4 id="sidebar-label" class="sr-only">Browse docs</h4>
-  <SidebarWrapper
-    divClass="overflow-y-auto px-4 pt-20 lg:pt-0 h-full bg-white scrolling-touch max-w-2xs lg:h-[calc(100vh-8rem)] lg:block dark:bg-gray-900 lg:mr-0 lg:sticky top-20">
+  <SidebarWrapper divClass="overflow-y-auto px-4 pt-20 lg:pt-0 h-full bg-white scrolling-touch max-w-2xs lg:h-[calc(100vh-8rem)] lg:block dark:bg-gray-900 lg:mr-0 lg:sticky top-20">
     <nav class="font-normal text-base lg:text-sm">
       <SidebarGroup ulClass="list-unstyled fw-normal small mb-4">
         {#each Object.entries(posts) as [key, values] (key)}
-          <SidebarDropdownWrapper
-            bind:isOpen={dropdowns[key]}
-            label={names_mapping[key] ?? key}
-            ulClass="space-y-2.5"
-            btnClass="flex items-center justify-between w-full my-4 text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600"
-            spanClass=""
-            class={dropdowns[key]
-              ? 'text-primary-700 dark:text-primary-700'
-              : 'text-gray-900 dark:text-white'}>
-            <svg
-              slot="arrowdown"
-              class="w-3 h-3 text-gray-800 dark:text-white"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 6 10">
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="m1 9 4-4-4-4" />
-            </svg>
-            <svg
-              slot="arrowup"
-              class="w-3 h-3 text-gray-800 dark:text-white"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 10 6">
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="m1 1 4 4 4-4" />
-            </svg>
+          <SidebarDropdownWrapper bind:isOpen={dropdowns[key]} label={names_mapping[key] ?? key} ulClass="space-y-2.5" btnClass="flex items-center justify-between w-full my-4 text-sm font-semibold tracking-wide uppercase hover:text-primary-700 dark:hover:text-primary-600" spanClass="" class={dropdowns[key] ? 'text-primary-700 dark:text-primary-700' : 'text-gray-900 dark:text-white'}>
+            <ChevronDownOutline slot="arrowdown" class="w-3 h-3 text-gray-800 dark:text-white" />
+            <ChevronUpOutline slot="arrowup" class="w-3 h-3 text-gray-800 dark:text-white" />
             {#each values as { meta, path }}
               {@const href = `/docs/${key}${path}`}
               {#if meta}
-                <SidebarItem
-                  label={meta.component_title}
-                  {href}
-                  {spanClass}
-                  {aClass}
-                  {activeClass}
-                  active={activeUrl === href} />
+                <SidebarItem label={meta.component_title} {href} {spanClass} {aClass} {activeClass} active={activeUrl === href} />
               {/if}
             {/each}
           </SidebarDropdownWrapper>
@@ -109,12 +65,7 @@
   </SidebarWrapper>
 </Sidebar>
 
-<div
-  hidden={$drawerHidden}
-  class="fixed inset-0 z-20 bg-gray-900/50 dark:bg-gray-900/60"
-  on:click={closeDrawer}
-  on:keydown={closeDrawer}
-  role="presentation" />
+<div hidden={$drawerHidden} class="fixed inset-0 z-20 bg-gray-900/50 dark:bg-gray-900/60" on:click={closeDrawer} on:keydown={closeDrawer} role="presentation" />
 
 <main class="flex-auto w-full min-w-0 lg:static lg:max-h-full lg:overflow-visible">
   <slot />

@@ -117,30 +117,10 @@
 
   let divClass: string;
 
-  $: divClass = twMerge(
-    bgColors[color],
-    textColors[color],
-    rounded && 'rounded-lg',
-    border && 'border',
-    borderColors[color],
-    shadow && 'shadow-md',
-    $$props.class
-  );
+  $: divClass = twMerge(bgColors[color], textColors[color], rounded && 'rounded-lg', border && 'border', borderColors[color], shadow && 'shadow-md', $$props.class);
 </script>
 
-<svelte:element
-  this={tag}
-  use:use={options}
-  bind:this={node}
-  transition:transition={params}
-  {...$$restProps}
-  class={divClass}
-  on:click
-  on:mouseenter
-  on:mouseleave
-  on:focusin
-  on:focusout
-  {role}>
+<svelte:element this={tag} use:use={options} bind:this={node} transition:transition={params} {...$$restProps} class={divClass} on:click on:mouseenter on:mouseleave on:focusin on:focusout {role}>
   <slot />
 </svelte:element>
 

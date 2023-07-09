@@ -14,10 +14,7 @@
   };
 </script>
 
-<svelte:element
-  this={tag}
-  {...$$restProps}
-  class={twMerge(customSize ? customSize : textSizes[tag], color, 'w-full', $$props.class)}>
+<svelte:element this={tag} {...$$restProps} class={twMerge(customSize ? customSize : textSizes[tag], color, 'w-full', $$props.class)}>
   <slot />
 </svelte:element>
 

@@ -15,21 +15,7 @@
 </script>
 
 <Wrapper tag="li" show={wrap} use={init}>
-  <svelte:element
-    this={href ? 'a' : 'button'}
-    {href}
-    type={href ? undefined : 'button'}
-    {...$$restProps}
-    class={liClass}
-    on:click
-    on:change
-    on:keydown
-    on:keyup
-    on:focus
-    on:blur
-    on:mouseenter
-    on:mouseleave
-    role={href ? undefined : 'button'}>
+  <svelte:element this={href ? 'a' : 'button'} {href} type={href ? undefined : 'button'} {...$$restProps} class={liClass} on:click on:change on:keydown on:keyup on:focus on:blur on:mouseenter on:mouseleave role={href ? undefined : 'button'}>
     <slot />
   </svelte:element>
 </Wrapper>

@@ -35,9 +35,7 @@ Use this simple toast component with an icon, message, and dismissable close but
 </script>
 
 <Toast>
-  <FireOutline
-    slot="icon"
-    class="w-5 h-5 text-primary-500 bg-primary-100 dark:bg-primary-800 dark:text-primary-200" />
+  <FireOutline slot="icon" class="w-5 h-5 text-primary-500 bg-primary-100 dark:bg-primary-800 dark:text-primary-200" />
   Set yourself free.
 </Toast>
 ```
@@ -51,12 +49,7 @@ Usually, green, red, and orange are used to show success, danger, or warning ale
 ```svelte example class="flex flex-col items-center gap-4" hideScript
 <script>
   import { Toast } from 'flowbite-svelte';
-  import {
-    FireOutline,
-    CheckCircleSolid,
-    CloseCircleSolid,
-    ExclamationCircleSolid
-  } from 'flowbite-svelte-icons';
+  import { FireOutline, CheckCircleSolid, CloseCircleSolid, ExclamationCircleSolid } from 'flowbite-svelte-icons';
 </script>
 
 <Toast color="green">
@@ -261,9 +254,7 @@ Use this toast component to also show an “undo” button to reverse the action
 
 <Toast contentClass="w-full text-sm font-normal flex items-center justify-between">
   Conversation archived.
-  <a
-    class="ml-auto font-medium text-primary-600 p-1.5 hover:bg-primary-100 rounded-lg dark:text-primary-500 dark:hover:bg-gray-700"
-    href="/">Undo</a>
+  <a class="ml-auto font-medium text-primary-600 p-1.5 hover:bg-primary-100 rounded-lg dark:text-primary-500 dark:hover:bg-gray-700" href="/"> Undo </a>
 </Toast>
 ```
 

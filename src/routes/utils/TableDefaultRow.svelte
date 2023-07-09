@@ -5,12 +5,10 @@
   let trClass: string;
   let trLastClass: string;
   if (rowState === 'striped') {
-    trClass =
-      'border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700';
+    trClass = 'border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700';
     trLastClass = 'odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700';
   } else if (rowState === 'hover') {
-    trClass =
-      'bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600';
+    trClass = 'bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600';
     trLastClass = 'bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600';
   } else {
     trClass = 'bg-white border-b dark:bg-gray-800 dark:border-gray-700';

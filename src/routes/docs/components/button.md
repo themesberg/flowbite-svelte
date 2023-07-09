@@ -225,8 +225,7 @@ This example can be used to show a notification count or helper text inside a bu
 
 <Button class="gap-2">
   Messages
-  <Indicator color="none" class="bg-primary-200 text-xs text-primary-800 font-semibold" size="lg"
-    >2</Indicator>
+  <Indicator color="none" class="bg-primary-200 text-xs text-primary-800 font-semibold" size="lg">2</Indicator>
 </Button>
 ```
 
@@ -243,10 +242,12 @@ Sometimes you need a button to indicate an action using only an icon.
 <div class="flex flex-wrap items-center gap-2">
   <Button class="!p-2"><ArrowRightOutline class="w-5 h-5 text-white" /></Button>
   <Button pill={true} class="!p-2"><ArrowRightOutline class="w-5 h-5 text-white" /></Button>
-  <Button outline={true} class="!p-2" size="lg"
-    ><ShoppingCartSolid class="w-5 h-5 text-primary-700" /></Button>
-  <Button pill={true} outline={true} class="!p-2" size="xl"
-    ><ShoppingCartSolid class="w-5 h-5 text-primary-700" /></Button>
+  <Button outline={true} class="!p-2" size="lg">
+    <ShoppingCartSolid class="w-5 h-5 text-primary-700" />
+  </Button>
+  <Button pill={true} outline={true} class="!p-2" size="xl">
+    <ShoppingCartSolid class="w-5 h-5 text-primary-700" />
+  </Button>
 </div>
 ```
 

@@ -11,17 +11,7 @@
     dismissable?: boolean;
   }
 
-  export let color:
-    | 'primary'
-    | 'blue'
-    | 'dark'
-    | 'red'
-    | 'green'
-    | 'yellow'
-    | 'indigo'
-    | 'purple'
-    | 'pink'
-    | 'none' = 'primary';
+  export let color: 'primary' | 'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'none' = 'primary';
   export let large: boolean = false;
   export let dismissable: boolean = false;
 
@@ -40,19 +30,14 @@
   };
 
   const borderedColors = {
-    primary:
-      'bg-primary-100 text-primary-800 dark:bg-gray-700 dark:text-primary-400 border-primary-400 dark:border-primary-400',
+    primary: 'bg-primary-100 text-primary-800 dark:bg-gray-700 dark:text-primary-400 border-primary-400 dark:border-primary-400',
     blue: 'bg-blue-100 text-blue-800 dark:bg-gray-700 dark:text-blue-400 border-blue-400 dark:border-blue-400',
     dark: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-400 border-gray-500 dark:border-gray-500',
     red: 'bg-red-100 text-red-800 dark:bg-gray-700 dark:text-red-400 border-red-400 dark:border-red-400',
-    green:
-      'bg-green-100 text-green-800 dark:bg-gray-700 dark:text-green-400 border-green-400 dark:border-green-400',
-    yellow:
-      'bg-yellow-100 text-yellow-800 dark:bg-gray-700 dark:text-yellow-300 border-yellow-300 dark:border-yellow-300',
-    indigo:
-      'bg-indigo-100 text-indigo-800 dark:bg-gray-700 dark:text-indigo-400 border-indigo-400 dark:border-indigo-400',
-    purple:
-      'bg-purple-100 text-purple-800 dark:bg-gray-700 dark:text-purple-400 border-purple-400 dark:border-purple-400',
+    green: 'bg-green-100 text-green-800 dark:bg-gray-700 dark:text-green-400 border-green-400 dark:border-green-400',
+    yellow: 'bg-yellow-100 text-yellow-800 dark:bg-gray-700 dark:text-yellow-300 border-yellow-300 dark:border-yellow-300',
+    indigo: 'bg-indigo-100 text-indigo-800 dark:bg-gray-700 dark:text-indigo-400 border-indigo-400 dark:border-indigo-400',
+    purple: 'bg-purple-100 text-purple-800 dark:bg-gray-700 dark:text-purple-400 border-purple-400 dark:border-purple-400',
     pink: 'bg-pink-100 text-pink-800 dark:bg-gray-700 dark:text-pink-400 border-pink-400 dark:border-pink-400',
     none: ''
   };
@@ -73,14 +58,7 @@
   const baseClass: string = 'font-medium inline-flex items-center justify-center px-2.5 py-0.5';
 
   let badgeClass: string;
-  $: badgeClass = twMerge(
-    baseClass,
-    large ? 'text-sm' : 'text-xs',
-    $$restProps.border ? `border ${borderedColors[color]}` : colors[color],
-    $$restProps.href && hoverColors[color],
-    $$restProps.rounded ? 'rounded-full' : 'rounded',
-    $$props.class
-  );
+  $: badgeClass = twMerge(baseClass, large ? 'text-sm' : 'text-xs', $$restProps.border ? `border ${borderedColors[color]}` : colors[color], $$restProps.href && hoverColors[color], $$restProps.rounded ? 'rounded-full' : 'rounded', $$props.class);
 
   // only overwrite necessary colors (<CloseButton> v0.29.10)
   const closeBtnColors = {
@@ -115,12 +93,7 @@
     <slot />
     {#if dismissable}
       <slot name="close-button" {close}>
-        <CloseButton
-          {color}
-          on:click={close}
-          size={large ? 'sm' : 'xs'}
-          name="Remove badge"
-          class="ml-1.5 -mr-1.5" />
+        <CloseButton {color} on:click={close} size={large ? 'sm' : 'xs'} name="Remove badge" class="ml-1.5 -mr-1.5" />
       </slot>
     {/if}
   </Frame>

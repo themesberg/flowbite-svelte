@@ -97,12 +97,7 @@ Use the following example to create a list of buttons as a menu together with SV
 ```svelte example class="flex justify-center"
 <script>
   import { Listgroup } from 'flowbite-svelte';
-  import {
-    UserCircleSolid,
-    AdjustmentsHorizontalOutline,
-    MessagesSolid,
-    DownloadSolid
-  } from 'flowbite-svelte-icons';
+  import { UserCircleSolid, AdjustmentsHorizontalOutline, MessagesSolid, DownloadSolid } from 'flowbite-svelte-icons';
   let icons = [
     { name: 'Profile', icon: UserCircleSolid },
     { name: 'Settings', icon: AdjustmentsHorizontalOutline },
@@ -119,8 +114,7 @@ Use the following example to create a list of buttons as a menu together with SV
 
 ## Advanced
 
-When non standard usage is needed you can omit the `items` props and add elements directly to the list.
-Usage of hidden so far `ListgroupItem` helps you with proper layout.
+When non standard usage is needed you can omit the `items` props and add elements directly to the list. Usage of hidden so far `ListgroupItem` helps you with proper layout.
 
 ```svelte example class="flex justify-center"
 <script>
@@ -139,9 +133,7 @@ Usage of hidden so far `ListgroupItem` helps you with proper layout.
   <ListgroupItem class="text-base font-semibold gap-2">
     <Avatar src="/images/profile-picture-3.webp" size="xs" />Bonnie Green
   </ListgroupItem>
-  <a
-    href="/"
-    class="flex items-center p-3 text-sm font-medium text-red-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline rounded-b-lg">
+  <a href="/" class="flex items-center p-3 text-sm font-medium text-red-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline rounded-b-lg">
     <TrashBinSolid class="w-6 h-6 ml-1 mr-2" />
     Delete user
   </a>

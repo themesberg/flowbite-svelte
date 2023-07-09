@@ -34,10 +34,7 @@ Use this example to create a default unordered list of items.
   import { Li, List, Heading } from 'flowbite-svelte';
 </script>
 
-<Heading
-  tag="h2"
-  customSize="text-lg font-semibold"
-  class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
+<Heading tag="h2" customSize="text-lg font-semibold" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
 <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400">
   <Li>At least 10 characters (and up to 100 characters)</Li>
   <Li>At least one lowercase character</Li>
@@ -55,10 +52,7 @@ This example can be used to apply custom icons instead of the default bullets fo
   import { CheckCircleSolid, CloseCircleSolid } from 'flowbite-svelte-icons';
 </script>
 
-<Heading
-  tag="h2"
-  customSize="text-lg font-semibold"
-  class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
+<Heading tag="h2" customSize="text-lg font-semibold" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Password requirements</Heading>
 <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
   <Li icon>
     <CheckCircleSolid class="w-3.5 h-3.5 mr-2 text-green-500 dark:text-green-400" />
@@ -85,24 +79,24 @@ Use this example to nested another list of items inside the parent list element.
 </script>
 
 <List tag="ul" class="space-y-4 text-gray-500 dark:text-gray-400">
-  <Li
-    >List item one
+  <Li>
+    List item one
     <List tag="ol" class="pl-5 mt-2 space-y-1">
       <Li>You might feel like you are being really "organized" o</Li>
       <Li>Nested navigation in UIs is a bad idea too, keep things as flat as possible.</Li>
       <Li>Nesting tons of folders in your source code is also not helpful.</Li>
     </List>
   </Li>
-  <Li
-    >List item two
+  <Li>
+    List item two
     <List tag="ol" class="pl-5 mt-2 space-y-1">
       <Li>I'm not sure if we'll bother styling more than two levels deep.</Li>
       <Li>Two is already too much, three is guaranteed to be a bad idea.</Li>
       <Li>If you nest four levels deep you belong in prison.</Li>
     </List>
   </Li>
-  <Li
-    >List item three
+  <Li>
+    List item three
     <List tag="ol" class="pl-5 mt-2 space-y-1">
       <Li>Again please don't nest lists if you want</Li>
       <Li>Nobody wants to look at this.</Li>
@@ -121,10 +115,7 @@ Use the `list="none"` prop to disable the list style bullets or numbers.
   import { List, Li, Heading } from 'flowbite-svelte';
 </script>
 
-<Heading
-  tag="h2"
-  customSize="text-lg font-semibold"
-  class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white">Password requirements</Heading>
+<Heading tag="h2" customSize="text-lg font-semibold" class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white">Password requirements</Heading>
 <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
   <Li>At least 10 characters (and up to 100 characters)</Li>
   <Li>At least one lowercase character</Li>
@@ -141,10 +132,7 @@ Use the `tag="ol"` prop to create an ordered list of items with numbers.
   import { List, Li, Span, Heading } from 'flowbite-svelte';
 </script>
 
-<Heading
-  tag="h2"
-  customSize="text-lg font-semibold"
-  class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white">Top students:</Heading>
+<Heading tag="h2" customSize="text-lg font-semibold" class="mb-2 text-lg font-semibold  text-gray-900 dark:text-white">Top students:</Heading>
 <List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400">
   <Li><Span>Bonnie Green</Span> with <Span>70</Span> points</Li>
   <Li><Span>Jese Leos</Span> with <Span>63</Span> points</Li>
@@ -162,24 +150,24 @@ This example can be used to nest multiple lists into each other.
 </script>
 
 <List tag="ol" list="decimal" class="text-gray-500 dark:text-gray-400">
-  <Li
-    >List item one
+  <Li>
+    List item one
     <List tag="ul" class="pl-5 mt-2 space-y-1">
       <Li>You might feel like you are being really "organized" o</Li>
       <Li>Nested navigation in UIs is a bad idea too, keep things as flat as possible.</Li>
       <Li>Nesting tons of folders in your source code is also not helpful.</Li>
     </List>
   </Li>
-  <Li
-    >List item two
+  <Li>
+    List item two
     <List tag="ul" class="pl-5 mt-2 space-y-1">
       <Li>I'm not sure if we'll bother styling more than two levels deep.</Li>
       <Li>Two is already too much, three is guaranteed to be a bad idea.</Li>
       <Li>If you nest four levels deep you belong in prison.</Li>
     </List>
   </Li>
-  <Li
-    >List item three
+  <Li>
+    List item three
     <List tag="ul" class="pl-5 mt-2 space-y-1 text-gray-500 dark:text-gray-400">
       <Li>Again please don't nest lists if you want</Li>
       <Li>Nobody wants to look at this.</Li>
@@ -344,8 +332,7 @@ Use this example to create a horizontally aligned list of items.
     <A href="/" class="mr-4 hover:underline md:mr-6" textColor="text-gray-700 dark:text-white">Blog</A>
   </Li>
   <Li>
-    <A href="/" class="mr-4 hover:underline md:mr-6" textColor="text-gray-700 dark:text-white"
-      >Affiliate Program</A>
+    <A href="/" class="mr-4 hover:underline md:mr-6" textColor="text-gray-700 dark:text-white">Affiliate Program</A>
   </Li>
   <Li>
     <A href="/" class="mr-4 hover:underline md:mr-6" textColor="text-gray-700 dark:text-white">FAQs</A>

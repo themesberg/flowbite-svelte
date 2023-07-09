@@ -3,8 +3,7 @@
 
   export let value: string = '';
   export let files: FileList | undefined = undefined;
-  export let defaultClass: string =
-    'flex flex-col justify-center items-center w-full h-64 bg-gray-50 rounded-lg border-2 border-gray-300 border-dashed cursor-pointer dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600';
+  export let defaultClass: string = 'flex flex-col justify-center items-center w-full h-64 bg-gray-50 rounded-lg border-2 border-gray-300 border-dashed cursor-pointer dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600';
 
   let input: HTMLInputElement;
 
@@ -16,29 +15,10 @@
   }
 </script>
 
-<button
-  class={twMerge(defaultClass, $$props.class)}
-  on:keydown={keydown}
-  on:focus
-  on:blur
-  on:mouseenter
-  on:mouseleave
-  on:mouseover
-  on:dragenter
-  on:dragleave
-  on:dragover
-  on:drop>
+<button class={twMerge(defaultClass, $$props.class)} on:keydown={keydown} on:focus on:blur on:mouseenter on:mouseleave on:mouseover on:dragenter on:dragleave on:dragover on:drop>
   <label tabIndex="0">
     <slot />
-    <input
-      {...$$restProps}
-      bind:value
-      bind:files
-      bind:this={input}
-      on:change
-      on:click
-      type="file"
-      class="hidden" />
+    <input {...$$restProps} bind:value bind:files bind:this={input} on:change on:click type="file" class="hidden" />
   </label>
 </button>
 

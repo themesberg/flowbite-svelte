@@ -107,11 +107,7 @@ Customize the video player appearance using the utility classes from Tailwind CS
   import { Video } from 'flowbite-svelte';
 </script>
 
-<Video
-  src="/videos/flowbite.mp4"
-  controls
-  class="w-full max-w-full h-auto rounded-lg border border-gray-200 dark:border-gray-700"
-  trackSrc="flowbite.mp4" />
+<Video src="/videos/flowbite.mp4" controls class="w-full max-w-full h-auto rounded-lg border border-gray-200 dark:border-gray-700" trackSrc="flowbite.mp4" />
 ```
 
 ## Props

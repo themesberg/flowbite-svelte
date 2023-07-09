@@ -41,18 +41,7 @@
     </div>
     {#if dismissable}
       <div class="flex items-center">
-        <CloseButton
-          class="-mx-1.5 -my-1.5"
-          color={$$restProps.color}
-          on:click={handleHide}
-          on:click
-          on:change
-          on:keydown
-          on:keyup
-          on:focus
-          on:blur
-          on:mouseenter
-          on:mouseleave />
+        <CloseButton class="-mx-1.5 -my-1.5" color={$$restProps.color} on:click={handleHide} on:click on:change on:keydown on:keyup on:focus on:blur on:mouseenter on:mouseleave />
       </div>
     {/if}
   </div>

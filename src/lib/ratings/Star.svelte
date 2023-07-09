@@ -10,15 +10,7 @@
   export let role = 'img';
 </script>
 
-<svg
-  width={size}
-  height={size}
-  {...$$restProps}
-  class={$$props.class}
-  aria-label={ariaLabel}
-  viewBox="100 100 120 120"
-  {role}
-  on:click>
+<svg width={size} height={size} {...$$restProps} class={$$props.class} aria-label={ariaLabel} viewBox="100 100 120 120" {role} on:click>
   <defs>
     <linearGradient {id}>
       {#if fillPercent !== 100}

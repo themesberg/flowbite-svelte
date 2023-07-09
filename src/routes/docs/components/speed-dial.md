@@ -301,13 +301,7 @@ This example can be used to show a list of menu items instead of buttons when ac
 ```svelte example class="relative h-96"
 <script>
   import { SpeedDial, Listgroup, ListgroupItem } from 'flowbite-svelte';
-  import {
-    ShareNodesSolid,
-    PrintSolid,
-    DownloadSolid,
-    FileCopySolid,
-    DotsHorizontalOutline
-  } from 'flowbite-svelte-icons';
+  import { ShareNodesSolid, PrintSolid, DownloadSolid, FileCopySolid, DotsHorizontalOutline } from 'flowbite-svelte-icons';
 </script>
 
 <SpeedDial defaultClass="absolute right-24 bottom-6" tooltip="none" placement="top-end">
@@ -362,13 +356,7 @@ This example can be used to show an alternative style when showing a list of men
 ```svelte example class="relative h-96"
 <script>
   import { SpeedDial, Listgroup, ListgroupItem } from 'flowbite-svelte';
-  import {
-    ShareNodesSolid,
-    PrintSolid,
-    DownloadSolid,
-    FileCopySolid,
-    PenSolid
-  } from 'flowbite-svelte-icons';
+  import { ShareNodesSolid, PrintSolid, DownloadSolid, FileCopySolid, PenSolid } from 'flowbite-svelte-icons';
 </script>
 
 <SpeedDial defaultClass="absolute right-24 bottom-6" tooltip="none" placement="top-end">

@@ -112,16 +112,9 @@ Update the text decoration style using the `underline` and `decorationClass` pro
   import { P, Span } from 'flowbite-svelte';
 </script>
 
-<P
-  >Track work across the enterprise through an open, collaborative platform. <Span underline
-    >Link issues across Jira</Span> and ingest data from other <Span
-    underline
-    decorationClass="decoration-blue-500 decoration-double">software development</Span> tools, so your IT support
-  and operations teams have richer contextual information to rapidly respond to <Span
-    underline
-    decorationClass="decoration-green-500 decoration-dotted">requests</Span
-  >, <Span underline decorationClass="decoration-4 decoration-red-500 decoration-dashed">incidents</Span>,
-  and <Span underline decorationClass="decoration-sky-500 decoration-wavy">changes</Span>.</P>
+<P>
+  Track work across the enterprise through an open, collaborative platform. <Span underline>Link issues across Jira</Span> and ingest data from other <Span underline decorationClass="decoration-blue-500 decoration-double">software development</Span> tools, so your IT support and operations teams have richer contextual information to rapidly respond to <Span underline decorationClass="decoration-green-500 decoration-dotted">requests</Span>, <Span underline decorationClass="decoration-4 decoration-red-500 decoration-dashed">incidents</Span>, and <Span underline decorationClass="decoration-sky-500 decoration-wavy">changes</Span>.
+</P>
 ```
 
 ### Line through
@@ -189,8 +182,7 @@ Use the `height="normal"` (default) prop to set default line height.
   import { P } from 'flowbite-svelte';
 </script>
 
-<P size="3xl" height="normal" class="max-w-lg" weight="semibold"
-  >The Al-powered app will help you improve yourself by analysing your everyday life.</P>
+<P size="3xl" height="normal" class="max-w-lg" weight="semibold">The Al-powered app will help you improve yourself by analysing your everyday life.</P>
 ```
 
 ### Leading relaxed
@@ -202,8 +194,7 @@ Use the `height="relaxed"` prop to increase the space between lines.
   import { P } from 'flowbite-svelte';
 </script>
 
-<P size="3xl" height="relaxed" class="max-w-lg" weight="semibold"
-  >The Al-powered app will help you improve yourself by analysing your everyday life.</P>
+<P size="3xl" height="relaxed" class="max-w-lg" weight="semibold">The Al-powered app will help you improve yourself by analysing your everyday life.</P>
 ```
 
 ### Leading loose
@@ -215,8 +206,7 @@ Use the `height="loose"` prop to set a large amount of space between text lines.
   import { P } from 'flowbite-svelte';
 </script>
 
-<P size="3xl" height="loose" class="max-w-lg" weight="semibold"
-  >The Al-powered app will help you improve yourself by analysing your everyday life.</P>
+<P size="3xl" height="loose" class="max-w-lg" weight="semibold">The Al-powered app will help you improve yourself by analysing your everyday life.</P>
 ```
 
 ## Text Align
@@ -228,10 +218,7 @@ Use the `height="loose"` prop to set a large amount of space between text lines.
   import { P } from 'flowbite-svelte';
 </script>
 
-<P align="left"
-  >Get started with an enterprise-level, profesionally designed, fully responsive, and HTML semantic set of
-  web pages, sections and over 400+ components crafted with the utility classes from Tailwind CSS and based
-  on the Flowbite component library</P>
+<P align="left">Get started with an enterprise-level, profesionally designed, fully responsive, and HTML semantic set of web pages, sections and over 400+ components crafted with the utility classes from Tailwind CSS and based on the Flowbite component library</P>
 ```
 
 ### Center
@@ -241,10 +228,7 @@ Use the `height="loose"` prop to set a large amount of space between text lines.
   import { P } from 'flowbite-svelte';
 </script>
 
-<P align="center"
-  >Get started with an enterprise-level, profesionally designed, fully responsive, and HTML semantic set of
-  web pages, sections and over 400+ components crafted with the utility classes from Tailwind CSS and based
-  on the Flowbite component library</P>
+<P align="center">Get started with an enterprise-level, profesionally designed, fully responsive, and HTML semantic set of web pages, sections and over 400+ components crafted with the utility classes from Tailwind CSS and based on the Flowbite component library</P>
 ```
 
 ### Right
@@ -256,10 +240,7 @@ Use the `align="right"` prop to align the text element to the right side of the 
   import { P } from 'flowbite-svelte';
 </script>
 
-<P align="right"
-  >Get started with an enterprise-level, profesionally designed, fully responsive, and HTML semantic set of
-  web pages, sections and over 400+ components crafted with the utility classes from Tailwind CSS and based
-  on the Flowbite component library</P>
+<P align="right">Get started with an enterprise-level, profesionally designed, fully responsive, and HTML semantic set of web pages, sections and over 400+ components crafted with the utility classes from Tailwind CSS and based on the Flowbite component library</P>
 ```
 
 ### Text justify
@@ -271,10 +252,7 @@ Use the `justify` prop to justify the text content.
   import { P } from 'flowbite-svelte';
 </script>
 
-<P justify
-  >Get started with an enterprise-level, profesionally designed, fully responsive, and HTML semantic set of
-  web pages, sections and over 400+ components crafted with the utility classes from Tailwind CSS and based
-  on the Flowbite component library</P>
+<P justify>Get started with an enterprise-level, profesionally designed, fully responsive, and HTML semantic set of web pages, sections and over 400+ components crafted with the utility classes from Tailwind CSS and based on the Flowbite component library</P>
 ```
 
 ## Whitespace
@@ -290,9 +268,7 @@ Use the `whitespace="normal"` prop to set the default whitespace behaviour.
   import { P } from 'flowbite-svelte';
 </script>
 
-<P whitespace="normal"
-  >This is some text. This is some text. This is some text. This is some text. This is some text. This is
-  some text. This is some text. This is some text. This is some text.</P>
+<P whitespace="normal">This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</P>
 ```
 
 ### Nowrap
@@ -304,10 +280,7 @@ Use the `whitespace="nowrap"` prop to prevent text being added to a new line whe
   import { P } from 'flowbite-svelte';
 </script>
 
-<P whitespace="nowrap">
-  This is some text. This is some text. This is some text. This is some text. This is some text. This is some
-  text. This is some text. This is some text. This is some text.
-</P>
+<P whitespace="nowrap">This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</P>
 ```
 
 ### Pre line
@@ -336,16 +309,9 @@ Update the text decoration style using the `underline` and `decorationClass` pro
   import { P, Span } from 'flowbite-svelte';
 </script>
 
-<P
-  >Track work across the enterprise through an open, collaborative platform. <Span underline
-    >Link issues across Jira</Span> and ingest data from other <Span
-    underline
-    decorationClass="decoration-blue-500 decoration-double">software development</Span> tools, so your IT support
-  and operations teams have richer contextual information to rapidly respond to <Span
-    underline
-    decorationClass="decoration-green-500 decoration-dotted">requests</Span
-  >, <Span underline decorationClass="decoration-4 decoration-red-500 decoration-dashed">incidents</Span>,
-  and <Span underline decorationClass="decoration-sky-500 decoration-wavy">changes</Span>.</P>
+<P>
+  Track work across the enterprise through an open, collaborative platform. <Span underline>Link issues across Jira</Span> and ingest data from other <Span underline decorationClass="decoration-blue-500 decoration-double">software development</Span> tools, so your IT support and operations teams have richer contextual information to rapidly respond to <Span underline decorationClass="decoration-green-500 decoration-dotted">requests</Span>, <Span underline decorationClass="decoration-4 decoration-red-500 decoration-dashed">incidents</Span>, and <Span underline decorationClass="decoration-sky-500 decoration-wavy">changes</Span>.
+</P>
 ```
 
 ## Opacity
@@ -357,14 +323,10 @@ Use the `opacity` and `color` prop to set the opacity of inline text elements.
   import { P } from 'flowbite-svelte';
 </script>
 
-<P size="xl" opacity={100} color="text-blue-600 dark:text-blue-500"
-  >Flowbite app will help you improve yourself by analysing your everyday life.</P>
-<P size="xl" opacity={75} color="text-blue-600 dark:text-blue-500"
-  >Flowbite app will help you improve yourself by analysing your everyday life.</P>
-<P size="xl" opacity={50} color="text-blue-600 dark:text-blue-500"
-  >Flowbite app will help you improve yourself by analysing your everyday life.</P>
-<P size="xl" opacity={25} color="text-blue-600 dark:text-blue-500"
-  >Flowbite app will help you improve yourself by analysing your everyday life.</P>
+<P size="xl" opacity={100} color="text-blue-600 dark:text-blue-500">Flowbite app will help you improve yourself by analysing your everyday life.</P>
+<P size="xl" opacity={75} color="text-blue-600 dark:text-blue-500">Flowbite app will help you improve yourself by analysing your everyday life.</P>
+<P size="xl" opacity={50} color="text-blue-600 dark:text-blue-500">Flowbite app will help you improve yourself by analysing your everyday life.</P>
+<P size="xl" opacity={25} color="text-blue-600 dark:text-blue-500">Flowbite app will help you improve yourself by analysing your everyday life.</P>
 ```
 
 ## Props

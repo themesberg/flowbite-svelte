@@ -12,16 +12,7 @@
     open?: boolean;
     title?: string;
     size?: SizeType;
-    placement?:
-      | 'top-left'
-      | 'top-center'
-      | 'top-right'
-      | 'center-left'
-      | 'center'
-      | 'center-right'
-      | 'bottom-left'
-      | 'bottom-center'
-      | 'bottom-right';
+    placement?: 'top-left' | 'top-center' | 'top-right' | 'center-left' | 'center' | 'center-right' | 'bottom-left' | 'bottom-center' | 'bottom-right';
     autoclose?: boolean;
     permanent?: boolean;
     backdropClass?: string;
@@ -108,10 +99,7 @@
   let frameClass: string;
   $: frameClass = twMerge(defaultClass, 'w-full', $$props.class);
 
-  const isScrollable = (e: HTMLElement): boolean[] => [
-    e.scrollWidth > e.clientWidth && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowX) >= 0,
-    e.scrollHeight > e.clientHeight && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowY) >= 0
-  ];
+  const isScrollable = (e: HTMLElement): boolean[] => [e.scrollWidth > e.clientWidth && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowX) >= 0, e.scrollHeight > e.clientHeight && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowY) >= 0];
 
   let backdropCls: string = twMerge(backdropClass, $$props.classBackdrop);
 
@@ -125,19 +113,7 @@
   <div class={twMerge('fixed inset-0 z-40', backdropCls)} />
   <!-- dialog -->
   <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-  <div
-    on:keydown={handleKeys}
-    on:wheel|preventDefault|nonpassive
-    use:prepareFocus
-    use:focusTrap
-    on:click={onAutoClose}
-    class={twMerge(
-      'fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex',
-      ...getPlacementClasses()
-    )}
-    tabindex="-1"
-    aria-modal="true"
-    role="dialog">
+  <div on:keydown={handleKeys} on:wheel|preventDefault|nonpassive use:prepareFocus use:focusTrap on:click={onAutoClose} class={twMerge('fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex', ...getPlacementClasses())} tabindex="-1" aria-modal="true" role="dialog">
     <div class="flex relative {sizes[size]} w-full max-h-full">
       <!-- Modal content -->
       <Frame rounded shadow {...$$restProps} class={frameClass}>
@@ -145,26 +121,17 @@
         {#if $$slots.header || title}
           <Frame color={$$restProps.color} class="flex justify-between items-center p-4 rounded-t border-b">
             <slot name="header">
-              <h3
-                class="text-xl font-semibold {$$restProps.color ? '' : 'text-gray-900 dark:text-white'} p-0">
+              <h3 class="text-xl font-semibold {$$restProps.color ? '' : 'text-gray-900 dark:text-white'} p-0">
                 {title}
               </h3>
             </slot>
             {#if !permanent}<CloseButton name="Close modal" on:click={hide} color={$$restProps.color} />{/if}
           </Frame>
         {:else if !permanent}
-          <CloseButton
-            name="Close modal"
-            class="absolute top-3 right-2.5"
-            on:click={hide}
-            color={$$restProps.color} />
+          <CloseButton name="Close modal" class="absolute top-3 right-2.5" on:click={hide} color={$$restProps.color} />
         {/if}
         <!-- Modal body -->
-        <div
-          class="p-6 space-y-6 flex-1 overflow-y-auto overscroll-contain"
-          on:keydown|stopPropagation={handleKeys}
-          role="document"
-          on:wheel|stopPropagation|passive>
+        <div class="p-6 space-y-6 flex-1 overflow-y-auto overscroll-contain" on:keydown|stopPropagation={handleKeys} role="document" on:wheel|stopPropagation|passive>
           <slot />
         </div>
         <!-- Modal footer -->

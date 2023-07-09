@@ -73,17 +73,20 @@ Use the `icon` slot to change icons.
   <BreadcrumbItem href="/" home>
     <svelte:fragment slot="icon">
       <HomeOutline class="w-4 h-4 mr-2" />
-    </svelte:fragment>Home</BreadcrumbItem>
+    </svelte:fragment>Home
+  </BreadcrumbItem>
   <BreadcrumbItem href="/">
     <svelte:fragment slot="icon">
       <ChevronDoubleRightOutline class="w-4 h-4 dark:text-white" />
     </svelte:fragment>
-    Projects</BreadcrumbItem>
+    Projects
+  </BreadcrumbItem>
   <BreadcrumbItem>
     <svelte:fragment slot="icon">
       <ChevronDoubleRightOutline class="w-4 h-4 dark:text-white" />
     </svelte:fragment>
-    Flowbite Svelte</BreadcrumbItem>
+    Flowbite Svelte
+  </BreadcrumbItem>
 </Breadcrumb>
 ```
 

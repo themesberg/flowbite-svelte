@@ -37,8 +37,7 @@ Import `Gallery` in the script tag.
 
 Use this component to show a collection of images inside a gallery.
 
-Number of rows in the gallery is set by passing the `grid-cols-{n}` Tailwind class (including the reactive prefix).
-Spacing between images is set by `gap-{n}` class. If you don't set them it behaves like `grid-cols-1` and `gap:inherit`.
+Number of rows in the gallery is set by passing the `grid-cols-{n}` Tailwind class (including the reactive prefix). Spacing between images is set by `gap-{n}` class. If you don't set them it behaves like `grid-cols-1` and `gap:inherit`.
 
 Example below show a gallery with three pictures on a row.
 
@@ -174,14 +173,7 @@ This example uses the [carousel slider](https://flowbite-svelte.com/components/c
 </script>
 
 <div class="max-w-4xl">
-  <CarouselTransition
-    {images}
-    loop
-    {showThumbs}
-    {showCaptions}
-    {showIndicators}
-    transitionType="fly"
-    transitionParams={{ delay: 250, duration: 300, x: 100 }} />
+  <CarouselTransition {images} loop {showThumbs} {showCaptions} {showIndicators} transitionType="fly" transitionParams={{ delay: 250, duration: 300, x: 100 }} />
 </div>
 ```
 
@@ -229,20 +221,10 @@ Gallery items don't have to be all the same but then you need to list them manua
 </script>
 
 <Gallery class="gap-4 grid-cols-2">
-  <img
-    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg"
-    alt="shoas"
-    class="h-auto max-w- rounded-lg" />
-  <div class="h-auto max-w- rounded-lg flex items-center justify-center text-6xl font-extrabold bg-red-300">
-    Sale
-  </div>
-  <div class="h-auto max-w- rounded-lg flex items-center justify-center text-6xl font-extrabold bg-blue-300">
-    Sale
-  </div>
-  <img
-    alt="plants"
-    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg"
-    class="h-auto max-w- rounded-lg" />
+  <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="shoas" class="h-auto max-w- rounded-lg" />
+  <div class="h-auto max-w- rounded-lg flex items-center justify-center text-6xl font-extrabold bg-red-300">Sale</div>
+  <div class="h-auto max-w- rounded-lg flex items-center justify-center text-6xl font-extrabold bg-blue-300">Sale</div>
+  <img alt="plants" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" class="h-auto max-w- rounded-lg" />
 </Gallery>
 ```
 

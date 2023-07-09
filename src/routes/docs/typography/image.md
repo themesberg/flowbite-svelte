@@ -85,11 +85,7 @@ This example can be used to show a shadow effect for the image using the shadow-
   import { Img } from 'flowbite-svelte';
 </script>
 
-<Img
-  src="/images/examples/image-2@2x.jpg"
-  alt="sample 1"
-  size="max-w-xl"
-  class="shadow-xl dark:shadow-gray-800" />
+<Img src="/images/examples/image-2@2x.jpg" alt="sample 1" size="max-w-xl" class="shadow-xl dark:shadow-gray-800" />
 ```
 
 ## Retina-ready
@@ -101,11 +97,7 @@ Use the srcset attribute to set Retina-ready images with double resolution.
   import { Img } from 'flowbite-svelte';
 </script>
 
-<Img
-  srcset="/images/examples/image-1.jpg 1x, /images/examples/image-1@2x.jpg 2x"
-  alt="sample 1"
-  size="w-full max-w-xl"
-  class="rounded-lg" />
+<Img srcset="/images/examples/image-1.jpg 1x, /images/examples/image-1@2x.jpg 2x" alt="sample 1" size="w-full max-w-xl" class="rounded-lg" />
 ```
 
 ## Image card
@@ -117,13 +109,7 @@ Use this example to make the image a card item with a link and a short text desc
   import { Img } from 'flowbite-svelte';
 </script>
 
-<Img
-  src="/images/examples/content-gallery-3.png"
-  alt="sample 1"
-  class="rounded-lg"
-  figClass="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"
-  captionClass="absolute bottom-6 px-4 text-lg text-white"
-  caption="Do you want to get notified when a new component is added to Flowbite?" />
+<Img src="/images/examples/content-gallery-3.png" alt="sample 1" class="rounded-lg" figClass="relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0" captionClass="absolute bottom-6 px-4 text-lg text-white" caption="Do you want to get notified when a new component is added to Flowbite?" />
 ```
 
 ## Image effects
@@ -139,11 +125,7 @@ Use the filter option and apply a grayscale to the image element using the grays
   import { Img } from 'flowbite-svelte';
 </script>
 
-<Img
-  src="/images/examples/content-gallery-3.png"
-  size="max-w-lg"
-  alt="My gallery"
-  class="rounded-lg transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0" />
+<Img src="/images/examples/content-gallery-3.png" size="max-w-lg" alt="My gallery" class="rounded-lg transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0" />
 ```
 
 ### Blur
@@ -155,11 +137,7 @@ Apply a blur by using the blur-size utility class from Tailwind CSS to an image 
   import { Img } from 'flowbite-svelte';
 </script>
 
-<Img
-  src="/images/examples/content-gallery-3.png"
-  size="max-w-lg"
-  alt="My gallery"
-  class="rounded-lg transition-all duration-300 blur-sm hover:blur-none" />
+<Img src="/images/examples/content-gallery-3.png" size="max-w-lg" alt="My gallery" class="rounded-lg transition-all duration-300 blur-sm hover:blur-none" />
 ```
 
 ## Alignment

@@ -23,19 +23,7 @@
   }
 </script>
 
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  role="button"
-  tabindex="0"
-  width={size}
-  height={size}
-  class={$$props.class}
-  {...$$restProps}
-  aria-label={ariaLabel}
-  fill="none"
-  {viewBox}
-  stroke-width="2"
-  on:click>
+<svg xmlns="http://www.w3.org/2000/svg" role="button" tabindex="0" width={size} height={size} class={$$props.class} {...$$restProps} aria-label={ariaLabel} fill="none" {viewBox} stroke-width="2" on:click>
   {@html svgpath}
 </svg>
 

@@ -88,14 +88,7 @@ If you want to add other actions as buttons alongside your textarea component, s
 ```svelte example
 <script>
   import { Textarea, Toolbar, ToolbarGroup, ToolbarButton, Button } from 'flowbite-svelte';
-  import {
-    PaperClipOutline,
-    MapPinAltSolid,
-    ImageOutline,
-    CodeOutline,
-    FaceGrinOutline,
-    PapperPlaneOutline
-  } from 'flowbite-svelte-icons';
+  import { PaperClipOutline, MapPinAltSolid, ImageOutline, CodeOutline, FaceGrinOutline, PapperPlaneOutline } from 'flowbite-svelte-icons';
 </script>
 
 <form>
@@ -141,10 +134,8 @@ Most often the textarea component is used as the main text field input element i
   </Textarea>
 </form>
 <p class="ml-auto text-xs text-gray-500 dark:text-gray-400">
-  Remember, contributions to this topic should follow our <a
-    href="/"
-    class="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a
-  >.
+  Remember, contributions to this topic should follow our <a href="/" class="text-blue-600 dark:text-blue-500 hover:underline"> Community Guidelines </a>
+  .
 </p>
 ```
 

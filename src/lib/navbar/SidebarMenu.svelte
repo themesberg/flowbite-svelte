@@ -22,19 +22,7 @@
   export let ariaLabel = 'bars 3';
 </script>
 
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width={size}
-  height={size}
-  {...$$restProps}
-  class={$$props.class}
-  aria-label={ariaLabel}
-  fill="none"
-  {viewBox}
-  stroke-width="2"
-  on:click
-  role="button"
-  tabindex="-1">
+<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} {...$$restProps} class={$$props.class} aria-label={ariaLabel} fill="none" {viewBox} stroke-width="2" on:click role="button" tabindex="-1">
   {@html svgpath}
 </svg>
 

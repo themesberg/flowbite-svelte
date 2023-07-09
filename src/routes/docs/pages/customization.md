@@ -53,9 +53,7 @@ While the `class` prop can be used for most components, some components with a c
 <ImagePlaceholder class="py-4" />
 
 <Banner id="default-banner" position="absolute" classDiv="dark:bg-green-500 dark:border-green-400">
-  <p class="flex items-center text-sm font-normal text-gray-500 dark:text-white">
-    Overwriting divClass and innerClass
-  </p>
+  <p class="flex items-center text-sm font-normal text-gray-500 dark:text-white">Overwriting divClass and innerClass</p>
 </Banner>
 ```
 

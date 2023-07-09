@@ -48,38 +48,23 @@ To prevent that behavior set `multiple` property to `true`.
 <Accordion>
   <AccordionItem>
     <span slot="header">My Header 1</span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
-    </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     <p class="text-gray-500 dark:text-gray-400">
-      Check out this guide to learn how to <a
-        href="/"
-        target="_blank"
-        rel="noreferrer"
-        class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites
-      even faster with components on top of Tailwind CSS.
+      Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline"> get started </a>
+      and start developing websites even faster with components on top of Tailwind CSS.
     </p>
   </AccordionItem>
   <AccordionItem>
     <span slot="header">My Header 2</span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
-    </p>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
-    </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
     <ul class="list-disc pl-5 dark:text-gray-400 text-gray-500">
       <li>
-        <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline"
-          >Lorem ipsum</a>
+        <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline"> Lorem ipsum </a>
       </li>
       <li>
-        <a
-          href="https://tailwindui.com/"
-          rel="noreferrer"
-          target="_blank"
-          class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a>
+        <a href="https://tailwindui.com/" rel="noreferrer" target="_blank" class="text-blue-600 dark:text-blue-500 hover:underline"> Tailwind UI </a>
       </li>
     </ul>
   </AccordionItem>
@@ -98,15 +83,11 @@ Use the `open` prop to make an item open on mount.
 <Accordion>
   <AccordionItem open>
     <span slot="header">Header 2-1</span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
-    </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
   <AccordionItem>
     <span slot="header">Header 2-2</span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
-    </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
 </Accordion>
 ```
@@ -120,20 +101,14 @@ You can control the look and feel of `AccordionItems` by overwriting the `active
   import { AccordionItem, Accordion } from 'flowbite-svelte';
 </script>
 
-<Accordion
-  activeClasses="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800"
-  inactiveClasses="text-gray-500 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800">
+<Accordion activeClasses="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800" inactiveClasses="text-gray-500 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800">
   <AccordionItem class="">
     <span slot="header">Header 2-1</span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
-    </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
   <AccordionItem>
     <span slot="header">Header 2-2</span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
-    </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
 </Accordion>
 ```
@@ -150,15 +125,11 @@ Use `flush` prop to remove the rounded borders.
 <Accordion flush>
   <AccordionItem>
     <span slot="header">Header 2-1</span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
-    </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
   <AccordionItem>
     <span slot="header">Header 2-2</span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
-    </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
 </Accordion>
 ```
@@ -182,9 +153,7 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
     <span slot="arrowdown">
       <ChervonDoubleDownSolid class="h-3 w-3 shrink-0 -mr-0.5" />
     </span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
-    </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
   <AccordionItem>
     <span slot="header">Header 2-2</span>
@@ -194,9 +163,7 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
     <span slot="arrowdown">
       <ChervonDoubleDownSolid class="h-3 w-3 shrink-0 -mr-0.5" />
     </span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
-    </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
 </Accordion>
 ```
@@ -213,28 +180,20 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
   <AccordionItem>
     <span slot="header" class="text-base flex gap-2">
       <CartOutline />
-      <span> My Header 1</span>
+      <span>My Header 1</span>
     </span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo...
-    </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo...</p>
     <p class="text-gray-500 dark:text-gray-400">
-      Check out this guide to learn how to <a
-        href="/"
-        target="_blank"
-        rel="noreferrer"
-        class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start websites even faster
-      with components on top of Tailwind CSS.
+      Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline"> get started </a>
+      and start websites even faster with components on top of Tailwind CSS.
     </p>
   </AccordionItem>
   <AccordionItem>
     <span slot="header" class="text-base flex gap-2">
       <CogOutline />
-      <span> My Header 2</span>
+      <span>My Header 2</span>
     </span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sintexplicabo...
-    </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sintexplicabo...</p>
   </AccordionItem>
 </Accordion>
 ```
@@ -257,26 +216,16 @@ Example how to use the `multiple` option together with expand all behavior.
 <Accordion multiple>
   <AccordionItem bind:open={items[0]}>
     <span slot="header">My Header 1</span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
-    </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     <p class="text-gray-500 dark:text-gray-400">
-      Check out this guide to learn how to <a
-        href="/"
-        target="_blank"
-        rel="noreferrer"
-        class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites
-      even faster with components on top of Tailwind CSS.
+      Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline"> get started </a>
+      and start developing websites even faster with components on top of Tailwind CSS.
     </p>
   </AccordionItem>
   <AccordionItem bind:open={items[1]}>
     <div slot="header">My Header 2</div>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
-    </p>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
-    </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
   </AccordionItem>
   <AccordionItem bind:open={items[2]}>
@@ -298,21 +247,15 @@ The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#r
 <Accordion>
   <AccordionItem>
     <span slot="header">My Header 1</span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
-    </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
   <AccordionItem transitionParams={{ duration: 2000 }}>
     <span slot="header">My Header 2</span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
-    </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
   <AccordionItem transitionType="fade" transitionParams={{ duration: 1000 }}>
     <span slot="header">My Header 3</span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
-    </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
 </Accordion>
 ```

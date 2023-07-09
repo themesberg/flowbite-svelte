@@ -32,17 +32,7 @@
   };
 </script>
 
-<blockquote
-  {...$$restProps}
-  class={twMerge(
-    baseClass,
-    alignmentClasses[alignment],
-    sizes[size],
-    bg && bgClass,
-    border && borderClass,
-    italic && 'italic',
-    $$props.class
-  )}>
+<blockquote {...$$restProps} class={twMerge(baseClass, alignmentClasses[alignment], sizes[size], bg && bgClass, border && borderClass, italic && 'italic', $$props.class)}>
   <slot />
 </blockquote>
 

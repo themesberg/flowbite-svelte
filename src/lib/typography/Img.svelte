@@ -19,12 +19,7 @@
     <figcaption class={captionClass}>{@html caption}</figcaption>
   </figure>
 {:else}
-  <img
-    {...$$restProps}
-    class={twMerge(imgClass, size, alignment, effect, $$props.class)}
-    {src}
-    {srcset}
-    {alt} />
+  <img {...$$restProps} class={twMerge(imgClass, size, alignment, effect, $$props.class)} {src} {srcset} {alt} />
 {/if}
 
 <!--

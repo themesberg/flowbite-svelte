@@ -59,8 +59,7 @@
 
   // typescript typeguards - poper.state.element.reference: Element|HTMLElement|VirtualElement
   const hasHover = (el: object) => (el as Element).matches && (el as Element).matches(':hover');
-  const hasFocus = (el: object) =>
-    (el as Element).contains && (el as Element).contains(document.activeElement);
+  const hasFocus = (el: object) => (el as Element).contains && (el as Element).contains(document.activeElement);
 
   const hideHandler = (ev: Event) => {
     if (activeContent) {
@@ -114,8 +113,7 @@
     ];
 
     if (triggeredBy) triggerEls = [...document.querySelectorAll<HTMLElement>(triggeredBy)];
-    else
-      triggerEls = contentEl.previousElementSibling ? [contentEl.previousElementSibling as HTMLElement] : [];
+    else triggerEls = contentEl.previousElementSibling ? [contentEl.previousElementSibling as HTMLElement] : [];
 
     if (!triggerEls.length) {
       console.error('No triggers found.');
@@ -144,13 +142,7 @@
   $: position = placement.split('-', 1)[0];
 
   let arrowClass: string;
-  $: arrowClass = twMerge(
-    'after:w-[9px] after:h-[9px] after:rotate-45 bg-inherit after:bg-inherit invisible after:visible after:block border-inherit after:border-inherit',
-    position === 'top' && ($$props.border ? 'after:border-b after:border-r -bottom-[5px]' : '-bottom-[4px]'),
-    position === 'bottom' && ($$props.border ? 'after:border-t after:border-l -top-[5px]' : '-top-[4px]'),
-    position === 'left' && ($$props.border ? 'after:border-t after:border-r -right-[5px]' : '-right-[4px]'),
-    position === 'right' && ($$props.border ? 'after:border-b after:border-l -left-[5px]' : '-left-[4px]')
-  );
+  $: arrowClass = twMerge('after:w-[9px] after:h-[9px] after:rotate-45 bg-inherit after:bg-inherit invisible after:visible after:block border-inherit after:border-inherit', position === 'top' && ($$props.border ? 'after:border-b after:border-r -bottom-[5px]' : '-bottom-[4px]'), position === 'bottom' && ($$props.border ? 'after:border-t after:border-l -top-[5px]' : '-top-[4px]'), position === 'left' && ($$props.border ? 'after:border-t after:border-r -right-[5px]' : '-right-[4px]'), position === 'right' && ($$props.border ? 'after:border-b after:border-l -left-[5px]' : '-left-[4px]'));
 </script>
 
 {#if !triggerEl}
@@ -158,17 +150,7 @@
 {/if}
 
 {#if open && triggerEl}
-  <Frame
-    use={init}
-    options={triggerEl}
-    role="tooltip"
-    tabindex={activeContent ? -1 : undefined}
-    on:focusin={optional(activeContent, showHandler)}
-    on:focusout={optional(activeContent, hideHandler)}
-    on:mouseenter={optional(activeContent && !clickable, showHandler)}
-    on:mouseleave={optional(activeContent && !clickable, hideHandler)}
-    {...$$restProps}
-    class={twMerge('outline-none', $$props.class)}>
+  <Frame use={init} options={triggerEl} role="tooltip" tabindex={activeContent ? -1 : undefined} on:focusin={optional(activeContent, showHandler)} on:focusout={optional(activeContent, hideHandler)} on:mouseenter={optional(activeContent && !clickable, showHandler)} on:mouseleave={optional(activeContent && !clickable, hideHandler)} {...$$restProps} class={twMerge('outline-none', $$props.class)}>
     <slot />
     {#if arrow}<div class={arrowClass} />{/if}
   </Frame>

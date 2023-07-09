@@ -23,9 +23,7 @@ The avatar component can be used as a visual identifier for a user profile on yo
 
 ## Setup
 
-Import `Avatar`.
-If you are using the user dropdown, import `Dropdown`, `DropdownHeader`, `DropdownItem`, `DropdownDivider`.
-If you are using tooltip for avatar import `Tooltip`.
+Import `Avatar`. If you are using the user dropdown, import `Dropdown`, `DropdownHeader`, `DropdownItem`, `DropdownDivider`. If you are using tooltip for avatar import `Tooltip`.
 
 ```svelte example hideOutput
 <script>
@@ -172,15 +170,11 @@ Use this example if you want to show a dropdown menu when clicking on the avatar
   import { Avatar, Dropdown, DropdownHeader, DropdownItem, DropdownDivider } from 'flowbite-svelte';
 </script>
 
-<Avatar
-  id="user-drop"
-  src="/images/profile-picture-3.webp"
-  class="cursor-pointer"
-  dot={{ color: 'green' }} />
+<Avatar id="user-drop" src="/images/profile-picture-3.webp" class="cursor-pointer" dot={{ color: 'green' }} />
 <Dropdown triggeredBy="#user-drop">
   <DropdownHeader>
-    <span class="block text-sm"> Bonnie Green </span>
-    <span class="block truncate text-sm font-medium"> name@flowbite.com </span>
+    <span class="block text-sm">Bonnie Green</span>
+    <span class="block truncate text-sm font-medium">name@flowbite.com</span>
   </DropdownHeader>
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>

@@ -32,13 +32,11 @@ Date picker component
 
 ### Use rel="external"
 
-This component is importing Flowbite datepicker javascript in the `svelte:head` section. When you are
-linking to a page using this component, use `rel="external"`.
+This component is importing Flowbite datepicker javascript in the `svelte:head` section. When you are linking to a page using this component, use `rel="external"`.
 
 ## Datepicker example
 
-Use the following example of an input element to create a datepicker component. All you need to do is
-to add the datepicker data attribute to any input element.
+Use the following example of an input element to create a datepicker component. All you need to do is to add the datepicker data attribute to any input element.
 
 ```svelte example hideOutput
 <script>
@@ -103,8 +101,7 @@ If you want to use a custom format such as mm/dd/yyyythen you can use the `datep
 
 ## Orientation
 
-You can override the default positioning algorithm by using the `datepickerOrientation="top | right | bottom | left"`
-prop. You can even combine right with bottom or left with top.
+You can override the default positioning algorithm by using the `datepickerOrientation="top | right | bottom | left"` prop. You can even combine right with bottom or left with top.
 
 ```svelte example hideOutput
 <script>

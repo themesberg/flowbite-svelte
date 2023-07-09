@@ -9,8 +9,7 @@
   export let datepickerOrientation: string = 'bottom';
   export let datepickerTitle: string = 'Flowbite datepicker';
   export let attribute: string = '';
-  export let inputClass: string =
-    'bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
+  export let inputClass: string = 'bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
 
   $: setAttribute = (node: HTMLElement, params: any) => {
     node.setAttribute(params, '');
@@ -44,28 +43,9 @@
       <Calendar />
     </div>
     {#if datepickerButtons}
-      <input
-        {...$$restProps}
-        datepicker
-        datepicker-buttons
-        datepicker-format={datepickerFormat}
-        datepicker-orientation={datepickerOrientation}
-        datepicker-title={datepickerTitle}
-        use:setAttribute={attribute}
-        type="text"
-        class={inputClass}
-        placeholder="Select date" />
+      <input {...$$restProps} datepicker datepicker-buttons datepicker-format={datepickerFormat} datepicker-orientation={datepickerOrientation} datepicker-title={datepickerTitle} use:setAttribute={attribute} type="text" class={inputClass} placeholder="Select date" />
     {:else}
-      <input
-        {...$$restProps}
-        datepicker
-        datepicker-format={datepickerFormat}
-        datepicker-orientation={datepickerOrientation}
-        datepicker-title={datepickerTitle}
-        use:setAttribute={attribute}
-        type="text"
-        class={inputClass}
-        placeholder="Select date" />
+      <input {...$$restProps} datepicker datepicker-format={datepickerFormat} datepicker-orientation={datepickerOrientation} datepicker-title={datepickerTitle} use:setAttribute={attribute} type="text" class={inputClass} placeholder="Select date" />
     {/if}
     <slot />
   </div>

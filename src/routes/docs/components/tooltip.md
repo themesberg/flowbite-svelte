@@ -51,8 +51,7 @@ You can use choose between dark and light version styles for the tooltip compone
 <Button id="type-light">Light tooltip</Button>
 <Button id="type-auto">Default tooltip</Button>
 <Button id="type-dark">Dark tooltip</Button>
-<Tooltip {type} triggeredBy="[id^='type-']" on:show={(ev) => (type = ev.target.id.split('-')[1])}
-  >Tooltip content</Tooltip>
+<Tooltip {type} triggeredBy="[id^='type-']" on:show={(ev) => (type = ev.target.id.split('-')[1])}>Tooltip content</Tooltip>
 ```
 
 ## Placement
@@ -71,10 +70,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 <Button id="placement-top">Tooltip top</Button>
 <Button id="placement-bottom">Tooltip bottom</Button>
 <Button id="placement-right">Tooltip right</Button>
-<Tooltip
-  triggeredBy="[id^='placement-']"
-  {placement}
-  on:show={(e) => ([, placement] = e.target.id.split('-'))}>
+<Tooltip triggeredBy="[id^='placement-']" {placement} on:show={(e) => ([, placement] = e.target.id.split('-'))}>
   Tooltip content - {placement}
 </Tooltip>
 ```
@@ -105,8 +101,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 
 ## Custom style
 
-Various color palettes can be set for a tooltip by using the `color` property from the underlying `Frame` component.
-(Setting `color` prop sets the `style` to `custom` implicitly.)
+Various color palettes can be set for a tooltip by using the `color` property from the underlying `Frame` component. (Setting `color` prop sets the `style` to `custom` implicitly.)
 
 When you want to add a fully custom styles, use `style="custom"`, `defaultClass`, and `class` to modify the style.
 
@@ -122,14 +117,7 @@ When you want to add a fully custom styles, use `style="custom"`, `defaultClass`
 <Tooltip color="yellow">Tooltip content</Tooltip>
 
 <Button>Custom style</Button>
-<Tooltip
-  placement="right"
-  style="custom"
-  defaultClass=""
-  class="p-4 text-lg font-medium bg-purple-500 text-gray-100"
-  arrow={false}>
-  Tooltip content
-</Tooltip>
+<Tooltip placement="right" style="custom" defaultClass="" class="p-4 text-lg font-medium bg-purple-500 text-gray-100" arrow={false}>Tooltip content</Tooltip>
 ```
 
 ## Props

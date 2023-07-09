@@ -62,16 +62,7 @@ If you need separate control over the label and the radio you can use the verbos
 
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
-  import {
-    Radio,
-    Table,
-    TableHead,
-    TableHeadCell,
-    TableBody,
-    TableBodyCell,
-    TableBodyRow,
-    Label
-  } from 'flowbite-svelte';
+  import { Radio, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, TableBodyRow, Label } from 'flowbite-svelte';
 </script>
 
 <Table>
@@ -105,10 +96,10 @@ Use this example if you want to add an anchor link inside the label of the radio
   import { Radio } from 'flowbite-svelte';
 </script>
 
-<Radio name="with-link"
-  >I agree with the <a href="/" class="text-primary-600 dark:text-primary-500 hover:underline ml-1"
-    >terms and conditions</a
-  >.</Radio>
+<Radio name="with-link">
+  I agree with the <a href="/" class="text-primary-600 dark:text-primary-500 hover:underline ml-1"> terms and conditions </a>
+  .
+</Radio>
 ```
 
 ## Helper text
@@ -121,8 +112,7 @@ Get started with this example if you want to add a secondary helper text for the
 </script>
 
 <Radio aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Radio>
-<Helper id="helper-checkbox-text" class="pl-6"
-  >For orders shipped from $25 in books or $29 in other categories</Helper>
+<Helper id="helper-checkbox-text" class="pl-6">For orders shipped from $25 in books or $29 in other categories</Helper>
 ```
 
 ## Bordered
@@ -157,8 +147,7 @@ Use this example to show a list of radio items grouped inside a card.
 <p class="mb-4 font-semibold text-gray-900 dark:text-white">
   Technology <span class="capitalize">{technology}</span>
 </p>
-<ul
-  class="w-48 bg-white rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-600 divide-y divide-gray-200 dark:divide-gray-600">
+<ul class="w-48 bg-white rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-600 divide-y divide-gray-200 dark:divide-gray-600">
   <li><Radio class="p-3" bind:group={technology} value="svelte">Svelte</Radio></li>
   <li><Radio class="p-3" bind:group={technology} value="vue js">Vue JS</Radio></li>
   <li><Radio class="p-3" bind:group={technology} value="react">React</Radio></li>
@@ -176,8 +165,7 @@ Use this example to show a list of radio items inside a card horizontally.
 </script>
 
 <p class="mb-4 font-semibold text-gray-900 dark:text-white">Identification</p>
-<ul
-  class="items-center w-full rounded-lg border border-gray-200 sm:flex dark:bg-gray-800 dark:border-gray-600 divide-x divide-gray-200 dark:divide-gray-600">
+<ul class="items-center w-full rounded-lg border border-gray-200 sm:flex dark:bg-gray-800 dark:border-gray-600 divide-x divide-gray-200 dark:divide-gray-600">
   <li class="w-full"><Radio name="hor-list" class="p-3">Svelte</Radio></li>
   <li class="w-full"><Radio name="hor-list" class="p-3">Vue JS</Radio></li>
   <li class="w-full"><Radio name="hor-list" class="p-3">React</Radio></li>
@@ -279,8 +267,7 @@ Use this example of an advanced layout of radio elements where the label parent 
 <p class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Choose technology:</p>
 <div class="grid gap-6 w-full md:grid-cols-2">
   <Radio name="custom" custom>
-    <div
-      class="inline-flex justify-between items-center p-5 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-primary-500 peer-checked:border-primary-600 peer-checked:text-primary-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <div class="inline-flex justify-between items-center p-5 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-primary-500 peer-checked:border-primary-600 peer-checked:text-primary-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
       <div>
         <div class="w-full text-lg font-semibold">0-50 MB</div>
         <div class="w-full">Good for small websites</div>
@@ -289,9 +276,7 @@ Use this example of an advanced layout of radio elements where the label parent 
     </div>
   </Radio>
   <Radio name="custom" custom>
-    <div
-      for="hosting-big"
-      class="inline-flex justify-between items-center p-5 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-primary-500 peer-checked:border-primary-600 peer-checked:text-primary-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <div for="hosting-big" class="inline-flex justify-between items-center p-5 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-primary-500 peer-checked:border-primary-600 peer-checked:text-primary-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
       <div class="block">
         <div class="w-full text-lg font-semibold">500-1000 MB</div>
         <div class="w-full">Good for large websites</div>
