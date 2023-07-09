@@ -43,7 +43,7 @@ Use the following code to stack together buttons into a single group.
 
 ## More examples
 
-```svelte example hideScript class="flex flex-col flex-wrap gap-4"
+```svelte example class="flex flex-col flex-wrap gap-4"
 <script>
   import { ButtonGroup, Button, GradientButton } from 'flowbite-svelte';
 </script>
@@ -102,7 +102,7 @@ You can also use the button group component as links.
 
 You can also use SVG icons inside the grouped buttons.
 
-```svelte example class="flex justify-center" hideScript
+```svelte example class="flex justify-center"
 <script>
   import { ButtonGroup, Button } from 'flowbite-svelte';
   import { AdjustmentsVerticalOutline, UserCircleSolid, DownloadSolid } from 'flowbite-svelte-icons';
@@ -144,7 +144,7 @@ Group a series of buttons together on a single line or stack them in a vertical 
 
 Group a series of buttons together on a single line or stack them in a vertical column.
 
-```svelte example class="flex justify-center" hideScript
+```svelte example class="flex justify-center" 
 <script>
   import { ButtonGroup, Button } from 'flowbite-svelte';
   import { AdjustmentsVerticalOutline, UserCircleSolid, DownloadSolid } from 'flowbite-svelte-icons';

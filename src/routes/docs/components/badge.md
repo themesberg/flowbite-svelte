@@ -123,7 +123,7 @@ You can also use badges as anchor elements to link to another page.
 
 You can also use SVG icons inside the badge elements.
 
-```svelte example class="flex flex-wrap gap-2" hideScript
+```svelte example class="flex flex-wrap gap-2"
 <script>
   import { Badge } from 'flowbite-svelte';
   import { ClockSolid } from 'flowbite-svelte-icons';
@@ -145,7 +145,7 @@ To achive the functionality of the notification badge, use the sibling [`Indicat
 
 ```svelte example class="flex flex-wrap gap-4"
 <script>
-  import { Badge, Button, Indicator } from 'flowbite-svelte';
+  import { Button, Indicator } from 'flowbite-svelte';
   import { EnvelopeSolid } from 'flowbite-svelte-icons';
 </script>
 
@@ -224,7 +224,7 @@ Use the `dimissable` prop to dismiss the current badge.
 
 Use the `close-button` slot to add your desired button. Don't forget to use the slot prop `close` to dismiss your badge.
 
-```svelte example class="gap-4" hideScript
+```svelte example class="gap-4"
 <script>
   import { Badge } from 'flowbite-svelte';
   import { CloseCircleSolid } from 'flowbite-svelte-icons';

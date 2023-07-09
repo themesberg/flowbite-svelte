@@ -33,7 +33,7 @@ On this page you will find all of the input types based on multiple variants, st
 
 Use this example as a generic form element which includes multiple input fields types such as text, email, password, number, URL, and phone number and use the grid layout to add multiple columns and rows.
 
-```svelte example hideScript
+```svelte example 
 <script>
   import { Input, Label, Helper, Button, Checkbox, A } from 'flowbite-svelte';
 </script>
@@ -128,7 +128,7 @@ Get started with this example if you want to apply the disabled state to an inpu
 
 Use the following example to apply validation styles for success and error messages.
 
-```svelte example hideScript
+```svelte example
 <script>
   import { Input, Label, Helper } from 'flowbite-svelte';
 </script>
@@ -153,7 +153,7 @@ Use the following example to apply validation styles for success and error messa
 
 ## Input with icon
 
-```svelte example hideScript class="space-y-6"
+```svelte example class="space-y-6"
 <script>
   import { Label, Input, Button, CloseButton } from 'flowbite-svelte';
   import { EnvelopeSolid } from 'flowbite-svelte-icons';
@@ -186,7 +186,7 @@ Use the following example to apply validation styles for success and error messa
 
 This example can be used to add a descriptive icon or additional text inside the input field.
 
-```svelte example hideScript class="space-y-6"
+```svelte example class="space-y-6"
 <script>
   import { Label, Input, Button, InputAddon, ButtonGroup, Checkbox } from 'flowbite-svelte';
 </script>
@@ -286,7 +286,7 @@ This example shows how to add `on:click` event handler to the icon in `Input`. B
 
 Use the helper prop to add your helper text. You can use HTML in the helper text.
 
-```svelte example hideScript
+```svelte example
 <script>
   import { Input, Label, Helper } from 'flowbite-svelte';
 </script>
@@ -322,7 +322,7 @@ By default the `Input` component binds the `value` as `string`. If you need a va
 
 ## Search input
 
-```svelte example hideScript
+```svelte example 
 <script>
   import { Input, Label, Button } from 'flowbite-svelte';
   import { SearchOutline } from 'flowbite-svelte-icons';

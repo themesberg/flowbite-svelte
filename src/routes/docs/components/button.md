@@ -127,7 +127,7 @@ These buttons use a style that includes two contrasted colors creating an impres
 
 This is a special button style that incorporates a gradient color for the outline that can be used as a secondary style to the fully colored gradient buttons.
 
-```svelte example class="flex flex-wrap gap-2" hideScript
+```svelte example class="flex flex-wrap gap-2" 
 <script>
   import { GradientButton } from 'flowbite-svelte';
 </script>
@@ -146,7 +146,7 @@ This is a special button style that incorporates a gradient color for the outlin
 
 These beautiful button elements with color shadows can be used since the release of Tailwind v3.0.
 
-```svelte example class="flex flex-wrap gap-2" hideScript
+```svelte example class="flex flex-wrap gap-2" 
 <script>
   import { Button, GradientButton } from 'flowbite-svelte';
 </script>
@@ -200,7 +200,7 @@ Use these examples if you want to use smaller or larger buttons.
 
 Use the following examples to add a SVG icon inside the button either on the left or right side.
 
-```svelte example class="flex flex-wrap gap-2" hideScript
+```svelte example class="flex flex-wrap gap-2" 
 <script>
   import { Button } from 'flowbite-svelte';
   import { ShoppingCartSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
@@ -218,7 +218,7 @@ Use the following examples to add a SVG icon inside the button either on the lef
 
 This example can be used to show a notification count or helper text inside a button using the badge element.
 
-```svelte example class="flex flex-wrap gap-2" hideScript
+```svelte example class="flex flex-wrap gap-2" 
 <script>
   import { Button, Indicator } from 'flowbite-svelte';
 </script>
@@ -233,7 +233,7 @@ This example can be used to show a notification count or helper text inside a bu
 
 Sometimes you need a button to indicate an action using only an icon.
 
-```svelte example class="flex flex-wrap gap-2" hideScript
+```svelte example class="flex flex-wrap gap-2" 
 <script>
   import { Button } from 'flowbite-svelte';
   import { ArrowRightOutline, ShoppingCartSolid } from 'flowbite-svelte-icons';

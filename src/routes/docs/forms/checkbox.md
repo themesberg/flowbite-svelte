@@ -171,7 +171,7 @@ Use this example to show a list of checkbox items inside a card horizontally.
 
 Use this example to show a list of checkbox items inside a dropdown menu.
 
-```svelte example hideScript class="flex justify-center items-start h-96"
+```svelte example class="flex justify-center items-start h-96"
 <script>
   import { Dropdown, DropdownItem, Checkbox, Button, Search } from 'flowbite-svelte';
   import { ChevronDownOutline, UserRemoveSolid } from 'flowbite-svelte-icons';
@@ -257,7 +257,7 @@ You can use the property `inline` as the alternative.
 
 Use this example of an advanced layout of checkbox elements where the label parent element can be styled when the checkbox is checked.
 
-```svelte example hideScript
+```svelte example
 <script>
   import { Checkbox } from 'flowbite-svelte';
   import React from '../../utils/icons/React.svelte';

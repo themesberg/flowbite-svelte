@@ -207,7 +207,7 @@ If you want custom options, put them directly inside the component and leave the
 
 Get started with the default toggle component example as a checkbox element to receive a true or false selection from the user.
 
-```svelte example hideScript class="h-80"
+```svelte example class="h-80"
 <script>
   import { MultiSelect } from 'flowbite-svelte';
 

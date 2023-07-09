@@ -117,7 +117,7 @@ module.exports = config;
 
 ## Examples
 
-```svelte example class="flex flex-col gap-4" hideScript
+```svelte example class="flex flex-col gap-4"
 <script>
   import { Button, Alert, Card, Navbar, NavBrand, NavLi, NavUl, NavHamburger, Toast } from 'flowbite-svelte';
   import { FireOutline } from 'flowbite-svelte-icons';

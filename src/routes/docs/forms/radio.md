@@ -60,7 +60,7 @@ This example can be used for the disabled state of the radio component by applyi
 
 If you need separate control over the label and the radio you can use the verbose syntax, but then you need to take care about aligning manually.
 
-```svelte example class="flex flex-col gap-4" hideScript
+```svelte example class="flex flex-col gap-4"
 <script>
   import { Radio, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, TableBodyRow, Label } from 'flowbite-svelte';
 </script>
@@ -138,7 +138,7 @@ Use this example of a radio inside a card element to enable a larger area of cli
 
 Use this example to show a list of radio items grouped inside a card.
 
-```svelte example hideScript
+```svelte example 
 <script>
   import { Radio } from 'flowbite-svelte';
   let technology = 'svelte';
@@ -177,7 +177,7 @@ Use this example to show a list of radio items inside a card horizontally.
 
 Here’s an example of a list group that you can use right away.
 
-```svelte example hideScript class="flex justify-center items-start h-80"
+```svelte example class="flex justify-center items-start h-80"
 <script>
   import { Radio, Dropdown, Button, Helper } from 'flowbite-svelte';
   import { ChevronDownOutline } from 'flowbite-svelte-icons';
@@ -258,7 +258,7 @@ You can use the property `inline` as the alternative.
 
 Use this example of an advanced layout of radio elements where the label parent element can be styled when the radio is checked.
 
-```svelte example hideScript
+```svelte example
 <script>
   import { Radio } from 'flowbite-svelte';
   import { ArrowRightOutline } from 'flowbite-svelte-icons';

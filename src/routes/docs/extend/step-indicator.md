@@ -43,7 +43,7 @@ Use the following example of a step indicator element to show a progress of step
 
 Use the `glow` prop to add a glow effect to the current step.
 
-```svelte example hideScript
+```svelte example 
 <script>
   import { StepIndicator } from 'flowbite-svelte';
   let currentStep = 2;
@@ -57,7 +57,7 @@ Use the `glow` prop to add a glow effect to the current step.
 
 Use the `hideLabel` prop to hide the label of the current step.
 
-```svelte example hideScript
+```svelte example 
 <script>
   import { StepIndicator } from 'flowbite-svelte';
   let currentStep = 2;
@@ -71,7 +71,7 @@ Use the `hideLabel` prop to hide the label of the current step.
 
 Use the `size` prop to change the size of a step indicator.
 
-```svelte example hideScript
+```svelte example 
 <script>
   import { StepIndicator } from 'flowbite-svelte';
   let currentStep = 2;
@@ -103,7 +103,7 @@ Use the `size` prop to change the size of a step indicator.
 
 Use the `color` prop to change the color of a step indicator.
 
-```svelte example hideScript
+```svelte example 
 <script>
   import { StepIndicator } from 'flowbite-svelte';
   let currentStep = 2;

@@ -28,7 +28,7 @@ The toast component can be used to enhance your website’s interactivity by pus
 
 Use this simple toast component with an icon, message, and dismissable close button to show alert messages to your website visitors.
 
-```svelte example class="flex justify-center" hideScript
+```svelte example class="flex justify-center" 
 <script>
   import { Toast } from 'flowbite-svelte';
   import { FireOutline } from 'flowbite-svelte-icons';
@@ -46,7 +46,7 @@ Use the `color` prop to easily change the colors of the icons. Set the `color` p
 
 Usually, green, red, and orange are used to show success, danger, or warning alert messages to your users. See the first three examples below.
 
-```svelte example class="flex flex-col items-center gap-4" hideScript
+```svelte example class="flex flex-col items-center gap-4" 
 <script>
   import { Toast } from 'flowbite-svelte';
   import { FireOutline, CheckCircleSolid, CloseCircleSolid, ExclamationCircleSolid } from 'flowbite-svelte-icons';
@@ -111,7 +111,7 @@ Usually, green, red, and orange are used to show success, danger, or warning ale
 
 This component can be used to show simple messages and notifications without the use of a close button.
 
-```svelte example class="flex justify-center" hideScript
+```svelte example class="flex justify-center" 
 <script>
   import { Toast } from 'flowbite-svelte';
   import { PapperPlaneOutline } from 'flowbite-svelte-icons';
@@ -129,7 +129,7 @@ For the right positioning of the icon use: `slot="icon"`.
 
 You can use any [icon components](/icons).
 
-```svelte example class="flex flex-col items-center gap-4" hideScript
+```svelte example class="flex flex-col items-center gap-4" 
 <script>
   import { Toast } from 'flowbite-svelte';
   import { ImageOutline } from 'flowbite-svelte-icons';

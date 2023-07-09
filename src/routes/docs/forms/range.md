@@ -40,7 +40,7 @@ The range component can be used as an input field to get a number from the user 
 
 ## Disabled state
 
-```svelte example hideScript
+```svelte example
 <script>
   import { Range, Label } from 'flowbite-svelte';
 </script>
@@ -81,7 +81,7 @@ Use bind:value to bind the range input value as seen the the following examples.
 
 ## Sizes
 
-```svelte example class="space-y-6" hideScript
+```svelte example class="space-y-6"
 <script>
   import { Range, Label } from 'flowbite-svelte';
 </script>

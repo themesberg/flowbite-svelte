@@ -70,7 +70,7 @@ Use the following example of a card element if you also want to have an action b
 
 This example can be used to show a CTA as a link instead of a button inside the card.
 
-```svelte example class="flex justify-center flex-wrap gap-2" hideScript
+```svelte example class="flex justify-center flex-wrap gap-2" 
 <script>
   import { Card } from 'flowbite-svelte';
   import { GiftBoxSolid, ArrowUpRightFromSquareOutline } from 'flowbite-svelte-icons';

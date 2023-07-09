@@ -29,7 +29,7 @@ You will also find more advanced search components on this page including dropdo
 
 ## Search bar example
 
-```svelte example hideScript class="flex flex-col gap-4"
+```svelte example class="flex flex-col gap-4"
 <script>
   import { Search, Button } from 'flowbite-svelte';
 </script>
@@ -43,7 +43,7 @@ You will also find more advanced search components on this page including dropdo
 
 Use the simplest form of a search input component with an icon and a search button next to the text field.
 
-```svelte example hideScript class="flex flex-col gap-4"
+```svelte example class="flex flex-col gap-4"
 <script>
   import { Search, Button } from 'flowbite-svelte';
   import { SearchOutline } from 'flowbite-svelte-icons';

@@ -63,7 +63,7 @@ You can alternatively also use the breadcrumb components with a solid background
 
 Use the `icon` slot to change icons.
 
-```svelte example hideScript
+```svelte example
 <script>
   import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
   import { HomeOutline, ChevronDoubleRightOutline } from 'flowbite-svelte-icons';

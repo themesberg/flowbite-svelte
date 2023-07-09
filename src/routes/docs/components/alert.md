@@ -71,7 +71,7 @@ Use the following examples of alert components to show messages as feedback to y
 
 You can also include a descriptive icon to complement the message inside the alert component with the following example.
 
-```svelte example class="flex flex-col gap-4" hideScript
+```svelte example class="flex flex-col gap-4" 
 <script>
   import { Alert } from 'flowbite-svelte';
   import { InfoCircleSolid } from 'flowbite-svelte-icons';
@@ -113,7 +113,7 @@ You can also include a descriptive icon to complement the message inside the ale
 
 Use this example to add a border accent to the alert component instead of just a plain background.
 
-```svelte example class="flex flex-col gap-4" hideScript
+```svelte example class="flex flex-col gap-4" 
 <script>
   import { Alert } from 'flowbite-svelte';
   import { InfoCircleSolid } from 'flowbite-svelte-icons';
@@ -155,7 +155,7 @@ Use this example to add a border accent to the alert component instead of just a
 
 Use this example to show a list and a description inside an alert component.
 
-```svelte example class="flex flex-col gap-4" hideScript
+```svelte example class="flex flex-col gap-4" 
 <script>
   import { Alert, Li, List } from 'flowbite-svelte';
   import { InfoCircleSolid } from 'flowbite-svelte-icons';
@@ -241,7 +241,7 @@ You can use `slot="close"` to override the default close button. That slot expos
 
 Use the following alert components with a border accent as an alternative style.
 
-```svelte example class="flex flex-col gap-4" hideScript
+```svelte example class="flex flex-col gap-4" 
 <script>
   import { Alert } from 'flowbite-svelte';
   import { InfoCircleSolid } from 'flowbite-svelte-icons';
@@ -278,7 +278,7 @@ Use the following alert components with a border accent as an alternative style.
 
 The following alert components can be used if you wish to disclose more information inside the element.
 
-```svelte example class="flex flex-col gap-4" hideScript
+```svelte example class="flex flex-col gap-4"
 <script>
   import { Alert, Button } from 'flowbite-svelte';
   import { InfoCircleSolid, EyeSolid } from 'flowbite-svelte-icons';
@@ -324,7 +324,7 @@ Use `color='none'` to disable coloring. Then use `class` to add your custom colo
 
 Use the `close` event with `dismissable` prop.
 
-```svelte example class="flex flex-col gap-4" hideScript
+```svelte example class="flex flex-col gap-4" 
 <script>
   import { Alert } from 'flowbite-svelte';
   const closeAlert = () => {
