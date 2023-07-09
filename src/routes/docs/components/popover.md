@@ -192,7 +192,8 @@ Show a progress bar with details inside a popover when hovering over a settings 
 
 ```svelte example class="h-60 flex justify-center items-end"
 <script>
-  import { Popover, ChevronRight, Button } from 'flowbite-svelte';
+  import { Popover, Button } from 'flowbite-svelte';
+  import { ChevronRightOutline } from 'flowbite-svelte-icons';
   import { DatabaseSolid } from 'flowbite-svelte-icons';
 </script>
 
@@ -205,7 +206,7 @@ Show a progress bar with details inside a popover when hovering over a settings 
         <div class="bg-red-600 h-2.5 rounded-full" style="width: 85%"></div>
     </div>
     <a href="/" class="flex items-center font-medium text-primary-600 dark:text-primary-500 dark:hover:text-primary-600 hover:text-primary-700">
-      Upgrade now <ChevronRight size="12" variation="solid"/>
+      Upgrade now <ChevronRightOutline class="w-2 h-2 ml-1.5 text-primary-600 dark:text-primary-500" />
     </a>
   </div>
 </Popover>

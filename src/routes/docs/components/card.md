@@ -143,11 +143,12 @@ Use this user profile card example if you want to show a dropdown menu and butto
 
 ```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
-  import { Card, MenuButton, Dropdown, DropdownItem, Avatar, Button } from "flowbite-svelte";
+  import { Card, Dropdown, DropdownItem, Avatar, Button } from "flowbite-svelte";
+  import { DotsHorizontalOutline } from 'flowbite-svelte-icons';
 </script>
 <Card padding='sm'>
   <div class="flex justify-end">
-    <MenuButton />
+    <DotsHorizontalOutline />
     <Dropdown class="w-36">
       <DropdownItem>Edit</DropdownItem>
       <DropdownItem>Export data</DropdownItem>

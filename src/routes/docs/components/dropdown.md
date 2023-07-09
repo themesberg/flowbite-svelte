@@ -438,10 +438,11 @@ Use the menu icon trigger element on components such as cards as an alternative 
 
 ```svelte example class="flex justify-center items-start gap-4 h-60"
 <script>
-  import { Button, Dropdown, DropdownItem, ToolbarButton, MenuButton, DropdownDivider } from 'flowbite-svelte'
+  import { Button, Dropdown, DropdownItem, ToolbarButton,DropdownDivider } from 'flowbite-svelte';
+  import { DotsHorizontalOutline, DotsVerticalOutline } from 'flowbite-svelte-icons';
 </script>
-<MenuButton class="dots-menu dark:text-white" />
-<MenuButton class="dots-menu dark:text-white" vertical />
+<DotsHorizontalOutline class="dots-menu dark:text-white" />
+<DotsVerticalOutline class="dots-menu dark:text-white" />
 <Dropdown triggeredBy=".dots-menu">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>

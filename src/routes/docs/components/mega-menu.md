@@ -8,9 +8,9 @@ description: Use the mega menu component as a full-width dropdown inside the nav
 ---
 
 <script>
-  import { TableProp, TableDefaultRow , } from '../../utils'
-  import { UserCircle, P, A } from '$lib'
-  import { props as items} from '../../props/MegaMenu.json'
+  import { TableProp, TableDefaultRow } from '../../utils';
+  import { P, A } from '$lib';
+  import { props as items} from '../../props/MegaMenu.json';
 </script>
 
 The mega menu component is a full-width dropdown that can be triggered by clicking on the menu item and it shows a list of links that you can use to navigate through the pages on a website.
@@ -71,20 +71,20 @@ This example of a mega menu dropdown can be used to also show an icon near the t
 
 ```svelte example class="h-80 md:h-80"
 <script>
-  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, UserCircle } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from 'flowbite-svelte';
+  import { ChevronDownOutline, UserCircleOutline } from 'flowbite-svelte-icons';
   let menu = [
-    {name: 'About us', href: '/about', icon: UserCircle},
-    {name: 'Blog', href: '/blog', icon: UserCircle},
-    {name: 'Contact us', href: '/contact', icon: UserCircle},
-    {name: 'Library', href: '/library', icon: UserCircle},
-    {name: 'Newsletter', href: '/news', icon: UserCircle},
-    {name: 'Support Center', href: '/support', icon: UserCircle},
-    {name: 'Resources', href: '/resource', icon: UserCircle},
-    {name: 'Playground', href: '/play', icon: UserCircle},
-    {name: 'Terms', href: '/tersm', icon: UserCircle},
-    {name: 'Pro Version', href: '/pro', icon: UserCircle},
-    {name: 'License', href: '/license', icon: UserCircle},
+    {name: 'About us', href: '/about', icon: UserCircleOutline},
+    {name: 'Blog', href: '/blog', icon: UserCircleOutline},
+    {name: 'Contact us', href: '/contact', icon: UserCircleOutline},
+    {name: 'Library', href: '/library', icon: UserCircleOutline},
+    {name: 'Newsletter', href: '/news', icon: UserCircleOutline},
+    {name: 'Support Center', href: '/support', icon: UserCircleOutline},
+    {name: 'Resources', href: '/resource', icon: UserCircleOutline},
+    {name: 'Playground', href: '/play', icon: UserCircleOutline},
+    {name: 'Terms', href: '/tersm', icon: UserCircleOutline},
+    {name: 'Pro Version', href: '/pro', icon: UserCircleOutline},
+    {name: 'License', href: '/license', icon: UserCircleOutline},
   ];
 </script>
 

@@ -179,30 +179,6 @@ The carousel component can be used to cycle through a set of elements using cust
 </div>
 ```
 
-## Custom slide controllers
-
-<p>You can add custom slide controllers using <a href="/icons/heroicons">Svelte-Heros icons</a>. Change the size using the `iconSize` prop and style with the `iconClass` prop.</p>
-
-```svelte example hideOutput
-<script>
-  import { Carousel, ChevronLeft, ChevronRight } from 'flowbite-svelte'
-  import { images } from './imageData/+server.js';
-
-  let icons={
-    next: ChevronRight,
-    prev: ChevronLeft,
-  }
-  let iconSize =20
-  let iconClass = 'text-white dark:text-red-500';
-  let showThumbs = false;
-  let showCaptions = false;
-</script>
-
-<div class="max-w-4xl">
-  <Carousel {images} {showThumbs} {showCaptions} {icons} {iconSize} {iconClass}/>
-</div>
-```
-
 ## Carousel transition
 
 ```svelte example
