@@ -1,12 +1,12 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
-  import type { IndicatorColorType, IndicatorPlacementType } from '../types';
+  import type { PlacementType } from '../types';
 
   export let color: IndicatorColorType = 'gray';
   export let rounded: boolean = false;
   export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
   export let border: boolean = false;
-  export let placement: IndicatorPlacementType = undefined;
+  export let placement: PlacementType | undefined = undefined;
   export let offset: boolean = true;
 
   const colors = {
@@ -22,6 +22,8 @@
     teal: 'bg-teal-500',
     none: ''
   };
+
+  type IndicatorColorType = keyof typeof colors;
 
   const sizes = {
     xs: 'w-2 h-2',
