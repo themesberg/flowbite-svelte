@@ -32,9 +32,9 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 </script>
 
 <Toolbar>
-  <ToolbarButton><HomeOutline class="w-6 h-6"/></ToolbarButton>
-  <ToolbarButton><EnvelopeOutline class="w-6 h-6"/></ToolbarButton>
-  <ToolbarButton><ImageOutline class="w-6 h-6"/></ToolbarButton>
+  <ToolbarButton><HomeOutline class="w-6 h-6" /></ToolbarButton>
+  <ToolbarButton><EnvelopeOutline class="w-6 h-6" /></ToolbarButton>
+  <ToolbarButton><ImageOutline class="w-6 h-6" /></ToolbarButton>
 </Toolbar>
 ```
 
@@ -47,14 +47,14 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 </script>
 
 <Toolbar color="red">
-  <ToolbarButton color="red"><HomeOutline class="w-6 h-6"/></ToolbarButton>
-  <ToolbarButton color="red"><EnvelopeOutline class="w-6 h-6"/></ToolbarButton>
-  <ToolbarButton color="red"><ImageOutline class="w-6 h-6"/></ToolbarButton>
+  <ToolbarButton color="red"><HomeOutline class="w-6 h-6" /></ToolbarButton>
+  <ToolbarButton color="red"><EnvelopeOutline class="w-6 h-6" /></ToolbarButton>
+  <ToolbarButton color="red"><ImageOutline class="w-6 h-6" /></ToolbarButton>
 </Toolbar>
 <Toolbar color="blue">
-  <ToolbarButton color="blue"><HomeOutline class="w-6 h-6"/></ToolbarButton>
-  <ToolbarButton color="blue"><EnvelopeOutline class="w-6 h-6"/></ToolbarButton>
-  <ToolbarButton color="blue"><ImageOutline class="w-6 h-6"/></ToolbarButton>
+  <ToolbarButton color="blue"><HomeOutline class="w-6 h-6" /></ToolbarButton>
+  <ToolbarButton color="blue"><EnvelopeOutline class="w-6 h-6" /></ToolbarButton>
+  <ToolbarButton color="blue"><ImageOutline class="w-6 h-6" /></ToolbarButton>
 </Toolbar>
 ```
 
@@ -68,16 +68,16 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 
 <Toolbar color="green">
   <ToolbarGroup>
-    <ToolbarButton color="green"><HomeOutline class="w-6 h-6"/></ToolbarButton>
-    <ToolbarButton color="green"><EnvelopeOutline class="w-6 h-6"/></ToolbarButton>
-    <ToolbarButton color="green"><ImageOutline class="w-6 h-6"/></ToolbarButton>
+    <ToolbarButton color="green"><HomeOutline class="w-6 h-6" /></ToolbarButton>
+    <ToolbarButton color="green"><EnvelopeOutline class="w-6 h-6" /></ToolbarButton>
+    <ToolbarButton color="green"><ImageOutline class="w-6 h-6" /></ToolbarButton>
   </ToolbarGroup>
   <ToolbarGroup>
-    <ToolbarButton color="green"><HomeOutline class="w-6 h-6"/></ToolbarButton>
-    <ToolbarButton color="green"><EnvelopeOutline class="w-6 h-6"/></ToolbarButton>
-    <ToolbarButton color="green"><ImageOutline class="w-6 h-6"/></ToolbarButton>
+    <ToolbarButton color="green"><HomeOutline class="w-6 h-6" /></ToolbarButton>
+    <ToolbarButton color="green"><EnvelopeOutline class="w-6 h-6" /></ToolbarButton>
+    <ToolbarButton color="green"><ImageOutline class="w-6 h-6" /></ToolbarButton>
   </ToolbarGroup>
-  <ToolbarButton slot="end" color="green"><CogOutline class="w-6 h-6"/></ToolbarButton>
+  <ToolbarButton slot="end" color="green"><CogOutline class="w-6 h-6" /></ToolbarButton>
 </Toolbar>
 ```
 
@@ -88,7 +88,14 @@ If you want to add other actions as buttons alongside your textarea component, s
 ```svelte example
 <script>
   import { Textarea, Toolbar, ToolbarGroup, ToolbarButton, Button } from 'flowbite-svelte';
-  import { PaperClipOutline, MapPinAltSolid, ImageOutline, CodeOutline, FaceGrinOutline, PapperPlaneOutline } from 'flowbite-svelte-icons';
+  import {
+    PaperClipOutline,
+    MapPinAltSolid,
+    ImageOutline,
+    CodeOutline,
+    FaceGrinOutline,
+    PapperPlaneOutline
+  } from 'flowbite-svelte-icons';
 </script>
 
 <form>
@@ -96,20 +103,21 @@ If you want to add other actions as buttons alongside your textarea component, s
   <Textarea id="editor" rows="8" class="mb-4" placeholder="Write a comment">
     <Toolbar slot="header" embedded>
       <ToolbarGroup>
-        <ToolbarButton name="Attach file"><PaperClipOutline class="w-5 h-5 rotate-45"/></ToolbarButton>
-        <ToolbarButton name="Embed map"><MapPinAltSolid class="w-5 h-5"/></ToolbarButton>
-        <ToolbarButton name="Upload image"><ImageOutline class="w-5 h-5"/></ToolbarButton>
+        <ToolbarButton name="Attach file"><PaperClipOutline class="w-5 h-5 rotate-45" /></ToolbarButton>
+        <ToolbarButton name="Embed map"><MapPinAltSolid class="w-5 h-5" /></ToolbarButton>
+        <ToolbarButton name="Upload image"><ImageOutline class="w-5 h-5" /></ToolbarButton>
       </ToolbarGroup>
       <ToolbarGroup>
-        <ToolbarButton name="Format code"><CodeOutline class="w-5 h-5"/></ToolbarButton>
-        <ToolbarButton name="Add emoji"><FaceGrinOutline class="w-5 h-5"/></ToolbarButton>
+        <ToolbarButton name="Format code"><CodeOutline class="w-5 h-5" /></ToolbarButton>
+        <ToolbarButton name="Add emoji"><FaceGrinOutline class="w-5 h-5" /></ToolbarButton>
       </ToolbarGroup>
-      <ToolbarButton name="send" slot="end"><PapperPlaneOutline class="w-5 h-5 rotate-45"/></ToolbarButton>
+      <ToolbarButton name="send" slot="end"><PapperPlaneOutline class="w-5 h-5 rotate-45" /></ToolbarButton>
     </Toolbar>
   </Textarea>
   <Button>Publish post</Button>
 </form>
 ```
+
 ## Comment box
 
 Most often the textarea component is used as the main text field input element in comment sections. Use this example to also apply a helper text and buttons below the textarea itself.
@@ -123,16 +131,21 @@ Most often the textarea component is used as the main text field input element i
 <form>
   <Textarea class="mb-4" placeholder="Write a comment">
     <div slot="footer" class="flex items-center justify-between">
-    <Button type="submit">Post comment</Button>
-    <Toolbar embedded>
-      <ToolbarButton name="Attach file"><PaperClipOutline class="w-5 h-5 rotate-45"/></ToolbarButton>
-        <ToolbarButton name="Embed map"><MapPinAltSolid class="w-5 h-5"/></ToolbarButton>
-        <ToolbarButton name="Upload image"><ImageOutline class="w-5 h-5"/></ToolbarButton>
-    </Toolbar>
+      <Button type="submit">Post comment</Button>
+      <Toolbar embedded>
+        <ToolbarButton name="Attach file"><PaperClipOutline class="w-5 h-5 rotate-45" /></ToolbarButton>
+        <ToolbarButton name="Embed map"><MapPinAltSolid class="w-5 h-5" /></ToolbarButton>
+        <ToolbarButton name="Upload image"><ImageOutline class="w-5 h-5" /></ToolbarButton>
+      </Toolbar>
     </div>
   </Textarea>
 </form>
-<p class="ml-auto text-xs text-gray-500 dark:text-gray-400">Remember, contributions to this topic should follow our <a href="/" class="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a>.</p>
+<p class="ml-auto text-xs text-gray-500 dark:text-gray-400">
+  Remember, contributions to this topic should follow our <a
+    href="/"
+    class="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a
+  >.
+</p>
 ```
 
 ## Props

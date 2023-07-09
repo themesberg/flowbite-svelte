@@ -33,6 +33,7 @@ Use the following code to stack together buttons into a single group.
 <script>
   import { ButtonGroup, Button } from 'flowbite-svelte';
 </script>
+
 <ButtonGroup>
   <Button>Profile</Button>
   <Button>Settings</Button>
@@ -46,6 +47,7 @@ Use the following code to stack together buttons into a single group.
 <script>
   import { ButtonGroup, Button, GradientButton } from 'flowbite-svelte';
 </script>
+
 <div class="text-gray-900 dark:text-gray-100">
   <div class="py-4">Pills</div>
   <ButtonGroup class="space-x-px">
@@ -88,6 +90,7 @@ You can also use the button group component as links.
 <script>
   import { ButtonGroup, Button } from 'flowbite-svelte';
 </script>
+
 <ButtonGroup>
   <Button href="/">Profile</Button>
   <Button href="/">Settings</Button>
@@ -102,19 +105,20 @@ You can also use SVG icons inside the grouped buttons.
 ```svelte example class="flex justify-center" hideScript
 <script>
   import { ButtonGroup, Button } from 'flowbite-svelte';
-  import { AdjustmentsVerticalOutline, UserCircleSolid, DownloadSolid } from 'flowbite-svelte-icons'
+  import { AdjustmentsVerticalOutline, UserCircleSolid, DownloadSolid } from 'flowbite-svelte-icons';
 </script>
+
 <ButtonGroup>
   <Button>
-    <UserCircleSolid class="w-3 h-3 mr-2"/>
+    <UserCircleSolid class="w-3 h-3 mr-2" />
     Profile
   </Button>
   <Button>
-    <AdjustmentsVerticalOutline class="w-3 h-3 mr-2"/>
+    <AdjustmentsVerticalOutline class="w-3 h-3 mr-2" />
     Settings
   </Button>
   <Button>
-    <DownloadSolid class="w-3 h-3 mr-2"/>
+    <DownloadSolid class="w-3 h-3 mr-2" />
     Download
   </Button>
 </ButtonGroup>
@@ -128,6 +132,7 @@ Group a series of buttons together on a single line or stack them in a vertical 
 <script>
   import { ButtonGroup, Button } from 'flowbite-svelte';
 </script>
+
 <ButtonGroup>
   <Button outline color="dark">Profile</Button>
   <Button outline color="dark">Settings</Button>
@@ -144,17 +149,18 @@ Group a series of buttons together on a single line or stack them in a vertical 
   import { ButtonGroup, Button } from 'flowbite-svelte';
   import { AdjustmentsVerticalOutline, UserCircleSolid, DownloadSolid } from 'flowbite-svelte-icons';
 </script>
+
 <ButtonGroup>
   <Button outline color="dark">
-    <UserCircleSolid class="w-3 h-3 mr-2"/>
+    <UserCircleSolid class="w-3 h-3 mr-2" />
     Profile
   </Button>
   <Button outline color="dark">
-    <AdjustmentsVerticalOutline class="w-3 h-3 mr-2"/>
+    <AdjustmentsVerticalOutline class="w-3 h-3 mr-2" />
     Settings
   </Button>
   <Button outline color="dark">
-    <DownloadSolid class="w-3 h-3 mr-2"/>
+    <DownloadSolid class="w-3 h-3 mr-2" />
     Download
   </Button>
 </ButtonGroup>
@@ -167,10 +173,11 @@ You can add the `on:click` event to the `Button` component.
 ```svelte example class="flex justify-center"
 <script>
   import { ButtonGroup, Button } from 'flowbite-svelte';
-  	const handleClick = ()=> {
-		alert('Clicked')
-	}
+  const handleClick = () => {
+    alert('Clicked');
+  };
 </script>
+
 <ButtonGroup>
   <Button on:click={handleClick}>Click me</Button>
   <Button>Settings</Button>
@@ -184,7 +191,7 @@ The component has the following props, type, and default values. See [types page
 
 ### ButtonGroup
 
-- Use the `class` prop to overwrite  `divClass`.
+- Use the `class` prop to overwrite `divClass`.
 
 <TableProp>
   <TableDefaultRow items={buttonGroupProps} rowState='hover' />

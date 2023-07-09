@@ -28,7 +28,17 @@ The timeline component can be used to show series of data in a chronological ord
 
 ```svelte example hideOutput
 <script>
-  import { Timeline, TimelineItem, TimelineItemVertical, TimelineItemHorizontal, TimelineHorizontal, Activity, ActivityItem, Group, GroupItem } from 'flowbite-svelte';
+  import {
+    Timeline,
+    TimelineItem,
+    TimelineItemVertical,
+    TimelineItemHorizontal,
+    TimelineHorizontal,
+    Activity,
+    ActivityItem,
+    Group,
+    GroupItem
+  } from 'flowbite-svelte';
 </script>
 ```
 
@@ -43,22 +53,20 @@ The timeline component can be used to show series of data in a chronological ord
 <Timeline>
   <TimelineItem title="Application UI code in Tailwind CSS" date="February 2022">
     <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-      Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar,
-      and pre-order E-commerce & Marketing pages.
+      Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and
+      pre-order E-commerce & Marketing pages.
     </p>
-    <Button color="alternative"
-      >Learn more<ArrowRightOutline class="ml-2 w-3 h-3"/></Button>
+    <Button color="alternative">Learn more<ArrowRightOutline class="ml-2 w-3 h-3" /></Button>
   </TimelineItem>
   <TimelineItem title="Application UI code in Tailwind CSS" date="March 2022">
     <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-      All of the pages and components are first designed in Figma and we keep a parity between the
-      two versions even as we update the project.
+      All of the pages and components are first designed in Figma and we keep a parity between the two
+      versions even as we update the project.
     </p>
   </TimelineItem>
   <TimelineItem title="Application UI code in Tailwind CSS" date="April 2022">
     <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-      Get started with dozens of web components and interactive elements built on top of Tailwind
-      CSS.
+      Get started with dozens of web components and interactive elements built on top of Tailwind CSS.
     </p>
   </TimelineItem>
 </Timeline>
@@ -83,8 +91,8 @@ Use this vertical timeline component with icons and badges to show a more advanc
       </span>
     </svelte:fragment>
     <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-      Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar,
-      and pre-order E-commerce & Marketing pages.
+      Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and
+      pre-order E-commerce & Marketing pages.
     </p>
   </TimelineItem>
   <TimelineItem title="Flowbite Figma v1.3.0" date="Released on December 7th, 2021">
@@ -95,8 +103,8 @@ Use this vertical timeline component with icons and badges to show a more advanc
       </span>
     </svelte:fragment>
     <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-      All of the pages and components are first designed in Figma and we keep a parity between the
-      two versions even as we update the project.
+      All of the pages and components are first designed in Figma and we keep a parity between the two
+      versions even as we update the project.
     </p>
   </TimelineItem>
   <TimelineItem title="Flowbite Library v1.2.2" date="Released on December 2nd, 2021">
@@ -107,8 +115,7 @@ Use this vertical timeline component with icons and badges to show a more advanc
       </span>
     </svelte:fragment>
     <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-      Get started with dozens of web components and interactive elements built on top of Tailwind
-      CSS.
+      Get started with dozens of web components and interactive elements built on top of Tailwind CSS.
     </p>
   </TimelineItem>
 </Timeline>
@@ -127,11 +134,12 @@ Use this horizontally aligned timeline component to show a series of data in a c
 <Timeline order="horizontal">
   <TimelineItem title="Flowbite Library v1.0.0" date="Released on December 2nd, 2021">
     <svelte:fragment slot="icon">
-        <div class="flex items-center">
-          <div class="flex z-10 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0">
-              <CalendarWeekSolid class="w-3 h-3 text-primary-600 dark:text-primary-400" />
-          </div>
-          <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
+      <div class="flex items-center">
+        <div
+          class="flex z-10 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+          <CalendarWeekSolid class="w-3 h-3 text-primary-600 dark:text-primary-400" />
+        </div>
+        <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
       </div>
     </svelte:fragment>
     <p class="text-base font-normal text-gray-500 dark:text-gray-400">
@@ -140,11 +148,12 @@ Use this horizontally aligned timeline component to show a series of data in a c
   </TimelineItem>
   <TimelineItem title="Flowbite Library v1.2.0" date="Released on December 23th, 2021">
     <svelte:fragment slot="icon">
-        <div class="flex items-center">
-          <div class="flex z-10 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0">
-              <CalendarWeekSolid class="w-3 h-3 text-primary-600 dark:text-primary-400" />
-          </div>
-          <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
+      <div class="flex items-center">
+        <div
+          class="flex z-10 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+          <CalendarWeekSolid class="w-3 h-3 text-primary-600 dark:text-primary-400" />
+        </div>
+        <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
       </div>
     </svelte:fragment>
     <p class="text-base font-normal text-gray-500 dark:text-gray-400">
@@ -153,11 +162,12 @@ Use this horizontally aligned timeline component to show a series of data in a c
   </TimelineItem>
   <TimelineItem title="Flowbite Library v1.3.0" date="Released on January 5th, 2021">
     <svelte:fragment slot="icon">
-        <div class="flex items-center">
-          <div class="flex z-10 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0">
-              <CalendarWeekSolid class="w-3 h-3 text-primary-600 dark:text-primary-400" />
-          </div>
-          <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
+      <div class="flex items-center">
+        <div
+          class="flex z-10 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+          <CalendarWeekSolid class="w-3 h-3 text-primary-600 dark:text-primary-400" />
+        </div>
+        <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
       </div>
     </svelte:fragment>
     <p class="text-base font-normal text-gray-500 dark:text-gray-400">
@@ -281,14 +291,14 @@ The component has the following props, type, and default values. See [types page
 
 ### ActivityItem
 
-- Use the `classLi` prop to overwrite  `liClass`.
-- Use the `classSpan` prop to overwrite  `spanClass`.
-- Use the `classImg` prop to overwrite  `imgClass`.
-- Use the `classOuterDiv` prop to overwrite  `outerDivClass`.
-- Use the `classInnerDiv` prop to overwrite  `innerDivClass`.
-- Use the `classTime` prop to overwrite  `timeClass`.
-- Use the `classTitle` prop to overwrite  `titleClass`.
-- Use the `classText` prop to overwrite  `textClass`.
+- Use the `classLi` prop to overwrite `liClass`.
+- Use the `classSpan` prop to overwrite `spanClass`.
+- Use the `classImg` prop to overwrite `imgClass`.
+- Use the `classOuterDiv` prop to overwrite `outerDivClass`.
+- Use the `classInnerDiv` prop to overwrite `innerDivClass`.
+- Use the `classTime` prop to overwrite `timeClass`.
+- Use the `classTitle` prop to overwrite `titleClass`.
+- Use the `classText` prop to overwrite `textClass`.
 
 <TableProp>
   <TableDefaultRow items={items7} rowState='hover' />

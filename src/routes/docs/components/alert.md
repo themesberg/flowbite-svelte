@@ -38,8 +38,9 @@ Use the following examples of alert components to show messages as feedback to y
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import {Alert} from "flowbite-svelte";
+  import { Alert } from 'flowbite-svelte';
 </script>
+
 <Alert>
   <span class="font-medium">Default alert!</span> Change a few things up and try submitting again.
 </Alert>
@@ -66,9 +67,10 @@ You can also include a descriptive icon to complement the message inside the ale
 
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
-  import {Alert} from "flowbite-svelte";
-  import { InfoCircleSolid } from 'flowbite-svelte-icons'
+  import { Alert } from 'flowbite-svelte';
+  import { InfoCircleSolid } from 'flowbite-svelte-icons';
 </script>
+
 <Alert>
   <InfoCircleSolid slot="icon" class="w-4 h-4" />
   <span class="font-medium">Default alert!</span> Change a few things up and try submitting again.
@@ -101,9 +103,10 @@ Use this example to add a border accent to the alert component instead of just a
 
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
-  import {Alert} from "flowbite-svelte";
-  import { InfoCircleSolid } from 'flowbite-svelte-icons'
+  import { Alert } from 'flowbite-svelte';
+  import { InfoCircleSolid } from 'flowbite-svelte-icons';
 </script>
+
 <Alert border>
   <InfoCircleSolid slot="icon" class="w-4 h-4" />
   <span class="font-medium">Default alert!</span> Change a few things up and try submitting again.
@@ -136,13 +139,14 @@ Use this example to show a list and a description inside an alert component.
 
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
-  import {Alert, Li, List} from "flowbite-svelte";
-  import { InfoCircleSolid } from 'flowbite-svelte-icons'
+  import { Alert, Li, List } from 'flowbite-svelte';
+  import { InfoCircleSolid } from 'flowbite-svelte-icons';
 </script>
+
 <Alert class="!items-start">
   <span slot="icon">
-  <InfoCircleSolid slot="icon" class="w-4 h-4" />
-  <span class="sr-only">Info</span>
+    <InfoCircleSolid slot="icon" class="w-4 h-4" />
+    <span class="sr-only">Info</span>
   </span>
   <p class="font-medium">Ensure that these requirements are met:</p>
   <ul class="mt-1.5 ml-4 list-disc list-inside">
@@ -153,8 +157,8 @@ Use this example to show a list and a description inside an alert component.
 </Alert>
 <Alert color="blue" class="!items-start">
   <span slot="icon">
-  <InfoCircleSolid slot="icon" class="w-4 h-4" />
-  <span class="sr-only">Info</span>
+    <InfoCircleSolid slot="icon" class="w-4 h-4" />
+    <span class="sr-only">Info</span>
   </span>
   <p class="font-medium">Ensure that these requirements are met:</p>
   <List class="mt-1.5 ml-4">
@@ -175,34 +179,43 @@ You can use `slot="close"` to override the default close button. That slot expos
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import { Alert, Button } from "flowbite-svelte";
-  import { InfoCircleSolid } from 'flowbite-svelte-icons'
+  import { Alert, Button } from 'flowbite-svelte';
+  import { InfoCircleSolid } from 'flowbite-svelte-icons';
   import { fly } from 'svelte/transition';
 </script>
+
 <Alert dismissable>
-    <InfoCircleSolid slot="icon" class="w-4 h-4" />
-    A simple default alert with an <a href="/" class="font-semibold underline hover:text-blue-800 dark:hover:text-blue-900">example link</a>. Give it a click if you like.
-  </Alert>
-  <Alert color="blue" dismissable>
-    <InfoCircleSolid slot="icon" class="w-4 h-4" />
-    A simple info alert with an <a href="/" class="font-semibold underline hover:text-blue-800 dark:hover:text-blue-900">example link</a>. Give it a click if you like.
-  </Alert>
-  <Alert color="red" dismissable>
-    <InfoCircleSolid slot="icon" class="w-4 h-4" />
-    A simple info alert with an <a href="/" class="font-semibold underline hover:text-red-800 dark:hover:text-red-900">example link</a>. Give it a click if you like.
-  </Alert>
-  <Alert color="green" dismissable>
-    <InfoCircleSolid slot="icon" class="w-4 h-4" />
-    A simple info alert with an <a href="/" class="font-semibold underline hover:text-green-800 dark:hover:text-green-900">example link</a>. Give it a click if you like.
-  </Alert>
-  <Alert color="yellow" dismissable transition={fly} params={{x: 200}}>
-    <InfoCircleSolid slot="icon" class="w-4 h-4" />
-    An alert with non default animation - fly away.
-  </Alert>
-  <Alert color="dark" dismissable>
-    <InfoCircleSolid slot="icon" class="w-4 h-4" />
-    An alert with the custom dismissal button.
-    <Button slot="close-button" size="xs" let:close on:click={close} class="ml-auto">Dissmiss</Button>
+  <InfoCircleSolid slot="icon" class="w-4 h-4" />
+  A simple default alert with an
+  <a href="/" class="font-semibold underline hover:text-blue-800 dark:hover:text-blue-900">example link</a>.
+  Give it a click if you like.
+</Alert>
+<Alert color="blue" dismissable>
+  <InfoCircleSolid slot="icon" class="w-4 h-4" />
+  A simple info alert with an
+  <a href="/" class="font-semibold underline hover:text-blue-800 dark:hover:text-blue-900">example link</a>.
+  Give it a click if you like.
+</Alert>
+<Alert color="red" dismissable>
+  <InfoCircleSolid slot="icon" class="w-4 h-4" />
+  A simple info alert with an
+  <a href="/" class="font-semibold underline hover:text-red-800 dark:hover:text-red-900">example link</a>.
+  Give it a click if you like.
+</Alert>
+<Alert color="green" dismissable>
+  <InfoCircleSolid slot="icon" class="w-4 h-4" />
+  A simple info alert with an
+  <a href="/" class="font-semibold underline hover:text-green-800 dark:hover:text-green-900">example link</a
+  >. Give it a click if you like.
+</Alert>
+<Alert color="yellow" dismissable transition={fly} params={{ x: 200 }}>
+  <InfoCircleSolid slot="icon" class="w-4 h-4" />
+  An alert with non default animation - fly away.
+</Alert>
+<Alert color="dark" dismissable>
+  <InfoCircleSolid slot="icon" class="w-4 h-4" />
+  An alert with the custom dismissal button.
+  <Button slot="close-button" size="xs" let:close on:click={close} class="ml-auto">Dissmiss</Button>
 </Alert>
 ```
 
@@ -212,9 +225,10 @@ Use the following alert components with a border accent as an alternative style.
 
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
-  import {Alert} from "flowbite-svelte";
-  import { InfoCircleSolid } from 'flowbite-svelte-icons'
+  import { Alert } from 'flowbite-svelte';
+  import { InfoCircleSolid } from 'flowbite-svelte-icons';
 </script>
+
 <Alert rounded={false} class="border-t-4">
   <InfoCircleSolid slot="icon" class="w-4 h-4" />
   <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
@@ -232,7 +246,7 @@ Use the following alert components with a border accent as an alternative style.
   <span class="font-medium">Warning alert!</span> Change a few things up and try submitting again.
 </Alert>
 <Alert color="dark" rounded={false} class="border-t-4 flex-row-reverse">
-    <InfoCircleSolid slot="icon" class="w-4 h-4" />
+  <InfoCircleSolid slot="icon" class="w-4 h-4" />
   <span class="font-medium">Dark alert!</span> Change a few things up and try submitting again.
 </Alert>
 ```
@@ -243,15 +257,19 @@ The following alert components can be used if you wish to disclose more informat
 
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
-  import {Alert, Button} from "flowbite-svelte";
-  import { InfoCircleSolid, EyeSolid } from 'flowbite-svelte-icons'
+  import { Alert, Button } from 'flowbite-svelte';
+  import { InfoCircleSolid, EyeSolid } from 'flowbite-svelte-icons';
 </script>
+
 <Alert>
   <div class="flex items-center gap-3">
-      <InfoCircleSolid slot="icon" class="w-4 h-4" />
+    <InfoCircleSolid slot="icon" class="w-4 h-4" />
     <span class="text-lg font-medium">This is a info alert</span>
   </div>
-  <p class="mt-2 mb-4 text-sm">More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+  <p class="mt-2 mb-4 text-sm">
+    More info about this info alert goes here. This example text is going to run a bit longer so that you can
+    see how spacing within an alert works with this kind of content.
+  </p>
   <div class="flex gap-2">
     <Button size="xs"><EyeSolid class="w-4 h-4 mr-2" />View more</Button>
     <Button size="xs" outline class="dark:!text-primary-800">Go to Home</Button>
@@ -259,10 +277,13 @@ The following alert components can be used if you wish to disclose more informat
 </Alert>
 <Alert color="green">
   <div class="flex items-center gap-3">
-      <InfoCircleSolid slot="icon" class="w-4 h-4" />
+    <InfoCircleSolid slot="icon" class="w-4 h-4" />
     <span class="text-lg font-medium">This is a info alert</span>
   </div>
-  <p class="mt-2 mb-4 text-sm">More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+  <p class="mt-2 mb-4 text-sm">
+    More info about this info alert goes here. This example text is going to run a bit longer so that you can
+    see how spacing within an alert works with this kind of content.
+  </p>
   <div class="flex gap-2">
     <Button size="xs" color="green"><EyeSolid class="w-4 h-4 mr-2" />View more</Button>
     <Button size="xs" outline color="green" class="dark:text-green-800">Go to Home</Button>
@@ -276,11 +297,10 @@ Use `color='none'` to disable coloring. Then use `class` to add your custom colo
 
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
-  import {Alert} from "flowbite-svelte";
+  import { Alert } from 'flowbite-svelte';
 </script>
-<Alert color='none' class='bg-sky-500 text-white'>
-  Your content
-</Alert>
+
+<Alert color="none" class="bg-sky-500 text-white">Your content</Alert>
 ```
 
 ## Events
@@ -289,10 +309,10 @@ Use the `close` event with `dismissable` prop.
 
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
-  import {Alert} from "flowbite-svelte";
-  const closeAlert = ()=>{
-    alert('Clicked closeAlert.')
-  }
+  import { Alert } from 'flowbite-svelte';
+  const closeAlert = () => {
+    alert('Clicked closeAlert.');
+  };
 </script>
 
 <Alert dismissable on:close={closeAlert}>Close me</Alert>
@@ -304,7 +324,7 @@ Use the `close` event with `dismissable` prop.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-- Use the `class` prop to overwrite  `defaultClass`.
+- Use the `class` prop to overwrite `defaultClass`.
 
 <TableProp>
 <TableDefaultRow items={alertProps} rowState='hover' />

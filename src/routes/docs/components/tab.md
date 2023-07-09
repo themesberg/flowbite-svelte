@@ -46,20 +46,35 @@ The last tab in that example shows not only how to show a disabled tab, but how 
 
 <Tabs>
   <TabItem open title="Profile">
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Profile:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Profile:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
   <TabItem title="Settings">
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Settings:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Settings:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
   <TabItem title="Users">
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Users:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Users:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
   <TabItem title="Dashboard">
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Dashboard:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Dashboard:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
   <TabItem disabled>
     <span slot="title" class="text-gray-400 dark:text-gray-500">Disabled</span>
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Disabled:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Disabled:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
 </Tabs>
 ```
@@ -83,33 +98,53 @@ Use the `style="underline"` to achieve this alternative tabs component style wit
 
 <Tabs style="underline">
   <TabItem open title="Profile">
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Profile:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Profile:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
   <TabItem title="Dashboard">
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Dashboard:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Dashboard:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
   <TabItem title="Settings">
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Settings:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Settings:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
   <TabItem title="Users">
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Users:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Users:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
   <TabItem disabled>
     <span slot="title" class="text-gray-400 dark:text-gray-500">Disabled</span>
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Disabled:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Disabled:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
 </Tabs>
 ```
 
 ## Tabs with icons
 
-This is an example of the tabs component where you can also use a SVG powered icon to complement the text within the navigational tabs. 
+This is an example of the tabs component where you can also use a SVG powered icon to complement the text within the navigational tabs.
 Use icon components for a simple syntax. See <a href="/icons">Icons</a> for more details.
 
 ```svelte example
 <script>
   import { Tabs, TabItem } from 'flowbite-svelte';
-  import { UserCircleSolid, GridSolid, AdjustmentsVerticalSolid, ClipboardSolid } from 'flowbite-svelte-icons';
+  import {
+    UserCircleSolid,
+    GridSolid,
+    AdjustmentsVerticalSolid,
+    ClipboardSolid
+  } from 'flowbite-svelte-icons';
 </script>
 
 <Tabs style="underline">
@@ -118,28 +153,40 @@ Use icon components for a simple syntax. See <a href="/icons">Icons</a> for more
       <UserCircleSolid size="sm" />
       Profile
     </div>
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Profile:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Profile:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
   <TabItem>
     <div slot="title" class="flex items-center gap-2">
       <GridSolid size="sm" />
       Dashboard
     </div>
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Dashboard:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Dashboard:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
   <TabItem>
     <div slot="title" class="flex items-center gap-2">
       <AdjustmentsVerticalSolid size="sm" />
       Settings
     </div>
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Settings:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Settings:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
   <TabItem>
     <div slot="title" class="flex items-center gap-2">
       <ClipboardSolid size="sm" />
       Contacts
     </div>
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Contacts:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Contacts:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
 </Tabs>
 ```
@@ -156,19 +203,31 @@ If you want to use pills as a style for the tabs component use `style="pill"`.
 <Tabs style="pill">
   <TabItem open>
     <span slot="title">Profile</span>
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Profile:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Profile:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
   <TabItem>
     <span slot="title">Dashboard</span>
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Dashboard:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Dashboard:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
   <TabItem>
     <span slot="title">Settings</span>
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Settings:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Settings:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
   <TabItem>
     <span slot="title">Users</span>
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Users:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Users:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
 </Tabs>
 ```
@@ -185,19 +244,31 @@ If you want to show the tabs on the full width relative to the parent element us
 <Tabs style="full" defaultClass="flex rounded-lg divide-x divide-gray-200 shadow dark:divide-gray-700">
   <TabItem class="w-full" open>
     <span slot="title">Profile</span>
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Profile:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Profile:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
   <TabItem class="w-full">
     <span slot="title">Dashboard</span>
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Dashboard:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Dashboard:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
   <TabItem class="w-full">
     <span slot="title">Settings</span>
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Settings:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Settings:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
   <TabItem class="w-full">
     <span slot="title">Users</span>
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Users:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Users:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
 </Tabs>
 ```
@@ -212,38 +283,53 @@ You can add other components to the `TabItem` component. Here we are adding a ti
   import { ArrowRightOutline } from 'flowbite-svelte-icons';
 </script>
 
-<Tabs >
+<Tabs>
   <TabItem open>
     <span slot="title">Profile</span>
     <Timeline>
       <TimelineItem title="Application UI code in Tailwind CSS" date="February 2022">
         <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-          Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar,
-          and pre-order E-commerce & Marketing pages.
+          Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and
+          pre-order E-commerce & Marketing pages.
         </p>
-        <Button color="alternative">Learn more
+        <Button color="alternative"
+          >Learn more
           <ArrowRightOutline class="ml-2 w-3 h-3" />
         </Button>
       </TimelineItem>
       <TimelineItem title="Application UI code in Tailwind CSS" date="March 2022">
-        <p class="text-base font-normal text-gray-500 dark:text-gray-400">All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.</p>
+        <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+          All of the pages and components are first designed in Figma and we keep a parity between the two
+          versions even as we update the project.
+        </p>
       </TimelineItem>
       <TimelineItem title="Application UI code in Tailwind CSS" date="April 2022">
-        <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements built on top of Tailwind CSS.</p>
+        <p class="text-base font-normal text-gray-500 dark:text-gray-400">
+          Get started with dozens of web components and interactive elements built on top of Tailwind CSS.
+        </p>
       </TimelineItem>
     </Timeline>
   </TabItem>
   <TabItem>
     <span slot="title">Dashboard</span>
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Dashboard:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Dashboard:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
   <TabItem>
     <span slot="title">Settings</span>
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Settings:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Settings:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
   <TabItem>
     <span slot="title">Users</span>
-    <p class="text-sm text-gray-500 dark:text-gray-400"><b>Users:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      <b>Users:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
   </TabItem>
 </Tabs>
 ```

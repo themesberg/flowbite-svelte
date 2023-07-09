@@ -23,7 +23,7 @@ You will also find more advanced search components on this page including dropdo
 
 ```svelte example hideOutput
 <script>
-  import { Search } from 'flowbite-svelte'
+  import { Search } from 'flowbite-svelte';
 </script>
 ```
 
@@ -31,10 +31,10 @@ You will also find more advanced search components on this page including dropdo
 
 ```svelte example hideScript class="flex flex-col gap-4"
 <script>
-  import { Search, Button } from 'flowbite-svelte'
+  import { Search, Button } from 'flowbite-svelte';
 </script>
 
-<Search >
+<Search>
   <Button>Search</Button>
 </Search>
 ```
@@ -71,12 +71,12 @@ Get started with this example if you would like to enable voice search for your 
 </script>
 
 <form class="flex gap-2">
-  <Search size='md' class="flex gap-2 items-center" placeholder="Search Mockups, Logos, Design Templates...">
+  <Search size="md" class="flex gap-2 items-center" placeholder="Search Mockups, Logos, Design Templates...">
     <button type="button" on:click={handleVoiceBtn} class="outline-none">
       <MicrophoneSolid class="w-4 h-4" />
     </button>
   </Search>
-  <Button size='sm'>
+  <Button size="sm">
     <SearchOutline class="w-5 h-5 mr-2 -ml-1" />
     Search
   </Button>
@@ -86,18 +86,18 @@ Get started with this example if you would like to enable voice search for your 
 ## Events
 
 ```js
-on:blur
-on:change
-on:input
-on:click
-on:focus
-on:keydown
-on:keypress
-on:keyup
-on:mouseenter
-on:mouseleave
-on:mouseover
-on:paste
+on: blur;
+on: change;
+on: input;
+on: click;
+on: focus;
+on: keydown;
+on: keypress;
+on: keyup;
+on: mouseenter;
+on: mouseleave;
+on: mouseover;
+on: paste;
 ```
 
 ## Example

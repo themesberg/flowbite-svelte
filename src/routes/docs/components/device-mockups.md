@@ -254,7 +254,6 @@ The component has the following props, type, and default values. See [types page
 - Use the `classAndroidDiv` prop to overwrite `androidDiv`.
 - Use the `classAndroidDiv` prop to overwrite `androidDiv`.
 
-
 ### Smartwatch
 
 - Use the `classAndroidDiv` prop to overwrite `androidDiv`.

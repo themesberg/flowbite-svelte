@@ -27,7 +27,7 @@ At least one unique H1 tag should be available for each page on your website wit
 
 ```svelte example hideOutput
 <script>
-  import {  Heading, P, A, Mark, Secondary } from 'flowbite-svelte'
+  import { Heading, P, A, Mark, Secondary } from 'flowbite-svelte';
 </script>
 ```
 
@@ -37,15 +37,19 @@ Use this example of a H1 heading in the context of a paragraph and CTA button fo
 
 ```svelte example
 <script>
-  import {  Heading, P, Button } from 'flowbite-svelte';
+  import { Heading, P, Button } from 'flowbite-svelte';
   import { ArrowRightOutline } from 'flowbite-svelte-icons';
 </script>
 
 <div class="text-center">
-  <Heading tag="h1" class="mb-4" customSize="text-4xl font-extrabold  md:text-5xl lg:text-6xl">We invest in the world’s potential</Heading>
-  <P class="mb-6 text-lg lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
-  <Button href="/">Learn more 
-  <ArrowRightOutline class="w-3.5 h-3.5 ml-2" />
+  <Heading tag="h1" class="mb-4" customSize="text-4xl font-extrabold  md:text-5xl lg:text-6xl"
+    >We invest in the world’s potential</Heading>
+  <P class="mb-6 text-lg lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400"
+    >Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term
+    value and drive economic growth.</P>
+  <Button href="/"
+    >Learn more
+    <ArrowRightOutline class="w-3.5 h-3.5 ml-2" />
   </Button>
 </div>
 ```
@@ -61,10 +65,15 @@ Use this example of a second-level H2 heading as the main subtitle for each sect
 </script>
 
 <Heading tag="h2" customSize="text-4xl font-extrabold ">Payments tool for companies</Heading>
-<P class="my-4 text-gray-500">Start developing with an open-source library of over 450+ UI components, sections, and pages built with the utility classes from Tailwind CSS and designed in Figma.</P>
-<P class="mb-4">Deliver great service experiences fast - without the complexity of traditional ITSM solutions. Accelerate critical development work, eliminate toil, and deploy changes with ease.</P>
-<A>Read more 
-  <ChevronRightOutline class="w-3.5 h-3.5 ml-2"/>
+<P class="my-4 text-gray-500"
+  >Start developing with an open-source library of over 450+ UI components, sections, and pages built with
+  the utility classes from Tailwind CSS and designed in Figma.</P>
+<P class="mb-4"
+  >Deliver great service experiences fast - without the complexity of traditional ITSM solutions. Accelerate
+  critical development work, eliminate toil, and deploy changes with ease.</P>
+<A
+  >Read more
+  <ChevronRightOutline class="w-3.5 h-3.5 ml-2" />
 </A>
 ```
 
@@ -74,11 +83,13 @@ Use this example to highlight a certain portion of the heading text with a diffe
 
 ```svelte example
 <script>
-  import {  Heading, P, Span } from 'flowbite-svelte'
+  import { Heading, P, Span } from 'flowbite-svelte';
 </script>
 
 <Heading tag="h1" class="mb-4">Get back to growth with <Span highlight>the world's #1</Span> CRM.</Heading>
-<P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
+<P
+  >Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value
+  and drive economic growth.</P>
 ```
 
 ## Heading mark
@@ -87,11 +98,13 @@ This example can be used to mark one part of the heading text with a solid backg
 
 ```svelte example
 <script>
-  import {  Heading, P, Mark } from 'flowbite-svelte'
+  import { Heading, P, Mark } from 'flowbite-svelte';
 </script>
 
-<Heading tag="h1" class='mb-4'>Regain <Mark>control</Mark> over your days</Heading>
-<P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
+<Heading tag="h1" class="mb-4">Regain <Mark>control</Mark> over your days</Heading>
+<P
+  >Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value
+  and drive economic growth.</P>
 ```
 
 ## Heading gradient
@@ -100,11 +113,14 @@ Use this example to highlight a portion of the heading text by using a gradient 
 
 ```svelte example
 <script>
-  import {  Heading, P, Span } from 'flowbite-svelte'
+  import { Heading, P, Span } from 'flowbite-svelte';
 </script>
 
-<Heading tag="h1" class="mb-4" customSize="text-3xl font-extrabold  md:text-5xl lg:text-6xl"><Span gradient>Better Data</Span> Scalable AI.</Heading>
-<P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
+<Heading tag="h1" class="mb-4" customSize="text-3xl font-extrabold  md:text-5xl lg:text-6xl"
+  ><Span gradient>Better Data</Span> Scalable AI.</Heading>
+<P
+  >Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value
+  and drive economic growth.</P>
 ```
 
 ## Heading underline
@@ -113,11 +129,17 @@ Get started with this example to underline an important part of the heading comp
 
 ```svelte example
 <script>
-  import {  Heading, P, Span } from 'flowbite-svelte'
+  import { Heading, P, Span } from 'flowbite-svelte';
 </script>
 
-<Heading tag="h1" class="mb-4">We invest in the <Span underline decorationClass="decoration-8 decoration-blue-400 dark:decoration-blue-600">world’s potential</Span></Heading>
-<P>Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
+<Heading tag="h1" class="mb-4"
+  >We invest in the <Span
+    underline
+    decorationClass="decoration-8 decoration-blue-400 dark:decoration-blue-600">world’s potential</Span
+  ></Heading>
+<P
+  >Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value
+  and drive economic growth.</P>
 ```
 
 ## Breadcrumb context
@@ -126,11 +148,11 @@ Get started with this example to position a breadcrumb component above the headi
 
 ```svelte example
 <script>
-  import {  Heading, Breadcrumb, BreadcrumbItem } from 'flowbite-svelte'
+  import { Heading, Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
 </script>
 
 <Breadcrumb class="mb-4">
-  <BreadcrumbItem href="/" home >Home</BreadcrumbItem>
+  <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
   <BreadcrumbItem href="/">Settings</BreadcrumbItem>
   <BreadcrumbItem>Team</BreadcrumbItem>
 </Breadcrumb>
@@ -143,10 +165,11 @@ Use this example to show a badge component inside the heading text element as a 
 
 ```svelte example
 <script>
-  import {  Heading, Badge } from 'flowbite-svelte'
+  import { Heading, Badge } from 'flowbite-svelte';
 </script>
 
-<Heading tag="h1" class='flex items-center' size='text-5xl'>Flowbite <Badge class="text-2xl font-semibold ml-2" >PRO</Badge></Heading>
+<Heading tag="h1" class="flex items-center" size="text-5xl"
+  >Flowbite <Badge class="text-2xl font-semibold ml-2">PRO</Badge></Heading>
 ```
 
 ## Secondary text
@@ -155,10 +178,11 @@ This example can be used to add a secondary text inside the main heading compone
 
 ```svelte example
 <script>
-  import {  Heading, Secondary } from 'flowbite-svelte'
+  import { Heading, Secondary } from 'flowbite-svelte';
 </script>
 
-<Heading tag="h1" customSize="text-5xl font-extrabold">Flowbite <Secondary class="ml-2">This is secondary text</Secondary></Heading>
+<Heading tag="h1" customSize="text-5xl font-extrabold"
+  >Flowbite <Secondary class="ml-2">This is secondary text</Secondary></Heading>
 ```
 
 ## Sizes
@@ -171,7 +195,7 @@ Use the `tag="h1"` as the most important text element to indicate the title of y
 
 ```svelte example
 <script>
-  import {  Heading } from 'flowbite-svelte'
+  import { Heading } from 'flowbite-svelte';
 </script>
 
 <Heading tag="h1">Heading 1</Heading>
@@ -183,7 +207,7 @@ The `tag="h2"` can be used as subtitles of the page’s sections.
 
 ```svelte example
 <script>
-  import {  Heading } from 'flowbite-svelte'
+  import { Heading } from 'flowbite-svelte';
 </script>
 
 <Heading tag="h2">Heading 2</Heading>
@@ -195,7 +219,7 @@ The `tag="h3"` can be used as subtitles of the page’s sections.
 
 ```svelte example
 <script>
-  import {  Heading } from 'flowbite-svelte'
+  import { Heading } from 'flowbite-svelte';
 </script>
 
 <Heading tag="h3">Heading 3</Heading>
@@ -207,7 +231,7 @@ The `tag="h4"` can be used as subtitles of the page’s sections.
 
 ```svelte example
 <script>
-  import {  Heading } from 'flowbite-svelte'
+  import { Heading } from 'flowbite-svelte';
 </script>
 
 <Heading tag="h4">Heading 4</Heading>
@@ -219,7 +243,7 @@ The `tag="h5"` can be used as subtitles of the page’s sections.
 
 ```svelte example
 <script>
-  import {  Heading } from 'flowbite-svelte'
+  import { Heading } from 'flowbite-svelte';
 </script>
 
 <Heading tag="h5">Heading 5</Heading>
@@ -231,7 +255,7 @@ The `tag="h6"` can be used as subtitles of the page’s sections.
 
 ```svelte example
 <script>
-  import {  Heading } from 'flowbite-svelte'
+  import { Heading } from 'flowbite-svelte';
 </script>
 
 <Heading tag="h6">Heading 6</Heading>

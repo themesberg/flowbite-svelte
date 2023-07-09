@@ -42,7 +42,7 @@ The default rating icon is a star. Set the total and rating props. The `id` prop
 
 ```svelte example hideScript
 <script>
-  import { Rating } from 'flowbite-svelte'
+  import { Rating } from 'flowbite-svelte';
 </script>
 
 <Rating id="example-1" total={5} size={50} rating={1.4} />
@@ -55,20 +55,20 @@ You can use the Star component with the `id` and `fillPercent` props.
 
 ```svelte example
 <script>
-  import { Star } from 'flowbite-svelte'
+  import { Star } from 'flowbite-svelte';
 </script>
 
-<Star size={50} id="0" fillPercent={0}/>
-<Star size={50} id="10" fillPercent={10}/>
-<Star size={50} id="20" fillPercent={20}/>
-<Star size={50} id="30" fillPercent={30}/>
-<Star size={50} id="40" fillPercent={40}/>
-<Star size={50} id="50" fillPercent={50}/>
-<Star size={50} id="60" fillPercent={60}/>
-<Star size={50} id="70" fillPercent={70}/>
-<Star size={50} id="80" fillPercent={80}/>
-<Star size={50} id="90" fillPercent={90}/>
-<Star size={50} id="100" fillPercent={100}/>
+<Star size={50} id="0" fillPercent={0} />
+<Star size={50} id="10" fillPercent={10} />
+<Star size={50} id="20" fillPercent={20} />
+<Star size={50} id="30" fillPercent={30} />
+<Star size={50} id="40" fillPercent={40} />
+<Star size={50} id="50" fillPercent={50} />
+<Star size={50} id="60" fillPercent={60} />
+<Star size={50} id="70" fillPercent={70} />
+<Star size={50} id="80" fillPercent={80} />
+<Star size={50} id="90" fillPercent={90} />
+<Star size={50} id="100" fillPercent={100} />
 ```
 
 ## Rating with text
@@ -77,7 +77,7 @@ If you also want to show a text near the stars you can use the `text` slot to ad
 
 ```svelte example hideScript
 <script>
-  import { Rating } from 'flowbite-svelte'
+  import { Rating } from 'flowbite-svelte';
 </script>
 
 <Rating id="example-3" total={5} rating={3.4}>
@@ -91,16 +91,13 @@ Aggregate more results by using this example to show the amount of reviews and t
 
 ```svelte example hideScript
 <script>
-  import { Rating } from 'flowbite-svelte'
+  import { Rating } from 'flowbite-svelte';
 </script>
 
 <Rating count rating={4.95} id="example-4">
   <span class="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400" />
-  <a
-    href="/"
-    class="text-sm font-medium text-gray-900 underline hover:no-underline dark:text-white"
-    >73 reviews</a
-  >
+  <a href="/" class="text-sm font-medium text-gray-900 underline hover:no-underline dark:text-white"
+    >73 reviews</a>
 </Rating>
 ```
 
@@ -112,28 +109,29 @@ The default icon size is `24`. Import your icon and set it in a icon props.
 
 ```svelte example hideScript
 <script>
-  import { Rating, Heart } from 'flowbite-svelte'
+  import { Rating, Heart } from 'flowbite-svelte';
 </script>
 
-<Rating total={5} rating={3.3} id="example-5" icon={Heart}/>
-<Rating total={10} rating={7.6} id="example-5b" icon={Heart}/>
+<Rating total={5} rating={3.3} id="example-5" icon={Heart} />
+<Rating total={10} rating={7.6} id="example-5b" icon={Heart} />
 ```
 
 ```svelte example hideScript
 <script>
-  import { Rating, Thumbup } from 'flowbite-svelte'
+  import { Rating, Thumbup } from 'flowbite-svelte';
 </script>
 
-<Rating total={5} rating={4.7} id="example-5c" icon={Thumbup}/>
-<Rating total={10} rating={8.2} id="example-5d" icon={Thumbup}/>
+<Rating total={5} rating={4.7} id="example-5c" icon={Thumbup} />
+<Rating total={10} rating={8.2} id="example-5d" icon={Thumbup} />
 ```
+
 ## AdvancedRating component
 
 Set the `total`,` rating`, and `ratings` prop for AdvancedRation component. Use the `rating` slot for Rating component with the `total` and `rating` props. Use the `globalText` slot for additional information.
 
 ```svelte example hideScript
 <script>
-  import { AdvancedRating, Rating } from 'flowbite-svelte'
+  import { AdvancedRating, Rating } from 'flowbite-svelte';
 </script>
 
 <AdvancedRating
@@ -143,14 +141,15 @@ Set the `total`,` rating`, and `ratings` prop for AdvancedRation component. Use 
     { label: '3 star', rating: 8 },
     { label: '2 star', rating: 4 },
     { label: '1 star', rating: 1 }
-  ]}
->
+  ]}>
   <span slot="rating">
     <Rating total={5} rating={3.72} id="example-8">
       <p slot="text" class="text-sm font-medium text-gray-500 dark:text-gray-400 ml-2">3.72 out of 5</p>
     </Rating>
   </span>
-  <p slot="globalText" class="mt-2 text-sm font-medium text-gray-500 dark:text-gray-400">1,745 global ratings</p>
+  <p slot="globalText" class="mt-2 text-sm font-medium text-gray-500 dark:text-gray-400">
+    1,745 global ratings
+  </p>
 </AdvancedRating>
 ```
 
@@ -160,7 +159,7 @@ As we describe in the Rating component, you can change an icon in the Rating com
 
 ```svelte example hideScript
 <script>
-  import { AdvancedRating, Rating, Thumbup } from 'flowbite-svelte'
+  import { AdvancedRating, Rating, Thumbup } from 'flowbite-svelte';
 </script>
 
 <AdvancedRating
@@ -170,14 +169,15 @@ As we describe in the Rating component, you can change an icon in the Rating com
     { label: '3 star', rating: 8 },
     { label: '2 star', rating: 4 },
     { label: '1 star', rating: 1 }
-  ]}
->
+  ]}>
   <span slot="rating">
     <Rating total={5} rating={3.8} icon={Thumbup} id="example-9">
       <p slot="text" class="text-sm font-medium text-gray-500 dark:text-gray-400 ml-2">3.8 out of 5</p>
     </Rating>
   </span>
-  <p slot="globalText" class="mt-2 text-sm font-medium text-gray-500 dark:text-gray-400">1,745 global ratings</p>
+  <p slot="globalText" class="mt-2 text-sm font-medium text-gray-500 dark:text-gray-400">
+    1,745 global ratings
+  </p>
 </AdvancedRating>
 ```
 
@@ -185,7 +185,7 @@ As we describe in the Rating component, you can change an icon in the Rating com
 
 ```svelte example hideScript
 <script>
-  import { ScoreRating } from 'flowbite-svelte'
+  import { ScoreRating } from 'flowbite-svelte';
   let headerLabel = {
     desc1: '8.7',
     desc2: 'Excellent',
@@ -209,8 +209,7 @@ As we describe in the Rating component, you can change an icon in the Rating com
     { label: 'Value for money', rating: 8.9 },
     { label: 'Cleanliness', rating: 7.0 },
     { label: 'Location', rating: 8.0 }
-  ]}
-/>
+  ]} />
 ```
 
 ## Rating comment
@@ -219,7 +218,7 @@ Use this component to show a single rating comment and its score alongside other
 
 ```svelte example hideScript
 <script>
-  import { RatingComment } from 'flowbite-svelte'
+  import { RatingComment } from 'flowbite-svelte';
   let comment = {
     id: '1',
     user: {
@@ -240,19 +239,16 @@ Use this component to show a single rating comment and its score alongside other
 
 <RatingComment {comment} helpfullink="/" abuselink="/">
   <p class="mb-2 font-light text-gray-500 dark:text-gray-400">
-    This is my third Invicta Pro Diver. They are just fantastic value for money. This one arrived
-    yesterday and the first thing I did was set the time, popped on an identical strap from
-    another Invicta and went in the shower with it to test the waterproofing.... No problems.
+    This is my third Invicta Pro Diver. They are just fantastic value for money. This one arrived yesterday
+    and the first thing I did was set the time, popped on an identical strap from another Invicta and went in
+    the shower with it to test the waterproofing.... No problems.
   </p>
   <p class="mb-3 font-light text-gray-500 dark:text-gray-400">
-    It is obviously not the same build quality as those very expensive watches. But that is like
-    comparing a Citroën to a Ferrari. This watch was well under £100! An absolute bargain.
+    It is obviously not the same build quality as those very expensive watches. But that is like comparing a
+    Citroën to a Ferrari. This watch was well under £100! An absolute bargain.
   </p>
-  <a
-    href="/"
-    class="block mb-5 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
-    >Read more</a
-  >
+  <a href="/" class="block mb-5 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
+    >Read more</a>
   <svelte:fragment slot="evaluation">19 people found this helpful</svelte:fragment>
 </RatingComment>
 ```
@@ -264,7 +260,13 @@ Use this component to show the review content from a user alongside the avatar, 
 ```svelte example hideScript
 <script>
   import { Review } from 'flowbite-svelte';
-  import { LandmarkSolid, CalendarMonthSolid, UsersGroupOutline, ThumbsUpSolid, ThumbsDownSolid } from 'flowbite-svelte-icons';
+  import {
+    LandmarkSolid,
+    CalendarMonthSolid,
+    UsersGroupOutline,
+    ThumbsUpSolid,
+    ThumbsDownSolid
+  } from 'flowbite-svelte-icons';
   let review = {
     name: 'Jese Leos',
     imgSrc: '/images/profile-picture-2.webp',
@@ -275,21 +277,20 @@ Use this component to show the review content from a user alongside the avatar, 
     rating: 8.79,
     item1: 'Apartament with City View',
     item2: '3 nights December 2021',
-    item3: 'Family',
+    item3: 'Family'
   };
 </script>
 
 <Review {review}>
   <p class="mb-2 font-light text-gray-500 dark:text-gray-400">
-    The flat was spotless, very comfortable, and the host was amazing. I highly recommend this
-    accommodation for anyone visiting Brasov city centre. It's quite a while since we are no
-    longer using hotel facilities but self contained places. And the main reason is poor
-    cleanliness and staff not being trained properly. This place exceeded our expectation and will
-    return for sure.
+    The flat was spotless, very comfortable, and the host was amazing. I highly recommend this accommodation
+    for anyone visiting Brasov city centre. It's quite a while since we are no longer using hotel facilities
+    but self contained places. And the main reason is poor cleanliness and staff not being trained properly.
+    This place exceeded our expectation and will return for sure.
   </p>
   <p class="mb-5 font-light text-gray-500 dark:text-gray-400">
-    It is obviously not the same build quality as those very expensive watches. But that is like
-    comparing a Citroën to a Ferrari. This watch was well under £100! An absolute bargain.
+    It is obviously not the same build quality as those very expensive watches. But that is like comparing a
+    Citroën to a Ferrari. This watch was well under £100! An absolute bargain.
   </p>
   <svelte:fragment slot="item1">
     <LandmarkSolid class="w-3 h-3 mr-2" />
@@ -306,15 +307,13 @@ Use this component to show the review content from a user alongside the avatar, 
   <aside class="flex items-center mt-3 space-x-5">
     <a
       href="/"
-      class="inline-flex items-center text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
-    >
+      class="inline-flex items-center text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">
       <ThumbsUpSolid class="w-3.5 h-3.5 mr-2.5 text-primary-600 dark:text-primary-500" />
       Helpful
     </a>
     <a
       href="/"
-      class="inline-flex items-center text-sm font-medium text-primary-600 hover:underline dark:text-primary-500 group"
-    >
+      class="inline-flex items-center text-sm font-medium text-primary-600 hover:underline dark:text-primary-500 group">
       <ThumbsDownSolid class="w-3.5 h-3.5 mr-2.5 text-primary-600 dark:text-primary-500" />
       Not helpful
     </a>
@@ -368,11 +367,11 @@ The component has the following props, type, and default values. See [types page
 
 ### Review
 
-- Use the `classArticle` prop to overwrite  `articleClass`.
-- Use the `classDiv` prop to overwrite  `divClass`.
-- Use the `classImg` prop to overwrite  `imgClass`.
-- Use the `classUl` prop to overwrite  `ulClass`.
-- Use the `classLi` prop to overwrite  `liClass`.
+- Use the `classArticle` prop to overwrite `articleClass`.
+- Use the `classDiv` prop to overwrite `divClass`.
+- Use the `classImg` prop to overwrite `imgClass`.
+- Use the `classUl` prop to overwrite `ulClass`.
+- Use the `classLi` prop to overwrite `liClass`.
 
 <TableProp>
   <TableDefaultRow items={items5} rowState='hover' />

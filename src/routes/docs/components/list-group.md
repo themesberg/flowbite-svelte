@@ -23,7 +23,7 @@ The list group component can be used to display a series of elements, buttons or
 
 ```svelte example hideOutput
 <script>
-  import { Listgroup, ListgroupItem } from 'flowbite-svelte'
+  import { Listgroup, ListgroupItem } from 'flowbite-svelte';
 </script>
 ```
 
@@ -33,8 +33,8 @@ Here’s an example of a list group that you can use right away.
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Listgroup } from 'flowbite-svelte'
-  let simpleList = ["Profile", "Settings", "Messages", "Download"]
+  import { Listgroup } from 'flowbite-svelte';
+  let simpleList = ['Profile', 'Settings', 'Messages', 'Download'];
 </script>
 
 <Listgroup items={simpleList} let:item class="w-48">
@@ -52,12 +52,12 @@ If list is active and data items contain `href` field entries are presented as `
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Listgroup } from 'flowbite-svelte'
+  import { Listgroup } from 'flowbite-svelte';
   let links = [
-    { name: "Accordions", href: "/accordion", current: true },
-    { name: "Alerts", href: "/alerts" },
-    { name: "Badges", href: "/badges"  },
-    { name: "Breadcrumbs", href: "/breadcrumbs" },
+    { name: 'Accordions', href: '/accordion', current: true },
+    { name: 'Alerts', href: '/alerts' },
+    { name: 'Badges', href: '/badges' },
+    { name: 'Breadcrumbs', href: '/breadcrumbs' }
   ];
 </script>
 
@@ -76,12 +76,12 @@ If list is active and data items do not contain `href` field entries are present
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Listgroup } from 'flowbite-svelte'
+  import { Listgroup } from 'flowbite-svelte';
   let buttons = [
-    { name: "Profile", mycustomfield: "data1", current: true },
-    { name: "Settings", mycustomfield: "data2" },
-    { name: "Messages", mycustomfield: "data3" },
-    { name: "Download", mycustomfield: "data4",  disabled: true },
+    { name: 'Profile', mycustomfield: 'data1', current: true },
+    { name: 'Settings', mycustomfield: 'data2' },
+    { name: 'Messages', mycustomfield: 'data3' },
+    { name: 'Download', mycustomfield: 'data4', disabled: true }
   ];
 </script>
 
@@ -97,18 +97,23 @@ Use the following example to create a list of buttons as a menu together with SV
 ```svelte example class="flex justify-center"
 <script>
   import { Listgroup } from 'flowbite-svelte';
-  import { UserCircleSolid, AdjustmentsHorizontalOutline, MessagesSolid, DownloadSolid } from 'flowbite-svelte-icons'
+  import {
+    UserCircleSolid,
+    AdjustmentsHorizontalOutline,
+    MessagesSolid,
+    DownloadSolid
+  } from 'flowbite-svelte-icons';
   let icons = [
-    { name: "Profile",   icon:UserCircleSolid },
-    { name: "Settings",  icon:AdjustmentsHorizontalOutline },
-    { name: "Messages",  icon:MessagesSolid },
-    { name: "Download", icon:DownloadSolid },
+    { name: 'Profile', icon: UserCircleSolid },
+    { name: 'Settings', icon: AdjustmentsHorizontalOutline },
+    { name: 'Messages', icon: MessagesSolid },
+    { name: 'Download', icon: DownloadSolid }
   ];
 </script>
 
 <Listgroup active items={icons} let:item class="w-48" on:click={console.log}>
-    <svelte:component this={item.icon} class="w-3 h-3 mr-2.5" />
-    {item.name}
+  <svelte:component this={item.icon} class="w-3 h-3 mr-2.5" />
+  {item.name}
 </Listgroup>
 ```
 
@@ -119,25 +124,27 @@ Usage of hidden so far `ListgroupItem` helps you with proper layout.
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Listgroup, ListgroupItem, Avatar } from 'flowbite-svelte'
-  import { TrashBinSolid } from 'flowbite-svelte-icons'
+  import { Listgroup, ListgroupItem, Avatar } from 'flowbite-svelte';
+  import { TrashBinSolid } from 'flowbite-svelte-icons';
 </script>
 
 <Listgroup active class="w-48">
-    <h3 class="p-1 text-center text-xl font-medium text-gray-900 dark:text-white">User list</h3>
-    <ListgroupItem class="text-base font-semibold gap-2">
-      <Avatar src="/images/profile-picture-1.webp" size="xs"/>Jese Leos
-    </ListgroupItem>
-    <ListgroupItem class="text-base font-semibold gap-2">
-      <Avatar src="/images/profile-picture-2.webp" size="xs"/>Robert Gouth
-    </ListgroupItem>
-    <ListgroupItem class="text-base font-semibold gap-2">
-      <Avatar src="/images/profile-picture-3.webp" size="xs"/>Bonnie Green
-    </ListgroupItem>
-    <a href="/" class="flex items-center p-3 text-sm font-medium text-red-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline rounded-b-lg">
-      <TrashBinSolid class="w-6 h-6 ml-1 mr-2"/>
-      Delete user
-    </a>
+  <h3 class="p-1 text-center text-xl font-medium text-gray-900 dark:text-white">User list</h3>
+  <ListgroupItem class="text-base font-semibold gap-2">
+    <Avatar src="/images/profile-picture-1.webp" size="xs" />Jese Leos
+  </ListgroupItem>
+  <ListgroupItem class="text-base font-semibold gap-2">
+    <Avatar src="/images/profile-picture-2.webp" size="xs" />Robert Gouth
+  </ListgroupItem>
+  <ListgroupItem class="text-base font-semibold gap-2">
+    <Avatar src="/images/profile-picture-3.webp" size="xs" />Bonnie Green
+  </ListgroupItem>
+  <a
+    href="/"
+    class="flex items-center p-3 text-sm font-medium text-red-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline rounded-b-lg">
+    <TrashBinSolid class="w-6 h-6 ml-1 mr-2" />
+    Delete user
+  </a>
 </Listgroup>
 ```
 

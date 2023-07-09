@@ -23,7 +23,7 @@ Flowbite includes two styles of breadcrumb elements, one that has a transparent 
 
 ```svelte example hideOutput
 <script>
-	import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
+  import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
 </script>
 ```
 
@@ -33,8 +33,9 @@ Use the following breadcrumb example to show the hierarchical structure of pages
 
 ```svelte example hideScript
 <script>
-	import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
+  import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
 </script>
+
 <Breadcrumb aria-label="Default breadcrumb example">
   <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
   <BreadcrumbItem href="/">Projects</BreadcrumbItem>
@@ -48,8 +49,9 @@ You can alternatively also use the breadcrumb components with a solid background
 
 ```svelte example hideScript
 <script>
-	import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
+  import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
 </script>
+
 <Breadcrumb aria-label="Solid background breadcrumb example" solid>
   <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
   <BreadcrumbItem href="/">Projects</BreadcrumbItem>
@@ -63,24 +65,25 @@ Use the `icon` slot to change icons.
 
 ```svelte example hideScript
 <script>
-	import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
+  import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
   import { HomeOutline, ChevronDoubleRightOutline } from 'flowbite-svelte-icons';
 </script>
+
 <Breadcrumb aria-label="Solid background breadcrumb example" class="bg-gray-50 py-3 px-5 dark:bg-gray-900">
   <BreadcrumbItem href="/" home>
-  <svelte:fragment slot="icon">
-  <HomeOutline class="w-4 h-4 mr-2"/>
-  </svelte:fragment>Home</BreadcrumbItem>
+    <svelte:fragment slot="icon">
+      <HomeOutline class="w-4 h-4 mr-2" />
+    </svelte:fragment>Home</BreadcrumbItem>
   <BreadcrumbItem href="/">
     <svelte:fragment slot="icon">
-      <ChevronDoubleRightOutline class="w-4 h-4 dark:text-white"/>
-  </svelte:fragment>
-  Projects</BreadcrumbItem>
+      <ChevronDoubleRightOutline class="w-4 h-4 dark:text-white" />
+    </svelte:fragment>
+    Projects</BreadcrumbItem>
   <BreadcrumbItem>
     <svelte:fragment slot="icon">
-      <ChevronDoubleRightOutline class="w-4 h-4 dark:text-white"/>
+      <ChevronDoubleRightOutline class="w-4 h-4 dark:text-white" />
     </svelte:fragment>
-  Flowbite Svelte</BreadcrumbItem>
+    Flowbite Svelte</BreadcrumbItem>
 </Breadcrumb>
 ```
 

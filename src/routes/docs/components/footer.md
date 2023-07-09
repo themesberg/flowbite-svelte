@@ -25,7 +25,14 @@ The footer is one of the most underestimated sections of a website being located
 
 ```svelte example hideOutput
 <script>
-  import { Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup } from "flowbite-svelte"
+  import {
+    Footer,
+    FooterBrand,
+    FooterCopyright,
+    FooterIcon,
+    FooterLink,
+    FooterLinkGroup
+  } from 'flowbite-svelte';
 </script>
 ```
 
@@ -35,12 +42,13 @@ The footer is one of the most underestimated sections of a website being located
 
 ```svelte example
 <script>
-  import { Footer, FooterCopyright, FooterLinkGroup, FooterLink } from 'flowbite-svelte'
+  import { Footer, FooterCopyright, FooterLinkGroup, FooterLink } from 'flowbite-svelte';
 </script>
 
 <Footer>
   <FooterCopyright href="/" by="Flowbite™" year={2022} />
-  <FooterLinkGroup ulClass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+  <FooterLinkGroup
+    ulClass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
     <FooterLink href="/">About</FooterLink>
     <FooterLink href="/">Privacy Policy</FooterLink>
     <FooterLink href="/">Licensing</FooterLink>
@@ -55,7 +63,7 @@ The footer is one of the most underestimated sections of a website being located
 
 ```svelte example
 <script>
-  import { Footer, FooterCopyright, FooterLinkGroup, FooterBrand, FooterLink } from 'flowbite-svelte'
+  import { Footer, FooterCopyright, FooterLinkGroup, FooterBrand, FooterLink } from 'flowbite-svelte';
 </script>
 
 <Footer footerType="logo">
@@ -64,9 +72,9 @@ The footer is one of the most underestimated sections of a website being located
       href="https://flowbite.com"
       src="/images/flowbite-svelte-icon-logo.svg"
       alt="Flowbite Logo"
-      name="Flowbite"
-    />
-    <FooterLinkGroup ulClass="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
+      name="Flowbite" />
+    <FooterLinkGroup
+      ulClass="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
       <FooterLink href="/">About</FooterLink>
       <FooterLink href="/">Privacy Policy</FooterLink>
       <FooterLink href="/">Licensing</FooterLink>
@@ -84,8 +92,21 @@ The footer is one of the most underestimated sections of a website being located
 
 ```svelte example
 <script>
-  import { Footer, FooterCopyright, FooterLinkGroup, FooterLink, FooterBrand, FooterIcon } from 'flowbite-svelte';
-  import { FacebookSolid, DiscordSolid, TwitterSolid, GithubSolid, DribbbleSolid } from 'flowbite-svelte-icons';
+  import {
+    Footer,
+    FooterCopyright,
+    FooterLinkGroup,
+    FooterLink,
+    FooterBrand,
+    FooterIcon
+  } from 'flowbite-svelte';
+  import {
+    FacebookSolid,
+    DiscordSolid,
+    TwitterSolid,
+    GithubSolid,
+    DribbbleSolid
+  } from 'flowbite-svelte-icons';
 </script>
 
 <Footer footerType="socialmedia">
@@ -95,8 +116,7 @@ The footer is one of the most underestimated sections of a website being located
         href="https://flowbite.com"
         src="/images/flowbite-svelte-icon-logo.svg"
         alt="Flowbite Logo"
-        name="Flowbite"
-      />
+        name="Flowbite" />
     </div>
     <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
       <div>
@@ -127,19 +147,24 @@ The footer is one of the most underestimated sections of a website being located
     <FooterCopyright href="/" by="Flowbite™" />
     <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
       <FooterIcon href="/">
-        <FacebookSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <FacebookSolid
+          class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <DiscordSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <DiscordSolid
+          class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <TwitterSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <TwitterSolid
+          class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <GithubSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <GithubSolid
+          class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <DribbbleSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <DribbbleSolid
+          class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
     </div>
   </div>
@@ -152,8 +177,21 @@ The footer is one of the most underestimated sections of a website being located
 
 ```svelte example
 <script>
-  import { Footer, FooterLinkGroup, FooterLink, FooterBrand, FooterIcon, FooterCopyright } from 'flowbite-svelte';
-  import { FacebookSolid, DiscordSolid, TwitterSolid, GithubSolid, DribbbleSolid } from 'flowbite-svelte-icons';
+  import {
+    Footer,
+    FooterLinkGroup,
+    FooterLink,
+    FooterBrand,
+    FooterIcon,
+    FooterCopyright
+  } from 'flowbite-svelte';
+  import {
+    FacebookSolid,
+    DiscordSolid,
+    TwitterSolid,
+    GithubSolid,
+    DribbbleSolid
+  } from 'flowbite-svelte-icons';
 </script>
 
 <Footer footerType="sitemap">
@@ -198,31 +236,44 @@ The footer is one of the most underestimated sections of a website being located
     <FooterCopyright spanClass="text-sm text-gray-300 sm:text-center" href="/" by="Flowbite™" />
     <div class="flex mt-4 space-x-6 sm:justify-center md:mt-0">
       <FooterIcon href="/">
-        <FacebookSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <FacebookSolid
+          class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <DiscordSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <DiscordSolid
+          class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <TwitterSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <TwitterSolid
+          class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <GithubSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <GithubSolid
+          class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <DribbbleSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <DribbbleSolid
+          class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
-  </div>
-</Footer>
+    </div>
+  </div></Footer>
 ```
 
-## Sticky footer 
+## Sticky footer
 
 Use this example to set create a sticky footer by using a fixed position to the bottom of the document page as the user scrolls up or down the main content area.
 
 ```svelte example class="relative"
 <script>
-  import { Footer, FooterLinkGroup, FooterLink, ImagePlaceholder, TextPlaceholder, Skeleton, FooterCopyright } from 'flowbite-svelte'
+  import {
+    Footer,
+    FooterLinkGroup,
+    FooterLink,
+    ImagePlaceholder,
+    TextPlaceholder,
+    Skeleton,
+    FooterCopyright
+  } from 'flowbite-svelte';
 </script>
 
 <div style="height:300px;" class="overflow-scroll pb-16">
@@ -233,15 +284,14 @@ Use this example to set create a sticky footer by using a fixed position to the 
 <Footer class="absolute bottom-0 left-0 z-20 w-full">
   <FooterCopyright href="/" by="Flowbite™" year={2022} />
   <FooterLinkGroup
-    ulClass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"
-  >
+    ulClass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
     <FooterLink href="/">About</FooterLink>
     <FooterLink href="/">Privacy Policy</FooterLink>
     <FooterLink href="/">Licensing</FooterLink>
     <FooterLink href="/">Contact</FooterLink>
   </FooterLinkGroup>
 </Footer>
-````
+```
 
 ## Props
 
@@ -267,8 +317,8 @@ The component has the following props, type, and default values. See [types page
 
 ### FooterCopyright
 
-- Use `classSpan` prop to overwrite  `classSpan`.
-- Use `classA` prop to overwrite  `aClass`.
+- Use `classSpan` prop to overwrite `classSpan`.
+- Use `classA` prop to overwrite `aClass`.
 
 <TableProp>
   <TableDefaultRow items={items3} rowState='hover' />

@@ -13,9 +13,10 @@ thumnailSize: w-24
   import { P, A } from '$lib'
   import { props as items} from '../../props/DarkMode.json'
 </script>
+
 In Flowbite-Svelte, the `class` strategy is used to support toggling dark mode manually, so you should explicitly configure it in Talwind CSS:
 
-```js example 
+```js example
 // tailwind.config.cjs
 const config = {
   darkMode: 'class'
@@ -59,7 +60,8 @@ Use the `btnClass` prop to overwrite the default classes:
 <script>
   import { DarkMode } from 'flowbite-svelte';
 
-  let btnClass = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-xl p-2';
+  let btnClass =
+    'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-xl p-2';
 </script>
 
 <DarkMode {btnClass} />
@@ -82,7 +84,7 @@ Use the `lightIcon` and `darkIcon` slots to change icons:
 ```svelte example
 <script>
   import { DarkMode } from 'flowbite-svelte';
-  import { SunSolid, MoonSolid } from "flowbite-svelte-icons";
+  import { SunSolid, MoonSolid } from 'flowbite-svelte-icons';
 </script>
 
 <DarkMode class="text-lg">
@@ -99,7 +101,7 @@ Use the `lightIcon` and `darkIcon` slots to change icons:
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-- Use the `class` prop to overwrite  `btnClass`.
+- Use the `class` prop to overwrite `btnClass`.
 
 <TableProp>
 <TableDefaultRow {items} rowState='hover' />

@@ -105,8 +105,18 @@
     <CloseButton on:click={clearAll} color="none" class="p-0 focus:ring-gray-400" />
     <div class="w-[1px] bg-gray-300 dark:bg-gray-600" />
     <button tabindex="-1">
-      <svg class="h-3 w-3 ml-1 cursor-pointer text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+      <svg
+        class="h-3 w-3 ml-1 cursor-pointer text-gray-800 dark:text-white"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 10 6">
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="m1 1 4 4 4-4" />
       </svg>
     </button>
   </div>

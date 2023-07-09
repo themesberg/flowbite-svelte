@@ -30,7 +30,7 @@ A popular use case would be the “Frequently Asked Questions” section of a we
 
 ```svelte example hideOutput
 <script>
-  import { AccordionItem, Accordion } from 'flowbite-svelte'
+  import { AccordionItem, Accordion } from 'flowbite-svelte';
 </script>
 ```
 
@@ -40,24 +40,47 @@ Accordion uses the single selection mode by default i.e. it collapses every othe
 
 To prevent that behavior set `multiple` property to `true`.
 
-```svelte example 
+```svelte example
 <script>
-  import {AccordionItem, Accordion} from 'flowbite-svelte'
+  import { AccordionItem, Accordion } from 'flowbite-svelte';
 </script>
+
 <Accordion>
   <AccordionItem>
     <span slot="header">My Header 1</span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-    <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
+    </p>
+    <p class="text-gray-500 dark:text-gray-400">
+      Check out this guide to learn how to <a
+        href="/"
+        target="_blank"
+        rel="noreferrer"
+        class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites
+      even faster with components on top of Tailwind CSS.
+    </p>
   </AccordionItem>
   <AccordionItem>
     <span slot="header">My Header 2</span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
+    </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
+    </p>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
     <ul class="list-disc pl-5 dark:text-gray-400 text-gray-500">
-      <li><a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline" >Lorem ipsum</a></li>
-      <li><a href="https://tailwindui.com/" rel="noreferrer" target="_blank"  class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
+      <li>
+        <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline"
+          >Lorem ipsum</a>
+      </li>
+      <li>
+        <a
+          href="https://tailwindui.com/"
+          rel="noreferrer"
+          target="_blank"
+          class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a>
+      </li>
     </ul>
   </AccordionItem>
 </Accordion>
@@ -67,19 +90,23 @@ To prevent that behavior set `multiple` property to `true`.
 
 Use the `open` prop to make an item open on mount.
 
-```svelte example 
+```svelte example
 <script>
-  import {AccordionItem, Accordion} from 'flowbite-svelte'
+  import { AccordionItem, Accordion } from 'flowbite-svelte';
 </script>
 
 <Accordion>
   <AccordionItem open>
     <span slot="header">Header 2-1</span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
+    </p>
   </AccordionItem>
   <AccordionItem>
     <span slot="header">Header 2-2</span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
+    </p>
   </AccordionItem>
 </Accordion>
 ```
@@ -88,9 +115,9 @@ Use the `open` prop to make an item open on mount.
 
 You can control the look and feel of `AccordionItems` by overwriting the `activeClasses` and `inactiveClasses` properties. You can define them in `Accordion` so that they will apply to all children or set them individually on each `AccordionItem`.
 
-```svelte example 
+```svelte example
 <script>
-  import {AccordionItem, Accordion} from 'flowbite-svelte'
+  import { AccordionItem, Accordion } from 'flowbite-svelte';
 </script>
 
 <Accordion
@@ -98,11 +125,15 @@ You can control the look and feel of `AccordionItems` by overwriting the `active
   inactiveClasses="text-gray-500 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800">
   <AccordionItem class="">
     <span slot="header">Header 2-1</span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
+    </p>
   </AccordionItem>
   <AccordionItem>
     <span slot="header">Header 2-2</span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
+    </p>
   </AccordionItem>
 </Accordion>
 ```
@@ -111,19 +142,23 @@ You can control the look and feel of `AccordionItems` by overwriting the `active
 
 Use `flush` prop to remove the rounded borders.
 
-```svelte example 
+```svelte example
 <script>
-  import {AccordionItem, Accordion} from 'flowbite-svelte'
+  import { AccordionItem, Accordion } from 'flowbite-svelte';
 </script>
 
 <Accordion flush>
   <AccordionItem>
     <span slot="header">Header 2-1</span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
+    </p>
   </AccordionItem>
   <AccordionItem>
     <span slot="header">Header 2-2</span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
+    </p>
   </AccordionItem>
 </Accordion>
 ```
@@ -132,10 +167,10 @@ Use `flush` prop to remove the rounded borders.
 
 Use the `arrowup` and `arrowdown` slots to set up and down icons.
 
-```svelte example 
+```svelte example
 <script>
-  import {AccordionItem, Accordion} from 'flowbite-svelte'
-  import { ChervonDoubleDownSolid, ChervonDoubleUpSolid } from 'flowbite-svelte-icons'
+  import { AccordionItem, Accordion } from 'flowbite-svelte';
+  import { ChervonDoubleDownSolid, ChervonDoubleUpSolid } from 'flowbite-svelte-icons';
 </script>
 
 <Accordion>
@@ -147,27 +182,31 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
     <span slot="arrowdown">
       <ChervonDoubleDownSolid class="h-3 w-3 shrink-0 -mr-0.5" />
     </span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
+    </p>
   </AccordionItem>
   <AccordionItem>
     <span slot="header">Header 2-2</span>
-        <div slot="arrowup">
+    <div slot="arrowup">
       <ChervonDoubleUpSolid class="h-3 w-3 shrink-0 -mr-0.5" />
     </div>
     <span slot="arrowdown">
       <ChervonDoubleDownSolid class="h-3 w-3 shrink-0 -mr-0.5" />
     </span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
+    </p>
   </AccordionItem>
 </Accordion>
 ```
 
 ## Icon Accordion
 
-```svelte example 
+```svelte example
 <script>
-  import { AccordionItem, Accordion } from 'flowbite-svelte'
-  import { CartOutline, CogOutline } from 'flowbite-svelte-icons'
+  import { AccordionItem, Accordion } from 'flowbite-svelte';
+  import { CartOutline, CogOutline } from 'flowbite-svelte-icons';
 </script>
 
 <Accordion>
@@ -176,15 +215,26 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
       <CartOutline />
       <span> My Header 1</span>
     </span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo...</p>
-    <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start  websites even faster with components on top of Tailwind CSS.</p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo...
+    </p>
+    <p class="text-gray-500 dark:text-gray-400">
+      Check out this guide to learn how to <a
+        href="/"
+        target="_blank"
+        rel="noreferrer"
+        class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start websites even faster
+      with components on top of Tailwind CSS.
+    </p>
   </AccordionItem>
   <AccordionItem>
     <span slot="header" class="text-base flex gap-2">
       <CogOutline />
       <span> My Header 2</span>
     </span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sintexplicabo...</p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sintexplicabo...
+    </p>
   </AccordionItem>
 </Accordion>
 ```
@@ -195,24 +245,38 @@ Example how to use the `multiple` option together with expand all behavior.
 
 ```svelte example class="space-y-4"
 <script>
-  import {AccordionItem, Accordion, Button} from 'flowbite-svelte'
+  import { AccordionItem, Accordion, Button } from 'flowbite-svelte';
   const items = Array(3);
 
-  const open_all = () => items.forEach((_,i)=> items[i] = true)
-  const close_all= () => items.forEach((_,i)=> items[i] = false)
+  const open_all = () => items.forEach((_, i) => (items[i] = true));
+  const close_all = () => items.forEach((_, i) => (items[i] = false));
 </script>
+
 <Button on:click={open_all}>Open all</Button>
 <Button on:click={close_all}>Close all</Button>
 <Accordion multiple>
   <AccordionItem bind:open={items[0]}>
     <span slot="header">My Header 1</span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-    <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
+    </p>
+    <p class="text-gray-500 dark:text-gray-400">
+      Check out this guide to learn how to <a
+        href="/"
+        target="_blank"
+        rel="noreferrer"
+        class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites
+      even faster with components on top of Tailwind CSS.
+    </p>
   </AccordionItem>
   <AccordionItem bind:open={items[1]}>
     <div slot="header">My Header 2</div>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
+    </p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
+    </p>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
   </AccordionItem>
   <AccordionItem bind:open={items[2]}>
@@ -226,22 +290,29 @@ Example how to use the `multiple` option together with expand all behavior.
 
 The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#run-time-svelte-transition-slide">slide</A>. Use the `transitionType` and `transitionParams` prop to make custom transitions.
 
-```svelte example 
+```svelte example
 <script>
-  import {AccordionItem, Accordion} from 'flowbite-svelte'
+  import { AccordionItem, Accordion } from 'flowbite-svelte';
 </script>
+
 <Accordion>
   <AccordionItem>
     <span slot="header">My Header 1</span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
+    </p>
   </AccordionItem>
-  <AccordionItem transitionParams="{{ duration: 2000 }}">
+  <AccordionItem transitionParams={{ duration: 2000 }}>
     <span slot="header">My Header 2</span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
+    </p>
   </AccordionItem>
-  <AccordionItem transitionType="fade" transitionParams="{{ duration: 1000 }}">
+  <AccordionItem transitionType="fade" transitionParams={{ duration: 1000 }}>
     <span slot="header">My Header 3</span>
-    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...
+    </p>
   </AccordionItem>
 </Accordion>
 ```

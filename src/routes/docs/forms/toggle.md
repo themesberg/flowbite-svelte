@@ -23,7 +23,7 @@ The toggle component can be used to receive a simple “yes” or “no” type 
 
 ```svelte example hideOutput
 <script>
-  import { Toggle } from 'flowbite-svelte'
+  import { Toggle } from 'flowbite-svelte';
 </script>
 ```
 
@@ -33,7 +33,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 ```svelte example class="flex flex-col gap-2" hideScript
 <script>
-  import { Toggle } from 'flowbite-svelte'
+  import { Toggle } from 'flowbite-svelte';
 </script>
 
 <Toggle>Toggle me</Toggle>
@@ -46,7 +46,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 ```svelte example class="flex justify-between" hideScript
 <script>
-  import { Toggle } from 'flowbite-svelte'
+  import { Toggle } from 'flowbite-svelte';
 </script>
 
 <Toggle color="red" checked>Red</Toggle>

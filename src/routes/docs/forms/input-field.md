@@ -42,7 +42,7 @@ Use this example as a generic form element which includes multiple input fields 
   <div class="grid gap-6 mb-6 md:grid-cols-2">
     <div>
       <Label for="first_name" class="mb-2">First name</Label>
-      <Input type="text" id="first_name" placeholder="John" required  />
+      <Input type="text" id="first_name" placeholder="John" required />
     </div>
     <div>
       <Label for="last_name" class="mb-2">Last name</Label>
@@ -77,7 +77,10 @@ Use this example as a generic form element which includes multiple input fields 
     <Label for="confirm_password" class="mb-2">Confirm password</Label>
     <Input type="password" id="confirm_password" placeholder="•••••••••" required />
   </div>
-  <Checkbox class="mb-6 space-x-1" required>I agree with the <A href="/" class="text-primary-700 dark:text-primary-600 hover:underline">terms and conditions</A>.</Checkbox>
+  <Checkbox class="mb-6 space-x-1" required
+    >I agree with the <A href="/" class="text-primary-700 dark:text-primary-600 hover:underline"
+      >terms and conditions</A
+    >.</Checkbox>
   <Button type="submit">Submit</Button>
 </form>
 ```
@@ -162,7 +165,7 @@ Use the following example to apply validation styles for success and error messa
 <Label class="space-y-2">
   <span>Default input - right icon</span>
   <Input type="email" placeholder="name@flowbite.com" size="md">
-    <EnvelopeSolid slot="right" class="w-5 h-5"/>
+    <EnvelopeSolid slot="right" class="w-5 h-5" />
   </Input>
 </Label>
 
@@ -250,9 +253,9 @@ This example shows how to add `on:click` event handler to the icon in `Input`. B
   <Input id="show-password" type={show ? 'text' : 'password'} placeholder="Your password here" size="lg">
     <button slot="left" on:click={() => (show = !show)} class="pointer-events-auto">
       {#if show}
-        <EyeOutline class="w-6 h-6"/>
+        <EyeOutline class="w-6 h-6" />
       {:else}
-        <EyeSlashOutline class="w-6 h-6"/>
+        <EyeSlashOutline class="w-6 h-6" />
       {/if}
     </button>
   </Input>
@@ -264,9 +267,9 @@ This example shows how to add `on:click` event handler to the icon in `Input`. B
     <InputAddon>
       <button on:click={() => (show1 = !show1)}>
         {#if show1}
-          <EyeOutline class="w-5 h-5"/>
+          <EyeOutline class="w-5 h-5" />
         {:else}
-          <EyeSlashOutline class="w-5 h-5"/>
+          <EyeSlashOutline class="w-5 h-5" />
         {/if}
       </button>
     </InputAddon>
@@ -287,7 +290,11 @@ Use the helper prop to add your helper text. You can use HTML in the helper text
 <Label class="block space-y-2">
   <span>Your email</span>
   <Input label="Email" id="email" name="email" required placeholder="name@flowbite.com" />
-  <Helper class="text-sm">We’ll never share your details. Read our <a href="/" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Privacy Policy</a>.</Helper>
+  <Helper class="text-sm"
+    >We’ll never share your details. Read our <a
+      href="/"
+      class="font-medium text-primary-600 hover:underline dark:text-primary-500">Privacy Policy</a
+    >.</Helper>
 </Label>
 ```
 
@@ -338,7 +345,9 @@ Use this example to show a dropdown menu right next to the input field.
 </script>
 
 <ButtonGroup class="w-full">
-  <Button color="none" class="flex-shrink-0 text-gray-900 bg-gray-100 border border-gray-300 dark:border-gray-700 dark:text-white hover:bg-gray-200 focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+  <Button
+    color="none"
+    class="flex-shrink-0 text-gray-900 bg-gray-100 border border-gray-300 dark:border-gray-700 dark:text-white hover:bg-gray-200 focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
     All categories<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" />
   </Button>
   <Dropdown>
@@ -390,7 +399,6 @@ The component has the following props, type, and default values. See [types page
 <TableProp>
 <TableDefaultRow items={inputAddon} rowState='hover' />
 </TableProp>
-
 
 ## Forwarded Events: Input
 

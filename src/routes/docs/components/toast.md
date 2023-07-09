@@ -35,8 +35,10 @@ Use this simple toast component with an icon, message, and dismissable close but
 </script>
 
 <Toast>
-    <FireOutline slot="icon" class="w-5 h-5 text-primary-500 bg-primary-100 dark:bg-primary-800 dark:text-primary-200" />
-    Set yourself free.
+  <FireOutline
+    slot="icon"
+    class="w-5 h-5 text-primary-500 bg-primary-100 dark:bg-primary-800 dark:text-primary-200" />
+  Set yourself free.
 </Toast>
 ```
 
@@ -49,7 +51,12 @@ Usually, green, red, and orange are used to show success, danger, or warning ale
 ```svelte example class="flex flex-col items-center gap-4" hideScript
 <script>
   import { Toast } from 'flowbite-svelte';
-  import { FireOutline, CheckCircleSolid, CloseCircleSolid, ExclamationCircleSolid } from 'flowbite-svelte-icons';
+  import {
+    FireOutline,
+    CheckCircleSolid,
+    CloseCircleSolid,
+    ExclamationCircleSolid
+  } from 'flowbite-svelte-icons';
 </script>
 
 <Toast color="green">
@@ -70,7 +77,7 @@ Usually, green, red, and orange are used to show success, danger, or warning ale
 
 <Toast color="orange">
   <svelte:fragment slot="icon">
-    <ExclamationCircleSolid class="w-5 h-5"/>
+    <ExclamationCircleSolid class="w-5 h-5" />
     <span class="sr-only">Warning icon</span>
   </svelte:fragment>
   Improve password difficulty.
@@ -136,13 +143,11 @@ You can use any [icon components](/icons).
 </script>
 
 <Toast>
-  <ImageOutline slot="icon" class="w-6 h-6"/>
+  <ImageOutline slot="icon" class="w-6 h-6" />
   There is a box icon.
 </Toast>
 
-<Toast>
-  No icon at all.
-</Toast>
+<Toast>No icon at all.</Toast>
 ```
 
 ## Autohide example
@@ -163,8 +168,7 @@ You can use any [icon components](/icons).
   }
 
   function timeout() {
-    if (--counter > 0)
-      return setTimeout(timeout, 1000);
+    if (--counter > 0) return setTimeout(timeout, 1000);
     show = false;
   }
 </script>
@@ -172,7 +176,7 @@ You can use any [icon components](/icons).
 <div class="flex gap-10">
   <Button on:click={trigger} class="my-3">Restart</Button>
   <Toast simple transition={slide} bind:open={show}>
-    <CheckCircleSolid slot="icon" class="w-4 h-4"/>
+    <CheckCircleSolid slot="icon" class="w-4 h-4" />
     Autohide in {counter}s.
   </Toast>
 </div>
@@ -191,17 +195,17 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
 </script>
 
 <Toast transition={slide} class="mb-4">
-  <CheckCircleSolid slot="icon" class="w-5 h-5"/>
+  <CheckCircleSolid slot="icon" class="w-5 h-5" />
   Transition type: slide
 </Toast>
 
-<Toast transition={slide} params="{{delay: 250, duration: 300, easing: quintOut}}" class="mb-4">
-  <CheckCircleSolid slot="icon" class="w-5 h-5"/>
+<Toast transition={slide} params={{ delay: 250, duration: 300, easing: quintOut }} class="mb-4">
+  <CheckCircleSolid slot="icon" class="w-5 h-5" />
   Transition type: slide, delay: 250, duration: 300, easing: quintOut
 </Toast>
 
-<Toast transition={slide} params="{{delay: 250, duration: 2000, easing: elasticOut}}">
-  <CheckCircleSolid slot="icon" class="w-5 h-5"/>
+<Toast transition={slide} params={{ delay: 250, duration: 2000, easing: elasticOut }}>
+  <CheckCircleSolid slot="icon" class="w-5 h-5" />
   Transition type: slide, delay: 250, duration: 2000, easing: elasticOut
 </Toast>
 ```
@@ -215,13 +219,13 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
   import { BellOutline } from 'flowbite-svelte-icons';
 </script>
 
-<Toast transition={blur} color='purple' params="{{amount: 10}}" class="mb-4">
-  <BellOutline slot="icon" class="w-5 h-5"/>
+<Toast transition={blur} color="purple" params={{ amount: 10 }} class="mb-4">
+  <BellOutline slot="icon" class="w-5 h-5" />
   Transition type: blur, amount: 10
 </Toast>
 
-<Toast transition={blur} color='purple' params="{{amount: 50, delay: 1000}}">
-  <BellOutline slot="icon" class="w-5 h-5"/>
+<Toast transition={blur} color="purple" params={{ amount: 50, delay: 1000 }}>
+  <BellOutline slot="icon" class="w-5 h-5" />
   Transition type: blur, amount: 50, delay 1000
 </Toast>
 ```
@@ -235,13 +239,13 @@ You can use one of <A href="https://svelte.dev/docs#run-time-svelte-easing" targ
   import { DownloadOutline } from 'flowbite-svelte-icons';
 </script>
 
-<Toast transition={fly} params="{{x: 200}}" color="green" class="mb-4">
-  <DownloadOutline slot="icon" class="w-5 h-5"/>
+<Toast transition={fly} params={{ x: 200 }} color="green" class="mb-4">
+  <DownloadOutline slot="icon" class="w-5 h-5" />
   Transition type: fly right
 </Toast>
 
-<Toast transition={fly} params="{{y: 200}}" color="green">
-  <DownloadOutline slot="icon" class="w-5 h-5"/>
+<Toast transition={fly} params={{ y: 200 }} color="green">
+  <DownloadOutline slot="icon" class="w-5 h-5" />
   Transition type: fly down
 </Toast>
 ```
@@ -257,7 +261,9 @@ Use this toast component to also show an “undo” button to reverse the action
 
 <Toast contentClass="w-full text-sm font-normal flex items-center justify-between">
   Conversation archived.
-  <a class="ml-auto font-medium text-primary-600 p-1.5 hover:bg-primary-100 rounded-lg dark:text-primary-500 dark:hover:bg-gray-700" href="/">Undo</a>
+  <a
+    class="ml-auto font-medium text-primary-600 p-1.5 hover:bg-primary-100 rounded-lg dark:text-primary-500 dark:hover:bg-gray-700"
+    href="/">Undo</a>
 </Toast>
 ```
 
@@ -275,11 +281,11 @@ This component can be used to show messages and a CTA button when receiving chat
 </script>
 
 <Toast align={false} color="none" defaultIconClass="">
-  <Avatar slot="icon" src='/images/profile-picture-1.webp' />
+  <Avatar slot="icon" src="/images/profile-picture-1.webp" />
   <div class="ml-3 text-sm font-normal">
-      <span class="mb-1 text-sm font-semibold text-gray-900 dark:text-white">Jese Leos</span>
-      <div class="mb-2 text-sm font-normal">Hi Neil, thanks for sharing your thoughts regarding Flowbite.</div>
-      <Button size="xs">Reply</Button>
+    <span class="mb-1 text-sm font-semibold text-gray-900 dark:text-white">Jese Leos</span>
+    <div class="mb-2 text-sm font-normal">Hi Neil, thanks for sharing your thoughts regarding Flowbite.</div>
+    <Button size="xs">Reply</Button>
   </div>
 </Toast>
 ```
@@ -296,7 +302,7 @@ This component can be used to show notifications for an action from another user
 <Toast align={false}>
   <span class="font-semibold text-gray-900 dark:text-white">New notification</span>
   <div class="flex items-center mt-3">
-    <Avatar src='/images/profile-picture-3.webp'/>
+    <Avatar src="/images/profile-picture-3.webp" />
     <div class="ml-3">
       <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Bonnie Green</h4>
       <div class="text-sm font-normal">commented on your photo</div>
@@ -318,16 +324,16 @@ Use this interactive toast component to encourage users to make a certain action
   import { CameraFotoOutline } from 'flowbite-svelte-icons';
 </script>
 
-<Toast align={false}>  
+<Toast align={false}>
   <CameraFotoOutline slot="icon" class="w-5 h-5" />
 
   <span class="font-semibold text-gray-900 dark:text-white">Update available</span>
   <div class="mt-3">
-      <div class="mb-2 text-sm font-normal">A new software version is available for download.</div>
-      <div class="grid grid-cols-2 gap-2">
-          <Button size="xs" class="w-full">Update</Button>
-          <Button size="xs" class="w-full" color="dark">Not now</Button>
-      </div>
+    <div class="mb-2 text-sm font-normal">A new software version is available for download.</div>
+    <div class="grid grid-cols-2 gap-2">
+      <Button size="xs" class="w-full">Update</Button>
+      <Button size="xs" class="w-full" color="dark">Not now</Button>
+    </div>
   </div>
 </Toast>
 ```

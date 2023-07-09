@@ -19,7 +19,7 @@ The mega menu component is a full-width dropdown that can be triggered by clicki
 
 ```svelte example hideOutput
 <script>
-  import { MegaMenu } from 'flowbite-svelte'
+  import { MegaMenu } from 'flowbite-svelte';
 </script>
 ```
 
@@ -32,29 +32,30 @@ Use this example to show a list of links aligned on three columns inside the meg
   import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from 'flowbite-svelte';
   import { ChevronDownOutline } from 'flowbite-svelte-icons';
   let menu = [
-    {name: 'About us', href: '/about'},
-    {name: 'Blog', href: '/blog'},
-    {name: 'Contact us', href: '/contact'},
-    {name: 'Library', href: '/library'},
-    {name: 'Newsletter', href: '/news'},
-    {name: 'Support Center', href: '/support'},
-    {name: 'Resources', href: '/resource'},
-    {name: 'Playground', href: '/play'},
-    {name: 'Terms', href: '/terms'},
-    {name: 'Pro Version', href: '/pro'},
-    {name: 'License', href: '/license'},
+    { name: 'About us', href: '/about' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact us', href: '/contact' },
+    { name: 'Library', href: '/library' },
+    { name: 'Newsletter', href: '/news' },
+    { name: 'Support Center', href: '/support' },
+    { name: 'Resources', href: '/resource' },
+    { name: 'Playground', href: '/play' },
+    { name: 'Terms', href: '/terms' },
+    { name: 'Pro Version', href: '/pro' },
+    { name: 'License', href: '/license' }
   ];
 </script>
 
 <Navbar let:hidden let:toggle>
   <NavBrand href="/">
-    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
     <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
   </NavBrand>
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
     <NavLi href="/">Home</NavLi>
-    <NavLi class="cursor-pointer">Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
+    <NavLi class="cursor-pointer"
+      >Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
     <MegaMenu items={menu} let:item>
       <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
     </MegaMenu>
@@ -74,34 +75,35 @@ This example of a mega menu dropdown can be used to also show an icon near the t
   import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from 'flowbite-svelte';
   import { ChevronDownOutline, UserCircleOutline } from 'flowbite-svelte-icons';
   let menu = [
-    {name: 'About us', href: '/about', icon: UserCircleOutline},
-    {name: 'Blog', href: '/blog', icon: UserCircleOutline},
-    {name: 'Contact us', href: '/contact', icon: UserCircleOutline},
-    {name: 'Library', href: '/library', icon: UserCircleOutline},
-    {name: 'Newsletter', href: '/news', icon: UserCircleOutline},
-    {name: 'Support Center', href: '/support', icon: UserCircleOutline},
-    {name: 'Resources', href: '/resource', icon: UserCircleOutline},
-    {name: 'Playground', href: '/play', icon: UserCircleOutline},
-    {name: 'Terms', href: '/tersm', icon: UserCircleOutline},
-    {name: 'Pro Version', href: '/pro', icon: UserCircleOutline},
-    {name: 'License', href: '/license', icon: UserCircleOutline},
+    { name: 'About us', href: '/about', icon: UserCircleOutline },
+    { name: 'Blog', href: '/blog', icon: UserCircleOutline },
+    { name: 'Contact us', href: '/contact', icon: UserCircleOutline },
+    { name: 'Library', href: '/library', icon: UserCircleOutline },
+    { name: 'Newsletter', href: '/news', icon: UserCircleOutline },
+    { name: 'Support Center', href: '/support', icon: UserCircleOutline },
+    { name: 'Resources', href: '/resource', icon: UserCircleOutline },
+    { name: 'Playground', href: '/play', icon: UserCircleOutline },
+    { name: 'Terms', href: '/tersm', icon: UserCircleOutline },
+    { name: 'Pro Version', href: '/pro', icon: UserCircleOutline },
+    { name: 'License', href: '/license', icon: UserCircleOutline }
   ];
 </script>
 
 <Navbar let:hidden let:toggle>
   <NavBrand href="/">
-    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
     <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
   </NavBrand>
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
     <NavLi href="/">Home</NavLi>
-    <NavLi class="cursor-pointer">Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
+    <NavLi class="cursor-pointer"
+      >Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
     <MegaMenu items={menu} let:item>
-        <a href={item.href} class="flex items-center hover:text-primary-600 dark:hover:text-primary-500">
-          <span class="sr-only">{item.name}</span>
-          <svelte:component this={item.icon} class="w-4 h-4 mr-2" />{item.name}
-        </a>
+      <a href={item.href} class="flex items-center hover:text-primary-600 dark:hover:text-primary-500">
+        <span class="sr-only">{item.name}</span>
+        <svelte:component this={item.icon} class="w-4 h-4 mr-2" />{item.name}
+      </a>
     </MegaMenu>
     <NavLi href="/services">Services</NavLi>
     <NavLi href="/services">Products</NavLi>
@@ -119,38 +121,39 @@ Use this example to show a mega menu dropdown that spans the entire width of the
   import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from 'flowbite-svelte';
   import { ChevronDownOutline } from 'flowbite-svelte-icons';
   let menu2 = [
-    {name: 'Online Stores', help: "Connect with third-party tools that you're already using."},
-    {name: 'Segmentation', help: "Connect with third-party tools that you're already using."},
-    {name: 'Marketing CRM', help: "Connect with third-party tools that you're already using."},
+    { name: 'Online Stores', help: "Connect with third-party tools that you're already using." },
+    { name: 'Segmentation', help: "Connect with third-party tools that you're already using." },
+    { name: 'Marketing CRM', help: "Connect with third-party tools that you're already using." },
 
-    {name: 'Online Stores', help: "Connect with third-party tools that you're already using."},
-    {name: 'Segmentation', help: "Connect with third-party tools that you're already using."},
-    {name: 'Marketing CRM', help: "Connect with third-party tools that you're already using."},
+    { name: 'Online Stores', help: "Connect with third-party tools that you're already using." },
+    { name: 'Segmentation', help: "Connect with third-party tools that you're already using." },
+    { name: 'Marketing CRM', help: "Connect with third-party tools that you're already using." },
 
-    {name: 'Audience Management', help: "Connect with third-party tools that you're already using."},
-    {name: 'Creative Tools', help: "Connect with third-party tools that you're already using."},
-    {name: 'Marketing Automation', help: "Connect with third-party tools that you're already using."},
+    { name: 'Audience Management', help: "Connect with third-party tools that you're already using." },
+    { name: 'Creative Tools', help: "Connect with third-party tools that you're already using." },
+    { name: 'Marketing Automation', help: "Connect with third-party tools that you're already using." }
   ];
 </script>
 
 <Navbar let:hidden let:toggle>
   <NavBrand href="/">
-      <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
-      <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+    <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
   </NavBrand>
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
-      <NavLi href="/">Home</NavLi>
-      <NavLi class="cursor-pointer">Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
-      <MegaMenu full items={menu2} let:item>
-        <a href="/" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 h-full">
-          <div class="font-semibold dark:text-white">{item.name}</div>
-          <span class="text-sm font-light text-gray-500 dark:text-gray-400">{item.help}</span>
-        </a>
-      </MegaMenu>
-      <NavLi href="/services">Services</NavLi>
-      <NavLi href="/services">Products</NavLi>
-      <NavLi href="/services">Contact</NavLi>
+    <NavLi href="/">Home</NavLi>
+    <NavLi class="cursor-pointer"
+      >Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
+    <MegaMenu full items={menu2} let:item>
+      <a href="/" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 h-full">
+        <div class="font-semibold dark:text-white">{item.name}</div>
+        <span class="text-sm font-light text-gray-500 dark:text-gray-400">{item.help}</span>
+      </a>
+    </MegaMenu>
+    <NavLi href="/services">Services</NavLi>
+    <NavLi href="/services">Products</NavLi>
+    <NavLi href="/services">Contact</NavLi>
   </NavUl>
 </Navbar>
 ```
@@ -161,42 +164,49 @@ This example can be used to also show a CTA button or link next to the menu item
 
 ```svelte example class="h-96 relative"
 <script>
-  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi,  MegaMenu } from 'flowbite-svelte';
-  import { ArrowRightOutline, ChevronDownOutline } from "flowbite-svelte-icons";
+  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from 'flowbite-svelte';
+  import { ArrowRightOutline, ChevronDownOutline } from 'flowbite-svelte-icons';
   let menu = [
-    {name: 'About us', href: '/about'},
-    {name: 'Blog', href: '/blog'},
-    {name: 'Contact us', href: '/contact'},
-    {name: 'Library', href: '/library'},
-    {name: 'Newsletter', href: '/news'},
-    {name: 'Support Center', href: '/support'},
-    {name: 'Resources', href: '/resource'},
-    {name: 'Playground', href: '/play'},
-    {name: 'Terms', href: '/tersm'},
-    {name: 'Pro Version', href: '/pro'},
-    {name: 'License', href: '/license'},
+    { name: 'About us', href: '/about' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact us', href: '/contact' },
+    { name: 'Library', href: '/library' },
+    { name: 'Newsletter', href: '/news' },
+    { name: 'Support Center', href: '/support' },
+    { name: 'Resources', href: '/resource' },
+    { name: 'Playground', href: '/play' },
+    { name: 'Terms', href: '/tersm' },
+    { name: 'Pro Version', href: '/pro' },
+    { name: 'License', href: '/license' }
   ];
 </script>
 
 <Navbar let:hidden let:toggle>
   <NavBrand href="/">
-    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
     <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
   </NavBrand>
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
     <NavLi href="/">Home</NavLi>
-    <NavLi class="cursor-pointer">Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
+    <NavLi class="cursor-pointer"
+      >Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
     <MegaMenu full items={menu} let:item>
-      <a href={item.href} class="hover:underline hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
+      <a href={item.href} class="hover:underline hover:text-primary-600 dark:hover:text-primary-500"
+        >{item.name}</a>
       <div slot="extra" class="">
-          <h2 class="mt-4 mb-2 font-semibold text-gray-900 dark:text-white">Our brands</h2>
-          <p class="mb-2 p-0 text-sm font-light text-gray-500 dark:text-gray-300">At Flowbite, we have a portfolio of brands that cater to a variety of preferences.</p>
-          <a href="/" class="inline-flex items-center text-sm font-medium text-primary-600 hover:underline hover:text-primary-600 dark:text-primary-500 dark:hover:text-primary-700">
-              Explore our brands 
-              <span class="sr-only">Explore our brands </span>
-              <ArrowRightOutline class="w-3.5 h-3.5 ml-2 text-primary-600  hover:text-primary-600 dark:text-primary-500 dark:hover:text-primary-700"/>
-          </a>
+        <h2 class="mt-4 mb-2 font-semibold text-gray-900 dark:text-white">Our brands</h2>
+        <p class="mb-2 p-0 text-sm font-light text-gray-500 dark:text-gray-300">
+          At Flowbite, we have a portfolio of brands that cater to a variety of preferences.
+        </p>
+        <a
+          href="/"
+          class="inline-flex items-center text-sm font-medium text-primary-600 hover:underline hover:text-primary-600 dark:text-primary-500 dark:hover:text-primary-700">
+          Explore our brands
+          <span class="sr-only">Explore our brands </span>
+          <ArrowRightOutline
+            class="w-3.5 h-3.5 ml-2 text-primary-600  hover:text-primary-600 dark:text-primary-500 dark:hover:text-primary-700" />
+        </a>
       </div>
     </MegaMenu>
     <NavLi href="/services">Services</NavLi>
@@ -215,34 +225,42 @@ This example can be used to also show a CTA with a backdround image inside the d
   import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, Button } from 'flowbite-svelte';
   import { ChevronDownOutline } from 'flowbite-svelte-icons';
   let menu = [
-    {name: 'About us', href: '/about'},
-    {name: 'Blog', href: '/blog'},
-    {name: 'Contact us', href: '/contact'},
-    {name: 'Library', href: '/library'},
-    {name: 'Newsletter', href: '/news'},
-    {name: 'Support Center', href: '/support'},
-    {name: 'Resources', href: '/resource'},
-    {name: 'Playground', href: '/play'},
-    {name: 'Terms', href: '/tersm'},
-    {name: 'Pro Version', href: '/pro'},
-    {name: 'License', href: '/license'},
+    { name: 'About us', href: '/about' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact us', href: '/contact' },
+    { name: 'Library', href: '/library' },
+    { name: 'Newsletter', href: '/news' },
+    { name: 'Support Center', href: '/support' },
+    { name: 'Resources', href: '/resource' },
+    { name: 'Playground', href: '/play' },
+    { name: 'Terms', href: '/tersm' },
+    { name: 'Pro Version', href: '/pro' },
+    { name: 'License', href: '/license' }
   ];
 </script>
 
 <Navbar let:hidden let:toggle>
   <NavBrand href="/">
-    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
     <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
   </NavBrand>
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
     <NavLi href="/">Home</NavLi>
-    <NavLi class="cursor-pointer">Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
+    <NavLi class="cursor-pointer"
+      >Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
     <MegaMenu full items={menu} let:item>
-      <a href={item.href} class="hover:underline hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
-      <a slot="extra" href="/" class="block mt-4 p-4 text-left bg-local bg-gray-500 bg-center bg-no-repeat bg-cover rounded-lg bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken" style="background-image: url(/images/nature-1.webp)">
-          <p class="mb-5 max-w-xl text-sm p-0 font-extrabold tracking-tight leading-tight text-white">Preview the new Flowbite dashboard navigation.</p>
-          <Button>Get started</Button>
+      <a href={item.href} class="hover:underline hover:text-primary-600 dark:hover:text-primary-500"
+        >{item.name}</a>
+      <a
+        slot="extra"
+        href="/"
+        class="block mt-4 p-4 text-left bg-local bg-gray-500 bg-center bg-no-repeat bg-cover rounded-lg bg-blend-multiply hover:bg-blend-soft-light dark:hover:bg-blend-darken"
+        style="background-image: url(/images/nature-1.webp)">
+        <p class="mb-5 max-w-xl text-sm p-0 font-extrabold tracking-tight leading-tight text-white">
+          Preview the new Flowbite dashboard navigation.
+        </p>
+        <Button>Get started</Button>
       </a>
     </MegaMenu>
     <NavLi href="/services">Services</NavLi>

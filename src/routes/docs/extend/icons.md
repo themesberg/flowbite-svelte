@@ -100,9 +100,8 @@ If you are using an LSP-compatible editor, such as VSCode, Atom, Sublime Text, o
 Use the `size` prop to change the size of icons.
 
 ```html
-<AddressCardSolid size="40" /> 
+<AddressCardSolid size="40" />
 ```
-
 
 ## Tailwind CSS suport
 
