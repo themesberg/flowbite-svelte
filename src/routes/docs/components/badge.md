@@ -124,7 +124,7 @@ You can also use SVG icons inside the badge elements.
   import { ClockSolid } from 'flowbite-svelte-icons';
 </script>
 <Badge color="dark" border>
-  <ClockSolid class="text-gray-800 dark:text-gray-400 w-2.5 h-2.5 mr-1.5"/>
+  <ClockSolid class="w-2.5 h-2.5 mr-1.5"/>
   3 days ago
 </Badge>
 <Badge border>

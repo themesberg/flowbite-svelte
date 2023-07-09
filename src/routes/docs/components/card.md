@@ -310,31 +310,31 @@ Show detailed information to potential customers about your product’s pricing 
   <!-- List -->
   <ul class="my-7 space-y-4">
       <li class="flex space-x-2">
-        <CheckCircleSolid class="flex-shrink-0 w-4 h-4 text-primary-600 dark:text-primary-500" />
+        <CheckCircleSolid class="w-4 h-4 text-primary-600 dark:text-primary-500" />
         <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">2 team members</span>
       </li>
       <li class="flex space-x-2">
-        <CheckCircleSolid class="flex-shrink-0 w-4 h-4 text-primary-600 dark:text-primary-500" />
+        <CheckCircleSolid class="w-4 h-4 text-primary-600 dark:text-primary-500" />
         <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">20GB Cloud storage</span>
       </li>
       <li class="flex space-x-2">
-        <CheckCircleSolid class="flex-shrink-0 w-4 h-4 text-primary-600 dark:text-primary-500" />
+        <CheckCircleSolid class="w-4 h-4 text-primary-600 dark:text-primary-500" />
         <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">Integration help</span>
       </li>
       <li class="flex space-x-2 line-through decoration-gray-500">
-        <CheckCircleSolid class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" />
+        <CheckCircleSolid class="w-4 h-4 text-gray-400 dark:text-gray-500" />
         <span class="text-base font-normal leading-tight text-gray-500">Sketch Files</span>
       </li>
       <li class="flex space-x-2 line-through decoration-gray-500">
-        <CheckCircleSolid class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" />
+        <CheckCircleSolid class="w-4 h-4 text-gray-400 dark:text-gray-500" />
         <span class="text-base font-normal leading-tight text-gray-500">API Access</span>
       </li>
       <li class="flex space-x-2 line-through decoration-gray-500">
-        <CheckCircleSolid class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" />
+        <CheckCircleSolid class="w-4 h-4 text-gray-400 dark:text-gray-500" />
         <span class="text-base font-normal leading-tight text-gray-500">Complete documentation</span>
       </li>
       <li class="flex space-x-2 line-through decoration-gray-500">
-        <CheckCircleSolid class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" />
+        <CheckCircleSolid class="w-4 h-4 text-gray-400 dark:text-gray-500" />
         <span class="text-base font-normal leading-tight text-gray-500">24×7 phone & email support</span>
       </li>
   </ul>

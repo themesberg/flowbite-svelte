@@ -89,12 +89,9 @@ With the Input component, you can add <a href="https://flowbite-svelte.vercel.ap
 
 <div class="mb-6">
   <Label for="input-group-1" class="block mb-2">Your Email</Label>
-  <ButtonGroup class="w-full">
-    <InputAddon id="email" type="email" placeholder="name@flowbite.com">
-      <EnvelopeSolid class="w-4 h-4 text-gray-500 dark:text-gray-400" />
-    </InputAddon>
-    <Input id="website-admin" placeholder="name@flowbite.com" />
-  </ButtonGroup>
+  <Input id="email" type="email" placeholder="name@flowbite.com">
+  <EnvelopeSolid slot="left" class="w-5 h-5 text-gray-500 dark:text-gray-400" />
+  </Input>
 </div>
 ```
 
