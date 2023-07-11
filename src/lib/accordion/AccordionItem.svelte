@@ -100,7 +100,7 @@
     </div>
   </div>
 {:else}
-  <div hidden>
+  <div class="hidden">
     <div class={contentClass}>
       <slot />
     </div>
