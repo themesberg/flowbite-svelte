@@ -173,7 +173,7 @@ Use this card example where you can add form input elements that can be used for
   import { Card, Button, Label, Input, Checkbox } from 'flowbite-svelte';
 </script>
 
-<Card>
+<Card class="w-full max-w-md">
   <form class="flex flex-col space-y-6" action="/">
     <h3 class="text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h3>
     <Label class="space-y-2">
