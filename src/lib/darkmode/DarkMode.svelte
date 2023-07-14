@@ -29,7 +29,6 @@
       if (window.matchMedia('(prefers-color-scheme: dark)').matches)
         window.document.documentElement.classList.add('dark');
     }
-    console.log(window.document.documentElement.class);
   </script>
 </svelte:head>
 
