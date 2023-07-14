@@ -19,10 +19,17 @@
 
 <svelte:head>
   <script>
-    localStorage.getItem('color-theme') === 'dark' ||
-    (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-      ? window.document.documentElement.classList.add('dark')
-      : window.document.documentElement.classList.remove('dark');
+    if ('color-theme' in localStorage) {
+      // explicit preference - overrides author's choice
+      localStorage.getItem('color-theme') === 'dark'
+        ? window.document.documentElement.classList.add('dark')
+        : window.document.documentElement.classList.remove('dark');
+    } else {
+      // browser preference - does not overrides
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches)
+        window.document.documentElement.classList.add('dark');
+    }
+    console.log(window.document.documentElement.class);
   </script>
 </svelte:head>
 
