@@ -76,16 +76,6 @@
     green: 'text-green-600 dark:text-green-500',
     red: 'text-red-600 dark:text-red-500'
   };
-
-  // you need to this to avoid 2-way binding
-  function setType(node: HTMLInputElement, _type: string) {
-    node.type = _type;
-    return {
-      update(_type: string) {
-        node.type = _type;
-      }
-    };
-  }
 </script>
 
 <div class={twMerge(divClasses[style], $$props.classDiv)}>
@@ -105,7 +95,7 @@
     on:mouseleave
     on:mouseover
     on:paste
-    use:setType={type}
+    {...{type}}
     placeholder=" "
     class={twMerge(
       inputClasses[style],
