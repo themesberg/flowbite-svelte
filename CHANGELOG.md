@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.39.3](https://github.com/themesberg/flowbite-svelte/compare/v0.39.2...v0.39.3) (2023-07-14)
+
+
+### Features
+
+* pagination large ([#895](https://github.com/themesberg/flowbite-svelte/issues/895)) ([a5cd87a](https://github.com/themesberg/flowbite-svelte/commit/a5cd87a2bfed6ce25c39969be401458dda2259c3))
+
+
+### Bug Fixes
+
+* [#905](https://github.com/themesberg/flowbite-svelte/issues/905) ([#913](https://github.com/themesberg/flowbite-svelte/issues/913)) ([85d8d43](https://github.com/themesberg/flowbite-svelte/commit/85d8d43b7b69c3d9050a56dca6d947f4dcc047b2))
+* [#909](https://github.com/themesberg/flowbite-svelte/issues/909) ([#911](https://github.com/themesberg/flowbite-svelte/issues/911)) ([85b10d1](https://github.com/themesberg/flowbite-svelte/commit/85b10d16c430fea282e4cdb977003a710e6c552b))
+* [#910](https://github.com/themesberg/flowbite-svelte/issues/910) ([#912](https://github.com/themesberg/flowbite-svelte/issues/912)) ([ccaa4b6](https://github.com/themesberg/flowbite-svelte/commit/ccaa4b6772a3d8b24aba0a8fc4a1e25c148f9e86))
+* initial dark mode ([#924](https://github.com/themesberg/flowbite-svelte/issues/924)) ([103bf6a](https://github.com/themesberg/flowbite-svelte/commit/103bf6a7ab1eb24003c09ac93fff574d4ae170ad))
+* **Input:** Use a reactive spread instead of custom action to set Input `type` attribute ([#921](https://github.com/themesberg/flowbite-svelte/issues/921)) ([165e273](https://github.com/themesberg/flowbite-svelte/commit/165e273357efa57d35e8f7a268ad5bc5e725d565))
+* playwright and lint yaml 1.36.0 ([4c96d64](https://github.com/themesberg/flowbite-svelte/commit/4c96d6497224cbfc30bbb4cdfedf6fd4f44d1f47))
+* use reactive spread ([#927](https://github.com/themesberg/flowbite-svelte/issues/927)) ([a743782](https://github.com/themesberg/flowbite-svelte/commit/a743782a0430680dea1ce072664494db886834fd))
+* workaround for scroll to anchor ([#923](https://github.com/themesberg/flowbite-svelte/issues/923)) ([0091171](https://github.com/themesberg/flowbite-svelte/commit/0091171a7544b90ced1492039518d4932d62a3a6))
+
 ### [0.39.2](https://github.com/themesberg/flowbite-svelte/compare/v0.39.1...v0.39.2) (2023-07-03)
 
 ### Features
