@@ -45,16 +45,6 @@
 
   let group: { size: SizeType } = getContext('group');
 
-  // you need to this to avoid 2-way binding
-  const setType = (node: HTMLInputElement, _type: string) => {
-    node.type = _type;
-    return {
-      update(_type: string) {
-        node.type = _type;
-      }
-    };
-  };
-
   const textSizes = { sm: 'sm:text-xs', md: 'text-sm', lg: 'sm:text-base' };
   const leftPadding = { sm: 'pl-9', md: 'pl-10', lg: 'pl-11' };
   const rightPadding = { sm: 'pr-9', md: 'pr-10', lg: 'pr-11' };
@@ -102,7 +92,7 @@
       on:mouseleave
       on:paste
       on:input
-      use:setType={type}
+      {...{ type }}
       class={inputClass} />
   </slot>
   {#if $$slots.right}
