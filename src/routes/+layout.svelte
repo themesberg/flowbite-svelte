@@ -2,7 +2,7 @@
   import { page } from '$app/stores';
   import { DarkMode, Navbar, NavBrand, NavHamburger, NavLi, NavUl } from '$lib';
   import Tooltip from '$lib/tooltips/Tooltip.svelte';
-  import { setContext } from 'svelte';
+  import { onMount, setContext } from 'svelte';
   import { writable, type Writable } from 'svelte/store';
   import '../app.css';
   import DocBadge from './utils/DocBadge.svelte';
@@ -12,6 +12,7 @@
   import ToolbarLink from './utils/ToolbarLink.svelte';
   import NavSidebarHamburger from '$lib/navbar/NavSidebarHamburger.svelte';
   import AlgoliaSearch from './utils/AlgoliaSearch.svelte';
+    import { browser } from '$app/environment';
 
   let isHomePage: boolean;
   $: isHomePage = $page.route.id === '/';
@@ -30,6 +31,19 @@
   const toggleDrawer = () => {
     drawerHiddenStore.update((state) => !state);
   };
+
+  onMount(()=> {
+    // Workaround until https://github.com/sveltejs/kit/issues/2664 is fixed
+    if (typeof window !== "undefined" && window.location.hash) {
+      const deepLinkedElement = document.getElementById(
+        window.location.hash.substring(1)
+      );
+
+      if (deepLinkedElement) {
+        window.setTimeout(() => deepLinkedElement.scrollIntoView(), 100);
+      }
+    }
+  })
 </script>
 
 <header
