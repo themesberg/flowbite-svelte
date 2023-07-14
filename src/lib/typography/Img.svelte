@@ -3,7 +3,7 @@
 
   export let caption: string | undefined = undefined;
   export let src: string | undefined = undefined;
-  export let srcset: string | undefined = undefined;
+  export let srcset: string = '';
   export let size: string = 'max-w-full';
   export let alignment: string = '';
   export let imgClass: string = 'h-auto';
