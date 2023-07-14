@@ -10,6 +10,7 @@
       "unWrappedClass",
       "string",
       "'p-2.5 text-sm focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500'"
-    ]
+    ],
+    ["innerWrappedClass", "string", "'py-2 px-4 bg-white dark:bg-gray-800'"]
   ]
 }
