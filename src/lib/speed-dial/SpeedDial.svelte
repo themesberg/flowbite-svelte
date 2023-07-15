@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-  import type { Placement } from '@popperjs/core';
+  import type { Placement } from '@floating-ui/dom';
 
   export interface SpeedCtxType {
     pill: boolean;
