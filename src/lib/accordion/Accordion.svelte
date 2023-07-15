@@ -43,7 +43,8 @@
 
   setContext<AccordionCtxType>('ctx', ctx);
 
-  let frameClass = twMerge(defaultClass, $$props.class);
+  let frameClass:string;
+  $: frameClass = twMerge(defaultClass, $$props.class);
 </script>
 
 <Frame {...$$restProps} class={frameClass} color="none">
