@@ -109,7 +109,7 @@
     "url": "https://github.com/themesberg/flowbite-svelte"
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.8",
+    "@floating-ui/dom": "^1.4.5",
     "flowbite": "^1.6.6",
     "tailwind-merge": "^1.13.2"
   },
