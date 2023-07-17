@@ -14,8 +14,6 @@ import { props as items } from '../../props/Select.json'
 
 const events = ["on:change","on:input"];
 
-// lib files
-const libFiles = import.meta.glob('$lib/forms/Select.svelte')
 </script>
 
 The select input component can be used to gather information from users based on multiple options in the form of a dropdown list and by browsing this page you will find multiple options, styles, sizes, and variants built with the utility classes from Tailwind CSS also available in dark mode.
