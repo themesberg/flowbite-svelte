@@ -29,7 +29,7 @@
   }
 </script>
 
-<Popper activeContent {...$$restProps} class={'divide-y'} on:show bind:open>
+<Popper activeContent {...$$restProps} class={'divide-y z-50'} on:show bind:open>
   {#if $$slots.header}
     <div class={headerCls}>
       <slot name="header" />
@@ -83,7 +83,7 @@
   <script>
     import { Button, Dropdown, DropdownItem, Chevron } from 'flowbite-svelte'
   </script>
-  
+
   <Button><Chevron>Dropdown button</Chevron></Button>
   <Dropdown >
     <DropdownItem>Dashboard</DropdownItem>
