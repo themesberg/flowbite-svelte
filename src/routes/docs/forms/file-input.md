@@ -117,29 +117,6 @@ When the user selected multiple files, the `value` represents the first file in 
   };
 
   const handleChange = (event) => {
-<<<<<<< HEAD
-    const files = event.target.files;
-    if (files.length > 0) {
-      const fileName = files[0].name;
-      alert('You selected ' + fileName);
-    }
-  };
-</script>
-
-<Dropzone
-  id="dropzone"
-  on:drop={dropHandle}
-  on:dragover={(event) => {
-    event.preventDefault();
-  }}
-  on:change={handleChange}>
-  <CloudArrowUpOutline class="mb-3 w-10 h-10 text-gray-400" />
-  <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-    <span class="font-semibold">Click to upload</span>
-    or drag and drop
-  </p>
-  <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
-=======
     const files = event.target.files; 
     if (files.length > 0) { 
       value.push(files[0].name);
@@ -174,7 +151,6 @@ When the user selected multiple files, the `value` represents the first file in 
     {:else}
       <p>{showFiles(value)}</p>
   {/if}
->>>>>>> 5f02261a (fix(dropzone): fixes dragging file over the input (#919))
 </Dropzone>
 ```
 

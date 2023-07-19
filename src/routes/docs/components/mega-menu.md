@@ -212,7 +212,7 @@ This example can be used to also show a CTA button or link next to the menu item
     <NavLi href="/services">Services</NavLi>
     
     <NavLi class="cursor-pointer">
-      <Chevron aligned>Mega menu</Chevron>
+      Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" />
       <MegaMenu full items={menu} let:item offset={12}>
         <a href={item.href} class="hover:underline hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
         <div slot="extra" class="">

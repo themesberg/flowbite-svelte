@@ -55,18 +55,9 @@
     open = clickable && ev.type === 'click' && !_blocked ? !open : true;
   };
 
-<<<<<<< HEAD
-  // reactivity
-  $: popper && popper.setOptions({ placement });
-
-  // typescript typeguards - poper.state.element.reference: Element|HTMLElement|VirtualElement
-  const hasHover = (el: object) => (el as Element).matches && (el as Element).matches(':hover');
-  const hasFocus = (el: object) => (el as Element).contains && (el as Element).contains(document.activeElement);
-=======
   const hasHover = (el: Element) => el.matches(':hover');
   const hasFocus = (el: Element) => el.contains(document.activeElement);
   const px = (n: number | undefined) => (n != null ? `${n}px` : '');
->>>>>>> c962fd99 (Floating UI (#930))
 
   const hideHandler = (ev: Event) => {
     if (activeContent) {
@@ -138,7 +129,8 @@
     ];
 
     if (triggeredBy) triggerEls = [...document.querySelectorAll<HTMLElement>(triggeredBy)];
-    else triggerEls = contentEl.previousElementSibling ? [contentEl.previousElementSibling as HTMLElement] : [];
+    else
+      triggerEls = contentEl.previousElementSibling ? [contentEl.previousElementSibling as HTMLElement] : [];
 
     if (!triggerEls.length) {
       console.error('No triggers found.');
@@ -179,9 +171,6 @@
 {/if}
 
 {#if open && triggerEl}
-<<<<<<< HEAD
-  <Frame use={init} options={triggerEl} role="tooltip" tabindex={activeContent ? -1 : undefined} on:focusin={optional(activeContent, showHandler)} on:focusout={optional(activeContent, hideHandler)} on:mouseenter={optional(activeContent && !clickable, showHandler)} on:mouseleave={optional(activeContent && !clickable, hideHandler)} {...$$restProps} class={twMerge('outline-none', $$props.class)}>
-=======
   <Frame
     use={init}
     options={triggerEl}
@@ -192,7 +181,6 @@
     on:mouseenter={optional(activeContent && !clickable, showHandler)}
     on:mouseleave={optional(activeContent && !clickable, hideHandler)}
     {...$$restProps}>
->>>>>>> c962fd99 (Floating UI (#930))
     <slot />
     {#if arrow}<div class={arrowClass} bind:this={arrowEl} />{/if}
   </Frame>
