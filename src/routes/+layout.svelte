@@ -12,7 +12,7 @@
   import ToolbarLink from './utils/ToolbarLink.svelte';
   import NavSidebarHamburger from '$lib/navbar/NavSidebarHamburger.svelte';
   import AlgoliaSearch from './utils/AlgoliaSearch.svelte';
-    import { browser } from '$app/environment';
+  import { browser } from '$app/environment';
 
   let isHomePage: boolean;
   $: isHomePage = $page.route.id === '/';
@@ -31,18 +31,16 @@
     drawerHiddenStore.update((state) => !state);
   };
 
-  onMount(()=> {
+  onMount(() => {
     // Workaround until https://github.com/sveltejs/kit/issues/2664 is fixed
-    if (typeof window !== "undefined" && window.location.hash) {
-      const deepLinkedElement = document.getElementById(
-        window.location.hash.substring(1)
-      );
+    if (typeof window !== 'undefined' && window.location.hash) {
+      const deepLinkedElement = document.getElementById(window.location.hash.substring(1));
 
       if (deepLinkedElement) {
         window.setTimeout(() => deepLinkedElement.scrollIntoView(), 100);
       }
     }
-  })
+  });
 </script>
 
 <header class="sticky top-0 z-40 flex-none w-full mx-auto bg-white border-b border-gray-200 dark:border-gray-600 dark:bg-gray-800">

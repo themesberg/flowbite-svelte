@@ -99,8 +99,7 @@
 </h2>
 {#if open}
   <div transition:multiple={transitionParams}>
-    <div
-      class={contentClass}>
+    <div class={contentClass}>
       <slot />
     </div>
   </div>

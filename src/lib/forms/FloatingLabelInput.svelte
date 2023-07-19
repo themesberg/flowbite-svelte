@@ -89,7 +89,7 @@
     on:mouseleave
     on:mouseover
     on:paste
-    {...{type}}
+    {...{ type }}
     placeholder=" "
     class={twMerge(
       inputClasses[style],
