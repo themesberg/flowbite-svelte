@@ -10,16 +10,9 @@ thumnailSize: w-64
 
 <script>
   import { TableProp, TableDefaultRow} from '../../utils';
-  import {  A, Heading } from '$lib';
+  import { Layout, P, A, Heading } from '$lib';
   import { props as items1 } from '../../props/P.json'
   import { props as items2 } from '../../props/Layout.json'
-
-  // lib files
-  const libFilesArray = [
-    import.meta.glob("$lib/typography/P.svelte"),
-    import.meta.glob("$lib/typography/Layout.svelte"),
-  ];
-  const libFiles = { ...libFilesArray[0], ...libFilesArray[1] };
 </script>
 
 The paragraph element is one of the most commonly used HTML tags on a document page because it is used to write longer blocks of text separated by a blank line and can massively improve the on-page SEO of the page when used correctly. Get started with a collection of paragraph components based on multiple styles, layouts, colors and sizes to use for your website.
