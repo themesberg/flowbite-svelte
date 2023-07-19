@@ -60,7 +60,23 @@
   const handleToggle = (_: Event) => selected.set(open ? {} : self);
 
   let buttonClass: string;
-  $: buttonClass = twMerge([defaultClass, ctx.flush || borderClass, borderBottomClass, borderSharedClass, ctx.flush ? paddingFlush : paddingDefault, open && (ctx.flush ? textFlushOpen : activeCls || ctx.activeClass), !open && (ctx.flush ? textFlushDefault : inactiveCls || ctx.inactiveClass), $$props.class]);
+  $: buttonClass = twMerge([
+    defaultClass,
+    ctx.flush || borderClass,
+    borderBottomClass,
+    borderSharedClass,
+    ctx.flush ? paddingFlush : paddingDefault,
+    open && (ctx.flush ? textFlushOpen : activeCls || ctx.activeClass),
+    !open && (ctx.flush ? textFlushDefault : inactiveCls || ctx.inactiveClass),
+    $$props.class
+  ]);
+
+  $: contentClass = twMerge([
+    ctx.flush ? paddingFlush : paddingDefault,
+    ctx.flush ? '' : borderOpenClass,
+    borderBottomClass,
+    borderSharedClass
+  ]);
 </script>
 
 <h2 class="group">
@@ -83,7 +99,14 @@
 </h2>
 {#if open}
   <div transition:multiple={transitionParams}>
-    <div class="{ctx.flush ? paddingFlush : paddingDefault} {ctx.flush ? '' : borderOpenClass} {borderBottomClass} {borderSharedClass}">
+    <div
+      class={contentClass}>
+      <slot />
+    </div>
+  </div>
+{:else}
+  <div class="hidden">
+    <div class={contentClass}>
       <slot />
     </div>
   </div>
