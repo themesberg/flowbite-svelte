@@ -1,10 +1,10 @@
 <script lang="ts">
+  import type { ComputePositionReturn, Placement, Side } from '@floating-ui/dom';
+  import * as dom from '@floating-ui/dom';
   import { onMount, type ComponentProps } from 'svelte';
-  import { createPopper, type Rect } from '@popperjs/core';
-  import { twMerge } from 'tailwind-merge';
-  import type { Placement, Instance } from '@popperjs/core';
-  import createEventDispatcher from './createEventDispatcher';
+  import { twJoin } from 'tailwind-merge';
   import Frame from './Frame.svelte';
+  import createEventDispatcher from './createEventDispatcher';
 
   // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Frame> {
@@ -37,9 +37,10 @@
   $: dispatch('show', triggerEl, open);
 
   let triggerEl: Element;
+  let floatingEl: HTMLElement;
+  let arrowEl: HTMLElement;
   let contentEl: HTMLElement;
   let triggerEls: HTMLElement[] = [];
-  let popper: Instance;
 
   let _blocked: boolean = false; // management of the race condition between focusin and click events
   const block = () => ((_blocked = true), setTimeout(() => (_blocked = false), 250));
@@ -54,17 +55,23 @@
     open = clickable && ev.type === 'click' && !_blocked ? !open : true;
   };
 
+<<<<<<< HEAD
   // reactivity
   $: popper && popper.setOptions({ placement });
 
   // typescript typeguards - poper.state.element.reference: Element|HTMLElement|VirtualElement
   const hasHover = (el: object) => (el as Element).matches && (el as Element).matches(':hover');
   const hasFocus = (el: object) => (el as Element).contains && (el as Element).contains(document.activeElement);
+=======
+  const hasHover = (el: Element) => el.matches(':hover');
+  const hasFocus = (el: Element) => el.contains(document.activeElement);
+  const px = (n: number | undefined) => (n != null ? `${n}px` : '');
+>>>>>>> c962fd99 (Floating UI (#930))
 
   const hideHandler = (ev: Event) => {
     if (activeContent) {
       setTimeout(() => {
-        const elements = Object.values(popper?.state.elements ?? {});
+        const elements = [triggerEl, floatingEl, arrowEl].filter((x) => x);
         if (ev.type === 'mouseleave' && elements.some(hasHover)) return;
         if (ev.type === 'focusout' && elements.some(hasFocus)) return;
         open = false;
@@ -72,33 +79,51 @@
     } else open = false;
   };
 
+  let arrowSide: Side;
+  const oppositeSideMap: Record<Side, Side> = {
+    left: 'right',
+    right: 'left',
+    bottom: 'top',
+    top: 'bottom'
+  };
+
+  function updatePosition() {
+    dom
+      .computePosition(triggerEl, floatingEl, {
+        placement,
+        strategy,
+        middleware: [
+          dom.flip(),
+          dom.shift(),
+          dom.offset(+offset),
+          arrowEl && dom.arrow({ element: arrowEl, padding: 10 })
+        ]
+      })
+      .then(({ x, y, middlewareData, placement, strategy }: ComputePositionReturn) => {
+        floatingEl.style.position = strategy;
+        floatingEl.style.left = yOnly ? '0' : px(x);
+        floatingEl.style.top = px(y);
+
+        if (middlewareData.arrow && arrowEl) {
+          arrowEl.style.left = px(middlewareData.arrow.x);
+          arrowEl.style.top = px(middlewareData.arrow.y);
+
+          arrowSide = oppositeSideMap[placement.split('-')[0] as Side];
+          arrowEl.style[arrowSide] = px(-arrowEl.offsetWidth / 2 - ($$props.border ? 1 : 0));
+        }
+      });
+  }
+
   function init(node: HTMLElement, _triggerEl: HTMLElement) {
-    const arrowEl = arrow ? node.lastElementChild : undefined;
-    popper = createPopper(_triggerEl, node, {
-      placement,
-      strategy,
-      modifiers: [
-        {
-          name: 'offset',
-          options: {
-            offset: ({ reference, popper }: { reference: Rect; popper: Rect }) => {
-              // for full screen mega menu
-              return [yOnly ? popper.width / 2 - reference.width / 2 - reference.x : 0, offset];
-            }
-          }
-        },
-        { name: 'eventListeners', enabled: open },
-        { name: 'flip', enabled: false },
-        { name: 'arrow', enabled: arrow, options: { element: arrowEl, padding: 10 } }
-      ]
-    });
+    floatingEl = node;
+    let cleanup = dom.autoUpdate(node, _triggerEl, updatePosition);
     return {
       update(_triggerEl: HTMLElement) {
-        popper.state.elements.reference = _triggerEl;
-        popper.update();
+        cleanup();
+        cleanup = dom.autoUpdate(node, _triggerEl, updatePosition);
       },
       destroy() {
-        popper.destroy();
+        cleanup();
       }
     };
   }
@@ -134,15 +159,19 @@
       });
     };
   });
+
   function optional(pred: boolean, func: (ev: Event) => void) {
     return pred ? func : () => undefined;
   }
 
-  let position: string = 'bottom';
-  $: position = placement.split('-', 1)[0];
-
   let arrowClass: string;
-  $: arrowClass = twMerge('after:w-[9px] after:h-[9px] after:rotate-45 bg-inherit after:bg-inherit invisible after:visible after:block border-inherit after:border-inherit', position === 'top' && ($$props.border ? 'after:border-b after:border-r -bottom-[5px]' : '-bottom-[4px]'), position === 'bottom' && ($$props.border ? 'after:border-t after:border-l -top-[5px]' : '-top-[4px]'), position === 'left' && ($$props.border ? 'after:border-t after:border-r -right-[5px]' : '-right-[4px]'), position === 'right' && ($$props.border ? 'after:border-b after:border-l -left-[5px]' : '-left-[4px]'));
+  $: arrowClass = twJoin(
+    'absolute pointer-events-none block w-[10px] h-[10px] rotate-45 bg-inherit border-inherit',
+    $$props.border && arrowSide === 'bottom' && 'border-b border-r',
+    $$props.border && arrowSide === 'top' && 'border-t border-l ',
+    $$props.border && arrowSide === 'right' && 'border-t border-r ',
+    $$props.border && arrowSide === 'left' && 'border-b border-l '
+  );
 </script>
 
 {#if !triggerEl}
@@ -150,22 +179,35 @@
 {/if}
 
 {#if open && triggerEl}
+<<<<<<< HEAD
   <Frame use={init} options={triggerEl} role="tooltip" tabindex={activeContent ? -1 : undefined} on:focusin={optional(activeContent, showHandler)} on:focusout={optional(activeContent, hideHandler)} on:mouseenter={optional(activeContent && !clickable, showHandler)} on:mouseleave={optional(activeContent && !clickable, hideHandler)} {...$$restProps} class={twMerge('outline-none', $$props.class)}>
+=======
+  <Frame
+    use={init}
+    options={triggerEl}
+    role="tooltip"
+    tabindex={activeContent ? -1 : undefined}
+    on:focusin={optional(activeContent, showHandler)}
+    on:focusout={optional(activeContent, hideHandler)}
+    on:mouseenter={optional(activeContent && !clickable, showHandler)}
+    on:mouseleave={optional(activeContent && !clickable, hideHandler)}
+    {...$$restProps}>
+>>>>>>> c962fd99 (Floating UI (#930))
     <slot />
-    {#if arrow}<div class={arrowClass} />{/if}
+    {#if arrow}<div class={arrowClass} bind:this={arrowEl} />{/if}
   </Frame>
 {/if}
 
 <!--
-  @component
-  ## Props
-  @prop activeContent: boolean = false;
-  @prop arrow: boolean = true;
-  @prop offset: number = 8;
-  @prop placement: Placement = 'top';
-  @prop trigger: 'hover' | 'click' = 'hover';
-  @prop triggeredBy: string | undefined = undefined;
-  @prop strategy: 'absolute' | 'fixed' = 'absolute';
-  @prop open: boolean = false;
-  @prop yOnly: boolean = false;
--->
+    @component
+    ## Props
+    @prop activeContent: boolean = false;
+    @prop arrow: boolean = true;
+    @prop offset: number = 8;
+    @prop placement: Placement = 'top';
+    @prop trigger: 'hover' | 'click' = 'hover';
+    @prop triggeredBy: string | undefined = undefined;
+    @prop strategy: 'absolute' | 'fixed' = 'absolute';
+    @prop open: boolean = false;
+    @prop yOnly: boolean = false;
+  -->
