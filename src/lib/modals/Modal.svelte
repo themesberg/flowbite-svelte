@@ -161,7 +161,7 @@
         {/if}
         <!-- Modal body -->
         <div
-          class="{twMerge('p-6 space-y-6 flex-1 overflow-y-auto overscroll-contain', $$restProps.bodyClass)}"
+          class={twMerge('p-6 space-y-6 flex-1 overflow-y-auto overscroll-contain', $$restProps.bodyClass)}
           on:keydown|stopPropagation={handleKeys}
           role="document"
           on:wheel|stopPropagation|passive>
