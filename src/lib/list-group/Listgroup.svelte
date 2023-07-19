@@ -1,9 +1,11 @@
 <script lang="ts">
-  import { setContext, type ComponentProps } from 'svelte';
+  import { setContext, type ComponentProps, createEventDispatcher } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import type { ListGroupItemType } from '../types';
   import ListgroupItem from './ListgroupItem.svelte';
   import Frame from '../utils/Frame.svelte';
+
+  const dispatch = createEventDispatcher();
 
   // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Frame> {
@@ -24,9 +26,9 @@
 <Frame tag={active ? 'div' : 'ul'} {...$$restProps} rounded border class={groupClass}>
   {#each items as item, index}
     {#if typeof item === 'object'}
-      <ListgroupItem {active} {...item} {index} on:click><slot {item} {index} /></ListgroupItem>
+      <ListgroupItem {active} {...item} {index} on:click={() => dispatch('click', item)}><slot {item} {index} /></ListgroupItem>
     {:else}
-      <ListgroupItem {active} {index} on:click><slot {item} {index} /></ListgroupItem>
+      <ListgroupItem {active} {index} on:click={() => dispatch('click', item)}><slot {item} {index} /></ListgroupItem>
     {/if}
   {:else}
     <slot item={items[0]} />
