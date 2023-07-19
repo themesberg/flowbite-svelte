@@ -10,7 +10,7 @@
     'block w-full text-sm border-0 px-0 bg-inherit dark:bg-inherit focus:outline-none focus:ring-0';
   export let unWrappedClass: string =
     'p-2.5 text-sm focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500';
-
+  export let innerWrappedClass: string = 'py-2 px-4 bg-white dark:bg-gray-800';
   let wrapped: boolean;
   $: wrapped = $$slots.header || $$slots.footer;
 
@@ -31,7 +31,7 @@
 
   let innerWrapperClass: string;
   $: innerWrapperClass = twMerge(
-    'py-2 px-4 bg-white dark:bg-gray-800',
+    innerWrappedClass,
     $$slots.footer ? 'rounded-b-lg' : '',
     $$slots.header ? 'rounded-t-lg' : ''
   );
