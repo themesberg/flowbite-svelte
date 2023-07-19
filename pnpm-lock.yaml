@@ -55,6 +55,9 @@ devDependencies:
   eslint-plugin-svelte:
     specifier: ^2.32.2
     version: 2.32.2(eslint@8.44.0)(svelte@4.0.5)
+  flowbite-svelte-icons:
+    specifier: ^0.2.5
+    version: 0.2.5(svelte@4.0.5)(tailwind-merge@1.13.2)(tailwindcss@3.3.3)
   mdsvex:
     specifier: ^0.11.0
     version: 0.11.0(svelte@4.0.5)
@@ -1953,6 +1956,18 @@ packages:
     resolution: {integrity: sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==}
     dev: true
 
+  /flowbite-svelte-icons@0.2.5(svelte@4.0.5)(tailwind-merge@1.13.2)(tailwindcss@3.3.3):
+    resolution: {integrity: sha512-/5+vGvK9A1TAHTU8PnDUwZ4fNcfbNEa3gkMPfdXkjHC36UjlFw/WlcWbl8El6hG/0Bj5M+F8Ag2CLPrHuno57w==}
+    peerDependencies:
+      svelte: ^3.54.0 || ^4.0.0
+      tailwind-merge: ^1.13.2
+      tailwindcss: ^3.3.2
+    dependencies:
+      svelte: 4.0.5
+      tailwind-merge: 1.13.2
+      tailwindcss: 3.3.3
+    dev: true
+
   /flowbite@1.7.0:
     resolution: {integrity: sha512-OTTmnhRgv85Rs+mcMaVU7zB6EvRQs7BaQziyMUsZLRjW9aUpeQyqKjLmxsVMMCdr8isYPCLd6UL7X1IaSVI0WQ==}
     dependencies:
@@ -3262,7 +3277,6 @@ packages:
 
   /tailwind-merge@1.13.2:
     resolution: {integrity: sha512-R2/nULkdg1VR/EL4RXg4dEohdoxNUJGLMnWIQnPKL+O9Twu7Cn3Rxi4dlXkDzZrEGtR+G+psSXFouWlpTyLhCQ==}
-    dev: false
 
   /tailwindcss@3.3.3:
     resolution: {integrity: sha512-A0KgSkef7eE4Mf+nKJ83i75TMyq8HqY3qmFIJSWy8bNt0v1lG7jUcpGpoTFxAwYcWOphcTBLPPJg+bDfhDf52w==}
