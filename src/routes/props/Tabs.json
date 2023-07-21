@@ -1,6 +1,6 @@
 {
   "props": [
-    ["style", "'full' | 'pill' | 'underline' | 'none'", "'none'"],
+    ["variant", "'full' | 'pill' | 'underline' | 'none'", "'none'"],
     ["defaultClass", "string", "'flex flex-wrap space-x-2'"],
     ["contentClass", "string", "'p-4 bg-gray-50 rounded-lg dark:bg-gray-800 mt-4'"],
     ["divider", "boolean", "true"],

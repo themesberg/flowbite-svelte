@@ -70,18 +70,18 @@ You can control the style of tabs component by settings the `activeClasses` and 
 
 <p class="my-2"/>
 
-However tabs component comes with several pre-defined styles that are accessible to you by setting the `style` property. This will set the `activeClasses` and `inactiveClasses` properties for you.
+However tabs component comes with several pre-defined styles that are accessible to you by setting the `variant` property. This will set the `activeClasses` and `inactiveClasses` properties for you.
 
 <p class="my-2"/>
 
-Use the `style="underline"` to achieve this alternative tabs component style with an underline instead of a background when hovering and being active on a certain page.
+Use the `variant="underline"` to achieve this alternative tabs component style with an underline instead of a background when hovering and being active on a certain page.
 
 ```svelte example
 <script>
   import { Tabs, TabItem } from 'flowbite-svelte';
 </script>
 
-<Tabs style="underline">
+<Tabs variant="underline">
   <TabItem open title="Profile">
     <p class="text-sm text-gray-500 dark:text-gray-400"><b>Profile:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </TabItem>
@@ -111,7 +111,7 @@ Use icon components for a simple syntax. See <a href="/icons">Icons</a> for more
   import { Tabs, TabItem } from 'flowbite-svelte';
 </script>
 
-<Tabs style="underline">
+<Tabs variant="underline">
   <TabItem open>
     <div slot="title" class="flex items-center gap-2">
       <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" /></svg>
@@ -145,14 +145,14 @@ Use icon components for a simple syntax. See <a href="/icons">Icons</a> for more
 
 ## Pills tabs
 
-If you want to use pills as a style for the tabs component use `style="pill"`.
+If you want to use pills as a style for the tabs component use `variant="pill"`.
 
 ```svelte example
 <script>
   import { Tabs, TabItem } from 'flowbite-svelte';
 </script>
 
-<Tabs style="pill">
+<Tabs variant="pill">
   <TabItem open>
     <span slot="title">Profile</span>
     <p class="text-sm text-gray-500 dark:text-gray-400"><b>Profile:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -174,14 +174,14 @@ If you want to use pills as a style for the tabs component use `style="pill"`.
 
 ## Full width tabs
 
-If you want to show the tabs on the full width relative to the parent element use `tabStype="full"` prop.
+If you want to show the tabs on the full width relative to the parent element use `variant="full"` prop.
 
 ```svelte example
 <script>
   import { Tabs, TabItem } from 'flowbite-svelte';
 </script>
 
-<Tabs style="full" defaultClass="flex rounded-lg divide-x divide-gray-200 shadow dark:divide-gray-700">
+<Tabs variant="full" defaultClass="flex rounded-lg divide-x divide-gray-200 shadow dark:divide-gray-700">
   <TabItem class="w-full" open>
     <span slot="title">Profile</span>
     <p class="text-sm text-gray-500 dark:text-gray-400"><b>Profile:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
