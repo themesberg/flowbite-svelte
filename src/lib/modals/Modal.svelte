@@ -131,7 +131,11 @@
           <CloseButton name="Close modal" class="absolute top-3 right-2.5" on:click={hide} color={$$restProps.color} />
         {/if}
         <!-- Modal body -->
-        <div class="p-6 space-y-6 flex-1 overflow-y-auto overscroll-contain" on:keydown|stopPropagation={handleKeys} role="document" on:wheel|stopPropagation|passive>
+        <div
+          class={twMerge('p-6 space-y-6 flex-1 overflow-y-auto overscroll-contain', $$props.bodyClass)}
+          on:keydown|stopPropagation={handleKeys}
+          role="document"
+          on:wheel|stopPropagation|passive>
           <slot />
         </div>
         <!-- Modal footer -->

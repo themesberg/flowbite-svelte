@@ -4,16 +4,19 @@
   import type { ComponentProps } from 'svelte';
 
   export let open: boolean = false;
+  export let containerClass: string = 'divide-y z-50';
   export let headerClass: string = 'py-1 overflow-hidden rounded-t-lg';
   export let footerClass: string = 'py-1 overflow-hidden rounded-b-lg';
 
   // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Popper> {
     open?: boolean;
+    containerClass?: string;
     headerClass?: string;
     footerClass?: string;
   }
 
+  let containerCls: string = twMerge(containerClass, $$props.classContainer);
   let headerCls: string = twMerge(headerClass, $$props.classHeader);
   let ulCls: string = twMerge('py-1', $$props.class);
   let footerCls: string = twMerge(footerClass, $$props.classFooter);
@@ -29,7 +32,7 @@
   }
 </script>
 
-<Popper activeContent {...$$restProps} class={'divide-y'} on:show bind:open>
+<Popper activeContent {...$$restProps} class={containerCls} on:show bind:open>
   {#if $$slots.header}
     <div class={headerCls}>
       <slot name="header" />
@@ -75,6 +78,7 @@
   - Events
   ## Props
   @prop open: boolean = false;
+  @prop containerClass: string = 'divide-y z-50';
   @prop headerClass: string = 'py-1 overflow-hidden rounded-t-lg';
   @prop ulClass: string = 'py-1 w-44';
   @prop footerClass: string = 'py-1 overflow-hidden rounded-b-lg';
