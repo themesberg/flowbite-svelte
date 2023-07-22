@@ -23,7 +23,7 @@
   $: {
     if ($$restProps.color) type = 'custom';
     else $$restProps.color = 'none';
-
+    
     if (['light', 'auto'].includes(type)) $$restProps.border = true;
     toolTipClass = twMerge('tooltip', defaultClass, types[type], $$props.class);
   }
