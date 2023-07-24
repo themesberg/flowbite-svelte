@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.40.2](https://github.com/themesberg/flowbite-svelte/compare/v0.40.1...v0.40.2) (2023-07-24)
+
+
+### Features
+
+* allow customization of body class in Modal component ([#945](https://github.com/themesberg/flowbite-svelte/issues/945)) ([72514ec](https://github.com/themesberg/flowbite-svelte/commit/72514ec631712d2c6bf9b94515f0a76b23759706))
+* allow customization of innerWrapperClass for Textarea ([#929](https://github.com/themesberg/flowbite-svelte/issues/929)) ([8869fbf](https://github.com/themesberg/flowbite-svelte/commit/8869fbfe36dd012ff653b5dba522119927897e2a))
+
+
+### Bug Fixes
+
+* [#937](https://github.com/themesberg/flowbite-svelte/issues/937) ([#943](https://github.com/themesberg/flowbite-svelte/issues/943)) ([442ab65](https://github.com/themesberg/flowbite-svelte/commit/442ab650ca14fd75094dcb85f2774f714be4394b))
+* Added events to BottomNavHeaderItem ([#941](https://github.com/themesberg/flowbite-svelte/issues/941)) ([ebdcbeb](https://github.com/themesberg/flowbite-svelte/commit/ebdcbebed7737b26ff0552e964149b8de05771d4))
+* Added z-50 to dropdown container so it always stays on top ([#942](https://github.com/themesberg/flowbite-svelte/issues/942)) ([e3de343](https://github.com/themesberg/flowbite-svelte/commit/e3de343fae29257e8588c8515eaaa5e6521a2488))
+* **dropzone:** fixes dragging file over the input ([#919](https://github.com/themesberg/flowbite-svelte/issues/919)) ([5f02261](https://github.com/themesberg/flowbite-svelte/commit/5f02261a36a22e48e4f0fa3c5a0fe47f65eb2ccc))
+* paragraph page ([98b2dab](https://github.com/themesberg/flowbite-svelte/commit/98b2dabe767cc3e8afa652bd0706dd590997bba6))
+
 ### [0.40.1](https://github.com/themesberg/flowbite-svelte/compare/v0.39.3...v0.40.1) (2023-07-17)
 
 
