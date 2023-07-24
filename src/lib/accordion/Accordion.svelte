@@ -43,7 +43,7 @@
 
   setContext<AccordionCtxType>('ctx', ctx);
 
-  let frameClass:string;
+  let frameClass: string;
   $: frameClass = twMerge(defaultClass, $$props.class);
 </script>
 
