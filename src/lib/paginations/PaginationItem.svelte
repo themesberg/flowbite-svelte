@@ -8,6 +8,9 @@
     'text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white';
   export let normalClass: string =
     'text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white';
+  export let disabled: boolean | undefined = undefined;
+  export let disabledClass: string =
+    'cursor-not-allowed opacity-50 bg-gray-300 dark:bg-gray-700 dark:text-gray-400 hover:bg-gray-300 dark:hover:bg-gray-700 dark:hover:text-gray-400';
   export let large: boolean = false;
 
   const group = getContext<boolean>('group');
@@ -21,6 +24,7 @@
     // table || 'border border-gray-300 dark:border-gray-700 dark:bg-gray-800',
     table ? '' : 'border',
     active ? activeClass : normalClass,
+    disabled ? disabledClass : '',
     $$props.class
   );
 </script>
@@ -40,6 +44,7 @@
   on:mouseenter
   on:mouseleave
   on:mouseover
+  disabled={$$props.disabled}
   role={href ? 'button' : undefined}>
   <slot />
 </svelte:element>
@@ -51,8 +56,11 @@
   ## Props
   @prop href: string | undefined = undefined;
   @prop active: boolean = false;
-  @prop activeClass: string = '';
+  @prop activeClass: string = 'text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white';
   @prop normalClass: string = 'text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white';
+  @prop large: boolean = false;
+  @prop disabled: boolean | undefined = undefined;
+  @prop disabledClass: string = 'cursor-not-allowed opacity-50 bg-gray-300 dark:bg-gray-700 dark:text-gray-400 hover:bg-gray-300 dark:hover:bg-gray-700 dark:hover:text-gray-400';
   ## Event
   - on:blur
   - on:change

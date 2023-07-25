@@ -199,6 +199,149 @@ Use the following code to show simple previous and next elements with icons.
 </div>
 ```
 
+## Disabled previous and next controllers
+
+Use the following code to show disabled pagination items.
+
+```svelte example class="flex flex-col justify-center items-center gap-3"
+<script>
+  import { Pagination, PaginationItem } from 'flowbite-svelte'
+  const previous = () => {
+    alert('Previous btn clicked. Make a call to your server to fetch data.');
+  };
+  const next = () => {
+    alert('Next btn clicked. Make a call to your server to fetch data.');
+  };
+</script>
+
+<div class="flex space-x-3">
+  <PaginationItem disabled on:click={previous}>Previous</PaginationItem>
+  <PaginationItem disabled on:click={next}>Next</PaginationItem>
+</div>
+<div class="flex space-x-3">
+  <PaginationItem large disabled on:click={previous}>Previous</PaginationItem>
+  <PaginationItem large disabled on:click={next}>Next</PaginationItem>
+</div>
+```
+
+if you set the first first page active true then the previous button will be disabled
+
+```svelte example class="flex flex-col justify-center items-center gap-3"
+<script>
+  import { page } from '$app/stores';
+  import { Pagination, PaginationItem } from 'flowbite-svelte'
+
+  let pages = [
+    { name: 1, href: '/components/pagination?page=1', active: true},
+    { name: 2, href: '/components/pagination?page=2'},
+    { name: 3, href: '/components/pagination?page=3'},
+    { name: 4, href: '/components/pagination?page=4'},
+    { name: 5, href: '/components/pagination?page=5'}
+  ];
+  
+  const previous = () => {
+    alert('Previous btn clicked. Make a call to your server to fetch data.');
+  };
+  const next = () => {
+    alert('Next btn clicked. Make a call to your server to fetch data.');
+  };
+</script>
+
+<Pagination {pages} on:previous={previous} on:next={next} />
+<Pagination {pages} large on:previous={previous} on:next={next} />
+```
+
+if you want to avoid this behavior you can set prevControlDisabled to false
+
+```svelte example class="flex flex-col justify-center items-center gap-3"
+<script>
+  import { page } from '$app/stores';
+  import { Pagination, PaginationItem } from 'flowbite-svelte'
+
+  let pages = [
+    { name: 1, href: '/components/pagination?page=1', active: true},
+    { name: 2, href: '/components/pagination?page=2'},
+    { name: 3, href: '/components/pagination?page=3'},
+    { name: 4, href: '/components/pagination?page=4'},
+    { name: 5, href: '/components/pagination?page=5'}
+  ];
+ 
+  const previous = () => {
+    alert('Previous btn clicked. Make a call to your server to fetch data.');
+  };
+  const next = () => {
+    alert('Next btn clicked. Make a call to your server to fetch data.');
+  };
+</script>
+
+<Pagination {pages} prevControlDisabled={false} nextControlDisabled={false} on:previous={previous} on:next={next} />
+<Pagination {pages} large prevControlDisabled={false} nextControlDisabled={false} on:previous={previous} on:next={next} />
+```
+
+## Custom previous and next controller outside of main pagination block
+
+Hide previous and next with hidePaginationControls. As example the code below show how implement previos and next outside of main pagination block.
+
+```svelte example class="flex flex-col justify-center items-center gap-3"
+<script>
+  import { page } from '$app/stores';
+  import { Pagination, PaginationItem } from 'flowbite-svelte'
+
+  $: activeUrl = $page.url.searchParams.get('page')
+  let pages = [
+    { name: 1, href: '/components/pagination?page=1', active: true},
+    { name: 2, href: '/components/pagination?page=2'},
+    { name: 3, href: '/components/pagination?page=3'},
+    { name: 4, href: '/components/pagination?page=4'},
+    { name: 5, href: '/components/pagination?page=5'}
+  ];
+
+  $:{
+    pages.forEach((page)=>{
+      let splitUrl = page.href.split('?');
+      let queryString = splitUrl.slice(1).join('?');
+      const hrefParams = new URLSearchParams(queryString);
+      let hrefValue = hrefParams.get('page');
+      if ( hrefValue === activeUrl){
+        page.active=true
+      }else{
+        page.active=false
+      }
+    })
+    pages=pages
+  }
+
+  const previous = () => {
+    alert('Previous btn clicked. Make a call to your server to fetch data.');
+  };
+  const next = () => {
+    alert('Next btn clicked. Make a call to your server to fetch data.');
+  };
+
+  const previous2 = () => {
+    alert('Previous btn clicked. Make a call to your server to fetch data.');
+  };
+  const next2 = () => {
+    alert('Next btn clicked. Make a call to your server to fetch data.');
+  };
+</script>
+
+<div class="flex flex-col space-y-3 mb-8">
+  <div class="flex justify-between">
+    <PaginationItem on:click={previous}>Previous</PaginationItem>
+    <PaginationItem on:click={next}>Next</PaginationItem>
+  </div>
+  <Pagination {pages} hidePaginationControls />
+</div>
+<div class="flex flex-col space-y-3">
+  <div class="flex justify-between">
+    <PaginationItem large on:click={previous2}>Previous</PaginationItem>
+    <PaginationItem large on:click={next2}>Next</PaginationItem>
+  </div>
+  <Pagination {pages} large hidePaginationControls />
+</div>
+```
+
 ## Table data pagination
 
 You can use the following markup to show the number of data shown inside a table element and also the previous and next action buttons.

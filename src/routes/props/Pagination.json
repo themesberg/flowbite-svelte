@@ -13,6 +13,9 @@
     ],
     ["ulClass", "string", "'inline-flex -space-x-px items-center'"],
     ["table", "boolean", "false"],
-    ["large", "boolean", "false"]
+    ["large", "boolean", "false"],
+    ["hidePaginationControls", "boolean", "false"],
+    ["prevControlDisabled", "boolean | undefined", "undefined"],
+    ["nextControlDisabled", "boolean | undefined", "undefined"]
   ]
 }

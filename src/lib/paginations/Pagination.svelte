@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge, twJoin } from 'tailwind-merge';
+  import { twMerge } from 'tailwind-merge';
   import { createEventDispatcher, setContext } from 'svelte';
   import type { LinkType } from '../types';
   import PaginationItem from './PaginationItem.svelte';
@@ -12,6 +12,9 @@
   export let ulClass: string = 'inline-flex -space-x-px items-center';
   export let table: boolean = false;
   export let large: boolean = false;
+  export let hidePaginationControls: boolean = false;
+  export let prevControlDisabled: boolean | undefined = undefined;
+  export let nextControlDisabled: boolean | undefined = undefined;
 
   const dispatch = createEventDispatcher();
 
@@ -24,23 +27,35 @@
   const next = () => {
     dispatch('next');
   };
+  const length = pages.length;
+  const firstPageActive = pages[0]?.active ?? false;
+  const lastPageActive = pages[length - 1]?.active ?? false;
 </script>
 
 <nav aria-label="Page navigation">
   <ul class={twMerge(ulClass, table && 'divide-x dark divide-gray-700 dark:divide-gray-700', $$props.class)}>
-    <li>
-      <PaginationItem {large} on:click={previous} {normalClass} class={table ? 'rounded-l' : 'rounded-l-lg'}>
-        <slot name="prev">Previous</slot>
-      </PaginationItem>
-    </li>
+    {#if !hidePaginationControls}<li>
+        <PaginationItem
+          {large}
+          on:click={previous}
+          {normalClass}
+          class={table ? 'rounded-l' : 'rounded-l-lg'}
+          disabled={prevControlDisabled ?? firstPageActive}>
+          <slot name="prev">Previous</slot>
+        </PaginationItem>
+      </li>
+    {/if}
     {#each pages as { name, href, active }}
-      <li>
+      <li class="group">
         <PaginationItem
           {large}
           {active}
           {activeClass}
           {normalClass}
           {href}
+          class={table
+            ? 'group-first:rounded-l group-last:rounded-r'
+            : 'group-first:rounded-l-lg group-last:rounded-r-lg'}
           on:blur
           on:change
           on:click
@@ -53,11 +68,18 @@
           on:mouseover>{name}</PaginationItem>
       </li>
     {/each}
-    <li>
-      <PaginationItem {large} on:click={next} {normalClass} class={table ? 'rounded-r' : 'rounded-r-lg'}>
-        <slot name="next">Next</slot>
-      </PaginationItem>
-    </li>
+    {#if !hidePaginationControls}
+      <li>
+        <PaginationItem
+          {large}
+          on:click={next}
+          {normalClass}
+          class={table ? 'rounded-r' : 'rounded-r-lg'}
+          disabled={nextControlDisabled ?? lastPageActive}>
+          <slot name="next">Next</slot>
+        </PaginationItem>
+      </li>
+    {/if}
   </ul>
 </nav>
 
@@ -79,6 +101,10 @@
   @prop normalClass: string = 'text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white';
   @prop ulClass: string = 'inline-flex -space-x-px items-center';
   @prop table: boolean = false;
+  @prop large: boolean = false;
+  @prop hidePaginationControls: boolean = true;
+  @prop prevControlDisabled: boolean | undefined = undefined;
+  @prop nextControlDisabled: boolean | undefined = undefined;
   ## Event
   - on:blur
   - on:change
