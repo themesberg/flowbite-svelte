@@ -105,7 +105,7 @@
   <div class="flex ml-auto gap-2">
     <CloseButton on:click={clearAll} color="none" class="p-0 focus:ring-gray-400" />
     <div class="w-[1px] bg-gray-300 dark:bg-gray-600" />
-    <button tabindex="-1">
+    <button type="button" tabindex="-1">
       <ChevronDown class="h-4 w-4 mb-1 mr-1 cursor-pointer" />
     </button>
   </div>
