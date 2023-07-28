@@ -38,9 +38,9 @@ To get started with using tooltips all you need to do is set `triggeredBy` attri
 <Tooltip>Tooltip content</Tooltip>
 ```
 
-## Tooltip styles
+## Tooltip types
 
-You can use choose between dark and light version styles for the tooltip component by changing the utility classes from Tailwind CSS and by applying the `style={light|dark}` data attribute.
+You can use choose between dark and light version styles for the tooltip component by changing the utility classes from Tailwind CSS and by applying the `type={light|dark}` data attribute.
 
 ```svelte example class="flex items-end gap-2 h-32"
 <script>
@@ -99,12 +99,12 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 <Tooltip arrow={false} triggeredBy='#disable-arrow'>Tooltip content</Tooltip>
 ```
 
-## Custom style
+## Custom type
 
 Various color palettes can be set for a tooltip by using the `color` property from the underlying `Frame` component.
-(Setting `color` prop sets the `style` to `custom` implicitly.)
+(Setting `color` prop sets the `type` to `custom` implicitly.)
 
-When you want to add a fully custom styles, use `style="custom"`, `defaultClass`, and `class` to modify the style.
+When you want to add a fully custom styles, use `type="custom"`, `defaultClass`, and `class` to modify the tooltip styling.
 
 ```svelte example class="flex items-center h-64 gap-2"
 <script>
@@ -117,10 +117,10 @@ When you want to add a fully custom styles, use `style="custom"`, `defaultClass`
 <Button>Yellow tooltip</Button>
 <Tooltip  color="yellow">Tooltip content</Tooltip>
 
-<Button>Custom style</Button>
+<Button>Custom type</Button>
 <Tooltip
   placement="right"
-  style="custom"
+  type="custom"
   defaultClass=""
   class="p-4 text-lg font-medium bg-purple-500 text-gray-100"
   arrow={false}
