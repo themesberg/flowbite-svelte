@@ -26,6 +26,7 @@
   export let id: string = generateId();
   export let name: string = 'Open actions menu';
   export let gradient: boolean = false;
+  export let open: boolean = false;
 
   setContext<SpeedCtxType>('speed-dial', { pill, tooltip, textOutside });
 
@@ -38,7 +39,6 @@
     ['top', 'bottom'].includes(placement.split('-')[0]) && 'flex-col'
   );
 
-  let open: boolean = false;
 </script>
 
 <div class={divClass}>
