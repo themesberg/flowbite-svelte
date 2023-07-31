@@ -21,6 +21,7 @@ Get started with the speed dial component to show a list of buttons or menu item
 
 To initialize a speed dial component you need to wrap the trigger element and the list of items inside an element and use the data-dial-init data attribute on it.
 
+
 <Alert>
 
 **Note!** Default class for speed dial is `fixed right-6 bottom-6`. However for the sake of the examples below `fixed` must be changed to `absolute`, therefore you can notice `defaultClass="absolute right-6 left-6"` at every example.
@@ -475,7 +476,24 @@ The default trigger type is hover for each speed dial component.
         <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7 9a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2H9a2 2 0 01-2-2V9z"></path><path d="M5 3a2 2 0 00-2 2v6a2 2 0 002 2V5h8a2 2 0 00-2-2H5z"></path></svg>
     </SpeedDialButton>
 </SpeedDial>
+```
 
+## Control open state
+
+Use the `open` property to control the state of the popup menu.
+
+```svelte example class="relative h-96"
+<script>
+  import { SpeedDial, SpeedDialButton } from 'flowbite-svelte';
+  let open = false;
+
+  const close = () => {open =  false};
+</script>
+
+<SpeedDial bind:open defaultClass="absolute right-6 bottom-6">
+    <SpeedDialButton name="Share" on:click={close}>Share</SpeedDialButton>
+    <SpeedDialButton name="Print" on:click={close}>Print</SpeedDialButton>
+</SpeedDial>
 ```
 
 The default trigger type is hover for each speed dial component.
