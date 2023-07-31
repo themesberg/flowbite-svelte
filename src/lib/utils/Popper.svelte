@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { ComputePositionReturn, Placement, Side } from '@floating-ui/dom';
+  import type { ComputePositionReturn, Middleware, Placement, Side } from '@floating-ui/dom';
   import * as dom from '@floating-ui/dom';
   import { onMount, type ComponentProps } from 'svelte';
   import { twJoin } from 'tailwind-merge';
@@ -38,7 +38,7 @@
 
   let triggerEl: Element;
   let floatingEl: HTMLElement;
-  let arrowEl: HTMLElement;
+  let arrowEl: HTMLElement | null;
   let contentEl: HTMLElement;
   let triggerEls: HTMLElement[] = [];
 
@@ -62,7 +62,7 @@
   const hideHandler = (ev: Event) => {
     if (activeContent) {
       setTimeout(() => {
-        const elements = [triggerEl, floatingEl, arrowEl].filter((x) => x);
+        const elements = [triggerEl, floatingEl].filter((x) => x);
         if (ev.type === 'mouseleave' && elements.some(hasHover)) return;
         if (ev.type === 'focusout' && elements.some(hasFocus)) return;
         open = false;
@@ -78,24 +78,22 @@
     top: 'bottom'
   };
 
+  let middlewares: Middleware[];
+  $: middlewares = [dom.flip(), dom.shift(), dom.offset(+offset)];
+
   function updatePosition() {
+    const middleware = [...middlewares];
+
+    if (arrowEl) middleware.push(dom.arrow({ element: arrowEl, padding: 10 }));
+
     dom
-      .computePosition(triggerEl, floatingEl, {
-        placement,
-        strategy,
-        middleware: [
-          dom.flip(),
-          dom.shift(),
-          dom.offset(+offset),
-          arrowEl && dom.arrow({ element: arrowEl, padding: 10 })
-        ]
-      })
+      .computePosition(triggerEl, floatingEl, { placement, strategy, middleware })
       .then(({ x, y, middlewareData, placement, strategy }: ComputePositionReturn) => {
         floatingEl.style.position = strategy;
         floatingEl.style.left = yOnly ? '0' : px(x);
         floatingEl.style.top = px(y);
 
-        if (middlewareData.arrow && arrowEl) {
+        if (middlewareData.arrow && arrowEl instanceof HTMLDivElement) {
           arrowEl.style.left = px(middlewareData.arrow.x);
           arrowEl.style.top = px(middlewareData.arrow.y);
 
@@ -108,6 +106,7 @@
   function init(node: HTMLElement, _triggerEl: HTMLElement) {
     floatingEl = node;
     let cleanup = dom.autoUpdate(node, _triggerEl, updatePosition);
+
     return {
       update(_triggerEl: HTMLElement) {
         cleanup();
@@ -164,6 +163,15 @@
     $$props.border && arrowSide === 'right' && 'border-t border-r ',
     $$props.border && arrowSide === 'left' && 'border-b border-l '
   );
+
+  function initArrow(node: HTMLElement) {
+    arrowEl = node;
+    return {
+      destroy() {
+        arrowEl = null;
+      }
+    };
+  }
 </script>
 
 {#if !triggerEl}
@@ -182,7 +190,7 @@
     on:mouseleave={optional(activeContent && !clickable, hideHandler)}
     {...$$restProps}>
     <slot />
-    {#if arrow}<div class={arrowClass} bind:this={arrowEl} />{/if}
+    {#if arrow}<div use:initArrow class={arrowClass} />{/if}
   </Frame>
 {/if}
 

@@ -33,7 +33,10 @@
   $: divClass = twMerge(defaultClass, 'group', $$props.class);
 
   let poperClass: string;
-  $: poperClass = twMerge(popperDefaultClass, ['top', 'bottom'].includes(placement) && 'flex-col');
+  $: poperClass = twMerge(
+    popperDefaultClass,
+    ['top', 'bottom'].includes(placement.split('-')[0]) && 'flex-col'
+  );
 
   let open: boolean = false;
 </script>
