@@ -60,7 +60,7 @@
 {:else}
   <button
     type="button"
-    class="inline-flex relative items-center text-left {itemClass}"
+    class="flex items-center text-left {itemClass}"
     {disabled}
     on:blur
     on:change
