@@ -270,7 +270,7 @@ The carousel component can be used to cycle through a set of elements using cust
     {images}
     showCaptions={false}
     classSlide="flex items-center justify-center h-full w-full !rounded-none !bg-transparent"
-    classDiv="w-[100%] !h-[300px] sm:!h-[400px] !rounded-none !bg-transparent"
+    classDiv="w-full !h-[300px] sm:!h-[400px] !rounded-none !bg-transparent"
     imgFit="contain"
     classImg="!bg-none !rounded-md animate-[fadeIn_.5s_ease-in-out_1] h-full"
     classThumb="p-0 rounded-md shadow-xl hover:outline hover:outline-primary-500"

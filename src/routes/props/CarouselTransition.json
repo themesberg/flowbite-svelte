@@ -1,5 +1,6 @@
 {
   "props": [
+    ["id", "string", "'default-transition-carousel'"],
     ["showIndicators", "boolean", "true"],
     ["showCaptions", "boolean", "true"],
     ["showThumbs", "boolean", "true"],

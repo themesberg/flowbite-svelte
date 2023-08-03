@@ -7,6 +7,7 @@
   import Caption from './Caption.svelte';
   import Indicator from './Indicator.svelte';
 
+  export let id: string = 'default-transition-carousel';
   export let showIndicators: boolean = true;
   export let showCaptions: boolean = true;
   export let showThumbs: boolean = true;
@@ -91,7 +92,7 @@
   }
 </script>
 
-<div id="default-carousel" class="relative">
+<div {id} class="relative">
   <div class={divCls}>
     {#each images as { id, imgurl, name, attribution }}
       {#if imageShowingIndex === id}
