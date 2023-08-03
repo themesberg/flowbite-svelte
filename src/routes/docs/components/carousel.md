@@ -266,6 +266,11 @@ The component has the following props, type, and default values. See [types page
 - Use the `classIndicatorDiv` prop to overwrite `indicatorDivCls`.
 - Use the `classCaption` prop to overwrite `captionClass`.
 - Use the `classIndicator` prop to overwrite `indicatorClass`.
+- Use the `classSlide` prop to overwrite `slideClass`.
+- Use the `classThumb` prop to overwrite `thumbClass`.
+- Use the `classThumbDiv` prop to overwrite `thumbClassDiv`.
+- Use the `classBtnThumb` prop to overwrite `thumbBtnClass`.
+- Use the `classBtnThumb` prop to overwrite `thumbBtnClass`.
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />

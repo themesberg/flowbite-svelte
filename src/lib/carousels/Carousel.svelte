@@ -13,7 +13,6 @@
   export let slideControls: boolean = true;
   export let loop: boolean = false;
   export let duration: number = 2000;
-  export let thumbClass: string = 'opacity-40';
 
   // Carousel
   export let divClass: string = 'overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96';
@@ -27,7 +26,20 @@
   export let indicatorClass: string = 'w-3 h-3 rounded-full bg-gray-100 hover:bg-gray-300 opacity-60';
   let indicatorCls: string = twMerge(indicatorClass, $$props.classIndicator);
   // Slide
-  export let slideClass: string = '';
+  export let slideClass: string = 'flex items-center justify-center h-full w-full';
+  let slideCls: string = twMerge(slideClass, $$props.classSlide);
+  // Img
+  export let imgClass: string = 'object-contain h-full';
+  let imgCls: string = twMerge(imgClass, $$props.classImg);
+  // Thumbnail
+  export let thumbClass: string = 'opacity-40';
+  let thumbCls: string = twMerge(thumbClass, $$props.classThumb);
+  // Thumbnail Container
+  export let thumbDivClass = 'flex flex-row justify-center bg-gray-100 w-full';
+  let thumbDivCls = twMerge(thumbDivClass, $$props.classThumbDiv);
+  // Thumbnail Img Btn Div
+  export let thumbBtnClass = '';
+  let thumbBtnCls = twMerge(thumbBtnClass, $$props.classBtnThumb);
 
   let imageShowingIndex: number = 0;
   $: image = images[imageShowingIndex];
@@ -59,7 +71,12 @@
 
 <div {id} class="relative">
   <div class={divCls}>
-    <Slide image={image.imgurl} altTag={image.name} attr={image.attribution} {slideClass} />
+    <Slide
+      image={image.imgurl}
+      altTag={image.name}
+      attr={image.attribution}
+      slideClass={slideCls}
+      imgClass={imgCls} />
   </div>
   {#if showIndicators}
     <!-- Slider indicators -->
@@ -131,10 +148,11 @@
 {/if}
 
 {#if showThumbs}
-  <div class="flex flex-row justify-center bg-gray-100">
+  <div class={thumbDivCls}>
     {#each images as { id, imgurl, name, attribution }}
       <Thumbnail
-        {thumbClass}
+        thumbClass={thumbCls}
+        thumbBtnClass={thumbBtnCls}
         thumbImg={imgurl}
         altTag={name}
         titleLink={attribution}
