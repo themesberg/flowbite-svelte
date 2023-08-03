@@ -34,7 +34,7 @@
 
   // Img
   export let imgFit: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down' = 'cover';
-  export let imgClass = `object-${imgFit} h-full w-full`;
+  export let imgClass = `object-${imgFit} ${imgFit === 'cover' && 'w-full'} h-full`;
   let imgCls = twMerge(imgClass, $$props.classImg);
 
   // Thumbnail

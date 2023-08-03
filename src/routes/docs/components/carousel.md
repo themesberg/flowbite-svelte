@@ -251,8 +251,32 @@ The carousel component can be used to cycle through a set of elements using cust
   import { images } from './imageData/+server.js';
   import { bounceInOut } from 'svelte/easing';
 </script>
+
 <div class="max-w-4xl">
   <CarouselTransition {images} transitionType="slide" transitionParams="{{duration: 1500, easing: bounceInOut}}" showCaptions={false} showThumbs={false}/>
+</div>
+```
+
+## Custom Styling
+
+```svelte example
+<script>
+  import { Carousel } from 'flowbite-svelte'
+  import { images } from './imageData/+server.js';
+</script>
+
+<div class="max-w-4xl dark bg-gray-100 p-2">
+  <Carousel
+    {images}
+    showCaptions={false}
+    classSlide="flex items-center justify-center h-full w-full !rounded-none !bg-transparent"
+    classDiv="w-[100%] !h-[300px] sm:!h-[400px] !rounded-none !bg-transparent"
+    imgFit="contain"
+    classImg="!bg-none !rounded-md animate-[fadeIn_.5s_ease-in-out_1] h-full"
+    classThumb="p-0 rounded-md shadow-xl hover:outline hover:outline-primary-500"
+    classThumbDiv="bg-transparent"
+    thumbBtnClass="m-2"
+  />
 </div>
 ```
 
