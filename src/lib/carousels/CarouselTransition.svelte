@@ -23,27 +23,36 @@
   let divCls: string = twMerge(divClass, $$props.classDiv);
   export let indicatorDivClass: string = 'flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2';
   let indicatorDivCls: string = twMerge(indicatorDivClass, $$props.classIndicatorDiv);
+
   // Caption
   export let captionClass: string = 'h-10 bg-gray-300 dark:bg-gray-700 dark:text-white p-2 my-2 text-center';
   let captionCls: string = twMerge(captionClass, $$props.classCaption);
+
   // Indicator
   export let indicatorClass: string = 'w-3 h-3 rounded-full bg-gray-100 hover:bg-gray-300 opacity-60';
   let indicatorCls: string = twMerge(indicatorClass, $$props.classIndicator);
+
   // Slide
   export let slideClass: string = '';
   let slideCls: string = twMerge(slideClass, $$props.classSlide);
+
   // Transition Div
   export let transitionDivClass: string = 'h-full w-full';
   let transitionDivCls: string = twMerge(transitionDivClass, $$props.classTransitionDiv);
+
   // Img
-  export let imgClass: string = 'object-contain';
+  export let imgFit: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down' = 'cover';
+  export let imgClass: string = `object-${imgFit} ${imgFit === 'cover' && 'w-full'} h-full`;
   let imgCls: string = twMerge(imgClass, $$props.classImg);
+
   // Thumbnail
   export let thumbClass: string = 'opacity-40';
   let thumbCls: string = twMerge(thumbClass, $$props.classThumb);
+
   // Thumbnail Container
   export let thumbDivClass: string = 'flex flex-row justify-center bg-gray-100 w-full';
   let thumbDivCls: string = twMerge(thumbDivClass, $$props.classThumbDiv);
+
   // Thumbnail Img Btn Div
   export let thumbBtnClass: string = '';
   let thumbBtnCls: string = twMerge(thumbBtnClass, $$props.classBtnThumb);
