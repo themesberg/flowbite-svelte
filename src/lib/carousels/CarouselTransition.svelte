@@ -42,11 +42,11 @@
   export let thumbClass: string = 'opacity-40';
   let thumbCls: string = twMerge(thumbClass, $$props.classThumb);
   // Thumbnail Container
-  export let thumbDivClass = 'flex flex-row justify-center bg-gray-100 w-full';
-  let thumbDivCls = twMerge(thumbDivClass, $$props.classThumbDiv);
+  export let thumbDivClass: string = 'flex flex-row justify-center bg-gray-100 w-full';
+  let thumbDivCls: string = twMerge(thumbDivClass, $$props.classThumbDiv);
   // Thumbnail Img Btn Div
-  export let thumbBtnClass = '';
-  let thumbBtnCls = twMerge(thumbBtnClass, $$props.classBtnThumb);
+  export let thumbBtnClass: string = '';
+  let thumbBtnCls: string = twMerge(thumbBtnClass, $$props.classBtnThumb);
 
   // have a custom transition function that returns the desired transition
   const multiple = (node: HTMLElement, params: any) => {
