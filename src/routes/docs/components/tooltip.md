@@ -109,7 +109,7 @@ If you need the tooltip to be attached to the other element then the tiggering o
   let placement = "";
 </script>
 
-<div id="ext-ref" class="p-2 rounded-lg border">External reference</div>
+<div id="ext-ref" class="p-2 rounded-lg border border-gray-200 dark:border-gray-600">External reference</div>
 <div class="space-x-4">
 <Button id="ref-left" on:mouseenter={()=> placement="left"}>Left</Button>
 <Button id="ref-top" on:mouseenter={()=> placement="top"}>Top</Button>
