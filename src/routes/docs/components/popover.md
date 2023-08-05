@@ -345,6 +345,27 @@ You can also disable the popover arrow by setting `arrow` attribute to `false`.
 </Popover>
 ```
 
+## External reference
+
+If you need the popover to be attached to the other element then the tiggering one you can pass a CSS query to `reference` prop.
+
+```svelte example class="flex gap-4 flex-col justify-center items-center h-72"
+<script>
+  import { Popover, Button } from 'flowbite-svelte'
+  let placement = "";
+</script>
+
+<div id="ext-ref" class="p-2 rounded-lg border">External reference</div>
+<div class="space-x-4">
+<Button id="ref-1" on:mouseenter={()=> placement="left"}>Left</Button>
+<Button id="ref-2" on:mouseenter={()=> placement="top"}>Top</Button>
+<Button id="ref-3" on:mouseenter={()=> placement="right"}>Right</Button>
+</div>
+<Popover reference='#ext-ref' triggeredBy="[id^='ref-']" class="w-64 text-sm font-light " {placement} title="Placement: {placement}">
+    And here's some amazing content. It's very engaging. Right?
+</Popover>
+```
+
 ## Props
 
 ### Popover
