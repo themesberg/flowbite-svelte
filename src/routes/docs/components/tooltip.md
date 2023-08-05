@@ -99,6 +99,27 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 <Tooltip arrow={false} triggeredBy='#disable-arrow'>Tooltip content</Tooltip>
 ```
 
+## External reference
+
+If you need the tooltip to be attached to the other element then the tiggering one you can pass a CSS query to `reference` prop.
+
+```svelte example class="flex gap-4 flex-col justify-center items-center h-72"
+<script>
+  import { Tooltip, Button } from 'flowbite-svelte'
+  let placement = "";
+</script>
+
+<div id="ext-ref" class="p-2 rounded-lg border">External reference</div>
+<div class="space-x-4">
+<Button id="ref-left" on:mouseenter={()=> placement="left"}>Left</Button>
+<Button id="ref-top" on:mouseenter={()=> placement="top"}>Top</Button>
+<Button id="ref-right" on:mouseenter={()=> placement="right"}>Right</Button>
+</div>
+<Tooltip reference='#ext-ref' triggeredBy="[id^='ref-']" {placement} class="w-64 text-sm font-light">
+    And here's some amazing content. It's very engaging. Right?
+</Tooltip>
+```
+
 ## Custom type
 
 Various color palettes can be set for a tooltip by using the `color` property from the underlying `Frame` component.
