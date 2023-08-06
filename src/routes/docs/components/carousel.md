@@ -265,7 +265,7 @@ The carousel component can be used to cycle through a set of elements using cust
   import { images } from './imageData/+server.js';
 </script>
 
-<div class="max-w-4xl dark bg-gray-100 p-2">
+<div class="max-w-4xl dark p-2 bg-gray-100 dark:bg-gray-800">
   <Carousel
     {images}
     showCaptions={false}
