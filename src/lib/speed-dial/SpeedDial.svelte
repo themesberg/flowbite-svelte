@@ -38,7 +38,6 @@
     popperDefaultClass,
     ['top', 'bottom'].includes(placement.split('-')[0]) && 'flex-col'
   );
-
 </script>
 
 <div class={divClass}>
