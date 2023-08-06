@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.41.0](https://github.com/themesberg/flowbite-svelte/compare/v0.40.2...v0.41.0) (2023-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* change the Tabs component props
+
+* Revert "feat: change tabs variant to styles"
+
+This reverts commit c949b82f02f8adad2a2d172e602ce5774ae3bca6.
+
+### Features
+
+* [#966](https://github.com/themesberg/flowbite-svelte/issues/966) ([#968](https://github.com/themesberg/flowbite-svelte/issues/968)) ([2b4503a](https://github.com/themesberg/flowbite-svelte/commit/2b4503a148f74b3982e3c4f65c2b19d11c13fbfc))
+* export open in speeddial ([#960](https://github.com/themesberg/flowbite-svelte/issues/960)) ([7dff563](https://github.com/themesberg/flowbite-svelte/commit/7dff5630dfd482a828c45611f129c432b94908de))
+
+
+### Bug Fixes
+
+* [#952](https://github.com/themesberg/flowbite-svelte/issues/952) multiselect ([#954](https://github.com/themesberg/flowbite-svelte/issues/954)) ([cd37db1](https://github.com/themesberg/flowbite-svelte/commit/cd37db16d97884171f059273be9c62f260777c9b))
+* [#958](https://github.com/themesberg/flowbite-svelte/issues/958) ([#959](https://github.com/themesberg/flowbite-svelte/issues/959)) ([e238349](https://github.com/themesberg/flowbite-svelte/commit/e238349576f535122e87f09ded63a76b831ffc98))
+* border color on popup examples ([#969](https://github.com/themesberg/flowbite-svelte/issues/969)) ([049d1a3](https://github.com/themesberg/flowbite-svelte/commit/049d1a3604d1b9c44719f9b998c611b1ea633073))
+* docs typo - tooltip type ([#956](https://github.com/themesberg/flowbite-svelte/issues/956)) ([cde7b8e](https://github.com/themesberg/flowbite-svelte/commit/cde7b8e9a5c8cbccfa6d4f6ed0c59e9aa8ea6f6f))
+* events for gradient button ([#967](https://github.com/themesberg/flowbite-svelte/issues/967)) ([fda337b](https://github.com/themesberg/flowbite-svelte/commit/fda337ba28ad6081bb15ab93108b699d8ab001c0))
+
+
+* accordion color option ([#948](https://github.com/themesberg/flowbite-svelte/issues/948)) ([9c2305b](https://github.com/themesberg/flowbite-svelte/commit/9c2305bb6168e7b658489a8b0055deaad241fd0f))
+
 ### [0.40.2](https://github.com/themesberg/flowbite-svelte/compare/v0.40.1...v0.40.2) (2023-07-24)
 
 
