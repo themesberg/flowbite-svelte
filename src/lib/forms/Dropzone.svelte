@@ -27,7 +27,9 @@
   on:dragenter
   on:dragleave
   on:dragover
-  on:drop>
+  on:drop
+  type="button"
+  >
   <label class="flex flex-col items-center" tabIndex="0">
     <slot />
     <input
