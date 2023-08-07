@@ -77,13 +77,13 @@ Use the `icon` slot to change icons.
   </BreadcrumbItem>
   <BreadcrumbItem href="/">
     <svelte:fragment slot="icon">
-      <Icon name="chevron-double-right-outline" class="w-4 h-4 dark:text-white" />
+      <Icon name="chevron-double-right-outline" class="w-3 h-3 mx-2 dark:text-white" />
     </svelte:fragment>
     Projects
   </BreadcrumbItem>
   <BreadcrumbItem>
     <svelte:fragment slot="icon">
-      <Icon name="chevron-double-right-outline" class="w-4 h-4 dark:text-white" />
+      <Icon name="chevron-double-right-outline" class="w-3 h-3 mx-2 dark:text-white" />
     </svelte:fragment>
     Flowbite Svelte
   </BreadcrumbItem>

@@ -60,7 +60,7 @@ For accessibility you should also set the `id` prop to the element. This will ad
   </p>
   <div class="grid grid-cols-2 gap-4">
     <Button color="light" href="/">Learn more</Button>
-    <Button href="/">Get access <Icon name="arrow-right-outline" class="w-3 h-3 ml-2 text-white" /></Button>
+    <Button href="/" class="px-4">Get access <Icon name="arrow-right-outline" class="w-3.5 h-3.5 ml-2" /></Button>
   </div>
 </Drawer>
 ```
@@ -140,7 +140,7 @@ Use this example to show a navigational sidebar inside the drawer component.
         </SidebarItem>
         <SidebarItem label="Sign Up">
           <svelte:fragment slot="icon">
-            <Icon name="file-editt-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+            <Icon name="file-edit-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
           </svelte:fragment>
         </SidebarItem>
       </SidebarGroup>
@@ -299,7 +299,7 @@ Use the placement prop to position the drawer component either on the top, right
   </p>
   <div class="grid grid-cols-2 gap-4">
     <Button color="light" href="/">Learn more</Button>
-    <Button href="/">Get access <Icon name="arrow-right-outline" class="w-3 h-3 ml-2 text-white" /></Button>
+    <Button href="/" class="px-4">Get access <Icon name="arrow-right-outline" class="w-3.5 h-3.5 ml-2" /></Button>
   </div>
 </Drawer>
 ```
@@ -341,7 +341,7 @@ Set the `transitionParams` variable to new variables.
   </p>
   <div class="grid grid-cols-2 gap-4">
     <Button color="light" href="/">Learn more</Button>
-    <Button href="/">Get access <Icon name="arrow-right-outline" class="w-3 h-3 ml-2 text-white" /></Button>
+    <Button href="/" class="px-4">Get access <Icon name="arrow-right-outline" class="w-3.5 h-3.5 ml-2" /></Button>
   </div>
 </Drawer>
 ```
@@ -379,7 +379,7 @@ Use this example to show the drawer on the top side of the page.
     Supercharge your hiring by taking advantage of our <A href="/" class="text-primary-600 underline dark:text-primary-500 hover:no-underline">limited-time sale</A> for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
   </p>
   <Button color="light" href="/">Learn more</Button>
-  <Button href="/" class="ml-2">Get access <Icon name="arrow-right-outline" class="w-3 h-3 ml-2 text-white" /></Button>
+  <Button href="/" class="px-4">Get access <Icon name="arrow-right-outline" class="w-3.5 h-3.5 ml-2" /></Button>
 </Drawer>
 ```
 
@@ -417,7 +417,7 @@ Use this example to show the drawer on the bottom side of the page.
     for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
   </p>
   <Button color="light" href="/">Learn more</Button>
-  <Button href="/" class="ml-2">Get access <Icon name="arrow-right-outline" class="w-3 h-3 ml-2 text-white" /></Button>
+  <Button href="/" class="px-4">Get access <Icon name="arrow-right-outline" class="w-3.5 h-3.5 ml-2" /></Button>
 </Drawer>
 ```
 
@@ -462,7 +462,7 @@ Use this example to enable the backdrop element by default.
   </p>
   <div class="grid grid-cols-2 gap-4">
     <Button color="light" href="/">Learn more</Button>
-    <Button href="/">Get access <Icon name="arrow-right-outline" class="w-3 h-3 ml-2 text-white" /></Button>
+    <Button href="/" class="px-4">Get access <Icon name="arrow-right-outline" class="w-3.5 h-3.5 ml-2" /></Button>
   </div>
 </Drawer>
 ```
@@ -502,7 +502,7 @@ Use the `backdrop={false}` prop to disable the backdrop element when the drawer 
   </p>
   <div class="grid grid-cols-2 gap-4">
     <Button color="light" href="/">Learn more</Button>
-    <Button href="/">Get access <Icon name="arrow-right-outline" class="w-3 h-3 ml-2 text-white" /></Button>
+    <Button href="/" class="px-4">Get access <Icon name="arrow-right-outline" class="w-3.5 h-3.5 ml-2" /></Button>
   </div>
 </Drawer>
 ```
@@ -542,7 +542,7 @@ Use `leftOffset|rightOffset|topOffset|bottomOffset` prop to change the position 
   </p>
   <div class="grid grid-cols-2 gap-4">
     <Button color="light" href="/">Learn more</Button>
-    <Button href="/">Get access <Icon name="arrow-right-outline" class="w-3 h-3 ml-2 text-white" /></Button>
+    <Button href="/" class="px-4">Get access <Icon name="arrow-right-outline" class="w-3.5 h-3.5 ml-2" /></Button>
   </div>
 </Drawer>
 ```
@@ -617,7 +617,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
   </p>
   <div class="grid grid-cols-2 gap-4">
     <Button color="light" href="/">Learn more</Button>
-    <Button href="/">Get access <Icon name="arrow-right-outline" class="w-3 h-3 ml-2 text-white" /></Button>
+    <Button href="/" class="px-4">Get access <Icon name="arrow-right-outline" class="w-3.5 h-3.5 ml-2" /></Button>
   </div>
 </Drawer>
 ```

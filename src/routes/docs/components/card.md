@@ -103,14 +103,14 @@ You can use the following example of a card element with an image for blog posts
 </script>
 
 <div>
-  <Card img="/images/image-1.webp" reverse={vCard}>
+  <Card img="/images/image-1.webp" reverse={vCard} class="mb-4">
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
     <Button>
       Read more <Icon name="arrow-right-outline" class="w-3.5 h-3.5 ml-2 text-white" />
     </Button>
   </Card>
-  <Toggle bind:checked={vCard} class="mt-4 italic dark:text-gray-500">Reverse</Toggle>
+  <Toggle bind:checked={vCard} class="italic dark:text-gray-500">Reverse</Toggle>
 </div>
 ```
 
@@ -125,11 +125,11 @@ If you want to spice up your cards you can use the following card which has its 
 </script>
 
 <div>
-  <Card img="/images/image-1.webp" href="/" horizontal reverse={hCard}>
+  <Card img="/images/image-1.webp" href="/" horizontal reverse={hCard}  class="mb-4">
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
   </Card>
-  <Toggle bind:checked={hCard} class="mt-4 italic dark:text-gray-500">Reverse</Toggle>
+  <Toggle bind:checked={hCard} class="italic dark:text-gray-500">Reverse</Toggle>
 </div>
 ```
 
@@ -213,11 +213,11 @@ Use this card for your e-commerce websites and show information about the produc
     <a href="/">
       <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport</h5>
     </a>
-    <Rating rating="4" size="18" class="mt-2.5 mb-5">
+    <Rating rating="4" size="24" class="mt-2.5 mb-5">
       <Badge slot="text" class="ml-3">4</Badge>
     </Rating>
     <div class="flex justify-between items-center">
-      <span class="text-3xl font-bold text-gray-900 dark:text-white">$543</span>
+      <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
       <Button href="/">Buy now</Button>
     </div>
   </div>
