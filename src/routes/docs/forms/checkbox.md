@@ -174,10 +174,10 @@ Use this example to show a list of checkbox items inside a dropdown menu.
 ```svelte example class="flex justify-center items-start h-96"
 <script>
   import { Dropdown, DropdownItem, Checkbox, Button, Search } from 'flowbite-svelte';
-  import { ChevronDownOutline, UserRemoveSolid } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
-<Button>Project users<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Project users<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
 <Dropdown class="overflow-y-auto px-3 pb-3 text-sm h-44">
   <div slot="header" class="p-3">
     <Search size="md" />
@@ -201,7 +201,7 @@ Use this example to show a list of checkbox items inside a dropdown menu.
     <Checkbox>Bonnie Green</Checkbox>
   </li>
   <a slot="footer" href="/" class="flex items-center p-3 -mb-1 text-sm font-medium text-red-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
-    <UserRemoveSolid class="w-5 h-5 mr-1" />Delete user
+    <Icon name="user-remove-solid" class="w-5 h-5 mr-1" />Delete user
   </a>
 </Dropdown>
 ```

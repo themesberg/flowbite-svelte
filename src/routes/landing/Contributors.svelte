@@ -1,7 +1,7 @@
 <script lang="ts">
   import Avatar from '$lib/avatar/Avatar.svelte';
   import Tooltip from '$lib/tooltips/Tooltip.svelte';
-  import { ChevronRightOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
   import Community from '../utils/icons/Community.svelte';
   import type { PageData } from '../$types';
   import Section from './utils/Section.svelte';
@@ -47,7 +47,7 @@
           <p>Become a member of a community of developers supporting by Flowbite</p>
         </div>
         <a class="flex gap-2 items-center text-primary-700 text-base font-medium whitespace-nowrap hover:underline" href="http://github.com/themesberg/flowbite-svelte">
-          See our repository <ChevronRightOutline class="w-3 h-3" />
+          See our repository <Icon name="chevron-right-solid" class="w-3 h-3" />
         </a>
       </div>
     </div>

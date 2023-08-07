@@ -141,27 +141,27 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
 ```svelte example
 <script>
   import { AccordionItem, Accordion } from 'flowbite-svelte';
-  import { ChervonDoubleDownSolid, ChervonDoubleUpSolid } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
 <Accordion>
   <AccordionItem>
     <span slot="header">Header 2-1</span>
     <div slot="arrowup">
-      <ChervonDoubleUpSolid class="h-3 w-3 shrink-0 -mr-0.5" />
+      <Icon name="chevron-double-up-outline" class="h-3 w-3 -mr-0.5" />
     </div>
     <span slot="arrowdown">
-      <ChervonDoubleDownSolid class="h-3 w-3 shrink-0 -mr-0.5" />
+      <Icon name="chevron-double-down-outline" class="h-3 w-3 -mr-0.5" />
     </span>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
   <AccordionItem>
     <span slot="header">Header 2-2</span>
     <div slot="arrowup">
-      <ChervonDoubleUpSolid class="h-3 w-3 shrink-0 -mr-0.5" />
+      <Icon name="chevron-double-up-outline" class="h-3 w-3 -mr-0.5" />
     </div>
     <span slot="arrowdown">
-      <ChervonDoubleDownSolid class="h-3 w-3 shrink-0 -mr-0.5" />
+      <Icon name="chevron-double-down-outline" class="h-3 w-3 -mr-0.5" />
     </span>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
   </AccordionItem>
@@ -173,13 +173,13 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
 ```svelte example
 <script>
   import { AccordionItem, Accordion } from 'flowbite-svelte';
-  import { CartOutline, CogOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
 <Accordion>
   <AccordionItem>
     <span slot="header" class="text-base flex gap-2">
-      <CartOutline />
+      <Icon name="shopping-cart-solid" />
       <span>My Header 1</span>
     </span>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo...</p>
@@ -190,7 +190,7 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
   </AccordionItem>
   <AccordionItem>
     <span slot="header" class="text-base flex gap-2">
-      <CogOutline />
+      <Icon name="cog-outline" />
       <span>My Header 2</span>
     </span>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sintexplicabo...</p>

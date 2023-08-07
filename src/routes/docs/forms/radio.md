@@ -180,11 +180,11 @@ Here’s an example of a list group that you can use right away.
 ```svelte example class="flex justify-center items-start h-80"
 <script>
   import { Radio, Dropdown, Button, Helper } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
   let group3 = 2;
 </script>
 
-<Button>Dropdown radio<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown radio<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
 <Dropdown class="w-60">
   <ul class="p-2">
     <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
@@ -261,7 +261,7 @@ Use this example of an advanced layout of radio elements where the label parent 
 ```svelte example
 <script>
   import { Radio } from 'flowbite-svelte';
-  import { ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
 <p class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Choose technology:</p>
@@ -272,7 +272,7 @@ Use this example of an advanced layout of radio elements where the label parent 
         <div class="w-full text-lg font-semibold">0-50 MB</div>
         <div class="w-full">Good for small websites</div>
       </div>
-      <ArrowRightOutline class="ml-3 w-6 h-6" />
+      <Icon name="arrow-right-outline" class="ml-3 w-6 h-6" />
     </div>
   </Radio>
   <Radio name="custom" custom>
@@ -281,7 +281,7 @@ Use this example of an advanced layout of radio elements where the label parent 
         <div class="w-full text-lg font-semibold">500-1000 MB</div>
         <div class="w-full">Good for large websites</div>
       </div>
-      <ArrowRightOutline class="ml-3 w-6 h-6" />
+      <Icon name="arrow-right-outline" class="ml-3 w-6 h-6" />
     </div>
   </Radio>
 </div>

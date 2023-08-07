@@ -42,10 +42,10 @@ If you want to show a dropdown menu when clicking on an element add the `Dropdow
 ```svelte example class="flex justify-center items-start h-64"
 <script>
   import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
-<Button>Dropdown button<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown button<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
 <Dropdown>
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
@@ -61,10 +61,10 @@ You can use the `DropdownDivider` component to add separate elements inside the 
 ```svelte example class="flex justify-center items-start h-64"
 <script>
   import { Button, Dropdown, DropdownItem, DropdownDivider } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
-<Button>Dropdown button<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown button<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
 <Dropdown>
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownDivider />
@@ -81,10 +81,10 @@ Use this example to show extra information outside of the list of menu items ins
 ```svelte example class="flex justify-center items-start h-80"
 <script>
   import { Button, Dropdown, DropdownItem, DropdownDivider, DropdownHeader } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
-<Button>Dropdown button<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown button<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
 <Dropdown>
   <div slot="header" class="px-4 py-2">
     <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
@@ -104,14 +104,14 @@ Use this example to enable multi-level dropdown menus by adding stacked elements
 ```svelte example class="flex justify-center items-start h-64"
 <script>
   import { Button, Dropdown, DropdownItem, DropdownDivider } from 'flowbite-svelte';
-  import { ChevronDownOutline, ChevronRightOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
-<Button>Dropdown button<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown button<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
 <Dropdown>
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem class="flex items-center justify-between">
-    Dropdown<ChevronRightOutline class="w-3 h-3 ml-2 text-primary-700 dark:text-white" />
+    Dropdown<Icon name="chevron-right-solid" class="w-3 h-3 ml-2 text-primary-700 dark:text-white" />
   </DropdownItem>
   <Dropdown placement="right-start">
     <DropdownItem>Overview</DropdownItem>
@@ -130,15 +130,15 @@ When you want to control your dropdown open status via javascript code you can b
 ```svelte example class="flex justify-center items-start h-64"
 <script>
   import { Button, Dropdown, DropdownItem, DropdownDivider } from 'flowbite-svelte';
-  import { ChevronDownOutline, ChevronRightOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
   let dropdownOpen = false;
 </script>
 
-<Button>Dropdown button<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown button<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
 <Dropdown bind:open={dropdownOpen}>
   <DropdownItem on:click={() => (dropdownOpen = false)}>Dashboard (close)</DropdownItem>
   <DropdownItem class="flex items-center justify-between">
-    Dropdown<ChevronRightOutline class="w-3 h-3 ml-2 text-primary-700 dark:text-white" />
+    Dropdown<Icon name="chevron-right-solid" class="w-3 h-3 ml-2 text-primary-700 dark:text-white" />
   </DropdownItem>
   <Dropdown placement="right-start">
     <DropdownItem on:click={() => (dropdownOpen = false)}>Overview (close)</DropdownItem>
@@ -157,10 +157,10 @@ Add multiple checkbox elements inside your dropdown menu to enable more advanced
 ```svelte example class="flex justify-center items-start h-52"
 <script>
   import { Button, Dropdown, DropdownItem, Checkbox } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
-<Button>Dropdown checkbox<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown checkbox<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
 <Dropdown class="w-44 p-3 space-y-3 text-sm">
   <li>
     <Checkbox>Default checkbox</Checkbox>
@@ -181,10 +181,10 @@ Use this example to update the background color of a menu item when using a list
 ```svelte example class="flex justify-center items-start h-56"
 <script>
   import { Button, Dropdown, DropdownItem, Checkbox } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
-<Button>Dropdown checkbox<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown checkbox<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
 <Dropdown class="w-48 p-3 space-y-1 text-sm">
   <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Checkbox>Default checkbox</Checkbox>
@@ -205,10 +205,10 @@ Add an extra helper text to each checkbox element inside the dropdown menu list 
 ```svelte example class="flex justify-center items-start h-96"
 <script>
   import { Button, Dropdown, DropdownItem, Checkbox, Helper } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
-<Button>Dropdown checkbox<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown checkbox<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
 <Dropdown class="w-60 p-3 space-y-1 text-sm">
   <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Checkbox>Enable notifications</Checkbox>
@@ -232,12 +232,12 @@ Add multiple radio elements inside your dropdown menu to enable more advanced in
 ```svelte example class="flex justify-center items-start h-64"
 <script>
   import { Button, Dropdown, DropdownItem, Radio } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
   let group1 = 2;
 </script>
 
 <Button>
-  Dropdown radio {group1}<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" />
+  Dropdown radio {group1}<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" />
 </Button>
 <Dropdown class="w-44 p-3 space-y-3 text-sm">
   <li>
@@ -259,11 +259,11 @@ Use this example to update the background color of a menu item when using a list
 ```svelte example class="flex justify-center items-start h-64"
 <script>
   import { Button, Dropdown, DropdownItem, Radio } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
   let group2 = 2;
 </script>
 
-<Button>Dropdown radio<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown radio<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
 <Dropdown class="w-48 p-3 space-y-1">
   <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Radio name="group2" bind:group={group2} value={1}>Default radio</Radio>
@@ -284,11 +284,11 @@ Add an extra helper text to each radio element inside the dropdown menu list wit
 ```svelte example class="flex justify-center items-start h-96"
 <script>
   import { Button, Dropdown, DropdownItem, Radio, Helper } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
   let group3 = 2;
 </script>
 
-<Button>Dropdown radio<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown radio<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
 <Dropdown class="w-60 p-3 space-y-1">
   <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Radio name="group3" bind:group={group3} value={1}>Enable notifications</Radio>
@@ -312,11 +312,11 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 ```svelte example class="flex justify-center items-start h-64"
 <script>
   import { Button, Dropdown, DropdownItem, Toggle } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
   let group2 = 2;
 </script>
 
-<Button>Dropdown toggle<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown toggle<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
 <Dropdown class="w-56 p-3 space-y-1">
   <li>
     <Toggle class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">Default toggle</Toggle>
@@ -337,7 +337,7 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 ```svelte example class="flex justify-center items-start h-96"
 <script>
   import { Button, Dropdown, DropdownItem, DropdownDivider, Navbar, NavBrand, NavHamburger, NavUl, NavLi } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
   let group3 = 2;
 </script>
 
@@ -350,7 +350,7 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
   <NavUl {hidden} class="ml-3">
     <NavLi href="/" active={true}>Home</NavLi>
     <NavLi class="cursor-pointer">
-      Dropdown<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" />
+      Dropdown<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" />
     </NavLi>
     <Dropdown offset="18">
       <DropdownItem>Dashboard</DropdownItem>
@@ -372,10 +372,10 @@ This example can be used when you want to show a long list of items that won’t
 ```svelte example class="flex justify-center items-start h-80"
 <script>
   import { Button, Dropdown, DropdownItem, Avatar } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
-<Button>Project users<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Project users<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
 <Dropdown class="w-48 overflow-y-auto py-1 h-48">
   <DropdownItem class="flex items-center text-base font-semibold gap-2">
     <Avatar src="/images/profile-picture-1.webp" size="xs" />Jese Leos
@@ -396,7 +396,7 @@ This example can be used when you want to show a long list of items that won’t
     <Avatar src="/images/profile-picture-3.webp" size="xs" />Leslie Livingston
   </DropdownItem>
   <a slot="footer" href="/" class="flex items-center px-3 py-2 -mb-1 text-sm font-medium text-primary-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-primary-500 hover:underline">
-    <ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" />Add new user
+    <Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" />Add new user
   </a>
 </Dropdown>
 ```
@@ -408,10 +408,10 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
 ```svelte example class="flex justify-center items-start h-96"
 <script>
   import { Button, Dropdown, DropdownItem, Checkbox, Search } from 'flowbite-svelte';
-  import { UserRemoveSolid, ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
-<Button>Dropdown search<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown search<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
 <Dropdown class="overflow-y-auto px-3 pb-3 text-sm h-44">
   <div slot="header" class="p-3">
     <Search size="md" />
@@ -435,7 +435,7 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
     <Checkbox>Bonnie Green</Checkbox>
   </li>
   <a slot="footer" href="/" class="flex items-center p-3 -mb-1 text-sm font-medium text-red-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
-    <UserRemoveSolid class="w-4 h-4 mr-2 text-primary-700 dark:text-primary-700" />Delete user
+    <Icon name="user-remove-solid" class="w-4 h-4 mr-2 text-primary-700 dark:text-primary-700" />Delete user
   </a>
 </Dropdown>
 ```
@@ -447,11 +447,11 @@ Use the menu icon trigger element on components such as cards as an alternative 
 ```svelte example class="flex justify-center items-start gap-4 h-60"
 <script>
   import { Button, Dropdown, DropdownItem, ToolbarButton, DropdownDivider } from 'flowbite-svelte';
-  import { DotsHorizontalOutline, DotsVerticalOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
-<DotsHorizontalOutline class="dots-menu dark:text-white" />
-<DotsVerticalOutline class="dots-menu dark:text-white" />
+<Icon name="dots-horizontal-outline" class="dots-menu dark:text-white" />
+<Icon name="dots-vertical-outline" class="dots-menu dark:text-white" />
 <Dropdown triggeredBy=".dots-menu">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
@@ -467,11 +467,11 @@ Use this example to show a list of notifications inside your application by prov
 ```svelte example class="flex justify-center items-start h-96"
 <script>
   import { Button, Dropdown, DropdownItem, DropdownHeader, Avatar } from 'flowbite-svelte';
-  import { BellSolid, EyeSolid } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
 <div id="bell" class="inline-flex items-center text-sm font-medium text-center text-gray-500 hover:text-gray-900 focus:outline-none dark:hover:text-white dark:text-gray-400">
-  <BellSolid class="w-5 h-5kj" />
+  <Icon name="bell-solid" class="w-5 h-5kj" />
   <div class="flex relative">
     <div class="inline-flex relative -top-2 right-3 w-3 h-3 bg-red-500 rounded-full border-2 border-white dark:border-gray-900" />
   </div>
@@ -514,7 +514,7 @@ Use this example to show a list of notifications inside your application by prov
   </DropdownItem>
   <a slot="footer" href="/" class="block py-2 -my-1 text-sm font-medium text-center text-gray-900 bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white">
     <div class="inline-flex items-center">
-      <EyeSolid class="mr-2 w-4 h-4 text-gray-500 dark:text-gray-400" />
+      <Icon name="eye-solid" class="mr-2 w-4 h-4 text-gray-500 dark:text-gray-400" />
       View all
     </div>
   </a>
@@ -575,7 +575,7 @@ Use this example to also show the name or email of the user next to the avatar f
 ```svelte example class="flex justify-center items-start gap-4 h-80"
 <script>
   import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
 <Dropdown triggeredBy=".sizes">
@@ -585,10 +585,10 @@ Use this example to also show the name or email of the user next to the avatar f
   <DropdownItem slot="footer">Sign out</DropdownItem>
 </Dropdown>
 <Button class="sizes" size="sm">
-  Small dropdown<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" />
+  Small dropdown<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" />
 </Button>
 <Button class="sizes" size="lg">
-  Large dropdown<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" />
+  Large dropdown<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" />
 </Button>
 ```
 
@@ -599,7 +599,7 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
 ```svelte example
 <script>
   import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
-  import { ChevronDownOutline, ChevronUpOutline, ChevronRightOutline, ChevronLeftOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
   let placement = 'left';
 </script>
 
@@ -611,12 +611,12 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
 </Dropdown>
 
 <div id="placements" class="flex flex-col justify-center items-center gap-2 h-96 my-8">
-  <Button>Dropdown top<ChevronUpOutline class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+  <Button>Dropdown top<Icon name="chevron-up-solid" class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
   <div class="space-x-2">
-    <Button><ChevronLeftOutline class="w-3 h-3 mr-2 text-white dark:text-white" />Dropdown left</Button>
-    <Button>Dropdown right<ChevronRightOutline class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+    <Button><Icon name="chevron-left-solid" class="w-3 h-3 mr-2 text-white dark:text-white" />Dropdown left</Button>
+    <Button>Dropdown right<Icon name="chevron-right-solid" class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
   </div>
-  <Button>Dropdown bottom<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+  <Button>Dropdown bottom<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
 </div>
 ```
 
@@ -625,15 +625,15 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
 ```svelte example class="flex justify-center items-center gap-2 h-96"
 <script>
   import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
-  import { ChevronDownOutline, ChevronUpOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
   let placement = 'left';
 </script>
 
 <Button data-placement="left-start">
-  Dropdown left start<ChevronUpOutline class="w-3 h-3 ml-2 text-white dark:text-white" />
+  Dropdown left start<Icon name="chevron-up-solid" class="w-3 h-3 ml-2 text-white dark:text-white" />
 </Button>
 <Button data-placement="right-end">
-  Dropdown right end<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" />
+  Dropdown right end<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" />
 </Button>
 <Dropdown {placement} triggeredBy="[data-placement]" on:show={(e) => (placement = e.target.dataset.placement)}>
   <DropdownItem>Dashboard</DropdownItem>
@@ -650,14 +650,14 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
 ```svelte example class="flex justify-center items-start h-40"
 <script>
   import { Button, Dropdown, DropdownItem, Checkbox } from 'flowbite-svelte';
-  import { ChevronDownOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
   const handleClick = (e) => {
     e.preventDefault();
     alert('Clicked on: ' + e.target);
   };
 </script>
 
-<Button>Dropdown button<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown button<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
 <Dropdown>
   <DropdownItem href="/link" on:click={handleClick}>Rendered as link</DropdownItem>
   <DropdownItem on:click={handleClick}>Rendered as button</DropdownItem>

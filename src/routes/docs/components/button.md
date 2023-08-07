@@ -203,14 +203,14 @@ Use the following examples to add a SVG icon inside the button either on the lef
 ```svelte example class="flex flex-wrap gap-2" 
 <script>
   import { Button } from 'flowbite-svelte';
-  import { ShoppingCartSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
 <Button>
-  <ShoppingCartSolid class="w-3.5 h-3.5 mr-2 text-white" /> Buy Now
+  <Icon name="shopping-cart-solid" class="w-3.5 h-3.5 mr-2 text-white" /> Buy Now
 </Button>
 <Button>
-  Choose Plan <ArrowRightOutline class="w-3.5 h-3.5 ml-2 text-white" />
+  Choose Plan <Icon name="arrow-right-outline" class="w-3.5 h-3.5 ml-2 text-white" />
 </Button>
 ```
 
@@ -236,17 +236,17 @@ Sometimes you need a button to indicate an action using only an icon.
 ```svelte example class="flex flex-wrap gap-2" 
 <script>
   import { Button } from 'flowbite-svelte';
-  import { ArrowRightOutline, ShoppingCartSolid } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
 <div class="flex flex-wrap items-center gap-2">
-  <Button class="!p-2"><ArrowRightOutline class="w-5 h-5 text-white" /></Button>
-  <Button pill={true} class="!p-2"><ArrowRightOutline class="w-5 h-5 text-white" /></Button>
+  <Button class="!p-2"><Icon name="arrow-right-outline" class="w-5 h-5 text-white" /></Button>
+  <Button pill={true} class="!p-2"><Icon name="arrow-right-outline" class="w-5 h-5 text-white" /></Button>
   <Button outline={true} class="!p-2" size="lg">
-    <ShoppingCartSolid class="w-5 h-5 text-primary-700" />
+    <Icon name="shopping-cart-solid" class="w-5 h-5 text-primary-700" />
   </Button>
   <Button pill={true} outline={true} class="!p-2" size="xl">
-    <ShoppingCartSolid class="w-5 h-5 text-primary-700" />
+    <Icon name="shopping-cart-solid" class="w-5 h-5 text-primary-700" />
   </Button>
 </div>
 ```

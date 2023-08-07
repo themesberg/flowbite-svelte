@@ -33,7 +33,7 @@ For accessibility you should also set the `id` prop to the element. This will ad
 ```svelte example
 <script>
   import { Drawer, Button, CloseButton } from 'flowbite-svelte';
-  import { InfoCircleSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
   import { sineIn } from 'svelte/easing';
   let hidden1 = true;
   let transitionParams = {
@@ -50,7 +50,7 @@ For accessibility you should also set the `id` prop to the element. This will ad
 <Drawer transitionType="fly" {transitionParams} bind:hidden={hidden1} id="sidebar1">
   <div class="flex items-center">
     <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
-      <InfoCircleSolid class="w-4 h-4 mr-2.5" />Info
+      <Icon name="info-circle-solid" class="w-4 h-4 mr-2.5" />Info
     </h5>
     <CloseButton on:click={() => (hidden1 = true)} class="mb-4 dark:text-white" />
   </div>
@@ -60,7 +60,7 @@ For accessibility you should also set the `id` prop to the element. This will ad
   </p>
   <div class="grid grid-cols-2 gap-4">
     <Button color="light" href="/">Learn more</Button>
-    <Button href="/">Get access <ArrowRightOutline class="w-3 h-3 ml-2 text-white" /></Button>
+    <Button href="/">Get access <Icon name="arrow-right-outline" class="w-3 h-3 ml-2 text-white" /></Button>
   </div>
 </Drawer>
 ```
@@ -72,7 +72,7 @@ Use this example to show a navigational sidebar inside the drawer component.
 ```svelte example
 <script>
   import { Drawer, Button, CloseButton, Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper } from 'flowbite-svelte';
-  import { ChartPieSolid, ShoppingCartSolid, GridSolid, MailBoxSolid, UsersSolid, BagSolid, ArrowRightToBracketSolid, FileEditSolid } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
   import { sineIn } from 'svelte/easing';
   let hidden2 = true;
   let spanClass = 'flex-1 ml-3 whitespace-nowrap';
@@ -96,12 +96,12 @@ Use this example to show a navigational sidebar inside the drawer component.
       <SidebarGroup>
         <SidebarItem label="Dashboard">
           <svelte:fragment slot="icon">
-            <ChartPieSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+            <Icon name="chart-pie-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
           </svelte:fragment>
         </SidebarItem>
         <SidebarDropdownWrapper label="E-commerce">
           <svelte:fragment slot="icon">
-            <ShoppingCartSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+            <Icon name="shopping-cart-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
           </svelte:fragment>
           <SidebarDropdownItem label="Products" />
           <SidebarDropdownItem label="Billing" />
@@ -109,7 +109,7 @@ Use this example to show a navigational sidebar inside the drawer component.
         </SidebarDropdownWrapper>
         <SidebarItem label="Kanban" {spanClass}>
           <svelte:fragment slot="icon">
-            <GridSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+            <Icon name="grid-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
           </svelte:fragment>
           <svelte:fragment slot="subtext">
             <span class="inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"> Pro </span>
@@ -117,7 +117,7 @@ Use this example to show a navigational sidebar inside the drawer component.
         </SidebarItem>
         <SidebarItem label="Inbox" {spanClass}>
           <svelte:fragment slot="icon">
-            <MailBoxSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+            <Icon name="mail-box-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
           </svelte:fragment>
           <svelte:fragment slot="subtext">
             <span class="inline-flex justify-center items-center p-3 ml-3 w-3 h-3 text-sm font-medium text-primary-600 bg-primary-200 rounded-full dark:bg-primary-900 dark:text-primary-200"> 3 </span>
@@ -125,22 +125,22 @@ Use this example to show a navigational sidebar inside the drawer component.
         </SidebarItem>
         <SidebarItem label="Users">
           <svelte:fragment slot="icon">
-            <UsersSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+            <Icon name="users-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
           </svelte:fragment>
         </SidebarItem>
         <SidebarItem label="Products">
           <svelte:fragment slot="icon">
-            <BagSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+            <Icon name="bag-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
           </svelte:fragment>
         </SidebarItem>
         <SidebarItem label="Sign In">
           <svelte:fragment slot="icon">
-            <ArrowRightToBracketSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+            <Icon name="arrow-right-to-bracket-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
           </svelte:fragment>
         </SidebarItem>
         <SidebarItem label="Sign Up">
           <svelte:fragment slot="icon">
-            <FileEditSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+            <Icon name="file-editt-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
           </svelte:fragment>
         </SidebarItem>
       </SidebarGroup>
@@ -156,7 +156,7 @@ Use this example to show a contact form inside the drawer component.
 ```svelte example
 <script>
   import { Drawer, Button, CloseButton, Label, Input, Textarea, P, A, Checkbox } from 'flowbite-svelte';
-  import { InfoCircleSolid } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
   import { sineIn } from 'svelte/easing';
 
   let hidden3 = true;
@@ -173,7 +173,7 @@ Use this example to show a contact form inside the drawer component.
 <Drawer transitionType="fly" {transitionParams} bind:hidden={hidden3} id="sidebar3">
   <div class="flex items-center">
     <h5 id="drawer-label" class="inline-flex items-center mb-6 text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
-      <InfoCircleSolid class="w-4 h-4 mr-2.5" />Contact us
+      <Icon name="info-circle-solid" class="w-4 h-4 mr-2.5" />Contact us
     </h5>
     <CloseButton on:click={() => (hidden3 = true)} class="mb-4 dark:text-white" />
   </div>
@@ -208,7 +208,7 @@ Use this example if you want to add form elements inside the drawer component in
 ```svelte example
 <script>
   import { Drawer, Button, CloseButton, Label, Input, Textarea } from 'flowbite-svelte';
-  import { InfoCircleSolid, UserPlusSolid, CalendarEditSolid } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
   import { sineIn } from 'svelte/easing';
 
   let hidden4 = true;
@@ -225,7 +225,7 @@ Use this example if you want to add form elements inside the drawer component in
 <Drawer transitionType="fly" {transitionParams} bind:hidden={hidden4} id="sidebar4">
   <div class="flex items-center">
     <h5 id="drawer-label" class="inline-flex items-center mb-6 text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
-      <InfoCircleSolid class="w-4 h-4 mr-2.5" />New event
+      <Icon name="info-circle-solid" class="w-4 h-4 mr-2.5" />New event
     </h5>
     <CloseButton on:click={() => (hidden4 = true)} class="mb-4 dark:text-white" />
   </div>
@@ -245,7 +245,7 @@ Use this example if you want to add form elements inside the drawer component in
       <div class="relative">
         <Input noBorder id="search" placeholder="Add guest email" class="p-3" />
         <Button textSize="text-sm" class="absolute inline-flex items-center px-3 py-1 text-sm font-medium text-white bg-primary-700 rounded-lg right-2 bottom-2 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" type="submit">
-          <UserPlusSolid class="w-3 h-3 mr-1.5 text-white" />Add
+          <Icon name="user-plus-solid" class="w-3 h-3 mr-1.5 text-white" />Add
         </Button>
       </div>
     </div>
@@ -256,7 +256,7 @@ Use this example if you want to add form elements inside the drawer component in
       <img class="w-8 h-8 border-2 border-white rounded-full dark:border-gray-800" src="/images/profile-picture-4.webp" alt="" />
     </div>
     <Button type="submit" class="w-full">
-      <CalendarEditSolid class="w-3.5 h-3.5 mr-2.5 text-white" /> Create event
+      <Icon name="calendar-edit-solid" class="w-3.5 h-3.5 mr-2.5 text-white" /> Create event
     </Button>
   </form>
 </Drawer>
@@ -271,7 +271,7 @@ Use the placement prop to position the drawer component either on the top, right
 ```svelte example
 <script>
   import { Drawer, Button, CloseButton, Label, Input, Textarea } from 'flowbite-svelte';
-  import { InfoCircleSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
   import { sineIn } from 'svelte/easing';
 
   let hidden5 = true;
@@ -289,7 +289,7 @@ Use the placement prop to position the drawer component either on the top, right
 <Drawer placement="left" transitionType="fly" {transitionParams} bind:hidden={hidden5} id="sidebar5">
   <div class="flex items-center">
     <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
-      <InfoCircleSolid class="w-4 h-4 mr-2.5" />Info
+      <Icon name="info-circle-solid" class="w-4 h-4 mr-2.5" />Info
     </h5>
     <CloseButton on:click={() => (hidden5 = true)} class="mb-4 dark:text-white" />
   </div>
@@ -299,7 +299,7 @@ Use the placement prop to position the drawer component either on the top, right
   </p>
   <div class="grid grid-cols-2 gap-4">
     <Button color="light" href="/">Learn more</Button>
-    <Button href="/">Get access <ArrowRightOutline class="w-3 h-3 ml-2 text-white" /></Button>
+    <Button href="/">Get access <Icon name="arrow-right-outline" class="w-3 h-3 ml-2 text-white" /></Button>
   </div>
 </Drawer>
 ```
@@ -313,7 +313,7 @@ Set the `transitionParams` variable to new variables.
 ```svelte example
 <script>
   import { Drawer, Button, CloseButton } from 'flowbite-svelte';
-  import { InfoCircleSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
   import { sineIn } from 'svelte/easing';
 
   let hidden6 = true;
@@ -331,7 +331,7 @@ Set the `transitionParams` variable to new variables.
 <Drawer placement="right" transitionType="fly" transitionParams={transitionParamsRight} bind:hidden={hidden6} id="sidebar6">
   <div class="flex items-center">
     <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
-      <InfoCircleSolid class="w-4 h-4 mr-2.5" />Info
+      <Icon name="info-circle-solid" class="w-4 h-4 mr-2.5" />Info
     </h5>
     <CloseButton on:click={() => (hidden6 = true)} class="mb-4 dark:text-white" />
   </div>
@@ -341,7 +341,7 @@ Set the `transitionParams` variable to new variables.
   </p>
   <div class="grid grid-cols-2 gap-4">
     <Button color="light" href="/">Learn more</Button>
-    <Button href="/">Get access <ArrowRightOutline class="w-3 h-3 ml-2 text-white" /></Button>
+    <Button href="/">Get access <Icon name="arrow-right-outline" class="w-3 h-3 ml-2 text-white" /></Button>
   </div>
 </Drawer>
 ```
@@ -353,7 +353,7 @@ Use this example to show the drawer on the top side of the page.
 ```svelte example
 <script>
   import { Drawer, Button, CloseButton, A } from 'flowbite-svelte';
-  import { InfoCircleSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
   import { sineIn } from 'svelte/easing';
 
   let hidden7 = true;
@@ -371,7 +371,7 @@ Use this example to show the drawer on the top side of the page.
 <Drawer placement="top" width="w-full" transitionType="fly" transitionParams={transitionParamsTop} bind:hidden={hidden7} id="sidebar7">
   <div class="flex items-center">
     <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
-      <InfoCircleSolid class="w-4 h-4 mr-2.5" />Top drawer
+      <Icon name="info-circle-solid" class="w-4 h-4 mr-2.5" />Top drawer
     </h5>
     <CloseButton on:click={() => (hidden7 = true)} class="mb-4 dark:text-white" />
   </div>
@@ -379,7 +379,7 @@ Use this example to show the drawer on the top side of the page.
     Supercharge your hiring by taking advantage of our <A href="/" class="text-primary-600 underline dark:text-primary-500 hover:no-underline">limited-time sale</A> for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
   </p>
   <Button color="light" href="/">Learn more</Button>
-  <Button href="/" class="ml-2">Get access <ArrowRightOutline class="w-3 h-3 ml-2 text-white" /></Button>
+  <Button href="/" class="ml-2">Get access <Icon name="arrow-right-outline" class="w-3 h-3 ml-2 text-white" /></Button>
 </Drawer>
 ```
 
@@ -390,7 +390,7 @@ Use this example to show the drawer on the bottom side of the page.
 ```svelte example
 <script>
   import { Drawer, Button, CloseButton, A } from 'flowbite-svelte';
-  import { InfoCircleSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
   import { sineIn } from 'svelte/easing';
 
   let hidden8 = true;
@@ -408,7 +408,7 @@ Use this example to show the drawer on the bottom side of the page.
 <Drawer placement="bottom" width="w-full" transitionType="fly" transitionParams={transitionParamsBottom} bind:hidden={hidden8} id="sidebar8">
   <div class="flex items-center">
     <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
-      <InfoCircleSolid class="w-4 h-4 mr-2.5" />Info
+      <Icon name="info-circle-solid" class="w-4 h-4 mr-2.5" />Info
     </h5>
     <CloseButton on:click={() => (hidden8 = true)} class="mb-4 dark:text-white" />
   </div>
@@ -417,7 +417,7 @@ Use this example to show the drawer on the bottom side of the page.
     for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.
   </p>
   <Button color="light" href="/">Learn more</Button>
-  <Button href="/" class="ml-2">Get access <ArrowRightOutline class="w-3 h-3 ml-2 text-white" /></Button>
+  <Button href="/" class="ml-2">Get access <Icon name="arrow-right-outline" class="w-3 h-3 ml-2 text-white" /></Button>
 </Drawer>
 ```
 
@@ -434,7 +434,7 @@ Use this example to enable the backdrop element by default.
 ```svelte example
 <script>
   import { Drawer, Button, CloseButton, A } from 'flowbite-svelte';
-  import { InfoCircleSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
   import { sineIn } from 'svelte/easing';
 
   let hiddenBackdropTrue = true;
@@ -452,7 +452,7 @@ Use this example to enable the backdrop element by default.
 <Drawer backdrop={true} transitionType="fly" {transitionParams} bind:hidden={hiddenBackdropTrue} id="sidebar1">
   <div class="flex items-center">
     <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
-      <InfoCircleSolid class="w-4 h-4 mr-2.5" />Info
+      <Icon name="info-circle-solid" class="w-4 h-4 mr-2.5" />Info
     </h5>
     <CloseButton on:click={() => (hiddenBackdropTrue = true)} class="mb-4 dark:text-white" />
   </div>
@@ -462,7 +462,7 @@ Use this example to enable the backdrop element by default.
   </p>
   <div class="grid grid-cols-2 gap-4">
     <Button color="light" href="/">Learn more</Button>
-    <Button href="/">Get access <ArrowRightOutline class="w-3 h-3 ml-2 text-white" /></Button>
+    <Button href="/">Get access <Icon name="arrow-right-outline" class="w-3 h-3 ml-2 text-white" /></Button>
   </div>
 </Drawer>
 ```
@@ -474,7 +474,7 @@ Use the `backdrop={false}` prop to disable the backdrop element when the drawer 
 ```svelte example
 <script>
   import { Drawer, Button, CloseButton, A } from 'flowbite-svelte';
-  import { InfoCircleSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
   import { sineIn } from 'svelte/easing';
 
   let hiddenBackdropFalse = true;
@@ -492,7 +492,7 @@ Use the `backdrop={false}` prop to disable the backdrop element when the drawer 
 <Drawer backdrop={false} transitionType="fly" {transitionParams} bind:hidden={hiddenBackdropFalse} id="sidebar1">
   <div class="flex items-center">
     <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
-      <InfoCircleSolid class="w-4 h-4 mr-2.5" />Info
+      <Icon name="info-circle-solid" class="w-4 h-4 mr-2.5" />Info
     </h5>
     <CloseButton on:click={() => (hiddenBackdropFalse = true)} class="mb-4 dark:text-white" />
   </div>
@@ -502,7 +502,7 @@ Use the `backdrop={false}` prop to disable the backdrop element when the drawer 
   </p>
   <div class="grid grid-cols-2 gap-4">
     <Button color="light" href="/">Learn more</Button>
-    <Button href="/">Get access <ArrowRightOutline class="w-3 h-3 ml-2 text-white" /></Button>
+    <Button href="/">Get access <Icon name="arrow-right-outline" class="w-3 h-3 ml-2 text-white" /></Button>
   </div>
 </Drawer>
 ```
@@ -514,7 +514,7 @@ Use `leftOffset|rightOffset|topOffset|bottomOffset` prop to change the position 
 ```svelte example
 <script>
   import { Drawer, Button, CloseButton, A } from 'flowbite-svelte';
-  import { InfoCircleSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
   import { sineIn } from 'svelte/easing';
 
   let hidden9 = true;
@@ -532,7 +532,7 @@ Use `leftOffset|rightOffset|topOffset|bottomOffset` prop to change the position 
 <Drawer leftOffset="top-16 h-screen left-0" transitionType="fly" {transitionParams} bind:hidden={hidden9} id="sidebar9">
   <div class="flex items-center">
     <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
-      <InfoCircleSolid class="w-4 h-4 mr-2.5" />Info
+      <Icon name="info-circle-solid" class="w-4 h-4 mr-2.5" />Info
     </h5>
     <CloseButton on:click={() => (hidden9 = true)} class="mb-4 dark:text-white" />
   </div>
@@ -542,7 +542,7 @@ Use `leftOffset|rightOffset|topOffset|bottomOffset` prop to change the position 
   </p>
   <div class="grid grid-cols-2 gap-4">
     <Button color="light" href="/">Learn more</Button>
-    <Button href="/">Get access <ArrowRightOutline class="w-3 h-3 ml-2 text-white" /></Button>
+    <Button href="/">Get access <Icon name="arrow-right-outline" class="w-3 h-3 ml-2 text-white" /></Button>
   </div>
 </Drawer>
 ```
@@ -554,7 +554,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 ```svelte example
 <script>
   import { Drawer, Button, CloseButton } from 'flowbite-svelte';
-  import { InfoCircleSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
   import { sineIn } from 'svelte/easing';
   let hidden10 = true;
   let activateClickOutside = false;
@@ -573,7 +573,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 <Drawer {activateClickOutside} {backdrop} transitionType="fly" {transitionParams} bind:hidden={hidden10} id="sidebar10">
   <div class="flex items-center">
     <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
-      <InfoCircleSolid class="w-4 h-4 mr-2.5" />Info
+      <Icon name="info-circle-solid" class="w-4 h-4 mr-2.5" />Info
     </h5>
     <CloseButton on:click={() => (hidden10 = true)} class="mb-4 dark:text-white" />
   </div>
@@ -589,7 +589,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 ```svelte example
 <script>
   import { Drawer, Button, CloseButton, A } from 'flowbite-svelte';
-  import { InfoCircleSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
   import { sineIn } from 'svelte/easing';
 
   let hiddenBackdropFalse = true;
@@ -607,7 +607,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 <Drawer activateClickOutside={false} transitionType="fly" {transitionParams} bind:hidden={hiddenBackdropFalse} id="sidebar1">
   <div class="flex items-center">
     <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
-      <InfoCircleSolid class="w-4 h-4 mr-2.5" />Info
+      <Icon name="info-circle-solid" class="w-4 h-4 mr-2.5" />Info
     </h5>
     <CloseButton on:click={() => (hiddenBackdropFalse = true)} class="mb-4 dark:text-white" />
   </div>
@@ -617,7 +617,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
   </p>
   <div class="grid grid-cols-2 gap-4">
     <Button color="light" href="/">Learn more</Button>
-    <Button href="/">Get access <ArrowRightOutline class="w-3 h-3 ml-2 text-white" /></Button>
+    <Button href="/">Get access <Icon name="arrow-right-outline" class="w-3 h-3 ml-2 text-white" /></Button>
   </div>
 </Drawer>
 ```

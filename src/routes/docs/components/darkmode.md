@@ -83,15 +83,15 @@ Use the `lightIcon` and `darkIcon` slots to change icons:
 ```svelte example
 <script>
   import { DarkMode } from 'flowbite-svelte';
-  import { SunSolid, MoonSolid } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
 <DarkMode class="text-lg">
   <svelte:fragment slot="lightIcon">
-    <SunSolid />
+    <Icon name="sun-solid" />
   </svelte:fragment>
   <svelte:fragment slot="darkIcon">
-    <MoonSolid />
+    <Icon name="moon-solid" />
   </svelte:fragment>
 </DarkMode>
 ```

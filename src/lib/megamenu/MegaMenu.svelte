@@ -59,7 +59,7 @@
   ```
   <script>
     import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from 'flowbite-svelte';
-    import { ChevronDownOutline } from 'flowbite-svelte-icons';
+    import { Icon } from 'flowbite-svelte-icons';
     let menu = [
       {name: 'About us', href: '/about'},
       {name: 'Blog', href: '/blog'},
@@ -83,7 +83,7 @@
     <NavHamburger on:click={toggle} />
     <NavUl {hidden}>
       <NavLi href="/">Home</NavLi>
-      <NavLi class="cursor-pointer">Mega menu<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
+      <NavLi class="cursor-pointer">Mega menu<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
       <MegaMenu items={menu} let:item>
         <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
       </MegaMenu>

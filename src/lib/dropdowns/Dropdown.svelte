@@ -86,10 +86,10 @@
   ```
   <script>
     import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
-    import { ChevronDownOutline } from 'flowbite-svelte-icons';
+    import { Icon } from 'flowbite-svelte-icons';
   </script>
 
-  <Button>Dropdown button<ChevronDownOutline class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+  <Button>Dropdown button<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
   <Dropdown >
     <DropdownItem>Dashboard</DropdownItem>
     <DropdownItem>Settings</DropdownItem>

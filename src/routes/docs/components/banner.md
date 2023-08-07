@@ -33,7 +33,7 @@ Use this free example to show a text message for announcement with a CTA link, a
 ```svelte example class="flex flex-col relative"
 <script>
   import { Banner, Skeleton, ImagePlaceholder } from 'flowbite-svelte';
-  import { BullhornSolid } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
 <Skeleton class="py-4" />
@@ -42,7 +42,7 @@ Use this free example to show a text message for announcement with a CTA link, a
 <Banner id="default-banner" position="absolute">
   <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
     <span class="inline-flex p-1 mr-3 bg-gray-200 rounded-full dark:bg-gray-600">
-      <BullhornSolid class="w-3 h-3 text-gray-500 dark:text-gray-400" />
+      <Icon name="bullhorn-solid" class="w-3 h-3 text-gray-500 dark:text-gray-400" />
       <span class="sr-only">Light bulb</span>
     </span>
     <span>
@@ -59,7 +59,7 @@ This example can be used to position the sticky banner to the bottom side of the
 ```svelte example class="flex flex-col relative"
 <script>
   import { Banner, Skeleton, ImagePlaceholder } from 'flowbite-svelte';
-  import { SalePercentSolid, ArrowRightSolid } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
 <Skeleton class="py-4" />
@@ -68,12 +68,12 @@ This example can be used to position the sticky banner to the bottom side of the
 <Banner id="bottom-banner" position="absolute" bannerType="bottom">
   <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
     <span class="inline-flex p-1 mr-3 bg-gray-200 rounded-full dark:bg-gray-600">
-      <SalePercentSolid class="w-4 h-4 text-gray-500 dark:text-gray-400" />
+      <Icon name="sale-percent-solid" class="w-4 h-4 text-gray-500 dark:text-gray-400" />
       <span class="sr-only">Discount coupon</span>
     </span>
     <span>
       Get 5% commission per sale <a href="https://flowbite.com" class="flex items-center ml-0 text-sm font-medium text-primary-600 md:ml-1 md:inline-flex dark:text-primary-500 hover:underline">
-        Become a partner <ArrowRightSolid class="w-4 h-4 ml-1 text-primary-600 dark:text-primary-500" />
+        Become a partner <Icon name="arrow-right-solid" class="w-4 h-4 ml-1 text-primary-600 dark:text-primary-500" />
       </a>
     </span>
   </p>
@@ -129,7 +129,7 @@ This example can be used to share important information with your website visito
 ```svelte example class="flex flex-col relative"
 <script>
   import { Banner, Skeleton, ImagePlaceholder } from 'flowbite-svelte';
-  import { OpenBookSolid, ArrowRightSolid } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
 <Skeleton class="py-4" />
@@ -141,11 +141,11 @@ This example can be used to share important information with your website visito
     <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">You can integrate Flowbite with many tools.</p>
   </div>
   <a href="/" class="inline-flex items-center px-3 py-2 mr-3 text-xs font-medium text-gray-900 bg-white border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-    <OpenBookSolid class="w-4 h-4 mr-1.5" />
+    <Icon name="open-book-solid" class="w-4 h-4 mr-1.5" />
     Learn more
   </a>
   <a href="/" class="inline-flex px-3 py-2 mr-2 text-xs font-medium text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
-    Get started <ArrowRightSolid class="w-4 h-4 ml-1.5 text-gray-200 hover:bg-gray-200 " />
+    Get started <Icon name="arrow-right-solid" class="w-4 h-4 ml-1.5 text-gray-200 hover:bg-gray-200 " />
   </a>
 </Banner>
 ```

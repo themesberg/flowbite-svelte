@@ -51,11 +51,11 @@ Use this example to show an icon above the blockquote text content.
 ```svelte example
 <script>
   import { Blockquote } from 'flowbite-svelte';
-  import { QuoteSolid } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
 <Blockquote size="xl">
-  <QuoteSolid class="w-10 h-10 text-gray-400 dark:text-gray-600" />
+  <Icon name="quote-solid" class="w-10 h-10 text-gray-400 dark:text-gray-600" />
   "Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."
 </Blockquote>
 ```
@@ -84,11 +84,11 @@ This example can be used for user testimonials by mentioning the author and occu
 ```svelte example
 <script>
   import { Blockquote } from 'flowbite-svelte';
-  import { QuoteSolid } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
 <figure class="mx-auto max-w-screen-md text-center">
-  <QuoteSolid class="mx-auto mb-3 w-12 h-12 text-gray-400 dark:text-gray-600" />
+  <Icon name="quote-solid" class="mx-auto mb-3 w-12 h-12 text-gray-400 dark:text-gray-600" />
   <Blockquote alignment="center" size="2xl">"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</Blockquote>
   <figcaption class="flex justify-center items-center mt-6 space-x-3">
     <img class="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="Micheal Gough profile" />

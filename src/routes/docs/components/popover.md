@@ -89,7 +89,7 @@ This example can be used to show more information about a company profile.
 ```svelte example class="flex h-96 items-end justify-center"
 <script>
   import { Popover, Button, Avatar } from 'flowbite-svelte';
-  import { GlobeOutline, HeartSolid, ThumbsUpSolid, DotsHorizontalOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
 <Button class="-mb-4">Company profile</Button>
@@ -108,11 +108,11 @@ This example can be used to show more information about a company profile.
       <p class="mb-4 text-sm font-light">Open-source library of Tailwind CSS components and Figma design system.</p>
       <ul class="text-sm font-light">
         <li class="flex items-center mb-2">
-          <GlobeOutline class="w-3.5 h-3.5 mr-2" />
+          <Icon name="globe-outline" class="w-3.5 h-3.5 mr-2" />
           <a href="/" class="text-primary-600 dark:text-primary-500 hover:underline"> https://flowbite.com/ </a>
         </li>
         <li class="flex items-start mb-2">
-          <HeartSolid class="w-5 h-5 mr-2" />
+          <Icon name="heart-solid" class="w-5 h-5 mr-2" />
           <span>4,567,346 people like this including 5 of your friends</span>
         </li>
       </ul>
@@ -124,11 +124,11 @@ This example can be used to show more information about a company profile.
       </div>
       <div class="flex">
         <Button color="alternative" class="mr-2 w-full">
-          <ThumbsUpSolid class="mr-2" />
+          <Icon name="thumbs-up-solid" class="mr-2" />
           Like page
         </Button>
         <Button color="alternative">
-          <DotsHorizontalOutline class="w-3.5 h-3.5" />
+          <Icon name="dots-horizontal-outline" class="w-3.5 h-3.5" />
         </Button>
       </div>
     </div>
@@ -143,7 +143,7 @@ Use this example to trigger a popover component with detailed information and an
 ```svelte example class="flex h-96 items-end"
 <script>
   import { Popover } from 'flowbite-svelte';
-  import { ChevronRightOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
 <p class="font-light text-gray-500 dark:text-gray-400">
@@ -159,7 +159,7 @@ Use this example to trigger a popover component with detailed information and an
           <h3>
             <p class="text-gray-500 dark:text-gray-500">Italy is located in the middle of the Mediterranean Sea, in Southern Europe it is also considered part of Western Europe. A unitary parliamentary republic with Rome as its capital and largest city.</p>
             <a href="/" class="flex items-center font-medium text-primary-600 dark:text-primary-500 dark:hover:text-primary-600 hover:text-primary-700">
-              Read more <ChevronRightOutline class="w-2 h-2 ml-1.5 text-primary-600 dark:text-primary-500" />
+              Read more <Icon name="chevron-right-solid" class="w-2 h-2 ml-1.5 text-primary-600 dark:text-primary-500" />
             </a>
           </h3>
         </h3>
@@ -177,13 +177,13 @@ Show helpful information inside a popover when hovering over a question mark but
 ```svelte example class="h-96"
 <script>
   import { Popover } from 'flowbite-svelte';
-  import { QuestionCircleSolid, ChevronRightOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
 <div class="flex items-center text-sm font-light text-gray-500 dark:text-gray-400">
   This is just some informational text
   <button id="b3">
-    <QuestionCircleSolid class="w-4 h-4 ml-1.5" />
+    <Icon name="question-circle-solid" class="w-4 h-4 ml-1.5" />
     <span class="sr-only">Show information</span>
   </button>
 </div>
@@ -194,7 +194,7 @@ Show helpful information inside a popover when hovering over a question mark but
     <h3 class="font-semibold text-gray-900 dark:text-white">Calculation</h3>
     For each date bucket, the all-time volume of activities is calculated. This means that activities in period n contain all activities up to period n.
     <a href="/" class="flex items-center font-medium text-primary-600 dark:text-primary-500 dark:hover:text-primary-600 hover:text-primary-700">
-      Read more <ChevronRightOutline class="w-2 h-2 ml-1.5 text-primary-600 dark:text-primary-500" />
+      Read more <Icon name="chevron-right-outline" class="w-2 h-2 ml-1.5 text-primary-600 dark:text-primary-500" />
     </a>
   </div>
 </Popover>
@@ -207,12 +207,11 @@ Show a progress bar with details inside a popover when hovering over a settings 
 ```svelte example class="h-60 flex justify-center items-end"
 <script>
   import { Popover, Button } from 'flowbite-svelte';
-  import { ChevronRightOutline } from 'flowbite-svelte-icons';
-  import { DatabaseSolid } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
 <Button id="progress">
-  <DatabaseSolid class="mr-2 w-4 h-4 text-white dark:text-white" /> Storage status
+  <Icon name="database-solid" class="mr-2 w-4 h-4 text-white dark:text-white" /> Storage status
 </Button>
 <Popover triggeredBy="#progress" class="text-sm w-64 font-light">
   <div class="space-y-2">
@@ -227,7 +226,7 @@ Show a progress bar with details inside a popover when hovering over a settings 
       <div class="bg-red-600 h-2.5 rounded-full" style="width: 85%" />
     </div>
     <a href="/" class="flex items-center font-medium text-primary-600 dark:text-primary-500 dark:hover:text-primary-600 hover:text-primary-700">
-      Upgrade now <ChevronRightOutline class="w-2 h-2 ml-1.5 text-primary-600 dark:text-primary-500" />
+      Upgrade now <Icon name="chevron-right-outline" class="w-2 h-2 ml-1.5 text-primary-600 dark:text-primary-500" />
     </a>
   </div>
 </Popover>
@@ -240,7 +239,7 @@ Dynamically show the password strength progress when creating a new password pos
 ```svelte example
 <script>
   import { Popover, Label, Input, Checkbox, Button } from 'flowbite-svelte';
-  import { CheckOutline, CloseOutline } from 'flowbite-svelte-icons';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
 <form on:submit|preventDefault class="mb-8">
@@ -266,15 +265,15 @@ Dynamically show the password strength progress when creating a new password pos
   <p class="py-2">It’s better to have:</p>
   <ul>
     <li class="flex items-center mb-1">
-      <CheckOutline class="mr-2 w-4 h-4 text-green-400 dark:text-green-500" />
+      <Icon name="check-outline" class="mr-2 w-4 h-4 text-green-400 dark:text-green-500" />
       Upper &amp; lower case letters
     </li>
     <li class="flex items-center mb-1">
-      <CheckOutline class="mr-2 w-4 h-4 text-green-400 dark:text-green-500" />
+      <Icon name="check-outline" class="mr-2 w-4 h-4 text-green-400 dark:text-green-500" />
       A symbol (#$&amp;)
     </li>
     <li class="flex items-center">
-      <CloseOutline class="mr-2 w-4 h-4 text-gray-300 dark:text-gray-400" />A longer password (min. 12 chars.)
+      <Icon name="close-outline" class="mr-2 w-4 h-4 text-gray-300 dark:text-gray-400" />A longer password (min. 12 chars.)
     </li>
   </ul>
 </Popover>
