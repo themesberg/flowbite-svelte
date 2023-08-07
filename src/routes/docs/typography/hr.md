@@ -32,7 +32,7 @@ The `Hr` component can be used to separate content using a horizontal line by ad
 </script>
 
 <P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
-<Hr class="my-8" />
+<Hr classHr="my-8" />
 <P>Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
 ```
 
@@ -46,7 +46,7 @@ Use this example to show a shorter version of the horizontal line.
 </script>
 
 <P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
-<Hr class="w-48 h-1 mx-auto my-4 rounded md:my-10" />
+<Hr classHr="w-48 h-1 mx-auto my-4 rounded md:my-10" />
 <P>Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
 ```
 
@@ -62,7 +62,7 @@ This example can be used to set a custom SVG icon in the middle of the HR elemen
 
 <div class="text-center">
   <P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
-  <Hr class="my-8 w-64 h-1" icon>
+  <Hr classHr="my-8 w-64 h-1" icon>
     <Icon name="quote-solid" class="w-4 h-4 text-gray-700 dark:text-gray-300" />
   </Hr>
   <P>Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
@@ -80,7 +80,7 @@ Use this example to add a text in the middle of the HR component.
 
 <div class="text-center">
   <P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
-  <Hr class="my-8 w-64">or</Hr>
+  <Hr classHr="my-8 w-64">or</Hr>
   <P>Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
 </div>
 ```
@@ -95,7 +95,7 @@ This example can be used to separate content with a HR tag as a shape instead of
 </script>
 
 <P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
-<Hr class="my-8 mx-auto w-8 h-8" />
+<Hr classHr="my-8 mx-auto w-8 h-8" />
 <Blockquote alignment="center">
   <p>"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
 </Blockquote>
