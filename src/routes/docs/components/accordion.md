@@ -94,7 +94,7 @@ Use the `open` prop to make an item open on mount.
 
 ## Color option
 
-You can control the look and feel of `AccordionItems` by overwriting the `activeClasses` and `inactiveClasses` properties. You can define them in `Accordion` so that they will apply to all children or set them individually on each `AccordionItem`.
+You can control the look and feel of `AccordionItems` by overwriting the `activeClass` and `inactiveClass` properties. You can define them in `Accordion` so that they will apply to all children or set them individually on each `AccordionItem`.
 
 ```svelte example
 <script>

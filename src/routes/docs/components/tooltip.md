@@ -38,9 +38,9 @@ To get started with using tooltips all you need to do is set `triggeredBy` attri
 <Tooltip>Tooltip content</Tooltip>
 ```
 
-## Tooltip styles
+## Tooltip types
 
-You can use choose between dark and light version styles for the tooltip component by changing the utility classes from Tailwind CSS and by applying the `style={light|dark}` data attribute.
+You can use choose between dark and light version styles for the tooltip component by changing the utility classes from Tailwind CSS and by applying the `type={light|dark}` data attribute.
 
 ```svelte example class="flex items-end gap-2 h-32"
 <script>
@@ -99,11 +99,34 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 <Tooltip arrow={false} triggeredBy="#disable-arrow">Tooltip content</Tooltip>
 ```
 
-## Custom style
+## External reference
 
-Various color palettes can be set for a tooltip by using the `color` property from the underlying `Frame` component. (Setting `color` prop sets the `style` to `custom` implicitly.)
+If you need the tooltip to be attached to the other element then the tiggering one you can pass a CSS query to `reference` prop.
 
-When you want to add a fully custom styles, use `style="custom"`, `defaultClass`, and `class` to modify the style.
+```svelte example class="flex gap-4 flex-col justify-center items-center h-72"
+<script>
+  import { Tooltip, Button } from 'flowbite-svelte'
+  let placement = "";
+</script>
+
+<div id="ext-ref" class="p-2 rounded-lg border border-gray-200 dark:border-gray-600">External reference</div>
+<div class="space-x-4">
+<Button id="ref-left" on:mouseenter={()=> placement="left"}>Left</Button>
+<Button id="ref-top" on:mouseenter={()=> placement="top"}>Top</Button>
+<Button id="ref-right" on:mouseenter={()=> placement="right"}>Right</Button>
+</div>
+<Tooltip reference='#ext-ref' triggeredBy="[id^='ref-']" {placement} class="w-64 text-sm font-light">
+    And here's some amazing content. It's very engaging. Right?
+</Tooltip>
+```
+
+## Custom type
+
+Various color palettes can be set for a tooltip by using the `color` property from the underlying `Frame` component.
+(Setting `color` prop sets the `type` to `custom` implicitly.)
+
+
+When you want to add a fully custom styles, use `type="custom"`, `defaultClass`, and `class` to modify the tooltip styling.
 
 ```svelte example class="flex items-center h-64 gap-2"
 <script>
@@ -116,8 +139,16 @@ When you want to add a fully custom styles, use `style="custom"`, `defaultClass`
 <Button>Yellow tooltip</Button>
 <Tooltip color="yellow">Tooltip content</Tooltip>
 
-<Button>Custom style</Button>
-<Tooltip placement="right" style="custom" defaultClass="" class="p-4 text-lg font-medium bg-purple-500 text-gray-100" arrow={false}>Tooltip content</Tooltip>
+<Button>Custom type</Button>
+<Tooltip
+  placement="right"
+  type="custom"
+  defaultClass=""
+  class="p-4 text-lg font-medium bg-purple-500 text-gray-100"
+  arrow={false}
+>
+  Tooltip content
+</Tooltip>
 ```
 
 ## Props

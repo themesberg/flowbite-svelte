@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { ComputePositionReturn, Placement, Side } from '@floating-ui/dom';
+  import type { ComputePositionReturn, Middleware, Placement, Side } from '@floating-ui/dom';
   import * as dom from '@floating-ui/dom';
   import { onMount, type ComponentProps } from 'svelte';
   import { twJoin } from 'tailwind-merge';
@@ -14,6 +14,7 @@
     placement?: Placement;
     trigger?: 'hover' | 'click';
     triggeredBy?: string;
+    reference?: string;
     strategy?: 'absolute' | 'fixed';
     open?: boolean;
     yOnly?: boolean;
@@ -25,6 +26,7 @@
   export let placement: Placement = 'top';
   export let trigger: 'hover' | 'click' = 'hover';
   export let triggeredBy: string | undefined = undefined;
+  export let reference: string | undefined = undefined;
   export let strategy: 'absolute' | 'fixed' = 'absolute';
   export let open: boolean = false;
   export let yOnly: boolean = false;
@@ -34,11 +36,12 @@
   let clickable: boolean;
   $: clickable = trigger === 'click';
 
-  $: dispatch('show', triggerEl, open);
+  $: dispatch('show', referenceEl, open);
+  $: placement && (referenceEl = referenceEl);
 
-  let triggerEl: Element;
+  let referenceEl: Element;
   let floatingEl: HTMLElement;
-  let arrowEl: HTMLElement;
+  let arrowEl: HTMLElement | null;
   let contentEl: HTMLElement;
   let triggerEls: HTMLElement[] = [];
 
@@ -46,9 +49,9 @@
   const block = () => ((_blocked = true), setTimeout(() => (_blocked = false), 250));
 
   const showHandler = (ev: Event) => {
-    if (triggerEl === undefined) console.error('trigger undefined');
-    if (triggerEls.includes(ev.target as HTMLElement) && triggerEl !== ev.target) {
-      triggerEl = ev.target as HTMLElement;
+    if (referenceEl === undefined) console.error('trigger undefined');
+    if (!reference && triggerEls.includes(ev.target as HTMLElement) && referenceEl !== ev.target) {
+      referenceEl = ev.target as HTMLElement;
       block();
     }
     if (clickable && ev.type === 'focusin' && !open) block();
@@ -62,7 +65,7 @@
   const hideHandler = (ev: Event) => {
     if (activeContent) {
       setTimeout(() => {
-        const elements = [triggerEl, floatingEl, arrowEl].filter((x) => x);
+        const elements = [referenceEl, floatingEl, ...triggerEls].filter(Boolean);
         if (ev.type === 'mouseleave' && elements.some(hasHover)) return;
         if (ev.type === 'focusout' && elements.some(hasFocus)) return;
         open = false;
@@ -78,24 +81,23 @@
     top: 'bottom'
   };
 
+  let middleware: (Middleware | null)[];
+  $: middleware = [
+    dom.flip(),
+    dom.shift(),
+    dom.offset(+offset),
+    arrowEl && dom.arrow({ element: arrowEl, padding: 10 })
+  ];
+
   function updatePosition() {
     dom
-      .computePosition(triggerEl, floatingEl, {
-        placement,
-        strategy,
-        middleware: [
-          dom.flip(),
-          dom.shift(),
-          dom.offset(+offset),
-          arrowEl && dom.arrow({ element: arrowEl, padding: 10 })
-        ]
-      })
+      .computePosition(referenceEl, floatingEl, { placement, strategy, middleware })
       .then(({ x, y, middlewareData, placement, strategy }: ComputePositionReturn) => {
         floatingEl.style.position = strategy;
         floatingEl.style.left = yOnly ? '0' : px(x);
         floatingEl.style.top = px(y);
 
-        if (middlewareData.arrow && arrowEl) {
+        if (middlewareData.arrow && arrowEl instanceof HTMLDivElement) {
           arrowEl.style.left = px(middlewareData.arrow.x);
           arrowEl.style.top = px(middlewareData.arrow.y);
 
@@ -105,13 +107,14 @@
       });
   }
 
-  function init(node: HTMLElement, _triggerEl: HTMLElement) {
+  function init(node: HTMLElement, _referenceEl: HTMLElement) {
     floatingEl = node;
-    let cleanup = dom.autoUpdate(node, _triggerEl, updatePosition);
+    let cleanup = dom.autoUpdate(_referenceEl, floatingEl, updatePosition);
+
     return {
-      update(_triggerEl: HTMLElement) {
+      update(_referenceEl: HTMLElement) {
         cleanup();
-        cleanup = dom.autoUpdate(node, _triggerEl, updatePosition);
+        cleanup = dom.autoUpdate(_referenceEl, floatingEl, updatePosition);
       },
       destroy() {
         cleanup();
@@ -141,7 +144,14 @@
       for (const [name, handler, cond] of events) if (cond) element.addEventListener(name, handler);
     });
 
-    triggerEl = triggerEls[0];
+    if (reference) {
+      referenceEl = document.querySelector(reference) ?? document.body;
+      if (referenceEl === document.body) {
+        console.error(`Popup reference not found: '${reference}'`);
+      }
+    } else {
+      referenceEl = triggerEls[0];
+    }
 
     return () => {
       triggerEls.forEach((element: HTMLElement) => {
@@ -164,16 +174,25 @@
     $$props.border && arrowSide === 'right' && 'border-t border-r ',
     $$props.border && arrowSide === 'left' && 'border-b border-l '
   );
+
+  function initArrow(node: HTMLElement) {
+    arrowEl = node;
+    return {
+      destroy() {
+        arrowEl = null;
+      }
+    };
+  }
 </script>
 
-{#if !triggerEl}
+{#if !referenceEl}
   <div bind:this={contentEl} />
 {/if}
 
-{#if open && triggerEl}
+{#if open && referenceEl}
   <Frame
     use={init}
-    options={triggerEl}
+    options={referenceEl}
     role="tooltip"
     tabindex={activeContent ? -1 : undefined}
     on:focusin={optional(activeContent, showHandler)}
@@ -182,7 +201,7 @@
     on:mouseleave={optional(activeContent && !clickable, hideHandler)}
     {...$$restProps}>
     <slot />
-    {#if arrow}<div class={arrowClass} bind:this={arrowEl} />{/if}
+    {#if arrow}<div use:initArrow class={arrowClass} />{/if}
   </Frame>
 {/if}
 
