@@ -2,6 +2,13 @@
   import { twMerge } from 'tailwind-merge';
   import type { LinkType } from '../types';
   import Popper from '../utils/Popper.svelte';
+  import type { ComponentProps } from 'svelte';
+
+  interface $$Props extends ComponentProps<Popper> {
+    items: LinkTypeLike[];
+    full: boolean;
+    ulClass: string;
+  }
 
   export let items: LinkTypeLike[] = [];
   export let full: boolean = false;

@@ -30,7 +30,7 @@
   on:drop
   type="button"
   >
-  <label tabIndex="0">
+  <label class="flex flex-col items-center" tabIndex="0">
     <slot />
     <input
       {...$$restProps}

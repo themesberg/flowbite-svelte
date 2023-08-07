@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { BasePlacement, Placement } from '@popperjs/core';
+  import type { Placement, Side } from '@floating-ui/dom';
   import ChevronDown from './ChevronDown.svelte';
   import ChevronLeft from './ChevronLeft.svelte';
   import ChevronUp from './ChevronUp.svelte';
@@ -18,7 +18,7 @@
   };
 
   let icon: ComponentType;
-  $: icon = icons[placement.split('-')[0] as BasePlacement] ?? ChevronDown;
+  $: icon = icons[placement.split('-')[0] as Side] ?? ChevronDown;
 </script>
 
 <Wrapper class="flex items-center justify-between" show={aligned}>

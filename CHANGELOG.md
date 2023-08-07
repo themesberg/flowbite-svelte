@@ -2,6 +2,79 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.41.2](https://github.com/themesberg/flowbite-svelte/compare/v0.41.0...v0.41.2) (2023-08-06)
+
+## [0.41.0](https://github.com/themesberg/flowbite-svelte/compare/v0.40.2...v0.41.0) (2023-08-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* change the Tabs component props
+
+* Revert "feat: change tabs variant to styles"
+
+This reverts commit c949b82f02f8adad2a2d172e602ce5774ae3bca6.
+
+### Features
+
+* [#966](https://github.com/themesberg/flowbite-svelte/issues/966) ([#968](https://github.com/themesberg/flowbite-svelte/issues/968)) ([2b4503a](https://github.com/themesberg/flowbite-svelte/commit/2b4503a148f74b3982e3c4f65c2b19d11c13fbfc))
+* export open in speeddial ([#960](https://github.com/themesberg/flowbite-svelte/issues/960)) ([7dff563](https://github.com/themesberg/flowbite-svelte/commit/7dff5630dfd482a828c45611f129c432b94908de))
+
+
+### Bug Fixes
+
+* [#952](https://github.com/themesberg/flowbite-svelte/issues/952) multiselect ([#954](https://github.com/themesberg/flowbite-svelte/issues/954)) ([cd37db1](https://github.com/themesberg/flowbite-svelte/commit/cd37db16d97884171f059273be9c62f260777c9b))
+* [#958](https://github.com/themesberg/flowbite-svelte/issues/958) ([#959](https://github.com/themesberg/flowbite-svelte/issues/959)) ([e238349](https://github.com/themesberg/flowbite-svelte/commit/e238349576f535122e87f09ded63a76b831ffc98))
+* border color on popup examples ([#969](https://github.com/themesberg/flowbite-svelte/issues/969)) ([049d1a3](https://github.com/themesberg/flowbite-svelte/commit/049d1a3604d1b9c44719f9b998c611b1ea633073))
+* docs typo - tooltip type ([#956](https://github.com/themesberg/flowbite-svelte/issues/956)) ([cde7b8e](https://github.com/themesberg/flowbite-svelte/commit/cde7b8e9a5c8cbccfa6d4f6ed0c59e9aa8ea6f6f))
+* events for gradient button ([#967](https://github.com/themesberg/flowbite-svelte/issues/967)) ([fda337b](https://github.com/themesberg/flowbite-svelte/commit/fda337ba28ad6081bb15ab93108b699d8ab001c0))
+
+
+* accordion color option ([#948](https://github.com/themesberg/flowbite-svelte/issues/948)) ([9c2305b](https://github.com/themesberg/flowbite-svelte/commit/9c2305bb6168e7b658489a8b0055deaad241fd0f))
+
+### [0.40.2](https://github.com/themesberg/flowbite-svelte/compare/v0.40.1...v0.40.2) (2023-07-24)
+
+
+### Features
+
+* allow customization of body class in Modal component ([#945](https://github.com/themesberg/flowbite-svelte/issues/945)) ([72514ec](https://github.com/themesberg/flowbite-svelte/commit/72514ec631712d2c6bf9b94515f0a76b23759706))
+* allow customization of innerWrapperClass for Textarea ([#929](https://github.com/themesberg/flowbite-svelte/issues/929)) ([8869fbf](https://github.com/themesberg/flowbite-svelte/commit/8869fbfe36dd012ff653b5dba522119927897e2a))
+
+
+### Bug Fixes
+
+* [#937](https://github.com/themesberg/flowbite-svelte/issues/937) ([#943](https://github.com/themesberg/flowbite-svelte/issues/943)) ([442ab65](https://github.com/themesberg/flowbite-svelte/commit/442ab650ca14fd75094dcb85f2774f714be4394b))
+* Added events to BottomNavHeaderItem ([#941](https://github.com/themesberg/flowbite-svelte/issues/941)) ([ebdcbeb](https://github.com/themesberg/flowbite-svelte/commit/ebdcbebed7737b26ff0552e964149b8de05771d4))
+* Added z-50 to dropdown container so it always stays on top ([#942](https://github.com/themesberg/flowbite-svelte/issues/942)) ([e3de343](https://github.com/themesberg/flowbite-svelte/commit/e3de343fae29257e8588c8515eaaa5e6521a2488))
+* **dropzone:** fixes dragging file over the input ([#919](https://github.com/themesberg/flowbite-svelte/issues/919)) ([5f02261](https://github.com/themesberg/flowbite-svelte/commit/5f02261a36a22e48e4f0fa3c5a0fe47f65eb2ccc))
+* paragraph page ([98b2dab](https://github.com/themesberg/flowbite-svelte/commit/98b2dabe767cc3e8afa652bd0706dd590997bba6))
+
+### [0.40.1](https://github.com/themesberg/flowbite-svelte/compare/v0.39.3...v0.40.1) (2023-07-17)
+
+
+### Bug Fixes
+
+* [#931](https://github.com/themesberg/flowbite-svelte/issues/931) ([#932](https://github.com/themesberg/flowbite-svelte/issues/932)) ([d56bc55](https://github.com/themesberg/flowbite-svelte/commit/d56bc5561f33d2f7b8c9df647b28b222b0ea6a47))
+
+### [0.39.3](https://github.com/themesberg/flowbite-svelte/compare/v0.39.2...v0.39.3) (2023-07-14)
+
+
+### Features
+
+* pagination large ([#895](https://github.com/themesberg/flowbite-svelte/issues/895)) ([a5cd87a](https://github.com/themesberg/flowbite-svelte/commit/a5cd87a2bfed6ce25c39969be401458dda2259c3))
+
+
+### Bug Fixes
+
+* [#905](https://github.com/themesberg/flowbite-svelte/issues/905) ([#913](https://github.com/themesberg/flowbite-svelte/issues/913)) ([85d8d43](https://github.com/themesberg/flowbite-svelte/commit/85d8d43b7b69c3d9050a56dca6d947f4dcc047b2))
+* [#909](https://github.com/themesberg/flowbite-svelte/issues/909) ([#911](https://github.com/themesberg/flowbite-svelte/issues/911)) ([85b10d1](https://github.com/themesberg/flowbite-svelte/commit/85b10d16c430fea282e4cdb977003a710e6c552b))
+* [#910](https://github.com/themesberg/flowbite-svelte/issues/910) ([#912](https://github.com/themesberg/flowbite-svelte/issues/912)) ([ccaa4b6](https://github.com/themesberg/flowbite-svelte/commit/ccaa4b6772a3d8b24aba0a8fc4a1e25c148f9e86))
+* initial dark mode ([#924](https://github.com/themesberg/flowbite-svelte/issues/924)) ([103bf6a](https://github.com/themesberg/flowbite-svelte/commit/103bf6a7ab1eb24003c09ac93fff574d4ae170ad))
+* **Input:** Use a reactive spread instead of custom action to set Input `type` attribute ([#921](https://github.com/themesberg/flowbite-svelte/issues/921)) ([165e273](https://github.com/themesberg/flowbite-svelte/commit/165e273357efa57d35e8f7a268ad5bc5e725d565))
+* playwright and lint yaml 1.36.0 ([4c96d64](https://github.com/themesberg/flowbite-svelte/commit/4c96d6497224cbfc30bbb4cdfedf6fd4f44d1f47))
+* use reactive spread ([#927](https://github.com/themesberg/flowbite-svelte/issues/927)) ([a743782](https://github.com/themesberg/flowbite-svelte/commit/a743782a0430680dea1ce072664494db886834fd))
+* workaround for scroll to anchor ([#923](https://github.com/themesberg/flowbite-svelte/issues/923)) ([0091171](https://github.com/themesberg/flowbite-svelte/commit/0091171a7544b90ced1492039518d4932d62a3a6))
+
 ### [0.39.2](https://github.com/themesberg/flowbite-svelte/compare/v0.39.1...v0.39.2) (2023-07-03)
 
 

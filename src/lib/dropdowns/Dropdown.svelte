@@ -1,14 +1,24 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
   import Popper from '$lib/utils/Popper.svelte';
+  import type { ComponentProps } from 'svelte';
 
   export let open: boolean = false;
+  export let containerClass: string = 'divide-y z-50';
   export let headerClass: string = 'py-1 overflow-hidden rounded-t-lg';
-  export let ulClass: string = 'py-1 w-44';
   export let footerClass: string = 'py-1 overflow-hidden rounded-b-lg';
 
+  // propagate props type from underlying Frame
+  interface $$Props extends ComponentProps<Popper> {
+    open?: boolean;
+    containerClass?: string;
+    headerClass?: string;
+    footerClass?: string;
+  }
+
+  let containerCls: string = twMerge(containerClass, $$props.classContainer);
   let headerCls: string = twMerge(headerClass, $$props.classHeader);
-  let ulCls: string = twMerge(ulClass, $$props.classUl);
+  let ulCls: string = twMerge('py-1', $$props.class);
   let footerCls: string = twMerge(footerClass, $$props.classFooter);
 
   $: {
@@ -20,19 +30,15 @@
     $$restProps.shadow = $$restProps.shadow ?? true;
     $$restProps.rounded = $$restProps.rounded ?? true;
   }
-
-  let popoverClass: string;
-
-  $: popoverClass = twMerge('divide-y divide-gray-100 dark:divide-gray-600', $$props.class);
 </script>
 
-<Popper activeContent {...$$restProps} class={popoverClass} on:show bind:open>
+<Popper activeContent {...$$restProps} class={containerCls} on:show bind:open>
   {#if $$slots.header}
     <div class={headerCls}>
       <slot name="header" />
     </div>
   {/if}
-  <ul class={$$props.class ?? ulCls}>
+  <ul class={ulCls}>
     <slot />
   </ul>
   {#if $$slots.footer}
@@ -72,6 +78,7 @@
   - Events
   ## Props
   @prop open: boolean = false;
+  @prop containerClass: string = 'divide-y z-50';
   @prop headerClass: string = 'py-1 overflow-hidden rounded-t-lg';
   @prop ulClass: string = 'py-1 w-44';
   @prop footerClass: string = 'py-1 overflow-hidden rounded-b-lg';
@@ -80,7 +87,7 @@
   <script>
     import { Button, Dropdown, DropdownItem, Chevron } from 'flowbite-svelte'
   </script>
-  
+
   <Button><Chevron>Dropdown button</Chevron></Button>
   <Dropdown >
     <DropdownItem>Dashboard</DropdownItem>

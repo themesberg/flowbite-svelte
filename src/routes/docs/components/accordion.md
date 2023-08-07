@@ -86,7 +86,7 @@ Use the `open` prop to make an item open on mount.
 
 ## Color option
 
-You can control the look and feel of `AccordionItems` by overwriting the `activeClasses` and `inactiveClasses` properties. You can define them in `Accordion` so that they will apply to all children or set them individually on each `AccordionItem`.
+You can control the look and feel of `AccordionItems` by overwriting the `activeClass` and `inactiveClass` properties. You can define them in `Accordion` so that they will apply to all children or set them individually on each `AccordionItem`.
 
 ```svelte example hideScript
 <script>
@@ -94,8 +94,8 @@ You can control the look and feel of `AccordionItems` by overwriting the `active
 </script>
 
 <Accordion
-  activeClasses="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800"
-  inactiveClasses="text-gray-500 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800">
+  activeClass="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800"
+  inactiveClass="text-gray-500 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800">
   <AccordionItem class="">
     <span slot="header">Header 2-1</span>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
@@ -240,6 +240,48 @@ The default transition of `AccordionItem`s is <A href="https://svelte.dev/docs#r
   <AccordionItem transitionType="fade" transitionParams="{{ duration: 1000 }}">
     <span slot="header">My Header 3</span>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+  </AccordionItem>
+</Accordion>
+```
+
+## Nesting accordians
+
+Accordions can be nested. All of the mentioned options are supported.
+
+```svelte example hideScript
+<script>
+  import {AccordionItem, Accordion} from 'flowbite-svelte'
+</script>
+<Accordion>
+  <AccordionItem open>
+    <span slot="header">My Header 1</span>
+    <Accordion>
+      <AccordionItem>
+        <span slot="header">My Header 1</span>
+        <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+        <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
+      </AccordionItem>
+      <AccordionItem>
+        <span slot="header">My Header 2</span>
+        <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+        <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+        <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
+        <ul class="list-disc pl-5 dark:text-gray-400 text-gray-500">
+          <li><a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline" >Lorem ipsum</a></li>
+          <li><a href="https://tailwindui.com/" rel="noreferrer" target="_blank"  class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
+        </ul>
+      </AccordionItem>
+    </Accordion>
+  </AccordionItem>
+  <AccordionItem>
+    <span slot="header">My Header 2</span>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
+    <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
+    <ul class="list-disc pl-5 dark:text-gray-400 text-gray-500">
+      <li><a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline" >Lorem ipsum</a></li>
+      <li><a href="https://tailwindui.com/" rel="noreferrer" target="_blank"  class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
+    </ul>
   </AccordionItem>
 </Accordion>
 ```

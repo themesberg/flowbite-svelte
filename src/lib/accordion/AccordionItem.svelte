@@ -73,6 +73,13 @@
     !open && (ctx.flush ? textFlushDefault : inactiveCls || ctx.inactiveClass),
     $$props.class
   ]);
+
+  $: contentClass = twMerge([
+    ctx.flush ? paddingFlush : paddingDefault,
+    ctx.flush ? '' : borderOpenClass,
+    borderBottomClass,
+    borderSharedClass
+  ]);
 </script>
 
 <h2 class="group">
@@ -87,10 +94,13 @@
 </h2>
 {#if open}
   <div transition:multiple={transitionParams}>
-    <div
-      class="{ctx.flush ? paddingFlush : paddingDefault} {ctx.flush
-        ? ''
-        : borderOpenClass} {borderBottomClass} {borderSharedClass}">
+    <div class={contentClass}>
+      <slot />
+    </div>
+  </div>
+{:else}
+  <div class="hidden">
+    <div class={contentClass}>
       <slot />
     </div>
   </div>

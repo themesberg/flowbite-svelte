@@ -9,6 +9,7 @@
     ["textOutside", "boolean", "false"],
     ["id", "string", "generateId()"],
     ["name", "string", "'Open actions menu'"],
-    ["gradient", "boolean", "false"]
+    ["gradient", "boolean", "false"],
+    ["open", "boolean", "false"]
   ]
 }
