@@ -24,7 +24,7 @@ Import a badge component in the script tag.
 
 ```svelte example hideOutput
 <script>
-	import { Badge } from 'flowbite-svelte';
+  import { Badge } from 'flowbite-svelte';
 </script>
 ```
 
@@ -34,8 +34,9 @@ Use the following badge elements to indicate counts or labels inside or outside 
 
 ```svelte example class="flex flex-wrap gap-2" hideScript
 <script>
-	import { Badge } from 'flowbite-svelte';
+  import { Badge } from 'flowbite-svelte';
 </script>
+
 <Badge>Default</Badge>
 <Badge color="dark">Dark</Badge>
 <Badge color="red">Red</Badge>
@@ -52,8 +53,9 @@ Use the `large` prop to create a large variant of the badges.
 
 ```svelte example class="flex flex-wrap gap-2" hideScript
 <script>
-	import { Badge } from 'flowbite-svelte';
+  import { Badge } from 'flowbite-svelte';
 </script>
+
 <Badge large>Default</Badge>
 <Badge large color="dark">Dark</Badge>
 <Badge large color="red">Red</Badge>
@@ -70,8 +72,9 @@ Use the `border` prop to add a border accent to the badge component.
 
 ```svelte example class="flex flex-wrap gap-2" hideScript
 <script>
-	import { Badge } from 'flowbite-svelte';
+  import { Badge } from 'flowbite-svelte';
 </script>
+
 <Badge border>Default</Badge>
 <Badge border color="dark">Dark</Badge>
 <Badge border color="red">Red</Badge>
@@ -88,8 +91,9 @@ Use the `rounded` prop to make the corners even more rounded like pills for the 
 
 ```svelte example class="flex flex-wrap gap-2" hideScript
 <script>
-	import { Badge } from 'flowbite-svelte';
+  import { Badge } from 'flowbite-svelte';
 </script>
+
 <Badge rounded>Default</Badge>
 <Badge rounded color="dark">Dark</Badge>
 <Badge rounded color="red">Red</Badge>
@@ -106,8 +110,9 @@ You can also use badges as anchor elements to link to another page.
 
 ```svelte example class="flex flex-wrap gap-2" hideScript
 <script>
-	import { Badge } from 'flowbite-svelte';
+  import { Badge } from 'flowbite-svelte';
 </script>
+
 <Badge href="/">Badge link</Badge>
 <Badge href="/" large>Badge link</Badge>
 <Badge href="/" border>Badge link</Badge>
@@ -118,16 +123,18 @@ You can also use badges as anchor elements to link to another page.
 
 You can also use SVG icons inside the badge elements.
 
-```svelte example class="flex flex-wrap gap-2" hideScript
+```svelte example class="flex flex-wrap gap-2"
 <script>
-	import { Badge } from 'flowbite-svelte';
+  import { Badge } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
+
 <Badge color="dark" border>
-  <svg aria-hidden="true" class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
+  <Icon name="clock-solid" class="w-2.5 h-2.5 mr-1.5" />
   3 days ago
 </Badge>
 <Badge border>
-  <svg aria-hidden="true" class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
+  <Icon name="clock-solid" class="text-primary-800 dark:text-primary-400 w-2.5 h-2.5 mr-1.5" />
   2 minutes ago
 </Badge>
 ```
@@ -138,23 +145,24 @@ To achive the functionality of the notification badge, use the sibling [`Indicat
 
 ```svelte example class="flex flex-wrap gap-4"
 <script>
-	import { Badge, Button, Indicator} from 'flowbite-svelte';
+  import { Button, Indicator } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
-<Button class="relative" size='sm'>
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+<Button class="relative" size="sm">
+  <Icon name="envelope-solid" class="text-white dark:text-white" />
   <span class="sr-only">Notifications</span>
   <Indicator color="blue" border size="xl" placement="top-right" class="text-xs font-bold">18</Indicator>
 </Button>
 
-<Button class="relative" size='sm'>
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+<Button class="relative" size="sm">
+  <Icon name="envelope-solid" class="text-white dark:text-white" />
   <span class="sr-only">Notifications</span>
   <Indicator color="red" border size="xl" placement="top-right" class="text-xs font-bold">20</Indicator>
 </Button>
 
-<Button class="relative" size='sm'>
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+<Button class="relative" size="sm">
+  <Icon name="envelope-solid" class="text-white dark:text-white" />
   <span class="sr-only">Notifications</span>
   <Indicator color="dark" border size="xl" placement="bottom-right" class="text-xs font-bold">20</Indicator>
 </Button>
@@ -166,14 +174,12 @@ Use this example to add a badge inside a button component for a count indicator.
 
 ```svelte example class="flex flex-wrap gap-4"
 <script>
-	import { Badge, Button } from 'flowbite-svelte';
+  import { Badge, Button } from 'flowbite-svelte';
 </script>
 
 <Button>
   Messages
-  <Badge rounded class="w-4 h-4 ml-2 p-0 font-semibold text-primary-800 bg-white dark:text-primary-800 dark:bg-white">
-    2
-  </Badge>
+  <Badge rounded class="w-4 h-4 ml-2 p-0 font-semibold text-primary-800 bg-white dark:text-primary-800 dark:bg-white">2</Badge>
 </Button>
 ```
 
@@ -183,22 +189,16 @@ Alternatively you can also use badges which indicate only a SVG icon.
 
 ```svelte example hideScript
 <script>
-	import { Badge } from 'flowbite-svelte';
+  import { Badge } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
+
 <Badge color="dark" rounded large class="!p-1 !font-semibold">
-  <svg aria-hidden="true" class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+  <Icon name="check-outline" class="h-3 w-3" />
   <span class="sr-only">Icon description</span>
 </Badge>
 <Badge rounded large class="!p-1 !font-semibold">
-  <svg aria-hidden="true" class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-  <span class="sr-only">Icon description</span>
-</Badge>
-<Badge color="dark" rounded large class="!p-1.5 !font-semibold">
-  <svg aria-hidden="true" class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-  <span class="sr-only">Icon description</span>
-</Badge>
-<Badge rounded large class="!p-1.5 !font-semibold">
-  <svg aria-hidden="true" class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+  <Icon name="check-outline" class="h-3 w-3 text-primary-800 dark:text-primary-400" />
   <span class="sr-only">Icon description</span>
 </Badge>
 ```
@@ -209,7 +209,7 @@ Use the `dimissable` prop to dismiss the current badge.
 
 ```svelte example class="flex flex-wrap gap-4" hideScript
 <script>
-	import { Badge } from 'flowbite-svelte';
+  import { Badge } from 'flowbite-svelte';
 </script>
 
 <Badge dismissable large>Default</Badge>
@@ -224,15 +224,16 @@ Use the `dimissable` prop to dismiss the current badge.
 
 Use the `close-button` slot to add your desired button. Don't forget to use the slot prop `close` to dismiss your badge.
 
-```svelte example class="gap-4" hideScript
+```svelte example class="gap-4"
 <script>
-	import { Badge } from 'flowbite-svelte';
+  import { Badge } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
 <Badge dismissable>
   Default
   <button slot="close-button" let:close on:click={close} type="button" class="inline-flex items-center rounded-full p-0.5 my-0.5 ml-1.5 -mr-1.5 text-sm bg-primary-500 dark:bg-primary-400 text-white dark:text-primary-800 hover:bg-primary-900 hover:text-white dark:hover:bg-red-900 dark:hover:text-yellow-300" aria-label="Remove">
-    <svg aria-hidden="true" class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+    <Icon name="close-circle-solid" class="h-4 w-4" />
     <span class="sr-only">Remove badge</span>
   </button>
 </Badge>
@@ -242,11 +243,11 @@ A `dismiss` event will be dispatched during the dismissal, listen to it if neede
 
 ```svelte example class="gap-4"
 <script>
-	import { Badge } from 'flowbite-svelte';
+  import { Badge } from 'flowbite-svelte';
 
   function handleDismiss(event) {
-		alert('Badge dismissed');
-	}
+    alert('Badge dismissed');
+  }
 </script>
 
 <Badge dismissable large on:dismiss={handleDismiss}>Default</Badge>
@@ -256,7 +257,7 @@ A `dismiss` event will be dispatched during the dismissal, listen to it if neede
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-- Use the `class` prop to overwrite  the default class.
+- Use the `class` prop to overwrite the default class.
 
 <TableProp>
   <TableDefaultRow items={badgeProps} rowState='hover' />

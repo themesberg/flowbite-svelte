@@ -11,30 +11,11 @@
   const context = getContext<NavbarLiType>('navbar') ?? {};
 
   let liClass: string;
-  $: liClass = twMerge(
-    'block py-2 pr-4 pl-3 md:p-0 rounded md:border-0',
-    active ? activeClass ?? context.activeClass : nonActiveClass ?? context.nonActiveClass,
-    $$props.class
-  );
+  $: liClass = twMerge('block py-2 pr-4 pl-3 md:p-0 rounded md:border-0', active ? activeClass ?? context.activeClass : nonActiveClass ?? context.nonActiveClass, $$props.class);
 </script>
 
 <li>
-  <svelte:element
-    this={href ? 'a' : 'div'}
-    role={href ? undefined : 'link'}
-    {href}
-    {...$$restProps}
-    on:blur
-    on:change
-    on:click
-    on:focus
-    on:keydown
-    on:keypress
-    on:keyup
-    on:mouseenter
-    on:mouseleave
-    on:mouseover
-    class={liClass}>
+  <svelte:element this={href ? 'a' : 'div'} role={href ? undefined : 'link'} {href} {...$$restProps} on:blur on:change on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover class={liClass}>
     <slot />
   </svelte:element>
 </li>

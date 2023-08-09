@@ -14,8 +14,7 @@
   export let data: PageData;
 
   let title = 'Flowbite Svelte - UI Component Library';
-  let description =
-    'Flowbite Svelte is an open-source UI component library built with Svelte components, Tailwind CSS utility classes and based on the Flowbite design system and components.';
+  let description = 'Flowbite Svelte is an open-source UI component library built with Svelte components, Tailwind CSS utility classes and based on the Flowbite design system and components.';
   let default_title = 'Svelte UI Components';
   const image = `https://open-graph-vercel.vercel.app/api/flowbite-svelte?title=${default_title}`;
 </script>

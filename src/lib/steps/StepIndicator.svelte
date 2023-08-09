@@ -4,18 +4,7 @@
   export let steps: string[] = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];
   export let currentStep = 1;
   export let size: string = 'h-2.5';
-  export let color:
-    | 'primary'
-    | 'secondary'
-    | 'gray'
-    | 'red'
-    | 'yellow'
-    | 'green'
-    | 'indigo'
-    | 'purple'
-    | 'pink'
-    | 'blue'
-    | 'custom' = 'primary';
+  export let color: 'primary' | 'secondary' | 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'custom' = 'primary';
   export let glow: boolean = false;
   export let hideLabel: boolean = false;
   export let completedCustom: string = '';
@@ -59,11 +48,7 @@
         <div class="relative w-full h-full">
           <div class={twJoin('relative w-full h-full rounded-sm', currentStepColors[color])} />
           {#if glow}
-            <div
-              class={twJoin(
-                'absolute -inset-1 rounded-sm blur opacity-30 dark:opacity-25',
-                currentStepColors[color]
-              )} />
+            <div class={twJoin('absolute -inset-1 rounded-sm blur opacity-30 dark:opacity-25', currentStepColors[color])} />
           {/if}
         </div>
       {:else if i < currentStep - 1}

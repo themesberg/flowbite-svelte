@@ -23,28 +23,10 @@
   $: wrapperClass = twMerge(full && 'border-y w-full', $$props.class);
 
   let ulCls: string;
-  $: ulCls = twMerge(
-    ulClass,
-    full && $$slots.extra ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-3',
-    'text-sm font-medium',
-    full && $$slots.extra && 'md:w-2/3',
-    $$props.classUl
-  );
+  $: ulCls = twMerge(ulClass, full && $$slots.extra ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-3', 'text-sm font-medium', full && $$slots.extra && 'md:w-2/3', $$props.classUl);
 </script>
 
-<Popper
-  color={full ? 'default' : 'dropdown'}
-  border={!full}
-  rounded={!full}
-  activeContent
-  arrow={false}
-  trigger="click"
-  placement="bottom"
-  yOnly={full}
-  {...$$restProps}
-  class={wrapperClass}
-  on:show
-  bind:open>
+<Popper color={full ? 'default' : 'dropdown'} border={!full} rounded={!full} activeContent arrow={false} trigger="click" placement="bottom" yOnly={full} {...$$restProps} class={wrapperClass} on:show bind:open>
   <div class="flex flex-col md:flex-row p-4 max-w-screen-md justify-center mx-auto mt-2">
     <ul class={ulCls}>
       {#each items as item, index}
@@ -76,7 +58,8 @@
   ## Example
   ```
   <script>
-    import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, Chevron, MegaMenu } from 'flowbite-svelte'
+    import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from 'flowbite-svelte';
+    import { Icon } from 'flowbite-svelte-icons';
     let menu = [
       {name: 'About us', href: '/about'},
       {name: 'Blog', href: '/blog'},
@@ -91,7 +74,7 @@
       {name: 'License', href: '/license'},
     ];
   </script>
-  
+
   <Navbar let:hidden let:toggle>
     <NavBrand href="/">
       <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
@@ -100,9 +83,9 @@
     <NavHamburger on:click={toggle} />
     <NavUl {hidden}>
       <NavLi href="/">Home</NavLi>
-      <NavLi><Chevron aligned>Mega menu</Chevron></NavLi>
+      <NavLi class="cursor-pointer">Mega menu<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
       <MegaMenu items={menu} let:item>
-        <a href={item.href} class="hover:text-blue-600 dark:hover:text-blue-500">{item.name}</a>
+        <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
       </MegaMenu>
       <NavLi href="/services">Services</NavLi>
       <NavLi href="/services">Products</NavLi>

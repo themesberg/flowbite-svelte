@@ -5,10 +5,8 @@
   export let size: string = 'h-2.5';
   export let labelInside: boolean = false;
   export let labelOutside: string = '';
-  export let color: 'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo' =
-    'primary';
-  export let labelInsideClass: string =
-    'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
+  export let color: 'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo' = 'primary';
+  export let labelInsideClass: string = 'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
   export let divClass: string = 'w-full bg-gray-200 rounded-full dark:bg-gray-700';
 
   // let barColor: string;

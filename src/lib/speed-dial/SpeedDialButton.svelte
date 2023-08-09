@@ -13,17 +13,11 @@
   export let tooltip: Placement | 'none' = context.tooltip;
   export let pill: boolean = context.pill;
   export let textOutside: boolean = context.textOutside;
-  export let textOutsideClass: string =
-    'block absolute -left-14 top-1/2 mb-px text-sm font-medium -translate-y-1/2';
+  export let textOutsideClass: string = 'block absolute -left-14 top-1/2 mb-px text-sm font-medium -translate-y-1/2';
   export let textDefaultClass: string = 'block mb-px text-xs font-medium';
 
   let btnClass: string;
-  $: btnClass = twMerge(
-    btnDefaultClass,
-    tooltip === 'none' && 'flex-col',
-    textOutside && 'relative',
-    $$props.class
-  );
+  $: btnClass = twMerge(btnDefaultClass, tooltip === 'none' && 'flex-col', textOutside && 'relative', $$props.class);
 </script>
 
 <Button {pill} outline color="light" {...$$restProps} class={btnClass} on:click>

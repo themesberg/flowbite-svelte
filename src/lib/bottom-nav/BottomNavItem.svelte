@@ -9,38 +9,24 @@
   export let activeClass: string | undefined = undefined;
   export let active: boolean = false;
 
-  const navType:
-    | 'default'
-    | 'border'
-    | 'application'
-    | 'pagination'
-    | 'group'
-    | 'card'
-    | 'meeting'
-    | 'video' = getContext('navType');
+  const navType: 'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video' = getContext('navType');
 
   const context = getContext<BottomNavLiType>('bottomNavType') ?? {};
 
   const btnClasses: ButtonClassesTypes = {
-    default:
-      'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
-    border:
-      'inline-flex flex-col items-center justify-center px-5 border-gray-200 border-x hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600',
+    default: 'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
+    border: 'inline-flex flex-col items-center justify-center px-5 border-gray-200 border-x hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600',
     application: '',
-    pagination:
-      'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
-    group:
-      'inline-flex flex-col items-center justify-center p-4 hover:bg-gray-50 dark:hover:bg-gray-800 group',
+    pagination: 'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
+    group: 'inline-flex flex-col items-center justify-center p-4 hover:bg-gray-50 dark:hover:bg-gray-800 group',
     card: 'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
     meeting: '',
     video: ''
   };
 
   const spanClasses: ButtonClassesTypes = {
-    default:
-      'text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500',
-    border:
-      'text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500',
+    default: 'text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500',
+    border: 'text-sm text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500',
     application: 'sr-only',
     pagination: 'sr-only',
     group: 'sr-only',
@@ -51,38 +37,16 @@
 
   const appBtnClasses = {
     left: 'inline-flex flex-col items-center justify-center px-5 rounded-l-full hover:bg-gray-50 dark:hover:bg-gray-800 group',
-    middle:
-      'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
-    right:
-      'inline-flex flex-col items-center justify-center px-5 rounded-r-full hover:bg-gray-50 dark:hover:bg-gray-800 group'
+    middle: 'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
+    right: 'inline-flex flex-col items-center justify-center px-5 rounded-r-full hover:bg-gray-50 dark:hover:bg-gray-800 group'
   };
   let btnClass: string;
-  $: btnClass = twMerge(
-    btnClasses[navType],
-    appBtnClasses[appBtnPosition],
-    active && (activeClass ?? context.activeClass),
-    $$props.btnClass
-  );
+  $: btnClass = twMerge(btnClasses[navType], appBtnClasses[appBtnPosition], active && (activeClass ?? context.activeClass), $$props.btnClass);
   let spanClass: string;
-  $: spanClass = twMerge(
-    spanClasses[navType],
-    active && (activeClass ?? context.activeClass),
-    $$props.spanClass
-  );
+  $: spanClass = twMerge(spanClasses[navType], active && (activeClass ?? context.activeClass), $$props.spanClass);
 </script>
 
-<button
-  {...$$restProps}
-  class={btnClass}
-  aria-label={btnName}
-  on:click
-  on:change
-  on:keydown
-  on:keyup
-  on:focus
-  on:blur
-  on:mouseenter
-  on:mouseleave>
+<button {...$$restProps} class={btnClass} aria-label={btnName} on:click on:change on:keydown on:keyup on:focus on:blur on:mouseenter on:mouseleave>
   <slot />
   <span class={spanClass}>{btnName}</span>
 </button>

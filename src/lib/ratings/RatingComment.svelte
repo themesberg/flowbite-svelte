@@ -32,8 +32,9 @@
     <div class="space-y-1 font-medium dark:text-white">
       <p>
         {comment.user.name}
-        <time datetime="2014-08-16 19:00" class="block text-sm text-gray-500 dark:text-gray-400"
-          >{comment.user.joined}</time>
+        <time datetime="2014-08-16 19:00" class="block text-sm text-gray-500 dark:text-gray-400">
+          {comment.user.joined}
+        </time>
       </p>
     </div>
   </div>
@@ -65,10 +66,7 @@
           <Button size="xs" href="/" color="dark">Helpful</Button>
         {/if}
         {#if abuselink}
-          <a
-            href={abuselink}
-            class="pl-4 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
-            >Report abuse</a>
+          <a href={abuselink} class="pl-4 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"> Report abuse </a>
         {/if}
       </div>
     {/if}

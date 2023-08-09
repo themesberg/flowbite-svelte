@@ -51,7 +51,7 @@ You can use choose between dark and light version styles for the tooltip compone
 <Button id="type-light">Light tooltip</Button>
 <Button id="type-auto">Default tooltip</Button>
 <Button id="type-dark">Dark tooltip</Button>
-<Tooltip {type} triggeredBy="[id^='type-']" on:show={ev => type = ev.target.id.split('-')[1]}>Tooltip content</Tooltip>
+<Tooltip {type} triggeredBy="[id^='type-']" on:show={(ev) => (type = ev.target.id.split('-')[1])}>Tooltip content</Tooltip>
 ```
 
 ## Placement
@@ -70,7 +70,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 <Button id="placement-top">Tooltip top</Button>
 <Button id="placement-bottom">Tooltip bottom</Button>
 <Button id="placement-right">Tooltip right</Button>
-<Tooltip triggeredBy="[id^='placement-']" {placement} on:show={(e)=> [, placement] = e.target.id.split('-')}>
+<Tooltip triggeredBy="[id^='placement-']" {placement} on:show={(e) => ([, placement] = e.target.id.split('-'))}>
   Tooltip content - {placement}
 </Tooltip>
 ```
@@ -96,7 +96,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 </script>
 
 <Button id="disable-arrow">Default tooltip</Button>
-<Tooltip arrow={false} triggeredBy='#disable-arrow'>Tooltip content</Tooltip>
+<Tooltip arrow={false} triggeredBy="#disable-arrow">Tooltip content</Tooltip>
 ```
 
 ## External reference
@@ -125,6 +125,7 @@ If you need the tooltip to be attached to the other element then the tiggering o
 Various color palettes can be set for a tooltip by using the `color` property from the underlying `Frame` component.
 (Setting `color` prop sets the `type` to `custom` implicitly.)
 
+
 When you want to add a fully custom styles, use `type="custom"`, `defaultClass`, and `class` to modify the tooltip styling.
 
 ```svelte example class="flex items-center h-64 gap-2"
@@ -133,10 +134,10 @@ When you want to add a fully custom styles, use `type="custom"`, `defaultClass`,
 </script>
 
 <Button>Green tooltip</Button>
-<Tooltip  color="green">Tooltip content</Tooltip>
+<Tooltip color="green">Tooltip content</Tooltip>
 
 <Button>Yellow tooltip</Button>
-<Tooltip  color="yellow">Tooltip content</Tooltip>
+<Tooltip color="yellow">Tooltip content</Tooltip>
 
 <Button>Custom type</Button>
 <Tooltip

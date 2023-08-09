@@ -68,22 +68,28 @@ In the provided code below, you can customize the primary color by modifying the
 
 ```js
 const config = {
-  content: [
-    "./src/**/*.{html,js,svelte,ts}",
-    "./node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}",
-  ],
+  content: ['./src/**/*.{html,js,svelte,ts}', './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'],
 
-  plugins: [
-    require('flowbite/plugin')
-  ],
+  plugins: [require('flowbite/plugin')],
 
   darkMode: 'class',
-  
+
   theme: {
     extend: {
       colors: {
         // flowbite-svelte
-        primary: { 50: '#FFF5F2', 100: '#FFF1EE', 200: '#FFE4DE', 300: '#FFD5CC', 400: '#FFBCAD', 500: '#FE795D', 600: '#EF562F', 700: '#EB4F27', 800: '#CC4522', 900: '#A5371B'},
+        primary: {
+          50: '#FFF5F2',
+          100: '#FFF1EE',
+          200: '#FFE4DE',
+          300: '#FFD5CC',
+          400: '#FFBCAD',
+          500: '#FE795D',
+          600: '#EF562F',
+          700: '#EB4F27',
+          800: '#CC4522',
+          900: '#A5371B'
+        }
       }
     }
   }
@@ -94,19 +100,20 @@ module.exports = config;
 
 Now you should be able to work with the Flowbite Svelte library and import components such as the navbar, dropdown, modal, and more.
 
-<div class="h-8" />    
+<div class="h-8" />
 
 Now you are ready to go! Add the following to `src/routes/+page.svelte` and if you see the following image, then your setting is complete.
 
-```svelte example 
+```svelte example
 <script>
-	import { Alert } from 'flowbite-svelte';
+  import { Alert } from 'flowbite-svelte';
 </script>
 
 <div class="p-8">
-	<Alert>
-		<span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
-	</Alert>
+  <Alert>
+    <span class="font-medium">Info alert!</span>
+    Change a few things up and try submitting again.
+  </Alert>
 </div>
 ```
 

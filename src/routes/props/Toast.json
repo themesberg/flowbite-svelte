@@ -4,11 +4,7 @@
     ["color", "string", ""],
     ["position", "'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none'", "'none'"],
     ["open", "boolean", "true"],
-    [
-      "divClass",
-      "string",
-      "'w-full max-w-xs p-4 text-gray-500 bg-white shadow dark:text-gray-400 dark:bg-gray-800 gap-3'"
-    ],
+    ["divClass", "string", "'w-full max-w-xs p-4 text-gray-500 bg-white shadow dark:text-gray-400 dark:bg-gray-800 gap-3'"],
     ["defaultIconClass", "string", "'w-8 h-8'"],
     ["contentClass", "string", "'w-full text-sm font-normal'"],
     ["align", "boolean", "true"]

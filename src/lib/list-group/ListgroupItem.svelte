@@ -9,12 +9,9 @@
   export let currentClass: string = 'text-white bg-primary-700 dark:text-white dark:bg-gray-800';
   export let normalClass: string = '';
   export let disabledClass: string = 'text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400';
-  export let focusClass: string =
-    'focus:z-40 focus:outline-none focus:ring-2 focus:ring-primary-700 focus:text-primary-700 dark:focus:ring-gray-500 dark:focus:text-white';
-  export let hoverClass: string =
-    'hover:bg-gray-100 hover:text-primary-700 dark:hover:bg-gray-600 dark:hover:text-white';
-  export let itemDefaultClass: string =
-    'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg';
+  export let focusClass: string = 'focus:z-40 focus:outline-none focus:ring-2 focus:ring-primary-700 focus:text-primary-700 dark:focus:ring-gray-500 dark:focus:text-white';
+  export let hoverClass: string = 'hover:bg-gray-100 hover:text-primary-700 dark:hover:bg-gray-600 dark:hover:text-white';
+  export let itemDefaultClass: string = 'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg';
 
   const states = {
     current: currentClass,
@@ -26,14 +23,7 @@
   $: state = disabled ? 'disabled' : current ? 'current' : 'normal';
 
   let itemClass: string;
-  $: itemClass = twMerge(
-    itemDefaultClass,
-    states[state],
-    active && state === 'disabled' && 'cursor-not-allowed',
-    active && state === 'normal' && hoverClass,
-    active && state === 'normal' && focusClass,
-    $$props.class
-  );
+  $: itemClass = twMerge(itemDefaultClass, states[state], active && state === 'disabled' && 'cursor-not-allowed', active && state === 'normal' && hoverClass, active && state === 'normal' && focusClass, $$props.class);
 </script>
 
 {#if !active}
@@ -41,20 +31,7 @@
     <slot item={$$props} />
   </li>
 {:else if href}
-  <a
-    {href}
-    class="block {itemClass}"
-    aria-current={current}
-    on:blur
-    on:change
-    on:click
-    on:focus
-    on:keydown
-    on:keypress
-    on:keyup
-    on:mouseenter
-    on:mouseleave
-    on:mouseover>
+  <a {href} class="block {itemClass}" aria-current={current} on:blur on:change on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover>
     <slot item={$$props} />
   </a>
 {:else}

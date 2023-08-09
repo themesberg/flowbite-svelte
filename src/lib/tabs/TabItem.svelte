@@ -8,8 +8,7 @@
   export let title: string = 'Tab title';
   export let activeClasses: string | undefined = undefined;
   export let inactiveClasses: string | undefined = undefined;
-  export let defaultClass: string =
-    'inline-block text-sm font-medium text-center disabled:cursor-not-allowed';
+  export let defaultClass: string = 'inline-block text-sm font-medium text-center disabled:cursor-not-allowed';
 
   const ctx = getContext<TabCtxType>('ctx') ?? {};
   // single selection
@@ -37,22 +36,7 @@
 </script>
 
 <li class={twMerge('group', $$props.class)} role="presentation">
-  <button
-    type="button"
-    on:click={() => (open = true)}
-    on:blur
-    on:click
-    on:contextmenu
-    on:focus
-    on:keydown
-    on:keypress
-    on:keyup
-    on:mouseenter
-    on:mouseleave
-    on:mouseover
-    role="tab"
-    {...$$restProps}
-    class={buttonClass}>
+  <button type="button" on:click={() => (open = true)} on:blur on:click on:contextmenu on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover role="tab" {...$$restProps} class={buttonClass}>
     <slot name="title">{title}</slot>
   </button>
 

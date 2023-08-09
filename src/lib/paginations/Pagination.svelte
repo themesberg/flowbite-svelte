@@ -5,10 +5,8 @@
   import PaginationItem from './PaginationItem.svelte';
 
   export let pages: LinkType[] = [];
-  export let activeClass: string =
-    'text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white';
-  export let normalClass: string =
-    'text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white';
+  export let activeClass: string = 'text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white';
+  export let normalClass: string = 'text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white';
   export let ulClass: string = 'inline-flex -space-x-px items-center';
   export let table: boolean = false;
   export let large: boolean = false;
@@ -35,22 +33,9 @@
     </li>
     {#each pages as { name, href, active }}
       <li>
-        <PaginationItem
-          {large}
-          {active}
-          {activeClass}
-          {normalClass}
-          {href}
-          on:blur
-          on:change
-          on:click
-          on:focus
-          on:keydown
-          on:keypress
-          on:keyup
-          on:mouseenter
-          on:mouseleave
-          on:mouseover>{name}</PaginationItem>
+        <PaginationItem {large} {active} {activeClass} {normalClass} {href} on:blur on:change on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover>
+          {name}
+        </PaginationItem>
       </li>
     {/each}
     <li>

@@ -85,10 +85,11 @@
   ## Example
   ```
   <script>
-    import { Button, Dropdown, DropdownItem, Chevron } from 'flowbite-svelte'
+    import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
+    import { Icon } from 'flowbite-svelte-icons';
   </script>
 
-  <Button><Chevron>Dropdown button</Chevron></Button>
+  <Button>Dropdown button<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
   <Dropdown >
     <DropdownItem>Dashboard</DropdownItem>
     <DropdownItem>Settings</DropdownItem>

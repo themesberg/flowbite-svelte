@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "0.41.2",
+  "version": "0.42.0",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -43,6 +43,7 @@
     "eslint": "^8.46.0",
     "eslint-config-prettier": "^8.10.0",
     "eslint-plugin-svelte": "^2.32.4",
+    "flowbite-svelte-icons": "^0.3.5",
     "mdsvex": "^0.11.0",
     "mdsvexamples": "^0.3.4",
     "postcss": "^8.4.27",
@@ -707,26 +708,6 @@
       "types": "./dist/typography/Span.svelte.d.ts",
       "svelte": "./dist/typography/Span.svelte"
     },
-    "./Chevron.svelte": {
-      "types": "./dist/utils/Chevron.svelte.d.ts",
-      "svelte": "./dist/utils/Chevron.svelte"
-    },
-    "./ChevronDown.svelte": {
-      "types": "./dist/utils/ChevronDown.svelte.d.ts",
-      "svelte": "./dist/utils/ChevronDown.svelte"
-    },
-    "./ChevronLeft.svelte": {
-      "types": "./dist/utils/ChevronLeft.svelte.d.ts",
-      "svelte": "./dist/utils/ChevronLeft.svelte"
-    },
-    "./ChevronRight.svelte": {
-      "types": "./dist/utils/ChevronRight.svelte.d.ts",
-      "svelte": "./dist/utils/ChevronRight.svelte"
-    },
-    "./ChevronUp.svelte": {
-      "types": "./dist/utils/ChevronUp.svelte.d.ts",
-      "svelte": "./dist/utils/ChevronUp.svelte"
-    },
     "./CloseButton.svelte": {
       "types": "./dist/utils/CloseButton.svelte.d.ts",
       "svelte": "./dist/utils/CloseButton.svelte"
@@ -735,21 +716,9 @@
       "types": "./dist/utils/Frame.svelte.d.ts",
       "svelte": "./dist/utils/Frame.svelte"
     },
-    "./InformationCircle.svelte": {
-      "types": "./dist/utils/InformationCircle.svelte.d.ts",
-      "svelte": "./dist/utils/InformationCircle.svelte"
-    },
-    "./MenuButton.svelte": {
-      "types": "./dist/utils/MenuButton.svelte.d.ts",
-      "svelte": "./dist/utils/MenuButton.svelte"
-    },
     "./Popper.svelte": {
       "types": "./dist/utils/Popper.svelte.d.ts",
       "svelte": "./dist/utils/Popper.svelte"
-    },
-    "./UserCircle.svelte": {
-      "types": "./dist/utils/UserCircle.svelte.d.ts",
-      "svelte": "./dist/utils/UserCircle.svelte"
     },
     "./Wrapper.svelte": {
       "types": "./dist/utils/Wrapper.svelte.d.ts",

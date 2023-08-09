@@ -37,37 +37,19 @@ The timeline component can be used to show series of data in a chronological ord
 ```svelte example
 <script>
   import { Timeline, TimelineItem, Button } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
 <Timeline>
   <TimelineItem title="Application UI code in Tailwind CSS" date="February 2022">
-    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-      Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar,
-      and pre-order E-commerce & Marketing pages.
-    </p>
-    <Button color="alternative"
-      >Learn more<svg
-        class="ml-2 w-3 h-3"
-        fill="currentColor"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-        ><path
-          fill-rule="evenodd"
-          d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-          clip-rule="evenodd" /></svg
-      ></Button>
+    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
+    <Button color="alternative">Learn more<Icon name="arrow-right-outline" class="ml-2 w-3 h-3" /></Button>
   </TimelineItem>
   <TimelineItem title="Application UI code in Tailwind CSS" date="March 2022">
-    <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-      All of the pages and components are first designed in Figma and we keep a parity between the
-      two versions even as we update the project.
-    </p>
+    <p class="text-base font-normal text-gray-500 dark:text-gray-400">All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.</p>
   </TimelineItem>
   <TimelineItem title="Application UI code in Tailwind CSS" date="April 2022">
-    <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-      Get started with dozens of web components and interactive elements built on top of Tailwind
-      CSS.
-    </p>
+    <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements built on top of Tailwind CSS.</p>
   </TimelineItem>
 </Timeline>
 ```
@@ -79,71 +61,33 @@ Use this vertical timeline component with icons and badges to show a more advanc
 ```svelte example
 <script>
   import { Timeline, TimelineItem } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
 <Timeline order="vertical">
   <TimelineItem title="Flowbite Application UI v2.0.0" date="Released on January 13th, 2022">
     <svelte:fragment slot="icon">
-      <span
-        class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-primary-900">
-        <svg
-          aria-hidden="true"
-          class="w-3 h-3 text-primary-600 dark:text-primary-400"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-          ><path
-            fill-rule="evenodd"
-            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-            clip-rule="evenodd" /></svg>
+      <span class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-primary-900">
+        <Icon name="calendar-week-solid" class="w-3 h-3 text-primary-600 dark:text-primary-400" />
       </span>
     </svelte:fragment>
-    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-      Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar,
-      and pre-order E-commerce & Marketing pages.
-    </p>
+    <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
   </TimelineItem>
   <TimelineItem title="Flowbite Figma v1.3.0" date="Released on December 7th, 2021">
     <svelte:fragment slot="icon">
-      <span
-        class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-primary-900">
-        <svg
-          aria-hidden="true"
-          class="w-3 h-3 text-primary-600 dark:text-primary-400"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-          ><path
-            fill-rule="evenodd"
-            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-            clip-rule="evenodd" /></svg>
+      <span class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-primary-900">
+        <Icon name="calendar-week-solid" class="w-3 h-3 text-primary-600 dark:text-primary-400" />
       </span>
     </svelte:fragment>
-    <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-      All of the pages and components are first designed in Figma and we keep a parity between the
-      two versions even as we update the project.
-    </p>
+    <p class="text-base font-normal text-gray-500 dark:text-gray-400">All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.</p>
   </TimelineItem>
   <TimelineItem title="Flowbite Library v1.2.2" date="Released on December 2nd, 2021">
     <svelte:fragment slot="icon">
-      <span
-        class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-primary-900">
-        <svg
-          aria-hidden="true"
-          class="w-3 h-3 text-primary-600 dark:text-primary-400"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-          ><path
-            fill-rule="evenodd"
-            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-            clip-rule="evenodd" /></svg>
+      <span class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-primary-900">
+        <Icon name="calendar-week-solid" class="w-3 h-3 text-primary-600 dark:text-primary-400" />
       </span>
     </svelte:fragment>
-    <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-      Get started with dozens of web components and interactive elements built on top of Tailwind
-      CSS.
-    </p>
+    <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements built on top of Tailwind CSS.</p>
   </TimelineItem>
 </Timeline>
 ```
@@ -155,47 +99,42 @@ Use this horizontally aligned timeline component to show a series of data in a c
 ```svelte example
 <script>
   import { Timeline, TimelineItem } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
 
 <Timeline order="horizontal">
   <TimelineItem title="Flowbite Library v1.0.0" date="Released on December 2nd, 2021">
     <svelte:fragment slot="icon">
-        <div class="flex items-center">
-          <div class="flex z-10 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0">
-              <svg aria-hidden="true" class="w-3 h-3 text-primary-600 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
-          </div>
-          <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
+      <div class="flex items-center">
+        <div class="flex z-10 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+          <Icon name="calendar-week-solid" class="w-3 h-3 text-primary-600 dark:text-primary-400" />
+        </div>
+        <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
       </div>
     </svelte:fragment>
-    <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-      Get started with dozens of web components and interactive elements.
-    </p>
+    <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements.</p>
   </TimelineItem>
   <TimelineItem title="Flowbite Library v1.2.0" date="Released on December 23th, 2021">
     <svelte:fragment slot="icon">
-        <div class="flex items-center">
-          <div class="flex z-10 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0">
-              <svg aria-hidden="true" class="w-3 h-3 text-primary-600 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
-          </div>
-          <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
+      <div class="flex items-center">
+        <div class="flex z-10 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+          <Icon name="calendar-week-solid" class="w-3 h-3 text-primary-600 dark:text-primary-400" />
+        </div>
+        <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
       </div>
     </svelte:fragment>
-    <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-      Get started with dozens of web components and interactive elements.
-    </p>
+    <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements.</p>
   </TimelineItem>
   <TimelineItem title="Flowbite Library v1.3.0" date="Released on January 5th, 2021">
     <svelte:fragment slot="icon">
-        <div class="flex items-center">
-          <div class="flex z-10 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0">
-              <svg aria-hidden="true" class="w-3 h-3 text-primary-600 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
-          </div>
-          <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
+      <div class="flex items-center">
+        <div class="flex z-10 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+          <Icon name="calendar-week-solid" class="w-3 h-3 text-primary-600 dark:text-primary-400" />
+        </div>
+        <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
       </div>
     </svelte:fragment>
-    <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-      Get started with dozens of web components and interactive elements.
-    </p>
+    <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements.</p>
   </TimelineItem>
 </Timeline>
 ```
@@ -209,8 +148,7 @@ This component can be used to show the timline of a user’s activity history in
   import { Activity, ActivityItem } from 'flowbite-svelte';
   let activities = [
     {
-      title:
-        'Bonnie moved <a href="/" class="font-semibold text-primary-600 dark:text-primary-500 hover:underline">Jese Leos</a> to <span class="bg-gray-100 text-gray-800 text-xs font-normal mr-2 px-2.5 py-0.5 rounded dark:bg-gray-600 dark:text-gray-300">Funny Group</span>',
+      title: 'Bonnie moved <a href="/" class="font-semibold text-primary-600 dark:text-primary-500 hover:underline">Jese Leos</a> to <span class="bg-gray-100 text-gray-800 text-xs font-normal mr-2 px-2.5 py-0.5 rounded dark:bg-gray-600 dark:text-gray-300">Funny Group</span>',
       date: 'just now',
       alt: 'image alt here',
       src: '/images/profile-picture-2.webp'
@@ -245,8 +183,7 @@ Use this component to group multiple data entries inside a single date and show 
   import { Group, GroupItem } from 'flowbite-svelte';
   let groupTimelines = [
     {
-      title:
-        '<span class="font-medium text-gray-900 dark:text-white">Jese Leos</span> likes <span class="font-medium text-gray-900 dark:text-white">Bonnie Green\'s</span> post in <span class="font-medium text-gray-900 dark:text-white"> How to start with Flowbite library</span>',
+      title: '<span class="font-medium text-gray-900 dark:text-white">Jese Leos</span> likes <span class="font-medium text-gray-900 dark:text-white">Bonnie Green\'s</span> post in <span class="font-medium text-gray-900 dark:text-white"> How to start with Flowbite library</span>',
       src: '/images/profile-picture-1.webp',
       alt: 'alt here',
       href: '/',
@@ -254,8 +191,7 @@ Use this component to group multiple data entries inside a single date and show 
       comment: '"I wanted to share a webinar zeroheight."'
     },
     {
-      title:
-        '<span class="font-medium text-gray-900 dark:text-white">Bonnie Green</span> react to <span class="font-medium text-gray-900 dark:text-white">Thomas Lean\'s</span> comment',
+      title: '<span class="font-medium text-gray-900 dark:text-white">Bonnie Green</span> react to <span class="font-medium text-gray-900 dark:text-white">Thomas Lean\'s</span> comment',
       src: '/images/profile-picture-2.webp',
       alt: 'alt here',
       href: '/',
@@ -314,14 +250,14 @@ The component has the following props, type, and default values. See [types page
 
 ### ActivityItem
 
-- Use the `classLi` prop to overwrite  `liClass`.
-- Use the `classSpan` prop to overwrite  `spanClass`.
-- Use the `classImg` prop to overwrite  `imgClass`.
-- Use the `classOuterDiv` prop to overwrite  `outerDivClass`.
-- Use the `classInnerDiv` prop to overwrite  `innerDivClass`.
-- Use the `classTime` prop to overwrite  `timeClass`.
-- Use the `classTitle` prop to overwrite  `titleClass`.
-- Use the `classText` prop to overwrite  `textClass`.
+- Use the `classLi` prop to overwrite `liClass`.
+- Use the `classSpan` prop to overwrite `spanClass`.
+- Use the `classImg` prop to overwrite `imgClass`.
+- Use the `classOuterDiv` prop to overwrite `outerDivClass`.
+- Use the `classInnerDiv` prop to overwrite `innerDivClass`.
+- Use the `classTime` prop to overwrite `timeClass`.
+- Use the `classTitle` prop to overwrite `titleClass`.
+- Use the `classText` prop to overwrite `textClass`.
 
 <TableProp>
   <TableDefaultRow items={items7} rowState='hover' />
