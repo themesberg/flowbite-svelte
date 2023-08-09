@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.43.1](https://github.com/themesberg/flowbite-svelte/compare/v0.41.2...v0.43.1) (2023-08-09)
+
+
+### Features
+
+* update carousel components ([f809b63](https://github.com/themesberg/flowbite-svelte/commit/f809b63400143255ca56e77d6ff0806c797cbc50))
+
+
+### Bug Fixes
+
+* Clicking on dropzone component triggers onsubmit event on parent form [#906](https://github.com/themesberg/flowbite-svelte/issues/906) ([6a2a26d](https://github.com/themesberg/flowbite-svelte/commit/6a2a26da2e9b8f1b9511799184b907a2e3918487))
+
 ## 0.42.0 (2023-08-07)
 
 
