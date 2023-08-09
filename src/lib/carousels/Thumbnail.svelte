@@ -6,11 +6,19 @@
   export let thumbWidth: number = 100;
   export let selected: boolean = false;
   export let thumbClass: string = '';
+  export let thumbBtnClass: string = '';
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<button on:click aria-label="Click to view image">
-  <img class={thumbClass} class:active={selected} id={id.toString()} src={thumbImg} alt={altTag} title="Image from {titleLink}" width="{thumbWidth}%" />
+<button on:click aria-label="Click to view image" class={thumbBtnClass}>
+  <img
+    class={thumbClass}
+    class:active={selected}
+    id={id.toString()}
+    src={thumbImg}
+    alt={altTag}
+    title="Image from {titleLink}"
+    width="{thumbWidth}%" />
 </button>
 
 <!--

@@ -6,6 +6,7 @@
     ["id", "number", ""],
     ["thumbWidth", "number", "100"],
     ["selected", "boolean", "false"],
-    ["thumbClass", "string", "''"]
+    ["thumbClass", "string", "''"],
+    ["thumbBtnClass", "string", "''"]
   ]
 }

@@ -26,7 +26,8 @@
   on:dragenter
   on:dragleave
   on:dragover
-  on:drop>
+  on:drop
+  type="button">
   <label class="flex flex-col items-center" tabIndex="0">
     <slot />
     <input {...$$restProps} bind:value bind:files bind:this={input} on:change on:click type="file" class="hidden" />
