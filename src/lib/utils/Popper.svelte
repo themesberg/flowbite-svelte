@@ -148,6 +148,9 @@
       referenceEl = document.querySelector(reference) ?? document.body;
       if (referenceEl === document.body) {
         console.error(`Popup reference not found: '${reference}'`);
+      } else {
+        referenceEl.addEventListener('focusout', hideHandler);
+        if (!clickable) referenceEl.addEventListener('mouseleave', hideHandler);
       }
     } else {
       referenceEl = triggerEls[0];
@@ -159,6 +162,10 @@
           for (const [name, handler] of events) element.removeEventListener(name, handler);
         }
       });
+      if (referenceEl) {
+        referenceEl.addEventListener('focusout', hideHandler);
+        referenceEl.addEventListener('mouseleave', hideHandler);
+      }
     };
   });
 
