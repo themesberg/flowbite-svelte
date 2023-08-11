@@ -4,7 +4,7 @@ export type BlockQuoteType = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' 
 
 export type ButtonType = 'button' | 'submit' | 'reset';
 
-export type ButtonColorType = 'alternative' | 'blue' | 'cyan' | 'dark' | 'light' | 'lime' | 'green' | 'pink' | 'primary' | 'red' | 'teal' | 'yellow' | 'purple' | 'purpleToBlue' | 'cyanToBlue' | 'greenToBlue' | 'purpleToPink' | 'pinkToOrange' | 'tealToLime' | 'redToYellow';
+export type ButtonColorType = 'alternative' | 'blue' | 'dark' | 'green' | 'light' | 'primary' | 'purple' | 'red' | 'yellow' | 'none';
 
 export type Colors = 'blue' | 'gray' | 'red' | 'yellow' | 'purple' | 'green' | 'indigo' | 'pink' | 'white' | 'custom' | 'primary' | 'secondary';
 
