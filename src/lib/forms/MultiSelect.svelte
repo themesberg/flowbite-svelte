@@ -27,12 +27,12 @@
 
   // Dropdown
   let multiSelectDropdown: string;
-  $: multiSelectDropdown = twMerge('absolute p-3 flex flex-col gap-1 max-h-64 border border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:text-white left-0 top-[calc(100%+1rem)] rounded-lg cursor-pointer overflow-y-scroll w-full', dropdownClass);
+  $: multiSelectDropdown = twMerge('absolute z-50 p-3 flex flex-col gap-1 max-h-64 bg-white border border-gray-300 dark:bg-gray-700 dark:border-gray-600 left-0 top-[calc(100%+1rem)] rounded-lg cursor-pointer overflow-y-scroll w-full', dropdownClass);
 
   // Items
-  const itemsClass: string = 'py-2 px-3 rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-600';
+  const itemsClass: string = 'py-2 px-3 rounded-lg text-gray-600 hover:text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:text-gray-300 dark:hover:bg-gray-600';
   // Selected items
-  const itemsSelectClass: string = 'bg-gray-100 text-bg-gray-900 dark:text-white dark:bg-gray-600';
+  const itemsSelectClass: string = 'bg-gray-100 text-black hover:text-black dark:text-white dark:bg-gray-600 dark:hover:text-white';
 
   onMount(() => {
     if (value.length) {
@@ -74,6 +74,12 @@
   };
 </script>
 
+<!-- Hidden select for form submission -->
+<select {...$$restProps} bind:value hidden multiple>
+  {#each items as { value, name }}
+    <option {value}>{name}</option>
+  {/each}
+</select>
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div on:click={() => (show = !show)} on:focusout={() => (show = false)} tabindex="-1" role="listbox" class={twJoin(multiSelectClass, sizes[size], $$props.class)}>
   <span class="flex gap-2 flex-wrap">
@@ -87,21 +93,21 @@
       {/each}
     {/if}
   </span>
-  <div class="flex ml-auto gap-2">
-    <CloseButton on:click={clearAll} color="none" class="p-0 focus:ring-gray-400" />
+  <div class="flex ml-auto gap-2 items-center">
+    {#if selectItems.length}
+      <CloseButton on:click={clearAll} color="none" class="p-0 focus:ring-gray-400" />
+    {/if}
     <div class="w-[1px] bg-gray-300 dark:bg-gray-600" />
-    <button tabindex="-1">
-      <svg class="h-3 w-3 ml-1 cursor-pointer text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
-      </svg>
-    </button>
+    <svg class="cursor-pointer h-3 w-3 ml-1 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={show ? 'm1 5 4-4 4 4' : 'm9 1-4 4-4-4'} />
+    </svg>
   </div>
 
   {#if show}
-    <div class={multiSelectDropdown}>
+    <div on:click|stopPropagation role="presentation" class={multiSelectDropdown}>
       {#each items as item (item.name)}
         <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <div on:click|stopPropagation={(e) => selectOption(item)} role="presentation" class={twMerge(itemsClass, selectItems.includes(item) && itemsSelectClass)}>
+        <div on:click={() => selectOption(item)} role="presentation" class={twMerge(itemsClass, selectItems.includes(item) && itemsSelectClass)}>
           {item.name}
         </div>
       {/each}
@@ -111,10 +117,17 @@
 
 <!--
   @component
+  ## Feature
+  [Go to MutliSelect](https://flowbite-svelte.com/docs/forms/select#MultiSelect)
+  ## Props
+  @prop items: SelectOptionType[] = [];
+  @prop value: (string | number)[] = [];
+  @prop size: 'sm' | 'md' | 'lg' = 'md';
+  @prop dropdownClass: string = '';
   ## Example
   ```
   <script>
-    import MultiSelect from '../../../lib/forms/MultiSelect.svelte';
+    import { MultiSelect } from 'flowbite-svelte';
 
     let selected = [];
     let countries = [
