@@ -79,12 +79,7 @@
 
 <div {id} class="relative">
   <div class={divCls}>
-    <Slide
-      image={image.imgurl}
-      altTag={image.name}
-      attr={image.attribution}
-      slideClass={slideCls}
-      imgClass={imgCls} />
+    <Slide image={image.imgurl} altTag={image.name} attr={image.attribution} slideClass={slideCls} imgClass={imgCls} />
   </div>
   {#if showIndicators}
     <!-- Slider indicators -->
@@ -130,15 +125,7 @@
 {#if showThumbs}
   <div class={thumbDivCls}>
     {#each images as { id, imgurl, name, attribution }}
-      <Thumbnail
-        thumbClass={thumbCls}
-        thumbBtnClass={thumbBtnCls}
-        thumbImg={imgurl}
-        altTag={name}
-        titleLink={attribution}
-        {id}
-        selected={imageShowingIndex === id}
-        on:click={() => goToSlide(id)} />
+      <Thumbnail thumbClass={thumbCls} thumbBtnClass={thumbBtnCls} thumbImg={imgurl} altTag={name} titleLink={attribution} {id} selected={imageShowingIndex === id} on:click={() => goToSlide(id)} />
     {/each}
   </div>
 {/if}

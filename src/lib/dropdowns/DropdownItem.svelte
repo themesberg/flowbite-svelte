@@ -12,10 +12,7 @@
   const context = getContext<DropdownType>('DropdownType') ?? {};
 
   let liClass: string;
-  $: liClass = twMerge(defaultClass, 
-  href ? 'block' : 'w-full text-left', 
-  active && (activeClass ?? context.activeClass),
-  $$props.class);
+  $: liClass = twMerge(defaultClass, href ? 'block' : 'w-full text-left', active && (activeClass ?? context.activeClass), $$props.class);
 
   let wrap: boolean = true;
   function init(node: HTMLElement) {
@@ -24,13 +21,7 @@
 </script>
 
 <Wrapper tag="li" show={wrap} use={init}>
-  <svelte:element this={href ? 'a' : 'button'} 
-  {href} 
-  type={href ? undefined : 'button'} 
-  role={href ? 'link' : 'button'} 
-  {...$$restProps} 
-  class={liClass} 
-  on:click on:change on:keydown on:keyup on:focus on:blur on:mouseenter on:mouseleave>
+  <svelte:element this={href ? 'a' : 'button'} {href} type={href ? undefined : 'button'} role={href ? 'link' : 'button'} {...$$restProps} class={liClass} on:click on:change on:keydown on:keyup on:focus on:blur on:mouseenter on:mouseleave>
     <slot />
   </svelte:element>
 </Wrapper>

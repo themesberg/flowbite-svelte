@@ -35,21 +35,7 @@
     <slot item={$$props} />
   </a>
 {:else}
-  <button
-    type="button"
-    class="flex items-center text-left {itemClass}"
-    {disabled}
-    on:blur
-    on:change
-    on:click
-    on:focus
-    on:keydown
-    on:keypress
-    on:keyup
-    on:mouseenter
-    on:mouseleave
-    on:mouseover
-    aria-current={current}>
+  <button type="button" class="flex items-center text-left {itemClass}" {disabled} on:blur on:change on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover aria-current={current}>
     <slot item={$$props} />
   </button>
 {/if}

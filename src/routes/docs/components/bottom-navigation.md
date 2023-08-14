@@ -311,7 +311,7 @@ Use the following example to add active class. You can overwrite `activeClass` b
 
 ## Link with bottom bar
 
-The `href` prop is used to define the link's destination. 
+The `href` prop is used to define the link's destination.
 
 ```svelte example class="flex flex-col relative"
 <script>

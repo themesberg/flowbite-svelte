@@ -79,27 +79,10 @@
   const hasBorder = () => outline || color === 'alternative' || color === 'light';
 
   let buttonClass: string;
-  $: buttonClass = twMerge(
-    'text-center font-medium', 
-    group ? 'focus:ring-2' : 'focus:ring-4', 
-    group && 'focus:z-10', 
-    group || 'focus:outline-none', 
-    'inline-flex items-center justify-center ' + sizeClasses[size], outline ? outlineClasses[color] : colorClasses[color], 
-    color === 'alternative' && (group ? 'dark:bg-gray-700 dark:text-white dark:border-gray-700 dark:hover:border-gray-600 dark:hover:bg-gray-600' : 'dark:bg-transparent dark:border-gray-600 dark:hover:border-gray-700'),
-    outline && color === 'dark' && (group ? 'dark:text-white dark:border-white' : 'dark:text-gray-400 dark:border-gray-700'), 
-    coloredFocusClasses[color], hasBorder() && group && 'border-l-0 first:border-l', 
-    group ? (pill && 'first:rounded-l-full last:rounded-r-full') || 'first:rounded-l-lg last:rounded-r-lg' : (pill && 'rounded-full') || 'rounded-lg', 
-    shadow && 'shadow-lg', shadow && coloredShadowClasses[color], 
-    $$props.disabled && 'cursor-not-allowed opacity-50', 
-    $$props.class);
+  $: buttonClass = twMerge('text-center font-medium', group ? 'focus:ring-2' : 'focus:ring-4', group && 'focus:z-10', group || 'focus:outline-none', 'inline-flex items-center justify-center ' + sizeClasses[size], outline ? outlineClasses[color] : colorClasses[color], color === 'alternative' && (group ? 'dark:bg-gray-700 dark:text-white dark:border-gray-700 dark:hover:border-gray-600 dark:hover:bg-gray-600' : 'dark:bg-transparent dark:border-gray-600 dark:hover:border-gray-700'), outline && color === 'dark' && (group ? 'dark:text-white dark:border-white' : 'dark:text-gray-400 dark:border-gray-700'), coloredFocusClasses[color], hasBorder() && group && 'border-l-0 first:border-l', group ? (pill && 'first:rounded-l-full last:rounded-r-full') || 'first:rounded-l-lg last:rounded-r-lg' : (pill && 'rounded-full') || 'rounded-lg', shadow && 'shadow-lg', shadow && coloredShadowClasses[color], $$props.disabled && 'cursor-not-allowed opacity-50', $$props.class);
 </script>
 
-<svelte:element this={href ? 'a' : 'button'} 
-type={href ? undefined : type} {href} 
-role={href ? 'link' : 'button'} 
-{...$$restProps} 
-class={buttonClass} 
-on:click on:change on:keydown on:keyup on:touchstart on:touchend on:touchcancel on:mouseenter on:mouseleave>
+<svelte:element this={href ? 'a' : 'button'} type={href ? undefined : type} {href} role={href ? 'link' : 'button'} {...$$restProps} class={buttonClass} on:click on:change on:keydown on:keyup on:touchstart on:touchend on:touchcancel on:mouseenter on:mouseleave>
   <slot />
 </svelte:element>
 

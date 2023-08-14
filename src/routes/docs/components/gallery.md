@@ -181,7 +181,7 @@ This example uses the [carousel slider](https://flowbite-svelte.com/components/c
 
 Use this example to show a list of tags and filter the images below based on the activately selected tag.
 
-```svelte example class="flex flex-wrap gap-2" 
+```svelte example class="flex flex-wrap gap-2"
 <script>
   import { Gallery, Button } from 'flowbite-svelte';
   const images = [
@@ -232,7 +232,7 @@ Gallery items don't have to be all the same but then you need to list them manua
 
 This example shows how to get a complete control over the gallery images look and feel.
 
-```svelte example class="flex flex-wrap gap-2" 
+```svelte example class="flex flex-wrap gap-2"
 <script>
   import { Gallery } from 'flowbite-svelte';
   const images = [

@@ -144,7 +144,7 @@ Group a series of buttons together on a single line or stack them in a vertical 
 
 Group a series of buttons together on a single line or stack them in a vertical column.
 
-```svelte example class="flex justify-center" 
+```svelte example class="flex justify-center"
 <script>
   import { ButtonGroup, Button } from 'flowbite-svelte';
   import { Icon } from 'flowbite-svelte-icons';

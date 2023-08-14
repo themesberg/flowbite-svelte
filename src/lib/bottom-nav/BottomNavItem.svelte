@@ -47,15 +47,10 @@
   $: spanClass = twMerge(spanClasses[navType], active && (activeClass ?? context.activeClass), $$props.spanClass);
 </script>
 
-<svelte:element this={href ? 'a' : 'button'} 
-aria-label={btnName} 
-{href} 
-role={href ? 'link' : 'button'} 
-{...$$restProps} class={btnClass} on:click on:change on:keydown on:keyup on:focus on:blur on:mouseenter on:mouseleave>
+<svelte:element this={href ? 'a' : 'button'} aria-label={btnName} {href} role={href ? 'link' : 'button'} {...$$restProps} class={btnClass} on:click on:change on:keydown on:keyup on:focus on:blur on:mouseenter on:mouseleave>
   <slot />
   <span class={spanClass}>{btnName}</span>
 </svelte:element>
-
 
 <!--
   @component

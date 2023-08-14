@@ -11,14 +11,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <button on:click aria-label="Click to view image" class={thumbBtnClass}>
-  <img
-    class={thumbClass}
-    class:active={selected}
-    id={id.toString()}
-    src={thumbImg}
-    alt={altTag}
-    title="Image from {titleLink}"
-    width="{thumbWidth}%" />
+  <img class={thumbClass} class:active={selected} id={id.toString()} src={thumbImg} alt={altTag} title="Image from {titleLink}" width="{thumbWidth}%" />
 </button>
 
 <!--
