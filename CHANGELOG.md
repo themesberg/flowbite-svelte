@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.43.2](https://github.com/themesberg/flowbite-svelte/compare/v0.43.1...v0.43.2) (2023-08-14)
+
+
+### Bug Fixes
+
+* [#977](https://github.com/themesberg/flowbite-svelte/issues/977) ([#979](https://github.com/themesberg/flowbite-svelte/issues/979)) ([a84f4e7](https://github.com/themesberg/flowbite-svelte/commit/a84f4e77d25245fbf00d6d66e58997480065b4d1))
+
 ### [0.43.1](https://github.com/themesberg/flowbite-svelte/compare/v0.41.2...v0.43.1) (2023-08-09)
 
 ### Features
