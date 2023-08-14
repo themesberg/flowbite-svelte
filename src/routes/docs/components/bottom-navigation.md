@@ -309,6 +309,39 @@ Use the following example to add active class. You can overwrite `activeClass` b
 </BottomNav>
 ```
 
+## Link with bottom bar
+
+The `href` prop is used to define the link's destination. 
+
+```svelte example class="flex flex-col relative"
+<script>
+  import { page } from '$app/stores';
+  import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
+  $: activeUrl = $page.url.pathname;
+  let svgClass = 'mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500';
+  let svgActiveClass = 'mb-1 text-primary-700 dark:text-primary-700 group-hover:text-primary-900 dark:group-hover:text-primary-900';
+</script>
+
+<Skeleton class="py-4" />
+<ImagePlaceholder class="pb-20" />
+
+<BottomNav position="absolute" classInner="grid-cols-4" classActive="font-bold text-blue-700 dark:text-blue-500">
+  <BottomNavItem btnName="Home" active={activeUrl === '/'} href="/">
+    <Icon name="home-solid" class={activeUrl === '/' ? svgActiveClass : svgClass} />
+  </BottomNavItem>
+  <BottomNavItem btnName="Quickstart" active={activeUrl === '/docs/pages/quickstart'} href="/docs/pages/quickstart">
+    <Icon name="wallet-solid" class={activeUrl === '/docs/pages/quickstart' ? svgActiveClass : svgClass} />
+  </BottomNavItem>
+  <BottomNavItem btnName="BottomNav" active={activeUrl === '/docs/components/bottom-navigation'} href="/docs/components/bottom-navigation">
+    <Icon name="adjustments-vertical-outline" class={activeUrl === '/docs/components/bottom-navigation' ? svgActiveClass : svgClass} />
+  </BottomNavItem>
+  <BottomNavItem btnName="Accordion" active={activeUrl === '/docs/components/accordion'} href="/docs/components/accordion">
+    <Icon name="user-circle-solid" class={activeUrl === '/docs/components/accordion' ? svgActiveClass : svgClass} />
+  </BottomNavItem>
+</BottomNav>
+```
+
 ## Props
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
