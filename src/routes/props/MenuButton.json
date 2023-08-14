@@ -1,6 +1,0 @@
-{
-  "props": [
-    ["name", "string | undefined", "undefined"],
-    ["vertical", "boolean", "false"]
-  ]
-}

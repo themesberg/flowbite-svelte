@@ -70,7 +70,7 @@ Use the following example of a card element if you also want to have an action b
 
 This example can be used to show a CTA as a link instead of a button inside the card.
 
-```svelte example class="flex justify-center flex-wrap gap-2" 
+```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
   import { Card } from 'flowbite-svelte';
   import { Icon } from 'flowbite-svelte-icons';
@@ -125,7 +125,7 @@ If you want to spice up your cards you can use the following card which has its 
 </script>
 
 <div>
-  <Card img="/images/image-1.webp" href="/" horizontal reverse={hCard}  class="mb-4">
+  <Card img="/images/image-1.webp" href="/" horizontal reverse={hCard} class="mb-4">
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
   </Card>

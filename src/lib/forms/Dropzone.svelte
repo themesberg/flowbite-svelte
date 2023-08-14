@@ -15,19 +15,7 @@
   }
 </script>
 
-<button
-  class={twMerge(defaultClass, $$props.class)}
-  on:keydown={keydown}
-  on:focus
-  on:blur
-  on:mouseenter
-  on:mouseleave
-  on:mouseover
-  on:dragenter
-  on:dragleave
-  on:dragover
-  on:drop
-  type="button">
+<button class={twMerge(defaultClass, $$props.class)} on:keydown={keydown} on:focus on:blur on:mouseenter on:mouseleave on:mouseover on:dragenter on:dragleave on:dragover on:drop type="button">
   <label class="flex flex-col items-center" tabIndex="0">
     <slot />
     <input {...$$restProps} bind:value bind:files bind:this={input} on:change on:click type="file" class="hidden" />

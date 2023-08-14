@@ -82,29 +82,22 @@
   };
 
   let middleware: (Middleware | null)[];
-  $: middleware = [
-    dom.flip(),
-    dom.shift(),
-    dom.offset(+offset),
-    arrowEl && dom.arrow({ element: arrowEl, padding: 10 })
-  ];
+  $: middleware = [dom.flip(), dom.shift(), dom.offset(+offset), arrowEl && dom.arrow({ element: arrowEl, padding: 10 })];
 
   function updatePosition() {
-    dom
-      .computePosition(referenceEl, floatingEl, { placement, strategy, middleware })
-      .then(({ x, y, middlewareData, placement, strategy }: ComputePositionReturn) => {
-        floatingEl.style.position = strategy;
-        floatingEl.style.left = yOnly ? '0' : px(x);
-        floatingEl.style.top = px(y);
+    dom.computePosition(referenceEl, floatingEl, { placement, strategy, middleware }).then(({ x, y, middlewareData, placement, strategy }: ComputePositionReturn) => {
+      floatingEl.style.position = strategy;
+      floatingEl.style.left = yOnly ? '0' : px(x);
+      floatingEl.style.top = px(y);
 
-        if (middlewareData.arrow && arrowEl instanceof HTMLDivElement) {
-          arrowEl.style.left = px(middlewareData.arrow.x);
-          arrowEl.style.top = px(middlewareData.arrow.y);
+      if (middlewareData.arrow && arrowEl instanceof HTMLDivElement) {
+        arrowEl.style.left = px(middlewareData.arrow.x);
+        arrowEl.style.top = px(middlewareData.arrow.y);
 
-          arrowSide = oppositeSideMap[placement.split('-')[0] as Side];
-          arrowEl.style[arrowSide] = px(-arrowEl.offsetWidth / 2 - ($$props.border ? 1 : 0));
-        }
-      });
+        arrowSide = oppositeSideMap[placement.split('-')[0] as Side];
+        arrowEl.style[arrowSide] = px(-arrowEl.offsetWidth / 2 - ($$props.border ? 1 : 0));
+      }
+    });
   }
 
   function init(node: HTMLElement, _referenceEl: HTMLElement) {
@@ -132,8 +125,7 @@
     ];
 
     if (triggeredBy) triggerEls = [...document.querySelectorAll<HTMLElement>(triggeredBy)];
-    else
-      triggerEls = contentEl.previousElementSibling ? [contentEl.previousElementSibling as HTMLElement] : [];
+    else triggerEls = contentEl.previousElementSibling ? [contentEl.previousElementSibling as HTMLElement] : [];
 
     if (!triggerEls.length) {
       console.error('No triggers found.');
@@ -174,13 +166,7 @@
   }
 
   let arrowClass: string;
-  $: arrowClass = twJoin(
-    'absolute pointer-events-none block w-[10px] h-[10px] rotate-45 bg-inherit border-inherit',
-    $$props.border && arrowSide === 'bottom' && 'border-b border-r',
-    $$props.border && arrowSide === 'top' && 'border-t border-l ',
-    $$props.border && arrowSide === 'right' && 'border-t border-r ',
-    $$props.border && arrowSide === 'left' && 'border-b border-l '
-  );
+  $: arrowClass = twJoin('absolute pointer-events-none block w-[10px] h-[10px] rotate-45 bg-inherit border-inherit', $$props.border && arrowSide === 'bottom' && 'border-b border-r', $$props.border && arrowSide === 'top' && 'border-t border-l ', $$props.border && arrowSide === 'right' && 'border-t border-r ', $$props.border && arrowSide === 'left' && 'border-b border-l ');
 
   function initArrow(node: HTMLElement) {
     arrowEl = node;
@@ -197,16 +183,7 @@
 {/if}
 
 {#if open && referenceEl}
-  <Frame
-    use={init}
-    options={referenceEl}
-    role="tooltip"
-    tabindex={activeContent ? -1 : undefined}
-    on:focusin={optional(activeContent, showHandler)}
-    on:focusout={optional(activeContent, hideHandler)}
-    on:mouseenter={optional(activeContent && !clickable, showHandler)}
-    on:mouseleave={optional(activeContent && !clickable, hideHandler)}
-    {...$$restProps}>
+  <Frame use={init} options={referenceEl} role="tooltip" tabindex={activeContent ? -1 : undefined} on:focusin={optional(activeContent, showHandler)} on:focusout={optional(activeContent, hideHandler)} on:mouseenter={optional(activeContent && !clickable, showHandler)} on:mouseleave={optional(activeContent && !clickable, hideHandler)} {...$$restProps}>
     <slot />
     {#if arrow}<div use:initArrow class={arrowClass} />{/if}
   </Frame>

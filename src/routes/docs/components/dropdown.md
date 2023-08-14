@@ -664,6 +664,29 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
 </Dropdown>
 ```
 
+## Adding links and active class
+
+When you need to include a link with an active class, you can follow the example below:
+
+```svelte example class="flex justify-center items-start h-64"
+<script>
+  import { page } from '$app/stores';
+  import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
+  $: activeUrl = $page.url.pathname;
+</script>
+
+<Button>Dropdown button<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Dropdown>
+  <DropdownItem href="/home" active={activeUrl === '/'}>Home</DropdownItem>
+  <DropdownItem href="/docs/pages/quickstart" active={activeUrl === '/docs/pages/quickstart'}>Quickstart</DropdownItem>
+  <DropdownItem href="/docs/components/dropdown" active={activeUrl === '/docs/components/dropdown'}>Dropdown</DropdownItem>
+  <DropdownItem href="/docs/components/accordion" active={activeUrl === '/docs/components/accordion'}>Accordion</DropdownItem>
+</Dropdown>
+```
+
+The active prop is utilized to dynamically apply an active class to the link when the activeUrl variable matches the current URL. Remember to customize the href value and the condition in the active prop based on your specific use case.
+
 ## Props
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.

@@ -8,6 +8,7 @@
   export let appBtnPosition: 'left' | 'middle' | 'right' = 'middle';
   export let activeClass: string | undefined = undefined;
   export let active: boolean = false;
+  export let href: string;
 
   const navType: 'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video' = getContext('navType');
 
@@ -46,10 +47,10 @@
   $: spanClass = twMerge(spanClasses[navType], active && (activeClass ?? context.activeClass), $$props.spanClass);
 </script>
 
-<button {...$$restProps} class={btnClass} aria-label={btnName} on:click on:change on:keydown on:keyup on:focus on:blur on:mouseenter on:mouseleave>
+<svelte:element this={href ? 'a' : 'button'} aria-label={btnName} {href} role={href ? 'link' : 'button'} {...$$restProps} class={btnClass} on:click on:change on:keydown on:keyup on:focus on:blur on:mouseenter on:mouseleave>
   <slot />
   <span class={spanClass}>{btnName}</span>
-</button>
+</svelte:element>
 
 <!--
   @component

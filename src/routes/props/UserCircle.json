@@ -1,9 +1,0 @@
-{
-  "props": [
-    ["size", "string", "'24'"],
-    ["color", "string", "'currentColor'"],
-    ["variation", "'solid' | 'outline'", "'outline'"],
-    ["ariaLabel", "string", "'user circle'"],
-    ["role", "string", "'img'"]
-  ]
-}

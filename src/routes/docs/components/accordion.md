@@ -190,7 +190,7 @@ Use the `arrowup` and `arrowdown` slots to set up and down icons.
   </AccordionItem>
   <AccordionItem>
     <span slot="header" class="text-base flex gap-2">
-      <Icon name="cog-outline" class="mt-0.5"/>
+      <Icon name="cog-outline" class="mt-0.5" />
       <span>My Header 2</span>
     </span>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sintexplicabo...</p>
@@ -266,8 +266,9 @@ Accordions can be nested. All of the mentioned options are supported.
 
 ```svelte example hideScript
 <script>
-  import {AccordionItem, Accordion} from 'flowbite-svelte'
+  import { AccordionItem, Accordion } from 'flowbite-svelte';
 </script>
+
 <Accordion>
   <AccordionItem open>
     <span slot="header">My Header 1</span>
@@ -283,8 +284,8 @@ Accordions can be nested. All of the mentioned options are supported.
         <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
         <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
         <ul class="list-disc pl-5 dark:text-gray-400 text-gray-500">
-          <li><a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline" >Lorem ipsum</a></li>
-          <li><a href="https://tailwindui.com/" rel="noreferrer" target="_blank"  class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
+          <li><a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline">Lorem ipsum</a></li>
+          <li><a href="https://tailwindui.com/" rel="noreferrer" target="_blank" class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
         </ul>
       </AccordionItem>
     </Accordion>
@@ -295,8 +296,8 @@ Accordions can be nested. All of the mentioned options are supported.
     <p class="mb-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ab necessitatibus sint explicabo ...</p>
     <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
     <ul class="list-disc pl-5 dark:text-gray-400 text-gray-500">
-      <li><a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline" >Lorem ipsum</a></li>
-      <li><a href="https://tailwindui.com/" rel="noreferrer" target="_blank"  class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
+      <li><a href="/" target="_blank" rel="noreferrer" class="text-blue-600 dark:text-blue-500 hover:underline">Lorem ipsum</a></li>
+      <li><a href="https://tailwindui.com/" rel="noreferrer" target="_blank" class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
     </ul>
   </AccordionItem>
 </Accordion>

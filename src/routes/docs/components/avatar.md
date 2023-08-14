@@ -107,7 +107,7 @@ Use this example to show a tooltip when hovering over the avatar.
 
 Use a dot element relative to the avatar component as an indicator for the user (eg. online or offline status).
 
-```svelte example class="flex justify-center gap-4" 
+```svelte example class="flex justify-center gap-4"
 <script>
   import { Avatar, Indicator } from 'flowbite-svelte';
 </script>

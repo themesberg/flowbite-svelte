@@ -73,30 +73,7 @@
 </script>
 
 <div class={twMerge(divClasses[style], $$props.classDiv)}>
-  <input
-    {id}
-    {...$$restProps}
-    bind:value
-    on:blur
-    on:change
-    on:click
-    on:focus
-    on:input
-    on:keydown
-    on:keypress
-    on:keyup
-    on:mouseenter
-    on:mouseleave
-    on:mouseover
-    on:paste
-    {...{ type }}
-    placeholder=" "
-    class={twMerge(
-      inputClasses[style],
-      inputColorClasses[color],
-      inputSizes[style][size],
-      $$props.classInput
-    )} />
+  <input {id} {...$$restProps} bind:value on:blur on:change on:click on:focus on:input on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover on:paste {...{ type }} placeholder=" " class={twMerge(inputClasses[style], inputColorClasses[color], inputSizes[style][size], $$props.classInput)} />
 
   <label for={id} class={twMerge(labelClasses[style], labelColorClasses[color], labelSizes[style][size], $$props.classLabel)}>
     {label}

@@ -54,7 +54,7 @@ Use this example to show a responsive list of menu items inside the sidebar with
     <SidebarGroup>
       <SidebarItem label="Dashboard">
         <svelte:fragment slot="icon">
-          <Icon name="chart-pie-solid"  class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+          <Icon name="chart-pie-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
       </SidebarItem>
       <SidebarItem label="Kanban" {spanClass}>
@@ -80,12 +80,12 @@ Use this example to show a responsive list of menu items inside the sidebar with
       </SidebarItem>
       <SidebarItem label="Sign In">
         <svelte:fragment slot="icon">
-          <Icon name="arrow-right-to-bracket-solid"  class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+          <Icon name="arrow-right-to-bracket-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
       </SidebarItem>
       <SidebarItem label="Sign Up">
         <svelte:fragment slot="icon">
-          <Icon name="file-edit-solid"  class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+          <Icon name="file-edit-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
       </SidebarItem>
     </SidebarGroup>
@@ -109,7 +109,7 @@ Use this sidebar example to create multi-level menu items by using the dSidebarD
     <SidebarGroup>
       <SidebarItem label="Dashboard">
         <svelte:fragment slot="icon">
-          <Icon name="chart-pie-solid"  class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+          <Icon name="chart-pie-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
       </SidebarItem>
       <SidebarDropdownWrapper label="E-commerce">
@@ -143,12 +143,12 @@ Use this sidebar example to create multi-level menu items by using the dSidebarD
       </SidebarItem>
       <SidebarItem label="Sign In">
         <svelte:fragment slot="icon">
-          <Icon name="arrow-right-to-bracket-solid"  class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+          <Icon name="arrow-right-to-bracket-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
       </SidebarItem>
       <SidebarItem label="Sign Up">
         <svelte:fragment slot="icon">
-          <Icon name="file-edit-solid"  class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+          <Icon name="file-edit-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
       </SidebarItem>
     </SidebarGroup>
@@ -264,7 +264,7 @@ Separate the content inside the sidebar component by applying a border separator
       </SidebarItem>
       <SidebarItem label="Kanban" {spanClass}>
         <svelte:fragment slot="icon">
-          <Icon name="grid-solid"  class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+          <Icon name="grid-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
         <svelte:fragment slot="subtext">
           <span class="inline-flex justify-center items-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full dark:bg-gray-700 dark:text-gray-300"> Pro </span>
@@ -290,12 +290,12 @@ Separate the content inside the sidebar component by applying a border separator
       </SidebarItem>
       <SidebarItem label="Sign In">
         <svelte:fragment slot="icon">
-          <Icon name="arrow-right-to-bracket-solid"  class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+          <Icon name="arrow-right-to-bracket-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
       </SidebarItem>
       <SidebarItem label="Sign Up">
         <svelte:fragment slot="icon">
-          <Icon name="file-edit-solid"  class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+          <Icon name="file-edit-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
       </SidebarItem>
     </SidebarGroup>
@@ -342,7 +342,7 @@ Use this example to add a CTA button inside the sidebar component and encourage 
     <SidebarGroup>
       <SidebarItem label="Dashboard">
         <svelte:fragment slot="icon">
-          <Icon name="chart-pie-solid"  class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+          <Icon name="chart-pie-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
       </SidebarItem>
       <SidebarItem label="Kanban" {spanClass}>
@@ -368,12 +368,12 @@ Use this example to add a CTA button inside the sidebar component and encourage 
       </SidebarItem>
       <SidebarItem label="Sign In">
         <svelte:fragment slot="icon">
-          <Icon name="arrow-right-to-bracket-solid"  class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+          <Icon name="arrow-right-to-bracket-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
       </SidebarItem>
       <SidebarItem label="Sign Up">
         <svelte:fragment slot="icon">
-          <Icon name="file-edit-solid"  class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+          <Icon name="file-edit-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
       </SidebarItem>
       <SidebarCta label="Beta">
@@ -414,7 +414,7 @@ Show the logo of your brand and link back to the homepage from the top part of t
       <SidebarBrand {site} />
       <SidebarItem label="Dashboard">
         <svelte:fragment slot="icon">
-          <Icon name="chart-pie-solid"  class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+          <Icon name="chart-pie-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
       </SidebarItem>
       <SidebarItem label="Kanban" {spanClass}>
@@ -440,12 +440,12 @@ Show the logo of your brand and link back to the homepage from the top part of t
       </SidebarItem>
       <SidebarItem label="Sign In">
         <svelte:fragment slot="icon">
-          <Icon name="arrow-right-to-bracket-solid"  class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+          <Icon name="arrow-right-to-bracket-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
       </SidebarItem>
       <SidebarItem label="Sign Up">
         <svelte:fragment slot="icon">
-          <Icon name="file-edit-solid"  class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+          <Icon name="file-edit-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
       </SidebarItem>
     </SidebarGroup>

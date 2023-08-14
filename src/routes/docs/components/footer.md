@@ -81,7 +81,7 @@ The footer is one of the most underestimated sections of a website being located
 <script>
   import { Footer, FooterCopyright, FooterLinkGroup, FooterLink, FooterBrand, FooterIcon } from 'flowbite-svelte';
   import { Icon } from 'flowbite-svelte-icons';
-  import Dribble from '../../utils/icons/Dribble.svelte'
+  import Dribble from '../../utils/icons/Dribble.svelte';
 </script>
 
 <Footer footerType="socialmedia">
@@ -145,7 +145,7 @@ The footer is one of the most underestimated sections of a website being located
 <script>
   import { Footer, FooterLinkGroup, FooterLink, FooterBrand, FooterIcon, FooterCopyright } from 'flowbite-svelte';
   import { Icon } from 'flowbite-svelte-icons';
-  import Dribble from '../../utils/icons/Dribble.svelte'
+  import Dribble from '../../utils/icons/Dribble.svelte';
 </script>
 
 <Footer footerType="sitemap">

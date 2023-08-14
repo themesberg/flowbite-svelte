@@ -21,7 +21,6 @@ Get started with the speed dial component to show a list of buttons or menu item
 
 To initialize a speed dial component you need to wrap the trigger element and the list of items inside an element and use the data-dial-init data attribute on it.
 
-
 <Alert>
 
 **Note!** Default class for speed dial is `fixed right-6 bottom-6`. However for the sake of the examples below `fixed` must be changed to `absolute`, therefore you can notice `defaultClass="absolute right-6 left-6"` at every example.
@@ -492,12 +491,14 @@ Use the `open` property to control the state of the popup menu.
   import { SpeedDial, SpeedDialButton } from 'flowbite-svelte';
   let open = false;
 
-  const close = () => {open =  false};
+  const close = () => {
+    open = false;
+  };
 </script>
 
 <SpeedDial bind:open defaultClass="absolute right-6 bottom-6">
-    <SpeedDialButton name="Share" on:click={close}>Share</SpeedDialButton>
-    <SpeedDialButton name="Print" on:click={close}>Print</SpeedDialButton>
+  <SpeedDialButton name="Share" on:click={close}>Share</SpeedDialButton>
+  <SpeedDialButton name="Print" on:click={close}>Print</SpeedDialButton>
 </SpeedDial>
 ```
 

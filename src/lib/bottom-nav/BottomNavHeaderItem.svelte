@@ -8,17 +8,7 @@
   $: btnClass = active ? activeClass : defaultClass;
 </script>
 
-<button
-  class={twMerge(btnClass, $$props.class)}
-  {...$$restProps}
-  on:click
-  on:change
-  on:keydown
-  on:keyup
-  on:focus
-  on:blur
-  on:mouseenter
-  on:mouseleave>
+<button class={twMerge(btnClass, $$props.class)} {...$$restProps} on:click on:change on:keydown on:keyup on:focus on:blur on:mouseenter on:mouseleave>
   {itemName}
 </button>
 

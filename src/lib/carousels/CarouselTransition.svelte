@@ -156,15 +156,7 @@
 {#if showThumbs}
   <div class={thumbDivCls}>
     {#each images as { id, imgurl, name, attribution }}
-      <Thumbnail
-        thumbClass={thumbCls}
-        thumbBtnClass={thumbBtnCls}
-        thumbImg={imgurl}
-        altTag={name}
-        titleLink={attribution}
-        {id}
-        selected={imageShowingIndex === id}
-        on:click={() => goToSlide(id)} />
+      <Thumbnail thumbClass={thumbCls} thumbBtnClass={thumbBtnCls} thumbImg={imgurl} altTag={name} titleLink={attribution} {id} selected={imageShowingIndex === id} on:click={() => goToSlide(id)} />
     {/each}
   </div>
 {/if}

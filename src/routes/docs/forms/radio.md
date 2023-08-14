@@ -138,7 +138,7 @@ Use this example of a radio inside a card element to enable a larger area of cli
 
 Use this example to show a list of radio items grouped inside a card.
 
-```svelte example 
+```svelte example
 <script>
   import { Radio } from 'flowbite-svelte';
   let technology = 'svelte';
