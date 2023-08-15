@@ -7,12 +7,12 @@
   export let btnName: string = '';
   export let appBtnPosition: 'left' | 'middle' | 'right' = 'middle';
   export let activeClass: string | undefined = undefined;
-  export let active: boolean = false;
-  export let href: string;
+  export let href: string = '';
 
   const navType: 'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video' = getContext('navType');
 
   const context = getContext<BottomNavLiType>('bottomNavType') ?? {};
+  const activeUrl = getContext('activeUrl');
 
   const btnClasses: ButtonClassesTypes = {
     default: 'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
@@ -42,8 +42,13 @@
     right: 'inline-flex flex-col items-center justify-center px-5 rounded-r-full hover:bg-gray-50 dark:hover:bg-gray-800 group'
   };
   let btnClass: string;
-  $: btnClass = twMerge(btnClasses[navType], appBtnClasses[appBtnPosition], active && (activeClass ?? context.activeClass), $$props.btnClass);
+
+  let  active = activeUrl ? href === activeUrl : false;
+ 
+  $: btnClass = twMerge( btnClasses[navType], appBtnClasses[appBtnPosition],  active && (activeClass ?? context.activeClass), $$props.btnClass);
+  
   let spanClass: string;
+  
   $: spanClass = twMerge(spanClasses[navType], active && (activeClass ?? context.activeClass), $$props.spanClass);
 </script>
 
