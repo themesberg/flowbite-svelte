@@ -278,7 +278,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 ## Adding links and active class
 
-The simplest thing is to use `activeUrl` in `BottomNav` component and add the `href` prop in `BottomNavItem` components.
+Use `activeUrl` in `BottomNav` component and add the `href` prop in `BottomNavItem` components.
 
 ```svelte example class="flex flex-col relative"
 <script>

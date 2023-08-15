@@ -48,7 +48,7 @@ Use this example of a navigation bar built with the utility classes from Tailwin
   </NavBrand>
   <NavHamburger on:click={toggle} />
   <NavUl {hidden}>
-    <NavLi href="/" active={true}>Home</NavLi>
+    <NavLi href="/">Home</NavLi>
     <NavLi href="/about">About</NavLi>
     <NavLi href="/services">Services</NavLi>
     <NavLi href="/pricing">Pricing</NavLi>
@@ -247,6 +247,60 @@ Use this example to show a solid background for the navbar component instead of 
     <NavLi href="/services">Services</NavLi>
     <NavLi href="/pricing">Pricing</NavLi>
     <NavLi href="/contact">Contact</NavLi>
+  </NavUl>
+</Navbar>
+```
+
+## Links and active class
+
+Use `activeUrl` in `NavUl` component and add the `href` prop in `NavLi` components.
+
+```svelte example
+<script>
+  import { page } from '$app/stores';
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
+  $: activeUrl = $page.url.pathname;
+</script>
+
+<Navbar let:hidden let:toggle>
+  <NavBrand href="/">
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+    <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
+  </NavBrand>
+  <NavHamburger on:click={toggle} />
+  <NavUl {hidden} {activeUrl}>
+    <NavLi href="/">Home</NavLi>
+    <NavLi href="/docs/components/navbar">Navbar</NavLi>
+    <NavLi href="/docs/components/accordion">Accordion</NavLi>
+    <NavLi href="/docs/components/alert">Alert</NavLi>
+    <NavLi href="/docs/components/avatar">Avatar</NavLi>
+  </NavUl>
+</Navbar>
+```
+
+Control the `active` and `nonactive` class by using `activeClass` and `nonActiveClass`:
+
+```svelte example
+<script>
+  import { page } from '$app/stores';
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
+  $: activeUrl = $page.url.pathname;
+  let activeClass = "text-white bg-green-700 md:bg-transparent md:text-green-700 md:dark:text-white dark:bg-green-600 md:dark:bg-transparent";
+  let nonActiveClass = 'text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent';
+</script>
+
+<Navbar let:hidden let:toggle>
+  <NavBrand href="/">
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+    <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
+  </NavBrand>
+  <NavHamburger on:click={toggle} />
+  <NavUl {hidden} {activeUrl} {activeClass} {nonActiveClass}>
+    <NavLi href="/">Home</NavLi>
+    <NavLi href="/docs/components/navbar">Navbar</NavLi>
+    <NavLi href="/docs/components/accordion">Accordion</NavLi>
+    <NavLi href="/docs/components/alert">Alert</NavLi>
+    <NavLi href="/docs/components/avatar">Avatar</NavLi>
   </NavUl>
 </Navbar>
 ```

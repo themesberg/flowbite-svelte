@@ -43,7 +43,7 @@
   };
   let btnClass: string;
 
-  let  active = activeUrl ? href === activeUrl : false;
+  let active = activeUrl ? href === activeUrl : false;
  
   $: btnClass = twMerge( btnClasses[navType], appBtnClasses[appBtnPosition],  active && (activeClass ?? context.activeClass), $$props.btnClass);
   
