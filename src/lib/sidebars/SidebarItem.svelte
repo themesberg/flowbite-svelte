@@ -1,16 +1,23 @@
 <script lang="ts">
+  import { getContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
+  import type { SidebarType } from './Sidebar.svelte';
 
-  export let aClass: string = 'flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700';
   export let href: string = '';
   export let label: string = '';
   export let spanClass: string = 'ml-3';
-  export let activeClass: string = 'flex items-center p-2 text-base font-normal text-gray-900 bg-gray-200 dark:bg-gray-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700';
-  export let active: boolean = false;
+  export let activeClass: string | undefined = undefined;
+  export let nonActiveClass: string | undefined = undefined;
+  // export let active: boolean = false;
+
+  const context = getContext<SidebarType>('sidebarContext') ?? {};
+  let active = context.activeUrl ? href === context.activeUrl : false;
+  let aClass: string = twMerge(active ? activeClass ?? context.activeClass : nonActiveClass ?? context.nonActiveClass, $$props.class);
+  // twMerge(active ? activeClass : nonActiveClass, $$props.class)
 </script>
 
 <li>
-  <a {...$$restProps} {href} on:blur on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover class={twMerge(active ? activeClass : aClass, $$props.class)}>
+  <a {...$$restProps} {href} on:blur on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover class={aClass}>
     <slot name="icon" />
     <span class={spanClass}>{label}</span>
     {#if $$slots.subtext}

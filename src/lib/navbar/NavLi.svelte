@@ -1,13 +1,14 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
+  import { twMerge } from 'tailwind-merge';
   import type { NavbarLiType } from './NavUl.svelte';
 
   export let href: string = '';
   export let activeClass: string | undefined = undefined;
   export let nonActiveClass: string | undefined = undefined;
 
-  const context = getContext<NavbarLiType>('navbar') ?? {};
+  const context = getContext<NavbarLiType>('navbarContext') ?? {};
+
   let active = context.activeUrl ? href === context.activeUrl : false;
   let liClass: string = twMerge('block py-2 pr-4 pl-3 md:p-0 rounded md:border-0', active ? activeClass ?? context.activeClass : nonActiveClass ?? context.nonActiveClass, $$props.class);
 </script>

@@ -7,11 +7,11 @@
 </script>
 
 <script lang="ts">
+  import { setContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import { slide, type SlideParams } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
   import Frame from '../utils/Frame.svelte';
-  import { setContext } from 'svelte';
 
   export let activeUrl: string = ''; 
   export let divClass: string = 'w-full md:block md:w-auto';
@@ -21,8 +21,7 @@
   export let activeClass: string = 'text-white bg-primary-700 md:bg-transparent md:text-primary-700 md:dark:text-white dark:bg-primary-600 md:dark:bg-transparent';
   export let nonActiveClass: string = 'text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent';
 
-  setContext<NavbarLiType>('navbar', { activeClass, nonActiveClass, activeUrl });
-  // setContext('activeUrl', activeUrl);
+  setContext<NavbarLiType>('navbarContext', { activeClass, nonActiveClass, activeUrl });
 
   let _divClass: string;
   $: _divClass = twMerge(divClass, $$props.class);
