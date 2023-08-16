@@ -8,14 +8,14 @@
   export let nonActiveClass: string | undefined = undefined;
 
   const context = getContext<NavbarLiType>('navbarContext') ?? {};
-  const activeUrl = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
+    const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
 
   let navUrl = '';
-  activeUrl.subscribe(value => {
+  activeUrlStore.subscribe(value => {
     navUrl = value;
   });
 
-  $: active = navUrl ? href === navUrl : false;
+$: active = activeUrlStore ? href === navUrl : false;
   $: liClass = twMerge('block py-2 pr-4 pl-3 md:p-0 rounded md:border-0', active ? activeClass ?? context.activeClass : nonActiveClass ?? context.nonActiveClass, $$props.class);
   // $: console.log()
 </script>

@@ -59,7 +59,30 @@ Use this example of a navigation bar built with the utility classes from Tailwin
 
 ## Active class
 
-By adding the `href` prop in `NavLi` components, it automatically detect the active URL.
+By adding the `href` prop in `NavLi` components and `activeUrl` to `NavUl`, it automatically detect the active URL.
+
+```svelte example
+<script>
+  import { page } from '$app/stores';
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
+  $: activeUrl = $page.url.pathname;
+</script>
+
+<Navbar let:hidden let:toggle>
+  <NavBrand href="/">
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+    <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
+  </NavBrand>
+  <NavHamburger on:click={toggle} />
+  <NavUl {activeUrl} {hidden}>
+    <NavLi href="/">Home</NavLi>
+    <NavLi href="/docs/components/navbar">Navbar</NavLi>
+    <NavLi href="/docs/components/accordion">Accordion</NavLi>
+    <NavLi href="/docs/components/alert">Alert</NavLi>
+    <NavLi href="/docs/components/avatar">Avatar</NavLi>
+  </NavUl>
+</Navbar>
+```
 
 Control the `active` and `nonactive` class by using `activeClass` and `nonActiveClass`:
 
@@ -78,7 +101,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
     <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
   </NavBrand>
   <NavHamburger on:click={toggle} />
-  <NavUl {hidden} {activeClass} {nonActiveClass}>
+  <NavUl {activeUrl} {hidden} {activeClass} {nonActiveClass}>
     <NavLi href="/">Home</NavLi>
     <NavLi href="/docs/components/navbar">Navbar</NavLi>
     <NavLi href="/docs/components/accordion">Accordion</NavLi>
@@ -96,6 +119,8 @@ This example can be used to show a secondary dropdown menu when clicking on one 
 <script>
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Dropdown, DropdownItem, DropdownDivider } from 'flowbite-svelte';
   import { Icon } from 'flowbite-svelte-icons';
+  import { page } from '$app/stores';
+  $: activeUrl = $page.url.pathname;
 </script>
 
 <Navbar let:hidden let:toggle>
@@ -104,20 +129,20 @@ This example can be used to show a secondary dropdown menu when clicking on one 
     <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
   </NavBrand>
   <NavHamburger on:click={toggle} />
-  <NavUl {hidden}>
-    <NavLi href="/" active={true}>Home</NavLi>
+  <NavUl {hidden} {activeUrl}>
+    <NavLi href="/">Home</NavLi>
     <NavLi id="nav-menu1" class="cursor-pointer">
       Dropdown<Icon name="chevron-down-outline" class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" />
     </NavLi>
-    <NavLi href="/docs/components/navbar">Navbar</NavLi>
+    <NavLi href="/settings">Setting</NavLi>
     <NavLi href="/pricing">Pricing</NavLi>
     <NavLi href="/contact">Contact</NavLi>
     <Dropdown triggeredBy="#nav-menu1" class="w-44 z-20">
-      <DropdownItem>Dashboard</DropdownItem>
-      <DropdownItem>Settings</DropdownItem>
-      <DropdownItem>Earnings</DropdownItem>
+      <DropdownItem href="/">Dashboard</DropdownItem>
+      <DropdownItem href="/docs/components/navbar">Settings</DropdownItem>
+      <DropdownItem href="/">Earnings</DropdownItem>
       <DropdownDivider />
-      <DropdownItem>Sign out</DropdownItem>
+      <DropdownItem href="/">Sign out</DropdownItem>
     </Dropdown>
   </NavUl>
 </Navbar>
