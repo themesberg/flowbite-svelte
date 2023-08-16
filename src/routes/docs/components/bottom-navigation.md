@@ -61,7 +61,7 @@ Use the default bottom navigation bar example to show a list of menu items as bu
 
 ## Adding links and active class
 
-By adding the `href` prop in `BottomNavItem` components, it automatically detect the active URL.
+Utilize the `href` prop within the `BottomNavItem` component to incorporate a hyperlink. To initiate the application of the active class, include the `activeUrl` prop within the `BottomNav` component:
 
 ```svelte example class="flex flex-col relative"
 <script>

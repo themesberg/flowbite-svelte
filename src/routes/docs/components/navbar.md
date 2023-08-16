@@ -59,7 +59,7 @@ Use this example of a navigation bar built with the utility classes from Tailwin
 
 ## Active class
 
-By adding the `href` prop in `NavLi` components and `activeUrl` to `NavUl`, it automatically detect the active URL.
+Utilize the `href` prop within the `NavLi` component to incorporate a hyperlink. To initiate the application of the active class, include the `activeUrl` prop within the `NavUl` component:
 
 ```svelte example
 <script>

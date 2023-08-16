@@ -54,6 +54,47 @@ If you want to show a dropdown menu when clicking on an element add the `Dropdow
 </Dropdown>
 ```
 
+## Adding links and active class
+
+Utilize the `href` prop within the `DropdownItem` component to incorporate a hyperlink. To initiate the application of the active class, include the `activeUrl` prop within the `Dropdown` component:
+
+```svelte example class="flex justify-center items-start h-64"
+<script>
+  import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
+  import { page } from '$app/stores';
+  $: activeUrl = $page.url.pathname;
+</script>
+
+<Button>Dropdown button<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Dropdown {activeUrl}>
+  <DropdownItem href="/">Home</DropdownItem>
+  <DropdownItem href="/docs/components/dropdown">Dropdown</DropdownItem>
+  <DropdownItem href="/docs/components/accordion">Accordion</DropdownItem>
+  <DropdownItem href="/docs/components/alert">Alert</DropdownItem>
+</Dropdown>
+```
+
+To change the active class, use the `activeClass` prop:
+
+```svelte example class="flex justify-center items-start h-64"
+<script>
+  import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
+  import { page } from '$app/stores';
+  $: activeUrl = $page.url.pathname;
+  let activeClass = 'text-green-700 dark:text-green-300 hover:text-green-900 dark:hover:text-green-500';
+</script>
+
+<Button>Dropdown button<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Dropdown {activeUrl} {activeClass}>
+  <DropdownItem href="/">Home</DropdownItem>
+  <DropdownItem href="/docs/components/dropdown">Dropdown</DropdownItem>
+  <DropdownItem href="/docs/components/accordion">Accordion</DropdownItem>
+  <DropdownItem href="/docs/components/alert">Alert</DropdownItem>
+</Dropdown>
+```
+
 ## Dropdown divider
 
 You can use the `DropdownDivider` component to add separate elements inside the dropdown menu. Note that you have a natural divider between main content of the `Dropdown` and its header and footer.

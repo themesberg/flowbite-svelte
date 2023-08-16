@@ -96,7 +96,7 @@ Use this example to show a responsive list of menu items inside the sidebar with
 
 ## Adding links and active class
 
-By adding `activeUrl` prop in the `Sidebar` component and add the `href` prop in `SidebarItem` components, it automatically adds active class.
+Utilize the `href` prop within the `SidebarItem` component to incorporate a hyperlink. To initiate the application of the active class, include the `activeUrl` prop within the `Sidebar` component:
 
 ```svelte example
 <script>
