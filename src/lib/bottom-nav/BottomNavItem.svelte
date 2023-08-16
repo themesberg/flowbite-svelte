@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getContext } from 'svelte';
   import type { ButtonClassesTypes } from '../types';
-  import type { BottomNavLiType } from './BottomNav.svelte';
+  import type { BottomNavType } from './BottomNav.svelte';
   import { twMerge } from 'tailwind-merge';
 
   export let btnName: string = '';
@@ -11,8 +11,16 @@
 
   const navType: 'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video' = getContext('navType');
 
-  const context = getContext<BottomNavLiType>('bottomNavType') ?? {};
-  const activeUrl = getContext('activeUrl');
+  // const context = getContext<BottomNavLiType>('bottomNavType') ?? {};
+  // const activeUrl = getContext('activeUrl');
+
+  const context = getContext<BottomNavType>('bottomNavType') ?? {};
+  const activeUrl = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
+
+  let navUrl = '';
+  activeUrl.subscribe(value => {
+    navUrl = value;
+  });
 
   const btnClasses: ButtonClassesTypes = {
     default: 'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
@@ -43,7 +51,7 @@
   };
   let btnClass: string;
 
-  let active = activeUrl ? href === activeUrl : false;
+  let active = navUrl ? href === navUrl : false;
  
   $: btnClass = twMerge( btnClasses[navType], appBtnClasses[appBtnPosition],  active && (activeClass ?? context.activeClass), $$props.btnClass);
   

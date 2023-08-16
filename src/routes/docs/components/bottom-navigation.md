@@ -278,20 +278,18 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 ## Adding links and active class
 
-Use `activeUrl` in `BottomNav` component and add the `href` prop in `BottomNavItem` components.
+By adding the `href` prop in `BottomNavItem` components, it automatically detect the active URL.
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { page } from '$app/stores';
   import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from 'flowbite-svelte';
   import { Icon } from 'flowbite-svelte-icons';
-  $: activeUrl = $page.url.pathname;
 </script>
 
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav position="absolute" classInner="grid-cols-4" {activeUrl}>
+<BottomNav position="absolute" classInner="grid-cols-4" >
   <BottomNavItem btnName="Home" href="/">
     <Icon name="home-solid" />
   </BottomNavItem>
@@ -311,16 +309,14 @@ The following example shows how to change active class, by overwriting `activeCl
 
 ```svelte example class="flex flex-col relative"
 <script>
-  import { page } from '$app/stores';
   import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from 'flowbite-svelte';
   import { Icon } from 'flowbite-svelte-icons';
-  $: activeUrl = $page.url.pathname;
 </script>
 
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav {activeUrl} position="absolute" classInner="grid-cols-4" classActive="font-bold text-green-700 hover:text-green-900 dark:hover:text-green-700 dark:text-green-500">
+<BottomNav position="absolute" classInner="grid-cols-4" classActive="font-bold text-green-500 hover:text-green-900 dark:hover:text-green-700 dark:text-green-300">
   <BottomNavItem btnName="Home" href="/">
     <Icon name="home-solid" />
   </BottomNavItem>
@@ -344,25 +340,25 @@ Use the following example to change the icon colors:
   import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from 'flowbite-svelte';
   import { Icon } from 'flowbite-svelte-icons';
   $: activeUrl = $page.url.pathname;
-  let svgClass = 'mb-1 text-gray-500 dark:text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-500';
-  let svgActiveClass = 'mb-1 text-pink-700 dark:text-pink-700 group-hover:text-pink-900 dark:group-hover:text-pink-900';
+  let svgClass = 'mb-1 text-pink-500 dark:text-pink-400 group-hover:text-pink-600 dark:group-hover:text-pink-500';
+  let svgActiveClass = 'mb-1 text-green-500 dark:text-green-500 group-hover:text-green-700 dark:group-hover:text-green-700';
 </script>
 
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav {activeUrl} position="absolute" classInner="grid-cols-4" classActive="font-bold text-green-700 hover:text-green-900 dark:hover:text-green-700 dark:text-green-500">
+<BottomNav position="absolute" classInner="grid-cols-4" >
   <BottomNavItem btnName="Home" href="/">
-    <Icon name="home-solid"  class={activeUrl === '/' ? svgActiveClass : svgClass}/>
+    <Icon name="home-solid" class={activeUrl === '/' ? svgActiveClass : svgClass}/>
   </BottomNavItem>
   <BottomNavItem btnName="Quickstart" href="/docs/pages/quickstart">
-    <Icon name="wallet-solid"  class={activeUrl === '/docs/pages/quickstart' ? svgActiveClass : svgClass}/>
+    <Icon name="wallet-solid" class={activeUrl === '/docs/pages/quickstart' ? svgActiveClass : svgClass}/>
   </BottomNavItem>
   <BottomNavItem btnName="BottomNav" href="/docs/components/bottom-navigation">
     <Icon name="adjustments-vertical-outline" class={activeUrl === '/docs/components/bottom-navigation' ? svgActiveClass : svgClass}/>
   </BottomNavItem>
   <BottomNavItem btnName="Accordion" href="/docs/components/accordion">
-    <Icon name="user-circle-solid"  class={activeUrl === '/docs/components/accordion' ? svgActiveClass : svgClass}/>
+    <Icon name="user-circle-solid" class={activeUrl === '/docs/components/accordion' ? svgActiveClass : svgClass}/>
   </BottomNavItem>
 </BottomNav>
 ```

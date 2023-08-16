@@ -2,18 +2,20 @@
   export type NavbarLiType = {
     activeClass: string;
     nonActiveClass: string;
-    activeUrl: string;
   };
 </script>
 
 <script lang="ts">
-  import { setContext } from 'svelte';
+  import { page } from '$app/stores';
   import { twMerge } from 'tailwind-merge';
   import { slide, type SlideParams } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
   import Frame from '../utils/Frame.svelte';
+  import { setContext } from 'svelte';
+  import { writable } from 'svelte/store';
 
-  export let activeUrl: string = ''; 
+  const activeUrl = writable('');
+  
   export let divClass: string = 'w-full md:block md:w-auto';
   export let ulClass: string = 'flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium';
   export let hidden: boolean = true;
@@ -21,7 +23,11 @@
   export let activeClass: string = 'text-white bg-primary-700 md:bg-transparent md:text-primary-700 md:dark:text-white dark:bg-primary-600 md:dark:bg-transparent';
   export let nonActiveClass: string = 'text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent';
 
-  setContext<NavbarLiType>('navbarContext', { activeClass, nonActiveClass, activeUrl });
+  setContext<NavbarLiType>('navbarContext', { activeClass, nonActiveClass, });
+  setContext('activeUrl', activeUrl);
+  $: {
+    activeUrl.set($page.url.pathname);
+  }
 
   let _divClass: string;
   $: _divClass = twMerge(divClass, $$props.class);

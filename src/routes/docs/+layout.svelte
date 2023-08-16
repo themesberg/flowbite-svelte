@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { page } from '$app/stores';
   import { afterNavigate } from '$app/navigation';
   import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from '$lib';
   import SidebarDropdownWrapper from '$lib/sidebars/SidebarDropdownWrapper.svelte';
@@ -22,6 +23,7 @@
 
   const fileDir = (path: string) => path.split('/').slice(0, -1).pop() ?? '';
 
+  $: aUrl = $page.url.pathname;
   let activeUrl: string;
 
   afterNavigate((navigation) => {
@@ -37,13 +39,13 @@
   });
 
   let spanClass = '';
-  let aClass = 'transition-colors duration-200 relative flex items-center flex-wrap font-medium hover:text-gray-900 hover:cursor-pointer text-gray-500 dark:text-gray-400 dark:hover:text-white';
+  let nonActiveClass = 'transition-colors duration-200 relative flex items-center flex-wrap font-medium hover:text-gray-900 hover:cursor-pointer text-gray-500 dark:text-gray-400 dark:hover:text-white';
   let activeClass = 'relative flex items-center flex-wrap font-medium cursor-default text-primary-700 dark:text-primary-700';
 
   let dropdowns = Object.fromEntries(Object.keys(posts).map((x) => [x, false]));
 </script>
 
-<Sidebar class={$drawerHidden && 'hidden'} asideClass="fixed inset-0 z-30 flex-none h-full w-64 lg:static lg:h-auto border-r border-gray-200 dark:border-gray-600 lg:overflow-y-visible lg:pt-0 lg:block">
+<Sidebar class={$drawerHidden && 'hidden'} {nonActiveClass} activeUrl={aUrl} asideClass="fixed inset-0 z-30 flex-none h-full w-64 lg:static lg:h-auto border-r border-gray-200 dark:border-gray-600 lg:overflow-y-visible lg:pt-0 lg:block">
   <h4 id="sidebar-label" class="sr-only">Browse docs</h4>
   <SidebarWrapper divClass="overflow-y-auto px-4 pt-20 lg:pt-0 h-full bg-white scrolling-touch max-w-2xs lg:h-[calc(100vh-8rem)] lg:block dark:bg-gray-900 lg:mr-0 lg:sticky top-20">
     <nav class="font-normal text-base lg:text-sm">
@@ -55,7 +57,7 @@
             {#each values as { meta, path }}
               {@const href = `/docs/${key}${path}`}
               {#if meta}
-                <SidebarItem label={meta.component_title} {href} {spanClass} {aClass} {activeClass} active={activeUrl === href} />
+                <SidebarItem label={meta.component_title} {href} {spanClass}  {activeClass} active={activeUrl === href} />
               {/if}
             {/each}
           </SidebarDropdownWrapper>
