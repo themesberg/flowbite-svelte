@@ -1,19 +1,25 @@
 <script lang="ts">
   import { getContext } from 'svelte';
   import type { ButtonClassesTypes } from '../types';
-  import type { BottomNavLiType } from './BottomNav.svelte';
+  import type { BottomNavType } from './BottomNav.svelte';
   import { twMerge } from 'tailwind-merge';
 
   export let btnName: string = '';
   export let appBtnPosition: 'left' | 'middle' | 'right' = 'middle';
   export let activeClass: string | undefined = undefined;
-  export let active: boolean = false;
-  export let href: string;
+  export let href: string = '';
 
   const navType: 'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video' = getContext('navType');
 
-  const context = getContext<BottomNavLiType>('bottomNavType') ?? {};
+  const context = getContext<BottomNavType>('bottomNavType') ?? {};
+  const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
 
+  let navUrl = '';
+  activeUrlStore.subscribe(value => {
+    navUrl = value;
+  });
+
+  $: active = navUrl ? href === navUrl : false;
   const btnClasses: ButtonClassesTypes = {
     default: 'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
     border: 'inline-flex flex-col items-center justify-center px-5 border-gray-200 border-x hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600',
@@ -42,8 +48,13 @@
     right: 'inline-flex flex-col items-center justify-center px-5 rounded-r-full hover:bg-gray-50 dark:hover:bg-gray-800 group'
   };
   let btnClass: string;
-  $: btnClass = twMerge(btnClasses[navType], appBtnClasses[appBtnPosition], active && (activeClass ?? context.activeClass), $$props.btnClass);
+
+  // let active = navUrl ? href === navUrl : false;
+ 
+  $: btnClass = twMerge( btnClasses[navType], appBtnClasses[appBtnPosition],  active && (activeClass ?? context.activeClass), $$props.btnClass);
+  
   let spanClass: string;
+  
   $: spanClass = twMerge(spanClasses[navType], active && (activeClass ?? context.activeClass), $$props.spanClass);
 </script>
 

@@ -9,7 +9,11 @@
   import Popper from '$lib/utils/Popper.svelte';
   import type { ComponentProps } from 'svelte';
   import { setContext } from 'svelte';
+  import { writable } from 'svelte/store';
 
+  const activeUrlStore = writable('');
+
+  export let activeUrl: string = ''; 
   export let open: boolean = false;
   export let containerClass: string = 'divide-y z-50';
   export let headerClass: string = 'py-1 overflow-hidden rounded-t-lg';
@@ -17,13 +21,20 @@
   export let activeClass: string = 'text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900';
 
   let activeCls = twMerge(activeClass, $$props.classActive);
+
   setContext<DropdownType>('DropdownType', { activeClass: activeCls });
+
+  $: {
+    activeUrlStore.set(activeUrl);
+  }
+  setContext('activeUrl', activeUrlStore);
   // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Popper> {
     open?: boolean;
     containerClass?: string;
     headerClass?: string;
     footerClass?: string;
+    activeUrl?: string;
   }
 
   let containerCls: string = twMerge(containerClass, $$props.classContainer);

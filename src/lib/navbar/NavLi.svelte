@@ -1,17 +1,24 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
+  import { twMerge } from 'tailwind-merge';
   import type { NavbarLiType } from './NavUl.svelte';
 
   export let href: string = '';
-  export let active: boolean = false;
   export let activeClass: string | undefined = undefined;
   export let nonActiveClass: string | undefined = undefined;
 
-  const context = getContext<NavbarLiType>('navbar') ?? {};
+  const context = getContext<NavbarLiType>('navbarContext') ?? {};
+  const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
 
-  let liClass: string;
+  let navUrl = '';
+  activeUrlStore.subscribe(value => {
+    navUrl = value;
+  });
+
+  $: active = navUrl ? href === navUrl : false;
+
   $: liClass = twMerge('block py-2 pr-4 pl-3 md:p-0 rounded md:border-0', active ? activeClass ?? context.activeClass : nonActiveClass ?? context.nonActiveClass, $$props.class);
+  // $: console.log()
 </script>
 
 <li>
