@@ -6,7 +6,6 @@
 </script>
 
 <script lang="ts">
-  import { page } from '$app/stores';
   import { twMerge } from 'tailwind-merge';
   import { slide, type SlideParams } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
@@ -25,7 +24,7 @@
   export let nonActiveClass: string = 'text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent';
 
   setContext<NavbarLiType>('navbarContext', { activeClass, nonActiveClass, });
-    $: {
+  $: {
     activeUrlStore.set(activeUrl);
   }
   setContext('activeUrl', activeUrlStore);

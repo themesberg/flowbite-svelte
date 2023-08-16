@@ -11,17 +11,15 @@
 
   const navType: 'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video' = getContext('navType');
 
-  // const context = getContext<BottomNavLiType>('bottomNavType') ?? {};
-  // const activeUrl = getContext('activeUrl');
-
   const context = getContext<BottomNavType>('bottomNavType') ?? {};
-  const activeUrl = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
+  const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
 
   let navUrl = '';
-  activeUrl.subscribe(value => {
+  activeUrlStore.subscribe(value => {
     navUrl = value;
   });
 
+  $: active = activeUrlStore ? href === navUrl : false;
   const btnClasses: ButtonClassesTypes = {
     default: 'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
     border: 'inline-flex flex-col items-center justify-center px-5 border-gray-200 border-x hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600',
@@ -51,7 +49,7 @@
   };
   let btnClass: string;
 
-  let active = navUrl ? href === navUrl : false;
+  // let active = navUrl ? href === navUrl : false;
  
   $: btnClass = twMerge( btnClasses[navType], appBtnClasses[appBtnPosition],  active && (activeClass ?? context.activeClass), $$props.btnClass);
   

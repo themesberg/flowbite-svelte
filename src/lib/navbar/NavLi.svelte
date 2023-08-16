@@ -8,7 +8,7 @@
   export let nonActiveClass: string | undefined = undefined;
 
   const context = getContext<NavbarLiType>('navbarContext') ?? {};
-    const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
+  const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
 
   let navUrl = '';
   activeUrlStore.subscribe(value => {

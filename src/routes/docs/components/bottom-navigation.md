@@ -59,6 +59,97 @@ Use the default bottom navigation bar example to show a list of menu items as bu
 </BottomNav>
 ```
 
+## Adding links and active class
+
+By adding the `href` prop in `BottomNavItem` components, it automatically detect the active URL.
+
+```svelte example class="flex flex-col relative"
+<script>
+  import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
+  import { page } from '$app/stores';
+  $: activeUrl = $page.url.pathname;
+</script>
+
+<Skeleton class="py-4" />
+<ImagePlaceholder class="pb-20" />
+
+<BottomNav {activeUrl} position="absolute" classInner="grid-cols-4" >
+  <BottomNavItem btnName="Home" href="/">
+    <Icon name="home-solid" />
+  </BottomNavItem>
+  <BottomNavItem btnName="Quickstart" href="/docs/pages/quickstart">
+    <Icon name="wallet-solid"/>
+  </BottomNavItem>
+  <BottomNavItem btnName="BottomNav" href="/docs/components/bottom-navigation">
+    <Icon name="adjustments-vertical-outline" />
+  </BottomNavItem>
+  <BottomNavItem btnName="Accordion" href="/docs/components/accordion">
+    <Icon name="user-circle-solid" />
+  </BottomNavItem>
+</BottomNav>
+```
+
+The following example shows how to change active class, by overwriting `activeClass` with the `classActive` prop.
+
+```svelte example class="flex flex-col relative"
+<script>
+  import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
+  import { page } from '$app/stores';
+  $: activeUrl = $page.url.pathname;
+</script>
+
+<Skeleton class="py-4" />
+<ImagePlaceholder class="pb-20" />
+
+<BottomNav {activeUrl} position="absolute" classInner="grid-cols-4" classActive="font-bold text-green-500 hover:text-green-900 dark:hover:text-green-700 dark:text-green-300">
+  <BottomNavItem btnName="Home" href="/">
+    <Icon name="home-solid" />
+  </BottomNavItem>
+  <BottomNavItem btnName="Quickstart" href="/docs/pages/quickstart">
+    <Icon name="wallet-solid" />
+  </BottomNavItem>
+  <BottomNavItem btnName="BottomNav" href="/docs/components/bottom-navigation">
+    <Icon name="adjustments-vertical-outline" />
+  </BottomNavItem>
+  <BottomNavItem btnName="Accordion" href="/docs/components/accordion">
+    <Icon name="user-circle-solid" />
+  </BottomNavItem>
+</BottomNav>
+```
+
+Use the following example to change the icon colors:
+
+```svelte example class="flex flex-col relative"
+<script>
+  import { page } from '$app/stores';
+  import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
+  $: activeUrl = $page.url.pathname;
+  let svgClass = 'mb-1 text-pink-500 dark:text-pink-400 group-hover:text-pink-600 dark:group-hover:text-pink-500';
+  let svgActiveClass = 'mb-1 text-green-500 dark:text-green-500 group-hover:text-green-700 dark:group-hover:text-green-700';
+</script>
+
+<Skeleton class="py-4" />
+<ImagePlaceholder class="pb-20" />
+
+<BottomNav {activeUrl} position="absolute" classInner="grid-cols-4" >
+  <BottomNavItem btnName="Home" href="/">
+    <Icon name="home-solid" class={activeUrl === '/' ? svgActiveClass : svgClass}/>
+  </BottomNavItem>
+  <BottomNavItem btnName="Quickstart" href="/docs/pages/quickstart">
+    <Icon name="wallet-solid" class={activeUrl === '/docs/pages/quickstart' ? svgActiveClass : svgClass}/>
+  </BottomNavItem>
+  <BottomNavItem btnName="BottomNav" href="/docs/components/bottom-navigation">
+    <Icon name="adjustments-vertical-outline" class={activeUrl === '/docs/components/bottom-navigation' ? svgActiveClass : svgClass}/>
+  </BottomNavItem>
+  <BottomNavItem btnName="Accordion" href="/docs/components/accordion">
+    <Icon name="user-circle-solid" class={activeUrl === '/docs/components/accordion' ? svgActiveClass : svgClass}/>
+  </BottomNavItem>
+</BottomNav>
+```
+
 ## Menu items with border
 
 This example can be used to show a border between the menu items inside the bottom navbar.
@@ -274,93 +365,6 @@ You can even use the other bottom navbar examples to exchange the default one pr
     </BottomNavItem>
   </BottomNav>
 </Card>
-```
-
-## Adding links and active class
-
-By adding the `href` prop in `BottomNavItem` components, it automatically detect the active URL.
-
-```svelte example class="flex flex-col relative"
-<script>
-  import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
-</script>
-
-<Skeleton class="py-4" />
-<ImagePlaceholder class="pb-20" />
-
-<BottomNav position="absolute" classInner="grid-cols-4" >
-  <BottomNavItem btnName="Home" href="/">
-    <Icon name="home-solid" />
-  </BottomNavItem>
-  <BottomNavItem btnName="Quickstart" href="/docs/pages/quickstart">
-    <Icon name="wallet-solid"/>
-  </BottomNavItem>
-  <BottomNavItem btnName="BottomNav" href="/docs/components/bottom-navigation">
-    <Icon name="adjustments-vertical-outline" />
-  </BottomNavItem>
-  <BottomNavItem btnName="Accordion" href="/docs/components/accordion">
-    <Icon name="user-circle-solid" />
-  </BottomNavItem>
-</BottomNav>
-```
-
-The following example shows how to change active class, by overwriting `activeClass` with the `classActive` prop.
-
-```svelte example class="flex flex-col relative"
-<script>
-  import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
-</script>
-
-<Skeleton class="py-4" />
-<ImagePlaceholder class="pb-20" />
-
-<BottomNav position="absolute" classInner="grid-cols-4" classActive="font-bold text-green-500 hover:text-green-900 dark:hover:text-green-700 dark:text-green-300">
-  <BottomNavItem btnName="Home" href="/">
-    <Icon name="home-solid" />
-  </BottomNavItem>
-  <BottomNavItem btnName="Quickstart" href="/docs/pages/quickstart">
-    <Icon name="wallet-solid" />
-  </BottomNavItem>
-  <BottomNavItem btnName="BottomNav" href="/docs/components/bottom-navigation">
-    <Icon name="adjustments-vertical-outline" />
-  </BottomNavItem>
-  <BottomNavItem btnName="Accordion" href="/docs/components/accordion">
-    <Icon name="user-circle-solid" />
-  </BottomNavItem>
-</BottomNav>
-```
-
-Use the following example to change the icon colors:
-
-```svelte example class="flex flex-col relative"
-<script>
-  import { page } from '$app/stores';
-  import { BottomNav, BottomNavItem, Skeleton, ImagePlaceholder } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
-  $: activeUrl = $page.url.pathname;
-  let svgClass = 'mb-1 text-pink-500 dark:text-pink-400 group-hover:text-pink-600 dark:group-hover:text-pink-500';
-  let svgActiveClass = 'mb-1 text-green-500 dark:text-green-500 group-hover:text-green-700 dark:group-hover:text-green-700';
-</script>
-
-<Skeleton class="py-4" />
-<ImagePlaceholder class="pb-20" />
-
-<BottomNav position="absolute" classInner="grid-cols-4" >
-  <BottomNavItem btnName="Home" href="/">
-    <Icon name="home-solid" class={activeUrl === '/' ? svgActiveClass : svgClass}/>
-  </BottomNavItem>
-  <BottomNavItem btnName="Quickstart" href="/docs/pages/quickstart">
-    <Icon name="wallet-solid" class={activeUrl === '/docs/pages/quickstart' ? svgActiveClass : svgClass}/>
-  </BottomNavItem>
-  <BottomNavItem btnName="BottomNav" href="/docs/components/bottom-navigation">
-    <Icon name="adjustments-vertical-outline" class={activeUrl === '/docs/components/bottom-navigation' ? svgActiveClass : svgClass}/>
-  </BottomNavItem>
-  <BottomNavItem btnName="Accordion" href="/docs/components/accordion">
-    <Icon name="user-circle-solid" class={activeUrl === '/docs/components/accordion' ? svgActiveClass : svgClass}/>
-  </BottomNavItem>
-</BottomNav>
 ```
 
 ## Props

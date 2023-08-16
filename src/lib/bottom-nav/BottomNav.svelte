@@ -5,11 +5,11 @@
 </script>
 
 <script lang="ts">
-  import { page } from '$app/stores';
   import { setContext } from 'svelte';
   import { writable } from 'svelte/store';
   import { twMerge } from 'tailwind-merge';
   
+  export let activeUrl: string = '';
   export let position: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky' = 'fixed';
   export let navType: 'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video' = 'default';
   export let outerClass: string = 'w-full z-50 border-gray-200 dark:bg-gray-700 dark:border-gray-600';
@@ -17,17 +17,18 @@
   export let activeClass: string = 'text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900';
   // export let activeUrl: string = ''; 
   let activeCls ='';
-  const activeUrl = writable('');
 
-
+  const activeUrlStore = writable('');
 
   activeCls = twMerge(activeClass, $$props.classActive);
-  setContext<BottomNavType>('bottomNavType', { activeClass: activeCls });
-  setContext('activeUrl', activeUrl);
-  $: {
-    activeUrl.set($page.url.pathname);
-  }
   setContext('navType', navType);
+  setContext<BottomNavType>('bottomNavType', { activeClass: activeCls });
+
+  $: {
+    activeUrlStore.set(activeUrl);
+  }
+  setContext('activeUrl', activeUrlStore);
+
 
   const outerDivClasses = {
     default: 'bottom-0 left-0 h-16 bg-white border-t',
