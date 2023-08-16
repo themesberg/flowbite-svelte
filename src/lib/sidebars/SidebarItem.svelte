@@ -11,9 +11,20 @@
   // export let active: boolean = false;
 
   const context = getContext<SidebarType>('sidebarContext') ?? {};
-  let active = context.activeUrl ? href === context.activeUrl : false;
-  let aClass: string = twMerge(active ? activeClass ?? context.activeClass : nonActiveClass ?? context.nonActiveClass, $$props.class);
-  // twMerge(active ? activeClass : nonActiveClass, $$props.class)
+  const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
+  
+  let sidebarUrl = '';
+  activeUrlStore.subscribe(value => {
+    // console.log('value: ', value)
+    sidebarUrl = value;
+  });
+  // console.log('sidbarUrl: ', sidebarUrl)
+  // console.log('href: ', href)
+  $: active = sidebarUrl ? href === sidebarUrl : false;
+  // console.log('active: ', active)
+
+  $: aClass = twMerge(active ? activeClass ?? context.activeClass : nonActiveClass ?? context.nonActiveClass, $$props.class);
+
 </script>
 
 <li>

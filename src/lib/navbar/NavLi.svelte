@@ -15,7 +15,8 @@
     navUrl = value;
   });
 
-$: active = activeUrlStore ? href === navUrl : false;
+  $: active = navUrl ? href === navUrl : false;
+
   $: liClass = twMerge('block py-2 pr-4 pl-3 md:p-0 rounded md:border-0', active ? activeClass ?? context.activeClass : nonActiveClass ?? context.nonActiveClass, $$props.class);
   // $: console.log()
 </script>
