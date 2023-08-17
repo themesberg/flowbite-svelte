@@ -16,6 +16,7 @@
     autoclose?: boolean;
     permanent?: boolean;
     backdropClass?: string;
+    dialogClass?: string;
     defaultClass?: string;
     outsideclose?: boolean;
   }
@@ -27,6 +28,7 @@
   export let autoclose: boolean = false;
   export let permanent: boolean = false;
   export let backdropClass: string = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
+  export let dialogClass: string = '';
   export let defaultClass: string = 'relative flex flex-col mx-auto';
   export let outsideclose: boolean = false;
 
@@ -99,6 +101,8 @@
   let frameClass: string;
   $: frameClass = twMerge(defaultClass, 'w-full', $$props.class);
 
+  let dialogCls: string = twMerge(dialogClass, $$props.classDialog);
+
   const isScrollable = (e: HTMLElement): boolean[] => [e.scrollWidth > e.clientWidth && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowX) >= 0, e.scrollHeight > e.clientHeight && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowY) >= 0];
 
   let backdropCls: string = twMerge(backdropClass, $$props.classBackdrop);
@@ -113,7 +117,7 @@
   <div class={twMerge('fixed inset-0 z-40', backdropCls)} />
   <!-- dialog -->
   <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-  <div on:keydown={handleKeys} on:wheel|preventDefault|nonpassive use:prepareFocus use:focusTrap on:click={onAutoClose} class={twMerge('fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex', ...getPlacementClasses())} tabindex="-1" aria-modal="true" role="dialog">
+  <div on:keydown={handleKeys} on:wheel|preventDefault|nonpassive use:prepareFocus use:focusTrap on:click={onAutoClose} class={twMerge('fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex', ...getPlacementClasses(), dialogCls)} tabindex="-1" aria-modal="true" role="dialog">
     <div class="flex relative {sizes[size]} w-full max-h-full">
       <!-- Modal content -->
       <Frame rounded shadow {...$$restProps} class={frameClass}>
@@ -167,6 +171,7 @@
   @prop autoclose: boolean = false;
   @prop permanent: boolean = false;
   @prop backdropClass: string = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
+  @prop dialogClass: string = '';
   @prop defaultClass: string = 'relative flex flex-col mx-auto';
   @prop outsideclose: boolean = false; 
   ## Example

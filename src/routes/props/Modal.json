@@ -7,6 +7,7 @@
     ["autoclose", "boolean", "false"],
     ["permanent", "boolean", "false"],
     ["backdropClass", "string", "'bg-gray-900 bg-opacity-50 dark:bg-opacity-80'"],
+    ["dialogClass", "string", "''"],
     ["defaultClass", "string", "'relative flex flex-col mx-auto'"],
     ["outsideclose", "boolean", "false"]
   ]
