@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.43.3](https://github.com/themesberg/flowbite-svelte/compare/v0.43.2...v0.43.3) (2023-08-17)
+
+
+### Features
+
+* bottomnav components update ([#989](https://github.com/themesberg/flowbite-svelte/issues/989)) ([c7d898f](https://github.com/themesberg/flowbite-svelte/commit/c7d898f553b0e59dbc92c78cb712dc5244310b05))
+
 ### [0.43.2](https://github.com/themesberg/flowbite-svelte/compare/v0.43.1...v0.43.2) (2023-08-14)
 
 
