@@ -8,7 +8,7 @@
   // propagate props type from underying Frame
   interface $$Props extends ComponentProps<Frame> {
     simple?: boolean;
-    color?: 'primary' |'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'orange' | 'none';
+    color?: 'primary' | 'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'orange' | 'none';
     position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none';
     open?: boolean;
     divClass?: string;

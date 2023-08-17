@@ -3,7 +3,6 @@
     ["btnName", "string", "''"],
     ["appBtnPosition", "'left' | 'middle' | 'right'", "'middle'"],
     ["activeClass", "string | undefined", "undefined"],
-    ["active", "boolean", "false"],
-    ["href", "string", ""]
+    ["href", "string", "''"]
   ]
 }

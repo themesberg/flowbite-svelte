@@ -11,7 +11,7 @@
   const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
 
   let navUrl = '';
-  activeUrlStore.subscribe(value => {
+  activeUrlStore.subscribe((value) => {
     navUrl = value;
   });
 

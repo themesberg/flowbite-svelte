@@ -93,7 +93,6 @@ Use this example to show a responsive list of menu items inside the sidebar with
 </Sidebar>
 ```
 
-
 ## Adding links and active class
 
 Utilize the `href` prop within the `SidebarItem` component to incorporate a hyperlink. To initiate the application of the active class, include the `activeUrl` prop within the `Sidebar` component:
@@ -124,7 +123,7 @@ Utilize the `href` prop within the `SidebarItem` component to incorporate a hype
           <Icon name="mail-box-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
       </SidebarItem>
-      <SidebarItem label="Sidebar" href="/docs/components/sidebar" >
+      <SidebarItem label="Sidebar" href="/docs/components/sidebar">
         <svelte:fragment slot="icon">
           <Icon name="user-solid" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
         </svelte:fragment>
@@ -147,8 +146,8 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
   import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from 'flowbite-svelte';
   import { Icon } from 'flowbite-svelte-icons';
   $: activeUrl = $page.url.pathname;
-  let activeClass='flex items-center p-2 text-base font-normal text-primary-900 bg-primary-200 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-100 dark:hover:bg-gray-700';
-  let nonActiveClass='flex items-center p-2 text-base font-normal text-green-900 rounded-lg dark:text-white hover:bg-green-100 dark:hover:bg-green-700';
+  let activeClass = 'flex items-center p-2 text-base font-normal text-primary-900 bg-primary-200 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-100 dark:hover:bg-gray-700';
+  let nonActiveClass = 'flex items-center p-2 text-base font-normal text-green-900 rounded-lg dark:text-white hover:bg-green-100 dark:hover:bg-green-700';
 </script>
 
 <Sidebar {activeUrl} {activeClass} {nonActiveClass}>
@@ -169,7 +168,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
           <Icon name="mail-box-solid" class="w-5 h-5" />
         </svelte:fragment>
       </SidebarItem>
-      <SidebarItem label="Sidebar" href="/docs/components/sidebar" >
+      <SidebarItem label="Sidebar" href="/docs/components/sidebar">
         <svelte:fragment slot="icon">
           <Icon name="user-solid" class="w-5 h-5" />
         </svelte:fragment>
@@ -520,14 +519,14 @@ You can add own transition by setting `transitionType` and `transitionParams`.
 <Sidebar>
   <SidebarWrapper>
     <SidebarGroup>
-      <SidebarItem label="Dashboard"/>
+      <SidebarItem label="Dashboard" />
       <SidebarDropdownWrapper label="E-commerce" isOpen={containPath} transitionType="fly" {transitionParams}>
-        <SidebarDropdownItem label="Products" href="/products"/>
+        <SidebarDropdownItem label="Products" href="/products" />
         <SidebarDropdownItem label="Cart" href="/cart" />
       </SidebarDropdownWrapper>
       <SidebarDropdownWrapper label="Items" transitionType="fly" {transitionParams}>
-        <SidebarDropdownItem label="Item 1" href="/components/item1"/>
-        <SidebarDropdownItem label="Item 2" href="/components/item2"/>
+        <SidebarDropdownItem label="Item 1" href="/components/item1" />
+        <SidebarDropdownItem label="Item 2" href="/components/item2" />
       </SidebarDropdownWrapper>
     </SidebarGroup>
   </SidebarWrapper>

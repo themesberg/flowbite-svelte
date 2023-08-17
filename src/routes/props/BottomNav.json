@@ -1,5 +1,6 @@
 {
   "props": [
+    ["activeUrl", "string", "''"],
     ["position", "'static' | 'fixed' | 'absolute' | 'relative' | 'sticky'", "'fixed'"],
     ["navType", "'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video'", "'default'"],
     ["outerClass", "string", "'w-full z-50 border-gray-200 dark:bg-gray-700 dark:border-gray-600'"],

@@ -74,12 +74,12 @@ Utilize the `href` prop within the `BottomNavItem` component to incorporate a hy
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav {activeUrl} position="absolute" classInner="grid-cols-4" >
+<BottomNav {activeUrl} position="absolute" classInner="grid-cols-4">
   <BottomNavItem btnName="Home" href="/">
     <Icon name="home-solid" />
   </BottomNavItem>
   <BottomNavItem btnName="Quickstart" href="/docs/pages/quickstart">
-    <Icon name="wallet-solid"/>
+    <Icon name="wallet-solid" />
   </BottomNavItem>
   <BottomNavItem btnName="BottomNav" href="/docs/components/bottom-navigation">
     <Icon name="adjustments-vertical-outline" />
@@ -134,18 +134,18 @@ Use the following example to change the icon colors:
 <Skeleton class="py-4" />
 <ImagePlaceholder class="pb-20" />
 
-<BottomNav {activeUrl} position="absolute" classInner="grid-cols-4" >
+<BottomNav {activeUrl} position="absolute" classInner="grid-cols-4">
   <BottomNavItem btnName="Home" href="/">
-    <Icon name="home-solid" class={activeUrl === '/' ? svgActiveClass : svgClass}/>
+    <Icon name="home-solid" class={activeUrl === '/' ? svgActiveClass : svgClass} />
   </BottomNavItem>
   <BottomNavItem btnName="Quickstart" href="/docs/pages/quickstart">
-    <Icon name="wallet-solid" class={activeUrl === '/docs/pages/quickstart' ? svgActiveClass : svgClass}/>
+    <Icon name="wallet-solid" class={activeUrl === '/docs/pages/quickstart' ? svgActiveClass : svgClass} />
   </BottomNavItem>
   <BottomNavItem btnName="BottomNav" href="/docs/components/bottom-navigation">
-    <Icon name="adjustments-vertical-outline" class={activeUrl === '/docs/components/bottom-navigation' ? svgActiveClass : svgClass}/>
+    <Icon name="adjustments-vertical-outline" class={activeUrl === '/docs/components/bottom-navigation' ? svgActiveClass : svgClass} />
   </BottomNavItem>
   <BottomNavItem btnName="Accordion" href="/docs/components/accordion">
-    <Icon name="user-circle-solid" class={activeUrl === '/docs/components/accordion' ? svgActiveClass : svgClass}/>
+    <Icon name="user-circle-solid" class={activeUrl === '/docs/components/accordion' ? svgActiveClass : svgClass} />
   </BottomNavItem>
 </BottomNav>
 ```

@@ -13,7 +13,7 @@
 
   const activeUrlStore = writable('');
 
-  export let activeUrl: string = ''; 
+  export let activeUrl: string = '';
   export let open: boolean = false;
   export let containerClass: string = 'divide-y z-50';
   export let headerClass: string = 'py-1 overflow-hidden rounded-t-lg';

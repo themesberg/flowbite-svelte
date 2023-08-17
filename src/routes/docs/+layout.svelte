@@ -57,7 +57,7 @@
             {#each values as { meta, path }}
               {@const href = `/docs/${key}${path}`}
               {#if meta}
-                <SidebarItem label={meta.component_title} {href} {spanClass}  {activeClass} active={activeMainSidebar === href} />
+                <SidebarItem label={meta.component_title} {href} {spanClass} {activeClass} active={activeMainSidebar === href} />
               {/if}
             {/each}
           </SidebarDropdownWrapper>
