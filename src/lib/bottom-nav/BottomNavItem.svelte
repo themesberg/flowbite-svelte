@@ -15,7 +15,7 @@
   const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
 
   let navUrl = '';
-  activeUrlStore.subscribe(value => {
+  activeUrlStore.subscribe((value) => {
     navUrl = value;
   });
 
@@ -50,11 +50,11 @@
   let btnClass: string;
 
   // let active = navUrl ? href === navUrl : false;
- 
-  $: btnClass = twMerge( btnClasses[navType], appBtnClasses[appBtnPosition],  active && (activeClass ?? context.activeClass), $$props.btnClass);
-  
+
+  $: btnClass = twMerge(btnClasses[navType], appBtnClasses[appBtnPosition], active && (activeClass ?? context.activeClass), $$props.btnClass);
+
   let spanClass: string;
-  
+
   $: spanClass = twMerge(spanClasses[navType], active && (activeClass ?? context.activeClass), $$props.spanClass);
 </script>
 

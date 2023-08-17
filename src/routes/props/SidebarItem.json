@@ -1,10 +1,9 @@
 {
   "props": [
-    ["aClass", "string", "'flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'"],
     ["href", "string", "''"],
     ["label", "string", "''"],
     ["spanClass", "string", "'ml-3'"],
-    ["activeClass", "string", "'flex items-center p-2 text-base font-normal text-gray-900 bg-gray-200 dark:bg-gray-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'"],
-    ["active", "boolean", "false"]
+    ["activeClass", "string | undefined", "undefined"],
+    ["nonActiveClass", "string | undefined", "undefined"]
   ]
 }

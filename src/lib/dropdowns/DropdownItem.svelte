@@ -4,7 +4,6 @@
   import { getContext } from 'svelte';
   import type { DropdownType } from './Dropdown.svelte';
 
-  
   export let defaultClass: string = 'font-medium py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600';
   export let href: string | undefined = undefined;
   export let activeClass: string | undefined = undefined;
@@ -14,7 +13,7 @@
   const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
 
   let sidebarUrl = '';
-  activeUrlStore.subscribe(value => {
+  activeUrlStore.subscribe((value) => {
     // console.log('value: ', value)
     sidebarUrl = value;
   });
@@ -23,8 +22,8 @@
 
   // let liClass: string;
   $: liClass = twMerge(defaultClass, href ? 'block' : 'w-full text-left', active && (activeClass ?? context.activeClass), $$props.class);
-// twMerge(active ? activeClass ?? context.activeClass : nonActiveClass ?? context.nonActiveClass, $$props.class);
-// console.log('active: ', active)
+  // twMerge(active ? activeClass ?? context.activeClass : nonActiveClass ?? context.nonActiveClass, $$props.class);
+  // console.log('active: ', active)
   let wrap: boolean = true;
   function init(node: HTMLElement) {
     wrap = node.parentElement?.tagName === 'UL';

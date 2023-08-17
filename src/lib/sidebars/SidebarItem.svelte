@@ -12,9 +12,9 @@
 
   const context = getContext<SidebarType>('sidebarContext') ?? {};
   const activeUrlStore = getContext('activeUrl') as { subscribe: (callback: (value: string) => void) => void };
-  
+
   let sidebarUrl = '';
-  activeUrlStore.subscribe(value => {
+  activeUrlStore.subscribe((value) => {
     // console.log('value: ', value)
     sidebarUrl = value;
   });
@@ -24,7 +24,6 @@
   // console.log('active: ', active)
 
   $: aClass = twMerge(active ? activeClass ?? context.activeClass : nonActiveClass ?? context.nonActiveClass, $$props.class);
-
 </script>
 
 <li>
