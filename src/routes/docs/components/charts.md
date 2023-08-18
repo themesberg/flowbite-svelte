@@ -7,6 +7,12 @@ dir: components
 description: Use the chart and graph components from Flowbite-Svelte built with Tailwind CSS and ApexCharts to choose from line, area, bar, column, pie, and radial charts
 ---
 
+<script>
+  import { TableProp, TableDefaultRow , } from '../../utils'
+  import { props as items } from '../../props/Chart.json'
+  import { props as items1 } from '../../props/ChartWrapper.json'
+</script>
+
 ## Area chart
 
 Use this example to show a basic area chart.
@@ -972,3 +978,23 @@ To create a radial chart with multiple data entries you need to set the type: "r
   </div>
 </ChartWrapper>
 ```
+
+## Props
+
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
+
+### Chart
+
+- Use the `class` prop to overwrite `div` tag.
+
+<TableProp>
+  <TableDefaultRow {items} rowState='hover' />
+</TableProp>
+
+### ChartWrapper
+
+- Use the `class` prop to overwrite `divClass`.
+
+<TableProp>
+  <TableDefaultRow items={items1} rowState='hover' />
+</TableProp>
