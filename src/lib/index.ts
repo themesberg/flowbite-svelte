@@ -38,6 +38,10 @@ export { default as Card } from './cards/Card.svelte';
 export { default as Carousel } from './carousels/Carousel.svelte';
 export { default as CarouselTransition } from './carousels/CarouselTransition.svelte';
 
+// Charts
+export { default as ChartWrapper } from './charts/ChartWrapper.svelte';
+export { default as Chart } from './charts/Chart.svelte'
+
 // Dark mode
 export { default as DarkMode } from './darkmode/DarkMode.svelte';
 
