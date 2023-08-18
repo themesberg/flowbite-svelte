@@ -18,4 +18,4 @@
   });
 </script>
 
-<div bind:this={chartNode} />
+<div bind:this={chartNode} class="{$$props.class}"/>
