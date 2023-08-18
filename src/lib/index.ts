@@ -40,7 +40,7 @@ export { default as CarouselTransition } from './carousels/CarouselTransition.sv
 
 // Charts
 export { default as ChartWrapper } from './charts/ChartWrapper.svelte';
-export { default as Chart } from './charts/Chart.svelte'
+export { default as Chart } from './charts/Chart.svelte';
 
 // Dark mode
 export { default as DarkMode } from './darkmode/DarkMode.svelte';
