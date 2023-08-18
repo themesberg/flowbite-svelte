@@ -26,9 +26,10 @@
   export let placement: ModalPlacementType = 'center';
   export let autoclose: boolean = false;
   export let permanent: boolean = false;
-  export let backdropClass: string = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
+  export let backdropClass: string = 'fixed inset-0 z-40 bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
   export let defaultClass: string = 'relative flex flex-col mx-auto';
   export let outsideclose: boolean = false;
+  export let dialogClass: string = 'fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex';
 
   const dispatch = createEventDispatcher();
   $: dispatch(open ? 'open' : 'hide');
@@ -110,10 +111,10 @@
 
 {#if open}
   <!-- backdrop -->
-  <div class={twMerge('fixed inset-0 z-40', backdropCls)} />
+  <div class={backdropCls} />
   <!-- dialog -->
   <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-  <div on:keydown={handleKeys} on:wheel|preventDefault|nonpassive use:prepareFocus use:focusTrap on:click={onAutoClose} class={twMerge('fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex', ...getPlacementClasses())} tabindex="-1" aria-modal="true" role="dialog">
+  <div on:keydown={handleKeys} on:wheel|preventDefault|nonpassive use:prepareFocus use:focusTrap on:click={onAutoClose} class={twMerge(dialogClass, ...getPlacementClasses())} tabindex="-1" aria-modal="true" role="dialog">
     <div class="flex relative {sizes[size]} w-full max-h-full">
       <!-- Modal content -->
       <Frame rounded shadow {...$$restProps} class={frameClass}>
