@@ -44,7 +44,6 @@
 
 <!--
   @component
-  ## Features
   [Go to Table](https://flowbite-svelte.com/docs/components/table)
   ## Props
   @prop color: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom' = getContext('color');

@@ -59,21 +59,7 @@
 
 <!--
   @component
-  ## Features
   [Go to Card](https://flowbite-svelte.com/docs/components/card)
-  - Set up
-  - Default card
-  - Card with action button
-  - Card with link
-  - Card with image
-  - Horizontal card
-  - User profile card
-  - Card with form inputs
-  - E-commerce card
-  - Call to action card
-  - Card with list
-  - Pricing card
-  - Testimonial card
   ## Props
   @prop href: string | null | undefined = undefined;
   @prop horizontal: boolean = false;
@@ -87,17 +73,5 @@
   - on:focusout
   - on:mouseenter
   - on:mouseleave
-  ## Example
-  ```
-  <script>
-    import { Card } from "flowbite-svelte";
-  </script>
-
-  <Card href="/cards">
-  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2023</h5>
-  <p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">
-    Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
-  </p>
-</Card>
-  ```
+  
 -->

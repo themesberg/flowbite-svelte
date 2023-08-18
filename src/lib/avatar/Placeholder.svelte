@@ -10,7 +10,7 @@
 
 <!--
   @component
-  ## Features
   [Go to Avatar](https://flowbite-svelte.com/docs/components/avatar)
+  ## Props
   @prop rounded: boolean = false;
 -->

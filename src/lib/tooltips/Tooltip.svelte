@@ -35,25 +35,8 @@
 
 <!--
   @component
-  ## Features
   [Go to ](https://flowbite-svelte.com/docs/components/tooltip)
-  - Setup
-  - Default tooltip example
-  - Tooltip styles
-  - Placement
-  - Triggering
-  - Disable arrow
-  - Custom style
   ## Props
   @prop type: 'dark' | 'light' | 'auto' | 'custom' = 'dark';
   @prop defaultClass: string = 'py-2 px-3 text-sm font-medium';
-  ## Example
-  ```
-  <script>
-    import { Tooltip, Button } from 'flowbite-svelte';
-  </script>
-  
-  <Button>Default tooltip</Button>
-  <Tooltip>Tooltip content</Tooltip>
-  ```
 -->

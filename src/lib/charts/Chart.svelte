@@ -19,3 +19,11 @@
 </script>
 
 <div bind:this={chartNode} class={$$props.class} />
+
+<!--
+  @component
+  [Go to Carousel](https://flowbite-svelte.com/docs/components/charts)
+  ## Props
+  @prop options: ApexOptions;
+
+-->

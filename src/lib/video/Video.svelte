@@ -19,13 +19,7 @@
 
 <!--
   @component
-  ## Features
   [Go to Video](https://flowbite-svelte.com/docs/components/video)
-  - Setup
-  - Video player
-  - Autoplay
-  - Muted
-  - Sizes
   ## Props
   @prop src: string;
   @prop type: string = 'video/mp4';

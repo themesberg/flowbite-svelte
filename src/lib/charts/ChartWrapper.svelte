@@ -14,3 +14,11 @@
     <slot name="footer" />
   {/if}
 </div>
+
+<!--
+  @component
+  [Go to Carousel](https://flowbite-svelte.com/docs/components/charts)
+  ## Props
+  @prop divClass: string;
+
+-->

@@ -56,7 +56,6 @@
 
 <!--
   @component
-  ## Features
   [Go to Navbar](https://flowbite-svelte.com/docs/components/navbar)
   ## Props
   @prop divClass: string = 'w-full md:block md:w-auto';
@@ -65,21 +64,5 @@
   @prop slideParams: SlideParams = { delay: 250, duration: 500, easing: quintOut };
   @prop activeClass: string = 'text-white bg-primary-700 md:bg-transparent md:text-primary-700 md:dark:text-white dark:bg-primary-600 md:dark:bg-transparent';
   @prop nonActiveClass: string = 'text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent';
-  ## Example
-  ```
-  <Navbar let:hidden let:toggle>
-    <NavBrand href="/">
-      <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
-      <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white"> Flowbite </span>
-    </NavBrand>
-    <NavHamburger on:click={toggle} />
-    <NavUl {hidden}>
-      <NavLi href="/" active={true}>Home</NavLi>
-      <NavLi href="/about">About</NavLi>
-      <NavLi href="/services">Services</NavLi>
-      <NavLi href="/pricing">Pricing</NavLi>
-      <NavLi href="/contact">Contact</NavLi>
-    </NavUl>
-  </Navbar>
-  ```
+ 
 -->

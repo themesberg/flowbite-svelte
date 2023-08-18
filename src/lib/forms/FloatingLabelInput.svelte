@@ -82,7 +82,6 @@
 
 <!--
   @component
-  ## Feature
   [Go to Floating Label](https://flowbite-svelte.com/docs/forms/floating-label)
   ## Props
   @prop id: string = generateId();
@@ -105,14 +104,5 @@
   - on:mouseleave
   - on:mouseover
   - on:paste
-  ## Example
-  ```
-  <script>
-    import { FloatingLabelInput, Helper } from 'flowbite-svelte';
-  </script>
-
-  <div id="exampleWrapper" class="grid gap-6 items-end w-full md:grid-cols-3">
-    <FloatingLabelInput style="filled" id="floating_filled" name="floating_filled" type="text" label="Floating filled"/>
-  </div>
-  ```
+ 
 -->

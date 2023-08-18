@@ -14,7 +14,6 @@
 
 <!--
   @component
-  ## Features
   [Go to Bottom Navigation](https://flowbite-svelte.com/docs/components/bottom-navigation)
   ## Props
   @prop itemName: string = '';

@@ -35,7 +35,6 @@
 
 <!--
   @component
-  ## Features
   [Go to Rating](https://flowbite-svelte.com/docs/components/rating)
   ## Props
   @prop fillPercent: number = 100;
@@ -46,13 +45,5 @@
   @prop id: string = generateId();
   ## Event
   - on:click
-  ## Example
-  ```
-  <script>
-    import { Rating } from 'flowbite-svelte';
-  </script>
 
-  <Rating id="example-1" total={5} size={50} rating={1.4} />
-  <Rating id="example-1b" total={5} size={50} rating={4.66} />
-  ```
 -->

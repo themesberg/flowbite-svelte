@@ -44,7 +44,6 @@
 
 <!--
   @component
-  ## Features
   [Go to Table](https://flowbite-svelte.com/docs/components/table)
   ## Props
   @prop divClass: string = 'relative overflow-x-auto shadow-md sm:rounded-lg';

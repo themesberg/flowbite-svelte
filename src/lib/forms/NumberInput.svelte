@@ -10,7 +10,6 @@
 
 <!--
   @component
-  ## Feature
   [Go to Number Input](https://flowbite-svelte.com/docs/forms/input-field#Number_input)
   ## Props
   @prop value: number = 0;

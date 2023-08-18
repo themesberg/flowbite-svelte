@@ -42,21 +42,7 @@
 
 <!--
   @component
-  ## Feature
   [Go to Radio](https://flowbite-svelte.com/docs/forms/radio)
-  - Setup
-  - Radio examples
-  - Disabled state
-  - Alternative syntax
-  - Radio with a link
-  - Helper text
-  - Bordered
-  - Radio list group
-  - Horizontal list group
-  - Radio in dropdown
-  - Inline layout
-  - Colors
-  - Advanced layout
   ## Props
   @prop color: FormColorType = 'primary';
   @prop custom: boolean = false;
@@ -75,13 +61,5 @@
   - on:mouseleave
   - on:mouseover
   - on:paste
-  ## Example
-  ```
-  <script>
-    import { Radio } from 'flowbite-svelte'
-  </script>
-
-  <Radio name="example">Default radio</Radio>
-  <Radio name="example">Checked state</Radio>
-  ```
+  
 -->

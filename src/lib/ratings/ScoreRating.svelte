@@ -61,7 +61,6 @@
 
 <!--
   @component
-  ## Features
   [Go to Rating](https://flowbite-svelte.com/docs/components/rating)
   ## Props
   @prop ratings: { label: string; rating: number }[] = [];
@@ -79,25 +78,5 @@
   @prop desc3pClass: string = 'text-sm  w-24 font-medium text-gray-500 dark:text-gray-400';
   @prop linkClass: string = 'ml-auto w-32 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500';
   @prop barColor: string = 'bg-primary-600 h-2.5 rounded dark:bg-primary-500';
-  ## Example
-  ```
-  <script>
-    import { ScoreRating } from 'flowbite-svelte';
-  </script>
-
-  <ScoreRating
-    {headerLabel}
-    ratings={[
-      { label: 'Staff', rating: 8.8 },
-      { label: 'Comfort', rating: 8.9 },
-      { label: 'Free WiFi', rating: 8.8 },
-      { label: 'Facilities', rating: 5.4 }
-    ]}
-    ratings2={[
-      { label: 'Value for money', rating: 8.9 },
-      { label: 'Cleanliness', rating: 7.0 },
-      { label: 'Location', rating: 8.0 }
-    ]}
-  />
-  ```
+  
 -->

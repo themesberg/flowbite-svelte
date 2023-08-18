@@ -20,16 +20,7 @@
 
 <!--
   @component
-  ## Features
   [Go to Skeleton Widget Placeholder](https://flowbite-svelte.com/docs/components/skeleton#Widget_placeholder)
   ## Props
   @prop divClass: string = 'p-4 max-w-sm rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700';
-  ## Example
-  ```
-  <script>
-    import { WidgetPlaceholder } from 'flowbite-svelte'
-  </script>
-
-  <WidgetPlaceholder />
-  ```
 -->

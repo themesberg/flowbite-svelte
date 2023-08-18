@@ -43,17 +43,7 @@
 
 <!--
   @component
-  ## Features
   [Go to Avatar](https://flowbite-svelte.com/docs/components/avatar)
-  - Bordered
-  - Placeholder
-  - Placeholder initials
-  - Avatar tooltip
-  - Dot indicator
-  - Stacked
-  - Avatar text
-  - User dropdown
-  - Sizes
   ## Props
   @prop src: string = '';
   @prop href: string | undefined = undefined;
@@ -63,15 +53,5 @@
   @prop dot: object | undefined = undefined;
   @prop alt: string = '';
   @prop size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
-  ## Example
-  ```
-  <script>
-    import { Avatar } from "flowbite-svelte"
-  </script>
-
-  <div class="flex space-x-4">
-    <Avatar src="/images/profile-picture-2.webp"/>
-    <Avatar src="/images/profile-picture-2.webp" rounded/>
-  </div>
-  ```
+  
 -->

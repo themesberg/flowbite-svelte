@@ -15,7 +15,6 @@
 
 <!--
   @component
-  ## Features
   [Go to Button Group](https://flowbite-svelte.com/docs/components/button-group)
   ## Props
   @prop size: SizeType = 'md';

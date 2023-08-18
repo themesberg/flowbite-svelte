@@ -9,7 +9,6 @@
 
 <!--
   @component
-  ## Features
   [Go to Table](https://flowbite-svelte.com/docs/components/table)
   ## Props
   @prop padding: string = 'px-6 py-3';

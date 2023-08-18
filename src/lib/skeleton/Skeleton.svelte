@@ -31,21 +31,8 @@
 
 <!--
   @component
-  ## Features
   [Go to Skeleton](https://flowbite-svelte.com/docs/components/skeleton)
   ## Props
   @prop divClass: string = 'animate-pulse';
-  @prop size: keyof Sizes = 'sm';  
-  ## Example
-  ```
-  <script>
-    import { Skeleton } from 'flowbite-svelte'
-  </script>
-
-  <Skeleton size="sm" class="my-8" />
-  <Skeleton size="md" class="my-8" />
-  <Skeleton size="lg" class="my-8" />
-  <Skeleton size="xl" class="my-8" />
-  <Skeleton size="xxl" class="mt-8 mb-2.5" />
-  ```
+  @prop size: keyof Sizes = 'sm';
 -->

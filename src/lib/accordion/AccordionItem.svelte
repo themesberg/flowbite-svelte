@@ -99,15 +99,7 @@
 
 <!--
   @component
-  ## Features
   [Go to Accordion page](https://flowbite-svelte.com/docs/components/accordion)
-  - Default bottom navigation
-  - Menu items with border
-  - Application bar example
-  - Example with pagination
-  - Button group bottom bar
-  - Card with bottom bar
-
   ## Props
   @prop open: boolean = false;
   @prop activeClass: string | undefined = undefined;

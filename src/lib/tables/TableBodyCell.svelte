@@ -16,7 +16,6 @@
 
 <!--
   @component
-  ## Features
   [Go to Table](https://flowbite-svelte.com/docs/components/table)
   ## Props
   @prop tdClass: string = 'px-6 py-4 whitespace-nowrap font-medium ';

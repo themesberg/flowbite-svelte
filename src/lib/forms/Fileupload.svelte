@@ -13,7 +13,6 @@
 
 <!--
   @component
-  ## Feature
   [Go to File Input](https://flowbite-svelte.com/docs/forms/file-input)
   ## Props
   @prop value: string = '';
@@ -31,17 +30,4 @@
   - on:mouseenter
   - on:mouseleave
   - on:paste
-  ## Example
-  ```
-  <script>
-    import { Fileupload, Label } from 'flowbite-svelte'
-    let value;
-  </script>
-
-  <Label class="space-y-2 mb-2">
-    <span>Upload file</span>
-    <Fileupload bind:value/>
-  </Label>
-  <Label>File: {value }</Label>
-  ```
 -->

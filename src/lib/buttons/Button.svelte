@@ -88,23 +88,7 @@
 
 <!--
   @component
-  ## Features
   [Go to Button](https://flowbite-svelte.com/docs/components/button)
-  - Setup
-  - Default button
-  - Button with link
-  - Button pills
-  - Gradient monochrome
-  - Gradient duotone
-  - Gradient outline
-  - Colored shadows
-  - Outline buttons
-  - Button sizes
-  - Buttons with icon
-  - Button with label
-  - Icon buttons
-  - Loader
-  - Disabled  
   ## Props
   @prop pill: boolean = false;
   @prop outline: boolean = false;
@@ -124,15 +108,5 @@
   - on:touchcancel
   - on:mouseenter
   - on:mouseleave
-  ## Example
-  ```
-  <script>
-    import { Button } from 'flowbite-svelte';
-  </script>
-
-  <Button>Default</Button>
-  <Button color="alternative">Alternative</Button>
-  <Button color="dark">Dark</Button>
-  <Button color="light">Light</Button>  
-  ```
+  
 -->
