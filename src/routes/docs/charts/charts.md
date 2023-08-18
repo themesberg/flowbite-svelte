@@ -17,71 +17,71 @@ Use this example to show a basic area chart.
   import { Icon } from 'flowbite-svelte-icons';
   
   let options = {
-      chart: {
-        height: "100%",
-        maxWidth: "100%",
-        type: "area",
-        fontFamily: "Inter, sans-serif",
-        dropShadow: {
-          enabled: false,
-        },
-        toolbar: {
-          show: false,
-        },
-      },
-      tooltip: {
-        enabled: true,
-        x: {
-          show: false,
-        },
-      },
-      fill: {
-        type: "gradient",
-        gradient: {
-          opacityFrom: 0.55,
-          opacityTo: 0,
-          shade: "#1C64F2",
-          gradientToColors: ["#1C64F2"],
-        },
-      },
-      dataLabels: {
+    chart: {
+      height: "100%",
+      maxWidth: "100%",
+      type: "area",
+      fontFamily: "Inter, sans-serif",
+      dropShadow: {
         enabled: false,
       },
-      stroke: {
-        width: 6,
-      },
-      grid: {
-        show: false,
-        strokeDashArray: 4,
-        padding: {
-          left: 2,
-          right: 2,
-          top: 0
-        },
-      },
-      series: [
-        {
-          name: "New users",
-          data: [6500, 6418, 6456, 6526, 6356, 6456],
-          color: "#1A56DB",
-        },
-      ],
-      xaxis: {
-        categories: ['01 February', '02 February', '03 February', '04 February', '05 February', '06 February', '07 February'],
-        labels: {
-          show: false,
-        },
-        axisBorder: {
-          show: false,
-        },
-        axisTicks: {
-          show: false,
-        },
-      },
-      yaxis: {
+      toolbar: {
         show: false,
       },
-    }
+    },
+    tooltip: {
+      enabled: true,
+      x: {
+        show: false,
+      },
+    },
+    fill: {
+      type: "gradient",
+      gradient: {
+        opacityFrom: 0.55,
+        opacityTo: 0,
+        shade: "#1C64F2",
+        gradientToColors: ["#1C64F2"],
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      width: 6,
+    },
+    grid: {
+      show: false,
+      strokeDashArray: 4,
+      padding: {
+        left: 2,
+        right: 2,
+        top: 0
+      },
+    },
+    series: [
+      {
+        name: "New users",
+        data: [6500, 6418, 6456, 6526, 6356, 6456],
+        color: "#1A56DB",
+      },
+    ],
+    xaxis: {
+      categories: ['01 February', '02 February', '03 February', '04 February', '05 February', '06 February', '07 February'],
+      labels: {
+        show: false,
+      },
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+    },
+    yaxis: {
+      show: false,
+    },
+  }
 </script>
 
 <ChartWrapper>
@@ -126,77 +126,77 @@ To create a double line chart check the example below.
   import { Icon } from 'flowbite-svelte-icons';
   
   let options = {
-      chart: {
-        height: "100%",
-        maxWidth: "100%",
-        type: "line",
-        fontFamily: "Inter, sans-serif",
-        dropShadow: {
-          enabled: false,
-        },
-        toolbar: {
-          show: false,
-        },
-      },
-      tooltip: {
-        enabled: true,
-        x: {
-          show: false,
-        },
-      },
-      dataLabels: {
+    chart: {
+      height: "100%",
+      maxWidth: "100%",
+      type: "line",
+      fontFamily: "Inter, sans-serif",
+      dropShadow: {
         enabled: false,
       },
-      stroke: {
-        width: 6,
-      },
-      grid: {
-        show: true,
-        strokeDashArray: 4,
-        padding: {
-          left: 2,
-          right: 2,
-          top: -26
-        },
-      },
-      series: [
-        {
-          name: "Clicks",
-          data: [6500, 6418, 6456, 6526, 6356, 6456],
-          color: "#1A56DB",
-        },
-        {
-          name: "CPC",
-          data: [6456, 6356, 6526, 6332, 6418, 6500],
-          color: "#7E3AF2",
-        },
-      ],
-      legend: {
-        show: false
-      },
-      stroke: {
-        curve: 'smooth'
-      },
-      xaxis: {
-        categories: ['01 Feb', '02 Feb', '03 Feb', '04 Feb', '05 Feb', '06 Feb', '07 Feb'],
-        labels: {
-          show: true,
-          style: {
-            fontFamily: "Inter, sans-serif",
-            cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
-          }
-        },
-        axisBorder: {
-          show: false,
-        },
-        axisTicks: {
-          show: false,
-        },
-      },
-      yaxis: {
+      toolbar: {
         show: false,
       },
-    }
+    },
+    tooltip: {
+      enabled: true,
+      x: {
+        show: false,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      width: 6,
+    },
+    grid: {
+      show: true,
+      strokeDashArray: 4,
+      padding: {
+        left: 2,
+        right: 2,
+        top: -26
+      },
+    },
+    series: [
+      {
+        name: "Clicks",
+        data: [6500, 6418, 6456, 6526, 6356, 6456],
+        color: "#1A56DB",
+      },
+      {
+        name: "CPC",
+        data: [6456, 6356, 6526, 6332, 6418, 6500],
+        color: "#7E3AF2",
+      },
+    ],
+    legend: {
+      show: false
+    },
+    stroke: {
+      curve: 'smooth'
+    },
+    xaxis: {
+      categories: ['01 Feb', '02 Feb', '03 Feb', '04 Feb', '05 Feb', '06 Feb', '07 Feb'],
+      labels: {
+        show: true,
+        style: {
+          fontFamily: "Inter, sans-serif",
+          cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+        }
+      },
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+    },
+    yaxis: {
+      show: false,
+    },
+  }
 </script>
 
 <ChartWrapper>
@@ -252,6 +252,319 @@ To create a double line chart check the example below.
         <Icon name="file-lines-solid" class="w-3.5 h-3.5 text-white mr-2" />
         View full report
       </Button>
+    </div>
+  </div>
+</ChartWrapper>
+```
+
+## Column chart
+You can represent multiple data entries using columns by setting the type: "bar" option
+
+```svelte example class="flex justify-center"
+<script>
+  import { Chart, ChartWrapper, A, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
+  
+  const options = {
+    colors: ["#1A56DB", "#FDBA8C"],
+    series: [
+      {
+        name: "Organic",
+        color: "#1A56DB",
+        data: [
+          { x: "Mon", y: 231 },
+          { x: "Tue", y: 122 },
+          { x: "Wed", y: 63 },
+          { x: "Thu", y: 421 },
+          { x: "Fri", y: 122 },
+          { x: "Sat", y: 323 },
+          { x: "Sun", y: 111 },
+        ],
+      },
+      {
+        name: "Social media",
+        color: "#FDBA8C",
+        data: [
+          { x: "Mon", y: 232 },
+          { x: "Tue", y: 113 },
+          { x: "Wed", y: 341 },
+          { x: "Thu", y: 224 },
+          { x: "Fri", y: 522 },
+          { x: "Sat", y: 411 },
+          { x: "Sun", y: 243 },
+        ],
+      },
+    ],
+    chart: {
+      type: "bar",
+      height: "320px",
+      fontFamily: "Inter, sans-serif",
+      toolbar: {
+        show: false,
+      },
+    },
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: "70%",
+        borderRadiusApplication: "end",
+        borderRadius: 8,
+      },
+    },
+    tooltip: {
+      shared: true,
+      intersect: false,
+      style: {
+        fontFamily: "Inter, sans-serif",
+      },
+    },
+    states: {
+      hover: {
+        filter: {
+          type: "darken",
+          value: 1,
+        },
+      },
+    },
+    stroke: {
+      show: true,
+      width: 0,
+      colors: ["transparent"],
+    },
+    grid: {
+      show: false,
+      strokeDashArray: 4,
+      padding: {
+        left: 2,
+        right: 2,
+        top: -14
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    legend: {
+      show: false,
+    },
+    xaxis: {
+      floating: false,
+      labels: {
+        show: true,
+        style: {
+          fontFamily: "Inter, sans-serif",
+          cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+        }
+      },
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+    },
+    yaxis: {
+      show: false,
+    },
+    fill: {
+      opacity: 1,
+    },
+  }
+</script>
+
+<ChartWrapper>
+  <div slot="header" class="flex justify-between pb-4 mb-4 border-b border-gray-200 dark:border-gray-700">
+    <div class="flex items-center">
+      <div class="w-12 h-12 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center mr-3">
+        <Icon name="user-group-solid" class="w-6 h-6 text-gray-500 dark:text-gray-400" />
+      </div>
+      <div>
+        <h5 class="leading-none text-2xl font-bold text-gray-900 dark:text-white pb-1">3.4k</h5>
+        <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Leads generated per week</p>
+      </div>
+    </div>
+    <div>
+      <span class="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-1 rounded-md dark:bg-green-900 dark:text-green-300">
+        <Icon name="arrow-up-solid" class="w-2.5 h-2.5 mr-1.5" />
+        42.5%
+      </span>
+    </div>
+  </div>
+  <div class="grid grid-cols-2">
+    <dl class="flex items-center">
+        <dt class="text-gray-500 dark:text-gray-400 text-sm font-normal mr-1">Money spent:</dt>
+        <dd class="text-gray-900 text-sm dark:text-white font-semibold">$3,232</dd>
+    </dl>
+    <dl class="flex items-center justify-end">
+        <dt class="text-gray-500 dark:text-gray-400 text-sm font-normal mr-1">Conversion rate:</dt>
+        <dd class="text-gray-900 text-sm dark:text-white font-semibold">1.2%</dd>
+    </dl>
+  </div>
+  <Chart {options} />
+  <div slot="footer" class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
+    <div class="flex justify-between items-center pt-5">
+      <Button class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0">Last 7 days<Icon name="chevron-down-solid" class="w-2.5 m-2.5 ml-1.5" /></Button>
+      <Dropdown class="w-40" offset="-6">
+        <DropdownItem>Yesterday</DropdownItem>
+        <DropdownItem>Today</DropdownItem>
+        <DropdownItem>Last 7 days</DropdownItem>
+        <DropdownItem>Last 30 days</DropdownItem>
+        <DropdownItem>Last 90 days</DropdownItem>
+      </Dropdown>
+      <A href="/" class="uppercase text-sm font-semibold hover:text-primary-700 dark:hover:text-primary-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2 hover:no-underline">
+        Leads Report
+        <Icon name="chevron-right-solid" class="w-2.5 h-2.5 ml-1.5"/>
+      </A>
+    </div>
+  </div>
+</ChartWrapper>
+```
+
+## Bar chart
+Create a horizontal bar chart with as many data series as you like by setting the type: "bar" chart type.
+
+```svelte example class="flex justify-center"
+<script>
+  import { Chart, ChartWrapper, A, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
+  
+  const options = {
+    series: [
+      {
+        name: "Income",
+        color: "#31C48D",
+        data: ["1420", "1620", "1820", "1420", "1650", "2120"],
+      },
+      {
+        name: "Expense",
+        data: ["788", "810", "866", "788", "1100", "1200"],
+        color: "#F05252",
+      }
+    ],
+    chart: {
+      sparkline: {
+        enabled: false,
+      },
+      type: "bar",
+      width: "100%",
+      height: 400,
+      toolbar: {
+        show: false,
+      }
+    },
+    fill: {
+      opacity: 1,
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true,
+        columnWidth: "100%",
+        borderRadiusApplication: "end",
+        borderRadius: 6,
+        dataLabels: {
+          position: "top",
+        },
+      },
+    },
+    legend: {
+      show: true,
+      position: "bottom",
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    tooltip: {
+      shared: true,
+      intersect: false,
+      formatter: function (value) {
+        return "$" + value
+      }
+    },
+    xaxis: {
+      labels: {
+        show: true,
+        style: {
+          fontFamily: "Inter, sans-serif",
+          cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+        },
+        formatter: function(value) {
+          return "$" + value
+        }
+      },
+      categories: ["Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      axisTicks: {
+        show: false,
+      },
+      axisBorder: {
+        show: false,
+      },
+    },
+    yaxis: {
+      labels: {
+        show: true,
+        style: {
+          fontFamily: "Inter, sans-serif",
+          cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+        }
+      }
+    },
+    grid: {
+      show: true,
+      strokeDashArray: 4,
+      padding: {
+        left: 2,
+        right: 2,
+        top: -20
+      },
+    },
+    fill: {
+      opacity: 1,
+    }
+  }
+</script>
+
+<ChartWrapper>
+  <div slot="header" class="flex justify-between pb-4 mb-4 border-b border-gray-200 dark:border-gray-700">
+    <div class="flex items-center">
+      <div class="w-12 h-12 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center mr-3">
+        <Icon name="user-group-solid" class="w-6 h-6 text-gray-500 dark:text-gray-400" />
+      </div>
+      <div>
+        <h5 class="leading-none text-2xl font-bold text-gray-900 dark:text-white pb-1">3.4k</h5>
+        <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Leads generated per week</p>
+      </div>
+    </div>
+    <div>
+      <span class="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-1 rounded-md dark:bg-green-900 dark:text-green-300">
+        <Icon name="arrow-up-solid" class="w-2.5 h-2.5 mr-1.5" />
+        42.5%
+      </span>
+    </div>
+  </div>
+  <div class="grid grid-cols-2">
+    <dl class="flex items-center">
+        <dt class="text-gray-500 dark:text-gray-400 text-sm font-normal mr-1">Money spent:</dt>
+        <dd class="text-gray-900 text-sm dark:text-white font-semibold">$3,232</dd>
+    </dl>
+    <dl class="flex items-center justify-end">
+        <dt class="text-gray-500 dark:text-gray-400 text-sm font-normal mr-1">Conversion rate:</dt>
+        <dd class="text-gray-900 text-sm dark:text-white font-semibold">1.2%</dd>
+    </dl>
+  </div>
+  <Chart {options} />
+  <div slot="footer" class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
+    <div class="flex justify-between items-center pt-5">
+      <Button class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0">Last 7 days<Icon name="chevron-down-solid" class="w-2.5 m-2.5 ml-1.5" /></Button>
+      <Dropdown class="w-40" offset="-6">
+        <DropdownItem>Yesterday</DropdownItem>
+        <DropdownItem>Today</DropdownItem>
+        <DropdownItem>Last 7 days</DropdownItem>
+        <DropdownItem>Last 30 days</DropdownItem>
+        <DropdownItem>Last 90 days</DropdownItem>
+      </Dropdown>
+      <A href="/" class="uppercase text-sm font-semibold hover:text-primary-700 dark:hover:text-primary-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2 hover:no-underline">
+        Leads Report
+        <Icon name="chevron-right-solid" class="w-2.5 h-2.5 ml-1.5"/>
+      </A>
     </div>
   </div>
 </ChartWrapper>
