@@ -26,22 +26,9 @@
 
 <!--
   @component
-  ## Features
   [Go to Skeleton Video Placeholder](https://flowbite-svelte.com/docs/components/skeleton#Video_placeholder)
   ## Props
   @prop divClass: string =
     'flex justify-center items-center h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700';
-  @prop size: keyof Sizes = 'sm';  
-  ## Example
-  ```
-  <script>
-    import { VideoPlaceholder } from 'flowbite-svelte'
-  </script>
-
-  <VideoPlaceholder />
-  <VideoPlaceholder size='md' class='mt-8'/>
-  <VideoPlaceholder size='lg' class='mt-8'/>
-  <VideoPlaceholder size='xl' class='mt-8'/>
-  <VideoPlaceholder size='xxl' class='mt-8'/>
-  ```
+  @prop size: keyof Sizes = 'sm';
 -->

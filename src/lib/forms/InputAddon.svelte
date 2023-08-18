@@ -41,18 +41,8 @@
 
 <!--
   @component
-  ## Feature
   [Go to Input Fields](https://flowbite-svelte.com/docs/forms/input-field)
   ## Props
   @prop size: 'sm' | 'md' | 'lg' | undefined = undefined;
-  ## Example
-  ```
-  <div>
-    <Label class="mb-2" for="input-addon-sm">Small additional text</Label>
-    <ButtonGroup class="w-full" size="sm">
-      <InputAddon>@</InputAddon>
-      <Input id="input-addon-sm" type="email" placeholder="elonmusk" />
-    </ButtonGroup>
-  </div>
-  ```
+
 -->

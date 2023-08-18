@@ -62,14 +62,7 @@
 
 <!--
   @component
-  ## Features
   [Go to Step Indicator](https://flowbite-svelte.com/docs/extend/step-indicator)
-  - Setup
-  - Default step indicator
-  - Glow
-  - Hide label
-  - Sizes
-  - Colors
   ## Props
   @prop steps: string[] = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];
   @prop currentStep = 1;
@@ -79,20 +72,4 @@
   @prop hideLabel: boolean = false;
   @prop completedCustom: string = '';
   @prop currentCustom: string = '';
-  ## Example
-  ```
-  <script>
-    import { StepIndicator } from 'flowbite-svelte'
-    let currentStep = 2;
-    let steps = [
-      'Step 1',
-      'Step 2',
-      'Step 3',
-      'Step 4',
-      'Step 5'
-    ]
-  </script>
-
-  <StepIndicator {currentStep} {steps}/>
-  ```
 -->

@@ -14,7 +14,6 @@
 
 <!--
   @component
-  ## Features
   [Go to Dropdown](https://flowbite-svelte.com/docs/components/dropdown)
   ## Props
   @prop divClass: string = 'py-2 px-4 text-gray-700 dark:text-white';

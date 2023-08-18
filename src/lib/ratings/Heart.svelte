@@ -27,7 +27,6 @@
 
 <!--
   @component
-  ## Features
   [Go to Rating](https://flowbite-svelte.com/docs/components/rating)
   ## Props
   @prop fillPercent: number = 100;

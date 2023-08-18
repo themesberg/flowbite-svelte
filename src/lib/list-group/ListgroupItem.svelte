@@ -42,7 +42,6 @@
 
 <!--
   @component
-  ## Features
   [Go to List Group](https://flowbite-svelte.com/docs/components/list-group)
   ## Props
   @prop active: boolean = getContext('active');

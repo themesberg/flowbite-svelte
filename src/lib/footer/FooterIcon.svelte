@@ -16,7 +16,6 @@
 
 <!--
   @component
-  ## Feature
   [Go to Footer](https://flowbite-svelte.com/docs/components/footer)
   ## Props
   @prop href: string = '';

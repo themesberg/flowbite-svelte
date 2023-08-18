@@ -26,7 +26,6 @@
 
 <!--
   @component
-  ## Feature
   [Go to Footer](https://flowbite-svelte.com/docs/components/footer)
   ## Props
   @prop aClass: string = 'flex items-center';

@@ -58,22 +58,7 @@
 
 <!--
   @component
-  ## Feature
   [Go to Checkbox](https://flowbite-svelte.com/docs/forms/checkbox)
-  - Setup
-  - Checkbox examples
-  - Disabled state
-  - Alternative syntax
-  - Checkbox with a link
-  - Helper text
-  - Bordered
-  - Checkbox list group
-  - Horizontal list group
-  - Checkbox dropdown
-  - Inline layout
-  - Colors
-  - Advanced layout
-  - Group variable
   ## Props
   @prop color: FormColorType = 'primary';
   @prop custom: boolean = false;
@@ -93,13 +78,4 @@
   - on:mouseleave
   - on:paste
   - on:change
-  ## Example
-  ```
-  <script>
-    import { Checkbox } from 'flowbite-svelte'
-  </script>
-  
-  <Checkbox>Default checkbox</Checkbox>
-  <Checkbox checked>Checked state</Checkbox>
-  ```
 -->

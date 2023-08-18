@@ -26,7 +26,6 @@
 
 <!--
   @component
-  ## Feature
   [Go to Footer](https://flowbite-svelte.com/docs/components/footer)
   ## Props
   @prop spanClass: string = 'block text-sm text-gray-500 sm:text-center dark:text-gray-400';

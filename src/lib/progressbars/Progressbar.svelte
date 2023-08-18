@@ -40,7 +40,6 @@
 
 <!--
   @component
-  ## Features
   [Go to Progress Bar](https://flowbite-svelte.com/docs/components/progress)
   ## Props
   @prop progress: string = '45';
@@ -49,12 +48,5 @@
   @prop labelOutside: string = '';
   @prop color: 'primary'| 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo' = 'primary';
   @prop labelInsideClass: string = 'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
-  ## Example
-  ```
-  <script>
-    import { Progressbar } from 'flowbite-svelte'
-  </script>
-
-  <Progressbar progress="50" />
-  ```
+  
 -->

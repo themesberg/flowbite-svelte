@@ -187,16 +187,7 @@
 
 <!--
   @component
-  ## Features
   [Go to Device Mockups](https://flowbite-svelte.com/docs/components/device-mockups)
-  - Setup
-  - Default mockup
-  - iPhone 12 mockup (iOS)
-  - Google Pixel mockup (Android)
-  - Tablet mockup
-  - Laptop mockup
-  - Desktop mockup
-  - Smartwatch mockup
   ## Props
   @prop device: 'default' | 'ios' | 'android' | 'tablet' | 'laptop' | 'desktop' | 'smartwatch' =
     'default';
@@ -287,21 +278,5 @@
     'h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg';
   @prop tabletRight: string =
     'h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg';
-  ## Example 
-  ```
-  <script>
-    import { DeviceMockup } from 'flowbite-svelte';
-  </script>
-
-  <DeviceMockup>
-    <img
-      src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-light.png"
-      class="dark:hidden w-[272px] h-[572px]"
-      alt="default example 1" />
-    <img
-      src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/mockup-1-dark.png"
-      class="hidden dark:block w-[272px] h-[572px]"
-      alt="default example 2" />
-  </DeviceMockup>
-  ```
+    
 -->

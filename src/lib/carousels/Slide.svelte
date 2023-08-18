@@ -14,7 +14,6 @@
 
 <!--
   @component
-  ## Features
   [Go to Carousel](https://flowbite-svelte.com/docs/components/carousel)
   ## Props
   @prop image: string = '';

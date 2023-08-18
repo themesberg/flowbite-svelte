@@ -38,7 +38,6 @@
 
 <!--
   @component
-  ## Features
   [Go to Table](https://flowbite-svelte.com/docs/components/table)
   ## Props
   @prop theadClass: string = 'text-xs uppercase';

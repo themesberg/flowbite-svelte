@@ -36,14 +36,7 @@
 
 <!--
   @component
-  ## Feature
   [Go to Search Input](https://flowbite-svelte.com/docs/forms/search-input)
-  - Setup
-  - Search bar example
-  - Simple search input
-  - Voice Search
-  - Events
-  - Example
   ## Props
   @prop size: FormSizeType = 'lg';
   @prop placeholder: string = 'Search';
@@ -61,14 +54,5 @@
   - on:mouseleave
   - on:mouseover
   - on:paste
-  ## Example
-  ```
-  <script>
-    import { Search, Button } from 'flowbite-svelte'
-  </script>
 
-  <Search >
-    <Button>Search</Button>
-  </Search>
-  ```
 -->

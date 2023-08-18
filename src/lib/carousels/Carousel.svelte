@@ -132,20 +132,7 @@
 
 <!--
   @component
-  ## Features
   [Go to Carousel](https://flowbite-svelte.com/docs/components/carousel)
-  - Setup
-  - Default Carousel
-  - Loop
-  - Without thumbnails
-  - Without caption
-  - Without indicators
-  - Without slide controllers
-  - Custom slide controllers
-  - Carousel transition
-  - Loop
-  - Fly example
-  - Slide example
   ## Props
   @prop showIndicators: boolean = true;
   @prop showCaptions: boolean = true;
@@ -164,16 +151,5 @@
   @prop indicatorClass: string = 'w-3 h-3 rounded-full bg-gray-100 hover:bg-gray-300 opacity-60';
   ### Slide
   @prop slideClass: string = '';
-  ## Example
-  ```
-  <script>
-    import { Carousel } from 'flowbite-svelte'
-    import { images } from './imageData/+server.js';
-  </script>
-
-  <div class="max-w-4xl">
-    <Carousel {images} />
-  </div>
-
-  ```
+ 
 -->

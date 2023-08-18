@@ -26,14 +26,7 @@
 
 <!--
   @component
-  ## Features
   [Go to Horizontal Line](https://flowbite-svelte.com/docs/typography/hr)
-  - Setup
-  - Default HR
-  - Trimmed
-  - Icon HR
-  - HR with text
-  - HR shape
   ## Props
   @prop icon: boolean;
   @prop divClass: string;
@@ -41,14 +34,4 @@
   @prop iconDivClass: string;
   @prop textSpanClass: string;
   @prop innerDivClass: string;
-  ## Example
-  ```
-  <script>
-    import { Hr, P } from 'flowbite-svelte'
-  </script>
-  
-  <P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
-  <Hr class="my-8" />
-  <P>Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</P>
-  ```
 -->

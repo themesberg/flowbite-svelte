@@ -42,13 +42,7 @@
 
 <!--
   @component
-  ## Feature
   [Go to Textarea](https://flowbite-svelte.com/docs/forms/textarea)
-  - Setup
-  - Textarea example
-  - WYSIWYG Editor
-  - Comment box
-  - Chatroom input
   ## Props
   @prop value: string = '';
   @prop wrappedClass: string = 'block w-full text-sm border-0 px-0 bg-inherit dark:bg-inherit focus:outline-none focus:ring-0';
@@ -67,13 +61,5 @@
   - on:mouseleave
   - on:mouseover
   - on:paste
-  ## Example
-  ```
-  <script>
-    import { Textarea, Label } from 'flowbite-svelte'
-  </script>
-
-  <Label for="textarea-id" class="mb-2">Your message</Label>
-  <Textarea id="textarea-id" placeholder="Your message" rows="4" name="message"/>
-  ```
+ 
 -->

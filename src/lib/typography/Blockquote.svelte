@@ -38,16 +38,7 @@
 
 <!--
   @component
-  ## Features
   [Go to Blockquote](https://flowbite-svelte.com/docs/typography/blockquote)
-  - Default blockquote
-  - Solid background
-  - Blockquote icon
-  - Paragraph context
-  - User testimonial
-  - User Review
-  - Alignment
-  - Sizes 
   ## Props
   @prop border: boolean = false;
   @prop italic: boolean = true;
@@ -57,14 +48,4 @@
   @prop baseClass: string = 'font-semibold text-gray-900 dark:text-white';
   @prop alignment: 'left' | 'center' | 'right' = 'left';
   @prop size: BlockQuoteType = 'lg';
-  ## Example
-  ```
-  <script>
-    import { Blockquote } from 'flowbite-svelte'
-  </script>
-
-  <Blockquote size='xl'>
-  "Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."
-  </Blockquote>
-  ```
 -->

@@ -41,12 +41,7 @@
 
 <!--
   @component
-  ## Features
   [Go to Breadcrumb](https://flowbite-svelte.com/docs/components/breadcrumb)
-  - Setup
-  - Default Breadcrumb
-  - Solid Breadcrumb
-  - Icons
   ## Props
   @prop home: boolean = false;
   @prop href: string | undefined = undefined;

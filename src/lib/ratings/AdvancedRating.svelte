@@ -33,7 +33,6 @@
 
 <!--
   @component
-  ## Features
   [Go to Rating](https://flowbite-svelte.com/docs/components/rating)
   ## Props
   @prop ratings: { label: string; rating: number }[] = [];

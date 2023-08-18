@@ -9,7 +9,6 @@
 
 <!--
   @component
-  ## Features
   [Go to KBD](https://flowbite-svelte.com/docs/components/kbd)
   ## Props
   @prop svgClass: string = 'w-4 h-4';

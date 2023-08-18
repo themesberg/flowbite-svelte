@@ -17,7 +17,6 @@
 
 <!--
   @component
-  ## Feature
   [Go to Footer](https://flowbite-svelte.com/docs/components/footer)
   ## Props
   @prop liClass: string = 'mr-4 last:mr-0 md:mr-6';
