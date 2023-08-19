@@ -55,13 +55,7 @@ npm run dev
 Run the following command to install all Flowbite dependencies and libraries:
 
 ```sh
-npm i -D flowbite flowbite-svelte tailwind-merge @floating-ui/dom
-```
-
-If you are using [charts components](https://flowbite-svelte.com/docs/components/charts) install `apexcharts`:
-
-```sh
-npm i -D apexcharts
+npm i -D flowbite-svelte
 ```
 
 ### Configuration
