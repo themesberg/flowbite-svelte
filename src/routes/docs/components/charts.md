@@ -153,7 +153,8 @@ To create a double line chart check the example below.
       enabled: false
     },
     stroke: {
-      width: 6
+      width: 6,
+      curve: 'smooth'
     },
     grid: {
       show: true,
@@ -178,9 +179,6 @@ To create a double line chart check the example below.
     ],
     legend: {
       show: false
-    },
-    stroke: {
-      curve: 'smooth'
     },
     xaxis: {
       categories: ['01 Feb', '02 Feb', '03 Feb', '04 Feb', '05 Feb', '06 Feb', '07 Feb'],
@@ -525,9 +523,6 @@ Create a horizontal bar chart with as many data series as you like by setting th
         right: 2,
         top: -20
       }
-    },
-    fill: {
-      opacity: 1
     }
   };
 </script>

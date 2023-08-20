@@ -217,10 +217,6 @@
       "types": "./dist/charts/Chart.svelte.d.ts",
       "svelte": "./dist/charts/Chart.svelte"
     },
-    "./ChartWrapper.svelte": {
-      "types": "./dist/charts/ChartWrapper.svelte.d.ts",
-      "svelte": "./dist/charts/ChartWrapper.svelte"
-    },
     "./DarkMode.svelte": {
       "types": "./dist/darkmode/DarkMode.svelte.d.ts",
       "svelte": "./dist/darkmode/DarkMode.svelte"
