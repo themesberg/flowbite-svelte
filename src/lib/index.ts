@@ -39,7 +39,6 @@ export { default as Carousel } from './carousels/Carousel.svelte';
 export { default as CarouselTransition } from './carousels/CarouselTransition.svelte';
 
 // Charts
-export { default as ChartWrapper } from './charts/ChartWrapper.svelte';
 export { default as Chart } from './charts/Chart.svelte';
 
 // Dark mode
