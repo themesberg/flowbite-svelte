@@ -37,13 +37,13 @@
 </li>
 
 <!--
-  @component
-  [Go to Sidebar](https://flowbite-svelte.com/docs/components/sidebar)
-  ## Props
-  @prop aClass: string = 'flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700';
-  @prop href: string = '';
-  @prop label: string = '';
-  @prop spanClass: string = 'ml-3';
-  @prop activeClass: string = 'flex items-center p-2 text-base font-normal text-gray-900 bg-gray-200 dark:bg-gray-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700';
-  @prop active: boolean = false; 
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let href: string = '';
+@prop export let label: string = '';
+@prop export let spanClass: string = 'ml-3';
+@prop export let activeClass: string | undefined = undefined;
+@prop export let nonActiveClass: string | undefined = undefined;
+@prop export let active: boolean = false;
 -->

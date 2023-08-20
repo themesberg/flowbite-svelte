@@ -81,28 +81,14 @@
 </div>
 
 <!--
-  @component
-  [Go to Floating Label](https://flowbite-svelte.com/docs/forms/floating-label)
-  ## Props
-  @prop id: string = generateId();
-  @prop style: 'filled' | 'outlined' | 'standard' = 'standard';
-  @prop type: InputType = 'text';
-  @prop size: 'small' | 'default' = 'default';
-  @prop color: 'base' | 'green' | 'red' = 'base';
-  @prop value: string = '';
-  @prop label: string = '';  
-  ## Event
-  - on:blur
-  - on:change
-  - on:click
-  - on:focus
-  - on:input
-  - on:keydown
-  - on:keypress
-  - on:keyup
-  - on:mouseenter
-  - on:mouseleave
-  - on:mouseover
-  - on:paste
- 
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let id: string = generateId();
+@prop export let style: 'filled' | 'outlined' | 'standard' = 'standard';
+@prop export let type: InputType = 'text';
+@prop export let size: 'small' | 'default' = 'default';
+@prop export let color: 'base' | 'green' | 'red' = 'base';
+@prop export let value: any = undefined;
+@prop export let label: string = '';
 -->

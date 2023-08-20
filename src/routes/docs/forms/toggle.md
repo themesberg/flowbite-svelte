@@ -78,7 +78,7 @@ The component has the following props, type, and default values. See [types page
 ### Toggle
 
 - Use the `class` prop to overwrite the `Checkbox` component.
-- Use the 'classDiv` prop to overwrite the `divClass`.
+- Use the 'classDiv`prop to overwrite the`divClass`.
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />

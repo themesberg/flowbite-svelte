@@ -17,8 +17,8 @@
 </div>
 
 <!--
-  @component
-  [Go to Skeleton Testimonial Placeholder](https://flowbite-svelte.com/docs/components/skeleton#Testimonial_placeholder)
-  ## Props
-  @prop divClass: string = 'animate-pulse';
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let divClass: string = 'animate-pulse';
 -->

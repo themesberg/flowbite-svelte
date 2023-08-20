@@ -11,12 +11,11 @@
 <div class={tabletRight} />
 
 <!--
-  @component
-  [Go to Device Mockups](https://flowbite-svelte.com/docs/components/device-mockups)
-  ## Props
-  @prop tabletLeftTop: string;
-  @prop tabletLeftMid: string;
-  @prop tabletLeftBot: string;
-  @prop tabletRight: string;
-
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let tabletLeftTop: string;
+@prop export let tabletLeftMid: string;
+@prop export let tabletLeftBot: string;
+@prop export let tabletRight: string;
 -->

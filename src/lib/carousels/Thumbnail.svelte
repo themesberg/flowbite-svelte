@@ -15,16 +15,17 @@
 </button>
 
 <!--
-  @component
-  [Go to Carousel](https://flowbite-svelte.com/docs/components/carousel)
-  ## Props
-  @prop thumbImg: string = '';
-  @prop altTag: string = '';
-  @prop titleLink: string = '';
-  @prop id: number;
-  @prop thumbWidth: number;
-  @prop selected: boolean = false;
-
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let thumbImg: string = '';
+@prop export let altTag: string = '';
+@prop export let titleLink: string = '';
+@prop export let id: number;
+@prop export let thumbWidth: number = 100;
+@prop export let selected: boolean = false;
+@prop export let thumbClass: string = '';
+@prop export let thumbBtnClass: string = '';
 -->
 
 <style>

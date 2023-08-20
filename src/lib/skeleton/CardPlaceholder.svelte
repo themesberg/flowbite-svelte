@@ -40,10 +40,9 @@
 </div>
 
 <!--
-  @component
-  [Go to Skeleton Card Placeholder](https://flowbite-svelte.com/docs/components/skeleton#Card_placeholder)
-  ## Props
-  @prop divClass: string =
-    'p-4 rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700';
-  @prop size: keyof Sizes = 'sm';
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let divClass: string = 'p-4 rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700';
+@prop export let size: keyof Sizes = 'sm';
 -->

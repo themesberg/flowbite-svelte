@@ -23,9 +23,9 @@
 </div>
 
 <!--
-  @component
-  [Go to ](https://flowbite-svelte.com/docs/components/)
-  ## Props
-  @prop items: ImgType[] = [];
-  @prop imgClass: string = 'h-auto max-w-full rounded-lg';
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let items: ImgType[] = [];
+@prop export let imgClass: string = 'h-auto max-w-full rounded-lg';
 -->

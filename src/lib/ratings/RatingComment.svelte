@@ -74,27 +74,12 @@
 </article>
 
 <!--
-  @component
-  [Go to Rating](https://flowbite-svelte.com/docs/components/rating)
-  ## Props
-  @prop ceil: boolean = false;
-  @prop helpfullink: string = '';
-  @prop abuselink: string = '';
-  @prop comment: {
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let ceil: boolean = false;
+@prop export let helpfullink: string = '';
+@prop export let abuselink: string = '';
+@prop export let comment: {
     id: string;
-    user: {
-      name: string;
-      img: {
-        src: string;
-        alt: string;
-      };
-      joined: string;
-    };
-    total: number;
-    rating: number;
-    heading: string;
-    address: string;
-    datetime: string;
-  };
- 
 -->

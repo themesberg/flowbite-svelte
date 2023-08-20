@@ -40,13 +40,12 @@
 </li>
 
 <!--
-  @component
-  [Go to Breadcrumb](https://flowbite-svelte.com/docs/components/breadcrumb)
-  ## Props
-  @prop home: boolean = false;
-  @prop href: string | undefined = undefined;
-  @prop linkClass: string = 'ml-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white';
-  @prop spanClass: string = 'ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400';
-  @prop homeClass: string = 'inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white';
-  
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let home: boolean = false;
+@prop export let href: string | undefined = undefined;
+@prop export let linkClass: string = 'ml-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white';
+@prop export let spanClass: string = 'ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400';
+@prop export let homeClass: string = 'inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white';
 -->

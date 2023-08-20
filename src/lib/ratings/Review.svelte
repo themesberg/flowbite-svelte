@@ -66,14 +66,13 @@
 </article>
 
 <!--
-  @component
-  [Go to Rating](https://flowbite-svelte.com/docs/components/rating)
-  ## Props
-  @prop review: ReviewType;
-  @prop articleClass: string = 'md:gap-8 md:grid md:grid-cols-3';
-  @prop divClass: string = 'flex items-center mb-6 space-x-4';
-  @prop imgClass: string = 'w-10 h-10 rounded-full';
-  @prop ulClass: string = 'space-y-4 text-sm text-gray-500 dark:text-gray-400';
-  @prop liClass: string = 'flex items-center';
- 
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let review: ReviewType;
+@prop export let articleClass: string = 'md:gap-8 md:grid md:grid-cols-3';
+@prop export let divClass: string = 'flex items-center mb-6 space-x-4';
+@prop export let imgClass: string = 'w-10 h-10 rounded-full';
+@prop export let ulClass: string = 'space-y-4 text-sm text-gray-500 dark:text-gray-400';
+@prop export let liClass: string = 'flex items-center';
 -->

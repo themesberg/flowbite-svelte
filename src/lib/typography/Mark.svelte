@@ -11,10 +11,10 @@
 </mark>
 
 <!--
-  @component
-  [Go to Heading](https://flowbite-svelte.com/docs/typography/heading)
-  ## Props
-  @prop color: string = 'text-white dark:bg-blue-500';
-  @prop bgColor: string = 'bg-blue-600';
-  @prop markClass: string = 'px-2 rounded';
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let color: string = 'text-white dark:bg-blue-500';
+@prop export let bgColor: string = 'bg-blue-600';
+@prop export let markClass: string = 'px-2 rounded';
 -->

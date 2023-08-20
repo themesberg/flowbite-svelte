@@ -11,12 +11,11 @@
 <div class={iosRight} />
 
 <!--
-  @component
-  [Go to Device Mockups](https://flowbite-svelte.com/docs/components/device-mockups)
-  ## Props
-  @prop iosTop: string;
-  @prop iosLeftTop: string;
-  @prop iosLeftBot: string;
-  @prop iosRight: string;
- 
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let iosTop: string;
+@prop export let iosLeftTop: string;
+@prop export let iosLeftBot: string;
+@prop export let iosRight: string;
 -->

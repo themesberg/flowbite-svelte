@@ -11,17 +11,10 @@
 </a>
 
 <!--
-  @component
-  [Go to Link](https://flowbite-svelte.com/docs/typography/link)
-  ## Props
-  @prop italic: boolean = false;
-  @prop underline: boolean = false;
-  @prop linethrough: boolean = false;
-  @prop uppercase: boolean = false;
-  @prop gradient: boolean = false;
-  @prop highlight: boolean = false;
-  @prop highlightClass: string = 'text-blue-600 dark:text-blue-500';
-  @prop decorationClass: string = 'decoration-2 decoration-blue-400 dark:decoration-blue-600';
-  @prop gradientClass: string =
-    'text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400';
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let href: string = '#';
+@prop export let color: string = 'text-primary-600 dark:text-primary-500';
+@prop export let aClass: string = 'inline-flex items-center hover:underline';
 -->

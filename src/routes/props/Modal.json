@@ -6,8 +6,9 @@
     ["placement", "ModalPlacementType", "'center'"],
     ["autoclose", "boolean", "false"],
     ["permanent", "boolean", "false"],
-    ["backdropClass", "string", "'bg-gray-900 bg-opacity-50 dark:bg-opacity-80'"],
+    ["backdropClass", "string", "'fixed inset-0 z-40 bg-gray-900 bg-opacity-50 dark:bg-opacity-80'"],
     ["defaultClass", "string", "'relative flex flex-col mx-auto'"],
-    ["outsideclose", "boolean", "false"]
+    ["outsideclose", "boolean", "false"],
+    ["dialogClass", "string", "'fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex'"]
   ]
 }

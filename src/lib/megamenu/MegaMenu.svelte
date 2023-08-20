@@ -42,11 +42,11 @@
 </Popper>
 
 <!--
-  @component
-  [Go to Mega Menu](https://flowbite-svelte.com/docs/components/mega-menu)
-  ## Props
-  @prop items: LinkTypeLike[] = [];
-  @prop full: boolean = false;
-  @prop open: boolean = false;  
-  
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let items: LinkTypeLike[] = [];
+@prop export let full: boolean = false;
+@prop export let open: boolean = false;
+@prop export let ulClass: string = 'grid grid-flow-row gap-y-4 md:gap-x-0 auto-col-max auto-row-max';
 -->

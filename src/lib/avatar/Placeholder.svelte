@@ -9,8 +9,8 @@
 </svg>
 
 <!--
-  @component
-  [Go to Avatar](https://flowbite-svelte.com/docs/components/avatar)
-  ## Props
-  @prop rounded: boolean = false;
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let rounded: boolean = false;
 -->

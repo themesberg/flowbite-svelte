@@ -35,24 +35,10 @@
 </Wrapper>
 
 <!--
-  @component
-  [Go to Search Input](https://flowbite-svelte.com/docs/forms/search-input)
-  ## Props
-  @prop size: FormSizeType = 'lg';
-  @prop placeholder: string = 'Search';
-  @prop value: string | number = '';
-  ## Event
-  - on:blur
-  - on:change
-  - on:input
-  - on:click
-  - on:focus
-  - on:keydown
-  - on:keypress
-  - on:keyup
-  - on:mouseenter
-  - on:mouseleave
-  - on:mouseover
-  - on:paste
-
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let size: FormSizeType = 'lg';
+@prop export let placeholder: string = 'Search';
+@prop export let value: any = undefined;
 -->

@@ -11,9 +11,9 @@
 </li>
 
 <!--
-  @component
-  [Go to List](https://flowbite-svelte.com/docs/typography/list)
-  ## Props
-  @prop icon: boolean = false;
-  @prop liClass: string = '';
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let icon: boolean = false;
+@prop export let liClass: string = '';
 -->

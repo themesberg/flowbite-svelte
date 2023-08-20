@@ -12,10 +12,10 @@
 </div>
 
 <!--
-  @component
-  [Go to Paragraph Layout](https://flowbite-svelte.com/docs/typography/paragraph#Layout)
-  ## Props
-  @prop divClass: string = 'grid';
-  @prop cols: string = 'grid-cols-1 sm:grid-cols-2';
-  @prop gap: number;
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let divClass: string = 'grid';
+@prop export let cols: string = 'grid-cols-1 sm:grid-cols-2';
+@prop export let gap: number;
 -->

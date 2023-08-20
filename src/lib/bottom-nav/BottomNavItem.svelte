@@ -64,24 +64,11 @@
 </svelte:element>
 
 <!--
-  @component
-  [Go to Bottom Navigation](https://flowbite-svelte.com/docs/components/bottom-navigation)
-  ## Props
-  @prop btnName: string = '';
-  @prop appBtnPosition: 'left' | 'middle' | 'right' | 'custom' = 'custom';
-  @prop btnDefault: string = '';
-  @prop spanDefault: string = '';
-  @prop btnCustom: string = '';
-  @prop spanCustom: string = '';
-  @prop appCustom: string = '';
-  ## event
-  - on:click
-  - on:change
-  - on:keydown
-  - on:keyup
-  - on:focus
-  - on:blur
-  - on:mouseenter
-  - on:mouseleave
-
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let btnName: string = '';
+@prop export let appBtnPosition: 'left' | 'middle' | 'right' = 'middle';
+@prop export let activeClass: string | undefined = undefined;
+@prop export let href: string = '';
 -->

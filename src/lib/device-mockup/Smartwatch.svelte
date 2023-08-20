@@ -7,10 +7,9 @@
 <div class={smartRightBot} />
 
 <!--
-  @component
-  [Go to Device Mockups](https://flowbite-svelte.com/docs/components/device-mockups)
-  ## Props
-  @prop smartRightTop: string;
-  @prop smartRightBot: string;
-
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let smartRightTop: string;
+@prop export let smartRightBot: string;
 -->

@@ -50,13 +50,12 @@
 </Frame>
 
 <!--
-  @component
-  [Accordion](https://flowbite-svelte.com/docs/components/accordion)
-  ## Props
-  @prop multiple: boolean = false;
-  @prop flush: boolean = false;
-  @prop activeClasses: string = 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800';
-  @prop inactiveClasses: string = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800';
-  @prop defaultClass: string = 'text-gray-500 dark:text-gray-400';
-
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let multiple: boolean = false;
+@prop export let flush: boolean = false;
+@prop export let activeClass: string = 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800';
+@prop export let inactiveClass: string = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800';
+@prop export let defaultClass: string = 'text-gray-500 dark:text-gray-400';
 -->

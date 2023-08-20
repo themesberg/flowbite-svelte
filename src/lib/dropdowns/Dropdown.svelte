@@ -70,13 +70,13 @@
 </Popper>
 
 <!--
-  @component
-  [Go to Dropdown](https://flowbite-svelte.com/docs/components/dropdown)
-  ## Props
-  @prop open: boolean = false;
-  @prop containerClass: string = 'divide-y z-50';
-  @prop headerClass: string = 'py-1 overflow-hidden rounded-t-lg';
-  @prop ulClass: string = 'py-1 w-44';
-  @prop footerClass: string = 'py-1 overflow-hidden rounded-b-lg';
-
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let activeUrl: string = '';
+@prop export let open: boolean = false;
+@prop export let containerClass: string = 'divide-y z-50';
+@prop export let headerClass: string = 'py-1 overflow-hidden rounded-t-lg';
+@prop export let footerClass: string = 'py-1 overflow-hidden rounded-b-lg';
+@prop export let activeClass: string = 'text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900';
 -->

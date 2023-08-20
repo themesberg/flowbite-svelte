@@ -18,9 +18,8 @@
 </ol>
 
 <!--
-  @component
-  [Go to Timeline](https://flowbite-svelte.com/docs/components/timeline#Default_timeline)
-  ## Props
-  @prop customClass: string = '';
-  @prop order: 'default' | 'vertical' | 'horizontal' | 'activity' | 'group' | 'custom' = 'default';
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let order: 'default' | 'vertical' | 'horizontal' | 'activity' | 'group' = 'default';
 -->

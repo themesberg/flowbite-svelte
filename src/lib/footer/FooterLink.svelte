@@ -16,11 +16,11 @@
 </li>
 
 <!--
-  @component
-  [Go to Footer](https://flowbite-svelte.com/docs/components/footer)
-  ## Props
-  @prop liClass: string = 'mr-4 last:mr-0 md:mr-6';
-  @prop aClass: string = 'hover:underline';
-  @prop href: string = '';
-  @prop target: string | undefined = undefined;
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let liClass: string = 'mr-4 last:mr-0 md:mr-6';
+@prop export let aClass: string = 'hover:underline';
+@prop export let href: string = '';
+@prop export let target: string | undefined = undefined;
 -->

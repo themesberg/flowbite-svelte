@@ -24,10 +24,10 @@
 </svelte:element>
 
 <!--
-  @component
-  [Go to List](https://flowbite-svelte.com/docs/typography/list)
-  ## Props
-  @prop tag: 'ul' | 'ol' | 'dl' = 'ul';
-  @prop list: 'disc' | 'none' | 'decimal' | undefined = undefined;
-  @prop position: 'inside' | 'outside' = 'inside';
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let tag: 'ul' | 'ol' | 'dl' = 'ul';
+@prop export let list: 'disc' | 'none' | 'decimal' | undefined = undefined;
+@prop export let position: 'inside' | 'outside' = 'inside';
 -->

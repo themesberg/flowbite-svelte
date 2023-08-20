@@ -37,13 +37,13 @@
 </svg>
 
 <!--
-  @component
-  [Go to Spinner](https://flowbite-svelte.com/docs/components/spinner)
-  ## Props
-  @prop color: | 'primary' | 'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink'| 'purple' | 'white' | 'custom' | undefined = 'primary';
-  @prop bg: string = 'text-gray-300';
-  @prop customColor: string = '';
-  @prop size: string = '8';
-  @prop currentFill: string = 'currentFill';
-  @prop currentColor: string = 'currentColor';
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let color: 'primary' | 'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink' | 'purple' | 'white' | 'custom' | undefined = 'primary';
+@prop export let bg: string = 'text-gray-300';
+@prop export let customColor: string = '';
+@prop export let size: string = '8';
+@prop export let currentFill: string = 'currentFill';
+@prop export let currentColor: string = 'currentColor';
 -->

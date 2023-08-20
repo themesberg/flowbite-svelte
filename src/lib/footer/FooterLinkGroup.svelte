@@ -8,8 +8,8 @@
 </ul>
 
 <!--
-  @component
-  [Go to Footer](https://flowbite-svelte.com/docs/components/footer)
-  ## Props
-  @prop ulClass: string = 'text-gray-600 dark:text-gray-400';
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let ulClass: string = 'text-gray-600 dark:text-gray-400';
 -->

@@ -44,9 +44,9 @@
 </Frame>
 
 <!--
-  @component
-  [Go to Toolbar](https://flowbite-svelte.com/docs/utilities/toolbar)
-  ## Props
-  @prop color: ToolbarColorType = 'dark';
-  @prop embedded: boolean = false;
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let color: ToolbarColorType = 'dark';
+@prop export let embedded: boolean = false;
 -->

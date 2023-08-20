@@ -43,14 +43,14 @@
 </div>
 
 <!--
-  @component
-  [Go to Table](https://flowbite-svelte.com/docs/components/table)
-  ## Props
-  @prop divClass: string = 'relative overflow-x-auto shadow-md sm:rounded-lg';
-  @prop inputValue: string = '';
-  @prop striped: boolean = false;
-  @prop hoverable: boolean = false;
-  @prop placeholder: string = 'Search';
-  @prop customColor: string = '';
-  @prop color: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom' = 'default';
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let divClass: string = 'relative overflow-x-auto shadow-md sm:rounded-lg';
+@prop export let inputValue: string = '';
+@prop export let striped: boolean = false;
+@prop export let hoverable: boolean = false;
+@prop export let placeholder: string = 'Search';
+@prop export let customColor: string = '';
+@prop export let color: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom' = 'default';
 -->

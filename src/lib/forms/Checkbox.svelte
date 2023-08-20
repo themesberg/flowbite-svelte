@@ -57,25 +57,14 @@
 </Label>
 
 <!--
-  @component
-  [Go to Checkbox](https://flowbite-svelte.com/docs/forms/checkbox)
-  ## Props
-  @prop color: FormColorType = 'primary';
-  @prop custom: boolean = false;
-  @prop inline: boolean = false;
-  @prop group: (string | number)[] = [];
-  @prop value: string | number = 'on';
-  @prop checked: boolean | undefined = undefined;
-  ## Event
-  - on:keyup
-  - on:keydown
-  - on:keypress
-  - on:focus
-  - on:blur
-  - on:click
-  - on:mouseover
-  - on:mouseenter
-  - on:mouseleave
-  - on:paste
-  - on:change
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let color: FormColorType = 'primary';
+@prop export let custom: boolean = false;
+@prop export let inline: boolean = false;
+@prop export let group: (string | number)[] = [];
+@prop export let value: string | number = 'on';
+@prop export let checked: boolean | undefined = undefined;
+@prop export let spacing: string = 'mr-2';
 -->

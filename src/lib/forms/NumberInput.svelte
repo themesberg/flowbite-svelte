@@ -9,22 +9,8 @@
 </Input>
 
 <!--
-  @component
-  [Go to Number Input](https://flowbite-svelte.com/docs/forms/input-field#Number_input)
-  ## Props
-  @prop value: number = 0;
-  ## Event
-  - on:blur
-  - on:change
-  - on:click
-  - on:contextmenu
-  - on:focus
-  - on:keydown
-  - on:keypress
-  - on:keyup
-  - on:mouseover
-  - on:mouseenter
-  - on:mouseleave
-  - on:paste
-  - on:input 
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let value: number = 0;
 -->

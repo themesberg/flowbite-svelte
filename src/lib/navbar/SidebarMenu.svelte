@@ -27,11 +27,11 @@
 </svg>
 
 <!--
-  @component
-  [Go to Navbar](https://flowbite-svelte.com/docs/components/navbar)
-  ## Props
-  @prop size = '20';
-  @prop color = 'currentColor';
-  @prop variation: 'solid' | 'outline' = 'outline';  
-  
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let size = '20';
+@prop export let color = 'currentColor';
+@prop export let variation: 'solid' | 'outline' = 'outline';
+@prop export let ariaLabel = 'bars 3';
 -->

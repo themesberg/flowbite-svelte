@@ -131,25 +131,25 @@
 {/if}
 
 <!--
-  @component
-  [Go to Carousel](https://flowbite-svelte.com/docs/components/carousel)
-  ## Props
-  @prop showIndicators: boolean = true;
-  @prop showCaptions: boolean = true;
-  @prop showThumbs: boolean = true;
-  @prop images: any[];
-  @prop slideControls: boolean = true;
-  @prop loop: boolean = false;
-  @prop duration: number = 2000;
-  @prop thumbClass: string = 'opacity-40';
-  ### Carousel
-  @prop divClass: string = 'overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96';
-  @prop indicatorDivClass: string = 'flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2';
-  ### Caption
-  @prop captionClass: string = 'h-10 bg-gray-300 dark:bg-gray-700 dark:text-white p-2 my-2 text-center';
-  ### Indicator
-  @prop indicatorClass: string = 'w-3 h-3 rounded-full bg-gray-100 hover:bg-gray-300 opacity-60';
-  ### Slide
-  @prop slideClass: string = '';
- 
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let id: string = 'default-carousel';
+@prop export let showIndicators: boolean = true;
+@prop export let showCaptions: boolean = true;
+@prop export let showThumbs: boolean = true;
+@prop export let images: any[];
+@prop export let slideControls: boolean = true;
+@prop export let loop: boolean = false;
+@prop export let duration: number = 2000;
+@prop export let divClass: string = 'overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96';
+@prop export let indicatorDivClass: string = 'flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2';
+@prop export let captionClass: string = 'h-10 bg-gray-300 dark:bg-gray-700 dark:text-white p-2 my-2 text-center';
+@prop export let indicatorClass: string = 'w-3 h-3 rounded-full bg-gray-100 hover:bg-gray-300 opacity-60';
+@prop export let slideClass: string = 'flex items-center justify-center h-full w-full';
+@prop export let imgFit: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down' = 'cover';
+@prop export let imgClass: string = `object-${imgFit} ${imgFit === 'cover' && 'w-full'} h-full`;
+@prop export let thumbClass: string = 'opacity-40';
+@prop export let thumbDivClass: string = 'flex flex-row justify-center bg-gray-100 w-full';
+@prop export let thumbBtnClass: string = '';
 -->

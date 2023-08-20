@@ -47,13 +47,13 @@
 {/each}
 
 <!--
-  @component
-  [Go to Grouped Timeline](https://flowbite-svelte.com/docs/components/timeline#Grouped_timeline)
-  ## Props
-  @prop timelines: GroupTimelineType[];
-  @prop aClass: string
-  @prop imgClass: string;
-  @prop divClass: string;
-  @prop titleClass: string;
-  @prop spanClass: string;
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let timelines: GroupTimelineType[];
+@prop export let aClass: string = 'block items-center p-3 sm:flex hover:bg-gray-100 dark:hover:bg-gray-700';
+@prop export let imgClass: string = 'mr-3 mb-3 w-12 h-12 rounded-full sm:mb-0';
+@prop export let divClass: string = 'text-gray-600 dark:text-gray-400';
+@prop export let titleClass: string = 'text-base font-normal';
+@prop export let spanClass: string = 'inline-flex items-center text-xs font-normal text-gray-500 dark:text-gray-400';
 -->

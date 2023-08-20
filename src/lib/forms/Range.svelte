@@ -16,15 +16,9 @@
 <input type="range" bind:value {...$$restProps} class={inputClass} on:change on:click on:keydown on:keypress on:keyup />
 
 <!--
-  @component
-  [Go to Range](https://flowbite-svelte.com/docs/forms/range)
-  ## Props
-  @prop value: number;
-  @prop size: 'sm' | 'md' | 'lg' = 'md';
-  ## Event
-  - on:change
-  - on:click
-  - on:keydown
-  - on:keypress
-  - on:keyup
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let value: number;
+@prop export let size: 'sm' | 'md' | 'lg' = 'md';
 -->

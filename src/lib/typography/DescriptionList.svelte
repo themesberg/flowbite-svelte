@@ -13,10 +13,10 @@
 </svelte:element>
 
 <!--
-  @component
-  [Go to Description List](https://flowbite-svelte.com/docs/typography/list#Description_List)
-  ## Props
-  @prop tag: 'dt' | 'dd';
-  @prop dtClass: string = 'text-gray-500 md:text-lg dark:text-gray-400';
-  @prop ddClass: string = 'text-lg font-semibold';
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let tag: 'dt' | 'dd';
+@prop export let dtClass: string = 'text-gray-500 md:text-lg dark:text-gray-400';
+@prop export let ddClass: string = 'text-lg font-semibold';
 -->

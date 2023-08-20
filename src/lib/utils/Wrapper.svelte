@@ -13,9 +13,10 @@
 {/if}
 
 <!--
-  @component
-  ## Props
-  @prop tag: string = 'div';
-  @prop show: boolean;
-  @prop use: Action = () => {};
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let tag: string = 'div';
+@prop export let show: boolean;
+@prop export let use: Action<HTMLElement, any> = () => {};
 -->

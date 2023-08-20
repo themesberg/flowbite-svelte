@@ -39,14 +39,14 @@
 </div>
 
 <!--
-  @component
-  [Go to Progress Bar](https://flowbite-svelte.com/docs/components/progress)
-  ## Props
-  @prop progress: string = '45';
-  @prop size: string = 'h-2.5';
-  @prop labelInside: boolean = false;
-  @prop labelOutside: string = '';
-  @prop color: 'primary'| 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo' = 'primary';
-  @prop labelInsideClass: string = 'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
-  
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let progress: string = '45';
+@prop export let size: string = 'h-2.5';
+@prop export let labelInside: boolean = false;
+@prop export let labelOutside: string = '';
+@prop export let color: 'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo' = 'primary';
+@prop export let labelInsideClass: string = 'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
+@prop export let divClass: string = 'w-full bg-gray-200 rounded-full dark:bg-gray-700';
 -->

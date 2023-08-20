@@ -28,9 +28,8 @@
 <div use:initChart={options} class={$$props.class} />
 
 <!--
-  @component
-  [Go to Carousel](https://flowbite-svelte.com/docs/components/charts)
-  ## Props
-  @prop options: ApexOptions;
-
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let options: ApexOptions;
 -->

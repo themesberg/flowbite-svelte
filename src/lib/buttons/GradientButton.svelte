@@ -71,19 +71,9 @@
 {/if}
 
 <!--
-  @component
-  [Go to Button](https://flowbite-svelte.com/docs/components/button)
-  @prop color: keyof typeof gradientClasses = 'blue';
-  @prop shadow: boolean = false;
-  ## Event
-  - on:click
-  - on:change
-  - on:keydown
-  - on:keyup
-  - on:touchstart
-  - on:touchend
-  - on:touchcancel
-  - on:mouseenter
-  - on:mouseleave
-  
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let color: keyof typeof gradientClasses = 'blue';
+@prop export let shadow: boolean = false;
 -->

@@ -43,9 +43,6 @@ devDependencies:
   autoprefixer:
     specifier: ^10.4.15
     version: 10.4.15(postcss@8.4.28)
-  createprops:
-    specifier: ^0.5.5
-    version: 0.5.5
   esbuild:
     specifier: 0.18.10
     version: 0.18.10
@@ -91,6 +88,9 @@ devDependencies:
   svelte-check:
     specifier: ^3.5.0
     version: 3.5.0(postcss-load-config@4.0.1)(postcss@8.4.28)(svelte@4.2.0)
+  svelte-lib-helpers:
+    specifier: ^0.2.6
+    version: 0.2.6
   svelte-meta-tags:
     specifier: ^2.8.0
     version: 2.8.0(svelte@4.2.0)(typescript@5.1.6)
@@ -1557,11 +1557,6 @@ packages:
   /cookie@0.5.0:
     resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
     engines: {node: '>= 0.6'}
-    dev: true
-
-  /createprops@0.5.5:
-    resolution: {integrity: sha512-XrAgpxVieU11vJwZ1qYLUOpIZtQJ286FnfKqgVxii7QlwAm7sAtTWhZuQ+qfPDd+f1bxiB1ZUz2JmbylhtiBkA==}
-    hasBin: true
     dev: true
 
   /cross-spawn@7.0.3:
@@ -3200,6 +3195,11 @@ packages:
       svelte: ^3.19.0 || ^4.0.0
     dependencies:
       svelte: 4.2.0
+    dev: true
+
+  /svelte-lib-helpers@0.2.6:
+    resolution: {integrity: sha512-KH3re1Cc1mO9jdkajmJVUSvE/eyPuFjV7FAQF4H+2FEAN/+xTWJd7QZ3pKjP01waFOPdu9lzwO+9mcW2ZVcb4Q==}
+    hasBin: true
     dev: true
 
   /svelte-meta-tags@2.8.0(svelte@4.2.0)(typescript@5.1.6):

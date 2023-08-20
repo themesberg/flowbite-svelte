@@ -53,19 +53,9 @@
 {/if}
 
 <!--
-  @component
-  [Go to Alert](https://flowbite-svelte.com/docs/components/alert)
-  ## Props
-  @prop dismissable: boolean = false;
-  @prop accent: boolean = false;
-  ## Event
-  - on:click
-  - on:change
-  - on:keydown
-  - on:keyup
-  - on:focus
-  - on:blur
-  - on:mouseenter
-  - on:mouseleave 
-
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let dismissable: boolean = false;
+@prop export let defaultClass: string = 'p-4 gap-3 text-sm';
 -->

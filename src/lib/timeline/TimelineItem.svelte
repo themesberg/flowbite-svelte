@@ -107,10 +107,10 @@
 </li>
 
 <!--
-  @component
-  [Go to Timeline](https://flowbite-svelte.com/docs/components/timeline)
-  ## Props
-  @prop title: string = '';
-  @prop date: string = '';
-  @prop svgCl
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let title: string = '';
+@prop export let date: string = '';
+@prop export let svgClass: string = 'w-3 h-3 text-primary-600 dark:text-primary-400';
 -->

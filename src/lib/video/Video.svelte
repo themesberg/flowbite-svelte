@@ -18,12 +18,12 @@
 </video>
 
 <!--
-  @component
-  [Go to Video](https://flowbite-svelte.com/docs/components/video)
-  ## Props
-  @prop src: string;
-  @prop type: string = 'video/mp4';
-  @prop trackSrc: string = '';
-  @prop srclang: string = 'en';
-  @prop label: string = 'english_captions';
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let src: string;
+@prop export let type: string = 'video/mp4';
+@prop export let trackSrc: string = '';
+@prop export let srclang: string = 'en';
+@prop export let label: string = 'english_captions';
 -->

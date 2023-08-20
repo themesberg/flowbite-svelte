@@ -43,8 +43,8 @@
 </tr>
 
 <!--
-  @component
-  [Go to Table](https://flowbite-svelte.com/docs/components/table)
-  ## Props
-  @prop color: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom' = getContext('color');
+@component
+[Go to Popover](https://flowbite-svelte.com/)
+## Props
+@prop export let color: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom' = getContext('color');
 -->
