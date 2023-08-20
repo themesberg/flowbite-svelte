@@ -10,7 +10,7 @@ description: Use the chart and graph components from Flowbite-Svelte built with 
 <script>
   import { TableProp, TableDefaultRow , } from '../../utils'
   import { props as items } from '../../props/Chart.json'
-  import { props as items1 } from '../../props/ChartWrapper.json'
+  import { props as items1 } from '../../props/Card.json'
 </script>
 
 ## Area chart
@@ -19,7 +19,7 @@ Use this example to show a basic area chart.
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Chart, ChartWrapper, A, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
+  import { Chart, Card, A, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
   import { Icon } from 'flowbite-svelte-icons';
 
   let options = {
@@ -90,8 +90,8 @@ Use this example to show a basic area chart.
   };
 </script>
 
-<ChartWrapper>
-  <div slot="header" class="flex justify-between">
+<Card>
+  <div class="flex justify-between">
     <div>
       <h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">32.4k</h5>
       <p class="text-base font-normal text-gray-500 dark:text-gray-400">Users this week</p>
@@ -102,7 +102,7 @@ Use this example to show a basic area chart.
     </div>
   </div>
   <Chart {options} />
-  <div slot="footer" class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
+  <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
     <div class="flex justify-between items-center pt-5">
       <Button class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0">Last 7 days<Icon name="chevron-down-solid" class="w-2.5 m-2.5 ml-1.5" /></Button>
       <Dropdown class="w-40" offset="-6">
@@ -118,7 +118,7 @@ Use this example to show a basic area chart.
       </A>
     </div>
   </div>
-</ChartWrapper>
+</Card>
 ```
 
 ## Line chart
@@ -127,7 +127,7 @@ To create a double line chart check the example below.
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Chart, ChartWrapper, A, Button, Dropdown, DropdownItem, Popover } from 'flowbite-svelte';
+  import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover } from 'flowbite-svelte';
   import { Icon } from 'flowbite-svelte-icons';
 
   let options = {
@@ -204,8 +204,8 @@ To create a double line chart check the example below.
   };
 </script>
 
-<ChartWrapper>
-  <div slot="header" class="flex justify-between mb-5">
+<Card>
+  <div class="flex justify-between mb-5">
     <div class="grid gap-4 grid-cols-2">
       <div>
         <h5 class="inline-flex items-center text-gray-500 dark:text-gray-400 leading-none font-normal mb-2">
@@ -262,7 +262,7 @@ To create a double line chart check the example below.
       </Button>
     </div>
   </div>
-</ChartWrapper>
+</Card>
 ```
 
 ## Column chart
@@ -271,7 +271,7 @@ You can represent multiple data entries using columns by setting the type: "bar"
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Chart, ChartWrapper, A, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
+  import { Chart, Card, A, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
   import { Icon } from 'flowbite-svelte-icons';
 
   const options = {
@@ -380,8 +380,8 @@ You can represent multiple data entries using columns by setting the type: "bar"
   };
 </script>
 
-<ChartWrapper>
-  <div slot="header" class="flex justify-between pb-4 mb-4 border-b border-gray-200 dark:border-gray-700">
+<Card>
+  <div class="flex justify-between pb-4 mb-4 border-b border-gray-200 dark:border-gray-700">
     <div class="flex items-center">
       <div class="w-12 h-12 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center mr-3">
         <Icon name="user-group-solid" class="w-6 h-6 text-gray-500 dark:text-gray-400" />
@@ -409,7 +409,7 @@ You can represent multiple data entries using columns by setting the type: "bar"
     </dl>
   </div>
   <Chart {options} />
-  <div slot="footer" class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
+  <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
     <div class="flex justify-between items-center pt-5">
       <Button class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0">Last 7 days<Icon name="chevron-down-solid" class="w-2.5 m-2.5 ml-1.5" /></Button>
       <Dropdown class="w-40" offset="-6">
@@ -425,7 +425,7 @@ You can represent multiple data entries using columns by setting the type: "bar"
       </A>
     </div>
   </div>
-</ChartWrapper>
+</Card>
 ```
 
 ## Bar chart
@@ -434,7 +434,7 @@ Create a horizontal bar chart with as many data series as you like by setting th
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Chart, ChartWrapper, A, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
+  import { Chart, Card, A, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
   import { Icon } from 'flowbite-svelte-icons';
 
   const options = {
@@ -532,8 +532,8 @@ Create a horizontal bar chart with as many data series as you like by setting th
   };
 </script>
 
-<ChartWrapper>
-  <div slot="header" class="flex justify-between border-gray-200 border-b dark:border-gray-700 pb-3">
+<Card>
+  <div class="flex justify-between border-gray-200 border-b dark:border-gray-700 pb-3">
     <dl>
       <dt class="text-base font-normal text-gray-500 dark:text-gray-400 pb-1">Profit</dt>
       <dd class="leading-none text-3xl font-bold text-gray-900 dark:text-white">$5,405</dd>
@@ -558,7 +558,7 @@ Create a horizontal bar chart with as many data series as you like by setting th
   </div>
 
   <Chart {options} />
-  <div slot="footer" class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
+  <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
     <div class="flex justify-between items-center pt-5">
       <Button class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0">Last 7 days<Icon name="chevron-down-solid" class="w-2.5 m-2.5 ml-1.5" /></Button>
       <Dropdown class="w-40" offset="-6">
@@ -574,7 +574,7 @@ Create a horizontal bar chart with as many data series as you like by setting th
       </A>
     </div>
   </div>
-</ChartWrapper>
+</Card>
 ```
 
 ## Pie chart
@@ -583,7 +583,7 @@ Create a pie chart with multiple data series by setting the type: "pie" chart ty
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Chart, ChartWrapper, A, Button, Dropdown, DropdownItem, Popover } from 'flowbite-svelte';
+  import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover } from 'flowbite-svelte';
   import { Icon } from 'flowbite-svelte-icons';
 
   const options = {
@@ -643,8 +643,8 @@ Create a pie chart with multiple data series by setting the type: "pie" chart ty
   };
 </script>
 
-<ChartWrapper>
-  <div slot="header" class="flex justify-between items-start w-full">
+<Card>
+  <div class="flex justify-between items-start w-full">
     <div class="flex-col items-center">
       <div class="flex items-center mb-1">
         <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white mr-1">Website traffic</h5>
@@ -673,7 +673,7 @@ Create a pie chart with multiple data series by setting the type: "pie" chart ty
 
   <Chart {options} class="py-6" />
 
-  <div slot="footer" class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
+  <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
     <div class="flex justify-between items-center pt-5">
       <Button class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0">Last 7 days<Icon name="chevron-down-solid" class="w-2.5 m-2.5 ml-1.5" /></Button>
       <Dropdown class="w-40" offset="-6">
@@ -689,7 +689,7 @@ Create a pie chart with multiple data series by setting the type: "pie" chart ty
       </A>
     </div>
   </div>
-</ChartWrapper>
+</Card>
 ```
 
 ## Donut chart
@@ -698,7 +698,7 @@ Set the chart type: "donut" to create a donut chart and copy the options from th
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Chart, ChartWrapper, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from 'flowbite-svelte';
+  import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from 'flowbite-svelte';
   import { Icon } from 'flowbite-svelte-icons';
 
   const options = {
@@ -784,8 +784,8 @@ Set the chart type: "donut" to create a donut chart and copy the options from th
   };
 </script>
 
-<ChartWrapper>
-  <div slot="header" class="flex justify-between items-start w-full">
+<Card>
+  <div class="flex justify-between items-start w-full">
     <div class="flex-col items-center">
       <div class="flex items-center mb-1">
         <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white mr-1">Website traffic</h5>
@@ -809,7 +809,7 @@ Set the chart type: "donut" to create a donut chart and copy the options from th
 
   <Chart {options} class="py-6" />
 
-  <div slot="footer" class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
+  <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
     <div class="flex justify-between items-center pt-5">
       <Button class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0">Last 7 days<Icon name="chevron-down-solid" class="w-2.5 m-2.5 ml-1.5" /></Button>
       <Dropdown class="w-40" offset="-6">
@@ -825,7 +825,7 @@ Set the chart type: "donut" to create a donut chart and copy the options from th
       </A>
     </div>
   </div>
-</ChartWrapper>
+</Card>
 ```
 
 ## Radial chart
@@ -834,7 +834,7 @@ To create a radial chart with multiple data entries you need to set the type: "r
 
 ```svelte example class="flex justify-center"
 <script>
-  import { Chart, ChartWrapper, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from 'flowbite-svelte';
+  import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from 'flowbite-svelte';
   import { Icon } from 'flowbite-svelte-icons';
 
   let isOpen = false;
@@ -897,8 +897,8 @@ To create a radial chart with multiple data entries you need to set the type: "r
   };
 </script>
 
-<ChartWrapper>
-  <div slot="header" class="flex justify-between items-start w-full">
+<Card>
+  <div class="flex justify-between items-start w-full">
     <div class="flex-col items-center">
       <div class="flex items-center mb-1">
         <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white mr-1">Your team's progress</h5>
@@ -960,7 +960,7 @@ To create a radial chart with multiple data entries you need to set the type: "r
 
   <Chart {options} class="py-6" />
 
-  <div slot="footer" class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
+  <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
     <div class="flex justify-between items-center pt-5">
       <Button class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent focus:ring-transparent dark:focus:ring-transparent py-0">Last 7 days<Icon name="chevron-down-solid" class="w-2.5 m-2.5 ml-1.5" /></Button>
       <Dropdown class="w-40" offset="-6">
@@ -976,7 +976,7 @@ To create a radial chart with multiple data entries you need to set the type: "r
       </A>
     </div>
   </div>
-</ChartWrapper>
+</Card>
 ```
 
 ## Props
@@ -991,7 +991,7 @@ The component has the following props, type, and default values. See [types page
   <TableDefaultRow {items} rowState='hover' />
 </TableProp>
 
-### ChartWrapper
+### Card
 
 - Use the `class` prop to overwrite `divClass`.
 

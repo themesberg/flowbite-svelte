@@ -1,24 +1,31 @@
 <script lang="ts">
-  import { onMount, onDestroy } from 'svelte';
   import type { ApexOptions } from 'apexcharts';
 
-  let chartNode: HTMLElement, chart: any;
   export let options: ApexOptions;
 
-  onMount(async () => {
-    const ApexCharts = (await import('apexcharts')).default;
-    chart = new ApexCharts(chartNode, options);
-    chart.render();
-  });
+  function initChart(node: HTMLElement, options: ApexOptions) {
+    let chart: ApexCharts;
 
-  $: if (chart && options) chart.updateOptions(options);
+    async function asyncInitChart() {
+      const ApexCharts = (await import('apexcharts')).default;
+      chart = new ApexCharts(node, options);
+      chart.render();
+    }
 
-  onDestroy(() => {
-    if (chart) chart.destroy();
-  });
+    asyncInitChart();
+
+    return {
+      update(options: ApexOptions) {
+        chart && chart.updateOptions(options);
+      },
+      destroy() {
+        chart && chart.destroy();
+      }
+    };
+  }
 </script>
 
-<div bind:this={chartNode} class={$$props.class} />
+<div use:initChart={options} class={$$props.class} />
 
 <!--
   @component
