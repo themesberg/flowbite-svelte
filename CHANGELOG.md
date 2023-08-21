@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.44.3](https://github.com/themesberg/flowbite-svelte/compare/v0.44.2...v0.44.3) (2023-08-21)
+
+
+### Features
+
+* remove script dir, install svelte-lib-helpers and update script… ([#1004](https://github.com/themesberg/flowbite-svelte/issues/1004)) ([bc8780d](https://github.com/themesberg/flowbite-svelte/commit/bc8780d0da6d4a21933ff8b143e815aff0a2e694))
+
 ### [0.44.2](https://github.com/themesberg/flowbite-svelte/compare/v0.44.1...v0.44.2) (2023-08-18)
 
 ### [0.44.1](https://github.com/themesberg/flowbite-svelte/compare/v0.43.3...v0.44.1) (2023-08-18)
