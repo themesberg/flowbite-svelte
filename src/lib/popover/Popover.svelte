@@ -26,10 +26,9 @@
 </Popper>
 
 <!--
-  @component
-  [Go to Popover](https://flowbite-svelte.com/docs/components/popover)
-  ## Props
-  @prop title: string = '';
-  @prop defaultClass: string = 'py-2 px-3';
- 
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let title: string = '';
+@prop export let defaultClass: string = 'py-2 px-3';
 -->

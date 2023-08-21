@@ -12,9 +12,9 @@
 </ToolbarButton>
 
 <!--
-  @component
-  [Go to Navbar](https://flowbite-svelte.com/docs/components/navbar)
-  ## Props
-  @prop btnClass: string = 'ml-3 md:hidden';
-  
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let btnClass: string = 'ml-3 md:hidden';
+@prop export let menuClass: string = 'h-6 w-6 shrink-0';
 -->

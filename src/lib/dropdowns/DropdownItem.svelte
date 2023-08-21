@@ -37,18 +37,11 @@
 </Wrapper>
 
 <!--
-  @component
-  [Go to Dropdown](https://flowbite-svelte.com/docs/components/dropdown)
-  ## Props
-  @prop defaultClass: string = 'font-medium py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600';
-  @prop href: string | undefined = undefined;
-  ## Event
-  - on:click
-  - on:change
-  - on:keydown
-  - on:keyup
-  - on:focus
-  - on:blur
-  - on:mouseenter
-  - on:mouseleave
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let defaultClass: string = 'font-medium py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600';
+@prop export let href: string | undefined = undefined;
+@prop export let activeClass: string | undefined = undefined;
+@prop export let active: boolean = false;
 -->

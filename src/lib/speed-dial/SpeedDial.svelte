@@ -63,17 +63,18 @@
 </div>
 
 <!--
-  @component
-  [Go to Speed Dial](https://flowbite-svelte.com/docs/components/speed-dial)
-  ## Props
-  @prop defaultClass: string = 'fixed right-6 bottom-6';
-  @prop popperDefaultClass: string = 'flex items-center mb-4 gap-2';
-  @prop placement: Placement = 'top';
-  @prop pill: boolean = true;
-  @prop tooltip: Placement | 'none' = 'left';
-  @prop trigger: 'hover' | 'click' = 'hover';
-  @prop textOutside: boolean = false;
-  @prop id: string = generateId();
-  @prop name: string = 'Open actions menu';
-  @prop gradient: boolean = false;
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let defaultClass: string = 'fixed right-6 bottom-6';
+@prop export let popperDefaultClass: string = 'flex items-center mb-4 gap-2';
+@prop export let placement: Placement = 'top';
+@prop export let pill: boolean = true;
+@prop export let tooltip: Placement | 'none' = 'left';
+@prop export let trigger: 'hover' | 'click' = 'hover';
+@prop export let textOutside: boolean = false;
+@prop export let id: string = generateId();
+@prop export let name: string = 'Open actions menu';
+@prop export let gradient: boolean = false;
+@prop export let open: boolean = false;
 -->

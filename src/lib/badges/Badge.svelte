@@ -100,15 +100,10 @@
 {/if}
 
 <!--
-  @component
-  [Go to Badge](https://flowbite-svelte.com/docs/components/badge)
-  ## Props
-  @prop color: 'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'none' = 'blue';
-  @prop large: boolean = false;
-  @prop border: boolean = false;
-  @prop href: string | undefined = undefined;
-  @prop rounded: boolean = false;
-  @prop index: boolean = false;
-  @prop dismissable: boolean = false;
-  
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let color: 'primary' | 'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'none' = 'primary';
+@prop export let large: boolean = false;
+@prop export let dismissable: boolean = false;
 -->

@@ -12,9 +12,8 @@
 </ToolbarButton>
 
 <!--
-  @component
-  ## Props
-  @prop name: string = 'Close';
-  ## Event
-  - on:click
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let name: string = 'Close';
 -->

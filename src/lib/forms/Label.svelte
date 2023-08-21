@@ -31,10 +31,10 @@
 {/if}
 
 <!--
-  @component
-  [Go to Label](https://flowbite-svelte.com/docs/utilities/label)
-  ## Props
-  @prop color: 'gray' | 'green' | 'red' | 'disabled' = 'gray';
-  @prop defaultClass: string = 'text-sm font-medium block';
-  @prop show: boolean = true;
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let color: 'gray' | 'green' | 'red' | 'disabled' = 'gray';
+@prop export let defaultClass: string = 'text-sm font-medium block';
+@prop export let show: boolean = true;
 -->

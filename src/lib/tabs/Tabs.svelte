@@ -66,15 +66,13 @@
 <div class={contentClass} role="tabpanel" aria-labelledby="id-tab" use:init />
 
 <!--
-  @component
-  [Go to Tab](https://flowbite-svelte.com/docs/components/tab)
-  ## Props
-  @prop style: 'full' | 'pill' | 'underline' | 'none' = 'none';
-  @prop defaultClass: string = 'flex flex-wrap space-x-2';
-  @prop contentClass: string = 'p-4 bg-gray-50 rounded-lg dark:bg-gray-800 mt-4';
-  @prop divider: boolean = true;
-  @prop activeClasses: string =
-    'p-4 text-primary-600 bg-gray-100 rounded-t-lg dark:bg-gray-800 dark:text-primary-500';
-  @prop inactiveClasses: string =
-    'p-4 text-gray-500 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-300';  
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let style: 'full' | 'pill' | 'underline' | 'none' = 'none';
+@prop export let defaultClass: string = 'flex flex-wrap space-x-2';
+@prop export let contentClass: string = 'p-4 bg-gray-50 rounded-lg dark:bg-gray-800 mt-4';
+@prop export let divider: boolean = true;
+@prop export let activeClasses: string = 'p-4 text-primary-600 bg-gray-100 rounded-t-lg dark:bg-gray-800 dark:text-primary-500';
+@prop export let inactiveClasses: string = 'p-4 text-gray-500 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-300';
 -->

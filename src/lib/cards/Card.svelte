@@ -58,20 +58,13 @@
 </Frame>
 
 <!--
-  @component
-  [Go to Card](https://flowbite-svelte.com/docs/components/card)
-  ## Props
-  @prop href: string | null | undefined = undefined;
-  @prop horizontal: boolean = false;
-  @prop reverse: boolean = false;
-  @prop img: string | undefined = undefined;
-  @prop padding: 'none' | 'sm' | 'md' | 'lg' | 'xl' = 'lg';
-  @prop size: SizeType = 'sm';
-  ## Event
-  - on:click
-  - on:focusin
-  - on:focusout
-  - on:mouseenter
-  - on:mouseleave
-  
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let href: string | null | undefined = undefined;
+@prop export let horizontal: boolean = false;
+@prop export let reverse: boolean = false;
+@prop export let img: string | undefined = undefined;
+@prop export let padding: 'none' | 'sm' | 'md' | 'lg' | 'xl' = 'lg';
+@prop export let size: SizeType = 'sm';
 -->

@@ -63,14 +63,14 @@
 </div>
 
 <!--
-  @component
-  [Go to Bottom Navigation](https://flowbite-svelte.com/docs/components/bottom-navigation)
-  ## Props
-  @prop position: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky' = 'fixed';
-  @prop navType:| 'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video' | 'custom' = 'default';
-  @prop outerClass: string = 'w-full z-50 border-gray-200 dark:bg-gray-700 dark:border-gray-600';
-  @prop innerClass: string = 'grid h-full max-w-lg mx-auto';
-  @prop outerCustom: string = '';
-  @prop innerCustom: string = '';
-  
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let activeUrl: string = '';
+@prop export let position: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky' = 'fixed';
+@prop export let navType: 'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video' = 'default';
+@prop export let outerClass: string = 'w-full z-50 border-gray-200 dark:bg-gray-700 dark:border-gray-600';
+@prop export let innerClass: string = 'grid h-full max-w-lg mx-auto';
+@prop export let activeClass: string = 'text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900';
+@prop export let activeUrl: string = '';
 -->

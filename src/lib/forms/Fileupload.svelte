@@ -12,22 +12,10 @@
 </Input>
 
 <!--
-  @component
-  [Go to File Input](https://flowbite-svelte.com/docs/forms/file-input)
-  ## Props
-  @prop value: string = '';
-  @prop files: FileList | undefined = undefined;
-  @prop inputClass: string = 'border !p-0 dark:text-gray-400';
-  ## Event
-  - on:change
-  - on:keyup
-  - on:keydown
-  - on:keypress
-  - on:focus
-  - on:blur
-  - on:click
-  - on:mouseover
-  - on:mouseenter
-  - on:mouseleave
-  - on:paste
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let value: string = '';
+@prop export let files: FileList | undefined = undefined;
+@prop export let inputClass: string = 'border !p-0 dark:text-gray-400';
 -->

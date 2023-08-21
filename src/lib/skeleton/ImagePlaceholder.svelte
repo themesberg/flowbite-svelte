@@ -23,9 +23,9 @@
 </div>
 
 <!--
-  @component
-  [Go to Skeleton Image Placeholder](https://flowbite-svelte.com/docs/components/skeleton#Image_placeholder)
-  ## Props
-  @prop divClass: string = 'space-y-8 animate-pulse md:space-y-0 md:space-x-8 md:flex md:items-center';
-  @prop imgHeight: string = '48';
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let divClass: string = 'space-y-8 animate-pulse md:space-y-0 md:space-x-8 md:flex md:items-center';
+@prop export let imgHeight: string = '48';
 -->

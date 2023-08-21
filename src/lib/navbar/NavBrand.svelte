@@ -8,9 +8,8 @@
 </a>
 
 <!--
-  @component
-  [Go to Navbar](https://flowbite-svelte.com/docs/components/navbar)
-  ## Props
-  @prop href: string = '';
-  
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let href: string = '';
 -->

@@ -9,10 +9,10 @@
 </div>
 
 <!--
-  @component
-  [Go to Carousel](https://flowbite-svelte.com/docs/components/carousel)
-  ## Props
-  @prop caption: string = '';
-  @prop captionClass: string = '';
-  
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let caption: string = '';
+@prop export let captionClass: string = '';
+@prop export let pClass: string = 'text-gray-900 dark:text-white';
 -->

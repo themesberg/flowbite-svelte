@@ -1,6 +1,1 @@
-{
-  "props": [
-    ["btnClass", "string", "'ml-3 md:hidden'"],
-    ["sideMenuClass", "string", "'h-6 w-6 shrink-0'"]
-  ]
-}
+{"props":[["btnClass","string","'ml-3 md:hidden'"],["sideMenuClass","string","'h-6 w-6 shrink-0'"]]}

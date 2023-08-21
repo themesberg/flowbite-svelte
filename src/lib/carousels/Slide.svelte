@@ -13,11 +13,12 @@
 </div>
 
 <!--
-  @component
-  [Go to Carousel](https://flowbite-svelte.com/docs/components/carousel)
-  ## Props
-  @prop image: string = '';
-  @prop altTag: string = '';
-  @prop attr: string = '';
-  @prop slideClass: string = '';
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let image: string = '';
+@prop export let altTag: string = '';
+@prop export let attr: string = '';
+@prop export let slideClass: string = '';
+@prop export let imgClass: string = '';
 -->

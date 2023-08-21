@@ -15,10 +15,9 @@
 </p>
 
 <!--
-  @component
-  [Go to Forms](https://flowbite-svelte.com/docs/components/forms)
-  ## Props
-  @prop helperClass: string = 'text-xs font-normal text-gray-500 dark:text-gray-300';
-  @prop color: 'gray' | 'green' | 'red' | 'disabled' = 'gray';
-
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let helperClass: string = 'text-xs font-normal text-gray-500 dark:text-gray-300';
+@prop export let color: 'gray' | 'green' | 'red' | 'disabled' = 'gray';
 -->

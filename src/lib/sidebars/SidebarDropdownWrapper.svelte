@@ -58,13 +58,14 @@
 </li>
 
 <!--
-  @component
-  [Go to Sidebar](https://flowbite-svelte.com/docs/components/sidebar)
-  ## Props
-  @prop btnClass: string = 'flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700';
-  @prop label: string = '';
-  @prop spanClass: string = 'flex-1 ml-3 text-left whitespace-nowrap';
-  @prop ulClass: string = 'py-2 space-y-2';
-  @prop transitionType: TransitionTypes = 'slide';
-  @prop transitionParams: TransitionParamTypes = {};
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let btnClass: string = 'flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700';
+@prop export let label: string = '';
+@prop export let spanClass: string = 'flex-1 ml-3 text-left whitespace-nowrap';
+@prop export let ulClass: string = 'py-2 space-y-2';
+@prop export let transitionType: TransitionTypes = 'slide';
+@prop export let transitionParams: TransitionParamTypes = {};
+@prop export let isOpen = false;
 -->

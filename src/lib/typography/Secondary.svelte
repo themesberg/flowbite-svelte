@@ -10,9 +10,9 @@
 </small>
 
 <!--
-  @component
-  [Go to Heading Secondary](https://flowbite-svelte.com/docs/typography/heading#Second-level_heading)
-  ## Props
-  @prop color: string = 'text-gray-500 dark:text-gray-400';
-  @prop secondaryClass: string = 'font-semibold';
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let color: string = 'text-gray-500 dark:text-gray-400';
+@prop export let secondaryClass: string = 'font-semibold';
 -->

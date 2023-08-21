@@ -28,23 +28,10 @@
 </li>
 
 <!--
-  @component
-  [Go to Navbar](https://flowbite-svelte.com/docs/components/navbar)
-  ## Props
-  @prop href: string = '';
-  @prop active: boolean = false;
-  @prop activeClass: string | undefined = undefined;
-  @prop nonActiveClass: string | undefined = undefined;
-  ## Event 
-  - on:blur
-  - on:change
-  - on:click
-  - on:focus
-  - on:keydown
-  - on:keypress
-  - on:keyup
-  - on:mouseenter
-  - on:mouseleave
-  - on:mouseover
- 
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let href: string = '';
+@prop export let activeClass: string | undefined = undefined;
+@prop export let nonActiveClass: string | undefined = undefined;
 -->

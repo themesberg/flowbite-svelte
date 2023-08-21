@@ -15,22 +15,12 @@
 </li>
 
 <!--
-  @component
-  [Go to Sidebar](https://flowbite-svelte.com/docs/components/sidebar)
-  ## Props
-  @prop aClass: string = 'flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700';
-  @prop href: string = '';
-  @prop label: string = '';
-  @prop activeClass: string = 'flex items-center p-2 pl-11 text-base font-normal text-gray-900 bg-gray-200 dark:bg-gray-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700';
-  @prop active: boolean = false;
-  ## Event
-  - on:blur
-  - on:click
-  - on:focus
-  - on:keydown
-  - on:keypress
-  - on:keyup
-  - on:mouseenter
-  - on:mouseleave
-  - on:mouseover
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let aClass: string = 'flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700';
+@prop export let href: string = '';
+@prop export let label: string = '';
+@prop export let activeClass: string = 'flex items-center p-2 pl-11 text-base font-normal text-gray-900 bg-gray-200 dark:bg-gray-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700';
+@prop export let active: boolean = false;
 -->

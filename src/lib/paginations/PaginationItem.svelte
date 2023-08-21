@@ -29,23 +29,12 @@
 </svelte:element>
 
 <!--
-  @component
-  [Go to Pagination](https://flowbite-svelte.com/docs/components/pagination)
-  ## Props
-  @prop href: string | undefined = undefined;
-  @prop active: boolean = false;
-  @prop activeClass: string = '';
-  @prop normalClass: string = 'text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white';
-  ## Event
-  - on:blur
-  - on:change
-  - on:click
-  - on:focus
-  - on:keydown
-  - on:keypress
-  - on:keyup
-  - on:mouseenter
-  - on:mouseleave
-  - on:mouseover
-  
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let href: string | undefined = undefined;
+@prop export let active: boolean = false;
+@prop export let activeClass: string = 'text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white';
+@prop export let normalClass: string = 'text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white';
+@prop export let large: boolean = false;
 -->

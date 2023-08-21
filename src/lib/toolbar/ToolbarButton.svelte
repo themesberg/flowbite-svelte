@@ -56,12 +56,12 @@
 {/if}
 
 <!--
-  @component
-  [Go to Toolbar](https://flowbite-svelte.com/docs/utilities/toolbar)
-  ## Props
-  @prop color: ToolbarButtonType = 'default';
-  @prop name: string | undefined = undefined;
-  @prop ariaLabel: string | undefined = undefined;
-  @prop size: 'xs' | 'sm' | 'md' | 'lg' = 'md';
-  @prop href: string | undefined = undefined;
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let color: ToolbarButtonType = 'default';
+@prop export let name: string | undefined = undefined;
+@prop export let ariaLabel: string | undefined = undefined;
+@prop export let size: 'xs' | 'sm' | 'md' | 'lg' = 'md';
+@prop export let href: string | undefined = undefined;
 -->

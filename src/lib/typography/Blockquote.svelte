@@ -37,15 +37,15 @@
 </blockquote>
 
 <!--
-  @component
-  [Go to Blockquote](https://flowbite-svelte.com/docs/typography/blockquote)
-  ## Props
-  @prop border: boolean = false;
-  @prop italic: boolean = true;
-  @prop borderClass: string = 'border-l-4 border-gray-300 dark:border-gray-500';
-  @prop bgClass: string = 'bg-gray-50 dark:bg-gray-800';
-  @prop bg: boolean = false;
-  @prop baseClass: string = 'font-semibold text-gray-900 dark:text-white';
-  @prop alignment: 'left' | 'center' | 'right' = 'left';
-  @prop size: BlockQuoteType = 'lg';
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let border: boolean = false;
+@prop export let italic: boolean = true;
+@prop export let borderClass: string = 'border-l-4 border-gray-300 dark:border-gray-500';
+@prop export let bgClass: string = 'bg-gray-50 dark:bg-gray-800';
+@prop export let bg: boolean = false;
+@prop export let baseClass: string = 'font-semibold text-gray-900 dark:text-white';
+@prop export let alignment: 'left' | 'center' | 'right' = 'left';
+@prop export let size: BlockQuoteType = 'lg';
 -->

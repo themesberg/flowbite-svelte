@@ -74,14 +74,13 @@
 <div class={dotClass}><slot /></div>
 
 <!--
-  @component
-  [Go to Indicators](https://flowbite-svelte.com/docs/components/indicators)
-  ## Props
-  @prop color: IndicatorColorType = 'gray';
-  @prop rounded: boolean = false;
-  @prop size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
-  @prop border: boolean = false;
-  @prop placement: IndicatorPlacementType = undefined;
-  @prop offset: boolean = true;
-
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let color: IndicatorColorType = 'gray';
+@prop export let rounded: boolean = false;
+@prop export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
+@prop export let border: boolean = false;
+@prop export let placement: PlacementType | undefined = undefined;
+@prop export let offset: boolean = true;
 -->

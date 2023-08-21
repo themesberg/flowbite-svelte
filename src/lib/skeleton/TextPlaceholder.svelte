@@ -52,9 +52,9 @@
 </div>
 
 <!--
-  @component
-  [Go to Skeleton](https://flowbite-svelte.com/docs/components/skeleton)
-  ## Props
-  @prop divClass: string = 'space-y-2.5 animate-pulse';
-  @prop size: keyof Sizes = 'sm';
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let divClass: string = 'space-y-2.5 animate-pulse';
+@prop export let size: keyof Sizes = 'sm';
 -->

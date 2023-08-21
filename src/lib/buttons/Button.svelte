@@ -87,26 +87,14 @@
 </svelte:element>
 
 <!--
-  @component
-  [Go to Button](https://flowbite-svelte.com/docs/components/button)
-  ## Props
-  @prop pill: boolean = false;
-  @prop outline: boolean = false;
-  @prop size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = group ? 'sm' : 'md';
-  @prop href: string | undefined = undefined;
-  @prop btnClass: string | undefined = undefined;
-  @prop type: ButtonType = 'button';
-  @prop color: ButtonColor = group ? (outline ? 'dark' : 'alternative') : 'primary';
-  @prop shadow: boolean = false;
-  ## Event
-  - on:click
-  - on:change
-  - on:keydown
-  - on:keyup
-  - on:touchstart
-  - on:touchend
-  - on:touchcancel
-  - on:mouseenter
-  - on:mouseleave
-  
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let pill: boolean = false;
+@prop export let outline: boolean = false;
+@prop export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = group ? 'sm' : 'md';
+@prop export let href: string | undefined = undefined;
+@prop export let type: ButtonType = 'button';
+@prop export let color: ButtonColor = group ? (outline ? 'dark' : 'alternative') : 'primary';
+@prop export let shadow: boolean = false;
 -->

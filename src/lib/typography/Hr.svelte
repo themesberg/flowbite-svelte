@@ -25,13 +25,13 @@
 {/if}
 
 <!--
-  @component
-  [Go to Horizontal Line](https://flowbite-svelte.com/docs/typography/hr)
-  ## Props
-  @prop icon: boolean;
-  @prop divClass: string;
-  @prop hrClass: string;
-  @prop iconDivClass: string;
-  @prop textSpanClass: string;
-  @prop innerDivClass: string;
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let icon: boolean = false;
+@prop export let divClass: string = 'inline-flex items-center justify-center w-full';
+@prop export let hrClass: string = 'h-px my-8 bg-gray-200 border-0 dark:bg-gray-700';
+@prop export let iconDivClass: string = 'absolute left-1/2 px-4 bg-white -translate-x-1/2 ';
+@prop export let textSpanClass: string = 'absolute px-3 font-medium text-gray-900 -translate-x-1/2 bg-white left-1/2 dark:text-white dark:bg-gray-900 ';
+@prop export let innerDivClass: string = 'absolute px-4 -translate-x-1/2 bg-white left-1/2 dark:bg-gray-900';
 -->

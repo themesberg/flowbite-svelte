@@ -84,19 +84,19 @@
 </p>
 
 <!--
-  @component
-  [Go to Paragraph](https://flowbite-svelte.com/docs/typography/paragraph)
-  ## Props
-  @prop color: string = 'text-gray-900 dark:text-white';
-  @prop height: 'normal' | 'relaxed' | 'loose' = 'normal';
-  @prop align: 'left' | 'center' | 'right' = 'left';
-  @prop justify: boolean = false;
-  @prop italic: boolean = false;
-  @prop firstupper: boolean = false;
-  @prop upperClass: string = 'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:mr-3 first-letter:float-left';
-  @prop opacity: number | undefined = undefined;
-  @prop whitespace: 'normal' | 'nowrap' | 'pre' | 'preline' | 'prewrap' = 'normal';
-  @prop size: PsizeType = 'base';
-  @prop space: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest' | undefined = undefined;
-  @prop weight: PweightType = 'normal';
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let color: string = 'text-gray-900 dark:text-white';
+@prop export let height: 'normal' | 'relaxed' | 'loose' = 'normal';
+@prop export let align: 'left' | 'center' | 'right' = 'left';
+@prop export let justify: boolean = false;
+@prop export let italic: boolean = false;
+@prop export let firstupper: boolean = false;
+@prop export let upperClass: string = 'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:mr-3 first-letter:float-left';
+@prop export let opacity: number | undefined = undefined;
+@prop export let whitespace: 'normal' | 'nowrap' | 'pre' | 'preline' | 'prewrap' = 'normal';
+@prop export let size: PsizeType = 'base';
+@prop export let space: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest' | undefined = undefined;
+@prop export let weight: PweightType = 'normal';
 -->

@@ -23,17 +23,17 @@
 {/if}
 
 <!--
-  @component
-  [Go to Images](https://flowbite-svelte.com/docs/typography/image)
-  ## Props
-  @prop caption: string | undefined = undefined;
-  @prop src: string | undefined = undefined;
-  @prop srcset: string | undefined = undefined;
-  @prop size: string = 'max-w-full';
-  @prop alignment: string = '';
-  @prop imgClass: string = 'h-auto';
-  @prop figClass: string = 'max-w-lg';
-  @prop alt: string = '';
-  @prop effect: string = '';
-  @prop captionClass: string = 'mt-2 text-sm text-center text-gray-500 dark:text-gray-400';
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let caption: string | undefined = undefined;
+@prop export let src: string | undefined = undefined;
+@prop export let srcset: string | undefined = undefined;
+@prop export let size: string = 'max-w-full';
+@prop export let alignment: string = '';
+@prop export let imgClass: string = 'h-auto';
+@prop export let figClass: string = 'max-w-lg';
+@prop export let alt: string = '';
+@prop export let effect: string = '';
+@prop export let captionClass: string = 'mt-2 text-sm text-center text-gray-500 dark:text-gray-400';
 -->

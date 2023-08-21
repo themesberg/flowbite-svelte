@@ -10,8 +10,8 @@
 </ol>
 
 <!--
-  @component
-  [Go to Horizontal Timeline](https://flowbite-svelte.com/docs/components/timeline#Horizontal_Timeline)
-  ## Props
-  @prop olClass: string = 'sm:flex';
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let olClass: string = 'sm:flex';
 -->

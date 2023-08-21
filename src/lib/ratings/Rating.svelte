@@ -44,15 +44,14 @@
 </div>
 
 <!--
-  @component
-  [Go to Rating](https://flowbite-svelte.com/docs/components/rating)
-  ## Props
-  @prop divClass: string = 'flex items-center';
-  @prop size: number = 24;
-  @prop total: number = 5;
-  @prop rating: number = 4;
-  @prop partialId: string = 'partialStar' + generateId();
-  @prop icon: ComponentType = Star;
-  @prop count: boolean = false;  
-  
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let divClass: string = 'flex items-center';
+@prop export let size: number = 24;
+@prop export let total: number = 5;
+@prop export let rating: number = 4;
+@prop export let partialId: string = 'partialStar' + generateId();
+@prop export let icon: ComponentType = Star;
+@prop export let count: boolean = false;
 -->

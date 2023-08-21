@@ -190,15 +190,17 @@
 {/if}
 
 <!--
-    @component
-    ## Props
-    @prop activeContent: boolean = false;
-    @prop arrow: boolean = true;
-    @prop offset: number = 8;
-    @prop placement: Placement = 'top';
-    @prop trigger: 'hover' | 'click' = 'hover';
-    @prop triggeredBy: string | undefined = undefined;
-    @prop strategy: 'absolute' | 'fixed' = 'absolute';
-    @prop open: boolean = false;
-    @prop yOnly: boolean = false;
-  -->
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let activeContent: boolean = false;
+@prop export let arrow: boolean = true;
+@prop export let offset: number = 8;
+@prop export let placement: Placement = 'top';
+@prop export let trigger: 'hover' | 'click' = 'hover';
+@prop export let triggeredBy: string | undefined = undefined;
+@prop export let reference: string | undefined = undefined;
+@prop export let strategy: 'absolute' | 'fixed' = 'absolute';
+@prop export let open: boolean = false;
+@prop export let yOnly: boolean = false;
+-->

@@ -17,11 +17,11 @@
 </div>
 
 <!--
-  @component
-  [Go to Grouped Timeline](https://flowbite-svelte.com/docs/components/timeline#Grouped_timeline)
-  ## Props
-  @prop divClass: string;
-  @prop timeClass: string;
-  @prop date: Date | string;
-  @prop olClass: string;
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let divClass: string = 'p-5 mb-4 bg-gray-50 rounded-lg border border-gray-100 dark:bg-gray-800 dark:border-gray-700';
+@prop export let timeClass: string = 'text-lg font-semibold text-gray-900 dark:text-white';
+@prop export let date: Date | string;
+@prop export let olClass: string = 'mt-3 divide-y divider-gray-200 dark:divide-gray-700';
 -->

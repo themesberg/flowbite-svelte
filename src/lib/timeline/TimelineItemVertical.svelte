@@ -32,13 +32,13 @@
 </li>
 
 <!--
-  @component
-  [Go to Vertical Timeline](https://flowbite-svelte.com/docs/components/timeline#Vertical_Timeline)
-  ## Props
-  @prop title: string;
-  @prop date: string;
-  @prop liClass: string;
-  @prop spanClass: string;
-  @prop h3Class: string;
-  @prop timeClass: string;
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let title: string;
+@prop export let date: string;
+@prop export let liClass: string = 'mb-10 ml-6';
+@prop export let spanClass: string = 'flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900';
+@prop export let h3Class: string = 'flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white';
+@prop export let timeClass: string = 'block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500';
 -->

@@ -30,9 +30,9 @@
 </div>
 
 <!--
-  @component
-  [Go to Skeleton](https://flowbite-svelte.com/docs/components/skeleton)
-  ## Props
-  @prop divClass: string = 'animate-pulse';
-  @prop size: keyof Sizes = 'sm';
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let divClass: string = 'animate-pulse';
+@prop export let size: keyof Sizes = 'sm';
 -->

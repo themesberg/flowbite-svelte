@@ -26,16 +26,14 @@
 </svg>
 
 <!--
-  @component
-  [Go to Rating](https://flowbite-svelte.com/docs/components/rating)
-  ## Props
-  @prop fillPercent: number = 100;
-  @prop fillColor: string = '#00b500';
-  @prop strokeColor: string = '#00b500';
-  @prop size: number = 24;
-  @prop ariaLabel: string = 'thumbup';
-  @prop id: string = 'thumbup';
-  ## Event
-  - on:click
-
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let fillPercent: number = 100;
+@prop export let fillColor: string = '#00b500';
+@prop export let strokeColor: string = '#00b500';
+@prop export let size: number = 24;
+@prop export let ariaLabel: string = 'thumbup';
+@prop export let id: string = 'thumbup';
+@prop export let role = 'img';
 -->

@@ -1,9 +1,1 @@
-{
-  "props": [
-    ["href", "string", "''"],
-    ["label", "string", "''"],
-    ["spanClass", "string", "'ml-3'"],
-    ["activeClass", "string | undefined", "undefined"],
-    ["nonActiveClass", "string | undefined", "undefined"]
-  ]
-}
+{"props":[["href","string","''"],["label","string","''"],["spanClass","string","'ml-3'"],["activeClass","string | undefined","undefined"],["nonActiveClass","string | undefined","undefined"]]}

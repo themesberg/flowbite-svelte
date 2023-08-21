@@ -41,25 +41,13 @@
 </Label>
 
 <!--
-  @component
-  [Go to Radio](https://flowbite-svelte.com/docs/forms/radio)
-  ## Props
-  @prop color: FormColorType = 'primary';
-  @prop custom: boolean = false;
-  @prop inline: boolean = false;
-  @prop group: number | string = '';
-  @prop value: number | string = '';
-  ## Event
-  - on:blur
-  - on:change
-  - on:click
-  - on:focus
-  - on:keydown
-  - on:keypress
-  - on:keyup
-  - on:mouseenter
-  - on:mouseleave
-  - on:mouseover
-  - on:paste
-  
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let spacing: string = 'mr-2';
+@prop export let color: FormColorType = 'primary';
+@prop export let custom: boolean = false;
+@prop export let inline: boolean = false;
+@prop export let group: number | string = '';
+@prop export let value: number | string = '';
 -->

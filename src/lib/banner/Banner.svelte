@@ -48,23 +48,13 @@
 {/if}
 
 <!--
-  @component
-  [Go to Banner](https://flowbite-svelte.com/docs/components/banner)
-  ## Props
-  @prop id: string = 'sticky-banner';
-  @prop position: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky' = 'sticky';
-  @prop dismissable: boolean = true;
-  @prop bannerType: 'default' | 'bottom' | 'cta' | 'signup' | 'info' = 'default';
-  @prop divClass: string = 'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600';
-  @prop insideDiv: string = 'flex';
-  ## Event
-  - on:click
-  - on:change
-  - on:keydown
-  - on:keyup
-  - on:focus
-  - on:blur
-  - on:mouseenter
-  - on:mouseleave
-  
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let id: string = 'sticky-banner';
+@prop export let position: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky' = 'sticky';
+@prop export let dismissable: boolean = true;
+@prop export let bannerType: 'default' | 'bottom' | 'cta' | 'signup' | 'info' = 'default';
+@prop export let divClass: string = 'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600';
+@prop export let innerClass: string = 'flex';
 -->

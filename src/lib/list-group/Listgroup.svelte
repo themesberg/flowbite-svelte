@@ -36,11 +36,10 @@
 </Frame>
 
 <!--
-  @component
-  [Go to List Group](https://flowbite-svelte.com/docs/components/list-group)
-  ## Props
-  @prop items: ListGroupItemType[] = [];
-  @prop active: boolean = false;
-  @prop defaultClass: string = 'divide-y divide-gray-200 dark:divide-gray-600';
-  
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let items: ListGroupItemType[] | string[] = [];
+@prop export let active: boolean = false;
+@prop export let defaultClass: string = 'divide-y divide-gray-200 dark:divide-gray-600';
 -->

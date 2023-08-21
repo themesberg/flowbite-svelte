@@ -36,14 +36,14 @@
 </div>
 
 <!--
-  @component
-  [Go to Table](https://flowbite-svelte.com/docs/components/table)
-  ## Props
-  @prop divClass: string = 'relative overflow-x-auto';
-  @prop striped: boolean = false;
-  @prop hoverable: boolean = false;
-  @prop noborder: boolean = false;
-  @prop shadow: boolean = false;
-  @prop color: TableColorType = 'default';
-  @prop customeColor: string = '';
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let divClass: string = 'relative overflow-x-auto';
+@prop export let striped: boolean = false;
+@prop export let hoverable: boolean = false;
+@prop export let noborder: boolean = false;
+@prop export let shadow: boolean = false;
+@prop export let color: TableColorType = 'default';
+@prop export let customeColor: string = '';
 -->

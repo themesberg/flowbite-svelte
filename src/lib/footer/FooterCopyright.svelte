@@ -25,14 +25,14 @@
 </span>
 
 <!--
-  @component
-  [Go to Footer](https://flowbite-svelte.com/docs/components/footer)
-  ## Props
-  @prop spanClass: string = 'block text-sm text-gray-500 sm:text-center dark:text-gray-400';
-  @prop aClass: string = 'hover:underline';
-  @prop year: number = new Date().getFullYear();
-  @prop href: string = '';
-  @prop by: string = '';
-  @prop target: string | undefined = undefined;
-  @prop copyrightMessage: string = 'All Rights Reserved.'; 
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let spanClass: string = 'block text-sm text-gray-500 sm:text-center dark:text-gray-400';
+@prop export let aClass: string = 'hover:underline';
+@prop export let year: number = new Date().getFullYear();
+@prop export let href: string = '';
+@prop export let by: string = '';
+@prop export let target: string | undefined = undefined;
+@prop export let copyrightMessage: string = 'All Rights Reserved.';
 -->

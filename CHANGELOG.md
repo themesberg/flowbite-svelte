@@ -6,15 +6,13 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.44.1](https://github.com/themesberg/flowbite-svelte/compare/v0.43.3...v0.44.1) (2023-08-18)
 
-
 ### Features
 
-* chart component ([#998](https://github.com/themesberg/flowbite-svelte/issues/998)) ([08e09e3](https://github.com/themesberg/flowbite-svelte/commit/08e09e338c56b00c843ed76fc6cc1167fcae2e11))
-
+- chart component ([#998](https://github.com/themesberg/flowbite-svelte/issues/998)) ([08e09e3](https://github.com/themesberg/flowbite-svelte/commit/08e09e338c56b00c843ed76fc6cc1167fcae2e11))
 
 ### Bug Fixes
 
-* add primary to Toast interface $$Props ([#993](https://github.com/themesberg/flowbite-svelte/issues/993)) ([3c48faa](https://github.com/themesberg/flowbite-svelte/commit/3c48faa5798ec6a8e0e328f82c0e84df227855ba))
+- add primary to Toast interface $$Props ([#993](https://github.com/themesberg/flowbite-svelte/issues/993)) ([3c48faa](https://github.com/themesberg/flowbite-svelte/commit/3c48faa5798ec6a8e0e328f82c0e84df227855ba))
 
 ### [0.43.3](https://github.com/themesberg/flowbite-svelte/compare/v0.43.2...v0.43.3) (2023-08-17)
 

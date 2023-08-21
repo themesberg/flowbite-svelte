@@ -147,17 +147,17 @@
 {/if}
 
 <!--
-  @component
-  [Go to Modal](https://flowbite-svelte.com/docs/components/modal)
-  ## Props
-  @prop open: boolean = false;
-  @prop title: string = '';
-  @prop size: SizeType = 'md';
-  @prop placement: ModalPlacementType = 'center';
-  @prop autoclose: boolean = false;
-  @prop permanent: boolean = false;
-  @prop backdropClass: string = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
-  @prop defaultClass: string = 'relative flex flex-col mx-auto';
-  @prop outsideclose: boolean = false; 
-  
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let open: boolean = false;
+@prop export let title: string = '';
+@prop export let size: SizeType = 'md';
+@prop export let placement: ModalPlacementType = 'center';
+@prop export let autoclose: boolean = false;
+@prop export let permanent: boolean = false;
+@prop export let backdropClass: string = 'fixed inset-0 z-40 bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
+@prop export let defaultClass: string = 'relative flex flex-col mx-auto';
+@prop export let outsideclose: boolean = false;
+@prop export let dialogClass: string = 'fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex';
 -->

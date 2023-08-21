@@ -75,12 +75,15 @@
 {/if}
 
 <!--
-  @component
-  [Go to Toast](https://flowbite-svelte.com/docs/components/toast)
-  ## Props
-  @prop simple: boolean = false;
-  @prop position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none' = 'none';
-  @prop open: boolean = true;
-  @prop divClass: string = 'w-full max-w-xs p-4';
-  @prop defaultIconClass: string = 'inline-flex items-center justify-center flex-shrink-0 w-8 h-8 mr-3';
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let simple: boolean = false;
+@prop export let color: 'primary' | 'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'orange' | 'none' = 'primary';
+@prop export let position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none' = 'none';
+@prop export let open: boolean = true;
+@prop export let divClass: string = 'w-full max-w-xs p-4 text-gray-500 bg-white shadow dark:text-gray-400 dark:bg-gray-800 gap-3';
+@prop export let defaultIconClass: string = 'w-8 h-8';
+@prop export let contentClass: string = 'w-full text-sm font-normal';
+@prop export let align: boolean = true;
 -->

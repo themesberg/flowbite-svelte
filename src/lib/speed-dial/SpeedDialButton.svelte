@@ -36,14 +36,14 @@
 {/if}
 
 <!--
-  @component
-  [Go to Speed Dial](https://flowbite-svelte.com/docs/components/speed-dial)
-  ## Props
-  @prop btnDefaultClass: string = 'w-[52px] h-[52px] shadow-sm !p-2';
-  @prop name: string = '';
-  @prop tooltip: Placement | 'none' = context.tooltip;
-  @prop pill: boolean = context.pill;
-  @prop textOutside: boolean = context.textOutside;
-  @prop textOutsideClass: string = 'block absolute -left-14 top-1/2 mb-px text-sm font-medium -translate-y-1/2';
-  @prop textDefaultClass: string = 'block mb-px text-xs font-medium';
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let btnDefaultClass: string = 'w-[52px] h-[52px] shadow-sm !p-2';
+@prop export let name: string = '';
+@prop export let tooltip: Placement | 'none' = context.tooltip;
+@prop export let pill: boolean = context.pill;
+@prop export let textOutside: boolean = context.textOutside;
+@prop export let textOutsideClass: string = 'block absolute -left-14 top-1/2 mb-px text-sm font-medium -translate-y-1/2';
+@prop export let textDefaultClass: string = 'block mb-px text-xs font-medium';
 -->

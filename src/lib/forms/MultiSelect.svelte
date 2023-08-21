@@ -110,10 +110,11 @@
 </div>
 
 <!--
-  @component
-  [Go to Label](https://flowbite-svelte.com/docs/forms/select#MultiSelect)
-  @prop let items: SelectOptionType[] = [];
-  @prop let value: (string | number)[] = [];
-  @prop let size: FormSizeType = 'md';
-  @prop let dropdownClass: string = '';
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let items: SelectOptionType[] = [];
+@prop export let value: (string | number)[] = [];
+@prop export let size: FormSizeType = 'md';
+@prop export let dropdownClass: string = '';
 -->

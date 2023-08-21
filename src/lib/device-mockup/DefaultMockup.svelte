@@ -11,12 +11,11 @@
 <div class={defaultRight} />
 
 <!--
-  @component
-  [Go to Device Mockups](https://flowbite-svelte.com/docs/components/device-mockups)
-  ## Props
-  @prop defaultTop: string;
-  @prop defaultLeftTop: string;
-  @prop defaultLeftBot: string;
-  @prop defaultRight: string;
-  
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let defaultTop: string;
+@prop export let defaultLeftTop: string;
+@prop export let defaultLeftBot: string;
+@prop export let defaultRight: string;
 -->

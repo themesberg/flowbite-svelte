@@ -24,10 +24,12 @@
     "format": "prettier --plugin-search-dir . --write .",
     "test:integration": "playwright test",
     "test:unit": "vitest",
-    "write-package-json": "node ./scripts/package-json-writer.js",
-    "add-exports": "node ./scripts/add-exports-to-package-json.js",
-    "package:publish": "standard-version && git push --follow-tags origin main && npm run package && npm run add-exports && npm run write-package-json && npm publish",
-    "gen:props": "createprops && npm run format"
+    "add-exports": "svelte-lib-helpers exports",
+    "add-docs": "svelte-lib-helpers docs",
+    "gen-props": "svelte-lib-helpers props",
+    "copy-package": "svelte-lib-helpers package",
+    "lib-helpers": "npm run add-docs && npm run gen-props && npm run package && npm run add-exports && npm run copy-package",
+    "package:publish": "npm run lib-helpers && npm run format && standard-version && git push --follow-tags origin main && npm publish"
   },
   "devDependencies": {
     "@docsearch/js": "^3.5.2",
@@ -38,7 +40,6 @@
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "autoprefixer": "^10.4.15",
-    "createprops": "^0.5.5",
     "esbuild": "0.18.10",
     "eslint": "^8.47.0",
     "eslint-config-prettier": "^8.10.0",
@@ -54,6 +55,7 @@
     "publint": "^0.1.16",
     "svelte": "^4.2.0",
     "svelte-check": "^3.5.0",
+    "svelte-lib-helpers": "^0.2.8",
     "svelte-meta-tags": "^2.8.0",
     "svelte-preprocess": "^5.0.4",
     "svelte2tsx": "^0.6.20",

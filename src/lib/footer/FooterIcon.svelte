@@ -15,11 +15,11 @@
 {/if}
 
 <!--
-  @component
-  [Go to Footer](https://flowbite-svelte.com/docs/components/footer)
-  ## Props
-  @prop href: string = '';
-  @prop ariaLabel: string = '';
-  @prop aClass: string = 'text-gray-500 hover:text-gray-900 dark:hover:text-white';
-  @prop target: string | undefined = undefined;
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let href: string = '';
+@prop export let ariaLabel: string = '';
+@prop export let aClass: string = 'text-gray-500 hover:text-gray-900 dark:hover:text-white';
+@prop export let target: string | undefined = undefined;
 -->

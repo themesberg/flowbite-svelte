@@ -71,27 +71,13 @@
 </Wrapper>
 
 <!--
-  @component
-  [Go to Input Fields](https://flowbite-svelte.com/docs/forms/input-field)
-  ## Props
-  @prop type: InputType = 'text';
-  @prop value: any = '';
-  @prop size: FormSizeType | undefined = undefined;
-  @prop defaultClass: string = 'block w-full disabled:cursor-not-allowed disabled:opacity-50';
-  @prop color: 'base' | 'green' | 'red' = 'base';
-  ## Event
-  - on:blur
-  - on:change
-  - on:click
-  - on:contextmenu
-  - on:focus
-  - on:keydown
-  - on:keypress
-  - on:keyup
-  - on:mouseover
-  - on:mouseenter
-  - on:mouseleave
-  - on:paste
-  - on:input
-
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let type: InputType = 'text';
+@prop export let value: any = undefined;
+@prop export let size: FormSizeType | undefined = undefined;
+@prop export let defaultClass: string = 'block w-full disabled:cursor-not-allowed disabled:opacity-50';
+@prop export let color: 'base' | 'green' | 'red' = 'base';
+@prop export let floatClass: string = 'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400';
 -->

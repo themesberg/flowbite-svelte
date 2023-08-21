@@ -50,24 +50,12 @@
 </li>
 
 <!--
-  @component
-  [Go to Tab](https://flowbite-svelte.com/docs/components/tab)
-  ## Props
-  @prop open: boolean = false;
-  @prop title: string = 'Tab title';
-  @prop activeClasses: string | undefined = undefined;
-  @prop inactiveClasses: string | undefined = undefined;
-  @prop defaultClass: string =
-    'inline-block text-sm font-medium text-center disabled:cursor-not-allowed';
-  ## Event
-  - on:blur
-  - on:click
-  - on:contextmenu
-  - on:focus
-  - on:keydown
-  - on:keypress
-  - on:keyup
-  - on:mouseenter
-  - on:mouseleave
-  - on:mouseover
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let open: boolean = false;
+@prop export let title: string = 'Tab title';
+@prop export let activeClasses: string | undefined = undefined;
+@prop export let inactiveClasses: string | undefined = undefined;
+@prop export let defaultClass: string = 'inline-block text-sm font-medium text-center disabled:cursor-not-allowed';
 -->

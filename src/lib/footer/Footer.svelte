@@ -11,10 +11,8 @@
 </footer>
 
 <!--
-  @component
-  [Go to Footer](https://flowbite-svelte.com/docs/components/footer)
-  ## Props
-  @prop customClass: string = '';
-  @prop footerType: 'custom' | 'sitemap' | 'default' | 'logo' | 'socialmedia' = 'default';
-
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let footerType: 'sitemap' | 'default' | 'logo' | 'socialmedia' = 'default';
 -->

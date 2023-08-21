@@ -53,18 +53,20 @@
 </li>
 
 <!--
-  @component
-  [Go to Horizontal Timeline](https://flowbite-svelte.com/docs/components/timeline#Horizontal_Timeline)
-  ## Props
-  @prop title: string;
-  @prop date: string;
-  @prop href: string;
-  @prop text: string;
-  @prop linkname: string;
-  @prop icon: string;  
-  @prop liClass: string;
-  @prop divClass: string;
-  @prop timeClass: string;
-  @prop pClass: string;
-  @prop aClass: string;
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let timelineItems: TimelineItemHorizontalType[];
+@prop export let title: string;
+@prop export let date: string;
+@prop export let href: string;
+@prop export let text: string;
+@prop export let liClass: string = 'relative mb-6 sm:mb-0';
+@prop export let divClass: string = 'flex z-10 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0';
+@prop export let h3Class: string = 'text-lg font-semibold text-gray-900 dark:text-white';
+@prop export let timeClass: string = 'block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500';
+@prop export let pClass: string = 'text-base font-normal text-gray-500 dark:text-gray-400';
+@prop export let aClass: string = 'inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700';
+@prop export let linkname: string;
+@prop export let icon: string;
 -->
