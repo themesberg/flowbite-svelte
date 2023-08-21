@@ -38,7 +38,7 @@ jobs:
       - name: Install dependencies
         run: pnpm i
       - name: Run playwright tests
-        run: pnpm test
+        run: pnpm test:integration
 #      - name: Run typecheck
 #        if: always()
 #        run: pnpm check
