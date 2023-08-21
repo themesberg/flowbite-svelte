@@ -9,7 +9,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let svgClass: string = 'w-4 h-4';
 -->

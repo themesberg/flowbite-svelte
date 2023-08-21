@@ -14,7 +14,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let divClass: string = 'py-2 px-4 text-gray-700 dark:text-white';
 @prop export let divider: boolean = true;

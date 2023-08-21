@@ -44,7 +44,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let divClass: string = 'p-4 space-y-4 max-w-md rounded border border-gray-200 divide-y divide-gray-200 shadow animate-pulse dark:divide-gray-700 md:p-6 dark:border-gray-700';
 -->

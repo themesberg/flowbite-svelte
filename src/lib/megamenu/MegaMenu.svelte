@@ -43,7 +43,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let items: LinkTypeLike[] = [];
 @prop export let full: boolean = false;

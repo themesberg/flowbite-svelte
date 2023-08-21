@@ -45,7 +45,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let activities: ActivityType[];
 @prop export let liClass: string = 'mb-10 ml-6';

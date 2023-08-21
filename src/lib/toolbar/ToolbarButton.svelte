@@ -57,7 +57,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let color: ToolbarButtonType = 'default';
 @prop export let name: string | undefined = undefined;

@@ -163,7 +163,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let id: string = 'default-transition-carousel';
 @prop export let showIndicators: boolean = true;

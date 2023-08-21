@@ -59,7 +59,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let href: string | null | undefined = undefined;
 @prop export let horizontal: boolean = false;

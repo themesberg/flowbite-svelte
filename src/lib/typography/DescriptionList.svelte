@@ -14,7 +14,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let tag: 'dt' | 'dd';
 @prop export let dtClass: string = 'text-gray-500 md:text-lg dark:text-gray-400';

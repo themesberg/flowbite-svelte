@@ -15,7 +15,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let size: SizeType = 'md';
 @prop export let divClass: string = 'inline-flex rounded-lg shadow-sm';

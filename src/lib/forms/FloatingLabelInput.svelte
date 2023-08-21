@@ -82,7 +82,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let id: string = generateId();
 @prop export let style: 'filled' | 'outlined' | 'standard' = 'standard';

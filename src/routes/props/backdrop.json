@@ -1,6 +1,1 @@
-{
-  "props": [
-    ["open", "string", "false"],
-    ["placement", "string", ""]
-  ]
-}
+{"props":[["open","string","false"],["placement","string",""]]}

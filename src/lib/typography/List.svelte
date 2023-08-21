@@ -25,7 +25,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let tag: 'ul' | 'ol' | 'dl' = 'ul';
 @prop export let list: 'disc' | 'none' | 'decimal' | undefined = undefined;

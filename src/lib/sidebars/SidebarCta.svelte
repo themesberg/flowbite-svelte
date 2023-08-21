@@ -19,7 +19,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let divWrapperClass: string = 'p-4 mt-6 bg-primary-50 rounded-lg dark:bg-primary-900';
 @prop export let divClass: string = 'flex items-center mb-3';

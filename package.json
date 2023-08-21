@@ -28,8 +28,8 @@
     "add-docs": "svelte-lib-helpers docs",
     "gen-props": "svelte-lib-helpers props",
     "copy-package": "svelte-lib-helpers package",
-    "lib-helpers": "npm run add-docs && npm run gen-props && npm run package && npm run add-exports && npm run copy-package && npm run format",
-    "package:publish": "npm run lib-helpers && standard-version && git push --follow-tags origin main && npm publish"
+    "lib-helpers": "npm run add-docs && npm run gen-props && npm run package && npm run add-exports && npm run copy-package",
+    "package:publish": "npm run lib-helpers && npm run format && standard-version && git push --follow-tags origin main && npm publish"
   },
   "devDependencies": {
     "@docsearch/js": "^3.5.2",
@@ -55,7 +55,7 @@
     "publint": "^0.1.16",
     "svelte": "^4.2.0",
     "svelte-check": "^3.5.0",
-    "svelte-lib-helpers": "^0.2.6",
+    "svelte-lib-helpers": "^0.2.8",
     "svelte-meta-tags": "^2.8.0",
     "svelte-preprocess": "^5.0.4",
     "svelte2tsx": "^0.6.20",

@@ -64,7 +64,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let activeUrl: string = '';
 @prop export let position: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky' = 'fixed';

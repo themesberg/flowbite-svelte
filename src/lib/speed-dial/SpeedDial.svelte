@@ -64,7 +64,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let defaultClass: string = 'fixed right-6 bottom-6';
 @prop export let popperDefaultClass: string = 'flex items-center mb-4 gap-2';

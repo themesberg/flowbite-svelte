@@ -26,7 +26,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let aClass: string = 'flex items-center';
 @prop export let spanClass: string = 'self-center text-2xl font-semibold whitespace-nowrap dark:text-white';

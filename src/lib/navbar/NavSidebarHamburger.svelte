@@ -13,7 +13,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let btnClass: string = 'ml-3 md:hidden';
 @prop export let sideMenuClass: string = 'h-6 w-6 shrink-0';

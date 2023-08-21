@@ -11,7 +11,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let color: string = 'text-gray-500 dark:text-gray-400';
 @prop export let secondaryClass: string = 'font-semibold';

@@ -26,7 +26,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let spanClass: string = 'block text-sm text-gray-500 sm:text-center dark:text-gray-400';
 @prop export let aClass: string = 'hover:underline';

@@ -1,11 +1,1 @@
-{
-  "props": [
-    ["divClass", "string", "'relative overflow-x-auto'"],
-    ["striped", "boolean", "false"],
-    ["hoverable", "boolean", "false"],
-    ["noborder", "boolean", "false"],
-    ["shadow", "boolean", "false"],
-    ["color", "TableColorType", "'default'"],
-    ["customeColor", "string", "''"]
-  ]
-}
+{"props":[["divClass","string","'relative overflow-x-auto'"],["striped","boolean","false"],["hoverable","boolean","false"],["noborder","boolean","false"],["shadow","boolean","false"],["color","TableColorType","'default'"],["customeColor","string","''"]]}

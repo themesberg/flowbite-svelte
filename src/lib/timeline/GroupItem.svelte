@@ -48,7 +48,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let timelines: GroupTimelineType[];
 @prop export let aClass: string = 'block items-center p-3 sm:flex hover:bg-gray-100 dark:hover:bg-gray-700';

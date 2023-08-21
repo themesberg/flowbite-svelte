@@ -67,7 +67,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let style: 'full' | 'pill' | 'underline' | 'none' = 'none';
 @prop export let defaultClass: string = 'flex flex-wrap space-x-2';

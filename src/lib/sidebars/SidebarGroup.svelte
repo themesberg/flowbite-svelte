@@ -16,7 +16,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let ulClass: string = 'space-y-2';
 @prop export let borderClass: string = 'pt-4 mt-4 border-t border-gray-200 dark:border-gray-700';

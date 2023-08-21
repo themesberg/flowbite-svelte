@@ -1,8 +1,1 @@
-{
-  "props": [
-    ["iosTop", "string", ""],
-    ["iosLeftTop", "string", ""],
-    ["iosLeftBot", "string", ""],
-    ["iosRight", "string", "@prop export let iosTop: string"]
-  ]
-}
+{"props":[["iosTop","string",""],["iosLeftTop","string",""],["iosLeftBot","string",""],["iosRight","string","@prop export let iosTop: string"]]}

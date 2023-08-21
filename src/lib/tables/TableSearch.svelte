@@ -44,7 +44,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let divClass: string = 'relative overflow-x-auto shadow-md sm:rounded-lg';
 @prop export let inputValue: string = '';

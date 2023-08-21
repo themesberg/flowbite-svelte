@@ -67,7 +67,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let review: ReviewType;
 @prop export let articleClass: string = 'md:gap-8 md:grid md:grid-cols-3';

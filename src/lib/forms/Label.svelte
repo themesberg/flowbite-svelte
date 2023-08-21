@@ -32,7 +32,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let color: 'gray' | 'green' | 'red' | 'disabled' = 'gray';
 @prop export let defaultClass: string = 'text-sm font-medium block';

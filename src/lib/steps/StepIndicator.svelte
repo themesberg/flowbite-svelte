@@ -62,7 +62,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let steps: string[] = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];
 @prop export let currentStep = 1;

@@ -40,7 +40,7 @@
 
 <!--
 @component
-[Go to Popover](https://flowbite-svelte.com/)
+[Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let progress: string = '45';
 @prop export let size: string = 'h-2.5';
