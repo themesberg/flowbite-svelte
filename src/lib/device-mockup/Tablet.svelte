@@ -11,29 +11,11 @@
 <div class={tabletRight} />
 
 <!--
-  @component
-  ## Features
-  [Go to Device Mockups](https://flowbite-svelte.com/docs/components/device-mockups)
-  ## Props
-  @prop tabletLeftTop: string;
-  @prop tabletLeftMid: string;
-  @prop tabletLeftBot: string;
-  @prop tabletRight: string;
-  ## Example
-  ```
-  <script>
-    import { DeviceMockup } from 'flowbite-svelte';
-  </script>
-
-  <DeviceMockup device="tablet">
-    <img
-      src="https://flowbite.s3.amazonaws.com/docs/device-mockups/tablet-mockup-image.png"
-      class="dark:hidden h-[426px] md:h-[654px]"
-      alt="tablet example 1" />
-    <img
-      src="https://flowbite.s3.amazonaws.com/docs/device-mockups/tablet-mockup-image-dark.png"
-      class="hidden dark:block h-[426px] md:h-[654px]"
-      alt="tablet example 2" />
-  </DeviceMockup>
-  ```
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let tabletLeftTop: string;
+@prop export let tabletLeftMid: string;
+@prop export let tabletLeftBot: string;
+@prop export let tabletRight: string;
 -->

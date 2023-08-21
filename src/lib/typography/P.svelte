@@ -84,46 +84,19 @@
 </p>
 
 <!--
-  @component
-  ## Features
-  [Go to Paragraph](https://flowbite-svelte.com/docs/typography/paragraph)
-  - Leading paragraph
-  - First letter
-  - Paragraph link
-  - Paragraph bold
-  - Paragraph underline
-  - Paragraph italic
-  - Paragraph popover
-  - Layout
-  - Text alignment
-  ## Props
-  @prop color: string = 'text-gray-900 dark:text-white';
-  @prop height: 'normal' | 'relaxed' | 'loose' = 'normal';
-  @prop align: 'left' | 'center' | 'right' = 'left';
-  @prop justify: boolean = false;
-  @prop italic: boolean = false;
-  @prop firstupper: boolean = false;
-  @prop upperClass: string = 'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:mr-3 first-letter:float-left';
-  @prop opacity: number | undefined = undefined;
-  @prop whitespace: 'normal' | 'nowrap' | 'pre' | 'preline' | 'prewrap' = 'normal';
-  @prop size: PsizeType = 'base';
-  @prop space: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest' | undefined = undefined;
-  @prop weight: PweightType = 'normal';
-  ## Example
-  ```
-  <script>
-    import { P } from 'flowbite-svelte'
-  </script>
-
-  <P class="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
-    Track work across the enterprise through an open, collaborative platform. Link issues across
-    Jira and ingest data from other software development tools, so your IT support and operations
-    teams have richer contextual information to rapidly respond to requests, incidents, and changes.
-  </P>
-  <P weight="light" color="text-gray-500 dark:text-gray-400">
-    Deliver great service experiences fast - without the complexity of traditional ITSM solutions.
-    Accelerate critical development work, eliminate toil, and deploy changes with ease, with a
-    complete audit trail for every change.
-  </P>
-  ```
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let color: string = 'text-gray-900 dark:text-white';
+@prop export let height: 'normal' | 'relaxed' | 'loose' = 'normal';
+@prop export let align: 'left' | 'center' | 'right' = 'left';
+@prop export let justify: boolean = false;
+@prop export let italic: boolean = false;
+@prop export let firstupper: boolean = false;
+@prop export let upperClass: string = 'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:mr-3 first-letter:float-left';
+@prop export let opacity: number | undefined = undefined;
+@prop export let whitespace: 'normal' | 'nowrap' | 'pre' | 'preline' | 'prewrap' = 'normal';
+@prop export let size: PsizeType = 'base';
+@prop export let space: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest' | undefined = undefined;
+@prop export let weight: PweightType = 'normal';
 -->

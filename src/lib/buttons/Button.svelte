@@ -82,57 +82,19 @@
   $: buttonClass = twMerge('text-center font-medium', group ? 'focus:ring-2' : 'focus:ring-4', group && 'focus:z-10', group || 'focus:outline-none', 'inline-flex items-center justify-center ' + sizeClasses[size], outline ? outlineClasses[color] : colorClasses[color], color === 'alternative' && (group ? 'dark:bg-gray-700 dark:text-white dark:border-gray-700 dark:hover:border-gray-600 dark:hover:bg-gray-600' : 'dark:bg-transparent dark:border-gray-600 dark:hover:border-gray-700'), outline && color === 'dark' && (group ? 'dark:text-white dark:border-white' : 'dark:text-gray-400 dark:border-gray-700'), coloredFocusClasses[color], hasBorder() && group && 'border-l-0 first:border-l', group ? (pill && 'first:rounded-l-full last:rounded-r-full') || 'first:rounded-l-lg last:rounded-r-lg' : (pill && 'rounded-full') || 'rounded-lg', shadow && 'shadow-lg', shadow && coloredShadowClasses[color], $$props.disabled && 'cursor-not-allowed opacity-50', $$props.class);
 </script>
 
-<svelte:element this={href ? 'a' : 'button'} type={href ? undefined : type} {href} {...$$restProps} class={buttonClass} on:click on:change on:keydown on:keyup on:touchstart on:touchend on:touchcancel on:mouseenter on:mouseleave role={href ? 'button' : undefined}>
+<svelte:element this={href ? 'a' : 'button'} type={href ? undefined : type} {href} role={href ? 'link' : 'button'} {...$$restProps} class={buttonClass} on:click on:change on:keydown on:keyup on:touchstart on:touchend on:touchcancel on:mouseenter on:mouseleave>
   <slot />
 </svelte:element>
 
 <!--
-  @component
-  ## Features
-  [Go to Button](https://flowbite-svelte.com/docs/components/button)
-  - Setup
-  - Default button
-  - Button with link
-  - Button pills
-  - Gradient monochrome
-  - Gradient duotone
-  - Gradient outline
-  - Colored shadows
-  - Outline buttons
-  - Button sizes
-  - Buttons with icon
-  - Button with label
-  - Icon buttons
-  - Loader
-  - Disabled  
-  ## Props
-  @prop pill: boolean = false;
-  @prop outline: boolean = false;
-  @prop size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = group ? 'sm' : 'md';
-  @prop href: string | undefined = undefined;
-  @prop btnClass: string | undefined = undefined;
-  @prop type: ButtonType = 'button';
-  @prop color: ButtonColor = group ? (outline ? 'dark' : 'alternative') : 'primary';
-  @prop shadow: boolean = false;
-  ## Event
-  - on:click
-  - on:change
-  - on:keydown
-  - on:keyup
-  - on:touchstart
-  - on:touchend
-  - on:touchcancel
-  - on:mouseenter
-  - on:mouseleave
-  ## Example
-  ```
-  <script>
-    import { Button } from 'flowbite-svelte';
-  </script>
-
-  <Button>Default</Button>
-  <Button color="alternative">Alternative</Button>
-  <Button color="dark">Dark</Button>
-  <Button color="light">Light</Button>  
-  ```
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let pill: boolean = false;
+@prop export let outline: boolean = false;
+@prop export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = group ? 'sm' : 'md';
+@prop export let href: string | undefined = undefined;
+@prop export let type: ButtonType = 'button';
+@prop export let color: ButtonColor = group ? (outline ? 'dark' : 'alternative') : 'primary';
+@prop export let shadow: boolean = false;
 -->

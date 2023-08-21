@@ -53,41 +53,9 @@
 {/if}
 
 <!--
-  @component
-  ## Features
-  [Go to Alert](https://flowbite-svelte.com/docs/components/alert)
-  - Default alert
-  - Alerts with icon
-  - Bordered alerts
-  - Alerts with list
-  - Dismissable alerts
-  - Border accent
-  - Additional content
-  - Custom color
-  ## Props
-  @prop dismissable: boolean = false;
-  @prop accent: boolean = false;
-  ## Event
-  - on:click
-  - on:change
-  - on:keydown
-  - on:keyup
-  - on:focus
-  - on:blur
-  - on:mouseenter
-  - on:mouseleave 
-
-  ## Example
-  ```
-  <script>
-  import {Alert} from "flowbite-svelte";
-  </script>
-
-  <Alert>
-    <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
-  </Alert>
-  <Alert color="red">
-    <span class="font-medium">Danger alert!</span> Change a few things up and try submitting again.
-  </Alert>
-  ```
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let dismissable: boolean = false;
+@prop export let defaultClass: string = 'p-4 gap-3 text-sm';
 -->

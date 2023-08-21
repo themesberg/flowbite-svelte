@@ -116,29 +116,11 @@
 </div>
 
 <!--
-  @component
-  ## Feature
-  [Go to MutliSelect](https://flowbite-svelte.com/docs/forms/select#MultiSelect)
-  ## Props
-  @prop items: SelectOptionType[] = [];
-  @prop value: (string | number)[] = [];
-  @prop size: 'sm' | 'md' | 'lg' = 'md';
-  @prop dropdownClass: string = '';
-  ## Example
-  ```
-  <script>
-    import { MultiSelect } from 'flowbite-svelte';
-
-    let selected = [];
-    let countries = [
-      {value:"us", name: "United States"},
-      {value:"ca", name: "Canada"},
-      {value:"fr", name: "France"},
-      {value:"jp", name: "Japan"},
-      {value:"en", name: "England"},
-    ]
-  </script>
-
-  <MultiSelect items={countries} bind:value={selected} />
-  ```
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let items: SelectOptionType[] = [];
+@prop export let value: (string | number)[] = [];
+@prop export let size: FormSizeType = 'md';
+@prop export let dropdownClass: string = '';
 -->

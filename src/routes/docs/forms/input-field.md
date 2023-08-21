@@ -33,7 +33,7 @@ On this page you will find all of the input types based on multiple variants, st
 
 Use this example as a generic form element which includes multiple input fields types such as text, email, password, number, URL, and phone number and use the grid layout to add multiple columns and rows.
 
-```svelte example 
+```svelte example
 <script>
   import { Input, Label, Helper, Button, Checkbox, A } from 'flowbite-svelte';
 </script>
@@ -322,7 +322,7 @@ By default the `Input` component binds the `value` as `string`. If you need a va
 
 ## Search input
 
-```svelte example 
+```svelte example
 <script>
   import { Input, Label, Button } from 'flowbite-svelte';
   import { Icon } from 'flowbite-svelte-icons';

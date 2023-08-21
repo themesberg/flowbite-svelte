@@ -23,36 +23,17 @@
 {/if}
 
 <!--
-  @component
-  ## Features
-  [Go to Images](https://flowbite-svelte.com/docs/typography/image)
-  - Setup
-  - Default image
-  - Image caption
-  - Rounded corners
-  - Image shadow
-  - Retina-ready
-  - Image card
-  - Image effects
-  - Alignment
-  - Sizes
-  ## Props
-  @prop caption: string | undefined = undefined;
-  @prop src: string | undefined = undefined;
-  @prop srcset: string | undefined = undefined;
-  @prop size: string = 'max-w-full';
-  @prop alignment: string = '';
-  @prop imgClass: string = 'h-auto';
-  @prop figClass: string = 'max-w-lg';
-  @prop alt: string = '';
-  @prop effect: string = '';
-  @prop captionClass: string = 'mt-2 text-sm text-center text-gray-500 dark:text-gray-400';  
-  ## Example
-  ```
-  <script>
-    import { Img } from 'flowbite-svelte';
-  </script>
-  
-  <Img src="/images/examples/image-1@2x.jpg" alt="sample 1"/>
-  ```
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let caption: string | undefined = undefined;
+@prop export let src: string | undefined = undefined;
+@prop export let srcset: string | undefined = undefined;
+@prop export let size: string = 'max-w-full';
+@prop export let alignment: string = '';
+@prop export let imgClass: string = 'h-auto';
+@prop export let figClass: string = 'max-w-lg';
+@prop export let alt: string = '';
+@prop export let effect: string = '';
+@prop export let captionClass: string = 'mt-2 text-sm text-center text-gray-500 dark:text-gray-400';
 -->

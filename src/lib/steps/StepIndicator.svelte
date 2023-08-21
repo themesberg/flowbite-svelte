@@ -61,38 +61,15 @@
 </div>
 
 <!--
-  @component
-  ## Features
-  [Go to Step Indicator](https://flowbite-svelte.com/docs/extend/step-indicator)
-  - Setup
-  - Default step indicator
-  - Glow
-  - Hide label
-  - Sizes
-  - Colors
-  ## Props
-  @prop steps: string[] = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];
-  @prop currentStep = 1;
-  @prop size: string = 'h-2.5';
-  @prop color: 'primary'| 'secondary' |'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'custom' = 'primary';
-  @prop glow: boolean = false;
-  @prop hideLabel: boolean = false;
-  @prop completedCustom: string = '';
-  @prop currentCustom: string = '';
-  ## Example
-  ```
-  <script>
-    import { StepIndicator } from 'flowbite-svelte'
-    let currentStep = 2;
-    let steps = [
-      'Step 1',
-      'Step 2',
-      'Step 3',
-      'Step 4',
-      'Step 5'
-    ]
-  </script>
-
-  <StepIndicator {currentStep} {steps}/>
-  ```
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let steps: string[] = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];
+@prop export let currentStep = 1;
+@prop export let size: string = 'h-2.5';
+@prop export let color: 'primary' | 'secondary' | 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'custom' = 'primary';
+@prop export let glow: boolean = false;
+@prop export let hideLabel: boolean = false;
+@prop export let completedCustom: string = '';
+@prop export let currentCustom: string = '';
 -->

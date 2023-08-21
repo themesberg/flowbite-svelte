@@ -62,19 +62,7 @@
     <!-- Trick to prentend outline without using border
 	    This has a limitation of no supporting transparency as
 	    is set to bg-white dark:bg-gray-900 -->
-    <Button
-      {...$$restProps}
-      color="none"
-      class={gradientOutlineClass}
-      on:click
-      on:change
-      on:keydown
-      on:keyup
-      on:touchstart
-      on:touchend
-      on:touchcancel
-      on:mouseenter
-      on:mouseleave><slot /></Button>
+    <Button {...$$restProps} color="none" class={gradientOutlineClass} on:click on:change on:keydown on:keyup on:touchstart on:touchend on:touchcancel on:mouseenter on:mouseleave><slot /></Button>
   </div>
 {:else}
   <Button {...$$restProps} color="none" class={divClass} on:click on:change on:keydown on:keyup on:touchstart on:touchend on:touchcancel on:mouseenter on:mouseleave>
@@ -83,29 +71,9 @@
 {/if}
 
 <!--
-  @component
-  ## Features
-  [Go to Button](https://flowbite-svelte.com/docs/components/button)
-  @prop color: keyof typeof gradientClasses = 'blue';
-  @prop shadow: boolean = false;
-  ## Event
-  - on:click
-  - on:change
-  - on:keydown
-  - on:keyup
-  - on:touchstart
-  - on:touchend
-  - on:touchcancel
-  - on:mouseenter
-  - on:mouseleave
-  ## Example
-  ```
-  <script>
-    import { GradientButton } from 'flowbite-svelte';
-  </script>
-  
-  <GradientButton color="blue">Blue</GradientButton>
-  <GradientButton color="green">Green</GradientButton>
-  <GradientButton color="cyan">Cyan</GradientButton>
-  ```
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let color: keyof typeof gradientClasses = 'blue';
+@prop export let shadow: boolean = false;
 -->

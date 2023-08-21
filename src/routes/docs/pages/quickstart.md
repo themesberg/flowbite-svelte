@@ -57,7 +57,7 @@ npm run dev
 Run the following command to install all Flowbite dependencies and libraries:
 
 ```sh
-npm i flowbite flowbite-svelte tailwind-merge @floating-ui/dom
+npm i -D flowbite-svelte
 ```
 
 ### Configuration

@@ -31,21 +31,10 @@
 {/if}
 
 <!--
-  @component
-  ## Feature
-  [Go to Label](https://flowbite-svelte.com/docs/utilities/label)
-  ## Props
-  @prop color: 'gray' | 'green' | 'red' | 'disabled' = 'gray';
-  @prop defaultClass: string = 'text-sm font-medium block';
-  @prop show: boolean = true;
-  ## Example
-  ```
-  <script>
-    import { Label, Checkbox } from 'flowbite-svelte'
-  </script>
-
-  <Label color="red" class="mt-4 flex items-center font-bold italic">
-    <Checkbox class="mr-2" /> Your Label
-  </Label>
-  ```
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let color: 'gray' | 'green' | 'red' | 'disabled' = 'gray';
+@prop export let defaultClass: string = 'text-sm font-medium block';
+@prop export let show: boolean = true;
 -->

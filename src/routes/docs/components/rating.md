@@ -106,7 +106,7 @@ Aggregate more results by using this example to show the amount of reviews and t
 
 The default icon size is `24`. Import your icon and set it in a icon props.
 
-```svelte example 
+```svelte example
 <script>
   import { Rating, Heart } from 'flowbite-svelte';
 </script>
@@ -115,7 +115,7 @@ The default icon size is `24`. Import your icon and set it in a icon props.
 <Rating total={10} rating={7.6} id="example-5b" icon={Heart} />
 ```
 
-```svelte example 
+```svelte example
 <script>
   import { Rating, Thumbup } from 'flowbite-svelte';
 </script>
@@ -128,7 +128,7 @@ The default icon size is `24`. Import your icon and set it in a icon props.
 
 Set the `total`,` rating`, and `ratings` prop for AdvancedRation component. Use the `rating` slot for Rating component with the `total` and `rating` props. Use the `globalText` slot for additional information.
 
-```svelte example 
+```svelte example
 <script>
   import { AdvancedRating, Rating } from 'flowbite-svelte';
 </script>
@@ -154,7 +154,7 @@ Set the `total`,` rating`, and `ratings` prop for AdvancedRation component. Use 
 
 As we describe in the Rating component, you can change an icon in the Rating component.
 
-```svelte example 
+```svelte example
 <script>
   import { AdvancedRating, Rating, Thumbup } from 'flowbite-svelte';
 </script>
@@ -178,7 +178,7 @@ As we describe in the Rating component, you can change an icon in the Rating com
 
 ## Score rating
 
-```svelte example 
+```svelte example
 <script>
   import { ScoreRating } from 'flowbite-svelte';
   let headerLabel = {
@@ -211,7 +211,7 @@ As we describe in the Rating component, you can change an icon in the Rating com
 
 Use this component to show a single rating comment and its score alongside other components such as the user profile avatar, name, post date, and more.
 
-```svelte example 
+```svelte example
 <script>
   import { RatingComment } from 'flowbite-svelte';
   let comment = {
@@ -244,7 +244,7 @@ Use this component to show a single rating comment and its score alongside other
 
 Use this component to show the review content from a user alongside the avatar, location, details, and the score inside a card element.
 
-```svelte example 
+```svelte example
 <script>
   import { Review } from 'flowbite-svelte';
   import { Icon } from 'flowbite-svelte-icons';

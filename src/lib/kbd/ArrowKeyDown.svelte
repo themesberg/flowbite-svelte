@@ -8,9 +8,8 @@
 </svg>
 
 <!--
-  @component
-  ## Features
-  [Go to KBD](https://flowbite-svelte.com/docs/components/kbd)
-  ## Props
-  @prop svgClass: string = 'w-4 h-4';
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let svgClass: string = 'w-4 h-4';
 -->

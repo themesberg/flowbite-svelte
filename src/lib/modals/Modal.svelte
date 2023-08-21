@@ -26,9 +26,10 @@
   export let placement: ModalPlacementType = 'center';
   export let autoclose: boolean = false;
   export let permanent: boolean = false;
-  export let backdropClass: string = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
+  export let backdropClass: string = 'fixed inset-0 z-40 bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
   export let defaultClass: string = 'relative flex flex-col mx-auto';
   export let outsideclose: boolean = false;
+  export let dialogClass: string = 'fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex';
 
   const dispatch = createEventDispatcher();
   $: dispatch(open ? 'open' : 'hide');
@@ -110,10 +111,10 @@
 
 {#if open}
   <!-- backdrop -->
-  <div class={twMerge('fixed inset-0 z-40', backdropCls)} />
+  <div class={backdropCls} />
   <!-- dialog -->
   <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-  <div on:keydown={handleKeys} on:wheel|preventDefault|nonpassive use:prepareFocus use:focusTrap on:click={onAutoClose} class={twMerge('fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex', ...getPlacementClasses())} tabindex="-1" aria-modal="true" role="dialog">
+  <div on:keydown={handleKeys} on:wheel|preventDefault|nonpassive use:prepareFocus use:focusTrap on:click={onAutoClose} class={twMerge(dialogClass, ...getPlacementClasses())} tabindex="-1" aria-modal="true" role="dialog">
     <div class="flex relative {sizes[size]} w-full max-h-full">
       <!-- Modal content -->
       <Frame rounded shadow {...$$restProps} class={frameClass}>
@@ -131,11 +132,7 @@
           <CloseButton name="Close modal" class="absolute top-3 right-2.5" on:click={hide} color={$$restProps.color} />
         {/if}
         <!-- Modal body -->
-        <div
-          class={twMerge('p-6 space-y-6 flex-1 overflow-y-auto overscroll-contain', $$props.bodyClass)}
-          on:keydown|stopPropagation={handleKeys}
-          role="document"
-          on:wheel|stopPropagation|passive>
+        <div class={twMerge('p-6 space-y-6 flex-1 overflow-y-auto overscroll-contain', $$props.bodyClass)} on:keydown|stopPropagation={handleKeys} role="document" on:wheel|stopPropagation|passive>
           <slot />
         </div>
         <!-- Modal footer -->
@@ -150,48 +147,17 @@
 {/if}
 
 <!--
-  @component
-  ## Features
-  [Go to Modal](https://flowbite-svelte.com/docs/components/modal)
-  - Setup
-  - Default modal
-  - Closing by clicking outside
-  - Pop-up modal
-  - Form element
-  - Crypto wallet
-  - Sizes
-  - Placement
-  - Colors
-  - Scrolling behaviour
-  ## Props
-  @prop open: boolean = false;
-  @prop title: string = '';
-  @prop size: SizeType = 'md';
-  @prop placement: ModalPlacementType = 'center';
-  @prop autoclose: boolean = false;
-  @prop permanent: boolean = false;
-  @prop backdropClass: string = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
-  @prop defaultClass: string = 'relative flex flex-col mx-auto';
-  @prop outsideclose: boolean = false; 
-  ## Example
-  ```
-  <script>
-    import { Button, Modal } from 'flowbite-svelte'
-    let defaultModal = false;
-  </script>
-
-  <Button on:click={() => defaultModal = true}>Default modal</Button>
-  <Modal id="default-modal" title="Terms of Service" bind:open={defaultModal} autoclose>
-    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-      With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
-    </p>
-    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-      The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
-    </p>
-    <svelte:fragment slot='footer'>
-      <Button on:click={() => alert('Handle "success"')}>I accept</Button>
-      <Button color="alternative">Decline</Button>
-    </svelte:fragment>
-  </Modal>
-  ``` 
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let open: boolean = false;
+@prop export let title: string = '';
+@prop export let size: SizeType = 'md';
+@prop export let placement: ModalPlacementType = 'center';
+@prop export let autoclose: boolean = false;
+@prop export let permanent: boolean = false;
+@prop export let backdropClass: string = 'fixed inset-0 z-40 bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
+@prop export let defaultClass: string = 'relative flex flex-col mx-auto';
+@prop export let outsideclose: boolean = false;
+@prop export let dialogClass: string = 'fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex';
 -->

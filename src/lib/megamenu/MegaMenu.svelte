@@ -42,55 +42,11 @@
 </Popper>
 
 <!--
-  @component
-  ## Feature
-  [Go to Mega Menu](https://flowbite-svelte.com/docs/components/mega-menu)
-  - Setup
-  - Default mega menu
-  - Mega menu with icons
-  - Full width dropdown
-  - Full width with CTA
-  - Full width with image
-  ## Props
-  @prop items: LinkTypeLike[] = [];
-  @prop full: boolean = false;
-  @prop open: boolean = false;  
-  ## Example
-  ```
-  <script>
-    import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from 'flowbite-svelte';
-    import { Icon } from 'flowbite-svelte-icons';
-    let menu = [
-      {name: 'About us', href: '/about'},
-      {name: 'Blog', href: '/blog'},
-      {name: 'Contact us', href: '/contact'},
-      {name: 'Library', href: '/library'},
-      {name: 'Newsletter', href: '/news'},
-      {name: 'Support Center', href: '/support'},
-      {name: 'Resources', href: '/resource'},
-      {name: 'Playground', href: '/play'},
-      {name: 'Terms', href: '/terms'},
-      {name: 'Pro Version', href: '/pro'},
-      {name: 'License', href: '/license'},
-    ];
-  </script>
-
-  <Navbar let:hidden let:toggle>
-    <NavBrand href="/">
-      <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo"/>
-      <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
-    </NavBrand>
-    <NavHamburger on:click={toggle} />
-    <NavUl {hidden}>
-      <NavLi href="/">Home</NavLi>
-      <NavLi class="cursor-pointer">Mega menu<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" /></NavLi>
-      <MegaMenu items={menu} let:item>
-        <a href={item.href} class="hover:text-primary-600 dark:hover:text-primary-500">{item.name}</a>
-      </MegaMenu>
-      <NavLi href="/services">Services</NavLi>
-      <NavLi href="/services">Products</NavLi>
-      <NavLi href="/services">Contact</NavLi>
-    </NavUl>
-  </Navbar>
-  ```
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let items: LinkTypeLike[] = [];
+@prop export let full: boolean = false;
+@prop export let open: boolean = false;
+@prop export let ulClass: string = 'grid grid-flow-row gap-y-4 md:gap-x-0 auto-col-max auto-row-max';
 -->

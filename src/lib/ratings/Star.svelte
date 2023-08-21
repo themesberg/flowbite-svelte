@@ -34,25 +34,14 @@
 </svg>
 
 <!--
-  @component
-  ## Features
-  [Go to Rating](https://flowbite-svelte.com/docs/components/rating)
-  ## Props
-  @prop fillPercent: number = 100;
-  @prop fillColor: string = '#F5CA14';
-  @prop strokeColor: string = '#F5CA14';
-  @prop size: number = 24;
-  @prop ariaLabel: string = 'star';
-  @prop id: string = generateId();
-  ## Event
-  - on:click
-  ## Example
-  ```
-  <script>
-    import { Rating } from 'flowbite-svelte';
-  </script>
-
-  <Rating id="example-1" total={5} size={50} rating={1.4} />
-  <Rating id="example-1b" total={5} size={50} rating={4.66} />
-  ```
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let fillPercent: number = 100;
+@prop export let fillColor: string = '#F5CA14';
+@prop export let strokeColor: string = '#F5CA14';
+@prop export let size: number = 24;
+@prop export let ariaLabel: string = 'star';
+@prop export let id: string = generateId();
+@prop export let role = 'img';
 -->

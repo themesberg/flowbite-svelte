@@ -1,7 +1,7 @@
 {
   "props": [
     ["simple", "boolean", "false"],
-    ["color", "string", ""],
+    ["color", "'primary' | 'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'orange' | 'none'", "'primary'"],
     ["position", "'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none'", "'none'"],
     ["open", "boolean", "true"],
     ["divClass", "string", "'w-full max-w-xs p-4 text-gray-500 bg-white shadow dark:text-gray-400 dark:bg-gray-800 gap-3'"],

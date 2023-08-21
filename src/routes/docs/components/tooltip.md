@@ -105,26 +105,22 @@ If you need the tooltip to be attached to the other element then the tiggering o
 
 ```svelte example class="flex gap-4 flex-col justify-center items-center h-72"
 <script>
-  import { Tooltip, Button } from 'flowbite-svelte'
-  let placement = "";
+  import { Tooltip, Button } from 'flowbite-svelte';
+  let placement = '';
 </script>
 
 <div id="ext-ref" class="p-2 rounded-lg border border-gray-200 dark:border-gray-600">External reference</div>
 <div class="space-x-4">
-<Button id="ref-left" on:mouseenter={()=> placement="left"}>Left</Button>
-<Button id="ref-top" on:mouseenter={()=> placement="top"}>Top</Button>
-<Button id="ref-right" on:mouseenter={()=> placement="right"}>Right</Button>
+  <Button id="ref-left" on:mouseenter={() => (placement = 'left')}>Left</Button>
+  <Button id="ref-top" on:mouseenter={() => (placement = 'top')}>Top</Button>
+  <Button id="ref-right" on:mouseenter={() => (placement = 'right')}>Right</Button>
 </div>
-<Tooltip reference='#ext-ref' triggeredBy="[id^='ref-']" {placement} class="w-64 text-sm font-light">
-    And here's some amazing content. It's very engaging. Right?
-</Tooltip>
+<Tooltip reference="#ext-ref" triggeredBy="[id^='ref-']" {placement} class="w-64 text-sm font-light">And here's some amazing content. It's very engaging. Right?</Tooltip>
 ```
 
 ## Custom type
 
-Various color palettes can be set for a tooltip by using the `color` property from the underlying `Frame` component.
-(Setting `color` prop sets the `type` to `custom` implicitly.)
-
+Various color palettes can be set for a tooltip by using the `color` property from the underlying `Frame` component. (Setting `color` prop sets the `type` to `custom` implicitly.)
 
 When you want to add a fully custom styles, use `type="custom"`, `defaultClass`, and `class` to modify the tooltip styling.
 
@@ -140,15 +136,7 @@ When you want to add a fully custom styles, use `type="custom"`, `defaultClass`,
 <Tooltip color="yellow">Tooltip content</Tooltip>
 
 <Button>Custom type</Button>
-<Tooltip
-  placement="right"
-  type="custom"
-  defaultClass=""
-  class="p-4 text-lg font-medium bg-purple-500 text-gray-100"
-  arrow={false}
->
-  Tooltip content
-</Tooltip>
+<Tooltip placement="right" type="custom" defaultClass="" class="p-4 text-lg font-medium bg-purple-500 text-gray-100" arrow={false}>Tooltip content</Tooltip>
 ```
 
 ## Props

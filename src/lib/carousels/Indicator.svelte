@@ -7,14 +7,12 @@
 <button type="button" class={indicatorClass} class:active={selected} aria-label={name} on:click />
 
 <!--
-  @component
-  ## Features
-  [Go to Carousel](https://flowbite-svelte.com/docs/components/carousel)
-  ## Props
-  @prop name: string = '';
-  @prop selected: boolean = false;
-  @prop indicatorClass: string = '';
-
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let name: string = '';
+@prop export let selected: boolean = false;
+@prop export let indicatorClass: string = '';
 -->
 
 <style>

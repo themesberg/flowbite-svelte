@@ -17,17 +17,8 @@
 </div>
 
 <!--
-  @component
-  ## Features
-  [Go to Skeleton Testimonial Placeholder](https://flowbite-svelte.com/docs/components/skeleton#Testimonial_placeholder)
-  ## Props
-  @prop divClass: string = 'animate-pulse';
-  ## Example
-  ```
-  <script>
-    import { TestimonialPlaceholder } from 'flowbite-svelte'
-  </script>
-
-  <TestimonialPlaceholder />
-  ```
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let divClass: string = 'animate-pulse';
 -->

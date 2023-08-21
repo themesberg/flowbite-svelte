@@ -74,32 +74,13 @@
 <div class={dotClass}><slot /></div>
 
 <!--
-  @component
-  ## Features
-  [Go to Indicators](https://flowbite-svelte.com/docs/components/indicators)
-  - Setup
-  - Default indicator
-  - Legend indicator
-  - Indicator count
-  - Status indicator
-  - Badge indicator
-  - Stepper indicator
-  - Indicator position
-  ## Props
-  @prop color: IndicatorColorType = 'gray';
-  @prop rounded: boolean = false;
-  @prop size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
-  @prop border: boolean = false;
-  @prop placement: IndicatorPlacementType = undefined;
-  @prop offset: boolean = true;
-  ## Example
-  ```
-  <script>
-    import { Indicator } from 'flowbite-svelte'
-  </script>
-  
-  <Indicator color="gray"/>
-  <Indicator color="dark"/>
-  <Indicator color="blue"/>
-  ```
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let color: IndicatorColorType = 'gray';
+@prop export let rounded: boolean = false;
+@prop export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
+@prop export let border: boolean = false;
+@prop export let placement: PlacementType | undefined = undefined;
+@prop export let offset: boolean = true;
 -->
