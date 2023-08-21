@@ -1,1 +1,7 @@
-{"props":[["tag","string","'div'"],["show","boolean",""],["use","Action<HTMLElement, any> = () => {};","@prop export let tag: string = 'div'"]]}
+{
+  "props": [
+    ["tag", "string", "'div'"],
+    ["show", "boolean", ""],
+    ["use", "Action<HTMLElement, any> = () => {};", "@prop export let tag: string = 'div'"]
+  ]
+}

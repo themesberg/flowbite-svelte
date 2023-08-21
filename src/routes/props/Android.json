@@ -1,1 +1,9 @@
-{"props":[["androidTop","string",""],["androidLeftTop","string",""],["androidLeftMid","string",""],["androidLeftBot","string",""],["androidRight","string","@prop export let androidTop: string"]]}
+{
+  "props": [
+    ["androidTop", "string", ""],
+    ["androidLeftTop", "string", ""],
+    ["androidLeftMid", "string", ""],
+    ["androidLeftBot", "string", ""],
+    ["androidRight", "string", "@prop export let androidTop: string"]
+  ]
+}

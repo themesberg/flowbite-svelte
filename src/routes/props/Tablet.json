@@ -1,1 +1,8 @@
-{"props":[["tabletLeftTop","string",""],["tabletLeftMid","string",""],["tabletLeftBot","string",""],["tabletRight","string","@prop export let tabletLeftTop: string"]]}
+{
+  "props": [
+    ["tabletLeftTop", "string", ""],
+    ["tabletLeftMid", "string", ""],
+    ["tabletLeftBot", "string", ""],
+    ["tabletRight", "string", "@prop export let tabletLeftTop: string"]
+  ]
+}

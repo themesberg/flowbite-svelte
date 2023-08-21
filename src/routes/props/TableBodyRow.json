@@ -1,1 +1,1 @@
-{"props":[["color","'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom'","getContext('color')"]]}
+{ "props": [["color", "'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom'", "getContext('color')"]] }

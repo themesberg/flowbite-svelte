@@ -14,12 +14,6 @@
   <img class={thumbClass} class:active={selected} id={id.toString()} src={thumbImg} alt={altTag} title="Image from {titleLink}" width="{thumbWidth}%" />
 </button>
 
-<style>
-  .active {
-    opacity: 1;
-  }
-</style>
-
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
@@ -33,3 +27,9 @@
 @prop export let thumbClass: string = '';
 @prop export let thumbBtnClass: string = '';
 -->
+
+<style>
+  .active {
+    opacity: 1;
+  }
+</style>
