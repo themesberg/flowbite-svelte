@@ -1,6 +1,6 @@
 <script lang="ts">
   import Badge from '$lib/badges/Badge.svelte';
-  import { twJoin, twMerge } from 'tailwind-merge';
+  import { twMerge } from 'tailwind-merge';
   import type { FormSizeType, SelectOptionType } from '../types';
   import CloseButton from '$lib/utils/CloseButton.svelte';
   import { createEventDispatcher } from 'svelte';
@@ -23,7 +23,7 @@
   };
 
   // Container
-  const multiSelectClass: string = `relative border border-gray-300 flex items-center rounded-lg gap-2 dark:border-gray-600 focus-within:ring-1 focus-within:border-primary-500 ring-primary-500 dark:focus-within:border-primary-500 dark:ring-primary-500`;
+  const multiSelectClass: string = 'relative border border-gray-300 flex items-center rounded-lg gap-2 dark:border-gray-600 focus-within:ring-1 focus-within:border-primary-500 ring-primary-500 dark:focus-within:border-primary-500 dark:ring-primary-500';
 
   // Dropdown
   let multiSelectDropdown: string;
@@ -81,7 +81,7 @@
   {/each}
 </select>
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div on:click={() => (show = !show)} on:focusout={() => (show = false)} tabindex="-1" role="listbox" class={twJoin(multiSelectClass, sizes[size], $$props.class)}>
+<div on:click={() => (show = !show)} on:focusout={() => (show = false)} tabindex="-1" role="listbox" class={twMerge(multiSelectClass, sizes[size], $$props.class)}>
   <span class="flex gap-2 flex-wrap">
     {#if selectItems.length}
       {#each selectItems as item (item.name)}
