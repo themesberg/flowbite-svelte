@@ -184,7 +184,7 @@ Get started with the default example of a select input component to get a single
 
 ```svelte example class="h-80"
 <script>
-  import MultiSelect from '../../../lib/forms/MultiSelect.svelte';
+  import { MultiSelect } from 'flowbite-svelte';
 
   let selected = [];
   let countries = [

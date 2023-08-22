@@ -46,7 +46,7 @@ test('Search page should have h1', async ({ page }) => {
   expect(await page.textContent('h1')).toBe('Svelte Search Input - Flowbite');
 });
 
-test('Seletct page should have h1', async ({ page }) => {
+test('Select page should have h1', async ({ page }) => {
   await page.goto('/docs/forms/select');
   expect(await page.textContent('h1')).toBe('Svelte Select - Flowbite');
 });
