@@ -4,7 +4,7 @@
     ["rounded", "boolean", "false"],
     ["size", "'xs' | 'sm' | 'md' | 'lg' | 'xl'", "'md'"],
     ["border", "boolean", "false"],
-    ["placement", "IndicatorPlacementType", "undefined"],
+    ["placement", "PlacementType | undefined", "undefined"],
     ["offset", "boolean", "true"]
   ]
 }

@@ -15,35 +15,9 @@
 </script>
 
 <Wrapper class="relative w-full" show={$$slots.default}>
-  <Input
-    bind:value
-    on:blur
-    on:change
-    on:input
-    on:click
-    on:focus
-    on:keydown
-    on:keypress
-    on:keyup
-    on:mouseenter
-    on:mouseleave
-    on:mouseover
-    on:paste
-    type="search"
-    {placeholder}
-    {size}
-    {...$$restProps}
-    class={$$props.class}>
-    <svg
-      slot="left"
-      class={sizes[size]}
-      fill="currentColor"
-      viewBox="0 0 20 20"
-      xmlns="http://www.w3.org/2000/svg">
-      <path
-        fill-rule="evenodd"
-        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-        clip-rule="evenodd" />
+  <Input bind:value on:blur on:change on:input on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover on:paste type="search" {placeholder} {size} {...$$restProps} class={$$props.class}>
+    <svg slot="left" class={sizes[size]} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
     </svg>
     <!-- We can use it here. See below. This will trigger right padding
       <slot slot="right" />
@@ -54,47 +28,17 @@
     Due to that we need the below slot and Wrapper around
   -->
   {#if $$slots.default}
-    <div class="flex absolute inset-y-0 right-0 items-center pr-3 text-gray-500 dark:text-gray-400">
+    <div class="flex absolute inset-y-0 right-0 items-center text-gray-500 dark:text-gray-400">
       <slot />
     </div>
   {/if}
 </Wrapper>
 
 <!--
-  @component
-  ## Feature
-  [Go to Search Input](https://flowbite-svelte.com/docs/forms/search-input)
-  - Setup
-  - Search bar example
-  - Simple search input
-  - Voice Search
-  - Events
-  - Example
-  ## Props
-  @prop size: FormSizeType = 'lg';
-  @prop placeholder: string = 'Search';
-  @prop value: string | number = '';
-  ## Event
-  - on:blur
-  - on:change
-  - on:input
-  - on:click
-  - on:focus
-  - on:keydown
-  - on:keypress
-  - on:keyup
-  - on:mouseenter
-  - on:mouseleave
-  - on:mouseover
-  - on:paste
-  ## Example
-  ```
-  <script>
-    import { Search, Button } from 'flowbite-svelte'
-  </script>
-
-  <Search >
-    <Button>Search</Button>
-  </Search>
-  ```
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let size: FormSizeType = 'lg';
+@prop export let placeholder: string = 'Search';
+@prop export let value: any = undefined;
 -->

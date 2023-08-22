@@ -38,6 +38,9 @@ export { default as Card } from './cards/Card.svelte';
 export { default as Carousel } from './carousels/Carousel.svelte';
 export { default as CarouselTransition } from './carousels/CarouselTransition.svelte';
 
+// Charts
+export { default as Chart } from './charts/Chart.svelte';
+
 // Dark mode
 export { default as DarkMode } from './darkmode/DarkMode.svelte';
 
@@ -216,14 +219,7 @@ export { default as Span } from './typography/Span.svelte';
 
 // utils
 export { default as CloseButton } from './utils/CloseButton.svelte';
-export { default as ChevronDown } from './utils/ChevronDown.svelte';
-export { default as ChevronLeft } from './utils/ChevronLeft.svelte';
-export { default as ChevronRight } from './utils/ChevronRight.svelte';
-export { default as ChevronUp } from './utils/ChevronUp.svelte';
-export { default as Chevron } from './utils/Chevron.svelte';
-export { default as InformationCircle } from './utils/InformationCircle.svelte';
-export { default as MenuButton } from './utils/MenuButton.svelte';
-export { default as UserCircle } from './utils/UserCircle.svelte';
+export { default as Frame } from './utils/Frame.svelte';
 
 // video
 export { default as Video } from './video/Video.svelte';

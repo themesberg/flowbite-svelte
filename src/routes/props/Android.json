@@ -4,6 +4,6 @@
     ["androidLeftTop", "string", ""],
     ["androidLeftMid", "string", ""],
     ["androidLeftBot", "string", ""],
-    ["androidRight", "string", ""]
+    ["androidRight", "string", "@prop export let androidTop: string"]
   ]
 }

@@ -32,8 +32,9 @@
     <div class="space-y-1 font-medium dark:text-white">
       <p>
         {comment.user.name}
-        <time datetime="2014-08-16 19:00" class="block text-sm text-gray-500 dark:text-gray-400"
-          >{comment.user.joined}</time>
+        <time datetime="2014-08-16 19:00" class="block text-sm text-gray-500 dark:text-gray-400">
+          {comment.user.joined}
+        </time>
       </p>
     </div>
   </div>
@@ -65,10 +66,7 @@
           <Button size="xs" href="/" color="dark">Helpful</Button>
         {/if}
         {#if abuselink}
-          <a
-            href={abuselink}
-            class="pl-4 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
-            >Report abuse</a>
+          <a href={abuselink} class="pl-4 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"> Report abuse </a>
         {/if}
       </div>
     {/if}
@@ -76,48 +74,12 @@
 </article>
 
 <!--
-  @component
-  ## Features
-  [Go to Rating](https://flowbite-svelte.com/docs/components/rating)
-  ## Props
-  @prop ceil: boolean = false;
-  @prop helpfullink: string = '';
-  @prop abuselink: string = '';
-  @prop comment: {
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let ceil: boolean = false;
+@prop export let helpfullink: string = '';
+@prop export let abuselink: string = '';
+@prop export let comment: {
     id: string;
-    user: {
-      name: string;
-      img: {
-        src: string;
-        alt: string;
-      };
-      joined: string;
-    };
-    total: number;
-    rating: number;
-    heading: string;
-    address: string;
-    datetime: string;
-  };
-  ## Example
-  ```
-  <script>
-    import { RatingComment } from 'flowbite-svelte';
-  </script>
-
-  <RatingComment {comment} helpfullink="/" abuselink="/">
-    <p class="mb-2 font-light text-gray-500 dark:text-gray-400">
-      This is my third Invicta Pro Diver. They are just fantastic value.
-    </p>
-    <p class="mb-3 font-light text-gray-500 dark:text-gray-400">
-      It is obviously not the same build quality as those very expensive watches.
-    </p>
-    <a
-      href="/"
-      class="block mb-5 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
-      >Read more</a
-    >
-    <svelte:fragment slot="evaluation">19 people found this helpful</svelte:fragment>
-  </RatingComment>
-  ```
 -->

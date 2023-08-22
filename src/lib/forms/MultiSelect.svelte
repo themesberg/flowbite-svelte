@@ -2,9 +2,9 @@
   import Badge from '$lib/badges/Badge.svelte';
   import { twJoin, twMerge } from 'tailwind-merge';
   import type { FormSizeType, SelectOptionType } from '../types';
-  import ChevronDown from '$lib/utils/ChevronDown.svelte';
   import CloseButton from '$lib/utils/CloseButton.svelte';
   import { createEventDispatcher } from 'svelte';
+  import { onMount } from 'svelte';
 
   const dispatch = createEventDispatcher();
 
@@ -27,16 +27,22 @@
 
   // Dropdown
   let multiSelectDropdown: string;
-  $: multiSelectDropdown = twMerge(
-    'absolute p-3 flex flex-col gap-1 max-h-64 border border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:text-white left-0 top-[calc(100%+1rem)] rounded-lg cursor-pointer overflow-y-scroll w-full',
-    dropdownClass
-  );
+  $: multiSelectDropdown = twMerge('absolute p-3 flex flex-col gap-1 max-h-64 border border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:text-white left-0 top-[calc(100%+1rem)] rounded-lg cursor-pointer overflow-y-scroll w-full', dropdownClass);
 
   // Items
-  const itemsClass: string =
-    'py-2 px-3 rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-600';
+  const itemsClass: string = 'py-2 px-3 rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-600';
   // Selected items
   const itemsSelectClass: string = 'bg-gray-100 text-bg-gray-900 dark:text-white dark:bg-gray-600';
+
+  onMount(() => {
+    if (value.length) {
+      items.map((item) => {
+        if (value.includes(item.value)) {
+          selectItems.push(item);
+        }
+      });
+    }
+  });
 
   const selectOption = (select: SelectOptionType) => {
     if (selectItems.includes(select)) {
@@ -69,22 +75,12 @@
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div
-  on:click={() => (show = !show)}
-  on:focusout={() => (show = false)}
-  tabindex="-1"
-  role="listbox"
-  class={twJoin(multiSelectClass, sizes[size], $$props.class)}>
+<div on:click={() => (show = !show)} on:focusout={() => (show = false)} tabindex="-1" role="listbox" class={twJoin(multiSelectClass, sizes[size], $$props.class)}>
   <span class="flex gap-2 flex-wrap">
     {#if selectItems.length}
       {#each selectItems as item (item.name)}
         <slot {item} clear={() => clearThisOption(item)}>
-          <Badge
-            color="dark"
-            large={size === 'lg'}
-            dismissable
-            params={{ duration: 100 }}
-            on:dismiss={() => clearThisOption(item)}>
+          <Badge color="dark" large={size === 'lg'} dismissable params={{ duration: 100 }} on:close={() => clearThisOption(item)}>
             {item.name}
           </Badge>
         </slot>
@@ -95,7 +91,9 @@
     <CloseButton on:click={clearAll} color="none" class="p-0 focus:ring-gray-400" />
     <div class="w-[1px] bg-gray-300 dark:bg-gray-600" />
     <button tabindex="-1">
-      <ChevronDown class="h-4 w-4 mb-1 mr-1 cursor-pointer" />
+      <svg class="h-3 w-3 ml-1 cursor-pointer text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+      </svg>
     </button>
   </div>
 
@@ -103,10 +101,7 @@
     <div class={multiSelectDropdown}>
       {#each items as item (item.name)}
         <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <div
-          on:click|stopPropagation={(e) => selectOption(item)}
-          role="presentation"
-          class={twMerge(itemsClass, selectItems.includes(item) && itemsSelectClass)}>
+        <div on:click|stopPropagation={(e) => selectOption(item)} role="presentation" class={twMerge(itemsClass, selectItems.includes(item) && itemsSelectClass)}>
           {item.name}
         </div>
       {/each}
@@ -115,22 +110,11 @@
 </div>
 
 <!--
-  @component
-  ## Example
-  ```
-  <script>
-    import MultiSelect from '../../../lib/forms/MultiSelect.svelte';
-
-    let selected = [];
-    let countries = [
-      {value:"us", name: "United States"},
-      {value:"ca", name: "Canada"},
-      {value:"fr", name: "France"},
-      {value:"jp", name: "Japan"},
-      {value:"en", name: "England"},
-    ]
-  </script>
-
-  <MultiSelect items={countries} bind:value={selected} />
-  ```
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let items: SelectOptionType[] = [];
+@prop export let value: (string | number)[] = [];
+@prop export let size: FormSizeType = 'md';
+@prop export let dropdownClass: string = '';
 -->

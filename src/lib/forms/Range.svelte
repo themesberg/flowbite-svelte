@@ -10,43 +10,15 @@
     lg: 'h-3 range-lg'
   };
   let inputClass: string;
-  $: inputClass = twMerge(
-    'w-full bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700',
-    sizes[size] ?? sizes.md,
-    $$props.class
-  );
+  $: inputClass = twMerge('w-full bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700', sizes[size] ?? sizes.md, $$props.class);
 </script>
 
-<input
-  type="range"
-  bind:value
-  {...$$restProps}
-  class={inputClass}
-  on:change
-  on:click
-  on:keydown
-  on:keypress
-  on:keyup />
+<input type="range" bind:value {...$$restProps} class={inputClass} on:change on:click on:keydown on:keypress on:keyup />
 
 <!--
-  @component
-  ## Feature
-  [Go to Range](https://flowbite-svelte.com/docs/forms/range)
-  - Setup
-  - Range slider example
-  - Disabled state
-  - Binding value
-  - Min and max
-  - Steps
-  - Sizes
-  - Unknown attributes
-  ## Props
-  @prop value: number;
-  @prop size: 'sm' | 'md' | 'lg' = 'md';
-  ## Event
-  - on:change
-  - on:click
-  - on:keydown
-  - on:keypress
-  - on:keyup
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let value: number;
+@prop export let size: 'sm' | 'md' | 'lg' = 'md';
 -->

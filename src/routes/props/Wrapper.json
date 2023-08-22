@@ -2,6 +2,6 @@
   "props": [
     ["tag", "string", "'div'"],
     ["show", "boolean", ""],
-    ["use", "Action = () => {};", ""]
+    ["use", "Action<HTMLElement, any> = () => {};", "@prop export let tag: string = 'div'"]
   ]
 }

@@ -14,8 +14,8 @@
 
   const types = {
     dark: 'bg-gray-900 text-white dark:bg-gray-700',
-    light: 'border border-gray-200 bg-white text-gray-900',
-    auto: ' bg-white text-gray-900 dark:bg-gray-700 dark:text-white border border-gray-200 dark:border-0',
+    light: 'border-gray-200 bg-white text-gray-900',
+    auto: ' bg-white text-gray-900 dark:bg-gray-700 dark:text-white border-gray-200 dark:border-gray-700',
     custom: ''
   };
 
@@ -23,6 +23,8 @@
   $: {
     if ($$restProps.color) type = 'custom';
     else $$restProps.color = 'none';
+
+    if (['light', 'auto'].includes(type)) $$restProps.border = true;
     toolTipClass = twMerge('tooltip', defaultClass, types[type], $$props.class);
   }
 </script>
@@ -32,26 +34,9 @@
 </Popper>
 
 <!--
-  @component
-  ## Features
-  [Go to ](https://flowbite-svelte.com/docs/components/tooltip)
-  - Setup
-  - Default tooltip example
-  - Tooltip styles
-  - Placement
-  - Triggering
-  - Disable arrow
-  - Custom style
-  ## Props
-  @prop type: 'dark' | 'light' | 'auto' | 'custom' = 'dark';
-  @prop defaultClass: string = 'py-2 px-3 text-sm font-medium';
-  ## Example
-  ```
-  <script>
-    import { Tooltip, Button } from 'flowbite-svelte';
-  </script>
-  
-  <Button>Default tooltip</Button>
-  <Tooltip>Tooltip content</Tooltip>
-  ```
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let type: 'dark' | 'light' | 'auto' | 'custom' = 'dark';
+@prop export let defaultClass: string = 'py-2 px-3 text-sm font-medium';
 -->

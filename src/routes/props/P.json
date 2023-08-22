@@ -6,11 +6,7 @@
     ["justify", "boolean", "false"],
     ["italic", "boolean", "false"],
     ["firstupper", "boolean", "false"],
-    [
-      "upperClass",
-      "string",
-      "'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:mr-3 first-letter:float-left'"
-    ],
+    ["upperClass", "string", "'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:mr-3 first-letter:float-left'"],
     ["opacity", "number | undefined", "undefined"],
     ["whitespace", "'normal' | 'nowrap' | 'pre' | 'preline' | 'prewrap'", "'normal'"],
     ["size", "PsizeType", "'base'"],

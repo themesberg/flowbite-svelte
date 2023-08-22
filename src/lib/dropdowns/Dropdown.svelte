@@ -1,14 +1,44 @@
+<script lang="ts" context="module">
+  export type DropdownType = {
+    activeClass: string;
+  };
+</script>
+
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
   import Popper from '$lib/utils/Popper.svelte';
+  import type { ComponentProps } from 'svelte';
+  import { setContext } from 'svelte';
+  import { writable } from 'svelte/store';
 
+  const activeUrlStore = writable('');
+
+  export let activeUrl: string = '';
   export let open: boolean = false;
+  export let containerClass: string = 'divide-y z-50';
   export let headerClass: string = 'py-1 overflow-hidden rounded-t-lg';
-  export let ulClass: string = 'py-1 w-44';
   export let footerClass: string = 'py-1 overflow-hidden rounded-b-lg';
+  export let activeClass: string = 'text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900';
 
+  let activeCls = twMerge(activeClass, $$props.classActive);
+
+  setContext<DropdownType>('DropdownType', { activeClass: activeCls });
+
+  $: activeUrlStore.set(activeUrl);
+
+  setContext('activeUrl', activeUrlStore);
+  // propagate props type from underlying Frame
+  interface $$Props extends ComponentProps<Popper> {
+    open?: boolean;
+    containerClass?: string;
+    headerClass?: string;
+    footerClass?: string;
+    activeUrl?: string;
+  }
+
+  let containerCls: string = twMerge(containerClass, $$props.classContainer);
   let headerCls: string = twMerge(headerClass, $$props.classHeader);
-  let ulCls: string = twMerge(ulClass, $$props.classUl);
+  let ulCls: string = twMerge('py-1', $$props.class);
   let footerCls: string = twMerge(footerClass, $$props.classFooter);
 
   $: {
@@ -20,19 +50,15 @@
     $$restProps.shadow = $$restProps.shadow ?? true;
     $$restProps.rounded = $$restProps.rounded ?? true;
   }
-
-  let popoverClass: string;
-
-  $: popoverClass = twMerge('divide-y divide-gray-100 dark:divide-gray-600', $$props.class);
 </script>
 
-<Popper activeContent {...$$restProps} class={popoverClass} on:show bind:open>
+<Popper activeContent {...$$restProps} class={containerCls} on:show bind:open>
   {#if $$slots.header}
     <div class={headerCls}>
       <slot name="header" />
     </div>
   {/if}
-  <ul class={$$props.class ?? ulCls}>
+  <ul class={ulCls}>
     <slot />
   </ul>
   {#if $$slots.footer}
@@ -43,51 +69,13 @@
 </Popper>
 
 <!--
-  @component
-  ## Features
-  [Go to Dropdown](https://flowbite-svelte.com/docs/components/dropdown)
-  - Setup
-  - Examples
-  - Dropdown divider
-  - Dropdown header
-  - Multi-level dropdown
-  - Programatic open/close
-  - Dropdown with checkbox
-  - Background hover
-  - Helper text
-  - Dropdown with radio
-  - Background hover
-  - Helper text
-  - Dropdown with toggle switch
-  - Dropdown navbar
-  - Dropdown with scrolling
-  - Dropdown with search
-  - Menu icon
-  - Notification bell
-  - User avatar
-  - Avatar with name
-  - Sizes
-  - Placement
-  - Double placement
-  - Events
-  ## Props
-  @prop open: boolean = false;
-  @prop headerClass: string = 'py-1 overflow-hidden rounded-t-lg';
-  @prop ulClass: string = 'py-1 w-44';
-  @prop footerClass: string = 'py-1 overflow-hidden rounded-b-lg';
-  ## Example
-  ```
-  <script>
-    import { Button, Dropdown, DropdownItem, Chevron } from 'flowbite-svelte'
-  </script>
-  
-  <Button><Chevron>Dropdown button</Chevron></Button>
-  <Dropdown >
-    <DropdownItem>Dashboard</DropdownItem>
-    <DropdownItem>Settings</DropdownItem>
-    <DropdownItem>Earnings</DropdownItem>
-    <DropdownItem>Sign out</DropdownItem>
-  </Dropdown>
-  ```
-
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let activeUrl: string = '';
+@prop export let open: boolean = false;
+@prop export let containerClass: string = 'divide-y z-50';
+@prop export let headerClass: string = 'py-1 overflow-hidden rounded-t-lg';
+@prop export let footerClass: string = 'py-1 overflow-hidden rounded-b-lg';
+@prop export let activeClass: string = 'text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900';
 -->

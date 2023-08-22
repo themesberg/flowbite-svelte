@@ -32,17 +32,7 @@
   // size: explicit, inherited, default
   $: _size = size || clampSize(group?.size) || 'md';
 
-  $: divClass = twMerge(
-    textSizes[_size],
-    prefixPadding[_size],
-    background ? borderClasses['tinted'] : borderClasses['base'],
-    'text-gray-500 bg-gray-200',
-    background ? darkBgClasses.tinted : darkBgClasses.base,
-    background ? divider.tinted : divider.base,
-    'inline-flex items-center border-t border-b first:border-l border-r',
-    'first:rounded-l-lg last:rounded-r-lg',
-    $$props.class
-  );
+  $: divClass = twMerge(textSizes[_size], prefixPadding[_size], background ? borderClasses['tinted'] : borderClasses['base'], 'text-gray-500 bg-gray-200', background ? darkBgClasses.tinted : darkBgClasses.base, background ? divider.tinted : divider.base, 'inline-flex items-center border-t border-b first:border-l border-r', 'first:rounded-l-lg last:rounded-r-lg', $$props.class);
 </script>
 
 <div {...$$restProps} class={divClass}>
@@ -50,19 +40,8 @@
 </div>
 
 <!--
-  @component
-  ## Feature
-  [Go to Input Fields](https://flowbite-svelte.com/docs/forms/input-field)
-  ## Props
-  @prop size: 'sm' | 'md' | 'lg' | undefined = undefined;
-  ## Example
-  ```
-  <div>
-    <Label class="mb-2" for="input-addon-sm">Small additional text</Label>
-    <ButtonGroup class="w-full" size="sm">
-      <InputAddon>@</InputAddon>
-      <Input id="input-addon-sm" type="email" placeholder="elonmusk" />
-    </ButtonGroup>
-  </div>
-  ```
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let size: 'sm' | 'md' | 'lg' | undefined = undefined;
 -->

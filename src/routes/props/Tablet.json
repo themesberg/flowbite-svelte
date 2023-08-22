@@ -3,6 +3,6 @@
     ["tabletLeftTop", "string", ""],
     ["tabletLeftMid", "string", ""],
     ["tabletLeftBot", "string", ""],
-    ["tabletRight", "string", ""]
+    ["tabletRight", "string", "@prop export let tabletLeftTop: string"]
   ]
 }

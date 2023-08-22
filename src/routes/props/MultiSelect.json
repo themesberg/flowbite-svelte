@@ -1,8 +1,8 @@
 {
   "props": [
     ["items", "SelectOptionType[]", "[]"],
-    ["value", "SelectOptionType[]", "[]"],
-    ["highlighted", "boolean", "false"],
-    ["defaultClass", "string", "''"]
+    ["value", "(string | number)[]", "[]"],
+    ["size", "FormSizeType", "'md'"],
+    ["dropdownClass", "string", "''"]
   ]
 }

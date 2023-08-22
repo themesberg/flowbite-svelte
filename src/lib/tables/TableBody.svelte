@@ -7,9 +7,8 @@
 </tbody>
 
 <!--
-  @component
-  ## Features
-  [Go to Table](https://flowbite-svelte.com/docs/components/table)
-  ## Props
-  @prop tableBodyClass: string | undefined = undefined;
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let tableBodyClass: string | undefined = undefined;
 -->

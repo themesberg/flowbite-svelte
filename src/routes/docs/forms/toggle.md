@@ -23,7 +23,7 @@ The toggle component can be used to receive a simple “yes” or “no” type 
 
 ```svelte example hideOutput
 <script>
-  import { Toggle } from 'flowbite-svelte'
+  import { Toggle } from 'flowbite-svelte';
 </script>
 ```
 
@@ -33,7 +33,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 ```svelte example class="flex flex-col gap-2" hideScript
 <script>
-  import { Toggle } from 'flowbite-svelte'
+  import { Toggle } from 'flowbite-svelte';
 </script>
 
 <Toggle>Toggle me</Toggle>
@@ -46,7 +46,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 ```svelte example class="flex justify-between" hideScript
 <script>
-  import { Toggle } from 'flowbite-svelte'
+  import { Toggle } from 'flowbite-svelte';
 </script>
 
 <Toggle color="red" checked>Red</Toggle>
@@ -59,7 +59,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 ## Sizes
 
-```svelte example class="flex flex-col gap-2" hideScript
+```svelte example class="flex flex-col gap-2"
 <script>
   import { Toggle } from 'flowbite-svelte';
   const customSize = 'w-16 h-10 after:top-1 after:left-[4px]  after:h-8 after:w-8';
@@ -77,8 +77,8 @@ The component has the following props, type, and default values. See [types page
 
 ### Toggle
 
-- Use the `class` prop to overwrite the `span` tag.
-- Use the `classCheckbox` prop to overwrite  the `Checkbox` component.
+- Use the `class` prop to overwrite the `Checkbox` component.
+- Use the 'classDiv`prop to overwrite the`divClass`.
 
 <TableProp>
   <TableDefaultRow {items} rowState='hover' />
