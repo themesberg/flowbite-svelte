@@ -219,6 +219,7 @@ export { default as Span } from './typography/Span.svelte';
 
 // utils
 export { default as CloseButton } from './utils/CloseButton.svelte';
+export { default as Frame } from './utils/Frame.svelte';
 
 // video
 export { default as Video } from './video/Video.svelte';
