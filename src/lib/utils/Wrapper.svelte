@@ -3,7 +3,7 @@
 
   export let tag: string = 'div';
   export let show: boolean;
-  export let use: Action = () => {};
+  export let use: Action<HTMLElement, any> = () => {};
 </script>
 
 {#if show}
@@ -11,3 +11,12 @@
 {:else}
   <slot />
 {/if}
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let tag: string = 'div';
+@prop export let show: boolean;
+@prop export let use: Action<HTMLElement, any> = () => {};
+-->

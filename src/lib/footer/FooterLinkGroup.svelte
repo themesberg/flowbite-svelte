@@ -1,8 +1,15 @@
 <script lang="ts">
-	import classNames from 'classnames';
-	export let ulClass: string = 'text-gray-600 dark:text-gray-400';
+  import { twMerge } from 'tailwind-merge';
+  export let ulClass: string = 'text-gray-600 dark:text-gray-400';
 </script>
 
-<ul class={classNames(ulClass, $$props.class)}>
-	<slot />
+<ul class={twMerge(ulClass, $$props.class)}>
+  <slot />
 </ul>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let ulClass: string = 'text-gray-600 dark:text-gray-400';
+-->

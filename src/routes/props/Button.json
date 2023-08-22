@@ -1,1 +1,11 @@
-{"props":[["pill","boolean ","false"],["outline","boolean ","false"],["gradient","boolean ","false"],["size","'xs' | 'sm' | 'md' | 'lg' | 'xl' ","group ? 'sm' : 'md'"],["href","string | undefined ","undefined"],["btnClass","string | undefined ","undefined"],["type","ButtonType ","'button'"],["color","| 'alternative'     | 'blue'     | 'cyan'     | 'dark'     | 'light'     | 'lime'     | 'green'     | 'pink'     | 'primary'     | 'red'     | 'teal'     | 'yellow'     | 'purple'     | 'purpleToBlue'     | 'cyanToBlue'     | 'greenToBlue'     | 'purpleToPink'     | 'pinkToOrange'     | 'tealToLime'     | 'redToYellow' ","group ? (outline ? 'dark' : 'alternative') : 'blue'"],["shadow","'blue' | 'green' | 'cyan' | 'teal' | 'lime' | 'red' | 'pink' | 'purple' | null ","null"]]}
+{
+  "props": [
+    ["pill", "boolean", "false"],
+    ["outline", "boolean", "false"],
+    ["size", "'xs' | 'sm' | 'md' | 'lg' | 'xl'", "group ? 'sm' : 'md'"],
+    ["href", "string | undefined", "undefined"],
+    ["type", "ButtonType", "'button'"],
+    ["color", "ButtonColor", "group ? (outline ? 'dark' : 'alternative') : 'primary'"],
+    ["shadow", "boolean", "false"]
+  ]
+}

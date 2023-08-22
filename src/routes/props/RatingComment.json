@@ -1,1 +1,7 @@
-{"props":[["ceil","boolean ","false"],["helpfullink","string ","''"],["abuselink","string ","''"]]}
+{
+  "props": [
+    ["ceil", "boolean", "false"],
+    ["helpfullink", "string", "''"],
+    ["abuselink", "string", "''"]
+  ]
+}

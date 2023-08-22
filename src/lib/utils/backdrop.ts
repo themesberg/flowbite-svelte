@@ -98,11 +98,4 @@ const handleEscape = (e: KeyboardEvent) => {
 
 const dispatch = createEventDispatcher();
 
-const allPlacementClasses = [
-  'justify-start',
-  'justify-center',
-  'justify-end',
-  'items-start',
-  'items-center',
-  'items-end'
-];
+const allPlacementClasses = ['justify-start', 'justify-center', 'justify-end', 'items-start', 'items-center', 'items-end'];

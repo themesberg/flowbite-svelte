@@ -42,8 +42,8 @@ Use `lib/types file for nested objects.
 ```js
 // these work
 export let icons: AccordionIconType = {
-  up: ChevronUpSolid,
-  down: ChevronDownSolid
+  up: 'chevron-up-solid',
+  down: 'chevron-down-solid'
 };
 
 export let child: TopMenuType[] | undefined = undefined;
@@ -66,7 +66,7 @@ export interface CommentType {
   };
 };
 
-// then 
+// then
 export let comment: CommentType;
 ```
 

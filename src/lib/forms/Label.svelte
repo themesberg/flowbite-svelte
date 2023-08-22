@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge';
 
   export let color: 'gray' | 'green' | 'red' | 'disabled' = 'gray';
   export let defaultClass: string = 'text-sm font-medium block';
@@ -20,7 +20,7 @@
     color = control?.disabled ? 'disabled' : color;
   }
 
-  $: labelClass = classNames(defaultClass, colorClasses[color], $$props.class);
+  $: labelClass = twMerge(defaultClass, colorClasses[color], $$props.class);
 </script>
 
 {#if show}
@@ -29,3 +29,12 @@
 {:else}
   <slot />
 {/if}
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let color: 'gray' | 'green' | 'red' | 'disabled' = 'gray';
+@prop export let defaultClass: string = 'text-sm font-medium block';
+@prop export let show: boolean = true;
+-->

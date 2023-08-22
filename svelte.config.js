@@ -15,7 +15,11 @@ const config = {
     }),
     mdsvex(mdsvexConfig)
   ],
-
+  vitePlugin: {
+    inspector: {
+      holdMode: true
+    }
+  },
   kit: {
     adapter: adapter({ runtime: 'edge' })
   }

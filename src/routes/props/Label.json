@@ -1,1 +1,7 @@
-{"props":[["color","'gray' | 'green' | 'red' | 'disabled' ","'gray'"],["defaultClass","string ","'text-sm font-medium block'"],["show","boolean ","true"]]}
+{
+  "props": [
+    ["color", "'gray' | 'green' | 'red' | 'disabled'", "'gray'"],
+    ["defaultClass", "string", "'text-sm font-medium block'"],
+    ["show", "boolean", "true"]
+  ]
+}

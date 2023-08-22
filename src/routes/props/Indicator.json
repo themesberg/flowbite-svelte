@@ -1,1 +1,10 @@
-{"props":[["color","| 'gray'     | 'dark'     | 'blue'     | 'green'     | 'red'     | 'purple'     | 'indigo'     | 'yellow'     | 'teal'     | 'none' ","'gray'"],["rounded","boolean ","false"],["size","'xs' | 'sm' | 'md' | 'lg' | 'xl' ","'md'"],["border","boolean ","false"],["placement","| 'top-left'     | 'top-center'     | 'top-right'     | 'center-left'     | 'center'     | 'center-right'     | 'bottom-left'     | 'bottom-center'     | 'bottom-right'     | undefined ","undefined"],["offset","boolean ","true"]]}
+{
+  "props": [
+    ["color", "IndicatorColorType", "'gray'"],
+    ["rounded", "boolean", "false"],
+    ["size", "'xs' | 'sm' | 'md' | 'lg' | 'xl'", "'md'"],
+    ["border", "boolean", "false"],
+    ["placement", "PlacementType | undefined", "undefined"],
+    ["offset", "boolean", "true"]
+  ]
+}

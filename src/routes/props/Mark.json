@@ -1,1 +1,7 @@
-{"props":[["color","string ","'text-white dark:bg-blue-500'"],["bgColor","string ","'bg-blue-600'"],["markClass","string ","'px-2 rounded'"]]}
+{
+  "props": [
+    ["color", "string", "'text-white dark:bg-blue-500'"],
+    ["bgColor", "string", "'bg-blue-600'"],
+    ["markClass", "string", "'px-2 rounded'"]
+  ]
+}

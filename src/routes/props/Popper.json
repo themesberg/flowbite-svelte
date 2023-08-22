@@ -1,1 +1,14 @@
-{"props":[["activeContent","boolean ","false"],["arrow","boolean ","true"],["offset","number ","8"],["placement","Placement ","'top'"],["trigger","'hover' | 'click' ","'hover'"],["triggeredBy","string | undefined ","undefined"],["strategy","'absolute' | 'fixed' ","'absolute'"],["open","boolean ","false"],["yOnly","boolean ","false"]]}
+{
+  "props": [
+    ["activeContent", "boolean", "false"],
+    ["arrow", "boolean", "true"],
+    ["offset", "number", "8"],
+    ["placement", "Placement", "'top'"],
+    ["trigger", "'hover' | 'click'", "'hover'"],
+    ["triggeredBy", "string | undefined", "undefined"],
+    ["reference", "string | undefined", "undefined"],
+    ["strategy", "'absolute' | 'fixed'", "'absolute'"],
+    ["open", "boolean", "false"],
+    ["yOnly", "boolean", "false"]
+  ]
+}

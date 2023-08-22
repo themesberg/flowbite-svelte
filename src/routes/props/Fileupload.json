@@ -1,1 +1,7 @@
-{"props":[["value","string ","''"],["files","FileList | undefined ","undefined"],["inputClass","string ","'border !p-0 dark:text-gray-400'"]]}
+{
+  "props": [
+    ["value", "string", "''"],
+    ["files", "FileList | undefined", "undefined"],
+    ["inputClass", "string", "'border !p-0 dark:text-gray-400'"]
+  ]
+}

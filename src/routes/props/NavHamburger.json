@@ -1,1 +1,6 @@
-{"props":[["btnClass","string ","'ml-3 md:hidden'"]]}
+{
+  "props": [
+    ["btnClass", "string", "'ml-3 md:hidden'"],
+    ["menuClass", "string", "'h-6 w-6 shrink-0'"]
+  ]
+}

@@ -1,1 +1,11 @@
-{"props":[["divClass","string ","'relative overflow-x-auto shadow-md sm:rounded-lg'"],["inputValue","string ","''"],["striped","boolean ","false"],["hoverable","boolean ","false"],["placeholder","string ","'Search'"],["color","'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom' ","'default'"]]}
+{
+  "props": [
+    ["divClass", "string", "'relative overflow-x-auto shadow-md sm:rounded-lg'"],
+    ["inputValue", "string", "''"],
+    ["striped", "boolean", "false"],
+    ["hoverable", "boolean", "false"],
+    ["placeholder", "string", "'Search'"],
+    ["customColor", "string", "''"],
+    ["color", "'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom'", "'default'"]
+  ]
+}

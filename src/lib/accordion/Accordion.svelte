@@ -3,43 +3,59 @@
 
   export interface AccordionCtxType {
     flush: boolean;
-    activeClasses: string;
-    inactiveClasses: string;
+    activeClass: string;
+    inactiveClass: string;
     selected?: Writable<object>;
+    classActive?: string;
+    classInactive?: string;
   }
 </script>
 
 <script lang="ts">
   import Frame from '$lib/utils/Frame.svelte';
-  import classNames from 'classnames';
-  import { setContext } from 'svelte';
+  import { twMerge } from 'tailwind-merge';
+  import { setContext, type ComponentProps } from 'svelte';
+
+  interface $$Props extends ComponentProps<Frame> {
+    multiple?: boolean;
+    flush?: boolean;
+    activeClass?: string;
+    inactiveClass?: string;
+    defaultClass?: string;
+    classActive?: string;
+    classInactive?: string;
+  }
 
   export let multiple: boolean = false;
   export let flush: boolean = false;
-  export let activeClasses: string =
-    'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800';
-  export let inactiveClasses: string =
-    'text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800';
+  export let activeClass: string = 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800';
+  export let inactiveClass: string = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800';
   export let defaultClass: string = 'text-gray-500 dark:text-gray-400';
 
   const ctx: AccordionCtxType = {
     flush,
-    activeClasses,
-    inactiveClasses,
+    activeClass: twMerge(activeClass, $$props.classActive),
+    inactiveClass: twMerge(inactiveClass, $$props.classInactive),
     selected: multiple ? undefined : writable()
   };
 
   setContext<AccordionCtxType>('ctx', ctx);
 
-  let frameClass = classNames(
-    defaultClass,
-    'divide-y divide-gray-200 dark:divide-gray-700',
-    'border-gray-200 dark:border-gray-700',
-    'rounded-t-xl',
-    $$props.class
-  );
+  let frameClass: string;
+  $: frameClass = twMerge(defaultClass, $$props.class);
 </script>
 
-<Frame class={frameClass} color="none" border={!flush}>
+<Frame {...$$restProps} class={frameClass} color="none">
   <slot />
 </Frame>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let multiple: boolean = false;
+@prop export let flush: boolean = false;
+@prop export let activeClass: string = 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800';
+@prop export let inactiveClass: string = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 hover:dark:bg-gray-800';
+@prop export let defaultClass: string = 'text-gray-500 dark:text-gray-400';
+-->

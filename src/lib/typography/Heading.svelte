@@ -1,5 +1,5 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge';
 
   export let tag: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h1';
   export let color: string = 'text-gray-900 dark:text-white';
@@ -14,9 +14,15 @@
   };
 </script>
 
-<svelte:element
-  this={tag}
-  {...$$restProps}
-  class={classNames(customSize ? customSize : textSizes[tag], color, 'w-full', $$props.class)}>
+<svelte:element this={tag} {...$$restProps} class={twMerge(customSize ? customSize : textSizes[tag], color, 'w-full', $$props.class)}>
   <slot />
 </svelte:element>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let tag: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h1';
+@prop export let color: string = 'text-gray-900 dark:text-white';
+@prop export let customSize: string = '';
+-->

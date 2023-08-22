@@ -1,1 +1,8 @@
-{"props":[["liClass","string ","'mr-4 last:mr-0 md:mr-6'"],["aClass","string ","'hover:underline'"],["href","string ","''"],["target","string | undefined ","undefined"]]}
+{
+  "props": [
+    ["liClass", "string", "'mr-4 last:mr-0 md:mr-6'"],
+    ["aClass", "string", "'hover:underline'"],
+    ["href", "string", "''"],
+    ["target", "string | undefined", "undefined"]
+  ]
+}

@@ -3,8 +3,22 @@
   export let altTag: string = '';
   export let attr: string = '';
   export let slideClass: string = '';
+  export let imgClass: string = '';
 </script>
 
 <div class={slideClass}>
-  <img src={image} alt={altTag} title={attr} />
+  {#key image}
+    <img src={image} alt={altTag} title={attr} class={imgClass} />
+  {/key}
 </div>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let image: string = '';
+@prop export let altTag: string = '';
+@prop export let attr: string = '';
+@prop export let slideClass: string = '';
+@prop export let imgClass: string = '';
+-->

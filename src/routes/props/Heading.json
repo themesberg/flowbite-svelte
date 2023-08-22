@@ -1,1 +1,7 @@
-{"props":[["tag","'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' ","'h1'"],["color","string ","'text-gray-900 dark:text-white'"],["customSize","string ","''"]]}
+{
+  "props": [
+    ["tag", "'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'", "'h1'"],
+    ["color", "string", "'text-gray-900 dark:text-white'"],
+    ["customSize", "string", "''"]
+  ]
+}

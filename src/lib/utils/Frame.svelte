@@ -1,48 +1,55 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge';
   import { setContext } from 'svelte';
 
-  import { noop } from 'svelte/internal';
   import type { Action } from 'svelte/action';
   import type { TransitionConfig } from 'svelte/transition';
+  import type { HTMLAnchorAttributes } from 'svelte/elements';
+
+  const null_transition = () => ({ duration: 0 });
+  const noop = () => {};
+
+  type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
+  type FrameColor = keyof typeof bgColors;
+
+  interface $$Props extends HTMLAnchorAttributes {
+    tag?: string;
+    color?: FrameColor;
+    rounded?: boolean;
+    border?: boolean;
+    shadow?: boolean;
+    transition?: TransitionFunc;
+    params?: object;
+    node?: HTMLElement | undefined;
+    use?: Action<HTMLElement, any>;
+    options?: object;
+    class?: string;
+    role?: string;
+  }
 
   setContext('background', true);
-  $: setContext('color', color);
 
-  export let tag: string = 'div';
-  export let color:
-    | 'gray'
-    | 'red'
-    | 'yellow'
-    | 'green'
-    | 'indigo'
-    | 'default'
-    | 'purple'
-    | 'pink'
-    | 'blue'
-    | 'light'
-    | 'dark'
-    | 'dropdown'
-    | 'navbar'
-    | 'navbarUl'
-    | 'form'
-    | 'none' = 'default';
+  export let tag: string = $$restProps.href ? 'a' : 'div';
+  export let color: FrameColor = 'default';
   export let rounded: boolean = false;
   export let border: boolean = false;
   export let shadow: boolean = false;
 
-  type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
-
   // Export a prop through which you can set a desired svelte transition
-  export let transition: TransitionFunc | undefined = undefined;
+  export let transition: TransitionFunc = null_transition;
   // Pass in extra transition params
   export let params: object = {};
 
   // For components development
   export let node: HTMLElement | undefined = undefined;
-  export let use: Action = noop;
+  // Action function and its params
+  export let use: Action<HTMLElement, any> = noop;
   export let options = {};
 
+  export let role: string | undefined = undefined;
+
+  $: color = color ?? 'default'; // for cases when undefined
+  $: setContext('color', color);
 
   // your script goes here
   const bgColors = {
@@ -62,9 +69,10 @@
     navbarUl: 'bg-gray-50 dark:bg-gray-800',
     form: 'bg-gray-50 dark:bg-gray-700',
     primary: 'bg-primary-50 dark:bg-gray-800 ',
+    orange: 'bg-orange-50 dark:bg-orange-800',
     none: ''
   };
-   
+
   const textColors = {
     gray: 'text-gray-800 dark:text-gray-300',
     red: 'text-red-800 dark:text-red-400',
@@ -82,69 +90,53 @@
     navbarUl: 'text-gray-700 dark:text-gray-400',
     form: 'text-gray-900 dark:text-white',
     primary: 'text-primary-800 dark:text-primary-400',
+    orange: 'text-orange-800 dark:text-orange-400',
     none: ''
   };
 
   const borderColors = {
-    gray: 'border-gray-300 dark:border-gray-800',
-    red: 'border-red-300 dark:border-red-800',
-    yellow: 'border-yellow-300 dark:border-yellow-800',
-    green: 'border-green-300 dark:border-green-800',
-    indigo: 'border-indigo-300 dark:border-indigo-800',
-    purple: 'border-purple-300 dark:border-purple-800',
-    pink: 'border-pink-300 dark:border-pink-800',
-    blue: 'border-blue-300 dark:border-blue-800',
-    light: 'border-gray-500',
-    dark: 'border-gray-500',
-    default: 'border-gray-200 dark:border-gray-700',
-    dropdown: 'border-gray-100 dark:border-gray-700',
-    navbar: 'border-gray-100 dark:border-gray-700',
-    navbarUl: 'border-gray-100 dark:border-gray-700',
-    form: 'border-gray-300 dark:border-gray-700',
-    primary: 'border-primary-500 dark:bg-primary-200 ',
+    gray: 'border-gray-300 dark:border-gray-800 divide-gray-300 dark:divide-gray-800',
+    red: 'border-red-300 dark:border-red-800 divide-red-300 dark:divide-red-800',
+    yellow: 'border-yellow-300 dark:border-yellow-800 divide-yellow-300 dark:divide-yellow-800',
+    green: 'border-green-300 dark:border-green-800 divide-green-300 dark:divide-green-800',
+    indigo: 'border-indigo-300 dark:border-indigo-800 divide-indigo-300 dark:divide-indigo-800',
+    purple: 'border-purple-300 dark:border-purple-800 divide-purple-300 dark:divide-purple-800',
+    pink: 'border-pink-300 dark:border-pink-800 divide-pink-300 dark:divide-pink-800',
+    blue: 'border-blue-300 dark:border-blue-800 divide-blue-300 dark:divide-blue-800',
+    light: 'border-gray-500 divide-gray-500',
+    dark: 'border-gray-500 divide-gray-500',
+    default: 'border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700',
+    dropdown: 'border-gray-100 dark:border-gray-600 divide-gray-100 dark:divide-gray-600',
+    navbar: 'border-gray-100 dark:border-gray-700 divide-gray-100 dark:divide-gray-700',
+    navbarUl: 'border-gray-100 dark:border-gray-700 divide-gray-100 dark:divide-gray-700',
+    form: 'border-gray-300 dark:border-gray-700 divide-gray-300 dark:divide-gray-700',
+    primary: 'border-primary-500 dark:border-primary-200  divide-primary-500 dark:divide-primary-200 ',
+    orange: 'border-orange-300 dark:border-orange-800 divide-orange-300 dark:divide-orange-800',
     none: ''
   };
 
   let divClass: string;
 
-  $: divClass = classNames(
-    bgColors[color],
-    textColors[color],
-    rounded && (color === 'dropdown' ? 'rounded' : 'rounded-lg'),
-    border && 'border',
-    borderColors[color],
-    shadow && 'shadow-md',
-    $$props.class
-  );
+  $: divClass = twMerge(bgColors[color], textColors[color], rounded && 'rounded-lg', border && 'border', borderColors[color], shadow && 'shadow-md', $$props.class);
 </script>
 
-{#if transition}
-  <svelte:element
-    this={tag}
-    use:use={options}
-    bind:this={node}
-    transition:transition={params}
-    {...$$restProps}
-    class={divClass}
-    on:click
-    on:mouseenter
-    on:mouseleave
-    on:focusin
-    on:focusout>
-    <slot />
-  </svelte:element>
-{:else}
-  <svelte:element
-    this={tag}
-    use:use={options}
-    bind:this={node}
-    {...$$restProps}
-    class={divClass}
-    on:click
-    on:mouseenter
-    on:mouseleave
-    on:focusin
-    on:focusout>
-    <slot />
-  </svelte:element>
-{/if}
+<svelte:element this={tag} use:use={options} bind:this={node} transition:transition={params} {...$$restProps} class={divClass} on:click on:mouseenter on:mouseleave on:focusin on:focusout {role}>
+  <slot />
+</svelte:element>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let tag: string = $$restProps.href ? 'a' : 'div';
+@prop export let color: FrameColor = 'default';
+@prop export let rounded: boolean = false;
+@prop export let border: boolean = false;
+@prop export let shadow: boolean = false;
+@prop export let transition: TransitionFunc = null_transition;
+@prop export let params: object = {};
+@prop export let node: HTMLElement | undefined = undefined;
+@prop export let use: Action<HTMLElement, any> = noop;
+@prop export let options = {};
+@prop export let role: string | undefined = undefined;
+-->

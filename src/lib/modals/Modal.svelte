@@ -1,31 +1,37 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge';
   import Frame from '../utils/Frame.svelte';
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher, type ComponentProps } from 'svelte';
   import CloseButton from '../utils/CloseButton.svelte';
   import focusTrap from '../utils/focusTrap';
-  import type { SizeType } from '$lib/types';
+  import type { Dismissable, SizeType } from '$lib/types';
+  import type { ModalPlacementType } from '../types';
+
+  // propagate props type from underlying Frame
+  interface $$Props extends ComponentProps<Frame>, Dismissable {
+    open?: boolean;
+    title?: string;
+    size?: SizeType;
+    placement?: 'top-left' | 'top-center' | 'top-right' | 'center-left' | 'center' | 'center-right' | 'bottom-left' | 'bottom-center' | 'bottom-right';
+    autoclose?: boolean;
+    backdropClass?: string;
+    defaultClass?: string;
+    outsideclose?: boolean;
+  }
 
   export let open: boolean = false;
   export let title: string = '';
   export let size: SizeType = 'md';
-  export let placement:
-    | 'top-left'
-    | 'top-center'
-    | 'top-right'
-    | 'center-left'
-    | 'center'
-    | 'center-right'
-    | 'bottom-left'
-    | 'bottom-center'
-    | 'bottom-right' = 'center';
+  export let placement: ModalPlacementType = 'center';
   export let autoclose: boolean = false;
-  export let permanent: boolean = false;
-  export let backdropClasses: string = 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
+  export let dismissable: boolean = true;
+  export let backdropClass: string = 'fixed inset-0 z-40 bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
   export let defaultClass: string = 'relative flex flex-col mx-auto';
+  export let outsideclose: boolean = false;
+  export let dialogClass: string = 'fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex';
 
   const dispatch = createEventDispatcher();
-  $: dispatch(open ? 'open' : 'hide');
+  $: dispatch(open ? 'open' : 'close');
 
   function prepareFocus(node: HTMLElement) {
     const walker = document.createTreeWalker(node, NodeFilter.SHOW_ELEMENT);
@@ -81,7 +87,8 @@
 
   const onAutoClose = (e: MouseEvent) => {
     const target: Element = e.target as Element;
-    if (autoclose && target?.tagName === 'BUTTON') hide(e);
+    if (autoclose && target?.tagName === 'BUTTON') hide(e); // close on any button click
+    if (outsideclose && target === e.currentTarget) hide(e); // close on click outside
   };
 
   const hide = (e: Event) => {
@@ -90,41 +97,23 @@
   };
 
   let frameClass: string;
-  $: frameClass = classNames(defaultClass, $$props.class);
+  $: frameClass = twMerge(defaultClass, 'w-full', $$props.class);
 
-  const isScrollable = (e: HTMLElement): boolean[] => [
-    e.scrollWidth > e.clientWidth && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowX) >= 0,
-    e.scrollHeight > e.clientHeight && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowY) >= 0
-  ];
+  const isScrollable = (e: HTMLElement): boolean[] => [e.scrollWidth > e.clientWidth && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowX) >= 0, e.scrollHeight > e.clientHeight && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowY) >= 0];
 
-  function preventWheelDefault(e: Event) {
-    // @ts-ignore
-    const [x, y] = isScrollable(this);
-    return x || y || e.preventDefault();
-  }
+  let backdropCls: string = twMerge(backdropClass, $$props.classBackdrop);
 
   function handleKeys(e: KeyboardEvent) {
-    if (e.key === 'Escape' && !permanent) return hide(e);
+    if (e.key === 'Escape' && dismissable) return hide(e);
   }
 </script>
 
 {#if open}
   <!-- backdrop -->
-  <div class={classNames('fixed inset-0 z-40', backdropClasses)} />
+  <div class={backdropCls} />
   <!-- dialog -->
-  <div
-    on:keydown={handleKeys}
-    on:wheel|preventDefault|nonpassive
-    use:prepareFocus
-    use:focusTrap
-    on:click={autoclose ? onAutoClose : null}
-    class={classNames(
-      'fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex',
-      ...getPlacementClasses()
-    )}
-    tabindex="-1"
-    aria-modal="true"
-    role="dialog">
+  <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+  <div on:keydown={handleKeys} on:wheel|preventDefault|nonpassive use:prepareFocus use:focusTrap on:click={onAutoClose} class={twMerge(dialogClass, ...getPlacementClasses())} tabindex="-1" aria-modal="true" role="dialog">
     <div class="flex relative {sizes[size]} w-full max-h-full">
       <!-- Modal content -->
       <Frame rounded shadow {...$$restProps} class={frameClass}>
@@ -132,26 +121,17 @@
         {#if $$slots.header || title}
           <Frame color={$$restProps.color} class="flex justify-between items-center p-4 rounded-t border-b">
             <slot name="header">
-              <h3
-                class="text-xl font-semibold {$$restProps.color ? '' : 'text-gray-900 dark:text-white'} p-0">
+              <h3 class="text-xl font-semibold {$$restProps.color ? '' : 'text-gray-900 dark:text-white'} p-0">
                 {title}
               </h3>
             </slot>
-            {#if !permanent}<CloseButton name="Close modal" on:click={hide} color={$$restProps.color} />{/if}
+            {#if dismissable}<CloseButton name="Close modal" on:click={hide} color={$$restProps.color} />{/if}
           </Frame>
-        {:else if !permanent}
-          <CloseButton
-            name="Close modal"
-            class="absolute top-3 right-2.5"
-            on:click={hide}
-            color={$$restProps.color} />
+        {:else if dismissable}
+          <CloseButton name="Close modal" class="absolute top-3 right-2.5" on:click={hide} color={$$restProps.color} />
         {/if}
         <!-- Modal body -->
-        <div
-          id="modal"
-          class="p-6 space-y-6 flex-1 overflow-y-auto overscroll-contain"
-          on:keydown|stopPropagation={handleKeys}
-          on:wheel|stopPropagation|passive>
+        <div class={twMerge('p-6 space-y-6 flex-1 overflow-y-auto overscroll-contain', $$props.bodyClass)} on:keydown|stopPropagation={handleKeys} role="document" on:wheel|stopPropagation|passive>
           <slot />
         </div>
         <!-- Modal footer -->
@@ -164,3 +144,19 @@
     </div>
   </div>
 {/if}
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let open: boolean = false;
+@prop export let title: string = '';
+@prop export let size: SizeType = 'md';
+@prop export let placement: ModalPlacementType = 'center';
+@prop export let autoclose: boolean = false;
+@prop export let permanent: boolean = false;
+@prop export let backdropClass: string = 'fixed inset-0 z-40 bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
+@prop export let defaultClass: string = 'relative flex flex-col mx-auto';
+@prop export let outsideclose: boolean = false;
+@prop export let dialogClass: string = 'fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex';
+-->

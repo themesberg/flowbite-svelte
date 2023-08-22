@@ -1,1 +1,11 @@
-{"props":[["color","FormColorType ","'blue'"],["custom","boolean ","false"],["inline","boolean ","false"],["group","(string | number)[] ","[]"],["value","string | number ","''"],["checked","boolean | undefined ","undefined"]]}
+{
+  "props": [
+    ["color", "FormColorType", "'primary'"],
+    ["custom", "boolean", "false"],
+    ["inline", "boolean", "false"],
+    ["group", "(string | number)[]", "[]"],
+    ["value", "string | number", "'on'"],
+    ["checked", "boolean | undefined", "undefined"],
+    ["spacing", "string", "'mr-2'"]
+  ]
+}

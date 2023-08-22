@@ -15,6 +15,16 @@ test('Getting Started page should have h1', async ({ page }) => {
   expect(await page.textContent('h1')).toBe('Quickstart - Flowbite Svelte');
 });
 
+test('Colors page should have h1', async ({ page }) => {
+  await page.goto('/docs/pages/colors');
+  expect(await page.textContent('h1')).toBe('Colors - Flowbite Svelte');
+});
+
+test('Customization page should have h1', async ({ page }) => {
+  await page.goto('/docs/pages/customization');
+  expect(await page.textContent('h1')).toBe('Customization - Flowbite Svelte');
+});
+
 test('How to contribute page should have h1', async ({ page }) => {
   await page.goto('/docs/pages/how-to-contribute');
   expect(await page.textContent('h1')).toBe('How to Contribute - Flowbite Svelte');
@@ -27,10 +37,10 @@ test('License page should have h1', async ({ page }) => {
 
 test('Type list page should have h1', async ({ page }) => {
   await page.goto('/docs/pages/typescript');
-  expect(await page.textContent('h1')).toBe('Svelte TypeScript Types - Flowbite');
+  expect(await page.textContent('h1')).toBe('TypeScript Types - Flowbite Svelte');
 });
 
 test('Faster Compiling Speed page should have h1', async ({ page }) => {
   await page.goto('/docs/pages/compiler-speed');
-  expect(await page.textContent('h1')).toBe('Svelte Compiler Speed - Flowbite');
+  expect(await page.textContent('h1')).toBe('Compiler Speed - Flowbite Svelte');
 });

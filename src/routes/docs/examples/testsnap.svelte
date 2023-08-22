@@ -1,15 +1,15 @@
-<script>
-  import { Input, Label, Button, Checkbox, A, Breadcrumb, BreadcrumbItem, Heading, P } from '$lib'
+<script lang="ts">
+  import { Input, Label, Button, Checkbox, A } from '$lib';
   let formData = {
-      first_name:'',
-      last_name: '',
-      company: '',
-      website:'',
-      email: '',
-    }
-  export const snapshot = { 
-    capture: () => formData, 
-    restore: (value) => (formData = value)
+    first_name: '',
+    last_name: '',
+    company: '',
+    website: '',
+    email: ''
+  };
+  export const snapshot = {
+    capture: () => formData,
+    restore: (value: typeof formData) => (formData = value)
   };
 </script>
 

@@ -1,9 +1,8 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
 
-  export let color: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom' =
-    getContext('color');
+  export let color: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom' = getContext('color');
 
   const colors = {
     default: 'bg-white dark:bg-gray-800 dark:border-gray-700',
@@ -36,15 +35,16 @@
   };
 
   let trClass: string;
-  $: trClass = classNames(
-    !getContext('noborder') && 'border-b last:border-b-0',
-    colors[color],
-    getContext('hoverable') && hoverColors[color],
-    getContext('striped') && stripColors[color],
-    $$props.class
-  );
+  $: trClass = twMerge([!getContext('noborder') && 'border-b last:border-b-0', colors[color], getContext('hoverable') && hoverColors[color], getContext('striped') && stripColors[color], $$props.class]);
 </script>
 
 <tr {...$$restProps} class={trClass} on:click on:contextmenu>
   <slot />
 </tr>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let color: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom' = getContext('color');
+-->

@@ -1,1 +1,9 @@
-{"props":[["size","'small' | 'default' | 'large' ","'default'"],["group","(string | number)[] ","[]"],["value","string | number ","''"],["checked","boolean | undefined ","undefined"]]}
+{
+  "props": [
+    ["size", "'small' | 'default' | 'large' | 'custom'", "'default'"],
+    ["group", "(string | number)[]", "[]"],
+    ["value", "string | number", "''"],
+    ["checked", "boolean | undefined", "undefined"],
+    ["customSize", "string", "''"]
+  ]
+}

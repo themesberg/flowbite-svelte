@@ -1,9 +1,16 @@
 <script lang="ts">
-	import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge';
 
-	export let divClass: string = 'overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800';
+  export let divClass: string = 'overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800';
 </script>
 
-<div {...$$restProps} class={classNames(divClass, $$props.class)}>
-	<slot />
+<div {...$$restProps} class={twMerge(divClass, $$props.class)}>
+  <slot />
 </div>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let divClass: string = 'overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800';
+-->

@@ -1,1 +1,6 @@
-{"props":[["divDefault","string ","'p-4 text-sm'"],["dismissable","boolean ","false"],["accent","boolean ","false"]]}
+{
+  "props": [
+    ["dismissable", "boolean", "false"],
+    ["defaultClass", "string", "'p-4 gap-3 text-sm'"]
+  ]
+}

@@ -1,1 +1,12 @@
-{"props":[["border","boolean ","false"],["italic","boolean ","true"],["borderClass","string ","'border-l-4 border-gray-300 dark:border-gray-500'"],["bgClass","string ","'bg-gray-50 dark:bg-gray-800'"],["bg","boolean ","false"],["baseClass","string ","'font-semibold text-gray-900 dark:text-white'"],["alignment","'left' | 'center' | 'right' ","'left'"],["size","| 'xs'     | 'sm'     | 'base'     | 'lg'     | 'xl'     | '2xl'     | '3xl'     | '4xl'     | '5xl'     | '6xl'     | '7xl'     | '8xl'     | '9xl' ","'lg'"]]}
+{
+  "props": [
+    ["border", "boolean", "false"],
+    ["italic", "boolean", "true"],
+    ["borderClass", "string", "'border-l-4 border-gray-300 dark:border-gray-500'"],
+    ["bgClass", "string", "'bg-gray-50 dark:bg-gray-800'"],
+    ["bg", "boolean", "false"],
+    ["baseClass", "string", "'font-semibold text-gray-900 dark:text-white'"],
+    ["alignment", "'left' | 'center' | 'right'", "'left'"],
+    ["size", "BlockQuoteType", "'lg'"]
+  ]
+}

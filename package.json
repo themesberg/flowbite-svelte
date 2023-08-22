@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "0.34.12",
+  "version": "0.44.4",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -15,56 +15,59 @@
     "dev": "vite dev",
     "build": "vite build && npm run package",
     "preview": "vite preview",
-    "test": "playwright test",
     "package": "svelte-kit sync && svelte-package && publint",
-    "prepublishOnly": "npm run package && publint",
+    "prepublishOnly": "npm run package",
+    "test": "npm run test:integration && npm run test:unit",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "test:unit": "vitest",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
     "format": "prettier --plugin-search-dir . --write .",
-    "write-package-json": "node ./scripts/package-json-writer.js",
-    "add-exports": "node ./scripts/add-exports-to-package-json.js",
-    "package:publish": "standard-version && git push --follow-tags origin main && npm run package && npm run add-exports && npm run write-package-json && npm publish",
-    "gen:props": "createprops"
-  },
-  "peerDependencies": {
-    "@popperjs/core": "^2.11.6",
-    "classnames": "^2.3.2",
-    "flowbite": "^1.6.3",
-    "svelte": "^3.55.1"
+    "test:integration": "playwright test",
+    "test:unit": "vitest",
+    "add-exports": "svelte-lib-helpers exports",
+    "add-docs": "svelte-lib-helpers docs",
+    "gen-props": "svelte-lib-helpers props",
+    "copy-package": "svelte-lib-helpers package",
+    "lib-helpers": "npm run add-docs && npm run gen-props && npm run package && npm run add-exports && npm run copy-package",
+    "package:publish": "npm run lib-helpers && npm run format && standard-version && git push --follow-tags origin main && npm publish"
   },
   "devDependencies": {
-    "@playwright/test": "^1.32.3",
-    "@sveltejs/adapter-vercel": "^2.4.2",
-    "@sveltejs/kit": "^1.15.8",
-    "@sveltejs/package": "2.0.2",
-    "@typescript-eslint/eslint-plugin": "^5.59.1",
-    "@typescript-eslint/parser": "^5.59.1",
-    "autoprefixer": "^10.4.14",
-    "createprops": "^0.5.3",
-    "esbuild": "0.17.18",
-    "eslint": "^8.39.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-svelte3": "^4.0.0",
-    "mdsvex": "^0.10.6",
-    "mdsvexamples": "^0.3.3",
-    "postcss": "^8.4.23",
+    "@docsearch/js": "^3.5.2",
+    "@playwright/test": "^1.37.1",
+    "@sveltejs/adapter-vercel": "^3.0.3",
+    "@sveltejs/kit": "^1.22.6",
+    "@sveltejs/package": "2.1.0",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "autoprefixer": "^10.4.15",
+    "esbuild": "0.18.10",
+    "eslint": "^8.47.0",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-plugin-svelte": "^2.32.4",
+    "flowbite-svelte-icons": "^0.3.6",
+    "mdsvex": "^0.11.0",
+    "mdsvexamples": "^0.3.4",
+    "postcss": "^8.4.28",
     "postcss-load-config": "^4.0.1",
     "prettier": "^2.8.8",
-    "prettier-plugin-svelte": "^2.10.0",
+    "prettier-plugin-svelte": "^2.10.1",
     "prism-themes": "^1.9.0",
-    "publint": "^0.1.11",
-    "svelte": "^3.58.0",
-    "svelte-check": "^3.2.0",
-    "svelte-meta-tags": "^2.7.0",
-    "svelte-preprocess": "^5.0.3",
-    "svelte2tsx": "^0.6.11",
-    "tailwindcss": "^3.3.1",
-    "tslib": "^2.5.0",
-    "typescript": "^5.0.4",
-    "vite": "^4.3.2",
-    "vitest": "^0.30.1"
+    "publint": "^0.1.16",
+    "svelte": "^4.2.0",
+    "svelte-check": "^3.5.0",
+    "svelte-lib-helpers": "^0.2.8",
+    "svelte-meta-tags": "^2.8.0",
+    "svelte-preprocess": "^5.0.4",
+    "svelte2tsx": "^0.6.20",
+    "tailwind-merge": "^1.13.1",
+    "tailwindcss": "^3.3.3",
+    "tslib": "^2.6.1",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.9",
+    "vitest": "^0.32.4"
+  },
+  "peerDependencies": {
+    "svelte": "^3.55.1 || ^4.0.0"
   },
   "type": "module",
   "keywords": [
@@ -110,10 +113,10 @@
     "url": "https://github.com/themesberg/flowbite-svelte"
   },
   "dependencies": {
-    "@docsearch/js": "^3.3.3",
-    "@popperjs/core": "^2.11.7",
-    "classnames": "^2.3.2",
-    "flowbite": "^1.6.5"
+    "@floating-ui/dom": "^1.5.1",
+    "apexcharts": "^3.41.1",
+    "flowbite": "^1.8.1",
+    "tailwind-merge": "^1.14.0"
   },
   "engines": {
     "npm": ">=7.0.0",
@@ -180,6 +183,10 @@
       "types": "./dist/buttons/Button.svelte.d.ts",
       "svelte": "./dist/buttons/Button.svelte"
     },
+    "./GradientButton.svelte": {
+      "types": "./dist/buttons/GradientButton.svelte.d.ts",
+      "svelte": "./dist/buttons/GradientButton.svelte"
+    },
     "./Card.svelte": {
       "types": "./dist/cards/Card.svelte.d.ts",
       "svelte": "./dist/cards/Card.svelte"
@@ -208,6 +215,10 @@
       "types": "./dist/carousels/Thumbnail.svelte.d.ts",
       "svelte": "./dist/carousels/Thumbnail.svelte"
     },
+    "./Chart.svelte": {
+      "types": "./dist/charts/Chart.svelte.d.ts",
+      "svelte": "./dist/charts/Chart.svelte"
+    },
     "./DarkMode.svelte": {
       "types": "./dist/darkmode/DarkMode.svelte.d.ts",
       "svelte": "./dist/darkmode/DarkMode.svelte"
@@ -219,6 +230,30 @@
     "./Datepicker.svelte": {
       "types": "./dist/datepicker/Datepicker.svelte.d.ts",
       "svelte": "./dist/datepicker/Datepicker.svelte"
+    },
+    "./Android.svelte": {
+      "types": "./dist/device-mockup/Android.svelte.d.ts",
+      "svelte": "./dist/device-mockup/Android.svelte"
+    },
+    "./DefaultMockup.svelte": {
+      "types": "./dist/device-mockup/DefaultMockup.svelte.d.ts",
+      "svelte": "./dist/device-mockup/DefaultMockup.svelte"
+    },
+    "./DeviceMockup.svelte": {
+      "types": "./dist/device-mockup/DeviceMockup.svelte.d.ts",
+      "svelte": "./dist/device-mockup/DeviceMockup.svelte"
+    },
+    "./Ios.svelte": {
+      "types": "./dist/device-mockup/Ios.svelte.d.ts",
+      "svelte": "./dist/device-mockup/Ios.svelte"
+    },
+    "./Smartwatch.svelte": {
+      "types": "./dist/device-mockup/Smartwatch.svelte.d.ts",
+      "svelte": "./dist/device-mockup/Smartwatch.svelte"
+    },
+    "./Tablet.svelte": {
+      "types": "./dist/device-mockup/Tablet.svelte.d.ts",
+      "svelte": "./dist/device-mockup/Tablet.svelte"
     },
     "./Drawer.svelte": {
       "types": "./dist/drawer/Drawer.svelte.d.ts",
@@ -295,6 +330,10 @@
     "./Label.svelte": {
       "types": "./dist/forms/Label.svelte.d.ts",
       "svelte": "./dist/forms/Label.svelte"
+    },
+    "./MultiSelect.svelte": {
+      "types": "./dist/forms/MultiSelect.svelte.d.ts",
+      "svelte": "./dist/forms/MultiSelect.svelte"
     },
     "./NumberInput.svelte": {
       "types": "./dist/forms/NumberInput.svelte.d.ts",
@@ -380,10 +419,6 @@
       "types": "./dist/navbar/NavBrand.svelte.d.ts",
       "svelte": "./dist/navbar/NavBrand.svelte"
     },
-    "./NavDropdown.svelte": {
-      "types": "./dist/navbar/NavDropdown.svelte.d.ts",
-      "svelte": "./dist/navbar/NavDropdown.svelte"
-    },
     "./NavHamburger.svelte": {
       "types": "./dist/navbar/NavHamburger.svelte.d.ts",
       "svelte": "./dist/navbar/NavHamburger.svelte"
@@ -428,6 +463,10 @@
       "types": "./dist/ratings/AdvancedRating.svelte.d.ts",
       "svelte": "./dist/ratings/AdvancedRating.svelte"
     },
+    "./Heart.svelte": {
+      "types": "./dist/ratings/Heart.svelte.d.ts",
+      "svelte": "./dist/ratings/Heart.svelte"
+    },
     "./Rating.svelte": {
       "types": "./dist/ratings/Rating.svelte.d.ts",
       "svelte": "./dist/ratings/Rating.svelte"
@@ -447,6 +486,10 @@
     "./Star.svelte": {
       "types": "./dist/ratings/Star.svelte.d.ts",
       "svelte": "./dist/ratings/Star.svelte"
+    },
+    "./Thumbup.svelte": {
+      "types": "./dist/ratings/Thumbup.svelte.d.ts",
+      "svelte": "./dist/ratings/Thumbup.svelte"
     },
     "./Sidebar.svelte": {
       "types": "./dist/sidebars/Sidebar.svelte.d.ts",
@@ -672,30 +715,6 @@
       "types": "./dist/typography/Span.svelte.d.ts",
       "svelte": "./dist/typography/Span.svelte"
     },
-    "./Ul.svelte": {
-      "types": "./dist/typography/Ul.svelte.d.ts",
-      "svelte": "./dist/typography/Ul.svelte"
-    },
-    "./Chevron.svelte": {
-      "types": "./dist/utils/Chevron.svelte.d.ts",
-      "svelte": "./dist/utils/Chevron.svelte"
-    },
-    "./ChevronDown.svelte": {
-      "types": "./dist/utils/ChevronDown.svelte.d.ts",
-      "svelte": "./dist/utils/ChevronDown.svelte"
-    },
-    "./ChevronLeft.svelte": {
-      "types": "./dist/utils/ChevronLeft.svelte.d.ts",
-      "svelte": "./dist/utils/ChevronLeft.svelte"
-    },
-    "./ChevronRight.svelte": {
-      "types": "./dist/utils/ChevronRight.svelte.d.ts",
-      "svelte": "./dist/utils/ChevronRight.svelte"
-    },
-    "./ChevronUp.svelte": {
-      "types": "./dist/utils/ChevronUp.svelte.d.ts",
-      "svelte": "./dist/utils/ChevronUp.svelte"
-    },
     "./CloseButton.svelte": {
       "types": "./dist/utils/CloseButton.svelte.d.ts",
       "svelte": "./dist/utils/CloseButton.svelte"
@@ -704,21 +723,9 @@
       "types": "./dist/utils/Frame.svelte.d.ts",
       "svelte": "./dist/utils/Frame.svelte"
     },
-    "./InformationCircle.svelte": {
-      "types": "./dist/utils/InformationCircle.svelte.d.ts",
-      "svelte": "./dist/utils/InformationCircle.svelte"
-    },
-    "./MenuButton.svelte": {
-      "types": "./dist/utils/MenuButton.svelte.d.ts",
-      "svelte": "./dist/utils/MenuButton.svelte"
-    },
     "./Popper.svelte": {
       "types": "./dist/utils/Popper.svelte.d.ts",
       "svelte": "./dist/utils/Popper.svelte"
-    },
-    "./UserCircle.svelte": {
-      "types": "./dist/utils/UserCircle.svelte.d.ts",
-      "svelte": "./dist/utils/UserCircle.svelte"
     },
     "./Wrapper.svelte": {
       "types": "./dist/utils/Wrapper.svelte.d.ts",
@@ -740,10 +747,15 @@
   "types": "./dist/index.d.ts",
   "contributors": [
     "Shinichi Okada <okada.shin@gmail.com>",
-    "Jakub Jagielka <jjagielka@gmail.com>",
+    "jjagielka <jjagielka@gmail.com>",
+    "Zoltán Szőgyényi <zoltan.szogyenyi@gmail.com>",
     "olivier <orefalo@gmail.com>",
-    "Junjae Lee <ejj612o@gmail.com>",
     "Zhi Nie <ryanzhinie@gmail.com>",
+    "vasu <vasucp1207@gmail.com>",
+    "Junjae Lee <ejj612o@gmail.com>",
+    "Daschi1 <50054971+Daschi1@users.noreply.github.com>",
+    "Zhi Nie <ryanniezhi@163.com>",
+    "Zoltán Szőgyényi <zoltan@themesberg.com>",
     "edde746 <86283021+edde746@users.noreply.github.com>",
     "Christoph Sturm <me@christophsturm.com>",
     "Frail Bongat <frail.bongat@gmail.com>",
@@ -757,19 +769,29 @@
     "Oliver Weber <ow@uix.io>",
     "Olivier Refalo <orefalo@gmail.com>",
     "Yassine Zeriouh <y@zeriouh.io>",
-    "Zoltán Szőgyényi <zoltan.szogyenyi@gmail.com>",
     "nobody0 <nobodyrrd@gmail.com>",
+    "Aaryn Smith <4387096+AarynSmith@users.noreply.github.com>",
+    "Abteilung für Gestaltung GmbH <pascal.widmer@abteilung.ch>",
     "Alex Miller <codex.nz@gmail.com>",
+    "Artur Hallmann <arturh@arturh.de>",
     "Bernhard Richter <bernhard.richter@gmail.com>",
     "ByteDream <63594396+ByteDream@users.noreply.github.com>",
     "CBB <38453357+CrystalBallBe@users.noreply.github.com>",
     "Carsten Lebek <59960385+carstenlebek@users.noreply.github.com>",
+    "Conor Joyce <57002528+cawnj@users.noreply.github.com>",
     "Daniel Hughes <2237515+dan-hughes@users.noreply.github.com>",
+    "Devin Foulger <devin.foulger@gmail.com>",
     "Feynman Liang <feynmanliang@users.noreply.github.com>",
     "Hetarth Shah <hetarth02@gmail.com>",
     "Hirtol <55356909+Hirtol@users.noreply.github.com>",
+    "Hunter Johnston <64506580+huntabyte@users.noreply.github.com>",
+    "Jakub <jjagielka@gmail.com>",
     "James Scott-Brown <james@jamesscottbrown.com>",
+    "Jannis Richter <119356024+jannisrichter@users.noreply.github.com>",
+    "Kira <46629148+KiraPC@users.noreply.github.com>",
+    "LeBovin <flavian.gontier@epitech.eu>",
     "Maarten <90111831+mjoosten42@users.noreply.github.com>",
+    "Mark Lansky <49815452+ZerdoX-x@users.noreply.github.com>",
     "Michael Adams <mtadams42@gmail.com>",
     "Mr. Mendez <56850299+JustMrMendez@users.noreply.github.com>",
     "Navtoj Chahal <github@navtoj.com>",
@@ -779,8 +801,9 @@
     "Sumanth Chinthagunta <xmlking@gmail.com>",
     "Thomas <51747351+andocodes@users.noreply.github.com>",
     "Tyler Miller <tyler.rw.miller@protonmail.com>",
-    "Zoltán Szőgyényi <zoltan@themesberg.com>",
+    "andrehebra <52555960+andrehebra@users.noreply.github.com>",
     "ciril.tr <ciroman@gmail.com>",
+    "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>",
     "jakobsturm <jakob@sturm.li>"
   ]
 }

@@ -1,22 +1,15 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge, twJoin } from 'tailwind-merge';
   import { setContext } from 'svelte';
+  import type { TableColorType } from '../types';
 
   export let divClass: string = 'relative overflow-x-auto';
   export let striped: boolean = false;
   export let hoverable: boolean = false;
   export let noborder: boolean = false;
   export let shadow: boolean = false;
-  export let color:
-    | 'blue'
-    | 'green'
-    | 'red'
-    | 'yellow'
-    | 'purple'
-    | 'indigo'
-    | 'pink'
-    | 'default'
-    | 'custom' = 'default';
+  export let color: TableColorType = 'default';
+  export let customeColor: string = '';
 
   const colors = {
     default: 'text-gray-500 dark:text-gray-400',
@@ -27,7 +20,7 @@
     purple: 'text-purple-100 dark:text-purple-100',
     indigo: 'text-indigo-100 dark:text-indigo-100',
     pink: 'text-pink-100 dark:text-pink-100',
-    custom: ''
+    custom: customeColor
   };
 
   $: setContext('striped', striped);
@@ -36,8 +29,21 @@
   $: setContext('color', color);
 </script>
 
-<div class={classNames(divClass, shadow && 'shadow-md sm:rounded-lg')}>
-  <table {...$$restProps} class={classNames('w-full text-left text-sm', colors[color], $$props.class)}>
+<div class={twJoin(divClass, shadow && 'shadow-md sm:rounded-lg')}>
+  <table {...$$restProps} class={twMerge('w-full text-left text-sm', colors[color], $$props.class)}>
     <slot />
   </table>
 </div>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let divClass: string = 'relative overflow-x-auto';
+@prop export let striped: boolean = false;
+@prop export let hoverable: boolean = false;
+@prop export let noborder: boolean = false;
+@prop export let shadow: boolean = false;
+@prop export let color: TableColorType = 'default';
+@prop export let customeColor: string = '';
+-->

@@ -26,6 +26,7 @@ export { default as BreadcrumbItem } from './breadcrumbs/BreadcrumbItem.svelte';
 
 // Buttons
 export { default as Button } from './buttons/Button.svelte';
+export { default as GradientButton } from './buttons/GradientButton.svelte';
 
 // Buttongroups
 export { default as ButtonGroup } from './buttongroups/ButtonGroup.svelte';
@@ -37,11 +38,17 @@ export { default as Card } from './cards/Card.svelte';
 export { default as Carousel } from './carousels/Carousel.svelte';
 export { default as CarouselTransition } from './carousels/CarouselTransition.svelte';
 
+// Charts
+export { default as Chart } from './charts/Chart.svelte';
+
 // Dark mode
 export { default as DarkMode } from './darkmode/DarkMode.svelte';
 
 // Datepicker
 export { default as Datepicker } from './datepicker/Datepicker.svelte';
+
+// DeviceMockup
+export { default as DeviceMockup } from './device-mockup/DeviceMockup.svelte';
 
 // Drawer
 export { default as Drawer } from './drawer/Drawer.svelte';
@@ -69,6 +76,7 @@ export { default as Helper } from './forms/Helper.svelte';
 export { default as Input } from './forms/Input.svelte';
 export { default as InputAddon } from './forms/InputAddon.svelte';
 export { default as Label } from './forms/Label.svelte';
+export { default as MultiSelect } from './forms/MultiSelect.svelte';
 export { default as NumberInput } from './forms/NumberInput.svelte';
 export { default as RadioInline } from './forms/RadioInline.svelte';
 export { default as Radio } from './forms/Radio.svelte';
@@ -125,6 +133,9 @@ export { default as AdvancedRating } from './ratings/AdvancedRating.svelte';
 export { default as ScoreRating } from './ratings/ScoreRating.svelte';
 export { default as RatingComment } from './ratings/RatingComment.svelte';
 export { default as Review } from './ratings/Review.svelte';
+export { default as Star } from './ratings/Star.svelte';
+export { default as Heart } from './ratings/Heart.svelte';
+export { default as Thumbup } from './ratings/Thumbup.svelte';
 
 // Sidebar
 export { default as Sidebar } from './sidebars/Sidebar.svelte';
@@ -208,14 +219,7 @@ export { default as Span } from './typography/Span.svelte';
 
 // utils
 export { default as CloseButton } from './utils/CloseButton.svelte';
-export { default as ChevronDown } from './utils/ChevronDown.svelte';
-export { default as ChevronLeft } from './utils/ChevronLeft.svelte';
-export { default as ChevronRight } from './utils/ChevronRight.svelte';
-export { default as ChevronUp } from './utils/ChevronUp.svelte';
-export { default as Chevron } from './utils/Chevron.svelte';
-export { default as InformationCircle } from './utils/InformationCircle.svelte';
-export { default as MenuButton } from './utils/MenuButton.svelte';
-export { default as UserCircle } from './utils/UserCircle.svelte';
+export { default as Frame } from './utils/Frame.svelte';
 
 // video
 export { default as Video } from './video/Video.svelte';

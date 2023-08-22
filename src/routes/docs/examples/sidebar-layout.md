@@ -2,7 +2,7 @@
 layout: componentLayout
 title: Responsive Sidebar Layout
 dir: Examples
-description: Flowbite Svete Responsive sidebar layout
+description: Flowbite Svelte Responsive sidebar layout
 breadcrumb_title: Svelte Sidebar Layout
 component_title: Sidebar Layout
 ---
@@ -17,4 +17,3 @@ component_title: Sidebar Layout
 </List>
 
 <Img src="/images/sveltekit-sidebar-layout-optimized.png" alt="sveltekit sidebar layout" />
-

@@ -1,1 +1,10 @@
-{"props":[["icon","boolean ","false"],["width","string ","'w-full'"],["height","string ","'h-px'"],["divClass","string ","'inline-flex justify-center items-center w-full'"],["hrClass","string ","'bg-gray-200 rounded border-0 dark:bg-gray-700'"],["iconDivClass","string ","'absolute left-1/2 px-4 bg-white -translate-x-1/2 '"],["textSpanClass","string ","'absolute left-1/2 px-3 font-medium text-gray-900 bg-white -translate-x-1/2 dark:text-white '"],["middleBgColor","string ","'dark:bg-gray-900'"]]}
+{
+  "props": [
+    ["icon", "boolean", "false"],
+    ["divClass", "string", "'inline-flex items-center justify-center w-full'"],
+    ["hrClass", "string", "'h-px my-8 bg-gray-200 border-0 dark:bg-gray-700'"],
+    ["iconDivClass", "string", "'absolute left-1/2 px-4 bg-white -translate-x-1/2 '"],
+    ["textSpanClass", "string", "'absolute px-3 font-medium text-gray-900 -translate-x-1/2 bg-white left-1/2 dark:text-white dark:bg-gray-900 '"],
+    ["innerDivClass", "string", "'absolute px-4 -translate-x-1/2 bg-white left-1/2 dark:bg-gray-900'"]
+  ]
+}

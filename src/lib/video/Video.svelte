@@ -1,19 +1,13 @@
 <script lang="ts">
-  import classNames from 'classnames';
-  // export let width;
-  // export let controls: boolean = true;
-  // export let autoplay: boolean = false;
+  import { twMerge } from 'tailwind-merge';
+
   export let src: string;
   export let type: string = 'video/mp4';
   export let trackSrc: string = '';
   export let srclang: string = 'en';
   export let label: string = 'english_captions';
-  // export let attribute = '';
 
-  let videoClass = classNames($$props.class);
-  // const setAttribute = (node, params) => {
-  //   node.setAttribute(params, '');
-  // };
+  let videoClass = twMerge($$props.class);
 </script>
 
 <video {...$$restProps} class={videoClass}>
@@ -22,3 +16,14 @@
   <track src={trackSrc} kind="captions" {srclang} {label} />
   Your browser does not support the video tag.
 </video>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let src: string;
+@prop export let type: string = 'video/mp4';
+@prop export let trackSrc: string = '';
+@prop export let srclang: string = 'en';
+@prop export let label: string = 'english_captions';
+-->

@@ -10,8 +10,6 @@ description: Show contextual information to your users using alert elements base
 <script>
   import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
 
-  import { Badge, P, A } from '$lib'
-
   import { props as frameProps} from '../../props/Frame.json'
   import { props as alertProps } from '../../props/Alert.json'
 
@@ -21,8 +19,6 @@ description: Show contextual information to your users using alert elements base
   let slotHeader = ['Name', 'Description']
   let slotItems = [['default', 'The first slot.'],['extra','A slot after the default slot.']]
 </script>
-
-
 
 The alert component can be used to provide information to your users such as success or error messages, but also highlighted information complementing the normal flow of paragraphs and headers on a page. Flowbite also includes dismissable alerts which can be hidden by the users by clicking on the close icon.
 
@@ -42,22 +38,32 @@ Use the following examples of alert components to show messages as feedback to y
 
 ```svelte example class="flex flex-col gap-4"
 <script>
-  import {Alert} from "flowbite-svelte";
+  import { Alert } from 'flowbite-svelte';
 </script>
+
 <Alert>
-  <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
+  <span class="font-medium">Default alert!</span>
+  Change a few things up and try submitting again.
+</Alert>
+<Alert color="blue">
+  <span class="font-medium">Info alert!</span>
+  Change a few things up and try submitting again.
 </Alert>
 <Alert color="red">
-  <span class="font-medium">Danger alert!</span> Change a few things up and try submitting again.
+  <span class="font-medium">Danger alert!</span>
+  Change a few things up and try submitting again.
 </Alert>
 <Alert color="green">
-  <span class="font-medium">Success alert!</span> Change a few things up and try submitting again.
+  <span class="font-medium">Success alert!</span>
+  Change a few things up and try submitting again.
 </Alert>
 <Alert color="yellow">
-  <span class="font-medium">Warning alert!</span> Change a few things up and try submitting again.
+  <span class="font-medium">Warning alert!</span>
+  Change a few things up and try submitting again.
 </Alert>
 <Alert color="dark">
-  <span class="font-medium">Dark alert!</span> Change a few things up and try submitting again.
+  <span class="font-medium">Dark alert!</span>
+  Change a few things up and try submitting again.
 </Alert>
 ```
 
@@ -65,34 +71,41 @@ Use the following examples of alert components to show messages as feedback to y
 
 You can also include a descriptive icon to complement the message inside the alert component with the following example.
 
-```svelte example class="flex flex-col gap-4" hideScript
+```svelte example class="flex flex-col gap-4"
 <script>
-  import {Alert} from "flowbite-svelte";
+  import { Alert } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
+
 <Alert>
-  <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-  </span>
-  <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
+  <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+  <span class="font-medium">Default alert!</span>
+  Change a few things up and try submitting again.
+</Alert>
+<Alert color="blue">
+  <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+  <span class="font-medium">Info alert!</span>
+  Change a few things up and try submitting again.
 </Alert>
 <Alert color="red">
-  <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-  </span>
-  <span class="font-medium">Danger alert!</span> Change a few things up and try submitting again.
+  <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+  <span class="font-medium">Danger alert!</span>
+  Change a few things up and try submitting again.
 </Alert>
 <Alert color="green">
-  <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-  </span>
-  <span class="font-medium">Success alert!</span> Change a few things up and try submitting again.
+  <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+  <span class="font-medium">Success alert!</span>
+  Change a few things up and try submitting again.
 </Alert>
 <Alert color="yellow">
-  <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-  </span>
-  <span class="font-medium">Warning alert!</span> Change a few things up and try submitting again.
+  <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+  <span class="font-medium">Warning alert!</span>
+  Change a few things up and try submitting again.
 </Alert>
 <Alert color="dark">
-  <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-  </span>
-  <span class="font-medium">Dark alert!</span> Change a few things up and try submitting again.
+  <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+  <span class="font-medium">Dark alert!</span>
+  Change a few things up and try submitting again.
 </Alert>
 ```
 
@@ -100,34 +113,41 @@ You can also include a descriptive icon to complement the message inside the ale
 
 Use this example to add a border accent to the alert component instead of just a plain background.
 
-```svelte example class="flex flex-col gap-4" hideScript
+```svelte example class="flex flex-col gap-4"
 <script>
-  import {Alert} from "flowbite-svelte";
+  import { Alert } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
+
 <Alert border>
-  <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-  </span>
-  <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
+  <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+  <span class="font-medium">Default alert!</span>
+  Change a few things up and try submitting again.
+</Alert>
+<Alert border color="blue">
+  <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+  <span class="font-medium">Info alert!</span>
+  Change a few things up and try submitting again.
 </Alert>
 <Alert border color="red">
-  <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-  </span>
-  <span class="font-medium">Danger alert!</span> Change a few things up and try submitting again.
+  <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+  <span class="font-medium">Danger alert!</span>
+  Change a few things up and try submitting again.
 </Alert>
 <Alert border color="green">
-  <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-  </span>
-  <span class="font-medium">Success alert!</span> Change a few things up and try submitting again.
+  <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+  <span class="font-medium">Success alert!</span>
+  Change a few things up and try submitting again.
 </Alert>
 <Alert border color="yellow">
-  <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-  </span>
-  <span class="font-medium">Warning alert!</span> Change a few things up and try submitting again.
+  <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+  <span class="font-medium">Warning alert!</span>
+  Change a few things up and try submitting again.
 </Alert>
 <Alert border color="dark">
-  <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-  </span>
-  <span class="font-medium">Dark alert!</span> Change a few things up and try submitting again.
+  <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+  <span class="font-medium">Dark alert!</span>
+  Change a few things up and try submitting again.
 </Alert>
 ```
 
@@ -135,31 +155,35 @@ Use this example to add a border accent to the alert component instead of just a
 
 Use this example to show a list and a description inside an alert component.
 
-```svelte example class="flex flex-col gap-4" hideScript
+```svelte example class="flex flex-col gap-4"
 <script>
-  import {Alert} from "flowbite-svelte";
+  import { Alert, Li, List } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
-<Alert>
-  <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+
+<Alert class="!items-start">
+  <span slot="icon">
+    <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+    <span class="sr-only">Info</span>
   </span>
-  <span class="sr-only">Info</span>
-  <span class="font-medium">Ensure that these requirements are met:</span>
-  <ul slot="extra" class="mt-0 ml-8 list-disc list-inside">
+  <p class="font-medium">Ensure that these requirements are met:</p>
+  <ul class="mt-1.5 ml-4 list-disc list-inside">
     <li>At least 10 characters (and up to 100 characters)</li>
     <li>At least one lowercase character</li>
     <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
   </ul>
 </Alert>
-<Alert color="red">
-  <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+<Alert color="blue" class="!items-start">
+  <span slot="icon">
+    <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+    <span class="sr-only">Info</span>
   </span>
-  <span class="sr-only">Info</span>
-  <span class="font-medium">Ensure that these requirements are met:</span>
-  <ul slot="extra" class="mt-0 ml-8 list-disc list-inside">
-    <li>At least 10 characters (and up to 100 characters)</li>
-    <li>At least one lowercase character</li>
-    <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
-  </ul>
+  <p class="font-medium">Ensure that these requirements are met:</p>
+  <List class="mt-1.5 ml-4">
+    <Li>At least 10 characters (and up to 100 characters)</Li>
+    <Li>At least one lowercase character</Li>
+    <Li>Inclusion of at least one special character, e.g., ! @ # ?</Li>
+  </List>
 </Alert>
 ```
 
@@ -167,34 +191,49 @@ Use this example to show a list and a description inside an alert component.
 
 Use the following alert elements that are also dismissable.
 
-```svelte example class="flex flex-col gap-4" hideScript
+As `Alert` inhertits from the `Frame` component you can attach the `transition` and `params` prop to control the dissimal animation. By default `fade` svelte function is used. See the example below.
+
+You can use `slot="close"` to override the default close button. That slot exposes `close` function that makes the alert dismissed when triggered. See the last example.
+
+```svelte example class="flex flex-col gap-4"
 <script>
-  import {Alert} from "flowbite-svelte";
+  import { Alert, Button } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
+  import { fly } from 'svelte/transition';
 </script>
+
 <Alert dismissable>
-    <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-    </span>
-    A simple info alert with an <a href="/" class="font-semibold underline hover:text-blue-800 dark:hover:text-blue-900">example link</a>. Give it a click if you like.
-  </Alert>
-  <Alert color="red" dismissable>
-    <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-    </span>
-    A simple info alert with an <a href="/" class="font-semibold underline hover:text-red-800 dark:hover:text-red-900">example link</a>. Give it a click if you like.
-  </Alert>
-  <Alert color="green" dismissable>
-    <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-    </span>
-    A simple info alert with an <a href="/" class="font-semibold underline hover:text-green-800 dark:hover:text-green-900">example link</a>. Give it a click if you like.
-  </Alert>
-  <Alert color="yellow" dismissable>
-    <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-    </span>
-    A simple info alert with an <a href="/" class="font-semibold underline hover:text-yellow-800 dark:hover:text-yellow-900">example link</a>. Give it a click if you like.
-  </Alert>
-  <Alert color="dark" dismissable>
-    <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-    </span>
-    A simple info alert with an <a href="/" class="font-semibold underline hover:text-gray-800 dark:hover:text-white">example link</a>. Give it a click if you like.
+  <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+  A simple default alert with an
+  <a href="/" class="font-semibold underline hover:text-blue-800 dark:hover:text-blue-900">example link</a>
+  . Give it a click if you like.
+</Alert>
+<Alert color="blue" dismissable>
+  <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+  A simple info alert with an
+  <a href="/" class="font-semibold underline hover:text-blue-800 dark:hover:text-blue-900">example link</a>
+  . Give it a click if you like.
+</Alert>
+<Alert color="red" dismissable>
+  <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+  A simple info alert with an
+  <a href="/" class="font-semibold underline hover:text-red-800 dark:hover:text-red-900">example link</a>
+  . Give it a click if you like.
+</Alert>
+<Alert color="green" dismissable>
+  <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+  A simple info alert with an
+  <a href="/" class="font-semibold underline hover:text-green-800 dark:hover:text-green-900">example link</a>
+  . Give it a click if you like.
+</Alert>
+<Alert color="yellow" dismissable transition={fly} params={{ x: 200 }}>
+  <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+  An alert with non default animation - fly away.
+</Alert>
+<Alert color="dark" dismissable>
+  <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+  An alert with the custom dismissal button.
+  <Button slot="close-button" size="xs" let:close on:click={close} class="ml-auto">Dissmiss</Button>
 </Alert>
 ```
 
@@ -202,29 +241,36 @@ Use the following alert elements that are also dismissable.
 
 Use the following alert components with a border accent as an alternative style.
 
-```svelte example class="flex flex-col gap-4" hideScript
+```svelte example class="flex flex-col gap-4"
 <script>
-  import {Alert} from "flowbite-svelte";
+  import { Alert } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
-<Alert accent>
-  <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg></span>
-  <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
+
+<Alert rounded={false} class="border-t-4">
+  <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+  <span class="font-medium">Info alert!</span>
+  Change a few things up and try submitting again.
 </Alert>
-<Alert color="red" accent>
-  <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg></span>
-  <span class="font-medium">Danger alert!</span> Change a few things up and try submitting again.
+<Alert color="red" rounded={false} class="border-t-4">
+  <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+  <span class="font-medium">Danger alert!</span>
+  Change a few things up and try submitting again.
 </Alert>
-<Alert color="green" accent>
-  <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg></span>
-  <span class="font-medium">Success alert!</span> Change a few things up and try submitting again.
+<Alert color="green" rounded={false} class="border-t-4">
+  <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+  <span class="font-medium">Success alert!</span>
+  Change a few things up and try submitting again.
 </Alert>
-<Alert color="yellow" accent>
-  <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg></span>
-  <span class="font-medium">Warning alert!</span> Change a few things up and try submitting again.
+<Alert color="yellow" rounded={false} class="border-t-4">
+  <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+  <span class="font-medium">Warning alert!</span>
+  Change a few things up and try submitting again.
 </Alert>
-<Alert color="dark" accent>
-  <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg></span>
-  <span class="font-medium">Dark alert!</span> Change a few things up and try submitting again.
+<Alert color="dark" rounded={false} class="border-t-4 flex-row-reverse">
+  <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+  <span class="font-medium">Dark alert!</span>
+  Change a few things up and try submitting again.
 </Alert>
 ```
 
@@ -232,41 +278,32 @@ Use the following alert components with a border accent as an alternative style.
 
 The following alert components can be used if you wish to disclose more information inside the element.
 
-```svelte example class="flex flex-col gap-4" hideScript
+```svelte example class="flex flex-col gap-4"
 <script>
-  import {Alert, Button} from "flowbite-svelte";
+  import { Alert, Button } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
-<Alert color="blue">
-  <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg></span>
-  <span class="text-lg font-medium">This is a info alert</span>
-  <div slot="extra">
-    <div class="mt-2 mb-4 text-sm">More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</div>
-    <div class="flex gap-2">
-      <Button size="xs"><svg aria-hidden="true" class="-ml-0.5 mr-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg>View more</Button>
-      <Button size="xs" outline color="blue" class="dark:!text-blue-800">Go to Home</Button>
-    </div>
+
+<Alert>
+  <div class="flex items-center gap-3">
+    <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+    <span class="text-lg font-medium">This is a info alert</span>
   </div>
-</Alert>
-<Alert color="red">
-  <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg></span>
-  <span class="text-lg font-medium">This is a info alert</span>
-  <div slot="extra">
-    <div class="mt-2 mb-4 text-sm">More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</div>
-    <div class="flex gap-2">
-      <Button size="xs" color="none" class="bg-red-700 dark:bg-red-800 text-white dark:text-white"><svg aria-hidden="true" class="-ml-0.5 mr-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg>View more</Button>
-      <Button size="xs" outline color="red" class="dark:text-red-700">Go to Home</Button>
-    </div>
+  <p class="mt-2 mb-4 text-sm">More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+  <div class="flex gap-2">
+    <Button size="xs"><Icon name="eye-solid" class="w-4 h-4 mr-2" />View more</Button>
+    <Button size="xs" outline class="dark:!text-primary-800">Go to Home</Button>
   </div>
 </Alert>
 <Alert color="green">
-  <span slot="icon"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg></span>
-  <span class="text-lg font-medium">This is a info alert</span>
-  <div slot="extra">
-    <div class="mt-2 mb-4 text-sm">More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</div>
-    <div class="flex gap-2">
-      <Button size="xs" color="green"><svg aria-hidden="true" class="-ml-0.5 mr-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg>View more</Button>
-      <Button size="xs" outline color="green" class="dark:text-green-800">Go to Home</Button>
-    </div>
+  <div class="flex items-center gap-3">
+    <Icon name="info-circle-solid" slot="icon" class="w-4 h-4" />
+    <span class="text-lg font-medium">This is a info alert</span>
+  </div>
+  <p class="mt-2 mb-4 text-sm">More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+  <div class="flex gap-2">
+    <Button size="xs" color="green"><Icon name="eye-solid" class="w-4 h-4 mr-2" />View more</Button>
+    <Button size="xs" outline color="green" class="dark:text-green-800">Go to Home</Button>
   </div>
 </Alert>
 ```
@@ -277,23 +314,22 @@ Use `color='none'` to disable coloring. Then use `class` to add your custom colo
 
 ```svelte example class="flex flex-col gap-4" hideScript
 <script>
-  import {Alert} from "flowbite-svelte";
+  import { Alert } from 'flowbite-svelte';
 </script>
-<Alert color='none' class='bg-sky-500 text-pink-700'>
-  Your content
-</Alert>
+
+<Alert color="none" class="bg-sky-500 text-white">Your content</Alert>
 ```
 
 ## Events
 
 Use the `close` event with `dismissable` prop.
 
-```svelte example class="flex flex-col gap-4" hideScript
+```svelte example class="flex flex-col gap-4"
 <script>
-  import {Alert} from "flowbite-svelte";
-  const closeAlert = ()=>{
-    alert('Clicked closeAlert.')
-  }
+  import { Alert } from 'flowbite-svelte';
+  const closeAlert = () => {
+    alert('Clicked closeAlert.');
+  };
 </script>
 
 <Alert dismissable on:close={closeAlert}>Close me</Alert>
@@ -303,7 +339,9 @@ Use the `close` event with `dismissable` prop.
 
 ### Alert
 
-The component has the following props, type, and default values. See <A href="/docs/pages/typescript">types page</A> for type information.
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
+
+- Use the `class` prop to overwrite `defaultClass`.
 
 <TableProp>
 <TableDefaultRow items={alertProps} rowState='hover' />
@@ -311,7 +349,7 @@ The component has the following props, type, and default values. See <A href="/d
 
 ### Frame
 
-The component inherits the following props, type, and default values from `Frame`. See <A href="/docs/pages/typescript">types page</A> for type information.
+The component inherits the following props, type, and default values from `Frame`. See [types page](/docs/pages/typescript) for type information.
 
 <TableProp>
 <TableDefaultRow items={frameProps} rowState='hover' />
@@ -327,11 +365,6 @@ The component inherits the following props, type, and default values from `Frame
 
 <DocBadgeList items={events} />
 
-
 ## References
 
-<P>
-  <A href="https://flowbite.com/docs/components/alerts/" target="_blank" rel="noreferrer" class="link">
-  Flowbite Alerts
-  </A>
-</P>
+- [Flowbite Alerts](https://flowbite.com/docs/components/alerts/)

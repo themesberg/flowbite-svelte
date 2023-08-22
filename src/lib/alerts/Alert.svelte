@@ -1,59 +1,60 @@
 <script lang="ts">
-  import classNames from 'classnames';
-  import { createEventDispatcher } from 'svelte';
+  import { twMerge } from 'tailwind-merge';
+  import { createEventDispatcher, type ComponentProps } from 'svelte';
   import CloseButton from '../utils/CloseButton.svelte';
   import Frame from '../utils/Frame.svelte';
+  import { fade } from 'svelte/transition';
+  import type { Dismissable } from '$lib/types';
 
-  const dispatch = createEventDispatcher();
+  interface $$Props extends ComponentProps<Frame>, Dismissable {}
 
   export let dismissable: boolean = false;
-  export let accent: boolean = false;
+  export let defaultClass: string = 'p-4 gap-3 text-sm';
 
-  let hidden = false;
+  let open = true;
+  const dispatch = createEventDispatcher();
+  $: dispatch(open ? 'open' : 'close');
 
-  const handleHide = () => {
-    hidden = !hidden;
-    dispatch('close'); // preferred name
-  };
+  function close(e: MouseEvent) {
+    e.stopPropagation();
+    open = false;
+  }
 
   let divClass: string;
-  $: divClass = classNames(
-    'p-4 text-sm',
-    accent && 'border-t-4 ',
-    hidden && 'hidden',
-    $$props.class
-  );
+  $: divClass = twMerge(defaultClass, ($$slots.icon || dismissable) && 'flex items-center', $$props.class);
 
   $: {
     // set default values
-    $$restProps.color = $$restProps.color ?? 'blue';
-    $$restProps.rounded = $$restProps.rounded ?? !accent;
+    $$restProps.color = $$restProps.color ?? 'primary';
+    $$restProps.rounded = $$restProps.rounded ?? true;
+    if (dismissable) $$restProps.transition = $$restProps.transition ?? fade;
   }
 </script>
 
-<Frame {...$$restProps} class={divClass} role="alert">
-  <div class="flex items-center">
+{#if open}
+  <Frame {...$$restProps} class={divClass} role="alert">
     {#if $$slots.icon}
       <slot name="icon" />
     {/if}
-    <div class:ml-3={$$slots.icon}>
+
+    {#if $$slots.icon || dismissable}
+      <div><slot /></div>
+    {:else}
       <slot />
-    </div>
+    {/if}
 
     {#if dismissable}
-      <CloseButton
-        class="-mx-1.5 -my-1.5"
-        color={$$restProps.color}
-        on:click={handleHide}
-        on:click
-        on:change
-        on:keydown
-        on:keyup
-        on:focus
-        on:blur
-        on:mouseenter
-        on:mouseleave />
+      <slot name="close-button" {close}>
+        <CloseButton class="-my-1.5 dark:hover:bg-gray-700" color={$$restProps.color} on:click={close} on:click on:change on:keydown on:keyup on:focus on:blur on:mouseenter on:mouseleave />
+      </slot>
     {/if}
-  </div>
-  <slot name="extra" />
-</Frame>
+  </Frame>
+{/if}
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let dismissable: boolean = false;
+@prop export let defaultClass: string = 'p-4 gap-3 text-sm';
+-->

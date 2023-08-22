@@ -1,27 +1,23 @@
 <script lang="ts">
-  import { setContext } from 'svelte';
+  import type { ToolbarColorType } from '../types';
+  import { setContext, type ComponentProps } from 'svelte';
   import { writable } from 'svelte/store';
-  import classNames from 'classnames';
+  import { twMerge, twJoin } from 'tailwind-merge';
   import Frame from '$lib/utils/Frame.svelte';
+
+  interface $$Props extends ComponentProps<Frame> {
+    color: 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'dark' | 'none';
+    embedded: boolean;
+  }
 
   const separators = writable(false);
   setContext('toolbar', separators);
 
-  export let color:
-    | 'gray'
-    | 'red'
-    | 'yellow'
-    | 'green'
-    | 'indigo'
-    | 'purple'
-    | 'pink'
-    | 'blue'
-    | 'dark'
-    | 'none' = 'dark';
+  export let color: ToolbarColorType = 'dark';
   export let embedded: boolean = false;
 
   let divClass: string;
-  $: divClass = classNames('flex justify-between items-center', embedded || 'p-2', $$props.class);
+  $: divClass = twMerge('flex justify-between items-center', embedded || 'p-2', $$props.class);
 
   const divideColors = {
     gray: 'divide-gray-400 dark:divide-gray-700',
@@ -37,12 +33,20 @@
   };
 
   let separatorsClass: string;
-  $: separatorsClass = classNames($separators && 'sm:divide-x', divideColors[color]);
+  $: separatorsClass = twJoin($separators && 'sm:divide-x', divideColors[color]);
 </script>
 
-<Frame class={divClass} color={embedded ? 'none' : color} rounded={!embedded}>
+<Frame {...$$restProps} class={divClass} color={embedded ? 'none' : color} rounded={!embedded}>
   <div class="flex flex-wrap items-center {separatorsClass}">
     <slot />
   </div>
   <slot name="end" />
 </Frame>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let color: ToolbarColorType = 'dark';
+@prop export let embedded: boolean = false;
+-->

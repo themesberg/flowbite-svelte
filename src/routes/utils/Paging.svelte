@@ -13,7 +13,8 @@
 
   const components = Object.values(data.posts)
     .flatMap(identity)
-    .filter((x) => x.meta.dir === data.dir)
+    // .filter((x) => x.meta.dir === data.dir)
+    .filter((x) => x.meta && x.meta.dir === data.dir)
     .map(({ path, meta }) => ({ path, name: meta.component_title }));
 
   const index = components.findIndex((x) => x.path === '/' + slug);
@@ -32,9 +33,7 @@
     <div class="flex flex-row justify-between gap-2.5 self-stretch">
       {#if index > 0}
         {@const { name, href } = sibling(false)}
-        <PaginationItem
-          {href}
-          class="flex items-center gap-2.5  hover:text-primary-700  dark:hover:text-primary-700">
+        <PaginationItem {href} class="flex items-center gap-2.5  hover:text-primary-700  dark:hover:text-primary-700">
           <ArrowLeft />
           {name}
         </PaginationItem>
@@ -46,9 +45,7 @@
       </div>
       {#if index < components.length - 1}
         {@const { name, href } = sibling(true)}
-        <PaginationItem
-          {href}
-          class="flex items-center gap-2.5 hover:text-primary-700 dark: dark:hover:text-primary-700">
+        <PaginationItem {href} class="flex items-center gap-2.5 hover:text-primary-700 dark: dark:hover:text-primary-700">
           {name}
           <ArrowRight />
         </PaginationItem>

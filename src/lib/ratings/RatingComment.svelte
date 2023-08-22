@@ -1,6 +1,6 @@
 <script lang="ts">
   import Button from '../buttons/Button.svelte';
-  import Star from './Star.svelte';
+  import Rating from './Rating.svelte';
   // default is floor
   export let ceil: boolean = false;
   export let helpfullink: string = '';
@@ -32,22 +32,18 @@
     <div class="space-y-1 font-medium dark:text-white">
       <p>
         {comment.user.name}
-        <time datetime="2014-08-16 19:00" class="block text-sm text-gray-500 dark:text-gray-400"
-          >{comment.user.joined}</time>
+        <time datetime="2014-08-16 19:00" class="block text-sm text-gray-500 dark:text-gray-400">
+          {comment.user.joined}
+        </time>
       </p>
     </div>
   </div>
   <div class="flex items-center mb-1">
-    {#each Array(roundedRating) as _}
-      <slot name="ratingUp">
-        <Star variation="solid" size="24" class="text-yellow-300 dark:text-yellow-200" />
-      </slot>
-    {/each}
-    {#each Array(grayStars) as _}
-      <slot name="ratingDown">
-        <Star size="24" class="px-0.5 text-gray-300 dark:text-gray-500" />
-      </slot>
-    {/each}
+    <Rating total={comment.total} rating={comment.rating}>
+      <p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">
+        {comment.rating} out of {comment.total}
+      </p>
+    </Rating>
     {#if comment.heading}
       <h3 class="ml-2 text-sm font-semibold text-gray-900 dark:text-white">
         {comment.heading}
@@ -70,12 +66,20 @@
           <Button size="xs" href="/" color="dark">Helpful</Button>
         {/if}
         {#if abuselink}
-          <a
-            href={abuselink}
-            class="pl-4 text-sm font-medium text-blue-600 hover:underline dark:text-blue-500"
-            >Report abuse</a>
+          <a href={abuselink} class="pl-4 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"> Report abuse </a>
         {/if}
       </div>
     {/if}
   </aside>
 </article>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let ceil: boolean = false;
+@prop export let helpfullink: string = '';
+@prop export let abuselink: string = '';
+@prop export let comment: {
+    id: string;
+-->

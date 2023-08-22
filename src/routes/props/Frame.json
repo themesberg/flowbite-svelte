@@ -1,1 +1,15 @@
-{"props":[["tag","string ","'div'"],["color","| 'gray'     | 'red'     | 'yellow'     | 'green'     | 'indigo'     | 'default'     | 'purple'     | 'pink'     | 'blue'     | 'light'     | 'dark'     | 'dropdown'     | 'navbar'     | 'navbarUl'     | 'form'     | 'none' ","'default'"],["rounded","boolean ","false"],["border","boolean ","false"],["shadow","boolean ","false"],["transition","TransitionFunc | undefined ","undefined"],["params","object ","{}"],["node","HTMLElement | undefined ","undefined"],["use","Action ","noop"],["   options ","object"," {}"]]}
+{
+  "props": [
+    ["tag", "string", "$$restProps.href ? 'a' : 'div'"],
+    ["color", "FrameColor", "'default'"],
+    ["rounded", "boolean", "false"],
+    ["border", "boolean", "false"],
+    ["shadow", "boolean", "false"],
+    ["transition", "TransitionFunc", "null_transition"],
+    ["params", "object", "{}"],
+    ["node", "HTMLElement | undefined", "undefined"],
+    ["use", "Action<HTMLElement, any>", "noop"],
+    ["options", "string", "{}"],
+    ["role", "string | undefined", "undefined"]
+  ]
+}

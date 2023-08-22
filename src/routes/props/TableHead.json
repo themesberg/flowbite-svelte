@@ -1,1 +1,6 @@
-{"props":[["theadClass","string ","'text-xs uppercase'"],["defaultRow","boolean ","true"]]}
+{
+  "props": [
+    ["theadClass", "string", "'text-xs uppercase'"],
+    ["defaultRow", "boolean", "true"]
+  ]
+}

@@ -1,1 +1,11 @@
-{"props":[["id","string ","generateId()"],["style","'filled' | 'outlined' | 'standard' ","'standard'"],["type","InputType ","'text'"],["size","'small' | 'default' ","'default'"],["color","'base' | 'green' | 'red' ","'base'"],["value","string ","''"],["label","string ","''"]]}
+{
+  "props": [
+    ["id", "string", "generateId()"],
+    ["style", "'filled' | 'outlined' | 'standard'", "'standard'"],
+    ["type", "InputType", "'text'"],
+    ["size", "'small' | 'default'", "'default'"],
+    ["color", "'base' | 'green' | 'red'", "'base'"],
+    ["value", "any", "undefined"],
+    ["label", "string", "''"]
+  ]
+}

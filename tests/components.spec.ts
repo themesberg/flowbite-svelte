@@ -66,6 +66,12 @@ test('Carousel page should have h1', async ({ page }) => {
   expect(await page.textContent('h1')).toBe('Svelte Carousel - Flowbite');
 });
 
+// Charts
+test('Charts page should have h1', async ({ page }) => {
+  await page.goto('/docs/components/charts');
+  expect(await page.textContent('h1')).toBe('Svelte Charts - Flowbite');
+});
+
 // Darkmode
 test('Dark mode page should have h1', async ({ page }) => {
   await page.goto('/docs/components/darkmode');
@@ -76,6 +82,12 @@ test('Dark mode page should have h1', async ({ page }) => {
 test('Datepicker page should have h1', async ({ page }) => {
   await page.goto('/docs/experimental/datepicker');
   expect(await page.textContent('h1')).toBe('Svelte Datepicker - Flowbite');
+});
+
+// DeviceMockup
+test('DeviceMockup page should have h1', async ({ page }) => {
+  await page.goto('/docs/components/device-mockups');
+  expect(await page.textContent('h1')).toBe('Svelte Device Mockups - Flowbite');
 });
 
 // Dropdown

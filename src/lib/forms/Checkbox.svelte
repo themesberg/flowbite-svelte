@@ -1,17 +1,18 @@
 <script lang="ts">
+  import { twMerge } from 'tailwind-merge';
   import { getContext } from 'svelte';
   import type { FormColorType } from '../types';
   import { labelClass, inputClass } from './Radio.svelte';
   import Label from './Label.svelte';
 
   // properties forwarding
-  export let color: FormColorType = 'blue';
+  export let color: FormColorType = 'primary';
   export let custom: boolean = false;
   export let inline: boolean = false;
-
   export let group: (string | number)[] = [];
-  export let value: string | number = '';
+  export let value: string | number = 'on';
   export let checked: boolean | undefined = undefined;
+  export let spacing: string = 'mr-2';
 
   // tinted if put in component having its own background
   let background: boolean = getContext('background');
@@ -50,24 +51,20 @@
   }
 </script>
 
-<Label class={labelClass(inline, $$props.class)} show={!!$$slots.default}>
-  <input
-    use:init={group}
-    type="checkbox"
-    bind:checked
-    on:keyup
-    on:keydown
-    on:keypress
-    on:focus
-    on:blur
-    on:click
-    on:mouseover
-    on:mouseenter
-    on:mouseleave
-    on:paste
-    on:change={onChange}
-    on:change
-    {value}
-    {...$$restProps}
-    class={inputClass(custom, color, true, background, $$slots.default || $$props.class)} /><slot />
+<Label class={labelClass(inline, $$props.class)} show={$$slots.default}>
+  <input use:init={group} type="checkbox" bind:checked on:keyup on:keydown on:keypress on:focus on:blur on:click on:mouseover on:mouseenter on:mouseleave on:paste on:change={onChange} on:change {value} {...$$restProps} class={twMerge(spacing, inputClass(custom, color, true, background, $$slots.default || $$props.class))} />
+  <slot />
 </Label>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let color: FormColorType = 'primary';
+@prop export let custom: boolean = false;
+@prop export let inline: boolean = false;
+@prop export let group: (string | number)[] = [];
+@prop export let value: string | number = 'on';
+@prop export let checked: boolean | undefined = undefined;
+@prop export let spacing: string = 'mr-2';
+-->

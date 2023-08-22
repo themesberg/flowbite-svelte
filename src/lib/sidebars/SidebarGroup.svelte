@@ -1,15 +1,24 @@
 <script lang="ts">
-	import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge';
 
-	export let ulClass: string = 'space-y-2';
-	export let borderClass: string = 'pt-4 mt-4 border-t border-gray-200 dark:border-gray-700';
-	export let border: boolean = false;
+  export let ulClass: string = 'space-y-2';
+  export let borderClass: string = 'pt-4 mt-4 border-t border-gray-200 dark:border-gray-700';
+  export let border: boolean = false;
 
-	if (border) {
-		ulClass += ' ' + borderClass;
-	}
+  if (border) {
+    ulClass += ' ' + borderClass;
+  }
 </script>
 
-<ul {...$$restProps} class={classNames(ulClass, $$props.class)}>
-	<slot />
+<ul {...$$restProps} class={twMerge(ulClass, $$props.class)}>
+  <slot />
 </ul>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let ulClass: string = 'space-y-2';
+@prop export let borderClass: string = 'pt-4 mt-4 border-t border-gray-200 dark:border-gray-700';
+@prop export let border: boolean = false;
+-->

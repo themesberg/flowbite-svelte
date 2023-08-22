@@ -1,18 +1,16 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge';
   import type { SelectOptionType } from '../types';
 
   export let items: SelectOptionType[] = [];
-  export let value: string | number;
+  export let value: any = undefined;
   export let placeholder: string = 'Choose option ...';
   export let underline: boolean = false;
   export let size: 'sm' | 'md' | 'lg' = 'md';
 
-  export let defaultClass: string =
-    'text-gray-900 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
+  export let defaultClass: string = 'text-gray-900 bg-gray-50 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500';
 
-  export let underlineClass: string =
-    'text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer';
+  export let underlineClass: string = 'text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer';
 
   const common = 'block w-full';
   const sizes = {
@@ -22,13 +20,7 @@
   };
 
   let selectClass: string;
-  $: selectClass = classNames(
-    common,
-    underline ? underlineClass : defaultClass,
-    sizes[size],
-    underline && '!px-0',
-    $$restProps.class
-  );
+  $: selectClass = twMerge(common, underline ? underlineClass : defaultClass, sizes[size], underline && '!px-0', $$props.class);
 </script>
 
 <select {...$$restProps} bind:value class={selectClass} on:change on:contextmenu on:input>
@@ -42,3 +34,16 @@
     <slot />
   {/each}
 </select>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let items: SelectOptionType[] = [];
+@prop export let value: any = undefined;
+@prop export let placeholder: string = 'Choose option ...';
+@prop export let underline: boolean = false;
+@prop export let size: 'sm' | 'md' | 'lg' = 'md';
+@prop export let defaultClass: string = 'text-gray-900 bg-gray-50 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500';
+@prop export let underlineClass: string = 'text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer';
+-->

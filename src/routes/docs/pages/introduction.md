@@ -1,12 +1,11 @@
 ---
 layout: componentLayout
-breadcrumb_title: Svelte UI Components - Flowbite
+breadcrumb_title: Svelte UI Components - Flowbite Svelte
 title: Flowbite Svelte - UI Component Library
 component_title: Introduction
 dir: Pages
 description: Learn more about the free and open-source Flowbite Svelte UI components and start building modern web applications using native Svelte components based on Tailwind CSS
 ---
-
 
 [Flowbite Svelte](https://github.com/themesberg/flowbite-svelte) is a free and open-source UI component library based on the core Flowbite components and built with native Svelte components and interactivity handling.
 
@@ -56,34 +55,48 @@ npm run dev
 Run the following command to install all Flowbite dependencies and libraries:
 
 ```sh
-npm i flowbite flowbite-svelte classnames @popperjs/core
+npm i -D flowbite-svelte
 ```
 
 ### Configuration
 
 Update the `tailwind.config.cjs` file from your root project folder to let the Tailwind CSS compiler know where to look for the utility classes and also set up the Flowbite plugin.
 
+In the provided code below, you can customize the primary color by modifying the appropriate color values. To change the primary color, simply uncomment the desired color object and modify the corresponding color values as needed.
+
 ```js
 const config = {
-  content: [
-    "./src/**/*.{html,js,svelte,ts}",
-    "./node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}",
-  ],
+  content: ['./src/**/*.{html,js,svelte,ts}', './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'],
+
+  plugins: [require('flowbite/plugin')],
+
+  darkMode: 'class',
 
   theme: {
-    extend: {},
-  },
-
-  plugins: [
-    require('flowbite/plugin')
-  ],
-  darkMode: 'class',
+    extend: {
+      colors: {
+        // flowbite-svelte
+        primary: {
+          50: '#FFF5F2',
+          100: '#FFF1EE',
+          200: '#FFE4DE',
+          300: '#FFD5CC',
+          400: '#FFBCAD',
+          500: '#FE795D',
+          600: '#EF562F',
+          700: '#EB4F27',
+          800: '#CC4522',
+          900: '#A5371B'
+        }
+      }
+    }
+  }
 };
 
 module.exports = config;
 ```
 
-That's it! Now you should be able to work with the Flowbite Svelte library and import components such as the navbar, dropdown, modal, and more.
+Now you should be able to work with the Flowbite Svelte library and import components such as the navbar, dropdown, modal, and more.
 
 ## Svelte
 
@@ -112,4 +125,3 @@ Check out [contributing guide](/docs/pages/how-to-contribute) to learn how you c
 ## License
 
 Flowbite Svelte is a free and open-source UI component library licensed under the [MIT License](https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE).
-

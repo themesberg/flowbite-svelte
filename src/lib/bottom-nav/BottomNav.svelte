@@ -1,13 +1,33 @@
+<script lang="ts" context="module">
+  export type BottomNavType = {
+    activeClass: string;
+  };
+</script>
+
 <script lang="ts">
   import { setContext } from 'svelte';
-  import classNames from 'classnames';
-  export let position: 'static'|'fixed'|'absolute'|'relative'|'sticky' = 'fixed';
-  export let navType: 'default'|'border'|'application'|'pagination'|'group'|'card'|'meeting'|'video'|'custom'='default';
+  import { writable } from 'svelte/store';
+  import { twMerge } from 'tailwind-merge';
 
-  export let outerDefault: string = 'w-full z-50 border-gray-200 dark:bg-gray-700 dark:border-gray-600';
-  export let innerDefault: string = 'grid h-full max-w-lg mx-auto';
+  export let activeUrl: string = '';
+  export let position: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky' = 'fixed';
+  export let navType: 'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video' = 'default';
+  export let outerClass: string = 'w-full z-50 border-gray-200 dark:bg-gray-700 dark:border-gray-600';
+  export let innerClass: string = 'grid h-full max-w-lg mx-auto';
+  export let activeClass: string = 'text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900';
+  // export let activeUrl: string = '';
+  let activeCls = '';
 
+  const activeUrlStore = writable('');
+
+  activeCls = twMerge(activeClass, $$props.classActive);
   setContext('navType', navType);
+  setContext<BottomNavType>('bottomNavType', { activeClass: activeCls });
+
+  $: {
+    activeUrlStore.set(activeUrl);
+  }
+  setContext('activeUrl', activeUrlStore);
 
   const outerDivClasses = {
     default: 'bottom-0 left-0 h-16 bg-white border-t',
@@ -17,9 +37,8 @@
     group: 'bottom-0 -translate-x-1/2 bg-white border-t left-1/2',
     card: 'bottom-0 left-0 h-16 bg-white border-t',
     meeting: 'bottom-0 left-0 grid h-16 grid-cols-1 px-8 bg-white border-t md:grid-cols-3',
-    video: 'bottom-0 left-0 grid h-24 grid-cols-1 px-8 bg-white border-t md:grid-cols-3',
-    custom: ''
-  }
+    video: 'bottom-0 left-0 grid h-24 grid-cols-1 px-8 bg-white border-t md:grid-cols-3'
+  };
 
   const innerDivClasses = {
     default: '',
@@ -29,27 +48,29 @@
     group: '',
     card: '',
     meeting: 'flex items-center justify-center mx-auto',
-    video: 'flex items-center w-full',
-    custom: ''
-  }
+    video: 'flex items-center w-full'
+  };
 
-  $: outerClass = classNames(
-    position,
-    outerDefault,
-    outerDivClasses[navType],
-    $$props.outerDiv
-  )
-  $: innerClass = classNames(
-    innerDefault,
-    innerDivClasses[navType],
-    $$props.innerDiv
-  )
+  $: outerCls = twMerge(position, outerClass, outerDivClasses[navType], $$props.classOuter);
+  $: innerCls = twMerge(innerClass, innerDivClasses[navType], $$props.classInner);
 </script>
 
-
-<div class="{outerClass}" {...$$restProps} >
+<div {...$$restProps} class={outerCls}>
   <slot name="header" />
-  <div class="{innerClass}">
-      <slot />
+  <div class={innerCls}>
+    <slot />
   </div>
 </div>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let activeUrl: string = '';
+@prop export let position: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky' = 'fixed';
+@prop export let navType: 'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video' = 'default';
+@prop export let outerClass: string = 'w-full z-50 border-gray-200 dark:bg-gray-700 dark:border-gray-600';
+@prop export let innerClass: string = 'grid h-full max-w-lg mx-auto';
+@prop export let activeClass: string = 'text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900';
+@prop export let activeUrl: string = '';
+-->

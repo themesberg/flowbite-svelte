@@ -1,8 +1,9 @@
 <script lang="ts">
-  import classNames from 'classnames';
+  import { twMerge } from 'tailwind-merge';
   import type { drawerTransitionParamTypes, drawerTransitionTypes } from '../types';
   import { fly, slide, blur, fade } from 'svelte/transition';
   import { clickOutside } from '../utils/clickOutside';
+
   export let activateClickOutside: boolean = true;
   export let hidden: boolean = true;
   export let position: 'fixed' | 'absolute' = 'fixed';
@@ -17,7 +18,6 @@
   export let placement: 'left' | 'right' | 'top' | 'bottom' = 'left';
   export let id: string = 'drawer-example';
   export let divClass: string = 'overflow-y-auto z-50 p-4 bg-white dark:bg-gray-800';
-
   export let transitionParams: drawerTransitionParamTypes = {};
   export let transitionType: drawerTransitionTypes = 'fly';
 
@@ -45,11 +45,11 @@
     hidden = !hidden;
   };
 
-  let backdropDivClass = classNames(
-    'fixed top-0 left-0 z-50 w-full h-full',
-    backdrop && bgColor,
-    backdrop && bgOpacity
-  );
+  let backdropDivClass = twMerge('fixed top-0 left-0 z-50 w-full h-full', backdrop && bgColor, backdrop && bgOpacity);
+
+  function clickOutsideWrapper(node: HTMLElement, callback: () => void) {
+    return activateClickOutside ? clickOutside(node, callback) : undefined;
+  }
 </script>
 
 {#if !hidden}
@@ -58,28 +58,30 @@
   {:else if backdrop && !activateClickOutside}
     <div role="presentation" class={backdropDivClass} />
   {/if}
-  {#if activateClickOutside}
-    <div
-      use:clickOutside={() => !hidden && handleDrawer()}
-      {id}
-      {...$$restProps}
-      class={classNames(divClass, width, position, placements[placement], $$props.class)}
-      transition:multiple={transitionParams}
-      tabindex="-1"
-      aria-controls={id}
-      aria-labelledby={id}>
-      <slot {hidden} />
-    </div>
-  {:else}
-    <div
-      {id}
-      {...$$restProps}
-      class={classNames(divClass, width, position, placements[placement], $$props.class)}
-      transition:multiple={transitionParams}
-      tabindex="-1"
-      aria-controls={id}
-      aria-labelledby={id}>
-      <slot {hidden} />
-    </div>
-  {/if}
+
+  <div use:clickOutsideWrapper={() => !hidden && handleDrawer()} {id} {...$$restProps} class={twMerge(divClass, width, position, placements[placement], $$props.class)} transition:multiple={transitionParams} tabindex="-1" aria-controls={id} aria-labelledby={id}>
+    <slot {hidden} />
+  </div>
 {/if}
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let activateClickOutside: boolean = true;
+@prop export let hidden: boolean = true;
+@prop export let position: 'fixed' | 'absolute' = 'fixed';
+@prop export let leftOffset: string = 'inset-y-0 left-0';
+@prop export let rightOffset: string = 'inset-y-0 right-0';
+@prop export let topOffset: string = 'inset-x-0 top-0';
+@prop export let bottomOffset: string = 'inset-x-0 bottom-0';
+@prop export let width: string = 'w-80';
+@prop export let backdrop: boolean = true;
+@prop export let bgColor: string = 'bg-gray-900';
+@prop export let bgOpacity: string = 'bg-opacity-75';
+@prop export let placement: 'left' | 'right' | 'top' | 'bottom' = 'left';
+@prop export let id: string = 'drawer-example';
+@prop export let divClass: string = 'overflow-y-auto z-50 p-4 bg-white dark:bg-gray-800';
+@prop export let transitionParams: drawerTransitionParamTypes = {};
+@prop export let transitionType: drawerTransitionTypes = 'fly';
+-->

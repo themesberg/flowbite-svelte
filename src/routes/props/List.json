@@ -1,1 +1,7 @@
-{"props":[["tag","'ul' | 'ol' | 'dl' ","'ul'"],["list","'disc' | 'none' | 'decimal' ","'disc'"],["position","'inside' | 'outside' ","'inside'"],["color","string ","'text-gray-500 dark:text-gray-400'"],["olClass","string ","'list-decimal list-inside'"],["ulClass","string ","'max-w-md'"],["dlClass","string ","'max-w-md divide-y divide-gray-200  dark:divide-gray-700'"]]}
+{
+  "props": [
+    ["tag", "'ul' | 'ol' | 'dl'", "'ul'"],
+    ["list", "'disc' | 'none' | 'decimal' | undefined", "undefined"],
+    ["position", "'inside' | 'outside'", "'inside'"]
+  ]
+}

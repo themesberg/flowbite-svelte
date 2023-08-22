@@ -1,7 +1,7 @@
 ---
 layout: componentLayout
-breadcrumb_title: Svelte Compiler Speed - Flowbite
-title: Svelte Compiler Speed - Flowbite
+breadcrumb_title: Compiler Speed - Flowbite Svelte
+title: Compiler Speed - Flowbite Svelte
 component_title: Compiler Speed
 dir: Pages
 description: Learn how you can manage and improve the Svelte compilation speed when using the Flowbite Svelte library by checking out this tutorial
@@ -13,16 +13,17 @@ description: Learn how you can manage and improve the Svelte compilation speed w
 
 If your Svelte app only requires a few components, it's recommended that you import them directly. Doing so can help optimize compilation speed and improve performance by reducing the amount of code that needs to be processed during compilation. Since version 0.34.1, it's now possible to import individual components.
 
-```svelte example 
+```svelte example
 <script>
   // import Alert from 'flowbite-svelte/Alert.svelte'
   // TODO: correct that so the above works
-  import { Alert } from 'flowbite-svelte'
+  import { Alert } from 'flowbite-svelte';
 </script>
 
 <div class="p-8">
   <Alert>
-    <span class="font-medium">Info alert!</span> Change a few things up and try submitting again.
+    <span class="font-medium">Info alert!</span>
+    Change a few things up and try submitting again.
   </Alert>
 </div>
 ```

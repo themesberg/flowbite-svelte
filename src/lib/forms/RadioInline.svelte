@@ -1,3 +1,9 @@
 <div class="flex">
-	<slot />
+  <slot />
 </div>
+
+<!--
+  @component
+  [Go to ](https://flowbite-svelte.com/docs/components/)
+  
+-->

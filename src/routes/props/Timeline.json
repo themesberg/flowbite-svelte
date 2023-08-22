@@ -1,1 +1,1 @@
-{"props":[["customClass","string ","''"],["order","'default' | 'vertical' | 'horizontal' | 'activity' | 'group' | 'custom' ","'default'"]]}
+{ "props": [["order", "'default' | 'vertical' | 'horizontal' | 'activity' | 'group'", "'default'"]] }

@@ -1,1 +1,6 @@
-{"props":[["divClass","string ","'animate-pulse'"],["size","keyof Sizes ","'sm'"]]}
+{
+  "props": [
+    ["divClass", "string", "'animate-pulse'"],
+    ["size", "keyof Sizes", "'sm'"]
+  ]
+}
