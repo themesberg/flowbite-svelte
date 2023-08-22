@@ -4,17 +4,16 @@
   import { createEventDispatcher, type ComponentProps } from 'svelte';
   import CloseButton from '../utils/CloseButton.svelte';
   import focusTrap from '../utils/focusTrap';
-  import type { SizeType } from '$lib/types';
+  import type { Dismissable, SizeType } from '$lib/types';
   import type { ModalPlacementType } from '../types';
 
   // propagate props type from underlying Frame
-  interface $$Props extends ComponentProps<Frame> {
+  interface $$Props extends ComponentProps<Frame>, Dismissable {
     open?: boolean;
     title?: string;
     size?: SizeType;
     placement?: 'top-left' | 'top-center' | 'top-right' | 'center-left' | 'center' | 'center-right' | 'bottom-left' | 'bottom-center' | 'bottom-right';
     autoclose?: boolean;
-    permanent?: boolean;
     backdropClass?: string;
     defaultClass?: string;
     outsideclose?: boolean;
@@ -25,14 +24,14 @@
   export let size: SizeType = 'md';
   export let placement: ModalPlacementType = 'center';
   export let autoclose: boolean = false;
-  export let permanent: boolean = false;
+  export let dismissable: boolean = true;
   export let backdropClass: string = 'fixed inset-0 z-40 bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
   export let defaultClass: string = 'relative flex flex-col mx-auto';
   export let outsideclose: boolean = false;
   export let dialogClass: string = 'fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex';
 
   const dispatch = createEventDispatcher();
-  $: dispatch(open ? 'open' : 'hide');
+  $: dispatch(open ? 'open' : 'close');
 
   function prepareFocus(node: HTMLElement) {
     const walker = document.createTreeWalker(node, NodeFilter.SHOW_ELEMENT);
@@ -105,7 +104,7 @@
   let backdropCls: string = twMerge(backdropClass, $$props.classBackdrop);
 
   function handleKeys(e: KeyboardEvent) {
-    if (e.key === 'Escape' && !permanent) return hide(e);
+    if (e.key === 'Escape' && dismissable) return hide(e);
   }
 </script>
 
@@ -126,9 +125,9 @@
                 {title}
               </h3>
             </slot>
-            {#if !permanent}<CloseButton name="Close modal" on:click={hide} color={$$restProps.color} />{/if}
+            {#if dismissable}<CloseButton name="Close modal" on:click={hide} color={$$restProps.color} />{/if}
           </Frame>
-        {:else if !permanent}
+        {:else if dismissable}
           <CloseButton name="Close modal" class="absolute top-3 right-2.5" on:click={hide} color={$$restProps.color} />
         {/if}
         <!-- Modal body -->

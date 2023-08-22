@@ -245,12 +245,12 @@ A `dismiss` event will be dispatched during the dismissal, listen to it if neede
 <script>
   import { Badge } from 'flowbite-svelte';
 
-  function handleDismiss(event) {
+  function handleClose(event) {
     alert('Badge dismissed');
   }
 </script>
 
-<Badge dismissable large on:dismiss={handleDismiss}>Default</Badge>
+<Badge dismissable large on:close={handleClose}>Default</Badge>
 ```
 
 ## Props

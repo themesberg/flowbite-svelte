@@ -4,11 +4,11 @@
   import CloseButton from '../utils/CloseButton.svelte';
   import { fade } from 'svelte/transition';
   import Frame from '$lib/utils/Frame.svelte';
+  import type { Dismissable } from '$lib/types';
 
-  interface $$Props extends Omit<ComponentProps<Frame>, 'color'> {
+  interface $$Props extends Omit<ComponentProps<Frame>, 'color'>, Dismissable {
     color?: 'primary' | 'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'none';
     large?: boolean;
-    dismissable?: boolean;
   }
 
   export let color: 'primary' | 'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'none' = 'primary';
@@ -80,11 +80,11 @@
 
   let open = true;
   const dispatch = createEventDispatcher();
+  $: dispatch(open ? 'open' : 'close');
 
   const close = (e: MouseEvent) => {
     e.stopPropagation();
     open = false;
-    dispatch('dismiss');
   };
 </script>
 

@@ -4,22 +4,21 @@
   import CloseButton from '../utils/CloseButton.svelte';
   import Frame from '../utils/Frame.svelte';
   import { fade } from 'svelte/transition';
+  import type { Dismissable } from '$lib/types';
+
+  interface $$Props extends ComponentProps<Frame>, Dismissable {}
 
   export let dismissable: boolean = false;
   export let defaultClass: string = 'p-4 gap-3 text-sm';
 
-  const dispatch = createEventDispatcher();
-
-  interface $$Props extends ComponentProps<Frame> {
-    dismissable?: boolean;
-  }
-
   let open = true;
+  const dispatch = createEventDispatcher();
+  $: dispatch(open ? 'open' : 'close');
 
-  const close = () => {
+  function close(e: MouseEvent) {
+    e.stopPropagation();
     open = false;
-    dispatch('close'); // preferred name
-  };
+  }
 
   let divClass: string;
   $: divClass = twMerge(defaultClass, ($$slots.icon || dismissable) && 'flex items-center', $$props.class);

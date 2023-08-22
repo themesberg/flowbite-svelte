@@ -117,7 +117,7 @@ This component can be used to show simple messages and notifications without the
   import { Icon } from 'flowbite-svelte-icons';
 </script>
 
-<Toast simple contentClass="flex space-x-4 divide-x divide-gray-200 dark:divide-gray-700">
+<Toast dismissable={false} contentClass="flex space-x-4 divide-x divide-gray-200 dark:divide-gray-700">
   <Icon name="papper-plane-outline" class="w-5 h-5 text-primary-600 dark:text-primary-500 rotate-45" />
   <div class="pl-4 text-sm font-normal">Message sent successfully.</div>
 </Toast>
@@ -151,24 +151,24 @@ You can use any [icon components](/icons).
   import { slide } from 'svelte/transition';
   import { Icon } from 'flowbite-svelte-icons';
 
-  let show = true;
+  let open = true;
   let counter = 6;
 
   function trigger() {
-    show = true;
+    open = true;
     counter = 6;
     timeout();
   }
 
   function timeout() {
     if (--counter > 0) return setTimeout(timeout, 1000);
-    show = false;
+    open = false;
   }
 </script>
 
 <div class="flex gap-10">
   <Button on:click={trigger} class="my-3">Restart</Button>
-  <Toast simple transition={slide} bind:open={show}>
+  <Toast dismissable={false} transition={slide} bind:open>
     <Icon name="check-circle-solid" slot="icon" class="w-4 h-4" />
     Autohide in {counter}s.
   </Toast>
@@ -339,10 +339,10 @@ Use the position property to position these toast components relative to the mai
 </script>
 
 <div class="relative h-56">
-  <Toast simple position="top-left">Top left positioning.</Toast>
-  <Toast simple position="top-right">Top right positioning.</Toast>
-  <Toast simple position="bottom-left">Bottom left positioning.</Toast>
-  <Toast simple position="bottom-right">Bottom right positioning.</Toast>
+  <Toast dismissable={false} position="top-left">Top left positioning.</Toast>
+  <Toast dismissable={false} position="top-right">Top right positioning.</Toast>
+  <Toast dismissable={false} position="bottom-left">Bottom left positioning.</Toast>
+  <Toast dismissable={false} position="bottom-right">Bottom right positioning.</Toast>
 </div>
 ```
 
