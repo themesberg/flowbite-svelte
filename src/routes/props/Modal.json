@@ -5,7 +5,7 @@
     ["size", "SizeType", "'md'"],
     ["placement", "ModalPlacementType", "'center'"],
     ["autoclose", "boolean", "false"],
-    ["permanent", "boolean", "false"],
+    ["dismissable", "boolean", "true"],
     ["backdropClass", "string", "'fixed inset-0 z-40 bg-gray-900 bg-opacity-50 dark:bg-opacity-80'"],
     ["defaultClass", "string", "'relative flex flex-col mx-auto'"],
     ["outsideclose", "boolean", "false"],

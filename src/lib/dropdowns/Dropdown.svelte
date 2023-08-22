@@ -24,9 +24,8 @@
 
   setContext<DropdownType>('DropdownType', { activeClass: activeCls });
 
-  $: {
-    activeUrlStore.set(activeUrl);
-  }
+  $: activeUrlStore.set(activeUrl);
+
   setContext('activeUrl', activeUrlStore);
   // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Popper> {

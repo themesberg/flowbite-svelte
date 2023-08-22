@@ -1,13 +1,13 @@
 <script lang="ts">
-  import type { ComponentProps } from 'svelte';
+  import { createEventDispatcher, type ComponentProps } from 'svelte';
   import Frame from '../utils/Frame.svelte';
   import { twMerge } from 'tailwind-merge';
   import CloseButton from '../utils/CloseButton.svelte';
   import { fade } from 'svelte/transition';
+  import type { Dismissable } from '$lib/types';
 
   // propagate props type from underying Frame
-  interface $$Props extends ComponentProps<Frame> {
-    simple?: boolean;
+  interface $$Props extends ComponentProps<Frame>, Dismissable {
     color?: 'primary' | 'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'orange' | 'none';
     position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none';
     open?: boolean;
@@ -17,7 +17,7 @@
     contentClass?: string;
   }
 
-  export let simple: boolean = false;
+  export let dismissable: boolean = true;
   export let color: 'primary' | 'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'orange' | 'none' = 'primary';
   export let position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none' = 'none';
   export let open: boolean = true;
@@ -26,6 +26,9 @@
   export let contentClass: string = 'w-full text-sm font-normal';
   export let align: boolean = true;
 
+  const dispatch = createEventDispatcher();
+  $: dispatch(open ? 'open' : 'close');
+
   const positions = {
     'top-left': 'absolute top-5 left-5',
     'top-right': 'absolute top-5 right-5',
@@ -33,6 +36,11 @@
     'bottom-right': 'absolute bottom-5 right-5',
     none: ''
   };
+
+  function close(e: MouseEvent) {
+    e.stopPropagation();
+    open = false;
+  }
 
   let finalDivClass: string;
   $: finalDivClass = twMerge('flex', align ? 'items-center' : 'items-start', divClass, positions[position], $$props.class);
@@ -68,8 +76,10 @@
       <slot />
     </div>
 
-    {#if !simple}
-      <CloseButton class={clsBtnExtraClass} on:click={() => (open = false)} />
+    {#if dismissable}
+      <slot name="close-button" {close}>
+        <CloseButton class={clsBtnExtraClass} on:click={close} />
+      </slot>
     {/if}
   </Frame>
 {/if}
@@ -78,7 +88,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let simple: boolean = false;
+@prop export let dismissable: boolean = true;
 @prop export let color: 'primary' | 'gray' | 'red' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple' | 'orange' | 'none' = 'primary';
 @prop export let position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none' = 'none';
 @prop export let open: boolean = true;

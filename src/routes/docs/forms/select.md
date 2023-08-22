@@ -262,7 +262,7 @@ Remember to connect the `clear` slot's prop to trigger option removal.
 </script>
 
 <MultiSelect items={countries} bind:value={selected} let:item let:clear>
-  <Badge color={item.color} dismissable params={{ duration: 100 }} on:dismiss={clear}>
+  <Badge color={item.color} dismissable params={{ duration: 100 }} on:close={clear}>
     {item.name}
   </Badge>
 </MultiSelect>

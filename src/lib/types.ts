@@ -82,6 +82,10 @@ export interface drawerTransitionParamTypes {
   y?: number;
 }
 
+export interface Dismissable {
+  dismissable?: boolean;
+}
+
 export interface GroupTimelineType {
   title: string | HTMLElement;
   src: string;
