@@ -23,7 +23,7 @@ Flowbite includes two styles of breadcrumb elements, one that has a transparent 
 
 ```svelte example hideOutput
 <script>
-	import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
+  import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
 </script>
 ```
 
@@ -33,8 +33,9 @@ Use the following breadcrumb example to show the hierarchical structure of pages
 
 ```svelte example hideScript
 <script>
-	import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
+  import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
 </script>
+
 <Breadcrumb aria-label="Default breadcrumb example">
   <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
   <BreadcrumbItem href="/">Projects</BreadcrumbItem>
@@ -48,8 +49,9 @@ You can alternatively also use the breadcrumb components with a solid background
 
 ```svelte example hideScript
 <script>
-	import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
+  import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
 </script>
+
 <Breadcrumb aria-label="Solid background breadcrumb example" solid>
   <BreadcrumbItem href="/" home>Home</BreadcrumbItem>
   <BreadcrumbItem href="/">Projects</BreadcrumbItem>
@@ -61,32 +63,30 @@ You can alternatively also use the breadcrumb components with a solid background
 
 Use the `icon` slot to change icons.
 
-```svelte example hideScript
+```svelte example
 <script>
-	import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
+  import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
 </script>
+
 <Breadcrumb aria-label="Solid background breadcrumb example" class="bg-gray-50 py-3 px-5 dark:bg-gray-900">
   <BreadcrumbItem href="/" home>
-  <svelte:fragment slot="icon">
-  <svg 
-  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-2">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-</svg>
-  </svelte:fragment>Home</BreadcrumbItem>
+    <svelte:fragment slot="icon">
+      <Icon name="home-outline" class="w-4 h-4 mr-2" />
+    </svelte:fragment>Home
+  </BreadcrumbItem>
   <BreadcrumbItem href="/">
     <svelte:fragment slot="icon">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 dark:text-white">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
-      </svg>
-  </svelte:fragment>
-  Projects</BreadcrumbItem>
+      <Icon name="chevron-double-right-outline" class="w-3 h-3 mx-2 dark:text-white" />
+    </svelte:fragment>
+    Projects
+  </BreadcrumbItem>
   <BreadcrumbItem>
     <svelte:fragment slot="icon">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 dark:text-white">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
-      </svg>
+      <Icon name="chevron-double-right-outline" class="w-3 h-3 mx-2 dark:text-white" />
     </svelte:fragment>
-  Flowbite Svelte</BreadcrumbItem>
+    Flowbite Svelte
+  </BreadcrumbItem>
 </Breadcrumb>
 ```
 

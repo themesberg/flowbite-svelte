@@ -14,10 +14,9 @@
 </div>
 
 <!--
-  @component
-  ## Features
-  [Go to Button Group](https://flowbite-svelte.com/docs/components/button-group)
-  ## Props
-  @prop size: SizeType = 'md';
-  @prop divClass: string = 'inline-flex rounded-lg shadow-sm';  
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let size: SizeType = 'md';
+@prop export let divClass: string = 'inline-flex rounded-lg shadow-sm';
 -->

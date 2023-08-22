@@ -1,6 +1,4 @@
 <script lang="ts">
-  import ChevronDown from '$lib/utils/ChevronDown.svelte';
-  import ChevronUp from '$lib/utils/ChevronUp.svelte';
   import { twMerge } from 'tailwind-merge';
   import { getContext, onMount } from 'svelte';
   import { writable } from 'svelte/store';
@@ -11,8 +9,7 @@
   export let open: boolean = false;
   export let activeClass: string | undefined = undefined;
   export let inactiveClass: string | undefined = undefined;
-  export let defaultClass: string =
-    'flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl border-gray-200 dark:border-gray-700';
+  export let defaultClass: string = 'flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl border-gray-200 dark:border-gray-700';
   export let transitionType: TransitionTypes = 'slide';
   export let transitionParams: TransitionParamTypes = {};
   export let paddingFlush: string = 'py-5';
@@ -63,32 +60,26 @@
   const handleToggle = (_: Event) => selected.set(open ? {} : self);
 
   let buttonClass: string;
-  $: buttonClass = twMerge([
-    defaultClass,
-    ctx.flush || borderClass,
-    borderBottomClass,
-    borderSharedClass,
-    ctx.flush ? paddingFlush : paddingDefault,
-    open && (ctx.flush ? textFlushOpen : activeCls || ctx.activeClass),
-    !open && (ctx.flush ? textFlushDefault : inactiveCls || ctx.inactiveClass),
-    $$props.class
-  ]);
+  $: buttonClass = twMerge([defaultClass, ctx.flush || borderClass, borderBottomClass, borderSharedClass, ctx.flush ? paddingFlush : paddingDefault, open && (ctx.flush ? textFlushOpen : activeCls || ctx.activeClass), !open && (ctx.flush ? textFlushDefault : inactiveCls || ctx.inactiveClass), $$props.class]);
 
-  $: contentClass = twMerge([
-    ctx.flush ? paddingFlush : paddingDefault,
-    ctx.flush ? '' : borderOpenClass,
-    borderBottomClass,
-    borderSharedClass
-  ]);
+  $: contentClass = twMerge([ctx.flush ? paddingFlush : paddingDefault, ctx.flush ? '' : borderOpenClass, borderBottomClass, borderSharedClass]);
 </script>
 
 <h2 class="group">
   <button on:click={handleToggle} type="button" class={buttonClass} aria-expanded={open}>
     <slot name="header" />
     {#if open}
-      <slot name="arrowup"><ChevronUp /></slot>
+      <slot name="arrowup">
+        <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
+        </svg>
+      </slot>
     {:else}
-      <slot name="arrowdown"><ChevronDown /></slot>
+      <slot name="arrowdown">
+        <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+        </svg>
+      </slot>
     {/if}
   </button>
 </h2>
@@ -107,30 +98,23 @@
 {/if}
 
 <!--
-  @component
-  ## Features
-  [Go to Accordion page](https://flowbite-svelte.com/docs/components/accordion)
-  - Default bottom navigation
-  - Menu items with border
-  - Application bar example
-  - Example with pagination
-  - Button group bottom bar
-  - Card with bottom bar
-
-  ## Props
-  @prop open: boolean = false;
-  @prop activeClass: string | undefined = undefined;
-  @prop inactiveClass: string | undefined = undefined;
-  @prop defaultClass: string = 'flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl border-gray-200 dark:border-gray-700';
-  @prop transitionType: TransitionTypes = 'slide';
-  @prop transitionParams: TransitionParamTypes = {};
-  @prop paddingFlush: string = 'py-5';
-  @prop paddingDefault: string = 'p-5';
-  @prop textFlushOpen: string = 'text-gray-900 dark:text-white';
-  @prop textFlushDefault: string = 'text-gray-500 dark:text-gray-400';
-  @prop borderClass: string = 'border-l border-r group-first:border-t';
-  @prop borderOpenClass: string = 'border-l border-r';
-  @prop borderBottomClass: string = 'border-b';
-  @prop borderSharedClass: string = 'border-gray-200 dark:border-gray-700';
-
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let open: boolean = false;
+@prop export let activeClass: string | undefined = undefined;
+@prop export let inactiveClass: string | undefined = undefined;
+@prop export let defaultClass: string = 'flex items-center justify-between w-full font-medium text-left group-first:rounded-t-xl border-gray-200 dark:border-gray-700';
+@prop export let transitionType: TransitionTypes = 'slide';
+@prop export let transitionParams: TransitionParamTypes = {};
+@prop export let paddingFlush: string = 'py-5';
+@prop export let paddingDefault: string = 'p-5';
+@prop export let textFlushOpen: string = 'text-gray-900 dark:text-white';
+@prop export let textFlushDefault: string = 'text-gray-500 dark:text-gray-400';
+@prop export let borderClass: string = 'border-l border-r group-first:border-t';
+@prop export let borderOpenClass: string = 'border-l border-r';
+@prop export let borderBottomClass: string = 'border-b';
+@prop export let borderSharedClass: string = 'border-gray-200 dark:border-gray-700';
+@prop export let classActive: string | undefined = undefined;
+@prop export let classInactive: string | undefined = undefined;
 -->

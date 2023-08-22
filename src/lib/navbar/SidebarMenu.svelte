@@ -22,54 +22,16 @@
   export let ariaLabel = 'bars 3';
 </script>
 
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width={size}
-  height={size}
-  {...$$restProps}
-  class={$$props.class}
-  aria-label={ariaLabel}
-  fill="none"
-  {viewBox}
-  stroke-width="2"
-  on:click
-  role="button"
-  tabindex="-1">
+<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} {...$$restProps} class={$$props.class} aria-label={ariaLabel} fill="none" {viewBox} stroke-width="2" on:click role="button" tabindex="-1">
   {@html svgpath}
 </svg>
 
 <!--
-  @component
-  [Go to Navbar](https://flowbite-svelte.com/docs/components/navbar)
-  ## Props
-  @prop size = '20';
-  @prop color = 'currentColor';
-  @prop variation: 'solid' | 'outline' = 'outline';  
-  ## Example
-  ```
-  <script>
-    import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte'
-  </script>
-
-  <Navbar let:hidden let:toggle>
-    <NavBrand href="/">
-      <img
-        src="/images/flowbite-svelte-icon-logo.svg"
-        class="mr-3 h-6 sm:h-9"
-        alt="Flowbite Logo"
-      />
-      <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-        Flowbite
-      </span>
-    </NavBrand>
-    <NavHamburger on:click={toggle} />
-    <NavUl {hidden}>
-      <NavLi href="/" active={true}>Home</NavLi>
-      <NavLi href="/about">About</NavLi>
-      <NavLi href="/services">Services</NavLi>
-      <NavLi href="/pricing">Pricing</NavLi>
-      <NavLi href="/contact">Contact</NavLi>
-    </NavUl>
-  </Navbar>
-  ```
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let size = '20';
+@prop export let color = 'currentColor';
+@prop export let variation: 'solid' | 'outline' = 'outline';
+@prop export let ariaLabel = 'bars 3';
 -->

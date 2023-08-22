@@ -1,13 +1,9 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
   import { fade, blur, fly, slide } from 'svelte/transition';
-  // import { quintOut } from 'svelte/easing';
-  import ChevronDown from '../utils/ChevronDown.svelte';
-  import ChevronUp from '../utils/ChevronUp.svelte';
   import type { TransitionTypes, TransitionParamTypes } from '../types';
 
-  export let btnClass: string =
-    'flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700';
+  export let btnClass: string = 'flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700';
   export let label: string = '';
   export let spanClass: string = 'flex-1 ml-3 text-left whitespace-nowrap';
   export let ulClass: string = 'py-2 space-y-2';
@@ -35,24 +31,23 @@
 </script>
 
 <li>
-  <button
-    {...$$restProps}
-    on:click={() => handleDropdown()}
-    type="button"
-    class={twMerge(btnClass, $$props.class)}
-    aria-controls="sidebar-dropdown">
+  <button {...$$restProps} on:click={() => handleDropdown()} type="button" class={twMerge(btnClass, $$props.class)} aria-controls="sidebar-dropdown">
     <slot name="icon" />
     <span class={spanClass}>{label}</span>
     {#if isOpen}
       {#if $$slots.arrowup}
         <slot name="arrowup" />
       {:else}
-        <ChevronUp />
+        <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
+        </svg>
       {/if}
     {:else if $$slots.arrowdown}
       <slot name="arrowdown" />
     {:else}
-      <ChevronDown />
+      <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+      </svg>
     {/if}
   </button>
   {#if isOpen}
@@ -63,44 +58,14 @@
 </li>
 
 <!--
-  @component
-  ## Features
-  [Go to Sidebar](https://flowbite-svelte.com/docs/components/sidebar)
-  ## Props
-  @prop btnClass: string = 'flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700';
-  @prop label: string = '';
-  @prop spanClass: string = 'flex-1 ml-3 text-left whitespace-nowrap';
-  @prop ulClass: string = 'py-2 space-y-2';
-  @prop transitionType: TransitionTypes = 'slide';
-  @prop transitionParams: TransitionParamTypes = {};
-  ## Example
-  ```
-  <script>
-    import { page } from '$app/stores';
-    import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper, SidebarDropdownWrapper, SidebarDropdownItem } from 'flowbite-svelte';
-    let spanClass = 'flex-1 ml-3 whitespace-nowrap';
-    $: activeUrl = $page.url.pathname
-    $: containPath = ()=>{
-      // add your logic here
-      true
-    }
-  </script>
-
-  <Sidebar>
-    <SidebarWrapper>
-      <SidebarGroup>
-        <SidebarItem label="Dashboard" active={activeUrl === '/dashboard'} />
-        <SidebarDropdownWrapper label="E-commerce" isOpen={containPath}>
-          <SidebarDropdownItem label="Products" href='/components/products' active={activeUrl === '/components/products'} />
-          <SidebarDropdownItem label="Sidebar" href='/docs/components/sidebar' active={activeUrl === '/docs/components/sidebar'}/>
-        </SidebarDropdownWrapper>
-        <SidebarDropdownWrapper label="Items">
-          <SidebarDropdownItem label="Item 1" href='/components/item1' active={activeUrl === '/components/item'} />
-          <SidebarDropdownItem label="Item 2" href='/components/item2' active={activeUrl === '/components/billing'} />
-        </SidebarDropdownWrapper>
-      </SidebarGroup>
-    </SidebarWrapper>
-  </Sidebar>
-  ```
-  
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let btnClass: string = 'flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700';
+@prop export let label: string = '';
+@prop export let spanClass: string = 'flex-1 ml-3 text-left whitespace-nowrap';
+@prop export let ulClass: string = 'py-2 space-y-2';
+@prop export let transitionType: TransitionTypes = 'slide';
+@prop export let transitionParams: TransitionParamTypes = {};
+@prop export let isOpen = false;
 -->

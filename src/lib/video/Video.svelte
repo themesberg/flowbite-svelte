@@ -18,18 +18,12 @@
 </video>
 
 <!--
-  @component
-  ## Features
-  [Go to Video](https://flowbite-svelte.com/docs/components/video)
-  - Setup
-  - Video player
-  - Autoplay
-  - Muted
-  - Sizes
-  ## Props
-  @prop src: string;
-  @prop type: string = 'video/mp4';
-  @prop trackSrc: string = '';
-  @prop srclang: string = 'en';
-  @prop label: string = 'english_captions';
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let src: string;
+@prop export let type: string = 'video/mp4';
+@prop export let trackSrc: string = '';
+@prop export let srclang: string = 'en';
+@prop export let label: string = 'english_captions';
 -->

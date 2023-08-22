@@ -84,17 +84,10 @@
 
 <div class="mt-8 code-example" bind:this={node} use:init>
   {#if !meta.hideOutput}
-    <div
-      class="w-full p-4 border border-gray-200 bg-gray-50 rounded-t-xl dark:border-gray-600 dark:bg-gray-700">
+    <div class="w-full p-4 border border-gray-200 bg-gray-50 rounded-t-xl dark:border-gray-600 dark:bg-gray-700">
       <div class="grid grid-cols-2">
         {#if path}
-          <Button
-            size="xs"
-            color="alternative"
-            class="dark:!bg-gray-900 w-fit hover:text-primary-600 gap-2"
-            href={'' + path}
-            target="_blank"
-            rel="noreferrer">
+          <Button size="xs" color="alternative" class="dark:!bg-gray-900 w-fit hover:text-primary-600 gap-2" href={'' + path} target="_blank" rel="noreferrer">
             <GitHub size="sm" />Edit on GitHub
           </Button>
           <div class="ml-auto">
@@ -105,9 +98,7 @@
     </div>
 
     <div class="code-preview-wrapper">
-      <div
-        class="flex p-0 bg-white border-gray-200 bg-gradient-to-r code-preview dark:bg-gray-900 border-x dark:border-gray-600"
-        class:dark>
+      <div class="flex p-0 bg-white border-gray-200 bg-gradient-to-r code-preview dark:bg-gray-900 border-x dark:border-gray-600" class:dark>
         <div class="w-full code-responsive-wrapper">
           <div class={twJoin(divClass, meta.class)}>
             <slot name="example" />
@@ -119,32 +110,18 @@
 
   <div class="code-syntax-wrapper">
     <div class="relative border-gray-200 border-y border-x code-syntax dark:border-gray-600">
-      <div
-        class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md dark:bg-gray-700 dark:border-gray-600">
+      <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md dark:bg-gray-700 dark:border-gray-600">
         <ul class="flex text-sm font-medium text-center text-gray-500 dark:text-gray-400">
           <li>
-            <span
-              class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200 dark:text-white dark:bg-gray-800 dark:border-gray-600"
-              >Svelte</span>
+            <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200 dark:text-white dark:bg-gray-800 dark:border-gray-600"> Svelte </span>
           </li>
         </ul>
         <div class="flex justify-end">
           {#if browserSupport}
-            <button
-              on:click={(e) => copyToClipboard(e)}
-              type="button"
-              class="flex items-center px-3 py-2 text-xs font-medium text-gray-600 bg-gray-100 border-l border-gray-200 dark:border-gray-600 dark:text-gray-400 dark:bg-gray-800 hover:text-primary-700 dark:hover:text-white copy-to-clipboard-button">
-              <svg
-                class="w-4 h-4 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+            <button on:click={(e) => copyToClipboard(e)} type="button" class="flex items-center px-3 py-2 text-xs font-medium text-gray-600 bg-gray-100 border-l border-gray-200 dark:border-gray-600 dark:text-gray-400 dark:bg-gray-800 hover:text-primary-700 dark:hover:text-white copy-to-clipboard-button">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
               {copy_text}
             </button>
             <Tooltip placement="bottom-end">Copy to clipboard.</Tooltip>
@@ -158,12 +135,7 @@
           </div>
         </div>
         {#if showExpandButton && !expand}
-          <button
-            on:click={() => (expand = !expand)}
-            data-expand-code=""
-            type="button"
-            class="absolute bottom-0 left-0 py-2.5 px-5 w-full text-sm font-medium text-gray-900 bg-gray-100 border-t border-gray-200 hover:bg-gray-100 hover:text-primary-700 dark:bg-gray-700 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-            >Expand code</button>
+          <button on:click={() => (expand = !expand)} data-expand-code="" type="button" class="absolute bottom-0 left-0 py-2.5 px-5 w-full text-sm font-medium text-gray-900 bg-gray-100 border-t border-gray-200 hover:bg-gray-100 hover:text-primary-700 dark:bg-gray-700 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"> Expand code </button>
         {/if}
       </div>
     </div>

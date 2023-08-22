@@ -44,37 +44,14 @@
 </div>
 
 <!--
-  @component
-  ## Features
-  [Go to Rating](https://flowbite-svelte.com/docs/components/rating)
-  - Setup
-  - Default rating
-  - Stars
-  - Rating with text
-  - Rating count
-  - Icon size and color
-  - Size and color
-  - AdvancedRating component
-  - Different icon
-  - Score rating
-  - Rating comment
-  - Review content
-  ## Props
-  @prop divClass: string = 'flex items-center';
-  @prop size: number = 24;
-  @prop total: number = 5;
-  @prop rating: number = 4;
-  @prop partialId: string = 'partialStar' + generateId();
-  @prop icon: ComponentType = Star;
-  @prop count: boolean = false;  
-  ## Example
-  ```
-  <script>
-    import { Rating } from 'flowbite-svelte';
-  </script>
-
-  <Rating id="example-3" total={5} rating={3.4}>
-    <p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">3.4 out of 5</p>
-  </Rating>
-  ```
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let divClass: string = 'flex items-center';
+@prop export let size: number = 24;
+@prop export let total: number = 5;
+@prop export let rating: number = 4;
+@prop export let partialId: string = 'partialStar' + generateId();
+@prop export let icon: ComponentType = Star;
+@prop export let count: boolean = false;
 -->

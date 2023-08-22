@@ -1,6 +1,6 @@
 ---
 layout: componentLayout
-breadcrumb_title: Customization- Flowbite Svelte 
+breadcrumb_title: Customization- Flowbite Svelte
 title: Customization - Flowbite Svelte
 component_title: Customization
 dir: Pages
@@ -11,7 +11,7 @@ When working with components, you may want to customize their default or specifi
 
 ## Understanding Props
 
- Each component has a props section where you can find information on how to customize classes. For example, let's refer to the [Alert Props section](https://flowbite-svelte.com/docs/components/alert#Props).
+Each component has a props section where you can find information on how to customize classes. For example, let's refer to the [Alert Props section](https://flowbite-svelte.com/docs/components/alert#Props).
 
 ![alert prop](/images/alert-prop.png)
 
@@ -19,10 +19,10 @@ In this case, you can overwrite the `defaultClass` by adding the `class` prop. H
 
 ```svelte example
 <script>
-  import { Alert } from '$lib'
+  import { Alert } from '$lib';
 </script>
 
-  <Alert class="text-xl">Add a class to overwrite the default class!</Alert>
+<Alert class="text-xl">Add a class to overwrite the default class!</Alert>
 ```
 
 Thanks to tailwind-merge, you can efficiently merge Tailwind CSS classes without style conflicts. One of its features is that the last conflicting class wins. Please read more details about [Merging behavior](https://github.com/dcastil/tailwind-merge/blob/v1.13.1/docs/features.md)
@@ -33,34 +33,27 @@ In Tailwind CSS, you can make any utility class important by adding a `!` charac
 
 ```svelte example
 <script>
-	import { Button } from 'flowbite-svelte'
+  import { Button } from 'flowbite-svelte';
 </script>
 
-<Button class="!bg-blue-500">
-	 Blue Button
-</Button>
-<Button class="!bg-green-500">
-	 Green Button 
-</Button>
+<Button class="!bg-blue-500">Blue Button</Button>
+<Button class="!bg-green-500">Green Button</Button>
 ```
 
 ## Overwriting Specific Classes
 
 While the `class` prop can be used for most components, some components with a complex structure may require multiple props. For instance, let's consider [the Banner component](https://flowbite-svelte.com/docs/components/banner) has two relevant props: `classDiv` for `divClass` and `classInner` for `innerClass`. To overwrite the `divClass`, you can use the `classDiv` prop:
 
-
 ```svelte example class="flex flex-col relative"
 <script>
-	import { Banner, Skeleton, ImagePlaceholder } from 'flowbite-svelte'
+  import { Banner, Skeleton, ImagePlaceholder } from 'flowbite-svelte';
 </script>
 
-<Skeleton class="py-4"/>
-<ImagePlaceholder class="py-4"/>
+<Skeleton class="py-4" />
+<ImagePlaceholder class="py-4" />
 
 <Banner id="default-banner" position="absolute" classDiv="dark:bg-green-500 dark:border-green-400">
-  <p class="flex items-center text-sm font-normal text-gray-500 dark:text-white">
-    Overwriting divClass and innerClass
-  </p>
+  <p class="flex items-center text-sm font-normal text-gray-500 dark:text-white">Overwriting divClass and innerClass</p>
 </Banner>
 ```
 

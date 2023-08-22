@@ -6,12 +6,7 @@
 
   export let data: PageData;
 
-  let components = [
-    ...data.posts.forms,
-    ...data.posts.components,
-    ...data.posts.typography,
-    ...data.posts.experimental
-  ].sort((a, b) => a.meta.component_title.localeCompare(b.meta.component_title));
+  let components = [...data.posts.forms, ...data.posts.components, ...data.posts.typography, ...data.posts.experimental].sort((a, b) => a.meta.component_title.localeCompare(b.meta.component_title));
 
   const INIT_COUNT = 18;
   let expanded: boolean = false;
@@ -19,13 +14,12 @@
 
 <Section class="flex flex-col gap-8 sm:gap-12 lg:pt-24">
   <div class="flex flex-col items-center gap-4 sm:gap-4">
-    <h2 class="tracking-tight font-extrabold text-3xl lg:text-4xl text-gray-900 dark:text-white">
-      Svelte UI components
-    </h2>
+    <h2 class="tracking-tight font-extrabold text-3xl lg:text-4xl text-gray-900 dark:text-white">Svelte UI components</h2>
     <p class="text-lg font-normal text-gray-500 dark:text-gray-400 max-w-3xl mx-auto text-center">
-      Explore the whole collection of <span class="font-medium text-gray-900 dark:text-white"
-        >over {components.length} open-source</span> UI components and interactive elements built with Svelte
-      and Flowbite
+      Explore the whole collection of <span class="font-medium text-gray-900 dark:text-white">
+        over {components.length} open-source
+      </span>
+      UI components and interactive elements built with Svelte and Flowbite
     </p>
   </div>
 
@@ -42,13 +36,7 @@
 
   {#if !expanded}
     <div class="w-full flex justify-center mb-4">
-      <Button
-        size="md"
-        class="whitespace-nowrap hover:text-primary-600 focus:text-primary-600"
-        color="alternative"
-        on:click={() => (expanded = true)}>
-        View all components
-      </Button>
+      <Button size="md" class="whitespace-nowrap hover:text-primary-600 focus:text-primary-600" color="alternative" on:click={() => (expanded = true)}>View all components</Button>
     </div>
   {/if}
 </Section>

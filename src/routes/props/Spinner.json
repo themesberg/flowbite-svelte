@@ -1,6 +1,6 @@
 {
   "props": [
-    ["color", "string", ""],
+    ["color", "'primary' | 'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink' | 'purple' | 'white' | 'custom' | undefined", "'primary'"],
     ["bg", "string", "'text-gray-300'"],
     ["customColor", "string", "''"],
     ["size", "string", "'8'"],

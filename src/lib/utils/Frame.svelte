@@ -117,50 +117,26 @@
 
   let divClass: string;
 
-  $: divClass = twMerge(
-    bgColors[color],
-    textColors[color],
-    rounded && 'rounded-lg',
-    border && 'border',
-    borderColors[color],
-    shadow && 'shadow-md',
-    $$props.class
-  );
+  $: divClass = twMerge(bgColors[color], textColors[color], rounded && 'rounded-lg', border && 'border', borderColors[color], shadow && 'shadow-md', $$props.class);
 </script>
 
-<svelte:element
-  this={tag}
-  use:use={options}
-  bind:this={node}
-  transition:transition={params}
-  {...$$restProps}
-  class={divClass}
-  on:click
-  on:mouseenter
-  on:mouseleave
-  on:focusin
-  on:focusout
-  {role}>
+<svelte:element this={tag} use:use={options} bind:this={node} transition:transition={params} {...$$restProps} class={divClass} on:click on:mouseenter on:mouseleave on:focusin on:focusout {role}>
   <slot />
 </svelte:element>
 
 <!--
-  @component
-  ## Props
-  @prop tag: string = 'div';
-  @prop color: FrameColor = 'default';
-  @prop rounded: boolean = false;
-  @prop border: boolean = false;
-  @prop shadow: boolean = false;
-  @prop transition: TransitionFunc | undefined = undefined;
-  @prop params: object = {};
-  @prop node: HTMLElement | undefined = undefined;
-  @prop use: Action = noop;
-  @prop options = {};  
-  ## Event
-  - on:click
-  - on:mouseenter
-  - on:mouseleave
-  - on:focusin
-  - on:focusout
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let tag: string = $$restProps.href ? 'a' : 'div';
+@prop export let color: FrameColor = 'default';
+@prop export let rounded: boolean = false;
+@prop export let border: boolean = false;
+@prop export let shadow: boolean = false;
+@prop export let transition: TransitionFunc = null_transition;
+@prop export let params: object = {};
+@prop export let node: HTMLElement | undefined = undefined;
+@prop export let use: Action<HTMLElement, any> = noop;
+@prop export let options = {};
+@prop export let role: string | undefined = undefined;
 -->

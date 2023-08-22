@@ -1,7 +1,6 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
-  export let divClass: string =
-    'p-4 max-w-sm rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700';
+  export let divClass: string = 'p-4 max-w-sm rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700';
 </script>
 
 <div role="status" class={twMerge(divClass, $$props.class)}>
@@ -20,17 +19,8 @@
 </div>
 
 <!--
-  @component
-  ## Features
-  [Go to Skeleton Widget Placeholder](https://flowbite-svelte.com/docs/components/skeleton#Widget_placeholder)
-  ## Props
-  @prop divClass: string = 'p-4 max-w-sm rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700';
-  ## Example
-  ```
-  <script>
-    import { WidgetPlaceholder } from 'flowbite-svelte'
-  </script>
-
-  <WidgetPlaceholder />
-  ```
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let divClass: string = 'p-4 max-w-sm rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700';
 -->

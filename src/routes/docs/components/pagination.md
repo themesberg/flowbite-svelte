@@ -23,7 +23,7 @@ The pagination component can be used to navigate across a series of content and 
 
 ```svelte example hideOutput
 <script>
-  import { Pagination, PaginationItem } from 'flowbite-svelte'
+  import { Pagination, PaginationItem } from 'flowbite-svelte';
 </script>
 ```
 
@@ -34,30 +34,30 @@ Use the following list of pagination items to indicate a series of content for y
 ```svelte example class="flex flex-col justify-center items-center gap-3"
 <script>
   import { page } from '$app/stores';
-  import { Pagination } from 'flowbite-svelte'
+  import { Pagination } from 'flowbite-svelte';
 
-  $: activeUrl = $page.url.searchParams.get('page')
+  $: activeUrl = $page.url.searchParams.get('page');
   let pages = [
-    { name: 1, href: '/components/pagination?page=1'},
-    { name: 2, href: '/components/pagination?page=2'},
-    { name: 3, href: '/components/pagination?page=3'},
-    { name: 4, href: '/components/pagination?page=4'},
-    { name: 5, href: '/components/pagination?page=5'}
+    { name: 1, href: '/components/pagination?page=1' },
+    { name: 2, href: '/components/pagination?page=2' },
+    { name: 3, href: '/components/pagination?page=3' },
+    { name: 4, href: '/components/pagination?page=4' },
+    { name: 5, href: '/components/pagination?page=5' }
   ];
 
-  $:{ 
-      pages.forEach((page)=>{
+  $: {
+    pages.forEach((page) => {
       let splitUrl = page.href.split('?');
       let queryString = splitUrl.slice(1).join('?');
       const hrefParams = new URLSearchParams(queryString);
       let hrefValue = hrefParams.get('page');
-      if ( hrefValue === activeUrl){
-        page.active=true
-      }else{
-        page.active=false
+      if (hrefValue === activeUrl) {
+        page.active = true;
+      } else {
+        page.active = false;
       }
-    })
-      pages=pages
+    });
+    pages = pages;
   }
 
   const previous = () => {
@@ -79,30 +79,31 @@ The following pagination component example shows how you can use SVG icons inste
 ```svelte example class="flex flex-col justify-center items-center gap-3"
 <script>
   import { page } from '$app/stores';
-  import { Pagination, ChevronLeft, ChevronRight } from 'flowbite-svelte'
+  import { Pagination } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
 
-  $: activeUrl = $page.url.searchParams.get('page')
+  $: activeUrl = $page.url.searchParams.get('page');
   let pages = [
-    { name: 6, href: '/components/pagination?page=6'},
-    { name: 7, href: '/components/pagination?page=7'},
-    { name: 8, href: '/components/pagination?page=8'},
-    { name: 9, href: '/components/pagination?page=9'},
-    { name: 10, href: '/components/pagination?page=10'}
+    { name: 6, href: '/components/pagination?page=6' },
+    { name: 7, href: '/components/pagination?page=7' },
+    { name: 8, href: '/components/pagination?page=8' },
+    { name: 9, href: '/components/pagination?page=9' },
+    { name: 10, href: '/components/pagination?page=10' }
   ];
 
-  $:{
-    pages.forEach((page)=>{
+  $: {
+    pages.forEach((page) => {
       let splitUrl = page.href.split('?');
       let queryString = splitUrl.slice(1).join('?');
       const hrefParams = new URLSearchParams(queryString);
       let hrefValue = hrefParams.get('page');
-      if ( hrefValue === activeUrl){
-        page.active=true
-      }else{
-        page.active=false
+      if (hrefValue === activeUrl) {
+        page.active = true;
+      } else {
+        page.active = false;
       }
-    })
-    pages=pages
+    });
+    pages = pages;
   }
 
   const previous = () => {
@@ -113,28 +114,27 @@ The following pagination component example shows how you can use SVG icons inste
   };
 </script>
 
-<Pagination {pages} on:previous={previous} on:next={next} icon  >
+<Pagination {pages} on:previous={previous} on:next={next} icon>
   <svelte:fragment slot="prev">
     <span class="sr-only">Previous</span>
-    <ChevronLeft class="w-5 h-5"/>
+    <Icon name="chevron-left-outline" class="w-2.5 h-2.5" />
   </svelte:fragment>
   <svelte:fragment slot="next">
     <span class="sr-only">Next</span>
-    <ChevronRight class="w-5 h-5"/>
+    <Icon name="chevron-right-outline" class="w-2.5 h-2.5" />
   </svelte:fragment>
 </Pagination>
 
-<Pagination {pages} large on:previous={previous} on:next={next} icon  >
+<Pagination {pages} large on:previous={previous} on:next={next} icon>
   <svelte:fragment slot="prev">
     <span class="sr-only">Previous</span>
-    <ChevronLeft class="w-5 h-5"/>
+    <Icon name="chevron-left-outline" class="w-3 h-3" />
   </svelte:fragment>
   <svelte:fragment slot="next">
     <span class="sr-only">Next</span>
-    <ChevronRight class="w-5 h-5"/>
+    <Icon name="chevron-right-outline" class="w-3 h-3" />
   </svelte:fragment>
 </Pagination>
-
 ```
 
 ## Previous and next
@@ -143,7 +143,7 @@ Use the following markup to show simple previous and next elements.
 
 ```svelte example class="flex flex-col justify-center items-center gap-3"
 <script>
-  import { Pagination, PaginationItem } from 'flowbite-svelte'
+  import { Pagination, PaginationItem } from 'flowbite-svelte';
   const previous = () => {
     alert('Previous btn clicked. Make a call to your server to fetch data.');
   };
@@ -156,10 +156,10 @@ Use the following markup to show simple previous and next elements.
   <PaginationItem on:click={previous}>Previous</PaginationItem>
   <PaginationItem on:click={next}>Next</PaginationItem>
 </div>
-  <div class="flex space-x-3">
-    <PaginationItem large on:click={previous}>Previous</PaginationItem>
-    <PaginationItem large on:click={next}>Next</PaginationItem>
-  </div>
+<div class="flex space-x-3">
+  <PaginationItem large on:click={previous}>Previous</PaginationItem>
+  <PaginationItem large on:click={next}>Next</PaginationItem>
+</div>
 ```
 
 ## Previous and next with icons
@@ -168,7 +168,8 @@ Use the following code to show simple previous and next elements with icons.
 
 ```svelte example class="flex flex-col justify-center items-center gap-3"
 <script>
-  import { Pagination, PaginationItem } from 'flowbite-svelte'
+  import { Pagination, PaginationItem } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
   const previous = () => {
     alert('Previous btn clicked. Make a call to your server to fetch data.');
   };
@@ -179,22 +180,22 @@ Use the following code to show simple previous and next elements with icons.
 
 <div class="flex space-x-3">
   <PaginationItem class="flex items-center" on:click={previous}>
-    <svg class="mr-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"/></svg>
+    <Icon name="arrow-left-solid" class="mr-2 w-3.5 h-3.5" />
     Previous
   </PaginationItem>
   <PaginationItem class="flex items-center" on:click={next}>
     Next
-    <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+    <Icon name="arrow-right-solid" class="ml-2 w-3.5 h-3.5" />
   </PaginationItem>
 </div>
 <div class="flex space-x-3">
   <PaginationItem large class="flex items-center" on:click={previous}>
-    <svg class="mr-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"/></svg>
+    <Icon name="arrow-left-solid" class="mr-2 w-5 h-5" />
     Previous
   </PaginationItem>
   <PaginationItem large class="flex items-center" on:click={next}>
     Next
-    <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+    <Icon name="arrow-right-solid" class="ml-2 w-5 h-5" />
   </PaginationItem>
 </div>
 ```
@@ -205,9 +206,9 @@ You can use the following markup to show the number of data shown inside a table
 
 ```svelte example class="flex flex-col justify-center items-center gap-3"
 <script>
-  import { Pagination, PaginationItem } from 'flowbite-svelte'
+  import { Pagination, PaginationItem } from 'flowbite-svelte';
 
-  let helper = {start: 1, end: 10, total: 100}
+  let helper = { start: 1, end: 10, total: 100 };
 
   const previous = () => {
     alert('Previous btn clicked. Make a call to your server to fetch data.');
@@ -219,9 +220,12 @@ You can use the following markup to show the number of data shown inside a table
 
 <div class="flex flex-col items-center justify-center gap-2">
   <div class="text-sm text-gray-700 dark:text-gray-400">
-    Showing <span class="font-semibold text-gray-900 dark:text-white">{helper.start}</span> to
+    Showing <span class="font-semibold text-gray-900 dark:text-white">{helper.start}</span>
+    to
     <span class="font-semibold text-gray-900 dark:text-white">{helper.end}</span>
-    of <span class="font-semibold text-gray-900 dark:text-white">{helper.total}</span> Entries
+    of
+    <span class="font-semibold text-gray-900 dark:text-white">{helper.total}</span>
+    Entries
   </div>
 
   <Pagination table>
@@ -230,9 +234,12 @@ You can use the following markup to show the number of data shown inside a table
 </div>
 <div class="flex flex-col items-center justify-center gap-2">
   <div class="text-sm text-gray-700 dark:text-gray-400">
-    Showing <span class="font-semibold text-gray-900 dark:text-white">{helper.start}</span> to
+    Showing <span class="font-semibold text-gray-900 dark:text-white">{helper.start}</span>
+    to
     <span class="font-semibold text-gray-900 dark:text-white">{helper.end}</span>
-    of <span class="font-semibold text-gray-900 dark:text-white">{helper.total}</span> Entries
+    of
+    <span class="font-semibold text-gray-900 dark:text-white">{helper.total}</span>
+    Entries
   </div>
 
   <Pagination table large>
@@ -247,9 +254,9 @@ You can use the following code to show the number of data shown inside a table e
 
 ```svelte example class="flex flex-col justify-center items-center gap-3"
 <script>
-  import { Pagination } from 'flowbite-svelte'
-
-  let helper = {start: 1, end: 10, total: 100}
+  import { Pagination } from 'flowbite-svelte';
+  import { Icon } from 'flowbite-svelte-icons';
+  let helper = { start: 1, end: 10, total: 100 };
 
   const previous = () => {
     alert('Previous btn clicked. Make a call to your server to fetch data.');
@@ -261,37 +268,43 @@ You can use the following code to show the number of data shown inside a table e
 
 <div class="flex flex-col items-center justify-center gap-2">
   <div class="text-sm text-gray-700 dark:text-gray-400">
-    Showing <span class="font-semibold text-gray-900 dark:text-white">{helper.start}</span> to
+    Showing <span class="font-semibold text-gray-900 dark:text-white">{helper.start}</span>
+    to
     <span class="font-semibold text-gray-900 dark:text-white">{helper.end}</span>
-    of <span class="font-semibold text-gray-900 dark:text-white">{helper.total}</span> Entries
+    of
+    <span class="font-semibold text-gray-900 dark:text-white">{helper.total}</span>
+    Entries
   </div>
 
   <Pagination table>
-    <div slot="prev" class="flex items-center gap-2">
-      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"/></svg>
+    <div slot="prev" class="flex items-center gap-2 text-white bg-gray-800">
+      <Icon name="arrow-left-outline" class="w-3.5 h-3.5 mr-2" />
       Prev
     </div>
-    <div slot="next" class="flex items-center gap-2">
+    <div slot="next" class="flex items-center gap-2 text-white bg-gray-800">
       Next
-      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+      <Icon name="arrow-right-outline" class="w-3.5 h-3.5 ml-2" />
     </div>
   </Pagination>
 </div>
 <div class="flex flex-col items-center justify-center gap-2">
   <div class="text-sm text-gray-700 dark:text-gray-400">
-    Showing <span class="font-semibold text-gray-900 dark:text-white">{helper.start}</span> to
+    Showing <span class="font-semibold text-gray-900 dark:text-white">{helper.start}</span>
+    to
     <span class="font-semibold text-gray-900 dark:text-white">{helper.end}</span>
-    of <span class="font-semibold text-gray-900 dark:text-white">{helper.total}</span> Entries
+    of
+    <span class="font-semibold text-gray-900 dark:text-white">{helper.total}</span>
+    Entries
   </div>
 
   <Pagination table large>
-    <div slot="prev" class="flex items-center gap-2">
-      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"/></svg>
+    <div slot="prev" class="flex items-center gap-2 text-white bg-gray-800">
+      <Icon name="arrow-left-outline" class="w-3.5 h-3.5 mr-2" />
       Prev
     </div>
-    <div slot="next" class="flex items-center gap-2">
+    <div slot="next" class="flex items-center gap-2 text-white bg-gray-800">
       Next
-      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+      <Icon name="arrow-right-outline" class="w-3.5 h-3.5 mr-2" />
     </div>
   </Pagination>
 </div>
@@ -302,7 +315,7 @@ You can use the following code to show the number of data shown inside a table e
 ```svelte example class="flex justify-center"
 <script lang="ts">
   import { Pagination } from 'flowbite-svelte';
-
+  
   let pages = [{ name: "1"}, { name: "2" }, { name: "3" }, { name: "4" }, { name: "5" }];
   const previous = () => {
     alert('Previous btn clicked. Make a call to your server to fetch data.');

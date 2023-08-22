@@ -13,10 +13,9 @@
 {/if}
 
 <!--
-  @component
-  ## Features
-  [Go to Dropdown](https://flowbite-svelte.com/docs/components/dropdown)
-  ## Props
-  @prop divClass: string = 'py-2 px-4 text-gray-700 dark:text-white';
-  @prop divider: boolean = true;
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let divClass: string = 'py-2 px-4 text-gray-700 dark:text-white';
+@prop export let divider: boolean = true;
 -->
