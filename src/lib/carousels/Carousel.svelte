@@ -1,10 +1,9 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
+  import { twJoin, twMerge } from 'tailwind-merge';
   import Slide from './Slide.svelte';
   import Thumbnail from './Thumbnail.svelte';
   import Caption from './Caption.svelte';
   import Indicator from './Indicator.svelte';
-  import classNames from 'classnames';
 
   export let id: string = 'default-carousel';
   export let showIndicators: boolean = true;
@@ -157,13 +156,20 @@
 
 <div
   bind:this={carouselDiv}
-  id="default-carousel"
+  {id}
   class="relative"
   on:mousedown={onDragStart}
-  on:touchstart={onDragStart}>
+  on:touchstart={onDragStart}
+  role="button"     
+  aria-label="Draggable Carousel"
+  tabindex="0" 
+  >
   <div
     style={`transform: translateX(${percentOffset}%)`}
-    class={classNames(divClass, { 'transition-transform': activeDragGesture === undefined })}>
+    class={twJoin(
+      divClass,
+      { 'transition-transform': activeDragGesture === undefined }
+    )}>
     <Slide image={image.imgurl} altTag={image.name} attr={image.attribution} {slideClass} />
   </div>
   {#if showIndicators}
