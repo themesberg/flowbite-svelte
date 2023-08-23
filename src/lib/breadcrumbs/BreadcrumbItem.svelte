@@ -42,7 +42,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let home: boolean = false;
 @prop export let href: string | undefined = undefined;
 @prop export let linkClass: string = 'ml-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white';

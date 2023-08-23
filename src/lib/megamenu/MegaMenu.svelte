@@ -44,7 +44,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let items: LinkTypeLike[] = [];
 @prop export let full: boolean = false;
 @prop export let open: boolean = false;

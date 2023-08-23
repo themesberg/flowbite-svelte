@@ -38,7 +38,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let btnDefaultClass: string = 'w-[52px] h-[52px] shadow-sm !p-2';
 @prop export let name: string = '';
 @prop export let tooltip: Placement | 'none' = context.tooltip;

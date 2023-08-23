@@ -9,9 +9,9 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { Heading, P, A } from '$lib'
-  import { props as items } from '../../props/Video.json'
+  import componentData1 from '../../component-data/Video.json'
 </script>
 
 ## Setup
@@ -110,15 +110,13 @@ Customize the video player appearance using the utility classes from Tailwind CS
 <Video src="/videos/flowbite.mp4" controls class="w-full max-w-full h-auto rounded-lg border border-gray-200 dark:border-gray-700" trackSrc="flowbite.mp4" />
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 - Use the `class` prop to overwrite the `video` tag class.
 
-<TableProp>
-  <TableDefaultRow {items} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ## References
 

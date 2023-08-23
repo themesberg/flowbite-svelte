@@ -8,9 +8,9 @@ description: Get started with the CloseButton components to hide a target elemen
 ---
 
 <script>
-	import { TableProp, TableDefaultRow, GitHubSourceList } from '../../utils';
+	import { TableProp, TableDefaultRow, GitHubSourceList, CompoAttributesViewer } from '../../utils';
 	import { A } from '$lib';
-	import { props as items } from '../../props/CloseButton.json';
+	import componentData1 from '../../component-data/CloseButton.json';
 
 	let divClass = 'w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4';
 	let theadClass = 'text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white';
@@ -34,10 +34,8 @@ Use `CloseButton` component to close a component.
 {/if}
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-<TableProp>
-	<TableDefaultRow {items} rowState="hover" />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>

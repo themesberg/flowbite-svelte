@@ -9,7 +9,7 @@ thumnailSize: w-36
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { A } from '$lib';
 </script>
 

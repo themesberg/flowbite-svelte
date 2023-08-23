@@ -10,6 +10,6 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let ulClass: string = 'text-gray-600 dark:text-gray-400';
 -->

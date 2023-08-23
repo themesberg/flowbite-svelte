@@ -9,11 +9,11 @@ thumnailSize: w-36
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
 
-  import { props as cardProps } from '../../props/Card.json'
-  import { props as frameProps } from '../../props/Frame.json'
+  import componentData1 from '../../component-data/Card.json'
+  import componentData2 from '../../component-data/Frame.json'
 
   // Slots
   let slotHeader = ['Name', 'Description']
@@ -413,7 +413,7 @@ Use this example to split cards into multiple sections such as for testimonials 
 </Card>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -421,23 +421,11 @@ The component has the following props, type, and default values. See [types page
 
 - The Card component uses the Frame component. Use the `class` property to overwrite the default Frame class. The Frame component tag can be either an anchor tag or a div tag depending on the value of the href prop.
 
-<TableProp>
-  <TableDefaultRow items={cardProps} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### Frame
 
-<TableProp>
-  <TableDefaultRow items={frameProps} rowState='hover' />
-</TableProp>
-
-## Slots
-
-### Card
-
-<TableProp header={slotHeader}>
-  <TableDefaultRow items={slotItems} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>
 
 ## References
 

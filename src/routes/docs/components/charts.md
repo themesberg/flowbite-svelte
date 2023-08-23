@@ -8,9 +8,9 @@ description: Use the chart and graph components from Flowbite-Svelte built with 
 ---
 
 <script>
-  import { TableProp, TableDefaultRow , } from '../../utils'
-  import { props as items } from '../../props/Chart.json'
-  import { props as items1 } from '../../props/Card.json'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import componentData1 from '../../component-data/Chart.json'
+  import componentData2 from '../../component-data/Card.json'
 </script>
 
 ## Area chart
@@ -974,7 +974,7 @@ To create a radial chart with multiple data entries you need to set the type: "r
 </Card>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -982,14 +982,10 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite `div` tag.
 
-<TableProp>
-  <TableDefaultRow {items} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### Card
 
 - Use the `class` prop to overwrite `divClass`.
 
-<TableProp>
-  <TableDefaultRow items={items1} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>

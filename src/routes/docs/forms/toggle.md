@@ -9,12 +9,10 @@ thumbnailSize: w-72
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { onMount } from 'svelte';
   import { Toggle, Badge, A } from '$lib'
-  import { props as items } from '../../props/Toggle.json'
-
-  const events = ["on:change","on:click"];
+  import componentData1 from '../../component-data/Toggle.json'
 </script>
 
 The toggle component can be used to receive a simple “yes” or “no” type of answer from the user by choosing a single option from two options available in multiple sizes, styles, and colors coded with the utility classes from Tailwind CSS and with dark mode support.
@@ -71,7 +69,7 @@ Get started with the default toggle component example as a checkbox element to r
 <Toggle size="custom" {customSize}>Custom toggle</Toggle>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -80,13 +78,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite the `Checkbox` component.
 - Use the 'classDiv`prop to overwrite the`divClass`.
 
-<TableProp>
-  <TableDefaultRow {items} rowState='hover' />
-</TableProp>
-
-## Forwarded Events
-
-<DocBadgeList items={events} />
+<CompoAttributesViewer componentData={componentData1}/>
 
 ## References
 

@@ -73,7 +73,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let type: InputType = 'text';
 @prop export let value: any = undefined;
 @prop export let size: FormSizeType | undefined = undefined;

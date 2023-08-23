@@ -1,6 +1,0 @@
-{
-  "props": [
-    ["value", "number", ""],
-    ["size", "'sm' | 'md' | 'lg'", "'md'"]
-  ]
-}

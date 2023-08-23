@@ -9,9 +9,9 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { A} from '$lib';
-  import { props as items1 } from '../../props/Hr.json'
+  import componentData1 from '../../component-data/Hr.json'
 </script>
 
 The `Hr` component can be used to separate content using a horizontal line by adding space between elements based on multiple styles, variants, and layouts.
@@ -101,7 +101,7 @@ This example can be used to separate content with a HR tag as a shape instead of
 </Blockquote>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -109,6 +109,4 @@ The component has the following props, type, and default values. See [types page
 - Use the `divClass` prop to overwrite `classDiv`.
 - Use the `classInnerDiv` prop to overwrite `innerDivClass`.
 
-<TableProp>
-  <TableDefaultRow items={items1} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>

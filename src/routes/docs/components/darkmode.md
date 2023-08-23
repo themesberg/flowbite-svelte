@@ -9,9 +9,9 @@ thumnailSize: w-24
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
-  import { props as items} from '../../props/DarkMode.json'
+  import componentData1 from '../../component-data/DarkMode.json'
 </script>
 
 In Flowbite-Svelte, the `class` strategy is used to support toggling dark mode manually, so you should explicitly configure it in Talwind CSS:
@@ -96,15 +96,13 @@ Use the `lightIcon` and `darkIcon` slots to change icons:
 </DarkMode>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 - Use the `class` prop to overwrite `btnClass`.
 
-<TableProp>
-<TableDefaultRow {items} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ## References
 

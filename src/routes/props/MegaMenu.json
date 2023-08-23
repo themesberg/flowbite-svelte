@@ -1,8 +1,0 @@
-{
-  "props": [
-    ["items", "LinkTypeLike[]", "[]"],
-    ["full", "boolean", "false"],
-    ["open", "boolean", "false"],
-    ["ulClass", "string", "'grid grid-flow-row gap-y-4 md:gap-x-0 auto-col-max auto-row-max'"]
-  ]
-}

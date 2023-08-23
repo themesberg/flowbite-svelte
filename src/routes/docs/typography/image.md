@@ -9,9 +9,9 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow} from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { A, Heading } from '$lib'
-  import { props as items1 } from '../../props/Img.json'
+  import componentData1 from '../../component-data/Img.json'
 </script>
 
 Get started with a collection of responsive image components coded with the utility classes from Tailwind CSS that you can use inside articles, cards, sections, and other components based on multiple styles, sizes, layouts, and hover animations.
@@ -232,12 +232,10 @@ Use the max-w-full class to set the full width of the image as long as it doesnâ
 <Img src="/images/examples/image-1@2x.jpg" size="max-w-full" alt="sample 1" />
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 - Use the `class` prop to overwrite the `img` tag class.
 
-<TableProp>
-  <TableDefaultRow items={items1} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>

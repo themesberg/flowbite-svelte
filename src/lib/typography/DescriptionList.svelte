@@ -15,7 +15,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let tag: 'dt' | 'dd';
 @prop export let dtClass: string = 'text-gray-500 md:text-lg dark:text-gray-400';
 @prop export let ddClass: string = 'text-lg font-semibold';

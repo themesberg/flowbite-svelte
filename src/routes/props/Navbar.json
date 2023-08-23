@@ -1,7 +1,0 @@
-{
-  "props": [
-    ["navClass", "string", "'px-2 sm:px-4 py-2.5 w-full'"],
-    ["navDivClass", "string", "'mx-auto flex flex-wrap justify-between items-center '"],
-    ["fluid", "boolean", "false"]
-  ]
-}

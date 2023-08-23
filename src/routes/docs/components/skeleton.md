@@ -9,16 +9,16 @@ thumnailSize: w-40
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
-  import { props as items1 }  from '../../props/CardPlaceholder.json'
-  import { props as items2 }  from '../../props/ImagePlaceholder.json'
-  import { props as items3 }  from '../../props/ListPlaceholder.json'
-  import { props as items4 }  from '../../props/Skeleton.json'
-  import { props as items5 }  from '../../props/TestimonialPlaceholder.json'
-  import { props as items6 }  from '../../props/TextPlaceholder.json'
-  import { props as items7 }  from '../../props/VideoPlaceholder.json'
-  import { props as items8 }  from '../../props/WidgetPlaceholder.json'
+  import componentData1 from '../../component-data/CardPlaceholder.json'
+  import componentData2 from '../../component-data/ImagePlaceholder.json'
+  import componentData3 from '../../component-data/ListPlaceholder.json'
+  import componentData4 from '../../component-data/Skeleton.json'
+  import componentData5 from '../../component-data/TestimonialPlaceholder.json'
+  import componentData6 from '../../component-data/TextPlaceholder.json'
+  import componentData7 from '../../component-data/VideoPlaceholder.json'
+  import componentData8 from '../../component-data/WidgetPlaceholder.json'
 </script>
 
 Use the skeleton component to indicate a loading status with placeholder elements that look very similar to the type of content that is being loaded such as paragraphs, images, videos, and more.
@@ -128,7 +128,7 @@ Use the skeleton component to indicate a loading status with placeholder element
 <TestimonialPlaceholder />
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -136,65 +136,49 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite `divClass`.
 
-<TableProp>
-  <TableDefaultRow items={items1} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### ImagePlaceholder
 
 - Use the `class` prop to overwrite `divClass`.
 
-<TableProp>
-  <TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>
 
 ### ListPlaceholder
 
 - Use the `class` prop to overwrite `divClass`.
 
-<TableProp>
-  <TableDefaultRow items={items3} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData3}/>
 
 ### Skeleton
 
 - Use the `class` prop to overwrite `divClass`.
 
-<TableProp>
-  <TableDefaultRow items={items4} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData4}/>
 
 ### TestimonialPlaceholder
 
 - Use the `class` prop to overwrite `divClass`.
 
-<TableProp>
-  <TableDefaultRow items={items5} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData5}/>
 
 ### TextPlaceholder
 
 - Use the `class` prop to overwrite `divClass`.
 
-<TableProp>
-  <TableDefaultRow items={items6} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData6}/>
 
 ### VideoPlaceholder
 
 - Use the `class` prop to overwrite `divClass`.
 
-<TableProp>
-  <TableDefaultRow items={items7} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData7}/>
 
 ### WidgetPlaceholder
 
 - Use the `class` prop to overwrite `divClass`.
 
-<TableProp>
-  <TableDefaultRow items={items8} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData8}/>
 
 ## References
 

@@ -100,7 +100,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let open: boolean = false;
 @prop export let activeClass: string | undefined = undefined;
 @prop export let inactiveClass: string | undefined = undefined;

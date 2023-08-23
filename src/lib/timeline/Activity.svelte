@@ -11,6 +11,6 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let olClass: string = 'relative border-l border-gray-200 dark:border-gray-700';
 -->

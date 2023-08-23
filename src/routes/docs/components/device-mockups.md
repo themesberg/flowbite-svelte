@@ -9,19 +9,15 @@ thumnailSize: w-36
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
 
-  import { props as DeviceMockup } from '../../props/DeviceMockup.json'
-  import { props as Android } from '../../props/Android.json'
-  import { props as DefaultMockup } from '../../props/DefaultMockup.json'
-  import { props as Ios } from '../../props/Ios.json'
-  import { props as Smartwatch } from '../../props/Smartwatch.json'
-  import { props as Tablet } from '../../props/Tablet.json'
-
-  // Slots
-  let slotHeader = ['Name', 'Description']
-  let slotItems = [['default', 'For a button label.']]
+  import componentData1 from '../../component-data/DeviceMockup.json'
+  import componentData2 from '../../component-data/DefaultMockup.json'
+  import componentData3 from '../../component-data/Android.json'
+  import componentData4 from '../../component-data/Ios.json'
+  import componentData5 from '../../component-data/Smartwatch.json'
+  import componentData6 from '../../component-data/Tablet.json'
 </script>
 
 The device mockup component can be used to feature a preview and screenshot of your application as if you would already use it on a mobile phone and it’s a great use case for hero and CTA sections.
@@ -143,7 +139,7 @@ This component can be used to showcase applications built for smartwatches.
 </DeviceMockup>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -151,9 +147,7 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite the outer div class.
 
-<TableProp>
-  <TableDefaultRow items={DeviceMockup} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### DefaultMockup
 
@@ -164,9 +158,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `classDefaultLeftBot` prop to overwrite `defaultLeftBot`.
 - Use the `classDefaultRight` prop to overwrite `defaultRight`.
 
-<TableProp>
-  <TableDefaultRow items={DefaultMockup} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>
 
 ### Android
 
@@ -178,17 +170,15 @@ The component has the following props, type, and default values. See [types page
 - Use the `classAndroidLeftBot` prop to overwrite `androidLeftBot`.
 - Use the `classAndroidRight` prop to overwrite `androidRight`.
 
-<TableProp>
-  <TableDefaultRow items={Android} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData3}/>
 
 ### Desktop
 
-- Use the `classDesktopInner` prop to overwrite `desktopInner`.
-- Use the `classDesktopBot` prop to overwrite `desktopBot`.
-- Use the `classDesktopBotUnder` prop to overwrite `desktopBotUnder`.
-- Use the `classDestopDiv` prop to overwrite `destopDiv`.
-- Use the `classDesktopSlot` prop to overwrite `desktopSlot`.
+- Use the classDesktopInner prop to overwrite desktopInner.
+- Use the classDesktopBot prop to overwrite desktopBot.
+- Use the classDesktopBotUnder prop to overwrite desktopBotUnder.
+- Use the classDestopDiv prop to overwrite destopDiv.
+- Use the classDesktopSlot prop to overwrite desktopSlot.
 
 ### Ios
 
@@ -199,9 +189,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `classIosLeftBot` prop to overwrite `iosLeftBot`.
 - Use the `classIosRight` prop to overwrite `iosRight`.
 
-<TableProp>
-  <TableDefaultRow items={Ios} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData5}/>
 
 ### Laptop
 
@@ -221,9 +209,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `classAndroidDiv` prop to overwrite `androidDiv`.
 - Use the `classAndroidDiv` prop to overwrite `androidDiv`.
 
-<TableProp>
-  <TableDefaultRow items={Smartwatch} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData5}/>
 
 ### Tablet
 
@@ -234,9 +220,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `classAndroidDiv` prop to overwrite `androidDiv`.
 - Use the `classAndroidDiv` prop to overwrite `androidDiv`.
 
-<TableProp>
-  <TableDefaultRow items={Tablet} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData6}/>
 
 ## References
 

@@ -1,8 +1,0 @@
-{
-  "props": [
-    ["href", "string", "''"],
-    ["ariaLabel", "string", "''"],
-    ["aClass", "string", "'text-gray-500 hover:text-gray-900 dark:hover:text-white'"],
-    ["target", "string | undefined", "undefined"]
-  ]
-}

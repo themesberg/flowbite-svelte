@@ -18,7 +18,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let value: number;
 @prop export let size: 'sm' | 'md' | 'lg' = 'md';
 -->

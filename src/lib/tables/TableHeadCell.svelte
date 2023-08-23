@@ -10,6 +10,6 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let padding: string = 'px-6 py-3';
 -->

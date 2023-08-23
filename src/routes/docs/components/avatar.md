@@ -9,12 +9,12 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
 
   import { P, A } from '$lib'
 
-  import { props as avatarProps } from '../../props/Avatar.json'
-  import { props as placehoderProps } from '../../props/Placeholder.json'
+  import componentData1 from '../../component-data/Avatar.json'
+  import componentData2 from '../../component-data/Placeholder.json'
 
   let name;
 </script>
@@ -202,7 +202,7 @@ Select size from xs | sm | md | lg | xl.
 </div>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -211,15 +211,11 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite the default class.
 - Use the `classPlaceholder` prop to overwrite the placeholder class.
 
-<TableProp>
-<TableDefaultRow items={avatarProps} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### Placehoder
 
-<TableProp>
-  <TableDefaultRow items={placehoderProps} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>
 
 ## References
 

@@ -1,6 +1,0 @@
-{
-  "props": [
-    ["size", "SizeType", "'md'"],
-    ["divClass", "string", "'inline-flex rounded-lg shadow-sm'"]
-  ]
-}

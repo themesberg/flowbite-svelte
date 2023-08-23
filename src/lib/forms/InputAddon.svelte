@@ -42,6 +42,6 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let size: 'sm' | 'md' | 'lg' | undefined = undefined;
 -->

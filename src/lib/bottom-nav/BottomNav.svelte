@@ -65,7 +65,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let activeUrl: string = '';
 @prop export let position: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky' = 'fixed';
 @prop export let navType: 'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video' = 'default';

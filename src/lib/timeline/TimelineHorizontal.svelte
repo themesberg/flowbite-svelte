@@ -12,6 +12,6 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let olClass: string = 'sm:flex';
 -->

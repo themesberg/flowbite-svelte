@@ -8,11 +8,11 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, GitHubSourceList  } from '../../utils'
+	import { TableProp, TableDefaultRow, GitHubSourceList, CompoAttributesViewer } from '../../utils';
   import { Toolbar, ToolbarButton, ToolbarGroup, Avatar, Button, Textarea, Heading, A } from '$lib'
-  import { props as items1 } from '../../props/Toolbar.json'
-  import { props as items2 } from '../../props/ToolbarButton.json'
-  import { props as items3 } from '../../props/ToolbarGroup.json'
+  import componentData1 from '../../component-data/Toolbar.json'
+  import componentData2 from '../../component-data/ToolbarButton.json'
+  import componentData3 from '../../component-data/ToolbarGroup.json'
 </script>
 
 ## Setup
@@ -139,7 +139,7 @@ Most often the textarea component is used as the main text field input element i
 </p>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -147,22 +147,16 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite the `div` tag class.
 
-<TableProp>
-  <TableDefaultRow items={items1} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### ToolbarButton
 
 - Use the `class` prop to overwrite the `button` tag class.
 
-<TableProp>
-  <TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>
 
 ### ToolbarGroup
 
 - Use the `class` prop to overwrite `divClass`.
 
-<TableProp>
-  <TableDefaultRow items={items3} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData3}/>

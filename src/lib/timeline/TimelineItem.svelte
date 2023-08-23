@@ -109,7 +109,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let title: string = '';
 @prop export let date: string = '';
 @prop export let svgClass: string = 'w-3 h-3 text-primary-600 dark:text-primary-400';

@@ -1,6 +1,0 @@
-{
-  "props": [
-    ["color", "keyof typeof gradientClasses", "'blue'"],
-    ["shadow", "boolean", "false"]
-  ]
-}

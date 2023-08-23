@@ -9,14 +9,14 @@ thumnailSize: w-48
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
-  import { props as items } from '../../props/Carousel.json'
-  import { props as items2 } from '../../props/CarouselTransition.json'
-  import { props as items3 } from '../../props/Caption.json'
-  import { props as items4 } from '../../props/Indicator.json'
-  import { props as items5 } from '../../props/Slide.json'
-  import { props as items6 } from '../../props/Thumbnail.json'
+  import componentData1 from '../../component-data/Carousel.json'
+  import componentData2 from '../../component-data/CarouselTransition.json'
+  import componentData3 from '../../component-data/Caption.json'
+  import componentData4 from '../../component-data/Indicator.json'
+  import componentData5 from '../../component-data/Slide.json'
+  import componentData6 from '../../component-data/Thumbnail.json'
 </script>
 
 The carousel component can be used to cycle through a set of elements using custom options, controls, and indicators.
@@ -247,7 +247,7 @@ The carousel component can be used to cycle through a set of elements using cust
 </div>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -258,39 +258,27 @@ The component has the following props, type, and default values. See [types page
 - Use the `classCaption` prop to overwrite `captionClass`.
 - Use the `classIndicator` prop to overwrite `indicatorClass`.
 
-<TableProp>
-  <TableDefaultRow {items} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### CarouselTransition
 
-<TableProp>
-  <TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>
 
 ### Caption
 
-<TableProp>
-  <TableDefaultRow items={items3} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData3}/>
 
 ### Indicator
 
-<TableProp>
-  <TableDefaultRow items={items4} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData4}/>
 
 ### Slide
 
-<TableProp>
-  <TableDefaultRow items={items5} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData5}/>
 
 ### Thumbnail
 
-<TableProp>
-  <TableDefaultRow items={items6} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData6}/>
 
 ## References
 

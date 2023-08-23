@@ -38,7 +38,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let items: SelectOptionType[] = [];
 @prop export let value: any = undefined;
 @prop export let placeholder: string = 'Choose option ...';

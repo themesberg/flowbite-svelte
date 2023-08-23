@@ -27,7 +27,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let icon: boolean = false;
 @prop export let divClass: string = 'inline-flex items-center justify-center w-full';
 @prop export let hrClass: string = 'h-px my-8 bg-gray-200 border-0 dark:bg-gray-700';

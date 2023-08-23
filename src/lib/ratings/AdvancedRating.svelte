@@ -34,7 +34,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let ratings: { label: string;
 @prop export let divClass: string = 'flex items-center mt-4';
 @prop export let labelClass: string = 'text-sm font-medium text-gray-600 dark:text-gray-500';

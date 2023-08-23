@@ -8,15 +8,15 @@ description: Use the footer section at the bottom of every page to show valuable
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
 
-  import { props as items } from '../../props/Footer.json'
-  import { props as items2 } from '../../props/FooterBrand.json'
-  import { props as items3 } from '../../props/FooterCopyright.json'
-  import { props as items4 } from '../../props/FooterIcon.json'
-  import { props as items5 } from '../../props/FooterLink.json'
-  import { props as items6 } from '../../props/FooterLinkGroup.json'
+  import componentData1 from '../../component-data/Footer.json'
+  import componentData2 from '../../component-data/FooterBrand.json'
+  import componentData3 from '../../component-data/FooterCopyright.json'
+  import componentData4 from '../../component-data/FooterIcon.json'
+  import componentData5 from '../../component-data/FooterLink.json'
+  import componentData6 from '../../component-data/FooterLinkGroup.json'
 </script>
 
 The footer is one of the most underestimated sections of a website being located at the very bottom of every page, however, it can be used as a way to try to convince users to stay on your website if they haven’t found the information they’ve been looking for inside the main content area.
@@ -234,7 +234,7 @@ Use this example to set create a sticky footer by using a fixed position to the 
 </Footer>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -242,9 +242,7 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite the default class.
 
-<TableProp>
-  <TableDefaultRow {items} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### FooterBrand
 
@@ -252,43 +250,33 @@ The component has the following props, type, and default values. See [types page
 - Use the `classSpan` prop to overwrite `spanClass`.
 - Use the `classImg` prop to overwrite `imgClass`.
 
-<TableProp>
-  <TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>
 
 ### FooterCopyright
 
 - Use `classSpan` prop to overwrite `classSpan`.
 - Use `classA` prop to overwrite `aClass`.
 
-<TableProp>
-  <TableDefaultRow items={items3} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData3}/>
 
 ### FooterIcon
 
 - Use the `class` prop to overwrite `aClass`.
 
-<TableProp>
-  <TableDefaultRow items={items4} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData4}/>
 
 ### FooterLink
 
 - Use the `classLi` prop to overwrite `liClass`.
 - Use the `classA` prop to overwrite `aClass`.
 
-<TableProp>
-  <TableDefaultRow items={items5} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData5}/>
 
 ### FooterLinkGroup
 
 - Use the `class` prop to overwrite `ulClass`.
 
-<TableProp>
-  <TableDefaultRow items={items6} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData6}/>
 
 ## References
 

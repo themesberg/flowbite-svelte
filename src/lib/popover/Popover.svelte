@@ -28,7 +28,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let title: string = '';
 @prop export let defaultClass: string = 'py-2 px-3';
 -->

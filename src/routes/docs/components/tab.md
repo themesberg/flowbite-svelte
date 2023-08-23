@@ -9,12 +9,10 @@ thumnailSize: w-64
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, P, A } from '$lib'
-  import { props as items3 }  from '../../props/TabItem.json'
-  import { props as items4 }  from '../../props/Tabs.json'
-
-  const events = ["on:blur","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover"];
+  import componentData1 from '../../component-data/TabItem.json'
+  import componentData2 from '../../component-data/Tabs.json'
 </script>
 
 The tabs component can be used either as an extra navigational hierarchy complementing the main navbar or you can also use it to change content inside a container just below the tabs using the data attributes from Flowbite.
@@ -324,7 +322,7 @@ You can add other components to the `TabItem` component. Here we are adding a ti
 
 To get a custom look and feel for the `Tabs` component, do not set `style` prop, but set `activeClasses` and `inactiveClasses` properties either on the `Tabs` component or on the individual `TabItem` components.
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -332,21 +330,13 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite the `li` tag class.
 
-<TableProp>
-  <TableDefaultRow items={items3} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### Tabs
 
 - Use the `class` prop to overwrite `defaultClass`.
 
-<TableProp>
-  <TableDefaultRow items={items4} rowState='hover' />
-</TableProp>
-
-## Forwarded Events: TabItem
-
-<DocBadgeList items={events} />
+<CompoAttributesViewer componentData={componentData2}/>
 
 ## References
 

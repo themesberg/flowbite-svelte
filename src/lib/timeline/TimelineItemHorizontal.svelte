@@ -55,7 +55,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let timelineItems: TimelineItemHorizontalType[];
 @prop export let title: string;
 @prop export let date: string;

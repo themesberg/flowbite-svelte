@@ -9,20 +9,12 @@ thumnailSize: w-28
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, P, A  } from '$lib'
-  import { props as propItems} from '../../props/Dropdown.json'
-  import { props as propItems2} from '../../props/DropdownDivider.json'
-  import { props as propItems3} from '../../props/DropdownHeader.json'
-  import { props as propItems4} from '../../props/DropdownItem.json'
-
-  // slot
-  let slotHeader = ['Name', 'Description']
-  let slotItems = [['header', 'Dropdown fixed top element.'],['footer','Dropdown fixed bottom element.']]
-  let slotDropdownHeader = [['default', 'Dropdown header content.']]
-  let slotDropdownItem = [['default', 'Dropdown item content.']]
-
-  const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keyup","on:mouseenter","on:mouseleave"];
+  import componentData1 from '../../component-data/Dropdown.json'
+  import componentData2 from '../../component-data/DropdownDivider.json'
+  import componentData3 from '../../component-data/DropdownHeader.json'
+  import componentData4 from '../../component-data/DropdownItem.json'
 </script>
 
 The dropdown component can be used to show a list of menu items when clicking on an element such as a button and hiding it when clicking outside of the triggering element.
@@ -728,7 +720,7 @@ When you need to include a link with an active class, you can follow the example
 
 The active prop is utilized to dynamically apply an active class to the link when the activeUrl variable matches the current URL. Remember to customize the href value and the condition in the active prop based on your specific use case.
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -739,59 +731,25 @@ The component has the following props, type, and default values. See [types page
 - Use the `classUl` prop to overwrite `ulClass`.
 - Use the `classFooter` prop to overwrite `footerClass`.
 
-<TableProp>
-  <TableDefaultRow items={propItems} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### DropdownDivider
 
 - Use the `class` prop to overwrite `divClass`.
 
-<TableProp>
-  <TableDefaultRow items={propItems2} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>
 
 ### DropdownHeader
 
 - Use the `class` prop to overwrite `divClass`.
 
-<TableProp>
-  <TableDefaultRow items={propItems3} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData3}/>
 
 ### DropdownItem
 
 - Use the `class` prop to overwrite `defaultClass`.
 
-<TableProp>
-  <TableDefaultRow items={propItems4} rowState='hover' />
-</TableProp>
-
-## Slots
-
-### Dropdown
-
-<TableProp header={slotHeader}>
-  <TableDefaultRow items={slotItems} rowState='hover' />
-</TableProp>
-
-### DropdownDivider
-
-<TableProp header={slotHeader}>
-  <TableDefaultRow items={slotDropdownHeader} rowState='hover' />
-</TableProp>
-
-### DropdownItem
-
-<TableProp header={slotHeader}>
-  <TableDefaultRow items={slotDropdownItem} rowState='hover' />
-</TableProp>
-
-## Forwarded Events
-
-### DropdownItem
-
-<DocBadgeList items={events} />
+<CompoAttributesViewer componentData={componentData4}/>
 
 ## References
 

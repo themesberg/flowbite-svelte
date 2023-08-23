@@ -8,11 +8,11 @@ description: Use the popover component to show detailed information inside a pop
 ---
 
 <script>
-  import { TableProp, TableDefaultRow , } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
-  import { props as items } from '../../props/Popover.json'
-  import { props as items2 } from '../../props/Popper.json'
-  import { props as items3 } from '../../props/Frame.json'
+  import componentData1 from '../../component-data/Popover.json'
+  import componentData2 from '../../component-data/Popper.json'
+  import componentData3 from '../../component-data/Frame.json'
 </script>
 
 Get started with the popover component to show any type of content inside a pop-up box when hovering or clicking over a trigger element. There are multiple examples that you can choose from, such as showing more information about a user profile, company profile, password strength, and more.
@@ -374,15 +374,13 @@ If you need the popover to be attached to the other element then the tiggering o
 <Popover reference="#ext-ref" triggeredBy="[id^='ref-']" class="w-64 text-sm font-light " {placement} title="Placement: {placement}">And here's some amazing content. It's very engaging. Right?</Popover>
 ```
 
-## Props
+## Component data
 
 ### Popover
 
 <p>The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.</p>
 
-<TableProp>
-  <TableDefaultRow {items} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### Popper
 
@@ -390,17 +388,13 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite the default class.
 
-<TableProp>
-  <TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>
 
 ### Frame
 
 The component inherits the following props, type, and default values from `Frame`. See <A href="/docs/pages/typescript">types page</A> for type information.
 
-<TableProp>
-  <TableDefaultRow items={items3} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData3}/>
 
 ## References
 

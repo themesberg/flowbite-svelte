@@ -9,10 +9,10 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow} from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { A, Heading } from '$lib'
-  import { props as items1 } from '../../props/P.json'
-  import { props as items2 } from '../../props/Span.json'
+  import componentData1 from '../../component-data/P.json'
+  import componentData2 from '../../component-data/Span.json'
 
   // lib files
   const libFilesArray = [
@@ -329,20 +329,16 @@ Use the `opacity` and `color` prop to set the opacity of inline text elements.
 <P size="xl" opacity={25} color="text-blue-600 dark:text-blue-500">Flowbite app will help you improve yourself by analysing your everyday life.</P>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 ### P
 
-<TableProp>
-  <TableDefaultRow items={items1} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### Span
 
 - Use the `class` prop to overwrite the default class.
 
-<TableProp>
-  <TableDefaultRow items={items1} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>

@@ -25,7 +25,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let items: ImgType[] = [];
 @prop export let imgClass: string = 'h-auto max-w-full rounded-lg';
 -->

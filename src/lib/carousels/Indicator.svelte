@@ -6,17 +6,17 @@
 
 <button type="button" class={indicatorClass} class:active={selected} aria-label={name} on:click />
 
-<!--
-@component
-[Go to docs](https://flowbite-svelte.com/)
-## Props
-@prop export let name: string = '';
-@prop export let selected: boolean = false;
-@prop export let indicatorClass: string = '';
--->
-
 <style>
   .active {
     opacity: 1;
   }
 </style>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Component data
+@prop export let name: string = '';
+@prop export let selected: boolean = false;
+@prop export let indicatorClass: string = '';
+-->

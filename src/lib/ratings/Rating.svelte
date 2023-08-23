@@ -46,7 +46,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let divClass: string = 'flex items-center';
 @prop export let size: number = 24;
 @prop export let total: number = 5;

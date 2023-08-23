@@ -9,6 +9,7 @@ export { default as PageHeadSection } from './PageHeadSection.svelte';
 export { default as MetaTag } from './MetaTag.svelte';
 export { default as TableDefaultRow } from './TableDefaultRow.svelte';
 export { default as TableProp } from './TableProp.svelte';
+export { default as CompoAttributesViewer } from './CompoAttributesViewer.svelte'
 export { default as Toc } from './Toc.svelte';
 
 const basename = (path: string) => path.split('/').pop()?.split('.').shift() ?? '';

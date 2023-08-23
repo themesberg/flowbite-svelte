@@ -60,7 +60,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let href: string | null | undefined = undefined;
 @prop export let horizontal: boolean = false;
 @prop export let reverse: boolean = false;

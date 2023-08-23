@@ -8,16 +8,10 @@ description: Show contextual information to your users using alert elements base
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
 
-  import { props as frameProps} from '../../props/Frame.json'
-  import { props as alertProps } from '../../props/Alert.json'
-
-  const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keyup","on:mouseenter","on:mouseleave"];
-
-  // slots
-  let slotHeader = ['Name', 'Description']
-  let slotItems = [['default', 'The first slot.'],['extra','A slot after the default slot.']]
+  import componentData1 from '../../component-data/Alert.json'
+  import componentData2 from '../../component-data/Frame.json'
 </script>
 
 The alert component can be used to provide information to your users such as success or error messages, but also highlighted information complementing the normal flow of paragraphs and headers on a page. Flowbite also includes dismissable alerts which can be hidden by the users by clicking on the close icon.
@@ -335,7 +329,7 @@ Use the `close` event with `dismissable` prop.
 <Alert dismissable on:close={closeAlert}>Close me</Alert>
 ```
 
-## Props
+## Component data
 
 ### Alert
 
@@ -343,27 +337,14 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite `defaultClass`.
 
-<TableProp>
-<TableDefaultRow items={alertProps} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### Frame
 
 The component inherits the following props, type, and default values from `Frame`. See [types page](/docs/pages/typescript) for type information.
 
-<TableProp>
-<TableDefaultRow items={frameProps} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>
 
-## Slots
-
-<TableProp header={slotHeader}>
-  <TableDefaultRow items={slotItems} rowState='hover' />
-</TableProp>
-
-## Forwarded Events
-
-<DocBadgeList items={events} />
 
 ## References
 

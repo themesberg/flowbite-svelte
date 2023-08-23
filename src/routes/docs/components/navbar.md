@@ -8,18 +8,16 @@ description: The navbar component can be used to show a list of navigation links
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, Heading, P, A } from '$lib';
 
-  import { props as items } from '../../props/Navbar.json'
-  import { props as items2 } from '../../props/NavBrand.json'
-  import { props as items3 } from '../../props/NavLi.json'
-  import { props as items4 } from '../../props/NavUl.json'
-  import { props as items5 } from '../../props/NavHamburger.json'
-  import { props as items6 } from '../../props/Menu.json'
-  import { props as sidebarMenuProp } from '../../props/SidebarMenu.json'
-
-  const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover"];
+  import componentData1 from '../../component-data/Navbar.json'
+  import componentData2 from '../../component-data/NavBrand.json'
+  import componentData3 from '../../component-data/NavLi.json'
+  import componentData4 from '../../component-data/NavUl.json'
+  import componentData5 from '../../component-data/NavHamburger.json'
+  import componentData6 from '../../component-data/Menu.json'
+  import componentData7 from '../../component-data/SidebarMenu.json'
 </script>
 
 Get started with the responsive navbar component from Flowbite to quickly set up a navigation menu for your website and set up the logo, list of pages, CTA button, search input, user profile options with a dropdown, and more.
@@ -307,7 +305,7 @@ Use this example to show a solid background for the navbar component instead of 
 </Navbar>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -316,66 +314,46 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite `navClass`.
 - Use the `classNavDiv` prop to overwrite `navDivClass`.
 
-<TableProp>
-  <TableDefaultRow {items} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### NavBrand
 
 - Use the `class` prop to overwrite the `a` tag class.
 
-<TableProp>
-  <TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>
 
 ### NavHamburger
 
 - Use the `class` prop to overwrite `btnClass`.
 - Use the `classMenu` prop to overwrite `menuClass`.
 
-<TableProp>
-  <TableDefaultRow items={items5} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData3}/>
 
 ### NavLi
 
 - Use the `class` prop to overwrite the `li` tag.
 
-<TableProp>
-  <TableDefaultRow items={items3} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData4}/>
 
 ### NavUl
 
 - Use the `class` prop to overwrite the `div` tag.
 - Use the `classUl` prop to overwrite the `ul` tag.
 
-<TableProp>
-  <TableDefaultRow items={items4} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData5}/>
 
 ### Menu
 
 - Use the `class` prop to overwrite the `svg` tag class.
 
-<TableProp>
-  <TableDefaultRow items={items6} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData6}/>
 
 ### SidebarMenu
 
 - Use the `class` prop to overwrite the outer class.
 - Use the `classSideMenu` prop to overwrite the inner class.
 
-<TableProp>
-  <TableDefaultRow items={sidebarMenuProp} rowState='hover' />
-</TableProp>
-
-## Forwarded Events
-
-### NavLi
-
-<DocBadgeList items={events} />
+<CompoAttributesViewer componentData={componentData7}/>
 
 ## References
 

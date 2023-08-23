@@ -9,9 +9,9 @@ thumnailSize: w-28
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
-  import { props as badgeProps } from '../../props/Badge.json'
+  import componentData1 from '../../component-data/Badge.json'
 </script>
 
 The badge component can be used to complement other elements such as buttons or text elements as a label or to show the count of a given data, such as the number of comments for an article or how much time has passed by since a comment has been made.
@@ -253,15 +253,13 @@ A `dismiss` event will be dispatched during the dismissal, listen to it if neede
 <Badge dismissable large on:close={handleClose}>Default</Badge>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 - Use the `class` prop to overwrite the default class.
 
-<TableProp>
-  <TableDefaultRow items={badgeProps} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ## References
 

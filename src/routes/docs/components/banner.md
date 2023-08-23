@@ -9,9 +9,9 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
-  import { props as bannerProps } from '../../props/Banner.json'
+  import componentData1 from '../../component-data/Banner.json'
 </script>
 
 Get started with the sticky banner component coded with Tailwind CSS and Flowbite to show marketing, informational and CTA messages to your website visitors fixed to the top or bottom part of the page as the user scroll down the main content area.
@@ -150,20 +150,14 @@ This example can be used to share important information with your website visito
 </Banner>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 - Use the `classDiv` prop to overwrite `divClass`.
 - Use the `classInner` prop to overwrite `innerClass`.
 
-<TableProp>
-<TableDefaultRow items={bannerProps} rowState='hover' />
-</TableProp>
-
-## Slot
-
-Use the slot name `header` to insert your elements before the inner div.
+<CompoAttributesViewer componentData={componentData1}/>
 
 ## References
 

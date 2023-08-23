@@ -16,7 +16,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let site: SiteType;
 @prop export let aClass: string = 'flex items-center pl-2.5 mb-5';
 @prop export let imgClass: string = 'h-6 mr-3 sm:h-7';

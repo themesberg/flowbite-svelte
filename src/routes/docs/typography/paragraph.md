@@ -9,10 +9,10 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow} from '../../utils';
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils';
   import { Layout, P, A, Heading } from '$lib';
-  import { props as items1 } from '../../props/P.json'
-  import { props as items2 } from '../../props/Layout.json'
+  import componentData1 from '../../component-data/P.json'
+  import componentData2 from '../../component-data/Layout.json'
 </script>
 
 The paragraph element is one of the most commonly used HTML tags on a document page because it is used to write longer blocks of text separated by a blank line and can massively improve the on-page SEO of the page when used correctly. Get started with a collection of paragraph components based on multiple styles, layouts, colors and sizes to use for your website.
@@ -254,7 +254,7 @@ Use the `align="right"` prop to align the paragraph text the right side of the p
 <P align="right">Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -262,12 +262,8 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite the `p` tag class.
 
-<TableProp>
-  <TableDefaultRow items={items1} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### Layout
 
-<TableProp>
-  <TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>

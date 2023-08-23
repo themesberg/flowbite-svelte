@@ -9,14 +9,9 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
-
-  import { props as galleryProps } from '../../props/Gallery.json'
-
-  // Slots
-  let slotHeader = ['Name', 'Description']
-  let slotItems = [['default', 'For a button label.']]
+  import componentData1 from '../../component-data/Gallery.json'
 </script>
 
 The gallery component can be used to show multiple images inside a masonry grid layout styles with the utility-first classes from Tailwind CSS to show a collection of pictures to your users based on various layouts, styles, sizes, and colors.
@@ -251,7 +246,7 @@ This example shows how to get a complete control over the gallery images look an
 </Gallery>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -260,9 +255,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite the `div` tag.
 - Use the `classImg` prop to overwrite `imgClass`.
 
-<TableProp>
-<TableDefaultRow items={galleryProps} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ## References
 

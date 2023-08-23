@@ -1,9 +1,0 @@
-{
-  "props": [
-    ["src", "string", ""],
-    ["type", "string", "'video/mp4'"],
-    ["trackSrc", "string", "''"],
-    ["srclang", "string", "'en'"],
-    ["label", "string", "'english_captions'"]
-  ]
-}

@@ -9,12 +9,10 @@ thumnailSize: w-36
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, Heading, P, A } from '$lib'
-  import { props as items1 } from '../../props/Listgroup.json'
-  import { props as items2 } from '../../props/ListgroupItem.json'
-
-  const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover"];
+  import componentData1 from '../../component-data/Listgroup.json'
+  import componentData2 from '../../component-data/ListgroupItem.json'
 </script>
 
 The list group component can be used to display a series of elements, buttons or links inside a single card component similar to a sidebar.
@@ -140,7 +138,7 @@ When non standard usage is needed you can omit the `items` props and add element
 </Listgroup>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -148,23 +146,14 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite `defaultClass`.
 
-<TableProp>
-  <TableDefaultRow items={items1} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### ListgroupItem
 
 - Use the `class` prop to overwrite the `li` tag class.
 
-<TableProp>
-  <TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>
 
-## Forwarded Events
-
-### ListgroupItem
-
-<DocBadgeList items={events} />
 
 ## References
 

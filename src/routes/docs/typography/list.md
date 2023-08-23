@@ -9,10 +9,10 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow } from '../../utils'
-  import { props as items1 } from '../../props/List.json'
-  import { props as items2 } from '../../props/Li.json'
-  import { props as items3 } from '../../props/DescriptionList.json'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import componentData1 from '../../component-data/List.json'
+  import componentData2 from '../../component-data/Li.json'
+  import componentData3 from '../../component-data/DescriptionList.json'
 </script>
 
 Get started with a collection of list components built with Tailwind CSS for ordered and unordered lists with bullets, numbers, or icons and other styles and layouts to show a list of items inside an article or throughout your web page.
@@ -340,7 +340,7 @@ Use this example to create a horizontally aligned list of items.
 </List>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -348,22 +348,16 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite the list class.
 
-<TableProp>
-  <TableDefaultRow items={items1} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### Li
 
 - Use the `class` prop to overwrite the `li` tag class.
 
-<TableProp>
-  <TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>
 
 ### DescriptionList
 
 - Use the `class` prop to overwrite the `description` tag class.
 
-<TableProp>
-  <TableDefaultRow items={items3} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData3}/>

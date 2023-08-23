@@ -1,7 +1,0 @@
-{
-  "props": [
-    ["color", "'primary' | 'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'none'", "'primary'"],
-    ["large", "boolean", "false"],
-    ["dismissable", "boolean", "false"]
-  ]
-}

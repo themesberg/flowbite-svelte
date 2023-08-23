@@ -148,13 +148,13 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let open: boolean = false;
 @prop export let title: string = '';
 @prop export let size: SizeType = 'md';
 @prop export let placement: ModalPlacementType = 'center';
 @prop export let autoclose: boolean = false;
-@prop export let permanent: boolean = false;
+@prop export let dismissable: boolean = true;
 @prop export let backdropClass: string = 'fixed inset-0 z-40 bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
 @prop export let defaultClass: string = 'relative flex flex-col mx-auto';
 @prop export let outsideclose: boolean = false;

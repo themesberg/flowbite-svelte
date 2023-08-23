@@ -47,7 +47,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let size: 'small' | 'default' | 'large' | 'custom' = 'default';
 @prop export let group: (string | number)[] = [];
 @prop export let value: string | number = '';

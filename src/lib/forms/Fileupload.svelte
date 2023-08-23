@@ -14,7 +14,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let value: string = '';
 @prop export let files: FileList | undefined = undefined;
 @prop export let inputClass: string = 'border !p-0 dark:text-gray-400';

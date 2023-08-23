@@ -1,6 +1,0 @@
-{
-  "props": [
-    ["color", "ToolbarColorType", "'dark'"],
-    ["embedded", "boolean", "false"]
-  ]
-}
