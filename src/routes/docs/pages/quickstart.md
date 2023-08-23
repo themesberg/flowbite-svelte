@@ -24,7 +24,7 @@ You can install SvelteKit or Svelte to start your app. For SvelteKit:
 ```bash example
 npm create svelte@latest my-app
 cd my-app
-npm install
+pnpm install
 ```
 
 ### Using Svelte
@@ -34,7 +34,7 @@ If you want to get started with Svelte:
 ```bash
 npm create vite@latest myapp -- --template svelte
 cd myapp
-npm install
+pnpm install
 ```
 
 ### Install Tailwind CSS
@@ -43,13 +43,13 @@ In order to enable the utility classes from Tailwind CSS install the package usi
 
 ```bash
 npx svelte-add@latest tailwindcss
-npm i
+pnpm i
 ```
 
 Run a local development server by running:
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 ### Install Flowbite Svelte
@@ -57,7 +57,7 @@ npm run dev
 Run the following command to install all Flowbite dependencies and libraries:
 
 ```sh
-npm i -D flowbite-svelte
+pnpm i -D flowbite-svelte
 ```
 
 ### Configuration
