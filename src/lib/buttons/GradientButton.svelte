@@ -73,7 +73,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let color: keyof typeof gradientClasses = 'blue';
 @prop export let shadow: boolean = false;
 -->

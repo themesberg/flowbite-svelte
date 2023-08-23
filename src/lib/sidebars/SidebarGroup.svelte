@@ -17,7 +17,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let ulClass: string = 'space-y-2';
 @prop export let borderClass: string = 'pt-4 mt-4 border-t border-gray-200 dark:border-gray-700';
 @prop export let border: boolean = false;

@@ -8,12 +8,9 @@ description: Get started with the range component to receive a number from the u
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
-  import { props as items } from '../../props/Range.json'
-
-  const events = ["on:change","on:click","on:keydown","on:keypress","on:keyup"];
-
+  import componentData1 from '../../component-data/Range.json'
   let minmaxValue=5
 </script>
 
@@ -98,19 +95,13 @@ Use bind:value to bind the range input value as seen the the following examples.
 
 Since we added `$$restProps` to input field, you can contain the props which are not declared with export. It will pass down other unknown attributes to an element in a component.
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 Use the `class` prop to overwrite the default class.
 
-<TableProp>
-  <TableDefaultRow {items} rowState='hover' />
-</TableProp>
-
-## Forwarded Events
-
-<DocBadgeList items={events} />
+<CompoAttributesViewer componentData={componentData1}/>
 
 ## References
 

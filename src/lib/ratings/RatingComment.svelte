@@ -76,7 +76,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let ceil: boolean = false;
 @prop export let helpfullink: string = '';
 @prop export let abuselink: string = '';

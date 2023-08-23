@@ -66,7 +66,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let btnName: string = '';
 @prop export let appBtnPosition: 'left' | 'middle' | 'right' = 'middle';
 @prop export let activeClass: string | undefined = undefined;

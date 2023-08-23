@@ -55,7 +55,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let position: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky' = 'sticky';
 @prop export let dismissable: boolean = true;
 @prop export let bannerType: 'default' | 'bottom' | 'cta' | 'signup' | 'info' = 'default';

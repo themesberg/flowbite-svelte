@@ -1,8 +1,0 @@
-{
-  "props": [
-    ["btnName", "string", "''"],
-    ["appBtnPosition", "'left' | 'middle' | 'right'", "'middle'"],
-    ["activeClass", "string | undefined", "undefined"],
-    ["href", "string", "''"]
-  ]
-}

@@ -15,7 +15,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let androidTop: string;
 @prop export let androidLeftTop: string;
 @prop export let androidLeftMid: string;

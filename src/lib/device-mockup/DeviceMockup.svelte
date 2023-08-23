@@ -188,7 +188,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let device: 'default' | 'ios' | 'android' | 'tablet' | 'laptop' | 'desktop' | 'smartwatch' = 'default';
 @prop export let androidDiv: string = 'relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-xl h-[600px] w-[300px] shadow-xl';
 @prop export let androidSlot: string = 'rounded-xl overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-800';

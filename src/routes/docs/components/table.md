@@ -9,15 +9,15 @@ thumnailSize: w-48
 ---
 
 <script>
-  import { TableProp, TableDefaultRow , } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
-  import { props as items1 }  from '../../props/Table.json'
-  import { props as items2 }  from '../../props/TableBody.json'
-  import { props as items3 }  from '../../props/TableBodyCell.json'
-  import { props as items4 }  from '../../props/TableBodyRow.json'
-  import { props as items5 }  from '../../props/TableHead.json'
-  import { props as items6 }  from '../../props/TableHeadCell.json'
-  import { props as items7 }  from '../../props/TableSearch.json'
+  import componentData1 from '../../component-data/Table.json'
+  import componentData2 from '../../component-data/TableBody.json'
+  import componentData3 from '../../component-data/TableBodyCell.json'
+  import componentData4 from '../../component-data/TableBodyRow.json'
+  import componentData5 from '../../component-data/TableHead.json'
+  import componentData6 from '../../component-data/TableHeadCell.json'
+  import componentData7 from '../../component-data/TableSearch.json'
 </script>
 
 The table component represents a set of structured elements made up of rows and columns as table cells that can be used to show data sets to your website users.
@@ -839,7 +839,7 @@ Use this example to apply a different color to every second row inside the table
 </Table>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -847,55 +847,41 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite the `table` tag class.
 
-<TableProp>
-  <TableDefaultRow items={items1} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### TableBody
 
-<TableProp>
-  <TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>
 
 ### TableBodyCell
 
 - Use the `class` prop to overwrite `tdClass`.
 
-<TableProp>
-  <TableDefaultRow items={items3} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData3}/>
 
 ### TableBodyRow
 
 - Use the `class` prop to overwrite the `tr` tag class.
 
-<TableProp>
-  <TableDefaultRow items={items4} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData4}/>
 
 ### TableHead
 
 - Use the `class` prop to overwrite the `thead` tag class.
 
-<TableProp>
-  <TableDefaultRow items={items5} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData5}/>
 
 ### TableHeadCell
 
 - Use the `class` prop to overwrite the `th` tag class.
 
-<TableProp>
-  <TableDefaultRow items={items6} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData6}/>
 
 ### TableSearch
 
 - Use the `class` prop to overwrite the `table` tag class.
 
-<TableProp>
-  <TableDefaultRow items={items7} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData7}/>
 
 ## References
 

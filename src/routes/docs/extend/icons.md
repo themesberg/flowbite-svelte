@@ -36,7 +36,7 @@ Inside a Svelte file import any of the icons like this:
 <Icon name="address-card-solid" />
 ```
 
-## Props
+## Component data
 
 Check out the list of properties that you can use to customize and update the icons from Flowbite Svelte.
 

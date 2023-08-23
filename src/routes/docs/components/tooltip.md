@@ -9,10 +9,10 @@ thumnailSize: w-24
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
-  import { props as items } from '../../props/Tooltip.json'
-  import { props as items2 } from '../../props/Frame.json'
+  import componentData1 from '../../component-data/Tooltip.json'
+  import componentData2 from '../../component-data/Frame.json'
 </script>
 
 Flowbite-Svelte allows you to show extra information when hovering or focusing over an element in multiple positions, styles, and animations.
@@ -139,15 +139,13 @@ When you want to add a fully custom styles, use `type="custom"`, `defaultClass`,
 <Tooltip placement="right" type="custom" defaultClass="" class="p-4 text-lg font-medium bg-purple-500 text-gray-100" arrow={false}>Tooltip content</Tooltip>
 ```
 
-## Props
+## Component data
 
 ### Tooltip
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-<TableProp>
-  <TableDefaultRow {items} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### Frame
 
@@ -155,9 +153,7 @@ The component inherits the following props, type, and default values from `Frame
 
 - Use the `class` prop to overwrite the default class.
 
-<TableProp>
-  <TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>
 
 ## References
 

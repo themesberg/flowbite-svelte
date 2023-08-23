@@ -9,13 +9,10 @@ thumnailSize: w-48
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
-  import { props as items } from '../../props/Fileupload.json'
-  import { props as items2 } from '../../props/Dropzone.json'
-
-  const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover","on:paste"];
-  const events2 = ["on:click","on:change","on:focus","on:blur","on:mouseenter","on:mouseleave","on:mouseover"];
+  import componentData1 from '../../component-data/Fileupload.json'
+  import componentData2 from '../../component-data/Dropzone.json'
 </script>
 
 The file input component can be used to upload one or more files from the device storage of the user available in multiple sizes, styles, variants and support for dark mode.
@@ -156,7 +153,7 @@ When the user selected multiple files, the `value` represents the first file in 
 </Dropzone>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -164,24 +161,13 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite `inputClass`.
 
-<TableProp>
-  <TableDefaultRow {items} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### Dropzone
 
 - Use the `class` prop to overwrite `defaultClass`.
 
-<TableProp>
-  <TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
-
-## Forwarded Events: Fileupload
-
-<DocBadgeList items={events} />
-## Forwarded Events: Dropzone
-
-<DocBadgeList items={events2} />
+<CompoAttributesViewer componentData={componentData2}/>
 
 ## References
 

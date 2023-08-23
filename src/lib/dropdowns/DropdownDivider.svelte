@@ -8,6 +8,6 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let divClass: string = 'my-1 h-px bg-gray-100 dark:bg-gray-600';
 -->

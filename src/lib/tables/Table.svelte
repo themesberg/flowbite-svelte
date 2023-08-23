@@ -38,7 +38,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let divClass: string = 'relative overflow-x-auto';
 @prop export let striped: boolean = false;
 @prop export let hoverable: boolean = false;

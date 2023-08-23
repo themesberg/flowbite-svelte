@@ -9,19 +9,19 @@ thumnailSize: w-40
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
 
   import { P, A, Heading } from '$lib'
-  import { props as items } from '../../props/Input.json'
-  import { props as items2 } from '../../props/Label.json'
-  import { props as items3 } from '../../props/Helper.json'
-  import { props as items5 } from '../../props/Fileupload.json'
-  import { props as items6 } from '../../props/Textarea.json'
-  import { props as items7 } from '../../props/Select.json'
-  import { props as items8 } from '../../props/Checkbox.json'
-  import { props as items9 } from '../../props/Radio.json'
-  import { props as items10 } from '../../props/Toggle.json'
-  import { props as items11 } from '../../props/MultiSelect.json'
+  import componentData1 from '../../component-data/Input.json'
+  import componentData2 from '../../component-data/Label.json'
+  import componentData3 from '../../component-data/Helper.json'
+  import componentData4 from '../../component-data/Fileupload.json'
+  import componentData5 from '../../component-data/Textarea.json'
+  import componentData6 from '../../component-data/Select.json'
+  import componentData7 from '../../component-data/Checkbox.json'
+  import componentData8 from '../../component-data/Radio.json'
+  import componentData9 from '../../component-data/Toggle.json'
+  import componentData10 from '../../component-data/MultiSelect.json'
 
 </script>
 
@@ -253,7 +253,7 @@ Get started with the default example of a select input component to get a single
 <Toggle checked disabled>Disabled checked</Toggle>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -261,63 +261,43 @@ To learn how to overwrite classes, please refer to the individual component page
 
 ### Input
 
-<TableProp>
-  <TableDefaultRow items={items} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### Label
 
-<TableProp>
-  <TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>
 
 ### Helper
 
-<TableProp>
-  <TableDefaultRow items={items3} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData3}/>
 
 ### Fileupload
 
-<TableProp>
-  <TableDefaultRow items={items5} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData4}/>
 
 ### Textarea
 
-<TableProp>
-  <TableDefaultRow items={items6} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData5}/>
 
 ### Select
 
-<TableProp>
-  <TableDefaultRow items={items7} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData6}/>
 
 ### MultiSelect
 
-<TableProp>
-  <TableDefaultRow items={items11} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData7}/>
 
 ### Checkbox
 
-<TableProp>
-  <TableDefaultRow items={items8} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData8}/>
 
 ### Radio
 
-<TableProp>
-  <TableDefaultRow items={items9} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData9}/>
 
 ### Toggle
 
-<TableProp>
-  <TableDefaultRow items={items10} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData10}/>
 
 ## References
 

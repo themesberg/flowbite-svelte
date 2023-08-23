@@ -15,7 +15,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let tag: string = 'div';
 @prop export let show: boolean;
 @prop export let use: Action<HTMLElement, any> = () => {};

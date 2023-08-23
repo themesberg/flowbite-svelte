@@ -89,8 +89,8 @@ devDependencies:
     specifier: ^3.5.0
     version: 3.5.0(postcss-load-config@4.0.1)(postcss@8.4.28)(svelte@4.2.0)
   svelte-lib-helpers:
-    specifier: ^0.2.8
-    version: 0.2.8
+    specifier: ^0.3.4
+    version: 0.3.4
   svelte-meta-tags:
     specifier: ^2.8.0
     version: 2.8.0(svelte@4.2.0)(typescript@5.1.6)
@@ -3197,8 +3197,8 @@ packages:
       svelte: 4.2.0
     dev: true
 
-  /svelte-lib-helpers@0.2.8:
-    resolution: {integrity: sha512-HKPldpqrrRxGO8j4HCN/Lol+3cXGH7xfTUb+zT8gyMwPZy2ihBYjQHvg50dFUjWMj1BDZ6TibVzszSsFxra96A==}
+  /svelte-lib-helpers@0.3.4:
+    resolution: {integrity: sha512-RzSnfFAKMcr4elSLDbEXLbtQsHUC/4Xc7c6Rk4khNcwm/AObYuOuEUelQdjYql9oP6IO7+GqOmEVlli7LhfVQw==}
     hasBin: true
     dev: true
 

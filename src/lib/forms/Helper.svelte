@@ -17,7 +17,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let helperClass: string = 'text-xs font-normal text-gray-500 dark:text-gray-300';
 @prop export let color: 'gray' | 'green' | 'red' | 'disabled' = 'gray';
 -->

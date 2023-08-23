@@ -42,7 +42,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let divClass: string = 'p-4 rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700';
 @prop export let size: keyof Sizes = 'sm';
 -->

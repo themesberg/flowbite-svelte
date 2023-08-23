@@ -21,7 +21,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let tag: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h1';
 @prop export let color: string = 'text-gray-900 dark:text-white';
 @prop export let customSize: string = '';

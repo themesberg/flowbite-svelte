@@ -39,7 +39,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let border: boolean = false;
 @prop export let italic: boolean = true;
 @prop export let borderClass: string = 'border-l-4 border-gray-300 dark:border-gray-500';

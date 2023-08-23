@@ -10,18 +10,16 @@ thumnailSize: w-72
 
 <script>
   import { page } from '$app/stores';
-  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, Heading, P, A } from '$lib'
-  import { props as items } from '../../props/Sidebar.json'
-  import { props as items2 }  from '../../props/SidebarBrand.json'
-  import { props as items3 }  from '../../props/SidebarCta.json'
-  import { props as items4 }  from '../../props/SidebarDropdownItem.json'
-  import { props as items5 }  from '../../props/SidebarDropdownWrapper.json'
-  import { props as items6 }  from '../../props/SidebarGroup.json'
-  import { props as items7 }  from '../../props/SidebarItem.json'
-  import { props as items8 }  from '../../props/SidebarWrapper.json'
-
-  const events = ["on:blur","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover"];
+  import componentData1 from '../../component-data/Sidebar.json'
+  import componentData2 from '../../component-data/SidebarBrand.json'
+  import componentData3 from '../../component-data/SidebarCta.json'
+  import componentData4 from '../../component-data/SidebarDropdownItem.json'
+  import componentData5 from '../../component-data/SidebarDropdownWrapper.json'
+  import componentData6 from '../../component-data/SidebarGroup.json'
+  import componentData7 from '../../component-data/SidebarItem.json'
+  import componentData8 from '../../component-data/SidebarWrapper.json'
 </script>
 
 The sidebar component can be used as a complementary element relative to the navbar shown on either the left or right side of the page used for the navigation on your web application, including menu items, multi-level dropdown items, call to actions elements, and more.
@@ -533,79 +531,66 @@ You can add own transition by setting `transitionType` and `transitionParams`.
 </Sidebar>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
+
+import componentData1 from '../../component-data/Sidebar.json'
+  import componentData2 from '../../component-data/SidebarBrand.json'
+  import componentData3 from '../../component-data/SidebarCta.json'
+  import componentData4 from '../../component-data/SidebarDropdownItem.json'
+  import componentData5 from '../../component-data/SidebarDropdownWrapper.json'
+  import componentData6 from '../../component-data/SidebarGroup.json'
+  import componentData7 from '../../component-data/SidebarItem.json'
+  import componentData8 from '../../component-data/SidebarWrapper.json'
 
 ### Sidebar
 
 - Use the `class` prop to overwrite `asideClass`.
 
-<TableProp>
-  <TableDefaultRow {items} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### SidebarBrand
 
 - Use the `class` prop to overwrite `aClass`.
 
-<TableProp>
-  <TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>
 
 ### SidebarCta
 
 - Use the `class` prop to overwrite the default class.
 
-<TableProp>
-  <TableDefaultRow items={items3} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData3}/>
 
 ### SidebarDropdownItem
 
 - Use the `class` prop to overwrite `divWrapperClass`.
 
-<TableProp>
-  <TableDefaultRow items={items4} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData4}/>
 
 ### SidebarDropdownWrapper
 
 - Use the `class` prop to overwrite `btnClass`.
 
-<TableProp>
-  <TableDefaultRow items={items5} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData5}/>
 
 ### SidebarGroup
 
 - Use the `class` prop to overwrite `ulClass`.
 
-<TableProp>
-  <TableDefaultRow items={items6} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData6}/>
 
 ### SidebarItem
 
 - Use the `class` prop to overwrite the `a` tag class.
 
-<TableProp>
-  <TableDefaultRow items={items7} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData7}/>
 
 ### SidebarWrapper
 
 - Use the `class` prop to overwrite `divClass`.
 
-<TableProp>
-  <TableDefaultRow items={items8} rowState='hover' />
-</TableProp>
-
-## Forwarded Events
-
-### SidebarDropdownItem, SidebarItem
-
-<DocBadgeList items={events} />
+<CompoAttributesViewer componentData={componentData8}/>
 
 ## References
 

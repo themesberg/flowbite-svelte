@@ -9,13 +9,13 @@ thumnailSize: w-40
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
-  import { props as items} from '../../props/Kbd.json'
-  import { props as items2} from '../../props/ArrowKeyDown.json'
-  import { props as items3} from '../../props/ArrowKeyLeft.json'
-  import { props as items4} from '../../props/ArrowKeyRight.json'
-  import { props as items5} from '../../props/ArrowKeyUp.json'
+  import componentData1 from '../../component-data/Kbd.json'
+  import componentData2 from '../../component-data/ArrowKeyDown.json'
+  import componentData3 from '../../component-data/ArrowKeyLeft.json'
+  import componentData4 from '../../component-data/ArrowKeyRight.json'
+  import componentData5 from '../../component-data/ArrowKeyUp.json'
 </script>
 
 The KBD (Keyboard) component can be used to indicate a textual user input from the keyboard inside other elements such as in text, tables, cards, and more.
@@ -220,7 +220,7 @@ This example can be used to denote function keys inside the KBD component.
 <Kbd class="px-2 py-1.5">F12</Kbd>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -228,41 +228,31 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite `kbdClass`.
 
-<TableProp>
-  <TableDefaultRow items={items} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### ArrowKeyDown
 
 - Use the `class` prop to overwrite `svgClass`.
 
-<TableProp>
-  <TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>
 
 ### ArrowKeyLeft
 
 - Use the `class` prop to overwrite `svgClass`.
 
-<TableProp>
-  <TableDefaultRow items={items3} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData3}/>
 
 ### ArrowKeyRight
 
 - Use the `class` prop to overwrite `svgClass`.
 
-<TableProp>
-  <TableDefaultRow items={items4} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData4}/>
 
 ### ArrowKeyUp
 
 - Use the `class` prop to overwrite `svgClass`.
 
-<TableProp>
-  <TableDefaultRow items={items5} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData5}/>
 
 ## References
 

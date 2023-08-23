@@ -43,7 +43,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let active: boolean = getContext('active');
 @prop export let current: boolean = false;
 @prop export let disabled: boolean = false;

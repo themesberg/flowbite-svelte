@@ -9,12 +9,10 @@ thumnailSize: w-40
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
-  import { props as items } from '../../props/FloatingLabelInput.json'
-  import { props as items2 } from '../../props/Helper.json'
-
-  const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover","on:paste"];
+  import componentData1 from '../../component-data/FloatingLabelInput.json'
+  import componentData2 from '../../component-data/Helper.json'
 </script>
 
 The floating label style was first pioneered by Google in its infamous Material UI design system and it’s basically a label tag which floats just above the input field when it is being focused or already has content inside.
@@ -157,7 +155,7 @@ Add a helper text in addition to the label if you want to show more information 
 </Helper>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -167,21 +165,13 @@ The component has the following props, type, and default values. See [types page
 - Use the `classInput` prop to overwrite the input class.
 - Use the `classLabel` prop to overwrite the label class.
 
-<TableProp>
-  <TableDefaultRow {items} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### Helper
 
 - Use the `class` prop to overwrite the `p` tag class.
 
-<TableProp>
-<TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
-
-## Forwarded Events
-
-<DocBadgeList items={events} />
+<CompoAttributesViewer componentData={componentData2}/>
 
 ## References
 

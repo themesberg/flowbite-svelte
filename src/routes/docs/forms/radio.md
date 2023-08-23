@@ -9,13 +9,11 @@ thumnailSize: w-72
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
-  import { props as items } from '../../props/Radio.json'
-  import { props as items2 } from '../../props/Label.json'
-  import { props as items3 } from '../../props/Helper.json'
-
-  const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover","on:paste"];
+  import componentData1 from '../../component-data/Radio.json'
+  import componentData2 from '../../component-data/Label.json'
+  import componentData3 from '../../component-data/Helper.json'
 </script>
 
 The radio component can be used to allow the user to choose a single option from one or more available options coded with the utility classes from Tailwind CSS and available in multiple styles, variants, and colors and support dark mode.
@@ -287,7 +285,7 @@ Use this example of an advanced layout of radio elements where the label parent 
 </div>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -297,21 +295,13 @@ All attributes of the `input` element like: name, id, autofocus, etc, can be set
 
 - Use the `class` prop to overwrite the `label` and `input` tag class.
 
-<TableProp>
-<TableDefaultRow items={items} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### Helper
 
 - Use the `class` prop to overwrite the `p` tag class.
 
-<TableProp>
-<TableDefaultRow items={items3} rowState='hover' />
-</TableProp>
-
-## Forwarded Events
-
-<DocBadgeList items={events} />
+<CompoAttributesViewer componentData={componentData2}/>
 
 ## References
 

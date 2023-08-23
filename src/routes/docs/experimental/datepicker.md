@@ -9,9 +9,9 @@ thumnailSize: w-28
 ---
 
 <script>
-  import { TableProp, TableDefaultRow } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { Alert } from '$lib'
-  import { props as items } from '../../props/Datepicker.json'
+  import componentData1 from '../../component-data/Datepicker.json'
 </script>
 
 Date picker component
@@ -123,10 +123,8 @@ You can also add a title to the datepicker by using the `datepicker-title="title
 <Datepicker datepickerTitle="My Vacation" />
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-<TableProp>
-    <TableDefaultRow {items} rowState="hover" />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>

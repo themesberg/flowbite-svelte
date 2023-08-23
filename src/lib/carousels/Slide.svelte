@@ -15,7 +15,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let image: string = '';
 @prop export let altTag: string = '';
 @prop export let attr: string = '';

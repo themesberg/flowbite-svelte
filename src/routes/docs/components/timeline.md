@@ -9,17 +9,17 @@ thumbnailSize: w-64
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { Button, P, A } from '$lib'
-  import { props as items1 }  from '../../props/Timeline.json'
-  import { props as items2 }  from '../../props/TimelineItem.json'
-  import { props as items4 }  from '../../props/TimelineHorizontal.json'
-  import { props as items6 }  from '../../props/Activity.json'
-  import { props as items7 }  from '../../props/ActivityItem.json'
-  import { props as items8 }  from '../../props/Group.json'
-  import { props as items9 }  from '../../props/GroupItem.json'
-  import { props as timelineItemVerticalProp }  from '../../props/TimelineItemVertical.json'
-  import { props as timelineItemHorizontalProp }  from '../../props/TimelineItemHorizontal.json'
+  import componentData1 from '../../component-data/Timeline.json'
+  import componentData2 from '../../component-data/TimelineItem.json'
+  import componentData3 from '../../component-data/TimelineHorizontal.json'
+  import componentData4 from '../../component-data/Activity.json'
+  import componentData5 from '../../component-data/ActivityItem.json'
+  import componentData6 from '../../component-data/Group.json'
+  import componentData7 from '../../component-data/GroupItem.json'
+  import componentData8 from '../../component-data/TimelineItemVertical.json'
+  import componentData9 from '../../component-data/TimelineItemHorizontal.json'
 </script>
 
 The timeline component can be used to show series of data in a chronological order for use cases such as activity feeds, user actions, application updates, and more.
@@ -206,7 +206,7 @@ Use this component to group multiple data entries inside a single date and show 
 </Group>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -214,9 +214,7 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite the `ol` tag class.
 
-<TableProp>
-  <TableDefaultRow items={items1} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### TimelineItem
 
@@ -224,9 +222,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `classDiv` prop to overwrite the `div` tag class.
 - Use the `classTime` prop to overwrite the `time` tag class.
 
-<TableProp>
-  <TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>
 
 ### TimelineHorizontal
 
@@ -236,17 +232,13 @@ The component has the following props, type, and default values. See [types page
 - Use the `pClass` prop to overwrite `classP`.
 - Use the `aClass` prop to overwrite `classA`.
 
-<TableProp>
-  <TableDefaultRow items={items4} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData3}/>
 
 ### Activity
 
 - Use the `class` prop to overwrite `olClass`.
 
-<TableProp>
-  <TableDefaultRow items={items6} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData4}/>
 
 ### ActivityItem
 
@@ -259,9 +251,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `classTitle` prop to overwrite `titleClass`.
 - Use the `classText` prop to overwrite `textClass`.
 
-<TableProp>
-  <TableDefaultRow items={items7} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData5}/>
 
 ### Group
 
@@ -269,9 +259,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `classTime` prop to overwrite `timeClass`.
 - Use the `classOl` prop to overwrite `olClass`.
 
-<TableProp>
-  <TableDefaultRow items={items8} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData6}/>
 
 ### GroupItem
 
@@ -281,9 +269,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `classTitle` prop to overwrite `titleClass`.
 - Use the `classSpan` prop to overwrite `spanClass`.
 
-<TableProp>
-  <TableDefaultRow items={items9} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData7}/>
 
 ### TimelineItemVertical
 
@@ -292,17 +278,13 @@ The component has the following props, type, and default values. See [types page
 - Use the `classH3` prop to overwrite `h3Class`.
 - Use the `classTime` prop to overwrite `timeClass`.
 
-<TableProp>
-  <TableDefaultRow items={timelineItemVerticalProp} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData8}/>
 
 ### TimelineItemHorizonal
 
 - Use the `class` prop to overwrite the `ol` tag class.
 
-<TableProp>
-  <TableDefaultRow items={timelineItemHorizontalProp} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData9}/>
 
 ## References
 

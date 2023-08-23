@@ -28,9 +28,12 @@
   @apply mt-8 mb-4 text-2xl font-bold text-gray-900 dark:text-white;
 }
 
-#mainContent > h3,
-#mainContent > h4 {
+#mainContent > h3 {
   @apply mt-8 mb-4 text-xl font-bold text-gray-900 dark:text-white;
+}
+
+#mainContent > h4 {
+  @apply mt-8 mb-4 text-lg font-bold text-gray-900 dark:text-white;
 }
 
 #mainContent > p {

@@ -8,11 +8,9 @@ description: Use the search input component as a text field to allow users to en
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
-  import { props as searchItems } from '../../props/Search.json'  
-
-  const events = ["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover","on:paste"];
+  import componentData1 from '../../component-data/Search.json'
 </script>
 
 The search input component can be used to let your users search through your website using string queries and it comes in multiple styles, variants, and sizes built with the utility classes from Tailwind CSS.
@@ -119,7 +117,7 @@ on: paste;
 </form>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -127,13 +125,7 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite the `Input` tag.
 
-<TableProp>
-  <TableDefaultRow items={searchItems} rowState='hover' />
-</TableProp>
-
-## Forwarded Events: Search
-
-<DocBadgeList items={events} />
+<CompoAttributesViewer componentData={componentData1}/>
 
 ## References
 

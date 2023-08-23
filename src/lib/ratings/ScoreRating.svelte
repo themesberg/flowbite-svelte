@@ -62,7 +62,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let ratings: { label: string;
 @prop export let ratings2: { label: string;
 @prop export let headerLabel: {

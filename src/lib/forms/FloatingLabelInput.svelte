@@ -83,7 +83,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let id: string = generateId();
 @prop export let style: 'filled' | 'outlined' | 'standard' = 'standard';
 @prop export let type: InputType = 'text';

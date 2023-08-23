@@ -86,7 +86,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let color: string = 'text-gray-900 dark:text-white';
 @prop export let height: 'normal' | 'relaxed' | 'loose' = 'normal';
 @prop export let align: 'left' | 'center' | 'right' = 'left';

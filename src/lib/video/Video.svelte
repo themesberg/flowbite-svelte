@@ -20,7 +20,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let src: string;
 @prop export let type: string = 'video/mp4';
 @prop export let trackSrc: string = '';

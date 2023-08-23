@@ -9,17 +9,17 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
 
-  import { props as items } from '../../props/Rating.json'
-  import { props as items2 } from '../../props/AdvancedRating.json'
-  import { props as items3 } from '../../props/ScoreRating.json'
-  import { props as items4 } from '../../props/RatingComment.json'
-  import { props as items5 } from '../../props/Review.json'
-  import { props as items6 } from '../../props/Star.json'
-  import { props as thumbupProp } from '../../props/Thumbup.json'
-  import { props as heartProp } from '../../props/Heart.json'
+  import componentData1 from '../../component-data/Rating.json'
+  import componentData2 from '../../component-data/AdvancedRating.json'
+  import componentData3 from '../../component-data/ScoreRating.json'
+  import componentData4 from '../../component-data/RatingComment.json'
+  import componentData5 from '../../component-data/Review.json'
+  import componentData6 from '../../component-data/Star.json'
+  import componentData7 from '../../component-data/Thumbup.json'
+  import componentData8 from '../../component-data/Heart.json'
 </script>
 
 Get started with the rating component to show an aggregate of reviews and scores in the forms of stars or numbers.
@@ -290,7 +290,7 @@ Use this component to show the review content from a user alongside the avatar, 
 </Review>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -298,9 +298,7 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite `divClass`.
 
-<TableProp>
-  <TableDefaultRow {items} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### AdvancedRating
 
@@ -310,29 +308,15 @@ The component has the following props, type, and default values. See [types page
 - Use the `classRating` prop to overwrite `ratingClass`.
 - Use the `classRightLabel` prop to overwrite `rightLabelClass`.
 
-<TableProp>
-  <TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
-
-### Heart
-
-- Use the `class` prop to overwrite the `svg` tag class.
-
-<TableProp>
-  <TableDefaultRow items={heartProp} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>
 
 ### ScoreRating
 
-<TableProp>
-  <TableDefaultRow items={items3} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData3}/>
 
 ### RatingComment
 
-<TableProp>
-  <TableDefaultRow items={items4} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData4}/>
 
 ### Review
 
@@ -342,25 +326,25 @@ The component has the following props, type, and default values. See [types page
 - Use the `classUl` prop to overwrite `ulClass`.
 - Use the `classLi` prop to overwrite `liClass`.
 
-<TableProp>
-  <TableDefaultRow items={items5} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData5}/>
 
 ### Star
 
 - Use the `class` prop to overwrite the `svg` tag class.
 
-<TableProp>
-  <TableDefaultRow items={items6} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData6}/>
 
 ### Thumbup
 
 - Use the `class` prop to overwrite the `svg` tag class.
 
-<TableProp>
-  <TableDefaultRow items={thumbupProp} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData7}/>
+
+### Heart
+
+- Use the `class` prop to overwrite the `svg` tag class.
+
+<CompoAttributesViewer componentData={componentData8}/>
 
 ## References
 

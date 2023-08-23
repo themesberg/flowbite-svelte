@@ -14,10 +14,16 @@
   <img class={thumbClass} class:active={selected} id={id.toString()} src={thumbImg} alt={altTag} title="Image from {titleLink}" width="{thumbWidth}%" />
 </button>
 
+<style>
+  .active {
+    opacity: 1;
+  }
+</style>
+
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let thumbImg: string = '';
 @prop export let altTag: string = '';
 @prop export let titleLink: string = '';
@@ -27,9 +33,3 @@
 @prop export let thumbClass: string = '';
 @prop export let thumbBtnClass: string = '';
 -->
-
-<style>
-  .active {
-    opacity: 1;
-  }
-</style>

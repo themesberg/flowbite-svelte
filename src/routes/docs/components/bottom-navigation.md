@@ -9,13 +9,13 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
 
-  import { props as bottomNavProps } from '../../props/BottomNav.json'
-  import { props as bottomNavHeaderProps } from '../../props/BottomNavHeader.json'
-  import { props as bottomNavHeaderItemProps } from '../../props/BottomNavHeaderItem.json'
-  import { props as bottomNavItemProps } from '../../props/BottomNavItem.json'
+  import componentData1 from '../../component-data/BottomNav.json'
+  import componentData2 from '../../component-data/BottomNavHeader.json'
+  import componentData3 from '../../component-data/BottomNavHeaderItem.json'
+  import componentData4 from '../../component-data/BottomNavItem.json'
 </script>
 
 The bottom bar component can be used to allow menu items and certain control actions to be performed by the user through the usage of a fixed bar positioning to the bottom side of your page.
@@ -367,7 +367,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 </Card>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -377,35 +377,27 @@ The component has the following props, type, and default values. See [types page
 - Use the `classInner` prop to overwrite `innerClass`.
 - Use the `classActive` prop to overwrite `activeClass`.
 
-<TableProp>
-<TableDefaultRow items={bottomNavProps} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### BottomNavHeader
 
 - Use the `classOuter` prop to overwrite `outerClass`.
 - Use the `classInner` prop to overwrite `innerClass`.
 
-<TableProp>
-<TableDefaultRow items={bottomNavHeaderProps} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>
 
 ### BottomNavHeaderItem
 
 - Use the `class` prop to overwrite `defaultClass` or `activeClass`.
 
-<TableProp>
-<TableDefaultRow items={bottomNavHeaderItemProps} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData3}/>
 
 ### BottomNavItem
 
 - Use the `btnClass` prop to overwrite the `button` tag class.
 - Use the `spanClass` prop to overwrite the `span` tag class.
 
-<TableProp>
-<TableDefaultRow items={bottomNavItemProps} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData4}/>
 
 ## References
 

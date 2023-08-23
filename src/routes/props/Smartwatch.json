@@ -1,6 +1,0 @@
-{
-  "props": [
-    ["smartRightTop", "string", ""],
-    ["smartRightBot", "string", "@prop export let smartRightTop: string"]
-  ]
-}

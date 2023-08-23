@@ -1,8 +1,0 @@
-{
-  "props": [
-    ["defaultTop", "string", ""],
-    ["defaultLeftTop", "string", ""],
-    ["defaultLeftBot", "string", ""],
-    ["defaultRight", "string", "@prop export let defaultTop: string"]
-  ]
-}

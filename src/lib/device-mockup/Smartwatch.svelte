@@ -9,7 +9,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let smartRightTop: string;
 @prop export let smartRightBot: string;
 -->

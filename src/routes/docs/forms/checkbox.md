@@ -9,13 +9,11 @@ thumnailSize: w-72
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
-  import { props as items } from '../../props/Radio.json'
-  import { props as items2 } from '../../props/Label.json'
-  import { props as items3 } from '../../props/Helper.json'
-
-  const events = ["on:click","on:change","on:keydown","on:keyup","on:mouseenter","on:mouseleave","on:paste"];
+  import componentData1 from '../../component-data/Checkbox.json'
+  import componentData2 from '../../component-data/Label.json'
+  import componentData3 from '../../component-data/Helper.json'
 </script>
 
 The checkbox component can be used to receive one or more selected options from the user in the form of a square box available in multiple styles, sizes, colors, and variants.
@@ -313,7 +311,7 @@ Use this example of an advanced layout of checkbox elements where the label pare
 <Button on:click={() => (group.length = 0)}>Clear</Button>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -325,21 +323,17 @@ Use the `class` prop to overwrite the default class.
 
 - Use the `class` prop to overwrite the `label` and `input` tag class.
 
-<TableProp>
-<TableDefaultRow items={items} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
+
+### Label
+
+<CompoAttributesViewer componentData={componentData2}/>
 
 ### Helper
 
 - Use the `class` prop to overwrite the `p` tag class.
 
-<TableProp>
-<TableDefaultRow items={items3} rowState='hover' />
-</TableProp>
-
-## Forwarded Events
-
-<DocBadgeList items={events} />
+<CompoAttributesViewer componentData={componentData3}/>
 
 ## References
 

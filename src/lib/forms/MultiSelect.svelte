@@ -118,7 +118,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let items: SelectOptionType[] = [];
 @prop export let value: (string | number)[] = [];
 @prop export let size: FormSizeType = 'md';

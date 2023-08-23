@@ -14,7 +14,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let btnClass: string = 'ml-3 md:hidden';
 @prop export let sideMenuClass: string = 'h-6 w-6 shrink-0';
 -->

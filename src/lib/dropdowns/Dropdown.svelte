@@ -71,7 +71,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let activeUrl: string = '';
 @prop export let open: boolean = false;
 @prop export let containerClass: string = 'divide-y z-50';

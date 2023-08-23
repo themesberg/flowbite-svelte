@@ -1,6 +1,0 @@
-{
-  "props": [
-    ["open", "string", "false"],
-    ["placement", "string", ""]
-  ]
-}

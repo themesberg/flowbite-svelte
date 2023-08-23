@@ -9,9 +9,9 @@ thumnailSize: w-48
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'  
-  import { props as items1 } from '../../props/Modal.json'
+  import componentData1 from '../../component-data/Modal.json'
 </script>
 
 The modal component can be used as an interactive dialog on top of the main content area of the website to show notifications and gather information using form elements from your website users.
@@ -394,7 +394,7 @@ You can use five different modal sizing options starting from extra small to ext
 </Modal>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -404,9 +404,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `classBackdrop` prop to overwrite `backdropClass`.
 - Use the `bodyClass` prop to overwrite body modal default class.
 
-<TableProp>
-  <TableDefaultRow items={items1} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ## References
 

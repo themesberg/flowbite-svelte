@@ -27,7 +27,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let spanClass: string = 'block text-sm text-gray-500 sm:text-center dark:text-gray-400';
 @prop export let aClass: string = 'hover:underline';
 @prop export let year: number = new Date().getFullYear();

@@ -22,7 +22,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let italic: boolean = false;
 @prop export let underline: boolean = false;
 @prop export let linethrough: boolean = false;

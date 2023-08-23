@@ -127,7 +127,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let tag: string = $$restProps.href ? 'a' : 'div';
 @prop export let color: FrameColor = 'default';
 @prop export let rounded: boolean = false;

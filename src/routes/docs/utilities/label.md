@@ -8,9 +8,9 @@ description: The Label components are used throughout the library and you can us
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, GitHubSourceList } from '../../utils';
+  import { TableProp, TableDefaultRow, GitHubSourceList, CompoAttributesViewer } from '../../utils';
   import { A } from '$lib';
-  import { props as items } from '../../props/Label.json';
+  import componentData1 from '../../component-data/Label.json';
 
   let divClass = 'w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4';
   let theadClass = 'text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white';
@@ -30,12 +30,10 @@ Use the `Label` component when you need to add a label.
 </Label>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 - Use the `class` prop to overwrite `defaultClass`.
 
-<TableProp>
-  <TableDefaultRow {items} rowState="hover" />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>

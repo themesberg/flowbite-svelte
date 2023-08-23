@@ -11,7 +11,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let caption: string = '';
 @prop export let captionClass: string = '';
 @prop export let pClass: string = 'text-gray-900 dark:text-white';

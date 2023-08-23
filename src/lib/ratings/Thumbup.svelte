@@ -28,7 +28,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let fillPercent: number = 100;
 @prop export let fillColor: string = '#00b500';
 @prop export let strokeColor: string = '#00b500';

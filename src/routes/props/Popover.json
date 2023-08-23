@@ -1,6 +1,0 @@
-{
-  "props": [
-    ["title", "string", "''"],
-    ["defaultClass", "string", "'py-2 px-3'"]
-  ]
-}

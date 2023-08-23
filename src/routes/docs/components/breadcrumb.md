@@ -9,10 +9,10 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
-  import { props as breadcrumbProps } from '../../props/Breadcrumb.json'
-  import { props as breadcrumbItemProps } from '../../props/BreadcrumbItem.json'
+  import componentData1 from '../../component-data/Breadcrumb.json'
+  import componentData2 from '../../component-data/BreadcrumbItem.json'
 </script>
 
 The breadcrumb component is an important part of any website or application that can be used to show the current location of a page in a hierarchical structure of pages.
@@ -90,7 +90,7 @@ Use the `icon` slot to change icons.
 </Breadcrumb>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -99,9 +99,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite a class in the `nav` tag
 - Use the `classOl` prop to overwrite a class in the `ol` tag.
 
-<TableProp>
-  <TableDefaultRow items={breadcrumbProps} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### BreadcrumbItem
 
@@ -110,9 +108,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `classLink` prop to overwrite `linkClass`.
 - Use the `classSpan` prop to overwrite `spanClass`.
 
-<TableProp>
-  <TableDefaultRow items={breadcrumbItemProps} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>
 
 ## References
 

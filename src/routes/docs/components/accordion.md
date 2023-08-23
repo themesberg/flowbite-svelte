@@ -8,11 +8,11 @@ description: Use the accordion component to show hidden information based on the
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'; 
   // Props 
-  import {props as accordionProps} from '../../props/Accordion.json'
-  import {props as accordionItemProps} from '../../props/AccordionItem.json'
+  import componentData1 from '../../component-data/Accordion.json'
+  import componentData2 from '../../component-data/AccordionItem.json'
 
   let slotHeader = ['Name', 'Description']
   
@@ -303,7 +303,7 @@ Accordions can be nested. All of the mentioned options are supported.
 </Accordion>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -313,31 +313,13 @@ The component has the following props, type, and default values. See [types page
 - Use the `classActive` prop to overwrite `activeClass`.
 - Use the `classInactive` prop to overwrite `inactiveClass`.
 
-<TableProp>
-  <TableDefaultRow items={accordionProps} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### AccordionItem
 
 - Use the `class` prop to overwrite `defaultClass`.
 
-<TableProp>
-  <TableDefaultRow items={accordionItemProps} rowState='hover' />
-</TableProp>
-
-## Slots
-
-### Accordion
-
-<TableProp header={slotHeader}>
-  <TableDefaultRow items={slotItems} rowState='hover' />
-</TableProp>
-
-### AccordionItem
-
-<TableProp header={slotHeader}>
-  <TableDefaultRow items={slotItems2} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>
 
 ## References
 

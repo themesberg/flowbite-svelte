@@ -8,11 +8,9 @@ description: Button groups are a Tailwind CSS powered set of buttons sticked tog
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, P, A } from '$lib'
-  import { props as buttonGroupProps} from '../../props/ButtonGroup.json'
-
-  const events = ["on:click","on:change","on:keydown","on:keyup","on:focus","on:blur","on:mouseenter","on:mouseleave"];
+  import componentData1 from '../../component-data/ButtonGroup.json'
 </script>
 
 The button group component from Flowbite-Svelte can be used to stack together multiple buttons and links inside a single element.
@@ -185,7 +183,7 @@ You can add the `on:click` event to the `Button` component.
 </ButtonGroup>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -193,13 +191,7 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite `divClass`.
 
-<TableProp>
-  <TableDefaultRow items={buttonGroupProps} rowState='hover' />
-</TableProp>
-
-## Forwarded Events
-
-<DocBadgeList items={events} />
+<CompoAttributesViewer componentData={componentData1}/>
 
 ## References
 

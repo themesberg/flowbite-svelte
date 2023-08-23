@@ -9,6 +9,6 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let tableBodyClass: string | undefined = undefined;
 -->

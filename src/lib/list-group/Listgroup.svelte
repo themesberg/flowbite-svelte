@@ -38,7 +38,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let items: ListGroupItemType[] | string[] = [];
 @prop export let active: boolean = false;
 @prop export let defaultClass: string = 'divide-y divide-gray-200 dark:divide-gray-600';

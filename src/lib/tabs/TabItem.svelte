@@ -52,7 +52,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let open: boolean = false;
 @prop export let title: string = 'Tab title';
 @prop export let activeClasses: string | undefined = undefined;

@@ -9,14 +9,14 @@ thumnailSize: w-72
 ---
 
 <script>
-  import { TableProp, TableDefaultRow } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { A, Heading, Breadcrumb, BreadcrumbItem } from '$lib';
 
-  import { props as items1 } from '../../props/Heading.json'
-  import { props as items2 } from '../../props/P.json'
-  import { props as items3 } from '../../props/A.json'
-  import { props as items4 } from '../../props/Mark.json'
-  import { props as items5 } from '../../props/Secondary.json'
+  import componentData1 from '../../component-data/Heading.json'
+  import componentData2 from '../../component-data/P.json'
+  import componentData3 from '../../component-data/A.json'
+  import componentData4 from '../../component-data/Mark.json'
+  import componentData5 from '../../component-data/Secondary.json'
 </script>
 
 Get started with the heading component to define titles and subtitles on a web page and also improve the on-page SEO metrics of your website by targeting high-traffic keywords on Google.
@@ -247,7 +247,7 @@ The `tag="h6"` can be used as subtitles of the page’s sections.
 <Heading tag="h6">Heading 6</Heading>
 ```
 
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
@@ -255,38 +255,28 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite the heading class.
 
-<TableProp>
-  <TableDefaultRow items={items1} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData1}/>
 
 ### P
 
 - Use the `class` prop to overwrite the `p` tag class.
 
-<TableProp>
-  <TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData2}/>
 
 ### A
 
 - Use the `class` prop to overwrite the `a` tag class.
 
-<TableProp>
-  <TableDefaultRow items={items3} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData3}/>
 
 ### Mark
 
 - Use the `class` prop to overwrite the `mark` tag class.
 
-<TableProp>
-  <TableDefaultRow items={items4} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData4}/>
 
 ### Secondary
 
 - Use the `class` prop to overwrite the `small` tag class.
 
-<TableProp>
-  <TableDefaultRow items={items5} rowState='hover' />
-</TableProp>
+<CompoAttributesViewer componentData={componentData5}/>

@@ -13,7 +13,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Props
+## Component data
 @prop export let tabletLeftTop: string;
 @prop export let tabletLeftMid: string;
 @prop export let tabletLeftBot: string;

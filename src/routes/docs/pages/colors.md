@@ -8,7 +8,7 @@ description: Customize your project and the color of the components from Flowbit
 ---
 
 <script>
-  import { TableProp, TableDefaultRow } from '../../utils';
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils';
   import { A, Img, P } from '$lib';
 </script>
 

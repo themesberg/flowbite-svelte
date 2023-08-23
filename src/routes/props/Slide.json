@@ -1,9 +1,0 @@
-{
-  "props": [
-    ["image", "string", "''"],
-    ["altTag", "string", "''"],
-    ["attr", "string", "''"],
-    ["slideClass", "string", "''"],
-    ["imgClass", "string", "''"]
-  ]
-}
