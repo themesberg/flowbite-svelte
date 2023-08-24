@@ -11,8 +11,7 @@ thumnailSize: w-64
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
-  import componentData1 from '../../component-data/Breadcrumb.json'
-  import componentData2 from '../../component-data/BreadcrumbItem.json'
+  const components = 'Breadcrumb, BreadcrumbItem'
 </script>
 
 The breadcrumb component is an important part of any website or application that can be used to show the current location of a page in a hierarchical structure of pages.
@@ -94,21 +93,19 @@ Use the `icon` slot to change icons.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Breadcrumb
+### Breadcrumb styling
 
 - Use the `class` prop to overwrite a class in the `nav` tag
 - Use the `classOl` prop to overwrite a class in the `ol` tag.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### BreadcrumbItem
+### BreadcrumbItem styling
 
 - Use the `class` prop to overwrite a class in the `li` tag
 - Use the `classHome` prop to overwrite `homeClass`.
 - Use the `classLink` prop to overwrite `linkClass`.
 - Use the `classSpan` prop to overwrite `spanClass`.
 
-<CompoAttributesViewer componentData={componentData2}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

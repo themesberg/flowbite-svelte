@@ -11,10 +11,8 @@ thumnailSize: w-28
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, P, A  } from '$lib'
-  import componentData1 from '../../component-data/Dropdown.json'
-  import componentData2 from '../../component-data/DropdownDivider.json'
-  import componentData3 from '../../component-data/DropdownHeader.json'
-  import componentData4 from '../../component-data/DropdownItem.json'
+
+  const components = 'Dropdown, DropdownDivider, DropdownHeader, DropdownItem'
 </script>
 
 The dropdown component can be used to show a list of menu items when clicking on an element such as a button and hiding it when clicking outside of the triggering element.
@@ -724,32 +722,26 @@ The active prop is utilized to dynamically apply an active class to the link whe
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Dropdown
+### Dropdown styling
 
 - Use the `classContainer` prop to overwrite `containerClass`.
 - Use the `classHeader` prop to overwrite `headerClass`.
 - Use the `classUl` prop to overwrite `ulClass`.
 - Use the `classFooter` prop to overwrite `footerClass`.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### DropdownDivider
+### DropdownDivider styling
 
 - Use the `class` prop to overwrite `divClass`.
 
-<CompoAttributesViewer componentData={componentData2}/>
-
-### DropdownHeader
+### DropdownHeader styling
 
 - Use the `class` prop to overwrite `divClass`.
 
-<CompoAttributesViewer componentData={componentData3}/>
-
-### DropdownItem
+### DropdownItem styling
 
 - Use the `class` prop to overwrite `defaultClass`.
 
-<CompoAttributesViewer componentData={componentData4}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

@@ -10,7 +10,8 @@ description: The Drawer component can be used as a hidden off-canvas sidebar for
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { Heading, P, A } from '$lib';
-  import componentData1 from '../../component-data/Drawer.json'
+
+  const components = 'Drawer'
 </script>
 
 Use the Drawer component (or “off-canvas”) to show a fixed element relative to the document page from any side for navigation, contact forms, informational purposes or other user actions.
@@ -626,9 +627,10 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
+### Drawer styling
 - Use the `class` prop to overwrite `divClass`.
 
-<CompoAttributesViewer componentData={componentData1}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

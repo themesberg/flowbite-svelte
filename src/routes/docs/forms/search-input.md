@@ -11,6 +11,7 @@ description: Use the search input component as a text field to allow users to en
   import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
   import componentData1 from '../../component-data/Search.json'
+  const components = 'Search'
 </script>
 
 The search input component can be used to let your users search through your website using string queries and it comes in multiple styles, variants, and sizes built with the utility classes from Tailwind CSS.
@@ -121,11 +122,11 @@ on: paste;
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Search
+### Search styling
 
 - Use the `class` prop to overwrite the `Input` tag.
 
-<CompoAttributesViewer componentData={componentData1}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

@@ -10,8 +10,9 @@ thumnailSize: w-64
 
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
-  import {  A} from '$lib'
-  import componentData1 from '../../component-data/A.json'
+  import { A } from '$lib'
+  
+  const components = 'A'
 </script>
 
 Get started with the link component to enable hyperlinks across pages and external websites applied to elements such as inline text, buttons, cards, inside paragraphs, and more.
@@ -139,6 +140,8 @@ This example can be used to set a hyperlink on an image inside a card component.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
+### A styling
+
 - Use the `class` prop to overwrite the `a` tag class.
 
-<CompoAttributesViewer componentData={componentData1}/>
+<CompoAttributesViewer {components}/>

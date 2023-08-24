@@ -10,7 +10,7 @@ description: Use the step indicator component to show the progress of a process.
 <script>
   import {  TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
-  import componentData1 from '../../component-data/StepIndicator.json'
+  const components = 'StepIndicator'
 </script>
 
 The Step Indicator component is a simple component to show the progress of a process. It can be used to show the progress of a multi-step form or a multi-step process.
@@ -155,6 +155,8 @@ Use the `color` prop to change the color of a step indicator.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
+### StepIndicator styling
+
 - Use the `class` prop to overwrite the default class.
 
-<CompoAttributesViewer componentData={componentData1}/>
+<CompoAttributesViewer {components}/>

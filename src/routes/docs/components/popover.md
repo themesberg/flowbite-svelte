@@ -10,9 +10,8 @@ description: Use the popover component to show detailed information inside a pop
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
-  import componentData1 from '../../component-data/Popover.json'
-  import componentData2 from '../../component-data/Popper.json'
-  import componentData3 from '../../component-data/Frame.json'
+
+  const components = 'Popover, Popper, Frame'
 </script>
 
 Get started with the popover component to show any type of content inside a pop-up box when hovering or clicking over a trigger element. There are multiple examples that you can choose from, such as showing more information about a user profile, company profile, password strength, and more.
@@ -376,25 +375,13 @@ If you need the popover to be attached to the other element then the tiggering o
 
 ## Component data
 
-### Popover
+The component inherits the following props, type, and default values from `Frame`. See <A href="/docs/pages/typescript">types page</A> for type information.
 
-<p>The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.</p>
-
-<CompoAttributesViewer componentData={componentData1}/>
-
-### Popper
-
-The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
+### Popper styling
 
 - Use the `class` prop to overwrite the default class.
 
-<CompoAttributesViewer componentData={componentData2}/>
-
-### Frame
-
-The component inherits the following props, type, and default values from `Frame`. See <A href="/docs/pages/typescript">types page</A> for type information.
-
-<CompoAttributesViewer componentData={componentData3}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

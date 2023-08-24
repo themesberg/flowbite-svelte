@@ -11,6 +11,7 @@ description: Use the chart and graph components from Flowbite-Svelte built with 
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import componentData1 from '../../component-data/Chart.json'
   import componentData2 from '../../component-data/Card.json'
+  const components = 'Chart, Card'
 </script>
 
 ## Area chart
@@ -978,14 +979,12 @@ To create a radial chart with multiple data entries you need to set the type: "r
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Chart
+### Chart styling
 
 - Use the `class` prop to overwrite `div` tag.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### Card
+### Card styling
 
 - Use the `class` prop to overwrite `divClass`.
 
-<CompoAttributesViewer componentData={componentData2}/>
+<CompoAttributesViewer {components}/>

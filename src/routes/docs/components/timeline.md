@@ -10,16 +10,8 @@ thumbnailSize: w-64
 
 <script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
-  import { Button, P, A } from '$lib'
-  import componentData1 from '../../component-data/Timeline.json'
-  import componentData2 from '../../component-data/TimelineItem.json'
-  import componentData3 from '../../component-data/TimelineHorizontal.json'
-  import componentData4 from '../../component-data/Activity.json'
-  import componentData5 from '../../component-data/ActivityItem.json'
-  import componentData6 from '../../component-data/Group.json'
-  import componentData7 from '../../component-data/GroupItem.json'
-  import componentData8 from '../../component-data/TimelineItemVertical.json'
-  import componentData9 from '../../component-data/TimelineItemHorizontal.json'
+  
+  const components = 'Timeline, TimelineItem, TimelineHorizontal, Activity, ActivityItem, Group, GroupItem, TimelineItemVertical, TimelineItemHorizontal'
 </script>
 
 The timeline component can be used to show series of data in a chronological order for use cases such as activity feeds, user actions, application updates, and more.
@@ -210,21 +202,17 @@ Use this component to group multiple data entries inside a single date and show 
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Timeline
+### Timeline styling
 
 - Use the `class` prop to overwrite the `ol` tag class.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### TimelineItem
+### TimelineItem styling
 
 - Use the `classLi` prop to overwrite the `li` tag class.
 - Use the `classDiv` prop to overwrite the `div` tag class.
 - Use the `classTime` prop to overwrite the `time` tag class.
 
-<CompoAttributesViewer componentData={componentData2}/>
-
-### TimelineHorizontal
+### TimelineHorizontal styling
 
 - Use the `liClass` prop to overwrite `classLi`.
 - Use the `divClass` prop to overwrite `classDiv`.
@@ -232,15 +220,11 @@ The component has the following props, type, and default values. See [types page
 - Use the `pClass` prop to overwrite `classP`.
 - Use the `aClass` prop to overwrite `classA`.
 
-<CompoAttributesViewer componentData={componentData3}/>
-
-### Activity
+### Activity styling
 
 - Use the `class` prop to overwrite `olClass`.
 
-<CompoAttributesViewer componentData={componentData4}/>
-
-### ActivityItem
+### ActivityItem styling
 
 - Use the `classLi` prop to overwrite `liClass`.
 - Use the `classSpan` prop to overwrite `spanClass`.
@@ -251,17 +235,13 @@ The component has the following props, type, and default values. See [types page
 - Use the `classTitle` prop to overwrite `titleClass`.
 - Use the `classText` prop to overwrite `textClass`.
 
-<CompoAttributesViewer componentData={componentData5}/>
-
-### Group
+### Group styling
 
 - Use the `classDiv` prop to overwrite `divClass`.
 - Use the `classTime` prop to overwrite `timeClass`.
 - Use the `classOl` prop to overwrite `olClass`.
 
-<CompoAttributesViewer componentData={componentData6}/>
-
-### GroupItem
+### GroupItem styling
 
 - Use the `classA` prop to overwrite `aClass`.
 - Use the `classImg` prop to overwrite `imgClass`.
@@ -269,22 +249,18 @@ The component has the following props, type, and default values. See [types page
 - Use the `classTitle` prop to overwrite `titleClass`.
 - Use the `classSpan` prop to overwrite `spanClass`.
 
-<CompoAttributesViewer componentData={componentData7}/>
-
-### TimelineItemVertical
+### TimelineItemVertical styling
 
 - Use the `classLi` prop to overwrite `liClass`.
 - Use the `classSpan` prop to overwrite `spanClass`.
 - Use the `classH3` prop to overwrite `h3Class`.
 - Use the `classTime` prop to overwrite `timeClass`.
 
-<CompoAttributesViewer componentData={componentData8}/>
-
-### TimelineItemHorizonal
+### TimelineItemHorizonal styling
 
 - Use the `class` prop to overwrite the `ol` tag class.
 
-<CompoAttributesViewer componentData={componentData9}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

@@ -11,7 +11,7 @@ thumnailSize: w-64
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
-  import componentData1 from '../../component-data/Indicator.json'
+  const components = 'Indicator'
 </script>
 
 The indicator component can be used as a small element positioned absolutely relative to another component such as a button or card and show a number count, account status (red for offline, green for online) and other useful information.
@@ -262,11 +262,11 @@ Use these examples to position the indicator component anywhere relative to the 
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Indicator
+### Indicator styling
 
 - Use the `class` prop to overwrite the `div` tag class.
 
-<CompoAttributesViewer componentData={componentData1}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

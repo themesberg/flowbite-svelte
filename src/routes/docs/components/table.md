@@ -11,13 +11,8 @@ thumnailSize: w-48
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
-  import componentData1 from '../../component-data/Table.json'
-  import componentData2 from '../../component-data/TableBody.json'
-  import componentData3 from '../../component-data/TableBodyCell.json'
-  import componentData4 from '../../component-data/TableBodyRow.json'
-  import componentData5 from '../../component-data/TableHead.json'
-  import componentData6 from '../../component-data/TableHeadCell.json'
-  import componentData7 from '../../component-data/TableSearch.json'
+
+  const components = 'Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, TableSearch'
 </script>
 
 The table component represents a set of structured elements made up of rows and columns as table cells that can be used to show data sets to your website users.
@@ -843,45 +838,31 @@ Use this example to apply a different color to every second row inside the table
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Table
+### Table styling
 
 - Use the `class` prop to overwrite the `table` tag class.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### TableBody
-
-<CompoAttributesViewer componentData={componentData2}/>
-
-### TableBodyCell
+### TableBodyCell styling
 
 - Use the `class` prop to overwrite `tdClass`.
 
-<CompoAttributesViewer componentData={componentData3}/>
-
-### TableBodyRow
+### TableBodyRow styling
 
 - Use the `class` prop to overwrite the `tr` tag class.
 
-<CompoAttributesViewer componentData={componentData4}/>
-
-### TableHead
+### TableHead styling
 
 - Use the `class` prop to overwrite the `thead` tag class.
 
-<CompoAttributesViewer componentData={componentData5}/>
-
-### TableHeadCell
+### TableHeadCell styling
 
 - Use the `class` prop to overwrite the `th` tag class.
 
-<CompoAttributesViewer componentData={componentData6}/>
-
-### TableSearch
+### TableSearch styling
 
 - Use the `class` prop to overwrite the `table` tag class.
 
-<CompoAttributesViewer componentData={componentData7}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

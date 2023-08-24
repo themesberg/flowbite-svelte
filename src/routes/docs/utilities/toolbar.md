@@ -10,9 +10,8 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 <script>
 	import { TableProp, TableDefaultRow, GitHubSourceList, CompoAttributesViewer } from '../../utils';
   import { Toolbar, ToolbarButton, ToolbarGroup, Avatar, Button, Textarea, Heading, A } from '$lib'
-  import componentData1 from '../../component-data/Toolbar.json'
-  import componentData2 from '../../component-data/ToolbarButton.json'
-  import componentData3 from '../../component-data/ToolbarGroup.json'
+
+  const components = 'Toolbar, ToolbarButton, ToolbarGroup'
 </script>
 
 ## Setup
@@ -143,20 +142,16 @@ Most often the textarea component is used as the main text field input element i
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Toolbar
+### Toolbar styling
 
 - Use the `class` prop to overwrite the `div` tag class.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### ToolbarButton
+### ToolbarButton styling
 
 - Use the `class` prop to overwrite the `button` tag class.
 
-<CompoAttributesViewer componentData={componentData2}/>
-
-### ToolbarGroup
+### ToolbarGroup styling
 
 - Use the `class` prop to overwrite `divClass`.
 
-<CompoAttributesViewer componentData={componentData3}/>
+<CompoAttributesViewer {components}/>

@@ -11,11 +11,8 @@ thumnailSize: w-40
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
-  import componentData1 from '../../component-data/Kbd.json'
-  import componentData2 from '../../component-data/ArrowKeyDown.json'
-  import componentData3 from '../../component-data/ArrowKeyLeft.json'
-  import componentData4 from '../../component-data/ArrowKeyRight.json'
-  import componentData5 from '../../component-data/ArrowKeyUp.json'
+
+  const components = 'Kbd, ArrowKeyDown, ArrowKeyLeft, ArrowKeyRight, ArrowKeyUp'
 </script>
 
 The KBD (Keyboard) component can be used to indicate a textual user input from the keyboard inside other elements such as in text, tables, cards, and more.
@@ -228,31 +225,23 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite `kbdClass`.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### ArrowKeyDown
+### ArrowKeyDown styling
 
 - Use the `class` prop to overwrite `svgClass`.
 
-<CompoAttributesViewer componentData={componentData2}/>
-
-### ArrowKeyLeft
+### ArrowKeyLeft styling
 
 - Use the `class` prop to overwrite `svgClass`.
 
-<CompoAttributesViewer componentData={componentData3}/>
-
-### ArrowKeyRight
+### ArrowKeyRight styling
 
 - Use the `class` prop to overwrite `svgClass`.
 
-<CompoAttributesViewer componentData={componentData4}/>
-
-### ArrowKeyUp
+### ArrowKeyUp styling
 
 - Use the `class` prop to overwrite `svgClass`.
 
-<CompoAttributesViewer componentData={componentData5}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

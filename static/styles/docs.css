@@ -73,6 +73,7 @@
 }
 
 #mainContent > ul,
+#mainContent > div > div > ul,
 #mainContent > ol {
   padding-left: 1rem;
 }

@@ -11,8 +11,8 @@ thumnailSize: w-36
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, Heading, P, A } from '$lib'
-  import componentData1 from '../../component-data/Listgroup.json'
-  import componentData2 from '../../component-data/ListgroupItem.json'
+
+  const components = 'Listgroup, ListgroupItem'
 </script>
 
 The list group component can be used to display a series of elements, buttons or links inside a single card component similar to a sidebar.
@@ -142,18 +142,15 @@ When non standard usage is needed you can omit the `items` props and add element
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Listgroup
+### Listgroup styling
 
 - Use the `class` prop to overwrite `defaultClass`.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### ListgroupItem
+### ListgroupItem styling
 
 - Use the `class` prop to overwrite the `li` tag class.
 
-<CompoAttributesViewer componentData={componentData2}/>
-
+<CompoAttributesViewer {components}/>
 
 ## References
 

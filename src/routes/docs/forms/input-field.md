@@ -11,8 +11,8 @@ description: Get started with a collection of input fields built with Tailwind C
   import { TableProp, TableDefaultRow, DocBadgeList, CompoAttributesViewer } from '../../utils'
   import { onMount } from 'svelte';
   import { Badge, A } from '$lib'
-  import componentData1 from '../../component-data/Input.json'
-  import componentData2 from '../../component-data/InputAddon.json'
+
+  const components = 'Input, InputAddon'
 </script>
 
 The input field is an important part of the form element that can be used to create interactive controls to accept data from the user based on multiple input types, such as text, email, number, password, URL, phone number, and more.
@@ -382,18 +382,16 @@ If you need a full control over `input` HTML element while still re-using the Fl
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Input
+### Input styling
 
 - Use the `class` prop to overwrite the `input` tag class.
 - Use the `classRight` and/or `classLeft` prop to overwrite the `floatClass`.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### InputAddon
+### InputAddon styling
 
 - Use the `class` prop to overwrite the `input` tag class.
 
-<CompoAttributesViewer componentData={componentData2}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

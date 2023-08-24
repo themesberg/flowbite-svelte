@@ -9,9 +9,7 @@ description: Show contextual information to your users using alert elements base
 
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
-
-  import componentData1 from '../../component-data/Alert.json'
-  import componentData2 from '../../component-data/Frame.json'
+  const components = 'Alert, Frame'
 </script>
 
 The alert component can be used to provide information to your users such as success or error messages, but also highlighted information complementing the normal flow of paragraphs and headers on a page. Flowbite also includes dismissable alerts which can be hidden by the users by clicking on the close icon.
@@ -331,20 +329,13 @@ Use the `close` event with `dismissable` prop.
 
 ## Component data
 
-### Alert
-
-The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
+### Alert styling
 
 - Use the `class` prop to overwrite `defaultClass`.
 
-<CompoAttributesViewer componentData={componentData1}/>
+The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Frame
-
-The component inherits the following props, type, and default values from `Frame`. See [types page](/docs/pages/typescript) for type information.
-
-<CompoAttributesViewer componentData={componentData2}/>
-
+<CompoAttributesViewer {components}/>
 
 ## References
 

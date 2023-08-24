@@ -11,8 +11,8 @@ thumnailSize: w-64
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A, Alert } from '$lib'  
-  import componentData1 from '../../component-data/SpeedDial.json'
-  import componentData2 from '../../component-data/SpeedDialButton.json'
+
+  const components = 'SpeedDial, SpeedDialButton'
 </script>
 
 Get started with the speed dial component to show a list of buttons or menu items positioned relative to the body in either corner as a quick way to allow certains actions to be made by your users.
@@ -508,17 +508,15 @@ The default trigger type is hover for each speed dial component.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### SpeedDial
+### SpeedDial styling
 
 - Use the `class` prop to overwrite `defaultClass`.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### SpeedDialButton
+### SpeedDialButton styling
 
 - Use the `class` prop to overwrite `btnDefaultClass`.
 
-<CompoAttributesViewer componentData={componentData2}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

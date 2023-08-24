@@ -11,8 +11,8 @@ thumnailSize: w-48
 <script lang="ts">
   import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, Heading, P, A } from '$lib'
-  import componentData1 from '../../component-data/Pagination.json'
-  import componentData2 from '../../component-data/PaginationItem.json'
+
+  const components = 'Pagination, PaginationItem'
 </script>
 
 The pagination component can be used to navigate across a series of content and data sets for various pages such as blog posts, products, and more. You can use multiple variants of this component with or without icons and even for paginating table data entries.
@@ -333,20 +333,17 @@ You can use the following code to show the number of data shown inside a table e
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Pagination
+### Pagination styling
 
 - Use the `class` prop to overwrite the `ul` tag class.
 - Use the `classNormal` prop to overwrite `normalClass`.
 - Use the `classActive` prop to overwrite `activeClass`.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### PaginationItem
+### PaginationItem styling
 
 - Use the `class` prop to overwrite the default class.
 
-<CompoAttributesViewer componentData={componentData2}/>
-
+<CompoAttributesViewer {components}/>
 
 ## References
 

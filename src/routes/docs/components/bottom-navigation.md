@@ -12,10 +12,7 @@ thumnailSize: w-64
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
 
-  import componentData1 from '../../component-data/BottomNav.json'
-  import componentData2 from '../../component-data/BottomNavHeader.json'
-  import componentData3 from '../../component-data/BottomNavHeaderItem.json'
-  import componentData4 from '../../component-data/BottomNavItem.json'
+  const components = 'BottomNav, BottomNavHeader, BottomNavHeaderItem, BottomNavItem'
 </script>
 
 The bottom bar component can be used to allow menu items and certain control actions to be performed by the user through the usage of a fixed bar positioning to the bottom side of your page.
@@ -371,33 +368,27 @@ You can even use the other bottom navbar examples to exchange the default one pr
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### BottomNav
+### BottomNav styling
 
 - Use the `classOuter` prop to overwrite `outerClass`.
 - Use the `classInner` prop to overwrite `innerClass`.
 - Use the `classActive` prop to overwrite `activeClass`.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### BottomNavHeader
+### BottomNavHeader styling
 
 - Use the `classOuter` prop to overwrite `outerClass`.
 - Use the `classInner` prop to overwrite `innerClass`.
 
-<CompoAttributesViewer componentData={componentData2}/>
-
-### BottomNavHeaderItem
+### BottomNavHeaderItem styling
 
 - Use the `class` prop to overwrite `defaultClass` or `activeClass`.
 
-<CompoAttributesViewer componentData={componentData3}/>
-
-### BottomNavItem
+### BottomNavItem styling
 
 - Use the `btnClass` prop to overwrite the `button` tag class.
 - Use the `spanClass` prop to overwrite the `span` tag class.
 
-<CompoAttributesViewer componentData={componentData4}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

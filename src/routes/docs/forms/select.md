@@ -10,7 +10,7 @@ description: Get started with the select component to allow the user to choose f
 <script>
 import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
 import { Badge, A } from '$lib'
-import componentData1 from '../../component-data/Select.json'
+const components = 'Select'
 </script>
 
 The select input component can be used to gather information from users based on multiple options in the form of a dropdown list and by browsing this page you will find multiple options, styles, sizes, and variants built with the utility classes from Tailwind CSS also available in dark mode.
@@ -269,9 +269,11 @@ Remember to connect the `clear` slot's prop to trigger option removal.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-Use the `class` prop to overwrite the select tag.
+### Select styling
 
-<CompoAttributesViewer componentData={componentData1}/>
+- Use the `class` prop to overwrite the select tag.
+
+<CompoAttributesViewer {components}/>
 
 ## References
 

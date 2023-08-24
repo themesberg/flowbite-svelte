@@ -12,11 +12,7 @@ thumnailSize: w-72
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { A, Heading, Breadcrumb, BreadcrumbItem } from '$lib';
 
-  import componentData1 from '../../component-data/Heading.json'
-  import componentData2 from '../../component-data/P.json'
-  import componentData3 from '../../component-data/A.json'
-  import componentData4 from '../../component-data/Mark.json'
-  import componentData5 from '../../component-data/Secondary.json'
+  const components = 'Heading, P, A, Mark, Secondary'
 </script>
 
 Get started with the heading component to define titles and subtitles on a web page and also improve the on-page SEO metrics of your website by targeting high-traffic keywords on Google.
@@ -251,32 +247,24 @@ The `tag="h6"` can be used as subtitles of the page’s sections.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Heading
+### Heading styling
 
 - Use the `class` prop to overwrite the heading class.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### P
+### P styling
 
 - Use the `class` prop to overwrite the `p` tag class.
 
-<CompoAttributesViewer componentData={componentData2}/>
-
-### A
+### A styling
 
 - Use the `class` prop to overwrite the `a` tag class.
 
-<CompoAttributesViewer componentData={componentData3}/>
-
-### Mark
+### Mark styling
 
 - Use the `class` prop to overwrite the `mark` tag class.
 
-<CompoAttributesViewer componentData={componentData4}/>
-
-### Secondary
+### Secondary styling
 
 - Use the `class` prop to overwrite the `small` tag class.
 
-<CompoAttributesViewer componentData={componentData5}/>
+<CompoAttributesViewer {components}/>

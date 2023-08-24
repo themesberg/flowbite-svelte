@@ -10,16 +10,7 @@ description: Use the accordion component to show hidden information based on the
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'; 
-  // Props 
-  import componentData1 from '../../component-data/Accordion.json'
-  import componentData2 from '../../component-data/AccordionItem.json'
-
-  let slotHeader = ['Name', 'Description']
-  
-  // Slots
-  let slotItems = [['default', 'Place for AccordionItems']]
-  let slotItems2 = [['default','Item body slot'],['header', 'Item header slot'],['arrowup', 'Icon to close an accordion item'],['arrowdown','Icon to open an accordion item']]
-
+  const components = 'Accordion, AccordionItem'
 </script>
 
 The accordion component is a collection of vertically collapsing header and body elements that can be used to show and hide information based on the Tailwind CSS utility classes and JavaScript from Flowbite.
@@ -307,19 +298,17 @@ Accordions can be nested. All of the mentioned options are supported.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Accordion
+### Accordion styling
 
 - Use the `class` prop to overwrite `defaultClass`.
 - Use the `classActive` prop to overwrite `activeClass`.
 - Use the `classInactive` prop to overwrite `inactiveClass`.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### AccordionItem
+### AccordionItem styling
 
 - Use the `class` prop to overwrite `defaultClass`.
 
-<CompoAttributesViewer componentData={componentData2}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

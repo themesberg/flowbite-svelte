@@ -10,7 +10,7 @@ description: Use the mega menu component as a full-width dropdown inside the nav
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils';
   import { P, A } from '$lib';
-  import componentData1 from '../../component-data/MegaMenu.json';
+  const components = 'MegaMenu'
 </script>
 
 The mega menu component is a full-width dropdown that can be triggered by clicking on the menu item and it shows a list of links that you can use to navigate through the pages on a website.
@@ -286,10 +286,11 @@ This example can be used to also show a CTA with a backdround image inside the d
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
+### MegaMenu styling
 - Use the `class` prop to overwrite the wrapper class.
 - Use the `classUl` prop to overwrite the `ul` tag class.
 
-<CompoAttributesViewer componentData={componentData1}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

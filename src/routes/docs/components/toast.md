@@ -11,7 +11,8 @@ thumnailSize: w-64
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
-  import componentData1 from '../../component-data/Toast.json'
+
+  const components = 'Toast'
 </script>
 
 The toast component can be used to enhance your website’s interactivity by pushing notifications to your visitors. You can choose from multiple styles, colors, sizes, and positions and even dismiss the component.
@@ -350,9 +351,11 @@ Use the position property to position these toast components relative to the mai
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
+### Toast styling
+
 - Use the `class` prop to overwrite `divClass`.
 
-<CompoAttributesViewer componentData={componentData1}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

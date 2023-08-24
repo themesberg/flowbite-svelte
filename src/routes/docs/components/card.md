@@ -12,12 +12,7 @@ thumnailSize: w-36
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
 
-  import componentData1 from '../../component-data/Card.json'
-  import componentData2 from '../../component-data/Frame.json'
-
-  // Slots
-  let slotHeader = ['Name', 'Description']
-  let slotItems = [['default', 'For a button label.']]
+  const components = 'Card, Frame'
 </script>
 
 Use these responsive card components to show data entries and information to your users in multiple forms and contexts such as for your blog, application, user profiles, and more.
@@ -417,15 +412,11 @@ Use this example to split cards into multiple sections such as for testimonials 
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Card
+### Card styling
 
 - The Card component uses the Frame component. Use the `class` property to overwrite the default Frame class. The Frame component tag can be either an anchor tag or a div tag depending on the value of the href prop.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### Frame
-
-<CompoAttributesViewer componentData={componentData2}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

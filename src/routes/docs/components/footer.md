@@ -11,12 +11,7 @@ description: Use the footer section at the bottom of every page to show valuable
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
 
-  import componentData1 from '../../component-data/Footer.json'
-  import componentData2 from '../../component-data/FooterBrand.json'
-  import componentData3 from '../../component-data/FooterCopyright.json'
-  import componentData4 from '../../component-data/FooterIcon.json'
-  import componentData5 from '../../component-data/FooterLink.json'
-  import componentData6 from '../../component-data/FooterLinkGroup.json'
+  const components = 'Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup'
 </script>
 
 The footer is one of the most underestimated sections of a website being located at the very bottom of every page, however, it can be used as a way to try to convince users to stay on your website if they haven’t found the information they’ve been looking for inside the main content area.
@@ -238,45 +233,35 @@ Use this example to set create a sticky footer by using a fixed position to the 
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Footer
+### Footer styling
 
 - Use the `class` prop to overwrite the default class.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### FooterBrand
+### FooterBrand styling
 
 - Use the `classA` prop to overwrite `aClass`.
 - Use the `classSpan` prop to overwrite `spanClass`.
 - Use the `classImg` prop to overwrite `imgClass`.
 
-<CompoAttributesViewer componentData={componentData2}/>
-
-### FooterCopyright
+### FooterCopyright styling
 
 - Use `classSpan` prop to overwrite `classSpan`.
 - Use `classA` prop to overwrite `aClass`.
 
-<CompoAttributesViewer componentData={componentData3}/>
-
-### FooterIcon
+### FooterIcon styling
 
 - Use the `class` prop to overwrite `aClass`.
 
-<CompoAttributesViewer componentData={componentData4}/>
-
-### FooterLink
+### FooterLink styling
 
 - Use the `classLi` prop to overwrite `liClass`.
 - Use the `classA` prop to overwrite `aClass`.
 
-<CompoAttributesViewer componentData={componentData5}/>
-
-### FooterLinkGroup
+### FooterLinkGroup styling
 
 - Use the `class` prop to overwrite `ulClass`.
 
-<CompoAttributesViewer componentData={componentData6}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 
