@@ -10,19 +10,9 @@ thumnailSize: w-40
 
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
-
   import { P, A, Heading } from '$lib'
-  import componentData1 from '../../component-data/Input.json'
-  import componentData2 from '../../component-data/Label.json'
-  import componentData3 from '../../component-data/Helper.json'
-  import componentData4 from '../../component-data/Fileupload.json'
-  import componentData5 from '../../component-data/Textarea.json'
-  import componentData6 from '../../component-data/Select.json'
-  import componentData7 from '../../component-data/Checkbox.json'
-  import componentData8 from '../../component-data/Radio.json'
-  import componentData9 from '../../component-data/Toggle.json'
-  import componentData10 from '../../component-data/MultiSelect.json'
-
+  
+  const components = 'Input, Label, Helper, Fileupload, Textarea, Select, Checkbox, Radio, Toggle, MultiSelect'
 </script>
 
 The Input component allows you to change the input size, add disabled, helper text, and floating label.
@@ -257,47 +247,7 @@ Get started with the default example of a select input component to get a single
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-To learn how to overwrite classes, please refer to the individual component pages.
-
-### Input
-
-<CompoAttributesViewer componentData={componentData1}/>
-
-### Label
-
-<CompoAttributesViewer componentData={componentData2}/>
-
-### Helper
-
-<CompoAttributesViewer componentData={componentData3}/>
-
-### Fileupload
-
-<CompoAttributesViewer componentData={componentData4}/>
-
-### Textarea
-
-<CompoAttributesViewer componentData={componentData5}/>
-
-### Select
-
-<CompoAttributesViewer componentData={componentData6}/>
-
-### MultiSelect
-
-<CompoAttributesViewer componentData={componentData7}/>
-
-### Checkbox
-
-<CompoAttributesViewer componentData={componentData8}/>
-
-### Radio
-
-<CompoAttributesViewer componentData={componentData9}/>
-
-### Toggle
-
-<CompoAttributesViewer componentData={componentData10}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

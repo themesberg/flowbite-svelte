@@ -11,13 +11,7 @@ description: The navbar component can be used to show a list of navigation links
   import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, Heading, P, A } from '$lib';
 
-  import componentData1 from '../../component-data/Navbar.json'
-  import componentData2 from '../../component-data/NavBrand.json'
-  import componentData3 from '../../component-data/NavLi.json'
-  import componentData4 from '../../component-data/NavUl.json'
-  import componentData5 from '../../component-data/NavHamburger.json'
-  import componentData6 from '../../component-data/Menu.json'
-  import componentData7 from '../../component-data/SidebarMenu.json'
+  const components = 'Navbar, NavBrand, NavLi, NavUl, NavHamburger, Menu, SidebarMenu'
 </script>
 
 Get started with the responsive navbar component from Flowbite to quickly set up a navigation menu for your website and set up the logo, list of pages, CTA button, search input, user profile options with a dropdown, and more.
@@ -309,51 +303,39 @@ Use this example to show a solid background for the navbar component instead of 
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Navbar
+### Navbar styling
 
 - Use the `class` prop to overwrite `navClass`.
 - Use the `classNavDiv` prop to overwrite `navDivClass`.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### NavBrand
+### NavBrand styling
 
 - Use the `class` prop to overwrite the `a` tag class.
 
-<CompoAttributesViewer componentData={componentData2}/>
-
-### NavHamburger
+### NavHamburger styling
 
 - Use the `class` prop to overwrite `btnClass`.
 - Use the `classMenu` prop to overwrite `menuClass`.
 
-<CompoAttributesViewer componentData={componentData3}/>
-
-### NavLi
+### NavLi styling
 
 - Use the `class` prop to overwrite the `li` tag.
 
-<CompoAttributesViewer componentData={componentData4}/>
-
-### NavUl
+### NavUl styling
 
 - Use the `class` prop to overwrite the `div` tag.
 - Use the `classUl` prop to overwrite the `ul` tag.
 
-<CompoAttributesViewer componentData={componentData5}/>
-
-### Menu
+### Menu styling
 
 - Use the `class` prop to overwrite the `svg` tag class.
 
-<CompoAttributesViewer componentData={componentData6}/>
-
-### SidebarMenu
+### SidebarMenu styling
 
 - Use the `class` prop to overwrite the outer class.
 - Use the `classSideMenu` prop to overwrite the inner class.
 
-<CompoAttributesViewer componentData={componentData7}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

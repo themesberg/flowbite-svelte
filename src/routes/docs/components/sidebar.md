@@ -12,14 +12,8 @@ thumnailSize: w-72
   import { page } from '$app/stores';
   import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, Heading, P, A } from '$lib'
-  import componentData1 from '../../component-data/Sidebar.json'
-  import componentData2 from '../../component-data/SidebarBrand.json'
-  import componentData3 from '../../component-data/SidebarCta.json'
-  import componentData4 from '../../component-data/SidebarDropdownItem.json'
-  import componentData5 from '../../component-data/SidebarDropdownWrapper.json'
-  import componentData6 from '../../component-data/SidebarGroup.json'
-  import componentData7 from '../../component-data/SidebarItem.json'
-  import componentData8 from '../../component-data/SidebarWrapper.json'
+  
+  const components = 'Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper'
 </script>
 
 The sidebar component can be used as a complementary element relative to the navbar shown on either the left or right side of the page used for the navigation on your web application, including menu items, multi-level dropdown items, call to actions elements, and more.
@@ -535,62 +529,39 @@ You can add own transition by setting `transitionType` and `transitionParams`.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-import componentData1 from '../../component-data/Sidebar.json'
-  import componentData2 from '../../component-data/SidebarBrand.json'
-  import componentData3 from '../../component-data/SidebarCta.json'
-  import componentData4 from '../../component-data/SidebarDropdownItem.json'
-  import componentData5 from '../../component-data/SidebarDropdownWrapper.json'
-  import componentData6 from '../../component-data/SidebarGroup.json'
-  import componentData7 from '../../component-data/SidebarItem.json'
-  import componentData8 from '../../component-data/SidebarWrapper.json'
-
-### Sidebar
+### Sidebar styling
 
 - Use the `class` prop to overwrite `asideClass`.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### SidebarBrand
+### SidebarBrand styling
 
 - Use the `class` prop to overwrite `aClass`.
 
-<CompoAttributesViewer componentData={componentData2}/>
-
-### SidebarCta
+### SidebarCta styling
 
 - Use the `class` prop to overwrite the default class.
 
-<CompoAttributesViewer componentData={componentData3}/>
-
-### SidebarDropdownItem
+### SidebarDropdownItem styling
 
 - Use the `class` prop to overwrite `divWrapperClass`.
 
-<CompoAttributesViewer componentData={componentData4}/>
-
-### SidebarDropdownWrapper
+### SidebarDropdownWrapper styling
 
 - Use the `class` prop to overwrite `btnClass`.
 
-<CompoAttributesViewer componentData={componentData5}/>
-
-### SidebarGroup
+### SidebarGroup styling
 
 - Use the `class` prop to overwrite `ulClass`.
 
-<CompoAttributesViewer componentData={componentData6}/>
-
-### SidebarItem
+### SidebarItem styling
 
 - Use the `class` prop to overwrite the `a` tag class.
 
-<CompoAttributesViewer componentData={componentData7}/>
-
-### SidebarWrapper
+### SidebarWrapper styling
 
 - Use the `class` prop to overwrite `divClass`.
 
-<CompoAttributesViewer componentData={componentData8}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

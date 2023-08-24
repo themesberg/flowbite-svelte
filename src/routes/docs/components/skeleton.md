@@ -11,14 +11,8 @@ thumnailSize: w-40
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
-  import componentData1 from '../../component-data/CardPlaceholder.json'
-  import componentData2 from '../../component-data/ImagePlaceholder.json'
-  import componentData3 from '../../component-data/ListPlaceholder.json'
-  import componentData4 from '../../component-data/Skeleton.json'
-  import componentData5 from '../../component-data/TestimonialPlaceholder.json'
-  import componentData6 from '../../component-data/TextPlaceholder.json'
-  import componentData7 from '../../component-data/VideoPlaceholder.json'
-  import componentData8 from '../../component-data/WidgetPlaceholder.json'
+  
+  const components = 'CardPlaceholder, ImagePlaceholder, ListPlaceholder, Skeleton, TestimonialPlaceholder, TextPlaceholder, VideoPlaceholder, WidgetPlaceholder'
 </script>
 
 Use the skeleton component to indicate a loading status with placeholder elements that look very similar to the type of content that is being loaded such as paragraphs, images, videos, and more.
@@ -132,53 +126,39 @@ Use the skeleton component to indicate a loading status with placeholder element
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### CardPlaceholder
+### CardPlaceholder styling
 
 - Use the `class` prop to overwrite `divClass`.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### ImagePlaceholder
+### ImagePlaceholder styling
 
 - Use the `class` prop to overwrite `divClass`.
 
-<CompoAttributesViewer componentData={componentData2}/>
-
-### ListPlaceholder
+### ListPlaceholder styling
 
 - Use the `class` prop to overwrite `divClass`.
 
-<CompoAttributesViewer componentData={componentData3}/>
-
-### Skeleton
+### Skeleton styling
 
 - Use the `class` prop to overwrite `divClass`.
 
-<CompoAttributesViewer componentData={componentData4}/>
-
-### TestimonialPlaceholder
+### TestimonialPlaceholder styling
 
 - Use the `class` prop to overwrite `divClass`.
 
-<CompoAttributesViewer componentData={componentData5}/>
-
-### TextPlaceholder
+### TextPlaceholder styling
 
 - Use the `class` prop to overwrite `divClass`.
 
-<CompoAttributesViewer componentData={componentData6}/>
-
-### VideoPlaceholder
+### VideoPlaceholder styling
 
 - Use the `class` prop to overwrite `divClass`.
 
-<CompoAttributesViewer componentData={componentData7}/>
-
-### WidgetPlaceholder
+### WidgetPlaceholder styling
 
 - Use the `class` prop to overwrite `divClass`.
 
-<CompoAttributesViewer componentData={componentData8}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

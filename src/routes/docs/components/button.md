@@ -11,8 +11,8 @@ thumnailSize: w-24
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, P, A } from '$lib'
-  import componentData1 from '../../component-data/Button.json'
-  import componentData2 from '../../component-data/GradientButton.json'
+
+  const components = 'Button, GradientButton'
 </script>
 
 The button component is probably the most widely used element in any user interface or website as it can be used to launch an action but also to link to other pages.
@@ -299,17 +299,15 @@ You can use on:click or any standard on:\* to listen to the event.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Button
+### Button styling
 
 - Use the `class` prop to overwrite `button` tag class.
 
-<CompoAttributesViewer componentData={componentData2}/>
-
-### GradientButton
+### GradientButton styling
 
 - Use the `class` prop to overwrite `button` tag class.
 
-<CompoAttributesViewer componentData={componentData2}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

@@ -10,7 +10,7 @@ description: Get started with the range component to receive a number from the u
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
-  import componentData1 from '../../component-data/Range.json'
+  const components = 'Range'
   let minmaxValue=5
 </script>
 
@@ -99,9 +99,10 @@ Since we added `$$restProps` to input field, you can contain the props which are
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
+### Search-input styling
 Use the `class` prop to overwrite the default class.
 
-<CompoAttributesViewer componentData={componentData1}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

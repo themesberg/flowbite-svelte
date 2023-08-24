@@ -11,8 +11,7 @@ thumnailSize: w-48
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
-  import componentData1 from '../../component-data/Fileupload.json'
-  import componentData2 from '../../component-data/Dropzone.json'
+  const components = 'Fileupload, Dropzone'
 </script>
 
 The file input component can be used to upload one or more files from the device storage of the user available in multiple sizes, styles, variants and support for dark mode.
@@ -157,17 +156,15 @@ When the user selected multiple files, the `value` represents the first file in 
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Fileupload
+### Fileupload styling
 
 - Use the `class` prop to overwrite `inputClass`.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### Dropzone
+### Dropzone styling
 
 - Use the `class` prop to overwrite `defaultClass`.
 
-<CompoAttributesViewer componentData={componentData2}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

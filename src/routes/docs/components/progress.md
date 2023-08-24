@@ -12,6 +12,7 @@ thumnailSize: w-48
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
   import componentData1 from '../../component-data/Progressbar.json'
+  const components = 'Progressbar'
 </script>
 
 The progress bar component can be used as an indicator to show the completion rate of data sets or it can be used as an animated loader component. There are multiple sizes, colors, and styles available.
@@ -157,10 +158,12 @@ Use `labelInsideClass` prop to style your progressbar.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
+### Progressbar styling
+
 - Use the `class` prop to overwrite the `div` class.
 - Use the `classLabelOutside` prop to overwrite the outside `div` class.
 
-<CompoAttributesViewer componentData={componentData1}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

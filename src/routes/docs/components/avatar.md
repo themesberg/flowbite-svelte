@@ -10,12 +10,9 @@ thumnailSize: w-64
 
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
-
   import { P, A } from '$lib'
 
-  import componentData1 from '../../component-data/Avatar.json'
-  import componentData2 from '../../component-data/Placeholder.json'
-
+  const components = 'Avatar, Placeholder'
   let name;
 </script>
 
@@ -206,16 +203,12 @@ Select size from xs | sm | md | lg | xl.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Avatar
+### Avatar styling
 
 - Use the `class` prop to overwrite the default class.
 - Use the `classPlaceholder` prop to overwrite the placeholder class.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### Placehoder
-
-<CompoAttributesViewer componentData={componentData2}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

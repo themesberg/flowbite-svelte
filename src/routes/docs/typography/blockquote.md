@@ -11,7 +11,8 @@ thumnailSize: w-64
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A, Heading } from '$lib'; 
-  import componentData1 from '../../component-data/Blockquote.json'
+
+  const components = 'Blockquote'
 </script>
 
 Get started with Blockquote component when quoting external sources such as quotes inside an article, user reviews, and testimonials based on multiple examples of layouts, styles, and contexts.
@@ -206,6 +207,8 @@ The `size="2xl"` prop can be used to set a large size for the blockquote compone
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
+### Blockquote styleing
+
 - Use the `class` prop to overwrite the `blockquote` tag class.
 
-<CompoAttributesViewer componentData={componentData1}/>
+<CompoAttributesViewer {components}/>

@@ -11,7 +11,8 @@ thumnailSize: w-64
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { A} from '$lib';
-  import componentData1 from '../../component-data/Hr.json'
+
+  const components = 'Hr'
 </script>
 
 The `Hr` component can be used to separate content using a horizontal line by adding space between elements based on multiple styles, variants, and layouts.
@@ -105,8 +106,10 @@ This example can be used to separate content with a HR tag as a shape instead of
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
+### Hr styling
+
 - Use the `classHr` prop to overwrite `hrClass`.
 - Use the `divClass` prop to overwrite `classDiv`.
 - Use the `classInnerDiv` prop to overwrite `innerDivClass`.
 
-<CompoAttributesViewer componentData={componentData1}/>
+<CompoAttributesViewer {components}/>

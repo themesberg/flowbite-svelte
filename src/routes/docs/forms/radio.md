@@ -11,9 +11,8 @@ thumnailSize: w-72
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
-  import componentData1 from '../../component-data/Radio.json'
-  import componentData2 from '../../component-data/Label.json'
-  import componentData3 from '../../component-data/Helper.json'
+
+  const components = 'Radio, Label, Helper'
 </script>
 
 The radio component can be used to allow the user to choose a single option from one or more available options coded with the utility classes from Tailwind CSS and available in multiple styles, variants, and colors and support dark mode.
@@ -289,19 +288,15 @@ Use this example of an advanced layout of radio elements where the label parent 
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-All attributes of the `input` element like: name, id, autofocus, etc, can be set directly as component props.
-
-### Radio
+### Radio styling
 
 - Use the `class` prop to overwrite the `label` and `input` tag class.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### Helper
+### Helper styling
 
 - Use the `class` prop to overwrite the `p` tag class.
 
-<CompoAttributesViewer componentData={componentData2}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

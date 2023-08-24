@@ -12,14 +12,7 @@ thumnailSize: w-64
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
 
-  import componentData1 from '../../component-data/Rating.json'
-  import componentData2 from '../../component-data/AdvancedRating.json'
-  import componentData3 from '../../component-data/ScoreRating.json'
-  import componentData4 from '../../component-data/RatingComment.json'
-  import componentData5 from '../../component-data/Review.json'
-  import componentData6 from '../../component-data/Star.json'
-  import componentData7 from '../../component-data/Thumbup.json'
-  import componentData8 from '../../component-data/Heart.json'
+  const components = 'Rating, AdvancedRating, ScoreRating, RatingComment, Review, Star, Thumbup, Heart'
 </script>
 
 Get started with the rating component to show an aggregate of reviews and scores in the forms of stars or numbers.
@@ -294,13 +287,11 @@ Use this component to show the review content from a user alongside the avatar, 
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Rating
+### Rating styling
 
 - Use the `class` prop to overwrite `divClass`.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### AdvancedRating
+### AdvancedRating styling
 
 - Use the `classDiv` prop to overwrite `divClass`.
 - Use the `classLabel` prop to overwrite `labelClass`.
@@ -308,17 +299,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `classRating` prop to overwrite `ratingClass`.
 - Use the `classRightLabel` prop to overwrite `rightLabelClass`.
 
-<CompoAttributesViewer componentData={componentData2}/>
-
-### ScoreRating
-
-<CompoAttributesViewer componentData={componentData3}/>
-
-### RatingComment
-
-<CompoAttributesViewer componentData={componentData4}/>
-
-### Review
+### Review styling
 
 - Use the `classArticle` prop to overwrite `articleClass`.
 - Use the `classDiv` prop to overwrite `divClass`.
@@ -326,25 +307,19 @@ The component has the following props, type, and default values. See [types page
 - Use the `classUl` prop to overwrite `ulClass`.
 - Use the `classLi` prop to overwrite `liClass`.
 
-<CompoAttributesViewer componentData={componentData5}/>
-
-### Star
+### Star styling
 
 - Use the `class` prop to overwrite the `svg` tag class.
 
-<CompoAttributesViewer componentData={componentData6}/>
-
-### Thumbup
+### Thumbup styling
 
 - Use the `class` prop to overwrite the `svg` tag class.
 
-<CompoAttributesViewer componentData={componentData7}/>
-
-### Heart
+### Heart styling
 
 - Use the `class` prop to overwrite the `svg` tag class.
 
-<CompoAttributesViewer componentData={componentData8}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

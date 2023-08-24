@@ -12,12 +12,7 @@ thumnailSize: w-36
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
 
-  import componentData1 from '../../component-data/DeviceMockup.json'
-  import componentData2 from '../../component-data/DefaultMockup.json'
-  import componentData3 from '../../component-data/Android.json'
-  import componentData4 from '../../component-data/Ios.json'
-  import componentData5 from '../../component-data/Smartwatch.json'
-  import componentData6 from '../../component-data/Tablet.json'
+  const components = 'DeviceMockup, DefaultMockup, Android, Ios, Smartwatch, Tablet'
 </script>
 
 The device mockup component can be used to feature a preview and screenshot of your application as if you would already use it on a mobile phone and it’s a great use case for hero and CTA sections.
@@ -143,13 +138,11 @@ This component can be used to showcase applications built for smartwatches.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### DeviceMockup
+### DeviceMockup styling
 
 - Use the `class` prop to overwrite the outer div class.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### DefaultMockup
+### DefaultMockup styling
 
 - Use the `classDefaultDiv` prop to overwrite `defaultDiv`.
 - Use the `classDefaultSlot` prop to overwrite `defaultSlot`.
@@ -158,9 +151,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `classDefaultLeftBot` prop to overwrite `defaultLeftBot`.
 - Use the `classDefaultRight` prop to overwrite `defaultRight`.
 
-<CompoAttributesViewer componentData={componentData2}/>
-
-### Android
+### Android styling
 
 - Use the `classAndroidDiv` prop to overwrite `androidDiv`.
 - Use the `classAndroidSlot` prop to overwrite `androidSlot`.
@@ -170,9 +161,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `classAndroidLeftBot` prop to overwrite `androidLeftBot`.
 - Use the `classAndroidRight` prop to overwrite `androidRight`.
 
-<CompoAttributesViewer componentData={componentData3}/>
-
-### Desktop
+### Desktop styling
 
 - Use the classDesktopInner prop to overwrite desktopInner.
 - Use the classDesktopBot prop to overwrite desktopBot.
@@ -180,7 +169,7 @@ The component has the following props, type, and default values. See [types page
 - Use the classDestopDiv prop to overwrite destopDiv.
 - Use the classDesktopSlot prop to overwrite desktopSlot.
 
-### Ios
+### Ios styling
 
 - Use the `classIosDiv` prop to overwrite `iosDiv`.
 - Use the `classIosSlot` prop to overwrite `iosSlot`.
@@ -189,9 +178,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `classIosLeftBot` prop to overwrite `iosLeftBot`.
 - Use the `classIosRight` prop to overwrite `iosRight`.
 
-<CompoAttributesViewer componentData={componentData5}/>
-
-### Laptop
+### Laptop styling
 
 - Use the `classAndroidDiv` prop to overwrite `androidDiv`.
 - Use the `classAndroidDiv` prop to overwrite `androidDiv`.
@@ -200,7 +187,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `classAndroidDiv` prop to overwrite `androidDiv`.
 - Use the `classAndroidDiv` prop to overwrite `androidDiv`.
 
-### Smartwatch
+### Smartwatch styling
 
 - Use the `classAndroidDiv` prop to overwrite `androidDiv`.
 - Use the `classAndroidDiv` prop to overwrite `androidDiv`.
@@ -209,9 +196,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `classAndroidDiv` prop to overwrite `androidDiv`.
 - Use the `classAndroidDiv` prop to overwrite `androidDiv`.
 
-<CompoAttributesViewer componentData={componentData5}/>
-
-### Tablet
+### Tablet styling
 
 - Use the `classAndroidDiv` prop to overwrite `androidDiv`.
 - Use the `classAndroidDiv` prop to overwrite `androidDiv`.
@@ -220,7 +205,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `classAndroidDiv` prop to overwrite `androidDiv`.
 - Use the `classAndroidDiv` prop to overwrite `androidDiv`.
 
-<CompoAttributesViewer componentData={componentData6}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

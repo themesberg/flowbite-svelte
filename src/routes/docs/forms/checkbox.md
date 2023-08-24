@@ -11,9 +11,8 @@ thumnailSize: w-72
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
-  import componentData1 from '../../component-data/Checkbox.json'
-  import componentData2 from '../../component-data/Label.json'
-  import componentData3 from '../../component-data/Helper.json'
+
+  const components = 'Checkbox, Label, Helper'
 </script>
 
 The checkbox component can be used to receive one or more selected options from the user in the form of a square box available in multiple styles, sizes, colors, and variants.
@@ -315,25 +314,15 @@ Use this example of an advanced layout of checkbox elements where the label pare
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-All attributes of the `input` element like: name, id, autofocus, etc, can be set directly as component props.
-
-Use the `class` prop to overwrite the default class.
-
-### Checkbox
+### Checkbox styling
 
 - Use the `class` prop to overwrite the `label` and `input` tag class.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### Label
-
-<CompoAttributesViewer componentData={componentData2}/>
-
-### Helper
+### Helper styling
 
 - Use the `class` prop to overwrite the `p` tag class.
 
-<CompoAttributesViewer componentData={componentData3}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

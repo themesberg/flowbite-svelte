@@ -11,8 +11,8 @@ thumnailSize: w-40
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
-  import componentData1 from '../../component-data/FloatingLabelInput.json'
-  import componentData2 from '../../component-data/Helper.json'
+
+  const components = 'FloatingLabelInput, Helper'
 </script>
 
 The floating label style was first pioneered by Google in its infamous Material UI design system and it’s basically a label tag which floats just above the input field when it is being focused or already has content inside.
@@ -159,19 +159,17 @@ Add a helper text in addition to the label if you want to show more information 
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### FloatingLabelInput
+### FloatingLabelInput styling
 
 - Use the `classDiv` prop to overwrite the div class.
 - Use the `classInput` prop to overwrite the input class.
 - Use the `classLabel` prop to overwrite the label class.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### Helper
+### Helper styling
 
 - Use the `class` prop to overwrite the `p` tag class.
 
-<CompoAttributesViewer componentData={componentData2}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

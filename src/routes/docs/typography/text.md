@@ -11,15 +11,15 @@ thumnailSize: w-64
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { A, Heading } from '$lib'
-  import componentData1 from '../../component-data/P.json'
-  import componentData2 from '../../component-data/Span.json'
+
+  const components = 'P, Span'
 
   // lib files
-  const libFilesArray = [
-    import.meta.glob("$lib/typography/P.svelte"),
-    import.meta.glob("$lib/typography/Span.svelte"),
-  ];
-  const libFiles = { ...libFilesArray[0], ...libFilesArray[1] };
+  // const libFilesArray = [
+  //   import.meta.glob("$lib/typography/P.svelte"),
+  //   import.meta.glob("$lib/typography/Span.svelte"),
+  // ];
+  // const libFiles = { ...libFilesArray[0], ...libFilesArray[1] };
 </script>
 
 Get started with a collection of text customization examples to learn how to update the size, font weight, style, decoration and spacing of inline text elements.
@@ -333,12 +333,8 @@ Use the `opacity` and `color` prop to set the opacity of inline text elements.
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### P
-
-<CompoAttributesViewer componentData={componentData1}/>
-
-### Span
+### Span styling
 
 - Use the `class` prop to overwrite the default class.
 
-<CompoAttributesViewer componentData={componentData2}/>
+<CompoAttributesViewer {components}/>

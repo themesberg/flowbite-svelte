@@ -11,7 +11,7 @@ thumnailSize: w-64
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
-  import componentData1 from '../../component-data/Gallery.json'
+  const components = 'Gallery'
 </script>
 
 The gallery component can be used to show multiple images inside a masonry grid layout styles with the utility-first classes from Tailwind CSS to show a collection of pictures to your users based on various layouts, styles, sizes, and colors.
@@ -250,12 +250,12 @@ This example shows how to get a complete control over the gallery images look an
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Gallery
+### Gallery styling
 
 - Use the `class` prop to overwrite the `div` tag.
 - Use the `classImg` prop to overwrite `imgClass`.
 
-<CompoAttributesViewer componentData={componentData1}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

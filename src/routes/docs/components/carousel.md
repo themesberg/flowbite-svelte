@@ -11,12 +11,8 @@ thumnailSize: w-48
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
-  import componentData1 from '../../component-data/Carousel.json'
-  import componentData2 from '../../component-data/CarouselTransition.json'
-  import componentData3 from '../../component-data/Caption.json'
-  import componentData4 from '../../component-data/Indicator.json'
-  import componentData5 from '../../component-data/Slide.json'
-  import componentData6 from '../../component-data/Thumbnail.json'
+
+  const components = 'Carousel, CarouselTransition, Caption, Indicator, Slide, Thumbnail'
 </script>
 
 The carousel component can be used to cycle through a set of elements using custom options, controls, and indicators.
@@ -251,34 +247,14 @@ The carousel component can be used to cycle through a set of elements using cust
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Carousel
+### Carousel styling
 
 - Use the `classDiv` prop to overwrite `divClass`.
 - Use the `classIndicatorDiv` prop to overwrite `indicatorDivCls`.
 - Use the `classCaption` prop to overwrite `captionClass`.
 - Use the `classIndicator` prop to overwrite `indicatorClass`.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### CarouselTransition
-
-<CompoAttributesViewer componentData={componentData2}/>
-
-### Caption
-
-<CompoAttributesViewer componentData={componentData3}/>
-
-### Indicator
-
-<CompoAttributesViewer componentData={componentData4}/>
-
-### Slide
-
-<CompoAttributesViewer componentData={componentData5}/>
-
-### Thumbnail
-
-<CompoAttributesViewer componentData={componentData6}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

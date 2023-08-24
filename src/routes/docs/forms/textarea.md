@@ -10,7 +10,8 @@ description: Use the textarea component as a multi-line text field input and use
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
-  import componentData1 from '../../component-data/Textarea.json'
+
+  const components = 'Textarea'
 </script>
 
 The textarea component is a multi-line text field input that can be used to receive longer chunks of text from the user in the form of a comment box, description field, and more.
@@ -130,9 +131,11 @@ If you want to build a chatroom component you will usually want to use a textare
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
+### Textarea styling
+
 Use the `class` prop to overwrite the `textarea` tag.
 
-<CompoAttributesViewer componentData={componentData1}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

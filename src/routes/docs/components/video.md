@@ -11,7 +11,7 @@ thumnailSize: w-64
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { Heading, P, A } from '$lib'
-  import componentData1 from '../../component-data/Video.json'
+  const components = 'Video'
 </script>
 
 ## Setup
@@ -114,9 +114,11 @@ Customize the video player appearance using the utility classes from Tailwind CS
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
+### Video styling
+
 - Use the `class` prop to overwrite the `video` tag class.
 
-<CompoAttributesViewer componentData={componentData1}/>
+<CompoAttributesViewer {components}/>
 
 ## References
 

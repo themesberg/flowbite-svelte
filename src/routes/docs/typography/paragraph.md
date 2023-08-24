@@ -11,8 +11,8 @@ thumnailSize: w-64
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils';
   import { Layout, P, A, Heading } from '$lib';
-  import componentData1 from '../../component-data/P.json'
-  import componentData2 from '../../component-data/Layout.json'
+
+  const components = 'P, Layout'
 </script>
 
 The paragraph element is one of the most commonly used HTML tags on a document page because it is used to write longer blocks of text separated by a blank line and can massively improve the on-page SEO of the page when used correctly. Get started with a collection of paragraph components based on multiple styles, layouts, colors and sizes to use for your website.
@@ -258,12 +258,8 @@ Use the `align="right"` prop to align the paragraph text the right side of the p
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### P
+### P styling
 
 - Use the `class` prop to overwrite the `p` tag class.
 
-<CompoAttributesViewer componentData={componentData1}/>
-
-### Layout
-
-<CompoAttributesViewer componentData={componentData2}/>
+<CompoAttributesViewer {components}/>
