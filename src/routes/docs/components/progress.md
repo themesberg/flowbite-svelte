@@ -11,7 +11,6 @@ thumnailSize: w-48
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
-  import componentData1 from '../../component-data/Progressbar.json'
   const components = 'Progressbar'
 </script>
 

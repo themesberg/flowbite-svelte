@@ -10,7 +10,6 @@ description: Use the search input component as a text field to allow users to en
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, A } from '$lib'
-  import componentData1 from '../../component-data/Search.json'
   const components = 'Search'
 </script>
 
