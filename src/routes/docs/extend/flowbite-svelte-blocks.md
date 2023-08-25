@@ -22,7 +22,7 @@ description: Flowbite-Svete-Blocks provides all necessary components to get star
 After installing Flowbite-Svelte, run the following to install Flowbite-Svelte-Blocks:
 
 ```sh
-npm i -D shinokada/flowbite-svelte-blocks
+pnpm i -D flowbite-svelte-blocks
 ```
 
 <Img src="/images/flowbite-svelte-blocks-optimized.png" alt="Flowbite Svelte Blocks" />
