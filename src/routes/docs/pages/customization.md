@@ -7,6 +7,10 @@ dir: Pages
 description: Learn how you can overwrite the default style with you own CSS
 ---
 
+<script>
+  import { Ads } from '../../utils'
+</script>
+
 When working with components, you may want to customize their default or specific classes. Here's a guide on how to achieve that. Starting from version 0.38.0, we have transitioned from using classnames to tailwind-merge, which allows us to easily overwrite classes and avoid style conflicts. This update brings enhanced flexibility and simplifies the process of customizing component styles.
 
 ## Understanding Props
@@ -97,3 +101,5 @@ Use the custom button component in your project by adding the following code:
 ```
 
 With these steps, you can customize and use your own button component globally based on Flowbite-Svelte. Feel free to modify the styles and properties of the component according to your requirements.
+
+<Ads />

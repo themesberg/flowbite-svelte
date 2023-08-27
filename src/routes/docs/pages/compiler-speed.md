@@ -9,6 +9,7 @@ description: Learn how you can manage and improve the Svelte compilation speed w
 
 <script>
   import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell } from '$lib'
+  import { Ads } from '../../utils'
 </script>
 
 If your Svelte app only requires a few components, it's recommended that you import them directly. Doing so can help optimize compilation speed and improve performance by reducing the amount of code that needs to be processed during compilation. Since version 0.34.1, it's now possible to import individual components.
@@ -113,3 +114,5 @@ The above table shows examples from using `import Alert from 'flowbite-svelte/Al
     </TableBodyRow>
   </TableBody>
 </Table>
+
+<Ads />

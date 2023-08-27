@@ -9,7 +9,7 @@ thumnailSize: w-36
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList , Ads } from '../../utils'
   import { Badge, Heading, P, A } from '$lib'
 
   const components = 'Listgroup, ListgroupItem'
@@ -151,6 +151,8 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite the `li` tag class.
 
 <CompoAttributesViewer {components}/>
+
+<Ads />
 
 ## References
 

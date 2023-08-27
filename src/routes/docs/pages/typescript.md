@@ -17,9 +17,11 @@ The following excerpt shows you the full list of TypeScript types and interfaces
   // import 'prism-svelte';
   // import "prismjs/components/prism-typescript";
   // const highlighted = Prism.highlight(TypeList, Prism.languages.js, 'js');
-
+  import { Ads } from '../../utils'
   // Load assets as strings
   import TypeList from '../../../lib/types.ts?raw';
 </script>
 
 <pre><code>{@html TypeList}</code></pre>
+
+<Ads />

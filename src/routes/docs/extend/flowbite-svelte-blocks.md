@@ -9,12 +9,12 @@ description: Flowbite-Svete-Blocks provides all necessary components to get star
 
 <script>
   import { A, List, Li, Img} from '$lib'
+  import { Ads } from '../../utils'
   const libFiles ={
   "GitHub Repo": "https://github.com/shinokada/flowbite-svelte-blocks",
   Docs: "https://shinokada.github.io/flowbite-svelte-blocks/",
   Demo: "https://flowbite-svelte-blocks.vercel.app/"
   }
-
 </script>
 
 ## Installation
@@ -26,3 +26,5 @@ npm i -D shinokada/flowbite-svelte-blocks
 ```
 
 <Img src="/images/flowbite-svelte-blocks-optimized.png" alt="Flowbite Svelte Blocks" />
+
+<Ads />

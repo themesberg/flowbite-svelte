@@ -9,7 +9,7 @@ thumnailSize: w-64
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList , Ads } from '../../utils'
   import { Badge, P, A } from '$lib'
 
   const components = 'TabItem, Tabs'
@@ -335,6 +335,8 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite `defaultClass`.
 
 <CompoAttributesViewer {components}/>
+
+<Ads />
 
 ## References
 

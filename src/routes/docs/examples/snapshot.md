@@ -8,6 +8,7 @@ description: Svelte Snapshot with Flowbite Svete
 ---
 
 <script>
+  import { Ads } from '../../utils'
   import { Input, Label, A } from '$lib';
 
   let formData = {
@@ -56,3 +57,5 @@ You can achieve this by using <A href="https://kit.svelte.dev/docs/snapshots">Sv
         bind:value={formData.email} />
     </div>
 </form>
+
+<Ads />

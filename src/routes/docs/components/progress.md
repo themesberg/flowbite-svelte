@@ -9,7 +9,7 @@ thumnailSize: w-48
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer , Ads } from '../../utils'
   import { P, A } from '$lib'
   import componentData1 from '../../component-data/Progressbar.json'
   const components = 'Progressbar'
@@ -164,6 +164,8 @@ The component has the following props, type, and default values. See [types page
 - Use the `classLabelOutside` prop to overwrite the outside `div` class.
 
 <CompoAttributesViewer {components}/>
+
+<Ads />
 
 ## References
 

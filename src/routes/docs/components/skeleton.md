@@ -9,7 +9,7 @@ thumnailSize: w-40
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer , Ads } from '../../utils'
   import { P, A } from '$lib'
   
   const components = 'CardPlaceholder, ImagePlaceholder, ListPlaceholder, Skeleton, TestimonialPlaceholder, TextPlaceholder, VideoPlaceholder, WidgetPlaceholder'
@@ -159,6 +159,8 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite `divClass`.
 
 <CompoAttributesViewer {components}/>
+
+<Ads />
 
 ## References
 

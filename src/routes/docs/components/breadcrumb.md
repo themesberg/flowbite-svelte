@@ -9,7 +9,7 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer , Ads } from '../../utils'
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
   const components = 'Breadcrumb, BreadcrumbItem'
 </script>
@@ -106,6 +106,8 @@ The component has the following props, type, and default values. See [types page
 - Use the `classSpan` prop to overwrite `spanClass`.
 
 <CompoAttributesViewer {components}/>
+
+<Ads />
 
 ## References
 

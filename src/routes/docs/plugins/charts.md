@@ -8,7 +8,7 @@ description: Use the chart and graph components from Flowbite-Svelte built with 
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer , Ads } from '../../utils'
   import componentData1 from '../../component-data/Chart.json'
   import componentData2 from '../../component-data/Card.json'
   const components = 'Chart, Card'
@@ -988,3 +988,5 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite `divClass`.
 
 <CompoAttributesViewer {components}/>
+
+<Ads />

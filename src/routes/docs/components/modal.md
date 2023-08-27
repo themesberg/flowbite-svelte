@@ -9,7 +9,7 @@ thumnailSize: w-48
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer , Ads } from '../../utils'
   import { P, A } from '$lib'  
 
   const components = 'Modal'
@@ -406,6 +406,8 @@ The component has the following props, type, and default values. See [types page
 - Use the `bodyClass` prop to overwrite body modal default class.
 
 <CompoAttributesViewer {components}/>
+
+<Ads />
 
 ## References
 

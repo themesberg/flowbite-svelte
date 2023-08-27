@@ -7,6 +7,10 @@ dir: Pages
 description: Learn how you can start contributing to the open-source Flowbite Svelte UI component library
 ---
 
+<script>
+  import { Ads } from '../../utils'
+</script>
+
 Here are some guidelines we'd like you to follow before submitting a PR.
 
 ## Create a fork
@@ -132,3 +136,5 @@ Test a page.
 ```sh
 axe http://localhost:3000/dropdowns/image
 ```
+
+<Ads />

@@ -9,7 +9,7 @@ thumbnailSize: w-72
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList , Ads } from '../../utils'
   import { onMount } from 'svelte';
   import { Toggle, Badge, A } from '$lib'
 
@@ -80,6 +80,8 @@ The component has the following props, type, and default values. See [types page
 - Use the 'classDiv`prop to overwrite the`divClass`.
 
 <CompoAttributesViewer {components}/>
+
+<Ads />
 
 ## References
 

@@ -8,7 +8,7 @@ description: The Label components are used throughout the library and you can us
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, GitHubSourceList, CompoAttributesViewer } from '../../utils';
+  import { TableProp, TableDefaultRow, GitHubSourceList, CompoAttributesViewer , Ads } from '../../utils';
   import { A } from '$lib';
 
   const components = 'Label'
@@ -39,3 +39,5 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite `defaultClass`.
 
 <CompoAttributesViewer {components}/>
+
+<Ads />

@@ -9,7 +9,7 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer , Ads } from '../../utils'
   import { P, A } from '$lib'
 
   const components = 'Rating, AdvancedRating, ScoreRating, RatingComment, Review, Star, Thumbup, Heart'
@@ -320,6 +320,8 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite the `svg` tag class.
 
 <CompoAttributesViewer {components}/>
+
+<Ads />
 
 ## References
 

@@ -9,7 +9,7 @@ thumnailSize: w-28
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer , Ads } from '../../utils'
   import { P, A } from '$lib'
   import componentData1 from '../../component-data/Badge.json'
   const components = 'Badge'
@@ -263,6 +263,8 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite the default class.
 
 <CompoAttributesViewer {components}/>
+
+<Ads />
 
 ## References
 

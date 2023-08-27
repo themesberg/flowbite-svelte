@@ -8,7 +8,7 @@ description: Show contextual information to your users using alert elements base
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList , Ads } from '../../utils'
   const components = 'Alert, Frame'
 </script>
 
@@ -336,6 +336,8 @@ Use the `close` event with `dismissable` prop.
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 <CompoAttributesViewer {components}/>
+
+<Ads />
 
 ## References
 
