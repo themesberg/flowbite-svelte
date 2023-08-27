@@ -9,7 +9,7 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer , Ads } from '../../utils'
   import { P, A, Alert } from '$lib'  
 
   const components = 'SpeedDial, SpeedDialButton'
@@ -517,6 +517,8 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite `btnDefaultClass`.
 
 <CompoAttributesViewer {components}/>
+
+<Ads />
 
 ## References
 

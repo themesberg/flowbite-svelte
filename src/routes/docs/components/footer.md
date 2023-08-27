@@ -8,7 +8,7 @@ description: Use the footer section at the bottom of every page to show valuable
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer , Ads } from '../../utils'
   import { P, A } from '$lib'
 
   const components = 'Footer, FooterBrand, FooterCopyright, FooterIcon, FooterLink, FooterLinkGroup'
@@ -262,6 +262,8 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite `ulClass`.
 
 <CompoAttributesViewer {components}/>
+
+<Ads />
 
 ## References
 

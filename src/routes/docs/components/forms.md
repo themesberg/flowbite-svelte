@@ -9,7 +9,7 @@ thumnailSize: w-40
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer , Ads } from '../../utils'
   import { P, A, Heading } from '$lib'
   
   const components = 'Input, Label, Helper, Fileupload, Textarea, Select, Checkbox, Radio, Toggle, MultiSelect'
@@ -248,6 +248,8 @@ Get started with the default example of a select input component to get a single
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 <CompoAttributesViewer {components}/>
+
+<Ads />
 
 ## References
 

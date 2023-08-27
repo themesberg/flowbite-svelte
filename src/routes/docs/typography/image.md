@@ -9,7 +9,7 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer , Ads } from '../../utils'
   import { A, Heading } from '$lib'
 
   const components = 'Img'
@@ -242,3 +242,5 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite the `img` tag class.
 
 <CompoAttributesViewer {components}/>
+
+<Ads />

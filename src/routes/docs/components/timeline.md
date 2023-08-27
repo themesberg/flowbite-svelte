@@ -9,7 +9,7 @@ thumbnailSize: w-64
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer , Ads } from '../../utils'
   
   const components = 'Timeline, TimelineItem, TimelineHorizontal, Activity, ActivityItem, Group, GroupItem, TimelineItemVertical, TimelineItemHorizontal'
 </script>
@@ -261,6 +261,8 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite the `ol` tag class.
 
 <CompoAttributesViewer {components}/>
+
+<Ads />
 
 ## References
 

@@ -8,7 +8,7 @@ description: The navbar component can be used to show a list of navigation links
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList , Ads } from '../../utils'
   import { Badge, Heading, P, A } from '$lib';
 
   const components = 'Navbar, NavBrand, NavLi, NavUl, NavHamburger, Menu, SidebarMenu'
@@ -336,6 +336,8 @@ The component has the following props, type, and default values. See [types page
 - Use the `classSideMenu` prop to overwrite the inner class.
 
 <CompoAttributesViewer {components}/>
+
+<Ads />
 
 ## References
 

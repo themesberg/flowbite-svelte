@@ -9,6 +9,7 @@ description: Get started with a collection of over 430+ open-source icons built 
 
 <script>
   import { P, A, List, Li } from '$lib'
+  import { Ads } from '../../utils'
 	import CheckCircle from './CheckCircle.svelte'
 </script>
 
@@ -173,3 +174,5 @@ These icon sets have the same functionalities mentioned above.
 
 - [Flowbite Icons](https://flowbite.com/icons/) and [Flowbite Icons in Svelte](https://github.com/themesberg/flowbite-svelte-icons)
 - [Svelte Icon Sets](https://svelte-svg-icons.vercel.app/)
+
+<Ads />

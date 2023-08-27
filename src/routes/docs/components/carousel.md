@@ -9,7 +9,7 @@ thumnailSize: w-48
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer , Ads } from '../../utils'
   import { P, A } from '$lib'
 
   const components = 'Carousel, CarouselTransition, Caption, Indicator, Slide, Thumbnail'
@@ -255,6 +255,8 @@ The component has the following props, type, and default values. See [types page
 - Use the `classIndicator` prop to overwrite `indicatorClass`.
 
 <CompoAttributesViewer {components}/>
+
+<Ads />
 
 ## References
 

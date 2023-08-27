@@ -9,7 +9,7 @@ thumnailSize: w-40
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList , Ads } from '../../utils'
   import { Badge, A } from '$lib'
 
   const components = 'FloatingLabelInput, Helper'
@@ -170,6 +170,8 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite the `p` tag class.
 
 <CompoAttributesViewer {components}/>
+
+<Ads />
 
 ## References
 

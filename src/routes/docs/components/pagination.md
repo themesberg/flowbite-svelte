@@ -9,7 +9,7 @@ thumnailSize: w-48
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList , Ads } from '../../utils'
   import { Badge, Heading, P, A } from '$lib'
 
   const components = 'Pagination, PaginationItem'
@@ -344,6 +344,8 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite the default class.
 
 <CompoAttributesViewer {components}/>
+
+<Ads />
 
 ## References
 

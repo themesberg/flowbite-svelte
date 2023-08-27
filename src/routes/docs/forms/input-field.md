@@ -8,7 +8,7 @@ description: Get started with a collection of input fields built with Tailwind C
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, DocBadgeList, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, DocBadgeList, CompoAttributesViewer , Ads } from '../../utils'
   import { onMount } from 'svelte';
   import { Badge, A } from '$lib'
 
@@ -392,6 +392,8 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite the `input` tag class.
 
 <CompoAttributesViewer {components}/>
+
+<Ads />
 
 ## References
 

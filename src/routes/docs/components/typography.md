@@ -9,7 +9,7 @@ thumnailSize: w-36
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer , Ads } from '../../utils'
   import { A } from '$lib';
 </script>
 
@@ -152,6 +152,8 @@ You can use the following classes to set the text decoration for any inline text
 
 <p class="line-through dark:text-gray-400">please read our terms and services</p>
 ```
+
+<Ads />
 
 ## References
 

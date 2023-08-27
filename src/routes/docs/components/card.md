@@ -9,7 +9,7 @@ thumnailSize: w-36
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer , Ads } from '../../utils'
   import { P, A } from '$lib'
 
   const components = 'Card, Frame'
@@ -417,6 +417,8 @@ The component has the following props, type, and default values. See [types page
 - The Card component uses the Frame component. Use the `class` property to overwrite the default Frame class. The Frame component tag can be either an anchor tag or a div tag depending on the value of the href prop.
 
 <CompoAttributesViewer {components}/>
+
+<Ads />
 
 ## References
 
