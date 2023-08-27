@@ -11,7 +11,6 @@ export { default as TableDefaultRow } from './TableDefaultRow.svelte';
 export { default as TableProp } from './TableProp.svelte';
 export { default as CompoAttributesViewer } from './CompoAttributesViewer.svelte'
 export { default as Toc } from './Toc.svelte';
-export { default as Ads } from './Ads.svelte';
 
 const basename = (path: string) => path.split('/').pop()?.split('.').shift() ?? '';
 const filePath = (path: string) => '/' + basename(path);
