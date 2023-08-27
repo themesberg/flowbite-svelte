@@ -8,7 +8,7 @@ description: Use the mega menu component as a full-width dropdown inside the nav
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer , Ads } from '../../utils';
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils';
   import { P, A } from '$lib';
   const components = 'MegaMenu'
 </script>
@@ -292,7 +292,7 @@ The component has the following props, type, and default values. See [types page
 
 <CompoAttributesViewer {components}/>
 
-<Ads />
+
 
 ## References
 

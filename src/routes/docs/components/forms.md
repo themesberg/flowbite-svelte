@@ -9,7 +9,7 @@ thumnailSize: w-40
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer , Ads } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A, Heading } from '$lib'
   
   const components = 'Input, Label, Helper, Fileupload, Textarea, Select, Checkbox, Radio, Toggle, MultiSelect'
@@ -249,7 +249,7 @@ The component has the following props, type, and default values. See [types page
 
 <CompoAttributesViewer {components}/>
 
-<Ads />
+
 
 ## References
 

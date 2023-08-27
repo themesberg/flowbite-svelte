@@ -8,7 +8,7 @@ description: The Drawer component can be used as a hidden off-canvas sidebar for
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer , Ads } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { Heading, P, A } from '$lib';
 
   const components = 'Drawer'
@@ -632,7 +632,7 @@ The component has the following props, type, and default values. See [types page
 
 <CompoAttributesViewer {components}/>
 
-<Ads />
+
 
 ## References
 

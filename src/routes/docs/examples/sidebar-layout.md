@@ -8,7 +8,7 @@ component_title: Sidebar Layout
 ---
 
 <script>
-  import { Ads } from '../../utils'
+  
   import { Img, A, List, Li } from '$lib';
 </script>
 
@@ -19,4 +19,3 @@ component_title: Sidebar Layout
 
 <Img src="/images/sveltekit-sidebar-layout-optimized.png" alt="sveltekit sidebar layout" />
 
-<Ads />

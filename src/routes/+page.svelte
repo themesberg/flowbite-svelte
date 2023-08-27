@@ -10,7 +10,6 @@
   import GetStarted from './landing/GetStarted.svelte';
   import SocialProof from './landing/SocialProof.svelte';
   import CTA from './landing/CTA.svelte';
-  import { Ads } from '../routes/utils'
 
   export let data: PageData;
 
@@ -51,6 +50,6 @@
   <Contributors {data} />
   <GetStarted />
   <Footer />
-  <Ads />
+  
 </main>
 

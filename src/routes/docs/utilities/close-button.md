@@ -8,7 +8,7 @@ description: Get started with the CloseButton components to hide a target elemen
 ---
 
 <script>
-	import { TableProp, TableDefaultRow, GitHubSourceList, CompoAttributesViewer , Ads } from '../../utils';
+	import { TableProp, TableDefaultRow, GitHubSourceList, CompoAttributesViewer } from '../../utils';
 	import { A } from '$lib';
 
   const components = 'CloseButton'
@@ -41,4 +41,3 @@ The component has the following props, type, and default values. See [types page
 
 <CompoAttributesViewer {components}/>
 
-<Ads />
