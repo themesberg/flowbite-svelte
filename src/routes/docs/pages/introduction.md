@@ -8,7 +8,7 @@ description: Learn more about the free and open-source Flowbite Svelte UI compon
 ---
 
 <script>
-  import { Ads } from '../../utils'
+  
 </script>
 
 [Flowbite Svelte](https://github.com/themesberg/flowbite-svelte) is a free and open-source UI component library based on the core Flowbite components and built with native Svelte components and interactivity handling.
@@ -130,4 +130,3 @@ Check out [contributing guide](/docs/pages/how-to-contribute) to learn how you c
 
 Flowbite Svelte is a free and open-source UI component library licensed under the [MIT License](https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE).
 
-<Ads />

@@ -8,7 +8,7 @@ description: Use the popover component to show detailed information inside a pop
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer , Ads } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { P, A } from '$lib'
 
   const components = 'Popover, Popper, Frame'
@@ -383,7 +383,7 @@ The component inherits the following props, type, and default values from `Frame
 
 <CompoAttributesViewer {components}/>
 
-<Ads />
+
 
 ## References
 

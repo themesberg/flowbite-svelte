@@ -9,7 +9,7 @@ thumnailSize: w-28
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer , Ads } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
   import { Alert } from '$lib'
 
   const components = 'Datepicker'
@@ -130,4 +130,3 @@ The component has the following props, type, and default values. See [types page
 
 <CompoAttributesViewer {components}/>
 
-<Ads />

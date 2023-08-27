@@ -10,7 +10,7 @@ thumnailSize: w-72
 
 <script>
   import { page } from '$app/stores';
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList , Ads } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, Heading, P, A } from '$lib'
   
   const components = 'Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper'
@@ -563,7 +563,7 @@ The component has the following props, type, and default values. See [types page
 
 <CompoAttributesViewer {components}/>
 
-<Ads />
+
 
 ## References
 

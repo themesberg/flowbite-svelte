@@ -8,7 +8,7 @@ description: Learn how you can start contributing to the open-source Flowbite Sv
 ---
 
 <script>
-  import { Ads } from '../../utils'
+  
 </script>
 
 Here are some guidelines we'd like you to follow before submitting a PR.
@@ -137,4 +137,3 @@ Test a page.
 axe http://localhost:3000/dropdowns/image
 ```
 
-<Ads />

@@ -8,7 +8,7 @@ description: Get started with the select component to allow the user to choose f
 ---
 
 <script>
-import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList , Ads } from '../../utils'
+import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
 import { Badge, A } from '$lib'
 const components = 'Select'
 </script>
@@ -275,7 +275,7 @@ The component has the following props, type, and default values. See [types page
 
 <CompoAttributesViewer {components}/>
 
-<Ads />
+
 
 ## References
 

@@ -9,7 +9,7 @@ thumnailSize: w-24
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList , Ads } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, P, A } from '$lib'
 
   const components = 'Button, GradientButton'
@@ -309,7 +309,7 @@ The component has the following props, type, and default values. See [types page
 
 <CompoAttributesViewer {components}/>
 
-<Ads />
+
 
 ## References
 

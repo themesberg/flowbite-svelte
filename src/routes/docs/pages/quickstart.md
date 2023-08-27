@@ -9,7 +9,7 @@ description: Learn how to get started with the free and open-source Flowbite Sve
 
 <script>
   import { A, P, List, Li } from '$lib'
-  import { Ads } from '../../utils'
+  
 </script>
 
 You can install Flowbite Svelte by using the <A href='/docs/extend/flowbite-svelte-starter'>flowbite-svelte-start</A> or from scratch.
@@ -127,4 +127,4 @@ You can use one of starter repo for a quick start.
 <Li><A href='https://github.com/ZekyTheWolf/LIST-Starter'>Laravel, Inertia, Svelte, Typescript with Flowbite starter</A></Li>
 </List>
 
-<Ads />
+
