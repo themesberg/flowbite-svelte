@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { page } from '$app/stores';
+  import { page, navigating } from '$app/stores';
   import { DarkMode, Navbar, NavBrand, NavHamburger, NavLi, NavUl } from '$lib';
   import Tooltip from '$lib/tooltips/Tooltip.svelte';
   import { onMount, setContext } from 'svelte';
@@ -96,3 +96,4 @@
 <div class="lg:flex">
   <slot />
 </div>
+
