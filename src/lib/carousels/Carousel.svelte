@@ -148,29 +148,11 @@
 </script>
 
 <!-- The move listeners go here, so things keep working if the touch strays out of the element. -->
-<svelte:document
-  on:mousemove={onDragMove}
-  on:mouseup={onDragStop}
-  on:touchmove={onDragMove}
-  on:touchend={onDragStop} />
+<svelte:document on:mousemove={onDragMove} on:mouseup={onDragStop} on:touchmove={onDragMove} on:touchend={onDragStop} />
 
-<div
-  bind:this={carouselDiv}
-  {id}
-  class="relative"
-  on:mousedown={onDragStart}
-  on:touchstart={onDragStart}
-  role="button"     
-  aria-label="Draggable Carousel"
-  tabindex="0" 
-  >
-  <div
-    style={`transform: translateX(${percentOffset}%)`}
-    class={twJoin(
-      divClass,
-      { 'transition-transform': activeDragGesture === undefined }
-    )}>
-    <Slide image={image.imgurl} altTag={image.name} attr={image.attribution} {slideClass} />
+<div bind:this={carouselDiv} {id} class="relative" on:mousedown={onDragStart} on:touchstart={onDragStart} role="button" aria-label="Draggable Carousel" tabindex="0">
+  <div style={`transform: translateX(${percentOffset}%)`} class={twJoin(divClass, { 'transition-transform': activeDragGesture === undefined })}>
+    <Slide image={image.imgurl} slideClass={slideCls} imgClass={imgCls} altTag={image.name} attr={image.attribution} />
   </div>
   {#if showIndicators}
     <!-- Slider indicators -->
