@@ -137,10 +137,10 @@
             const distance = position - start;
 
             if (Math.abs(distance) >= SWIPE_MIN_DISTANCE && duration <= SWIPE_MAX_DURATION && duration > 0) {
-              if (distance > 0) nextSlide();
-              else prevSlide();
-            } else if (percentOffset > DRAG_MIN_PERCENT) nextSlide();
-            else if (percentOffset < -DRAG_MIN_PERCENT) prevSlide();
+              if (distance > 0) prevSlide();
+              else nextSlide();
+            } else if (percentOffset > DRAG_MIN_PERCENT) prevSlide();
+            else if (percentOffset < -DRAG_MIN_PERCENT) nextSlide();
           }
           percentOffset = 0;
           activeDragGesture = undefined;
@@ -148,11 +148,32 @@
 </script>
 
 <!-- The move listeners go here, so things keep working if the touch strays out of the element. -->
-<svelte:document on:mousemove={onDragMove} on:mouseup={onDragStop} on:touchmove={onDragMove} on:touchend={onDragStop} />
+<svelte:document
+  on:mousemove={onDragMove}
+  on:mouseup={onDragStop}
+  on:touchmove={onDragMove}
+  on:touchend={onDragStop} />
 
-<div bind:this={carouselDiv} {id} class="relative" on:mousedown={onDragStart} on:touchstart={onDragStart} role="button" aria-label="Draggable Carousel" tabindex="0">
-  <div style={`transform: translateX(${percentOffset}%)`} class={twJoin(divClass, { 'transition-transform': activeDragGesture === undefined })}>
-    <Slide image={image.imgurl} slideClass={slideCls} imgClass={imgCls} altTag={image.name} attr={image.attribution} />
+<div
+  bind:this={carouselDiv}
+  {id}
+  class="relative"
+  on:mousedown={onDragStart}
+  on:touchstart={onDragStart}
+  role="button"
+  aria-label="Draggable Carousel"
+  tabindex="0">
+  <div
+    style={`transform: translateX(${percentOffset}%)`}
+    class={twJoin(
+      divClass,
+      { 'transition-transform': activeDragGesture === undefined })}>
+    <Slide
+      image={image.imgurl}
+      slideClass={slideCls}
+      imgClass={imgCls}
+      altTag={image.name}
+      attr={image.attribution} />
   </div>
   {#if showIndicators}
     <!-- Slider indicators -->
