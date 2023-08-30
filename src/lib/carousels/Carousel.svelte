@@ -87,6 +87,7 @@
 
   let carouselDiv: HTMLDivElement;
   let percentOffset: number = 0;
+  let touchEvent: MouseEvent | TouchEvent | null = null;
 
   const getPositionFromEvent = (evt: MouseEvent | TouchEvent) => {
     const mousePos = (evt as MouseEvent)?.clientX;
@@ -99,6 +100,7 @@
   };
 
   const onDragStart = (evt: MouseEvent | TouchEvent) => {
+    touchEvent = evt;
     evt.preventDefault();
     const start = getPositionFromEvent(evt);
     const width = carouselDiv.getBoundingClientRect().width;
@@ -141,9 +143,16 @@
               else nextSlide();
             } else if (percentOffset > DRAG_MIN_PERCENT) prevSlide();
             else if (percentOffset < -DRAG_MIN_PERCENT) nextSlide();
+            else {
+              // The gesture is a tap not drag, so manually issue a click event to trigger tap click gestures lost via preventDefault
+              touchEvent?.target?.dispatchEvent(new Event('click', {
+                bubbles: true,
+              }))
+            }
           }
           percentOffset = 0;
           activeDragGesture = undefined;
+          touchEvent = null;
         };
 </script>
 
