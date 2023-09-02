@@ -56,8 +56,8 @@ devDependencies:
     specifier: ^2.33.0
     version: 2.33.0(eslint@8.48.0)(svelte@4.2.0)
   flowbite-svelte-icons:
-    specifier: ^0.3.6
-    version: 0.3.6(svelte@4.2.0)(tailwind-merge@1.14.0)(tailwindcss@3.3.3)
+    specifier: ^0.4.2
+    version: 0.4.2(svelte@4.2.0)(tailwind-merge@1.14.0)(tailwindcss@3.3.3)
   mdsvex:
     specifier: ^0.11.0
     version: 0.11.0(svelte@4.2.0)
@@ -1965,8 +1965,8 @@ packages:
     resolution: {integrity: sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==}
     dev: true
 
-  /flowbite-svelte-icons@0.3.6(svelte@4.2.0)(tailwind-merge@1.14.0)(tailwindcss@3.3.3):
-    resolution: {integrity: sha512-4YEq++cbD36KF+zGgLqfkmQgfWGMAP7tjDbesuieROx6UgbMBTtj7f4n49iO+g1cMLelGsCkyZiwelCXDbIJ2w==}
+  /flowbite-svelte-icons@0.4.2(svelte@4.2.0)(tailwind-merge@1.14.0)(tailwindcss@3.3.3):
+    resolution: {integrity: sha512-fwobCTdaJF/ptI8eWqIfkh/CMo3Q/qZgYRxZYDrR22HfAROYe/ZdBfg6zXcDsxeXCpSr4IrmN2bDsnB4q9ZLcg==}
     peerDependencies:
       svelte: ^3.54.0 || ^4.0.0
       tailwind-merge: ^1.13.2
