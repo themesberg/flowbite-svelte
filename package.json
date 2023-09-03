@@ -195,29 +195,13 @@
       "types": "./dist/cards/Card.svelte.d.ts",
       "svelte": "./dist/cards/Card.svelte"
     },
-    "./carousels/Caption.svelte": {
-      "types": "./dist/carousels/Caption.svelte.d.ts",
-      "svelte": "./dist/carousels/Caption.svelte"
-    },
     "./carousels/Carousel.svelte": {
       "types": "./dist/carousels/Carousel.svelte.d.ts",
       "svelte": "./dist/carousels/Carousel.svelte"
     },
-    "./carousels/CarouselTransition.svelte": {
-      "types": "./dist/carousels/CarouselTransition.svelte.d.ts",
-      "svelte": "./dist/carousels/CarouselTransition.svelte"
-    },
-    "./carousels/Indicator.svelte": {
-      "types": "./dist/carousels/Indicator.svelte.d.ts",
-      "svelte": "./dist/carousels/Indicator.svelte"
-    },
-    "./carousels/Slide.svelte": {
-      "types": "./dist/carousels/Slide.svelte.d.ts",
-      "svelte": "./dist/carousels/Slide.svelte"
-    },
-    "./carousels/Thumbnail.svelte": {
-      "types": "./dist/carousels/Thumbnail.svelte.d.ts",
-      "svelte": "./dist/carousels/Thumbnail.svelte"
+    "./carousels/Thumbnails.svelte": {
+      "types": "./dist/carousels/Thumbnails.svelte.d.ts",
+      "svelte": "./dist/carousels/Thumbnails.svelte"
     },
     "./charts/Chart.svelte": {
       "types": "./dist/charts/Chart.svelte.d.ts",

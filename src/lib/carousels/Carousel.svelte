@@ -1,80 +1,66 @@
-<script lang="ts">
-  import { twJoin, twMerge } from 'tailwind-merge';
-  import Slide from './Slide.svelte';
-  import Thumbnail from './Thumbnail.svelte';
-  import Caption from './Caption.svelte';
-  import Indicator from './Indicator.svelte';
+<script lang="ts" context="module">
+  export type State = {
+    images: HTMLImgAttributes[];
+    index: number;
+  };
+</script>
 
-  export let id: string = 'default-carousel';
-  export let showIndicators: boolean = true;
-  export let showCaptions: boolean = true;
-  export let showThumbs: boolean = true;
-  export let images: any[];
-  export let slideControls: boolean = true;
-  export let loop: boolean = false;
-  export let duration: number = 2000;
+<script lang="ts">
+  import { createEventDispatcher, onMount, setContext } from 'svelte';
+  import { quintOut } from 'svelte/easing';
+  import type { HTMLImgAttributes } from 'svelte/elements';
+  import { writable } from 'svelte/store';
+  import { fade, type TransitionConfig } from 'svelte/transition';
+  import { twMerge } from 'tailwind-merge';
+  import Controls from './Controls.svelte';
+  import Indicators from './Indicators.svelte';
+
+  type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
+
+  export let images: HTMLImgAttributes[];
+  export let index: number = 0;
+  export let transition: TransitionFunc = (x) => fade(x, { duration: 700, easing: quintOut });
+  export let duration: number = 0;
 
   // Carousel
-  export let divClass: string = 'overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96';
-  let divCls: string = twMerge(divClass, $$props.classDiv);
-  export let indicatorDivClass: string = 'flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2';
-  let indicatorDivCls: string = twMerge(indicatorDivClass, $$props.classIndicatorDiv);
+  let divClass: string = 'overflow-hidden relative rounded-lg h-56 sm:h-64 xl:h-80 2xl:h-96';
 
-  // Caption
-  export let captionClass: string = 'h-10 bg-gray-300 dark:bg-gray-700 dark:text-white p-2 my-2 text-center';
-  let captionCls: string = twMerge(captionClass, $$props.classCaption);
+  const dispatch = createEventDispatcher();
 
-  // Indicator
-  export let indicatorClass: string = 'w-3 h-3 rounded-full bg-gray-100 hover:bg-gray-300 opacity-60';
-  let indicatorCls: string = twMerge(indicatorClass, $$props.classIndicator);
+  const { set, subscribe, update } = writable<State>({ images, index });
 
-  // Slide
-  export let slideClass: string = 'flex items-center justify-center h-full w-full';
-  let slideCls: string = twMerge(slideClass, $$props.classSlide);
+  const state = { set: (s: State) => set({ index: ((s.index % images.length) + images.length) % images.length, images: s.images }), subscribe, update };
 
-  // Img
-  export let imgFit: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down' = 'cover';
-  export let imgClass: string = `object-${imgFit} ${imgFit === 'cover' && 'w-full'} h-full`;
-  let imgCls: string = twMerge(imgClass, $$props.classImg);
+  setContext('state', state);
 
-  // Thumbnail
-  export let thumbClass: string = 'opacity-40';
-  let thumbCls: string = twMerge(thumbClass, $$props.classThumb);
+  subscribe((s) => {
+    index = s.index;
+    dispatch('change', images[index]);
+  });
 
-  // Thumbnail Container
-  export let thumbDivClass: string = 'flex flex-row justify-center bg-gray-100 w-full';
-  let thumbDivCls: string = twMerge(thumbDivClass, $$props.classThumbDiv);
+  onMount(() => dispatch('change', images[index]));
 
-  // Thumbnail Img Btn Div
-  export let thumbBtnClass: string = '';
-  let thumbBtnCls: string = twMerge(thumbBtnClass, $$props.classBtnThumb);
+  $: state.set({ images, index });
 
-  let imageShowingIndex: number = 0;
-  $: image = images[imageShowingIndex];
+  const nextSlide = () => (index += 1);
+  const prevSlide = () => (index -= 1);
 
-  const nextSlide = () => {
-    if (imageShowingIndex === images.length - 1) {
-      imageShowingIndex = 0;
-    } else {
-      imageShowingIndex += 1;
-    }
+  const loop = (node: HTMLElement, duration: number) => {
+    carouselDiv = node; // used by DragStart
+
+    // loop timer
+    let intervalId: any;
+
+    if (duration > 0) intervalId = setInterval(nextSlide, duration);
+
+    return {
+      update: (duration: number) => {
+        clearInterval(intervalId);
+        if (duration > 0) intervalId = setInterval(nextSlide, duration);
+      },
+      destroy: () => clearInterval(intervalId)
+    };
   };
-
-  const prevSlide = () => {
-    if (imageShowingIndex === 0) {
-      imageShowingIndex = images.length - 1;
-    } else {
-      imageShowingIndex -= 1;
-    }
-  };
-
-  const goToSlide = (number: number) => (imageShowingIndex = number);
-
-  if (loop) {
-    setInterval(() => {
-      nextSlide();
-    }, duration);
-  }
 
   type ActiveDragGesture = {
     start: number;
@@ -85,7 +71,7 @@
 
   let activeDragGesture: ActiveDragGesture | undefined;
 
-  let carouselDiv: HTMLDivElement;
+  let carouselDiv: HTMLElement;
   let percentOffset: number = 0;
   let touchEvent: MouseEvent | TouchEvent | null = null;
 
@@ -145,9 +131,11 @@
             else if (percentOffset < -DRAG_MIN_PERCENT) nextSlide();
             else {
               // The gesture is a tap not drag, so manually issue a click event to trigger tap click gestures lost via preventDefault
-              touchEvent?.target?.dispatchEvent(new Event('click', {
-                bubbles: true,
-              }))
+              touchEvent?.target?.dispatchEvent(
+                new Event('click', {
+                  bubbles: true
+                })
+              );
             }
           }
           percentOffset = 0;
@@ -157,81 +145,15 @@
 </script>
 
 <!-- The move listeners go here, so things keep working if the touch strays out of the element. -->
-<svelte:document
-  on:mousemove={onDragMove}
-  on:mouseup={onDragStop}
-  on:touchmove={onDragMove}
-  on:touchend={onDragStop} />
-
-<div
-  bind:this={carouselDiv}
-  {id}
-  class="relative"
-  on:mousedown={onDragStart}
-  on:touchstart={onDragStart}
-  role="button"
-  aria-label="Draggable Carousel"
-  tabindex="0">
-  <div
-    style={`transform: translateX(${percentOffset}%)`}
-    class={twJoin(
-      divClass,
-      { 'transition-transform': activeDragGesture === undefined })}>
-    <Slide
-      image={image.imgurl}
-      slideClass={slideCls}
-      imgClass={imgCls}
-      altTag={image.name}
-      attr={image.attribution} />
+<svelte:document on:mousemove={onDragMove} on:mouseup={onDragStop} on:touchmove={onDragMove} on:touchend={onDragStop} />
+<div bind:this={carouselDiv} class="relative" on:mousedown={onDragStart} on:touchstart={onDragStart} role="button" aria-label="Draggable Carousel" tabindex="0">
+  <div style={`transform: translateX(${percentOffset}%)`} {...$$restProps} class={twMerge(divClass, activeDragGesture === undefined ? 'transition-transform' : '', $$props.class)} use:loop={duration}>
+    {#key images[index]}
+      <img alt="..." {...images[index]} transition:transition={{}} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover" />
+    {/key}
   </div>
-  {#if showIndicators}
-    <!-- Slider indicators -->
-    <div class={indicatorDivCls}>
-      {#each images as { id, imgurl, name, attribution }}
-        <Indicator {name} selected={imageShowingIndex === id} on:click={() => goToSlide(id)} indicatorClass={indicatorCls} />
-      {/each}
-    </div>
-  {/if}
-  {#if slideControls}
-    <!-- Slider controls -->
-    <button on:click={prevSlide} type="button" class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
-      <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-        {#if $$slots.previous}
-          <slot name="previous" />
-        {:else}
-          <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-          </svg>
-        {/if}
-        <span class="hidden">Previous</span>
-      </span>
-    </button>
-    <button on:click={nextSlide} type="button" class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-next>
-      <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-        {#if $$slots.next}
-          <slot name="next" />
-        {:else}
-          <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
-        {/if}
-        <span class="hidden">Next</span>
-      </span>
-    </button>
-  {/if}
+  <slot {index} {Controls} {Indicators} />
 </div>
-
-{#if showCaptions}
-  <Caption caption={images[imageShowingIndex].name} captionClass={captionCls} />
-{/if}
-
-{#if showThumbs}
-  <div class={thumbDivCls}>
-    {#each images as { id, imgurl, name, attribution }}
-      <Thumbnail thumbClass={thumbCls} thumbBtnClass={thumbBtnCls} thumbImg={imgurl} altTag={name} titleLink={attribution} {id} selected={imageShowingIndex === id} on:click={() => goToSlide(id)} />
-    {/each}
-  </div>
-{/if}
 
 <!--
 @component

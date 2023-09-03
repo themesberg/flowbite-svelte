@@ -1,24 +1,14 @@
 <script lang="ts">
-  export let thumbImg: string = '';
-  export let altTag: string = '';
-  export let titleLink: string = '';
-  export let id: number;
-  export let thumbWidth: number = 100;
+  import type { HTMLImgAttributes } from 'svelte/elements';
+  import { twMerge } from 'tailwind-merge';
+
   export let selected: boolean = false;
-  export let thumbClass: string = '';
-  export let thumbBtnClass: string = '';
+
+  export let activeClass = 'opacity-100';
+  export let inactiveClass = 'opacity-60';
 </script>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<button on:click aria-label="Click to view image" class={thumbBtnClass}>
-  <img class={thumbClass} class:active={selected} id={id.toString()} src={thumbImg} alt={altTag} title="Image from {titleLink}" width="{thumbWidth}%" />
-</button>
-
-<style>
-  .active {
-    opacity: 1;
-  }
-</style>
+<img alt="..." {...$$restProps} class={twMerge(selected ? activeClass : inactiveClass, $$props.class)} />
 
 <!--
 @component
