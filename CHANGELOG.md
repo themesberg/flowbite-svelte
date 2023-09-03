@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.44.5](https://github.com/themesberg/flowbite-svelte/compare/v0.44.4...v0.44.5) (2023-09-03)
+
+
+### Features
+
+* add CompoAttributesViewer and replaced it for props, events, and slots ([#1010](https://github.com/themesberg/flowbite-svelte/issues/1010)) ([a2ba343](https://github.com/themesberg/flowbite-svelte/commit/a2ba343681acb91112a5bc53c606f73e70a8773b))
+* add touch/mouse swipe gesture handling to Carousel component. ([35d0ba1](https://github.com/themesberg/flowbite-svelte/commit/35d0ba1956336e9d0a560b7c55fe9d859ec9fe77))
+* update component data rendering ([#1015](https://github.com/themesberg/flowbite-svelte/issues/1015)) ([6b20551](https://github.com/themesberg/flowbite-svelte/commit/6b205510a83e78b3cd23fb04528138d5921d586b))
+
+
+### Bug Fixes
+
+* add $$resProps to Spinner ([#1000](https://github.com/themesberg/flowbite-svelte/issues/1000)) ([1dd97cd](https://github.com/themesberg/flowbite-svelte/commit/1dd97cd2ffc7ac5b78f43e7ea3d7bc7ee1c74fb3))
+* ads position since it does not show unless you refres the browser ([#1019](https://github.com/themesberg/flowbite-svelte/issues/1019)) ([e140d32](https://github.com/themesberg/flowbite-svelte/commit/e140d324682d636d5d7eba6b1e4075397323a390))
+* ads to markdown files ([#1020](https://github.com/themesberg/flowbite-svelte/issues/1020)) ([062dfaf](https://github.com/themesberg/flowbite-svelte/commit/062dfaf53fe42ab82a6f5f20a12ad28a957dd1ff))
+* Carousel compo ([eeaef97](https://github.com/themesberg/flowbite-svelte/commit/eeaef977402f185c5c4d164ba1f6c51a63206572))
+* move charts to plugins dir ([#1012](https://github.com/themesberg/flowbite-svelte/issues/1012)) ([4609497](https://github.com/themesberg/flowbite-svelte/commit/4609497334f15737151472bd951444c4064343cb))
+* Multiselect interactivity and form bug fixes ([#982](https://github.com/themesberg/flowbite-svelte/issues/982)) ([a919c21](https://github.com/themesberg/flowbite-svelte/commit/a919c21378501b823a86279c798f882128c94ac4))
+* Multiselect interactivity and form bug fixes ([#982](https://github.com/themesberg/flowbite-svelte/issues/982)) ([3872270](https://github.com/themesberg/flowbite-svelte/commit/3872270d2ef77d17b9a1cc85099bddb6094e980c))
+* playwright-and-lint.yaml update test:integration ([#1005](https://github.com/themesberg/flowbite-svelte/issues/1005)) ([6695c24](https://github.com/themesberg/flowbite-svelte/commit/6695c24a4a07bed6f55ac196405fe02e67f4cb9c))
+* Remove mistaken unused import of Timeline. Cleanup debug console.log() message. ([03e6455](https://github.com/themesberg/flowbite-svelte/commit/03e64550eab3451f6bd90a62338a7d553c36b9e0))
+
 ### [0.44.4](https://github.com/themesberg/flowbite-svelte/compare/v0.44.3...v0.44.4) (2023-08-21)
 
 ### Bug Fixes
