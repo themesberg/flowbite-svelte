@@ -19,6 +19,6 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let divClass: string = 'animate-pulse';
 -->

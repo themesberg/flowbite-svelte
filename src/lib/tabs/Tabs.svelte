@@ -68,7 +68,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let style: 'full' | 'pill' | 'underline' | 'none' = 'none';
 @prop export let defaultClass: string = 'flex flex-wrap space-x-2';
 @prop export let contentClass: string = 'p-4 bg-gray-50 rounded-lg dark:bg-gray-800 mt-4';

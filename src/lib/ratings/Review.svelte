@@ -68,7 +68,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let review: ReviewType;
 @prop export let articleClass: string = 'md:gap-8 md:grid md:grid-cols-3';
 @prop export let divClass: string = 'flex items-center mb-6 space-x-4';

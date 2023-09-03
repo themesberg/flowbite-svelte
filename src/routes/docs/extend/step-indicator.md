@@ -160,4 +160,3 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite the default class.
 
 <CompoAttributesViewer {components}/>
-

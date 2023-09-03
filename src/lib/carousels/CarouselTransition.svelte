@@ -164,7 +164,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let id: string = 'default-transition-carousel';
 @prop export let showIndicators: boolean = true;
 @prop export let showCaptions: boolean = true;

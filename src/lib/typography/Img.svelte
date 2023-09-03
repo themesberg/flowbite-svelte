@@ -25,7 +25,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let caption: string | undefined = undefined;
 @prop export let src: string | undefined = undefined;
 @prop export let srcset: string | undefined = undefined;

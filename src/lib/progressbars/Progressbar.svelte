@@ -41,7 +41,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let progress: string = '45';
 @prop export let size: string = 'h-2.5';
 @prop export let labelInside: boolean = false;

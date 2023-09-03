@@ -54,7 +54,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let range: boolean = false;
 @prop export let autoHide: boolean = false;
 @prop export let datepickerButtons: boolean = false;

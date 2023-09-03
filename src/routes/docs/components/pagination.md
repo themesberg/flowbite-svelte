@@ -313,7 +313,7 @@ You can use the following code to show the number of data shown inside a table e
 ```svelte example class="flex justify-center"
 <script lang="ts">
   import { Pagination } from 'flowbite-svelte';
-  
+
   let pages = [{ name: "1"}, { name: "2" }, { name: "3" }, { name: "4" }, { name: "5" }];
   const previous = () => {
     alert('Previous btn clicked. Make a call to your server to fetch data.');
@@ -344,8 +344,6 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite the default class.
 
 <CompoAttributesViewer {components}/>
-
-
 
 ## References
 

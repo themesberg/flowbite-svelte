@@ -76,7 +76,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let color: IndicatorColorType = 'gray';
 @prop export let rounded: boolean = false;
 @prop export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';

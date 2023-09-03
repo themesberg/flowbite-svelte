@@ -65,7 +65,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let defaultClass: string = 'fixed right-6 bottom-6';
 @prop export let popperDefaultClass: string = 'flex items-center mb-4 gap-2';
 @prop export let placement: Placement = 'top';

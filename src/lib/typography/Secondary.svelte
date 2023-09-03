@@ -12,7 +12,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let color: string = 'text-gray-500 dark:text-gray-400';
 @prop export let secondaryClass: string = 'font-semibold';
 -->

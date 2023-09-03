@@ -58,7 +58,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let color: ToolbarButtonType = 'default';
 @prop export let name: string | undefined = undefined;
 @prop export let ariaLabel: string | undefined = undefined;

@@ -67,7 +67,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let activateClickOutside: boolean = true;
 @prop export let hidden: boolean = true;
 @prop export let position: 'fixed' | 'absolute' = 'fixed';

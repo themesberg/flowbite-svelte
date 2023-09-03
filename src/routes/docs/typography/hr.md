@@ -113,4 +113,3 @@ The component has the following props, type, and default values. See [types page
 - Use the `classInnerDiv` prop to overwrite `innerDivClass`.
 
 <CompoAttributesViewer {components}/>
-

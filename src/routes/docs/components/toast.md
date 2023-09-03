@@ -357,8 +357,6 @@ The component has the following props, type, and default values. See [types page
 
 <CompoAttributesViewer {components}/>
 
-
-
 ## References
 
 - [Flowbite Toast](https://flowbite.com/docs/components/toast/)

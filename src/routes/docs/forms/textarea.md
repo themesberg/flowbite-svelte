@@ -137,8 +137,6 @@ Use the `class` prop to overwrite the `textarea` tag.
 
 <CompoAttributesViewer {components}/>
 
-
-
 ## References
 
 - [Flowbite Textarea](https://flowbite.com/docs/forms/textarea/)

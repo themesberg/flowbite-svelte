@@ -155,12 +155,11 @@ This example can be used to share important information with your website visito
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 ### Banner styling
+
 - Use the `classDiv` prop to overwrite `divClass`.
 - Use the `classInner` prop to overwrite `innerClass`.
 
 <CompoAttributesViewer {components}/>
-
-
 
 ## References
 

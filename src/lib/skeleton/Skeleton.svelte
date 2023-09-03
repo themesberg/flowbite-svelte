@@ -32,7 +32,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let divClass: string = 'animate-pulse';
 @prop export let size: keyof Sizes = 'sm';
 -->

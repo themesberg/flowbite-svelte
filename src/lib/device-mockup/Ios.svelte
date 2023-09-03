@@ -13,7 +13,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let iosTop: string;
 @prop export let iosLeftTop: string;
 @prop export let iosLeftBot: string;

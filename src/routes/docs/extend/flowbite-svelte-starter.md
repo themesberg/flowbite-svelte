@@ -32,4 +32,3 @@ description: Flowbite Svete Starters provide all necessary components to get sta
   <Li><A href="https://github.com/shinokada/svelte-ts-starter">GitHub Repo</A></Li>
   <Li><A href="https://shinokada.github.io/svelte-ts-starter/">Demo</A></Li>
 </List>
-

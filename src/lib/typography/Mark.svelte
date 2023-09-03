@@ -13,7 +13,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let color: string = 'text-white dark:bg-blue-500';
 @prop export let bgColor: string = 'bg-blue-600';
 @prop export let markClass: string = 'px-2 rounded';

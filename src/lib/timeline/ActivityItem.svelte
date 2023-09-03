@@ -46,7 +46,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let activities: ActivityType[];
 @prop export let liClass: string = 'mb-10 ml-6';
 @prop export let spanClass: string = 'flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900';

@@ -43,7 +43,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let spacing: string = 'mr-2';
 @prop export let color: FormColorType = 'primary';
 @prop export let custom: boolean = false;

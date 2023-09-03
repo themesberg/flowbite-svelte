@@ -26,7 +26,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let tag: 'ul' | 'ol' | 'dl' = 'ul';
 @prop export let list: 'disc' | 'none' | 'decimal' | undefined = undefined;
 @prop export let position: 'inside' | 'outside' = 'inside';

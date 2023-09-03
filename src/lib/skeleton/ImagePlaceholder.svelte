@@ -25,7 +25,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let divClass: string = 'space-y-8 animate-pulse md:space-y-0 md:space-x-8 md:flex md:items-center';
 @prop export let imgHeight: string = '48';
 -->

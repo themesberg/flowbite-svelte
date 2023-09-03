@@ -17,7 +17,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let href: string = '';
 @prop export let ariaLabel: string = '';
 @prop export let aClass: string = 'text-gray-500 hover:text-gray-900 dark:hover:text-white';

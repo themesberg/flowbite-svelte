@@ -264,8 +264,6 @@ The component has the following props, type, and default values. See [types page
 
 <CompoAttributesViewer {components}/>
 
-
-
 ## References
 
 - [Flowbite Badge](https://flowbite.com/docs/components/badge/)

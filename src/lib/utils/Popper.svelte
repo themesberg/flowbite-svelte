@@ -192,7 +192,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let activeContent: boolean = false;
 @prop export let arrow: boolean = true;
 @prop export let offset: number = 8;

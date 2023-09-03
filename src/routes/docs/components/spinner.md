@@ -112,8 +112,6 @@ The component has the following props, type, and default values. See [types page
 
 <CompoAttributesViewer {components}/>
 
-
-
 ## References
 
 - [Flowbite Spinner (Loader)](https://flowbite.com/docs/components/spinner/)

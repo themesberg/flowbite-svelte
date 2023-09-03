@@ -57,7 +57,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let activeUrl: string = '';
 @prop export let divClass: string = 'w-full md:block md:w-auto';
 @prop export let ulClass: string = 'flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium';

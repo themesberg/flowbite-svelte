@@ -37,7 +37,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let size: FormSizeType = 'lg';
 @prop export let placeholder: string = 'Search';
 @prop export let value: any = undefined;

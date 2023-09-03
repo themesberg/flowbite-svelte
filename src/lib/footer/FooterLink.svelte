@@ -18,7 +18,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let liClass: string = 'mr-4 last:mr-0 md:mr-6';
 @prop export let aClass: string = 'hover:underline';
 @prop export let href: string = '';

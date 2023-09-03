@@ -45,7 +45,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let divClass: string = 'relative overflow-x-auto shadow-md sm:rounded-lg';
 @prop export let inputValue: string = '';
 @prop export let striped: boolean = false;

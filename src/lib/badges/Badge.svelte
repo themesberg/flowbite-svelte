@@ -101,7 +101,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let color: 'primary' | 'blue' | 'dark' | 'red' | 'green' | 'yellow' | 'indigo' | 'purple' | 'pink' | 'none' = 'primary';
 @prop export let large: boolean = false;
 @prop export let dismissable: boolean = false;

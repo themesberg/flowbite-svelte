@@ -148,7 +148,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let open: boolean = false;
 @prop export let title: string = '';
 @prop export let size: SizeType = 'md';

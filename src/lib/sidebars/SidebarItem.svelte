@@ -39,7 +39,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let href: string = '';
 @prop export let label: string = '';
 @prop export let spanClass: string = 'ml-3';

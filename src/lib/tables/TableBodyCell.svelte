@@ -17,6 +17,6 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let tdClass: string = 'px-6 py-4 whitespace-nowrap font-medium ';
 -->

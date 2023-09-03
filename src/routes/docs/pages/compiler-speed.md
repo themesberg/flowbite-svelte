@@ -114,4 +114,3 @@ The above table shows examples from using `import Alert from 'flowbite-svelte/Al
     </TableBodyRow>
   </TableBody>
 </Table>
-

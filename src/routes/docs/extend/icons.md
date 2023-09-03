@@ -64,13 +64,13 @@ If you are using an LSP-compatible editor, such as VSCode, Atom, Sublime Text, o
 
 The following table provides details about the available sizes for icons:
 
-|Size|CSS Classes|
-|--|--|
-|xs|‘w-3 h-3’|
-|sm|‘w-4 h-4’|
-|md|‘w-5 h-6’|
-|lg|‘w-6 h-6’|
-|xl|‘w-8 h-8’|
+| Size | CSS Classes |
+| ---- | ----------- |
+| xs   | ‘w-3 h-3’   |
+| sm   | ‘w-4 h-4’   |
+| md   | ‘w-5 h-6’   |
+| lg   | ‘w-6 h-6’   |
+| xl   | ‘w-8 h-8’   |
 
 To change the size of an icon, use the size prop and specify the desired size. For example:
 
@@ -202,4 +202,3 @@ These icon sets have the same functionalities mentioned above.
 
 - [Flowbite Icons](https://flowbite.com/icons/) and [Flowbite Icons in Svelte](https://github.com/themesberg/flowbite-svelte-icons)
 - [Svelte Icon Sets](https://svelte-svg-icons.vercel.app/)
-

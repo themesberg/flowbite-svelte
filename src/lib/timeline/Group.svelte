@@ -19,7 +19,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let divClass: string = 'p-5 mb-4 bg-gray-50 rounded-lg border border-gray-100 dark:bg-gray-800 dark:border-gray-700';
 @prop export let timeClass: string = 'text-lg font-semibold text-gray-900 dark:text-white';
 @prop export let date: Date | string;

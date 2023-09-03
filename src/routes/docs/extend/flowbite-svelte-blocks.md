@@ -26,4 +26,3 @@ npm i -D shinokada/flowbite-svelte-blocks
 ```
 
 <Img src="/images/flowbite-svelte-blocks-optimized.png" alt="Flowbite Svelte Blocks" />
-

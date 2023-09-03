@@ -14,7 +14,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let divClass: string = 'grid';
 @prop export let cols: string = 'grid-cols-1 sm:grid-cols-2';
 @prop export let gap: number;

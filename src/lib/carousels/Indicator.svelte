@@ -15,7 +15,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let name: string = '';
 @prop export let selected: boolean = false;
 @prop export let indicatorClass: string = '';

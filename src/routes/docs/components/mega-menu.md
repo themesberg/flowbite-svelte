@@ -287,12 +287,11 @@ This example can be used to also show a CTA with a backdround image inside the d
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 ### MegaMenu styling
+
 - Use the `class` prop to overwrite the wrapper class.
 - Use the `classUl` prop to overwrite the `ul` tag class.
 
 <CompoAttributesViewer {components}/>
-
-
 
 ## References
 

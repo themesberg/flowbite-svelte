@@ -40,4 +40,3 @@ Use `CloseButton` component to close a component.
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 <CompoAttributesViewer {components}/>
-

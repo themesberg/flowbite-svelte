@@ -275,8 +275,6 @@ The component has the following props, type, and default values. See [types page
 
 <CompoAttributesViewer {components}/>
 
-
-
 ## References
 
 - [Flowbite Select](https://flowbite.com/docs/forms/select/)

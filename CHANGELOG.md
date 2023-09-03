@@ -4,10 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.44.4](https://github.com/themesberg/flowbite-svelte/compare/v0.44.3...v0.44.4) (2023-08-21)
 
-
 ### Bug Fixes
 
-* package.json scripts update ([5ac3acd](https://github.com/themesberg/flowbite-svelte/commit/5ac3acd1c37374a7ed0af6199c820cb652801f5d))
+- package.json scripts update ([5ac3acd](https://github.com/themesberg/flowbite-svelte/commit/5ac3acd1c37374a7ed0af6199c820cb652801f5d))
 
 ### [0.44.3](https://github.com/themesberg/flowbite-svelte/compare/v0.44.2...v0.44.3) (2023-08-21)
 

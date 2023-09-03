@@ -44,7 +44,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let id: string = '';
 @prop export let labelClass: string = 'sr-only';
 @prop export let iconClass: string = 'w-5 h-5 text-gray-500 dark:text-gray-400';

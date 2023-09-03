@@ -628,11 +628,10 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
 ### Drawer styling
+
 - Use the `class` prop to overwrite `divClass`.
 
 <CompoAttributesViewer {components}/>
-
-
 
 ## References
 

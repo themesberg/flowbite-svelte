@@ -44,7 +44,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let src: string = '';
 @prop export let href: string | undefined = undefined;
 @prop export let rounded: boolean = false;

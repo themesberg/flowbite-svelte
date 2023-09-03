@@ -89,7 +89,15 @@ code[class*='language-'],
 pre[class*='language-'] {
   color: #c5c8c6;
   @apply text-gray-800 dark:text-gray-400;
-  font-family: Menlo, ui-monospace, SFMono-Regular, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-family:
+    Menlo,
+    ui-monospace,
+    SFMono-Regular,
+    Monaco,
+    Consolas,
+    Liberation Mono,
+    Courier New,
+    monospace;
   direction: ltr;
   text-align: left;
   white-space: pre;

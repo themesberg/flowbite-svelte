@@ -30,7 +30,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let href: string = '';
 @prop export let activeClass: string | undefined = undefined;
 @prop export let nonActiveClass: string | undefined = undefined;

@@ -129,4 +129,3 @@ Check out [contributing guide](/docs/pages/how-to-contribute) to learn how you c
 ## License
 
 Flowbite Svelte is a free and open-source UI component library licensed under the [MIT License](https://github.com/themesberg/flowbite-svelte/blob/main/LICENSE).
-

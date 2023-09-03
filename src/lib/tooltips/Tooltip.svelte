@@ -36,7 +36,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let type: 'dark' | 'light' | 'auto' | 'custom' = 'dark';
 @prop export let defaultClass: string = 'py-2 px-3 text-sm font-medium';
 -->

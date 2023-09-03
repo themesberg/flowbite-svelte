@@ -151,8 +151,6 @@ The component has the following props, type, and default values. See [types page
 
 <CompoAttributesViewer {components}/>
 
-
-
 ## References
 
 - [Flowbite Tooltip](https://flowbite.com/docs/components/tooltips/)

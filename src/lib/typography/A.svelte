@@ -13,7 +13,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let href: string = '#';
 @prop export let color: string = 'text-primary-600 dark:text-primary-500';
 @prop export let aClass: string = 'inline-flex items-center hover:underline';

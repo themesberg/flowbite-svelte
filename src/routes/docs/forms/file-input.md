@@ -166,8 +166,6 @@ The component has the following props, type, and default values. See [types page
 
 <CompoAttributesViewer {components}/>
 
-
-
 ## References
 
 - [Flowbite File Input](https://flowbite.com/docs/forms/file-input/)

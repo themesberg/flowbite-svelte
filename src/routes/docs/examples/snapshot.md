@@ -57,4 +57,3 @@ You can achieve this by using <A href="https://kit.svelte.dev/docs/snapshots">Sv
         bind:value={formData.email} />
     </div>
 </form>
-

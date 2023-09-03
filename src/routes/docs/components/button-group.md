@@ -193,8 +193,6 @@ The component has the following props, type, and default values. See [types page
 
 <CompoAttributesViewer {components}/>
 
-
-
 ## References
 
 - [Flowbite Button Group](https://flowbite.com/docs/components/button-group/)

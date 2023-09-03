@@ -23,4 +23,3 @@ The following excerpt shows you the full list of TypeScript types and interfaces
 </script>
 
 <pre><code>{@html TypeList}</code></pre>
-

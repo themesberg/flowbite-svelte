@@ -393,8 +393,6 @@ The component has the following props, type, and default values. See [types page
 
 <CompoAttributesViewer {components}/>
 
-
-
 ## References
 
 - [Flowbite Input Field](https://flowbite.com/docs/forms/input-field/)

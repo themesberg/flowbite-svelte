@@ -298,8 +298,6 @@ The component has the following props, type, and default values. See [types page
 
 <CompoAttributesViewer {components}/>
 
-
-
 ## References
 
 - [Flowbite Radio](https://flowbite.com/docs/forms/radio/)

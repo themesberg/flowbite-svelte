@@ -13,7 +13,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let icon: boolean = false;
 @prop export let liClass: string = '';
 -->

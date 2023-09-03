@@ -54,7 +54,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let dismissable: boolean = false;
 @prop export let defaultClass: string = 'p-4 gap-3 text-sm';
 -->

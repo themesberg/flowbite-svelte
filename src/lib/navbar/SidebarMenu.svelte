@@ -29,7 +29,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let size = '20';
 @prop export let color = 'currentColor';
 @prop export let variation: 'solid' | 'outline' = 'outline';

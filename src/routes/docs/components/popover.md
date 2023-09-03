@@ -383,8 +383,6 @@ The component inherits the following props, type, and default values from `Frame
 
 <CompoAttributesViewer {components}/>
 
-
-
 ## References
 
 - [Flowbite Popover](https://flowbite.com/docs/components/popover/)

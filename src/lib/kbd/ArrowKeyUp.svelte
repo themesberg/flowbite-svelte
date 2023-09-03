@@ -10,6 +10,6 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let svgClass: string = 'w-4 h-4';
 -->

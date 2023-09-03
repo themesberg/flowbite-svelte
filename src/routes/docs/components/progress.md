@@ -165,8 +165,6 @@ The component has the following props, type, and default values. See [types page
 
 <CompoAttributesViewer {components}/>
 
-
-
 ## References
 
 - [Flowbite Progress Bar](https://flowbite.com/docs/components/progress/)

@@ -45,6 +45,6 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let color: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom' = getContext('color');
 -->

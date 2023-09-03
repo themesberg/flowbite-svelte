@@ -49,7 +49,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let timelines: GroupTimelineType[];
 @prop export let aClass: string = 'block items-center p-3 sm:flex hover:bg-gray-100 dark:hover:bg-gray-700';
 @prop export let imgClass: string = 'mr-3 mb-3 w-12 h-12 rounded-full sm:mb-0';

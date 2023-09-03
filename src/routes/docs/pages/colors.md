@@ -150,4 +150,3 @@ module.exports = config;
   Dismissable user notification.
 </Toast>
 ```
-

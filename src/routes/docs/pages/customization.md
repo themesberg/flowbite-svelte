@@ -101,4 +101,3 @@ Use the custom button component in your project by adding the following code:
 ```
 
 With these steps, you can customize and use your own button component globally based on Flowbite-Svelte. Feel free to modify the styles and properties of the component according to your requirements.
-

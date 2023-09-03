@@ -153,8 +153,6 @@ You can use the following classes to set the text decoration for any inline text
 <p class="line-through dark:text-gray-400">please read our terms and services</p>
 ```
 
-
-
 ## References
 
 - [Flowbite Typography](https://flowbite.com/docs/components/typography/)

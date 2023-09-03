@@ -39,7 +39,7 @@
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
-## Component data
+## Props
 @prop export let theadClass: string = 'text-xs uppercase';
 @prop export let defaultRow: boolean = true;
 -->
