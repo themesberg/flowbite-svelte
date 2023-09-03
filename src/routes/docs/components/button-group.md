@@ -103,20 +103,20 @@ You can also use SVG icons inside the grouped buttons.
 ```svelte example class="flex justify-center"
 <script>
   import { ButtonGroup, Button } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { UserCircleSolid, AdjustmentsVerticalOutline, DownloadSolid } from 'flowbite-svelte-icons';
 </script>
 
 <ButtonGroup>
   <Button>
-    <Icon name="user-circle-solid" class="w-3 h-3 mr-2" />
+    <UserCircleSolid class="w-3 h-3 mr-2" />
     Profile
   </Button>
   <Button>
-    <Icon name="adjustments-vertical-outline" class="w-3 h-3 mr-2" />
+    <AdjustmentsVerticalOutline class="w-3 h-3 mr-2" />
     Settings
   </Button>
   <Button>
-    <Icon name="download-solid" class="w-3 h-3 mr-2" />
+    <DownloadSolid class="w-3 h-3 mr-2" />
     Download
   </Button>
 </ButtonGroup>
@@ -145,20 +145,20 @@ Group a series of buttons together on a single line or stack them in a vertical 
 ```svelte example class="flex justify-center"
 <script>
   import { ButtonGroup, Button } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { UserCircleSolid, AdjustmentsVerticalOutline, DownloadSolid } from 'flowbite-svelte-icons';
 </script>
 
 <ButtonGroup>
   <Button outline color="dark">
-    <Icon name="user-circle-solid" class="w-3 h-3 mr-2" />
+    <UserCircleSolid class="w-3 h-3 mr-2" />
     Profile
   </Button>
   <Button outline color="dark">
-    <Icon name="adjustments-vertical-outline" class="w-3 h-3 mr-2" />
+    <AdjustmentsVerticalOutline class="w-3 h-3 mr-2" />
     Settings
   </Button>
   <Button outline color="dark">
-    <Icon name="download-solid" class="w-3 h-3 mr-2" />
+    <DownloadSolid class="w-3 h-3 mr-2" />
     Download
   </Button>
 </ButtonGroup>

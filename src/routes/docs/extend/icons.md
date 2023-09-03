@@ -31,10 +31,10 @@ Inside a Svelte file import any of the icons like this:
 
 ```html
 <script>
-  import { Icon } from 'flowbite-svelte-icons';
+  import { CalendarWeekSolid } from 'flowbite-svelte-icons';
 </script>
 
-<Icon name="address-card-solid" />
+<CalendarWeekSolid />
 ```
 
 ## Component data
@@ -55,7 +55,7 @@ If you are using an LSP-compatible editor, such as VSCode, Atom, Sublime Text, o
 Use the `size` prop to change the size of icons.
 
 ```html
-<Icon name="address-card-solid" size="40" />
+<AddressCardSolid size="40" />
 ```
 
 ## Tailwind CSS suport
@@ -65,7 +65,7 @@ Use the `class` prop to change size, colors and add additional css.
 Here's an example of adding custom Tailwind CSS classes to an imported icon:
 
 ```html
-<Icon name="address-card-solid" class="h-24 w-24 text-blue-700 mr-4" />
+<AddressCardSolid class="h-24 w-24 text-blue-700 mr-4" />
 ```
 
 ## Dark mode
@@ -75,7 +75,7 @@ If you want to support dark mode for the icons you need to use the `dark` varian
 Here's an example of making the icon red in dark mode:
 
 ```html
-<Icon name="address-card-solid" class="text-blue-700 dark:text-red-500" />
+<AddressCardSolid class="text-blue-700 dark:text-red-500" />
 ```
 
 ## aria-label
@@ -85,7 +85,7 @@ All of the icons support `aria-label` for accessibilty - for example `BxAbacus` 
 Use `ariaLabel` prop to modify the `aria-label` value.
 
 ```html
-<Icon name="address-card-solid" ariaLabel="address card solid" />
+<AddressCardSolid ariaLabel="address card solid" />
 ```
 
 ## Unfocusable icon
@@ -93,7 +93,7 @@ Use `ariaLabel` prop to modify the `aria-label` value.
 If you want to make an icon unfocusable, add `tabindex="-1"`.
 
 ```html
-<Icon name="address-card-solid" tabindex="-1" />
+<AddressCardSolid tabindex="-1" />
 ```
 
 ## Events
@@ -115,7 +115,7 @@ All of the icons from this library have the following events that you can use fo
 Here's an example of how you can pass an attribute:
 
 ```html
-<Icon name="address-card-solid" tabindex="0" />
+<AddressCardSolid tabindex="0" />
 ```
 
 ## Using svelte:component

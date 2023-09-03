@@ -120,7 +120,7 @@ module.exports = config;
 ```svelte example class="flex flex-col gap-4"
 <script>
   import { Button, Alert, Card, Navbar, NavBrand, NavLi, NavUl, NavHamburger, Toast } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { FireOutline } from 'flowbite-svelte-icons';
 </script>
 
 <Button color="primary">Primary</Button>
@@ -145,7 +145,7 @@ module.exports = config;
 </Navbar>
 <Toast color="primary">
   <svelte:fragment slot="icon">
-    <Icon name="fire-outline" class="w-6 h-6" />
+    <FireOutline class="w-6 h-6" />
   </svelte:fragment>
   Dismissable user notification.
 </Toast>

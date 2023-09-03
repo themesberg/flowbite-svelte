@@ -127,15 +127,15 @@ You can also use SVG icons inside the badge elements.
 ```svelte example class="flex flex-wrap gap-2"
 <script>
   import { Badge } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { ClockSolid } from 'flowbite-svelte-icons';
 </script>
 
 <Badge color="dark" border>
-  <Icon name="clock-solid" class="w-2.5 h-2.5 mr-1.5" />
+  <ClockSolid class="w-2.5 h-2.5 mr-1.5" />
   3 days ago
 </Badge>
 <Badge border>
-  <Icon name="clock-solid" class="text-primary-800 dark:text-primary-400 w-2.5 h-2.5 mr-1.5" />
+  <ClockSolid class="text-primary-800 dark:text-primary-400 w-2.5 h-2.5 mr-1.5" />
   2 minutes ago
 </Badge>
 ```
@@ -147,23 +147,23 @@ To achive the functionality of the notification badge, use the sibling [`Indicat
 ```svelte example class="flex flex-wrap gap-4"
 <script>
   import { Button, Indicator } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { EnvelopeSolid } from 'flowbite-svelte-icons';
 </script>
 
 <Button class="relative" size="sm">
-  <Icon name="envelope-solid" class="text-white dark:text-white" />
+  <EnvelopeSolid class="text-white dark:text-white" />
   <span class="sr-only">Notifications</span>
   <Indicator color="blue" border size="xl" placement="top-right" class="text-xs font-bold">18</Indicator>
 </Button>
 
 <Button class="relative" size="sm">
-  <Icon name="envelope-solid" class="text-white dark:text-white" />
+  <EnvelopeSolid class="text-white dark:text-white" />
   <span class="sr-only">Notifications</span>
   <Indicator color="red" border size="xl" placement="top-right" class="text-xs font-bold">20</Indicator>
 </Button>
 
 <Button class="relative" size="sm">
-  <Icon name="envelope-solid" class="text-white dark:text-white" />
+  <EnvelopeSolid class="text-white dark:text-white" />
   <span class="sr-only">Notifications</span>
   <Indicator color="dark" border size="xl" placement="bottom-right" class="text-xs font-bold">20</Indicator>
 </Button>
@@ -191,15 +191,15 @@ Alternatively you can also use badges which indicate only a SVG icon.
 ```svelte example hideScript
 <script>
   import { Badge } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { CheckOutline } from 'flowbite-svelte-icons';
 </script>
 
 <Badge color="dark" rounded large class="!p-1 !font-semibold">
-  <Icon name="check-outline" class="h-3 w-3" />
+  <CheckOutline class="h-3 w-3" />
   <span class="sr-only">Icon description</span>
 </Badge>
 <Badge rounded large class="!p-1 !font-semibold">
-  <Icon name="check-outline" class="h-3 w-3 text-primary-800 dark:text-primary-400" />
+  <CheckOutline class="h-3 w-3 text-primary-800 dark:text-primary-400" />
   <span class="sr-only">Icon description</span>
 </Badge>
 ```
@@ -228,13 +228,13 @@ Use the `close-button` slot to add your desired button. Don't forget to use the 
 ```svelte example class="gap-4"
 <script>
   import { Badge } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { CloseCircleSolid } from 'flowbite-svelte-icons';
 </script>
 
 <Badge dismissable>
   Default
   <button slot="close-button" let:close on:click={close} type="button" class="inline-flex items-center rounded-full p-0.5 my-0.5 ml-1.5 -mr-1.5 text-sm bg-primary-500 dark:bg-primary-400 text-white dark:text-primary-800 hover:bg-primary-900 hover:text-white dark:hover:bg-red-900 dark:hover:text-yellow-300" aria-label="Remove">
-    <Icon name="close-circle-solid" class="h-4 w-4" />
+    <CloseCircleSolid class="h-4 w-4" />
     <span class="sr-only">Remove badge</span>
   </button>
 </Badge>

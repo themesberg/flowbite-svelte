@@ -136,13 +136,13 @@ This is an example of the tabs component where you can also use a SVG powered ic
 ```svelte example
 <script>
   import { Tabs, TabItem } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { UserCircleSolid, GridSolid, AdjustmentsVerticalSolid, ClipboardSolid } from 'flowbite-svelte-icons';
 </script>
 
 <Tabs style="underline">
   <TabItem open>
     <div slot="title" class="flex items-center gap-2">
-      <Icon name="user-circle-solid" size="sm" />
+      <UserCircleSolid size="sm" />
       Profile
     </div>
     <p class="text-sm text-gray-500 dark:text-gray-400">
@@ -152,7 +152,7 @@ This is an example of the tabs component where you can also use a SVG powered ic
   </TabItem>
   <TabItem>
     <div slot="title" class="flex items-center gap-2">
-      <Icon name="grid-solid" size="sm" />
+      <GridSolid size="sm" />
       Dashboard
     </div>
     <p class="text-sm text-gray-500 dark:text-gray-400">
@@ -162,7 +162,7 @@ This is an example of the tabs component where you can also use a SVG powered ic
   </TabItem>
   <TabItem>
     <div slot="title" class="flex items-center gap-2">
-      <Icon name="adjustments-vertical-solid" size="sm" />
+      <AdjustmentsVerticalSolid size="sm" />
       Settings
     </div>
     <p class="text-sm text-gray-500 dark:text-gray-400">
@@ -172,7 +172,7 @@ This is an example of the tabs component where you can also use a SVG powered ic
   </TabItem>
   <TabItem>
     <div slot="title" class="flex items-center gap-2">
-      <Icon name="clipboard-solid" size="sm" />
+      <ClipboardSolid size="sm" />
       Contacts
     </div>
     <p class="text-sm text-gray-500 dark:text-gray-400">
@@ -272,7 +272,7 @@ You can add other components to the `TabItem` component. Here we are adding a ti
 ```svelte example class="h-auto"
 <script>
   import { Tabs, TabItem, Timeline, TimelineItem, Button } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { ArrowRightOutline } from 'flowbite-svelte-icons';
 </script>
 
 <Tabs>
@@ -283,7 +283,7 @@ You can add other components to the `TabItem` component. Here we are adding a ti
         <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
         <Button color="alternative">
           Learn more
-          <Icon name="arrow-right-outline" class="ml-2 w-3 h-3" />
+          <ArrowRightOutline class="ml-2 w-3 h-3" />
         </Button>
       </TimelineItem>
       <TimelineItem title="Application UI code in Tailwind CSS" date="March 2022">

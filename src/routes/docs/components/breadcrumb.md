@@ -65,24 +65,24 @@ Use the `icon` slot to change icons.
 ```svelte example
 <script>
   import { Breadcrumb, BreadcrumbItem } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { HomeOutline, ChevronDoubleRightOutline } from 'flowbite-svelte-icons';
 </script>
 
 <Breadcrumb aria-label="Solid background breadcrumb example" class="bg-gray-50 py-3 px-5 dark:bg-gray-900">
   <BreadcrumbItem href="/" home>
     <svelte:fragment slot="icon">
-      <Icon name="home-outline" class="w-4 h-4 mr-2" />
+      <HomeOutline class="w-4 h-4 mr-2" />
     </svelte:fragment>Home
   </BreadcrumbItem>
   <BreadcrumbItem href="/">
     <svelte:fragment slot="icon">
-      <Icon name="chevron-double-right-outline" class="w-3 h-3 mx-2 dark:text-white" />
+      <ChevronDoubleRightOutline class="w-3 h-3 mx-2 dark:text-white" />
     </svelte:fragment>
     Projects
   </BreadcrumbItem>
   <BreadcrumbItem>
     <svelte:fragment slot="icon">
-      <Icon name="chevron-double-right-outline" class="w-3 h-3 mx-2 dark:text-white" />
+      <ChevronDoubleRightOutline class="w-3 h-3 mx-2 dark:text-white" />
     </svelte:fragment>
     Flowbite Svelte
   </BreadcrumbItem>

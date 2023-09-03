@@ -45,13 +45,13 @@ Use the simplest form of a search input component with an icon and a search butt
 ```svelte example class="flex flex-col gap-4"
 <script>
   import { Search, Button } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { SearchOutline } from 'flowbite-svelte-icons';
 </script>
 
 <form class="flex gap-2">
   <Search size="md" />
   <Button class="!p-2.5">
-    <Icon name="search-outline" class="w-5 h-5" />
+    <SearchOutline class="w-5 h-5" />
   </Button>
 </form>
 ```
@@ -63,7 +63,7 @@ Get started with this example if you would like to enable voice search for your 
 ```svelte example class="space-y-4"
 <script>
   import { Search, Button } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { MicrophoneSolid, SearchOutline } from 'flowbite-svelte-icons';
   function handleVoiceBtn() {
     alert('You clicked voice button');
   }
@@ -72,11 +72,11 @@ Get started with this example if you would like to enable voice search for your 
 <form class="flex gap-2">
   <Search size="md" class="flex gap-2 items-center" placeholder="Search Mockups, Logos, Design Templates...">
     <button type="button" on:click={handleVoiceBtn} class="outline-none">
-      <Icon name="microphone-solid" class="w-4 h-4" />
+      <MicrophoneSolid class="w-4 h-4" />
     </button>
   </Search>
   <Button size="sm">
-    <Icon name="search-outline" class="w-5 h-5 mr-2 -ml-1" />
+    <SearchOutline class="w-5 h-5 mr-2 -ml-1" />
     Search
   </Button>
 </form>

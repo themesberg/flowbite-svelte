@@ -154,27 +154,27 @@ Use the following example to apply validation styles for success and error messa
 ```svelte example class="space-y-6"
 <script>
   import { Label, Input, Button, CloseButton } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { EnvelopeSolid } from 'flowbite-svelte-icons';
 </script>
 
 <Label class="space-y-2">
   <span>Small input - left icon</span>
   <Input type="email" placeholder="name@flowbite.com" size="sm">
-    <Icon name="envelope-solid" slot="left" class="w-4 h-4" />
+    <EnvelopeSolid slot="left" class="w-4 h-4" />
   </Input>
 </Label>
 
 <Label class="space-y-2">
   <span>Default input - right icon</span>
   <Input type="email" placeholder="name@flowbite.com" size="md">
-    <Icon name="envelope-solid" slot="right" class="w-5 h-5" />
+    <EnvelopeSolid slot="right" class="w-5 h-5" />
   </Input>
 </Label>
 
 <Label class="space-y-2">
   <span>Large input - both icons</span>
   <Input type="email" placeholder="name@flowbite.com" size="lg">
-    <Icon name="envelope-solid" slot="left" class="w-6 h-6" />
+    <EnvelopeSolid slot="left" class="w-6 h-6" />
     <CloseButton slot="right" />
   </Input>
 </Label>
@@ -245,7 +245,7 @@ This example shows how to add `on:click` event handler to the icon in `Input`. B
 ```svelte example class="space-y-6"
 <script>
   import { Button, Label, Input, ButtonGroup, InputAddon, ToolbarButton } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { EyeOutline, EyeSlashOutline } from 'flowbite-svelte-icons';
   let show = false;
   let show1 = false;
 </script>
@@ -255,9 +255,9 @@ This example shows how to add `on:click` event handler to the icon in `Input`. B
   <Input id="show-password" type={show ? 'text' : 'password'} placeholder="Your password here" size="lg">
     <button slot="left" on:click={() => (show = !show)} class="pointer-events-auto">
       {#if show}
-        <Icon name="eye-outline" class="w-6 h-6" />
+        <EyeOutline class="w-6 h-6" />
       {:else}
-        <Icon name="eye-slash-outline" class="w-6 h-6" />
+        <EyeSlashOutline class="w-6 h-6" />
       {/if}
     </button>
   </Input>
@@ -269,9 +269,9 @@ This example shows how to add `on:click` event handler to the icon in `Input`. B
     <InputAddon>
       <button on:click={() => (show1 = !show1)}>
         {#if show1}
-          <Icon name="eye-outline" class="w-6 h-6" />
+          <EyeOutline class="w-6 h-6" />
         {:else}
-          <Icon name="eye-slash-outline" class="w-6 h-6" />
+          <EyeSlashOutline class="w-6 h-6" />
         {/if}
       </button>
     </InputAddon>
@@ -323,13 +323,13 @@ By default the `Input` component binds the `value` as `string`. If you need a va
 ```svelte example
 <script>
   import { Input, Label, Button } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { SearchOutline } from 'flowbite-svelte-icons';
 </script>
 
 <form>
   <Label for="search" class="block mb-2">Your Email</Label>
   <Input id="search" placeholder="Search" size="lg">
-    <Icon name="search-outline" slot="left" class="w-6 h-6 text-gray-500 dark:text-gray-400" />
+    <SearchOutline slot="left" class="w-6 h-6 text-gray-500 dark:text-gray-400" />
     <Button slot="right" size="sm" type="submit">Search</Button>
   </Input>
 </form>
@@ -342,12 +342,12 @@ Use this example to show a dropdown menu right next to the input field.
 ```svelte example class="h-64"
 <script>
   import { Input, InputAddon, ButtonGroup, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { ChevronDownSolid, SearchOutline } from 'flowbite-svelte-icons';
 </script>
 
 <ButtonGroup class="w-full">
   <Button color="none" class="flex-shrink-0 text-gray-900 bg-gray-100 border border-gray-300 dark:border-gray-700 dark:text-white hover:bg-gray-200 focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-    All categories<Icon name="chevron-down-solid" class="w-3 h-3 ml-2 text-white dark:text-white" />
+    All categories<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" />
   </Button>
   <Dropdown>
     <DropdownItem>Shopping</DropdownItem>
@@ -357,7 +357,7 @@ Use this example to show a dropdown menu right next to the input field.
   </Dropdown>
   <Input placeholder="Search" />
   <Button color="primary" class="!p-2.5" type="submit">
-    <Icon name="search-outline" class="w-5 h-5" />
+    <SearchOutline class="w-5 h-5" />
   </Button>
 </ButtonGroup>
 ```
