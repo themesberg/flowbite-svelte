@@ -80,11 +80,10 @@
 
   let open = true;
   const dispatch = createEventDispatcher();
-
+  $: dispatch(open ? 'open' : 'close');
   const close = (e: MouseEvent) => {
     e.stopPropagation();
     open = false;
-    dispatch('close');
   };
 </script>
 

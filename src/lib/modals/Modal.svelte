@@ -113,7 +113,7 @@
   <div class={backdropCls} />
   <!-- dialog -->
   <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-  <div on:keydown={handleKeys} on:wheel|preventDefault|nonpassive use:prepareFocus use:focusTrap on:click={onAutoClose} class={twMerge(dialogClass, ...getPlacementClasses())} tabindex="-1" aria-modal="true" role="dialog">
+  <div on:keydown={handleKeys} on:wheel|preventDefault|nonpassive use:prepareFocus use:focusTrap on:click={onAutoClose} class={twMerge(dialogClass, $$props.classDialog, ...getPlacementClasses())} tabindex="-1" aria-modal="true" role="dialog">
     <div class="flex relative {sizes[size]} w-full max-h-full">
       <!-- Modal content -->
       <Frame rounded shadow {...$$restProps} class={frameClass}>
