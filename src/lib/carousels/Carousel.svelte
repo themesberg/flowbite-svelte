@@ -87,6 +87,7 @@
 
   let carouselDiv: HTMLDivElement;
   let percentOffset: number = 0;
+  let touchEvent: MouseEvent | TouchEvent | null = null;
 
   const getPositionFromEvent = (evt: MouseEvent | TouchEvent) => {
     const mousePos = (evt as MouseEvent)?.clientX;
@@ -99,6 +100,7 @@
   };
 
   const onDragStart = (evt: MouseEvent | TouchEvent) => {
+    touchEvent = evt;
     evt.preventDefault();
     const start = getPositionFromEvent(evt);
     const width = carouselDiv.getBoundingClientRect().width;
@@ -137,13 +139,20 @@
             const distance = position - start;
 
             if (Math.abs(distance) >= SWIPE_MIN_DISTANCE && duration <= SWIPE_MAX_DURATION && duration > 0) {
-              if (distance > 0) nextSlide();
-              else prevSlide();
-            } else if (percentOffset > DRAG_MIN_PERCENT) nextSlide();
-            else if (percentOffset < -DRAG_MIN_PERCENT) prevSlide();
+              if (distance > 0) prevSlide();
+              else nextSlide();
+            } else if (percentOffset > DRAG_MIN_PERCENT) prevSlide();
+            else if (percentOffset < -DRAG_MIN_PERCENT) nextSlide();
+            else {
+              // The gesture is a tap not drag, so manually issue a click event to trigger tap click gestures lost via preventDefault
+              touchEvent?.target?.dispatchEvent(new Event('click', {
+                bubbles: true,
+              }))
+            }
           }
           percentOffset = 0;
           activeDragGesture = undefined;
+          touchEvent = null;
         };
 </script>
 
@@ -160,17 +169,20 @@
   class="relative"
   on:mousedown={onDragStart}
   on:touchstart={onDragStart}
-  role="button"     
+  role="button"
   aria-label="Draggable Carousel"
-  tabindex="0" 
-  >
+  tabindex="0">
   <div
     style={`transform: translateX(${percentOffset}%)`}
     class={twJoin(
       divClass,
-      { 'transition-transform': activeDragGesture === undefined }
-    )}>
-    <Slide image={image.imgurl} altTag={image.name} attr={image.attribution} {slideClass} />
+      { 'transition-transform': activeDragGesture === undefined })}>
+    <Slide
+      image={image.imgurl}
+      slideClass={slideCls}
+      imgClass={imgCls}
+      altTag={image.name}
+      attr={image.attribution} />
   </div>
   {#if showIndicators}
     <!-- Slider indicators -->
