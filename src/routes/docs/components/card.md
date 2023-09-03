@@ -49,14 +49,14 @@ Use the following example of a card element if you also want to have an action b
 ```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
   import { Card, Button } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { ArrowRightOutline } from 'flowbite-svelte-icons';
 </script>
 
 <Card>
   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
   <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
   <Button class="w-fit">
-    Read more <Icon name="arrow-right-outline" class="w-3.5 h-3.5 ml-2 text-white" />
+    Read more <ArrowRightOutline class="w-3.5 h-3.5 ml-2 text-white" />
   </Button>
 </Card>
 ```
@@ -68,18 +68,18 @@ This example can be used to show a CTA as a link instead of a button inside the 
 ```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
   import { Card } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { GiftBoxSolid, ArrowUpRightFromSquareOutline } from 'flowbite-svelte-icons';
 </script>
 
 <Card>
-  <Icon name="gift-box-solid" class="w-7 h-7 mb-3 text-gray-500 dark:text-gray-400" />
+  <GiftBoxSolid class="w-7 h-7 mb-3 text-gray-500 dark:text-gray-400" />
   <a href="/">
     <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Need a help in Claim?</h5>
   </a>
   <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
   <a href="/" class="inline-flex items-center text-primary-600 hover:underline">
     See our guideline
-    <Icon name="arrow-up-right-from-square-outline" class="w-3 h-3 ml-2.5" />
+    <ArrowUpRightFromSquareOutline class="w-3 h-3 ml-2.5" />
   </a>
 </Card>
 ```
@@ -93,7 +93,7 @@ You can use the following example of a card element with an image for blog posts
 ```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
   import { Card, Button, Toggle } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { ArrowRightOutline } from 'flowbite-svelte-icons';
   let vCard = false;
 </script>
 
@@ -102,7 +102,7 @@ You can use the following example of a card element with an image for blog posts
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
     <Button>
-      Read more <Icon name="arrow-right-outline" class="w-3.5 h-3.5 ml-2 text-white" />
+      Read more <ArrowRightOutline class="w-3.5 h-3.5 ml-2 text-white" />
     </Button>
   </Card>
   <Toggle bind:checked={vCard} class="italic dark:text-gray-500">Reverse</Toggle>
@@ -135,12 +135,12 @@ Use this user profile card example if you want to show a dropdown menu and butto
 ```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
   import { Card, Dropdown, DropdownItem, Avatar, Button } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { DotsHorizontalOutline } from 'flowbite-svelte-icons';
 </script>
 
 <Card padding="sm">
   <div class="flex justify-end">
-    <Icon name="dots-horizontal-outline" />
+    <DotsHorizontalOutline />
     <Dropdown class="w-36">
       <DropdownItem>Edit</DropdownItem>
       <DropdownItem>Export data</DropdownItem>
@@ -298,7 +298,7 @@ Show detailed information to potential customers about your product’s pricing 
 ```svelte example class="flex justify-center flex-wrap gap-2"
 <script>
   import { Card, Button } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { CheckCircleSolid } from 'flowbite-svelte-icons';
 </script>
 
 <Card padding="xl">
@@ -311,31 +311,31 @@ Show detailed information to potential customers about your product’s pricing 
   <!-- List -->
   <ul class="my-7 space-y-4">
     <li class="flex space-x-2">
-      <Icon name="check-circle-solid" class="w-4 h-4 text-primary-600 dark:text-primary-500" />
+      <CheckCircleSolid class="w-4 h-4 text-primary-600 dark:text-primary-500" />
       <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"> 2 team members </span>
     </li>
     <li class="flex space-x-2">
-      <Icon name="check-circle-solid" class="w-4 h-4 text-primary-600 dark:text-primary-500" />
+      <CheckCircleSolid class="w-4 h-4 text-primary-600 dark:text-primary-500" />
       <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"> 20GB Cloud storage </span>
     </li>
     <li class="flex space-x-2">
-      <Icon name="check-circle-solid" class="w-4 h-4 text-primary-600 dark:text-primary-500" />
+      <CheckCircleSolid class="w-4 h-4 text-primary-600 dark:text-primary-500" />
       <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"> Integration help </span>
     </li>
     <li class="flex space-x-2 line-through decoration-gray-500">
-      <Icon name="check-circle-solid" class="w-4 h-4 text-gray-400 dark:text-gray-500" />
+      <CheckCircleSolid class="w-4 h-4 text-gray-400 dark:text-gray-500" />
       <span class="text-base font-normal leading-tight text-gray-500">Sketch Files</span>
     </li>
     <li class="flex space-x-2 line-through decoration-gray-500">
-      <Icon name="check-circle-solid" class="w-4 h-4 text-gray-400 dark:text-gray-500" />
+      <CheckCircleSolid class="w-4 h-4 text-gray-400 dark:text-gray-500" />
       <span class="text-base font-normal leading-tight text-gray-500">API Access</span>
     </li>
     <li class="flex space-x-2 line-through decoration-gray-500">
-      <Icon name="check-circle-solid" class="w-4 h-4 text-gray-400 dark:text-gray-500" />
+      <CheckCircleSolid class="w-4 h-4 text-gray-400 dark:text-gray-500" />
       <span class="text-base font-normal leading-tight text-gray-500">Complete documentation</span>
     </li>
     <li class="flex space-x-2 line-through decoration-gray-500">
-      <Icon name="check-circle-solid" class="w-4 h-4 text-gray-400 dark:text-gray-500" />
+      <CheckCircleSolid class="w-4 h-4 text-gray-400 dark:text-gray-500" />
       <span class="text-base font-normal leading-tight text-gray-500">24×7 phone & email support</span>
     </li>
   </ul>

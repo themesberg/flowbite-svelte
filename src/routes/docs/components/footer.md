@@ -75,7 +75,7 @@ The footer is one of the most underestimated sections of a website being located
 ```svelte example
 <script>
   import { Footer, FooterCopyright, FooterLinkGroup, FooterLink, FooterBrand, FooterIcon } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { FacebookSolid, GithubSolid, DiscordSolid, TwitterSolid } from 'flowbite-svelte-icons';
   import Dribble from '../../utils/icons/Dribble.svelte';
 </script>
 
@@ -113,16 +113,16 @@ The footer is one of the most underestimated sections of a website being located
     <FooterCopyright href="/" by="Flowbite™" />
     <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
       <FooterIcon href="/">
-        <Icon name="facebook-solid" class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <FacebookSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <Icon name="discord-solid" class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <DiscordSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <Icon name="twitter-solid" class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <TwitterSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <Icon name="github-solid" class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <GithubSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
         <Dribble />
@@ -139,7 +139,7 @@ The footer is one of the most underestimated sections of a website being located
 ```svelte example
 <script>
   import { Footer, FooterLinkGroup, FooterLink, FooterBrand, FooterIcon, FooterCopyright } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { FacebookSolid, GithubSolid, DiscordSolid, TwitterSolid } from 'flowbite-svelte-icons';
   import Dribble from '../../utils/icons/Dribble.svelte';
 </script>
 
@@ -185,16 +185,16 @@ The footer is one of the most underestimated sections of a website being located
     <FooterCopyright spanClass="text-sm text-gray-300 sm:text-center" href="/" by="Flowbite™" />
     <div class="flex mt-4 space-x-6 sm:justify-center md:mt-0">
       <FooterIcon href="/">
-        <Icon name="facebook-solid" class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <FacebookSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <Icon name="discord-solid" class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <DiscordSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <Icon name="twitter-solid" class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <TwitterSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
-        <Icon name="github-solid" class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
+        <GithubSolid class="w-4 h-4 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
       <FooterIcon href="/">
         <Dribble />

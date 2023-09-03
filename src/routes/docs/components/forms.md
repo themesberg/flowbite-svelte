@@ -77,13 +77,13 @@ With the Input component, you can add <a href="https://flowbite-svelte.vercel.ap
 ```svelte example
 <script>
   import { Label, Input, InputAddon, ButtonGroup } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { EnvelopeSolid } from 'flowbite-svelte-icons';
 </script>
 
 <div class="mb-6">
   <Label for="input-group-1" class="block mb-2">Your Email</Label>
   <Input id="email" type="email" placeholder="name@flowbite.com">
-    <Icon name="envelope-solid" slot="left" class="w-5 h-5 text-gray-500 dark:text-gray-400" />
+    <EnvelopeSolid slot="left" class="w-5 h-5 text-gray-500 dark:text-gray-400" />
   </Input>
 </div>
 ```
@@ -93,14 +93,14 @@ With the Input component, you can add <a href="https://flowbite-svelte.vercel.ap
 ```svelte example
 <script>
   import { Label, Input, InputAddon, ButtonGroup } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { UserCircleSolid } from 'flowbite-svelte-icons';
 </script>
 
 <div class="mb-6">
   <Label for="website-admin" class="block mb-2">Username</Label>
   <ButtonGroup class="w-full">
     <InputAddon>
-      <Icon name="user-circle-solid" class="w-4 h-4 text-gray-500 dark:text-gray-400" />
+      <UserCircleSolid class="w-4 h-4 text-gray-500 dark:text-gray-400" />
     </InputAddon>
     <Input id="website-admin" placeholder="elonmusk" />
   </ButtonGroup>

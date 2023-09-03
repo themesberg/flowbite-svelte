@@ -83,7 +83,7 @@ Notice lack of the `footer` slot.
 ```svelte example class="flex justify-center"
 <script>
   import { Button, Modal } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { ExclamationCircleOutline } from 'flowbite-svelte-icons';
   let popupModal = false;
 </script>
 
@@ -91,7 +91,7 @@ Notice lack of the `footer` slot.
 
 <Modal bind:open={popupModal} size="xs" autoclose>
   <div class="text-center">
-    <Icon name="exclamation-circle-outline" class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" />
+    <ExclamationCircleOutline class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" />
     <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this product?</h3>
     <Button color="red" class="mr-2">Yes, I'm sure</Button>
     <Button color="alternative">No, cancel</Button>
@@ -146,7 +146,7 @@ Use this web3 modal component to show crypto wallet connection options like Meta
   import OperaWallet from '../../utils/icons/OperaWallet.svelte';
   import Fortmatic from '../../utils/icons/Fortmatic.svelte';
   import WalletConnect from '../../utils/icons/WalletConnect.svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { QuestionCircleOutline } from 'flowbite-svelte-icons';
   let walletModal = false;
 </script>
 
@@ -189,7 +189,7 @@ Use this web3 modal component to show crypto wallet connection options like Meta
   </ul>
   <div>
     <a href="/" class="inline-flex items-center text-xs font-normal text-gray-500 hover:underline dark:text-gray-400">
-      <Icon name="question-circle-outline" class="w-3 h-3 mr-2" /> Why do I need to connect with my wallet?
+      <QuestionCircleOutline class="w-3 h-3 mr-2" /> Why do I need to connect with my wallet?
     </a>
   </div>
 </Modal>

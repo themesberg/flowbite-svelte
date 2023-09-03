@@ -95,7 +95,7 @@ Use the following example to create a list of buttons as a menu together with SV
 ```svelte example class="flex justify-center"
 <script>
   import { Listgroup } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { IconSolid } from 'flowbite-svelte-icons';
   let icons = [
     { name: 'Profile', icon: 'user-circle-solid' },
     { name: 'Settings', icon: 'adjustments-horizontal-outline' },
@@ -105,7 +105,7 @@ Use the following example to create a list of buttons as a menu together with SV
 </script>
 
 <Listgroup active items={icons} let:item class="w-48" on:click={console.log}>
-  <svelte:component this={Icon} name={item.icon} class="w-3 h-3 mr-2.5" />
+  <svelte:component this={IconSolid} name={item.icon} class="w-3 h-3 mr-2.5" />
   {item.name}
 </Listgroup>
 ```
@@ -117,7 +117,7 @@ When non standard usage is needed you can omit the `items` props and add element
 ```svelte example class="flex justify-center"
 <script>
   import { Listgroup, ListgroupItem, Avatar } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { TrashBinSolid } from 'flowbite-svelte-icons';
 </script>
 
 <Listgroup active class="w-48">
@@ -132,7 +132,7 @@ When non standard usage is needed you can omit the `items` props and add element
     <Avatar src="/images/profile-picture-3.webp" size="xs" />Bonnie Green
   </ListgroupItem>
   <a href="/" class="flex items-center p-3 text-sm font-medium text-red-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline rounded-b-lg">
-    <Icon name="trash-bin-solid" class="w-6 h-6 ml-1 mr-2" />
+    <TrashBinSolid class="w-6 h-6 ml-1 mr-2" />
     Delete user
   </a>
 </Listgroup>

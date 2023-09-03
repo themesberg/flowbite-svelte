@@ -67,11 +67,11 @@ This example can be used to show a number count inside the indicator and positio
 ```svelte example class="space-y-4"
 <script>
   import { Indicator, Button } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { EnvelopeSolid } from 'flowbite-svelte-icons';
 </script>
 
 <Button size="lg" class="relative">
-  <Icon name="envelope-solid" class="w-4 h-4 mr-2 text-white dark:text-white" />
+  <EnvelopeSolid class="w-4 h-4 mr-2 text-white dark:text-white" />
   <span class="sr-only">Notifications</span>
   Messages
   <Indicator color="red" border size="xl" placement="top-right">
@@ -141,14 +141,14 @@ You can also use the indicators inside of a stepper component when completing a 
 ```svelte example class="space-y-8"
 <script>
   import { Indicator } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { CheckCircleSolid } from 'flowbite-svelte-icons';
 </script>
 
 <ol class="flex items-center">
   <li class="relative w-full mb-6">
     <div class="flex items-center">
       <Indicator size="xl" color="none" class="bg-primary-200 dark:bg-primary-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
-        <Icon name="check-circle-solid" class="w-6 h-6 text-primary-600 dark:text-primary-300" />
+        <CheckCircleSolid class="w-6 h-6 text-primary-600 dark:text-primary-300" />
       </Indicator>
       <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
     </div>
@@ -159,7 +159,7 @@ You can also use the indicators inside of a stepper component when completing a 
   <li class="relative w-full mb-6">
     <div class="flex items-center">
       <Indicator size="xl" color="none" class="bg-primary-200 dark:bg-primary-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
-        <Icon name="check-circle-solid" class="w-6 h-6 text-primary-600 dark:text-primary-300" />
+        <CheckCircleSolid class="w-6 h-6 text-primary-600 dark:text-primary-300" />
       </Indicator>
       <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
     </div>
@@ -170,7 +170,7 @@ You can also use the indicators inside of a stepper component when completing a 
   <li class="relative w-full mb-6">
     <div class="flex items-center">
       <Indicator size="xl" color="none" class="bg-primary-200 dark:bg-primary-900 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
-        <Icon name="check-circle-solid" class="w-6 h-6 text-primary-600 dark:text-primary-300" />
+        <CheckCircleSolid class="w-6 h-6 text-primary-600 dark:text-primary-300" />
       </Indicator>
       <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
     </div>
@@ -181,7 +181,7 @@ You can also use the indicators inside of a stepper component when completing a 
   <li class="relative w-full mb-6">
     <div class="flex items-center">
       <Indicator size="xl" color="gray" class="dark:bg-gray-700 z-10 ring-0 ring-white sm:ring-8 dark:ring-gray-900 shrink-0">
-        <Icon name="check-circle-solid" class="w-6 h-6 text-gray-800 dark:text-gray-300" />
+        <CheckCircleSolid class="w-6 h-6 text-gray-800 dark:text-gray-300" />
       </Indicator>
     </div>
     <div class="mt-3">

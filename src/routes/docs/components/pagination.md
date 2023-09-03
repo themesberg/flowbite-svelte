@@ -78,7 +78,7 @@ The following pagination component example shows how you can use SVG icons inste
 <script>
   import { page } from '$app/stores';
   import { Pagination } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { ChevronLeftOutline, ChevronRightOutline } from 'flowbite-svelte-icons';
 
   $: activeUrl = $page.url.searchParams.get('page');
   let pages = [
@@ -115,22 +115,22 @@ The following pagination component example shows how you can use SVG icons inste
 <Pagination {pages} on:previous={previous} on:next={next} icon>
   <svelte:fragment slot="prev">
     <span class="sr-only">Previous</span>
-    <Icon name="chevron-left-outline" class="w-2.5 h-2.5" />
+    <ChevronLeftOutline class="w-2.5 h-2.5" />
   </svelte:fragment>
   <svelte:fragment slot="next">
     <span class="sr-only">Next</span>
-    <Icon name="chevron-right-outline" class="w-2.5 h-2.5" />
+    <ChevronRightOutline class="w-2.5 h-2.5" />
   </svelte:fragment>
 </Pagination>
 
 <Pagination {pages} large on:previous={previous} on:next={next} icon>
   <svelte:fragment slot="prev">
     <span class="sr-only">Previous</span>
-    <Icon name="chevron-left-outline" class="w-3 h-3" />
+    <ChevronLeftOutline class="w-3 h-3" />
   </svelte:fragment>
   <svelte:fragment slot="next">
     <span class="sr-only">Next</span>
-    <Icon name="chevron-right-outline" class="w-3 h-3" />
+    <ChevronRightOutline class="w-3 h-3" />
   </svelte:fragment>
 </Pagination>
 ```
@@ -167,7 +167,7 @@ Use the following code to show simple previous and next elements with icons.
 ```svelte example class="flex flex-col justify-center items-center gap-3"
 <script>
   import { Pagination, PaginationItem } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { ArrowLeftSolid, ArrowRightSolid } from 'flowbite-svelte-icons';
   const previous = () => {
     alert('Previous btn clicked. Make a call to your server to fetch data.');
   };
@@ -178,22 +178,22 @@ Use the following code to show simple previous and next elements with icons.
 
 <div class="flex space-x-3">
   <PaginationItem class="flex items-center" on:click={previous}>
-    <Icon name="arrow-left-solid" class="mr-2 w-3.5 h-3.5" />
+    <ArrowLeftSolid class="mr-2 w-3.5 h-3.5" />
     Previous
   </PaginationItem>
   <PaginationItem class="flex items-center" on:click={next}>
     Next
-    <Icon name="arrow-right-solid" class="ml-2 w-3.5 h-3.5" />
+    <ArrowRightSolid class="ml-2 w-3.5 h-3.5" />
   </PaginationItem>
 </div>
 <div class="flex space-x-3">
   <PaginationItem large class="flex items-center" on:click={previous}>
-    <Icon name="arrow-left-solid" class="mr-2 w-5 h-5" />
+    <ArrowLeftSolid class="mr-2 w-5 h-5" />
     Previous
   </PaginationItem>
   <PaginationItem large class="flex items-center" on:click={next}>
     Next
-    <Icon name="arrow-right-solid" class="ml-2 w-5 h-5" />
+    <ArrowRightSolid class="ml-2 w-5 h-5" />
   </PaginationItem>
 </div>
 ```
@@ -253,7 +253,7 @@ You can use the following code to show the number of data shown inside a table e
 ```svelte example class="flex flex-col justify-center items-center gap-3"
 <script>
   import { Pagination } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { ArrowLeftOutline, ArrowRightOutline } from 'flowbite-svelte-icons';
   let helper = { start: 1, end: 10, total: 100 };
 
   const previous = () => {
@@ -276,12 +276,12 @@ You can use the following code to show the number of data shown inside a table e
 
   <Pagination table>
     <div slot="prev" class="flex items-center gap-2 text-white bg-gray-800">
-      <Icon name="arrow-left-outline" class="w-3.5 h-3.5 mr-2" />
+      <ArrowLeftOutline class="w-3.5 h-3.5 mr-2" />
       Prev
     </div>
     <div slot="next" class="flex items-center gap-2 text-white bg-gray-800">
       Next
-      <Icon name="arrow-right-outline" class="w-3.5 h-3.5 ml-2" />
+      <ArrowRightOutline class="w-3.5 h-3.5 ml-2" />
     </div>
   </Pagination>
 </div>
@@ -297,12 +297,12 @@ You can use the following code to show the number of data shown inside a table e
 
   <Pagination table large>
     <div slot="prev" class="flex items-center gap-2 text-white bg-gray-800">
-      <Icon name="arrow-left-outline" class="w-3.5 h-3.5 mr-2" />
+      <ArrowLeftOutline class="w-3.5 h-3.5 mr-2" />
       Prev
     </div>
     <div slot="next" class="flex items-center gap-2 text-white bg-gray-800">
       Next
-      <Icon name="arrow-right-outline" class="w-3.5 h-3.5 mr-2" />
+      <ArrowRightOutline class="w-3.5 h-3.5 mr-2" />
     </div>
   </Pagination>
 </div>

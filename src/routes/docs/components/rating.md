@@ -240,7 +240,7 @@ Use this component to show the review content from a user alongside the avatar, 
 ```svelte example
 <script>
   import { Review } from 'flowbite-svelte';
-  import { Icon } from 'flowbite-svelte-icons';
+  import { LandmarkSolid, CalendarMonthSolid, UsersGroupOutline, ThumbsUpSolid, ThumbsDownSolid } from 'flowbite-svelte-icons';
   let review = {
     name: 'Jese Leos',
     imgSrc: '/images/profile-picture-2.webp',
@@ -259,24 +259,24 @@ Use this component to show the review content from a user alongside the avatar, 
   <p class="mb-2 font-light text-gray-500 dark:text-gray-400">The flat was spotless, very comfortable, and the host was amazing. I highly recommend this accommodation for anyone visiting Brasov city centre. It's quite a while since we are no longer using hotel facilities but self contained places. And the main reason is poor cleanliness and staff not being trained properly. This place exceeded our expectation and will return for sure.</p>
   <p class="mb-5 font-light text-gray-500 dark:text-gray-400">It is obviously not the same build quality as those very expensive watches. But that is like comparing a Citroën to a Ferrari. This watch was well under £100! An absolute bargain.</p>
   <svelte:fragment slot="item1">
-    <Icon name="landmark-solid" class="w-3 h-3 mr-2" />
+    <LandmarkSolid class="w-3 h-3 mr-2" />
     {review.item1}
   </svelte:fragment>
   <svelte:fragment slot="item2">
-    <Icon name="calendar-month-solid" class="w-3 h-3 mr-2" />
+    <CalendarMonthSolid class="w-3 h-3 mr-2" />
     {review.item2}
   </svelte:fragment>
   <svelte:fragment slot="item3">
-    <Icon name="users-group-outline" class="w-3 h-3 mr-2" />
+    <UsersGroupOutline class="w-3 h-3 mr-2" />
     {review.item3}
   </svelte:fragment>
   <aside class="flex items-center mt-3 space-x-5">
     <a href="/" class="inline-flex items-center text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">
-      <Icon name="thumbs-up-solid" class="w-3.5 h-3.5 mr-2.5 text-primary-600 dark:text-primary-500" />
+      <ThumbsUpSolid class="w-3.5 h-3.5 mr-2.5 text-primary-600 dark:text-primary-500" />
       Helpful
     </a>
     <a href="/" class="inline-flex items-center text-sm font-medium text-primary-600 hover:underline dark:text-primary-500 group">
-      <Icon name="thumbs-down-solid" class="w-3.5 h-3.5 mr-2.5 text-primary-600 dark:text-primary-500" />
+      <ThumbsDownSolid class="w-3.5 h-3.5 mr-2.5 text-primary-600 dark:text-primary-500" />
       Not helpful
     </a>
   </aside>
