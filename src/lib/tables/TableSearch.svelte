@@ -42,6 +42,7 @@
   <table {...$$restProps} class={twMerge('w-full text-left text-sm', colors[color], $$props.class)}>
     <slot />
   </table>
+  <slot name="footer" />
 </div>
 
 <!--
