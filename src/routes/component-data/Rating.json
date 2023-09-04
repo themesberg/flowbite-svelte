@@ -1,1 +1,14 @@
-{"name":"Rating","slots":["text"],"events":[],"props":[["divClass","string","'flex items-center'"],["size","number","24"],["total","number","5"],["rating","number","4"],["partialId","string","'partialStar' + generateId()"],["icon","ComponentType","Star"],["count","boolean","false"]]}
+{
+  "name": "Rating",
+  "slots": ["text"],
+  "events": [],
+  "props": [
+    ["divClass", "string", "'flex items-center'"],
+    ["size", "number", "24"],
+    ["total", "number", "5"],
+    ["rating", "number", "4"],
+    ["partialId", "string", "'partialStar' + generateId()"],
+    ["icon", "ComponentType", "Star"],
+    ["count", "boolean", "false"]
+  ]
+}

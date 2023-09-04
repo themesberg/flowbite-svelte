@@ -1,1 +1,10 @@
-{"name":"Layout","slots":[],"events":[],"props":[["divClass","string","'grid'"],["cols","string","'grid-cols-1 sm:grid-cols-2'"],["gap","number","@prop export let divClass: string = 'grid'"]]}
+{
+  "name": "Layout",
+  "slots": [],
+  "events": [],
+  "props": [
+    ["divClass", "string", "'grid'"],
+    ["cols", "string", "'grid-cols-1 sm:grid-cols-2'"],
+    ["gap", "number", "@prop export let divClass: string = 'grid'"]
+  ]
+}

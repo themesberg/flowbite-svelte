@@ -1,0 +1,10 @@
+{
+  "name": "Caption",
+  "slots": [],
+  "events": [],
+  "props": [
+    ["caption", "string", "''"],
+    ["captionClass", "string", "''"],
+    ["pClass", "string", "'text-gray-900 dark:text-white'"]
+  ]
+}

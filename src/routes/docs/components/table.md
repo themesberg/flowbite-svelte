@@ -861,6 +861,8 @@ The component has the following props, type, and default values. See [types page
 ### TableSearch styling
 
 - Use the `class` prop to overwrite the `table` tag class.
+- Use the `classInput` prop to overwrite `inputClass`.
+- Use the `classSvgDiv` prop to overwrite `svgDivClass`.
 
 <CompoAttributesViewer {components}/>
 

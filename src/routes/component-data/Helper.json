@@ -1,1 +1,9 @@
-{"name":"Helper","slots":[],"events":[],"props":[["helperClass","string","'text-xs font-normal text-gray-500 dark:text-gray-300'"],["color","'gray' | 'green' | 'red' | 'disabled'","'gray'"]]}
+{
+  "name": "Helper",
+  "slots": [],
+  "events": [],
+  "props": [
+    ["helperClass", "string", "'text-xs font-normal text-gray-500 dark:text-gray-300'"],
+    ["color", "'gray' | 'green' | 'red' | 'disabled'", "'gray'"]
+  ]
+}
