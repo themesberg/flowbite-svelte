@@ -1,1 +1,1 @@
-{"name":"TableBody","slots":[],"events":[],"props":[["tableBodyClass","string | undefined","undefined"]]}
+{ "name": "TableBody", "slots": [], "events": [], "props": [["tableBodyClass", "string | undefined", "undefined"]] }

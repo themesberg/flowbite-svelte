@@ -1,1 +1,11 @@
-{"name":"DefaultMockup","slots":[],"events":[],"props":[["defaultTop","string",""],["defaultLeftTop","string",""],["defaultLeftBot","string",""],["defaultRight","string","@prop export let defaultTop: string"]]}
+{
+  "name": "DefaultMockup",
+  "slots": [],
+  "events": [],
+  "props": [
+    ["defaultTop", "string", ""],
+    ["defaultLeftTop", "string", ""],
+    ["defaultLeftBot", "string", ""],
+    ["defaultRight", "string", "@prop export let defaultTop: string"]
+  ]
+}

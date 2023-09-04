@@ -1,1 +1,11 @@
-{"name":"Tablet","slots":[],"events":[],"props":[["tabletLeftTop","string",""],["tabletLeftMid","string",""],["tabletLeftBot","string",""],["tabletRight","string","@prop export let tabletLeftTop: string"]]}
+{
+  "name": "Tablet",
+  "slots": [],
+  "events": [],
+  "props": [
+    ["tabletLeftTop", "string", ""],
+    ["tabletLeftMid", "string", ""],
+    ["tabletLeftBot", "string", ""],
+    ["tabletRight", "string", "@prop export let tabletLeftTop: string"]
+  ]
+}

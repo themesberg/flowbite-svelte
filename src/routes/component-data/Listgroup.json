@@ -1,1 +1,10 @@
-{"name":"Listgroup","slots":[],"events":["on:click","on:click"],"props":[["items","ListGroupItemType[] | string[]","[]"],["active","boolean","false"],["defaultClass","string","'divide-y divide-gray-200 dark:divide-gray-600'"]]}
+{
+  "name": "Listgroup",
+  "slots": [],
+  "events": ["on:click", "on:click"],
+  "props": [
+    ["items", "ListGroupItemType[] | string[]", "[]"],
+    ["active", "boolean", "false"],
+    ["defaultClass", "string", "'divide-y divide-gray-200 dark:divide-gray-600'"]
+  ]
+}
