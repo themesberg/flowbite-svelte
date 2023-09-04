@@ -56,4 +56,5 @@
 @prop export let placeholder: string = 'Search';
 @prop export let customColor: string = '';
 @prop export let color: 'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom' = 'default';
+@prop export let innerDivClass: string = 'p-4';
 -->
