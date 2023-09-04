@@ -189,6 +189,7 @@ The `Carousel` exposes the `change` event containing info about the currently di
 ```svelte example
 <script>
   import { Carousel, Thumbnails, Button, Indicator } from 'flowbite-svelte';
+  import { CaretRightOutline } from 'flowbite-svelte-icons';
   import { images } from './imageData/+server.js';
   let index = 0;
 </script>
@@ -202,7 +203,7 @@ The `Carousel` exposes the `change` event containing info about the currently di
     </Indicators>
     <Controls let:changeSlide let:ControlButton>
       <ControlButton name="Previous" forward={false} on:click={changeSlide(false)} class="bg-red-300/50 dark:bg-red-400/50" />
-      <Button pill class="py-2 px-3 absolute top-1/2 -translate-y-1/2 right-4 font-bold" on:click={changeSlide(true)}>+</Button>
+      <Button pill class="p-2 absolute top-1/2 -translate-y-1/2 right-4 font-bold" on:click={changeSlide(true)}><CaretRightOutline /></Button>
     </Controls>
   </Carousel>
   <Thumbnails class="bg-transparent gap-3" let:Thumbnail let:image let:selected {images} bind:index>
