@@ -21,3 +21,11 @@
     </button>
   {/each}
 </div>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let activeClass = 'opacity-100';
+@prop export let inactiveClass = 'opacity-60';
+-->

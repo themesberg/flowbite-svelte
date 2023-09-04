@@ -199,6 +199,22 @@
       "types": "./dist/carousels/Carousel.svelte.d.ts",
       "svelte": "./dist/carousels/Carousel.svelte"
     },
+    "./carousels/ControlButton.svelte": {
+      "types": "./dist/carousels/ControlButton.svelte.d.ts",
+      "svelte": "./dist/carousels/ControlButton.svelte"
+    },
+    "./carousels/Controls.svelte": {
+      "types": "./dist/carousels/Controls.svelte.d.ts",
+      "svelte": "./dist/carousels/Controls.svelte"
+    },
+    "./carousels/Indicators.svelte": {
+      "types": "./dist/carousels/Indicators.svelte.d.ts",
+      "svelte": "./dist/carousels/Indicators.svelte"
+    },
+    "./carousels/Thumbnail.svelte": {
+      "types": "./dist/carousels/Thumbnail.svelte.d.ts",
+      "svelte": "./dist/carousels/Thumbnail.svelte"
+    },
     "./carousels/Thumbnails.svelte": {
       "types": "./dist/carousels/Thumbnails.svelte.d.ts",
       "svelte": "./dist/carousels/Thumbnails.svelte"

@@ -9,13 +9,9 @@ thumnailSize: w-48
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, } from '../../utils'
-  // import { props as items } from '../../props/Carousel.json'
-  // import { props as items2 } from '../../props/Indicators.json'
-  // import { props as items3 } from '../../props/Controls.json'
-  // import { props as items4 } from '../../props/ControlButton.json'
-  // import { props as items5 } from '../../props/Thumbnails.json'
-  // import { props as items6 } from '../../props/Thumbnail.json'
+  import { CompoAttributesViewer } from '../../utils'
+
+  const components = 'Carousel, Indicators, Controls, ControlButton, Thumbnails, Thumbnail';
 </script>
 
 The carousel component can be used to cycle through a set of elements using custom options, controls, and indicators.
@@ -84,7 +80,7 @@ The default value for `duration` is set to zero that means no autochange of imag
 </script>
 
 <div class="max-w-4xl">
-  <Carousel {images} duration=3000 />
+  <Carousel {images} duration="3000" />
 </div>
 ```
 
@@ -137,11 +133,11 @@ You can control the `Carousel` component externally by the `index` prop. Here is
 </script>
 
 <div class="max-w-4xl space-y-4">
-  <Carousel {images} let:Indicators let:Controls bind:index >
+  <Carousel {images} let:Indicators let:Controls bind:index>
     <Controls />
-    <Indicators  />
+    <Indicators />
   </Carousel>
-  <Thumbnails {images} bind:index/>
+  <Thumbnails {images} bind:index />
 </div>
 ```
 
@@ -159,12 +155,12 @@ The `Carousel` exposes the `change` event containing info about the currently di
 </script>
 
 <div class="max-w-4xl space-y-4">
-  <Carousel {images} let:Indicators let:Controls on:change={({detail})=> image=detail}>
+  <Carousel {images} let:Indicators let:Controls on:change={({ detail }) => (image = detail)}>
     <Controls />
     <Indicators />
   </Carousel>
 
-  <div class='rounded h-10 bg-gray-300 dark:bg-gray-700 dark:text-white p-2 my-2 text-center'>
+  <div class="rounded h-10 bg-gray-300 dark:bg-gray-700 dark:text-white p-2 my-2 text-center">
     {image?.alt}
   </div>
 </div>
@@ -172,7 +168,7 @@ The `Carousel` exposes the `change` event containing info about the currently di
 
 ## Customization
 
-### Basic customization 
+### Basic customization
 
 ```svelte example
 <script>
@@ -199,8 +195,8 @@ The `Carousel` exposes the `change` event containing info about the currently di
 
 <div class="max-w-4xl space-y-4">
   <Carousel {images} let:Indicators let:Controls bind:index>
-    <Indicators let:selected let:index >
-      <Indicator color={selected? 'red': 'green'} class="w-5 h-5  text-white border border-white {selected? 'opacity-100': 'opacity-80'}">
+    <Indicators let:selected let:index>
+      <Indicator color={selected ? 'red' : 'green'} class="w-5 h-5  text-white border border-white {selected ? 'opacity-100' : 'opacity-80'}">
         {index}
       </Indicator>
     </Indicators>
@@ -214,8 +210,6 @@ The `Carousel` exposes the `change` event containing info about the currently di
   </Thumbnails>
 </div>
 ```
-
-
 
 ### Carousel transition
 
@@ -236,48 +230,11 @@ The `Carousel` exposes the `change` event containing info about the currently di
 </div>
 ```
 
-
-## Props
+## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-<!-- 
-### Carousel
-
-<TableProp>
-  <TableDefaultRow {items} rowState='hover' />
-</TableProp>
-
-### Indicators
-
-<TableProp>
-  <TableDefaultRow items={items2} rowState='hover' />
-</TableProp>
-
-### Controls
-
-<TableProp>
-  <TableDefaultRow items={items3} rowState='hover' />
-</TableProp>
-
-### ControlButton
-
-<TableProp>
-  <TableDefaultRow items={items4} rowState='hover' />
-</TableProp>
-
-### Thumbnails
-
-<TableProp>
-  <TableDefaultRow items={items5} rowState='hover' />
-</TableProp>
-
-### Thumbnail
-
-<TableProp>
-  <TableDefaultRow items={items6} rowState='hover' />
-</TableProp>
--->
+<CompoAttributesViewer {components}/>
 
 ## References
 

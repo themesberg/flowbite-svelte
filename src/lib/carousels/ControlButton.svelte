@@ -24,3 +24,11 @@
     </span>
   </slot>
 </button>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let forward: boolean;
+@prop export let name: string;
+-->

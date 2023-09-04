@@ -20,3 +20,11 @@
     </button>
   {/each}
 </div>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let images: HTMLImgAttributes[] = [];
+@prop export let index: number = 0;
+-->
