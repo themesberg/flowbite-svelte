@@ -58,7 +58,9 @@ Use the default bottom navigation bar example to show a list of menu items as bu
 
 ## Adding links and active class
 
-Utilize the `href` prop within the `BottomNavItem` component to incorporate a hyperlink. To initiate the application of the active class, include the `activeUrl` prop within the `BottomNav` component:
+Utilize the `href` prop within the `BottomNavItem` component to incorporate a hyperlink. To initiate the application of the active class, include the `activeUrl` prop within the `BottomNav` component.
+
+By default, the `BottomNavItem` will only be set to active if the `href` and the `activeUrl` are exactly the same. If you want the current item to match nested pages you can set the `exact` prop on `BottomNavItem` to false. In the following example, the `Quickstart` button will match `/docs/pages/quickstart` or `/docs/pages/quickstart/step-1`. All other buttons will only match the exact defined `href`.
 
 ```svelte example class="flex flex-col relative"
 <script>
@@ -75,7 +77,7 @@ Utilize the `href` prop within the `BottomNavItem` component to incorporate a hy
   <BottomNavItem btnName="Home" href="/">
     <HomeSolid />
   </BottomNavItem>
-  <BottomNavItem btnName="Quickstart" href="/docs/pages/quickstart">
+  <BottomNavItem btnName="Quickstart" href="/docs/pages/quickstart" exact={false}>
     <WalletSolid />
   </BottomNavItem>
   <BottomNavItem btnName="BottomNav" href="/docs/components/bottom-navigation">
