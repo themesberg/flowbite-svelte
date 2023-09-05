@@ -8,6 +8,7 @@
   export let appBtnPosition: 'left' | 'middle' | 'right' = 'middle';
   export let activeClass: string | undefined = undefined;
   export let href: string = '';
+  export let exact: boolean = true;
 
   const navType: 'default' | 'border' | 'application' | 'pagination' | 'group' | 'card' | 'meeting' | 'video' = getContext('navType');
 
@@ -19,7 +20,8 @@
     navUrl = value;
   });
 
-  $: active = navUrl ? href === navUrl : false;
+  $: active = navUrl && exact ? href === navUrl : navUrl ? navUrl.startsWith(href) : false;
+
   const btnClasses: ButtonClassesTypes = {
     default: 'inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group',
     border: 'inline-flex flex-col items-center justify-center px-5 border-gray-200 border-x hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600',
@@ -71,4 +73,5 @@
 @prop export let appBtnPosition: 'left' | 'middle' | 'right' = 'middle';
 @prop export let activeClass: string | undefined = undefined;
 @prop export let href: string = '';
+@prop export let exact: boolean = true;
 -->
