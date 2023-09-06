@@ -223,6 +223,3 @@ export { default as Frame } from './utils/Frame.svelte';
 
 // video
 export { default as Video } from './video/Video.svelte';
-
-// types
-export * from './types.ts';
