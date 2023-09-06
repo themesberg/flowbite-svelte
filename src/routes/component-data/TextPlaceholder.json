@@ -1,9 +1,1 @@
-{
-  "name": "TextPlaceholder",
-  "slots": [],
-  "events": [],
-  "props": [
-    ["divClass", "string", "'space-y-2.5 animate-pulse'"],
-    ["size", "keyof Sizes", "'sm'"]
-  ]
-}
+{"name":"TextPlaceholder","slots":[],"events":[],"props":[["divClass","string","'space-y-2.5 animate-pulse'"],["size","keyof Sizes","'sm'"]]}

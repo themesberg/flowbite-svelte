@@ -36,7 +36,7 @@ export { default as Card } from './cards/Card.svelte';
 
 // Carousels
 export { default as Carousel } from './carousels/Carousel.svelte';
-export { default as CarouselTransition } from './carousels/CarouselTransition.svelte';
+export { default as Thumbnails } from './carousels/Thumbnails.svelte';
 
 // Charts
 export { default as Chart } from './charts/Chart.svelte';
