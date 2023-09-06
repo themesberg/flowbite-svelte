@@ -8,7 +8,7 @@
   const text_copied = 'Copied!';
   const text_not_copied = 'Copy to clipboard';
 
-  let placeholder: string = 'pnpm i flowbite flowbite-svelte';
+  let placeholder: string = 'pnpm i flowbite-svelte';
   let tooltip_text: string = text_not_copied;
   let open: boolean | undefined = undefined;
 
