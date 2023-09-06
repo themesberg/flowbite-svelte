@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.44.9](https://github.com/themesberg/flowbite-svelte/compare/v0.44.8...v0.44.9) (2023-09-06)
+
+
+### Features
+
+* Adds exact prop to BottomNavItem ([#1036](https://github.com/themesberg/flowbite-svelte/issues/1036)) ([ceeaac2](https://github.com/themesberg/flowbite-svelte/commit/ceeaac2aee25a6f3bc7a8dc87fbfcec40595ded5))
+* export types file ([42eb222](https://github.com/themesberg/flowbite-svelte/commit/42eb2229a3671c2d39e79db3fe8fa1c4f0d9b6c0))
+* new API for Carousel ([#1032](https://github.com/themesberg/flowbite-svelte/issues/1032)) ([59da5ed](https://github.com/themesberg/flowbite-svelte/commit/59da5edbaea85bd1e570349768f2de9d14292166))
+
+
+### Bug Fixes
+
+* TableSearch pl-10 posision ([a974201](https://github.com/themesberg/flowbite-svelte/commit/a974201e465ca8791ad554798644f87beaaa5a45))
+
 ### [0.44.8](https://github.com/themesberg/flowbite-svelte/compare/v0.44.7...v0.44.8) (2023-09-04)
 
 ### [0.44.7](https://github.com/themesberg/flowbite-svelte/compare/v0.44.6...v0.44.7) (2023-09-04)

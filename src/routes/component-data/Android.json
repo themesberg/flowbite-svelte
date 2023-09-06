@@ -1,12 +1,1 @@
-{
-  "name": "Android",
-  "slots": [],
-  "events": [],
-  "props": [
-    ["androidTop", "string", ""],
-    ["androidLeftTop", "string", ""],
-    ["androidLeftMid", "string", ""],
-    ["androidLeftBot", "string", ""],
-    ["androidRight", "string", "@prop export let androidTop: string"]
-  ]
-}
+{"name":"Android","slots":[],"events":[],"props":[["androidTop","string",""],["androidLeftTop","string",""],["androidLeftMid","string",""],["androidLeftBot","string",""],["androidRight","string","@prop export let androidTop: string"]]}

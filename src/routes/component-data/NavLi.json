@@ -1,10 +1,1 @@
-{
-  "name": "NavLi",
-  "slots": [],
-  "events": ["on:blur", "on:change", "on:click", "on:focus", "on:keydown", "on:keypress", "on:keyup", "on:mouseenter", "on:mouseleave", "on:mouseover"],
-  "props": [
-    ["href", "string", "''"],
-    ["activeClass", "string | undefined", "undefined"],
-    ["nonActiveClass", "string | undefined", "undefined"]
-  ]
-}
+{"name":"NavLi","slots":[],"events":["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover"],"props":[["href","string","''"],["activeClass","string | undefined","undefined"],["nonActiveClass","string | undefined","undefined"]]}

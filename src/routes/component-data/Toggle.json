@@ -1,12 +1,1 @@
-{
-  "name": "Toggle",
-  "slots": [],
-  "events": ["on:click", "on:change"],
-  "props": [
-    ["size", "'small' | 'default' | 'large' | 'custom'", "'default'"],
-    ["group", "(string | number)[]", "[]"],
-    ["value", "string | number", "''"],
-    ["checked", "boolean | undefined", "undefined"],
-    ["customSize", "string", "''"]
-  ]
-}
+{"name":"Toggle","slots":[],"events":["on:click","on:change"],"props":[["size","'small' | 'default' | 'large' | 'custom'","'default'"],["group","(string | number)[]","[]"],["value","string | number","''"],["checked","boolean | undefined","undefined"],["customSize","string","''"]]}

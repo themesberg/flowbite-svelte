@@ -9,10 +9,9 @@ thumnailSize: w-48
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
-  import { P, A } from '$lib'
+  import { CompoAttributesViewer } from '../../utils'
 
-  const components = 'Carousel, CarouselTransition, Caption, Indicator, Slide, Thumbnail'
+  const components = 'Carousel, Indicators, Controls, ControlButton, Thumbnails, Thumbnail';
 </script>
 
 The carousel component can be used to cycle through a set of elements using custom options, controls, and indicators.
@@ -21,56 +20,48 @@ The carousel component can be used to cycle through a set of elements using cust
 
 ```svelte example hideOutput
 <script>
-  import { Carousel, CarouselTransition } from 'flowbite-svelte';
+  import { Carousel } from 'flowbite-svelte';
   // ./imageData/+server.js has the following
   export const images = [
     {
-      id: 0,
-      name: 'Cosmic timetraveler',
-      imgurl: '/images/carousel/cosmic-timetraveler-pYyOZ8q7AII-unsplash.webp',
-      attribution: 'cosmic-timetraveler-pYyOZ8q7AII-unsplash.com'
+      alt: 'Cosmic timetraveler',
+      src: '/images/carousel/cosmic-timetraveler-pYyOZ8q7AII-unsplash.webp',
+      title: 'cosmic-timetraveler-pYyOZ8q7AII-unsplash.com'
     },
     {
-      id: 1,
-      name: 'Cristina Gottardi',
-      imgurl: '/images/carousel/cristina-gottardi-CSpjU6hYo_0-unsplash.webp',
-      attribution: 'cristina-gottardi-CSpjU6hYo_0-unsplash.com'
+      alt: 'Cristina Gottardi',
+      src: '/images/carousel/cristina-gottardi-CSpjU6hYo_0-unsplash.webp',
+      title: 'cristina-gottardi-CSpjU6hYo_0-unsplash.com'
     },
     {
-      id: 2,
-      name: 'Johannes Plenio',
-      imgurl: '/images/carousel/johannes-plenio-RwHv7LgeC7s-unsplash.webp',
-      attribution: 'johannes-plenio-RwHv7LgeC7s-unsplash.com'
+      alt: 'Johannes Plenio',
+      src: '/images/carousel/johannes-plenio-RwHv7LgeC7s-unsplash.webp',
+      title: 'johannes-plenio-RwHv7LgeC7s-unsplash.com'
     },
     {
-      id: 3,
-      name: 'Jonatan Pie',
-      imgurl: '/images/carousel/jonatan-pie-3l3RwQdHRHg-unsplash.webp',
-      attribution: 'jonatan-pie-3l3RwQdHRHg-unsplash.com'
+      alt: 'Jonatan Pie',
+      src: '/images/carousel/jonatan-pie-3l3RwQdHRHg-unsplash.webp',
+      title: 'jonatan-pie-3l3RwQdHRHg-unsplash.com'
     },
     {
-      id: 4,
-      name: 'Mark Harpur',
-      imgurl: '/images/carousel/mark-harpur-K2s_YE031CA-unsplash.webp',
-      attribution: 'mark-harpur-K2s_YE031CA-unsplash'
+      alt: 'Mark Harpur',
+      src: '/images/carousel/mark-harpur-K2s_YE031CA-unsplash.webp',
+      title: 'mark-harpur-K2s_YE031CA-unsplash'
     },
     {
-      id: 5,
-      name: 'Pietro De Grandi',
-      imgurl: '/images/carousel/pietro-de-grandi-T7K4aEPoGGk-unsplash.webp',
-      attribution: 'pietro-de-grandi-T7K4aEPoGGk-unsplash'
+      alt: 'Pietro De Grandi',
+      src: '/images/carousel/pietro-de-grandi-T7K4aEPoGGk-unsplash.webp',
+      title: 'pietro-de-grandi-T7K4aEPoGGk-unsplash'
     },
     {
-      id: 6,
-      name: 'Sergey Pesterev',
-      imgurl: '/images/carousel/sergey-pesterev-tMvuB9se2uQ-unsplash.webp',
-      attribution: 'sergey-pesterev-tMvuB9se2uQ-unsplash'
+      alt: 'Sergey Pesterev',
+      src: '/images/carousel/sergey-pesterev-tMvuB9se2uQ-unsplash.webp',
+      title: 'sergey-pesterev-tMvuB9se2uQ-unsplash'
     },
     {
-      id: 7,
-      name: 'Solo travel goals',
-      imgurl: '/images/carousel/solotravelgoals-7kLufxYoqWk-unsplash.webp',
-      attribution: 'solotravelgoals-7kLufxYoqWk-unsplash'
+      alt: 'Solo travel goals',
+      src: '/images/carousel/solotravelgoals-7kLufxYoqWk-unsplash.webp',
+      title: 'solotravelgoals-7kLufxYoqWk-unsplash'
     }
   ];
 </script>
@@ -78,159 +69,9 @@ The carousel component can be used to cycle through a set of elements using cust
 
 ## Default Carousel
 
-```svelte example
-<script>
-  import { Carousel } from 'flowbite-svelte';
-  import { images } from './imageData/+server.js';
-</script>
+Set the `duration` prop to define the time interval for chaning images. Time is set in miliseconds.
 
-<div class="max-w-4xl">
-  <Carousel {images} />
-</div>
-```
-
-## Loop
-
-<p>Use `loop` prop to loop the carousel. Use `duration=number` to set the interval</p>
-
-```svelte example
-<script>
-  import { Carousel } from 'flowbite-svelte';
-  import { images } from './imageData/+server.js';
-  let showThumbs = false;
-  let showCaptions = false;
-</script>
-
-<div class="max-w-4xl">
-  <Carousel {images} loop {showCaptions} {showThumbs} duration="3000" />
-</div>
-```
-
-## Without thumbnails
-
-<p>The `showThumbs` is set to `true`. Set it to `false` to hide it.</p>
-
-```svelte example
-<script>
-  import { Carousel } from 'flowbite-svelte';
-  import { images } from './imageData/+server.js';
-  let showThumbs = false;
-</script>
-
-<div class="max-w-4xl">
-  <Carousel {images} {showThumbs} />
-</div>
-```
-
-## Without caption
-
-<p>To hide the caption, set `showCaptions` to `false`.</p>
-
-```svelte example
-<script>
-  import { Carousel } from 'flowbite-svelte';
-  import { images } from './imageData/+server.js';
-  let showThumbs = false;
-  let showCaptions = false;
-</script>
-
-<div class="max-w-4xl">
-  <Carousel {images} {showThumbs} {showCaptions} />
-</div>
-```
-
-## Without indicators
-
-<p>To hide the indicators, set `showIndicators` to `false`.</p>
-
-```svelte example
-<script>
-  import { Carousel } from 'flowbite-svelte';
-  import { images } from './imageData/+server.js';
-  let showThumbs = false;
-  let showCaptions = false;
-  let showIndicators = false;
-</script>
-
-<div class="max-w-4xl">
-  <Carousel {images} {showThumbs} {showCaptions} {showIndicators} />
-</div>
-```
-
-## Without slide controllers
-
-<p>To hide the slide controllers, set `slideControls` to `false`.</p>
-
-```svelte example
-<script>
-  import { Carousel } from 'flowbite-svelte';
-  import { images } from './imageData/+server.js';
-  let showThumbs = false;
-  let showCaptions = false;
-  let slideControls = false;
-</script>
-
-<div class="max-w-4xl">
-  <Carousel {images} {showThumbs} {showCaptions} {slideControls} />
-</div>
-```
-
-## Carousel transition
-
-```svelte example
-<script>
-  import { CarouselTransition } from 'flowbite-svelte';
-  import { images } from './imageData/+server.js';
-</script>
-
-<div class="max-w-4xl">
-  <CarouselTransition {images} transitionType="fade" transitionParams={{ delay: 300, duration: 500 }} />
-</div>
-```
-
-## Loop
-
-<p>Use `loop` prop to loop the carousel. Use `duration=number` to set the interval</p>
-
-```svelte example
-<script>
-  import { CarouselTransition } from 'flowbite-svelte';
-  import { images } from './imageData/+server.js';
-</script>
-
-<div class="max-w-4xl">
-  <CarouselTransition {images} loop transitionType="fade" transitionParams={{ duration: 1000 }} showCaptions={false} showThumbs={false} duration="5000" />
-</div>
-```
-
-## Fly example
-
-```svelte example
-<script>
-  import { CarouselTransition } from 'flowbite-svelte';
-  import { images } from './imageData/+server.js';
-</script>
-
-<div class="max-w-4xl">
-  <CarouselTransition {images} transitionType="fly" transitionParams={{ delay: 250, duration: 300, x: 100 }} showCaptions={false} showThumbs={false} />
-</div>
-```
-
-## Slide example
-
-```svelte example
-<script>
-  import { CarouselTransition } from 'flowbite-svelte';
-  import { images } from './imageData/+server.js';
-  import { bounceInOut } from 'svelte/easing';
-</script>
-
-<div class="max-w-4xl">
-  <CarouselTransition {images} transitionType="slide" transitionParams={{ duration: 1500, easing: bounceInOut }} showCaptions={false} showThumbs={false} />
-</div>
-```
-
-## Custom Styling
+The default value for `duration` is set to zero that means no autochange of images. In that case you can control which image is displayed by the `index` prop.
 
 ```svelte example
 <script>
@@ -238,21 +79,161 @@ The carousel component can be used to cycle through a set of elements using cust
   import { images } from './imageData/+server.js';
 </script>
 
-<div class="max-w-4xl dark p-2 bg-gray-100 dark:bg-gray-800">
-  <Carousel {images} showCaptions={false} classSlide="flex items-center justify-center h-full w-full !rounded-none !bg-transparent" classDiv="w-full !h-[300px] sm:!h-[400px] !rounded-none !bg-transparent" imgFit="contain" classImg="!bg-none !rounded-md animate-[fadeIn_.5s_ease-in-out_1] h-full" classThumb="p-0 rounded-md shadow-xl hover:outline hover:outline-primary-500" classThumbDiv="bg-transparent" thumbBtnClass="m-2" />
+<div class="max-w-4xl">
+  <Carousel {images} duration="3000" />
+</div>
+```
+
+## Controls
+
+Use the internal `Controls` component to listen to click events which will trigger the slide event from the carousel component to each direction.
+
+You can customize the control elements with the `class` property.
+
+```svelte example
+<script>
+  import { Carousel } from 'flowbite-svelte';
+  import { images } from './imageData/+server.js';
+</script>
+
+<div class="max-w-4xl">
+  <Carousel {images} let:Controls>
+    <Controls />
+  </Carousel>
+</div>
+```
+
+## Indicators
+
+Show the carousel indicators by adding the internal `Indicators` component.
+
+```svelte example
+<script>
+  import { Carousel } from 'flowbite-svelte';
+  import { images } from './imageData/+server.js';
+</script>
+
+<div class="max-w-4xl">
+  <Carousel {images} let:Indicators>
+    <Indicators />
+  </Carousel>
+</div>
+```
+
+## Thumbnails
+
+You can control the `Carousel` component externally by the `index` prop. Here is an example how to use the `Thumbnails` component to achieve that.
+
+```svelte example
+<script>
+  import { Carousel, Thumbnails } from 'flowbite-svelte';
+  import { images } from './imageData/+server.js';
+
+  let index = 0;
+</script>
+
+<div class="max-w-4xl space-y-4">
+  <Carousel {images} let:Indicators let:Controls bind:index>
+    <Controls />
+    <Indicators />
+  </Carousel>
+  <Thumbnails {images} bind:index />
+</div>
+```
+
+## Caption
+
+The `Carousel` exposes the `change` event containing info about the currently displayed image. You can use it to build custom caption for the carousel.
+
+```svelte example
+<script>
+  import { Carousel } from 'flowbite-svelte';
+  import { images } from './imageData/+server.js';
+
+  let index = 0;
+  let image;
+</script>
+
+<div class="max-w-4xl space-y-4">
+  <Carousel {images} let:Indicators let:Controls on:change={({ detail }) => (image = detail)}>
+    <Controls />
+    <Indicators />
+  </Carousel>
+
+  <div class="rounded h-10 bg-gray-300 dark:bg-gray-700 dark:text-white p-2 my-2 text-center">
+    {image?.alt}
+  </div>
+</div>
+```
+
+## Customization
+
+### Basic customization
+
+```svelte example
+<script>
+  import { Carousel } from 'flowbite-svelte';
+  import { images } from './imageData/+server.js';
+</script>
+
+<div class="max-w-4xl space-y-4">
+  <Carousel {images} let:Indicators let:Controls class="rounded-none ring-4 ring-green-500 border-4 border-white dark:border-gray-800">
+    <Indicators class="border border-white rounded-md p-2" />
+    <Controls class="items-start text-red-400 dark:text-green-400 pt-4" />
+  </Carousel>
+</div>
+```
+
+### Advanced customization
+
+```svelte example
+<script>
+  import { Carousel, Thumbnails, Button, Indicator } from 'flowbite-svelte';
+  import { CaretRightOutline } from 'flowbite-svelte-icons';
+  import { images } from './imageData/+server.js';
+  let index = 0;
+</script>
+
+<div class="max-w-4xl space-y-4">
+  <Carousel {images} let:Indicators let:Controls bind:index>
+    <Indicators let:selected let:index>
+      <Indicator color={selected ? 'red' : 'green'} class="w-5 h-5  text-white border border-white {selected ? 'opacity-100' : 'opacity-80'}">
+        {index}
+      </Indicator>
+    </Indicators>
+    <Controls let:changeSlide let:ControlButton>
+      <ControlButton name="Previous" forward={false} on:click={changeSlide(false)} class="bg-red-300/50 dark:bg-red-400/50" />
+      <Button pill class="p-2 absolute top-1/2 -translate-y-1/2 right-4 font-bold" on:click={changeSlide(true)}><CaretRightOutline /></Button>
+    </Controls>
+  </Carousel>
+  <Thumbnails class="bg-transparent gap-3" let:Thumbnail let:image let:selected {images} bind:index>
+    <Thumbnail {...image} {selected} class="rounded-md shadow-xl hover:outline hover:outline-primary-500" />
+  </Thumbnails>
+</div>
+```
+
+### Carousel transition
+
+```svelte example
+<script>
+  import { Carousel } from 'flowbite-svelte';
+  import { images } from './imageData/+server.js';
+  import { fly } from 'svelte/transition';
+
+  const myFly = (x) => fly(x, { delay: 250, duration: 900, x: 700 });
+</script>
+
+<div class="max-w-4xl">
+  <Carousel {images} transition={myFly} let:Controls let:Indicators>
+    <Controls />
+    <Indicators />
+  </Carousel>
 </div>
 ```
 
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
-
-### Carousel styling
-
-- Use the `classDiv` prop to overwrite `divClass`.
-- Use the `classIndicatorDiv` prop to overwrite `indicatorDivCls`.
-- Use the `classCaption` prop to overwrite `captionClass`.
-- Use the `classIndicator` prop to overwrite `indicatorClass`.
 
 <CompoAttributesViewer {components}/>
 

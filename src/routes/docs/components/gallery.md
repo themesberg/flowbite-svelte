@@ -140,38 +140,6 @@ Use this example to show four larger images with two items on a row.
 <Gallery class="gap-2 grid-cols-2" items={images} />
 ```
 
-## Gallery with slider
-
-This example uses the [carousel slider](https://flowbite-svelte.com/components/carousel) functionality to show multiple images inside a slider gallery.
-
-```svelte example class="flex flex-wrap gap-2"
-<script>
-  import { CarouselTransition } from 'flowbite-svelte';
-  let showThumbs = false;
-  let showCaptions = false;
-  let showIndicators = false;
-  const images = [
-    {
-      id: 0,
-      attribution: 'shoes',
-      imgurl: '/images/carousel/cosmic-timetraveler-pYyOZ8q7AII-unsplash.webp'
-    },
-    {
-      id: 1,
-      attribution: 'small bag',
-      imgurl: '/images/carousel/cristina-gottardi-CSpjU6hYo_0-unsplash.webp'
-    },
-    { id: 2, attribution: 'plants', imgurl: '/images/carousel/johannes-plenio-RwHv7LgeC7s-unsplash.webp' },
-    { id: 3, attribution: 'watch', imgurl: '/images/carousel/jonatan-pie-3l3RwQdHRHg-unsplash.webp' },
-    { id: 4, attribution: 'watch', imgurl: '/images/carousel/mark-harpur-K2s_YE031CA-unsplash.webp' }
-  ];
-</script>
-
-<div class="max-w-4xl">
-  <CarouselTransition {images} loop {showThumbs} {showCaptions} {showIndicators} transitionType="fly" transitionParams={{ delay: 250, duration: 300, x: 100 }} />
-</div>
-```
-
 ## Gallery with tag filters
 
 Use this example to show a list of tags and filter the images below based on the activately selected tag.
