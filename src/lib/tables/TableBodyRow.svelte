@@ -38,7 +38,7 @@
   $: trClass = twMerge([!getContext('noborder') && 'border-b last:border-b-0', colors[color], getContext('hoverable') && hoverColors[color], getContext('striped') && stripColors[color], $$props.class]);
 </script>
 
-<tr {...$$restProps} class={trClass} on:click on:contextmenu>
+<tr {...$$restProps} class={trClass} on:click on:contextmenu on:dblclick>
   <slot />
 </tr>
 
