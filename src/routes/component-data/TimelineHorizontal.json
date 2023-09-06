@@ -1,1 +1,1 @@
-{ "name": "TimelineHorizontal", "slots": [], "events": [], "props": [["olClass", "string", "'sm:flex'"]] }
+{"name":"TimelineHorizontal","slots":[],"events":[],"props":[["olClass","string","'sm:flex'"]]}

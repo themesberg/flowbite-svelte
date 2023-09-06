@@ -1,10 +1,1 @@
-{
-  "name": "Search",
-  "slots": [],
-  "events": ["on:blur", "on:change", "on:input", "on:click", "on:focus", "on:keydown", "on:keypress", "on:keyup", "on:mouseenter", "on:mouseleave", "on:mouseover", "on:paste"],
-  "props": [
-    ["size", "FormSizeType", "'lg'"],
-    ["placeholder", "string", "'Search'"],
-    ["value", "any", "undefined"]
-  ]
-}
+{"name":"Search","slots":[],"events":["on:blur","on:change","on:input","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover","on:paste"],"props":[["size","FormSizeType","'lg'"],["placeholder","string","'Search'"],["value","any","undefined"]]}

@@ -1,15 +1,1 @@
-{
-  "name": "Thumbnail",
-  "slots": [],
-  "events": ["on:click"],
-  "props": [
-    ["thumbImg", "string", "''"],
-    ["altTag", "string", "''"],
-    ["titleLink", "string", "''"],
-    ["id", "number", ""],
-    ["thumbWidth", "number", "100"],
-    ["selected", "boolean", "false"],
-    ["thumbClass", "string", "''"],
-    ["thumbBtnClass", "string", "''"]
-  ]
-}
+{"name":"Thumbnail","slots":[],"events":[],"props":[["selected","boolean","false"],["activeClass","string","'opacity-100'"],["inactiveClass","string","'opacity-60'"]]}
