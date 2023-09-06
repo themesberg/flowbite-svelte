@@ -1,1 +1,1 @@
-{"name":"Carousel","slots":[],"events":["on:mousemove","on:mouseup","on:touchmove","on:touchend","on:mousedown","on:touchstart","on:transition"],"props":[["images","HTMLImgAttributes[]",""],["index","number","0"],["transition","TransitionFunc = (x) => fade(x, { duration: 700, easing: quintOut });",""],["duration","number","0"]]}
+{"name":"Carousel","slots":[],"events":[],"props":[["images","HTMLImgAttributes[]",""],["index","number","0"],["transition","TransitionFunc = (x) => fade(x, { duration: 700, easing: quintOut });",""],["duration","number","0"]]}
