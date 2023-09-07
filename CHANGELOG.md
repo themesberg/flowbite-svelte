@@ -2,12 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.44.11](https://github.com/themesberg/flowbite-svelte/compare/v0.44.10...v0.44.11) (2023-09-06)
+### [0.44.13](https://github.com/themesberg/flowbite-svelte/compare/v0.44.12...v0.44.13) (2023-09-07)
+
+
+### Features
+
+* add marquess ([4261cb0](https://github.com/themesberg/flowbite-svelte/commit/4261cb05029fe8be4d7f371d474672fe269a779b))
 
 
 ### Bug Fixes
 
-* component data and types export ([#1040](https://github.com/themesberg/flowbite-svelte/issues/1040)) ([ad55a4d](https://github.com/themesberg/flowbite-svelte/commit/ad55a4dd72722c709de2b80aba13dbb4a143e86d))
+* update Marquee role, page and test ([d6bd868](https://github.com/themesberg/flowbite-svelte/commit/d6bd868361e260c266f531cea24f87d0bcabb0f6))
+
+### [0.44.12](https://github.com/themesberg/flowbite-svelte/compare/v0.44.11...v0.44.12) (2023-09-07)
+
+### Bug Fixes
+
+- add check for empty attributes ([#1041](https://github.com/themesberg/flowbite-svelte/issues/1041)) ([756ff3f](https://github.com/themesberg/flowbite-svelte/commit/756ff3f32b3fbf25255ad0946157186ba9faf416))
+- package.json update ([897d137](https://github.com/themesberg/flowbite-svelte/commit/897d1379ab4453fcb9b7d5410e1664b39e5390a4))
+- vite.config.ts index.ts to index.js ([#1042](https://github.com/themesberg/flowbite-svelte/issues/1042)) ([61080ba](https://github.com/themesberg/flowbite-svelte/commit/61080ba82028d1ecedf49ba870ecc16c25fdbd36))
+
+### [0.44.11](https://github.com/themesberg/flowbite-svelte/compare/v0.44.10...v0.44.11) (2023-09-06)
+
+### Bug Fixes
+
+- component data and types export ([#1040](https://github.com/themesberg/flowbite-svelte/issues/1040)) ([ad55a4d](https://github.com/themesberg/flowbite-svelte/commit/ad55a4dd72722c709de2b80aba13dbb4a143e86d))
 
 ### [0.44.10](https://github.com/themesberg/flowbite-svelte/compare/v0.44.9...v0.44.10) (2023-09-06)
 

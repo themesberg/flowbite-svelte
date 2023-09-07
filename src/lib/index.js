@@ -104,6 +104,9 @@ export { default as ArrowKeyUp } from './kbd/ArrowKeyUp.svelte';
 export { default as Listgroup } from './list-group/Listgroup.svelte';
 export { default as ListgroupItem } from './list-group/ListgroupItem.svelte';
 
+// Marquee
+export { default as Marquee } from './marquee/Marquee.svelte';
+
 // Modals
 export { default as Modal } from './modals/Modal.svelte';
 
@@ -223,3 +226,6 @@ export { default as Frame } from './utils/Frame.svelte';
 
 // video
 export { default as Video } from './video/Video.svelte';
+
+// types
+export * from './types';

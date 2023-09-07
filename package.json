@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "0.44.11",
+  "version": "0.44.13",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -28,8 +28,7 @@
     "gen:docs": "svelte-lib-helpers docs",
     "gen:compo-data": "svelte-lib-helpers compo-data",
     "copy:package": "svelte-lib-helpers package",
-    "gen:addTypes": "svelte-lib-helpers addTypes",
-    "lib-helpers": "npm run gen:docs && npm run gen:compo-data && npm run build && npm run gen:exports && npm run copy:package && npm run gen:addTypes",
+    "lib-helpers": "npm run gen:docs && npm run gen:compo-data && npm run package && npm run gen:exports && npm run copy:package",
     "package:publish": "npm run lib-helpers && npm run format && standard-version && git push --follow-tags origin main && npm publish"
   },
   "devDependencies": {
@@ -68,7 +67,7 @@
     "vitest": "^0.34.3"
   },
   "peerDependencies": {
-    "svelte": "^3.55.1 || ^4.0.0"
+    "svelte": "^4.0.0"
   },
   "type": "module",
   "keywords": [
@@ -123,6 +122,13 @@
     "npm": ">=7.0.0",
     "node": ">=16.0.0"
   },
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "!dist/**/*.spec.*"
+  ],
+  "svelte": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -411,6 +417,10 @@
     "./ListgroupItem.svelte": {
       "types": "./dist/list-group/ListgroupItem.svelte.d.ts",
       "svelte": "./dist/list-group/ListgroupItem.svelte"
+    },
+    "./Marquee.svelte": {
+      "types": "./dist/marquee/Marquee.svelte.d.ts",
+      "svelte": "./dist/marquee/Marquee.svelte"
     },
     "./MegaMenu.svelte": {
       "types": "./dist/megamenu/MegaMenu.svelte.d.ts",
