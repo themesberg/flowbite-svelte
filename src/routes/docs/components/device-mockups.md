@@ -144,66 +144,65 @@ The component has the following props, type, and default values. See [types page
 
 ### DefaultMockup styling
 
-- Use the `classDefaultDiv` prop to overwrite `defaultDiv`.
-- Use the `classDefaultSlot` prop to overwrite `defaultSlot`.
-- Use the `classDefaultTop` prop to overwrite `defaultTop`.
-- Use the `classDefaultLeftTop` prop to overwrite `defaultLeftTop`.
-- Use the `classDefaultLeftBot` prop to overwrite `defaultLeftBot`.
-- Use the `classDefaultRight` prop to overwrite `defaultRight`.
+- Use the `class` prop to overwrite `div`.
+- Use the `classSlot` prop to overwrite `slot`.
+- Use the `classTop` prop to overwrite `top`.
+- Use the `classLeftTop` prop to overwrite `leftTop`.
+- Use the `classLeftBot` prop to overwrite `leftBot`.
+- Use the `classRight` prop to overwrite `right`.
 
 ### Android styling
 
-- Use the `classAndroidDiv` prop to overwrite `androidDiv`.
-- Use the `classAndroidSlot` prop to overwrite `androidSlot`.
-- Use the `classAndroidTop` prop to overwrite `androidTop`.
-- Use the `classAndroidLeftTop` prop to overwrite `androidLeftTop`.
-- Use the `classAndroidLeftMid` prop to overwrite `androidLeftMid`.
-- Use the `classAndroidLeftBot` prop to overwrite `androidLeftBot`.
-- Use the `classAndroidRight` prop to overwrite `androidRight`.
+- Use the `class` prop to overwrite `div`.
+- Use the `classSlot` prop to overwrite `slot`.
+- Use the `classTop` prop to overwrite `top`.
+- Use the `classLeftTop` prop to overwrite `leftTop`.
+- Use the `classLeftMid` prop to overwrite `leftMid`.
+- Use the `classLeftBot` prop to overwrite `leftBot`.
+- Use the `classRight` prop to overwrite `right`.
 
 ### Desktop styling
 
-- Use the classDesktopInner prop to overwrite desktopInner.
-- Use the classDesktopBot prop to overwrite desktopBot.
-- Use the classDesktopBotUnder prop to overwrite desktopBotUnder.
-- Use the classDestopDiv prop to overwrite destopDiv.
-- Use the classDesktopSlot prop to overwrite desktopSlot.
+- Use the `class` prop to overwrite `div`.
+- Use the `classInner` prop to overwrite `inner`.
+- Use the `classBot` prop to overwrite `bot`.
+- Use the `classBotUnder` prop to overwrite `botUnder`.
+- Use the `classSlot` prop to overwrite `slot`.
 
 ### Ios styling
 
-- Use the `classIosDiv` prop to overwrite `iosDiv`.
-- Use the `classIosSlot` prop to overwrite `iosSlot`.
-- Use the `classIosTop` prop to overwrite `iosTop`.
-- Use the `classIosLeftTop` prop to overwrite `iosLeftTop`.
-- Use the `classIosLeftBot` prop to overwrite `iosLeftBot`.
-- Use the `classIosRight` prop to overwrite `iosRight`.
+- Use the `class` prop to overwrite `div`.
+- Use the `classSlot` prop to overwrite `slot`.
+- Use the `classTop` prop to overwrite `top`.
+- Use the `classLeftTop` prop to overwrite `leftTop`.
+- Use the `classLeftBot` prop to overwrite `leftBot`.
+- Use the `classRight` prop to overwrite `right`.
 
 ### Laptop styling
 
-- Use the `classAndroidDiv` prop to overwrite `androidDiv`.
-- Use the `classAndroidDiv` prop to overwrite `androidDiv`.
-- Use the `classAndroidDiv` prop to overwrite `androidDiv`.
-- Use the `classAndroidDiv` prop to overwrite `androidDiv`.
-- Use the `classAndroidDiv` prop to overwrite `androidDiv`.
-- Use the `classAndroidDiv` prop to overwrite `androidDiv`.
+- Use the `class` prop to overwrite `div`.
+- Use the `classInner` prop to overwrite `inner`.
+- Use the `classBot` prop to overwrite `bot`.
+- Use the `classBotCen` prop to overwrite `botCen`.
 
 ### Smartwatch styling
 
-- Use the `classAndroidDiv` prop to overwrite `androidDiv`.
-- Use the `classAndroidDiv` prop to overwrite `androidDiv`.
-- Use the `classAndroidDiv` prop to overwrite `androidDiv`.
-- Use the `classAndroidDiv` prop to overwrite `androidDiv`.
-- Use the `classAndroidDiv` prop to overwrite `androidDiv`.
-- Use the `classAndroidDiv` prop to overwrite `androidDiv`.
+- Use the `class` prop to overwrite `div`.
+- Use the `classTop` prop to overwrite `top`.
+- Use the `classRightTop` prop to overwrite `rightTop`.
+- Use the `classRightBot` prop to overwrite `rightBot`.
+- Use the `classSlot` prop to overwrite `slot`.
+- Use the `classBot` prop to overwrite `bot`.
+
 
 ### Tablet styling
 
-- Use the `classAndroidDiv` prop to overwrite `androidDiv`.
-- Use the `classAndroidDiv` prop to overwrite `androidDiv`.
-- Use the `classAndroidDiv` prop to overwrite `androidDiv`.
-- Use the `classAndroidDiv` prop to overwrite `androidDiv`.
-- Use the `classAndroidDiv` prop to overwrite `androidDiv`.
-- Use the `classAndroidDiv` prop to overwrite `androidDiv`.
+- Use the `class` prop to overwrite `div`.
+- Use the `classLeftTop` prop to overwrite `leftTop`.
+- Use the `classLeftMid` prop to overwrite `leftMid`.
+- Use the `classLeftBot` prop to overwrite `leftBot`.
+- Use the `classRight` prop to overwrite `right`.
+- Use the `classSlot` prop to overwrite `slot`.
 
 <CompoAttributesViewer {components}/>
 
