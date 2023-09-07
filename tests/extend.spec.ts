@@ -17,3 +17,9 @@ test('Step indicator page should have h1', async ({ page }) => {
   await page.goto('/docs/extend/step-indicator');
   expect(await page.textContent('h1')).toBe('Svelte Step Indicator');
 });
+
+// marquee
+test('Marquee page should have h1', async ({ page }) => {
+  await page.goto('/docs/extend/marquee');
+  expect(await page.textContent('h1')).toBe('Svelte Marquee Banner - Flowbite');
+});

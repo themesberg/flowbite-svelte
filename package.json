@@ -418,6 +418,10 @@
       "types": "./dist/list-group/ListgroupItem.svelte.d.ts",
       "svelte": "./dist/list-group/ListgroupItem.svelte"
     },
+    "./Marquee.svelte": {
+      "types": "./dist/marquee/Marquee.svelte.d.ts",
+      "svelte": "./dist/marquee/Marquee.svelte"
+    },
     "./MegaMenu.svelte": {
       "types": "./dist/megamenu/MegaMenu.svelte.d.ts",
       "svelte": "./dist/megamenu/MegaMenu.svelte"
