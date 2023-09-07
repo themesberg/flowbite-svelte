@@ -68,7 +68,7 @@
     "vitest": "^0.34.3"
   },
   "peerDependencies": {
-    "svelte": "^3.55.1 || ^4.0.0"
+    "svelte": "^4.0.0"
   },
   "type": "module",
   "keywords": [
@@ -123,6 +123,13 @@
     "npm": ">=7.0.0",
     "node": ">=16.0.0"
   },
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "!dist/**/*.spec.*"
+  ],
+  "svelte": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
