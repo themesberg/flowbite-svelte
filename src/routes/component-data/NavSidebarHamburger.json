@@ -1,1 +1,0 @@
-{"name":"NavSidebarHamburger","slots":[],"events":["on:click"],"props":[["btnClass","string","'ml-3 md:hidden'"],["sideMenuClass","string","'h-6 w-6 shrink-0'"]]}

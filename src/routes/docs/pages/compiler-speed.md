@@ -14,41 +14,8 @@ description: Learn how you can manage and improve the Svelte compilation speed w
 
 If your Svelte app only requires a few components, it's recommended that you import them directly. Doing so can help optimize compilation speed and improve performance by reducing the amount of code that needs to be processed during compilation. Since version 0.34.1, it's now possible to import individual components.
 
-```svelte example
-<script>
-  // import Alert from 'flowbite-svelte/Alert.svelte'
-  // TODO: correct that so the above works
-  import { Alert } from 'flowbite-svelte';
-</script>
-
-<div class="p-8">
-  <Alert>
-    <span class="font-medium">Info alert!</span>
-    Change a few things up and try submitting again.
-  </Alert>
-</div>
 ```
-
-## Requirements
-
-If you are a TypeScript user, install typescript version 5.0.0 or above.
-
-As of April 2023, the typescript version 5 is available:
-
-```sh
-pnpm i -D typescript@latest
-```
-
-To avoid any complaints from the editor, add node16 or nodenext to moduleResolution in your tsconfig.json file.
-
-```json
-{
-  //...
-  "compilerOptions": {
-    // ...
-    "moduleResolution": "nodenext"
-  }
-}
+  import Alert from 'flowbite-svelte/Alert.svelte'
 ```
 
 ## Speed comparisons

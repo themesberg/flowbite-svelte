@@ -78,14 +78,12 @@ export { default as InputAddon } from './forms/InputAddon.svelte';
 export { default as Label } from './forms/Label.svelte';
 export { default as MultiSelect } from './forms/MultiSelect.svelte';
 export { default as NumberInput } from './forms/NumberInput.svelte';
-export { default as RadioInline } from './forms/RadioInline.svelte';
 export { default as Radio } from './forms/Radio.svelte';
 export { default as Range } from './forms/Range.svelte';
 export { default as Search } from './forms/Search.svelte';
 export { default as Select } from './forms/Select.svelte';
 export { default as Textarea } from './forms/Textarea.svelte';
 export { default as Toggle } from './forms/Toggle.svelte';
-export { default as VoiceSearch } from './forms/VoiceSearch.svelte';
 
 // Gallery
 export { default as Gallery } from './gallery/Gallery.svelte';

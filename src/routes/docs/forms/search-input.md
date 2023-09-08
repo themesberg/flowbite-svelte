@@ -72,7 +72,7 @@ Get started with this example if you would like to enable voice search for your 
 <form class="flex gap-2">
   <Search size="md" class="flex gap-2 items-center" placeholder="Search Mockups, Logos, Design Templates...">
     <button type="button" on:click={handleVoiceBtn} class="outline-none">
-      <MicrophoneSolid class="w-4 h-4" />
+      <MicrophoneSolid class="w-4 h-4 mr-2" />
     </button>
   </Search>
   <Button size="sm">
