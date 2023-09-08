@@ -354,10 +354,6 @@
       "types": "./dist/forms/Radio.svelte.d.ts",
       "svelte": "./dist/forms/Radio.svelte"
     },
-    "./RadioInline.svelte": {
-      "types": "./dist/forms/RadioInline.svelte.d.ts",
-      "svelte": "./dist/forms/RadioInline.svelte"
-    },
     "./Range.svelte": {
       "types": "./dist/forms/Range.svelte.d.ts",
       "svelte": "./dist/forms/Range.svelte"
@@ -377,10 +373,6 @@
     "./Toggle.svelte": {
       "types": "./dist/forms/Toggle.svelte.d.ts",
       "svelte": "./dist/forms/Toggle.svelte"
-    },
-    "./VoiceSearch.svelte": {
-      "types": "./dist/forms/VoiceSearch.svelte.d.ts",
-      "svelte": "./dist/forms/VoiceSearch.svelte"
     },
     "./Gallery.svelte": {
       "types": "./dist/gallery/Gallery.svelte.d.ts",
@@ -446,10 +438,6 @@
       "types": "./dist/navbar/NavLi.svelte.d.ts",
       "svelte": "./dist/navbar/NavLi.svelte"
     },
-    "./NavSidebarHamburger.svelte": {
-      "types": "./dist/navbar/NavSidebarHamburger.svelte.d.ts",
-      "svelte": "./dist/navbar/NavSidebarHamburger.svelte"
-    },
     "./NavUl.svelte": {
       "types": "./dist/navbar/NavUl.svelte.d.ts",
       "svelte": "./dist/navbar/NavUl.svelte"
@@ -457,10 +445,6 @@
     "./Navbar.svelte": {
       "types": "./dist/navbar/Navbar.svelte.d.ts",
       "svelte": "./dist/navbar/Navbar.svelte"
-    },
-    "./SidebarMenu.svelte": {
-      "types": "./dist/navbar/SidebarMenu.svelte.d.ts",
-      "svelte": "./dist/navbar/SidebarMenu.svelte"
     },
     "./Pagination.svelte": {
       "types": "./dist/paginations/Pagination.svelte.d.ts",

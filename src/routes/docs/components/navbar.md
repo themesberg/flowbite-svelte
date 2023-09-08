@@ -11,7 +11,7 @@ description: The navbar component can be used to show a list of navigation links
   import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
   import { Badge, Heading, P, A } from '$lib';
 
-  const components = 'Navbar, NavBrand, NavLi, NavUl, NavHamburger, Menu, SidebarMenu'
+  const components = 'Navbar, NavBrand, NavLi, NavUl, NavHamburger, Menu'
 </script>
 
 Get started with the responsive navbar component from Flowbite to quickly set up a navigation menu for your website and set up the logo, list of pages, CTA button, search input, user profile options with a dropdown, and more.
@@ -329,11 +329,6 @@ The component has the following props, type, and default values. See [types page
 ### Menu styling
 
 - Use the `class` prop to overwrite the `svg` tag class.
-
-### SidebarMenu styling
-
-- Use the `class` prop to overwrite the outer class.
-- Use the `classSideMenu` prop to overwrite the inner class.
 
 <CompoAttributesViewer {components}/>
 

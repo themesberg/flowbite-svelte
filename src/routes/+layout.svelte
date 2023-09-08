@@ -10,7 +10,6 @@
   import GitHub from './utils/icons/GitHub.svelte';
   import YouTube from './utils/icons/YouTube.svelte';
   import ToolbarLink from './utils/ToolbarLink.svelte';
-  import NavSidebarHamburger from '$lib/navbar/NavSidebarHamburger.svelte';
   import AlgoliaSearch from './utils/AlgoliaSearch.svelte';
 
   let isHomePage: boolean;
@@ -45,7 +44,7 @@
 <header class="sticky top-0 z-40 flex-none w-full mx-auto bg-white border-b border-gray-200 dark:border-gray-600 dark:bg-gray-800">
   <Navbar color="default" fluid navClass="flex items-center justify-between w-full mx-auto py-1.5 px-4 {isHomePage ? 'max-w-8xl lg:px-20 px-4' : ''}" let:hidden let:toggle>
     <span hidden={$page.route.id === '/'}>
-      <NavSidebarHamburger on:click={toggleDrawer} btnClass="mr-3 m-0 mr-3 lg:hidden" />
+      <NavHamburger on:click={toggleDrawer} btnClass="mr-3 m-0 mr-3 lg:hidden" />
     </span>
     <NavBrand href="/">
       <img src={logo} class="mr-3 h-8" alt="Flowbite Svelte Logo" />
