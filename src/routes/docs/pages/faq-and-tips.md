@@ -52,3 +52,45 @@ The following example shows how to add navigation using the key blocks:
 
 <slot />
 ```
+
+## My compiled CSS size is more than 120K. How can I make it smaller?
+
+First build the current setting and check the CSS size.
+
+```
+pnpm build
+```
+
+Then run the following command to see your compiled CSS sizes.
+
+```
+find .svelte-kit/output/client/_app/immutable -type f -name "*.css" -exec du -h {} +
+```
+
+To purge the CSS files, you can use `vite-plugin-tailwind-purgecss`.
+
+### Installation
+
+```
+pnpm i -D vite-plugin-tailwind-purgecss
+```
+
+### vite.config.ts
+
+```
+import { sveltekit } from '@sveltejs/kit/vite';
+import { defineConfig } from 'vitest/config';
+
+export default defineConfig({
+	plugins: [sveltekit()],
+	test: {
+		include: ['src/**/*.{test,spec}.{js,ts}']
+	}
+});
+```
+
+Run `pnpm build` and run the same command to see the compiled CSS size.
+
+```
+find .svelte-kit/output/client/_app/immutable -type f -name "*.css" -exec du -h {} +
+```
