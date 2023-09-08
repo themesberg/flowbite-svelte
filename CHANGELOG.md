@@ -2,17 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.44.13](https://github.com/themesberg/flowbite-svelte/compare/v0.44.12...v0.44.13) (2023-09-07)
-
-
-### Features
-
-* add marquess ([4261cb0](https://github.com/themesberg/flowbite-svelte/commit/4261cb05029fe8be4d7f371d474672fe269a779b))
+### [0.44.14](https://github.com/themesberg/flowbite-svelte/compare/v0.44.13...v0.44.14) (2023-09-08)
 
 
 ### Bug Fixes
 
-* update Marquee role, page and test ([d6bd868](https://github.com/themesberg/flowbite-svelte/commit/d6bd868361e260c266f531cea24f87d0bcabb0f6))
+* [#1044](https://github.com/themesberg/flowbite-svelte/issues/1044) [#1026](https://github.com/themesberg/flowbite-svelte/issues/1026) ([#1045](https://github.com/themesberg/flowbite-svelte/issues/1045)) ([94a3321](https://github.com/themesberg/flowbite-svelte/commit/94a332152dcb874f2c81bc6c92d6fcb3c9195a1e))
+* remove RadioInline and SidebarMenu ([e57b2b4](https://github.com/themesberg/flowbite-svelte/commit/e57b2b4a42d3444a1db75a133cce9b6cda0265ae))
+
+### [0.44.13](https://github.com/themesberg/flowbite-svelte/compare/v0.44.12...v0.44.13) (2023-09-07)
+
+### Features
+
+- add marquess ([4261cb0](https://github.com/themesberg/flowbite-svelte/commit/4261cb05029fe8be4d7f371d474672fe269a779b))
+
+### Bug Fixes
+
+- update Marquee role, page and test ([d6bd868](https://github.com/themesberg/flowbite-svelte/commit/d6bd868361e260c266f531cea24f87d0bcabb0f6))
 
 ### [0.44.12](https://github.com/themesberg/flowbite-svelte/compare/v0.44.11...v0.44.12) (2023-09-07)
 
