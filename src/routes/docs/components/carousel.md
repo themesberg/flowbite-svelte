@@ -178,7 +178,7 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
 
 <div class="max-w-4xl space-y-4">
   <Carousel {images} duration={3900} let:Indicators>
-    <a slot="slide" href={images[index].title} let:Slide let:index>
+    <a slot="slide" href="http://google.com/search?q={images[index].title}" target="_blank" let:Slide let:index>
       <Slide image={images[index]} />
     </a>
     <Indicators />
