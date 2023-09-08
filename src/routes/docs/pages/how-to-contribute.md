@@ -74,17 +74,14 @@ export interface CommentType {
 export let comment: CommentType;
 ```
 
-See more details in the [createprops' README](https://github.com/shinokada/createprops) file.
-
 Please run the following to update prop files.
 
 ```sh
-npm run gen:props
+pnpm gen:docs && pnpm gen:compo-data
 ```
 
-This script will update/generate files in `src/routes/props`.
-
-Again avoid type inference for `export`ed variables.
+This first command is to generate component documentation for all Svelte files within the src/lib directory.
+The second command is to generate JSON files containing props, slots, events information from all Svelte files in the src/lib directory, placing them in the routes/component-data directory.
 
 ## Conventional commit
 
@@ -118,7 +115,7 @@ git commit -a "feat: change btnClass name to bClass" -m "BREAKING CHANGE: change
 Before submitting a PR, please run a test:
 
 ```sh
-npm run test
+pnpm test:integration
 ```
 
 If you want to run an single test file, `tests/typography.spec.ts`:
@@ -129,7 +126,7 @@ npx playwright test tests/typography.spec.ts
 
 ## A11y Test
 
-Please test a page with [Nu Html Checker](https://validator.unl.edu/) relating to your change.
+We recommend to test a page with [Nu Html Checker](https://validator.unl.edu/) relating to your change.
 
 Test a page.
 
