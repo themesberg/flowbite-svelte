@@ -250,6 +250,10 @@
       "types": "./dist/device-mockup/DefaultMockup.svelte.d.ts",
       "svelte": "./dist/device-mockup/DefaultMockup.svelte"
     },
+    "./Desktop.svelte": {
+      "types": "./dist/device-mockup/Desktop.svelte.d.ts",
+      "svelte": "./dist/device-mockup/Desktop.svelte"
+    },
     "./DeviceMockup.svelte": {
       "types": "./dist/device-mockup/DeviceMockup.svelte.d.ts",
       "svelte": "./dist/device-mockup/DeviceMockup.svelte"
@@ -257,6 +261,10 @@
     "./Ios.svelte": {
       "types": "./dist/device-mockup/Ios.svelte.d.ts",
       "svelte": "./dist/device-mockup/Ios.svelte"
+    },
+    "./Laptop.svelte": {
+      "types": "./dist/device-mockup/Laptop.svelte.d.ts",
+      "svelte": "./dist/device-mockup/Laptop.svelte"
     },
     "./Smartwatch.svelte": {
       "types": "./dist/device-mockup/Smartwatch.svelte.d.ts",
