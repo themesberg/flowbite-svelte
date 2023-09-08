@@ -10,6 +10,7 @@
   export let ulClass: string = 'inline-flex -space-x-px items-center';
   export let table: boolean = false;
   export let large: boolean = false;
+  export let ariaLabel: string = 'Page navigation';
 
   const dispatch = createEventDispatcher();
 
@@ -24,7 +25,7 @@
   };
 </script>
 
-<nav aria-label="Page navigation">
+<nav aria-label={ariaLabel}>
   <ul class={twMerge(ulClass, table && 'divide-x dark divide-gray-700 dark:divide-gray-700', $$props.class)}>
     <li>
       <PaginationItem {large} on:click={previous} {normalClass} class={table ? 'rounded-l' : 'rounded-l-lg'}>
