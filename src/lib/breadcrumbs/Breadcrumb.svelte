@@ -23,4 +23,5 @@
 @prop export let navClass: string = 'flex';
 @prop export let solidClass: string = 'flex px-5 py-3 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700';
 @prop export let olClass: string = 'inline-flex items-center space-x-1 md:space-x-3';
+@prop export let ariaLabel: string = 'Breadcrumb';
 -->

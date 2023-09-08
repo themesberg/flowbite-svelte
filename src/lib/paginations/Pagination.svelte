@@ -57,4 +57,5 @@
 @prop export let ulClass: string = 'inline-flex -space-x-px items-center';
 @prop export let table: boolean = false;
 @prop export let large: boolean = false;
+@prop export let ariaLabel: string = 'Page navigation';
 -->

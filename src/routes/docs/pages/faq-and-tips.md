@@ -1,8 +1,8 @@
 ---
 layout: componentLayout
-title: Tips - Flowbite Svelte
-breadcrumb_title: Tips - Flowbite Svelte
-component_title: Tips
+title: FAQ and Tips - Flowbite Svelte
+breadcrumb_title: FAQ and Tips - Flowbite Svelte
+component_title: FAQ and Tips
 dir: Pages
 description: Tips for your apps.
 ---

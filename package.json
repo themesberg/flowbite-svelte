@@ -218,6 +218,10 @@
       "types": "./dist/carousels/Indicators.svelte.d.ts",
       "svelte": "./dist/carousels/Indicators.svelte"
     },
+    "./Slide.svelte": {
+      "types": "./dist/carousels/Slide.svelte.d.ts",
+      "svelte": "./dist/carousels/Slide.svelte"
+    },
     "./Thumbnail.svelte": {
       "types": "./dist/carousels/Thumbnail.svelte.d.ts",
       "svelte": "./dist/carousels/Thumbnail.svelte"

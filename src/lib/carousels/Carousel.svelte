@@ -165,4 +165,5 @@
 @prop export let index: number = 0;
 @prop export let transition: TransitionFunc = (x) => fade(x, { duration: 700, easing: quintOut });
 @prop export let duration: number = 0;
+@prop export let ariaLabel: string = 'Draggable Carousel';
 -->

@@ -28,4 +28,5 @@
 ## Props
 @prop export let images: HTMLImgAttributes[] = [];
 @prop export let index: number = 0;
+@prop export let ariaLabel: string = 'Click to view image';
 -->
