@@ -12,7 +12,6 @@
   import ToolbarLink from './utils/ToolbarLink.svelte';
   import NavSidebarHamburger from '$lib/navbar/NavSidebarHamburger.svelte';
   import AlgoliaSearch from './utils/AlgoliaSearch.svelte';
-  import { browser } from '$app/environment';
 
   let isHomePage: boolean;
   $: isHomePage = $page.route.id === '/';
@@ -96,3 +95,9 @@
 <div class="lg:flex">
   <slot />
 </div>
+
+{#key activeUrl}
+<aside class="fixed z-50 hidden right-5 bottom-5 sm:block">
+  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEAIC53I&placement=flowbite-sveltecom" id="_carbonads_js"></script>
+</aside>
+{/key}
