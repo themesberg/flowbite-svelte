@@ -2,13 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.44.14](https://github.com/themesberg/flowbite-svelte/compare/v0.44.13...v0.44.14) (2023-09-08)
+### [0.44.15](https://github.com/themesberg/flowbite-svelte/compare/v0.44.14...v0.44.15) (2023-09-08)
+
+
+### Features
+
+* add double click event on tableBodyRow ([#1037](https://github.com/themesberg/flowbite-svelte/issues/1037)) ([14a5828](https://github.com/themesberg/flowbite-svelte/commit/14a5828c93a89ad4c495f33b1cd77372da5a60b1))
+* add faq-and-tips.md and add how to purge CSS files ([#1048](https://github.com/themesberg/flowbite-svelte/issues/1048)) ([cd9adac](https://github.com/themesberg/flowbite-svelte/commit/cd9adac43e68bef6d66385ac2489ddd5672f97ce))
+* href for carousel ([#1047](https://github.com/themesberg/flowbite-svelte/issues/1047)) ([c5ab778](https://github.com/themesberg/flowbite-svelte/commit/c5ab77824dd9a61c405ed30e50110c613a61cf6e))
 
 
 ### Bug Fixes
 
-* [#1044](https://github.com/themesberg/flowbite-svelte/issues/1044) [#1026](https://github.com/themesberg/flowbite-svelte/issues/1026) ([#1045](https://github.com/themesberg/flowbite-svelte/issues/1045)) ([94a3321](https://github.com/themesberg/flowbite-svelte/commit/94a332152dcb874f2c81bc6c92d6fcb3c9195a1e))
-* remove RadioInline and SidebarMenu ([e57b2b4](https://github.com/themesberg/flowbite-svelte/commit/e57b2b4a42d3444a1db75a133cce9b6cda0265ae))
+* change export ariaLabel ([#1046](https://github.com/themesberg/flowbite-svelte/issues/1046)) ([bc9ef6a](https://github.com/themesberg/flowbite-svelte/commit/bc9ef6abc5c7ff87bebbd579bce3149dcf44f32a))
+
+### [0.44.14](https://github.com/themesberg/flowbite-svelte/compare/v0.44.13...v0.44.14) (2023-09-08)
+
+### Bug Fixes
+
+- [#1044](https://github.com/themesberg/flowbite-svelte/issues/1044) [#1026](https://github.com/themesberg/flowbite-svelte/issues/1026) ([#1045](https://github.com/themesberg/flowbite-svelte/issues/1045)) ([94a3321](https://github.com/themesberg/flowbite-svelte/commit/94a332152dcb874f2c81bc6c92d6fcb3c9195a1e))
+- remove RadioInline and SidebarMenu ([e57b2b4](https://github.com/themesberg/flowbite-svelte/commit/e57b2b4a42d3444a1db75a133cce9b6cda0265ae))
 
 ### [0.44.13](https://github.com/themesberg/flowbite-svelte/compare/v0.44.12...v0.44.13) (2023-09-07)
 
