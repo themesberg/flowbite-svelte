@@ -146,7 +146,7 @@
 
 <!-- The move listeners go here, so things keep working if the touch strays out of the element. -->
 <svelte:document on:mousemove={onDragMove} on:mouseup={onDragStop} on:touchmove={onDragMove} on:touchend={onDragStop} />
-<div bind:this={carouselDiv} class="relative" on:mousedown={onDragStart} on:touchstart={onDragStart} role="button" aria-label="Draggable Carousel" tabindex="0">
+<div bind:this={carouselDiv} class="relative" on:mousedown={onDragStart} on:touchstart|passive={onDragStart} role="button" aria-label="Draggable Carousel" tabindex="0">
   <div style={`transform: translateX(${percentOffset}%)`} {...$$restProps} class={twMerge(divClass, activeDragGesture === undefined ? 'transition-transform' : '', $$props.class)} use:loop={duration}>
     {#key images[index]}
       <img alt="..." {...images[index]} transition:transition={{}} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover" />
