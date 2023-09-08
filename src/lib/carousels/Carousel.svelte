@@ -14,6 +14,7 @@
   import { twMerge } from 'tailwind-merge';
   import Controls from './Controls.svelte';
   import Indicators from './Indicators.svelte';
+  import Slide from './Slide.svelte';
 
   type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
@@ -21,8 +22,8 @@
   export let index: number = 0;
   export let transition: TransitionFunc = (x) => fade(x, { duration: 700, easing: quintOut });
   export let duration: number = 0;
-  export let ariaLabel: string = 'Draggable Carousel'; 
-  
+  export let ariaLabel: string = 'Draggable Carousel';
+
   // Carousel
   let divClass: string = 'overflow-hidden relative rounded-lg h-56 sm:h-64 xl:h-80 2xl:h-96';
 
@@ -149,9 +150,9 @@
 <svelte:document on:mousemove={onDragMove} on:mouseup={onDragStop} on:touchmove={onDragMove} on:touchend={onDragStop} />
 <div bind:this={carouselDiv} class="relative" on:mousedown={onDragStart} on:touchstart|passive={onDragStart} role="button" aria-label={ariaLabel} tabindex="0">
   <div style={`transform: translateX(${percentOffset}%)`} {...$$restProps} class={twMerge(divClass, activeDragGesture === undefined ? 'transition-transform' : '', $$props.class)} use:loop={duration}>
-    {#key images[index]}
-      <img alt="..." {...images[index]} transition:transition={{}} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 object-cover" />
-    {/key}
+    <slot name="slide" {Slide} {index}>
+      <Slide image={images[index]} {transition} />
+    </slot>
   </div>
   <slot {index} {Controls} {Indicators} />
 </div>

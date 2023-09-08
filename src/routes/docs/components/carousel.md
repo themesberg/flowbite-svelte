@@ -166,6 +166,26 @@ The `Carousel` exposes the `change` event containing info about the currently di
 </div>
 ```
 
+## Carousel with links
+
+You can use `slot="slide"` and internal component `Slide` to control the image display. Here's an example how to wrap images with the anchor element.
+
+```svelte example
+<script>
+  import { Carousel } from 'flowbite-svelte';
+  import { images } from './imageData/+server.js';
+</script>
+
+<div class="max-w-4xl space-y-4">
+  <Carousel {images} duration={3900} let:Indicators>
+    <a slot="slide" href={images[index].title} let:Slide let:index>
+      <Slide image={images[index]} />
+    </a>
+    <Indicators />
+  </Carousel>
+</div>
+```
+
 ## Customization
 
 ### Basic customization
