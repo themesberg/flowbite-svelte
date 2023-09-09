@@ -8,12 +8,12 @@
 
   const dispatch = createEventDispatcher();
 
-  export let items: SelectOptionType[] = [];
+  export let items: SelectOptionType<any>[] = [];
   export let value: (string | number)[] = [];
   export let size: FormSizeType = 'md';
   export let dropdownClass: string = '';
 
-  let selectItems: SelectOptionType[] = [];
+  let selectItems: SelectOptionType<any>[] = [];
   let show: boolean = false;
 
   const sizes = {
@@ -44,7 +44,7 @@
     }
   });
 
-  const selectOption = (select: SelectOptionType) => {
+  const selectOption = (select: SelectOptionType<any>) => {
     if (selectItems.includes(select)) {
       clearThisOption(select);
     } else {
@@ -63,7 +63,7 @@
     dispatch('selected', selectItems);
   };
 
-  const clearThisOption = (select: SelectOptionType) => {
+  const clearThisOption = (select: SelectOptionType<any>) => {
     if (selectItems.includes(select)) {
       selectItems = selectItems.filter((o) => o !== select);
       dispatch('selected', selectItems);
@@ -119,7 +119,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let items: SelectOptionType[] = [];
+@prop export let items: SelectOptionType<any>[] = [];
 @prop export let value: (string | number)[] = [];
 @prop export let size: FormSizeType = 'md';
 @prop export let dropdownClass: string = '';
