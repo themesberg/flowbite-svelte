@@ -149,7 +149,7 @@
 <!-- The move listeners go here, so things keep working if the touch strays out of the element. -->
 <svelte:document on:mousemove={onDragMove} on:mouseup={onDragStop} on:touchmove={onDragMove} on:touchend={onDragStop} />
 <div bind:this={carouselDiv} class="relative" on:mousedown={onDragStart} on:touchstart|passive={onDragStart} role="button" aria-label={ariaLabel} tabindex="0">
-  <div style={`transform: translateX(${percentOffset}%)`} {...$$restProps} class={twMerge(divClass, activeDragGesture === undefined ? 'transition-transform' : '', $$props.class)} use:loop={duration}>
+  <div {...$$restProps} class={twMerge(divClass, activeDragGesture === undefined ? 'transition-transform' : '', $$props.class)} use:loop={duration}>
     <slot name="slide" {Slide} {index}>
       <Slide image={images[index]} {transition} />
     </slot>
