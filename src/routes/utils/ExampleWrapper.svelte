@@ -7,6 +7,7 @@
   import { page } from '$app/stores';
   import type { PageData } from '../$types';
   import { identity } from 'svelte/internal';
+  import { DesktopPcOutline, TabletOutline, MobilePhoneOutline } from 'flowbite-svelte-icons';
   export let divClass = 'w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-2 sm:p-6';
 
   // the source of the example, if you want it
@@ -31,6 +32,13 @@
   let showExpandButton: boolean = false;
   let expand: boolean = false;
   let dark: boolean = false;
+  let responsiveDevice: keyof typeof responsiveSize = 'desktop';
+
+  const responsiveSize = {
+    mobile: 'max-w-sm',
+    tablet: 'max-w-lg',
+    desktop: ''
+  };
 
   function init(node: HTMLElement) {
     browserSupport = !!window?.navigator?.clipboard;
@@ -85,11 +93,24 @@
 <div class="mt-8 code-example" bind:this={node} use:init>
   {#if !meta.hideOutput}
     <div class="w-full p-4 border border-gray-200 bg-gray-50 rounded-t-xl dark:border-gray-600 dark:bg-gray-700">
-      <div class="grid grid-cols-2">
+      <div class="grid {!!meta.hideResponsiveButton ? "grid-cols-2" : "grid-cols-3"}">
         {#if path}
           <Button size="xs" color="alternative" class="dark:!bg-gray-900 w-fit hover:text-primary-600 gap-2" href={'' + path} target="_blank" rel="noreferrer">
             <GitHub size="sm" />Edit on GitHub
           </Button>
+          {#if !meta.hideResponsiveButton}
+            <div class="flex justify-center gap-x-2">
+              <Button size="xs" color="alternative" on:click={() => (responsiveDevice = 'desktop')}>
+                <DesktopPcOutline size="sm" />
+              </Button>
+              <Button size="xs" color="alternative" on:click={() => (responsiveDevice = 'tablet')}>
+                <TabletOutline size="sm" />
+              </Button>
+              <Button size="xs" color="alternative" on:click={() => (responsiveDevice = 'mobile')}>
+                <MobilePhoneOutline size="sm" />
+              </Button>
+            </div>
+          {/if}
           <div class="ml-auto">
             <ExampleDarkMode on:click={() => (dark = !dark)} {dark} />
           </div>
@@ -100,7 +121,7 @@
     <div class="code-preview-wrapper">
       <div class="flex p-0 bg-white border-gray-200 bg-gradient-to-r code-preview dark:bg-gray-900 border-x dark:border-gray-600" class:dark>
         <div class="w-full code-responsive-wrapper">
-          <div class={twJoin(divClass, meta.class)}>
+          <div class={twJoin(divClass, meta.class, responsiveSize[responsiveDevice])}>
             <slot name="example" />
           </div>
         </div>
