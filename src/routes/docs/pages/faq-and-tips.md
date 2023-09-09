@@ -9,7 +9,7 @@ description: Tips for your apps.
 
 ## Svelte key blocks
 
-Svelte key blocks destroy and recreate their contents when the value of an expression changes. This can be useful when you are using SvelteKit (group) routing. 
+Svelte key blocks destroy and recreate their contents when the value of an expression changes. This can be useful when you are using SvelteKit (group) routing.
 
 For example, if you have a following group routing:
 

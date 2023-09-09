@@ -80,8 +80,7 @@ Please run the following to update prop files.
 pnpm gen:docs && pnpm gen:compo-data
 ```
 
-This first command is to generate component documentation for all Svelte files within the src/lib directory.
-The second command is to generate JSON files containing props, slots, events information from all Svelte files in the src/lib directory, placing them in the routes/component-data directory.
+This first command is to generate component documentation for all Svelte files within the src/lib directory. The second command is to generate JSON files containing props, slots, events information from all Svelte files in the src/lib directory, placing them in the routes/component-data directory.
 
 ## Conventional commit
 

@@ -840,15 +840,15 @@ An example to use on:click (main row) and on:dblclick (expanded row)
 
 ```svelte example
 <script>
-  import { 
-    Table, 
-    TableBody, 
-    TableBodyCell, 
-    TableBodyRow, 
-    TableHead, 
-    TableHeadCell, 
-    ImagePlaceholder, 
-    Modal 
+  import {
+    Table,
+    TableBody,
+    TableBodyCell,
+    TableBodyRow,
+    TableHead,
+    TableHeadCell,
+    ImagePlaceholder,
+    Modal
   } from 'flowbite-svelte';
   import { slide } from 'svelte/transition';
 

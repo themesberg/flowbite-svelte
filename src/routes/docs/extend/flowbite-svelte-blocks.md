@@ -8,21 +8,20 @@ description: Flowbite-Svete-Blocks provides all necessary components to get star
 ---
 
 <script>
-  import { A, List, Li, Img} from '$lib'
-  
-  const libFiles ={
-  "GitHub Repo": "https://github.com/shinokada/flowbite-svelte-blocks",
-  Docs: "https://shinokada.github.io/flowbite-svelte-blocks/",
-  Demo: "https://flowbite-svelte-blocks.vercel.app/"
-  }
+  import { Img} from '$lib'
 </script>
+
+
+- [GitHub Repo](https://github.com/themesberg/flowbite-svelte-blocks)
+- [Demo](https://flowbite-svelte-blocks.vercel.app/)
 
 ## Installation
 
 After installing Flowbite-Svelte, run the following to install Flowbite-Svelte-Blocks:
 
 ```sh
-npm i -D shinokada/flowbite-svelte-blocks
+pnpm i -D flowbite-svelte-blocks
 ```
 
-<Img src="/images/flowbite-svelte-blocks-optimized.png" alt="Flowbite Svelte Blocks" />
+
+<Img src="/images/flowbite-svelte-blocks.png" alt="Flowbite Svelte Blocks" />

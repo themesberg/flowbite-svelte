@@ -23,7 +23,7 @@ description: Use Marquee Banner to display a series of items
 
 ## Simple Maquee
 
-```svelte  example hideScript
+```svelte example hideScript
 <script>
   import { Marquee } from 'flowbite-svelte'
 </script>
@@ -38,7 +38,7 @@ description: Use Marquee Banner to display a series of items
 
 ## Hover speed
 
-```svelte  example hideScript
+```svelte example hideScript
 <script>
   import { Marquee } from 'flowbite-svelte'
 </script>
@@ -53,7 +53,7 @@ description: Use Marquee Banner to display a series of items
 
 ## Shadow
 
-```svelte  example hideScript
+```svelte example hideScript
 <script>
   import { Marquee } from 'flowbite-svelte'
 </script>

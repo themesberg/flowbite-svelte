@@ -194,7 +194,6 @@ The component has the following props, type, and default values. See [types page
 - Use the `classSlot` prop to overwrite `slot`.
 - Use the `classBot` prop to overwrite `bot`.
 
-
 ### Tablet styling
 
 - Use the `class` prop to overwrite `div`.
