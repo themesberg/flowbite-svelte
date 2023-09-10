@@ -1,10 +1,10 @@
 ---
 layout: componentLayout
-title: Svelte App Layout - Flowbite
-breadcrumb_title: App Layout
-component_title: App Layout
+title: Svelte Layout - Flowbite
+breadcrumb_title: Layout
+component_title: Layout
 dir: Extend
-description: Use App Layout to control layout
+description: Use Layout to control layout
 ---
 
 
