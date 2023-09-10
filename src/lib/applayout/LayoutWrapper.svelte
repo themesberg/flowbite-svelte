@@ -8,7 +8,7 @@
 </script>
 
 <div id="layout wrapper" class={baseClass} {...$$restProps} >
-  <!-- Add LayoutHeader component here -->
+  <!-- Add Navbar component using slot laoutHeader -->
 	<slot name="layoutHeader" />
 	<div class="flex-auto {contentDiv}">
     <!-- Add SidebarLeft here -->
