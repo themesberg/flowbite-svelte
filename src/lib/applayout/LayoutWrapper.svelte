@@ -16,6 +16,6 @@
     <slot />
     <!-- Add SidebarRight here -->
 	</div>
-  <!-- Add LayoutFooter component here-->
+  <!-- Add Footer component here-->
 	<slot name="layoutFooter" />
 </div>

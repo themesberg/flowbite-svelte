@@ -146,10 +146,6 @@
       "types": "./dist/alerts/Alert.svelte.d.ts",
       "svelte": "./dist/alerts/Alert.svelte"
     },
-    "./LayoutFooter.svelte": {
-      "types": "./dist/applayout/LayoutFooter.svelte.d.ts",
-      "svelte": "./dist/applayout/LayoutFooter.svelte"
-    },
     "./LayoutHeader.svelte": {
       "types": "./dist/applayout/LayoutHeader.svelte.d.ts",
       "svelte": "./dist/applayout/LayoutHeader.svelte"
