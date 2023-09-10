@@ -199,7 +199,7 @@ Use this web3 modal component to show crypto wallet connection options like Meta
 
 You can use five different modal sizing options starting from extra small to extra large, but keep in mind that the width of these modals will remain the same when browsing on smaller devices.
 
-```svelte example class="flex justify-center"
+```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Button, Modal } from 'flowbite-svelte';
   let id = 'size-modal';
@@ -267,7 +267,7 @@ You can use five different modal sizing options starting from extra small to ext
 
 ## Placement
 
-```svelte example class="flex justify-center"
+```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Button, Modal } from 'flowbite-svelte';
   let id;
@@ -305,7 +305,7 @@ You can use five different modal sizing options starting from extra small to ext
 
 ## Colors
 
-```svelte example class="flex justify-center"
+```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Button, Modal, P } from 'flowbite-svelte';
   let open = false;

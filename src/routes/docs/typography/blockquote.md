@@ -65,7 +65,7 @@ Use this example to show an icon above the blockquote text content.
 
 Use this example to show a blockquote component between multiple paragraph elements.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Blockquote, P } from 'flowbite-svelte';
 </script>

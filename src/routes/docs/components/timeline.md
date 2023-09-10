@@ -88,7 +88,7 @@ Use this vertical timeline component with icons and badges to show a more advanc
 
 Use this horizontally aligned timeline component to show a series of data in a chronological order.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Timeline, TimelineItem } from 'flowbite-svelte';
   import { CalendarWeekSolid } from 'flowbite-svelte-icons';

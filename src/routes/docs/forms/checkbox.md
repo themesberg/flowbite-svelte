@@ -150,7 +150,7 @@ Use this example to show a list of checkbox items grouped inside a card.
 
 Use this example to show a list of checkbox items inside a card horizontally.
 
-```svelte example hideScript
+```svelte example hideScript hideResponsiveButtons
 <script>
   import { Checkbox } from 'flowbite-svelte';
 </script>
@@ -207,7 +207,7 @@ Use this example to show a list of checkbox items inside a dropdown menu.
 
 You can align the checkbox elements horizontally by using a wrapper tag and applying the flex class.
 
-```svelte example hideScript
+```svelte example hideScript hideResponsiveButtons
 <script>
   import { Checkbox } from 'flowbite-svelte';
 </script>
@@ -222,7 +222,7 @@ You can align the checkbox elements horizontally by using a wrapper tag and appl
 
 You can use the property `inline` as the alternative.
 
-```svelte example hideScript
+```svelte example hideScript hideResponsiveButtons
 <script>
   import { Checkbox } from 'flowbite-svelte';
 </script>
@@ -235,7 +235,7 @@ You can use the property `inline` as the alternative.
 
 ## Colors
 
-```svelte example hideScript
+```svelte example hideScript hideResponsiveButtons
 <script>
   import { Label, Checkbox } from 'flowbite-svelte';
 </script>
@@ -258,7 +258,7 @@ You can use the property `inline` as the alternative.
 
 Use this example of an advanced layout of checkbox elements where the label parent element can be styled when the checkbox is checked.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Checkbox } from 'flowbite-svelte';
   import React from '../../utils/icons/React.svelte';

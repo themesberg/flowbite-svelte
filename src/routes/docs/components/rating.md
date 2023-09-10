@@ -237,7 +237,7 @@ Use this component to show a single rating comment and its score alongside other
 
 Use this component to show the review content from a user alongside the avatar, location, details, and the score inside a card element.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Review } from 'flowbite-svelte';
   import { LandmarkSolid, CalendarMonthSolid, UsersGroupOutline, ThumbsUpSolid, ThumbsDownSolid } from 'flowbite-svelte-icons';

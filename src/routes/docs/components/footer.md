@@ -28,7 +28,7 @@ The footer is one of the most underestimated sections of a website being located
 
 <p>Use this footer component to show a copyright notice and some helpful website links.</p>
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Footer, FooterCopyright, FooterLinkGroup, FooterLink } from 'flowbite-svelte';
 </script>
@@ -48,7 +48,7 @@ The footer is one of the most underestimated sections of a website being located
 
 <p>Use this component to show your brand’s logo, a few website links and the copyright notice on a second row.</p>
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Footer, FooterCopyright, FooterLinkGroup, FooterBrand, FooterLink } from 'flowbite-svelte';
 </script>
@@ -72,7 +72,7 @@ The footer is one of the most underestimated sections of a website being located
 
 <p>This footer component can be used to show your brand’s logo, multiple rows of website links, a copyright notice and social media profile icons including Twitter, Facebook, Instagram, and more.</p>
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Footer, FooterCopyright, FooterLinkGroup, FooterLink, FooterBrand, FooterIcon } from 'flowbite-svelte';
   import { FacebookSolid, GithubSolid, DiscordSolid, TwitterSolid } from 'flowbite-svelte-icons';
@@ -136,7 +136,7 @@ The footer is one of the most underestimated sections of a website being located
 
 <p>If you have a website with many pages you can use this footer component to show a sitemap spanning the entire width of a row followed below by a copyright notice and social media icons.</p>
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Footer, FooterLinkGroup, FooterLink, FooterBrand, FooterIcon, FooterCopyright } from 'flowbite-svelte';
   import { FacebookSolid, GithubSolid, DiscordSolid, TwitterSolid } from 'flowbite-svelte-icons';
@@ -208,7 +208,7 @@ The footer is one of the most underestimated sections of a website being located
 
 Use this example to set create a sticky footer by using a fixed position to the bottom of the document page as the user scrolls up or down the main content area.
 
-```svelte example class="relative"
+```svelte example class="relative" hideResponsiveButtons
 <script>
   import { Footer, FooterLinkGroup, FooterLink, ImagePlaceholder, TextPlaceholder, Skeleton, FooterCopyright } from 'flowbite-svelte';
 </script>

@@ -113,7 +113,7 @@ You can use the following example of a card element with an image for blog posts
 
 If you want to spice up your cards you can use the following card which has its child elements aligned horizontally.
 
-```svelte example class="flex justify-center flex-wrap gap-2"
+```svelte example class="flex justify-center flex-wrap gap-2" hideResponsiveButtons
 <script>
   import { Card, Button, Toggle } from 'flowbite-svelte';
   let hCard = false;
@@ -347,7 +347,7 @@ Show detailed information to potential customers about your product’s pricing 
 
 Use this example to split cards into multiple sections such as for testimonials or reviews.
 
-```svelte example class="flex justify-center flex-wrap gap-2"
+```svelte example class="flex justify-center flex-wrap gap-2" hideResponsiveButtons
 <script>
   import { Card } from 'flowbite-svelte';
 </script>

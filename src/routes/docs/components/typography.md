@@ -21,7 +21,7 @@ We have listed some of the commonly used typography classes that we use througho
 
 Use the following text-size utility classes from Tailwind to set the font size for any text element.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <p class="text-xs dark:text-white">Flowbite</p>
 
 <p class="text-sm dark:text-white">FlowBite</p>
@@ -53,7 +53,7 @@ Use the following text-size utility classes from Tailwind to set the font size f
 
 Use the following font-weight utility classes to set the font weight for any text element.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <p class="font-thin dark:text-white">FlowBite</p>
 
 <p class="font-extralight dark:text-white">FlowBite</p>
@@ -77,7 +77,7 @@ Use the following font-weight utility classes to set the font weight for any tex
 
 Use the following leading-type utility classes to set the line height for any text element.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <p class="leading-none dark:text-gray-400">Themesberg was created to bring quality ...</p>
 
 <p class="leading-tight dark:text-gray-400">Themesberg was created to bring quality ...</p>
@@ -95,7 +95,7 @@ Use the following leading-type utility classes to set the line height for any te
 
 Use the following code to create list items with ordered and unordered lists.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { List, Li, Heading } from 'flowbite-svelte';
 </script>
@@ -124,7 +124,7 @@ Use the following code to create list items with ordered and unordered lists.
 
 Use the list-inside and list-outside classes to set the list item position inside a list component.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { List, Li, Heading } from 'flowbite-svelte';
 </script>
@@ -147,7 +147,7 @@ Use the list-inside and list-outside classes to set the list item position insid
 
 You can use the following classes to set the text decoration for any inline text element.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <p class="underline dark:text-gray-400">please read our terms and services</p>
 
 <p class="line-through dark:text-gray-400">please read our terms and services</p>
