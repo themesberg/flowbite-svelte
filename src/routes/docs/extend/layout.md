@@ -13,7 +13,7 @@ description: Use Layout to control layout
 
 ```svelte example
 <script>
-  import {LayoutWrapper, LayoutHeader, LayoutFooter, PageContent, PageFooter, PageHeader, SidebarLeft, SidebarRight } from '$lib'
+  import {LayoutWrapper, LayoutHeader, PageContent, PageFooter, PageHeader, SidebarLeft, SidebarRight, Footer } from '$lib'
 </script>
 <div style="display: contents" class="h-full overflow-hidden">
 <LayoutWrapper 
@@ -27,13 +27,19 @@ description: Use Layout to control layout
   </SidebarLeft>
   <PageContent class="h-80 bg-green-100">
     Page content
+    <PageHeader slot="pageHeader" class="h-16">
+      Page Header
+    </PageHeader>
+    <Footer slot="pageFooter" class="h-16 rounded-none">
+      Page Footer
+    </Footer>
   </PageContent>
   <SidebarRight class="bg-violet-100">
     Sidebar right
   </SidebarRight>
-	<LayoutFooter slot="layoutFooter" class="h-24 bg-lime-100">
+	<Footer slot="layoutFooter" class="h-24 bg-lime-100 rounded-none">
     Layout Footer
-  </LayoutFooter>
+  </Footer>
 </LayoutWrapper>
 </div>
 ```

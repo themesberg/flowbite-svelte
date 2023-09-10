@@ -100,7 +100,6 @@ export { default as ArrowKeyUp } from './kbd/ArrowKeyUp.svelte';
 
 // Layout
 export { default as LayoutWrapper } from './applayout/LayoutWrapper.svelte'
-export { default as LayoutFooter } from './applayout/LayoutFooter.svelte'
 export { default as LayoutHeader } from './applayout/LayoutHeader.svelte'
 export { default as PageContent } from './applayout/PageContent.svelte'
 export { default as PageFooter } from './applayout/PageFooter.svelte'

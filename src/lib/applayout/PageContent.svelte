@@ -7,11 +7,13 @@
 <!-- Page content -->
 <div id="page" class={twMerge(pageDiv, scrollbarGutter)} on:scroll>
   <!-- Add PageHeader here -->
+  <slot name="pageHeader" />
   <!-- Slot: Page Content (default) -->
   <main id="page-content" class="flex-auto {$$props.class} " {...$$restProps} >
     <slot />
   </main>
   <!-- Add Page Footer here -->
+  <slot name="pageFooter" />
 </div>
 
 <!--
