@@ -149,14 +149,15 @@
     }
 
     return () => {
+      // This is onDestroy function
       triggerEls.forEach((element: HTMLElement) => {
         if (element) {
           for (const [name, handler] of events) element.removeEventListener(name, handler);
         }
       });
       if (referenceEl) {
-        referenceEl.addEventListener('focusout', hideHandler);
-        referenceEl.addEventListener('mouseleave', hideHandler);
+        referenceEl.removeEventListener('focusout', hideHandler);
+        referenceEl.removeEventListener('mouseleave', hideHandler);
       }
     };
   });
