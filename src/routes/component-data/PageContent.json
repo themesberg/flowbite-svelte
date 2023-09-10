@@ -1,1 +1,1 @@
-{"name":"PageContent","slots":[],"events":["on:scroll"],"props":[["scrollbarGutter","string","'auto'"]]}
+{"name":"PageContent","slots":["pageHeader","pageFooter"],"events":["on:scroll"],"props":[["scrollbarGutter","string","'auto'"]]}
