@@ -42,7 +42,7 @@ To get started with using tooltips all you need to do is set `triggeredBy` attri
 
 You can use choose between dark and light version styles for the tooltip component by changing the utility classes from Tailwind CSS and by applying the `type={light|dark}` data attribute.
 
-```svelte example class="flex items-end gap-2 h-32"
+```svelte example class="flex items-end gap-2 h-32" hideResponsiveButtons
 <script>
   import { Tooltip, Button } from 'flowbite-svelte';
   let type = 'dark';
@@ -60,7 +60,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 
 **Note!** This examples shows you also how to share one tooltip between multiple triggering elements using advanced CSS query.
 
-```svelte example class="flex items-center gap-2 h-36"
+```svelte example class="flex items-center gap-2 h-36" hideResponsiveButtons
 <script>
   import { Tooltip, Button } from 'flowbite-svelte';
   let placement = 'left';
@@ -124,7 +124,7 @@ Various color palettes can be set for a tooltip by using the `color` property fr
 
 When you want to add a fully custom styles, use `type="custom"`, `defaultClass`, and `class` to modify the tooltip styling.
 
-```svelte example class="flex items-center h-64 gap-2"
+```svelte example class="flex items-center h-64 gap-2" hideResponsiveButtons
 <script>
   import { Tooltip, Button } from 'flowbite-svelte';
 </script>

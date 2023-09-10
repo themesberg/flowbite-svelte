@@ -334,7 +334,7 @@ Use this interactive toast component to encourage users to make a certain action
 
 Use the position property to position these toast components relative to the main content wrapper element from your document.
 
-```svelte example hideScript
+```svelte example hideScript hideResponsiveButtons
 <script>
   import { Toast } from 'flowbite-svelte';
 </script>

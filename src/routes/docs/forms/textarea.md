@@ -99,7 +99,7 @@ Most often the textarea component is used as the main text field input element i
 
 If you want to build a chatroom component you will usually want to use a textarea element to allow users to write multi-line chunks of text.
 
-```svelte example class="space-y-4"
+```svelte example class="space-y-4" hideResponsiveButtons
 <script>
   import { Textarea, Alert, ToolbarButton } from 'flowbite-svelte';
   import { ImageOutline, FaceGrinOutline, PapperPlaneOutline } from 'flowbite-svelte-icons';

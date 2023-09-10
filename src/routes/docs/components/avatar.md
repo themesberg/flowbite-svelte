@@ -185,7 +185,7 @@ Use this example if you want to show a dropdown menu when clicking on the avatar
 
 Select size from xs | sm | md | lg | xl.
 
-```svelte example class="flex flex-col gap-4" hideScript
+```svelte example class="flex flex-col gap-4" hideScript hideResponsiveButtons
 <script>
   import { Avatar } from 'flowbite-svelte';
 </script>

@@ -53,7 +53,7 @@ To initialize a speed dial component you need to wrap the trigger element and th
 
 The Speed Dial components accommodate a variety of Button component properties, including color options (blue, dark, alternative, light, green, red, yellow, primary, and purple), gradient, shadow, and outline styles. For further information, please refer to **[the Button component](https://flowbite-svelte.com/components/button)** documentation.
 
-```svelte example class="relative h-96"
+```svelte example class="relative h-96" hideResponsiveButtons
 <script>
   import { SpeedDial, SpeedDialButton } from 'flowbite-svelte';
   import { ShareNodesSolid } from 'flowbite-svelte-icons';

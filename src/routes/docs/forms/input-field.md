@@ -31,7 +31,7 @@ On this page you will find all of the input types based on multiple variants, st
 
 Use this example as a generic form element which includes multiple input fields types such as text, email, password, number, URL, and phone number and use the grid layout to add multiple columns and rows.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Input, Label, Helper, Button, Checkbox, A } from 'flowbite-svelte';
 </script>
@@ -184,7 +184,7 @@ Use the following example to apply validation styles for success and error messa
 
 This example can be used to add a descriptive icon or additional text inside the input field.
 
-```svelte example class="space-y-6"
+```svelte example class="space-y-6" hideResponsiveButtons
 <script>
   import { Label, Input, Button, InputAddon, ButtonGroup, Checkbox } from 'flowbite-svelte';
 </script>

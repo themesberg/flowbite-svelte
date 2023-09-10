@@ -327,7 +327,7 @@ Increase or decrease the default offset by adding the `offset` attribute where t
 
 Customize the animation of the popover component by using the transition functions from Svelte.
 
-```svelte example class="flex h-44 items-end justify-center gap-8"
+```svelte example class="flex h-44 items-end justify-center gap-8" hideResponsiveButtons
 <script>
   import { Popover, Button } from 'flowbite-svelte';
   import { blur, fade, slide } from 'svelte/transition';
