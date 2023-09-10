@@ -93,12 +93,12 @@
 <div class="mt-8 code-example" bind:this={node} use:init>
   {#if !meta.hideOutput}
     <div class="w-full p-4 border border-gray-200 bg-gray-50 rounded-t-xl dark:border-gray-600 dark:bg-gray-700">
-      <div class="grid {!!meta.hideResponsiveButton ? "grid-cols-2" : "grid-cols-3"}">
+      <div class="grid {!!meta.hideResponsiveButtons ? "grid-cols-2" : "grid-cols-3"}">
         {#if path}
           <Button size="xs" color="alternative" class="dark:!bg-gray-900 w-fit hover:text-primary-600 gap-2" href={'' + path} target="_blank" rel="noreferrer">
             <GitHub size="sm" />Edit on GitHub
           </Button>
-          {#if !meta.hideResponsiveButton}
+          {#if !meta.hideResponsiveButtons}
             <div class="flex justify-center gap-x-2">
               <Button size="xs" color="alternative" on:click={() => (responsiveDevice = 'desktop')}>
                 <DesktopPcOutline size="sm" />
