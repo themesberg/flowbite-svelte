@@ -146,6 +146,38 @@
       "types": "./dist/alerts/Alert.svelte.d.ts",
       "svelte": "./dist/alerts/Alert.svelte"
     },
+    "./LayoutFooter.svelte": {
+      "types": "./dist/applayout/LayoutFooter.svelte.d.ts",
+      "svelte": "./dist/applayout/LayoutFooter.svelte"
+    },
+    "./LayoutHeader.svelte": {
+      "types": "./dist/applayout/LayoutHeader.svelte.d.ts",
+      "svelte": "./dist/applayout/LayoutHeader.svelte"
+    },
+    "./LayoutWrapper.svelte": {
+      "types": "./dist/applayout/LayoutWrapper.svelte.d.ts",
+      "svelte": "./dist/applayout/LayoutWrapper.svelte"
+    },
+    "./PageContent.svelte": {
+      "types": "./dist/applayout/PageContent.svelte.d.ts",
+      "svelte": "./dist/applayout/PageContent.svelte"
+    },
+    "./PageFooter.svelte": {
+      "types": "./dist/applayout/PageFooter.svelte.d.ts",
+      "svelte": "./dist/applayout/PageFooter.svelte"
+    },
+    "./PageHeader.svelte": {
+      "types": "./dist/applayout/PageHeader.svelte.d.ts",
+      "svelte": "./dist/applayout/PageHeader.svelte"
+    },
+    "./SidebarLeft.svelte": {
+      "types": "./dist/applayout/SidebarLeft.svelte.d.ts",
+      "svelte": "./dist/applayout/SidebarLeft.svelte"
+    },
+    "./SidebarRight.svelte": {
+      "types": "./dist/applayout/SidebarRight.svelte.d.ts",
+      "svelte": "./dist/applayout/SidebarRight.svelte"
+    },
     "./Avatar.svelte": {
       "types": "./dist/avatar/Avatar.svelte.d.ts",
       "svelte": "./dist/avatar/Avatar.svelte"

@@ -8,3 +8,10 @@
 <aside id="sidebar-left" class={sidebarLeftClass} {...$$restProps} >
   <slot />
 </aside>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let slotSidebarLeft = 'w-auto';
+-->

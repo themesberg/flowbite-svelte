@@ -13,3 +13,10 @@
   </main>
   <!-- Add Page Footer here -->
 </div>
+
+<!--
+@component
+[Go to docs](https://flowbite-svelte.com/)
+## Props
+@prop export let scrollbarGutter = 'auto';
+-->
