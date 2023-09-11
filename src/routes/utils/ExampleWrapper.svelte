@@ -111,7 +111,7 @@
 
   const updateHeightContent = () => {
     if (codeResponsiveContent) {
-      codeResponsiveContent.style.height = `${((iframe.contentDocument?.body?.firstChild as HTMLDivElement)?.offsetHeight || 0)}px`;
+      codeResponsiveContent.style.height = `${(iframe.contentDocument?.body?.firstChild as HTMLDivElement)?.offsetHeight || 0}px`;
     }
   };
 
