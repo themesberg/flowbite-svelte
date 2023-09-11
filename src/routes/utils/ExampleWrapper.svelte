@@ -20,6 +20,8 @@
   let browserSupport: boolean = false;
   let code: HTMLElement;
   let iframe: HTMLIFrameElement;
+  let iframeLoad: boolean = false;
+  let codeResponsiveContent: HTMLDivElement;
 
   let data: PageData = $page.data;
 
@@ -91,31 +93,41 @@
 
   let copy_text = 'Copy';
 
-  onMount(() => {
-    if (!iframe) return;
-    // we get the content of head
+  const injectContent = () => {
+    iframeLoad = true;
     const head = document.querySelector('head');
-    // we put the content of head in the head of the iframe
+    // put the content of head in the head of the iframe
     iframe.contentDocument?.head.insertAdjacentHTML('beforeend', head?.outerHTML || '');
-    // we append the component content in the iframe body
+    // append the component content in the iframe body
     iframe.contentDocument?.body.append(...iframe.childNodes);
+    // update the height of the preview based on the height of the iframe content
+    updateHeightContent();
+    // listen change on height of the iframe content and update the preview height
+    if (iframe.contentDocument?.body.firstChild) {
+      const resizeObserver = new ResizeObserver(updateHeightContent);
+      resizeObserver.observe(iframe.contentDocument.body.firstChild as Element);
+    }
+  };
+
+  const updateHeightContent = () => {
+    if (codeResponsiveContent) {
+      codeResponsiveContent.style.height = `${((iframe.contentDocument?.body?.firstChild as HTMLDivElement)?.offsetHeight || 0) + 50}px`;
+    }
+  };
+
+  onMount(() => {
+    // workaround for svelte issue https://github.com/sveltejs/svelte/issues/6967
+    setTimeout(() => {
+      if (iframe && !iframeLoad) {
+        iframe.dispatchEvent(new Event('load'));
+      }
+    }, 500);
   });
 
   $: {
     if (iframe) {
       // toggle dark mode class in the iframe
       dark ? iframe?.contentDocument?.documentElement.classList.add('dark') : iframe?.contentDocument?.documentElement.classList.remove('dark');
-    }
-  }
-  $: {
-    if (responsiveDevice && iframe) {
-      // we update the height of the preview based on the height of the iframe content
-      setTimeout(() => {
-        const preview = node.querySelector('.code-responive-content') as HTMLDivElement;
-        if (preview) {
-          preview.style.height = `${((iframe.contentDocument?.body.firstChild as HTMLDivElement)?.offsetHeight || 0) + 50}px`;
-        }
-      }, 100);
     }
   }
 </script>
@@ -153,7 +165,7 @@
         <div class="w-full code-responsive-wrapper">
           <div class="code-responive-content {twJoin(divClass, responsiveSize[responsiveDevice])}">
             {#if !meta.hideResponsiveButtons}
-              <iframe bind:this={iframe} class="w-full h-full" title="iframe-code-content">
+              <iframe bind:this={iframe} class="w-full h-full" title="iframe-code-content" on:load={injectContent}>
                 <div class={meta.class}>
                   <slot name="example" />
                 </div>
