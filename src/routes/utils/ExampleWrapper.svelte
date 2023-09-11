@@ -111,7 +111,7 @@
 
   const updateHeightContent = () => {
     if (codeResponsiveContent) {
-      codeResponsiveContent.style.height = `${((iframe.contentDocument?.body?.firstChild as HTMLDivElement)?.offsetHeight || 0) + 50}px`;
+      codeResponsiveContent.style.height = `${((iframe.contentDocument?.body?.firstChild as HTMLDivElement)?.offsetHeight || 0)}px`;
     }
   };
 
@@ -163,11 +163,13 @@
     <div class="code-preview-wrapper">
       <div class="flex p-0 bg-white border-gray-200 bg-gradient-to-r code-preview dark:bg-gray-900 border-x dark:border-gray-600" class:dark>
         <div class="w-full code-responsive-wrapper">
-          <div class="code-responive-content {twJoin(divClass, responsiveSize[responsiveDevice])}">
+          <div class="code-responive-content {twJoin(!!meta.hideResponsiveButtons ? divClass : 'mx-auto', responsiveSize[responsiveDevice])}" bind:this={codeResponsiveContent}>
             {#if !meta.hideResponsiveButtons}
               <iframe bind:this={iframe} class="w-full h-full" title="iframe-code-content" on:load={injectContent}>
-                <div class={meta.class}>
-                  <slot name="example" />
+                <div class={divClass}>
+                  <div class={meta.class}>
+                    <slot name="example" />
+                  </div>
                 </div>
               </iframe>
             {:else}
