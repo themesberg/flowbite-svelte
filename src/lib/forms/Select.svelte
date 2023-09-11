@@ -2,7 +2,7 @@
   import { twMerge } from 'tailwind-merge';
   import type { SelectOptionType } from '../types';
 
-  export let items: SelectOptionType[] = [];
+  export let items: SelectOptionType<any>[] = [];
   export let value: any = undefined;
   export let placeholder: string = 'Choose option ...';
   export let underline: boolean = false;
@@ -39,7 +39,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let items: SelectOptionType[] = [];
+@prop export let items: SelectOptionType<any>[] = [];
 @prop export let value: any = undefined;
 @prop export let placeholder: string = 'Choose option ...';
 @prop export let underline: boolean = false;

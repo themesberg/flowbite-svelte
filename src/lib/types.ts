@@ -57,9 +57,9 @@ export type ReviewType = {
   item3: string | undefined;
 };
 
-export type SelectOptionType = {
+export type SelectOptionType<T> = {
   name: string | number;
-  value: string | number;
+  value: T;
 };
 
 export type TransitionTypes = 'fade' | 'fly' | 'slide' | 'blur' | 'in:fly' | 'out:fly' | 'in:slide' | 'out:slide' | 'in:fade' | 'out:fade' | 'in:blur' | 'out:blur';
