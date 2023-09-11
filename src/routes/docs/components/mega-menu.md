@@ -27,7 +27,7 @@ The mega menu component is a full-width dropdown that can be triggered by clicki
 
 Use this example to show a list of links aligned on three columns inside the mega menu dropdown.
 
-```svelte example class="h-80" hideResponsiveButtons
+```svelte example class="h-80"
 <script>
   import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from 'flowbite-svelte';
   import { ChevronDownOutline } from 'flowbite-svelte-icons';
@@ -71,7 +71,7 @@ Use this example to show a list of links aligned on three columns inside the meg
 
 This example of a mega menu dropdown can be used to also show an icon near the text of the link.
 
-```svelte example class="h-80 md:h-80" hideResponsiveButtons
+```svelte example class="h-80 md:h-80"
 <script>
   import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from 'flowbite-svelte';
   import { IconOutline, ChevronDownOutline } from 'flowbite-svelte-icons';
@@ -118,7 +118,7 @@ This example of a mega menu dropdown can be used to also show an icon near the t
 
 Use this example to show a mega menu dropdown that spans the entire width of the document page.
 
-```svelte example class="h-96 relative" hideResponsiveButtons
+```svelte example class="h-96 relative"
 <script>
   import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from 'flowbite-svelte';
   import { ChevronDownOutline } from 'flowbite-svelte-icons';
@@ -165,7 +165,7 @@ Use this example to show a mega menu dropdown that spans the entire width of the
 
 This example can be used to also show a CTA button or link next to the menu items inside the dropdown.
 
-```svelte example class="h-96 relative" hideResponsiveButtons
+```svelte example class="h-96 relative"
 <script>
   import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from 'flowbite-svelte';
   import { ChevronDownOutline, ArrowRightOutline } from 'flowbite-svelte-icons';
@@ -236,7 +236,7 @@ This example can be used to also show a CTA button or link next to the menu item
 
 This example can be used to also show a CTA with a backdround image inside the dropdown next to the other menu items and links.
 
-```svelte example class="h-96 relative" hideResponsiveButtons
+```svelte example class="h-96 relative"
 <script>
   import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, Button } from 'flowbite-svelte';
   import { ChevronDownOutline } from 'flowbite-svelte-icons';

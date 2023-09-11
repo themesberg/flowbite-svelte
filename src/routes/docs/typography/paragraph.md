@@ -163,7 +163,7 @@ Use this example to show multiple paragraphs on a single line.
 
 Use this example to separate paragraphs into two columns for better readability.
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { P, Layout } from 'flowbite-svelte';
 </script>
@@ -180,7 +180,7 @@ Use this example to separate paragraphs into two columns for better readability.
 
 This example can be used to separate paragraphs into three separate columns.
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { P, Layout } from 'flowbite-svelte';
 </script>
@@ -198,7 +198,7 @@ This example can be used to separate paragraphs into three separate columns.
 
 Use this example to separate paragraphs into two uneven columns.
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { P, Layout } from 'flowbite-svelte';
 </script>

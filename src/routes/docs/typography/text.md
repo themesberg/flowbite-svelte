@@ -28,7 +28,7 @@ Get started with a collection of text customization examples to learn how to upd
 
 Use this example to set the font size of inline text elements using the `size` prop.
 
-```svelte example class="flex flex-wrap items-center space-x-4" hideResponsiveButtons
+```svelte example class="flex flex-wrap items-center space-x-4"
 <script>
   import { P } from 'flowbite-svelte';
 </script>
@@ -52,7 +52,7 @@ Use this example to set the font size of inline text elements using the `size` p
 
 This example can be used to the font weight of an inline text element using the `weight` prop.
 
-```svelte example class="flex flex-wrap items-center space-x-4" hideScript hideResponsiveButtons
+```svelte example class="flex flex-wrap items-center space-x-4" hideScript
 <script>
   import { P } from 'flowbite-svelte';
 </script>
@@ -72,7 +72,7 @@ This example can be used to the font weight of an inline text element using the 
 
 Use the `color` prop to set the color of the inline text.
 
-```svelte example class="flex flex-wrap items-center space-x-4" hideScript hideResponsiveButtons
+```svelte example class="flex flex-wrap items-center space-x-4" hideScript
 <script>
   import { P } from 'flowbite-svelte';
 </script>
@@ -88,7 +88,7 @@ Use the `color` prop to set the color of the inline text.
 
 Increase or decrease the spacing between letters using the `space` prop.
 
-```svelte example class="flex flex-wrap items-center space-x-4" hideScript hideResponsiveButtons
+```svelte example class="flex flex-wrap items-center space-x-4" hideScript
 <script>
   import { P } from 'flowbite-svelte';
 </script>
@@ -107,7 +107,7 @@ Increase or decrease the spacing between letters using the `space` prop.
 
 Update the text decoration style using the `underline` and `decorationClass` props.
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { P, Span } from 'flowbite-svelte';
 </script>
@@ -121,7 +121,7 @@ Update the text decoration style using the `underline` and `decorationClass` pro
 
 Set a strikethrough line on a text element using the `line-through` class.
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { Span } from 'flowbite-svelte';
 </script>
@@ -133,7 +133,7 @@ Set a strikethrough line on a text element using the `line-through` class.
 
 Force uppercase characters for a given portion of text using the uppercase class.
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { P, Span } from 'flowbite-svelte';
 </script>
@@ -149,7 +149,7 @@ Set italic or non italic styles with the props.
 
 Use the `italic` prop to set italic font style to a text element.
 
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript
 <script>
   import { P } from 'flowbite-svelte';
 </script>
@@ -161,7 +161,7 @@ Use the `italic` prop to set italic font style to a text element.
 
 Text elements by default are non-italic.
 
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript
 <script>
   import { P } from 'flowbite-svelte';
 </script>
@@ -177,7 +177,7 @@ Set the height between lines using the `height` prop.
 
 Use the `height="normal"` (default) prop to set default line height.
 
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript
 <script>
   import { P } from 'flowbite-svelte';
 </script>
@@ -189,7 +189,7 @@ Use the `height="normal"` (default) prop to set default line height.
 
 Use the `height="relaxed"` prop to increase the space between lines.
 
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript
 <script>
   import { P } from 'flowbite-svelte';
 </script>
@@ -201,7 +201,7 @@ Use the `height="relaxed"` prop to increase the space between lines.
 
 Use the `height="loose"` prop to set a large amount of space between text lines.
 
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript
 <script>
   import { P } from 'flowbite-svelte';
 </script>
@@ -213,7 +213,7 @@ Use the `height="loose"` prop to set a large amount of space between text lines.
 
 ### Left
 
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript
 <script>
   import { P } from 'flowbite-svelte';
 </script>
@@ -223,7 +223,7 @@ Use the `height="loose"` prop to set a large amount of space between text lines.
 
 ### Center
 
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript
 <script>
   import { P } from 'flowbite-svelte';
 </script>
@@ -235,7 +235,7 @@ Use the `height="loose"` prop to set a large amount of space between text lines.
 
 Use the `align="right"` prop to align the text element to the right side of the page.
 
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript
 <script>
   import { P } from 'flowbite-svelte';
 </script>
@@ -247,7 +247,7 @@ Use the `align="right"` prop to align the text element to the right side of the 
 
 Use the `justify` prop to justify the text content.
 
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript
 <script>
   import { P } from 'flowbite-svelte';
 </script>
@@ -263,7 +263,7 @@ Configure the whitespace behaviour of inline text elements using the `whitespace
 
 Use the `whitespace="normal"` prop to set the default whitespace behaviour.
 
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript
 <script>
   import { P } from 'flowbite-svelte';
 </script>
@@ -275,7 +275,7 @@ Use the `whitespace="normal"` prop to set the default whitespace behaviour.
 
 Use the `whitespace="nowrap"` prop to prevent text being added to a new line when the full width has been reached.
 
-```svelte example class="overflow-y-scroll" hideScript hideResponsiveButtons
+```svelte example class="overflow-y-scroll" hideScript
 <script>
   import { P } from 'flowbite-svelte';
 </script>
@@ -288,7 +288,7 @@ Use the `whitespace="nowrap"` prop to prevent text being added to a new line whe
 Use the `whitespace="preline'` prop to add whitespace exactly how it has been set from the source code.
 
 <!-- prettier-ignore -->
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript
 <script>
   import { P } from 'flowbite-svelte'
 </script>
@@ -304,7 +304,7 @@ Use the `whitespace="preline'` prop to add whitespace exactly how it has been se
 
 Update the text decoration style using the `underline` and `decorationClass` props.
 
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript
 <script>
   import { P, Span } from 'flowbite-svelte';
 </script>
@@ -318,7 +318,7 @@ Update the text decoration style using the `underline` and `decorationClass` pro
 
 Use the `opacity` and `color` prop to set the opacity of inline text elements.
 
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript
 <script>
   import { P } from 'flowbite-svelte';
 </script>

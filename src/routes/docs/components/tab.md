@@ -228,7 +228,7 @@ If you want to use pills as a style for the tabs component use `style="pill"`.
 
 If you want to show the tabs on the full width relative to the parent element use `tabStype="full"` prop.
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { Tabs, TabItem } from 'flowbite-svelte';
 </script>

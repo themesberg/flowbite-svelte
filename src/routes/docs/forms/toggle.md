@@ -43,7 +43,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 ## Colors
 
-```svelte example class="flex justify-between" hideScript hideResponsiveButtons
+```svelte example class="flex justify-between" hideScript
 <script>
   import { Toggle } from 'flowbite-svelte';
 </script>

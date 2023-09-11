@@ -41,7 +41,7 @@ Use the skeleton component to indicate a loading status with placeholder element
 
 ## Image placeholder
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { ImagePlaceholder } from 'flowbite-svelte';
 </script>

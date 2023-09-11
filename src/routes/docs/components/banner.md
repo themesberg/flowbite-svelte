@@ -105,7 +105,7 @@ Use this free example to show a text message for announcement with a CTA link.
 
 This example can be used to encourage your website visitors to sign up to your email newsletter by showing an inline form inside the sticky banner on the top side of your page.
 
-```svelte example class="flex flex-col relative" hideResponsiveButtons
+```svelte example class="flex flex-col relative"
 <script>
   import { Banner, Skeleton, ImagePlaceholder } from 'flowbite-svelte';
 </script>
@@ -126,7 +126,7 @@ This example can be used to encourage your website visitors to sign up to your e
 
 This example can be used to share important information with your website visitors by showing a heading and a paragraph inside the sticky banner and two CTA buttons with links.
 
-```svelte example class="flex flex-col relative" hideResponsiveButtons
+```svelte example class="flex flex-col relative"
 <script>
   import { Banner, Skeleton, ImagePlaceholder } from 'flowbite-svelte';
   import { OpenBookSolid, ArrowRightSolid } from 'flowbite-svelte-icons';

@@ -156,7 +156,7 @@ Use this example to show a list of radio items grouped inside a card.
 
 Use this example to show a list of radio items inside a card horizontally.
 
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript
 <script>
   import { Radio } from 'flowbite-svelte';
 </script>
@@ -204,7 +204,7 @@ Here’s an example of a list group that you can use right away.
 
 You can align the radio elements horizontally by using a wrapper tag and applying the flex class.
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { Radio } from 'flowbite-svelte';
   let inline1 = 'second';
@@ -220,7 +220,7 @@ You can align the radio elements horizontally by using a wrapper tag and applyin
 
 You can use the property `inline` as the alternative.
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { Radio } from 'flowbite-svelte';
   let inline2 = 'third';
@@ -234,7 +234,7 @@ You can use the property `inline` as the alternative.
 
 ## Colors
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { Radio } from 'flowbite-svelte';
   let colors;
@@ -255,7 +255,7 @@ You can use the property `inline` as the alternative.
 
 Use this example of an advanced layout of radio elements where the label parent element can be styled when the radio is checked.
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { Radio } from 'flowbite-svelte';
   import { ArrowRightOutline } from 'flowbite-svelte-icons';

@@ -28,7 +28,7 @@ Get started with the responsive navbar component from Flowbite to quickly set up
 
 Use this example of a navigation bar built with the utility classes from Tailwind CSS to enable users to navigate across the pages of your website.
 
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript
 <script>
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
 </script>
@@ -53,7 +53,7 @@ Use this example of a navigation bar built with the utility classes from Tailwin
 
 Utilize the `href` prop within the `NavLi` component to incorporate a hyperlink. To initiate the application of the active class, include the `activeUrl` prop within the `NavUl` component:
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { page } from '$app/stores';
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
@@ -78,7 +78,7 @@ Utilize the `href` prop within the `NavLi` component to incorporate a hyperlink.
 
 Control the `active` and `nonactive` class by using `activeClass` and `nonActiveClass`:
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { page } from '$app/stores';
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
@@ -107,7 +107,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
 
 This example can be used to show a secondary dropdown menu when clicking on one of the navigation links.
 
-```svelte example class="h-80" hideResponsiveButtons
+```svelte example class="h-80"
 <script>
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Dropdown, DropdownItem, DropdownDivider } from 'flowbite-svelte';
   import { ChevronDownOutline } from 'flowbite-svelte-icons';
@@ -144,7 +144,7 @@ This example can be used to show a secondary dropdown menu when clicking on one 
 
 Use this example of a navbar element to also show a search input element that you can integrate for a site-wide search.
 
-```svelte example class="h-80" hideResponsiveButtons
+```svelte example class="h-80"
 <script>
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button, Input } from 'flowbite-svelte';
   import { SearchOutline } from 'flowbite-svelte-icons';
@@ -179,7 +179,7 @@ Use this example of a navbar element to also show a search input element that yo
 
 Use the following navbar element to show a call to action button alongside the logo and page links.
 
-```svelte example class="h-80 md:h-64" hideResponsiveButtons
+```svelte example class="h-80 md:h-64"
 <script>
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button, Input } from 'flowbite-svelte';
 </script>
@@ -207,7 +207,7 @@ Use the following navbar element to show a call to action button alongside the l
 
 Use this example to keep the navbar positioned fixed to the top side as you scroll down the document page.
 
-```svelte example class="h-80" hideResponsiveButtons
+```svelte example class="h-80"
 <script>
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, ImagePlaceholder, Skeleton, TextPlaceholder } from 'flowbite-svelte';
 </script>
@@ -239,7 +239,7 @@ Use this example to keep the navbar positioned fixed to the top side as you scro
 
 Use this example to create a navigation bar with a user profile or button to toggle a dropdown menu.
 
-```svelte example class="h-80" hideResponsiveButtons
+```svelte example class="h-80"
 <script>
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Dropdown, DropdownItem, DropdownHeader, DropdownDivider } from 'flowbite-svelte';
 </script>
@@ -278,7 +278,7 @@ Use this example to create a navigation bar with a user profile or button to tog
 
 Use this example to show a solid background for the navbar component instead of being transparent.
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
 </script>

@@ -8,6 +8,7 @@
   import type { PageData } from '../$types';
   import { identity } from 'svelte/internal';
   import { DesktopPcOutline, TabletOutline, MobilePhoneOutline } from 'flowbite-svelte-icons';
+  import { onMount } from 'svelte';
   export let divClass = 'w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-2 sm:p-6';
 
   // the source of the example, if you want it
@@ -18,6 +19,7 @@
 
   let browserSupport: boolean = false;
   let code: HTMLElement;
+  let iframe: HTMLIFrameElement;
 
   let data: PageData = $page.data;
 
@@ -88,12 +90,40 @@
   }
 
   let copy_text = 'Copy';
+
+  onMount(() => {
+    if (!iframe) return;
+    // we get the content of head
+    const head = document.querySelector('head');
+    // we put the content of head in the head of the iframe
+    iframe.contentDocument?.head.insertAdjacentHTML('beforeend', head?.outerHTML || '');
+    // we append the component content in the iframe body
+    iframe.contentDocument?.body.append(...iframe.childNodes);
+  });
+
+  $: {
+    if (iframe) {
+      // toggle dark mode class in the iframe
+      dark ? iframe?.contentDocument?.documentElement.classList.add('dark') : iframe?.contentDocument?.documentElement.classList.remove('dark');
+    }
+  }
+  $: {
+    if (responsiveDevice && iframe) {
+      // we update the height of the preview based on the height of the iframe content
+      setTimeout(() => {
+        const preview = node.querySelector('.code-responive-content') as HTMLDivElement;
+        if (preview) {
+          preview.style.height = `${((iframe.contentDocument?.body.firstChild as HTMLDivElement)?.offsetHeight || 0) + 50}px`;
+        }
+      }, 100);
+    }
+  }
 </script>
 
 <div class="mt-8 code-example" bind:this={node} use:init>
   {#if !meta.hideOutput}
     <div class="w-full p-4 border border-gray-200 bg-gray-50 rounded-t-xl dark:border-gray-600 dark:bg-gray-700">
-      <div class="grid {!!meta.hideResponsiveButtons ? "grid-cols-2" : "grid-cols-3"}">
+      <div class="grid {!!meta.hideResponsiveButtons ? 'grid-cols-2' : 'grid-cols-3'}">
         {#if path}
           <Button size="xs" color="alternative" class="dark:!bg-gray-900 w-fit hover:text-primary-600 gap-2" href={'' + path} target="_blank" rel="noreferrer">
             <GitHub size="sm" />Edit on GitHub
@@ -121,8 +151,18 @@
     <div class="code-preview-wrapper">
       <div class="flex p-0 bg-white border-gray-200 bg-gradient-to-r code-preview dark:bg-gray-900 border-x dark:border-gray-600" class:dark>
         <div class="w-full code-responsive-wrapper">
-          <div class={twJoin(divClass, meta.class, responsiveSize[responsiveDevice])}>
-            <slot name="example" />
+          <div class="code-responive-content {twJoin(divClass, responsiveSize[responsiveDevice])}">
+            {#if !meta.hideResponsiveButtons}
+              <iframe bind:this={iframe} class="w-full h-full" title="iframe-code-content">
+                <div class={meta.class}>
+                  <slot name="example" />
+                </div>
+              </iframe>
+            {:else}
+              <div class={meta.class}>
+                <slot name="example" />
+              </div>
+            {/if}
           </div>
         </div>
       </div>

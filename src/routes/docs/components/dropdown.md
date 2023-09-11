@@ -365,7 +365,7 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 
 <p>You can also use the dropdown element inside a navigation bar and add a second level of navigation hierarchy, but make sure to use Navbar components.</p>
 
-```svelte example class="flex justify-center items-start h-96" hideResponsiveButtons
+```svelte example class="flex justify-center items-start h-96"
 <script>
   import { Button, Dropdown, DropdownItem, DropdownDivider, Navbar, NavBrand, NavHamburger, NavUl, NavLi } from 'flowbite-svelte';
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
@@ -603,7 +603,7 @@ Use this example to also show the name or email of the user next to the avatar f
 
 <p>The dropdown menus work with buttons of all sizes including smaller or larger ones.</p>
 
-```svelte example class="flex justify-center items-start gap-4 h-80" hideResponsiveButtons
+```svelte example class="flex justify-center items-start gap-4 h-80"
 <script>
   import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
@@ -627,7 +627,7 @@ Use this example to also show the name or email of the user next to the avatar f
 
 You can also use the `placement={top|right|bottom|left}` options to choose the placement of the dropdown menu. By default the positioning is set to the bottom side of the button.
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
   import { ChevronDownSolid, ChevronUpSolid, ChevronRightSolid, ChevronLeftSolid } from 'flowbite-svelte-icons';
@@ -653,7 +653,7 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
 
 ## Double placement
 
-```svelte example class="flex justify-center items-center gap-2 h-96" hideResponsiveButtons
+```svelte example class="flex justify-center items-center gap-2 h-96"
 <script>
   import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
   import { ChevronDownSolid, ChevronUpSolid } from 'flowbite-svelte-icons';
