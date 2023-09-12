@@ -28,7 +28,7 @@ Get started with the responsive navbar component from Flowbite to quickly set up
 
 Use this example of a navigation bar built with the utility classes from Tailwind CSS to enable users to navigate across the pages of your website.
 
-```svelte example hideScript
+```svelte example hideScript class="h-80"
 <script>
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
 </script>
@@ -53,7 +53,7 @@ Use this example of a navigation bar built with the utility classes from Tailwin
 
 Utilize the `href` prop within the `NavLi` component to incorporate a hyperlink. To initiate the application of the active class, include the `activeUrl` prop within the `NavUl` component:
 
-```svelte example
+```svelte example class="h-80"
 <script>
   import { page } from '$app/stores';
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
@@ -78,7 +78,7 @@ Utilize the `href` prop within the `NavLi` component to incorporate a hyperlink.
 
 Control the `active` and `nonactive` class by using `activeClass` and `nonActiveClass`:
 
-```svelte example
+```svelte example class="h-80"
 <script>
   import { page } from '$app/stores';
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
@@ -278,7 +278,7 @@ Use this example to create a navigation bar with a user profile or button to tog
 
 Use this example to show a solid background for the navbar component instead of being transparent.
 
-```svelte example
+```svelte example class="h-80"
 <script>
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
 </script>
