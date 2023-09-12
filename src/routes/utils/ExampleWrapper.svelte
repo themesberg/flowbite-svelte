@@ -6,7 +6,6 @@
   import Tooltip from '$lib/tooltips/Tooltip.svelte';
   import { page } from '$app/stores';
   import type { PageData } from '../$types';
-  import { identity } from 'svelte/internal';
   import { DesktopPcOutline, TabletOutline, MobilePhoneOutline } from 'flowbite-svelte-icons';
   import { onMount } from 'svelte';
   export let divClass = 'w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-2 sm:p-6';
