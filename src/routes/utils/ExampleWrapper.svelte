@@ -95,9 +95,12 @@
 
   const injectContent = () => {
     iframeLoad = true;
-    const head = document.querySelector('head');
+    // get only css and style frome head
+    const head = document.querySelectorAll('head link, head style');
+    // extract outerHtlm in order to clone html
+    const headContent = Array.from(head).reduce((acc, el) => (acc += el.outerHTML), '');
     // put the content of head in the head of the iframe
-    iframe.contentDocument?.head.insertAdjacentHTML('beforeend', head?.outerHTML || '');
+    iframe.contentDocument?.head.insertAdjacentHTML('beforeend', headContent || '');
     // append the component content in the iframe body
     iframe.contentDocument?.body.append(...iframe.childNodes);
     // update the height of the preview based on the height of the iframe content
