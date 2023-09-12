@@ -117,13 +117,13 @@
     // listen change on height of the iframe content and update the preview height
     if (iframe.contentDocument?.body.firstChild) {
       const resizeObserver = new ResizeObserver(updateHeightContent);
-      resizeObserver.observe(iframe.contentDocument.body.firstChild as Element);
+      resizeObserver.observe(iframe.contentDocument.body.firstElementChild as Element);
     }
   };
 
   const updateHeightContent = () => {
     if (codeResponsiveContent) {
-      codeResponsiveContent.style.height = `${(iframe.contentDocument?.body?.firstChild as HTMLDivElement)?.offsetHeight || 0}px`;
+      codeResponsiveContent.style.height = `${(iframe.contentDocument?.body?.firstElementChild as HTMLDivElement)?.offsetHeight || 0}px`;
     }
   };
 
@@ -147,13 +147,13 @@
 <div class="mt-8 code-example" bind:this={node} use:init>
   {#if !meta.hideOutput}
     <div class="w-full p-4 border border-gray-200 bg-gray-50 rounded-t-xl dark:border-gray-600 dark:bg-gray-700">
-      <div class="grid {!!meta.hideResponsiveButtons ? 'grid-cols-2' : 'grid-cols-3'}">
+      <div class="grid {!!meta.hideResponsiveButtons ? 'grid-cols-2' : 'grid-cols-2 sm:grid-cols-3'}">
         {#if path}
           <Button size="xs" color="alternative" class="dark:!bg-gray-900 w-fit hover:text-primary-600 gap-2" href={'' + path} target="_blank" rel="noreferrer">
             <GitHub size="sm" />Edit on GitHub
           </Button>
           {#if !meta.hideResponsiveButtons}
-            <div class="flex justify-center gap-x-2">
+            <div class="justify-center gap-x-2 hidden sm:flex">
               <Button size="xs" color="alternative" on:click={() => (responsiveDevice = 'desktop')}>
                 <DesktopPcOutline size="sm" />
               </Button>
@@ -177,7 +177,7 @@
         <div class="w-full code-responsive-wrapper">
           <div class="code-responive-content {twJoin(!!meta.hideResponsiveButtons ? divClass : 'mx-auto', responsiveSize[responsiveDevice])}" bind:this={codeResponsiveContent}>
             {#if !meta.hideResponsiveButtons}
-              <iframe bind:this={iframe} class="w-full h-full" title="iframe-code-content" on:load={injectContent}>
+              <iframe bind:this={iframe} class="w-full h-full" title="iframe-code-content" on:load={injectContent} sandbox="allow-same-origin">
                 <div class={divClass}>
                   <div class={meta.class}>
                     <slot name="example" />
