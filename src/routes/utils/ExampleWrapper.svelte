@@ -95,11 +95,21 @@
   const injectContent = () => {
     iframeLoad = true;
     // get only css and style frome head
-    const head = document.querySelectorAll('head link, head style');
+    const externalCss = document.querySelectorAll('head link[href*="https://"][rel="stylesheet"], head style');
+    const internalCss = Array.from(document.styleSheets).filter((el) => el.href?.includes(document.location.hostname));
+    // extract style to avoid multiple network request to css
+    const extractInlineCss = internalCss.reduce((acc, el) => {
+      acc += Array.from(el.cssRules)
+        .map((rule) => rule.cssText)
+        .join(' ');
+      return acc;
+    }, '');
+    const styleTag = document.createElement('style');
+    styleTag.innerHTML = extractInlineCss;
     // extract outerHtlm in order to clone html
-    const headContent = Array.from(head).reduce((acc, el) => (acc += el.outerHTML), '');
+    const headContent = Array.from(externalCss).reduce((acc, el) => (acc += el.outerHTML), '');
     // put the content of head in the head of the iframe
-    iframe.contentDocument?.head.insertAdjacentHTML('beforeend', headContent || '');
+    iframe.contentDocument?.head.insertAdjacentHTML('beforeend', `${headContent}${styleTag.outerHTML}` || '');
     // append the component content in the iframe body
     iframe.contentDocument?.body.append(...iframe.childNodes);
     // update the height of the preview based on the height of the iframe content
