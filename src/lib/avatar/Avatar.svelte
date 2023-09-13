@@ -10,7 +10,7 @@
   export let stacked: boolean = false;
   export let dot: object | undefined = undefined;
   export let alt: string = '';
-  export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
+  export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'xl';
 
   $: dot = dot && { placement: 'top-right', color: 'gray', size: 'lg', ...dot };
 
@@ -31,7 +31,7 @@
     {#if src}
       <img {alt} {src} class={rounded ? 'rounded' : 'rounded-full'} />
     {:else}
-      <slot><AvatarPlaceholder {rounded} class={twMerge($$props.classPlaceholder)} /></slot>
+      <slot><AvatarPlaceholder {rounded} {size} {border} class={twMerge($$props.classPlaceholder)} /></slot>
     {/if}
     {#if dot}
       <Indicator border offset={rounded} {...dot} />
