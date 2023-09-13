@@ -31,7 +31,7 @@
     {#if src}
       <img {alt} {src} class={rounded ? 'rounded' : 'rounded-full'} />
     {:else}
-      <slot><AvatarPlaceholder {rounded} class={twMerge($$props.classPlaceholder)} /></slot>
+      <slot><AvatarPlaceholder {rounded} {size} {border} class={twMerge($$props.classPlaceholder)} /></slot>
     {/if}
     {#if dot}
       <Indicator border offset={rounded} {...dot} />
