@@ -29,7 +29,7 @@ The dropdown component can be used to show a list of menu items when clicking on
 
 If you want to show a dropdown menu when clicking on an element add the `Dropdown` and `DropdownItem` components.
 
-```svelte example class="flex justify-center items-start h-64"
+```svelte example class="flex justify-center items-start h-64" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
@@ -48,7 +48,7 @@ If you want to show a dropdown menu when clicking on an element add the `Dropdow
 
 Utilize the `href` prop within the `DropdownItem` component to incorporate a hyperlink. To initiate the application of the active class, include the `activeUrl` prop within the `Dropdown` component:
 
-```svelte example class="flex justify-center items-start h-64"
+```svelte example class="flex justify-center items-start h-64" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
@@ -67,7 +67,7 @@ Utilize the `href` prop within the `DropdownItem` component to incorporate a hyp
 
 To change the active class, use the `activeClass` prop:
 
-```svelte example class="flex justify-center items-start h-64"
+```svelte example class="flex justify-center items-start h-64" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
@@ -89,7 +89,7 @@ To change the active class, use the `activeClass` prop:
 
 You can use the `DropdownDivider` component to add separate elements inside the dropdown menu. Note that you have a natural divider between main content of the `Dropdown` and its header and footer.
 
-```svelte example class="flex justify-center items-start h-64"
+```svelte example class="flex justify-center items-start h-64" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem, DropdownDivider } from 'flowbite-svelte';
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
@@ -109,7 +109,7 @@ You can use the `DropdownDivider` component to add separate elements inside the 
 
 Use this example to show extra information outside of the list of menu items inside the dropdown.
 
-```svelte example class="flex justify-center items-start h-80"
+```svelte example class="flex justify-center items-start h-80" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem, DropdownDivider, DropdownHeader } from 'flowbite-svelte';
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
@@ -132,7 +132,7 @@ Use this example to show extra information outside of the list of menu items ins
 
 Use this example to enable multi-level dropdown menus by adding stacked elements inside of each other.
 
-```svelte example class="flex justify-center items-start h-64"
+```svelte example class="flex justify-center items-start h-64" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem, DropdownDivider } from 'flowbite-svelte';
   import { ChevronDownSolid, ChevronRightSolid } from 'flowbite-svelte-icons';
@@ -158,7 +158,7 @@ Use this example to enable multi-level dropdown menus by adding stacked elements
 
 When you want to control your dropdown open status via javascript code you can bind to `open` property.
 
-```svelte example class="flex justify-center items-start h-64"
+```svelte example class="flex justify-center items-start h-64" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem, DropdownDivider } from 'flowbite-svelte';
   import { ChevronDownSolid, ChevronRightSolid } from 'flowbite-svelte-icons';
@@ -185,7 +185,7 @@ When you want to control your dropdown open status via javascript code you can b
 
 Add multiple checkbox elements inside your dropdown menu to enable more advanced input interaction.
 
-```svelte example class="flex justify-center items-start h-52"
+```svelte example class="flex justify-center items-start h-52" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem, Checkbox } from 'flowbite-svelte';
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
@@ -209,7 +209,7 @@ Add multiple checkbox elements inside your dropdown menu to enable more advanced
 
 Use this example to update the background color of a menu item when using a list of checkbox elements.
 
-```svelte example class="flex justify-center items-start h-56"
+```svelte example class="flex justify-center items-start h-56" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem, Checkbox } from 'flowbite-svelte';
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
@@ -233,7 +233,7 @@ Use this example to update the background color of a menu item when using a list
 
 Add an extra helper text to each checkbox element inside the dropdown menu list with this example.
 
-```svelte example class="flex justify-center items-start h-96"
+```svelte example class="flex justify-center items-start h-96" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem, Checkbox, Helper } from 'flowbite-svelte';
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
@@ -260,7 +260,7 @@ Add an extra helper text to each checkbox element inside the dropdown menu list 
 
 Add multiple radio elements inside your dropdown menu to enable more advanced input interaction.
 
-```svelte example class="flex justify-center items-start h-64"
+```svelte example class="flex justify-center items-start h-64" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem, Radio } from 'flowbite-svelte';
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
@@ -287,7 +287,7 @@ Add multiple radio elements inside your dropdown menu to enable more advanced in
 
 Use this example to update the background color of a menu item when using a list of radio elements.
 
-```svelte example class="flex justify-center items-start h-64"
+```svelte example class="flex justify-center items-start h-64" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem, Radio } from 'flowbite-svelte';
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
@@ -312,7 +312,7 @@ Use this example to update the background color of a menu item when using a list
 
 Add an extra helper text to each radio element inside the dropdown menu list with this example.
 
-```svelte example class="flex justify-center items-start h-96"
+```svelte example class="flex justify-center items-start h-96" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem, Radio, Helper } from 'flowbite-svelte';
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
@@ -340,7 +340,7 @@ Add an extra helper text to each radio element inside the dropdown menu list wit
 
 Show a list of toggle switch elements inside the dropdown menu to enable a yes or no type of choice.
 
-```svelte example class="flex justify-center items-start h-64"
+```svelte example class="flex justify-center items-start h-64" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem, Toggle } from 'flowbite-svelte';
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
@@ -365,7 +365,7 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 
 <p>You can also use the dropdown element inside a navigation bar and add a second level of navigation hierarchy, but make sure to use Navbar components.</p>
 
-```svelte example class="flex justify-center items-start h-96"
+```svelte example class="flex justify-center items-start h-96" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem, DropdownDivider, Navbar, NavBrand, NavHamburger, NavUl, NavLi } from 'flowbite-svelte';
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
@@ -400,7 +400,7 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 
 This example can be used when you want to show a long list of items that won’t affect the height of the dropdown menu by enabling a scrolling behaviour.
 
-```svelte example class="flex justify-center items-start h-80"
+```svelte example class="flex justify-center items-start h-80" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem, Avatar } from 'flowbite-svelte';
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
@@ -436,7 +436,7 @@ This example can be used when you want to show a long list of items that won’t
 
 Use this example if you want to add a search bar inside the dropdown menu to be able to filter through a long list of menu items with scrolling behaviour.
 
-```svelte example class="flex justify-center items-start h-96"
+```svelte example class="flex justify-center items-start h-96" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem, Checkbox, Search } from 'flowbite-svelte';
   import { ChevronDownSolid, UserRemoveSolid } from 'flowbite-svelte-icons';
@@ -475,7 +475,7 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
 
 Use the menu icon trigger element on components such as cards as an alternative element to the button.
 
-```svelte example class="flex justify-center items-start gap-4 h-60"
+```svelte example class="flex justify-center items-start gap-4 h-60" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem, ToolbarButton, DropdownDivider } from 'flowbite-svelte';
   import { DotsHorizontalOutline, DotsVerticalOutline } from 'flowbite-svelte-icons';
@@ -495,7 +495,7 @@ Use the menu icon trigger element on components such as cards as an alternative 
 
 Use this example to show a list of notifications inside your application by providing more detailed information such as the user avatar, content and time of notification triggered by a notification bell icon.
 
-```svelte example class="flex justify-center items-start h-96"
+```svelte example class="flex justify-center items-start h-96" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem, DropdownHeader, Avatar } from 'flowbite-svelte';
   import { BellSolid, EyeSolid } from 'flowbite-svelte-icons';
@@ -556,7 +556,7 @@ Use this example to show a list of notifications inside your application by prov
 
 This example can be used to show a list of menu items and options when a user is logged into your application.
 
-```svelte example class="flex justify-center items-start h-80"
+```svelte example class="flex justify-center items-start h-80" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem, Avatar, DropdownHeader, DropdownDivider } from 'flowbite-svelte';
 </script>
@@ -578,7 +578,7 @@ This example can be used to show a list of menu items and options when a user is
 
 Use this example to also show the name or email of the user next to the avatar for the dropdown menu.
 
-```svelte example class="flex justify-center items-start h-80"
+```svelte example class="flex justify-center items-start h-80" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem, Avatar, DropdownHeader, DropdownDivider } from 'flowbite-svelte';
 </script>
@@ -603,7 +603,7 @@ Use this example to also show the name or email of the user next to the avatar f
 
 <p>The dropdown menus work with buttons of all sizes including smaller or larger ones.</p>
 
-```svelte example class="flex justify-center items-start gap-4 h-80"
+```svelte example class="flex justify-center items-start gap-4 h-80" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
@@ -653,7 +653,7 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
 
 ## Double placement
 
-```svelte example class="flex justify-center items-center gap-2 h-96"
+```svelte example class="flex justify-center items-center gap-2 h-96" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
   import { ChevronDownSolid, ChevronUpSolid } from 'flowbite-svelte-icons';
@@ -678,7 +678,7 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
 
 `DropdownItem` renders to link or button wrapped with `<li/>` element depending whether you supplied the `href` property. Therefore you can catch standard events on it like `on:click`.
 
-```svelte example class="flex justify-center items-start h-40"
+```svelte example class="flex justify-center items-start h-40" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem, Checkbox } from 'flowbite-svelte';
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
@@ -699,7 +699,7 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
 
 When you need to include a link with an active class, you can follow the example below:
 
-```svelte example class="flex justify-center items-start h-64"
+```svelte example class="flex justify-center items-start h-64" hideResponsiveButtons
 <script>
   import { page } from '$app/stores';
   import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';

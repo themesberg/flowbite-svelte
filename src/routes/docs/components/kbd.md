@@ -29,7 +29,7 @@ The KBD (Keyboard) component can be used to indicate a textual user input from t
 
 Here’s a list of KBD components that you can use inside any other element.
 
-```svelte example hideScript
+```svelte example hideScript hideResponsiveButtons
 <script>
   import { Kbd } from 'flowbite-svelte';
 </script>
@@ -47,7 +47,7 @@ Here’s a list of KBD components that you can use inside any other element.
 
 Use this example by nesting an inline KBD component inside a paragraph.
 
-```svelte example hideScript
+```svelte example hideScript hideResponsiveButtons
 <script>
   import { Kbd } from 'flowbite-svelte';
 </script>
@@ -61,7 +61,7 @@ Use this example by nesting an inline KBD component inside a paragraph.
 
 The KBD component can also be used inside table components to denote what type of key can be pressed for certain descriptions.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Kbd, Table, TableHead, TableHeadCell, TableBody, TableBodyCell, TableBodyRow, ArrowKeyUp, ArrowKeyDown, ArrowKeyRight, ArrowKeyLeft } from 'flowbite-svelte';
 </script>
@@ -113,7 +113,7 @@ The KBD component can also be used inside table components to denote what type o
 
 Use this example to show arrow keys inside the KBD styled element.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Kbd, ArrowKeyUp, ArrowKeyDown, ArrowKeyRight, ArrowKeyLeft } from 'flowbite-svelte';
 </script>
@@ -140,7 +140,7 @@ Use this example to show arrow keys inside the KBD styled element.
 
 Use this example if you need to show a key from the latin alphabet
 
-```svelte example hideScript
+```svelte example hideScript hideResponsiveButtons
 <script>
   import { Kbd } from 'flowbite-svelte';
 </script>
@@ -177,7 +177,7 @@ Use this example if you need to show a key from the latin alphabet
 
 Use this example to show a key inside a KBD component from the english numeral system.
 
-```svelte example hideScript
+```svelte example hideScript hideResponsiveButtons
 <script>
   import { Kbd } from 'flowbite-svelte';
 </script>
@@ -198,7 +198,7 @@ Use this example to show a key inside a KBD component from the english numeral s
 
 This example can be used to denote function keys inside the KBD component.
 
-```svelte example hideScript
+```svelte example hideScript hideResponsiveButtons
 <script>
   import { Kbd } from 'flowbite-svelte';
 </script>
