@@ -4,11 +4,9 @@
   import ExampleDarkMode from './ExampleDarkMode.svelte';
   import GitHub from './icons/GitHub.svelte';
   import Tooltip from '$lib/tooltips/Tooltip.svelte';
-  import { page } from '$app/stores';
-  import type { PageData } from '../$types';
   import { DesktopPcOutline, TabletOutline, MobilePhoneOutline } from 'flowbite-svelte-icons';
   import { onMount } from 'svelte';
-  export let divClass = 'w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-2 sm:p-6';
+  export let divClass = 'w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-6';
 
   // the source of the example, if you want it
   export let src: any = undefined;
@@ -21,8 +19,6 @@
   let iframe: HTMLIFrameElement;
   let iframeLoad: boolean = false;
   let codeResponsiveContent: HTMLDivElement;
-
-  let data: PageData = $page.data;
 
   // https://github.com/themesberg/flowbite-svelte/blob/main/src/routes/docs/components/accordion.md#always-open
   const gitHub = new URL('https://github.com/themesberg/flowbite-svelte/blob/main/src/routes/');
@@ -175,17 +171,15 @@
     <div class="code-preview-wrapper">
       <div class="flex p-0 bg-white border-gray-200 bg-gradient-to-r code-preview dark:bg-gray-900 border-x dark:border-gray-600" class:dark>
         <div class="w-full code-responsive-wrapper">
-          <div class="code-responive-content {twJoin(!!meta.hideResponsiveButtons ? divClass : 'mx-auto', responsiveSize[responsiveDevice])}" bind:this={codeResponsiveContent}>
+          <div class="code-responive-content {twJoin(!meta.hideResponsiveButtons && 'mx-auto', responsiveSize[responsiveDevice])}" bind:this={codeResponsiveContent}>
             {#if !meta.hideResponsiveButtons}
               <iframe bind:this={iframe} class="w-full h-full" title="iframe-code-content" on:load={injectContent} sandbox="allow-same-origin">
-                <div class={divClass}>
-                  <div class={meta.class}>
-                    <slot name="example" />
-                  </div>
+                <div class={twJoin(divClass, meta.class)}>
+                  <slot name="example" />
                 </div>
               </iframe>
             {:else}
-              <div class={meta.class}>
+              <div class={twJoin(divClass, meta.class)}>
                 <slot name="example" />
               </div>
             {/if}
