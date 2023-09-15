@@ -154,6 +154,42 @@ Use `labelInsideClass` prop to style your progressbar.
 <Progressbar progress="50" size="h-6" labelInside labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" class="my-4" labelOutside="Size h-6" />
 ```
 
+## Animation
+
+By default progress bar animate on mount, you can disable with `animate={false}`, you can custumize with `tweenDuration` and `easing`
+
+```svelte example
+<script>
+  import { Progressbar, Button } from 'flowbite-svelte';
+  import { sineOut } from 'svelte/easing';
+
+  let progress = '45'
+</script>
+
+<Progressbar 
+  {progress}
+  precision={2}
+  labelOutside="With animation"
+  labelInside
+  tweenDuration={1500}
+  easing={sineOut}
+  size="h-6" 
+  labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
+  class="mb-8"
+/>
+<Progressbar 
+  {progress}
+  animate={false}
+  labelOutside="Without animation"
+  labelInside 
+  size="h-6" 
+  labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" 
+/>
+<Button on:click={() => (progress = `${Math.round(Math.random() * 100)}`)} class="mt-8">
+  Randomize
+</Button>
+```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
