@@ -57,7 +57,7 @@ Apply rounded corners to the image by using the specific utility classes from Ta
 
 Use this example to apply rounded corners to the image by using the rounded-size class where the size can be anything from small to extra large.
 
-```svelte example class="flex justify-center" hideScript hideResponsiveButtons
+```svelte example class="flex justify-center" hideScript
 <script>
   import { Img } from 'flowbite-svelte';
 </script>
@@ -69,7 +69,7 @@ Use this example to apply rounded corners to the image by using the rounded-size
 
 Use this example to mask the image inside a circle using the rounded-full utility class from Tailwind CSS.
 
-```svelte example class="flex justify-center" hideScript hideResponsiveButtons
+```svelte example class="flex justify-center" hideScript
 <script>
   import { Img } from 'flowbite-svelte';
 </script>
@@ -81,7 +81,7 @@ Use this example to mask the image inside a circle using the rounded-full utilit
 
 This example can be used to show a shadow effect for the image using the shadow-size utility class.
 
-```svelte example class="flex justify-center" hideScript hideResponsiveButtons
+```svelte example class="flex justify-center" hideScript
 <script>
   import { Img } from 'flowbite-svelte';
 </script>
@@ -121,7 +121,7 @@ Use image effects such as grayscale or blur to change the appearances of the ima
 
 Use the filter option and apply a grayscale to the image element using the grayscale class.
 
-```svelte example class="flex justify-center" hideScript hideResponsiveButtons
+```svelte example class="flex justify-center" hideScript
 <script>
   import { Img } from 'flowbite-svelte';
 </script>
@@ -133,7 +133,7 @@ Use the filter option and apply a grayscale to the image element using the grays
 
 Apply a blur by using the blur-size utility class from Tailwind CSS to an image component.
 
-```svelte example class="flex justify-center" hideScript hideResponsiveButtons
+```svelte example class="flex justify-center" hideScript
 <script>
   import { Img } from 'flowbite-svelte';
 </script>
@@ -149,7 +149,7 @@ Align the image component to the left, center or right side of the document page
 
 By default, the image component will be aligned to the left side of the page.
 
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript
 <script>
   import { Img } from 'flowbite-svelte';
 </script>
@@ -161,7 +161,7 @@ By default, the image component will be aligned to the left side of the page.
 
 Horizontally align the image to the center of the page using the `mx-auto` class.
 
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript
 <script>
   import { Img } from 'flowbite-svelte';
 </script>
@@ -173,7 +173,7 @@ Horizontally align the image to the center of the page using the `mx-auto` class
 
 Use the `ml-auto` class to align the image to the right side of the page.
 
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript
 <script>
   import { Img } from 'flowbite-svelte';
 </script>
@@ -189,7 +189,7 @@ Set the size of the image using the w-size and h-size or max-w-size utility clas
 
 Use the `max-w-xs` class to set a small size of the image.
 
-```svelte example class="flex justify-center" hideScript hideResponsiveButtons
+```svelte example class="flex justify-center" hideScript
 <script>
   import { Img } from 'flowbite-svelte';
 </script>
@@ -201,7 +201,7 @@ Use the `max-w-xs` class to set a small size of the image.
 
 Use the `max-w-md` class to set a medium size of the image.
 
-```svelte example class="flex justify-center" hideScript hideResponsiveButtons
+```svelte example class="flex justify-center" hideScript
 <script>
   import { Img } from 'flowbite-svelte';
 </script>
@@ -213,7 +213,7 @@ Use the `max-w-md` class to set a medium size of the image.
 
 Use the max-w-xl class to set a large size of the image.
 
-```svelte example class="flex justify-center" hideScript hideResponsiveButtons
+```svelte example class="flex justify-center" hideScript
 <script>
   import { Img } from 'flowbite-svelte';
 </script>

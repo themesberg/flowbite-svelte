@@ -73,7 +73,7 @@ Set the `duration` prop to define the time interval for chaning images. Time is 
 
 The default value for `duration` is set to zero that means no autochange of images. In that case you can control which image is displayed by the `index` prop.
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { Carousel } from 'flowbite-svelte';
   import { images } from './imageData/+server.js';
@@ -90,7 +90,7 @@ Use the internal `Controls` component to listen to click events which will trigg
 
 You can customize the control elements with the `class` property.
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { Carousel } from 'flowbite-svelte';
   import { images } from './imageData/+server.js';
@@ -107,7 +107,7 @@ You can customize the control elements with the `class` property.
 
 Show the carousel indicators by adding the internal `Indicators` component.
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { Carousel } from 'flowbite-svelte';
   import { images } from './imageData/+server.js';
@@ -124,7 +124,7 @@ Show the carousel indicators by adding the internal `Indicators` component.
 
 You can control the `Carousel` component externally by the `index` prop. Here is an example how to use the `Thumbnails` component to achieve that.
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { Carousel, Thumbnails } from 'flowbite-svelte';
   import { images } from './imageData/+server.js';
@@ -145,7 +145,7 @@ You can control the `Carousel` component externally by the `index` prop. Here is
 
 The `Carousel` exposes the `change` event containing info about the currently displayed image. You can use it to build custom caption for the carousel.
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { Carousel } from 'flowbite-svelte';
   import { images } from './imageData/+server.js';
@@ -170,7 +170,7 @@ The `Carousel` exposes the `change` event containing info about the currently di
 
 You can use `slot="slide"` and internal component `Slide` to control the image display. Here's an example how to wrap images with the anchor element.
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { Carousel } from 'flowbite-svelte';
   import { images } from './imageData/+server.js';
@@ -190,7 +190,7 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
 
 ### Basic customization
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { Carousel } from 'flowbite-svelte';
   import { images } from './imageData/+server.js';
@@ -206,7 +206,7 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
 
 ### Advanced customization
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { Carousel, Thumbnails, Button, Indicator } from 'flowbite-svelte';
   import { CaretRightOutline } from 'flowbite-svelte-icons';
@@ -234,7 +234,7 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
 
 ### Carousel transition
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { Carousel } from 'flowbite-svelte';
   import { images } from './imageData/+server.js';

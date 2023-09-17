@@ -31,7 +31,7 @@ At least one unique H1 tag should be available for each page on your website wit
 
 Use this example of a H1 heading in the context of a paragraph and CTA button for landing pages.
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { Heading, P, Button } from 'flowbite-svelte';
   import { ArrowRightOutline } from 'flowbite-svelte-icons';

@@ -31,7 +31,7 @@ On this page you will find a three different input field styles including a stan
 
 Get started with the following three styles for the floating label component and use the label tag as a visual placeholder using the peer-placeholder-shown and peer-focus utility classes from Tailwind CSS.
 
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript
 <script>
   import { FloatingLabelInput } from 'flowbite-svelte';
 </script>
@@ -47,7 +47,7 @@ Get started with the following three styles for the floating label component and
 
 Apply the disabled attribute to the input fields to disallow the user from changing the content.
 
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript
 <script>
   import { FloatingLabelInput } from 'flowbite-svelte';
 </script>
@@ -63,7 +63,7 @@ Apply the disabled attribute to the input fields to disallow the user from chang
 
 Use the following examples of input validation for the success and error messages by applying the validation text below the input field and using the green or red color classes from Tailwind CSS.
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { FloatingLabelInput, Helper } from 'flowbite-svelte';
 </script>
@@ -122,7 +122,7 @@ Use the following examples of input validation for the success and error message
 
 Use the small and default sizes of the floating label input fields from the following example.
 
-```svelte example hideScript hideResponsiveButtons
+```svelte example hideScript
 <script>
   import { FloatingLabelInput } from 'flowbite-svelte';
 </script>

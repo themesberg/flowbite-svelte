@@ -29,7 +29,7 @@ Flowbite-Svelte allows you to show extra information when hovering or focusing o
 
 To get started with using tooltips all you need to do is set `triggeredBy` attribute of the tooltip component to any CSS query targeting trigger element(s). In the following example you can see the tooltip that will be trigger by the `tooltip-default` element to be shown when hovered or focused.
 
-```svelte example class="flex items-end h-32"
+```svelte example class="flex items-end h-32" hideResponsiveButtons
 <script>
   import { Tooltip, Button } from 'flowbite-svelte';
 </script>
@@ -77,7 +77,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 
 ## Triggering
 
-```svelte example class="flex items-end gap-2 h-32"
+```svelte example class="flex items-end gap-2 h-32" hideResponsiveButtons
 <script>
   import { Tooltip, Button } from 'flowbite-svelte';
 </script>
@@ -90,7 +90,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 
 ## Disable arrow
 
-```svelte example class="flex items-end gap-2 h-32"
+```svelte example class="flex items-end gap-2 h-32" hideResponsiveButtons
 <script>
   import { Tooltip, Button } from 'flowbite-svelte';
 </script>
@@ -103,7 +103,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 
 If you need the tooltip to be attached to the other element then the tiggering one you can pass a CSS query to `reference` prop.
 
-```svelte example class="flex gap-4 flex-col justify-center items-center h-72"
+```svelte example class="flex gap-4 flex-col justify-center items-center h-72" hideResponsiveButtons
 <script>
   import { Tooltip, Button } from 'flowbite-svelte';
   let placement = '';

@@ -31,7 +31,7 @@ To initiate the drawer component you need to set the `let hidden=true`, `width` 
 
 For accessibility you should also set the `id` prop to the element. This will add the drawer `aria-labelledby=id` and `aria-controls=id` to the drawer component.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Drawer, Button, CloseButton } from 'flowbite-svelte';
   import { InfoCircleSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
@@ -70,7 +70,7 @@ For accessibility you should also set the `id` prop to the element. This will ad
 
 Use this example to show a navigational sidebar inside the drawer component.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Drawer, Button, CloseButton, Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper } from 'flowbite-svelte';
   import { ChartPieSolid, ShoppingCartSolid, GridSolid, MailBoxSolid, UsersSolid, BagSolid, ArrowRightToBracketSolid, FileEditSolid } from 'flowbite-svelte-icons';
@@ -154,7 +154,7 @@ Use this example to show a navigational sidebar inside the drawer component.
 
 Use this example to show a contact form inside the drawer component.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Drawer, Button, CloseButton, Label, Input, Textarea, P, A, Checkbox } from 'flowbite-svelte';
   import { InfoCircleSolid } from 'flowbite-svelte-icons';
@@ -206,7 +206,7 @@ Use this example to show a contact form inside the drawer component.
 
 Use this example if you want to add form elements inside the drawer component including datepickers.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Drawer, Button, CloseButton, Label, Input, Textarea } from 'flowbite-svelte';
   import { InfoCircleSolid, UserPlusSolid, CalendarEditSolid } from 'flowbite-svelte-icons';
@@ -269,7 +269,7 @@ Use the placement prop to position the drawer component either on the top, right
 
 ### Left drawer
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Drawer, Button, CloseButton, Label, Input, Textarea } from 'flowbite-svelte';
   import { InfoCircleSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
@@ -311,7 +311,7 @@ Use this example to show the drawer component on the right side of the page.
 
 Set the `transitionParams` variable to new variables.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Drawer, Button, CloseButton } from 'flowbite-svelte';
   import { InfoCircleSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
@@ -351,7 +351,7 @@ Set the `transitionParams` variable to new variables.
 
 Use this example to show the drawer on the top side of the page.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Drawer, Button, CloseButton, A } from 'flowbite-svelte';
   import { InfoCircleSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
@@ -388,7 +388,7 @@ Use this example to show the drawer on the top side of the page.
 
 Use this example to show the drawer on the bottom side of the page.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Drawer, Button, CloseButton, A } from 'flowbite-svelte';
   import { InfoCircleSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
@@ -432,7 +432,7 @@ Use the `backdrop="false|true"` prop where you can disable or enable the backdro
 
 Use this example to enable the backdrop element by default.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Drawer, Button, CloseButton, A } from 'flowbite-svelte';
   import { InfoCircleSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
@@ -472,7 +472,7 @@ Use this example to enable the backdrop element by default.
 
 Use the `backdrop={false}` prop to disable the backdrop element when the drawer is shown.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Drawer, Button, CloseButton, A } from 'flowbite-svelte';
   import { InfoCircleSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
@@ -512,7 +512,7 @@ Use the `backdrop={false}` prop to disable the backdrop element when the drawer 
 
 Use `leftOffset|rightOffset|topOffset|bottomOffset` prop to change the position of the drawer.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Drawer, Button, CloseButton, A } from 'flowbite-svelte';
   import { InfoCircleSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
@@ -552,7 +552,7 @@ Use `leftOffset|rightOffset|topOffset|bottomOffset` prop to change the position 
 
 As the default, the drawer closes when you click the outside of the drawer. However sometimes you don't want that. Set `activateClickOutside` to false to disable it.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Drawer, Button, CloseButton } from 'flowbite-svelte';
   import { InfoCircleSolid } from 'flowbite-svelte-icons';
@@ -587,7 +587,7 @@ As the default, the drawer closes when you click the outside of the drawer. Howe
 
 ## Disabling only outside click
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Drawer, Button, CloseButton, A } from 'flowbite-svelte';
   import { InfoCircleSolid, ArrowRightOutline } from 'flowbite-svelte-icons';

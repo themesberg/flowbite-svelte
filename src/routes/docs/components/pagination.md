@@ -29,7 +29,7 @@ The pagination component can be used to navigate across a series of content and 
 
 Use the following list of pagination items to indicate a series of content for your website.
 
-```svelte example class="flex flex-col justify-center items-center gap-3"
+```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
 <script>
   import { page } from '$app/stores';
   import { Pagination } from 'flowbite-svelte';
@@ -74,7 +74,7 @@ Use the following list of pagination items to indicate a series of content for y
 
 The following pagination component example shows how you can use SVG icons instead of text to show the previous and next pages.
 
-```svelte example class="flex flex-col justify-center items-center gap-3"
+```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
 <script>
   import { page } from '$app/stores';
   import { Pagination } from 'flowbite-svelte';
@@ -139,7 +139,7 @@ The following pagination component example shows how you can use SVG icons inste
 
 Use the following markup to show simple previous and next elements.
 
-```svelte example class="flex flex-col justify-center items-center gap-3"
+```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
 <script>
   import { Pagination, PaginationItem } from 'flowbite-svelte';
   const previous = () => {
@@ -164,7 +164,7 @@ Use the following markup to show simple previous and next elements.
 
 Use the following code to show simple previous and next elements with icons.
 
-```svelte example class="flex flex-col justify-center items-center gap-3"
+```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
 <script>
   import { Pagination, PaginationItem } from 'flowbite-svelte';
   import { ArrowLeftSolid, ArrowRightSolid } from 'flowbite-svelte-icons';
@@ -202,7 +202,7 @@ Use the following code to show simple previous and next elements with icons.
 
 You can use the following markup to show the number of data shown inside a table element and also the previous and next action buttons.
 
-```svelte example class="flex flex-col justify-center items-center gap-3"
+```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
 <script>
   import { Pagination, PaginationItem } from 'flowbite-svelte';
 
@@ -250,7 +250,7 @@ You can use the following markup to show the number of data shown inside a table
 
 You can use the following code to show the number of data shown inside a table element and also the previous and next action buttons coupled with icons.
 
-```svelte example class="flex flex-col justify-center items-center gap-3"
+```svelte example class="flex flex-col justify-center items-center gap-3" hideResponsiveButtons
 <script>
   import { Pagination } from 'flowbite-svelte';
   import { ArrowLeftOutline, ArrowRightOutline } from 'flowbite-svelte-icons';
@@ -310,7 +310,7 @@ You can use the following code to show the number of data shown inside a table e
 
 ## Event example
 
-```svelte example class="flex justify-center"
+```svelte example class="flex justify-center" hideResponsiveButtons
 <script lang="ts">
   import { Pagination } from 'flowbite-svelte';
 

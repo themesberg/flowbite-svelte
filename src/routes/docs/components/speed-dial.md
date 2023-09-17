@@ -27,7 +27,7 @@ To initialize a speed dial component you need to wrap the trigger element and th
 
 </Alert>
 
-```svelte example class="relative h-96"
+```svelte example class="relative h-96" hideResponsiveButtons
 <script>
   import { SpeedDial, SpeedDialButton } from 'flowbite-svelte';
   import { ShareNodesSolid, PrintSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
@@ -190,7 +190,7 @@ The Speed Dial components accommodate a variety of Button component properties, 
 
 Use this example to make the trigger button’s style square instead of a full circle. As `SpeedDialButton` is an instance of `Button` we use the `pill` property to achevie the effect.
 
-```svelte example class="relative h-96"
+```svelte example class="relative h-96" hideResponsiveButtons
 <script>
   import { SpeedDial, SpeedDialButton } from 'flowbite-svelte';
   import { ShareNodesSolid, PrintSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
@@ -216,7 +216,7 @@ Use this example to make the trigger button’s style square instead of a full c
 
 This example can be used to show the descriptive text inside the button instead of a tooltip.
 
-```svelte example class="relative h-96"
+```svelte example class="relative h-96" hideResponsiveButtons
 <script>
   import { SpeedDial, SpeedDialButton } from 'flowbite-svelte';
   import { ShareNodesSolid, PrintSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
@@ -257,7 +257,7 @@ This example can be used to show the descriptive text inside the button instead 
 
 Use this example to show the text of each button outside of the speed dial as an alternative style.
 
-```svelte example class="relative h-96"
+```svelte example class="relative h-96" hideResponsiveButtons
 <script>
   import { SpeedDial, SpeedDialButton } from 'flowbite-svelte';
   import { ShareNodesSolid, PrintSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
@@ -298,7 +298,7 @@ Use this example to show the text of each button outside of the speed dial as an
 
 This example can be used to show a list of menu items instead of buttons when activating the speed dial.
 
-```svelte example class="relative h-96"
+```svelte example class="relative h-96" hideResponsiveButtons
 <script>
   import { SpeedDial, Listgroup, ListgroupItem } from 'flowbite-svelte';
   import { DotsHorizontalOutline, ShareNodesSolid, PrintSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
@@ -353,7 +353,7 @@ This example can be used to show a list of menu items instead of buttons when ac
 
 This example can be used to show an alternative style when showing a list of menu items.
 
-```svelte example class="relative h-96"
+```svelte example class="relative h-96" hideResponsiveButtons
 <script>
   import { SpeedDial, Listgroup, ListgroupItem } from 'flowbite-svelte';
   import { PenSolid, ShareNodesSolid, PrintSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
@@ -409,7 +409,7 @@ Align the speed dial menu items by using property `placement="top|right|left|bot
 
 Control the main button position using the flexbox utility classes from Tailwind CSS through property `defaultClass`.
 
-```svelte example class="relative h-[400px]"
+```svelte example class="relative h-[400px]" hideResponsiveButtons
 <script>
   import { SpeedDial, SpeedDialButton } from 'flowbite-svelte';
   import { ShareNodesSolid, PrintSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
@@ -445,7 +445,7 @@ Use the `trigger="click|hover"` attribute of the speed dial component to set whi
 
 The default trigger type is hover for each speed dial component.
 
-```svelte example class="relative h-96"
+```svelte example class="relative h-96" hideResponsiveButtons
 <script>
   import { SpeedDial, SpeedDialButton } from 'flowbite-svelte';
   import { ShareNodesSolid, PrintSolid, DownloadSolid, FileCopySolid } from 'flowbite-svelte-icons';
@@ -486,7 +486,7 @@ The default trigger type is hover for each speed dial component.
 
 Use the `open` property to control the state of the popup menu.
 
-```svelte example class="relative h-96"
+```svelte example class="relative h-96" hideResponsiveButtons
 <script>
   import { SpeedDial, SpeedDialButton } from 'flowbite-svelte';
   let open = false;

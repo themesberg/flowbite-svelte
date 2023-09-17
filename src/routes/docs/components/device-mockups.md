@@ -78,7 +78,7 @@ Use this alternative phone mockup example if you want to feature previews for an
 
 This component can be used to show an application preview inside of a responsive tablet mockup.
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { DeviceMockup } from 'flowbite-svelte';
 </script>
@@ -93,7 +93,7 @@ This component can be used to show an application preview inside of a responsive
 
 This example can be used to show a screenshot of your application inside a laptop mockup.
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { DeviceMockup } from 'flowbite-svelte';
 </script>
@@ -108,7 +108,7 @@ This example can be used to show a screenshot of your application inside a lapto
 
 Use this example to show a preview of your applicaiton inside a desktop device such as an iMac.
 
-```svelte example hideResponsiveButtons
+```svelte example
 <script>
   import { DeviceMockup } from 'flowbite-svelte';
 </script>
