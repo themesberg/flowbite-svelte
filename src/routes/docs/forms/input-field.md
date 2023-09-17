@@ -52,7 +52,7 @@ Use this example as a generic form element which includes multiple input fields 
     </div>
     <div>
       <Label for="phone" class="mb-2">Phone number</Label>
-      <Input type="tel" id="phone" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
+      <Input type="tel" id="phone" placeholder="123-45-678" pattern={"[0-9]{3}-[0-9]{2}-[0-9]{3}"} required />
     </div>
     <div>
       <Label for="website" class="mb-2">Website URL</Label>
