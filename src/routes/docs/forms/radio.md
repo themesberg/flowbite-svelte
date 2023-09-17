@@ -234,7 +234,7 @@ You can use the property `inline` as the alternative.
 
 ## Colors
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Radio } from 'flowbite-svelte';
   let colors;

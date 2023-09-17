@@ -235,7 +235,7 @@ You can use the property `inline` as the alternative.
 
 ## Colors
 
-```svelte example hideScript
+```svelte example hideScript hideResponsiveButtons
 <script>
   import { Label, Checkbox } from 'flowbite-svelte';
 </script>
