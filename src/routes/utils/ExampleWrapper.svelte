@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twJoin } from 'tailwind-merge';
+  import { twJoin, twMerge } from 'tailwind-merge';
   import Button from '$lib/buttons/Button.svelte';
   import ExampleDarkMode from './ExampleDarkMode.svelte';
   import GitHub from './icons/GitHub.svelte';
@@ -174,12 +174,12 @@
           <div class="code-responive-content {twJoin(!meta.hideResponsiveButtons && 'mx-auto', responsiveSize[responsiveDevice])}" bind:this={codeResponsiveContent}>
             {#if !meta.hideResponsiveButtons}
               <iframe bind:this={iframe} class="w-full h-full" title="iframe-code-content" on:load={injectContent}>
-                <div class={twJoin(divClass, meta.class)}>
+                <div class={twMerge(divClass, meta.class)}>
                   <slot name="example" />
                 </div>
               </iframe>
             {:else}
-              <div class={twJoin(divClass, meta.class)}>
+              <div class={twMerge(divClass, meta.class)}>
                 <slot name="example" />
               </div>
             {/if}
