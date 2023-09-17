@@ -173,7 +173,7 @@
         <div class="w-full code-responsive-wrapper">
           <div class="code-responive-content {twJoin(!meta.hideResponsiveButtons && 'mx-auto', responsiveSize[responsiveDevice])}" bind:this={codeResponsiveContent}>
             {#if !meta.hideResponsiveButtons}
-              <iframe bind:this={iframe} class="w-full h-full" title="iframe-code-content" on:load={injectContent} sandbox="allow-same-origin">
+              <iframe bind:this={iframe} class="w-full h-full" title="iframe-code-content" on:load={injectContent}>
                 <div class={twJoin(divClass, meta.class)}>
                   <slot name="example" />
                 </div>
