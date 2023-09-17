@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Button from '$lib/buttons/Button.svelte';
+  import Button from '$lib/button/Button.svelte';
   import type { PageData } from '../$types';
   import CompoCard from '../utils/CompoCard.svelte';
   import Section from './utils/Section.svelte';

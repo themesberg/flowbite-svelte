@@ -3,40 +3,40 @@ export { default as Accordion } from './accordion/Accordion.svelte';
 export { default as AccordionItem } from './accordion/AccordionItem.svelte';
 
 // Alerts
-export { default as Alert } from './alerts/Alert.svelte';
+export { default as Alert } from './alert/Alert.svelte';
 
 // Avatar
 export { default as Avatar } from './avatar/Avatar.svelte';
 
 // Badges
-export { default as Badge } from './badges/Badge.svelte';
+export { default as Badge } from './badge/Badge.svelte';
 
 // Banner
 export { default as Banner } from './banner/Banner.svelte';
 
 // Bottom navigation
-export { default as BottomNav } from './bottom-nav/BottomNav.svelte';
-export { default as BottomNavItem } from './bottom-nav/BottomNavItem.svelte';
-export { default as BottomNavHeader } from './bottom-nav/BottomNavHeader.svelte';
-export { default as BottomNavHeaderItem } from './bottom-nav/BottomNavHeaderItem.svelte';
+export { default as BottomNav } from './bottom-navigation/BottomNav.svelte';
+export { default as BottomNavItem } from './bottom-navigation/BottomNavItem.svelte';
+export { default as BottomNavHeader } from './bottom-navigation/BottomNavHeader.svelte';
+export { default as BottomNavHeaderItem } from './bottom-navigation/BottomNavHeaderItem.svelte';
 
 // Breadcrumbs
-export { default as Breadcrumb } from './breadcrumbs/Breadcrumb.svelte';
-export { default as BreadcrumbItem } from './breadcrumbs/BreadcrumbItem.svelte';
+export { default as Breadcrumb } from './breadcrumb/Breadcrumb.svelte';
+export { default as BreadcrumbItem } from './breadcrumb/BreadcrumbItem.svelte';
 
 // Buttons
-export { default as Button } from './buttons/Button.svelte';
-export { default as GradientButton } from './buttons/GradientButton.svelte';
+export { default as Button } from './button/Button.svelte';
+export { default as GradientButton } from './button/GradientButton.svelte';
 
 // Buttongroups
-export { default as ButtonGroup } from './buttongroups/ButtonGroup.svelte';
+export { default as ButtonGroup } from './button-group/ButtonGroup.svelte';
 
 // Cards
-export { default as Card } from './cards/Card.svelte';
+export { default as Card } from './card/Card.svelte';
 
 // Carousels
-export { default as Carousel } from './carousels/Carousel.svelte';
-export { default as Thumbnails } from './carousels/Thumbnails.svelte';
+export { default as Carousel } from './carousel/Carousel.svelte';
+export { default as Thumbnails } from './carousel/Thumbnails.svelte';
 
 // Charts
 export { default as Chart } from './charts/Chart.svelte';
@@ -48,16 +48,16 @@ export { default as DarkMode } from './darkmode/DarkMode.svelte';
 export { default as Datepicker } from './datepicker/Datepicker.svelte';
 
 // DeviceMockup
-export { default as DeviceMockup } from './device-mockup/DeviceMockup.svelte';
+export { default as DeviceMockup } from './device-mockups/DeviceMockup.svelte';
 
 // Drawer
 export { default as Drawer } from './drawer/Drawer.svelte';
 
 // Dropdown
-export { default as Dropdown } from './dropdowns/Dropdown.svelte';
-export { default as DropdownDivider } from './dropdowns/DropdownDivider.svelte';
-export { default as DropdownHeader } from './dropdowns/DropdownHeader.svelte';
-export { default as DropdownItem } from './dropdowns/DropdownItem.svelte';
+export { default as Dropdown } from './dropdown/Dropdown.svelte';
+export { default as DropdownDivider } from './dropdown/DropdownDivider.svelte';
+export { default as DropdownHeader } from './dropdown/DropdownHeader.svelte';
+export { default as DropdownItem } from './dropdown/DropdownItem.svelte';
 
 // Footers
 export { default as Footer } from './footer/Footer.svelte';
@@ -106,10 +106,10 @@ export { default as ListgroupItem } from './list-group/ListgroupItem.svelte';
 export { default as Marquee } from './marquee/Marquee.svelte';
 
 // Modals
-export { default as Modal } from './modals/Modal.svelte';
+export { default as Modal } from './modal/Modal.svelte';
 
 // MegaMenu
-export { default as MegaMenu } from './megamenu/MegaMenu.svelte';
+export { default as MegaMenu } from './mega-menu/MegaMenu.svelte';
 
 // Navbar
 export { default as Navbar } from './navbar/Navbar.svelte';
@@ -119,34 +119,34 @@ export { default as NavLi } from './navbar/NavLi.svelte';
 export { default as NavUl } from './navbar/NavUl.svelte';
 
 // Pagination
-export { default as Pagination } from './paginations/Pagination.svelte';
-export { default as PaginationItem } from './paginations/PaginationItem.svelte';
+export { default as Pagination } from './pagination/Pagination.svelte';
+export { default as PaginationItem } from './pagination/PaginationItem.svelte';
 
 // Popover
 export { default as Popover } from './popover/Popover.svelte';
 
 // Progressbar
-export { default as Progressbar } from './progressbars/Progressbar.svelte';
+export { default as Progressbar } from './progress/Progressbar.svelte';
 
 // Rating
-export { default as Rating } from './ratings/Rating.svelte';
-export { default as AdvancedRating } from './ratings/AdvancedRating.svelte';
-export { default as ScoreRating } from './ratings/ScoreRating.svelte';
-export { default as RatingComment } from './ratings/RatingComment.svelte';
-export { default as Review } from './ratings/Review.svelte';
-export { default as Star } from './ratings/Star.svelte';
-export { default as Heart } from './ratings/Heart.svelte';
-export { default as Thumbup } from './ratings/Thumbup.svelte';
+export { default as Rating } from './rating/Rating.svelte';
+export { default as AdvancedRating } from './rating/AdvancedRating.svelte';
+export { default as ScoreRating } from './rating/ScoreRating.svelte';
+export { default as RatingComment } from './rating/RatingComment.svelte';
+export { default as Review } from './rating/Review.svelte';
+export { default as Star } from './rating/Star.svelte';
+export { default as Heart } from './rating/Heart.svelte';
+export { default as Thumbup } from './rating/Thumbup.svelte';
 
 // Sidebar
-export { default as Sidebar } from './sidebars/Sidebar.svelte';
-export { default as SidebarItem } from './sidebars/SidebarItem.svelte';
-export { default as SidebarBrand } from './sidebars/SidebarBrand.svelte';
-export { default as SidebarCta } from './sidebars/SidebarCta.svelte';
-export { default as SidebarDropdownItem } from './sidebars/SidebarDropdownItem.svelte';
-export { default as SidebarDropdownWrapper } from './sidebars/SidebarDropdownWrapper.svelte';
-export { default as SidebarGroup } from './sidebars/SidebarGroup.svelte';
-export { default as SidebarWrapper } from './sidebars/SidebarWrapper.svelte';
+export { default as Sidebar } from './sidebar/Sidebar.svelte';
+export { default as SidebarItem } from './sidebar/SidebarItem.svelte';
+export { default as SidebarBrand } from './sidebar/SidebarBrand.svelte';
+export { default as SidebarCta } from './sidebar/SidebarCta.svelte';
+export { default as SidebarDropdownItem } from './sidebar/SidebarDropdownItem.svelte';
+export { default as SidebarDropdownWrapper } from './sidebar/SidebarDropdownWrapper.svelte';
+export { default as SidebarGroup } from './sidebar/SidebarGroup.svelte';
+export { default as SidebarWrapper } from './sidebar/SidebarWrapper.svelte';
 
 // Skeleton
 export { default as CardPlaceholder } from './skeleton/CardPlaceholder.svelte';
@@ -163,23 +163,23 @@ export { default as SpeedDial } from './speed-dial/SpeedDial.svelte';
 export { default as SpeedDialButton } from './speed-dial/SpeedDialButton.svelte';
 
 // Spin
-export { default as Spinner } from './spinners/Spinner.svelte';
+export { default as Spinner } from './spinner/Spinner.svelte';
 
 // Steps
 export { default as StepIndicator } from './steps/StepIndicator.svelte';
 
 // Tables
-export { default as Table } from './tables/Table.svelte';
-export { default as TableBody } from './tables/TableBody.svelte';
-export { default as TableBodyCell } from './tables/TableBodyCell.svelte';
-export { default as TableBodyRow } from './tables/TableBodyRow.svelte';
-export { default as TableHead } from './tables/TableHead.svelte';
-export { default as TableHeadCell } from './tables/TableHeadCell.svelte';
-export { default as TableSearch } from './tables/TableSearch.svelte';
+export { default as Table } from './table/Table.svelte';
+export { default as TableBody } from './table/TableBody.svelte';
+export { default as TableBodyCell } from './table/TableBodyCell.svelte';
+export { default as TableBodyRow } from './table/TableBodyRow.svelte';
+export { default as TableHead } from './table/TableHead.svelte';
+export { default as TableHeadCell } from './table/TableHeadCell.svelte';
+export { default as TableSearch } from './table/TableSearch.svelte';
 
 // Tabs
-export { default as TabItem } from './tabs/TabItem.svelte';
-export { default as Tabs } from './tabs/Tabs.svelte';
+export { default as TabItem } from './tab/TabItem.svelte';
+export { default as Tabs } from './tab/Tabs.svelte';
 
 // Timeline
 export { default as Group } from './timeline/Group.svelte';
@@ -193,7 +193,7 @@ export { default as TimelineItemHorizontal } from './timeline/TimelineItemHorizo
 export { default as TimelineItemVertical } from './timeline/TimelineItemVertical.svelte';
 
 // Toast
-export { default as Toast } from './toasts/Toast.svelte';
+export { default as Toast } from './toast/Toast.svelte';
 
 // Toolbar
 export { default as Toolbar } from './toolbar/Toolbar.svelte';
@@ -201,7 +201,7 @@ export { default as ToolbarButton } from './toolbar/ToolbarButton.svelte';
 export { default as ToolbarGroup } from './toolbar/ToolbarGroup.svelte';
 
 // Tooltips
-export { default as Tooltip } from './tooltips/Tooltip.svelte';
+export { default as Tooltip } from './tooltip/Tooltip.svelte';
 
 // Typography
 export { default as A } from './typography/A.svelte';

@@ -9,7 +9,7 @@ thumnailSize: w-36
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   import { P, A } from '$lib'
 
   const components = 'DeviceMockup, DefaultMockup, Android, Ios, Smartwatch, Tablet'
@@ -208,3 +208,5 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [Flowbite Device Mockup](https://flowbite.com/docs/components/device-mockups/)
+
+<GitHubCompoLinks {components} />

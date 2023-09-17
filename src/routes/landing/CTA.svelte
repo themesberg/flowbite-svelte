@@ -1,5 +1,5 @@
 <script>
-  import Button from '$lib/buttons/Button.svelte';
+  import Button from '$lib/button/Button.svelte';
   import DarkMode from '$lib/darkmode/DarkMode.svelte';
   import Li from '$lib/typography/Li.svelte';
   import List from '$lib/typography/List.svelte';

@@ -10,11 +10,11 @@
 
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
-  import Button from '$lib/buttons/Button.svelte';
+  import Button from '$lib/button/Button.svelte';
   import Popper from '$lib/utils/Popper.svelte';
   import { setContext } from 'svelte';
   import generateId from '$lib/utils/generateId';
-  import GradientButton from '$lib/buttons/GradientButton.svelte';
+  import GradientButton from '$lib/button/GradientButton.svelte';
 
   export let defaultClass: string = 'fixed right-6 bottom-6';
   export let popperDefaultClass: string = 'flex items-center mb-4 gap-2';

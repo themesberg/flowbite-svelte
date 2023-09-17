@@ -9,7 +9,7 @@ thumbnailSize: w-64
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   
   const components = 'Timeline, TimelineItem, TimelineHorizontal, Activity, ActivityItem, Group, GroupItem, TimelineItemVertical, TimelineItemHorizontal'
 </script>
@@ -265,3 +265,5 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [Flowbite Timeline](https://flowbite.com/docs/components/timeline/)
+
+<GitHubCompoLinks {components} />

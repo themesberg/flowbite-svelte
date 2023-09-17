@@ -9,7 +9,7 @@ thumnailSize: w-28
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList, GitHubCompoLinks } from '../../utils'
   import { Badge, P, A } from '$lib'
 
   const components = 'Dropdown, DropdownDivider, DropdownHeader, DropdownItem'
@@ -746,3 +746,5 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [Flowbite Dropdown](https://flowbite.com/docs/components/drawer/)
+
+<GitHubCompoLinks {components} />

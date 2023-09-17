@@ -9,7 +9,7 @@ thumnailSize: w-36
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   import { A } from '$lib';
 </script>
 
@@ -156,3 +156,5 @@ You can use the following classes to set the text decoration for any inline text
 ## References
 
 - [Flowbite Typography](https://flowbite.com/docs/components/typography/)
+
+<GitHubCompoLinks {components} />

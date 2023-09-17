@@ -9,7 +9,7 @@ thumnailSize: w-64
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList, GitHubCompoLinks } from '../../utils'
   import { Badge, P, A } from '$lib'
 
   const components = 'TabItem, Tabs'
@@ -339,3 +339,5 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [Flowbite Tabs](https://flowbite.com/docs/components/tabs/)
+
+<GitHubCompoLinks {components} />

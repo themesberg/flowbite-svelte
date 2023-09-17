@@ -9,7 +9,7 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   import { P, A } from '$lib'
 
   const components = 'Avatar, Placeholder'
@@ -213,3 +213,5 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [Flowbite Avatar](https://flowbite.com/docs/components/avatar/)
+
+<GitHubCompoLinks {components} />

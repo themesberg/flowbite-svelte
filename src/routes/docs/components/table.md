@@ -9,7 +9,7 @@ thumnailSize: w-48
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   import { P, A } from '$lib'
 
   const components = 'Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, TableSearch'
@@ -949,3 +949,5 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [Flowbite Tables](https://flowbite.com/docs/components/tables/)
+
+<GitHubCompoLinks {components} />

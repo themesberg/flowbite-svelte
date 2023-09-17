@@ -8,7 +8,7 @@ description: Button groups are a Tailwind CSS powered set of buttons sticked tog
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList, GitHubCompoLinks } from '../../utils'
   import { Badge, P, A } from '$lib'
   const components = 'ButtonGroup'
 </script>
@@ -196,3 +196,5 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [Flowbite Button Group](https://flowbite.com/docs/components/button-group/)
+
+<GitHubCompoLinks {components} />

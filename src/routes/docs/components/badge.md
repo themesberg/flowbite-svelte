@@ -9,7 +9,7 @@ thumnailSize: w-28
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   import { P, A } from '$lib'
   import componentData1 from '../../component-data/Badge.json'
   const components = 'Badge'
@@ -267,3 +267,5 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [Flowbite Badge](https://flowbite.com/docs/components/badge/)
+
+<GitHubCompoLinks {components} />

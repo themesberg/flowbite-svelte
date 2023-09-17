@@ -8,7 +8,7 @@ description: Use the popover component to show detailed information inside a pop
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   import { P, A } from '$lib'
 
   const components = 'Popover, Popper, Frame'
@@ -386,3 +386,5 @@ The component inherits the following props, type, and default values from `Frame
 ## References
 
 - [Flowbite Popover](https://flowbite.com/docs/components/popover/)
+
+<GitHubCompoLinks {components} />

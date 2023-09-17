@@ -9,7 +9,7 @@ thumnailSize: w-48
 ---
 
 <script>
-  import { CompoAttributesViewer } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
 
   const components = 'Carousel, Indicators, Controls, ControlButton, Thumbnails, Thumbnail';
 </script>
@@ -260,3 +260,5 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [Flowbite Carousel](https://flowbite.com/docs/components/carousel/)
+
+<GitHubCompoLinks {components} />

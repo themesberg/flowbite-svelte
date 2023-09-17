@@ -9,7 +9,7 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   import { P, A, Alert } from '$lib'  
 
   const components = 'SpeedDial, SpeedDialButton'
@@ -521,3 +521,5 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [Flowbite Speed Dial](https://flowbite.com/docs/components/speed-dial/)
+
+<GitHubCompoLinks {components} />

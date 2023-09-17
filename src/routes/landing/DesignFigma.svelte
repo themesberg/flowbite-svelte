@@ -1,5 +1,5 @@
 <script>
-  import Button from '$lib/buttons/Button.svelte';
+  import Button from '$lib/button/Button.svelte';
   import ArrowRight from '../utils/icons/ArrowRight.svelte';
   import Figma from '../utils/icons/Figma.svelte';
   import FlowbiteLogo from '../utils/icons/FlowbiteLogo.svelte';

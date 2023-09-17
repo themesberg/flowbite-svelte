@@ -8,7 +8,7 @@ description: Use the accordion component to show hidden information based on the
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer} from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   import { P, A } from '$lib'; 
   const components = 'Accordion, AccordionItem'
 </script>
@@ -313,3 +313,5 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [Flowbite Accordion](https://flowbite.com/docs/components/accordion/)
+
+<GitHubCompoLinks {components} />

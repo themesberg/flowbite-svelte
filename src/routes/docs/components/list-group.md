@@ -9,7 +9,7 @@ thumnailSize: w-36
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList, GitHubCompoLinks } from '../../utils'
   import { Badge, Heading, P, A } from '$lib'
 
   const components = 'Listgroup, ListgroupItem'
@@ -155,3 +155,5 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [Flowbite List Group](https://flowbite.com/docs/components/list-group/)
+
+<GitHubCompoLinks {components} />
