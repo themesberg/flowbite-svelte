@@ -56,6 +56,63 @@ Use the simplest form of a search input component with an icon and a search butt
 </form>
 ```
 
+## Search with dropdown
+
+Use this search component with a dropdown to let your users select a category in which they would like the search query to be targeted in.
+
+```svelte example class="flex flex-col gap-4 h-64"
+<script>
+  import { Search, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
+  import { SearchOutline, ChevronDownSolid } from 'flowbite-svelte-icons';
+
+  // let el <!-- on component bind:ref={el} -->
+
+  const items = [
+    {
+      label: 'Mockups'
+    },
+    {
+      label: 'Templates'
+    },
+    {
+      label: 'Design'
+    },
+    {
+      label: 'Logos'
+    }
+  ]
+
+  let selectCategory = undefined
+
+</script>
+
+<form class="flex">
+  <div class="relative">
+    <Button class="rounded-e-none whitespace-nowrap border border-r-0 border-primary-700">
+      {selectCategory || "All categories"}
+      <ChevronDownSolid class="w-2.5 h-2.5 ml-2.5" />
+    </Button>
+    <Dropdown classContainer="w-full">
+      {#each items as { label }}
+        <DropdownItem 
+          on:click={() => {
+            selectCategory = label;
+            // el.focus()
+          }} 
+          class={selectCategory === label ? 'underline' : ''}
+        >
+          {label}
+        </DropdownItem>
+      {/each}
+    </Dropdown>
+  </div>
+  <Search size="md" class="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
+  <Button class="!p-2.5 rounded-s-none">
+    <SearchOutline class="w-5 h-5" />
+  </Button>
+</form>
+```
+
 ## Voice Search
 
 Get started with this example if you would like to enable voice search for your website and users.
