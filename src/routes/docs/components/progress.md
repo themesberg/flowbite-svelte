@@ -156,7 +156,8 @@ Use `labelInsideClass` prop to style your progressbar.
 
 ## Animation
 
-By default progress bar animate on mount, you can disable with `animate={false}`, you can custumize with `tweenDuration` and `easing`
+By default progress bar has animation disabled, you can activate with `animate`, you can custumize with `tweenDuration` and `easing`.
+By changing `precision` you can custumize the precision inside the progress bar.
 
 ```svelte example
 <script>
@@ -168,6 +169,7 @@ By default progress bar animate on mount, you can disable with `animate={false}`
 
 <Progressbar 
   {progress}
+  animate
   precision={2}
   labelOutside="With animation"
   labelInside
@@ -179,7 +181,6 @@ By default progress bar animate on mount, you can disable with `animate={false}`
 />
 <Progressbar 
   {progress}
-  animate={false}
   labelOutside="Without animation"
   labelInside 
   size="h-6" 

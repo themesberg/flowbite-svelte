@@ -7,7 +7,7 @@
   export let progress: string | number = '45';
   export let precision: number = 0
   export let tweenDuration: number = 400;
-  export let animate: boolean = true;
+  export let animate: boolean = false;
   export let size: string = 'h-2.5';
   export let labelInside: boolean = false;
   export let labelOutside: string = '';
@@ -56,10 +56,14 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let progress: string = '45';
+@prop export let progress: string | number = '45';
+@prop export let precision: number = 0
+@prop export let tweenDuration: number = 400;
+@prop export let animate: boolean = false;
 @prop export let size: string = 'h-2.5';
 @prop export let labelInside: boolean = false;
 @prop export let labelOutside: string = '';
+@prop export let easing: EasingFunction = cubicOut;
 @prop export let color: 'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo' = 'primary';
 @prop export let labelInsideClass: string = 'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
 @prop export let divClass: string = 'w-full bg-gray-200 rounded-full dark:bg-gray-700';
