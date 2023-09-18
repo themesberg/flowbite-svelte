@@ -12,7 +12,7 @@ thumnailSize: w-40
   import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   import { P, A, Heading } from '$lib'
   
-  const components = 'Input, Label, Helper, Fileupload, Textarea, Select, Checkbox, Radio, Toggle, MultiSelect'
+  const components = 'Checkbox, Dropzone, Fileupload, FloatingLabelInput, Helper, Input, InputAddon, Label, MultiSelect, NumberInput, Radio, Range, Search, Select, Textarea, Toggle'
 </script>
 
 The Input component allows you to change the input size, add disabled, helper text, and floating label.
@@ -76,7 +76,7 @@ With the Input component, you can add <a href="https://flowbite-svelte.vercel.ap
 
 ```svelte example
 <script>
-  import { Label, Input, InputAddon, ButtonGroup } from 'flowbite-svelte';
+  import { Label, Input, ButtonGroup } from 'flowbite-svelte';
   import { EnvelopeSolid } from 'flowbite-svelte-icons';
 </script>
 

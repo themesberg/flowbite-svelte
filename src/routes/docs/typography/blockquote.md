@@ -9,7 +9,7 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   import { P, A, Heading } from '$lib'; 
 
   const components = 'Blockquote'
@@ -212,3 +212,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite the `blockquote` tag class.
 
 <CompoAttributesViewer {components}/>
+
+## References
+
+<GitHubCompoLinks {components} dirName="typography"/>

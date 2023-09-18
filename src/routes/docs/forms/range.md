@@ -8,7 +8,7 @@ description: Get started with the range component to receive a number from the u
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList, GitHubCompoLinks } from '../../utils'
   import { Badge, A } from '$lib'
   const components = 'Range'
   let minmaxValue=5
@@ -108,3 +108,5 @@ Use the `class` prop to overwrite the default class.
 ## References
 
 - [Flowbite Range Slider](https://flowbite.com/docs/forms/range/)
+
+<GitHubCompoLinks {components} dirName="forms"/>

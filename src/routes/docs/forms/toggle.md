@@ -9,7 +9,7 @@ thumbnailSize: w-72
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList, GitHubCompoLinks } from '../../utils'
   import { onMount } from 'svelte';
   import { Toggle, Badge, A } from '$lib'
 
@@ -84,3 +84,5 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [Flowbite Switch (Toggle)](https://flowbite.com/docs/forms/toggle/)
+
+<GitHubCompoLinks {components} dirName="forms"/>

@@ -11,7 +11,7 @@ description: Use the following Tailwind CSS powered toolbars to show groups of t
 	import { TableProp, TableDefaultRow, GitHubSourceList, CompoAttributesViewer } from '../../utils';
   import { Toolbar, ToolbarButton, ToolbarGroup, Avatar, Button, Textarea, Heading, A } from '$lib'
 
-  const components = 'Toolbar, ToolbarButton, ToolbarGroup'
+  // const components = 'Toolbar, ToolbarButton, ToolbarGroup'
 </script>
 
 ## Setup
@@ -154,4 +154,4 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite `divClass`.
 
-<CompoAttributesViewer {components}/>
+

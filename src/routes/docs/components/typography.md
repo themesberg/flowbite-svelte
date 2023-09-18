@@ -11,6 +11,7 @@ thumnailSize: w-36
 <script>
   import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   import { A } from '$lib';
+  const components = 'A, Blockquote, DesciptionList, Heading, Hr, Img, Layout';
 </script>
 
 The typography for FlowBite is completely based on the utility classes from Tailwind CSS.

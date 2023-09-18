@@ -11,7 +11,7 @@ description: Use the popover component to show detailed information inside a pop
   import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   import { P, A } from '$lib'
 
-  const components = 'Popover, Popper, Frame'
+  const components = 'Popover'
 </script>
 
 Get started with the popover component to show any type of content inside a pop-up box when hovering or clicking over a trigger element. There are multiple examples that you can choose from, such as showing more information about a user profile, company profile, password strength, and more.

@@ -12,7 +12,7 @@ thumnailSize: w-36
   import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   import { P, A } from '$lib'
 
-  const components = 'Card, Frame'
+  const components = 'Card'
 </script>
 
 Use these responsive card components to show data entries and information to your users in multiple forms and contexts such as for your blog, application, user profiles, and more.
