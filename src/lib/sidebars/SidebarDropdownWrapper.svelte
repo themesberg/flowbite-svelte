@@ -2,6 +2,7 @@
   import { twMerge } from 'tailwind-merge';
   import { fade, blur, fly, slide } from 'svelte/transition';
   import type { TransitionTypes, TransitionParamTypes } from '../types';
+  import { createEventDispatcher } from 'svelte';
 
   export let btnClass: string = 'flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700';
   export let label: string = '';
@@ -24,9 +25,14 @@
     }
   };
 
+  const dispatch = createEventDispatcher<{
+    click: null
+  }>();
+
   export let isOpen = false;
   const handleDropdown = () => {
     isOpen = !isOpen;
+    dispatch("click");
   };
 </script>
 
