@@ -1,8 +1,10 @@
 <script lang="ts">
+  import type { Action } from 'svelte/action';
   import { getContext } from 'svelte';
   import { twMerge } from 'tailwind-merge';
   import type { SidebarType } from './Sidebar.svelte';
 
+  export let action: Action<HTMLElement, any> = () => {};
   export let href: string = '';
   export let label: string = '';
   export let spanClass: string = 'ml-3';
@@ -27,7 +29,7 @@
 </script>
 
 <li>
-  <a {...$$restProps} {href} on:blur on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover class={aClass}>
+  <a {...$$restProps} {href} use:action on:blur on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover class={aClass}>
     <slot name="icon" />
     <span class={spanClass}>{label}</span>
     {#if $$slots.subtext}
