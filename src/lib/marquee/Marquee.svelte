@@ -48,7 +48,6 @@
   </div>
 </div>
 
-
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)

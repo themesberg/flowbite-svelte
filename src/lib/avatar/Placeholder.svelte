@@ -33,4 +33,6 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let rounded: boolean = false;
+@prop export let border: boolean = false;
+@prop export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
 -->
