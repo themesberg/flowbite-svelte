@@ -9,10 +9,9 @@ thumnailSize: w-48
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'  
-
-  const components = 'Modal'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The modal component can be used as an interactive dialog on top of the main content area of the website to show notifications and gather information using form elements from your website users.
@@ -406,10 +405,10 @@ The component has the following props, type, and default values. See [types page
 - Use the `bodyClass` prop to overwrite body modal default class.
 - Use the `classDialog` prop to overwrite `dialogClass`.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Modal](https://flowbite.com/docs/components/modal/)
 
-<GitHubCompoLinks {components} />
+<GitHubCompoLinks />

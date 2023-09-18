@@ -8,9 +8,9 @@ description: Button groups are a Tailwind CSS powered set of buttons sticked tog
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, P, A } from '$lib'
-  const components = 'ButtonGroup'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The button group component from Flowbite-Svelte can be used to stack together multiple buttons and links inside a single element.
@@ -191,10 +191,10 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite `divClass`.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Button Group](https://flowbite.com/docs/components/button-group/)
 
-<GitHubCompoLinks {components} />
+<GitHubCompoLinks />

@@ -8,10 +8,9 @@ description: The Drawer component can be used as a hidden off-canvas sidebar for
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Heading, P, A } from '$lib';
-
-  const components = 'Drawer'
+  const dirName = toKebabCase(component_title)
 </script>
 
 Use the Drawer component (or “off-canvas”) to show a fixed element relative to the document page from any side for navigation, contact forms, informational purposes or other user actions.
@@ -631,10 +630,10 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite `divClass`.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Drawer](https://flowbite.com/docs/components/drawer/)
 
-<GitHubCompoLinks {components} />
+<GitHubCompoLinks />

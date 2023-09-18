@@ -9,10 +9,9 @@ thumnailSize: w-48
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
-
-  const components = 'Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, TableSearch'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The table component represents a set of structured elements made up of rows and columns as table cells that can be used to show data sets to your website users.
@@ -944,10 +943,10 @@ The component has the following props, type, and default values. See [types page
 - Use the `classInput` prop to overwrite `inputClass`.
 - Use the `classSvgDiv` prop to overwrite `svgDivClass`.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Tables](https://flowbite.com/docs/components/tables/)
 
-<GitHubCompoLinks {components} />
+<GitHubCompoLinks />

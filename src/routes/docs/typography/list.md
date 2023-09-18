@@ -9,7 +9,7 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
  
   const components = 'List, Li, DescriptionList'
 </script>
@@ -359,4 +359,4 @@ The component has the following props, type, and default values. See [types page
 
 ## References
 
-<GitHubCompoLinks {components} dirName="typography"/>
+<GitHubCompoLinks {components}/>

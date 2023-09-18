@@ -9,9 +9,9 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
-  const components = 'Indicator'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The indicator component can be used as a small element positioned absolutely relative to another component such as a button or card and show a number count, account status (red for offline, green for online) and other useful information.
@@ -266,10 +266,10 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite the `div` tag class.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Indicators](https://flowbite.com/docs/components/indicators/)
 
-<GitHubCompoLinks {components} />
+<GitHubCompoLinks />

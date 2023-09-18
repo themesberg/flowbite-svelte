@@ -9,10 +9,9 @@ thumnailSize: w-40
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
-
-  const components = 'Kbd, ArrowKeyDown, ArrowKeyLeft, ArrowKeyRight, ArrowKeyUp'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The KBD (Keyboard) component can be used to indicate a textual user input from the keyboard inside other elements such as in text, tables, cards, and more.
@@ -241,10 +240,10 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite `svgClass`.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite KBD (Keyboard)](https://flowbite.com/docs/components/kbd/)
 
-<GitHubCompoLinks {components} />
+<GitHubCompoLinks />

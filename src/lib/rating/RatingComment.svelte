@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Button from '../button/Button.svelte';
+  import Button from '../buttons/Button.svelte';
   import Rating from './Rating.svelte';
   // default is floor
   export let ceil: boolean = false;

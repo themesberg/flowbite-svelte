@@ -9,10 +9,9 @@ thumnailSize: w-28
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
-  import componentData1 from '../../component-data/Badge.json'
-  const components = 'Badge'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The badge component can be used to complement other elements such as buttons or text elements as a label or to show the count of a given data, such as the number of comments for an article or how much time has passed by since a comment has been made.
@@ -262,10 +261,10 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite the default class.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Badge](https://flowbite.com/docs/components/badge/)
 
-<GitHubCompoLinks {components} />
+<GitHubCompoLinks />

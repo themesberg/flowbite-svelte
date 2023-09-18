@@ -9,10 +9,9 @@ thumnailSize: w-48
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, Heading, P, A } from '$lib'
-
-  const components = 'Pagination, PaginationItem'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The pagination component can be used to navigate across a series of content and data sets for various pages such as blog posts, products, and more. You can use multiple variants of this component with or without icons and even for paginating table data entries.
@@ -343,10 +342,10 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite the default class.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Pagination](https://flowbite.com/docs/components/pagination/)
 
-<GitHubCompoLinks {components} />
+<GitHubCompoLinks />

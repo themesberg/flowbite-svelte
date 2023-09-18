@@ -8,7 +8,7 @@ description: Get started with the select component to allow the user to choose f
 ---
 
 <script>
-import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList, GitHubCompoLinks } from '../../utils'
+import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
 import { Badge, A } from '$lib'
 const components = 'Select, MultiSelect'
 </script>
@@ -279,4 +279,4 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Select](https://flowbite.com/docs/forms/select/)
 
-<GitHubCompoLinks {components} dirName="forms"/>
+<GitHubCompoLinks {components}/>

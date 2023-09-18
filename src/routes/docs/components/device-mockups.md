@@ -9,10 +9,9 @@ thumnailSize: w-36
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
-
-  const components = 'DeviceMockup, DefaultMockup, Android, Ios, Smartwatch, Tablet'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The device mockup component can be used to feature a preview and screenshot of your application as if you would already use it on a mobile phone and it’s a great use case for hero and CTA sections.
@@ -203,10 +202,10 @@ The component has the following props, type, and default values. See [types page
 - Use the `classRight` prop to overwrite `right`.
 - Use the `classSlot` prop to overwrite `slot`.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Device Mockup](https://flowbite.com/docs/components/device-mockups/)
 
-<GitHubCompoLinks {components} />
+<GitHubCompoLinks />

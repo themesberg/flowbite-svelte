@@ -8,9 +8,9 @@ description: Use the mega menu component as a full-width dropdown inside the nav
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils';
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils';
   import { P, A } from '$lib';
-  const components = 'MegaMenu'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The mega menu component is a full-width dropdown that can be triggered by clicking on the menu item and it shows a list of links that you can use to navigate through the pages on a website.
@@ -291,10 +291,10 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite the wrapper class.
 - Use the `classUl` prop to overwrite the `ul` tag class.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Mega Menu](https://flowbite.com/docs/components/list-group/)
 
-<GitHubCompoLinks {components} />
+<GitHubCompoLinks />

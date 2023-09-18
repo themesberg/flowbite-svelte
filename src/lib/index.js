@@ -25,14 +25,14 @@ export { default as Breadcrumb } from './breadcrumb/Breadcrumb.svelte';
 export { default as BreadcrumbItem } from './breadcrumb/BreadcrumbItem.svelte';
 
 // Buttons
-export { default as Button } from './button/Button.svelte';
-export { default as GradientButton } from './button/GradientButton.svelte';
+export { default as Button } from './buttons/Button.svelte';
+export { default as GradientButton } from './buttons/GradientButton.svelte';
 
 // Buttongroups
 export { default as ButtonGroup } from './button-group/ButtonGroup.svelte';
 
 // Cards
-export { default as Card } from './card/Card.svelte';
+export { default as Card } from './cards/Card.svelte';
 
 // Carousels
 export { default as Carousel } from './carousel/Carousel.svelte';
@@ -178,8 +178,8 @@ export { default as TableHeadCell } from './table/TableHeadCell.svelte';
 export { default as TableSearch } from './table/TableSearch.svelte';
 
 // Tabs
-export { default as TabItem } from './tab/TabItem.svelte';
-export { default as Tabs } from './tab/Tabs.svelte';
+export { default as TabItem } from './tabs/TabItem.svelte';
+export { default as Tabs } from './tabs/Tabs.svelte';
 
 // Timeline
 export { default as Group } from './timeline/Group.svelte';

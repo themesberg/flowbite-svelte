@@ -9,9 +9,9 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Breadcrumb, BreadcrumbItem, Heading, P, A } from '$lib'
-  const components = 'Breadcrumb, BreadcrumbItem'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The breadcrumb component is an important part of any website or application that can be used to show the current location of a page in a hierarchical structure of pages.
@@ -105,10 +105,10 @@ The component has the following props, type, and default values. See [types page
 - Use the `classLink` prop to overwrite `linkClass`.
 - Use the `classSpan` prop to overwrite `spanClass`.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Breadcrumb](https://flowbite.com/docs/components/breadcrumb/)
 
-<GitHubCompoLinks {components} />
+<GitHubCompoLinks />

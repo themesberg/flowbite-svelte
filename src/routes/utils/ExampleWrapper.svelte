@@ -1,6 +1,6 @@
 <script lang="ts">
   import { twJoin, twMerge } from 'tailwind-merge';
-  import Button from '$lib/button/Button.svelte';
+  import Button from '$lib/buttons/Button.svelte';
   import ExampleDarkMode from './ExampleDarkMode.svelte';
   import GitHub from './icons/GitHub.svelte';
   import Tooltip from '$lib/tooltip/Tooltip.svelte';

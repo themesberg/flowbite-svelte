@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Button from '$lib/button/Button.svelte';
+  import Button from '$lib/buttons/Button.svelte';
   import Tooltip from '$lib/tooltip/Tooltip.svelte';
   import type { Placement } from '@floating-ui/dom';
   import { twMerge } from 'tailwind-merge';

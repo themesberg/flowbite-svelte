@@ -9,7 +9,7 @@ thumnailSize: w-72
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { A, Heading, Breadcrumb, BreadcrumbItem } from '$lib';
 
   const components = 'Heading, P, A, Mark, Secondary'
@@ -271,4 +271,4 @@ The component has the following props, type, and default values. See [types page
 
 ## References
 
-<GitHubCompoLinks {components} dirName="typography"/>
+<GitHubCompoLinks {components}/>

@@ -9,9 +9,9 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
-  const components = 'Banner'
+  const dirName = toKebabCase(component_title)
 </script>
 
 Get started with the sticky banner component coded with Tailwind CSS and Flowbite to show marketing, informational and CTA messages to your website visitors fixed to the top or bottom part of the page as the user scroll down the main content area.
@@ -159,10 +159,10 @@ The component has the following props, type, and default values. See [types page
 - Use the `classDiv` prop to overwrite `divClass`.
 - Use the `classInner` prop to overwrite `innerClass`.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Banner](https://flowbite.com/docs/components/banner/)
 
-<GitHubCompoLinks {components} />
+<GitHubCompoLinks />

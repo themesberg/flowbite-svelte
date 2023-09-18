@@ -8,9 +8,9 @@ description: Use the accordion component to show hidden information based on the
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'; 
-  const components = 'Accordion, AccordionItem'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The accordion component is a collection of vertically collapsing header and body elements that can be used to show and hide information based on the Tailwind CSS utility classes and JavaScript from Flowbite.
@@ -308,10 +308,11 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite `defaultClass`.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName} />
 
 ## References
 
 - [Flowbite Accordion](https://flowbite.com/docs/components/accordion/)
 
-<GitHubCompoLinks {components} />
+<GitHubCompoLinks />
+

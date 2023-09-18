@@ -9,10 +9,9 @@ thumnailSize: w-40
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A, Heading } from '$lib'
-  
-  const components = 'Checkbox, Dropzone, Fileupload, FloatingLabelInput, Helper, Input, InputAddon, Label, MultiSelect, NumberInput, Radio, Range, Search, Select, Textarea, Toggle'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The Input component allows you to change the input size, add disabled, helper text, and floating label.
@@ -247,10 +246,10 @@ Get started with the default example of a select input component to get a single
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Forms](https://flowbite.com/docs/components/forms/)
 
-<GitHubCompoLinks {components} />
+<GitHubCompoLinks />

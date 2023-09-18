@@ -19,7 +19,7 @@
 
   onMount(() => {
     intervalId = setInterval(() => {
-      if (Math.abs(offset) >= marquee.offsetWidth) {
+      if (marquee && Math.abs(offset) >= marquee.offsetWidth) {
         offset = 0;
       } else {
         if (isHovering) offset -= hoverSpeed;
@@ -47,6 +47,7 @@
     <slot />
   </div>
 </div>
+
 
 <!--
 @component

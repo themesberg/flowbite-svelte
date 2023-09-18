@@ -9,10 +9,9 @@ thumnailSize: w-36
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, Heading, P, A } from '$lib'
-
-  const components = 'Listgroup, ListgroupItem'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The list group component can be used to display a series of elements, buttons or links inside a single card component similar to a sidebar.
@@ -150,10 +149,10 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite the `li` tag class.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite List Group](https://flowbite.com/docs/components/list-group/)
 
-<GitHubCompoLinks {components} />
+<GitHubCompoLinks />

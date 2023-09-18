@@ -9,11 +9,10 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
-
-  const components = 'Avatar, Placeholder'
   let name;
+  const dirName = toKebabCase(component_title)
 </script>
 
 The avatar component can be used as a visual identifier for a user profile on your website and you can use the examples from Flowbite to modify the styles and sizes of these components using the utility classes from Tailwind CSS.
@@ -208,10 +207,10 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite the default class.
 - Use the `classPlaceholder` prop to overwrite the placeholder class.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Avatar](https://flowbite.com/docs/components/avatar/)
 
-<GitHubCompoLinks {components} />
+<GitHubCompoLinks />

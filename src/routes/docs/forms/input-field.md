@@ -8,7 +8,7 @@ description: Get started with a collection of input fields built with Tailwind C
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, DocBadgeList, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
+  import { TableProp, TableDefaultRow, DocBadgeList, CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { onMount } from 'svelte';
   import { Badge, A } from '$lib'
 
@@ -397,4 +397,4 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Input Field](https://flowbite.com/docs/forms/input-field/)
 
-<GitHubCompoLinks {components} dirName="forms"/>
+<GitHubCompoLinks {components}/>

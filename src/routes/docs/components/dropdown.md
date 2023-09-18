@@ -9,10 +9,9 @@ thumnailSize: w-28
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, P, A } from '$lib'
-
-  const components = 'Dropdown, DropdownDivider, DropdownHeader, DropdownItem'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The dropdown component can be used to show a list of menu items when clicking on an element such as a button and hiding it when clicking outside of the triggering element.
@@ -741,10 +740,10 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite `defaultClass`.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Dropdown](https://flowbite.com/docs/components/drawer/)
 
-<GitHubCompoLinks {components} />
+<GitHubCompoLinks />

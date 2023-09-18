@@ -12,6 +12,7 @@ export { default as TableProp } from './TableProp.svelte';
 export { default as CompoAttributesViewer } from './CompoAttributesViewer.svelte';
 export { default as GitHubCompoLinks } from './GitHubCompoLinks.svelte';
 export { default as Toc } from './Toc.svelte';
+export { toKebabCase, getFilteredFileNames } from './helpers';
 
 const basename = (path: string) => path.split('/').pop()?.split('.').shift() ?? '';
 const filePath = (path: string) => '/' + basename(path);

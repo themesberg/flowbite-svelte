@@ -8,10 +8,9 @@ description: Use the popover component to show detailed information inside a pop
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
-
-  const components = 'Popover'
+  const dirName = toKebabCase(component_title)
 </script>
 
 Get started with the popover component to show any type of content inside a pop-up box when hovering or clicking over a trigger element. There are multiple examples that you can choose from, such as showing more information about a user profile, company profile, password strength, and more.
@@ -381,10 +380,10 @@ The component inherits the following props, type, and default values from `Frame
 
 - Use the `class` prop to overwrite the default class.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Popover](https://flowbite.com/docs/components/popover/)
 
-<GitHubCompoLinks {components} />
+<GitHubCompoLinks />

@@ -9,7 +9,7 @@ thumnailSize: w-40
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList, GitHubCompoLinks } from '../../utils'
+  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, A } from '$lib'
 
   const components = 'FloatingLabelInput, Helper'
@@ -175,4 +175,4 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Floating Label](https://flowbite.com/docs/forms/floating-label/)
 
-<GitHubCompoLinks {components} dirName="forms"/>
+<GitHubCompoLinks {components}/>
