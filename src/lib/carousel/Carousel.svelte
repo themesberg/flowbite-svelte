@@ -89,7 +89,7 @@
 
   const onDragStart = (evt: MouseEvent | TouchEvent) => {
     touchEvent = evt;
-    evt.preventDefault();
+    evt.cancelable && evt.preventDefault();
     const start = getPositionFromEvent(evt);
     const width = carouselDiv.getBoundingClientRect().width;
     if (start === undefined || width === undefined) return;
