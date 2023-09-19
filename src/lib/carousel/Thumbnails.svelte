@@ -6,6 +6,7 @@
   export let images: HTMLImgAttributes[] = [];
   export let index: number = 0;
   export let ariaLabel: string = 'Click to view image';
+  export let imgClass: string = '';
 
   $: index = (index + images.length) % images.length;
 </script>
@@ -15,8 +16,8 @@
     {@const selected = index === idx}
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <button on:click={() => (index = idx)} aria-label={ariaLabel}>
-      <slot {Thumbnail} {image} {selected}>
-        <Thumbnail {...image} {selected} />
+      <slot {Thumbnail} {image} {selected} {imgClass}>
+        <Thumbnail {...image} {selected} class={imgClass} />
       </slot>
     </button>
   {/each}
@@ -29,4 +30,5 @@
 @prop export let images: HTMLImgAttributes[] = [];
 @prop export let index: number = 0;
 @prop export let ariaLabel: string = 'Click to view image';
+@prop export let imgClass:string = '';
 -->

@@ -88,7 +88,7 @@
     }
   };
 
-  const onDragStart = (evt: MouseEvent | TouchEvent) => {
+  const onDragStart = (evt: MouseEvent | TouchEvent) => { // onDragStart must be invoked with "nonpassive" because of preventDefault
     touchEvent = evt;
     evt.cancelable && evt.preventDefault();
     const start = getPositionFromEvent(evt);
@@ -149,7 +149,7 @@
 
 <!-- The move listeners go here, so things keep working if the touch strays out of the element. -->
 <svelte:document on:mousemove={onDragMove} on:mouseup={onDragStop} on:touchmove={onDragMove} on:touchend={onDragStop} />
-<div bind:this={carouselDiv} class="relative" on:mousedown={onDragStart} on:touchstart|passive={onDragStart} role="button" aria-label={ariaLabel} tabindex="0">
+<div bind:this={carouselDiv} class="relative" on:mousedown|nonpassive={onDragStart} on:touchstart|nonpassive={onDragStart} on:mousemove={onDragMove} on:mouseup={onDragStop} on:touchmove={onDragMove} on:touchend={onDragStop} role="button" aria-label={ariaLabel} tabindex="0">
   <div {...$$restProps} class={twMerge(divClass, activeDragGesture === undefined ? 'transition-transform' : '', $$props.class)} use:loop={duration}>
     <slot name="slide" {Slide} {index}>
       <Slide image={images[index]} {transition} class={imgClass} />
@@ -167,4 +167,5 @@
 @prop export let transition: TransitionFunc = (x) => fade(x, { duration: 700, easing: quintOut });
 @prop export let duration: number = 0;
 @prop export let ariaLabel: string = 'Draggable Carousel';
+@prop export let imgClass: string = '';
 -->

@@ -196,9 +196,9 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
 </script>
 
 <div class="max-w-4xl space-y-4">
-  <Carousel {images} let:Indicators let:Controls class="rounded-none ring-4 ring-green-500 border-4 border-white dark:border-gray-800">
+  <Carousel {images} imgClass="object-contain h-full w-fit rounded-sm" let:Indicators let:Controls class="rounded-md ring-4 ring-green-500 border-4 border-white dark:border-gray-800 min-h-[320px] bg-gray-200">
     <Indicators class="border border-white rounded-md p-2" />
-    <Controls class="items-start text-red-400 dark:text-green-400 pt-4" />
+    <Controls class="items-center text-red-400 dark:text-green-400 pt-4" />
   </Carousel>
 </div>
 ```
@@ -214,7 +214,7 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
 </script>
 
 <div class="max-w-4xl space-y-4">
-  <Carousel {images} class="min-h-[320px]" imgClass="object-contain !h-full" let:Indicators let:Controls bind:index>
+  <Carousel {images} let:Indicators let:Controls bind:index>
     <Indicators let:selected let:index>
       <Indicator color={selected ? 'red' : 'green'} class="w-5 h-5 text-white border border-white {selected ? 'opacity-100' : 'opacity-80'}">
         {index}
@@ -226,7 +226,7 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
     </Controls>
   </Carousel>
   <Thumbnails class="bg-transparent gap-3" let:Thumbnail let:image let:selected {images} bind:index>
-    <Thumbnail {...image} {selected} class="rounded-md shadow-xl hover:outline hover:outline-primary-500" />
+    <Thumbnail {...image} {selected} class="rounded-md shadow-xl hover:outline hover:outline-primary-500" activeClass="outline outline-primary-400"/>
   </Thumbnails>
 </div>
 ```
