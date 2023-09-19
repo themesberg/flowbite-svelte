@@ -9,7 +9,7 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { A, Heading } from '$lib'
 
   const components = 'P, Span'
@@ -338,3 +338,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite the default class.
 
 <CompoAttributesViewer {components}/>
+
+## References
+
+<GitHubCompoLinks {components}/>

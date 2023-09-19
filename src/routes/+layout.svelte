@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { DarkMode, Navbar, NavBrand, NavHamburger, NavLi, NavUl } from '$lib';
-  import Tooltip from '$lib/tooltips/Tooltip.svelte';
+  import Tooltip from '$lib/tooltip/Tooltip.svelte';
   import { onMount, setContext } from 'svelte';
   import { writable, type Writable } from 'svelte/store';
   import '../app.css';

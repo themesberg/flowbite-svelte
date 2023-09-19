@@ -9,9 +9,9 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Heading, P, A } from '$lib'
-  const components = 'Video'
+  const dirName = toKebabCase(component_title)
 </script>
 
 ## Setup
@@ -118,8 +118,10 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite the `video` tag class.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Video](https://flowbite.com/docs/components/video/)
+
+<GitHubCompoLinks />

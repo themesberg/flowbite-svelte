@@ -9,10 +9,9 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A, Alert } from '$lib'  
-
-  const components = 'SpeedDial, SpeedDialButton'
+  const dirName = toKebabCase(component_title)
 </script>
 
 Get started with the speed dial component to show a list of buttons or menu items positioned relative to the body in either corner as a quick way to allow certains actions to be made by your users.
@@ -516,8 +515,10 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite `btnDefaultClass`.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Speed Dial](https://flowbite.com/docs/components/speed-dial/)
+
+<GitHubCompoLinks />

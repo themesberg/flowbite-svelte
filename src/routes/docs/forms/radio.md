@@ -9,7 +9,7 @@ thumnailSize: w-72
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, A } from '$lib'
 
   const components = 'Radio, Label, Helper'
@@ -301,3 +301,5 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [Flowbite Radio](https://flowbite.com/docs/forms/radio/)
+
+<GitHubCompoLinks {components}/>

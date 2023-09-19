@@ -9,9 +9,8 @@ thumnailSize: w-48
 ---
 
 <script>
-  import { CompoAttributesViewer } from '../../utils'
-
-  const components = 'Carousel, Indicators, Controls, ControlButton, Thumbnails, Thumbnail';
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The carousel component can be used to cycle through a set of elements using custom options, controls, and indicators.
@@ -255,8 +254,10 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Carousel](https://flowbite.com/docs/components/carousel/)
+
+<GitHubCompoLinks />

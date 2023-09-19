@@ -176,7 +176,7 @@ test('Table page should have h1', async ({ page }) => {
 
 // Tabs
 test('Tab page should have h1', async ({ page }) => {
-  await page.goto('/docs/components/tab');
+  await page.goto('/docs/components/tabs');
   expect(await page.textContent('h1')).toBe('Svelte Tabs - Flowbite');
 });
 

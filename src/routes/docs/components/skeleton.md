@@ -9,10 +9,9 @@ thumnailSize: w-40
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
-  
-  const components = 'CardPlaceholder, ImagePlaceholder, ListPlaceholder, Skeleton, TestimonialPlaceholder, TextPlaceholder, VideoPlaceholder, WidgetPlaceholder'
+  const dirName = toKebabCase(component_title)
 </script>
 
 Use the skeleton component to indicate a loading status with placeholder elements that look very similar to the type of content that is being loaded such as paragraphs, images, videos, and more.
@@ -158,8 +157,10 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite `divClass`.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Skeleton](https://flowbite.com/docs/components/sidebar/)
+
+<GitHubCompoLinks />

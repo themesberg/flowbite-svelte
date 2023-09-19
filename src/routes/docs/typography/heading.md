@@ -9,7 +9,7 @@ thumnailSize: w-72
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { A, Heading, Breadcrumb, BreadcrumbItem } from '$lib';
 
   const components = 'Heading, P, A, Mark, Secondary'
@@ -268,3 +268,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite the `small` tag class.
 
 <CompoAttributesViewer {components}/>
+
+## References
+
+<GitHubCompoLinks {components}/>

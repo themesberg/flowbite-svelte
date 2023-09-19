@@ -3,7 +3,7 @@
   import Button from '$lib/buttons/Button.svelte';
   import ExampleDarkMode from './ExampleDarkMode.svelte';
   import GitHub from './icons/GitHub.svelte';
-  import Tooltip from '$lib/tooltips/Tooltip.svelte';
+  import Tooltip from '$lib/tooltip/Tooltip.svelte';
   import { DesktopPcOutline, TabletOutline, MobilePhoneOutline } from 'flowbite-svelte-icons';
   import { onMount } from 'svelte';
   export let divClass = 'w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-6';

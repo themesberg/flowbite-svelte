@@ -1,6 +1,6 @@
 <script>
   import ToolbarButton from '$lib/toolbar/ToolbarButton.svelte';
-  import Tooltip from '$lib/tooltips/Tooltip.svelte';
+  import Tooltip from '$lib/tooltip/Tooltip.svelte';
 
   /** @type {string} */
   export let name;

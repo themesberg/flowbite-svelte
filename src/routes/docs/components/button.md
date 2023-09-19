@@ -9,10 +9,9 @@ thumnailSize: w-24
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, P, A } from '$lib'
-
-  const components = 'Button, GradientButton'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The button component is probably the most widely used element in any user interface or website as it can be used to launch an action but also to link to other pages.
@@ -307,8 +306,10 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite `button` tag class.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Buttons](https://flowbite.com/docs/components/buttons/)
+
+<GitHubCompoLinks />

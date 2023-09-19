@@ -9,8 +9,9 @@ thumnailSize: w-36
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks } from '../../utils'
   import { A } from '$lib';
+  const components = 'A, Blockquote, DescriptionList, Heading, Hr, Img, Layout, Li, List, Mark, P, Secondary, Span';
 </script>
 
 The typography for FlowBite is completely based on the utility classes from Tailwind CSS.
@@ -153,6 +154,12 @@ You can use the following classes to set the text decoration for any inline text
 <p class="line-through dark:text-gray-400">please read our terms and services</p>
 ```
 
+## Component data
+
+<CompoAttributesViewer {components}/>
+
 ## References
 
 - [Flowbite Typography](https://flowbite.com/docs/components/typography/)
+
+<GitHubCompoLinks {components}/>
