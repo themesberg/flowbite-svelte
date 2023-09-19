@@ -1,6 +1,6 @@
 <script lang="ts">
   import Avatar from '$lib/avatar/Avatar.svelte';
-  import Tooltip from '$lib/tooltips/Tooltip.svelte';
+  import Tooltip from '$lib/tooltip/Tooltip.svelte';
   import { ChevronRightSolid } from 'flowbite-svelte-icons';
   import Community from '../utils/icons/Community.svelte';
   import type { PageData } from '../$types';

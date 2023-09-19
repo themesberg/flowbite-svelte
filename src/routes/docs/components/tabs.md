@@ -9,10 +9,9 @@ thumnailSize: w-64
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, P, A } from '$lib'
-
-  const components = 'TabItem, Tabs'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The tabs component can be used either as an extra navigational hierarchy complementing the main navbar or you can also use it to change content inside a container just below the tabs using the data attributes from Flowbite.
@@ -334,8 +333,10 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite `defaultClass`.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Tabs](https://flowbite.com/docs/components/tabs/)
+
+<GitHubCompoLinks />

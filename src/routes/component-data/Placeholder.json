@@ -1,1 +1,1 @@
-{"name":"Placeholder","slots":[],"events":[],"props":[["rounded","boolean","false"]]}
+{"name":"Placeholder","slots":[],"events":[],"props":[["rounded","boolean","false"],["border","boolean","false"],["size","'xs' | 'sm' | 'md' | 'lg' | 'xl'","'md'"]]}

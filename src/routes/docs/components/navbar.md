@@ -8,10 +8,9 @@ description: The navbar component can be used to show a list of navigation links
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, Heading, P, A } from '$lib';
-
-  const components = 'Navbar, NavBrand, NavLi, NavUl, NavHamburger, Menu'
+  const dirName = toKebabCase(component_title)
 </script>
 
 Get started with the responsive navbar component from Flowbite to quickly set up a navigation menu for your website and set up the logo, list of pages, CTA button, search input, user profile options with a dropdown, and more.
@@ -330,8 +329,10 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite the `svg` tag class.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Navbar](https://flowbite.com/docs/components/navbar/)
+
+<GitHubCompoLinks />

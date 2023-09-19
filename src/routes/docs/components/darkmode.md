@@ -2,16 +2,16 @@
 layout: componentLayout
 title: Svelte Dark Mode - Flowbite
 breadcrumb_title: Svelte Dark mode
-component_title: Dark mode
+component_title: Darkmode
 dir: Components
 description: Learn how to configure and build a dark mode switcher for Flowbite using Tailwind CSS and start developing with the components from the library
 thumnailSize: w-24
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
-  const components = 'DarkMode'
+  const dirName = toKebabCase(component_title)
 </script>
 
 In Flowbite-Svelte, the `class` strategy is used to support toggling dark mode manually, so you should explicitly configure it in Talwind CSS:
@@ -104,8 +104,10 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite `btnClass`.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Dark Mode](https://flowbite.com/docs/customize/dark-mode/)
+
+<GitHubCompoLinks />

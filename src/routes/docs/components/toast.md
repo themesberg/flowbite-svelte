@@ -9,10 +9,9 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer  } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
-
-  const components = 'Toast'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The toast component can be used to enhance your website’s interactivity by pushing notifications to your visitors. You can choose from multiple styles, colors, sizes, and positions and even dismiss the component.
@@ -355,8 +354,10 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite `divClass`.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Toast](https://flowbite.com/docs/components/toast/)
+
+<GitHubCompoLinks />

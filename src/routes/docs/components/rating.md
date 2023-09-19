@@ -9,10 +9,9 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
-
-  const components = 'Rating, AdvancedRating, ScoreRating, RatingComment, Review, Star, Thumbup, Heart'
+  const dirName = toKebabCase(component_title)
 </script>
 
 Get started with the rating component to show an aggregate of reviews and scores in the forms of stars or numbers.
@@ -319,8 +318,10 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite the `svg` tag class.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Rating](https://flowbite.com/docs/components/rating/)
+
+<GitHubCompoLinks />

@@ -58,7 +58,7 @@
 ## Props
 @prop export let progress: string | number = '45';
 @prop export let precision: number = 0
-@prop export let tweenDuration: number = 400;
+  export let tweenDuration: number = 400;
 @prop export let animate: boolean = false;
 @prop export let size: string = 'h-2.5';
 @prop export let labelInside: boolean = false;

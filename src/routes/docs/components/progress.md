@@ -9,10 +9,9 @@ thumnailSize: w-48
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
-  import componentData1 from '../../component-data/Progressbar.json'
-  const components = 'Progressbar'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The progress bar component can be used as an indicator to show the completion rate of data sets or it can be used as an animated loader component. There are multiple sizes, colors, and styles available.
@@ -200,8 +199,10 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite the `div` class.
 - Use the `classLabelOutside` prop to overwrite the outside `div` class.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Progress Bar](https://flowbite.com/docs/components/progress/)
+
+<GitHubCompoLinks />

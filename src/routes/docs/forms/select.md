@@ -8,9 +8,9 @@ description: Get started with the select component to allow the user to choose f
 ---
 
 <script>
-import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
 import { Badge, A } from '$lib'
-const components = 'Select'
+const components = 'Select, MultiSelect'
 </script>
 
 The select input component can be used to gather information from users based on multiple options in the form of a dropdown list and by browsing this page you will find multiple options, styles, sizes, and variants built with the utility classes from Tailwind CSS also available in dark mode.
@@ -278,3 +278,5 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [Flowbite Select](https://flowbite.com/docs/forms/select/)
+
+<GitHubCompoLinks {components}/>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Badge from '$lib/badges/Badge.svelte';
+  import Badge from '$lib/badge/Badge.svelte';
   import { twMerge } from 'tailwind-merge';
   import type { FormSizeType, SelectOptionType } from '../types';
   import CloseButton from '$lib/utils/CloseButton.svelte';

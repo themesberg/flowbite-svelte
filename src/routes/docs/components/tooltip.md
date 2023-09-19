@@ -9,10 +9,9 @@ thumnailSize: w-24
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
-
-  const components = 'Tooltip, Frame'
+  const dirName = toKebabCase(component_title)
 </script>
 
 Flowbite-Svelte allows you to show extra information when hovering or focusing over an element in multiple positions, styles, and animations.
@@ -145,12 +144,10 @@ When you want to add a fully custom styles, use `type="custom"`, `defaultClass`,
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Frame styling
-
-- Use the `class` prop to overwrite the default class.
-
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Tooltip](https://flowbite.com/docs/components/tooltips/)
+
+<GitHubCompoLinks />

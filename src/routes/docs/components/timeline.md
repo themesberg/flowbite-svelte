@@ -9,9 +9,8 @@ thumbnailSize: w-64
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
-  
-  const components = 'Timeline, TimelineItem, TimelineHorizontal, Activity, ActivityItem, Group, GroupItem, TimelineItemVertical, TimelineItemHorizontal'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The timeline component can be used to show series of data in a chronological order for use cases such as activity feeds, user actions, application updates, and more.
@@ -260,8 +259,10 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite the `ol` tag class.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Timeline](https://flowbite.com/docs/components/timeline/)
+
+<GitHubCompoLinks />
