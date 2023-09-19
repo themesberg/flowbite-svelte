@@ -214,9 +214,9 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
 </script>
 
 <div class="max-w-4xl space-y-4">
-  <Carousel {images} let:Indicators let:Controls bind:index>
+  <Carousel {images} class="min-h-[320px]" imgClass="object-contain !h-full" let:Indicators let:Controls bind:index>
     <Indicators let:selected let:index>
-      <Indicator color={selected ? 'red' : 'green'} class="w-5 h-5  text-white border border-white {selected ? 'opacity-100' : 'opacity-80'}">
+      <Indicator color={selected ? 'red' : 'green'} class="w-5 h-5 text-white border border-white {selected ? 'opacity-100' : 'opacity-80'}">
         {index}
       </Indicator>
     </Indicators>

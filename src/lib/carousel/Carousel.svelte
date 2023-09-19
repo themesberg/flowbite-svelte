@@ -26,6 +26,7 @@
 
   // Carousel
   let divClass: string = 'overflow-hidden relative rounded-lg h-56 sm:h-64 xl:h-80 2xl:h-96';
+  export let imgClass: string = '';
 
   const dispatch = createEventDispatcher();
 
@@ -151,7 +152,7 @@
 <div bind:this={carouselDiv} class="relative" on:mousedown={onDragStart} on:touchstart|passive={onDragStart} on:mousemove={onDragMove} on:mouseup={onDragStop} on:touchmove={onDragMove} role="button" aria-label={ariaLabel} tabindex="0">
   <div {...$$restProps} class={twMerge(divClass, activeDragGesture === undefined ? 'transition-transform' : '', $$props.class)} use:loop={duration}>
     <slot name="slide" {Slide} {index}>
-      <Slide image={images[index]} {transition} />
+      <Slide image={images[index]} {transition} class={imgClass} />
     </slot>
   </div>
   <slot {index} {Controls} {Indicators} />
