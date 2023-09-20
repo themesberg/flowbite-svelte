@@ -75,7 +75,7 @@
 </script>
 
 <!-- Hidden select for form submission -->
-<select {...$$restProps} bind:value hidden multiple>
+<select {...$$restProps} bind:value hidden multiple on:change on:input>
   {#each items as { value, name }}
     <option {value}>{name}</option>
   {/each}
