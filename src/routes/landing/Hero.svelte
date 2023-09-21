@@ -6,7 +6,7 @@
 
 <section class="overflow-hidden mx-auto max-w-8xl flex flex-col pt-6 sm:pt-8 lg:pt-16 pb-6 sm:pb-8 lg:pb-24 px-4 lg:px-20">
   <div class="flex flex-col gap-20">
-    <div class="flex items-center gap-10">
+    <div class="flex items-center gap-8">
       <div class="flex flex-col justify-start gap-10">
         <div class="flex flex-col gap-4 lg:gap-6 text-left">
           <h1 class="text-4xl lg:text-6xl leading-none font-extrabold text-gray-900 dark:text-white max-w-xl">
