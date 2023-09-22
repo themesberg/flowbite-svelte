@@ -155,8 +155,7 @@ Use `labelInsideClass` prop to style your progressbar.
 
 ## Animation
 
-By default progress bar has animation disabled, you can activate with `animate`, you can custumize with `tweenDuration` and `easing`.
-By changing `precision` you can custumize the precision inside the progress bar.
+By default progress bar has animation disabled, you can activate with `animate`, you can custumize with `tweenDuration` and `easing`. By changing `precision` you can custumize the precision inside the progress bar.
 
 ```svelte example
 <script>
@@ -166,7 +165,7 @@ By changing `precision` you can custumize the precision inside the progress bar.
   let progress = '45'
 </script>
 
-<Progressbar 
+<Progressbar
   {progress}
   animate
   precision={2}
@@ -174,16 +173,16 @@ By changing `precision` you can custumize the precision inside the progress bar.
   labelInside
   tweenDuration={1500}
   easing={sineOut}
-  size="h-6" 
+  size="h-6"
   labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
   class="mb-8"
 />
-<Progressbar 
+<Progressbar
   {progress}
   labelOutside="Without animation"
-  labelInside 
-  size="h-6" 
-  labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" 
+  labelInside
+  size="h-6"
+  labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
 />
 <Button on:click={() => (progress = `${Math.round(Math.random() * 100)}`)} class="mt-8">
   Randomize

@@ -1,1 +1,9 @@
-{"name":"Slide","slots":[],"events":[],"props":[["image","HTMLImgAttributes",""],["transition","TransitionFunc = (x) => fade(x, { duration: 700, easing: quintOut });","@prop export let image: HTMLImgAttributes"]]}
+{
+  "name": "Slide",
+  "slots": [],
+  "events": [],
+  "props": [
+    ["image", "HTMLImgAttributes", ""],
+    ["transition", "TransitionFunc = (x) => fade(x, { duration: 700, easing: quintOut });", "@prop export let image: HTMLImgAttributes"]
+  ]
+}

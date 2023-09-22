@@ -11,7 +11,6 @@ description: Flowbite-Svete-Blocks provides all necessary components to get star
   import { Img} from '$lib'
 </script>
 
-
 - [GitHub Repo](https://github.com/themesberg/flowbite-svelte-blocks)
 - [Demo](https://flowbite-svelte-blocks.vercel.app/)
 
@@ -22,6 +21,5 @@ After installing Flowbite-Svelte, run the following to install Flowbite-Svelte-B
 ```sh
 pnpm i -D flowbite-svelte-blocks
 ```
-
 
 <Img src="/images/flowbite-svelte-blocks.png" alt="Flowbite Svelte Blocks" />

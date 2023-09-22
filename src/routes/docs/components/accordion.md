@@ -315,4 +315,3 @@ The component has the following props, type, and default values. See [types page
 - [Flowbite Accordion](https://flowbite.com/docs/components/accordion/)
 
 <GitHubCompoLinks />
-

@@ -1,15 +1,11 @@
-export function getFilteredFileNames (dirName) {
-  
+export function getFilteredFileNames(dirName) {
   const modules = import.meta.glob('$lib/**/*.svelte');
   const pathsArray = Object.keys(modules);
   const filteredPaths = pathsArray.filter((path) => path.includes(dirName));
   const fileNames = filteredPaths.map((path) => {
     const parts = path.split('/');
     const fileNameWithExtension = parts[parts.length - 1];
-    const fileNameWithoutExtension = fileNameWithExtension.substring(
-      0,
-      fileNameWithExtension.lastIndexOf('.')
-    );
+    const fileNameWithoutExtension = fileNameWithExtension.substring(0, fileNameWithExtension.lastIndexOf('.'));
 
     return fileNameWithoutExtension;
   });
@@ -17,7 +13,6 @@ export function getFilteredFileNames (dirName) {
   return fileNames;
 }
 
-
-export function toKebabCase (inputString) {
+export function toKebabCase(inputString) {
   return inputString.toLowerCase().replace(/\s+/g, '-');
 }

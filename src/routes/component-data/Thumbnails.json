@@ -1,1 +1,10 @@
-{"name":"Thumbnails","slots":[],"events":[],"props":[["images","HTMLImgAttributes[]","[]"],["index","number","0"],["ariaLabel","string","'Click to view image'"]]}
+{
+  "name": "Thumbnails",
+  "slots": [],
+  "events": [],
+  "props": [
+    ["images", "HTMLImgAttributes[]", "[]"],
+    ["index", "number", "0"],
+    ["ariaLabel", "string", "'Click to view image'"]
+  ]
+}
