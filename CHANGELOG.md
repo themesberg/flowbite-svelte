@@ -2,24 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.44.16](https://github.com/themesberg/flowbite-svelte/compare/v0.44.15...v0.44.16) (2023-09-22)
+### [0.44.17](https://github.com/themesberg/flowbite-svelte/compare/v0.44.16...v0.44.17) (2023-09-22)
 
+### [0.44.16](https://github.com/themesberg/flowbite-svelte/compare/v0.44.15...v0.44.16) (2023-09-22)
 
 ### Features
 
-* add <T> to SelectOptionType and update Select and MultiSelect ([#1055](https://github.com/themesberg/flowbite-svelte/issues/1055)) ([bf97642](https://github.com/themesberg/flowbite-svelte/commit/bf97642c81e3913bd4c95e27d313806a747ceb1c))
-* add on:change and on:input to multiselect ([#1081](https://github.com/themesberg/flowbite-svelte/issues/1081)) ([dbc5877](https://github.com/themesberg/flowbite-svelte/commit/dbc5877c53a38603b27b0248d340c1322e32ac9d))
-
+- add <T> to SelectOptionType and update Select and MultiSelect ([#1055](https://github.com/themesberg/flowbite-svelte/issues/1055)) ([bf97642](https://github.com/themesberg/flowbite-svelte/commit/bf97642c81e3913bd4c95e27d313806a747ceb1c))
+- add on:change and on:input to multiselect ([#1081](https://github.com/themesberg/flowbite-svelte/issues/1081)) ([dbc5877](https://github.com/themesberg/flowbite-svelte/commit/dbc5877c53a38603b27b0248d340c1322e32ac9d))
 
 ### Bug Fixes
 
-* add -mx-1.5 to alert ([#1063](https://github.com/themesberg/flowbite-svelte/issues/1063)) ([617a35b](https://github.com/themesberg/flowbite-svelte/commit/617a35b1ad62fe6b7f7a39aa86c7feb3ceef1351))
-* avatar placeholder safari ([#1065](https://github.com/themesberg/flowbite-svelte/issues/1065)) ([dbeee9f](https://github.com/themesberg/flowbite-svelte/commit/dbeee9f674af6fe6512abda6311676dce299494a))
-* check activateClickOutside on outside click ([#1082](https://github.com/themesberg/flowbite-svelte/issues/1082)) ([283f1b3](https://github.com/themesberg/flowbite-svelte/commit/283f1b3002172ab52b9894520f4981f045497734))
-* check activateClickOutside on outside click ([#1082](https://github.com/themesberg/flowbite-svelte/issues/1082)) ([ee10e29](https://github.com/themesberg/flowbite-svelte/commit/ee10e29ebf87b1a0eaa4e628c510c87efd42bd27))
-* display on iPads ([#1052](https://github.com/themesberg/flowbite-svelte/issues/1052)) ([a804f71](https://github.com/themesberg/flowbite-svelte/commit/a804f71e4227eb2eed4802ad9667e16652880bd1))
-* removeEventListener in onDestroy ([#1057](https://github.com/themesberg/flowbite-svelte/issues/1057)) ([c86ea20](https://github.com/themesberg/flowbite-svelte/commit/c86ea20a631363e85e259c5f75901e08e5438165))
-* typescript page ([6f266f4](https://github.com/themesberg/flowbite-svelte/commit/6f266f41b6929b4f6d721ed14f01632d3a83a2b2))
+- add -mx-1.5 to alert ([#1063](https://github.com/themesberg/flowbite-svelte/issues/1063)) ([617a35b](https://github.com/themesberg/flowbite-svelte/commit/617a35b1ad62fe6b7f7a39aa86c7feb3ceef1351))
+- avatar placeholder safari ([#1065](https://github.com/themesberg/flowbite-svelte/issues/1065)) ([dbeee9f](https://github.com/themesberg/flowbite-svelte/commit/dbeee9f674af6fe6512abda6311676dce299494a))
+- check activateClickOutside on outside click ([#1082](https://github.com/themesberg/flowbite-svelte/issues/1082)) ([283f1b3](https://github.com/themesberg/flowbite-svelte/commit/283f1b3002172ab52b9894520f4981f045497734))
+- check activateClickOutside on outside click ([#1082](https://github.com/themesberg/flowbite-svelte/issues/1082)) ([ee10e29](https://github.com/themesberg/flowbite-svelte/commit/ee10e29ebf87b1a0eaa4e628c510c87efd42bd27))
+- display on iPads ([#1052](https://github.com/themesberg/flowbite-svelte/issues/1052)) ([a804f71](https://github.com/themesberg/flowbite-svelte/commit/a804f71e4227eb2eed4802ad9667e16652880bd1))
+- removeEventListener in onDestroy ([#1057](https://github.com/themesberg/flowbite-svelte/issues/1057)) ([c86ea20](https://github.com/themesberg/flowbite-svelte/commit/c86ea20a631363e85e259c5f75901e08e5438165))
+- typescript page ([6f266f4](https://github.com/themesberg/flowbite-svelte/commit/6f266f41b6929b4f6d721ed14f01632d3a83a2b2))
 
 ### [0.44.15](https://github.com/themesberg/flowbite-svelte/compare/v0.44.14...v0.44.15) (2023-09-08)
 
