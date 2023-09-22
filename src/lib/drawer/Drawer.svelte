@@ -45,6 +45,8 @@
     hidden = !hidden;
   };
 
+  const handleClickOutside = () => activateClickOutside && !hidden && handleDrawer();
+
   let backdropDivClass = twMerge('fixed top-0 left-0 z-50 w-full h-full', backdrop && bgColor, backdrop && bgOpacity);
 
   function clickOutsideWrapper(node: HTMLElement, callback: () => void) {
@@ -59,7 +61,7 @@
     <div role="presentation" class={backdropDivClass} />
   {/if}
 
-  <div use:clickOutsideWrapper={() => !hidden && handleDrawer()} {id} {...$$restProps} class={twMerge(divClass, width, position, placements[placement], $$props.class)} transition:multiple={transitionParams} tabindex="-1" aria-controls={id} aria-labelledby={id}>
+  <div use:clickOutsideWrapper={handleClickOutside} {id} {...$$restProps} class={twMerge(divClass, width, position, placements[placement], $$props.class)} transition:multiple={transitionParams} tabindex="-1" aria-controls={id} aria-labelledby={id}>
     <slot {hidden} />
   </div>
 {/if}
