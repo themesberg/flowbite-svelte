@@ -9,7 +9,7 @@
 
   function changeSlide(forward: boolean) {
     return function (ev: Event) {
-      if (ev.isTrusted) $state.index = forward ? $state.index + 1 : $state.index - 1;
+      $state.index = forward ? $state.index + 1 : $state.index - 1;
     };
   }
 </script>
