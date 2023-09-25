@@ -19,7 +19,7 @@ The timeline component can be used to show series of data in a chronological ord
 
 ```svelte example hideOutput
 <script>
-  import { Timeline, TimelineItem, TimelineHorizontal, Activity, ActivityItem, Group, GroupItem } from 'flowbite-svelte';
+  import { Timeline, TimelineItem, Activity, ActivityItem, Group, GroupItem } from 'flowbite-svelte';
 </script>
 ```
 
@@ -210,14 +210,6 @@ The component has the following props, type, and default values. See [types page
 - Use the `classLi` prop to overwrite the `li` tag class.
 - Use the `classDiv` prop to overwrite the `div` tag class.
 - Use the `classTime` prop to overwrite the `time` tag class.
-
-### TimelineHorizontal styling
-
-- Use the `liClass` prop to overwrite `classLi`.
-- Use the `divClass` prop to overwrite `classDiv`.
-- Use the `timeClass` prop to overwrite `classTime`.
-- Use the `pClass` prop to overwrite `classP`.
-- Use the `aClass` prop to overwrite `classA`.
 
 ### Activity styling
 
