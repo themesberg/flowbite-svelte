@@ -129,14 +129,15 @@ You can control the `Carousel` component externally by the `index` prop. Here is
   import { images } from './imageData/+server.js';
 
   let index = 0;
+  let forward = true; // sync animation direction between Thumbnails and Carousel
 </script>
 
 <div class="max-w-4xl space-y-4">
-  <Carousel {images} let:Indicators let:Controls bind:index>
+  <Carousel {images} {forward} let:Indicators let:Controls bind:index>
     <Controls />
     <Indicators />
   </Carousel>
-  <Thumbnails {images} bind:index />
+  <Thumbnails {images} {forward} bind:index />
 </div>
 ```
 
@@ -154,6 +155,7 @@ The `Carousel` exposes the `change` event containing info about the currently di
 </script>
 
 <div class="max-w-4xl space-y-4">
+
   <Carousel {images} let:Indicators let:Controls on:change={({ detail }) => (image = detail)}>
     <Controls />
     <Indicators />
@@ -177,7 +179,7 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
 
 <div class="max-w-4xl space-y-4">
   <Carousel {images} duration={3900} let:Indicators>
-    <a slot="slide" href="http://google.com/search?q={images[index].title}" target="_blank" let:Slide let:index>
+    <a slot="slide" href="http://google.com/search?q={images[index]?.title}" target="_blank" let:Slide let:index>
       <Slide image={images[index]} />
     </a>
     <Indicators />
@@ -231,19 +233,20 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
 </div>
 ```
 
-### Carousel transition
+### Custom Carousel transition
 
 ```svelte example
 <script>
   import { Carousel } from 'flowbite-svelte';
   import { images } from './imageData/+server.js';
-  import { fly } from 'svelte/transition';
+  import { scale } from 'svelte/transition';
+  import { quintOut } from 'svelte/easing';
 
-  const myFly = (x) => fly(x, { delay: 250, duration: 900, x: 700 });
+  const scaleAnimation = (x) => scale(x, { duration: 500, easing: quintOut });
 </script>
 
 <div class="max-w-4xl">
-  <Carousel {images} transition={myFly} let:Controls let:Indicators>
+  <Carousel {images} transition={scaleAnimation} let:Controls let:Indicators>
     <Controls />
     <Indicators />
   </Carousel>
