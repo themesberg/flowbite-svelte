@@ -178,7 +178,7 @@ You can control icon class by changing the `class` prop in the `Icon` component.
 
 ## Multi-level dropdown
 
-Use this sidebar example to create multi-level menu items by using the dSidebarDropdownWrapper and SidebarDropdownItem components.
+Use this sidebar example to create multi-level menu items by using the SidebarDropdownWrapper and SidebarDropdownItem components.
 
 ```svelte example
 <script>
