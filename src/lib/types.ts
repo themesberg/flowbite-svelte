@@ -122,26 +122,6 @@ export interface SiteType {
   img?: string;
 }
 
-export interface TimelineItemVerticalType {
-  date: Date | string;
-  title: string;
-  icon?: typeof SvelteComponent<any>;
-  iconSize?: number;
-  iconClass?: string;
-  href?: string;
-  linkname?: string;
-  text?: HTMLElement | string;
-}
-
-export interface TimelineItemHorizontalType {
-  date: Date | string;
-  title: string;
-  icon?: typeof SvelteComponent<any>;
-  iconSize?: number;
-  iconClass?: string;
-  text?: HTMLElement | string;
-}
-
 export interface TransitionParamTypes {
   delay?: number;
   duration?: number;

@@ -189,8 +189,6 @@ export { default as ActivityItem } from './timeline/ActivityItem.svelte';
 export { default as Timeline } from './timeline/Timeline.svelte';
 export { default as TimelineItem } from './timeline/TimelineItem.svelte';
 export { default as TimelineHorizontal } from './timeline/TimelineHorizontal.svelte';
-export { default as TimelineItemHorizontal } from './timeline/TimelineItemHorizontal.svelte';
-export { default as TimelineItemVertical } from './timeline/TimelineItemVertical.svelte';
 
 // Toast
 export { default as Toast } from './toast/Toast.svelte';
