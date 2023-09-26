@@ -642,21 +642,9 @@
       "types": "./dist/timeline/Timeline.svelte.d.ts",
       "svelte": "./dist/timeline/Timeline.svelte"
     },
-    "./TimelineHorizontal.svelte": {
-      "types": "./dist/timeline/TimelineHorizontal.svelte.d.ts",
-      "svelte": "./dist/timeline/TimelineHorizontal.svelte"
-    },
     "./TimelineItem.svelte": {
       "types": "./dist/timeline/TimelineItem.svelte.d.ts",
       "svelte": "./dist/timeline/TimelineItem.svelte"
-    },
-    "./TimelineItemHorizontal.svelte": {
-      "types": "./dist/timeline/TimelineItemHorizontal.svelte.d.ts",
-      "svelte": "./dist/timeline/TimelineItemHorizontal.svelte"
-    },
-    "./TimelineItemVertical.svelte": {
-      "types": "./dist/timeline/TimelineItemVertical.svelte.d.ts",
-      "svelte": "./dist/timeline/TimelineItemVertical.svelte"
     },
     "./Toast.svelte": {
       "types": "./dist/toast/Toast.svelte.d.ts",
