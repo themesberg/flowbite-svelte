@@ -129,14 +129,15 @@ You can control the `Carousel` component externally by the `index` prop. Here is
   import { images } from './imageData/+server.js';
 
   let index = 0;
+  let forward = true; // sync animation direction between Thumbnails and Carousel
 </script>
 
 <div class="max-w-4xl space-y-4">
-  <Carousel {images} let:Indicators let:Controls bind:index>
+  <Carousel {images} {forward} let:Indicators let:Controls bind:index>
     <Controls />
     <Indicators />
   </Carousel>
-  <Thumbnails {images} bind:index />
+  <Thumbnails {images} {forward} bind:index />
 </div>
 ```
 
@@ -154,6 +155,7 @@ The `Carousel` exposes the `change` event containing info about the currently di
 </script>
 
 <div class="max-w-4xl space-y-4">
+
   <Carousel {images} let:Indicators let:Controls on:change={({ detail }) => (image = detail)}>
     <Controls />
     <Indicators />
@@ -177,7 +179,7 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
 
 <div class="max-w-4xl space-y-4">
   <Carousel {images} duration={3900} let:Indicators>
-    <a slot="slide" href="http://google.com/search?q={images[index].title}" target="_blank" let:Slide let:index>
+    <a slot="slide" href="http://google.com/search?q={images[index]?.title}" target="_blank" let:Slide let:index>
       <Slide image={images[index]} />
     </a>
     <Indicators />
@@ -196,9 +198,9 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
 </script>
 
 <div class="max-w-4xl space-y-4">
-  <Carousel {images} let:Indicators let:Controls class="rounded-none ring-4 ring-green-500 border-4 border-white dark:border-gray-800">
+  <Carousel {images} imgClass="object-contain h-full w-fit rounded-sm" let:Indicators let:Controls class="rounded-md ring-4 ring-green-500 border-4 border-white dark:border-gray-800 min-h-[320px] bg-gray-200">
     <Indicators class="border border-white rounded-md p-2" />
-    <Controls class="items-start text-red-400 dark:text-green-400 pt-4" />
+    <Controls class="items-center text-red-400 dark:text-green-400 pt-4" />
   </Carousel>
 </div>
 ```
@@ -216,7 +218,7 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
 <div class="max-w-4xl space-y-4">
   <Carousel {images} let:Indicators let:Controls bind:index>
     <Indicators let:selected let:index>
-      <Indicator color={selected ? 'red' : 'green'} class="w-5 h-5  text-white border border-white {selected ? 'opacity-100' : 'opacity-80'}">
+      <Indicator color={selected ? 'red' : 'green'} class="w-5 h-5 text-white border border-white {selected ? 'opacity-100' : 'opacity-80'}">
         {index}
       </Indicator>
     </Indicators>
@@ -226,24 +228,25 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
     </Controls>
   </Carousel>
   <Thumbnails class="bg-transparent gap-3" let:Thumbnail let:image let:selected {images} bind:index>
-    <Thumbnail {...image} {selected} class="rounded-md shadow-xl hover:outline hover:outline-primary-500" />
+    <Thumbnail {...image} {selected} class="rounded-md shadow-xl hover:outline hover:outline-primary-500" activeClass="outline outline-primary-400"/>
   </Thumbnails>
 </div>
 ```
 
-### Carousel transition
+### Custom Carousel transition
 
 ```svelte example
 <script>
   import { Carousel } from 'flowbite-svelte';
   import { images } from './imageData/+server.js';
-  import { fly } from 'svelte/transition';
+  import { scale } from 'svelte/transition';
+  import { quintOut } from 'svelte/easing';
 
-  const myFly = (x) => fly(x, { delay: 250, duration: 900, x: 700 });
+  const scaleAnimation = (x) => scale(x, { duration: 500, easing: quintOut });
 </script>
 
 <div class="max-w-4xl">
-  <Carousel {images} transition={myFly} let:Controls let:Indicators>
+  <Carousel {images} transition={scaleAnimation} let:Controls let:Indicators>
     <Controls />
     <Indicators />
   </Carousel>
