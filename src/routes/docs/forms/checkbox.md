@@ -328,4 +328,4 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Checkbox](https://flowbite.com/docs/forms/checkbox/)
 
-<GitHubCompoLinks {components}/>
+<GitHubCompoLinks {components} dir="forms"/>
