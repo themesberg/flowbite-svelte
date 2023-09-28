@@ -50,7 +50,7 @@ test('Button Group page should have h1', async ({ page }) => {
 
 // Buttons
 test('Buttons page should have h1', async ({ page }) => {
-  await page.goto('/docs/components/button');
+  await page.goto('/docs/components/buttons');
   expect(await page.textContent('h1')).toBe('Svelte Buttons - Flowbite');
 });
 

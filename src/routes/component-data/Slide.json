@@ -4,6 +4,6 @@
   "events": [],
   "props": [
     ["image", "HTMLImgAttributes", ""],
-    ["transition", "TransitionFunc = (x) => fade(x, { duration: 700, easing: quintOut });", "@prop export let image: HTMLImgAttributes"]
+    ["transition", "TransitionFunc | null", "null; // Optional transition function, overrides default slide transition"]
   ]
 }

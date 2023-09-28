@@ -1,6 +1,6 @@
 {
   "name": "TimelineItem",
-  "slots": ["icon", "icon", "icon"],
+  "slots": ["icon"],
   "events": [],
   "props": [
     ["title", "string", "''"],
