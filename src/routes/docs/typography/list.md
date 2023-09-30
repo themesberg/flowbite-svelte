@@ -9,7 +9,7 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
  
   const components = 'List, Li, DescriptionList'
 </script>
@@ -356,3 +356,7 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite the `description` tag class.
 
 <CompoAttributesViewer {components}/>
+
+## References
+
+<GitHubCompoLinks {components}/>

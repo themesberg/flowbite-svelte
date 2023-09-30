@@ -9,7 +9,15 @@ description: Learn more about the value types and class interfaces that you can 
 
 ## Typescript types
 
-The following excerpt shows you the full list of TypeScript types and interfaces that are being used with the Flowbite Svelte library that you can leverage when building user interfaces and make your code more reliable and scalable.
+Enhance the reliability and scalability of your user interface code by leveraging data types. Here's an example of how to use them:
+
+```
+  import { Button } from 'flowbite-svelte';
+  import type { SizeType } from 'flowbite-svelte'
+  export let size: SizeType = 'lg'
+```
+
+The following excerpt shows you the full list of TypeScript types and interfaces that are being used with the Flowbite Svelte library.
 
 <script>
   // TODO: Does not build on the server - need to work on it

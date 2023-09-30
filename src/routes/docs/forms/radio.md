@@ -9,7 +9,7 @@ thumnailSize: w-72
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, A } from '$lib'
 
   const components = 'Radio, Label, Helper'
@@ -234,7 +234,7 @@ You can use the property `inline` as the alternative.
 
 ## Colors
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Radio } from 'flowbite-svelte';
   let colors;
@@ -301,3 +301,5 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [Flowbite Radio](https://flowbite.com/docs/forms/radio/)
+
+<GitHubCompoLinks {components}/>

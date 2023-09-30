@@ -8,10 +8,9 @@ description: Use the popover component to show detailed information inside a pop
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
-
-  const components = 'Popover, Popper, Frame'
+  const dirName = toKebabCase(component_title)
 </script>
 
 Get started with the popover component to show any type of content inside a pop-up box when hovering or clicking over a trigger element. There are multiple examples that you can choose from, such as showing more information about a user profile, company profile, password strength, and more.
@@ -28,7 +27,7 @@ Make sure that you have the Flowbite JavaScript included in your project to enab
 
 ## Default popover
 
-```svelte example class="flex h-44 items-end justify-center"
+```svelte example class="flex h-44 items-end justify-center" hideResponsiveButtons
 <script>
   import { Popover, Button } from 'flowbite-svelte';
 </script>
@@ -41,7 +40,7 @@ Make sure that you have the Flowbite JavaScript included in your project to enab
 
 Use this example to show more information about a user profile when hovering over the trigger component.
 
-```svelte example class="flex h-72 items-end justify-center"
+```svelte example class="flex h-72 items-end justify-center" hideResponsiveButtons
 <script>
   import { Popover, Button, Avatar } from 'flowbite-svelte';
 </script>
@@ -85,7 +84,7 @@ Use this example to show more information about a user profile when hovering ove
 
 This example can be used to show more information about a company profile.
 
-```svelte example class="flex h-96 items-end justify-center"
+```svelte example class="flex h-96 items-end justify-center" hideResponsiveButtons
 <script>
   import { Popover, Button, Avatar } from 'flowbite-svelte';
   import { GlobeOutline, HeartSolid, ThumbsUpSolid, DotsHorizontalOutline } from 'flowbite-svelte-icons';
@@ -139,7 +138,7 @@ This example can be used to show more information about a company profile.
 
 Use this example to trigger a popover component with detailed information and an image when hovering over a portion of highlighted text inspired by Wikipedia and other large news outlets.
 
-```svelte example class="flex h-96 items-end"
+```svelte example class="flex h-96 items-end" hideResponsiveButtons
 <script>
   import { Popover } from 'flowbite-svelte';
   import { ChevronRightSolid } from 'flowbite-svelte-icons';
@@ -173,7 +172,7 @@ Use this example to trigger a popover component with detailed information and an
 
 Show helpful information inside a popover when hovering over a question mark button.
 
-```svelte example class="h-96"
+```svelte example class="h-96" hideResponsiveButtons
 <script>
   import { Popover } from 'flowbite-svelte';
   import { QuestionCircleSolid, ChevronRightOutline } from 'flowbite-svelte-icons';
@@ -203,7 +202,7 @@ Show helpful information inside a popover when hovering over a question mark but
 
 Show a progress bar with details inside a popover when hovering over a settings button.
 
-```svelte example class="h-60 flex justify-center items-end"
+```svelte example class="h-60 flex justify-center items-end" hideResponsiveButtons
 <script>
   import { Popover, Button } from 'flowbite-svelte';
   import { DatabaseSolid, ChevronRightOutline } from 'flowbite-svelte-icons';
@@ -235,7 +234,7 @@ Show a progress bar with details inside a popover when hovering over a settings 
 
 Dynamically show the password strength progress when creating a new password positioned relative to the input element.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Popover, Label, Input, Checkbox, Button } from 'flowbite-svelte';
   import { CheckOutline, CloseOutline } from 'flowbite-svelte-icons';
@@ -282,7 +281,7 @@ Dynamically show the password strength progress when creating a new password pos
 
 Set the position of the popover component relative to the trigger element by using the `placement={top|right|bottom|left}` data attribute and its values.
 
-```svelte example class="flex gap-4 flex-col justify-center items-center h-96"
+```svelte example class="flex gap-4 flex-col justify-center items-center h-96" hideResponsiveButtons
 <script>
   import { Popover, Button } from 'flowbite-svelte';
   let placement;
@@ -299,7 +298,7 @@ Set the position of the popover component relative to the trigger element by usi
 
 ## Triggering
 
-```svelte example class="flex h-44 items-end justify-center gap-4"
+```svelte example class="flex h-44 items-end justify-center gap-4" hideResponsiveButtons
 <script>
   import { Popover, Button } from 'flowbite-svelte';
 </script>
@@ -327,7 +326,7 @@ Increase or decrease the default offset by adding the `offset` attribute where t
 
 Customize the animation of the popover component by using the transition functions from Svelte.
 
-```svelte example class="flex h-44 items-end justify-center gap-8"
+```svelte example class="flex h-44 items-end justify-center gap-8" hideResponsiveButtons
 <script>
   import { Popover, Button } from 'flowbite-svelte';
   import { blur, fade, slide } from 'svelte/transition';
@@ -345,7 +344,7 @@ Customize the animation of the popover component by using the transition functio
 
 You can also disable the popover arrow by setting `arrow` attribute to `false`.
 
-```svelte example class="flex h-44 items-end justify-center"
+```svelte example class="flex h-44 items-end justify-center" hideResponsiveButtons
 <script>
   import { Popover, Button } from 'flowbite-svelte';
 </script>
@@ -358,7 +357,7 @@ You can also disable the popover arrow by setting `arrow` attribute to `false`.
 
 If you need the popover to be attached to the other element then the tiggering one you can pass a CSS query to `reference` prop.
 
-```svelte example class="flex gap-4 flex-col justify-center items-center h-72"
+```svelte example class="flex gap-4 flex-col justify-center items-center h-72" hideResponsiveButtons
 <script>
   import { Popover, Button } from 'flowbite-svelte';
   let placement = '';
@@ -381,8 +380,10 @@ The component inherits the following props, type, and default values from `Frame
 
 - Use the `class` prop to overwrite the default class.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Popover](https://flowbite.com/docs/components/popover/)
+
+<GitHubCompoLinks />

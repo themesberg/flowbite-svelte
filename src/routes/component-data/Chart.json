@@ -1,1 +1,1 @@
-{"name":"Chart","slots":[],"events":[],"props":[["options","ApexOptions","@prop export let options: ApexOptions"]]}
+{ "name": "Chart", "slots": [], "events": [], "props": [["options", "ApexOptions", "@prop export let options: ApexOptions"]] }

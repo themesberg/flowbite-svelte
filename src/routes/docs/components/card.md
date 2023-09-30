@@ -9,10 +9,9 @@ thumnailSize: w-36
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer  } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
-
-  const components = 'Card, Frame'
+  const dirName = toKebabCase(component_title)
 </script>
 
 Use these responsive card components to show data entries and information to your users in multiple forms and contexts such as for your blog, application, user profiles, and more.
@@ -416,8 +415,10 @@ The component has the following props, type, and default values. See [types page
 
 - The Card component uses the Frame component. Use the `class` property to overwrite the default Frame class. The Frame component tag can be either an anchor tag or a div tag depending on the value of the href prop.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Card](https://flowbite.com/docs/components/card/)
+
+<GitHubCompoLinks />

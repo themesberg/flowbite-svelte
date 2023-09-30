@@ -45,7 +45,7 @@
 
     {#if dismissable}
       <slot name="close-button" {close}>
-        <CloseButton class="-my-1.5 dark:hover:bg-gray-700" color={$$restProps.color} on:click={close} on:click on:change on:keydown on:keyup on:focus on:blur on:mouseenter on:mouseleave />
+        <CloseButton class="ml-auto -mr-1.5 -my-1.5 dark:hover:bg-gray-700" color={$$restProps.color} on:click={close} on:click on:change on:keydown on:keyup on:focus on:blur on:mouseenter on:mouseleave />
       </slot>
     {/if}
   </Frame>

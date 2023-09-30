@@ -8,9 +8,9 @@ description: Use the mega menu component as a full-width dropdown inside the nav
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils';
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils';
   import { P, A } from '$lib';
-  const components = 'MegaMenu'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The mega menu component is a full-width dropdown that can be triggered by clicking on the menu item and it shows a list of links that you can use to navigate through the pages on a website.
@@ -27,7 +27,7 @@ The mega menu component is a full-width dropdown that can be triggered by clicki
 
 Use this example to show a list of links aligned on three columns inside the mega menu dropdown.
 
-```svelte example class="h-80"
+```svelte example class="h-[30rem] md:h-80"
 <script>
   import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from 'flowbite-svelte';
   import { ChevronDownOutline } from 'flowbite-svelte-icons';
@@ -71,7 +71,7 @@ Use this example to show a list of links aligned on three columns inside the meg
 
 This example of a mega menu dropdown can be used to also show an icon near the text of the link.
 
-```svelte example class="h-80 md:h-80"
+```svelte example class="h-[30rem] md:h-80"
 <script>
   import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from 'flowbite-svelte';
   import { IconOutline, ChevronDownOutline } from 'flowbite-svelte-icons';
@@ -118,7 +118,7 @@ This example of a mega menu dropdown can be used to also show an icon near the t
 
 Use this example to show a mega menu dropdown that spans the entire width of the document page.
 
-```svelte example class="h-96 relative"
+```svelte example class="h-[55rem] md:h-[30rem] relative"
 <script>
   import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from 'flowbite-svelte';
   import { ChevronDownOutline } from 'flowbite-svelte-icons';
@@ -165,7 +165,7 @@ Use this example to show a mega menu dropdown that spans the entire width of the
 
 This example can be used to also show a CTA button or link next to the menu items inside the dropdown.
 
-```svelte example class="h-96 relative"
+```svelte example class="h-[40rem] md:h-96 relative"
 <script>
   import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu } from 'flowbite-svelte';
   import { ChevronDownOutline, ArrowRightOutline } from 'flowbite-svelte-icons';
@@ -236,7 +236,7 @@ This example can be used to also show a CTA button or link next to the menu item
 
 This example can be used to also show a CTA with a backdround image inside the dropdown next to the other menu items and links.
 
-```svelte example class="h-96 relative"
+```svelte example class="h-[40rem] md:h-96 relative"
 <script>
   import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, MegaMenu, Button } from 'flowbite-svelte';
   import { ChevronDownOutline } from 'flowbite-svelte-icons';
@@ -291,8 +291,10 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite the wrapper class.
 - Use the `classUl` prop to overwrite the `ul` tag class.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Mega Menu](https://flowbite.com/docs/components/list-group/)
+
+<GitHubCompoLinks />

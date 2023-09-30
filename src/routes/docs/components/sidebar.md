@@ -10,10 +10,9 @@ thumnailSize: w-72
 
 <script>
   import { page } from '$app/stores';
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, Heading, P, A } from '$lib'
-  
-  const components = 'Sidebar, SidebarBrand, SidebarCta, SidebarDropdownItem, SidebarDropdownWrapper, SidebarGroup, SidebarItem, SidebarWrapper'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The sidebar component can be used as a complementary element relative to the navbar shown on either the left or right side of the page used for the navigation on your web application, including menu items, multi-level dropdown items, call to actions elements, and more.
@@ -179,7 +178,7 @@ You can control icon class by changing the `class` prop in the `Icon` component.
 
 ## Multi-level dropdown
 
-Use this sidebar example to create multi-level menu items by using the dSidebarDropdownWrapper and SidebarDropdownItem components.
+Use this sidebar example to create multi-level menu items by using the SidebarDropdownWrapper and SidebarDropdownItem components.
 
 ```svelte example
 <script>
@@ -561,8 +560,10 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite `divClass`.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Sidebar](https://flowbite.com/docs/components/sidebar/)
+
+<GitHubCompoLinks />

@@ -1,1 +1,14 @@
-{"name":"Select","slots":[],"events":["on:change","on:contextmenu","on:input"],"props":[["items","SelectOptionType[]","[]"],["value","any","undefined"],["placeholder","string","'Choose option ...'"],["underline","boolean","false"],["size","'sm' | 'md' | 'lg'","'md'"],["defaultClass","string","'text-gray-900 bg-gray-50 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500'"],["underlineClass","string","'text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer'"]]}
+{
+  "name": "Select",
+  "slots": [],
+  "events": ["on:change", "on:contextmenu", "on:input"],
+  "props": [
+    ["items", "SelectOptionType<any>[]", "[]"],
+    ["value", "any", "undefined"],
+    ["placeholder", "string", "'Choose option ...'"],
+    ["underline", "boolean", "false"],
+    ["size", "'sm' | 'md' | 'lg'", "'md'"],
+    ["defaultClass", "string", "'text-gray-900 bg-gray-50 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500'"],
+    ["underlineClass", "string", "'text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer'"]
+  ]
+}

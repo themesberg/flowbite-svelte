@@ -62,7 +62,7 @@
     <!-- Trick to prentend outline without using border
 	    This has a limitation of no supporting transparency as
 	    is set to bg-white dark:bg-gray-900 -->
-    <Button {...$$restProps} color="none" class={gradientOutlineClass} on:click on:change on:keydown on:keyup on:touchstart on:touchend on:touchcancel on:mouseenter on:mouseleave><slot /></Button>
+    <Button {...$$restProps} color="none" class={gradientOutlineClass} on:click on:change on:keydown on:keyup on:mouseenter on:mouseleave><slot /></Button>
   </div>
 {:else}
   <Button {...$$restProps} color="none" class={divClass} on:click on:change on:keydown on:keyup on:touchstart on:touchend on:touchcancel on:mouseenter on:mouseleave>

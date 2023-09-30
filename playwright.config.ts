@@ -2,6 +2,7 @@ import type { PlaywrightTestConfig } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
   testDir: './tests/',
+  workers: 4,
   webServer: {
     command: 'npm run build && npm run preview',
     timeout: 240000,

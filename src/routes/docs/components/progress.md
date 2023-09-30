@@ -9,10 +9,9 @@ thumnailSize: w-48
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
-  import componentData1 from '../../component-data/Progressbar.json'
-  const components = 'Progressbar'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The progress bar component can be used as an indicator to show the completion rate of data sets or it can be used as an animated loader component. There are multiple sizes, colors, and styles available.
@@ -154,6 +153,42 @@ Use `labelInsideClass` prop to style your progressbar.
 <Progressbar progress="50" size="h-6" labelInside labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" class="my-4" labelOutside="Size h-6" />
 ```
 
+## Animation
+
+By default progress bar has animation disabled, you can activate with `animate`, you can custumize with `tweenDuration` and `easing`. By changing `precision` you can custumize the precision inside the progress bar.
+
+```svelte example
+<script>
+  import { Progressbar, Button } from 'flowbite-svelte';
+  import { sineOut } from 'svelte/easing';
+
+  let progress = '45'
+</script>
+
+<Progressbar
+  {progress}
+  animate
+  precision={2}
+  labelOutside="With animation"
+  labelInside
+  tweenDuration={1500}
+  easing={sineOut}
+  size="h-6"
+  labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
+  class="mb-8"
+/>
+<Progressbar
+  {progress}
+  labelOutside="Without animation"
+  labelInside
+  size="h-6"
+  labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
+/>
+<Button on:click={() => (progress = `${Math.round(Math.random() * 100)}`)} class="mt-8">
+  Randomize
+</Button>
+```
+
 ## Component data
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
@@ -163,8 +198,10 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite the `div` class.
 - Use the `classLabelOutside` prop to overwrite the outside `div` class.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Progress Bar](https://flowbite.com/docs/components/progress/)
+
+<GitHubCompoLinks />

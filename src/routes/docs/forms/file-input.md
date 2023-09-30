@@ -9,7 +9,7 @@ thumnailSize: w-48
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, A } from '$lib'
   const components = 'Fileupload, Dropzone'
 </script>
@@ -169,3 +169,5 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [Flowbite File Input](https://flowbite.com/docs/forms/file-input/)
+
+<GitHubCompoLinks {components}/>

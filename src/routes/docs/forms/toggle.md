@@ -9,7 +9,7 @@ thumbnailSize: w-72
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { onMount } from 'svelte';
   import { Toggle, Badge, A } from '$lib'
 
@@ -43,7 +43,7 @@ Get started with the default toggle component example as a checkbox element to r
 
 ## Colors
 
-```svelte example class="flex justify-between" hideScript
+```svelte example class="flex justify-between" hideScript hideResponsiveButtons
 <script>
   import { Toggle } from 'flowbite-svelte';
 </script>
@@ -84,3 +84,5 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [Flowbite Switch (Toggle)](https://flowbite.com/docs/forms/toggle/)
+
+<GitHubCompoLinks {components}/>

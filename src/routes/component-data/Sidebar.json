@@ -1,1 +1,12 @@
-{"name":"Sidebar","slots":[],"events":[],"props":[["activeUrl","string","''"],["asideClass","string","'w-64'"],["nonActiveClass","string","'flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'"],["activeClass","string","'flex items-center p-2 text-base font-normal text-gray-900 bg-gray-200 dark:bg-gray-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'"]]}
+{
+  "name": "Sidebar",
+  "slots": [],
+  "events": [],
+  "props": [
+    ["activeUrl", "string", "''"],
+    ["asideClass", "string", "'w-64'"],
+    ["nonActiveClass", "string", "'flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'"],
+    ["activeClass", "string", "'flex items-center p-2 text-base font-normal text-gray-900 bg-gray-200 dark:bg-gray-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'"],
+    ["ariaLabel", "string", "'Sidebar'"]
+  ]
+}

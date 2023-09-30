@@ -8,10 +8,9 @@ description: The navbar component can be used to show a list of navigation links
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, Heading, P, A } from '$lib';
-
-  const components = 'Navbar, NavBrand, NavLi, NavUl, NavHamburger, Menu, SidebarMenu'
+  const dirName = toKebabCase(component_title)
 </script>
 
 Get started with the responsive navbar component from Flowbite to quickly set up a navigation menu for your website and set up the logo, list of pages, CTA button, search input, user profile options with a dropdown, and more.
@@ -30,7 +29,7 @@ Use this example of a navigation bar built with the utility classes from Tailwin
 
 By default navbar content width is controled by Tailwind class `container`. If you want your navbar to be full page width set the prop `fluid=true`.
 
-```svelte example hideScript
+```svelte example hideScript class="h-96 md:h-80"
 <script>
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
 </script>
@@ -83,7 +82,7 @@ If you need more control on navbar content use underlying `NavContainer` compone
 
 Utilize the `href` prop within the `NavLi` component to incorporate a hyperlink. To initiate the application of the active class, include the `activeUrl` prop within the `NavUl` component:
 
-```svelte example
+```svelte example class="h-96 md:h-80"
 <script>
   import { page } from '$app/stores';
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
@@ -108,7 +107,7 @@ Utilize the `href` prop within the `NavLi` component to incorporate a hyperlink.
 
 Control the `active` and `nonactive` class by using `activeClass` and `nonActiveClass`:
 
-```svelte example
+```svelte example class="h-96 md:h-80"
 <script>
   import { page } from '$app/stores';
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
@@ -137,7 +136,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
 
 This example can be used to show a secondary dropdown menu when clicking on one of the navigation links.
 
-```svelte example class="h-80"
+```svelte example class="h-96 md:h-80"
 <script>
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Dropdown, DropdownItem, DropdownDivider } from 'flowbite-svelte';
   import { ChevronDownOutline } from 'flowbite-svelte-icons';
@@ -153,19 +152,19 @@ This example can be used to show a secondary dropdown menu when clicking on one 
   <NavHamburger />
   <NavUl {activeUrl}>
     <NavLi href="/">Home</NavLi>
-    <NavLi id="nav-menu1" class="cursor-pointer">
+    <NavLi class="cursor-pointer">
       Dropdown<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" />
     </NavLi>
-    <NavLi href="/settings">Setting</NavLi>
-    <NavLi href="/pricing">Pricing</NavLi>
-    <NavLi href="/contact">Contact</NavLi>
-    <Dropdown triggeredBy="#nav-menu1" class="w-44 z-20">
+    <Dropdown class="w-44 z-20">
       <DropdownItem href="/">Dashboard</DropdownItem>
       <DropdownItem href="/docs/components/navbar">Settings</DropdownItem>
       <DropdownItem href="/">Earnings</DropdownItem>
       <DropdownDivider />
       <DropdownItem href="/">Sign out</DropdownItem>
     </Dropdown>
+    <NavLi href="/settings">Setting</NavLi>
+    <NavLi href="/pricing">Pricing</NavLi>
+    <NavLi href="/contact">Contact</NavLi>
   </NavUl>
 </Navbar>
 ```
@@ -174,7 +173,7 @@ This example can be used to show a secondary dropdown menu when clicking on one 
 
 Use this example of a navbar element to also show a search input element that you can integrate for a site-wide search.
 
-```svelte example class="h-80"
+```svelte example class="h-96 md:h-80"
 <script>
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button, Input } from 'flowbite-svelte';
   import { SearchOutline } from 'flowbite-svelte-icons';
@@ -209,7 +208,7 @@ Use this example of a navbar element to also show a search input element that yo
 
 Use the following navbar element to show a call to action button alongside the logo and page links.
 
-```svelte example class="h-80 md:h-64"
+```svelte example class="h-96 md:h-80"
 <script>
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button, Input } from 'flowbite-svelte';
 </script>
@@ -237,7 +236,7 @@ Use the following navbar element to show a call to action button alongside the l
 
 Use this example to keep the navbar positioned fixed to the top side as you scroll down the document page.
 
-```svelte example class="h-80"
+```svelte example class="p-2 sm:p-6 h-96 md:h-80 overflow-hidden"
 <script>
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, ImagePlaceholder, Skeleton, TextPlaceholder } from 'flowbite-svelte';
 </script>
@@ -269,7 +268,7 @@ Use this example to keep the navbar positioned fixed to the top side as you scro
 
 Use this example to create a navigation bar with a user profile or button to toggle a dropdown menu.
 
-```svelte example class="h-80"
+```svelte example class="h-96 md:h-80"
 <script>
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Avatar, Dropdown, DropdownItem, DropdownHeader, DropdownDivider } from 'flowbite-svelte';
 </script>
@@ -308,7 +307,7 @@ Use this example to create a navigation bar with a user profile or button to tog
 
 Use this example to show a solid background for the navbar component instead of being transparent.
 
-```svelte example
+```svelte example class="h-96 md:h-80"
 <script>
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
 </script>
@@ -359,13 +358,10 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite the `svg` tag class.
 
-### SidebarMenu styling
-
-- Use the `class` prop to overwrite the outer class.
-- Use the `classSideMenu` prop to overwrite the inner class.
-
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Navbar](https://flowbite.com/docs/components/navbar/)
+
+<GitHubCompoLinks />

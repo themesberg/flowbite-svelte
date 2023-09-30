@@ -1,1 +1,19 @@
-{"name":"Progressbar","slots":[],"events":[],"props":[["progress","string","'45'"],["size","string","'h-2.5'"],["labelInside","boolean","false"],["labelOutside","string","''"],["color","'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo'","'primary'"],["labelInsideClass","string","'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full'"],["divClass","string","'w-full bg-gray-200 rounded-full dark:bg-gray-700'"]]}
+{
+  "name": "Progressbar",
+  "slots": [],
+  "events": [],
+  "props": [
+    ["progress", "string | number", "'45'"],
+    ["precision", "number", "0"],
+    ["tweenDuration", "number", "400"],
+    ["animate", "boolean", "false"],
+    ["size", "string", "'h-2.5'"],
+    ["labelInside", "boolean", "false"],
+    ["labelOutside", "string", "''"],
+    ["easing", "EasingFunction", "cubicOut"],
+    ["color", "'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo'", "'primary'"],
+    ["labelInsideClass", "string", "'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full'"],
+    ["divClass", "string", "'w-full bg-gray-200 rounded-full dark:bg-gray-700'"],
+    ["tweenDuration", "number", "400"]
+  ]
+}

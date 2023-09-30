@@ -1,1 +1,1 @@
-{"name":"TableBodyRow","slots":[],"events":["on:click","on:contextmenu"],"props":[["color","'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom'","getContext('color')"]]}
+{ "name": "TableBodyRow", "slots": [], "events": ["on:click", "on:contextmenu", "on:dblclick"], "props": [["color", "'blue' | 'green' | 'red' | 'yellow' | 'purple' | 'default' | 'custom'", "getContext('color')"]] }

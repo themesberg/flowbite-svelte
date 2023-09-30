@@ -38,7 +38,7 @@ test('Button Group page should have h1', async ({ page }) => {
 
 // Buttons
 test('Buttons page should have h1', async ({ page }) => {
-  await page.goto('/button');
+  await page.goto('/buttons');
   expect(await page.textContent('h1')).toBe('Svelte Buttons - Flowbite');
 });
 
@@ -152,7 +152,7 @@ test('Table page should have h1', async ({ page }) => {
 
 // Tabs
 test('Tab page should have h1', async ({ page }) => {
-  await page.goto('/tab');
+  await page.goto('/tabs');
   expect(await page.textContent('h1')).toBe('Svelte Tabs - Flowbite');
 });
 

@@ -57,9 +57,9 @@ export type ReviewType = {
   item3: string | undefined;
 };
 
-export type SelectOptionType = {
+export type SelectOptionType<T> = {
   name: string | number;
-  value: string | number;
+  value: T;
 };
 
 export type TransitionTypes = 'fade' | 'fly' | 'slide' | 'blur' | 'in:fly' | 'out:fly' | 'in:slide' | 'out:slide' | 'in:fade' | 'out:fade' | 'in:blur' | 'out:blur';
@@ -120,26 +120,6 @@ export interface SiteType {
   name: string;
   href: string;
   img?: string;
-}
-
-export interface TimelineItemVerticalType {
-  date: Date | string;
-  title: string;
-  icon?: typeof SvelteComponent<any>;
-  iconSize?: number;
-  iconClass?: string;
-  href?: string;
-  linkname?: string;
-  text?: HTMLElement | string;
-}
-
-export interface TimelineItemHorizontalType {
-  date: Date | string;
-  title: string;
-  icon?: typeof SvelteComponent<any>;
-  iconSize?: number;
-  iconClass?: string;
-  text?: HTMLElement | string;
 }
 
 export interface TransitionParamTypes {

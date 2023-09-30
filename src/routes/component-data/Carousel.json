@@ -1,1 +1,14 @@
-{"name":"Carousel","slots":[],"events":[],"props":[["images","HTMLImgAttributes[]",""],["index","number","0"],["transition","TransitionFunc = (x) => fade(x, { duration: 700, easing: quintOut });",""],["duration","number","0"]]}
+{
+  "name": "Carousel",
+  "slots": ["slide"],
+  "events": [],
+  "props": [
+    ["images", "HTMLImgAttributes[]", ""],
+    ["index", "number", "0"],
+    ["slideDuration", "number", "1000"],
+    ["transition", "TransitionFunc | null", ""],
+    ["duration", "number", "0"],
+    ["ariaLabel", "string", "'Draggable Carousel'"],
+    ["imgClass", "string", "''"]
+  ]
+}

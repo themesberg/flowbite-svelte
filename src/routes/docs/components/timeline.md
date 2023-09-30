@@ -9,9 +9,8 @@ thumbnailSize: w-64
 ---
 
 <script lang="ts">
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
-  
-  const components = 'Timeline, TimelineItem, TimelineHorizontal, Activity, ActivityItem, Group, GroupItem, TimelineItemVertical, TimelineItemHorizontal'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The timeline component can be used to show series of data in a chronological order for use cases such as activity feeds, user actions, application updates, and more.
@@ -20,7 +19,7 @@ The timeline component can be used to show series of data in a chronological ord
 
 ```svelte example hideOutput
 <script>
-  import { Timeline, TimelineItem, TimelineItemVertical, TimelineItemHorizontal, TimelineHorizontal, Activity, ActivityItem, Group, GroupItem } from 'flowbite-svelte';
+  import { Timeline, TimelineItem, Activity, ActivityItem, Group, GroupItem } from 'flowbite-svelte';
 </script>
 ```
 
@@ -212,14 +211,6 @@ The component has the following props, type, and default values. See [types page
 - Use the `classDiv` prop to overwrite the `div` tag class.
 - Use the `classTime` prop to overwrite the `time` tag class.
 
-### TimelineHorizontal styling
-
-- Use the `liClass` prop to overwrite `classLi`.
-- Use the `divClass` prop to overwrite `classDiv`.
-- Use the `timeClass` prop to overwrite `classTime`.
-- Use the `pClass` prop to overwrite `classP`.
-- Use the `aClass` prop to overwrite `classA`.
-
 ### Activity styling
 
 - Use the `class` prop to overwrite `olClass`.
@@ -249,19 +240,10 @@ The component has the following props, type, and default values. See [types page
 - Use the `classTitle` prop to overwrite `titleClass`.
 - Use the `classSpan` prop to overwrite `spanClass`.
 
-### TimelineItemVertical styling
-
-- Use the `classLi` prop to overwrite `liClass`.
-- Use the `classSpan` prop to overwrite `spanClass`.
-- Use the `classH3` prop to overwrite `h3Class`.
-- Use the `classTime` prop to overwrite `timeClass`.
-
-### TimelineItemHorizonal styling
-
-- Use the `class` prop to overwrite the `ol` tag class.
-
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Timeline](https://flowbite.com/docs/components/timeline/)
+
+<GitHubCompoLinks />

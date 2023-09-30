@@ -8,7 +8,7 @@ description: Get started with a collection of input fields built with Tailwind C
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, DocBadgeList, CompoAttributesViewer } from '../../utils'
+  import { TableProp, TableDefaultRow, DocBadgeList, CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { onMount } from 'svelte';
   import { Badge, A } from '$lib'
 
@@ -52,7 +52,7 @@ Use this example as a generic form element which includes multiple input fields 
     </div>
     <div>
       <Label for="phone" class="mb-2">Phone number</Label>
-      <Input type="tel" id="phone" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
+      <Input type="tel" id="phone" placeholder="123-45-678" pattern={"[0-9]{3}-[0-9]{2}-[0-9]{3}"} required />
     </div>
     <div>
       <Label for="website" class="mb-2">Website URL</Label>
@@ -396,3 +396,5 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [Flowbite Input Field](https://flowbite.com/docs/forms/input-field/)
+
+<GitHubCompoLinks {components}/>

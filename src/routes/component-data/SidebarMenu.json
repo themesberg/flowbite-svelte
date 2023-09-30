@@ -1,1 +1,0 @@
-{"name":"SidebarMenu","slots":[],"events":["on:click"],"props":[["size","string","'20'"],["color","string","'currentColor'"],["variation","'solid' | 'outline'","'outline'"],["ariaLabel","string","'bars 3'"]]}

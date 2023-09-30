@@ -9,10 +9,9 @@ thumnailSize: w-48
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'  
-
-  const components = 'Modal'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The modal component can be used as an interactive dialog on top of the main content area of the website to show notifications and gather information using form elements from your website users.
@@ -35,7 +34,7 @@ Modal visibility (open/close) is controlled by the `open` property. You can bind
 
 An option of automatic closing of the modal can be enabled by setting the `autoclose` property. Any `<button>` element put in the modal will close it on click.
 
-```svelte example class="flex justify-center"
+```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Button, Modal } from 'flowbite-svelte';
   let defaultModal = false;
@@ -56,7 +55,7 @@ An option of automatic closing of the modal can be enabled by setting the `autoc
 
 You can use the `outsideclose` prop to allow the user to close the modal by clicking outside of it.
 
-```svelte example class="flex justify-center"
+```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Button, Modal } from 'flowbite-svelte';
   let clickOutsideModal = false;
@@ -80,7 +79,7 @@ You can use this modal example to show a pop-up decision dialog to your users es
 
 Notice lack of the `footer` slot.
 
-```svelte example class="flex justify-center"
+```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Button, Modal } from 'flowbite-svelte';
   import { ExclamationCircleOutline } from 'flowbite-svelte-icons';
@@ -103,7 +102,7 @@ Notice lack of the `footer` slot.
 
 Use this modal example with form input element to receive information from your users with the advantage of not having to link to another page but keeping the user on the currently active page. A great example would be a login or a register form.
 
-```svelte example class="flex justify-center"
+```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Button, Modal, Label, Input, Checkbox } from 'flowbite-svelte';
   let formModal = false;
@@ -138,7 +137,7 @@ Use this modal example with form input element to receive information from your 
 
 Use this web3 modal component to show crypto wallet connection options like MetaMask or WalletConnect when building a website based on NFT authentication and collectibles.
 
-```svelte example class="flex justify-center"
+```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Button, Modal, Label, Input, Checkbox } from 'flowbite-svelte';
   import MetaMask from '../../utils/icons/MetaMask.svelte';
@@ -199,7 +198,7 @@ Use this web3 modal component to show crypto wallet connection options like Meta
 
 You can use five different modal sizing options starting from extra small to extra large, but keep in mind that the width of these modals will remain the same when browsing on smaller devices.
 
-```svelte example class="flex justify-center"
+```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Button, Modal } from 'flowbite-svelte';
   let id = 'size-modal';
@@ -267,7 +266,7 @@ You can use five different modal sizing options starting from extra small to ext
 
 ## Placement
 
-```svelte example class="flex justify-center"
+```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Button, Modal } from 'flowbite-svelte';
   let id;
@@ -305,7 +304,7 @@ You can use five different modal sizing options starting from extra small to ext
 
 ## Colors
 
-```svelte example class="flex justify-center"
+```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Button, Modal, P } from 'flowbite-svelte';
   let open = false;
@@ -365,7 +364,7 @@ You can use five different modal sizing options starting from extra small to ext
 
 ## Scrolling behaviour
 
-```svelte example class="flex justify-center"
+```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Button, Modal } from 'flowbite-svelte';
   let scrollingModal = false;
@@ -406,8 +405,10 @@ The component has the following props, type, and default values. See [types page
 - Use the `bodyClass` prop to overwrite body modal default class.
 - Use the `classDialog` prop to overwrite `dialogClass`.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Modal](https://flowbite.com/docs/components/modal/)
+
+<GitHubCompoLinks />

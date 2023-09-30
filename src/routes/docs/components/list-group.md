@@ -9,10 +9,9 @@ thumnailSize: w-36
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, Heading, P, A } from '$lib'
-
-  const components = 'Listgroup, ListgroupItem'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The list group component can be used to display a series of elements, buttons or links inside a single card component similar to a sidebar.
@@ -29,7 +28,7 @@ The list group component can be used to display a series of elements, buttons or
 
 Here’s an example of a list group that you can use right away.
 
-```svelte example class="flex justify-center"
+```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Listgroup } from 'flowbite-svelte';
   let simpleList = ['Profile', 'Settings', 'Messages', 'Download'];
@@ -72,7 +71,7 @@ You need to set the list to `active` mode to enable hovering, focus and `on:clic
 
 If list is active and data items do not contain `href` field entries are presented as `<button>` elements triggering `on:click` events.
 
-```svelte example class="flex justify-center"
+```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Listgroup } from 'flowbite-svelte';
   let buttons = [
@@ -92,7 +91,7 @@ If list is active and data items do not contain `href` field entries are present
 
 Use the following example to create a list of buttons as a menu together with SVG icons.
 
-```svelte example class="flex justify-center"
+```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Listgroup } from 'flowbite-svelte';
   import { IconSolid } from 'flowbite-svelte-icons';
@@ -114,7 +113,7 @@ Use the following example to create a list of buttons as a menu together with SV
 
 When non standard usage is needed you can omit the `items` props and add elements directly to the list. Usage of hidden so far `ListgroupItem` helps you with proper layout.
 
-```svelte example class="flex justify-center"
+```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Listgroup, ListgroupItem, Avatar } from 'flowbite-svelte';
   import { TrashBinSolid } from 'flowbite-svelte-icons';
@@ -150,8 +149,10 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite the `li` tag class.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite List Group](https://flowbite.com/docs/components/list-group/)
+
+<GitHubCompoLinks />

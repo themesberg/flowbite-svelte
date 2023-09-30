@@ -2,7 +2,7 @@
   import { page } from '$app/stores';
   import { afterNavigate } from '$app/navigation';
   import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from '$lib';
-  import SidebarDropdownWrapper from '$lib/sidebars/SidebarDropdownWrapper.svelte';
+  import SidebarDropdownWrapper from '$lib/sidebar/SidebarDropdownWrapper.svelte';
   import { getContext } from 'svelte';
   import type { Writable } from 'svelte/store';
   import type { PageData } from '../$types';

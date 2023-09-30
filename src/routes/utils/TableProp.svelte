@@ -1,8 +1,9 @@
 <script lang="ts">
+  import { twMerge } from 'tailwind-merge';
   import { setContext } from 'svelte';
   export let category: 'props' | 'events' | 'slots'= 'props';
   export let tableClass: string = 'w-full text-sm text-left text-gray-500 dark:text-gray-400';
-  export let theadClass: string = 'text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400';
+  export let theadClass: string = twMerge('text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400', $$props.class);
   export let thClass: string = 'px-6 py-3';
   export let divClass: string = 'w-full relative overflow-x-auto shadow-md sm:rounded-lg py-4';
 

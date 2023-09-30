@@ -1,1 +1,2 @@
+
 {"name":"NavHamburger","slots":[],"events":["on:click"],"props":[["menuClass","string","'h-6 w-6 shrink-0'"]]}

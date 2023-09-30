@@ -8,7 +8,7 @@ description: Use the search input component as a text field to allow users to en
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, A } from '$lib'
   import componentData1 from '../../component-data/Search.json'
   const components = 'Search'
@@ -72,7 +72,7 @@ Get started with this example if you would like to enable voice search for your 
 <form class="flex gap-2">
   <Search size="md" class="flex gap-2 items-center" placeholder="Search Mockups, Logos, Design Templates...">
     <button type="button" on:click={handleVoiceBtn} class="outline-none">
-      <MicrophoneSolid class="w-4 h-4" />
+      <MicrophoneSolid class="w-4 h-4 mr-2" />
     </button>
   </Search>
   <Button size="sm">
@@ -131,3 +131,5 @@ The component has the following props, type, and default values. See [types page
 ## References
 
 - [Flowbite Search Input](https://flowbite.com/docs/forms/search-input/)
+
+<GitHubCompoLinks {components}/>

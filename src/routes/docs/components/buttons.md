@@ -9,10 +9,9 @@ thumnailSize: w-24
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer, DocBadgeList } from '../../utils'
+  import { CompoAttributesViewer, DocBadgeList, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { Badge, P, A } from '$lib'
-
-  const components = 'Button, GradientButton'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The button component is probably the most widely used element in any user interface or website as it can be used to launch an action but also to link to other pages.
@@ -53,7 +52,7 @@ Use these default button styles with multiple colors to indicate an action or li
 
 You can add a link to a Button component:
 
-```svelte example class="flex flex-wrap gap-2" hideScript
+```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
 <script>
   import { Button } from 'flowbite-svelte';
 </script>
@@ -65,7 +64,7 @@ You can add a link to a Button component:
 
 The button pills can be used as an alternative style by using fully rounded edges.
 
-```svelte example class="flex flex-wrap gap-2" hideScript
+```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
 <script>
   import { Button } from 'flowbite-svelte';
 </script>
@@ -85,7 +84,7 @@ The button pills can be used as an alternative style by using fully rounded edge
 
 These beautifully colored buttons built with the gradient color stops utility classes from Tailwind CSS can be used as a creative alternative to the default button styles.
 
-```svelte example class="flex flex-wrap gap-2"
+```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
   import { GradientButton } from 'flowbite-svelte';
 </script>
@@ -104,7 +103,7 @@ These beautifully colored buttons built with the gradient color stops utility cl
 
 These buttons use a style that includes two contrasted colors creating an impressive mesh gradient effect.
 
-```svelte example class="flex flex-wrap gap-2"
+```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
   import { GradientButton } from 'flowbite-svelte';
 </script>
@@ -122,7 +121,7 @@ These buttons use a style that includes two contrasted colors creating an impres
 
 This is a special button style that incorporates a gradient color for the outline that can be used as a secondary style to the fully colored gradient buttons.
 
-```svelte example class="flex flex-wrap gap-2"
+```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
   import { GradientButton } from 'flowbite-svelte';
 </script>
@@ -141,7 +140,7 @@ This is a special button style that incorporates a gradient color for the outlin
 
 These beautiful button elements with color shadows can be used since the release of Tailwind v3.0.
 
-```svelte example class="flex flex-wrap gap-2"
+```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
   import { Button, GradientButton } from 'flowbite-svelte';
 </script>
@@ -160,7 +159,7 @@ These beautiful button elements with color shadows can be used since the release
 
 Use the following button styles to show the colors only for the border of the element.
 
-```svelte example class="flex flex-wrap gap-2" hideScript
+```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
 <script>
   import { Button } from 'flowbite-svelte';
 </script>
@@ -179,7 +178,7 @@ Use the following button styles to show the colors only for the border of the el
 
 Use these examples if you want to use smaller or larger buttons.
 
-```svelte example class="gap-2" hideScript
+```svelte example class="gap-2" hideScript hideResponsiveButtons
 <script>
   import { Button } from 'flowbite-svelte';
   import { EnvelopeSolid } from 'flowbite-svelte-icons';
@@ -196,7 +195,7 @@ Use these examples if you want to use smaller or larger buttons.
 
 Use the following examples to add a SVG icon inside the button either on the left or right side.
 
-```svelte example class="flex flex-wrap gap-2"
+```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
   import { Button } from 'flowbite-svelte';
   import { ArrowRightOutline, ShoppingCartSolid } from 'flowbite-svelte-icons';
@@ -214,7 +213,7 @@ Use the following examples to add a SVG icon inside the button either on the lef
 
 This example can be used to show a notification count or helper text inside a button using the badge element.
 
-```svelte example class="flex flex-wrap gap-2"
+```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
   import { Button, Indicator } from 'flowbite-svelte';
 </script>
@@ -229,7 +228,7 @@ This example can be used to show a notification count or helper text inside a bu
 
 Sometimes you need a button to indicate an action using only an icon.
 
-```svelte example class="flex flex-wrap gap-2"
+```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
   import { Button } from 'flowbite-svelte';
   import { ThumbsUpSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
@@ -251,7 +250,7 @@ Sometimes you need a button to indicate an action using only an icon.
 
 Use the spinner components from Flowbite-Svelte to indicate a loader animation inside buttons.
 
-```svelte example class="flex flex-wrap gap-2"
+```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
   import { Button, Spinner } from 'flowbite-svelte';
 </script>
@@ -268,7 +267,7 @@ Use the spinner components from Flowbite-Svelte to indicate a loader animation i
 
 You can add any additional button attributes. The following example shows adding the `disabled` attribute.
 
-```svelte example class="flex flex-wrap gap-2" hideScript
+```svelte example class="flex flex-wrap gap-2" hideScript hideResponsiveButtons
 <script>
   import { Button } from 'flowbite-svelte';
 </script>
@@ -280,7 +279,7 @@ You can add any additional button attributes. The following example shows adding
 
 You can use on:click or any standard on:\* to listen to the event.
 
-```svelte example class="flex flex-wrap gap-2"
+```svelte example class="flex flex-wrap gap-2" hideResponsiveButtons
 <script>
   import { Button } from 'flowbite-svelte';
   const btn1 = () => {
@@ -307,8 +306,10 @@ The component has the following props, type, and default values. See [types page
 
 - Use the `class` prop to overwrite `button` tag class.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Buttons](https://flowbite.com/docs/components/buttons/)
+
+<GitHubCompoLinks />

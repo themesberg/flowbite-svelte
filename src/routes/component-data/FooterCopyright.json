@@ -1,1 +1,14 @@
-{"name":"FooterCopyright","slots":[],"events":[],"props":[["spanClass","string","'block text-sm text-gray-500 sm:text-center dark:text-gray-400'"],["aClass","string","'hover:underline'"],["year","number","new Date().getFullYear()"],["href","string","''"],["by","string","''"],["target","string | undefined","undefined"],["copyrightMessage","string","'All Rights Reserved.'"]]}
+{
+  "name": "FooterCopyright",
+  "slots": [],
+  "events": [],
+  "props": [
+    ["spanClass", "string", "'block text-sm text-gray-500 sm:text-center dark:text-gray-400'"],
+    ["aClass", "string", "'hover:underline'"],
+    ["year", "number", "new Date().getFullYear()"],
+    ["href", "string", "''"],
+    ["by", "string", "''"],
+    ["target", "string | undefined", "undefined"],
+    ["copyrightMessage", "string", "'All Rights Reserved.'"]
+  ]
+}

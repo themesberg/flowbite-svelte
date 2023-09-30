@@ -9,10 +9,9 @@ thumnailSize: w-24
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
-
-  const components = 'Tooltip, Frame'
+  const dirName = toKebabCase(component_title)
 </script>
 
 Flowbite-Svelte allows you to show extra information when hovering or focusing over an element in multiple positions, styles, and animations.
@@ -29,7 +28,7 @@ Flowbite-Svelte allows you to show extra information when hovering or focusing o
 
 To get started with using tooltips all you need to do is set `triggeredBy` attribute of the tooltip component to any CSS query targeting trigger element(s). In the following example you can see the tooltip that will be trigger by the `tooltip-default` element to be shown when hovered or focused.
 
-```svelte example class="flex items-end h-32"
+```svelte example class="flex items-end h-32" hideResponsiveButtons
 <script>
   import { Tooltip, Button } from 'flowbite-svelte';
 </script>
@@ -42,7 +41,7 @@ To get started with using tooltips all you need to do is set `triggeredBy` attri
 
 You can use choose between dark and light version styles for the tooltip component by changing the utility classes from Tailwind CSS and by applying the `type={light|dark}` data attribute.
 
-```svelte example class="flex items-end gap-2 h-32"
+```svelte example class="flex items-end gap-2 h-32" hideResponsiveButtons
 <script>
   import { Tooltip, Button } from 'flowbite-svelte';
   let type = 'dark';
@@ -60,7 +59,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 
 **Note!** This examples shows you also how to share one tooltip between multiple triggering elements using advanced CSS query.
 
-```svelte example class="flex items-center gap-2 h-36"
+```svelte example class="flex items-center gap-2 h-36" hideResponsiveButtons
 <script>
   import { Tooltip, Button } from 'flowbite-svelte';
   let placement = 'left';
@@ -77,7 +76,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 
 ## Triggering
 
-```svelte example class="flex items-end gap-2 h-32"
+```svelte example class="flex items-end gap-2 h-32" hideResponsiveButtons
 <script>
   import { Tooltip, Button } from 'flowbite-svelte';
 </script>
@@ -90,7 +89,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 
 ## Disable arrow
 
-```svelte example class="flex items-end gap-2 h-32"
+```svelte example class="flex items-end gap-2 h-32" hideResponsiveButtons
 <script>
   import { Tooltip, Button } from 'flowbite-svelte';
 </script>
@@ -103,7 +102,7 @@ The positioning of the tooltip element relative to the triggering element (eg. b
 
 If you need the tooltip to be attached to the other element then the tiggering one you can pass a CSS query to `reference` prop.
 
-```svelte example class="flex gap-4 flex-col justify-center items-center h-72"
+```svelte example class="flex gap-4 flex-col justify-center items-center h-72" hideResponsiveButtons
 <script>
   import { Tooltip, Button } from 'flowbite-svelte';
   let placement = '';
@@ -124,7 +123,7 @@ Various color palettes can be set for a tooltip by using the `color` property fr
 
 When you want to add a fully custom styles, use `type="custom"`, `defaultClass`, and `class` to modify the tooltip styling.
 
-```svelte example class="flex items-center h-64 gap-2"
+```svelte example class="flex items-center h-64 gap-2" hideResponsiveButtons
 <script>
   import { Tooltip, Button } from 'flowbite-svelte';
 </script>
@@ -145,12 +144,10 @@ When you want to add a fully custom styles, use `type="custom"`, `defaultClass`,
 
 The component has the following props, type, and default values. See [types page](/docs/pages/typescript) for type information.
 
-### Frame styling
-
-- Use the `class` prop to overwrite the default class.
-
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Tooltip](https://flowbite.com/docs/components/tooltips/)
+
+<GitHubCompoLinks />

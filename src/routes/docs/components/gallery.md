@@ -9,9 +9,9 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer  } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
-  const components = 'Gallery'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The gallery component can be used to show multiple images inside a masonry grid layout styles with the utility-first classes from Tailwind CSS to show a collection of pictures to your users based on various layouts, styles, sizes, and colors.
@@ -223,8 +223,10 @@ The component has the following props, type, and default values. See [types page
 - Use the `class` prop to overwrite the `div` tag.
 - Use the `classImg` prop to overwrite `imgClass`.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Gallery](https://flowbite.com/docs/components/forms/)
+
+<GitHubCompoLinks />

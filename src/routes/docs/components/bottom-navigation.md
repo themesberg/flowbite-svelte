@@ -9,10 +9,10 @@ thumnailSize: w-64
 ---
 
 <script>
-  import { TableProp, TableDefaultRow, CompoAttributesViewer } from '../../utils'
+  import { CompoAttributesViewer, GitHubCompoLinks, toKebabCase } from '../../utils'
   import { P, A } from '$lib'
 
-  const components = 'BottomNav, BottomNavHeader, BottomNavHeaderItem, BottomNavItem'
+  const dirName = toKebabCase(component_title)
 </script>
 
 The bottom bar component can be used to allow menu items and certain control actions to be performed by the user through the usage of a fixed bar positioning to the bottom side of your page.
@@ -390,8 +390,10 @@ The component has the following props, type, and default values. See [types page
 - Use the `btnClass` prop to overwrite the `button` tag class.
 - Use the `spanClass` prop to overwrite the `span` tag class.
 
-<CompoAttributesViewer {components}/>
+<CompoAttributesViewer {dirName}/>
 
 ## References
 
 - [Flowbite Bottom Navigation](https://flowbite.com/docs/components/bottom-navigation/)
+
+<GitHubCompoLinks />
