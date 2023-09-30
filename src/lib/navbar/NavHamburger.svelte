@@ -1,13 +1,19 @@
 <script lang="ts">
-  import ToolbarButton from '../toolbar/ToolbarButton.svelte';
+  import { getContext } from 'svelte';
+  import { writable, type Writable } from 'svelte/store';
   import { twMerge } from 'tailwind-merge';
+  import ToolbarButton from '../toolbar/ToolbarButton.svelte';
   import Menu from './Menu.svelte';
 
-  export let btnClass: string = 'ml-3 md:hidden';
   export let menuClass: string = 'h-6 w-6 shrink-0';
+
+  let btnClass: string = 'ml-3 md:hidden';
+
+  let hiddenStore = getContext<Writable<boolean>>('navHidden') ?? writable(true);
+  const toggle = (ev: MouseEvent) => hiddenStore.update((h) => !h);
 </script>
 
-<ToolbarButton name="Open main menu" on:click {...$$restProps} class={twMerge(btnClass, $$props.class)}>
+<ToolbarButton name="Open main menu" on:click={toggle} {...$$restProps} class={twMerge(btnClass, $$props.class)}>
   <Menu class={twMerge(menuClass, $$props.classMenu)} />
 </ToolbarButton>
 
