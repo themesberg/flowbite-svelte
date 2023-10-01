@@ -60,14 +60,15 @@ Use the simplest form of a search input component with an icon and a search butt
 
 Use this search component with a dropdown to let your users select a category in which they would like the search query to be targeted in.
 
-```svelte example class="flex flex-col gap-4 h-64"
+```svelte example class="flex flex-col gap-4 h-72"
 <script>
   import { Search, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
   import { SearchOutline, ChevronDownSolid } from 'flowbite-svelte-icons';
 
-  // let el <!-- on component bind:ref={el} -->
-
   const items = [
+    {
+      label: 'All categories'
+    },
     {
       label: 'Mockups'
     },
@@ -82,22 +83,21 @@ Use this search component with a dropdown to let your users select a category in
     }
   ]
 
-  let selectCategory = undefined
+  let selectCategory = 'All categories'
 
 </script>
 
 <form class="flex">
   <div class="relative">
     <Button class="rounded-e-none whitespace-nowrap border border-r-0 border-primary-700">
-      {selectCategory || "All categories"}
+      {selectCategory}
       <ChevronDownSolid class="w-2.5 h-2.5 ml-2.5" />
     </Button>
-    <Dropdown classContainer="w-full">
+    <Dropdown classContainer="w-40">
       {#each items as { label }}
         <DropdownItem 
           on:click={() => {
             selectCategory = label;
-            // el.focus()
           }} 
           class={selectCategory === label ? 'underline' : ''}
         >
@@ -112,6 +112,73 @@ Use this search component with a dropdown to let your users select a category in
   </Button>
 </form>
 ```
+
+## Location search
+
+Use this example where you can select a country in which you want to search for an address or city.
+
+```svelte example class="flex flex-col gap-4 h-72"
+<script>
+  import { Search, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
+  import { SearchOutline, ChevronDownSolid } from 'flowbite-svelte-icons';
+
+  const countries = [
+    {
+      label: 'United States',
+      labelSelected: 'USA',
+      icon: '/images/forms/search-input/usa-flag.svg'
+    },
+    {
+      label: 'Germany',
+      labelSelected: 'DE',
+      icon: '/images/forms/search-input/de-flag.svg'
+    },
+    {
+      label: 'Italy',
+      labelSelected: 'ITA',
+      icon: '/images/forms/search-input/it-flag.svg'
+    },
+    {
+      label: 'China',
+      labelSelected: 'CH',
+      icon: '/images/forms/search-input/ch-flag.svg'
+    }
+  ]
+
+  let selectCountry = 'USA'
+
+  $: buttonLabel = countries.find(({ labelSelected }) => labelSelected ===  selectCountry)
+
+</script>
+
+<form class="flex">
+  <div class="relative">
+    <Button class="rounded-e-none whitespace-nowrap border border-r-0 border-primary-700">
+      <img class="h-3.5 w-3.5 rounded-full mr-2" src={buttonLabel.icon} alt={buttonLabel.label}>
+      {buttonLabel.labelSelected}
+      <ChevronDownSolid class="w-2.5 h-2.5 ml-2.5" />
+    </Button>
+    <Dropdown classContainer="w-40">
+      {#each countries as country}
+        <DropdownItem 
+          on:click={() => {
+            selectCountry = country.labelSelected;
+          }} 
+          class="inline-flex items-center {selectCountry === country.labelSelected ? 'underline' : ''}"
+        >
+          <img class="h-3.5 w-3.5 rounded-full mr-2" src={country.icon} alt={country.label}>
+          {country.label}
+        </DropdownItem>
+      {/each}
+    </Dropdown>
+  </div>
+  <Search size="md" class="rounded-none py-2.5" placeholder="Search Mockups, Logos, Design Templates..." />
+  <Button class="!p-2.5 rounded-s-none">
+    <SearchOutline class="w-5 h-5" />
+  </Button>
+</form>
+```
+
 
 ## Voice Search
 
