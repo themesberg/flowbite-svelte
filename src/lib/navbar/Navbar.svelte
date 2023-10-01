@@ -33,7 +33,5 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let navClass: string = 'px-2 sm:px-4 py-2.5 w-full';
-@prop export let navDivClass: string = 'mx-auto flex flex-wrap justify-between items-center ';
 @prop export let fluid: boolean = false;
 -->

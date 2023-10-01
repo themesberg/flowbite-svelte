@@ -442,6 +442,10 @@
       "types": "./dist/navbar/NavBrand.svelte.d.ts",
       "svelte": "./dist/navbar/NavBrand.svelte"
     },
+    "./NavContainer.svelte": {
+      "types": "./dist/navbar/NavContainer.svelte.d.ts",
+      "svelte": "./dist/navbar/NavContainer.svelte"
+    },
     "./NavHamburger.svelte": {
       "types": "./dist/navbar/NavHamburger.svelte.d.ts",
       "svelte": "./dist/navbar/NavHamburger.svelte"
