@@ -4,7 +4,7 @@
   import type { State } from './Carousel.svelte';
   import ControlButton from './ControlButton.svelte';
   import { twMerge } from 'tailwind-merge';
-  import { canChangeSlide } from './Carousel';
+  import { canChangeSlide } from './CarouselSlide';
 
   const state = getContext<Writable<State>>('state');
   const { update } = state;

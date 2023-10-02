@@ -95,10 +95,10 @@ Use this search component with a dropdown to let your users select a category in
     </Button>
     <Dropdown classContainer="w-40">
       {#each items as { label }}
-        <DropdownItem 
+        <DropdownItem
           on:click={() => {
             selectCategory = label;
-          }} 
+          }}
           class={selectCategory === label ? 'underline' : ''}
         >
           {label}
@@ -160,10 +160,10 @@ Use this example where you can select a country in which you want to search for 
     </Button>
     <Dropdown classContainer="w-40">
       {#each countries as country}
-        <DropdownItem 
+        <DropdownItem
           on:click={() => {
             selectCountry = country.labelSelected;
-          }} 
+          }}
           class="inline-flex items-center {selectCountry === country.labelSelected ? 'underline' : ''}"
         >
           <img class="h-3.5 w-3.5 rounded-full mr-2" src={country.icon} alt={country.label}>
@@ -178,7 +178,6 @@ Use this example where you can select a country in which you want to search for 
   </Button>
 </form>
 ```
-
 
 ## Voice Search
 

@@ -17,7 +17,7 @@
   import Controls from './Controls.svelte';
   import Indicators from './Indicators.svelte';
   import Slide from './Slide.svelte';
-  import { canChangeSlide } from './Carousel';
+  import { canChangeSlide } from './CarouselSlide';
 
   type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
   const SLIDE_DURATION_RATIO = 0.25; // TODO: Expose one day?

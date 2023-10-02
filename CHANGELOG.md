@@ -4,12 +4,11 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.44.18](https://github.com/themesberg/flowbite-svelte/compare/v0.44.17...v0.44.18) (2023-10-01)
 
-
 ### Bug Fixes
 
-* alert ml-auto ([#1090](https://github.com/themesberg/flowbite-svelte/issues/1090)) ([8d3077d](https://github.com/themesberg/flowbite-svelte/commit/8d3077d7c92eb13f8e5d60bc0884eff81baab21d))
-* GitHubCompoLinks ([218d919](https://github.com/themesberg/flowbite-svelte/commit/218d9193a90e4fc0101041586ee469c883dbce33))
-* playwright-and-lint.yaml update version ([d99963c](https://github.com/themesberg/flowbite-svelte/commit/d99963c94e082dcf946091f99b1cc850c0fdbaf3))
+- alert ml-auto ([#1090](https://github.com/themesberg/flowbite-svelte/issues/1090)) ([8d3077d](https://github.com/themesberg/flowbite-svelte/commit/8d3077d7c92eb13f8e5d60bc0884eff81baab21d))
+- GitHubCompoLinks ([218d919](https://github.com/themesberg/flowbite-svelte/commit/218d9193a90e4fc0101041586ee469c883dbce33))
+- playwright-and-lint.yaml update version ([d99963c](https://github.com/themesberg/flowbite-svelte/commit/d99963c94e082dcf946091f99b1cc850c0fdbaf3))
 
 ### [0.44.17](https://github.com/themesberg/flowbite-svelte/compare/v0.44.16...v0.44.17) (2023-09-22)
 
