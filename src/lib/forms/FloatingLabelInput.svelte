@@ -9,7 +9,6 @@
   export let size: 'small' | 'default' = 'default';
   export let color: 'base' | 'green' | 'red' = 'base';
   export let value: any = undefined;
-  export let label: string = '';
 
   const divClasses = {
     filled: 'relative',
@@ -76,9 +75,7 @@
   <input {id} {...$$restProps} bind:value on:blur on:change on:click on:focus on:input on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover on:paste {...{ type }} placeholder=" " class={twMerge(inputClasses[style], inputColorClasses[color], inputSizes[style][size], $$props.classInput)} />
 
   <label for={id} class={twMerge(labelClasses[style], labelColorClasses[color], labelSizes[style][size], $$props.classLabel)}>
-    <slot name='label'>
-      {@html label}
-    </slot>
+    <slot />
   </label>
 </div>
 
