@@ -22,7 +22,7 @@
     pink: 'text-pink-500 focus:ring-pink-400 hover:bg-pink-200 dark:hover:bg-pink-800 dark:hover:text-pink-300',
     blue: 'text-blue-500 focus:ring-blue-400 hover:bg-blue-200 dark:hover:bg-blue-800 dark:hover:text-blue-300',
     primary: 'text-primary-500 focus:ring-primary-400 hover:bg-primary-200 dark:hover:bg-primary-800 dark:hover:text-primary-300',
-    default: 'focus:ring-gray-400'
+    default: 'focus:ring-gray-400 hover:bg-gray-100'
   };
 
   const sizing = {
@@ -33,7 +33,7 @@
   };
 
   let buttonClass: string;
-  $: buttonClass = twMerge('focus:outline-none whitespace-normal', sizing[size], colors[color], color === 'default' && (background ? 'hover:bg-gray-100 dark:hover:bg-gray-600' : 'hover:bg-gray-100 dark:hover:bg-gray-700'), $$props.class);
+  $: buttonClass = twMerge('focus:outline-none whitespace-normal', sizing[size], colors[color], color === 'default' && (background ? 'dark:hover:bg-gray-600' : 'dark:hover:bg-gray-700'), $$props.class);
 
   const svgSizes = {
     xs: 'w-3 h-3',
