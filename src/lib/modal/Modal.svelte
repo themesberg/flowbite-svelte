@@ -12,11 +12,15 @@
     open?: boolean;
     title?: string;
     size?: SizeType;
-    placement?: 'top-left' | 'top-center' | 'top-right' | 'center-left' | 'center' | 'center-right' | 'bottom-left' | 'bottom-center' | 'bottom-right';
+    placement?: ModalPlacementType;
     autoclose?: boolean;
     backdropClass?: string;
+    bodyClass?: string;
+    classBackdrop?: string;
+    classDialog?: string;
     defaultClass?: string;
     outsideclose?: boolean;
+    dialogClass?: string;
   }
 
   export let open: boolean = false;
