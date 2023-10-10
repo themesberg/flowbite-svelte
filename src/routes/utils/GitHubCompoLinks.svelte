@@ -1,10 +1,10 @@
 <script lang="ts">
   // import type { PageData } from '../$types';
   import { page } from '$app/stores';
+  import { getFilteredFileNames } from './helpers';
   // export let dir: string = '';
   const pathname = $page.url.pathname;
   let dirName = pathname.split('/').pop();
-  import {getFilteredFileNames} from './index'
   // export let data: PageData;
   export let components;
 

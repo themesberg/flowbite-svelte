@@ -4,7 +4,7 @@
   import TableDefaultRow from './TableDefaultRow.svelte';
   import { GridSolid, AdjustmentsVerticalSolid, ClipboardSolid } from 'flowbite-svelte-icons';
   import { onMount } from 'svelte';
-  import {getFilteredFileNames} from './index'
+  import { getFilteredFileNames } from './helpers';
 
   export let dirName: string = '';
   export let components;
