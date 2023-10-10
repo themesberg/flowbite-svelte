@@ -81,6 +81,6 @@
 @prop export let rounded: boolean = false;
 @prop export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
 @prop export let border: boolean = false;
-@prop export let placement: PlacementType | undefined = undefined;
+@prop export let placement: IndicatorPlacementType | undefined = undefined;
 @prop export let offset: boolean = true;
 -->
