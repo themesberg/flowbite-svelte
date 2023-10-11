@@ -87,11 +87,10 @@
       </DocBadge>
     </a>
 
-    <NavHamburger on:click={toggle} btnClass="ml-3 m-0 lg:hidden {isHomePage ? '' : 'hidden'}" />
+    <NavHamburger on:click={toggle} class="ml-3 m-0 md:block lg:hidden {isHomePage ? '' : 'hidden'}" />
   </Navbar>
 </header>
 
 <div class="lg:flex">
   <slot />
 </div>
-
