@@ -7,3 +7,10 @@ declare namespace App {
   // interface Error {}
   // interface Platform {}
 }
+
+declare global {
+  interface DocumentEventMap {
+    changetheme: CustomEvent;
+  }
+}
+export {};

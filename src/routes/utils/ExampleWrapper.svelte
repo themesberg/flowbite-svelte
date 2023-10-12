@@ -123,6 +123,8 @@
     }
   };
 
+  const onChangeDarkModeGlobal = (e: CustomEvent<boolean>) => (dark = e.detail);
+
   onMount(() => {
     // workaround for svelte issue https://github.com/sveltejs/svelte/issues/6967
     setTimeout(() => {
@@ -130,6 +132,11 @@
         iframe.dispatchEvent(new Event('load'));
       }
     }, 500);
+
+    document.addEventListener('changetheme', onChangeDarkModeGlobal);
+    return () => {
+      document.removeEventListener('changetheme', onChangeDarkModeGlobal);
+    };
   });
 
   $: {

@@ -2,7 +2,7 @@
   import { page } from '$app/stores';
   import { DarkMode, Navbar, NavBrand, NavHamburger, NavLi, NavUl } from '$lib';
   import Tooltip from '$lib/tooltip/Tooltip.svelte';
-  import { onMount, setContext } from 'svelte';
+  import { onMount, setContext, type ComponentEvents } from 'svelte';
   import { writable, type Writable } from 'svelte/store';
   import '../app.css';
   import DocBadge from './utils/DocBadge.svelte';
@@ -28,6 +28,8 @@
   const toggleDrawer = () => {
     drawerHiddenStore.update((state) => !state);
   };
+
+  const onChangeDarkMode = ({ detail }: ComponentEvents<DarkMode>['change']) => document.dispatchEvent(new CustomEvent('changetheme', { detail }));
 
   onMount(() => {
     // Workaround until https://github.com/sveltejs/kit/issues/2664 is fixed
@@ -78,7 +80,7 @@
       <ToolbarLink class="hidden xl:inline-block dark:hover:text-white hover:text-gray-900" name="Subscribe to YouTube channel" href="https://www.youtube.com/channel/UC_Ms4V2kYDsh7F_CSsHyQ6A">
         <YouTube />
       </ToolbarLink>
-      <DarkMode size="lg" class="inline-block dark:hover:text-white hover:text-gray-900" />
+      <DarkMode size="lg" class="inline-block dark:hover:text-white hover:text-gray-900" on:change={onChangeDarkMode} />
       <Tooltip class="dark:bg-gray-900" placement="bottom-end">Toggle dark mode</Tooltip>
     </div>
     <a href="https://www.npmjs.com/package/flowbite-svelte" class="hidden sm:block">
