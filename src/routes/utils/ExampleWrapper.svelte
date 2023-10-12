@@ -6,6 +6,7 @@
   import Tooltip from '$lib/tooltip/Tooltip.svelte';
   import { DesktopPcOutline, TabletOutline, MobilePhoneOutline } from 'flowbite-svelte-icons';
   import { onMount } from 'svelte';
+  import { browser } from '$app/environment';
   export let divClass = 'w-full mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-6';
 
   // the source of the example, if you want it
@@ -30,7 +31,7 @@
 
   let showExpandButton: boolean = false;
   let expand: boolean = false;
-  let dark: boolean = false;
+  let dark: boolean = (browser && window.localStorage.getItem('color-theme') === 'dark') || (browser && window.matchMedia('(prefers-color-scheme: dark)').matches) || false;
   let responsiveDevice: keyof typeof responsiveSize = 'desktop';
 
   const responsiveSize = {
