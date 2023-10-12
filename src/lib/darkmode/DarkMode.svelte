@@ -1,9 +1,12 @@
 <script lang="ts">
+  import { createEventDispatcher } from 'svelte';
   import { twMerge } from 'tailwind-merge';
 
   export let btnClass: string = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5';
   export let size: 'sm' | 'md' | 'lg' = 'md';
   export let ariaLabel: string = 'Dark mode';
+
+  const dispatch = createEventDispatcher<{ change: boolean }>();
 
   const sizes = {
     sm: 'w-4 h-4',
@@ -14,6 +17,7 @@
   const toggleTheme = () => {
     const isDark = window.document.documentElement.classList.toggle('dark');
     localStorage.setItem('color-theme', isDark ? 'dark' : 'light');
+    dispatch('change', isDark);
   };
 </script>
 
