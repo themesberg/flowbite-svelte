@@ -29,7 +29,7 @@
     title: `${title}`,
     description: `${description}`,
     images: [{ url: image, width: 1200, height: 630, alt: `${title}` }],
-    site_name: 'Flowbite Svelte'
+    siteName: 'Flowbite Svelte'
   }}
   twitter={{
     handle: '@shinokada',

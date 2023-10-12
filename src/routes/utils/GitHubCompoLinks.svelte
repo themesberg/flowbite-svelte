@@ -4,7 +4,7 @@
   // export let dir: string = '';
   const pathname = $page.url.pathname;
   let dirName = pathname.split('/').pop();
-  import {getFilteredFileNames} from './index'
+  import { getFilteredFileNames } from './helpers'
   // export let data: PageData;
   export let components;
 
@@ -12,7 +12,7 @@
   const forms = ['Checkbox', 'Dropzone', 'Fileupload', 'FloatingLabelInput', 'Helper', 'Input', 'InputAddon', 'Label', 'MultiSelect', 'NumberInput', 'Radio', 'Range', 'Search', 'Select', 'Textarea', 'Toggle']
   const typography = ['A', 'Blockquote', 'DesriptionList', 'Heading', 'Hr', 'Img', 'Layout', 'Li', 'List', 'Mark', 'P', 'Secondary', 'Span']
   // default for docs/components 
-  let fileNames = getFilteredFileNames(dirName);
+  let fileNames = getFilteredFileNames(dirName || "");
   // if components are given in docs/forms, typography etc use it
   if (components) {
     // Split the components into an array

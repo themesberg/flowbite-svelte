@@ -4,12 +4,23 @@
   import TableDefaultRow from './TableDefaultRow.svelte';
   import { GridSolid, AdjustmentsVerticalSolid, ClipboardSolid } from 'flowbite-svelte-icons';
   import { onMount } from 'svelte';
-  import {getFilteredFileNames} from './index'
+  import { getFilteredFileNames } from './helpers';
+
+  type TCompoData = {
+    data: {
+      default: {
+        name: string;
+        props: string[][];
+        events: string[][];
+        slots: string[][];
+      };
+    };
+  };
 
   export let dirName: string = '';
-  export let components;
+  export let components: string;
 
-  let compoData = [];
+  let compoData: TCompoData[] = [];
   // default is find fileName using dirName
   const fileNames = getFilteredFileNames(dirName);
 

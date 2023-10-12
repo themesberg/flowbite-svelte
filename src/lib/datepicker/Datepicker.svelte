@@ -1,3 +1,17 @@
+<script lang="ts" context="module">
+  declare module 'svelte/elements' {
+    interface HTMLAttributes<T> {
+      [x: `data-${string}`]: any;
+      'date-rangepicker'?: boolean;
+      datepicker?: boolean;
+      'datepicker-buttons'?: boolean;
+      'datepicker-format'?: string;
+      'datepicker-orientation'?: string;
+      'datepicker-title'?: string;
+    }
+  }
+</script>
+
 <script lang="ts">
   import Calendar from './Calender.svelte';
 

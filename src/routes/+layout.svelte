@@ -42,7 +42,7 @@
 </script>
 
 <header class="sticky top-0 z-40 flex-none w-full mx-auto bg-white border-b border-gray-200 dark:border-gray-600 dark:bg-gray-800">
-  <Navbar color="default" fluid navClass="flex items-center justify-between w-full mx-auto py-1.5 px-4 {isHomePage ? 'max-w-8xl lg:px-20 px-4' : ''}" let:hidden let:toggle>
+  <Navbar color="default" fluid class="flex items-center justify-between w-full mx-auto py-1.5 px-4 {isHomePage ? 'max-w-8xl lg:px-20 px-4' : ''}" let:hidden let:toggle>
     <span hidden={$page.route.id === '/'}>
       <NavHamburger on:click={toggleDrawer} btnClass="mr-3 m-0 mr-3 lg:hidden" />
     </span>
