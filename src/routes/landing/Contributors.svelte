@@ -9,6 +9,11 @@
   export let data: PageData;
 
   let name: string;
+
+  // visit https://images.weserv.nl/ for more information
+  const getWeservImageUrl = (imgUrl: string, width: number, height: number) => {
+    return `https://wsrv.nl/?url=${imgUrl}&w=${width}&h=${height}&output=webp`;
+  };
   function on_show(e: CustomEvent<any>) {
     if (e?.target instanceof HTMLElement) {
       name = e?.target?.dataset.name ?? '';
@@ -30,7 +35,7 @@
         {#if data?.contributors}
           {#each data?.contributors || [] as contributor}
             <a href={contributor.html_url} rel="nofollow noreferrer" target="_blank">
-              <Avatar data-name={contributor.login} src={contributor.avatar_url} class="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16" />
+              <Avatar data-name={contributor.login} src={getWeservImageUrl(contributor.avatar_url, 70, 70)} class="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16" />
             </a>
           {/each}
         {/if}
