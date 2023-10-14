@@ -29,10 +29,10 @@
     </div>
     <div class="flex-col items-center justify-center hidden h-full lg:flex">
       <div class="relative dark:hidden rounded-xl">
-        <img class="max-w-auto w-full" src="/images/figma.png" alt="Header" />
+        <img class="max-w-auto w-full" src="https://wsrv.nl/?url=https://flowbite-svelte.com/images/figma.png&output=webp" alt="Header" />
       </div>
       <div class="hidden relative dark:block">
-        <img class="max-w-auto rounded-xl w-full" src="/images/figma-dark.png" alt="Header" />
+        <img class="max-w-auto rounded-xl w-full" src="https://wsrv.nl/?url=https://flowbite-svelte.com/images/figma-dark.png&output=webp" alt="Header" />
       </div>
     </div>
   </div>
