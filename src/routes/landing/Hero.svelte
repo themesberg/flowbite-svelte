@@ -27,7 +27,7 @@
 
       <div class="p-0 hidden xl:block">
         <div class="relative dark:hidden">
-          <img class="max-w-2xl" src="https://wsrv.nl/?url=/images/gallery.png&output=webp" alt="Header" />
+          <img class="max-w-2xl" src="https://wsrv.nl/?url=https://flowbite-svelte.com/images/gallery.png&output=webp" alt="Header" />
         </div>
         <div class="hidden relative dark:block">
           <img class="max-w-2xl" src="/images/gallery-dark.png" alt="Header" />
