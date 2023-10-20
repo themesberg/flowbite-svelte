@@ -8,7 +8,6 @@
     ["type", "InputType", "'text'"],
     ["size", "'small' | 'default'", "'default'"],
     ["color", "'base' | 'green' | 'red'", "'base'"],
-    ["value", "any", "undefined"],
-    ["label", "string", "''"]
+    ["value", "any", "undefined"]
   ]
 }

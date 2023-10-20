@@ -89,5 +89,4 @@
 @prop export let size: 'small' | 'default' = 'default';
 @prop export let color: 'base' | 'green' | 'red' = 'base';
 @prop export let value: any = undefined;
-@prop export let label: string = '';
 -->

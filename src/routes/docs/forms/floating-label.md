@@ -44,7 +44,7 @@ Get started with the following three styles for the floating label component and
     Floating outlined
   </FloatingLabelInput>
   <FloatingLabelInput id="floating_standard" name="floating_standard" type="text" label="Floating standard">
-    Floating standard 
+    Floating standard
   </FloatingLabelInput>
 </div>
 ```
