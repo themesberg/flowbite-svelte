@@ -25,7 +25,7 @@ Use this example to show a basic area chart.
 
   let options = {
     chart: {
-      height: '100%',
+      height: '400px',
       maxWidth: '100%',
       type: 'area',
       fontFamily: 'Inter, sans-serif',
@@ -133,7 +133,7 @@ To create a double line chart check the example below.
 
   let options = {
     chart: {
-      height: '100%',
+      height: '400px',
       maxWidth: '100%',
       type: 'line',
       fontFamily: 'Inter, sans-serif',
