@@ -6,6 +6,7 @@
   import Menu from './Menu.svelte';
 
   export let menuClass: string = 'h-6 w-6 shrink-0';
+  export let onClick: (() => void) | undefined = undefined;
 
   let btnClass: string = 'ml-3 md:hidden';
 
@@ -13,7 +14,7 @@
   const toggle = (ev: MouseEvent) => hiddenStore.update((h) => !h);
 </script>
 
-<ToolbarButton name="Open main menu" on:click={toggle} {...$$restProps} class={twMerge(btnClass, $$props.class)}>
+<ToolbarButton name="Open main menu" on:click={onClick || toggle} {...$$restProps} class={twMerge(btnClass, $$props.class)}>
   <Menu class={twMerge(menuClass, $$props.classMenu)} />
 </ToolbarButton>
 
@@ -22,4 +23,5 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let menuClass: string = 'h-6 w-6 shrink-0';
+@prop export let onClick: (() => void) | undefined = undefined;
 -->
