@@ -101,7 +101,7 @@
   };
 
   let frameClass: string;
-  $: frameClass = twMerge(defaultClass, 'w-full', $$props.class);
+  $: frameClass = twMerge(defaultClass, 'w-full divide-y', $$props.class);
 
   const isScrollable = (e: HTMLElement): boolean[] => [e.scrollWidth > e.clientWidth && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowX) >= 0, e.scrollHeight > e.clientHeight && ['scroll', 'auto'].indexOf(getComputedStyle(e).overflowY) >= 0];
 
@@ -110,6 +110,7 @@
   function handleKeys(e: KeyboardEvent) {
     if (e.key === 'Escape' && dismissable) return hide(e);
   }
+
 </script>
 
 {#if open}
@@ -123,7 +124,7 @@
       <Frame rounded shadow {...$$restProps} class={frameClass}>
         <!-- Modal header -->
         {#if $$slots.header || title}
-          <Frame color={$$restProps.color} class="flex justify-between items-center p-4 rounded-t border-b">
+          <Frame color={$$restProps.color} class="flex justify-between items-center p-4 rounded-t">
             <slot name="header">
               <h3 class="text-xl font-semibold {$$restProps.color ? '' : 'text-gray-900 dark:text-white'} p-0">
                 {title}
@@ -140,7 +141,7 @@
         </div>
         <!-- Modal footer -->
         {#if $$slots.footer}
-          <Frame color={$$restProps.color} class="flex items-center p-6 space-x-2 rounded-b border-t">
+          <Frame color={$$restProps.color} class="flex items-center p-6 space-x-2 rounded-b">
             <slot name="footer" />
           </Frame>
         {/if}
