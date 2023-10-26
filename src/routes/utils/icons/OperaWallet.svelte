@@ -1,4 +1,4 @@
-<svg aria-hidden="true" svg class="h-5" viewBox="0 0 75.591 75.591" xmlns="http://www.w3.org/2000/svg">
+<svg aria-hidden="true" class="h-5" viewBox="0 0 75.591 75.591" xmlns="http://www.w3.org/2000/svg">
   <linearGradient id="a" gradientTransform="matrix(0 -54.944 -54.944 0 23.62 79.474)" gradientUnits="userSpaceOnUse" x2="1">
     <stop offset="0" stop-color="#ff1b2d" />
     <stop offset=".3" stop-color="#ff1b2d" />

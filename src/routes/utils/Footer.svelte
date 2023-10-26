@@ -29,7 +29,7 @@
   };
 </script>
 
-<Footer footerType="custom" customClass="bg-white dark:bg-gray-900">
+<Footer class="bg-white dark:bg-gray-900">
   <div class="flex flex-col py-6 lg:py-12 mx-auto max-w-8xl">
     <div class="flex flex-col lg:flex-row items-start md:justify-between gap-8 {isHomePage ? 'px-4 lg:px-20' : ''}">
       <div class="w-full max-w-sm">

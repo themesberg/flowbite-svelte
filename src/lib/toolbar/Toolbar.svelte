@@ -17,7 +17,7 @@
   export let embedded: boolean = false;
 
   let divClass: string;
-  $: divClass = twMerge('flex justify-between items-center', embedded || 'p-2', $$props.class);
+  $: divClass = twMerge('flex justify-between items-center', embedded && 'p-2', $$props.class);
 
   const divideColors = {
     gray: 'divide-gray-400 dark:divide-gray-700',
