@@ -110,6 +110,7 @@
   function handleKeys(e: KeyboardEvent) {
     if (e.key === 'Escape' && dismissable) return hide(e);
   }
+
 </script>
 
 {#if open}
