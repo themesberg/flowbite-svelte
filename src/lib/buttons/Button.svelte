@@ -185,7 +185,9 @@
 @prop export let outline: boolean = false;
 @prop export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = group ? 'sm' : 'md';
 @prop export let href: string | undefined = undefined;
-@prop export let type: ButtonType = 'button';
+@prop export let type: HTMLButtonAttributes['type'] = 'button';
 @prop export let color: ButtonColor = group ? (outline ? 'dark' : 'alternative') : 'primary';
 @prop export let shadow: boolean = false;
+@prop export let tag: string = 'button';
+@prop export let checked: boolean | undefined = undefined;
 -->

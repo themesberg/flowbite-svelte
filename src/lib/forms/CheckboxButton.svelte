@@ -79,11 +79,13 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let color: FormColorType = 'primary';
-@prop export let custom: boolean = false;
-@prop export let inline: boolean = false;
 @prop export let group: (string | number)[] = [];
 @prop export let value: string | number = 'on';
 @prop export let checked: boolean | undefined = undefined;
-@prop export let spacing: string = 'mr-2';
+@prop export let inline: boolean = true;
+@prop export let pill: boolean = false;
+@prop export let outline: boolean = false;
+@prop export let size: SizeType | undefined = undefined;
+@prop export let color: ButtonColorType | undefined = undefined;
+@prop export let shadow: boolean = false;
 -->

@@ -326,6 +326,10 @@
       "types": "./dist/forms/Checkbox.svelte.d.ts",
       "svelte": "./dist/forms/Checkbox.svelte"
     },
+    "./CheckboxButton.svelte": {
+      "types": "./dist/forms/CheckboxButton.svelte.d.ts",
+      "svelte": "./dist/forms/CheckboxButton.svelte"
+    },
     "./Dropzone.svelte": {
       "types": "./dist/forms/Dropzone.svelte.d.ts",
       "svelte": "./dist/forms/Dropzone.svelte"
@@ -365,6 +369,10 @@
     "./Radio.svelte": {
       "types": "./dist/forms/Radio.svelte.d.ts",
       "svelte": "./dist/forms/Radio.svelte"
+    },
+    "./RadioButton.svelte": {
+      "types": "./dist/forms/RadioButton.svelte.d.ts",
+      "svelte": "./dist/forms/RadioButton.svelte"
     },
     "./Range.svelte": {
       "types": "./dist/forms/Range.svelte.d.ts",
