@@ -1,16 +1,18 @@
 <script lang="ts">
   import Button from '$lib/buttons/Button.svelte';
+  import type { ButtonColorType, SizeType } from '$lib/types';
+  import { twMerge } from 'tailwind-merge';
 
   export let group: (string | number)[] = [];
   export let value: string | number = 'on';
   export let checked: boolean | undefined = undefined;
+  export let inline: boolean = true;
 
-  // properties forwarding
+  // Button properties forwarding
   export let pill: boolean = false;
   export let outline: boolean = false;
-  export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = group ? 'sm' : 'md';
-  // export let color: ButtonColor = group ? (outline ? 'dark' : 'alternative') : 'primary';
-  export let color: ButtonColor = undefined;
+  export let size: SizeType | undefined = undefined;
+  export let color: ButtonColorType | undefined = undefined;
   export let shadow: boolean = false;
 
   // react on external group changes
@@ -45,9 +47,12 @@
       }
     }
   }
+
+  let buttonClass: string;
+  $: buttonClass = twMerge(inline ? 'inline-flex' : 'flex', $$props.class);
 </script>
 
-<Button tag="label" {checked} {pill} {outline} {size} {color} {shadow} class={$$props.class}>
+<Button tag="label" {checked} {pill} {outline} {size} {color} {shadow} class={buttonClass}>
   <input
     use:init={group}
     type="checkbox"

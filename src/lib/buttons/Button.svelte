@@ -121,7 +121,11 @@
         : 'dark:bg-transparent dark:border-gray-600 dark:hover:border-gray-700'),
     outline &&
       color === 'dark' &&
-      (group ? 'dark:text-white border-gray-800 dark:border-white' : 'dark:text-gray-400 dark:border-gray-700'),
+      (group
+        ? checked
+          ? 'bg-gray-900 border-gray-800 dark:border-white dark:bg-gray-600'
+          : 'dark:text-white border-gray-800 dark:border-white'
+        : 'dark:text-gray-400 dark:border-gray-700'),
     coloredFocusClasses[color],
     hasBorder() && group && 'border-l-0 first:border-l',
     group

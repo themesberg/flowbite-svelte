@@ -237,7 +237,7 @@ You can use the property `inline` as the alternative.
 ```svelte example hideResponsiveButtons
 <script>
   import { Radio } from 'flowbite-svelte';
-  let colors;
+  let colors = "text-purple-500";
 </script>
 
 <p class="mb-4 font-semibold {colors}">Select color</p>
@@ -282,6 +282,36 @@ Use this example of an advanced layout of radio elements where the label parent 
     </div>
   </Radio>
 </div>
+```
+
+## RadioButton
+
+The special case component - `RadioButton` - is the `Radio` with the [Button](/docs/components/buttons) look and feel. I can be used as standalone element 
+or be wrapped inside [ButtonGroup](/docs/components/button-group).
+
+This component accepts all props from the [Button](/docs/components/buttons)  for styling and `Radio` for behaviour.
+
+```svelte example class="space-y-4"
+<script>
+  import { RadioButton, ButtonGroup } from 'flowbite-svelte';
+  import { ListMusicSolid, ListOrdoredSolid, ListSolid } from 'flowbite-svelte-icons'; 
+
+  let radioGroup = "notes";
+</script>
+
+<div>
+  <RadioButton value={"notes"} bind:group={radioGroup}><ListMusicSolid /></RadioButton>
+  <RadioButton value={"numbers"} bind:group={radioGroup}><ListOrdoredSolid /></RadioButton>
+  <RadioButton value={"bullets"} bind:group={radioGroup}><ListSolid /></RadioButton>
+</div>
+
+<ButtonGroup>
+  <RadioButton value={"notes"} bind:group={radioGroup}><ListMusicSolid /></RadioButton>
+  <RadioButton value={"numbers"} bind:group={radioGroup}><ListOrdoredSolid /></RadioButton>
+  <RadioButton value={"bullets"} bind:group={radioGroup}><ListSolid /></RadioButton>
+</ButtonGroup>
+
+<p>List style: {radioGroup}</p>
 ```
 
 ## Component data
