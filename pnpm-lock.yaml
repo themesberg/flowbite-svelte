@@ -1241,7 +1241,7 @@ packages:
       ast-types: 0.14.2
       astring: 1.8.6
       esquery: 1.5.0
-      meriyah: 4.3.7
+      meriyah: 4.3.8
       pure-conditions: 1.2.1
       source-map: 0.7.4
     dev: true
@@ -1457,7 +1457,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001559
-      electron-to-chromium: 1.4.572
+      electron-to-chromium: 1.4.574
       node-releases: 2.0.13
       update-browserslist-db: 1.0.13(browserslist@4.22.1)
     dev: true
@@ -1681,8 +1681,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /electron-to-chromium@1.4.572:
-    resolution: {integrity: sha512-RlFobl4D3ieetbnR+2EpxdzFl9h0RAJkPK3pfiwMug2nhBin2ZCsGIAJWdpNniLz43sgXam/CgipOmvTA+rUiA==}
+  /electron-to-chromium@1.4.574:
+    resolution: {integrity: sha512-bg1m8L0n02xRzx4LsTTMbBPiUd9yIR+74iPtS/Ao65CuXvhVZHP0ym1kSdDG3yHFDXqHQQBKujlN1AQ8qZnyFg==}
     dev: true
 
   /emoji-regex@8.0.0:
@@ -2397,8 +2397,8 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
-  /meriyah@4.3.7:
-    resolution: {integrity: sha512-JAlSOUqFU/rmLy2CEdZO5hN5E5dyUj1f4AlRR4GCQMjfobvd5lcm9JLkrqq0MgVaLQ/Zur590A+0RyUZhj0b5A==}
+  /meriyah@4.3.8:
+    resolution: {integrity: sha512-b1bddpQZK3FVr/x6KISsfNQdS9jVNgVuFDRi7I9AJbYVggdcA6ij9idboD0aW5ZYELsDMOubi58SDfsW81VakA==}
     engines: {node: '>=10.4.0'}
     dev: true
 

@@ -1,9 +1,1 @@
-{
-  "name": "Indicators",
-  "slots": [],
-  "events": [],
-  "props": [
-    ["activeClass", "string", "'opacity-100'"],
-    ["inactiveClass", "string", "'opacity-60'"]
-  ]
-}
+{"name":"Indicators","slots":[],"events":[],"props":[["activeClass","string","'opacity-100'"],["inactiveClass","string","'opacity-60'"]]}

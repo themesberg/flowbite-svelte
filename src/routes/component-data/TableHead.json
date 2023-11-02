@@ -1,9 +1,1 @@
-{
-  "name": "TableHead",
-  "slots": [],
-  "events": [],
-  "props": [
-    ["theadClass", "string", "'text-xs uppercase'"],
-    ["defaultRow", "boolean", "true"]
-  ]
-}
+{"name":"TableHead","slots":[],"events":[],"props":[["theadClass","string","'text-xs uppercase'"],["defaultRow","boolean","true"]]}

@@ -1,9 +1,1 @@
-{
-  "name": "NavHamburger",
-  "slots": [],
-  "events": [],
-  "props": [
-    ["menuClass", "string", "'h-6 w-6 shrink-0'"],
-    ["onClick", "(() => void) | undefined = undefined;", "@prop export let menuClass: string = 'h-6 w-6 shrink-0'"]
-  ]
-}
+{"name":"NavHamburger","slots":[],"events":[],"props":[["menuClass","string","'h-6 w-6 shrink-0'"],["onClick","(() => void) | undefined = undefined;","@prop export let menuClass: string = 'h-6 w-6 shrink-0'"]]}
