@@ -723,9 +723,9 @@ The component has the following props, type, and default values. See [types page
 
 ### Dropdown styling
 
+- Use the `class` prop to style underlying `ul` element.
 - Use the `classContainer` prop to overwrite `containerClass`.
 - Use the `classHeader` prop to overwrite `headerClass`.
-- Use the `classUl` prop to overwrite `ulClass`.
 - Use the `classFooter` prop to overwrite `footerClass`.
 
 ### DropdownDivider styling
