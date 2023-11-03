@@ -12,14 +12,14 @@
   export let focusClass: string = 'focus:z-40 focus:outline-none focus:ring-2 focus:ring-primary-700 focus:text-primary-700 dark:focus:ring-gray-500 dark:focus:text-white';
   export let hoverClass: string = 'hover:bg-gray-100 hover:text-primary-700 dark:hover:bg-gray-600 dark:hover:text-white';
   export let itemDefaultClass: string = 'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg';
-  export let attrs: any=undefined;
+  export let attrs: any = undefined;
 
   const states = {
     current: currentClass,
     normal: normalClass,
     disabled: disabledClass
   };
-  
+
   let state: 'disabled' | 'current' | 'normal';
   $: state = disabled ? 'disabled' : current ? 'current' : 'normal';
 
@@ -31,11 +31,11 @@
   <li class={itemClass}>
     <slot item={$$props} />
   </li>
-{:else if href}   
+{:else if href}
   <a {...attrs} {href} class="block {itemClass}" aria-current={current} on:blur on:change on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover>
     <slot item={$$props} />
   </a>
-{:else }
+{:else}
   <button type="button" {...attrs} class="flex items-center text-left {itemClass}" {disabled} aria-current={current} on:blur on:change on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover>
     <slot item={$$props} />
   </button>
