@@ -11,12 +11,10 @@
   interface $$Props extends ComponentProps<Frame> {
     items?: ListGroupItemType[] | string[];
     active?: boolean;
-    type?: 'list'|'links'|'buttons';
   }
 
   export let items: ListGroupItemType[] | string[] = [];
   export let active: boolean = false;
-  export let type: 'list'|'links'|'buttons'='list';
   export let defaultClass: string = 'divide-y divide-gray-200 dark:divide-gray-600';
 
   $: setContext('active', active);

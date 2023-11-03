@@ -47,14 +47,16 @@ You need to set the list to `active` mode to enable hovering, focus and links.
 
 If list is active and data items contain `href` field entries are presented as `<a>` elements.
 
+You can pass extra properties to the `<a>` element by setting the `attrs` atrribute in the items list.
+
 ```svelte example class="flex justify-center"
 <script>
   import { Listgroup } from 'flowbite-svelte';
   let links = [
-    { name: 'Accordions', href: '/accordion', current: true },
-    { name: 'Alerts', href: '/alerts' },
-    { name: 'Badges', href: '/badges' },
-    { name: 'Breadcrumbs', href: '/breadcrumbs' }
+    { name: 'Accordions', href: '/docs/components/accordion', current: true },
+    { name: 'Alerts', href: '/docs/components/alerts' },
+    { name: 'Badges', href: '/docs/components/badges' },
+    { name: 'Breadcrumbs', href: '/docs/components/breadcrumbs', attrs: {target: '_blank'} }
   ];
 </script>
 
@@ -71,6 +73,8 @@ You need to set the list to `active` mode to enable hovering, focus and `on:clic
 
 If list is active and data items do not contain `href` field entries are presented as `<button>` elements triggering `on:click` events.
 
+You can pass extra properties to the `<button>` element by setting the `attrs` atrribute in the items list.
+
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Listgroup } from 'flowbite-svelte';
@@ -78,7 +82,7 @@ If list is active and data items do not contain `href` field entries are present
     { name: 'Profile', mycustomfield: 'data1', current: true },
     { name: 'Settings', mycustomfield: 'data2' },
     { name: 'Messages', mycustomfield: 'data3' },
-    { name: 'Download', mycustomfield: 'data4', disabled: true }
+    { name: 'Download', mycustomfield: 'data4', disabled: true, attrs: {type: 'submit'} }
   ];
 </script>
 
