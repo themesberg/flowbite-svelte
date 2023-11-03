@@ -12,6 +12,7 @@
   export let focusClass: string = 'focus:z-40 focus:outline-none focus:ring-2 focus:ring-primary-700 focus:text-primary-700 dark:focus:ring-gray-500 dark:focus:text-white';
   export let hoverClass: string = 'hover:bg-gray-100 hover:text-primary-700 dark:hover:bg-gray-600 dark:hover:text-white';
   export let itemDefaultClass: string = 'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg';
+  export let attrs: any = undefined;
 
   const states = {
     current: currentClass,
@@ -31,11 +32,11 @@
     <slot item={$$props} />
   </li>
 {:else if href}
-  <a {href} class="block {itemClass}" aria-current={current} on:blur on:change on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover>
+  <a {...attrs} {href} class="block {itemClass}" aria-current={current} on:blur on:change on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover>
     <slot item={$$props} />
   </a>
 {:else}
-  <button type="button" class="flex items-center text-left {itemClass}" {disabled} on:blur on:change on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover aria-current={current}>
+  <button type="button" {...attrs} class="flex items-center text-left {itemClass}" {disabled} aria-current={current} on:blur on:change on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover>
     <slot item={$$props} />
   </button>
 {/if}
@@ -54,4 +55,5 @@
 @prop export let focusClass: string = 'focus:z-40 focus:outline-none focus:ring-2 focus:ring-primary-700 focus:text-primary-700 dark:focus:ring-gray-500 dark:focus:text-white';
 @prop export let hoverClass: string = 'hover:bg-gray-100 hover:text-primary-700 dark:hover:bg-gray-600 dark:hover:text-white';
 @prop export let itemDefaultClass: string = 'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg';
+@prop export let attrs: any = undefined;
 -->
