@@ -1,5 +1,6 @@
 <script lang="ts">
   import { getContext } from 'svelte';
+    import type { HTMLAnchorAttributes } from 'svelte/elements';
   import { twMerge } from 'tailwind-merge';
 
   export let active: boolean = getContext('active');
@@ -12,13 +13,16 @@
   export let focusClass: string = 'focus:z-40 focus:outline-none focus:ring-2 focus:ring-primary-700 focus:text-primary-700 dark:focus:ring-gray-500 dark:focus:text-white';
   export let hoverClass: string = 'hover:bg-gray-100 hover:text-primary-700 dark:hover:bg-gray-600 dark:hover:text-white';
   export let itemDefaultClass: string = 'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg';
+  export let index: number|undefined = undefined;
+
+  $: index;  // quiet down warning: svelte(unused-export-let)
 
   const states = {
     current: currentClass,
     normal: normalClass,
     disabled: disabledClass
   };
-
+  
   let state: 'disabled' | 'current' | 'normal';
   $: state = disabled ? 'disabled' : current ? 'current' : 'normal';
 
@@ -31,11 +35,11 @@
     <slot item={$$props} />
   </li>
 {:else if href}
-  <a {href} class="block {itemClass}" aria-current={current} on:blur on:change on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover>
+  <a {href} {...$$restProps} class="block {itemClass}" aria-current={current} on:blur on:change on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover>
     <slot item={$$props} />
   </a>
 {:else}
-  <button type="button" class="flex items-center text-left {itemClass}" {disabled} on:blur on:change on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover aria-current={current}>
+  <button type="button" {...$$restProps} class="flex items-center text-left {itemClass}" {disabled} on:blur on:change on:click on:focus on:keydown on:keypress on:keyup on:mouseenter on:mouseleave on:mouseover aria-current={current}>
     <slot item={$$props} />
   </button>
 {/if}

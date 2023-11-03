@@ -93,22 +93,23 @@ Use the following example to create a list of buttons as a menu together with SV
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Listgroup } from 'flowbite-svelte';
-  import { IconSolid } from 'flowbite-svelte-icons';
+  import Listgroup from "$lib/list-group/Listgroup.svelte";
+  import { AdjustmentsHorizontalSolid, DownloadSolid, MessagesSolid, UserCircleSolid } from 'flowbite-svelte-icons';
   let icons = [
-    { name: 'Profile', icon: 'user-circle-solid' },
-    { name: 'Settings', icon: 'adjustments-horizontal-outline' },
-    { name: 'Messages', icon: 'messages-solid' },
-    { name: 'Download', icon: 'download-solid' }
+    { name: 'Profile', icon: UserCircleSolid },
+    { name: 'Settings', icon: AdjustmentsHorizontalSolid },
+    { name: 'Messages', icon: MessagesSolid },
+    { name: 'Download', icon: DownloadSolid }
   ];
+  // <svelte:component this={IconSolid} icon={item.icon} class="w-3 h-3 mr-2.5" />
 </script>
 
+
 <Listgroup active items={icons} let:item class="w-48" on:click={console.log}>
-  <svelte:component this={IconSolid} name={item.icon} class="w-3 h-3 mr-2.5" />
+  <svelte:component this={item.icon} class="w-3 h-3 mr-2.5"/>
   {item.name}
 </Listgroup>
 ```
-
 ## Advanced
 
 When non standard usage is needed you can omit the `items` props and add elements directly to the list. Usage of hidden so far `ListgroupItem` helps you with proper layout.
