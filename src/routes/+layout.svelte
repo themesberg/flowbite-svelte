@@ -42,7 +42,7 @@
 </script>
 
 <header class="sticky top-0 z-40 flex-none w-full mx-auto bg-white border-b border-gray-200 dark:border-gray-600 dark:bg-gray-800">
-  <Navbar color="default" fluid class="flex items-center justify-between w-full mx-auto py-1.5 px-4 {isHomePage ? 'max-w-8xl lg:px-20 px-4' : ''}" let:hidden let:toggle>
+  <Navbar color="default" fluid class="py-1.5 {isHomePage ? 'lg:px-0 max-w-7xl mx-auto' : ''}" let:toggle>
     <span hidden={$page.route.id === '/'}>
       <NavHamburger onClick={toggleDrawer} class="m-0 mr-3 lg:hidden" />
     </span>
@@ -59,7 +59,7 @@
       </div>
     {/if}
 
-    <NavUl {hidden} {divClass} {ulClass} {activeUrl} on:click={() => setTimeout(toggle, 1)} nonActiveClass="md:!pl-3 md:!py-2 lg:!pl-0 text-gray-700 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 dark:text-gray-400 lg:dark:text-white lg:dark:hover:text-primary-700 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent" activeClass="md:!pl-3 md:!py-2 lg:!pl-0 text-white bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:dark:text-primary-700 dark:bg-primary-600 lg:dark:bg-transparent cursor-default">
+    <NavUl {divClass} {ulClass} {activeUrl} on:click={() => setTimeout(toggle, 1)} nonActiveClass="md:!pl-3 md:!py-2 lg:!pl-0 text-gray-700 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 dark:text-gray-400 lg:dark:text-white lg:dark:hover:text-primary-700 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent" activeClass="md:!pl-3 md:!py-2 lg:!pl-0 text-white bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:dark:text-primary-700 dark:bg-primary-600 lg:dark:bg-transparent cursor-default">
       <NavLi class="lg:px-2 lg:mb-0" href="/">Home</NavLi>
       <NavLi class="lg:px-2 lg:mb-0" href="/docs/pages/introduction">Docs</NavLi>
       <NavLi class="lg:px-2 lg:mb-0" href="/docs/pages/quickstart">Quickstart</NavLi>
