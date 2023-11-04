@@ -742,6 +742,10 @@
       "types": "./dist/utils/Popper.svelte.d.ts",
       "svelte": "./dist/utils/Popper.svelte"
     },
+    "./TransitionFrame.svelte": {
+      "types": "./dist/utils/TransitionFrame.svelte.d.ts",
+      "svelte": "./dist/utils/TransitionFrame.svelte"
+    },
     "./Wrapper.svelte": {
       "types": "./dist/utils/Wrapper.svelte.d.ts",
       "svelte": "./dist/utils/Wrapper.svelte"
