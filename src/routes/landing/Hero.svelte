@@ -28,10 +28,10 @@
 
       <div class="p-0 hidden xl:block">
         <div class="relative dark:hidden">
-          <img class="max-w-xl" src="/images/gallery.png" alt="Header" />
+          <img class="max-w-xl -mr-7" src="/images/gallery.png" alt="Header" />
         </div>
         <div class="hidden relative dark:block">
-          <img class="max-w-xl" src="/images/gallery-dark.png" alt="Header" />
+          <img class="max-w-xl -mr-7" src="/images/gallery-dark.png" alt="Header" />
         </div>
       </div>
     </div>
