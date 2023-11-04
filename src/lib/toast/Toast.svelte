@@ -52,8 +52,6 @@
   $: iconClass = twMerge('inline-flex items-center justify-center shrink-0', colors[color], defaultIconClass);
 
   const clsBtnExtraClass = '-mx-1.5 -my-1.5 text-gray-400 hover:text-gray-900 focus:!ring-gray-300 hover:bg-gray-100 dark:text-gray-500 dark:hover:text-white dark:hover:bg-gray-700';
-
-  $: console.log($$restProps);
 </script>
 
 <TransitionFrame rounded {dismissable} color="none" role="alert" {...$$restProps} class={finalDivClass} let:close on:close>
