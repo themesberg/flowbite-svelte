@@ -64,7 +64,7 @@ Change the size of the spinner component using the `size` prop.
 </script>
 
 <Spinner size={4} />
-<Spinner size={6} />
+<Spinner size="6" />
 <Spinner size={8} />
 ```
 
@@ -95,7 +95,7 @@ The spinner component can also be used inside elements such as buttons when subm
     Loading ...
   </Button>
   <Button outline color="dark">
-    <Spinner class="mr-3" size="4" />
+    <Spinner class="mr-3" size={4} />
     Loading ...
   </Button>
 </div>
