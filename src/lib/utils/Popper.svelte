@@ -30,6 +30,8 @@
   export let strategy: 'absolute' | 'fixed' = 'absolute';
   export let open: boolean = false;
   export let yOnly: boolean = false;
+  // extra floating UI middleware list
+  export let middlewares: Middleware[] = [dom.flip(), dom.shift()];
 
   const dispatch = createEventDispatcher();
 
@@ -81,8 +83,7 @@
     top: 'bottom'
   };
 
-  let middleware: (Middleware | null)[];
-  $: middleware = [dom.flip(), dom.shift(), dom.offset(+offset), arrowEl && dom.arrow({ element: arrowEl, padding: 10 })];
+  $: middleware = [...middlewares, dom.offset(+offset), arrowEl && dom.arrow({ element: arrowEl, padding: 10 })];
 
   function updatePosition() {
     dom.computePosition(referenceEl, floatingEl, { placement, strategy, middleware }).then(({ x, y, middlewareData, placement, strategy }: ComputePositionReturn) => {
