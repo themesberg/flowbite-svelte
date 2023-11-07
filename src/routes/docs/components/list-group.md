@@ -54,9 +54,9 @@ You can pass extra properties to the `<a>` element by setting the `attrs` atrrib
   import { Listgroup } from 'flowbite-svelte';
   let links = [
     { name: 'Accordions', href: '/docs/components/accordion', current: true },
-    { name: 'Alerts', href: '/docs/components/alerts' },
-    { name: 'Badges', href: '/docs/components/badges' },
-    { name: 'Breadcrumbs', href: '/docs/components/breadcrumbs', attrs: {target: '_blank'} }
+    { name: 'Alerts', href: '/docs/components/alert' },
+    { name: 'Badges', href: '/docs/components/badge' },
+    { name: 'Breadcrumbs', href: '/docs/components/breadcrumb', attrs: {target: '_blank'} }
   ];
 </script>
 
