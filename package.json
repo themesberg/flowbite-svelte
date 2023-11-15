@@ -1,6 +1,6 @@
 {
   "name": "flowbite-svelte",
-  "version": "0.44.17",
+  "version": "0.44.19",
   "description": "Flowbite components for Svelte",
   "main": "dist/index.js",
   "author": {
@@ -33,38 +33,38 @@
   },
   "devDependencies": {
     "@docsearch/js": "^3.5.2",
-    "@playwright/test": "^1.38.1",
+    "@playwright/test": "^1.39.0",
     "@sveltejs/adapter-vercel": "^3.0.3",
-    "@sveltejs/kit": "^1.25.0",
+    "@sveltejs/kit": "^1.27.2",
     "@sveltejs/package": "2.2.2",
-    "@typescript-eslint/eslint-plugin": "^6.7.2",
-    "@typescript-eslint/parser": "^6.7.2",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.1",
     "autoprefixer": "^10.4.16",
-    "esbuild": "0.19.3",
-    "eslint": "^8.49.0",
+    "esbuild": "0.19.5",
+    "eslint": "^8.52.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-svelte": "^2.33.2",
-    "flowbite-svelte-icons": "^0.4.4",
+    "eslint-plugin-svelte": "^2.34.0",
+    "flowbite-svelte-icons": "^0.4.5",
     "mdsvex": "^0.11.0",
     "mdsvexamples": "^0.4.1",
-    "postcss": "^8.4.30",
+    "postcss": "^8.4.31",
     "postcss-load-config": "^4.0.1",
     "prettier": "^3.0.3",
     "prettier-plugin-svelte": "^3.0.3",
     "prism-themes": "^1.9.0",
-    "publint": "^0.2.2",
-    "svelte": "^4.2.1",
+    "publint": "^0.2.5",
+    "svelte": "^4.2.2",
     "svelte-check": "^3.5.2",
     "svelte-lib-helpers": "^0.3.15",
     "svelte-meta-tags": "^3.0.4",
     "svelte-preprocess": "^5.0.4",
-    "svelte2tsx": "^0.6.22",
+    "svelte2tsx": "^0.6.23",
     "tailwind-merge": "^1.13.1",
-    "tailwindcss": "^3.3.3",
+    "tailwindcss": "^3.3.5",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",
-    "vite": "^4.4.9",
-    "vitest": "^0.34.5"
+    "vite": "^4.5.0",
+    "vitest": "^0.34.6"
   },
   "peerDependencies": {
     "svelte": "^4.0.0"
@@ -114,13 +114,13 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1.5.3",
-    "apexcharts": "^3.42.0",
-    "flowbite": "^1.8.1",
-    "tailwind-merge": "^1.14.0"
+    "apexcharts": "^3.44.0",
+    "flowbite": "^2.0.0",
+    "tailwind-merge": "^2.0.0"
   },
   "engines": {
     "npm": ">=7.0.0",
-    "node": ">=16.0.0"
+    "node": ">=18.0.0"
   },
   "files": [
     "dist",
@@ -326,6 +326,10 @@
       "types": "./dist/forms/Checkbox.svelte.d.ts",
       "svelte": "./dist/forms/Checkbox.svelte"
     },
+    "./CheckboxButton.svelte": {
+      "types": "./dist/forms/CheckboxButton.svelte.d.ts",
+      "svelte": "./dist/forms/CheckboxButton.svelte"
+    },
     "./Dropzone.svelte": {
       "types": "./dist/forms/Dropzone.svelte.d.ts",
       "svelte": "./dist/forms/Dropzone.svelte"
@@ -365,6 +369,10 @@
     "./Radio.svelte": {
       "types": "./dist/forms/Radio.svelte.d.ts",
       "svelte": "./dist/forms/Radio.svelte"
+    },
+    "./RadioButton.svelte": {
+      "types": "./dist/forms/RadioButton.svelte.d.ts",
+      "svelte": "./dist/forms/RadioButton.svelte"
     },
     "./Range.svelte": {
       "types": "./dist/forms/Range.svelte.d.ts",
@@ -441,6 +449,10 @@
     "./NavBrand.svelte": {
       "types": "./dist/navbar/NavBrand.svelte.d.ts",
       "svelte": "./dist/navbar/NavBrand.svelte"
+    },
+    "./NavContainer.svelte": {
+      "types": "./dist/navbar/NavContainer.svelte.d.ts",
+      "svelte": "./dist/navbar/NavContainer.svelte"
     },
     "./NavHamburger.svelte": {
       "types": "./dist/navbar/NavHamburger.svelte.d.ts",
@@ -642,21 +654,9 @@
       "types": "./dist/timeline/Timeline.svelte.d.ts",
       "svelte": "./dist/timeline/Timeline.svelte"
     },
-    "./TimelineHorizontal.svelte": {
-      "types": "./dist/timeline/TimelineHorizontal.svelte.d.ts",
-      "svelte": "./dist/timeline/TimelineHorizontal.svelte"
-    },
     "./TimelineItem.svelte": {
       "types": "./dist/timeline/TimelineItem.svelte.d.ts",
       "svelte": "./dist/timeline/TimelineItem.svelte"
-    },
-    "./TimelineItemHorizontal.svelte": {
-      "types": "./dist/timeline/TimelineItemHorizontal.svelte.d.ts",
-      "svelte": "./dist/timeline/TimelineItemHorizontal.svelte"
-    },
-    "./TimelineItemVertical.svelte": {
-      "types": "./dist/timeline/TimelineItemVertical.svelte.d.ts",
-      "svelte": "./dist/timeline/TimelineItemVertical.svelte"
     },
     "./Toast.svelte": {
       "types": "./dist/toast/Toast.svelte.d.ts",
@@ -741,6 +741,10 @@
     "./Popper.svelte": {
       "types": "./dist/utils/Popper.svelte.d.ts",
       "svelte": "./dist/utils/Popper.svelte"
+    },
+    "./TransitionFrame.svelte": {
+      "types": "./dist/utils/TransitionFrame.svelte.d.ts",
+      "svelte": "./dist/utils/TransitionFrame.svelte"
     },
     "./Wrapper.svelte": {
       "types": "./dist/utils/Wrapper.svelte.d.ts",

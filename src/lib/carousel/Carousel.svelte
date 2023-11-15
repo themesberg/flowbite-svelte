@@ -2,50 +2,86 @@
   export type State = {
     images: HTMLImgAttributes[];
     index: number;
+    lastSlideChange: Date;
+    slideDuration: number; // ms
+    forward: boolean;
   };
 </script>
 
 <script lang="ts">
   import { createEventDispatcher, onMount, setContext } from 'svelte';
-  import { quintOut } from 'svelte/easing';
   import type { HTMLImgAttributes } from 'svelte/elements';
   import { writable } from 'svelte/store';
-  import { fade, type TransitionConfig } from 'svelte/transition';
+  import type { TransitionConfig } from 'svelte/transition';
   import { twMerge } from 'tailwind-merge';
   import Controls from './Controls.svelte';
   import Indicators from './Indicators.svelte';
   import Slide from './Slide.svelte';
+  import { canChangeSlide } from './CarouselSlide';
 
   type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
+  const SLIDE_DURATION_RATIO = 0.25; // TODO: Expose one day?
 
   export let images: HTMLImgAttributes[];
   export let index: number = 0;
-  export let transition: TransitionFunc = (x) => fade(x, { duration: 700, easing: quintOut });
+  export let slideDuration: number = 1000;
+  export let transition: TransitionFunc | null;
   export let duration: number = 0;
   export let ariaLabel: string = 'Draggable Carousel';
 
   // Carousel
-  let divClass: string = 'overflow-hidden relative rounded-lg h-56 sm:h-64 xl:h-80 2xl:h-96';
+  let divClass: string = 'grid overflow-hidden relative rounded-lg h-56 sm:h-64 xl:h-80 2xl:h-96';
+  export let imgClass: string = '';
 
   const dispatch = createEventDispatcher();
 
-  const { set, subscribe, update } = writable<State>({ images, index });
+  const { set, subscribe, update } = writable<State>({ images, index, forward: true, slideDuration, lastSlideChange: new Date() });
 
-  const state = { set: (s: State) => set({ index: ((s.index % images.length) + images.length) % images.length, images: s.images }), subscribe, update };
+  const state = { set: (_state: State) => set({ index: _state.index, images: _state.images, lastSlideChange: new Date(), slideDuration, forward }), subscribe, update };
+
+  let forward = true;
 
   setContext('state', state);
 
-  subscribe((s) => {
-    index = s.index;
+  subscribe((_state) => {
+    index = _state.index;
+    forward = _state.forward;
     dispatch('change', images[index]);
   });
 
-  onMount(() => dispatch('change', images[index]));
+  onMount(() => {
+    dispatch('change', images[index]);
+  });
 
-  $: state.set({ images, index });
+  let prevIndex: number = index;
+  $: {
+    if (!prevIndex || prevIndex < index) {
+      update((_state) => ({ ..._state, forward: true, index }));
+    } else {
+      update((_state) => ({ ..._state, forward: false, index }));
+    }
+    prevIndex = index;
+  }
 
-  const nextSlide = () => (index += 1);
-  const prevSlide = () => (index -= 1);
+  const nextSlide = () => {
+    update((_state) => {
+      if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return _state;
+
+      _state.index = _state.index >= images.length - 1 ? 0 : _state.index + 1;
+      _state.lastSlideChange = new Date();
+      return { ..._state };
+    });
+  };
+
+  const prevSlide = () => {
+    update((_state) => {
+      if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return _state;
+
+      _state.index = _state.index <= 0 ? images.length - 1 : _state.index - 1;
+      _state.lastSlideChange = new Date();
+      return { ..._state };
+    });
+  };
 
   const loop = (node: HTMLElement, duration: number) => {
     carouselDiv = node; // used by DragStart
@@ -89,7 +125,7 @@
 
   const onDragStart = (evt: MouseEvent | TouchEvent) => {
     touchEvent = evt;
-    evt.preventDefault();
+    evt.cancelable && evt.preventDefault();
     const start = getPositionFromEvent(evt);
     const width = carouselDiv.getBoundingClientRect().width;
     if (start === undefined || width === undefined) return;
@@ -132,26 +168,39 @@
             } else if (percentOffset > DRAG_MIN_PERCENT) prevSlide();
             else if (percentOffset < -DRAG_MIN_PERCENT) nextSlide();
             else {
-              // The gesture is a tap not drag, so manually issue a click event to trigger tap click gestures lost via preventDefault
-              touchEvent?.target?.dispatchEvent(
-                new Event('click', {
-                  bubbles: true
-                })
-              );
+              // Only issue click event for touches
+              if (touchEvent?.constructor.name === 'TouchEvent') {
+                // The gesture is a tap not drag, so manually issue a click event to trigger tap click gestures lost via preventDefault
+                touchEvent?.target?.dispatchEvent(
+                  new Event('click', {
+                    bubbles: true
+                  })
+                );
+              }
             }
           }
+
           percentOffset = 0;
           activeDragGesture = undefined;
           touchEvent = null;
         };
 </script>
 
+<!-- Preload all Carousel images for improved responsivity -->
+<svelte:head>
+  {#if images.length > 0}
+    {#each images as image}
+      <link rel="preload" href={image.src} as="image" />
+    {/each}
+  {/if}
+</svelte:head>
+
 <!-- The move listeners go here, so things keep working if the touch strays out of the element. -->
 <svelte:document on:mousemove={onDragMove} on:mouseup={onDragStop} on:touchmove={onDragMove} on:touchend={onDragStop} />
-<div bind:this={carouselDiv} class="relative" on:mousedown={onDragStart} on:touchstart|passive={onDragStart} role="button" aria-label={ariaLabel} tabindex="0">
+<div bind:this={carouselDiv} class="relative" on:mousedown|nonpassive={onDragStart} on:touchstart|nonpassive={onDragStart} on:mousemove={onDragMove} on:mouseup={onDragStop} on:touchmove={onDragMove} on:touchend={onDragStop} role="button" aria-label={ariaLabel} tabindex="0">
   <div {...$$restProps} class={twMerge(divClass, activeDragGesture === undefined ? 'transition-transform' : '', $$props.class)} use:loop={duration}>
     <slot name="slide" {Slide} {index}>
-      <Slide image={images[index]} {transition} />
+      <Slide image={images[index]} class={imgClass} {transition} />
     </slot>
   </div>
   <slot {index} {Controls} {Indicators} />
@@ -163,7 +212,9 @@
 ## Props
 @prop export let images: HTMLImgAttributes[];
 @prop export let index: number = 0;
-@prop export let transition: TransitionFunc = (x) => fade(x, { duration: 700, easing: quintOut });
+@prop export let slideDuration: number = 1000;
+@prop export let transition: TransitionFunc | null;
 @prop export let duration: number = 0;
 @prop export let ariaLabel: string = 'Draggable Carousel';
+@prop export let imgClass: string = '';
 -->

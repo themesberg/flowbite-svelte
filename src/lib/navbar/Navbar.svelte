@@ -1,42 +1,37 @@
 <script lang="ts">
-  import type { ComponentProps } from 'svelte';
+  import { setContext, type ComponentProps } from 'svelte';
   import Frame from '../utils/Frame.svelte';
   import { twMerge } from 'tailwind-merge';
+  import NavContainer from './NavContainer.svelte';
+  import { writable } from 'svelte/store';
 
   // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Frame> {
-    navClass?: string;
-    navDivClass?: string;
     fluid?: boolean;
-    classNavDiv?: string;
   }
 
-  export let navClass: string = 'px-2 sm:px-4 py-2.5 w-full';
-  export let navDivClass: string = 'mx-auto flex flex-wrap justify-between items-center ';
   export let fluid: boolean = false;
+
+  let hidden = writable(true);
+  setContext('navHidden', hidden);
 
   $: {
     // override default Frame value
     $$restProps.color = $$restProps.color ?? 'navbar';
   }
 
-  let hidden = true;
-  let toggle = () => {
-    hidden = !hidden;
-  };
+  let toggle = () => hidden.update((hidden) => !hidden);
 </script>
 
-<Frame tag="nav" {...$$restProps} class={twMerge(navClass, $$props.class)}>
-  <div class={twMerge(navDivClass, $$props.classNavDiv, (fluid && 'w-full') || 'container')}>
-    <slot {hidden} {toggle} />
-  </div>
+<Frame tag="nav" {...$$restProps} class={twMerge('px-2 sm:px-4 py-2.5 w-full', $$props.class)}>
+  <NavContainer {fluid}>
+    <slot hidden={$hidden} {toggle} {NavContainer} />
+  </NavContainer>
 </Frame>
 
 <!--
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let navClass: string = 'px-2 sm:px-4 py-2.5 w-full';
-@prop export let navDivClass: string = 'mx-auto flex flex-wrap justify-between items-center ';
 @prop export let fluid: boolean = false;
 -->

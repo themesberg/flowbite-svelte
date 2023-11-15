@@ -8,6 +8,9 @@ const config = {
   test: {
     include: ['src/**/*.{test,spec}.{js,ts}']
   },
+  build: {
+    chunkSizeWarningLimit: 1600
+  },
   server: {
     port: 8080,
     strictPort: false

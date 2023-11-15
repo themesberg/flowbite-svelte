@@ -1,4 +1,5 @@
 import type { SvelteComponent } from 'svelte';
+import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
 
 export type BlockQuoteType = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | '8xl' | '9xl';
 
@@ -99,6 +100,7 @@ export interface ListGroupItemType {
   current?: boolean;
   disabled?: boolean;
   href?: string;
+  attrs?: HTMLAnchorAttributes|HTMLButtonAttributes;
   [propName: string]: any;
 }
 
@@ -120,26 +122,6 @@ export interface SiteType {
   name: string;
   href: string;
   img?: string;
-}
-
-export interface TimelineItemVerticalType {
-  date: Date | string;
-  title: string;
-  icon?: typeof SvelteComponent<any>;
-  iconSize?: number;
-  iconClass?: string;
-  href?: string;
-  linkname?: string;
-  text?: HTMLElement | string;
-}
-
-export interface TimelineItemHorizontalType {
-  date: Date | string;
-  title: string;
-  icon?: typeof SvelteComponent<any>;
-  iconSize?: number;
-  iconClass?: string;
-  text?: HTMLElement | string;
 }
 
 export interface TransitionParamTypes {

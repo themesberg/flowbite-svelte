@@ -1,15 +1,12 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
   import { setContext } from 'svelte';
+  import { twMerge } from 'tailwind-merge';
 
   import type { Action } from 'svelte/action';
-  import type { TransitionConfig } from 'svelte/transition';
   import type { HTMLAnchorAttributes } from 'svelte/elements';
 
-  const null_transition = () => ({ duration: 0 });
   const noop = () => {};
 
-  type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
   type FrameColor = keyof typeof bgColors;
 
   interface $$Props extends HTMLAnchorAttributes {
@@ -18,8 +15,6 @@
     rounded?: boolean;
     border?: boolean;
     shadow?: boolean;
-    transition?: TransitionFunc;
-    params?: object;
     node?: HTMLElement | undefined;
     use?: Action<HTMLElement, any>;
     options?: object;
@@ -34,11 +29,6 @@
   export let rounded: boolean = false;
   export let border: boolean = false;
   export let shadow: boolean = false;
-
-  // Export a prop through which you can set a desired svelte transition
-  export let transition: TransitionFunc = null_transition;
-  // Pass in extra transition params
-  export let params: object = {};
 
   // For components development
   export let node: HTMLElement | undefined = undefined;
@@ -116,11 +106,10 @@
   };
 
   let divClass: string;
-
   $: divClass = twMerge(bgColors[color], textColors[color], rounded && 'rounded-lg', border && 'border', borderColors[color], shadow && 'shadow-md', $$props.class);
 </script>
 
-<svelte:element this={tag} use:use={options} bind:this={node} transition:transition={params} {...$$restProps} class={divClass} on:click on:mouseenter on:mouseleave on:focusin on:focusout {role}>
+<svelte:element this={tag} use:use={options} bind:this={node} {role} {...$$restProps} class={divClass} on:click on:mouseenter on:mouseleave on:focusin on:focusout>
   <slot />
 </svelte:element>
 

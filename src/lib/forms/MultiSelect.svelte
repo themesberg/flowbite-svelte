@@ -1,10 +1,9 @@
 <script lang="ts">
   import Badge from '$lib/badge/Badge.svelte';
+  import CloseButton from '$lib/utils/CloseButton.svelte';
   import { twMerge } from 'tailwind-merge';
   import type { FormSizeType, SelectOptionType } from '../types';
-  import CloseButton from '$lib/utils/CloseButton.svelte';
-  import { createEventDispatcher } from 'svelte';
-  import { onMount } from 'svelte';
+  import createEventDispatcher from '$lib/utils/createEventDispatcher';
 
   const dispatch = createEventDispatcher();
 
@@ -13,13 +12,13 @@
   export let size: FormSizeType = 'md';
   export let dropdownClass: string = '';
 
-  let selectItems: SelectOptionType<any>[] = [];
+  let selectItems: SelectOptionType<any>[] = items.filter((x) => value.includes(x.value));
   let show: boolean = false;
 
   const sizes = {
-    sm: 'px-2 py-1',
-    md: 'px-3 py-2',
-    lg: 'px-4 py-3'
+    sm: 'px-2 py-1 min-h-[2.4rem]',
+    md: 'px-3 py-1 min-h-[2.7rem]',
+    lg: 'px-4 py-2 min-h-[3.2rem]'
   };
 
   // Container
@@ -34,48 +33,42 @@
   // Selected items
   const itemsSelectClass: string = 'bg-gray-100 text-black hover:text-black dark:text-white dark:bg-gray-600 dark:hover:text-white';
 
-  onMount(() => {
-    if (value.length) {
-      items.map((item) => {
-        if (value.includes(item.value)) {
-          selectItems.push(item);
-        }
-      });
-    }
-  });
-
   const selectOption = (select: SelectOptionType<any>) => {
-    if (selectItems.includes(select)) {
+    if (value.includes(select.value)) {
       clearThisOption(select);
     } else {
-      selectItems.push(select);
-      value.push(select.value);
-      selectItems = selectItems;
-      value = value;
-      dispatch('selected', selectItems);
+      if (!value.includes(select.value)) value = [...value, select.value];
     }
   };
 
   const clearAll = (e: MouseEvent) => {
     e.stopPropagation();
-    selectItems = [];
     value = [];
-    dispatch('selected', selectItems);
   };
 
   const clearThisOption = (select: SelectOptionType<any>) => {
-    if (selectItems.includes(select)) {
-      selectItems = selectItems.filter((o) => o !== select);
-      dispatch('selected', selectItems);
-    }
     if (value.includes(select.value)) {
       value = value.filter((o) => o !== select.value);
     }
   };
+
+  function init(node: HTMLSelectElement, value: any) {
+    const inital = value; // hack for below
+    return {
+      update: (value: any) => {
+        selectItems = items.filter((x) => value.includes(x.value));
+        // avoid initial event emitting
+        if (value !== inital) {
+          dispatch('change', node, selectItems);
+          dispatch('input', node, selectItems);
+        }
+      }
+    };
+  }
 </script>
 
 <!-- Hidden select for form submission -->
-<select {...$$restProps} bind:value hidden multiple on:change on:input>
+<select use:init={value} {...$$restProps} {value} hidden multiple>
   {#each items as { value, name }}
     <option {value}>{name}</option>
   {/each}
@@ -95,7 +88,7 @@
   </span>
   <div class="flex ml-auto gap-2 items-center">
     {#if selectItems.length}
-      <CloseButton on:click={clearAll} color="none" class="p-0 focus:ring-gray-400" />
+      <CloseButton {size} on:click={clearAll} color="none" class="p-0 focus:ring-gray-400" />
     {/if}
     <div class="w-[1px] bg-gray-300 dark:bg-gray-600" />
     <svg class="cursor-pointer h-3 w-3 ml-1 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">

@@ -21,7 +21,7 @@
   const headerClass = (header: boolean) => twMerge(header ? 'border-b' : 'border-t', 'py-2 px-3 border-gray-200 dark:border-gray-600');
 
   let innerWrapperClass: string;
-  $: innerWrapperClass = twMerge(innerWrappedClass, $$slots.footer ? 'rounded-b-lg' : '', $$slots.header ? 'rounded-t-lg' : '');
+  $: innerWrapperClass = twMerge(innerWrappedClass, $$slots.footer ? '' : 'rounded-b-lg', $$slots.header ? '' : 'rounded-t-lg');
 </script>
 
 <Wrapper show={wrapped} class={wrapperClass}>

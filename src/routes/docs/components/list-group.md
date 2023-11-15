@@ -47,14 +47,16 @@ You need to set the list to `active` mode to enable hovering, focus and links.
 
 If list is active and data items contain `href` field entries are presented as `<a>` elements.
 
+You can pass extra properties to the `<a>` element by setting the `attrs` atrribute in the items list.
+
 ```svelte example class="flex justify-center"
 <script>
   import { Listgroup } from 'flowbite-svelte';
   let links = [
-    { name: 'Accordions', href: '/accordion', current: true },
-    { name: 'Alerts', href: '/alerts' },
-    { name: 'Badges', href: '/badges' },
-    { name: 'Breadcrumbs', href: '/breadcrumbs' }
+    { name: 'Accordions', href: '/docs/components/accordion', current: true },
+    { name: 'Alerts', href: '/docs/components/alerts' },
+    { name: 'Badges', href: '/docs/components/badges' },
+    { name: 'Breadcrumbs', href: '/docs/components/breadcrumbs', attrs: {target: '_blank'} }
   ];
 </script>
 
@@ -71,6 +73,8 @@ You need to set the list to `active` mode to enable hovering, focus and `on:clic
 
 If list is active and data items do not contain `href` field entries are presented as `<button>` elements triggering `on:click` events.
 
+You can pass extra properties to the `<button>` element by setting the `attrs` atrribute in the items list.
+
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
   import { Listgroup } from 'flowbite-svelte';
@@ -78,7 +82,7 @@ If list is active and data items do not contain `href` field entries are present
     { name: 'Profile', mycustomfield: 'data1', current: true },
     { name: 'Settings', mycustomfield: 'data2' },
     { name: 'Messages', mycustomfield: 'data3' },
-    { name: 'Download', mycustomfield: 'data4', disabled: true }
+    { name: 'Download', mycustomfield: 'data4', disabled: true, attrs: {type: 'submit'} }
   ];
 </script>
 
@@ -93,22 +97,23 @@ Use the following example to create a list of buttons as a menu together with SV
 
 ```svelte example class="flex justify-center" hideResponsiveButtons
 <script>
-  import { Listgroup } from 'flowbite-svelte';
-  import { IconSolid } from 'flowbite-svelte-icons';
+  import Listgroup from "$lib/list-group/Listgroup.svelte";
+  import { AdjustmentsHorizontalSolid, DownloadSolid, MessagesSolid, UserCircleSolid } from 'flowbite-svelte-icons';
   let icons = [
-    { name: 'Profile', icon: 'user-circle-solid' },
-    { name: 'Settings', icon: 'adjustments-horizontal-outline' },
-    { name: 'Messages', icon: 'messages-solid' },
-    { name: 'Download', icon: 'download-solid' }
+    { name: 'Profile', icon: UserCircleSolid },
+    { name: 'Settings', icon: AdjustmentsHorizontalSolid },
+    { name: 'Messages', icon: MessagesSolid },
+    { name: 'Download', icon: DownloadSolid }
   ];
+  // <svelte:component this={IconSolid} icon={item.icon} class="w-3 h-3 mr-2.5" />
 </script>
 
+
 <Listgroup active items={icons} let:item class="w-48" on:click={console.log}>
-  <svelte:component this={IconSolid} name={item.icon} class="w-3 h-3 mr-2.5" />
+  <svelte:component this={item.icon} class="w-3 h-3 mr-2.5"/>
   {item.name}
 </Listgroup>
 ```
-
 ## Advanced
 
 When non standard usage is needed you can omit the `items` props and add elements directly to the list. Usage of hidden so far `ListgroupItem` helps you with proper layout.

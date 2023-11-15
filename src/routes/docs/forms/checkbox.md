@@ -253,7 +253,33 @@ You can use the property `inline` as the alternative.
   </Label>
 </div>
 ```
+## CheckboxButton
 
+The special case component - `CheckboxButton` - is the `Checkbox` with the [Button](/docs/components/buttons) look and feel. 
+I can be used as standalone element or be wrapped inside [ButtonGroup](/docs/components/button-group).
+
+This component accepts all props from the [Button](/docs/components/buttons) for styling and `Checkbox` for behaviour.
+
+```svelte example hideScript class="space-y-4"
+<script>
+  import { ButtonGroup, CheckboxButton } from 'flowbite-svelte';
+  import {AppleSolid, FacebookSolid, DiscordSolid, DropboxSolid } from 'flowbite-svelte-icons';
+</script>
+
+  <div>
+    <CheckboxButton><AppleSolid class="mr-2"/>Apple</CheckboxButton>
+    <CheckboxButton><FacebookSolid class="mr-2"/>Facebook</CheckboxButton>
+    <CheckboxButton><DiscordSolid class="mr-2"/>Discord</CheckboxButton>
+    <CheckboxButton><DropboxSolid class="mr-2"/>Dropbox</CheckboxButton>
+  </div>
+
+  <ButtonGroup>
+    <CheckboxButton><AppleSolid class="mr-2"/>Apple</CheckboxButton>
+    <CheckboxButton><FacebookSolid class="mr-2"/>Facebook</CheckboxButton>
+    <CheckboxButton><DiscordSolid class="mr-2"/>Discord</CheckboxButton>
+    <CheckboxButton><DropboxSolid class="mr-2"/>Dropbox</CheckboxButton>
+  </ButtonGroup>
+```
 ## Advanced layout
 
 Use this example of an advanced layout of checkbox elements where the label parent element can be styled when the checkbox is checked.
@@ -328,4 +354,4 @@ The component has the following props, type, and default values. See [types page
 
 - [Flowbite Checkbox](https://flowbite.com/docs/forms/checkbox/)
 
-<GitHubCompoLinks {components}/>
+<GitHubCompoLinks {components} dir="forms"/>
