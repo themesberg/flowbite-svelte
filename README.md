@@ -113,7 +113,7 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
   <tr>
     <td width="33.3333%">Typography</td>
     <td width="33.3333%">Modal</td>
-    <td width="33.3333%">Tab</td>
+    <td width="33.3333%">Tabs</td>
   </tr>
   <tr>
     <td width="33.3333%">
@@ -127,7 +127,7 @@ For full documentation, visit [flowbite-svelte.com](https://flowbite-svelte.com/
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://flowbite-svelte.com/docs/components/tab">
+        <a href="https://flowbite-svelte.com/docs/components/tabs">
             <img alt="Svelte Tabs" src="https://flowbite.s3.amazonaws.com/github/svelte/tabs.jpg">
         </a>
     </td>
