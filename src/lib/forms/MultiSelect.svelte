@@ -49,7 +49,7 @@
     }
   };
 
-  export function create_custom_event(type: string, detail: any, { bubbles = false, cancelable = false } = {}) {
+  function create_custom_event(type: string, detail: any, { bubbles = false, cancelable = false } = {}) {
     return new CustomEvent(type, { detail, bubbles, cancelable });
   }
 
