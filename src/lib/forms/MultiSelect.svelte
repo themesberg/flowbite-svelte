@@ -3,7 +3,6 @@
   import CloseButton from '$lib/utils/CloseButton.svelte';
   import { twMerge } from 'tailwind-merge';
   import type { FormSizeType, SelectOptionType } from '../types';
-  import { create_custom_event } from '$lib/utils/event';
 
   export let items: SelectOptionType<any>[] = [];
   export let value: (string | number)[] = [];
@@ -49,6 +48,10 @@
       value = value.filter((o) => o !== select.value);
     }
   };
+
+  export function create_custom_event(type: string, detail: any, { bubbles = false, cancelable = false } = {}) {
+    return new CustomEvent(type, { detail, bubbles, cancelable });
+  }
 
   function init(node: HTMLSelectElement, value: any) {
     const inital = value; // hack for below
