@@ -3,9 +3,7 @@
   import CloseButton from '$lib/utils/CloseButton.svelte';
   import { twMerge } from 'tailwind-merge';
   import type { FormSizeType, SelectOptionType } from '../types';
-  import createEventDispatcher from '$lib/utils/createEventDispatcher';
-
-  const dispatch = createEventDispatcher();
+  import { create_custom_event } from '$lib/utils/event';
 
   export let items: SelectOptionType<any>[] = [];
   export let value: (string | number)[] = [];
@@ -59,8 +57,8 @@
         selectItems = items.filter((x) => value.includes(x.value));
         // avoid initial event emitting
         if (value !== inital) {
-          dispatch('change', node, selectItems);
-          dispatch('input', node, selectItems);
+          node.dispatchEvent(create_custom_event('input', selectItems));
+          node.dispatchEvent(create_custom_event('change', selectItems));
         }
       }
     };
@@ -68,7 +66,7 @@
 </script>
 
 <!-- Hidden select for form submission -->
-<select use:init={value} {...$$restProps} {value} hidden multiple>
+<select use:init={value} {...$$restProps} {value} hidden multiple on:change on:input>
   {#each items as { value, name }}
     <option {value}>{name}</option>
   {/each}
