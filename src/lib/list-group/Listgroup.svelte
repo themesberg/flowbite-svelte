@@ -32,7 +32,7 @@
     {/if}
   {:else}
     {@const item = items[0]}
-    <slot {item} />
+    <slot {item} index={0} />
   {/each}
 </Frame>
 
