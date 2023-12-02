@@ -23,7 +23,7 @@
   export let datepickerOrientation: string = 'bottom';
   export let datepickerTitle: string = 'Flowbite datepicker';
   export let attribute: string = '';
-  export let inputClass: string = 'bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
+  export let inputClass: string = 'bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
 
   $: setAttribute = (node: HTMLElement, params: any) => {
     if (params) {
@@ -40,14 +40,14 @@
 {#if range}
   <div date-rangepicker class="flex items-center">
     <div class="relative">
-      <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+      <div class="flex absolute inset-y-0 left-0 items-center ps-3 pointer-events-none">
         <Calendar />
       </div>
       <input name="start" type="text" class={inputClass} placeholder="Select date start" />
     </div>
     <span class="mx-4 text-gray-500">to</span>
     <div class="relative">
-      <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+      <div class="flex absolute inset-y-0 left-0 items-center ps-3 pointer-events-none">
         <Calendar />
       </div>
       <input name="end" type="text" class={inputClass} placeholder="Select date end" />
@@ -55,7 +55,7 @@
   </div>
 {:else}
   <div class="relative">
-    <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+    <div class="flex absolute inset-y-0 left-0 items-center ps-3 pointer-events-none">
       <Calendar />
     </div>
     {#if datepickerButtons}
@@ -78,5 +78,5 @@
 @prop export let datepickerOrientation: string = 'bottom';
 @prop export let datepickerTitle: string = 'Flowbite datepicker';
 @prop export let attribute: string = '';
-@prop export let inputClass: string = 'bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
+@prop export let inputClass: string = 'bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
 -->

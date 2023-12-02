@@ -19,7 +19,7 @@
       {by}
     </a>
   {:else}
-    <span class="ml-1">{by}</span>
+    <span class="ms-1">{by}</span>
   {/if}
   {copyrightMessage}
 </span>

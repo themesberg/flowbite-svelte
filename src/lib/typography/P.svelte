@@ -8,7 +8,7 @@
   export let justify: boolean = false;
   export let italic: boolean = false;
   export let firstupper: boolean = false;
-  export let upperClass: string = 'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:mr-3 first-letter:float-left';
+  export let upperClass: string = 'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:me-3 first-letter:float-left';
   export let opacity: number | undefined = undefined;
   export let whitespace: 'normal' | 'nowrap' | 'pre' | 'preline' | 'prewrap' = 'normal';
   export let size: PsizeType = 'base';
@@ -93,7 +93,7 @@
 @prop export let justify: boolean = false;
 @prop export let italic: boolean = false;
 @prop export let firstupper: boolean = false;
-@prop export let upperClass: string = 'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:mr-3 first-letter:float-left';
+@prop export let upperClass: string = 'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:me-3 first-letter:float-left';
 @prop export let opacity: number | undefined = undefined;
 @prop export let whitespace: 'normal' | 'nowrap' | 'pre' | 'preline' | 'prewrap' = 'normal';
 @prop export let size: PsizeType = 'base';

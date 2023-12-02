@@ -3,7 +3,7 @@
   import type { ActivityType } from '../types';
 
   export let activities: ActivityType[];
-  export let liClass: string = 'mb-10 ml-6';
+  export let liClass: string = 'mb-10 ms-6';
   export let spanClass: string = 'flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900';
   export let imgClass: string = 'rounded-full shadow-lg';
   export let outerDivClass: string = 'p-4 bg-white rounded-lg border border-gray-200 shadow-sm dark:bg-gray-700 dark:border-gray-600';
@@ -48,7 +48,7 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let activities: ActivityType[];
-@prop export let liClass: string = 'mb-10 ml-6';
+@prop export let liClass: string = 'mb-10 ms-6';
 @prop export let spanClass: string = 'flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900';
 @prop export let imgClass: string = 'rounded-full shadow-lg';
 @prop export let outerDivClass: string = 'p-4 bg-white rounded-lg border border-gray-200 shadow-sm dark:bg-gray-700 dark:border-gray-600';

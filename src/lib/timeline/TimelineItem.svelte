@@ -8,10 +8,10 @@
   let order: 'default' | 'vertical' | 'horizontal' | 'activity' | 'group' = 'default';
   order = getContext('order');
   const liClasses = {
-    default: 'mb-10 ml-4',
-    vertical: 'mb-10 ml-6',
+    default: 'mb-10 ms-4',
+    vertical: 'mb-10 ms-6',
     horizontal: 'relative mb-6 sm:mb-0',
-    activity: 'mb-10 ml-6',
+    activity: 'mb-10 ms-6',
     group: ''
   };
 

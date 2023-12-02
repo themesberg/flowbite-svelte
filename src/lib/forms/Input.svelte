@@ -44,8 +44,8 @@
   let group: { size: SizeType } = getContext('group');
 
   const textSizes = { sm: 'sm:text-xs', md: 'text-sm', lg: 'sm:text-base' };
-  const leftPadding = { sm: 'pl-9', md: 'pl-10', lg: 'pl-11' };
-  const rightPadding = { sm: 'pr-9', md: 'pr-10', lg: 'pr-11' };
+  const leftPadding = { sm: 'ps-9', md: 'ps-10', lg: 'ps-11' };
+  const rightPadding = { sm: 'pe-9', md: 'pe-10', lg: 'pe-11' };
   const inputPadding = { sm: 'p-2', md: 'p-2.5', lg: 'p-3' };
 
   $: _size = size || clampSize(group?.size) || 'md';
@@ -58,7 +58,7 @@
 
 <Wrapper class="relative w-full" show={$$slots.left || $$slots.right}>
   {#if $$slots.left}
-    <div class="{twMerge(floatClass, $$props.classLeft)} left-0 pl-2.5 pointer-events-none">
+    <div class="{twMerge(floatClass, $$props.classLeft)} left-0 ps-2.5 pointer-events-none">
       <slot name="left" />
     </div>
   {/if}
@@ -66,7 +66,7 @@
     <input {...$$restProps} bind:value on:blur on:change on:click on:contextmenu on:focus on:keydown on:keypress on:keyup on:mouseover on:mouseenter on:mouseleave on:paste on:input {...{ type }} class={inputClass} />
   </slot>
   {#if $$slots.right}
-    <div class="{twMerge(floatClass, $$props.classRight)} right-0 pr-2.5"><slot name="right" /></div>
+    <div class="{twMerge(floatClass, $$props.classRight)} right-0 pe-2.5"><slot name="right" /></div>
   {/if}
 </Wrapper>
 

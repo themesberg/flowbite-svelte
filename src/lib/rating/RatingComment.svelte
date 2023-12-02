@@ -40,12 +40,12 @@
   </div>
   <div class="flex items-center mb-1">
     <Rating total={comment.total} rating={comment.rating}>
-      <p slot="text" class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">
+      <p slot="text" class="ms-2 text-sm font-medium text-gray-500 dark:text-gray-400">
         {comment.rating} out of {comment.total}
       </p>
     </Rating>
     {#if comment.heading}
-      <h3 class="ml-2 text-sm font-semibold text-gray-900 dark:text-white">
+      <h3 class="ms-2 text-sm font-semibold text-gray-900 dark:text-white">
         {comment.heading}
       </h3>
     {/if}
@@ -66,7 +66,7 @@
           <Button size="xs" href="/" color="dark">Helpful</Button>
         {/if}
         {#if abuselink}
-          <a href={abuselink} class="pl-4 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"> Report abuse </a>
+          <a href={abuselink} class="ps-4 text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"> Report abuse </a>
         {/if}
       </div>
     {/if}

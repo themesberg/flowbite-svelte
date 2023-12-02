@@ -77,7 +77,7 @@
   <slot />
   {#if dismissable}
     <slot name="close-button" {close}>
-      <CloseButton {color} on:click={close} size={large ? 'sm' : 'xs'} name="Remove badge" class="ml-1.5 -mr-1.5" />
+      <CloseButton {color} on:click={close} size={large ? 'sm' : 'xs'} name="Remove badge" class="ms-1.5 -me-1.5" />
     </slot>
   {/if}
 </TransitionFrame>

@@ -45,7 +45,7 @@
   </div>
   <div class="col-span-2 mt-6 md:mt-0">
     <div class="flex items-start mb-5">
-      <div class="pr-4">
+      <div class="pe-4">
         {#if review.reviewDate}
           <footer>
             <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">

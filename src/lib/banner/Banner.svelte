@@ -24,7 +24,7 @@
   const insideDivClasses = {
     default: 'items-center mx-auto',
     bottom: 'items-center mx-auto',
-    cta: 'flex-col items-start mb-3 mr-4 md:items-center md:flex-row md:mb-0',
+    cta: 'flex-col items-start mb-3 me-4 md:items-center md:flex-row md:mb-0',
     signup: 'items-center flex-shrink-0 w-full mx-auto sm:w-auto',
     info: 'items-center flex-shrink-0'
   };
