@@ -1,10 +1,9 @@
 <script lang="ts">
   import type { ComputePositionReturn, Middleware, Placement, Side } from '@floating-ui/dom';
   import * as dom from '@floating-ui/dom';
-  import { onMount, type ComponentProps } from 'svelte';
+  import { onMount, type ComponentProps, createEventDispatcher } from 'svelte';
   import { twJoin } from 'tailwind-merge';
   import Frame from './Frame.svelte';
-  import createEventDispatcher from './createEventDispatcher';
 
   // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Frame> {
