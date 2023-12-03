@@ -2,6 +2,7 @@
   import { twJoin, twMerge } from 'tailwind-merge';
   import Button from '$lib/buttons/Button.svelte';
   import ExampleDarkMode from './ExampleDarkMode.svelte';
+  import ExampleRTL from './ExampleRTL.svelte';
   import GitHub from './icons/GitHub.svelte';
   import Tooltip from '$lib/tooltip/Tooltip.svelte';
   import { DesktopPcOutline, TabletOutline, MobilePhoneOutline } from 'flowbite-svelte-icons';
@@ -31,6 +32,7 @@
   let showExpandButton: boolean = false;
   let expand: boolean = false;
   let dark: boolean = false;
+  let rtl: boolean = false;
   let responsiveDevice: keyof typeof responsiveSize = 'desktop';
 
   const responsiveSize = {
@@ -138,6 +140,13 @@
       dark ? iframe?.contentDocument?.documentElement.classList.add('dark') : iframe?.contentDocument?.documentElement.classList.remove('dark');
     }
   }
+
+  $: {
+    if (iframe && iframe.contentDocument) {
+      // toggle dir value in the iframe
+      iframe.contentDocument.documentElement.dir = rtl ? 'rtl' : 'ltr';
+    }
+  }
 </script>
 
 <div class="mt-8 code-example" bind:this={node} use:init>
@@ -161,8 +170,9 @@
               </Button>
             </div>
           {/if}
-          <div class="ml-auto">
+          <div class="ms-auto flex">
             <ExampleDarkMode on:click={() => (dark = !dark)} {dark} />
+            <ExampleRTL on:click={() => (rtl = !rtl)} {rtl} />
           </div>
         {/if}
       </div>
@@ -200,7 +210,7 @@
         <div class="flex justify-end">
           {#if browserSupport}
             <button on:click={(e) => copyToClipboard(e)} type="button" class="flex items-center px-3 py-2 text-xs font-medium text-gray-600 bg-gray-100 border-l border-gray-200 dark:border-gray-600 dark:text-gray-400 dark:bg-gray-800 hover:text-primary-700 dark:hover:text-white copy-to-clipboard-button">
-              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg class="w-4 h-4 me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
               </svg>
               {copy_text}
