@@ -14,7 +14,7 @@
   export let type: InputType = 'text';
   export let value: any = undefined;
   export let size: FormSizeType | undefined = undefined;
-  export let defaultClass: string = 'block w-full disabled:cursor-not-allowed disabled:opacity-50';
+  export let defaultClass: string = 'block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right';
   export let color: 'base' | 'green' | 'red' = 'base';
   export let floatClass: string = 'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400';
 
@@ -58,7 +58,7 @@
 
 <Wrapper class="relative w-full" show={$$slots.left || $$slots.right}>
   {#if $$slots.left}
-    <div class="{twMerge(floatClass, $$props.classLeft)} left-0 ps-2.5 pointer-events-none">
+    <div class="{twMerge(floatClass, $$props.classLeft)} start-0 ps-2.5 pointer-events-none">
       <slot name="left" />
     </div>
   {/if}
@@ -66,7 +66,7 @@
     <input {...$$restProps} bind:value on:blur on:change on:click on:contextmenu on:focus on:keydown on:keypress on:keyup on:mouseover on:mouseenter on:mouseleave on:paste on:input {...{ type }} class={inputClass} />
   </slot>
   {#if $$slots.right}
-    <div class="{twMerge(floatClass, $$props.classRight)} right-0 pe-2.5"><slot name="right" /></div>
+    <div class="{twMerge(floatClass, $$props.classRight)} end-0 pe-2.5"><slot name="right" /></div>
   {/if}
 </Wrapper>
 

@@ -27,7 +27,7 @@
 </script>
 
 <article>
-  <div class="flex items-center mb-4 space-x-4">
+  <div class="flex items-center mb-4 space-x-4 rtl:space-x-reverse">
     <img class="w-10 h-10 rounded-full" src={comment.user.img.src} alt={comment.user.img.alt} />
     <div class="space-y-1 font-medium dark:text-white">
       <p>
@@ -61,7 +61,7 @@
       <slot name="evaluation" />
     </p>
     {#if helpfullink || abuselink}
-      <div class="flex items-center mt-3 space-x-3 divide-x divide-gray-200 dark:divide-gray-600">
+      <div class="flex items-center mt-3 space-x-3 rtl:space-x-reverse divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-600">
         {#if helpfullink}
           <Button size="xs" href="/" color="dark">Helpful</Button>
         {/if}

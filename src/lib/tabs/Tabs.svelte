@@ -13,7 +13,7 @@
   import { setContext } from 'svelte';
 
   export let style: 'full' | 'pill' | 'underline' | 'none' = 'none';
-  export let defaultClass: string = 'flex flex-wrap space-x-2';
+  export let defaultClass: string = 'flex flex-wrap space-x-2 rtl:space-x-reverse';
   export let contentClass: string = 'p-4 bg-gray-50 rounded-lg dark:bg-gray-800 mt-4';
   export let divider: boolean = true;
   export let activeClasses: string = 'p-4 text-primary-600 bg-gray-100 rounded-t-lg dark:bg-gray-800 dark:text-primary-500';
@@ -70,7 +70,7 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let style: 'full' | 'pill' | 'underline' | 'none' = 'none';
-@prop export let defaultClass: string = 'flex flex-wrap space-x-2';
+@prop export let defaultClass: string = 'flex flex-wrap space-x-2 rtl:space-x-reverse';
 @prop export let contentClass: string = 'p-4 bg-gray-50 rounded-lg dark:bg-gray-800 mt-4';
 @prop export let divider: boolean = true;
 @prop export let activeClasses: string = 'p-4 text-primary-600 bg-gray-100 rounded-t-lg dark:bg-gray-800 dark:text-primary-500';

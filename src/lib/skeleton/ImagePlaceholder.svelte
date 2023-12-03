@@ -1,6 +1,6 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
-  export let divClass: string = 'space-y-8 animate-pulse md:space-y-0 md:space-x-8 md:flex md:items-center';
+  export let divClass: string = 'space-y-8 animate-pulse md:space-y-0 md:space-x-8 rtl:space-x-reverse md:flex md:items-center';
   export let imgHeight: string = '48';
 </script>
 
@@ -26,6 +26,6 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let divClass: string = 'space-y-8 animate-pulse md:space-y-0 md:space-x-8 md:flex md:items-center';
+@prop export let divClass: string = 'space-y-8 animate-pulse md:space-y-0 md:space-x-8 rtl:space-x-reverse md:flex md:items-center';
 @prop export let imgHeight: string = '48';
 -->

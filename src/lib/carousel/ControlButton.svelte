@@ -5,7 +5,7 @@
   export let name: string;
 
   let buttonCls: string;
-  $: buttonCls = twMerge('flex absolute top-0 z-30 justify-center items-center px-4 h-full group focus:outline-none text-white dark:text-gray-300', forward ? 'right-0' : 'left-0', $$props.class);
+  $: buttonCls = twMerge('flex absolute top-0 z-30 justify-center items-center px-4 h-full group focus:outline-none text-white dark:text-gray-300', forward ? 'end-0' : 'start-0', $$props.class);
 </script>
 
 <button on:click type="button" class={buttonCls}>

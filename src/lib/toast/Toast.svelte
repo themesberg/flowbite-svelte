@@ -25,10 +25,10 @@
   export let align: boolean = true;
 
   const positions = {
-    'top-left': 'absolute top-5 left-5',
-    'top-right': 'absolute top-5 right-5',
-    'bottom-left': 'absolute bottom-5 left-5',
-    'bottom-right': 'absolute bottom-5 right-5',
+    'top-left': 'absolute top-5 start-5',
+    'top-right': 'absolute top-5 end-5',
+    'bottom-left': 'absolute bottom-5 start-5',
+    'bottom-right': 'absolute bottom-5 end-5',
     none: ''
   };
 

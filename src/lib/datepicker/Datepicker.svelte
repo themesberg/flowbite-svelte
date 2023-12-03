@@ -40,14 +40,14 @@
 {#if range}
   <div date-rangepicker class="flex items-center">
     <div class="relative">
-      <div class="flex absolute inset-y-0 left-0 items-center ps-3 pointer-events-none">
+      <div class="flex absolute inset-y-0 start-0 items-center ps-3 pointer-events-none">
         <Calendar />
       </div>
       <input name="start" type="text" class={inputClass} placeholder="Select date start" />
     </div>
     <span class="mx-4 text-gray-500">to</span>
     <div class="relative">
-      <div class="flex absolute inset-y-0 left-0 items-center ps-3 pointer-events-none">
+      <div class="flex absolute inset-y-0 start-0 items-center ps-3 pointer-events-none">
         <Calendar />
       </div>
       <input name="end" type="text" class={inputClass} placeholder="Select date end" />
@@ -55,7 +55,7 @@
   </div>
 {:else}
   <div class="relative">
-    <div class="flex absolute inset-y-0 left-0 items-center ps-3 pointer-events-none">
+    <div class="flex absolute inset-y-0 start-0 items-center ps-3 pointer-events-none">
       <Calendar />
     </div>
     {#if datepickerButtons}
