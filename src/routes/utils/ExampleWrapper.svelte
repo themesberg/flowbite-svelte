@@ -32,7 +32,7 @@
   let showExpandButton: boolean = false;
   let expand: boolean = false;
   let dark: boolean = false;
-  let rtl: boolean = false;
+  let rtl: NotificationDirection | undefined = undefined;
   let responsiveDevice: keyof typeof responsiveSize = 'desktop';
 
   const responsiveSize = {
@@ -144,7 +144,7 @@
   $: {
     if (iframe && iframe.contentDocument) {
       // toggle dir value in the iframe
-      iframe.contentDocument.documentElement.dir = rtl ? 'rtl' : 'ltr';
+      iframe.contentDocument.documentElement.dir = rtl;
     }
   }
 </script>
@@ -172,14 +172,14 @@
           {/if}
           <div class="ms-auto flex">
             <ExampleDarkMode on:click={() => (dark = !dark)} {dark} />
-            <ExampleRTL on:click={() => (rtl = !rtl)} {rtl} />
+            <ExampleRTL bind:rtl />
           </div>
         {/if}
       </div>
     </div>
 
     <div class="code-preview-wrapper">
-      <div class="flex p-0 bg-white border-gray-200 bg-gradient-to-r code-preview dark:bg-gray-900 border-x dark:border-gray-600" class:dark>
+      <div class="flex p-0 bg-white border-gray-200 bg-gradient-to-r code-preview dark:bg-gray-900 border-x dark:border-gray-600" class:dark dir={rtl}>
         <div class="w-full code-responsive-wrapper">
           <div class="code-responive-content {twJoin(!meta.hideResponsiveButtons && 'mx-auto', responsiveSize[responsiveDevice])}" bind:this={codeResponsiveContent}>
             {#if !meta.hideResponsiveButtons}
