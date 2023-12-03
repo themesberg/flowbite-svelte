@@ -36,35 +36,35 @@
   const placements = {
     // top
     'top-left': 'top-0 start-0',
-    'top-center': 'top-0 start-1/2 -translate-x-1/2',
+    'top-center': 'top-0 start-1/2 -translate-x-1/2 rtl:translate-x-1/2',
     'top-right': 'top-0 end-0',
 
     // center
     'center-left': 'top-1/2 -translate-y-1/2 start-0',
-    center: 'top-1/2 -translate-y-1/2 start-1/2 -translate-x-1/2',
+    center: 'top-1/2 -translate-y-1/2 start-1/2 -translate-x-1/2 rtl:translate-x-1/2',
     'center-right': 'top-1/2 -translate-y-1/2 end-0',
 
     // bottom
     'bottom-left': 'bottom-0 start-0',
-    'bottom-center': 'bottom-0 start-1/2 -translate-x-1/2',
+    'bottom-center': 'bottom-0 start-1/2 -translate-x-1/2 rtl:translate-x-1/2',
     'bottom-right': 'bottom-0 end-0'
   };
 
   const offsets = {
     // top
-    'top-left': '-translate-x-1/3 -translate-y-1/3',
+    'top-left': '-translate-x-1/3 rtl:translate-x-1/3 -translate-y-1/3',
     'top-center': '-translate-y-1/3',
-    'top-right': 'translate-x-1/3 -translate-y-1/3',
+    'top-right': 'translate-x-1/3 rtl:-translate-x-1/3 -translate-y-1/3',
 
     // center
-    'center-left': '-translate-x-1/3',
+    'center-left': '-translate-x-1/3 rtl:translate-x-1/3',
     center: '',
-    'center-right': 'translate-x-1/3',
+    'center-right': 'translate-x-1/3 rtl:-translate-x-1/3',
 
     // bottom
-    'bottom-left': '-translate-x-1/3 translate-y-1/3',
+    'bottom-left': '-translate-x-1/3 rtl:translate-x-1/3 translate-y-1/3',
     'bottom-center': 'translate-y-1/3',
-    'bottom-right': 'translate-x-1/3 translate-y-1/3'
+    'bottom-right': 'translate-x-1/3 rtl:-translate-x-1/3 translate-y-1/3'
   };
 
   let dotClass: string;
