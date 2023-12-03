@@ -404,7 +404,7 @@ pre.language-svelte .token.comment {
 }
 
 .DocSearch-Search-Icon {
-  @apply w-3 h-3 text-gray-500 md:mr-1 dark:text-gray-400;
+  @apply w-3 h-3 text-gray-500 md:me-1 dark:text-gray-400;
 }
 
 .DocSearch-Button-Keys {

@@ -42,7 +42,7 @@ Use this example of a H1 heading in the context of a paragraph and CTA button fo
   <P class="mb-6 text-lg lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</P>
   <Button href="/">
     Learn more
-    <ArrowRightOutline class="w-3.5 h-3.5 ml-2" />
+    <ArrowRightOutline class="w-3.5 h-3.5 ms-2" />
   </Button>
 </div>
 ```
@@ -62,7 +62,7 @@ Use this example of a second-level H2 heading as the main subtitle for each sect
 <P class="mb-4">Deliver great service experiences fast - without the complexity of traditional ITSM solutions. Accelerate critical development work, eliminate toil, and deploy changes with ease.</P>
 <A>
   Read more
-  <ChevronRightSolid class="w-3.5 h-3.5 ml-2" />
+  <ChevronRightSolid class="w-3.5 h-3.5 ms-2" />
 </A>
 ```
 
@@ -149,7 +149,7 @@ Use this example to show a badge component inside the heading text element as a 
 </script>
 
 <Heading tag="h1" class="flex items-center" size="text-5xl">
-  Flowbite <Badge class="text-2xl font-semibold ml-2">PRO</Badge>
+  Flowbite <Badge class="text-2xl font-semibold ms-2">PRO</Badge>
 </Heading>
 ```
 
@@ -163,7 +163,7 @@ This example can be used to add a secondary text inside the main heading compone
 </script>
 
 <Heading tag="h1" customSize="text-5xl font-extrabold">
-  Flowbite <Secondary class="ml-2">This is secondary text</Secondary>
+  Flowbite <Secondary class="ms-2">This is secondary text</Secondary>
 </Heading>
 ```
 

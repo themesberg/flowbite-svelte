@@ -36,7 +36,7 @@ Use this example to create a circle and rounded avatar on an image element.
   import { Avatar } from 'flowbite-svelte';
 </script>
 
-<div class="flex space-x-4">
+<div class="flex space-x-4 rtl:space-x-reverse">
   <Avatar src="/images/profile-picture-2.webp" />
   <Avatar src="/images/profile-picture-2.webp" rounded />
 </div>
@@ -148,7 +148,7 @@ This example can be used if you want to show additional information in the form 
   import { Avatar } from 'flowbite-svelte';
 </script>
 
-<div class="flex items-center space-x-4">
+<div class="flex items-center space-x-4 rtl:space-x-reverse">
   <Avatar src="/images/profile-picture-1.webp" rounded />
   <div class="space-y-1 font-medium dark:text-white">
     <div>Jese Leos</div>
@@ -189,7 +189,7 @@ Select size from xs | sm | md | lg | xl.
   import { Avatar } from 'flowbite-svelte';
 </script>
 
-<div class=" flex flex-wrap justify-center space-x-4">
+<div class=" flex flex-wrap justify-center space-x-4 rtl:space-x-reverse">
   <Avatar src="/images/profile-picture-3.webp" rounded size="xs" />
   <Avatar src="/images/profile-picture-3.webp" rounded size="sm" />
   <Avatar src="/images/profile-picture-3.webp" rounded size="md" />

@@ -33,7 +33,7 @@
   };
 
   let separatorsClass: string;
-  $: separatorsClass = twJoin($separators && 'sm:divide-x', divideColors[color]);
+  $: separatorsClass = twJoin($separators && 'sm:divide-x rtl:divide-x-reverse', divideColors[color]);
 </script>
 
 <Frame {...$$restProps} class={divClass} color={embedded ? 'none' : color} rounded={!embedded}>

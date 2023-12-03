@@ -224,7 +224,7 @@ You can use `slot="slide"` and internal component `Slide` to control the image d
     </Indicators>
     <Controls let:changeSlide let:ControlButton>
       <ControlButton name="Previous" forward={false} on:click={changeSlide(false)} class="bg-red-300/50 dark:bg-red-400/50" />
-      <Button pill class="p-2 absolute top-1/2 -translate-y-1/2 right-4 font-bold" on:click={changeSlide(true)}><CaretRightOutline /></Button>
+      <Button pill class="p-2 absolute top-1/2 -translate-y-1/2 end-4 font-bold" on:click={changeSlide(true)}><CaretRightOutline /></Button>
     </Controls>
   </Carousel>
   <Thumbnails class="bg-transparent gap-3" let:Thumbnail let:image let:selected {images} bind:index>

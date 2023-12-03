@@ -18,11 +18,11 @@
         <div class="flex flex-col items-start gap-4 isolate self-stretch max-w-l">
           <Button color="light" class="self-stretch max-w-lg !px-4 !justify-start gap-5 sm:gap-7" size="xl" href="https://www.figma.com/file/5pHMkriSz9q98zawojb4mx/flowbite-pro-figma-v2.5.0?node-id=18-0&t=X431WUvSP7jsPiEI-0">
             <Figma /> Preview in Figma
-            <div class="ml-auto hidden sm:block"><ArrowRight /></div>
+            <div class="ms-auto hidden sm:block"><ArrowRight /></div>
           </Button>
           <Button color="light" class="self-stretch max-w-lg !px-4 !justify-start gap-4 sm:gap-6" size="xl" href="https://flowbite.com/figma/">
             <FlowbiteLogo /> Learn more
-            <div class="ml-auto hidden sm:block"><ArrowRight /></div>
+            <div class="ms-auto hidden sm:block"><ArrowRight /></div>
           </Button>
         </div>
       </div>

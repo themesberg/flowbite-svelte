@@ -2,7 +2,7 @@
   import { twMerge } from 'tailwind-merge';
 
   export let color: 'gray' | 'green' | 'red' | 'disabled' = 'gray';
-  export let defaultClass: string = 'text-sm font-medium block';
+  export let defaultClass: string = 'text-sm rtl:text-right font-medium block';
   export let show: boolean = true;
 
   let node: HTMLLabelElement;

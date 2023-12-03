@@ -32,7 +32,7 @@
   export let backdropClass: string = 'fixed inset-0 z-40 bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
   export let defaultClass: string = 'relative flex flex-col mx-auto';
   export let outsideclose: boolean = false;
-  export let dialogClass: string = 'fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex';
+  export let dialogClass: string = 'fixed top-0 start-0 end-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex';
 
   const dispatch = createEventDispatcher();
   $: dispatch(open ? 'open' : 'close');
@@ -110,7 +110,6 @@
   function handleKeys(e: KeyboardEvent) {
     if (e.key === 'Escape' && dismissable) return hide(e);
   }
-
 </script>
 
 {#if open}
@@ -133,7 +132,7 @@
             {#if dismissable}<CloseButton name="Close modal" on:click={hide} color={$$restProps.color} />{/if}
           </Frame>
         {:else if dismissable}
-          <CloseButton name="Close modal" class="absolute top-3 right-2.5" on:click={hide} color={$$restProps.color} />
+          <CloseButton name="Close modal" class="absolute top-3 end-2.5" on:click={hide} color={$$restProps.color} />
         {/if}
         <!-- Modal body -->
         <div class={twMerge('p-6 space-y-6 flex-1 overflow-y-auto overscroll-contain', $$props.bodyClass)} on:keydown|stopPropagation={handleKeys} role="document" on:wheel|stopPropagation|passive>
@@ -141,7 +140,7 @@
         </div>
         <!-- Modal footer -->
         {#if $$slots.footer}
-          <Frame color={$$restProps.color} class="flex items-center p-6 space-x-2 rounded-b">
+          <Frame color={$$restProps.color} class="flex items-center p-6 space-x-2 rtl:space-x-reverse rounded-b">
             <slot name="footer" />
           </Frame>
         {/if}
@@ -163,5 +162,5 @@
 @prop export let backdropClass: string = 'fixed inset-0 z-40 bg-gray-900 bg-opacity-50 dark:bg-opacity-80';
 @prop export let defaultClass: string = 'relative flex flex-col mx-auto';
 @prop export let outsideclose: boolean = false;
-@prop export let dialogClass: string = 'fixed top-0 left-0 right-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex';
+@prop export let dialogClass: string = 'fixed top-0 start-0 end-0 h-modal md:inset-0 md:h-full z-50 w-full p-4 flex';
 -->
