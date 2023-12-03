@@ -36,7 +36,7 @@ By default navbar content width is controled by Tailwind class `container`. If y
 
 <Navbar  >
   <NavBrand href="/">
-    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
     <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
   </NavBrand>
   <NavHamburger  />
@@ -63,7 +63,7 @@ If you need more control on navbar content use underlying `NavContainer` compone
 <Navbar let:NavContainer color="primary">
   <NavContainer class="border px-5 py-2 rounded-lg bg-white dark:bg-gray-600">
     <NavBrand href="/">
-      <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+      <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
       <span class="self-center whitespace-nowrap text-xl font-semibold">Flowbite</span>
     </NavBrand>
     <NavHamburger />
@@ -91,7 +91,7 @@ Utilize the `href` prop within the `NavLi` component to incorporate a hyperlink.
 
 <Navbar>
   <NavBrand href="/">
-    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
     <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
   </NavBrand>
   <NavHamburger />
@@ -118,7 +118,7 @@ Control the `active` and `nonactive` class by using `activeClass` and `nonActive
 
 <Navbar>
   <NavBrand href="/">
-    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
     <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
   </NavBrand>
   <NavHamburger />
@@ -146,14 +146,14 @@ This example can be used to show a secondary dropdown menu when clicking on one 
 
 <Navbar>
   <NavBrand href="/">
-    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
     <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
   </NavBrand>
   <NavHamburger />
   <NavUl {activeUrl}>
     <NavLi href="/">Home</NavLi>
     <NavLi class="cursor-pointer">
-      Dropdown<ChevronDownOutline class="w-3 h-3 ml-2 text-primary-800 dark:text-white inline" />
+      Dropdown<ChevronDownOutline class="w-3 h-3 ms-2 text-primary-800 dark:text-white inline" />
     </NavLi>
     <Dropdown class="w-44 z-20">
       <DropdownItem href="/">Dashboard</DropdownItem>
@@ -181,18 +181,18 @@ Use this example of a navbar element to also show a search input element that yo
 
 <Navbar>
   <NavBrand href="/">
-    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
     <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
   </NavBrand>
   <div class="flex md:order-2">
-    <Button color="none" data-collapse-toggle="mobile-menu-3" aria-controls="mobile-menu-3" aria-expanded="false" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1">
+    <Button color="none" data-collapse-toggle="mobile-menu-3" aria-controls="mobile-menu-3" aria-expanded="false" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
       <SearchOutline class="w-5 h-5" />
     </Button>
     <div class="hidden relative md:block">
-      <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+      <div class="flex absolute inset-y-0 left-0 items-center ps-3 pointer-events-none">
         <SearchOutline class="w-4 h-4" />
       </div>
-      <Input id="search-navbar" class="pl-10" placeholder="Search..." />
+      <Input id="search-navbar" class="ps-10" placeholder="Search..." />
     </div>
     <NavHamburger />
   </div>
@@ -215,7 +215,7 @@ Use the following navbar element to show a call to action button alongside the l
 
 <Navbar>
   <NavBrand href="/">
-    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
     <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
   </NavBrand>
   <div class="flex md:order-2">
@@ -244,7 +244,7 @@ Use this example to keep the navbar positioned fixed to the top side as you scro
 <div class="relative px-8">
   <Navbar class="px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 border-b">
     <NavBrand href="/">
-      <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+      <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
       <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
     </NavBrand>
     <NavHamburger />
@@ -275,7 +275,7 @@ Use this example to create a navigation bar with a user profile or button to tog
 
 <Navbar>
   <NavBrand href="/">
-    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
     <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
   </NavBrand>
   <div class="flex items-center md:order-2">
@@ -314,7 +314,7 @@ Use this example to show a solid background for the navbar component instead of 
 
 <Navbar rounded color="form">
   <NavBrand href="/">
-    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
     <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
   </NavBrand>
   <NavHamburger />

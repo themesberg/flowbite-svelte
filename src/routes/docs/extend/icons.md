@@ -81,7 +81,7 @@ To change the size of an icon, use the size prop and specify the desired size. F
 If you want to override the preconfigured size, you can add a custom size using Tailwind CSS by including the desired classes in the class prop. For example:
 
 ```html
-<AddressCardSolid class="h-24 w-24 text-blue-700 mr-4" />
+<AddressCardSolid class="h-24 w-24 text-blue-700 me-4" />
 ```
 
 ## Creating a Default Global Icon Setting in Svelte
@@ -95,7 +95,7 @@ Use the `class` prop to change size, colors and add additional css.
 Here's an example of adding custom Tailwind CSS classes to an imported icon:
 
 ```html
-<AddressCardSolid class="h-24 w-24 text-blue-700 mr-4" />
+<AddressCardSolid class="h-24 w-24 text-blue-700 me-4" />
 ```
 
 ## Dark mode

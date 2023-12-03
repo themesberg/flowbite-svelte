@@ -126,7 +126,7 @@ Set a strikethrough line on a text element using the `line-through` class.
   import { Span } from 'flowbite-svelte';
 </script>
 
-<Span class="line-through">$109</Span><Span class="ml-3">$79</Span>
+<Span class="line-through">$109</Span><Span class="ms-3">$79</Span>
 ```
 
 ### Uppercase

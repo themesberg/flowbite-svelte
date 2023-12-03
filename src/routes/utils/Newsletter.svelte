@@ -27,7 +27,7 @@
               <Mail class="absolute top-1/2 -translate-y-1/2 left-4" />
             </div>
             <ButtonGroup>
-              <Input size="lg" id="member_email" class="formkit-input text-gray-900 pl-12 sm:!w-96 focus:ring-primary-600 focus:border-primary-600" name="email_address" aria-label="Email Address" placeholder="Your email address..." required type="email" />
+              <Input size="lg" id="member_email" class="formkit-input text-gray-900 ps-12 sm:!w-96 focus:ring-primary-600 focus:border-primary-600" name="email_address" aria-label="Email Address" placeholder="Your email address..." required type="email" />
               <Button type="submit" color="primary" size="xl" class="self-stretch formkit-submit" data-element="submit">
                 <div class="formkit-spinner">
                   <div />

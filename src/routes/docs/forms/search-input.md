@@ -91,7 +91,7 @@ Use this search component with a dropdown to let your users select a category in
   <div class="relative">
     <Button class="rounded-e-none whitespace-nowrap border border-r-0 border-primary-700">
       {selectCategory}
-      <ChevronDownSolid class="w-2.5 h-2.5 ml-2.5" />
+      <ChevronDownSolid class="w-2.5 h-2.5 ms-2.5" />
     </Button>
     <Dropdown classContainer="w-40">
       {#each items as { label }}
@@ -154,9 +154,9 @@ Use this example where you can select a country in which you want to search for 
 <form class="flex">
   <div class="relative">
     <Button class="rounded-e-none whitespace-nowrap border border-r-0 border-primary-700">
-      <img class="h-3.5 w-3.5 rounded-full mr-2" src={buttonLabel.icon} alt={buttonLabel.label}>
+      <img class="h-3.5 w-3.5 rounded-full me-2" src={buttonLabel.icon} alt={buttonLabel.label}>
       {buttonLabel.labelSelected}
-      <ChevronDownSolid class="w-2.5 h-2.5 ml-2.5" />
+      <ChevronDownSolid class="w-2.5 h-2.5 ms-2.5" />
     </Button>
     <Dropdown classContainer="w-40">
       {#each countries as country}
@@ -166,7 +166,7 @@ Use this example where you can select a country in which you want to search for 
           }}
           class="inline-flex items-center {selectCountry === country.labelSelected ? 'underline' : ''}"
         >
-          <img class="h-3.5 w-3.5 rounded-full mr-2" src={country.icon} alt={country.label}>
+          <img class="h-3.5 w-3.5 rounded-full me-2" src={country.icon} alt={country.label}>
           {country.label}
         </DropdownItem>
       {/each}
@@ -195,11 +195,11 @@ Get started with this example if you would like to enable voice search for your 
 <form class="flex gap-2">
   <Search size="md" class="flex gap-2 items-center" placeholder="Search Mockups, Logos, Design Templates...">
     <button type="button" on:click={handleVoiceBtn} class="outline-none">
-      <MicrophoneSolid class="w-4 h-4 mr-2" />
+      <MicrophoneSolid class="w-4 h-4 me-2" />
     </button>
   </Search>
   <Button size="sm">
-    <SearchOutline class="w-5 h-5 mr-2 -ml-1" />
+    <SearchOutline class="w-5 h-5 me-2 -ms-1" />
     Search
   </Button>
 </form>

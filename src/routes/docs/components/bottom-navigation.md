@@ -242,12 +242,12 @@ This example be used to paginate multiple pages on a single view alongside other
   <div class="flex items-center justify-center col-span-2">
     <div class="flex items-center justify-between w-full text-gray-600 dark:text-gray-400 bg-gray-100 rounded-lg dark:bg-gray-600 max-w-[128px] mx-2">
       <button type="button" class="inline-flex items-center justify-center h-8 px-1 bg-gray-100 rounded-l-lg dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-800">
-        <AngleLeftSolid class="w-2 h-2 ml-1" />
+        <AngleLeftSolid class="w-2 h-2 ms-1" />
         <span class="sr-only">Previous page</span>
       </button>
       <span class="flex-shrink-0 mx-1 text-sm font-medium">1 of 345</span>
       <button type="button" class="inline-flex items-center justify-center h-8 px-1 bg-gray-100 rounded-r-lg dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-800">
-        <AngleRightSolid class="w-2 h-2 mr-1" />
+        <AngleRightSolid class="w-2 h-2 me-1" />
         <span class="sr-only">Next page</span>
       </button>
     </div>
@@ -345,7 +345,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 <Card padding="none" class="relative overflow-y-scroll bg-white border border-gray-100 rounded-lg dark:bg-gray-700 dark:border-gray-600 h-96">
   <Listgroup items={list} let:item class="border-0 dark:!bg-transparent">
     <a href="/" class="flex items-center justify-center w-full px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-800">
-      <Avatar src={item.img.src} alt={item.img.alt} class="flex-shrink-0 mr-3" />
+      <Avatar src={item.img.src} alt={item.img.alt} class="flex-shrink-0 me-3" />
       <div>
         <p class="text-sm text-gray-500 dark:text-gray-400">{@html item.comment}</p>
         <span class="text-xs text-primary-600 dark:text-primary-500">{@html item.message}</span>

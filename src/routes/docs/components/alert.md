@@ -159,7 +159,7 @@ Use this example to show a list and a description inside an alert component.
     <span class="sr-only">Info</span>
   </span>
   <p class="font-medium">Ensure that these requirements are met:</p>
-  <ul class="mt-1.5 ml-4 list-disc list-inside">
+  <ul class="mt-1.5 ms-4 list-disc list-inside">
     <li>At least 10 characters (and up to 100 characters)</li>
     <li>At least one lowercase character</li>
     <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
@@ -171,7 +171,7 @@ Use this example to show a list and a description inside an alert component.
     <span class="sr-only">Info</span>
   </span>
   <p class="font-medium">Ensure that these requirements are met:</p>
-  <List class="mt-1.5 ml-4">
+  <List class="mt-1.5 ms-4">
     <Li>At least 10 characters (and up to 100 characters)</Li>
     <Li>At least one lowercase character</Li>
     <Li>Inclusion of at least one special character, e.g., ! @ # ?</Li>
@@ -225,7 +225,7 @@ You can use `slot="close"` to override the default close button. That slot expos
 <Alert color="dark" dismissable>
   <InfoCircleSolid slot="icon" class="w-4 h-4" />
   An alert with the custom dismissal button.
-  <Button slot="close-button" size="xs" let:close on:click={close} class="ml-auto">Dissmiss</Button>
+  <Button slot="close-button" size="xs" let:close on:click={close} class="ms-auto">Dissmiss</Button>
 </Alert>
 ```
 
@@ -283,7 +283,7 @@ The following alert components can be used if you wish to disclose more informat
   </div>
   <p class="mt-2 mb-4 text-sm">More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
   <div class="flex gap-2">
-    <Button size="xs"><EyeSolid class="w-4 h-4 mr-2" />View more</Button>
+    <Button size="xs"><EyeSolid class="w-4 h-4 me-2" />View more</Button>
     <Button size="xs" outline class="dark:!text-primary-800">Go to Home</Button>
   </div>
 </Alert>
@@ -294,7 +294,7 @@ The following alert components can be used if you wish to disclose more informat
   </div>
   <p class="mt-2 mb-4 text-sm">More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
   <div class="flex gap-2">
-    <Button size="xs" color="green"><EyeSolid class="w-4 h-4 mr-2" />View more</Button>
+    <Button size="xs" color="green"><EyeSolid class="w-4 h-4 me-2" />View more</Button>
     <Button size="xs" outline color="green" class="dark:text-green-800">Go to Home</Button>
   </div>
 </Alert>

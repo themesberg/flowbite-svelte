@@ -171,14 +171,14 @@ Horizontally align the image to the center of the page using the `mx-auto` class
 
 ### Right
 
-Use the `ml-auto` class to align the image to the right side of the page.
+Use the `ms-auto` class to align the image to the right side of the page.
 
 ```svelte example hideScript
 <script>
   import { Img } from 'flowbite-svelte';
 </script>
 
-<Img src="/images/examples/image-1@2x.jpg" size="max-w-lg" alignment="ml-auto" alt="sample 1" />
+<Img src="/images/examples/image-1@2x.jpg" size="max-w-lg" alignment="ms-auto" alt="sample 1" />
 ```
 
 ## Sizes

@@ -362,19 +362,19 @@ This example can be used to show an alternative style when showing a list of men
   <PenSolid slot="icon" class="w-8 h-8" />
   <Listgroup active>
     <ListgroupItem class="flex">
-      <ShareNodesSolid class="mr-2 w-5 h-5" />
+      <ShareNodesSolid class="me-2 w-5 h-5" />
       Share
     </ListgroupItem>
     <ListgroupItem class="flex">
-      <PrintSolid class="mr-2 w-5 h-5" />
+      <PrintSolid class="me-2 w-5 h-5" />
       Print
     </ListgroupItem>
     <ListgroupItem class="flex">
-      <DownloadSolid class="mr-2 w-5 h-5" />
+      <DownloadSolid class="me-2 w-5 h-5" />
       Save
     </ListgroupItem>
     <ListgroupItem class="flex">
-      <FileCopySolid class="mr-2 w-5 h-5" />
+      <FileCopySolid class="me-2 w-5 h-5" />
       Copy
     </ListgroupItem>
   </Listgroup>
@@ -383,19 +383,19 @@ This example can be used to show an alternative style when showing a list of men
 <SpeedDial defaultClass="absolute right-6 bottom-6" tooltip="none" pill={false} placement="top-end">
   <Listgroup active>
     <ListgroupItem class="flex">
-      <ShareNodesSolid class="mr-2 w-5 h-5" />
+      <ShareNodesSolid class="me-2 w-5 h-5" />
       Share
     </ListgroupItem>
     <ListgroupItem class="flex">
-      <PrintSolid class="mr-2 w-5 h-5" />
+      <PrintSolid class="me-2 w-5 h-5" />
       Print
     </ListgroupItem>
     <ListgroupItem class="flex">
-      <DownloadSolid class="mr-2 w-5 h-5" />
+      <DownloadSolid class="me-2 w-5 h-5" />
       Save
     </ListgroupItem>
     <ListgroupItem class="flex">
-      <FileCopySolid class="mr-2 w-5 h-5" />
+      <FileCopySolid class="me-2 w-5 h-5" />
       Copy
     </ListgroupItem>
   </Listgroup>

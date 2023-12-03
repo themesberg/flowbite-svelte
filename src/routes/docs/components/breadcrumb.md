@@ -71,7 +71,7 @@ Use the `icon` slot to change icons.
 <Breadcrumb aria-label="Solid background breadcrumb example" class="bg-gray-50 py-3 px-5 dark:bg-gray-900">
   <BreadcrumbItem href="/" home>
     <svelte:fragment slot="icon">
-      <HomeOutline class="w-4 h-4 mr-2" />
+      <HomeOutline class="w-4 h-4 me-2" />
     </svelte:fragment>Home
   </BreadcrumbItem>
   <BreadcrumbItem href="/">

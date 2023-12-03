@@ -16,7 +16,7 @@
   const divClasses = {
     default: 'top-0 start-0 w-full border-b border-gray-200 bg-gray-50',
     bottom: 'bottom-0 start-0 w-full border-t border-gray-200 bg-gray-50',
-    cta: 'flex-col md:flex-row  w-[calc(100%-2rem)] -translate-x-1/2 bg-white border border-gray-100 rounded-lg shadow-sm lg:max-w-7xl start-1/2 top-6',
+    cta: 'flex-col md:flex-row  w-[calc(100%-2rem)] -translate-x-1/2 rtl:translate-x-1/2 bg-white border border-gray-100 rounded-lg shadow-sm lg:max-w-7xl start-1/2 top-6',
     signup: 'top-0 start-0 w-full border-b border-gray-200 bg-gray-50',
     info: 'top-0 start-0 flex-col w-full border-b border-gray-200 md:flex-row bg-gray-50'
   };

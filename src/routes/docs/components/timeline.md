@@ -34,7 +34,7 @@ The timeline component can be used to show series of data in a chronological ord
 <Timeline>
   <TimelineItem title="Application UI code in Tailwind CSS" date="February 2022">
     <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.</p>
-    <Button color="alternative">Learn more<ArrowRightOutline class="ml-2 w-3 h-3" /></Button>
+    <Button color="alternative">Learn more<ArrowRightOutline class="ms-2 w-3 h-3" /></Button>
   </TimelineItem>
   <TimelineItem title="Application UI code in Tailwind CSS" date="March 2022">
     <p class="text-base font-normal text-gray-500 dark:text-gray-400">All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.</p>
@@ -139,7 +139,7 @@ This component can be used to show the timline of a user’s activity history in
   import { Activity, ActivityItem } from 'flowbite-svelte';
   let activities = [
     {
-      title: 'Bonnie moved <a href="/" class="font-semibold text-primary-600 dark:text-primary-500 hover:underline">Jese Leos</a> to <span class="bg-gray-100 text-gray-800 text-xs font-normal mr-2 px-2.5 py-0.5 rounded dark:bg-gray-600 dark:text-gray-300">Funny Group</span>',
+      title: 'Bonnie moved <a href="/" class="font-semibold text-primary-600 dark:text-primary-500 hover:underline">Jese Leos</a> to <span class="bg-gray-100 text-gray-800 text-xs font-normal me-2 px-2.5 py-0.5 rounded dark:bg-gray-600 dark:text-gray-300">Funny Group</span>',
       date: 'just now',
       alt: 'image alt here',
       src: '/images/profile-picture-2.webp'

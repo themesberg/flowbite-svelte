@@ -32,9 +32,9 @@
   const outerDivClasses = {
     default: 'bottom-0 start-0 h-16 bg-white border-t',
     border: 'bottom-0 start-0 h-16 bg-white border-t',
-    application: 'h-16 max-w-lg -translate-x-1/2 bg-white border rounded-full bottom-4 start-1/2',
-    pagination: 'bottom-0 h-16 -translate-x-1/2 bg-white border-t start-1/2',
-    group: 'bottom-0 -translate-x-1/2 bg-white border-t start-1/2',
+    application: 'h-16 max-w-lg -translate-x-1/2 rtl:translate-x-1/2 bg-white border rounded-full bottom-4 start-1/2',
+    pagination: 'bottom-0 h-16 -translate-x-1/2 rtl:translate-x-1/2 bg-white border-t start-1/2',
+    group: 'bottom-0 -translate-x-1/2 rtl:translate-x-1/2 bg-white border-t start-1/2',
     card: 'bottom-0 start-0 h-16 bg-white border-t',
     meeting: 'bottom-0 start-0 grid h-16 grid-cols-1 px-8 bg-white border-t md:grid-cols-3',
     video: 'bottom-0 start-0 grid h-24 grid-cols-1 px-8 bg-white border-t md:grid-cols-3'

@@ -55,7 +55,7 @@ Use the following example of a card element if you also want to have an action b
   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
   <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
   <Button class="w-fit">
-    Read more <ArrowRightOutline class="w-3.5 h-3.5 ml-2 text-white" />
+    Read more <ArrowRightOutline class="w-3.5 h-3.5 ms-2 text-white" />
   </Button>
 </Card>
 ```
@@ -78,7 +78,7 @@ This example can be used to show a CTA as a link instead of a button inside the 
   <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">Go to this step by step guideline process on how to certify for your weekly benefits:</p>
   <a href="/" class="inline-flex items-center text-primary-600 hover:underline">
     See our guideline
-    <ArrowUpRightFromSquareOutline class="w-3 h-3 ml-2.5" />
+    <ArrowUpRightFromSquareOutline class="w-3 h-3 ms-2.5" />
   </a>
 </Card>
 ```
@@ -101,7 +101,7 @@ You can use the following example of a card element with an image for blog posts
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
     <Button>
-      Read more <ArrowRightOutline class="w-3.5 h-3.5 ml-2 text-white" />
+      Read more <ArrowRightOutline class="w-3.5 h-3.5 ms-2 text-white" />
     </Button>
   </Card>
   <Toggle bind:checked={vCard} class="italic dark:text-gray-500">Reverse</Toggle>
@@ -180,7 +180,7 @@ Use this card example where you can add form input elements that can be used for
     </Label>
     <div class="flex items-start">
       <Checkbox>Remember me</Checkbox>
-      <a href="/" class="ml-auto text-sm text-primary-700 hover:underline dark:text-primary-500"> Lost password? </a>
+      <a href="/" class="ms-auto text-sm text-primary-700 hover:underline dark:text-primary-500"> Lost password? </a>
     </div>
     <Button type="submit" class="w-full">Login to your account</Button>
     <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
@@ -208,7 +208,7 @@ Use this card for your e-commerce websites and show information about the produc
       <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport</h5>
     </a>
     <Rating rating="4" size="24" class="mt-2.5 mb-5">
-      <Badge slot="text" class="ml-3">4</Badge>
+      <Badge slot="text" class="ms-3">4</Badge>
     </Rating>
     <div class="flex justify-between items-center">
       <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
@@ -305,7 +305,7 @@ Show detailed information to potential customers about your product’s pricing 
   <div class="flex items-baseline text-gray-900 dark:text-white">
     <span class="text-3xl font-semibold">$</span>
     <span class="text-5xl font-extrabold tracking-tight">49</span>
-    <span class="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400">/month</span>
+    <span class="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">/month</span>
   </div>
   <!-- List -->
   <ul class="my-7 space-y-4">

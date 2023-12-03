@@ -92,7 +92,7 @@ Notice lack of the `footer` slot.
   <div class="text-center">
     <ExclamationCircleOutline class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" />
     <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this product?</h3>
-    <Button color="red" class="mr-2">Yes, I'm sure</Button>
+    <Button color="red" class="me-2">Yes, I'm sure</Button>
     <Button color="alternative">No, cancel</Button>
   </div>
 </Modal>
@@ -123,7 +123,7 @@ Use this modal example with form input element to receive information from your 
     </Label>
     <div class="flex items-start">
       <Checkbox>Remember me</Checkbox>
-      <a href="/" class="ml-auto text-sm text-primary-700 hover:underline dark:text-primary-500"> Lost password? </a>
+      <a href="/" class="ms-auto text-sm text-primary-700 hover:underline dark:text-primary-500"> Lost password? </a>
     </div>
     <Button type="submit" class="w-full1">Login to your account</Button>
     <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
@@ -157,38 +157,38 @@ Use this web3 modal component to show crypto wallet connection options like Meta
     <li>
       <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
         <MetaMask />
-        <span class="flex-1 ml-3 whitespace-nowrap">MetaMask</span>
-        <span class="inline-flex items-center justify-center px-2 py-0.5 ml-3 text-xs font-medium text-gray-500 bg-gray-200 rounded dark:bg-gray-700 dark:text-gray-400"> Popular </span>
+        <span class="flex-1 ms-3 whitespace-nowrap">MetaMask</span>
+        <span class="inline-flex items-center justify-center px-2 py-0.5 ms-3 text-xs font-medium text-gray-500 bg-gray-200 rounded dark:bg-gray-700 dark:text-gray-400"> Popular </span>
       </a>
     </li>
     <li>
       <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
         <CoinbaseWallet />
-        <span class="flex-1 ml-3 whitespace-nowrap">Coinbase Wallet</span>
+        <span class="flex-1 ms-3 whitespace-nowrap">Coinbase Wallet</span>
       </a>
     </li>
     <li>
       <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
         <OperaWallet />
-        <span class="flex-1 ml-3 whitespace-nowrap">Opera Wallet</span>
+        <span class="flex-1 ms-3 whitespace-nowrap">Opera Wallet</span>
       </a>
     </li>
     <li>
       <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
         <WalletConnect />
-        <span class="flex-1 ml-3 whitespace-nowrap">WalletConnect</span>
+        <span class="flex-1 ms-3 whitespace-nowrap">WalletConnect</span>
       </a>
     </li>
     <li>
       <a href="/" class="flex items-center p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
         <Fortmatic />
-        <span class="flex-1 ml-3 whitespace-nowrap">Fortmatic</span>
+        <span class="flex-1 ms-3 whitespace-nowrap">Fortmatic</span>
       </a>
     </li>
   </ul>
   <div>
     <a href="/" class="inline-flex items-center text-xs font-normal text-gray-500 hover:underline dark:text-gray-400">
-      <QuestionCircleOutline class="w-3 h-3 mr-2" /> Why do I need to connect with my wallet?
+      <QuestionCircleOutline class="w-3 h-3 me-2" /> Why do I need to connect with my wallet?
     </a>
   </div>
 </Modal>

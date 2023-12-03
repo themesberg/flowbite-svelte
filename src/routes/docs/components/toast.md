@@ -119,7 +119,7 @@ This component can be used to show simple messages and notifications without the
 
 <Toast dismissable={false} contentClass="flex space-x-4 divide-x divide-gray-200 dark:divide-gray-700">
   <PapperPlaneOutline class="w-5 h-5 text-primary-600 dark:text-primary-500 rotate-45" />
-  <div class="pl-4 text-sm font-normal">Message sent successfully.</div>
+  <div class="ps-4 text-sm font-normal">Message sent successfully.</div>
 </Toast>
 ```
 
@@ -254,7 +254,7 @@ Use this toast component to also show an “undo” button to reverse the action
 
 <Toast contentClass="w-full text-sm font-normal flex items-center justify-between">
   Conversation archived.
-  <a class="ml-auto font-medium text-primary-600 p-1.5 hover:bg-primary-100 rounded-lg dark:text-primary-500 dark:hover:bg-gray-700" href="/"> Undo </a>
+  <a class="ms-auto font-medium text-primary-600 p-1.5 hover:bg-primary-100 rounded-lg dark:text-primary-500 dark:hover:bg-gray-700" href="/"> Undo </a>
 </Toast>
 ```
 
@@ -273,7 +273,7 @@ This component can be used to show messages and a CTA button when receiving chat
 
 <Toast align={false} color="none" defaultIconClass="">
   <Avatar slot="icon" src="/images/profile-picture-1.webp" />
-  <div class="ml-3 text-sm font-normal">
+  <div class="ms-3 text-sm font-normal">
     <span class="mb-1 text-sm font-semibold text-gray-900 dark:text-white">Jese Leos</span>
     <div class="mb-2 text-sm font-normal">Hi Neil, thanks for sharing your thoughts regarding Flowbite.</div>
     <Button size="xs">Reply</Button>
@@ -294,7 +294,7 @@ This component can be used to show notifications for an action from another user
   <span class="font-semibold text-gray-900 dark:text-white">New notification</span>
   <div class="flex items-center mt-3">
     <Avatar src="/images/profile-picture-3.webp" />
-    <div class="ml-3">
+    <div class="ms-3">
       <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Bonnie Green</h4>
       <div class="text-sm font-normal">commented on your photo</div>
       <span class="text-xs font-medium text-primary-600 dark:text-primary-500">a few seconds ago</span>
