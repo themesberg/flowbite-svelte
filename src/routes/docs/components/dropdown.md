@@ -503,12 +503,12 @@ Use this example to show a list of notifications inside your application by prov
 <div id="bell" class="inline-flex items-center text-sm font-medium text-center text-gray-500 hover:text-gray-900 focus:outline-none dark:hover:text-white dark:text-gray-400">
   <BellSolid class="w-5 h-5kj" />
   <div class="flex relative">
-    <div class="inline-flex relative -top-2 right-3 w-3 h-3 bg-red-500 rounded-full border-2 border-white dark:border-gray-900" />
+    <div class="inline-flex relative -top-2 end-3 w-3 h-3 bg-red-500 rounded-full border-2 border-white dark:border-gray-900" />
   </div>
 </div>
 <Dropdown triggeredBy="#bell" class="w-full max-w-sm rounded divide-y divide-gray-100 shadow dark:bg-gray-800 dark:divide-gray-700">
   <div slot="header" class="text-center py-2 font-bold">Notifications</div>
-  <DropdownItem class="flex space-x-4">
+  <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
     <Avatar src="/images/profile-picture-1.webp" dot={{ color: 'bg-gray-300' }} rounded />
     <div class="ps-3 w-full">
       <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400">
@@ -518,7 +518,7 @@ Use this example to show a list of notifications inside your application by prov
       <div class="text-xs text-primary-600 dark:text-primary-500">a few moments ago</div>
     </div>
   </DropdownItem>
-  <DropdownItem class="flex space-x-4">
+  <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
     <Avatar src="/images/profile-picture-2.webp" dot={{ color: 'bg-red-400' }} rounded />
     <div class="ps-3 w-full">
       <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400">
@@ -530,7 +530,7 @@ Use this example to show a list of notifications inside your application by prov
       <div class="text-xs text-primary-600 dark:text-primary-500">10 minutes ago</div>
     </div>
   </DropdownItem>
-  <DropdownItem class="flex space-x-4">
+  <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
     <Avatar src="/images/profile-picture-3.webp" dot={{ color: 'bg-green-400' }} rounded />
     <div class="ps-3 w-full">
       <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400">
@@ -642,7 +642,7 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
 
 <div id="placements" class="flex flex-col justify-center items-center gap-2 h-96 my-8">
   <Button>Dropdown top<ChevronUpSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
-  <div class="space-x-2">
+  <div class="space-x-2 rtl:space-x-reverse">
     <Button><ChevronLeftSolid class="w-3 h-3 me-2 text-white dark:text-white" />Dropdown left</Button>
     <Button>Dropdown right<ChevronRightSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
   </div>

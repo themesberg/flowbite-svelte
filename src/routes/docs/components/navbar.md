@@ -189,7 +189,7 @@ Use this example of a navbar element to also show a search input element that yo
       <SearchOutline class="w-5 h-5" />
     </Button>
     <div class="hidden relative md:block">
-      <div class="flex absolute inset-y-0 left-0 items-center ps-3 pointer-events-none">
+      <div class="flex absolute inset-y-0 start-0 items-center ps-3 pointer-events-none">
         <SearchOutline class="w-4 h-4" />
       </div>
       <Input id="search-navbar" class="ps-10" placeholder="Search..." />
@@ -242,7 +242,7 @@ Use this example to keep the navbar positioned fixed to the top side as you scro
 </script>
 
 <div class="relative px-8">
-  <Navbar class="px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 border-b">
+  <Navbar class="px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 start-0 border-b">
     <NavBrand href="/">
       <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
       <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>

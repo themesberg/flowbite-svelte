@@ -288,7 +288,7 @@ Set the position of the popover component relative to the trigger element by usi
 </script>
 
 <Button id="placement-top" on:mouseenter={() => (placement = 'top')}>Top popover</Button>
-<div class="space-x-4">
+<div class="space-x-4 rtl:space-x-reverse">
   <Button id="placement-left" on:mouseenter={() => (placement = 'left')}>Left popover</Button>
   <Button id="placement-right" on:mouseenter={() => (placement = 'right')}>Right popover</Button>
 </div>
@@ -364,7 +364,7 @@ If you need the popover to be attached to the other element then the tiggering o
 </script>
 
 <div id="ext-ref" class="p-2 rounded-lg border border-gray-200 dark:border-gray-600">External reference</div>
-<div class="space-x-4">
+<div class="space-x-4 rtl:space-x-reverse">
   <Button id="ref-1" on:mouseenter={() => (placement = 'left')}>Left</Button>
   <Button id="ref-2" on:mouseenter={() => (placement = 'top')}>Top</Button>
   <Button id="ref-3" on:mouseenter={() => (placement = 'right')}>Right</Button>

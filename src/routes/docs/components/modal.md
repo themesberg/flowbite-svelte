@@ -205,7 +205,7 @@ You can use five different modal sizing options starting from extra small to ext
   let size;
 </script>
 
-<div class="block space-y-4 md:space-y-0 md:space-x-4">
+<div class="block space-y-4 md:space-y-0 md:space-x-4 rtl:space-x-reverse">
   <Button size="xs" on:click={() => { size = 'xs'; openModal = true; }}>xs</Button>
   <Button size="sm" on:click={() => { size = 'sm'; openModal = true; }}>sm</Button>
   <Button size="md" on:click={() => { size = 'md'; openModal = true; }}>md</Button>
@@ -270,7 +270,7 @@ You can use five different modal sizing options starting from extra small to ext
   let color;
 </script>
 
-<div class="block space-y-4 md:space-y-0 md:space-x-4">
+<div class="block space-y-4 md:space-y-0 md:space-x-4 rtl:space-x-reverse">
   <Button on:click={() => {color = 'primary'; open = true;}}>Primary modal</Button>
   <Button color="red" on:click={() => { color = 'red'; open = true; }}>Red modal</Button>
   <Button color="green" on:click={() => { color = 'green'; open = true; }}>Green modal</Button>

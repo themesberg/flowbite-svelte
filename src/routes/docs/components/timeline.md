@@ -58,7 +58,7 @@ Use this vertical timeline component with icons and badges to show a more advanc
 <Timeline order="vertical">
   <TimelineItem title="Flowbite Application UI v2.0.0" date="Released on January 13th, 2022">
     <svelte:fragment slot="icon">
-      <span class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-primary-900">
+      <span class="flex absolute -start-3 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-primary-900">
         <CalendarWeekSolid class="w-3 h-3 text-primary-600 dark:text-primary-400" />
       </span>
     </svelte:fragment>
@@ -66,7 +66,7 @@ Use this vertical timeline component with icons and badges to show a more advanc
   </TimelineItem>
   <TimelineItem title="Flowbite Figma v1.3.0" date="Released on December 7th, 2021">
     <svelte:fragment slot="icon">
-      <span class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-primary-900">
+      <span class="flex absolute -start-3 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-primary-900">
         <CalendarWeekSolid class="w-3 h-3 text-primary-600 dark:text-primary-400" />
       </span>
     </svelte:fragment>
@@ -74,7 +74,7 @@ Use this vertical timeline component with icons and badges to show a more advanc
   </TimelineItem>
   <TimelineItem title="Flowbite Library v1.2.2" date="Released on December 2nd, 2021">
     <svelte:fragment slot="icon">
-      <span class="flex absolute -left-3 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-primary-900">
+      <span class="flex absolute -start-3 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-primary-900">
         <CalendarWeekSolid class="w-3 h-3 text-primary-600 dark:text-primary-400" />
       </span>
     </svelte:fragment>

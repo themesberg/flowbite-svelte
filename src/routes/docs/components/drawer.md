@@ -244,12 +244,12 @@ Use this example if you want to add form elements inside the drawer component in
     <div class="mb-4">
       <div class="relative">
         <Input noBorder id="search" placeholder="Add guest email" class="p-3" />
-        <Button textSize="text-sm" class="absolute inline-flex items-center px-3 py-1 text-sm font-medium text-white bg-primary-700 rounded-lg right-2 bottom-2 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" type="submit">
+        <Button textSize="text-sm" class="absolute inline-flex items-center px-3 py-1 text-sm font-medium text-white bg-primary-700 rounded-lg end-2 bottom-2 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" type="submit">
           <UserPlusSolid class="w-3 h-3 me-1.5 text-white" />Add
         </Button>
       </div>
     </div>
-    <div class="flex mb-4 -space-x-4">
+    <div class="flex mb-4 -space-x-4 rtl:space-x-reverse">
       <img class="w-8 h-8 border-2 border-white rounded-full dark:border-gray-800" src="/images/profile-picture-1.webp" alt="" />
       <img class="w-8 h-8 border-2 border-white rounded-full dark:border-gray-800" src="/images/profile-picture-2.webp" alt="" />
       <img class="w-8 h-8 border-2 border-white rounded-full dark:border-gray-800" src="/images/profile-picture-3.webp" alt="" />
@@ -529,7 +529,7 @@ Use `leftOffset|rightOffset|topOffset|bottomOffset` prop to change the position 
   <Button on:click={() => (hidden9 = false)}>Show drawer</Button>
 </div>
 
-<Drawer leftOffset="top-16 h-screen left-0" transitionType="fly" {transitionParams} bind:hidden={hidden9} id="sidebar9">
+<Drawer leftOffset="top-16 h-screen start-0" transitionType="fly" {transitionParams} bind:hidden={hidden9} id="sidebar9">
   <div class="flex items-center">
     <h5 id="drawer-label" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400">
       <InfoCircleSolid class="w-4 h-4 me-2.5" />Info

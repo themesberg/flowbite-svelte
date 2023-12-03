@@ -150,7 +150,7 @@ Use this user profile card example if you want to show a dropdown menu and butto
     <Avatar size="lg" src="/images/profile-picture-3.webp" />
     <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Bonnie Green</h5>
     <span class="text-sm text-gray-500 dark:text-gray-400">Visual Designer</span>
-    <div class="flex mt-4 space-x-3 lg:mt-6">
+    <div class="flex mt-4 space-x-3 rtl:space-x-reverse lg:mt-6">
       <Button>Add friend</Button>
       <Button color="light" class="dark:text-white">Message</Button>
     </div>
@@ -230,7 +230,7 @@ Use this CTA card example to encourage your users to visit a certain page such a
 <Card class="text-center" size="lg" padding="xl">
   <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Work fast from anywhere</h5>
   <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">Stay up to date and move work forward with Flowbite on iOS & Android. Download the app today.</p>
-  <div class="justify-center items-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+  <div class="justify-center items-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
     <Button>Download it</Button>
     <Button>Get it on</Button>
   </div>
@@ -272,7 +272,7 @@ Use this card example if you want to show a list of data:
     <a href="/" class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"> View all </a>
   </div>
   <Listgroup items={list} let:item class="border-0 dark:!bg-transparent">
-    <div class="flex items-center space-x-4">
+    <div class="flex items-center space-x-4 rtl:space-x-reverse">
       <Avatar src={item.img.src} alt={item.img.alt} class="flex-shrink-0" />
       <div class="flex-1 min-w-0">
         <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
@@ -309,31 +309,31 @@ Show detailed information to potential customers about your product’s pricing 
   </div>
   <!-- List -->
   <ul class="my-7 space-y-4">
-    <li class="flex space-x-2">
+    <li class="flex space-x-2 rtl:space-x-reverse">
       <CheckCircleSolid class="w-4 h-4 text-primary-600 dark:text-primary-500" />
       <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"> 2 team members </span>
     </li>
-    <li class="flex space-x-2">
+    <li class="flex space-x-2 rtl:space-x-reverse">
       <CheckCircleSolid class="w-4 h-4 text-primary-600 dark:text-primary-500" />
       <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"> 20GB Cloud storage </span>
     </li>
-    <li class="flex space-x-2">
+    <li class="flex space-x-2 rtl:space-x-reverse">
       <CheckCircleSolid class="w-4 h-4 text-primary-600 dark:text-primary-500" />
       <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"> Integration help </span>
     </li>
-    <li class="flex space-x-2 line-through decoration-gray-500">
+    <li class="flex space-x-2 rtl:space-x-reverse line-through decoration-gray-500">
       <CheckCircleSolid class="w-4 h-4 text-gray-400 dark:text-gray-500" />
       <span class="text-base font-normal leading-tight text-gray-500">Sketch Files</span>
     </li>
-    <li class="flex space-x-2 line-through decoration-gray-500">
+    <li class="flex space-x-2 rtl:space-x-reverse line-through decoration-gray-500">
       <CheckCircleSolid class="w-4 h-4 text-gray-400 dark:text-gray-500" />
       <span class="text-base font-normal leading-tight text-gray-500">API Access</span>
     </li>
-    <li class="flex space-x-2 line-through decoration-gray-500">
+    <li class="flex space-x-2 rtl:space-x-reverse line-through decoration-gray-500">
       <CheckCircleSolid class="w-4 h-4 text-gray-400 dark:text-gray-500" />
       <span class="text-base font-normal leading-tight text-gray-500">Complete documentation</span>
     </li>
-    <li class="flex space-x-2 line-through decoration-gray-500">
+    <li class="flex space-x-2 rtl:space-x-reverse line-through decoration-gray-500">
       <CheckCircleSolid class="w-4 h-4 text-gray-400 dark:text-gray-500" />
       <span class="text-base font-normal leading-tight text-gray-500">24×7 phone & email support</span>
     </li>
@@ -357,7 +357,7 @@ Use this example to split cards into multiple sections such as for testimonials 
       <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Very easy this was to integrate</h3>
       <p class="my-4 font-light">If you care for your time, I hands down would go with this."</p>
     </blockquote>
-    <figcaption class="flex justify-center items-center space-x-3">
+    <figcaption class="flex justify-center items-center space-x-3 rtl:space-x-reverse">
       <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png" alt="Karen profile" />
       <div class="space-y-0.5 font-medium dark:text-white text-left">
         <div>Bonnie Green</div>
@@ -370,7 +370,7 @@ Use this example to split cards into multiple sections such as for testimonials 
       <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Solid foundation for any project</h3>
       <p class="my-4 font-light">Designing with Figma components that can be easily translated to the utility classes of Tailwind CSS is a huge timesaver!"</p>
     </blockquote>
-    <figcaption class="flex justify-center items-center space-x-3">
+    <figcaption class="flex justify-center items-center space-x-3 rtl:space-x-reverse">
       <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png" alt="Robert profile" />
       <div class="space-y-0.5 font-medium dark:text-white text-left">
         <div>Roberta Casas</div>
@@ -383,7 +383,7 @@ Use this example to split cards into multiple sections such as for testimonials 
       <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Mindblowing workflow</h3>
       <p class="my-4 font-light">Aesthetically, the well designed components are beautiful and will undoubtedly level up your next application."</p>
     </blockquote>
-    <figcaption class="flex justify-center items-center space-x-3">
+    <figcaption class="flex justify-center items-center space-x-3 rtl:space-x-reverse">
       <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="Jese profile" />
       <div class="space-y-0.5 font-medium dark:text-white text-left">
         <div>Jese Leos</div>
@@ -396,7 +396,7 @@ Use this example to split cards into multiple sections such as for testimonials 
       <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Efficient Collaborating</h3>
       <p class="my-4 font-light">You have many examples that can be used to create a fast prototype for your team."</p>
     </blockquote>
-    <figcaption class="flex justify-center items-center space-x-3">
+    <figcaption class="flex justify-center items-center space-x-3 rtl:space-x-reverse">
       <img class="w-9 h-9 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png" alt="joseph profile" />
       <div class="space-y-0.5 font-medium dark:text-white text-left">
         <div>Joseph McFall</div>

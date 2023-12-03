@@ -149,11 +149,11 @@ Use the following markup to show simple previous and next elements.
   };
 </script>
 
-<div class="flex space-x-3">
+<div class="flex space-x-3 rtl:space-x-reverse">
   <PaginationItem on:click={previous}>Previous</PaginationItem>
   <PaginationItem on:click={next}>Next</PaginationItem>
 </div>
-<div class="flex space-x-3">
+<div class="flex space-x-3 rtl:space-x-reverse">
   <PaginationItem large on:click={previous}>Previous</PaginationItem>
   <PaginationItem large on:click={next}>Next</PaginationItem>
 </div>
@@ -175,7 +175,7 @@ Use the following code to show simple previous and next elements with icons.
   };
 </script>
 
-<div class="flex space-x-3">
+<div class="flex space-x-3 rtl:space-x-reverse">
   <PaginationItem class="flex items-center" on:click={previous}>
     <ArrowLeftSolid class="me-2 w-3.5 h-3.5" />
     Previous
@@ -185,7 +185,7 @@ Use the following code to show simple previous and next elements with icons.
     <ArrowRightSolid class="ms-2 w-3.5 h-3.5" />
   </PaginationItem>
 </div>
-<div class="flex space-x-3">
+<div class="flex space-x-3 rtl:space-x-reverse">
   <PaginationItem large class="flex items-center" on:click={previous}>
     <ArrowLeftSolid class="me-2 w-5 h-5" />
     Previous

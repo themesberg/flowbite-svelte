@@ -28,7 +28,7 @@ Get started with a collection of text customization examples to learn how to upd
 
 Use this example to set the font size of inline text elements using the `size` prop.
 
-```svelte example class="flex flex-wrap items-center space-x-4"
+```svelte example class="flex flex-wrap items-center space-x-4 rtl:space-x-reverse"
 <script>
   import { P } from 'flowbite-svelte';
 </script>
@@ -52,7 +52,7 @@ Use this example to set the font size of inline text elements using the `size` p
 
 This example can be used to the font weight of an inline text element using the `weight` prop.
 
-```svelte example class="flex flex-wrap items-center space-x-4" hideScript
+```svelte example class="flex flex-wrap items-center space-x-4 rtl:space-x-reverse" hideScript
 <script>
   import { P } from 'flowbite-svelte';
 </script>
@@ -72,7 +72,7 @@ This example can be used to the font weight of an inline text element using the 
 
 Use the `color` prop to set the color of the inline text.
 
-```svelte example class="flex flex-wrap items-center space-x-4" hideScript
+```svelte example class="flex flex-wrap items-center space-x-4 rtl:space-x-reverse" hideScript
 <script>
   import { P } from 'flowbite-svelte';
 </script>
@@ -88,7 +88,7 @@ Use the `color` prop to set the color of the inline text.
 
 Increase or decrease the spacing between letters using the `space` prop.
 
-```svelte example class="flex flex-wrap items-center space-x-4" hideScript
+```svelte example class="flex flex-wrap items-center space-x-4 rtl:space-x-reverse" hideScript
 <script>
   import { P } from 'flowbite-svelte';
 </script>

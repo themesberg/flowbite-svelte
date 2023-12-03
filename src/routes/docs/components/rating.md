@@ -269,7 +269,7 @@ Use this component to show the review content from a user alongside the avatar, 
     <UsersGroupOutline class="w-3 h-3 me-2" />
     {review.item3}
   </svelte:fragment>
-  <aside class="flex items-center mt-3 space-x-5">
+  <aside class="flex items-center mt-3 space-x-5 rtl:space-x-reverse">
     <a href="/" class="inline-flex items-center text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">
       <ThumbsUpSolid class="w-3.5 h-3.5 me-2.5 text-primary-600 dark:text-primary-500" />
       Helpful

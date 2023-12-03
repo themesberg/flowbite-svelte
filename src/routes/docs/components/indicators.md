@@ -106,7 +106,7 @@ This example can be used to add an indicator inside of a badge component.
 
 <ul class="max-w-sm divide-y divide-gray-200 dark:divide-gray-700 w-full">
   <li class="py-3 sm:py-4">
-    <div class="flex items-center space-x-3">
+    <div class="flex items-center space-x-3 rtl:space-x-reverse">
       <Avatar src="/images/profile-picture-5.webp" alt="Neil image" />
       <div class="flex-1 min-w-0">
         <p class="text-sm font-semibold text-gray-900 truncate dark:text-white">Neil Sims</p>
@@ -118,7 +118,7 @@ This example can be used to add an indicator inside of a badge component.
     </div>
   </li>
   <li class="py-3 sm:py-4">
-    <div class="flex items-center space-x-3">
+    <div class="flex items-center space-x-3 rtl:space-x-reverse">
       <div class="flex-shrink-0">
         <Avatar src="/images/profile-picture-4.webp" alt="Bonnie image" />
       </div>

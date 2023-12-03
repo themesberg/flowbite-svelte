@@ -35,7 +35,7 @@
   }
 </script>
 
-<div class="flex-none hidden w-64 ps-8 xl:text-sm xl:block right-0" use:init>
+<div class="flex-none hidden w-64 ps-8 xl:text-sm xl:block end-0" use:init>
   {#if headings.length}
     <div class="flex overflow-y-auto sticky top-20 flex-col justify-between pb-6 h-[calc(100vh-5rem)]">
       <div class="mb-8">
