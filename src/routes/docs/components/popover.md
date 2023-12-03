@@ -163,7 +163,7 @@ Use this example to trigger a popover component with detailed information and an
         </h3>
       </div>
     </div>
-    <img src="/images/italy.png" class="col-span-2 h-full rounded-r-lg" alt="Italy map" />
+    <img src="/images/italy.png" class="col-span-2 h-full rounded-e-lg" alt="Italy map" />
   </div>
 </Popover>
 ```

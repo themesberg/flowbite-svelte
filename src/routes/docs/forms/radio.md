@@ -68,11 +68,11 @@ If you need separate control over the label and the radio you can use the verbos
     <TableHeadCell>Right column</TableHeadCell>
   </TableHead>
   <TableBody class="divide-y dark:divide-gray-700">
-    <TableBodyRow class="divide-x dark:divide-gray-700">
+    <TableBodyRow class="divide-x rtl:divide-x-reverse dark:divide-gray-700">
       <TableBodyCell><Label for="radio1">Default radio</Label></TableBodyCell>
       <TableBodyCell><Label for="radio2">Disabled radio</Label></TableBodyCell>
     </TableBodyRow>
-    <TableBodyRow class="divide-x dark:divide-gray-700">
+    <TableBodyRow class="divide-x rtl:divide-x-reverse dark:divide-gray-700">
       <TableBodyCell><Radio name="separate" id="radio1" /></TableBodyCell>
       <TableBodyCell><Radio name="separate" id="radio2" disabled /></TableBodyCell>
     </TableBodyRow>
@@ -162,7 +162,7 @@ Use this example to show a list of radio items inside a card horizontally.
 </script>
 
 <p class="mb-4 font-semibold text-gray-900 dark:text-white">Identification</p>
-<ul class="items-center w-full rounded-lg border border-gray-200 sm:flex dark:bg-gray-800 dark:border-gray-600 divide-x divide-gray-200 dark:divide-gray-600">
+<ul class="items-center w-full rounded-lg border border-gray-200 sm:flex dark:bg-gray-800 dark:border-gray-600 divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-600">
   <li class="w-full"><Radio name="hor-list" class="p-3">Svelte</Radio></li>
   <li class="w-full"><Radio name="hor-list" class="p-3">Vue JS</Radio></li>
   <li class="w-full"><Radio name="hor-list" class="p-3">React</Radio></li>

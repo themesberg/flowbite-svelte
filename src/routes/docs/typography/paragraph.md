@@ -137,7 +137,7 @@ Get started with this example to show a popover with extra information inside pa
         <A href="/">Read more <ChevronRightSolid class="w-2 h-2 ms-1.5" /></A>
       </div>
     </div>
-    <img src="/images/image-1.webp" class="col-span-2 h-full rounded-r-lg" alt="Italy map" />
+    <img src="/images/image-1.webp" class="col-span-2 h-full rounded-e-lg" alt="Italy map" />
   </div>
 </Popover>
 ```

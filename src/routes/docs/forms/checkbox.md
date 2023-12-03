@@ -66,11 +66,11 @@ If you need separate control over the label and the checkbox you can use the ver
     <TableHeadCell>Right column</TableHeadCell>
   </TableHead>
   <TableBody class="divide-y dark:divide-gray-700">
-    <TableBodyRow class="divide-x dark:divide-gray-700">
+    <TableBodyRow class="divide-x rtl:divide-x-reverse dark:divide-gray-700">
       <TableBodyCell><Label for="checkbox1">Default checkbox</Label></TableBodyCell>
       <TableBodyCell><Label for="checkbox2">Disabled checkbox</Label></TableBodyCell>
     </TableBodyRow>
-    <TableBodyRow class="divide-x dark:divide-gray-700">
+    <TableBodyRow class="divide-x rtl:divide-x-reverse dark:divide-gray-700">
       <TableBodyCell><Checkbox id="checkbox1" checked /></TableBodyCell>
       <TableBodyCell><Checkbox id="checkbox2" disabled /></TableBodyCell>
     </TableBodyRow>
@@ -156,7 +156,7 @@ Use this example to show a list of checkbox items inside a card horizontally.
 </script>
 
 <p class="mb-4 font-semibold text-gray-900 dark:text-white">Identification</p>
-<ul class="items-center w-full rounded-lg border border-gray-200 sm:flex dark:bg-gray-800 dark:border-gray-600 divide-x divide-gray-200 dark:divide-gray-600">
+<ul class="items-center w-full rounded-lg border border-gray-200 sm:flex dark:bg-gray-800 dark:border-gray-600 divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-600">
   <li class="w-full"><Checkbox class="p-3">Svelte</Checkbox></li>
   <li class="w-full"><Checkbox class="p-3">Vue JS</Checkbox></li>
   <li class="w-full"><Checkbox class="p-3">React</Checkbox></li>

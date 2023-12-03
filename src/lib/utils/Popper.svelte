@@ -168,7 +168,7 @@
   }
 
   let arrowClass: string;
-  $: arrowClass = twJoin('absolute pointer-events-none block w-[10px] h-[10px] rotate-45 bg-inherit border-inherit', $$props.border && arrowSide === 'bottom' && 'border-b border-r', $$props.border && arrowSide === 'top' && 'border-t border-l ', $$props.border && arrowSide === 'right' && 'border-t border-r ', $$props.border && arrowSide === 'left' && 'border-b border-l ');
+  $: arrowClass = twJoin('absolute pointer-events-none block w-[10px] h-[10px] rotate-45 bg-inherit border-inherit', $$props.border && arrowSide === 'bottom' && 'border-b border-e', $$props.border && arrowSide === 'top' && 'border-t border-s ', $$props.border && arrowSide === 'right' && 'border-t border-e ', $$props.border && arrowSide === 'left' && 'border-b border-s ');
 
   function initArrow(node: HTMLElement) {
     arrowEl = node;

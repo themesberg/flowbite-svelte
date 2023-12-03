@@ -352,7 +352,7 @@ Use this example to split cards into multiple sections such as for testimonials 
 </script>
 
 <Card padding="none" size="xl" class="grid md:grid-cols-2">
-  <figure class="flex flex-col justify-center items-center p-8 text-center bg-white rounded-t-lg border-b border-gray-200 md:rounded-t-none md:rounded-tl-lg md:border-r dark:bg-gray-800 dark:border-gray-700">
+  <figure class="flex flex-col justify-center items-center p-8 text-center bg-white rounded-t-lg border-b border-gray-200 md:rounded-t-none md:rounded-tl-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
     <blockquote class="mx-auto mb-4 max-w-2xl text-gray-500 dark:text-gray-400">
       <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Very easy this was to integrate</h3>
       <p class="my-4 font-light">If you care for your time, I hands down would go with this."</p>
@@ -378,7 +378,7 @@ Use this example to split cards into multiple sections such as for testimonials 
       </div>
     </figcaption>
   </figure>
-  <figure class="flex flex-col justify-center items-center p-8 text-center bg-white rounded-bl-lg border-b border-gray-200 md:border-b-0 md:border-r dark:bg-gray-800 dark:border-gray-700">
+  <figure class="flex flex-col justify-center items-center p-8 text-center bg-white rounded-bl-lg border-b border-gray-200 md:border-b-0 md:border-e dark:bg-gray-800 dark:border-gray-700">
     <blockquote class="mx-auto mb-4 max-w-2xl text-gray-500 dark:text-gray-400">
       <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Mindblowing workflow</h3>
       <p class="my-4 font-light">Aesthetically, the well designed components are beautiful and will undoubtedly level up your next application."</p>

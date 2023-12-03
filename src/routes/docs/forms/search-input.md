@@ -89,7 +89,7 @@ Use this search component with a dropdown to let your users select a category in
 
 <form class="flex">
   <div class="relative">
-    <Button class="rounded-e-none whitespace-nowrap border border-r-0 border-primary-700">
+    <Button class="rounded-e-none whitespace-nowrap border border-e-0 border-primary-700">
       {selectCategory}
       <ChevronDownSolid class="w-2.5 h-2.5 ms-2.5" />
     </Button>
@@ -153,7 +153,7 @@ Use this example where you can select a country in which you want to search for 
 
 <form class="flex">
   <div class="relative">
-    <Button class="rounded-e-none whitespace-nowrap border border-r-0 border-primary-700">
+    <Button class="rounded-e-none whitespace-nowrap border border-e-0 border-primary-700">
       <img class="h-3.5 w-3.5 rounded-full me-2" src={buttonLabel.icon} alt={buttonLabel.label}>
       {buttonLabel.labelSelected}
       <ChevronDownSolid class="w-2.5 h-2.5 ms-2.5" />

@@ -52,7 +52,7 @@
   let inputClass: string;
   $: {
     const _color = color === 'base' && background ? 'tinted' : color;
-    inputClass = twMerge([defaultClass, ($$slots.left && leftPadding[_size]) || ($$slots.right && rightPadding[_size]) || inputPadding[_size], ringClasses[color], colorClasses[_color], borderClasses[_color], textSizes[_size], group || 'rounded-lg', group && 'first:rounded-l-lg last:rounded-r-lg', group && 'border-l-0 first:border-l last:border-r', $$props.class]);
+    inputClass = twMerge([defaultClass, ($$slots.left && leftPadding[_size]) || ($$slots.right && rightPadding[_size]) || inputPadding[_size], ringClasses[color], colorClasses[_color], borderClasses[_color], textSizes[_size], group || 'rounded-lg', group && 'first:rounded-s-lg last:rounded-e-lg', group && 'border-s-0 first:border-s last:border-e', $$props.class]);
   }
 </script>
 
