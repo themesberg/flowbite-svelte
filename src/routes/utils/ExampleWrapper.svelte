@@ -144,7 +144,7 @@
   $: {
     if (iframe && iframe.contentDocument) {
       // toggle dir value in the iframe
-      iframe.contentDocument.documentElement.dir = rtl;
+      iframe.contentDocument.documentElement.dir = rtl ?? '';
     }
   }
 </script>

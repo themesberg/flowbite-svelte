@@ -11,9 +11,12 @@
     lg: 'w-6 h-6'
   };
 
-  const toggleTheme = () => {
-    const isDark = window.document.documentElement.classList.toggle('dark');
-    localStorage.setItem('color-theme', isDark ? 'dark' : 'light');
+  const toggleTheme = (ev: MouseEvent) => {
+    const target = ev.target as HTMLElement;
+    const isDark = target.ownerDocument.documentElement.classList.toggle('dark');
+    if (target.ownerDocument === document)
+      // we are NOT in the iFrame
+      localStorage.setItem('color-theme', isDark ? 'dark' : 'light');
   };
 </script>
 
