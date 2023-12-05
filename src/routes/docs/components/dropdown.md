@@ -626,21 +626,22 @@ Use this example to also show the name or email of the user next to the avatar f
 
 You can also use the `placement={top|right|bottom|left}` options to choose the placement of the dropdown menu. By default the positioning is set to the bottom side of the button.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
   import { ChevronDownSolid, ChevronUpSolid, ChevronRightSolid, ChevronLeftSolid } from 'flowbite-svelte-icons';
   let placement = 'left';
 </script>
 
-<Dropdown {placement} triggeredBy="#placements button" on:show={(e) => (placement = e.target.textContent.trim().split(' ')[1])}>
+<Dropdown {placement} triggeredBy="#placements button">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
   <DropdownItem slot="footer">Sign out</DropdownItem>
 </Dropdown>
 
-<div id="placements" class="flex flex-col justify-center items-center gap-2 h-96 my-8">
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<div id="placements" class="flex flex-col justify-center items-center gap-2 h-96 my-8" on:mousedown={(e) => (placement = e.target.textContent.trim().split(' ')[1])}>
   <Button>Dropdown top<ChevronUpSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
   <div class="space-x-2 rtl:space-x-reverse">
     <Button><ChevronLeftSolid class="w-3 h-3 me-2 text-white dark:text-white" />Dropdown left</Button>
@@ -652,6 +653,8 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
 
 ## Double placement
 
+As dropdown is implemented using the [Floating UI](https://floating-ui.com) library, placement can be further specified by using the `Placement` type defined in [Floating UI docs](https://floating-ui.com/docs/computePosition#placement)
+
 ```svelte example class="flex justify-center items-center gap-2 h-96" hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
@@ -659,13 +662,17 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
   let placement = 'left';
 </script>
 
-<Button data-placement="left-start">
-  Dropdown left start<ChevronUpSolid class="w-3 h-3 ms-2 text-white dark:text-white" />
-</Button>
-<Button data-placement="right-end">
-  Dropdown right end<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" />
-</Button>
-<Dropdown {placement} triggeredBy="[data-placement]" on:show={(e) => (placement = e.target.dataset.placement)}>
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<div on:mousedown={(e) => (placement = e.target.dataset.placement)}>
+  <Button data-placement="left-start">
+    Dropdown left start<ChevronUpSolid class="w-3 h-3 ms-2 text-white dark:text-white" />
+  </Button>
+  <Button data-placement="right-end">
+    Dropdown right end<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" />
+  </Button>
+</div>
+
+<Dropdown {placement} triggeredBy="[data-placement]">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
