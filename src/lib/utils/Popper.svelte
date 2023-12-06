@@ -37,7 +37,7 @@
   let clickable: boolean;
   $: clickable = trigger === 'click';
 
-  $: dispatch('show', referenceEl, open);
+  $: dispatch('show', open);
   $: placement && (referenceEl = referenceEl);
 
   let referenceEl: Element;
