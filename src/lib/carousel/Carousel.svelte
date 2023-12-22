@@ -53,16 +53,6 @@
     dispatch('change', images[index]);
   });
 
-  let prevIndex: number = index;
-  $: {
-    if (!prevIndex || prevIndex < index) {
-      update((_state) => ({ ..._state, forward: true, index }));
-    } else {
-      update((_state) => ({ ..._state, forward: false, index }));
-    }
-    prevIndex = index;
-  }
-
   const nextSlide = () => {
     update((_state) => {
       if (!canChangeSlide({ lastSlideChange: _state.lastSlideChange, slideDuration, slideDurationRatio: SLIDE_DURATION_RATIO })) return _state;
