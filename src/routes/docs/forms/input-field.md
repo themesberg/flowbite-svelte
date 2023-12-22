@@ -141,7 +141,7 @@ Use the following example to apply validation styles for success and error messa
 </div>
 <div class="mb-6">
   <Label for="error" color="red" class="block mb-2">Your name</Label>
-  <Input id="success" color="red" placeholder="Success input" />
+  <Input id="error" color="red" placeholder="Error input" />
   <Helper class="mt-2" color="red">
     <span class="font-medium">Oh, snapp!</span>
     Some error message.
