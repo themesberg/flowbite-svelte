@@ -204,4 +204,5 @@
 @prop export let strategy: 'absolute' | 'fixed' = 'absolute';
 @prop export let open: boolean = false;
 @prop export let yOnly: boolean = false;
+@prop export let middlewares: Middleware[] = [dom.flip(), dom.shift()];
 -->

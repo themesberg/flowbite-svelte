@@ -35,6 +35,6 @@
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
 @prop export let color: 'gray' | 'green' | 'red' | 'disabled' = 'gray';
-@prop export let defaultClass: string = 'text-sm font-medium block';
+@prop export let defaultClass: string = 'text-sm rtl:text-right font-medium block';
 @prop export let show: boolean = true;
 -->

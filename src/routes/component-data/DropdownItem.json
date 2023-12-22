@@ -1,1 +1,10 @@
-{"name":"DropdownItem","slots":[],"events":["on:click","on:change","on:keydown","on:keyup","on:focus","on:blur","on:mouseenter","on:mouseleave"],"props":[["defaultClass","string","'font-medium py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600'"],["href","string | undefined","undefined"],["activeClass","string | undefined","undefined"]]}
+{
+  "name": "DropdownItem",
+  "slots": [],
+  "events": ["on:click", "on:change", "on:keydown", "on:keyup", "on:focus", "on:blur", "on:mouseenter", "on:mouseleave"],
+  "props": [
+    ["defaultClass", "string", "'font-medium py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600'"],
+    ["href", "string | undefined", "undefined"],
+    ["activeClass", "string | undefined", "undefined"]
+  ]
+}

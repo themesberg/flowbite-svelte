@@ -1,1 +1,10 @@
-{"name":"Label","slots":[],"events":[],"props":[["color","'gray' | 'green' | 'red' | 'disabled'","'gray'"],["defaultClass","string","'text-sm font-medium block'"],["show","boolean","true"]]}
+{
+  "name": "Label",
+  "slots": [],
+  "events": [],
+  "props": [
+    ["color", "'gray' | 'green' | 'red' | 'disabled'", "'gray'"],
+    ["defaultClass", "string", "'text-sm rtl:text-right font-medium block'"],
+    ["show", "boolean", "true"]
+  ]
+}

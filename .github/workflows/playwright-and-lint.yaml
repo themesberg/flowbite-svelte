@@ -39,7 +39,7 @@ jobs:
         run: pnpm i
       - name: Run playwright tests
         env:
-          NODE_OPTIONS: "--max_old_space_size=4096"
+          NODE_OPTIONS: '--max_old_space_size=4096'
         run: pnpm test:integration
 #      - name: Run typecheck
 #        if: always()

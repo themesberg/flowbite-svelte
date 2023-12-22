@@ -1,1 +1,13 @@
-{"name":"Card","slots":[],"events":["on:click","on:focusin","on:focusout","on:mouseenter","on:mouseleave"],"props":[["href","string | null | undefined","undefined"],["horizontal","boolean","false"],["reverse","boolean","false"],["img","string | undefined","undefined"],["padding","'none' | 'sm' | 'md' | 'lg' | 'xl'","'lg'"],["size","SizeType","'sm'"]]}
+{
+  "name": "Card",
+  "slots": [],
+  "events": ["on:click", "on:focusin", "on:focusout", "on:mouseenter", "on:mouseleave"],
+  "props": [
+    ["href", "string | null | undefined", "undefined"],
+    ["horizontal", "boolean", "false"],
+    ["reverse", "boolean", "false"],
+    ["img", "string | undefined", "undefined"],
+    ["padding", "'none' | 'sm' | 'md' | 'lg' | 'xl'", "'lg'"],
+    ["size", "SizeType", "'sm'"]
+  ]
+}

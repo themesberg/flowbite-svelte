@@ -77,7 +77,7 @@
 @prop export let type: InputType = 'text';
 @prop export let value: any = undefined;
 @prop export let size: FormSizeType | undefined = undefined;
-@prop export let defaultClass: string = 'block w-full disabled:cursor-not-allowed disabled:opacity-50';
+@prop export let defaultClass: string = 'block w-full disabled:cursor-not-allowed disabled:opacity-50 rtl:text-right';
 @prop export let color: 'base' | 'green' | 'red' = 'base';
 @prop export let floatClass: string = 'flex absolute inset-y-0 items-center text-gray-500 dark:text-gray-400';
 -->

@@ -100,7 +100,7 @@ export interface ListGroupItemType {
   current?: boolean;
   disabled?: boolean;
   href?: string;
-  attrs?: HTMLAnchorAttributes|HTMLButtonAttributes;
+  attrs?: HTMLAnchorAttributes | HTMLButtonAttributes;
   [propName: string]: any;
 }
 
