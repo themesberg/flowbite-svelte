@@ -41,8 +41,24 @@
     desktop: ''
   };
 
+  function updateDarkMode(ev: Event) {
+    const target = ev.target as HTMLElement,
+      isDark = target.ownerDocument.documentElement.classList.contains('dark');
+    dark = isDark;
+  }
+
   function init(node: HTMLElement) {
     browserSupport = !!window?.navigator?.clipboard;
+    const button: HTMLButtonElement = node.ownerDocument.querySelector('button[aria-label="Dark mode"]') as HTMLButtonElement;
+    button?.addEventListener('click', updateDarkMode);
+
+    dark = node.ownerDocument.documentElement.classList.contains('dark');
+
+    return {
+      destroy() {
+        button?.removeEventListener('click', updateDarkMode);
+      }
+    };
   }
 
   let node: HTMLElement;
@@ -117,6 +133,7 @@
       const resizeObserver = new ResizeObserver(updateHeightContent);
       resizeObserver.observe(iframe.contentDocument.body.firstElementChild as Element);
     }
+    iframe = iframe;
   };
 
   const updateHeightContent = () => {

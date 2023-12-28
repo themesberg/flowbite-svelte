@@ -25,7 +25,7 @@
   export let images: HTMLImgAttributes[];
   export let index: number = 0;
   export let slideDuration: number = 1000;
-  export let transition: TransitionFunc | null;
+  export let transition: TransitionFunc | null = null;
   export let duration: number = 0;
   export let ariaLabel: string = 'Draggable Carousel';
 
