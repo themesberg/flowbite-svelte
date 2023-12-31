@@ -150,10 +150,6 @@
       "types": "./dist/avatar/Avatar.svelte.d.ts",
       "svelte": "./dist/avatar/Avatar.svelte"
     },
-    "./Placeholder.svelte": {
-      "types": "./dist/avatar/Placeholder.svelte.d.ts",
-      "svelte": "./dist/avatar/Placeholder.svelte"
-    },
     "./Badge.svelte": {
       "types": "./dist/badge/Badge.svelte.d.ts",
       "svelte": "./dist/badge/Badge.svelte"
