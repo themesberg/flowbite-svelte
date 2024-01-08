@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.10](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.9...v0.1.10) (2024-01-08)
+
+
+### Features
+
+* add breakPoint prop ([02cb5a2](https://github.com/shinokada/svelte-5-ui-lib/commit/02cb5a2b76973b81c3f4acd7c26022fdbbdd0c6b))
+
 ### [0.1.9](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.8...v0.1.9) (2024-01-08)
 
 ### [0.1.8](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.7...v0.1.8) (2024-01-08)
