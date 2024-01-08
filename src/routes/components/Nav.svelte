@@ -3,7 +3,7 @@
 
 	let nav = navHelper();
 
-	let navStatus = $state();
+	let navStatus = $state(false);
 	let toggleNav = nav.toggleNav;
 	let closeNav = nav.closeNav;
 

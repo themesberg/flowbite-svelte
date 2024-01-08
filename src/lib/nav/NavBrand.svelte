@@ -1,7 +1,7 @@
 <script lang="ts">
-  interface Props{
+	interface Props {
 		siteName: string;
-		closeNav: ()=>void;
+		closeNav: () => void;
 		aClass?: string | undefined;
 		spanClass?: string | undefined;
 	}

@@ -1,8 +1,8 @@
 <script lang="ts">
-	interface Props{
-    children?: any;
-		toggleNav: ()=>void;
-		closeNav: ()=>void;
+	interface Props {
+		children?: any;
+		toggleNav: () => void;
+		closeNav: () => void;
 		navStatus: boolean;
 		brand?: any;
 		navClass?: string | undefined;
