@@ -14,13 +14,17 @@
 	});
 </script>
 
-<Navbar {toggleNav} {closeNav} {navStatus}>
+<Navbar {toggleNav} {closeNav} {navStatus} breakPoint="xl">
 	{#snippet brand()}
-		<NavBrand siteName="Svelte 5" {closeNav} />
+		<NavBrand siteName="Svelte 5" {closeNav}>
+		<img width="30" src="images/svelte-icon.png" alt="svelte icon"/>
+		</NavBrand>
 	{/snippet}
+	
 	<NavUl>
-		<NavLi href="/" {closeNav}>Home</NavLi>
+		<NavLi href="/" {closeNav} >Home</NavLi>
 		<NavLi href="/about" {closeNav}>About</NavLi>
 		<NavLi href="/contact" {closeNav}>Contact</NavLi>
 	</NavUl>
+	
 </Navbar>

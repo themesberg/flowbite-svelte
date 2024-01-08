@@ -5,11 +5,13 @@
 		closeNav: () => void;
 		navStatus: boolean;
 		brand?: any;
+		breakPoint?: "md" | "lg" | "xl" | "2xl";
 		navClass?: string | undefined;
 		divClass?: string | undefined;
 		btnClass?: string | undefined;
 		divChildrenClass?: string | undefined;
 	}
+	import { setContext } from 'svelte';
 	import { twMerge } from 'tailwind-merge';
 	import { clickOutside } from './navHelper.svelte';
 
@@ -19,12 +21,14 @@
 		closeNav,
 		navStatus,
 		brand,
+		breakPoint ="md",
 		navClass,
 		divClass,
 		btnClass,
 		divChildrenClass
 	} = $props<Props>();
 
+	setContext('breakPoint', breakPoint);
 	$inspect('Navbar navStatus', navStatus);
 	let navDisplay = $derived(navStatus ? 'block' : 'hidden');
 
@@ -33,11 +37,23 @@
 		'mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4',
 		divClass
 	);
+	const btnBreak = {
+		"md":"md:hidden",
+		"lg":"lg:hidden",
+		"xl":"xl:hidden",
+		"2xl":"2xl:hidden",
+	}
 	let btnCls = twMerge(
-		'inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden',
-		btnClass
+		'inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600', btnBreak[breakPoint], btnClass
 	);
-	let divChildrenCls = twMerge('w-full md:block md:w-auto', divChildrenClass);
+	const blockBreak = {
+		"md":"md:block md:w-auto",
+		"lg":"lg:block lg:w-auto",
+		"xl":"xl:block xl:w-auto",
+		"2xl":"2xl:block 2xl:w-auto",
+	}
+	let divChildrenCls = twMerge('w-full', blockBreak[breakPoint],divChildrenClass);
+	$inspect('Navbar: ', breakPoint)
 </script>
 
 <nav class={navCls} use:clickOutside={closeNav}>

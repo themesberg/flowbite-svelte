@@ -17,8 +17,8 @@
 </script>
 
 <a href="/" onclick={closeNav} class={aCls}>
-  {#if children}
-    {@render children()}
+	{#if children}
+		{@render children()}
 	{/if}
 	<span class={spanCls}>{siteName}</span>
 </a>
