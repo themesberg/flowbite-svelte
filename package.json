@@ -62,5 +62,8 @@
 		"typescript": "^5.3.3",
 		"vite": "^5.0.11"
 	},
+	"peerDependencies": {
+		"svelte": "^5.0.0"
+	},
 	"type": "module"
 }
