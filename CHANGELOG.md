@@ -2,12 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.1.7](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.6...v0.1.7) (2024-01-08)
+### [0.1.8](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.7...v0.1.8) (2024-01-08)
 
+
+### Features
+
+* add breakPoint prop ([49f8d25](https://github.com/shinokada/svelte-5-ui-lib/commit/49f8d254bda9e1c6f18b3eafead9254d44d5a5e1))
+
+### [0.1.7](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.6...v0.1.7) (2024-01-08)
 
 ### Bug Fixes
 
-* add children to NavBrand ([51b141d](https://github.com/shinokada/svelte-5-ui-lib/commit/51b141de2f086a8234c041812d630cbc8ad8a6e9))
+- add children to NavBrand ([51b141d](https://github.com/shinokada/svelte-5-ui-lib/commit/51b141de2f086a8234c041812d630cbc8ad8a6e9))
 
 ### [0.1.6](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.5...v0.1.6) (2024-01-08)
 
