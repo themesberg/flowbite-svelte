@@ -1,6 +1,12 @@
-<script>
+<script lang="ts">
+  interface Props{
+		siteName: string;
+		closeNav: ()=>void;
+		aClass?: string | undefined;
+		spanClass?: string | undefined;
+	}
 	import { twMerge } from 'tailwind-merge';
-	let { siteName, closeNav, aClass = '', spanClass = '' } = $props();
+	let { siteName, closeNav, aClass, spanClass } = $props<Props>();
 
 	let aCls = twMerge('flex items-center space-x-3 rtl:space-x-reverse', aClass);
 	let spanCls = twMerge(

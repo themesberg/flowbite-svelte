@@ -1,4 +1,15 @@
-<script>
+<script lang="ts">
+	interface Props{
+    children?: any;
+		toggleNav: ()=>void;
+		closeNav: ()=>void;
+		navStatus: boolean;
+		brand?: any;
+		navClass?: string | undefined;
+		divClass?: string | undefined;
+		btnClass?: string | undefined;
+		divChildrenClass?: string | undefined;
+	}
 	import { twMerge } from 'tailwind-merge';
 	import { clickOutside } from './navHelper.svelte';
 
@@ -8,11 +19,11 @@
 		closeNav,
 		navStatus,
 		brand,
-		navClass = '',
-		divClass = '',
-		btnClass = '',
-		divChildrenClass = ''
-	} = $props();
+		navClass,
+		divClass,
+		btnClass,
+		divChildrenClass
+	} = $props<Props>();
 
 	$inspect('Navbar navStatus', navStatus);
 	let navDisplay = $derived(navStatus ? 'block' : 'hidden');
