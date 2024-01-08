@@ -1,38 +1,59 @@
-# create-svelte
+# Svelte 5 UI Lib
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Personal UI library for Svelte 5
 
-## Creating a project
+## Installation
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+```
+pnpm i -D svelte-5-ui-lib
 ```
 
-## Developing
+## Nav
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+```
+<script>
 
-```bash
-npm run dev
+import { Navbar, NavLi, NavBrand, NavUl, navHelper } from 'svelte-5-ui-lib';
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+let nav = navHelper();
+
+let navStatus = $state();
+let toggleNav = nav.toggleNav;
+let closeNav = nav.closeNav;
+
+$effect(() => {
+  // this can be done adding nav.navStatus directly to DOM element
+  // without using effect
+  navStatus = nav.navStatus;
+});
+</script>
+
+<Navbar {toggleNav} {closeNav} {navStatus}>
+{#snippet brand()}
+  <NavBrand siteName="Svelte 5" {closeNav} />
+{/snippet}
+<NavUl>
+  <NavLi href="/" {closeNav}>Home</NavLi>
+  <NavLi href="/about" {closeNav}>About</NavLi>
+  <NavLi href="/contact" {closeNav}>Contact</NavLi>
+</NavUl>
+</Navbar>
 ```
 
-## Building
+## Footer
 
-To create a production version of your app:
-
-```bash
-npm run build
 ```
+<script>
+  import { Footer, FooterBrand, FooterLi, FooterUl } from 'svelte-5-ui-lib'
+</script>
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+<Footer footerClass="shadow-none" footerType="logo">
+  <div class="sm:flex sm:items-center sm:justify-between">
+  <FooterBrand href="/" name="Svelt 5 UI Lib"/>
+  <FooterUl ulClass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+    <FooterLi href="/">Home</FooterLi>
+    <FooterLi href="/about">About</FooterLi>
+  </FooterUl>
+  </div>
+</Footer>
+```

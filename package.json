@@ -1,19 +1,45 @@
 {
-	"name": "svelte-5",
-	"version": "0.0.1",
-	"private": true,
+	"name": "svelte-5-ui-lib",
+	"version": "0.1.0",
+	"description": "A personal UI library for Svelte 5.",
+	"license": "MIT",
+	"main": "dist/index.js",
+	"homepage": "https://github.com/shinokada/svelte-5-ui-lib",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js"
+		}
+	},
+	"engines": {
+		"npm": ">=7.0.0",
+		"node": ">=18.0.0"
+	},
+	"files": [
+		"dist",
+		"!dist/**/*.test.*",
+		"!dist/**/*.spec.*"
+	],
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
+		"package": "svelte-kit sync && svelte-package && publint",
+		"prepublishOnly": "npm run package",
+		"test": "npm run test:integration && npm run test:unit",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"test:integration": "playwright test",
+		"copy:package": "svelte-lib-helpers package",
+		"package:publish": "npm run copy:package && npm run format && standard-version && git push --follow-tags origin main && npm publish"
 	},
 	"devDependencies": {
+		"@playwright/test": "^1.40.1",
 		"@sveltejs/adapter-auto": "^3.1.0",
 		"@sveltejs/kit": "^2.0.6",
+		"@sveltejs/package": "^2.2.5",
 		"@sveltejs/vite-plugin-svelte": "^3.0.1",
 		"@typescript-eslint/eslint-plugin": "^6.18.0",
 		"@typescript-eslint/parser": "^6.18.0",
@@ -26,8 +52,10 @@
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.1.2",
 		"prettier-plugin-tailwindcss": "^0.5.9",
+		"publint": "^0.1.16",
 		"svelte": "5.0.0-next.29",
 		"svelte-check": "^3.6.2",
+		"svelte-lib-helpers": "^0.3.15",
 		"tailwind-merge": "^2.2.0",
 		"tailwindcss": "^3.3.6",
 		"tslib": "^2.6.2",
