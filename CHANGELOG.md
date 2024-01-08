@@ -2,12 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.1.11](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.10...v0.1.11) (2024-01-08)
+### [0.1.12](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.11...v0.1.12) (2024-01-08)
 
+### [0.1.11](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.10...v0.1.11) (2024-01-08)
 
 ### Features
 
-* add dropdown components and page ([0013f22](https://github.com/shinokada/svelte-5-ui-lib/commit/0013f229d490d0930295df1b9427f67a6acc1853))
+- add dropdown components and page ([0013f22](https://github.com/shinokada/svelte-5-ui-lib/commit/0013f229d490d0930295df1b9427f67a6acc1853))
 
 ### [0.1.10](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.9...v0.1.10) (2024-01-08)
 
