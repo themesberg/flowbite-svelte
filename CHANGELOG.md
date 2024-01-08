@@ -2,12 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.1.4](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.3...v0.1.4) (2024-01-08)
+### [0.1.5](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.4...v0.1.5) (2024-01-08)
 
+### [0.1.4](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.3...v0.1.4) (2024-01-08)
 
 ### Bug Fixes
 
-* add types ([e315f88](https://github.com/shinokada/svelte-5-ui-lib/commit/e315f88c20d596dfbbd01d2d49cb4a71471ec512))
+- add types ([e315f88](https://github.com/shinokada/svelte-5-ui-lib/commit/e315f88c20d596dfbbd01d2d49cb4a71471ec512))
 
 ### [0.1.3](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.2...v0.1.3) (2024-01-08)
 
