@@ -1,12 +1,13 @@
 <script lang="ts">
 	interface Props {
+		children?: any;
 		siteName: string;
 		closeNav: () => void;
 		aClass?: string | undefined;
 		spanClass?: string | undefined;
 	}
 	import { twMerge } from 'tailwind-merge';
-	let { siteName, closeNav, aClass, spanClass } = $props<Props>();
+	let { children, siteName, closeNav, aClass, spanClass } = $props<Props>();
 
 	let aCls = twMerge('flex items-center space-x-3 rtl:space-x-reverse', aClass);
 	let spanCls = twMerge(
@@ -16,5 +17,8 @@
 </script>
 
 <a href="/" onclick={closeNav} class={aCls}>
+  {#if children}
+    {@render children()}
+	{/if}
 	<span class={spanCls}>{siteName}</span>
 </a>
