@@ -1,6 +1,7 @@
 <script lang="ts">
   import { twMerge } from 'tailwind-merge';
   interface Props{
+    children?: any;
     aClass?:string| undefined;
     spanClass?: string| undefined;
     imgClass?: string| undefined;
@@ -10,7 +11,7 @@
     name?: string| undefined;
     target?: string | undefined;
   }
-  let {aClass, spanClass, imgClass, href, src, alt, name, target, ...attributes} = $props<Props>();
+  let {children, aClass, spanClass, imgClass, href, src, alt, name, target, ...attributes} = $props<Props>();
 
   let aCls: string = twMerge('flex items-center', aClass);
   let spanCls: string = twMerge('self-center text-2xl font-semibold whitespace-nowrap dark:text-white', spanClass);
@@ -19,9 +20,15 @@
 
 {#if href}
   <a {...attributes} {href} {target} class={aCls}>
+    {#if src}
     <img {src} class={imgCls} {alt} />
+    {/if}
+    {#if name}
     <span class={spanCls}>{name}</span>
-    <slot />
+    {/if}
+    {#if children}
+    {@render children()}
+    {/if}
   </a>
 {:else}
   <img {src} class={imgCls} {alt} />

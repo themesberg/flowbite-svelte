@@ -1,6 +1,6 @@
 <script lang="ts">
   interface Props{
-    children?: HTMLElement; 
+    children?: any; 
     liClass?: string | undefined;
     aClass?: string | undefined;
     href?: string | undefined;

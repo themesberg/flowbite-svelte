@@ -1,32 +1,14 @@
 <script>
 	import '../app.pcss';
 	let { children } = $props();
-	import { Navbar, NavLi, NavBrand, NavUl, navHelper } from '$lib';
-
-	let nav = navHelper();
-
-	let navStatus = $state();
-	let toggleNav = nav.toggleNav;
-	let closeNav = nav.closeNav;
-
-	$effect(() => {
-		// this can be done adding nav.navStatus directly to DOM element
-		// without using effect
-		navStatus = nav.navStatus;
-	});
+	import Nav from './components/Nav.svelte'
+  import Footer from './components/Footer.svelte'
 </script>
 
-<Navbar {toggleNav} {closeNav} {navStatus}>
-	{#snippet brand()}
-		<NavBrand siteName="Svelte 5" {closeNav} />
-	{/snippet}
-	<NavUl>
-		<NavLi href="/" {closeNav}>Home</NavLi>
-		<NavLi href="/about" {closeNav}>About</NavLi>
-		<NavLi href="/contact" {closeNav}>Contact</NavLi>
-	</NavUl>
-</Navbar>
+<Nav />
 
 <div class="container">
 	{@render children()}
 </div>
+
+<Footer />
