@@ -10,7 +10,6 @@
 
 	let { children, header, isOpen, footer, footerClass } = $props<Props>();
 
-
 	let hidden = $state();
 
 	$effect(() => {
@@ -32,7 +31,7 @@
 		{@render children()}
 	</ul>
 	{#if footer}
-		<div class={twMerge('py-1 overflow-hidden rounded-b-lg', footerClass)}>
+		<div class={twMerge('overflow-hidden rounded-b-lg py-1', footerClass)}>
 			{@render footer()}
 		</div>
 	{/if}

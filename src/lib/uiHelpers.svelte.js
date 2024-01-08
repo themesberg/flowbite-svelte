@@ -20,7 +20,6 @@ export function uiHelpers() {
 	};
 }
 
-
 export function clickOutside(element, callbackFunction) {
 	function onClick(event) {
 		if (!element.contains(event.target)) {

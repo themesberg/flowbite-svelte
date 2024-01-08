@@ -11,6 +11,6 @@ export { default as FooterCopyright } from './footer/FooterCopyright.svelte';
 export { default as FooterLi } from './footer/FooterLi.svelte';
 export { default as FooterUl } from './footer/FooterUl.svelte';
 
-export { default as Dropdown } from './dropdown/Dropdown.svelte'
-export { default as DropdownDivider } from './dropdown/DropdownDivider.svelte'
-export { default as DropdownItem } from './dropdown/DropdownItem.svelte'
+export { default as Dropdown } from './dropdown/Dropdown.svelte';
+export { default as DropdownDivider } from './dropdown/DropdownDivider.svelte';
+export { default as DropdownItem } from './dropdown/DropdownItem.svelte';

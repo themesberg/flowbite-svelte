@@ -29,5 +29,3 @@
 		<NavLi href="/footer" {closeNav}>Footer</NavLi>
 	</NavUl>
 </Navbar>
-
-
