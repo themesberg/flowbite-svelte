@@ -2,12 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.1.3](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.2...v0.1.3) (2024-01-08)
+### [0.1.4](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.3...v0.1.4) (2024-01-08)
 
 
 ### Bug Fixes
 
-* update peerDependencies in package.json ([951b391](https://github.com/shinokada/svelte-5-ui-lib/commit/951b3910b84f7a21946f8e760814dedc1d6b90af))
+* add types ([e315f88](https://github.com/shinokada/svelte-5-ui-lib/commit/e315f88c20d596dfbbd01d2d49cb4a71471ec512))
+
+### [0.1.3](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.2...v0.1.3) (2024-01-08)
+
+### Bug Fixes
+
+- update peerDependencies in package.json ([951b391](https://github.com/shinokada/svelte-5-ui-lib/commit/951b3910b84f7a21946f8e760814dedc1d6b90af))
 
 ### [0.1.2](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.1...v0.1.2) (2024-01-08)
 
