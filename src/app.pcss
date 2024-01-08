@@ -1,30 +1,27 @@
-/* Write your global styles here, in PostCSS syntax */
+/* @import "./style/nav.postcss"; */
 @tailwind base;
 
 @layer base {
-  h1 {
-    @apply text-3xl;
-  }
-  h2 {
-    @apply text-2xl;
-  }
-  h3 {
-	@apply text-xl;
-  }
+	h1 {
+		@apply text-3xl;
+	}
+	h2 {
+		@apply text-2xl;
+	}
+	h3 {
+		@apply text-xl;
+	}
 }
 
 @tailwind components;
 
 @layer components {
-    /* nav classes */
-
-
 	/* other classes */
-    
+
 	.container {
 		@apply m-4;
 	}
-	
 }
 
 @tailwind utilities;
+

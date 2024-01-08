@@ -53,6 +53,9 @@ devDependencies:
   svelte-check:
     specifier: ^3.6.2
     version: 3.6.2(postcss-load-config@5.0.2)(postcss@8.4.33)(svelte@5.0.0-next.29)
+  tailwind-merge:
+    specifier: ^2.2.0
+    version: 2.2.0
   tailwindcss:
     specifier: ^3.3.6
     version: 3.4.1
@@ -84,6 +87,13 @@ packages:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.20
+    dev: true
+
+  /@babel/runtime@7.23.7:
+    resolution: {integrity: sha512-w06OXVOFso7LcbzMiDGt+3X7Rh7Ho8MmgPoWU3rarH+8upf+wSU/grlGbWzQyr3DkdN6ZeuMFjpdwW0Q+HxobA==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: 0.14.1
     dev: true
 
   /@esbuild/aix-ppc64@0.19.11:
@@ -2025,6 +2035,10 @@ packages:
       picomatch: 2.3.1
     dev: true
 
+  /regenerator-runtime@0.14.1:
+    resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==}
+    dev: true
+
   /resolve-from@4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
     engines: {node: '>=4'}
@@ -2349,6 +2363,12 @@ packages:
       locate-character: 3.0.0
       magic-string: 0.30.5
       zimmerframe: 1.1.0
+    dev: true
+
+  /tailwind-merge@2.2.0:
+    resolution: {integrity: sha512-SqqhhaL0T06SW59+JVNfAqKdqLs0497esifRrZ7jOaefP3o64fdFNDMrAQWZFMxTLJPiHVjRLUywT8uFz1xNWQ==}
+    dependencies:
+      '@babel/runtime': 7.23.7
     dev: true
 
   /tailwindcss@3.4.1:
