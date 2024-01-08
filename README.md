@@ -106,6 +106,7 @@ const config = {
 
 module.exports = config;
 ```
+
 ## Nav
 
 ```

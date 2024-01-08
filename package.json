@@ -67,5 +67,10 @@
 		"tailwindcss": "^3.3.6",
 		"tailwind-merge": "^2.2.0"
 	},
+	"keywords": [
+		"svelte 5",
+		"nav",
+		"footer"
+	],
 	"type": "module"
 }
