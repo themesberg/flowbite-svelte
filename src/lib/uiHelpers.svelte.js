@@ -1,25 +1,25 @@
-export function navHelper() {
-	let navOpen = $state(false);
+export function uiHelpers() {
+	let isOpen = $state(false);
 
-	function toggleNav() {
+	function toggle() {
 		console.log('clicked toggle');
-		navOpen = !navOpen;
-		// console.log('navHelper navOpen', navOpen)
+		isOpen = !isOpen;
 	}
 
-	function closeNav() {
-		navOpen = false;
+	function close() {
+		isOpen = false;
 	}
 
 	return {
-		get navStatus() {
-			return navOpen;
+		get isOpen() {
+			return isOpen;
 		},
 
-		toggleNav,
-		closeNav
+		toggle,
+		close
 	};
 }
+
 
 export function clickOutside(element, callbackFunction) {
 	function onClick(event) {

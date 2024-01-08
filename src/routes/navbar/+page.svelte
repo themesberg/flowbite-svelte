@@ -14,6 +14,8 @@
 	});
 </script>
 
+<h1>Navbar</h1>
+
 <Navbar {toggleNav} {closeNav} {navStatus} breakPoint="xl">
 	{#snippet brand()}
 		<NavBrand siteName="Svelte 5" {closeNav}>
@@ -25,6 +27,7 @@
 		<NavLi href="/" {closeNav}>Home</NavLi>
 		<NavLi href="/navbar" {closeNav}>Navbar</NavLi>
 		<NavLi href="/footer" {closeNav}>Footer</NavLi>
-		<NavLi href="/dropdown" {closeNav}>Dropdown</NavLi>
 	</NavUl>
 </Navbar>
+
+

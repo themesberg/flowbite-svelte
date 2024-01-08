@@ -13,7 +13,7 @@
 	}
 	import { setContext } from 'svelte';
 	import { twMerge } from 'tailwind-merge';
-	import { clickOutside } from './navHelper.svelte';
+	import { clickOutside } from '../uiHelpers.svelte';
 
 	let {
 		children,
