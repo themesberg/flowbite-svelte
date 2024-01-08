@@ -1,6 +1,6 @@
 {
 	"name": "svelte-5-ui-lib",
-	"version": "0.1.8",
+	"version": "0.1.9",
 	"description": "A personal UI library for Svelte 5.",
 	"license": "MIT",
 	"main": "dist/index.js",
@@ -33,7 +33,7 @@
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
 		"copy:package": "svelte-lib-helpers package",
-		"package:publish": "npm run copy:package && npm run format && standard-version && git push --follow-tags origin main && npm publish"
+		"package:publish": "npm run package && npm run copy:package && npm run format && standard-version && git push --follow-tags origin main && npm publish"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.40.1",
