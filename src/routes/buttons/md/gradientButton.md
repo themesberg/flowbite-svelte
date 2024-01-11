@@ -1,5 +1,5 @@
 <script>
-  import { GradientButton } from 'flowbite-svelte';
+  import { GradientButton } from 'svelte-5-ui-lib';
 </script>
 
 <GradientButton color="blue">Blue</GradientButton>

@@ -1,5 +1,5 @@
 <script>
-	import { Dropdown, DropdownDivider, DropdownItem, uiHelpers } from '$lib';
+	import { Dropdown, DropdownDivider, DropdownItem, uiHelpers } from 'svelte-5-ui-lib';
 
 	let dropdown = uiHelpers();
 

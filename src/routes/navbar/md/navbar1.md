@@ -1,8 +1,5 @@
 <script>
-	import { Navbar, NavLi, NavBrand, NavUl, uiHelpers } from '$lib';
-	import HighlightCompo from '../components/HighlightCompo.svelte';
-
-	import navbar1 from './md/navbar1.md?raw'
+	import { Navbar, NavLi, NavBrand, NavUl, uiHelpers } from 'svelte-5-ui-lib';
 	let nav = uiHelpers();
 
 	let navStatus = $state(false);
@@ -31,5 +28,3 @@
 		<NavLi href="/footer" {closeNav}>Footer</NavLi>
 	</NavUl>
 </Navbar>
-
-<HighlightCompo code={navbar1} />

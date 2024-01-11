@@ -2,7 +2,7 @@
   import {Highlight} from "svelte-highlight";
   import typescript from "svelte-highlight/languages/typescript";
   import atomonedark from "svelte-highlight/styles/atom-one-dark";
-  let { code } = $props();
+  let { code, language = typescript} = $props();
   // const code = "const add = (a: number, b: number) => a + b;";
 </script>
 
@@ -11,5 +11,5 @@
 </svelte:head>
 
 <div class='my-4'>
-<Highlight language={typescript} {code} />
+<Highlight {language} {code} />
 </div>

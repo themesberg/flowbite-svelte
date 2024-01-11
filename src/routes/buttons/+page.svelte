@@ -1,8 +1,8 @@
 <script>
-  import { Button, GradientButton } from '$lib'
+  import { Button } from '$lib'
   import HighlightCompo from '../components/HighlightCompo.svelte';
-  import button1 from '../markdowns/buttons/button1.md?raw'
-  import button2 from '../markdowns/buttons/button2.md?raw'
+  import button1 from './md/button1.md?raw'
+  import button2 from './md/button2.md?raw'
   // import gradientButton from '../markdowns/buttons/gradientButton.md?raw'
 </script>
 

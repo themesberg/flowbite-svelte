@@ -126,14 +126,14 @@
 
 {#if href}
   <a {href} {...attributes} class={buttonClass} role="button" on:click on:change on:keydown on:keyup on:touchstart|passive on:touchend on:touchcancel on:mouseenter on:mouseleave>
-    1{@render children()}
+    {@render children()}
   </a>
 {:else if tag === 'button'}
   <button {type} {...attributes} class={buttonClass} on:click on:change on:keydown on:keyup on:touchstart|passive on:touchend on:touchcancel on:mouseenter on:mouseleave>
-    2{@render children()}
+    {@render children()}
   </button>
 {:else}
   <svelte:element this={tag} {...attributes} class={buttonClass}>
-    3{@render children()}
+    {@render children()}
   </svelte:element>
 {/if}
