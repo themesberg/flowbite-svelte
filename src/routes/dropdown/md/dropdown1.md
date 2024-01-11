@@ -26,35 +26,36 @@
 		fill="none"
 		viewBox="0 0 10 6"
 	>
-		<path
+<path
 			stroke="currentColor"
 			stroke-linecap="round"
 			stroke-linejoin="round"
 			stroke-width="2"
 			d="m1 1 4 4 4-4"
 		/>
-	</svg>
+</svg>
 </button>
 
 <Dropdown {isOpen}>
-	{#snippet header()}
-		<div>Bonnie Green</div>
-		<div class="truncate font-medium">name@flowbite.com</div>
-	{/snippet}
-	{#snippet children()}
-		<DropdownItem href="/">Dashboard</DropdownItem>
-		<DropdownItem href="/nav">Navbar</DropdownItem>
-		<DropdownItem href="/footer">Footer</DropdownItem>
-		<DropdownDivider />
-		<DropdownItem href="/dropdown">Dropdown</DropdownItem>
-	{/snippet}
-	{#snippet footer()}
-		<div class="py-2">
-			<a
+{#snippet header()}
+
+<div>Bonnie Green</div>
+<div class="truncate font-medium">name@flowbite.com</div>
+{/snippet}
+{#snippet children()}
+<DropdownItem href="/">Dashboard</DropdownItem>
+<DropdownItem href="/nav">Navbar</DropdownItem>
+<DropdownItem href="/footer">Footer</DropdownItem>
+<DropdownDivider />
+<DropdownItem href="/dropdown">Dropdown</DropdownItem>
+{/snippet}
+{#snippet footer()}
+<div class="py-2">
+<a
 				href="/"
 				class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
 				>Sign out</a
 			>
-		</div>
-	{/snippet}
+</div>
+{/snippet}
 </Dropdown>

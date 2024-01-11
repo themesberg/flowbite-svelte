@@ -16,15 +16,16 @@
 <h1>Navbar</h1>
 
 <Navbar {toggleNav} {closeNav} {navStatus} breakPoint="xl">
-	{#snippet brand()}
-		<NavBrand siteName="Svelte 5" {closeNav}>
-			<img width="30" src="images/svelte-icon.png" alt="svelte icon" />
-		</NavBrand>
-	{/snippet}
+{#snippet brand()}
+<NavBrand siteName="Svelte 5" {closeNav}>
+<img width="30" src="images/svelte-icon.png" alt="svelte icon" />
+</NavBrand>
+{/snippet}
 
-	<NavUl>
-		<NavLi href="/" {closeNav}>Home</NavLi>
-		<NavLi href="/navbar" {closeNav}>Navbar</NavLi>
-		<NavLi href="/footer" {closeNav}>Footer</NavLi>
-	</NavUl>
+    <NavUl>
+    	<NavLi href="/" {closeNav}>Home</NavLi>
+    	<NavLi href="/navbar" {closeNav}>Navbar</NavLi>
+    	<NavLi href="/footer" {closeNav}>Footer</NavLi>
+    </NavUl>
+
 </Navbar>

@@ -11,11 +11,11 @@
 	let { children, header, isOpen, footer, footerClass } = $props<Props>();
 
 	let hidden = $state('hidden');
-  
+
 	$effect(() => {
 		hidden = isOpen ? '' : 'hidden';
 	});
-//   $inspect('Dropdown isOpen: ', isOpen, 'hidden: ', hidden)
+	//   $inspect('Dropdown isOpen: ', isOpen, 'hidden: ', hidden)
 </script>
 
 <!-- Dropdown menu -->

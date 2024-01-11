@@ -2,7 +2,7 @@
 	import { Navbar, NavLi, NavBrand, NavUl, uiHelpers } from '$lib';
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 
-	import navbar1 from './md/navbar1.md?raw'
+	import navbar1 from './md/navbar1.md?raw';
 	let nav = uiHelpers();
 
 	let navStatus = $state(false);

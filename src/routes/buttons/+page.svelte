@@ -1,9 +1,9 @@
 <script>
-  import { Button } from '$lib'
-  import HighlightCompo from '../components/HighlightCompo.svelte';
-  import button1 from './md/button1.md?raw'
-  import button2 from './md/button2.md?raw'
-  // import gradientButton from '../markdowns/buttons/gradientButton.md?raw'
+	import { Button } from '$lib';
+	import HighlightCompo from '../components/HighlightCompo.svelte';
+	import button1 from './md/button1.md?raw';
+	import button2 from './md/button2.md?raw';
+	// import gradientButton from '../markdowns/buttons/gradientButton.md?raw'
 </script>
 
 <Button>Default</Button>
@@ -29,5 +29,3 @@
 <Button color="purple" pill>Purple</Button>
 
 <HighlightCompo code={button2} />
-
-
