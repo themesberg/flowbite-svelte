@@ -41,7 +41,7 @@
 	let linkCls = twMerge(linkStyle, linkBreak[breakPoint], linkClass);
 	let activeCls = twMerge(activeStyle, activeBreak[breakPoint], activeClass);
 
-	$inspect('NavLi', breakPoint);
+	// $inspect('NavLi', breakPoint);
 </script>
 
 <li>

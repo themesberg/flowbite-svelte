@@ -29,7 +29,7 @@
 	} = $props<Props>();
 
 	setContext('breakPoint', breakPoint);
-	$inspect('Navbar navStatus', navStatus);
+	// $inspect('Navbar navStatus', navStatus);
 	let navDisplay = $derived(navStatus ? 'block' : 'hidden');
 
 	let navCls = twMerge('border-gray-200 bg-transparent dark:bg-gray-900', navClass);
@@ -55,7 +55,7 @@
 		'2xl': '2xl:block 2xl:w-auto'
 	};
 	let divChildrenCls = twMerge('w-full', blockBreak[breakPoint], divChildrenClass);
-	$inspect('Navbar: ', breakPoint);
+	// $inspect('Navbar: ', breakPoint);
 </script>
 
 <nav class={navCls} use:clickOutside={closeNav}>

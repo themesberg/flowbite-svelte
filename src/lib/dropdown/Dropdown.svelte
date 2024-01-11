@@ -15,7 +15,7 @@
 	$effect(() => {
 		hidden = isOpen ? '' : 'hidden';
 	});
-  $inspect('Dropdown isOpen: ', isOpen, 'hidden: ', hidden)
+//   $inspect('Dropdown isOpen: ', isOpen, 'hidden: ', hidden)
 </script>
 
 <!-- Dropdown menu -->

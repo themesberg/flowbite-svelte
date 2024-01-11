@@ -16,7 +16,7 @@
 		'2xl': '2xl:mt-0 2xl:flex-row 2xl:space-x-8 2xl:border-0 2xl:p-0 2xl:dark:bg-gray-900'
 	};
 
-	$inspect('break', ulBreak[breakPoint]);
+	// $inspect('break', ulBreak[breakPoint]);
 
 	let ulCls = twMerge(
 		'mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 bg-transparent p-4 font-medium dark:border-gray-700 dark:bg-gray-800 rtl:space-x-reverse',
@@ -24,7 +24,7 @@
 		ulClass
 	);
 
-	$inspect('NavUl', breakPoint);
+	// $inspect('NavUl', breakPoint);
 </script>
 
 <ul class={ulCls}>
