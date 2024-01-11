@@ -33,7 +33,7 @@
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
 		"copy:package": "svelte-lib-helpers package",
-		"package:publish": "npm run package && npm run copy:package && npm run format && standard-version && git push --follow-tags origin main && npm publish"
+		"package:publish": "standard-version && npm run package && npm run copy:package && npm run format && git push --follow-tags origin main && npm publish"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.40.1",

@@ -1,1 +1,1 @@
-<h1>Svelte 5</h1>
+<h1>Svelte 5 UI Lib</h1>
