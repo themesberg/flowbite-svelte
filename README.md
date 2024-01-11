@@ -112,9 +112,9 @@ module.exports = config;
 ```
 <script>
 
-import { Navbar, NavLi, NavBrand, NavUl, navHelper } from 'svelte-5-ui-lib';
+import { Navbar, NavLi, NavBrand, NavUl, uiHelper } from 'svelte-5-ui-lib';
 
-let nav = navHelper();
+let nav = uiHelper();
 
 let navStatus = $state();
 let toggleNav = nav.toggleNav;

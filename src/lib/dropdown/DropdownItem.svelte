@@ -7,13 +7,13 @@
 		href: string | undefined;
 	}
 
-	let { aClass, children, href } = $props<Props>();
+	let { aClass, children, href, ...attributes } = $props<Props>();
 	const aCls = 'block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white';
 </script>
 
 <li>
 	{#if href}
-		<a {href} class={twMerge(aCls, aClass)}>
+		<a {href} class={twMerge(aCls, aClass)} {...attributes}>
 			{@render children()}
 		</a>
 	{/if}

@@ -8,7 +8,7 @@
 	}
 	import { twMerge } from 'tailwind-merge';
 
-	let { children, header, isOpen, footer, footerClass } = $props<Props>();
+	let { children, header, isOpen, footer, footerClass, ...attributes } = $props<Props>();
 
 	let hidden = $state('hidden');
 
@@ -20,7 +20,7 @@
 
 <!-- Dropdown menu -->
 <div
-	id="dropdown"
+	{...attributes}
 	class="z-10 {hidden} w-44 divide-y divide-gray-100 rounded-lg bg-white shadow dark:bg-gray-700"
 >
 	{#if header}

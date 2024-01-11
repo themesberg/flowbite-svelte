@@ -12,7 +12,7 @@
 		// without using effect
 		isOpen = dropdown.isOpen;
 	});
-	$inspect('dropdown: ', isOpen);
+	//$inspect('dropdown: ', isOpen);
 </script>
 
 <button

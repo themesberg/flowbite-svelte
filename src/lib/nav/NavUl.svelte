@@ -5,7 +5,7 @@
 	}
 	import { getContext } from 'svelte';
 	import { twMerge } from 'tailwind-merge';
-	let { children, ulClass } = $props<Props>();
+	let { children, ulClass, ...attributes } = $props<Props>();
 	let breakPoint: 'md' | 'lg' | 'xl' | '2xl';
 
 	breakPoint = getContext('breakPoint');
@@ -27,6 +27,6 @@
 	// $inspect('NavUl', breakPoint);
 </script>
 
-<ul class={ulCls}>
+<ul class={ulCls} {...attributes}>
 	{@render children()}
 </ul>

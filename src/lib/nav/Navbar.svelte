@@ -25,7 +25,8 @@
 		navClass,
 		divClass,
 		btnClass,
-		divChildrenClass
+		divChildrenClass,
+		...attributes
 	} = $props<Props>();
 
 	setContext('breakPoint', breakPoint);
@@ -58,7 +59,7 @@
 	// $inspect('Navbar: ', breakPoint);
 </script>
 
-<nav class={navCls} use:clickOutside={closeNav}>
+<nav class={navCls} use:clickOutside={closeNav} {...attributes}>
 	<div class={divCls}>
 		{#if brand}
 			{@render brand()}

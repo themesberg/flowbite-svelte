@@ -9,7 +9,7 @@
 	import { getContext } from 'svelte';
 	import { twMerge } from 'tailwind-merge';
 	import { page } from '$app/stores';
-	let { closeNav, href, children, linkClass, activeClass } = $props<Props>();
+	let { closeNav, href, children, linkClass, activeClass, ...attributes } = $props<Props>();
 	let breakPoint: 'md' | 'lg' | 'xl' | '2xl';
 
 	breakPoint = getContext('breakPoint');
@@ -48,6 +48,7 @@
 	<a
 		{href}
 		onclick={closeNav}
+		{...attributes}
 		aria-current={currentUrl === href}
 		class={currentUrl === href ? activeCls : linkCls}
 	>
