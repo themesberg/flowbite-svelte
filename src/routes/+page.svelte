@@ -1,7 +1,14 @@
+<script>
+	import HighlightCompo from './components/HighlightCompo.svelte';
+
+	import installation from './md/installation.md?raw';
+	
+</script>
+
 <h1>Svelte 5 UI Lib: Work in progress</h1>
 
 <p>
-    Welcome to Svelte 5 UI Lib - an experimental UI library project crafted for personal use with Svelte 5. The design is based on Flowbite. While you're welcome to utilize it, please note that it was designed with a limited set of components, and I regret that I am unable to provide any support. However, your suggestions are always welcome!
+    Welcome to Svelte 5 UI Lib - an experimental UI library project crafted for personal use with Svelte 5. The design is based on Flowbite. While you're welcome to utilize it, please note that there are a limited set of components, and I regret that I am unable to provide any support. However, your suggestions are always welcome!
 </p>
 
 <h2>Dependencies</h2>
@@ -18,3 +25,7 @@
     <li>Flowbite</li>
     <li>Flowbite-Svelte</li>
 </ul>
+
+<h2>Installation</h2>
+
+<HighlightCompo code={installation} />
