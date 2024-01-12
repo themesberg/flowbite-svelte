@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.22](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.21...v0.1.22) (2024-01-12)
+
+
+### Features
+
+* add gen:exports to package.json ([7dc8667](https://github.com/shinokada/svelte-5-ui-lib/commit/7dc866780a998c961881daa10a905ff7f79bd2f0))
+* add skeleton ([493e67d](https://github.com/shinokada/svelte-5-ui-lib/commit/493e67d5ac6bb6e95f610eea0c7a4350e2ac8d66))
+
 ### [0.1.21](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.20...v0.1.21) (2024-01-12)
 
 ### [0.1.20](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.19...v0.1.20) (2024-01-12)
