@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.17](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.16...v0.1.17) (2024-01-12)
+
+
+### Features
+
+* add installation to home ([6709385](https://github.com/shinokada/svelte-5-ui-lib/commit/6709385007fd721c43487c4f4732f0a661883f5c))
+* add SidebarDropdownWrapper and doc page ([1496b6f](https://github.com/shinokada/svelte-5-ui-lib/commit/1496b6f03b7c5d32eecbcd3daf998423ac8702e8))
+* add tests ([f3cff31](https://github.com/shinokada/svelte-5-ui-lib/commit/f3cff316159c1e55973c6a5b541561d099152c06))
+* adding Sidebar compos ([7b6b443](https://github.com/shinokada/svelte-5-ui-lib/commit/7b6b443e324ef0b0cd5e0bc97a400ed6ad05f08b))
+
 ### [0.1.16](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.15...v0.1.16) (2024-01-11)
 
 
