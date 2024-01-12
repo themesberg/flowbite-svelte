@@ -4,6 +4,8 @@
     let spanClass = 'flex-1 ms-3 whitespace-nowrap';
 </script>
 
+<h1>Sidebar</h1>
+
 <Sidebar>
     <SidebarGroup>
     <SidebarItem label="Dashboard">

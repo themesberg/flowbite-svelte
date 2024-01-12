@@ -6,6 +6,8 @@
 	// import gradientButton from '../markdowns/buttons/gradientButton.md?raw'
 </script>
 
+<h1>Buttons</h1>
+
 <Button>Default</Button>
 <Button color="alternative">Alternative</Button>
 <Button color="dark">Dark</Button>
