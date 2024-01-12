@@ -6,7 +6,7 @@
     ["images", "HTMLImgAttributes[]", ""],
     ["index", "number", "0"],
     ["slideDuration", "number", "1000"],
-    ["transition", "TransitionFunc | null", ""],
+    ["transition", "TransitionFunc | null", "null"],
     ["duration", "number", "0"],
     ["ariaLabel", "string", "'Draggable Carousel'"],
     ["imgClass", "string", "''"]

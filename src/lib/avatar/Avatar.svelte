@@ -57,5 +57,5 @@
 @prop export let stacked: boolean = false;
 @prop export let dot: object | undefined = undefined;
 @prop export let alt: string = '';
-@prop export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
+@prop export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none' = 'md';
 -->

@@ -34,6 +34,5 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let color: ToolbarColorType = 'dark';
 @prop export let embedded: boolean = false;
 -->

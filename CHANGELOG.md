@@ -4,12 +4,11 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.44.21](https://github.com/themesberg/flowbite-svelte/compare/v0.44.20...v0.44.21) (2023-12-22)
 
-
 ### Bug Fixes
 
-* [#1157](https://github.com/themesberg/flowbite-svelte/issues/1157) ([#1176](https://github.com/themesberg/flowbite-svelte/issues/1176)) ([a15a361](https://github.com/themesberg/flowbite-svelte/commit/a15a36173b644b7549c72c57d738df3e5af97bbc))
-* issue1178 ([#1179](https://github.com/themesberg/flowbite-svelte/issues/1179)) ([12281fd](https://github.com/themesberg/flowbite-svelte/commit/12281fdebe6428f2159b28a1ba5379ac4bbb2ce0))
-* modal outside click only on mouse down ([#1160](https://github.com/themesberg/flowbite-svelte/issues/1160)) ([96e4d4b](https://github.com/themesberg/flowbite-svelte/commit/96e4d4b9681db725a0208e1aa786cc330bfa9498))
+- [#1157](https://github.com/themesberg/flowbite-svelte/issues/1157) ([#1176](https://github.com/themesberg/flowbite-svelte/issues/1176)) ([a15a361](https://github.com/themesberg/flowbite-svelte/commit/a15a36173b644b7549c72c57d738df3e5af97bbc))
+- issue1178 ([#1179](https://github.com/themesberg/flowbite-svelte/issues/1179)) ([12281fd](https://github.com/themesberg/flowbite-svelte/commit/12281fdebe6428f2159b28a1ba5379ac4bbb2ce0))
+- modal outside click only on mouse down ([#1160](https://github.com/themesberg/flowbite-svelte/issues/1160)) ([96e4d4b](https://github.com/themesberg/flowbite-svelte/commit/96e4d4b9681db725a0208e1aa786cc330bfa9498))
 
 ### [0.44.20](https://github.com/themesberg/flowbite-svelte/compare/v0.44.19...v0.44.20) (2023-11-24)
 

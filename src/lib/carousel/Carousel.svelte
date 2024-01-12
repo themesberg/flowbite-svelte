@@ -203,7 +203,7 @@
 @prop export let images: HTMLImgAttributes[];
 @prop export let index: number = 0;
 @prop export let slideDuration: number = 1000;
-@prop export let transition: TransitionFunc | null;
+@prop export let transition: TransitionFunc | null = null;
 @prop export let duration: number = 0;
 @prop export let ariaLabel: string = 'Draggable Carousel';
 @prop export let imgClass: string = '';
