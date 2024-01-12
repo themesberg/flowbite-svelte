@@ -120,7 +120,7 @@
     "tailwind-merge": "^2.2.0"
   },
   "engines": {
-    "npm": ">=7.0.0",
+    "pnpm": ">=8.0.0",
     "node": ">=18.0.0"
   },
   "files": [
