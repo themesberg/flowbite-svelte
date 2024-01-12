@@ -1,80 +1,161 @@
 {
-	"name": "svelte-5-ui-lib",
-	"version": "0.1.21",
-	"description": "A personal UI library for Svelte 5.",
-	"license": "MIT",
-	"main": "dist/index.js",
-	"homepage": "https://github.com/shinokada/svelte-5-ui-lib",
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"svelte": "./dist/index.js"
-		}
-	},
-	"engines": {
-		"npm": ">=7.0.0",
-		"node": ">=18.0.0"
-	},
-	"files": [
-		"dist",
-		"!dist/**/*.test.*",
-		"!dist/**/*.spec.*"
-	],
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"package": "svelte-kit sync && svelte-package && publint",
-		"prepublishOnly": "npm run package",
-		"test": "npm run test:integration && npm run test:unit",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write .",
-		"test:integration": "playwright test",
-		"copy:package": "npm run package && svelte-lib-helpers package",
-		"package:standard": "standard-version && npm run copy:package",
-		"package:publish": "git push --follow-tags origin main && npm publish"
-	},
-	"devDependencies": {
-		"@playwright/test": "^1.40.1",
-		"@sveltejs/adapter-auto": "^3.1.0",
-		"@sveltejs/kit": "^2.3.1",
-		"@sveltejs/package": "^2.2.5",
-		"@sveltejs/vite-plugin-svelte": "^3.0.1",
-		"@typescript-eslint/eslint-plugin": "^6.18.1",
-		"@typescript-eslint/parser": "^6.18.1",
-		"autoprefixer": "^10.4.16",
-		"eslint": "^8.56.0",
-		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-svelte": "2.36.0-next.3",
-		"flowbite-svelte-icons": "^0.4.5",
-		"highlight.js": "^11.9.0",
-		"postcss": "^8.4.33",
-		"postcss-load-config": "^5.0.2",
-		"prettier": "^3.1.1",
-		"prettier-plugin-svelte": "^3.1.2",
-		"prettier-plugin-tailwindcss": "^0.5.11",
-		"publint": "^0.1.16",
-		"svelte": "5.0.0-next.33",
-		"svelte-check": "^3.6.2",
-		"svelte-highlight": "^7.4.8",
-		"svelte-lib-helpers": "^0.3.15",
-		"tailwind-merge": "^2.2.0",
-		"tailwindcss": "^3.4.1",
-		"tslib": "^2.6.2",
-		"typescript": "^5.3.3",
-		"vite": "^5.0.11"
-	},
-	"peerDependencies": {
-		"svelte": "^5.0.0",
-		"tailwind-merge": "^2.2.0",
-		"tailwindcss": "^3.3.6"
-	},
-	"keywords": [
-		"svelte 5",
-		"nav",
-		"footer"
-	],
-	"type": "module"
+  "name": "svelte-5-ui-lib",
+  "version": "0.1.20",
+  "description": "A personal UI library for Svelte 5.",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "homepage": "https://github.com/shinokada/svelte-5-ui-lib",
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "!dist/**/*.spec.*"
+  ],
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "package": "svelte-kit sync && svelte-package && publint",
+    "prepublishOnly": "npm run package",
+    "test": "npm run test:integration && npm run test:unit",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "lint": "prettier --check . && eslint .",
+    "format": "prettier --write .",
+    "test:integration": "playwright test",
+    "gen:exports": "svelte-lib-helpers exports",
+    "copy:package": "svelte-lib-helpers package",
+	"lib-helpers": "npm run build && npm run gen:exports && npm run copy:package",
+    "package:publish": "standard-version && npm run package && npm run copy:package && git push --follow-tags origin main && npm publish"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.1",
+    "@sveltejs/adapter-auto": "^3.1.0",
+    "@sveltejs/kit": "^2.3.1",
+    "@sveltejs/package": "^2.2.5",
+    "@sveltejs/vite-plugin-svelte": "^3.0.1",
+    "@typescript-eslint/eslint-plugin": "^6.18.1",
+    "@typescript-eslint/parser": "^6.18.1",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-svelte": "2.36.0-next.3",
+    "flowbite-svelte-icons": "^0.4.5",
+    "highlight.js": "^11.9.0",
+    "postcss": "^8.4.33",
+    "postcss-load-config": "^5.0.2",
+    "prettier": "^3.1.1",
+    "prettier-plugin-svelte": "^3.1.2",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "publint": "^0.1.16",
+    "svelte": "5.0.0-next.33",
+    "svelte-check": "^3.6.2",
+    "svelte-highlight": "^7.4.8",
+    "svelte-lib-helpers": "^0.3.15",
+    "tailwind-merge": "^2.2.0",
+    "tailwindcss": "^3.4.1",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.11"
+  },
+  "peerDependencies": {
+    "svelte": "^5.0.0",
+    "tailwind-merge": "^2.2.0",
+    "tailwindcss": "^3.3.6"
+  },
+  "keywords": [
+    "svelte 5",
+    "nav",
+    "footer"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js"
+    },
+    "./Button.svelte": {
+      "types": "./dist/buttons/Button.svelte.d.ts",
+      "svelte": "./dist/buttons/Button.svelte"
+    },
+    "./GradientButton.svelte": {
+      "types": "./dist/buttons/GradientButton.svelte.d.ts",
+      "svelte": "./dist/buttons/GradientButton.svelte"
+    },
+    "./Card.svelte": {
+      "types": "./dist/cards/Card.svelte.d.ts",
+      "svelte": "./dist/cards/Card.svelte"
+    },
+    "./Dropdown.svelte": {
+      "types": "./dist/dropdown/Dropdown.svelte.d.ts",
+      "svelte": "./dist/dropdown/Dropdown.svelte"
+    },
+    "./DropdownDivider.svelte": {
+      "types": "./dist/dropdown/DropdownDivider.svelte.d.ts",
+      "svelte": "./dist/dropdown/DropdownDivider.svelte"
+    },
+    "./DropdownItem.svelte": {
+      "types": "./dist/dropdown/DropdownItem.svelte.d.ts",
+      "svelte": "./dist/dropdown/DropdownItem.svelte"
+    },
+    "./Footer.svelte": {
+      "types": "./dist/footer/Footer.svelte.d.ts",
+      "svelte": "./dist/footer/Footer.svelte"
+    },
+    "./FooterBrand.svelte": {
+      "types": "./dist/footer/FooterBrand.svelte.d.ts",
+      "svelte": "./dist/footer/FooterBrand.svelte"
+    },
+    "./FooterCopyright.svelte": {
+      "types": "./dist/footer/FooterCopyright.svelte.d.ts",
+      "svelte": "./dist/footer/FooterCopyright.svelte"
+    },
+    "./FooterLi.svelte": {
+      "types": "./dist/footer/FooterLi.svelte.d.ts",
+      "svelte": "./dist/footer/FooterLi.svelte"
+    },
+    "./FooterUl.svelte": {
+      "types": "./dist/footer/FooterUl.svelte.d.ts",
+      "svelte": "./dist/footer/FooterUl.svelte"
+    },
+    "./NavBrand.svelte": {
+      "types": "./dist/nav/NavBrand.svelte.d.ts",
+      "svelte": "./dist/nav/NavBrand.svelte"
+    },
+    "./NavLi.svelte": {
+      "types": "./dist/nav/NavLi.svelte.d.ts",
+      "svelte": "./dist/nav/NavLi.svelte"
+    },
+    "./NavUl.svelte": {
+      "types": "./dist/nav/NavUl.svelte.d.ts",
+      "svelte": "./dist/nav/NavUl.svelte"
+    },
+    "./Navbar.svelte": {
+      "types": "./dist/nav/Navbar.svelte.d.ts",
+      "svelte": "./dist/nav/Navbar.svelte"
+    },
+    "./Sidebar.svelte": {
+      "types": "./dist/sidebar/Sidebar.svelte.d.ts",
+      "svelte": "./dist/sidebar/Sidebar.svelte"
+    },
+    "./SidebarDropdownItem.svelte": {
+      "types": "./dist/sidebar/SidebarDropdownItem.svelte.d.ts",
+      "svelte": "./dist/sidebar/SidebarDropdownItem.svelte"
+    },
+    "./SidebarDropdownWrapper.svelte": {
+      "types": "./dist/sidebar/SidebarDropdownWrapper.svelte.d.ts",
+      "svelte": "./dist/sidebar/SidebarDropdownWrapper.svelte"
+    },
+    "./SidebarGroup.svelte": {
+      "types": "./dist/sidebar/SidebarGroup.svelte.d.ts",
+      "svelte": "./dist/sidebar/SidebarGroup.svelte"
+    },
+    "./SidebarItem.svelte": {
+      "types": "./dist/sidebar/SidebarItem.svelte.d.ts",
+      "svelte": "./dist/sidebar/SidebarItem.svelte"
+    }
+  }
 }
