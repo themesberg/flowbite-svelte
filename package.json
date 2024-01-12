@@ -28,7 +28,7 @@
     "test:integration": "playwright test",
     "gen:exports": "svelte-lib-helpers exports",
     "copy:package": "svelte-lib-helpers package",
-	"lib-helpers": "npm run build && npm run gen:exports && npm run copy:package",
+    "lib-helpers": "npm run build && npm run gen:exports && npm run copy:package",
     "package:publish": "standard-version && npm run package && npm run copy:package && git push --follow-tags origin main && npm publish"
   },
   "devDependencies": {
@@ -156,6 +156,22 @@
     "./SidebarItem.svelte": {
       "types": "./dist/sidebar/SidebarItem.svelte.d.ts",
       "svelte": "./dist/sidebar/SidebarItem.svelte"
+    },
+    "./CardPlaceholder.svelte": {
+      "types": "./dist/skeleton/CardPlaceholder.svelte.d.ts",
+      "svelte": "./dist/skeleton/CardPlaceholder.svelte"
+    },
+    "./ImagePlaceholder.svelte": {
+      "types": "./dist/skeleton/ImagePlaceholder.svelte.d.ts",
+      "svelte": "./dist/skeleton/ImagePlaceholder.svelte"
+    },
+    "./Skeleton.svelte": {
+      "types": "./dist/skeleton/Skeleton.svelte.d.ts",
+      "svelte": "./dist/skeleton/Skeleton.svelte"
+    },
+    "./VideoPlaceholder.svelte": {
+      "types": "./dist/skeleton/VideoPlaceholder.svelte.d.ts",
+      "svelte": "./dist/skeleton/VideoPlaceholder.svelte"
     }
   }
 }
