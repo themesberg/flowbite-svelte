@@ -44,7 +44,7 @@
 <header class="sticky top-0 z-40 flex-none w-full mx-auto bg-white border-b border-gray-200 dark:border-gray-600 dark:bg-gray-800">
   <Navbar color="default" fluid class="py-1.5 {isHomePage ? 'lg:px-0 max-w-7xl mx-auto' : ''}" let:toggle>
     <span hidden={$page.route.id === '/'}>
-      <NavHamburger onClick={toggleDrawer} class="m-0 me-3 lg:hidden" />
+      <NavHamburger onClick={toggleDrawer} class="m-0 me-3 md:block lg:hidden" />
     </span>
     <NavBrand href="/">
       <img src={logo} class="me-3 h-8" alt="Flowbite Svelte Logo" />
