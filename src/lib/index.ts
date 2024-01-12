@@ -19,3 +19,7 @@ export { default as FooterUl } from './footer/FooterUl.svelte';
 export { default as Dropdown } from './dropdown/Dropdown.svelte';
 export { default as DropdownDivider } from './dropdown/DropdownDivider.svelte';
 export { default as DropdownItem } from './dropdown/DropdownItem.svelte';
+
+export { default as Sidebar } from './sidebar/Sidebar.svelte'
+export { default as SidebarGroup} from './sidebar/SidebarGroup.svelte'
+export { default as SidebarItem} from './sidebar/SidebarItem.svelte'
