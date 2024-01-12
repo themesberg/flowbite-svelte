@@ -1,10 +1,6 @@
 <script>
-	import { Footer, FooterBrand, FooterLi, FooterUl } from '$lib';
-    import HighlightCompo from '../components/HighlightCompo.svelte';
-	import footer1 from './md/footer1.md?raw';
+	import { Footer, FooterBrand, FooterLi, FooterUl } from 'svelte-5-ui-lib';
 </script>
-
-<h1>Footer</h1>
 
 <Footer footerClass="shadow-none" footerType="logo">
 	<div class="sm:flex sm:items-center sm:justify-between">
@@ -17,8 +13,3 @@
 		</FooterUl>
 	</div>
 </Footer>
-
-
-<HighlightCompo code={footer1} />
-
-

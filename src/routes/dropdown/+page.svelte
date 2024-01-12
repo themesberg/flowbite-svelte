@@ -14,6 +14,8 @@
 
 <h1>Dropdown</h1>
 
+<Dropdown />
+
 <HighlightCompo code={dropdown1} />
 
-<Dropdown />
+
