@@ -1,4 +1,3 @@
-
 <Sidebar>
 	<SidebarGroup>
 		<SidebarItem label="Dashboard">

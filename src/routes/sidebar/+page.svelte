@@ -23,8 +23,8 @@
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 
 	import defaultSidebar from './md/default.md?raw';
-    import multiLevel from './md/multiLevel.md?raw'
-    import contentSeparator from './md/contentSeparator.md?raw'
+	import multiLevel from './md/multiLevel.md?raw';
+	import contentSeparator from './md/contentSeparator.md?raw';
 </script>
 
 <h1>Sidebar</h1>
