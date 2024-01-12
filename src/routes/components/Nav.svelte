@@ -16,7 +16,7 @@
 
 <Navbar {toggleNav} {closeNav} {navStatus} breakPoint="xl">
 	{#snippet brand()}
-		<NavBrand siteName="Svelte 5 UI lib" {closeNav}>
+		<NavBrand siteName="Svelte 5 UI lib (Experimental)" {closeNav}>
 			<img width="30" src="images/svelte-icon.png" alt="svelte icon" />
 		</NavBrand>
 	{/snippet}
