@@ -17,5 +17,3 @@
 <Dropdown />
 
 <HighlightCompo code={dropdown1} />
-
-

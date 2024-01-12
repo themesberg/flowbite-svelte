@@ -1,6 +1,6 @@
 <script>
 	import { Footer, FooterBrand, FooterLi, FooterUl } from '$lib';
-    import HighlightCompo from '../components/HighlightCompo.svelte';
+	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import footer1 from './md/footer1.md?raw';
 </script>
 
@@ -18,7 +18,4 @@
 	</div>
 </Footer>
 
-
 <HighlightCompo code={footer1} />
-
-

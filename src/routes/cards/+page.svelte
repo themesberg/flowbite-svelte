@@ -8,7 +8,7 @@
 
 <h1>Cards</h1>
 
-<h2>Default card </h2>
+<h2>Default card</h2>
 
 <Card href="/cards">
 	<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -25,10 +25,15 @@
 <h2>Card with action button</h2>
 
 <Card>
-	<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-	<p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+	<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+		Noteworthy technology acquisitions 2021
+	</h5>
+	<p class="mb-3 font-normal leading-tight text-gray-700 dark:text-gray-400">
+		Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological
+		order.
+	</p>
 	<Button class="w-fit">
-		Read more <ArrowRightOutline class="w-3.5 h-3.5 ms-2 text-white" />
+		Read more <ArrowRightOutline class="ms-2 h-3.5 w-3.5 text-white" />
 	</Button>
 </Card>
 

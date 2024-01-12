@@ -28,5 +28,6 @@
 		<NavLi href="/navbar" {closeNav}>Navbar</NavLi>
 		<NavLi href="/footer" {closeNav}>Footer</NavLi>
 		<NavLi href="/dropdown" {closeNav}>Dropdown</NavLi>
+		<NavLi href="/sidebar" {closeNav}>Sidebar</NavLi>
 	</NavUl>
 </Navbar>

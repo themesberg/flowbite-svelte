@@ -1,25 +1,4 @@
-<script>
-	import {
-		Sidebar,
-		SidebarGroup,
-		SidebarItem,
-		SidebarDropdownWrapper,
-		SidebarDropdownItem
-	} from 'svelte-5-ui-lib';
-	import {
-		ChartPieSolid,
-		GridSolid,
-		MailBoxSolid,
-		UserSolid,
-		ArrowRightToBracketSolid,
-		FileEditSolid,
-		ShoppingCartSolid,
-        FireSolid,
-        BookSolid,
-        WindowRestoreOutline
-	} from 'flowbite-svelte-icons';
-	let spanClass = 'flex-1 ms-3 whitespace-nowrap';
-</script>
+
 <Sidebar>
 	<SidebarGroup>
 		<SidebarItem label="Dashboard" href="/">
@@ -60,6 +39,29 @@
 		<SidebarItem label="Sidebar" href="/sidebar">
 			{#snippet icon()}
 				<UserSolid
+					class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+				/>
+			{/snippet}
+		</SidebarItem>
+	</SidebarGroup>
+	<SidebarGroup border>
+		<SidebarItem label="Upgrade to Pro">
+			{#snippet icon()}
+				<FireSolid
+					class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+				/>
+			{/snippet}
+		</SidebarItem>
+		<SidebarItem label="Documentation">
+			{#snippet icon()}
+				<BookSolid
+					class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+				/>
+			{/snippet}
+		</SidebarItem>
+		<SidebarItem label="Components">
+			{#snippet icon()}
+				<WindowRestoreOutline
 					class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
 				/>
 			{/snippet}

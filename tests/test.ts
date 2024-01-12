@@ -39,5 +39,3 @@ test('sidebar page has expected h1', async ({ page }) => {
 	await page.goto('/sidebar');
 	expect(await page.textContent('h1')).toBe('Sidebar');
 });
-
-

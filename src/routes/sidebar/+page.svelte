@@ -14,15 +14,17 @@
 		ArrowRightToBracketSolid,
 		FileEditSolid,
 		ShoppingCartSolid,
-        FireSolid,
-        BookSolid,
-        WindowRestoreOutline
+		FireSolid,
+		BookSolid,
+		WindowRestoreOutline
 	} from 'flowbite-svelte-icons';
 	let spanClass = 'flex-1 ms-3 whitespace-nowrap';
 
-    import HighlightCompo from '../components/HighlightCompo.svelte';
+	import HighlightCompo from '../components/HighlightCompo.svelte';
 
 	import defaultSidebar from './md/default.md?raw';
+    import multiLevel from './md/multiLevel.md?raw'
+    import contentSeparator from './md/contentSeparator.md?raw'
 </script>
 
 <h1>Sidebar</h1>
@@ -149,8 +151,9 @@
 	</SidebarGroup>
 </Sidebar>
 
-<h2>Content separator </h2>
+<HighlightCompo code={multiLevel} />
 
+<h2>Content separator</h2>
 
 <Sidebar>
 	<SidebarGroup>
@@ -197,21 +200,29 @@
 			{/snippet}
 		</SidebarItem>
 	</SidebarGroup>
-    <SidebarGroup border>
-        <SidebarItem label="Upgrade to Pro">
-        {#snippet icon()}
-            <FireSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
-          {/snippet}
-        </SidebarItem>
-        <SidebarItem label="Documentation">
-        {#snippet icon()}
-            <BookSolid class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
-            {/snippet}
-        </SidebarItem>
-        <SidebarItem label="Components">
-        {#snippet icon()}
-            <WindowRestoreOutline class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
-            {/snippet}
-        </SidebarItem>
-      </SidebarGroup>
+	<SidebarGroup border>
+		<SidebarItem label="Upgrade to Pro">
+			{#snippet icon()}
+				<FireSolid
+					class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+				/>
+			{/snippet}
+		</SidebarItem>
+		<SidebarItem label="Documentation">
+			{#snippet icon()}
+				<BookSolid
+					class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+				/>
+			{/snippet}
+		</SidebarItem>
+		<SidebarItem label="Components">
+			{#snippet icon()}
+				<WindowRestoreOutline
+					class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+				/>
+			{/snippet}
+		</SidebarItem>
+	</SidebarGroup>
 </Sidebar>
+
+<HighlightCompo code={contentSeparator} />
