@@ -4,9 +4,7 @@
       [key: string]: string;
     }
   
-
     interface Props{
-        divClass?: string | undefined;
         size?: keyof Sizes;
         class?: string | undefined;
     }
@@ -19,13 +17,8 @@
       xxl: 'max-w-2xl'
     };
     
-    let { divClass, size = 'sm', class: classname } = $props<Props>();
-    let divCls = twMerge('p-4 rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700', divClass)
-    // export let divClass: string = 'p-4 rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700';
-    // export let size: keyof Sizes = 'sm';
-    let outDivclass = $state(twMerge(sizes[size], divCls, classname))
-
-
+    let { size = 'sm', class: classname } = $props<Props>();
+    let outDivclass = twMerge(sizes[size], 'p-4 rounded border border-gray-200 shadow animate-pulse md:p-6 dark:border-gray-700', classname)
   </script>
   
   <div role="status" class={outDivclass}>

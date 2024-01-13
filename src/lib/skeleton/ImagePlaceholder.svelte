@@ -1,14 +1,13 @@
 <script lang="ts">
     interface Props {
-        divClass?: string | undefined;
         imgHeight?: string | undefined;
         class?: string | undefined;
     }
+
     import { twMerge } from 'tailwind-merge';
 
-    let { divClass, imgHeight = 'h-48', class:classname } = $props<Props>()
-    let divCls: string = twMerge('space-y-8 animate-pulse md:space-y-0 md:space-x-8 rtl:space-x-reverse md:flex md:items-center', divClass, classname);
-    // export let imgHeight: string = '48';
+    let { imgHeight = 'h-48', class:classname } = $props<Props>()
+    let divCls: string = twMerge('space-y-8 animate-pulse md:space-y-0 md:space-x-8 rtl:space-x-reverse md:flex md:items-center', classname);
   </script>
   
   <div role="status" class={divCls}>

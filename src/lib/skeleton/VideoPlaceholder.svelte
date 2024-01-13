@@ -1,10 +1,10 @@
 <script lang="ts">
     import { twMerge } from 'tailwind-merge';
     interface Props {
-      divClass?: string | undefined;
       size?:keyof Sizes;
       class?: string | undefined;
     }
+    
     interface Sizes {
       [key: string]: string;
     }
@@ -18,9 +18,8 @@
     };
   
 
-    let { divClass, size = 'sm', class:classname } = $props<Props>()
-    let divCls: string = twMerge('flex justify-center items-center h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700', divClass);
-    let outDivclass = twMerge(sizes[size], divCls, classname);
+    let { size = 'sm', class:classname } = $props<Props>()
+    let outDivclass = twMerge(sizes[size], 'flex justify-center items-center h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700', classname);
   </script>
   
   <div role="status" class={outDivclass}>

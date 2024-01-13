@@ -6,7 +6,6 @@
     }
   
     interface Props{
-        divClass?: string;
         size?:keyof Sizes;
         class?: string | undefined;
     }
@@ -18,11 +17,8 @@
       xxl: 'max-w-2xl'
     };
   
-
-    let { divClass = 'animate-pulse', size = 'sm', class:classname} = $props<Props>();
-    // export let divClass: string = 'animate-pulse';
-    // export let size: keyof Sizes = 'sm';
-    let outDivclass = $state(twMerge(sizes[size], divClass, classname));
+    let { size = 'sm', class:classname} = $props<Props>();
+    let outDivclass = $state(twMerge(sizes[size], 'animate-pulse', classname));
   </script>
   
   <div role="status" class={outDivclass}>
