@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.23](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.22...v0.1.23) (2024-01-13)
+
+
+### Features
+
+* add all skeleton components ([4ee9e0f](https://github.com/shinokada/svelte-5-ui-lib/commit/4ee9e0f703829add4b5b992a1be012e7ecfcb242))
+* add breadcrumb ([ce7297a](https://github.com/shinokada/svelte-5-ui-lib/commit/ce7297a65758fe3dd8d58e91209f6e270c6601eb))
+
 ### [0.1.22](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.21...v0.1.22) (2024-01-12)
 
 
