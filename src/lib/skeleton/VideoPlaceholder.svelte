@@ -20,7 +20,6 @@
 
     let { divClass, size = 'sm', class:classname } = $props<Props>()
     let divCls: string = twMerge('flex justify-center items-center h-56 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700', divClass);
-    // export let size: keyof Sizes = 'sm';
     let outDivclass = twMerge(sizes[size], divCls, classname);
   </script>
   
