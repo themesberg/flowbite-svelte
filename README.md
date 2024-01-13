@@ -2,6 +2,10 @@
 
 UI library for Svelte 5
 
+- [Demo](https://svelte-5-ui-lib.vercel.app/)
+- [Repo](https://github.com/shinokada/svelte-5-ui-lib)
+
+
 ## Installation
 
 ```
@@ -49,6 +53,7 @@ module.exports = config;
 
 ## Components
 
+- Breadcrumb
 - Button
 - Card
 - Dropdown

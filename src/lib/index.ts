@@ -1,5 +1,8 @@
 export { uiHelpers, clickOutside } from './uiHelpers.svelte';
 
+export { default as Breadcrumb } from './breadcrumb/Breadcrumb.svelte'
+export { default as BreadcrumbItem } from './breadcrumb/BreadcrumbItem.svelte'
+
 export { default as Button } from './buttons/Button.svelte';
 export { default as GradientButton } from './buttons/GradientButton.svelte';
 
