@@ -26,6 +26,7 @@
 		<NavLi href="/breadcrumb" {closeNav}>Breadcrumb</NavLi>
 		<NavLi href="/buttons" {closeNav}>Buttons</NavLi>
 		<NavLi href="/cards" {closeNav}>Cards</NavLi>
+		<NavLi href="/darkmode" {closeNav}>Darkmode</NavLi>
 		<NavLi href="/navbar" {closeNav}>Navbar</NavLi>
 		<NavLi href="/footer" {closeNav}>Footer</NavLi>
 		<NavLi href="/dropdown" {closeNav}>Dropdown</NavLi>

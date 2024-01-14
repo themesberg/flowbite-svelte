@@ -8,6 +8,8 @@ export { default as GradientButton } from './buttons/GradientButton.svelte';
 
 export { default as Card } from './cards/Card.svelte';
 
+export { default as Darkmode } from './darkmode/Darkmode.svelte'
+
 export { default as Navbar } from './nav/Navbar.svelte';
 export { default as NavUl } from './nav/NavUl.svelte';
 export { default as NavBrand } from './nav/NavBrand.svelte';
