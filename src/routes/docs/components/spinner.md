@@ -64,7 +64,7 @@ Change the size of the spinner component using the `size` prop.
 </script>
 
 <Spinner size={4} />
-<Spinner size={6} />
+<Spinner size="6" />
 <Spinner size={8} />
 ```
 
