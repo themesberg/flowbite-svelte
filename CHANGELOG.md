@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.26](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.25...v0.1.26) (2024-01-14)
+
+
+### Features
+
+* add Indicator component ([9f26ca6](https://github.com/shinokada/svelte-5-ui-lib/commit/9f26ca630ee7bd1c1c4e571f2e2b271dd27428e8))
+
 ### [0.1.25](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.24...v0.1.25) (2024-01-14)
 
 
