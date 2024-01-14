@@ -56,6 +56,7 @@ module.exports = config;
 - Breadcrumb
 - Button
 - Card
+- Darkmode
 - Dropdown
 - Footer
 - Nav
