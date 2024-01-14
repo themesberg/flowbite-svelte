@@ -270,7 +270,7 @@ Use the placement prop to position the drawer component either on the top, right
 
 ```svelte example hideResponsiveButtons
 <script>
-  import { Drawer, Button, CloseButton, Label, Input, Textarea } from 'flowbite-svelte';
+  import { Drawer, Button, CloseButton, Label, Textarea } from 'flowbite-svelte';
   import { InfoCircleSolid, ArrowRightOutline } from 'flowbite-svelte-icons';
   import { sineIn } from 'svelte/easing';
 
