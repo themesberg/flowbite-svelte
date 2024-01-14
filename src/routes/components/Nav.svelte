@@ -28,6 +28,7 @@
 
 	<NavUl>
 		<NavLi href="/" {closeNav}>Home</NavLi>
+		<NavLi href="/banner" {closeNav}>Banner</NavLi>
 		<NavLi href="/breadcrumb" {closeNav}>Breadcrumb</NavLi>
 		<NavLi href="/buttons" {closeNav}>Buttons</NavLi>
 		<NavLi href="/cards" {closeNav}>Cards</NavLi>

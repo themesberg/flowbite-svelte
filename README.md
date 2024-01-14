@@ -53,6 +53,7 @@ module.exports = config;
 
 ## Components
 
+- Banner
 - Breadcrumb
 - Button
 - Card
