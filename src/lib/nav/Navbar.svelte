@@ -5,7 +5,7 @@
 		closeNav: () => void;
 		navStatus: boolean;
 		brand?: any;
-		breakPoint?: 'md' | 'lg' | 'xl' | '2xl';
+		breakPoint?: 'md' | 'lg' | 'xl' | 'xxl';
 		navClass?: string | undefined;
 		divClass?: string | undefined;
 		btnClass?: string | undefined;
@@ -42,7 +42,7 @@
 		md: 'md:hidden',
 		lg: 'lg:hidden',
 		xl: 'xl:hidden',
-		'2xl': '2xl:hidden'
+		xxl: '2xl:hidden'
 	};
 	let btnCls = twMerge(
 		'inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600',
@@ -53,7 +53,7 @@
 		md: 'md:block md:w-auto',
 		lg: 'lg:block lg:w-auto',
 		xl: 'xl:block xl:w-auto',
-		'2xl': '2xl:block 2xl:w-auto'
+		xxl: '2xl:block 2xl:w-auto'
 	};
 	let divChildrenCls = twMerge('w-full', blockBreak[breakPoint], divChildrenClass);
 	// $inspect('Navbar: ', breakPoint);
