@@ -4,6 +4,7 @@
 		toggleNav: () => void;
 		closeNav: () => void;
 		navStatus: boolean;
+		fluid?: boolean;
 		brand?: any;
 		breakPoint?: 'md' | 'lg' | 'xl' | 'xxl';
 		navClass?: string | undefined;
@@ -20,6 +21,7 @@
 		toggleNav,
 		closeNav,
 		navStatus,
+		fluid,
 		brand,
 		breakPoint = 'md',
 		navClass,
@@ -36,6 +38,7 @@
 	let navCls = twMerge('border-gray-200 bg-transparent dark:bg-gray-900', navClass);
 	let divCls = twMerge(
 		'mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4',
+		fluid ? 'w-full' : 'container',
 		divClass
 	);
 	const btnBreak = {

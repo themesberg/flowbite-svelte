@@ -1,5 +1,5 @@
 <script>
-	import { Navbar, NavLi, NavBrand, NavUl, uiHelpers } from '$lib';
+	import { Navbar, NavLi, NavBrand, NavUl, uiHelpers, Darkmode } from '$lib';
 
 	let nav = uiHelpers();
 
@@ -14,11 +14,16 @@
 	});
 </script>
 
-<Navbar {toggleNav} {closeNav} {navStatus} breakPoint="xxl">
+<header class="sticky top-0 z-40 flex-none w-full mx-auto bg-white border-b border-gray-200 dark:border-gray-600 dark:bg-gray-800">
+
+<Navbar {toggleNav} {closeNav} {navStatus} fluid breakPoint="xxl">
 	{#snippet brand()}
 		<NavBrand siteName="Svelte 5 UI lib (Experimental)" {closeNav}>
 			<img width="30" src="/images/svelte-icon.png" alt="svelte icon" />
 		</NavBrand>
+		<div class="flex items-center ms-auto">
+			<Darkmode />
+		</div>
 	{/snippet}
 
 	<NavUl>
@@ -34,3 +39,4 @@
 		<NavLi href="/skeleton" {closeNav}>Skeleton</NavLi>
 	</NavUl>
 </Navbar>
+</header>
