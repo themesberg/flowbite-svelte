@@ -1,0 +1,70 @@
+<script>
+    import { Indicator, Button } from '$lib';
+    import { EnvelopeSolid } from 'flowbite-svelte-icons';
+    import HighlightCompo from '../components/HighlightCompo.svelte';
+	import setup from './md/setup.md?raw';
+    import defaultindicator from './md/defaultindicator.md?raw';
+    import position from './md/position.md?raw';
+    import count from './md/count.md?raw';
+</script>
+
+<h1>Indicator</h1>
+
+<h2>Setup</h2>
+
+<HighlightCompo code={setup} />
+
+<h2>Default indicator</h2>
+  
+<div class="flex gap-4">
+  <Indicator color="gray" />
+  <Indicator color="dark" />
+  <Indicator color="orange" />
+  <Indicator color="blue" />
+  <Indicator color="green" />
+  <Indicator color="red" />
+  <Indicator color="purple" />
+  <Indicator color="indigo" />
+  <Indicator color="yellow" />
+  <Indicator color="teal" />
+</div>
+
+<HighlightCompo code={defaultindicator} />
+
+<h2>Legend indicator</h2>
+
+<div class="flex gap-4">
+<span class="flex items-center"><Indicator size="sm" color="orange" class="me-1.5" />Visitors</span>
+<span class="flex items-center"><Indicator size="sm" color="purple" class="me-1.5" />Sessions</span>
+<span class="flex items-center"><Indicator size="sm" color="indigo" class="me-1.5" />Customers</span>
+<span class="flex items-center"><Indicator size="sm" color="teal" class="me-1.5" />Revenue</span>
+</div>
+
+<h2>Indicator count</h2>
+
+<Button size="lg" class="relative">
+    <EnvelopeSolid class="w-4 h-4 me-2 text-white dark:text-white" />
+    <span class="sr-only">Notifications</span>
+    Messages
+    <Indicator color="red" border size="xl" placement="top-right">
+      <span class="text-white text-xs font-bold">8</span>
+    </Indicator>
+</Button>
+
+<HighlightCompo code={count} />
+
+<h2>Indicator posision</h2>
+
+<div class="w-56 h-56 relative bg-gray-100 borer border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
+    <Indicator placement="top-left" color="gray" />
+    <Indicator placement="top-center" color="dark" />
+    <Indicator placement="top-right" color="orange" />
+    <Indicator placement="center-left" color="green" />
+    <Indicator placement="center" color="red" />
+    <Indicator placement="center-right" color="purple" />
+    <Indicator placement="bottom-left" color="indigo" />
+    <Indicator placement="bottom-center" color="yellow" />
+    <Indicator placement="bottom-right" color="teal" />
+  </div>
+
+  <HighlightCompo code={position} />

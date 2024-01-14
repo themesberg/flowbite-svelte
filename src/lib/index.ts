@@ -3,15 +3,15 @@ export { uiHelpers, clickOutside } from './uiHelpers.svelte';
 export { default as Banner } from './banner/Banner.svelte';
 
 // breadcrumb
-export { default as Breadcrumb } from './breadcrumb/Breadcrumb.svelte'
-export { default as BreadcrumbItem } from './breadcrumb/BreadcrumbItem.svelte'
+export { default as Breadcrumb } from './breadcrumb/Breadcrumb.svelte';
+export { default as BreadcrumbItem } from './breadcrumb/BreadcrumbItem.svelte';
 // button
 export { default as Button } from './buttons/Button.svelte';
 export { default as GradientButton } from './buttons/GradientButton.svelte';
 // card
 export { default as Card } from './cards/Card.svelte';
 // darkmode
-export { default as Darkmode } from './darkmode/Darkmode.svelte'
+export { default as Darkmode } from './darkmode/Darkmode.svelte';
 // dropdown
 export { default as Dropdown } from './dropdown/Dropdown.svelte';
 export { default as DropdownDivider } from './dropdown/DropdownDivider.svelte';
@@ -22,6 +22,8 @@ export { default as FooterBrand } from './footer/FooterBrand.svelte';
 export { default as FooterCopyright } from './footer/FooterCopyright.svelte';
 export { default as FooterLi } from './footer/FooterLi.svelte';
 export { default as FooterUl } from './footer/FooterUl.svelte';
+// indicator
+export { default as Indicator } from './indicator/Indicator.svelte';
 // navbar
 export { default as Navbar } from './nav/Navbar.svelte';
 export { default as NavUl } from './nav/NavUl.svelte';
