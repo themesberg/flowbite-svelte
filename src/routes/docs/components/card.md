@@ -96,8 +96,8 @@ You can use the following example of a card element with an image for blog posts
   let vCard = false;
 </script>
 
-<div>
-  <Card img="/images/image-1.webp" reverse={vCard} class="mb-4">
+<div  class="space-y-4">
+  <Card img="/images/image-1.webp" reverse={vCard}>
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
     <Button>
@@ -118,8 +118,8 @@ If you want to spice up your cards you can use the following card which has its 
   let hCard = false;
 </script>
 
-<div>
-  <Card img="/images/image-1.webp" href="/" horizontal reverse={hCard} class="mb-4">
+<div class="space-y-4">
+  <Card img="/images/image-1.webp" href="/" horizontal size="md" reverse={hCard}>
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
   </Card>
@@ -137,7 +137,7 @@ Use this user profile card example if you want to show a dropdown menu and butto
   import { DotsHorizontalOutline } from 'flowbite-svelte-icons';
 </script>
 
-<Card padding="sm">
+<Card padding="md">
   <div class="flex justify-end">
     <DotsHorizontalOutline />
     <Dropdown class="w-36">
@@ -167,7 +167,7 @@ Use this card example where you can add form input elements that can be used for
   import { Card, Button, Label, Input, Checkbox } from 'flowbite-svelte';
 </script>
 
-<Card class="w-full max-w-md">
+<Card>
   <form class="flex flex-col space-y-6" action="/">
     <h3 class="text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h3>
     <Label class="space-y-2">
