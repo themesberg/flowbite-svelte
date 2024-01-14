@@ -15,6 +15,11 @@ test('cards page has expected h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Cards');
 });
 
+test('darkmode page has expected h1', async ({ page }) => {
+	await page.goto('/darkmode');
+	expect(await page.textContent('h1')).toBe('Darkmode');
+});
+
 test('dropdown page has expected h1', async ({ page }) => {
 	await page.goto('/dropdown');
 	expect(await page.textContent('h1')).toBe('Dropdown');

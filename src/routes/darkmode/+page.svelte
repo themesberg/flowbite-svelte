@@ -8,7 +8,9 @@
     import modeicon from './md/modeicon.md?raw'
 </script>
 
-<h1>Setup</h1>
+<h1>Darkmode</h1>
+
+<h2>Setup</h2>
 
 <HighlightCompo code={setup} />
 
