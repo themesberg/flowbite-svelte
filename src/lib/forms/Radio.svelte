@@ -28,7 +28,7 @@
   export let color: FormColorType = 'primary';
   export let custom: boolean = false;
   export let inline: boolean = false;
-  export let group: number | string = '';
+  export let group: number | string | undefined = undefined;
   export let value: number | string = '';
 
   // tinted if put in component having its own background
