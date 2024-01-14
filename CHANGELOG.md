@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.25](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.24...v0.1.25) (2024-01-14)
+
+
+### Features
+
+* banner ([6cb2905](https://github.com/shinokada/svelte-5-ui-lib/commit/6cb2905a924596227199c539e4ba1575783cb1b4))
+
 ### [0.1.24](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.23...v0.1.24) (2024-01-14)
 
 
