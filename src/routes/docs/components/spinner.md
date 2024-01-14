@@ -91,11 +91,11 @@ The spinner component can also be used inside elements such as buttons when subm
 
 <div class="flex flex-wrap items-center gap-2">
   <Button>
-    <Spinner class="mr-3" size="4" color="white" />
+    <Spinner class="me-3" size="4" color="white" />
     Loading ...
   </Button>
   <Button outline color="dark">
-    <Spinner class="mr-3" size={4} />
+    <Spinner class="me-3" size="4" />
     Loading ...
   </Button>
 </div>

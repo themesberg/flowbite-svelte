@@ -26,7 +26,7 @@ Use the `Label` component when you need to add a label.
 </script>
 
 <Label color="red" class="mt-4 flex items-center font-bold italic">
-  <Checkbox class="mr-2" /> Your Label
+  <Checkbox class="me-2" /> Your Label
 </Label>
 ```
 

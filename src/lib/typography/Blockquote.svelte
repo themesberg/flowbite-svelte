@@ -4,7 +4,7 @@
 
   export let border: boolean = false;
   export let italic: boolean = true;
-  export let borderClass: string = 'border-l-4 border-gray-300 dark:border-gray-500';
+  export let borderClass: string = 'border-s-4 border-gray-300 dark:border-gray-500';
   export let bgClass: string = 'bg-gray-50 dark:bg-gray-800';
   export let bg: boolean = false;
   export let baseClass: string = 'font-semibold text-gray-900 dark:text-white';
@@ -42,7 +42,7 @@
 ## Props
 @prop export let border: boolean = false;
 @prop export let italic: boolean = true;
-@prop export let borderClass: string = 'border-l-4 border-gray-300 dark:border-gray-500';
+@prop export let borderClass: string = 'border-s-4 border-gray-300 dark:border-gray-500';
 @prop export let bgClass: string = 'bg-gray-50 dark:bg-gray-800';
 @prop export let bg: boolean = false;
 @prop export let baseClass: string = 'font-semibold text-gray-900 dark:text-white';

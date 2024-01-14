@@ -34,7 +34,7 @@ If you want to show a dropdown menu when clicking on an element add the `Dropdow
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
 </script>
 
-<Button>Dropdown button<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown button<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
 <Dropdown>
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
@@ -55,7 +55,7 @@ Utilize the `href` prop within the `DropdownItem` component to incorporate a hyp
   $: activeUrl = $page.url.pathname;
 </script>
 
-<Button>Dropdown button<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown button<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
 <Dropdown {activeUrl}>
   <DropdownItem href="/">Home</DropdownItem>
   <DropdownItem href="/docs/components/dropdown">Dropdown</DropdownItem>
@@ -75,7 +75,7 @@ To change the active class, use the `activeClass` prop:
   let activeClass = 'text-green-700 dark:text-green-300 hover:text-green-900 dark:hover:text-green-500';
 </script>
 
-<Button>Dropdown button<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown button<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
 <Dropdown {activeUrl} {activeClass}>
   <DropdownItem href="/">Home</DropdownItem>
   <DropdownItem href="/docs/components/dropdown">Dropdown</DropdownItem>
@@ -94,7 +94,7 @@ You can use the `DropdownDivider` component to add separate elements inside the 
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
 </script>
 
-<Button>Dropdown button<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown button<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
 <Dropdown>
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownDivider />
@@ -114,7 +114,7 @@ Use this example to show extra information outside of the list of menu items ins
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
 </script>
 
-<Button>Dropdown button<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown button<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
 <Dropdown>
   <div slot="header" class="px-4 py-2">
     <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
@@ -137,11 +137,11 @@ Use this example to enable multi-level dropdown menus by adding stacked elements
   import { ChevronDownSolid, ChevronRightSolid } from 'flowbite-svelte-icons';
 </script>
 
-<Button>Dropdown button<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown button<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
 <Dropdown>
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem class="flex items-center justify-between">
-    Dropdown<ChevronRightSolid class="w-3 h-3 ml-2 text-primary-700 dark:text-white" />
+    Dropdown<ChevronRightSolid class="w-3 h-3 ms-2 text-primary-700 dark:text-white" />
   </DropdownItem>
   <Dropdown placement="right-start">
     <DropdownItem>Overview</DropdownItem>
@@ -164,11 +164,11 @@ When you want to control your dropdown open status via javascript code you can b
   let dropdownOpen = false;
 </script>
 
-<Button>Dropdown button<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown button<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
 <Dropdown bind:open={dropdownOpen}>
   <DropdownItem on:click={() => (dropdownOpen = false)}>Dashboard (close)</DropdownItem>
   <DropdownItem class="flex items-center justify-between">
-    Dropdown<ChevronRightSolid class="w-3 h-3 ml-2 text-primary-700 dark:text-white" />
+    Dropdown<ChevronRightSolid class="w-3 h-3 ms-2 text-primary-700 dark:text-white" />
   </DropdownItem>
   <Dropdown placement="right-start">
     <DropdownItem on:click={() => (dropdownOpen = false)}>Overview (close)</DropdownItem>
@@ -190,7 +190,7 @@ Add multiple checkbox elements inside your dropdown menu to enable more advanced
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
 </script>
 
-<Button>Dropdown checkbox<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown checkbox<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
 <Dropdown class="w-44 p-3 space-y-3 text-sm">
   <li>
     <Checkbox>Default checkbox</Checkbox>
@@ -214,7 +214,7 @@ Use this example to update the background color of a menu item when using a list
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
 </script>
 
-<Button>Dropdown checkbox<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown checkbox<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
 <Dropdown class="w-48 p-3 space-y-1 text-sm">
   <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Checkbox>Default checkbox</Checkbox>
@@ -238,19 +238,19 @@ Add an extra helper text to each checkbox element inside the dropdown menu list 
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
 </script>
 
-<Button>Dropdown checkbox<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown checkbox<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
 <Dropdown class="w-60 p-3 space-y-1 text-sm">
   <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Checkbox>Enable notifications</Checkbox>
-    <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
+    <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
   </li>
   <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Checkbox checked>Enable 2FA auth</Checkbox>
-    <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
+    <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
   </li>
   <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Checkbox>Subscribe newsletter</Checkbox>
-    <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
+    <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
   </li>
 </Dropdown>
 ```
@@ -267,7 +267,7 @@ Add multiple radio elements inside your dropdown menu to enable more advanced in
 </script>
 
 <Button>
-  Dropdown radio {group1}<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" />
+  Dropdown radio {group1}<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" />
 </Button>
 <Dropdown class="w-44 p-3 space-y-3 text-sm">
   <li>
@@ -293,7 +293,7 @@ Use this example to update the background color of a menu item when using a list
   let group2 = 2;
 </script>
 
-<Button>Dropdown radio<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown radio<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
 <Dropdown class="w-48 p-3 space-y-1">
   <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Radio name="group2" bind:group={group2} value={1}>Default radio</Radio>
@@ -318,19 +318,19 @@ Add an extra helper text to each radio element inside the dropdown menu list wit
   let group3 = 2;
 </script>
 
-<Button>Dropdown radio<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown radio<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
 <Dropdown class="w-60 p-3 space-y-1">
   <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Radio name="group3" bind:group={group3} value={1}>Enable notifications</Radio>
-    <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
+    <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
   </li>
   <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Radio name="group3" bind:group={group3} value={2}>Enable 2FA auth</Radio>
-    <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
+    <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
   </li>
   <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
     <Radio name="group3" bind:group={group3} value={3}>Subscribe newsletter</Radio>
-    <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
+    <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
   </li>
 </Dropdown>
 ```
@@ -346,7 +346,7 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
   let group2 = 2;
 </script>
 
-<Button>Dropdown toggle<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown toggle<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
 <Dropdown class="w-56 p-3 space-y-1">
   <li>
     <Toggle class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">Default toggle</Toggle>
@@ -373,14 +373,14 @@ Show a list of toggle switch elements inside the dropdown menu to enable a yes o
 
 <Navbar let:hidden let:toggle>
   <NavBrand href="/">
-    <img src="/images/flowbite-svelte-icon-logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+    <img src="/images/flowbite-svelte-icon-logo.svg" class="me-3 h-6 sm:h-9" alt="Flowbite Logo" />
     <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite</span>
   </NavBrand>
   <NavHamburger on:click={toggle} />
-  <NavUl {hidden} class="ml-3">
+  <NavUl {hidden} class="ms-3">
     <NavLi href="/" active={true}>Home</NavLi>
     <NavLi class="cursor-pointer">
-      Dropdown<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" />
+      Dropdown<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" />
     </NavLi>
     <Dropdown offset="18">
       <DropdownItem>Dashboard</DropdownItem>
@@ -405,7 +405,7 @@ This example can be used when you want to show a long list of items that won’t
   import { ChevronDownSolid } from 'flowbite-svelte-icons';
 </script>
 
-<Button>Project users<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Project users<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
 <Dropdown class="w-48 overflow-y-auto py-1 h-48">
   <DropdownItem class="flex items-center text-base font-semibold gap-2">
     <Avatar src="/images/profile-picture-1.webp" size="xs" />Jese Leos
@@ -426,7 +426,7 @@ This example can be used when you want to show a long list of items that won’t
     <Avatar src="/images/profile-picture-3.webp" size="xs" />Leslie Livingston
   </DropdownItem>
   <a slot="footer" href="/" class="flex items-center px-3 py-2 -mb-1 text-sm font-medium text-primary-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-primary-500 hover:underline">
-    <ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" />Add new user
+    <ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" />Add new user
   </a>
 </Dropdown>
 ```
@@ -441,7 +441,7 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
   import { ChevronDownSolid, UserRemoveSolid } from 'flowbite-svelte-icons';
 </script>
 
-<Button>Dropdown search<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown search<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
 <Dropdown class="overflow-y-auto px-3 pb-3 text-sm h-44">
   <div slot="header" class="p-3">
     <Search size="md" />
@@ -465,7 +465,7 @@ Use this example if you want to add a search bar inside the dropdown menu to be 
     <Checkbox>Bonnie Green</Checkbox>
   </li>
   <a slot="footer" href="/" class="flex items-center p-3 -mb-1 text-sm font-medium text-red-600 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-red-500 hover:underline">
-    <UserRemoveSolid class="w-4 h-4 mr-2 text-primary-700 dark:text-primary-700" />Delete user
+    <UserRemoveSolid class="w-4 h-4 me-2 text-primary-700 dark:text-primary-700" />Delete user
   </a>
 </Dropdown>
 ```
@@ -503,14 +503,14 @@ Use this example to show a list of notifications inside your application by prov
 <div id="bell" class="inline-flex items-center text-sm font-medium text-center text-gray-500 hover:text-gray-900 focus:outline-none dark:hover:text-white dark:text-gray-400">
   <BellSolid class="w-5 h-5kj" />
   <div class="flex relative">
-    <div class="inline-flex relative -top-2 right-3 w-3 h-3 bg-red-500 rounded-full border-2 border-white dark:border-gray-900" />
+    <div class="inline-flex relative -top-2 end-3 w-3 h-3 bg-red-500 rounded-full border-2 border-white dark:border-gray-900" />
   </div>
 </div>
 <Dropdown triggeredBy="#bell" class="w-full max-w-sm rounded divide-y divide-gray-100 shadow dark:bg-gray-800 dark:divide-gray-700">
   <div slot="header" class="text-center py-2 font-bold">Notifications</div>
-  <DropdownItem class="flex space-x-4">
+  <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
     <Avatar src="/images/profile-picture-1.webp" dot={{ color: 'bg-gray-300' }} rounded />
-    <div class="pl-3 w-full">
+    <div class="ps-3 w-full">
       <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400">
         New message from <span class="font-semibold text-gray-900 dark:text-white">Jese Leos</span>
         : "Hey, what's up? All set for the presentation?"
@@ -518,9 +518,9 @@ Use this example to show a list of notifications inside your application by prov
       <div class="text-xs text-primary-600 dark:text-primary-500">a few moments ago</div>
     </div>
   </DropdownItem>
-  <DropdownItem class="flex space-x-4">
+  <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
     <Avatar src="/images/profile-picture-2.webp" dot={{ color: 'bg-red-400' }} rounded />
-    <div class="pl-3 w-full">
+    <div class="ps-3 w-full">
       <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400">
         <span class="font-semibold text-gray-900 dark:text-white">Joseph Mcfall</span>
         and
@@ -530,9 +530,9 @@ Use this example to show a list of notifications inside your application by prov
       <div class="text-xs text-primary-600 dark:text-primary-500">10 minutes ago</div>
     </div>
   </DropdownItem>
-  <DropdownItem class="flex space-x-4">
+  <DropdownItem class="flex space-x-4 rtl:space-x-reverse">
     <Avatar src="/images/profile-picture-3.webp" dot={{ color: 'bg-green-400' }} rounded />
-    <div class="pl-3 w-full">
+    <div class="ps-3 w-full">
       <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400">
         <span class="font-semibold text-gray-900 dark:text-white">Bonnie Green</span>
         and
@@ -544,7 +544,7 @@ Use this example to show a list of notifications inside your application by prov
   </DropdownItem>
   <a slot="footer" href="/" class="block py-2 -my-1 text-sm font-medium text-center text-gray-900 bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white">
     <div class="inline-flex items-center">
-      <EyeSolid class="mr-2 w-4 h-4 text-gray-500 dark:text-gray-400" />
+      <EyeSolid class="me-2 w-4 h-4 text-gray-500 dark:text-gray-400" />
       View all
     </div>
   </a>
@@ -583,7 +583,7 @@ Use this example to also show the name or email of the user next to the avatar f
 </script>
 
 <Button pill color="light" id="avatar_with_name" class="!p-1">
-  <Avatar src="/images/profile-picture-3.webp" class="mr-2" />
+  <Avatar src="/images/profile-picture-3.webp" class="me-2" />
   Bonnie Green
 </Button>
 <Dropdown inline triggeredBy="#avatar_with_name">
@@ -615,10 +615,10 @@ Use this example to also show the name or email of the user next to the avatar f
   <DropdownItem slot="footer">Sign out</DropdownItem>
 </Dropdown>
 <Button class="sizes" size="sm">
-  Small dropdown<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" />
+  Small dropdown<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" />
 </Button>
 <Button class="sizes" size="lg">
-  Large dropdown<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" />
+  Large dropdown<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" />
 </Button>
 ```
 
@@ -626,31 +626,34 @@ Use this example to also show the name or email of the user next to the avatar f
 
 You can also use the `placement={top|right|bottom|left}` options to choose the placement of the dropdown menu. By default the positioning is set to the bottom side of the button.
 
-```svelte example
+```svelte example hideResponsiveButtons
 <script>
   import { Button, Dropdown, DropdownItem } from 'flowbite-svelte';
   import { ChevronDownSolid, ChevronUpSolid, ChevronRightSolid, ChevronLeftSolid } from 'flowbite-svelte-icons';
   let placement = 'left';
 </script>
 
-<Dropdown {placement} triggeredBy="#placements button" on:show={(e) => (placement = e.target.textContent.trim().split(' ')[1])}>
+<Dropdown {placement} triggeredBy="#placements button">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
   <DropdownItem slot="footer">Sign out</DropdownItem>
 </Dropdown>
 
-<div id="placements" class="flex flex-col justify-center items-center gap-2 h-96 my-8">
-  <Button>Dropdown top<ChevronUpSolid class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
-  <div class="space-x-2">
-    <Button><ChevronLeftSolid class="w-3 h-3 mr-2 text-white dark:text-white" />Dropdown left</Button>
-    <Button>Dropdown right<ChevronRightSolid class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<div id="placements" class="flex flex-col justify-center items-center gap-2 h-96 my-8" on:mousedown={(e) => (placement = e.target.textContent.trim().split(' ')[1])}>
+  <Button>Dropdown top<ChevronUpSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
+  <div class="space-x-2 rtl:space-x-reverse">
+    <Button><ChevronLeftSolid class="w-3 h-3 me-2 text-white dark:text-white" />Dropdown left</Button>
+    <Button>Dropdown right<ChevronRightSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
   </div>
-  <Button>Dropdown bottom<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+  <Button>Dropdown bottom<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
 </div>
 ```
 
 ## Double placement
+
+As dropdown is implemented using the [Floating UI](https://floating-ui.com) library, placement can be further specified by using the `Placement` type defined in [Floating UI docs](https://floating-ui.com/docs/computePosition#placement)
 
 ```svelte example class="flex justify-center items-center gap-2 h-96" hideResponsiveButtons
 <script>
@@ -659,13 +662,17 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
   let placement = 'left';
 </script>
 
-<Button data-placement="left-start">
-  Dropdown left start<ChevronUpSolid class="w-3 h-3 ml-2 text-white dark:text-white" />
-</Button>
-<Button data-placement="right-end">
-  Dropdown right end<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" />
-</Button>
-<Dropdown {placement} triggeredBy="[data-placement]" on:show={(e) => (placement = e.target.dataset.placement)}>
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<div on:mousedown={(e) => (placement = e.target.dataset.placement)}>
+  <Button data-placement="left-start">
+    Dropdown left start<ChevronUpSolid class="w-3 h-3 ms-2 text-white dark:text-white" />
+  </Button>
+  <Button data-placement="right-end">
+    Dropdown right end<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" />
+  </Button>
+</div>
+
+<Dropdown {placement} triggeredBy="[data-placement]">
   <DropdownItem>Dashboard</DropdownItem>
   <DropdownItem>Settings</DropdownItem>
   <DropdownItem>Earnings</DropdownItem>
@@ -687,7 +694,7 @@ You can also use the `placement={top|right|bottom|left}` options to choose the p
   };
 </script>
 
-<Button>Dropdown button<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown button<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
 <Dropdown>
   <DropdownItem href="/link" on:click={handleClick}>Rendered as link</DropdownItem>
   <DropdownItem on:click={handleClick}>Rendered as button</DropdownItem>
@@ -706,7 +713,7 @@ When you need to include a link with an active class, you can follow the example
   $: activeUrl = $page.url.pathname;
 </script>
 
-<Button>Dropdown button<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown button<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
 <Dropdown>
   <DropdownItem href="/home" active={activeUrl === '/'}>Home</DropdownItem>
   <DropdownItem href="/docs/pages/quickstart" active={activeUrl === '/docs/pages/quickstart'}>Quickstart</DropdownItem>

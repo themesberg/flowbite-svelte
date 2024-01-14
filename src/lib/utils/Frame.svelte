@@ -122,8 +122,6 @@
 @prop export let rounded: boolean = false;
 @prop export let border: boolean = false;
 @prop export let shadow: boolean = false;
-@prop export let transition: TransitionFunc = null_transition;
-@prop export let params: object = {};
 @prop export let node: HTMLElement | undefined = undefined;
 @prop export let use: Action<HTMLElement, any> = noop;
 @prop export let options = {};

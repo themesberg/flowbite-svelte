@@ -1,1 +1,18 @@
-{"name":"SpeedDial","slots":["icon","icon"],"events":[],"props":[["defaultClass","string","'fixed right-6 bottom-6'"],["popperDefaultClass","string","'flex items-center mb-4 gap-2'"],["placement","Placement","'top'"],["pill","boolean","true"],["tooltip","Placement | 'none'","'left'"],["trigger","'hover' | 'click'","'hover'"],["textOutside","boolean","false"],["id","string","generateId()"],["name","string","'Open actions menu'"],["gradient","boolean","false"],["open","boolean","false"]]}
+{
+  "name": "SpeedDial",
+  "slots": ["icon", "icon"],
+  "events": [],
+  "props": [
+    ["defaultClass", "string", "'fixed end-6 bottom-6'"],
+    ["popperDefaultClass", "string", "'flex items-center mb-4 gap-2'"],
+    ["placement", "Placement", "'top'"],
+    ["pill", "boolean", "true"],
+    ["tooltip", "Placement | 'none'", "'left'"],
+    ["trigger", "'hover' | 'click'", "'hover'"],
+    ["textOutside", "boolean", "false"],
+    ["id", "string", "generateId()"],
+    ["name", "string", "'Open actions menu'"],
+    ["gradient", "boolean", "false"],
+    ["open", "boolean", "false"]
+  ]
+}

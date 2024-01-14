@@ -1,1 +1,15 @@
-{"name":"StepIndicator","slots":[],"events":[],"props":[["steps","string[]","['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5']"],["currentStep","string","1"],["size","string","'h-2.5'"],["color","'primary' | 'secondary' | 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'custom'","'primary'"],["glow","boolean","false"],["hideLabel","boolean","false"],["completedCustom","string","''"],["currentCustom","string","''"]]}
+{
+  "name": "StepIndicator",
+  "slots": [],
+  "events": [],
+  "props": [
+    ["steps", "string[]", "['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5']"],
+    ["currentStep", "string", "1"],
+    ["size", "string", "'h-2.5'"],
+    ["color", "'primary' | 'secondary' | 'gray' | 'red' | 'yellow' | 'green' | 'indigo' | 'purple' | 'pink' | 'blue' | 'custom'", "'primary'"],
+    ["glow", "boolean", "false"],
+    ["hideLabel", "boolean", "false"],
+    ["completedCustom", "string", "''"],
+    ["currentCustom", "string", "''"]
+  ]
+}

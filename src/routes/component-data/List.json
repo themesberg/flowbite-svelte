@@ -1,1 +1,10 @@
-{"name":"List","slots":[],"events":[],"props":[["tag","'ul' | 'ol' | 'dl'","'ul'"],["list","'disc' | 'none' | 'decimal' | undefined","undefined"],["position","'inside' | 'outside'","'inside'"]]}
+{
+  "name": "List",
+  "slots": [],
+  "events": [],
+  "props": [
+    ["tag", "'ul' | 'ol' | 'dl'", "'ul'"],
+    ["list", "'disc' | 'none' | 'decimal' | undefined", "undefined"],
+    ["position", "'inside' | 'outside'", "'inside'"]
+  ]
+}

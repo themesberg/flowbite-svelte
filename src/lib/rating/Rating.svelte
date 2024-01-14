@@ -25,7 +25,7 @@
 <div class={twMerge(divClass, $$props.class)}>
   {#if count}
     <svelte:component this={icon} fillPercent={100} {size} />
-    <p class="ml-2 text-sm font-bold text-gray-900 dark:text-white">{rating}</p>
+    <p class="ms-2 text-sm font-bold text-gray-900 dark:text-white">{rating}</p>
     <slot />
   {:else}
     {#each Array(fullStars) as star}

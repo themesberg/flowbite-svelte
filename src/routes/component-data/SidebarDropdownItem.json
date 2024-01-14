@@ -1,1 +1,12 @@
-{"name":"SidebarDropdownItem","slots":[],"events":["on:blur","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover"],"props":[["aClass","string","'flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700'"],["href","string","''"],["label","string","''"],["activeClass","string","'flex items-center p-2 pl-11 text-base font-normal text-gray-900 bg-gray-200 dark:bg-gray-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'"],["active","boolean","false"]]}
+{
+  "name": "SidebarDropdownItem",
+  "slots": [],
+  "events": ["on:blur", "on:click", "on:focus", "on:keydown", "on:keypress", "on:keyup", "on:mouseenter", "on:mouseleave", "on:mouseover"],
+  "props": [
+    ["aClass", "string", "'flex items-center p-2 ps-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700'"],
+    ["href", "string", "''"],
+    ["label", "string", "''"],
+    ["activeClass", "string", "'flex items-center p-2 ps-11 text-base font-normal text-gray-900 bg-gray-200 dark:bg-gray-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'"],
+    ["active", "boolean", "false"]
+  ]
+}

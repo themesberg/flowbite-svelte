@@ -5,9 +5,9 @@
   import type { ComponentProps } from 'svelte';
 
   interface $$Props extends ComponentProps<Popper> {
-    items: LinkTypeLike[];
-    full: boolean;
-    ulClass: string;
+    items?: LinkTypeLike[];
+    full?: boolean;
+    ulClass?: string;
   }
 
   export let items: LinkTypeLike[] = [];
@@ -34,7 +34,7 @@
           <slot {item} {index} />
         </li>
       {:else}
-        <slot item={items[0]} />
+        <slot item={items[0]} index={0} />
       {/each}
     </ul>
     {#if full && $$slots.extra}<div class="md:w-1/3 mt-4 md:mt-0"><slot name="extra" /></div>{/if}

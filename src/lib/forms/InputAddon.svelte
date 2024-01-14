@@ -22,8 +22,8 @@
   };
 
   const divider = {
-    base: 'dark:border-r-gray-700 dark:last:border-r-gray-600',
-    tinted: 'dark:border-r-gray-600 dark:last:border-r-gray-500'
+    base: 'dark:border-e-gray-700 dark:last:border-e-gray-600',
+    tinted: 'dark:border-e-gray-600 dark:last:border-e-gray-500'
   };
 
   const textSizes = { sm: 'sm:text-xs', md: 'text-sm', lg: 'sm:text-base' };
@@ -32,7 +32,7 @@
   // size: explicit, inherited, default
   $: _size = size || clampSize(group?.size) || 'md';
 
-  $: divClass = twMerge(textSizes[_size], prefixPadding[_size], background ? borderClasses['tinted'] : borderClasses['base'], 'text-gray-500 bg-gray-200', background ? darkBgClasses.tinted : darkBgClasses.base, background ? divider.tinted : divider.base, 'inline-flex items-center border-t border-b first:border-l border-r', 'first:rounded-l-lg last:rounded-r-lg', $$props.class);
+  $: divClass = twMerge(textSizes[_size], prefixPadding[_size], background ? borderClasses['tinted'] : borderClasses['base'], 'text-gray-500 bg-gray-200', background ? darkBgClasses.tinted : darkBgClasses.base, background ? divider.tinted : divider.base, 'inline-flex items-center border-t border-b first:border-s border-e', 'first:rounded-s-lg last:rounded-e-lg', $$props.class);
 </script>
 
 <div {...$$restProps} class={divClass}>

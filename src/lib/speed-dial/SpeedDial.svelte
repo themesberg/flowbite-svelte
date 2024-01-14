@@ -16,7 +16,7 @@
   import generateId from '$lib/utils/generateId';
   import GradientButton from '$lib/buttons/GradientButton.svelte';
 
-  export let defaultClass: string = 'fixed right-6 bottom-6';
+  export let defaultClass: string = 'fixed end-6 bottom-6';
   export let popperDefaultClass: string = 'flex items-center mb-4 gap-2';
   export let placement: Placement = 'top';
   export let pill: boolean = true;
@@ -66,7 +66,7 @@
 @component
 [Go to docs](https://flowbite-svelte.com/)
 ## Props
-@prop export let defaultClass: string = 'fixed right-6 bottom-6';
+@prop export let defaultClass: string = 'fixed end-6 bottom-6';
 @prop export let popperDefaultClass: string = 'flex items-center mb-4 gap-2';
 @prop export let placement: Placement = 'top';
 @prop export let pill: boolean = true;

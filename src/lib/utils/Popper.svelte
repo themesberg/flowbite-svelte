@@ -1,10 +1,9 @@
 <script lang="ts">
   import type { ComputePositionReturn, Middleware, Placement, Side } from '@floating-ui/dom';
   import * as dom from '@floating-ui/dom';
-  import { onMount, type ComponentProps } from 'svelte';
+  import { onMount, type ComponentProps, createEventDispatcher } from 'svelte';
   import { twJoin } from 'tailwind-merge';
   import Frame from './Frame.svelte';
-  import createEventDispatcher from './createEventDispatcher';
 
   // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Frame> {
@@ -30,13 +29,15 @@
   export let strategy: 'absolute' | 'fixed' = 'absolute';
   export let open: boolean = false;
   export let yOnly: boolean = false;
+  // extra floating UI middleware list
+  export let middlewares: Middleware[] = [dom.flip(), dom.shift()];
 
   const dispatch = createEventDispatcher();
 
   let clickable: boolean;
   $: clickable = trigger === 'click';
 
-  $: dispatch('show', referenceEl, open);
+  $: dispatch('show', open);
   $: placement && (referenceEl = referenceEl);
 
   let referenceEl: Element;
@@ -81,8 +82,7 @@
     top: 'bottom'
   };
 
-  let middleware: (Middleware | null)[];
-  $: middleware = [dom.flip(), dom.shift(), dom.offset(+offset), arrowEl && dom.arrow({ element: arrowEl, padding: 10 })];
+  $: middleware = [...middlewares, dom.offset(+offset), arrowEl && dom.arrow({ element: arrowEl, padding: 10 })];
 
   function updatePosition() {
     dom.computePosition(referenceEl, floatingEl, { placement, strategy, middleware }).then(({ x, y, middlewareData, placement, strategy }: ComputePositionReturn) => {
@@ -167,7 +167,7 @@
   }
 
   let arrowClass: string;
-  $: arrowClass = twJoin('absolute pointer-events-none block w-[10px] h-[10px] rotate-45 bg-inherit border-inherit', $$props.border && arrowSide === 'bottom' && 'border-b border-r', $$props.border && arrowSide === 'top' && 'border-t border-l ', $$props.border && arrowSide === 'right' && 'border-t border-r ', $$props.border && arrowSide === 'left' && 'border-b border-l ');
+  $: arrowClass = twJoin('absolute pointer-events-none block w-[10px] h-[10px] rotate-45 bg-inherit border-inherit', $$props.border && arrowSide === 'bottom' && 'border-b border-e', $$props.border && arrowSide === 'top' && 'border-t border-s ', $$props.border && arrowSide === 'right' && 'border-t border-e ', $$props.border && arrowSide === 'left' && 'border-b border-s ');
 
   function initArrow(node: HTMLElement) {
     arrowEl = node;
@@ -204,4 +204,5 @@
 @prop export let strategy: 'absolute' | 'fixed' = 'absolute';
 @prop export let open: boolean = false;
 @prop export let yOnly: boolean = false;
+@prop export let middlewares: Middleware[] = [dom.flip(), dom.shift()];
 -->

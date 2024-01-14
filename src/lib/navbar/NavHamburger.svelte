@@ -8,7 +8,7 @@
   export let menuClass: string = 'h-6 w-6 shrink-0';
   export let onClick: (() => void) | undefined = undefined;
 
-  let btnClass: string = 'ml-3 md:hidden';
+  let btnClass: string = 'ms-3 md:hidden';
 
   let hiddenStore = getContext<Writable<boolean>>('navHidden') ?? writable(true);
   const toggle = (ev: MouseEvent) => hiddenStore.update((h) => !h);

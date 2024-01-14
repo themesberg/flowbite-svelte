@@ -11,7 +11,7 @@
   const state = getContext<Writable<State>>('state');
 </script>
 
-<div class={twMerge('flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2', $$props.class)}>
+<div class={twMerge('flex absolute bottom-5 start-1/2 z-30 space-x-3 rtl:space-x-reverse -translate-x-1/2 rtl:translate-x-1/2', $$props.class)}>
   {#each $state.images as _, idx}
     {@const selected = $state.index === idx}
     <button on:click={() => ($state.index = idx)}>

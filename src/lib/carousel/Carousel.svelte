@@ -25,7 +25,7 @@
   export let images: HTMLImgAttributes[];
   export let index: number = 0;
   export let slideDuration: number = 1000;
-  export let transition: TransitionFunc | null;
+  export let transition: TransitionFunc | null = null;
   export let duration: number = 0;
   export let ariaLabel: string = 'Draggable Carousel';
 
@@ -52,16 +52,6 @@
   onMount(() => {
     dispatch('change', images[index]);
   });
-
-  let prevIndex: number = index;
-  $: {
-    if (!prevIndex || prevIndex < index) {
-      update((_state) => ({ ..._state, forward: true, index }));
-    } else {
-      update((_state) => ({ ..._state, forward: false, index }));
-    }
-    prevIndex = index;
-  }
 
   const nextSlide = () => {
     update((_state) => {
@@ -213,7 +203,7 @@
 @prop export let images: HTMLImgAttributes[];
 @prop export let index: number = 0;
 @prop export let slideDuration: number = 1000;
-@prop export let transition: TransitionFunc | null;
+@prop export let transition: TransitionFunc | null = null;
 @prop export let duration: number = 0;
 @prop export let ariaLabel: string = 'Draggable Carousel';
 @prop export let imgClass: string = '';

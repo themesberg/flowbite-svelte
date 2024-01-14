@@ -1,1 +1,15 @@
-{"name":"Avatar","slots":[],"events":[],"props":[["src","string","''"],["href","string | undefined","undefined"],["rounded","boolean","false"],["border","boolean","false"],["stacked","boolean","false"],["dot","object | undefined","undefined"],["alt","string","''"],["size","'xs' | 'sm' | 'md' | 'lg' | 'xl'","'md'"]]}
+{
+  "name": "Avatar",
+  "slots": [],
+  "events": [],
+  "props": [
+    ["src", "string", "''"],
+    ["href", "string | undefined", "undefined"],
+    ["rounded", "boolean", "false"],
+    ["border", "boolean", "false"],
+    ["stacked", "boolean", "false"],
+    ["dot", "object | undefined", "undefined"],
+    ["alt", "string", "''"],
+    ["size", "'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none'", "'md'"]
+  ]
+}

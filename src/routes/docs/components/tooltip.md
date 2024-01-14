@@ -47,10 +47,10 @@ You can use choose between dark and light version styles for the tooltip compone
   let type = 'dark';
 </script>
 
-<Button id="type-light">Light tooltip</Button>
-<Button id="type-auto">Default tooltip</Button>
-<Button id="type-dark">Dark tooltip</Button>
-<Tooltip {type} triggeredBy="[id^='type-']" on:show={(ev) => (type = ev.target.id.split('-')[1])}>Tooltip content</Tooltip>
+<Button id="type-1" on:mouseenter={()=> type='light'}>Light tooltip</Button>
+<Button id="type-2" on:mouseenter={()=> type='auto'}>Default tooltip</Button>
+<Button id="type-3" on:mouseenter={()=> type='dark'}>Dark tooltip</Button>
+<Tooltip {type} triggeredBy="[id^='type-']">Tooltip content</Tooltip>
 ```
 
 ## Placement
@@ -65,11 +65,11 @@ The positioning of the tooltip element relative to the triggering element (eg. b
   let placement = 'left';
 </script>
 
-<Button id="placement-left">Tooltip left</Button>
-<Button id="placement-top">Tooltip top</Button>
-<Button id="placement-bottom">Tooltip bottom</Button>
-<Button id="placement-right">Tooltip right</Button>
-<Tooltip triggeredBy="[id^='placement-']" {placement} on:show={(e) => ([, placement] = e.target.id.split('-'))}>
+<Button id="placement-1" on:mouseenter={()=> placement='left'}>Tooltip left</Button>
+<Button id="placement-2" on:mouseenter={()=> placement='top'}>Tooltip top</Button>
+<Button id="placement-3" on:mouseenter={()=> placement='bottom'}>Tooltip bottom</Button>
+<Button id="placement-4" on:mouseenter={()=> placement='right'}>Tooltip right</Button>
+<Tooltip triggeredBy="[id^='placement-']" {placement}>
   Tooltip content - {placement}
 </Tooltip>
 ```
@@ -109,7 +109,7 @@ If you need the tooltip to be attached to the other element then the tiggering o
 </script>
 
 <div id="ext-ref" class="p-2 rounded-lg border border-gray-200 dark:border-gray-600">External reference</div>
-<div class="space-x-4">
+<div class="space-x-4 rtl:space-x-reverse">
   <Button id="ref-left" on:mouseenter={() => (placement = 'left')}>Left</Button>
   <Button id="ref-top" on:mouseenter={() => (placement = 'top')}>Top</Button>
   <Button id="ref-right" on:mouseenter={() => (placement = 'right')}>Right</Button>

@@ -1,1 +1,13 @@
-{"name":"GroupItem","slots":[],"events":[],"props":[["timelines","GroupTimelineType[]",""],["aClass","string","'block items-center p-3 sm:flex hover:bg-gray-100 dark:hover:bg-gray-700'"],["imgClass","string","'mr-3 mb-3 w-12 h-12 rounded-full sm:mb-0'"],["divClass","string","'text-gray-600 dark:text-gray-400'"],["titleClass","string","'text-base font-normal'"],["spanClass","string","'inline-flex items-center text-xs font-normal text-gray-500 dark:text-gray-400'"]]}
+{
+  "name": "GroupItem",
+  "slots": [],
+  "events": [],
+  "props": [
+    ["timelines", "GroupTimelineType[]", ""],
+    ["aClass", "string", "'block items-center p-3 sm:flex hover:bg-gray-100 dark:hover:bg-gray-700'"],
+    ["imgClass", "string", "'me-3 mb-3 w-12 h-12 rounded-full sm:mb-0'"],
+    ["divClass", "string", "'text-gray-600 dark:text-gray-400'"],
+    ["titleClass", "string", "'text-base font-normal'"],
+    ["spanClass", "string", "'inline-flex items-center text-xs font-normal text-gray-500 dark:text-gray-400'"]
+  ]
+}

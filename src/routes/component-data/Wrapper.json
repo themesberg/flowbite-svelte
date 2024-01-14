@@ -1,1 +1,10 @@
-{"name":"Wrapper","slots":[],"events":[],"props":[["tag","string","'div'"],["show","boolean",""],["use","Action<HTMLElement, any> = () => {};","@prop export let tag: string = 'div'"]]}
+{
+  "name": "Wrapper",
+  "slots": [],
+  "events": [],
+  "props": [
+    ["tag", "string", "'div'"],
+    ["show", "boolean", ""],
+    ["use", "Action<HTMLElement, any> = () => {};", "@prop export let tag: string = 'div'"]
+  ]
+}

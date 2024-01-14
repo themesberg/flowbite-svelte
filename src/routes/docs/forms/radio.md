@@ -68,11 +68,11 @@ If you need separate control over the label and the radio you can use the verbos
     <TableHeadCell>Right column</TableHeadCell>
   </TableHead>
   <TableBody class="divide-y dark:divide-gray-700">
-    <TableBodyRow class="divide-x dark:divide-gray-700">
+    <TableBodyRow class="divide-x rtl:divide-x-reverse dark:divide-gray-700">
       <TableBodyCell><Label for="radio1">Default radio</Label></TableBodyCell>
       <TableBodyCell><Label for="radio2">Disabled radio</Label></TableBodyCell>
     </TableBodyRow>
-    <TableBodyRow class="divide-x dark:divide-gray-700">
+    <TableBodyRow class="divide-x rtl:divide-x-reverse dark:divide-gray-700">
       <TableBodyCell><Radio name="separate" id="radio1" /></TableBodyCell>
       <TableBodyCell><Radio name="separate" id="radio2" disabled /></TableBodyCell>
     </TableBodyRow>
@@ -80,7 +80,7 @@ If you need separate control over the label and the radio you can use the verbos
 </Table>
 
 <Label color="red" class="mt-4 flex items-center font-bold italic">
-  Label on the other side <Radio name="separate" class="ml-2" />
+  Label on the other side <Radio name="separate" class="ms-2" />
 </Label>
 ```
 
@@ -94,7 +94,7 @@ Use this example if you want to add an anchor link inside the label of the radio
 </script>
 
 <Radio name="with-link">
-  I agree with the <a href="/" class="text-primary-600 dark:text-primary-500 hover:underline ml-1"> terms and conditions </a>
+  I agree with the <a href="/" class="text-primary-600 dark:text-primary-500 hover:underline ms-1"> terms and conditions </a>
   .
 </Radio>
 ```
@@ -109,7 +109,7 @@ Get started with this example if you want to add a secondary helper text for the
 </script>
 
 <Radio aria-describedby="helper-checkbox-text">Free shipping via Flowbite</Radio>
-<Helper id="helper-checkbox-text" class="pl-6">For orders shipped from $25 in books or $29 in other categories</Helper>
+<Helper id="helper-checkbox-text" class="ps-6">For orders shipped from $25 in books or $29 in other categories</Helper>
 ```
 
 ## Bordered
@@ -162,7 +162,7 @@ Use this example to show a list of radio items inside a card horizontally.
 </script>
 
 <p class="mb-4 font-semibold text-gray-900 dark:text-white">Identification</p>
-<ul class="items-center w-full rounded-lg border border-gray-200 sm:flex dark:bg-gray-800 dark:border-gray-600 divide-x divide-gray-200 dark:divide-gray-600">
+<ul class="items-center w-full rounded-lg border border-gray-200 sm:flex dark:bg-gray-800 dark:border-gray-600 divide-x rtl:divide-x-reverse divide-gray-200 dark:divide-gray-600">
   <li class="w-full"><Radio name="hor-list" class="p-3">Svelte</Radio></li>
   <li class="w-full"><Radio name="hor-list" class="p-3">Vue JS</Radio></li>
   <li class="w-full"><Radio name="hor-list" class="p-3">React</Radio></li>
@@ -181,20 +181,20 @@ Here’s an example of a list group that you can use right away.
   let group3 = 2;
 </script>
 
-<Button>Dropdown radio<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white" /></Button>
+<Button>Dropdown radio<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" /></Button>
 <Dropdown class="w-60">
   <ul class="p-2">
     <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
       <Radio name="group3" bind:group={group3} value={1}>Enable notifications</Radio>
-      <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
+      <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
     </li>
     <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
       <Radio name="group3" bind:group={group3} value={2}>Enable 2FA auth</Radio>
-      <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
+      <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
     </li>
     <li class="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600">
       <Radio name="group3" bind:group={group3} value={3}>Subscribe newsletter</Radio>
-      <Helper class="pl-6">Some helpful instruction goes over here.</Helper>
+      <Helper class="ps-6">Some helpful instruction goes over here.</Helper>
     </li>
   </ul>
 </Dropdown>
@@ -226,10 +226,10 @@ You can use the property `inline` as the alternative.
   let inline2 = 'third';
 </script>
 
-<Radio group={inline2} inline value="first" class="mr-2">Inline 1</Radio>
-<Radio group={inline2} inline value="second" class="mr-2">Inline 2</Radio>
-<Radio group={inline2} inline value="third" class="mr-2">Inline checked</Radio>
-<Radio group={inline2} inline value="fourth" class="mr-2" disabled>Inline disabled</Radio>
+<Radio group={inline2} inline value="first" class="me-2">Inline 1</Radio>
+<Radio group={inline2} inline value="second" class="me-2">Inline 2</Radio>
+<Radio group={inline2} inline value="third" class="me-2">Inline checked</Radio>
+<Radio group={inline2} inline value="fourth" class="me-2" disabled>Inline disabled</Radio>
 ```
 
 ## Colors
@@ -269,7 +269,7 @@ Use this example of an advanced layout of radio elements where the label parent 
         <div class="w-full text-lg font-semibold">0-50 MB</div>
         <div class="w-full">Good for small websites</div>
       </div>
-      <ArrowRightOutline class="ml-3 w-6 h-6" />
+      <ArrowRightOutline class="ms-3 w-6 h-6" />
     </div>
   </Radio>
   <Radio name="custom" custom>
@@ -278,7 +278,7 @@ Use this example of an advanced layout of radio elements where the label parent 
         <div class="w-full text-lg font-semibold">500-1000 MB</div>
         <div class="w-full">Good for large websites</div>
       </div>
-      <ArrowRightOutline class="ml-3 w-6 h-6" />
+      <ArrowRightOutline class="ms-3 w-6 h-6" />
     </div>
   </Radio>
 </div>
@@ -286,15 +286,14 @@ Use this example of an advanced layout of radio elements where the label parent 
 
 ## RadioButton
 
-The special case component - `RadioButton` - is the `Radio` with the [Button](/docs/components/buttons) look and feel. I can be used as standalone element 
-or be wrapped inside [ButtonGroup](/docs/components/button-group).
+The special case component - `RadioButton` - is the `Radio` with the [Button](/docs/components/buttons) look and feel. I can be used as standalone element or be wrapped inside [ButtonGroup](/docs/components/button-group).
 
 This component accepts all props from the [Button](/docs/components/buttons) for styling and `Radio` for behaviour.
 
 ```svelte example class="space-y-4"
 <script>
   import { RadioButton, ButtonGroup } from 'flowbite-svelte';
-  import { ListMusicSolid, ListOrdoredSolid, ListSolid } from 'flowbite-svelte-icons'; 
+  import { ListMusicSolid, ListOrdoredSolid, ListSolid } from 'flowbite-svelte-icons';
 
   let radioGroup = "notes";
 </script>

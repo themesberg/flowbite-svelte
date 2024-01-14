@@ -19,7 +19,7 @@
 
   $: activeUrl = $page.url.pathname;
   let logo = '/images/flowbite-svelte-icon-logo.svg';
-  let divClass = 'w-full ml-auto lg:block lg:w-auto order-1 lg:order-none';
+  let divClass = 'w-full ms-auto lg:block lg:w-auto order-1 lg:order-none';
   let ulClass = 'flex flex-col py-3 my-4 lg:flex-row lg:my-0 text-sm font-medium text-gray-900 dark:text-gray-300 gap-4';
 
   const drawerHiddenStore: Writable<boolean> = writable<boolean>(true);
@@ -44,10 +44,10 @@
 <header class="sticky top-0 z-40 flex-none w-full mx-auto bg-white border-b border-gray-200 dark:border-gray-600 dark:bg-gray-800">
   <Navbar color="default" fluid class="py-1.5 {isHomePage ? 'lg:px-0 max-w-7xl mx-auto' : ''}" let:toggle>
     <span hidden={$page.route.id === '/'}>
-      <NavHamburger onClick={toggleDrawer} class="m-0 mr-3 lg:hidden" />
+      <NavHamburger onClick={toggleDrawer} class="m-0 me-3 md:block lg:hidden" />
     </span>
     <NavBrand href="/">
-      <img src={logo} class="mr-3 h-8" alt="Flowbite Svelte Logo" />
+      <img src={logo} class="me-3 h-8" alt="Flowbite Svelte Logo" />
       <span class="self-center whitespace-nowrap text-2xl font-semibold text-gray-900 dark:text-white"> Flowbite Svelte </span>
     </NavBrand>
 
@@ -59,7 +59,7 @@
       </div>
     {/if}
 
-    <NavUl {divClass} {ulClass} {activeUrl} on:click={() => setTimeout(toggle, 1)} nonActiveClass="md:!pl-3 md:!py-2 lg:!pl-0 text-gray-700 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 dark:text-gray-400 lg:dark:text-white lg:dark:hover:text-primary-700 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent" activeClass="md:!pl-3 md:!py-2 lg:!pl-0 text-white bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:dark:text-primary-700 dark:bg-primary-600 lg:dark:bg-transparent cursor-default">
+    <NavUl {divClass} {ulClass} {activeUrl} on:click={() => setTimeout(toggle, 1)} nonActiveClass="md:!ps-3 md:!py-2 lg:!ps-0 text-gray-700 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 dark:text-gray-400 lg:dark:text-white lg:dark:hover:text-primary-700 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent" activeClass="md:!ps-3 md:!py-2 lg:!ps-0 text-white bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:dark:text-primary-700 dark:bg-primary-600 lg:dark:bg-transparent cursor-default">
       <NavLi class="lg:px-2 lg:mb-0" href="/">Home</NavLi>
       <NavLi class="lg:px-2 lg:mb-0" href="/docs/pages/introduction">Docs</NavLi>
       <NavLi class="lg:px-2 lg:mb-0" href="/docs/pages/quickstart">Quickstart</NavLi>
@@ -68,7 +68,7 @@
       <NavLi class="lg:px-2 lg:mb-0" href="https://flowbite-svelte-blocks.vercel.app/">Blocks</NavLi>
     </NavUl>
 
-    <div class="flex items-center ml-auto">
+    <div class="flex items-center ms-auto">
       <ToolbarLink class="hidden sm:inline-block dark:hover:text-white hover:text-gray-900" name="View on GitHub" href="https://github.com/themesberg/flowbite-svelte">
         <GitHub />
       </ToolbarLink>
@@ -82,12 +82,12 @@
       <Tooltip class="dark:bg-gray-900" placement="bottom-end">Toggle dark mode</Tooltip>
     </div>
     <a href="https://www.npmjs.com/package/flowbite-svelte" class="hidden sm:block">
-      <DocBadge large class="ml-2 xl:ml-6 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-800 dark:hover:text-white">
+      <DocBadge large class="ms-2 xl:ms-6 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-800 dark:hover:text-white">
         v{version}
       </DocBadge>
     </a>
 
-    <NavHamburger on:click={toggle} class="ml-3 m-0 md:block lg:hidden {isHomePage ? '' : 'hidden'}" />
+    <NavHamburger on:click={toggle} class="ms-3 m-0 md:block lg:hidden {isHomePage ? '' : 'hidden'}" />
   </Navbar>
 </header>
 

@@ -2,18 +2,41 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.44.19](https://github.com/themesberg/flowbite-svelte/compare/v0.44.18...v0.44.19) (2023-10-31)
+### [0.44.22](https://github.com/themesberg/flowbite-svelte/compare/v0.44.21...v0.44.22) (2024-01-12)
 
 
 ### Bug Fixes
 
-* add missing types on modal $$Props ([#1110](https://github.com/themesberg/flowbite-svelte/issues/1110)) ([f929a4a](https://github.com/themesberg/flowbite-svelte/commit/f929a4a46617ced99b0e9faf5f2f86dd99ce81ef))
-* add missing types on modal $$Props ([#1110](https://github.com/themesberg/flowbite-svelte/issues/1110)) ([f387c81](https://github.com/themesberg/flowbite-svelte/commit/f387c81984280fad7d7f5af34d57ea8f95a04a2c))
-* change Carousel.ts to CarouselSlide.ts to fix compo-data for Carousel ([a3c75f3](https://github.com/themesberg/flowbite-svelte/commit/a3c75f3bedd1756f43428e55e6f35021910fe4ef))
-* change Carousel.ts to CarouselSlide.ts to fix compo-data for Carousel ([f97fa4d](https://github.com/themesberg/flowbite-svelte/commit/f97fa4dcafabfd697e3b99bfb7fcdcfda8968b78))
-* modal divide-y instead of border ([#1136](https://github.com/themesberg/flowbite-svelte/issues/1136)) ([c9a2a9b](https://github.com/themesberg/flowbite-svelte/commit/c9a2a9be366f35c40252c1eaa8e89a63e6151364))
-* playwright config timeout: 600000 ([7abe468](https://github.com/themesberg/flowbite-svelte/commit/7abe46866411fc7ca94806a1ec4b4ac7399bb727))
-* playwright config timeout: 600000 ([872502d](https://github.com/themesberg/flowbite-svelte/commit/872502d2d96aa7f6e516fd9a41af40229ffddca5))
+* 1125 ([#1195](https://github.com/themesberg/flowbite-svelte/issues/1195)) ([f0b3d9c](https://github.com/themesberg/flowbite-svelte/commit/f0b3d9ce7fbfad3a5db93bffd680c028af1e3409))
+* 1209 ([#1210](https://github.com/themesberg/flowbite-svelte/issues/1210)) ([671a950](https://github.com/themesberg/flowbite-svelte/commit/671a950d96bc2e96fb4d85a999f7317dd5b9fd4f))
+* sidebar md:block ([0bd2f01](https://github.com/themesberg/flowbite-svelte/commit/0bd2f012986fcdd2b925fe05e69f7114478ab440))
+
+### [0.44.21](https://github.com/themesberg/flowbite-svelte/compare/v0.44.20...v0.44.21) (2023-12-22)
+
+### Bug Fixes
+
+- [#1157](https://github.com/themesberg/flowbite-svelte/issues/1157) ([#1176](https://github.com/themesberg/flowbite-svelte/issues/1176)) ([a15a361](https://github.com/themesberg/flowbite-svelte/commit/a15a36173b644b7549c72c57d738df3e5af97bbc))
+- issue1178 ([#1179](https://github.com/themesberg/flowbite-svelte/issues/1179)) ([12281fd](https://github.com/themesberg/flowbite-svelte/commit/12281fdebe6428f2159b28a1ba5379ac4bbb2ce0))
+- modal outside click only on mouse down ([#1160](https://github.com/themesberg/flowbite-svelte/issues/1160)) ([96e4d4b](https://github.com/themesberg/flowbite-svelte/commit/96e4d4b9681db725a0208e1aa786cc330bfa9498))
+
+### [0.44.20](https://github.com/themesberg/flowbite-svelte/compare/v0.44.19...v0.44.20) (2023-11-24)
+
+### Bug Fixes
+
+- add NODE_OPTIONS to playwright-and-lint ([4f255f5](https://github.com/themesberg/flowbite-svelte/commit/4f255f57199f6214856feef12d3206b3216db5f2))
+- textarea inner rounded ([#1141](https://github.com/themesberg/flowbite-svelte/issues/1141)) ([6995e54](https://github.com/themesberg/flowbite-svelte/commit/6995e54cf788a39cb12a7a1d3df8a00f93cdfb28))
+
+### [0.44.19](https://github.com/themesberg/flowbite-svelte/compare/v0.44.18...v0.44.19) (2023-10-31)
+
+### Bug Fixes
+
+- add missing types on modal $$Props ([#1110](https://github.com/themesberg/flowbite-svelte/issues/1110)) ([f929a4a](https://github.com/themesberg/flowbite-svelte/commit/f929a4a46617ced99b0e9faf5f2f86dd99ce81ef))
+- add missing types on modal $$Props ([#1110](https://github.com/themesberg/flowbite-svelte/issues/1110)) ([f387c81](https://github.com/themesberg/flowbite-svelte/commit/f387c81984280fad7d7f5af34d57ea8f95a04a2c))
+- change Carousel.ts to CarouselSlide.ts to fix compo-data for Carousel ([a3c75f3](https://github.com/themesberg/flowbite-svelte/commit/a3c75f3bedd1756f43428e55e6f35021910fe4ef))
+- change Carousel.ts to CarouselSlide.ts to fix compo-data for Carousel ([f97fa4d](https://github.com/themesberg/flowbite-svelte/commit/f97fa4dcafabfd697e3b99bfb7fcdcfda8968b78))
+- modal divide-y instead of border ([#1136](https://github.com/themesberg/flowbite-svelte/issues/1136)) ([c9a2a9b](https://github.com/themesberg/flowbite-svelte/commit/c9a2a9be366f35c40252c1eaa8e89a63e6151364))
+- playwright config timeout: 600000 ([7abe468](https://github.com/themesberg/flowbite-svelte/commit/7abe46866411fc7ca94806a1ec4b4ac7399bb727))
+- playwright config timeout: 600000 ([872502d](https://github.com/themesberg/flowbite-svelte/commit/872502d2d96aa7f6e516fd9a41af40229ffddca5))
 
 ### [0.44.18](https://github.com/themesberg/flowbite-svelte/compare/v0.44.17...v0.44.18) (2023-10-01)
 

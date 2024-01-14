@@ -1,1 +1,11 @@
-{"name":"SidebarBrand","slots":[],"events":[],"props":[["site","SiteType",""],["aClass","string","'flex items-center pl-2.5 mb-5'"],["imgClass","string","'h-6 mr-3 sm:h-7'"],["spanClass","string","'self-center text-xl font-semibold whitespace-nowrap dark:text-white'"]]}
+{
+  "name": "SidebarBrand",
+  "slots": [],
+  "events": [],
+  "props": [
+    ["site", "SiteType", ""],
+    ["aClass", "string", "'flex items-center ps-2.5 mb-5'"],
+    ["imgClass", "string", "'h-6 me-3 sm:h-7'"],
+    ["spanClass", "string", "'self-center text-xl font-semibold whitespace-nowrap dark:text-white'"]
+  ]
+}
