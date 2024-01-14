@@ -1,5 +1,5 @@
 <script>
-	import { Button } from '$lib';
+	import { Button, Indicator } from '$lib';
 	import { EnvelopeSolid, ArrowRightOutline, ShoppingCartSolid } from 'flowbite-svelte-icons'
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import setup from './md/setup.md?raw';
@@ -9,6 +9,7 @@
 	import outline from './md/outline.md?raw'
 	import sizesicons from './md/sizesicons.md?raw'
 	import withicon from './md/withicon.md?raw'
+	import label from './md/label.md?raw'
 </script>
 
 <h1>Buttons</h1>
@@ -90,3 +91,10 @@
 <HighlightCompo code={withicon} />
 
 <h2>Button with label</h2>
+
+<Button class="gap-2">
+	Messages
+	<Indicator color="none" class="bg-primary-200 text-xs text-primary-800 font-semibold" size="lg">2</Indicator>
+</Button>
+
+<HighlightCompo code={label} />

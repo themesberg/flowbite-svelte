@@ -4,10 +4,10 @@
         color?: IndicatorColorType;
         rounded?: boolean;
         size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-        border: boolean;
-        placement: IndicatorPlacementType | undefined;
+        border?: boolean;
+        placement?: IndicatorPlacementType | undefined;
         class?: string | undefined;
-        offset: boolean;
+        offset?: boolean;
     }
     import type { IndicatorPlacementType } from '$lib/types';
     import { twMerge } from 'tailwind-merge';
