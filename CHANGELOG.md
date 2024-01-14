@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.24](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.23...v0.1.24) (2024-01-14)
+
+
+### Features
+
+* add darkmode ([4d54e6e](https://github.com/shinokada/svelte-5-ui-lib/commit/4d54e6e28c90738205e27c76ba5caa539418c0be))
+
+
+### Bug Fixes
+
+* 2xl to xxl ([9967420](https://github.com/shinokada/svelte-5-ui-lib/commit/99674200830818fa8d5417c41164b7c5a37b6fb0))
+* typo ([45d88a0](https://github.com/shinokada/svelte-5-ui-lib/commit/45d88a029059f802799d8e4e8a36904538256f87))
+
 ### [0.1.23](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.22...v0.1.23) (2024-01-13)
 
 
