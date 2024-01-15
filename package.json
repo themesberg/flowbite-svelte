@@ -220,6 +220,10 @@
     "./WidgetPlaceholder.svelte": {
       "types": "./dist/skeleton/WidgetPlaceholder.svelte.d.ts",
       "svelte": "./dist/skeleton/WidgetPlaceholder.svelte"
+    },
+    "./Spinner.svelte": {
+      "types": "./dist/spinner/Spinner.svelte.d.ts",
+      "svelte": "./dist/spinner/Spinner.svelte"
     }
   }
 }

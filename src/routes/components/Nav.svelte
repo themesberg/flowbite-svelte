@@ -39,6 +39,7 @@
 		<NavLi href="/navbar" {closeNav}>Navbar</NavLi>
 		<NavLi href="/sidebar" {closeNav}>Sidebar</NavLi>
 		<NavLi href="/skeleton" {closeNav}>Skeleton</NavLi>
+		<NavLi href="/spinner" {closeNav}>Spinner</NavLi>
 	</NavUl>
 </Navbar>
 </header>
