@@ -8,7 +8,7 @@
 <div class="m-4">
 	<Nav />
 
-	<div class="p-4 mb-32">
+	<div class="p-4 pb-32 border-b border-gray-700">
 		{@render children()}
 	</div>
 
