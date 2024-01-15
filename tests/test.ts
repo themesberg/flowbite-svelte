@@ -49,3 +49,8 @@ test('skeleton page has expected h1', async ({ page }) => {
 	await page.goto('/skeleton');
 	expect(await page.textContent('h1')).toBe('Skeleton');
 });
+
+test('spinner page has expected h1', async ({ page }) => {
+	await page.goto('/spinner');
+	expect(await page.textContent('h1')).toBe('Spinner');
+});

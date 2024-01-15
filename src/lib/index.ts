@@ -44,3 +44,5 @@ export { default as TextPlaceholder } from './skeleton/TextPlaceholder.svelte'
 export { default as ListPlaceholder } from './skeleton/ListPlaceholder.svelte'
 export { default as TestimonialPlaceholder } from './skeleton/TestimonialPlaceholder.svelte'
 export { default as WidgetPlaceholder } from './skeleton/WidgetPlaceholder.svelte'
+// spinner
+export { default as Spinner } from './spinner/Spinner.svelte'
