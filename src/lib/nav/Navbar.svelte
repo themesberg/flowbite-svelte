@@ -37,7 +37,8 @@
 
 	let navCls = twMerge('border-gray-200 bg-transparent dark:bg-gray-900', navClass);
 	let divCls = twMerge(
-		'mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4',
+		'mx-auto flex flex-wrap items-center justify-between p-4',
+		breakPoint === 'xxl' ? 'w-full' : 'max-w-screen-xl',
 		fluid ? 'w-full' : 'container',
 		divClass
 	);
