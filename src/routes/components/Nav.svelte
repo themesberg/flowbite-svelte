@@ -37,6 +37,7 @@
 		<NavLi href="/footer" {closeNav}>Footer</NavLi>
 		<NavLi href="/indicators" {closeNav}>Indicator</NavLi>
 		<NavLi href="/navbar" {closeNav}>Navbar</NavLi>
+		<NavLi href="/progress" {closeNav}>Progress</NavLi>
 		<NavLi href="/sidebar" {closeNav}>Sidebar</NavLi>
 		<NavLi href="/skeleton" {closeNav}>Skeleton</NavLi>
 		<NavLi href="/spinner" {closeNav}>Spinner</NavLi>

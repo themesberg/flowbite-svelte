@@ -61,6 +61,7 @@ module.exports = config;
 - Dropdown
 - Footer
 - Nav
+- Progressbar
 - Sidebar
 - Skelton
 - Spinner
