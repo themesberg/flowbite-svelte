@@ -6,7 +6,7 @@
 
 <h1>Footer</h1>
 
-<Footer footerClass="shadow-none" footerType="logo">
+<Footer class="shadow-none" footerType="logo">
 	<div class="sm:flex sm:items-center sm:justify-between">
 		<FooterBrand href="/" name="Svelt 5 UI Lib" />
 		<FooterUl
