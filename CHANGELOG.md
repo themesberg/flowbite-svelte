@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.27](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.26...v0.1.27) (2024-01-15)
+
+
+### Features
+
+* spinner ([5c7de96](https://github.com/shinokada/svelte-5-ui-lib/commit/5c7de96c2c10a3f729db25ca6a2722ee20de2074))
+
+
+### Bug Fixes
+
+* Darkmode, cleanup Button ([9f2c5fa](https://github.com/shinokada/svelte-5-ui-lib/commit/9f2c5fa867a2d779ca207ea3f3081298604f84bd))
+* nav update ([52c16f4](https://github.com/shinokada/svelte-5-ui-lib/commit/52c16f43ee683c90c94460232b72a4d3f6c18181))
+
 ### [0.1.26](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.25...v0.1.26) (2024-01-14)
 
 
