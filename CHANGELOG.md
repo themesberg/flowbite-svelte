@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.28](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.27...v0.1.28) (2024-01-15)
+
+
+### Features
+
+* progressbar ([0a0c40e](https://github.com/shinokada/svelte-5-ui-lib/commit/0a0c40e4518d4e4f59eb6dcc8bdc4b14c9a08e7b))
+
 ### [0.1.27](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.26...v0.1.27) (2024-01-15)
 
 
