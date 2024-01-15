@@ -29,6 +29,8 @@ export { default as Navbar } from './nav/Navbar.svelte';
 export { default as NavUl } from './nav/NavUl.svelte';
 export { default as NavBrand } from './nav/NavBrand.svelte';
 export { default as NavLi } from './nav/NavLi.svelte';
+// progress
+export { default as Progressbar } from './progress/Progressbar.svelte'
 // sidebar
 export { default as Sidebar } from './sidebar/Sidebar.svelte';
 export { default as SidebarGroup } from './sidebar/SidebarGroup.svelte';

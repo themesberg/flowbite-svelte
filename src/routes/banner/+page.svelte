@@ -3,7 +3,7 @@
     import { BullhornSolid, SalePercentSolid, ArrowRightSolid, OpenBookSolid } from 'flowbite-svelte-icons';
     import HighlightCompo from '../components/HighlightCompo.svelte';
     import setup from './md/setup.md?raw'
-    import defaultstickey from './md/defaultsticky.md?raw'
+    import defaultsticky from './md/defaultsticky.md?raw'
     import bottombanner from './md/bottombanner.md?raw'
     import marketing from './md/marketing.md?raw'
     import newsletter from './md/newsletter.md?raw'
@@ -35,7 +35,7 @@
 </Banner>
 </div>
 
-<HighlightCompo code={defaultstickey} />
+<HighlightCompo code={defaultsticky} />
 
 <h2>Bottom banner position</h2>
 
