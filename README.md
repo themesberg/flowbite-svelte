@@ -53,18 +53,20 @@ module.exports = config;
 
 ## Components
 
-- Banner
-- Breadcrumb
-- Button
-- Card
-- Darkmode
-- Dropdown
-- Footer
-- Nav
-- Progressbar
-- Sidebar
-- Skelton
-- Spinner
+- [Banner](https://svelte-5-ui-lib.vercel.app/banner)
+- [Breadcrumb](https://svelte-5-ui-lib.vercel.app/breadcrumb)
+- [Buttons](https://svelte-5-ui-lib.vercel.app/button)
+- [Cards](https://svelte-5-ui-lib.vercel.app/card)
+- [Darkmode](https://svelte-5-ui-lib.vercel.app/darkmode)
+- [Dropdown](https://svelte-5-ui-lib.vercel.app/dropdown)
+- [Footer](https://svelte-5-ui-lib.vercel.app/footer)
+- [Indicator](https://svelte-5-ui-lib.vercel.app/indicator)
+- [Kbd](https://svelte-5-ui-lib.vercel.app/kbd)
+- [Navbar](https://svelte-5-ui-lib.vercel.app/navbar)
+- [Progressbar](https://svelte-5-ui-lib.vercel.app/progress)
+- [Sidebar](https://svelte-5-ui-lib.vercel.app/sidebar)
+- [Skelton](https://svelte-5-ui-lib.vercel.app/skeleton)
+- [Spinner](https://svelte-5-ui-lib.vercel.app/spinner)
 
 ## Credits
 

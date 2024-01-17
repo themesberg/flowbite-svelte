@@ -30,12 +30,13 @@
 		<NavLi href="/" {closeNav}>Home</NavLi>
 		<NavLi href="/banner" {closeNav}>Banner</NavLi>
 		<NavLi href="/breadcrumb" {closeNav}>Breadcrumb</NavLi>
-		<NavLi href="/buttons" {closeNav}>Buttons</NavLi>
-		<NavLi href="/cards" {closeNav}>Cards</NavLi>
+		<NavLi href="/button" {closeNav}>Button</NavLi>
+		<NavLi href="/card" {closeNav}>Card</NavLi>
 		<NavLi href="/darkmode" {closeNav}>Darkmode</NavLi>
 		<NavLi href="/dropdown" {closeNav}>Dropdown</NavLi>
 		<NavLi href="/footer" {closeNav}>Footer</NavLi>
-		<NavLi href="/indicators" {closeNav}>Indicator</NavLi>
+		<NavLi href="/indicator" {closeNav}>Indicator</NavLi>
+		<NavLi href="/kbd" {closeNav}>Kbd</NavLi>
 		<NavLi href="/navbar" {closeNav}>Navbar</NavLi>
 		<NavLi href="/progress" {closeNav}>Progress</NavLi>
 		<NavLi href="/sidebar" {closeNav}>Sidebar</NavLi>

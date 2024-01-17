@@ -1,8 +1,24 @@
 <script>
     import { Kbd } from '$lib';
     import { CaretDownSolid, CaretRightSolid, CaretLeftSolid, CaretUpSolid } from 'flowbite-svelte-icons';
+    import HighlightCompo from '../components/HighlightCompo.svelte';
     import CodeWrapper from '../components/CodeWrapper.svelte';
+    import arrow from './md/arrow.md?raw'
+    import defaultkbd from './md/defaultkbd.md?raw'
+    import functionkbd from './md/functionkbd.md?raw'
+    import insidetext from './md/insidetext.md?raw'
+    import letter from './md/letter.md?raw'
+    import number from './md/number.md?raw'
+    import setup from './md/setup.md?raw'
   </script>
+
+<h1>KBD (Keyboard)</h1>
+
+<h2>Setup</h2>
+
+<HighlightCompo code={setup} />
+
+<h2>Default KBD</h2>
 
 <CodeWrapper>
 <Kbd class="px-2 py-1.5">Shift</Kbd>
@@ -14,12 +30,19 @@
 <Kbd class="px-2 py-1.5">Enter</Kbd>
 </CodeWrapper>
 
+<HighlightCompo code={defaultkbd} />
+
+<h2>KBD inside text</h2>
 
 <CodeWrapper>
 <p class="text-gray-500 dark:text-gray-400">
     Please press <Kbd class="px-2 py-1.5">Ctrl</Kbd> + <Kbd class="px-2 py-1.5">Shift</Kbd> + <Kbd class="px-2 py-1.5">R</Kbd> to re-render an MDN page.
   </p>
 </CodeWrapper>
+
+<HighlightCompo code={insidetext} />
+
+<h2>Arrow keys</h2>
 
 <CodeWrapper>
   <Kbd class="inline-flex items-center me-1 px-2 py-1.5">
@@ -39,3 +62,74 @@
     <span class="sr-only">Arrow key right</span>
   </Kbd>
 </CodeWrapper>
+
+<HighlightCompo code={arrow} />
+
+<h2>Letter keys</h2>
+
+<CodeWrapper>
+<Kbd class="px-2 py-1.5">Q</Kbd>
+<Kbd class="px-2 py-1.5">W</Kbd>
+<Kbd class="px-2 py-1.5">E</Kbd>
+<Kbd class="px-2 py-1.5">R</Kbd>
+<Kbd class="px-2 py-1.5">T</Kbd>
+<Kbd class="px-2 py-1.5">Y</Kbd>
+<Kbd class="px-2 py-1.5">U</Kbd>
+<Kbd class="px-2 py-1.5">I</Kbd>
+<Kbd class="px-2 py-1.5">O</Kbd>
+<Kbd class="px-2 py-1.5">P</Kbd>
+<Kbd class="px-2 py-1.5">A</Kbd>
+<Kbd class="px-2 py-1.5">S</Kbd>
+<Kbd class="px-2 py-1.5">D</Kbd>
+<Kbd class="px-2 py-1.5">F</Kbd>
+<Kbd class="px-2 py-1.5">G</Kbd>
+<Kbd class="px-2 py-1.5">H</Kbd>
+<Kbd class="px-2 py-1.5">J</Kbd>
+<Kbd class="px-2 py-1.5">K</Kbd>
+<Kbd class="px-2 py-1.5">L</Kbd>
+<Kbd class="px-2 py-1.5">Z</Kbd>
+<Kbd class="px-2 py-1.5">X</Kbd>
+<Kbd class="px-2 py-1.5">C</Kbd>
+<Kbd class="px-2 py-1.5">V</Kbd>
+<Kbd class="px-2 py-1.5">B</Kbd>
+<Kbd class="px-2 py-1.5">N</Kbd>
+<Kbd class="px-2 py-1.5">M</Kbd>
+</CodeWrapper>
+
+<HighlightCompo code={letter} />
+
+<h2>Number keys</h2>
+
+<CodeWrapper>
+<Kbd class="px-2 py-1.5">1</Kbd>
+<Kbd class="px-2 py-1.5">2</Kbd>
+<Kbd class="px-2 py-1.5">3</Kbd>
+<Kbd class="px-2 py-1.5">4</Kbd>
+<Kbd class="px-2 py-1.5">5</Kbd>
+<Kbd class="px-2 py-1.5">6</Kbd>
+<Kbd class="px-2 py-1.5">7</Kbd>
+<Kbd class="px-2 py-1.5">8</Kbd>
+<Kbd class="px-2 py-1.5">9</Kbd>
+<Kbd class="px-2 py-1.5">0</Kbd>
+</CodeWrapper>
+
+<HighlightCompo code={number} />
+
+<h2>Function keys</h2>
+
+<CodeWrapper>
+<Kbd class="px-2 py-1.5">F1</Kbd>
+<Kbd class="px-2 py-1.5">F2</Kbd>
+<Kbd class="px-2 py-1.5">F3</Kbd>
+<Kbd class="px-2 py-1.5">F4</Kbd>
+<Kbd class="px-2 py-1.5">F5</Kbd>
+<Kbd class="px-2 py-1.5">F6</Kbd>
+<Kbd class="px-2 py-1.5">F7</Kbd>
+<Kbd class="px-2 py-1.5">F8</Kbd>
+<Kbd class="px-2 py-1.5">F9</Kbd>
+<Kbd class="px-2 py-1.5">F10</Kbd>
+<Kbd class="px-2 py-1.5">F11</Kbd>
+<Kbd class="px-2 py-1.5">F12</Kbd>
+</CodeWrapper>
+
+<HighlightCompo code={functionkbd} />
