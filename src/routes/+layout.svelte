@@ -5,10 +5,10 @@
 	import Footer from './components/Footer.svelte';
 </script>
 
-<div class="m-4">
+<div>
 	<Nav />
 
-	<div class="p-4 pb-32 border-b border-gray-700">
+	<div class="max-w-5xl mx-auto p-4 pb-32 border-b border-gray-700">
 		{@render children()}
 	</div>
 

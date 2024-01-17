@@ -2,7 +2,7 @@
     import { Progressbar, Button } from '$lib';
     import { sineOut } from 'svelte/easing';
     import HighlightCompo from '../components/HighlightCompo.svelte';
-
+    import CodeWrapper from '../components/CodeWrapper.svelte';
     import setup from './md/setup.md?raw';
     import animation from './md/animation.md?raw';
     import colors from './md/colors.md?raw';
@@ -23,12 +23,15 @@
 
 <h2>Default progress bar</h2>
 
+<CodeWrapper>
 <Progressbar progress="50" />
+</CodeWrapper>
 
 <HighlightCompo code={defaultprogressbar} />
 
 <h2>Sizes</h2>
 
+<CodeWrapper>
 <div class="my-4">
     <div class="mb-1 text-base font-medium dark:text-white">Small</div>
     <Progressbar progress="50" size="h-1.5" />
@@ -48,23 +51,29 @@
     <div class="mb-1 text-lg font-medium dark:text-white">Extra Large</div>
     <Progressbar progress="50" size="h-6" />
   </div>
+</CodeWrapper>
 
   <HighlightCompo code={sizes} />
 
   <h2>With label inside</h2>
 
+<CodeWrapper>
   <Progressbar progress="50" size="h-4" labelInside />
+</CodeWrapper>
 
   <HighlightCompo code={labelinside} />
 
   <h2>With label outside</h2>
 
+<CodeWrapper>
   <Progressbar progress="50" labelOutside="Flowbite-Svelte" />
+</CodeWrapper>
 
   <HighlightCompo code={labeloutside} />
 
   <h2>Colors</h2>
 
+<CodeWrapper>
   <div class="my-4">
     <div class="mb-1 text-base font-medium dark:text-white">Gray</div>
     <Progressbar progress="50" color="gray" />
@@ -99,11 +108,13 @@
   <div class="my-4">
     <Progressbar progress="50" color="purple" />
   </div>
+</CodeWrapper>
 
   <HighlightCompo code={colors} />
 
   <h2>Custom style</h2>
 
+<CodeWrapper>
 <Progressbar progress="50" size="h-3" labelInside color="green" labelInsideClass="bg-blue-600 text-blue-100 text-xs font-medium text-center p-0 leading-none rounded-full" class="my-4" labelOutside="Size h-3" />
 
 <Progressbar progress="50" size="h-10" labelInside color="red" labelInsideClass="bg-blue-600 text-blue-100 text-2xl font-medium text-center p-2 leading-none rounded-full" class="my-4" labelOutside="Size h-10" />
@@ -111,11 +122,13 @@
 <Progressbar progress="50" size="h-10" color="indigo" labelInsideClass="bg-blue-600 text-blue-100 text-2xl font-medium text-center p-2 leading-none rounded-full" class="my-4" labelOutside="Size h-10" />
 
 <Progressbar progress="50" size="h-6" labelInside labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" class="my-4" labelOutside="Size h-6" />
+</CodeWrapper>
 
 <HighlightCompo code={custom} />
 
 <h2>Animation</h2>
 
+<CodeWrapper>
 <Progressbar
   {progress}
   animate
@@ -140,5 +153,6 @@
 <Button onclick={() => (progress = `${Math.round(Math.random() * 100)}`)} class="mt-8">
   Randomize
 </Button>
+</CodeWrapper>
 
 <HighlightCompo code={animation} />

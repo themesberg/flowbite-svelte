@@ -14,11 +14,11 @@
 	});
 </script>
 
-<header class="sticky top-0 z-40 flex-none w-full mx-auto bg-white border-b border-gray-200 dark:border-gray-600 dark:bg-gray-800">
+<header class="sticky top-0 z-40 flex-none w-full mx-auto bg-white border-b border-gray-200 dark:border-gray-600 dark:bg-gray-900">
 
 <Navbar {toggleNav} {closeNav} {navStatus} fluid breakPoint="xxl">
 	{#snippet brand()}
-		<NavBrand siteName="Svelte 5 UI lib (Experimental)" {closeNav}>
+		<NavBrand siteName="Svelte 5 UI lib" {closeNav}>
 			<img width="30" src="/images/svelte-icon.png" alt="svelte icon" />
 		</NavBrand>
 		<div class="flex items-center ms-auto">

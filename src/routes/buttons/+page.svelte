@@ -2,6 +2,7 @@
 	import { Button, Indicator } from '$lib';
 	import { EnvelopeSolid, ArrowRightOutline, ShoppingCartSolid } from 'flowbite-svelte-icons'
 	import HighlightCompo from '../components/HighlightCompo.svelte';
+	import CodeWrapper from '../components/CodeWrapper.svelte';
 	import setup from './md/setup.md?raw';
 	import defaultbuttons from './md/defaultbuttons.md?raw';
 	import link from './md/link.md?raw'
@@ -20,7 +21,7 @@
 
 <h2>Default buttons</h2>
 
-<div class="flex flex-wrap gap-2">
+<CodeWrapper class="flex flex-wrap gap-2">
 <Button>Default</Button>
 <Button color="alternative">Alternative</Button>
 <Button color="dark">Dark</Button>
@@ -30,19 +31,21 @@
 <Button color="red">Red</Button>
 <Button color="yellow">Yellow</Button>
 <Button color="purple">Purple</Button>
-</div>
+</CodeWrapper>
 
 <HighlightCompo code={defaultbuttons} />
 
 <h2>Button with link</h2>
 
+<CodeWrapper>
 <Button href="/">Home</Button>
+</CodeWrapper>
 
 <HighlightCompo code={link} />
 
 <h2>Button pills</h2>
 
-<div class="flex flex-wrap gap-2">
+<CodeWrapper class="flex flex-wrap gap-2">
 <Button pill>Default</Button>
 <Button color="alternative" pill>Alternative</Button>
 <Button color="dark" pill>Dark</Button>
@@ -52,49 +55,55 @@
 <Button color="red" pill>Red</Button>
 <Button color="yellow" pill>Yellow</Button>
 <Button color="purple" pill>Purple</Button>
-</div>
+</CodeWrapper>
 
 <HighlightCompo code={pills} />
 
 <h2>Outline buttons</h2>
 
-<div class="flex flex-wrap gap-2">
+<CodeWrapper class="flex flex-wrap gap-2">
 	<Button outline>Default</Button>
 	<Button outline color="dark">Dark</Button>
 	<Button outline color="green">Green</Button>
 	<Button outline color="red">Red</Button>
 	<Button outline color="yellow">Yellow</Button>
 	<Button outline color="purple">Purple</Button>
-</div>
+</CodeWrapper>
 
 <HighlightCompo code={outline} />
 
 <h2>Button sizes with icons</h2>
 
+<CodeWrapper>
 <Button size="xs"><EnvelopeSolid class="w-3 h-3 me-2" />Extra small</Button>
 <Button size="sm"><EnvelopeSolid class="w-3 h-3 me-2" />Small</Button>
 <Button size="md"><EnvelopeSolid class="w-3.5 h-3.5 me-2" />Base</Button>
 <Button size="lg"><EnvelopeSolid class="w-4 h-4 me-2" />Large</Button>
 <Button size="xl"><EnvelopeSolid class="w-4 h-4 me-2" />Extra large</Button>
+</CodeWrapper>
 
 <HighlightCompo code={sizesicons} />
 
 <h2>Button with icon</h2>
 
+<CodeWrapper>
 <Button>
 	<ShoppingCartSolid class="w-3.5 h-3.5 me-2" /> Buy Now
 </Button>
 <Button>
 	Choose Plan <ArrowRightOutline class="w-3.5 h-3.5 ms-2" />
 </Button>
+</CodeWrapper>
 
 <HighlightCompo code={withicon} />
 
 <h2>Button with label</h2>
 
+<CodeWrapper>
 <Button class="gap-2">
 	Messages
 	<Indicator color="none" class="bg-primary-200 text-xs text-primary-800 font-semibold" size="lg">2</Indicator>
 </Button>
+</CodeWrapper>
 
 <HighlightCompo code={label} />

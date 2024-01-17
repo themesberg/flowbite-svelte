@@ -11,6 +11,6 @@
 	{@html atomonedark}
 </svelte:head>
 
-<div class="my-8 w-full border border-gray-200 bg-gray-50 p-0.5 rounded-md dark:border-gray-600 dark:bg-gray-700">
+<div class="my-8 mx-auto max-w-4xl border border-gray-200 bg-gray-50 p-0.5 rounded-md dark:border-gray-600 dark:bg-gray-700">
 	<Highlight {language} {code} />
 </div>

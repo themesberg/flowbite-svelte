@@ -24,6 +24,8 @@ export { default as FooterLi } from './footer/FooterLi.svelte';
 export { default as FooterUl } from './footer/FooterUl.svelte';
 // indicator
 export { default as Indicator } from './indicator/Indicator.svelte';
+// kbd
+export { default as Kbd } from './kbd/Kbd.svelte'
 // navbar
 export { default as Navbar } from './nav/Navbar.svelte';
 export { default as NavUl } from './nav/NavUl.svelte';

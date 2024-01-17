@@ -2,6 +2,7 @@
     import { Banner, Skeleton, ImagePlaceholder } from '$lib';
     import { BullhornSolid, SalePercentSolid, ArrowRightSolid, OpenBookSolid } from 'flowbite-svelte-icons';
     import HighlightCompo from '../components/HighlightCompo.svelte';
+    import CodeWrapper from '../components/CodeWrapper.svelte';
     import setup from './md/setup.md?raw'
     import defaultsticky from './md/defaultsticky.md?raw'
     import bottombanner from './md/bottombanner.md?raw'
@@ -18,7 +19,8 @@
 
 <h2>Default sticky banner </h2>
 
-<div class="relative">
+<CodeWrapper class="relative">
+
 <Skeleton class="py-4" />
 <ImagePlaceholder class="py-4" />
 
@@ -33,13 +35,13 @@
     </span>
   </p>
 </Banner>
-</div>
+</CodeWrapper>
 
 <HighlightCompo code={defaultsticky} />
 
 <h2>Bottom banner position</h2>
 
-<div class="relative">
+<CodeWrapper class="relative">
     <Skeleton class="py-4" />
 <ImagePlaceholder class="py-4" />
 
@@ -56,13 +58,13 @@
     </span>
   </p>
 </Banner>
-</div>
+</CodeWrapper>
 
 <HighlightCompo code={bottombanner} />
 
 <h2>Marketing CTA banner </h2>
 
-<div class="relative">
+<CodeWrapper class="relative">
     <Skeleton class="py-4" />
 <ImagePlaceholder class="py-4" />
 
@@ -73,14 +75,14 @@
   </a>
   <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">Build websites even faster with components on top of Tailwind CSS</p>
 </Banner>
-</div>
+</CodeWrapper>
 
 <HighlightCompo code={marketing} />
 
 <h2>Newsletter sign-up banner</h2>
 
 
-<div class="relative">
+<CodeWrapper class="relative">
   <Skeleton class="py-4" />
   <ImagePlaceholder class="py-4" />
   
@@ -91,13 +93,13 @@
       <button type="submit" class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"> Subscribe </button>
     </form>
   </Banner>
-</div>  
+</CodeWrapper>
 
 <HighlightCompo code={newsletter} />
 
 <h2>Informational banner </h2>
 
-<div class="relative">
+<CodeWrapper class="relative">
     <Banner id="info-banner" position="absolute" bannerType="info">
         {#snippet header()}
         <div class="mb-4 md:mb-0 md:me-4">
@@ -113,6 +115,6 @@
           Get started <ArrowRightSolid class="w-3 h-3 ms-2" />
         </a>
     </Banner>
-</div>
+</CodeWrapper>
 
 <HighlightCompo code={informational} />

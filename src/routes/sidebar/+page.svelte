@@ -21,7 +21,7 @@
 	let spanClass = 'flex-1 ms-3 whitespace-nowrap';
 
 	import HighlightCompo from '../components/HighlightCompo.svelte';
-
+	import CodeWrapper from '../components/CodeWrapper.svelte';
 	import defaultSidebar from './md/default.md?raw';
 	import multiLevel from './md/multiLevel.md?raw';
 	import contentSeparator from './md/contentSeparator.md?raw';
@@ -29,6 +29,7 @@
 
 <h1>Sidebar</h1>
 
+<CodeWrapper>
 <Sidebar>
 	<SidebarGroup>
 		<SidebarItem label="Dashboard" href="/">
@@ -75,11 +76,13 @@
 		</SidebarItem>
 	</SidebarGroup>
 </Sidebar>
+</CodeWrapper>
 
 <HighlightCompo code={defaultSidebar} />
 
 <h2>Multi-level dropdown</h2>
 
+<CodeWrapper>
 <Sidebar>
 	<SidebarGroup>
 		<SidebarItem label="Dashboard">
@@ -150,11 +153,13 @@
 		</SidebarItem>
 	</SidebarGroup>
 </Sidebar>
+</CodeWrapper>
 
 <HighlightCompo code={multiLevel} />
 
 <h2>Content separator</h2>
 
+<CodeWrapper>
 <Sidebar>
 	<SidebarGroup>
 		<SidebarItem label="Dashboard" href="/">
@@ -224,5 +229,6 @@
 		</SidebarItem>
 	</SidebarGroup>
 </Sidebar>
+</CodeWrapper>
 
 <HighlightCompo code={contentSeparator} />

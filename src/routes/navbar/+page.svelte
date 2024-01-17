@@ -1,7 +1,7 @@
 <script>
 	import { Navbar, NavLi, NavBrand, NavUl, uiHelpers } from '$lib';
 	import HighlightCompo from '../components/HighlightCompo.svelte';
-
+	import CodeWrapper from '../components/CodeWrapper.svelte';
 	import navbar1 from './md/navbar1.md?raw';
 	let nav = uiHelpers();
 
@@ -18,6 +18,7 @@
 
 <h1>Navbar</h1>
 
+<CodeWrapper>
 <Navbar {toggleNav} {closeNav} {navStatus} breakPoint="xl">
 	{#snippet brand()}
 		<NavBrand siteName="Svelte 5" {closeNav}>
@@ -31,5 +32,6 @@
 		<NavLi href="/footer" {closeNav}>Footer</NavLi>
 	</NavUl>
 </Navbar>
+</CodeWrapper>
 
 <HighlightCompo code={navbar1} />
