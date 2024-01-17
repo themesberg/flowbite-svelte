@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.29](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.28...v0.1.29) (2024-01-17)
+
+
+### Features
+
+* add kbd ([a0c9fd3](https://github.com/shinokada/svelte-5-ui-lib/commit/a0c9fd355d56634c0dcce70ebe656d9a06069333))
+
+
+### Bug Fixes
+
+* navbar breakpoint css ([fc544e2](https://github.com/shinokada/svelte-5-ui-lib/commit/fc544e27cf4f5701832873e6ece33faa4ada6e6d))
+
 ### [0.1.28](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.27...v0.1.28) (2024-01-15)
 
 
