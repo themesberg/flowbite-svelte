@@ -16,6 +16,8 @@ export { default as Darkmode } from './darkmode/Darkmode.svelte';
 export { default as Dropdown } from './dropdown/Dropdown.svelte';
 export { default as DropdownDivider } from './dropdown/DropdownDivider.svelte';
 export { default as DropdownItem } from './dropdown/DropdownItem.svelte';
+// drawer
+export { default as Drawer } from './drawer/Drawer.svelte'
 // footer
 export { default as Footer } from './footer/Footer.svelte';
 export { default as FooterBrand } from './footer/FooterBrand.svelte';

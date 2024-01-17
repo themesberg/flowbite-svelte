@@ -1,5 +1,6 @@
 export function uiHelpers() {
 	let isOpen = $state(false);
+	// let isOpen = param ? $state(param) : $state(false);
 
 	function toggle() {
 		// console.log('clicked toggle');
@@ -13,6 +14,9 @@ export function uiHelpers() {
 	return {
 		get isOpen() {
 			return isOpen;
+		},
+		set isOpen(value) {
+			isOpen = value;
 		},
 
 		toggle,
