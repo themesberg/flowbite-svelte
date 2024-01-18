@@ -35,21 +35,21 @@
 <h2>Components</h2>
 
 <ul>
-	<li class='hover:underline list-disc'><a href="https://svelte-5-ui-lib.vercel.app/banner">Banner</a></li>
-	<li class='hover:underline list-disc'><a href="https://svelte-5-ui-lib.vercel.app/breadcrumb">Breadcrumb</a></li>
-	<li class='hover:underline list-disc'><a href="https://svelte-5-ui-lib.vercel.app/button">Buttons</a></li>
-	<li class='hover:underline list-disc'><a href="https://svelte-5-ui-lib.vercel.app/card">Cards</a></li>
-	<li class='hover:underline list-disc'><a href="https://svelte-5-ui-lib.vercel.app/darkmode">Darkmode</a></li>
-	<li class='hover:underline list-disc'><a href="https://svelte-5-ui-lib.vercel.app/dropdown">Dropdown</a></li>
-	<li class='hover:underline list-disc'><a href="https://svelte-5-ui-lib.vercel.app/footer">Footer</a></li>
-	<li class='hover:underline list-disc'><a href="https://svelte-5-ui-lib.vercel.app/indicator">Indicator</a></li>
-	<li class='hover:underline list-disc'><a href="https://svelte-5-ui-lib.vercel.app/kbd">Kbd</a></li>
-	<li class='hover:underline list-disc'><a href="https://svelte-5-ui-lib.vercel.app/navbar">Navbar</a></li>
-	<li class='hover:underline list-disc'><a href="https://svelte-5-ui-lib.vercel.app/progress">Progressbar</a></li>
-	<li class='hover:underline list-disc'><a href="https://svelte-5-ui-lib.vercel.app/forms/select">Select</a></li>
-	<li class='hover:underline list-disc'><a href="https://svelte-5-ui-lib.vercel.app/sidebar">Sidebar</a></li>
-	<li class='hover:underline list-disc'><a href="https://svelte-5-ui-lib.vercel.app/skeleton">Skelton</a></li>
-	<li class='hover:underline list-disc'><a href="https://svelte-5-ui-lib.vercel.app/spinner)">Spinner</a></li>
-	<li class='hover:underline list-disc'><a href="https://svelte-5-ui-lib.vercel.app/forms/select">Select</a></li>
+	<li class='hover:underline list-disc'><a href="/banner">Banner</a></li>
+	<li class='hover:underline list-disc'><a href="/breadcrumb">Breadcrumb</a></li>
+	<li class='hover:underline list-disc'><a href="/button">Buttons</a></li>
+	<li class='hover:underline list-disc'><a href="/card">Cards</a></li>
+	<li class='hover:underline list-disc'><a href="/darkmode">Darkmode</a></li>
+	<li class='hover:underline list-disc'><a href="/dropdown">Dropdown</a></li>
+	<li class='hover:underline list-disc'><a href="/footer">Footer</a></li>
+	<li class='hover:underline list-disc'><a href="/indicator">Indicator</a></li>
+	<li class='hover:underline list-disc'><a href="/kbd">Kbd</a></li>
+	<li class='hover:underline list-disc'><a href="/navbar">Navbar</a></li>
+	<li class='hover:underline list-disc'><a href="/progress">Progressbar</a></li>
+	<li class='hover:underline list-disc'><a href="/forms/select">Select</a></li>
+	<li class='hover:underline list-disc'><a href="/sidebar">Sidebar</a></li>
+	<li class='hover:underline list-disc'><a href="/skeleton">Skelton</a></li>
+	<li class='hover:underline list-disc'><a href="/spinner)">Spinner</a></li>
+	<li class='hover:underline list-disc'><a href="/forms/select">Select</a></li>
 </ul>
 

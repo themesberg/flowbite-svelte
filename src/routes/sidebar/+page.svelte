@@ -76,7 +76,7 @@
 </Sidebar>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/defaultSidebar.md']} />
+<HighlightCompo code={modules['./md/defaultsidebar.md']} />
 
 <h2>Multi-level dropdown</h2>
 

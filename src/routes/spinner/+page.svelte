@@ -3,6 +3,7 @@
     import HighlightCompo from '../components/HighlightCompo.svelte';
     import CodeWrapper from '../components/CodeWrapper.svelte';
     const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true })
+
 </script>
 
 <h1>Spinner</h1>
@@ -68,4 +69,4 @@
 </div>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/button,md']} />
+<HighlightCompo code={modules['./md/button.md']} />
