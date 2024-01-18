@@ -68,6 +68,10 @@ module.exports = config;
 - [Skelton](https://svelte-5-ui-lib.vercel.app/skeleton)
 - [Spinner](https://svelte-5-ui-lib.vercel.app/spinner)
 
+## Forms
+
+- [Select](https://svelte-5-ui-lib.vercel.app/forms/select)
+
 ## Credits
 
 - Svelte 5
