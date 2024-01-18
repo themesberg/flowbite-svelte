@@ -1,3 +1,7 @@
+<script>
+    import { HomeOutline, ChevronDoubleRightOutline } from 'flowbite-svelte-icons';
+</script>
+
 <Breadcrumb class="bg-gray-50 py-3 px-5 dark:bg-gray-900">
     <BreadcrumbItem href="/" home>
       {#snippet icon()}
