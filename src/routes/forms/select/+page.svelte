@@ -35,7 +35,7 @@
 <h2>Disabled state </h2>
 
 <CodeWrapper class="h-48">
-	<Label for="select-disabled" class="mb-2">Disabled select</Label>
+	<Label for="select-disabled" color='disabled' class="mb-2">Disabled select</Label>
 	<Select
 		id="select-disabled"
 		disabled
