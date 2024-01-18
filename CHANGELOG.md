@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.30](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.29...v0.1.30) (2024-01-18)
+
+
+### Features
+
+* add Select and Label ([264e1cd](https://github.com/shinokada/svelte-5-ui-lib/commit/264e1cd38f010071430df86e3968d5ea1770dd9c))
+
 ### [0.1.29](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.28...v0.1.29) (2024-01-17)
 
 
