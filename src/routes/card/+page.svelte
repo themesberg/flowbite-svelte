@@ -2,8 +2,9 @@
 	import { Card, Button } from '$lib';
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import CodeWrapper from '../components/CodeWrapper.svelte';
-	import card1 from './md/card1.md?raw';
-	import card2 from './md/card2.md?raw';
+
+	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true })
+
 	import { ArrowRightOutline } from 'flowbite-svelte-icons';
 </script>
 
@@ -23,7 +24,7 @@
 </Card>
 </CodeWrapper>
 
-<HighlightCompo code={card1} />
+<HighlightCompo code={modules['./md/card1.md']} />
 
 <h2>Card with action button</h2>
 
@@ -42,4 +43,4 @@
 </Card>
 </CodeWrapper>
 
-<HighlightCompo code={card2} />
+<HighlightCompo code={modules['./md/card2.md']} />

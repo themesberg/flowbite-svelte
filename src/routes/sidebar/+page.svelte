@@ -22,9 +22,7 @@
 
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import CodeWrapper from '../components/CodeWrapper.svelte';
-	import defaultSidebar from './md/default.md?raw';
-	import multiLevel from './md/multiLevel.md?raw';
-	import contentSeparator from './md/contentSeparator.md?raw';
+	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true })
 </script>
 
 <h1>Sidebar</h1>
@@ -78,7 +76,7 @@
 </Sidebar>
 </CodeWrapper>
 
-<HighlightCompo code={defaultSidebar} />
+<HighlightCompo code={modules['./md/defaultSidebar.md']} />
 
 <h2>Multi-level dropdown</h2>
 
@@ -155,7 +153,7 @@
 </Sidebar>
 </CodeWrapper>
 
-<HighlightCompo code={multiLevel} />
+<HighlightCompo code={modules['./md/multiLevel.md']} />
 
 <h2>Content separator</h2>
 
@@ -231,4 +229,4 @@
 </Sidebar>
 </CodeWrapper>
 
-<HighlightCompo code={contentSeparator} />
+<HighlightCompo code={modules['./md/contentSeparator.md']} />

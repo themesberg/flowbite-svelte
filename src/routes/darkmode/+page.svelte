@@ -3,17 +3,14 @@
     import HighlightCompo from '../components/HighlightCompo.svelte';
     import CodeWrapper from '../components/CodeWrapper.svelte';
     import { ThumbsUpSolid, ThumbsDownSolid } from 'flowbite-svelte-icons';
-    import darkmode from './md/darkmode.md?raw';
-    import setup from './md/setup.md?raw'
-    import initialtheme from './md/initialtheme.md?raw'
-    import modeicon from './md/modeicon.md?raw'
+    const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true })
 </script>
 
 <h1>Darkmode</h1>
 
 <h2>Setup</h2>
 
-<HighlightCompo code={setup} />
+<HighlightCompo code={modules['./md/setup.md']} />
 
 <h2>Default Darkmode</h2>
 
@@ -21,13 +18,13 @@
 <Darkmode />
 </CodeWrapper>
 
-<HighlightCompo code={darkmode} />
+<HighlightCompo code={modules['./md/darkmode.md']} />
 
 <h2>Initial theme</h2>
 
 Add the following to `app.html`:
 
-<HighlightCompo code={initialtheme} />
+<HighlightCompo code={modules['./md/initialtheme.md']} />
 
 <h2>Switcher style</h2>
 
@@ -45,4 +42,4 @@ Use the lightIcon and darkIcon slots to change icons:
 </Darkmode>
 </CodeWrapper>
 
-<HighlightCompo code={modeicon} />
+<HighlightCompo code={modules['./md/modeicon.md']} />

@@ -3,8 +3,7 @@
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import CodeWrapper from '../components/CodeWrapper.svelte';
 	import atomonedark from 'svelte-highlight/styles/atom-one-dark';
-	import dropdown1 from './md/dropdown1.md?raw';
-	const code = 'const add = (a: number, b: number) => a + b;';
+	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true })
 </script>
 
 <svelte:head>
@@ -17,4 +16,4 @@
 <Dropdown />
 </CodeWrapper>
 
-<HighlightCompo code={dropdown1} />
+<HighlightCompo code={modules['./md/dropdown1.md']} />

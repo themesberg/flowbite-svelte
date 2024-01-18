@@ -2,19 +2,14 @@
     import { Spinner, Button } from '$lib'
     import HighlightCompo from '../components/HighlightCompo.svelte';
     import CodeWrapper from '../components/CodeWrapper.svelte';
-    import setup from './md/setup.md?raw';
-    import defaultspinner from './md/defaultspinner.md?raw';
-    import colors from './md/colors.md?raw';
-    import sizes from './md/sizes.md?raw';
-    import alignment from './md/alignment.md?raw';
-    import button from './md/button.md?raw';
+    const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true })
 </script>
 
 <h1>Spinner</h1>
 
 <h2>Setup</h2>
 
-<HighlightCompo code={setup} />
+<HighlightCompo code={modules['./md/setup.md']} />
 
 <h2>Default spinner</h2>
 
@@ -22,7 +17,7 @@
 <Spinner />
 </CodeWrapper>
 
-<HighlightCompo code={defaultspinner} />
+<HighlightCompo code={modules['./md/defaultspinner.md']} />
 
 <h2>Colors</h2>
 
@@ -36,7 +31,7 @@
 <Spinner color="purple" />
 </CodeWrapper>
 
-<HighlightCompo code={colors} />
+<HighlightCompo code={modules['./md/colors.md']} />
 
 <h2>Sizes</h2>
 
@@ -46,7 +41,7 @@
 <Spinner size={8} />
 </CodeWrapper>
 
-<HighlightCompo code={sizes} />
+<HighlightCompo code={modules['./md/sizes.md']} />
 
 <h2>Alignment</h2>
 
@@ -56,7 +51,7 @@
 <div class="text-right"><Spinner /></div>
 </CodeWrapper>
 
-<HighlightCompo code={alignment} />
+<HighlightCompo code={modules['./md/alignment.md']} />
 
 <h2>Button</h2>
 
@@ -73,4 +68,4 @@
 </div>
 </CodeWrapper>
 
-<HighlightCompo code={button} />
+<HighlightCompo code={modules['./md/button,md']} />

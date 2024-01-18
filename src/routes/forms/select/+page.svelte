@@ -8,10 +8,7 @@
 		{ value: 'ca', name: 'Canada' },
 		{ value: 'fr', name: 'France' }
 	];
-    import defaultselect from './md/defaultselect.md?raw'
-    import disabled from './md/disabled.md?raw'
-    import setup from './md/setup.md?raw'
-    import underline from './md/underline.md?raw'
+    const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true })
 
 </script>
 
@@ -19,7 +16,7 @@
 
 <h2>Setup</h2>
 
-<HighlightCompo code={setup} />
+<HighlightCompo code={modules['./md/setup.md']} />
 
 <h2>Select input example</h2>
 
@@ -30,7 +27,7 @@
 	</Label>
 </CodeWrapper>
 
-<HighlightCompo code={defaultselect} />
+<HighlightCompo code={modules['./md/defaultselect.md']} />
 
 <h2>Disabled state </h2>
 
@@ -44,7 +41,7 @@
 	/>
 </CodeWrapper>
 
-<HighlightCompo code={disabled} />
+<HighlightCompo code={modules['./md/disabled.md']} />
 
 <h2>Underline select</h2>
 
@@ -53,5 +50,5 @@
 	<Select id="select-underline" underline class="mt-2" items={countries} />
 </CodeWrapper>
 
-<HighlightCompo code={underline} />
+<HighlightCompo code={modules['./md/underline.md']} />
 

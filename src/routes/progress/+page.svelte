@@ -3,14 +3,7 @@
     import { sineOut } from 'svelte/easing';
     import HighlightCompo from '../components/HighlightCompo.svelte';
     import CodeWrapper from '../components/CodeWrapper.svelte';
-    import setup from './md/setup.md?raw';
-    import animation from './md/animation.md?raw';
-    import colors from './md/colors.md?raw';
-    import custom from './md/custom.md?raw';
-    import defaultprogressbar from './md/defaultprogressbar.md?raw';
-    import labelinside from './md/labelinside.md?raw';
-    import labeloutside from './md/labeloutside.md?raw';
-    import sizes from './md/sizes.md?raw';
+    const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true })
 
     let progress = '45'
 </script>
@@ -19,7 +12,7 @@
 
 <h2>Setup</h2>
 
-<HighlightCompo code={setup} />
+<HighlightCompo code={modules['./md/setup.md']} />
 
 <h2>Default progress bar</h2>
 
@@ -27,7 +20,7 @@
 <Progressbar progress="50" />
 </CodeWrapper>
 
-<HighlightCompo code={defaultprogressbar} />
+<HighlightCompo code={modules['./md/defaultprogressbar.md']} />
 
 <h2>Sizes</h2>
 
@@ -53,7 +46,7 @@
   </div>
 </CodeWrapper>
 
-  <HighlightCompo code={sizes} />
+  <HighlightCompo code={modules['./md/sizes.md']} />
 
   <h2>With label inside</h2>
 
@@ -61,7 +54,7 @@
   <Progressbar progress="50" size="h-4" labelInside />
 </CodeWrapper>
 
-  <HighlightCompo code={labelinside} />
+  <HighlightCompo code={modules['./md/labelinside.md']} />
 
   <h2>With label outside</h2>
 
@@ -69,7 +62,7 @@
   <Progressbar progress="50" labelOutside="Flowbite-Svelte" />
 </CodeWrapper>
 
-  <HighlightCompo code={labeloutside} />
+  <HighlightCompo code={modules['./md/labeloutside.md']} />
 
   <h2>Colors</h2>
 
@@ -110,7 +103,7 @@
   </div>
 </CodeWrapper>
 
-  <HighlightCompo code={colors} />
+  <HighlightCompo code={modules['./md/colors.md']} />
 
   <h2>Custom style</h2>
 
@@ -124,7 +117,7 @@
 <Progressbar progress="50" size="h-6" labelInside labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full" class="my-4" labelOutside="Size h-6" />
 </CodeWrapper>
 
-<HighlightCompo code={custom} />
+<HighlightCompo code={modules['./md/custom.md']} />
 
 <h2>Animation</h2>
 
@@ -155,4 +148,4 @@
 </Button>
 </CodeWrapper>
 
-<HighlightCompo code={animation} />
+<HighlightCompo code={modules['./md/animation.md']} />

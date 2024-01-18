@@ -2,7 +2,7 @@
 	import { Footer, FooterBrand, FooterLi, FooterUl } from '$lib';
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import CodeWrapper from '../components/CodeWrapper.svelte';
-	import footer1 from './md/footer1.md?raw';
+	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true })
 </script>
 
 <h1>Footer</h1>
@@ -21,4 +21,4 @@
 </Footer>
 </CodeWrapper>
 
-<HighlightCompo code={footer1} />
+<HighlightCompo code={modules['./md/footer1.md']} />

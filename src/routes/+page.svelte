@@ -1,7 +1,7 @@
 <script>
 	import HighlightCompo from './components/HighlightCompo.svelte';
 
-	import installation from './md/installation.md?raw';
+	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true })
 </script>
 
 <h1>Svelte 5 UI Lib: Work in progress</h1>
@@ -30,7 +30,7 @@
 
 <h2>Installation</h2>
 
-<HighlightCompo code={installation} />
+<HighlightCompo code={modules['./md/installation.md']} />
 
 <h2>Components</h2>
 

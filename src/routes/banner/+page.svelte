@@ -3,19 +3,14 @@
     import { BullhornSolid, SalePercentSolid, ArrowRightSolid, OpenBookSolid } from 'flowbite-svelte-icons';
     import HighlightCompo from '../components/HighlightCompo.svelte';
     import CodeWrapper from '../components/CodeWrapper.svelte';
-    import setup from './md/setup.md?raw'
-    import defaultsticky from './md/defaultsticky.md?raw'
-    import bottombanner from './md/bottombanner.md?raw'
-    import marketing from './md/marketing.md?raw'
-    import newsletter from './md/newsletter.md?raw'
-    import informational from './md/informational.md?raw'
+    const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true })
   </script>
 
 <h1>Banner</h1>
 
 <h2>Setup</h2>
 
-<HighlightCompo code={setup} />
+<HighlightCompo code={modules['./md/setup.md']} />
 
 <h2>Default sticky banner </h2>
 
@@ -37,7 +32,7 @@
 </Banner>
 </CodeWrapper>
 
-<HighlightCompo code={defaultsticky} />
+<HighlightCompo code={modules['./md/defaultsticky.md']} />
 
 <h2>Bottom banner position</h2>
 
@@ -60,7 +55,7 @@
 </Banner>
 </CodeWrapper>
 
-<HighlightCompo code={bottombanner} />
+<HighlightCompo code={modules['./md/bottombanner.md']} />
 
 <h2>Marketing CTA banner </h2>
 
@@ -77,7 +72,7 @@
 </Banner>
 </CodeWrapper>
 
-<HighlightCompo code={marketing} />
+<HighlightCompo code={modules['./md/marketing.md']} />
 
 <h2>Newsletter sign-up banner</h2>
 
@@ -95,7 +90,7 @@
   </Banner>
 </CodeWrapper>
 
-<HighlightCompo code={newsletter} />
+<HighlightCompo code={modules['./md/newsletter.md']} />
 
 <h2>Informational banner </h2>
 
@@ -117,4 +112,4 @@
     </Banner>
 </CodeWrapper>
 
-<HighlightCompo code={informational} />
+<HighlightCompo code={modules['./md/informational.md']} />

@@ -2,7 +2,7 @@
 	import { Navbar, NavLi, NavBrand, NavUl, uiHelpers } from '$lib';
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import CodeWrapper from '../components/CodeWrapper.svelte';
-	import navbar1 from './md/navbar1.md?raw';
+	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true })
 	let nav = uiHelpers();
 
 	let navStatus = $state(false);
@@ -34,4 +34,4 @@
 </Navbar>
 </CodeWrapper>
 
-<HighlightCompo code={navbar1} />
+<HighlightCompo code={modules['./md/navbar1.md']} />

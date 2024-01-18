@@ -3,21 +3,14 @@
 	import { EnvelopeSolid, ArrowRightOutline, ShoppingCartSolid } from 'flowbite-svelte-icons'
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import CodeWrapper from '../components/CodeWrapper.svelte';
-	import setup from './md/setup.md?raw';
-	import defaultbuttons from './md/defaultbuttons.md?raw';
-	import link from './md/link.md?raw'
-	import pills from './md/pills.md?raw'
-	import outline from './md/outline.md?raw'
-	import sizesicons from './md/sizesicons.md?raw'
-	import withicon from './md/withicon.md?raw'
-	import label from './md/label.md?raw'
+	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true })
 </script>
 
 <h1>Buttons</h1>
 
 <h2>Setup</h2>
 
-<HighlightCompo code={setup} />
+<HighlightCompo code={modules['./md/setup.md']} />
 
 <h2>Default buttons</h2>
 
@@ -33,7 +26,7 @@
 <Button color="purple">Purple</Button>
 </CodeWrapper>
 
-<HighlightCompo code={defaultbuttons} />
+<HighlightCompo code={modules['./md/defaultbuttons.md']} />
 
 <h2>Button with link</h2>
 
@@ -41,7 +34,7 @@
 <Button href="/">Home</Button>
 </CodeWrapper>
 
-<HighlightCompo code={link} />
+<HighlightCompo code={modules['./md/link.md']} />
 
 <h2>Button pills</h2>
 
@@ -57,7 +50,7 @@
 <Button color="purple" pill>Purple</Button>
 </CodeWrapper>
 
-<HighlightCompo code={pills} />
+<HighlightCompo code={modules['./md/pills.md']} />
 
 <h2>Outline buttons</h2>
 
@@ -70,7 +63,7 @@
 	<Button outline color="purple">Purple</Button>
 </CodeWrapper>
 
-<HighlightCompo code={outline} />
+<HighlightCompo code={modules['./md/outline.md']} />
 
 <h2>Button sizes with icons</h2>
 
@@ -82,7 +75,7 @@
 <Button size="xl"><EnvelopeSolid class="w-4 h-4 me-2" />Extra large</Button>
 </CodeWrapper>
 
-<HighlightCompo code={sizesicons} />
+<HighlightCompo code={modules['./md/sizesicons.md']} />
 
 <h2>Button with icon</h2>
 
@@ -95,7 +88,7 @@
 </Button>
 </CodeWrapper>
 
-<HighlightCompo code={withicon} />
+<HighlightCompo code={modules['./md/withicon.md']} />
 
 <h2>Button with label</h2>
 
@@ -106,4 +99,4 @@
 </Button>
 </CodeWrapper>
 
-<HighlightCompo code={label} />
+<HighlightCompo code={modules['./md/label.md']} />
