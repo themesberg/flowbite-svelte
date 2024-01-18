@@ -4,7 +4,7 @@ title: Svelte Snapshot - Flowbite
 breadcrumb_title: Svelte Snapshot
 component_title: Snapshot
 dir: Examples
-description: Svelte Snapshot with Flowbite Svete
+description: Svelte Snapshot with Flowbite svelte
 ---
 
 <script>
