@@ -39,6 +39,7 @@
 		<NavLi href="/kbd" {closeNav}>Kbd</NavLi>
 		<NavLi href="/navbar" {closeNav}>Navbar</NavLi>
 		<NavLi href="/progress" {closeNav}>Progress</NavLi>
+		<NavLi href="/forms/select" {closeNav}>Select</NavLi>
 		<NavLi href="/sidebar" {closeNav}>Sidebar</NavLi>
 		<NavLi href="/skeleton" {closeNav}>Skeleton</NavLi>
 		<NavLi href="/spinner" {closeNav}>Spinner</NavLi>
