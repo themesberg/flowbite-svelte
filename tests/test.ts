@@ -6,12 +6,12 @@ test('index page has expected h1', async ({ page }) => {
 });
 
 test('button page has expected h1', async ({ page }) => {
-	await page.goto('/buttons');
+	await page.goto('/button');
 	expect(await page.textContent('h1')).toBe('Buttons');
 });
 
 test('cards page has expected h1', async ({ page }) => {
-	await page.goto('/cards');
+	await page.goto('/card');
 	expect(await page.textContent('h1')).toBe('Cards');
 });
 
@@ -23,6 +23,11 @@ test('darkmode page has expected h1', async ({ page }) => {
 test('dropdown page has expected h1', async ({ page }) => {
 	await page.goto('/dropdown');
 	expect(await page.textContent('h1')).toBe('Dropdown');
+});
+
+test('forms/seletct page has expected h1', async ({ page }) => {
+	await page.goto('/forms/select');
+	expect(await page.textContent('h1')).toBe('Select');
 });
 
 test('footer page has expected h1', async ({ page }) => {

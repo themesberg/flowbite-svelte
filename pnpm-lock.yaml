@@ -68,6 +68,9 @@ devDependencies:
   svelte-check:
     specifier: ^3.6.2
     version: 3.6.2(postcss-load-config@5.0.2)(postcss@8.4.33)(svelte@5.0.0-next.33)
+  svelte-flag-icons:
+    specifier: ^0.7.2
+    version: 0.7.2(svelte@5.0.0-next.33)
   svelte-highlight:
     specifier: ^7.4.8
     version: 7.4.8
@@ -2456,6 +2459,14 @@ packages:
       espree: 9.6.1
       postcss: 8.4.33
       postcss-scss: 4.0.9(postcss@8.4.33)
+      svelte: 5.0.0-next.33
+    dev: true
+
+  /svelte-flag-icons@0.7.2(svelte@5.0.0-next.33):
+    resolution: {integrity: sha512-0Q7oYsDvW6LCm/ZzKF6DnD4i1Ue3dsYL+CYt7c0ayDpP5uM/Rdk22y+xgR4I9ln0ulMsm5qj4xlbheSKGrPxYg==}
+    peerDependencies:
+      svelte: ^3.54.0 || ^4.0.0
+    dependencies:
       svelte: 5.0.0-next.33
     dev: true
 

@@ -22,6 +22,9 @@ export { default as FooterBrand } from './footer/FooterBrand.svelte';
 export { default as FooterCopyright } from './footer/FooterCopyright.svelte';
 export { default as FooterLi } from './footer/FooterLi.svelte';
 export { default as FooterUl } from './footer/FooterUl.svelte';
+// forms
+export { default as Label } from './forms/Label.svelte'
+export { default as Select } from './forms/Select.svelte'
 // indicator
 export { default as Indicator } from './indicator/Indicator.svelte';
 // kbd
