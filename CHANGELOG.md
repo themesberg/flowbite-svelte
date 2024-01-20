@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.32](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.31...v0.1.32) (2024-01-20)
+
+
+### Bug Fixes
+
+* NavUl update ([af6b733](https://github.com/shinokada/svelte-5-ui-lib/commit/af6b733bfc5d1058e633c4dcb3800fea363e7e80))
+
 ### [0.1.31](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.30...v0.1.31) (2024-01-20)
 
 
