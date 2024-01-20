@@ -4,10 +4,11 @@
         color?: 'gray' | 'green' | 'red' | 'disabled';
         show?: boolean;
         class?: string | undefined;
+        forId?: string | undefined;
     }
     import { twMerge } from 'tailwind-merge';
   
-    let { children, color = 'gray', show = true, class:classname, ...attributes } = $props<Props>();
+    let { children, color = 'gray', show = true, class:classname, forId, ...attributes } = $props<Props>();
   
     const colorClasses = {
       gray: 'text-gray-900 dark:text-gray-300',
@@ -21,8 +22,10 @@
   </script>
   
   {#if show}
-    <label {...attributes} class={labelCls}><slot /></label>
+    <label {...attributes} class={labelCls} for={forId}>
+    {@ render children()}
+    </label>
   {:else}
-    <slot />
+    {@render children()}
   {/if}
   

@@ -2,11 +2,18 @@
 	interface Props {
 		children: any;
 		ulClass?: string | undefined;
+		divClass?: string | undefined;
 	}
 	import { getContext } from 'svelte';
+	import { quintOut } from 'svelte/easing';
 	import { twMerge } from 'tailwind-merge';
-	let { children, ulClass, ...attributes } = $props<Props>();
+	import { slide, type SlideParams } from 'svelte/transition';
+	let { children, ulClass, divClass, ...attributes } = $props<Props>();
 	let breakPoint: 'md' | 'lg' | 'xl' | 'xxl';
+	// let _hidden: boolean;
+	// $effect(()=>{
+	// 	_hidden = hidden ?? $hiddenStore ?? true;
+	// })
 
 	breakPoint = getContext('breakPoint');
 	const ulBreak = {
@@ -15,9 +22,11 @@
 		xl: 'xl:mt-0 xl:flex-row xl:space-x-8 xl:border-0 lg:p-0 xl:dark:bg-gray-900',
 		xxl: '2xl:mt-0 2xl:flex-row 2xl:space-x-8 2xl:border-0 2xl:p-0 2xl:dark:bg-gray-900'
 	};
+	
+	let slideParams: SlideParams = { delay: 250, duration: 500, easing: quintOut };
 
 	// $inspect('break', ulBreak[breakPoint]);
-
+    let _divClass = twMerge('w-full md:block md:w-auto', divClass);
 	let ulCls = twMerge(
 		'mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 bg-transparent p-4 font-medium dark:border-gray-700 dark:bg-gray-800 rtl:space-x-reverse',
 		ulBreak[breakPoint],
@@ -27,6 +36,10 @@
 	// $inspect('NavUl', breakPoint);
 </script>
 
+<div {...attributes} class={_divClass} transition:slide={slideParams} on:click role="button" tabindex="0">
 <ul class={ulCls} {...attributes}>
 	{@render children()}
 </ul>
+</div>
+
+
