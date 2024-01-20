@@ -15,6 +15,8 @@
 	import { setContext } from 'svelte';
 	import { twMerge } from 'tailwind-merge';
 	import { clickOutside } from '../uiHelpers.svelte';
+	import { slide, type SlideParams } from 'svelte/transition';
+	import { quintOut } from 'svelte/easing';
 
 	let {
 		children,
@@ -61,6 +63,8 @@
 	};
 	let divChildrenCls = twMerge('w-full', blockBreak[breakPoint], divChildrenClass);
 	// $inspect('Navbar: ', breakPoint);
+	let slideParams: SlideParams = { delay: 250, duration: 500, easing: quintOut };
+
 </script>
 
 <nav class={navCls} use:clickOutside={closeNav} {...attributes}>
@@ -86,7 +90,7 @@
 				/>
 			</svg>
 		</button>
-		<div class="{navDisplay} {divChildrenCls}">
+		<div class="{navDisplay} {divChildrenCls}" transition:slide={slideParams} role="button" tabindex="0" >
 			{@render children()}
 		</div>
 	</div>

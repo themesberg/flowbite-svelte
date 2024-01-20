@@ -16,11 +16,11 @@
 	);
 	// export let border: boolean = false;
 
-	if (border) {
-		ulCls += ' ' + borderCls;
-	}
+	// if (border) {
+	// 	ulCls += ' ' + borderCls;
+	// }
 </script>
 
-<ul {...attributes} class={ulCls}>
+<ul {...attributes} class={border ? borderCls : ulCls}>
 	{@render children()}
 </ul>
