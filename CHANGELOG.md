@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.31](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.30...v0.1.31) (2024-01-20)
+
+
+### Features
+
+* use import.meta.glob for md files ([c15c9f8](https://github.com/shinokada/svelte-5-ui-lib/commit/c15c9f8971b50f995b91b78dd0ccea3505bb535b))
+
+
+### Bug Fixes
+
+* Label ([2b7b645](https://github.com/shinokada/svelte-5-ui-lib/commit/2b7b6456cf0b8b2c374a4b7955284f3d74aed5a2))
+* NavUl update ([0473a4e](https://github.com/shinokada/svelte-5-ui-lib/commit/0473a4ef4799770b12a741f12b3c71b40bde0113))
+* typo ([0abaa14](https://github.com/shinokada/svelte-5-ui-lib/commit/0abaa1480b12088451505df9219cd5d8e124be97))
+
 ### [0.1.30](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.29...v0.1.30) (2024-01-18)
 
 
