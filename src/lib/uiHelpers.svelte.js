@@ -11,6 +11,10 @@ export function uiHelpers() {
 		isOpen = false;
 	}
 
+	function open() {
+		isOpen = true;
+	}
+
 	return {
 		get isOpen() {
 			return isOpen;
@@ -20,7 +24,8 @@ export function uiHelpers() {
 		},
 
 		toggle,
-		close
+		close,
+		open
 	};
 }
 
