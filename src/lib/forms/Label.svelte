@@ -23,7 +23,7 @@
   
   {#if show}
     <label {...attributes} class={labelCls} for={forId}>
-    {@ render children()}
+    {@render children()}
     </label>
   {:else}
     {@render children()}
