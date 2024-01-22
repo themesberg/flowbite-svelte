@@ -5,7 +5,7 @@
 		class?: string | undefined;
 	}
 	import { twMerge } from 'tailwind-merge';
-	let { children, footerType = 'default', class:classname, ...attributes } = $props<Props>();
+	let { children, footerType = 'default', class: classname, ...attributes } = $props<Props>();
 
 	let footerCls = twMerge(
 		footerType === 'sitemap' && 'bg-gray-800',

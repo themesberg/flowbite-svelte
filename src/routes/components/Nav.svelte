@@ -14,35 +14,36 @@
 	});
 </script>
 
-<header class="sticky top-0 z-40 flex-none w-full mx-auto bg-white border-b border-gray-200 dark:border-gray-600 dark:bg-gray-900">
+<header
+	class="sticky top-0 z-40 mx-auto w-full flex-none border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-900"
+>
+	<Navbar {toggleNav} {closeNav} {navStatus} fluid breakPoint="xxl">
+		{#snippet brand()}
+			<NavBrand siteName="Svelte 5 UI lib" {closeNav}>
+				<img width="30" src="/images/svelte-icon.png" alt="svelte icon" />
+			</NavBrand>
+			<div class="ms-auto flex items-center">
+				<Darkmode />
+			</div>
+		{/snippet}
 
-<Navbar {toggleNav} {closeNav} {navStatus} fluid breakPoint="xxl">
-	{#snippet brand()}
-		<NavBrand siteName="Svelte 5 UI lib" {closeNav}>
-			<img width="30" src="/images/svelte-icon.png" alt="svelte icon" />
-		</NavBrand>
-		<div class="flex items-center ms-auto">
-			<Darkmode />
-		</div>
-	{/snippet}
-
-	<NavUl>
-		<NavLi href="/" {closeNav}>Home</NavLi>
-		<NavLi href="/banner" {closeNav}>Banner</NavLi>
-		<NavLi href="/breadcrumb" {closeNav}>Breadcrumb</NavLi>
-		<NavLi href="/button" {closeNav}>Button</NavLi>
-		<NavLi href="/card" {closeNav}>Card</NavLi>
-		<NavLi href="/darkmode" {closeNav}>Darkmode</NavLi>
-		<NavLi href="/dropdown" {closeNav}>Dropdown</NavLi>
-		<NavLi href="/footer" {closeNav}>Footer</NavLi>
-		<NavLi href="/indicator" {closeNav}>Indicator</NavLi>
-		<NavLi href="/kbd" {closeNav}>Kbd</NavLi>
-		<NavLi href="/navbar" {closeNav}>Navbar</NavLi>
-		<NavLi href="/progress" {closeNav}>Progress</NavLi>
-		<NavLi href="/forms/select" {closeNav}>Select</NavLi>
-		<NavLi href="/sidebar" {closeNav}>Sidebar</NavLi>
-		<NavLi href="/skeleton" {closeNav}>Skeleton</NavLi>
-		<NavLi href="/spinner" {closeNav}>Spinner</NavLi>
-	</NavUl>
-</Navbar>
+		<NavUl>
+			<NavLi href="/" {closeNav}>Home</NavLi>
+			<NavLi href="/banner" {closeNav}>Banner</NavLi>
+			<NavLi href="/breadcrumb" {closeNav}>Breadcrumb</NavLi>
+			<NavLi href="/button" {closeNav}>Button</NavLi>
+			<NavLi href="/card" {closeNav}>Card</NavLi>
+			<NavLi href="/darkmode" {closeNav}>Darkmode</NavLi>
+			<NavLi href="/dropdown" {closeNav}>Dropdown</NavLi>
+			<NavLi href="/footer" {closeNav}>Footer</NavLi>
+			<NavLi href="/indicator" {closeNav}>Indicator</NavLi>
+			<NavLi href="/kbd" {closeNav}>Kbd</NavLi>
+			<NavLi href="/navbar" {closeNav}>Navbar</NavLi>
+			<NavLi href="/progress" {closeNav}>Progress</NavLi>
+			<NavLi href="/forms/select" {closeNav}>Select</NavLi>
+			<NavLi href="/sidebar" {closeNav}>Sidebar</NavLi>
+			<NavLi href="/skeleton" {closeNav}>Skeleton</NavLi>
+			<NavLi href="/spinner" {closeNav}>Spinner</NavLi>
+		</NavUl>
+	</Navbar>
 </header>

@@ -2,14 +2,13 @@
 	import { Select, Label } from '$lib';
 	import HighlightCompo from '../../components/HighlightCompo.svelte';
 	import CodeWrapper from '../../components/CodeWrapper.svelte';
-	let selected: any =$state();
+	let selected: any = $state();
 	let countries = [
 		{ value: 'us', name: 'United States' },
 		{ value: 'ca', name: 'Canada' },
 		{ value: 'fr', name: 'France' }
 	];
-    const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true })
-
+	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 </script>
 
 <h1>Select</h1>
@@ -29,10 +28,10 @@
 
 <HighlightCompo code={modules['./md/defaultselect.md']} />
 
-<h2>Disabled state </h2>
+<h2>Disabled state</h2>
 
 <CodeWrapper class="h-48">
-	<Label for="select-disabled" color='disabled' class="mb-2">Disabled select</Label>
+	<Label for="select-disabled" color="disabled" class="mb-2">Disabled select</Label>
 	<Select
 		id="select-disabled"
 		disabled
@@ -51,4 +50,3 @@
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/underline.md']} />
-

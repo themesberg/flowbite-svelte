@@ -64,7 +64,6 @@
 	let divChildrenCls = twMerge('w-full', blockBreak[breakPoint], divChildrenClass);
 	// $inspect('Navbar: ', breakPoint);
 	let slideParams: SlideParams = { delay: 250, duration: 500, easing: quintOut };
-
 </script>
 
 <nav class={navCls} use:clickOutside={closeNav} {...attributes}>
@@ -90,7 +89,12 @@
 				/>
 			</svg>
 		</button>
-		<div class="{navDisplay} {divChildrenCls}" transition:slide={slideParams} role="button" tabindex="0" >
+		<div
+			class="{navDisplay} {divChildrenCls}"
+			transition:slide={slideParams}
+			role="button"
+			tabindex="0"
+		>
 			{@render children()}
 		</div>
 	</div>

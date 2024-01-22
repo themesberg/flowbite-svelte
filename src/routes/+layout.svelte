@@ -8,7 +8,7 @@
 <div>
 	<Nav />
 
-	<div class="max-w-5xl mx-auto p-4 pb-32 border-b border-gray-700">
+	<div class="mx-auto max-w-5xl border-b border-gray-700 p-4 pb-32">
 		{@render children()}
 	</div>
 

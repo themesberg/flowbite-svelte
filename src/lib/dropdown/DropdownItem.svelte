@@ -7,7 +7,7 @@
 		href?: string | undefined;
 	}
 
-	let { class:classname, children, href, ...attributes } = $props<Props>();
+	let { class: classname, children, href, ...attributes } = $props<Props>();
 	const aCls = 'block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white';
 </script>
 

@@ -2,7 +2,7 @@
 	import { Footer, FooterBrand, FooterLi, FooterUl } from '$lib';
 </script>
 
-<Footer class="dark:bg-gray-950 shadow-none" footerType="logo">
+<Footer class="shadow-none dark:bg-gray-950" footerType="logo">
 	<div class="sm:flex sm:items-center sm:justify-between">
 		<FooterBrand href="/" name="Svelt 5 UI Lib" />
 		<FooterUl

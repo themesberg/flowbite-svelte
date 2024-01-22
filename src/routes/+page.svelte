@@ -1,7 +1,7 @@
 <script>
 	import HighlightCompo from './components/HighlightCompo.svelte';
 
-	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true })
+	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 </script>
 
 <h1>Svelte 5 UI Lib: Work in progress</h1>
@@ -35,21 +35,20 @@
 <h2>Components</h2>
 
 <ul>
-	<li class='hover:underline list-disc'><a href="/banner">Banner</a></li>
-	<li class='hover:underline list-disc'><a href="/breadcrumb">Breadcrumb</a></li>
-	<li class='hover:underline list-disc'><a href="/button">Buttons</a></li>
-	<li class='hover:underline list-disc'><a href="/card">Cards</a></li>
-	<li class='hover:underline list-disc'><a href="/darkmode">Darkmode</a></li>
-	<li class='hover:underline list-disc'><a href="/dropdown">Dropdown</a></li>
-	<li class='hover:underline list-disc'><a href="/footer">Footer</a></li>
-	<li class='hover:underline list-disc'><a href="/indicator">Indicator</a></li>
-	<li class='hover:underline list-disc'><a href="/kbd">Kbd</a></li>
-	<li class='hover:underline list-disc'><a href="/navbar">Navbar</a></li>
-	<li class='hover:underline list-disc'><a href="/progress">Progressbar</a></li>
-	<li class='hover:underline list-disc'><a href="/forms/select">Select</a></li>
-	<li class='hover:underline list-disc'><a href="/sidebar">Sidebar</a></li>
-	<li class='hover:underline list-disc'><a href="/skeleton">Skelton</a></li>
-	<li class='hover:underline list-disc'><a href="/spinner)">Spinner</a></li>
-	<li class='hover:underline list-disc'><a href="/forms/select">Select</a></li>
+	<li class="list-disc hover:underline"><a href="/banner">Banner</a></li>
+	<li class="list-disc hover:underline"><a href="/breadcrumb">Breadcrumb</a></li>
+	<li class="list-disc hover:underline"><a href="/button">Buttons</a></li>
+	<li class="list-disc hover:underline"><a href="/card">Cards</a></li>
+	<li class="list-disc hover:underline"><a href="/darkmode">Darkmode</a></li>
+	<li class="list-disc hover:underline"><a href="/dropdown">Dropdown</a></li>
+	<li class="list-disc hover:underline"><a href="/footer">Footer</a></li>
+	<li class="list-disc hover:underline"><a href="/indicator">Indicator</a></li>
+	<li class="list-disc hover:underline"><a href="/kbd">Kbd</a></li>
+	<li class="list-disc hover:underline"><a href="/navbar">Navbar</a></li>
+	<li class="list-disc hover:underline"><a href="/progress">Progressbar</a></li>
+	<li class="list-disc hover:underline"><a href="/forms/select">Select</a></li>
+	<li class="list-disc hover:underline"><a href="/sidebar">Sidebar</a></li>
+	<li class="list-disc hover:underline"><a href="/skeleton">Skelton</a></li>
+	<li class="list-disc hover:underline"><a href="/spinner)">Spinner</a></li>
+	<li class="list-disc hover:underline"><a href="/forms/select">Select</a></li>
 </ul>
-

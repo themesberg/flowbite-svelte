@@ -26,7 +26,17 @@ export interface TransitionParamTypes {
 	tick?: (t: number, u: number) => void;
 }
 
-export type IndicatorPlacementType = 'top-left' | 'top-center' | 'top-right' | 'center-left' | 'center' | 'center-right' | 'bottom-left' | 'bottom-center' | 'bottom-right' | undefined;
+export type IndicatorPlacementType =
+	| 'top-left'
+	| 'top-center'
+	| 'top-right'
+	| 'center-left'
+	| 'center'
+	| 'center-right'
+	| 'bottom-left'
+	| 'bottom-center'
+	| 'bottom-right'
+	| undefined;
 
 export interface drawerTransitionParamTypes {
 	amount?: number;
@@ -36,6 +46,19 @@ export interface drawerTransitionParamTypes {
 	opacity?: number;
 	x?: number;
 	y?: number;
-  }
+}
 
-export type drawerTransitionTypes = 'fade' | 'fly' | 'slide' | 'blur' | 'in:fly' | 'out:fly' | 'in:slide' | 'out:slide' | 'in:fade' | 'out:fade' | 'in:blur' | 'out:blur' | undefined;
+export type drawerTransitionTypes =
+	| 'fade'
+	| 'fly'
+	| 'slide'
+	| 'blur'
+	| 'in:fly'
+	| 'out:fly'
+	| 'in:slide'
+	| 'out:slide'
+	| 'in:fade'
+	| 'out:fade'
+	| 'in:blur'
+	| 'out:blur'
+	| undefined;

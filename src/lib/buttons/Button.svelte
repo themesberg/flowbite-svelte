@@ -162,25 +162,16 @@
 			shadow && coloredShadowClasses[color],
 			disabled && 'cursor-not-allowed opacity-50',
 			classname
-	));
-	
+		)
+	);
 </script>
 
 {#if href}
-	<a
-		{href}
-		{...attributes}
-		class={buttonClass}
-		role="button"
-	>
+	<a {href} {...attributes} class={buttonClass} role="button">
 		{@render children()}
 	</a>
 {:else if tag === 'button'}
-	<button
-		{type}
-		{...attributes}
-		class={buttonClass}
-	>
+	<button {type} {...attributes} class={buttonClass}>
 		{@render children()}
 	</button>
 {:else}

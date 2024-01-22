@@ -1,8 +1,17 @@
 <script>
-    import { Skeleton, CardPlaceholder, ImagePlaceholder, VideoPlaceholder, TextPlaceholder, ListPlaceholder, TestimonialPlaceholder, WidgetPlaceholder } from "$lib";
-    import HighlightCompo from '../components/HighlightCompo.svelte';
-    import CodeWrapper from '../components/CodeWrapper.svelte';
-    const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true })
+	import {
+		Skeleton,
+		CardPlaceholder,
+		ImagePlaceholder,
+		VideoPlaceholder,
+		TextPlaceholder,
+		ListPlaceholder,
+		TestimonialPlaceholder,
+		WidgetPlaceholder
+	} from '$lib';
+	import HighlightCompo from '../components/HighlightCompo.svelte';
+	import CodeWrapper from '../components/CodeWrapper.svelte';
+	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 </script>
 
 <h1>Skeleton</h1>
@@ -14,11 +23,11 @@
 <h2>Default skeleton</h2>
 
 <CodeWrapper>
-<Skeleton size="sm" class="my-8" />
-<Skeleton size="md" class="my-8" />
-<Skeleton size="lg" class="my-8" />
-<Skeleton size="xl" class="my-8" />
-<Skeleton size="xxl" class="mt-8 mb-2.5" />
+	<Skeleton size="sm" class="my-8" />
+	<Skeleton size="md" class="my-8" />
+	<Skeleton size="lg" class="my-8" />
+	<Skeleton size="xl" class="my-8" />
+	<Skeleton size="xxl" class="mb-2.5 mt-8" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/skeleton.md']} />
@@ -26,8 +35,8 @@
 <h2>Image placeholder</h2>
 
 <CodeWrapper>
-<ImagePlaceholder />
-<ImagePlaceholder imgHeight="h-60" class="mt-8" />
+	<ImagePlaceholder />
+	<ImagePlaceholder imgHeight="h-60" class="mt-8" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/imageplaceholder.md']} />
@@ -35,11 +44,11 @@
 <h2>Video placeholder</h2>
 
 <CodeWrapper>
-<VideoPlaceholder />
-<VideoPlaceholder size="md" class="mt-8" />
-<VideoPlaceholder size="lg" class="mt-8" />
-<VideoPlaceholder size="xl" class="mt-8" />
-<VideoPlaceholder size="xxl" class="mt-8" />
+	<VideoPlaceholder />
+	<VideoPlaceholder size="md" class="mt-8" />
+	<VideoPlaceholder size="lg" class="mt-8" />
+	<VideoPlaceholder size="xl" class="mt-8" />
+	<VideoPlaceholder size="xxl" class="mt-8" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/videoplaceholder.md']} />
@@ -47,11 +56,11 @@
 <h2>Text placeholder</h2>
 
 <CodeWrapper>
-<TextPlaceholder />
-<TextPlaceholder size="md" class="mt-8" />
-<TextPlaceholder size="lg" class="mt-8" />
-<TextPlaceholder size="xl" class="mt-8" />
-<TextPlaceholder size="xxl" class="mt-8" />
+	<TextPlaceholder />
+	<TextPlaceholder size="md" class="mt-8" />
+	<TextPlaceholder size="lg" class="mt-8" />
+	<TextPlaceholder size="xl" class="mt-8" />
+	<TextPlaceholder size="xxl" class="mt-8" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/textplaceholder.md']} />
@@ -59,11 +68,11 @@
 <h2>Card placeholder</h2>
 
 <CodeWrapper>
-<CardPlaceholder />
-<CardPlaceholder size="md" class="mt-8" />
-<CardPlaceholder size="lg" class="mt-8" />
-<CardPlaceholder size="xl" class="mt-8" />
-<CardPlaceholder size="xxl" class="mt-8" />
+	<CardPlaceholder />
+	<CardPlaceholder size="md" class="mt-8" />
+	<CardPlaceholder size="lg" class="mt-8" />
+	<CardPlaceholder size="xl" class="mt-8" />
+	<CardPlaceholder size="xxl" class="mt-8" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/cardplaceholder.md']} />
@@ -71,14 +80,14 @@
 <h2>Widget placeholder</h2>
 
 <CodeWrapper>
-<WidgetPlaceholder />
+	<WidgetPlaceholder />
 </CodeWrapper>
 <HighlightCompo code={modules['./md/widgetplaceholder.md']} />
 
 <h2>List placeholder</h2>
 
 <CodeWrapper>
-<ListPlaceholder />
+	<ListPlaceholder />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/listplaceholder.md']} />
@@ -86,7 +95,7 @@
 <h2>Testimonial placeholder</h2>
 
 <CodeWrapper>
-<TestimonialPlaceholder />
+	<TestimonialPlaceholder />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/testimonialplaceholder.md']} />

@@ -22,9 +22,9 @@
 	} from 'flowbite-svelte-icons';
 	import { sineIn } from 'svelte/easing';
 
-    import HighlightCompo from '../components/HighlightCompo.svelte';
+	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import CodeWrapper from '../components/CodeWrapper.svelte';
-    const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true })
+	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 
 	let transitionParams = {
 		x: -320,

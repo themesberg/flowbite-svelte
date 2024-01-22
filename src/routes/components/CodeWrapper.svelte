@@ -1,12 +1,17 @@
 <script lang="ts">
-    interface Props{
-      children: any;
-      class?: string | undefined;
-    }
-    import { twMerge } from "tailwind-merge";
-    let { children, class:classname } = $props<Props>();
+	interface Props {
+		children: any;
+		class?: string | undefined;
+	}
+	import { twMerge } from 'tailwind-merge';
+	let { children, class: classname } = $props<Props>();
 </script>
 
-<div class={twMerge('max-w-4xl mx-auto bg-gradient-to-r bg-white dark:bg-gray-900 p-6 rounded-md border border-gray-200 dark:border-gray-600', classname)}>
-{@render children()}
+<div
+	class={twMerge(
+		'mx-auto max-w-4xl rounded-md border border-gray-200 bg-white bg-gradient-to-r p-6 dark:border-gray-600 dark:bg-gray-900',
+		classname
+	)}
+>
+	{@render children()}
 </div>
