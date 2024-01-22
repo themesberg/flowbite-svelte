@@ -2,7 +2,6 @@
 	import Dropdown from '../components/Dropdown.svelte';
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import CodeWrapper from '../components/CodeWrapper.svelte';
-	import atomonedark from 'svelte-highlight/styles/atom-one-dark';
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true })
 </script>
 

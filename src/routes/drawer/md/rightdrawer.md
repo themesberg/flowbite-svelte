@@ -11,6 +11,10 @@
     const drawerD = uiHelpers();
 	let drawerStatusD = $state(false);
 	const closeDrawerD = drawerD.close;
+
+    $effect(() => {
+		drawerStatusD = drawerD.isOpen;
+	});
 </script>
 
 

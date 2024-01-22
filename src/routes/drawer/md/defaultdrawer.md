@@ -7,9 +7,15 @@
 		duration: 200,
 		easing: sineIn
 	};
-    const drawerA = uiHelpers();
+    
+  const drawerA = uiHelpers();
 	let drawerStatusA = $state(false);
 	const closeDrawerA = drawerA.close;
+
+  $effect(() => {
+		drawerStatusA = drawerA.isOpen;
+	});
+
 </script>
 
 <div class="text-center">

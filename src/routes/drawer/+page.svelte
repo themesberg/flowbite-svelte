@@ -22,6 +22,10 @@
 	} from 'flowbite-svelte-icons';
 	import { sineIn } from 'svelte/easing';
 
+    import HighlightCompo from '../components/HighlightCompo.svelte';
+	import CodeWrapper from '../components/CodeWrapper.svelte';
+    const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true })
+
 	let transitionParams = {
 		x: -320,
 		duration: 200,
@@ -103,6 +107,10 @@
 
 <h1>Drawer</h1>
 
+<h2>Setup</h2>
+
+<HighlightCompo code={modules['./md/setup.md']} />
+
 <h2>Default drawer</h2>
 <div class="text-center">
 	<Button onclick={drawerA.toggle}>Show drawer</Button>
@@ -155,6 +163,8 @@
 		<Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
 	</div>
 </Drawer>
+
+<HighlightCompo code={modules['./md/defaultdrawer.md']} />
 
 <h2>Drawer navigation</h2>
 
@@ -266,6 +276,8 @@
 	</Sidebar>
 </Drawer>
 
+<HighlightCompo code={modules['./md/navigation.md']} />
+
 <h2>Placement</h2>
 
 <h3>Left drawer</h3>
@@ -327,6 +339,8 @@
 	</div>
 </Drawer>
 
+<HighlightCompo code={modules['./md/leftdrawer.md']} />
+
 <h3>Right drawer</h3>
 
 <div class="text-center">
@@ -385,6 +399,8 @@
 		<Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
 	</div>
 </Drawer>
+
+<HighlightCompo code={modules['./md/rightdrawer.md']} />
 
 <h3>Top drawer</h3>
 
@@ -446,6 +462,8 @@
 	</div>
 </Drawer>
 
+<HighlightCompo code={modules['./md/topdrawer.md']} />
+
 <h3>Bottom drawer</h3>
 
 <div class="text-center">
@@ -506,6 +524,8 @@
 	</div>
 </Drawer>
 
+<HighlightCompo code={modules['./md/bottomdrawer.md']} />
+
 <h2>Backdrop</h2>
 
 <h3>Enabled (default)</h3>
@@ -562,6 +582,8 @@
 	</div>
 </Drawer>
 
+<HighlightCompo code={modules['./md/backdrop.md']} />
+
 <h3>Disabled</h3>
 
 <div class="text-center">
@@ -615,6 +637,8 @@
 		<Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
 	</div>
 </Drawer>
+
+<HighlightCompo code={modules['./md/backdropdisabled.md']} />
 
 <h2>Disabling outside click and backdrop</h2>
 
@@ -676,6 +700,8 @@
 	</div>
 </Drawer>
 
+<HighlightCompo code={modules['./md/disabling-outside-click-and-backdrop.md']} />
+
 <h2>Disabling only outside click</h2>
 
 <div class="text-center">
@@ -734,3 +760,5 @@
 		<Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
 	</div>
 </Drawer>
+
+<HighlightCompo code={modules['./md/disabling-outside-click.md']} />

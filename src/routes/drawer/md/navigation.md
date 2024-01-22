@@ -7,9 +7,14 @@
 		duration: 200,
 		easing: sineIn
 	};
+
     const drawerB = uiHelpers();
 	let drawerStatusB = $state(false);
 	const closeDrawerB = drawerB.close;
+
+	$effect(() => {
+		drawerStatusB = drawerB.isOpen;
+	});
 </script>
 
 
