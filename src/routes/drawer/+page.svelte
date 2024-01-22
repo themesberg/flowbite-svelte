@@ -90,6 +90,10 @@
 	let drawerStatusJ = $state(false);
 	const closeDrawerJ = drawerJ.close;
 
+    const drawerK = uiHelpers();
+	let drawerStatusK = $state(false);
+	const closeDrawerK = drawerK.close;
+
 	$effect(() => {
 		drawerStatusA = drawerA.isOpen;
 		drawerStatusB = drawerB.isOpen;
@@ -101,6 +105,7 @@
 		drawerStatusH = drawerH.isOpen;
 		drawerStatusI = drawerI.isOpen;
 		drawerStatusJ = drawerJ.isOpen;
+        drawerStatusK = drawerK.isOpen;
 	});
 	let spanClass = 'flex-1 ms-3 whitespace-nowrap';
 </script>
@@ -112,6 +117,8 @@
 <HighlightCompo code={modules['./md/setup.md']} />
 
 <h2>Default drawer</h2>
+
+<CodeWrapper>
 <div class="text-center">
 	<Button onclick={drawerA.toggle}>Show drawer</Button>
 </div>
@@ -163,11 +170,13 @@
 		<Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
 	</div>
 </Drawer>
+</CodeWrapper>
 
 <HighlightCompo code={modules['./md/defaultdrawer.md']} />
 
 <h2>Drawer navigation</h2>
 
+<CodeWrapper>
 <div class="text-center">
 	<Button onclick={drawerB.toggle}>Show navigation</Button>
 </div>
@@ -275,6 +284,7 @@
 		</SidebarGroup>
 	</Sidebar>
 </Drawer>
+</CodeWrapper>
 
 <HighlightCompo code={modules['./md/navigation.md']} />
 
@@ -282,6 +292,7 @@
 
 <h3>Left drawer</h3>
 
+<CodeWrapper>
 <div class="text-center">
 	<Button onclick={drawerC.toggle}>Show drawer</Button>
 </div>
@@ -338,11 +349,13 @@
 		<Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
 	</div>
 </Drawer>
+</CodeWrapper>
 
 <HighlightCompo code={modules['./md/leftdrawer.md']} />
 
 <h3>Right drawer</h3>
 
+<CodeWrapper>
 <div class="text-center">
 	<Button onclick={drawerD.toggle}>Show drawer</Button>
 </div>
@@ -399,11 +412,13 @@
 		<Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
 	</div>
 </Drawer>
+</CodeWrapper>
 
 <HighlightCompo code={modules['./md/rightdrawer.md']} />
 
 <h3>Top drawer</h3>
 
+<CodeWrapper>
 <div class="text-center">
 	<Button onclick={drawerE.toggle}>Show drawer</Button>
 </div>
@@ -461,11 +476,13 @@
 		<Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
 	</div>
 </Drawer>
+</CodeWrapper>
 
 <HighlightCompo code={modules['./md/topdrawer.md']} />
 
 <h3>Bottom drawer</h3>
 
+<CodeWrapper>
 <div class="text-center">
 	<Button onclick={drawerF.toggle}>Show drawer</Button>
 </div>
@@ -523,6 +540,7 @@
 		<Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
 	</div>
 </Drawer>
+</CodeWrapper>
 
 <HighlightCompo code={modules['./md/bottomdrawer.md']} />
 
@@ -530,6 +548,7 @@
 
 <h3>Enabled (default)</h3>
 
+<CodeWrapper>
 <div class="text-center">
 	<Button onclick={drawerG.toggle}>Show drawer</Button>
 </div>
@@ -581,11 +600,13 @@
 		<Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
 	</div>
 </Drawer>
+</CodeWrapper>
 
 <HighlightCompo code={modules['./md/backdrop.md']} />
 
 <h3>Disabled</h3>
 
+<CodeWrapper>
 <div class="text-center">
 	<Button onclick={drawerH.toggle}>Show drawer</Button>
 </div>
@@ -637,11 +658,71 @@
 		<Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
 	</div>
 </Drawer>
+</CodeWrapper>
 
 <HighlightCompo code={modules['./md/backdropdisabled.md']} />
 
+<h2>Offset position</h2>
+
+<CodeWrapper>
+    <div class="text-center">
+        <Button onclick={drawerK.toggle}>Show drawer</Button>
+    </div>
+    
+    <Drawer leftOffset="top-16 h-screen start-0"  drawerStatus={drawerStatusK} closeDrawer={closeDrawerK} {transitionParams}>
+        <div class="flex items-center">
+            <h5
+                id="drawer-label"
+                class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400"
+            >
+                <InfoCircleSolid class="me-2.5 h-4 w-4" />Info
+            </h5>
+            <button
+                type="button"
+                onclick={closeDrawerA}
+                class="ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
+                data-modal-hide="default-modal"
+            >
+                <svg
+                    class="h-3 w-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                >
+                    <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                    />
+                </svg>
+                <span class="sr-only">Close modal</span>
+            </button>
+        </div>
+        <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
+            Supercharge your hiring by taking advantage of our <a
+                href="/"
+                class="text-primary-600 underline hover:no-underline dark:text-primary-500"
+            >
+                limited-time sale
+            </a>
+            for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design
+            job board.
+        </p>
+        <div class="grid grid-cols-2 gap-4">
+            <Button color="light" href="/">Learn more</Button>
+            <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
+        </div>
+    </Drawer>
+</CodeWrapper>
+
+<HighlightCompo code={modules['./md/offset.md']} />
+
 <h2>Disabling outside click and backdrop</h2>
 
+<CodeWrapper>
 <div class="text-center">
 	<Button onclick={drawerI.toggle}>Show drawer</Button>
 </div>
@@ -699,11 +780,13 @@
 		<Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
 	</div>
 </Drawer>
+</CodeWrapper>
 
 <HighlightCompo code={modules['./md/disabling-outside-click-and-backdrop.md']} />
 
 <h2>Disabling only outside click</h2>
 
+<CodeWrapper>
 <div class="text-center">
 	<Button onclick={drawerJ.toggle}>Show drawer</Button>
 </div>
@@ -760,5 +843,6 @@
 		<Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
 	</div>
 </Drawer>
+</CodeWrapper>
 
 <HighlightCompo code={modules['./md/disabling-outside-click.md']} />
