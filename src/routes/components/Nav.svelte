@@ -132,7 +132,7 @@
 			<SidebarItem onclick={closeNavDrawer} label="Indicator" href='/indicator'/>
 			<SidebarItem onclick={closeNavDrawer} label="Kbd" href='/kbd'/>
 			<SidebarItem onclick={closeNavDrawer} label="Navbar" href='/navbar'/>
-			<SidebarItem lonclick={closeNavDrawer} abel="Progress" href='/progress'/>
+			<SidebarItem onclick={closeNavDrawer} label="Progress" href='/progress'/>
 			<SidebarItem onclick={closeNavDrawer} label="Sidebar" href='/sidebar'/>
 			<SidebarItem onclick={closeNavDrawer} label="Skeleton" href='/skeleton'/>
 			<SidebarItem onclick={closeNavDrawer} label="Spinner" href='/spinner'/>
