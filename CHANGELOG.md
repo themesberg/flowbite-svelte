@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.34](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.33...v0.1.34) (2024-01-22)
+
+
+### Features
+
+* complete drawer compo ([110dbaa](https://github.com/shinokada/svelte-5-ui-lib/commit/110dbaab071b5d36b517b439f6e75268414d040c))
+* drawer update ([005b3ee](https://github.com/shinokada/svelte-5-ui-lib/commit/005b3eeaa61b78395ffd967b94539d81c0ee6eb7))
+
 ### [0.1.33](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.32...v0.1.33) (2024-01-21)
 
 

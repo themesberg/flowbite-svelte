@@ -1,6 +1,6 @@
 {
   "name": "svelte-5-ui-lib",
-  "version": "0.1.33",
+  "version": "0.1.34",
   "description": "A UI library for Svelte 5.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -33,7 +33,7 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --check . && eslint .",
-    "format": "prettier --write .",
+    "format": "prettier --write 'src/**/*.{js,ts,svelte}'",
     "test:integration": "playwright test",
     "gen:exports": "svelte-lib-helpers exports",
     "copy:package": "svelte-lib-helpers package",
@@ -117,6 +117,10 @@
     "./Darkmode.svelte": {
       "types": "./dist/darkmode/Darkmode.svelte.d.ts",
       "svelte": "./dist/darkmode/Darkmode.svelte"
+    },
+    "./Drawer.svelte": {
+      "types": "./dist/drawer/Drawer.svelte.d.ts",
+      "svelte": "./dist/drawer/Drawer.svelte"
     },
     "./Dropdown.svelte": {
       "types": "./dist/dropdown/Dropdown.svelte.d.ts",
