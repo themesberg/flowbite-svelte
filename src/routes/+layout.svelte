@@ -9,7 +9,7 @@
 <Nav />
 <div class="lg:flex">
 	<Sidemenu />
-	<main class="flex-auto w-full min-w-0 lg:static lg:max-h-full lg:overflow-visible px-4">
+	<main class="flex-auto w-full min-w-0 lg:static lg:max-h-full lg:overflow-visible px-4 pb-20">
 		{@render children()}
 	</main>
 </div>
