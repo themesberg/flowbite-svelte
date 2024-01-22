@@ -26,7 +26,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%sveltekit.head%
 	</head>
-	<body data-sveltekit-preload-data="hover" class="bg-white dark:bg-gray-950 text-gray-600 dark:text-gray-400 antialiased">
-		<div style="display: contents">%sveltekit.body%</div>
+	<body data-sveltekit-preload-data="hover" class="bg-white dark:bg-gray-950 text-gray-700 dark:text-gray-300 antialiased">
+		<div style="display: contents" class="max-h-screen overflow-auto relative w-full">
+			%sveltekit.body%
+		</div>
 	</body>
 </html>

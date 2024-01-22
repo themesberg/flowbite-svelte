@@ -6,13 +6,11 @@
 	import Sidemenu from './components/Sidemenu.svelte';
 </script>
 
-
-	<Nav />
-	<div class="lg:flex">
-<Sidemenu />
-	<div class="mx-auto max-w-5xl border-b lg:ml-4 border-gray-700 p-4 pb-32">
+<Nav />
+<div class="lg:flex">
+	<Sidemenu />
+	<main class="flex-auto w-full min-w-0 lg:static lg:max-h-full lg:overflow-visible px-4">
 		{@render children()}
-	</div>
+	</main>
 </div>
-	<Footer />
-
+<Footer />
