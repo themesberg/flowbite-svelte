@@ -39,14 +39,28 @@
 </script>
 
 
-<Sidebar class="hidden lg:block fixed inset-0 z-30 flex-none h-full w-64 lg:static lg:h-auto border-e border-gray-200 dark:border-gray-600 lg:overflow-y-visible lg:pt-0 lg:block">
+<Sidebar class='fixed inset-0 z-30 flex-none h-full w-64 lg:static lg:h-auto border-e border-gray-200 bg-gray-800 dark:border-gray-600 lg:overflow-y-visible lg:pt-0 lg:block hidden'>
 	<SidebarGroup>
-		<SidebarDropdownItem href='/banner'>Banner</SidebarDropdownItem>
-		<SidebarDropdownItem href='/breadcrumb'>Breadcrumb</SidebarDropdownItem>
-		<SidebarDropdownItem href='/button'>Button</SidebarDropdownItem>
-		<SidebarDropdownItem href='/card'>Card</SidebarDropdownItem>
-		<SidebarDropdownItem href='/darkmode'>Darkmode</SidebarDropdownItem>
-		<SidebarDropdownItem href='/drawer'>Drawer</SidebarDropdownItem>
-		<SidebarDropdownItem href='/dropdown'>Dropdown</SidebarDropdownItem>
+		<SidebarItem label="Banner" href='/banner'/>
+		<SidebarItem label="Breadcrumb" href='/breadcrumb'/>
+		<SidebarItem label="Button" href='/button'/>
+		<SidebarItem label="Card" href='/card'/>
+		<SidebarItem label="Drawer" href='/drawer'/>
+		<SidebarItem label="Darkmode" href='darkmode'/>
+		<SidebarItem label="Dropdown" href='/dropdown'/>
+		<SidebarItem label="Footer" href='/footer'/>
+		<SidebarItem label="Indicator" href='/indicator'/>
+		<SidebarItem label="Kbd" href='/kbd'/>
+		<SidebarItem label="Navbar" href='/navbar'/>
+		<SidebarItem label="Progress" href='/progress'/>
+		<SidebarItem label="Sidebar" href='/sidebar'/>
+		<SidebarItem label="Skeleton" href='/skeleton'/>
+		<SidebarItem label="Spinner" href='/spinner'/>
+		<SidebarDropdownWrapper label="Forms">
+			<SidebarDropdownItem  href='/forms/select'>Select</SidebarDropdownItem>
+
+		</SidebarDropdownWrapper>
+		
 	</SidebarGroup>
 </Sidebar>
+

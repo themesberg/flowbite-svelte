@@ -20,21 +20,20 @@
 		ShoppingCartSolid,
         BarsSolid
 	} from 'flowbite-svelte-icons';
+
 	import { sineIn } from 'svelte/easing';
-    let transitionParams = {
+    
+	let transitionParams = {
 		x: -320,
 		duration: 200,
 		easing: sineIn
 	};
 
-    const drawer = uiHelpers();
-	let drawerStatus = $state(false);
-	const closeDrawer = drawer.close;
+    const navDrawer = uiHelpers();
+	let navDrawerStatus = $state(false);
+	const closeNavDrawer = navDrawer.close;
 
-    $effect(() => {
-		drawerStatus = drawer.isOpen;
-	});
-	let spanClass = 'flex-1 ms-3 whitespace-nowrap';
+	// let spanClass = 'flex-1 ms-3 whitespace-nowrap';
 	let nav = uiHelpers();
 
 	let navStatus = $state(false);
@@ -42,8 +41,7 @@
 	let closeNav = nav.close;
 
 	$effect(() => {
-		// this can be done adding nav.navStatus directly to DOM element
-		// without using effect
+		navDrawerStatus = navDrawer.isOpen;
 		navStatus = nav.isOpen;
 	});
 </script>
@@ -53,12 +51,28 @@
 >
 	<Navbar {toggleNav} {closeNav} {navStatus} fluid breakPoint="xxl">
 		{#snippet brand()}
-
-<BarsSolid onclick={drawer.toggle} class="h-5 w-5 z-50 mr-4 mt-1 lg:hidden"/>
-
+		<button onclick={navDrawer.toggle} type="button" class="z-50 mr-4 mt-1 lg:hidden" aria-controls="navbar-default">
+			<span class="sr-only">Open drawer menu</span>
+			<svg
+				class="h-5 w-5"
+				aria-hidden="true"
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 17 14"
+			>
+				<path
+					stroke="currentColor"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M1 1h15M1 7h15M1 13h15"
+				/>
+			</svg>
+		</button>
 			<NavBrand siteName="Svelte 5 UI lib" {closeNav}>
 				<img width="30" src="/images/svelte-icon.png" alt="svelte icon" />
 			</NavBrand>
+
 			<div class="ms-auto flex items-center">
 				<Darkmode />
 			</div>
@@ -66,38 +80,24 @@
 
 		<NavUl>
 			<NavLi href="/" {closeNav}>Home</NavLi>
-			<NavLi href="/banner" {closeNav}>Banner</NavLi>
-			<NavLi href="/breadcrumb" {closeNav}>Breadcrumb</NavLi>
-			<NavLi href="/button" {closeNav}>Button</NavLi>
-			<NavLi href="/card" {closeNav}>Card</NavLi>
-			<NavLi href="/darkmode" {closeNav}>Darkmode</NavLi>
-			<NavLi href="/dropdown" {closeNav}>Dropdown</NavLi>
-			<NavLi href="/footer" {closeNav}>Footer</NavLi>
-			<NavLi href="/indicator" {closeNav}>Indicator</NavLi>
-			<NavLi href="/kbd" {closeNav}>Kbd</NavLi>
-			<NavLi href="/navbar" {closeNav}>Navbar</NavLi>
-			<NavLi href="/progress" {closeNav}>Progress</NavLi>
-			<NavLi href="/forms/select" {closeNav}>Select</NavLi>
-			<NavLi href="/sidebar" {closeNav}>Sidebar</NavLi>
-			<NavLi href="/skeleton" {closeNav}>Skeleton</NavLi>
-			<NavLi href="/spinner" {closeNav}>Spinner</NavLi>
+			<NavLi href="https://github.com/shinokada/svelte-5-ui-lib" {closeNav}>Repo</NavLi>
 		</NavUl>
 	</Navbar>
 </header>
 
 
 
-<Drawer leftOffset="top-16 h-screen start-0" width="48" drawerStatus={drawerStatus} closeDrawer={closeDrawer} {transitionParams}>
+<Drawer drawerStatus={navDrawerStatus} closeDrawer={closeNavDrawer} {transitionParams}>
 	<div class="flex items-center">
 		<h5
 			id="drawer-label"
-			class="mb-4 inline-flex items-center text-base font-semibold text-gray-500 dark:text-gray-400"
+			class="mb-4 inline-flex items-center text-lg font-semibold text-gray-500 dark:text-gray-400"
 		>
-			<InfoCircleSolid class="me-2.5 h-4 w-4" />Menu
+			Svelte 5 UI Lib
 		</h5>
 		<button
 			type="button"
-			onclick={closeDrawer}
+			onclick={closeNavDrawer}
 			class="ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
 			data-modal-hide="default-modal"
 		>
@@ -116,77 +116,31 @@
 					d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
 				/>
 			</svg>
-			<span class="sr-only">Close modal</span>
+			<span class="sr-only">Close drawer</span>
 		</button>
 	</div>
 	<Sidebar>
 		<SidebarGroup>
-			<SidebarItem label="Dashboard">
-				{#snippet icon()}
-					<ChartPieSolid
-						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-					/>
-				{/snippet}
-			</SidebarItem>
-			<SidebarDropdownWrapper label="E-commerce">
-				{#snippet icon()}
-					<ShoppingCartSolid
-						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-					/>
-				{/snippet}
-				<SidebarDropdownItem>Products</SidebarDropdownItem>
-				<SidebarDropdownItem>Billing</SidebarDropdownItem>
-				<SidebarDropdownItem>Invoice</SidebarDropdownItem>
+			<SidebarItem onclick={closeNavDrawer} label="Banner" href='/banner'/>
+			<SidebarItem onclick={closeNavDrawer} label="Breadcrumb" href='/breadcrumb'/>
+			<SidebarItem onclick={closeNavDrawer} label="Button" href='/button'/>
+			<SidebarItem onclick={closeNavDrawer} label="Card" href='/card'/>
+			<SidebarItem onclick={closeNavDrawer} label="Drawer" href='/drawer'/>
+			<SidebarItem onclick={closeNavDrawer} label="Darkmode" href='darkmode'/>
+			<SidebarItem onclick={closeNavDrawer} label="Dropdown" href='/dropdown'/>
+			<SidebarItem onclick={closeNavDrawer} label="Footer" href='/footer'/>
+			<SidebarItem onclick={closeNavDrawer} label="Indicator" href='/indicator'/>
+			<SidebarItem onclick={closeNavDrawer} label="Kbd" href='/kbd'/>
+			<SidebarItem onclick={closeNavDrawer} label="Navbar" href='/navbar'/>
+			<SidebarItem lonclick={closeNavDrawer} abel="Progress" href='/progress'/>
+			<SidebarItem onclick={closeNavDrawer} label="Sidebar" href='/sidebar'/>
+			<SidebarItem onclick={closeNavDrawer} label="Skeleton" href='/skeleton'/>
+			<SidebarItem onclick={closeNavDrawer} label="Spinner" href='/spinner'/>
+			<SidebarDropdownWrapper label="Forms">
+				<SidebarDropdownItem onclick={closeNavDrawer}  href='/forms/select'>Select</SidebarDropdownItem>
+	
 			</SidebarDropdownWrapper>
-			<SidebarItem label="Kanban" {spanClass}>
-				{#snippet icon()}
-					<GridSolid
-						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-					/>
-				{/snippet}
-				{#snippet subtext()}
-					<span
-						class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300"
-					>
-						Pro
-					</span>
-				{/snippet}
-			</SidebarItem>
-			<SidebarItem label="Inbox" {spanClass}>
-				{#snippet icon()}
-					<MailBoxSolid
-						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-					/>
-				{/snippet}
-				{#snippet subtext()}
-					<span
-						class="ms-3 inline-flex h-3 w-3 items-center justify-center rounded-full bg-primary-200 p-3 text-sm font-medium text-primary-600 dark:bg-primary-900 dark:text-primary-200"
-					>
-						3
-					</span>
-				{/snippet}
-			</SidebarItem>
-			<SidebarItem label="Users">
-				{#snippet icon()}
-					<UserSolid
-						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-					/>
-				{/snippet}
-			</SidebarItem>
-			<SidebarItem label="Sign In">
-				{#snippet icon()}
-					<ArrowRightToBracketSolid
-						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-					/>
-				{/snippet}
-			</SidebarItem>
-			<SidebarItem label="Sign Up">
-				{#snippet icon()}
-					<FileEditSolid
-						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-					/>
-				{/snippet}
-			</SidebarItem>
+			
 		</SidebarGroup>
 	</Sidebar>
 </Drawer>
