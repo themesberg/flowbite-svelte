@@ -1,30 +1,49 @@
 <script>
-    import { Drawer, Button, uiHelpers, Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper, SidebarDropdownItem } from 'svelte-5-ui-lib'
-    import { sineIn } from 'svelte/easing';
-
-	let transitionParams = {
+	import {
+		Drawer,
+		Button,
+		uiHelpers,
+		Sidebar,
+		SidebarGroup,
+		SidebarItem,
+		SidebarDropdownWrapper,
+		SidebarDropdownItem
+	} from '$lib';
+	import {
+		InfoCircleSolid,
+		ArrowRightOutline,
+		ChartPieSolid,
+		GridSolid,
+		MailBoxSolid,
+		UserSolid,
+		ArrowRightToBracketSolid,
+		FileEditSolid,
+		ShoppingCartSolid,
+        BarsSolid
+	} from 'flowbite-svelte-icons';
+	import { sineIn } from 'svelte/easing';
+    let transitionParams = {
 		x: -320,
 		duration: 200,
 		easing: sineIn
 	};
 
-    const drawerB = uiHelpers();
-	let drawerStatusB = $state(false);
-	const closeDrawerB = drawerB.close;
+    const drawer = uiHelpers();
+	let drawerStatus = $state(false);
+	const closeDrawer = drawer.close;
 
-	$effect(() => {
-		drawerStatusB = drawerB.isOpen;
+    $effect(() => {
+		drawerStatus = drawer.isOpen;
 	});
-
 	let spanClass = 'flex-1 ms-3 whitespace-nowrap';
 </script>
 
 
-<div class="text-center">
-	<Button onclick={drawerB.toggle}>Show navigation</Button>
-</div>
 
-<Drawer drawerStatus={drawerStatusB} closeDrawer={closeDrawerB} {transitionParams}>
+<BarsSolid onclick={drawer.toggle} class="md:hidden"/>
+
+
+<Drawer drawerStatus={drawerStatus} closeDrawer={closeDrawer} {transitionParams}>
 	<div class="flex items-center">
 		<h5
 			id="drawer-label"
@@ -34,7 +53,7 @@
 		</h5>
 		<button
 			type="button"
-			onclick={closeDrawerB}
+			onclick={closeDrawer}
 			class="ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
 			data-modal-hide="default-modal"
 		>
@@ -127,4 +146,3 @@
 		</SidebarGroup>
 	</Sidebar>
 </Drawer>
-
