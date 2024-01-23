@@ -1,23 +1,21 @@
 <script lang="ts">
 	interface Props {
-		btnClass?: string | undefined;
+		btnclass?: string | undefined;
 		size?: 'sm' | 'md' | 'lg';
 		ariaLabel?: string | undefined;
-		class?: string | undefined;
 	}
 	import { twMerge } from 'tailwind-merge';
 
 	const THEME_PREFERENCE_KEY = 'color-theme';
 
 	let {
-		btnClass,
+		btnclass,
 		size = 'md',
 		ariaLabel = 'Dark mode',
-		class: classname,
 		...attributes
 	} = $props<Props>();
 	let btnCls: string =
-		'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5';
+		twMerge('text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5', btnclass);
 
 	const sizes = {
 		sm: 'w-4 h-4',
@@ -52,7 +50,7 @@
 	aria-label={ariaLabel}
 	type="button"
 	{...attributes}
-	class={twMerge(btnCls, classname)}
+	class={btnCls}
 >
 	<span class="hidden dark:block">
 		<slot name="lightIcon">

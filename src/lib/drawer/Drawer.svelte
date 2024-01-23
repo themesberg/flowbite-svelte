@@ -16,14 +16,14 @@
 		bgColor?: string | undefined;
 		bgOpacity?: string | undefined;
 		placement?: 'left' | 'right' | 'top' | 'bottom';
-		class?: string | undefined;
+		divclass?: string | undefined;
 		transitionParams: drawerTransitionParamTypes;
 		transitionType?: drawerTransitionTypes;
 	}
 
 	import { twMerge } from 'tailwind-merge';
 	import { fly, slide, blur, fade } from 'svelte/transition';
-	import { clickOutside } from '$lib';
+	// import { clickOutside } from '$lib';
 
 	let {
 		children,
@@ -41,7 +41,7 @@
 		bgColor = 'bg-gray-900',
 		bgOpacity = 'bg-opacity-75',
 		placement = 'left',
-		class: classname = 'overflow-y-auto z-50 p-4 bg-white dark:bg-gray-800',
+		divclass = '',
 		transitionParams,
 		transitionType = 'fly',
 		...attributes
@@ -72,6 +72,8 @@
 		backdrop && bgColor,
 		backdrop && bgOpacity
 	);
+	let divCls = twMerge('overflow-y-auto z-50 p-4 bg-white dark:bg-gray-800', width, position, placements[placement], divclass);
+
 </script>
 
 {#if drawerStatus}
@@ -86,7 +88,7 @@
 	{/if}
 	<div
 		{...attributes}
-		class={twMerge(classname, width, position, placements[placement], classname)}
+		class={divCls}
 		transition:multiple={transitionParams}
 		tabindex="-1"
 	>
