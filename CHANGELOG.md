@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.35...v0.2.1) (2024-01-23)
+
+
+### Features
+
+* Card update ([1a93ae5](https://github.com/shinokada/svelte-5-ui-lib/commit/1a93ae53b884648e390f5fbf2b8656e2e8eef343))
+* classes update ([7dc26f6](https://github.com/shinokada/svelte-5-ui-lib/commit/7dc26f6b04662d79bb7ba80fa3085e2c376626f5))
+
+
+### Bug Fixes
+
+* class to proper names ([61ddb7a](https://github.com/shinokada/svelte-5-ui-lib/commit/61ddb7acda8c2425a6c6bd0a52a699ee36d3e9a1))
+* class update for drawer and dropdown ([583eddf](https://github.com/shinokada/svelte-5-ui-lib/commit/583eddfe8000a1843c2fc3d021712995a387ab21))
+* class update in Darkmode and Drawer ([2f01cd2](https://github.com/shinokada/svelte-5-ui-lib/commit/2f01cd2b7f969d44a7312351482167bbfd6698f1))
+* Nav and Sidemenu style ([a027d54](https://github.com/shinokada/svelte-5-ui-lib/commit/a027d5443e1bf0f32112223d5977670fc82256dc))
+* progress sidebar menu ([81a106d](https://github.com/shinokada/svelte-5-ui-lib/commit/81a106d463c52df6051e80fd147d07f687557b4b))
+
 ### [0.1.35](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.34...v0.1.35) (2024-01-22)
 
 ### [0.1.34](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.33...v0.1.34) (2024-01-22)
