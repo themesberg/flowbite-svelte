@@ -4,7 +4,7 @@
 		subtext?: any;
 		href?: string | undefined;
 		label?: string | undefined;
-		spanClass?: string | undefined;
+		spanclass?: string | undefined;
 		activeClass?: string | undefined;
 		nonActiveClass?: string | undefined;
 	}
@@ -12,10 +12,10 @@
 	import { page } from '$app/stores';
 	import { twMerge } from 'tailwind-merge';
 
-	let { icon, subtext, href, label, spanClass, activeClass, nonActiveClass, ...attributes } =
+	let { icon, subtext, href, label, spanclass, activeClass, nonActiveClass, ...attributes } =
 		$props<Props>();
 	let currentUrl = $state();
-	let spanCls: string = twMerge('ms-3', spanClass);
+	let spanCls: string = twMerge('ms-3', spanclass);
 
 	$effect(() => {
 		currentUrl = $page.url.pathname;

@@ -23,11 +23,11 @@
 <h2>Default skeleton</h2>
 
 <CodeWrapper>
-	<Skeleton size="sm" class="my-8" />
-	<Skeleton size="md" class="my-8" />
-	<Skeleton size="lg" class="my-8" />
-	<Skeleton size="xl" class="my-8" />
-	<Skeleton size="xxl" class="mb-2.5 mt-8" />
+	<Skeleton size="sm" divclass="my-8" />
+	<Skeleton size="md" divclass="my-8" />
+	<Skeleton size="lg" divclass="my-8" />
+	<Skeleton size="xl" divclass="my-8" />
+	<Skeleton size="xxl" divclass="mb-2.5 mt-8" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/skeleton.md']} />
@@ -36,7 +36,7 @@
 
 <CodeWrapper>
 	<ImagePlaceholder />
-	<ImagePlaceholder imgHeight="h-60" class="mt-8" />
+	<ImagePlaceholder imgHeight="h-60" divclass="mt-8" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/imageplaceholder.md']} />
@@ -45,10 +45,10 @@
 
 <CodeWrapper>
 	<VideoPlaceholder />
-	<VideoPlaceholder size="md" class="mt-8" />
-	<VideoPlaceholder size="lg" class="mt-8" />
-	<VideoPlaceholder size="xl" class="mt-8" />
-	<VideoPlaceholder size="xxl" class="mt-8" />
+	<VideoPlaceholder size="md" divclass="mt-8" />
+	<VideoPlaceholder size="lg" divclass="mt-8" />
+	<VideoPlaceholder size="xl" divclass="mt-8" />
+	<VideoPlaceholder size="xxl" divclass="mt-8" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/videoplaceholder.md']} />
@@ -57,10 +57,10 @@
 
 <CodeWrapper>
 	<TextPlaceholder />
-	<TextPlaceholder size="md" class="mt-8" />
-	<TextPlaceholder size="lg" class="mt-8" />
-	<TextPlaceholder size="xl" class="mt-8" />
-	<TextPlaceholder size="xxl" class="mt-8" />
+	<TextPlaceholder size="md" divclass="mt-8" />
+	<TextPlaceholder size="lg" divclass="mt-8" />
+	<TextPlaceholder size="xl" divclass="mt-8" />
+	<TextPlaceholder size="xxl" divclass="mt-8" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/textplaceholder.md']} />
@@ -69,10 +69,10 @@
 
 <CodeWrapper>
 	<CardPlaceholder />
-	<CardPlaceholder size="md" class="mt-8" />
-	<CardPlaceholder size="lg" class="mt-8" />
-	<CardPlaceholder size="xl" class="mt-8" />
-	<CardPlaceholder size="xxl" class="mt-8" />
+	<CardPlaceholder size="md" divclass="mt-8" />
+	<CardPlaceholder size="lg" divclass="mt-8" />
+	<CardPlaceholder size="xl" divclass="mt-8" />
+	<CardPlaceholder size="xxl" divclass="mt-8" />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/cardplaceholder.md']} />

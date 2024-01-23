@@ -1,14 +1,14 @@
 <script lang="ts">
 	interface Props {
 		children?: any;
-		ulClass?: string | undefined;
+		ulclass?: string | undefined;
 	}
 
 	import { twMerge } from 'tailwind-merge';
 
-	let { ulClass, children, ...attributes } = $props<Props>();
+	let { ulclass, children, ...attributes } = $props<Props>();
 </script>
 
-<ul {...attributes} class={twMerge('text-gray-600 dark:text-gray-400', ulClass)}>
+<ul {...attributes} class={twMerge('text-gray-600 dark:text-gray-400', ulclass)}>
 	{@render children()}
 </ul>

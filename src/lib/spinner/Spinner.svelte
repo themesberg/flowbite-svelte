@@ -17,12 +17,12 @@
 		size?: string | number | undefined;
 		currentFill?: string | undefined;
 		currentColor?: string | undefined;
-		class?: string | undefined;
+		svgclass?: string | undefined;
 	}
 	import { twMerge } from 'tailwind-merge';
 
 	let {
-		class: classname,
+		svgclass,
 		color = 'primary',
 		bg = 'text-gray-300',
 		customColor,
@@ -31,14 +31,6 @@
 		currentColor = 'currentColor',
 		...attributes
 	} = $props<Props>();
-
-	// export let color: 'primary' | 'blue' | 'gray' | 'green' | 'red' | 'yellow' | 'pink' | 'purple' | 'white' | 'custom' | undefined = 'primary';
-	// export let bg: string = 'text-gray-300';
-	// export let customColor: string = '';
-	// export let size: string | number = '8';
-	// // these two props add fine control over the spinner colors
-	// export let currentFill: string = 'currentFill';
-	// export let currentColor: string = 'currentColor';
 
 	let iconsize = `w-${size} h-${size}`;
 
@@ -59,7 +51,7 @@
 		custom: customColor
 	};
 
-	let fillColorClass: string =
+	let fillColorCls: string =
 		color === undefined ? '' : fillColorClasses[color] ?? fillColorClasses.blue;
 </script>
 
@@ -70,8 +62,8 @@
 		'-mt-px inline animate-spin dark:text-gray-600',
 		iconsize,
 		bg,
-		fillColorClass,
-		classname
+		fillColorCls,
+		svgclass
 	)}
 	viewBox="0 0 100 101"
 	fill="none"

@@ -22,7 +22,7 @@
 <CodeWrapper class="h-48">
 	<Label>
 		Select an option
-		<Select class="mt-2" items={countries} bind:value={selected} />
+		<Select selectclass="mt-2" items={countries} bind:value={selected} />
 	</Label>
 </CodeWrapper>
 
@@ -31,7 +31,7 @@
 <h2>Disabled state</h2>
 
 <CodeWrapper class="h-48">
-	<Label for="select-disabled" color="disabled" class="mb-2">Disabled select</Label>
+	<Label for="select-disabled" color="disabled" labelclass="mb-2">Disabled select</Label>
 	<Select
 		id="select-disabled"
 		disabled
@@ -45,8 +45,8 @@
 <h2>Underline select</h2>
 
 <CodeWrapper class="h-48">
-	<Label for="select-underline" class="sr-only">Underline select</Label>
-	<Select id="select-underline" underline class="mt-2" items={countries} />
+	<Label for="select-underline" labelclass="sr-only">Underline select</Label>
+	<Select id="select-underline" underline selectclass="mt-2" items={countries} />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/underline.md']} />

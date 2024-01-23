@@ -2,24 +2,24 @@
 	import { twMerge } from 'tailwind-merge';
 	interface Props {
 		children?: any;
-		aClass?: string | undefined;
-		spanClass?: string | undefined;
-		imgClass?: string | undefined;
+		aclass?: string | undefined;
+		spanclass?: string | undefined;
+		imgclass?: string | undefined;
 		href?: string | undefined;
 		src?: string | undefined;
 		alt?: string | undefined;
 		name?: string | undefined;
 		target?: string | undefined;
 	}
-	let { children, aClass, spanClass, imgClass, href, src, alt, name, target, ...attributes } =
+	let { children, aclass, spanclass, imgclass, href, src, alt, name, target, ...attributes } =
 		$props<Props>();
 
-	let aCls: string = twMerge('flex items-center', aClass);
+	let aCls: string = twMerge('flex items-center', aclass);
 	let spanCls: string = twMerge(
 		'self-center text-2xl font-semibold whitespace-nowrap dark:text-white',
-		spanClass
+		spanclass
 	);
-	let imgCls: string = twMerge('me-3 h-8', imgClass);
+	let imgCls: string = twMerge('me-3 h-8', imgclass);
 </script>
 
 {#if href}

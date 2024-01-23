@@ -7,10 +7,10 @@
 		fluid?: boolean;
 		brand?: any;
 		breakPoint?: 'md' | 'lg' | 'xl' | 'xxl';
-		navClass?: string | undefined;
-		divClass?: string | undefined;
-		btnClass?: string | undefined;
-		divChildrenClass?: string | undefined;
+		navclass?: string | undefined;
+		divclass?: string | undefined;
+		btnclass?: string | undefined;
+		div2class?: string | undefined;
 	}
 	import { setContext } from 'svelte';
 	import { twMerge } from 'tailwind-merge';
@@ -26,10 +26,10 @@
 		fluid,
 		brand,
 		breakPoint = 'md',
-		navClass,
-		divClass,
-		btnClass,
-		divChildrenClass,
+		navclass,
+		divclass,
+		btnclass,
+		div2class,
 		...attributes
 	} = $props<Props>();
 
@@ -37,12 +37,12 @@
 	// $inspect('Navbar navStatus', navStatus);
 	let navDisplay = $derived(navStatus ? 'block' : 'hidden');
 
-	let navCls = twMerge('border-gray-200 bg-transparent dark:bg-gray-900', navClass);
+	let navCls = twMerge('border-gray-200 bg-transparent dark:bg-gray-900', navclass);
 	let divCls = twMerge(
 		'mx-auto flex flex-wrap items-center justify-between p-4',
 		breakPoint === 'xxl' ? 'w-full' : 'max-w-screen-xl',
 		fluid ? 'w-full' : 'container',
-		divClass
+		divclass
 	);
 	const btnBreak = {
 		md: 'md:hidden',
@@ -53,7 +53,7 @@
 	let btnCls = twMerge(
 		'inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600',
 		btnBreak[breakPoint],
-		btnClass
+		btnclass
 	);
 	const blockBreak = {
 		md: 'md:block md:w-auto',
@@ -61,7 +61,7 @@
 		xl: 'xl:block xl:w-auto',
 		xxl: '2xl:block 2xl:w-auto'
 	};
-	let divChildrenCls = twMerge('w-full', blockBreak[breakPoint], divChildrenClass);
+	let divChildrenCls = twMerge('w-full', blockBreak[breakPoint], div2class);
 	// $inspect('Navbar: ', breakPoint);
 	let slideParams: SlideParams = { delay: 250, duration: 500, easing: quintOut };
 </script>

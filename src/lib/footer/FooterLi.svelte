@@ -1,17 +1,17 @@
 <script lang="ts">
 	interface Props {
 		children?: any;
-		liClass?: string | undefined;
-		aClass?: string | undefined;
+		liclass?: string | undefined;
+		aclass?: string | undefined;
 		href?: string | undefined;
 		target?: string | undefined;
 	}
 
 	import { twMerge } from 'tailwind-merge';
-	let { children, liClass, aClass, href, target, ...attributes } = $props<Props>();
+	let { children, liclass, aclass, href, target, ...attributes } = $props<Props>();
 
-	let liCls: string = twMerge('me-4 last:me-0 md:me-6', liClass);
-	let aCls: string = twMerge('hover:underline', aClass);
+	let liCls: string = twMerge('me-4 last:me-0 md:me-6', liclass);
+	let aCls: string = twMerge('hover:underline', aclass);
 </script>
 
 <li class={liCls}>

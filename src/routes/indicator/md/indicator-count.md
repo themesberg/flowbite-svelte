@@ -1,4 +1,4 @@
-<Button size="lg" class="relative">
+<Button size="lg" btnclass="relative">
     <EnvelopeSolid class="w-4 h-4 me-2 text-white dark:text-white" />
     <span class="sr-only">Notifications</span>
     Messages

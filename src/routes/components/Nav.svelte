@@ -27,7 +27,6 @@
 	let navDrawerStatus = $state(false);
 	const closeNavDrawer = navDrawer.close;
 
-	// let spanClass = 'flex-1 ms-3 whitespace-nowrap';
 	let nav = uiHelpers();
 
 	let navStatus = $state(false);
@@ -38,8 +37,8 @@
 		navDrawerStatus = navDrawer.isOpen;
 		navStatus = nav.isOpen;
 	});
-	const navClass = 'w-full divide-gray-200 border-gray-200 bg-white text-gray-500 dark:divide-gray-700 dark:border-gray-700 dark:bg-gray-950 sm:px-4'
-	const ulClass =
+	const navclass = 'w-full divide-gray-200 border-gray-200 bg-white text-gray-500 dark:divide-gray-700 dark:border-gray-700 dark:bg-gray-950 sm:px-4'
+	const ulclass =
     'flex flex-col py-3 lg:flex-row lg:my-0 order-1 font-medium xl:gap-4 dark:lg:bg-transparent lg:bg-white border-0';
  
 </script>
@@ -47,7 +46,7 @@
 <header
 	class="sticky top-0 z-40 mx-auto w-full flex-none border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-950 lg:pl-4"
 >
-	<Navbar {toggleNav} {closeNav} {navStatus} {navClass} fluid breakPoint="lg" divChildrenClass="ml-auto w-full">
+	<Navbar {toggleNav} {closeNav} {navStatus} {navclass} fluid breakPoint="lg" div2class="ml-auto w-full">
 		{#snippet brand()}
 			<button
 				onclick={navDrawer.toggle}
@@ -81,7 +80,7 @@
 			</div>
 		{/snippet}
 
-		<NavUl {ulClass}>
+		<NavUl {ulclass}>
 			<NavLi href="/" {closeNav}>Home</NavLi>
 			<NavLi href="https://github.com/shinokada/svelte-5-ui-lib" {closeNav}>Repo</NavLi>
 		</NavUl>
@@ -120,7 +119,7 @@
 			<span class="sr-only">Close drawer</span>
 		</button>
 	</div>
-	<Sidebar class='w-48 p-0'>
+	<Sidebar asideclass='w-48 p-0'>
 		<SidebarGroup>
 			<SidebarItem onclick={closeNavDrawer} label="Banner" href="/banner" />
 			<SidebarItem onclick={closeNavDrawer} label="Breadcrumb" href="/breadcrumb" />

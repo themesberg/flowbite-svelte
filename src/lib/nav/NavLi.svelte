@@ -3,13 +3,13 @@
 		children: any;
 		closeNav: () => void;
 		href?: string | undefined;
-		linkClass?: string | undefined;
+		aclass?: string | undefined;
 		activeClass?: string | undefined;
 	}
 	import { getContext } from 'svelte';
 	import { twMerge } from 'tailwind-merge';
 	import { page } from '$app/stores';
-	let { closeNav, href, children, linkClass, activeClass, ...attributes } = $props<Props>();
+	let { closeNav, href, children, aclass, activeClass, ...attributes } = $props<Props>();
 	let breakPoint: 'md' | 'lg' | 'xl' | '2xl';
 
 	breakPoint = getContext('breakPoint');
@@ -38,7 +38,7 @@
 
 	const activeStyle =
 		'block py-2 px-3 text-md hover:underline text-white bg-primary-700 rounded dark:text-white ';
-	let linkCls = twMerge(linkStyle, linkBreak[breakPoint], linkClass);
+	let linkCls = twMerge(linkStyle, linkBreak[breakPoint], aclass);
 	let activeCls = twMerge(activeStyle, activeBreak[breakPoint], activeClass);
 
 	// $inspect('NavLi', breakPoint);

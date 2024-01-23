@@ -113,7 +113,7 @@
 		size="h-3"
 		labelInside
 		color="green"
-		labelInsideClass="bg-blue-600 text-blue-100 text-xs font-medium text-center p-0 leading-none rounded-full"
+		div2class="bg-blue-600 text-blue-100 text-xs font-medium text-center p-0 leading-none rounded-full"
 		class="my-4"
 		labelOutside="Size h-3"
 	/>
@@ -123,7 +123,7 @@
 		size="h-10"
 		labelInside
 		color="red"
-		labelInsideClass="bg-blue-600 text-blue-100 text-2xl font-medium text-center p-2 leading-none rounded-full"
+		div2class="bg-blue-600 text-blue-100 text-2xl font-medium text-center p-2 leading-none rounded-full"
 		class="my-4"
 		labelOutside="Size h-10"
 	/>
@@ -132,7 +132,7 @@
 		progress="50"
 		size="h-10"
 		color="indigo"
-		labelInsideClass="bg-blue-600 text-blue-100 text-2xl font-medium text-center p-2 leading-none rounded-full"
+		div2class="bg-blue-600 text-blue-100 text-2xl font-medium text-center p-2 leading-none rounded-full"
 		class="my-4"
 		labelOutside="Size h-10"
 	/>
@@ -141,7 +141,7 @@
 		progress="50"
 		size="h-6"
 		labelInside
-		labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
+		div2class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
 		class="my-4"
 		labelOutside="Size h-6"
 	/>
@@ -162,8 +162,7 @@
 		easing={sineOut}
 		size="h-6"
 		color="yellow"
-		labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
-		class="mb-8"
+		div2class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full mb-8"
 	/>
 	<Progressbar
 		{progress}
@@ -171,9 +170,9 @@
 		labelInside
 		size="h-6"
 		color="gray"
-		labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
+		div2class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
 	/>
-	<Button onclick={() => (progress = `${Math.round(Math.random() * 100)}`)} class="mt-8">
+	<Button onclick={() => (progress = `${Math.round(Math.random() * 100)}`)} btnclass="mt-8">
 		Randomize
 	</Button>
 </CodeWrapper>

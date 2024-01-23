@@ -1,16 +1,16 @@
 <script lang="ts">
 	interface Props {
-		class?: string | undefined;
+		divclass?: string | undefined;
 	}
 	import { twMerge } from 'tailwind-merge';
-	let { class: classname } = $props<Props>();
-	let divClass: string = twMerge(
+	let { divclass } = $props<Props>();
+	let divCls: string = twMerge(
 		'p-4 space-y-4 max-w-md rounded border border-gray-200 divide-y divide-gray-200 shadow animate-pulse dark:divide-gray-700 md:p-6 dark:border-gray-700',
-		classname
+		divclass
 	);
 </script>
 
-<div role="status" class={divClass}>
+<div role="status" class={divCls}>
 	<div class="flex items-center justify-between">
 		<div>
 			<div class="mb-2.5 h-2.5 w-24 rounded-full bg-gray-300 dark:bg-gray-600" />

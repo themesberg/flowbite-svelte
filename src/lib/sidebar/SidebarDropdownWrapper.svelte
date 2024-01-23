@@ -5,10 +5,10 @@
 		arrowup?: any;
 		arrowdown?: any;
 		icon?: any;
-		btnClass?: string | undefined;
+		btnclass?: string | undefined;
 		label: string | undefined;
-		spanClass?: string | undefined;
-		ulClass?: string | undefined;
+		spanclass?: string | undefined;
+		ulclass?: string | undefined;
 		transitionType?: TransitionTypes;
 		transitionParams?: TransitionParamTypes;
 	}
@@ -21,10 +21,10 @@
 		arrowup,
 		arrowdown,
 		icon,
-		btnClass,
+		btnclass,
 		label,
-		spanClass,
-		ulClass,
+		spanclass,
+		ulclass,
 		transitionType = 'slide',
 		transitionParams = {},
 		...attributes
@@ -32,14 +32,12 @@
 
 	let btnCls = twMerge(
 		'flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700',
-		btnClass
+		btnclass
 	);
-	// export let btnClass: string = ;
-	// export let label: string = '';
-	let spanCls: string = twMerge('flex-1 ms-3 text-left whitespace-nowrap', spanClass);
-	let ulCls: string = twMerge('py-2 space-y-2', ulClass);
-	// export let transitionType: TransitionTypes = 'slide';
-	// export let transitionParams: TransitionParamTypes = {};
+
+	let spanCls: string = twMerge('flex-1 ms-3 text-left whitespace-nowrap', spanclass);
+	let ulCls: string = twMerge('py-2 space-y-2', ulclass);
+
 
 	// make a custom transition function that returns the desired transition
 	const multiple = (node: HTMLElement, params: any) => {
@@ -54,11 +52,6 @@
 				return slide(node, params);
 		}
 	};
-
-	// export let isOpen = false;
-	// const handleDropdown = () => {
-	//   isOpen = !isOpen;
-	// };
 
 	// for sidebar dropdown
 	let sidebar = uiHelpers();

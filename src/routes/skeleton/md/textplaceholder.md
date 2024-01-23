@@ -1,5 +1,5 @@
 <TextPlaceholder />
-<TextPlaceholder size="md" class="mt-8" />
-<TextPlaceholder size="lg" class="mt-8" />
-<TextPlaceholder size="xl" class="mt-8" />
-<TextPlaceholder size="xxl" class="mt-8" />
+<TextPlaceholder size="md" divclass="mt-8" />
+<TextPlaceholder size="lg" divclass="mt-8" />
+<TextPlaceholder size="xl" divclass="mt-8" />
+<TextPlaceholder size="xxl" divclass="mt-8" />

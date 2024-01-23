@@ -1,7 +1,7 @@
 <script lang="ts">
 	interface Props {
-		spanClass?: string | undefined;
-		aClass?: string | undefined;
+		spanclass?: string | undefined;
+		aclass?: string | undefined;
 		href?: string | undefined;
 		by?: string | undefined;
 		target?: string | undefined;
@@ -10,8 +10,8 @@
 
 	import { twMerge } from 'tailwind-merge';
 	let {
-		spanClass,
-		aClass,
+		spanclass,
+		aclass,
 		href,
 		by,
 		target,
@@ -22,9 +22,9 @@
 
 	let spanCls: string = twMerge(
 		'block text-sm text-gray-500 sm:text-center dark:text-gray-400',
-		spanClass
+		spanclass
 	);
-	let aCls: string = twMerge('hover:underline', aClass);
+	let aCls: string = twMerge('hover:underline', aclass);
 </script>
 
 <span class={spanCls}>

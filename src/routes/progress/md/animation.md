@@ -14,7 +14,7 @@
   easing={sineOut}
   size="h-6"
   color="yellow"
-  labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
+  div2class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
   class="mb-8"
 />
 <Progressbar
@@ -23,7 +23,7 @@
   labelInside
   size="h-6"
   color="gray"
-  labelInsideClass="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
+  div2class="bg-blue-600 text-blue-100 text-base font-medium text-center p-1 leading-none rounded-full"
 />
 <Button onclick={() => (progress = `${Math.round(Math.random() * 100)}`)} class="mt-8">
   Randomize

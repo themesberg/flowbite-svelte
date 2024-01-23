@@ -9,9 +9,9 @@
 		labelOutside?: string | undefined;
 		easing?: EasingFunction;
 		color?: 'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo';
-		labelInsideClass?: string | undefined;
-		labelOutsideClass?: string | undefined;
-		divClass?: string | undefined;
+		div2class?: string | undefined;
+		labeloutsidedivclass?: string | undefined;
+		divclass?: string | undefined;
 		class?: string | undefined;
 	}
 
@@ -30,21 +30,12 @@
 		labelOutside,
 		easing = cubicOut,
 		color = 'primary',
-		labelInsideClass,
-		labelOutsideClass,
-		divClass,
+		div2class,
+		labeloutsidedivclass,
+		divclass,
 		class: classname,
 		...attributes
 	} = $props<Props>();
-	// export let progress: string | number = '45';
-	// export let precision: number = 0
-	// export let tweenDuration: number = 400;
-	// export let animate: boolean = false;
-	// export let size: string = 'h-2.5';
-	// export let labelInside: boolean = false;
-	// export let labelOutside: string = '';
-	// export let easing: EasingFunction = cubicOut;
-	// export let color: 'primary' | 'blue' | 'gray' | 'red' | 'green' | 'yellow' | 'purple' | 'indigo' = 'primary';
 	let labelInsideCls: string =
 		'text-primary-100 text-xs font-medium text-center p-0.5 leading-none rounded-full';
 	let divCls: string = 'w-full bg-gray-200 rounded-full dark:bg-gray-700';
@@ -72,20 +63,20 @@
 </script>
 
 {#if labelOutside}
-	<div {...attributes} class={twMerge('mb-1 flex justify-between', labelOutsideClass)}>
+	<div {...attributes} class={twMerge('mb-1 flex justify-between', labeloutsidedivclass)}>
 		<span class="text-base font-medium text-blue-700 dark:text-white">{labelOutside}</span>
 		<span class="text-sm font-medium text-blue-700 dark:text-white">{progress}%</span>
 	</div>
 {/if}
-<div class={twMerge(divCls, size, divClass)}>
+<div class={twMerge(divCls, size, divclass)}>
 	{#if labelInside}
 		<div
-			class={twJoin(labelInsideCls, barColors[color], size, labelInsideClass)}
+			class={twJoin(labelInsideCls, barColors[color], size, div2class)}
 			style="width: {$_progress}%"
 		>
 			{$_progress.toFixed(precision)}%
 		</div>
 	{:else}
-		<div class={twJoin(barColors[color], size, 'rounded-full')} style="width: {$_progress}%" />
+		<div class={twJoin(barColors[color], size, 'rounded-full', div2class)} style="width: {$_progress}%" />
 	{/if}
 </div>

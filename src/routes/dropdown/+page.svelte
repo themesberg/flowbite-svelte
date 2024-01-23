@@ -1,5 +1,4 @@
 <script>
-	// import Dropdown from '../components/Dropdown.svelte';
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import CodeWrapper from '../components/CodeWrapper.svelte';
 	import { Dropdown, DropdownDivider, DropdownItem, uiHelpers } from '$lib';

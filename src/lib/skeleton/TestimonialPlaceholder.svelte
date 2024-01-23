@@ -1,13 +1,13 @@
 <script lang="ts">
 	interface Props {
-		class?: string | undefined;
+		divclass?: string | undefined;
 	}
 	import { twMerge } from 'tailwind-merge';
-	let { class: classname } = $props<Props>();
-	let divClass: string = twMerge('animate-pulse', classname);
+	let { divclass } = $props<Props>();
+	let divCls: string = twMerge('animate-pulse', divclass);
 </script>
 
-<div role="status" class={divClass}>
+<div role="status" class={divCls}>
 	<div class="mx-auto mb-2.5 h-2.5 max-w-[640px] rounded-full bg-gray-300 dark:bg-gray-700" />
 	<div class="mx-auto h-2.5 max-w-[540px] rounded-full bg-gray-300 dark:bg-gray-700" />
 	<div class="mt-4 flex items-center justify-center">

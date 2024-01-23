@@ -18,7 +18,7 @@
 		BookSolid,
 		WindowRestoreOutline
 	} from 'flowbite-svelte-icons';
-	let spanClass = 'flex-1 ms-3 whitespace-nowrap';
+	let spanclass = 'flex-1 ms-3 whitespace-nowrap';
 
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import CodeWrapper from '../components/CodeWrapper.svelte';
@@ -37,7 +37,7 @@
 					/>
 				{/snippet}
 			</SidebarItem>
-			<SidebarItem label="Kanban" {spanClass}>
+			<SidebarItem label="Kanban" {spanclass}>
 				{#snippet icon()}
 					<GridSolid
 						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
@@ -51,7 +51,7 @@
 					</span>
 				{/snippet}
 			</SidebarItem>
-			<SidebarItem label="Inbox" {spanClass}>
+			<SidebarItem label="Inbox" {spanclass}>
 				{#snippet icon()}
 					<MailBoxSolid
 						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
@@ -100,7 +100,7 @@
 				<SidebarDropdownItem>Billing</SidebarDropdownItem>
 				<SidebarDropdownItem>Invoice</SidebarDropdownItem>
 			</SidebarDropdownWrapper>
-			<SidebarItem label="Kanban" {spanClass}>
+			<SidebarItem label="Kanban" {spanclass}>
 				{#snippet icon()}
 					<GridSolid
 						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
@@ -114,7 +114,7 @@
 					</span>
 				{/snippet}
 			</SidebarItem>
-			<SidebarItem label="Inbox" {spanClass}>
+			<SidebarItem label="Inbox" {spanclass}>
 				{#snippet icon()}
 					<MailBoxSolid
 						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
@@ -167,7 +167,7 @@
 					/>
 				{/snippet}
 			</SidebarItem>
-			<SidebarItem label="Kanban" {spanClass}>
+			<SidebarItem label="Kanban" {spanclass}>
 				{#snippet icon()}
 					<GridSolid
 						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
@@ -181,7 +181,7 @@
 					</span>
 				{/snippet}
 			</SidebarItem>
-			<SidebarItem label="Inbox" {spanClass}>
+			<SidebarItem label="Inbox" {spanclass}>
 				{#snippet icon()}
 					<MailBoxSolid
 						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"

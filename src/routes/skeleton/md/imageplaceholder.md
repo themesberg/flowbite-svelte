@@ -1,2 +1,2 @@
 <ImagePlaceholder />
-<ImagePlaceholder imgHeight="h-60" class="mt-8" />
+<ImagePlaceholder imgHeight="h-60" divclass="mt-8" />

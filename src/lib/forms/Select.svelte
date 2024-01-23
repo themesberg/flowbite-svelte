@@ -10,7 +10,7 @@
 		placeholder?: string | undefined;
 		underline?: boolean;
 		size?: 'sm' | 'md' | 'lg';
-		class?: string | undefined;
+		selectclass?: string | undefined;
 		underlineClass?: string | undefined;
 	}
 	import { twMerge } from 'tailwind-merge';
@@ -22,7 +22,7 @@
 		placeholder = 'Choose option ...',
 		underline,
 		size = 'md',
-		class: classname,
+		selectclass,
 		underlineClass,
 		...attributes
 	} = $props<Props>();
@@ -41,18 +41,18 @@
 		lg: 'text-base py-3 px-4'
 	};
 
-	let selectClass: string = $state(
+	let selectCls: string = $state(
 		twMerge(
 			common,
 			underline ? underlineCls : defaultCls,
 			sizes[size],
 			underline && '!px-0',
-			classname
+			selectclass
 		)
 	);
 </script>
 
-<select {...attributes} bind:value class={selectClass} on:change on:contextmenu on:input>
+<select {...attributes} bind:value class={selectCls} on:change on:contextmenu on:input>
 	{#if placeholder}
 		<option disabled selected value="">{placeholder}</option>
 	{/if}

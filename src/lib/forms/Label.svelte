@@ -3,7 +3,7 @@
 		children: any;
 		color?: 'gray' | 'green' | 'red' | 'disabled';
 		show?: boolean;
-		class?: string | undefined;
+		labelclass?: string | undefined;
 		forId?: string | undefined;
 	}
 	import { twMerge } from 'tailwind-merge';
@@ -12,7 +12,7 @@
 		children,
 		color = 'gray',
 		show = true,
-		class: classname,
+		labelclass,
 		forId,
 		...attributes
 	} = $props<Props>();
@@ -27,7 +27,7 @@
 	let labelCls = twMerge(
 		'text-sm rtl:text-right font-medium block',
 		colorClasses[color],
-		classname
+		labelclass
 	);
 </script>
 

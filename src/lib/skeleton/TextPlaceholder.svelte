@@ -3,7 +3,7 @@
 
 	interface Props {
 		size?: keyof Sizes;
-		class?: string | undefined;
+		divclass?: string | undefined;
 	}
 	interface Sizes {
 		[key: string]: string;
@@ -17,11 +17,11 @@
 		xxl: 'max-w-2xl'
 	};
 
-	let { size = 'sm', class: classname } = $props<Props>();
-	let outDivclass = twMerge(sizes[size], 'space-y-2.5 animate-pulse', classname);
+	let { size = 'sm', divclass } = $props<Props>();
+	let outDivcls = twMerge(sizes[size], 'space-y-2.5 animate-pulse', divclass);
 </script>
 
-<div role="status" class={outDivclass}>
+<div role="status" class={outDivcls}>
 	<div class="flex w-full items-center space-x-2 rtl:space-x-reverse">
 		<div class="h-2.5 w-32 rounded-full bg-gray-200 dark:bg-gray-700" />
 		<div class="h-2.5 w-24 rounded-full bg-gray-300 dark:bg-gray-600" />

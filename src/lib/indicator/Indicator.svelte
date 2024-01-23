@@ -6,7 +6,7 @@
 		size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 		border?: boolean;
 		placement?: IndicatorPlacementType | undefined;
-		class?: string | undefined;
+		divclass?: string | undefined;
 		offset?: boolean;
 	}
 	import type { IndicatorPlacementType } from '$lib/types';
@@ -20,7 +20,7 @@
 		border = false,
 		placement,
 		offset = true,
-		class: classname
+		divclass,
 	} = $props<Props>();
 	// export let color: IndicatorColorType = 'gray';
 	// export let rounded: boolean = false;
@@ -97,7 +97,7 @@
 		children && 'inline-flex items-center justify-center',
 		placement && 'absolute ' + placements[placement],
 		placement && offset && offsets[placement],
-		classname
+		divclass
 	);
 </script>
 
