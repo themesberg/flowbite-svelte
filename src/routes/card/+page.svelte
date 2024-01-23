@@ -9,6 +9,10 @@
 
 <h1>Cards</h1>
 
+<h2>Setup</h2>
+
+<HighlightCompo code={modules['./md/setup.md']} />
+
 <h2>Default card</h2>
 
 <CodeWrapper>
@@ -44,7 +48,7 @@
 
 <HighlightCompo code={modules['./md/card2.md']} />
 
-<h2>Card with link </h2>
+<h2>Card with link</h2>
 
 <CodeWrapper>
 <Card>
@@ -60,9 +64,11 @@
 </Card>
 </CodeWrapper>
 
+<HighlightCompo code={modules['./md/card-with-link.md']} />
+
 <h2>Card with image</h2>
 
-
+<CodeWrapper>
 <Card src="/images/image-1.webp" reverse={true}>
 	<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
 	<p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
@@ -70,14 +76,23 @@
 	  Read more <ArrowRightOutline class="w-3.5 h-3.5 ms-2 text-white" />
 	</Button>
 </Card>
+</CodeWrapper>
 
+<HighlightCompo code={modules['./md/card-with-image.md']} />
 
+<h2>Horizontal card</h2>
+
+<CodeWrapper>
 <Card src="/images/image-1.webp" href="/" horizontal size="md">
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
 </Card>
+</CodeWrapper>
 
+<HighlightCompo code={modules['./md/horizontal-card.md']} />
 
+<h2>Call to action card</h2>
+<CodeWrapper>
 <Card class="text-center" size="lg" padding="xl">
 	<h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Work fast from anywhere</h5>
 	<p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">Stay up to date and move work forward with Flowbite on iOS & Android. Download the app today.</p>
@@ -85,4 +100,8 @@
 	  <Button>Download it</Button>
 	  <Button>Get it on</Button>
 	</div>
-  </Card>
+</Card>
+</CodeWrapper>
+
+<HighlightCompo code={modules['./md/call-to-action-card.md']} />
+
