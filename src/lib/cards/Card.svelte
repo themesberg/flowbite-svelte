@@ -22,7 +22,7 @@
 		src = undefined,
 		padding = 'lg',
 		size = 'sm',
-		class:classname ='',
+		class: classname = '',
 		...attributes
 	} = $props<Props>();
 
@@ -49,8 +49,8 @@
 	$effect(() => {
 		innerPadding = paddings[padding];
 		//  twMerge('flex w-full', sizes[size], reverse ? 'flex-col-reverse' : 'flex-col',
-		//  horizontal && (reverse ? 'md:flex-row-reverse' : 'md:flex-row'), 
-		// href && 'hover:bg-gray-100 dark:hover:bg-gray-700', 
+		//  horizontal && (reverse ? 'md:flex-row-reverse' : 'md:flex-row'),
+		// href && 'hover:bg-gray-100 dark:hover:bg-gray-700',
 		// !img && innerPadding, $$props.class);
 		cardClass = twMerge(
 			'w-full flex max-w-sm bg-white border border-gray-200 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700',
@@ -70,13 +70,7 @@
 	});
 </script>
 
-<svelte:element
-	this={tag}
-	role="presentation"
-	{href}
-	{...attributes}
-	class={cardClass}
->
+<svelte:element this={tag} role="presentation" {href} {...attributes} class={cardClass}>
 	{#if src}
 		<img class={imgClass} {src} alt="" />
 		<div class={innerPadding}>

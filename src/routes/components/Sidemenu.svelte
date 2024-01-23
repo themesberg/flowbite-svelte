@@ -6,35 +6,30 @@
 		SidebarDropdownWrapper,
 		SidebarDropdownItem
 	} from '$lib';
-	
 </script>
 
-
-<Sidebar 
-asideclass='fixed inset-0 z-30 flex-none h-full w-64 lg:static lg:h-auto border-e border-gray-200 dark:border-gray-600 lg:overflow-y-visible dark:bg-gray-900 lg:pt-0 lg:block hidden'
-divclass='dark:bg-gray-900 '
+<Sidebar
+	asideclass="fixed inset-0 z-30 flex-none h-full w-64 lg:static lg:h-auto border-e border-gray-200 dark:border-gray-600 lg:overflow-y-visible dark:bg-gray-900 lg:pt-0 lg:block hidden"
+	divclass="dark:bg-gray-900 "
 >
 	<SidebarGroup>
-		<SidebarItem label="Banner" href='/banner'/>
-		<SidebarItem label="Breadcrumb" href='/breadcrumb'/>
-		<SidebarItem label="Button" href='/button'/>
-		<SidebarItem label="Card" href='/card'/>
-		<SidebarItem label="Drawer" href='/drawer'/>
-		<SidebarItem label="Darkmode" href='darkmode'/>
-		<SidebarItem label="Dropdown" href='/dropdown'/>
-		<SidebarItem label="Footer" href='/footer'/>
-		<SidebarItem label="Indicator" href='/indicator'/>
-		<SidebarItem label="Kbd" href='/kbd'/>
-		<SidebarItem label="Navbar" href='/navbar'/>
-		<SidebarItem label="Progress" href='/progress'/>
-		<SidebarItem label="Sidebar" href='/sidebar'/>
-		<SidebarItem label="Skeleton" href='/skeleton'/>
-		<SidebarItem label="Spinner" href='/spinner'/>
+		<SidebarItem label="Banner" href="/banner" />
+		<SidebarItem label="Breadcrumb" href="/breadcrumb" />
+		<SidebarItem label="Button" href="/button" />
+		<SidebarItem label="Card" href="/card" />
+		<SidebarItem label="Drawer" href="/drawer" />
+		<SidebarItem label="Darkmode" href="darkmode" />
+		<SidebarItem label="Dropdown" href="/dropdown" />
+		<SidebarItem label="Footer" href="/footer" />
+		<SidebarItem label="Indicator" href="/indicator" />
+		<SidebarItem label="Kbd" href="/kbd" />
+		<SidebarItem label="Navbar" href="/navbar" />
+		<SidebarItem label="Progress" href="/progress" />
+		<SidebarItem label="Sidebar" href="/sidebar" />
+		<SidebarItem label="Skeleton" href="/skeleton" />
+		<SidebarItem label="Spinner" href="/spinner" />
 		<SidebarDropdownWrapper label="Forms">
-			<SidebarDropdownItem  href='/forms/select'>Select</SidebarDropdownItem>
-
+			<SidebarDropdownItem href="/forms/select">Select</SidebarDropdownItem>
 		</SidebarDropdownWrapper>
-		
 	</SidebarGroup>
 </Sidebar>
-

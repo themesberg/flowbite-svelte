@@ -8,14 +8,11 @@
 
 	const THEME_PREFERENCE_KEY = 'color-theme';
 
-	let {
-		btnclass,
-		size = 'md',
-		ariaLabel = 'Dark mode',
-		...attributes
-	} = $props<Props>();
-	let btnCls: string =
-		twMerge('text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5', btnclass);
+	let { btnclass, size = 'md', ariaLabel = 'Dark mode', ...attributes } = $props<Props>();
+	let btnCls: string = twMerge(
+		'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5',
+		btnclass
+	);
 
 	const sizes = {
 		sm: 'w-4 h-4',
@@ -45,13 +42,7 @@
 	</script>
 </svelte:head>
 
-<button
-	on:click={toggleTheme}
-	aria-label={ariaLabel}
-	type="button"
-	{...attributes}
-	class={btnCls}
->
+<button on:click={toggleTheme} aria-label={ariaLabel} type="button" {...attributes} class={btnCls}>
 	<span class="hidden dark:block">
 		<slot name="lightIcon">
 			<svg

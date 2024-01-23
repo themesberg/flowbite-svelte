@@ -8,14 +8,7 @@
 	}
 	import { twMerge } from 'tailwind-merge';
 
-	let {
-		children,
-		color = 'gray',
-		show = true,
-		labelclass,
-		forId,
-		...attributes
-	} = $props<Props>();
+	let { children, color = 'gray', show = true, labelclass, forId, ...attributes } = $props<Props>();
 
 	const colorClasses = {
 		gray: 'text-gray-900 dark:text-gray-300',

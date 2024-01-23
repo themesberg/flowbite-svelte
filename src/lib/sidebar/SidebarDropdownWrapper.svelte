@@ -38,7 +38,6 @@
 	let spanCls: string = twMerge('flex-1 ms-3 text-left whitespace-nowrap', spanclass);
 	let ulCls: string = twMerge('py-2 space-y-2', ulclass);
 
-
 	// make a custom transition function that returns the desired transition
 	const multiple = (node: HTMLElement, params: any) => {
 		switch (transitionType) {

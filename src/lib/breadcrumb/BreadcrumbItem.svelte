@@ -10,7 +10,7 @@
 		class?: string | undefined;
 	}
 	import { twMerge } from 'tailwind-merge';
-	
+
 	let {
 		children,
 		icon,

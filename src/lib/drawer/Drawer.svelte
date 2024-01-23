@@ -72,8 +72,13 @@
 		backdrop && bgColor,
 		backdrop && bgOpacity
 	);
-	let divCls = twMerge('overflow-y-auto z-50 p-4 bg-white dark:bg-gray-800', width, position, placements[placement], divclass);
-
+	let divCls = twMerge(
+		'overflow-y-auto z-50 p-4 bg-white dark:bg-gray-800',
+		width,
+		position,
+		placements[placement],
+		divclass
+	);
 </script>
 
 {#if drawerStatus}
@@ -86,12 +91,7 @@
 	{:else if !backdrop && !activateClickOutside}
 		<div role="presentation" class="fixed start-0 top-0 z-50 h-full w-full" />
 	{/if}
-	<div
-		{...attributes}
-		class={divCls}
-		transition:multiple={transitionParams}
-		tabindex="-1"
-	>
+	<div {...attributes} class={divCls} transition:multiple={transitionParams} tabindex="-1">
 		{@render children()}
 	</div>
 {/if}

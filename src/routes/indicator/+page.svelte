@@ -41,7 +41,9 @@
 	<span class="flex items-center"
 		><Indicator size="sm" color="indigo" divclass="me-1.5" />Customers</span
 	>
-	<span class="flex items-center"><Indicator size="sm" color="teal" divclass="me-1.5" />Revenue</span>
+	<span class="flex items-center"
+		><Indicator size="sm" color="teal" divclass="me-1.5" />Revenue</span
+	>
 </CodeWrapper>
 
 <h2>Indicator count</h2>

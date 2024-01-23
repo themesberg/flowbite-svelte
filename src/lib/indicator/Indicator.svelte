@@ -20,7 +20,7 @@
 		border = false,
 		placement,
 		offset = true,
-		divclass,
+		divclass
 	} = $props<Props>();
 	// export let color: IndicatorColorType = 'gray';
 	// export let rounded: boolean = false;

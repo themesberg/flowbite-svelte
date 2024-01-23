@@ -9,7 +9,6 @@
 	let { children, ulclass, ...attributes } = $props<Props>();
 	let breakPoint: 'md' | 'lg' | 'xl' | 'xxl';
 
-
 	breakPoint = getContext('breakPoint');
 	const ulBreak = {
 		md: 'md:mt-0 md:flex-row md:space-x-8 md:border-0 md:p-0 md:dark:bg-gray-900',
