@@ -4,11 +4,11 @@
 		header?: any;
 		isOpen: boolean;
 		footer?: any;
-		footerClass?: string | undefined;
+		footerclass?: string | undefined;
 	}
 	import { twMerge } from 'tailwind-merge';
 
-	let { children, header, isOpen, footer, footerClass, ...attributes } = $props<Props>();
+	let { children, header, isOpen, footer, footerclass, ...attributes } = $props<Props>();
 
 	let hidden = $state('hidden');
 
@@ -32,7 +32,7 @@
 		{@render children()}
 	</ul>
 	{#if footer}
-		<div class={twMerge('overflow-hidden rounded-b-lg py-1', footerClass)}>
+		<div class={twMerge('overflow-hidden rounded-b-lg py-1', footerclass)}>
 			{@render footer()}
 		</div>
 	{/if}

@@ -1,10 +1,10 @@
 <script lang="ts">
 	interface Props {
-		class?: string | undefined;
+		divclass?: string | undefined;
 	}
 
 	import { twMerge } from 'tailwind-merge';
-	let { class: classname, ...attributes } = $props<Props>();
+	let { divclass, ...attributes } = $props<Props>();
 </script>
 
-<div {...attributes} class={twMerge('my-1 h-px bg-gray-100 dark:bg-gray-600', classname)} />
+<div {...attributes} class={twMerge('my-1 h-px bg-gray-100 dark:bg-gray-600', divclass)} />

@@ -167,7 +167,7 @@
 	</p>
 	<div class="grid grid-cols-2 gap-4">
 		<Button color="light" href="/">Learn more</Button>
-		<Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
+		<Button href="/" btnclass="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
 	</div>
 </Drawer>
 </CodeWrapper>
@@ -346,7 +346,7 @@
 	</p>
 	<div class="grid grid-cols-2 gap-4">
 		<Button color="light" href="/">Learn more</Button>
-		<Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
+		<Button href="/" btnclass="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
 	</div>
 </Drawer>
 </CodeWrapper>
@@ -409,7 +409,7 @@
 	</p>
 	<div class="grid grid-cols-2 gap-4">
 		<Button color="light" href="/">Learn more</Button>
-		<Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
+		<Button href="/" btnclass="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
 	</div>
 </Drawer>
 </CodeWrapper>
@@ -473,7 +473,7 @@
 	</p>
 	<div class="grid grid-cols-2 gap-4">
 		<Button color="light" href="/">Learn more</Button>
-		<Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
+		<Button href="/" btnclass="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
 	</div>
 </Drawer>
 </CodeWrapper>
@@ -537,7 +537,7 @@
 	</p>
 	<div class="grid grid-cols-2 gap-4">
 		<Button color="light" href="/">Learn more</Button>
-		<Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
+		<Button href="/" btnclass="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
 	</div>
 </Drawer>
 </CodeWrapper>
@@ -597,7 +597,7 @@
 	</p>
 	<div class="grid grid-cols-2 gap-4">
 		<Button color="light" href="/">Learn more</Button>
-		<Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
+		<Button href="/" btnclass="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
 	</div>
 </Drawer>
 </CodeWrapper>
@@ -655,7 +655,7 @@
 	</p>
 	<div class="grid grid-cols-2 gap-4">
 		<Button color="light" href="/">Learn more</Button>
-		<Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
+		<Button href="/" btnclass="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
 	</div>
 </Drawer>
 </CodeWrapper>
@@ -713,7 +713,7 @@
         </p>
         <div class="grid grid-cols-2 gap-4">
             <Button color="light" href="/">Learn more</Button>
-            <Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
+            <Button href="/" btnclass="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
         </div>
     </Drawer>
 </CodeWrapper>
@@ -777,7 +777,7 @@
 	</p>
 	<div class="grid grid-cols-2 gap-4">
 		<Button color="light" href="/">Learn more</Button>
-		<Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
+		<Button href="/" btnclass="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
 	</div>
 </Drawer>
 </CodeWrapper>
@@ -840,7 +840,7 @@
 	</p>
 	<div class="grid grid-cols-2 gap-4">
 		<Button color="light" href="/">Learn more</Button>
-		<Button href="/" class="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
+		<Button href="/" btnclass="px-4">Get access <ArrowRightOutline class="ms-2 h-3.5 w-3.5" /></Button>
 	</div>
 </Drawer>
 </CodeWrapper>

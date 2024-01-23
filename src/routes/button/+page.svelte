@@ -93,7 +93,7 @@
 <h2>Button with label</h2>
 
 <CodeWrapper>
-	<Button class="gap-2">
+	<Button btnclass="gap-2">
 		Messages
 		<Indicator color="none" class="bg-primary-200 text-xs font-semibold text-primary-800" size="lg"
 			>2</Indicator

@@ -11,7 +11,7 @@
 		tag?: string;
 		checked?: boolean | undefined;
 		disabled?: boolean;
-		class?: string | undefined;
+		btnclass?: string | undefined;
 	}
 	import { twMerge } from 'tailwind-merge';
 	import { getContext } from 'svelte';
@@ -34,7 +34,7 @@
 		tag = 'button',
 		checked = undefined,
 		disabled = false,
-		class: classname,
+		btnclass,
 		...attributes
 	} = $props<Props>();
 
@@ -129,7 +129,7 @@
 
 	const hasBorder = () => outline || color === 'alternative' || color === 'light';
 
-	let buttonClass: string = $state(
+	let buttonCls: string = $state(
 		twMerge(
 			'text-center font-medium',
 			group ? 'focus-within:ring-2' : 'focus-within:ring-4',
@@ -161,21 +161,21 @@
 			shadow && 'shadow-lg',
 			shadow && coloredShadowClasses[color],
 			disabled && 'cursor-not-allowed opacity-50',
-			classname
+			btnclass
 		)
 	);
 </script>
 
 {#if href}
-	<a {href} {...attributes} class={buttonClass} role="button">
+	<a {href} {...attributes} class={buttonCls} role="button">
 		{@render children()}
 	</a>
 {:else if tag === 'button'}
-	<button {type} {...attributes} class={buttonClass}>
+	<button {type} {...attributes} class={buttonCls}>
 		{@render children()}
 	</button>
 {:else}
-	<svelte:element this={tag} {...attributes} class={buttonClass}>
+	<svelte:element this={tag} {...attributes} class={buttonCls}>
 		{@render children()}
 	</svelte:element>
 {/if}
