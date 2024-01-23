@@ -88,7 +88,7 @@
 	</Navbar>
 </header>
 
-<Drawer drawerStatus={navDrawerStatus} closeDrawer={closeNavDrawer} {transitionParams} >
+<Drawer width='64' drawerStatus={navDrawerStatus} closeDrawer={closeNavDrawer} {transitionParams}>
 	<div class="flex items-center">
 		<h5
 			id="drawer-label"
@@ -120,7 +120,7 @@
 			<span class="sr-only">Close drawer</span>
 		</button>
 	</div>
-	<Sidebar>
+	<Sidebar class='w-48 p-0'>
 		<SidebarGroup>
 			<SidebarItem onclick={closeNavDrawer} label="Banner" href="/banner" />
 			<SidebarItem onclick={closeNavDrawer} label="Breadcrumb" href="/breadcrumb" />

@@ -5,8 +5,8 @@
 		position?: 'static' | 'fixed' | 'absolute' | 'relative' | 'sticky';
 		dismissable?: boolean;
 		bannerType: 'default' | 'bottom' | 'cta' | 'signup' | 'info';
-		divClass: string | undefined;
-		innerClass: string | undefined;
+		divclass: string | undefined;
+		div2class: string | undefined;
 	}
 
 	import { twMerge } from 'tailwind-merge';
@@ -17,8 +17,8 @@
 		position = 'sticky',
 		dismissable = true,
 		bannerType = 'default',
-		divClass,
-		innerClass,
+		divclass,
+		div2class,
 		...attributes
 	} = $props<Props>();
 	let bannerStatus = $state(true);
@@ -43,9 +43,9 @@
 		position,
 		'z-10 flex justify-between p-4 dark:bg-gray-700 dark:border-gray-600',
 		divClasses[bannerType],
-		divClass
+		divclass
 	);
-	let innerCls = twMerge('flex', insideDivClasses[bannerType], innerClass);
+	let innerCls = twMerge('flex', insideDivClasses[bannerType], div2class);
 </script>
 
 {#if bannerStatus}

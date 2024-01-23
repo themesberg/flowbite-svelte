@@ -4,40 +4,41 @@
 		icon?: any;
 		home?: boolean;
 		href?: string | undefined;
-		linkClass?: string | undefined;
-		spanClass?: string | undefined;
-		homeClass?: string | undefined;
+		a2class?: string | undefined;
+		spanclass?: string | undefined;
+		aclass?: string | undefined;
 		class?: string | undefined;
 	}
 	import { twMerge } from 'tailwind-merge';
+	
 	let {
 		children,
 		icon,
 		home = false,
 		href,
-		linkClass,
-		spanClass,
-		homeClass,
+		a2class,
+		spanclass,
+		aclass,
 		class: classname,
 		...attributes
 	} = $props<Props>();
-	let linkCls: string = twMerge(
+	let a2Cls: string = twMerge(
 		'ms-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ms-2 dark:text-gray-400 dark:hover:text-white',
-		linkClass
+		a2class
 	);
 	let spanCls: string = twMerge(
 		'ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400',
-		spanClass
+		spanclass
 	);
-	let homeCls: string = twMerge(
+	let aCls: string = twMerge(
 		'inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white',
-		homeClass
+		aclass
 	);
 </script>
 
 <li class={twMerge('inline-flex items-center', classname)} {...attributes}>
 	{#if home}
-		<a class={homeCls} {href}>
+		<a class={aCls} {href}>
 			{#if icon}
 				{@render icon()}
 			{:else}
@@ -72,7 +73,7 @@
 			</svg>
 		{/if}
 		{#if href}
-			<a class={linkCls} {href}>
+			<a class={a2Cls} {href}>
 				{@render children()}
 			</a>
 		{:else}
