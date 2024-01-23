@@ -3,10 +3,12 @@
 		children?: any;
 		href?: string | undefined;
 		horizontal?: boolean;
+		shadow?: boolean;
 		reverse?: boolean;
-		img?: string | undefined;
+		src?: string | undefined;
 		padding?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
 		size?: SizeType;
+		class?: string | undefined;
 	}
 	import type { SizeType } from '$lib/types';
 	import { twMerge } from 'tailwind-merge';
@@ -15,10 +17,12 @@
 		children,
 		href = undefined,
 		horizontal = false,
+		shadow = false,
 		reverse = false,
-		img = undefined,
+		src = undefined,
 		padding = 'lg',
 		size = 'sm',
+		class:classname ='',
 		...attributes
 	} = $props<Props>();
 
@@ -44,14 +48,19 @@
 	let imgClass: string = $state('');
 	$effect(() => {
 		innerPadding = paddings[padding];
+		//  twMerge('flex w-full', sizes[size], reverse ? 'flex-col-reverse' : 'flex-col',
+		//  horizontal && (reverse ? 'md:flex-row-reverse' : 'md:flex-row'), 
+		// href && 'hover:bg-gray-100 dark:hover:bg-gray-700', 
+		// !img && innerPadding, $$props.class);
 		cardClass = twMerge(
-			'flex',
-			'block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700',
+			'w-full flex max-w-sm bg-white border border-gray-200 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700',
 			sizes[size],
+			shadow && 'shadow-md',
 			reverse ? 'flex-col-reverse' : 'flex-col',
 			horizontal && (reverse ? 'md:flex-row-reverse' : 'md:flex-row'),
 			href && 'hover:bg-gray-100 dark:hover:bg-gray-700',
-			!img && innerPadding
+			!src && innerPadding,
+			classname
 		);
 		imgClass = twMerge(
 			reverse ? 'rounded-b-lg' : 'rounded-t-lg',
@@ -64,17 +73,12 @@
 <svelte:element
 	this={tag}
 	role="presentation"
-	on:click
-	on:focusin
-	on:focusout
-	on:mouseenter
-	on:mouseleave
 	{href}
 	{...attributes}
 	class={cardClass}
 >
-	{#if img}
-		<img class={imgClass} src={img} alt="" />
+	{#if src}
+		<img class={imgClass} {src} alt="" />
 		<div class={innerPadding}>
 			{@render children()}
 		</div>
