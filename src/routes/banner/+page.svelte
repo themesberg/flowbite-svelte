@@ -6,21 +6,24 @@
 		ArrowRightSolid,
 		OpenBookSolid
 	} from 'flowbite-svelte-icons';
+
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import CodeWrapper from '../components/CodeWrapper.svelte';
+	import H1 from '../components/H1.svelte'
+	import H2 from '../components/H2.svelte'
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 </script>
 
-<h1>Banner</h1>
+<H1>Banner</H1>
 
-<h2>Setup</h2>
+<H2>Setup</H2>
 
 <HighlightCompo code={modules['./md/setup.md']} />
 
-<h2>Default sticky banner</h2>
+<H2>Default sticky banner</H2>
 
 <CodeWrapper class="relative">
-	<Skeleton class="py-4" />
+	<Skeleton divclass="py-4" />
 	<ImagePlaceholder class="py-4" />
 
 	<Banner id="default-banner" position="absolute">
@@ -43,11 +46,11 @@
 
 <HighlightCompo code={modules['./md/defaultsticky.md']} />
 
-<h2>Bottom banner position</h2>
+<H2>Bottom banner position</H2>
 
 <CodeWrapper class="relative">
-	<Skeleton class="py-4" />
-	<ImagePlaceholder class="py-4" />
+	<Skeleton divclass="py-4" />
+	<ImagePlaceholder divclass="py-4" />
 
 	<Banner id="bottom-banner" position="absolute" bannerType="bottom">
 		<p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
@@ -69,11 +72,11 @@
 
 <HighlightCompo code={modules['./md/bottombanner.md']} />
 
-<h2>Marketing CTA banner</h2>
+<H2>Marketing CTA banner</H2>
 
 <CodeWrapper class="relative">
-	<Skeleton class="py-4" />
-	<ImagePlaceholder class="py-4" />
+	<Skeleton divclass="py-4" />
+	<ImagePlaceholder divclass="py-4" />
 
 	<Banner id="cta-banner" position="absolute" bannerType="cta">
 		<a
@@ -97,11 +100,11 @@
 
 <HighlightCompo code={modules['./md/marketing.md']} />
 
-<h2>Newsletter sign-up banner</h2>
+<H2>Newsletter sign-up banner</H2>
 
 <CodeWrapper class="relative">
-	<Skeleton class="py-4" />
-	<ImagePlaceholder class="py-4" />
+	<Skeleton divclass="py-4" />
+	<ImagePlaceholder divclass="py-4" />
 
 	<Banner id="signup-banner" position="absolute" bannerType="signup">
 		<form action="/" class="flex w-full flex-col items-center md:flex-row">
@@ -130,7 +133,7 @@
 
 <HighlightCompo code={modules['./md/newsletter.md']} />
 
-<h2>Informational banner</h2>
+<H2>Informational banner</H2>
 
 <CodeWrapper class="relative">
 	<Banner id="info-banner" position="absolute" bannerType="info">

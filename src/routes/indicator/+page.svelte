@@ -3,16 +3,19 @@
 	import { EnvelopeSolid } from 'flowbite-svelte-icons';
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import CodeWrapper from '../components/CodeWrapper.svelte';
+	import H1 from '../components/H1.svelte'
+	import H2 from '../components/H2.svelte'
+	import H3 from '../components/H3.svelte'
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 </script>
 
-<h1>Indicator</h1>
+<H1>Indicator</H1>
 
-<h2>Setup</h2>
+<H2>Setup</H2>
 
 <HighlightCompo code={modules['./md/setup.md']} />
 
-<h2>Default indicator</h2>
+<H2>Default indicator</H2>
 
 <CodeWrapper class="flex gap-4">
 	<Indicator color="gray" />
@@ -29,7 +32,7 @@
 
 <HighlightCompo code={modules['./md/defaultindicator.md']} />
 
-<h2>Legend indicator</h2>
+<H2>Legend indicator</H2>
 
 <CodeWrapper class="flex gap-4">
 	<span class="flex items-center"
@@ -46,7 +49,7 @@
 	>
 </CodeWrapper>
 
-<h2>Indicator count</h2>
+<H2>Indicator count</H2>
 
 <CodeWrapper>
 	<Button size="lg" btnclass="relative">
@@ -61,7 +64,7 @@
 
 <HighlightCompo code={modules['./md/indicator-count.md']} />
 
-<h2>Indicator posision</h2>
+<H2>Indicator posision</H2>
 
 <CodeWrapper
 	class="borer relative h-56 w-56 rounded-lg border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-800"

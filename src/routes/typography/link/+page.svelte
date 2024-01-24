@@ -3,16 +3,18 @@
 	import { ArrowRightOutline } from 'flowbite-svelte-icons';
 	import HighlightCompo from '../../components/HighlightCompo.svelte';
 	import CodeWrapper from '../../components/CodeWrapper.svelte';
+	import H1 from '../../components/H1.svelte'
+	import H2 from '../../components/H2.svelte'
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 </script>
 
-<h1>Links</h1>
+<H1>Links</H1>
 
-<h2>Setup</h2>
+<H2>Setup</H2>
 
 <HighlightCompo code={modules['./md/setup.md']} />
 
-<h2>Default link</h2>
+<H2>Default link</H2>
 
 <CodeWrapper>
 	<A href="/" aclass="font-medium hover:underline">Read more</A>
@@ -20,7 +22,7 @@
 
 <HighlightCompo code={modules['./md/default-link.md']} />
 
-<h2>Paragraph</h2>
+<H2>Paragraph</H2>
 <CodeWrapper>
 <P>
 	The free updates that will be provided is based on the <A href="/" aclass="underline hover:no-underline">roadmap</A> that we have laid out for this project. It is also possible that we will provide extra updates outside of the roadmap as well.
@@ -29,7 +31,7 @@
 
 <HighlightCompo code={modules['./md/paragraph.md']} />
 
-<h2>Icon link</h2>
+<H2>Icon link</H2>
 <CodeWrapper>
 <P>
 	500,000 people have made over a million apps with Glide.

@@ -3,18 +3,20 @@
 	import { sineOut } from 'svelte/easing';
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import CodeWrapper from '../components/CodeWrapper.svelte';
+	import H1 from '../components/H1.svelte'
+	import H2 from '../components/H2.svelte'
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 
 	let progress = '45';
 </script>
 
-<h1>Progress bar</h1>
+<H1>Progress bar</H1>
 
-<h2>Setup</h2>
+<H2>Setup</H2>
 
 <HighlightCompo code={modules['./md/setup.md']} />
 
-<h2>Default progress bar</h2>
+<H2>Default progress bar</H2>
 
 <CodeWrapper>
 	<Progressbar progress="50" />
@@ -22,7 +24,7 @@
 
 <HighlightCompo code={modules['./md/defaultprogressbar.md']} />
 
-<h2>Sizes</h2>
+<H2>Sizes</H2>
 
 <CodeWrapper>
 	<div class="my-4">
@@ -48,7 +50,7 @@
 
 <HighlightCompo code={modules['./md/sizes.md']} />
 
-<h2>With label inside</h2>
+<H2>With label inside</H2>
 
 <CodeWrapper>
 	<Progressbar progress="50" size="h-4" labelInside />
@@ -56,7 +58,7 @@
 
 <HighlightCompo code={modules['./md/labelinside.md']} />
 
-<h2>With label outside</h2>
+<H2>With label outside</H2>
 
 <CodeWrapper>
 	<Progressbar progress="50" labelOutside="Flowbite-Svelte" />
@@ -64,7 +66,7 @@
 
 <HighlightCompo code={modules['./md/labeloutside.md']} />
 
-<h2>Colors</h2>
+<H2>Colors</H2>
 
 <CodeWrapper>
 	<div class="my-4">
@@ -105,7 +107,7 @@
 
 <HighlightCompo code={modules['./md/colors.md']} />
 
-<h2>Custom style</h2>
+<H2>Custom style</H2>
 
 <CodeWrapper>
 	<Progressbar
@@ -149,7 +151,7 @@
 
 <HighlightCompo code={modules['./md/custom.md']} />
 
-<h2>Animation</h2>
+<H2>Animation</H2>
 
 <CodeWrapper>
 	<Progressbar

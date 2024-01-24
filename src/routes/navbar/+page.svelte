@@ -2,6 +2,9 @@
 	import { Navbar, NavLi, NavBrand, NavUl, uiHelpers } from '$lib';
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import CodeWrapper from '../components/CodeWrapper.svelte';
+	import H1 from '../components/H1.svelte'
+	import H2 from '../components/H2.svelte'
+
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 	let nav = uiHelpers();
 
@@ -16,7 +19,9 @@
 	});
 </script>
 
-<h1>Navbar</h1>
+<H1>Navbar</H1>
+
+<H2>Default Nav</H2>
 
 <CodeWrapper>
 	<Navbar {toggleNav} {closeNav} {navStatus} breakPoint="xl">

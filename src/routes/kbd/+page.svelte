@@ -8,16 +8,18 @@
 	} from 'flowbite-svelte-icons';
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import CodeWrapper from '../components/CodeWrapper.svelte';
+	import H1 from '../components/H1.svelte'
+	import H2 from '../components/H2.svelte'
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 </script>
 
-<h1>KBD (Keyboard)</h1>
+<H1>KBD (Keyboard)</H1>
 
-<h2>Setup</h2>
+<H2>Setup</H2>
 
 <HighlightCompo code={modules['./md/setup.md']} />
 
-<h2>Default KBD</h2>
+<H2>Default KBD</H2>
 
 <CodeWrapper>
 	<Kbd kbdclass="px-2 py-1.5">Shift</Kbd>
@@ -31,7 +33,7 @@
 
 <HighlightCompo code={modules['./md/defaultkbd.md']} />
 
-<h2>KBD inside text</h2>
+<H2>KBD inside text</H2>
 
 <CodeWrapper>
 	<p class="text-gray-500 dark:text-gray-400">
@@ -43,7 +45,7 @@
 
 <HighlightCompo code={modules['./md/insidetext.md']} />
 
-<h2>Arrow keys</h2>
+<H2>Arrow keys</H2>
 
 <CodeWrapper>
 	<Kbd kbdclass="me-1 inline-flex items-center px-2 py-1.5">
@@ -66,7 +68,7 @@
 
 <HighlightCompo code={modules['./md/arrow.md']} />
 
-<h2>Letter keys</h2>
+<H2>Letter keys</H2>
 
 <CodeWrapper>
 	<Kbd kbdclass="px-2 py-1.5">Q</Kbd>
@@ -99,7 +101,7 @@
 
 <HighlightCompo code={modules['./md/letter.md']} />
 
-<h2>Number keys</h2>
+<H2>Number keys</H2>
 
 <CodeWrapper>
 	<Kbd kbdclass="px-2 py-1.5">1</Kbd>
@@ -116,7 +118,7 @@
 
 <HighlightCompo code={modules['./md/number.md']} />
 
-<h2>Function keys</h2>
+<H2>Function keys</H2>
 
 <CodeWrapper>
 	<Kbd kbdclass="px-2 py-1.5">F1</Kbd>

@@ -24,6 +24,9 @@
 
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import CodeWrapper from '../components/CodeWrapper.svelte';
+	import H1 from '../components/H1.svelte'
+	import H2 from '../components/H2.svelte'
+	import H3 from '../components/H3.svelte'
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 
 	let transitionParams = {
@@ -110,13 +113,13 @@
 	let spanclass = 'flex-1 ms-3 whitespace-nowrap';
 </script>
 
-<h1>Drawer</h1>
+<H1>Drawer</H1>
 
-<h2>Setup</h2>
+<H2>Setup</H2>
 
 <HighlightCompo code={modules['./md/setup.md']} />
 
-<h2>Default drawer</h2>
+<H2>Default drawer</H2>
 
 <CodeWrapper>
 	<div class="text-center">
@@ -176,7 +179,7 @@
 
 <HighlightCompo code={modules['./md/defaultdrawer.md']} />
 
-<h2>Drawer navigation</h2>
+<H2>Drawer navigation</H2>
 
 <CodeWrapper>
 	<div class="text-center">
@@ -290,9 +293,9 @@
 
 <HighlightCompo code={modules['./md/navigation.md']} />
 
-<h2>Placement</h2>
+<H2>Placement</H2>
 
-<h3>Left drawer</h3>
+<H3>Left drawer</H3>
 
 <CodeWrapper>
 	<div class="text-center">
@@ -357,7 +360,7 @@
 
 <HighlightCompo code={modules['./md/leftdrawer.md']} />
 
-<h3>Right drawer</h3>
+<H3>Right drawer</H3>
 
 <CodeWrapper>
 	<div class="text-center">
@@ -422,7 +425,7 @@
 
 <HighlightCompo code={modules['./md/rightdrawer.md']} />
 
-<h3>Top drawer</h3>
+<H3>Top drawer</H3>
 
 <CodeWrapper>
 	<div class="text-center">
@@ -488,7 +491,7 @@
 
 <HighlightCompo code={modules['./md/topdrawer.md']} />
 
-<h3>Bottom drawer</h3>
+<H3>Bottom drawer</H3>
 
 <CodeWrapper>
 	<div class="text-center">
@@ -554,9 +557,9 @@
 
 <HighlightCompo code={modules['./md/bottomdrawer.md']} />
 
-<h2>Backdrop</h2>
+<H2>Backdrop</H2>
 
-<h3>Enabled (default)</h3>
+<H3>Enabled (default)</H3>
 
 <CodeWrapper>
 	<div class="text-center">
@@ -621,7 +624,7 @@
 
 <HighlightCompo code={modules['./md/backdrop.md']} />
 
-<h3>Disabled</h3>
+<H3>Disabled</H3>
 
 <CodeWrapper>
 	<div class="text-center">
@@ -686,7 +689,7 @@
 
 <HighlightCompo code={modules['./md/backdropdisabled.md']} />
 
-<h2>Offset position</h2>
+<H2>Offset position</H2>
 
 <CodeWrapper>
 	<div class="text-center">
@@ -751,7 +754,7 @@
 
 <HighlightCompo code={modules['./md/offset.md']} />
 
-<h2>Disabling outside click and backdrop</h2>
+<H2>Disabling outside click and backdrop</H2>
 
 <CodeWrapper>
 	<div class="text-center">
@@ -817,7 +820,7 @@
 
 <HighlightCompo code={modules['./md/disabling-outside-click-and-backdrop.md']} />
 
-<h2>Disabling only outside click</h2>
+<H2>Disabling only outside click</H2>
 
 <CodeWrapper>
 	<div class="text-center">

@@ -3,16 +3,18 @@
 	import { EnvelopeSolid, ArrowRightOutline, ShoppingCartSolid } from 'flowbite-svelte-icons';
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import CodeWrapper from '../components/CodeWrapper.svelte';
+	import H1 from '../components/H1.svelte'
+	import H2 from '../components/H2.svelte'
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 </script>
 
-<h1>Buttons</h1>
+<H1>Buttons</H1>
 
-<h2>Setup</h2>
+<H2>Setup</H2>
 
 <HighlightCompo code={modules['./md/setup.md']} />
 
-<h2>Default buttons</h2>
+<H2>Default buttons</H2>
 
 <CodeWrapper class="flex flex-wrap gap-2">
 	<Button>Default</Button>
@@ -28,7 +30,7 @@
 
 <HighlightCompo code={modules['./md/defaultbuttons.md']} />
 
-<h2>Button with link</h2>
+<H2>Button with link</H2>
 
 <CodeWrapper>
 	<Button href="/">Home</Button>
@@ -36,7 +38,7 @@
 
 <HighlightCompo code={modules['./md/link.md']} />
 
-<h2>Button pills</h2>
+<H2>Button pills</H2>
 
 <CodeWrapper class="flex flex-wrap gap-2">
 	<Button pill>Default</Button>
@@ -52,7 +54,7 @@
 
 <HighlightCompo code={modules['./md/pills.md']} />
 
-<h2>Outline buttons</h2>
+<H2>Outline buttons</H2>
 
 <CodeWrapper class="flex flex-wrap gap-2">
 	<Button outline>Default</Button>
@@ -65,7 +67,7 @@
 
 <HighlightCompo code={modules['./md/outline.md']} />
 
-<h2>Button sizes with icons</h2>
+<H2>Button sizes with icons</H2>
 
 <CodeWrapper>
 	<Button size="xs"><EnvelopeSolid class="me-2 h-3 w-3" />Extra small</Button>
@@ -77,7 +79,7 @@
 
 <HighlightCompo code={modules['./md/sizesicons.md']} />
 
-<h2>Button with icon</h2>
+<H2>Button with icon</H2>
 
 <CodeWrapper>
 	<Button>
@@ -90,7 +92,7 @@
 
 <HighlightCompo code={modules['./md/withicon.md']} />
 
-<h2>Button with label</h2>
+<H2>Button with label</H2>
 
 <CodeWrapper>
 	<Button btnclass="gap-2">

@@ -2,10 +2,14 @@
 	import { Footer, FooterBrand, FooterLi, FooterUl } from '$lib';
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import CodeWrapper from '../components/CodeWrapper.svelte';
+	import H1 from '../components/H1.svelte'
+	import H2 from '../components/H2.svelte'
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 </script>
 
-<h1>Footer</h1>
+<H1>Footer</H1>
+
+<H2>Default footer</H2>
 
 <CodeWrapper>
 	<Footer footerclass="shadow-none" footerType="logo">

@@ -2,7 +2,7 @@
 	interface Props {
 		children: any;
 		href: string;
-		aclass: string | undefined;
+		aclass?: string | undefined;
 	}
 	import { twMerge } from 'tailwind-merge';
 

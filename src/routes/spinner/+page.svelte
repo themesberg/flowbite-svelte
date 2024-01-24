@@ -2,16 +2,19 @@
 	import { Spinner, Button } from '$lib';
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import CodeWrapper from '../components/CodeWrapper.svelte';
+	import H1 from '../components/H1.svelte'
+	import H2 from '../components/H2.svelte'
+	import H3 from '../components/H3.svelte'
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 </script>
 
-<h1>Spinner</h1>
+<H1>Spinner</H1>
 
-<h2>Setup</h2>
+<H2>Setup</H2>
 
 <HighlightCompo code={modules['./md/setup.md']} />
 
-<h2>Default spinner</h2>
+<H2>Default spinner</H2>
 
 <CodeWrapper>
 	<Spinner />
@@ -19,7 +22,7 @@
 
 <HighlightCompo code={modules['./md/defaultspinner.md']} />
 
-<h2>Colors</h2>
+<H2>Colors</H2>
 
 <CodeWrapper>
 	<Spinner />
@@ -33,7 +36,7 @@
 
 <HighlightCompo code={modules['./md/colors.md']} />
 
-<h2>Sizes</h2>
+<H2>Sizes</H2>
 
 <CodeWrapper>
 	<Spinner size={4} />
@@ -43,7 +46,7 @@
 
 <HighlightCompo code={modules['./md/sizes.md']} />
 
-<h2>Alignment</h2>
+<H2>Alignment</H2>
 
 <CodeWrapper>
 	<div class="text-left"><Spinner /></div>
@@ -53,7 +56,7 @@
 
 <HighlightCompo code={modules['./md/alignment.md']} />
 
-<h2>Button</h2>
+<H2>Button</H2>
 
 <CodeWrapper>
 	<div class="flex flex-wrap items-center gap-2">

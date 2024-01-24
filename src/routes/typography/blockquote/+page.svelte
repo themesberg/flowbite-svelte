@@ -2,17 +2,20 @@
 	import { Blockquote, P } from '$lib';
 	import HighlightCompo from '../../components/HighlightCompo.svelte';
 	import CodeWrapper from '../../components/CodeWrapper.svelte';
+	import H1 from '../../components/H1.svelte'
+	import H2 from '../../components/H2.svelte'
+	import H3 from '../../components/H3.svelte'
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 	import { QuoteSolid } from 'flowbite-svelte-icons';
 </script>
 
-<h1>Blockquote</h1>
+<H1>Blockquote</H1>
 
-<h2>Setup</h2>
+<H2>Setup</H2>
 
 <HighlightCompo code={modules['./md/setup.md']} />
 
-<h2>Default blockquote</h2>
+<H2>Default blockquote</H2>
 
 <CodeWrapper>
 	<Blockquote size="xl"
@@ -23,7 +26,7 @@
 
 <HighlightCompo code={modules['./md/default-blockquote.md']} />
 
-<h2>Solid background</h2>
+<H2>Solid background</H2>
 
 <CodeWrapper>
 	<P color="text-gray-500 dark:text-gray-400"
@@ -46,7 +49,7 @@
 
 <HighlightCompo code={modules['./md/solid-background.md']} />
 
-<h2>Blockquote icon</h2>
+<H2>Blockquote icon</H2>
 
 <CodeWrapper>
 	<Blockquote size="xl">
@@ -58,7 +61,7 @@
 
 <HighlightCompo code={modules['./md/blockquote-icon.md']} />
 
-<h2>Paragraph context</h2>
+<H2>Paragraph context</H2>
 
 <CodeWrapper>
 	<P pclass="mb-3" color="text-gray-500 dark:text-gray-400"
@@ -87,7 +90,7 @@
 
 <HighlightCompo code={modules['./md/paragraph-context.md']} />
 
-<h2>User testimonial</h2>
+<H2>User testimonial</H2>
 
 <CodeWrapper>
 	<figure class="mx-auto max-w-screen-md text-center">
@@ -114,9 +117,9 @@
 
 <HighlightCompo code={modules['./md/user-testimonial.md']} />
 
-<h2>Alignment</h2>
+<H2>Alignment</H2>
 
-<h3>Left</h3>
+<H3>Left</H3>
 
 <CodeWrapper>
 	<Blockquote size="xl"
@@ -127,7 +130,7 @@
 
 <HighlightCompo code={modules['./md/left.md']} />
 
-<h3>Center</h3>
+<H3>Center</H3>
 
 <CodeWrapper>
 	<Blockquote alignment="center" size="xl"
@@ -138,7 +141,7 @@
 
 <HighlightCompo code={modules['./md/center.md']} />
 
-<h3>Right</h3>
+<H3>Right</H3>
 
 <CodeWrapper>
 	<Blockquote alignment="right" size="xl"
@@ -149,9 +152,9 @@
 
 <HighlightCompo code={modules['./md/right.md']} />
 
-<h2>Sizes</h2>
+<H2>Sizes</H2>
 
-<h3>Small</h3>
+<H3>Small</H3>
 
 <CodeWrapper>
 	<Blockquote size="lg"
@@ -162,7 +165,7 @@
 
 <HighlightCompo code={modules['./md/small.md']} />
 
-<h3>Medium</h3>
+<H3>Medium</H3>
 
 <CodeWrapper>
 	<Blockquote size="xl"
@@ -173,7 +176,7 @@
 
 <HighlightCompo code={modules['./md/medium.md']} />
 
-<h3>Large</h3>
+<H3>Large</H3>
 
 <CodeWrapper>
 	<Blockquote size="2xl"

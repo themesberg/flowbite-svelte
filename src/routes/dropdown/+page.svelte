@@ -1,6 +1,8 @@
 <script>
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import CodeWrapper from '../components/CodeWrapper.svelte';
+	import H1 from '../components/H1.svelte'
+	import H2 from '../components/H2.svelte'
 	import { Dropdown, DropdownDivider, DropdownItem, uiHelpers } from '$lib';
 
 	let dropdown = uiHelpers();
@@ -17,7 +19,9 @@
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 </script>
 
-<h1>Dropdown</h1>
+<H1>Dropdown</H1>
+
+<H2>Default dropdown</H2>
 
 <CodeWrapper class="h-96">
 	<button

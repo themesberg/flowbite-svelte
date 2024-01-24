@@ -11,16 +11,18 @@
 	} from '$lib';
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import CodeWrapper from '../components/CodeWrapper.svelte';
+	import H1 from '../components/H1.svelte'
+	import H2 from '../components/H2.svelte'
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 </script>
 
-<h1>Skeleton</h1>
+<H1>Skeleton</H1>
 
-<h2>Setup</h2>
+<H2>Setup</H2>
 
 <HighlightCompo code={modules['./md/setup.md']} />
 
-<h2>Default skeleton</h2>
+<H2>Default skeleton</H2>
 
 <CodeWrapper>
 	<Skeleton size="sm" divclass="my-8" />
@@ -32,7 +34,7 @@
 
 <HighlightCompo code={modules['./md/skeleton.md']} />
 
-<h2>Image placeholder</h2>
+<H2>Image placeholder</H2>
 
 <CodeWrapper>
 	<ImagePlaceholder />
@@ -41,7 +43,7 @@
 
 <HighlightCompo code={modules['./md/imageplaceholder.md']} />
 
-<h2>Video placeholder</h2>
+<H2>Video placeholder</H2>
 
 <CodeWrapper>
 	<VideoPlaceholder />
@@ -53,7 +55,7 @@
 
 <HighlightCompo code={modules['./md/videoplaceholder.md']} />
 
-<h2>Text placeholder</h2>
+<H2>Text placeholder</H2>
 
 <CodeWrapper>
 	<TextPlaceholder />
@@ -65,7 +67,7 @@
 
 <HighlightCompo code={modules['./md/textplaceholder.md']} />
 
-<h2>Card placeholder</h2>
+<H2>Card placeholder</H2>
 
 <CodeWrapper>
 	<CardPlaceholder />
@@ -77,14 +79,14 @@
 
 <HighlightCompo code={modules['./md/cardplaceholder.md']} />
 
-<h2>Widget placeholder</h2>
+<H2>Widget placeholder</H2>
 
 <CodeWrapper>
 	<WidgetPlaceholder />
 </CodeWrapper>
 <HighlightCompo code={modules['./md/widgetplaceholder.md']} />
 
-<h2>List placeholder</h2>
+<H2>List placeholder</H2>
 
 <CodeWrapper>
 	<ListPlaceholder />
@@ -92,7 +94,7 @@
 
 <HighlightCompo code={modules['./md/listplaceholder.md']} />
 
-<h2>Testimonial placeholder</h2>
+<H2>Testimonial placeholder</H2>
 
 <CodeWrapper>
 	<TestimonialPlaceholder />

@@ -2,16 +2,19 @@
 	import { P, Layout } from '$lib';
 	import HighlightCompo from '../../components/HighlightCompo.svelte';
 	import CodeWrapper from '../../components/CodeWrapper.svelte';
+	import H1 from '../../components/H1.svelte'
+	import H2 from '../../components/H2.svelte'
+	import H3 from '../../components/H3.svelte'
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 </script>
 
-<h1>Paragraph</h1>
+<H1>Paragraph</H1>
 
-<h2>Setup</h2>
+<H2>Setup</H2>
 
 <HighlightCompo code={modules['./md/setup.md']} />
 
-<h2>Default paragraph</h2>
+<H2>Default paragraph</H2>
 
 <CodeWrapper>
 	<P pclass="mb-3" weight="light" color="text-gray-500 dark:text-gray-400"
@@ -28,7 +31,7 @@
 
 <HighlightCompo code={modules['./md/default-paragraph.md']} />
 
-<h2>Leading paragraph</h2>
+<H2>Leading paragraph</H2>
 
 <CodeWrapper>
 	<P pclass="mb-3 md:text-xl" weight="light" size="lg" color="text-gray-500 dark:text-gray-400"
@@ -44,7 +47,7 @@
 
 <HighlightCompo code={modules['./md/leading-paragraph.md']} />
 
-<h2>First letter</h2>
+<H2>First letter</H2>
 
 <CodeWrapper>
 	<P pclass="mb-3" color="text-gray-500 dark:text-gray-400" firstupper
@@ -61,7 +64,7 @@
 
 <HighlightCompo code={modules['./md/first-letter.md']} />
 
-<h2>Paragraph bold</h2>
+<H2>Paragraph bold</H2>
 
 <CodeWrapper>
 	<P pclass="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
@@ -77,7 +80,7 @@
 
 <HighlightCompo code={modules['./md/paragraph-bold.md']} />
 
-<h2>Paragraph underline</h2>
+<H2>Paragraph underline</H2>
 
 <CodeWrapper>
 	<P pclass="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
@@ -91,7 +94,7 @@
 
 <HighlightCompo code={modules['./md/paragraph-underline.md']} />
 
-<h2>Paragraph italic</h2>
+<H2>Paragraph italic</H2>
 
 <CodeWrapper>
 	<P pclass="mb-3" weight="light" color="text-gray-500 dark:text-gray-400">
@@ -113,9 +116,9 @@
 
 <HighlightCompo code={modules['./md/paragraph-italic.md']} />
 
-<h2>Layout</h2>
+<H2>Layout</H2>
 
-<h3>One column</h3>
+<H3>One column</H3>
 
 <CodeWrapper>
 	<P pclass="mb-3" weight="light" color="text-gray-500 dark:text-gray-400"
@@ -132,7 +135,7 @@
 
 <HighlightCompo code={modules['./md/one-column.md']} />
 
-<h3>Two columns even</h3>
+<H3>Two columns even</H3>
 <CodeWrapper>
 	<P pclass="mb-3" weight="light" color="text-gray-500 dark:text-gray-400"
 		>Track work across the enterprise through an open, collaborative platform. Link issues across
@@ -161,7 +164,7 @@
 
 <HighlightCompo code={modules['./md/two-columns-even.md']} />
 
-<h3>Three columns even</h3>
+<H3>Three columns even</H3>
 <CodeWrapper>
 	<P pclass="mb-3" weight="light" color="text-gray-500 dark:text-gray-400"
 		>Track work across the enterprise through an open, collaborative platform. Link issues across
@@ -195,7 +198,7 @@
 
 <HighlightCompo code={modules['./md/three-columns-even.md']} />
 
-<h3>Two columns uneven</h3>
+<H3>Two columns uneven</H3>
 
 <CodeWrapper>
 	<P pclass="mb-3" weight="light" color="text-gray-500 dark:text-gray-400"
@@ -232,9 +235,9 @@
 
 <HighlightCompo code={modules['./md/three-columns-uneven.md']} />
 
-<h2>Text alignment</h2>
+<H2>Text alignment</H2>
 
-<h3>Left</h3>
+<H3>Left</H3>
 
 <CodeWrapper>
 	<P align="left"
@@ -246,7 +249,7 @@
 
 <HighlightCompo code={modules['./md/left.md']} />
 
-<h3>Center</h3>
+<H3>Center</H3>
 
 <CodeWrapper>
 	<P align="center"
@@ -258,7 +261,7 @@
 
 <HighlightCompo code={modules['./md/center.md']} />
 
-<h3>Right</h3>
+<H3>Right</H3>
 
 <CodeWrapper>
 	<P align="right"

@@ -155,6 +155,9 @@
 				<SidebarDropdownItem onclick={closeNavDrawer} href="/typography/blockquote"
 					>Blockquote</SidebarDropdownItem
 				>
+				<SidebarDropdownItem onclick={closeNavDrawer} href="/typography/heading"
+					>Heading/Span/Mark</SidebarDropdownItem
+				>
 				<SidebarDropdownItem onclick={closeNavDrawer} href="/typography/hr"
 					>HR</SidebarDropdownItem
 				>

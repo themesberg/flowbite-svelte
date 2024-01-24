@@ -3,16 +3,18 @@
     import { QuoteSolid } from 'flowbite-svelte-icons';
     import HighlightCompo from '../../components/HighlightCompo.svelte';
 	import CodeWrapper from '../../components/CodeWrapper.svelte';
+    import H1 from '../../components/H1.svelte'
+	import H2 from '../../components/H2.svelte'
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 </script>
 
-<h1>Horizontal line (HR)</h1>
+<H1>Horizontal line (HR)</H1>
 
-<h2>Setup</h2>
+<H2>Setup</H2>
 
 <HighlightCompo code={modules['./md/setup.md']} />
 
-<h2>Default HR</h2>
+<H2>Default HR</H2>
   
 <CodeWrapper>
 <P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
@@ -22,7 +24,7 @@
 
 <HighlightCompo code={modules['./md/default-hr.md']} />
 
-<h2>Trimmed</h2>
+<H2>Trimmed</H2>
 
 <CodeWrapper>
 <P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>
@@ -32,7 +34,7 @@
 
 <HighlightCompo code={modules['./md/trimmed.md']} />
 
-<h2>Icon HR</h2>
+<H2>Icon HR</H2>
 
 <CodeWrapper>
     <div class="text-center">
@@ -46,7 +48,7 @@
 
 <HighlightCompo code={modules['./md/icon-hr.md']} />
 
-<h2>HR with text</h2>
+<H2>HR with text</H2>
 
 <CodeWrapper>
     <div class="text-center">
@@ -58,7 +60,7 @@
 
 <HighlightCompo code={modules['./md/hr-with-text.md']} />
 
-<h2>HR with shape</h2>
+<H2>HR with shape</H2>
 
 <CodeWrapper>
 <P>Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.</P>

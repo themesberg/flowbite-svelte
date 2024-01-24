@@ -2,17 +2,19 @@
 	import { Darkmode } from '$lib';
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import CodeWrapper from '../components/CodeWrapper.svelte';
+	import H1 from '../components/H1.svelte'
+	import H2 from '../components/H2.svelte'
 	import { ThumbsUpSolid, ThumbsDownSolid } from 'flowbite-svelte-icons';
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 </script>
 
-<h1>Darkmode</h1>
+<H1>Darkmode</H1>
 
-<h2>Setup</h2>
+<H2>Setup</H2>
 
 <HighlightCompo code={modules['./md/setup.md']} />
 
-<h2>Default Darkmode</h2>
+<H2>Default Darkmode</H2>
 
 <CodeWrapper>
 	<Darkmode />
@@ -20,18 +22,18 @@
 
 <HighlightCompo code={modules['./md/darkmode.md']} />
 
-<h2>Initial theme</h2>
+<H2>Initial theme</H2>
 
 Add the following to `app.html`:
 
 <HighlightCompo code={modules['./md/initialtheme.md']} />
 
-<h2>Switcher style</h2>
+<H2>Switcher style</H2>
 
 Use the btnClass prop to overwrite the default classes or just use class attribute to append classes
 to the default classes.
 
-<h2>Mode icon</h2>
+<H2>Mode icon</H2>
 
 Use the lightIcon and darkIcon slots to change icons:
 

@@ -3,17 +3,18 @@
 	import { HomeOutline, ChevronDoubleRightOutline } from 'flowbite-svelte-icons';
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import CodeWrapper from '../components/CodeWrapper.svelte';
-
+	import H1 from '../components/H1.svelte'
+	import H2 from '../components/H2.svelte'
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 </script>
 
-<h1>Breadcrumb</h1>
+<H1>Breadcrumb</H1>
 
-<h2>Setup</h2>
+<H2>Setup</H2>
 
 <HighlightCompo code={modules['./md/setup.md']} />
 
-<h2>Default Breadcrumb</h2>
+<H2>Default Breadcrumb</H2>
 
 <CodeWrapper>
 	<Breadcrumb>
@@ -25,7 +26,7 @@
 
 <HighlightCompo code={modules['./md/defaultbreadcrumb.md']} />
 
-<h2>Solid Breadcrumb</h2>
+<H2>Solid Breadcrumb</H2>
 
 <CodeWrapper>
 	<Breadcrumb solid>
@@ -37,7 +38,7 @@
 
 <HighlightCompo code={modules['./md/solidbreadcrumb.md']} />
 
-<h2>Icons</h2>
+<H2>Icons</H2>
 
 <CodeWrapper>
 	<Breadcrumb class="bg-gray-50 px-5 py-3 dark:bg-gray-900">

@@ -2,6 +2,8 @@
 	import { Card, Button } from '$lib';
 	import HighlightCompo from '../components/HighlightCompo.svelte';
 	import CodeWrapper from '../components/CodeWrapper.svelte';
+	import H1 from '../components/H1.svelte'
+	import H2 from '../components/H2.svelte'
 	import {
 		ArrowRightOutline,
 		GiftBoxSolid,
@@ -11,13 +13,13 @@
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 </script>
 
-<h1>Cards</h1>
+<H1>Cards</H1>
 
-<h2>Setup</h2>
+<H2>Setup</H2>
 
 <HighlightCompo code={modules['./md/setup.md']} />
 
-<h2>Default card</h2>
+<H2>Default card</H2>
 
 <CodeWrapper>
 	<Card href="/cards">
@@ -33,7 +35,7 @@
 
 <HighlightCompo code={modules['./md/card1.md']} />
 
-<h2>Card with action button</h2>
+<H2>Card with action button</H2>
 
 <CodeWrapper>
 	<Card>
@@ -52,7 +54,7 @@
 
 <HighlightCompo code={modules['./md/card2.md']} />
 
-<h2>Card with link</h2>
+<H2>Card with link</H2>
 
 <CodeWrapper>
 	<Card>
@@ -74,7 +76,7 @@
 
 <HighlightCompo code={modules['./md/card-with-link.md']} />
 
-<h2>Card with image</h2>
+<H2>Card with image</H2>
 
 <CodeWrapper>
 	<Card src="/images/image-1.webp" reverse={true}>
@@ -93,7 +95,7 @@
 
 <HighlightCompo code={modules['./md/card-with-image.md']} />
 
-<h2>Horizontal card</h2>
+<H2>Horizontal card</H2>
 
 <CodeWrapper>
 	<Card src="/images/image-1.webp" href="/" horizontal size="md">
@@ -109,7 +111,7 @@
 
 <HighlightCompo code={modules['./md/horizontal-card.md']} />
 
-<h2>Call to action card</h2>
+<H2>Call to action card</H2>
 <CodeWrapper>
 	<Card class="text-center" size="lg" padding="xl">
 		<h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Work fast from anywhere</h5>
