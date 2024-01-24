@@ -2,9 +2,9 @@
 	import { Blockquote, P } from '$lib';
 	import HighlightCompo from '../../components/HighlightCompo.svelte';
 	import CodeWrapper from '../../components/CodeWrapper.svelte';
-	import H1 from '../../components/H1.svelte'
-	import H2 from '../../components/H2.svelte'
-	import H3 from '../../components/H3.svelte'
+	import H1 from '../../components/H1.svelte';
+	import H2 from '../../components/H2.svelte';
+	import H3 from '../../components/H3.svelte';
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 	import { QuoteSolid } from 'flowbite-svelte-icons';
 </script>

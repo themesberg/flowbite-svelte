@@ -158,9 +158,7 @@
 				<SidebarDropdownItem onclick={closeNavDrawer} href="/typography/heading"
 					>Heading/Span/Mark</SidebarDropdownItem
 				>
-				<SidebarDropdownItem onclick={closeNavDrawer} href="/typography/hr"
-					>HR</SidebarDropdownItem
-				>
+				<SidebarDropdownItem onclick={closeNavDrawer} href="/typography/hr">HR</SidebarDropdownItem>
 				<SidebarDropdownItem onclick={closeNavDrawer} href="/typography/link"
 					>Link</SidebarDropdownItem
 				>
