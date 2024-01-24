@@ -254,6 +254,10 @@
       "types": "./dist/typography/Blockquote.svelte.d.ts",
       "svelte": "./dist/typography/Blockquote.svelte"
     },
+    "./DescriptionList.svelte": {
+      "types": "./dist/typography/DescriptionList.svelte.d.ts",
+      "svelte": "./dist/typography/DescriptionList.svelte"
+    },
     "./Heading.svelte": {
       "types": "./dist/typography/Heading.svelte.d.ts",
       "svelte": "./dist/typography/Heading.svelte"
@@ -265,6 +269,14 @@
     "./Layout.svelte": {
       "types": "./dist/typography/Layout.svelte.d.ts",
       "svelte": "./dist/typography/Layout.svelte"
+    },
+    "./Li.svelte": {
+      "types": "./dist/typography/Li.svelte.d.ts",
+      "svelte": "./dist/typography/Li.svelte"
+    },
+    "./List.svelte": {
+      "types": "./dist/typography/List.svelte.d.ts",
+      "svelte": "./dist/typography/List.svelte"
     },
     "./Mark.svelte": {
       "types": "./dist/typography/Mark.svelte.d.ts",
