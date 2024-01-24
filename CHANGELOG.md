@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.2...v0.2.3) (2024-01-24)
+
+
+### Features
+
+* add A/link component ([61fe4fe](https://github.com/shinokada/svelte-5-ui-lib/commit/61fe4fe0281ce8e4912e54e4dee8e3028abf8921))
+* add Hr component and page ([1edfc62](https://github.com/shinokada/svelte-5-ui-lib/commit/1edfc621463ab8fe18bb6f3780def330fa69fce1))
+
+
+### Bug Fixes
+
+* Nav sidebar update ([4374cac](https://github.com/shinokada/svelte-5-ui-lib/commit/4374cacb86cdac09e30f518e2e3bfab5183bdc82))
+
 ### [0.2.2](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.1...v0.2.2) (2024-01-24)
 
 
