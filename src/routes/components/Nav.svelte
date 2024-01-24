@@ -129,24 +129,34 @@
 	</div>
 	<Sidebar asideclass="w-48 p-0">
 		<SidebarGroup>
-			<SidebarItem onclick={closeNavDrawer} label="Banner" href="/banner" />
-			<SidebarItem onclick={closeNavDrawer} label="Breadcrumb" href="/breadcrumb" />
-			<SidebarItem onclick={closeNavDrawer} label="Button" href="/button" />
-			<SidebarItem onclick={closeNavDrawer} label="Card" href="/card" />
-			<SidebarItem onclick={closeNavDrawer} label="Drawer" href="/drawer" />
-			<SidebarItem onclick={closeNavDrawer} label="Darkmode" href="darkmode" />
-			<SidebarItem onclick={closeNavDrawer} label="Dropdown" href="/dropdown" />
-			<SidebarItem onclick={closeNavDrawer} label="Footer" href="/footer" />
-			<SidebarItem onclick={closeNavDrawer} label="Indicator" href="/indicator" />
-			<SidebarItem onclick={closeNavDrawer} label="Kbd" href="/kbd" />
-			<SidebarItem onclick={closeNavDrawer} label="Navbar" href="/navbar" />
-			<SidebarItem onclick={closeNavDrawer} label="Progress" href="/progress" />
-			<SidebarItem onclick={closeNavDrawer} label="Sidebar" href="/sidebar" />
-			<SidebarItem onclick={closeNavDrawer} label="Skeleton" href="/skeleton" />
-			<SidebarItem onclick={closeNavDrawer} label="Spinner" href="/spinner" />
+			<SidebarDropdownWrapper label="Components">
+				<SidebarItem onclick={closeNavDrawer} label="Banner" href="/banner" />
+				<SidebarItem onclick={closeNavDrawer} label="Breadcrumb" href="/breadcrumb" />
+				<SidebarItem onclick={closeNavDrawer} label="Button" href="/button" />
+				<SidebarItem onclick={closeNavDrawer} label="Card" href="/card" />
+				<SidebarItem onclick={closeNavDrawer} label="Drawer" href="/drawer" />
+				<SidebarItem onclick={closeNavDrawer} label="Darkmode" href="darkmode" />
+				<SidebarItem onclick={closeNavDrawer} label="Dropdown" href="/dropdown" />
+				<SidebarItem onclick={closeNavDrawer} label="Footer" href="/footer" />
+				<SidebarItem onclick={closeNavDrawer} label="Indicator" href="/indicator" />
+				<SidebarItem onclick={closeNavDrawer} label="Kbd" href="/kbd" />
+				<SidebarItem onclick={closeNavDrawer} label="Navbar" href="/navbar" />
+				<SidebarItem onclick={closeNavDrawer} label="Progress" href="/progress" />
+				<SidebarItem onclick={closeNavDrawer} label="Sidebar" href="/sidebar" />
+				<SidebarItem onclick={closeNavDrawer} label="Skeleton" href="/skeleton" />
+				<SidebarItem onclick={closeNavDrawer} label="Spinner" href="/spinner" />
+			</SidebarDropdownWrapper>
 			<SidebarDropdownWrapper label="Forms">
 				<SidebarDropdownItem onclick={closeNavDrawer} href="/forms/select"
 					>Select</SidebarDropdownItem
+				>
+			</SidebarDropdownWrapper>
+			<SidebarDropdownWrapper label="Typography">
+				<SidebarDropdownItem onclick={closeNavDrawer} href="/typography/link"
+					>Link</SidebarDropdownItem
+				>
+				<SidebarDropdownItem onclick={closeNavDrawer} href="/typography/paragraph"
+					>Paragraph</SidebarDropdownItem
 				>
 			</SidebarDropdownWrapper>
 		</SidebarGroup>

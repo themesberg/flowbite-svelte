@@ -13,23 +13,29 @@
 	divclass="dark:bg-gray-900 "
 >
 	<SidebarGroup>
-		<SidebarItem label="Banner" href="/banner" />
-		<SidebarItem label="Breadcrumb" href="/breadcrumb" />
-		<SidebarItem label="Button" href="/button" />
-		<SidebarItem label="Card" href="/card" />
-		<SidebarItem label="Drawer" href="/drawer" />
-		<SidebarItem label="Darkmode" href="darkmode" />
-		<SidebarItem label="Dropdown" href="/dropdown" />
-		<SidebarItem label="Footer" href="/footer" />
-		<SidebarItem label="Indicator" href="/indicator" />
-		<SidebarItem label="Kbd" href="/kbd" />
-		<SidebarItem label="Navbar" href="/navbar" />
-		<SidebarItem label="Progress" href="/progress" />
-		<SidebarItem label="Sidebar" href="/sidebar" />
-		<SidebarItem label="Skeleton" href="/skeleton" />
-		<SidebarItem label="Spinner" href="/spinner" />
+		<SidebarDropdownWrapper label="Components">
+			<SidebarItem label="Banner" href="/banner" />
+			<SidebarItem label="Breadcrumb" href="/breadcrumb" />
+			<SidebarItem label="Button" href="/button" />
+			<SidebarItem label="Card" href="/card" />
+			<SidebarItem label="Drawer" href="/drawer" />
+			<SidebarItem label="Darkmode" href="darkmode" />
+			<SidebarItem label="Dropdown" href="/dropdown" />
+			<SidebarItem label="Footer" href="/footer" />
+			<SidebarItem label="Indicator" href="/indicator" />
+			<SidebarItem label="Kbd" href="/kbd" />
+			<SidebarItem label="Navbar" href="/navbar" />
+			<SidebarItem label="Progress" href="/progress" />
+			<SidebarItem label="Sidebar" href="/sidebar" />
+			<SidebarItem label="Skeleton" href="/skeleton" />
+			<SidebarItem label="Spinner" href="/spinner" />
+		</SidebarDropdownWrapper>
 		<SidebarDropdownWrapper label="Forms">
 			<SidebarDropdownItem href="/forms/select">Select</SidebarDropdownItem>
+		</SidebarDropdownWrapper>
+		<SidebarDropdownWrapper label="Typography">
+			<SidebarDropdownItem href="/typography/link">Link</SidebarDropdownItem>
+			<SidebarDropdownItem href="/typography/paragraph">Paragraph</SidebarDropdownItem>
 		</SidebarDropdownWrapper>
 	</SidebarGroup>
 </Sidebar>
