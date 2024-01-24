@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.1...v0.2.2) (2024-01-24)
+
+
+### Features
+
+* add Blockquote component and page ([9464203](https://github.com/shinokada/svelte-5-ui-lib/commit/9464203f8b33995f9c5233d524f108ef6443b94c))
+* add P component ([6628e5b](https://github.com/shinokada/svelte-5-ui-lib/commit/6628e5bb805a77b7c3c3d825f4ad7b86b096b82c))
+
 ### [0.2.1](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.35...v0.2.1) (2024-01-23)
 
 
