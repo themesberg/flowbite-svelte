@@ -2,7 +2,7 @@
 	import { P, Layout } from '$lib';
 	import HighlightCompo from '../../components/HighlightCompo.svelte';
 	import CodeWrapper from '../../components/CodeWrapper.svelte';
-    const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
+	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 </script>
 
 <h1>Paragraph</h1>
@@ -269,4 +269,3 @@
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/right.md']} />
-
