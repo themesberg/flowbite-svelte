@@ -88,6 +88,11 @@ test('Link page has expected h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Links');
 });
 
+test('List page has expected h1', async ({ page }) => {
+	await page.goto('/typography/list');
+	expect(await page.textContent('h1')).toBe('List');
+});
+
 test('Paragraph page has expected h1', async ({ page }) => {
 	await page.goto('/typography/paragraph');
 	expect(await page.textContent('h1')).toBe('Paragraph');

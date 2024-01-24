@@ -162,6 +162,9 @@
 				<SidebarDropdownItem onclick={closeNavDrawer} href="/typography/link"
 					>Link</SidebarDropdownItem
 				>
+				<SidebarDropdownItem onclick={closeNavDrawer} href="/typography/list"
+					>List</SidebarDropdownItem
+				>
 				<SidebarDropdownItem onclick={closeNavDrawer} href="/typography/paragraph"
 					>Paragraph</SidebarDropdownItem
 				>

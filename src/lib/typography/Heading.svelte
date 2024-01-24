@@ -2,11 +2,10 @@
 	interface Props {
 		children: any;
 		tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-		customSize?: string | undefined;
 		class?: string | undefined;
 	}
 	import { twMerge } from 'tailwind-merge';
-	let { children, tag = 'h1', customSize, class: classname, ...attributes } = $props<Props>();
+	let { children, tag = 'h1', class: classname, ...attributes } = $props<Props>();
 
 	const textSizes = {
 		h1: 'text-5xl font-extrabold',
@@ -21,11 +20,7 @@
 <svelte:element
 	this={tag}
 	{...attributes}
-	class={twMerge(
-		customSize ? customSize : textSizes[tag],
-		'w-full text-gray-900 dark:text-white',
-		classname
-	)}
+	class={twMerge(textSizes[tag], 'w-full text-gray-900 dark:text-white', classname)}
 >
 	{@render children()}
 </svelte:element>

@@ -38,6 +38,7 @@
 			<SidebarDropdownItem href="/typography/heading">Heading/Span/Mark</SidebarDropdownItem>
 			<SidebarDropdownItem href="/typography/hr">HR</SidebarDropdownItem>
 			<SidebarDropdownItem href="/typography/link">Link</SidebarDropdownItem>
+			<SidebarDropdownItem href="/typography/list">List</SidebarDropdownItem>
 			<SidebarDropdownItem href="/typography/paragraph">Paragraph</SidebarDropdownItem>
 		</SidebarDropdownWrapper>
 	</SidebarGroup>

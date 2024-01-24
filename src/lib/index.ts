@@ -58,9 +58,12 @@ export { default as Spinner } from './spinner/Spinner.svelte';
 // typography
 export { default as A } from './typography/A.svelte';
 export { default as Blockquote } from './typography/Blockquote.svelte';
+export { default as DescriptionList } from './typography/DescriptionList.svelte';
 export { default as Heading } from './typography/Heading.svelte';
 export { default as Hr } from './typography/Hr.svelte';
 export { default as Layout } from './typography/Layout.svelte';
+export { default as List } from './typography/List.svelte';
+export { default as Li } from './typography/Li.svelte';
 export { default as Mark } from './typography/Mark.svelte';
 export { default as P } from './typography/P.svelte';
 export { default as Span } from './typography/Span.svelte';
