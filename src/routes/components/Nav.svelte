@@ -127,7 +127,7 @@
 			<span class="sr-only">Close drawer</span>
 		</button>
 	</div>
-	<Sidebar asideclass="w-48 p-0">
+	<Sidebar asideclass="w-48 p-0" divclass="bg-transparent p-0">
 		<SidebarGroup>
 			<SidebarDropdownWrapper label="Components">
 				<SidebarItem onclick={closeNavDrawer} label="Banner" href="/banner" />
