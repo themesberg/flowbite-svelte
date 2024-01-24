@@ -68,10 +68,10 @@ test('select page has expected h1', async ({ page }) => {
 
 // typography
 
-// test('Link page has expected h1', async ({ page }) => {
-// 	await page.goto('/typography/link');
-// 	expect(await page.textContent('h1')).toBe('Link');
-// });
+test('Blockquote page has expected h1', async ({ page }) => {
+	await page.goto('/typography/blockquote');
+	expect(await page.textContent('h1')).toBe('Blockquote');
+});
 
 test('Paragraph page has expected h1', async ({ page }) => {
 	await page.goto('/typography/paragraph');

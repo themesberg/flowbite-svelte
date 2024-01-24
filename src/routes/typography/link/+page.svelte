@@ -12,5 +12,5 @@
 <h2>Default link</h2>
 
 <CodeWrapper>
-	<A class="font-medium hover:underline">Read more</A>
+	<A href='/' aclass="font-medium hover:underline">Read more</A>
 </CodeWrapper>

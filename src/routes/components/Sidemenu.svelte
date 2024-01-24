@@ -34,6 +34,7 @@
 			<SidebarDropdownItem href="/forms/select">Select</SidebarDropdownItem>
 		</SidebarDropdownWrapper>
 		<SidebarDropdownWrapper label="Typography">
+			<SidebarDropdownItem href="/typography/blockquote">Blockquote</SidebarDropdownItem>
 			<SidebarDropdownItem href="/typography/link">Link</SidebarDropdownItem>
 			<SidebarDropdownItem href="/typography/paragraph">Paragraph</SidebarDropdownItem>
 		</SidebarDropdownWrapper>

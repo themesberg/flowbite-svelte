@@ -152,6 +152,9 @@
 				>
 			</SidebarDropdownWrapper>
 			<SidebarDropdownWrapper label="Typography">
+				<SidebarDropdownItem onclick={closeNavDrawer} href="/typography/blockquote"
+					>Blockquote</SidebarDropdownItem
+				>
 				<SidebarDropdownItem onclick={closeNavDrawer} href="/typography/link"
 					>Link</SidebarDropdownItem
 				>
