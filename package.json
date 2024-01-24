@@ -245,6 +245,18 @@
     "./Spinner.svelte": {
       "types": "./dist/spinner/Spinner.svelte.d.ts",
       "svelte": "./dist/spinner/Spinner.svelte"
+    },
+    "./A.svelte": {
+      "types": "./dist/typography/A.svelte.d.ts",
+      "svelte": "./dist/typography/A.svelte"
+    },
+    "./Layout.svelte": {
+      "types": "./dist/typography/Layout.svelte.d.ts",
+      "svelte": "./dist/typography/Layout.svelte"
+    },
+    "./P.svelte": {
+      "types": "./dist/typography/P.svelte.d.ts",
+      "svelte": "./dist/typography/P.svelte"
     }
   }
 }

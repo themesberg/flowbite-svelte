@@ -5,7 +5,7 @@
 	interface Props {
 		children: any;
 		color?: string | undefined;
-        pclass?: string | undefined;
+		pclass?: string | undefined;
 		height?: 'normal' | 'relaxed' | 'loose';
 		align?: 'left' | 'center' | 'right';
 		justify?: boolean;
@@ -22,7 +22,7 @@
 	let {
 		children,
 		color = 'text-gray-900 dark:text-white',
-        pclass,
+		pclass,
 		height = 'normal',
 		align = 'left',
 		justify = false,
@@ -109,7 +109,7 @@
 		italic && 'italic',
 		firstupper && upperclass,
 		whitespace && whitespaces[whitespace],
-        pclass
+		pclass
 	);
 </script>
 

@@ -59,3 +59,21 @@ test('spinner page has expected h1', async ({ page }) => {
 	await page.goto('/spinner');
 	expect(await page.textContent('h1')).toBe('Spinner');
 });
+
+// Forms
+test('select page has expected h1', async ({ page }) => {
+	await page.goto('/forms/select');
+	expect(await page.textContent('h1')).toBe('Select');
+});
+
+// typography
+
+// test('Link page has expected h1', async ({ page }) => {
+// 	await page.goto('/typography/link');
+// 	expect(await page.textContent('h1')).toBe('Link');
+// });
+
+test('Paragraph page has expected h1', async ({ page }) => {
+	await page.goto('/typography/paragraph');
+	expect(await page.textContent('h1')).toBe('Paragraph');
+});
