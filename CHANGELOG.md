@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.4](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.3...v0.2.4) (2024-01-24)
+
+
+### Features
+
+* add DescriptionList, List, Li components ([2dbd24c](https://github.com/shinokada/svelte-5-ui-lib/commit/2dbd24c62a39284a7b121465356e24f8647ce24e))
+
 ### [0.2.3](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.2...v0.2.3) (2024-01-24)
 
 
