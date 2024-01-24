@@ -55,3 +55,7 @@ export { default as TestimonialPlaceholder } from './skeleton/TestimonialPlaceho
 export { default as WidgetPlaceholder } from './skeleton/WidgetPlaceholder.svelte';
 // spinner
 export { default as Spinner } from './spinner/Spinner.svelte';
+// typography
+export { default as A } from './typography/A.svelte'
+export { default as Layout } from './typography/Layout.svelte'
+export { default as P } from './typography/P.svelte'
