@@ -10,6 +10,11 @@ test('button page has expected h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Buttons');
 });
 
+test('button group page has expected h1', async ({ page }) => {
+	await page.goto('/button-group');
+	expect(await page.textContent('h1')).toBe('Button group');
+});
+
 test('cards page has expected h1', async ({ page }) => {
 	await page.goto('/card');
 	expect(await page.textContent('h1')).toBe('Cards');

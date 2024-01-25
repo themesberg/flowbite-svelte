@@ -1,5 +1,5 @@
 <script>
-	import { ButtonGroup, Button } from '$lib';
+	import { ButtonGroup, Button } from 'svelte-5-ui-lib';
 	import {
 		UserCircleSolid,
 		AdjustmentsVerticalOutline,
