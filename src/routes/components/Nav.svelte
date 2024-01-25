@@ -91,6 +91,8 @@
 		<NavUl {ulclass}>
 			<NavLi href="/" {closeNav}>Home</NavLi>
 			<NavLi href="https://github.com/shinokada/svelte-5-ui-lib" {closeNav}>Repo</NavLi>
+			<NavLi href="https://flowbite-svelte.com/" {closeNav}>Flowbite Svelte</NavLi>
+			<NavLi href="https://flowbite.com/" {closeNav}>Flowbite</NavLi>
 		</NavUl>
 	</Navbar>
 </header>
@@ -145,6 +147,7 @@
 				<SidebarItem onclick={closeNavDrawer} label="Sidebar" href="/sidebar" />
 				<SidebarItem onclick={closeNavDrawer} label="Skeleton" href="/skeleton" />
 				<SidebarItem onclick={closeNavDrawer} label="Spinner" href="/spinner" />
+				<SidebarItem onclick={closeNavDrawer} label="Video" href="/video" />
 			</SidebarDropdownWrapper>
 			<SidebarDropdownWrapper label="Forms">
 				<SidebarDropdownItem onclick={closeNavDrawer} href="/forms/select"

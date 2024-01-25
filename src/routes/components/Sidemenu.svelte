@@ -29,6 +29,7 @@
 			<SidebarItem label="Sidebar" href="/sidebar" />
 			<SidebarItem label="Skeleton" href="/skeleton" />
 			<SidebarItem label="Spinner" href="/spinner" />
+			<SidebarItem label="Video" href="/video" />
 		</SidebarDropdownWrapper>
 		<SidebarDropdownWrapper label="Forms">
 			<SidebarDropdownItem href="/forms/select">Select</SidebarDropdownItem>
