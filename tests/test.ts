@@ -97,3 +97,9 @@ test('Paragraph page has expected h1', async ({ page }) => {
 	await page.goto('/typography/paragraph');
 	expect(await page.textContent('h1')).toBe('Paragraph');
 });
+
+// video
+test('Video page has expected h1', async ({ page }) => {
+	await page.goto('/video');
+	expect(await page.textContent('h1')).toBe('Video');
+});

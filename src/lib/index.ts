@@ -67,3 +67,6 @@ export { default as Li } from './typography/Li.svelte';
 export { default as Mark } from './typography/Mark.svelte';
 export { default as P } from './typography/P.svelte';
 export { default as Span } from './typography/Span.svelte';
+// video
+export { default as Video } from './video/Video.svelte'
+
