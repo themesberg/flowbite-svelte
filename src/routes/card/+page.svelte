@@ -21,7 +21,7 @@
 
 <H2>Default card</H2>
 
-<CodeWrapper>
+<CodeWrapper class="flex justify-center">
 	<Card href="/cards">
 		<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 			Noteworthy technology acquisitions 2021
@@ -37,7 +37,7 @@
 
 <H2>Card with action button</H2>
 
-<CodeWrapper>
+<CodeWrapper class="flex justify-center">
 	<Card>
 		<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 			Noteworthy technology acquisitions 2021
@@ -56,7 +56,7 @@
 
 <H2>Card with link</H2>
 
-<CodeWrapper>
+<CodeWrapper class="flex justify-center">
 	<Card>
 		<GiftBoxSolid class="mb-3 h-7 w-7 text-gray-500 dark:text-gray-400" />
 		<a href="/">
@@ -78,7 +78,7 @@
 
 <H2>Card with image</H2>
 
-<CodeWrapper>
+<CodeWrapper class="flex justify-center">
 	<Card src="/images/image-1.webp" reverse={true}>
 		<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 			Noteworthy technology acquisitions 2021
@@ -97,7 +97,7 @@
 
 <H2>Horizontal card</H2>
 
-<CodeWrapper>
+<CodeWrapper class="flex justify-center">
 	<Card src="/images/image-1.webp" href="/" horizontal size="md">
 		<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
 			Noteworthy technology acquisitions 2021
@@ -112,7 +112,7 @@
 <HighlightCompo code={modules['./md/horizontal-card.md']} />
 
 <H2>Call to action card</H2>
-<CodeWrapper>
+<CodeWrapper class="flex justify-center">
 	<Card class="text-center" size="lg" padding="xl">
 		<h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Work fast from anywhere</h5>
 		<p class="mb-5 text-base text-gray-500 dark:text-gray-400 sm:text-lg">

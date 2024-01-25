@@ -8,6 +8,8 @@ export { default as BreadcrumbItem } from './breadcrumb/BreadcrumbItem.svelte';
 // button
 export { default as Button } from './buttons/Button.svelte';
 export { default as GradientButton } from './buttons/GradientButton.svelte';
+// buttongroup
+export { default as ButtonGroup } from './buttongroup/ButtonGroup.svelte';
 // card
 export { default as Card } from './cards/Card.svelte';
 // darkmode

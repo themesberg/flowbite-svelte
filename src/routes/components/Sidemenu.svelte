@@ -17,6 +17,7 @@
 			<SidebarItem label="Banner" href="/banner" />
 			<SidebarItem label="Breadcrumb" href="/breadcrumb" />
 			<SidebarItem label="Button" href="/button" />
+			<SidebarItem label="Button group" href="/button-group" />
 			<SidebarItem label="Card" href="/card" />
 			<SidebarItem label="Drawer" href="/drawer" />
 			<SidebarItem label="Darkmode" href="darkmode" />

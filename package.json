@@ -102,6 +102,10 @@
       "types": "./dist/breadcrumb/BreadcrumbItem.svelte.d.ts",
       "svelte": "./dist/breadcrumb/BreadcrumbItem.svelte"
     },
+    "./ButtonGroup.svelte": {
+      "types": "./dist/buttongroup/ButtonGroup.svelte.d.ts",
+      "svelte": "./dist/buttongroup/ButtonGroup.svelte"
+    },
     "./Button.svelte": {
       "types": "./dist/buttons/Button.svelte.d.ts",
       "svelte": "./dist/buttons/Button.svelte"

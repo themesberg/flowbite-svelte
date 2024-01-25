@@ -135,6 +135,7 @@
 				<SidebarItem onclick={closeNavDrawer} label="Banner" href="/banner" />
 				<SidebarItem onclick={closeNavDrawer} label="Breadcrumb" href="/breadcrumb" />
 				<SidebarItem onclick={closeNavDrawer} label="Button" href="/button" />
+				<SidebarItem onclick={closeNavDrawer} label="Button group" href="/button-group" />
 				<SidebarItem onclick={closeNavDrawer} label="Card" href="/card" />
 				<SidebarItem onclick={closeNavDrawer} label="Drawer" href="/drawer" />
 				<SidebarItem onclick={closeNavDrawer} label="Darkmode" href="darkmode" />

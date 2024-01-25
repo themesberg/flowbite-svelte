@@ -17,7 +17,7 @@
 
 <H2>Default indicator</H2>
 
-<CodeWrapper class="flex gap-4">
+<CodeWrapper class="flex justify-center gap-4">
 	<Indicator color="gray" />
 	<Indicator color="dark" />
 	<Indicator color="orange" />
@@ -34,7 +34,7 @@
 
 <H2>Legend indicator</H2>
 
-<CodeWrapper class="flex gap-4">
+<CodeWrapper class="flex justify-center gap-4">
 	<span class="flex items-center"
 		><Indicator size="sm" color="orange" divclass="me-1.5" />Visitors</span
 	>
@@ -51,7 +51,7 @@
 
 <H2>Indicator count</H2>
 
-<CodeWrapper>
+<CodeWrapper class="flex justify-center">
 	<Button size="lg" btnclass="relative">
 		<EnvelopeSolid class="me-2 h-4 w-4 text-white dark:text-white" />
 		<span class="sr-only">Notifications</span>
@@ -64,20 +64,22 @@
 
 <HighlightCompo code={modules['./md/indicator-count.md']} />
 
-<H2>Indicator posision</H2>
+<H2>Indicator position</H2>
 
-<CodeWrapper
-	class="borer relative h-56 w-56 rounded-lg border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-800"
->
-	<Indicator placement="top-left" color="gray" />
-	<Indicator placement="top-center" color="dark" />
-	<Indicator placement="top-right" color="orange" />
-	<Indicator placement="center-left" color="green" />
-	<Indicator placement="center" color="red" />
-	<Indicator placement="center-right" color="purple" />
-	<Indicator placement="bottom-left" color="indigo" />
-	<Indicator placement="bottom-center" color="yellow" />
-	<Indicator placement="bottom-right" color="teal" />
+<CodeWrapper class="flex justify-center">
+	<div
+		class="borer relative h-56 w-56 rounded-lg border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-800"
+	>
+		<Indicator placement="top-left" color="gray" />
+		<Indicator placement="top-center" color="dark" />
+		<Indicator placement="top-right" color="orange" />
+		<Indicator placement="center-left" color="green" />
+		<Indicator placement="center" color="red" />
+		<Indicator placement="center-right" color="purple" />
+		<Indicator placement="bottom-left" color="indigo" />
+		<Indicator placement="bottom-center" color="yellow" />
+		<Indicator placement="bottom-right" color="teal" />
+	</div>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/position.md']} />
