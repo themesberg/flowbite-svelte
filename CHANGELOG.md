@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.8](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.7...v0.2.8) (2024-01-25)
+
+
+### Features
+
+* add Avatar component ([690fd88](https://github.com/shinokada/svelte-5-ui-lib/commit/690fd88e7cdf98dfda372325f64828a087e86440))
+
 ### [0.2.7](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.6...v0.2.7) (2024-01-25)
 
 ### [0.2.6](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.5...v0.2.6) (2024-01-25)
