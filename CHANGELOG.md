@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.5](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.4...v0.2.5) (2024-01-25)
+
+
+### Features
+
+* add video component ([eed2b81](https://github.com/shinokada/svelte-5-ui-lib/commit/eed2b819885b387151cfab8ff95e6b7c00035e04))
+
 ### [0.2.4](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.3...v0.2.4) (2024-01-24)
 
 
