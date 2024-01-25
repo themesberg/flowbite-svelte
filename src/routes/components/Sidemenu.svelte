@@ -14,6 +14,7 @@
 >
 	<SidebarGroup>
 		<SidebarDropdownWrapper label="Components">
+			<SidebarItem label="Avatar" href="/avatar" />
 			<SidebarItem label="Banner" href="/banner" />
 			<SidebarItem label="Breadcrumb" href="/breadcrumb" />
 			<SidebarItem label="Button" href="/button" />

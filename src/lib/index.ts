@@ -1,7 +1,8 @@
 export { uiHelpers, clickOutside } from './uiHelpers.svelte';
-
+// avatar
+export { default as Avatar } from './avatar/Avatar.svelte';
+// banner
 export { default as Banner } from './banner/Banner.svelte';
-
 // breadcrumb
 export { default as Breadcrumb } from './breadcrumb/Breadcrumb.svelte';
 export { default as BreadcrumbItem } from './breadcrumb/BreadcrumbItem.svelte';

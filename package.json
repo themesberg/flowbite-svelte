@@ -90,6 +90,10 @@
       "types": "./dist/index.d.ts",
       "svelte": "./dist/index.js"
     },
+    "./Avatar.svelte": {
+      "types": "./dist/avatar/Avatar.svelte.d.ts",
+      "svelte": "./dist/avatar/Avatar.svelte"
+    },
     "./Banner.svelte": {
       "types": "./dist/banner/Banner.svelte.d.ts",
       "svelte": "./dist/banner/Banner.svelte"

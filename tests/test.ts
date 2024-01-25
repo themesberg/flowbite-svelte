@@ -5,6 +5,11 @@ test('index page has expected h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toContain('Svelte 5 UI Lib');
 });
 
+test('avatar page has expected h1', async ({ page }) => {
+	await page.goto('/avatar');
+	expect(await page.textContent('h1')).toContain('Avatar');
+});
+
 test('button page has expected h1', async ({ page }) => {
 	await page.goto('/button');
 	expect(await page.textContent('h1')).toBe('Buttons');

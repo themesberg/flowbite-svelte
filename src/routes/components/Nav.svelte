@@ -132,6 +132,7 @@
 	<Sidebar asideclass="w-48 p-0" divclass="bg-transparent p-0">
 		<SidebarGroup>
 			<SidebarDropdownWrapper label="Components">
+				<SidebarItem onclick={closeNavDrawer} label="Avatar" href="/avatar" />
 				<SidebarItem onclick={closeNavDrawer} label="Banner" href="/banner" />
 				<SidebarItem onclick={closeNavDrawer} label="Breadcrumb" href="/breadcrumb" />
 				<SidebarItem onclick={closeNavDrawer} label="Button" href="/button" />
