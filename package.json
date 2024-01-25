@@ -289,6 +289,10 @@
     "./Span.svelte": {
       "types": "./dist/typography/Span.svelte.d.ts",
       "svelte": "./dist/typography/Span.svelte"
+    },
+    "./Video.svelte": {
+      "types": "./dist/video/Video.svelte.d.ts",
+      "svelte": "./dist/video/Video.svelte"
     }
   }
 }
