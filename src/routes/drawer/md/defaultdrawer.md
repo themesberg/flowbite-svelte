@@ -1,6 +1,6 @@
 <script>
-    import { Drawer, Button } from 'svelte-5-ui-lib'
-    import { sineIn } from 'svelte/easing';
+  import { Drawer, Button } from 'svelte-5-ui-lib'
+  import { sineIn } from 'svelte/easing';
 
 	let transitionParams = {
 		x: -320,
