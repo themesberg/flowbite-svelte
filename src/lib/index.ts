@@ -31,7 +31,7 @@ export { default as FooterUl } from './footer/FooterUl.svelte';
 export { default as Label } from './forms/Label.svelte';
 export { default as Select } from './forms/Select.svelte';
 // gallery
-export { default as Gallery } from './gallery/Gallery.svelte'
+export { default as Gallery } from './gallery/Gallery.svelte';
 // indicator
 export { default as Indicator } from './indicator/Indicator.svelte';
 // kbd
