@@ -170,6 +170,10 @@
       "types": "./dist/forms/Select.svelte.d.ts",
       "svelte": "./dist/forms/Select.svelte"
     },
+    "./Gallery.svelte": {
+      "types": "./dist/gallery/Gallery.svelte.d.ts",
+      "svelte": "./dist/gallery/Gallery.svelte"
+    },
     "./Indicator.svelte": {
       "types": "./dist/indicator/Indicator.svelte.d.ts",
       "svelte": "./dist/indicator/Indicator.svelte"
