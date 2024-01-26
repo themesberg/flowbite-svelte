@@ -5,13 +5,11 @@
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 </script>
 
-<H1>Svelte 5 UI Lib: Work in progress</H1>
+<H1>Svelte 5 UI Lib</H1>
 
 <p>
-	Welcome to Svelte 5 UI Lib - an experimental UI library project crafted for personal use with
-	Svelte 5. The design is based on Flowbite. While you're welcome to utilize it, please note that
-	there are a limited set of components, and I regret that I am unable to provide any support.
-	However, your suggestions are always welcome!
+	Introducing Svelte 5 UI Lib – a UI library crafted with Svelte 5 and built upon Flowbite/Flowbite-Svelte. 
+	Explore our collection featuring over 26 components.
 </p>
 
 <H2>Dependencies</H2>
