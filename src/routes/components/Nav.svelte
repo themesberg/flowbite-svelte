@@ -142,6 +142,7 @@
 				<SidebarItem onclick={closeNavDrawer} label="Darkmode" href="darkmode" />
 				<SidebarItem onclick={closeNavDrawer} label="Dropdown" href="/dropdown" />
 				<SidebarItem onclick={closeNavDrawer} label="Footer" href="/footer" />
+				<SidebarItem onclick={closeNavDrawer} label="Gallery" href="/gallery" />
 				<SidebarItem onclick={closeNavDrawer} label="Indicator" href="/indicator" />
 				<SidebarItem onclick={closeNavDrawer} label="Kbd" href="/kbd" />
 				<SidebarItem onclick={closeNavDrawer} label="Navbar" href="/navbar" />

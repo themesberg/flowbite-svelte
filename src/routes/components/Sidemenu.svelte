@@ -24,6 +24,7 @@
 			<SidebarItem label="Darkmode" href="darkmode" />
 			<SidebarItem label="Dropdown" href="/dropdown" />
 			<SidebarItem label="Footer" href="/footer" />
+			<SidebarItem label="Gallery" href="/gallery" />
 			<SidebarItem label="Indicator" href="/indicator" />
 			<SidebarItem label="Kbd" href="/kbd" />
 			<SidebarItem label="Navbar" href="/navbar" />
