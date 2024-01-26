@@ -41,13 +41,13 @@
     "package:publish": "standard-version && npm run package && npm run gen:exports && npm run copy:package && git push --follow-tags origin main && npm publish"
   },
   "devDependencies": {
-    "@playwright/test": "^1.41.0",
-    "@sveltejs/adapter-auto": "^3.1.0",
-    "@sveltejs/kit": "^2.4.0",
+    "@playwright/test": "^1.41.1",
+    "@sveltejs/adapter-auto": "^3.1.1",
+    "@sveltejs/kit": "^2.5.0",
     "@sveltejs/package": "^2.2.6",
     "@sveltejs/vite-plugin-svelte": "^3.0.1",
-    "@typescript-eslint/eslint-plugin": "^6.19.0",
-    "@typescript-eslint/parser": "^6.19.0",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
     "autoprefixer": "^10.4.17",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
@@ -60,16 +60,16 @@
     "prettier-plugin-svelte": "^3.1.2",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "publint": "^0.1.16",
-    "svelte": "5.0.0-next.37",
+    "svelte": "5.0.0-next.40",
     "svelte-check": "^3.6.3",
     "svelte-flag-icons": "^0.7.2",
     "svelte-highlight": "^7.4.8",
     "svelte-lib-helpers": "^0.3.15",
-    "tailwind-merge": "^2.2.0",
+    "tailwind-merge": "^2.2.1",
     "tailwindcss": "^3.4.1",
     "tslib": "^2.6.2",
     "typescript": "^5.3.3",
-    "vite": "^5.0.11"
+    "vite": "^5.0.12"
   },
   "peerDependencies": {
     "svelte": "^5.0.0",
