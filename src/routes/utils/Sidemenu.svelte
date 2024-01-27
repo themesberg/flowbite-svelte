@@ -1,5 +1,5 @@
 <script>
-	import  { page } from '$app/stores';
+	import { page } from '$app/stores';
 	import {
 		Sidebar,
 		SidebarGroup,
@@ -8,9 +8,9 @@
 		SidebarDropdownItem
 	} from '$lib';
 	let currentUrl = $page.url.pathname;
-	$effect(()=>{
+	$effect(() => {
 		currentUrl = $page.url.pathname;
-	})
+	});
 	const hasPath = (key) => currentUrl.includes(key);
 	// console.log(hasPath('typography'))
 </script>

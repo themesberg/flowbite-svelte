@@ -3,7 +3,7 @@ export function uiHelpers() {
 
 	function toggle() {
 		isOpen = !isOpen;
-    }
+	}
 
 	function close() {
 		isOpen = false;

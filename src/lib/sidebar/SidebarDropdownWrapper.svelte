@@ -55,7 +55,7 @@
 	};
 
 	let sidebarDropdown = uiHelpers();
-	sidebarDropdown.isOpen =isOpen
+	sidebarDropdown.isOpen = isOpen;
 	let handleDropdown = sidebarDropdown.toggle;
 
 	$effect(() => {

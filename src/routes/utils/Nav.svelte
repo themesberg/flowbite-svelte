@@ -136,7 +136,11 @@
 				<SidebarItem onclick={closeNavDrawer} label="Banner" href="/components/banner" />
 				<SidebarItem onclick={closeNavDrawer} label="Breadcrumb" href="/components/breadcrumb" />
 				<SidebarItem onclick={closeNavDrawer} label="Button" href="/components/button" />
-				<SidebarItem onclick={closeNavDrawer} label="Button group" href="/components/button-group" />
+				<SidebarItem
+					onclick={closeNavDrawer}
+					label="Button group"
+					href="/components/button-group"
+				/>
 				<SidebarItem onclick={closeNavDrawer} label="Card" href="/components/card" />
 				<SidebarItem onclick={closeNavDrawer} label="Drawer" href="/components/drawer" />
 				<SidebarItem onclick={closeNavDrawer} label="Darkmode" href="/componentsdarkmode" />

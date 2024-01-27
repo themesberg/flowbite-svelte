@@ -20,8 +20,8 @@
 		year,
 		...attributes
 	} = $props<Props>();
-	
-	if(!year)	year = new Date().getFullYear();
+
+	if (!year) year = new Date().getFullYear();
 
 	let spanCls: string = twMerge(
 		'block text-sm text-gray-500 sm:text-center dark:text-gray-400',
