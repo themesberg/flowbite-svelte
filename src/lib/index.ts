@@ -25,6 +25,7 @@ export { default as Drawer } from './drawer/Drawer.svelte';
 export { default as Footer } from './footer/Footer.svelte';
 export { default as FooterBrand } from './footer/FooterBrand.svelte';
 export { default as FooterCopyright } from './footer/FooterCopyright.svelte';
+export { default as FooterIcon } from './footer/FooterIcon.svelte'
 export { default as FooterLi } from './footer/FooterLi.svelte';
 export { default as FooterUl } from './footer/FooterUl.svelte';
 // forms

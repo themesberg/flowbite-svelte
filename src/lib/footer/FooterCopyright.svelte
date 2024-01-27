@@ -6,6 +6,7 @@
 		by?: string | undefined;
 		target?: string | undefined;
 		copyrightMessage?: string | undefined;
+		year?: number | undefined;
 	}
 
 	import { twMerge } from 'tailwind-merge';
@@ -16,9 +17,11 @@
 		by,
 		target,
 		copyrightMessage = 'All Rights Reserved.',
+		year,
 		...attributes
 	} = $props<Props>();
-	const year: number = new Date().getFullYear();
+	
+	if(!year)	year = new Date().getFullYear();
 
 	let spanCls: string = twMerge(
 		'block text-sm text-gray-500 sm:text-center dark:text-gray-400',
