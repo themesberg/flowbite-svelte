@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.10](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.9...v0.2.10) (2024-01-27)
+
+
+### Bug Fixes
+
+* SidebarDropdownWrapper opens update ([b82f584](https://github.com/shinokada/svelte-5-ui-lib/commit/b82f58499b5a0eddb80944d29a2d7f7762b7ce0c))
+
 ### [0.2.9](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.8...v0.2.9) (2024-01-26)
 
 ### [0.2.8](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.7...v0.2.8) (2024-01-25)
