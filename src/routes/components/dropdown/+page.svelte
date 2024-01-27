@@ -3,7 +3,8 @@
 	import CodeWrapper from '../../utils/CodeWrapper.svelte';
 	import H1 from '../../utils/H1.svelte';
 	import H2 from '../../utils/H2.svelte';
-	import { Dropdown, DropdownDivider, DropdownItem, uiHelpers } from '$lib';
+	import { Button, Dropdown, DropdownDivider, DropdownItem, uiHelpers } from '$lib';
+	import { ChevronDownSolid } from 'flowbite-svelte-icons'
 
 	let dropdown = uiHelpers();
 
@@ -11,10 +12,16 @@
 	let toggle = dropdown.toggle;
 	let close = dropdown.close;
 
+	let dropdown2 = uiHelpers();
+	let isOpen2 = $state(false);
+	let toggle2 = dropdown2.toggle;
+	let close2 = dropdown2.close;
+
 	$effect(() => {
 		// this can be done adding nav.navStatus directly to DOM element
 		// without using effect
 		isOpen = dropdown.isOpen;
+		isOpen2 = dropdown2.isOpen;
 	});
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 </script>
@@ -24,28 +31,14 @@
 <H2>Default dropdown</H2>
 
 <CodeWrapper class="h-96 items-start">
-	<button
+	<div class='w-48 mx-auto'>
+	<Button
 		onclick={toggle}
-		class="inline-flex items-center rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-		type="button"
-		>Dropdown header <svg
-			class="ms-3 h-2.5 w-2.5"
-			aria-hidden="true"
-			xmlns="http://www.w3.org/2000/svg"
-			fill="none"
-			viewBox="0 0 10 6"
-		>
-			<path
-				stroke="currentColor"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width="2"
-				d="m1 1 4 4 4-4"
-			/>
-		</svg>
-	</button>
-
-	<Dropdown {isOpen}>
+		>Dropdown
+		<ChevronDownSolid class="w-3 h-3 ms-2 text-white dark:text-white" tabindex="-1"/>
+	</Button>
+  <div class='relative'>
+	<Dropdown {isOpen} divclass='absolute -left-[27px]'>
 		{#snippet header()}
 			<div>Bonnie Green</div>
 			<div class="truncate font-medium">name@flowbite.com</div>
@@ -67,6 +60,8 @@
 			</div>
 		{/snippet}
 	</Dropdown>
+</div>
+</div>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/dropdown1.md']} />

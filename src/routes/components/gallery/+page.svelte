@@ -174,7 +174,7 @@
 	</Gallery>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/heterogeneous-gallery.md']} />
+<HighlightCompo code={modules['./md/heterogenuous-gallery.md']} />
 
 <H2>Custom image rendering</H2>
 <CodeWrapper>
