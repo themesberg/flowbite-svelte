@@ -154,6 +154,10 @@
       "types": "./dist/footer/FooterCopyright.svelte.d.ts",
       "svelte": "./dist/footer/FooterCopyright.svelte"
     },
+    "./FooterIcon.svelte": {
+      "types": "./dist/footer/FooterIcon.svelte.d.ts",
+      "svelte": "./dist/footer/FooterIcon.svelte"
+    },
     "./FooterLi.svelte": {
       "types": "./dist/footer/FooterLi.svelte.d.ts",
       "svelte": "./dist/footer/FooterLi.svelte"
