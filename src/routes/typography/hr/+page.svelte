@@ -1,10 +1,10 @@
 <script>
 	import { Hr, P, Blockquote } from '$lib';
 	import { QuoteSolid } from 'flowbite-svelte-icons';
-	import HighlightCompo from '../../components/HighlightCompo.svelte';
-	import CodeWrapper from '../../components/CodeWrapper.svelte';
-	import H1 from '../../components/H1.svelte';
-	import H2 from '../../components/H2.svelte';
+	import HighlightCompo from '../../utils/HighlightCompo.svelte';
+	import CodeWrapper from '../../utils/CodeWrapper.svelte';
+	import H1 from '../../utils/H1.svelte';
+	import H2 from '../../utils/H2.svelte';
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 </script>
 

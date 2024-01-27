@@ -1,9 +1,9 @@
 <script>
 	import '../app.pcss';
 	let { children } = $props();
-	import Nav from './components/Nav.svelte';
-	import Footer from './components/Footer.svelte';
-	import Sidemenu from './components/Sidemenu.svelte';
+	import Nav from './utils/Nav.svelte';
+	import Footer from './utils/Footer.svelte';
+	import Sidemenu from './utils/Sidemenu.svelte';
 </script>
 
 <Nav />

@@ -5,6 +5,7 @@
 		arrowup?: any;
 		arrowdown?: any;
 		icon?: any;
+		isOpen?: boolean;
 		btnclass?: string | undefined;
 		label: string | undefined;
 		spanclass?: string | undefined;
@@ -21,6 +22,7 @@
 		arrowup,
 		arrowdown,
 		icon,
+		isOpen,
 		btnclass,
 		label,
 		spanclass,
@@ -52,17 +54,15 @@
 		}
 	};
 
-	// for sidebar dropdown
-	let sidebar = uiHelpers();
-
-	let isOpen = $state(false);
-	let handleDropdown = sidebar.toggle;
-	// let closeSidebar = sidebar.close;
+	let sidebarDropdown = uiHelpers();
+	sidebarDropdown.isOpen =isOpen
+	let handleDropdown = sidebarDropdown.toggle;
 
 	$effect(() => {
 		// this can be done adding nav.navStatus directly to DOM element
 		// without using effect
-		isOpen = sidebar.isOpen;
+		isOpen = sidebarDropdown.isOpen;
+		// $inspect('dropdown isOpen: ', isOpen)
 	});
 </script>
 

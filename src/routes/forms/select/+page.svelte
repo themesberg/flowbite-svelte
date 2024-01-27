@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { Select, Label } from '$lib';
-	import HighlightCompo from '../../components/HighlightCompo.svelte';
-	import CodeWrapper from '../../components/CodeWrapper.svelte';
-	import H1 from '../../components/H1.svelte';
-	import H2 from '../../components/H2.svelte';
+	import HighlightCompo from '../../utils/HighlightCompo.svelte';
+	import CodeWrapper from '../../utils/CodeWrapper.svelte';
+	import H1 from '../../utils/H1.svelte';
+	import H2 from '../../utils/H2.svelte';
 
 	let selected: any = $state();
 	let countries = [

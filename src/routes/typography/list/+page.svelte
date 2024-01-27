@@ -1,11 +1,11 @@
 <script>
 	import { List, Li, Heading, Span, DescriptionList, A } from '$lib';
 	import { CheckCircleSolid, CloseCircleSolid, CheckOutline } from 'flowbite-svelte-icons';
-	import HighlightCompo from '../../components/HighlightCompo.svelte';
-	import CodeWrapper from '../../components/CodeWrapper.svelte';
-	import H1 from '../../components/H1.svelte';
-	import H2 from '../../components/H2.svelte';
-	import H3 from '../../components/H3.svelte';
+	import HighlightCompo from '../../utils/HighlightCompo.svelte';
+	import CodeWrapper from '../../utils/CodeWrapper.svelte';
+	import H1 from '../../utils/H1.svelte';
+	import H2 from '../../utils/H2.svelte';
+	import H3 from '../../utils/H3.svelte';
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 </script>
 

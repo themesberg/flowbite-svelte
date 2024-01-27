@@ -6,70 +6,70 @@ test('index page has expected h1', async ({ page }) => {
 });
 
 test('avatar page has expected h1', async ({ page }) => {
-	await page.goto('/avatar');
+	await page.goto('/components/avatar');
 	expect(await page.textContent('h1')).toContain('Avatar');
 });
 
 test('button page has expected h1', async ({ page }) => {
-	await page.goto('/button');
+	await page.goto('/components/button');
 	expect(await page.textContent('h1')).toBe('Buttons');
 });
 
 test('button group page has expected h1', async ({ page }) => {
-	await page.goto('/button-group');
+	await page.goto('/components/button-group');
 	expect(await page.textContent('h1')).toBe('Button group');
 });
 
 test('cards page has expected h1', async ({ page }) => {
-	await page.goto('/card');
+	await page.goto('/components/card');
 	expect(await page.textContent('h1')).toBe('Cards');
 });
 
 test('darkmode page has expected h1', async ({ page }) => {
-	await page.goto('/darkmode');
+	await page.goto('/components/darkmode');
 	expect(await page.textContent('h1')).toBe('Darkmode');
 });
 
 test('dropdown page has expected h1', async ({ page }) => {
-	await page.goto('/dropdown');
+	await page.goto('/components/dropdown');
 	expect(await page.textContent('h1')).toBe('Dropdown');
 });
 
-test('forms/seletct page has expected h1', async ({ page }) => {
-	await page.goto('/forms/select');
-	expect(await page.textContent('h1')).toBe('Select');
-});
-
 test('footer page has expected h1', async ({ page }) => {
-	await page.goto('/footer');
+	await page.goto('/components/footer');
 	expect(await page.textContent('h1')).toBe('Footer');
 });
 
 test('navbar page has expected h1', async ({ page }) => {
-	await page.goto('/navbar');
+	await page.goto('/components/navbar');
 	expect(await page.textContent('h1')).toBe('Navbar');
 });
 
-test('about page has expected h1', async ({ page }) => {
-	await page.goto('/pages/about');
-	expect(await page.textContent('h1')).toBe('About');
-});
-
 test('sidebar page has expected h1', async ({ page }) => {
-	await page.goto('/sidebar');
+	await page.goto('/components/sidebar');
 	expect(await page.textContent('h1')).toBe('Sidebar');
 });
 
 test('skeleton page has expected h1', async ({ page }) => {
-	await page.goto('/skeleton');
+	await page.goto('/components/skeleton');
 	expect(await page.textContent('h1')).toBe('Skeleton');
 });
 
 test('spinner page has expected h1', async ({ page }) => {
-	await page.goto('/spinner');
+	await page.goto('/components/spinner');
 	expect(await page.textContent('h1')).toBe('Spinner');
 });
 
+// video
+test('Video page has expected h1', async ({ page }) => {
+	await page.goto('/components/video');
+	expect(await page.textContent('h1')).toBe('Video');
+});
+// Pages
+test('about page has expected h1', async ({ page }) => {
+	await page.goto('/pages/about');
+	expect(await page.textContent('h1')).toBe('About');
+});
 // Forms
 test('select page has expected h1', async ({ page }) => {
 	await page.goto('/forms/select');
@@ -108,8 +108,3 @@ test('Paragraph page has expected h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Paragraph');
 });
 
-// video
-test('Video page has expected h1', async ({ page }) => {
-	await page.goto('/video');
-	expect(await page.textContent('h1')).toBe('Video');
-});
