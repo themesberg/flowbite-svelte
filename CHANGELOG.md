@@ -2,6 +2,65 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.11](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.1.12...v0.2.11) (2024-01-27)
+
+
+### Features
+
+* add ...attributes ([d5f6801](https://github.com/shinokada/svelte-5-ui-lib/commit/d5f68017255db97c944578d19f85512e4dea02ff))
+* add A/link component ([61fe4fe](https://github.com/shinokada/svelte-5-ui-lib/commit/61fe4fe0281ce8e4912e54e4dee8e3028abf8921))
+* add all skeleton components ([4ee9e0f](https://github.com/shinokada/svelte-5-ui-lib/commit/4ee9e0f703829add4b5b992a1be012e7ecfcb242))
+* add Avatar component ([690fd88](https://github.com/shinokada/svelte-5-ui-lib/commit/690fd88e7cdf98dfda372325f64828a087e86440))
+* add Blockquote component and page ([9464203](https://github.com/shinokada/svelte-5-ui-lib/commit/9464203f8b33995f9c5233d524f108ef6443b94c))
+* add breadcrumb ([ce7297a](https://github.com/shinokada/svelte-5-ui-lib/commit/ce7297a65758fe3dd8d58e91209f6e270c6601eb))
+* add Button ([b58554f](https://github.com/shinokada/svelte-5-ui-lib/commit/b58554f69daf90d231693cd995029283fd1b2074))
+* add darkmode ([4d54e6e](https://github.com/shinokada/svelte-5-ui-lib/commit/4d54e6e28c90738205e27c76ba5caa539418c0be))
+* add DescriptionList, List, Li components ([2dbd24c](https://github.com/shinokada/svelte-5-ui-lib/commit/2dbd24c62a39284a7b121465356e24f8647ce24e))
+* add gen:exports to package.json ([7dc8667](https://github.com/shinokada/svelte-5-ui-lib/commit/7dc866780a998c961881daa10a905ff7f79bd2f0))
+* add Hr component and page ([1edfc62](https://github.com/shinokada/svelte-5-ui-lib/commit/1edfc621463ab8fe18bb6f3780def330fa69fce1))
+* add Indicator component ([9f26ca6](https://github.com/shinokada/svelte-5-ui-lib/commit/9f26ca630ee7bd1c1c4e571f2e2b271dd27428e8))
+* add installation to home ([6709385](https://github.com/shinokada/svelte-5-ui-lib/commit/6709385007fd721c43487c4f4732f0a661883f5c))
+* add kbd ([a0c9fd3](https://github.com/shinokada/svelte-5-ui-lib/commit/a0c9fd355d56634c0dcce70ebe656d9a06069333))
+* add P component ([6628e5b](https://github.com/shinokada/svelte-5-ui-lib/commit/6628e5bb805a77b7c3c3d825f4ad7b86b096b82c))
+* add Select and Label ([264e1cd](https://github.com/shinokada/svelte-5-ui-lib/commit/264e1cd38f010071430df86e3968d5ea1770dd9c))
+* add SidebarDropdownWrapper and doc page ([1496b6f](https://github.com/shinokada/svelte-5-ui-lib/commit/1496b6f03b7c5d32eecbcd3daf998423ac8702e8))
+* add skeleton ([493e67d](https://github.com/shinokada/svelte-5-ui-lib/commit/493e67d5ac6bb6e95f610eea0c7a4350e2ac8d66))
+* add tests ([f3cff31](https://github.com/shinokada/svelte-5-ui-lib/commit/f3cff316159c1e55973c6a5b541561d099152c06))
+* add video component ([eed2b81](https://github.com/shinokada/svelte-5-ui-lib/commit/eed2b819885b387151cfab8ff95e6b7c00035e04))
+* adding Sidebar compos ([7b6b443](https://github.com/shinokada/svelte-5-ui-lib/commit/7b6b443e324ef0b0cd5e0bc97a400ed6ad05f08b))
+* banner ([6cb2905](https://github.com/shinokada/svelte-5-ui-lib/commit/6cb2905a924596227199c539e4ba1575783cb1b4))
+* ButtonGroup component ([c416d36](https://github.com/shinokada/svelte-5-ui-lib/commit/c416d3666576ab0fa84759423749aebf05c33275))
+* Card update ([1a93ae5](https://github.com/shinokada/svelte-5-ui-lib/commit/1a93ae53b884648e390f5fbf2b8656e2e8eef343))
+* classes update ([7dc26f6](https://github.com/shinokada/svelte-5-ui-lib/commit/7dc26f6b04662d79bb7ba80fa3085e2c376626f5))
+* complete drawer compo ([110dbaa](https://github.com/shinokada/svelte-5-ui-lib/commit/110dbaab071b5d36b517b439f6e75268414d040c))
+* drawer update ([005b3ee](https://github.com/shinokada/svelte-5-ui-lib/commit/005b3eeaa61b78395ffd967b94539d81c0ee6eb7))
+* progressbar ([0a0c40e](https://github.com/shinokada/svelte-5-ui-lib/commit/0a0c40e4518d4e4f59eb6dcc8bdc4b14c9a08e7b))
+* spinner ([5c7de96](https://github.com/shinokada/svelte-5-ui-lib/commit/5c7de96c2c10a3f729db25ca6a2722ee20de2074))
+* use import.meta.glob for md files ([c15c9f8](https://github.com/shinokada/svelte-5-ui-lib/commit/c15c9f8971b50f995b91b78dd0ccea3505bb535b))
+
+
+### Bug Fixes
+
+* 2xl to xxl ([9967420](https://github.com/shinokada/svelte-5-ui-lib/commit/99674200830818fa8d5417c41164b7c5a37b6fb0))
+* class to proper names ([61ddb7a](https://github.com/shinokada/svelte-5-ui-lib/commit/61ddb7acda8c2425a6c6bd0a52a699ee36d3e9a1))
+* class update for drawer and dropdown ([583eddf](https://github.com/shinokada/svelte-5-ui-lib/commit/583eddfe8000a1843c2fc3d021712995a387ab21))
+* class update in Darkmode and Drawer ([2f01cd2](https://github.com/shinokada/svelte-5-ui-lib/commit/2f01cd2b7f969d44a7312351482167bbfd6698f1))
+* Darkmode, cleanup Button ([9f2c5fa](https://github.com/shinokada/svelte-5-ui-lib/commit/9f2c5fa867a2d779ca207ea3f3081298604f84bd))
+* dropdown add classes ([5d31d80](https://github.com/shinokada/svelte-5-ui-lib/commit/5d31d8023a08669595928b69818ca63626be2ba0))
+* HighlightCompo ([8906fab](https://github.com/shinokada/svelte-5-ui-lib/commit/8906fab15825b70634797e30ab53ff2dd4af576b))
+* Label ([62f5245](https://github.com/shinokada/svelte-5-ui-lib/commit/62f52459f2676fd89f8b2c5d9da0ab6bb02af1f0))
+* Label ([2b7b645](https://github.com/shinokada/svelte-5-ui-lib/commit/2b7b6456cf0b8b2c374a4b7955284f3d74aed5a2))
+* Nav and Sidemenu style ([a027d54](https://github.com/shinokada/svelte-5-ui-lib/commit/a027d5443e1bf0f32112223d5977670fc82256dc))
+* Nav sidebar update ([4374cac](https://github.com/shinokada/svelte-5-ui-lib/commit/4374cacb86cdac09e30f518e2e3bfab5183bdc82))
+* nav update ([52c16f4](https://github.com/shinokada/svelte-5-ui-lib/commit/52c16f43ee683c90c94460232b72a4d3f6c18181))
+* navbar breakpoint css ([fc544e2](https://github.com/shinokada/svelte-5-ui-lib/commit/fc544e27cf4f5701832873e6ece33faa4ada6e6d))
+* NavUl update ([af6b733](https://github.com/shinokada/svelte-5-ui-lib/commit/af6b733bfc5d1058e633c4dcb3800fea363e7e80))
+* NavUl update ([0473a4e](https://github.com/shinokada/svelte-5-ui-lib/commit/0473a4ef4799770b12a741f12b3c71b40bde0113))
+* progress sidebar menu ([81a106d](https://github.com/shinokada/svelte-5-ui-lib/commit/81a106d463c52df6051e80fd147d07f687557b4b))
+* SidebarDropdownWrapper opens update ([b82f584](https://github.com/shinokada/svelte-5-ui-lib/commit/b82f58499b5a0eddb80944d29a2d7f7762b7ce0c))
+* typo ([0abaa14](https://github.com/shinokada/svelte-5-ui-lib/commit/0abaa1480b12088451505df9219cd5d8e124be97))
+* typo ([45d88a0](https://github.com/shinokada/svelte-5-ui-lib/commit/45d88a029059f802799d8e4e8a36904538256f87))
+
 ### [0.2.10](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.9...v0.2.10) (2024-01-27)
 
 
