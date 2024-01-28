@@ -44,8 +44,8 @@
 				{/snippet}
 				{#snippet children()}
 					<DropdownItem href="/">Dashboard</DropdownItem>
-					<DropdownItem href="/nav">Navbar</DropdownItem>
-					<DropdownItem href="/footer">Footer</DropdownItem>
+					<DropdownItem href="/components/dropdown">Dropdown</DropdownItem>
+					<DropdownItem href="/components/footer">Footer</DropdownItem>
 					<DropdownDivider />
 					<DropdownItem href="/dropdown">Dropdown</DropdownItem>
 				{/snippet}
@@ -64,3 +64,4 @@
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/dropdown1.md']} />
+
