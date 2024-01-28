@@ -107,7 +107,8 @@
 
 <CodeWrapper>
 	<Gallery divclass="gap-4 grid-cols-2 md:grid-cols-4">
-		<Gallery items={images1} />
+		<!-- Safari needs gap -->
+		<Gallery items={images1} divclass="gap-4"/>
 		<Gallery items={images2} />
 		<Gallery items={images3} />
 		<Gallery items={images4} />
@@ -120,7 +121,8 @@
 <CodeWrapper>
 	<Gallery divclass="gap-4">
 		<img src={image5.src} alt={image5.alt} class="h-auto max-w-full rounded-lg" />
-		<Gallery divclass="grid-cols-5" items={images6} />
+		<!-- Safari needs gap -->
+		<Gallery divclass="grid-cols-5 gap-4" items={images6} />
 	</Gallery>
 </CodeWrapper>
 
