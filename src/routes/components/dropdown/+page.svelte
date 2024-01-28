@@ -34,7 +34,7 @@
 	<div class="mx-auto w-48">
 		<Button onclick={toggle}
 			>Dropdown
-			<ChevronDownSolid class="ms-2 h-3 w-3 text-white dark:text-white" tabindex="-1" />
+			<ChevronDownSolid class="ms-2 h-3 w-3 text-white dark:text-white" />
 		</Button>
 		<div class="relative">
 			<Dropdown {isOpen} divclass="absolute -left-[27px]">
