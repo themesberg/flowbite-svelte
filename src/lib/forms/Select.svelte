@@ -14,9 +14,9 @@
 
   const common = 'block w-full';
   const sizes = {
-    sm: 'text-sm p-2',
+    sm: 'sm:text-xs p-2',
     md: 'text-sm p-2.5',
-    lg: 'text-base py-3 px-4'
+    lg: 'sm:text-base py-3 px-4'
   };
 
   let selectClass: string;

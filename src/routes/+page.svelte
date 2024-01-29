@@ -10,6 +10,7 @@
   import GetStarted from './landing/GetStarted.svelte';
   import SocialProof from './landing/SocialProof.svelte';
   import CTA from './landing/CTA.svelte';
+  import {Select, Input} from '../lib' 
 
   export let data: PageData;
 
@@ -41,6 +42,14 @@
   }} />
 
 <main class="flex-auto min-w-0 lg:static lg:max-h-full lg:overflow-visible divide-y dark:divide-gray-700">
+<div class='grid grid-cols-2 gap-1 p-9'>
+  <div>
+    <Select size="sm" items={[{ value: 'South Africa', name:'South Africa' }]}/>
+  </div>
+  <div>
+    <Input size="sm" value="hey" />
+  </div>
+</div>
   <Hero />
   <Featured />
   <Components {data} />
