@@ -40,6 +40,12 @@ test('footer page has expected h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Footer');
 });
 
+test('list-group page has expected h1', async ({ page }) => {
+	await page.goto('/components/list-group');
+	expect(await page.textContent('h1')).toBe('List group');
+});
+
+
 test('navbar page has expected h1', async ({ page }) => {
 	await page.goto('/components/navbar');
 	expect(await page.textContent('h1')).toBe('Navbar');
