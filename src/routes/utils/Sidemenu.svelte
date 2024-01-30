@@ -34,6 +34,7 @@
 			<SidebarItem label="Gallery" href="/components/gallery" />
 			<SidebarItem label="Indicator" href="/components/indicator" />
 			<SidebarItem label="Kbd" href="/components/kbd" />
+			<SidebarItem label="List group" href="/components/list-group" />
 			<SidebarItem label="Navbar" href="/components/navbar" />
 			<SidebarItem label="Progress" href="/components/progress" />
 			<SidebarItem label="Sidebar" href="/components/sidebar" />

@@ -149,6 +149,7 @@
 				<SidebarItem onclick={closeNavDrawer} label="Gallery" href="/components/gallery" />
 				<SidebarItem onclick={closeNavDrawer} label="Indicator" href="/components/indicator" />
 				<SidebarItem onclick={closeNavDrawer} label="Kbd" href="/components/kbd" />
+				<SidebarItem onclick={closeNavDrawer} label="List group" href="/components/list-group" />
 				<SidebarItem onclick={closeNavDrawer} label="Navbar" href="/components/navbar" />
 				<SidebarItem onclick={closeNavDrawer} label="Progress" href="/components/progress" />
 				<SidebarItem onclick={closeNavDrawer} label="Sidebar" href="/components/sidebar" />
