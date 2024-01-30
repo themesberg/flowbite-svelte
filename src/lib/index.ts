@@ -38,8 +38,8 @@ export { default as Indicator } from './indicator/Indicator.svelte';
 // kbd
 export { default as Kbd } from './kbd/Kbd.svelte';
 // list-group
-export { default as Listgroup } from './list-group/Listgroup.svelte'
-export { default as ListgroupItem } from './list-group/ListgroupItem.svelte'
+export { default as Listgroup } from './list-group/Listgroup.svelte';
+export { default as ListgroupItem } from './list-group/ListgroupItem.svelte';
 // navbar
 export { default as Navbar } from './nav/Navbar.svelte';
 export { default as NavUl } from './nav/NavUl.svelte';

@@ -108,7 +108,7 @@
 <CodeWrapper>
 	<Gallery divclass="gap-4 grid-cols-2 md:grid-cols-4">
 		<!-- Safari needs gap -->
-		<Gallery items={images1} divclass="gap-4"/>
+		<Gallery items={images1} divclass="gap-4" />
 		<Gallery items={images2} />
 		<Gallery items={images3} />
 		<Gallery items={images4} />
