@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.13](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.10...v0.2.13) (2024-01-30)
+
+
+### Features
+
+* add FooterIcon ([3320f2f](https://github.com/shinokada/svelte-5-ui-lib/commit/3320f2f836ba5b4f3dc9bf9bef5d0ee2fd3a6a20))
+* add list-group components and page ([1653fd2](https://github.com/shinokada/svelte-5-ui-lib/commit/1653fd25bf159350378a83d67afea18f2cef9c91))
+
+
+### Bug Fixes
+
+* add activeclass to dropdown ([86a210d](https://github.com/shinokada/svelte-5-ui-lib/commit/86a210d2bb1a936808ac90ebd8f99aed0acf40ac))
+* add kit to peerDependencies ([f82cb7d](https://github.com/shinokada/svelte-5-ui-lib/commit/f82cb7dd1c84879e17b1010ee5074c1a5a5704cc))
+* dropdown add classes ([5d31d80](https://github.com/shinokada/svelte-5-ui-lib/commit/5d31d8023a08669595928b69818ca63626be2ba0))
+* gallery page for Safari hack ([27a1ac7](https://github.com/shinokada/svelte-5-ui-lib/commit/27a1ac7f1f96558f3fe6c118e1ba9f0976479246))
+* remove tabindex=-1 ([ff4c440](https://github.com/shinokada/svelte-5-ui-lib/commit/ff4c44070d739ede4b98aa1418c161108ebf5c71))
+
 ### [0.2.12](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.11...v0.2.12) (2024-01-27)
 
 
