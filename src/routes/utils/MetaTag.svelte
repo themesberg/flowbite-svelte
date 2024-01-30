@@ -2,6 +2,8 @@
     import { page } from '$app/stores'
     let pathname = $state($page.url.pathname)
     let component = $derived(pathname.split('/')[2])
+    let ogImg = $derived(component ? `?title=${component}` : '');
+    $inspect('ogImg: ', ogImg)
     $effect(()=>{
         pathname = $page.url.pathname
     })
@@ -16,13 +18,13 @@
 <meta name="twitter:creator" content="@shinokada" />
 <meta name="twitter:title" content="Svelte 5 UI lib" />
 <meta name="twitter:description" content="Svelte 5 UI lib" />
-<meta name="twitter:image" content="https://open-graph-vercel.vercel.app/api/svelte-5-ui-lib?title={component}" />
+<meta name="twitter:image" content="https://open-graph-vercel.vercel.app/api/svelte-5-ui-lib{ogImg}" />
 <meta name="twitter:image:alt" content="Svelte 5 UI lib" />
 <meta property="og:url" content="https://svelte-5-ui-lib.vercel.app/" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Svelte 5 UI lib" />
 <meta property="og:description" content="Svelte 5 UI lib" />
-<meta property="og:image" content="https://open-graph-vercel.vercel.app/api/svelte-5-ui-lib{component}" />
+<meta property="og:image" content="https://open-graph-vercel.vercel.app/api/svelte-5-ui-lib{ogImg}" />
 <meta property="og:image:alt" content="Svelte 5 UI lib" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
