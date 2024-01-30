@@ -103,3 +103,13 @@ export type BlockQuoteType =
 	| '7xl'
 	| '8xl'
 	| '9xl';
+
+import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
+
+export interface ListGroupItemType {
+	current?: boolean;
+	disabled?: boolean;
+	href?: string;
+	attrs?: HTMLAnchorAttributes | HTMLButtonAttributes;
+	[propName: string]: any;
+}
