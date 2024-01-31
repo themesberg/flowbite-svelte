@@ -1,4 +1,4 @@
-# Svelte 5 UI Lib: Experimental
+# Svelte 5 UI Lib
 
 UI library for Svelte 5
 
@@ -7,6 +7,8 @@ UI library for Svelte 5
 
 
 ## Installation
+
+After installing Svelte-5:
 
 ```
 pnpm i -D svelte-5-ui-lib tailwind-merge
