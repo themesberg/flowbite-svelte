@@ -82,6 +82,11 @@ test('about page has expected h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('About');
 });
 // Forms
+test('range page has expected h1', async ({ page }) => {
+	await page.goto('/forms/range');
+	expect(await page.textContent('h1')).toBe('Range');
+});
+
 test('select page has expected h1', async ({ page }) => {
 	await page.goto('/forms/select');
 	expect(await page.textContent('h1')).toBe('Select');

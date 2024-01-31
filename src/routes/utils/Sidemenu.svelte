@@ -44,6 +44,7 @@
 			<SidebarItem label="Video" href="/components/video" />
 		</SidebarDropdownWrapper>
 		<SidebarDropdownWrapper label="Forms" isOpen={hasPath('forms')}>
+			<SidebarDropdownItem href="/forms/range">Range</SidebarDropdownItem>
 			<SidebarDropdownItem href="/forms/select">Select</SidebarDropdownItem>
 		</SidebarDropdownWrapper>
 		<SidebarDropdownWrapper label="Typography" isOpen={hasPath('typography')}>
