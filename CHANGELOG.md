@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.15](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.14...v0.2.15) (2024-01-31)
+
+
+### Features
+
+* add rating components and page ([dc2a40b](https://github.com/shinokada/svelte-5-ui-lib/commit/dc2a40b87a8e8d98b93f8a8610129a665098bb1f))
+
+
+### Bug Fixes
+
+* list-group md ([3e115ed](https://github.com/shinokada/svelte-5-ui-lib/commit/3e115ed6dd870339a7a516d814a880b17692b429))
+* list-group page ([81865ee](https://github.com/shinokada/svelte-5-ui-lib/commit/81865ee918eaa8270910816a078c111bd956d153))
+
 ### [0.2.14](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.13...v0.2.14) (2024-01-30)
 
 
