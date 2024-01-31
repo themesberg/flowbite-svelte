@@ -37,6 +37,7 @@
 			<SidebarItem label="List group" href="/components/list-group" />
 			<SidebarItem label="Navbar" href="/components/navbar" />
 			<SidebarItem label="Progress" href="/components/progress" />
+			<SidebarItem label="Rating" href="/components/rating" />
 			<SidebarItem label="Sidebar" href="/components/sidebar" />
 			<SidebarItem label="Skeleton" href="/components/skeleton" />
 			<SidebarItem label="Spinner" href="/components/spinner" />
