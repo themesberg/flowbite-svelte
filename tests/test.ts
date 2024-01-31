@@ -51,6 +51,11 @@ test('navbar page has expected h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Navbar');
 });
 
+test('rating page has expected h1', async ({ page }) => {
+	await page.goto('/components/rating');
+	expect(await page.textContent('h1')).toBe('Rating');
+});
+
 test('sidebar page has expected h1', async ({ page }) => {
 	await page.goto('/components/sidebar');
 	expect(await page.textContent('h1')).toBe('Sidebar');
