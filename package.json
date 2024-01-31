@@ -219,6 +219,38 @@
       "types": "./dist/progress/Progressbar.svelte.d.ts",
       "svelte": "./dist/progress/Progressbar.svelte"
     },
+    "./AdvancedRating.svelte": {
+      "types": "./dist/rating/AdvancedRating.svelte.d.ts",
+      "svelte": "./dist/rating/AdvancedRating.svelte"
+    },
+    "./Heart.svelte": {
+      "types": "./dist/rating/Heart.svelte.d.ts",
+      "svelte": "./dist/rating/Heart.svelte"
+    },
+    "./Rating.svelte": {
+      "types": "./dist/rating/Rating.svelte.d.ts",
+      "svelte": "./dist/rating/Rating.svelte"
+    },
+    "./RatingComment.svelte": {
+      "types": "./dist/rating/RatingComment.svelte.d.ts",
+      "svelte": "./dist/rating/RatingComment.svelte"
+    },
+    "./Review.svelte": {
+      "types": "./dist/rating/Review.svelte.d.ts",
+      "svelte": "./dist/rating/Review.svelte"
+    },
+    "./ScoreRating.svelte": {
+      "types": "./dist/rating/ScoreRating.svelte.d.ts",
+      "svelte": "./dist/rating/ScoreRating.svelte"
+    },
+    "./Star.svelte": {
+      "types": "./dist/rating/Star.svelte.d.ts",
+      "svelte": "./dist/rating/Star.svelte"
+    },
+    "./Thumbup.svelte": {
+      "types": "./dist/rating/Thumbup.svelte.d.ts",
+      "svelte": "./dist/rating/Thumbup.svelte"
+    },
     "./Sidebar.svelte": {
       "types": "./dist/sidebar/Sidebar.svelte.d.ts",
       "svelte": "./dist/sidebar/Sidebar.svelte"
