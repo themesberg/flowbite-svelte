@@ -47,6 +47,15 @@ export { default as NavBrand } from './nav/NavBrand.svelte';
 export { default as NavLi } from './nav/NavLi.svelte';
 // progress
 export { default as Progressbar } from './progress/Progressbar.svelte';
+// rating
+export { default as AdvancedRating } from './rating/AdvancedRating.svelte'
+export { default as Star } from './rating/Star.svelte'
+export { default as Rating } from './rating/Rating.svelte'
+export { default as Heart } from './rating/Heart.svelte'
+export { default as RatingComment } from './rating/RatingComment.svelte'
+export { default as Review } from './rating/Review.svelte'
+export { default as ScoreRating } from './rating/ScoreRating.svelte'
+export { default as Thumbup } from './rating/Thumbup.svelte'
 // sidebar
 export { default as Sidebar } from './sidebar/Sidebar.svelte';
 export { default as SidebarGroup } from './sidebar/SidebarGroup.svelte';

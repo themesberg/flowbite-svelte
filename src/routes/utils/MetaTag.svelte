@@ -3,7 +3,7 @@
     let pathname = $state($page.url.pathname)
     let component = $derived(pathname.split('/')[2])
     let ogImg = $derived(component ? `?title=${component}` : '');
-    $inspect('ogImg: ', ogImg)
+    // $inspect('ogImg: ', ogImg)
     $effect(()=>{
         pathname = $page.url.pathname
     })
