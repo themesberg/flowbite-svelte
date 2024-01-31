@@ -175,6 +175,10 @@
       "types": "./dist/forms/Label.svelte.d.ts",
       "svelte": "./dist/forms/Label.svelte"
     },
+    "./Range.svelte": {
+      "types": "./dist/forms/Range.svelte.d.ts",
+      "svelte": "./dist/forms/Range.svelte"
+    },
     "./Select.svelte": {
       "types": "./dist/forms/Select.svelte.d.ts",
       "svelte": "./dist/forms/Select.svelte"

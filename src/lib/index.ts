@@ -31,7 +31,7 @@ export { default as FooterUl } from './footer/FooterUl.svelte';
 // forms
 export { default as Label } from './forms/Label.svelte';
 export { default as Select } from './forms/Select.svelte';
-export { default as Range } from './forms/Range.svelte'
+export { default as Range } from './forms/Range.svelte';
 // gallery
 export { default as Gallery } from './gallery/Gallery.svelte';
 // indicator

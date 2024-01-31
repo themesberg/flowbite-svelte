@@ -5,8 +5,8 @@
 		inputclass: string;
 	}
 	import { twMerge } from 'tailwind-merge';
-    import '$lib/style.css'
-    
+	import '$lib/style.css';
+
 	let { value, size = 'md', inputclass, ...attributes } = $props<Props>();
 
 	const sizes = {
@@ -21,4 +21,3 @@
 </script>
 
 <input type="range" bind:value {...attributes} class={inputClass} />
-
