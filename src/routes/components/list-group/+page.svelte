@@ -11,7 +11,7 @@
 		{ name: 'Avatar', href: '/components/avatar' },
 		{ name: 'List group', href: '/components/list-group', current: true },
 		{ name: 'Banner', href: '/components/banner' },
-		{ name: 'Breadcrumbs', href: '/components/breadcrumb', target:'_blank' }
+		{ name: 'Breadcrumbs', href: '/components/breadcrumb', target: '_blank' }
 	];
 	let buttons = [
 		{ name: 'Profile', mycustomfield: 'data1', current: true },

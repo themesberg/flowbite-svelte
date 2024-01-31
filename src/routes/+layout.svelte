@@ -6,6 +6,7 @@
 	import Sidemenu from './utils/Sidemenu.svelte';
 	import MetaTag from './utils/MetaTag.svelte';
 </script>
+
 <MetaTag />
 <Nav />
 <div class="lg:flex">
