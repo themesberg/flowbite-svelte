@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.16](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.15...v0.2.16) (2024-01-31)
+
+
+### Features
+
+* add range component, page, and test ([66d1ee9](https://github.com/shinokada/svelte-5-ui-lib/commit/66d1ee923db0342b2cb0f5cd9966b222bfa06124))
+
 ### [0.2.15](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.14...v0.2.15) (2024-01-31)
 
 
