@@ -8,10 +8,10 @@
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 	let simpleList = ['Profile', 'Settings', 'Messages', 'Download'];
 	let links = [
-		{ name: 'Accordions', href: '/docs/components/accordion', current: true },
-		{ name: 'Alerts', href: '/docs/components/alert' },
-		{ name: 'Badges', href: '/docs/components/badge' },
-		{ name: 'Breadcrumbs', href: '/docs/components/breadcrumb', attrs: { target: '_blank' } }
+		{ name: 'Avatar', href: '/components/avatar' },
+		{ name: 'List group', href: '/components/list-group', current: true },
+		{ name: 'Banner', href: '/components/banner' },
+		{ name: 'Breadcrumbs', href: '/components/breadcrumb', target:'_blank' }
 	];
 	let buttons = [
 		{ name: 'Profile', mycustomfield: 'data1', current: true },
