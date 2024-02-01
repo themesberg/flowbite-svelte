@@ -171,6 +171,10 @@
       "types": "./dist/footer/FooterUl.svelte.d.ts",
       "svelte": "./dist/footer/FooterUl.svelte"
     },
+    "./Checkbox.svelte": {
+      "types": "./dist/forms/Checkbox.svelte.d.ts",
+      "svelte": "./dist/forms/Checkbox.svelte"
+    },
     "./Helper.svelte": {
       "types": "./dist/forms/Helper.svelte.d.ts",
       "svelte": "./dist/forms/Helper.svelte"
