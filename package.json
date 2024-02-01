@@ -171,9 +171,21 @@
       "types": "./dist/footer/FooterUl.svelte.d.ts",
       "svelte": "./dist/footer/FooterUl.svelte"
     },
+    "./Helper.svelte": {
+      "types": "./dist/forms/Helper.svelte.d.ts",
+      "svelte": "./dist/forms/Helper.svelte"
+    },
     "./Label.svelte": {
       "types": "./dist/forms/Label.svelte.d.ts",
       "svelte": "./dist/forms/Label.svelte"
+    },
+    "./Radio.svelte": {
+      "types": "./dist/forms/Radio.svelte.d.ts",
+      "svelte": "./dist/forms/Radio.svelte"
+    },
+    "./RadioButton.svelte": {
+      "types": "./dist/forms/RadioButton.svelte.d.ts",
+      "svelte": "./dist/forms/RadioButton.svelte"
     },
     "./Range.svelte": {
       "types": "./dist/forms/Range.svelte.d.ts",
