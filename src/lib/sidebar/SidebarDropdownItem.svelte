@@ -1,6 +1,7 @@
 <script lang="ts">
 	interface Props {
-		children: any;
+		children?: any;
+		label?: string;
 		href?: string | undefined;
 		aclass?: string | undefined;
 		activeClass?: string | undefined;
@@ -13,19 +14,22 @@
 	$effect(() => {
 		currentUrl = $page.url.pathname;
 	});
-	let { children, href, aclass, activeClass, ...attributes } = $props<Props>();
+	let { children, label, href, aclass, activeClass, ...attributes } = $props<Props>();
 	let aCls: string = twMerge(
-		'flex items-center p-2 ps-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700',
+		'flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700',
 		aclass
 	);
 	let activeCls: string = twMerge(
-		'flex items-center p-2 ps-11 text-base font-normal text-gray-900 bg-gray-200 dark:bg-gray-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700',
+		'flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 bg-gray-200 dark:bg-gray-700 ',
 		activeClass
 	);
 </script>
 
 <li>
 	<a {...attributes} {href} class={currentUrl === href ? activeCls : aCls}>
+		{label}
+		{#if children}
 		{@render children()}
+		{/if}
 	</a>
 </li>

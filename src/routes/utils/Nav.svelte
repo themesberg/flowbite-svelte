@@ -40,7 +40,7 @@
 	const navclass =
 		'w-full divide-gray-200 border-gray-200 bg-white text-gray-500 dark:divide-gray-700 dark:border-gray-700 dark:bg-gray-950 sm:px-4';
 	const ulclass =
-		'flex flex-col py-3 lg:flex-row lg:my-0 order-1 font-medium xl:gap-4 dark:lg:bg-transparent lg:bg-white border-0';
+		'flex flex-col py-3 lg:flex-row lg:my-0 order-1 font-medium xl:gap-4 dark:lg:bg-transparent dark:bg-gray-950 lg:bg-white border-0';
 </script>
 
 <header
@@ -159,29 +159,17 @@
 				<SidebarItem onclick={closeNavDrawer} label="Video" href="/components/video" />
 			</SidebarDropdownWrapper>
 			<SidebarDropdownWrapper label="Forms">
-				<SidebarDropdownItem onclick={closeNavDrawer} href="/forms/range">Range</SidebarDropdownItem
-				>
-				<SidebarDropdownItem onclick={closeNavDrawer} href="/forms/select"
-					>Select</SidebarDropdownItem
-				>
+				<SidebarDropdownItem onclick={closeNavDrawer} label="Radio" href="/forms/radio"/>
+				<SidebarDropdownItem onclick={closeNavDrawer} label="Range" href="/forms/range"/>
+				<SidebarDropdownItem onclick={closeNavDrawer} label="Select" href="/forms/select"/>
 			</SidebarDropdownWrapper>
 			<SidebarDropdownWrapper label="Typography">
-				<SidebarDropdownItem onclick={closeNavDrawer} href="/typography/blockquote"
-					>Blockquote</SidebarDropdownItem
-				>
-				<SidebarDropdownItem onclick={closeNavDrawer} href="/typography/heading"
-					>Heading/Span/Mark</SidebarDropdownItem
-				>
-				<SidebarDropdownItem onclick={closeNavDrawer} href="/typography/hr">HR</SidebarDropdownItem>
-				<SidebarDropdownItem onclick={closeNavDrawer} href="/typography/link"
-					>Link</SidebarDropdownItem
-				>
-				<SidebarDropdownItem onclick={closeNavDrawer} href="/typography/list"
-					>List</SidebarDropdownItem
-				>
-				<SidebarDropdownItem onclick={closeNavDrawer} href="/typography/paragraph"
-					>Paragraph</SidebarDropdownItem
-				>
+				<SidebarDropdownItem onclick={closeNavDrawer} label="Blockquote" href="/typography/blockquote"/>
+				<SidebarDropdownItem onclick={closeNavDrawer} label="Heading/Span/Mark" href="/typography/heading"/>
+				<SidebarDropdownItem onclick={closeNavDrawer} label="HR" href="/typography/hr"/>
+				<SidebarDropdownItem onclick={closeNavDrawer} label="Link" href="/typography/link"/>
+				<SidebarDropdownItem onclick={closeNavDrawer} label="List" href="/typography/list"/>
+				<SidebarDropdownItem onclick={closeNavDrawer} label="Paragraph" href="/typography/paragraph"/>
 			</SidebarDropdownWrapper>
 		</SidebarGroup>
 	</Sidebar>

@@ -81,10 +81,16 @@ test('about page has expected h1', async ({ page }) => {
 	await page.goto('/pages/about');
 	expect(await page.textContent('h1')).toBe('About');
 });
+
 // Forms
 test('range page has expected h1', async ({ page }) => {
 	await page.goto('/forms/range');
 	expect(await page.textContent('h1')).toBe('Range');
+});
+
+test('radio/helper/radiobutton page has expected h1', async ({ page }) => {
+	await page.goto('/forms/radio');
+	expect(await page.textContent('h1')).toBe('Radio, Helper, and RadioButton');
 });
 
 test('select page has expected h1', async ({ page }) => {

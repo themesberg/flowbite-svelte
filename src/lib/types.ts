@@ -113,3 +113,7 @@ export interface ListGroupItemType {
 	attrs?: HTMLAnchorAttributes | HTMLButtonAttributes;
 	[propName: string]: any;
 }
+
+export type FormColorType = 'blue' | 'red' | 'green' | 'purple' | 'teal' | 'yellow' | 'orange' | 'primary' | 'secondary';
+export type ButtonColorType = 'alternative' | 'blue' | 'dark' | 'green' | 'light' | 'primary' | 'purple' | 'red' | 'yellow' | 'none';
+

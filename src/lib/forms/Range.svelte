@@ -5,7 +5,7 @@
 		inputclass: string;
 	}
 	import { twMerge } from 'tailwind-merge';
-	import '$lib/style.css';
+	// import '$lib/style.css';
 
 	let { value, size = 'md', inputclass, ...attributes } = $props<Props>();
 
