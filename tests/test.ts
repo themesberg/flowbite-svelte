@@ -83,6 +83,11 @@ test('about page has expected h1', async ({ page }) => {
 });
 
 // Forms
+test('checkbox page has expected h1', async ({ page }) => {
+	await page.goto('/forms/checkbox');
+	expect(await page.textContent('h1')).toBe('Checkbox');
+});
+
 test('range page has expected h1', async ({ page }) => {
 	await page.goto('/forms/range');
 	expect(await page.textContent('h1')).toBe('Range');

@@ -44,6 +44,7 @@
 			<SidebarDropdownItem label="Video" href="/components/video" />
 		</SidebarDropdownWrapper>
 		<SidebarDropdownWrapper label="Forms" isOpen={hasPath('forms')}>
+			<SidebarDropdownItem label="Checkbox" href="/forms/checkbox" />
 			<SidebarDropdownItem label="Radio" href="/forms/radio" />
 			<SidebarDropdownItem label="Range" href="/forms/range" />
 			<SidebarDropdownItem label="Select" href="/forms/select" />

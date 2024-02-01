@@ -159,6 +159,7 @@
 				<SidebarItem onclick={closeNavDrawer} label="Video" href="/components/video" />
 			</SidebarDropdownWrapper>
 			<SidebarDropdownWrapper label="Forms">
+				<SidebarDropdownItem onclick={closeNavDrawer} label="Checkbox" href="/forms/checkbox" />
 				<SidebarDropdownItem onclick={closeNavDrawer} label="Radio" href="/forms/radio" />
 				<SidebarDropdownItem onclick={closeNavDrawer} label="Range" href="/forms/range" />
 				<SidebarDropdownItem onclick={closeNavDrawer} label="Select" href="/forms/select" />
