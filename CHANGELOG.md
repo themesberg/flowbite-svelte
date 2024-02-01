@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.17](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.16...v0.2.17) (2024-02-01)
+
+
+### Features
+
+* add Range, Radio, Helper, RadioButton components ([254fbf5](https://github.com/shinokada/svelte-5-ui-lib/commit/254fbf5d27268bf8174751a953ab02ac314b7664))
+
 ### [0.2.16](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.15...v0.2.16) (2024-01-31)
 
 
