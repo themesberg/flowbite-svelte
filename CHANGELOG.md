@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.18](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.12...v0.2.18) (2024-02-01)
+
+
+### Features
+
+* add Checkbox component ([ace15d4](https://github.com/shinokada/svelte-5-ui-lib/commit/ace15d43be6385206de9bed3284172a3ceb49a7f))
+* add list-group components and page ([f05eea0](https://github.com/shinokada/svelte-5-ui-lib/commit/f05eea07f833501cd144e4b67e0bb6f6c58add77))
+* add list-group components and page ([1653fd2](https://github.com/shinokada/svelte-5-ui-lib/commit/1653fd25bf159350378a83d67afea18f2cef9c91))
+* add MetaTag ([8a56bcc](https://github.com/shinokada/svelte-5-ui-lib/commit/8a56bccf951aa75636f5b2eb40421187f01e6a7c))
+* add range component, page, and test ([66d1ee9](https://github.com/shinokada/svelte-5-ui-lib/commit/66d1ee923db0342b2cb0f5cd9966b222bfa06124))
+* add Range, Radio, Helper, RadioButton components ([254fbf5](https://github.com/shinokada/svelte-5-ui-lib/commit/254fbf5d27268bf8174751a953ab02ac314b7664))
+* add rating components and page ([dc2a40b](https://github.com/shinokada/svelte-5-ui-lib/commit/dc2a40b87a8e8d98b93f8a8610129a665098bb1f))
+
+
+### Bug Fixes
+
+* add activeclass to dropdown ([86a210d](https://github.com/shinokada/svelte-5-ui-lib/commit/86a210d2bb1a936808ac90ebd8f99aed0acf40ac))
+* add kit to peerDependencies ([f82cb7d](https://github.com/shinokada/svelte-5-ui-lib/commit/f82cb7dd1c84879e17b1010ee5074c1a5a5704cc))
+* gallery page for Safari hack ([27a1ac7](https://github.com/shinokada/svelte-5-ui-lib/commit/27a1ac7f1f96558f3fe6c118e1ba9f0976479246))
+* list-group md ([3e115ed](https://github.com/shinokada/svelte-5-ui-lib/commit/3e115ed6dd870339a7a516d814a880b17692b429))
+* list-group page ([81865ee](https://github.com/shinokada/svelte-5-ui-lib/commit/81865ee918eaa8270910816a078c111bd956d153))
+* MetaTag ([9874d0d](https://github.com/shinokada/svelte-5-ui-lib/commit/9874d0deb752f31e1dce42a7d0e2bd4ddb9a7079))
+* remove tabindex=-1 ([ff4c440](https://github.com/shinokada/svelte-5-ui-lib/commit/ff4c44070d739ede4b98aa1418c161108ebf5c71))
+
 ### [0.2.17](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.16...v0.2.17) (2024-02-01)
 
 
