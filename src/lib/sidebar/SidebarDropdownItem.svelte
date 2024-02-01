@@ -29,7 +29,7 @@
 	<a {...attributes} {href} class={currentUrl === href ? activeCls : aCls}>
 		{label}
 		{#if children}
-		{@render children()}
+			{@render children()}
 		{/if}
 	</a>
 </li>

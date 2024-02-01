@@ -44,17 +44,17 @@
 			<SidebarDropdownItem label="Video" href="/components/video" />
 		</SidebarDropdownWrapper>
 		<SidebarDropdownWrapper label="Forms" isOpen={hasPath('forms')}>
-			<SidebarDropdownItem label="Radio" href="/forms/radio"/>
-			<SidebarDropdownItem label="Range" href="/forms/range"/>
-			<SidebarDropdownItem label="Select" href="/forms/select"/>
+			<SidebarDropdownItem label="Radio" href="/forms/radio" />
+			<SidebarDropdownItem label="Range" href="/forms/range" />
+			<SidebarDropdownItem label="Select" href="/forms/select" />
 		</SidebarDropdownWrapper>
 		<SidebarDropdownWrapper label="Typography" isOpen={hasPath('typography')}>
-			<SidebarDropdownItem label="Blockquote" href="/typography/blockquote"/>
-			<SidebarDropdownItem label="Heading/Span/Mark" href="/typography/heading"/>
-			<SidebarDropdownItem label="HR" href="/typography/hr"/>
-			<SidebarDropdownItem label="Link" href="/typography/link"/>
-			<SidebarDropdownItem label="List" href="/typography/list"/>
-			<SidebarDropdownItem label="Paragraph" href="/typography/paragraph"/>
+			<SidebarDropdownItem label="Blockquote" href="/typography/blockquote" />
+			<SidebarDropdownItem label="Heading/Span/Mark" href="/typography/heading" />
+			<SidebarDropdownItem label="HR" href="/typography/hr" />
+			<SidebarDropdownItem label="Link" href="/typography/link" />
+			<SidebarDropdownItem label="List" href="/typography/list" />
+			<SidebarDropdownItem label="Paragraph" href="/typography/paragraph" />
 		</SidebarDropdownWrapper>
 	</SidebarGroup>
 </Sidebar>

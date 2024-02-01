@@ -40,18 +40,28 @@
 	import { getContext } from 'svelte';
 	import type { FormColorType } from '../types';
 	import Label from './Label.svelte';
-    
+
 	interface Props {
 		children?: any;
-        labelclass?: string;
+		labelclass?: string;
 		color?: FormColorType;
 		custom?: boolean;
 		inline?: boolean;
 		group?: number | string | undefined;
 		value?: number | string;
-        inputclass?: string;
+		inputclass?: string;
 	}
-	let { children, labelclass = '', color = 'primary', custom = false, inline = false, group, value, inputclass = '', ...attributes } = $props<Props>();
+	let {
+		children,
+		labelclass = '',
+		color = 'primary',
+		custom = false,
+		inline = false,
+		group,
+		value,
+		inputclass = '',
+		...attributes
+	} = $props<Props>();
 
 	// tinted if put in component having its own background
 	let background: boolean = getContext('background');

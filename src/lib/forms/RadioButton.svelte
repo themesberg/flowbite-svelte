@@ -7,7 +7,7 @@
 		group?: string | number;
 		value?: string | number;
 		inline?: boolean;
-        btnclass?: string;
+		btnclass?: string;
 
 		// Button properties forwarding
 		pill?: boolean;
@@ -21,7 +21,7 @@
 		group,
 		value,
 		inline = true,
-        btnclass,
+		btnclass,
 		pill,
 		outline,
 		size,

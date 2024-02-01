@@ -114,6 +114,24 @@ export interface ListGroupItemType {
 	[propName: string]: any;
 }
 
-export type FormColorType = 'blue' | 'red' | 'green' | 'purple' | 'teal' | 'yellow' | 'orange' | 'primary' | 'secondary';
-export type ButtonColorType = 'alternative' | 'blue' | 'dark' | 'green' | 'light' | 'primary' | 'purple' | 'red' | 'yellow' | 'none';
-
+export type FormColorType =
+	| 'blue'
+	| 'red'
+	| 'green'
+	| 'purple'
+	| 'teal'
+	| 'yellow'
+	| 'orange'
+	| 'primary'
+	| 'secondary';
+export type ButtonColorType =
+	| 'alternative'
+	| 'blue'
+	| 'dark'
+	| 'green'
+	| 'light'
+	| 'primary'
+	| 'purple'
+	| 'red'
+	| 'yellow'
+	| 'none';

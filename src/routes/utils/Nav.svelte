@@ -159,17 +159,29 @@
 				<SidebarItem onclick={closeNavDrawer} label="Video" href="/components/video" />
 			</SidebarDropdownWrapper>
 			<SidebarDropdownWrapper label="Forms">
-				<SidebarDropdownItem onclick={closeNavDrawer} label="Radio" href="/forms/radio"/>
-				<SidebarDropdownItem onclick={closeNavDrawer} label="Range" href="/forms/range"/>
-				<SidebarDropdownItem onclick={closeNavDrawer} label="Select" href="/forms/select"/>
+				<SidebarDropdownItem onclick={closeNavDrawer} label="Radio" href="/forms/radio" />
+				<SidebarDropdownItem onclick={closeNavDrawer} label="Range" href="/forms/range" />
+				<SidebarDropdownItem onclick={closeNavDrawer} label="Select" href="/forms/select" />
 			</SidebarDropdownWrapper>
 			<SidebarDropdownWrapper label="Typography">
-				<SidebarDropdownItem onclick={closeNavDrawer} label="Blockquote" href="/typography/blockquote"/>
-				<SidebarDropdownItem onclick={closeNavDrawer} label="Heading/Span/Mark" href="/typography/heading"/>
-				<SidebarDropdownItem onclick={closeNavDrawer} label="HR" href="/typography/hr"/>
-				<SidebarDropdownItem onclick={closeNavDrawer} label="Link" href="/typography/link"/>
-				<SidebarDropdownItem onclick={closeNavDrawer} label="List" href="/typography/list"/>
-				<SidebarDropdownItem onclick={closeNavDrawer} label="Paragraph" href="/typography/paragraph"/>
+				<SidebarDropdownItem
+					onclick={closeNavDrawer}
+					label="Blockquote"
+					href="/typography/blockquote"
+				/>
+				<SidebarDropdownItem
+					onclick={closeNavDrawer}
+					label="Heading/Span/Mark"
+					href="/typography/heading"
+				/>
+				<SidebarDropdownItem onclick={closeNavDrawer} label="HR" href="/typography/hr" />
+				<SidebarDropdownItem onclick={closeNavDrawer} label="Link" href="/typography/link" />
+				<SidebarDropdownItem onclick={closeNavDrawer} label="List" href="/typography/list" />
+				<SidebarDropdownItem
+					onclick={closeNavDrawer}
+					label="Paragraph"
+					href="/typography/paragraph"
+				/>
 			</SidebarDropdownWrapper>
 		</SidebarGroup>
 	</Sidebar>
