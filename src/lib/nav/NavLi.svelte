@@ -37,7 +37,7 @@
 	};
 
 	const activeStyle =
-		'block py-2 px-3 text-md hover:underline text-white bg-primary-700 rounded dark:text-white ';
+		'block py-2 px-3 text-md hover:underline text-gray-700 bg-primary-700 rounded dark:text-white ';
 	let linkCls = twMerge(linkStyle, linkBreak[breakPoint], aclass);
 	let activeCls = twMerge(activeStyle, activeBreak[breakPoint], activeClass);
 
