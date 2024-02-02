@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.20](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.19...v0.2.20) (2024-02-02)
+
+
+### Bug Fixes
+
+* NavLi text color ([83ba5a3](https://github.com/shinokada/svelte-5-ui-lib/commit/83ba5a3e4ce231288ffced149467f5efdd677ac2))
+
 ### [0.2.19](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.17...v0.2.19) (2024-02-02)
 
 
