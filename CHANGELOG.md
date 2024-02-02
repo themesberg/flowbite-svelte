@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.19](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.17...v0.2.19) (2024-02-02)
+
+
+### Features
+
+* add Checkbox component ([ace15d4](https://github.com/shinokada/svelte-5-ui-lib/commit/ace15d43be6385206de9bed3284172a3ceb49a7f))
+
+
+### Bug Fixes
+
+* icons update for flowbite-svelte-icons v1.0.4 ([549e904](https://github.com/shinokada/svelte-5-ui-lib/commit/549e9042b505d1960318d19d5d410f1b36832e61))
+
 ### [0.2.18](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.12...v0.2.18) (2024-02-01)
 
 
