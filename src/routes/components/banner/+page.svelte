@@ -1,10 +1,10 @@
 <script>
 	import { Banner, Skeleton, ImagePlaceholder } from '$lib';
 	import {
-		BullhornSolid,
+		BullhornOutline,
 		SalePercentSolid,
 		ArrowRightSolid,
-		OpenBookSolid
+		BookOpenSolid
 	} from 'flowbite-svelte-icons';
 
 	import HighlightCompo from '../../utils/HighlightCompo.svelte';
@@ -29,7 +29,7 @@
 	<Banner id="default-banner" position="absolute">
 		<p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
 			<span class="me-3 inline-flex rounded-full bg-gray-200 p-1 dark:bg-gray-600">
-				<BullhornSolid class="h-3 w-3 text-gray-500 dark:text-gray-400" />
+				<BullhornOutline class="h-3 w-3 text-gray-500 dark:text-gray-400" />
 				<span class="sr-only">Light bulb</span>
 			</span>
 			<span>
@@ -151,7 +151,7 @@
 			href="/"
 			class="me-3 inline-flex items-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
 		>
-			<OpenBookSolid class="me-2 h-3 w-3" />
+			<BookOpenSolid class="me-2 h-3 w-3" />
 			Learn more
 		</a>
 		<a

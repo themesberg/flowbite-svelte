@@ -1,6 +1,6 @@
 <script>
 	import { List, Li, Heading, Span, DescriptionList, A } from '$lib';
-	import { CheckCircleSolid, CloseCircleSolid, CheckOutline } from 'flowbite-svelte-icons';
+	import { CheckCircleOutline, XCircleSolid, CheckOutline } from 'flowbite-svelte-icons';
 	import HighlightCompo from '../../utils/HighlightCompo.svelte';
 	import CodeWrapper from '../../utils/CodeWrapper.svelte';
 	import H1 from '../../utils/H1.svelte';
@@ -40,15 +40,15 @@
 	>
 	<List tag="ul" class="space-y-1 text-gray-500 dark:text-gray-400" list="none">
 		<Li icon>
-			<CheckCircleSolid class="me-2 h-3.5 w-3.5 text-green-500 dark:text-green-400" />
+			<CheckCircleOutline class="me-2 h-3.5 w-3.5 text-green-500 dark:text-green-400" />
 			At least 10 characters (and up to 100 characters)
 		</Li>
 		<Li icon>
-			<CheckCircleSolid class="me-2 h-3.5 w-3.5 text-green-500 dark:text-green-400" />
+			<CheckCircleOutline class="me-2 h-3.5 w-3.5 text-green-500 dark:text-green-400" />
 			At least one lowercase character
 		</Li>
 		<Li icon>
-			<CloseCircleSolid class="me-2 h-3.5 w-3.5 text-gray-500 dark:text-gray-400" />
+			<XCircleSolid class="me-2 h-3.5 w-3.5 text-gray-500 dark:text-gray-400" />
 			Inclusion of at least one special character, e.g., ! @ # ?
 		</Li>
 	</List>

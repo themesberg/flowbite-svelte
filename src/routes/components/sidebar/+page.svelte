@@ -7,16 +7,16 @@
 		SidebarDropdownItem
 	} from '$lib';
 	import {
-		ChartPieSolid,
+		ChartSolid,
 		GridSolid,
 		MailBoxSolid,
 		UserSolid,
 		ArrowRightToBracketSolid,
-		FileEditSolid,
-		ShoppingCartSolid,
+		EditSolid,
+		ShoppingBagSolid,
 		FireSolid,
 		BookSolid,
-		WindowRestoreOutline
+		RestoreWindowOutline
 	} from 'flowbite-svelte-icons';
 	let spanclass = 'flex-1 ms-3 whitespace-nowrap';
 
@@ -36,7 +36,7 @@
 		<SidebarGroup>
 			<SidebarItem label="Dashboard" href="/">
 				{#snippet icon()}
-					<ChartPieSolid
+					<ChartSolid
 						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
 					/>
 				{/snippet}
@@ -89,14 +89,14 @@
 		<SidebarGroup>
 			<SidebarItem label="Dashboard">
 				{#snippet icon()}
-					<ChartPieSolid
+					<ChartSolid
 						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
 					/>
 				{/snippet}
 			</SidebarItem>
 			<SidebarDropdownWrapper label="E-commerce">
 				{#snippet icon()}
-					<ShoppingCartSolid
+					<ShoppingBagSolid
 						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
 					/>
 				{/snippet}
@@ -148,7 +148,7 @@
 			</SidebarItem>
 			<SidebarItem label="Sign Up">
 				{#snippet icon()}
-					<FileEditSolid
+					<EditSolid
 						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
 					/>
 				{/snippet}
@@ -166,7 +166,7 @@
 		<SidebarGroup>
 			<SidebarItem label="Dashboard" href="/">
 				{#snippet icon()}
-					<ChartPieSolid
+					<ChartSolid
 						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
 					/>
 				{/snippet}
@@ -224,7 +224,7 @@
 			</SidebarItem>
 			<SidebarItem label="Components">
 				{#snippet icon()}
-					<WindowRestoreOutline
+					<RestoreWindowOutline
 						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
 					/>
 				{/snippet}

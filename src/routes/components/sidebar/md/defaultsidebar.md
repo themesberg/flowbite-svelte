@@ -7,16 +7,16 @@
 		SidebarDropdownItem
 	} from 'svelte-5-ui-lib';
 	import {
-		ChartPieSolid,
+		ChartSolid,
 		GridSolid,
 		MailBoxSolid,
 		UserSolid,
 		ArrowRightToBracketSolid,
-		FileEditSolid,
-		ShoppingCartSolid,
+		EditSolid,
+		ShoppingBagSolid,
         FireSolid,
         BookSolid,
-        WindowRestoreOutline
+        RestoreWindowOutline
 	} from 'flowbite-svelte-icons';
 	let spanclass = 'flex-1 ms-3 whitespace-nowrap';
 </script>
@@ -24,7 +24,7 @@
 	<SidebarGroup>
 		<SidebarItem label="Dashboard" href="/">
 			{#snippet icon()}
-				<ChartPieSolid
+				<ChartSolid
 					class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
 				/>
 			{/snippet}

@@ -1,6 +1,6 @@
 <script>
 	import { Button, Indicator } from '$lib';
-	import { EnvelopeSolid, ArrowRightOutline, ShoppingCartSolid } from 'flowbite-svelte-icons';
+	import { EnvelopeSolid, ArrowRightOutline, ShoppingBagSolid } from 'flowbite-svelte-icons';
 	import HighlightCompo from '../../utils/HighlightCompo.svelte';
 	import CodeWrapper from '../../utils/CodeWrapper.svelte';
 	import H1 from '../../utils/H1.svelte';
@@ -83,7 +83,7 @@
 
 <CodeWrapper>
 	<Button>
-		<ShoppingCartSolid class="me-2 h-3.5 w-3.5" /> Buy Now
+		<ShoppingBagSolid class="me-2 h-3.5 w-3.5" /> Buy Now
 	</Button>
 	<Button>
 		Choose Plan <ArrowRightOutline class="ms-2 h-3.5 w-3.5" />

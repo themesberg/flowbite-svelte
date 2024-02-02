@@ -1,7 +1,7 @@
 <Banner id="default-banner" position="absolute">
   <p class="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
     <span class="inline-flex p-1 me-3 bg-gray-200 rounded-full dark:bg-gray-600">
-      <BullhornSolid class="w-3 h-3 text-gray-500 dark:text-gray-400" />
+      <BullhornOutline class="w-3 h-3 text-gray-500 dark:text-gray-400" />
       <span class="sr-only">Light bulb</span>
     </span>
     <span>

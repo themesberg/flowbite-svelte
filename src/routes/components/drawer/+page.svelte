@@ -12,13 +12,13 @@
 	import {
 		InfoCircleSolid,
 		ArrowRightOutline,
-		ChartPieSolid,
+		ChartSolid,
 		GridSolid,
 		MailBoxSolid,
 		UserSolid,
 		ArrowRightToBracketSolid,
-		FileEditSolid,
-		ShoppingCartSolid
+		EditSolid,
+		ShoppingBagSolid
 	} from 'flowbite-svelte-icons';
 	import { sineIn } from 'svelte/easing';
 
@@ -222,14 +222,14 @@
 			<SidebarGroup>
 				<SidebarItem label="Dashboard">
 					{#snippet icon()}
-						<ChartPieSolid
+						<ChartSolid
 							class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
 						/>
 					{/snippet}
 				</SidebarItem>
 				<SidebarDropdownWrapper label="E-commerce">
 					{#snippet icon()}
-						<ShoppingCartSolid
+						<ShoppingBagSolid
 							class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
 						/>
 					{/snippet}
@@ -281,7 +281,7 @@
 				</SidebarItem>
 				<SidebarItem label="Sign Up">
 					{#snippet icon()}
-						<FileEditSolid
+						<EditSolid
 							class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
 						/>
 					{/snippet}
