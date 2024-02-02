@@ -24,7 +24,7 @@
 <H2>Default Nav</H2>
 
 <CodeWrapper>
-	<Navbar {toggleNav} {closeNav} {navStatus} breakPoint="xl">
+	<Navbar {toggleNav} {closeNav} {navStatus} breakPoint="md">
 		{#snippet brand()}
 			<NavBrand siteName="Svelte 5" {closeNav}>
 				<img width="30" src="/images/svelte-icon.png" alt="svelte icon" />
@@ -33,10 +33,10 @@
 
 		<NavUl>
 			<NavLi href="/" {closeNav}>Home</NavLi>
-			<NavLi href="/navbar" {closeNav}>Navbar</NavLi>
-			<NavLi href="/footer" {closeNav}>Footer</NavLi>
+			<NavLi href="/components/navbar" {closeNav}>Navbar</NavLi>
+			<NavLi href="/components/footer" {closeNav}>Footer</NavLi>
 		</NavUl>
 	</Navbar>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/navbar1.md']} />
+<HighlightCompo code={modules['./md/default-nav.md']} />
