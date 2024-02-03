@@ -45,6 +45,7 @@
 		</SidebarDropdownWrapper>
 		<SidebarDropdownWrapper label="Forms" isOpen={hasPath('forms')}>
 			<SidebarDropdownItem label="Checkbox" href="/forms/checkbox" />
+			<SidebarDropdownItem label="Floating label" href="/forms/floating-label" />
 			<SidebarDropdownItem label="Radio" href="/forms/radio" />
 			<SidebarDropdownItem label="Range" href="/forms/range" />
 			<SidebarDropdownItem label="Select" href="/forms/select" />

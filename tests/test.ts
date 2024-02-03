@@ -88,6 +88,11 @@ test('checkbox page has expected h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Checkbox');
 });
 
+test('floating label page has expected h1', async ({ page }) => {
+	await page.goto('/forms/floating-label');
+	expect(await page.textContent('h1')).toBe('Floating label');
+});
+
 test('range page has expected h1', async ({ page }) => {
 	await page.goto('/forms/range');
 	expect(await page.textContent('h1')).toBe('Range');

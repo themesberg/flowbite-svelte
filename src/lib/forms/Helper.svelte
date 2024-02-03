@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
 	interface Props {
-		children: any;
-		pclass: string;
-		color: 'gray' | 'green' | 'red' | 'disabled';
+		children?: any;
+		pclass?: string;
+		color?: 'gray' | 'green' | 'red' | 'disabled';
 	}
 	let { children, pclass, color = 'gray', ...attributes } = $props<Props>();
 	const colorClasses = {
