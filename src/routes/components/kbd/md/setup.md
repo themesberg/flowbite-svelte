@@ -1,3 +1,3 @@
 <script>
-    import { Kbd } from '$lib';
+    import { Kbd } from 'svelte-5-ui-lib';
 </script>

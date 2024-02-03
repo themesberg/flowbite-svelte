@@ -48,6 +48,7 @@
 			<SidebarDropdownItem label="Radio" href="/forms/radio" />
 			<SidebarDropdownItem label="Range" href="/forms/range" />
 			<SidebarDropdownItem label="Select" href="/forms/select" />
+			<SidebarDropdownItem label="Toggle" href="/forms/toggle" />
 		</SidebarDropdownWrapper>
 		<SidebarDropdownWrapper label="Typography" isOpen={hasPath('typography')}>
 			<SidebarDropdownItem label="Blockquote" href="/typography/blockquote" />

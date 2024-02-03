@@ -1,5 +1,5 @@
 <script>
-    import { Kbd } from '$lib';
+    import { Kbd } from 'svelte-5-ui-lib';
     import { CaretDownSolid, CaretRightSolid, CaretLeftSolid, CaretUpSolid } from 'flowbite-svelte-icons';
 </script>
 

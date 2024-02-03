@@ -1,5 +1,5 @@
 <script>
-    import { Hr, P } from '$lib'
+    import { Hr, P } from 'svelte-5-ui-lib'
     import { QuoteSolid } from 'flowbite-svelte-icons';
 </script>
 

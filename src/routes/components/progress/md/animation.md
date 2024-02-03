@@ -1,5 +1,5 @@
 <script>
-    import { Progressbar, Button } from '$lib';
+    import { Progressbar, Button } from 'svelte-5-ui-lib';
     import { sineOut } from 'svelte/easing';
     let progress = '45'
 </script>

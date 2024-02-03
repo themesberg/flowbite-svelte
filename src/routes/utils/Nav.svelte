@@ -163,6 +163,7 @@
 				<SidebarDropdownItem onclick={closeNavDrawer} label="Radio" href="/forms/radio" />
 				<SidebarDropdownItem onclick={closeNavDrawer} label="Range" href="/forms/range" />
 				<SidebarDropdownItem onclick={closeNavDrawer} label="Select" href="/forms/select" />
+				<SidebarDropdownItem onclick={closeNavDrawer} label="Toggle" href="/forms/toggle" />
 			</SidebarDropdownWrapper>
 			<SidebarDropdownWrapper label="Typography">
 				<SidebarDropdownItem

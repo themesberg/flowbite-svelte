@@ -1,5 +1,5 @@
 <script>
-    import { Spinner, Button } from '$lib'
+    import { Spinner, Button } from 'svelte-5-ui-lib'
 </script>
 
 <div class="flex flex-wrap items-center gap-2">

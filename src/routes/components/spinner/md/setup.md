@@ -1,3 +1,3 @@
 <script>
-    import { Spinner } from '$lib'
+    import { Spinner } from 'svelte-5-ui-lib'
 </script>
