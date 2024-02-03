@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.21](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.20...v0.2.21) (2024-02-03)
+
+
+### Features
+
+* add Toggle component ([98c6aa6](https://github.com/shinokada/svelte-5-ui-lib/commit/98c6aa63c1eb1269c8c7bd9233526d93a3e632f6))
+
+
+### Bug Fixes
+
+* nav example ([036dd5f](https://github.com/shinokada/svelte-5-ui-lib/commit/036dd5f8804ca9d32e0c43fb787898f876947f91))
+
 ### [0.2.20](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.19...v0.2.20) (2024-02-02)
 
 
