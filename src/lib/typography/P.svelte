@@ -70,13 +70,13 @@
     prewrap: 'whitespace-pre-wrap'
   };
 
-  let colorAndopacity = color
+  $: colorAndopacity = color
     .split(' ')
     .map((element) => element.trim())
     .map((element) => element + '/' + String(opacity))
     .join(' ');
 
-  let classP = twMerge(size && sizes[size], (opacity && colorAndopacity) || (color && color), height && heights[height], weight && weights[weight], space && spaces[space], align && aligns[align], justify && 'text-justify', italic && 'italic', firstupper && upperClass, whitespace && whitespaces[whitespace], $$props.class);
+  $: classP = twMerge(size && sizes[size], (opacity && colorAndopacity) || (color && color), height && heights[height], weight && weights[weight], space && spaces[space], align && aligns[align], justify && 'text-justify', italic && 'italic', firstupper && upperClass, whitespace && whitespaces[whitespace], $$props.class);
 </script>
 
 <p {...$$restProps} class={classP}>
