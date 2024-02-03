@@ -13,9 +13,9 @@
 					class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
 				/>
 			{/snippet}
-			<SidebarDropdownItem label="Sidebar" href="/sidebar"/>
-			<SidebarDropdownItem label="Billing"/>
-			<SidebarDropdownItem label="Invoice"/>
+			<SidebarItem label="Sidebar" href="/sidebar"/>
+			<SidebarItem label="Billing"/>
+			<SidebarItem label="Invoice"/>
 		</SidebarDropdownWrapper>
 		<SidebarItem label="Kanban" {spanclass}>
 			{#snippet icon()}

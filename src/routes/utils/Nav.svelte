@@ -11,8 +11,7 @@
 		Sidebar,
 		SidebarGroup,
 		SidebarItem,
-		SidebarDropdownWrapper,
-		SidebarDropdownItem
+		SidebarDropdownWrapper
 	} from '$lib';
 
 	import { sineIn } from 'svelte/easing';
@@ -159,28 +158,28 @@
 				<SidebarItem onclick={closeNavDrawer} label="Video" href="/components/video" />
 			</SidebarDropdownWrapper>
 			<SidebarDropdownWrapper label="Forms">
-				<SidebarDropdownItem onclick={closeNavDrawer} label="Checkbox" href="/forms/checkbox" />
-				<SidebarDropdownItem onclick={closeNavDrawer} label="Floating label" href="/forms/floating-label" />
-				<SidebarDropdownItem onclick={closeNavDrawer} label="Radio" href="/forms/radio" />
-				<SidebarDropdownItem onclick={closeNavDrawer} label="Range" href="/forms/range" />
-				<SidebarDropdownItem onclick={closeNavDrawer} label="Select" href="/forms/select" />
-				<SidebarDropdownItem onclick={closeNavDrawer} label="Toggle" href="/forms/toggle" />
+				<SidebarItem onclick={closeNavDrawer} label="Checkbox" href="/forms/checkbox" />
+				<SidebarItem onclick={closeNavDrawer} label="Floating label" href="/forms/floating-label" />
+				<SidebarItem onclick={closeNavDrawer} label="Radio" href="/forms/radio" />
+				<SidebarItem onclick={closeNavDrawer} label="Range" href="/forms/range" />
+				<SidebarItem onclick={closeNavDrawer} label="Select" href="/forms/select" />
+				<SidebarItem onclick={closeNavDrawer} label="Toggle" href="/forms/toggle" />
 			</SidebarDropdownWrapper>
 			<SidebarDropdownWrapper label="Typography">
-				<SidebarDropdownItem
+				<SidebarItem
 					onclick={closeNavDrawer}
 					label="Blockquote"
 					href="/typography/blockquote"
 				/>
-				<SidebarDropdownItem
+				<SidebarItem
 					onclick={closeNavDrawer}
 					label="Heading/Span/Mark"
 					href="/typography/heading"
 				/>
-				<SidebarDropdownItem onclick={closeNavDrawer} label="HR" href="/typography/hr" />
-				<SidebarDropdownItem onclick={closeNavDrawer} label="Link" href="/typography/link" />
-				<SidebarDropdownItem onclick={closeNavDrawer} label="List" href="/typography/list" />
-				<SidebarDropdownItem
+				<SidebarItem onclick={closeNavDrawer} label="HR" href="/typography/hr" />
+				<SidebarItem onclick={closeNavDrawer} label="Link" href="/typography/link" />
+				<SidebarItem onclick={closeNavDrawer} label="List" href="/typography/list" />
+				<SidebarItem
 					onclick={closeNavDrawer}
 					label="Paragraph"
 					href="/typography/paragraph"

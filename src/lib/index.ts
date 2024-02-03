@@ -70,7 +70,6 @@ export { default as Sidebar } from './sidebar/Sidebar.svelte';
 export { default as SidebarGroup } from './sidebar/SidebarGroup.svelte';
 export { default as SidebarItem } from './sidebar/SidebarItem.svelte';
 export { default as SidebarDropdownWrapper } from './sidebar/SidebarDropdownWrapper.svelte';
-export { default as SidebarDropdownItem } from './sidebar/SidebarDropdownItem.svelte';
 // skeleton
 export { default as CardPlaceholder } from './skeleton/CardPlaceholder.svelte';
 export { default as Skeleton } from './skeleton/Skeleton.svelte';

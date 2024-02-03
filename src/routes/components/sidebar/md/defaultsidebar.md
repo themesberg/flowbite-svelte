@@ -3,8 +3,7 @@
 		Sidebar,
 		SidebarGroup,
 		SidebarItem,
-		SidebarDropdownWrapper,
-		SidebarDropdownItem
+		SidebarDropdownWrapper
 	} from 'svelte-5-ui-lib';
 	import {
 		ChartSolid,

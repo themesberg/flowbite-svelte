@@ -6,8 +6,7 @@
 		Sidebar,
 		SidebarGroup,
 		SidebarItem,
-		SidebarDropdownWrapper,
-		SidebarDropdownItem
+		SidebarDropdownWrapper
 	} from '$lib';
 	import {
 		InfoCircleSolid,
@@ -27,6 +26,7 @@
 	import H1 from '../../utils/H1.svelte';
 	import H2 from '../../utils/H2.svelte';
 	import H3 from '../../utils/H3.svelte';
+	import { labelCls } from '$lib/forms/Radio.svelte';
 	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
 
 	let transitionParams = {
@@ -233,9 +233,9 @@
 							class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
 						/>
 					{/snippet}
-					<SidebarDropdownItem>Products</SidebarDropdownItem>
-					<SidebarDropdownItem>Billing</SidebarDropdownItem>
-					<SidebarDropdownItem>Invoice</SidebarDropdownItem>
+					<SidebarItem label="Products" />
+					<SidebarItem label="Billing" />
+					<SidebarItem label="Invoice" />
 				</SidebarDropdownWrapper>
 				<SidebarItem label="Kanban" {spanclass}>
 					{#snippet icon()}
