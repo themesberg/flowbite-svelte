@@ -1,25 +1,4 @@
-<script>
-	import {
-		Sidebar,
-		SidebarGroup,
-		SidebarItem,
-		SidebarDropdownWrapper
-	} from 'svelte-5-ui-lib';
-	import {
-		ChartSolid,
-		GridSolid,
-		MailBoxSolid,
-		UserSolid,
-		ArrowRightToBracketSolid,
-		EditSolid,
-		ShoppingBagSolid,
-        FireSolid,
-        BookSolid,
-        RestoreWindowOutline
-	} from 'flowbite-svelte-icons';
-	let spanclass = 'flex-1 ms-3 whitespace-nowrap';
-</script>
-<Sidebar>
+<Sidebar aclass='p-2'>
 	<SidebarGroup>
 		<SidebarItem label="Dashboard" href="/">
 			{#snippet icon()}

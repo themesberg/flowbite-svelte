@@ -1,5 +1,5 @@
 <script>
-    import { Drawer, Button, uiHelpers, Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper, SidebarDropdownItem } from 'svelte-5-ui-lib'
+    import { Drawer, Button, uiHelpers, Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper } from 'svelte-5-ui-lib'
     import { sineIn } from 'svelte/easing';
 
 	let transitionParams = {

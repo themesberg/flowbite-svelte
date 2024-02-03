@@ -8,26 +8,23 @@
 		activeClass?: string | undefined;
 		nonActiveClass?: string | undefined;
 	}
-
+	import { getContext } from 'svelte';
+	import type {SidebarType} from '$lib/types'
 	import { page } from '$app/stores';
 	import { twMerge } from 'tailwind-merge';
 
 	let { icon, subtext, href, label, spanclass, activeClass, nonActiveClass, ...attributes } =
 		$props<Props>();
+	const context = getContext<SidebarType>('sidebarContext') ?? {};
 	let currentUrl = $state();
 	let spanCls: string = twMerge('ms-3', spanclass);
 
 	$effect(() => {
 		currentUrl = $page.url.pathname;
 	});
-	let activeCls = twMerge(
-		'flex items-center p-2 text-base font-normal text-gray-900 bg-gray-200 dark:bg-gray-700 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700',
-		activeClass
-	);
-	let inactiveCls = twMerge(
-		'flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700',
-		nonActiveClass
-	);
+
+	let aCls = $derived(twMerge(currentUrl === href ? activeClass ?? context.activeClass : nonActiveClass ?? context.nonActiveClass));
+// $inspect('aclass', aClass)
 </script>
 
 <li>
@@ -35,7 +32,7 @@
 		{...attributes}
 		{href}
 		aria-current={currentUrl === href}
-		class={currentUrl === href ? activeCls : inactiveCls}
+		class={aCls}
 	>
 		{#if icon}
 			{@render icon()}

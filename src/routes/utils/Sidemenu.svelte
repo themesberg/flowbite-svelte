@@ -17,6 +17,7 @@
 <Sidebar
 	asideclass="fixed inset-0 z-30 flex-none h-full w-64 lg:static lg:h-auto border-e border-gray-200 dark:border-gray-600 lg:overflow-y-visible bg-gray-100 dark:bg-gray-900 lg:pt-0 lg:block hidden"
 	divclass="dark:bg-gray-900 bg-transparent"
+	aclass= 'pl-6'
 >
 	<SidebarGroup>
 		<SidebarDropdownWrapper label="Components" isOpen={hasPath('components')}>
