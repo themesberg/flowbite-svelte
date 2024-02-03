@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.23](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.22...v0.2.23) (2024-02-03)
+
+
+### Bug Fixes
+
+* remove and replace SidebarDropdownItem with SidebarItem ([900d3a5](https://github.com/shinokada/svelte-5-ui-lib/commit/900d3a5f3267ed7e8aa194d5008c1f0c2756b18e))
+* remove SidebarDropdownItem ([ee4ef47](https://github.com/shinokada/svelte-5-ui-lib/commit/ee4ef474bc5f51521323e7392af836e261e2bd4a))
+* remove SidebarDropdownItem ([3d019df](https://github.com/shinokada/svelte-5-ui-lib/commit/3d019dfd8a0131d86ab74e74e218f56aaf46feef))
+
 ### [0.2.22](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.21...v0.2.22) (2024-02-03)
 
 
