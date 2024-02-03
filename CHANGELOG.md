@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.22](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.21...v0.2.22) (2024-02-03)
+
+
+### Features
+
+* FloatingLabel component is added ([9b6ea52](https://github.com/shinokada/svelte-5-ui-lib/commit/9b6ea52c4e070da451e04fb59d473fdb5461ea67))
+
 ### [0.2.21](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.20...v0.2.21) (2024-02-03)
 
 

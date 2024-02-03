@@ -1,6 +1,6 @@
 {
   "name": "svelte-5-ui-lib",
-  "version": "0.2.21",
+  "version": "0.2.22",
   "description": "A UI library for Svelte 5.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -174,6 +174,10 @@
     "./Checkbox.svelte": {
       "types": "./dist/forms/Checkbox.svelte.d.ts",
       "svelte": "./dist/forms/Checkbox.svelte"
+    },
+    "./FloatingLabel.svelte": {
+      "types": "./dist/forms/FloatingLabel.svelte.d.ts",
+      "svelte": "./dist/forms/FloatingLabel.svelte"
     },
     "./Helper.svelte": {
       "types": "./dist/forms/Helper.svelte.d.ts",
