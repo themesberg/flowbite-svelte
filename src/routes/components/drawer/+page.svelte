@@ -218,7 +218,7 @@
 				<span class="sr-only">Close modal</span>
 			</button>
 		</div>
-		<Sidebar aclass='p-2'>
+		<Sidebar aclass="p-2">
 			<SidebarGroup>
 				<SidebarItem label="Dashboard">
 					{#snippet icon()}
@@ -237,7 +237,7 @@
 					<SidebarItem label="Billing" />
 					<SidebarItem label="Invoice" />
 				</SidebarDropdownWrapper>
-				<SidebarItem label="Drawer" href='/components/drawer' {spanclass}>
+				<SidebarItem label="Drawer" href="/components/drawer" {spanclass}>
 					{#snippet icon()}
 						<GridSolid
 							class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"

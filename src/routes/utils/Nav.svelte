@@ -166,11 +166,7 @@
 				<SidebarItem onclick={closeNavDrawer} label="Toggle" href="/forms/toggle" />
 			</SidebarDropdownWrapper>
 			<SidebarDropdownWrapper label="Typography">
-				<SidebarItem
-					onclick={closeNavDrawer}
-					label="Blockquote"
-					href="/typography/blockquote"
-				/>
+				<SidebarItem onclick={closeNavDrawer} label="Blockquote" href="/typography/blockquote" />
 				<SidebarItem
 					onclick={closeNavDrawer}
 					label="Heading/Span/Mark"
@@ -179,11 +175,7 @@
 				<SidebarItem onclick={closeNavDrawer} label="HR" href="/typography/hr" />
 				<SidebarItem onclick={closeNavDrawer} label="Link" href="/typography/link" />
 				<SidebarItem onclick={closeNavDrawer} label="List" href="/typography/list" />
-				<SidebarItem
-					onclick={closeNavDrawer}
-					label="Paragraph"
-					href="/typography/paragraph"
-				/>
+				<SidebarItem onclick={closeNavDrawer} label="Paragraph" href="/typography/paragraph" />
 			</SidebarDropdownWrapper>
 		</SidebarGroup>
 	</Sidebar>

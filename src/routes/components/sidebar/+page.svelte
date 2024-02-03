@@ -1,10 +1,5 @@
 <script>
-	import {
-		Sidebar,
-		SidebarGroup,
-		SidebarItem,
-		SidebarDropdownWrapper
-	} from '$lib';
+	import { Sidebar, SidebarGroup, SidebarItem, SidebarDropdownWrapper } from '$lib';
 	import {
 		ChartSolid,
 		GridSolid,
@@ -31,7 +26,7 @@
 <H2>Default Sidebar</H2>
 
 <CodeWrapper>
-	<Sidebar aclass='p-2'>
+	<Sidebar aclass="p-2">
 		<SidebarGroup>
 			<SidebarItem label="Dashboard" href="/">
 				{#snippet icon()}
@@ -84,7 +79,7 @@
 <H2>Multi-level dropdown</H2>
 
 <CodeWrapper>
-	<Sidebar aclass='p-2'>
+	<Sidebar aclass="p-2">
 		<SidebarGroup>
 			<SidebarItem label="Dashboard">
 				{#snippet icon()}
@@ -93,7 +88,7 @@
 					/>
 				{/snippet}
 			</SidebarItem>
-			<SidebarDropdownWrapper label="E-commerce" btnclass='p-2'>
+			<SidebarDropdownWrapper label="E-commerce" btnclass="p-2">
 				{#snippet icon()}
 					<ShoppingBagSolid
 						class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
@@ -161,7 +156,7 @@
 <H2>Content separator</H2>
 
 <CodeWrapper>
-	<Sidebar aclass='p-2'>
+	<Sidebar aclass="p-2">
 		<SidebarGroup>
 			<SidebarItem label="Dashboard" href="/">
 				{#snippet icon()}

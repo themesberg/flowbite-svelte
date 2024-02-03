@@ -283,10 +283,6 @@
       "types": "./dist/sidebar/Sidebar.svelte.d.ts",
       "svelte": "./dist/sidebar/Sidebar.svelte"
     },
-    "./SidebarDropdownItem.svelte": {
-      "types": "./dist/sidebar/SidebarDropdownItem.svelte.d.ts",
-      "svelte": "./dist/sidebar/SidebarDropdownItem.svelte"
-    },
     "./SidebarDropdownWrapper.svelte": {
       "types": "./dist/sidebar/SidebarDropdownWrapper.svelte.d.ts",
       "svelte": "./dist/sidebar/SidebarDropdownWrapper.svelte"

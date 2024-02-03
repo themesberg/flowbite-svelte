@@ -9,7 +9,7 @@
 		nonActiveClass?: string | undefined;
 	}
 	import { getContext } from 'svelte';
-	import type {SidebarType} from '$lib/types'
+	import type { SidebarType } from '$lib/types';
 	import { page } from '$app/stores';
 	import { twMerge } from 'tailwind-merge';
 
@@ -23,17 +23,18 @@
 		currentUrl = $page.url.pathname;
 	});
 
-	let aCls = $derived(twMerge(currentUrl === href ? activeClass ?? context.activeClass : nonActiveClass ?? context.nonActiveClass));
-// $inspect('aclass', aClass)
+	let aCls = $derived(
+		twMerge(
+			currentUrl === href
+				? activeClass ?? context.activeClass
+				: nonActiveClass ?? context.nonActiveClass
+		)
+	);
+	// $inspect('aclass', aClass)
 </script>
 
 <li>
-	<a
-		{...attributes}
-		{href}
-		aria-current={currentUrl === href}
-		class={aCls}
-	>
+	<a {...attributes} {href} aria-current={currentUrl === href} class={aCls}>
 		{#if icon}
 			{@render icon()}
 		{/if}
