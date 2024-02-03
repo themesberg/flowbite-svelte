@@ -10,8 +10,8 @@
 		value?: string | number;
 		checked?: boolean | undefined;
 		customSize?: string;
-        spanclass?: string;
-        color?: FormColorType;
+		spanclass?: string;
+		color?: FormColorType;
 	}
 
 	let {
@@ -21,8 +21,8 @@
 		value,
 		checked,
 		customSize,
-        spanclass,
-        color,
+		spanclass,
+		color,
 		...attributes
 	} = $props<Props>();
 	// export let size: 'small' | 'default' | 'large' | 'custom' = 'default';
@@ -60,7 +60,7 @@
 
 	let divClass: string = twMerge(
 		common,
-        'dark:bg-gray-600 dark:border-gray-500',
+		'dark:bg-gray-600 dark:border-gray-500',
 		// background ? 'dark:bg-gray-600 dark:border-gray-500' : 'dark:bg-gray-700 dark:border-gray-600',
 		colors[color ?? 'primary'],
 		sizes[size],
@@ -69,14 +69,7 @@
 	);
 </script>
 
-<Checkbox
-	custom
-	{...attributes}
-	
-	{value}
-	bind:checked
-	
->
+<Checkbox custom {...attributes} {value} bind:checked>
 	<span class={divClass} />
 	{@render children()}
 </Checkbox>

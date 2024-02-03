@@ -199,6 +199,10 @@
       "types": "./dist/forms/Select.svelte.d.ts",
       "svelte": "./dist/forms/Select.svelte"
     },
+    "./Toggle.svelte": {
+      "types": "./dist/forms/Toggle.svelte.d.ts",
+      "svelte": "./dist/forms/Toggle.svelte"
+    },
     "./Gallery.svelte": {
       "types": "./dist/gallery/Gallery.svelte.d.ts",
       "svelte": "./dist/gallery/Gallery.svelte"
