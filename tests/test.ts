@@ -103,6 +103,11 @@ test('select page has expected h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Select');
 });
 
+test('toggle page has expected h1', async ({ page }) => {
+	await page.goto('/forms/toggle');
+	expect(await page.textContent('h1')).toBe('Toggle');
+});
+
 // typography
 
 test('Blockquote page has expected h1', async ({ page }) => {
