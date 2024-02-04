@@ -41,7 +41,7 @@
 
 	let spanCls: string = twMerge('flex-1 ms-3 text-left whitespace-nowrap', spanclass);
 	let ulCls: string = twMerge('py-2 space-y-2', ulclass);
-	let svgCls: string = twMerge('h-3 w-3 text-gray-800 dark:text-white', svgclass)
+	let svgCls: string = twMerge('h-3 w-3 text-gray-800 dark:text-white', svgclass);
 
 	// make a custom transition function that returns the desired transition
 	const multiple = (node: HTMLElement, params: any) => {
@@ -86,7 +86,7 @@
 				{@render arrowup()}
 			{:else}
 				<svg
-					class="{svgCls}"
+					class={svgCls}
 					aria-hidden="true"
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
@@ -105,7 +105,7 @@
 			{@render arrowdown()}
 		{:else}
 			<svg
-				class="{svgCls}"
+				class={svgCls}
 				aria-hidden="true"
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"

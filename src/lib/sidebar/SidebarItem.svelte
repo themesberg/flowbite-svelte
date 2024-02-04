@@ -24,9 +24,9 @@
 	});
 
 	let aCls = $derived(
-			currentUrl === href
-				? activeClass ?? context.activeClass
-				: nonActiveClass ?? context.nonActiveClass
+		currentUrl === href
+			? activeClass ?? context.activeClass
+			: nonActiveClass ?? context.nonActiveClass
 	);
 	// $inspect('aCls', aCls)
 </script>

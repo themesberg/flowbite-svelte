@@ -130,7 +130,7 @@
 	</div>
 	<Sidebar asideclass="w-48 p-0" divclass="bg-transparent p-0" aclass="p-1 pl-4">
 		<SidebarGroup>
-			<SidebarDropdownWrapper label="Components" svgclass='me-4' btnclass='p-1'>
+			<SidebarDropdownWrapper label="Components" svgclass="me-4" btnclass="p-1">
 				<SidebarItem onclick={closeNavDrawer} label="Avatar" href="/components/avatar" />
 				<SidebarItem onclick={closeNavDrawer} label="Banner" href="/components/banner" />
 				<SidebarItem onclick={closeNavDrawer} label="Breadcrumb" href="/components/breadcrumb" />
@@ -157,7 +157,7 @@
 				<SidebarItem onclick={closeNavDrawer} label="Spinner" href="/components/spinner" />
 				<SidebarItem onclick={closeNavDrawer} label="Video" href="/components/video" />
 			</SidebarDropdownWrapper>
-			<SidebarDropdownWrapper label="Forms" svgclass='me-4' btnclass='p-1'>
+			<SidebarDropdownWrapper label="Forms" svgclass="me-4" btnclass="p-1">
 				<SidebarItem onclick={closeNavDrawer} label="Checkbox" href="/forms/checkbox" />
 				<SidebarItem onclick={closeNavDrawer} label="Floating label" href="/forms/floating-label" />
 				<SidebarItem onclick={closeNavDrawer} label="Radio" href="/forms/radio" />
@@ -165,7 +165,7 @@
 				<SidebarItem onclick={closeNavDrawer} label="Select" href="/forms/select" />
 				<SidebarItem onclick={closeNavDrawer} label="Toggle" href="/forms/toggle" />
 			</SidebarDropdownWrapper>
-			<SidebarDropdownWrapper label="Typography" svgclass='me-4' btnclass='p-1'>
+			<SidebarDropdownWrapper label="Typography" svgclass="me-4" btnclass="p-1">
 				<SidebarItem onclick={closeNavDrawer} label="Blockquote" href="/typography/blockquote" />
 				<SidebarItem
 					onclick={closeNavDrawer}

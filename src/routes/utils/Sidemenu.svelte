@@ -15,8 +15,12 @@
 	aclass="p-1 pl-4"
 >
 	<SidebarGroup>
-		<SidebarDropdownWrapper label="Components" isOpen={hasPath('components')}
-		 svgclass='me-4' btnclass='p-1'>
+		<SidebarDropdownWrapper
+			label="Components"
+			isOpen={hasPath('components')}
+			svgclass="me-4"
+			btnclass="p-1"
+		>
 			<SidebarItem label="Avatar" href="/components/avatar" />
 			<SidebarItem label="Banner" href="/components/banner" />
 			<SidebarItem label="Breadcrumb" href="/components/breadcrumb" />
@@ -39,7 +43,7 @@
 			<SidebarItem label="Spinner" href="/components/spinner" />
 			<SidebarItem label="Video" href="/components/video" />
 		</SidebarDropdownWrapper>
-		<SidebarDropdownWrapper label="Forms" isOpen={hasPath('forms')} svgclass='me-4' btnclass='p-1'>
+		<SidebarDropdownWrapper label="Forms" isOpen={hasPath('forms')} svgclass="me-4" btnclass="p-1">
 			<SidebarItem label="Checkbox" href="/forms/checkbox" />
 			<SidebarItem label="Floating label" href="/forms/floating-label" />
 			<SidebarItem label="Radio" href="/forms/radio" />
@@ -47,7 +51,12 @@
 			<SidebarItem label="Select" href="/forms/select" />
 			<SidebarItem label="Toggle" href="/forms/toggle" />
 		</SidebarDropdownWrapper>
-		<SidebarDropdownWrapper label="Typography" isOpen={hasPath('typography')} svgclass='me-4' btnclass='p-1'>
+		<SidebarDropdownWrapper
+			label="Typography"
+			isOpen={hasPath('typography')}
+			svgclass="me-4"
+			btnclass="p-1"
+		>
 			<SidebarItem label="Blockquote" href="/typography/blockquote" />
 			<SidebarItem label="Heading/Span/Mark" href="/typography/heading" />
 			<SidebarItem label="HR" href="/typography/hr" />

@@ -35,7 +35,6 @@
 		nonActiveClass: twMerge(nonActiveClass, aclass)
 	});
 	// $inspect('activeClass: ', activeClass)
-
 </script>
 
 <aside {...attributes} class={asideCls} aria-label={ariaLabel}>
