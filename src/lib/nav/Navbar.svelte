@@ -99,3 +99,21 @@
 		</div>
 	</div>
 </nav>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop toggleNav,
+@prop closeNav,
+@prop navStatus,
+@prop fluid,
+@prop brand,
+@prop breakPoint = 'md',
+@prop navclass,
+@prop divclass,
+@prop btnclass,
+@prop div2class,
+@prop ...attributes
+-->

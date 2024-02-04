@@ -104,3 +104,20 @@
 		{@render children()}
 	</div>
 </article>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop address,
+@prop item1,
+@prop item2,
+@prop item3,
+@prop review,
+@prop articleclass,
+@prop divclass,
+@prop imgclass,
+@prop ulclass,
+@prop liclass
+-->

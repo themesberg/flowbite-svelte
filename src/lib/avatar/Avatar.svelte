@@ -81,3 +81,20 @@
 {:else}
 	<img {alt} {src} {...attributes} class={avatarCls} />
 {/if}
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop src,
+@prop href,
+@prop rounded,
+@prop border,
+@prop stacked,
+@prop dot,
+@prop alt,
+@prop size = 'md',
+@prop class: classname,
+@prop ...attributes
+-->

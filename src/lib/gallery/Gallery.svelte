@@ -33,3 +33,14 @@
 		{@render children()}
 	{/each}
 </div>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop items = [],
+@prop imgclass,
+@prop divclass,
+@prop ...attributes
+-->

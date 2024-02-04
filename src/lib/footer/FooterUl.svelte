@@ -12,3 +12,12 @@
 <ul {...attributes} class={twMerge('text-gray-600 dark:text-gray-400', ulclass)}>
 	{@render children()}
 </ul>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop ulclass,
+@prop children,
+@prop ...attributes
+-->

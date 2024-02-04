@@ -21,3 +21,13 @@
 </script>
 
 <input type="range" bind:value {...attributes} class={inputClass} />
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop value,
+@prop size = 'md',
+@prop inputclass,
+@prop ...attributes
+-->

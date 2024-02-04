@@ -58,3 +58,18 @@
 		</div>
 	{/if}
 </div>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop header,
+@prop isOpen,
+@prop footer,
+@prop footerclass,
+@prop divclass,
+@prop headerclass,
+@prop ulclass,
+@prop ...attributes
+-->

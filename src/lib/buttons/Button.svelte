@@ -179,3 +179,22 @@
 		{@render children()}
 	</svelte:element>
 {/if}
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop pill = false,
+@prop outline = false,
+@prop size = group ? 'sm' : 'md',
+@prop href = undefined,
+@prop type = 'button',
+@prop color = group ? (outline ? 'dark' : 'alternative') : 'primary',
+@prop shadow = false,
+@prop tag = 'button',
+@prop checked = undefined,
+@prop disabled = false,
+@prop btnclass,
+@prop ...attributes
+-->

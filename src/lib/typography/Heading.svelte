@@ -24,3 +24,13 @@
 >
 	{@render children()}
 </svelte:element>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop tag = 'h1',
+@prop class: classname,
+@prop ...attributes
+-->

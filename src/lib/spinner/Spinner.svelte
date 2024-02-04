@@ -78,3 +78,17 @@
 		fill={currentFill}
 	/>
 </svg>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop svgclass,
+@prop color = 'primary',
+@prop bg = 'text-gray-300',
+@prop customColor,
+@prop size = '8',
+@prop currentFill = 'currentFill',
+@prop currentColor = 'currentColor',
+@prop ...attributes
+-->

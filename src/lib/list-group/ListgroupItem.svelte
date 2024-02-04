@@ -94,3 +94,21 @@
 		{attributes.name}
 	</button>
 {/if}
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop btn,
+@prop current,
+@prop disabled,
+@prop href,
+@prop currentclass,
+@prop normalclass,
+@prop disabledclass,
+@prop focusclass,
+@prop hoverclass,
+@prop liclass,
+@prop ...attributes
+-->

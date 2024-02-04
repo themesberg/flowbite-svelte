@@ -48,3 +48,21 @@
 <span {...attributes} class={classSpan}>
 	{@render children()}
 </span>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop class: classname,
+@prop italic,
+@prop underline,
+@prop linethrough,
+@prop uppercase,
+@prop gradient,
+@prop highlight,
+@prop highlightClass = 'text-blue-600 dark:text-blue-500',
+@prop decorationClass = 'decoration-2 decoration-blue-400 dark:decoration-blue-600',
+@prop gradientClass = 'text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400',
+@prop ...attributes
+-->

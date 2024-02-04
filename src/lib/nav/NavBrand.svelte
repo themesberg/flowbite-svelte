@@ -22,3 +22,14 @@
 	{/if}
 	<span class={spanCls}>{siteName}</span>
 </a>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop siteName,
+@prop closeNav,
+@prop aclass,
+@prop spanclass
+-->

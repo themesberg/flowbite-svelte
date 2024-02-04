@@ -77,3 +77,13 @@
 		</slot>
 	</span>
 </button>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop btnclass,
+@prop size = 'md',
+@prop ariaLabel = 'Dark mode',
+@prop ...attributes
+-->

@@ -15,3 +15,13 @@
 <a {...attributes} {href} class={twMerge(aCls, colorCls, aclass)}>
 	{@render children()}
 </a>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop href = '#',
+@prop aclass,
+@prop ...attributes
+-->

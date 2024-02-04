@@ -41,3 +41,11 @@
 	</svg>
 	<span class="sr-only">Loading...</span>
 </div>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop size = 'sm',
+@prop divclass
+-->

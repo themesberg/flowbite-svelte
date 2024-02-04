@@ -62,3 +62,16 @@
 		{@render children({ item })}
 	{/each}
 </svelte:element>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop items,
+@prop btn,
+@prop rounded = true,
+@prop border = true,
+@prop defaultclass,
+@prop ...attributes
+-->

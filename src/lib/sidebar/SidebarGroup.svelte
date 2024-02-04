@@ -24,3 +24,14 @@
 <ul {...attributes} class={border ? borderCls : ulCls}>
 	{@render children()}
 </ul>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop ulclass,
+@prop borderClass,
+@prop border = false,
+@prop ...attributes
+-->

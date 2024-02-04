@@ -124,3 +124,20 @@
 		</ul>
 	{/if}
 </li>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop arrowup,
+@prop arrowdown,
+@prop icon,
+@prop isOpen,
+@prop btnclass,
+@prop label,
+@prop spanclass,
+@prop ulclass,
+@prop transitionType = 'slide',
+@prop transitionParams = {
+-->

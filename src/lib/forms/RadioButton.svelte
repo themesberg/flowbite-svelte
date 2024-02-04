@@ -56,3 +56,20 @@
 	<input type="radio" bind:group {value} {...attributes} class="sr-only" />
 	{@render children()}
 </Button>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop group,
+@prop value,
+@prop inline = true,
+@prop btnclass,
+@prop pill,
+@prop outline,
+@prop size,
+@prop color,
+@prop shadow,
+@prop ...attributes
+-->

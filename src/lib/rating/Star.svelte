@@ -55,3 +55,18 @@
 		/>
 	</g>
 </svg>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop fillPercent = 100,
+@prop fillColor = '#F5CA14',
+@prop strokeColor = '#F5CA14',
+@prop size = 24,
+@prop ariaLabel = 'star',
+@prop id = idGenerator(),
+@prop role = 'img',
+@prop svgclass,
+@prop ...attributes
+-->

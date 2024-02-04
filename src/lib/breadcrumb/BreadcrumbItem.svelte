@@ -83,3 +83,18 @@
 		{/if}
 	{/if}
 </li>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop icon,
+@prop home = false,
+@prop href,
+@prop a2class,
+@prop spanclass,
+@prop aclass,
+@prop class: classname,
+@prop ...attributes
+-->

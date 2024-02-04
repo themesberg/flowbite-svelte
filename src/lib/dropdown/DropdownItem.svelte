@@ -31,3 +31,14 @@
 		</a>
 	{/if}
 </li>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop aclass,
+@prop children,
+@prop href,
+@prop activeclass,
+@prop ...attributes
+-->

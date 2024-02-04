@@ -41,3 +41,17 @@
 	{/if}
 	{copyrightMessage}
 </span>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop spanclass,
+@prop aclass,
+@prop href,
+@prop by,
+@prop target,
+@prop copyrightMessage = 'All Rights Reserved.',
+@prop year,
+@prop ...attributes
+-->

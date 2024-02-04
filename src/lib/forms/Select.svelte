@@ -63,3 +63,18 @@
 		{@render children()}
 	{/each}
 </select>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop items,
+@prop value,
+@prop placeholder = 'Choose option ...',
+@prop underline,
+@prop size = 'md',
+@prop selectclass,
+@prop underlineClass,
+@prop ...attributes
+-->

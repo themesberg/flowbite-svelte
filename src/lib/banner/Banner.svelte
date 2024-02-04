@@ -75,3 +75,17 @@
 		{/if}
 	</div>
 {/if}
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop header,
+@prop position = 'sticky',
+@prop dismissable = true,
+@prop bannerType = 'default',
+@prop divclass,
+@prop div2class,
+@prop ...attributes
+-->

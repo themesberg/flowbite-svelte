@@ -37,3 +37,15 @@
 <svelte:element this={tag} {...attributes} class={classList}>
 	{@render children()}
 </svelte:element>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop tag = 'ul',
+@prop list,
+@prop position = 'inside',
+@prop class: classname,
+@prop ...attributes
+-->

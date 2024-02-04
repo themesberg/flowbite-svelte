@@ -31,3 +31,11 @@
 	<div class="h-2 w-9/12 rounded-full bg-gray-200 dark:bg-gray-700" />
 	<span class="sr-only">Loading...</span>
 </div>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop size = 'sm',
+@prop divclass
+-->

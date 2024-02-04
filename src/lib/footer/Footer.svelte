@@ -20,3 +20,13 @@
 <footer {...attributes} class={footerCls}>
 	{@render children()}
 </footer>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop footerType = 'default',
+@prop footerclass,
+@prop ...attributes
+-->

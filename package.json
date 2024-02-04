@@ -37,7 +37,8 @@
     "test:integration": "playwright test",
     "gen:exports": "svelte-lib-helpers exports",
     "copy:package": "svelte-lib-helpers package",
-    "lib-helpers": "npm run package && npm run gen:exports && npm run copy:package",
+    "gen:docs5": "svelte-lib-helpers docs5",
+    "lib-helpers": "npm run gen:docs5 && npm run package && npm run gen:exports && npm run copy:package",
     "package:publish": "standard-version && npm run package && npm run gen:exports && npm run copy:package && git push --follow-tags origin main && npm publish"
   },
   "devDependencies": {

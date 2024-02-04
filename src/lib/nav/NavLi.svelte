@@ -55,3 +55,15 @@
 		{@render children()}
 	</a>
 </li>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop closeNav,
+@prop href,
+@prop children,
+@prop aclass,
+@prop activeClass,
+@prop ...attributes
+-->

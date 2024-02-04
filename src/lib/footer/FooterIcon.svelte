@@ -18,3 +18,15 @@
 {:else}
 	{@render children()}
 {/if}
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop href,
+@prop ariaLabel,
+@prop aclass,
+@prop target,
+@prop ...attributes
+-->

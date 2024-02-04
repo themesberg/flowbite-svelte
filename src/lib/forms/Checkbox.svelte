@@ -43,3 +43,20 @@
 		{@render children()}
 	{/if}
 </Label>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop color = 'primary',
+@prop custom = false,
+@prop inline = false,
+@prop group = [],
+@prop value = 'on',
+@prop checked,
+@prop spacing = 'me-2',
+@prop labelclass = '',
+@prop inputclass = '',
+@prop ...attributes
+-->

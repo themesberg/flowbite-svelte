@@ -116,3 +116,24 @@
 <p {...attributes} class={classP}>
 	<slot />
 </p>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop color = 'text-gray-900 dark:text-white',
+@prop pclass,
+@prop height = 'normal',
+@prop align = 'left',
+@prop justify = false,
+@prop italic = false,
+@prop firstupper = false,
+@prop upperclass = 'first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-gray-900 dark:first-letter:text-gray-100 first-letter:me-3 first-letter:float-left',
+@prop opacity,
+@prop whitespace = 'normal',
+@prop size = 'base',
+@prop space,
+@prop weight = 'normal',
+@prop ...attributes
+-->

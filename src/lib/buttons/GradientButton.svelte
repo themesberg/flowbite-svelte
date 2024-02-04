@@ -104,3 +104,16 @@
 		{@render children()}
 	</Button>
 {/if}
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop outline,
+@prop pill,
+@prop color = 'blue',
+@prop shadow,
+@prop divclass,
+@prop ...attributes
+-->

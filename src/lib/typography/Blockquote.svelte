@@ -68,3 +68,20 @@
 >
 	{@render children()}
 </blockquote>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop class: classname,
+@prop border,
+@prop italic = true,
+@prop borderclass,
+@prop bgclass,
+@prop bg,
+@prop baseclass,
+@prop alignment = 'left',
+@prop size = 'lg',
+@prop ...attributes
+-->

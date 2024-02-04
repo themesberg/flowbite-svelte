@@ -72,3 +72,12 @@
 		{/each}
 	</div>
 </div>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop ratings,
+@prop ratings2,
+@prop headerLabel
+-->

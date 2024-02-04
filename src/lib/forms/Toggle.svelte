@@ -73,3 +73,18 @@
 	<span class={divClass} />
 	{@render children()}
 </Checkbox>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop size = 'default',
+@prop group,
+@prop value,
+@prop checked,
+@prop customSize,
+@prop spanclass,
+@prop color,
+@prop ...attributes
+-->

@@ -29,3 +29,17 @@
 	<track src={trackSrc} kind="captions" {srclang} {label} />
 	Your browser does not support the video tag.
 </video>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop src,
+@prop type = 'video/mp4',
+@prop trackSrc,
+@prop srclang = 'en',
+@prop label = 'english_captions',
+@prop class: classname,
+@prop ...attributes
+-->

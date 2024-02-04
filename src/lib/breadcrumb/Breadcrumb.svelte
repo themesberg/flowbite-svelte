@@ -36,3 +36,17 @@
 		<slot />
 	</ol>
 </nav>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop solid = false,
+@prop navclass,
+@prop solidclass,
+@prop olclass,
+@prop ariaLabel = 'Breadcrumb',
+@prop class: classname,
+@prop ...attributes
+-->

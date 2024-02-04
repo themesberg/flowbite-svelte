@@ -127,3 +127,19 @@
 		{@render children()}
 	</label>
 </div>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop id = idGenerator(),
+@prop style = 'standard',
+@prop type = 'text',
+@prop size = 'default',
+@prop color = 'base',
+@prop divclass,
+@prop inputclass,
+@prop labelclass,
+@prop ...attributes
+-->

@@ -37,3 +37,17 @@
 		{@render children()}
 	</div>
 </aside>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop divclass,
+@prop asideclass,
+@prop ariaLabel,
+@prop nonActiveClass = 'flex items-center text-base font-normal text-gray-900 rounded dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700',
+@prop activeClass = 'flex items-center text-base font-normal text-gray-900 bg-gray-200 dark:bg-gray-700 rounded dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700',
+@prop aclass,
+@prop ...attributes
+-->

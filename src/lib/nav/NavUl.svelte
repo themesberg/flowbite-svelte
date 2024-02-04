@@ -27,3 +27,12 @@
 <ul class={ulCls} {...attributes}>
 	{@render children()}
 </ul>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop ulclass,
+@prop ...attributes
+-->

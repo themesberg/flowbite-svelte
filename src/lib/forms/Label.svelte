@@ -31,3 +31,15 @@
 {:else}
 	{@render children()}
 {/if}
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop color = 'gray',
+@prop show = true,
+@prop labelclass,
+@prop forId,
+@prop ...attributes
+-->

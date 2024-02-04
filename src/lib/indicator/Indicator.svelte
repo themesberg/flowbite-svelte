@@ -106,3 +106,17 @@
 		{@render children()}
 	{/if}
 </div>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop color = 'gray',
+@prop rounded = false,
+@prop size = 'md',
+@prop border = false,
+@prop placement,
+@prop offset = true,
+@prop divclass
+-->

@@ -57,3 +57,18 @@
 		{/if}
 	{/if}
 </div>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop text,
+@prop divclass,
+@prop size = 24,
+@prop total = 5,
+@prop rating = 4,
+@prop partialId = 'partialStar' + idGenerator(),
+@prop icon = Star,
+@prop count = false
+-->

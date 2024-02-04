@@ -83,3 +83,23 @@
 		/>
 	{/if}
 </div>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop progress = '45',
+@prop precision = 0,
+@prop tweenDuration = 400,
+@prop animate = false,
+@prop size = 'h-2.5',
+@prop labelInside = false,
+@prop labelOutside,
+@prop easing = cubicOut,
+@prop color = 'primary',
+@prop div2class,
+@prop labeloutsidedivclass,
+@prop divclass,
+@prop class: classname,
+@prop ...attributes
+-->
