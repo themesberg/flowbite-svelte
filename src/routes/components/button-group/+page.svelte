@@ -1,5 +1,5 @@
 <script>
-	import { ButtonGroup, Button } from '$lib';
+	import { ButtonGroup, Button, GradientButton } from '$lib';
 	import {
 		UserCircleSolid,
 		AdjustmentsVerticalOutline,
@@ -53,6 +53,18 @@
 			<Button outline color="red">Profile</Button>
 			<Button outline color="green">Settings</Button>
 			<Button outline color="yellow">Messages</Button>
+		</ButtonGroup>
+		<div class="py-4">Gradient with shadows</div>
+		<ButtonGroup>
+		  <GradientButton shadow color="green">Profile</GradientButton>
+		  <GradientButton shadow color="pink">Settings</GradientButton>
+		  <GradientButton shadow color="teal">Messages</GradientButton>
+		</ButtonGroup>
+		<div class="py-4">Dualtone gradient</div>
+		<ButtonGroup divclass="space-x-px">
+		  <GradientButton color="purpleToBlue">Profile</GradientButton>
+		  <GradientButton color="cyanToBlue">Settings</GradientButton>
+		  <GradientButton color="greenToBlue">Messages</GradientButton>
 		</ButtonGroup>
 	</div>
 </CodeWrapper>

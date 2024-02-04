@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { HighlightSvelte } from 'svelte-highlight';
-	// import type { LanguageType } from 'svelte-highlight/languages';
-	// import typescript from 'svelte-highlight/languages/typescript';
+	// check colorscheme at https://highlightjs.org/demo
 	import githubDark from 'svelte-highlight/styles/github-dark';
 	// import classicdark from 'svelte-highlight/styles/classic-dark';
 	let { code } = $props<{code: string;}>();
