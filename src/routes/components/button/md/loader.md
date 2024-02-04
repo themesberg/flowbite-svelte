@@ -1,0 +1,6 @@
+<Button>
+    <Spinner svgclass="me-3" size="4" color="white" />Loading ...
+    </Button>
+    <Button color="alternative">
+    <Spinner svgclass="me-3" size="4" />Loading ...
+</Button>

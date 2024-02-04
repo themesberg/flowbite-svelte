@@ -5,6 +5,7 @@
 		shadow?: boolean;
 		outline?: boolean;
 		pill?: boolean;
+		divclass?: string;
 	}
 
 	import { twMerge } from 'tailwind-merge';
@@ -15,10 +16,11 @@
 
 	let {
 		children,
-		outline = false,
-		pill = false,
+		outline,
+		pill,
 		color = 'blue',
-		shadow = false,
+		shadow,
+		divclass,
 		...attributes
 	} = $props<Props>();
 
@@ -67,30 +69,25 @@
 		redToYellow: 'shadow-red-500/50 dark:shadow-red-800/80'
 	};
 
-	let gradientOutlineClass: string = $state('');
-	$effect(() => {
-		gradientOutlineClass = twMerge(
-			'inline-flex items-center justify-center w-full  !border-0',
-			pill ? '' : '!rounded-md',
+	let gradientOutlineClass: string = twMerge(
+			'inline-flex items-center justify-center w-full !border-0',
+			pill ? 'rounded-full' : '!rounded-md',
 			'bg-white !text-gray-900 dark:bg-gray-900 dark:!text-white', // this is limitation - no transparency
 			'hover:bg-transparent hover:!text-inherit',
 			'transition-all duration-75 ease-in group-hover:!bg-opacity-0 group-hover:!text-inherit'
 		);
-	});
 
-	let divClass: string = $state('');
-	$effect(() => {
-		divClass = twMerge(
+	let divClass: string = twMerge(
 			outline && 'p-0.5',
 			gradientClasses[color],
 			shadow && 'shadow-lg',
 			shadow && coloredShadowClasses[color],
 			group
-				? (pill && 'first:rounded-s-full last:rounded-e-full') ||
+				? pill && 'first:rounded-s-full last:rounded-e-full' ||
 						'first:rounded-s-lg last:rounded-e-lg'
-				: (pill && 'rounded-full') || 'rounded-lg'
+				: pill && 'rounded-full' || 'rounded-lg',
+			divclass
 		);
-	});
 </script>
 
 {#if outline}
@@ -101,13 +98,7 @@
 		<Button
 			{...attributes}
 			color="none"
-			class={gradientOutlineClass}
-			on:click
-			on:change
-			on:keydown
-			on:keyup
-			on:mouseenter
-			on:mouseleave
+			btnclass={gradientOutlineClass}
 		>
 			{@render children()}
 		</Button>
@@ -116,16 +107,7 @@
 	<Button
 		{...attributes}
 		color="none"
-		class={divClass}
-		on:click
-		on:change
-		on:keydown
-		on:keyup
-		on:touchstart
-		on:touchend
-		on:touchcancel
-		on:mouseenter
-		on:mouseleave
+		btnclass={divClass}
 	>
 		{@render children()}
 	</Button>

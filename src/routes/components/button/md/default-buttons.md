@@ -1,7 +1,3 @@
-<script>
-  import { Button } from 'svelte-5-ui-lib'
-</script>
-
 <Button>Default</Button>
 <Button color="alternative">Alternative</Button>
 <Button color="dark">Dark</Button>
