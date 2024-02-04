@@ -1,9 +1,11 @@
+## Svelte 5 Ui Lib
 After installing Svelte 5 install:
 
 ```
 pnpm i -D svelte-5-ui-lib tailwind-merge
 ```
 
+## TailwindCSS
 Install tailwindcss:
 
 ```
@@ -11,6 +13,14 @@ npx svelte-add@latest tailwindcss
 pnpm i
 ```
 
+## Icons
+If you want a SVG icon set, choose one from [Svelte SVG icon sets](https://svelte-svg-icons.vercel.app/).
+
+```
+pnpm i -D flowbite-svelte-icons
+```
+
+## Config
 Add the following to tailwind.config.js:
 
 ```

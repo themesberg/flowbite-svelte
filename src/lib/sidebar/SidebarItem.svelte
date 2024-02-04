@@ -24,13 +24,11 @@
 	});
 
 	let aCls = $derived(
-		twMerge(
 			currentUrl === href
 				? activeClass ?? context.activeClass
 				: nonActiveClass ?? context.nonActiveClass
-		)
 	);
-	// $inspect('aclass', aClass)
+	// $inspect('aCls', aCls)
 </script>
 
 <li>

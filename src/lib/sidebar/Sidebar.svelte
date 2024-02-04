@@ -24,12 +24,18 @@
 	} = $props<Props>();
 
 	let divCls = twMerge('overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800', divclass);
+	// let activeCls = twMerge(activeClass, aclass)
+	// let nonActiveCls = twMerge(nonActiveClass, aclass)
 	let asideCls = twMerge('w-64', asideclass);
-
+	// activeCls = twMerge(activeClass, aclass);
+	// nonActiveClass = twMerge(nonActiveClass, aclass);
+	// $inspect('aclass: ', aclass)
 	setContext<SidebarType>('sidebarContext', {
 		activeClass: twMerge(activeClass, aclass),
 		nonActiveClass: twMerge(nonActiveClass, aclass)
 	});
+	// $inspect('activeClass: ', activeClass)
+
 </script>
 
 <aside {...attributes} class={asideCls} aria-label={ariaLabel}>

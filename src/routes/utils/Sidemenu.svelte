@@ -12,10 +12,11 @@
 <Sidebar
 	asideclass="fixed inset-0 z-30 flex-none h-full w-64 lg:static lg:h-auto border-e border-gray-200 dark:border-gray-600 lg:overflow-y-visible bg-gray-100 dark:bg-gray-900 lg:pt-0 lg:block hidden"
 	divclass="dark:bg-gray-900 bg-transparent"
-	aclass="pl-6"
+	aclass="p-1 pl-4"
 >
 	<SidebarGroup>
-		<SidebarDropdownWrapper label="Components" isOpen={hasPath('components')}>
+		<SidebarDropdownWrapper label="Components" isOpen={hasPath('components')}
+		 svgclass='me-4' btnclass='p-1'>
 			<SidebarItem label="Avatar" href="/components/avatar" />
 			<SidebarItem label="Banner" href="/components/banner" />
 			<SidebarItem label="Breadcrumb" href="/components/breadcrumb" />
@@ -38,7 +39,7 @@
 			<SidebarItem label="Spinner" href="/components/spinner" />
 			<SidebarItem label="Video" href="/components/video" />
 		</SidebarDropdownWrapper>
-		<SidebarDropdownWrapper label="Forms" isOpen={hasPath('forms')}>
+		<SidebarDropdownWrapper label="Forms" isOpen={hasPath('forms')} svgclass='me-4' btnclass='p-1'>
 			<SidebarItem label="Checkbox" href="/forms/checkbox" />
 			<SidebarItem label="Floating label" href="/forms/floating-label" />
 			<SidebarItem label="Radio" href="/forms/radio" />
@@ -46,7 +47,7 @@
 			<SidebarItem label="Select" href="/forms/select" />
 			<SidebarItem label="Toggle" href="/forms/toggle" />
 		</SidebarDropdownWrapper>
-		<SidebarDropdownWrapper label="Typography" isOpen={hasPath('typography')}>
+		<SidebarDropdownWrapper label="Typography" isOpen={hasPath('typography')} svgclass='me-4' btnclass='p-1'>
 			<SidebarItem label="Blockquote" href="/typography/blockquote" />
 			<SidebarItem label="Heading/Span/Mark" href="/typography/heading" />
 			<SidebarItem label="HR" href="/typography/hr" />

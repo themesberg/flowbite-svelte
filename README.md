@@ -21,6 +21,12 @@ npx svelte-add@latest tailwindcss
 pnpm i
 ```
 
+If you want a SVG icon set, choose one from [Svelte SVG icon sets](https://svelte-svg-icons.vercel.app/).
+
+```
+pnpm i -D flowbite-svelte-icons
+```
+
 Add the following to tailwind.config.js:
 
 ```

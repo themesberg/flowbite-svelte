@@ -29,4 +29,4 @@
 
 <H2>Installation</H2>
 
-<HighlightCompo code={modules['./md/installation.md']} />
+<HighlightCompo codeLang='md' code={modules['./md/installation.md']} />
