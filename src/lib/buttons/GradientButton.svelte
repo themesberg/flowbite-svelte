@@ -70,24 +70,24 @@
 	};
 
 	let gradientOutlineClass: string = twMerge(
-			'inline-flex items-center justify-center w-full !border-0',
-			pill ? 'rounded-full' : '!rounded-md',
-			'bg-white !text-gray-900 dark:bg-gray-900 dark:!text-white', // this is limitation - no transparency
-			'hover:bg-transparent hover:!text-inherit',
-			'transition-all duration-75 ease-in group-hover:!bg-opacity-0 group-hover:!text-inherit'
-		);
+		'inline-flex items-center justify-center w-full !border-0',
+		pill ? 'rounded-full' : '!rounded-md',
+		'bg-white !text-gray-900 dark:bg-gray-900 dark:!text-white', // this is limitation - no transparency
+		'hover:bg-transparent hover:!text-inherit',
+		'transition-all duration-75 ease-in group-hover:!bg-opacity-0 group-hover:!text-inherit'
+	);
 
 	let divClass: string = twMerge(
-			outline && 'p-0.5',
-			gradientClasses[color],
-			shadow && 'shadow-lg',
-			shadow && coloredShadowClasses[color],
-			group
-				? pill && 'first:rounded-s-full last:rounded-e-full' ||
-						'first:rounded-s-lg last:rounded-e-lg'
-				: pill && 'rounded-full' || 'rounded-lg',
-			divclass
-		);
+		outline && 'p-0.5',
+		gradientClasses[color],
+		shadow && 'shadow-lg',
+		shadow && coloredShadowClasses[color],
+		group
+			? (pill && 'first:rounded-s-full last:rounded-e-full') ||
+					'first:rounded-s-lg last:rounded-e-lg'
+			: (pill && 'rounded-full') || 'rounded-lg',
+		divclass
+	);
 </script>
 
 {#if outline}
@@ -95,20 +95,12 @@
 		<!-- Trick to prentend outline without using border
 	    This has a limitation of no supporting transparency as
 	    is set to bg-white dark:bg-gray-900 -->
-		<Button
-			{...attributes}
-			color="none"
-			btnclass={gradientOutlineClass}
-		>
+		<Button {...attributes} color="none" btnclass={gradientOutlineClass}>
 			{@render children()}
 		</Button>
 	</div>
 {:else}
-	<Button
-		{...attributes}
-		color="none"
-		btnclass={divClass}
-	>
+	<Button {...attributes} color="none" btnclass={divClass}>
 		{@render children()}
 	</Button>
 {/if}
