@@ -23,7 +23,7 @@
 
 <H2>Setup</H2>
 
-<HighlightCompo code={modules['./md/setup.md']} />
+<HighlightCompo codeLang='ts' code={modules['./md/setup.md']} />
 
 <H2>Default buttons</H2>
 
@@ -39,7 +39,7 @@
 	<Button color="purple">Purple</Button>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/default-buttons.md']} />
+<HighlightCompo codeLang='js' code={modules['./md/default-buttons.md']} />
 
 <H2>Button with link</H2>
 
@@ -47,7 +47,7 @@
 	<Button href="/">Home</Button>
 </CodeWrapper>
 
-<HighlightCompo code={modules['./md/button-with-link.md']} />
+<HighlightCompo codeLang='plain' code={modules['./md/button-with-link.md']} />
 
 <H2>Button pills</H2>
 

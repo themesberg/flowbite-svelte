@@ -1,21 +1,21 @@
-<script>
-	import { Highlight } from 'svelte-highlight';
-	import typescript from 'svelte-highlight/languages/typescript';
-	import atomonedark from 'svelte-highlight/styles/atom-one-dark';
-	import classicdark from 'svelte-highlight/styles/classic-dark';
-	let { code, language = typescript } = $props();
-	// const code = "const add = (a: number, b: number) => a + b;";
+<script lang="ts">
+	import { HighlightSvelte } from 'svelte-highlight';
+	// import type { LanguageType } from 'svelte-highlight/languages';
+	// import typescript from 'svelte-highlight/languages/typescript';
+	import githubDark from 'svelte-highlight/styles/github-dark';
+	// import classicdark from 'svelte-highlight/styles/classic-dark';
+	let { code } = $props<{code: string;}>();
 </script>
 
 <svelte:head>
-	{@html classicdark}
+	{@html githubDark}
 </svelte:head>
 
 <div
 	class="mx-auto my-8 max-w-4xl rounded-md border border-gray-200 bg-gray-50 p-0.5 dark:border-gray-600 dark:bg-gray-700"
 >
 	{#if code}
-		<Highlight {language} {code} />
+		<HighlightSvelte {code} />
 	{:else}
 		no code is provided
 	{/if}
