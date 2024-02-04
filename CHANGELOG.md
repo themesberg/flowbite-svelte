@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.25](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.18...v0.2.25) (2024-02-04)
+
+
+### Features
+
+* add component docs ([52a1711](https://github.com/shinokada/svelte-5-ui-lib/commit/52a17118029d9c75ed36e4e00344bedc39bb7b93))
+* add GradientButton component ([528929b](https://github.com/shinokada/svelte-5-ui-lib/commit/528929b96046dfc7d4662e2f953e1c3002b69835))
+* add GradientButton component ([246037a](https://github.com/shinokada/svelte-5-ui-lib/commit/246037a76f30bf32fc369fff573df2d0bf97f0ad))
+* add Toggle component ([98c6aa6](https://github.com/shinokada/svelte-5-ui-lib/commit/98c6aa63c1eb1269c8c7bd9233526d93a3e632f6))
+* FloatingLabel component is added ([9b6ea52](https://github.com/shinokada/svelte-5-ui-lib/commit/9b6ea52c4e070da451e04fb59d473fdb5461ea67))
+
+
+### Bug Fixes
+
+* change from atomonedark to classicdark in HighlightCompo ([d0ac7ff](https://github.com/shinokada/svelte-5-ui-lib/commit/d0ac7fff96f0019ad7980aba37207aab2e76810d))
+* icons update for flowbite-svelte-icons v1.0.4 ([549e904](https://github.com/shinokada/svelte-5-ui-lib/commit/549e9042b505d1960318d19d5d410f1b36832e61))
+* nav example ([036dd5f](https://github.com/shinokada/svelte-5-ui-lib/commit/036dd5f8804ca9d32e0c43fb787898f876947f91))
+* NavLi text color ([83ba5a3](https://github.com/shinokada/svelte-5-ui-lib/commit/83ba5a3e4ce231288ffced149467f5efdd677ac2))
+* remove and replace SidebarDropdownItem with SidebarItem ([900d3a5](https://github.com/shinokada/svelte-5-ui-lib/commit/900d3a5f3267ed7e8aa194d5008c1f0c2756b18e))
+* remove SidebarDropdownItem ([ee4ef47](https://github.com/shinokada/svelte-5-ui-lib/commit/ee4ef474bc5f51521323e7392af836e261e2bd4a))
+* remove SidebarDropdownItem ([3d019df](https://github.com/shinokada/svelte-5-ui-lib/commit/3d019dfd8a0131d86ab74e74e218f56aaf46feef))
+* replace Hightlight to HighlightSvelte in HighlightCompo ([a81fd5e](https://github.com/shinokada/svelte-5-ui-lib/commit/a81fd5ed2595ddcbf5aeb36c67d55fe3d425ec61))
+* sticy-navbar example ([ef1f118](https://github.com/shinokada/svelte-5-ui-lib/commit/ef1f118f85b35086acba291e653e05ab9439d9d0))
+
 ### [0.2.24](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.23...v0.2.24) (2024-02-04)
 
 
