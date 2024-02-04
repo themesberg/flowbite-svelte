@@ -3,7 +3,7 @@
 	// check colorscheme at https://highlightjs.org/demo
 	import githubDark from 'svelte-highlight/styles/github-dark';
 	// import classicdark from 'svelte-highlight/styles/classic-dark';
-	let { code } = $props<{code: string;}>();
+	let { code } = $props<{ code: string }>();
 </script>
 
 <svelte:head>

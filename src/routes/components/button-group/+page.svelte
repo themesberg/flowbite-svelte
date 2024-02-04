@@ -56,15 +56,15 @@
 		</ButtonGroup>
 		<div class="py-4">Gradient with shadows</div>
 		<ButtonGroup>
-		  <GradientButton shadow color="green">Profile</GradientButton>
-		  <GradientButton shadow color="pink">Settings</GradientButton>
-		  <GradientButton shadow color="teal">Messages</GradientButton>
+			<GradientButton shadow color="green">Profile</GradientButton>
+			<GradientButton shadow color="pink">Settings</GradientButton>
+			<GradientButton shadow color="teal">Messages</GradientButton>
 		</ButtonGroup>
 		<div class="py-4">Dualtone gradient</div>
 		<ButtonGroup divclass="space-x-px">
-		  <GradientButton color="purpleToBlue">Profile</GradientButton>
-		  <GradientButton color="cyanToBlue">Settings</GradientButton>
-		  <GradientButton color="greenToBlue">Messages</GradientButton>
+			<GradientButton color="purpleToBlue">Profile</GradientButton>
+			<GradientButton color="cyanToBlue">Settings</GradientButton>
+			<GradientButton color="greenToBlue">Messages</GradientButton>
 		</ButtonGroup>
 	</div>
 </CodeWrapper>
