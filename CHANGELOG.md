@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.24](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.23...v0.2.24) (2024-02-04)
+
+
+### Features
+
+* add GradientButton component ([528929b](https://github.com/shinokada/svelte-5-ui-lib/commit/528929b96046dfc7d4662e2f953e1c3002b69835))
+* add GradientButton component ([246037a](https://github.com/shinokada/svelte-5-ui-lib/commit/246037a76f30bf32fc369fff573df2d0bf97f0ad))
+
 ### [0.2.23](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.22...v0.2.23) (2024-02-03)
 
 
