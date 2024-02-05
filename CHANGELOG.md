@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.27](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.24...v0.2.27) (2024-02-05)
+
+
+### Features
+
+* add component docs ([52a1711](https://github.com/shinokada/svelte-5-ui-lib/commit/52a17118029d9c75ed36e4e00344bedc39bb7b93))
+
+
+### Bug Fixes
+
+* change from atomonedark to classicdark in HighlightCompo ([d0ac7ff](https://github.com/shinokada/svelte-5-ui-lib/commit/d0ac7fff96f0019ad7980aba37207aab2e76810d))
+* replace Hightlight to HighlightSvelte in HighlightCompo ([a81fd5e](https://github.com/shinokada/svelte-5-ui-lib/commit/a81fd5ed2595ddcbf5aeb36c67d55fe3d425ec61))
+* sticy-navbar example ([ef1f118](https://github.com/shinokada/svelte-5-ui-lib/commit/ef1f118f85b35086acba291e653e05ab9439d9d0))
+
 ### [0.2.26](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.25...v0.2.26) (2024-02-04)
 
 ### [0.2.25](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.18...v0.2.25) (2024-02-04)
