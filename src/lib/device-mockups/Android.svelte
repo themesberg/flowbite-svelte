@@ -3,21 +3,15 @@
 	interface Props {
 		children?: any;
 		divclass?: string;
-        div2class?: string;
-div3class?: string;
-div4class?: string;
-div5class?: string;
-div6class?: string;
-div7class?: string;
+		div2class?: string;
+		div3class?: string;
+		div4class?: string;
+		div5class?: string;
+		div6class?: string;
+		div7class?: string;
 	}
-	let {
-		children,
-		divclass,
-        div2class,
-div3class,
-div4class, div5class, div6class, div7class
-
-	} = $props<Props>();
+	let { children, divclass, div2class, div3class, div4class, div5class, div6class, div7class } =
+		$props<Props>();
 
 	const div: string =
 		'relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-xl h-[600px] w-[300px] shadow-xl';

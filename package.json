@@ -132,6 +132,38 @@
       "types": "./dist/darkmode/Darkmode.svelte.d.ts",
       "svelte": "./dist/darkmode/Darkmode.svelte"
     },
+    "./Android.svelte": {
+      "types": "./dist/device-mockups/Android.svelte.d.ts",
+      "svelte": "./dist/device-mockups/Android.svelte"
+    },
+    "./DefaultMockup.svelte": {
+      "types": "./dist/device-mockups/DefaultMockup.svelte.d.ts",
+      "svelte": "./dist/device-mockups/DefaultMockup.svelte"
+    },
+    "./Desktop.svelte": {
+      "types": "./dist/device-mockups/Desktop.svelte.d.ts",
+      "svelte": "./dist/device-mockups/Desktop.svelte"
+    },
+    "./DeviceMockup.svelte": {
+      "types": "./dist/device-mockups/DeviceMockup.svelte.d.ts",
+      "svelte": "./dist/device-mockups/DeviceMockup.svelte"
+    },
+    "./Ios.svelte": {
+      "types": "./dist/device-mockups/Ios.svelte.d.ts",
+      "svelte": "./dist/device-mockups/Ios.svelte"
+    },
+    "./Laptop.svelte": {
+      "types": "./dist/device-mockups/Laptop.svelte.d.ts",
+      "svelte": "./dist/device-mockups/Laptop.svelte"
+    },
+    "./Smartwatch.svelte": {
+      "types": "./dist/device-mockups/Smartwatch.svelte.d.ts",
+      "svelte": "./dist/device-mockups/Smartwatch.svelte"
+    },
+    "./Tablet.svelte": {
+      "types": "./dist/device-mockups/Tablet.svelte.d.ts",
+      "svelte": "./dist/device-mockups/Tablet.svelte"
+    },
     "./Drawer.svelte": {
       "types": "./dist/drawer/Drawer.svelte.d.ts",
       "svelte": "./dist/drawer/Drawer.svelte"

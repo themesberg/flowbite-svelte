@@ -27,3 +27,14 @@
 <div class={twMerge(bot, div3class)}>
 	<div class={twMerge(botCen, div4class)} />
 </div>
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop divclass,
+@prop div2class,
+@prop div3class,
+@prop div4class
+-->
