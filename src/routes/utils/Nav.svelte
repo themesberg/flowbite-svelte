@@ -143,6 +143,7 @@
 				<SidebarItem onclick={closeNavDrawer} label="Card" href="/components/card" />
 				<SidebarItem onclick={closeNavDrawer} label="Drawer" href="/components/drawer" />
 				<SidebarItem onclick={closeNavDrawer} label="Darkmode" href="/componentsdarkmode" />
+				<SidebarItem onclick={closeNavDrawer} label="Device mockup" href="/components/device-mockup" />
 				<SidebarItem onclick={closeNavDrawer} label="Dropdown" href="/components/dropdown" />
 				<SidebarItem onclick={closeNavDrawer} label="Footer" href="/components/footer" />
 				<SidebarItem onclick={closeNavDrawer} label="Gallery" href="/components/gallery" />

@@ -29,6 +29,7 @@
 			<SidebarItem label="Card" href="/components/card" />
 			<SidebarItem label="Drawer" href="/components/drawer" />
 			<SidebarItem label="Darkmode" href="/components/darkmode" />
+			<SidebarItem label="Device mockup" href="/components/device-mockup" />
 			<SidebarItem label="Dropdown" href="/components/dropdown" />
 			<SidebarItem label="Footer" href="/components/footer" />
 			<SidebarItem label="Gallery" href="/components/gallery" />

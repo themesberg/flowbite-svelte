@@ -30,6 +30,11 @@ test('darkmode page has expected h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Darkmode');
 });
 
+test('device mockup page has expected h1', async ({ page }) => {
+	await page.goto('/components/device-mockup');
+	expect(await page.textContent('h1')).toBe('Device mockup');
+});
+
 test('dropdown page has expected h1', async ({ page }) => {
 	await page.goto('/components/dropdown');
 	expect(await page.textContent('h1')).toBe('Dropdown');

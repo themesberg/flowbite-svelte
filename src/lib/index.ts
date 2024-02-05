@@ -17,6 +17,15 @@ export { default as ButtonGroup } from './buttongroup/ButtonGroup.svelte';
 export { default as Card } from './cards/Card.svelte';
 // darkmode
 export { default as Darkmode } from './darkmode/Darkmode.svelte';
+// device-mockups
+export { default as DeviceMockup } from './device-mockups/DeviceMockup.svelte';
+export { default as Android } from './device-mockups/Android.svelte';
+export { default as DefaultMockup } from './device-mockups/DefaultMockup.svelte';
+export { default as Desktop } from './device-mockups/Desktop.svelte';
+export { default as Ios } from './device-mockups/Ios.svelte';
+export { default as Laptop } from './device-mockups/Laptop.svelte';
+export { default as Smartwatch } from './device-mockups/Smartwatch.svelte';
+export { default as Tablet } from './device-mockups/Tablet.svelte';
 // dropdown
 export { default as Dropdown } from './dropdown/Dropdown.svelte';
 export { default as DropdownDivider } from './dropdown/DropdownDivider.svelte';
