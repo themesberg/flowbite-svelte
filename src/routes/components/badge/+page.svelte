@@ -1,6 +1,11 @@
 <script>
 	import { Badge, Button, Indicator } from '$lib';
-	import { ClockSolid, EnvelopeSolid, CheckOutline, CheckCircleOutline } from 'flowbite-svelte-icons';
+	import {
+		ClockSolid,
+		EnvelopeSolid,
+		CheckOutline,
+		CheckCircleOutline
+	} from 'flowbite-svelte-icons';
 
 	import HighlightCompo from '../../utils/HighlightCompo.svelte';
 	import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -143,7 +148,7 @@
 <HighlightCompo codeLang="ts" code={modules['./md/badge-with-icon-only.md']} />
 
 <H2>Dismissable badge</H2>
-<CodeWrapper class="space-y-1 min-h-20">
+<CodeWrapper class="min-h-20 space-y-1">
 	<Badge dismissable large>Default</Badge>
 	<Badge dismissable large color="dark">Dark</Badge>
 	<Badge dismissable large color="red">Red</Badge>
@@ -156,11 +161,11 @@
 <HighlightCompo codeLang="ts" code={modules['./md/dismissable-badge.md']} />
 
 <H2>Icon</H2>
-<CodeWrapper class='h-20'>
-  <Badge dismissable>
-    Default
-    {#snippet icon()}
-      <CheckCircleOutline class="h-4 w-4" />
-    {/snippet}
-  </Badge>
+<CodeWrapper class="h-20">
+	<Badge dismissable>
+		Default
+		{#snippet icon()}
+			<CheckCircleOutline class="h-4 w-4" />
+		{/snippet}
+	</Badge>
 </CodeWrapper>

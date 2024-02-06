@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type {CloseBtnColors} from '$lib/types'
+	import type { CloseBtnColors } from '$lib/types';
 	import { twMerge } from 'tailwind-merge';
-  import { CloseButton } from '$lib';
+	import { CloseButton } from '$lib';
 
 	interface Props {
 		children: any;
@@ -62,14 +62,14 @@
 		</div>
 		{#if dismissable}
 			<div class="flex items-center">
-				<CloseButton 
-      divclass="-mx-1.5 -my-1.5" 
-      {color} 
-      ariaLabel="Remove badge"
-				onclick={() => {
-					bannerStatus = false;
-				}}
-        />
+				<CloseButton
+					divclass="-mx-1.5 -my-1.5"
+					{color}
+					ariaLabel="Remove badge"
+					onclick={() => {
+						bannerStatus = false;
+					}}
+				/>
 			</div>
 		{/if}
 	</div>
@@ -83,6 +83,7 @@
 @prop header,
 @prop position = 'sticky',
 @prop dismissable = true,
+@prop color = 'gray',
 @prop bannerType = 'default',
 @prop divclass,
 @prop div2class,

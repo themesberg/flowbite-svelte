@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
 	import { CloseButton } from '$lib';
-	import type {CloseBtnColors} from '$lib/types'
+	import type { CloseBtnColors } from '$lib/types';
 	interface Props {
 		children: any;
 		icon?: any;
-		color?:CloseBtnColors;
+		color?: CloseBtnColors;
 		large?: boolean;
 		dismissable?: boolean;
 		divclass?: string;
@@ -83,7 +83,6 @@
 		rounded ? 'rounded-full' : 'rounded',
 		divclass
 	);
-
 </script>
 
 {#if badgeStatus}
@@ -97,7 +96,7 @@
 		{/if}
 		{#if dismissable}
 			{#if icon}
-			<button
+				<button
 					type="button"
 					class="m-0.5 -me-1.5 ms-1.5 whitespace-normal rounded p-0.5 text-primary-500 hover:bg-primary-200 focus:outline-none focus:ring-1 focus:ring-primary-400 dark:hover:bg-primary-800 dark:hover:text-primary-300"
 					aria-label="Remove badge"
@@ -106,19 +105,17 @@
 					}}
 					><span class="sr-only">Remove badge</span>
 					{@render icon()}
-					</button
-				>
-				
+				</button>
 			{:else}
-			<CloseButton 
-      divclass="ms-1.5 -me-1.5" 
-      {color} 
-			size={large ? 'sm' : 'xs'}
-      ariaLabel="Remove badge"
-				onclick={() => {
-					badgeStatus = false;
-				}}
-        />
+				<CloseButton
+					divclass="ms-1.5 -me-1.5"
+					{color}
+					size={large ? 'sm' : 'xs'}
+					ariaLabel="Remove badge"
+					onclick={() => {
+						badgeStatus = false;
+					}}
+				/>
 			{/if}
 		{/if}
 	</div>

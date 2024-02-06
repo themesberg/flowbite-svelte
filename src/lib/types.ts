@@ -160,4 +160,16 @@ export type SidebarType = {
 	nonActiveClass: string;
 };
 
-export type CloseBtnColors = | 'gray' | 'red' | 'yellow' | 'green' | 'indigo' |	'purple' | 'pink' | 'blue' | 'dark' | 'default' | 'primary' |'none' 
+export type CloseBtnColors =
+	| 'gray'
+	| 'red'
+	| 'yellow'
+	| 'green'
+	| 'indigo'
+	| 'purple'
+	| 'pink'
+	| 'blue'
+	| 'dark'
+	| 'default'
+	| 'primary'
+	| 'none';
