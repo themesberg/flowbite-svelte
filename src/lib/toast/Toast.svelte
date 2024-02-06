@@ -19,7 +19,6 @@
   }
   let { children, icon, dismissable = true, color = 'primary', position = 'none', divclass, div2class, div3class, align = true, transition = fade, params, ...attributes } = $props<Props>();
  
-  const toast = uiHelpers();
   let toastStatus: boolean = $state(true)
 
   const divCls: string = 'w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800 gap-3';
