@@ -97,10 +97,10 @@
 </header>
 
 <Drawer width="64" drawerStatus={navDrawerStatus} closeDrawer={closeNavDrawer} {transitionParams}>
-	<div class="flex items-center">
+	<div class="flex items-center pb-4">
 		<h5
 			id="drawer-label"
-			class="mb-4 inline-flex items-center text-lg font-semibold text-gray-500 dark:text-gray-400"
+			class="inline-flex items-center text-lg font-semibold text-gray-500 dark:text-gray-400"
 		>
 			Svelte 5 UI Lib
 		</h5>
@@ -131,6 +131,7 @@
 	<Sidebar asideclass="w-48 p-0" divclass="bg-transparent p-0" aclass="p-1 pl-4">
 		<SidebarGroup>
 			<SidebarDropdownWrapper label="Components" svgclass="me-4" btnclass="p-1">
+				<SidebarItem onclick={closeNavDrawer} label="Alert" href="/components/alert" />
 				<SidebarItem onclick={closeNavDrawer} label="Avatar" href="/components/avatar" />
 				<SidebarItem onclick={closeNavDrawer} label="Badge" href="/components/badge" />
 				<SidebarItem onclick={closeNavDrawer} label="Banner" href="/components/banner" />

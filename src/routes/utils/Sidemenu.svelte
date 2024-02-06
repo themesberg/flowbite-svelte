@@ -21,6 +21,7 @@
 			svgclass="me-4"
 			btnclass="p-1"
 		>
+			<SidebarItem label="Alert" href="/components/alert" />
 			<SidebarItem label="Avatar" href="/components/avatar" />
 			<SidebarItem label="Badge" href="/components/badge" />
 			<SidebarItem label="Banner" href="/components/banner" />

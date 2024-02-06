@@ -20,9 +20,7 @@
 </script>
 
 <H1>Buttons</H1>
-
 <H2>Setup</H2>
-
 <HighlightCompo codeLang="ts" code={modules['./md/setup.md']} />
 
 <H2>Default buttons</H2>

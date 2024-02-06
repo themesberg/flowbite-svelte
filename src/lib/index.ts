@@ -1,6 +1,8 @@
 // import './style.css';
 
 export { uiHelpers, clickOutside } from './uiHelpers.svelte';
+// alert
+export { default as Alert } from './alert/Alert.svelte';
 // avatar
 export { default as Avatar } from './avatar/Avatar.svelte';
 // badge
@@ -108,3 +110,6 @@ export { default as P } from './typography/P.svelte';
 export { default as Span } from './typography/Span.svelte';
 // video
 export { default as Video } from './video/Video.svelte';
+
+// utils
+export { default as CloseButton } from './utils/CloseButton.svelte';
