@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.29](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.28...v0.2.29) (2024-02-06)
+
+
+### Features
+
+* add badge component ([c35be46](https://github.com/shinokada/svelte-5-ui-lib/commit/c35be461f809862382902ceb6a59427200efbf09))
+
+
+### Bug Fixes
+
+* toast page ([2050696](https://github.com/shinokada/svelte-5-ui-lib/commit/205069677e67b98927abfd2bd4e13079f6264ace))
+
 ### [0.2.28](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.26...v0.2.28) (2024-02-06)
 
 
