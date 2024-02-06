@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.31](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.30...v0.2.31) (2024-02-06)
+
+
+### Features
+
+* add Alert compo ([edd5f9f](https://github.com/shinokada/svelte-5-ui-lib/commit/edd5f9f7ad768c50ea6607ddb4cea2a958ea5d43))
+* add icon snippet to Badge compo ([a6700cd](https://github.com/shinokada/svelte-5-ui-lib/commit/a6700cd9c94af1184be5fa61eb7035556c2d2a55))
+
 ### [0.2.30](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.29...v0.2.30) (2024-02-06)
 
 ### [0.2.29](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.28...v0.2.29) (2024-02-06)
