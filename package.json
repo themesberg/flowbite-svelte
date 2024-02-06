@@ -100,6 +100,10 @@
       "types": "./dist/avatar/Avatar.svelte.d.ts",
       "svelte": "./dist/avatar/Avatar.svelte"
     },
+    "./Badge.svelte": {
+      "types": "./dist/badge/Badge.svelte.d.ts",
+      "svelte": "./dist/badge/Badge.svelte"
+    },
     "./Banner.svelte": {
       "types": "./dist/banner/Banner.svelte.d.ts",
       "svelte": "./dist/banner/Banner.svelte"

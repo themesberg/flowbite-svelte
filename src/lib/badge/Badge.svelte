@@ -148,3 +148,19 @@
 		{/if}
 	</div>
 {/if}
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop closeBtn,
+@prop color = 'primary',
+@prop large = false,
+@prop dismissable = false,
+@prop divclass,
+@prop border,
+@prop href,
+@prop rounded,
+@prop ...attributes
+-->
