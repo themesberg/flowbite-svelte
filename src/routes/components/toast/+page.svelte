@@ -224,7 +224,7 @@
     </div>
   </Toast>
 </CodeWrapper>
-<HighlightCompo code={modules['./md/interactive.md']} />
+<HighlightCompo code={modules['./md/interactive-toast.md']} />
 
 <H2>Positioning</H2>
 <CodeWrapper>
