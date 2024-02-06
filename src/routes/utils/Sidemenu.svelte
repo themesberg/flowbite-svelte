@@ -42,6 +42,7 @@
 			<SidebarItem label="Sidebar" href="/components/sidebar" />
 			<SidebarItem label="Skeleton" href="/components/skeleton" />
 			<SidebarItem label="Spinner" href="/components/spinner" />
+			<SidebarItem label="Toast" href="/components/toast" />
 			<SidebarItem label="Video" href="/components/video" />
 		</SidebarDropdownWrapper>
 		<SidebarDropdownWrapper label="Forms" isOpen={hasPath('forms')} svgclass="me-4" btnclass="p-1">

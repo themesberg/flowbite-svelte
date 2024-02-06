@@ -160,6 +160,7 @@
 				<SidebarItem onclick={closeNavDrawer} label="Sidebar" href="/components/sidebar" />
 				<SidebarItem onclick={closeNavDrawer} label="Skeleton" href="/components/skeleton" />
 				<SidebarItem onclick={closeNavDrawer} label="Spinner" href="/components/spinner" />
+				<SidebarItem onclick={closeNavDrawer} label="Toast" href="/components/toast" />
 				<SidebarItem onclick={closeNavDrawer} label="Video" href="/components/video" />
 			</SidebarDropdownWrapper>
 			<SidebarDropdownWrapper label="Forms" svgclass="me-4" btnclass="p-1">
