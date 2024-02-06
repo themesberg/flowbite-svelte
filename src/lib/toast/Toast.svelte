@@ -1,5 +1,4 @@
 <script lang="ts">
-  // import type { ComponentProps } from 'svelte';
   import { fade, type TransitionConfig } from 'svelte/transition';
   import {uiHelpers} from '$lib';
   import { twMerge } from 'tailwind-merge';
