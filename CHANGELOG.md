@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.28](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.26...v0.2.28) (2024-02-06)
+
+
+### Features
+
+* add toast component and page ([8d69d74](https://github.com/shinokada/svelte-5-ui-lib/commit/8d69d7486bd637c04a141eeb1da1f03d8199a749))
+* starting toast ([91927bc](https://github.com/shinokada/svelte-5-ui-lib/commit/91927bc428fa1ba710738b06f15b8c3d6e204f3b))
+
 ### [0.2.27](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.24...v0.2.27) (2024-02-05)
 
 
