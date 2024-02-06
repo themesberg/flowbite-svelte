@@ -73,3 +73,17 @@
     </svg>
   </button>
 {/if}
+
+<!--
+@component
+[Go to docs](https://svelte-5-ui-lib.vercel.app/)
+## Props
+@prop children,
+@prop color= 'default',
+@prop name= 'Close',
+@prop ariaLabel,
+@prop size = 'md',
+@prop href,
+@prop divclass,
+@prop ...attributes
+-->

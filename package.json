@@ -96,6 +96,10 @@
       "types": "./dist/accordion/AccordionItem.svelte.d.ts",
       "svelte": "./dist/accordion/AccordionItem.svelte"
     },
+    "./Alert.svelte": {
+      "types": "./dist/alert/Alert.svelte.d.ts",
+      "svelte": "./dist/alert/Alert.svelte"
+    },
     "./Avatar.svelte": {
       "types": "./dist/avatar/Avatar.svelte.d.ts",
       "svelte": "./dist/avatar/Avatar.svelte"
@@ -415,6 +419,10 @@
     "./Span.svelte": {
       "types": "./dist/typography/Span.svelte.d.ts",
       "svelte": "./dist/typography/Span.svelte"
+    },
+    "./CloseButton.svelte": {
+      "types": "./dist/utils/CloseButton.svelte.d.ts",
+      "svelte": "./dist/utils/CloseButton.svelte"
     },
     "./Video.svelte": {
       "types": "./dist/video/Video.svelte.d.ts",
