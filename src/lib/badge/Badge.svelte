@@ -2,7 +2,7 @@
 	import { twMerge } from 'tailwind-merge';
 	interface Props {
 		children: any;
-		closeBtn?: any;
+		icon?: any;
 		color?:
 			| 'primary'
 			| 'blue'
@@ -23,7 +23,7 @@
 	}
 	let {
 		children,
-		closeBtn,
+		icon,
 		color = 'primary',
 		large = false,
 		dismissable = false,
@@ -121,8 +121,19 @@
 			{@render children()}
 		{/if}
 		{#if dismissable}
-			{#if closeBtn}
-				{@render closeBtn(badgeStatus)}
+			{#if icon}
+			<button
+					type="button"
+					class="m-0.5 -me-1.5 ms-1.5 whitespace-normal rounded p-0.5 text-primary-500 hover:bg-primary-200 focus:outline-none focus:ring-1 focus:ring-primary-400 dark:hover:bg-primary-800 dark:hover:text-primary-300"
+					aria-label="Remove badge"
+					onclick={() => {
+						badgeStatus = false;
+					}}
+					><span class="sr-only">Remove badge</span>
+					{@render icon()}
+					</button
+				>
+				
 			{:else}
 				<button
 					type="button"
@@ -154,7 +165,7 @@
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
 @prop children,
-@prop closeBtn,
+@prop icon,
 @prop color = 'primary',
 @prop large = false,
 @prop dismissable = false,
