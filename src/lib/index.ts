@@ -3,6 +3,8 @@
 export { uiHelpers, clickOutside } from './uiHelpers.svelte';
 // avatar
 export { default as Avatar } from './avatar/Avatar.svelte';
+// badge
+export { default as Badge } from './badge/Badge.svelte';
 // banner
 export { default as Banner } from './banner/Banner.svelte';
 // breadcrumb

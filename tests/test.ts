@@ -10,6 +10,21 @@ test('avatar page has expected h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toContain('Avatar');
 });
 
+test('badge page has expected h1', async ({ page }) => {
+	await page.goto('/components/badge');
+	expect(await page.textContent('h1')).toContain('Badge');
+});
+
+test('banner page has expected h1', async ({ page }) => {
+	await page.goto('/components/banner');
+	expect(await page.textContent('h1')).toContain('Banner');
+});
+
+test('breadcrumb page has expected h1', async ({ page }) => {
+	await page.goto('/components/breadcrumb');
+	expect(await page.textContent('h1')).toContain('Breadcrumb');
+});
+
 test('button page has expected h1', async ({ page }) => {
 	await page.goto('/components/button');
 	expect(await page.textContent('h1')).toBe('Buttons');
@@ -35,6 +50,11 @@ test('device mockup page has expected h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Device mockup');
 });
 
+test('drawer page has expected h1', async ({ page }) => {
+	await page.goto('/components/drawer');
+	expect(await page.textContent('h1')).toContain('Drawer');
+});
+
 test('dropdown page has expected h1', async ({ page }) => {
 	await page.goto('/components/dropdown');
 	expect(await page.textContent('h1')).toBe('Dropdown');
@@ -45,15 +65,34 @@ test('footer page has expected h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Footer');
 });
 
+test('gallery page has expected h1', async ({ page }) => {
+	await page.goto('/components/gallery');
+	expect(await page.textContent('h1')).toContain('Gallery');
+});
+
+test('indicator page has expected h1', async ({ page }) => {
+	await page.goto('/components/indicator');
+	expect(await page.textContent('h1')).toContain('Indicator');
+});
+
+test('kbd page has expected h1', async ({ page }) => {
+	await page.goto('/components/kbd');
+	expect(await page.textContent('h1')).toContain('KBD (Keyboard)');
+});
+
 test('list-group page has expected h1', async ({ page }) => {
 	await page.goto('/components/list-group');
 	expect(await page.textContent('h1')).toBe('List group');
 });
 
-
 test('navbar page has expected h1', async ({ page }) => {
 	await page.goto('/components/navbar');
 	expect(await page.textContent('h1')).toBe('Navbar');
+});
+
+test('progress page has expected h1', async ({ page }) => {
+	await page.goto('/components/progress');
+	expect(await page.textContent('h1')).toBe('Progress bar');
 });
 
 test('rating page has expected h1', async ({ page }) => {
@@ -81,7 +120,7 @@ test('toast page has expected h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Toast');
 });
 
-test('Video page has expected h1', async ({ page }) => {
+test('video page has expected h1', async ({ page }) => {
 	await page.goto('/components/video');
 	expect(await page.textContent('h1')).toBe('Video');
 });
@@ -102,14 +141,14 @@ test('floating label page has expected h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Floating label');
 });
 
-test('range page has expected h1', async ({ page }) => {
-	await page.goto('/forms/range');
-	expect(await page.textContent('h1')).toBe('Range');
-});
-
 test('radio/helper/radiobutton page has expected h1', async ({ page }) => {
 	await page.goto('/forms/radio');
 	expect(await page.textContent('h1')).toBe('Radio, Helper, and RadioButton');
+});
+
+test('range page has expected h1', async ({ page }) => {
+	await page.goto('/forms/range');
+	expect(await page.textContent('h1')).toBe('Range');
 });
 
 test('select page has expected h1', async ({ page }) => {
@@ -124,32 +163,32 @@ test('toggle page has expected h1', async ({ page }) => {
 
 // typography
 
-test('Blockquote page has expected h1', async ({ page }) => {
+test('blockquote page has expected h1', async ({ page }) => {
 	await page.goto('/typography/blockquote');
 	expect(await page.textContent('h1')).toBe('Blockquote');
 });
 
-test('Heading/Span/Mark page has expected h1', async ({ page }) => {
+test('heading/span/mark page has expected h1', async ({ page }) => {
 	await page.goto('/typography/heading');
 	expect(await page.textContent('h1')).toBe('Heading, Span & Mark');
 });
 
-test('HR page has expected h1', async ({ page }) => {
+test('hr page has expected h1', async ({ page }) => {
 	await page.goto('/typography/hr');
 	expect(await page.textContent('h1')).toBe('Horizontal line (HR)');
 });
 
-test('Link page has expected h1', async ({ page }) => {
+test('link page has expected h1', async ({ page }) => {
 	await page.goto('/typography/link');
 	expect(await page.textContent('h1')).toBe('Links');
 });
 
-test('List page has expected h1', async ({ page }) => {
+test('list page has expected h1', async ({ page }) => {
 	await page.goto('/typography/list');
 	expect(await page.textContent('h1')).toBe('List');
 });
 
-test('Paragraph page has expected h1', async ({ page }) => {
+test('paragraph page has expected h1', async ({ page }) => {
 	await page.goto('/typography/paragraph');
 	expect(await page.textContent('h1')).toBe('Paragraph');
 });

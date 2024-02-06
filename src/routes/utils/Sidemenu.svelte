@@ -22,6 +22,7 @@
 			btnclass="p-1"
 		>
 			<SidebarItem label="Avatar" href="/components/avatar" />
+			<SidebarItem label="Badge" href="/components/badge" />
 			<SidebarItem label="Banner" href="/components/banner" />
 			<SidebarItem label="Breadcrumb" href="/components/breadcrumb" />
 			<SidebarItem label="Button" href="/components/button" />

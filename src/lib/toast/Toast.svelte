@@ -1,6 +1,5 @@
 <script lang="ts">
   import { fade, type TransitionConfig } from 'svelte/transition';
-  import {uiHelpers} from '$lib';
   import { twMerge } from 'tailwind-merge';
   type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
