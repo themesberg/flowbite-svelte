@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
   import { CloseButton } from '$lib';
+  import type {CloseBtnColors} from '$lib/types'
 	interface Props {
 		children?: any;
 		icon?: any;
     closeIcon?: any;
-    color?: FrameColor;
+    color?: CloseBtnColors;
     border?: boolean;
     rounded?: boolean;
 		divclass?: string;
@@ -15,7 +16,6 @@
 
 	let { children, icon, closeIcon, color = 'primary', rounded = true, border ,divclass, dismissable, ...attributes } = $props<Props>();
 
-  type FrameColor = keyof typeof bgColors;
   color = color ?? 'default'; 
 	let alertStatus: boolean = $state(true);
 

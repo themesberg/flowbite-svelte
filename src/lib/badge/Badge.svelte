@@ -1,19 +1,11 @@
 <script lang="ts">
 	import { twMerge } from 'tailwind-merge';
+	import { CloseButton } from '$lib';
+	import type {CloseBtnColors} from '$lib/types'
 	interface Props {
 		children: any;
 		icon?: any;
-		color?:
-			| 'primary'
-			| 'blue'
-			| 'dark'
-			| 'red'
-			| 'green'
-			| 'yellow'
-			| 'indigo'
-			| 'purple'
-			| 'pink'
-			| 'none';
+		color?:CloseBtnColors;
 		large?: boolean;
 		dismissable?: boolean;
 		divclass?: string;
@@ -118,26 +110,15 @@
 				>
 				
 			{:else}
-				<button
-					type="button"
-					class="m-0.5 -me-1.5 ms-1.5 whitespace-normal rounded p-0.5 text-primary-500 hover:bg-primary-200 focus:outline-none focus:ring-1 focus:ring-primary-400 dark:hover:bg-primary-800 dark:hover:text-primary-300"
-					aria-label="Remove badge"
-					onclick={() => {
-						badgeStatus = false;
-					}}
-					><span class="sr-only">Remove badge</span>
-					<svg
-						class="h-3.5 w-3.5"
-						fill="currentColor"
-						viewBox="0 0 20 20"
-						xmlns="http://www.w3.org/2000/svg"
-						><path
-							fill-rule="evenodd"
-							d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-							clip-rule="evenodd"
-						></path></svg
-					></button
-				>
+			<CloseButton 
+      divclass="ms-1.5 -me-1.5" 
+      {color} 
+			size={large ? 'sm' : 'xs'}
+      ariaLabel="Remove badge"
+				onclick={() => {
+					badgeStatus = false;
+				}}
+        />
 			{/if}
 		{/if}
 	</div>

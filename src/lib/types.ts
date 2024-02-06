@@ -159,3 +159,5 @@ export type SidebarType = {
 	activeClass: string;
 	nonActiveClass: string;
 };
+
+export type CloseBtnColors = | 'gray' | 'red' | 'yellow' | 'green' | 'indigo' |	'purple' | 'pink' | 'blue' | 'dark' | 'default' | 'primary' |'none' 
