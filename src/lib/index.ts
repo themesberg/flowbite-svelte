@@ -90,6 +90,8 @@ export { default as TestimonialPlaceholder } from './skeleton/TestimonialPlaceho
 export { default as WidgetPlaceholder } from './skeleton/WidgetPlaceholder.svelte';
 // spinner
 export { default as Spinner } from './spinner/Spinner.svelte';
+// toast
+export { default as Toast } from './toast/Toast.svelte';
 // typography
 export { default as A } from './typography/A.svelte';
 export { default as Blockquote } from './typography/Blockquote.svelte';

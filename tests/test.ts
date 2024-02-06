@@ -76,7 +76,11 @@ test('spinner page has expected h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Spinner');
 });
 
-// video
+test('toast page has expected h1', async ({ page }) => {
+	await page.goto('/components/toast');
+	expect(await page.textContent('h1')).toBe('Toast');
+});
+
 test('Video page has expected h1', async ({ page }) => {
 	await page.goto('/components/video');
 	expect(await page.textContent('h1')).toBe('Video');
