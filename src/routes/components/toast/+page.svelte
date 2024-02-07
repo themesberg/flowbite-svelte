@@ -186,7 +186,7 @@
 <HighlightCompo code={modules['./md/fly.md']} />
 
 <H2>Undo button</H2>
-<CodeWrapper class="flex h-28 flex-col items-center">
+<CodeWrapper class="flex h-[104px] flex-col items-center">
 	<Toast div2class="w-full text-sm font-normal flex items-center justify-between">
 		Conversation archived.
 		<a
@@ -201,8 +201,8 @@
 
 <H2>Advanced examples</H2>
 <H3>Toast message</H3>
-<CodeWrapper class="flex h-48 flex-col items-center">
-	<Toast align={false} divclass="">
+<CodeWrapper class="flex h-[204px] flex-col items-center">
+	<Toast align={false}>
 		{#snippet icon()}
 			<Avatar src="/images/profile-picture-1.webp" />
 		{/snippet}
@@ -255,15 +255,15 @@
 <H2>Positioning</H2>
 <CodeWrapper>
 	<div class="relative h-56">
-		<Toast dismissable={false} position="top-left" divclass="max-w-48">Top left positioning.</Toast>
-		<Toast dismissable={false} position="top-right" divclass="max-w-48"
-			>Top right positioning.</Toast
+		<Toast dismissable={false} position="top-left" divclass="max-w-20 sm:max-w-48">Top-left</Toast>
+		<Toast dismissable={false} position="top-right" divclass="max-w-20 sm:max-w-48"
+			>Top-right</Toast
 		>
-		<Toast dismissable={false} position="bottom-left" divclass="max-w-48"
-			>Bottom left positioning.</Toast
+		<Toast dismissable={false} position="bottom-left" divclass="max-w-20 sm:max-w-48"
+			>Bottom-left</Toast
 		>
-		<Toast dismissable={false} position="bottom-right" divclass="max-w-48"
-			>Bottom right positioning.</Toast
+		<Toast dismissable={false} position="bottom-right" divclass="max-w-20 sm:max-w-48"
+			>Bottom-right</Toast
 		>
 	</div>
 </CodeWrapper>
