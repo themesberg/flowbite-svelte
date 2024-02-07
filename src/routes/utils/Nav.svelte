@@ -135,7 +135,11 @@
 				<SidebarItem onclick={closeNavDrawer} label="Avatar" href="/components/avatar" />
 				<SidebarItem onclick={closeNavDrawer} label="Badge" href="/components/badge" />
 				<SidebarItem onclick={closeNavDrawer} label="Banner" href="/components/banner" />
-				<SidebarItem onclick={closeNavDrawer} label="Bottom navigation" href="/components/bottom-navigation" />
+				<SidebarItem
+					onclick={closeNavDrawer}
+					label="Bottom navigation"
+					href="/components/bottom-navigation"
+				/>
 				<SidebarItem onclick={closeNavDrawer} label="Breadcrumb" href="/components/breadcrumb" />
 				<SidebarItem onclick={closeNavDrawer} label="Button" href="/components/button" />
 				<SidebarItem

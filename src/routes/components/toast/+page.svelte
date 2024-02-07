@@ -256,8 +256,7 @@
 <CodeWrapper>
 	<div class="relative h-56">
 		<Toast dismissable={false} position="top-left" divclass="max-w-20 sm:max-w-48">Top-left</Toast>
-		<Toast dismissable={false} position="top-right" divclass="max-w-20 sm:max-w-48"
-			>Top-right</Toast
+		<Toast dismissable={false} position="top-right" divclass="max-w-20 sm:max-w-48">Top-right</Toast
 		>
 		<Toast dismissable={false} position="bottom-left" divclass="max-w-20 sm:max-w-48"
 			>Bottom-left</Toast

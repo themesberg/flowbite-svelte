@@ -112,6 +112,14 @@
       "types": "./dist/banner/Banner.svelte.d.ts",
       "svelte": "./dist/banner/Banner.svelte"
     },
+    "./BottomNav.svelte": {
+      "types": "./dist/bottom-navigation/BottomNav.svelte.d.ts",
+      "svelte": "./dist/bottom-navigation/BottomNav.svelte"
+    },
+    "./BottomNavItem.svelte": {
+      "types": "./dist/bottom-navigation/BottomNavItem.svelte.d.ts",
+      "svelte": "./dist/bottom-navigation/BottomNavItem.svelte"
+    },
     "./Breadcrumb.svelte": {
       "types": "./dist/breadcrumb/Breadcrumb.svelte.d.ts",
       "svelte": "./dist/breadcrumb/Breadcrumb.svelte"
