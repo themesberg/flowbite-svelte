@@ -169,7 +169,5 @@ export type CloseBtnColors =
 	| 'purple'
 	| 'pink'
 	| 'blue'
-	| 'dark'
-	| 'default'
 	| 'primary'
 	| 'none';

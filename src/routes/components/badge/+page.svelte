@@ -22,7 +22,7 @@
 <H2>Default badge</H2>
 <CodeWrapper>
 	<Badge>Default</Badge>
-	<Badge color="dark">Dark</Badge>
+	<Badge color="gray">Gray</Badge>
 	<Badge color="red">Red</Badge>
 	<Badge color="green">Green</Badge>
 	<Badge color="yellow">Yellow</Badge>
@@ -35,7 +35,7 @@
 <H2>Large badge</H2>
 <CodeWrapper class="space-y-1">
 	<Badge large>Default</Badge>
-	<Badge large color="dark">Dark</Badge>
+	<Badge large color="gray">Gray</Badge>
 	<Badge large color="red">Red</Badge>
 	<Badge large color="green">Green</Badge>
 	<Badge large color="yellow">Yellow</Badge>
@@ -48,7 +48,7 @@
 <H2>Bordered badge</H2>
 <CodeWrapper>
 	<Badge border>Default</Badge>
-	<Badge border color="dark">Dark</Badge>
+	<Badge border color="gray">Gray</Badge>
 	<Badge border color="red">Red</Badge>
 	<Badge border color="green">Green</Badge>
 	<Badge border color="yellow">Yellow</Badge>
@@ -61,7 +61,7 @@
 <H2>Pills badge</H2>
 <CodeWrapper>
 	<Badge rounded>Default</Badge>
-	<Badge rounded color="dark">Dark</Badge>
+	<Badge rounded color="gray">Gray</Badge>
 	<Badge rounded color="red">Red</Badge>
 	<Badge rounded color="green">Green</Badge>
 	<Badge rounded color="yellow">Yellow</Badge>
@@ -82,7 +82,7 @@
 
 <H2>Badge with icon</H2>
 <CodeWrapper>
-	<Badge color="dark" border>
+	<Badge color="gray" border>
 		<ClockSolid class="me-1.5 h-2.5 w-2.5" />
 		3 days ago
 	</Badge>
@@ -136,7 +136,7 @@
 
 <H2>Badge with icon only</H2>
 <CodeWrapper>
-	<Badge color="dark" rounded large divclass="!p-1 !font-semibold">
+	<Badge color="gray" rounded large divclass="!p-1 !font-semibold">
 		<CheckOutline class="h-3 w-3" />
 		<span class="sr-only">Icon description</span>
 	</Badge>
@@ -150,7 +150,7 @@
 <H2>Dismissable badge</H2>
 <CodeWrapper class="min-h-20 space-y-1">
 	<Badge dismissable large>Default</Badge>
-	<Badge dismissable large color="dark">Dark</Badge>
+	<Badge dismissable large color="gray">Gray</Badge>
 	<Badge dismissable large color="red">Red</Badge>
 	<Badge dismissable large color="green">Green</Badge>
 	<Badge dismissable large color="yellow">Yellow</Badge>

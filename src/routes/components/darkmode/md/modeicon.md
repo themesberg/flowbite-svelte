@@ -3,8 +3,11 @@
     import { ThumbsUpSolid, ThumbsDownSolid } from 'flowbite-svelte-icons';
 </script>
 
-
-<Darkmode class="text-lg">
-    <ThumbsUpSolid slot="lightIcon" color="red" />
-    <ThumbsDownSolid slot="darkIcon" color="green" />
+<Darkmode btnclass="text-lg">
+    {#snippet lightIcon()}
+    <ThumbsUpSolid color="red" />
+    {/snippet}
+    {#snippet darkIcon()}
+    <ThumbsDownSolid color="green" />
+    {/snippet}
 </Darkmode>

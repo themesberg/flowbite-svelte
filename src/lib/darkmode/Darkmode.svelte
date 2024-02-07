@@ -1,6 +1,8 @@
 <script lang="ts">
 	interface Props {
 		btnclass?: string | undefined;
+		lightIcon?: any;
+		darkIcon?: any;
 		size?: 'sm' | 'md' | 'lg';
 		ariaLabel?: string | undefined;
 	}
@@ -8,7 +10,7 @@
 
 	const THEME_PREFERENCE_KEY = 'color-theme';
 
-	let { btnclass, size = 'md', ariaLabel = 'Dark mode', ...attributes } = $props<Props>();
+	let { btnclass, lightIcon, darkIcon, size = 'md', ariaLabel = 'Dark mode', ...attributes } = $props<Props>();
 	let btnCls: string = twMerge(
 		'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5',
 		btnclass
@@ -44,7 +46,9 @@
 
 <button on:click={toggleTheme} aria-label={ariaLabel} type="button" {...attributes} class={btnCls}>
 	<span class="hidden dark:block">
-		<slot name="lightIcon">
+		{#if lightIcon}
+		{@render lightIcon()}
+		{:else}
 			<svg
 				role="img"
 				aria-label="Light mode"
@@ -60,10 +64,12 @@
 					clip-rule="evenodd"
 				/>
 			</svg>
-		</slot>
+		{/if}
 	</span>
 	<span class="block dark:hidden">
-		<slot name="darkIcon">
+		{#if darkIcon}
+		{@render darkIcon()}
+		{:else}
 			<svg
 				role="img"
 				aria-label="Dark mode"
@@ -74,7 +80,7 @@
 			>
 				<path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
 			</svg>
-		</slot>
+		{/if}
 	</span>
 </button>
 

@@ -114,7 +114,7 @@
 </script>
 
 <p {...attributes} class={classP}>
-	<slot />
+	{@render children()}
 </p>
 
 <!--

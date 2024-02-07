@@ -38,9 +38,13 @@ to the default classes.
 Use the lightIcon and darkIcon slots to change icons:
 
 <CodeWrapper>
-	<Darkmode class="text-lg">
-		<ThumbsUpSolid slot="lightIcon" color="red" />
-		<ThumbsDownSolid slot="darkIcon" color="green" />
+	<Darkmode btnclass="text-lg">
+		{#snippet lightIcon()}
+		<ThumbsUpSolid color="red" />
+		{/snippet}
+		{#snippet darkIcon()}
+		<ThumbsDownSolid color="green" />
+		{/snippet}
 	</Darkmode>
 </CodeWrapper>
 

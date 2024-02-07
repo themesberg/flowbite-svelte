@@ -33,7 +33,7 @@
 
 <nav aria-label={ariaLabel} {...attributes} class={twMerge(classNav, classname)}>
 	<ol class={olCls}>
-		<slot />
+		{@render children()}
 	</ol>
 </nav>
 

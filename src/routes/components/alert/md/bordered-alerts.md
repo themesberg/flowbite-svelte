@@ -33,10 +33,10 @@
   <span class="font-medium">Warning alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert border color="dark">
+<Alert border color="pink">
   {#snippet icon()}
   <InfoCircleSolid class="w-4 h-4" />
   {/snippet}
-  <span class="font-medium">Dark alert!</span>
+  <span class="font-medium">Pink alert!</span>
   Change a few things up and try submitting again.
 </Alert>

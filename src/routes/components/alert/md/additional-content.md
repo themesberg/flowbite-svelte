@@ -1,7 +1,7 @@
 <Alert>
   <div class="flex items-center gap-3">
     {#snippet icon()}
-    <InfoCircleSolid slot="icon" class="w-4 h-4" />
+    <InfoCircleSolid class="w-4 h-4" />
     {/snippet}
     <span class="text-lg font-medium">This is a info alert</span>
   </div>
@@ -14,7 +14,7 @@
 <Alert color="green">
   <div class="flex items-center gap-3">
     {#snippet icon()}
-    <InfoCircleSolid slot="icon" class="w-4 h-4" />
+    <InfoCircleSolid class="w-4 h-4" />
     {/snippet}
     <span class="text-lg font-medium">This is a info alert</span>
   </div>

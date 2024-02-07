@@ -18,7 +18,7 @@
   <span class="font-medium">Warning alert!</span>
   Change a few things up and try submitting again.
 </Alert>
-<Alert color="dark">
-  <span class="font-medium">Dark alert!</span>
+<Alert color="pink">
+  <span class="font-medium">Pink alert!</span>
   Change a few things up and try submitting again.
 </Alert>

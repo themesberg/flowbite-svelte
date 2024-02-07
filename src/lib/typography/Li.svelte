@@ -12,7 +12,7 @@
 </script>
 
 <li {...attributes} class={classLi}>
-	<slot />
+	{@render children()}
 </li>
 
 <!--

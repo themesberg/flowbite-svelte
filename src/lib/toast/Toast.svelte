@@ -1,23 +1,15 @@
 <script lang="ts">
 	import { fade, type TransitionConfig } from 'svelte/transition';
 	import { twMerge } from 'tailwind-merge';
+	import { CloseButton } from '$lib';
+	import type { CloseBtnColors } from '$lib/types';
 	type TransitionFunc = (node: HTMLElement, params: any) => TransitionConfig;
 
 	interface Props {
 		children: any;
 		icon?: any;
 		dismissable?: boolean;
-		color?:
-			| 'primary'
-			| 'gray'
-			| 'red'
-			| 'yellow'
-			| 'green'
-			| 'blue'
-			| 'indigo'
-			| 'purple'
-			| 'orange'
-			| 'none';
+		color?:CloseBtnColors;
 		position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none';
 		divclass?: string;
 		div2class?: string;
@@ -73,9 +65,10 @@
 		blue: 'text-blue-500 bg-blue-100 dark:bg-blue-800 dark:text-blue-200',
 		indigo: 'text-indigo-500 bg-indigo-100 dark:bg-indigo-800 dark:text-indigo-200',
 		purple: 'text-purple-500 bg-purple-100 dark:bg-purple-800 dark:text-purple-200',
-		orange: 'text-orange-500 bg-orange-100 dark:bg-orange-700 dark:text-orange-200',
+		pink: 'text-pink-500 bg-pink-100 dark:bg-pink-700 dark:text-pink-200',
 		none: ''
 	};
+// | 'gray'| 'red'| 'yellow'| 'green'| 'indigo'| 'purple'| 'pink'| 'blue'| 'primary'| 'none';
 
 	let iconClass: string = twMerge(
 		'inline-flex items-center justify-center shrink-0 rounded-lg',
@@ -101,25 +94,14 @@
 		</div>
 
 		{#if dismissable}
-			<button
-				type="button"
-				onclick={() => {
-					toastStatus = false;
-				}}
-				class={clsBtnExtraClass}
-				aria-label="Close"
-			>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					class="h-5 w-5"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke="currentColor"
-					stroke-width="2"
-				>
-					<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-				</svg>
-			</button>
+			<CloseButton
+					divclass={clsBtnExtraClass}
+					ariaLabel="Remove toast"
+					{color}
+					onclick={() => {
+						toastStatus = false;
+					}}
+				/>
 		{/if}
 	</div>
 {/if}

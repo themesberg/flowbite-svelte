@@ -56,7 +56,7 @@
 		Item has been deleted.
 	</Toast>
 
-	<Toast color="orange">
+	<Toast color="pink">
 		{#snippet icon()}
 			<ExclamationCircleSolid class="h-5 w-5" />
 			<span class="sr-only">Warning icon</span>
@@ -254,11 +254,11 @@
 
 <H2>Positioning</H2>
 <CodeWrapper>
-	<div class="relative h-56">
-		<Toast dismissable={false} position="top-left">Top left positioning.</Toast>
-		<Toast dismissable={false} position="top-right">Top right positioning.</Toast>
-		<Toast dismissable={false} position="bottom-left">Bottom left positioning.</Toast>
-		<Toast dismissable={false} position="bottom-right">Bottom right positioning.</Toast>
+	<div class="relative h-56 ">
+		<Toast dismissable={false} position="top-left" divclass='max-w-48'>Top left positioning.</Toast>
+		<Toast dismissable={false} position="top-right" divclass='max-w-48'>Top right positioning.</Toast>
+		<Toast dismissable={false} position="bottom-left" divclass='max-w-48'>Bottom left positioning.</Toast>
+		<Toast dismissable={false} position="bottom-right" divclass='max-w-48'>Bottom right positioning.</Toast>
 	</div>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/positioning.md']} />

@@ -35,8 +35,8 @@
 		<span class="font-medium">Warning alert!</span>
 		Change a few things up and try submitting again.
 	</Alert>
-	<Alert color="dark">
-		<span class="font-medium">Dark alert!</span>
+	<Alert color="pink">
+		<span class="font-medium">Pink alert!</span>
 		Change a few things up and try submitting again.
 	</Alert>
 </CodeWrapper>
@@ -79,11 +79,11 @@
 		<span class="font-medium">Warning alert!</span>
 		Change a few things up and try submitting again.
 	</Alert>
-	<Alert color="dark">
+	<Alert color="pink">
 		{#snippet icon()}
 			<InfoCircleSolid class="h-4 w-4" />
 		{/snippet}
-		<span class="font-medium">Dark alert!</span>
+		<span class="font-medium">Pink alert!</span>
 		Change a few things up and try submitting again.
 	</Alert>
 </CodeWrapper>
@@ -126,7 +126,7 @@
 		<span class="font-medium">Warning alert!</span>
 		Change a few things up and try submitting again.
 	</Alert>
-	<Alert border color="dark">
+	<Alert border color="pink">
 		{#snippet icon()}
 			<InfoCircleSolid class="h-4 w-4" />
 		{/snippet}
@@ -202,7 +202,7 @@
 		<span class="font-medium">Warning alert!</span>
 		Change a few things up and try submitting again.
 	</Alert>
-	<Alert dismissable color="dark">
+	<Alert dismissable color="pink">
 		{#snippet icon()}
 			<InfoCircleSolid class="h-4 w-4" />
 		{/snippet}
@@ -242,7 +242,7 @@
 		<span class="font-medium">Warning alert!</span>
 		Change a few things up and try submitting again.
 	</Alert>
-	<Alert color="dark" rounded={false} divclass="border-t-4 flex-row-reverse">
+	<Alert color="pink" rounded={false} divclass="border-t-4 flex-row-reverse">
 		{#snippet icon()}
 			<InfoCircleSolid class="h-4 w-4" />
 		{/snippet}
@@ -257,7 +257,7 @@
 	<Alert>
 		<div class="flex items-center gap-3">
 			{#snippet icon()}
-				<InfoCircleSolid slot="icon" class="h-4 w-4" />
+				<InfoCircleSolid class="h-4 w-4" />
 			{/snippet}
 			<span class="text-lg font-medium">This is a info alert</span>
 		</div>
@@ -273,7 +273,7 @@
 	<Alert color="green">
 		<div class="flex items-center gap-3">
 			{#snippet icon()}
-				<InfoCircleSolid slot="icon" class="h-4 w-4" />
+				<InfoCircleSolid class="h-4 w-4" />
 			{/snippet}
 			<span class="text-lg font-medium">This is a info alert</span>
 		</div>

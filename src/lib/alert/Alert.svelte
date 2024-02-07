@@ -26,7 +26,6 @@
 		...attributes
 	} = $props<Props>();
 
-	color = color ?? 'default';
 	let alertStatus: boolean = $state(true);
 
 	const bgColors = {
@@ -38,8 +37,6 @@
 		purple: 'bg-purple-50 dark:bg-gray-800 ',
 		pink: 'bg-pink-50 dark:bg-gray-800 ',
 		blue: 'bg-blue-50 dark:bg-gray-800 ',
-		dark: 'bg-gray-50 dark:bg-gray-800',
-		default: 'bg-white dark:bg-gray-800',
 		primary: 'bg-primary-50 dark:bg-gray-800 ',
 		none: ''
 	};
@@ -52,8 +49,6 @@
 		purple: 'text-purple-800 dark:text-purple-400',
 		pink: 'text-pink-800 dark:text-pink-400',
 		blue: 'text-blue-800 dark:text-blue-400',
-		dark: 'text-gray-700 dark:text-gray-300',
-		default: 'text-gray-500 dark:text-gray-400',
 		primary: 'text-primary-800 dark:text-primary-400',
 		none: ''
 	};
@@ -66,8 +61,6 @@
 		purple: 'border-purple-300 dark:border-purple-800 divide-purple-300 dark:divide-purple-800',
 		pink: 'border-pink-300 dark:border-pink-800 divide-pink-300 dark:divide-pink-800',
 		blue: 'border-blue-300 dark:border-blue-800 divide-blue-300 dark:divide-blue-800',
-		dark: 'border-gray-500 divide-gray-500',
-		default: 'border-gray-200 dark:border-gray-700 divide-gray-200 dark:divide-gray-700',
 		primary:
 			'border-primary-500 dark:border-primary-200  divide-primary-500 dark:divide-primary-200 ',
 		none: ''
