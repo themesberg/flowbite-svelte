@@ -25,6 +25,11 @@ test('banner page has expected h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toContain('Banner');
 });
 
+test('bottom navigation page has expected h1', async ({ page }) => {
+	await page.goto('/components/bottom-navigation');
+	expect(await page.textContent('h1')).toContain('Bottom navigation');
+});
+
 test('breadcrumb page has expected h1', async ({ page }) => {
 	await page.goto('/components/breadcrumb');
 	expect(await page.textContent('h1')).toContain('Breadcrumb');

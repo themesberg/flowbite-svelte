@@ -25,6 +25,7 @@
 			<SidebarItem label="Avatar" href="/components/avatar" />
 			<SidebarItem label="Badge" href="/components/badge" />
 			<SidebarItem label="Banner" href="/components/banner" />
+			<SidebarItem label="Bottom navigation" href="/components/bottom-navigation" />
 			<SidebarItem label="Breadcrumb" href="/components/breadcrumb" />
 			<SidebarItem label="Button" href="/components/button" />
 			<SidebarItem label="Button group" href="/components/button-group" />

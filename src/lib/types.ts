@@ -171,3 +171,15 @@ export type CloseBtnColors =
 	| 'blue'
 	| 'primary'
 	| 'none';
+
+export interface ButtonClassesTypes {
+	default?: string;
+	border?: string;
+	application?: string;
+	pagination?: string;
+	group?: string;
+	card?: string;
+	meeting?: string;
+	video?: string;
+	custom?: string;
+}

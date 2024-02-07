@@ -9,6 +9,9 @@ export { default as Avatar } from './avatar/Avatar.svelte';
 export { default as Badge } from './badge/Badge.svelte';
 // banner
 export { default as Banner } from './banner/Banner.svelte';
+// bottom-navigation
+export { default as BottomNav } from './bottom-navigation/BottomNav.svelte';
+export { default as BottomNavItem } from './bottom-navigation/BottomNavItem.svelte';
 // breadcrumb
 export { default as Breadcrumb } from './breadcrumb/Breadcrumb.svelte';
 export { default as BreadcrumbItem } from './breadcrumb/BreadcrumbItem.svelte';
