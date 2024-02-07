@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.33](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.32...v0.2.33) (2024-02-07)
+
+
+### Features
+
+* add CloseButton to badge, banner, alert and toast compos ([86dca6d](https://github.com/shinokada/svelte-5-ui-lib/commit/86dca6d631aa3a69e8d430e28361f64110cdca2a))
+
 ### [0.2.32](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.31...v0.2.32) (2024-02-06)
 
 
