@@ -51,9 +51,9 @@
 <svelte:element this={tag} {...attributes} class={defaultCls}>
 	{#each items as item, index}
 		{#if typeof item === 'string'}
-			<ListgroupItem {btn} {index} on:click={() => dispatch('click', item)}>{item}</ListgroupItem>
+			<ListgroupItem {btn} {index} onclick={() => dispatch('click', item)}>{item}</ListgroupItem>
 		{:else}
-			<ListgroupItem {btn} {...item} {index} on:click={() => dispatch('click', item)}
+			<ListgroupItem {btn} {...item} {index} onclick={() => dispatch('click', item)}
 				>{item}</ListgroupItem
 			>
 		{/if}

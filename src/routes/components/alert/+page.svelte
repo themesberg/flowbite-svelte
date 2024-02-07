@@ -257,7 +257,7 @@
 	<Alert>
 		<div class="flex items-center gap-3">
 			{#snippet icon()}
-				<InfoCircleSolid slot="icon" class="h-4 w-4" />
+				<InfoCircleSolid class="h-4 w-4" />
 			{/snippet}
 			<span class="text-lg font-medium">This is a info alert</span>
 		</div>
@@ -273,7 +273,7 @@
 	<Alert color="green">
 		<div class="flex items-center gap-3">
 			{#snippet icon()}
-				<InfoCircleSolid slot="icon" class="h-4 w-4" />
+				<InfoCircleSolid class="h-4 w-4" />
 			{/snippet}
 			<span class="text-lg font-medium">This is a info alert</span>
 		</div>
