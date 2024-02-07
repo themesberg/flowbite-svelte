@@ -254,11 +254,17 @@
 
 <H2>Positioning</H2>
 <CodeWrapper>
-	<div class="relative h-56 ">
-		<Toast dismissable={false} position="top-left" divclass='max-w-48'>Top left positioning.</Toast>
-		<Toast dismissable={false} position="top-right" divclass='max-w-48'>Top right positioning.</Toast>
-		<Toast dismissable={false} position="bottom-left" divclass='max-w-48'>Bottom left positioning.</Toast>
-		<Toast dismissable={false} position="bottom-right" divclass='max-w-48'>Bottom right positioning.</Toast>
+	<div class="relative h-56">
+		<Toast dismissable={false} position="top-left" divclass="max-w-48">Top left positioning.</Toast>
+		<Toast dismissable={false} position="top-right" divclass="max-w-48"
+			>Top right positioning.</Toast
+		>
+		<Toast dismissable={false} position="bottom-left" divclass="max-w-48"
+			>Bottom left positioning.</Toast
+		>
+		<Toast dismissable={false} position="bottom-right" divclass="max-w-48"
+			>Bottom right positioning.</Toast
+		>
 	</div>
 </CodeWrapper>
 <HighlightCompo code={modules['./md/positioning.md']} />

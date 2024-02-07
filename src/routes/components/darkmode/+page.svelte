@@ -40,10 +40,10 @@ Use the lightIcon and darkIcon slots to change icons:
 <CodeWrapper>
 	<Darkmode btnclass="text-lg">
 		{#snippet lightIcon()}
-		<ThumbsUpSolid color="red" />
+			<ThumbsUpSolid color="red" />
 		{/snippet}
 		{#snippet darkIcon()}
-		<ThumbsDownSolid color="green" />
+			<ThumbsDownSolid color="green" />
 		{/snippet}
 	</Darkmode>
 </CodeWrapper>

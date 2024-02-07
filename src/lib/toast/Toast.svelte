@@ -9,7 +9,7 @@
 		children: any;
 		icon?: any;
 		dismissable?: boolean;
-		color?:CloseBtnColors;
+		color?: CloseBtnColors;
 		position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'none';
 		divclass?: string;
 		div2class?: string;
@@ -68,7 +68,7 @@
 		pink: 'text-pink-500 bg-pink-100 dark:bg-pink-700 dark:text-pink-200',
 		none: ''
 	};
-// | 'gray'| 'red'| 'yellow'| 'green'| 'indigo'| 'purple'| 'pink'| 'blue'| 'primary'| 'none';
+	// | 'gray'| 'red'| 'yellow'| 'green'| 'indigo'| 'purple'| 'pink'| 'blue'| 'primary'| 'none';
 
 	let iconClass: string = twMerge(
 		'inline-flex items-center justify-center shrink-0 rounded-lg',
@@ -95,13 +95,13 @@
 
 		{#if dismissable}
 			<CloseButton
-					divclass={clsBtnExtraClass}
-					ariaLabel="Remove toast"
-					{color}
-					onclick={() => {
-						toastStatus = false;
-					}}
-				/>
+				divclass={clsBtnExtraClass}
+				ariaLabel="Remove toast"
+				{color}
+				onclick={() => {
+					toastStatus = false;
+				}}
+			/>
 		{/if}
 	</div>
 {/if}

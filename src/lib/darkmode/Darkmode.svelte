@@ -10,7 +10,14 @@
 
 	const THEME_PREFERENCE_KEY = 'color-theme';
 
-	let { btnclass, lightIcon, darkIcon, size = 'md', ariaLabel = 'Dark mode', ...attributes } = $props<Props>();
+	let {
+		btnclass,
+		lightIcon,
+		darkIcon,
+		size = 'md',
+		ariaLabel = 'Dark mode',
+		...attributes
+	} = $props<Props>();
 	let btnCls: string = twMerge(
 		'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5',
 		btnclass
@@ -47,7 +54,7 @@
 <button on:click={toggleTheme} aria-label={ariaLabel} type="button" {...attributes} class={btnCls}>
 	<span class="hidden dark:block">
 		{#if lightIcon}
-		{@render lightIcon()}
+			{@render lightIcon()}
 		{:else}
 			<svg
 				role="img"
@@ -68,7 +75,7 @@
 	</span>
 	<span class="block dark:hidden">
 		{#if darkIcon}
-		{@render darkIcon()}
+			{@render darkIcon()}
 		{:else}
 			<svg
 				role="img"
@@ -89,6 +96,8 @@
 [Go to docs](https://svelte-5-ui-lib.vercel.app/)
 ## Props
 @prop btnclass,
+@prop lightIcon,
+@prop darkIcon,
 @prop size = 'md',
 @prop ariaLabel = 'Dark mode',
 @prop ...attributes
