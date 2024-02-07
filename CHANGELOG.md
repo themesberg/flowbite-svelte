@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.34](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.33...v0.2.34) (2024-02-07)
+
+
+### Features
+
+* add BottomNav and BottomNavLink compos ([545b2d7](https://github.com/shinokada/svelte-5-ui-lib/commit/545b2d751342dd3b54cf0582531f5b1132647030))
+* starting bottomnav ([bcb08ee](https://github.com/shinokada/svelte-5-ui-lib/commit/bcb08ee881b0b653e7fa22cffb371d523eb83407))
+
 ### [0.2.33](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.32...v0.2.33) (2024-02-07)
 
 
