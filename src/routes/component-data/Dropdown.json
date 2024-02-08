@@ -1,1 +1,13 @@
-{"name":"Dropdown","slots":["header","footer"],"events":["on:show"],"props":[["activeUrl","string","''"],["open","boolean","false"],["containerClass","string","'divide-y z-50'"],["headerClass","string","'py-1 overflow-hidden rounded-t-lg'"],["footerClass","string","'py-1 overflow-hidden rounded-b-lg'"],["activeClass","string","'text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900'"]]}
+{
+  "name": "Dropdown",
+  "slots": ["header", "footer"],
+  "events": ["on:show"],
+  "props": [
+    ["activeUrl", "string", "''"],
+    ["open", "boolean", "false"],
+    ["containerClass", "string", "'divide-y z-50'"],
+    ["headerClass", "string", "'py-1 overflow-hidden rounded-t-lg'"],
+    ["footerClass", "string", "'py-1 overflow-hidden rounded-b-lg'"],
+    ["activeClass", "string", "'text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900'"]
+  ]
+}

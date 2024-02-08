@@ -4,12 +4,11 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.44.22](https://github.com/themesberg/flowbite-svelte/compare/v0.44.21...v0.44.22) (2024-01-12)
 
-
 ### Bug Fixes
 
-* 1125 ([#1195](https://github.com/themesberg/flowbite-svelte/issues/1195)) ([f0b3d9c](https://github.com/themesberg/flowbite-svelte/commit/f0b3d9ce7fbfad3a5db93bffd680c028af1e3409))
-* 1209 ([#1210](https://github.com/themesberg/flowbite-svelte/issues/1210)) ([671a950](https://github.com/themesberg/flowbite-svelte/commit/671a950d96bc2e96fb4d85a999f7317dd5b9fd4f))
-* sidebar md:block ([0bd2f01](https://github.com/themesberg/flowbite-svelte/commit/0bd2f012986fcdd2b925fe05e69f7114478ab440))
+- 1125 ([#1195](https://github.com/themesberg/flowbite-svelte/issues/1195)) ([f0b3d9c](https://github.com/themesberg/flowbite-svelte/commit/f0b3d9ce7fbfad3a5db93bffd680c028af1e3409))
+- 1209 ([#1210](https://github.com/themesberg/flowbite-svelte/issues/1210)) ([671a950](https://github.com/themesberg/flowbite-svelte/commit/671a950d96bc2e96fb4d85a999f7317dd5b9fd4f))
+- sidebar md:block ([0bd2f01](https://github.com/themesberg/flowbite-svelte/commit/0bd2f012986fcdd2b925fe05e69f7114478ab440))
 
 ### [0.44.21](https://github.com/themesberg/flowbite-svelte/compare/v0.44.20...v0.44.21) (2023-12-22)
 
