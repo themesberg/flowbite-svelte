@@ -10,7 +10,7 @@
 		ArrowUpRightFromSquareOutline
 	} from 'flowbite-svelte-icons';
 
-	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
+	const modules = import.meta.glob('./md/*.md', { query: '?raw', import: 'default', eager: true });
 </script>
 
 <H1>Cards</H1>

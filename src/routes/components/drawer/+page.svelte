@@ -27,7 +27,7 @@
 	import H2 from '../../utils/H2.svelte';
 	import H3 from '../../utils/H3.svelte';
 	import { labelCls } from '$lib/forms/Radio.svelte';
-	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
+	const modules = import.meta.glob('./md/*.md', { query: '?raw', import: 'default', eager: true });
 
 	let transitionParams = {
 		x: -320,

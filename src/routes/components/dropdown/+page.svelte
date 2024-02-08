@@ -23,7 +23,7 @@
 		isOpen = dropdown.isOpen;
 		isOpen2 = dropdown2.isOpen;
 	});
-	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
+	const modules = import.meta.glob('./md/*.md', { query: '?raw', import: 'default', eager: true });
 </script>
 
 <H1>Dropdown</H1>

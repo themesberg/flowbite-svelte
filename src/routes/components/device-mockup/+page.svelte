@@ -4,7 +4,7 @@
 	import CodeWrapper from '../../utils/CodeWrapper.svelte';
 	import H1 from '../../utils/H1.svelte';
 	import H2 from '../../utils/H2.svelte';
-	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
+	const modules = import.meta.glob('./md/*.md', { query: '?raw', import: 'default', eager: true });
 </script>
 
 <H1>Device mockup</H1>

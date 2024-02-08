@@ -2,7 +2,7 @@
 	import HighlightCompo from './utils/HighlightCompo.svelte';
 	import H1 from './utils/H1.svelte';
 	import H2 from './utils/H2.svelte';
-	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
+	const modules = import.meta.glob('./md/*.md', { query: '?raw', import: 'default', eager: true });
 </script>
 
 <H1>Svelte 5 UI Lib</H1>

@@ -11,7 +11,7 @@
 		{ value: 'ca', name: 'Canada' },
 		{ value: 'fr', name: 'France' }
 	];
-	const modules = import.meta.glob('./md/*.md', { as: 'raw', eager: true });
+	const modules = import.meta.glob('./md/*.md', { query: '?raw', import: 'default', eager: true });
 </script>
 
 <H1>Select</H1>
