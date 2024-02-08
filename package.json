@@ -80,7 +80,8 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.1",
-    "tailwind-merge": "^2.2.1"
+    "tailwind-merge": "^2.2.1",
+    "flowbite-svelte-icons": "^1.1.1"
   },
   "keywords": [
     "svelte 5",
