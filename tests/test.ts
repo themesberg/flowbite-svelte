@@ -203,3 +203,8 @@ test('paragraph page has expected h1', async ({ page }) => {
 	expect(await page.textContent('h1')).toBe('Paragraph');
 });
 
+// plugins
+test('chart page has expected h1', async ({ page }) => {
+	await page.goto('/plugins/chart');
+	expect(await page.textContent('h1')).toBe('Chart');
+});

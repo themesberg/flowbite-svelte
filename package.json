@@ -47,8 +47,14 @@
     "@sveltejs/kit": "^2.5.0",
     "@sveltejs/package": "^2.2.6",
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
+<<<<<<< HEAD
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
+=======
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "apexcharts": "^3.45.2",
+>>>>>>> chart
     "autoprefixer": "^10.4.17",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
@@ -66,7 +72,6 @@
     "svelte-flag-icons": "^1.0.1",
     "svelte-highlight": "^7.6.0",
     "svelte-lib-helpers": "^0.3.17",
-    "tailwind-merge": "^2.2.1",
     "tailwindcss": "^3.4.1",
     "tslib": "^2.6.2",
     "typescript": "^5.3.3",
@@ -75,7 +80,6 @@
   "peerDependencies": {
     "@sveltejs/kit": "^2.0.0",
     "svelte": "^5.0.0",
-    "tailwind-merge": "^2.2.0",
     "tailwindcss": "^3.3.6"
   },
   "dependencies": {
@@ -92,6 +96,10 @@
     "flowbite"
   ],
   "type": "module",
+  "dependencies": {
+    "@floating-ui/dom": "^1.6.1",
+    "tailwind-merge": "^2.2.1"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -148,6 +156,10 @@
     "./Card.svelte": {
       "types": "./dist/cards/Card.svelte.d.ts",
       "svelte": "./dist/cards/Card.svelte"
+    },
+    "./Chart.svelte": {
+      "types": "./dist/chart/Chart.svelte.d.ts",
+      "svelte": "./dist/chart/Chart.svelte"
     },
     "./Darkmode.svelte": {
       "types": "./dist/darkmode/Darkmode.svelte.d.ts",

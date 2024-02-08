@@ -30,14 +30,13 @@
 
 <H2>Default dropdown</H2>
 
-<CodeWrapper class="h-96 items-start">
-	<div class="mx-auto w-48">
+<CodeWrapper class="flex justify-center h-96 items-start">
 		<Button onclick={toggle}
 			>Dropdown
 			<ChevronDownSolid class="ms-2 h-3 w-3 text-white dark:text-white" />
 		</Button>
 		<div class="relative">
-			<Dropdown {isOpen} divclass="absolute -left-[27px]">
+			<Dropdown {isOpen} divclass="absolute top-[40px] -left-[150px]">
 				{#snippet header()}
 					<div>Bonnie Green</div>
 					<div class="truncate font-medium">name@flowbite.com</div>
@@ -60,7 +59,6 @@
 				{/snippet}
 			</Dropdown>
 		</div>
-	</div>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/dropdown1.md']} />

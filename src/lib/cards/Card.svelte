@@ -46,6 +46,7 @@
 	let cardClass: string = $state('');
 	let tag = href ? 'a' : 'div';
 	let imgClass: string = $state('');
+	// $inspect('href: ', href)
 	$effect(() => {
 		innerPadding = paddings[padding];
 		//  twMerge('flex w-full', sizes[size], reverse ? 'flex-col-reverse' : 'flex-col',
@@ -53,7 +54,7 @@
 		// href && 'hover:bg-gray-100 dark:hover:bg-gray-700',
 		// !img && innerPadding, $$props.class);
 		cardClass = twMerge(
-			'w-full flex max-w-sm bg-white border border-gray-200 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700',
+			'w-full flex max-w-sm bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700',
 			sizes[size],
 			shadow && 'shadow-md',
 			reverse ? 'flex-col-reverse' : 'flex-col',
