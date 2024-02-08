@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.35](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.34...v0.2.35) (2024-02-08)
+
+
+### Bug Fixes
+
+* add dependencies ([7478f80](https://github.com/shinokada/svelte-5-ui-lib/commit/7478f807992238058147c503f4318bde17f843a6))
+
 ### [0.2.34](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.33...v0.2.34) (2024-02-07)
 
 
