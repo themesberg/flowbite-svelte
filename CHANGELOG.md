@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.37](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.36...v0.2.37) (2024-02-08)
+
+
+### Bug Fixes
+
+* vite update and change to query: ?raw, import: default ([c8b0be9](https://github.com/shinokada/svelte-5-ui-lib/commit/c8b0be9eb831578257e2669e0cd0b24339726191))
+
 ### [0.2.36](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.35...v0.2.36) (2024-02-08)
 
 
