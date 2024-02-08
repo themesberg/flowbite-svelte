@@ -202,7 +202,7 @@
 <H2>Advanced examples</H2>
 <H3>Toast message</H3>
 <CodeWrapper class="flex h-[204px] flex-col items-center">
-	<Toast align={false} div2class='w-10 h-10 rounded-full'>
+	<Toast align={false} div2class="w-10 h-10 rounded-full">
 		{#snippet icon()}
 			<Avatar src="/images/profile-picture-1.webp" />
 		{/snippet}
@@ -255,13 +255,28 @@
 <H2>Positioning</H2>
 <CodeWrapper>
 	<div class="relative h-56">
-		<Toast dismissable={false} position="top-left" divclass="text-white dark:text-white bg-red-600 dark:bg-red-500 w-20 h-20 sm:w-48 sm:h-16">Top-left</Toast>
-		<Toast dismissable={false} position="top-right" divclass="text-white dark:text-white bg-green-600 dark:bg-green-500 w-20 h-20 sm:w-48 sm:h-16">Top-right</Toast
+		<Toast
+			dismissable={false}
+			position="top-left"
+			divclass="text-white dark:text-white bg-red-600 dark:bg-red-500 w-20 h-20 sm:w-48 sm:h-16"
+			>Top-left</Toast
 		>
-		<Toast dismissable={false} position="bottom-left" divclass="text-white dark:text-white bg-blue-600 dark:bg-blue-500 w-20 h-20 sm:w-48 sm:h-16"
+		<Toast
+			dismissable={false}
+			position="top-right"
+			divclass="text-white dark:text-white bg-green-600 dark:bg-green-500 w-20 h-20 sm:w-48 sm:h-16"
+			>Top-right</Toast
+		>
+		<Toast
+			dismissable={false}
+			position="bottom-left"
+			divclass="text-white dark:text-white bg-blue-600 dark:bg-blue-500 w-20 h-20 sm:w-48 sm:h-16"
 			>Bottom-left</Toast
 		>
-		<Toast dismissable={false} position="bottom-right" divclass="text-white dark:text-white bg-purple-600 dark:bg-purple-500 w-20 h-20 sm:w-48 sm:h-16"
+		<Toast
+			dismissable={false}
+			position="bottom-right"
+			divclass="text-white dark:text-white bg-purple-600 dark:bg-purple-500 w-20 h-20 sm:w-48 sm:h-16"
 			>Bottom-right</Toast
 		>
 	</div>

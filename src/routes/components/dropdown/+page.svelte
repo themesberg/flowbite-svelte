@@ -30,35 +30,35 @@
 
 <H2>Default dropdown</H2>
 
-<CodeWrapper class="flex justify-center h-96 items-start">
-		<Button onclick={toggle}
-			>Dropdown
-			<ChevronDownSolid class="ms-2 h-3 w-3 text-white dark:text-white" />
-		</Button>
-		<div class="relative">
-			<Dropdown {isOpen} divclass="absolute top-[40px] -left-[150px]">
-				{#snippet header()}
-					<div>Bonnie Green</div>
-					<div class="truncate font-medium">name@flowbite.com</div>
-				{/snippet}
-				{#snippet children()}
-					<DropdownItem href="/">Dashboard</DropdownItem>
-					<DropdownItem href="/components/dropdown">Dropdown</DropdownItem>
-					<DropdownItem href="/components/footer">Footer</DropdownItem>
-					<DropdownDivider />
-					<DropdownItem href="/dropdown">Dropdown</DropdownItem>
-				{/snippet}
-				{#snippet footer()}
-					<div class="py-2">
-						<a
-							href="/"
-							class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-							>Sign out</a
-						>
-					</div>
-				{/snippet}
-			</Dropdown>
-		</div>
+<CodeWrapper class="flex h-96 items-start justify-center">
+	<Button onclick={toggle}
+		>Dropdown
+		<ChevronDownSolid class="ms-2 h-3 w-3 text-white dark:text-white" />
+	</Button>
+	<div class="relative">
+		<Dropdown {isOpen} divclass="absolute top-[40px] -left-[150px]">
+			{#snippet header()}
+				<div>Bonnie Green</div>
+				<div class="truncate font-medium">name@flowbite.com</div>
+			{/snippet}
+			{#snippet children()}
+				<DropdownItem href="/">Dashboard</DropdownItem>
+				<DropdownItem href="/components/dropdown">Dropdown</DropdownItem>
+				<DropdownItem href="/components/footer">Footer</DropdownItem>
+				<DropdownDivider />
+				<DropdownItem href="/dropdown">Dropdown</DropdownItem>
+			{/snippet}
+			{#snippet footer()}
+				<div class="py-2">
+					<a
+						href="/"
+						class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+						>Sign out</a
+					>
+				</div>
+			{/snippet}
+		</Dropdown>
+	</div>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/dropdown1.md']} />
