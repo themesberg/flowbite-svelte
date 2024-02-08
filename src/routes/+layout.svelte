@@ -69,13 +69,13 @@
     </NavUl>
 
     <div class="flex items-center ms-auto">
-      <ToolbarLink class="hidden sm:inline-block dark:hover:text-white hover:text-gray-900" name="View on GitHub" href="https://github.com/themesberg/flowbite-svelte">
+      <ToolbarLink class="hidden sm:inline-block dark:hover:text-white hover:text-gray-900 focus:ring-0" name="View on GitHub" href="https://github.com/themesberg/flowbite-svelte">
         <GitHub />
       </ToolbarLink>
-      <ToolbarLink class="hidden xl:inline-block dark:hover:text-white hover:text-gray-900" name="Join community on Discord" href="https://discord.gg/4eeurUVvTy">
+      <ToolbarLink class="hidden xl:inline-block dark:hover:text-white hover:text-gray-900 focus:ring-0" name="Join community on Discord" href="https://discord.gg/4eeurUVvTy">
         <Discord />
       </ToolbarLink>
-      <ToolbarLink class="hidden xl:inline-block dark:hover:text-white hover:text-gray-900" name="Subscribe to YouTube channel" href="https://www.youtube.com/channel/UC_Ms4V2kYDsh7F_CSsHyQ6A">
+      <ToolbarLink class="hidden xl:inline-block dark:hover:text-white hover:text-gray-900 focus:ring-0" name="Subscribe to YouTube channel" href="https://www.youtube.com/channel/UC_Ms4V2kYDsh7F_CSsHyQ6A">
         <YouTube />
       </ToolbarLink>
       <DarkMode size="lg" class="inline-block dark:hover:text-white hover:text-gray-900" />
