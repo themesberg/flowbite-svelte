@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.36](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.35...v0.2.36) (2024-02-08)
+
+
+### Features
+
+* add Chart component ([e40ca10](https://github.com/shinokada/svelte-5-ui-lib/commit/e40ca10bf743241d513b014d1d94e7824d97f4d7))
+* starting chart compo ([aefba65](https://github.com/shinokada/svelte-5-ui-lib/commit/aefba6568874034a723067cb48d46efe048ced1c))
+
+
+### Bug Fixes
+
+* Dropdown, Card, Chart ([3ab5981](https://github.com/shinokada/svelte-5-ui-lib/commit/3ab5981afae2beedd7e79a1e347aaa65e7619ecf))
+* package.json ([82f2a17](https://github.com/shinokada/svelte-5-ui-lib/commit/82f2a1741055ce664f2911a5809d27085d13e8b1))
+* toast page position ([0fd312b](https://github.com/shinokada/svelte-5-ui-lib/commit/0fd312bbf2c179c0911556e66ef4bc94ca032cec))
+* toast position colors for dark ([dffe1a1](https://github.com/shinokada/svelte-5-ui-lib/commit/dffe1a166a0c54b40e31c45a7f0757d41634e9b9))
+
 ### [0.2.35](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.34...v0.2.35) (2024-02-08)
 
 
