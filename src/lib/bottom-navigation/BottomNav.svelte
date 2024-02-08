@@ -93,8 +93,8 @@
 ## Props
 @prop children,
 @prop header,
-@prop position= 'fixed',
-@prop navType= 'default',
+@prop position = 'fixed',
+@prop navType = 'default',
 @prop divclass,
 @prop div2class,
 @prop activeClass,
