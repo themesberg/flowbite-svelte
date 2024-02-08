@@ -1,13 +1,1 @@
-{
-  "name": "FloatingLabelInput",
-  "slots": [],
-  "events": ["on:blur", "on:change", "on:click", "on:focus", "on:input", "on:keydown", "on:keypress", "on:keyup", "on:mouseenter", "on:mouseleave", "on:mouseover", "on:paste"],
-  "props": [
-    ["id", "string", "generateId()"],
-    ["style", "'filled' | 'outlined' | 'standard'", "'standard'"],
-    ["type", "InputType", "'text'"],
-    ["size", "'small' | 'default'", "'default'"],
-    ["color", "'base' | 'green' | 'red'", "'base'"],
-    ["value", "any", "undefined"]
-  ]
-}
+{"name":"FloatingLabelInput","slots":[],"events":["on:blur","on:change","on:click","on:focus","on:input","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover","on:paste"],"props":[["id","string","generateId()"],["style","'filled' | 'outlined' | 'standard'","'standard'"],["type","InputType","'text'"],["size","'small' | 'default'","'default'"],["color","'base' | 'green' | 'red'","'base'"],["value","any","undefined"]]}

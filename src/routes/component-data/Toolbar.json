@@ -1,1 +1,1 @@
-{ "name": "Toolbar", "slots": ["end"], "events": [], "props": [["embedded", "boolean", "false"]] }
+{"name":"Toolbar","slots":["end"],"events":[],"props":[["embedded","boolean","false"]]}

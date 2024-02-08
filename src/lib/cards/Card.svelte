@@ -67,6 +67,6 @@
 @prop export let horizontal: boolean = false;
 @prop export let reverse: boolean = false;
 @prop export let img: string | undefined = undefined;
-@prop export let padding: 'none' | 'sm' | 'md' | 'lg' | 'xl' = 'lg';
-@prop export let size: SizeType = 'sm';
+@prop export let padding: SizeType | 'none' = 'lg';
+@prop export let size: SizeType | 'none' = 'sm';
 -->

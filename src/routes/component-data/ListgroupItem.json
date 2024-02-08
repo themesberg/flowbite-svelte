@@ -1,18 +1,1 @@
-{
-  "name": "ListgroupItem",
-  "slots": [],
-  "events": ["on:blur", "on:change", "on:click", "on:focus", "on:keydown", "on:keypress", "on:keyup", "on:mouseenter", "on:mouseleave", "on:mouseover", "on:blur", "on:change", "on:click", "on:focus", "on:keydown", "on:keypress", "on:keyup", "on:mouseenter", "on:mouseleave", "on:mouseover"],
-  "props": [
-    ["active", "boolean", "getContext('active')"],
-    ["current", "boolean", "false"],
-    ["disabled", "boolean", "false"],
-    ["href", "string", "''"],
-    ["currentClass", "string", "'text-white bg-primary-700 dark:text-white dark:bg-gray-800'"],
-    ["normalClass", "string", "''"],
-    ["disabledClass", "string", "'text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400'"],
-    ["focusClass", "string", "'focus:z-40 focus:outline-none focus:ring-2 focus:ring-primary-700 focus:text-primary-700 dark:focus:ring-gray-500 dark:focus:text-white'"],
-    ["hoverClass", "string", "'hover:bg-gray-100 hover:text-primary-700 dark:hover:bg-gray-600 dark:hover:text-white'"],
-    ["itemDefaultClass", "string", "'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg'"],
-    ["attrs", "any", "undefined"]
-  ]
-}
+{"name":"ListgroupItem","slots":[],"events":["on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover","on:blur","on:change","on:click","on:focus","on:keydown","on:keypress","on:keyup","on:mouseenter","on:mouseleave","on:mouseover"],"props":[["active","boolean","getContext('active')"],["current","boolean","false"],["disabled","boolean","false"],["href","string","''"],["currentClass","string","'text-white bg-primary-700 dark:text-white dark:bg-gray-800'"],["normalClass","string","''"],["disabledClass","string","'text-gray-900 bg-gray-100 dark:bg-gray-600 dark:text-gray-400'"],["focusClass","string","'focus:z-40 focus:outline-none focus:ring-2 focus:ring-primary-700 focus:text-primary-700 dark:focus:ring-gray-500 dark:focus:text-white'"],["hoverClass","string","'hover:bg-gray-100 hover:text-primary-700 dark:hover:bg-gray-600 dark:hover:text-white'"],["itemDefaultClass","string","'py-2 px-4 w-full text-sm font-medium list-none first:rounded-t-lg last:rounded-b-lg'"],["attrs","any","undefined"]]}

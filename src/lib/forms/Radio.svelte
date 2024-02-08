@@ -48,6 +48,6 @@
 @prop export let color: FormColorType = 'primary';
 @prop export let custom: boolean = false;
 @prop export let inline: boolean = false;
-@prop export let group: number | string = '';
+@prop export let group: number | string | undefined = undefined;
 @prop export let value: number | string = '';
 -->
