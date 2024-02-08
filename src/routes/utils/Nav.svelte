@@ -190,6 +190,9 @@
 				<SidebarItem onclick={closeNavDrawer} label="List" href="/typography/list" />
 				<SidebarItem onclick={closeNavDrawer} label="Paragraph" href="/typography/paragraph" />
 			</SidebarDropdownWrapper>
+			<SidebarDropdownWrapper label="Plugins" svgclass="me-4" btnclass="p-1">
+				<SidebarItem onclick={closeNavDrawer} label="Chart" href="/plugins/chart" />
+			</SidebarDropdownWrapper>
 		</SidebarGroup>
 	</Sidebar>
 </Drawer>

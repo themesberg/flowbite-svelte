@@ -86,6 +86,10 @@
     "flowbite"
   ],
   "type": "module",
+  "dependencies": {
+    "@floating-ui/dom": "^1.6.1",
+    "tailwind-merge": "^2.2.1"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -142,6 +146,10 @@
     "./Card.svelte": {
       "types": "./dist/cards/Card.svelte.d.ts",
       "svelte": "./dist/cards/Card.svelte"
+    },
+    "./Chart.svelte": {
+      "types": "./dist/chart/Chart.svelte.d.ts",
+      "svelte": "./dist/chart/Chart.svelte"
     },
     "./Darkmode.svelte": {
       "types": "./dist/darkmode/Darkmode.svelte.d.ts",
@@ -435,9 +443,5 @@
       "types": "./dist/video/Video.svelte.d.ts",
       "svelte": "./dist/video/Video.svelte"
     }
-  },
-  "dependencies": {
-    "@floating-ui/dom": "^1.6.1",
-    "tailwind-merge": "^2.2.1"
   }
 }
