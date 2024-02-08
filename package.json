@@ -49,6 +49,7 @@
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
     "@typescript-eslint/eslint-plugin": "^6.20.0",
     "@typescript-eslint/parser": "^6.20.0",
+    "apexcharts": "^3.45.2",
     "autoprefixer": "^10.4.17",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
@@ -437,7 +438,6 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.1",
-    "apexcharts": "^3.45.2",
     "tailwind-merge": "^2.2.1"
   }
 }
