@@ -66,7 +66,6 @@
     "svelte-flag-icons": "^1.0.1",
     "svelte-highlight": "^7.5.0",
     "svelte-lib-helpers": "^0.3.17",
-    "tailwind-merge": "^2.2.1",
     "tailwindcss": "^3.4.1",
     "tslib": "^2.6.2",
     "typescript": "^5.3.3",
@@ -75,7 +74,6 @@
   "peerDependencies": {
     "@sveltejs/kit": "^2.0.0",
     "svelte": "^5.0.0",
-    "tailwind-merge": "^2.2.0",
     "tailwindcss": "^3.3.6"
   },
   "keywords": [
@@ -436,5 +434,10 @@
       "types": "./dist/video/Video.svelte.d.ts",
       "svelte": "./dist/video/Video.svelte"
     }
+  },
+  "dependencies": {
+    "@floating-ui/dom": "^1.6.1",
+    "apexcharts": "^3.45.2",
+    "tailwind-merge": "^2.2.1"
   }
 }

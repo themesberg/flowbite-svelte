@@ -116,3 +116,5 @@ export { default as Video } from './video/Video.svelte';
 
 // utils
 export { default as CloseButton } from './utils/CloseButton.svelte';
+// plugins
+export { default as Chart } from './chart/Chart.svelte';
