@@ -62,10 +62,10 @@
     <NavUl {divClass} {ulClass} {activeUrl} on:click={() => setTimeout(toggle, 1)} nonActiveClass="md:!ps-3 md:!py-2 lg:!ps-0 text-gray-700 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 dark:text-gray-400 lg:dark:text-white lg:dark:hover:text-primary-700 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent" activeClass="md:!ps-3 md:!py-2 lg:!ps-0 text-white bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:dark:text-primary-700 dark:bg-primary-600 lg:dark:bg-transparent cursor-default">
       <NavLi class="lg:px-2 lg:mb-0" href="/">Home</NavLi>
       <NavLi class="lg:px-2 lg:mb-0" href="/docs/pages/introduction">Docs</NavLi>
-      <NavLi class="lg:px-2 lg:mb-0" href="/docs/pages/quickstart">Quickstart</NavLi>
       <NavLi class="lg:px-2 lg:mb-0" href="/docs/components/accordion">Components</NavLi>
       <NavLi class="lg:px-2 lg:mb-0" href="https://flowbite.com/figma/">Figma</NavLi>
       <NavLi class="lg:px-2 lg:mb-0" href="https://flowbite-svelte-blocks.vercel.app/">Blocks</NavLi>
+      <NavLi class="lg:px-2 lg:mb-0" target="_blank" href="https://flowbite-svelte-admin-dashboard.vercel.app/">Dashboard</NavLi>
     </NavUl>
 
     <div class="flex items-center ms-auto">
