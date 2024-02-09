@@ -75,13 +75,13 @@ The following table provides details about the available sizes for icons:
 To change the size of an icon, use the size prop and specify the desired size. For example:
 
 ```html
-<AddressCardSolid size="md" />
+<CircleCheckSolid size="md" />
 ```
 
 If you want to override the preconfigured size, you can add a custom size using Tailwind CSS by including the desired classes in the class prop. For example:
 
 ```html
-<AddressCardSolid class="h-24 w-24 text-blue-700 me-4" />
+<CircleCheckSolid class="h-24 w-24 text-blue-700 me-4" />
 ```
 
 ## Creating a Default Global Icon Setting in Svelte
@@ -95,7 +95,7 @@ Use the `class` prop to change size, colors and add additional css.
 Here's an example of adding custom Tailwind CSS classes to an imported icon:
 
 ```html
-<AddressCardSolid class="h-24 w-24 text-blue-700 me-4" />
+<CircleCheckSolid class="h-24 w-24 text-blue-700 me-4" />
 ```
 
 ## Dark mode
@@ -105,7 +105,7 @@ If you want to support dark mode for the icons you need to use the `dark` varian
 Here's an example of making the icon red in dark mode:
 
 ```html
-<AddressCardSolid class="text-blue-700 dark:text-red-500" />
+<CircleCheckSolid class="text-blue-700 dark:text-red-500" />
 ```
 
 ## aria-label
@@ -115,7 +115,7 @@ All of the icons support `aria-label` for accessibilty - for example `BxAbacus` 
 Use `ariaLabel` prop to modify the `aria-label` value.
 
 ```html
-<AddressCardSolid ariaLabel="address card solid" />
+<CircleCheckSolid ariaLabel="circle check solid" />
 ```
 
 ## Unfocusable icon
@@ -123,7 +123,7 @@ Use `ariaLabel` prop to modify the `aria-label` value.
 If you want to make an icon unfocusable, add `tabindex="-1"`.
 
 ```html
-<AddressCardSolid tabindex="-1" />
+<CircleCheckSolid tabindex="-1" />
 ```
 
 ## Events
@@ -145,7 +145,7 @@ All of the icons from this library have the following events that you can use fo
 Here's an example of how you can pass an attribute:
 
 ```html
-<AddressCardSolid tabindex="0" />
+<CircleCheckSolid tabindex="0" />
 ```
 
 ## Using svelte:component
@@ -154,10 +154,10 @@ Here's an example how you can use `svelte:component` with Flowbite Icons in Svel
 
 ```html
 <script>
-  import { AddressCardSolid } from 'flowbite-svelte-icons';
+  import { CircleCheckSolid } from 'flowbite-svelte-icons';
 </script>
 
-<svelte:component this="{AddressCardSolid}" />
+<svelte:component this="{CircleCheckSolid}" />
 ```
 
 ## Using onMount
@@ -166,14 +166,14 @@ Here's an example of how you can create the icon using `onMount` from Svelte:
 
 ```html
 <script>
-  import { AddressCardSolid } from 'flowbite-svelte-icons';
+  import { CircleCheckSolid } from 'flowbite-svelte-icons';
   import { onMount } from 'svelte';
   const props = {
     size: '50',
     color: '#ff0000'
   };
   onMount(() => {
-    const icon = new AddressCardSolid({ target: document.body, props });
+    const icon = new CircleCheckSolid({ target: document.body, props });
   });
 </script>
 ```
@@ -187,13 +187,13 @@ Use `import * as Icon` from 'flowbite-svelte-icons..
   import * as Icon from 'flowbite-svelte-icons';
 </script>
 
-<Icon.AddressCardSolid />
+<Icon.CircleCheckSolid />
 
 <h1>Size</h1>
-<Icon.AddressCardSolid size="30" />
+<Icon.CircleCheckSolid size="30" />
 
 <h1>Tailwind CSS</h1>
-<Icon.AddressCardSolid class="text-blue-500" />
+<Icon.CircleCheckSolid class="text-blue-500" />
 ```
 
 ## Resources
