@@ -9,7 +9,7 @@
 
 <p>
 	Introducing Svelte 5 UI Lib – a UI library crafted with Svelte 5 and built upon
-	Flowbite/Flowbite-Svelte. Explore our collection featuring over 26 components.
+	Flowbite/Flowbite-Svelte. Explore our collection featuring over 36 components.
 </p>
 
 <H2>Dependencies</H2>
