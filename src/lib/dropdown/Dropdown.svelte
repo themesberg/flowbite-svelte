@@ -38,7 +38,7 @@
 
   let containerCls: string = twMerge(containerClass, $$props.classContainer);
   let headerCls: string = twMerge(headerClass, $$props.classHeader);
-  let ulCls: string = twMerge('py-1', $$props.class);
+  let ulCls: string = twMerge('py-2', $$props.class);
   let footerCls: string = twMerge(footerClass, $$props.classFooter);
 
   $: {
