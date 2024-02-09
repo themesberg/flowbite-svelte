@@ -63,7 +63,7 @@
       <NavLi class="lg:px-2 lg:mb-0" href="/">Home</NavLi>
       <NavLi class="lg:px-2 lg:mb-0" href="/docs/pages/introduction">Docs</NavLi>
       <NavLi class="lg:px-2 lg:mb-0" href="/docs/components/accordion">Components</NavLi>
-      <NavLi class="lg:px-2 lg:mb-0" href="https://flowbite.com/figma/">Figma</NavLi>
+      <NavLi class="lg:px-2 lg:mb-0" href="https://flowbite-svelte-icons.vercel.app/">Icons</NavLi>
       <NavLi class="lg:px-2 lg:mb-0" href="https://flowbite-svelte-blocks.vercel.app/">Blocks</NavLi>
       <NavLi class="lg:px-2 lg:mb-0" target="_blank" href="https://flowbite-svelte-admin-dashboard.vercel.app/">Dashboard</NavLi>
     </NavUl>
