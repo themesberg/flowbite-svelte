@@ -16,11 +16,15 @@
   export let activeUrl: string = '';
   export let open: boolean = false;
   export let containerClass: string = 'divide-y z-50';
+  export let classContainer: string | undefined = undefined;
   export let headerClass: string = 'py-1 overflow-hidden rounded-t-lg';
+  export let classHeader: string | undefined = undefined;
   export let footerClass: string = 'py-1 overflow-hidden rounded-b-lg';
+  export let classFooter: string | undefined = undefined;
   export let activeClass: string = 'text-primary-700 dark:text-primary-700 hover:text-primary-900 dark:hover:text-primary-900';
+  export let classActive: string | undefined = undefined;
 
-  let activeCls = twMerge(activeClass, $$props.classActive);
+  let activeCls = twMerge(activeClass, classActive);
 
   setContext<DropdownType>('DropdownType', { activeClass: activeCls });
 
@@ -29,17 +33,21 @@
   setContext('activeUrl', activeUrlStore);
   // propagate props type from underlying Frame
   interface $$Props extends ComponentProps<Popper> {
-    open?: boolean;
-    containerClass?: string;
-    headerClass?: string;
-    footerClass?: string;
     activeUrl?: string;
+    containerClass?: string;
+    classContainer?: string;
+    headerClass?: string;
+    classHeader?: string;
+    footerClass?: string;
+    classFooter?: string;
+    activeClass?: string;
+    classActive?: string;
   }
 
-  let containerCls: string = twMerge(containerClass, $$props.classContainer);
-  let headerCls: string = twMerge(headerClass, $$props.classHeader);
-  let ulCls: string = twMerge('py-1', $$props.class);
-  let footerCls: string = twMerge(footerClass, $$props.classFooter);
+  $: containerCls = twMerge(containerClass, classContainer);
+  $: headerCls = twMerge(headerClass, classHeader);
+  $: ulCls = twMerge('py-1', $$props.class);
+  $: footerCls = twMerge(footerClass, classFooter);
 
   $: {
     // set default values
