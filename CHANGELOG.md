@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.38](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.37...v0.2.38) (2024-02-14)
+
+
+### Bug Fixes
+
+* move apexcharts to dependencies ([d95d4e5](https://github.com/shinokada/svelte-5-ui-lib/commit/d95d4e5f81880ad699a236b6907ec49147c932c2))
+
 ### [0.2.37](https://github.com/shinokada/svelte-5-ui-lib/compare/v0.2.36...v0.2.37) (2024-02-08)
 
 
