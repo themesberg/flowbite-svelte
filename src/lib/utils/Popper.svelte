@@ -11,7 +11,7 @@
     arrow?: boolean;
     offset?: number;
     placement?: Placement;
-    trigger?: 'hover' | 'click';
+    trigger?: 'hover' | 'click' | 'focus';
     triggeredBy?: string;
     reference?: string;
     strategy?: 'absolute' | 'fixed';
@@ -23,7 +23,7 @@
   export let arrow: boolean = true;
   export let offset: number = 8;
   export let placement: Placement = 'top';
-  export let trigger: 'hover' | 'click' = 'hover';
+  export let trigger: 'hover' | 'click' | 'focus' = 'hover';
   export let triggeredBy: string | undefined = undefined;
   export let reference: string | undefined = undefined;
   export let strategy: 'absolute' | 'fixed' = 'absolute';
@@ -36,6 +36,9 @@
 
   let clickable: boolean;
   $: clickable = trigger === 'click';
+
+  let hoverable: boolean;
+  $: hoverable = trigger === 'hover';
 
   $: dispatch('show', open);
   $: placement && (referenceEl = referenceEl);
@@ -120,8 +123,8 @@
       ['focusin', showHandler, true],
       ['focusout', hideHandler, true],
       ['click', showHandler, clickable],
-      ['mouseenter', showHandler, !clickable],
-      ['mouseleave', hideHandler, !clickable]
+      ['mouseenter', showHandler, hoverable],
+      ['mouseleave', hideHandler, hoverable]
     ];
 
     if (triggeredBy) triggerEls = [...document.querySelectorAll<HTMLElement>(triggeredBy)];
@@ -142,7 +145,7 @@
         console.error(`Popup reference not found: '${reference}'`);
       } else {
         referenceEl.addEventListener('focusout', hideHandler);
-        if (!clickable) referenceEl.addEventListener('mouseleave', hideHandler);
+        if (hoverable) referenceEl.addEventListener('mouseleave', hideHandler);
       }
     } else {
       referenceEl = triggerEls[0];
@@ -198,7 +201,7 @@
 @prop export let arrow: boolean = true;
 @prop export let offset: number = 8;
 @prop export let placement: Placement = 'top';
-@prop export let trigger: 'hover' | 'click' = 'hover';
+@prop export let trigger: 'hover' | 'click' | 'focus' = 'hover';
 @prop export let triggeredBy: string | undefined = undefined;
 @prop export let reference: string | undefined = undefined;
 @prop export let strategy: 'absolute' | 'fixed' = 'absolute';

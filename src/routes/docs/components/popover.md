@@ -305,8 +305,10 @@ Set the position of the popover component relative to the trigger element by usi
 
 <Button id="hover">Hover popover</Button>
 <Button id="click">Click popover</Button>
+<Button id="focus">Focus popover</Button>
 <Popover class="w-64 text-sm font-light " title="Popover title" triggeredBy="#hover" trigger="hover">And here's some amazing content. It's very engaging. Right?</Popover>
 <Popover class="w-64 text-sm font-light " title="Popover title" triggeredBy="#click" trigger="click">And here's some amazing content. It's very engaging. Right?</Popover>
+<Popover class="w-64 text-sm font-light " title="Popover title" triggeredBy="#focus" trigger="focus">And here's some amazing content. It's very engaging. Right?</Popover>
 ```
 
 ## Offset
