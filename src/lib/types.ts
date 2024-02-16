@@ -6,186 +6,186 @@ export declare const xl = 'xl';
 export declare type SizeType = typeof xs | typeof sm | typeof md | typeof lg | typeof xl;
 
 export type TransitionTypes =
-	| 'fade'
-	| 'fly'
-	| 'slide'
-	| 'blur'
-	| 'in:fly'
-	| 'out:fly'
-	| 'in:slide'
-	| 'out:slide'
-	| 'in:fade'
-	| 'out:fade'
-	| 'in:blur'
-	| 'out:blur';
+  | 'fade'
+  | 'fly'
+  | 'slide'
+  | 'blur'
+  | 'in:fly'
+  | 'out:fly'
+  | 'in:slide'
+  | 'out:slide'
+  | 'in:fade'
+  | 'out:fade'
+  | 'in:blur'
+  | 'out:blur';
 export interface TransitionParamTypes {
-	delay?: number;
-	duration?: number;
-	easing?: (t: number) => number;
-	css?: (t: number, u: number) => string;
-	tick?: (t: number, u: number) => void;
+  delay?: number;
+  duration?: number;
+  easing?: (t: number) => number;
+  css?: (t: number, u: number) => string;
+  tick?: (t: number, u: number) => void;
 }
 
 export type IndicatorPlacementType =
-	| 'top-left'
-	| 'top-center'
-	| 'top-right'
-	| 'center-left'
-	| 'center'
-	| 'center-right'
-	| 'bottom-left'
-	| 'bottom-center'
-	| 'bottom-right'
-	| undefined;
+  | 'top-left'
+  | 'top-center'
+  | 'top-right'
+  | 'center-left'
+  | 'center'
+  | 'center-right'
+  | 'bottom-left'
+  | 'bottom-center'
+  | 'bottom-right'
+  | undefined;
 
 export interface drawerTransitionParamTypes {
-	amount?: number;
-	delay?: number;
-	duration?: number;
-	easing?: (t: number) => number;
-	opacity?: number;
-	x?: number;
-	y?: number;
+  amount?: number;
+  delay?: number;
+  duration?: number;
+  easing?: (t: number) => number;
+  opacity?: number;
+  x?: number;
+  y?: number;
 }
 
 export type drawerTransitionTypes =
-	| 'fade'
-	| 'fly'
-	| 'slide'
-	| 'blur'
-	| 'in:fly'
-	| 'out:fly'
-	| 'in:slide'
-	| 'out:slide'
-	| 'in:fade'
-	| 'out:fade'
-	| 'in:blur'
-	| 'out:blur'
-	| undefined;
+  | 'fade'
+  | 'fly'
+  | 'slide'
+  | 'blur'
+  | 'in:fly'
+  | 'out:fly'
+  | 'in:slide'
+  | 'out:slide'
+  | 'in:fade'
+  | 'out:fade'
+  | 'in:blur'
+  | 'out:blur'
+  | undefined;
 
 export type PsizeType =
-	| 'xs'
-	| 'sm'
-	| 'base'
-	| 'lg'
-	| 'xl'
-	| '2xl'
-	| '3xl'
-	| '4xl'
-	| '5xl'
-	| '6xl'
-	| '7xl'
-	| '8xl'
-	| '9xl';
+  | 'xs'
+  | 'sm'
+  | 'base'
+  | 'lg'
+  | 'xl'
+  | '2xl'
+  | '3xl'
+  | '4xl'
+  | '5xl'
+  | '6xl'
+  | '7xl'
+  | '8xl'
+  | '9xl';
 
 export type PweightType =
-	| 'thin'
-	| 'extralight'
-	| 'light'
-	| 'normal'
-	| 'medium'
-	| 'semibold'
-	| 'bold'
-	| 'extrabold'
-	| 'black';
+  | 'thin'
+  | 'extralight'
+  | 'light'
+  | 'normal'
+  | 'medium'
+  | 'semibold'
+  | 'bold'
+  | 'extrabold'
+  | 'black';
 
 export type BlockQuoteType =
-	| 'xs'
-	| 'sm'
-	| 'base'
-	| 'lg'
-	| 'xl'
-	| '2xl'
-	| '3xl'
-	| '4xl'
-	| '5xl'
-	| '6xl'
-	| '7xl'
-	| '8xl'
-	| '9xl';
+  | 'xs'
+  | 'sm'
+  | 'base'
+  | 'lg'
+  | 'xl'
+  | '2xl'
+  | '3xl'
+  | '4xl'
+  | '5xl'
+  | '6xl'
+  | '7xl'
+  | '8xl'
+  | '9xl';
 
 import type { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
 
 export interface ListGroupItemType {
-	current?: boolean;
-	disabled?: boolean;
-	href?: string;
-	attrs?: HTMLAnchorAttributes | HTMLButtonAttributes;
-	[propName: string]: any;
+  current?: boolean;
+  disabled?: boolean;
+  href?: string;
+  attrs?: HTMLAnchorAttributes | HTMLButtonAttributes;
+  [propName: string]: any;
 }
 
 export type FormColorType =
-	| 'blue'
-	| 'red'
-	| 'green'
-	| 'purple'
-	| 'teal'
-	| 'yellow'
-	| 'orange'
-	| 'primary'
-	| 'secondary';
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'purple'
+  | 'teal'
+  | 'yellow'
+  | 'orange'
+  | 'primary'
+  | 'secondary';
 export type ButtonColorType =
-	| 'alternative'
-	| 'blue'
-	| 'dark'
-	| 'green'
-	| 'light'
-	| 'primary'
-	| 'purple'
-	| 'red'
-	| 'yellow'
-	| 'none';
+  | 'alternative'
+  | 'blue'
+  | 'dark'
+  | 'green'
+  | 'light'
+  | 'primary'
+  | 'purple'
+  | 'red'
+  | 'yellow'
+  | 'none';
 
 export type InputType =
-	| 'color'
-	| 'date'
-	| 'datetime-local'
-	| 'email'
-	| 'file'
-	| 'hidden'
-	| 'image'
-	| 'month'
-	| 'number'
-	| 'password'
-	| 'reset'
-	| 'submit'
-	| 'tel'
-	| 'text'
-	| 'time'
-	| 'url'
-	| 'week'
-	| 'search';
+  | 'color'
+  | 'date'
+  | 'datetime-local'
+  | 'email'
+  | 'file'
+  | 'hidden'
+  | 'image'
+  | 'month'
+  | 'number'
+  | 'password'
+  | 'reset'
+  | 'submit'
+  | 'tel'
+  | 'text'
+  | 'time'
+  | 'url'
+  | 'week'
+  | 'search';
 export type SidebarType = {
-	activeClass: string;
-	nonActiveClass: string;
+  activeClass: string;
+  nonActiveClass: string;
 };
 
 export type CloseBtnColors =
-	| 'gray'
-	| 'red'
-	| 'yellow'
-	| 'green'
-	| 'indigo'
-	| 'purple'
-	| 'pink'
-	| 'blue'
-	| 'primary'
-	| 'none';
+  | 'gray'
+  | 'red'
+  | 'yellow'
+  | 'green'
+  | 'indigo'
+  | 'purple'
+  | 'pink'
+  | 'blue'
+  | 'primary'
+  | 'none';
 
 export interface ButtonClassesTypes {
-	default?: string;
-	border?: string;
-	application?: string;
-	pagination?: string;
-	group?: string;
-	card?: string;
-	meeting?: string;
-	video?: string;
-	custom?: string;
+  default?: string;
+  border?: string;
+  application?: string;
+  pagination?: string;
+  group?: string;
+  card?: string;
+  meeting?: string;
+  video?: string;
+  custom?: string;
 }
 
 export type navbarType = {
-	breakPoint: 'md' | 'lg' | 'xl' | 'xxl';
-	activeClass: string;
-	nonActiveClass: string;
+  breakPoint: 'md' | 'lg' | 'xl' | 'xxl';
+  activeClass: string;
+  nonActiveClass: string;
 };

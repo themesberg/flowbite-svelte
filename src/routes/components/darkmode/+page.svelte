@@ -1,11 +1,11 @@
 <script>
-	import { Darkmode } from '$lib';
-	import HighlightCompo from '../../utils/HighlightCompo.svelte';
-	import CodeWrapper from '../../utils/CodeWrapper.svelte';
-	import H1 from '../../utils/H1.svelte';
-	import H2 from '../../utils/H2.svelte';
-	import { ThumbsUpSolid, ThumbsDownSolid } from 'flowbite-svelte-icons';
-	const modules = import.meta.glob('./md/*.md', { query: '?raw', import: 'default', eager: true });
+  import { Darkmode } from '$lib';
+  import HighlightCompo from '../../utils/HighlightCompo.svelte';
+  import CodeWrapper from '../../utils/CodeWrapper.svelte';
+  import H1 from '../../utils/H1.svelte';
+  import H2 from '../../utils/H2.svelte';
+  import { ThumbsUpSolid, ThumbsDownSolid } from 'flowbite-svelte-icons';
+  const modules = import.meta.glob('./md/*.md', { query: '?raw', import: 'default', eager: true });
 </script>
 
 <H1>Darkmode</H1>
@@ -17,7 +17,7 @@
 <H2>Default Darkmode</H2>
 
 <CodeWrapper>
-	<Darkmode />
+  <Darkmode />
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/darkmode.md']} />
@@ -38,14 +38,14 @@ to the default classes.
 Use the lightIcon and darkIcon slots to change icons:
 
 <CodeWrapper>
-	<Darkmode btnclass="text-lg">
-		{#snippet lightIcon()}
-			<ThumbsUpSolid color="red" />
-		{/snippet}
-		{#snippet darkIcon()}
-			<ThumbsDownSolid color="green" />
-		{/snippet}
-	</Darkmode>
+  <Darkmode btnclass="text-lg">
+    {#snippet lightIcon()}
+      <ThumbsUpSolid color="red" />
+    {/snippet}
+    {#snippet darkIcon()}
+      <ThumbsDownSolid color="green" />
+    {/snippet}
+  </Darkmode>
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/modeicon.md']} />
