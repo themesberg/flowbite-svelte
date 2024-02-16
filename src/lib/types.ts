@@ -183,3 +183,9 @@ export interface ButtonClassesTypes {
 	video?: string;
 	custom?: string;
 }
+
+export type navbarType = {
+	breakPoint: 'md' | 'lg' | 'xl' | 'xxl';
+	activeClass: string;
+	nonActiveClass: string;
+};

@@ -40,7 +40,7 @@
     "gen:docs5": "svelte-lib-helpers docs5",
     "lib-helpers": "npm run gen:docs5 && npm run package && npm run gen:exports && npm run copy:packagejson",
     "changeset:version": "changeset version",
-		"changeset:publish": "changeset publish"
+    "changeset:publish": "changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",

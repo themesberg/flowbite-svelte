@@ -7,7 +7,6 @@
 		uiHelpers,
 		Darkmode,
 		Drawer,
-		Button,
 		Sidebar,
 		SidebarGroup,
 		SidebarItem,
@@ -36,24 +35,12 @@
 		navDrawerStatus = navDrawer.isOpen;
 		navStatus = nav.isOpen;
 	});
-	const navclass =
-		'w-full divide-gray-200 border-gray-200 bg-white text-gray-500 dark:divide-gray-700 dark:border-gray-700 dark:bg-gray-950 sm:px-4';
-	const ulclass =
-		'flex flex-col py-3 lg:flex-row lg:my-0 order-1 font-medium xl:gap-4 dark:lg:bg-transparent dark:bg-gray-950 lg:bg-white border-0';
 </script>
 
 <header
 	class="sticky top-0 z-40 mx-auto w-full flex-none border-b border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-950 lg:pl-4"
 >
-	<Navbar
-		{toggleNav}
-		{closeNav}
-		{navStatus}
-		{navclass}
-		fluid
-		breakPoint="lg"
-		div2class="ml-auto w-full"
-	>
+	<Navbar {toggleNav} {closeNav} {navStatus} fluid div2class="ml-auto w-full">
 		{#snippet brand()}
 			<button
 				onclick={navDrawer.toggle}
@@ -82,12 +69,12 @@
 				<img width="30" src="/images/svelte-icon.png" alt="svelte icon" />
 			</NavBrand>
 
-			<div class="ml-auto flex items-center lg:order-1">
+			<div class="ml-auto flex items-center md:order-1">
 				<Darkmode />
 			</div>
 		{/snippet}
 
-		<NavUl {ulclass}>
+		<NavUl>
 			<NavLi href="/" {closeNav}>Home</NavLi>
 			<NavLi href="https://github.com/shinokada/svelte-5-ui-lib" {closeNav}>Repo</NavLi>
 			<NavLi href="https://flowbite-svelte.com/" {closeNav}>Flowbite Svelte</NavLi>

@@ -1,4 +1,10 @@
 <script lang="ts">
+	import { setContext } from 'svelte';
+	import { twMerge } from 'tailwind-merge';
+	import { clickOutside } from '../uiHelpers.svelte';
+	import { slide, type SlideParams } from 'svelte/transition';
+	import { quintOut } from 'svelte/easing';
+	import type { navbarType } from '$lib/types';
 	interface Props {
 		children: any;
 		toggleNav: () => void;
@@ -6,17 +12,15 @@
 		navStatus: boolean;
 		fluid?: boolean;
 		brand?: any;
-		breakPoint?: 'md' | 'lg' | 'xl' | 'xxl';
+		breakPoint?: navbarType['breakPoint'];
 		navclass?: string | undefined;
 		divclass?: string | undefined;
 		btnclass?: string | undefined;
 		div2class?: string | undefined;
+		nonActiveClass?: string | undefined;
+		activeClass?: string | undefined;
+		aclass?: string | undefined;
 	}
-	import { setContext } from 'svelte';
-	import { twMerge } from 'tailwind-merge';
-	import { clickOutside } from '../uiHelpers.svelte';
-	import { slide, type SlideParams } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
 
 	let {
 		children,
@@ -30,10 +34,18 @@
 		divclass,
 		btnclass,
 		div2class,
+		nonActiveClass = 'block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent',
+		activeClass = 'block py-2 px-3 text-white bg-primary-700 rounded md:bg-transparent md:text-primary-700 md:p-0 dark:text-white md:dark:text-primary-500',
+		aclass,
 		...attributes
 	} = $props<Props>();
 
-	setContext('breakPoint', breakPoint);
+	// setContext('breakPoint', breakPoint);
+	setContext<navbarType>('navbarContext', {
+		breakPoint: breakPoint,
+		activeClass: twMerge(activeClass, aclass),
+		nonActiveClass: twMerge(nonActiveClass, aclass)
+	});
 	// $inspect('Navbar navStatus', navStatus);
 	let navDisplay = $derived(navStatus ? 'block' : 'hidden');
 
@@ -115,5 +127,8 @@
 @prop divclass,
 @prop btnclass,
 @prop div2class,
+@prop nonActiveClass = 'block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent',
+@prop activeClass = 'block py-2 px-3 text-white bg-primary-700 rounded md:bg-transparent md:text-primary-700 md:p-0 dark:text-white md:dark:text-primary-500',
+@prop aclass,
 @prop ...attributes
 -->

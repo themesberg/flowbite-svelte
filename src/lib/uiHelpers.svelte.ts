@@ -1,5 +1,5 @@
 export function uiHelpers() {
-	let isOpen: boolean | undefined = $state(false);
+	let isOpen: boolean = $state(false);
 
 	function toggle() {
 		isOpen = !isOpen;
@@ -17,7 +17,7 @@ export function uiHelpers() {
 		get isOpen() {
 			return isOpen;
 		},
-		set isOpen(value: boolean | undefined) {
+		set isOpen(value: boolean) {
 			isOpen = value;
 		},
 
