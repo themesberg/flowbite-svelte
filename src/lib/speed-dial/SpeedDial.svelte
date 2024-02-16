@@ -21,7 +21,7 @@
   export let placement: Placement = 'top';
   export let pill: boolean = true;
   export let tooltip: Placement | 'none' = 'left';
-  export let trigger: 'hover' | 'click' = 'hover';
+  export let trigger: 'hover' | 'click' | 'focus' = 'hover';
   export let textOutside: boolean = false;
   export let id: string = generateId();
   export let name: string = 'Open actions menu';
@@ -71,7 +71,7 @@
 @prop export let placement: Placement = 'top';
 @prop export let pill: boolean = true;
 @prop export let tooltip: Placement | 'none' = 'left';
-@prop export let trigger: 'hover' | 'click' = 'hover';
+@prop export let trigger: 'hover' | 'click' | 'focus' = 'hover';
 @prop export let textOutside: boolean = false;
 @prop export let id: string = generateId();
 @prop export let name: string = 'Open actions menu';
