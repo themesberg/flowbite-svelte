@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.40
+
+### Patch Changes
+
+- fix: change tab indentation to spaces
+  docs: update sidebar page
+  fix: add 128 so that h-128 works to tailwind.config.cjs
+  fix: add utils/PlusPlaceholder compo for sidebar page
+
 ## 0.2.39
 
 ### Patch Changes
