@@ -35,6 +35,7 @@
     navDrawerStatus = navDrawer.isOpen;
     navStatus = nav.isOpen;
   });
+  const activeClass = 'flex items-center p-2 text-base font-normal text-white bg-primary-500 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-100 dark:hover:bg-gray-700';
 </script>
 
 <header
@@ -115,7 +116,7 @@
       <span class="sr-only">Close drawer</span>
     </button>
   </div>
-  <Sidebar asideclass="w-48 p-0" divclass="bg-transparent p-0" aclass="p-1 pl-4">
+  <Sidebar {activeClass} asideclass="w-48 p-0" divclass="bg-transparent p-0" aclass="p-1 pl-4">
     <SidebarGroup>
       <SidebarDropdownWrapper label="Components" svgclass="me-4" btnclass="p-1">
         <SidebarItem onclick={closeNavDrawer} label="Alert" href="/components/alert" />
