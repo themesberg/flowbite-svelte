@@ -18,6 +18,30 @@
     'flex items-center p-2 text-base font-normal text-primary-900 bg-primary-200 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-100 dark:hover:bg-gray-700';
   const nonActiveClass =
     'flex items-center p-2 text-base font-normal text-green-900 rounded-lg dark:text-white hover:bg-green-100 dark:hover:bg-green-700';
+		const sidebarEx1 = [
+			{
+				label: "Dashboard",
+				href: "/",
+				iconName: ChartSolid,
+			},
+			{
+				label: "Kanban",
+				href: "/",
+				iconName: GridSolid,
+        subContent: 'Pro'
+			},
+      {
+        label: "Inbox",
+        href: "/",
+        iconName: MailBoxSolid,
+        subContent: '3'
+      },
+      {
+        label: "Sidebar",
+        href: "/components/sidebar",
+        iconName: UserSolid
+      }
+      ];
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -91,6 +115,39 @@
 </CodeWrapper>
 
 <HighlightCompo code={modules['./md/default-sidebar.md']} />
+
+<H2>Using object</H2>
+<CodeWrapper class="relative">
+  <Sidebar aclass="p-2" asideclass="absolute top-6 left-6 z-40">
+    <SidebarGroup>
+      {#each sidebarEx1 as { label, href, iconName, subContent }}
+        <SidebarItem {label} {href} {spanclass}>
+          {#snippet icon()}
+            <svelte:component this={iconName} class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"/>
+          {/snippet}
+          {#snippet subtext()}
+            <span
+              class="ms-3 inline-flex items-center justify-center rounded-full bg-gray-200 px-2 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300"
+            >
+              {subContent}
+            </span>
+          {/snippet}
+        </SidebarItem>
+      {/each}
+    </SidebarGroup>
+  </Sidebar>
+  <div class="h-96 overflow-scroll px-4 sm:ml-64">
+    <div class="rounded-lg border-2 border-dashed border-gray-200 p-4 dark:border-gray-700">
+      <PlusPlaceholder colnum={3} rownum={1} />
+      <PlusPlaceholder />
+      <PlusPlaceholder colnum={2} rownum={2} />
+      <PlusPlaceholder />
+      <PlusPlaceholder colnum={2} rownum={2} />
+    </div>
+  </div>
+</CodeWrapper>
+
+<HighlightCompo code={modules['./md/using-object.md']} />
 
 <H2>Adding active class</H2>
 

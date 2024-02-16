@@ -71,7 +71,7 @@
 
   const outerCls = twMerge(
     position,
-    'w-full z-50 border-gray-200 dark:bg-gray-700 dark:border-gray-600',
+    'w-full z-30 border-gray-200 dark:bg-gray-700 dark:border-gray-600',
     outerDivClasses[navType],
     divclass
   );
