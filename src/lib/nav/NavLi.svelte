@@ -45,8 +45,7 @@
       : nonActiveClass ?? context.nonActiveClass
   );
 
-  let linkClass = $derived(twMerge(aCls, linkBreaks[breakPoint],activeBreaks[breakPoint], aclass));
-
+  let linkClass = $derived(twMerge(aCls, linkBreaks[breakPoint], activeBreaks[breakPoint], aclass));
 </script>
 
 <li>

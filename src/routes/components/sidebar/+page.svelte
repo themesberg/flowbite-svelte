@@ -18,30 +18,30 @@
     'flex items-center p-2 text-base font-normal text-primary-900 bg-primary-200 dark:bg-primary-700 rounded-lg dark:text-white hover:bg-primary-100 dark:hover:bg-gray-700';
   const nonActiveClass =
     'flex items-center p-2 text-base font-normal text-green-900 rounded-lg dark:text-white hover:bg-green-100 dark:hover:bg-green-700';
-		const sidebarEx1 = [
-			{
-				label: "Dashboard",
-				href: "/",
-				iconName: ChartSolid,
-			},
-			{
-				label: "Kanban",
-				href: "/",
-				iconName: GridSolid,
-        subContent: 'Pro'
-			},
-      {
-        label: "Inbox",
-        href: "/",
-        iconName: MailBoxSolid,
-        subContent: '3'
-      },
-      {
-        label: "Sidebar",
-        href: "/components/sidebar",
-        iconName: UserSolid
-      }
-      ];
+  const sidebarEx1 = [
+    {
+      label: 'Dashboard',
+      href: '/',
+      iconName: ChartSolid
+    },
+    {
+      label: 'Kanban',
+      href: '/',
+      iconName: GridSolid,
+      subContent: 'Pro'
+    },
+    {
+      label: 'Inbox',
+      href: '/',
+      iconName: MailBoxSolid,
+      subContent: '3'
+    },
+    {
+      label: 'Sidebar',
+      href: '/components/sidebar',
+      iconName: UserSolid
+    }
+  ];
 
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -123,7 +123,10 @@
       {#each sidebarEx1 as { label, href, iconName, subContent }}
         <SidebarItem {label} {href} {spanclass}>
           {#snippet icon()}
-            <svelte:component this={iconName} class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"/>
+            <svelte:component
+              this={iconName}
+              class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
+            />
           {/snippet}
           {#snippet subtext()}
             <span
