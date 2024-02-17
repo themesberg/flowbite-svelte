@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.42
+
+### Patch Changes
+
+- fix: NavLi color updates
+  chore: lib-helpers and format
+
 ## 0.2.41
 
 ### Patch Changes
