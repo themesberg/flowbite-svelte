@@ -7,7 +7,8 @@
     uiHelpers,
     ImagePlaceholder,
     Skeleton,
-    TextPlaceholder
+    TextPlaceholder,
+    P
   } from '$lib';
   import HighlightCompo from '../../utils/HighlightCompo.svelte';
   import CodeWrapper from '../../utils/CodeWrapper.svelte';
@@ -62,7 +63,10 @@
 <HighlightCompo code={modules['./md/default-nav.md']} />
 
 <H2>Breakpoint</H2>
-
+<P
+  >Use the `breakPoint` prop to change the breakpoint. There are 4 breakpoints: `md`, `lg`, `xl`,
+  `xxl`.</P
+>
 <CodeWrapper>
   <Navbar toggleNav={toggleNavLg} closeNav={closeNavLg} navStatus={navStatusLg} breakPoint="lg">
     {#snippet brand()}
@@ -78,6 +82,7 @@
     </NavUl>
   </Navbar>
 </CodeWrapper>
+<HighlightCompo code={modules['./md/breakpoint.md']} />
 
 <H2>Sticky navbar</H2>
 <CodeWrapper class="p-2">

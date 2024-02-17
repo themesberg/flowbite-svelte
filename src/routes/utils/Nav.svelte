@@ -12,7 +12,7 @@
     SidebarItem,
     SidebarDropdownWrapper
   } from '$lib';
-  import GitHub from './GitHub.svelte'
+  import GitHub from './GitHub.svelte';
   import { sineIn } from 'svelte/easing';
 
   let transitionParams = {
@@ -72,8 +72,11 @@
       </NavBrand>
 
       <div class="ml-auto flex items-center md:order-1">
-        <a class="focus:outline-none whitespace-normal rounded-lg p-2.5 focus:ring-gray-400 hover:bg-gray-100 dark:hover:bg-gray-600 hidden sm:inline-block dark:hover:text-white hover:text-gray-900 focus:ring-0" href="https://github.com/shinokada/svelte-5-ui-lib">
-        <GitHub />
+        <a
+          class="hidden whitespace-normal rounded-lg p-2.5 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-0 focus:ring-gray-400 dark:hover:bg-gray-600 dark:hover:text-white sm:inline-block"
+          href="https://github.com/shinokada/svelte-5-ui-lib"
+        >
+          <GitHub />
         </a>
         <Darkmode />
       </div>

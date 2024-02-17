@@ -35,17 +35,15 @@
     xxl: '2xl:bg-transparent 2xl:text-primary-700 2xl:p-0 2xl:dark:text-primary-500'
   };
 
-  const linkStyle =
-    'block py-2 px-3 text-md hover:underline text-gray-900 rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white';
-  const activeStyle =
-    'block py-2 px-3 text-md hover:underline text-gray-700 bg-primary-700 rounded dark:text-white ';
   let aCls = $derived(
     currentUrl === href
-      ? activeClass ?? context.activeClass
-      : nonActiveClass ?? context.nonActiveClass
+      ? activeClass ?? twMerge(context.activeClass, activeBreaks[breakPoint])
+      : nonActiveClass ?? twMerge(context.nonActiveClass, linkBreaks[breakPoint])
   );
 
-  let linkClass = $derived(twMerge(aCls, linkBreaks[breakPoint], activeBreaks[breakPoint], aclass));
+  let linkClass = $derived(twMerge(aCls, aclass));
+
+  // $inspect('context.activeClass', linkBreaks[breakPoint]);
 </script>
 
 <li>

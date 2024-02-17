@@ -13,13 +13,12 @@
     fluid?: boolean;
     brand?: any;
     breakPoint?: navbarType['breakPoint'];
-    navclass?: string | undefined;
-    divclass?: string | undefined;
-    btnclass?: string | undefined;
-    div2class?: string | undefined;
-    nonActiveClass?: string | undefined;
-    activeClass?: string | undefined;
-    aclass?: string | undefined;
+    navclass?: string;
+    divclass?: string;
+    btnclass?: string;
+    div2class?: string;
+    nonActiveClass?: string;
+    activeClass?: string;
   }
 
   let {
@@ -34,21 +33,24 @@
     divclass,
     btnclass,
     div2class,
-    nonActiveClass = 'block py-2 px-3 text-gray-900 rounded hover:bg-gray-100  dark:text-white dark:hover:bg-gray-700 dark:hover:text-white',
-    activeClass = 'block py-2 px-3 text-white bg-primary-700 rounded  dark:text-white',
-    aclass,
+    activeClass,
+    nonActiveClass,
     ...attributes
   } = $props<Props>();
 
-  // setContext('breakPoint', breakPoint);
   setContext<navbarType>('navbarContext', {
     breakPoint: breakPoint,
-    activeClass: twMerge(activeClass, aclass),
-    nonActiveClass: twMerge(nonActiveClass, aclass)
+    activeClass: twMerge(
+      'block py-2 px-3 text-white bg-primary-700 rounded   dark:text-white',
+      activeClass
+    ),
+    nonActiveClass: twMerge(
+      'block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white',
+      nonActiveClass
+    )
   });
-  // $inspect('Navbar navStatus', navStatus);
-  let navDisplay = $derived(navStatus ? 'block' : 'hidden');
 
+  let navDisplay = $derived(navStatus ? 'block' : 'hidden');
   let navCls = twMerge('border-gray-200 bg-transparent dark:bg-gray-900', navclass);
   let divCls = twMerge(
     'mx-auto flex flex-wrap items-center justify-between p-4',
@@ -127,8 +129,7 @@
 @prop divclass,
 @prop btnclass,
 @prop div2class,
-@prop nonActiveClass = 'block py-2 px-3 text-gray-900 rounded hover:bg-gray-100  dark:text-white dark:hover:bg-gray-700 dark:hover:text-white',
-@prop activeClass = 'block py-2 px-3 text-white bg-primary-700 rounded  dark:text-white',
-@prop aclass,
+@prop activeClass,
+@prop nonActiveClass,
 @prop ...attributes
 -->

@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.41
+
+### Patch Changes
+
+- docs: add GitHub icon, add About page, update vite.config.ts and app.d.ts to get dependencies version ([`8c8d016bff19752808fef7fd9feeade57e0a5021`](https://github.com/shinokada/svelte-5-ui-lib/commit/8c8d016bff19752808fef7fd9feeade57e0a5021))
+
+- fix: BottomNav z-index to 30 ([`9a49998b8ada7fe45b969a4d8e2b3a127dbebac5`](https://github.com/shinokada/svelte-5-ui-lib/commit/9a49998b8ada7fe45b969a4d8e2b3a127dbebac5))
+  docs: header in Nav z-index to max 50
+
 ## 0.2.40
 
 ### Patch Changes
