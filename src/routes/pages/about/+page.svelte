@@ -1,8 +1,10 @@
 <script>
   import { Heading, P, A, List, Li } from '$lib';
+  import {removeHyphensAndCapitalize} from '../../utils/helpers';
   import H1 from '../../utils/H1.svelte';
   import H2 from '../../utils/H2.svelte';
-  const svelte5uilibVersion = __SVELTE5UILIBVERSION__;
+  const name = __NAME__;
+  const svelte5uilibVersion = __VERSION__;
   const svelteVersion = __SVELTEVERSION__;
   const svelteKitVersion = __SVELTEKITVERSION__;
   const viteVersion = __VITEVERSION__;
@@ -26,7 +28,7 @@
 
   <H2>Techinical info</H2>
   <List>
-    <Li><A href="https://svelte-5-ui-lib.vercel.app/">Svelte 5 UI Lib: {svelte5uilibVersion}</A></Li
+    <Li><A href="https://svelte-5-ui-lib.vercel.app/">{removeHyphensAndCapitalize(name)}: {svelte5uilibVersion}</A></Li
     >
     <Li
       ><A href="https://svelte-5-preview.vercel.app/docs/introduction">Svelte 5: {svelteVersion}</A

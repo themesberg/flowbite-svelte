@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.44
+
+### Patch Changes
+
+- fix: add type option ? to closeNav in NavBrand
+  docs: remove closeNav from NavLi and NavBrand in md files
+
 ## 0.2.43
 
 ### Patch Changes
