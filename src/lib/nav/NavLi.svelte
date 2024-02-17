@@ -5,7 +5,7 @@
   import type { navbarType } from '$lib/types';
   interface Props {
     children: any;
-    closeNav: () => void;
+    closeNav?: () => void;
     href?: string | undefined;
     aclass?: string | undefined;
     activeClass?: string | undefined;
@@ -17,6 +17,7 @@
 
   const context = getContext<navbarType>('navbarContext');
   breakPoint = context.breakPoint ?? 'md';
+  closeNav = context.closeNav ?? closeNav;
   let currentUrl = $state($page.url.pathname);
   $effect(() => {
     currentUrl = $page.url.pathname;

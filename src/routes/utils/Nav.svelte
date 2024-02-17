@@ -67,7 +67,7 @@
           />
         </svg>
       </button>
-      <NavBrand siteName="Svelte 5 UI lib" {closeNav}>
+      <NavBrand siteName="Svelte 5 UI lib">
         <img width="30" src="/images/svelte-icon.png" alt="svelte icon" />
       </NavBrand>
 
@@ -83,9 +83,9 @@
     {/snippet}
 
     <NavUl>
-      <NavLi href="/" {closeNav}>Home</NavLi>
-      <NavLi href="https://flowbite-svelte.com/" {closeNav}>Flowbite Svelte</NavLi>
-      <NavLi href="/pages/about" {closeNav}>About</NavLi>
+      <NavLi href="/">Home</NavLi>
+      <NavLi href="https://flowbite-svelte.com/">Flowbite Svelte</NavLi>
+      <NavLi href="/pages/about">About</NavLi>
     </NavUl>
   </Navbar>
 </header>

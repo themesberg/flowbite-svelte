@@ -188,4 +188,5 @@ export type navbarType = {
   breakPoint: 'md' | 'lg' | 'xl' | 'xxl';
   activeClass: string;
   nonActiveClass: string;
+  closeNav: () => void;
 };

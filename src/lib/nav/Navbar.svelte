@@ -47,7 +47,8 @@
     nonActiveClass: twMerge(
       'block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white',
       nonActiveClass
-    )
+    ),
+    closeNav: closeNav
   });
 
   let navDisplay = $derived(navStatus ? 'block' : 'hidden');

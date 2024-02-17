@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.43
+
+### Patch Changes
+
+- fix: using setContext/getContext for Nav closeNav so that you don't need to repeat it in NavLi and NavBrand
+
 ## 0.2.42
 
 ### Patch Changes
