@@ -312,7 +312,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
 ```svelte example class="flex justify-center"
 <script>
   import { BottomNav, BottomNavItem, Card, Listgroup, Avatar } from 'flowbite-svelte';
-  import { ClockSolid, UserGroupSolid, StarSolid } from 'flowbite-svelte-icons';
+  import { ClockSolid, UsersGroupSolid, StarSolid } from 'flowbite-svelte-icons';
   let list = [
     {
       img: { src: '/images/profile-picture-1.webp', alt: 'Neil Sims' },
@@ -357,7 +357,7 @@ You can even use the other bottom navbar examples to exchange the default one pr
       <ClockSolid class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
     </BottomNavItem>
     <BottomNavItem btnName="Following" id="card-following">
-      <UserGroupSolid class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
+      <UsersGroupSolid class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
     </BottomNavItem>
     <BottomNavItem btnName="Favorites" id="card-favorites">
       <StarSolid class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" />
