@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.45
+
+### Patch Changes
+
+- fix: update component docs ([`f76850121e7fd4b3a9b4cfcfbd813d05a2903cff`](https://github.com/shinokada/svelte-5-ui-lib/commit/f76850121e7fd4b3a9b4cfcfbd813d05a2903cff))
+
 ## 0.2.44
 
 ### Patch Changes
