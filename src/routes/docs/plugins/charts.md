@@ -271,7 +271,7 @@ You can represent multiple data entries using columns by setting the type: "bar"
 ```svelte example class="flex justify-center"
 <script>
   import { Chart, Card, A, Button, Dropdown, DropdownItem } from 'flowbite-svelte';
-  import { UserGroupSolid, ArrowUpSolid, ChevronDownSolid, ChevronRightSolid } from 'flowbite-svelte-icons';
+  import { UsersGroupSolid, ArrowUpSolid, ChevronDownSolid, ChevronRightSolid } from 'flowbite-svelte-icons';
 
   const options = {
     colors: ['#1A56DB', '#FDBA8C'],
@@ -383,7 +383,7 @@ You can represent multiple data entries using columns by setting the type: "bar"
   <div class="flex justify-between pb-4 mb-4 border-b border-gray-200 dark:border-gray-700">
     <div class="flex items-center">
       <div class="w-12 h-12 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center me-3">
-        <UserGroupSolid class="w-6 h-6 text-gray-500 dark:text-gray-400" />
+        <UsersGroupSolid class="w-6 h-6 text-gray-500 dark:text-gray-400" />
       </div>
       <div>
         <h5 class="leading-none text-2xl font-bold text-gray-900 dark:text-white pb-1">3.4k</h5>
@@ -695,7 +695,7 @@ Set the chart type: "donut" to create a donut chart and copy the options from th
 ```svelte example class="flex justify-center"
 <script>
   import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from 'flowbite-svelte';
-  import { InfoCircleSolid, ArrowDownToBraketSolid, ChevronDownSolid, ChevronRightSolid, PenSolid, DownloadSolid, ShareNodesSolid } from 'flowbite-svelte-icons';
+  import { InfoCircleSolid, ArrowDownToBracketSolid, ChevronDownSolid, ChevronRightSolid, PenSolid, DownloadSolid, ShareNodesSolid } from 'flowbite-svelte-icons';
 
   const options = {
     series: [35.1, 23.5, 2.4, 5.4],
@@ -798,7 +798,7 @@ Set the chart type: "donut" to create a donut chart and copy the options from th
       </div>
     </div>
     <div class="flex justify-end items-center">
-      <ArrowDownToBraketSolid class="w-3.5 h-3.5" />
+      <ArrowDownToBracketSolid class="w-3.5 h-3.5" />
       <Tooltip>Download CSV</Tooltip>
     </div>
   </div>
@@ -831,7 +831,7 @@ To create a radial chart with multiple data entries you need to set the type: "r
 ```svelte example class="flex justify-center"
 <script>
   import { Chart, Card, A, Button, Dropdown, DropdownItem, Popover, Tooltip } from 'flowbite-svelte';
-  import { InfoCircleSolid, ArrowDownToBraketSolid, ChevronDownSolid, ChevronRightSolid, PenSolid, DownloadSolid, ShareNodesSolid } from 'flowbite-svelte-icons';
+  import { InfoCircleSolid, ArrowDownToBracketSolid, ChevronDownSolid, ChevronRightSolid, PenSolid, DownloadSolid, ShareNodesSolid } from 'flowbite-svelte-icons';
 
   let isOpen = false;
 
@@ -911,7 +911,7 @@ To create a radial chart with multiple data entries you need to set the type: "r
       </div>
     </div>
     <div class="flex justify-end items-center">
-      <ArrowDownToBraketSolid class="w-3.5 h-3.5" />
+      <ArrowDownToBracketSolid class="w-3.5 h-3.5" />
       <Tooltip>Download CSV</Tooltip>
     </div>
   </div>
